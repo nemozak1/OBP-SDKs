@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,117 +15,129 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv121AddImageForViewOnTransactionRequest,
-  OBPv121GetCommentsForViewOnTransaction200Response,
-  OBPv121GetImagesForViewOnTransaction200Response,
-  OBPv121GetOtherAccountForTransaction200Response,
-  OBPv121GetTransactionNarrative200Response,
-  OBPv121GetWhereTagForViewOnTransaction200Response,
-  OBPv121UpdateTransactionNarrative200Response,
-  OBPv121UpdateWhereTagForViewOnTransactionRequest,
-  OBPv300GetCoreTransactionsForBankAccount200Response,
-  OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems,
-  OBPv300GetFirehoseTransactionsForBankAccount200Response,
-  OBPv310GetTransactionByIdForBankAccount200Response,
-  OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems,
-  OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest,
-  OBPv400DeleteSystemLevelEndpointTag200Response,
-  OBPv400GetDoubleEntryTransaction200Response,
-  OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems,
-  OBPv400GetTransactionAttributes200Response,
-  OBPv400GetTransactionRequestAttributeDefinition200Response,
-  OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems,
-  OBPv600CreatePersonalDataFieldRequest,
-  OBPv600GetTransactionsForBankAccount200Response,
+  AddImageForViewOnTransactionRequest,
+  CreateOrUpdateTransactionRequestAttributeDefinitionRequest,
+  CreatePersonalDataFieldRequest,
+  GetCommentsForViewOnTransaction200Response,
+  GetCoreTransactionsForBankAccount200Response,
+  GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner,
+  GetDoubleEntryTransaction200Response,
+  GetFirehoseTransactionsForBankAccount200Response,
+  GetImagesForViewOnTransaction200Response,
+  GetOtherAccountForTransaction200Response,
+  GetTagsForViewOnAccount200ResponseTagsInner,
+  GetTransactionAttributes200Response,
+  GetTransactionByIdForBankAccount200Response,
+  GetTransactionByIdForBankAccount200ResponseMetadataImagesInner,
+  GetTransactionNarrative200Response,
+  GetTransactionRequestAttributeDefinition200Response,
+  GetTransactionRequestAttributeDefinition200ResponseAttributesInner,
+  GetTransactionTypes200ResponseTransactionTypesInnerId,
+  GetTransactionsForBankAccount200Response,
+  GetWhereTagForViewOnTransaction200Response,
+  UpdateTransactionNarrative200Response,
+  UpdateWhereTagForViewOnTransactionRequest,
 } from '../models/index';
 import {
-    OBPv121AddImageForViewOnTransactionRequestFromJSON,
-    OBPv121AddImageForViewOnTransactionRequestToJSON,
-    OBPv121GetCommentsForViewOnTransaction200ResponseFromJSON,
-    OBPv121GetCommentsForViewOnTransaction200ResponseToJSON,
-    OBPv121GetImagesForViewOnTransaction200ResponseFromJSON,
-    OBPv121GetImagesForViewOnTransaction200ResponseToJSON,
-    OBPv121GetOtherAccountForTransaction200ResponseFromJSON,
-    OBPv121GetOtherAccountForTransaction200ResponseToJSON,
-    OBPv121GetTransactionNarrative200ResponseFromJSON,
-    OBPv121GetTransactionNarrative200ResponseToJSON,
-    OBPv121GetWhereTagForViewOnTransaction200ResponseFromJSON,
-    OBPv121GetWhereTagForViewOnTransaction200ResponseToJSON,
-    OBPv121UpdateTransactionNarrative200ResponseFromJSON,
-    OBPv121UpdateTransactionNarrative200ResponseToJSON,
-    OBPv121UpdateWhereTagForViewOnTransactionRequestFromJSON,
-    OBPv121UpdateWhereTagForViewOnTransactionRequestToJSON,
-    OBPv300GetCoreTransactionsForBankAccount200ResponseFromJSON,
-    OBPv300GetCoreTransactionsForBankAccount200ResponseToJSON,
-    OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItemsFromJSON,
-    OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItemsToJSON,
-    OBPv300GetFirehoseTransactionsForBankAccount200ResponseFromJSON,
-    OBPv300GetFirehoseTransactionsForBankAccount200ResponseToJSON,
-    OBPv310GetTransactionByIdForBankAccount200ResponseFromJSON,
-    OBPv310GetTransactionByIdForBankAccount200ResponseToJSON,
-    OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItemsFromJSON,
-    OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItemsToJSON,
-    OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestFromJSON,
-    OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestToJSON,
-    OBPv400DeleteSystemLevelEndpointTag200ResponseFromJSON,
-    OBPv400DeleteSystemLevelEndpointTag200ResponseToJSON,
-    OBPv400GetDoubleEntryTransaction200ResponseFromJSON,
-    OBPv400GetDoubleEntryTransaction200ResponseToJSON,
-    OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsFromJSON,
-    OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsToJSON,
-    OBPv400GetTransactionAttributes200ResponseFromJSON,
-    OBPv400GetTransactionAttributes200ResponseToJSON,
-    OBPv400GetTransactionRequestAttributeDefinition200ResponseFromJSON,
-    OBPv400GetTransactionRequestAttributeDefinition200ResponseToJSON,
-    OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItemsFromJSON,
-    OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItemsToJSON,
-    OBPv600CreatePersonalDataFieldRequestFromJSON,
-    OBPv600CreatePersonalDataFieldRequestToJSON,
-    OBPv600GetTransactionsForBankAccount200ResponseFromJSON,
-    OBPv600GetTransactionsForBankAccount200ResponseToJSON,
+    AddImageForViewOnTransactionRequestFromJSON,
+    AddImageForViewOnTransactionRequestToJSON,
+    CreateOrUpdateTransactionRequestAttributeDefinitionRequestFromJSON,
+    CreateOrUpdateTransactionRequestAttributeDefinitionRequestToJSON,
+    CreatePersonalDataFieldRequestFromJSON,
+    CreatePersonalDataFieldRequestToJSON,
+    GetCommentsForViewOnTransaction200ResponseFromJSON,
+    GetCommentsForViewOnTransaction200ResponseToJSON,
+    GetCoreTransactionsForBankAccount200ResponseFromJSON,
+    GetCoreTransactionsForBankAccount200ResponseToJSON,
+    GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInnerFromJSON,
+    GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInnerToJSON,
+    GetDoubleEntryTransaction200ResponseFromJSON,
+    GetDoubleEntryTransaction200ResponseToJSON,
+    GetFirehoseTransactionsForBankAccount200ResponseFromJSON,
+    GetFirehoseTransactionsForBankAccount200ResponseToJSON,
+    GetImagesForViewOnTransaction200ResponseFromJSON,
+    GetImagesForViewOnTransaction200ResponseToJSON,
+    GetOtherAccountForTransaction200ResponseFromJSON,
+    GetOtherAccountForTransaction200ResponseToJSON,
+    GetTagsForViewOnAccount200ResponseTagsInnerFromJSON,
+    GetTagsForViewOnAccount200ResponseTagsInnerToJSON,
+    GetTransactionAttributes200ResponseFromJSON,
+    GetTransactionAttributes200ResponseToJSON,
+    GetTransactionByIdForBankAccount200ResponseFromJSON,
+    GetTransactionByIdForBankAccount200ResponseToJSON,
+    GetTransactionByIdForBankAccount200ResponseMetadataImagesInnerFromJSON,
+    GetTransactionByIdForBankAccount200ResponseMetadataImagesInnerToJSON,
+    GetTransactionNarrative200ResponseFromJSON,
+    GetTransactionNarrative200ResponseToJSON,
+    GetTransactionRequestAttributeDefinition200ResponseFromJSON,
+    GetTransactionRequestAttributeDefinition200ResponseToJSON,
+    GetTransactionRequestAttributeDefinition200ResponseAttributesInnerFromJSON,
+    GetTransactionRequestAttributeDefinition200ResponseAttributesInnerToJSON,
+    GetTransactionTypes200ResponseTransactionTypesInnerIdFromJSON,
+    GetTransactionTypes200ResponseTransactionTypesInnerIdToJSON,
+    GetTransactionsForBankAccount200ResponseFromJSON,
+    GetTransactionsForBankAccount200ResponseToJSON,
+    GetWhereTagForViewOnTransaction200ResponseFromJSON,
+    GetWhereTagForViewOnTransaction200ResponseToJSON,
+    UpdateTransactionNarrative200ResponseFromJSON,
+    UpdateTransactionNarrative200ResponseToJSON,
+    UpdateWhereTagForViewOnTransactionRequestFromJSON,
+    UpdateWhereTagForViewOnTransactionRequestToJSON,
 } from '../models/index';
 
-export interface OBPv121AddCommentForViewOnTransactionRequest {
+export interface AddCommentForViewOnTransactionRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     transactionid: string;
-    oBPv400DeleteSystemLevelEndpointTag200Response: OBPv400DeleteSystemLevelEndpointTag200Response;
+    getTransactionTypes200ResponseTransactionTypesInnerId: GetTransactionTypes200ResponseTransactionTypesInnerId;
 }
 
-export interface OBPv121AddImageForViewOnTransactionOperationRequest {
+export interface AddImageForViewOnTransactionOperationRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     transactionid: string;
-    oBPv121AddImageForViewOnTransactionRequest: OBPv121AddImageForViewOnTransactionRequest;
+    addImageForViewOnTransactionRequest: AddImageForViewOnTransactionRequest;
 }
 
-export interface OBPv121AddTagForViewOnTransactionRequest {
+export interface AddTagForViewOnTransactionRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     transactionid: string;
-    oBPv400DeleteSystemLevelEndpointTag200Response: OBPv400DeleteSystemLevelEndpointTag200Response;
+    getTransactionTypes200ResponseTransactionTypesInnerId: GetTransactionTypes200ResponseTransactionTypesInnerId;
 }
 
-export interface OBPv121AddTransactionNarrativeRequest {
+export interface AddTransactionNarrativeRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     transactionid: string;
-    oBPv121GetTransactionNarrative200Response: OBPv121GetTransactionNarrative200Response;
+    getTransactionNarrative200Response: GetTransactionNarrative200Response;
 }
 
-export interface OBPv121AddWhereTagForViewOnTransactionRequest {
+export interface AddWhereTagForViewOnTransactionRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     transactionid: string;
-    oBPv121UpdateWhereTagForViewOnTransactionRequest: OBPv121UpdateWhereTagForViewOnTransactionRequest;
+    updateWhereTagForViewOnTransactionRequest: UpdateWhereTagForViewOnTransactionRequest;
 }
 
-export interface OBPv121DeleteCommentForViewOnTransactionRequest {
+export interface CreateOrUpdateTransactionAttributeDefinitionRequest {
+    bankid: string;
+    createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest;
+}
+
+export interface CreateTransactionAttributeRequest {
+    bankid: string;
+    accountid: string;
+    transactionid: string;
+    createPersonalDataFieldRequest: CreatePersonalDataFieldRequest;
+}
+
+export interface DeleteCommentForViewOnTransactionRequest {
     bankid: string;
     accountid: string;
     viewid: string;
@@ -133,7 +145,7 @@ export interface OBPv121DeleteCommentForViewOnTransactionRequest {
     commentid: string;
 }
 
-export interface OBPv121DeleteImageForViewOnTransactionRequest {
+export interface DeleteImageForViewOnTransactionRequest {
     bankid: string;
     accountid: string;
     viewid: string;
@@ -141,7 +153,7 @@ export interface OBPv121DeleteImageForViewOnTransactionRequest {
     imageid: string;
 }
 
-export interface OBPv121DeleteTagForViewOnTransactionRequest {
+export interface DeleteTagForViewOnTransactionRequest {
     bankid: string;
     accountid: string;
     viewid: string;
@@ -149,159 +161,147 @@ export interface OBPv121DeleteTagForViewOnTransactionRequest {
     tagid: string;
 }
 
-export interface OBPv121DeleteTransactionNarrativeRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    transactionid: string;
-}
-
-export interface OBPv121DeleteWhereTagForViewOnTransactionRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    transactionid: string;
-}
-
-export interface OBPv121GetCommentsForViewOnTransactionRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    transactionid: string;
-}
-
-export interface OBPv121GetImagesForViewOnTransactionRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    transactionid: string;
-}
-
-export interface OBPv121GetOtherAccountForTransactionRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    transactionid: string;
-}
-
-export interface OBPv121GetTagsForViewOnTransactionRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    transactionid: string;
-}
-
-export interface OBPv121GetTransactionNarrativeRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    transactionid: string;
-}
-
-export interface OBPv121GetWhereTagForViewOnTransactionRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    transactionid: string;
-}
-
-export interface OBPv121UpdateTransactionNarrativeRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    transactionid: string;
-    oBPv121GetTransactionNarrative200Response: OBPv121GetTransactionNarrative200Response;
-}
-
-export interface OBPv121UpdateWhereTagForViewOnTransactionOperationRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    transactionid: string;
-    oBPv121UpdateWhereTagForViewOnTransactionRequest: OBPv121UpdateWhereTagForViewOnTransactionRequest;
-}
-
-export interface OBPv300GetCoreTransactionsForBankAccountRequest {
-    bankid: string;
-    accountid: string;
-}
-
-export interface OBPv300GetFirehoseTransactionsForBankAccountRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-}
-
-export interface OBPv310GetTransactionByIdForBankAccountRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    transactionid: string;
-}
-
-export interface OBPv400CreateOrUpdateTransactionAttributeDefinitionRequest {
-    bankid: string;
-    oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest;
-}
-
-export interface OBPv400CreateTransactionAttributeRequest {
-    bankid: string;
-    accountid: string;
-    transactionid: string;
-    oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest;
-}
-
-export interface OBPv400DeleteTransactionAttributeDefinitionRequest {
+export interface DeleteTransactionAttributeDefinitionRequest {
     bankid: string;
     attributedefinitionid: string;
 }
 
-export interface OBPv400DeleteTransactionCascadeRequest {
+export interface DeleteTransactionCascadeRequest {
     bankid: string;
     accountid: string;
     transactionid: string;
 }
 
-export interface OBPv400GetBalancingTransactionRequest {
-    transactionid: string;
-}
-
-export interface OBPv400GetDoubleEntryTransactionRequest {
+export interface DeleteTransactionNarrativeRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     transactionid: string;
 }
 
-export interface OBPv400GetTransactionAttributeByIdRequest {
+export interface DeleteWhereTagForViewOnTransactionRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    transactionid: string;
+}
+
+export interface GetBalancingTransactionRequest {
+    transactionid: string;
+}
+
+export interface GetCommentsForViewOnTransactionRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    transactionid: string;
+}
+
+export interface GetCoreTransactionsForBankAccountRequest {
+    bankid: string;
+    accountid: string;
+}
+
+export interface GetDoubleEntryTransactionRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    transactionid: string;
+}
+
+export interface GetFirehoseTransactionsForBankAccountRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+}
+
+export interface GetImagesForViewOnTransactionRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    transactionid: string;
+}
+
+export interface GetOtherAccountForTransactionRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    transactionid: string;
+}
+
+export interface GetTagsForViewOnTransactionRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    transactionid: string;
+}
+
+export interface GetTransactionAttributeByIdRequest {
     bankid: string;
     accountid: string;
     transactionid: string;
     attributeid: string;
 }
 
-export interface OBPv400GetTransactionAttributeDefinitionRequest {
+export interface GetTransactionAttributeDefinitionRequest {
     bankid: string;
 }
 
-export interface OBPv400GetTransactionAttributesRequest {
+export interface GetTransactionAttributesRequest {
     bankid: string;
     accountid: string;
     transactionid: string;
 }
 
-export interface OBPv400UpdateTransactionAttributeRequest {
+export interface GetTransactionByIdForBankAccountRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    transactionid: string;
+}
+
+export interface GetTransactionNarrativeRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    transactionid: string;
+}
+
+export interface GetTransactionsForBankAccountRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+}
+
+export interface GetWhereTagForViewOnTransactionRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    transactionid: string;
+}
+
+export interface UpdateTransactionAttributeRequest {
     bankid: string;
     accountid: string;
     transactionid: string;
     accountattributeid: string;
-    oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest;
+    createPersonalDataFieldRequest: CreatePersonalDataFieldRequest;
 }
 
-export interface OBPv600GetTransactionsForBankAccountRequest {
+export interface UpdateTransactionNarrativeRequest {
     bankid: string;
     accountid: string;
     viewid: string;
+    transactionid: string;
+    getTransactionNarrative200Response: GetTransactionNarrative200Response;
+}
+
+export interface UpdateWhereTagForViewOnTransactionOperationRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    transactionid: string;
+    updateWhereTagForViewOnTransactionRequest: UpdateWhereTagForViewOnTransactionRequest;
 }
 
 /**
@@ -310,41 +310,41 @@ export interface OBPv600GetTransactionsForBankAccountRequest {
 export class TransactionApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv121AddCommentForViewOnTransaction without sending the request
+     * Creates request options for addCommentForViewOnTransaction without sending the request
      */
-    async oBPv121AddCommentForViewOnTransactionRequestOpts(requestParameters: OBPv121AddCommentForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
+    async addCommentForViewOnTransactionRequestOpts(requestParameters: AddCommentForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121AddCommentForViewOnTransaction().'
+                'Required parameter "bankid" was null or undefined when calling addCommentForViewOnTransaction().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121AddCommentForViewOnTransaction().'
+                'Required parameter "accountid" was null or undefined when calling addCommentForViewOnTransaction().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121AddCommentForViewOnTransaction().'
+                'Required parameter "viewid" was null or undefined when calling addCommentForViewOnTransaction().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121AddCommentForViewOnTransaction().'
+                'Required parameter "transactionid" was null or undefined when calling addCommentForViewOnTransaction().'
             );
         }
 
-        if (requestParameters['oBPv400DeleteSystemLevelEndpointTag200Response'] == null) {
+        if (requestParameters['getTransactionTypes200ResponseTransactionTypesInnerId'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400DeleteSystemLevelEndpointTag200Response',
-                'Required parameter "oBPv400DeleteSystemLevelEndpointTag200Response" was null or undefined when calling oBPv121AddCommentForViewOnTransaction().'
+                'getTransactionTypes200ResponseTransactionTypesInnerId',
+                'Required parameter "getTransactionTypes200ResponseTransactionTypesInnerId" was null or undefined when calling addCommentForViewOnTransaction().'
             );
         }
 
@@ -364,7 +364,7 @@ export class TransactionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -379,7 +379,7 @@ export class TransactionApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400DeleteSystemLevelEndpointTag200ResponseToJSON(requestParameters['oBPv400DeleteSystemLevelEndpointTag200Response']),
+            body: GetTransactionTypes200ResponseTransactionTypesInnerIdToJSON(requestParameters['getTransactionTypes200ResponseTransactionTypesInnerId']),
         };
     }
 
@@ -387,58 +387,58 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Posts a comment about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>${authenticationRequiredMessage(false)}</p> <p>Authentication is required since the comment is linked with the user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Add a Transaction Comment
      */
-    async oBPv121AddCommentForViewOnTransactionRaw(requestParameters: OBPv121AddCommentForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>> {
-        const requestOptions = await this.oBPv121AddCommentForViewOnTransactionRequestOpts(requestParameters);
+    async addCommentForViewOnTransactionRaw(requestParameters: AddCommentForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner>> {
+        const requestOptions = await this.addCommentForViewOnTransactionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetTagsForViewOnAccount200ResponseTagsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Posts a comment about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>${authenticationRequiredMessage(false)}</p> <p>Authentication is required since the comment is linked with the user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Add a Transaction Comment
      */
-    async oBPv121AddCommentForViewOnTransaction(requestParameters: OBPv121AddCommentForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> {
-        const response = await this.oBPv121AddCommentForViewOnTransactionRaw(requestParameters, initOverrides);
+    async addCommentForViewOnTransaction(requestParameters: AddCommentForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetTagsForViewOnAccount200ResponseTagsInner> {
+        const response = await this.addCommentForViewOnTransactionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121AddImageForViewOnTransaction without sending the request
+     * Creates request options for addImageForViewOnTransaction without sending the request
      */
-    async oBPv121AddImageForViewOnTransactionRequestOpts(requestParameters: OBPv121AddImageForViewOnTransactionOperationRequest): Promise<runtime.RequestOpts> {
+    async addImageForViewOnTransactionRequestOpts(requestParameters: AddImageForViewOnTransactionOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121AddImageForViewOnTransaction().'
+                'Required parameter "bankid" was null or undefined when calling addImageForViewOnTransaction().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121AddImageForViewOnTransaction().'
+                'Required parameter "accountid" was null or undefined when calling addImageForViewOnTransaction().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121AddImageForViewOnTransaction().'
+                'Required parameter "viewid" was null or undefined when calling addImageForViewOnTransaction().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121AddImageForViewOnTransaction().'
+                'Required parameter "transactionid" was null or undefined when calling addImageForViewOnTransaction().'
             );
         }
 
-        if (requestParameters['oBPv121AddImageForViewOnTransactionRequest'] == null) {
+        if (requestParameters['addImageForViewOnTransactionRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121AddImageForViewOnTransactionRequest',
-                'Required parameter "oBPv121AddImageForViewOnTransactionRequest" was null or undefined when calling oBPv121AddImageForViewOnTransaction().'
+                'addImageForViewOnTransactionRequest',
+                'Required parameter "addImageForViewOnTransactionRequest" was null or undefined when calling addImageForViewOnTransaction().'
             );
         }
 
@@ -458,7 +458,7 @@ export class TransactionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -473,7 +473,7 @@ export class TransactionApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121AddImageForViewOnTransactionRequestToJSON(requestParameters['oBPv121AddImageForViewOnTransactionRequest']),
+            body: AddImageForViewOnTransactionRequestToJSON(requestParameters['addImageForViewOnTransactionRequest']),
         };
     }
 
@@ -481,58 +481,58 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Posts an image about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The image is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
      * Add a Transaction Image
      */
-    async oBPv121AddImageForViewOnTransactionRaw(requestParameters: OBPv121AddImageForViewOnTransactionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems>> {
-        const requestOptions = await this.oBPv121AddImageForViewOnTransactionRequestOpts(requestParameters);
+    async addImageForViewOnTransactionRaw(requestParameters: AddImageForViewOnTransactionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetTransactionByIdForBankAccount200ResponseMetadataImagesInner>> {
+        const requestOptions = await this.addImageForViewOnTransactionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetTransactionByIdForBankAccount200ResponseMetadataImagesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Posts an image about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The image is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
      * Add a Transaction Image
      */
-    async oBPv121AddImageForViewOnTransaction(requestParameters: OBPv121AddImageForViewOnTransactionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems> {
-        const response = await this.oBPv121AddImageForViewOnTransactionRaw(requestParameters, initOverrides);
+    async addImageForViewOnTransaction(requestParameters: AddImageForViewOnTransactionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetTransactionByIdForBankAccount200ResponseMetadataImagesInner> {
+        const response = await this.addImageForViewOnTransactionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121AddTagForViewOnTransaction without sending the request
+     * Creates request options for addTagForViewOnTransaction without sending the request
      */
-    async oBPv121AddTagForViewOnTransactionRequestOpts(requestParameters: OBPv121AddTagForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
+    async addTagForViewOnTransactionRequestOpts(requestParameters: AddTagForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121AddTagForViewOnTransaction().'
+                'Required parameter "bankid" was null or undefined when calling addTagForViewOnTransaction().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121AddTagForViewOnTransaction().'
+                'Required parameter "accountid" was null or undefined when calling addTagForViewOnTransaction().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121AddTagForViewOnTransaction().'
+                'Required parameter "viewid" was null or undefined when calling addTagForViewOnTransaction().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121AddTagForViewOnTransaction().'
+                'Required parameter "transactionid" was null or undefined when calling addTagForViewOnTransaction().'
             );
         }
 
-        if (requestParameters['oBPv400DeleteSystemLevelEndpointTag200Response'] == null) {
+        if (requestParameters['getTransactionTypes200ResponseTransactionTypesInnerId'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400DeleteSystemLevelEndpointTag200Response',
-                'Required parameter "oBPv400DeleteSystemLevelEndpointTag200Response" was null or undefined when calling oBPv121AddTagForViewOnTransaction().'
+                'getTransactionTypes200ResponseTransactionTypesInnerId',
+                'Required parameter "getTransactionTypes200ResponseTransactionTypesInnerId" was null or undefined when calling addTagForViewOnTransaction().'
             );
         }
 
@@ -552,7 +552,7 @@ export class TransactionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -567,7 +567,7 @@ export class TransactionApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400DeleteSystemLevelEndpointTag200ResponseToJSON(requestParameters['oBPv400DeleteSystemLevelEndpointTag200Response']),
+            body: GetTransactionTypes200ResponseTransactionTypesInnerIdToJSON(requestParameters['getTransactionTypes200ResponseTransactionTypesInnerId']),
         };
     }
 
@@ -575,58 +575,58 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Posts a tag about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Add a Transaction Tag
      */
-    async oBPv121AddTagForViewOnTransactionRaw(requestParameters: OBPv121AddTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>> {
-        const requestOptions = await this.oBPv121AddTagForViewOnTransactionRequestOpts(requestParameters);
+    async addTagForViewOnTransactionRaw(requestParameters: AddTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner>> {
+        const requestOptions = await this.addTagForViewOnTransactionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetTagsForViewOnAccount200ResponseTagsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Posts a tag about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Add a Transaction Tag
      */
-    async oBPv121AddTagForViewOnTransaction(requestParameters: OBPv121AddTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> {
-        const response = await this.oBPv121AddTagForViewOnTransactionRaw(requestParameters, initOverrides);
+    async addTagForViewOnTransaction(requestParameters: AddTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetTagsForViewOnAccount200ResponseTagsInner> {
+        const response = await this.addTagForViewOnTransactionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121AddTransactionNarrative without sending the request
+     * Creates request options for addTransactionNarrative without sending the request
      */
-    async oBPv121AddTransactionNarrativeRequestOpts(requestParameters: OBPv121AddTransactionNarrativeRequest): Promise<runtime.RequestOpts> {
+    async addTransactionNarrativeRequestOpts(requestParameters: AddTransactionNarrativeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121AddTransactionNarrative().'
+                'Required parameter "bankid" was null or undefined when calling addTransactionNarrative().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121AddTransactionNarrative().'
+                'Required parameter "accountid" was null or undefined when calling addTransactionNarrative().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121AddTransactionNarrative().'
+                'Required parameter "viewid" was null or undefined when calling addTransactionNarrative().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121AddTransactionNarrative().'
+                'Required parameter "transactionid" was null or undefined when calling addTransactionNarrative().'
             );
         }
 
-        if (requestParameters['oBPv121GetTransactionNarrative200Response'] == null) {
+        if (requestParameters['getTransactionNarrative200Response'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121GetTransactionNarrative200Response',
-                'Required parameter "oBPv121GetTransactionNarrative200Response" was null or undefined when calling oBPv121AddTransactionNarrative().'
+                'getTransactionNarrative200Response',
+                'Required parameter "getTransactionNarrative200Response" was null or undefined when calling addTransactionNarrative().'
             );
         }
 
@@ -646,7 +646,7 @@ export class TransactionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -661,7 +661,7 @@ export class TransactionApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121GetTransactionNarrative200ResponseToJSON(requestParameters['oBPv121GetTransactionNarrative200Response']),
+            body: GetTransactionNarrative200ResponseToJSON(requestParameters['getTransactionNarrative200Response']),
         };
     }
 
@@ -669,58 +669,58 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Creates a description of the transaction TRANSACTION_ID.</p> <p>Note: Unlike other items of metadata, there is only one &quot;narrative&quot; per transaction accross all views.<br /> If you set narrative via a view e.g. view-x it will be seen via view-y (as long as view-y has permission to see the narrative).</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add a Transaction Narrative
      */
-    async oBPv121AddTransactionNarrativeRaw(requestParameters: OBPv121AddTransactionNarrativeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121AddTransactionNarrativeRequestOpts(requestParameters);
+    async addTransactionNarrativeRaw(requestParameters: AddTransactionNarrativeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.addTransactionNarrativeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Creates a description of the transaction TRANSACTION_ID.</p> <p>Note: Unlike other items of metadata, there is only one &quot;narrative&quot; per transaction accross all views.<br /> If you set narrative via a view e.g. view-x it will be seen via view-y (as long as view-y has permission to see the narrative).</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add a Transaction Narrative
      */
-    async oBPv121AddTransactionNarrative(requestParameters: OBPv121AddTransactionNarrativeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121AddTransactionNarrativeRaw(requestParameters, initOverrides);
+    async addTransactionNarrative(requestParameters: AddTransactionNarrativeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.addTransactionNarrativeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121AddWhereTagForViewOnTransaction without sending the request
+     * Creates request options for addWhereTagForViewOnTransaction without sending the request
      */
-    async oBPv121AddWhereTagForViewOnTransactionRequestOpts(requestParameters: OBPv121AddWhereTagForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
+    async addWhereTagForViewOnTransactionRequestOpts(requestParameters: AddWhereTagForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121AddWhereTagForViewOnTransaction().'
+                'Required parameter "bankid" was null or undefined when calling addWhereTagForViewOnTransaction().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121AddWhereTagForViewOnTransaction().'
+                'Required parameter "accountid" was null or undefined when calling addWhereTagForViewOnTransaction().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121AddWhereTagForViewOnTransaction().'
+                'Required parameter "viewid" was null or undefined when calling addWhereTagForViewOnTransaction().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121AddWhereTagForViewOnTransaction().'
+                'Required parameter "transactionid" was null or undefined when calling addWhereTagForViewOnTransaction().'
             );
         }
 
-        if (requestParameters['oBPv121UpdateWhereTagForViewOnTransactionRequest'] == null) {
+        if (requestParameters['updateWhereTagForViewOnTransactionRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121UpdateWhereTagForViewOnTransactionRequest',
-                'Required parameter "oBPv121UpdateWhereTagForViewOnTransactionRequest" was null or undefined when calling oBPv121AddWhereTagForViewOnTransaction().'
+                'updateWhereTagForViewOnTransactionRequest',
+                'Required parameter "updateWhereTagForViewOnTransactionRequest" was null or undefined when calling addWhereTagForViewOnTransaction().'
             );
         }
 
@@ -740,7 +740,7 @@ export class TransactionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -755,7 +755,7 @@ export class TransactionApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121UpdateWhereTagForViewOnTransactionRequestToJSON(requestParameters['oBPv121UpdateWhereTagForViewOnTransactionRequest']),
+            body: UpdateWhereTagForViewOnTransactionRequestToJSON(requestParameters['updateWhereTagForViewOnTransactionRequest']),
         };
     }
 
@@ -763,58 +763,214 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Creates a &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add a Transaction where Tag
      */
-    async oBPv121AddWhereTagForViewOnTransactionRaw(requestParameters: OBPv121AddWhereTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121AddWhereTagForViewOnTransactionRequestOpts(requestParameters);
+    async addWhereTagForViewOnTransactionRaw(requestParameters: AddWhereTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.addWhereTagForViewOnTransactionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Creates a &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add a Transaction where Tag
      */
-    async oBPv121AddWhereTagForViewOnTransaction(requestParameters: OBPv121AddWhereTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121AddWhereTagForViewOnTransactionRaw(requestParameters, initOverrides);
+    async addWhereTagForViewOnTransaction(requestParameters: AddWhereTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.addWhereTagForViewOnTransactionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121DeleteCommentForViewOnTransaction without sending the request
+     * Creates request options for createOrUpdateTransactionAttributeDefinition without sending the request
      */
-    async oBPv121DeleteCommentForViewOnTransactionRequestOpts(requestParameters: OBPv121DeleteCommentForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
+    async createOrUpdateTransactionAttributeDefinitionRequestOpts(requestParameters: CreateOrUpdateTransactionAttributeDefinitionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121DeleteCommentForViewOnTransaction().'
+                'Required parameter "bankid" was null or undefined when calling createOrUpdateTransactionAttributeDefinition().'
+            );
+        }
+
+        if (requestParameters['createOrUpdateTransactionRequestAttributeDefinitionRequest'] == null) {
+            throw new runtime.RequiredError(
+                'createOrUpdateTransactionRequestAttributeDefinitionRequest',
+                'Required parameter "createOrUpdateTransactionRequestAttributeDefinitionRequest" was null or undefined when calling createOrUpdateTransactionAttributeDefinition().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+
+        return {
+            path: urlPath,
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateOrUpdateTransactionRequestAttributeDefinitionRequestToJSON(requestParameters['createOrUpdateTransactionRequestAttributeDefinitionRequest']),
+        };
+    }
+
+    /**
+     * <p>Create or Update Transaction Attribute Definition</p> <p>The category field must be Transaction</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
+     * Create or Update Transaction Attribute Definition
+     */
+    async createOrUpdateTransactionAttributeDefinitionRaw(requestParameters: CreateOrUpdateTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>> {
+        const requestOptions = await this.createOrUpdateTransactionAttributeDefinitionRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetTransactionRequestAttributeDefinition200ResponseAttributesInnerFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Create or Update Transaction Attribute Definition</p> <p>The category field must be Transaction</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
+     * Create or Update Transaction Attribute Definition
+     */
+    async createOrUpdateTransactionAttributeDefinition(requestParameters: CreateOrUpdateTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> {
+        const response = await this.createOrUpdateTransactionAttributeDefinitionRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for createTransactionAttribute without sending the request
+     */
+    async createTransactionAttributeRequestOpts(requestParameters: CreateTransactionAttributeRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling createTransactionAttribute().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121DeleteCommentForViewOnTransaction().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121DeleteCommentForViewOnTransaction().'
+                'Required parameter "accountid" was null or undefined when calling createTransactionAttribute().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121DeleteCommentForViewOnTransaction().'
+                'Required parameter "transactionid" was null or undefined when calling createTransactionAttribute().'
+            );
+        }
+
+        if (requestParameters['createPersonalDataFieldRequest'] == null) {
+            throw new runtime.RequiredError(
+                'createPersonalDataFieldRequest',
+                'Required parameter "createPersonalDataFieldRequest" was null or undefined when calling createTransactionAttribute().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreatePersonalDataFieldRequestToJSON(requestParameters['createPersonalDataFieldRequest']),
+        };
+    }
+
+    /**
+     * <p>Create Transaction Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Create Transaction Attribute
+     */
+    async createTransactionAttributeRaw(requestParameters: CreateTransactionAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>> {
+        const requestOptions = await this.createTransactionAttributeRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInnerFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Create Transaction Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Create Transaction Attribute
+     */
+    async createTransactionAttribute(requestParameters: CreateTransactionAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> {
+        const response = await this.createTransactionAttributeRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for deleteCommentForViewOnTransaction without sending the request
+     */
+    async deleteCommentForViewOnTransactionRequestOpts(requestParameters: DeleteCommentForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling deleteCommentForViewOnTransaction().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling deleteCommentForViewOnTransaction().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling deleteCommentForViewOnTransaction().'
+            );
+        }
+
+        if (requestParameters['transactionid'] == null) {
+            throw new runtime.RequiredError(
+                'transactionid',
+                'Required parameter "transactionid" was null or undefined when calling deleteCommentForViewOnTransaction().'
             );
         }
 
         if (requestParameters['commentid'] == null) {
             throw new runtime.RequiredError(
                 'commentid',
-                'Required parameter "commentid" was null or undefined when calling oBPv121DeleteCommentForViewOnTransaction().'
+                'Required parameter "commentid" was null or undefined when calling deleteCommentForViewOnTransaction().'
             );
         }
 
@@ -832,7 +988,7 @@ export class TransactionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -855,8 +1011,8 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Delete the comment COMMENT_ID about the transaction TRANSACTION_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>Authentication via OAuth is required. The user must either have owner privileges for this account, or must be the user that posted the comment.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#comment_id\">COMMENT_ID</a>:</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete a Transaction Comment
      */
-    async oBPv121DeleteCommentForViewOnTransactionRaw(requestParameters: OBPv121DeleteCommentForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv121DeleteCommentForViewOnTransactionRequestOpts(requestParameters);
+    async deleteCommentForViewOnTransactionRaw(requestParameters: DeleteCommentForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteCommentForViewOnTransactionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -866,46 +1022,46 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Delete the comment COMMENT_ID about the transaction TRANSACTION_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>Authentication via OAuth is required. The user must either have owner privileges for this account, or must be the user that posted the comment.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#comment_id\">COMMENT_ID</a>:</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete a Transaction Comment
      */
-    async oBPv121DeleteCommentForViewOnTransaction(requestParameters: OBPv121DeleteCommentForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv121DeleteCommentForViewOnTransactionRaw(requestParameters, initOverrides);
+    async deleteCommentForViewOnTransaction(requestParameters: DeleteCommentForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCommentForViewOnTransactionRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv121DeleteImageForViewOnTransaction without sending the request
+     * Creates request options for deleteImageForViewOnTransaction without sending the request
      */
-    async oBPv121DeleteImageForViewOnTransactionRequestOpts(requestParameters: OBPv121DeleteImageForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
+    async deleteImageForViewOnTransactionRequestOpts(requestParameters: DeleteImageForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121DeleteImageForViewOnTransaction().'
+                'Required parameter "bankid" was null or undefined when calling deleteImageForViewOnTransaction().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121DeleteImageForViewOnTransaction().'
+                'Required parameter "accountid" was null or undefined when calling deleteImageForViewOnTransaction().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121DeleteImageForViewOnTransaction().'
+                'Required parameter "viewid" was null or undefined when calling deleteImageForViewOnTransaction().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121DeleteImageForViewOnTransaction().'
+                'Required parameter "transactionid" was null or undefined when calling deleteImageForViewOnTransaction().'
             );
         }
 
         if (requestParameters['imageid'] == null) {
             throw new runtime.RequiredError(
                 'imageid',
-                'Required parameter "imageid" was null or undefined when calling oBPv121DeleteImageForViewOnTransaction().'
+                'Required parameter "imageid" was null or undefined when calling deleteImageForViewOnTransaction().'
             );
         }
 
@@ -923,7 +1079,7 @@ export class TransactionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -946,8 +1102,8 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Deletes the image IMAGE_ID about the transaction TRANSACTION_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>Authentication via OAuth is required. The user must either have owner privileges for this account, or must be the user that posted the image.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#image_id\">IMAGE_ID</a>:</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete a Transaction Image
      */
-    async oBPv121DeleteImageForViewOnTransactionRaw(requestParameters: OBPv121DeleteImageForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv121DeleteImageForViewOnTransactionRequestOpts(requestParameters);
+    async deleteImageForViewOnTransactionRaw(requestParameters: DeleteImageForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteImageForViewOnTransactionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -957,46 +1113,46 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Deletes the image IMAGE_ID about the transaction TRANSACTION_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>Authentication via OAuth is required. The user must either have owner privileges for this account, or must be the user that posted the image.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#image_id\">IMAGE_ID</a>:</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete a Transaction Image
      */
-    async oBPv121DeleteImageForViewOnTransaction(requestParameters: OBPv121DeleteImageForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv121DeleteImageForViewOnTransactionRaw(requestParameters, initOverrides);
+    async deleteImageForViewOnTransaction(requestParameters: DeleteImageForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteImageForViewOnTransactionRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv121DeleteTagForViewOnTransaction without sending the request
+     * Creates request options for deleteTagForViewOnTransaction without sending the request
      */
-    async oBPv121DeleteTagForViewOnTransactionRequestOpts(requestParameters: OBPv121DeleteTagForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
+    async deleteTagForViewOnTransactionRequestOpts(requestParameters: DeleteTagForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121DeleteTagForViewOnTransaction().'
+                'Required parameter "bankid" was null or undefined when calling deleteTagForViewOnTransaction().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121DeleteTagForViewOnTransaction().'
+                'Required parameter "accountid" was null or undefined when calling deleteTagForViewOnTransaction().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121DeleteTagForViewOnTransaction().'
+                'Required parameter "viewid" was null or undefined when calling deleteTagForViewOnTransaction().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121DeleteTagForViewOnTransaction().'
+                'Required parameter "transactionid" was null or undefined when calling deleteTagForViewOnTransaction().'
             );
         }
 
         if (requestParameters['tagid'] == null) {
             throw new runtime.RequiredError(
                 'tagid',
-                'Required parameter "tagid" was null or undefined when calling oBPv121DeleteTagForViewOnTransaction().'
+                'Required parameter "tagid" was null or undefined when calling deleteTagForViewOnTransaction().'
             );
         }
 
@@ -1024,8 +1180,8 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Deletes the tag TAG_ID about the transaction TRANSACTION_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.<br /> Authentication via OAuth is required. The user must either have owner privileges for this account,<br /> or must be the user that posted the tag.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#tag_id\">TAG_ID</a>:</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete a Transaction Tag
      */
-    async oBPv121DeleteTagForViewOnTransactionRaw(requestParameters: OBPv121DeleteTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv121DeleteTagForViewOnTransactionRequestOpts(requestParameters);
+    async deleteTagForViewOnTransactionRaw(requestParameters: DeleteTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteTagForViewOnTransactionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1035,39 +1191,25 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Deletes the tag TAG_ID about the transaction TRANSACTION_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.<br /> Authentication via OAuth is required. The user must either have owner privileges for this account,<br /> or must be the user that posted the tag.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#tag_id\">TAG_ID</a>:</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete a Transaction Tag
      */
-    async oBPv121DeleteTagForViewOnTransaction(requestParameters: OBPv121DeleteTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv121DeleteTagForViewOnTransactionRaw(requestParameters, initOverrides);
+    async deleteTagForViewOnTransaction(requestParameters: DeleteTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteTagForViewOnTransactionRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv121DeleteTransactionNarrative without sending the request
+     * Creates request options for deleteTransactionAttributeDefinition without sending the request
      */
-    async oBPv121DeleteTransactionNarrativeRequestOpts(requestParameters: OBPv121DeleteTransactionNarrativeRequest): Promise<runtime.RequestOpts> {
+    async deleteTransactionAttributeDefinitionRequestOpts(requestParameters: DeleteTransactionAttributeDefinitionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121DeleteTransactionNarrative().'
+                'Required parameter "bankid" was null or undefined when calling deleteTransactionAttributeDefinition().'
             );
         }
 
-        if (requestParameters['accountid'] == null) {
+        if (requestParameters['attributedefinitionid'] == null) {
             throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121DeleteTransactionNarrative().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121DeleteTransactionNarrative().'
-            );
-        }
-
-        if (requestParameters['transactionid'] == null) {
-            throw new runtime.RequiredError(
-                'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121DeleteTransactionNarrative().'
+                'attributedefinitionid',
+                'Required parameter "attributedefinitionid" was null or undefined when calling deleteTransactionAttributeDefinition().'
             );
         }
 
@@ -1085,7 +1227,163 @@ export class TransactionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"attributedefinitionid"}}`, encodeURIComponent(String(requestParameters['attributedefinitionid'])));
+
+        return {
+            path: urlPath,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Delete Transaction Attribute Definition by ATTRIBUTE_DEFINITION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#attribute_definition_id\">ATTRIBUTE_DEFINITION_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
+     * Delete Transaction Attribute Definition
+     */
+    async deleteTransactionAttributeDefinitionRaw(requestParameters: DeleteTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteTransactionAttributeDefinitionRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * <p>Delete Transaction Attribute Definition by ATTRIBUTE_DEFINITION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#attribute_definition_id\">ATTRIBUTE_DEFINITION_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
+     * Delete Transaction Attribute Definition
+     */
+    async deleteTransactionAttributeDefinition(requestParameters: DeleteTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteTransactionAttributeDefinitionRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Creates request options for deleteTransactionCascade without sending the request
+     */
+    async deleteTransactionCascadeRequestOpts(requestParameters: DeleteTransactionCascadeRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling deleteTransactionCascade().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling deleteTransactionCascade().'
+            );
+        }
+
+        if (requestParameters['transactionid'] == null) {
+            throw new runtime.RequiredError(
+                'transactionid',
+                'Required parameter "transactionid" was null or undefined when calling deleteTransactionCascade().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
+
+        return {
+            path: urlPath,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Delete a Transaction Cascade specified by TRANSACTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> 
+     * Delete Transaction Cascade
+     */
+    async deleteTransactionCascadeRaw(requestParameters: DeleteTransactionCascadeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteTransactionCascadeRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * <p>Delete a Transaction Cascade specified by TRANSACTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> 
+     * Delete Transaction Cascade
+     */
+    async deleteTransactionCascade(requestParameters: DeleteTransactionCascadeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteTransactionCascadeRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Creates request options for deleteTransactionNarrative without sending the request
+     */
+    async deleteTransactionNarrativeRequestOpts(requestParameters: DeleteTransactionNarrativeRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling deleteTransactionNarrative().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling deleteTransactionNarrative().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling deleteTransactionNarrative().'
+            );
+        }
+
+        if (requestParameters['transactionid'] == null) {
+            throw new runtime.RequiredError(
+                'transactionid',
+                'Required parameter "transactionid" was null or undefined when calling deleteTransactionNarrative().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -1107,8 +1405,8 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Deletes the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete a Transaction Narrative
      */
-    async oBPv121DeleteTransactionNarrativeRaw(requestParameters: OBPv121DeleteTransactionNarrativeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv121DeleteTransactionNarrativeRequestOpts(requestParameters);
+    async deleteTransactionNarrativeRaw(requestParameters: DeleteTransactionNarrativeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteTransactionNarrativeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1118,39 +1416,39 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Deletes the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete a Transaction Narrative
      */
-    async oBPv121DeleteTransactionNarrative(requestParameters: OBPv121DeleteTransactionNarrativeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv121DeleteTransactionNarrativeRaw(requestParameters, initOverrides);
+    async deleteTransactionNarrative(requestParameters: DeleteTransactionNarrativeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteTransactionNarrativeRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv121DeleteWhereTagForViewOnTransaction without sending the request
+     * Creates request options for deleteWhereTagForViewOnTransaction without sending the request
      */
-    async oBPv121DeleteWhereTagForViewOnTransactionRequestOpts(requestParameters: OBPv121DeleteWhereTagForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
+    async deleteWhereTagForViewOnTransactionRequestOpts(requestParameters: DeleteWhereTagForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121DeleteWhereTagForViewOnTransaction().'
+                'Required parameter "bankid" was null or undefined when calling deleteWhereTagForViewOnTransaction().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121DeleteWhereTagForViewOnTransaction().'
+                'Required parameter "accountid" was null or undefined when calling deleteWhereTagForViewOnTransaction().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121DeleteWhereTagForViewOnTransaction().'
+                'Required parameter "viewid" was null or undefined when calling deleteWhereTagForViewOnTransaction().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121DeleteWhereTagForViewOnTransaction().'
+                'Required parameter "transactionid" was null or undefined when calling deleteWhereTagForViewOnTransaction().'
             );
         }
 
@@ -1168,7 +1466,7 @@ export class TransactionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -1190,8 +1488,8 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Deletes the where tag of the transaction TRANSACTION_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The user must either have owner privileges for this account, or must be the user that posted the geo tag.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete a Transaction Tag
      */
-    async oBPv121DeleteWhereTagForViewOnTransactionRaw(requestParameters: OBPv121DeleteWhereTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv121DeleteWhereTagForViewOnTransactionRequestOpts(requestParameters);
+    async deleteWhereTagForViewOnTransactionRaw(requestParameters: DeleteWhereTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteWhereTagForViewOnTransactionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1201,39 +1499,18 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Deletes the where tag of the transaction TRANSACTION_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The user must either have owner privileges for this account, or must be the user that posted the geo tag.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete a Transaction Tag
      */
-    async oBPv121DeleteWhereTagForViewOnTransaction(requestParameters: OBPv121DeleteWhereTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv121DeleteWhereTagForViewOnTransactionRaw(requestParameters, initOverrides);
+    async deleteWhereTagForViewOnTransaction(requestParameters: DeleteWhereTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteWhereTagForViewOnTransactionRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv121GetCommentsForViewOnTransaction without sending the request
+     * Creates request options for getBalancingTransaction without sending the request
      */
-    async oBPv121GetCommentsForViewOnTransactionRequestOpts(requestParameters: OBPv121GetCommentsForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121GetCommentsForViewOnTransaction().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121GetCommentsForViewOnTransaction().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121GetCommentsForViewOnTransaction().'
-            );
-        }
-
+    async getBalancingTransactionRequestOpts(requestParameters: GetBalancingTransactionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121GetCommentsForViewOnTransaction().'
+                'Required parameter "transactionid" was null or undefined when calling getBalancingTransaction().'
             );
         }
 
@@ -1251,7 +1528,88 @@ export class TransactionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/transactions/{transactionid}/balancing-transaction`;
+        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Get Balancing Transaction</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>credit_transaction</strong></a>: credit_transaction</p> <p><a href=\"/glossary#\"><strong>debit_transaction</strong></a>: debit_transaction</p> <p><a href=\"/glossary#\"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#\"><strong>transaction_request</strong></a>: transaction_request</p> <p><a href=\"/glossary#\"><strong>transaction_request_id</strong></a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> 
+     * Get Balancing Transaction
+     */
+    async getBalancingTransactionRaw(requestParameters: GetBalancingTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetDoubleEntryTransaction200Response>> {
+        const requestOptions = await this.getBalancingTransactionRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetDoubleEntryTransaction200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Get Balancing Transaction</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>credit_transaction</strong></a>: credit_transaction</p> <p><a href=\"/glossary#\"><strong>debit_transaction</strong></a>: debit_transaction</p> <p><a href=\"/glossary#\"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#\"><strong>transaction_request</strong></a>: transaction_request</p> <p><a href=\"/glossary#\"><strong>transaction_request_id</strong></a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> 
+     * Get Balancing Transaction
+     */
+    async getBalancingTransaction(requestParameters: GetBalancingTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetDoubleEntryTransaction200Response> {
+        const response = await this.getBalancingTransactionRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getCommentsForViewOnTransaction without sending the request
+     */
+    async getCommentsForViewOnTransactionRequestOpts(requestParameters: GetCommentsForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling getCommentsForViewOnTransaction().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling getCommentsForViewOnTransaction().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling getCommentsForViewOnTransaction().'
+            );
+        }
+
+        if (requestParameters['transactionid'] == null) {
+            throw new runtime.RequiredError(
+                'transactionid',
+                'Required parameter "transactionid" was null or undefined when calling getCommentsForViewOnTransaction().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -1273,51 +1631,37 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Returns the transaction TRANSACTION_ID comments made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get Transaction Comments
      */
-    async oBPv121GetCommentsForViewOnTransactionRaw(requestParameters: OBPv121GetCommentsForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121GetCommentsForViewOnTransaction200Response>> {
-        const requestOptions = await this.oBPv121GetCommentsForViewOnTransactionRequestOpts(requestParameters);
+    async getCommentsForViewOnTransactionRaw(requestParameters: GetCommentsForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCommentsForViewOnTransaction200Response>> {
+        const requestOptions = await this.getCommentsForViewOnTransactionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121GetCommentsForViewOnTransaction200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCommentsForViewOnTransaction200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Returns the transaction TRANSACTION_ID comments made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get Transaction Comments
      */
-    async oBPv121GetCommentsForViewOnTransaction(requestParameters: OBPv121GetCommentsForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121GetCommentsForViewOnTransaction200Response> {
-        const response = await this.oBPv121GetCommentsForViewOnTransactionRaw(requestParameters, initOverrides);
+    async getCommentsForViewOnTransaction(requestParameters: GetCommentsForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCommentsForViewOnTransaction200Response> {
+        const response = await this.getCommentsForViewOnTransactionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121GetImagesForViewOnTransaction without sending the request
+     * Creates request options for getCoreTransactionsForBankAccount without sending the request
      */
-    async oBPv121GetImagesForViewOnTransactionRequestOpts(requestParameters: OBPv121GetImagesForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
+    async getCoreTransactionsForBankAccountRequestOpts(requestParameters: GetCoreTransactionsForBankAccountRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121GetImagesForViewOnTransaction().'
+                'Required parameter "bankid" was null or undefined when calling getCoreTransactionsForBankAccount().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121GetImagesForViewOnTransaction().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121GetImagesForViewOnTransaction().'
-            );
-        }
-
-        if (requestParameters['transactionid'] == null) {
-            throw new runtime.RequiredError(
-                'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121GetImagesForViewOnTransaction().'
+                'Required parameter "accountid" was null or undefined when calling getCoreTransactionsForBankAccount().'
             );
         }
 
@@ -1335,7 +1679,249 @@ export class TransactionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Returns transactions list (Core info) of the account specified by ACCOUNT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.487Z. NOTE! The default value is now (2026-03-25T12:16:24.487Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Get Transactions for Account (Core)
+     */
+    async getCoreTransactionsForBankAccountRaw(requestParameters: GetCoreTransactionsForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCoreTransactionsForBankAccount200Response>> {
+        const requestOptions = await this.getCoreTransactionsForBankAccountRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCoreTransactionsForBankAccount200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Returns transactions list (Core info) of the account specified by ACCOUNT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.487Z. NOTE! The default value is now (2026-03-25T12:16:24.487Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Get Transactions for Account (Core)
+     */
+    async getCoreTransactionsForBankAccount(requestParameters: GetCoreTransactionsForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCoreTransactionsForBankAccount200Response> {
+        const response = await this.getCoreTransactionsForBankAccountRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getDoubleEntryTransaction without sending the request
+     */
+    async getDoubleEntryTransactionRequestOpts(requestParameters: GetDoubleEntryTransactionRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling getDoubleEntryTransaction().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling getDoubleEntryTransaction().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling getDoubleEntryTransaction().'
+            );
+        }
+
+        if (requestParameters['transactionid'] == null) {
+            throw new runtime.RequiredError(
+                'transactionid',
+                'Required parameter "transactionid" was null or undefined when calling getDoubleEntryTransaction().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/double-entry-transaction`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Get Double Entry Transaction</p> <p>This endpoint can be used to see the double entry transactions. It returns the <code>bank_id</code>, <code>account_id</code> and <code>transaction_id</code><br /> for the debit end the credit transaction. The other side account can be a settlement account or an OBP account.</p> <p>The endpoint also provide the <code>transaction_request</code> object which contains the <code>bank_id</code>, <code>account_id</code> and<br /> <code>transaction_request_id</code> of the transaction request at the origin of the transaction. Please note that if none<br /> transaction request is at the origin of the transaction, the <code>transaction_request</code> object will be <code>null</code>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>credit_transaction</strong></a>: credit_transaction</p> <p><a href=\"/glossary#\"><strong>debit_transaction</strong></a>: debit_transaction</p> <p><a href=\"/glossary#\"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#\"><strong>transaction_request</strong></a>: transaction_request</p> <p><a href=\"/glossary#\"><strong>transaction_request_id</strong></a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> 
+     * Get Double Entry Transaction
+     */
+    async getDoubleEntryTransactionRaw(requestParameters: GetDoubleEntryTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetDoubleEntryTransaction200Response>> {
+        const requestOptions = await this.getDoubleEntryTransactionRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetDoubleEntryTransaction200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Get Double Entry Transaction</p> <p>This endpoint can be used to see the double entry transactions. It returns the <code>bank_id</code>, <code>account_id</code> and <code>transaction_id</code><br /> for the debit end the credit transaction. The other side account can be a settlement account or an OBP account.</p> <p>The endpoint also provide the <code>transaction_request</code> object which contains the <code>bank_id</code>, <code>account_id</code> and<br /> <code>transaction_request_id</code> of the transaction request at the origin of the transaction. Please note that if none<br /> transaction request is at the origin of the transaction, the <code>transaction_request</code> object will be <code>null</code>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>credit_transaction</strong></a>: credit_transaction</p> <p><a href=\"/glossary#\"><strong>debit_transaction</strong></a>: debit_transaction</p> <p><a href=\"/glossary#\"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#\"><strong>transaction_request</strong></a>: transaction_request</p> <p><a href=\"/glossary#\"><strong>transaction_request_id</strong></a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> 
+     * Get Double Entry Transaction
+     */
+    async getDoubleEntryTransaction(requestParameters: GetDoubleEntryTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetDoubleEntryTransaction200Response> {
+        const response = await this.getDoubleEntryTransactionRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getFirehoseTransactionsForBankAccount without sending the request
+     */
+    async getFirehoseTransactionsForBankAccountRequestOpts(requestParameters: GetFirehoseTransactionsForBankAccountRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling getFirehoseTransactionsForBankAccount().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling getFirehoseTransactionsForBankAccount().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling getFirehoseTransactionsForBankAccount().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Get Transactions for an Account that has a firehose View.</p> <p>Allows bulk access to an account\'s transactions.<br /> User must have the CanUseFirehoseAtAnyBank Role</p> <p>To find ACCOUNT_IDs, use the getFirehoseAccountsAtOneBank call.</p> <p>For VIEW_ID try \'owner\'</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.487Z. NOTE! The default value is now (2026-03-25T12:16:24.487Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+     * Get Firehose Transactions for Account
+     */
+    async getFirehoseTransactionsForBankAccountRaw(requestParameters: GetFirehoseTransactionsForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetFirehoseTransactionsForBankAccount200Response>> {
+        const requestOptions = await this.getFirehoseTransactionsForBankAccountRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetFirehoseTransactionsForBankAccount200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Get Transactions for an Account that has a firehose View.</p> <p>Allows bulk access to an account\'s transactions.<br /> User must have the CanUseFirehoseAtAnyBank Role</p> <p>To find ACCOUNT_IDs, use the getFirehoseAccountsAtOneBank call.</p> <p>For VIEW_ID try \'owner\'</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.487Z. NOTE! The default value is now (2026-03-25T12:16:24.487Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+     * Get Firehose Transactions for Account
+     */
+    async getFirehoseTransactionsForBankAccount(requestParameters: GetFirehoseTransactionsForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetFirehoseTransactionsForBankAccount200Response> {
+        const response = await this.getFirehoseTransactionsForBankAccountRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getImagesForViewOnTransaction without sending the request
+     */
+    async getImagesForViewOnTransactionRequestOpts(requestParameters: GetImagesForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling getImagesForViewOnTransaction().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling getImagesForViewOnTransaction().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling getImagesForViewOnTransaction().'
+            );
+        }
+
+        if (requestParameters['transactionid'] == null) {
+            throw new runtime.RequiredError(
+                'transactionid',
+                'Required parameter "transactionid" was null or undefined when calling getImagesForViewOnTransaction().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -1357,51 +1943,51 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Returns the transaction TRANSACTION_ID images made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
      * Get Transaction Images
      */
-    async oBPv121GetImagesForViewOnTransactionRaw(requestParameters: OBPv121GetImagesForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121GetImagesForViewOnTransaction200Response>> {
-        const requestOptions = await this.oBPv121GetImagesForViewOnTransactionRequestOpts(requestParameters);
+    async getImagesForViewOnTransactionRaw(requestParameters: GetImagesForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetImagesForViewOnTransaction200Response>> {
+        const requestOptions = await this.getImagesForViewOnTransactionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121GetImagesForViewOnTransaction200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetImagesForViewOnTransaction200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Returns the transaction TRANSACTION_ID images made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
      * Get Transaction Images
      */
-    async oBPv121GetImagesForViewOnTransaction(requestParameters: OBPv121GetImagesForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121GetImagesForViewOnTransaction200Response> {
-        const response = await this.oBPv121GetImagesForViewOnTransactionRaw(requestParameters, initOverrides);
+    async getImagesForViewOnTransaction(requestParameters: GetImagesForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetImagesForViewOnTransaction200Response> {
+        const response = await this.getImagesForViewOnTransactionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121GetOtherAccountForTransaction without sending the request
+     * Creates request options for getOtherAccountForTransaction without sending the request
      */
-    async oBPv121GetOtherAccountForTransactionRequestOpts(requestParameters: OBPv121GetOtherAccountForTransactionRequest): Promise<runtime.RequestOpts> {
+    async getOtherAccountForTransactionRequestOpts(requestParameters: GetOtherAccountForTransactionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121GetOtherAccountForTransaction().'
+                'Required parameter "bankid" was null or undefined when calling getOtherAccountForTransaction().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121GetOtherAccountForTransaction().'
+                'Required parameter "accountid" was null or undefined when calling getOtherAccountForTransaction().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121GetOtherAccountForTransaction().'
+                'Required parameter "viewid" was null or undefined when calling getOtherAccountForTransaction().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121GetOtherAccountForTransaction().'
+                'Required parameter "transactionid" was null or undefined when calling getOtherAccountForTransaction().'
             );
         }
 
@@ -1428,51 +2014,51 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
      * Get Other Account of Transaction
      */
-    async oBPv121GetOtherAccountForTransactionRaw(requestParameters: OBPv121GetOtherAccountForTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121GetOtherAccountForTransaction200Response>> {
-        const requestOptions = await this.oBPv121GetOtherAccountForTransactionRequestOpts(requestParameters);
+    async getOtherAccountForTransactionRaw(requestParameters: GetOtherAccountForTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetOtherAccountForTransaction200Response>> {
+        const requestOptions = await this.getOtherAccountForTransactionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121GetOtherAccountForTransaction200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetOtherAccountForTransaction200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
      * Get Other Account of Transaction
      */
-    async oBPv121GetOtherAccountForTransaction(requestParameters: OBPv121GetOtherAccountForTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121GetOtherAccountForTransaction200Response> {
-        const response = await this.oBPv121GetOtherAccountForTransactionRaw(requestParameters, initOverrides);
+    async getOtherAccountForTransaction(requestParameters: GetOtherAccountForTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetOtherAccountForTransaction200Response> {
+        const response = await this.getOtherAccountForTransactionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121GetTagsForViewOnTransaction without sending the request
+     * Creates request options for getTagsForViewOnTransaction without sending the request
      */
-    async oBPv121GetTagsForViewOnTransactionRequestOpts(requestParameters: OBPv121GetTagsForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
+    async getTagsForViewOnTransactionRequestOpts(requestParameters: GetTagsForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121GetTagsForViewOnTransaction().'
+                'Required parameter "bankid" was null or undefined when calling getTagsForViewOnTransaction().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121GetTagsForViewOnTransaction().'
+                'Required parameter "accountid" was null or undefined when calling getTagsForViewOnTransaction().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121GetTagsForViewOnTransaction().'
+                'Required parameter "viewid" was null or undefined when calling getTagsForViewOnTransaction().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121GetTagsForViewOnTransaction().'
+                'Required parameter "transactionid" was null or undefined when calling getTagsForViewOnTransaction().'
             );
         }
 
@@ -1499,1038 +2085,51 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Returns the transaction TRANSACTION_ID tags made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get Transaction Tags
      */
-    async oBPv121GetTagsForViewOnTransactionRaw(requestParameters: OBPv121GetTagsForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>> {
-        const requestOptions = await this.oBPv121GetTagsForViewOnTransactionRequestOpts(requestParameters);
+    async getTagsForViewOnTransactionRaw(requestParameters: GetTagsForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner>> {
+        const requestOptions = await this.getTagsForViewOnTransactionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetTagsForViewOnAccount200ResponseTagsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Returns the transaction TRANSACTION_ID tags made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get Transaction Tags
      */
-    async oBPv121GetTagsForViewOnTransaction(requestParameters: OBPv121GetTagsForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> {
-        const response = await this.oBPv121GetTagsForViewOnTransactionRaw(requestParameters, initOverrides);
+    async getTagsForViewOnTransaction(requestParameters: GetTagsForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetTagsForViewOnAccount200ResponseTagsInner> {
+        const response = await this.getTagsForViewOnTransactionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121GetTransactionNarrative without sending the request
+     * Creates request options for getTransactionAttributeById without sending the request
      */
-    async oBPv121GetTransactionNarrativeRequestOpts(requestParameters: OBPv121GetTransactionNarrativeRequest): Promise<runtime.RequestOpts> {
+    async getTransactionAttributeByIdRequestOpts(requestParameters: GetTransactionAttributeByIdRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121GetTransactionNarrative().'
+                'Required parameter "bankid" was null or undefined when calling getTransactionAttributeById().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121GetTransactionNarrative().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121GetTransactionNarrative().'
+                'Required parameter "accountid" was null or undefined when calling getTransactionAttributeById().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121GetTransactionNarrative().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-
-        let urlPath = `/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Returns the account owner description of the transaction <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> 
-     * Get a Transaction Narrative
-     */
-    async oBPv121GetTransactionNarrativeRaw(requestParameters: OBPv121GetTransactionNarrativeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121GetTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121GetTransactionNarrativeRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121GetTransactionNarrative200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Returns the account owner description of the transaction <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> 
-     * Get a Transaction Narrative
-     */
-    async oBPv121GetTransactionNarrative(requestParameters: OBPv121GetTransactionNarrativeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121GetTransactionNarrative200Response> {
-        const response = await this.oBPv121GetTransactionNarrativeRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv121GetWhereTagForViewOnTransaction without sending the request
-     */
-    async oBPv121GetWhereTagForViewOnTransactionRequestOpts(requestParameters: OBPv121GetWhereTagForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121GetWhereTagForViewOnTransaction().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121GetWhereTagForViewOnTransaction().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121GetWhereTagForViewOnTransaction().'
-            );
-        }
-
-        if (requestParameters['transactionid'] == null) {
-            throw new runtime.RequiredError(
-                'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121GetWhereTagForViewOnTransaction().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-
-        let urlPath = `/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Returns the &quot;where&quot; Geo tag added to the transaction TRANSACTION_ID made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> It represents the location where the transaction has been initiated.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
-     * Get a Transaction where Tag
-     */
-    async oBPv121GetWhereTagForViewOnTransactionRaw(requestParameters: OBPv121GetWhereTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121GetWhereTagForViewOnTransaction200Response>> {
-        const requestOptions = await this.oBPv121GetWhereTagForViewOnTransactionRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121GetWhereTagForViewOnTransaction200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Returns the &quot;where&quot; Geo tag added to the transaction TRANSACTION_ID made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> It represents the location where the transaction has been initiated.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
-     * Get a Transaction where Tag
-     */
-    async oBPv121GetWhereTagForViewOnTransaction(requestParameters: OBPv121GetWhereTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121GetWhereTagForViewOnTransaction200Response> {
-        const response = await this.oBPv121GetWhereTagForViewOnTransactionRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv121UpdateTransactionNarrative without sending the request
-     */
-    async oBPv121UpdateTransactionNarrativeRequestOpts(requestParameters: OBPv121UpdateTransactionNarrativeRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121UpdateTransactionNarrative().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121UpdateTransactionNarrative().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121UpdateTransactionNarrative().'
-            );
-        }
-
-        if (requestParameters['transactionid'] == null) {
-            throw new runtime.RequiredError(
-                'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121UpdateTransactionNarrative().'
-            );
-        }
-
-        if (requestParameters['oBPv121GetTransactionNarrative200Response'] == null) {
-            throw new runtime.RequiredError(
-                'oBPv121GetTransactionNarrative200Response',
-                'Required parameter "oBPv121GetTransactionNarrative200Response" was null or undefined when calling oBPv121UpdateTransactionNarrative().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-
-        let urlPath = `/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
-
-        return {
-            path: urlPath,
-            method: 'PUT',
-            headers: headerParameters,
-            query: queryParameters,
-            body: OBPv121GetTransactionNarrative200ResponseToJSON(requestParameters['oBPv121GetTransactionNarrative200Response']),
-        };
-    }
-
-    /**
-     * <p>Updates the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-     * Update a Transaction Narrative
-     */
-    async oBPv121UpdateTransactionNarrativeRaw(requestParameters: OBPv121UpdateTransactionNarrativeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121UpdateTransactionNarrativeRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Updates the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-     * Update a Transaction Narrative
-     */
-    async oBPv121UpdateTransactionNarrative(requestParameters: OBPv121UpdateTransactionNarrativeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121UpdateTransactionNarrativeRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv121UpdateWhereTagForViewOnTransaction without sending the request
-     */
-    async oBPv121UpdateWhereTagForViewOnTransactionRequestOpts(requestParameters: OBPv121UpdateWhereTagForViewOnTransactionOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121UpdateWhereTagForViewOnTransaction().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121UpdateWhereTagForViewOnTransaction().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121UpdateWhereTagForViewOnTransaction().'
-            );
-        }
-
-        if (requestParameters['transactionid'] == null) {
-            throw new runtime.RequiredError(
-                'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121UpdateWhereTagForViewOnTransaction().'
-            );
-        }
-
-        if (requestParameters['oBPv121UpdateWhereTagForViewOnTransactionRequest'] == null) {
-            throw new runtime.RequiredError(
-                'oBPv121UpdateWhereTagForViewOnTransactionRequest',
-                'Required parameter "oBPv121UpdateWhereTagForViewOnTransactionRequest" was null or undefined when calling oBPv121UpdateWhereTagForViewOnTransaction().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
-
-        return {
-            path: urlPath,
-            method: 'PUT',
-            headers: headerParameters,
-            query: queryParameters,
-            body: OBPv121UpdateWhereTagForViewOnTransactionRequestToJSON(requestParameters['oBPv121UpdateWhereTagForViewOnTransactionRequest']),
-        };
-    }
-
-    /**
-     * <p>Updates the &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-     * Update a Transaction where Tag
-     */
-    async oBPv121UpdateWhereTagForViewOnTransactionRaw(requestParameters: OBPv121UpdateWhereTagForViewOnTransactionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121UpdateWhereTagForViewOnTransactionRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Updates the &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-     * Update a Transaction where Tag
-     */
-    async oBPv121UpdateWhereTagForViewOnTransaction(requestParameters: OBPv121UpdateWhereTagForViewOnTransactionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121UpdateWhereTagForViewOnTransactionRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv300GetCoreTransactionsForBankAccount without sending the request
-     */
-    async oBPv300GetCoreTransactionsForBankAccountRequestOpts(requestParameters: OBPv300GetCoreTransactionsForBankAccountRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv300GetCoreTransactionsForBankAccount().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv300GetCoreTransactionsForBankAccount().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Returns transactions list (Core info) of the account specified by ACCOUNT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-16T19:25:56.865Z. NOTE! The default value is now (2026-03-16T19:25:56.865Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Get Transactions for Account (Core)
-     */
-    async oBPv300GetCoreTransactionsForBankAccountRaw(requestParameters: OBPv300GetCoreTransactionsForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv300GetCoreTransactionsForBankAccount200Response>> {
-        const requestOptions = await this.oBPv300GetCoreTransactionsForBankAccountRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv300GetCoreTransactionsForBankAccount200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Returns transactions list (Core info) of the account specified by ACCOUNT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-16T19:25:56.865Z. NOTE! The default value is now (2026-03-16T19:25:56.865Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Get Transactions for Account (Core)
-     */
-    async oBPv300GetCoreTransactionsForBankAccount(requestParameters: OBPv300GetCoreTransactionsForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv300GetCoreTransactionsForBankAccount200Response> {
-        const response = await this.oBPv300GetCoreTransactionsForBankAccountRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv300GetFirehoseTransactionsForBankAccount without sending the request
-     */
-    async oBPv300GetFirehoseTransactionsForBankAccountRequestOpts(requestParameters: OBPv300GetFirehoseTransactionsForBankAccountRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv300GetFirehoseTransactionsForBankAccount().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv300GetFirehoseTransactionsForBankAccount().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv300GetFirehoseTransactionsForBankAccount().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Get Transactions for an Account that has a firehose View.</p> <p>Allows bulk access to an account\'s transactions.<br /> User must have the CanUseFirehoseAtAnyBank Role</p> <p>To find ACCOUNT_IDs, use the getFirehoseAccountsAtOneBank call.</p> <p>For VIEW_ID try \'owner\'</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-16T19:25:56.865Z. NOTE! The default value is now (2026-03-16T19:25:56.865Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
-     * Get Firehose Transactions for Account
-     */
-    async oBPv300GetFirehoseTransactionsForBankAccountRaw(requestParameters: OBPv300GetFirehoseTransactionsForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv300GetFirehoseTransactionsForBankAccount200Response>> {
-        const requestOptions = await this.oBPv300GetFirehoseTransactionsForBankAccountRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv300GetFirehoseTransactionsForBankAccount200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Get Transactions for an Account that has a firehose View.</p> <p>Allows bulk access to an account\'s transactions.<br /> User must have the CanUseFirehoseAtAnyBank Role</p> <p>To find ACCOUNT_IDs, use the getFirehoseAccountsAtOneBank call.</p> <p>For VIEW_ID try \'owner\'</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-16T19:25:56.865Z. NOTE! The default value is now (2026-03-16T19:25:56.865Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
-     * Get Firehose Transactions for Account
-     */
-    async oBPv300GetFirehoseTransactionsForBankAccount(requestParameters: OBPv300GetFirehoseTransactionsForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv300GetFirehoseTransactionsForBankAccount200Response> {
-        const response = await this.oBPv300GetFirehoseTransactionsForBankAccountRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv310GetTransactionByIdForBankAccount without sending the request
-     */
-    async oBPv310GetTransactionByIdForBankAccountRequestOpts(requestParameters: OBPv310GetTransactionByIdForBankAccountRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv310GetTransactionByIdForBankAccount().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv310GetTransactionByIdForBankAccount().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv310GetTransactionByIdForBankAccount().'
-            );
-        }
-
-        if (requestParameters['transactionid'] == null) {
-            throw new runtime.RequiredError(
-                'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv310GetTransactionByIdForBankAccount().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/transaction`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Returns one transaction specified by TRANSACTION_ID of the account ACCOUNT_ID and <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view (VIEW_ID).</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
-     * Get Transaction by Id
-     */
-    async oBPv310GetTransactionByIdForBankAccountRaw(requestParameters: OBPv310GetTransactionByIdForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv310GetTransactionByIdForBankAccount200Response>> {
-        const requestOptions = await this.oBPv310GetTransactionByIdForBankAccountRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv310GetTransactionByIdForBankAccount200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Returns one transaction specified by TRANSACTION_ID of the account ACCOUNT_ID and <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view (VIEW_ID).</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
-     * Get Transaction by Id
-     */
-    async oBPv310GetTransactionByIdForBankAccount(requestParameters: OBPv310GetTransactionByIdForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv310GetTransactionByIdForBankAccount200Response> {
-        const response = await this.oBPv310GetTransactionByIdForBankAccountRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv400CreateOrUpdateTransactionAttributeDefinition without sending the request
-     */
-    async oBPv400CreateOrUpdateTransactionAttributeDefinitionRequestOpts(requestParameters: OBPv400CreateOrUpdateTransactionAttributeDefinitionRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400CreateOrUpdateTransactionAttributeDefinition().'
-            );
-        }
-
-        if (requestParameters['oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest'] == null) {
-            throw new runtime.RequiredError(
-                'oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest',
-                'Required parameter "oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest" was null or undefined when calling oBPv400CreateOrUpdateTransactionAttributeDefinition().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-
-        return {
-            path: urlPath,
-            method: 'PUT',
-            headers: headerParameters,
-            query: queryParameters,
-            body: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestToJSON(requestParameters['oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest']),
-        };
-    }
-
-    /**
-     * <p>Create or Update Transaction Attribute Definition</p> <p>The category field must be Transaction</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
-     * Create or Update Transaction Attribute Definition
-     */
-    async oBPv400CreateOrUpdateTransactionAttributeDefinitionRaw(requestParameters: OBPv400CreateOrUpdateTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>> {
-        const requestOptions = await this.oBPv400CreateOrUpdateTransactionAttributeDefinitionRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItemsFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Create or Update Transaction Attribute Definition</p> <p>The category field must be Transaction</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
-     * Create or Update Transaction Attribute Definition
-     */
-    async oBPv400CreateOrUpdateTransactionAttributeDefinition(requestParameters: OBPv400CreateOrUpdateTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> {
-        const response = await this.oBPv400CreateOrUpdateTransactionAttributeDefinitionRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv400CreateTransactionAttribute without sending the request
-     */
-    async oBPv400CreateTransactionAttributeRequestOpts(requestParameters: OBPv400CreateTransactionAttributeRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400CreateTransactionAttribute().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400CreateTransactionAttribute().'
-            );
-        }
-
-        if (requestParameters['transactionid'] == null) {
-            throw new runtime.RequiredError(
-                'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv400CreateTransactionAttribute().'
-            );
-        }
-
-        if (requestParameters['oBPv600CreatePersonalDataFieldRequest'] == null) {
-            throw new runtime.RequiredError(
-                'oBPv600CreatePersonalDataFieldRequest',
-                'Required parameter "oBPv600CreatePersonalDataFieldRequest" was null or undefined when calling oBPv400CreateTransactionAttribute().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: OBPv600CreatePersonalDataFieldRequestToJSON(requestParameters['oBPv600CreatePersonalDataFieldRequest']),
-        };
-    }
-
-    /**
-     * <p>Create Transaction Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Create Transaction Attribute
-     */
-    async oBPv400CreateTransactionAttributeRaw(requestParameters: OBPv400CreateTransactionAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>> {
-        const requestOptions = await this.oBPv400CreateTransactionAttributeRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItemsFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Create Transaction Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Create Transaction Attribute
-     */
-    async oBPv400CreateTransactionAttribute(requestParameters: OBPv400CreateTransactionAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> {
-        const response = await this.oBPv400CreateTransactionAttributeRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv400DeleteTransactionAttributeDefinition without sending the request
-     */
-    async oBPv400DeleteTransactionAttributeDefinitionRequestOpts(requestParameters: OBPv400DeleteTransactionAttributeDefinitionRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400DeleteTransactionAttributeDefinition().'
-            );
-        }
-
-        if (requestParameters['attributedefinitionid'] == null) {
-            throw new runtime.RequiredError(
-                'attributedefinitionid',
-                'Required parameter "attributedefinitionid" was null or undefined when calling oBPv400DeleteTransactionAttributeDefinition().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"attributedefinitionid"}}`, encodeURIComponent(String(requestParameters['attributedefinitionid'])));
-
-        return {
-            path: urlPath,
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Delete Transaction Attribute Definition by ATTRIBUTE_DEFINITION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#attribute_definition_id\">ATTRIBUTE_DEFINITION_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
-     * Delete Transaction Attribute Definition
-     */
-    async oBPv400DeleteTransactionAttributeDefinitionRaw(requestParameters: OBPv400DeleteTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteTransactionAttributeDefinitionRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * <p>Delete Transaction Attribute Definition by ATTRIBUTE_DEFINITION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#attribute_definition_id\">ATTRIBUTE_DEFINITION_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
-     * Delete Transaction Attribute Definition
-     */
-    async oBPv400DeleteTransactionAttributeDefinition(requestParameters: OBPv400DeleteTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteTransactionAttributeDefinitionRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for oBPv400DeleteTransactionCascade without sending the request
-     */
-    async oBPv400DeleteTransactionCascadeRequestOpts(requestParameters: OBPv400DeleteTransactionCascadeRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400DeleteTransactionCascade().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400DeleteTransactionCascade().'
-            );
-        }
-
-        if (requestParameters['transactionid'] == null) {
-            throw new runtime.RequiredError(
-                'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv400DeleteTransactionCascade().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
-
-        return {
-            path: urlPath,
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Delete a Transaction Cascade specified by TRANSACTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> 
-     * Delete Transaction Cascade
-     */
-    async oBPv400DeleteTransactionCascadeRaw(requestParameters: OBPv400DeleteTransactionCascadeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteTransactionCascadeRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * <p>Delete a Transaction Cascade specified by TRANSACTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> 
-     * Delete Transaction Cascade
-     */
-    async oBPv400DeleteTransactionCascade(requestParameters: OBPv400DeleteTransactionCascadeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteTransactionCascadeRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for oBPv400GetBalancingTransaction without sending the request
-     */
-    async oBPv400GetBalancingTransactionRequestOpts(requestParameters: OBPv400GetBalancingTransactionRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['transactionid'] == null) {
-            throw new runtime.RequiredError(
-                'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv400GetBalancingTransaction().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/transactions/{transactionid}/balancing-transaction`;
-        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Get Balancing Transaction</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>credit_transaction</strong></a>: credit_transaction</p> <p><a href=\"/glossary#\"><strong>debit_transaction</strong></a>: debit_transaction</p> <p><a href=\"/glossary#\"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#\"><strong>transaction_request</strong></a>: transaction_request</p> <p><a href=\"/glossary#\"><strong>transaction_request_id</strong></a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> 
-     * Get Balancing Transaction
-     */
-    async oBPv400GetBalancingTransactionRaw(requestParameters: OBPv400GetBalancingTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetDoubleEntryTransaction200Response>> {
-        const requestOptions = await this.oBPv400GetBalancingTransactionRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetDoubleEntryTransaction200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Get Balancing Transaction</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>credit_transaction</strong></a>: credit_transaction</p> <p><a href=\"/glossary#\"><strong>debit_transaction</strong></a>: debit_transaction</p> <p><a href=\"/glossary#\"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#\"><strong>transaction_request</strong></a>: transaction_request</p> <p><a href=\"/glossary#\"><strong>transaction_request_id</strong></a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> 
-     * Get Balancing Transaction
-     */
-    async oBPv400GetBalancingTransaction(requestParameters: OBPv400GetBalancingTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetDoubleEntryTransaction200Response> {
-        const response = await this.oBPv400GetBalancingTransactionRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv400GetDoubleEntryTransaction without sending the request
-     */
-    async oBPv400GetDoubleEntryTransactionRequestOpts(requestParameters: OBPv400GetDoubleEntryTransactionRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetDoubleEntryTransaction().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400GetDoubleEntryTransaction().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv400GetDoubleEntryTransaction().'
-            );
-        }
-
-        if (requestParameters['transactionid'] == null) {
-            throw new runtime.RequiredError(
-                'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv400GetDoubleEntryTransaction().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/double-entry-transaction`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Get Double Entry Transaction</p> <p>This endpoint can be used to see the double entry transactions. It returns the <code>bank_id</code>, <code>account_id</code> and <code>transaction_id</code><br /> for the debit end the credit transaction. The other side account can be a settlement account or an OBP account.</p> <p>The endpoint also provide the <code>transaction_request</code> object which contains the <code>bank_id</code>, <code>account_id</code> and<br /> <code>transaction_request_id</code> of the transaction request at the origin of the transaction. Please note that if none<br /> transaction request is at the origin of the transaction, the <code>transaction_request</code> object will be <code>null</code>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>credit_transaction</strong></a>: credit_transaction</p> <p><a href=\"/glossary#\"><strong>debit_transaction</strong></a>: debit_transaction</p> <p><a href=\"/glossary#\"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#\"><strong>transaction_request</strong></a>: transaction_request</p> <p><a href=\"/glossary#\"><strong>transaction_request_id</strong></a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> 
-     * Get Double Entry Transaction
-     */
-    async oBPv400GetDoubleEntryTransactionRaw(requestParameters: OBPv400GetDoubleEntryTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetDoubleEntryTransaction200Response>> {
-        const requestOptions = await this.oBPv400GetDoubleEntryTransactionRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetDoubleEntryTransaction200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Get Double Entry Transaction</p> <p>This endpoint can be used to see the double entry transactions. It returns the <code>bank_id</code>, <code>account_id</code> and <code>transaction_id</code><br /> for the debit end the credit transaction. The other side account can be a settlement account or an OBP account.</p> <p>The endpoint also provide the <code>transaction_request</code> object which contains the <code>bank_id</code>, <code>account_id</code> and<br /> <code>transaction_request_id</code> of the transaction request at the origin of the transaction. Please note that if none<br /> transaction request is at the origin of the transaction, the <code>transaction_request</code> object will be <code>null</code>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>credit_transaction</strong></a>: credit_transaction</p> <p><a href=\"/glossary#\"><strong>debit_transaction</strong></a>: debit_transaction</p> <p><a href=\"/glossary#\"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#\"><strong>transaction_request</strong></a>: transaction_request</p> <p><a href=\"/glossary#\"><strong>transaction_request_id</strong></a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> 
-     * Get Double Entry Transaction
-     */
-    async oBPv400GetDoubleEntryTransaction(requestParameters: OBPv400GetDoubleEntryTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetDoubleEntryTransaction200Response> {
-        const response = await this.oBPv400GetDoubleEntryTransactionRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv400GetTransactionAttributeById without sending the request
-     */
-    async oBPv400GetTransactionAttributeByIdRequestOpts(requestParameters: OBPv400GetTransactionAttributeByIdRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetTransactionAttributeById().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400GetTransactionAttributeById().'
-            );
-        }
-
-        if (requestParameters['transactionid'] == null) {
-            throw new runtime.RequiredError(
-                'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv400GetTransactionAttributeById().'
+                'Required parameter "transactionid" was null or undefined when calling getTransactionAttributeById().'
             );
         }
 
         if (requestParameters['attributeid'] == null) {
             throw new runtime.RequiredError(
                 'attributeid',
-                'Required parameter "attributeid" was null or undefined when calling oBPv400GetTransactionAttributeById().'
+                'Required parameter "attributeid" was null or undefined when calling getTransactionAttributeById().'
             );
         }
 
@@ -2548,7 +2147,7 @@ export class TransactionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -2570,30 +2169,30 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Get Transaction Attribute By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get Transaction Attribute By Id
      */
-    async oBPv400GetTransactionAttributeByIdRaw(requestParameters: OBPv400GetTransactionAttributeByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>> {
-        const requestOptions = await this.oBPv400GetTransactionAttributeByIdRequestOpts(requestParameters);
+    async getTransactionAttributeByIdRaw(requestParameters: GetTransactionAttributeByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>> {
+        const requestOptions = await this.getTransactionAttributeByIdRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Transaction Attribute By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get Transaction Attribute By Id
      */
-    async oBPv400GetTransactionAttributeById(requestParameters: OBPv400GetTransactionAttributeByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> {
-        const response = await this.oBPv400GetTransactionAttributeByIdRaw(requestParameters, initOverrides);
+    async getTransactionAttributeById(requestParameters: GetTransactionAttributeByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> {
+        const response = await this.getTransactionAttributeByIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetTransactionAttributeDefinition without sending the request
+     * Creates request options for getTransactionAttributeDefinition without sending the request
      */
-    async oBPv400GetTransactionAttributeDefinitionRequestOpts(requestParameters: OBPv400GetTransactionAttributeDefinitionRequest): Promise<runtime.RequestOpts> {
+    async getTransactionAttributeDefinitionRequestOpts(requestParameters: GetTransactionAttributeDefinitionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetTransactionAttributeDefinition().'
+                'Required parameter "bankid" was null or undefined when calling getTransactionAttributeDefinition().'
             );
         }
 
@@ -2611,7 +2210,7 @@ export class TransactionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -2630,44 +2229,44 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Get Transaction Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
      * Get Transaction Attribute Definition
      */
-    async oBPv400GetTransactionAttributeDefinitionRaw(requestParameters: OBPv400GetTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response>> {
-        const requestOptions = await this.oBPv400GetTransactionAttributeDefinitionRequestOpts(requestParameters);
+    async getTransactionAttributeDefinitionRaw(requestParameters: GetTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetTransactionRequestAttributeDefinition200Response>> {
+        const requestOptions = await this.getTransactionAttributeDefinitionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetTransactionRequestAttributeDefinition200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetTransactionRequestAttributeDefinition200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Transaction Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
      * Get Transaction Attribute Definition
      */
-    async oBPv400GetTransactionAttributeDefinition(requestParameters: OBPv400GetTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetTransactionRequestAttributeDefinition200Response> {
-        const response = await this.oBPv400GetTransactionAttributeDefinitionRaw(requestParameters, initOverrides);
+    async getTransactionAttributeDefinition(requestParameters: GetTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetTransactionRequestAttributeDefinition200Response> {
+        const response = await this.getTransactionAttributeDefinitionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetTransactionAttributes without sending the request
+     * Creates request options for getTransactionAttributes without sending the request
      */
-    async oBPv400GetTransactionAttributesRequestOpts(requestParameters: OBPv400GetTransactionAttributesRequest): Promise<runtime.RequestOpts> {
+    async getTransactionAttributesRequestOpts(requestParameters: GetTransactionAttributesRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetTransactionAttributes().'
+                'Required parameter "bankid" was null or undefined when calling getTransactionAttributes().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400GetTransactionAttributes().'
+                'Required parameter "accountid" was null or undefined when calling getTransactionAttributes().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv400GetTransactionAttributes().'
+                'Required parameter "transactionid" was null or undefined when calling getTransactionAttributes().'
             );
         }
 
@@ -2685,7 +2284,7 @@ export class TransactionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -2706,58 +2305,360 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Get Transaction Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get Transaction Attributes
      */
-    async oBPv400GetTransactionAttributesRaw(requestParameters: OBPv400GetTransactionAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetTransactionAttributes200Response>> {
-        const requestOptions = await this.oBPv400GetTransactionAttributesRequestOpts(requestParameters);
+    async getTransactionAttributesRaw(requestParameters: GetTransactionAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetTransactionAttributes200Response>> {
+        const requestOptions = await this.getTransactionAttributesRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetTransactionAttributes200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetTransactionAttributes200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Transaction Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get Transaction Attributes
      */
-    async oBPv400GetTransactionAttributes(requestParameters: OBPv400GetTransactionAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetTransactionAttributes200Response> {
-        const response = await this.oBPv400GetTransactionAttributesRaw(requestParameters, initOverrides);
+    async getTransactionAttributes(requestParameters: GetTransactionAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetTransactionAttributes200Response> {
+        const response = await this.getTransactionAttributesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400UpdateTransactionAttribute without sending the request
+     * Creates request options for getTransactionByIdForBankAccount without sending the request
      */
-    async oBPv400UpdateTransactionAttributeRequestOpts(requestParameters: OBPv400UpdateTransactionAttributeRequest): Promise<runtime.RequestOpts> {
+    async getTransactionByIdForBankAccountRequestOpts(requestParameters: GetTransactionByIdForBankAccountRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400UpdateTransactionAttribute().'
+                'Required parameter "bankid" was null or undefined when calling getTransactionByIdForBankAccount().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400UpdateTransactionAttribute().'
+                'Required parameter "accountid" was null or undefined when calling getTransactionByIdForBankAccount().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling getTransactionByIdForBankAccount().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv400UpdateTransactionAttribute().'
+                'Required parameter "transactionid" was null or undefined when calling getTransactionByIdForBankAccount().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/transaction`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Returns one transaction specified by TRANSACTION_ID of the account ACCOUNT_ID and <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view (VIEW_ID).</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+     * Get Transaction by Id
+     */
+    async getTransactionByIdForBankAccountRaw(requestParameters: GetTransactionByIdForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetTransactionByIdForBankAccount200Response>> {
+        const requestOptions = await this.getTransactionByIdForBankAccountRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetTransactionByIdForBankAccount200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Returns one transaction specified by TRANSACTION_ID of the account ACCOUNT_ID and <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view (VIEW_ID).</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+     * Get Transaction by Id
+     */
+    async getTransactionByIdForBankAccount(requestParameters: GetTransactionByIdForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetTransactionByIdForBankAccount200Response> {
+        const response = await this.getTransactionByIdForBankAccountRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getTransactionNarrative without sending the request
+     */
+    async getTransactionNarrativeRequestOpts(requestParameters: GetTransactionNarrativeRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling getTransactionNarrative().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling getTransactionNarrative().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling getTransactionNarrative().'
+            );
+        }
+
+        if (requestParameters['transactionid'] == null) {
+            throw new runtime.RequiredError(
+                'transactionid',
+                'Required parameter "transactionid" was null or undefined when calling getTransactionNarrative().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+
+        let urlPath = `/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Returns the account owner description of the transaction <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> 
+     * Get a Transaction Narrative
+     */
+    async getTransactionNarrativeRaw(requestParameters: GetTransactionNarrativeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetTransactionNarrative200Response>> {
+        const requestOptions = await this.getTransactionNarrativeRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetTransactionNarrative200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Returns the account owner description of the transaction <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> 
+     * Get a Transaction Narrative
+     */
+    async getTransactionNarrative(requestParameters: GetTransactionNarrativeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetTransactionNarrative200Response> {
+        const response = await this.getTransactionNarrativeRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getTransactionsForBankAccount without sending the request
+     */
+    async getTransactionsForBankAccountRequestOpts(requestParameters: GetTransactionsForBankAccountRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling getTransactionsForBankAccount().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling getTransactionsForBankAccount().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling getTransactionsForBankAccount().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Returns transactions list of the account specified by ACCOUNT_ID and <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view (VIEW_ID).</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-25T12:16:25.480Z. NOTE! The default value is now (2026-03-25T12:16:25.480Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p><strong>Note:</strong> This v6.0.0 endpoint returns <code>bank_id</code> directly in both <code>this_account</code> and <code>other_account</code> objects,<br /> making it easier to identify which bank each account belongs to without parsing the <code>bank_routing</code> object.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+     * Get Transactions for Account (Full)
+     */
+    async getTransactionsForBankAccountRaw(requestParameters: GetTransactionsForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetTransactionsForBankAccount200Response>> {
+        const requestOptions = await this.getTransactionsForBankAccountRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetTransactionsForBankAccount200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Returns transactions list of the account specified by ACCOUNT_ID and <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view (VIEW_ID).</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-25T12:16:25.480Z. NOTE! The default value is now (2026-03-25T12:16:25.480Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p><strong>Note:</strong> This v6.0.0 endpoint returns <code>bank_id</code> directly in both <code>this_account</code> and <code>other_account</code> objects,<br /> making it easier to identify which bank each account belongs to without parsing the <code>bank_routing</code> object.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+     * Get Transactions for Account (Full)
+     */
+    async getTransactionsForBankAccount(requestParameters: GetTransactionsForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetTransactionsForBankAccount200Response> {
+        const response = await this.getTransactionsForBankAccountRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getWhereTagForViewOnTransaction without sending the request
+     */
+    async getWhereTagForViewOnTransactionRequestOpts(requestParameters: GetWhereTagForViewOnTransactionRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling getWhereTagForViewOnTransaction().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling getWhereTagForViewOnTransaction().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling getWhereTagForViewOnTransaction().'
+            );
+        }
+
+        if (requestParameters['transactionid'] == null) {
+            throw new runtime.RequiredError(
+                'transactionid',
+                'Required parameter "transactionid" was null or undefined when calling getWhereTagForViewOnTransaction().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+
+        let urlPath = `/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Returns the &quot;where&quot; Geo tag added to the transaction TRANSACTION_ID made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> It represents the location where the transaction has been initiated.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+     * Get a Transaction where Tag
+     */
+    async getWhereTagForViewOnTransactionRaw(requestParameters: GetWhereTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetWhereTagForViewOnTransaction200Response>> {
+        const requestOptions = await this.getWhereTagForViewOnTransactionRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetWhereTagForViewOnTransaction200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Returns the &quot;where&quot; Geo tag added to the transaction TRANSACTION_ID made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> It represents the location where the transaction has been initiated.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+     * Get a Transaction where Tag
+     */
+    async getWhereTagForViewOnTransaction(requestParameters: GetWhereTagForViewOnTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetWhereTagForViewOnTransaction200Response> {
+        const response = await this.getWhereTagForViewOnTransactionRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for updateTransactionAttribute without sending the request
+     */
+    async updateTransactionAttributeRequestOpts(requestParameters: UpdateTransactionAttributeRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling updateTransactionAttribute().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling updateTransactionAttribute().'
+            );
+        }
+
+        if (requestParameters['transactionid'] == null) {
+            throw new runtime.RequiredError(
+                'transactionid',
+                'Required parameter "transactionid" was null or undefined when calling updateTransactionAttribute().'
             );
         }
 
         if (requestParameters['accountattributeid'] == null) {
             throw new runtime.RequiredError(
                 'accountattributeid',
-                'Required parameter "accountattributeid" was null or undefined when calling oBPv400UpdateTransactionAttribute().'
+                'Required parameter "accountattributeid" was null or undefined when calling updateTransactionAttribute().'
             );
         }
 
-        if (requestParameters['oBPv600CreatePersonalDataFieldRequest'] == null) {
+        if (requestParameters['createPersonalDataFieldRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600CreatePersonalDataFieldRequest',
-                'Required parameter "oBPv600CreatePersonalDataFieldRequest" was null or undefined when calling oBPv400UpdateTransactionAttribute().'
+                'createPersonalDataFieldRequest',
+                'Required parameter "createPersonalDataFieldRequest" was null or undefined when calling updateTransactionAttribute().'
             );
         }
 
@@ -2777,7 +2678,7 @@ export class TransactionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -2792,7 +2693,7 @@ export class TransactionApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600CreatePersonalDataFieldRequestToJSON(requestParameters['oBPv600CreatePersonalDataFieldRequest']),
+            body: CreatePersonalDataFieldRequestToJSON(requestParameters['createPersonalDataFieldRequest']),
         };
     }
 
@@ -2800,50 +2701,147 @@ export class TransactionApi extends runtime.BaseAPI {
      * <p>Update Transaction Attribute</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#account_attribute_id\">ACCOUNT_ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Update Transaction Attribute
      */
-    async oBPv400UpdateTransactionAttributeRaw(requestParameters: OBPv400UpdateTransactionAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>> {
-        const requestOptions = await this.oBPv400UpdateTransactionAttributeRequestOpts(requestParameters);
+    async updateTransactionAttributeRaw(requestParameters: UpdateTransactionAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>> {
+        const requestOptions = await this.updateTransactionAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Update Transaction Attribute</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#account_attribute_id\">ACCOUNT_ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Update Transaction Attribute
      */
-    async oBPv400UpdateTransactionAttribute(requestParameters: OBPv400UpdateTransactionAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> {
-        const response = await this.oBPv400UpdateTransactionAttributeRaw(requestParameters, initOverrides);
+    async updateTransactionAttribute(requestParameters: UpdateTransactionAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> {
+        const response = await this.updateTransactionAttributeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetTransactionsForBankAccount without sending the request
+     * Creates request options for updateTransactionNarrative without sending the request
      */
-    async oBPv600GetTransactionsForBankAccountRequestOpts(requestParameters: OBPv600GetTransactionsForBankAccountRequest): Promise<runtime.RequestOpts> {
+    async updateTransactionNarrativeRequestOpts(requestParameters: UpdateTransactionNarrativeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv600GetTransactionsForBankAccount().'
+                'Required parameter "bankid" was null or undefined when calling updateTransactionNarrative().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv600GetTransactionsForBankAccount().'
+                'Required parameter "accountid" was null or undefined when calling updateTransactionNarrative().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv600GetTransactionsForBankAccount().'
+                'Required parameter "viewid" was null or undefined when calling updateTransactionNarrative().'
+            );
+        }
+
+        if (requestParameters['transactionid'] == null) {
+            throw new runtime.RequiredError(
+                'transactionid',
+                'Required parameter "transactionid" was null or undefined when calling updateTransactionNarrative().'
+            );
+        }
+
+        if (requestParameters['getTransactionNarrative200Response'] == null) {
+            throw new runtime.RequiredError(
+                'getTransactionNarrative200Response',
+                'Required parameter "getTransactionNarrative200Response" was null or undefined when calling updateTransactionNarrative().'
             );
         }
 
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+
+        let urlPath = `/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
+
+        return {
+            path: urlPath,
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: GetTransactionNarrative200ResponseToJSON(requestParameters['getTransactionNarrative200Response']),
+        };
+    }
+
+    /**
+     * <p>Updates the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+     * Update a Transaction Narrative
+     */
+    async updateTransactionNarrativeRaw(requestParameters: UpdateTransactionNarrativeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.updateTransactionNarrativeRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Updates the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+     * Update a Transaction Narrative
+     */
+    async updateTransactionNarrative(requestParameters: UpdateTransactionNarrativeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.updateTransactionNarrativeRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for updateWhereTagForViewOnTransaction without sending the request
+     */
+    async updateWhereTagForViewOnTransactionRequestOpts(requestParameters: UpdateWhereTagForViewOnTransactionOperationRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling updateWhereTagForViewOnTransaction().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling updateWhereTagForViewOnTransaction().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling updateWhereTagForViewOnTransaction().'
+            );
+        }
+
+        if (requestParameters['transactionid'] == null) {
+            throw new runtime.RequiredError(
+                'transactionid',
+                'Required parameter "transactionid" was null or undefined when calling updateWhereTagForViewOnTransaction().'
+            );
+        }
+
+        if (requestParameters['updateWhereTagForViewOnTransactionRequest'] == null) {
+            throw new runtime.RequiredError(
+                'updateWhereTagForViewOnTransactionRequest',
+                'Required parameter "updateWhereTagForViewOnTransactionRequest" was null or undefined when calling updateWhereTagForViewOnTransaction().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
 
         if (this.configuration && this.configuration.accessToken) {
             // oauth required
@@ -2855,40 +2853,42 @@ export class TransactionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
-        let urlPath = `/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions`;
+        let urlPath = `/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where`;
         urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
         urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
         urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+        urlPath = urlPath.replace(`{${"transactionid"}}`, encodeURIComponent(String(requestParameters['transactionid'])));
 
         return {
             path: urlPath,
-            method: 'GET',
+            method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
+            body: UpdateWhereTagForViewOnTransactionRequestToJSON(requestParameters['updateWhereTagForViewOnTransactionRequest']),
         };
     }
 
     /**
-     * <p>Returns transactions list of the account specified by ACCOUNT_ID and <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view (VIEW_ID).</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-16T19:25:59.748Z. NOTE! The default value is now (2026-03-16T19:25:59.748Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p><strong>Note:</strong> This v6.0.0 endpoint returns <code>bank_id</code> directly in both <code>this_account</code> and <code>other_account</code> objects,<br /> making it easier to identify which bank each account belongs to without parsing the <code>bank_routing</code> object.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
-     * Get Transactions for Account (Full)
+     * <p>Updates the &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+     * Update a Transaction where Tag
      */
-    async oBPv600GetTransactionsForBankAccountRaw(requestParameters: OBPv600GetTransactionsForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetTransactionsForBankAccount200Response>> {
-        const requestOptions = await this.oBPv600GetTransactionsForBankAccountRequestOpts(requestParameters);
+    async updateWhereTagForViewOnTransactionRaw(requestParameters: UpdateWhereTagForViewOnTransactionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.updateWhereTagForViewOnTransactionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetTransactionsForBankAccount200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
-     * <p>Returns transactions list of the account specified by ACCOUNT_ID and <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view (VIEW_ID).</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-16T19:25:59.748Z. NOTE! The default value is now (2026-03-16T19:25:59.748Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p><strong>Note:</strong> This v6.0.0 endpoint returns <code>bank_id</code> directly in both <code>this_account</code> and <code>other_account</code> objects,<br /> making it easier to identify which bank each account belongs to without parsing the <code>bank_routing</code> object.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
-     * Get Transactions for Account (Full)
+     * <p>Updates the &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+     * Update a Transaction where Tag
      */
-    async oBPv600GetTransactionsForBankAccount(requestParameters: OBPv600GetTransactionsForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetTransactionsForBankAccount200Response> {
-        const response = await this.oBPv600GetTransactionsForBankAccountRaw(requestParameters, initOverrides);
+    async updateWhereTagForViewOnTransaction(requestParameters: UpdateWhereTagForViewOnTransactionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.updateWhereTagForViewOnTransactionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

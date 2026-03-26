@@ -1,26 +1,26 @@
 # ABACApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600CreateAbacRule**](ABACApi.md#obpv600createabacrule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule |
-| [**oBPv600DeleteAbacRule**](ABACApi.md#obpv600deleteabacrule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule |
-| [**oBPv600ExecuteAbacPolicy**](ABACApi.md#obpv600executeabacpolicyoperation) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy |
-| [**oBPv600ExecuteAbacRule**](ABACApi.md#obpv600executeabacrule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule |
-| [**oBPv600GetAbacPolicies**](ABACApi.md#obpv600getabacpolicies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies |
-| [**oBPv600GetAbacRule**](ABACApi.md#obpv600getabacrule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule |
-| [**oBPv600GetAbacRuleSchema**](ABACApi.md#obpv600getabacruleschema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema |
-| [**oBPv600GetAbacRules**](ABACApi.md#obpv600getabacrules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules |
-| [**oBPv600GetAbacRulesByPolicy**](ABACApi.md#obpv600getabacrulesbypolicy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy |
-| [**oBPv600UpdateAbacRule**](ABACApi.md#obpv600updateabacruleoperation) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule |
-| [**oBPv600ValidateAbacRule**](ABACApi.md#obpv600validateabacruleoperation) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule |
+| [**createAbacRule**](ABACApi.md#createabacrule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule |
+| [**deleteAbacRule**](ABACApi.md#deleteabacrule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule |
+| [**executeAbacPolicy**](ABACApi.md#executeabacpolicyoperation) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy |
+| [**executeAbacRule**](ABACApi.md#executeabacrule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule |
+| [**getAbacPolicies**](ABACApi.md#getabacpolicies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies |
+| [**getAbacRule**](ABACApi.md#getabacrule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule |
+| [**getAbacRuleSchema**](ABACApi.md#getabacruleschema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema |
+| [**getAbacRules**](ABACApi.md#getabacrules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules |
+| [**getAbacRulesByPolicy**](ABACApi.md#getabacrulesbypolicy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy |
+| [**updateAbacRule**](ABACApi.md#updateabacruleoperation) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule |
+| [**validateAbacRule**](ABACApi.md#validateabacruleoperation) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule |
 
 
 
-## oBPv600CreateAbacRule
+## createAbacRule
 
-> OBPv600GetAbacRule200Response oBPv600CreateAbacRule(oBPv600UpdateAbacRuleRequest)
+> GetAbacRule200Response createAbacRule(updateAbacRuleRequest)
 
 Create ABAC Rule
 
@@ -33,7 +33,7 @@ import {
   Configuration,
   ABACApi,
 } from 'obp-typescript';
-import type { OBPv600CreateAbacRuleRequest } from 'obp-typescript';
+import type { CreateAbacRuleRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -48,12 +48,12 @@ async function example() {
   const api = new ABACApi(config);
 
   const body = {
-    // OBPv600UpdateAbacRuleRequest | Request body
-    oBPv600UpdateAbacRuleRequest: {type=object, properties={rule_name={type=string}, is_active={type=boolean}, description={type=string}, rule_code={type=string}, policy={type=string}}},
-  } satisfies OBPv600CreateAbacRuleRequest;
+    // UpdateAbacRuleRequest | Request body
+    updateAbacRuleRequest: {type=object, properties={rule_name={type=string}, is_active={type=boolean}, description={type=string}, rule_code={type=string}, policy={type=string}}},
+  } satisfies CreateAbacRuleRequest;
 
   try {
-    const data = await api.oBPv600CreateAbacRule(body);
+    const data = await api.createAbacRule(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -69,11 +69,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **oBPv600UpdateAbacRuleRequest** | [OBPv600UpdateAbacRuleRequest](OBPv600UpdateAbacRuleRequest.md) | Request body | |
+| **updateAbacRuleRequest** | [UpdateAbacRuleRequest](UpdateAbacRuleRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -94,9 +94,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600DeleteAbacRule
+## deleteAbacRule
 
-> oBPv600DeleteAbacRule(abacruleid)
+> deleteAbacRule(abacruleid)
 
 Delete ABAC Rule
 
@@ -109,7 +109,7 @@ import {
   Configuration,
   ABACApi,
 } from 'obp-typescript';
-import type { OBPv600DeleteAbacRuleRequest } from 'obp-typescript';
+import type { DeleteAbacRuleRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -126,10 +126,10 @@ async function example() {
   const body = {
     // string | The ABACRULEID identifier
     abacruleid: abacruleid_example,
-  } satisfies OBPv600DeleteAbacRuleRequest;
+  } satisfies DeleteAbacRuleRequest;
 
   try {
-    const data = await api.oBPv600DeleteAbacRule(body);
+    const data = await api.deleteAbacRule(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -170,9 +170,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600ExecuteAbacPolicy
+## executeAbacPolicy
 
-> OBPv600ExecuteAbacPolicy200Response oBPv600ExecuteAbacPolicy(policy, oBPv600ExecuteAbacPolicyRequest)
+> ExecuteAbacPolicy200Response executeAbacPolicy(policy, executeAbacPolicyRequest)
 
 Execute ABAC Policy
 
@@ -185,7 +185,7 @@ import {
   Configuration,
   ABACApi,
 } from 'obp-typescript';
-import type { OBPv600ExecuteAbacPolicyOperationRequest } from 'obp-typescript';
+import type { ExecuteAbacPolicyOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -202,12 +202,12 @@ async function example() {
   const body = {
     // string | The POLICY identifier
     policy: policy_example,
-    // OBPv600ExecuteAbacPolicyRequest | Request body
-    oBPv600ExecuteAbacPolicyRequest: {"type":"object","properties":{"customer_id":{"type":"string"},"bank_id":{"type":"string"},"authenticated_user_id":{"type":"string"},"transaction_id":{"type":"string"},"view_id":{"type":"string"},"on_behalf_of_user_id":{"type":"string"},"user_id":{"type":"string"},"account_id":{"type":"string"},"transaction_request_id":{"type":"string"}}},
-  } satisfies OBPv600ExecuteAbacPolicyOperationRequest;
+    // ExecuteAbacPolicyRequest | Request body
+    executeAbacPolicyRequest: {"type":"object","properties":{"customer_id":{"type":"string"},"bank_id":{"type":"string"},"authenticated_user_id":{"type":"string"},"transaction_id":{"type":"string"},"view_id":{"type":"string"},"on_behalf_of_user_id":{"type":"string"},"user_id":{"type":"string"},"account_id":{"type":"string"},"transaction_request_id":{"type":"string"}}},
+  } satisfies ExecuteAbacPolicyOperationRequest;
 
   try {
-    const data = await api.oBPv600ExecuteAbacPolicy(body);
+    const data = await api.executeAbacPolicy(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -224,11 +224,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **policy** | `string` | The POLICY identifier | [Defaults to `undefined`] |
-| **oBPv600ExecuteAbacPolicyRequest** | [OBPv600ExecuteAbacPolicyRequest](OBPv600ExecuteAbacPolicyRequest.md) | Request body | |
+| **executeAbacPolicyRequest** | [ExecuteAbacPolicyRequest](ExecuteAbacPolicyRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -249,9 +249,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600ExecuteAbacRule
+## executeAbacRule
 
-> OBPv600ExecuteAbacPolicy200Response oBPv600ExecuteAbacRule(abacruleid, oBPv600ExecuteAbacPolicyRequest)
+> ExecuteAbacPolicy200Response executeAbacRule(abacruleid, executeAbacPolicyRequest)
 
 Execute ABAC Rule
 
@@ -264,7 +264,7 @@ import {
   Configuration,
   ABACApi,
 } from 'obp-typescript';
-import type { OBPv600ExecuteAbacRuleRequest } from 'obp-typescript';
+import type { ExecuteAbacRuleRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -281,12 +281,12 @@ async function example() {
   const body = {
     // string | The ABACRULEID identifier
     abacruleid: abacruleid_example,
-    // OBPv600ExecuteAbacPolicyRequest | Request body
-    oBPv600ExecuteAbacPolicyRequest: {type=object, properties={customer_id={type=string}, bank_id={type=string}, authenticated_user_id={type=string}, transaction_id={type=string}, view_id={type=string}, on_behalf_of_user_id={type=string}, user_id={type=string}, account_id={type=string}, transaction_request_id={type=string}}},
-  } satisfies OBPv600ExecuteAbacRuleRequest;
+    // ExecuteAbacPolicyRequest | Request body
+    executeAbacPolicyRequest: {type=object, properties={customer_id={type=string}, bank_id={type=string}, authenticated_user_id={type=string}, transaction_id={type=string}, view_id={type=string}, on_behalf_of_user_id={type=string}, user_id={type=string}, account_id={type=string}, transaction_request_id={type=string}}},
+  } satisfies ExecuteAbacRuleRequest;
 
   try {
-    const data = await api.oBPv600ExecuteAbacRule(body);
+    const data = await api.executeAbacRule(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -303,11 +303,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **abacruleid** | `string` | The ABACRULEID identifier | [Defaults to `undefined`] |
-| **oBPv600ExecuteAbacPolicyRequest** | [OBPv600ExecuteAbacPolicyRequest](OBPv600ExecuteAbacPolicyRequest.md) | Request body | |
+| **executeAbacPolicyRequest** | [ExecuteAbacPolicyRequest](ExecuteAbacPolicyRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -328,9 +328,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetAbacPolicies
+## getAbacPolicies
 
-> OBPv600GetAbacPolicies200Response oBPv600GetAbacPolicies()
+> GetAbacPolicies200Response getAbacPolicies()
 
 Get ABAC Policies
 
@@ -343,7 +343,7 @@ import {
   Configuration,
   ABACApi,
 } from 'obp-typescript';
-import type { OBPv600GetAbacPoliciesRequest } from 'obp-typescript';
+import type { GetAbacPoliciesRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -358,7 +358,7 @@ async function example() {
   const api = new ABACApi(config);
 
   try {
-    const data = await api.oBPv600GetAbacPolicies();
+    const data = await api.getAbacPolicies();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -375,7 +375,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacPolicies200Response**](OBPv600GetAbacPolicies200Response.md)
+[**GetAbacPolicies200Response**](GetAbacPolicies200Response.md)
 
 ### Authorization
 
@@ -396,9 +396,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetAbacRule
+## getAbacRule
 
-> OBPv600GetAbacRule200Response oBPv600GetAbacRule(abacruleid)
+> GetAbacRule200Response getAbacRule(abacruleid)
 
 Get ABAC Rule
 
@@ -411,7 +411,7 @@ import {
   Configuration,
   ABACApi,
 } from 'obp-typescript';
-import type { OBPv600GetAbacRuleRequest } from 'obp-typescript';
+import type { GetAbacRuleRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -428,10 +428,10 @@ async function example() {
   const body = {
     // string | The ABACRULEID identifier
     abacruleid: abacruleid_example,
-  } satisfies OBPv600GetAbacRuleRequest;
+  } satisfies GetAbacRuleRequest;
 
   try {
-    const data = await api.oBPv600GetAbacRule(body);
+    const data = await api.getAbacRule(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -451,7 +451,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -472,9 +472,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetAbacRuleSchema
+## getAbacRuleSchema
 
-> OBPv600GetAbacRuleSchema200Response oBPv600GetAbacRuleSchema()
+> GetAbacRuleSchema200Response getAbacRuleSchema()
 
 Get ABAC Rule Schema
 
@@ -487,7 +487,7 @@ import {
   Configuration,
   ABACApi,
 } from 'obp-typescript';
-import type { OBPv600GetAbacRuleSchemaRequest } from 'obp-typescript';
+import type { GetAbacRuleSchemaRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -502,7 +502,7 @@ async function example() {
   const api = new ABACApi(config);
 
   try {
-    const data = await api.oBPv600GetAbacRuleSchema();
+    const data = await api.getAbacRuleSchema();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -519,7 +519,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacRuleSchema200Response**](OBPv600GetAbacRuleSchema200Response.md)
+[**GetAbacRuleSchema200Response**](GetAbacRuleSchema200Response.md)
 
 ### Authorization
 
@@ -540,9 +540,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetAbacRules
+## getAbacRules
 
-> OBPv600GetAbacRulesByPolicy200Response oBPv600GetAbacRules()
+> GetAbacRulesByPolicy200Response getAbacRules()
 
 Get ABAC Rules
 
@@ -555,7 +555,7 @@ import {
   Configuration,
   ABACApi,
 } from 'obp-typescript';
-import type { OBPv600GetAbacRulesRequest } from 'obp-typescript';
+import type { GetAbacRulesRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -570,7 +570,7 @@ async function example() {
   const api = new ABACApi(config);
 
   try {
-    const data = await api.oBPv600GetAbacRules();
+    const data = await api.getAbacRules();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -587,7 +587,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -608,9 +608,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetAbacRulesByPolicy
+## getAbacRulesByPolicy
 
-> OBPv600GetAbacRulesByPolicy200Response oBPv600GetAbacRulesByPolicy(policy)
+> GetAbacRulesByPolicy200Response getAbacRulesByPolicy(policy)
 
 Get ABAC Rules by Policy
 
@@ -623,7 +623,7 @@ import {
   Configuration,
   ABACApi,
 } from 'obp-typescript';
-import type { OBPv600GetAbacRulesByPolicyRequest } from 'obp-typescript';
+import type { GetAbacRulesByPolicyRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -640,10 +640,10 @@ async function example() {
   const body = {
     // string | The POLICY identifier
     policy: policy_example,
-  } satisfies OBPv600GetAbacRulesByPolicyRequest;
+  } satisfies GetAbacRulesByPolicyRequest;
 
   try {
-    const data = await api.oBPv600GetAbacRulesByPolicy(body);
+    const data = await api.getAbacRulesByPolicy(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -663,7 +663,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -684,9 +684,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600UpdateAbacRule
+## updateAbacRule
 
-> OBPv600GetAbacRule200Response oBPv600UpdateAbacRule(abacruleid, oBPv600UpdateAbacRuleRequest)
+> GetAbacRule200Response updateAbacRule(abacruleid, updateAbacRuleRequest)
 
 Update ABAC Rule
 
@@ -699,7 +699,7 @@ import {
   Configuration,
   ABACApi,
 } from 'obp-typescript';
-import type { OBPv600UpdateAbacRuleOperationRequest } from 'obp-typescript';
+import type { UpdateAbacRuleOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -716,12 +716,12 @@ async function example() {
   const body = {
     // string | The ABACRULEID identifier
     abacruleid: abacruleid_example,
-    // OBPv600UpdateAbacRuleRequest | Request body
-    oBPv600UpdateAbacRuleRequest: {"type":"object","properties":{"rule_name":{"type":"string"},"is_active":{"type":"boolean"},"description":{"type":"string"},"rule_code":{"type":"string"},"policy":{"type":"string"}}},
-  } satisfies OBPv600UpdateAbacRuleOperationRequest;
+    // UpdateAbacRuleRequest | Request body
+    updateAbacRuleRequest: {"type":"object","properties":{"rule_name":{"type":"string"},"is_active":{"type":"boolean"},"description":{"type":"string"},"rule_code":{"type":"string"},"policy":{"type":"string"}}},
+  } satisfies UpdateAbacRuleOperationRequest;
 
   try {
-    const data = await api.oBPv600UpdateAbacRule(body);
+    const data = await api.updateAbacRule(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -738,11 +738,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **abacruleid** | `string` | The ABACRULEID identifier | [Defaults to `undefined`] |
-| **oBPv600UpdateAbacRuleRequest** | [OBPv600UpdateAbacRuleRequest](OBPv600UpdateAbacRuleRequest.md) | Request body | |
+| **updateAbacRuleRequest** | [UpdateAbacRuleRequest](UpdateAbacRuleRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -763,9 +763,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600ValidateAbacRule
+## validateAbacRule
 
-> OBPv600ValidateAbacRule200Response oBPv600ValidateAbacRule(oBPv600ValidateAbacRuleRequest)
+> ValidateAbacRule200Response validateAbacRule(validateAbacRuleRequest)
 
 Validate ABAC Rule
 
@@ -778,7 +778,7 @@ import {
   Configuration,
   ABACApi,
 } from 'obp-typescript';
-import type { OBPv600ValidateAbacRuleOperationRequest } from 'obp-typescript';
+import type { ValidateAbacRuleOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -793,12 +793,12 @@ async function example() {
   const api = new ABACApi(config);
 
   const body = {
-    // OBPv600ValidateAbacRuleRequest | Request body
-    oBPv600ValidateAbacRuleRequest: {"type":"object","properties":{"rule_code":{"type":"string"}}},
-  } satisfies OBPv600ValidateAbacRuleOperationRequest;
+    // ValidateAbacRuleRequest | Request body
+    validateAbacRuleRequest: {"type":"object","properties":{"rule_code":{"type":"string"}}},
+  } satisfies ValidateAbacRuleOperationRequest;
 
   try {
-    const data = await api.oBPv600ValidateAbacRule(body);
+    const data = await api.validateAbacRule(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -814,11 +814,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **oBPv600ValidateAbacRuleRequest** | [OBPv600ValidateAbacRuleRequest](OBPv600ValidateAbacRuleRequest.md) | Request body | |
+| **validateAbacRuleRequest** | [ValidateAbacRuleRequest](ValidateAbacRuleRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600ValidateAbacRule200Response**](OBPv600ValidateAbacRule200Response.md)
+[**ValidateAbacRule200Response**](ValidateAbacRule200Response.md)
 
 ### Authorization
 

@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -23,17 +23,17 @@ import (
 // PersonalDynamicEntityAPIService PersonalDynamicEntityAPI service
 type PersonalDynamicEntityAPIService service
 
-type ApiOBPv600GetAvailablePersonalDynamicEntitiesRequest struct {
+type ApiGetAvailablePersonalDynamicEntitiesRequest struct {
 	ctx context.Context
 	ApiService *PersonalDynamicEntityAPIService
 }
 
-func (r ApiOBPv600GetAvailablePersonalDynamicEntitiesRequest) Execute() (*OBPv600GetAvailablePersonalDynamicEntities200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetAvailablePersonalDynamicEntitiesExecute(r)
+func (r ApiGetAvailablePersonalDynamicEntitiesRequest) Execute() (*GetAvailablePersonalDynamicEntities200Response, *http.Response, error) {
+	return r.ApiService.GetAvailablePersonalDynamicEntitiesExecute(r)
 }
 
 /*
-OBPv600GetAvailablePersonalDynamicEntities Get Available Personal Dynamic Entities
+GetAvailablePersonalDynamicEntities Get Available Personal Dynamic Entities
 
 <p>Get all Dynamic Entities that support personal data storage (hasPersonalEntity == true).</p>
 <p>This endpoint allows regular users (without admin roles) to discover which dynamic entities<br />
@@ -46,26 +46,26 @@ without needing admin access to view all dynamic entity definitions.</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetAvailablePersonalDynamicEntitiesRequest
+ @return ApiGetAvailablePersonalDynamicEntitiesRequest
 */
-func (a *PersonalDynamicEntityAPIService) OBPv600GetAvailablePersonalDynamicEntities(ctx context.Context) ApiOBPv600GetAvailablePersonalDynamicEntitiesRequest {
-	return ApiOBPv600GetAvailablePersonalDynamicEntitiesRequest{
+func (a *PersonalDynamicEntityAPIService) GetAvailablePersonalDynamicEntities(ctx context.Context) ApiGetAvailablePersonalDynamicEntitiesRequest {
+	return ApiGetAvailablePersonalDynamicEntitiesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetAvailablePersonalDynamicEntities200Response
-func (a *PersonalDynamicEntityAPIService) OBPv600GetAvailablePersonalDynamicEntitiesExecute(r ApiOBPv600GetAvailablePersonalDynamicEntitiesRequest) (*OBPv600GetAvailablePersonalDynamicEntities200Response, *http.Response, error) {
+//  @return GetAvailablePersonalDynamicEntities200Response
+func (a *PersonalDynamicEntityAPIService) GetAvailablePersonalDynamicEntitiesExecute(r ApiGetAvailablePersonalDynamicEntitiesRequest) (*GetAvailablePersonalDynamicEntities200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetAvailablePersonalDynamicEntities200Response
+		localVarReturnValue  *GetAvailablePersonalDynamicEntities200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PersonalDynamicEntityAPIService.OBPv600GetAvailablePersonalDynamicEntities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PersonalDynamicEntityAPIService.GetAvailablePersonalDynamicEntities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -117,7 +117,7 @@ func (a *PersonalDynamicEntityAPIService) OBPv600GetAvailablePersonalDynamicEnti
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

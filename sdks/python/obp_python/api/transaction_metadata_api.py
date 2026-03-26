@@ -18,16 +18,16 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv121_add_image_for_view_on_transaction_request import OBPv121AddImageForViewOnTransactionRequest
-from obp_python.models.obpv121_get_comments_for_view_on_transaction200_response import OBPv121GetCommentsForViewOnTransaction200Response
-from obp_python.models.obpv121_get_images_for_view_on_transaction200_response import OBPv121GetImagesForViewOnTransaction200Response
-from obp_python.models.obpv121_get_transaction_narrative200_response import OBPv121GetTransactionNarrative200Response
-from obp_python.models.obpv121_get_where_tag_for_view_on_transaction200_response import OBPv121GetWhereTagForViewOnTransaction200Response
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.models.obpv121_update_where_tag_for_view_on_transaction_request import OBPv121UpdateWhereTagForViewOnTransactionRequest
-from obp_python.models.obpv200_get_transaction_types200_response_transaction_types_inner_id import OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
-from obp_python.models.obpv310_get_transaction_by_id_for_bank_account200_response_metadata_images_inner import OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner
-from obp_python.models.obpv400_get_tags_for_view_on_account200_response_tags_inner import OBPv400GetTagsForViewOnAccount200ResponseTagsInner
+from obp_python.models.add_image_for_view_on_transaction_request import AddImageForViewOnTransactionRequest
+from obp_python.models.get_comments_for_view_on_transaction200_response import GetCommentsForViewOnTransaction200Response
+from obp_python.models.get_images_for_view_on_transaction200_response import GetImagesForViewOnTransaction200Response
+from obp_python.models.get_tags_for_view_on_account200_response_tags_inner import GetTagsForViewOnAccount200ResponseTagsInner
+from obp_python.models.get_transaction_by_id_for_bank_account200_response_metadata_images_inner import GetTransactionByIdForBankAccount200ResponseMetadataImagesInner
+from obp_python.models.get_transaction_narrative200_response import GetTransactionNarrative200Response
+from obp_python.models.get_transaction_types200_response_transaction_types_inner_id import GetTransactionTypes200ResponseTransactionTypesInnerId
+from obp_python.models.get_where_tag_for_view_on_transaction200_response import GetWhereTagForViewOnTransaction200Response
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
+from obp_python.models.update_where_tag_for_view_on_transaction_request import UpdateWhereTagForViewOnTransactionRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -48,13 +48,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_comment_for_view_on_transaction(
+    def add_comment_for_view_on_transaction(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv200_get_transaction_types200_response_transaction_types_inner_id: Annotated[OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
+        get_transaction_types200_response_transaction_types_inner_id: Annotated[GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -67,7 +67,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTagsForViewOnAccount200ResponseTagsInner:
+    ) -> GetTagsForViewOnAccount200ResponseTagsInner:
         """Add a Transaction Comment
 
         <p>Posts a comment about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>${authenticationRequiredMessage(false)}</p> <p>Authentication is required since the comment is linked with the user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -80,8 +80,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv200_get_transaction_types200_response_transaction_types_inner_id: Request body (required)
-        :type obpv200_get_transaction_types200_response_transaction_types_inner_id: OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
+        :param get_transaction_types200_response_transaction_types_inner_id: Request body (required)
+        :type get_transaction_types200_response_transaction_types_inner_id: GetTransactionTypes200ResponseTransactionTypesInnerId
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -104,12 +104,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_comment_for_view_on_transaction_serialize(
+        _param = self._add_comment_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv200_get_transaction_types200_response_transaction_types_inner_id=obpv200_get_transaction_types200_response_transaction_types_inner_id,
+            get_transaction_types200_response_transaction_types_inner_id=get_transaction_types200_response_transaction_types_inner_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -117,7 +117,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
+            '200': "GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }
@@ -133,13 +133,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_comment_for_view_on_transaction_with_http_info(
+    def add_comment_for_view_on_transaction_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv200_get_transaction_types200_response_transaction_types_inner_id: Annotated[OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
+        get_transaction_types200_response_transaction_types_inner_id: Annotated[GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -152,7 +152,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTagsForViewOnAccount200ResponseTagsInner]:
+    ) -> ApiResponse[GetTagsForViewOnAccount200ResponseTagsInner]:
         """Add a Transaction Comment
 
         <p>Posts a comment about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>${authenticationRequiredMessage(false)}</p> <p>Authentication is required since the comment is linked with the user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -165,8 +165,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv200_get_transaction_types200_response_transaction_types_inner_id: Request body (required)
-        :type obpv200_get_transaction_types200_response_transaction_types_inner_id: OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
+        :param get_transaction_types200_response_transaction_types_inner_id: Request body (required)
+        :type get_transaction_types200_response_transaction_types_inner_id: GetTransactionTypes200ResponseTransactionTypesInnerId
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -189,12 +189,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_comment_for_view_on_transaction_serialize(
+        _param = self._add_comment_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv200_get_transaction_types200_response_transaction_types_inner_id=obpv200_get_transaction_types200_response_transaction_types_inner_id,
+            get_transaction_types200_response_transaction_types_inner_id=get_transaction_types200_response_transaction_types_inner_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -202,7 +202,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
+            '200': "GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }
@@ -218,13 +218,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_comment_for_view_on_transaction_without_preload_content(
+    def add_comment_for_view_on_transaction_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv200_get_transaction_types200_response_transaction_types_inner_id: Annotated[OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
+        get_transaction_types200_response_transaction_types_inner_id: Annotated[GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -250,8 +250,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv200_get_transaction_types200_response_transaction_types_inner_id: Request body (required)
-        :type obpv200_get_transaction_types200_response_transaction_types_inner_id: OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
+        :param get_transaction_types200_response_transaction_types_inner_id: Request body (required)
+        :type get_transaction_types200_response_transaction_types_inner_id: GetTransactionTypes200ResponseTransactionTypesInnerId
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -274,12 +274,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_comment_for_view_on_transaction_serialize(
+        _param = self._add_comment_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv200_get_transaction_types200_response_transaction_types_inner_id=obpv200_get_transaction_types200_response_transaction_types_inner_id,
+            get_transaction_types200_response_transaction_types_inner_id=get_transaction_types200_response_transaction_types_inner_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -287,7 +287,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
+            '200': "GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }
@@ -298,13 +298,13 @@ class TransactionMetadataApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_add_comment_for_view_on_transaction_serialize(
+    def _add_comment_for_view_on_transaction_serialize(
         self,
         bankid,
         accountid,
         viewid,
         transactionid,
-        obpv200_get_transaction_types200_response_transaction_types_inner_id,
+        get_transaction_types200_response_transaction_types_inner_id,
         _request_auth,
         _content_type,
         _headers,
@@ -338,8 +338,8 @@ class TransactionMetadataApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv200_get_transaction_types200_response_transaction_types_inner_id is not None:
-            _body_params = obpv200_get_transaction_types200_response_transaction_types_inner_id
+        if get_transaction_types200_response_transaction_types_inner_id is not None:
+            _body_params = get_transaction_types200_response_transaction_types_inner_id
 
 
         # set the HTTP header `Accept`
@@ -390,13 +390,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_image_for_view_on_transaction(
+    def add_image_for_view_on_transaction(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv121_add_image_for_view_on_transaction_request: Annotated[OBPv121AddImageForViewOnTransactionRequest, Field(description="Request body")],
+        add_image_for_view_on_transaction_request: Annotated[AddImageForViewOnTransactionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -409,7 +409,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner:
+    ) -> GetTransactionByIdForBankAccount200ResponseMetadataImagesInner:
         """Add a Transaction Image
 
         <p>Posts an image about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The image is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
@@ -422,8 +422,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv121_add_image_for_view_on_transaction_request: Request body (required)
-        :type obpv121_add_image_for_view_on_transaction_request: OBPv121AddImageForViewOnTransactionRequest
+        :param add_image_for_view_on_transaction_request: Request body (required)
+        :type add_image_for_view_on_transaction_request: AddImageForViewOnTransactionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -446,12 +446,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_image_for_view_on_transaction_serialize(
+        _param = self._add_image_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv121_add_image_for_view_on_transaction_request=obpv121_add_image_for_view_on_transaction_request,
+            add_image_for_view_on_transaction_request=add_image_for_view_on_transaction_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -459,7 +459,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner",
+            '200': "GetTransactionByIdForBankAccount200ResponseMetadataImagesInner",
             '404': None,
             '500': None,
         }
@@ -475,13 +475,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_image_for_view_on_transaction_with_http_info(
+    def add_image_for_view_on_transaction_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv121_add_image_for_view_on_transaction_request: Annotated[OBPv121AddImageForViewOnTransactionRequest, Field(description="Request body")],
+        add_image_for_view_on_transaction_request: Annotated[AddImageForViewOnTransactionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -494,7 +494,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner]:
+    ) -> ApiResponse[GetTransactionByIdForBankAccount200ResponseMetadataImagesInner]:
         """Add a Transaction Image
 
         <p>Posts an image about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The image is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
@@ -507,8 +507,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv121_add_image_for_view_on_transaction_request: Request body (required)
-        :type obpv121_add_image_for_view_on_transaction_request: OBPv121AddImageForViewOnTransactionRequest
+        :param add_image_for_view_on_transaction_request: Request body (required)
+        :type add_image_for_view_on_transaction_request: AddImageForViewOnTransactionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -531,12 +531,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_image_for_view_on_transaction_serialize(
+        _param = self._add_image_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv121_add_image_for_view_on_transaction_request=obpv121_add_image_for_view_on_transaction_request,
+            add_image_for_view_on_transaction_request=add_image_for_view_on_transaction_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -544,7 +544,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner",
+            '200': "GetTransactionByIdForBankAccount200ResponseMetadataImagesInner",
             '404': None,
             '500': None,
         }
@@ -560,13 +560,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_image_for_view_on_transaction_without_preload_content(
+    def add_image_for_view_on_transaction_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv121_add_image_for_view_on_transaction_request: Annotated[OBPv121AddImageForViewOnTransactionRequest, Field(description="Request body")],
+        add_image_for_view_on_transaction_request: Annotated[AddImageForViewOnTransactionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -592,8 +592,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv121_add_image_for_view_on_transaction_request: Request body (required)
-        :type obpv121_add_image_for_view_on_transaction_request: OBPv121AddImageForViewOnTransactionRequest
+        :param add_image_for_view_on_transaction_request: Request body (required)
+        :type add_image_for_view_on_transaction_request: AddImageForViewOnTransactionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -616,12 +616,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_image_for_view_on_transaction_serialize(
+        _param = self._add_image_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv121_add_image_for_view_on_transaction_request=obpv121_add_image_for_view_on_transaction_request,
+            add_image_for_view_on_transaction_request=add_image_for_view_on_transaction_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -629,7 +629,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner",
+            '200': "GetTransactionByIdForBankAccount200ResponseMetadataImagesInner",
             '404': None,
             '500': None,
         }
@@ -640,13 +640,13 @@ class TransactionMetadataApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_add_image_for_view_on_transaction_serialize(
+    def _add_image_for_view_on_transaction_serialize(
         self,
         bankid,
         accountid,
         viewid,
         transactionid,
-        obpv121_add_image_for_view_on_transaction_request,
+        add_image_for_view_on_transaction_request,
         _request_auth,
         _content_type,
         _headers,
@@ -680,8 +680,8 @@ class TransactionMetadataApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv121_add_image_for_view_on_transaction_request is not None:
-            _body_params = obpv121_add_image_for_view_on_transaction_request
+        if add_image_for_view_on_transaction_request is not None:
+            _body_params = add_image_for_view_on_transaction_request
 
 
         # set the HTTP header `Accept`
@@ -732,13 +732,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_tag_for_view_on_transaction(
+    def add_tag_for_view_on_transaction(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv200_get_transaction_types200_response_transaction_types_inner_id: Annotated[OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
+        get_transaction_types200_response_transaction_types_inner_id: Annotated[GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -751,7 +751,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTagsForViewOnAccount200ResponseTagsInner:
+    ) -> GetTagsForViewOnAccount200ResponseTagsInner:
         """Add a Transaction Tag
 
         <p>Posts a tag about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -764,8 +764,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv200_get_transaction_types200_response_transaction_types_inner_id: Request body (required)
-        :type obpv200_get_transaction_types200_response_transaction_types_inner_id: OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
+        :param get_transaction_types200_response_transaction_types_inner_id: Request body (required)
+        :type get_transaction_types200_response_transaction_types_inner_id: GetTransactionTypes200ResponseTransactionTypesInnerId
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -788,12 +788,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_tag_for_view_on_transaction_serialize(
+        _param = self._add_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv200_get_transaction_types200_response_transaction_types_inner_id=obpv200_get_transaction_types200_response_transaction_types_inner_id,
+            get_transaction_types200_response_transaction_types_inner_id=get_transaction_types200_response_transaction_types_inner_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -801,7 +801,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
+            '200': "GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }
@@ -817,13 +817,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_tag_for_view_on_transaction_with_http_info(
+    def add_tag_for_view_on_transaction_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv200_get_transaction_types200_response_transaction_types_inner_id: Annotated[OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
+        get_transaction_types200_response_transaction_types_inner_id: Annotated[GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -836,7 +836,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTagsForViewOnAccount200ResponseTagsInner]:
+    ) -> ApiResponse[GetTagsForViewOnAccount200ResponseTagsInner]:
         """Add a Transaction Tag
 
         <p>Posts a tag about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -849,8 +849,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv200_get_transaction_types200_response_transaction_types_inner_id: Request body (required)
-        :type obpv200_get_transaction_types200_response_transaction_types_inner_id: OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
+        :param get_transaction_types200_response_transaction_types_inner_id: Request body (required)
+        :type get_transaction_types200_response_transaction_types_inner_id: GetTransactionTypes200ResponseTransactionTypesInnerId
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -873,12 +873,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_tag_for_view_on_transaction_serialize(
+        _param = self._add_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv200_get_transaction_types200_response_transaction_types_inner_id=obpv200_get_transaction_types200_response_transaction_types_inner_id,
+            get_transaction_types200_response_transaction_types_inner_id=get_transaction_types200_response_transaction_types_inner_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -886,7 +886,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
+            '200': "GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }
@@ -902,13 +902,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_tag_for_view_on_transaction_without_preload_content(
+    def add_tag_for_view_on_transaction_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv200_get_transaction_types200_response_transaction_types_inner_id: Annotated[OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
+        get_transaction_types200_response_transaction_types_inner_id: Annotated[GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -934,8 +934,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv200_get_transaction_types200_response_transaction_types_inner_id: Request body (required)
-        :type obpv200_get_transaction_types200_response_transaction_types_inner_id: OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
+        :param get_transaction_types200_response_transaction_types_inner_id: Request body (required)
+        :type get_transaction_types200_response_transaction_types_inner_id: GetTransactionTypes200ResponseTransactionTypesInnerId
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -958,12 +958,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_tag_for_view_on_transaction_serialize(
+        _param = self._add_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv200_get_transaction_types200_response_transaction_types_inner_id=obpv200_get_transaction_types200_response_transaction_types_inner_id,
+            get_transaction_types200_response_transaction_types_inner_id=get_transaction_types200_response_transaction_types_inner_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -971,7 +971,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
+            '200': "GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }
@@ -982,13 +982,13 @@ class TransactionMetadataApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_add_tag_for_view_on_transaction_serialize(
+    def _add_tag_for_view_on_transaction_serialize(
         self,
         bankid,
         accountid,
         viewid,
         transactionid,
-        obpv200_get_transaction_types200_response_transaction_types_inner_id,
+        get_transaction_types200_response_transaction_types_inner_id,
         _request_auth,
         _content_type,
         _headers,
@@ -1022,8 +1022,8 @@ class TransactionMetadataApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv200_get_transaction_types200_response_transaction_types_inner_id is not None:
-            _body_params = obpv200_get_transaction_types200_response_transaction_types_inner_id
+        if get_transaction_types200_response_transaction_types_inner_id is not None:
+            _body_params = get_transaction_types200_response_transaction_types_inner_id
 
 
         # set the HTTP header `Accept`
@@ -1074,13 +1074,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_transaction_narrative(
+    def add_transaction_narrative(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv121_get_transaction_narrative200_response: Annotated[OBPv121GetTransactionNarrative200Response, Field(description="Request body")],
+        get_transaction_narrative200_response: Annotated[GetTransactionNarrative200Response, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1093,7 +1093,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> UpdateTransactionNarrative200Response:
         """Add a Transaction Narrative
 
         <p>Creates a description of the transaction TRANSACTION_ID.</p> <p>Note: Unlike other items of metadata, there is only one &quot;narrative&quot; per transaction accross all views.<br /> If you set narrative via a view e.g. view-x it will be seen via view-y (as long as view-y has permission to see the narrative).</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -1106,8 +1106,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv121_get_transaction_narrative200_response: Request body (required)
-        :type obpv121_get_transaction_narrative200_response: OBPv121GetTransactionNarrative200Response
+        :param get_transaction_narrative200_response: Request body (required)
+        :type get_transaction_narrative200_response: GetTransactionNarrative200Response
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1130,12 +1130,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_transaction_narrative_serialize(
+        _param = self._add_transaction_narrative_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv121_get_transaction_narrative200_response=obpv121_get_transaction_narrative200_response,
+            get_transaction_narrative200_response=get_transaction_narrative200_response,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1143,7 +1143,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -1159,13 +1159,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_transaction_narrative_with_http_info(
+    def add_transaction_narrative_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv121_get_transaction_narrative200_response: Annotated[OBPv121GetTransactionNarrative200Response, Field(description="Request body")],
+        get_transaction_narrative200_response: Annotated[GetTransactionNarrative200Response, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1178,7 +1178,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
         """Add a Transaction Narrative
 
         <p>Creates a description of the transaction TRANSACTION_ID.</p> <p>Note: Unlike other items of metadata, there is only one &quot;narrative&quot; per transaction accross all views.<br /> If you set narrative via a view e.g. view-x it will be seen via view-y (as long as view-y has permission to see the narrative).</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -1191,8 +1191,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv121_get_transaction_narrative200_response: Request body (required)
-        :type obpv121_get_transaction_narrative200_response: OBPv121GetTransactionNarrative200Response
+        :param get_transaction_narrative200_response: Request body (required)
+        :type get_transaction_narrative200_response: GetTransactionNarrative200Response
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1215,12 +1215,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_transaction_narrative_serialize(
+        _param = self._add_transaction_narrative_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv121_get_transaction_narrative200_response=obpv121_get_transaction_narrative200_response,
+            get_transaction_narrative200_response=get_transaction_narrative200_response,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1228,7 +1228,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -1244,13 +1244,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_transaction_narrative_without_preload_content(
+    def add_transaction_narrative_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv121_get_transaction_narrative200_response: Annotated[OBPv121GetTransactionNarrative200Response, Field(description="Request body")],
+        get_transaction_narrative200_response: Annotated[GetTransactionNarrative200Response, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1276,8 +1276,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv121_get_transaction_narrative200_response: Request body (required)
-        :type obpv121_get_transaction_narrative200_response: OBPv121GetTransactionNarrative200Response
+        :param get_transaction_narrative200_response: Request body (required)
+        :type get_transaction_narrative200_response: GetTransactionNarrative200Response
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1300,12 +1300,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_transaction_narrative_serialize(
+        _param = self._add_transaction_narrative_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv121_get_transaction_narrative200_response=obpv121_get_transaction_narrative200_response,
+            get_transaction_narrative200_response=get_transaction_narrative200_response,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1313,7 +1313,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -1324,13 +1324,13 @@ class TransactionMetadataApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_add_transaction_narrative_serialize(
+    def _add_transaction_narrative_serialize(
         self,
         bankid,
         accountid,
         viewid,
         transactionid,
-        obpv121_get_transaction_narrative200_response,
+        get_transaction_narrative200_response,
         _request_auth,
         _content_type,
         _headers,
@@ -1364,8 +1364,8 @@ class TransactionMetadataApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv121_get_transaction_narrative200_response is not None:
-            _body_params = obpv121_get_transaction_narrative200_response
+        if get_transaction_narrative200_response is not None:
+            _body_params = get_transaction_narrative200_response
 
 
         # set the HTTP header `Accept`
@@ -1416,13 +1416,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_where_tag_for_view_on_transaction(
+    def add_where_tag_for_view_on_transaction(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv121_update_where_tag_for_view_on_transaction_request: Annotated[OBPv121UpdateWhereTagForViewOnTransactionRequest, Field(description="Request body")],
+        update_where_tag_for_view_on_transaction_request: Annotated[UpdateWhereTagForViewOnTransactionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1435,7 +1435,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> UpdateTransactionNarrative200Response:
         """Add a Transaction where Tag
 
         <p>Creates a &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -1448,8 +1448,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv121_update_where_tag_for_view_on_transaction_request: Request body (required)
-        :type obpv121_update_where_tag_for_view_on_transaction_request: OBPv121UpdateWhereTagForViewOnTransactionRequest
+        :param update_where_tag_for_view_on_transaction_request: Request body (required)
+        :type update_where_tag_for_view_on_transaction_request: UpdateWhereTagForViewOnTransactionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1472,12 +1472,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_where_tag_for_view_on_transaction_serialize(
+        _param = self._add_where_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv121_update_where_tag_for_view_on_transaction_request=obpv121_update_where_tag_for_view_on_transaction_request,
+            update_where_tag_for_view_on_transaction_request=update_where_tag_for_view_on_transaction_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1485,7 +1485,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -1501,13 +1501,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_where_tag_for_view_on_transaction_with_http_info(
+    def add_where_tag_for_view_on_transaction_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv121_update_where_tag_for_view_on_transaction_request: Annotated[OBPv121UpdateWhereTagForViewOnTransactionRequest, Field(description="Request body")],
+        update_where_tag_for_view_on_transaction_request: Annotated[UpdateWhereTagForViewOnTransactionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1520,7 +1520,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
         """Add a Transaction where Tag
 
         <p>Creates a &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -1533,8 +1533,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv121_update_where_tag_for_view_on_transaction_request: Request body (required)
-        :type obpv121_update_where_tag_for_view_on_transaction_request: OBPv121UpdateWhereTagForViewOnTransactionRequest
+        :param update_where_tag_for_view_on_transaction_request: Request body (required)
+        :type update_where_tag_for_view_on_transaction_request: UpdateWhereTagForViewOnTransactionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1557,12 +1557,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_where_tag_for_view_on_transaction_serialize(
+        _param = self._add_where_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv121_update_where_tag_for_view_on_transaction_request=obpv121_update_where_tag_for_view_on_transaction_request,
+            update_where_tag_for_view_on_transaction_request=update_where_tag_for_view_on_transaction_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1570,7 +1570,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -1586,13 +1586,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_where_tag_for_view_on_transaction_without_preload_content(
+    def add_where_tag_for_view_on_transaction_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv121_update_where_tag_for_view_on_transaction_request: Annotated[OBPv121UpdateWhereTagForViewOnTransactionRequest, Field(description="Request body")],
+        update_where_tag_for_view_on_transaction_request: Annotated[UpdateWhereTagForViewOnTransactionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1618,8 +1618,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv121_update_where_tag_for_view_on_transaction_request: Request body (required)
-        :type obpv121_update_where_tag_for_view_on_transaction_request: OBPv121UpdateWhereTagForViewOnTransactionRequest
+        :param update_where_tag_for_view_on_transaction_request: Request body (required)
+        :type update_where_tag_for_view_on_transaction_request: UpdateWhereTagForViewOnTransactionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1642,12 +1642,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_where_tag_for_view_on_transaction_serialize(
+        _param = self._add_where_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv121_update_where_tag_for_view_on_transaction_request=obpv121_update_where_tag_for_view_on_transaction_request,
+            update_where_tag_for_view_on_transaction_request=update_where_tag_for_view_on_transaction_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1655,7 +1655,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -1666,13 +1666,13 @@ class TransactionMetadataApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_add_where_tag_for_view_on_transaction_serialize(
+    def _add_where_tag_for_view_on_transaction_serialize(
         self,
         bankid,
         accountid,
         viewid,
         transactionid,
-        obpv121_update_where_tag_for_view_on_transaction_request,
+        update_where_tag_for_view_on_transaction_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1706,8 +1706,8 @@ class TransactionMetadataApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv121_update_where_tag_for_view_on_transaction_request is not None:
-            _body_params = obpv121_update_where_tag_for_view_on_transaction_request
+        if update_where_tag_for_view_on_transaction_request is not None:
+            _body_params = update_where_tag_for_view_on_transaction_request
 
 
         # set the HTTP header `Accept`
@@ -1758,7 +1758,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_delete_comment_for_view_on_transaction(
+    def delete_comment_for_view_on_transaction(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1814,7 +1814,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_delete_comment_for_view_on_transaction_serialize(
+        _param = self._delete_comment_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -1843,7 +1843,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_delete_comment_for_view_on_transaction_with_http_info(
+    def delete_comment_for_view_on_transaction_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1899,7 +1899,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_delete_comment_for_view_on_transaction_serialize(
+        _param = self._delete_comment_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -1928,7 +1928,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_delete_comment_for_view_on_transaction_without_preload_content(
+    def delete_comment_for_view_on_transaction_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1984,7 +1984,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_delete_comment_for_view_on_transaction_serialize(
+        _param = self._delete_comment_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -2008,7 +2008,7 @@ class TransactionMetadataApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_delete_comment_for_view_on_transaction_serialize(
+    def _delete_comment_for_view_on_transaction_serialize(
         self,
         bankid,
         accountid,
@@ -2080,7 +2080,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_delete_image_for_view_on_transaction(
+    def delete_image_for_view_on_transaction(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -2136,7 +2136,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_delete_image_for_view_on_transaction_serialize(
+        _param = self._delete_image_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -2165,7 +2165,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_delete_image_for_view_on_transaction_with_http_info(
+    def delete_image_for_view_on_transaction_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -2221,7 +2221,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_delete_image_for_view_on_transaction_serialize(
+        _param = self._delete_image_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -2250,7 +2250,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_delete_image_for_view_on_transaction_without_preload_content(
+    def delete_image_for_view_on_transaction_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -2306,7 +2306,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_delete_image_for_view_on_transaction_serialize(
+        _param = self._delete_image_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -2330,7 +2330,7 @@ class TransactionMetadataApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_delete_image_for_view_on_transaction_serialize(
+    def _delete_image_for_view_on_transaction_serialize(
         self,
         bankid,
         accountid,
@@ -2402,7 +2402,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_delete_tag_for_view_on_transaction(
+    def delete_tag_for_view_on_transaction(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -2458,7 +2458,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_delete_tag_for_view_on_transaction_serialize(
+        _param = self._delete_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -2487,7 +2487,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_delete_tag_for_view_on_transaction_with_http_info(
+    def delete_tag_for_view_on_transaction_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -2543,7 +2543,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_delete_tag_for_view_on_transaction_serialize(
+        _param = self._delete_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -2572,7 +2572,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_delete_tag_for_view_on_transaction_without_preload_content(
+    def delete_tag_for_view_on_transaction_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -2628,7 +2628,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_delete_tag_for_view_on_transaction_serialize(
+        _param = self._delete_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -2652,7 +2652,7 @@ class TransactionMetadataApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_delete_tag_for_view_on_transaction_serialize(
+    def _delete_tag_for_view_on_transaction_serialize(
         self,
         bankid,
         accountid,
@@ -2721,7 +2721,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_delete_transaction_narrative(
+    def delete_transaction_narrative(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -2774,7 +2774,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_delete_transaction_narrative_serialize(
+        _param = self._delete_transaction_narrative_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -2802,7 +2802,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_delete_transaction_narrative_with_http_info(
+    def delete_transaction_narrative_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -2855,7 +2855,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_delete_transaction_narrative_serialize(
+        _param = self._delete_transaction_narrative_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -2883,7 +2883,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_delete_transaction_narrative_without_preload_content(
+    def delete_transaction_narrative_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -2936,7 +2936,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_delete_transaction_narrative_serialize(
+        _param = self._delete_transaction_narrative_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -2959,7 +2959,7 @@ class TransactionMetadataApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_delete_transaction_narrative_serialize(
+    def _delete_transaction_narrative_serialize(
         self,
         bankid,
         accountid,
@@ -3028,7 +3028,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_delete_where_tag_for_view_on_transaction(
+    def delete_where_tag_for_view_on_transaction(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -3081,7 +3081,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_delete_where_tag_for_view_on_transaction_serialize(
+        _param = self._delete_where_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -3109,7 +3109,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_delete_where_tag_for_view_on_transaction_with_http_info(
+    def delete_where_tag_for_view_on_transaction_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -3162,7 +3162,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_delete_where_tag_for_view_on_transaction_serialize(
+        _param = self._delete_where_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -3190,7 +3190,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_delete_where_tag_for_view_on_transaction_without_preload_content(
+    def delete_where_tag_for_view_on_transaction_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -3243,7 +3243,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_delete_where_tag_for_view_on_transaction_serialize(
+        _param = self._delete_where_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -3266,7 +3266,7 @@ class TransactionMetadataApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_delete_where_tag_for_view_on_transaction_serialize(
+    def _delete_where_tag_for_view_on_transaction_serialize(
         self,
         bankid,
         accountid,
@@ -3335,7 +3335,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_get_comments_for_view_on_transaction(
+    def get_comments_for_view_on_transaction(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -3353,7 +3353,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121GetCommentsForViewOnTransaction200Response:
+    ) -> GetCommentsForViewOnTransaction200Response:
         """Get Transaction Comments
 
         <p>Returns the transaction TRANSACTION_ID comments made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -3388,7 +3388,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_get_comments_for_view_on_transaction_serialize(
+        _param = self._get_comments_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -3400,7 +3400,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetCommentsForViewOnTransaction200Response",
+            '200': "GetCommentsForViewOnTransaction200Response",
             '404': None,
             '500': None,
         }
@@ -3416,7 +3416,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_get_comments_for_view_on_transaction_with_http_info(
+    def get_comments_for_view_on_transaction_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -3434,7 +3434,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121GetCommentsForViewOnTransaction200Response]:
+    ) -> ApiResponse[GetCommentsForViewOnTransaction200Response]:
         """Get Transaction Comments
 
         <p>Returns the transaction TRANSACTION_ID comments made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -3469,7 +3469,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_get_comments_for_view_on_transaction_serialize(
+        _param = self._get_comments_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -3481,7 +3481,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetCommentsForViewOnTransaction200Response",
+            '200': "GetCommentsForViewOnTransaction200Response",
             '404': None,
             '500': None,
         }
@@ -3497,7 +3497,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_get_comments_for_view_on_transaction_without_preload_content(
+    def get_comments_for_view_on_transaction_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -3550,7 +3550,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_get_comments_for_view_on_transaction_serialize(
+        _param = self._get_comments_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -3562,7 +3562,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetCommentsForViewOnTransaction200Response",
+            '200': "GetCommentsForViewOnTransaction200Response",
             '404': None,
             '500': None,
         }
@@ -3573,7 +3573,7 @@ class TransactionMetadataApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_get_comments_for_view_on_transaction_serialize(
+    def _get_comments_for_view_on_transaction_serialize(
         self,
         bankid,
         accountid,
@@ -3649,7 +3649,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_get_images_for_view_on_transaction(
+    def get_images_for_view_on_transaction(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -3667,7 +3667,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121GetImagesForViewOnTransaction200Response:
+    ) -> GetImagesForViewOnTransaction200Response:
         """Get Transaction Images
 
         <p>Returns the transaction TRANSACTION_ID images made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
@@ -3702,7 +3702,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_get_images_for_view_on_transaction_serialize(
+        _param = self._get_images_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -3714,7 +3714,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetImagesForViewOnTransaction200Response",
+            '200': "GetImagesForViewOnTransaction200Response",
             '404': None,
             '500': None,
         }
@@ -3730,7 +3730,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_get_images_for_view_on_transaction_with_http_info(
+    def get_images_for_view_on_transaction_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -3748,7 +3748,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121GetImagesForViewOnTransaction200Response]:
+    ) -> ApiResponse[GetImagesForViewOnTransaction200Response]:
         """Get Transaction Images
 
         <p>Returns the transaction TRANSACTION_ID images made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
@@ -3783,7 +3783,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_get_images_for_view_on_transaction_serialize(
+        _param = self._get_images_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -3795,7 +3795,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetImagesForViewOnTransaction200Response",
+            '200': "GetImagesForViewOnTransaction200Response",
             '404': None,
             '500': None,
         }
@@ -3811,7 +3811,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_get_images_for_view_on_transaction_without_preload_content(
+    def get_images_for_view_on_transaction_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -3864,7 +3864,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_get_images_for_view_on_transaction_serialize(
+        _param = self._get_images_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -3876,7 +3876,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetImagesForViewOnTransaction200Response",
+            '200': "GetImagesForViewOnTransaction200Response",
             '404': None,
             '500': None,
         }
@@ -3887,7 +3887,7 @@ class TransactionMetadataApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_get_images_for_view_on_transaction_serialize(
+    def _get_images_for_view_on_transaction_serialize(
         self,
         bankid,
         accountid,
@@ -3963,7 +3963,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_get_tags_for_view_on_transaction(
+    def get_tags_for_view_on_transaction(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -3981,7 +3981,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTagsForViewOnAccount200ResponseTagsInner:
+    ) -> GetTagsForViewOnAccount200ResponseTagsInner:
         """Get Transaction Tags
 
         <p>Returns the transaction TRANSACTION_ID tags made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -4016,7 +4016,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_get_tags_for_view_on_transaction_serialize(
+        _param = self._get_tags_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -4028,7 +4028,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
+            '200': "GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }
@@ -4044,7 +4044,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_get_tags_for_view_on_transaction_with_http_info(
+    def get_tags_for_view_on_transaction_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -4062,7 +4062,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTagsForViewOnAccount200ResponseTagsInner]:
+    ) -> ApiResponse[GetTagsForViewOnAccount200ResponseTagsInner]:
         """Get Transaction Tags
 
         <p>Returns the transaction TRANSACTION_ID tags made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -4097,7 +4097,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_get_tags_for_view_on_transaction_serialize(
+        _param = self._get_tags_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -4109,7 +4109,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
+            '200': "GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }
@@ -4125,7 +4125,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_get_tags_for_view_on_transaction_without_preload_content(
+    def get_tags_for_view_on_transaction_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -4178,7 +4178,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_get_tags_for_view_on_transaction_serialize(
+        _param = self._get_tags_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -4190,7 +4190,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
+            '200': "GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }
@@ -4201,7 +4201,7 @@ class TransactionMetadataApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_get_tags_for_view_on_transaction_serialize(
+    def _get_tags_for_view_on_transaction_serialize(
         self,
         bankid,
         accountid,
@@ -4274,7 +4274,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_get_transaction_narrative(
+    def get_transaction_narrative(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -4292,7 +4292,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121GetTransactionNarrative200Response:
+    ) -> GetTransactionNarrative200Response:
         """Get a Transaction Narrative
 
         <p>Returns the account owner description of the transaction <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> 
@@ -4327,7 +4327,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_get_transaction_narrative_serialize(
+        _param = self._get_transaction_narrative_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -4339,7 +4339,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetTransactionNarrative200Response",
+            '200': "GetTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -4355,7 +4355,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_get_transaction_narrative_with_http_info(
+    def get_transaction_narrative_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -4373,7 +4373,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121GetTransactionNarrative200Response]:
+    ) -> ApiResponse[GetTransactionNarrative200Response]:
         """Get a Transaction Narrative
 
         <p>Returns the account owner description of the transaction <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> 
@@ -4408,7 +4408,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_get_transaction_narrative_serialize(
+        _param = self._get_transaction_narrative_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -4420,7 +4420,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetTransactionNarrative200Response",
+            '200': "GetTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -4436,7 +4436,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_get_transaction_narrative_without_preload_content(
+    def get_transaction_narrative_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -4489,7 +4489,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_get_transaction_narrative_serialize(
+        _param = self._get_transaction_narrative_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -4501,7 +4501,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetTransactionNarrative200Response",
+            '200': "GetTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -4512,7 +4512,7 @@ class TransactionMetadataApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_get_transaction_narrative_serialize(
+    def _get_transaction_narrative_serialize(
         self,
         bankid,
         accountid,
@@ -4585,7 +4585,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_get_where_tag_for_view_on_transaction(
+    def get_where_tag_for_view_on_transaction(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -4603,7 +4603,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121GetWhereTagForViewOnTransaction200Response:
+    ) -> GetWhereTagForViewOnTransaction200Response:
         """Get a Transaction where Tag
 
         <p>Returns the &quot;where&quot; Geo tag added to the transaction TRANSACTION_ID made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> It represents the location where the transaction has been initiated.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
@@ -4638,7 +4638,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_get_where_tag_for_view_on_transaction_serialize(
+        _param = self._get_where_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -4650,7 +4650,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetWhereTagForViewOnTransaction200Response",
+            '200': "GetWhereTagForViewOnTransaction200Response",
             '404': None,
             '500': None,
         }
@@ -4666,7 +4666,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_get_where_tag_for_view_on_transaction_with_http_info(
+    def get_where_tag_for_view_on_transaction_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -4684,7 +4684,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121GetWhereTagForViewOnTransaction200Response]:
+    ) -> ApiResponse[GetWhereTagForViewOnTransaction200Response]:
         """Get a Transaction where Tag
 
         <p>Returns the &quot;where&quot; Geo tag added to the transaction TRANSACTION_ID made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> It represents the location where the transaction has been initiated.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
@@ -4719,7 +4719,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_get_where_tag_for_view_on_transaction_serialize(
+        _param = self._get_where_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -4731,7 +4731,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetWhereTagForViewOnTransaction200Response",
+            '200': "GetWhereTagForViewOnTransaction200Response",
             '404': None,
             '500': None,
         }
@@ -4747,7 +4747,7 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_get_where_tag_for_view_on_transaction_without_preload_content(
+    def get_where_tag_for_view_on_transaction_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -4800,7 +4800,7 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_get_where_tag_for_view_on_transaction_serialize(
+        _param = self._get_where_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -4812,7 +4812,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetWhereTagForViewOnTransaction200Response",
+            '200': "GetWhereTagForViewOnTransaction200Response",
             '404': None,
             '500': None,
         }
@@ -4823,7 +4823,7 @@ class TransactionMetadataApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_get_where_tag_for_view_on_transaction_serialize(
+    def _get_where_tag_for_view_on_transaction_serialize(
         self,
         bankid,
         accountid,
@@ -4896,13 +4896,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_update_transaction_narrative(
+    def update_transaction_narrative(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv121_get_transaction_narrative200_response: Annotated[OBPv121GetTransactionNarrative200Response, Field(description="Request body")],
+        get_transaction_narrative200_response: Annotated[GetTransactionNarrative200Response, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4915,7 +4915,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> UpdateTransactionNarrative200Response:
         """Update a Transaction Narrative
 
         <p>Updates the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -4928,8 +4928,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv121_get_transaction_narrative200_response: Request body (required)
-        :type obpv121_get_transaction_narrative200_response: OBPv121GetTransactionNarrative200Response
+        :param get_transaction_narrative200_response: Request body (required)
+        :type get_transaction_narrative200_response: GetTransactionNarrative200Response
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4952,12 +4952,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_update_transaction_narrative_serialize(
+        _param = self._update_transaction_narrative_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv121_get_transaction_narrative200_response=obpv121_get_transaction_narrative200_response,
+            get_transaction_narrative200_response=get_transaction_narrative200_response,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4965,7 +4965,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -4981,13 +4981,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_update_transaction_narrative_with_http_info(
+    def update_transaction_narrative_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv121_get_transaction_narrative200_response: Annotated[OBPv121GetTransactionNarrative200Response, Field(description="Request body")],
+        get_transaction_narrative200_response: Annotated[GetTransactionNarrative200Response, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5000,7 +5000,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
         """Update a Transaction Narrative
 
         <p>Updates the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -5013,8 +5013,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv121_get_transaction_narrative200_response: Request body (required)
-        :type obpv121_get_transaction_narrative200_response: OBPv121GetTransactionNarrative200Response
+        :param get_transaction_narrative200_response: Request body (required)
+        :type get_transaction_narrative200_response: GetTransactionNarrative200Response
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5037,12 +5037,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_update_transaction_narrative_serialize(
+        _param = self._update_transaction_narrative_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv121_get_transaction_narrative200_response=obpv121_get_transaction_narrative200_response,
+            get_transaction_narrative200_response=get_transaction_narrative200_response,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5050,7 +5050,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -5066,13 +5066,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_update_transaction_narrative_without_preload_content(
+    def update_transaction_narrative_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv121_get_transaction_narrative200_response: Annotated[OBPv121GetTransactionNarrative200Response, Field(description="Request body")],
+        get_transaction_narrative200_response: Annotated[GetTransactionNarrative200Response, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5098,8 +5098,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv121_get_transaction_narrative200_response: Request body (required)
-        :type obpv121_get_transaction_narrative200_response: OBPv121GetTransactionNarrative200Response
+        :param get_transaction_narrative200_response: Request body (required)
+        :type get_transaction_narrative200_response: GetTransactionNarrative200Response
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5122,12 +5122,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_update_transaction_narrative_serialize(
+        _param = self._update_transaction_narrative_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv121_get_transaction_narrative200_response=obpv121_get_transaction_narrative200_response,
+            get_transaction_narrative200_response=get_transaction_narrative200_response,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5135,7 +5135,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -5146,13 +5146,13 @@ class TransactionMetadataApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_update_transaction_narrative_serialize(
+    def _update_transaction_narrative_serialize(
         self,
         bankid,
         accountid,
         viewid,
         transactionid,
-        obpv121_get_transaction_narrative200_response,
+        get_transaction_narrative200_response,
         _request_auth,
         _content_type,
         _headers,
@@ -5186,8 +5186,8 @@ class TransactionMetadataApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv121_get_transaction_narrative200_response is not None:
-            _body_params = obpv121_get_transaction_narrative200_response
+        if get_transaction_narrative200_response is not None:
+            _body_params = get_transaction_narrative200_response
 
 
         # set the HTTP header `Accept`
@@ -5235,13 +5235,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_update_where_tag_for_view_on_transaction(
+    def update_where_tag_for_view_on_transaction(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv121_update_where_tag_for_view_on_transaction_request: Annotated[OBPv121UpdateWhereTagForViewOnTransactionRequest, Field(description="Request body")],
+        update_where_tag_for_view_on_transaction_request: Annotated[UpdateWhereTagForViewOnTransactionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5254,7 +5254,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> UpdateTransactionNarrative200Response:
         """Update a Transaction where Tag
 
         <p>Updates the &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -5267,8 +5267,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv121_update_where_tag_for_view_on_transaction_request: Request body (required)
-        :type obpv121_update_where_tag_for_view_on_transaction_request: OBPv121UpdateWhereTagForViewOnTransactionRequest
+        :param update_where_tag_for_view_on_transaction_request: Request body (required)
+        :type update_where_tag_for_view_on_transaction_request: UpdateWhereTagForViewOnTransactionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5291,12 +5291,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_update_where_tag_for_view_on_transaction_serialize(
+        _param = self._update_where_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv121_update_where_tag_for_view_on_transaction_request=obpv121_update_where_tag_for_view_on_transaction_request,
+            update_where_tag_for_view_on_transaction_request=update_where_tag_for_view_on_transaction_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5304,7 +5304,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -5320,13 +5320,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_update_where_tag_for_view_on_transaction_with_http_info(
+    def update_where_tag_for_view_on_transaction_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv121_update_where_tag_for_view_on_transaction_request: Annotated[OBPv121UpdateWhereTagForViewOnTransactionRequest, Field(description="Request body")],
+        update_where_tag_for_view_on_transaction_request: Annotated[UpdateWhereTagForViewOnTransactionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5339,7 +5339,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
         """Update a Transaction where Tag
 
         <p>Updates the &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -5352,8 +5352,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv121_update_where_tag_for_view_on_transaction_request: Request body (required)
-        :type obpv121_update_where_tag_for_view_on_transaction_request: OBPv121UpdateWhereTagForViewOnTransactionRequest
+        :param update_where_tag_for_view_on_transaction_request: Request body (required)
+        :type update_where_tag_for_view_on_transaction_request: UpdateWhereTagForViewOnTransactionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5376,12 +5376,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_update_where_tag_for_view_on_transaction_serialize(
+        _param = self._update_where_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv121_update_where_tag_for_view_on_transaction_request=obpv121_update_where_tag_for_view_on_transaction_request,
+            update_where_tag_for_view_on_transaction_request=update_where_tag_for_view_on_transaction_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5389,7 +5389,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -5405,13 +5405,13 @@ class TransactionMetadataApi:
 
 
     @validate_call
-    def o_bpv1_2_1_update_where_tag_for_view_on_transaction_without_preload_content(
+    def update_where_tag_for_view_on_transaction_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv121_update_where_tag_for_view_on_transaction_request: Annotated[OBPv121UpdateWhereTagForViewOnTransactionRequest, Field(description="Request body")],
+        update_where_tag_for_view_on_transaction_request: Annotated[UpdateWhereTagForViewOnTransactionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5437,8 +5437,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv121_update_where_tag_for_view_on_transaction_request: Request body (required)
-        :type obpv121_update_where_tag_for_view_on_transaction_request: OBPv121UpdateWhereTagForViewOnTransactionRequest
+        :param update_where_tag_for_view_on_transaction_request: Request body (required)
+        :type update_where_tag_for_view_on_transaction_request: UpdateWhereTagForViewOnTransactionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5461,12 +5461,12 @@ class TransactionMetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_update_where_tag_for_view_on_transaction_serialize(
+        _param = self._update_where_tag_for_view_on_transaction_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv121_update_where_tag_for_view_on_transaction_request=obpv121_update_where_tag_for_view_on_transaction_request,
+            update_where_tag_for_view_on_transaction_request=update_where_tag_for_view_on_transaction_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5474,7 +5474,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -5485,13 +5485,13 @@ class TransactionMetadataApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_update_where_tag_for_view_on_transaction_serialize(
+    def _update_where_tag_for_view_on_transaction_serialize(
         self,
         bankid,
         accountid,
         viewid,
         transactionid,
-        obpv121_update_where_tag_for_view_on_transaction_request,
+        update_where_tag_for_view_on_transaction_request,
         _request_auth,
         _content_type,
         _headers,
@@ -5525,8 +5525,8 @@ class TransactionMetadataApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv121_update_where_tag_for_view_on_transaction_request is not None:
-            _body_params = obpv121_update_where_tag_for_view_on_transaction_request
+        if update_where_tag_for_view_on_transaction_request is not None:
+            _body_params = update_where_tag_for_view_on_transaction_request
 
 
         # set the HTTP header `Accept`

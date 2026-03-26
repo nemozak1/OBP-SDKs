@@ -4,16 +4,16 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv6_0_0_delete_signal_channel**](SignalApi.md#o_bpv6_0_0_delete_signal_channel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
-[**o_bpv6_0_0_get_signal_channel_info**](SignalApi.md#o_bpv6_0_0_get_signal_channel_info) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
-[**o_bpv6_0_0_get_signal_channels**](SignalApi.md#o_bpv6_0_0_get_signal_channels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
-[**o_bpv6_0_0_get_signal_messages**](SignalApi.md#o_bpv6_0_0_get_signal_messages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
-[**o_bpv6_0_0_get_signal_stats**](SignalApi.md#o_bpv6_0_0_get_signal_stats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
-[**o_bpv6_0_0_publish_signal_message**](SignalApi.md#o_bpv6_0_0_publish_signal_message) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
+[**delete_signal_channel**](SignalApi.md#delete_signal_channel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
+[**get_signal_channel_info**](SignalApi.md#get_signal_channel_info) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
+[**get_signal_channels**](SignalApi.md#get_signal_channels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
+[**get_signal_messages**](SignalApi.md#get_signal_messages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
+[**get_signal_stats**](SignalApi.md#get_signal_stats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
+[**publish_signal_message**](SignalApi.md#publish_signal_message) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
 
 
-# **o_bpv6_0_0_delete_signal_channel**
-> OBPv600DeleteSignalChannel200Response o_bpv6_0_0_delete_signal_channel(channelname)
+# **delete_signal_channel**
+> DeleteSignalChannel200Response delete_signal_channel(channelname)
 
 Delete Signal Channel
 
@@ -37,7 +37,7 @@ Messages are ephemeral and will expire after the configured TTL (default 1 hour)
 
 ```python
 import obp_python
-from obp_python.models.obpv600_delete_signal_channel200_response import OBPv600DeleteSignalChannel200Response
+from obp_python.models.delete_signal_channel200_response import DeleteSignalChannel200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -74,11 +74,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Signal Channel
-        api_response = api_instance.o_bpv6_0_0_delete_signal_channel(channelname)
-        print("The response of SignalApi->o_bpv6_0_0_delete_signal_channel:\n")
+        api_response = api_instance.delete_signal_channel(channelname)
+        print("The response of SignalApi->delete_signal_channel:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SignalApi->o_bpv6_0_0_delete_signal_channel: %s\n" % e)
+        print("Exception when calling SignalApi->delete_signal_channel: %s\n" % e)
 ```
 
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600DeleteSignalChannel200Response**](OBPv600DeleteSignalChannel200Response.md)
+[**DeleteSignalChannel200Response**](DeleteSignalChannel200Response.md)
 
 ### Authorization
 
@@ -112,8 +112,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_signal_channel_info**
-> OBPv600GetSignalChannelInfo200Response o_bpv6_0_0_get_signal_channel_info(channelname)
+# **get_signal_channel_info**
+> GetSignalChannelInfo200Response get_signal_channel_info(channelname)
 
 Get Signal Channel Info
 
@@ -138,7 +138,7 @@ Messages are ephemeral and will expire after the configured TTL (default 1 hour)
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_signal_channel_info200_response import OBPv600GetSignalChannelInfo200Response
+from obp_python.models.get_signal_channel_info200_response import GetSignalChannelInfo200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -175,11 +175,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Signal Channel Info
-        api_response = api_instance.o_bpv6_0_0_get_signal_channel_info(channelname)
-        print("The response of SignalApi->o_bpv6_0_0_get_signal_channel_info:\n")
+        api_response = api_instance.get_signal_channel_info(channelname)
+        print("The response of SignalApi->get_signal_channel_info:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SignalApi->o_bpv6_0_0_get_signal_channel_info: %s\n" % e)
+        print("Exception when calling SignalApi->get_signal_channel_info: %s\n" % e)
 ```
 
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetSignalChannelInfo200Response**](OBPv600GetSignalChannelInfo200Response.md)
+[**GetSignalChannelInfo200Response**](GetSignalChannelInfo200Response.md)
 
 ### Authorization
 
@@ -213,8 +213,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_signal_channels**
-> OBPv600GetSignalChannels200Response o_bpv6_0_0_get_signal_channels()
+# **get_signal_channels**
+> GetSignalChannels200Response get_signal_channels()
 
 List Signal Channels
 
@@ -240,7 +240,7 @@ Private-only channels are not shown.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_signal_channels200_response import OBPv600GetSignalChannels200Response
+from obp_python.models.get_signal_channels200_response import GetSignalChannels200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -276,11 +276,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # List Signal Channels
-        api_response = api_instance.o_bpv6_0_0_get_signal_channels()
-        print("The response of SignalApi->o_bpv6_0_0_get_signal_channels:\n")
+        api_response = api_instance.get_signal_channels()
+        print("The response of SignalApi->get_signal_channels:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SignalApi->o_bpv6_0_0_get_signal_channels: %s\n" % e)
+        print("Exception when calling SignalApi->get_signal_channels: %s\n" % e)
 ```
 
 
@@ -291,7 +291,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetSignalChannels200Response**](OBPv600GetSignalChannels200Response.md)
+[**GetSignalChannels200Response**](GetSignalChannels200Response.md)
 
 ### Authorization
 
@@ -311,8 +311,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_signal_messages**
-> OBPv600GetSignalMessages200Response o_bpv6_0_0_get_signal_messages(channelname)
+# **get_signal_messages**
+> GetSignalMessages200Response get_signal_messages(channelname)
 
 Get Signal Messages
 
@@ -349,7 +349,7 @@ and private messages addressed to you (to_user_id matches your user ID) or sent 
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_signal_messages200_response import OBPv600GetSignalMessages200Response
+from obp_python.models.get_signal_messages200_response import GetSignalMessages200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -386,11 +386,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Signal Messages
-        api_response = api_instance.o_bpv6_0_0_get_signal_messages(channelname)
-        print("The response of SignalApi->o_bpv6_0_0_get_signal_messages:\n")
+        api_response = api_instance.get_signal_messages(channelname)
+        print("The response of SignalApi->get_signal_messages:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SignalApi->o_bpv6_0_0_get_signal_messages: %s\n" % e)
+        print("Exception when calling SignalApi->get_signal_messages: %s\n" % e)
 ```
 
 
@@ -404,7 +404,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetSignalMessages200Response**](OBPv600GetSignalMessages200Response.md)
+[**GetSignalMessages200Response**](GetSignalMessages200Response.md)
 
 ### Authorization
 
@@ -424,8 +424,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_signal_stats**
-> OBPv600GetSignalStats200Response o_bpv6_0_0_get_signal_stats()
+# **get_signal_stats**
+> GetSignalStats200Response get_signal_stats()
 
 Get Signal Channel Stats
 
@@ -451,7 +451,7 @@ It provides a complete view of all active channels with message counts and TTL i
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_signal_stats200_response import OBPv600GetSignalStats200Response
+from obp_python.models.get_signal_stats200_response import GetSignalStats200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -487,11 +487,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Signal Channel Stats
-        api_response = api_instance.o_bpv6_0_0_get_signal_stats()
-        print("The response of SignalApi->o_bpv6_0_0_get_signal_stats:\n")
+        api_response = api_instance.get_signal_stats()
+        print("The response of SignalApi->get_signal_stats:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SignalApi->o_bpv6_0_0_get_signal_stats: %s\n" % e)
+        print("Exception when calling SignalApi->get_signal_stats: %s\n" % e)
 ```
 
 
@@ -502,7 +502,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetSignalStats200Response**](OBPv600GetSignalStats200Response.md)
+[**GetSignalStats200Response**](GetSignalStats200Response.md)
 
 ### Authorization
 
@@ -522,8 +522,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_publish_signal_message**
-> OBPv600PublishSignalMessage200Response o_bpv6_0_0_publish_signal_message(channelname, obpv600_publish_signal_message_request)
+# **publish_signal_message**
+> PublishSignalMessage200Response publish_signal_message(channelname, publish_signal_message_request)
 
 Publish Signal Message
 
@@ -558,8 +558,8 @@ Leave to_user_id empty for a broadcast message visible to all channel readers.</
 
 ```python
 import obp_python
-from obp_python.models.obpv600_publish_signal_message200_response import OBPv600PublishSignalMessage200Response
-from obp_python.models.obpv600_publish_signal_message_request import OBPv600PublishSignalMessageRequest
+from obp_python.models.publish_signal_message200_response import PublishSignalMessage200Response
+from obp_python.models.publish_signal_message_request import PublishSignalMessageRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -593,15 +593,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.SignalApi(api_client)
     channelname = 'channelname_example' # str | The CHANNELNAME identifier
-    obpv600_publish_signal_message_request = {"type":"object","properties":{"message_type":{"type":"string"},"payload":{"type":"object","properties":{"agent_name":{"type":"string"},"capabilities":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}} # OBPv600PublishSignalMessageRequest | Request body
+    publish_signal_message_request = {"type":"object","properties":{"message_type":{"type":"string"},"payload":{"type":"object","properties":{"agent_name":{"type":"string"},"capabilities":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}} # PublishSignalMessageRequest | Request body
 
     try:
         # Publish Signal Message
-        api_response = api_instance.o_bpv6_0_0_publish_signal_message(channelname, obpv600_publish_signal_message_request)
-        print("The response of SignalApi->o_bpv6_0_0_publish_signal_message:\n")
+        api_response = api_instance.publish_signal_message(channelname, publish_signal_message_request)
+        print("The response of SignalApi->publish_signal_message:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SignalApi->o_bpv6_0_0_publish_signal_message: %s\n" % e)
+        print("Exception when calling SignalApi->publish_signal_message: %s\n" % e)
 ```
 
 
@@ -612,11 +612,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channelname** | **str**| The CHANNELNAME identifier | 
- **obpv600_publish_signal_message_request** | [**OBPv600PublishSignalMessageRequest**](OBPv600PublishSignalMessageRequest.md)| Request body | 
+ **publish_signal_message_request** | [**PublishSignalMessageRequest**](PublishSignalMessageRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600PublishSignalMessage200Response**](OBPv600PublishSignalMessage200Response.md)
+[**PublishSignalMessage200Response**](PublishSignalMessage200Response.md)
 
 ### Authorization
 

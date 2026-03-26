@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,27 +24,27 @@ import (
 // AccountAccessAPIService AccountAccessAPI service
 type AccountAccessAPIService service
 
-type ApiOBPv510CreateUserWithAccountAccessByIdRequest struct {
+type ApiCreateUserWithAccountAccessByIdRequest struct {
 	ctx context.Context
 	ApiService *AccountAccessAPIService
 	bankid string
 	accountid string
 	viewid string
-	oBPv510CreateUserWithAccountAccessByIdRequest *OBPv510CreateUserWithAccountAccessByIdRequest
+	createUserWithAccountAccessByIdRequest *CreateUserWithAccountAccessByIdRequest
 }
 
 // Request body
-func (r ApiOBPv510CreateUserWithAccountAccessByIdRequest) OBPv510CreateUserWithAccountAccessByIdRequest(oBPv510CreateUserWithAccountAccessByIdRequest OBPv510CreateUserWithAccountAccessByIdRequest) ApiOBPv510CreateUserWithAccountAccessByIdRequest {
-	r.oBPv510CreateUserWithAccountAccessByIdRequest = &oBPv510CreateUserWithAccountAccessByIdRequest
+func (r ApiCreateUserWithAccountAccessByIdRequest) CreateUserWithAccountAccessByIdRequest(createUserWithAccountAccessByIdRequest CreateUserWithAccountAccessByIdRequest) ApiCreateUserWithAccountAccessByIdRequest {
+	r.createUserWithAccountAccessByIdRequest = &createUserWithAccountAccessByIdRequest
 	return r
 }
 
-func (r ApiOBPv510CreateUserWithAccountAccessByIdRequest) Execute() (*OBPv510CreateUserWithAccountAccessById200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateUserWithAccountAccessByIdExecute(r)
+func (r ApiCreateUserWithAccountAccessByIdRequest) Execute() (*CreateUserWithAccountAccessById200Response, *http.Response, error) {
+	return r.ApiService.CreateUserWithAccountAccessByIdExecute(r)
 }
 
 /*
-OBPv510CreateUserWithAccountAccessById Create (DAuth) User with Account Access
+CreateUserWithAccountAccessById Create (DAuth) User with Account Access
 
 <p>This endpoint is used as part of the DAuth solution to grant access to account and transaction data to a smart contract on the blockchain.</p>
 <p>Put the smart contract address in username</p>
@@ -110,20 +110,20 @@ OBPv510CreateUserWithAccountAccessById Create (DAuth) User with Account Access
 </code></pre>
 <h3><a href="#3-try-a-rest-call-using-the-header" id="3-try-a-rest-call-using-the-header">3) Try a REST call using the header</a></h3>
 <p>Using your favorite http client:</p>
-<p>GET <a href="https://apisandbox.openbankproject.com/obp/v3.0.0/users/current">https://apisandbox.openbankproject.com/obp/v3.0.0/users/current</a></p>
+<p>GET <a href="http://127.0.0.1:8080/obp/v3.0.0/users/current">http://127.0.0.1:8080/obp/v3.0.0/users/current</a></p>
 <p>Body</p>
 <p>Leave Empty!</p>
 <p>Headers:</p>
 <pre><code>   DAuth: your-jwt-from-step-above
 </code></pre>
 <p>Here is it all together:</p>
-<p>GET <a href="https://apisandbox.openbankproject.com/obp/v3.0.0/users/current">https://apisandbox.openbankproject.com/obp/v3.0.0/users/current</a> HTTP/1.1<br />
+<p>GET <a href="http://127.0.0.1:8080/obp/v3.0.0/users/current">http://127.0.0.1:8080/obp/v3.0.0/users/current</a> HTTP/1.1<br />
 Host: localhost:8080<br />
 User-Agent: curl/7.47.0<br />
 Accept: <em>/</em><br />
 DAuth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k</p>
 <p>CURL example</p>
-<pre><code>curl -v -H 'DAuth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k' https://apisandbox.openbankproject.com/obp/v3.0.0/users/current
+<pre><code>curl -v -H 'DAuth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k' http://127.0.0.1:8080/obp/v3.0.0/users/current
 </code></pre>
 <p>You should receive a response like:</p>
 <pre><code>{
@@ -252,10 +252,10 @@ Each parameter MUST NOT appear more than once per request.</p>
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv510CreateUserWithAccountAccessByIdRequest
+ @return ApiCreateUserWithAccountAccessByIdRequest
 */
-func (a *AccountAccessAPIService) OBPv510CreateUserWithAccountAccessById(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv510CreateUserWithAccountAccessByIdRequest {
-	return ApiOBPv510CreateUserWithAccountAccessByIdRequest{
+func (a *AccountAccessAPIService) CreateUserWithAccountAccessById(ctx context.Context, bankid string, accountid string, viewid string) ApiCreateUserWithAccountAccessByIdRequest {
+	return ApiCreateUserWithAccountAccessByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -265,16 +265,16 @@ func (a *AccountAccessAPIService) OBPv510CreateUserWithAccountAccessById(ctx con
 }
 
 // Execute executes the request
-//  @return OBPv510CreateUserWithAccountAccessById200Response
-func (a *AccountAccessAPIService) OBPv510CreateUserWithAccountAccessByIdExecute(r ApiOBPv510CreateUserWithAccountAccessByIdRequest) (*OBPv510CreateUserWithAccountAccessById200Response, *http.Response, error) {
+//  @return CreateUserWithAccountAccessById200Response
+func (a *AccountAccessAPIService) CreateUserWithAccountAccessByIdExecute(r ApiCreateUserWithAccountAccessByIdRequest) (*CreateUserWithAccountAccessById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateUserWithAccountAccessById200Response
+		localVarReturnValue  *CreateUserWithAccountAccessById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessAPIService.OBPv510CreateUserWithAccountAccessById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessAPIService.CreateUserWithAccountAccessById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -287,8 +287,8 @@ func (a *AccountAccessAPIService) OBPv510CreateUserWithAccountAccessByIdExecute(
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510CreateUserWithAccountAccessByIdRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510CreateUserWithAccountAccessByIdRequest is required and must be specified")
+	if r.createUserWithAccountAccessByIdRequest == nil {
+		return localVarReturnValue, nil, reportError("createUserWithAccountAccessByIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -309,7 +309,7 @@ func (a *AccountAccessAPIService) OBPv510CreateUserWithAccountAccessByIdExecute(
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510CreateUserWithAccountAccessByIdRequest
+	localVarPostBody = r.createUserWithAccountAccessByIdRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -334,7 +334,7 @@ func (a *AccountAccessAPIService) OBPv510CreateUserWithAccountAccessByIdExecute(
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -375,27 +375,27 @@ func (a *AccountAccessAPIService) OBPv510CreateUserWithAccountAccessByIdExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GrantUserAccessToViewByIdRequest struct {
+type ApiGrantUserAccessToViewByIdRequest struct {
 	ctx context.Context
 	ApiService *AccountAccessAPIService
 	bankid string
 	accountid string
 	viewid string
-	oBPv510RevokeUserAccessToViewByIdRequest *OBPv510RevokeUserAccessToViewByIdRequest
+	revokeUserAccessToViewByIdRequest *RevokeUserAccessToViewByIdRequest
 }
 
 // Request body
-func (r ApiOBPv510GrantUserAccessToViewByIdRequest) OBPv510RevokeUserAccessToViewByIdRequest(oBPv510RevokeUserAccessToViewByIdRequest OBPv510RevokeUserAccessToViewByIdRequest) ApiOBPv510GrantUserAccessToViewByIdRequest {
-	r.oBPv510RevokeUserAccessToViewByIdRequest = &oBPv510RevokeUserAccessToViewByIdRequest
+func (r ApiGrantUserAccessToViewByIdRequest) RevokeUserAccessToViewByIdRequest(revokeUserAccessToViewByIdRequest RevokeUserAccessToViewByIdRequest) ApiGrantUserAccessToViewByIdRequest {
+	r.revokeUserAccessToViewByIdRequest = &revokeUserAccessToViewByIdRequest
 	return r
 }
 
-func (r ApiOBPv510GrantUserAccessToViewByIdRequest) Execute() (*OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead, *http.Response, error) {
-	return r.ApiService.OBPv510GrantUserAccessToViewByIdExecute(r)
+func (r ApiGrantUserAccessToViewByIdRequest) Execute() (*CreateUserWithAccountAccessById200ResponseHead, *http.Response, error) {
+	return r.ApiService.GrantUserAccessToViewByIdExecute(r)
 }
 
 /*
-OBPv510GrantUserAccessToViewById Grant User access to View
+GrantUserAccessToViewById Grant User access to View
 
 <p>Grants the User identified by USER_ID access to the view on a bank account identified by VIEW_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -518,10 +518,10 @@ This operation includes:<br />
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv510GrantUserAccessToViewByIdRequest
+ @return ApiGrantUserAccessToViewByIdRequest
 */
-func (a *AccountAccessAPIService) OBPv510GrantUserAccessToViewById(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv510GrantUserAccessToViewByIdRequest {
-	return ApiOBPv510GrantUserAccessToViewByIdRequest{
+func (a *AccountAccessAPIService) GrantUserAccessToViewById(ctx context.Context, bankid string, accountid string, viewid string) ApiGrantUserAccessToViewByIdRequest {
+	return ApiGrantUserAccessToViewByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -531,16 +531,16 @@ func (a *AccountAccessAPIService) OBPv510GrantUserAccessToViewById(ctx context.C
 }
 
 // Execute executes the request
-//  @return OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead
-func (a *AccountAccessAPIService) OBPv510GrantUserAccessToViewByIdExecute(r ApiOBPv510GrantUserAccessToViewByIdRequest) (*OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead, *http.Response, error) {
+//  @return CreateUserWithAccountAccessById200ResponseHead
+func (a *AccountAccessAPIService) GrantUserAccessToViewByIdExecute(r ApiGrantUserAccessToViewByIdRequest) (*CreateUserWithAccountAccessById200ResponseHead, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead
+		localVarReturnValue  *CreateUserWithAccountAccessById200ResponseHead
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessAPIService.OBPv510GrantUserAccessToViewById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessAPIService.GrantUserAccessToViewById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -553,8 +553,8 @@ func (a *AccountAccessAPIService) OBPv510GrantUserAccessToViewByIdExecute(r ApiO
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510RevokeUserAccessToViewByIdRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510RevokeUserAccessToViewByIdRequest is required and must be specified")
+	if r.revokeUserAccessToViewByIdRequest == nil {
+		return localVarReturnValue, nil, reportError("revokeUserAccessToViewByIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -575,7 +575,7 @@ func (a *AccountAccessAPIService) OBPv510GrantUserAccessToViewByIdExecute(r ApiO
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510RevokeUserAccessToViewByIdRequest
+	localVarPostBody = r.revokeUserAccessToViewByIdRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -600,7 +600,7 @@ func (a *AccountAccessAPIService) OBPv510GrantUserAccessToViewByIdExecute(r ApiO
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -641,27 +641,27 @@ func (a *AccountAccessAPIService) OBPv510GrantUserAccessToViewByIdExecute(r ApiO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510RevokeUserAccessToViewByIdRequest struct {
+type ApiRevokeUserAccessToViewByIdRequest struct {
 	ctx context.Context
 	ApiService *AccountAccessAPIService
 	bankid string
 	accountid string
 	viewid string
-	oBPv510RevokeUserAccessToViewByIdRequest *OBPv510RevokeUserAccessToViewByIdRequest
+	revokeUserAccessToViewByIdRequest *RevokeUserAccessToViewByIdRequest
 }
 
 // Request body
-func (r ApiOBPv510RevokeUserAccessToViewByIdRequest) OBPv510RevokeUserAccessToViewByIdRequest(oBPv510RevokeUserAccessToViewByIdRequest OBPv510RevokeUserAccessToViewByIdRequest) ApiOBPv510RevokeUserAccessToViewByIdRequest {
-	r.oBPv510RevokeUserAccessToViewByIdRequest = &oBPv510RevokeUserAccessToViewByIdRequest
+func (r ApiRevokeUserAccessToViewByIdRequest) RevokeUserAccessToViewByIdRequest(revokeUserAccessToViewByIdRequest RevokeUserAccessToViewByIdRequest) ApiRevokeUserAccessToViewByIdRequest {
+	r.revokeUserAccessToViewByIdRequest = &revokeUserAccessToViewByIdRequest
 	return r
 }
 
-func (r ApiOBPv510RevokeUserAccessToViewByIdRequest) Execute() (*OBPv510RevokeUserAccessToViewById200Response, *http.Response, error) {
-	return r.ApiService.OBPv510RevokeUserAccessToViewByIdExecute(r)
+func (r ApiRevokeUserAccessToViewByIdRequest) Execute() (*RevokeUserAccessToViewById200Response, *http.Response, error) {
+	return r.ApiService.RevokeUserAccessToViewByIdExecute(r)
 }
 
 /*
-OBPv510RevokeUserAccessToViewById Revoke User access to View
+RevokeUserAccessToViewById Revoke User access to View
 
 <p>Revoke the User identified by USER_ID access to the view identified.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated..</p>
@@ -680,10 +680,10 @@ OBPv510RevokeUserAccessToViewById Revoke User access to View
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv510RevokeUserAccessToViewByIdRequest
+ @return ApiRevokeUserAccessToViewByIdRequest
 */
-func (a *AccountAccessAPIService) OBPv510RevokeUserAccessToViewById(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv510RevokeUserAccessToViewByIdRequest {
-	return ApiOBPv510RevokeUserAccessToViewByIdRequest{
+func (a *AccountAccessAPIService) RevokeUserAccessToViewById(ctx context.Context, bankid string, accountid string, viewid string) ApiRevokeUserAccessToViewByIdRequest {
+	return ApiRevokeUserAccessToViewByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -693,16 +693,16 @@ func (a *AccountAccessAPIService) OBPv510RevokeUserAccessToViewById(ctx context.
 }
 
 // Execute executes the request
-//  @return OBPv510RevokeUserAccessToViewById200Response
-func (a *AccountAccessAPIService) OBPv510RevokeUserAccessToViewByIdExecute(r ApiOBPv510RevokeUserAccessToViewByIdRequest) (*OBPv510RevokeUserAccessToViewById200Response, *http.Response, error) {
+//  @return RevokeUserAccessToViewById200Response
+func (a *AccountAccessAPIService) RevokeUserAccessToViewByIdExecute(r ApiRevokeUserAccessToViewByIdRequest) (*RevokeUserAccessToViewById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510RevokeUserAccessToViewById200Response
+		localVarReturnValue  *RevokeUserAccessToViewById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessAPIService.OBPv510RevokeUserAccessToViewById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessAPIService.RevokeUserAccessToViewById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -715,8 +715,8 @@ func (a *AccountAccessAPIService) OBPv510RevokeUserAccessToViewByIdExecute(r Api
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510RevokeUserAccessToViewByIdRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510RevokeUserAccessToViewByIdRequest is required and must be specified")
+	if r.revokeUserAccessToViewByIdRequest == nil {
+		return localVarReturnValue, nil, reportError("revokeUserAccessToViewByIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -737,7 +737,7 @@ func (a *AccountAccessAPIService) OBPv510RevokeUserAccessToViewByIdExecute(r Api
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510RevokeUserAccessToViewByIdRequest
+	localVarPostBody = r.revokeUserAccessToViewByIdRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -762,7 +762,7 @@ func (a *AccountAccessAPIService) OBPv510RevokeUserAccessToViewByIdExecute(r Api
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

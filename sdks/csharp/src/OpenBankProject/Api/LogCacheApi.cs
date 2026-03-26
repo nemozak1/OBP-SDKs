@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -45,8 +45,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheAllEndpointApiResponse"/>&gt;</returns>
-        Task<IOBPv510LogCacheAllEndpointApiResponse> OBPv510LogCacheAllEndpointAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheAllEndpointApiResponse"/>&gt;</returns>
+        Task<ILogCacheAllEndpointApiResponse> LogCacheAllEndpointAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get All Level Log Cache
@@ -55,8 +55,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Returns logs of all levels from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/all?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheAllEndpointApiResponse"/>?&gt;</returns>
-        Task<IOBPv510LogCacheAllEndpointApiResponse?> OBPv510LogCacheAllEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheAllEndpointApiResponse"/>?&gt;</returns>
+        Task<ILogCacheAllEndpointApiResponse?> LogCacheAllEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Debug Level Log Cache
@@ -66,8 +66,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheDebugEndpointApiResponse"/>&gt;</returns>
-        Task<IOBPv510LogCacheDebugEndpointApiResponse> OBPv510LogCacheDebugEndpointAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheDebugEndpointApiResponse"/>&gt;</returns>
+        Task<ILogCacheDebugEndpointApiResponse> LogCacheDebugEndpointAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Debug Level Log Cache
@@ -76,8 +76,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Returns DEBUG level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/debug?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheDebugEndpointApiResponse"/>?&gt;</returns>
-        Task<IOBPv510LogCacheDebugEndpointApiResponse?> OBPv510LogCacheDebugEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheDebugEndpointApiResponse"/>?&gt;</returns>
+        Task<ILogCacheDebugEndpointApiResponse?> LogCacheDebugEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Error Level Log Cache
@@ -87,8 +87,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheErrorEndpointApiResponse"/>&gt;</returns>
-        Task<IOBPv510LogCacheErrorEndpointApiResponse> OBPv510LogCacheErrorEndpointAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheErrorEndpointApiResponse"/>&gt;</returns>
+        Task<ILogCacheErrorEndpointApiResponse> LogCacheErrorEndpointAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Error Level Log Cache
@@ -97,8 +97,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Returns ERROR level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/error?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheErrorEndpointApiResponse"/>?&gt;</returns>
-        Task<IOBPv510LogCacheErrorEndpointApiResponse?> OBPv510LogCacheErrorEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheErrorEndpointApiResponse"/>?&gt;</returns>
+        Task<ILogCacheErrorEndpointApiResponse?> LogCacheErrorEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Info Level Log Cache
@@ -108,8 +108,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheInfoEndpointApiResponse"/>&gt;</returns>
-        Task<IOBPv510LogCacheInfoEndpointApiResponse> OBPv510LogCacheInfoEndpointAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheInfoEndpointApiResponse"/>&gt;</returns>
+        Task<ILogCacheInfoEndpointApiResponse> LogCacheInfoEndpointAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Info Level Log Cache
@@ -118,8 +118,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Returns INFO level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/info?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheInfoEndpointApiResponse"/>?&gt;</returns>
-        Task<IOBPv510LogCacheInfoEndpointApiResponse?> OBPv510LogCacheInfoEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheInfoEndpointApiResponse"/>?&gt;</returns>
+        Task<ILogCacheInfoEndpointApiResponse?> LogCacheInfoEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Trace Level Log Cache
@@ -129,8 +129,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheTraceEndpointApiResponse"/>&gt;</returns>
-        Task<IOBPv510LogCacheTraceEndpointApiResponse> OBPv510LogCacheTraceEndpointAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheTraceEndpointApiResponse"/>&gt;</returns>
+        Task<ILogCacheTraceEndpointApiResponse> LogCacheTraceEndpointAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Trace Level Log Cache
@@ -139,8 +139,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Returns TRACE level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/trace?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheTraceEndpointApiResponse"/>?&gt;</returns>
-        Task<IOBPv510LogCacheTraceEndpointApiResponse?> OBPv510LogCacheTraceEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheTraceEndpointApiResponse"/>?&gt;</returns>
+        Task<ILogCacheTraceEndpointApiResponse?> LogCacheTraceEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Warning Level Log Cache
@@ -150,8 +150,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheWarningEndpointApiResponse"/>&gt;</returns>
-        Task<IOBPv510LogCacheWarningEndpointApiResponse> OBPv510LogCacheWarningEndpointAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheWarningEndpointApiResponse"/>&gt;</returns>
+        Task<ILogCacheWarningEndpointApiResponse> LogCacheWarningEndpointAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Warning Level Log Cache
@@ -160,8 +160,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Returns WARNING level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/warning?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheWarningEndpointApiResponse"/>?&gt;</returns>
-        Task<IOBPv510LogCacheWarningEndpointApiResponse?> OBPv510LogCacheWarningEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheWarningEndpointApiResponse"/>?&gt;</returns>
+        Task<ILogCacheWarningEndpointApiResponse?> LogCacheWarningEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -172,121 +172,121 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510LogCacheAllEndpoint;
+        public event EventHandler<ApiResponseEventArgs>? OnLogCacheAllEndpoint;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510LogCacheAllEndpoint;
+        public event EventHandler<ExceptionEventArgs>? OnErrorLogCacheAllEndpoint;
 
-        internal void ExecuteOnOBPv510LogCacheAllEndpoint(APIApi.OBPv510LogCacheAllEndpointApiResponse apiResponse)
+        internal void ExecuteOnLogCacheAllEndpoint(APIApi.LogCacheAllEndpointApiResponse apiResponse)
         {
-            OnOBPv510LogCacheAllEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnLogCacheAllEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510LogCacheAllEndpoint(Exception exception)
+        internal void ExecuteOnErrorLogCacheAllEndpoint(Exception exception)
         {
-            OnErrorOBPv510LogCacheAllEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorLogCacheAllEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510LogCacheDebugEndpoint;
+        public event EventHandler<ApiResponseEventArgs>? OnLogCacheDebugEndpoint;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510LogCacheDebugEndpoint;
+        public event EventHandler<ExceptionEventArgs>? OnErrorLogCacheDebugEndpoint;
 
-        internal void ExecuteOnOBPv510LogCacheDebugEndpoint(APIApi.OBPv510LogCacheDebugEndpointApiResponse apiResponse)
+        internal void ExecuteOnLogCacheDebugEndpoint(APIApi.LogCacheDebugEndpointApiResponse apiResponse)
         {
-            OnOBPv510LogCacheDebugEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnLogCacheDebugEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510LogCacheDebugEndpoint(Exception exception)
+        internal void ExecuteOnErrorLogCacheDebugEndpoint(Exception exception)
         {
-            OnErrorOBPv510LogCacheDebugEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorLogCacheDebugEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510LogCacheErrorEndpoint;
+        public event EventHandler<ApiResponseEventArgs>? OnLogCacheErrorEndpoint;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510LogCacheErrorEndpoint;
+        public event EventHandler<ExceptionEventArgs>? OnErrorLogCacheErrorEndpoint;
 
-        internal void ExecuteOnOBPv510LogCacheErrorEndpoint(APIApi.OBPv510LogCacheErrorEndpointApiResponse apiResponse)
+        internal void ExecuteOnLogCacheErrorEndpoint(APIApi.LogCacheErrorEndpointApiResponse apiResponse)
         {
-            OnOBPv510LogCacheErrorEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnLogCacheErrorEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510LogCacheErrorEndpoint(Exception exception)
+        internal void ExecuteOnErrorLogCacheErrorEndpoint(Exception exception)
         {
-            OnErrorOBPv510LogCacheErrorEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorLogCacheErrorEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510LogCacheInfoEndpoint;
+        public event EventHandler<ApiResponseEventArgs>? OnLogCacheInfoEndpoint;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510LogCacheInfoEndpoint;
+        public event EventHandler<ExceptionEventArgs>? OnErrorLogCacheInfoEndpoint;
 
-        internal void ExecuteOnOBPv510LogCacheInfoEndpoint(APIApi.OBPv510LogCacheInfoEndpointApiResponse apiResponse)
+        internal void ExecuteOnLogCacheInfoEndpoint(APIApi.LogCacheInfoEndpointApiResponse apiResponse)
         {
-            OnOBPv510LogCacheInfoEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnLogCacheInfoEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510LogCacheInfoEndpoint(Exception exception)
+        internal void ExecuteOnErrorLogCacheInfoEndpoint(Exception exception)
         {
-            OnErrorOBPv510LogCacheInfoEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorLogCacheInfoEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510LogCacheTraceEndpoint;
+        public event EventHandler<ApiResponseEventArgs>? OnLogCacheTraceEndpoint;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510LogCacheTraceEndpoint;
+        public event EventHandler<ExceptionEventArgs>? OnErrorLogCacheTraceEndpoint;
 
-        internal void ExecuteOnOBPv510LogCacheTraceEndpoint(APIApi.OBPv510LogCacheTraceEndpointApiResponse apiResponse)
+        internal void ExecuteOnLogCacheTraceEndpoint(APIApi.LogCacheTraceEndpointApiResponse apiResponse)
         {
-            OnOBPv510LogCacheTraceEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnLogCacheTraceEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510LogCacheTraceEndpoint(Exception exception)
+        internal void ExecuteOnErrorLogCacheTraceEndpoint(Exception exception)
         {
-            OnErrorOBPv510LogCacheTraceEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorLogCacheTraceEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510LogCacheWarningEndpoint;
+        public event EventHandler<ApiResponseEventArgs>? OnLogCacheWarningEndpoint;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510LogCacheWarningEndpoint;
+        public event EventHandler<ExceptionEventArgs>? OnErrorLogCacheWarningEndpoint;
 
-        internal void ExecuteOnOBPv510LogCacheWarningEndpoint(APIApi.OBPv510LogCacheWarningEndpointApiResponse apiResponse)
+        internal void ExecuteOnLogCacheWarningEndpoint(APIApi.LogCacheWarningEndpointApiResponse apiResponse)
         {
-            OnOBPv510LogCacheWarningEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnLogCacheWarningEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510LogCacheWarningEndpoint(Exception exception)
+        internal void ExecuteOnErrorLogCacheWarningEndpoint(Exception exception)
         {
-            OnErrorOBPv510LogCacheWarningEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorLogCacheWarningEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -348,10 +348,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv510LogCacheAllEndpointDefaultImplementation(IOBPv510LogCacheAllEndpointApiResponse apiResponseLocalVar)
+        private void AfterLogCacheAllEndpointDefaultImplementation(ILogCacheAllEndpointApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510LogCacheAllEndpoint(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterLogCacheAllEndpoint(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -361,7 +361,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv510LogCacheAllEndpoint(ref bool suppressDefaultLog, IOBPv510LogCacheAllEndpointApiResponse apiResponseLocalVar);
+        partial void AfterLogCacheAllEndpoint(ref bool suppressDefaultLog, ILogCacheAllEndpointApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -369,10 +369,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv510LogCacheAllEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorLogCacheAllEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510LogCacheAllEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorLogCacheAllEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -384,18 +384,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv510LogCacheAllEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorLogCacheAllEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get All Level Log Cache &lt;p&gt;Returns logs of all levels from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/all?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheAllEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510LogCacheAllEndpointApiResponse?> OBPv510LogCacheAllEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheAllEndpointApiResponse"/>&gt;</returns>
+        public async Task<ILogCacheAllEndpointApiResponse?> LogCacheAllEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510LogCacheAllEndpointAsync(cancellationToken).ConfigureAwait(false);
+                return await LogCacheAllEndpointAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -408,8 +408,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheAllEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510LogCacheAllEndpointApiResponse> OBPv510LogCacheAllEndpointAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheAllEndpointApiResponse"/>&gt;</returns>
+        public async Task<ILogCacheAllEndpointApiResponse> LogCacheAllEndpointAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -429,7 +429,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -447,8 +447,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv510LogCacheAllEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv510LogCacheAllEndpointApiResponse>();
-                        APIApi.OBPv510LogCacheAllEndpointApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.LogCacheAllEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.LogCacheAllEndpointApiResponse>();
+                        APIApi.LogCacheAllEndpointApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -459,9 +459,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510LogCacheAllEndpointDefaultImplementation(apiResponseLocalVar);
+                        AfterLogCacheAllEndpointDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv510LogCacheAllEndpoint(apiResponseLocalVar);
+                        Events.ExecuteOnLogCacheAllEndpoint(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -473,8 +473,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510LogCacheAllEndpointDefaultImplementation(e, "/obp/v5.1.0/system/log-cache/all", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv510LogCacheAllEndpoint(e);
+                OnErrorLogCacheAllEndpointDefaultImplementation(e, "/obp/v5.1.0/system/log-cache/all", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorLogCacheAllEndpoint(e);
                 throw;
             }
         }
@@ -483,10 +483,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv510LogCacheDebugEndpointDefaultImplementation(IOBPv510LogCacheDebugEndpointApiResponse apiResponseLocalVar)
+        private void AfterLogCacheDebugEndpointDefaultImplementation(ILogCacheDebugEndpointApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510LogCacheDebugEndpoint(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterLogCacheDebugEndpoint(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -496,7 +496,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv510LogCacheDebugEndpoint(ref bool suppressDefaultLog, IOBPv510LogCacheDebugEndpointApiResponse apiResponseLocalVar);
+        partial void AfterLogCacheDebugEndpoint(ref bool suppressDefaultLog, ILogCacheDebugEndpointApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -504,10 +504,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv510LogCacheDebugEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorLogCacheDebugEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510LogCacheDebugEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorLogCacheDebugEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -519,18 +519,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv510LogCacheDebugEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorLogCacheDebugEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Debug Level Log Cache &lt;p&gt;Returns DEBUG level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/debug?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheDebugEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510LogCacheDebugEndpointApiResponse?> OBPv510LogCacheDebugEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheDebugEndpointApiResponse"/>&gt;</returns>
+        public async Task<ILogCacheDebugEndpointApiResponse?> LogCacheDebugEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510LogCacheDebugEndpointAsync(cancellationToken).ConfigureAwait(false);
+                return await LogCacheDebugEndpointAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -543,8 +543,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheDebugEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510LogCacheDebugEndpointApiResponse> OBPv510LogCacheDebugEndpointAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheDebugEndpointApiResponse"/>&gt;</returns>
+        public async Task<ILogCacheDebugEndpointApiResponse> LogCacheDebugEndpointAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -564,7 +564,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -582,8 +582,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv510LogCacheDebugEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv510LogCacheDebugEndpointApiResponse>();
-                        APIApi.OBPv510LogCacheDebugEndpointApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.LogCacheDebugEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.LogCacheDebugEndpointApiResponse>();
+                        APIApi.LogCacheDebugEndpointApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -594,9 +594,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510LogCacheDebugEndpointDefaultImplementation(apiResponseLocalVar);
+                        AfterLogCacheDebugEndpointDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv510LogCacheDebugEndpoint(apiResponseLocalVar);
+                        Events.ExecuteOnLogCacheDebugEndpoint(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -608,8 +608,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510LogCacheDebugEndpointDefaultImplementation(e, "/obp/v5.1.0/system/log-cache/debug", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv510LogCacheDebugEndpoint(e);
+                OnErrorLogCacheDebugEndpointDefaultImplementation(e, "/obp/v5.1.0/system/log-cache/debug", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorLogCacheDebugEndpoint(e);
                 throw;
             }
         }
@@ -618,10 +618,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv510LogCacheErrorEndpointDefaultImplementation(IOBPv510LogCacheErrorEndpointApiResponse apiResponseLocalVar)
+        private void AfterLogCacheErrorEndpointDefaultImplementation(ILogCacheErrorEndpointApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510LogCacheErrorEndpoint(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterLogCacheErrorEndpoint(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -631,7 +631,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv510LogCacheErrorEndpoint(ref bool suppressDefaultLog, IOBPv510LogCacheErrorEndpointApiResponse apiResponseLocalVar);
+        partial void AfterLogCacheErrorEndpoint(ref bool suppressDefaultLog, ILogCacheErrorEndpointApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -639,10 +639,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv510LogCacheErrorEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorLogCacheErrorEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510LogCacheErrorEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorLogCacheErrorEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -654,18 +654,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv510LogCacheErrorEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorLogCacheErrorEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Error Level Log Cache &lt;p&gt;Returns ERROR level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/error?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheErrorEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510LogCacheErrorEndpointApiResponse?> OBPv510LogCacheErrorEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheErrorEndpointApiResponse"/>&gt;</returns>
+        public async Task<ILogCacheErrorEndpointApiResponse?> LogCacheErrorEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510LogCacheErrorEndpointAsync(cancellationToken).ConfigureAwait(false);
+                return await LogCacheErrorEndpointAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -678,8 +678,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheErrorEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510LogCacheErrorEndpointApiResponse> OBPv510LogCacheErrorEndpointAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheErrorEndpointApiResponse"/>&gt;</returns>
+        public async Task<ILogCacheErrorEndpointApiResponse> LogCacheErrorEndpointAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -699,7 +699,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -717,8 +717,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv510LogCacheErrorEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv510LogCacheErrorEndpointApiResponse>();
-                        APIApi.OBPv510LogCacheErrorEndpointApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.LogCacheErrorEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.LogCacheErrorEndpointApiResponse>();
+                        APIApi.LogCacheErrorEndpointApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -729,9 +729,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510LogCacheErrorEndpointDefaultImplementation(apiResponseLocalVar);
+                        AfterLogCacheErrorEndpointDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv510LogCacheErrorEndpoint(apiResponseLocalVar);
+                        Events.ExecuteOnLogCacheErrorEndpoint(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -743,8 +743,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510LogCacheErrorEndpointDefaultImplementation(e, "/obp/v5.1.0/system/log-cache/error", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv510LogCacheErrorEndpoint(e);
+                OnErrorLogCacheErrorEndpointDefaultImplementation(e, "/obp/v5.1.0/system/log-cache/error", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorLogCacheErrorEndpoint(e);
                 throw;
             }
         }
@@ -753,10 +753,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv510LogCacheInfoEndpointDefaultImplementation(IOBPv510LogCacheInfoEndpointApiResponse apiResponseLocalVar)
+        private void AfterLogCacheInfoEndpointDefaultImplementation(ILogCacheInfoEndpointApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510LogCacheInfoEndpoint(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterLogCacheInfoEndpoint(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -766,7 +766,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv510LogCacheInfoEndpoint(ref bool suppressDefaultLog, IOBPv510LogCacheInfoEndpointApiResponse apiResponseLocalVar);
+        partial void AfterLogCacheInfoEndpoint(ref bool suppressDefaultLog, ILogCacheInfoEndpointApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -774,10 +774,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv510LogCacheInfoEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorLogCacheInfoEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510LogCacheInfoEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorLogCacheInfoEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -789,18 +789,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv510LogCacheInfoEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorLogCacheInfoEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Info Level Log Cache &lt;p&gt;Returns INFO level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/info?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheInfoEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510LogCacheInfoEndpointApiResponse?> OBPv510LogCacheInfoEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheInfoEndpointApiResponse"/>&gt;</returns>
+        public async Task<ILogCacheInfoEndpointApiResponse?> LogCacheInfoEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510LogCacheInfoEndpointAsync(cancellationToken).ConfigureAwait(false);
+                return await LogCacheInfoEndpointAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -813,8 +813,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheInfoEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510LogCacheInfoEndpointApiResponse> OBPv510LogCacheInfoEndpointAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheInfoEndpointApiResponse"/>&gt;</returns>
+        public async Task<ILogCacheInfoEndpointApiResponse> LogCacheInfoEndpointAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -834,7 +834,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -852,8 +852,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv510LogCacheInfoEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv510LogCacheInfoEndpointApiResponse>();
-                        APIApi.OBPv510LogCacheInfoEndpointApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.LogCacheInfoEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.LogCacheInfoEndpointApiResponse>();
+                        APIApi.LogCacheInfoEndpointApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -864,9 +864,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510LogCacheInfoEndpointDefaultImplementation(apiResponseLocalVar);
+                        AfterLogCacheInfoEndpointDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv510LogCacheInfoEndpoint(apiResponseLocalVar);
+                        Events.ExecuteOnLogCacheInfoEndpoint(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -878,8 +878,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510LogCacheInfoEndpointDefaultImplementation(e, "/obp/v5.1.0/system/log-cache/info", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv510LogCacheInfoEndpoint(e);
+                OnErrorLogCacheInfoEndpointDefaultImplementation(e, "/obp/v5.1.0/system/log-cache/info", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorLogCacheInfoEndpoint(e);
                 throw;
             }
         }
@@ -888,10 +888,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv510LogCacheTraceEndpointDefaultImplementation(IOBPv510LogCacheTraceEndpointApiResponse apiResponseLocalVar)
+        private void AfterLogCacheTraceEndpointDefaultImplementation(ILogCacheTraceEndpointApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510LogCacheTraceEndpoint(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterLogCacheTraceEndpoint(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -901,7 +901,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv510LogCacheTraceEndpoint(ref bool suppressDefaultLog, IOBPv510LogCacheTraceEndpointApiResponse apiResponseLocalVar);
+        partial void AfterLogCacheTraceEndpoint(ref bool suppressDefaultLog, ILogCacheTraceEndpointApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -909,10 +909,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv510LogCacheTraceEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorLogCacheTraceEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510LogCacheTraceEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorLogCacheTraceEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -924,18 +924,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv510LogCacheTraceEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorLogCacheTraceEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Trace Level Log Cache &lt;p&gt;Returns TRACE level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/trace?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheTraceEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510LogCacheTraceEndpointApiResponse?> OBPv510LogCacheTraceEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheTraceEndpointApiResponse"/>&gt;</returns>
+        public async Task<ILogCacheTraceEndpointApiResponse?> LogCacheTraceEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510LogCacheTraceEndpointAsync(cancellationToken).ConfigureAwait(false);
+                return await LogCacheTraceEndpointAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -948,8 +948,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheTraceEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510LogCacheTraceEndpointApiResponse> OBPv510LogCacheTraceEndpointAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheTraceEndpointApiResponse"/>&gt;</returns>
+        public async Task<ILogCacheTraceEndpointApiResponse> LogCacheTraceEndpointAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -969,7 +969,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -987,8 +987,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv510LogCacheTraceEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv510LogCacheTraceEndpointApiResponse>();
-                        APIApi.OBPv510LogCacheTraceEndpointApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.LogCacheTraceEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.LogCacheTraceEndpointApiResponse>();
+                        APIApi.LogCacheTraceEndpointApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -999,9 +999,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510LogCacheTraceEndpointDefaultImplementation(apiResponseLocalVar);
+                        AfterLogCacheTraceEndpointDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv510LogCacheTraceEndpoint(apiResponseLocalVar);
+                        Events.ExecuteOnLogCacheTraceEndpoint(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1013,8 +1013,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510LogCacheTraceEndpointDefaultImplementation(e, "/obp/v5.1.0/system/log-cache/trace", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv510LogCacheTraceEndpoint(e);
+                OnErrorLogCacheTraceEndpointDefaultImplementation(e, "/obp/v5.1.0/system/log-cache/trace", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorLogCacheTraceEndpoint(e);
                 throw;
             }
         }
@@ -1023,10 +1023,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv510LogCacheWarningEndpointDefaultImplementation(IOBPv510LogCacheWarningEndpointApiResponse apiResponseLocalVar)
+        private void AfterLogCacheWarningEndpointDefaultImplementation(ILogCacheWarningEndpointApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510LogCacheWarningEndpoint(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterLogCacheWarningEndpoint(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1036,7 +1036,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv510LogCacheWarningEndpoint(ref bool suppressDefaultLog, IOBPv510LogCacheWarningEndpointApiResponse apiResponseLocalVar);
+        partial void AfterLogCacheWarningEndpoint(ref bool suppressDefaultLog, ILogCacheWarningEndpointApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1044,10 +1044,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv510LogCacheWarningEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorLogCacheWarningEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510LogCacheWarningEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorLogCacheWarningEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1059,18 +1059,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv510LogCacheWarningEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorLogCacheWarningEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Warning Level Log Cache &lt;p&gt;Returns WARNING level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/warning?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheWarningEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510LogCacheWarningEndpointApiResponse?> OBPv510LogCacheWarningEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheWarningEndpointApiResponse"/>&gt;</returns>
+        public async Task<ILogCacheWarningEndpointApiResponse?> LogCacheWarningEndpointOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510LogCacheWarningEndpointAsync(cancellationToken).ConfigureAwait(false);
+                return await LogCacheWarningEndpointAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1083,8 +1083,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510LogCacheWarningEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510LogCacheWarningEndpointApiResponse> OBPv510LogCacheWarningEndpointAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ILogCacheWarningEndpointApiResponse"/>&gt;</returns>
+        public async Task<ILogCacheWarningEndpointApiResponse> LogCacheWarningEndpointAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -1104,7 +1104,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1122,8 +1122,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv510LogCacheWarningEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv510LogCacheWarningEndpointApiResponse>();
-                        APIApi.OBPv510LogCacheWarningEndpointApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.LogCacheWarningEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.LogCacheWarningEndpointApiResponse>();
+                        APIApi.LogCacheWarningEndpointApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1134,9 +1134,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510LogCacheWarningEndpointDefaultImplementation(apiResponseLocalVar);
+                        AfterLogCacheWarningEndpointDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv510LogCacheWarningEndpoint(apiResponseLocalVar);
+                        Events.ExecuteOnLogCacheWarningEndpoint(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1148,8 +1148,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510LogCacheWarningEndpointDefaultImplementation(e, "/obp/v5.1.0/system/log-cache/warning", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv510LogCacheWarningEndpoint(e);
+                OnErrorLogCacheWarningEndpointDefaultImplementation(e, "/obp/v5.1.0/system/log-cache/warning", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorLogCacheWarningEndpoint(e);
                 throw;
             }
         }

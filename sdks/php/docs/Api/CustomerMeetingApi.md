@@ -2,19 +2,19 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv310CreateMeeting()**](CustomerMeetingApi.md#oBPv310CreateMeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call) |
-| [**oBPv310GetMeeting()**](CustomerMeetingApi.md#oBPv310GetMeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting |
-| [**oBPv310GetMeetings()**](CustomerMeetingApi.md#oBPv310GetMeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings |
+| [**createMeeting()**](CustomerMeetingApi.md#createMeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call) |
+| [**getMeeting()**](CustomerMeetingApi.md#getMeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting |
+| [**getMeetings()**](CustomerMeetingApi.md#getMeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings |
 
 
-## `oBPv310CreateMeeting()`
+## `createMeeting()`
 
 ```php
-oBPv310CreateMeeting($bankid, $obpv310_create_meeting_request): \OpenBankProject\Model\OBPv310GetMeeting200Response
+createMeeting($bankid, $create_meeting_request): \OpenBankProject\Model\GetMeeting200Response
 ```
 
 Create Meeting (video conference/call)
@@ -37,9 +37,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CustomerMeetingApi(
@@ -49,13 +49,13 @@ $apiInstance = new OpenBankProject\Api\CustomerMeetingApi(
     $config
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
-$obpv310_create_meeting_request = {"type":"object","properties":{"invitees":{"type":"array","items":{"type":"object","properties":{"status":{"type":"string"},"contact_details":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}}},"provider_id":{"type":"string"},"purpose_id":{"type":"string"},"creator":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}},"date":{"type":"string","format":"date-time"}}}; // \OpenBankProject\Model\OBPv310CreateMeetingRequest | Request body
+$create_meeting_request = {"type":"object","properties":{"date":{"type":"string","format":"date-time"},"invitees":{"type":"array","items":{"type":"object","properties":{"status":{"type":"string"},"contact_details":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}}},"provider_id":{"type":"string"},"purpose_id":{"type":"string"},"creator":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}}; // \OpenBankProject\Model\CreateMeetingRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv310CreateMeeting($bankid, $obpv310_create_meeting_request);
+    $result = $apiInstance->createMeeting($bankid, $create_meeting_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerMeetingApi->oBPv310CreateMeeting: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerMeetingApi->createMeeting: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -64,11 +64,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
-| **obpv310_create_meeting_request** | [**\OpenBankProject\Model\OBPv310CreateMeetingRequest**](../Model/OBPv310CreateMeetingRequest.md)| Request body | |
+| **create_meeting_request** | [**\OpenBankProject\Model\CreateMeetingRequest**](../Model/CreateMeetingRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv310GetMeeting200Response**](../Model/OBPv310GetMeeting200Response.md)
+[**\OpenBankProject\Model\GetMeeting200Response**](../Model/GetMeeting200Response.md)
 
 ### Authorization
 
@@ -83,10 +83,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv310GetMeeting()`
+## `getMeeting()`
 
 ```php
-oBPv310GetMeeting($bankid, $meetingid): \OpenBankProject\Model\OBPv310GetMeeting200Response
+getMeeting($bankid, $meetingid): \OpenBankProject\Model\GetMeeting200Response
 ```
 
 Get Meeting
@@ -109,9 +109,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CustomerMeetingApi(
@@ -124,10 +124,10 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $meetingid = 'meetingid_example'; // string | The MEETINGID identifier
 
 try {
-    $result = $apiInstance->oBPv310GetMeeting($bankid, $meetingid);
+    $result = $apiInstance->getMeeting($bankid, $meetingid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerMeetingApi->oBPv310GetMeeting: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerMeetingApi->getMeeting: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -140,7 +140,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv310GetMeeting200Response**](../Model/OBPv310GetMeeting200Response.md)
+[**\OpenBankProject\Model\GetMeeting200Response**](../Model/GetMeeting200Response.md)
 
 ### Authorization
 
@@ -155,10 +155,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv310GetMeetings()`
+## `getMeetings()`
 
 ```php
-oBPv310GetMeetings($bankid): \OpenBankProject\Model\OBPv310GetMeetings200Response
+getMeetings($bankid): \OpenBankProject\Model\GetMeetings200Response
 ```
 
 Get Meetings
@@ -181,9 +181,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CustomerMeetingApi(
@@ -195,10 +195,10 @@ $apiInstance = new OpenBankProject\Api\CustomerMeetingApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 
 try {
-    $result = $apiInstance->oBPv310GetMeetings($bankid);
+    $result = $apiInstance->getMeetings($bankid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerMeetingApi->oBPv310GetMeetings: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerMeetingApi->getMeetings: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -210,7 +210,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv310GetMeetings200Response**](../Model/OBPv310GetMeetings200Response.md)
+[**\OpenBankProject\Model\GetMeetings200Response**](../Model/GetMeetings200Response.md)
 
 ### Authorization
 

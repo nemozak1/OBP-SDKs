@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit;
-import com.openbankproject.model.OBPv510GetCounterpartyLimit200Response;
-import com.openbankproject.model.OBPv510GetCounterpartyLimitStatus200Response;
+import com.openbankproject.model.CreateVRPConsentRequestRequestToAccountLimit;
+import com.openbankproject.model.GetCounterpartyLimit200Response;
+import com.openbankproject.model.GetCounterpartyLimitStatus200Response;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -47,7 +47,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class CounterpartyLimitsApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -166,65 +166,65 @@ public class CounterpartyLimitsApi {
 
   /**
    * Create Counterparty Limit
-   * &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
+   * &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param counterpartyid The COUNTERPARTYID identifier (required)
-   * @param obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit Request body (required)
-   * @return OBPv510GetCounterpartyLimit200Response
+   * @param createVRPConsentRequestRequestToAccountLimit Request body (required)
+   * @return GetCounterpartyLimit200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetCounterpartyLimit200Response oBPv510CreateCounterpartyLimit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit) throws ApiException {
-    return oBPv510CreateCounterpartyLimit(bankid, accountid, viewid, counterpartyid, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, null);
+  public GetCounterpartyLimit200Response createCounterpartyLimit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit) throws ApiException {
+    return createCounterpartyLimit(bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit, null);
   }
 
   /**
    * Create Counterparty Limit
-   * &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
+   * &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param counterpartyid The COUNTERPARTYID identifier (required)
-   * @param obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit Request body (required)
+   * @param createVRPConsentRequestRequestToAccountLimit Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv510GetCounterpartyLimit200Response
+   * @return GetCounterpartyLimit200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetCounterpartyLimit200Response oBPv510CreateCounterpartyLimit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv510GetCounterpartyLimit200Response> localVarResponse = oBPv510CreateCounterpartyLimitWithHttpInfo(bankid, accountid, viewid, counterpartyid, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, headers);
+  public GetCounterpartyLimit200Response createCounterpartyLimit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetCounterpartyLimit200Response> localVarResponse = createCounterpartyLimitWithHttpInfo(bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit, headers);
     return localVarResponse.getData();
   }
 
   /**
    * Create Counterparty Limit
-   * &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
+   * &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param counterpartyid The COUNTERPARTYID identifier (required)
-   * @param obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit Request body (required)
-   * @return ApiResponse&lt;OBPv510GetCounterpartyLimit200Response&gt;
+   * @param createVRPConsentRequestRequestToAccountLimit Request body (required)
+   * @return ApiResponse&lt;GetCounterpartyLimit200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetCounterpartyLimit200Response> oBPv510CreateCounterpartyLimitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit) throws ApiException {
-    return oBPv510CreateCounterpartyLimitWithHttpInfo(bankid, accountid, viewid, counterpartyid, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, null);
+  public ApiResponse<GetCounterpartyLimit200Response> createCounterpartyLimitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit) throws ApiException {
+    return createCounterpartyLimitWithHttpInfo(bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit, null);
   }
 
   /**
    * Create Counterparty Limit
-   * &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
+   * &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param counterpartyid The COUNTERPARTYID identifier (required)
-   * @param obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit Request body (required)
+   * @param createVRPConsentRequestRequestToAccountLimit Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv510GetCounterpartyLimit200Response&gt;
+   * @return ApiResponse&lt;GetCounterpartyLimit200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetCounterpartyLimit200Response> oBPv510CreateCounterpartyLimitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510CreateCounterpartyLimitRequestBuilder(bankid, accountid, viewid, counterpartyid, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, headers);
+  public ApiResponse<GetCounterpartyLimit200Response> createCounterpartyLimitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createCounterpartyLimitRequestBuilder(bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -235,11 +235,11 @@ public class CounterpartyLimitsApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510CreateCounterpartyLimit", localVarResponse);
+          throw getApiException("createCounterpartyLimit", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv510GetCounterpartyLimit200Response>(
+          return new ApiResponse<GetCounterpartyLimit200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -249,10 +249,10 @@ public class CounterpartyLimitsApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv510GetCounterpartyLimit200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv510GetCounterpartyLimit200Response>() {});
+        GetCounterpartyLimit200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetCounterpartyLimit200Response>() {});
         
 
-        return new ApiResponse<OBPv510GetCounterpartyLimit200Response>(
+        return new ApiResponse<GetCounterpartyLimit200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -271,26 +271,26 @@ public class CounterpartyLimitsApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510CreateCounterpartyLimitRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createCounterpartyLimitRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv510CreateCounterpartyLimit");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createCounterpartyLimit");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv510CreateCounterpartyLimit");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling createCounterpartyLimit");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv510CreateCounterpartyLimit");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling createCounterpartyLimit");
     }
     // verify the required parameter 'counterpartyid' is set
     if (counterpartyid == null) {
-      throw new ApiException(400, "Missing the required parameter 'counterpartyid' when calling oBPv510CreateCounterpartyLimit");
+      throw new ApiException(400, "Missing the required parameter 'counterpartyid' when calling createCounterpartyLimit");
     }
-    // verify the required parameter 'obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit' is set
-    if (obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit' when calling oBPv510CreateCounterpartyLimit");
+    // verify the required parameter 'createVRPConsentRequestRequestToAccountLimit' is set
+    if (createVRPConsentRequestRequestToAccountLimit == null) {
+      throw new ApiException(400, "Missing the required parameter 'createVRPConsentRequestRequestToAccountLimit' when calling createCounterpartyLimit");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -307,7 +307,7 @@ public class CounterpartyLimitsApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createVRPConsentRequestRequestToAccountLimit);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -332,8 +332,8 @@ public class CounterpartyLimitsApi {
    * @param counterpartyid The COUNTERPARTYID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510DeleteCounterpartyLimit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid) throws ApiException {
-    oBPv510DeleteCounterpartyLimit(bankid, accountid, viewid, counterpartyid, null);
+  public void deleteCounterpartyLimit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid) throws ApiException {
+    deleteCounterpartyLimit(bankid, accountid, viewid, counterpartyid, null);
   }
 
   /**
@@ -346,8 +346,8 @@ public class CounterpartyLimitsApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510DeleteCounterpartyLimit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
-    oBPv510DeleteCounterpartyLimitWithHttpInfo(bankid, accountid, viewid, counterpartyid, headers);
+  public void deleteCounterpartyLimit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
+    deleteCounterpartyLimitWithHttpInfo(bankid, accountid, viewid, counterpartyid, headers);
   }
 
   /**
@@ -360,8 +360,8 @@ public class CounterpartyLimitsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510DeleteCounterpartyLimitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid) throws ApiException {
-    return oBPv510DeleteCounterpartyLimitWithHttpInfo(bankid, accountid, viewid, counterpartyid, null);
+  public ApiResponse<Void> deleteCounterpartyLimitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid) throws ApiException {
+    return deleteCounterpartyLimitWithHttpInfo(bankid, accountid, viewid, counterpartyid, null);
   }
 
   /**
@@ -375,8 +375,8 @@ public class CounterpartyLimitsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510DeleteCounterpartyLimitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510DeleteCounterpartyLimitRequestBuilder(bankid, accountid, viewid, counterpartyid, headers);
+  public ApiResponse<Void> deleteCounterpartyLimitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteCounterpartyLimitRequestBuilder(bankid, accountid, viewid, counterpartyid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -387,7 +387,7 @@ public class CounterpartyLimitsApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510DeleteCounterpartyLimit", localVarResponse);
+          throw getApiException("deleteCounterpartyLimit", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -412,22 +412,22 @@ public class CounterpartyLimitsApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510DeleteCounterpartyLimitRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteCounterpartyLimitRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv510DeleteCounterpartyLimit");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteCounterpartyLimit");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv510DeleteCounterpartyLimit");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling deleteCounterpartyLimit");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv510DeleteCounterpartyLimit");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling deleteCounterpartyLimit");
     }
     // verify the required parameter 'counterpartyid' is set
     if (counterpartyid == null) {
-      throw new ApiException(400, "Missing the required parameter 'counterpartyid' when calling oBPv510DeleteCounterpartyLimit");
+      throw new ApiException(400, "Missing the required parameter 'counterpartyid' when calling deleteCounterpartyLimit");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -461,11 +461,11 @@ public class CounterpartyLimitsApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param counterpartyid The COUNTERPARTYID identifier (required)
-   * @return OBPv510GetCounterpartyLimit200Response
+   * @return GetCounterpartyLimit200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetCounterpartyLimit200Response oBPv510GetCounterpartyLimit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid) throws ApiException {
-    return oBPv510GetCounterpartyLimit(bankid, accountid, viewid, counterpartyid, null);
+  public GetCounterpartyLimit200Response getCounterpartyLimit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid) throws ApiException {
+    return getCounterpartyLimit(bankid, accountid, viewid, counterpartyid, null);
   }
 
   /**
@@ -476,11 +476,11 @@ public class CounterpartyLimitsApi {
    * @param viewid The VIEWID identifier (required)
    * @param counterpartyid The COUNTERPARTYID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv510GetCounterpartyLimit200Response
+   * @return GetCounterpartyLimit200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetCounterpartyLimit200Response oBPv510GetCounterpartyLimit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv510GetCounterpartyLimit200Response> localVarResponse = oBPv510GetCounterpartyLimitWithHttpInfo(bankid, accountid, viewid, counterpartyid, headers);
+  public GetCounterpartyLimit200Response getCounterpartyLimit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetCounterpartyLimit200Response> localVarResponse = getCounterpartyLimitWithHttpInfo(bankid, accountid, viewid, counterpartyid, headers);
     return localVarResponse.getData();
   }
 
@@ -491,11 +491,11 @@ public class CounterpartyLimitsApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param counterpartyid The COUNTERPARTYID identifier (required)
-   * @return ApiResponse&lt;OBPv510GetCounterpartyLimit200Response&gt;
+   * @return ApiResponse&lt;GetCounterpartyLimit200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetCounterpartyLimit200Response> oBPv510GetCounterpartyLimitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid) throws ApiException {
-    return oBPv510GetCounterpartyLimitWithHttpInfo(bankid, accountid, viewid, counterpartyid, null);
+  public ApiResponse<GetCounterpartyLimit200Response> getCounterpartyLimitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid) throws ApiException {
+    return getCounterpartyLimitWithHttpInfo(bankid, accountid, viewid, counterpartyid, null);
   }
 
   /**
@@ -506,11 +506,11 @@ public class CounterpartyLimitsApi {
    * @param viewid The VIEWID identifier (required)
    * @param counterpartyid The COUNTERPARTYID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv510GetCounterpartyLimit200Response&gt;
+   * @return ApiResponse&lt;GetCounterpartyLimit200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetCounterpartyLimit200Response> oBPv510GetCounterpartyLimitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510GetCounterpartyLimitRequestBuilder(bankid, accountid, viewid, counterpartyid, headers);
+  public ApiResponse<GetCounterpartyLimit200Response> getCounterpartyLimitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getCounterpartyLimitRequestBuilder(bankid, accountid, viewid, counterpartyid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -521,11 +521,11 @@ public class CounterpartyLimitsApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510GetCounterpartyLimit", localVarResponse);
+          throw getApiException("getCounterpartyLimit", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv510GetCounterpartyLimit200Response>(
+          return new ApiResponse<GetCounterpartyLimit200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -535,10 +535,10 @@ public class CounterpartyLimitsApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv510GetCounterpartyLimit200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv510GetCounterpartyLimit200Response>() {});
+        GetCounterpartyLimit200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetCounterpartyLimit200Response>() {});
         
 
-        return new ApiResponse<OBPv510GetCounterpartyLimit200Response>(
+        return new ApiResponse<GetCounterpartyLimit200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -557,22 +557,22 @@ public class CounterpartyLimitsApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510GetCounterpartyLimitRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getCounterpartyLimitRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv510GetCounterpartyLimit");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getCounterpartyLimit");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv510GetCounterpartyLimit");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling getCounterpartyLimit");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv510GetCounterpartyLimit");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling getCounterpartyLimit");
     }
     // verify the required parameter 'counterpartyid' is set
     if (counterpartyid == null) {
-      throw new ApiException(400, "Missing the required parameter 'counterpartyid' when calling oBPv510GetCounterpartyLimit");
+      throw new ApiException(400, "Missing the required parameter 'counterpartyid' when calling getCounterpartyLimit");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -606,11 +606,11 @@ public class CounterpartyLimitsApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param counterpartyid The COUNTERPARTYID identifier (required)
-   * @return OBPv510GetCounterpartyLimitStatus200Response
+   * @return GetCounterpartyLimitStatus200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetCounterpartyLimitStatus200Response oBPv510GetCounterpartyLimitStatus(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid) throws ApiException {
-    return oBPv510GetCounterpartyLimitStatus(bankid, accountid, viewid, counterpartyid, null);
+  public GetCounterpartyLimitStatus200Response getCounterpartyLimitStatus(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid) throws ApiException {
+    return getCounterpartyLimitStatus(bankid, accountid, viewid, counterpartyid, null);
   }
 
   /**
@@ -621,11 +621,11 @@ public class CounterpartyLimitsApi {
    * @param viewid The VIEWID identifier (required)
    * @param counterpartyid The COUNTERPARTYID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv510GetCounterpartyLimitStatus200Response
+   * @return GetCounterpartyLimitStatus200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetCounterpartyLimitStatus200Response oBPv510GetCounterpartyLimitStatus(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv510GetCounterpartyLimitStatus200Response> localVarResponse = oBPv510GetCounterpartyLimitStatusWithHttpInfo(bankid, accountid, viewid, counterpartyid, headers);
+  public GetCounterpartyLimitStatus200Response getCounterpartyLimitStatus(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetCounterpartyLimitStatus200Response> localVarResponse = getCounterpartyLimitStatusWithHttpInfo(bankid, accountid, viewid, counterpartyid, headers);
     return localVarResponse.getData();
   }
 
@@ -636,11 +636,11 @@ public class CounterpartyLimitsApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param counterpartyid The COUNTERPARTYID identifier (required)
-   * @return ApiResponse&lt;OBPv510GetCounterpartyLimitStatus200Response&gt;
+   * @return ApiResponse&lt;GetCounterpartyLimitStatus200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetCounterpartyLimitStatus200Response> oBPv510GetCounterpartyLimitStatusWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid) throws ApiException {
-    return oBPv510GetCounterpartyLimitStatusWithHttpInfo(bankid, accountid, viewid, counterpartyid, null);
+  public ApiResponse<GetCounterpartyLimitStatus200Response> getCounterpartyLimitStatusWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid) throws ApiException {
+    return getCounterpartyLimitStatusWithHttpInfo(bankid, accountid, viewid, counterpartyid, null);
   }
 
   /**
@@ -651,11 +651,11 @@ public class CounterpartyLimitsApi {
    * @param viewid The VIEWID identifier (required)
    * @param counterpartyid The COUNTERPARTYID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv510GetCounterpartyLimitStatus200Response&gt;
+   * @return ApiResponse&lt;GetCounterpartyLimitStatus200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetCounterpartyLimitStatus200Response> oBPv510GetCounterpartyLimitStatusWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510GetCounterpartyLimitStatusRequestBuilder(bankid, accountid, viewid, counterpartyid, headers);
+  public ApiResponse<GetCounterpartyLimitStatus200Response> getCounterpartyLimitStatusWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getCounterpartyLimitStatusRequestBuilder(bankid, accountid, viewid, counterpartyid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -666,11 +666,11 @@ public class CounterpartyLimitsApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510GetCounterpartyLimitStatus", localVarResponse);
+          throw getApiException("getCounterpartyLimitStatus", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv510GetCounterpartyLimitStatus200Response>(
+          return new ApiResponse<GetCounterpartyLimitStatus200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -680,10 +680,10 @@ public class CounterpartyLimitsApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv510GetCounterpartyLimitStatus200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv510GetCounterpartyLimitStatus200Response>() {});
+        GetCounterpartyLimitStatus200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetCounterpartyLimitStatus200Response>() {});
         
 
-        return new ApiResponse<OBPv510GetCounterpartyLimitStatus200Response>(
+        return new ApiResponse<GetCounterpartyLimitStatus200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -702,22 +702,22 @@ public class CounterpartyLimitsApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510GetCounterpartyLimitStatusRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getCounterpartyLimitStatusRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv510GetCounterpartyLimitStatus");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getCounterpartyLimitStatus");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv510GetCounterpartyLimitStatus");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling getCounterpartyLimitStatus");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv510GetCounterpartyLimitStatus");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling getCounterpartyLimitStatus");
     }
     // verify the required parameter 'counterpartyid' is set
     if (counterpartyid == null) {
-      throw new ApiException(400, "Missing the required parameter 'counterpartyid' when calling oBPv510GetCounterpartyLimitStatus");
+      throw new ApiException(400, "Missing the required parameter 'counterpartyid' when calling getCounterpartyLimitStatus");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -751,12 +751,12 @@ public class CounterpartyLimitsApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param counterpartyid The COUNTERPARTYID identifier (required)
-   * @param obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit Request body (required)
-   * @return OBPv510GetCounterpartyLimit200Response
+   * @param createVRPConsentRequestRequestToAccountLimit Request body (required)
+   * @return GetCounterpartyLimit200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetCounterpartyLimit200Response oBPv510UpdateCounterpartyLimit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit) throws ApiException {
-    return oBPv510UpdateCounterpartyLimit(bankid, accountid, viewid, counterpartyid, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, null);
+  public GetCounterpartyLimit200Response updateCounterpartyLimit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit) throws ApiException {
+    return updateCounterpartyLimit(bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit, null);
   }
 
   /**
@@ -766,13 +766,13 @@ public class CounterpartyLimitsApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param counterpartyid The COUNTERPARTYID identifier (required)
-   * @param obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit Request body (required)
+   * @param createVRPConsentRequestRequestToAccountLimit Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv510GetCounterpartyLimit200Response
+   * @return GetCounterpartyLimit200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetCounterpartyLimit200Response oBPv510UpdateCounterpartyLimit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv510GetCounterpartyLimit200Response> localVarResponse = oBPv510UpdateCounterpartyLimitWithHttpInfo(bankid, accountid, viewid, counterpartyid, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, headers);
+  public GetCounterpartyLimit200Response updateCounterpartyLimit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetCounterpartyLimit200Response> localVarResponse = updateCounterpartyLimitWithHttpInfo(bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit, headers);
     return localVarResponse.getData();
   }
 
@@ -783,12 +783,12 @@ public class CounterpartyLimitsApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param counterpartyid The COUNTERPARTYID identifier (required)
-   * @param obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit Request body (required)
-   * @return ApiResponse&lt;OBPv510GetCounterpartyLimit200Response&gt;
+   * @param createVRPConsentRequestRequestToAccountLimit Request body (required)
+   * @return ApiResponse&lt;GetCounterpartyLimit200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetCounterpartyLimit200Response> oBPv510UpdateCounterpartyLimitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit) throws ApiException {
-    return oBPv510UpdateCounterpartyLimitWithHttpInfo(bankid, accountid, viewid, counterpartyid, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, null);
+  public ApiResponse<GetCounterpartyLimit200Response> updateCounterpartyLimitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit) throws ApiException {
+    return updateCounterpartyLimitWithHttpInfo(bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit, null);
   }
 
   /**
@@ -798,13 +798,13 @@ public class CounterpartyLimitsApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param counterpartyid The COUNTERPARTYID identifier (required)
-   * @param obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit Request body (required)
+   * @param createVRPConsentRequestRequestToAccountLimit Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv510GetCounterpartyLimit200Response&gt;
+   * @return ApiResponse&lt;GetCounterpartyLimit200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetCounterpartyLimit200Response> oBPv510UpdateCounterpartyLimitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510UpdateCounterpartyLimitRequestBuilder(bankid, accountid, viewid, counterpartyid, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, headers);
+  public ApiResponse<GetCounterpartyLimit200Response> updateCounterpartyLimitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateCounterpartyLimitRequestBuilder(bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -815,11 +815,11 @@ public class CounterpartyLimitsApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510UpdateCounterpartyLimit", localVarResponse);
+          throw getApiException("updateCounterpartyLimit", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv510GetCounterpartyLimit200Response>(
+          return new ApiResponse<GetCounterpartyLimit200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -829,10 +829,10 @@ public class CounterpartyLimitsApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv510GetCounterpartyLimit200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv510GetCounterpartyLimit200Response>() {});
+        GetCounterpartyLimit200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetCounterpartyLimit200Response>() {});
         
 
-        return new ApiResponse<OBPv510GetCounterpartyLimit200Response>(
+        return new ApiResponse<GetCounterpartyLimit200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -851,26 +851,26 @@ public class CounterpartyLimitsApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510UpdateCounterpartyLimitRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateCounterpartyLimitRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, @javax.annotation.Nonnull CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv510UpdateCounterpartyLimit");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateCounterpartyLimit");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv510UpdateCounterpartyLimit");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling updateCounterpartyLimit");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv510UpdateCounterpartyLimit");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling updateCounterpartyLimit");
     }
     // verify the required parameter 'counterpartyid' is set
     if (counterpartyid == null) {
-      throw new ApiException(400, "Missing the required parameter 'counterpartyid' when calling oBPv510UpdateCounterpartyLimit");
+      throw new ApiException(400, "Missing the required parameter 'counterpartyid' when calling updateCounterpartyLimit");
     }
-    // verify the required parameter 'obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit' is set
-    if (obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit' when calling oBPv510UpdateCounterpartyLimit");
+    // verify the required parameter 'createVRPConsentRequestRequestToAccountLimit' is set
+    if (createVRPConsentRequestRequestToAccountLimit == null) {
+      throw new ApiException(400, "Missing the required parameter 'createVRPConsentRequestRequestToAccountLimit' when calling updateCounterpartyLimit");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -887,7 +887,7 @@ public class CounterpartyLimitsApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createVRPConsentRequestRequestToAccountLimit);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

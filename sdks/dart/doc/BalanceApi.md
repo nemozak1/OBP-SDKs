@@ -5,19 +5,19 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv510CreateBankAccountBalance**](BalanceApi.md#obpv510createbankaccountbalance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
-[**oBPv510DeleteBankAccountBalance**](BalanceApi.md#obpv510deletebankaccountbalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
-[**oBPv510GetAllBankAccountBalances**](BalanceApi.md#obpv510getallbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
-[**oBPv510GetBankAccountBalanceById**](BalanceApi.md#obpv510getbankaccountbalancebyid) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
-[**oBPv510UpdateBankAccountBalance**](BalanceApi.md#obpv510updatebankaccountbalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
+[**createBankAccountBalance**](BalanceApi.md#createbankaccountbalance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
+[**deleteBankAccountBalance**](BalanceApi.md#deletebankaccountbalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
+[**getAllBankAccountBalances**](BalanceApi.md#getallbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
+[**getBankAccountBalanceById**](BalanceApi.md#getbankaccountbalancebyid) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
+[**updateBankAccountBalance**](BalanceApi.md#updatebankaccountbalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
 
 
-# **oBPv510CreateBankAccountBalance**
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510CreateBankAccountBalance(bankid, accountid, oBPv510CreateBankAccountBalanceRequest)
+# **createBankAccountBalance**
+> GetAllBankAccountBalances200ResponseBalancesInner createBankAccountBalance(bankid, accountid, createBankAccountBalanceRequest)
 
 Create Bank Account Balance
 
@@ -40,13 +40,13 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getBalanceApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest = {"type":"object","properties":{"balance_amount":{"type":"string"},"balance_type":{"type":"string"}}}; // OBPv510CreateBankAccountBalanceRequest | Request body
+final CreateBankAccountBalanceRequest createBankAccountBalanceRequest = {"type":"object","properties":{"balance_amount":{"type":"string"},"balance_type":{"type":"string"}}}; // CreateBankAccountBalanceRequest | Request body
 
 try {
-    final response = api.oBPv510CreateBankAccountBalance(bankid, accountid, oBPv510CreateBankAccountBalanceRequest);
+    final response = api.createBankAccountBalance(bankid, accountid, createBankAccountBalanceRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BalanceApi->oBPv510CreateBankAccountBalance: $e\n');
+    print('Exception when calling BalanceApi->createBankAccountBalance: $e\n');
 }
 ```
 
@@ -56,11 +56,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
  **accountid** | **String**| The ACCOUNTID identifier | 
- **oBPv510CreateBankAccountBalanceRequest** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md)| Request body | 
+ **createBankAccountBalanceRequest** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -73,8 +73,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510DeleteBankAccountBalance**
-> oBPv510DeleteBankAccountBalance(bankid, accountid, balanceid)
+# **deleteBankAccountBalance**
+> deleteBankAccountBalance(bankid, accountid, balanceid)
 
 Delete Bank Account Balance
 
@@ -100,9 +100,9 @@ final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String balanceid = balanceid_example; // String | The BALANCEID identifier
 
 try {
-    api.oBPv510DeleteBankAccountBalance(bankid, accountid, balanceid);
+    api.deleteBankAccountBalance(bankid, accountid, balanceid);
 } on DioException catch (e) {
-    print('Exception when calling BalanceApi->oBPv510DeleteBankAccountBalance: $e\n');
+    print('Exception when calling BalanceApi->deleteBankAccountBalance: $e\n');
 }
 ```
 
@@ -129,8 +129,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510GetAllBankAccountBalances**
-> OBPv510GetAllBankAccountBalances200Response oBPv510GetAllBankAccountBalances(bankid, accountid)
+# **getAllBankAccountBalances**
+> GetAllBankAccountBalances200Response getAllBankAccountBalances(bankid, accountid)
 
 Get All Bank Account Balances
 
@@ -155,10 +155,10 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 
 try {
-    final response = api.oBPv510GetAllBankAccountBalances(bankid, accountid);
+    final response = api.getAllBankAccountBalances(bankid, accountid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BalanceApi->oBPv510GetAllBankAccountBalances: $e\n');
+    print('Exception when calling BalanceApi->getAllBankAccountBalances: $e\n');
 }
 ```
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200Response**](OBPv510GetAllBankAccountBalances200Response.md)
+[**GetAllBankAccountBalances200Response**](GetAllBankAccountBalances200Response.md)
 
 ### Authorization
 
@@ -184,8 +184,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510GetBankAccountBalanceById**
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510GetBankAccountBalanceById(bankid, accountid, balanceid)
+# **getBankAccountBalanceById**
+> GetAllBankAccountBalances200ResponseBalancesInner getBankAccountBalanceById(bankid, accountid, balanceid)
 
 Get Bank Account Balance By ID
 
@@ -211,10 +211,10 @@ final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String balanceid = balanceid_example; // String | The BALANCEID identifier
 
 try {
-    final response = api.oBPv510GetBankAccountBalanceById(bankid, accountid, balanceid);
+    final response = api.getBankAccountBalanceById(bankid, accountid, balanceid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BalanceApi->oBPv510GetBankAccountBalanceById: $e\n');
+    print('Exception when calling BalanceApi->getBankAccountBalanceById: $e\n');
 }
 ```
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -241,8 +241,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510UpdateBankAccountBalance**
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510UpdateBankAccountBalance(bankid, accountid, balanceid, oBPv510CreateBankAccountBalanceRequest)
+# **updateBankAccountBalance**
+> GetAllBankAccountBalances200ResponseBalancesInner updateBankAccountBalance(bankid, accountid, balanceid, createBankAccountBalanceRequest)
 
 Update Bank Account Balance
 
@@ -266,13 +266,13 @@ final api = ObpDart().getBalanceApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String balanceid = balanceid_example; // String | The BALANCEID identifier
-final OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest = {type=object, properties={balance_amount={type=string}, balance_type={type=string}}}; // OBPv510CreateBankAccountBalanceRequest | Request body
+final CreateBankAccountBalanceRequest createBankAccountBalanceRequest = {type=object, properties={balance_amount={type=string}, balance_type={type=string}}}; // CreateBankAccountBalanceRequest | Request body
 
 try {
-    final response = api.oBPv510UpdateBankAccountBalance(bankid, accountid, balanceid, oBPv510CreateBankAccountBalanceRequest);
+    final response = api.updateBankAccountBalance(bankid, accountid, balanceid, createBankAccountBalanceRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BalanceApi->oBPv510UpdateBankAccountBalance: $e\n');
+    print('Exception when calling BalanceApi->updateBankAccountBalance: $e\n');
 }
 ```
 
@@ -283,11 +283,11 @@ Name | Type | Description  | Notes
  **bankid** | **String**| The BANKID identifier | 
  **accountid** | **String**| The ACCOUNTID identifier | 
  **balanceid** | **String**| The BALANCEID identifier | 
- **oBPv510CreateBankAccountBalanceRequest** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md)| Request body | 
+ **createBankAccountBalanceRequest** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 

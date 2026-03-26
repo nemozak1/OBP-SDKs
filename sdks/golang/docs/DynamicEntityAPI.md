@@ -1,19 +1,19 @@
 # \DynamicEntityAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv600CleanupOrphanedDynamicEntityRecords**](DynamicEntityAPI.md#OBPv600CleanupOrphanedDynamicEntityRecords) | **Delete** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
-[**OBPv600GetAvailablePersonalDynamicEntities**](DynamicEntityAPI.md#OBPv600GetAvailablePersonalDynamicEntities) | **Get** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
-[**OBPv600GetDynamicEntityDiagnostics**](DynamicEntityAPI.md#OBPv600GetDynamicEntityDiagnostics) | **Get** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
-[**OBPv600GetReferenceTypes**](DynamicEntityAPI.md#OBPv600GetReferenceTypes) | **Get** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
+[**CleanupOrphanedDynamicEntityRecords**](DynamicEntityAPI.md#CleanupOrphanedDynamicEntityRecords) | **Delete** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
+[**GetAvailablePersonalDynamicEntities**](DynamicEntityAPI.md#GetAvailablePersonalDynamicEntities) | **Get** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
+[**GetDynamicEntityDiagnostics**](DynamicEntityAPI.md#GetDynamicEntityDiagnostics) | **Get** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
+[**GetReferenceTypes**](DynamicEntityAPI.md#GetReferenceTypes) | **Get** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
 
 
 
-## OBPv600CleanupOrphanedDynamicEntityRecords
+## CleanupOrphanedDynamicEntityRecords
 
-> OBPv600CleanupOrphanedDynamicEntityRecords200Response OBPv600CleanupOrphanedDynamicEntityRecords(ctx).Execute()
+> CleanupOrphanedDynamicEntityRecords200Response CleanupOrphanedDynamicEntityRecords(ctx).Execute()
 
 Cleanup Orphaned Dynamic Entity Records
 
@@ -35,13 +35,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicEntityAPI.OBPv600CleanupOrphanedDynamicEntityRecords(context.Background()).Execute()
+	resp, r, err := apiClient.DynamicEntityAPI.CleanupOrphanedDynamicEntityRecords(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEntityAPI.OBPv600CleanupOrphanedDynamicEntityRecords``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEntityAPI.CleanupOrphanedDynamicEntityRecords``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600CleanupOrphanedDynamicEntityRecords`: OBPv600CleanupOrphanedDynamicEntityRecords200Response
-	fmt.Fprintf(os.Stdout, "Response from `DynamicEntityAPI.OBPv600CleanupOrphanedDynamicEntityRecords`: %v\n", resp)
+	// response from `CleanupOrphanedDynamicEntityRecords`: CleanupOrphanedDynamicEntityRecords200Response
+	fmt.Fprintf(os.Stdout, "Response from `DynamicEntityAPI.CleanupOrphanedDynamicEntityRecords`: %v\n", resp)
 }
 ```
 
@@ -51,12 +51,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600CleanupOrphanedDynamicEntityRecordsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCleanupOrphanedDynamicEntityRecordsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600CleanupOrphanedDynamicEntityRecords200Response**](OBPv600CleanupOrphanedDynamicEntityRecords200Response.md)
+[**CleanupOrphanedDynamicEntityRecords200Response**](CleanupOrphanedDynamicEntityRecords200Response.md)
 
 ### Authorization
 
@@ -72,9 +72,9 @@ Other parameters are passed through a pointer to a apiOBPv600CleanupOrphanedDyna
 [[Back to README]](../README.md)
 
 
-## OBPv600GetAvailablePersonalDynamicEntities
+## GetAvailablePersonalDynamicEntities
 
-> OBPv600GetAvailablePersonalDynamicEntities200Response OBPv600GetAvailablePersonalDynamicEntities(ctx).Execute()
+> GetAvailablePersonalDynamicEntities200Response GetAvailablePersonalDynamicEntities(ctx).Execute()
 
 Get Available Personal Dynamic Entities
 
@@ -96,13 +96,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicEntityAPI.OBPv600GetAvailablePersonalDynamicEntities(context.Background()).Execute()
+	resp, r, err := apiClient.DynamicEntityAPI.GetAvailablePersonalDynamicEntities(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEntityAPI.OBPv600GetAvailablePersonalDynamicEntities``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEntityAPI.GetAvailablePersonalDynamicEntities``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetAvailablePersonalDynamicEntities`: OBPv600GetAvailablePersonalDynamicEntities200Response
-	fmt.Fprintf(os.Stdout, "Response from `DynamicEntityAPI.OBPv600GetAvailablePersonalDynamicEntities`: %v\n", resp)
+	// response from `GetAvailablePersonalDynamicEntities`: GetAvailablePersonalDynamicEntities200Response
+	fmt.Fprintf(os.Stdout, "Response from `DynamicEntityAPI.GetAvailablePersonalDynamicEntities`: %v\n", resp)
 }
 ```
 
@@ -112,12 +112,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetAvailablePersonalDynamicEntitiesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAvailablePersonalDynamicEntitiesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -133,9 +133,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetAvailablePersona
 [[Back to README]](../README.md)
 
 
-## OBPv600GetDynamicEntityDiagnostics
+## GetDynamicEntityDiagnostics
 
-> OBPv600GetDynamicEntityDiagnostics200Response OBPv600GetDynamicEntityDiagnostics(ctx).Execute()
+> GetDynamicEntityDiagnostics200Response GetDynamicEntityDiagnostics(ctx).Execute()
 
 Get Dynamic Entity Diagnostics
 
@@ -157,13 +157,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicEntityAPI.OBPv600GetDynamicEntityDiagnostics(context.Background()).Execute()
+	resp, r, err := apiClient.DynamicEntityAPI.GetDynamicEntityDiagnostics(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEntityAPI.OBPv600GetDynamicEntityDiagnostics``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEntityAPI.GetDynamicEntityDiagnostics``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetDynamicEntityDiagnostics`: OBPv600GetDynamicEntityDiagnostics200Response
-	fmt.Fprintf(os.Stdout, "Response from `DynamicEntityAPI.OBPv600GetDynamicEntityDiagnostics`: %v\n", resp)
+	// response from `GetDynamicEntityDiagnostics`: GetDynamicEntityDiagnostics200Response
+	fmt.Fprintf(os.Stdout, "Response from `DynamicEntityAPI.GetDynamicEntityDiagnostics`: %v\n", resp)
 }
 ```
 
@@ -173,12 +173,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetDynamicEntityDiagnosticsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetDynamicEntityDiagnosticsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetDynamicEntityDiagnostics200Response**](OBPv600GetDynamicEntityDiagnostics200Response.md)
+[**GetDynamicEntityDiagnostics200Response**](GetDynamicEntityDiagnostics200Response.md)
 
 ### Authorization
 
@@ -194,9 +194,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetDynamicEntityDia
 [[Back to README]](../README.md)
 
 
-## OBPv600GetReferenceTypes
+## GetReferenceTypes
 
-> OBPv600GetReferenceTypes200Response OBPv600GetReferenceTypes(ctx).Execute()
+> GetReferenceTypes200Response GetReferenceTypes(ctx).Execute()
 
 Get Reference Types for Dynamic Entities
 
@@ -218,13 +218,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicEntityAPI.OBPv600GetReferenceTypes(context.Background()).Execute()
+	resp, r, err := apiClient.DynamicEntityAPI.GetReferenceTypes(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEntityAPI.OBPv600GetReferenceTypes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEntityAPI.GetReferenceTypes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetReferenceTypes`: OBPv600GetReferenceTypes200Response
-	fmt.Fprintf(os.Stdout, "Response from `DynamicEntityAPI.OBPv600GetReferenceTypes`: %v\n", resp)
+	// response from `GetReferenceTypes`: GetReferenceTypes200Response
+	fmt.Fprintf(os.Stdout, "Response from `DynamicEntityAPI.GetReferenceTypes`: %v\n", resp)
 }
 ```
 
@@ -234,12 +234,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetReferenceTypesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetReferenceTypesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetReferenceTypes200Response**](OBPv600GetReferenceTypes200Response.md)
+[**GetReferenceTypes200Response**](GetReferenceTypes200Response.md)
 
 ### Authorization
 

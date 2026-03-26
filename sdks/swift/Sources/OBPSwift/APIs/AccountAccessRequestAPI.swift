@@ -15,12 +15,12 @@ open class AccountAccessRequestAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter accountaccessrequestid: (path) The ACCOUNTACCESSREQUESTID identifier 
-     - parameter oBPv600RejectAccountAccessRequestRequest: (body) Request body 
+     - parameter rejectAccountAccessRequestRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600RejectAccountAccessRequest200Response
+     - returns: RejectAccountAccessRequest200Response
      */
-    open class func oBPv600ApproveAccountAccessRequest(bankid: String, accountid: String, accountaccessrequestid: String, oBPv600RejectAccountAccessRequestRequest: OBPv600RejectAccountAccessRequestRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600RejectAccountAccessRequest200Response {
-        return try await oBPv600ApproveAccountAccessRequestWithRequestBuilder(bankid: bankid, accountid: accountid, accountaccessrequestid: accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest: oBPv600RejectAccountAccessRequestRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func approveAccountAccessRequest(bankid: String, accountid: String, accountaccessrequestid: String, rejectAccountAccessRequestRequest: RejectAccountAccessRequestRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> RejectAccountAccessRequest200Response {
+        return try await approveAccountAccessRequestWithRequestBuilder(bankid: bankid, accountid: accountid, accountaccessrequestid: accountaccessrequestid, rejectAccountAccessRequestRequest: rejectAccountAccessRequestRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -34,16 +34,16 @@ open class AccountAccessRequestAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter accountaccessrequestid: (path) The ACCOUNTACCESSREQUESTID identifier 
-     - parameter oBPv600RejectAccountAccessRequestRequest: (body) Request body 
+     - parameter rejectAccountAccessRequestRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600RejectAccountAccessRequest200Response> 
+     - returns: RequestBuilder<RejectAccountAccessRequest200Response> 
      */
-    open class func oBPv600ApproveAccountAccessRequestWithRequestBuilder(bankid: String, accountid: String, accountaccessrequestid: String, oBPv600RejectAccountAccessRequestRequest: OBPv600RejectAccountAccessRequestRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600RejectAccountAccessRequest200Response> {
+    open class func approveAccountAccessRequestWithRequestBuilder(bankid: String, accountid: String, accountaccessrequestid: String, rejectAccountAccessRequestRequest: RejectAccountAccessRequestRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<RejectAccountAccessRequest200Response> {
         var localVariablePath = "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -55,7 +55,7 @@ open class AccountAccessRequestAPI {
         let accountaccessrequestidPostEscape = accountaccessrequestidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{accountaccessrequestid}", with: accountaccessrequestidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600RejectAccountAccessRequestRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: rejectAccountAccessRequestRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -65,7 +65,7 @@ open class AccountAccessRequestAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600RejectAccountAccessRequest200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<RejectAccountAccessRequest200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -75,12 +75,12 @@ open class AccountAccessRequestAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter oBPv600CreateAccountAccessRequestRequest: (body) Request body 
+     - parameter createAccountAccessRequestRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600RejectAccountAccessRequest200Response
+     - returns: RejectAccountAccessRequest200Response
      */
-    open class func oBPv600CreateAccountAccessRequest(bankid: String, accountid: String, oBPv600CreateAccountAccessRequestRequest: OBPv600CreateAccountAccessRequestRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600RejectAccountAccessRequest200Response {
-        return try await oBPv600CreateAccountAccessRequestWithRequestBuilder(bankid: bankid, accountid: accountid, oBPv600CreateAccountAccessRequestRequest: oBPv600CreateAccountAccessRequestRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createAccountAccessRequest(bankid: String, accountid: String, createAccountAccessRequestRequest: CreateAccountAccessRequestRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> RejectAccountAccessRequest200Response {
+        return try await createAccountAccessRequestWithRequestBuilder(bankid: bankid, accountid: accountid, createAccountAccessRequestRequest: createAccountAccessRequestRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -94,15 +94,15 @@ open class AccountAccessRequestAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter oBPv600CreateAccountAccessRequestRequest: (body) Request body 
+     - parameter createAccountAccessRequestRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600RejectAccountAccessRequest200Response> 
+     - returns: RequestBuilder<RejectAccountAccessRequest200Response> 
      */
-    open class func oBPv600CreateAccountAccessRequestWithRequestBuilder(bankid: String, accountid: String, oBPv600CreateAccountAccessRequestRequest: OBPv600CreateAccountAccessRequestRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600RejectAccountAccessRequest200Response> {
+    open class func createAccountAccessRequestWithRequestBuilder(bankid: String, accountid: String, createAccountAccessRequestRequest: CreateAccountAccessRequestRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<RejectAccountAccessRequest200Response> {
         var localVariablePath = "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -111,7 +111,7 @@ open class AccountAccessRequestAPI {
         let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600CreateAccountAccessRequestRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createAccountAccessRequestRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -121,7 +121,7 @@ open class AccountAccessRequestAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600RejectAccountAccessRequest200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<RejectAccountAccessRequest200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -133,10 +133,10 @@ open class AccountAccessRequestAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter accountaccessrequestid: (path) The ACCOUNTACCESSREQUESTID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600RejectAccountAccessRequest200Response
+     - returns: RejectAccountAccessRequest200Response
      */
-    open class func oBPv600GetAccountAccessRequestById(bankid: String, accountid: String, accountaccessrequestid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600RejectAccountAccessRequest200Response {
-        return try await oBPv600GetAccountAccessRequestByIdWithRequestBuilder(bankid: bankid, accountid: accountid, accountaccessrequestid: accountaccessrequestid, apiConfiguration: apiConfiguration).execute().body
+    open class func getAccountAccessRequestById(bankid: String, accountid: String, accountaccessrequestid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> RejectAccountAccessRequest200Response {
+        return try await getAccountAccessRequestByIdWithRequestBuilder(bankid: bankid, accountid: accountid, accountaccessrequestid: accountaccessrequestid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -150,15 +150,15 @@ open class AccountAccessRequestAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter accountaccessrequestid: (path) The ACCOUNTACCESSREQUESTID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600RejectAccountAccessRequest200Response> 
+     - returns: RequestBuilder<RejectAccountAccessRequest200Response> 
      */
-    open class func oBPv600GetAccountAccessRequestByIdWithRequestBuilder(bankid: String, accountid: String, accountaccessrequestid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600RejectAccountAccessRequest200Response> {
+    open class func getAccountAccessRequestByIdWithRequestBuilder(bankid: String, accountid: String, accountaccessrequestid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<RejectAccountAccessRequest200Response> {
         var localVariablePath = "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -180,7 +180,7 @@ open class AccountAccessRequestAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600RejectAccountAccessRequest200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<RejectAccountAccessRequest200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -191,10 +191,10 @@ open class AccountAccessRequestAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetAccountAccessRequestsForAccount200Response
+     - returns: GetAccountAccessRequestsForAccount200Response
      */
-    open class func oBPv600GetAccountAccessRequestsForAccount(bankid: String, accountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetAccountAccessRequestsForAccount200Response {
-        return try await oBPv600GetAccountAccessRequestsForAccountWithRequestBuilder(bankid: bankid, accountid: accountid, apiConfiguration: apiConfiguration).execute().body
+    open class func getAccountAccessRequestsForAccount(bankid: String, accountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAccountAccessRequestsForAccount200Response {
+        return try await getAccountAccessRequestsForAccountWithRequestBuilder(bankid: bankid, accountid: accountid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -208,14 +208,14 @@ open class AccountAccessRequestAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetAccountAccessRequestsForAccount200Response> 
+     - returns: RequestBuilder<GetAccountAccessRequestsForAccount200Response> 
      */
-    open class func oBPv600GetAccountAccessRequestsForAccountWithRequestBuilder(bankid: String, accountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetAccountAccessRequestsForAccount200Response> {
+    open class func getAccountAccessRequestsForAccountWithRequestBuilder(bankid: String, accountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAccountAccessRequestsForAccount200Response> {
         var localVariablePath = "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -234,7 +234,7 @@ open class AccountAccessRequestAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetAccountAccessRequestsForAccount200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAccountAccessRequestsForAccount200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -243,10 +243,10 @@ open class AccountAccessRequestAPI {
      Get My Account Access Requests
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetAccountAccessRequestsForAccount200Response
+     - returns: GetAccountAccessRequestsForAccount200Response
      */
-    open class func oBPv600GetMyAccountAccessRequests(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetAccountAccessRequestsForAccount200Response {
-        return try await oBPv600GetMyAccountAccessRequestsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getMyAccountAccessRequests(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAccountAccessRequestsForAccount200Response {
+        return try await getMyAccountAccessRequestsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -260,12 +260,12 @@ open class AccountAccessRequestAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetAccountAccessRequestsForAccount200Response> 
+     - returns: RequestBuilder<GetAccountAccessRequestsForAccount200Response> 
      */
-    open class func oBPv600GetMyAccountAccessRequestsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetAccountAccessRequestsForAccount200Response> {
+    open class func getMyAccountAccessRequestsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAccountAccessRequestsForAccount200Response> {
         let localVariablePath = "/obp/v6.0.0/my/account-access-requests"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -278,7 +278,7 @@ open class AccountAccessRequestAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetAccountAccessRequestsForAccount200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAccountAccessRequestsForAccount200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -289,12 +289,12 @@ open class AccountAccessRequestAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter accountaccessrequestid: (path) The ACCOUNTACCESSREQUESTID identifier 
-     - parameter oBPv600RejectAccountAccessRequestRequest: (body) Request body 
+     - parameter rejectAccountAccessRequestRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600RejectAccountAccessRequest200Response
+     - returns: RejectAccountAccessRequest200Response
      */
-    open class func oBPv600RejectAccountAccessRequest(bankid: String, accountid: String, accountaccessrequestid: String, oBPv600RejectAccountAccessRequestRequest: OBPv600RejectAccountAccessRequestRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600RejectAccountAccessRequest200Response {
-        return try await oBPv600RejectAccountAccessRequestWithRequestBuilder(bankid: bankid, accountid: accountid, accountaccessrequestid: accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest: oBPv600RejectAccountAccessRequestRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func rejectAccountAccessRequest(bankid: String, accountid: String, accountaccessrequestid: String, rejectAccountAccessRequestRequest: RejectAccountAccessRequestRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> RejectAccountAccessRequest200Response {
+        return try await rejectAccountAccessRequestWithRequestBuilder(bankid: bankid, accountid: accountid, accountaccessrequestid: accountaccessrequestid, rejectAccountAccessRequestRequest: rejectAccountAccessRequestRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -308,16 +308,16 @@ open class AccountAccessRequestAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter accountaccessrequestid: (path) The ACCOUNTACCESSREQUESTID identifier 
-     - parameter oBPv600RejectAccountAccessRequestRequest: (body) Request body 
+     - parameter rejectAccountAccessRequestRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600RejectAccountAccessRequest200Response> 
+     - returns: RequestBuilder<RejectAccountAccessRequest200Response> 
      */
-    open class func oBPv600RejectAccountAccessRequestWithRequestBuilder(bankid: String, accountid: String, accountaccessrequestid: String, oBPv600RejectAccountAccessRequestRequest: OBPv600RejectAccountAccessRequestRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600RejectAccountAccessRequest200Response> {
+    open class func rejectAccountAccessRequestWithRequestBuilder(bankid: String, accountid: String, accountaccessrequestid: String, rejectAccountAccessRequestRequest: RejectAccountAccessRequestRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<RejectAccountAccessRequest200Response> {
         var localVariablePath = "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -329,7 +329,7 @@ open class AccountAccessRequestAPI {
         let accountaccessrequestidPostEscape = accountaccessrequestidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{accountaccessrequestid}", with: accountaccessrequestidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600RejectAccountAccessRequestRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: rejectAccountAccessRequestRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -339,7 +339,7 @@ open class AccountAccessRequestAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600RejectAccountAccessRequest200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<RejectAccountAccessRequest200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

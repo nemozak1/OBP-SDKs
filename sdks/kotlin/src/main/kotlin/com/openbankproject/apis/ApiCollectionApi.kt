@@ -19,17 +19,17 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv400CreateMyApiCollectionEndpointRequest
-import com.openbankproject.models.OBPv400CreateMyApiCollectionRequest
-import com.openbankproject.models.OBPv400DeleteSystemLevelEndpointTag200Response
-import com.openbankproject.models.OBPv400GetApiCollectionsForUser200Response
-import com.openbankproject.models.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-import com.openbankproject.models.OBPv400GetMyApiCollectionEndpoints200Response
-import com.openbankproject.models.OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
-import com.openbankproject.models.OBPv600CreateFeaturedApiCollectionRequest
-import com.openbankproject.models.OBPv600GetFeaturedApiCollectionsAdmin200Response
-import com.openbankproject.models.OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
-import com.openbankproject.models.OBPv600UpdateFeaturedApiCollectionRequest
+import com.openbankproject.models.CreateFeaturedApiCollectionRequest
+import com.openbankproject.models.CreateMyApiCollectionEndpointRequest
+import com.openbankproject.models.CreateMyApiCollectionRequest
+import com.openbankproject.models.DeleteSystemLevelEndpointTag200Response
+import com.openbankproject.models.GetApiCollectionsForUser200Response
+import com.openbankproject.models.GetApiCollectionsForUser200ResponseApiCollectionsInner
+import com.openbankproject.models.GetFeaturedApiCollectionsAdmin200Response
+import com.openbankproject.models.GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
+import com.openbankproject.models.GetMyApiCollectionEndpoints200Response
+import com.openbankproject.models.GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
+import com.openbankproject.models.UpdateFeaturedApiCollectionRequest
 
 import com.squareup.moshi.Json
 
@@ -51,1419 +51,16 @@ open class ApiCollectionApi(basePath: kotlin.String = defaultBasePath, client: C
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
-    }
-
-    /**
-     * POST /obp/v4.0.0/my/api-collections
-     * Create My Api Collection
-     * &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @param obPv400CreateMyApiCollectionRequest Request body
-     * @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateMyApiCollection(obPv400CreateMyApiCollectionRequest: OBPv400CreateMyApiCollectionRequest) : OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems {
-        val localVarResponse = oBPv400CreateMyApiCollectionWithHttpInfo(obPv400CreateMyApiCollectionRequest = obPv400CreateMyApiCollectionRequest)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /obp/v4.0.0/my/api-collections
-     * Create My Api Collection
-     * &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @param obPv400CreateMyApiCollectionRequest Request body
-     * @return ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateMyApiCollectionWithHttpInfo(obPv400CreateMyApiCollectionRequest: OBPv400CreateMyApiCollectionRequest) : ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems?> {
-        val localVariableConfig = oBPv400CreateMyApiCollectionRequestConfig(obPv400CreateMyApiCollectionRequest = obPv400CreateMyApiCollectionRequest)
-
-        return request<OBPv400CreateMyApiCollectionRequest, OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv400CreateMyApiCollection
-     *
-     * @param obPv400CreateMyApiCollectionRequest Request body
-     * @return RequestConfig
-     */
-    fun oBPv400CreateMyApiCollectionRequestConfig(obPv400CreateMyApiCollectionRequest: OBPv400CreateMyApiCollectionRequest) : RequestConfig<OBPv400CreateMyApiCollectionRequest> {
-        val localVariableBody = obPv400CreateMyApiCollectionRequest
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json"
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/obp/v4.0.0/my/api-collections",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints
-     * Create My Api Collection Endpoint
-     * &lt;p&gt;Create Api Collection Endpoint.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
-     * @param apicollectionname The APICOLLECTIONNAME identifier
-     * @param obPv400CreateMyApiCollectionEndpointRequest Request body
-     * @return OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateMyApiCollectionEndpoint(apicollectionname: kotlin.String, obPv400CreateMyApiCollectionEndpointRequest: OBPv400CreateMyApiCollectionEndpointRequest) : OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems {
-        val localVarResponse = oBPv400CreateMyApiCollectionEndpointWithHttpInfo(apicollectionname = apicollectionname, obPv400CreateMyApiCollectionEndpointRequest = obPv400CreateMyApiCollectionEndpointRequest)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints
-     * Create My Api Collection Endpoint
-     * &lt;p&gt;Create Api Collection Endpoint.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
-     * @param apicollectionname The APICOLLECTIONNAME identifier
-     * @param obPv400CreateMyApiCollectionEndpointRequest Request body
-     * @return ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateMyApiCollectionEndpointWithHttpInfo(apicollectionname: kotlin.String, obPv400CreateMyApiCollectionEndpointRequest: OBPv400CreateMyApiCollectionEndpointRequest) : ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems?> {
-        val localVariableConfig = oBPv400CreateMyApiCollectionEndpointRequestConfig(apicollectionname = apicollectionname, obPv400CreateMyApiCollectionEndpointRequest = obPv400CreateMyApiCollectionEndpointRequest)
-
-        return request<OBPv400CreateMyApiCollectionEndpointRequest, OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv400CreateMyApiCollectionEndpoint
-     *
-     * @param apicollectionname The APICOLLECTIONNAME identifier
-     * @param obPv400CreateMyApiCollectionEndpointRequest Request body
-     * @return RequestConfig
-     */
-    fun oBPv400CreateMyApiCollectionEndpointRequestConfig(apicollectionname: kotlin.String, obPv400CreateMyApiCollectionEndpointRequest: OBPv400CreateMyApiCollectionEndpointRequest) : RequestConfig<OBPv400CreateMyApiCollectionEndpointRequest> {
-        val localVariableBody = obPv400CreateMyApiCollectionEndpointRequest
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json"
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints".replace("{"+"apicollectionname"+"}", encodeURIComponent(apicollectionname.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints
-     * Create My Api Collection Endpoint By Id
-     * &lt;p&gt;Create Api Collection Endpoint By Id.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @param obPv400CreateMyApiCollectionEndpointRequest Request body
-     * @return OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateMyApiCollectionEndpointById(apicollectionid: kotlin.String, obPv400CreateMyApiCollectionEndpointRequest: OBPv400CreateMyApiCollectionEndpointRequest) : OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems {
-        val localVarResponse = oBPv400CreateMyApiCollectionEndpointByIdWithHttpInfo(apicollectionid = apicollectionid, obPv400CreateMyApiCollectionEndpointRequest = obPv400CreateMyApiCollectionEndpointRequest)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints
-     * Create My Api Collection Endpoint By Id
-     * &lt;p&gt;Create Api Collection Endpoint By Id.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @param obPv400CreateMyApiCollectionEndpointRequest Request body
-     * @return ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateMyApiCollectionEndpointByIdWithHttpInfo(apicollectionid: kotlin.String, obPv400CreateMyApiCollectionEndpointRequest: OBPv400CreateMyApiCollectionEndpointRequest) : ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems?> {
-        val localVariableConfig = oBPv400CreateMyApiCollectionEndpointByIdRequestConfig(apicollectionid = apicollectionid, obPv400CreateMyApiCollectionEndpointRequest = obPv400CreateMyApiCollectionEndpointRequest)
-
-        return request<OBPv400CreateMyApiCollectionEndpointRequest, OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv400CreateMyApiCollectionEndpointById
-     *
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @param obPv400CreateMyApiCollectionEndpointRequest Request body
-     * @return RequestConfig
-     */
-    fun oBPv400CreateMyApiCollectionEndpointByIdRequestConfig(apicollectionid: kotlin.String, obPv400CreateMyApiCollectionEndpointRequest: OBPv400CreateMyApiCollectionEndpointRequest) : RequestConfig<OBPv400CreateMyApiCollectionEndpointRequest> {
-        val localVariableBody = obPv400CreateMyApiCollectionEndpointRequest
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json"
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * DELETE /obp/v4.0.0/my/api-collections/{apicollectionid}
-     * Delete My Api Collection
-     * &lt;p&gt;Delete Api Collection By API_COLLECTION_ID&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @return OBPv400DeleteSystemLevelEndpointTag200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteMyApiCollection(apicollectionid: kotlin.String) : OBPv400DeleteSystemLevelEndpointTag200Response {
-        val localVarResponse = oBPv400DeleteMyApiCollectionWithHttpInfo(apicollectionid = apicollectionid)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400DeleteSystemLevelEndpointTag200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * DELETE /obp/v4.0.0/my/api-collections/{apicollectionid}
-     * Delete My Api Collection
-     * &lt;p&gt;Delete Api Collection By API_COLLECTION_ID&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @return ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteMyApiCollectionWithHttpInfo(apicollectionid: kotlin.String) : ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response?> {
-        val localVariableConfig = oBPv400DeleteMyApiCollectionRequestConfig(apicollectionid = apicollectionid)
-
-        return request<Unit, OBPv400DeleteSystemLevelEndpointTag200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv400DeleteMyApiCollection
-     *
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @return RequestConfig
-     */
-    fun oBPv400DeleteMyApiCollectionRequestConfig(apicollectionid: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.DELETE,
-            path = "/obp/v4.0.0/my/api-collections/{apicollectionid}".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * DELETE /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}
-     * Delete My Api Collection Endpoint
-     * &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;Delete Api Collection Endpoint By OPERATION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-     * @param apicollectionname The APICOLLECTIONNAME identifier
-     * @param operationid The OPERATIONID identifier
-     * @return OBPv400DeleteSystemLevelEndpointTag200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteMyApiCollectionEndpoint(apicollectionname: kotlin.String, operationid: kotlin.String) : OBPv400DeleteSystemLevelEndpointTag200Response {
-        val localVarResponse = oBPv400DeleteMyApiCollectionEndpointWithHttpInfo(apicollectionname = apicollectionname, operationid = operationid)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400DeleteSystemLevelEndpointTag200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * DELETE /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}
-     * Delete My Api Collection Endpoint
-     * &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;Delete Api Collection Endpoint By OPERATION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-     * @param apicollectionname The APICOLLECTIONNAME identifier
-     * @param operationid The OPERATIONID identifier
-     * @return ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteMyApiCollectionEndpointWithHttpInfo(apicollectionname: kotlin.String, operationid: kotlin.String) : ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response?> {
-        val localVariableConfig = oBPv400DeleteMyApiCollectionEndpointRequestConfig(apicollectionname = apicollectionname, operationid = operationid)
-
-        return request<Unit, OBPv400DeleteSystemLevelEndpointTag200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv400DeleteMyApiCollectionEndpoint
-     *
-     * @param apicollectionname The APICOLLECTIONNAME identifier
-     * @param operationid The OPERATIONID identifier
-     * @return RequestConfig
-     */
-    fun oBPv400DeleteMyApiCollectionEndpointRequestConfig(apicollectionname: kotlin.String, operationid: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.DELETE,
-            path = "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}".replace("{"+"apicollectionname"+"}", encodeURIComponent(apicollectionname.toString())).replace("{"+"operationid"+"}", encodeURIComponent(operationid.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * DELETE /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoint-ids/{apicollectionendpointid}
-     * Delete My Api Collection Endpoint By Id
-     * &lt;p&gt;glossary-item-not-found&lt;br /&gt; Delete Api Collection Endpoint&lt;br /&gt; Delete Api Collection Endpoint By Id&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ENDPOINT_ID&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @param apicollectionendpointid The APICOLLECTIONENDPOINTID identifier
-     * @return OBPv400DeleteSystemLevelEndpointTag200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteMyApiCollectionEndpointById(apicollectionid: kotlin.String, apicollectionendpointid: kotlin.String) : OBPv400DeleteSystemLevelEndpointTag200Response {
-        val localVarResponse = oBPv400DeleteMyApiCollectionEndpointByIdWithHttpInfo(apicollectionid = apicollectionid, apicollectionendpointid = apicollectionendpointid)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400DeleteSystemLevelEndpointTag200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * DELETE /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoint-ids/{apicollectionendpointid}
-     * Delete My Api Collection Endpoint By Id
-     * &lt;p&gt;glossary-item-not-found&lt;br /&gt; Delete Api Collection Endpoint&lt;br /&gt; Delete Api Collection Endpoint By Id&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ENDPOINT_ID&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @param apicollectionendpointid The APICOLLECTIONENDPOINTID identifier
-     * @return ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteMyApiCollectionEndpointByIdWithHttpInfo(apicollectionid: kotlin.String, apicollectionendpointid: kotlin.String) : ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response?> {
-        val localVariableConfig = oBPv400DeleteMyApiCollectionEndpointByIdRequestConfig(apicollectionid = apicollectionid, apicollectionendpointid = apicollectionendpointid)
-
-        return request<Unit, OBPv400DeleteSystemLevelEndpointTag200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv400DeleteMyApiCollectionEndpointById
-     *
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @param apicollectionendpointid The APICOLLECTIONENDPOINTID identifier
-     * @return RequestConfig
-     */
-    fun oBPv400DeleteMyApiCollectionEndpointByIdRequestConfig(apicollectionid: kotlin.String, apicollectionendpointid: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.DELETE,
-            path = "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoint-ids/{apicollectionendpointid}".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())).replace("{"+"apicollectionendpointid"+"}", encodeURIComponent(apicollectionendpointid.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * DELETE /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints/{operationid}
-     * Delete My Api Collection Endpoint By Id
-     * &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;Delete Api Collection Endpoint By OPERATION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @param operationid The OPERATIONID identifier
-     * @return OBPv400DeleteSystemLevelEndpointTag200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteMyApiCollectionEndpointByOperationId(apicollectionid: kotlin.String, operationid: kotlin.String) : OBPv400DeleteSystemLevelEndpointTag200Response {
-        val localVarResponse = oBPv400DeleteMyApiCollectionEndpointByOperationIdWithHttpInfo(apicollectionid = apicollectionid, operationid = operationid)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400DeleteSystemLevelEndpointTag200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * DELETE /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints/{operationid}
-     * Delete My Api Collection Endpoint By Id
-     * &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;Delete Api Collection Endpoint By OPERATION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @param operationid The OPERATIONID identifier
-     * @return ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteMyApiCollectionEndpointByOperationIdWithHttpInfo(apicollectionid: kotlin.String, operationid: kotlin.String) : ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response?> {
-        val localVariableConfig = oBPv400DeleteMyApiCollectionEndpointByOperationIdRequestConfig(apicollectionid = apicollectionid, operationid = operationid)
-
-        return request<Unit, OBPv400DeleteSystemLevelEndpointTag200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv400DeleteMyApiCollectionEndpointByOperationId
-     *
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @param operationid The OPERATIONID identifier
-     * @return RequestConfig
-     */
-    fun oBPv400DeleteMyApiCollectionEndpointByOperationIdRequestConfig(apicollectionid: kotlin.String, operationid: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.DELETE,
-            path = "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints/{operationid}".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())).replace("{"+"operationid"+"}", encodeURIComponent(operationid.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * GET /obp/v4.0.0/api-collections/{apicollectionid}/api-collection-endpoints
-     * Get Api Collection Endpoints
-     * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @return OBPv400GetMyApiCollectionEndpoints200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetApiCollectionEndpoints(apicollectionid: kotlin.String) : OBPv400GetMyApiCollectionEndpoints200Response {
-        val localVarResponse = oBPv400GetApiCollectionEndpointsWithHttpInfo(apicollectionid = apicollectionid)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetMyApiCollectionEndpoints200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * GET /obp/v4.0.0/api-collections/{apicollectionid}/api-collection-endpoints
-     * Get Api Collection Endpoints
-     * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @return ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetApiCollectionEndpointsWithHttpInfo(apicollectionid: kotlin.String) : ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response?> {
-        val localVariableConfig = oBPv400GetApiCollectionEndpointsRequestConfig(apicollectionid = apicollectionid)
-
-        return request<Unit, OBPv400GetMyApiCollectionEndpoints200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv400GetApiCollectionEndpoints
-     *
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @return RequestConfig
-     */
-    fun oBPv400GetApiCollectionEndpointsRequestConfig(apicollectionid: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/obp/v4.0.0/api-collections/{apicollectionid}/api-collection-endpoints".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * GET /obp/v4.0.0/users/{userid}/api-collections
-     * Get Api Collections for User
-     * &lt;p&gt;Get Api Collections for User.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @param userid The USERID identifier
-     * @return OBPv400GetApiCollectionsForUser200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetApiCollectionsForUser(userid: kotlin.String) : OBPv400GetApiCollectionsForUser200Response {
-        val localVarResponse = oBPv400GetApiCollectionsForUserWithHttpInfo(userid = userid)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetApiCollectionsForUser200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * GET /obp/v4.0.0/users/{userid}/api-collections
-     * Get Api Collections for User
-     * &lt;p&gt;Get Api Collections for User.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @param userid The USERID identifier
-     * @return ApiResponse<OBPv400GetApiCollectionsForUser200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetApiCollectionsForUserWithHttpInfo(userid: kotlin.String) : ApiResponse<OBPv400GetApiCollectionsForUser200Response?> {
-        val localVariableConfig = oBPv400GetApiCollectionsForUserRequestConfig(userid = userid)
-
-        return request<Unit, OBPv400GetApiCollectionsForUser200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv400GetApiCollectionsForUser
-     *
-     * @param userid The USERID identifier
-     * @return RequestConfig
-     */
-    fun oBPv400GetApiCollectionsForUserRequestConfig(userid: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/obp/v4.0.0/users/{userid}/api-collections".replace("{"+"userid"+"}", encodeURIComponent(userid.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * GET /obp/v4.0.0/api-collections/featured
-     * Get Featured Api Collections
-     * &lt;p&gt;Get Featured Api Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @return OBPv400GetApiCollectionsForUser200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetFeaturedApiCollections() : OBPv400GetApiCollectionsForUser200Response {
-        val localVarResponse = oBPv400GetFeaturedApiCollectionsWithHttpInfo()
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetApiCollectionsForUser200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * GET /obp/v4.0.0/api-collections/featured
-     * Get Featured Api Collections
-     * &lt;p&gt;Get Featured Api Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @return ApiResponse<OBPv400GetApiCollectionsForUser200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetFeaturedApiCollectionsWithHttpInfo() : ApiResponse<OBPv400GetApiCollectionsForUser200Response?> {
-        val localVariableConfig = oBPv400GetFeaturedApiCollectionsRequestConfig()
-
-        return request<Unit, OBPv400GetApiCollectionsForUser200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv400GetFeaturedApiCollections
-     *
-     * @return RequestConfig
-     */
-    fun oBPv400GetFeaturedApiCollectionsRequestConfig() : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/obp/v4.0.0/api-collections/featured",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * GET /obp/v4.0.0/my/api-collections/{apicollectionid}
-     * Get My Api Collection By Id
-     * &lt;p&gt;Get Api Collection By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetMyApiCollectionById(apicollectionid: kotlin.String) : OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems {
-        val localVarResponse = oBPv400GetMyApiCollectionByIdWithHttpInfo(apicollectionid = apicollectionid)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * GET /obp/v4.0.0/my/api-collections/{apicollectionid}
-     * Get My Api Collection By Id
-     * &lt;p&gt;Get Api Collection By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @return ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetMyApiCollectionByIdWithHttpInfo(apicollectionid: kotlin.String) : ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems?> {
-        val localVariableConfig = oBPv400GetMyApiCollectionByIdRequestConfig(apicollectionid = apicollectionid)
-
-        return request<Unit, OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv400GetMyApiCollectionById
-     *
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @return RequestConfig
-     */
-    fun oBPv400GetMyApiCollectionByIdRequestConfig(apicollectionid: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/obp/v4.0.0/my/api-collections/{apicollectionid}".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * GET /obp/v4.0.0/my/api-collections/name/{apicollectionname}
-     * Get My Api Collection By Name
-     * &lt;p&gt;Get Api Collection By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @param apicollectionname The APICOLLECTIONNAME identifier
-     * @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetMyApiCollectionByName(apicollectionname: kotlin.String) : OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems {
-        val localVarResponse = oBPv400GetMyApiCollectionByNameWithHttpInfo(apicollectionname = apicollectionname)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * GET /obp/v4.0.0/my/api-collections/name/{apicollectionname}
-     * Get My Api Collection By Name
-     * &lt;p&gt;Get Api Collection By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @param apicollectionname The APICOLLECTIONNAME identifier
-     * @return ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetMyApiCollectionByNameWithHttpInfo(apicollectionname: kotlin.String) : ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems?> {
-        val localVariableConfig = oBPv400GetMyApiCollectionByNameRequestConfig(apicollectionname = apicollectionname)
-
-        return request<Unit, OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv400GetMyApiCollectionByName
-     *
-     * @param apicollectionname The APICOLLECTIONNAME identifier
-     * @return RequestConfig
-     */
-    fun oBPv400GetMyApiCollectionByNameRequestConfig(apicollectionname: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/obp/v4.0.0/my/api-collections/name/{apicollectionname}".replace("{"+"apicollectionname"+"}", encodeURIComponent(apicollectionname.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * GET /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}
-     * Get My Api Collection Endpoint
-     * &lt;p&gt;Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
-     * @param apicollectionname The APICOLLECTIONNAME identifier
-     * @param operationid The OPERATIONID identifier
-     * @return OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetMyApiCollectionEndpoint(apicollectionname: kotlin.String, operationid: kotlin.String) : OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems {
-        val localVarResponse = oBPv400GetMyApiCollectionEndpointWithHttpInfo(apicollectionname = apicollectionname, operationid = operationid)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * GET /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}
-     * Get My Api Collection Endpoint
-     * &lt;p&gt;Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
-     * @param apicollectionname The APICOLLECTIONNAME identifier
-     * @param operationid The OPERATIONID identifier
-     * @return ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetMyApiCollectionEndpointWithHttpInfo(apicollectionname: kotlin.String, operationid: kotlin.String) : ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems?> {
-        val localVariableConfig = oBPv400GetMyApiCollectionEndpointRequestConfig(apicollectionname = apicollectionname, operationid = operationid)
-
-        return request<Unit, OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv400GetMyApiCollectionEndpoint
-     *
-     * @param apicollectionname The APICOLLECTIONNAME identifier
-     * @param operationid The OPERATIONID identifier
-     * @return RequestConfig
-     */
-    fun oBPv400GetMyApiCollectionEndpointRequestConfig(apicollectionname: kotlin.String, operationid: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}".replace("{"+"apicollectionname"+"}", encodeURIComponent(apicollectionname.toString())).replace("{"+"operationid"+"}", encodeURIComponent(operationid.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * GET /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints
-     * Get My Api Collection Endpoints
-     * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
-     * @param apicollectionname The APICOLLECTIONNAME identifier
-     * @return OBPv400GetMyApiCollectionEndpoints200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetMyApiCollectionEndpoints(apicollectionname: kotlin.String) : OBPv400GetMyApiCollectionEndpoints200Response {
-        val localVarResponse = oBPv400GetMyApiCollectionEndpointsWithHttpInfo(apicollectionname = apicollectionname)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetMyApiCollectionEndpoints200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * GET /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints
-     * Get My Api Collection Endpoints
-     * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
-     * @param apicollectionname The APICOLLECTIONNAME identifier
-     * @return ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetMyApiCollectionEndpointsWithHttpInfo(apicollectionname: kotlin.String) : ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response?> {
-        val localVariableConfig = oBPv400GetMyApiCollectionEndpointsRequestConfig(apicollectionname = apicollectionname)
-
-        return request<Unit, OBPv400GetMyApiCollectionEndpoints200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv400GetMyApiCollectionEndpoints
-     *
-     * @param apicollectionname The APICOLLECTIONNAME identifier
-     * @return RequestConfig
-     */
-    fun oBPv400GetMyApiCollectionEndpointsRequestConfig(apicollectionname: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints".replace("{"+"apicollectionname"+"}", encodeURIComponent(apicollectionname.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * GET /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints
-     * Get My Api Collection Endpoints By Id
-     * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @return OBPv400GetMyApiCollectionEndpoints200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetMyApiCollectionEndpointsById(apicollectionid: kotlin.String) : OBPv400GetMyApiCollectionEndpoints200Response {
-        val localVarResponse = oBPv400GetMyApiCollectionEndpointsByIdWithHttpInfo(apicollectionid = apicollectionid)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetMyApiCollectionEndpoints200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * GET /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints
-     * Get My Api Collection Endpoints By Id
-     * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @return ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetMyApiCollectionEndpointsByIdWithHttpInfo(apicollectionid: kotlin.String) : ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response?> {
-        val localVariableConfig = oBPv400GetMyApiCollectionEndpointsByIdRequestConfig(apicollectionid = apicollectionid)
-
-        return request<Unit, OBPv400GetMyApiCollectionEndpoints200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv400GetMyApiCollectionEndpointsById
-     *
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @return RequestConfig
-     */
-    fun oBPv400GetMyApiCollectionEndpointsByIdRequestConfig(apicollectionid: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * GET /obp/v4.0.0/my/api-collections
-     * Get My Api Collections
-     * &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @return OBPv400GetApiCollectionsForUser200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetMyApiCollections() : OBPv400GetApiCollectionsForUser200Response {
-        val localVarResponse = oBPv400GetMyApiCollectionsWithHttpInfo()
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetApiCollectionsForUser200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * GET /obp/v4.0.0/my/api-collections
-     * Get My Api Collections
-     * &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @return ApiResponse<OBPv400GetApiCollectionsForUser200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetMyApiCollectionsWithHttpInfo() : ApiResponse<OBPv400GetApiCollectionsForUser200Response?> {
-        val localVariableConfig = oBPv400GetMyApiCollectionsRequestConfig()
-
-        return request<Unit, OBPv400GetApiCollectionsForUser200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv400GetMyApiCollections
-     *
-     * @return RequestConfig
-     */
-    fun oBPv400GetMyApiCollectionsRequestConfig() : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/obp/v4.0.0/my/api-collections",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * GET /obp/v4.0.0/api-collections/sharable/{apicollectionid}
-     * Get Sharable Api Collection By Id
-     * &lt;p&gt;Get Sharable Api Collection By Id.&lt;br /&gt; User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetSharableApiCollectionById(apicollectionid: kotlin.String) : OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems {
-        val localVarResponse = oBPv400GetSharableApiCollectionByIdWithHttpInfo(apicollectionid = apicollectionid)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * GET /obp/v4.0.0/api-collections/sharable/{apicollectionid}
-     * Get Sharable Api Collection By Id
-     * &lt;p&gt;Get Sharable Api Collection By Id.&lt;br /&gt; User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @return ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetSharableApiCollectionByIdWithHttpInfo(apicollectionid: kotlin.String) : ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems?> {
-        val localVariableConfig = oBPv400GetSharableApiCollectionByIdRequestConfig(apicollectionid = apicollectionid)
-
-        return request<Unit, OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv400GetSharableApiCollectionById
-     *
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @return RequestConfig
-     */
-    fun oBPv400GetSharableApiCollectionByIdRequestConfig(apicollectionid: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/obp/v4.0.0/api-collections/sharable/{apicollectionid}".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * GET /obp/v5.1.0/management/api-collections
-     * Get All API Collections
-     * &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @return OBPv400GetApiCollectionsForUser200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510GetAllApiCollections() : OBPv400GetApiCollectionsForUser200Response {
-        val localVarResponse = oBPv510GetAllApiCollectionsWithHttpInfo()
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetApiCollectionsForUser200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * GET /obp/v5.1.0/management/api-collections
-     * Get All API Collections
-     * &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @return ApiResponse<OBPv400GetApiCollectionsForUser200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510GetAllApiCollectionsWithHttpInfo() : ApiResponse<OBPv400GetApiCollectionsForUser200Response?> {
-        val localVariableConfig = oBPv510GetAllApiCollectionsRequestConfig()
-
-        return request<Unit, OBPv400GetApiCollectionsForUser200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv510GetAllApiCollections
-     *
-     * @return RequestConfig
-     */
-    fun oBPv510GetAllApiCollectionsRequestConfig() : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/obp/v5.1.0/management/api-collections",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * PUT /obp/v5.1.0/my/api-collections/{apicollectionid}
-     * Update My Api Collection By API_COLLECTION_ID
-     * &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @param obPv400CreateMyApiCollectionRequest Request body
-     * @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510UpdateMyApiCollection(apicollectionid: kotlin.String, obPv400CreateMyApiCollectionRequest: OBPv400CreateMyApiCollectionRequest) : OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems {
-        val localVarResponse = oBPv510UpdateMyApiCollectionWithHttpInfo(apicollectionid = apicollectionid, obPv400CreateMyApiCollectionRequest = obPv400CreateMyApiCollectionRequest)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * PUT /obp/v5.1.0/my/api-collections/{apicollectionid}
-     * Update My Api Collection By API_COLLECTION_ID
-     * &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @param obPv400CreateMyApiCollectionRequest Request body
-     * @return ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510UpdateMyApiCollectionWithHttpInfo(apicollectionid: kotlin.String, obPv400CreateMyApiCollectionRequest: OBPv400CreateMyApiCollectionRequest) : ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems?> {
-        val localVariableConfig = oBPv510UpdateMyApiCollectionRequestConfig(apicollectionid = apicollectionid, obPv400CreateMyApiCollectionRequest = obPv400CreateMyApiCollectionRequest)
-
-        return request<OBPv400CreateMyApiCollectionRequest, OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv510UpdateMyApiCollection
-     *
-     * @param apicollectionid The APICOLLECTIONID identifier
-     * @param obPv400CreateMyApiCollectionRequest Request body
-     * @return RequestConfig
-     */
-    fun oBPv510UpdateMyApiCollectionRequestConfig(apicollectionid: kotlin.String, obPv400CreateMyApiCollectionRequest: OBPv400CreateMyApiCollectionRequest) : RequestConfig<OBPv400CreateMyApiCollectionRequest> {
-        val localVariableBody = obPv400CreateMyApiCollectionRequest
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json"
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.PUT,
-            path = "/obp/v5.1.0/my/api-collections/{apicollectionid}".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
     }
 
     /**
      * POST /obp/v6.0.0/management/api-collections/featured
      * Create Featured Api Collection
      * &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-     * @param obPv600CreateFeaturedApiCollectionRequest Request body
-     * @return OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
+     * @param createFeaturedApiCollectionRequest Request body
+     * @return GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1472,11 +69,11 @@ open class ApiCollectionApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600CreateFeaturedApiCollection(obPv600CreateFeaturedApiCollectionRequest: OBPv600CreateFeaturedApiCollectionRequest) : OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems {
-        val localVarResponse = oBPv600CreateFeaturedApiCollectionWithHttpInfo(obPv600CreateFeaturedApiCollectionRequest = obPv600CreateFeaturedApiCollectionRequest)
+    fun createFeaturedApiCollection(createFeaturedApiCollectionRequest: CreateFeaturedApiCollectionRequest) : GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner {
+        val localVarResponse = createFeaturedApiCollectionWithHttpInfo(createFeaturedApiCollectionRequest = createFeaturedApiCollectionRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1494,29 +91,29 @@ open class ApiCollectionApi(basePath: kotlin.String = defaultBasePath, client: C
      * POST /obp/v6.0.0/management/api-collections/featured
      * Create Featured Api Collection
      * &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-     * @param obPv600CreateFeaturedApiCollectionRequest Request body
-     * @return ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems?>
+     * @param createFeaturedApiCollectionRequest Request body
+     * @return ApiResponse<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600CreateFeaturedApiCollectionWithHttpInfo(obPv600CreateFeaturedApiCollectionRequest: OBPv600CreateFeaturedApiCollectionRequest) : ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems?> {
-        val localVariableConfig = oBPv600CreateFeaturedApiCollectionRequestConfig(obPv600CreateFeaturedApiCollectionRequest = obPv600CreateFeaturedApiCollectionRequest)
+    fun createFeaturedApiCollectionWithHttpInfo(createFeaturedApiCollectionRequest: CreateFeaturedApiCollectionRequest) : ApiResponse<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner?> {
+        val localVariableConfig = createFeaturedApiCollectionRequestConfig(createFeaturedApiCollectionRequest = createFeaturedApiCollectionRequest)
 
-        return request<OBPv600CreateFeaturedApiCollectionRequest, OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems>(
+        return request<CreateFeaturedApiCollectionRequest, GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600CreateFeaturedApiCollection
+     * To obtain the request config of the operation createFeaturedApiCollection
      *
-     * @param obPv600CreateFeaturedApiCollectionRequest Request body
+     * @param createFeaturedApiCollectionRequest Request body
      * @return RequestConfig
      */
-    fun oBPv600CreateFeaturedApiCollectionRequestConfig(obPv600CreateFeaturedApiCollectionRequest: OBPv600CreateFeaturedApiCollectionRequest) : RequestConfig<OBPv600CreateFeaturedApiCollectionRequest> {
-        val localVariableBody = obPv600CreateFeaturedApiCollectionRequest
+    fun createFeaturedApiCollectionRequestConfig(createFeaturedApiCollectionRequest: CreateFeaturedApiCollectionRequest) : RequestConfig<CreateFeaturedApiCollectionRequest> {
+        val localVariableBody = createFeaturedApiCollectionRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -1525,6 +122,234 @@ open class ApiCollectionApi(basePath: kotlin.String = defaultBasePath, client: C
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/obp/v6.0.0/management/api-collections/featured",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * POST /obp/v4.0.0/my/api-collections
+     * Create My Api Collection
+     * &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+     * @param createMyApiCollectionRequest Request body
+     * @return GetApiCollectionsForUser200ResponseApiCollectionsInner
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun createMyApiCollection(createMyApiCollectionRequest: CreateMyApiCollectionRequest) : GetApiCollectionsForUser200ResponseApiCollectionsInner {
+        val localVarResponse = createMyApiCollectionWithHttpInfo(createMyApiCollectionRequest = createMyApiCollectionRequest)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetApiCollectionsForUser200ResponseApiCollectionsInner
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /obp/v4.0.0/my/api-collections
+     * Create My Api Collection
+     * &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+     * @param createMyApiCollectionRequest Request body
+     * @return ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun createMyApiCollectionWithHttpInfo(createMyApiCollectionRequest: CreateMyApiCollectionRequest) : ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner?> {
+        val localVariableConfig = createMyApiCollectionRequestConfig(createMyApiCollectionRequest = createMyApiCollectionRequest)
+
+        return request<CreateMyApiCollectionRequest, GetApiCollectionsForUser200ResponseApiCollectionsInner>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation createMyApiCollection
+     *
+     * @param createMyApiCollectionRequest Request body
+     * @return RequestConfig
+     */
+    fun createMyApiCollectionRequestConfig(createMyApiCollectionRequest: CreateMyApiCollectionRequest) : RequestConfig<CreateMyApiCollectionRequest> {
+        val localVariableBody = createMyApiCollectionRequest
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/obp/v4.0.0/my/api-collections",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * POST /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints
+     * Create My Api Collection Endpoint
+     * &lt;p&gt;Create Api Collection Endpoint.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
+     * @param apicollectionname The APICOLLECTIONNAME identifier
+     * @param createMyApiCollectionEndpointRequest Request body
+     * @return GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun createMyApiCollectionEndpoint(apicollectionname: kotlin.String, createMyApiCollectionEndpointRequest: CreateMyApiCollectionEndpointRequest) : GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner {
+        val localVarResponse = createMyApiCollectionEndpointWithHttpInfo(apicollectionname = apicollectionname, createMyApiCollectionEndpointRequest = createMyApiCollectionEndpointRequest)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints
+     * Create My Api Collection Endpoint
+     * &lt;p&gt;Create Api Collection Endpoint.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
+     * @param apicollectionname The APICOLLECTIONNAME identifier
+     * @param createMyApiCollectionEndpointRequest Request body
+     * @return ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun createMyApiCollectionEndpointWithHttpInfo(apicollectionname: kotlin.String, createMyApiCollectionEndpointRequest: CreateMyApiCollectionEndpointRequest) : ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner?> {
+        val localVariableConfig = createMyApiCollectionEndpointRequestConfig(apicollectionname = apicollectionname, createMyApiCollectionEndpointRequest = createMyApiCollectionEndpointRequest)
+
+        return request<CreateMyApiCollectionEndpointRequest, GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation createMyApiCollectionEndpoint
+     *
+     * @param apicollectionname The APICOLLECTIONNAME identifier
+     * @param createMyApiCollectionEndpointRequest Request body
+     * @return RequestConfig
+     */
+    fun createMyApiCollectionEndpointRequestConfig(apicollectionname: kotlin.String, createMyApiCollectionEndpointRequest: CreateMyApiCollectionEndpointRequest) : RequestConfig<CreateMyApiCollectionEndpointRequest> {
+        val localVariableBody = createMyApiCollectionEndpointRequest
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints".replace("{"+"apicollectionname"+"}", encodeURIComponent(apicollectionname.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * POST /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints
+     * Create My Api Collection Endpoint By Id
+     * &lt;p&gt;Create Api Collection Endpoint By Id.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @param createMyApiCollectionEndpointRequest Request body
+     * @return GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun createMyApiCollectionEndpointById(apicollectionid: kotlin.String, createMyApiCollectionEndpointRequest: CreateMyApiCollectionEndpointRequest) : GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner {
+        val localVarResponse = createMyApiCollectionEndpointByIdWithHttpInfo(apicollectionid = apicollectionid, createMyApiCollectionEndpointRequest = createMyApiCollectionEndpointRequest)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints
+     * Create My Api Collection Endpoint By Id
+     * &lt;p&gt;Create Api Collection Endpoint By Id.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @param createMyApiCollectionEndpointRequest Request body
+     * @return ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun createMyApiCollectionEndpointByIdWithHttpInfo(apicollectionid: kotlin.String, createMyApiCollectionEndpointRequest: CreateMyApiCollectionEndpointRequest) : ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner?> {
+        val localVariableConfig = createMyApiCollectionEndpointByIdRequestConfig(apicollectionid = apicollectionid, createMyApiCollectionEndpointRequest = createMyApiCollectionEndpointRequest)
+
+        return request<CreateMyApiCollectionEndpointRequest, GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation createMyApiCollectionEndpointById
+     *
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @param createMyApiCollectionEndpointRequest Request body
+     * @return RequestConfig
+     */
+    fun createMyApiCollectionEndpointByIdRequestConfig(apicollectionid: kotlin.String, createMyApiCollectionEndpointRequest: CreateMyApiCollectionEndpointRequest) : RequestConfig<CreateMyApiCollectionEndpointRequest> {
+        val localVariableBody = createMyApiCollectionEndpointRequest
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,
@@ -1545,8 +370,8 @@ open class ApiCollectionApi(basePath: kotlin.String = defaultBasePath, client: C
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600DeleteFeaturedApiCollection(apicollectionid: kotlin.String) : Unit {
-        val localVarResponse = oBPv600DeleteFeaturedApiCollectionWithHttpInfo(apicollectionid = apicollectionid)
+    fun deleteFeaturedApiCollection(apicollectionid: kotlin.String) : Unit {
+        val localVarResponse = deleteFeaturedApiCollectionWithHttpInfo(apicollectionid = apicollectionid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -1573,8 +398,8 @@ open class ApiCollectionApi(basePath: kotlin.String = defaultBasePath, client: C
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600DeleteFeaturedApiCollectionWithHttpInfo(apicollectionid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv600DeleteFeaturedApiCollectionRequestConfig(apicollectionid = apicollectionid)
+    fun deleteFeaturedApiCollectionWithHttpInfo(apicollectionid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteFeaturedApiCollectionRequestConfig(apicollectionid = apicollectionid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -1582,12 +407,12 @@ open class ApiCollectionApi(basePath: kotlin.String = defaultBasePath, client: C
     }
 
     /**
-     * To obtain the request config of the operation oBPv600DeleteFeaturedApiCollection
+     * To obtain the request config of the operation deleteFeaturedApiCollection
      *
      * @param apicollectionid The APICOLLECTIONID identifier
      * @return RequestConfig
      */
-    fun oBPv600DeleteFeaturedApiCollectionRequestConfig(apicollectionid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteFeaturedApiCollectionRequestConfig(apicollectionid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -1603,10 +428,11 @@ open class ApiCollectionApi(basePath: kotlin.String = defaultBasePath, client: C
     }
 
     /**
-     * GET /obp/v6.0.0/management/api-collections/featured
-     * Get Featured Api Collections (Admin)
-     * &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-     * @return OBPv600GetFeaturedApiCollectionsAdmin200Response
+     * DELETE /obp/v4.0.0/my/api-collections/{apicollectionid}
+     * Delete My Api Collection
+     * &lt;p&gt;Delete Api Collection By API_COLLECTION_ID&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @return DeleteSystemLevelEndpointTag200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1615,11 +441,597 @@ open class ApiCollectionApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetFeaturedApiCollectionsAdmin() : OBPv600GetFeaturedApiCollectionsAdmin200Response {
-        val localVarResponse = oBPv600GetFeaturedApiCollectionsAdminWithHttpInfo()
+    fun deleteMyApiCollection(apicollectionid: kotlin.String) : DeleteSystemLevelEndpointTag200Response {
+        val localVarResponse = deleteMyApiCollectionWithHttpInfo(apicollectionid = apicollectionid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetFeaturedApiCollectionsAdmin200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as DeleteSystemLevelEndpointTag200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * DELETE /obp/v4.0.0/my/api-collections/{apicollectionid}
+     * Delete My Api Collection
+     * &lt;p&gt;Delete Api Collection By API_COLLECTION_ID&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @return ApiResponse<DeleteSystemLevelEndpointTag200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun deleteMyApiCollectionWithHttpInfo(apicollectionid: kotlin.String) : ApiResponse<DeleteSystemLevelEndpointTag200Response?> {
+        val localVariableConfig = deleteMyApiCollectionRequestConfig(apicollectionid = apicollectionid)
+
+        return request<Unit, DeleteSystemLevelEndpointTag200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation deleteMyApiCollection
+     *
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @return RequestConfig
+     */
+    fun deleteMyApiCollectionRequestConfig(apicollectionid: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.DELETE,
+            path = "/obp/v4.0.0/my/api-collections/{apicollectionid}".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * DELETE /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}
+     * Delete My Api Collection Endpoint
+     * &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;Delete Api Collection Endpoint By OPERATION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+     * @param apicollectionname The APICOLLECTIONNAME identifier
+     * @param operationid The OPERATIONID identifier
+     * @return DeleteSystemLevelEndpointTag200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun deleteMyApiCollectionEndpoint(apicollectionname: kotlin.String, operationid: kotlin.String) : DeleteSystemLevelEndpointTag200Response {
+        val localVarResponse = deleteMyApiCollectionEndpointWithHttpInfo(apicollectionname = apicollectionname, operationid = operationid)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as DeleteSystemLevelEndpointTag200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * DELETE /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}
+     * Delete My Api Collection Endpoint
+     * &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;Delete Api Collection Endpoint By OPERATION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+     * @param apicollectionname The APICOLLECTIONNAME identifier
+     * @param operationid The OPERATIONID identifier
+     * @return ApiResponse<DeleteSystemLevelEndpointTag200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun deleteMyApiCollectionEndpointWithHttpInfo(apicollectionname: kotlin.String, operationid: kotlin.String) : ApiResponse<DeleteSystemLevelEndpointTag200Response?> {
+        val localVariableConfig = deleteMyApiCollectionEndpointRequestConfig(apicollectionname = apicollectionname, operationid = operationid)
+
+        return request<Unit, DeleteSystemLevelEndpointTag200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation deleteMyApiCollectionEndpoint
+     *
+     * @param apicollectionname The APICOLLECTIONNAME identifier
+     * @param operationid The OPERATIONID identifier
+     * @return RequestConfig
+     */
+    fun deleteMyApiCollectionEndpointRequestConfig(apicollectionname: kotlin.String, operationid: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.DELETE,
+            path = "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}".replace("{"+"apicollectionname"+"}", encodeURIComponent(apicollectionname.toString())).replace("{"+"operationid"+"}", encodeURIComponent(operationid.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * DELETE /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoint-ids/{apicollectionendpointid}
+     * Delete My Api Collection Endpoint By Id
+     * &lt;p&gt;glossary-item-not-found&lt;br /&gt; Delete Api Collection Endpoint&lt;br /&gt; Delete Api Collection Endpoint By Id&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ENDPOINT_ID&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @param apicollectionendpointid The APICOLLECTIONENDPOINTID identifier
+     * @return DeleteSystemLevelEndpointTag200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun deleteMyApiCollectionEndpointById(apicollectionid: kotlin.String, apicollectionendpointid: kotlin.String) : DeleteSystemLevelEndpointTag200Response {
+        val localVarResponse = deleteMyApiCollectionEndpointByIdWithHttpInfo(apicollectionid = apicollectionid, apicollectionendpointid = apicollectionendpointid)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as DeleteSystemLevelEndpointTag200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * DELETE /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoint-ids/{apicollectionendpointid}
+     * Delete My Api Collection Endpoint By Id
+     * &lt;p&gt;glossary-item-not-found&lt;br /&gt; Delete Api Collection Endpoint&lt;br /&gt; Delete Api Collection Endpoint By Id&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ENDPOINT_ID&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @param apicollectionendpointid The APICOLLECTIONENDPOINTID identifier
+     * @return ApiResponse<DeleteSystemLevelEndpointTag200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun deleteMyApiCollectionEndpointByIdWithHttpInfo(apicollectionid: kotlin.String, apicollectionendpointid: kotlin.String) : ApiResponse<DeleteSystemLevelEndpointTag200Response?> {
+        val localVariableConfig = deleteMyApiCollectionEndpointByIdRequestConfig(apicollectionid = apicollectionid, apicollectionendpointid = apicollectionendpointid)
+
+        return request<Unit, DeleteSystemLevelEndpointTag200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation deleteMyApiCollectionEndpointById
+     *
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @param apicollectionendpointid The APICOLLECTIONENDPOINTID identifier
+     * @return RequestConfig
+     */
+    fun deleteMyApiCollectionEndpointByIdRequestConfig(apicollectionid: kotlin.String, apicollectionendpointid: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.DELETE,
+            path = "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoint-ids/{apicollectionendpointid}".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())).replace("{"+"apicollectionendpointid"+"}", encodeURIComponent(apicollectionendpointid.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * DELETE /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints/{operationid}
+     * Delete My Api Collection Endpoint By Id
+     * &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;Delete Api Collection Endpoint By OPERATION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @param operationid The OPERATIONID identifier
+     * @return DeleteSystemLevelEndpointTag200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun deleteMyApiCollectionEndpointByOperationId(apicollectionid: kotlin.String, operationid: kotlin.String) : DeleteSystemLevelEndpointTag200Response {
+        val localVarResponse = deleteMyApiCollectionEndpointByOperationIdWithHttpInfo(apicollectionid = apicollectionid, operationid = operationid)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as DeleteSystemLevelEndpointTag200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * DELETE /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints/{operationid}
+     * Delete My Api Collection Endpoint By Id
+     * &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;Delete Api Collection Endpoint By OPERATION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @param operationid The OPERATIONID identifier
+     * @return ApiResponse<DeleteSystemLevelEndpointTag200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun deleteMyApiCollectionEndpointByOperationIdWithHttpInfo(apicollectionid: kotlin.String, operationid: kotlin.String) : ApiResponse<DeleteSystemLevelEndpointTag200Response?> {
+        val localVariableConfig = deleteMyApiCollectionEndpointByOperationIdRequestConfig(apicollectionid = apicollectionid, operationid = operationid)
+
+        return request<Unit, DeleteSystemLevelEndpointTag200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation deleteMyApiCollectionEndpointByOperationId
+     *
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @param operationid The OPERATIONID identifier
+     * @return RequestConfig
+     */
+    fun deleteMyApiCollectionEndpointByOperationIdRequestConfig(apicollectionid: kotlin.String, operationid: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.DELETE,
+            path = "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints/{operationid}".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())).replace("{"+"operationid"+"}", encodeURIComponent(operationid.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * GET /obp/v5.1.0/management/api-collections
+     * Get All API Collections
+     * &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+     * @return GetApiCollectionsForUser200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun getAllApiCollections() : GetApiCollectionsForUser200Response {
+        val localVarResponse = getAllApiCollectionsWithHttpInfo()
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetApiCollectionsForUser200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * GET /obp/v5.1.0/management/api-collections
+     * Get All API Collections
+     * &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+     * @return ApiResponse<GetApiCollectionsForUser200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun getAllApiCollectionsWithHttpInfo() : ApiResponse<GetApiCollectionsForUser200Response?> {
+        val localVariableConfig = getAllApiCollectionsRequestConfig()
+
+        return request<Unit, GetApiCollectionsForUser200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation getAllApiCollections
+     *
+     * @return RequestConfig
+     */
+    fun getAllApiCollectionsRequestConfig() : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/obp/v5.1.0/management/api-collections",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * GET /obp/v4.0.0/api-collections/{apicollectionid}/api-collection-endpoints
+     * Get Api Collection Endpoints
+     * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @return GetMyApiCollectionEndpoints200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun getApiCollectionEndpoints(apicollectionid: kotlin.String) : GetMyApiCollectionEndpoints200Response {
+        val localVarResponse = getApiCollectionEndpointsWithHttpInfo(apicollectionid = apicollectionid)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetMyApiCollectionEndpoints200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * GET /obp/v4.0.0/api-collections/{apicollectionid}/api-collection-endpoints
+     * Get Api Collection Endpoints
+     * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @return ApiResponse<GetMyApiCollectionEndpoints200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun getApiCollectionEndpointsWithHttpInfo(apicollectionid: kotlin.String) : ApiResponse<GetMyApiCollectionEndpoints200Response?> {
+        val localVariableConfig = getApiCollectionEndpointsRequestConfig(apicollectionid = apicollectionid)
+
+        return request<Unit, GetMyApiCollectionEndpoints200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation getApiCollectionEndpoints
+     *
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @return RequestConfig
+     */
+    fun getApiCollectionEndpointsRequestConfig(apicollectionid: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/obp/v4.0.0/api-collections/{apicollectionid}/api-collection-endpoints".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = false,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * GET /obp/v4.0.0/users/{userid}/api-collections
+     * Get Api Collections for User
+     * &lt;p&gt;Get Api Collections for User.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+     * @param userid The USERID identifier
+     * @return GetApiCollectionsForUser200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun getApiCollectionsForUser(userid: kotlin.String) : GetApiCollectionsForUser200Response {
+        val localVarResponse = getApiCollectionsForUserWithHttpInfo(userid = userid)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetApiCollectionsForUser200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * GET /obp/v4.0.0/users/{userid}/api-collections
+     * Get Api Collections for User
+     * &lt;p&gt;Get Api Collections for User.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+     * @param userid The USERID identifier
+     * @return ApiResponse<GetApiCollectionsForUser200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun getApiCollectionsForUserWithHttpInfo(userid: kotlin.String) : ApiResponse<GetApiCollectionsForUser200Response?> {
+        val localVariableConfig = getApiCollectionsForUserRequestConfig(userid = userid)
+
+        return request<Unit, GetApiCollectionsForUser200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation getApiCollectionsForUser
+     *
+     * @param userid The USERID identifier
+     * @return RequestConfig
+     */
+    fun getApiCollectionsForUserRequestConfig(userid: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/obp/v4.0.0/users/{userid}/api-collections".replace("{"+"userid"+"}", encodeURIComponent(userid.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * GET /obp/v4.0.0/api-collections/featured
+     * Get Featured Api Collections
+     * &lt;p&gt;Get Featured Api Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+     * @return GetApiCollectionsForUser200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun getFeaturedApiCollections() : GetApiCollectionsForUser200Response {
+        val localVarResponse = getFeaturedApiCollectionsWithHttpInfo()
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetApiCollectionsForUser200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * GET /obp/v4.0.0/api-collections/featured
+     * Get Featured Api Collections
+     * &lt;p&gt;Get Featured Api Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+     * @return ApiResponse<GetApiCollectionsForUser200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun getFeaturedApiCollectionsWithHttpInfo() : ApiResponse<GetApiCollectionsForUser200Response?> {
+        val localVariableConfig = getFeaturedApiCollectionsRequestConfig()
+
+        return request<Unit, GetApiCollectionsForUser200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation getFeaturedApiCollections
+     *
+     * @return RequestConfig
+     */
+    fun getFeaturedApiCollectionsRequestConfig() : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/obp/v4.0.0/api-collections/featured",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = false,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * GET /obp/v6.0.0/management/api-collections/featured
+     * Get Featured Api Collections (Admin)
+     * &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+     * @return GetFeaturedApiCollectionsAdmin200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun getFeaturedApiCollectionsAdmin() : GetFeaturedApiCollectionsAdmin200Response {
+        val localVarResponse = getFeaturedApiCollectionsAdminWithHttpInfo()
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetFeaturedApiCollectionsAdmin200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1637,26 +1049,26 @@ open class ApiCollectionApi(basePath: kotlin.String = defaultBasePath, client: C
      * GET /obp/v6.0.0/management/api-collections/featured
      * Get Featured Api Collections (Admin)
      * &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-     * @return ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200Response?>
+     * @return ApiResponse<GetFeaturedApiCollectionsAdmin200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetFeaturedApiCollectionsAdminWithHttpInfo() : ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200Response?> {
-        val localVariableConfig = oBPv600GetFeaturedApiCollectionsAdminRequestConfig()
+    fun getFeaturedApiCollectionsAdminWithHttpInfo() : ApiResponse<GetFeaturedApiCollectionsAdmin200Response?> {
+        val localVariableConfig = getFeaturedApiCollectionsAdminRequestConfig()
 
-        return request<Unit, OBPv600GetFeaturedApiCollectionsAdmin200Response>(
+        return request<Unit, GetFeaturedApiCollectionsAdmin200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetFeaturedApiCollectionsAdmin
+     * To obtain the request config of the operation getFeaturedApiCollectionsAdmin
      *
      * @return RequestConfig
      */
-    fun oBPv600GetFeaturedApiCollectionsAdminRequestConfig() : RequestConfig<Unit> {
+    fun getFeaturedApiCollectionsAdminRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -1673,12 +1085,11 @@ open class ApiCollectionApi(basePath: kotlin.String = defaultBasePath, client: C
     }
 
     /**
-     * PUT /obp/v6.0.0/management/api-collections/featured/{apicollectionid}
-     * Update Featured Api Collection
-     * &lt;p&gt;Update the sort order of a featured API collection.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+     * GET /obp/v4.0.0/my/api-collections/{apicollectionid}
+     * Get My Api Collection By Id
+     * &lt;p&gt;Get Api Collection By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
      * @param apicollectionid The APICOLLECTIONID identifier
-     * @param obPv600UpdateFeaturedApiCollectionRequest Request body
-     * @return OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
+     * @return GetApiCollectionsForUser200ResponseApiCollectionsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1687,11 +1098,523 @@ open class ApiCollectionApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600UpdateFeaturedApiCollection(apicollectionid: kotlin.String, obPv600UpdateFeaturedApiCollectionRequest: OBPv600UpdateFeaturedApiCollectionRequest) : OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems {
-        val localVarResponse = oBPv600UpdateFeaturedApiCollectionWithHttpInfo(apicollectionid = apicollectionid, obPv600UpdateFeaturedApiCollectionRequest = obPv600UpdateFeaturedApiCollectionRequest)
+    fun getMyApiCollectionById(apicollectionid: kotlin.String) : GetApiCollectionsForUser200ResponseApiCollectionsInner {
+        val localVarResponse = getMyApiCollectionByIdWithHttpInfo(apicollectionid = apicollectionid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetApiCollectionsForUser200ResponseApiCollectionsInner
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * GET /obp/v4.0.0/my/api-collections/{apicollectionid}
+     * Get My Api Collection By Id
+     * &lt;p&gt;Get Api Collection By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @return ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun getMyApiCollectionByIdWithHttpInfo(apicollectionid: kotlin.String) : ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner?> {
+        val localVariableConfig = getMyApiCollectionByIdRequestConfig(apicollectionid = apicollectionid)
+
+        return request<Unit, GetApiCollectionsForUser200ResponseApiCollectionsInner>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation getMyApiCollectionById
+     *
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @return RequestConfig
+     */
+    fun getMyApiCollectionByIdRequestConfig(apicollectionid: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/obp/v4.0.0/my/api-collections/{apicollectionid}".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * GET /obp/v4.0.0/my/api-collections/name/{apicollectionname}
+     * Get My Api Collection By Name
+     * &lt;p&gt;Get Api Collection By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+     * @param apicollectionname The APICOLLECTIONNAME identifier
+     * @return GetApiCollectionsForUser200ResponseApiCollectionsInner
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun getMyApiCollectionByName(apicollectionname: kotlin.String) : GetApiCollectionsForUser200ResponseApiCollectionsInner {
+        val localVarResponse = getMyApiCollectionByNameWithHttpInfo(apicollectionname = apicollectionname)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetApiCollectionsForUser200ResponseApiCollectionsInner
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * GET /obp/v4.0.0/my/api-collections/name/{apicollectionname}
+     * Get My Api Collection By Name
+     * &lt;p&gt;Get Api Collection By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+     * @param apicollectionname The APICOLLECTIONNAME identifier
+     * @return ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun getMyApiCollectionByNameWithHttpInfo(apicollectionname: kotlin.String) : ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner?> {
+        val localVariableConfig = getMyApiCollectionByNameRequestConfig(apicollectionname = apicollectionname)
+
+        return request<Unit, GetApiCollectionsForUser200ResponseApiCollectionsInner>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation getMyApiCollectionByName
+     *
+     * @param apicollectionname The APICOLLECTIONNAME identifier
+     * @return RequestConfig
+     */
+    fun getMyApiCollectionByNameRequestConfig(apicollectionname: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/obp/v4.0.0/my/api-collections/name/{apicollectionname}".replace("{"+"apicollectionname"+"}", encodeURIComponent(apicollectionname.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * GET /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}
+     * Get My Api Collection Endpoint
+     * &lt;p&gt;Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
+     * @param apicollectionname The APICOLLECTIONNAME identifier
+     * @param operationid The OPERATIONID identifier
+     * @return GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun getMyApiCollectionEndpoint(apicollectionname: kotlin.String, operationid: kotlin.String) : GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner {
+        val localVarResponse = getMyApiCollectionEndpointWithHttpInfo(apicollectionname = apicollectionname, operationid = operationid)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * GET /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}
+     * Get My Api Collection Endpoint
+     * &lt;p&gt;Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
+     * @param apicollectionname The APICOLLECTIONNAME identifier
+     * @param operationid The OPERATIONID identifier
+     * @return ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun getMyApiCollectionEndpointWithHttpInfo(apicollectionname: kotlin.String, operationid: kotlin.String) : ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner?> {
+        val localVariableConfig = getMyApiCollectionEndpointRequestConfig(apicollectionname = apicollectionname, operationid = operationid)
+
+        return request<Unit, GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation getMyApiCollectionEndpoint
+     *
+     * @param apicollectionname The APICOLLECTIONNAME identifier
+     * @param operationid The OPERATIONID identifier
+     * @return RequestConfig
+     */
+    fun getMyApiCollectionEndpointRequestConfig(apicollectionname: kotlin.String, operationid: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}".replace("{"+"apicollectionname"+"}", encodeURIComponent(apicollectionname.toString())).replace("{"+"operationid"+"}", encodeURIComponent(operationid.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = false,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * GET /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints
+     * Get My Api Collection Endpoints
+     * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
+     * @param apicollectionname The APICOLLECTIONNAME identifier
+     * @return GetMyApiCollectionEndpoints200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun getMyApiCollectionEndpoints(apicollectionname: kotlin.String) : GetMyApiCollectionEndpoints200Response {
+        val localVarResponse = getMyApiCollectionEndpointsWithHttpInfo(apicollectionname = apicollectionname)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetMyApiCollectionEndpoints200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * GET /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints
+     * Get My Api Collection Endpoints
+     * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
+     * @param apicollectionname The APICOLLECTIONNAME identifier
+     * @return ApiResponse<GetMyApiCollectionEndpoints200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun getMyApiCollectionEndpointsWithHttpInfo(apicollectionname: kotlin.String) : ApiResponse<GetMyApiCollectionEndpoints200Response?> {
+        val localVariableConfig = getMyApiCollectionEndpointsRequestConfig(apicollectionname = apicollectionname)
+
+        return request<Unit, GetMyApiCollectionEndpoints200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation getMyApiCollectionEndpoints
+     *
+     * @param apicollectionname The APICOLLECTIONNAME identifier
+     * @return RequestConfig
+     */
+    fun getMyApiCollectionEndpointsRequestConfig(apicollectionname: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints".replace("{"+"apicollectionname"+"}", encodeURIComponent(apicollectionname.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * GET /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints
+     * Get My Api Collection Endpoints By Id
+     * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @return GetMyApiCollectionEndpoints200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun getMyApiCollectionEndpointsById(apicollectionid: kotlin.String) : GetMyApiCollectionEndpoints200Response {
+        val localVarResponse = getMyApiCollectionEndpointsByIdWithHttpInfo(apicollectionid = apicollectionid)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetMyApiCollectionEndpoints200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * GET /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints
+     * Get My Api Collection Endpoints By Id
+     * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @return ApiResponse<GetMyApiCollectionEndpoints200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun getMyApiCollectionEndpointsByIdWithHttpInfo(apicollectionid: kotlin.String) : ApiResponse<GetMyApiCollectionEndpoints200Response?> {
+        val localVariableConfig = getMyApiCollectionEndpointsByIdRequestConfig(apicollectionid = apicollectionid)
+
+        return request<Unit, GetMyApiCollectionEndpoints200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation getMyApiCollectionEndpointsById
+     *
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @return RequestConfig
+     */
+    fun getMyApiCollectionEndpointsByIdRequestConfig(apicollectionid: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * GET /obp/v4.0.0/my/api-collections
+     * Get My Api Collections
+     * &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;1 limit (for pagination: defaults to 50)  eg:limit&#x3D;200&lt;/p&gt; &lt;p&gt;2 offset (for pagination: zero index, defaults to 0) eg: offset&#x3D;10&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+     * @return GetApiCollectionsForUser200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun getMyApiCollections() : GetApiCollectionsForUser200Response {
+        val localVarResponse = getMyApiCollectionsWithHttpInfo()
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetApiCollectionsForUser200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * GET /obp/v4.0.0/my/api-collections
+     * Get My Api Collections
+     * &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;1 limit (for pagination: defaults to 50)  eg:limit&#x3D;200&lt;/p&gt; &lt;p&gt;2 offset (for pagination: zero index, defaults to 0) eg: offset&#x3D;10&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+     * @return ApiResponse<GetApiCollectionsForUser200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun getMyApiCollectionsWithHttpInfo() : ApiResponse<GetApiCollectionsForUser200Response?> {
+        val localVariableConfig = getMyApiCollectionsRequestConfig()
+
+        return request<Unit, GetApiCollectionsForUser200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation getMyApiCollections
+     *
+     * @return RequestConfig
+     */
+    fun getMyApiCollectionsRequestConfig() : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/obp/v4.0.0/my/api-collections",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * GET /obp/v4.0.0/api-collections/sharable/{apicollectionid}
+     * Get Sharable Api Collection By Id
+     * &lt;p&gt;Get Sharable Api Collection By Id.&lt;br /&gt; User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @return GetApiCollectionsForUser200ResponseApiCollectionsInner
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun getSharableApiCollectionById(apicollectionid: kotlin.String) : GetApiCollectionsForUser200ResponseApiCollectionsInner {
+        val localVarResponse = getSharableApiCollectionByIdWithHttpInfo(apicollectionid = apicollectionid)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetApiCollectionsForUser200ResponseApiCollectionsInner
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * GET /obp/v4.0.0/api-collections/sharable/{apicollectionid}
+     * Get Sharable Api Collection By Id
+     * &lt;p&gt;Get Sharable Api Collection By Id.&lt;br /&gt; User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @return ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun getSharableApiCollectionByIdWithHttpInfo(apicollectionid: kotlin.String) : ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner?> {
+        val localVariableConfig = getSharableApiCollectionByIdRequestConfig(apicollectionid = apicollectionid)
+
+        return request<Unit, GetApiCollectionsForUser200ResponseApiCollectionsInner>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation getSharableApiCollectionById
+     *
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @return RequestConfig
+     */
+    fun getSharableApiCollectionByIdRequestConfig(apicollectionid: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/obp/v4.0.0/api-collections/sharable/{apicollectionid}".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = false,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * PUT /obp/v6.0.0/management/api-collections/featured/{apicollectionid}
+     * Update Featured Api Collection
+     * &lt;p&gt;Update the sort order of a featured API collection.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @param updateFeaturedApiCollectionRequest Request body
+     * @return GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun updateFeaturedApiCollection(apicollectionid: kotlin.String, updateFeaturedApiCollectionRequest: UpdateFeaturedApiCollectionRequest) : GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner {
+        val localVarResponse = updateFeaturedApiCollectionWithHttpInfo(apicollectionid = apicollectionid, updateFeaturedApiCollectionRequest = updateFeaturedApiCollectionRequest)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1710,30 +1633,30 @@ open class ApiCollectionApi(basePath: kotlin.String = defaultBasePath, client: C
      * Update Featured Api Collection
      * &lt;p&gt;Update the sort order of a featured API collection.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
      * @param apicollectionid The APICOLLECTIONID identifier
-     * @param obPv600UpdateFeaturedApiCollectionRequest Request body
-     * @return ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems?>
+     * @param updateFeaturedApiCollectionRequest Request body
+     * @return ApiResponse<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600UpdateFeaturedApiCollectionWithHttpInfo(apicollectionid: kotlin.String, obPv600UpdateFeaturedApiCollectionRequest: OBPv600UpdateFeaturedApiCollectionRequest) : ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems?> {
-        val localVariableConfig = oBPv600UpdateFeaturedApiCollectionRequestConfig(apicollectionid = apicollectionid, obPv600UpdateFeaturedApiCollectionRequest = obPv600UpdateFeaturedApiCollectionRequest)
+    fun updateFeaturedApiCollectionWithHttpInfo(apicollectionid: kotlin.String, updateFeaturedApiCollectionRequest: UpdateFeaturedApiCollectionRequest) : ApiResponse<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner?> {
+        val localVariableConfig = updateFeaturedApiCollectionRequestConfig(apicollectionid = apicollectionid, updateFeaturedApiCollectionRequest = updateFeaturedApiCollectionRequest)
 
-        return request<OBPv600UpdateFeaturedApiCollectionRequest, OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems>(
+        return request<UpdateFeaturedApiCollectionRequest, GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600UpdateFeaturedApiCollection
+     * To obtain the request config of the operation updateFeaturedApiCollection
      *
      * @param apicollectionid The APICOLLECTIONID identifier
-     * @param obPv600UpdateFeaturedApiCollectionRequest Request body
+     * @param updateFeaturedApiCollectionRequest Request body
      * @return RequestConfig
      */
-    fun oBPv600UpdateFeaturedApiCollectionRequestConfig(apicollectionid: kotlin.String, obPv600UpdateFeaturedApiCollectionRequest: OBPv600UpdateFeaturedApiCollectionRequest) : RequestConfig<OBPv600UpdateFeaturedApiCollectionRequest> {
-        val localVariableBody = obPv600UpdateFeaturedApiCollectionRequest
+    fun updateFeaturedApiCollectionRequestConfig(apicollectionid: kotlin.String, updateFeaturedApiCollectionRequest: UpdateFeaturedApiCollectionRequest) : RequestConfig<UpdateFeaturedApiCollectionRequest> {
+        val localVariableBody = updateFeaturedApiCollectionRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -1742,6 +1665,83 @@ open class ApiCollectionApi(basePath: kotlin.String = defaultBasePath, client: C
         return RequestConfig(
             method = RequestMethod.PUT,
             path = "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * PUT /obp/v5.1.0/my/api-collections/{apicollectionid}
+     * Update My Api Collection By API_COLLECTION_ID
+     * &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @param createMyApiCollectionRequest Request body
+     * @return GetApiCollectionsForUser200ResponseApiCollectionsInner
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun updateMyApiCollection(apicollectionid: kotlin.String, createMyApiCollectionRequest: CreateMyApiCollectionRequest) : GetApiCollectionsForUser200ResponseApiCollectionsInner {
+        val localVarResponse = updateMyApiCollectionWithHttpInfo(apicollectionid = apicollectionid, createMyApiCollectionRequest = createMyApiCollectionRequest)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetApiCollectionsForUser200ResponseApiCollectionsInner
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * PUT /obp/v5.1.0/my/api-collections/{apicollectionid}
+     * Update My Api Collection By API_COLLECTION_ID
+     * &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @param createMyApiCollectionRequest Request body
+     * @return ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun updateMyApiCollectionWithHttpInfo(apicollectionid: kotlin.String, createMyApiCollectionRequest: CreateMyApiCollectionRequest) : ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner?> {
+        val localVariableConfig = updateMyApiCollectionRequestConfig(apicollectionid = apicollectionid, createMyApiCollectionRequest = createMyApiCollectionRequest)
+
+        return request<CreateMyApiCollectionRequest, GetApiCollectionsForUser200ResponseApiCollectionsInner>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation updateMyApiCollection
+     *
+     * @param apicollectionid The APICOLLECTIONID identifier
+     * @param createMyApiCollectionRequest Request body
+     * @return RequestConfig
+     */
+    fun updateMyApiCollectionRequestConfig(apicollectionid: kotlin.String, createMyApiCollectionRequest: CreateMyApiCollectionRequest) : RequestConfig<CreateMyApiCollectionRequest> {
+        val localVariableBody = createMyApiCollectionRequest
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.PUT,
+            path = "/obp/v5.1.0/my/api-collections/{apicollectionid}".replace("{"+"apicollectionid"+"}", encodeURIComponent(apicollectionid.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

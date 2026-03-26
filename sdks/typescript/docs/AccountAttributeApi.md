@@ -1,20 +1,20 @@
 # AccountAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv310CreateAccountAttribute**](AccountAttributeApi.md#obpv310createaccountattribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute |
-| [**oBPv310UpdateAccountAttribute**](AccountAttributeApi.md#obpv310updateaccountattributeoperation) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute |
-| [**oBPv400CreateOrUpdateAccountAttributeDefinition**](AccountAttributeApi.md#obpv400createorupdateaccountattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition |
-| [**oBPv400DeleteAccountAttributeDefinition**](AccountAttributeApi.md#obpv400deleteaccountattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition |
-| [**oBPv400GetAccountAttributeDefinition**](AccountAttributeApi.md#obpv400getaccountattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition |
+| [**createAccountAttribute**](AccountAttributeApi.md#createaccountattribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute |
+| [**createOrUpdateAccountAttributeDefinition**](AccountAttributeApi.md#createorupdateaccountattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition |
+| [**deleteAccountAttributeDefinition**](AccountAttributeApi.md#deleteaccountattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition |
+| [**getAccountAttributeDefinition**](AccountAttributeApi.md#getaccountattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition |
+| [**updateAccountAttribute**](AccountAttributeApi.md#updateaccountattributeoperation) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute |
 
 
 
-## oBPv310CreateAccountAttribute
+## createAccountAttribute
 
-> OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems oBPv310CreateAccountAttribute(bankid, accountid, productcode, oBPv310UpdateAccountAttributeRequest)
+> GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner createAccountAttribute(bankid, accountid, productcode, updateAccountAttributeRequest)
 
 Create Account Attribute
 
@@ -27,7 +27,7 @@ import {
   Configuration,
   AccountAttributeApi,
 } from 'obp-typescript';
-import type { OBPv310CreateAccountAttributeRequest } from 'obp-typescript';
+import type { CreateAccountAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -48,12 +48,12 @@ async function example() {
     accountid: accountid_example,
     // string | The PRODUCTCODE identifier
     productcode: productcode_example,
-    // OBPv310UpdateAccountAttributeRequest | Request body
-    oBPv310UpdateAccountAttributeRequest: {type=object, properties={value={type=string}, product_instance_code={type=string}, type={type=string}, name={type=string}}},
-  } satisfies OBPv310CreateAccountAttributeRequest;
+    // UpdateAccountAttributeRequest | Request body
+    updateAccountAttributeRequest: {type=object, properties={value={type=string}, product_instance_code={type=string}, type={type=string}, name={type=string}}},
+  } satisfies CreateAccountAttributeRequest;
 
   try {
-    const data = await api.oBPv310CreateAccountAttribute(body);
+    const data = await api.createAccountAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -72,11 +72,11 @@ example().catch(console.error);
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
 | **productcode** | `string` | The PRODUCTCODE identifier | [Defaults to `undefined`] |
-| **oBPv310UpdateAccountAttributeRequest** | [OBPv310UpdateAccountAttributeRequest](OBPv310UpdateAccountAttributeRequest.md) | Request body | |
+| **updateAccountAttributeRequest** | [UpdateAccountAttributeRequest](UpdateAccountAttributeRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems**](OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems.md)
+[**GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner**](GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner.md)
 
 ### Authorization
 
@@ -97,97 +97,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv310UpdateAccountAttribute
+## createOrUpdateAccountAttributeDefinition
 
-> OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems oBPv310UpdateAccountAttribute(bankid, accountid, productcode, accountattributeid, oBPv310UpdateAccountAttributeRequest)
-
-Update Account Attribute
-
-&lt;p&gt;Update Account Attribute&lt;/p&gt; &lt;p&gt;Account Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Account Attribute is linked to its Account by ACCOUNT_ID&lt;/p&gt; &lt;p&gt;Typical account attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;ACCOUNT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
-
-### Example
-
-```ts
-import {
-  Configuration,
-  AccountAttributeApi,
-} from 'obp-typescript';
-import type { OBPv310UpdateAccountAttributeOperationRequest } from 'obp-typescript';
-
-async function example() {
-  console.log("🚀 Testing obp-typescript SDK...");
-  const config = new Configuration({ 
-    // To configure OAuth2 access token for authorization: OAuth2 accessCode
-    accessToken: "YOUR ACCESS TOKEN",
-    // To configure API key authorization: GatewayLogin
-    apiKey: "YOUR API KEY",
-    // To configure API key authorization: DirectLogin
-    apiKey: "YOUR API KEY",
-  });
-  const api = new AccountAttributeApi(config);
-
-  const body = {
-    // string | The BANKID identifier
-    bankid: bankid_example,
-    // string | The ACCOUNTID identifier
-    accountid: accountid_example,
-    // string | The PRODUCTCODE identifier
-    productcode: productcode_example,
-    // string | The ACCOUNTATTRIBUTEID identifier
-    accountattributeid: accountattributeid_example,
-    // OBPv310UpdateAccountAttributeRequest | Request body
-    oBPv310UpdateAccountAttributeRequest: {"type":"object","properties":{"value":{"type":"string"},"product_instance_code":{"type":"string"},"type":{"type":"string"},"name":{"type":"string"}}},
-  } satisfies OBPv310UpdateAccountAttributeOperationRequest;
-
-  try {
-    const data = await api.oBPv310UpdateAccountAttribute(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
-| **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
-| **productcode** | `string` | The PRODUCTCODE identifier | [Defaults to `undefined`] |
-| **accountattributeid** | `string` | The ACCOUNTATTRIBUTEID identifier | [Defaults to `undefined`] |
-| **oBPv310UpdateAccountAttributeRequest** | [OBPv310UpdateAccountAttributeRequest](OBPv310UpdateAccountAttributeRequest.md) | Request body | |
-
-### Return type
-
-[**OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems**](OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems.md)
-
-### Authorization
-
-[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## oBPv400CreateOrUpdateAccountAttributeDefinition
-
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateAccountAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateAccountAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Account Attribute Definition
 
@@ -200,7 +112,7 @@ import {
   Configuration,
   AccountAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400CreateOrUpdateAccountAttributeDefinitionRequest } from 'obp-typescript';
+import type { CreateOrUpdateAccountAttributeDefinitionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -217,12 +129,12 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-    // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
-    oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}},
-  } satisfies OBPv400CreateOrUpdateAccountAttributeDefinitionRequest;
+    // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+    createOrUpdateTransactionRequestAttributeDefinitionRequest: {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}},
+  } satisfies CreateOrUpdateAccountAttributeDefinitionRequest;
 
   try {
-    const data = await api.oBPv400CreateOrUpdateAccountAttributeDefinition(body);
+    const data = await api.createOrUpdateAccountAttributeDefinition(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -239,11 +151,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
-| **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | |
+| **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [CreateOrUpdateTransactionRequestAttributeDefinitionRequest](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -265,9 +177,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400DeleteAccountAttributeDefinition
+## deleteAccountAttributeDefinition
 
-> oBPv400DeleteAccountAttributeDefinition(bankid, attributedefinitionid)
+> deleteAccountAttributeDefinition(bankid, attributedefinitionid)
 
 Delete Account Attribute Definition
 
@@ -280,7 +192,7 @@ import {
   Configuration,
   AccountAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400DeleteAccountAttributeDefinitionRequest } from 'obp-typescript';
+import type { DeleteAccountAttributeDefinitionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -299,10 +211,10 @@ async function example() {
     bankid: bankid_example,
     // string | The ATTRIBUTEDEFINITIONID identifier
     attributedefinitionid: attributedefinitionid_example,
-  } satisfies OBPv400DeleteAccountAttributeDefinitionRequest;
+  } satisfies DeleteAccountAttributeDefinitionRequest;
 
   try {
-    const data = await api.oBPv400DeleteAccountAttributeDefinition(body);
+    const data = await api.deleteAccountAttributeDefinition(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -345,9 +257,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetAccountAttributeDefinition
+## getAccountAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200Response oBPv400GetAccountAttributeDefinition(bankid)
+> GetTransactionRequestAttributeDefinition200Response getAccountAttributeDefinition(bankid)
 
 Get Account Attribute Definition
 
@@ -360,7 +272,7 @@ import {
   Configuration,
   AccountAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400GetAccountAttributeDefinitionRequest } from 'obp-typescript';
+import type { GetAccountAttributeDefinitionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -377,10 +289,10 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-  } satisfies OBPv400GetAccountAttributeDefinitionRequest;
+  } satisfies GetAccountAttributeDefinitionRequest;
 
   try {
-    const data = await api.oBPv400GetAccountAttributeDefinition(body);
+    const data = await api.getAccountAttributeDefinition(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -400,7 +312,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -417,6 +329,94 @@ example().catch(console.error);
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 | **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## updateAccountAttribute
+
+> GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner updateAccountAttribute(bankid, accountid, productcode, accountattributeid, updateAccountAttributeRequest)
+
+Update Account Attribute
+
+&lt;p&gt;Update Account Attribute&lt;/p&gt; &lt;p&gt;Account Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Account Attribute is linked to its Account by ACCOUNT_ID&lt;/p&gt; &lt;p&gt;Typical account attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;ACCOUNT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
+
+### Example
+
+```ts
+import {
+  Configuration,
+  AccountAttributeApi,
+} from 'obp-typescript';
+import type { UpdateAccountAttributeOperationRequest } from 'obp-typescript';
+
+async function example() {
+  console.log("🚀 Testing obp-typescript SDK...");
+  const config = new Configuration({ 
+    // To configure OAuth2 access token for authorization: OAuth2 accessCode
+    accessToken: "YOUR ACCESS TOKEN",
+    // To configure API key authorization: GatewayLogin
+    apiKey: "YOUR API KEY",
+    // To configure API key authorization: DirectLogin
+    apiKey: "YOUR API KEY",
+  });
+  const api = new AccountAttributeApi(config);
+
+  const body = {
+    // string | The BANKID identifier
+    bankid: bankid_example,
+    // string | The ACCOUNTID identifier
+    accountid: accountid_example,
+    // string | The PRODUCTCODE identifier
+    productcode: productcode_example,
+    // string | The ACCOUNTATTRIBUTEID identifier
+    accountattributeid: accountattributeid_example,
+    // UpdateAccountAttributeRequest | Request body
+    updateAccountAttributeRequest: {"type":"object","properties":{"value":{"type":"string"},"product_instance_code":{"type":"string"},"type":{"type":"string"},"name":{"type":"string"}}},
+  } satisfies UpdateAccountAttributeOperationRequest;
+
+  try {
+    const data = await api.updateAccountAttribute(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
+| **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
+| **productcode** | `string` | The PRODUCTCODE identifier | [Defaults to `undefined`] |
+| **accountattributeid** | `string` | The ACCOUNTATTRIBUTEID identifier | [Defaults to `undefined`] |
+| **updateAccountAttributeRequest** | [UpdateAccountAttributeRequest](UpdateAccountAttributeRequest.md) | Request body | |
+
+### Return type
+
+[**GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner**](GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner.md)
+
+### Authorization
+
+[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)

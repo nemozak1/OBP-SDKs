@@ -5,25 +5,25 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400BuildDynamicEndpointTemplate**](DynamicResourceDocApi.md#obpv400builddynamicendpointtemplate) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code
-[**oBPv400CreateBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400createbankleveldynamicresourcedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc
-[**oBPv400CreateDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400createdynamicresourcedoc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc
-[**oBPv400DeleteBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400deletebankleveldynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc
-[**oBPv400DeleteDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400deletedynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc
-[**oBPv400GetAllBankLevelDynamicResourceDocs**](DynamicResourceDocApi.md#obpv400getallbankleveldynamicresourcedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs
-[**oBPv400GetAllDynamicResourceDocs**](DynamicResourceDocApi.md#obpv400getalldynamicresourcedocs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs
-[**oBPv400GetBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400getbankleveldynamicresourcedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id
-[**oBPv400GetDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400getdynamicresourcedoc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id
-[**oBPv400UpdateBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400updatebankleveldynamicresourcedoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc
-[**oBPv400UpdateDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400updatedynamicresourcedoc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc
+[**buildDynamicEndpointTemplate**](DynamicResourceDocApi.md#builddynamicendpointtemplate) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code
+[**createBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#createbankleveldynamicresourcedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc
+[**createDynamicResourceDoc**](DynamicResourceDocApi.md#createdynamicresourcedoc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc
+[**deleteBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#deletebankleveldynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc
+[**deleteDynamicResourceDoc**](DynamicResourceDocApi.md#deletedynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc
+[**getAllBankLevelDynamicResourceDocs**](DynamicResourceDocApi.md#getallbankleveldynamicresourcedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs
+[**getAllDynamicResourceDocs**](DynamicResourceDocApi.md#getalldynamicresourcedocs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs
+[**getBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#getbankleveldynamicresourcedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id
+[**getDynamicResourceDoc**](DynamicResourceDocApi.md#getdynamicresourcedoc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id
+[**updateBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#updatebankleveldynamicresourcedoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc
+[**updateDynamicResourceDoc**](DynamicResourceDocApi.md#updatedynamicresourcedoc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc
 
 
-# **oBPv400BuildDynamicEndpointTemplate**
-> OBPv400BuildDynamicEndpointTemplate200Response oBPv400BuildDynamicEndpointTemplate(oBPv400BuildDynamicEndpointTemplateRequest)
+# **buildDynamicEndpointTemplate**
+> BuildDynamicEndpointTemplate200Response buildDynamicEndpointTemplate(buildDynamicEndpointTemplateRequest)
 
 Create Dynamic Resource Doc endpoint code
 
@@ -44,13 +44,13 @@ import 'package:obp_dart/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
 
 final api = ObpDart().getDynamicResourceDocApi();
-final OBPv400BuildDynamicEndpointTemplateRequest oBPv400BuildDynamicEndpointTemplateRequest = {"type":"object","properties":{"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"request_url":{"type":"string"}}}; // OBPv400BuildDynamicEndpointTemplateRequest | Request body
+final BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest = {"type":"object","properties":{"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"request_url":{"type":"string"}}}; // BuildDynamicEndpointTemplateRequest | Request body
 
 try {
-    final response = api.oBPv400BuildDynamicEndpointTemplate(oBPv400BuildDynamicEndpointTemplateRequest);
+    final response = api.buildDynamicEndpointTemplate(buildDynamicEndpointTemplateRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicResourceDocApi->oBPv400BuildDynamicEndpointTemplate: $e\n');
+    print('Exception when calling DynamicResourceDocApi->buildDynamicEndpointTemplate: $e\n');
 }
 ```
 
@@ -58,11 +58,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv400BuildDynamicEndpointTemplateRequest** | [**OBPv400BuildDynamicEndpointTemplateRequest**](OBPv400BuildDynamicEndpointTemplateRequest.md)| Request body | 
+ **buildDynamicEndpointTemplateRequest** | [**BuildDynamicEndpointTemplateRequest**](BuildDynamicEndpointTemplateRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400BuildDynamicEndpointTemplate200Response**](OBPv400BuildDynamicEndpointTemplate200Response.md)
+[**BuildDynamicEndpointTemplate200Response**](BuildDynamicEndpointTemplate200Response.md)
 
 ### Authorization
 
@@ -75,8 +75,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateBankLevelDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400CreateBankLevelDynamicResourceDoc(bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest)
+# **createBankLevelDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response createBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest)
 
 Create Bank Level Dynamic Resource Doc
 
@@ -98,13 +98,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getDynamicResourceDocApi();
 final String bankid = bankid_example; // String | The BANKID identifier
-final OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}}; // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+final UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}}; // UpdateBankLevelDynamicResourceDocRequest | Request body
 
 try {
-    final response = api.oBPv400CreateBankLevelDynamicResourceDoc(bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+    final response = api.createBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicResourceDocApi->oBPv400CreateBankLevelDynamicResourceDoc: $e\n');
+    print('Exception when calling DynamicResourceDocApi->createBankLevelDynamicResourceDoc: $e\n');
 }
 ```
 
@@ -113,11 +113,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
- **oBPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | 
+ **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -130,8 +130,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400CreateDynamicResourceDoc(oBPv400UpdateBankLevelDynamicResourceDocRequest)
+# **createDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response createDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest)
 
 Create Dynamic Resource Doc
 
@@ -152,13 +152,13 @@ import 'package:obp_dart/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
 
 final api = ObpDart().getDynamicResourceDocApi();
-final OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}}; // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+final UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}}; // UpdateBankLevelDynamicResourceDocRequest | Request body
 
 try {
-    final response = api.oBPv400CreateDynamicResourceDoc(oBPv400UpdateBankLevelDynamicResourceDocRequest);
+    final response = api.createDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicResourceDocApi->oBPv400CreateDynamicResourceDoc: $e\n');
+    print('Exception when calling DynamicResourceDocApi->createDynamicResourceDoc: $e\n');
 }
 ```
 
@@ -166,11 +166,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | 
+ **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -183,8 +183,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteBankLevelDynamicResourceDoc**
-> oBPv400DeleteBankLevelDynamicResourceDoc(bankid)
+# **deleteBankLevelDynamicResourceDoc**
+> deleteBankLevelDynamicResourceDoc(bankid)
 
 Delete Bank Level Dynamic Resource Doc
 
@@ -208,9 +208,9 @@ final api = ObpDart().getDynamicResourceDocApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 
 try {
-    api.oBPv400DeleteBankLevelDynamicResourceDoc(bankid);
+    api.deleteBankLevelDynamicResourceDoc(bankid);
 } on DioException catch (e) {
-    print('Exception when calling DynamicResourceDocApi->oBPv400DeleteBankLevelDynamicResourceDoc: $e\n');
+    print('Exception when calling DynamicResourceDocApi->deleteBankLevelDynamicResourceDoc: $e\n');
 }
 ```
 
@@ -235,8 +235,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteDynamicResourceDoc**
-> oBPv400DeleteDynamicResourceDoc()
+# **deleteDynamicResourceDoc**
+> deleteDynamicResourceDoc()
 
 Delete Dynamic Resource Doc
 
@@ -259,9 +259,9 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getDynamicResourceDocApi();
 
 try {
-    api.oBPv400DeleteDynamicResourceDoc();
+    api.deleteDynamicResourceDoc();
 } on DioException catch (e) {
-    print('Exception when calling DynamicResourceDocApi->oBPv400DeleteDynamicResourceDoc: $e\n');
+    print('Exception when calling DynamicResourceDocApi->deleteDynamicResourceDoc: $e\n');
 }
 ```
 
@@ -283,8 +283,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllBankLevelDynamicResourceDocs**
-> OBPv400GetAllDynamicResourceDocs200Response oBPv400GetAllBankLevelDynamicResourceDocs(bankid)
+# **getAllBankLevelDynamicResourceDocs**
+> GetAllDynamicResourceDocs200Response getAllBankLevelDynamicResourceDocs(bankid)
 
 Get all Bank Level Dynamic Resource Docs
 
@@ -308,10 +308,10 @@ final api = ObpDart().getDynamicResourceDocApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 
 try {
-    final response = api.oBPv400GetAllBankLevelDynamicResourceDocs(bankid);
+    final response = api.getAllBankLevelDynamicResourceDocs(bankid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicResourceDocApi->oBPv400GetAllBankLevelDynamicResourceDocs: $e\n');
+    print('Exception when calling DynamicResourceDocApi->getAllBankLevelDynamicResourceDocs: $e\n');
 }
 ```
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)
+[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)
 
 ### Authorization
 
@@ -336,8 +336,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllDynamicResourceDocs**
-> OBPv400GetAllDynamicResourceDocs200Response oBPv400GetAllDynamicResourceDocs()
+# **getAllDynamicResourceDocs**
+> GetAllDynamicResourceDocs200Response getAllDynamicResourceDocs()
 
 Get all Dynamic Resource Docs
 
@@ -360,10 +360,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getDynamicResourceDocApi();
 
 try {
-    final response = api.oBPv400GetAllDynamicResourceDocs();
+    final response = api.getAllDynamicResourceDocs();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicResourceDocApi->oBPv400GetAllDynamicResourceDocs: $e\n');
+    print('Exception when calling DynamicResourceDocApi->getAllDynamicResourceDocs: $e\n');
 }
 ```
 
@@ -372,7 +372,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)
+[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)
 
 ### Authorization
 
@@ -385,8 +385,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetBankLevelDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400GetBankLevelDynamicResourceDoc(bankid)
+# **getBankLevelDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response getBankLevelDynamicResourceDoc(bankid)
 
 Get Bank Level Dynamic Resource Doc by Id
 
@@ -410,10 +410,10 @@ final api = ObpDart().getDynamicResourceDocApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 
 try {
-    final response = api.oBPv400GetBankLevelDynamicResourceDoc(bankid);
+    final response = api.getBankLevelDynamicResourceDoc(bankid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicResourceDocApi->oBPv400GetBankLevelDynamicResourceDoc: $e\n');
+    print('Exception when calling DynamicResourceDocApi->getBankLevelDynamicResourceDoc: $e\n');
 }
 ```
 
@@ -425,7 +425,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -438,8 +438,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400GetDynamicResourceDoc()
+# **getDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response getDynamicResourceDoc()
 
 Get Dynamic Resource Doc by Id
 
@@ -462,10 +462,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getDynamicResourceDocApi();
 
 try {
-    final response = api.oBPv400GetDynamicResourceDoc();
+    final response = api.getDynamicResourceDoc();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicResourceDocApi->oBPv400GetDynamicResourceDoc: $e\n');
+    print('Exception when calling DynamicResourceDocApi->getDynamicResourceDoc: $e\n');
 }
 ```
 
@@ -474,7 +474,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -487,8 +487,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateBankLevelDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400UpdateBankLevelDynamicResourceDoc(bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest)
+# **updateBankLevelDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response updateBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest)
 
 Update Bank Level Dynamic Resource Doc
 
@@ -510,13 +510,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getDynamicResourceDocApi();
 final String bankid = bankid_example; // String | The BANKID identifier
-final OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest = {"type":"object","properties":{"tags":{"type":"string"},"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"bank_id":{"type":"string"},"partial_function_name":{"type":"string"},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"roles":{"type":"string"},"summary":{"type":"string"},"request_url":{"type":"string"},"description":{"type":"string"},"method_body":{"type":"string"},"error_response_bodies":{"type":"string"}}}; // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+final UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest = {"type":"object","properties":{"tags":{"type":"string"},"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"bank_id":{"type":"string"},"partial_function_name":{"type":"string"},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"roles":{"type":"string"},"summary":{"type":"string"},"request_url":{"type":"string"},"description":{"type":"string"},"method_body":{"type":"string"},"error_response_bodies":{"type":"string"}}}; // UpdateBankLevelDynamicResourceDocRequest | Request body
 
 try {
-    final response = api.oBPv400UpdateBankLevelDynamicResourceDoc(bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+    final response = api.updateBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicResourceDocApi->oBPv400UpdateBankLevelDynamicResourceDoc: $e\n');
+    print('Exception when calling DynamicResourceDocApi->updateBankLevelDynamicResourceDoc: $e\n');
 }
 ```
 
@@ -525,11 +525,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
- **oBPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | 
+ **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -542,8 +542,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400UpdateDynamicResourceDoc(oBPv400UpdateBankLevelDynamicResourceDocRequest)
+# **updateDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response updateDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest)
 
 Update Dynamic Resource Doc
 
@@ -564,13 +564,13 @@ import 'package:obp_dart/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
 
 final api = ObpDart().getDynamicResourceDocApi();
-final OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}}; // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+final UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}}; // UpdateBankLevelDynamicResourceDocRequest | Request body
 
 try {
-    final response = api.oBPv400UpdateDynamicResourceDoc(oBPv400UpdateBankLevelDynamicResourceDocRequest);
+    final response = api.updateDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicResourceDocApi->oBPv400UpdateDynamicResourceDoc: $e\n');
+    print('Exception when calling DynamicResourceDocApi->updateDynamicResourceDoc: $e\n');
 }
 ```
 
@@ -578,11 +578,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | 
+ **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 

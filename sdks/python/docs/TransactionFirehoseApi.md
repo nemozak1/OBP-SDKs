@@ -4,11 +4,11 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv3_0_0_get_firehose_transactions_for_bank_account**](TransactionFirehoseApi.md#o_bpv3_0_0_get_firehose_transactions_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
+[**get_firehose_transactions_for_bank_account**](TransactionFirehoseApi.md#get_firehose_transactions_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
 
 
-# **o_bpv3_0_0_get_firehose_transactions_for_bank_account**
-> OBPv300GetFirehoseTransactionsForBankAccount200Response o_bpv3_0_0_get_firehose_transactions_for_bank_account(bankid, accountid, viewid)
+# **get_firehose_transactions_for_bank_account**
+> GetFirehoseTransactionsForBankAccount200Response get_firehose_transactions_for_bank_account(bankid, accountid, viewid)
 
 Get Firehose Transactions for Account
 
@@ -93,7 +93,7 @@ User must have the CanUseFirehoseAtAnyBank Role</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv300_get_firehose_transactions_for_bank_account200_response import OBPv300GetFirehoseTransactionsForBankAccount200Response
+from obp_python.models.get_firehose_transactions_for_bank_account200_response import GetFirehoseTransactionsForBankAccount200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -132,11 +132,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Firehose Transactions for Account
-        api_response = api_instance.o_bpv3_0_0_get_firehose_transactions_for_bank_account(bankid, accountid, viewid)
-        print("The response of TransactionFirehoseApi->o_bpv3_0_0_get_firehose_transactions_for_bank_account:\n")
+        api_response = api_instance.get_firehose_transactions_for_bank_account(bankid, accountid, viewid)
+        print("The response of TransactionFirehoseApi->get_firehose_transactions_for_bank_account:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionFirehoseApi->o_bpv3_0_0_get_firehose_transactions_for_bank_account: %s\n" % e)
+        print("Exception when calling TransactionFirehoseApi->get_firehose_transactions_for_bank_account: %s\n" % e)
 ```
 
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv300GetFirehoseTransactionsForBankAccount200Response**](OBPv300GetFirehoseTransactionsForBankAccount200Response.md)
+[**GetFirehoseTransactionsForBankAccount200Response**](GetFirehoseTransactionsForBankAccount200Response.md)
 
 ### Authorization
 

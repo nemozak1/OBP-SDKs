@@ -5,17 +5,17 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv310CreateMeeting**](CustomerMeetingApi.md#obpv310createmeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
-[**oBPv310GetMeeting**](CustomerMeetingApi.md#obpv310getmeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
-[**oBPv310GetMeetings**](CustomerMeetingApi.md#obpv310getmeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
+[**createMeeting**](CustomerMeetingApi.md#createmeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
+[**getMeeting**](CustomerMeetingApi.md#getmeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
+[**getMeetings**](CustomerMeetingApi.md#getmeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
 
 
-# **oBPv310CreateMeeting**
-> OBPv310GetMeeting200Response oBPv310CreateMeeting(bankid, oBPv310CreateMeetingRequest)
+# **createMeeting**
+> GetMeeting200Response createMeeting(bankid, createMeetingRequest)
 
 Create Meeting (video conference/call)
 
@@ -37,13 +37,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getCustomerMeetingApi();
 final String bankid = bankid_example; // String | The BANKID identifier
-final OBPv310CreateMeetingRequest oBPv310CreateMeetingRequest = {"type":"object","properties":{"invitees":{"type":"array","items":{"type":"object","properties":{"status":{"type":"string"},"contact_details":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}}},"provider_id":{"type":"string"},"purpose_id":{"type":"string"},"creator":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}},"date":{"type":"string","format":"date-time"}}}; // OBPv310CreateMeetingRequest | Request body
+final CreateMeetingRequest createMeetingRequest = {"type":"object","properties":{"date":{"type":"string","format":"date-time"},"invitees":{"type":"array","items":{"type":"object","properties":{"status":{"type":"string"},"contact_details":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}}},"provider_id":{"type":"string"},"purpose_id":{"type":"string"},"creator":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}}; // CreateMeetingRequest | Request body
 
 try {
-    final response = api.oBPv310CreateMeeting(bankid, oBPv310CreateMeetingRequest);
+    final response = api.createMeeting(bankid, createMeetingRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CustomerMeetingApi->oBPv310CreateMeeting: $e\n');
+    print('Exception when calling CustomerMeetingApi->createMeeting: $e\n');
 }
 ```
 
@@ -52,11 +52,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
- **oBPv310CreateMeetingRequest** | [**OBPv310CreateMeetingRequest**](OBPv310CreateMeetingRequest.md)| Request body | 
+ **createMeetingRequest** | [**CreateMeetingRequest**](CreateMeetingRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 ### Authorization
 
@@ -69,8 +69,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv310GetMeeting**
-> OBPv310GetMeeting200Response oBPv310GetMeeting(bankid, meetingid)
+# **getMeeting**
+> GetMeeting200Response getMeeting(bankid, meetingid)
 
 Get Meeting
 
@@ -95,10 +95,10 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String meetingid = meetingid_example; // String | The MEETINGID identifier
 
 try {
-    final response = api.oBPv310GetMeeting(bankid, meetingid);
+    final response = api.getMeeting(bankid, meetingid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CustomerMeetingApi->oBPv310GetMeeting: $e\n');
+    print('Exception when calling CustomerMeetingApi->getMeeting: $e\n');
 }
 ```
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 ### Authorization
 
@@ -124,8 +124,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv310GetMeetings**
-> OBPv310GetMeetings200Response oBPv310GetMeetings(bankid)
+# **getMeetings**
+> GetMeetings200Response getMeetings(bankid)
 
 Get Meetings
 
@@ -149,10 +149,10 @@ final api = ObpDart().getCustomerMeetingApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 
 try {
-    final response = api.oBPv310GetMeetings(bankid);
+    final response = api.getMeetings(bankid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CustomerMeetingApi->oBPv310GetMeetings: $e\n');
+    print('Exception when calling CustomerMeetingApi->getMeetings: $e\n');
 }
 ```
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetMeetings200Response**](OBPv310GetMeetings200Response.md)
+[**GetMeetings200Response**](GetMeetings200Response.md)
 
 ### Authorization
 

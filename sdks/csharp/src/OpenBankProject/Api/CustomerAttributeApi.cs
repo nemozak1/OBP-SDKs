@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -47,10 +47,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateCustomerAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateCustomerAttributeApiResponse> OBPv400CreateCustomerAttributeAsync(string bankid, string customerid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateCustomerAttributeApiResponse"/>&gt;</returns>
+        Task<ICreateCustomerAttributeApiResponse> CreateCustomerAttributeAsync(string bankid, string customerid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Customer Attribute
@@ -60,10 +60,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateCustomerAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateCustomerAttributeApiResponse?> OBPv400CreateCustomerAttributeOrDefaultAsync(string bankid, string customerid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateCustomerAttributeApiResponse"/>?&gt;</returns>
+        Task<ICreateCustomerAttributeApiResponse?> CreateCustomerAttributeOrDefaultAsync(string bankid, string customerid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create or Update Customer Attribute Definition
@@ -73,10 +73,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse> OBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse"/>&gt;</returns>
+        Task<ICreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse> CreateOrUpdateCustomerAttributeAttributeDefinitionAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create or Update Customer Attribute Definition
@@ -85,10 +85,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create or Update Customer Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be one of: Customer&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse?> OBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionOrDefaultAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse"/>?&gt;</returns>
+        Task<ICreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse?> CreateOrUpdateCustomerAttributeAttributeDefinitionOrDefaultAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Customer Attribute
@@ -101,8 +101,8 @@ namespace OpenBankProject.Api
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="customerattributeid">The CUSTOMERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteCustomerAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteCustomerAttributeApiResponse> OBPv400DeleteCustomerAttributeAsync(string bankid, string customerid, string customerattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCustomerAttributeApiResponse"/>&gt;</returns>
+        Task<IDeleteCustomerAttributeApiResponse> DeleteCustomerAttributeAsync(string bankid, string customerid, string customerattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Customer Attribute
@@ -114,8 +114,8 @@ namespace OpenBankProject.Api
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="customerattributeid">The CUSTOMERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteCustomerAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteCustomerAttributeApiResponse?> OBPv400DeleteCustomerAttributeOrDefaultAsync(string bankid, string customerid, string customerattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCustomerAttributeApiResponse"/>?&gt;</returns>
+        Task<IDeleteCustomerAttributeApiResponse?> DeleteCustomerAttributeOrDefaultAsync(string bankid, string customerid, string customerattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Customer Attribute Definition
@@ -127,8 +127,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteCustomerAttributeDefinitionApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteCustomerAttributeDefinitionApiResponse> OBPv400DeleteCustomerAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCustomerAttributeDefinitionApiResponse"/>&gt;</returns>
+        Task<IDeleteCustomerAttributeDefinitionApiResponse> DeleteCustomerAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Customer Attribute Definition
@@ -139,8 +139,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteCustomerAttributeDefinitionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteCustomerAttributeDefinitionApiResponse?> OBPv400DeleteCustomerAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCustomerAttributeDefinitionApiResponse"/>?&gt;</returns>
+        Task<IDeleteCustomerAttributeDefinitionApiResponse?> DeleteCustomerAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Customer Attribute By Id
@@ -153,8 +153,8 @@ namespace OpenBankProject.Api
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="attributeid">The ATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetCustomerAttributeByIdApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetCustomerAttributeByIdApiResponse> OBPv400GetCustomerAttributeByIdAsync(string bankid, string customerid, string attributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomerAttributeByIdApiResponse"/>&gt;</returns>
+        Task<IGetCustomerAttributeByIdApiResponse> GetCustomerAttributeByIdAsync(string bankid, string customerid, string attributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Customer Attribute By Id
@@ -166,8 +166,8 @@ namespace OpenBankProject.Api
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="attributeid">The ATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetCustomerAttributeByIdApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetCustomerAttributeByIdApiResponse?> OBPv400GetCustomerAttributeByIdOrDefaultAsync(string bankid, string customerid, string attributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomerAttributeByIdApiResponse"/>?&gt;</returns>
+        Task<IGetCustomerAttributeByIdApiResponse?> GetCustomerAttributeByIdOrDefaultAsync(string bankid, string customerid, string attributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Customer Attribute Definition
@@ -178,8 +178,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetCustomerAttributeDefinitionApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetCustomerAttributeDefinitionApiResponse> OBPv400GetCustomerAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomerAttributeDefinitionApiResponse"/>&gt;</returns>
+        Task<IGetCustomerAttributeDefinitionApiResponse> GetCustomerAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Customer Attribute Definition
@@ -189,8 +189,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetCustomerAttributeDefinitionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetCustomerAttributeDefinitionApiResponse?> OBPv400GetCustomerAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomerAttributeDefinitionApiResponse"/>?&gt;</returns>
+        Task<IGetCustomerAttributeDefinitionApiResponse?> GetCustomerAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Customer Attributes
@@ -202,8 +202,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetCustomerAttributesApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetCustomerAttributesApiResponse> OBPv400GetCustomerAttributesAsync(string bankid, string customerid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomerAttributesApiResponse"/>&gt;</returns>
+        Task<IGetCustomerAttributesApiResponse> GetCustomerAttributesAsync(string bankid, string customerid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Customer Attributes
@@ -214,8 +214,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetCustomerAttributesApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetCustomerAttributesApiResponse?> OBPv400GetCustomerAttributesOrDefaultAsync(string bankid, string customerid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomerAttributesApiResponse"/>?&gt;</returns>
+        Task<IGetCustomerAttributesApiResponse?> GetCustomerAttributesOrDefaultAsync(string bankid, string customerid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Customer Attribute
@@ -227,10 +227,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="customerattributeid">The CUSTOMERATTRIBUTEID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateCustomerAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv400UpdateCustomerAttributeApiResponse> OBPv400UpdateCustomerAttributeAsync(string bankid, string customerid, string customerattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCustomerAttributeApiResponse"/>&gt;</returns>
+        Task<IUpdateCustomerAttributeApiResponse> UpdateCustomerAttributeAsync(string bankid, string customerid, string customerattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Customer Attribute
@@ -241,10 +241,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="customerattributeid">The CUSTOMERATTRIBUTEID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateCustomerAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400UpdateCustomerAttributeApiResponse?> OBPv400UpdateCustomerAttributeOrDefaultAsync(string bankid, string customerid, string customerattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCustomerAttributeApiResponse"/>?&gt;</returns>
+        Task<IUpdateCustomerAttributeApiResponse?> UpdateCustomerAttributeOrDefaultAsync(string bankid, string customerid, string customerattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -255,161 +255,161 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateCustomerAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateCustomerAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateCustomerAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateCustomerAttribute;
 
-        internal void ExecuteOnOBPv400CreateCustomerAttribute(AttributeApi.OBPv400CreateCustomerAttributeApiResponse apiResponse)
+        internal void ExecuteOnCreateCustomerAttribute(AttributeApi.CreateCustomerAttributeApiResponse apiResponse)
         {
-            OnOBPv400CreateCustomerAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateCustomerAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateCustomerAttribute(Exception exception)
+        internal void ExecuteOnErrorCreateCustomerAttribute(Exception exception)
         {
-            OnErrorOBPv400CreateCustomerAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateCustomerAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateOrUpdateCustomerAttributeAttributeDefinition;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateOrUpdateCustomerAttributeAttributeDefinition;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateOrUpdateCustomerAttributeAttributeDefinition;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateOrUpdateCustomerAttributeAttributeDefinition;
 
-        internal void ExecuteOnOBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(AttributeApi.OBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse apiResponse)
+        internal void ExecuteOnCreateOrUpdateCustomerAttributeAttributeDefinition(AttributeApi.CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse apiResponse)
         {
-            OnOBPv400CreateOrUpdateCustomerAttributeAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateOrUpdateCustomerAttributeAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(Exception exception)
+        internal void ExecuteOnErrorCreateOrUpdateCustomerAttributeAttributeDefinition(Exception exception)
         {
-            OnErrorOBPv400CreateOrUpdateCustomerAttributeAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateOrUpdateCustomerAttributeAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteCustomerAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteCustomerAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteCustomerAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteCustomerAttribute;
 
-        internal void ExecuteOnOBPv400DeleteCustomerAttribute(AttributeApi.OBPv400DeleteCustomerAttributeApiResponse apiResponse)
+        internal void ExecuteOnDeleteCustomerAttribute(AttributeApi.DeleteCustomerAttributeApiResponse apiResponse)
         {
-            OnOBPv400DeleteCustomerAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteCustomerAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteCustomerAttribute(Exception exception)
+        internal void ExecuteOnErrorDeleteCustomerAttribute(Exception exception)
         {
-            OnErrorOBPv400DeleteCustomerAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteCustomerAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteCustomerAttributeDefinition;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteCustomerAttributeDefinition;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteCustomerAttributeDefinition;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteCustomerAttributeDefinition;
 
-        internal void ExecuteOnOBPv400DeleteCustomerAttributeDefinition(AttributeApi.OBPv400DeleteCustomerAttributeDefinitionApiResponse apiResponse)
+        internal void ExecuteOnDeleteCustomerAttributeDefinition(AttributeApi.DeleteCustomerAttributeDefinitionApiResponse apiResponse)
         {
-            OnOBPv400DeleteCustomerAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteCustomerAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteCustomerAttributeDefinition(Exception exception)
+        internal void ExecuteOnErrorDeleteCustomerAttributeDefinition(Exception exception)
         {
-            OnErrorOBPv400DeleteCustomerAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteCustomerAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetCustomerAttributeById;
+        public event EventHandler<ApiResponseEventArgs>? OnGetCustomerAttributeById;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetCustomerAttributeById;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetCustomerAttributeById;
 
-        internal void ExecuteOnOBPv400GetCustomerAttributeById(AttributeApi.OBPv400GetCustomerAttributeByIdApiResponse apiResponse)
+        internal void ExecuteOnGetCustomerAttributeById(AttributeApi.GetCustomerAttributeByIdApiResponse apiResponse)
         {
-            OnOBPv400GetCustomerAttributeById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetCustomerAttributeById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetCustomerAttributeById(Exception exception)
+        internal void ExecuteOnErrorGetCustomerAttributeById(Exception exception)
         {
-            OnErrorOBPv400GetCustomerAttributeById?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetCustomerAttributeById?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetCustomerAttributeDefinition;
+        public event EventHandler<ApiResponseEventArgs>? OnGetCustomerAttributeDefinition;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetCustomerAttributeDefinition;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetCustomerAttributeDefinition;
 
-        internal void ExecuteOnOBPv400GetCustomerAttributeDefinition(AttributeApi.OBPv400GetCustomerAttributeDefinitionApiResponse apiResponse)
+        internal void ExecuteOnGetCustomerAttributeDefinition(AttributeApi.GetCustomerAttributeDefinitionApiResponse apiResponse)
         {
-            OnOBPv400GetCustomerAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetCustomerAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetCustomerAttributeDefinition(Exception exception)
+        internal void ExecuteOnErrorGetCustomerAttributeDefinition(Exception exception)
         {
-            OnErrorOBPv400GetCustomerAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetCustomerAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetCustomerAttributes;
+        public event EventHandler<ApiResponseEventArgs>? OnGetCustomerAttributes;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetCustomerAttributes;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetCustomerAttributes;
 
-        internal void ExecuteOnOBPv400GetCustomerAttributes(AttributeApi.OBPv400GetCustomerAttributesApiResponse apiResponse)
+        internal void ExecuteOnGetCustomerAttributes(AttributeApi.GetCustomerAttributesApiResponse apiResponse)
         {
-            OnOBPv400GetCustomerAttributes?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetCustomerAttributes?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetCustomerAttributes(Exception exception)
+        internal void ExecuteOnErrorGetCustomerAttributes(Exception exception)
         {
-            OnErrorOBPv400GetCustomerAttributes?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetCustomerAttributes?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400UpdateCustomerAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateCustomerAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400UpdateCustomerAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateCustomerAttribute;
 
-        internal void ExecuteOnOBPv400UpdateCustomerAttribute(AttributeApi.OBPv400UpdateCustomerAttributeApiResponse apiResponse)
+        internal void ExecuteOnUpdateCustomerAttribute(AttributeApi.UpdateCustomerAttributeApiResponse apiResponse)
         {
-            OnOBPv400UpdateCustomerAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateCustomerAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400UpdateCustomerAttribute(Exception exception)
+        internal void ExecuteOnErrorUpdateCustomerAttribute(Exception exception)
         {
-            OnErrorOBPv400UpdateCustomerAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateCustomerAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -467,16 +467,16 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv400CreateCustomerAttribute(ref string bankid, ref string customerid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        partial void FormatCreateCustomerAttribute(ref string bankid, ref string customerid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
+        /// <param name="createPersonalDataFieldRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateCustomerAttribute(string bankid, string customerid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        private void ValidateCreateCustomerAttribute(string bankid, string customerid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -484,8 +484,8 @@ namespace OpenBankProject.Api
             if (customerid == null)
                 throw new ArgumentNullException(nameof(customerid));
 
-            if (oBPv600CreatePersonalDataFieldRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600CreatePersonalDataFieldRequest));
+            if (createPersonalDataFieldRequest == null)
+                throw new ArgumentNullException(nameof(createPersonalDataFieldRequest));
         }
 
         /// <summary>
@@ -494,11 +494,11 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        private void AfterOBPv400CreateCustomerAttributeDefaultImplementation(IOBPv400CreateCustomerAttributeApiResponse apiResponseLocalVar, string bankid, string customerid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        /// <param name="createPersonalDataFieldRequest"></param>
+        private void AfterCreateCustomerAttributeDefaultImplementation(ICreateCustomerAttributeApiResponse apiResponseLocalVar, string bankid, string customerid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateCustomerAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, customerid, oBPv600CreatePersonalDataFieldRequest);
+            AfterCreateCustomerAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, customerid, createPersonalDataFieldRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -510,8 +510,8 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        partial void AfterOBPv400CreateCustomerAttribute(ref bool suppressDefaultLog, IOBPv400CreateCustomerAttributeApiResponse apiResponseLocalVar, string bankid, string customerid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        /// <param name="createPersonalDataFieldRequest"></param>
+        partial void AfterCreateCustomerAttribute(ref bool suppressDefaultLog, ICreateCustomerAttributeApiResponse apiResponseLocalVar, string bankid, string customerid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -521,11 +521,11 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        private void OnErrorOBPv400CreateCustomerAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        /// <param name="createPersonalDataFieldRequest"></param>
+        private void OnErrorCreateCustomerAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateCustomerAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, customerid, oBPv600CreatePersonalDataFieldRequest);
+            OnErrorCreateCustomerAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, customerid, createPersonalDataFieldRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -539,22 +539,22 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        partial void OnErrorOBPv400CreateCustomerAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        /// <param name="createPersonalDataFieldRequest"></param>
+        partial void OnErrorCreateCustomerAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Create Customer Attribute &lt;p&gt;Create Customer Attribute&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateCustomerAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateCustomerAttributeApiResponse?> OBPv400CreateCustomerAttributeOrDefaultAsync(string bankid, string customerid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateCustomerAttributeApiResponse"/>&gt;</returns>
+        public async Task<ICreateCustomerAttributeApiResponse?> CreateCustomerAttributeOrDefaultAsync(string bankid, string customerid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateCustomerAttributeAsync(bankid, customerid, oBPv600CreatePersonalDataFieldRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateCustomerAttributeAsync(bankid, customerid, createPersonalDataFieldRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -568,18 +568,18 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateCustomerAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateCustomerAttributeApiResponse> OBPv400CreateCustomerAttributeAsync(string bankid, string customerid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateCustomerAttributeApiResponse"/>&gt;</returns>
+        public async Task<ICreateCustomerAttributeApiResponse> CreateCustomerAttributeAsync(string bankid, string customerid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateCustomerAttribute(bankid, customerid, oBPv600CreatePersonalDataFieldRequest);
+                ValidateCreateCustomerAttribute(bankid, customerid, createPersonalDataFieldRequest);
 
-                FormatOBPv400CreateCustomerAttribute(ref bankid, ref customerid, oBPv600CreatePersonalDataFieldRequest);
+                FormatCreateCustomerAttribute(ref bankid, ref customerid, createPersonalDataFieldRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -592,16 +592,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bcustomerid%7D", Uri.EscapeDataString(customerid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600CreatePersonalDataFieldRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createPersonalDataFieldRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600CreatePersonalDataFieldRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createPersonalDataFieldRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -637,8 +637,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400CreateCustomerAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400CreateCustomerAttributeApiResponse>();
-                        AttributeApi.OBPv400CreateCustomerAttributeApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.CreateCustomerAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.CreateCustomerAttributeApiResponse>();
+                        AttributeApi.CreateCustomerAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -649,9 +649,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateCustomerAttributeDefaultImplementation(apiResponseLocalVar, bankid, customerid, oBPv600CreatePersonalDataFieldRequest);
+                        AfterCreateCustomerAttributeDefaultImplementation(apiResponseLocalVar, bankid, customerid, createPersonalDataFieldRequest);
 
-                        Events.ExecuteOnOBPv400CreateCustomerAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnCreateCustomerAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -663,27 +663,27 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateCustomerAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute", uriBuilderLocalVar.Path, bankid, customerid, oBPv600CreatePersonalDataFieldRequest);
-                Events.ExecuteOnErrorOBPv400CreateCustomerAttribute(e);
+                OnErrorCreateCustomerAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute", uriBuilderLocalVar.Path, bankid, customerid, createPersonalDataFieldRequest);
+                Events.ExecuteOnErrorCreateCustomerAttribute(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(ref string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+        partial void FormatCreateOrUpdateCustomerAttributeAttributeDefinition(ref string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+        private void ValidateCreateOrUpdateCustomerAttributeAttributeDefinition(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
 
-            if (oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest));
+            if (createOrUpdateTransactionRequestAttributeDefinitionRequest == null)
+                throw new ArgumentNullException(nameof(createOrUpdateTransactionRequestAttributeDefinitionRequest));
         }
 
         /// <summary>
@@ -691,11 +691,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        private void AfterOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionDefaultImplementation(IOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        private void AfterCreateOrUpdateCustomerAttributeAttributeDefinitionDefaultImplementation(ICreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+            AfterCreateOrUpdateCustomerAttributeAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -706,8 +706,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        partial void AfterOBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(ref bool suppressDefaultLog, IOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        partial void AfterCreateOrUpdateCustomerAttributeAttributeDefinition(ref bool suppressDefaultLog, ICreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -716,11 +716,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        private void OnErrorOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        private void OnErrorCreateOrUpdateCustomerAttributeAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+            OnErrorCreateOrUpdateCustomerAttributeAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -733,21 +733,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        partial void OnErrorOBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        partial void OnErrorCreateOrUpdateCustomerAttributeAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
         /// <summary>
         /// Create or Update Customer Attribute Definition &lt;p&gt;Create or Update Customer Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be one of: Customer&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse?> OBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionOrDefaultAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<ICreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse?> CreateOrUpdateCustomerAttributeAttributeDefinitionOrDefaultAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionAsync(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateOrUpdateCustomerAttributeAttributeDefinitionAsync(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -760,18 +760,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse> OBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<ICreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse> CreateOrUpdateCustomerAttributeAttributeDefinitionAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+                ValidateCreateOrUpdateCustomerAttributeAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
-                FormatOBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(ref bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+                FormatCreateOrUpdateCustomerAttributeAttributeDefinition(ref bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -783,16 +783,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/customer");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createOrUpdateTransactionRequestAttributeDefinitionRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createOrUpdateTransactionRequestAttributeDefinitionRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -828,8 +828,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse>();
-                        AttributeApi.OBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse>();
+                        AttributeApi.CreateOrUpdateCustomerAttributeAttributeDefinitionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -840,9 +840,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+                        AfterCreateOrUpdateCustomerAttributeAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
-                        Events.ExecuteOnOBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(apiResponseLocalVar);
+                        Events.ExecuteOnCreateOrUpdateCustomerAttributeAttributeDefinition(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -854,13 +854,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/customer", uriBuilderLocalVar.Path, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-                Events.ExecuteOnErrorOBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(e);
+                OnErrorCreateOrUpdateCustomerAttributeAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/customer", uriBuilderLocalVar.Path, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
+                Events.ExecuteOnErrorCreateOrUpdateCustomerAttributeAttributeDefinition(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400DeleteCustomerAttribute(ref string bankid, ref string customerid, ref string customerattributeid);
+        partial void FormatDeleteCustomerAttribute(ref string bankid, ref string customerid, ref string customerattributeid);
 
         /// <summary>
         /// Validates the request parameters
@@ -869,7 +869,7 @@ namespace OpenBankProject.Api
         /// <param name="customerid"></param>
         /// <param name="customerattributeid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteCustomerAttribute(string bankid, string customerid, string customerattributeid)
+        private void ValidateDeleteCustomerAttribute(string bankid, string customerid, string customerattributeid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -888,10 +888,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
         /// <param name="customerattributeid"></param>
-        private void AfterOBPv400DeleteCustomerAttributeDefaultImplementation(IOBPv400DeleteCustomerAttributeApiResponse apiResponseLocalVar, string bankid, string customerid, string customerattributeid)
+        private void AfterDeleteCustomerAttributeDefaultImplementation(IDeleteCustomerAttributeApiResponse apiResponseLocalVar, string bankid, string customerid, string customerattributeid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteCustomerAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, customerid, customerattributeid);
+            AfterDeleteCustomerAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, customerid, customerattributeid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -904,7 +904,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
         /// <param name="customerattributeid"></param>
-        partial void AfterOBPv400DeleteCustomerAttribute(ref bool suppressDefaultLog, IOBPv400DeleteCustomerAttributeApiResponse apiResponseLocalVar, string bankid, string customerid, string customerattributeid);
+        partial void AfterDeleteCustomerAttribute(ref bool suppressDefaultLog, IDeleteCustomerAttributeApiResponse apiResponseLocalVar, string bankid, string customerid, string customerattributeid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -915,10 +915,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
         /// <param name="customerattributeid"></param>
-        private void OnErrorOBPv400DeleteCustomerAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, string customerattributeid)
+        private void OnErrorDeleteCustomerAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, string customerattributeid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteCustomerAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, customerid, customerattributeid);
+            OnErrorDeleteCustomerAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, customerid, customerattributeid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -933,7 +933,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
         /// <param name="customerattributeid"></param>
-        partial void OnErrorOBPv400DeleteCustomerAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, string customerattributeid);
+        partial void OnErrorDeleteCustomerAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, string customerattributeid);
 
         /// <summary>
         /// Delete Customer Attribute &lt;p&gt;Delete Customer Attribute&lt;/p&gt; &lt;p&gt;CustomerAttributes are used to enhance the OBP Customer object with Bank specific entities.&lt;/p&gt; &lt;p&gt;Delete a Customer Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CUSTOMER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -942,12 +942,12 @@ namespace OpenBankProject.Api
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="customerattributeid">The CUSTOMERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteCustomerAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteCustomerAttributeApiResponse?> OBPv400DeleteCustomerAttributeOrDefaultAsync(string bankid, string customerid, string customerattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCustomerAttributeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCustomerAttributeApiResponse?> DeleteCustomerAttributeOrDefaultAsync(string bankid, string customerid, string customerattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteCustomerAttributeAsync(bankid, customerid, customerattributeid, cancellationToken).ConfigureAwait(false);
+                return await DeleteCustomerAttributeAsync(bankid, customerid, customerattributeid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -963,16 +963,16 @@ namespace OpenBankProject.Api
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="customerattributeid">The CUSTOMERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteCustomerAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteCustomerAttributeApiResponse> OBPv400DeleteCustomerAttributeAsync(string bankid, string customerid, string customerattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCustomerAttributeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCustomerAttributeApiResponse> DeleteCustomerAttributeAsync(string bankid, string customerid, string customerattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteCustomerAttribute(bankid, customerid, customerattributeid);
+                ValidateDeleteCustomerAttribute(bankid, customerid, customerattributeid);
 
-                FormatOBPv400DeleteCustomerAttribute(ref bankid, ref customerid, ref customerattributeid);
+                FormatDeleteCustomerAttribute(ref bankid, ref customerid, ref customerattributeid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -991,7 +991,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1009,8 +1009,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400DeleteCustomerAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400DeleteCustomerAttributeApiResponse>();
-                        AttributeApi.OBPv400DeleteCustomerAttributeApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.DeleteCustomerAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.DeleteCustomerAttributeApiResponse>();
+                        AttributeApi.DeleteCustomerAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1021,9 +1021,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteCustomerAttributeDefaultImplementation(apiResponseLocalVar, bankid, customerid, customerattributeid);
+                        AfterDeleteCustomerAttributeDefaultImplementation(apiResponseLocalVar, bankid, customerid, customerattributeid);
 
-                        Events.ExecuteOnOBPv400DeleteCustomerAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteCustomerAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1035,13 +1035,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteCustomerAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid}", uriBuilderLocalVar.Path, bankid, customerid, customerattributeid);
-                Events.ExecuteOnErrorOBPv400DeleteCustomerAttribute(e);
+                OnErrorDeleteCustomerAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid}", uriBuilderLocalVar.Path, bankid, customerid, customerattributeid);
+                Events.ExecuteOnErrorDeleteCustomerAttribute(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400DeleteCustomerAttributeDefinition(ref string bankid, ref string attributedefinitionid);
+        partial void FormatDeleteCustomerAttributeDefinition(ref string bankid, ref string attributedefinitionid);
 
         /// <summary>
         /// Validates the request parameters
@@ -1049,7 +1049,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteCustomerAttributeDefinition(string bankid, string attributedefinitionid)
+        private void ValidateDeleteCustomerAttributeDefinition(string bankid, string attributedefinitionid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1064,10 +1064,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
-        private void AfterOBPv400DeleteCustomerAttributeDefinitionDefaultImplementation(IOBPv400DeleteCustomerAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid)
+        private void AfterDeleteCustomerAttributeDefinitionDefaultImplementation(IDeleteCustomerAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteCustomerAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, attributedefinitionid);
+            AfterDeleteCustomerAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, attributedefinitionid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1079,7 +1079,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
-        partial void AfterOBPv400DeleteCustomerAttributeDefinition(ref bool suppressDefaultLog, IOBPv400DeleteCustomerAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid);
+        partial void AfterDeleteCustomerAttributeDefinition(ref bool suppressDefaultLog, IDeleteCustomerAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1089,10 +1089,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
-        private void OnErrorOBPv400DeleteCustomerAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid)
+        private void OnErrorDeleteCustomerAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteCustomerAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, attributedefinitionid);
+            OnErrorDeleteCustomerAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, attributedefinitionid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1106,7 +1106,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
-        partial void OnErrorOBPv400DeleteCustomerAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid);
+        partial void OnErrorDeleteCustomerAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid);
 
         /// <summary>
         /// Delete Customer Attribute Definition &lt;p&gt;Delete Customer Attribute Definition by ATTRIBUTE_DEFINITION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;ATTRIBUTE_DEFINITION_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -1114,12 +1114,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteCustomerAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteCustomerAttributeDefinitionApiResponse?> OBPv400DeleteCustomerAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCustomerAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCustomerAttributeDefinitionApiResponse?> DeleteCustomerAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteCustomerAttributeDefinitionAsync(bankid, attributedefinitionid, cancellationToken).ConfigureAwait(false);
+                return await DeleteCustomerAttributeDefinitionAsync(bankid, attributedefinitionid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1134,16 +1134,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteCustomerAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteCustomerAttributeDefinitionApiResponse> OBPv400DeleteCustomerAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCustomerAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCustomerAttributeDefinitionApiResponse> DeleteCustomerAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteCustomerAttributeDefinition(bankid, attributedefinitionid);
+                ValidateDeleteCustomerAttributeDefinition(bankid, attributedefinitionid);
 
-                FormatOBPv400DeleteCustomerAttributeDefinition(ref bankid, ref attributedefinitionid);
+                FormatDeleteCustomerAttributeDefinition(ref bankid, ref attributedefinitionid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1161,7 +1161,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1179,8 +1179,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400DeleteCustomerAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400DeleteCustomerAttributeDefinitionApiResponse>();
-                        AttributeApi.OBPv400DeleteCustomerAttributeDefinitionApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.DeleteCustomerAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.DeleteCustomerAttributeDefinitionApiResponse>();
+                        AttributeApi.DeleteCustomerAttributeDefinitionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1191,9 +1191,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteCustomerAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, attributedefinitionid);
+                        AfterDeleteCustomerAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, attributedefinitionid);
 
-                        Events.ExecuteOnOBPv400DeleteCustomerAttributeDefinition(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteCustomerAttributeDefinition(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1205,13 +1205,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteCustomerAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer", uriBuilderLocalVar.Path, bankid, attributedefinitionid);
-                Events.ExecuteOnErrorOBPv400DeleteCustomerAttributeDefinition(e);
+                OnErrorDeleteCustomerAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer", uriBuilderLocalVar.Path, bankid, attributedefinitionid);
+                Events.ExecuteOnErrorDeleteCustomerAttributeDefinition(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400GetCustomerAttributeById(ref string bankid, ref string customerid, ref string attributeid);
+        partial void FormatGetCustomerAttributeById(ref string bankid, ref string customerid, ref string attributeid);
 
         /// <summary>
         /// Validates the request parameters
@@ -1220,7 +1220,7 @@ namespace OpenBankProject.Api
         /// <param name="customerid"></param>
         /// <param name="attributeid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetCustomerAttributeById(string bankid, string customerid, string attributeid)
+        private void ValidateGetCustomerAttributeById(string bankid, string customerid, string attributeid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1239,10 +1239,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
         /// <param name="attributeid"></param>
-        private void AfterOBPv400GetCustomerAttributeByIdDefaultImplementation(IOBPv400GetCustomerAttributeByIdApiResponse apiResponseLocalVar, string bankid, string customerid, string attributeid)
+        private void AfterGetCustomerAttributeByIdDefaultImplementation(IGetCustomerAttributeByIdApiResponse apiResponseLocalVar, string bankid, string customerid, string attributeid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetCustomerAttributeById(ref suppressDefaultLog, apiResponseLocalVar, bankid, customerid, attributeid);
+            AfterGetCustomerAttributeById(ref suppressDefaultLog, apiResponseLocalVar, bankid, customerid, attributeid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1255,7 +1255,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
         /// <param name="attributeid"></param>
-        partial void AfterOBPv400GetCustomerAttributeById(ref bool suppressDefaultLog, IOBPv400GetCustomerAttributeByIdApiResponse apiResponseLocalVar, string bankid, string customerid, string attributeid);
+        partial void AfterGetCustomerAttributeById(ref bool suppressDefaultLog, IGetCustomerAttributeByIdApiResponse apiResponseLocalVar, string bankid, string customerid, string attributeid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1266,10 +1266,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
         /// <param name="attributeid"></param>
-        private void OnErrorOBPv400GetCustomerAttributeByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, string attributeid)
+        private void OnErrorGetCustomerAttributeByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, string attributeid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetCustomerAttributeById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, customerid, attributeid);
+            OnErrorGetCustomerAttributeById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, customerid, attributeid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1284,7 +1284,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
         /// <param name="attributeid"></param>
-        partial void OnErrorOBPv400GetCustomerAttributeById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, string attributeid);
+        partial void OnErrorGetCustomerAttributeById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, string attributeid);
 
         /// <summary>
         /// Get Customer Attribute By Id &lt;p&gt;Get Customer Attribute By Id&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Adapter.card_attribute_id\&quot;&gt;ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -1293,12 +1293,12 @@ namespace OpenBankProject.Api
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="attributeid">The ATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetCustomerAttributeByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetCustomerAttributeByIdApiResponse?> OBPv400GetCustomerAttributeByIdOrDefaultAsync(string bankid, string customerid, string attributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomerAttributeByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetCustomerAttributeByIdApiResponse?> GetCustomerAttributeByIdOrDefaultAsync(string bankid, string customerid, string attributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetCustomerAttributeByIdAsync(bankid, customerid, attributeid, cancellationToken).ConfigureAwait(false);
+                return await GetCustomerAttributeByIdAsync(bankid, customerid, attributeid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1314,16 +1314,16 @@ namespace OpenBankProject.Api
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="attributeid">The ATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetCustomerAttributeByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetCustomerAttributeByIdApiResponse> OBPv400GetCustomerAttributeByIdAsync(string bankid, string customerid, string attributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomerAttributeByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetCustomerAttributeByIdApiResponse> GetCustomerAttributeByIdAsync(string bankid, string customerid, string attributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetCustomerAttributeById(bankid, customerid, attributeid);
+                ValidateGetCustomerAttributeById(bankid, customerid, attributeid);
 
-                FormatOBPv400GetCustomerAttributeById(ref bankid, ref customerid, ref attributeid);
+                FormatGetCustomerAttributeById(ref bankid, ref customerid, ref attributeid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1342,7 +1342,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1369,8 +1369,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400GetCustomerAttributeByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400GetCustomerAttributeByIdApiResponse>();
-                        AttributeApi.OBPv400GetCustomerAttributeByIdApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.GetCustomerAttributeByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.GetCustomerAttributeByIdApiResponse>();
+                        AttributeApi.GetCustomerAttributeByIdApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1381,9 +1381,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetCustomerAttributeByIdDefaultImplementation(apiResponseLocalVar, bankid, customerid, attributeid);
+                        AfterGetCustomerAttributeByIdDefaultImplementation(apiResponseLocalVar, bankid, customerid, attributeid);
 
-                        Events.ExecuteOnOBPv400GetCustomerAttributeById(apiResponseLocalVar);
+                        Events.ExecuteOnGetCustomerAttributeById(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1395,20 +1395,20 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetCustomerAttributeByIdDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid}", uriBuilderLocalVar.Path, bankid, customerid, attributeid);
-                Events.ExecuteOnErrorOBPv400GetCustomerAttributeById(e);
+                OnErrorGetCustomerAttributeByIdDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid}", uriBuilderLocalVar.Path, bankid, customerid, attributeid);
+                Events.ExecuteOnErrorGetCustomerAttributeById(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400GetCustomerAttributeDefinition(ref string bankid);
+        partial void FormatGetCustomerAttributeDefinition(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetCustomerAttributeDefinition(string bankid)
+        private void ValidateGetCustomerAttributeDefinition(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1419,10 +1419,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv400GetCustomerAttributeDefinitionDefaultImplementation(IOBPv400GetCustomerAttributeDefinitionApiResponse apiResponseLocalVar, string bankid)
+        private void AfterGetCustomerAttributeDefinitionDefaultImplementation(IGetCustomerAttributeDefinitionApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetCustomerAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterGetCustomerAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1433,7 +1433,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv400GetCustomerAttributeDefinition(ref bool suppressDefaultLog, IOBPv400GetCustomerAttributeDefinitionApiResponse apiResponseLocalVar, string bankid);
+        partial void AfterGetCustomerAttributeDefinition(ref bool suppressDefaultLog, IGetCustomerAttributeDefinitionApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1442,10 +1442,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv400GetCustomerAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        private void OnErrorGetCustomerAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetCustomerAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorGetCustomerAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1458,19 +1458,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv400GetCustomerAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        partial void OnErrorGetCustomerAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Get Customer Attribute Definition &lt;p&gt;Get Customer Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetCustomerAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetCustomerAttributeDefinitionApiResponse?> OBPv400GetCustomerAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomerAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IGetCustomerAttributeDefinitionApiResponse?> GetCustomerAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetCustomerAttributeDefinitionAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await GetCustomerAttributeDefinitionAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1484,16 +1484,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetCustomerAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetCustomerAttributeDefinitionApiResponse> OBPv400GetCustomerAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomerAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IGetCustomerAttributeDefinitionApiResponse> GetCustomerAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetCustomerAttributeDefinition(bankid);
+                ValidateGetCustomerAttributeDefinition(bankid);
 
-                FormatOBPv400GetCustomerAttributeDefinition(ref bankid);
+                FormatGetCustomerAttributeDefinition(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1510,7 +1510,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1537,8 +1537,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400GetCustomerAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400GetCustomerAttributeDefinitionApiResponse>();
-                        AttributeApi.OBPv400GetCustomerAttributeDefinitionApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.GetCustomerAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.GetCustomerAttributeDefinitionApiResponse>();
+                        AttributeApi.GetCustomerAttributeDefinitionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1549,9 +1549,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetCustomerAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterGetCustomerAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv400GetCustomerAttributeDefinition(apiResponseLocalVar);
+                        Events.ExecuteOnGetCustomerAttributeDefinition(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1563,13 +1563,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetCustomerAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/customer", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv400GetCustomerAttributeDefinition(e);
+                OnErrorGetCustomerAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/customer", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetCustomerAttributeDefinition(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400GetCustomerAttributes(ref string bankid, ref string customerid);
+        partial void FormatGetCustomerAttributes(ref string bankid, ref string customerid);
 
         /// <summary>
         /// Validates the request parameters
@@ -1577,7 +1577,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetCustomerAttributes(string bankid, string customerid)
+        private void ValidateGetCustomerAttributes(string bankid, string customerid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1592,10 +1592,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
-        private void AfterOBPv400GetCustomerAttributesDefaultImplementation(IOBPv400GetCustomerAttributesApiResponse apiResponseLocalVar, string bankid, string customerid)
+        private void AfterGetCustomerAttributesDefaultImplementation(IGetCustomerAttributesApiResponse apiResponseLocalVar, string bankid, string customerid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetCustomerAttributes(ref suppressDefaultLog, apiResponseLocalVar, bankid, customerid);
+            AfterGetCustomerAttributes(ref suppressDefaultLog, apiResponseLocalVar, bankid, customerid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1607,7 +1607,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
-        partial void AfterOBPv400GetCustomerAttributes(ref bool suppressDefaultLog, IOBPv400GetCustomerAttributesApiResponse apiResponseLocalVar, string bankid, string customerid);
+        partial void AfterGetCustomerAttributes(ref bool suppressDefaultLog, IGetCustomerAttributesApiResponse apiResponseLocalVar, string bankid, string customerid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1617,10 +1617,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
-        private void OnErrorOBPv400GetCustomerAttributesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid)
+        private void OnErrorGetCustomerAttributesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetCustomerAttributes(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, customerid);
+            OnErrorGetCustomerAttributes(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, customerid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1634,7 +1634,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
-        partial void OnErrorOBPv400GetCustomerAttributes(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid);
+        partial void OnErrorGetCustomerAttributes(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid);
 
         /// <summary>
         /// Get Customer Attributes &lt;p&gt;Get Customer Attributes&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_attributes\&quot;&gt;&lt;strong&gt;customer_attributes&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -1642,12 +1642,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetCustomerAttributesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetCustomerAttributesApiResponse?> OBPv400GetCustomerAttributesOrDefaultAsync(string bankid, string customerid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomerAttributesApiResponse"/>&gt;</returns>
+        public async Task<IGetCustomerAttributesApiResponse?> GetCustomerAttributesOrDefaultAsync(string bankid, string customerid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetCustomerAttributesAsync(bankid, customerid, cancellationToken).ConfigureAwait(false);
+                return await GetCustomerAttributesAsync(bankid, customerid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1662,16 +1662,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetCustomerAttributesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetCustomerAttributesApiResponse> OBPv400GetCustomerAttributesAsync(string bankid, string customerid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomerAttributesApiResponse"/>&gt;</returns>
+        public async Task<IGetCustomerAttributesApiResponse> GetCustomerAttributesAsync(string bankid, string customerid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetCustomerAttributes(bankid, customerid);
+                ValidateGetCustomerAttributes(bankid, customerid);
 
-                FormatOBPv400GetCustomerAttributes(ref bankid, ref customerid);
+                FormatGetCustomerAttributes(ref bankid, ref customerid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1689,7 +1689,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1716,8 +1716,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400GetCustomerAttributesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400GetCustomerAttributesApiResponse>();
-                        AttributeApi.OBPv400GetCustomerAttributesApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.GetCustomerAttributesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.GetCustomerAttributesApiResponse>();
+                        AttributeApi.GetCustomerAttributesApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1728,9 +1728,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetCustomerAttributesDefaultImplementation(apiResponseLocalVar, bankid, customerid);
+                        AfterGetCustomerAttributesDefaultImplementation(apiResponseLocalVar, bankid, customerid);
 
-                        Events.ExecuteOnOBPv400GetCustomerAttributes(apiResponseLocalVar);
+                        Events.ExecuteOnGetCustomerAttributes(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1742,13 +1742,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetCustomerAttributesDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes", uriBuilderLocalVar.Path, bankid, customerid);
-                Events.ExecuteOnErrorOBPv400GetCustomerAttributes(e);
+                OnErrorGetCustomerAttributesDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes", uriBuilderLocalVar.Path, bankid, customerid);
+                Events.ExecuteOnErrorGetCustomerAttributes(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400UpdateCustomerAttribute(ref string bankid, ref string customerid, ref string customerattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        partial void FormatUpdateCustomerAttribute(ref string bankid, ref string customerid, ref string customerattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -1756,9 +1756,9 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
         /// <param name="customerattributeid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
+        /// <param name="createPersonalDataFieldRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400UpdateCustomerAttribute(string bankid, string customerid, string customerattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        private void ValidateUpdateCustomerAttribute(string bankid, string customerid, string customerattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1769,8 +1769,8 @@ namespace OpenBankProject.Api
             if (customerattributeid == null)
                 throw new ArgumentNullException(nameof(customerattributeid));
 
-            if (oBPv600CreatePersonalDataFieldRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600CreatePersonalDataFieldRequest));
+            if (createPersonalDataFieldRequest == null)
+                throw new ArgumentNullException(nameof(createPersonalDataFieldRequest));
         }
 
         /// <summary>
@@ -1780,11 +1780,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
         /// <param name="customerattributeid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        private void AfterOBPv400UpdateCustomerAttributeDefaultImplementation(IOBPv400UpdateCustomerAttributeApiResponse apiResponseLocalVar, string bankid, string customerid, string customerattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        /// <param name="createPersonalDataFieldRequest"></param>
+        private void AfterUpdateCustomerAttributeDefaultImplementation(IUpdateCustomerAttributeApiResponse apiResponseLocalVar, string bankid, string customerid, string customerattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400UpdateCustomerAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, customerid, customerattributeid, oBPv600CreatePersonalDataFieldRequest);
+            AfterUpdateCustomerAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, customerid, customerattributeid, createPersonalDataFieldRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1797,8 +1797,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
         /// <param name="customerattributeid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        partial void AfterOBPv400UpdateCustomerAttribute(ref bool suppressDefaultLog, IOBPv400UpdateCustomerAttributeApiResponse apiResponseLocalVar, string bankid, string customerid, string customerattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        /// <param name="createPersonalDataFieldRequest"></param>
+        partial void AfterUpdateCustomerAttribute(ref bool suppressDefaultLog, IUpdateCustomerAttributeApiResponse apiResponseLocalVar, string bankid, string customerid, string customerattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1809,11 +1809,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
         /// <param name="customerattributeid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        private void OnErrorOBPv400UpdateCustomerAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, string customerattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        /// <param name="createPersonalDataFieldRequest"></param>
+        private void OnErrorUpdateCustomerAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, string customerattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400UpdateCustomerAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, customerid, customerattributeid, oBPv600CreatePersonalDataFieldRequest);
+            OnErrorUpdateCustomerAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, customerid, customerattributeid, createPersonalDataFieldRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1828,8 +1828,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
         /// <param name="customerattributeid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        partial void OnErrorOBPv400UpdateCustomerAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, string customerattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        /// <param name="createPersonalDataFieldRequest"></param>
+        partial void OnErrorUpdateCustomerAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, string customerattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Update Customer Attribute &lt;p&gt;Update Customer Attribute&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CUSTOMER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -1837,14 +1837,14 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="customerattributeid">The CUSTOMERATTRIBUTEID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateCustomerAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateCustomerAttributeApiResponse?> OBPv400UpdateCustomerAttributeOrDefaultAsync(string bankid, string customerid, string customerattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCustomerAttributeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCustomerAttributeApiResponse?> UpdateCustomerAttributeOrDefaultAsync(string bankid, string customerid, string customerattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400UpdateCustomerAttributeAsync(bankid, customerid, customerattributeid, oBPv600CreatePersonalDataFieldRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateCustomerAttributeAsync(bankid, customerid, customerattributeid, createPersonalDataFieldRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1859,18 +1859,18 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="customerattributeid">The CUSTOMERATTRIBUTEID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateCustomerAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateCustomerAttributeApiResponse> OBPv400UpdateCustomerAttributeAsync(string bankid, string customerid, string customerattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCustomerAttributeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCustomerAttributeApiResponse> UpdateCustomerAttributeAsync(string bankid, string customerid, string customerattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400UpdateCustomerAttribute(bankid, customerid, customerattributeid, oBPv600CreatePersonalDataFieldRequest);
+                ValidateUpdateCustomerAttribute(bankid, customerid, customerattributeid, createPersonalDataFieldRequest);
 
-                FormatOBPv400UpdateCustomerAttribute(ref bankid, ref customerid, ref customerattributeid, oBPv600CreatePersonalDataFieldRequest);
+                FormatUpdateCustomerAttribute(ref bankid, ref customerid, ref customerattributeid, createPersonalDataFieldRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1884,16 +1884,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bcustomerid%7D", Uri.EscapeDataString(customerid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bcustomerattributeid%7D", Uri.EscapeDataString(customerattributeid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600CreatePersonalDataFieldRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createPersonalDataFieldRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600CreatePersonalDataFieldRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createPersonalDataFieldRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1929,8 +1929,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400UpdateCustomerAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400UpdateCustomerAttributeApiResponse>();
-                        AttributeApi.OBPv400UpdateCustomerAttributeApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.UpdateCustomerAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.UpdateCustomerAttributeApiResponse>();
+                        AttributeApi.UpdateCustomerAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1941,9 +1941,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400UpdateCustomerAttributeDefaultImplementation(apiResponseLocalVar, bankid, customerid, customerattributeid, oBPv600CreatePersonalDataFieldRequest);
+                        AfterUpdateCustomerAttributeDefaultImplementation(apiResponseLocalVar, bankid, customerid, customerattributeid, createPersonalDataFieldRequest);
 
-                        Events.ExecuteOnOBPv400UpdateCustomerAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateCustomerAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1955,8 +1955,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400UpdateCustomerAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid}", uriBuilderLocalVar.Path, bankid, customerid, customerattributeid, oBPv600CreatePersonalDataFieldRequest);
-                Events.ExecuteOnErrorOBPv400UpdateCustomerAttribute(e);
+                OnErrorUpdateCustomerAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid}", uriBuilderLocalVar.Path, bankid, customerid, customerattributeid, createPersonalDataFieldRequest);
+                Events.ExecuteOnErrorUpdateCustomerAttribute(e);
                 throw;
             }
         }

@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv121_update_transaction_narrative200_response.dart';
+import 'package:obp_dart/src/model/account_access_unique_index_check200_response.dart';
 
 class SystemIntegrityApi {
 
@@ -30,9 +30,9 @@ class SystemIntegrityApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv121UpdateTransactionNarrative200Response] as data
+  /// Returns a [Future] containing a [Response] with a [AccountAccessUniqueIndexCheck200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv121UpdateTransactionNarrative200Response>> oBPv510AccountAccessUniqueIndexCheck({ 
+  Future<Response<AccountAccessUniqueIndexCheck200Response>> accountAccessUniqueIndexCheck({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -59,7 +59,7 @@ class SystemIntegrityApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -76,14 +76,14 @@ class SystemIntegrityApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv121UpdateTransactionNarrative200Response? _responseData;
+    AccountAccessUniqueIndexCheck200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv121UpdateTransactionNarrative200Response),
-      ) as OBPv121UpdateTransactionNarrative200Response;
+        specifiedType: const FullType(AccountAccessUniqueIndexCheck200Response),
+      ) as AccountAccessUniqueIndexCheck200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -95,7 +95,7 @@ class SystemIntegrityApi {
       );
     }
 
-    return Response<OBPv121UpdateTransactionNarrative200Response>(
+    return Response<AccountAccessUniqueIndexCheck200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -119,9 +119,9 @@ class SystemIntegrityApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv121UpdateTransactionNarrative200Response] as data
+  /// Returns a [Future] containing a [Response] with a [AccountAccessUniqueIndexCheck200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv121UpdateTransactionNarrative200Response>> oBPv510AccountCurrencyCheck({ 
+  Future<Response<AccountAccessUniqueIndexCheck200Response>> accountCurrencyCheck({ 
     required String bankid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -149,7 +149,7 @@ class SystemIntegrityApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -166,14 +166,14 @@ class SystemIntegrityApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv121UpdateTransactionNarrative200Response? _responseData;
+    AccountAccessUniqueIndexCheck200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv121UpdateTransactionNarrative200Response),
-      ) as OBPv121UpdateTransactionNarrative200Response;
+        specifiedType: const FullType(AccountAccessUniqueIndexCheck200Response),
+      ) as AccountAccessUniqueIndexCheck200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -185,7 +185,7 @@ class SystemIntegrityApi {
       );
     }
 
-    return Response<OBPv121UpdateTransactionNarrative200Response>(
+    return Response<AccountAccessUniqueIndexCheck200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -208,9 +208,9 @@ class SystemIntegrityApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv121UpdateTransactionNarrative200Response] as data
+  /// Returns a [Future] containing a [Response] with a [AccountAccessUniqueIndexCheck200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv121UpdateTransactionNarrative200Response>> oBPv510CustomViewNamesCheck({ 
+  Future<Response<AccountAccessUniqueIndexCheck200Response>> customViewNamesCheck({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -237,7 +237,7 @@ class SystemIntegrityApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -254,14 +254,14 @@ class SystemIntegrityApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv121UpdateTransactionNarrative200Response? _responseData;
+    AccountAccessUniqueIndexCheck200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv121UpdateTransactionNarrative200Response),
-      ) as OBPv121UpdateTransactionNarrative200Response;
+        specifiedType: const FullType(AccountAccessUniqueIndexCheck200Response),
+      ) as AccountAccessUniqueIndexCheck200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -273,7 +273,7 @@ class SystemIntegrityApi {
       );
     }
 
-    return Response<OBPv121UpdateTransactionNarrative200Response>(
+    return Response<AccountAccessUniqueIndexCheck200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -297,9 +297,9 @@ class SystemIntegrityApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv121UpdateTransactionNarrative200Response] as data
+  /// Returns a [Future] containing a [Response] with a [AccountAccessUniqueIndexCheck200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv121UpdateTransactionNarrative200Response>> oBPv510OrphanedAccountCheck({ 
+  Future<Response<AccountAccessUniqueIndexCheck200Response>> orphanedAccountCheck({ 
     required String bankid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -327,7 +327,7 @@ class SystemIntegrityApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -344,14 +344,14 @@ class SystemIntegrityApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv121UpdateTransactionNarrative200Response? _responseData;
+    AccountAccessUniqueIndexCheck200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv121UpdateTransactionNarrative200Response),
-      ) as OBPv121UpdateTransactionNarrative200Response;
+        specifiedType: const FullType(AccountAccessUniqueIndexCheck200Response),
+      ) as AccountAccessUniqueIndexCheck200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -363,7 +363,7 @@ class SystemIntegrityApi {
       );
     }
 
-    return Response<OBPv121UpdateTransactionNarrative200Response>(
+    return Response<AccountAccessUniqueIndexCheck200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -386,9 +386,9 @@ class SystemIntegrityApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv121UpdateTransactionNarrative200Response] as data
+  /// Returns a [Future] containing a [Response] with a [AccountAccessUniqueIndexCheck200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv121UpdateTransactionNarrative200Response>> oBPv510SystemViewNamesCheck({ 
+  Future<Response<AccountAccessUniqueIndexCheck200Response>> systemViewNamesCheck({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -415,7 +415,7 @@ class SystemIntegrityApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -432,14 +432,14 @@ class SystemIntegrityApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv121UpdateTransactionNarrative200Response? _responseData;
+    AccountAccessUniqueIndexCheck200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv121UpdateTransactionNarrative200Response),
-      ) as OBPv121UpdateTransactionNarrative200Response;
+        specifiedType: const FullType(AccountAccessUniqueIndexCheck200Response),
+      ) as AccountAccessUniqueIndexCheck200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -451,7 +451,7 @@ class SystemIntegrityApi {
       );
     }
 
-    return Response<OBPv121UpdateTransactionNarrative200Response>(
+    return Response<AccountAccessUniqueIndexCheck200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

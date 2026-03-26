@@ -1,19 +1,19 @@
 # ApiProductApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600CreateApiProduct**](ApiProductApi.md#oBPv600CreateApiProduct) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product |
-| [**oBPv600CreateOrUpdateApiProduct**](ApiProductApi.md#oBPv600CreateOrUpdateApiProduct) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product |
-| [**oBPv600DeleteApiProduct**](ApiProductApi.md#oBPv600DeleteApiProduct) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product |
-| [**oBPv600GetApiProduct**](ApiProductApi.md#oBPv600GetApiProduct) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product |
-| [**oBPv600GetApiProducts**](ApiProductApi.md#oBPv600GetApiProducts) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products |
+| [**createApiProduct**](ApiProductApi.md#createApiProduct) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product |
+| [**createOrUpdateApiProduct**](ApiProductApi.md#createOrUpdateApiProduct) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product |
+| [**deleteApiProduct**](ApiProductApi.md#deleteApiProduct) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product |
+| [**getApiProduct**](ApiProductApi.md#getApiProduct) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product |
+| [**getApiProducts**](ApiProductApi.md#getApiProducts) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products |
 
 
-<a id="oBPv600CreateApiProduct"></a>
-# **oBPv600CreateApiProduct**
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems oBPv600CreateApiProduct(bankid, apiproductcode, obPv600CreateOrUpdateApiProductRequest)
+<a id="createApiProduct"></a>
+# **createApiProduct**
+> GetApiProducts200ResponseApiProductsInner createApiProduct(bankid, apiproductcode, createOrUpdateApiProductRequest)
 
 Create Api Product
 
@@ -28,15 +28,15 @@ Create Api Product
 val apiInstance = ApiProductApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val apiproductcode : kotlin.String = apiproductcode_example // kotlin.String | The APIPRODUCTCODE identifier
-val obPv600CreateOrUpdateApiProductRequest : OBPv600CreateOrUpdateApiProductRequest = {type=object, properties={name={type=string}, category={type=string}, monthly_subscription_currency={type=string}, description={type=string}, monthly_subscription_amount={type=string}, terms_and_conditions_url={type=string}, collection_id={type=string}, per_month_call_limit={type=integer}, per_second_call_limit={type=integer}, parent_api_product_code={type=string}, per_minute_call_limit={type=integer}, per_hour_call_limit={type=integer}, more_info_url={type=string}, per_week_call_limit={type=integer}, per_day_call_limit={type=integer}}} // OBPv600CreateOrUpdateApiProductRequest | Request body
+val createOrUpdateApiProductRequest : CreateOrUpdateApiProductRequest = {type=object, properties={name={type=string}, category={type=string}, monthly_subscription_currency={type=string}, description={type=string}, monthly_subscription_amount={type=string}, terms_and_conditions_url={type=string}, collection_id={type=string}, per_month_call_limit={type=integer}, per_second_call_limit={type=integer}, parent_api_product_code={type=string}, per_minute_call_limit={type=integer}, per_hour_call_limit={type=integer}, more_info_url={type=string}, per_week_call_limit={type=integer}, per_day_call_limit={type=integer}}} // CreateOrUpdateApiProductRequest | Request body
 try {
-    val result : OBPv600GetApiProducts200ResponsePropertiesApiProductsItems = apiInstance.oBPv600CreateApiProduct(bankid, apiproductcode, obPv600CreateOrUpdateApiProductRequest)
+    val result : GetApiProducts200ResponseApiProductsInner = apiInstance.createApiProduct(bankid, apiproductcode, createOrUpdateApiProductRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ApiProductApi#oBPv600CreateApiProduct")
+    println("4xx response calling ApiProductApi#createApiProduct")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ApiProductApi#oBPv600CreateApiProduct")
+    println("5xx response calling ApiProductApi#createApiProduct")
     e.printStackTrace()
 }
 ```
@@ -46,11 +46,11 @@ try {
 | **apiproductcode** | **kotlin.String**| The APIPRODUCTCODE identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600CreateOrUpdateApiProductRequest** | [**OBPv600CreateOrUpdateApiProductRequest**](OBPv600CreateOrUpdateApiProductRequest.md)| Request body | |
+| **createOrUpdateApiProductRequest** | [**CreateOrUpdateApiProductRequest**](CreateOrUpdateApiProductRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -61,17 +61,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600CreateOrUpdateApiProduct"></a>
-# **oBPv600CreateOrUpdateApiProduct**
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems oBPv600CreateOrUpdateApiProduct(bankid, apiproductcode, obPv600CreateOrUpdateApiProductRequest)
+<a id="createOrUpdateApiProduct"></a>
+# **createOrUpdateApiProduct**
+> GetApiProducts200ResponseApiProductsInner createOrUpdateApiProduct(bankid, apiproductcode, createOrUpdateApiProductRequest)
 
 Create or Update Api Product
 
@@ -86,15 +86,15 @@ Create or Update Api Product
 val apiInstance = ApiProductApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val apiproductcode : kotlin.String = apiproductcode_example // kotlin.String | The APIPRODUCTCODE identifier
-val obPv600CreateOrUpdateApiProductRequest : OBPv600CreateOrUpdateApiProductRequest = {"type":"object","properties":{"name":{"type":"string"},"category":{"type":"string"},"monthly_subscription_currency":{"type":"string"},"description":{"type":"string"},"monthly_subscription_amount":{"type":"string"},"terms_and_conditions_url":{"type":"string"},"collection_id":{"type":"string"},"per_month_call_limit":{"type":"integer"},"per_second_call_limit":{"type":"integer"},"parent_api_product_code":{"type":"string"},"per_minute_call_limit":{"type":"integer"},"per_hour_call_limit":{"type":"integer"},"more_info_url":{"type":"string"},"per_week_call_limit":{"type":"integer"},"per_day_call_limit":{"type":"integer"}}} // OBPv600CreateOrUpdateApiProductRequest | Request body
+val createOrUpdateApiProductRequest : CreateOrUpdateApiProductRequest = {"type":"object","properties":{"name":{"type":"string"},"category":{"type":"string"},"monthly_subscription_currency":{"type":"string"},"description":{"type":"string"},"monthly_subscription_amount":{"type":"string"},"terms_and_conditions_url":{"type":"string"},"collection_id":{"type":"string"},"per_month_call_limit":{"type":"integer"},"per_second_call_limit":{"type":"integer"},"parent_api_product_code":{"type":"string"},"per_minute_call_limit":{"type":"integer"},"per_hour_call_limit":{"type":"integer"},"more_info_url":{"type":"string"},"per_week_call_limit":{"type":"integer"},"per_day_call_limit":{"type":"integer"}}} // CreateOrUpdateApiProductRequest | Request body
 try {
-    val result : OBPv600GetApiProducts200ResponsePropertiesApiProductsItems = apiInstance.oBPv600CreateOrUpdateApiProduct(bankid, apiproductcode, obPv600CreateOrUpdateApiProductRequest)
+    val result : GetApiProducts200ResponseApiProductsInner = apiInstance.createOrUpdateApiProduct(bankid, apiproductcode, createOrUpdateApiProductRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ApiProductApi#oBPv600CreateOrUpdateApiProduct")
+    println("4xx response calling ApiProductApi#createOrUpdateApiProduct")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ApiProductApi#oBPv600CreateOrUpdateApiProduct")
+    println("5xx response calling ApiProductApi#createOrUpdateApiProduct")
     e.printStackTrace()
 }
 ```
@@ -104,11 +104,11 @@ try {
 | **apiproductcode** | **kotlin.String**| The APIPRODUCTCODE identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600CreateOrUpdateApiProductRequest** | [**OBPv600CreateOrUpdateApiProductRequest**](OBPv600CreateOrUpdateApiProductRequest.md)| Request body | |
+| **createOrUpdateApiProductRequest** | [**CreateOrUpdateApiProductRequest**](CreateOrUpdateApiProductRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -119,17 +119,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600DeleteApiProduct"></a>
-# **oBPv600DeleteApiProduct**
-> oBPv600DeleteApiProduct(bankid, apiproductcode)
+<a id="deleteApiProduct"></a>
+# **deleteApiProduct**
+> deleteApiProduct(bankid, apiproductcode)
 
 Delete Api Product
 
@@ -145,12 +145,12 @@ val apiInstance = ApiProductApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val apiproductcode : kotlin.String = apiproductcode_example // kotlin.String | The APIPRODUCTCODE identifier
 try {
-    apiInstance.oBPv600DeleteApiProduct(bankid, apiproductcode)
+    apiInstance.deleteApiProduct(bankid, apiproductcode)
 } catch (e: ClientException) {
-    println("4xx response calling ApiProductApi#oBPv600DeleteApiProduct")
+    println("4xx response calling ApiProductApi#deleteApiProduct")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ApiProductApi#oBPv600DeleteApiProduct")
+    println("5xx response calling ApiProductApi#deleteApiProduct")
     e.printStackTrace()
 }
 ```
@@ -174,17 +174,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv600GetApiProduct"></a>
-# **oBPv600GetApiProduct**
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems oBPv600GetApiProduct(bankid, apiproductcode)
+<a id="getApiProduct"></a>
+# **getApiProduct**
+> GetApiProducts200ResponseApiProductsInner getApiProduct(bankid, apiproductcode)
 
 Get Api Product
 
@@ -200,13 +200,13 @@ val apiInstance = ApiProductApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val apiproductcode : kotlin.String = apiproductcode_example // kotlin.String | The APIPRODUCTCODE identifier
 try {
-    val result : OBPv600GetApiProducts200ResponsePropertiesApiProductsItems = apiInstance.oBPv600GetApiProduct(bankid, apiproductcode)
+    val result : GetApiProducts200ResponseApiProductsInner = apiInstance.getApiProduct(bankid, apiproductcode)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ApiProductApi#oBPv600GetApiProduct")
+    println("4xx response calling ApiProductApi#getApiProduct")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ApiProductApi#oBPv600GetApiProduct")
+    println("5xx response calling ApiProductApi#getApiProduct")
     e.printStackTrace()
 }
 ```
@@ -219,7 +219,7 @@ try {
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -230,9 +230,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetApiProducts"></a>
-# **oBPv600GetApiProducts**
-> OBPv600GetApiProducts200Response oBPv600GetApiProducts(bankid)
+<a id="getApiProducts"></a>
+# **getApiProducts**
+> GetApiProducts200Response getApiProducts(bankid)
 
 Get Api Products
 
@@ -247,13 +247,13 @@ Get Api Products
 val apiInstance = ApiProductApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 try {
-    val result : OBPv600GetApiProducts200Response = apiInstance.oBPv600GetApiProducts(bankid)
+    val result : GetApiProducts200Response = apiInstance.getApiProducts(bankid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ApiProductApi#oBPv600GetApiProducts")
+    println("4xx response calling ApiProductApi#getApiProducts")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ApiProductApi#oBPv600GetApiProducts")
+    println("5xx response calling ApiProductApi#getApiProducts")
     e.printStackTrace()
 }
 ```
@@ -265,7 +265,7 @@ try {
 
 ### Return type
 
-[**OBPv600GetApiProducts200Response**](OBPv600GetApiProducts200Response.md)
+[**GetApiProducts200Response**](GetApiProducts200Response.md)
 
 ### Authorization
 

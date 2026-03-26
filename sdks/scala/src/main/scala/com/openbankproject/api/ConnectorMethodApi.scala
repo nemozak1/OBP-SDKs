@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,17 +11,17 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv400CreateConnectorMethodRequest
-import com.openbankproject.model.OBPv400GetAllConnectorMethods200Response
-import com.openbankproject.model.OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
-import com.openbankproject.model.OBPv400UpdateConnectorMethodRequest
-import com.openbankproject.model.OBPv600GetConnectorMethodNames200Response
+import com.openbankproject.model.CreateConnectorMethodRequest
+import com.openbankproject.model.GetAllConnectorMethods200Response
+import com.openbankproject.model.GetAllConnectorMethods200ResponseConnectorsMethodsInner
+import com.openbankproject.model.GetConnectorMethodNames200Response
+import com.openbankproject.model.UpdateConnectorMethodRequest
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object ConnectorMethodApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new ConnectorMethodApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new ConnectorMethodApi(baseUrl)
 }
 
 class ConnectorMethodApi(baseUrl: String) {
@@ -30,48 +30,48 @@ class ConnectorMethodApi(baseUrl: String) {
    * <p>Create an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems (Successful operation)
+   *   code 200 : GetAllConnectorMethods200ResponseConnectorsMethodsInner (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    * 
-   * @param oBPv400CreateConnectorMethodRequest Request body
+   * @param createConnectorMethodRequest Request body
    */
-  def oBPv400CreateConnectorMethod(apiKeyHeader: String, apiKeyHeader: String)(oBPv400CreateConnectorMethodRequest: OBPv400CreateConnectorMethodRequest): Request[Either[ResponseException[String, Exception], OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems]] =
+  def createConnectorMethod(apiKeyHeader: String, apiKeyHeader: String)(createConnectorMethodRequest: CreateConnectorMethodRequest): Request[Either[ResponseException[String, Exception], GetAllConnectorMethods200ResponseConnectorsMethodsInner]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/management/connector-methods")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateConnectorMethodRequest)
-      .response(asJson[OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createConnectorMethodRequest)
+      .response(asJson[GetAllConnectorMethods200ResponseConnectorsMethodsInner])
 
   /**
    * <p>Get all Connector Methods.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetAllConnectorMethods200Response (Successful operation)
+   *   code 200 : GetAllConnectorMethods200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv400GetAllConnectorMethods(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv400GetAllConnectorMethods200Response]] =
+  def getAllConnectorMethods(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetAllConnectorMethods200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/connector-methods")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetAllConnectorMethods200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetAllConnectorMethods200Response])
 
   /**
    * <p>Get an internal connector by CONNECTOR_METHOD_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems (Successful operation)
+   *   code 200 : GetAllConnectorMethods200ResponseConnectorsMethodsInner (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -80,54 +80,54 @@ class ConnectorMethodApi(baseUrl: String) {
    * 
    * @param connectormethodid The CONNECTORMETHODID identifier
    */
-  def oBPv400GetConnectorMethod(apiKeyHeader: String, apiKeyHeader: String)(connectormethodid: String): Request[Either[ResponseException[String, Exception], OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems]] =
+  def getConnectorMethod(apiKeyHeader: String, apiKeyHeader: String)(connectormethodid: String): Request[Either[ResponseException[String, Exception], GetAllConnectorMethods200ResponseConnectorsMethodsInner]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/connector-methods/${connectormethodid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems])
-
-  /**
-   * <p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param connectormethodid The CONNECTORMETHODID identifier
-   * @param oBPv400UpdateConnectorMethodRequest Request body
-   */
-  def oBPv400UpdateConnectorMethod(apiKeyHeader: String, apiKeyHeader: String)(connectormethodid: String, oBPv400UpdateConnectorMethodRequest: OBPv400UpdateConnectorMethodRequest): Request[Either[ResponseException[String, Exception], OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v4.0.0/management/connector-methods/${connectormethodid}")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400UpdateConnectorMethodRequest)
-      .response(asJson[OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetAllConnectorMethods200ResponseConnectorsMethodsInner])
 
   /**
    * <p>Get the list of all available connector method names.</p> <p>These are the method names that can be used in Method Routing configuration.</p> <h2><a href=\"#data-source\" id=\"data-source\">Data Source</a></h2> <p>The data comes from <strong>scanning the actual Scala connector code at runtime</strong> using reflection, NOT from a database or configuration file.</p> <p>The endpoint:<br /> 1. Reads the connector name from props (e.g., <code>connector=mapped</code>)<br /> 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)<br /> 3. Uses Scala reflection to scan all public methods that override the base Connector trait<br /> 4. Filters for valid connector methods (public, has parameters, overrides base trait)<br /> 5. Returns the method names as a sorted list</p> <h2><a href=\"#which-connector\" id=\"which-connector\">Which Connector?</a></h2> <p>Depends on your <code>connector</code> property:<br /> * <code>connector=mapped</code> → Returns methods from LocalMappedConnector<br /> * <code>connector=kafka_vSept2018</code> → Returns methods from KafkaConnector<br /> * <code>connector=star</code> → Returns methods from StarConnector<br /> * <code>connector=rest_vMar2019</code> → Returns methods from RestConnector</p> <h2><a href=\"#when-does-it-change\" id=\"when-does-it-change\">When Does It Change?</a></h2> <p>The list only changes when:<br /> * Code is deployed with new/modified connector methods<br /> * The <code>connector</code> property is changed to point to a different connector</p> <h2><a href=\"#performance\" id=\"performance\">Performance</a></h2> <p>This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.<br /> Configure via: <code>getConnectorMethodNames.cache.ttl.seconds=3600</code></p> <h2><a href=\"#use-case\" id=\"use-case\">Use Case</a></h2> <p>Use this endpoint to discover which connector methods are available when configuring Method Routing.<br /> These method names are different from API endpoint operation IDs (which you get from /resource-docs).</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>CanGetSystemConnectorMethodNames entitlement is required.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>connector_method_names</strong></a>: connector_method_names</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600GetConnectorMethodNames200Response (Successful operation)
+   *   code 200 : GetConnectorMethodNames200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv600GetConnectorMethodNames(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv600GetConnectorMethodNames200Response]] =
+  def getConnectorMethodNames(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetConnectorMethodNames200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v6.0.0/system/connector-method-names")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetConnectorMethodNames200Response])
+
+  /**
+   * <p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetAllConnectorMethods200ResponseConnectorsMethodsInner (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param connectormethodid The CONNECTORMETHODID identifier
+   * @param updateConnectorMethodRequest Request body
+   */
+  def updateConnectorMethod(apiKeyHeader: String, apiKeyHeader: String)(connectormethodid: String, updateConnectorMethodRequest: UpdateConnectorMethodRequest): Request[Either[ResponseException[String, Exception], GetAllConnectorMethods200ResponseConnectorsMethodsInner]] =
+    basicRequest
+      .method(Method.PUT, uri"$baseUrl/obp/v4.0.0/management/connector-methods/${connectormethodid}")
+      .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv600GetConnectorMethodNames200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateConnectorMethodRequest)
+      .response(asJson[GetAllConnectorMethods200ResponseConnectorsMethodsInner])
 
 }

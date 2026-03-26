@@ -1,21 +1,21 @@
 # \BankAttributeAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv400CreateBankAttribute**](BankAttributeAPI.md#OBPv400CreateBankAttribute) | **Post** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
-[**OBPv400CreateOrUpdateBankAttributeDefinition**](BankAttributeAPI.md#OBPv400CreateOrUpdateBankAttributeDefinition) | **Put** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
-[**OBPv400DeleteBankAttribute**](BankAttributeAPI.md#OBPv400DeleteBankAttribute) | **Delete** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
-[**OBPv400GetBankAttribute**](BankAttributeAPI.md#OBPv400GetBankAttribute) | **Get** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
-[**OBPv400GetBankAttributes**](BankAttributeAPI.md#OBPv400GetBankAttributes) | **Get** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
-[**OBPv400UpdateBankAttribute**](BankAttributeAPI.md#OBPv400UpdateBankAttribute) | **Put** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
+[**CreateBankAttribute**](BankAttributeAPI.md#CreateBankAttribute) | **Post** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
+[**CreateOrUpdateBankAttributeDefinition**](BankAttributeAPI.md#CreateOrUpdateBankAttributeDefinition) | **Put** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
+[**DeleteBankAttribute**](BankAttributeAPI.md#DeleteBankAttribute) | **Delete** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
+[**GetBankAttribute**](BankAttributeAPI.md#GetBankAttribute) | **Get** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
+[**GetBankAttributes**](BankAttributeAPI.md#GetBankAttributes) | **Get** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
+[**UpdateBankAttribute**](BankAttributeAPI.md#UpdateBankAttribute) | **Put** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
 
 
 
-## OBPv400CreateBankAttribute
+## CreateBankAttribute
 
-> OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems OBPv400CreateBankAttribute(ctx, bankid).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+> GetBankAttributes200ResponseBankAttributesInner CreateBankAttribute(ctx, bankid).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 
 Create Bank Attribute
 
@@ -35,17 +35,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv510UpdateAtmAttributeRequest := *openapiclient.NewOBPv510UpdateAtmAttributeRequest("Type_example", *openapiclient.NewOBPv510UpdateAtmAttributeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateAtmAttributeRequest | Request body
+	updateAtmAttributeRequest := *openapiclient.NewUpdateAtmAttributeRequest() // UpdateAtmAttributeRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BankAttributeAPI.OBPv400CreateBankAttribute(context.Background(), bankid).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+	resp, r, err := apiClient.BankAttributeAPI.CreateBankAttribute(context.Background(), bankid).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BankAttributeAPI.OBPv400CreateBankAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BankAttributeAPI.CreateBankAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateBankAttribute`: OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `BankAttributeAPI.OBPv400CreateBankAttribute`: %v\n", resp)
+	// response from `CreateBankAttribute`: GetBankAttributes200ResponseBankAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `BankAttributeAPI.CreateBankAttribute`: %v\n", resp)
 }
 ```
 
@@ -59,17 +59,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateBankAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateBankAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems**](OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems.md)
+[**GetBankAttributes200ResponseBankAttributesInner**](GetBankAttributes200ResponseBankAttributesInner.md)
 
 ### Authorization
 
@@ -85,9 +85,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateOrUpdateBankAttributeDefinition
+## CreateOrUpdateBankAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems OBPv400CreateOrUpdateBankAttributeDefinition(ctx, bankid).OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner CreateOrUpdateBankAttributeDefinition(ctx, bankid).CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
 
 Create or Update Bank Attribute Definition
 
@@ -107,17 +107,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest := *openapiclient.NewOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest("Type_example", *openapiclient.NewOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")), , )) // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+	createOrUpdateTransactionRequestAttributeDefinitionRequest := *openapiclient.NewCreateOrUpdateTransactionRequestAttributeDefinitionRequest() // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BankAttributeAPI.OBPv400CreateOrUpdateBankAttributeDefinition(context.Background(), bankid).OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
+	resp, r, err := apiClient.BankAttributeAPI.CreateOrUpdateBankAttributeDefinition(context.Background(), bankid).CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BankAttributeAPI.OBPv400CreateOrUpdateBankAttributeDefinition``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BankAttributeAPI.CreateOrUpdateBankAttributeDefinition``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateOrUpdateBankAttributeDefinition`: OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `BankAttributeAPI.OBPv400CreateOrUpdateBankAttributeDefinition`: %v\n", resp)
+	// response from `CreateOrUpdateBankAttributeDefinition`: GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `BankAttributeAPI.CreateOrUpdateBankAttributeDefinition`: %v\n", resp)
 }
 ```
 
@@ -131,17 +131,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateOrUpdateBankAttributeDefinitionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateOrUpdateBankAttributeDefinitionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
+ **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -157,9 +157,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400DeleteBankAttribute
+## DeleteBankAttribute
 
-> OBPv400DeleteBankAttribute(ctx, bankid, bankattributeid).Execute()
+> DeleteBankAttribute(ctx, bankid, bankattributeid).Execute()
 
 Delete Bank Attribute
 
@@ -183,9 +183,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.BankAttributeAPI.OBPv400DeleteBankAttribute(context.Background(), bankid, bankattributeid).Execute()
+	r, err := apiClient.BankAttributeAPI.DeleteBankAttribute(context.Background(), bankid, bankattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BankAttributeAPI.OBPv400DeleteBankAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BankAttributeAPI.DeleteBankAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400DeleteBankAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteBankAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -228,9 +228,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetBankAttribute
+## GetBankAttribute
 
-> OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems OBPv400GetBankAttribute(ctx, bankid, bankattributeid).Execute()
+> GetBankAttributes200ResponseBankAttributesInner GetBankAttribute(ctx, bankid, bankattributeid).Execute()
 
 Get Bank Attribute By BANK_ATTRIBUTE_ID
 
@@ -254,13 +254,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BankAttributeAPI.OBPv400GetBankAttribute(context.Background(), bankid, bankattributeid).Execute()
+	resp, r, err := apiClient.BankAttributeAPI.GetBankAttribute(context.Background(), bankid, bankattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BankAttributeAPI.OBPv400GetBankAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BankAttributeAPI.GetBankAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetBankAttribute`: OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `BankAttributeAPI.OBPv400GetBankAttribute`: %v\n", resp)
+	// response from `GetBankAttribute`: GetBankAttributes200ResponseBankAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `BankAttributeAPI.GetBankAttribute`: %v\n", resp)
 }
 ```
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetBankAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetBankAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems**](OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems.md)
+[**GetBankAttributes200ResponseBankAttributesInner**](GetBankAttributes200ResponseBankAttributesInner.md)
 
 ### Authorization
 
@@ -301,9 +301,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetBankAttributes
+## GetBankAttributes
 
-> OBPv400GetBankAttributes200Response OBPv400GetBankAttributes(ctx, bankid).Execute()
+> GetBankAttributes200Response GetBankAttributes(ctx, bankid).Execute()
 
 Get Bank Attributes
 
@@ -326,13 +326,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BankAttributeAPI.OBPv400GetBankAttributes(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.BankAttributeAPI.GetBankAttributes(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BankAttributeAPI.OBPv400GetBankAttributes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BankAttributeAPI.GetBankAttributes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetBankAttributes`: OBPv400GetBankAttributes200Response
-	fmt.Fprintf(os.Stdout, "Response from `BankAttributeAPI.OBPv400GetBankAttributes`: %v\n", resp)
+	// response from `GetBankAttributes`: GetBankAttributes200Response
+	fmt.Fprintf(os.Stdout, "Response from `BankAttributeAPI.GetBankAttributes`: %v\n", resp)
 }
 ```
 
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetBankAttributesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetBankAttributesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetBankAttributes200Response**](OBPv400GetBankAttributes200Response.md)
+[**GetBankAttributes200Response**](GetBankAttributes200Response.md)
 
 ### Authorization
 
@@ -371,9 +371,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400UpdateBankAttribute
+## UpdateBankAttribute
 
-> OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest OBPv400UpdateBankAttribute(ctx, bankid, bankattributeid).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+> CreateOrUpdateTransactionRequestAttributeDefinitionRequest UpdateBankAttribute(ctx, bankid, bankattributeid).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 
 Update Bank Attribute
 
@@ -394,17 +394,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	bankattributeid := "bankattributeid_example" // string | The BANKATTRIBUTEID identifier
-	oBPv510UpdateAtmAttributeRequest := *openapiclient.NewOBPv510UpdateAtmAttributeRequest("Type_example", *openapiclient.NewOBPv510UpdateAtmAttributeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateAtmAttributeRequest | Request body
+	updateAtmAttributeRequest := *openapiclient.NewUpdateAtmAttributeRequest() // UpdateAtmAttributeRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BankAttributeAPI.OBPv400UpdateBankAttribute(context.Background(), bankid, bankattributeid).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+	resp, r, err := apiClient.BankAttributeAPI.UpdateBankAttribute(context.Background(), bankid, bankattributeid).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BankAttributeAPI.OBPv400UpdateBankAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BankAttributeAPI.UpdateBankAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400UpdateBankAttribute`: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-	fmt.Fprintf(os.Stdout, "Response from `BankAttributeAPI.OBPv400UpdateBankAttribute`: %v\n", resp)
+	// response from `UpdateBankAttribute`: CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+	fmt.Fprintf(os.Stdout, "Response from `BankAttributeAPI.UpdateBankAttribute`: %v\n", resp)
 }
 ```
 
@@ -419,18 +419,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400UpdateBankAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateBankAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
+[**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
 
 ### Authorization
 

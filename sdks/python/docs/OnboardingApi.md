@@ -4,12 +4,12 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv5_0_0_create_account**](OnboardingApi.md#o_bpv5_0_0_create_account) | **PUT** /obp/v5.0.0/banks/{bankid}/accounts/{accountid} | Create Account (PUT)
-[**o_bpv6_0_0_create_user**](OnboardingApi.md#o_bpv6_0_0_create_user) | **POST** /obp/v6.0.0/users | Create User (v6.0.0)
+[**create_account**](OnboardingApi.md#create_account) | **PUT** /obp/v5.0.0/banks/{bankid}/accounts/{accountid} | Create Account (PUT)
+[**create_user**](OnboardingApi.md#create_user) | **POST** /obp/v6.0.0/users | Create User (v6.0.0)
 
 
-# **o_bpv5_0_0_create_account**
-> OBPv400AddAccount200Response o_bpv5_0_0_create_account(bankid, accountid, obpv400_add_account_request)
+# **create_account**
+> AddAccount200Response create_account(bankid, accountid, add_account_request)
 
 Create Account (PUT)
 
@@ -52,8 +52,8 @@ If the 'product_code' matches a product_code from Product, account attributes wi
 
 ```python
 import obp_python
-from obp_python.models.obpv400_add_account200_response import OBPv400AddAccount200Response
-from obp_python.models.obpv400_add_account_request import OBPv400AddAccountRequest
+from obp_python.models.add_account200_response import AddAccount200Response
+from obp_python.models.add_account_request import AddAccountRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -88,15 +88,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.OnboardingApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    obpv400_add_account_request = {type=object, properties={account_routings={type=array, items={type=object, properties={address={type=string}, scheme={type=string}}}}, product_code={type=string}, label={type=string}, balance={type=object, properties={currency={type=string}, amount={type=string}}}, branch_id={type=string}, user_id={type=string}}} # OBPv400AddAccountRequest | Request body
+    add_account_request = {type=object, properties={account_routings={type=array, items={type=object, properties={address={type=string}, scheme={type=string}}}}, product_code={type=string}, label={type=string}, balance={type=object, properties={currency={type=string}, amount={type=string}}}, branch_id={type=string}, user_id={type=string}}} # AddAccountRequest | Request body
 
     try:
         # Create Account (PUT)
-        api_response = api_instance.o_bpv5_0_0_create_account(bankid, accountid, obpv400_add_account_request)
-        print("The response of OnboardingApi->o_bpv5_0_0_create_account:\n")
+        api_response = api_instance.create_account(bankid, accountid, add_account_request)
+        print("The response of OnboardingApi->create_account:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnboardingApi->o_bpv5_0_0_create_account: %s\n" % e)
+        print("Exception when calling OnboardingApi->create_account: %s\n" % e)
 ```
 
 
@@ -108,11 +108,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
- **obpv400_add_account_request** | [**OBPv400AddAccountRequest**](OBPv400AddAccountRequest.md)| Request body | 
+ **add_account_request** | [**AddAccountRequest**](AddAccountRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400AddAccount200Response**](OBPv400AddAccount200Response.md)
+[**AddAccount200Response**](AddAccount200Response.md)
 
 ### Authorization
 
@@ -133,8 +133,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_create_user**
-> OBPv600VerifyUserCredentials200Response o_bpv6_0_0_create_user(obpv600_create_user_request)
+# **create_user**
+> VerifyUserCredentials200Response create_user(create_user_request)
 
 Create User (v6.0.0)
 
@@ -179,8 +179,8 @@ in the email before they can log in, even though entitlements are already grante
 
 ```python
 import obp_python
-from obp_python.models.obpv600_create_user_request import OBPv600CreateUserRequest
-from obp_python.models.obpv600_verify_user_credentials200_response import OBPv600VerifyUserCredentials200Response
+from obp_python.models.create_user_request import CreateUserRequest
+from obp_python.models.verify_user_credentials200_response import VerifyUserCredentials200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -195,15 +195,15 @@ configuration = obp_python.Configuration(
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.OnboardingApi(api_client)
-    obpv600_create_user_request = {"type":"object","properties":{"email":{"type":"string"},"first_name":{"type":"string"},"password":{"type":"string"},"username":{"type":"string"},"last_name":{"type":"string"}}} # OBPv600CreateUserRequest | Request body
+    create_user_request = {"type":"object","properties":{"email":{"type":"string"},"first_name":{"type":"string"},"password":{"type":"string"},"username":{"type":"string"},"last_name":{"type":"string"}}} # CreateUserRequest | Request body
 
     try:
         # Create User (v6.0.0)
-        api_response = api_instance.o_bpv6_0_0_create_user(obpv600_create_user_request)
-        print("The response of OnboardingApi->o_bpv6_0_0_create_user:\n")
+        api_response = api_instance.create_user(create_user_request)
+        print("The response of OnboardingApi->create_user:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnboardingApi->o_bpv6_0_0_create_user: %s\n" % e)
+        print("Exception when calling OnboardingApi->create_user: %s\n" % e)
 ```
 
 
@@ -213,11 +213,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv600_create_user_request** | [**OBPv600CreateUserRequest**](OBPv600CreateUserRequest.md)| Request body | 
+ **create_user_request** | [**CreateUserRequest**](CreateUserRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600VerifyUserCredentials200Response**](OBPv600VerifyUserCredentials200Response.md)
+[**VerifyUserCredentials200Response**](VerifyUserCredentials200Response.md)
 
 ### Authorization
 

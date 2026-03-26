@@ -1,15 +1,15 @@
 # OpenBankProject.Api.DirectDebitApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv400CreateDirectDebit**](DirectDebitApi.md#obpv400createdirectdebit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit |
-| [**OBPv400CreateDirectDebitManagement**](DirectDebitApi.md#obpv400createdirectdebitmanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management) |
+| [**CreateDirectDebit**](DirectDebitApi.md#createdirectdebit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit |
+| [**CreateDirectDebitManagement**](DirectDebitApi.md#createdirectdebitmanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management) |
 
-<a id="obpv400createdirectdebit"></a>
-# **OBPv400CreateDirectDebit**
-> OBPv400CreateDirectDebit200Response OBPv400CreateDirectDebit (string bankid, string accountid, string viewid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest)
+<a id="createdirectdebit"></a>
+# **CreateDirectDebit**
+> CreateDirectDebit200Response CreateDirectDebit (string bankid, string accountid, string viewid, CreateDirectDebitRequest createDirectDebitRequest)
 
 Create Direct Debit
 
@@ -23,11 +23,11 @@ Create Direct Debit
 | **bankid** | **string** | The BANKID identifier |  |
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
-| **oBPv400CreateDirectDebitRequest** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md) | Request body |  |
+| **createDirectDebitRequest** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 
@@ -48,9 +48,9 @@ Create Direct Debit
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400createdirectdebitmanagement"></a>
-# **OBPv400CreateDirectDebitManagement**
-> OBPv400CreateDirectDebit200Response OBPv400CreateDirectDebitManagement (string bankid, string accountid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest)
+<a id="createdirectdebitmanagement"></a>
+# **CreateDirectDebitManagement**
+> CreateDirectDebit200Response CreateDirectDebitManagement (string bankid, string accountid, CreateDirectDebitRequest createDirectDebitRequest)
 
 Create Direct Debit (management)
 
@@ -63,11 +63,11 @@ Create Direct Debit (management)
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
 | **accountid** | **string** | The ACCOUNTID identifier |  |
-| **oBPv400CreateDirectDebitRequest** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md) | Request body |  |
+| **createDirectDebitRequest** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 

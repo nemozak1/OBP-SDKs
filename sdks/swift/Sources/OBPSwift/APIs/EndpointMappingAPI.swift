@@ -13,12 +13,12 @@ open class EndpointMappingAPI {
      Create Bank Level Endpoint Mapping
      
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400CreateEndpointMappingRequest: (body) Request body 
+     - parameter createEndpointMappingRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     - returns: GetAllEndpointMappings200ResponseEndpointMappingsInner
      */
-    open class func oBPv400CreateBankLevelEndpointMapping(bankid: String, oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems {
-        return try await oBPv400CreateBankLevelEndpointMappingWithRequestBuilder(bankid: bankid, oBPv400CreateEndpointMappingRequest: oBPv400CreateEndpointMappingRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createBankLevelEndpointMapping(bankid: String, createEndpointMappingRequest: CreateEndpointMappingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllEndpointMappings200ResponseEndpointMappingsInner {
+        return try await createBankLevelEndpointMappingWithRequestBuilder(bankid: bankid, createEndpointMappingRequest: createEndpointMappingRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -32,20 +32,20 @@ open class EndpointMappingAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400CreateEndpointMappingRequest: (body) Request body 
+     - parameter createEndpointMappingRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> 
+     - returns: RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner> 
      */
-    open class func oBPv400CreateBankLevelEndpointMappingWithRequestBuilder(bankid: String, oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> {
+    open class func createBankLevelEndpointMappingWithRequestBuilder(bankid: String, createEndpointMappingRequest: CreateEndpointMappingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateEndpointMappingRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createEndpointMappingRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -55,7 +55,7 @@ open class EndpointMappingAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -63,12 +63,12 @@ open class EndpointMappingAPI {
     /**
      Create Endpoint Mapping
      
-     - parameter oBPv400CreateEndpointMappingRequest: (body) Request body 
+     - parameter createEndpointMappingRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     - returns: GetAllEndpointMappings200ResponseEndpointMappingsInner
      */
-    open class func oBPv400CreateEndpointMapping(oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems {
-        return try await oBPv400CreateEndpointMappingWithRequestBuilder(oBPv400CreateEndpointMappingRequest: oBPv400CreateEndpointMappingRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createEndpointMapping(createEndpointMappingRequest: CreateEndpointMappingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllEndpointMappings200ResponseEndpointMappingsInner {
+        return try await createEndpointMappingWithRequestBuilder(createEndpointMappingRequest: createEndpointMappingRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -82,16 +82,16 @@ open class EndpointMappingAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
-     - parameter oBPv400CreateEndpointMappingRequest: (body) Request body 
+     - parameter createEndpointMappingRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> 
+     - returns: RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner> 
      */
-    open class func oBPv400CreateEndpointMappingWithRequestBuilder(oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> {
+    open class func createEndpointMappingWithRequestBuilder(createEndpointMappingRequest: CreateEndpointMappingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner> {
         let localVariablePath = "/obp/v4.0.0/management/endpoint-mappings"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateEndpointMappingRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createEndpointMappingRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -101,7 +101,7 @@ open class EndpointMappingAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -114,8 +114,8 @@ open class EndpointMappingAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv400DeleteBankLevelEndpointMapping(bankid: String, endpointmappingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv400DeleteBankLevelEndpointMappingWithRequestBuilder(bankid: bankid, endpointmappingid: endpointmappingid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteBankLevelEndpointMapping(bankid: String, endpointmappingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteBankLevelEndpointMappingWithRequestBuilder(bankid: bankid, endpointmappingid: endpointmappingid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -129,14 +129,14 @@ open class EndpointMappingAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter endpointmappingid: (path) The ENDPOINTMAPPINGID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv400DeleteBankLevelEndpointMappingWithRequestBuilder(bankid: String, endpointmappingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteBankLevelEndpointMappingWithRequestBuilder(bankid: String, endpointmappingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -167,8 +167,8 @@ open class EndpointMappingAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv400DeleteEndpointMapping(endpointmappingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv400DeleteEndpointMappingWithRequestBuilder(endpointmappingid: endpointmappingid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteEndpointMapping(endpointmappingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteEndpointMappingWithRequestBuilder(endpointmappingid: endpointmappingid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -182,13 +182,13 @@ open class EndpointMappingAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter endpointmappingid: (path) The ENDPOINTMAPPINGID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv400DeleteEndpointMappingWithRequestBuilder(endpointmappingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteEndpointMappingWithRequestBuilder(endpointmappingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v4.0.0/management/endpoint-mappings/{endpointmappingid}"
         let endpointmappingidPreEscape = "\(APIHelper.mapValueToPathItem(endpointmappingid))"
         let endpointmappingidPostEscape = endpointmappingidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -214,10 +214,10 @@ open class EndpointMappingAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllEndpointMappings200Response
+     - returns: GetAllEndpointMappings200Response
      */
-    open class func oBPv400GetAllBankLevelEndpointMappings(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllEndpointMappings200Response {
-        return try await oBPv400GetAllBankLevelEndpointMappingsWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
+    open class func getAllBankLevelEndpointMappings(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllEndpointMappings200Response {
+        return try await getAllBankLevelEndpointMappingsWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -231,13 +231,13 @@ open class EndpointMappingAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllEndpointMappings200Response> 
+     - returns: RequestBuilder<GetAllEndpointMappings200Response> 
      */
-    open class func oBPv400GetAllBankLevelEndpointMappingsWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllEndpointMappings200Response> {
+    open class func getAllBankLevelEndpointMappingsWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllEndpointMappings200Response> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -253,7 +253,7 @@ open class EndpointMappingAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllEndpointMappings200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllEndpointMappings200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -262,10 +262,10 @@ open class EndpointMappingAPI {
      Get all Endpoint Mappings
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllEndpointMappings200Response
+     - returns: GetAllEndpointMappings200Response
      */
-    open class func oBPv400GetAllEndpointMappings(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllEndpointMappings200Response {
-        return try await oBPv400GetAllEndpointMappingsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getAllEndpointMappings(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllEndpointMappings200Response {
+        return try await getAllEndpointMappingsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -279,12 +279,12 @@ open class EndpointMappingAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllEndpointMappings200Response> 
+     - returns: RequestBuilder<GetAllEndpointMappings200Response> 
      */
-    open class func oBPv400GetAllEndpointMappingsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllEndpointMappings200Response> {
+    open class func getAllEndpointMappingsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllEndpointMappings200Response> {
         let localVariablePath = "/obp/v4.0.0/management/endpoint-mappings"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -297,7 +297,7 @@ open class EndpointMappingAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllEndpointMappings200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllEndpointMappings200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -308,10 +308,10 @@ open class EndpointMappingAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter endpointmappingid: (path) The ENDPOINTMAPPINGID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     - returns: GetAllEndpointMappings200ResponseEndpointMappingsInner
      */
-    open class func oBPv400GetBankLevelEndpointMapping(bankid: String, endpointmappingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems {
-        return try await oBPv400GetBankLevelEndpointMappingWithRequestBuilder(bankid: bankid, endpointmappingid: endpointmappingid, apiConfiguration: apiConfiguration).execute().body
+    open class func getBankLevelEndpointMapping(bankid: String, endpointmappingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllEndpointMappings200ResponseEndpointMappingsInner {
+        return try await getBankLevelEndpointMappingWithRequestBuilder(bankid: bankid, endpointmappingid: endpointmappingid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -325,14 +325,14 @@ open class EndpointMappingAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter endpointmappingid: (path) The ENDPOINTMAPPINGID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> 
+     - returns: RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner> 
      */
-    open class func oBPv400GetBankLevelEndpointMappingWithRequestBuilder(bankid: String, endpointmappingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> {
+    open class func getBankLevelEndpointMappingWithRequestBuilder(bankid: String, endpointmappingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -351,7 +351,7 @@ open class EndpointMappingAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -361,10 +361,10 @@ open class EndpointMappingAPI {
      
      - parameter endpointmappingid: (path) The ENDPOINTMAPPINGID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     - returns: GetAllEndpointMappings200ResponseEndpointMappingsInner
      */
-    open class func oBPv400GetEndpointMapping(endpointmappingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems {
-        return try await oBPv400GetEndpointMappingWithRequestBuilder(endpointmappingid: endpointmappingid, apiConfiguration: apiConfiguration).execute().body
+    open class func getEndpointMapping(endpointmappingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllEndpointMappings200ResponseEndpointMappingsInner {
+        return try await getEndpointMappingWithRequestBuilder(endpointmappingid: endpointmappingid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -378,13 +378,13 @@ open class EndpointMappingAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter endpointmappingid: (path) The ENDPOINTMAPPINGID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> 
+     - returns: RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner> 
      */
-    open class func oBPv400GetEndpointMappingWithRequestBuilder(endpointmappingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> {
+    open class func getEndpointMappingWithRequestBuilder(endpointmappingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner> {
         var localVariablePath = "/obp/v4.0.0/management/endpoint-mappings/{endpointmappingid}"
         let endpointmappingidPreEscape = "\(APIHelper.mapValueToPathItem(endpointmappingid))"
         let endpointmappingidPostEscape = endpointmappingidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -400,7 +400,7 @@ open class EndpointMappingAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -410,12 +410,12 @@ open class EndpointMappingAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter endpointmappingid: (path) The ENDPOINTMAPPINGID identifier 
-     - parameter oBPv400CreateEndpointMappingRequest: (body) Request body 
+     - parameter createEndpointMappingRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     - returns: GetAllEndpointMappings200ResponseEndpointMappingsInner
      */
-    open class func oBPv400UpdateBankLevelEndpointMapping(bankid: String, endpointmappingid: String, oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems {
-        return try await oBPv400UpdateBankLevelEndpointMappingWithRequestBuilder(bankid: bankid, endpointmappingid: endpointmappingid, oBPv400CreateEndpointMappingRequest: oBPv400CreateEndpointMappingRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateBankLevelEndpointMapping(bankid: String, endpointmappingid: String, createEndpointMappingRequest: CreateEndpointMappingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllEndpointMappings200ResponseEndpointMappingsInner {
+        return try await updateBankLevelEndpointMappingWithRequestBuilder(bankid: bankid, endpointmappingid: endpointmappingid, createEndpointMappingRequest: createEndpointMappingRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -429,15 +429,15 @@ open class EndpointMappingAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter endpointmappingid: (path) The ENDPOINTMAPPINGID identifier 
-     - parameter oBPv400CreateEndpointMappingRequest: (body) Request body 
+     - parameter createEndpointMappingRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> 
+     - returns: RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner> 
      */
-    open class func oBPv400UpdateBankLevelEndpointMappingWithRequestBuilder(bankid: String, endpointmappingid: String, oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> {
+    open class func updateBankLevelEndpointMappingWithRequestBuilder(bankid: String, endpointmappingid: String, createEndpointMappingRequest: CreateEndpointMappingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -446,7 +446,7 @@ open class EndpointMappingAPI {
         let endpointmappingidPostEscape = endpointmappingidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{endpointmappingid}", with: endpointmappingidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateEndpointMappingRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createEndpointMappingRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -456,7 +456,7 @@ open class EndpointMappingAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -465,12 +465,12 @@ open class EndpointMappingAPI {
      Update Endpoint Mapping
      
      - parameter endpointmappingid: (path) The ENDPOINTMAPPINGID identifier 
-     - parameter oBPv400CreateEndpointMappingRequest: (body) Request body 
+     - parameter createEndpointMappingRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     - returns: GetAllEndpointMappings200ResponseEndpointMappingsInner
      */
-    open class func oBPv400UpdateEndpointMapping(endpointmappingid: String, oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems {
-        return try await oBPv400UpdateEndpointMappingWithRequestBuilder(endpointmappingid: endpointmappingid, oBPv400CreateEndpointMappingRequest: oBPv400CreateEndpointMappingRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateEndpointMapping(endpointmappingid: String, createEndpointMappingRequest: CreateEndpointMappingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllEndpointMappings200ResponseEndpointMappingsInner {
+        return try await updateEndpointMappingWithRequestBuilder(endpointmappingid: endpointmappingid, createEndpointMappingRequest: createEndpointMappingRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -484,20 +484,20 @@ open class EndpointMappingAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter endpointmappingid: (path) The ENDPOINTMAPPINGID identifier 
-     - parameter oBPv400CreateEndpointMappingRequest: (body) Request body 
+     - parameter createEndpointMappingRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> 
+     - returns: RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner> 
      */
-    open class func oBPv400UpdateEndpointMappingWithRequestBuilder(endpointmappingid: String, oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> {
+    open class func updateEndpointMappingWithRequestBuilder(endpointmappingid: String, createEndpointMappingRequest: CreateEndpointMappingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner> {
         var localVariablePath = "/obp/v4.0.0/management/endpoint-mappings/{endpointmappingid}"
         let endpointmappingidPreEscape = "\(APIHelper.mapValueToPathItem(endpointmappingid))"
         let endpointmappingidPostEscape = endpointmappingidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{endpointmappingid}", with: endpointmappingidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateEndpointMappingRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createEndpointMappingRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -507,7 +507,7 @@ open class EndpointMappingAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllEndpointMappings200ResponseEndpointMappingsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

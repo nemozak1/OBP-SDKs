@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,34 +75,34 @@ class DynamicMessageDocApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv400CreateBankLevelDynamicMessageDoc' => [
+        'createBankLevelDynamicMessageDoc' => [
             'application/json',
         ],
-        'oBPv400CreateDynamicMessageDoc' => [
+        'createDynamicMessageDoc' => [
             'application/json',
         ],
-        'oBPv400DeleteBankLevelDynamicMessageDoc' => [
+        'deleteBankLevelDynamicMessageDoc' => [
             'application/json',
         ],
-        'oBPv400DeleteDynamicMessageDoc' => [
+        'deleteDynamicMessageDoc' => [
             'application/json',
         ],
-        'oBPv400GetAllBankLevelDynamicMessageDocs' => [
+        'getAllBankLevelDynamicMessageDocs' => [
             'application/json',
         ],
-        'oBPv400GetAllDynamicMessageDocs' => [
+        'getAllDynamicMessageDocs' => [
             'application/json',
         ],
-        'oBPv400GetBankLevelDynamicMessageDoc' => [
+        'getBankLevelDynamicMessageDoc' => [
             'application/json',
         ],
-        'oBPv400GetDynamicMessageDoc' => [
+        'getDynamicMessageDoc' => [
             'application/json',
         ],
-        'oBPv400UpdateBankLevelDynamicMessageDoc' => [
+        'updateBankLevelDynamicMessageDoc' => [
             'application/json',
         ],
-        'oBPv400UpdateDynamicMessageDoc' => [
+        'updateDynamicMessageDoc' => [
             'application/json',
         ],
     ];
@@ -154,40 +154,40 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400CreateBankLevelDynamicMessageDoc
+     * Operation createBankLevelDynamicMessageDoc
      *
      * Create Bank Level Dynamic Message Doc
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response
+     * @return \OpenBankProject\Model\GetDynamicMessageDoc200Response
      */
-    public function oBPv400CreateBankLevelDynamicMessageDoc($bankid, $obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400CreateBankLevelDynamicMessageDoc'][0])
+    public function createBankLevelDynamicMessageDoc($bankid, $update_dynamic_message_doc_request, string $contentType = self::contentTypes['createBankLevelDynamicMessageDoc'][0])
     {
-        list($response) = $this->oBPv400CreateBankLevelDynamicMessageDocWithHttpInfo($bankid, $obpv400_update_dynamic_message_doc_request, $contentType);
+        list($response) = $this->createBankLevelDynamicMessageDocWithHttpInfo($bankid, $update_dynamic_message_doc_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateBankLevelDynamicMessageDocWithHttpInfo
+     * Operation createBankLevelDynamicMessageDocWithHttpInfo
      *
      * Create Bank Level Dynamic Message Doc
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetDynamicMessageDoc200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateBankLevelDynamicMessageDocWithHttpInfo($bankid, $obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400CreateBankLevelDynamicMessageDoc'][0])
+    public function createBankLevelDynamicMessageDocWithHttpInfo($bankid, $update_dynamic_message_doc_request, string $contentType = self::contentTypes['createBankLevelDynamicMessageDoc'][0])
     {
-        $request = $this->oBPv400CreateBankLevelDynamicMessageDocRequest($bankid, $obpv400_update_dynamic_message_doc_request, $contentType);
+        $request = $this->createBankLevelDynamicMessageDocRequest($bankid, $update_dynamic_message_doc_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -215,7 +215,7 @@ class DynamicMessageDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                        '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                         $request,
                         $response,
                     );
@@ -237,7 +237,7 @@ class DynamicMessageDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                 $request,
                 $response,
             );
@@ -246,7 +246,7 @@ class DynamicMessageDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                        '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -259,20 +259,20 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400CreateBankLevelDynamicMessageDocAsync
+     * Operation createBankLevelDynamicMessageDocAsync
      *
      * Create Bank Level Dynamic Message Doc
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateBankLevelDynamicMessageDocAsync($bankid, $obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400CreateBankLevelDynamicMessageDoc'][0])
+    public function createBankLevelDynamicMessageDocAsync($bankid, $update_dynamic_message_doc_request, string $contentType = self::contentTypes['createBankLevelDynamicMessageDoc'][0])
     {
-        return $this->oBPv400CreateBankLevelDynamicMessageDocAsyncWithHttpInfo($bankid, $obpv400_update_dynamic_message_doc_request, $contentType)
+        return $this->createBankLevelDynamicMessageDocAsyncWithHttpInfo($bankid, $update_dynamic_message_doc_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -281,21 +281,21 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400CreateBankLevelDynamicMessageDocAsyncWithHttpInfo
+     * Operation createBankLevelDynamicMessageDocAsyncWithHttpInfo
      *
      * Create Bank Level Dynamic Message Doc
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateBankLevelDynamicMessageDocAsyncWithHttpInfo($bankid, $obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400CreateBankLevelDynamicMessageDoc'][0])
+    public function createBankLevelDynamicMessageDocAsyncWithHttpInfo($bankid, $update_dynamic_message_doc_request, string $contentType = self::contentTypes['createBankLevelDynamicMessageDoc'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response';
-        $request = $this->oBPv400CreateBankLevelDynamicMessageDocRequest($bankid, $obpv400_update_dynamic_message_doc_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetDynamicMessageDoc200Response';
+        $request = $this->createBankLevelDynamicMessageDocRequest($bankid, $update_dynamic_message_doc_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -334,29 +334,29 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateBankLevelDynamicMessageDoc'
+     * Create request for operation 'createBankLevelDynamicMessageDoc'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateBankLevelDynamicMessageDocRequest($bankid, $obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400CreateBankLevelDynamicMessageDoc'][0])
+    public function createBankLevelDynamicMessageDocRequest($bankid, $update_dynamic_message_doc_request, string $contentType = self::contentTypes['createBankLevelDynamicMessageDoc'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400CreateBankLevelDynamicMessageDoc'
+                'Missing the required parameter $bankid when calling createBankLevelDynamicMessageDoc'
             );
         }
 
-        // verify the required parameter 'obpv400_update_dynamic_message_doc_request' is set
-        if ($obpv400_update_dynamic_message_doc_request === null || (is_array($obpv400_update_dynamic_message_doc_request) && count($obpv400_update_dynamic_message_doc_request) === 0)) {
+        // verify the required parameter 'update_dynamic_message_doc_request' is set
+        if ($update_dynamic_message_doc_request === null || (is_array($update_dynamic_message_doc_request) && count($update_dynamic_message_doc_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_dynamic_message_doc_request when calling oBPv400CreateBankLevelDynamicMessageDoc'
+                'Missing the required parameter $update_dynamic_message_doc_request when calling createBankLevelDynamicMessageDoc'
             );
         }
 
@@ -387,12 +387,12 @@ class DynamicMessageDocApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_dynamic_message_doc_request)) {
+        if (isset($update_dynamic_message_doc_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_dynamic_message_doc_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_dynamic_message_doc_request));
             } else {
-                $httpBody = $obpv400_update_dynamic_message_doc_request;
+                $httpBody = $update_dynamic_message_doc_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -428,9 +428,9 @@ class DynamicMessageDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -455,38 +455,38 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400CreateDynamicMessageDoc
+     * Operation createDynamicMessageDoc
      *
      * Create Dynamic Message Doc
      *
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response
+     * @return \OpenBankProject\Model\GetDynamicMessageDoc200Response
      */
-    public function oBPv400CreateDynamicMessageDoc($obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400CreateDynamicMessageDoc'][0])
+    public function createDynamicMessageDoc($update_dynamic_message_doc_request, string $contentType = self::contentTypes['createDynamicMessageDoc'][0])
     {
-        list($response) = $this->oBPv400CreateDynamicMessageDocWithHttpInfo($obpv400_update_dynamic_message_doc_request, $contentType);
+        list($response) = $this->createDynamicMessageDocWithHttpInfo($update_dynamic_message_doc_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateDynamicMessageDocWithHttpInfo
+     * Operation createDynamicMessageDocWithHttpInfo
      *
      * Create Dynamic Message Doc
      *
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetDynamicMessageDoc200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateDynamicMessageDocWithHttpInfo($obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400CreateDynamicMessageDoc'][0])
+    public function createDynamicMessageDocWithHttpInfo($update_dynamic_message_doc_request, string $contentType = self::contentTypes['createDynamicMessageDoc'][0])
     {
-        $request = $this->oBPv400CreateDynamicMessageDocRequest($obpv400_update_dynamic_message_doc_request, $contentType);
+        $request = $this->createDynamicMessageDocRequest($update_dynamic_message_doc_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -514,7 +514,7 @@ class DynamicMessageDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                        '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                         $request,
                         $response,
                     );
@@ -536,7 +536,7 @@ class DynamicMessageDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                 $request,
                 $response,
             );
@@ -545,7 +545,7 @@ class DynamicMessageDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                        '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -558,19 +558,19 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400CreateDynamicMessageDocAsync
+     * Operation createDynamicMessageDocAsync
      *
      * Create Dynamic Message Doc
      *
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateDynamicMessageDocAsync($obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400CreateDynamicMessageDoc'][0])
+    public function createDynamicMessageDocAsync($update_dynamic_message_doc_request, string $contentType = self::contentTypes['createDynamicMessageDoc'][0])
     {
-        return $this->oBPv400CreateDynamicMessageDocAsyncWithHttpInfo($obpv400_update_dynamic_message_doc_request, $contentType)
+        return $this->createDynamicMessageDocAsyncWithHttpInfo($update_dynamic_message_doc_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -579,20 +579,20 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400CreateDynamicMessageDocAsyncWithHttpInfo
+     * Operation createDynamicMessageDocAsyncWithHttpInfo
      *
      * Create Dynamic Message Doc
      *
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateDynamicMessageDocAsyncWithHttpInfo($obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400CreateDynamicMessageDoc'][0])
+    public function createDynamicMessageDocAsyncWithHttpInfo($update_dynamic_message_doc_request, string $contentType = self::contentTypes['createDynamicMessageDoc'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response';
-        $request = $this->oBPv400CreateDynamicMessageDocRequest($obpv400_update_dynamic_message_doc_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetDynamicMessageDoc200Response';
+        $request = $this->createDynamicMessageDocRequest($update_dynamic_message_doc_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -631,21 +631,21 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateDynamicMessageDoc'
+     * Create request for operation 'createDynamicMessageDoc'
      *
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateDynamicMessageDocRequest($obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400CreateDynamicMessageDoc'][0])
+    public function createDynamicMessageDocRequest($update_dynamic_message_doc_request, string $contentType = self::contentTypes['createDynamicMessageDoc'][0])
     {
 
-        // verify the required parameter 'obpv400_update_dynamic_message_doc_request' is set
-        if ($obpv400_update_dynamic_message_doc_request === null || (is_array($obpv400_update_dynamic_message_doc_request) && count($obpv400_update_dynamic_message_doc_request) === 0)) {
+        // verify the required parameter 'update_dynamic_message_doc_request' is set
+        if ($update_dynamic_message_doc_request === null || (is_array($update_dynamic_message_doc_request) && count($update_dynamic_message_doc_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_dynamic_message_doc_request when calling oBPv400CreateDynamicMessageDoc'
+                'Missing the required parameter $update_dynamic_message_doc_request when calling createDynamicMessageDoc'
             );
         }
 
@@ -668,12 +668,12 @@ class DynamicMessageDocApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_dynamic_message_doc_request)) {
+        if (isset($update_dynamic_message_doc_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_dynamic_message_doc_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_dynamic_message_doc_request));
             } else {
-                $httpBody = $obpv400_update_dynamic_message_doc_request;
+                $httpBody = $update_dynamic_message_doc_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -709,9 +709,9 @@ class DynamicMessageDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -736,39 +736,39 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400DeleteBankLevelDynamicMessageDoc
+     * Operation deleteBankLevelDynamicMessageDoc
      *
      * Delete Bank Level Dynamic Message Doc
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv400DeleteBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicMessageDoc'][0])
+    public function deleteBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['deleteBankLevelDynamicMessageDoc'][0])
     {
-        $this->oBPv400DeleteBankLevelDynamicMessageDocWithHttpInfo($bankid, $dynamicmessagedocid, $contentType);
+        $this->deleteBankLevelDynamicMessageDocWithHttpInfo($bankid, $dynamicmessagedocid, $contentType);
     }
 
     /**
-     * Operation oBPv400DeleteBankLevelDynamicMessageDocWithHttpInfo
+     * Operation deleteBankLevelDynamicMessageDocWithHttpInfo
      *
      * Delete Bank Level Dynamic Message Doc
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteBankLevelDynamicMessageDocWithHttpInfo($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicMessageDoc'][0])
+    public function deleteBankLevelDynamicMessageDocWithHttpInfo($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['deleteBankLevelDynamicMessageDoc'][0])
     {
-        $request = $this->oBPv400DeleteBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, $contentType);
+        $request = $this->deleteBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -804,20 +804,20 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400DeleteBankLevelDynamicMessageDocAsync
+     * Operation deleteBankLevelDynamicMessageDocAsync
      *
      * Delete Bank Level Dynamic Message Doc
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteBankLevelDynamicMessageDocAsync($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicMessageDoc'][0])
+    public function deleteBankLevelDynamicMessageDocAsync($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['deleteBankLevelDynamicMessageDoc'][0])
     {
-        return $this->oBPv400DeleteBankLevelDynamicMessageDocAsyncWithHttpInfo($bankid, $dynamicmessagedocid, $contentType)
+        return $this->deleteBankLevelDynamicMessageDocAsyncWithHttpInfo($bankid, $dynamicmessagedocid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -826,21 +826,21 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400DeleteBankLevelDynamicMessageDocAsyncWithHttpInfo
+     * Operation deleteBankLevelDynamicMessageDocAsyncWithHttpInfo
      *
      * Delete Bank Level Dynamic Message Doc
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteBankLevelDynamicMessageDocAsyncWithHttpInfo($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicMessageDoc'][0])
+    public function deleteBankLevelDynamicMessageDocAsyncWithHttpInfo($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['deleteBankLevelDynamicMessageDoc'][0])
     {
         $returnType = '';
-        $request = $this->oBPv400DeleteBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, $contentType);
+        $request = $this->deleteBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -866,29 +866,29 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteBankLevelDynamicMessageDoc'
+     * Create request for operation 'deleteBankLevelDynamicMessageDoc'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicMessageDoc'][0])
+    public function deleteBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['deleteBankLevelDynamicMessageDoc'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400DeleteBankLevelDynamicMessageDoc'
+                'Missing the required parameter $bankid when calling deleteBankLevelDynamicMessageDoc'
             );
         }
 
         // verify the required parameter 'dynamicmessagedocid' is set
         if ($dynamicmessagedocid === null || (is_array($dynamicmessagedocid) && count($dynamicmessagedocid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicmessagedocid when calling oBPv400DeleteBankLevelDynamicMessageDoc'
+                'Missing the required parameter $dynamicmessagedocid when calling deleteBankLevelDynamicMessageDoc'
             );
         }
 
@@ -961,9 +961,9 @@ class DynamicMessageDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -988,37 +988,37 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400DeleteDynamicMessageDoc
+     * Operation deleteDynamicMessageDoc
      *
      * Delete Dynamic Message Doc
      *
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv400DeleteDynamicMessageDoc($dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400DeleteDynamicMessageDoc'][0])
+    public function deleteDynamicMessageDoc($dynamicmessagedocid, string $contentType = self::contentTypes['deleteDynamicMessageDoc'][0])
     {
-        $this->oBPv400DeleteDynamicMessageDocWithHttpInfo($dynamicmessagedocid, $contentType);
+        $this->deleteDynamicMessageDocWithHttpInfo($dynamicmessagedocid, $contentType);
     }
 
     /**
-     * Operation oBPv400DeleteDynamicMessageDocWithHttpInfo
+     * Operation deleteDynamicMessageDocWithHttpInfo
      *
      * Delete Dynamic Message Doc
      *
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteDynamicMessageDocWithHttpInfo($dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400DeleteDynamicMessageDoc'][0])
+    public function deleteDynamicMessageDocWithHttpInfo($dynamicmessagedocid, string $contentType = self::contentTypes['deleteDynamicMessageDoc'][0])
     {
-        $request = $this->oBPv400DeleteDynamicMessageDocRequest($dynamicmessagedocid, $contentType);
+        $request = $this->deleteDynamicMessageDocRequest($dynamicmessagedocid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1054,19 +1054,19 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400DeleteDynamicMessageDocAsync
+     * Operation deleteDynamicMessageDocAsync
      *
      * Delete Dynamic Message Doc
      *
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteDynamicMessageDocAsync($dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400DeleteDynamicMessageDoc'][0])
+    public function deleteDynamicMessageDocAsync($dynamicmessagedocid, string $contentType = self::contentTypes['deleteDynamicMessageDoc'][0])
     {
-        return $this->oBPv400DeleteDynamicMessageDocAsyncWithHttpInfo($dynamicmessagedocid, $contentType)
+        return $this->deleteDynamicMessageDocAsyncWithHttpInfo($dynamicmessagedocid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1075,20 +1075,20 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400DeleteDynamicMessageDocAsyncWithHttpInfo
+     * Operation deleteDynamicMessageDocAsyncWithHttpInfo
      *
      * Delete Dynamic Message Doc
      *
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteDynamicMessageDocAsyncWithHttpInfo($dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400DeleteDynamicMessageDoc'][0])
+    public function deleteDynamicMessageDocAsyncWithHttpInfo($dynamicmessagedocid, string $contentType = self::contentTypes['deleteDynamicMessageDoc'][0])
     {
         $returnType = '';
-        $request = $this->oBPv400DeleteDynamicMessageDocRequest($dynamicmessagedocid, $contentType);
+        $request = $this->deleteDynamicMessageDocRequest($dynamicmessagedocid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1114,21 +1114,21 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteDynamicMessageDoc'
+     * Create request for operation 'deleteDynamicMessageDoc'
      *
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteDynamicMessageDocRequest($dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400DeleteDynamicMessageDoc'][0])
+    public function deleteDynamicMessageDocRequest($dynamicmessagedocid, string $contentType = self::contentTypes['deleteDynamicMessageDoc'][0])
     {
 
         // verify the required parameter 'dynamicmessagedocid' is set
         if ($dynamicmessagedocid === null || (is_array($dynamicmessagedocid) && count($dynamicmessagedocid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicmessagedocid when calling oBPv400DeleteDynamicMessageDoc'
+                'Missing the required parameter $dynamicmessagedocid when calling deleteDynamicMessageDoc'
             );
         }
 
@@ -1193,9 +1193,9 @@ class DynamicMessageDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1220,38 +1220,38 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400GetAllBankLevelDynamicMessageDocs
+     * Operation getAllBankLevelDynamicMessageDocs
      *
      * Get all Bank Level Dynamic Message Docs
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllBankLevelDynamicMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankLevelDynamicMessageDocs'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllBankLevelDynamicMessageDocs200Response
+     * @return \OpenBankProject\Model\GetAllBankLevelDynamicMessageDocs200Response
      */
-    public function oBPv400GetAllBankLevelDynamicMessageDocs($bankid, string $contentType = self::contentTypes['oBPv400GetAllBankLevelDynamicMessageDocs'][0])
+    public function getAllBankLevelDynamicMessageDocs($bankid, string $contentType = self::contentTypes['getAllBankLevelDynamicMessageDocs'][0])
     {
-        list($response) = $this->oBPv400GetAllBankLevelDynamicMessageDocsWithHttpInfo($bankid, $contentType);
+        list($response) = $this->getAllBankLevelDynamicMessageDocsWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetAllBankLevelDynamicMessageDocsWithHttpInfo
+     * Operation getAllBankLevelDynamicMessageDocsWithHttpInfo
      *
      * Get all Bank Level Dynamic Message Docs
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllBankLevelDynamicMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankLevelDynamicMessageDocs'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllBankLevelDynamicMessageDocs200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllBankLevelDynamicMessageDocs200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetAllBankLevelDynamicMessageDocsWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetAllBankLevelDynamicMessageDocs'][0])
+    public function getAllBankLevelDynamicMessageDocsWithHttpInfo($bankid, string $contentType = self::contentTypes['getAllBankLevelDynamicMessageDocs'][0])
     {
-        $request = $this->oBPv400GetAllBankLevelDynamicMessageDocsRequest($bankid, $contentType);
+        $request = $this->getAllBankLevelDynamicMessageDocsRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1279,7 +1279,7 @@ class DynamicMessageDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllBankLevelDynamicMessageDocs200Response',
+                        '\OpenBankProject\Model\GetAllBankLevelDynamicMessageDocs200Response',
                         $request,
                         $response,
                     );
@@ -1301,7 +1301,7 @@ class DynamicMessageDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllBankLevelDynamicMessageDocs200Response',
+                '\OpenBankProject\Model\GetAllBankLevelDynamicMessageDocs200Response',
                 $request,
                 $response,
             );
@@ -1310,7 +1310,7 @@ class DynamicMessageDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllBankLevelDynamicMessageDocs200Response',
+                        '\OpenBankProject\Model\GetAllBankLevelDynamicMessageDocs200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1323,19 +1323,19 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400GetAllBankLevelDynamicMessageDocsAsync
+     * Operation getAllBankLevelDynamicMessageDocsAsync
      *
      * Get all Bank Level Dynamic Message Docs
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllBankLevelDynamicMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankLevelDynamicMessageDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllBankLevelDynamicMessageDocsAsync($bankid, string $contentType = self::contentTypes['oBPv400GetAllBankLevelDynamicMessageDocs'][0])
+    public function getAllBankLevelDynamicMessageDocsAsync($bankid, string $contentType = self::contentTypes['getAllBankLevelDynamicMessageDocs'][0])
     {
-        return $this->oBPv400GetAllBankLevelDynamicMessageDocsAsyncWithHttpInfo($bankid, $contentType)
+        return $this->getAllBankLevelDynamicMessageDocsAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1344,20 +1344,20 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400GetAllBankLevelDynamicMessageDocsAsyncWithHttpInfo
+     * Operation getAllBankLevelDynamicMessageDocsAsyncWithHttpInfo
      *
      * Get all Bank Level Dynamic Message Docs
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllBankLevelDynamicMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankLevelDynamicMessageDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllBankLevelDynamicMessageDocsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetAllBankLevelDynamicMessageDocs'][0])
+    public function getAllBankLevelDynamicMessageDocsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getAllBankLevelDynamicMessageDocs'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllBankLevelDynamicMessageDocs200Response';
-        $request = $this->oBPv400GetAllBankLevelDynamicMessageDocsRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllBankLevelDynamicMessageDocs200Response';
+        $request = $this->getAllBankLevelDynamicMessageDocsRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1396,21 +1396,21 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetAllBankLevelDynamicMessageDocs'
+     * Create request for operation 'getAllBankLevelDynamicMessageDocs'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllBankLevelDynamicMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankLevelDynamicMessageDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetAllBankLevelDynamicMessageDocsRequest($bankid, string $contentType = self::contentTypes['oBPv400GetAllBankLevelDynamicMessageDocs'][0])
+    public function getAllBankLevelDynamicMessageDocsRequest($bankid, string $contentType = self::contentTypes['getAllBankLevelDynamicMessageDocs'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetAllBankLevelDynamicMessageDocs'
+                'Missing the required parameter $bankid when calling getAllBankLevelDynamicMessageDocs'
             );
         }
 
@@ -1475,9 +1475,9 @@ class DynamicMessageDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1502,36 +1502,36 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400GetAllDynamicMessageDocs
+     * Operation getAllDynamicMessageDocs
      *
      * Get all Dynamic Message Docs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllDynamicMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllDynamicMessageDocs'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllBankLevelDynamicMessageDocs200Response
+     * @return \OpenBankProject\Model\GetAllBankLevelDynamicMessageDocs200Response
      */
-    public function oBPv400GetAllDynamicMessageDocs(string $contentType = self::contentTypes['oBPv400GetAllDynamicMessageDocs'][0])
+    public function getAllDynamicMessageDocs(string $contentType = self::contentTypes['getAllDynamicMessageDocs'][0])
     {
-        list($response) = $this->oBPv400GetAllDynamicMessageDocsWithHttpInfo($contentType);
+        list($response) = $this->getAllDynamicMessageDocsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetAllDynamicMessageDocsWithHttpInfo
+     * Operation getAllDynamicMessageDocsWithHttpInfo
      *
      * Get all Dynamic Message Docs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllDynamicMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllDynamicMessageDocs'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllBankLevelDynamicMessageDocs200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllBankLevelDynamicMessageDocs200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetAllDynamicMessageDocsWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetAllDynamicMessageDocs'][0])
+    public function getAllDynamicMessageDocsWithHttpInfo(string $contentType = self::contentTypes['getAllDynamicMessageDocs'][0])
     {
-        $request = $this->oBPv400GetAllDynamicMessageDocsRequest($contentType);
+        $request = $this->getAllDynamicMessageDocsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1559,7 +1559,7 @@ class DynamicMessageDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllBankLevelDynamicMessageDocs200Response',
+                        '\OpenBankProject\Model\GetAllBankLevelDynamicMessageDocs200Response',
                         $request,
                         $response,
                     );
@@ -1581,7 +1581,7 @@ class DynamicMessageDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllBankLevelDynamicMessageDocs200Response',
+                '\OpenBankProject\Model\GetAllBankLevelDynamicMessageDocs200Response',
                 $request,
                 $response,
             );
@@ -1590,7 +1590,7 @@ class DynamicMessageDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllBankLevelDynamicMessageDocs200Response',
+                        '\OpenBankProject\Model\GetAllBankLevelDynamicMessageDocs200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1603,18 +1603,18 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400GetAllDynamicMessageDocsAsync
+     * Operation getAllDynamicMessageDocsAsync
      *
      * Get all Dynamic Message Docs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllDynamicMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllDynamicMessageDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllDynamicMessageDocsAsync(string $contentType = self::contentTypes['oBPv400GetAllDynamicMessageDocs'][0])
+    public function getAllDynamicMessageDocsAsync(string $contentType = self::contentTypes['getAllDynamicMessageDocs'][0])
     {
-        return $this->oBPv400GetAllDynamicMessageDocsAsyncWithHttpInfo($contentType)
+        return $this->getAllDynamicMessageDocsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1623,19 +1623,19 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400GetAllDynamicMessageDocsAsyncWithHttpInfo
+     * Operation getAllDynamicMessageDocsAsyncWithHttpInfo
      *
      * Get all Dynamic Message Docs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllDynamicMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllDynamicMessageDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllDynamicMessageDocsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetAllDynamicMessageDocs'][0])
+    public function getAllDynamicMessageDocsAsyncWithHttpInfo(string $contentType = self::contentTypes['getAllDynamicMessageDocs'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllBankLevelDynamicMessageDocs200Response';
-        $request = $this->oBPv400GetAllDynamicMessageDocsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetAllBankLevelDynamicMessageDocs200Response';
+        $request = $this->getAllDynamicMessageDocsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1674,14 +1674,14 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetAllDynamicMessageDocs'
+     * Create request for operation 'getAllDynamicMessageDocs'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllDynamicMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllDynamicMessageDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetAllDynamicMessageDocsRequest(string $contentType = self::contentTypes['oBPv400GetAllDynamicMessageDocs'][0])
+    public function getAllDynamicMessageDocsRequest(string $contentType = self::contentTypes['getAllDynamicMessageDocs'][0])
     {
 
 
@@ -1737,9 +1737,9 @@ class DynamicMessageDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1764,40 +1764,40 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400GetBankLevelDynamicMessageDoc
+     * Operation getBankLevelDynamicMessageDoc
      *
      * Get Bank Level Dynamic Message Doc
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response
+     * @return \OpenBankProject\Model\GetDynamicMessageDoc200Response
      */
-    public function oBPv400GetBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicMessageDoc'][0])
+    public function getBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['getBankLevelDynamicMessageDoc'][0])
     {
-        list($response) = $this->oBPv400GetBankLevelDynamicMessageDocWithHttpInfo($bankid, $dynamicmessagedocid, $contentType);
+        list($response) = $this->getBankLevelDynamicMessageDocWithHttpInfo($bankid, $dynamicmessagedocid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetBankLevelDynamicMessageDocWithHttpInfo
+     * Operation getBankLevelDynamicMessageDocWithHttpInfo
      *
      * Get Bank Level Dynamic Message Doc
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetDynamicMessageDoc200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetBankLevelDynamicMessageDocWithHttpInfo($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicMessageDoc'][0])
+    public function getBankLevelDynamicMessageDocWithHttpInfo($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['getBankLevelDynamicMessageDoc'][0])
     {
-        $request = $this->oBPv400GetBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, $contentType);
+        $request = $this->getBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1825,7 +1825,7 @@ class DynamicMessageDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                        '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                         $request,
                         $response,
                     );
@@ -1847,7 +1847,7 @@ class DynamicMessageDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                 $request,
                 $response,
             );
@@ -1856,7 +1856,7 @@ class DynamicMessageDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                        '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1869,20 +1869,20 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400GetBankLevelDynamicMessageDocAsync
+     * Operation getBankLevelDynamicMessageDocAsync
      *
      * Get Bank Level Dynamic Message Doc
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetBankLevelDynamicMessageDocAsync($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicMessageDoc'][0])
+    public function getBankLevelDynamicMessageDocAsync($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['getBankLevelDynamicMessageDoc'][0])
     {
-        return $this->oBPv400GetBankLevelDynamicMessageDocAsyncWithHttpInfo($bankid, $dynamicmessagedocid, $contentType)
+        return $this->getBankLevelDynamicMessageDocAsyncWithHttpInfo($bankid, $dynamicmessagedocid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1891,21 +1891,21 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400GetBankLevelDynamicMessageDocAsyncWithHttpInfo
+     * Operation getBankLevelDynamicMessageDocAsyncWithHttpInfo
      *
      * Get Bank Level Dynamic Message Doc
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetBankLevelDynamicMessageDocAsyncWithHttpInfo($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicMessageDoc'][0])
+    public function getBankLevelDynamicMessageDocAsyncWithHttpInfo($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['getBankLevelDynamicMessageDoc'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response';
-        $request = $this->oBPv400GetBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetDynamicMessageDoc200Response';
+        $request = $this->getBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1944,29 +1944,29 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetBankLevelDynamicMessageDoc'
+     * Create request for operation 'getBankLevelDynamicMessageDoc'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicMessageDoc'][0])
+    public function getBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, string $contentType = self::contentTypes['getBankLevelDynamicMessageDoc'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetBankLevelDynamicMessageDoc'
+                'Missing the required parameter $bankid when calling getBankLevelDynamicMessageDoc'
             );
         }
 
         // verify the required parameter 'dynamicmessagedocid' is set
         if ($dynamicmessagedocid === null || (is_array($dynamicmessagedocid) && count($dynamicmessagedocid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicmessagedocid when calling oBPv400GetBankLevelDynamicMessageDoc'
+                'Missing the required parameter $dynamicmessagedocid when calling getBankLevelDynamicMessageDoc'
             );
         }
 
@@ -2039,9 +2039,9 @@ class DynamicMessageDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2066,38 +2066,38 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400GetDynamicMessageDoc
+     * Operation getDynamicMessageDoc
      *
      * Get Dynamic Message Doc
      *
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response
+     * @return \OpenBankProject\Model\GetDynamicMessageDoc200Response
      */
-    public function oBPv400GetDynamicMessageDoc($dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400GetDynamicMessageDoc'][0])
+    public function getDynamicMessageDoc($dynamicmessagedocid, string $contentType = self::contentTypes['getDynamicMessageDoc'][0])
     {
-        list($response) = $this->oBPv400GetDynamicMessageDocWithHttpInfo($dynamicmessagedocid, $contentType);
+        list($response) = $this->getDynamicMessageDocWithHttpInfo($dynamicmessagedocid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetDynamicMessageDocWithHttpInfo
+     * Operation getDynamicMessageDocWithHttpInfo
      *
      * Get Dynamic Message Doc
      *
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetDynamicMessageDoc200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetDynamicMessageDocWithHttpInfo($dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400GetDynamicMessageDoc'][0])
+    public function getDynamicMessageDocWithHttpInfo($dynamicmessagedocid, string $contentType = self::contentTypes['getDynamicMessageDoc'][0])
     {
-        $request = $this->oBPv400GetDynamicMessageDocRequest($dynamicmessagedocid, $contentType);
+        $request = $this->getDynamicMessageDocRequest($dynamicmessagedocid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2125,7 +2125,7 @@ class DynamicMessageDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                        '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                         $request,
                         $response,
                     );
@@ -2147,7 +2147,7 @@ class DynamicMessageDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                 $request,
                 $response,
             );
@@ -2156,7 +2156,7 @@ class DynamicMessageDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                        '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2169,19 +2169,19 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400GetDynamicMessageDocAsync
+     * Operation getDynamicMessageDocAsync
      *
      * Get Dynamic Message Doc
      *
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetDynamicMessageDocAsync($dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400GetDynamicMessageDoc'][0])
+    public function getDynamicMessageDocAsync($dynamicmessagedocid, string $contentType = self::contentTypes['getDynamicMessageDoc'][0])
     {
-        return $this->oBPv400GetDynamicMessageDocAsyncWithHttpInfo($dynamicmessagedocid, $contentType)
+        return $this->getDynamicMessageDocAsyncWithHttpInfo($dynamicmessagedocid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2190,20 +2190,20 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400GetDynamicMessageDocAsyncWithHttpInfo
+     * Operation getDynamicMessageDocAsyncWithHttpInfo
      *
      * Get Dynamic Message Doc
      *
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetDynamicMessageDocAsyncWithHttpInfo($dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400GetDynamicMessageDoc'][0])
+    public function getDynamicMessageDocAsyncWithHttpInfo($dynamicmessagedocid, string $contentType = self::contentTypes['getDynamicMessageDoc'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response';
-        $request = $this->oBPv400GetDynamicMessageDocRequest($dynamicmessagedocid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetDynamicMessageDoc200Response';
+        $request = $this->getDynamicMessageDocRequest($dynamicmessagedocid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2242,21 +2242,21 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetDynamicMessageDoc'
+     * Create request for operation 'getDynamicMessageDoc'
      *
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicMessageDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetDynamicMessageDocRequest($dynamicmessagedocid, string $contentType = self::contentTypes['oBPv400GetDynamicMessageDoc'][0])
+    public function getDynamicMessageDocRequest($dynamicmessagedocid, string $contentType = self::contentTypes['getDynamicMessageDoc'][0])
     {
 
         // verify the required parameter 'dynamicmessagedocid' is set
         if ($dynamicmessagedocid === null || (is_array($dynamicmessagedocid) && count($dynamicmessagedocid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicmessagedocid when calling oBPv400GetDynamicMessageDoc'
+                'Missing the required parameter $dynamicmessagedocid when calling getDynamicMessageDoc'
             );
         }
 
@@ -2321,9 +2321,9 @@ class DynamicMessageDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2348,42 +2348,42 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400UpdateBankLevelDynamicMessageDoc
+     * Operation updateBankLevelDynamicMessageDoc
      *
      * Update Bank Level Dynamic Message Doc
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response
+     * @return \OpenBankProject\Model\GetDynamicMessageDoc200Response
      */
-    public function oBPv400UpdateBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelDynamicMessageDoc'][0])
+    public function updateBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid, $update_dynamic_message_doc_request, string $contentType = self::contentTypes['updateBankLevelDynamicMessageDoc'][0])
     {
-        list($response) = $this->oBPv400UpdateBankLevelDynamicMessageDocWithHttpInfo($bankid, $dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, $contentType);
+        list($response) = $this->updateBankLevelDynamicMessageDocWithHttpInfo($bankid, $dynamicmessagedocid, $update_dynamic_message_doc_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateBankLevelDynamicMessageDocWithHttpInfo
+     * Operation updateBankLevelDynamicMessageDocWithHttpInfo
      *
      * Update Bank Level Dynamic Message Doc
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetDynamicMessageDoc200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateBankLevelDynamicMessageDocWithHttpInfo($bankid, $dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelDynamicMessageDoc'][0])
+    public function updateBankLevelDynamicMessageDocWithHttpInfo($bankid, $dynamicmessagedocid, $update_dynamic_message_doc_request, string $contentType = self::contentTypes['updateBankLevelDynamicMessageDoc'][0])
     {
-        $request = $this->oBPv400UpdateBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, $contentType);
+        $request = $this->updateBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, $update_dynamic_message_doc_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2411,7 +2411,7 @@ class DynamicMessageDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                        '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                         $request,
                         $response,
                     );
@@ -2433,7 +2433,7 @@ class DynamicMessageDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                 $request,
                 $response,
             );
@@ -2442,7 +2442,7 @@ class DynamicMessageDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                        '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2455,21 +2455,21 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400UpdateBankLevelDynamicMessageDocAsync
+     * Operation updateBankLevelDynamicMessageDocAsync
      *
      * Update Bank Level Dynamic Message Doc
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateBankLevelDynamicMessageDocAsync($bankid, $dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelDynamicMessageDoc'][0])
+    public function updateBankLevelDynamicMessageDocAsync($bankid, $dynamicmessagedocid, $update_dynamic_message_doc_request, string $contentType = self::contentTypes['updateBankLevelDynamicMessageDoc'][0])
     {
-        return $this->oBPv400UpdateBankLevelDynamicMessageDocAsyncWithHttpInfo($bankid, $dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, $contentType)
+        return $this->updateBankLevelDynamicMessageDocAsyncWithHttpInfo($bankid, $dynamicmessagedocid, $update_dynamic_message_doc_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2478,22 +2478,22 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400UpdateBankLevelDynamicMessageDocAsyncWithHttpInfo
+     * Operation updateBankLevelDynamicMessageDocAsyncWithHttpInfo
      *
      * Update Bank Level Dynamic Message Doc
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateBankLevelDynamicMessageDocAsyncWithHttpInfo($bankid, $dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelDynamicMessageDoc'][0])
+    public function updateBankLevelDynamicMessageDocAsyncWithHttpInfo($bankid, $dynamicmessagedocid, $update_dynamic_message_doc_request, string $contentType = self::contentTypes['updateBankLevelDynamicMessageDoc'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response';
-        $request = $this->oBPv400UpdateBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetDynamicMessageDoc200Response';
+        $request = $this->updateBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, $update_dynamic_message_doc_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2532,37 +2532,37 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateBankLevelDynamicMessageDoc'
+     * Create request for operation 'updateBankLevelDynamicMessageDoc'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelDynamicMessageDoc'][0])
+    public function updateBankLevelDynamicMessageDocRequest($bankid, $dynamicmessagedocid, $update_dynamic_message_doc_request, string $contentType = self::contentTypes['updateBankLevelDynamicMessageDoc'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400UpdateBankLevelDynamicMessageDoc'
+                'Missing the required parameter $bankid when calling updateBankLevelDynamicMessageDoc'
             );
         }
 
         // verify the required parameter 'dynamicmessagedocid' is set
         if ($dynamicmessagedocid === null || (is_array($dynamicmessagedocid) && count($dynamicmessagedocid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicmessagedocid when calling oBPv400UpdateBankLevelDynamicMessageDoc'
+                'Missing the required parameter $dynamicmessagedocid when calling updateBankLevelDynamicMessageDoc'
             );
         }
 
-        // verify the required parameter 'obpv400_update_dynamic_message_doc_request' is set
-        if ($obpv400_update_dynamic_message_doc_request === null || (is_array($obpv400_update_dynamic_message_doc_request) && count($obpv400_update_dynamic_message_doc_request) === 0)) {
+        // verify the required parameter 'update_dynamic_message_doc_request' is set
+        if ($update_dynamic_message_doc_request === null || (is_array($update_dynamic_message_doc_request) && count($update_dynamic_message_doc_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_dynamic_message_doc_request when calling oBPv400UpdateBankLevelDynamicMessageDoc'
+                'Missing the required parameter $update_dynamic_message_doc_request when calling updateBankLevelDynamicMessageDoc'
             );
         }
 
@@ -2601,12 +2601,12 @@ class DynamicMessageDocApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_dynamic_message_doc_request)) {
+        if (isset($update_dynamic_message_doc_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_dynamic_message_doc_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_dynamic_message_doc_request));
             } else {
-                $httpBody = $obpv400_update_dynamic_message_doc_request;
+                $httpBody = $update_dynamic_message_doc_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2642,9 +2642,9 @@ class DynamicMessageDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2669,40 +2669,40 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400UpdateDynamicMessageDoc
+     * Operation updateDynamicMessageDoc
      *
      * Update Dynamic Message Doc
      *
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response
+     * @return \OpenBankProject\Model\GetDynamicMessageDoc200Response
      */
-    public function oBPv400UpdateDynamicMessageDoc($dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400UpdateDynamicMessageDoc'][0])
+    public function updateDynamicMessageDoc($dynamicmessagedocid, $update_dynamic_message_doc_request, string $contentType = self::contentTypes['updateDynamicMessageDoc'][0])
     {
-        list($response) = $this->oBPv400UpdateDynamicMessageDocWithHttpInfo($dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, $contentType);
+        list($response) = $this->updateDynamicMessageDocWithHttpInfo($dynamicmessagedocid, $update_dynamic_message_doc_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateDynamicMessageDocWithHttpInfo
+     * Operation updateDynamicMessageDocWithHttpInfo
      *
      * Update Dynamic Message Doc
      *
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetDynamicMessageDoc200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateDynamicMessageDocWithHttpInfo($dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400UpdateDynamicMessageDoc'][0])
+    public function updateDynamicMessageDocWithHttpInfo($dynamicmessagedocid, $update_dynamic_message_doc_request, string $contentType = self::contentTypes['updateDynamicMessageDoc'][0])
     {
-        $request = $this->oBPv400UpdateDynamicMessageDocRequest($dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, $contentType);
+        $request = $this->updateDynamicMessageDocRequest($dynamicmessagedocid, $update_dynamic_message_doc_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2730,7 +2730,7 @@ class DynamicMessageDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                        '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                         $request,
                         $response,
                     );
@@ -2752,7 +2752,7 @@ class DynamicMessageDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                 $request,
                 $response,
             );
@@ -2761,7 +2761,7 @@ class DynamicMessageDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response',
+                        '\OpenBankProject\Model\GetDynamicMessageDoc200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2774,20 +2774,20 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400UpdateDynamicMessageDocAsync
+     * Operation updateDynamicMessageDocAsync
      *
      * Update Dynamic Message Doc
      *
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateDynamicMessageDocAsync($dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400UpdateDynamicMessageDoc'][0])
+    public function updateDynamicMessageDocAsync($dynamicmessagedocid, $update_dynamic_message_doc_request, string $contentType = self::contentTypes['updateDynamicMessageDoc'][0])
     {
-        return $this->oBPv400UpdateDynamicMessageDocAsyncWithHttpInfo($dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, $contentType)
+        return $this->updateDynamicMessageDocAsyncWithHttpInfo($dynamicmessagedocid, $update_dynamic_message_doc_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2796,21 +2796,21 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Operation oBPv400UpdateDynamicMessageDocAsyncWithHttpInfo
+     * Operation updateDynamicMessageDocAsyncWithHttpInfo
      *
      * Update Dynamic Message Doc
      *
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateDynamicMessageDocAsyncWithHttpInfo($dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400UpdateDynamicMessageDoc'][0])
+    public function updateDynamicMessageDocAsyncWithHttpInfo($dynamicmessagedocid, $update_dynamic_message_doc_request, string $contentType = self::contentTypes['updateDynamicMessageDoc'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response';
-        $request = $this->oBPv400UpdateDynamicMessageDocRequest($dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetDynamicMessageDoc200Response';
+        $request = $this->updateDynamicMessageDocRequest($dynamicmessagedocid, $update_dynamic_message_doc_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2849,29 +2849,29 @@ class DynamicMessageDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateDynamicMessageDoc'
+     * Create request for operation 'updateDynamicMessageDoc'
      *
      * @param  string $dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest $obpv400_update_dynamic_message_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateDynamicMessageDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateDynamicMessageDocRequest $update_dynamic_message_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDynamicMessageDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateDynamicMessageDocRequest($dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request, string $contentType = self::contentTypes['oBPv400UpdateDynamicMessageDoc'][0])
+    public function updateDynamicMessageDocRequest($dynamicmessagedocid, $update_dynamic_message_doc_request, string $contentType = self::contentTypes['updateDynamicMessageDoc'][0])
     {
 
         // verify the required parameter 'dynamicmessagedocid' is set
         if ($dynamicmessagedocid === null || (is_array($dynamicmessagedocid) && count($dynamicmessagedocid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicmessagedocid when calling oBPv400UpdateDynamicMessageDoc'
+                'Missing the required parameter $dynamicmessagedocid when calling updateDynamicMessageDoc'
             );
         }
 
-        // verify the required parameter 'obpv400_update_dynamic_message_doc_request' is set
-        if ($obpv400_update_dynamic_message_doc_request === null || (is_array($obpv400_update_dynamic_message_doc_request) && count($obpv400_update_dynamic_message_doc_request) === 0)) {
+        // verify the required parameter 'update_dynamic_message_doc_request' is set
+        if ($update_dynamic_message_doc_request === null || (is_array($update_dynamic_message_doc_request) && count($update_dynamic_message_doc_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_dynamic_message_doc_request when calling oBPv400UpdateDynamicMessageDoc'
+                'Missing the required parameter $update_dynamic_message_doc_request when calling updateDynamicMessageDoc'
             );
         }
 
@@ -2902,12 +2902,12 @@ class DynamicMessageDocApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_dynamic_message_doc_request)) {
+        if (isset($update_dynamic_message_doc_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_dynamic_message_doc_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_dynamic_message_doc_request));
             } else {
-                $httpBody = $obpv400_update_dynamic_message_doc_request;
+                $httpBody = $update_dynamic_message_doc_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2943,9 +2943,9 @@ class DynamicMessageDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

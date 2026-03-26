@@ -1,23 +1,23 @@
 # OpenBankProject.Api.UserAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv600CreatePersonalDataField**](UserAttributeApi.md#obpv600createpersonaldatafield) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field |
-| [**OBPv600CreateUserAttribute**](UserAttributeApi.md#obpv600createuserattribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute |
-| [**OBPv600DeletePersonalDataField**](UserAttributeApi.md#obpv600deletepersonaldatafield) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field |
-| [**OBPv600DeleteUserAttribute**](UserAttributeApi.md#obpv600deleteuserattribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute |
-| [**OBPv600GetPersonalDataFieldById**](UserAttributeApi.md#obpv600getpersonaldatafieldbyid) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id |
-| [**OBPv600GetPersonalDataFields**](UserAttributeApi.md#obpv600getpersonaldatafields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields |
-| [**OBPv600GetUserAttributeById**](UserAttributeApi.md#obpv600getuserattributebyid) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id |
-| [**OBPv600GetUserAttributes**](UserAttributeApi.md#obpv600getuserattributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes |
-| [**OBPv600UpdatePersonalDataField**](UserAttributeApi.md#obpv600updatepersonaldatafield) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field |
-| [**OBPv600UpdateUserAttribute**](UserAttributeApi.md#obpv600updateuserattribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute |
+| [**CreatePersonalDataField**](UserAttributeApi.md#createpersonaldatafield) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field |
+| [**CreateUserAttribute**](UserAttributeApi.md#createuserattribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute |
+| [**DeletePersonalDataField**](UserAttributeApi.md#deletepersonaldatafield) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field |
+| [**DeleteUserAttribute**](UserAttributeApi.md#deleteuserattribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute |
+| [**GetPersonalDataFieldById**](UserAttributeApi.md#getpersonaldatafieldbyid) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id |
+| [**GetPersonalDataFields**](UserAttributeApi.md#getpersonaldatafields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields |
+| [**GetUserAttributeById**](UserAttributeApi.md#getuserattributebyid) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id |
+| [**GetUserAttributes**](UserAttributeApi.md#getuserattributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes |
+| [**UpdatePersonalDataField**](UserAttributeApi.md#updatepersonaldatafield) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field |
+| [**UpdateUserAttribute**](UserAttributeApi.md#updateuserattribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute |
 
-<a id="obpv600createpersonaldatafield"></a>
-# **OBPv600CreatePersonalDataField**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems OBPv600CreatePersonalDataField (OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+<a id="createpersonaldatafield"></a>
+# **CreatePersonalDataField**
+> GetPersonalDataFields200ResponseUserAttributesInner CreatePersonalDataField (CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
 
 Create Personal Data Field
 
@@ -28,11 +28,11 @@ Create Personal Data Field
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -52,9 +52,9 @@ Create Personal Data Field
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600createuserattribute"></a>
-# **OBPv600CreateUserAttribute**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems OBPv600CreateUserAttribute (string userid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+<a id="createuserattribute"></a>
+# **CreateUserAttribute**
+> GetPersonalDataFields200ResponseUserAttributesInner CreateUserAttribute (string userid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
 
 Create User Attribute
 
@@ -66,11 +66,11 @@ Create User Attribute
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **userid** | **string** | The USERID identifier |  |
-| **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -91,9 +91,9 @@ Create User Attribute
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600deletepersonaldatafield"></a>
-# **OBPv600DeletePersonalDataField**
-> void OBPv600DeletePersonalDataField (string userattributeid)
+<a id="deletepersonaldatafield"></a>
+# **DeletePersonalDataField**
+> void DeletePersonalDataField (string userattributeid)
 
 Delete Personal Data Field
 
@@ -129,9 +129,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600deleteuserattribute"></a>
-# **OBPv600DeleteUserAttribute**
-> void OBPv600DeleteUserAttribute (string userid, string userattributeid)
+<a id="deleteuserattribute"></a>
+# **DeleteUserAttribute**
+> void DeleteUserAttribute (string userid, string userattributeid)
 
 Delete User Attribute
 
@@ -168,9 +168,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getpersonaldatafieldbyid"></a>
-# **OBPv600GetPersonalDataFieldById**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems OBPv600GetPersonalDataFieldById (string userattributeid)
+<a id="getpersonaldatafieldbyid"></a>
+# **GetPersonalDataFieldById**
+> GetPersonalDataFields200ResponseUserAttributesInner GetPersonalDataFieldById (string userattributeid)
 
 Get Personal Data Field By Id
 
@@ -185,7 +185,7 @@ Get Personal Data Field By Id
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -206,9 +206,9 @@ Get Personal Data Field By Id
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getpersonaldatafields"></a>
-# **OBPv600GetPersonalDataFields**
-> OBPv600GetPersonalDataFields200Response OBPv600GetPersonalDataFields ()
+<a id="getpersonaldatafields"></a>
+# **GetPersonalDataFields**
+> GetPersonalDataFields200Response GetPersonalDataFields ()
 
 Get Personal Data Fields
 
@@ -219,7 +219,7 @@ Get Personal Data Fields
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -239,9 +239,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getuserattributebyid"></a>
-# **OBPv600GetUserAttributeById**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems OBPv600GetUserAttributeById (string userid, string userattributeid)
+<a id="getuserattributebyid"></a>
+# **GetUserAttributeById**
+> GetPersonalDataFields200ResponseUserAttributesInner GetUserAttributeById (string userid, string userattributeid)
 
 Get User Attribute By Id
 
@@ -257,7 +257,7 @@ Get User Attribute By Id
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -278,9 +278,9 @@ Get User Attribute By Id
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getuserattributes"></a>
-# **OBPv600GetUserAttributes**
-> OBPv600GetPersonalDataFields200Response OBPv600GetUserAttributes (string userid)
+<a id="getuserattributes"></a>
+# **GetUserAttributes**
+> GetPersonalDataFields200Response GetUserAttributes (string userid)
 
 Get User Attributes
 
@@ -295,7 +295,7 @@ Get User Attributes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -316,9 +316,9 @@ Get User Attributes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600updatepersonaldatafield"></a>
-# **OBPv600UpdatePersonalDataField**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems OBPv600UpdatePersonalDataField (string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+<a id="updatepersonaldatafield"></a>
+# **UpdatePersonalDataField**
+> GetPersonalDataFields200ResponseUserAttributesInner UpdatePersonalDataField (string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
 
 Update Personal Data Field
 
@@ -330,11 +330,11 @@ Update Personal Data Field
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **userattributeid** | **string** | The USERATTRIBUTEID identifier |  |
-| **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -355,9 +355,9 @@ Update Personal Data Field
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600updateuserattribute"></a>
-# **OBPv600UpdateUserAttribute**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems OBPv600UpdateUserAttribute (string userid, string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+<a id="updateuserattribute"></a>
+# **UpdateUserAttribute**
+> GetPersonalDataFields200ResponseUserAttributesInner UpdateUserAttribute (string userid, string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
 
 Update User Attribute
 
@@ -370,11 +370,11 @@ Update User Attribute
 |------|------|-------------|-------|
 | **userid** | **string** | The USERID identifier |  |
 | **userattributeid** | **string** | The USERATTRIBUTEID identifier |  |
-| **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 

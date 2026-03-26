@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,26 +24,26 @@ import (
 // OnboardingAPIService OnboardingAPI service
 type OnboardingAPIService service
 
-type ApiOBPv500CreateAccountRequest struct {
+type ApiCreateAccountRequest struct {
 	ctx context.Context
 	ApiService *OnboardingAPIService
 	bankid string
 	accountid string
-	oBPv400AddAccountRequest *OBPv400AddAccountRequest
+	addAccountRequest *AddAccountRequest
 }
 
 // Request body
-func (r ApiOBPv500CreateAccountRequest) OBPv400AddAccountRequest(oBPv400AddAccountRequest OBPv400AddAccountRequest) ApiOBPv500CreateAccountRequest {
-	r.oBPv400AddAccountRequest = &oBPv400AddAccountRequest
+func (r ApiCreateAccountRequest) AddAccountRequest(addAccountRequest AddAccountRequest) ApiCreateAccountRequest {
+	r.addAccountRequest = &addAccountRequest
 	return r
 }
 
-func (r ApiOBPv500CreateAccountRequest) Execute() (*OBPv400AddAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv500CreateAccountExecute(r)
+func (r ApiCreateAccountRequest) Execute() (*AddAccount200Response, *http.Response, error) {
+	return r.ApiService.CreateAccountExecute(r)
 }
 
 /*
-OBPv500CreateAccount Create Account (PUT)
+CreateAccount Create Account (PUT)
 
 <p>Create Account at bank specified by BANK_ID with Id specified by ACCOUNT_ID.</p>
 <p>The User can create an Account for themself  - or -  the User that has the USER_ID specified in the POST body.</p>
@@ -79,10 +79,10 @@ If the 'product_code' matches a product_code from Product, account attributes wi
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
- @return ApiOBPv500CreateAccountRequest
+ @return ApiCreateAccountRequest
 */
-func (a *OnboardingAPIService) OBPv500CreateAccount(ctx context.Context, bankid string, accountid string) ApiOBPv500CreateAccountRequest {
-	return ApiOBPv500CreateAccountRequest{
+func (a *OnboardingAPIService) CreateAccount(ctx context.Context, bankid string, accountid string) ApiCreateAccountRequest {
+	return ApiCreateAccountRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -91,16 +91,16 @@ func (a *OnboardingAPIService) OBPv500CreateAccount(ctx context.Context, bankid 
 }
 
 // Execute executes the request
-//  @return OBPv400AddAccount200Response
-func (a *OnboardingAPIService) OBPv500CreateAccountExecute(r ApiOBPv500CreateAccountRequest) (*OBPv400AddAccount200Response, *http.Response, error) {
+//  @return AddAccount200Response
+func (a *OnboardingAPIService) CreateAccountExecute(r ApiCreateAccountRequest) (*AddAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400AddAccount200Response
+		localVarReturnValue  *AddAccount200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OnboardingAPIService.OBPv500CreateAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OnboardingAPIService.CreateAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -112,8 +112,8 @@ func (a *OnboardingAPIService) OBPv500CreateAccountExecute(r ApiOBPv500CreateAcc
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400AddAccountRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400AddAccountRequest is required and must be specified")
+	if r.addAccountRequest == nil {
+		return localVarReturnValue, nil, reportError("addAccountRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -134,7 +134,7 @@ func (a *OnboardingAPIService) OBPv500CreateAccountExecute(r ApiOBPv500CreateAcc
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400AddAccountRequest
+	localVarPostBody = r.addAccountRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -159,7 +159,7 @@ func (a *OnboardingAPIService) OBPv500CreateAccountExecute(r ApiOBPv500CreateAcc
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -200,24 +200,24 @@ func (a *OnboardingAPIService) OBPv500CreateAccountExecute(r ApiOBPv500CreateAcc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600CreateUserRequest struct {
+type ApiCreateUserRequest struct {
 	ctx context.Context
 	ApiService *OnboardingAPIService
-	oBPv600CreateUserRequest *OBPv600CreateUserRequest
+	createUserRequest *CreateUserRequest
 }
 
 // Request body
-func (r ApiOBPv600CreateUserRequest) OBPv600CreateUserRequest(oBPv600CreateUserRequest OBPv600CreateUserRequest) ApiOBPv600CreateUserRequest {
-	r.oBPv600CreateUserRequest = &oBPv600CreateUserRequest
+func (r ApiCreateUserRequest) CreateUserRequest(createUserRequest CreateUserRequest) ApiCreateUserRequest {
+	r.createUserRequest = &createUserRequest
 	return r
 }
 
-func (r ApiOBPv600CreateUserRequest) Execute() (*OBPv600VerifyUserCredentials200Response, *http.Response, error) {
-	return r.ApiService.OBPv600CreateUserExecute(r)
+func (r ApiCreateUserRequest) Execute() (*VerifyUserCredentials200Response, *http.Response, error) {
+	return r.ApiService.CreateUserExecute(r)
 }
 
 /*
-OBPv600CreateUser Create User (v6.0.0)
+CreateUser Create User (v6.0.0)
 
 <p>Creates OBP user.<br />
 No authorisation required.</p>
@@ -237,14 +237,14 @@ No authorisation required.</p>
 in the email before they can log in, even though entitlements are already granted.</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#x69;&#x6c;&#x74;o&#x3a;&#102;&#101;&#108;&#105;&#x78;s&#109;&#105;&#x74;&#x68;&#x40;&#x65;&#120;&#x61;&#x6d;ple&#46;co&#x6d;">&#x66;&#x65;&#x6c;&#105;&#120;&#x73;&#x6d;it&#x68;&#x40;&#x65;&#120;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;i&#108;&#116;&#x6f;:&#102;&#101;&#108;&#x69;&#120;s&#109;ith&#64;&#x65;&#x78;&#x61;m&#x70;le&#46;&#99;&#111;&#109;">f&#101;&#108;&#105;&#x78;&#x73;&#x6d;&#x69;&#116;&#104;@&#x65;&#120;a&#x6d;&#x70;l&#101;&#46;&#99;o&#109;</a></p>
 <p><a href="/glossary#first_name"><strong>first_name</strong></a>: Tom</p>
 <p><a href="/glossary#last_name"><strong>last_name</strong></a>: Smith</p>
-<p><a href="/glossary#"><strong>password</strong></a>: password</p>
+<p><a href="/glossary#"><strong>password</strong></a>: passwordpasswordpassword</p>
 <p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;&#x69;&#108;&#x74;o&#58;&#x66;&#101;&#108;&#105;&#120;&#x73;mi&#x74;&#104;&#x40;e&#x78;&#97;&#109;&#112;&#108;&#101;&#x2e;&#x63;&#111;&#x6d;">&#102;&#x65;li&#x78;&#115;&#109;i&#x74;&#104;&#64;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#111;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;a&#x69;&#x6c;to:&#x66;&#x65;&#108;i&#120;&#x73;&#109;&#105;&#x74;h&#64;&#101;&#x78;&#x61;m&#112;&#x6c;&#101;&#x2e;c&#111;m">f&#101;&#x6c;&#x69;x&#x73;&#x6d;&#105;&#x74;h&#64;e&#x78;&#97;mp&#108;e&#x2e;&#99;o&#x6d;</a></p>
 <p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
 <p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
 <p><a href="/glossary#list"><strong>list</strong></a>:</p>
@@ -256,26 +256,26 @@ in the email before they can log in, even though entitlements are already grante
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600CreateUserRequest
+ @return ApiCreateUserRequest
 */
-func (a *OnboardingAPIService) OBPv600CreateUser(ctx context.Context) ApiOBPv600CreateUserRequest {
-	return ApiOBPv600CreateUserRequest{
+func (a *OnboardingAPIService) CreateUser(ctx context.Context) ApiCreateUserRequest {
+	return ApiCreateUserRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600VerifyUserCredentials200Response
-func (a *OnboardingAPIService) OBPv600CreateUserExecute(r ApiOBPv600CreateUserRequest) (*OBPv600VerifyUserCredentials200Response, *http.Response, error) {
+//  @return VerifyUserCredentials200Response
+func (a *OnboardingAPIService) CreateUserExecute(r ApiCreateUserRequest) (*VerifyUserCredentials200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600VerifyUserCredentials200Response
+		localVarReturnValue  *VerifyUserCredentials200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OnboardingAPIService.OBPv600CreateUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OnboardingAPIService.CreateUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -285,8 +285,8 @@ func (a *OnboardingAPIService) OBPv600CreateUserExecute(r ApiOBPv600CreateUserRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreateUserRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateUserRequest is required and must be specified")
+	if r.createUserRequest == nil {
+		return localVarReturnValue, nil, reportError("createUserRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -307,7 +307,7 @@ func (a *OnboardingAPIService) OBPv600CreateUserExecute(r ApiOBPv600CreateUserRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreateUserRequest
+	localVarPostBody = r.createUserRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

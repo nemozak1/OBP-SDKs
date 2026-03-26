@@ -19,9 +19,9 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv400GetAllAuthenticationTypeValidationsPublic200Response
-import com.openbankproject.models.OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
-import com.openbankproject.models.OBPv400UpdateAuthenticationTypeValidationRequest
+import com.openbankproject.models.GetAllAuthenticationTypeValidationsPublic200Response
+import com.openbankproject.models.GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
+import com.openbankproject.models.UpdateAuthenticationTypeValidationRequest
 
 import com.squareup.moshi.Json
 
@@ -43,7 +43,7 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -52,8 +52,8 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
      * Create an Authentication Type Validation
      * &lt;p&gt;Create an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
      * @param operationid The OPERATIONID identifier
-     * @param obPv400UpdateAuthenticationTypeValidationRequest Request body
-     * @return OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+     * @param updateAuthenticationTypeValidationRequest Request body
+     * @return GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -62,11 +62,11 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateAuthenticationTypeValidation(operationid: kotlin.String, obPv400UpdateAuthenticationTypeValidationRequest: OBPv400UpdateAuthenticationTypeValidationRequest) : OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems {
-        val localVarResponse = oBPv400CreateAuthenticationTypeValidationWithHttpInfo(operationid = operationid, obPv400UpdateAuthenticationTypeValidationRequest = obPv400UpdateAuthenticationTypeValidationRequest)
+    fun createAuthenticationTypeValidation(operationid: kotlin.String, updateAuthenticationTypeValidationRequest: UpdateAuthenticationTypeValidationRequest) : GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner {
+        val localVarResponse = createAuthenticationTypeValidationWithHttpInfo(operationid = operationid, updateAuthenticationTypeValidationRequest = updateAuthenticationTypeValidationRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -85,30 +85,30 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
      * Create an Authentication Type Validation
      * &lt;p&gt;Create an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
      * @param operationid The OPERATIONID identifier
-     * @param obPv400UpdateAuthenticationTypeValidationRequest Request body
-     * @return ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems?>
+     * @param updateAuthenticationTypeValidationRequest Request body
+     * @return ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateAuthenticationTypeValidationWithHttpInfo(operationid: kotlin.String, obPv400UpdateAuthenticationTypeValidationRequest: OBPv400UpdateAuthenticationTypeValidationRequest) : ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems?> {
-        val localVariableConfig = oBPv400CreateAuthenticationTypeValidationRequestConfig(operationid = operationid, obPv400UpdateAuthenticationTypeValidationRequest = obPv400UpdateAuthenticationTypeValidationRequest)
+    fun createAuthenticationTypeValidationWithHttpInfo(operationid: kotlin.String, updateAuthenticationTypeValidationRequest: UpdateAuthenticationTypeValidationRequest) : ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner?> {
+        val localVariableConfig = createAuthenticationTypeValidationRequestConfig(operationid = operationid, updateAuthenticationTypeValidationRequest = updateAuthenticationTypeValidationRequest)
 
-        return request<OBPv400UpdateAuthenticationTypeValidationRequest, OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>(
+        return request<UpdateAuthenticationTypeValidationRequest, GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400CreateAuthenticationTypeValidation
+     * To obtain the request config of the operation createAuthenticationTypeValidation
      *
      * @param operationid The OPERATIONID identifier
-     * @param obPv400UpdateAuthenticationTypeValidationRequest Request body
+     * @param updateAuthenticationTypeValidationRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400CreateAuthenticationTypeValidationRequestConfig(operationid: kotlin.String, obPv400UpdateAuthenticationTypeValidationRequest: OBPv400UpdateAuthenticationTypeValidationRequest) : RequestConfig<OBPv400UpdateAuthenticationTypeValidationRequest> {
-        val localVariableBody = obPv400UpdateAuthenticationTypeValidationRequest
+    fun createAuthenticationTypeValidationRequestConfig(operationid: kotlin.String, updateAuthenticationTypeValidationRequest: UpdateAuthenticationTypeValidationRequest) : RequestConfig<UpdateAuthenticationTypeValidationRequest> {
+        val localVariableBody = updateAuthenticationTypeValidationRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -137,8 +137,8 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteAuthenticationTypeValidation(operationid: kotlin.String) : Unit {
-        val localVarResponse = oBPv400DeleteAuthenticationTypeValidationWithHttpInfo(operationid = operationid)
+    fun deleteAuthenticationTypeValidation(operationid: kotlin.String) : Unit {
+        val localVarResponse = deleteAuthenticationTypeValidationWithHttpInfo(operationid = operationid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -165,8 +165,8 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteAuthenticationTypeValidationWithHttpInfo(operationid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv400DeleteAuthenticationTypeValidationRequestConfig(operationid = operationid)
+    fun deleteAuthenticationTypeValidationWithHttpInfo(operationid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteAuthenticationTypeValidationRequestConfig(operationid = operationid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -174,12 +174,12 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
     }
 
     /**
-     * To obtain the request config of the operation oBPv400DeleteAuthenticationTypeValidation
+     * To obtain the request config of the operation deleteAuthenticationTypeValidation
      *
      * @param operationid The OPERATIONID identifier
      * @return RequestConfig
      */
-    fun oBPv400DeleteAuthenticationTypeValidationRequestConfig(operationid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteAuthenticationTypeValidationRequestConfig(operationid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -198,7 +198,7 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
      * GET /obp/v4.0.0/management/authentication-type-validations
      * Get all Authentication Type Validations
      * &lt;p&gt;Get all Authentication Type Validations.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-     * @return OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+     * @return GetAllAuthenticationTypeValidationsPublic200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -207,11 +207,11 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetAllAuthenticationTypeValidations() : OBPv400GetAllAuthenticationTypeValidationsPublic200Response {
-        val localVarResponse = oBPv400GetAllAuthenticationTypeValidationsWithHttpInfo()
+    fun getAllAuthenticationTypeValidations() : GetAllAuthenticationTypeValidationsPublic200Response {
+        val localVarResponse = getAllAuthenticationTypeValidationsWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllAuthenticationTypeValidationsPublic200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -229,26 +229,26 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
      * GET /obp/v4.0.0/management/authentication-type-validations
      * Get all Authentication Type Validations
      * &lt;p&gt;Get all Authentication Type Validations.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-     * @return ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response?>
+     * @return ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetAllAuthenticationTypeValidationsWithHttpInfo() : ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response?> {
-        val localVariableConfig = oBPv400GetAllAuthenticationTypeValidationsRequestConfig()
+    fun getAllAuthenticationTypeValidationsWithHttpInfo() : ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response?> {
+        val localVariableConfig = getAllAuthenticationTypeValidationsRequestConfig()
 
-        return request<Unit, OBPv400GetAllAuthenticationTypeValidationsPublic200Response>(
+        return request<Unit, GetAllAuthenticationTypeValidationsPublic200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetAllAuthenticationTypeValidations
+     * To obtain the request config of the operation getAllAuthenticationTypeValidations
      *
      * @return RequestConfig
      */
-    fun oBPv400GetAllAuthenticationTypeValidationsRequestConfig() : RequestConfig<Unit> {
+    fun getAllAuthenticationTypeValidationsRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -268,7 +268,7 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
      * GET /obp/v4.0.0/endpoints/authentication-type-validations
      * Get all Authentication Type Validations - public
      * &lt;p&gt;Get all Authentication Type Validations - public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-     * @return OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+     * @return GetAllAuthenticationTypeValidationsPublic200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -277,11 +277,11 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetAllAuthenticationTypeValidationsPublic() : OBPv400GetAllAuthenticationTypeValidationsPublic200Response {
-        val localVarResponse = oBPv400GetAllAuthenticationTypeValidationsPublicWithHttpInfo()
+    fun getAllAuthenticationTypeValidationsPublic() : GetAllAuthenticationTypeValidationsPublic200Response {
+        val localVarResponse = getAllAuthenticationTypeValidationsPublicWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllAuthenticationTypeValidationsPublic200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -299,26 +299,26 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
      * GET /obp/v4.0.0/endpoints/authentication-type-validations
      * Get all Authentication Type Validations - public
      * &lt;p&gt;Get all Authentication Type Validations - public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-     * @return ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response?>
+     * @return ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetAllAuthenticationTypeValidationsPublicWithHttpInfo() : ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response?> {
-        val localVariableConfig = oBPv400GetAllAuthenticationTypeValidationsPublicRequestConfig()
+    fun getAllAuthenticationTypeValidationsPublicWithHttpInfo() : ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response?> {
+        val localVariableConfig = getAllAuthenticationTypeValidationsPublicRequestConfig()
 
-        return request<Unit, OBPv400GetAllAuthenticationTypeValidationsPublic200Response>(
+        return request<Unit, GetAllAuthenticationTypeValidationsPublic200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetAllAuthenticationTypeValidationsPublic
+     * To obtain the request config of the operation getAllAuthenticationTypeValidationsPublic
      *
      * @return RequestConfig
      */
-    fun oBPv400GetAllAuthenticationTypeValidationsPublicRequestConfig() : RequestConfig<Unit> {
+    fun getAllAuthenticationTypeValidationsPublicRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -339,7 +339,7 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
      * Get an Authentication Type Validation
      * &lt;p&gt;Get an Authentication Type Validation by operation_id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
      * @param operationid The OPERATIONID identifier
-     * @return OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+     * @return GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -348,11 +348,11 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetAuthenticationTypeValidation(operationid: kotlin.String) : OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems {
-        val localVarResponse = oBPv400GetAuthenticationTypeValidationWithHttpInfo(operationid = operationid)
+    fun getAuthenticationTypeValidation(operationid: kotlin.String) : GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner {
+        val localVarResponse = getAuthenticationTypeValidationWithHttpInfo(operationid = operationid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -371,27 +371,27 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
      * Get an Authentication Type Validation
      * &lt;p&gt;Get an Authentication Type Validation by operation_id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
      * @param operationid The OPERATIONID identifier
-     * @return ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems?>
+     * @return ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetAuthenticationTypeValidationWithHttpInfo(operationid: kotlin.String) : ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems?> {
-        val localVariableConfig = oBPv400GetAuthenticationTypeValidationRequestConfig(operationid = operationid)
+    fun getAuthenticationTypeValidationWithHttpInfo(operationid: kotlin.String) : ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner?> {
+        val localVariableConfig = getAuthenticationTypeValidationRequestConfig(operationid = operationid)
 
-        return request<Unit, OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>(
+        return request<Unit, GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetAuthenticationTypeValidation
+     * To obtain the request config of the operation getAuthenticationTypeValidation
      *
      * @param operationid The OPERATIONID identifier
      * @return RequestConfig
      */
-    fun oBPv400GetAuthenticationTypeValidationRequestConfig(operationid: kotlin.String) : RequestConfig<Unit> {
+    fun getAuthenticationTypeValidationRequestConfig(operationid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -412,8 +412,8 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
      * Update an Authentication Type Validation
      * &lt;p&gt;Update an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
      * @param operationid The OPERATIONID identifier
-     * @param obPv400UpdateAuthenticationTypeValidationRequest Request body
-     * @return OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+     * @param updateAuthenticationTypeValidationRequest Request body
+     * @return GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -422,11 +422,11 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400UpdateAuthenticationTypeValidation(operationid: kotlin.String, obPv400UpdateAuthenticationTypeValidationRequest: OBPv400UpdateAuthenticationTypeValidationRequest) : OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems {
-        val localVarResponse = oBPv400UpdateAuthenticationTypeValidationWithHttpInfo(operationid = operationid, obPv400UpdateAuthenticationTypeValidationRequest = obPv400UpdateAuthenticationTypeValidationRequest)
+    fun updateAuthenticationTypeValidation(operationid: kotlin.String, updateAuthenticationTypeValidationRequest: UpdateAuthenticationTypeValidationRequest) : GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner {
+        val localVarResponse = updateAuthenticationTypeValidationWithHttpInfo(operationid = operationid, updateAuthenticationTypeValidationRequest = updateAuthenticationTypeValidationRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -445,30 +445,30 @@ open class AuthenticationTypeValidationApi(basePath: kotlin.String = defaultBase
      * Update an Authentication Type Validation
      * &lt;p&gt;Update an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
      * @param operationid The OPERATIONID identifier
-     * @param obPv400UpdateAuthenticationTypeValidationRequest Request body
-     * @return ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems?>
+     * @param updateAuthenticationTypeValidationRequest Request body
+     * @return ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400UpdateAuthenticationTypeValidationWithHttpInfo(operationid: kotlin.String, obPv400UpdateAuthenticationTypeValidationRequest: OBPv400UpdateAuthenticationTypeValidationRequest) : ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems?> {
-        val localVariableConfig = oBPv400UpdateAuthenticationTypeValidationRequestConfig(operationid = operationid, obPv400UpdateAuthenticationTypeValidationRequest = obPv400UpdateAuthenticationTypeValidationRequest)
+    fun updateAuthenticationTypeValidationWithHttpInfo(operationid: kotlin.String, updateAuthenticationTypeValidationRequest: UpdateAuthenticationTypeValidationRequest) : ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner?> {
+        val localVariableConfig = updateAuthenticationTypeValidationRequestConfig(operationid = operationid, updateAuthenticationTypeValidationRequest = updateAuthenticationTypeValidationRequest)
 
-        return request<OBPv400UpdateAuthenticationTypeValidationRequest, OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>(
+        return request<UpdateAuthenticationTypeValidationRequest, GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400UpdateAuthenticationTypeValidation
+     * To obtain the request config of the operation updateAuthenticationTypeValidation
      *
      * @param operationid The OPERATIONID identifier
-     * @param obPv400UpdateAuthenticationTypeValidationRequest Request body
+     * @param updateAuthenticationTypeValidationRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400UpdateAuthenticationTypeValidationRequestConfig(operationid: kotlin.String, obPv400UpdateAuthenticationTypeValidationRequest: OBPv400UpdateAuthenticationTypeValidationRequest) : RequestConfig<OBPv400UpdateAuthenticationTypeValidationRequest> {
-        val localVariableBody = obPv400UpdateAuthenticationTypeValidationRequest
+    fun updateAuthenticationTypeValidationRequestConfig(operationid: kotlin.String, updateAuthenticationTypeValidationRequest: UpdateAuthenticationTypeValidationRequest) : RequestConfig<UpdateAuthenticationTypeValidationRequest> {
+        val localVariableBody = updateAuthenticationTypeValidationRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

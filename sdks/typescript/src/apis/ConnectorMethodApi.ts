@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,36 +15,36 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv400CreateConnectorMethodRequest,
-  OBPv400GetAllConnectorMethods200Response,
-  OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems,
-  OBPv400UpdateConnectorMethodRequest,
-  OBPv600GetConnectorMethodNames200Response,
+  CreateConnectorMethodRequest,
+  GetAllConnectorMethods200Response,
+  GetAllConnectorMethods200ResponseConnectorsMethodsInner,
+  GetConnectorMethodNames200Response,
+  UpdateConnectorMethodRequest,
 } from '../models/index';
 import {
-    OBPv400CreateConnectorMethodRequestFromJSON,
-    OBPv400CreateConnectorMethodRequestToJSON,
-    OBPv400GetAllConnectorMethods200ResponseFromJSON,
-    OBPv400GetAllConnectorMethods200ResponseToJSON,
-    OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItemsFromJSON,
-    OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItemsToJSON,
-    OBPv400UpdateConnectorMethodRequestFromJSON,
-    OBPv400UpdateConnectorMethodRequestToJSON,
-    OBPv600GetConnectorMethodNames200ResponseFromJSON,
-    OBPv600GetConnectorMethodNames200ResponseToJSON,
+    CreateConnectorMethodRequestFromJSON,
+    CreateConnectorMethodRequestToJSON,
+    GetAllConnectorMethods200ResponseFromJSON,
+    GetAllConnectorMethods200ResponseToJSON,
+    GetAllConnectorMethods200ResponseConnectorsMethodsInnerFromJSON,
+    GetAllConnectorMethods200ResponseConnectorsMethodsInnerToJSON,
+    GetConnectorMethodNames200ResponseFromJSON,
+    GetConnectorMethodNames200ResponseToJSON,
+    UpdateConnectorMethodRequestFromJSON,
+    UpdateConnectorMethodRequestToJSON,
 } from '../models/index';
 
-export interface OBPv400CreateConnectorMethodOperationRequest {
-    oBPv400CreateConnectorMethodRequest: OBPv400CreateConnectorMethodRequest;
+export interface CreateConnectorMethodOperationRequest {
+    createConnectorMethodRequest: CreateConnectorMethodRequest;
 }
 
-export interface OBPv400GetConnectorMethodRequest {
+export interface GetConnectorMethodRequest {
     connectormethodid: string;
 }
 
-export interface OBPv400UpdateConnectorMethodOperationRequest {
+export interface UpdateConnectorMethodOperationRequest {
     connectormethodid: string;
-    oBPv400UpdateConnectorMethodRequest: OBPv400UpdateConnectorMethodRequest;
+    updateConnectorMethodRequest: UpdateConnectorMethodRequest;
 }
 
 /**
@@ -53,13 +53,13 @@ export interface OBPv400UpdateConnectorMethodOperationRequest {
 export class ConnectorMethodApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv400CreateConnectorMethod without sending the request
+     * Creates request options for createConnectorMethod without sending the request
      */
-    async oBPv400CreateConnectorMethodRequestOpts(requestParameters: OBPv400CreateConnectorMethodOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['oBPv400CreateConnectorMethodRequest'] == null) {
+    async createConnectorMethodRequestOpts(requestParameters: CreateConnectorMethodOperationRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['createConnectorMethodRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400CreateConnectorMethodRequest',
-                'Required parameter "oBPv400CreateConnectorMethodRequest" was null or undefined when calling oBPv400CreateConnectorMethod().'
+                'createConnectorMethodRequest',
+                'Required parameter "createConnectorMethodRequest" was null or undefined when calling createConnectorMethod().'
             );
         }
 
@@ -79,7 +79,7 @@ export class ConnectorMethodApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -90,7 +90,7 @@ export class ConnectorMethodApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400CreateConnectorMethodRequestToJSON(requestParameters['oBPv400CreateConnectorMethodRequest']),
+            body: CreateConnectorMethodRequestToJSON(requestParameters['createConnectorMethodRequest']),
         };
     }
 
@@ -98,26 +98,26 @@ export class ConnectorMethodApi extends runtime.BaseAPI {
      * <p>Create an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
      * Create Connector Method
      */
-    async oBPv400CreateConnectorMethodRaw(requestParameters: OBPv400CreateConnectorMethodOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>> {
-        const requestOptions = await this.oBPv400CreateConnectorMethodRequestOpts(requestParameters);
+    async createConnectorMethodRaw(requestParameters: CreateConnectorMethodOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner>> {
+        const requestOptions = await this.createConnectorMethodRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllConnectorMethods200ResponseConnectorsMethodsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
      * Create Connector Method
      */
-    async oBPv400CreateConnectorMethod(requestParameters: OBPv400CreateConnectorMethodOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> {
-        const response = await this.oBPv400CreateConnectorMethodRaw(requestParameters, initOverrides);
+    async createConnectorMethod(requestParameters: CreateConnectorMethodOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllConnectorMethods200ResponseConnectorsMethodsInner> {
+        const response = await this.createConnectorMethodRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetAllConnectorMethods without sending the request
+     * Creates request options for getAllConnectorMethods without sending the request
      */
-    async oBPv400GetAllConnectorMethodsRequestOpts(): Promise<runtime.RequestOpts> {
+    async getAllConnectorMethodsRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -132,7 +132,7 @@ export class ConnectorMethodApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -150,30 +150,30 @@ export class ConnectorMethodApi extends runtime.BaseAPI {
      * <p>Get all Connector Methods.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get all Connector Methods
      */
-    async oBPv400GetAllConnectorMethodsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllConnectorMethods200Response>> {
-        const requestOptions = await this.oBPv400GetAllConnectorMethodsRequestOpts();
+    async getAllConnectorMethodsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllConnectorMethods200Response>> {
+        const requestOptions = await this.getAllConnectorMethodsRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllConnectorMethods200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllConnectorMethods200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all Connector Methods.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get all Connector Methods
      */
-    async oBPv400GetAllConnectorMethods(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllConnectorMethods200Response> {
-        const response = await this.oBPv400GetAllConnectorMethodsRaw(initOverrides);
+    async getAllConnectorMethods(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllConnectorMethods200Response> {
+        const response = await this.getAllConnectorMethodsRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetConnectorMethod without sending the request
+     * Creates request options for getConnectorMethod without sending the request
      */
-    async oBPv400GetConnectorMethodRequestOpts(requestParameters: OBPv400GetConnectorMethodRequest): Promise<runtime.RequestOpts> {
+    async getConnectorMethodRequestOpts(requestParameters: GetConnectorMethodRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['connectormethodid'] == null) {
             throw new runtime.RequiredError(
                 'connectormethodid',
-                'Required parameter "connectormethodid" was null or undefined when calling oBPv400GetConnectorMethod().'
+                'Required parameter "connectormethodid" was null or undefined when calling getConnectorMethod().'
             );
         }
 
@@ -191,7 +191,7 @@ export class ConnectorMethodApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -210,96 +210,26 @@ export class ConnectorMethodApi extends runtime.BaseAPI {
      * <p>Get an internal connector by CONNECTOR_METHOD_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
      * Get Connector Method by Id
      */
-    async oBPv400GetConnectorMethodRaw(requestParameters: OBPv400GetConnectorMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>> {
-        const requestOptions = await this.oBPv400GetConnectorMethodRequestOpts(requestParameters);
+    async getConnectorMethodRaw(requestParameters: GetConnectorMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner>> {
+        const requestOptions = await this.getConnectorMethodRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllConnectorMethods200ResponseConnectorsMethodsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get an internal connector by CONNECTOR_METHOD_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
      * Get Connector Method by Id
      */
-    async oBPv400GetConnectorMethod(requestParameters: OBPv400GetConnectorMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> {
-        const response = await this.oBPv400GetConnectorMethodRaw(requestParameters, initOverrides);
+    async getConnectorMethod(requestParameters: GetConnectorMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllConnectorMethods200ResponseConnectorsMethodsInner> {
+        const response = await this.getConnectorMethodRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400UpdateConnectorMethod without sending the request
+     * Creates request options for getConnectorMethodNames without sending the request
      */
-    async oBPv400UpdateConnectorMethodRequestOpts(requestParameters: OBPv400UpdateConnectorMethodOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['connectormethodid'] == null) {
-            throw new runtime.RequiredError(
-                'connectormethodid',
-                'Required parameter "connectormethodid" was null or undefined when calling oBPv400UpdateConnectorMethod().'
-            );
-        }
-
-        if (requestParameters['oBPv400UpdateConnectorMethodRequest'] == null) {
-            throw new runtime.RequiredError(
-                'oBPv400UpdateConnectorMethodRequest',
-                'Required parameter "oBPv400UpdateConnectorMethodRequest" was null or undefined when calling oBPv400UpdateConnectorMethod().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/management/connector-methods/{connectormethodid}`;
-        urlPath = urlPath.replace(`{${"connectormethodid"}}`, encodeURIComponent(String(requestParameters['connectormethodid'])));
-
-        return {
-            path: urlPath,
-            method: 'PUT',
-            headers: headerParameters,
-            query: queryParameters,
-            body: OBPv400UpdateConnectorMethodRequestToJSON(requestParameters['oBPv400UpdateConnectorMethodRequest']),
-        };
-    }
-
-    /**
-     * <p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
-     * Update Connector Method
-     */
-    async oBPv400UpdateConnectorMethodRaw(requestParameters: OBPv400UpdateConnectorMethodOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>> {
-        const requestOptions = await this.oBPv400UpdateConnectorMethodRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItemsFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
-     * Update Connector Method
-     */
-    async oBPv400UpdateConnectorMethod(requestParameters: OBPv400UpdateConnectorMethodOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> {
-        const response = await this.oBPv400UpdateConnectorMethodRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv600GetConnectorMethodNames without sending the request
-     */
-    async oBPv600GetConnectorMethodNamesRequestOpts(): Promise<runtime.RequestOpts> {
+    async getConnectorMethodNamesRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -314,7 +244,7 @@ export class ConnectorMethodApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -332,19 +262,89 @@ export class ConnectorMethodApi extends runtime.BaseAPI {
      * <p>Get the list of all available connector method names.</p> <p>These are the method names that can be used in Method Routing configuration.</p> <h2><a href=\"#data-source\" id=\"data-source\">Data Source</a></h2> <p>The data comes from <strong>scanning the actual Scala connector code at runtime</strong> using reflection, NOT from a database or configuration file.</p> <p>The endpoint:<br /> 1. Reads the connector name from props (e.g., <code>connector=mapped</code>)<br /> 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)<br /> 3. Uses Scala reflection to scan all public methods that override the base Connector trait<br /> 4. Filters for valid connector methods (public, has parameters, overrides base trait)<br /> 5. Returns the method names as a sorted list</p> <h2><a href=\"#which-connector\" id=\"which-connector\">Which Connector?</a></h2> <p>Depends on your <code>connector</code> property:<br /> * <code>connector=mapped</code> → Returns methods from LocalMappedConnector<br /> * <code>connector=kafka_vSept2018</code> → Returns methods from KafkaConnector<br /> * <code>connector=star</code> → Returns methods from StarConnector<br /> * <code>connector=rest_vMar2019</code> → Returns methods from RestConnector</p> <h2><a href=\"#when-does-it-change\" id=\"when-does-it-change\">When Does It Change?</a></h2> <p>The list only changes when:<br /> * Code is deployed with new/modified connector methods<br /> * The <code>connector</code> property is changed to point to a different connector</p> <h2><a href=\"#performance\" id=\"performance\">Performance</a></h2> <p>This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.<br /> Configure via: <code>getConnectorMethodNames.cache.ttl.seconds=3600</code></p> <h2><a href=\"#use-case\" id=\"use-case\">Use Case</a></h2> <p>Use this endpoint to discover which connector methods are available when configuring Method Routing.<br /> These method names are different from API endpoint operation IDs (which you get from /resource-docs).</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>CanGetSystemConnectorMethodNames entitlement is required.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>connector_method_names</strong></a>: connector_method_names</p> 
      * Get Connector Method Names
      */
-    async oBPv600GetConnectorMethodNamesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetConnectorMethodNames200Response>> {
-        const requestOptions = await this.oBPv600GetConnectorMethodNamesRequestOpts();
+    async getConnectorMethodNamesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetConnectorMethodNames200Response>> {
+        const requestOptions = await this.getConnectorMethodNamesRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetConnectorMethodNames200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetConnectorMethodNames200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get the list of all available connector method names.</p> <p>These are the method names that can be used in Method Routing configuration.</p> <h2><a href=\"#data-source\" id=\"data-source\">Data Source</a></h2> <p>The data comes from <strong>scanning the actual Scala connector code at runtime</strong> using reflection, NOT from a database or configuration file.</p> <p>The endpoint:<br /> 1. Reads the connector name from props (e.g., <code>connector=mapped</code>)<br /> 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)<br /> 3. Uses Scala reflection to scan all public methods that override the base Connector trait<br /> 4. Filters for valid connector methods (public, has parameters, overrides base trait)<br /> 5. Returns the method names as a sorted list</p> <h2><a href=\"#which-connector\" id=\"which-connector\">Which Connector?</a></h2> <p>Depends on your <code>connector</code> property:<br /> * <code>connector=mapped</code> → Returns methods from LocalMappedConnector<br /> * <code>connector=kafka_vSept2018</code> → Returns methods from KafkaConnector<br /> * <code>connector=star</code> → Returns methods from StarConnector<br /> * <code>connector=rest_vMar2019</code> → Returns methods from RestConnector</p> <h2><a href=\"#when-does-it-change\" id=\"when-does-it-change\">When Does It Change?</a></h2> <p>The list only changes when:<br /> * Code is deployed with new/modified connector methods<br /> * The <code>connector</code> property is changed to point to a different connector</p> <h2><a href=\"#performance\" id=\"performance\">Performance</a></h2> <p>This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.<br /> Configure via: <code>getConnectorMethodNames.cache.ttl.seconds=3600</code></p> <h2><a href=\"#use-case\" id=\"use-case\">Use Case</a></h2> <p>Use this endpoint to discover which connector methods are available when configuring Method Routing.<br /> These method names are different from API endpoint operation IDs (which you get from /resource-docs).</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>CanGetSystemConnectorMethodNames entitlement is required.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>connector_method_names</strong></a>: connector_method_names</p> 
      * Get Connector Method Names
      */
-    async oBPv600GetConnectorMethodNames(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetConnectorMethodNames200Response> {
-        const response = await this.oBPv600GetConnectorMethodNamesRaw(initOverrides);
+    async getConnectorMethodNames(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetConnectorMethodNames200Response> {
+        const response = await this.getConnectorMethodNamesRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for updateConnectorMethod without sending the request
+     */
+    async updateConnectorMethodRequestOpts(requestParameters: UpdateConnectorMethodOperationRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['connectormethodid'] == null) {
+            throw new runtime.RequiredError(
+                'connectormethodid',
+                'Required parameter "connectormethodid" was null or undefined when calling updateConnectorMethod().'
+            );
+        }
+
+        if (requestParameters['updateConnectorMethodRequest'] == null) {
+            throw new runtime.RequiredError(
+                'updateConnectorMethodRequest',
+                'Required parameter "updateConnectorMethodRequest" was null or undefined when calling updateConnectorMethod().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/management/connector-methods/{connectormethodid}`;
+        urlPath = urlPath.replace(`{${"connectormethodid"}}`, encodeURIComponent(String(requestParameters['connectormethodid'])));
+
+        return {
+            path: urlPath,
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateConnectorMethodRequestToJSON(requestParameters['updateConnectorMethodRequest']),
+        };
+    }
+
+    /**
+     * <p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
+     * Update Connector Method
+     */
+    async updateConnectorMethodRaw(requestParameters: UpdateConnectorMethodOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner>> {
+        const requestOptions = await this.updateConnectorMethodRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllConnectorMethods200ResponseConnectorsMethodsInnerFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
+     * Update Connector Method
+     */
+    async updateConnectorMethod(requestParameters: UpdateConnectorMethodOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllConnectorMethods200ResponseConnectorsMethodsInner> {
+        const response = await this.updateConnectorMethodRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

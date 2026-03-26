@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -47,10 +47,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="apiproductcode">The APIPRODUCTCODE identifier</param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest">Request body</param>
+        /// <param name="createOrUpdateApiProductRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateApiProductApiResponse"/>&gt;</returns>
-        Task<IOBPv600CreateApiProductApiResponse> OBPv600CreateApiProductAsync(string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateApiProductApiResponse"/>&gt;</returns>
+        Task<ICreateApiProductApiResponse> CreateApiProductAsync(string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Api Product
@@ -60,10 +60,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="apiproductcode">The APIPRODUCTCODE identifier</param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest">Request body</param>
+        /// <param name="createOrUpdateApiProductRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateApiProductApiResponse"/>?&gt;</returns>
-        Task<IOBPv600CreateApiProductApiResponse?> OBPv600CreateApiProductOrDefaultAsync(string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateApiProductApiResponse"/>?&gt;</returns>
+        Task<ICreateApiProductApiResponse?> CreateApiProductOrDefaultAsync(string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create or Update Api Product
@@ -74,10 +74,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="apiproductcode">The APIPRODUCTCODE identifier</param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest">Request body</param>
+        /// <param name="createOrUpdateApiProductRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateOrUpdateApiProductApiResponse"/>&gt;</returns>
-        Task<IOBPv600CreateOrUpdateApiProductApiResponse> OBPv600CreateOrUpdateApiProductAsync(string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateApiProductApiResponse"/>&gt;</returns>
+        Task<ICreateOrUpdateApiProductApiResponse> CreateOrUpdateApiProductAsync(string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create or Update Api Product
@@ -87,10 +87,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="apiproductcode">The APIPRODUCTCODE identifier</param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest">Request body</param>
+        /// <param name="createOrUpdateApiProductRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateOrUpdateApiProductApiResponse"/>?&gt;</returns>
-        Task<IOBPv600CreateOrUpdateApiProductApiResponse?> OBPv600CreateOrUpdateApiProductOrDefaultAsync(string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateApiProductApiResponse"/>?&gt;</returns>
+        Task<ICreateOrUpdateApiProductApiResponse?> CreateOrUpdateApiProductOrDefaultAsync(string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Api Product
@@ -102,8 +102,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="apiproductcode">The APIPRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteApiProductApiResponse"/>&gt;</returns>
-        Task<IOBPv600DeleteApiProductApiResponse> OBPv600DeleteApiProductAsync(string bankid, string apiproductcode, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteApiProductApiResponse"/>&gt;</returns>
+        Task<IDeleteApiProductApiResponse> DeleteApiProductAsync(string bankid, string apiproductcode, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Api Product
@@ -114,8 +114,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="apiproductcode">The APIPRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteApiProductApiResponse"/>?&gt;</returns>
-        Task<IOBPv600DeleteApiProductApiResponse?> OBPv600DeleteApiProductOrDefaultAsync(string bankid, string apiproductcode, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteApiProductApiResponse"/>?&gt;</returns>
+        Task<IDeleteApiProductApiResponse?> DeleteApiProductOrDefaultAsync(string bankid, string apiproductcode, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Api Product
@@ -127,8 +127,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="apiproductcode">The APIPRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetApiProductApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetApiProductApiResponse> OBPv600GetApiProductAsync(string bankid, string apiproductcode, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetApiProductApiResponse"/>&gt;</returns>
+        Task<IGetApiProductApiResponse> GetApiProductAsync(string bankid, string apiproductcode, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Api Product
@@ -139,8 +139,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="apiproductcode">The APIPRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetApiProductApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetApiProductApiResponse?> OBPv600GetApiProductOrDefaultAsync(string bankid, string apiproductcode, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetApiProductApiResponse"/>?&gt;</returns>
+        Task<IGetApiProductApiResponse?> GetApiProductOrDefaultAsync(string bankid, string apiproductcode, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Api Products
@@ -151,8 +151,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetApiProductsApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetApiProductsApiResponse> OBPv600GetApiProductsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetApiProductsApiResponse"/>&gt;</returns>
+        Task<IGetApiProductsApiResponse> GetApiProductsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Api Products
@@ -162,8 +162,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetApiProductsApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetApiProductsApiResponse?> OBPv600GetApiProductsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetApiProductsApiResponse"/>?&gt;</returns>
+        Task<IGetApiProductsApiResponse?> GetApiProductsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -174,101 +174,101 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600CreateApiProduct;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateApiProduct;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600CreateApiProduct;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateApiProduct;
 
-        internal void ExecuteOnOBPv600CreateApiProduct(APIApi.OBPv600CreateApiProductApiResponse apiResponse)
+        internal void ExecuteOnCreateApiProduct(APIApi.CreateApiProductApiResponse apiResponse)
         {
-            OnOBPv600CreateApiProduct?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateApiProduct?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600CreateApiProduct(Exception exception)
+        internal void ExecuteOnErrorCreateApiProduct(Exception exception)
         {
-            OnErrorOBPv600CreateApiProduct?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateApiProduct?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600CreateOrUpdateApiProduct;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateOrUpdateApiProduct;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600CreateOrUpdateApiProduct;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateOrUpdateApiProduct;
 
-        internal void ExecuteOnOBPv600CreateOrUpdateApiProduct(APIApi.OBPv600CreateOrUpdateApiProductApiResponse apiResponse)
+        internal void ExecuteOnCreateOrUpdateApiProduct(APIApi.CreateOrUpdateApiProductApiResponse apiResponse)
         {
-            OnOBPv600CreateOrUpdateApiProduct?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateOrUpdateApiProduct?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600CreateOrUpdateApiProduct(Exception exception)
+        internal void ExecuteOnErrorCreateOrUpdateApiProduct(Exception exception)
         {
-            OnErrorOBPv600CreateOrUpdateApiProduct?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateOrUpdateApiProduct?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600DeleteApiProduct;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteApiProduct;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600DeleteApiProduct;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteApiProduct;
 
-        internal void ExecuteOnOBPv600DeleteApiProduct(APIApi.OBPv600DeleteApiProductApiResponse apiResponse)
+        internal void ExecuteOnDeleteApiProduct(APIApi.DeleteApiProductApiResponse apiResponse)
         {
-            OnOBPv600DeleteApiProduct?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteApiProduct?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600DeleteApiProduct(Exception exception)
+        internal void ExecuteOnErrorDeleteApiProduct(Exception exception)
         {
-            OnErrorOBPv600DeleteApiProduct?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteApiProduct?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetApiProduct;
+        public event EventHandler<ApiResponseEventArgs>? OnGetApiProduct;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetApiProduct;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetApiProduct;
 
-        internal void ExecuteOnOBPv600GetApiProduct(APIApi.OBPv600GetApiProductApiResponse apiResponse)
+        internal void ExecuteOnGetApiProduct(APIApi.GetApiProductApiResponse apiResponse)
         {
-            OnOBPv600GetApiProduct?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetApiProduct?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetApiProduct(Exception exception)
+        internal void ExecuteOnErrorGetApiProduct(Exception exception)
         {
-            OnErrorOBPv600GetApiProduct?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetApiProduct?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetApiProducts;
+        public event EventHandler<ApiResponseEventArgs>? OnGetApiProducts;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetApiProducts;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetApiProducts;
 
-        internal void ExecuteOnOBPv600GetApiProducts(APIApi.OBPv600GetApiProductsApiResponse apiResponse)
+        internal void ExecuteOnGetApiProducts(APIApi.GetApiProductsApiResponse apiResponse)
         {
-            OnOBPv600GetApiProducts?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetApiProducts?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetApiProducts(Exception exception)
+        internal void ExecuteOnErrorGetApiProducts(Exception exception)
         {
-            OnErrorOBPv600GetApiProducts?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetApiProducts?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -326,16 +326,16 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv600CreateApiProduct(ref string bankid, ref string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest);
+        partial void FormatCreateApiProduct(ref string bankid, ref string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest"></param>
+        /// <param name="createOrUpdateApiProductRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600CreateApiProduct(string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest)
+        private void ValidateCreateApiProduct(string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -343,8 +343,8 @@ namespace OpenBankProject.Api
             if (apiproductcode == null)
                 throw new ArgumentNullException(nameof(apiproductcode));
 
-            if (oBPv600CreateOrUpdateApiProductRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600CreateOrUpdateApiProductRequest));
+            if (createOrUpdateApiProductRequest == null)
+                throw new ArgumentNullException(nameof(createOrUpdateApiProductRequest));
         }
 
         /// <summary>
@@ -353,11 +353,11 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest"></param>
-        private void AfterOBPv600CreateApiProductDefaultImplementation(IOBPv600CreateApiProductApiResponse apiResponseLocalVar, string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest)
+        /// <param name="createOrUpdateApiProductRequest"></param>
+        private void AfterCreateApiProductDefaultImplementation(ICreateApiProductApiResponse apiResponseLocalVar, string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600CreateApiProduct(ref suppressDefaultLog, apiResponseLocalVar, bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest);
+            AfterCreateApiProduct(ref suppressDefaultLog, apiResponseLocalVar, bankid, apiproductcode, createOrUpdateApiProductRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -369,8 +369,8 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest"></param>
-        partial void AfterOBPv600CreateApiProduct(ref bool suppressDefaultLog, IOBPv600CreateApiProductApiResponse apiResponseLocalVar, string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest);
+        /// <param name="createOrUpdateApiProductRequest"></param>
+        partial void AfterCreateApiProduct(ref bool suppressDefaultLog, ICreateApiProductApiResponse apiResponseLocalVar, string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -380,11 +380,11 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest"></param>
-        private void OnErrorOBPv600CreateApiProductDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest)
+        /// <param name="createOrUpdateApiProductRequest"></param>
+        private void OnErrorCreateApiProductDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600CreateApiProduct(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest);
+            OnErrorCreateApiProduct(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, apiproductcode, createOrUpdateApiProductRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -398,22 +398,22 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest"></param>
-        partial void OnErrorOBPv600CreateApiProduct(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest);
+        /// <param name="createOrUpdateApiProductRequest"></param>
+        partial void OnErrorCreateApiProduct(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest);
 
         /// <summary>
         /// Create Api Product &lt;p&gt;Create an Api Product for the Bank.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_PRODUCT_CODE&lt;/a&gt;: API_PRODUCT_CODE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;category&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;collection_id&lt;/a&gt;: collection_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;monthly_subscription_amount&lt;/a&gt;: monthly_subscription_amount&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;monthly_subscription_currency&lt;/a&gt;: monthly_subscription_currency&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;more_info_url&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;parent_api_product_code&lt;/a&gt;: parent_api_product_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_day_call_limit\&quot;&gt;per_day_call_limit&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_hour_call_limit\&quot;&gt;per_hour_call_limit&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_minute_call_limit\&quot;&gt;per_minute_call_limit&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_month_call_limit\&quot;&gt;per_month_call_limit&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_second_call_limit\&quot;&gt;per_second_call_limit&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_week_call_limit\&quot;&gt;per_week_call_limit&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;terms_and_conditions_url&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_attribute_id&lt;/strong&gt;&lt;/a&gt;: api_product_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_code&lt;/strong&gt;&lt;/a&gt;: api_product_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_id&lt;/strong&gt;&lt;/a&gt;: api_product_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;collection_id&lt;/strong&gt;&lt;/a&gt;: collection_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;monthly_subscription_amount&lt;/strong&gt;&lt;/a&gt;: monthly_subscription_amount&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;monthly_subscription_currency&lt;/strong&gt;&lt;/a&gt;: monthly_subscription_currency&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;parent_api_product_code&lt;/strong&gt;&lt;/a&gt;: parent_api_product_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_day_call_limit\&quot;&gt;&lt;strong&gt;per_day_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_hour_call_limit\&quot;&gt;&lt;strong&gt;per_hour_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_minute_call_limit\&quot;&gt;&lt;strong&gt;per_minute_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_month_call_limit\&quot;&gt;&lt;strong&gt;per_month_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_second_call_limit\&quot;&gt;&lt;strong&gt;per_second_call_limit&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_week_call_limit\&quot;&gt;&lt;strong&gt;per_week_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="apiproductcode">The APIPRODUCTCODE identifier</param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest">Request body</param>
+        /// <param name="createOrUpdateApiProductRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateApiProductApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateApiProductApiResponse?> OBPv600CreateApiProductOrDefaultAsync(string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateApiProductApiResponse"/>&gt;</returns>
+        public async Task<ICreateApiProductApiResponse?> CreateApiProductOrDefaultAsync(string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600CreateApiProductAsync(bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateApiProductAsync(bankid, apiproductcode, createOrUpdateApiProductRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -427,18 +427,18 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="apiproductcode">The APIPRODUCTCODE identifier</param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest">Request body</param>
+        /// <param name="createOrUpdateApiProductRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateApiProductApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateApiProductApiResponse> OBPv600CreateApiProductAsync(string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateApiProductApiResponse"/>&gt;</returns>
+        public async Task<ICreateApiProductApiResponse> CreateApiProductAsync(string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600CreateApiProduct(bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest);
+                ValidateCreateApiProduct(bankid, apiproductcode, createOrUpdateApiProductRequest);
 
-                FormatOBPv600CreateApiProduct(ref bankid, ref apiproductcode, oBPv600CreateOrUpdateApiProductRequest);
+                FormatCreateApiProduct(ref bankid, ref apiproductcode, createOrUpdateApiProductRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -451,16 +451,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bapiproductcode%7D", Uri.EscapeDataString(apiproductcode.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600CreateOrUpdateApiProductRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createOrUpdateApiProductRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600CreateOrUpdateApiProductRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createOrUpdateApiProductRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -496,8 +496,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv600CreateApiProductApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600CreateApiProductApiResponse>();
-                        APIApi.OBPv600CreateApiProductApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.CreateApiProductApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.CreateApiProductApiResponse>();
+                        APIApi.CreateApiProductApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -508,9 +508,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600CreateApiProductDefaultImplementation(apiResponseLocalVar, bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest);
+                        AfterCreateApiProductDefaultImplementation(apiResponseLocalVar, bankid, apiproductcode, createOrUpdateApiProductRequest);
 
-                        Events.ExecuteOnOBPv600CreateApiProduct(apiResponseLocalVar);
+                        Events.ExecuteOnCreateApiProduct(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -522,22 +522,22 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600CreateApiProductDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}", uriBuilderLocalVar.Path, bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest);
-                Events.ExecuteOnErrorOBPv600CreateApiProduct(e);
+                OnErrorCreateApiProductDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}", uriBuilderLocalVar.Path, bankid, apiproductcode, createOrUpdateApiProductRequest);
+                Events.ExecuteOnErrorCreateApiProduct(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600CreateOrUpdateApiProduct(ref string bankid, ref string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest);
+        partial void FormatCreateOrUpdateApiProduct(ref string bankid, ref string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest"></param>
+        /// <param name="createOrUpdateApiProductRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600CreateOrUpdateApiProduct(string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest)
+        private void ValidateCreateOrUpdateApiProduct(string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -545,8 +545,8 @@ namespace OpenBankProject.Api
             if (apiproductcode == null)
                 throw new ArgumentNullException(nameof(apiproductcode));
 
-            if (oBPv600CreateOrUpdateApiProductRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600CreateOrUpdateApiProductRequest));
+            if (createOrUpdateApiProductRequest == null)
+                throw new ArgumentNullException(nameof(createOrUpdateApiProductRequest));
         }
 
         /// <summary>
@@ -555,11 +555,11 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest"></param>
-        private void AfterOBPv600CreateOrUpdateApiProductDefaultImplementation(IOBPv600CreateOrUpdateApiProductApiResponse apiResponseLocalVar, string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest)
+        /// <param name="createOrUpdateApiProductRequest"></param>
+        private void AfterCreateOrUpdateApiProductDefaultImplementation(ICreateOrUpdateApiProductApiResponse apiResponseLocalVar, string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600CreateOrUpdateApiProduct(ref suppressDefaultLog, apiResponseLocalVar, bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest);
+            AfterCreateOrUpdateApiProduct(ref suppressDefaultLog, apiResponseLocalVar, bankid, apiproductcode, createOrUpdateApiProductRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -571,8 +571,8 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest"></param>
-        partial void AfterOBPv600CreateOrUpdateApiProduct(ref bool suppressDefaultLog, IOBPv600CreateOrUpdateApiProductApiResponse apiResponseLocalVar, string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest);
+        /// <param name="createOrUpdateApiProductRequest"></param>
+        partial void AfterCreateOrUpdateApiProduct(ref bool suppressDefaultLog, ICreateOrUpdateApiProductApiResponse apiResponseLocalVar, string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -582,11 +582,11 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest"></param>
-        private void OnErrorOBPv600CreateOrUpdateApiProductDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest)
+        /// <param name="createOrUpdateApiProductRequest"></param>
+        private void OnErrorCreateOrUpdateApiProductDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600CreateOrUpdateApiProduct(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest);
+            OnErrorCreateOrUpdateApiProduct(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, apiproductcode, createOrUpdateApiProductRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -600,22 +600,22 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest"></param>
-        partial void OnErrorOBPv600CreateOrUpdateApiProduct(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest);
+        /// <param name="createOrUpdateApiProductRequest"></param>
+        partial void OnErrorCreateOrUpdateApiProduct(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest);
 
         /// <summary>
         /// Create or Update Api Product &lt;p&gt;Create or Update an Api Product for the Bank.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_PRODUCT_CODE&lt;/a&gt;: API_PRODUCT_CODE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_attribute_id&lt;/strong&gt;&lt;/a&gt;: api_product_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_code&lt;/strong&gt;&lt;/a&gt;: api_product_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_id&lt;/strong&gt;&lt;/a&gt;: api_product_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;collection_id&lt;/strong&gt;&lt;/a&gt;: collection_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;monthly_subscription_amount&lt;/strong&gt;&lt;/a&gt;: monthly_subscription_amount&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;monthly_subscription_currency&lt;/strong&gt;&lt;/a&gt;: monthly_subscription_currency&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;parent_api_product_code&lt;/strong&gt;&lt;/a&gt;: parent_api_product_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_day_call_limit\&quot;&gt;&lt;strong&gt;per_day_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_hour_call_limit\&quot;&gt;&lt;strong&gt;per_hour_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_minute_call_limit\&quot;&gt;&lt;strong&gt;per_minute_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_month_call_limit\&quot;&gt;&lt;strong&gt;per_month_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_second_call_limit\&quot;&gt;&lt;strong&gt;per_second_call_limit&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_week_call_limit\&quot;&gt;&lt;strong&gt;per_week_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="apiproductcode">The APIPRODUCTCODE identifier</param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest">Request body</param>
+        /// <param name="createOrUpdateApiProductRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateOrUpdateApiProductApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateOrUpdateApiProductApiResponse?> OBPv600CreateOrUpdateApiProductOrDefaultAsync(string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateApiProductApiResponse"/>&gt;</returns>
+        public async Task<ICreateOrUpdateApiProductApiResponse?> CreateOrUpdateApiProductOrDefaultAsync(string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600CreateOrUpdateApiProductAsync(bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateOrUpdateApiProductAsync(bankid, apiproductcode, createOrUpdateApiProductRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -629,18 +629,18 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="apiproductcode">The APIPRODUCTCODE identifier</param>
-        /// <param name="oBPv600CreateOrUpdateApiProductRequest">Request body</param>
+        /// <param name="createOrUpdateApiProductRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateOrUpdateApiProductApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateOrUpdateApiProductApiResponse> OBPv600CreateOrUpdateApiProductAsync(string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateApiProductApiResponse"/>&gt;</returns>
+        public async Task<ICreateOrUpdateApiProductApiResponse> CreateOrUpdateApiProductAsync(string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600CreateOrUpdateApiProduct(bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest);
+                ValidateCreateOrUpdateApiProduct(bankid, apiproductcode, createOrUpdateApiProductRequest);
 
-                FormatOBPv600CreateOrUpdateApiProduct(ref bankid, ref apiproductcode, oBPv600CreateOrUpdateApiProductRequest);
+                FormatCreateOrUpdateApiProduct(ref bankid, ref apiproductcode, createOrUpdateApiProductRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -653,16 +653,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bapiproductcode%7D", Uri.EscapeDataString(apiproductcode.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600CreateOrUpdateApiProductRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createOrUpdateApiProductRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600CreateOrUpdateApiProductRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createOrUpdateApiProductRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -698,8 +698,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv600CreateOrUpdateApiProductApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600CreateOrUpdateApiProductApiResponse>();
-                        APIApi.OBPv600CreateOrUpdateApiProductApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.CreateOrUpdateApiProductApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.CreateOrUpdateApiProductApiResponse>();
+                        APIApi.CreateOrUpdateApiProductApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -710,9 +710,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600CreateOrUpdateApiProductDefaultImplementation(apiResponseLocalVar, bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest);
+                        AfterCreateOrUpdateApiProductDefaultImplementation(apiResponseLocalVar, bankid, apiproductcode, createOrUpdateApiProductRequest);
 
-                        Events.ExecuteOnOBPv600CreateOrUpdateApiProduct(apiResponseLocalVar);
+                        Events.ExecuteOnCreateOrUpdateApiProduct(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -724,13 +724,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600CreateOrUpdateApiProductDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}", uriBuilderLocalVar.Path, bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest);
-                Events.ExecuteOnErrorOBPv600CreateOrUpdateApiProduct(e);
+                OnErrorCreateOrUpdateApiProductDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}", uriBuilderLocalVar.Path, bankid, apiproductcode, createOrUpdateApiProductRequest);
+                Events.ExecuteOnErrorCreateOrUpdateApiProduct(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600DeleteApiProduct(ref string bankid, ref string apiproductcode);
+        partial void FormatDeleteApiProduct(ref string bankid, ref string apiproductcode);
 
         /// <summary>
         /// Validates the request parameters
@@ -738,7 +738,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
         /// <returns></returns>
-        private void ValidateOBPv600DeleteApiProduct(string bankid, string apiproductcode)
+        private void ValidateDeleteApiProduct(string bankid, string apiproductcode)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -753,10 +753,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        private void AfterOBPv600DeleteApiProductDefaultImplementation(IOBPv600DeleteApiProductApiResponse apiResponseLocalVar, string bankid, string apiproductcode)
+        private void AfterDeleteApiProductDefaultImplementation(IDeleteApiProductApiResponse apiResponseLocalVar, string bankid, string apiproductcode)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600DeleteApiProduct(ref suppressDefaultLog, apiResponseLocalVar, bankid, apiproductcode);
+            AfterDeleteApiProduct(ref suppressDefaultLog, apiResponseLocalVar, bankid, apiproductcode);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -768,7 +768,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        partial void AfterOBPv600DeleteApiProduct(ref bool suppressDefaultLog, IOBPv600DeleteApiProductApiResponse apiResponseLocalVar, string bankid, string apiproductcode);
+        partial void AfterDeleteApiProduct(ref bool suppressDefaultLog, IDeleteApiProductApiResponse apiResponseLocalVar, string bankid, string apiproductcode);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -778,10 +778,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        private void OnErrorOBPv600DeleteApiProductDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string apiproductcode)
+        private void OnErrorDeleteApiProductDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string apiproductcode)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600DeleteApiProduct(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, apiproductcode);
+            OnErrorDeleteApiProduct(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, apiproductcode);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -795,7 +795,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        partial void OnErrorOBPv600DeleteApiProduct(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string apiproductcode);
+        partial void OnErrorDeleteApiProduct(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string apiproductcode);
 
         /// <summary>
         /// Delete Api Product &lt;p&gt;Delete an Api Product by BANK_ID and API_PRODUCT_CODE.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_PRODUCT_CODE&lt;/a&gt;: API_PRODUCT_CODE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -803,12 +803,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="apiproductcode">The APIPRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteApiProductApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600DeleteApiProductApiResponse?> OBPv600DeleteApiProductOrDefaultAsync(string bankid, string apiproductcode, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteApiProductApiResponse"/>&gt;</returns>
+        public async Task<IDeleteApiProductApiResponse?> DeleteApiProductOrDefaultAsync(string bankid, string apiproductcode, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600DeleteApiProductAsync(bankid, apiproductcode, cancellationToken).ConfigureAwait(false);
+                return await DeleteApiProductAsync(bankid, apiproductcode, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -823,16 +823,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="apiproductcode">The APIPRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteApiProductApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600DeleteApiProductApiResponse> OBPv600DeleteApiProductAsync(string bankid, string apiproductcode, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteApiProductApiResponse"/>&gt;</returns>
+        public async Task<IDeleteApiProductApiResponse> DeleteApiProductAsync(string bankid, string apiproductcode, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600DeleteApiProduct(bankid, apiproductcode);
+                ValidateDeleteApiProduct(bankid, apiproductcode);
 
-                FormatOBPv600DeleteApiProduct(ref bankid, ref apiproductcode);
+                FormatDeleteApiProduct(ref bankid, ref apiproductcode);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -850,7 +850,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -868,8 +868,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv600DeleteApiProductApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600DeleteApiProductApiResponse>();
-                        APIApi.OBPv600DeleteApiProductApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.DeleteApiProductApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.DeleteApiProductApiResponse>();
+                        APIApi.DeleteApiProductApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -880,9 +880,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600DeleteApiProductDefaultImplementation(apiResponseLocalVar, bankid, apiproductcode);
+                        AfterDeleteApiProductDefaultImplementation(apiResponseLocalVar, bankid, apiproductcode);
 
-                        Events.ExecuteOnOBPv600DeleteApiProduct(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteApiProduct(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -894,13 +894,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600DeleteApiProductDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}", uriBuilderLocalVar.Path, bankid, apiproductcode);
-                Events.ExecuteOnErrorOBPv600DeleteApiProduct(e);
+                OnErrorDeleteApiProductDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}", uriBuilderLocalVar.Path, bankid, apiproductcode);
+                Events.ExecuteOnErrorDeleteApiProduct(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600GetApiProduct(ref string bankid, ref string apiproductcode);
+        partial void FormatGetApiProduct(ref string bankid, ref string apiproductcode);
 
         /// <summary>
         /// Validates the request parameters
@@ -908,7 +908,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
         /// <returns></returns>
-        private void ValidateOBPv600GetApiProduct(string bankid, string apiproductcode)
+        private void ValidateGetApiProduct(string bankid, string apiproductcode)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -923,10 +923,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        private void AfterOBPv600GetApiProductDefaultImplementation(IOBPv600GetApiProductApiResponse apiResponseLocalVar, string bankid, string apiproductcode)
+        private void AfterGetApiProductDefaultImplementation(IGetApiProductApiResponse apiResponseLocalVar, string bankid, string apiproductcode)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetApiProduct(ref suppressDefaultLog, apiResponseLocalVar, bankid, apiproductcode);
+            AfterGetApiProduct(ref suppressDefaultLog, apiResponseLocalVar, bankid, apiproductcode);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -938,7 +938,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        partial void AfterOBPv600GetApiProduct(ref bool suppressDefaultLog, IOBPv600GetApiProductApiResponse apiResponseLocalVar, string bankid, string apiproductcode);
+        partial void AfterGetApiProduct(ref bool suppressDefaultLog, IGetApiProductApiResponse apiResponseLocalVar, string bankid, string apiproductcode);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -948,10 +948,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        private void OnErrorOBPv600GetApiProductDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string apiproductcode)
+        private void OnErrorGetApiProductDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string apiproductcode)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetApiProduct(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, apiproductcode);
+            OnErrorGetApiProduct(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, apiproductcode);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -965,7 +965,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="apiproductcode"></param>
-        partial void OnErrorOBPv600GetApiProduct(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string apiproductcode);
+        partial void OnErrorGetApiProduct(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string apiproductcode);
 
         /// <summary>
         /// Get Api Product &lt;p&gt;Get an Api Product by BANK_ID and API_PRODUCT_CODE.&lt;/p&gt; &lt;p&gt;Returns the Api Product with its attributes.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_PRODUCT_CODE&lt;/a&gt;: API_PRODUCT_CODE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_attribute_id&lt;/strong&gt;&lt;/a&gt;: api_product_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_code&lt;/strong&gt;&lt;/a&gt;: api_product_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_id&lt;/strong&gt;&lt;/a&gt;: api_product_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;collection_id&lt;/strong&gt;&lt;/a&gt;: collection_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;monthly_subscription_amount&lt;/strong&gt;&lt;/a&gt;: monthly_subscription_amount&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;monthly_subscription_currency&lt;/strong&gt;&lt;/a&gt;: monthly_subscription_currency&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;parent_api_product_code&lt;/strong&gt;&lt;/a&gt;: parent_api_product_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_day_call_limit\&quot;&gt;&lt;strong&gt;per_day_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_hour_call_limit\&quot;&gt;&lt;strong&gt;per_hour_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_minute_call_limit\&quot;&gt;&lt;strong&gt;per_minute_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_month_call_limit\&quot;&gt;&lt;strong&gt;per_month_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_second_call_limit\&quot;&gt;&lt;strong&gt;per_second_call_limit&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_week_call_limit\&quot;&gt;&lt;strong&gt;per_week_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
@@ -973,12 +973,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="apiproductcode">The APIPRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetApiProductApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetApiProductApiResponse?> OBPv600GetApiProductOrDefaultAsync(string bankid, string apiproductcode, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetApiProductApiResponse"/>&gt;</returns>
+        public async Task<IGetApiProductApiResponse?> GetApiProductOrDefaultAsync(string bankid, string apiproductcode, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetApiProductAsync(bankid, apiproductcode, cancellationToken).ConfigureAwait(false);
+                return await GetApiProductAsync(bankid, apiproductcode, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -993,16 +993,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="apiproductcode">The APIPRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetApiProductApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetApiProductApiResponse> OBPv600GetApiProductAsync(string bankid, string apiproductcode, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetApiProductApiResponse"/>&gt;</returns>
+        public async Task<IGetApiProductApiResponse> GetApiProductAsync(string bankid, string apiproductcode, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600GetApiProduct(bankid, apiproductcode);
+                ValidateGetApiProduct(bankid, apiproductcode);
 
-                FormatOBPv600GetApiProduct(ref bankid, ref apiproductcode);
+                FormatGetApiProduct(ref bankid, ref apiproductcode);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1032,8 +1032,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv600GetApiProductApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600GetApiProductApiResponse>();
-                        APIApi.OBPv600GetApiProductApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.GetApiProductApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetApiProductApiResponse>();
+                        APIApi.GetApiProductApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1044,9 +1044,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetApiProductDefaultImplementation(apiResponseLocalVar, bankid, apiproductcode);
+                        AfterGetApiProductDefaultImplementation(apiResponseLocalVar, bankid, apiproductcode);
 
-                        Events.ExecuteOnOBPv600GetApiProduct(apiResponseLocalVar);
+                        Events.ExecuteOnGetApiProduct(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -1054,20 +1054,20 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetApiProductDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}", uriBuilderLocalVar.Path, bankid, apiproductcode);
-                Events.ExecuteOnErrorOBPv600GetApiProduct(e);
+                OnErrorGetApiProductDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}", uriBuilderLocalVar.Path, bankid, apiproductcode);
+                Events.ExecuteOnErrorGetApiProduct(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600GetApiProducts(ref string bankid);
+        partial void FormatGetApiProducts(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv600GetApiProducts(string bankid)
+        private void ValidateGetApiProducts(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1078,10 +1078,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv600GetApiProductsDefaultImplementation(IOBPv600GetApiProductsApiResponse apiResponseLocalVar, string bankid)
+        private void AfterGetApiProductsDefaultImplementation(IGetApiProductsApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetApiProducts(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterGetApiProducts(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1092,7 +1092,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv600GetApiProducts(ref bool suppressDefaultLog, IOBPv600GetApiProductsApiResponse apiResponseLocalVar, string bankid);
+        partial void AfterGetApiProducts(ref bool suppressDefaultLog, IGetApiProductsApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1101,10 +1101,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv600GetApiProductsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        private void OnErrorGetApiProductsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetApiProducts(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorGetApiProducts(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1117,19 +1117,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv600GetApiProducts(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        partial void OnErrorGetApiProducts(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Get Api Products &lt;p&gt;Get Api Products for the Bank.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_attribute_id&lt;/strong&gt;&lt;/a&gt;: api_product_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_code&lt;/strong&gt;&lt;/a&gt;: api_product_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_id&lt;/strong&gt;&lt;/a&gt;: api_product_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_products&lt;/strong&gt;&lt;/a&gt;: api_products&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;collection_id&lt;/strong&gt;&lt;/a&gt;: collection_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;monthly_subscription_amount&lt;/strong&gt;&lt;/a&gt;: monthly_subscription_amount&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;monthly_subscription_currency&lt;/strong&gt;&lt;/a&gt;: monthly_subscription_currency&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;parent_api_product_code&lt;/strong&gt;&lt;/a&gt;: parent_api_product_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_day_call_limit\&quot;&gt;&lt;strong&gt;per_day_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_hour_call_limit\&quot;&gt;&lt;strong&gt;per_hour_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_minute_call_limit\&quot;&gt;&lt;strong&gt;per_minute_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_month_call_limit\&quot;&gt;&lt;strong&gt;per_month_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_second_call_limit\&quot;&gt;&lt;strong&gt;per_second_call_limit&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_week_call_limit\&quot;&gt;&lt;strong&gt;per_week_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetApiProductsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetApiProductsApiResponse?> OBPv600GetApiProductsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetApiProductsApiResponse"/>&gt;</returns>
+        public async Task<IGetApiProductsApiResponse?> GetApiProductsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetApiProductsAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await GetApiProductsAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1143,16 +1143,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetApiProductsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetApiProductsApiResponse> OBPv600GetApiProductsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetApiProductsApiResponse"/>&gt;</returns>
+        public async Task<IGetApiProductsApiResponse> GetApiProductsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600GetApiProducts(bankid);
+                ValidateGetApiProducts(bankid);
 
-                FormatOBPv600GetApiProducts(ref bankid);
+                FormatGetApiProducts(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1181,8 +1181,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv600GetApiProductsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600GetApiProductsApiResponse>();
-                        APIApi.OBPv600GetApiProductsApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.GetApiProductsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetApiProductsApiResponse>();
+                        APIApi.GetApiProductsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1193,9 +1193,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetApiProductsDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterGetApiProductsDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv600GetApiProducts(apiResponseLocalVar);
+                        Events.ExecuteOnGetApiProducts(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -1203,8 +1203,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetApiProductsDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/api-products", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv600GetApiProducts(e);
+                OnErrorGetApiProductsDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/api-products", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetApiProducts(e);
                 throw;
             }
         }

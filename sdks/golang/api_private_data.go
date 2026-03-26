@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,17 +24,17 @@ import (
 // PrivateDataAPIService PrivateDataAPI service
 type PrivateDataAPIService service
 
-type ApiOBPv300CorePrivateAccountsAllBanksRequest struct {
+type ApiCorePrivateAccountsAllBanksRequest struct {
 	ctx context.Context
 	ApiService *PrivateDataAPIService
 }
 
-func (r ApiOBPv300CorePrivateAccountsAllBanksRequest) Execute() (*OBPv300PrivateAccountsAtOneBank200Response, *http.Response, error) {
-	return r.ApiService.OBPv300CorePrivateAccountsAllBanksExecute(r)
+func (r ApiCorePrivateAccountsAllBanksRequest) Execute() (*PrivateAccountsAtOneBank200Response, *http.Response, error) {
+	return r.ApiService.CorePrivateAccountsAllBanksExecute(r)
 }
 
 /*
-OBPv300CorePrivateAccountsAllBanks Get Accounts at all Banks (private)
+CorePrivateAccountsAllBanks Get Accounts at all Banks (private)
 
 <p>Returns the list of accounts containing private views for the user.<br />
 Each account lists the views available to the user.</p>
@@ -62,26 +62,26 @@ Each account lists the views available to the user.</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv300CorePrivateAccountsAllBanksRequest
+ @return ApiCorePrivateAccountsAllBanksRequest
 */
-func (a *PrivateDataAPIService) OBPv300CorePrivateAccountsAllBanks(ctx context.Context) ApiOBPv300CorePrivateAccountsAllBanksRequest {
-	return ApiOBPv300CorePrivateAccountsAllBanksRequest{
+func (a *PrivateDataAPIService) CorePrivateAccountsAllBanks(ctx context.Context) ApiCorePrivateAccountsAllBanksRequest {
+	return ApiCorePrivateAccountsAllBanksRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv300PrivateAccountsAtOneBank200Response
-func (a *PrivateDataAPIService) OBPv300CorePrivateAccountsAllBanksExecute(r ApiOBPv300CorePrivateAccountsAllBanksRequest) (*OBPv300PrivateAccountsAtOneBank200Response, *http.Response, error) {
+//  @return PrivateAccountsAtOneBank200Response
+func (a *PrivateDataAPIService) CorePrivateAccountsAllBanksExecute(r ApiCorePrivateAccountsAllBanksRequest) (*PrivateAccountsAtOneBank200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv300PrivateAccountsAtOneBank200Response
+		localVarReturnValue  *PrivateAccountsAtOneBank200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrivateDataAPIService.OBPv300CorePrivateAccountsAllBanks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrivateDataAPIService.CorePrivateAccountsAllBanks")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -133,7 +133,7 @@ func (a *PrivateDataAPIService) OBPv300CorePrivateAccountsAllBanksExecute(r ApiO
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -174,18 +174,18 @@ func (a *PrivateDataAPIService) OBPv300CorePrivateAccountsAllBanksExecute(r ApiO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetAccountsAtBankRequest struct {
+type ApiGetAccountsAtBankRequest struct {
 	ctx context.Context
 	ApiService *PrivateDataAPIService
 	bankid string
 }
 
-func (r ApiOBPv600GetAccountsAtBankRequest) Execute() (*OBPv600GetAccountsAtBank200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetAccountsAtBankExecute(r)
+func (r ApiGetAccountsAtBankRequest) Execute() (*GetAccountsAtBank200Response, *http.Response, error) {
+	return r.ApiService.GetAccountsAtBankExecute(r)
 }
 
 /*
-OBPv600GetAccountsAtBank Get Accounts at Bank
+GetAccountsAtBank Get Accounts at Bank
 
 <p>Returns the list of accounts at BANK_ID that the user has access to.<br />
 For each account the API returns the account ID and the views available to the user.<br />
@@ -209,10 +209,10 @@ URL params example: /banks/some-bank-id/accounts?limit=50&amp;offset=1</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv600GetAccountsAtBankRequest
+ @return ApiGetAccountsAtBankRequest
 */
-func (a *PrivateDataAPIService) OBPv600GetAccountsAtBank(ctx context.Context, bankid string) ApiOBPv600GetAccountsAtBankRequest {
-	return ApiOBPv600GetAccountsAtBankRequest{
+func (a *PrivateDataAPIService) GetAccountsAtBank(ctx context.Context, bankid string) ApiGetAccountsAtBankRequest {
+	return ApiGetAccountsAtBankRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -220,16 +220,16 @@ func (a *PrivateDataAPIService) OBPv600GetAccountsAtBank(ctx context.Context, ba
 }
 
 // Execute executes the request
-//  @return OBPv600GetAccountsAtBank200Response
-func (a *PrivateDataAPIService) OBPv600GetAccountsAtBankExecute(r ApiOBPv600GetAccountsAtBankRequest) (*OBPv600GetAccountsAtBank200Response, *http.Response, error) {
+//  @return GetAccountsAtBank200Response
+func (a *PrivateDataAPIService) GetAccountsAtBankExecute(r ApiGetAccountsAtBankRequest) (*GetAccountsAtBank200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetAccountsAtBank200Response
+		localVarReturnValue  *GetAccountsAtBank200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrivateDataAPIService.OBPv600GetAccountsAtBank")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrivateDataAPIService.GetAccountsAtBank")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -282,7 +282,7 @@ func (a *PrivateDataAPIService) OBPv600GetAccountsAtBankExecute(r ApiOBPv600GetA
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,7 +75,7 @@ class AggregateMetricsApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv600GetAggregateMetrics' => [
+        'getAggregateMetrics' => [
             'application/json',
         ],
     ];
@@ -127,36 +127,36 @@ class AggregateMetricsApi
     }
 
     /**
-     * Operation oBPv600GetAggregateMetrics
+     * Operation getAggregateMetrics
      *
      * Get Aggregate Metrics
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAggregateMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAggregateMetrics'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetAggregateMetrics200Response
+     * @return \OpenBankProject\Model\GetAggregateMetrics200Response
      */
-    public function oBPv600GetAggregateMetrics(string $contentType = self::contentTypes['oBPv600GetAggregateMetrics'][0])
+    public function getAggregateMetrics(string $contentType = self::contentTypes['getAggregateMetrics'][0])
     {
-        list($response) = $this->oBPv600GetAggregateMetricsWithHttpInfo($contentType);
+        list($response) = $this->getAggregateMetricsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetAggregateMetricsWithHttpInfo
+     * Operation getAggregateMetricsWithHttpInfo
      *
      * Get Aggregate Metrics
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAggregateMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAggregateMetrics'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetAggregateMetrics200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAggregateMetrics200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetAggregateMetricsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetAggregateMetrics'][0])
+    public function getAggregateMetricsWithHttpInfo(string $contentType = self::contentTypes['getAggregateMetrics'][0])
     {
-        $request = $this->oBPv600GetAggregateMetricsRequest($contentType);
+        $request = $this->getAggregateMetricsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -184,7 +184,7 @@ class AggregateMetricsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetAggregateMetrics200Response',
+                        '\OpenBankProject\Model\GetAggregateMetrics200Response',
                         $request,
                         $response,
                     );
@@ -206,7 +206,7 @@ class AggregateMetricsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetAggregateMetrics200Response',
+                '\OpenBankProject\Model\GetAggregateMetrics200Response',
                 $request,
                 $response,
             );
@@ -215,7 +215,7 @@ class AggregateMetricsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetAggregateMetrics200Response',
+                        '\OpenBankProject\Model\GetAggregateMetrics200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -228,18 +228,18 @@ class AggregateMetricsApi
     }
 
     /**
-     * Operation oBPv600GetAggregateMetricsAsync
+     * Operation getAggregateMetricsAsync
      *
      * Get Aggregate Metrics
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAggregateMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAggregateMetrics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAggregateMetricsAsync(string $contentType = self::contentTypes['oBPv600GetAggregateMetrics'][0])
+    public function getAggregateMetricsAsync(string $contentType = self::contentTypes['getAggregateMetrics'][0])
     {
-        return $this->oBPv600GetAggregateMetricsAsyncWithHttpInfo($contentType)
+        return $this->getAggregateMetricsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -248,19 +248,19 @@ class AggregateMetricsApi
     }
 
     /**
-     * Operation oBPv600GetAggregateMetricsAsyncWithHttpInfo
+     * Operation getAggregateMetricsAsyncWithHttpInfo
      *
      * Get Aggregate Metrics
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAggregateMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAggregateMetrics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAggregateMetricsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetAggregateMetrics'][0])
+    public function getAggregateMetricsAsyncWithHttpInfo(string $contentType = self::contentTypes['getAggregateMetrics'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetAggregateMetrics200Response';
-        $request = $this->oBPv600GetAggregateMetricsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetAggregateMetrics200Response';
+        $request = $this->getAggregateMetricsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -299,14 +299,14 @@ class AggregateMetricsApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetAggregateMetrics'
+     * Create request for operation 'getAggregateMetrics'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAggregateMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAggregateMetrics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetAggregateMetricsRequest(string $contentType = self::contentTypes['oBPv600GetAggregateMetrics'][0])
+    public function getAggregateMetricsRequest(string $contentType = self::contentTypes['getAggregateMetrics'][0])
     {
 
 
@@ -362,9 +362,9 @@ class AggregateMetricsApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

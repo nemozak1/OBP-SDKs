@@ -18,9 +18,9 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv400_create_user_invitation_request import OBPv400CreateUserInvitationRequest
-from obp_python.models.obpv400_get_user_invitation_anonymous_request import OBPv400GetUserInvitationAnonymousRequest
-from obp_python.models.obpv400_get_user_invitations200_response import OBPv400GetUserInvitations200Response
+from obp_python.models.create_user_invitation_request import CreateUserInvitationRequest
+from obp_python.models.get_user_invitation_anonymous_request import GetUserInvitationAnonymousRequest
+from obp_python.models.get_user_invitations200_response import GetUserInvitations200Response
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -41,10 +41,10 @@ class UserInvitationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_user_invitation(
+    def create_user_invitation(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_create_user_invitation_request: Annotated[OBPv400CreateUserInvitationRequest, Field(description="Request body")],
+        create_user_invitation_request: Annotated[CreateUserInvitationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -57,15 +57,15 @@ class UserInvitationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetUserInvitations200Response:
+    ) -> GetUserInvitations200Response:
         """Create User Invitation
 
         <p>Create User Invitation.</p> <p>This endpoint will send an invitation email to the developers, then they can use the link to create the obp user.</p> <p>purpose filed only support:List(DEVELOPER, CUSTOMER).</p> <p>You can customise the email details use the following webui props:</p> <p>when purpose == DEVELOPER<br /> webui_developer_user_invitation_email_subject<br /> webui_developer_user_invitation_email_from<br /> webui_developer_user_invitation_email_text<br /> webui_developer_user_invitation_email_html_text</p> <p>when purpose = == CUSTOMER<br /> webui_customer_user_invitation_email_subject<br /> webui_customer_user_invitation_email_from<br /> webui_customer_user_invitation_email_text<br /> webui_customer_user_invitation_email_html_text</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#country\"><strong>country</strong></a>: Germany</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#97;&#105;&#108;&#x74;o:&#102;&#x65;&#x6c;&#x69;x&#x73;&#109;&#x69;t&#x68;&#x40;&#x65;&#120;&#x61;&#x6d;&#112;&#108;e&#x2e;c&#111;&#x6d;\">&#102;&#101;&#x6c;&#x69;&#120;&#x73;&#x6d;i&#116;&#104;@&#x65;x&#x61;&#109;&#x70;l&#101;&#46;&#99;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#purpose\"><strong>purpose</strong></a>: DEVELOPER</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#country\"><strong>country</strong></a>: Germany</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;i&#108;&#x74;&#111;&#58;&#x66;&#101;&#x6c;&#x69;&#120;&#x73;&#109;&#105;&#116;&#104;&#x40;&#101;&#x78;a&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#109;\">&#x66;eli&#x78;s&#109;&#105;&#116;&#104;&#x40;ex&#97;&#109;&#112;l&#101;&#46;c&#x6f;&#109;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#purpose\"><strong>purpose</strong></a>: DEVELOPER</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_create_user_invitation_request: Request body (required)
-        :type obpv400_create_user_invitation_request: OBPv400CreateUserInvitationRequest
+        :param create_user_invitation_request: Request body (required)
+        :type create_user_invitation_request: CreateUserInvitationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -88,9 +88,9 @@ class UserInvitationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_user_invitation_serialize(
+        _param = self._create_user_invitation_serialize(
             bankid=bankid,
-            obpv400_create_user_invitation_request=obpv400_create_user_invitation_request,
+            create_user_invitation_request=create_user_invitation_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -98,7 +98,7 @@ class UserInvitationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetUserInvitations200Response",
+            '200': "GetUserInvitations200Response",
             '404': None,
             '500': None,
         }
@@ -114,10 +114,10 @@ class UserInvitationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_user_invitation_with_http_info(
+    def create_user_invitation_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_create_user_invitation_request: Annotated[OBPv400CreateUserInvitationRequest, Field(description="Request body")],
+        create_user_invitation_request: Annotated[CreateUserInvitationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -130,15 +130,15 @@ class UserInvitationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetUserInvitations200Response]:
+    ) -> ApiResponse[GetUserInvitations200Response]:
         """Create User Invitation
 
         <p>Create User Invitation.</p> <p>This endpoint will send an invitation email to the developers, then they can use the link to create the obp user.</p> <p>purpose filed only support:List(DEVELOPER, CUSTOMER).</p> <p>You can customise the email details use the following webui props:</p> <p>when purpose == DEVELOPER<br /> webui_developer_user_invitation_email_subject<br /> webui_developer_user_invitation_email_from<br /> webui_developer_user_invitation_email_text<br /> webui_developer_user_invitation_email_html_text</p> <p>when purpose = == CUSTOMER<br /> webui_customer_user_invitation_email_subject<br /> webui_customer_user_invitation_email_from<br /> webui_customer_user_invitation_email_text<br /> webui_customer_user_invitation_email_html_text</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#country\"><strong>country</strong></a>: Germany</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#97;&#105;&#108;&#x74;o:&#102;&#x65;&#x6c;&#x69;x&#x73;&#109;&#x69;t&#x68;&#x40;&#x65;&#120;&#x61;&#x6d;&#112;&#108;e&#x2e;c&#111;&#x6d;\">&#102;&#101;&#x6c;&#x69;&#120;&#x73;&#x6d;i&#116;&#104;@&#x65;x&#x61;&#109;&#x70;l&#101;&#46;&#99;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#purpose\"><strong>purpose</strong></a>: DEVELOPER</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#country\"><strong>country</strong></a>: Germany</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;i&#108;&#x74;&#111;&#58;&#x66;&#101;&#x6c;&#x69;&#120;&#x73;&#109;&#105;&#116;&#104;&#x40;&#101;&#x78;a&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#109;\">&#x66;eli&#x78;s&#109;&#105;&#116;&#104;&#x40;ex&#97;&#109;&#112;l&#101;&#46;c&#x6f;&#109;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#purpose\"><strong>purpose</strong></a>: DEVELOPER</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_create_user_invitation_request: Request body (required)
-        :type obpv400_create_user_invitation_request: OBPv400CreateUserInvitationRequest
+        :param create_user_invitation_request: Request body (required)
+        :type create_user_invitation_request: CreateUserInvitationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -161,9 +161,9 @@ class UserInvitationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_user_invitation_serialize(
+        _param = self._create_user_invitation_serialize(
             bankid=bankid,
-            obpv400_create_user_invitation_request=obpv400_create_user_invitation_request,
+            create_user_invitation_request=create_user_invitation_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -171,7 +171,7 @@ class UserInvitationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetUserInvitations200Response",
+            '200': "GetUserInvitations200Response",
             '404': None,
             '500': None,
         }
@@ -187,10 +187,10 @@ class UserInvitationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_user_invitation_without_preload_content(
+    def create_user_invitation_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_create_user_invitation_request: Annotated[OBPv400CreateUserInvitationRequest, Field(description="Request body")],
+        create_user_invitation_request: Annotated[CreateUserInvitationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -210,8 +210,8 @@ class UserInvitationApi:
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_create_user_invitation_request: Request body (required)
-        :type obpv400_create_user_invitation_request: OBPv400CreateUserInvitationRequest
+        :param create_user_invitation_request: Request body (required)
+        :type create_user_invitation_request: CreateUserInvitationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -234,9 +234,9 @@ class UserInvitationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_user_invitation_serialize(
+        _param = self._create_user_invitation_serialize(
             bankid=bankid,
-            obpv400_create_user_invitation_request=obpv400_create_user_invitation_request,
+            create_user_invitation_request=create_user_invitation_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -244,7 +244,7 @@ class UserInvitationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetUserInvitations200Response",
+            '200': "GetUserInvitations200Response",
             '404': None,
             '500': None,
         }
@@ -255,10 +255,10 @@ class UserInvitationApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_user_invitation_serialize(
+    def _create_user_invitation_serialize(
         self,
         bankid,
-        obpv400_create_user_invitation_request,
+        create_user_invitation_request,
         _request_auth,
         _content_type,
         _headers,
@@ -286,8 +286,8 @@ class UserInvitationApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_user_invitation_request is not None:
-            _body_params = obpv400_create_user_invitation_request
+        if create_user_invitation_request is not None:
+            _body_params = create_user_invitation_request
 
 
         # set the HTTP header `Accept`
@@ -338,7 +338,7 @@ class UserInvitationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_user_invitation(
+    def get_user_invitation(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         secretlink: Annotated[StrictStr, Field(description="The SECRETLINK identifier")],
@@ -354,7 +354,7 @@ class UserInvitationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetUserInvitations200Response:
+    ) -> GetUserInvitations200Response:
         """Get User Invitation
 
         <p>Get User Invitation</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">SECRET_LINK</a>: SECRET_LINK</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#country\"><strong>country</strong></a>: Germany</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;&#x69;&#108;to&#58;&#102;e&#108;i&#120;s&#109;&#x69;t&#x68;@&#x65;&#x78;&#97;m&#x70;&#108;&#101;&#x2e;c&#x6f;m\">&#x66;e&#x6c;&#x69;&#120;&#115;&#x6d;&#x69;&#x74;h&#x40;&#x65;xam&#112;&#108;e&#x2e;&#99;&#x6f;&#109;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#purpose\"><strong>purpose</strong></a>: DEVELOPER</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> 
@@ -385,7 +385,7 @@ class UserInvitationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_user_invitation_serialize(
+        _param = self._get_user_invitation_serialize(
             bankid=bankid,
             secretlink=secretlink,
             _request_auth=_request_auth,
@@ -395,7 +395,7 @@ class UserInvitationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetUserInvitations200Response",
+            '200': "GetUserInvitations200Response",
             '404': None,
             '500': None,
         }
@@ -411,7 +411,7 @@ class UserInvitationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_user_invitation_with_http_info(
+    def get_user_invitation_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         secretlink: Annotated[StrictStr, Field(description="The SECRETLINK identifier")],
@@ -427,7 +427,7 @@ class UserInvitationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetUserInvitations200Response]:
+    ) -> ApiResponse[GetUserInvitations200Response]:
         """Get User Invitation
 
         <p>Get User Invitation</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">SECRET_LINK</a>: SECRET_LINK</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#country\"><strong>country</strong></a>: Germany</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;&#x69;&#108;to&#58;&#102;e&#108;i&#120;s&#109;&#x69;t&#x68;@&#x65;&#x78;&#97;m&#x70;&#108;&#101;&#x2e;c&#x6f;m\">&#x66;e&#x6c;&#x69;&#120;&#115;&#x6d;&#x69;&#x74;h&#x40;&#x65;xam&#112;&#108;e&#x2e;&#99;&#x6f;&#109;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#purpose\"><strong>purpose</strong></a>: DEVELOPER</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> 
@@ -458,7 +458,7 @@ class UserInvitationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_user_invitation_serialize(
+        _param = self._get_user_invitation_serialize(
             bankid=bankid,
             secretlink=secretlink,
             _request_auth=_request_auth,
@@ -468,7 +468,7 @@ class UserInvitationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetUserInvitations200Response",
+            '200': "GetUserInvitations200Response",
             '404': None,
             '500': None,
         }
@@ -484,7 +484,7 @@ class UserInvitationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_user_invitation_without_preload_content(
+    def get_user_invitation_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         secretlink: Annotated[StrictStr, Field(description="The SECRETLINK identifier")],
@@ -531,7 +531,7 @@ class UserInvitationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_user_invitation_serialize(
+        _param = self._get_user_invitation_serialize(
             bankid=bankid,
             secretlink=secretlink,
             _request_auth=_request_auth,
@@ -541,7 +541,7 @@ class UserInvitationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetUserInvitations200Response",
+            '200': "GetUserInvitations200Response",
             '404': None,
             '500': None,
         }
@@ -552,7 +552,7 @@ class UserInvitationApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_user_invitation_serialize(
+    def _get_user_invitation_serialize(
         self,
         bankid,
         secretlink,
@@ -622,10 +622,10 @@ class UserInvitationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_user_invitation_anonymous(
+    def get_user_invitation_anonymous(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_get_user_invitation_anonymous_request: Annotated[OBPv400GetUserInvitationAnonymousRequest, Field(description="Request body")],
+        get_user_invitation_anonymous_request: Annotated[GetUserInvitationAnonymousRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -638,15 +638,15 @@ class UserInvitationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetUserInvitations200Response:
+    ) -> GetUserInvitations200Response:
         """Get User Invitation Information
 
         <p>Get User Invitation Information.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>secret_key</strong></a>: secret_key</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#country\"><strong>country</strong></a>: Germany</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"m&#x61;i&#x6c;&#116;&#x6f;&#x3a;&#x66;&#x65;&#x6c;&#x69;&#120;&#115;&#x6d;i&#x74;&#x68;&#64;&#101;&#x78;a&#x6d;&#x70;&#108;&#101;&#46;&#x63;&#x6f;&#109;\">fe&#108;&#105;&#x78;&#x73;&#109;&#105;&#x74;h@&#x65;&#120;&#x61;m&#112;&#108;e&#x2e;&#x63;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#purpose\"><strong>purpose</strong></a>: DEVELOPER</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_get_user_invitation_anonymous_request: Request body (required)
-        :type obpv400_get_user_invitation_anonymous_request: OBPv400GetUserInvitationAnonymousRequest
+        :param get_user_invitation_anonymous_request: Request body (required)
+        :type get_user_invitation_anonymous_request: GetUserInvitationAnonymousRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -669,9 +669,9 @@ class UserInvitationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_user_invitation_anonymous_serialize(
+        _param = self._get_user_invitation_anonymous_serialize(
             bankid=bankid,
-            obpv400_get_user_invitation_anonymous_request=obpv400_get_user_invitation_anonymous_request,
+            get_user_invitation_anonymous_request=get_user_invitation_anonymous_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -679,7 +679,7 @@ class UserInvitationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetUserInvitations200Response",
+            '200': "GetUserInvitations200Response",
             '404': None,
             '500': None,
         }
@@ -695,10 +695,10 @@ class UserInvitationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_user_invitation_anonymous_with_http_info(
+    def get_user_invitation_anonymous_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_get_user_invitation_anonymous_request: Annotated[OBPv400GetUserInvitationAnonymousRequest, Field(description="Request body")],
+        get_user_invitation_anonymous_request: Annotated[GetUserInvitationAnonymousRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -711,15 +711,15 @@ class UserInvitationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetUserInvitations200Response]:
+    ) -> ApiResponse[GetUserInvitations200Response]:
         """Get User Invitation Information
 
         <p>Get User Invitation Information.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>secret_key</strong></a>: secret_key</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#country\"><strong>country</strong></a>: Germany</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"m&#x61;i&#x6c;&#116;&#x6f;&#x3a;&#x66;&#x65;&#x6c;&#x69;&#120;&#115;&#x6d;i&#x74;&#x68;&#64;&#101;&#x78;a&#x6d;&#x70;&#108;&#101;&#46;&#x63;&#x6f;&#109;\">fe&#108;&#105;&#x78;&#x73;&#109;&#105;&#x74;h@&#x65;&#120;&#x61;m&#112;&#108;e&#x2e;&#x63;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#purpose\"><strong>purpose</strong></a>: DEVELOPER</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_get_user_invitation_anonymous_request: Request body (required)
-        :type obpv400_get_user_invitation_anonymous_request: OBPv400GetUserInvitationAnonymousRequest
+        :param get_user_invitation_anonymous_request: Request body (required)
+        :type get_user_invitation_anonymous_request: GetUserInvitationAnonymousRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -742,9 +742,9 @@ class UserInvitationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_user_invitation_anonymous_serialize(
+        _param = self._get_user_invitation_anonymous_serialize(
             bankid=bankid,
-            obpv400_get_user_invitation_anonymous_request=obpv400_get_user_invitation_anonymous_request,
+            get_user_invitation_anonymous_request=get_user_invitation_anonymous_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -752,7 +752,7 @@ class UserInvitationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetUserInvitations200Response",
+            '200': "GetUserInvitations200Response",
             '404': None,
             '500': None,
         }
@@ -768,10 +768,10 @@ class UserInvitationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_user_invitation_anonymous_without_preload_content(
+    def get_user_invitation_anonymous_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_get_user_invitation_anonymous_request: Annotated[OBPv400GetUserInvitationAnonymousRequest, Field(description="Request body")],
+        get_user_invitation_anonymous_request: Annotated[GetUserInvitationAnonymousRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -791,8 +791,8 @@ class UserInvitationApi:
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_get_user_invitation_anonymous_request: Request body (required)
-        :type obpv400_get_user_invitation_anonymous_request: OBPv400GetUserInvitationAnonymousRequest
+        :param get_user_invitation_anonymous_request: Request body (required)
+        :type get_user_invitation_anonymous_request: GetUserInvitationAnonymousRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -815,9 +815,9 @@ class UserInvitationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_user_invitation_anonymous_serialize(
+        _param = self._get_user_invitation_anonymous_serialize(
             bankid=bankid,
-            obpv400_get_user_invitation_anonymous_request=obpv400_get_user_invitation_anonymous_request,
+            get_user_invitation_anonymous_request=get_user_invitation_anonymous_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -825,7 +825,7 @@ class UserInvitationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetUserInvitations200Response",
+            '200': "GetUserInvitations200Response",
             '404': None,
             '500': None,
         }
@@ -836,10 +836,10 @@ class UserInvitationApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_user_invitation_anonymous_serialize(
+    def _get_user_invitation_anonymous_serialize(
         self,
         bankid,
-        obpv400_get_user_invitation_anonymous_request,
+        get_user_invitation_anonymous_request,
         _request_auth,
         _content_type,
         _headers,
@@ -867,8 +867,8 @@ class UserInvitationApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_get_user_invitation_anonymous_request is not None:
-            _body_params = obpv400_get_user_invitation_anonymous_request
+        if get_user_invitation_anonymous_request is not None:
+            _body_params = get_user_invitation_anonymous_request
 
 
         # set the HTTP header `Accept`
@@ -916,7 +916,7 @@ class UserInvitationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_user_invitations(
+    def get_user_invitations(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -931,7 +931,7 @@ class UserInvitationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetUserInvitations200Response:
+    ) -> GetUserInvitations200Response:
         """Get User Invitations
 
         <p>Get User Invitations</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#country\"><strong>country</strong></a>: Germany</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;a&#105;&#x6c;&#x74;&#111;&#58;f&#x65;&#x6c;i&#x78;s&#109;it&#104;@&#101;&#120;&#x61;mp&#108;&#x65;&#46;&#99;&#x6f;m\">&#102;&#101;&#x6c;&#105;&#120;&#115;&#109;&#105;t&#104;@&#101;&#x78;&#97;m&#112;l&#101;&#46;co&#109;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#purpose\"><strong>purpose</strong></a>: DEVELOPER</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> 
@@ -960,7 +960,7 @@ class UserInvitationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_user_invitations_serialize(
+        _param = self._get_user_invitations_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -969,7 +969,7 @@ class UserInvitationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetUserInvitations200Response",
+            '200': "GetUserInvitations200Response",
             '404': None,
             '500': None,
         }
@@ -985,7 +985,7 @@ class UserInvitationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_user_invitations_with_http_info(
+    def get_user_invitations_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1000,7 +1000,7 @@ class UserInvitationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetUserInvitations200Response]:
+    ) -> ApiResponse[GetUserInvitations200Response]:
         """Get User Invitations
 
         <p>Get User Invitations</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#country\"><strong>country</strong></a>: Germany</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;a&#105;&#x6c;&#x74;&#111;&#58;f&#x65;&#x6c;i&#x78;s&#109;it&#104;@&#101;&#120;&#x61;mp&#108;&#x65;&#46;&#99;&#x6f;m\">&#102;&#101;&#x6c;&#105;&#120;&#115;&#109;&#105;t&#104;@&#101;&#x78;&#97;m&#112;l&#101;&#46;co&#109;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#purpose\"><strong>purpose</strong></a>: DEVELOPER</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> 
@@ -1029,7 +1029,7 @@ class UserInvitationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_user_invitations_serialize(
+        _param = self._get_user_invitations_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1038,7 +1038,7 @@ class UserInvitationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetUserInvitations200Response",
+            '200': "GetUserInvitations200Response",
             '404': None,
             '500': None,
         }
@@ -1054,7 +1054,7 @@ class UserInvitationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_user_invitations_without_preload_content(
+    def get_user_invitations_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1098,7 +1098,7 @@ class UserInvitationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_user_invitations_serialize(
+        _param = self._get_user_invitations_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1107,7 +1107,7 @@ class UserInvitationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetUserInvitations200Response",
+            '200': "GetUserInvitations200Response",
             '404': None,
             '500': None,
         }
@@ -1118,7 +1118,7 @@ class UserInvitationApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_user_invitations_serialize(
+    def _get_user_invitations_serialize(
         self,
         bankid,
         _request_auth,

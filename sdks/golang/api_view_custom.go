@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,38 +24,73 @@ import (
 // ViewCustomAPIService ViewCustomAPI service
 type ViewCustomAPIService service
 
-type ApiOBPv121DeleteViewForBankAccountRequest struct {
+type ApiCreateCustomViewRequest struct {
 	ctx context.Context
 	ApiService *ViewCustomAPIService
 	bankid string
 	accountid string
 	viewid string
+	createCustomViewRequest *CreateCustomViewRequest
 }
 
-func (r ApiOBPv121DeleteViewForBankAccountRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteViewForBankAccountExecute(r)
+// Request body
+func (r ApiCreateCustomViewRequest) CreateCustomViewRequest(createCustomViewRequest CreateCustomViewRequest) ApiCreateCustomViewRequest {
+	r.createCustomViewRequest = &createCustomViewRequest
+	return r
+}
+
+func (r ApiCreateCustomViewRequest) Execute() (*CreateCustomView200Response, *http.Response, error) {
+	return r.ApiService.CreateCustomViewExecute(r)
 }
 
 /*
-OBPv121DeleteViewForBankAccount Delete Custom View
+CreateCustomView Create Custom View
 
-<p>Deletes the custom view specified by VIEW_ID on the bank account specified by ACCOUNT_ID at bank BANK_ID</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>Create a custom view on bank account</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the owner view.<br />
+The 'alias' field in the JSON can take one of three values:</p>
+<ul>
+<li><em>public</em>: to use the public alias if there is one specified for the other account.</li>
+<li><em>private</em>: to use the private alias if there is one specified for the other account.</li>
+<li>
+<p><em>''(empty string)</em>: to use no alias; the view shows the real name of the other account.</p>
+</li>
+</ul>
+<p>The 'hide_metadata_if_alias_used' field in the JSON can take boolean values. If it is set to <code>true</code> and there is an alias on the other account then the other accounts' metadata (like more_info, url, image_url, open_corporates_url, etc.) will be hidden. Otherwise the metadata will be shown.</p>
+<p>The 'allowed_actions' field is a list containing the name of the actions allowed on this view, all the actions contained will be set to <code>true</code> on the view creation, the rest will be set to <code>false</code>.</p>
+<p>The 'metadata_view' field determines where metadata (comments, tags, images, where tags) for transactions are stored and retrieved. If set to another view's ID (e.g. 'owner'), metadata added through this view will be shared with all other views that also use the same metadata_view value. If left empty, metadata is stored under this view's own ID and is not shared with other views.</p>
+<p>You MUST use a leading _ (underscore) in the view name because other view names are reserved for OBP <a href="/index#group-View-System">system views</a>.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
 <p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>allowed_permissions</strong></a>: allowed_permissions</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#which_alias_to_use"><strong>which_alias_to_use</strong></a>: public</p>
 <p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#"><strong>allowed_permissions</strong></a>: allowed_permissions</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv121DeleteViewForBankAccountRequest
+ @return ApiCreateCustomViewRequest
 */
-func (a *ViewCustomAPIService) OBPv121DeleteViewForBankAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv121DeleteViewForBankAccountRequest {
-	return ApiOBPv121DeleteViewForBankAccountRequest{
+func (a *ViewCustomAPIService) CreateCustomView(ctx context.Context, bankid string, accountid string, viewid string) ApiCreateCustomViewRequest {
+	return ApiCreateCustomViewRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -65,19 +100,21 @@ func (a *ViewCustomAPIService) OBPv121DeleteViewForBankAccount(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *ViewCustomAPIService) OBPv121DeleteViewForBankAccountExecute(r ApiOBPv121DeleteViewForBankAccountRequest) (*http.Response, error) {
+//  @return CreateCustomView200Response
+func (a *ViewCustomAPIService) CreateCustomViewExecute(r ApiCreateCustomViewRequest) (*CreateCustomView200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
+		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  *CreateCustomView200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv121DeleteViewForBankAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.CreateCustomView")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/views/{viewid}"
+	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views"
 	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
@@ -85,212 +122,12 @@ func (a *ViewCustomAPIService) OBPv121DeleteViewForBankAccountExecute(r ApiOBPv1
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.createCustomViewRequest == nil {
+		return localVarReturnValue, nil, reportError("createCustomViewRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv200GetPermissionsForBankAccountRequest struct {
-	ctx context.Context
-	ApiService *ViewCustomAPIService
-	bankid string
-	accountid string
-}
-
-func (r ApiOBPv200GetPermissionsForBankAccountRequest) Execute() (*OBPv200GetPermissionsForBankAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv200GetPermissionsForBankAccountExecute(r)
-}
-
-/*
-OBPv200GetPermissionsForBankAccount Get access
-
-<p>Returns the list of the permissions at BANK_ID for account ACCOUNT_ID, with each time a pair composed of the user and the views that he has access to.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.<br />
-and the user needs to have access to the owner view.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
-<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
-<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
-<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
-<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
-<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
-<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
-<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
-<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
-<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
-<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
-<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
-<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
-<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
-<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
-<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
-<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
-<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
-<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#permissions"><strong>permissions</strong></a>:</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @return ApiOBPv200GetPermissionsForBankAccountRequest
-*/
-func (a *ViewCustomAPIService) OBPv200GetPermissionsForBankAccount(ctx context.Context, bankid string, accountid string) ApiOBPv200GetPermissionsForBankAccountRequest {
-	return ApiOBPv200GetPermissionsForBankAccountRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv200GetPermissionsForBankAccount200Response
-func (a *ViewCustomAPIService) OBPv200GetPermissionsForBankAccountExecute(r ApiOBPv200GetPermissionsForBankAccountRequest) (*OBPv200GetPermissionsForBankAccount200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv200GetPermissionsForBankAccount200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv200GetPermissionsForBankAccount")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -306,6 +143,8 @@ func (a *ViewCustomAPIService) OBPv200GetPermissionsForBankAccountExecute(r ApiO
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.createCustomViewRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -330,7 +169,7 @@ func (a *ViewCustomAPIService) OBPv200GetPermissionsForBankAccountExecute(r ApiO
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -371,30 +210,36 @@ func (a *ViewCustomAPIService) OBPv200GetPermissionsForBankAccountExecute(r ApiO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv300CreateViewForBankAccountRequest struct {
+type ApiCreateCustomViewManagementRequest struct {
 	ctx context.Context
 	ApiService *ViewCustomAPIService
 	bankid string
 	accountid string
-	oBPv600CreateCustomViewManagementRequest *OBPv600CreateCustomViewManagementRequest
+	createCustomViewManagementRequest *CreateCustomViewManagementRequest
 }
 
 // Request body
-func (r ApiOBPv300CreateViewForBankAccountRequest) OBPv600CreateCustomViewManagementRequest(oBPv600CreateCustomViewManagementRequest OBPv600CreateCustomViewManagementRequest) ApiOBPv300CreateViewForBankAccountRequest {
-	r.oBPv600CreateCustomViewManagementRequest = &oBPv600CreateCustomViewManagementRequest
+func (r ApiCreateCustomViewManagementRequest) CreateCustomViewManagementRequest(createCustomViewManagementRequest CreateCustomViewManagementRequest) ApiCreateCustomViewManagementRequest {
+	r.createCustomViewManagementRequest = &createCustomViewManagementRequest
 	return r
 }
 
-func (r ApiOBPv300CreateViewForBankAccountRequest) Execute() (*OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead, *http.Response, error) {
-	return r.ApiService.OBPv300CreateViewForBankAccountExecute(r)
+func (r ApiCreateCustomViewManagementRequest) Execute() (*CreateUserWithAccountAccessById200ResponseHead, *http.Response, error) {
+	return r.ApiService.CreateCustomViewManagementExecute(r)
 }
 
 /*
-OBPv300CreateViewForBankAccount Create Custom View
+CreateCustomViewManagement Create Custom View (Management)
 
-<p>Create a custom view on bank account</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the owner view.<br />
-The 'alias' field in the JSON can take one of three values:</p>
+<p>Create a custom view on a bank account via management endpoint.</p>
+<p>This is a <strong>management endpoint</strong> that requires the <code>CanCreateCustomView</code> role (entitlement).</p>
+<p>This endpoint provides a simpler, role-based authorization model compared to the original<br />
+v3.0.0 endpoint which requires view-level permissions. Use this endpoint when you want to<br />
+grant view creation ability through direct role assignment rather than through view access.</p>
+<p>For the original endpoint that checks account-level view permissions, see:<br />
+POST /obp/v3.0.0/banks/BANK_ID/accounts/ACCOUNT_ID/views</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>The 'alias' field in the JSON can take one of three values:</p>
 <ul>
 <li><em>public</em>: to use the public alias if there is one specified for the other account.</li>
 <li><em>private</em>: to use the private alias if there is one specified for the other account.</li>
@@ -404,6 +249,7 @@ The 'alias' field in the JSON can take one of three values:</p>
 </ul>
 <p>The 'hide_metadata_if_alias_used' field in the JSON can take boolean values. If it is set to <code>true</code> and there is an alias on the other account then the other accounts' metadata (like more_info, url, image_url, open_corporates_url, etc.) will be hidden. Otherwise the metadata will be shown.</p>
 <p>The 'allowed_actions' field is a list containing the name of the actions allowed on this view, all the actions contained will be set to <code>true</code> on the view creation, the rest will be set to <code>false</code>.</p>
+<p>The 'metadata_view' field determines where metadata (comments, tags, images, where tags) for transactions are stored and retrieved. If set to another view's ID (e.g. 'owner'), metadata added through this view will be shared with all other views that also use the same metadata_view value. If left empty, metadata is stored under this view's own ID and is not shared with other views.</p>
 <p>You MUST use a leading _ (underscore) in the view name because other view names are reserved for OBP <a href="/index#group-View-System">system views</a>.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
@@ -505,10 +351,10 @@ The 'alias' field in the JSON can take one of three values:</p>
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
- @return ApiOBPv300CreateViewForBankAccountRequest
+ @return ApiCreateCustomViewManagementRequest
 */
-func (a *ViewCustomAPIService) OBPv300CreateViewForBankAccount(ctx context.Context, bankid string, accountid string) ApiOBPv300CreateViewForBankAccountRequest {
-	return ApiOBPv300CreateViewForBankAccountRequest{
+func (a *ViewCustomAPIService) CreateCustomViewManagement(ctx context.Context, bankid string, accountid string) ApiCreateCustomViewManagementRequest {
+	return ApiCreateCustomViewManagementRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -517,29 +363,29 @@ func (a *ViewCustomAPIService) OBPv300CreateViewForBankAccount(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead
-func (a *ViewCustomAPIService) OBPv300CreateViewForBankAccountExecute(r ApiOBPv300CreateViewForBankAccountRequest) (*OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead, *http.Response, error) {
+//  @return CreateUserWithAccountAccessById200ResponseHead
+func (a *ViewCustomAPIService) CreateCustomViewManagementExecute(r ApiCreateCustomViewManagementRequest) (*CreateUserWithAccountAccessById200ResponseHead, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead
+		localVarReturnValue  *CreateUserWithAccountAccessById200ResponseHead
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv300CreateViewForBankAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.CreateCustomViewManagement")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views"
+	localVarPath := localBasePath + "/obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views"
 	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreateCustomViewManagementRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateCustomViewManagementRequest is required and must be specified")
+	if r.createCustomViewManagementRequest == nil {
+		return localVarReturnValue, nil, reportError("createCustomViewManagementRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -560,7 +406,7 @@ func (a *ViewCustomAPIService) OBPv300CreateViewForBankAccountExecute(r ApiOBPv3
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreateCustomViewManagementRequest
+	localVarPostBody = r.createCustomViewManagementRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -585,7 +431,7 @@ func (a *ViewCustomAPIService) OBPv300CreateViewForBankAccountExecute(r ApiOBPv3
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -626,1082 +472,27 @@ func (a *ViewCustomAPIService) OBPv300CreateViewForBankAccountExecute(r ApiOBPv3
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv300GetAccountsHeldRequest struct {
-	ctx context.Context
-	ApiService *ViewCustomAPIService
-	bankid string
-}
-
-func (r ApiOBPv300GetAccountsHeldRequest) Execute() (*OBPv510GetAccountsHeldByUserAtBank200Response, *http.Response, error) {
-	return r.ApiService.OBPv300GetAccountsHeldExecute(r)
-}
-
-/*
-OBPv300GetAccountsHeld Get Accounts Held
-
-<p>Get Accounts held by the current User if even the User has not been assigned the owner View yet.</p>
-<p>Can be used to onboard the account to the API - since all other account and transaction endpoints require views to be assigned.</p>
-<p>optional request parameters:</p>
-<ul>
-<li>account_type_filter: one or many accountType value, split by comma</li>
-<li>account_type_filter_operation: the filter type of account_type_filter, value must be INCLUDE or EXCLUDE</li>
-</ul>
-<p>whole url example:<br />
-/banks/BANK_ID/accounts-held?account_type_filter=330,CURRENT+PLUS&amp;account_type_filter_operation=INCLUDE</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
-<p><a href="/glossary#accounts"><strong>accounts</strong></a>:</p>
-<p><a href="/glossary#address"><strong>address</strong></a>:</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @return ApiOBPv300GetAccountsHeldRequest
-*/
-func (a *ViewCustomAPIService) OBPv300GetAccountsHeld(ctx context.Context, bankid string) ApiOBPv300GetAccountsHeldRequest {
-	return ApiOBPv300GetAccountsHeldRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510GetAccountsHeldByUserAtBank200Response
-func (a *ViewCustomAPIService) OBPv300GetAccountsHeldExecute(r ApiOBPv300GetAccountsHeldRequest) (*OBPv510GetAccountsHeldByUserAtBank200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAccountsHeldByUserAtBank200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv300GetAccountsHeld")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.0.0/banks/{bankid}/accounts-held"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv300GetPermissionForUserForBankAccountRequest struct {
-	ctx context.Context
-	ApiService *ViewCustomAPIService
-	bankid string
-	accountid string
-	provider string
-	providerid string
-}
-
-func (r ApiOBPv300GetPermissionForUserForBankAccountRequest) Execute() (*OBPv300GetPermissionForUserForBankAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv300GetPermissionForUserForBankAccountExecute(r)
-}
-
-/*
-OBPv300GetPermissionForUserForBankAccount Get Account access for User
-
-<p>Returns the list of the views at BANK_ID for account ACCOUNT_ID that a user identified by PROVIDER_ID at their provider PROVIDER has access to.<br />
-All url parameters must be <a href="http://en.wikipedia.org/wiki/Percent-encoding">%-encoded</a>, which is often especially relevant for USER_ID and PROVIDER.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>The user needs to have access to the owner view.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#provider">PROVIDER</a>: ETHEREUM</p>
-<p><a href="/glossary#provider_id">PROVIDER_ID</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
-<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
-<p><a href="/glossary#can_add_counterparty"><strong>can_add_counterparty</strong></a>: false</p>
-<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
-<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
-<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
-<p><a href="/glossary#can_add_transaction_request_to_any_account"><strong>can_add_transaction_request_to_any_account</strong></a>:</p>
-<p><a href="/glossary#can_add_transaction_request_to_own_account"><strong>can_add_transaction_request_to_own_account</strong></a>: false</p>
-<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
-<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
-<p><a href="/glossary#can_create_direct_debit"><strong>can_create_direct_debit</strong></a>: false</p>
-<p><a href="/glossary#can_create_standing_order"><strong>can_create_standing_order</strong></a>:</p>
-<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
-<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
-<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
-<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
-<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
-<p><a href="/glossary#can_query_available_funds"><strong>can_query_available_funds</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_credit_limit"><strong>can_see_bank_account_credit_limit</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_routing_address"><strong>can_see_bank_account_routing_address</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_routing_scheme"><strong>can_see_bank_account_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_routing_address"><strong>can_see_bank_routing_address</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_routing_scheme"><strong>can_see_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
-<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
-<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
-<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_routing_address"><strong>can_see_other_account_routing_address</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_routing_scheme"><strong>can_see_other_account_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_bank_routing_address"><strong>can_see_other_bank_routing_address</strong></a>:</p>
-<p><a href="/glossary#can_see_other_bank_routing_scheme"><strong>can_see_other_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
-<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
-<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param provider The PROVIDER identifier
- @param providerid The PROVIDERID identifier
- @return ApiOBPv300GetPermissionForUserForBankAccountRequest
-*/
-func (a *ViewCustomAPIService) OBPv300GetPermissionForUserForBankAccount(ctx context.Context, bankid string, accountid string, provider string, providerid string) ApiOBPv300GetPermissionForUserForBankAccountRequest {
-	return ApiOBPv300GetPermissionForUserForBankAccountRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		provider: provider,
-		providerid: providerid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv300GetPermissionForUserForBankAccount200Response
-func (a *ViewCustomAPIService) OBPv300GetPermissionForUserForBankAccountExecute(r ApiOBPv300GetPermissionForUserForBankAccountRequest) (*OBPv300GetPermissionForUserForBankAccount200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv300GetPermissionForUserForBankAccount200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv300GetPermissionForUserForBankAccount")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"provider"+"}", url.PathEscape(parameterValueToString(r.provider, "provider")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"providerid"+"}", url.PathEscape(parameterValueToString(r.providerid, "providerid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv300UpdateViewForBankAccountRequest struct {
+type ApiCreateUserWithAccountAccessByIdRequest struct {
 	ctx context.Context
 	ApiService *ViewCustomAPIService
 	bankid string
 	accountid string
 	viewid string
-	oBPv300UpdateViewForBankAccountRequest *OBPv300UpdateViewForBankAccountRequest
+	createUserWithAccountAccessByIdRequest *CreateUserWithAccountAccessByIdRequest
 }
 
 // Request body
-func (r ApiOBPv300UpdateViewForBankAccountRequest) OBPv300UpdateViewForBankAccountRequest(oBPv300UpdateViewForBankAccountRequest OBPv300UpdateViewForBankAccountRequest) ApiOBPv300UpdateViewForBankAccountRequest {
-	r.oBPv300UpdateViewForBankAccountRequest = &oBPv300UpdateViewForBankAccountRequest
+func (r ApiCreateUserWithAccountAccessByIdRequest) CreateUserWithAccountAccessByIdRequest(createUserWithAccountAccessByIdRequest CreateUserWithAccountAccessByIdRequest) ApiCreateUserWithAccountAccessByIdRequest {
+	r.createUserWithAccountAccessByIdRequest = &createUserWithAccountAccessByIdRequest
 	return r
 }
 
-func (r ApiOBPv300UpdateViewForBankAccountRequest) Execute() (*OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead, *http.Response, error) {
-	return r.ApiService.OBPv300UpdateViewForBankAccountExecute(r)
+func (r ApiCreateUserWithAccountAccessByIdRequest) Execute() (*CreateUserWithAccountAccessById200Response, *http.Response, error) {
+	return r.ApiService.CreateUserWithAccountAccessByIdExecute(r)
 }
 
 /*
-OBPv300UpdateViewForBankAccount Update Custom View
-
-<p>Update an existing custom view on a bank account</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the owner view.</p>
-<p>The json sent is the same as during view creation (above), with one difference: the 'name' field<br />
-of a view is not editable (it is only set when a view is created)</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
-<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
-<p><a href="/glossary#can_add_counterparty"><strong>can_add_counterparty</strong></a>: false</p>
-<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
-<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
-<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
-<p><a href="/glossary#can_add_transaction_request_to_any_account"><strong>can_add_transaction_request_to_any_account</strong></a>:</p>
-<p><a href="/glossary#can_add_transaction_request_to_own_account"><strong>can_add_transaction_request_to_own_account</strong></a>: false</p>
-<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
-<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
-<p><a href="/glossary#can_create_direct_debit"><strong>can_create_direct_debit</strong></a>: false</p>
-<p><a href="/glossary#can_create_standing_order"><strong>can_create_standing_order</strong></a>:</p>
-<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
-<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
-<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
-<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
-<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
-<p><a href="/glossary#can_query_available_funds"><strong>can_query_available_funds</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_credit_limit"><strong>can_see_bank_account_credit_limit</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_routing_address"><strong>can_see_bank_account_routing_address</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_routing_scheme"><strong>can_see_bank_account_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_routing_address"><strong>can_see_bank_routing_address</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_routing_scheme"><strong>can_see_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
-<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
-<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
-<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_routing_address"><strong>can_see_other_account_routing_address</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_routing_scheme"><strong>can_see_other_account_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_bank_routing_address"><strong>can_see_other_bank_routing_address</strong></a>:</p>
-<p><a href="/glossary#can_see_other_bank_routing_scheme"><strong>can_see_other_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
-<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
-<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
-<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @return ApiOBPv300UpdateViewForBankAccountRequest
-*/
-func (a *ViewCustomAPIService) OBPv300UpdateViewForBankAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv300UpdateViewForBankAccountRequest {
-	return ApiOBPv300UpdateViewForBankAccountRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead
-func (a *ViewCustomAPIService) OBPv300UpdateViewForBankAccountExecute(r ApiOBPv300UpdateViewForBankAccountRequest) (*OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv300UpdateViewForBankAccount")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv300UpdateViewForBankAccountRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv300UpdateViewForBankAccountRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv300UpdateViewForBankAccountRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv500GetViewsForBankAccountRequest struct {
-	ctx context.Context
-	ApiService *ViewCustomAPIService
-	bankid string
-	accountid string
-}
-
-func (r ApiOBPv500GetViewsForBankAccountRequest) Execute() (*OBPv500GetViewsForBankAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv500GetViewsForBankAccountExecute(r)
-}
-
-/*
-OBPv500GetViewsForBankAccount Get Views for Account
-
-<h1><a href="#views" id="views">Views</a></h1>
-<p>Views in Open Bank Project provide a mechanism for fine grained access control and delegation to Accounts and Transactions. Account holders use the 'owner' view by default. Delegated access is made through other views for example 'accountants', 'share-holders' or 'tagging-application'. Views can be created via the API and each view has a list of entitlements.</p>
-<p>Views on accounts and transactions filter the underlying data to redact certain fields for certain users. For instance the balance on an account may be hidden from the public. The way to know what is possible on a view is determined in the following JSON.</p>
-<p><strong>Data:</strong> When a view moderates a set of data, some fields my contain the value <code>null</code> rather than the original value. This indicates either that the user is not allowed to see the original data or the field is empty.</p>
-<p>There is currently one exception to this rule; the 'holder' field in the JSON contains always a value which is either an alias or the real name - indicated by the 'is_alias' field.</p>
-<p><strong>Action:</strong> When a user performs an action like trying to post a comment (with POST API call), if he is not allowed, the body response will contain an error message.</p>
-<p><strong>Metadata:</strong><br />
-Transaction metadata (like images, tags, comments, etc.) will appears <em>ONLY</em> on the view where they have been created e.g. comments posted to the public view only appear on the public view.</p>
-<p>The other account metadata fields (like image_URL, more_info, etc.) are unique through all the views. Example, if a user edits the 'more_info' field in the 'team' view, then the view 'authorities' will show the new value (if it is allowed to do it).</p>
-<h1><a href="#all" id="all">All</a></h1>
-<p><em>Optional</em></p>
-<p>Returns the list of the views created for account ACCOUNT_ID at BANK_ID.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the owner view.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
-<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
-<p><a href="/glossary#can_add_counterparty"><strong>can_add_counterparty</strong></a>: false</p>
-<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
-<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
-<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
-<p><a href="/glossary#can_add_transaction_request_to_any_account"><strong>can_add_transaction_request_to_any_account</strong></a>:</p>
-<p><a href="/glossary#can_add_transaction_request_to_own_account"><strong>can_add_transaction_request_to_own_account</strong></a>: false</p>
-<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
-<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
-<p><a href="/glossary#can_create_direct_debit"><strong>can_create_direct_debit</strong></a>: false</p>
-<p><a href="/glossary#can_create_standing_order"><strong>can_create_standing_order</strong></a>:</p>
-<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
-<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
-<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
-<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
-<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
-<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
-<p><a href="/glossary#can_query_available_funds"><strong>can_query_available_funds</strong></a>: false</p>
-<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
-<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_credit_limit"><strong>can_see_bank_account_credit_limit</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_routing_address"><strong>can_see_bank_account_routing_address</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_routing_scheme"><strong>can_see_bank_account_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_routing_address"><strong>can_see_bank_routing_address</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_routing_scheme"><strong>can_see_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
-<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
-<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
-<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_routing_address"><strong>can_see_other_account_routing_address</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_routing_scheme"><strong>can_see_other_account_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_bank_routing_address"><strong>can_see_other_bank_routing_address</strong></a>:</p>
-<p><a href="/glossary#can_see_other_bank_routing_scheme"><strong>can_see_other_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
-<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
-<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @return ApiOBPv500GetViewsForBankAccountRequest
-*/
-func (a *ViewCustomAPIService) OBPv500GetViewsForBankAccount(ctx context.Context, bankid string, accountid string) ApiOBPv500GetViewsForBankAccountRequest {
-	return ApiOBPv500GetViewsForBankAccountRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv500GetViewsForBankAccount200Response
-func (a *ViewCustomAPIService) OBPv500GetViewsForBankAccountExecute(r ApiOBPv500GetViewsForBankAccountRequest) (*OBPv500GetViewsForBankAccount200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv500GetViewsForBankAccount200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv500GetViewsForBankAccount")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.0.0/banks/{bankid}/accounts/{accountid}/views"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510CreateCustomViewRequest struct {
-	ctx context.Context
-	ApiService *ViewCustomAPIService
-	bankid string
-	accountid string
-	viewid string
-	oBPv510CreateCustomViewRequest *OBPv510CreateCustomViewRequest
-}
-
-// Request body
-func (r ApiOBPv510CreateCustomViewRequest) OBPv510CreateCustomViewRequest(oBPv510CreateCustomViewRequest OBPv510CreateCustomViewRequest) ApiOBPv510CreateCustomViewRequest {
-	r.oBPv510CreateCustomViewRequest = &oBPv510CreateCustomViewRequest
-	return r
-}
-
-func (r ApiOBPv510CreateCustomViewRequest) Execute() (*OBPv510CreateCustomView200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateCustomViewExecute(r)
-}
-
-/*
-OBPv510CreateCustomView Create Custom View
-
-<p>Create a custom view on bank account</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the owner view.<br />
-The 'alias' field in the JSON can take one of three values:</p>
-<ul>
-<li><em>public</em>: to use the public alias if there is one specified for the other account.</li>
-<li><em>private</em>: to use the private alias if there is one specified for the other account.</li>
-<li>
-<p><em>''(empty string)</em>: to use no alias; the view shows the real name of the other account.</p>
-</li>
-</ul>
-<p>The 'hide_metadata_if_alias_used' field in the JSON can take boolean values. If it is set to <code>true</code> and there is an alias on the other account then the other accounts' metadata (like more_info, url, image_url, open_corporates_url, etc.) will be hidden. Otherwise the metadata will be shown.</p>
-<p>The 'allowed_actions' field is a list containing the name of the actions allowed on this view, all the actions contained will be set to <code>true</code> on the view creation, the rest will be set to <code>false</code>.</p>
-<p>You MUST use a leading _ (underscore) in the view name because other view names are reserved for OBP <a href="/index#group-View-System">system views</a>.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>allowed_permissions</strong></a>: allowed_permissions</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#which_alias_to_use"><strong>which_alias_to_use</strong></a>: public</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#"><strong>allowed_permissions</strong></a>: allowed_permissions</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @return ApiOBPv510CreateCustomViewRequest
-*/
-func (a *ViewCustomAPIService) OBPv510CreateCustomView(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv510CreateCustomViewRequest {
-	return ApiOBPv510CreateCustomViewRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510CreateCustomView200Response
-func (a *ViewCustomAPIService) OBPv510CreateCustomViewExecute(r ApiOBPv510CreateCustomViewRequest) (*OBPv510CreateCustomView200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateCustomView200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv510CreateCustomView")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv510CreateCustomViewRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510CreateCustomViewRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv510CreateCustomViewRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510CreateUserWithAccountAccessByIdRequest struct {
-	ctx context.Context
-	ApiService *ViewCustomAPIService
-	bankid string
-	accountid string
-	viewid string
-	oBPv510CreateUserWithAccountAccessByIdRequest *OBPv510CreateUserWithAccountAccessByIdRequest
-}
-
-// Request body
-func (r ApiOBPv510CreateUserWithAccountAccessByIdRequest) OBPv510CreateUserWithAccountAccessByIdRequest(oBPv510CreateUserWithAccountAccessByIdRequest OBPv510CreateUserWithAccountAccessByIdRequest) ApiOBPv510CreateUserWithAccountAccessByIdRequest {
-	r.oBPv510CreateUserWithAccountAccessByIdRequest = &oBPv510CreateUserWithAccountAccessByIdRequest
-	return r
-}
-
-func (r ApiOBPv510CreateUserWithAccountAccessByIdRequest) Execute() (*OBPv510CreateUserWithAccountAccessById200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateUserWithAccountAccessByIdExecute(r)
-}
-
-/*
-OBPv510CreateUserWithAccountAccessById Create (DAuth) User with Account Access
+CreateUserWithAccountAccessById Create (DAuth) User with Account Access
 
 <p>This endpoint is used as part of the DAuth solution to grant access to account and transaction data to a smart contract on the blockchain.</p>
 <p>Put the smart contract address in username</p>
@@ -1767,20 +558,20 @@ OBPv510CreateUserWithAccountAccessById Create (DAuth) User with Account Access
 </code></pre>
 <h3><a href="#3-try-a-rest-call-using-the-header" id="3-try-a-rest-call-using-the-header">3) Try a REST call using the header</a></h3>
 <p>Using your favorite http client:</p>
-<p>GET <a href="https://apisandbox.openbankproject.com/obp/v3.0.0/users/current">https://apisandbox.openbankproject.com/obp/v3.0.0/users/current</a></p>
+<p>GET <a href="http://127.0.0.1:8080/obp/v3.0.0/users/current">http://127.0.0.1:8080/obp/v3.0.0/users/current</a></p>
 <p>Body</p>
 <p>Leave Empty!</p>
 <p>Headers:</p>
 <pre><code>   DAuth: your-jwt-from-step-above
 </code></pre>
 <p>Here is it all together:</p>
-<p>GET <a href="https://apisandbox.openbankproject.com/obp/v3.0.0/users/current">https://apisandbox.openbankproject.com/obp/v3.0.0/users/current</a> HTTP/1.1<br />
+<p>GET <a href="http://127.0.0.1:8080/obp/v3.0.0/users/current">http://127.0.0.1:8080/obp/v3.0.0/users/current</a> HTTP/1.1<br />
 Host: localhost:8080<br />
 User-Agent: curl/7.47.0<br />
 Accept: <em>/</em><br />
 DAuth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k</p>
 <p>CURL example</p>
-<pre><code>curl -v -H 'DAuth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k' https://apisandbox.openbankproject.com/obp/v3.0.0/users/current
+<pre><code>curl -v -H 'DAuth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k' http://127.0.0.1:8080/obp/v3.0.0/users/current
 </code></pre>
 <p>You should receive a response like:</p>
 <pre><code>{
@@ -1909,10 +700,10 @@ Each parameter MUST NOT appear more than once per request.</p>
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv510CreateUserWithAccountAccessByIdRequest
+ @return ApiCreateUserWithAccountAccessByIdRequest
 */
-func (a *ViewCustomAPIService) OBPv510CreateUserWithAccountAccessById(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv510CreateUserWithAccountAccessByIdRequest {
-	return ApiOBPv510CreateUserWithAccountAccessByIdRequest{
+func (a *ViewCustomAPIService) CreateUserWithAccountAccessById(ctx context.Context, bankid string, accountid string, viewid string) ApiCreateUserWithAccountAccessByIdRequest {
+	return ApiCreateUserWithAccountAccessByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1922,16 +713,16 @@ func (a *ViewCustomAPIService) OBPv510CreateUserWithAccountAccessById(ctx contex
 }
 
 // Execute executes the request
-//  @return OBPv510CreateUserWithAccountAccessById200Response
-func (a *ViewCustomAPIService) OBPv510CreateUserWithAccountAccessByIdExecute(r ApiOBPv510CreateUserWithAccountAccessByIdRequest) (*OBPv510CreateUserWithAccountAccessById200Response, *http.Response, error) {
+//  @return CreateUserWithAccountAccessById200Response
+func (a *ViewCustomAPIService) CreateUserWithAccountAccessByIdExecute(r ApiCreateUserWithAccountAccessByIdRequest) (*CreateUserWithAccountAccessById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateUserWithAccountAccessById200Response
+		localVarReturnValue  *CreateUserWithAccountAccessById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv510CreateUserWithAccountAccessById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.CreateUserWithAccountAccessById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1944,8 +735,8 @@ func (a *ViewCustomAPIService) OBPv510CreateUserWithAccountAccessByIdExecute(r A
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510CreateUserWithAccountAccessByIdRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510CreateUserWithAccountAccessByIdRequest is required and must be specified")
+	if r.createUserWithAccountAccessByIdRequest == nil {
+		return localVarReturnValue, nil, reportError("createUserWithAccountAccessByIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1966,7 +757,7 @@ func (a *ViewCustomAPIService) OBPv510CreateUserWithAccountAccessByIdExecute(r A
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510CreateUserWithAccountAccessByIdRequest
+	localVarPostBody = r.createUserWithAccountAccessByIdRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1991,7 +782,7 @@ func (a *ViewCustomAPIService) OBPv510CreateUserWithAccountAccessByIdExecute(r A
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2032,7 +823,263 @@ func (a *ViewCustomAPIService) OBPv510CreateUserWithAccountAccessByIdExecute(r A
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510DeleteCustomViewRequest struct {
+type ApiCreateViewForBankAccountRequest struct {
+	ctx context.Context
+	ApiService *ViewCustomAPIService
+	bankid string
+	accountid string
+	createCustomViewManagementRequest *CreateCustomViewManagementRequest
+}
+
+// Request body
+func (r ApiCreateViewForBankAccountRequest) CreateCustomViewManagementRequest(createCustomViewManagementRequest CreateCustomViewManagementRequest) ApiCreateViewForBankAccountRequest {
+	r.createCustomViewManagementRequest = &createCustomViewManagementRequest
+	return r
+}
+
+func (r ApiCreateViewForBankAccountRequest) Execute() (*CreateUserWithAccountAccessById200ResponseHead, *http.Response, error) {
+	return r.ApiService.CreateViewForBankAccountExecute(r)
+}
+
+/*
+CreateViewForBankAccount Create Custom View
+
+<p>Create a custom view on bank account</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the owner view.<br />
+The 'alias' field in the JSON can take one of three values:</p>
+<ul>
+<li><em>public</em>: to use the public alias if there is one specified for the other account.</li>
+<li><em>private</em>: to use the private alias if there is one specified for the other account.</li>
+<li>
+<p><em>''(empty string)</em>: to use no alias; the view shows the real name of the other account.</p>
+</li>
+</ul>
+<p>The 'hide_metadata_if_alias_used' field in the JSON can take boolean values. If it is set to <code>true</code> and there is an alias on the other account then the other accounts' metadata (like more_info, url, image_url, open_corporates_url, etc.) will be hidden. Otherwise the metadata will be shown.</p>
+<p>The 'allowed_actions' field is a list containing the name of the actions allowed on this view, all the actions contained will be set to <code>true</code> on the view creation, the rest will be set to <code>false</code>.</p>
+<p>The 'metadata_view' field determines where metadata (comments, tags, images, where tags) for transactions are stored and retrieved. If set to another view's ID (e.g. 'owner'), metadata added through this view will be shared with all other views that also use the same metadata_view value. If left empty, metadata is stored under this view's own ID and is not shared with other views.</p>
+<p>You MUST use a leading _ (underscore) in the view name because other view names are reserved for OBP <a href="/index#group-View-System">system views</a>.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#which_alias_to_use"><strong>which_alias_to_use</strong></a>: public</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
+<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
+<p><a href="/glossary#can_add_counterparty"><strong>can_add_counterparty</strong></a>: false</p>
+<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
+<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
+<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
+<p><a href="/glossary#can_add_transaction_request_to_any_account"><strong>can_add_transaction_request_to_any_account</strong></a>:</p>
+<p><a href="/glossary#can_add_transaction_request_to_own_account"><strong>can_add_transaction_request_to_own_account</strong></a>: false</p>
+<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
+<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
+<p><a href="/glossary#can_create_direct_debit"><strong>can_create_direct_debit</strong></a>: false</p>
+<p><a href="/glossary#can_create_standing_order"><strong>can_create_standing_order</strong></a>:</p>
+<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
+<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
+<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
+<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
+<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
+<p><a href="/glossary#can_query_available_funds"><strong>can_query_available_funds</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_credit_limit"><strong>can_see_bank_account_credit_limit</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_routing_address"><strong>can_see_bank_account_routing_address</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_routing_scheme"><strong>can_see_bank_account_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_routing_address"><strong>can_see_bank_routing_address</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_routing_scheme"><strong>can_see_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
+<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
+<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
+<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_routing_address"><strong>can_see_other_account_routing_address</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_routing_scheme"><strong>can_see_other_account_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_bank_routing_address"><strong>can_see_other_bank_routing_address</strong></a>:</p>
+<p><a href="/glossary#can_see_other_bank_routing_scheme"><strong>can_see_other_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
+<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
+<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
+<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @return ApiCreateViewForBankAccountRequest
+*/
+func (a *ViewCustomAPIService) CreateViewForBankAccount(ctx context.Context, bankid string, accountid string) ApiCreateViewForBankAccountRequest {
+	return ApiCreateViewForBankAccountRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+	}
+}
+
+// Execute executes the request
+//  @return CreateUserWithAccountAccessById200ResponseHead
+func (a *ViewCustomAPIService) CreateViewForBankAccountExecute(r ApiCreateViewForBankAccountRequest) (*CreateUserWithAccountAccessById200ResponseHead, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateUserWithAccountAccessById200ResponseHead
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.CreateViewForBankAccount")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createCustomViewManagementRequest == nil {
+		return localVarReturnValue, nil, reportError("createCustomViewManagementRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createCustomViewManagementRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiDeleteCustomViewRequest struct {
 	ctx context.Context
 	ApiService *ViewCustomAPIService
 	bankid string
@@ -2041,12 +1088,12 @@ type ApiOBPv510DeleteCustomViewRequest struct {
 	targetviewid string
 }
 
-func (r ApiOBPv510DeleteCustomViewRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510DeleteCustomViewExecute(r)
+func (r ApiDeleteCustomViewRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCustomViewExecute(r)
 }
 
 /*
-OBPv510DeleteCustomView Delete Custom View
+DeleteCustomView Delete Custom View
 
 <p>Deletes the custom view specified by VIEW_ID on the bank account specified by ACCOUNT_ID at bank BANK_ID</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -2063,10 +1110,10 @@ OBPv510DeleteCustomView Delete Custom View
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param targetviewid The TARGETVIEWID identifier
- @return ApiOBPv510DeleteCustomViewRequest
+ @return ApiDeleteCustomViewRequest
 */
-func (a *ViewCustomAPIService) OBPv510DeleteCustomView(ctx context.Context, bankid string, accountid string, viewid string, targetviewid string) ApiOBPv510DeleteCustomViewRequest {
-	return ApiOBPv510DeleteCustomViewRequest{
+func (a *ViewCustomAPIService) DeleteCustomView(ctx context.Context, bankid string, accountid string, viewid string, targetviewid string) ApiDeleteCustomViewRequest {
+	return ApiDeleteCustomViewRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2077,14 +1124,14 @@ func (a *ViewCustomAPIService) OBPv510DeleteCustomView(ctx context.Context, bank
 }
 
 // Execute executes the request
-func (a *ViewCustomAPIService) OBPv510DeleteCustomViewExecute(r ApiOBPv510DeleteCustomViewRequest) (*http.Response, error) {
+func (a *ViewCustomAPIService) DeleteCustomViewExecute(r ApiDeleteCustomViewRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv510DeleteCustomView")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.DeleteCustomView")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2140,7 +1187,7 @@ func (a *ViewCustomAPIService) OBPv510DeleteCustomViewExecute(r ApiOBPv510Delete
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2172,7 +1219,294 @@ func (a *ViewCustomAPIService) OBPv510DeleteCustomViewExecute(r ApiOBPv510Delete
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetCustomViewRequest struct {
+type ApiDeleteViewForBankAccountRequest struct {
+	ctx context.Context
+	ApiService *ViewCustomAPIService
+	bankid string
+	accountid string
+	viewid string
+}
+
+func (r ApiDeleteViewForBankAccountRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteViewForBankAccountExecute(r)
+}
+
+/*
+DeleteViewForBankAccount Delete Custom View
+
+<p>Deletes the custom view specified by VIEW_ID on the bank account specified by ACCOUNT_ID at bank BANK_ID</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @return ApiDeleteViewForBankAccountRequest
+*/
+func (a *ViewCustomAPIService) DeleteViewForBankAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiDeleteViewForBankAccountRequest {
+	return ApiDeleteViewForBankAccountRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+	}
+}
+
+// Execute executes the request
+func (a *ViewCustomAPIService) DeleteViewForBankAccountExecute(r ApiDeleteViewForBankAccountRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.DeleteViewForBankAccount")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/views/{viewid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiGetAccountsHeldRequest struct {
+	ctx context.Context
+	ApiService *ViewCustomAPIService
+	bankid string
+}
+
+func (r ApiGetAccountsHeldRequest) Execute() (*GetAccountsHeldByUserAtBank200Response, *http.Response, error) {
+	return r.ApiService.GetAccountsHeldExecute(r)
+}
+
+/*
+GetAccountsHeld Get Accounts Held
+
+<p>Get Accounts held by the current User if even the User has not been assigned the owner View yet.</p>
+<p>Can be used to onboard the account to the API - since all other account and transaction endpoints require views to be assigned.</p>
+<p>optional request parameters:</p>
+<ul>
+<li>account_type_filter: one or many accountType value, split by comma</li>
+<li>account_type_filter_operation: the filter type of account_type_filter, value must be INCLUDE or EXCLUDE</li>
+</ul>
+<p>whole url example:<br />
+/banks/BANK_ID/accounts-held?account_type_filter=330,CURRENT+PLUS&amp;account_type_filter_operation=INCLUDE</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
+<p><a href="/glossary#accounts"><strong>accounts</strong></a>:</p>
+<p><a href="/glossary#address"><strong>address</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @return ApiGetAccountsHeldRequest
+*/
+func (a *ViewCustomAPIService) GetAccountsHeld(ctx context.Context, bankid string) ApiGetAccountsHeldRequest {
+	return ApiGetAccountsHeldRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+	}
+}
+
+// Execute executes the request
+//  @return GetAccountsHeldByUserAtBank200Response
+func (a *ViewCustomAPIService) GetAccountsHeldExecute(r ApiGetAccountsHeldRequest) (*GetAccountsHeldByUserAtBank200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetAccountsHeldByUserAtBank200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.GetAccountsHeld")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.0.0/banks/{bankid}/accounts-held"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetCustomViewRequest struct {
 	ctx context.Context
 	ApiService *ViewCustomAPIService
 	bankid string
@@ -2181,12 +1515,12 @@ type ApiOBPv510GetCustomViewRequest struct {
 	targetviewid string
 }
 
-func (r ApiOBPv510GetCustomViewRequest) Execute() (*OBPv510CreateCustomView200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetCustomViewExecute(r)
+func (r ApiGetCustomViewRequest) Execute() (*CreateCustomView200Response, *http.Response, error) {
+	return r.ApiService.GetCustomViewExecute(r)
 }
 
 /*
-OBPv510GetCustomView Get Custom View
+GetCustomView Get Custom View
 
 <h1><a href="#views" id="views">Views</a></h1>
 <p>Views in Open Bank Project provide a mechanism for fine grained access control and delegation to Accounts and Transactions. Account holders use the 'owner' view by default. Delegated access is made through other views for example 'accountants', 'share-holders' or 'tagging-application'. Views can be created via the API and each view has a list of entitlements.</p>
@@ -2222,10 +1556,10 @@ Transaction metadata (like images, tags, comments, etc.) will appears <em>ONLY</
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param targetviewid The TARGETVIEWID identifier
- @return ApiOBPv510GetCustomViewRequest
+ @return ApiGetCustomViewRequest
 */
-func (a *ViewCustomAPIService) OBPv510GetCustomView(ctx context.Context, bankid string, accountid string, viewid string, targetviewid string) ApiOBPv510GetCustomViewRequest {
-	return ApiOBPv510GetCustomViewRequest{
+func (a *ViewCustomAPIService) GetCustomView(ctx context.Context, bankid string, accountid string, viewid string, targetviewid string) ApiGetCustomViewRequest {
+	return ApiGetCustomViewRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2236,16 +1570,16 @@ func (a *ViewCustomAPIService) OBPv510GetCustomView(ctx context.Context, bankid 
 }
 
 // Execute executes the request
-//  @return OBPv510CreateCustomView200Response
-func (a *ViewCustomAPIService) OBPv510GetCustomViewExecute(r ApiOBPv510GetCustomViewRequest) (*OBPv510CreateCustomView200Response, *http.Response, error) {
+//  @return CreateCustomView200Response
+func (a *ViewCustomAPIService) GetCustomViewExecute(r ApiGetCustomViewRequest) (*CreateCustomView200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateCustomView200Response
+		localVarReturnValue  *CreateCustomView200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv510GetCustomView")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.GetCustomView")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2301,7 +1635,7 @@ func (a *ViewCustomAPIService) OBPv510GetCustomViewExecute(r ApiOBPv510GetCustom
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2342,27 +1676,1617 @@ func (a *ViewCustomAPIService) OBPv510GetCustomViewExecute(r ApiOBPv510GetCustom
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GrantUserAccessToViewByIdRequest struct {
+type ApiGetCustomViewByIdRequest struct {
 	ctx context.Context
 	ApiService *ViewCustomAPIService
 	bankid string
 	accountid string
 	viewid string
-	oBPv510RevokeUserAccessToViewByIdRequest *OBPv510RevokeUserAccessToViewByIdRequest
 }
 
-// Request body
-func (r ApiOBPv510GrantUserAccessToViewByIdRequest) OBPv510RevokeUserAccessToViewByIdRequest(oBPv510RevokeUserAccessToViewByIdRequest OBPv510RevokeUserAccessToViewByIdRequest) ApiOBPv510GrantUserAccessToViewByIdRequest {
-	r.oBPv510RevokeUserAccessToViewByIdRequest = &oBPv510RevokeUserAccessToViewByIdRequest
-	return r
-}
-
-func (r ApiOBPv510GrantUserAccessToViewByIdRequest) Execute() (*OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead, *http.Response, error) {
-	return r.ApiService.OBPv510GrantUserAccessToViewByIdExecute(r)
+func (r ApiGetCustomViewByIdRequest) Execute() (*GetSystemViewById200Response, *http.Response, error) {
+	return r.ApiService.GetCustomViewByIdExecute(r)
 }
 
 /*
-OBPv510GrantUserAccessToViewById Grant User access to View
+GetCustomViewById Get Custom View
+
+<p>Get a single custom view by bank, account, and view ID.</p>
+<p>Custom views are user-created views with names starting with underscore (_), such as:<br />
+- _work<br />
+- _personal<br />
+- _audit</p>
+<p>Custom views are unique per bank_id, account_id, and view_id combination.</p>
+<p>The view is returned with an <code>allowed_actions</code> array containing all permissions for that view.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
+<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
+<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @return ApiGetCustomViewByIdRequest
+*/
+func (a *ViewCustomAPIService) GetCustomViewById(ctx context.Context, bankid string, accountid string, viewid string) ApiGetCustomViewByIdRequest {
+	return ApiGetCustomViewByIdRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+	}
+}
+
+// Execute executes the request
+//  @return GetSystemViewById200Response
+func (a *ViewCustomAPIService) GetCustomViewByIdExecute(r ApiGetCustomViewByIdRequest) (*GetSystemViewById200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetSystemViewById200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.GetCustomViewById")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views/{viewid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetCustomViewsRequest struct {
+	ctx context.Context
+	ApiService *ViewCustomAPIService
+}
+
+func (r ApiGetCustomViewsRequest) Execute() (*GetCustomViews200Response, *http.Response, error) {
+	return r.ApiService.GetCustomViewsExecute(r)
+}
+
+/*
+GetCustomViews Get Custom Views
+
+<p>Get all custom views.</p>
+<p>Custom views are user-created views with names starting with underscore (_), such as:<br />
+- _work<br />
+- _personal<br />
+- _audit</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetCustomViewsRequest
+*/
+func (a *ViewCustomAPIService) GetCustomViews(ctx context.Context) ApiGetCustomViewsRequest {
+	return ApiGetCustomViewsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetCustomViews200Response
+func (a *ViewCustomAPIService) GetCustomViewsExecute(r ApiGetCustomViewsRequest) (*GetCustomViews200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetCustomViews200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.GetCustomViews")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/management/custom-views"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetPermissionForUserForBankAccountRequest struct {
+	ctx context.Context
+	ApiService *ViewCustomAPIService
+	bankid string
+	accountid string
+	provider string
+	providerid string
+}
+
+func (r ApiGetPermissionForUserForBankAccountRequest) Execute() (*GetPermissionForUserForBankAccount200Response, *http.Response, error) {
+	return r.ApiService.GetPermissionForUserForBankAccountExecute(r)
+}
+
+/*
+GetPermissionForUserForBankAccount Get Account access for User
+
+<p>Returns the list of the views at BANK_ID for account ACCOUNT_ID that a user identified by PROVIDER_ID at their provider PROVIDER has access to.<br />
+All url parameters must be <a href="http://en.wikipedia.org/wiki/Percent-encoding">%-encoded</a>, which is often especially relevant for USER_ID and PROVIDER.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>The user needs to have access to the owner view.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#provider">PROVIDER</a>: ETHEREUM</p>
+<p><a href="/glossary#provider_id">PROVIDER_ID</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
+<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
+<p><a href="/glossary#can_add_counterparty"><strong>can_add_counterparty</strong></a>: false</p>
+<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
+<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
+<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
+<p><a href="/glossary#can_add_transaction_request_to_any_account"><strong>can_add_transaction_request_to_any_account</strong></a>:</p>
+<p><a href="/glossary#can_add_transaction_request_to_own_account"><strong>can_add_transaction_request_to_own_account</strong></a>: false</p>
+<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
+<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
+<p><a href="/glossary#can_create_direct_debit"><strong>can_create_direct_debit</strong></a>: false</p>
+<p><a href="/glossary#can_create_standing_order"><strong>can_create_standing_order</strong></a>:</p>
+<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
+<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
+<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
+<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
+<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
+<p><a href="/glossary#can_query_available_funds"><strong>can_query_available_funds</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_credit_limit"><strong>can_see_bank_account_credit_limit</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_routing_address"><strong>can_see_bank_account_routing_address</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_routing_scheme"><strong>can_see_bank_account_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_routing_address"><strong>can_see_bank_routing_address</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_routing_scheme"><strong>can_see_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
+<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
+<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
+<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_routing_address"><strong>can_see_other_account_routing_address</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_routing_scheme"><strong>can_see_other_account_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_bank_routing_address"><strong>can_see_other_bank_routing_address</strong></a>:</p>
+<p><a href="/glossary#can_see_other_bank_routing_scheme"><strong>can_see_other_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
+<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
+<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
+<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param provider The PROVIDER identifier
+ @param providerid The PROVIDERID identifier
+ @return ApiGetPermissionForUserForBankAccountRequest
+*/
+func (a *ViewCustomAPIService) GetPermissionForUserForBankAccount(ctx context.Context, bankid string, accountid string, provider string, providerid string) ApiGetPermissionForUserForBankAccountRequest {
+	return ApiGetPermissionForUserForBankAccountRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		provider: provider,
+		providerid: providerid,
+	}
+}
+
+// Execute executes the request
+//  @return GetPermissionForUserForBankAccount200Response
+func (a *ViewCustomAPIService) GetPermissionForUserForBankAccountExecute(r ApiGetPermissionForUserForBankAccountRequest) (*GetPermissionForUserForBankAccount200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetPermissionForUserForBankAccount200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.GetPermissionForUserForBankAccount")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"provider"+"}", url.PathEscape(parameterValueToString(r.provider, "provider")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"providerid"+"}", url.PathEscape(parameterValueToString(r.providerid, "providerid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetPermissionsForBankAccountRequest struct {
+	ctx context.Context
+	ApiService *ViewCustomAPIService
+	bankid string
+	accountid string
+}
+
+func (r ApiGetPermissionsForBankAccountRequest) Execute() (*GetPermissionsForBankAccount200Response, *http.Response, error) {
+	return r.ApiService.GetPermissionsForBankAccountExecute(r)
+}
+
+/*
+GetPermissionsForBankAccount Get access
+
+<p>Returns the list of the permissions at BANK_ID for account ACCOUNT_ID, with each time a pair composed of the user and the views that he has access to.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.<br />
+and the user needs to have access to the owner view.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
+<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
+<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
+<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
+<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
+<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
+<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
+<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
+<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
+<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
+<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
+<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
+<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
+<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
+<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
+<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
+<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
+<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
+<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#permissions"><strong>permissions</strong></a>:</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @return ApiGetPermissionsForBankAccountRequest
+*/
+func (a *ViewCustomAPIService) GetPermissionsForBankAccount(ctx context.Context, bankid string, accountid string) ApiGetPermissionsForBankAccountRequest {
+	return ApiGetPermissionsForBankAccountRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+	}
+}
+
+// Execute executes the request
+//  @return GetPermissionsForBankAccount200Response
+func (a *ViewCustomAPIService) GetPermissionsForBankAccountExecute(r ApiGetPermissionsForBankAccountRequest) (*GetPermissionsForBankAccount200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetPermissionsForBankAccount200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.GetPermissionsForBankAccount")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetSystemViewByIdRequest struct {
+	ctx context.Context
+	ApiService *ViewCustomAPIService
+	viewid string
+}
+
+func (r ApiGetSystemViewByIdRequest) Execute() (*GetSystemViewById200Response, *http.Response, error) {
+	return r.ApiService.GetSystemViewByIdExecute(r)
+}
+
+/*
+GetSystemViewById Get System View
+
+<p>Get a single system view by its ID.</p>
+<p>System views are predefined views that apply to all accounts, such as:<br />
+- owner<br />
+- accountant<br />
+- auditor<br />
+- standard</p>
+<p>The view is returned with an <code>allowed_actions</code> array containing all permissions for that view.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
+<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
+<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param viewid The VIEWID identifier
+ @return ApiGetSystemViewByIdRequest
+*/
+func (a *ViewCustomAPIService) GetSystemViewById(ctx context.Context, viewid string) ApiGetSystemViewByIdRequest {
+	return ApiGetSystemViewByIdRequest{
+		ApiService: a,
+		ctx: ctx,
+		viewid: viewid,
+	}
+}
+
+// Execute executes the request
+//  @return GetSystemViewById200Response
+func (a *ViewCustomAPIService) GetSystemViewByIdExecute(r ApiGetSystemViewByIdRequest) (*GetSystemViewById200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetSystemViewById200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.GetSystemViewById")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/management/system-views/{viewid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetSystemViewsRequest struct {
+	ctx context.Context
+	ApiService *ViewCustomAPIService
+}
+
+func (r ApiGetSystemViewsRequest) Execute() (*GetSystemViews200Response, *http.Response, error) {
+	return r.ApiService.GetSystemViewsExecute(r)
+}
+
+/*
+GetSystemViews Get System Views
+
+<p>Get all system views.</p>
+<p>System views are predefined views that apply to all accounts, such as:<br />
+- owner<br />
+- accountant<br />
+- auditor<br />
+- standard</p>
+<p>Each view is returned with an <code>allowed_actions</code> array containing all permissions for that view.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
+<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
+<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetSystemViewsRequest
+*/
+func (a *ViewCustomAPIService) GetSystemViews(ctx context.Context) ApiGetSystemViewsRequest {
+	return ApiGetSystemViewsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetSystemViews200Response
+func (a *ViewCustomAPIService) GetSystemViewsExecute(r ApiGetSystemViewsRequest) (*GetSystemViews200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetSystemViews200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.GetSystemViews")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/management/system-views"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetUsersWithAccountAccessRequest struct {
+	ctx context.Context
+	ApiService *ViewCustomAPIService
+	bankid string
+	accountid string
+	viewid string
+}
+
+func (r ApiGetUsersWithAccountAccessRequest) Execute() (*GetUsersWithAccountAccess200Response, *http.Response, error) {
+	return r.ApiService.GetUsersWithAccountAccessExecute(r)
+}
+
+/*
+GetUsersWithAccountAccess Get Users With Account Access
+
+<p>Get all users who have access to a specific view on a specific account, and how that access was granted.</p>
+<p>This endpoint combines both traditional AccountAccess records and ABAC (Attribute-Based Access Control)<br />
+evaluation to provide a complete picture of who can access the specified view.</p>
+<p>Each user entry includes an access_source indicating how access was granted<br />
+(either &quot;ACCOUNT_ACCESS&quot; for direct grants or &quot;ABAC&quot; for rule-based access).</p>
+<p>Authentication is Required</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>access_source</strong></a>: access_source</p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#102;&#x65;&#108;&#105;x&#x73;&#109;&#x69;&#116;&#x68;@&#x65;x&#x61;&#x6d;&#x70;l&#x65;&#x2e;&#99;&#x6f;m">f&#101;&#108;i&#x78;&#115;&#x6d;&#x69;&#116;&#x68;&#x40;&#101;&#x78;&#97;mp&#x6c;&#101;.&#99;&#x6f;&#x6d;</a></p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+<p><a href="/glossary#users"><strong>users</strong></a>: user list</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @return ApiGetUsersWithAccountAccessRequest
+*/
+func (a *ViewCustomAPIService) GetUsersWithAccountAccess(ctx context.Context, bankid string, accountid string, viewid string) ApiGetUsersWithAccountAccessRequest {
+	return ApiGetUsersWithAccountAccessRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+	}
+}
+
+// Execute executes the request
+//  @return GetUsersWithAccountAccess200Response
+func (a *ViewCustomAPIService) GetUsersWithAccountAccessExecute(r ApiGetUsersWithAccountAccessRequest) (*GetUsersWithAccountAccess200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetUsersWithAccountAccess200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.GetUsersWithAccountAccess")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/users-with-access"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetViewPermissionsRequest struct {
+	ctx context.Context
+	ApiService *ViewCustomAPIService
+}
+
+func (r ApiGetViewPermissionsRequest) Execute() (*GetViewPermissions200Response, *http.Response, error) {
+	return r.ApiService.GetViewPermissionsExecute(r)
+}
+
+/*
+GetViewPermissions Get View Permissions
+
+<p>Get a list of all available view permissions.</p>
+<p>This endpoint returns all the available permissions that can be assigned to views,<br />
+organized by category. These permissions control what actions and data can be accessed<br />
+through a view.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>The response contains all available view permission names that can be used in the<br />
+<code>allowed_actions</code> field when creating or updating custom views.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#category"><strong>category</strong></a>:</p>
+<p><a href="/glossary#"><strong>permission</strong></a>: permission</p>
+<p><a href="/glossary#permissions"><strong>permissions</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetViewPermissionsRequest
+*/
+func (a *ViewCustomAPIService) GetViewPermissions(ctx context.Context) ApiGetViewPermissionsRequest {
+	return ApiGetViewPermissionsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetViewPermissions200Response
+func (a *ViewCustomAPIService) GetViewPermissionsExecute(r ApiGetViewPermissionsRequest) (*GetViewPermissions200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetViewPermissions200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.GetViewPermissions")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/management/view-permissions"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetViewsForBankAccountRequest struct {
+	ctx context.Context
+	ApiService *ViewCustomAPIService
+	bankid string
+	accountid string
+}
+
+func (r ApiGetViewsForBankAccountRequest) Execute() (*GetViewsForBankAccount200Response, *http.Response, error) {
+	return r.ApiService.GetViewsForBankAccountExecute(r)
+}
+
+/*
+GetViewsForBankAccount Get Views for Account
+
+<h1><a href="#views" id="views">Views</a></h1>
+<p>Views in Open Bank Project provide a mechanism for fine grained access control and delegation to Accounts and Transactions. Account holders use the 'owner' view by default. Delegated access is made through other views for example 'accountants', 'share-holders' or 'tagging-application'. Views can be created via the API and each view has a list of entitlements.</p>
+<p>Views on accounts and transactions filter the underlying data to redact certain fields for certain users. For instance the balance on an account may be hidden from the public. The way to know what is possible on a view is determined in the following JSON.</p>
+<p><strong>Data:</strong> When a view moderates a set of data, some fields my contain the value <code>null</code> rather than the original value. This indicates either that the user is not allowed to see the original data or the field is empty.</p>
+<p>There is currently one exception to this rule; the 'holder' field in the JSON contains always a value which is either an alias or the real name - indicated by the 'is_alias' field.</p>
+<p><strong>Action:</strong> When a user performs an action like trying to post a comment (with POST API call), if he is not allowed, the body response will contain an error message.</p>
+<p><strong>Metadata:</strong><br />
+Transaction metadata (like images, tags, comments, etc.) will appears <em>ONLY</em> on the view where they have been created e.g. comments posted to the public view only appear on the public view.</p>
+<p>The other account metadata fields (like image_URL, more_info, etc.) are unique through all the views. Example, if a user edits the 'more_info' field in the 'team' view, then the view 'authorities' will show the new value (if it is allowed to do it).</p>
+<h1><a href="#all" id="all">All</a></h1>
+<p><em>Optional</em></p>
+<p>Returns the list of the views created for account ACCOUNT_ID at BANK_ID.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the owner view.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
+<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
+<p><a href="/glossary#can_add_counterparty"><strong>can_add_counterparty</strong></a>: false</p>
+<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
+<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
+<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
+<p><a href="/glossary#can_add_transaction_request_to_any_account"><strong>can_add_transaction_request_to_any_account</strong></a>:</p>
+<p><a href="/glossary#can_add_transaction_request_to_own_account"><strong>can_add_transaction_request_to_own_account</strong></a>: false</p>
+<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
+<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
+<p><a href="/glossary#can_create_direct_debit"><strong>can_create_direct_debit</strong></a>: false</p>
+<p><a href="/glossary#can_create_standing_order"><strong>can_create_standing_order</strong></a>:</p>
+<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
+<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
+<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
+<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
+<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
+<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
+<p><a href="/glossary#can_query_available_funds"><strong>can_query_available_funds</strong></a>: false</p>
+<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
+<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_credit_limit"><strong>can_see_bank_account_credit_limit</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_routing_address"><strong>can_see_bank_account_routing_address</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_routing_scheme"><strong>can_see_bank_account_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_routing_address"><strong>can_see_bank_routing_address</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_routing_scheme"><strong>can_see_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
+<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
+<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
+<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_routing_address"><strong>can_see_other_account_routing_address</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_routing_scheme"><strong>can_see_other_account_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_bank_routing_address"><strong>can_see_other_bank_routing_address</strong></a>:</p>
+<p><a href="/glossary#can_see_other_bank_routing_scheme"><strong>can_see_other_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
+<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
+<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
+<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @return ApiGetViewsForBankAccountRequest
+*/
+func (a *ViewCustomAPIService) GetViewsForBankAccount(ctx context.Context, bankid string, accountid string) ApiGetViewsForBankAccountRequest {
+	return ApiGetViewsForBankAccountRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+	}
+}
+
+// Execute executes the request
+//  @return GetViewsForBankAccount200Response
+func (a *ViewCustomAPIService) GetViewsForBankAccountExecute(r ApiGetViewsForBankAccountRequest) (*GetViewsForBankAccount200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetViewsForBankAccount200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.GetViewsForBankAccount")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.0.0/banks/{bankid}/accounts/{accountid}/views"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGrantUserAccessToViewByIdRequest struct {
+	ctx context.Context
+	ApiService *ViewCustomAPIService
+	bankid string
+	accountid string
+	viewid string
+	revokeUserAccessToViewByIdRequest *RevokeUserAccessToViewByIdRequest
+}
+
+// Request body
+func (r ApiGrantUserAccessToViewByIdRequest) RevokeUserAccessToViewByIdRequest(revokeUserAccessToViewByIdRequest RevokeUserAccessToViewByIdRequest) ApiGrantUserAccessToViewByIdRequest {
+	r.revokeUserAccessToViewByIdRequest = &revokeUserAccessToViewByIdRequest
+	return r
+}
+
+func (r ApiGrantUserAccessToViewByIdRequest) Execute() (*CreateUserWithAccountAccessById200ResponseHead, *http.Response, error) {
+	return r.ApiService.GrantUserAccessToViewByIdExecute(r)
+}
+
+/*
+GrantUserAccessToViewById Grant User access to View
 
 <p>Grants the User identified by USER_ID access to the view on a bank account identified by VIEW_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -2485,10 +3409,10 @@ This operation includes:<br />
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv510GrantUserAccessToViewByIdRequest
+ @return ApiGrantUserAccessToViewByIdRequest
 */
-func (a *ViewCustomAPIService) OBPv510GrantUserAccessToViewById(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv510GrantUserAccessToViewByIdRequest {
-	return ApiOBPv510GrantUserAccessToViewByIdRequest{
+func (a *ViewCustomAPIService) GrantUserAccessToViewById(ctx context.Context, bankid string, accountid string, viewid string) ApiGrantUserAccessToViewByIdRequest {
+	return ApiGrantUserAccessToViewByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2498,16 +3422,16 @@ func (a *ViewCustomAPIService) OBPv510GrantUserAccessToViewById(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead
-func (a *ViewCustomAPIService) OBPv510GrantUserAccessToViewByIdExecute(r ApiOBPv510GrantUserAccessToViewByIdRequest) (*OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead, *http.Response, error) {
+//  @return CreateUserWithAccountAccessById200ResponseHead
+func (a *ViewCustomAPIService) GrantUserAccessToViewByIdExecute(r ApiGrantUserAccessToViewByIdRequest) (*CreateUserWithAccountAccessById200ResponseHead, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead
+		localVarReturnValue  *CreateUserWithAccountAccessById200ResponseHead
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv510GrantUserAccessToViewById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.GrantUserAccessToViewById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2520,8 +3444,8 @@ func (a *ViewCustomAPIService) OBPv510GrantUserAccessToViewByIdExecute(r ApiOBPv
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510RevokeUserAccessToViewByIdRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510RevokeUserAccessToViewByIdRequest is required and must be specified")
+	if r.revokeUserAccessToViewByIdRequest == nil {
+		return localVarReturnValue, nil, reportError("revokeUserAccessToViewByIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2542,7 +3466,7 @@ func (a *ViewCustomAPIService) OBPv510GrantUserAccessToViewByIdExecute(r ApiOBPv
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510RevokeUserAccessToViewByIdRequest
+	localVarPostBody = r.revokeUserAccessToViewByIdRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2567,7 +3491,7 @@ func (a *ViewCustomAPIService) OBPv510GrantUserAccessToViewByIdExecute(r ApiOBPv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2608,27 +3532,181 @@ func (a *ViewCustomAPIService) OBPv510GrantUserAccessToViewByIdExecute(r ApiOBPv
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510RevokeUserAccessToViewByIdRequest struct {
+type ApiHasAccountAccessRequest struct {
 	ctx context.Context
 	ApiService *ViewCustomAPIService
 	bankid string
 	accountid string
 	viewid string
-	oBPv510RevokeUserAccessToViewByIdRequest *OBPv510RevokeUserAccessToViewByIdRequest
 }
 
-// Request body
-func (r ApiOBPv510RevokeUserAccessToViewByIdRequest) OBPv510RevokeUserAccessToViewByIdRequest(oBPv510RevokeUserAccessToViewByIdRequest OBPv510RevokeUserAccessToViewByIdRequest) ApiOBPv510RevokeUserAccessToViewByIdRequest {
-	r.oBPv510RevokeUserAccessToViewByIdRequest = &oBPv510RevokeUserAccessToViewByIdRequest
-	return r
-}
-
-func (r ApiOBPv510RevokeUserAccessToViewByIdRequest) Execute() (*OBPv510RevokeUserAccessToViewById200Response, *http.Response, error) {
-	return r.ApiService.OBPv510RevokeUserAccessToViewByIdExecute(r)
+func (r ApiHasAccountAccessRequest) Execute() (*HasAccountAccess200Response, *http.Response, error) {
+	return r.ApiService.HasAccountAccessExecute(r)
 }
 
 /*
-OBPv510RevokeUserAccessToViewById Revoke User access to View
+HasAccountAccess Has Account Access
+
+<p>Check whether the authenticated user has access to a specific view on a specific account.</p>
+<p>Returns a boolean <code>has_account_access</code> along with the <code>access_source</code> (currently &quot;ACCOUNT_ACCESS&quot;)<br />
+and the <code>account_access_id</code> (primary key of the AccountAccess record).</p>
+<p>If the user does not have access, <code>has_account_access</code> is false and the other fields are empty strings.</p>
+<p>Authentication is Required</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>abac_rule_id</strong></a>: abac_rule_id</p>
+<p><a href="/glossary#"><strong>access_source</strong></a>: access_source</p>
+<p><a href="/glossary#"><strong>account_access_id</strong></a>: account_access_id</p>
+<p><a href="/glossary#"><strong>has_account_access</strong></a>: has_account_access</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @return ApiHasAccountAccessRequest
+*/
+func (a *ViewCustomAPIService) HasAccountAccess(ctx context.Context, bankid string, accountid string, viewid string) ApiHasAccountAccessRequest {
+	return ApiHasAccountAccessRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+	}
+}
+
+// Execute executes the request
+//  @return HasAccountAccess200Response
+func (a *ViewCustomAPIService) HasAccountAccessExecute(r ApiHasAccountAccessRequest) (*HasAccountAccess200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *HasAccountAccess200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.HasAccountAccess")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/has-account-access"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiRevokeUserAccessToViewByIdRequest struct {
+	ctx context.Context
+	ApiService *ViewCustomAPIService
+	bankid string
+	accountid string
+	viewid string
+	revokeUserAccessToViewByIdRequest *RevokeUserAccessToViewByIdRequest
+}
+
+// Request body
+func (r ApiRevokeUserAccessToViewByIdRequest) RevokeUserAccessToViewByIdRequest(revokeUserAccessToViewByIdRequest RevokeUserAccessToViewByIdRequest) ApiRevokeUserAccessToViewByIdRequest {
+	r.revokeUserAccessToViewByIdRequest = &revokeUserAccessToViewByIdRequest
+	return r
+}
+
+func (r ApiRevokeUserAccessToViewByIdRequest) Execute() (*RevokeUserAccessToViewById200Response, *http.Response, error) {
+	return r.ApiService.RevokeUserAccessToViewByIdExecute(r)
+}
+
+/*
+RevokeUserAccessToViewById Revoke User access to View
 
 <p>Revoke the User identified by USER_ID access to the view identified.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated..</p>
@@ -2647,10 +3725,10 @@ OBPv510RevokeUserAccessToViewById Revoke User access to View
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv510RevokeUserAccessToViewByIdRequest
+ @return ApiRevokeUserAccessToViewByIdRequest
 */
-func (a *ViewCustomAPIService) OBPv510RevokeUserAccessToViewById(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv510RevokeUserAccessToViewByIdRequest {
-	return ApiOBPv510RevokeUserAccessToViewByIdRequest{
+func (a *ViewCustomAPIService) RevokeUserAccessToViewById(ctx context.Context, bankid string, accountid string, viewid string) ApiRevokeUserAccessToViewByIdRequest {
+	return ApiRevokeUserAccessToViewByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2660,16 +3738,16 @@ func (a *ViewCustomAPIService) OBPv510RevokeUserAccessToViewById(ctx context.Con
 }
 
 // Execute executes the request
-//  @return OBPv510RevokeUserAccessToViewById200Response
-func (a *ViewCustomAPIService) OBPv510RevokeUserAccessToViewByIdExecute(r ApiOBPv510RevokeUserAccessToViewByIdRequest) (*OBPv510RevokeUserAccessToViewById200Response, *http.Response, error) {
+//  @return RevokeUserAccessToViewById200Response
+func (a *ViewCustomAPIService) RevokeUserAccessToViewByIdExecute(r ApiRevokeUserAccessToViewByIdRequest) (*RevokeUserAccessToViewById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510RevokeUserAccessToViewById200Response
+		localVarReturnValue  *RevokeUserAccessToViewById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv510RevokeUserAccessToViewById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.RevokeUserAccessToViewById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2682,8 +3760,8 @@ func (a *ViewCustomAPIService) OBPv510RevokeUserAccessToViewByIdExecute(r ApiOBP
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510RevokeUserAccessToViewByIdRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510RevokeUserAccessToViewByIdRequest is required and must be specified")
+	if r.revokeUserAccessToViewByIdRequest == nil {
+		return localVarReturnValue, nil, reportError("revokeUserAccessToViewByIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2704,7 +3782,7 @@ func (a *ViewCustomAPIService) OBPv510RevokeUserAccessToViewByIdExecute(r ApiOBP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510RevokeUserAccessToViewByIdRequest
+	localVarPostBody = r.revokeUserAccessToViewByIdRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2729,7 +3807,7 @@ func (a *ViewCustomAPIService) OBPv510RevokeUserAccessToViewByIdExecute(r ApiOBP
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2770,28 +3848,28 @@ func (a *ViewCustomAPIService) OBPv510RevokeUserAccessToViewByIdExecute(r ApiOBP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510UpdateCustomViewRequest struct {
+type ApiUpdateCustomViewRequest struct {
 	ctx context.Context
 	ApiService *ViewCustomAPIService
 	bankid string
 	accountid string
 	viewid string
 	targetviewid string
-	oBPv510UpdateCustomViewRequest *OBPv510UpdateCustomViewRequest
+	updateCustomViewRequest *UpdateCustomViewRequest
 }
 
 // Request body
-func (r ApiOBPv510UpdateCustomViewRequest) OBPv510UpdateCustomViewRequest(oBPv510UpdateCustomViewRequest OBPv510UpdateCustomViewRequest) ApiOBPv510UpdateCustomViewRequest {
-	r.oBPv510UpdateCustomViewRequest = &oBPv510UpdateCustomViewRequest
+func (r ApiUpdateCustomViewRequest) UpdateCustomViewRequest(updateCustomViewRequest UpdateCustomViewRequest) ApiUpdateCustomViewRequest {
+	r.updateCustomViewRequest = &updateCustomViewRequest
 	return r
 }
 
-func (r ApiOBPv510UpdateCustomViewRequest) Execute() (*OBPv510CreateCustomView200Response, *http.Response, error) {
-	return r.ApiService.OBPv510UpdateCustomViewExecute(r)
+func (r ApiUpdateCustomViewRequest) Execute() (*CreateCustomView200Response, *http.Response, error) {
+	return r.ApiService.UpdateCustomViewExecute(r)
 }
 
 /*
-OBPv510UpdateCustomView Update Custom View
+UpdateCustomView Update Custom View
 
 <p>Update an existing custom view on a bank account</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the owner view.</p>
@@ -2818,10 +3896,10 @@ of a view is not editable (it is only set when a view is created)</p>
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param targetviewid The TARGETVIEWID identifier
- @return ApiOBPv510UpdateCustomViewRequest
+ @return ApiUpdateCustomViewRequest
 */
-func (a *ViewCustomAPIService) OBPv510UpdateCustomView(ctx context.Context, bankid string, accountid string, viewid string, targetviewid string) ApiOBPv510UpdateCustomViewRequest {
-	return ApiOBPv510UpdateCustomViewRequest{
+func (a *ViewCustomAPIService) UpdateCustomView(ctx context.Context, bankid string, accountid string, viewid string, targetviewid string) ApiUpdateCustomViewRequest {
+	return ApiUpdateCustomViewRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2832,16 +3910,16 @@ func (a *ViewCustomAPIService) OBPv510UpdateCustomView(ctx context.Context, bank
 }
 
 // Execute executes the request
-//  @return OBPv510CreateCustomView200Response
-func (a *ViewCustomAPIService) OBPv510UpdateCustomViewExecute(r ApiOBPv510UpdateCustomViewRequest) (*OBPv510CreateCustomView200Response, *http.Response, error) {
+//  @return CreateCustomView200Response
+func (a *ViewCustomAPIService) UpdateCustomViewExecute(r ApiUpdateCustomViewRequest) (*CreateCustomView200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateCustomView200Response
+		localVarReturnValue  *CreateCustomView200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv510UpdateCustomView")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.UpdateCustomView")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2855,8 +3933,8 @@ func (a *ViewCustomAPIService) OBPv510UpdateCustomViewExecute(r ApiOBPv510Update
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateCustomViewRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateCustomViewRequest is required and must be specified")
+	if r.updateCustomViewRequest == nil {
+		return localVarReturnValue, nil, reportError("updateCustomViewRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2877,7 +3955,7 @@ func (a *ViewCustomAPIService) OBPv510UpdateCustomViewExecute(r ApiOBPv510Update
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateCustomViewRequest
+	localVarPostBody = r.updateCustomViewRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2902,7 +3980,7 @@ func (a *ViewCustomAPIService) OBPv510UpdateCustomViewExecute(r ApiOBPv510Update
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2943,57 +4021,202 @@ func (a *ViewCustomAPIService) OBPv510UpdateCustomViewExecute(r ApiOBPv510Update
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600CreateCustomViewManagementRequest struct {
+type ApiUpdateSystemViewRequest struct {
+	ctx context.Context
+	ApiService *ViewCustomAPIService
+	viewid string
+	updateSystemViewRequest *UpdateSystemViewRequest
+}
+
+// Request body
+func (r ApiUpdateSystemViewRequest) UpdateSystemViewRequest(updateSystemViewRequest UpdateSystemViewRequest) ApiUpdateSystemViewRequest {
+	r.updateSystemViewRequest = &updateSystemViewRequest
+	return r
+}
+
+func (r ApiUpdateSystemViewRequest) Execute() (*GetSystemViewById200Response, *http.Response, error) {
+	return r.ApiService.UpdateSystemViewExecute(r)
+}
+
+/*
+UpdateSystemView Update System View
+
+<p>Update an existing system view.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>The JSON sent is the same as during view creation, with one difference: the 'name' field<br />
+of a view is not editable (it is only set when a view is created).</p>
+<p>The 'metadata_view' field determines where metadata (comments, tags, images, where tags) for transactions are stored and retrieved. If set to another view's ID (e.g. 'owner'), metadata added through this view will be shared with all other views that also use the same metadata_view value. If left empty, metadata is stored under this view's own ID and is not shared with other views.</p>
+<p>The response contains the updated view with an <code>allowed_actions</code> array.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
+<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
+<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param viewid The VIEWID identifier
+ @return ApiUpdateSystemViewRequest
+*/
+func (a *ViewCustomAPIService) UpdateSystemView(ctx context.Context, viewid string) ApiUpdateSystemViewRequest {
+	return ApiUpdateSystemViewRequest{
+		ApiService: a,
+		ctx: ctx,
+		viewid: viewid,
+	}
+}
+
+// Execute executes the request
+//  @return GetSystemViewById200Response
+func (a *ViewCustomAPIService) UpdateSystemViewExecute(r ApiUpdateSystemViewRequest) (*GetSystemViewById200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetSystemViewById200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.UpdateSystemView")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/system-views/{viewid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSystemViewRequest == nil {
+		return localVarReturnValue, nil, reportError("updateSystemViewRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSystemViewRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateViewForBankAccountRequest struct {
 	ctx context.Context
 	ApiService *ViewCustomAPIService
 	bankid string
 	accountid string
-	oBPv600CreateCustomViewManagementRequest *OBPv600CreateCustomViewManagementRequest
+	viewid string
+	updateViewForBankAccountRequest *UpdateViewForBankAccountRequest
 }
 
 // Request body
-func (r ApiOBPv600CreateCustomViewManagementRequest) OBPv600CreateCustomViewManagementRequest(oBPv600CreateCustomViewManagementRequest OBPv600CreateCustomViewManagementRequest) ApiOBPv600CreateCustomViewManagementRequest {
-	r.oBPv600CreateCustomViewManagementRequest = &oBPv600CreateCustomViewManagementRequest
+func (r ApiUpdateViewForBankAccountRequest) UpdateViewForBankAccountRequest(updateViewForBankAccountRequest UpdateViewForBankAccountRequest) ApiUpdateViewForBankAccountRequest {
+	r.updateViewForBankAccountRequest = &updateViewForBankAccountRequest
 	return r
 }
 
-func (r ApiOBPv600CreateCustomViewManagementRequest) Execute() (*OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead, *http.Response, error) {
-	return r.ApiService.OBPv600CreateCustomViewManagementExecute(r)
+func (r ApiUpdateViewForBankAccountRequest) Execute() (*CreateUserWithAccountAccessById200ResponseHead, *http.Response, error) {
+	return r.ApiService.UpdateViewForBankAccountExecute(r)
 }
 
 /*
-OBPv600CreateCustomViewManagement Create Custom View (Management)
+UpdateViewForBankAccount Update Custom View
 
-<p>Create a custom view on a bank account via management endpoint.</p>
-<p>This is a <strong>management endpoint</strong> that requires the <code>CanCreateCustomView</code> role (entitlement).</p>
-<p>This endpoint provides a simpler, role-based authorization model compared to the original<br />
-v3.0.0 endpoint which requires view-level permissions. Use this endpoint when you want to<br />
-grant view creation ability through direct role assignment rather than through view access.</p>
-<p>For the original endpoint that checks account-level view permissions, see:<br />
-POST /obp/v3.0.0/banks/BANK_ID/accounts/ACCOUNT_ID/views</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>The 'alias' field in the JSON can take one of three values:</p>
-<ul>
-<li><em>public</em>: to use the public alias if there is one specified for the other account.</li>
-<li><em>private</em>: to use the private alias if there is one specified for the other account.</li>
-<li>
-<p><em>''(empty string)</em>: to use no alias; the view shows the real name of the other account.</p>
-</li>
-</ul>
-<p>The 'hide_metadata_if_alias_used' field in the JSON can take boolean values. If it is set to <code>true</code> and there is an alias on the other account then the other accounts' metadata (like more_info, url, image_url, open_corporates_url, etc.) will be hidden. Otherwise the metadata will be shown.</p>
-<p>The 'allowed_actions' field is a list containing the name of the actions allowed on this view, all the actions contained will be set to <code>true</code> on the view creation, the rest will be set to <code>false</code>.</p>
-<p>You MUST use a leading _ (underscore) in the view name because other view names are reserved for OBP <a href="/index#group-View-System">system views</a>.</p>
+<p>Update an existing custom view on a bank account</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the owner view.</p>
+<p>The json sent is the same as during view creation (above), with one difference: the 'name' field<br />
+of a view is not editable (it is only set when a view is created)</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#which_alias_to_use"><strong>which_alias_to_use</strong></a>: public</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
 <p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
@@ -3083,743 +4306,11 @@ POST /obp/v3.0.0/banks/BANK_ID/accounts/ACCOUNT_ID/views</p>
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
- @return ApiOBPv600CreateCustomViewManagementRequest
-*/
-func (a *ViewCustomAPIService) OBPv600CreateCustomViewManagement(ctx context.Context, bankid string, accountid string) ApiOBPv600CreateCustomViewManagementRequest {
-	return ApiOBPv600CreateCustomViewManagementRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead
-func (a *ViewCustomAPIService) OBPv600CreateCustomViewManagementExecute(r ApiOBPv600CreateCustomViewManagementRequest) (*OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv600CreateCustomViewManagement")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv600CreateCustomViewManagementRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateCustomViewManagementRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv600CreateCustomViewManagementRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600GetCustomViewsRequest struct {
-	ctx context.Context
-	ApiService *ViewCustomAPIService
-}
-
-func (r ApiOBPv600GetCustomViewsRequest) Execute() (*OBPv600GetCustomViews200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetCustomViewsExecute(r)
-}
-
-/*
-OBPv600GetCustomViews Get Custom Views
-
-<p>Get all custom views.</p>
-<p>Custom views are user-created views with names starting with underscore (_), such as:<br />
-- _work<br />
-- _personal<br />
-- _audit</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetCustomViewsRequest
-*/
-func (a *ViewCustomAPIService) OBPv600GetCustomViews(ctx context.Context) ApiOBPv600GetCustomViewsRequest {
-	return ApiOBPv600GetCustomViewsRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600GetCustomViews200Response
-func (a *ViewCustomAPIService) OBPv600GetCustomViewsExecute(r ApiOBPv600GetCustomViewsRequest) (*OBPv600GetCustomViews200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetCustomViews200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv600GetCustomViews")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/management/custom-views"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600GetSystemViewByIdRequest struct {
-	ctx context.Context
-	ApiService *ViewCustomAPIService
-	viewid string
-}
-
-func (r ApiOBPv600GetSystemViewByIdRequest) Execute() (*OBPv600GetSystemViewById200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetSystemViewByIdExecute(r)
-}
-
-/*
-OBPv600GetSystemViewById Get System View
-
-<p>Get a single system view by its ID.</p>
-<p>System views are predefined views that apply to all accounts, such as:<br />
-- owner<br />
-- accountant<br />
-- auditor<br />
-- standard</p>
-<p>The view is returned with an <code>allowed_actions</code> array containing all permissions for that view.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
-<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
-<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param viewid The VIEWID identifier
- @return ApiOBPv600GetSystemViewByIdRequest
+ @return ApiUpdateViewForBankAccountRequest
 */
-func (a *ViewCustomAPIService) OBPv600GetSystemViewById(ctx context.Context, viewid string) ApiOBPv600GetSystemViewByIdRequest {
-	return ApiOBPv600GetSystemViewByIdRequest{
-		ApiService: a,
-		ctx: ctx,
-		viewid: viewid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600GetSystemViewById200Response
-func (a *ViewCustomAPIService) OBPv600GetSystemViewByIdExecute(r ApiOBPv600GetSystemViewByIdRequest) (*OBPv600GetSystemViewById200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetSystemViewById200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv600GetSystemViewById")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/management/system-views/{viewid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600GetSystemViewsRequest struct {
-	ctx context.Context
-	ApiService *ViewCustomAPIService
-}
-
-func (r ApiOBPv600GetSystemViewsRequest) Execute() (*OBPv600GetSystemViews200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetSystemViewsExecute(r)
-}
-
-/*
-OBPv600GetSystemViews Get System Views
-
-<p>Get all system views.</p>
-<p>System views are predefined views that apply to all accounts, such as:<br />
-- owner<br />
-- accountant<br />
-- auditor<br />
-- standard</p>
-<p>Each view is returned with an <code>allowed_actions</code> array containing all permissions for that view.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
-<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
-<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetSystemViewsRequest
-*/
-func (a *ViewCustomAPIService) OBPv600GetSystemViews(ctx context.Context) ApiOBPv600GetSystemViewsRequest {
-	return ApiOBPv600GetSystemViewsRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600GetSystemViews200Response
-func (a *ViewCustomAPIService) OBPv600GetSystemViewsExecute(r ApiOBPv600GetSystemViewsRequest) (*OBPv600GetSystemViews200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetSystemViews200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv600GetSystemViews")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/management/system-views"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600GetViewPermissionsRequest struct {
-	ctx context.Context
-	ApiService *ViewCustomAPIService
-}
-
-func (r ApiOBPv600GetViewPermissionsRequest) Execute() (*OBPv600GetViewPermissions200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetViewPermissionsExecute(r)
-}
-
-/*
-OBPv600GetViewPermissions Get View Permissions
-
-<p>Get a list of all available view permissions.</p>
-<p>This endpoint returns all the available permissions that can be assigned to views,<br />
-organized by category. These permissions control what actions and data can be accessed<br />
-through a view.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>The response contains all available view permission names that can be used in the<br />
-<code>allowed_actions</code> field when creating or updating custom views.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#category"><strong>category</strong></a>:</p>
-<p><a href="/glossary#"><strong>permission</strong></a>: permission</p>
-<p><a href="/glossary#permissions"><strong>permissions</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetViewPermissionsRequest
-*/
-func (a *ViewCustomAPIService) OBPv600GetViewPermissions(ctx context.Context) ApiOBPv600GetViewPermissionsRequest {
-	return ApiOBPv600GetViewPermissionsRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600GetViewPermissions200Response
-func (a *ViewCustomAPIService) OBPv600GetViewPermissionsExecute(r ApiOBPv600GetViewPermissionsRequest) (*OBPv600GetViewPermissions200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetViewPermissions200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv600GetViewPermissions")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/management/view-permissions"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600HasAccountAccessRequest struct {
-	ctx context.Context
-	ApiService *ViewCustomAPIService
-	bankid string
-	accountid string
-	viewid string
-}
-
-func (r ApiOBPv600HasAccountAccessRequest) Execute() (*OBPv600HasAccountAccess200Response, *http.Response, error) {
-	return r.ApiService.OBPv600HasAccountAccessExecute(r)
-}
-
-/*
-OBPv600HasAccountAccess Has Account Access
-
-<p>Check whether the authenticated user has access to a specific view on a specific account.</p>
-<p>Returns a boolean <code>has_account_access</code> along with the <code>access_source</code> (currently &quot;ACCOUNT_ACCESS&quot;)<br />
-and the <code>account_access_id</code> (primary key of the AccountAccess record).</p>
-<p>If the user does not have access, <code>has_account_access</code> is false and the other fields are empty strings.</p>
-<p>Authentication is Required</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>abac_rule_id</strong></a>: abac_rule_id</p>
-<p><a href="/glossary#"><strong>access_source</strong></a>: access_source</p>
-<p><a href="/glossary#"><strong>account_access_id</strong></a>: account_access_id</p>
-<p><a href="/glossary#"><strong>has_account_access</strong></a>: has_account_access</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @return ApiOBPv600HasAccountAccessRequest
-*/
-func (a *ViewCustomAPIService) OBPv600HasAccountAccess(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv600HasAccountAccessRequest {
-	return ApiOBPv600HasAccountAccessRequest{
+func (a *ViewCustomAPIService) UpdateViewForBankAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiUpdateViewForBankAccountRequest {
+	return ApiUpdateViewForBankAccountRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -3829,188 +4320,30 @@ func (a *ViewCustomAPIService) OBPv600HasAccountAccess(ctx context.Context, bank
 }
 
 // Execute executes the request
-//  @return OBPv600HasAccountAccess200Response
-func (a *ViewCustomAPIService) OBPv600HasAccountAccessExecute(r ApiOBPv600HasAccountAccessRequest) (*OBPv600HasAccountAccess200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600HasAccountAccess200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv600HasAccountAccess")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/has-account-access"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600UpdateSystemViewRequest struct {
-	ctx context.Context
-	ApiService *ViewCustomAPIService
-	viewid string
-	oBPv600UpdateSystemViewRequest *OBPv600UpdateSystemViewRequest
-}
-
-// Request body
-func (r ApiOBPv600UpdateSystemViewRequest) OBPv600UpdateSystemViewRequest(oBPv600UpdateSystemViewRequest OBPv600UpdateSystemViewRequest) ApiOBPv600UpdateSystemViewRequest {
-	r.oBPv600UpdateSystemViewRequest = &oBPv600UpdateSystemViewRequest
-	return r
-}
-
-func (r ApiOBPv600UpdateSystemViewRequest) Execute() (*OBPv600GetSystemViewById200Response, *http.Response, error) {
-	return r.ApiService.OBPv600UpdateSystemViewExecute(r)
-}
-
-/*
-OBPv600UpdateSystemView Update System View
-
-<p>Update an existing system view.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>The JSON sent is the same as during view creation, with one difference: the 'name' field<br />
-of a view is not editable (it is only set when a view is created).</p>
-<p>The response contains the updated view with an <code>allowed_actions</code> array.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
-<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
-<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param viewid The VIEWID identifier
- @return ApiOBPv600UpdateSystemViewRequest
-*/
-func (a *ViewCustomAPIService) OBPv600UpdateSystemView(ctx context.Context, viewid string) ApiOBPv600UpdateSystemViewRequest {
-	return ApiOBPv600UpdateSystemViewRequest{
-		ApiService: a,
-		ctx: ctx,
-		viewid: viewid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600GetSystemViewById200Response
-func (a *ViewCustomAPIService) OBPv600UpdateSystemViewExecute(r ApiOBPv600UpdateSystemViewRequest) (*OBPv600GetSystemViewById200Response, *http.Response, error) {
+//  @return CreateUserWithAccountAccessById200ResponseHead
+func (a *ViewCustomAPIService) UpdateViewForBankAccountExecute(r ApiUpdateViewForBankAccountRequest) (*CreateUserWithAccountAccessById200ResponseHead, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetSystemViewById200Response
+		localVarReturnValue  *CreateUserWithAccountAccessById200ResponseHead
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.OBPv600UpdateSystemView")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewCustomAPIService.UpdateViewForBankAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v6.0.0/system-views/{viewid}"
+	localVarPath := localBasePath + "/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600UpdateSystemViewRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600UpdateSystemViewRequest is required and must be specified")
+	if r.updateViewForBankAccountRequest == nil {
+		return localVarReturnValue, nil, reportError("updateViewForBankAccountRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -4031,7 +4364,7 @@ func (a *ViewCustomAPIService) OBPv600UpdateSystemViewExecute(r ApiOBPv600Update
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600UpdateSystemViewRequest
+	localVarPostBody = r.updateViewForBankAccountRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -4056,7 +4389,7 @@ func (a *ViewCustomAPIService) OBPv600UpdateSystemViewExecute(r ApiOBPv600Update
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

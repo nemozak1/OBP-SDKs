@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,26 +24,26 @@ import (
 // ATMAttributeAPIService ATMAttributeAPI service
 type ATMAttributeAPIService service
 
-type ApiOBPv510CreateAtmAttributeRequest struct {
+type ApiCreateAtmAttributeRequest struct {
 	ctx context.Context
 	ApiService *ATMAttributeAPIService
 	bankid string
 	atmid string
-	oBPv510UpdateAtmAttributeRequest *OBPv510UpdateAtmAttributeRequest
+	updateAtmAttributeRequest *UpdateAtmAttributeRequest
 }
 
 // Request body
-func (r ApiOBPv510CreateAtmAttributeRequest) OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest OBPv510UpdateAtmAttributeRequest) ApiOBPv510CreateAtmAttributeRequest {
-	r.oBPv510UpdateAtmAttributeRequest = &oBPv510UpdateAtmAttributeRequest
+func (r ApiCreateAtmAttributeRequest) UpdateAtmAttributeRequest(updateAtmAttributeRequest UpdateAtmAttributeRequest) ApiCreateAtmAttributeRequest {
+	r.updateAtmAttributeRequest = &updateAtmAttributeRequest
 	return r
 }
 
-func (r ApiOBPv510CreateAtmAttributeRequest) Execute() (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateAtmAttributeExecute(r)
+func (r ApiCreateAtmAttributeRequest) Execute() (*GetAtmAttribute200Response, *http.Response, error) {
+	return r.ApiService.CreateAtmAttributeExecute(r)
 }
 
 /*
-OBPv510CreateAtmAttribute Create ATM Attribute
+CreateAtmAttribute Create ATM Attribute
 
 <p>Create ATM Attribute</p>
 <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p>
@@ -69,10 +69,10 @@ OBPv510CreateAtmAttribute Create ATM Attribute
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param atmid The ATMID identifier
- @return ApiOBPv510CreateAtmAttributeRequest
+ @return ApiCreateAtmAttributeRequest
 */
-func (a *ATMAttributeAPIService) OBPv510CreateAtmAttribute(ctx context.Context, bankid string, atmid string) ApiOBPv510CreateAtmAttributeRequest {
-	return ApiOBPv510CreateAtmAttributeRequest{
+func (a *ATMAttributeAPIService) CreateAtmAttribute(ctx context.Context, bankid string, atmid string) ApiCreateAtmAttributeRequest {
+	return ApiCreateAtmAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -81,16 +81,16 @@ func (a *ATMAttributeAPIService) OBPv510CreateAtmAttribute(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return OBPv510GetAtmAttribute200Response
-func (a *ATMAttributeAPIService) OBPv510CreateAtmAttributeExecute(r ApiOBPv510CreateAtmAttributeRequest) (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
+//  @return GetAtmAttribute200Response
+func (a *ATMAttributeAPIService) CreateAtmAttributeExecute(r ApiCreateAtmAttributeRequest) (*GetAtmAttribute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAtmAttribute200Response
+		localVarReturnValue  *GetAtmAttribute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAttributeAPIService.OBPv510CreateAtmAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAttributeAPIService.CreateAtmAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -102,8 +102,8 @@ func (a *ATMAttributeAPIService) OBPv510CreateAtmAttributeExecute(r ApiOBPv510Cr
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAtmAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAtmAttributeRequest is required and must be specified")
+	if r.updateAtmAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmAttributeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -124,7 +124,7 @@ func (a *ATMAttributeAPIService) OBPv510CreateAtmAttributeExecute(r ApiOBPv510Cr
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateAtmAttributeRequest
+	localVarPostBody = r.updateAtmAttributeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -149,7 +149,7 @@ func (a *ATMAttributeAPIService) OBPv510CreateAtmAttributeExecute(r ApiOBPv510Cr
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -190,7 +190,7 @@ func (a *ATMAttributeAPIService) OBPv510CreateAtmAttributeExecute(r ApiOBPv510Cr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510DeleteAtmAttributeRequest struct {
+type ApiDeleteAtmAttributeRequest struct {
 	ctx context.Context
 	ApiService *ATMAttributeAPIService
 	bankid string
@@ -198,12 +198,12 @@ type ApiOBPv510DeleteAtmAttributeRequest struct {
 	atmattributeid string
 }
 
-func (r ApiOBPv510DeleteAtmAttributeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510DeleteAtmAttributeExecute(r)
+func (r ApiDeleteAtmAttributeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteAtmAttributeExecute(r)
 }
 
 /*
-OBPv510DeleteAtmAttribute Delete ATM Attribute
+DeleteAtmAttribute Delete ATM Attribute
 
 <p>Delete ATM Attribute</p>
 <p>Delete a Atm Attribute by its id.</p>
@@ -219,10 +219,10 @@ OBPv510DeleteAtmAttribute Delete ATM Attribute
  @param bankid The BANKID identifier
  @param atmid The ATMID identifier
  @param atmattributeid The ATMATTRIBUTEID identifier
- @return ApiOBPv510DeleteAtmAttributeRequest
+ @return ApiDeleteAtmAttributeRequest
 */
-func (a *ATMAttributeAPIService) OBPv510DeleteAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiOBPv510DeleteAtmAttributeRequest {
-	return ApiOBPv510DeleteAtmAttributeRequest{
+func (a *ATMAttributeAPIService) DeleteAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiDeleteAtmAttributeRequest {
+	return ApiDeleteAtmAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -232,14 +232,14 @@ func (a *ATMAttributeAPIService) OBPv510DeleteAtmAttribute(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *ATMAttributeAPIService) OBPv510DeleteAtmAttributeExecute(r ApiOBPv510DeleteAtmAttributeRequest) (*http.Response, error) {
+func (a *ATMAttributeAPIService) DeleteAtmAttributeExecute(r ApiDeleteAtmAttributeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAttributeAPIService.OBPv510DeleteAtmAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAttributeAPIService.DeleteAtmAttribute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -294,7 +294,7 @@ func (a *ATMAttributeAPIService) OBPv510DeleteAtmAttributeExecute(r ApiOBPv510De
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -326,7 +326,7 @@ func (a *ATMAttributeAPIService) OBPv510DeleteAtmAttributeExecute(r ApiOBPv510De
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetAtmAttributeRequest struct {
+type ApiGetAtmAttributeRequest struct {
 	ctx context.Context
 	ApiService *ATMAttributeAPIService
 	bankid string
@@ -334,12 +334,12 @@ type ApiOBPv510GetAtmAttributeRequest struct {
 	atmattributeid string
 }
 
-func (r ApiOBPv510GetAtmAttributeRequest) Execute() (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetAtmAttributeExecute(r)
+func (r ApiGetAtmAttributeRequest) Execute() (*GetAtmAttribute200Response, *http.Response, error) {
+	return r.ApiService.GetAtmAttributeExecute(r)
 }
 
 /*
-OBPv510GetAtmAttribute Get ATM Attribute By ATM_ATTRIBUTE_ID
+GetAtmAttribute Get ATM Attribute By ATM_ATTRIBUTE_ID
 
 <p>Get ATM Attribute By ATM_ATTRIBUTE_ID</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -361,10 +361,10 @@ OBPv510GetAtmAttribute Get ATM Attribute By ATM_ATTRIBUTE_ID
  @param bankid The BANKID identifier
  @param atmid The ATMID identifier
  @param atmattributeid The ATMATTRIBUTEID identifier
- @return ApiOBPv510GetAtmAttributeRequest
+ @return ApiGetAtmAttributeRequest
 */
-func (a *ATMAttributeAPIService) OBPv510GetAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiOBPv510GetAtmAttributeRequest {
-	return ApiOBPv510GetAtmAttributeRequest{
+func (a *ATMAttributeAPIService) GetAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiGetAtmAttributeRequest {
+	return ApiGetAtmAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -374,16 +374,16 @@ func (a *ATMAttributeAPIService) OBPv510GetAtmAttribute(ctx context.Context, ban
 }
 
 // Execute executes the request
-//  @return OBPv510GetAtmAttribute200Response
-func (a *ATMAttributeAPIService) OBPv510GetAtmAttributeExecute(r ApiOBPv510GetAtmAttributeRequest) (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
+//  @return GetAtmAttribute200Response
+func (a *ATMAttributeAPIService) GetAtmAttributeExecute(r ApiGetAtmAttributeRequest) (*GetAtmAttribute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAtmAttribute200Response
+		localVarReturnValue  *GetAtmAttribute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAttributeAPIService.OBPv510GetAtmAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAttributeAPIService.GetAtmAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -438,7 +438,7 @@ func (a *ATMAttributeAPIService) OBPv510GetAtmAttributeExecute(r ApiOBPv510GetAt
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -479,19 +479,19 @@ func (a *ATMAttributeAPIService) OBPv510GetAtmAttributeExecute(r ApiOBPv510GetAt
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetAtmAttributesRequest struct {
+type ApiGetAtmAttributesRequest struct {
 	ctx context.Context
 	ApiService *ATMAttributeAPIService
 	bankid string
 	atmid string
 }
 
-func (r ApiOBPv510GetAtmAttributesRequest) Execute() (*OBPv510GetAtmAttributes200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetAtmAttributesExecute(r)
+func (r ApiGetAtmAttributesRequest) Execute() (*GetAtmAttributes200Response, *http.Response, error) {
+	return r.ApiService.GetAtmAttributesExecute(r)
 }
 
 /*
-OBPv510GetAtmAttributes Get ATM Attributes
+GetAtmAttributes Get ATM Attributes
 
 <p>Get ATM Attributes</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -512,10 +512,10 @@ OBPv510GetAtmAttributes Get ATM Attributes
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param atmid The ATMID identifier
- @return ApiOBPv510GetAtmAttributesRequest
+ @return ApiGetAtmAttributesRequest
 */
-func (a *ATMAttributeAPIService) OBPv510GetAtmAttributes(ctx context.Context, bankid string, atmid string) ApiOBPv510GetAtmAttributesRequest {
-	return ApiOBPv510GetAtmAttributesRequest{
+func (a *ATMAttributeAPIService) GetAtmAttributes(ctx context.Context, bankid string, atmid string) ApiGetAtmAttributesRequest {
+	return ApiGetAtmAttributesRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -524,16 +524,16 @@ func (a *ATMAttributeAPIService) OBPv510GetAtmAttributes(ctx context.Context, ba
 }
 
 // Execute executes the request
-//  @return OBPv510GetAtmAttributes200Response
-func (a *ATMAttributeAPIService) OBPv510GetAtmAttributesExecute(r ApiOBPv510GetAtmAttributesRequest) (*OBPv510GetAtmAttributes200Response, *http.Response, error) {
+//  @return GetAtmAttributes200Response
+func (a *ATMAttributeAPIService) GetAtmAttributesExecute(r ApiGetAtmAttributesRequest) (*GetAtmAttributes200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAtmAttributes200Response
+		localVarReturnValue  *GetAtmAttributes200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAttributeAPIService.OBPv510GetAtmAttributes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAttributeAPIService.GetAtmAttributes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -587,7 +587,7 @@ func (a *ATMAttributeAPIService) OBPv510GetAtmAttributesExecute(r ApiOBPv510GetA
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -628,27 +628,27 @@ func (a *ATMAttributeAPIService) OBPv510GetAtmAttributesExecute(r ApiOBPv510GetA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510UpdateAtmAttributeRequest struct {
+type ApiUpdateAtmAttributeRequest struct {
 	ctx context.Context
 	ApiService *ATMAttributeAPIService
 	bankid string
 	atmid string
 	atmattributeid string
-	oBPv510UpdateAtmAttributeRequest *OBPv510UpdateAtmAttributeRequest
+	updateAtmAttributeRequest *UpdateAtmAttributeRequest
 }
 
 // Request body
-func (r ApiOBPv510UpdateAtmAttributeRequest) OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest OBPv510UpdateAtmAttributeRequest) ApiOBPv510UpdateAtmAttributeRequest {
-	r.oBPv510UpdateAtmAttributeRequest = &oBPv510UpdateAtmAttributeRequest
+func (r ApiUpdateAtmAttributeRequest) UpdateAtmAttributeRequest(updateAtmAttributeRequest UpdateAtmAttributeRequest) ApiUpdateAtmAttributeRequest {
+	r.updateAtmAttributeRequest = &updateAtmAttributeRequest
 	return r
 }
 
-func (r ApiOBPv510UpdateAtmAttributeRequest) Execute() (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv510UpdateAtmAttributeExecute(r)
+func (r ApiUpdateAtmAttributeRequest) Execute() (*GetAtmAttribute200Response, *http.Response, error) {
+	return r.ApiService.UpdateAtmAttributeExecute(r)
 }
 
 /*
-OBPv510UpdateAtmAttribute Update ATM Attribute
+UpdateAtmAttribute Update ATM Attribute
 
 <p>Update ATM Attribute.</p>
 <p>Update an ATM Attribute by its id.</p>
@@ -671,10 +671,10 @@ OBPv510UpdateAtmAttribute Update ATM Attribute
  @param bankid The BANKID identifier
  @param atmid The ATMID identifier
  @param atmattributeid The ATMATTRIBUTEID identifier
- @return ApiOBPv510UpdateAtmAttributeRequest
+ @return ApiUpdateAtmAttributeRequest
 */
-func (a *ATMAttributeAPIService) OBPv510UpdateAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiOBPv510UpdateAtmAttributeRequest {
-	return ApiOBPv510UpdateAtmAttributeRequest{
+func (a *ATMAttributeAPIService) UpdateAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiUpdateAtmAttributeRequest {
+	return ApiUpdateAtmAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -684,16 +684,16 @@ func (a *ATMAttributeAPIService) OBPv510UpdateAtmAttribute(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return OBPv510GetAtmAttribute200Response
-func (a *ATMAttributeAPIService) OBPv510UpdateAtmAttributeExecute(r ApiOBPv510UpdateAtmAttributeRequest) (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
+//  @return GetAtmAttribute200Response
+func (a *ATMAttributeAPIService) UpdateAtmAttributeExecute(r ApiUpdateAtmAttributeRequest) (*GetAtmAttribute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAtmAttribute200Response
+		localVarReturnValue  *GetAtmAttribute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAttributeAPIService.OBPv510UpdateAtmAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAttributeAPIService.UpdateAtmAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -706,8 +706,8 @@ func (a *ATMAttributeAPIService) OBPv510UpdateAtmAttributeExecute(r ApiOBPv510Up
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAtmAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAtmAttributeRequest is required and must be specified")
+	if r.updateAtmAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmAttributeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -728,7 +728,7 @@ func (a *ATMAttributeAPIService) OBPv510UpdateAtmAttributeExecute(r ApiOBPv510Up
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateAtmAttributeRequest
+	localVarPostBody = r.updateAtmAttributeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -753,7 +753,7 @@ func (a *ATMAttributeAPIService) OBPv510UpdateAtmAttributeExecute(r ApiOBPv510Up
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

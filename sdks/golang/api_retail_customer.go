@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,25 +24,25 @@ import (
 // RetailCustomerAPIService RetailCustomerAPI service
 type RetailCustomerAPIService service
 
-type ApiOBPv600CreateRetailCustomerRequest struct {
+type ApiCreateRetailCustomerRequest struct {
 	ctx context.Context
 	ApiService *RetailCustomerAPIService
 	bankid string
-	oBPv600CreateRetailCustomerRequest *OBPv600CreateRetailCustomerRequest
+	createRetailCustomerRequest *CreateRetailCustomerRequest
 }
 
 // Request body
-func (r ApiOBPv600CreateRetailCustomerRequest) OBPv600CreateRetailCustomerRequest(oBPv600CreateRetailCustomerRequest OBPv600CreateRetailCustomerRequest) ApiOBPv600CreateRetailCustomerRequest {
-	r.oBPv600CreateRetailCustomerRequest = &oBPv600CreateRetailCustomerRequest
+func (r ApiCreateRetailCustomerRequest) CreateRetailCustomerRequest(createRetailCustomerRequest CreateRetailCustomerRequest) ApiCreateRetailCustomerRequest {
+	r.createRetailCustomerRequest = &createRetailCustomerRequest
 	return r
 }
 
-func (r ApiOBPv600CreateRetailCustomerRequest) Execute() (*OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems, *http.Response, error) {
-	return r.ApiService.OBPv600CreateRetailCustomerExecute(r)
+func (r ApiCreateRetailCustomerRequest) Execute() (*GetCustomerChildren200ResponseCustomersInner, *http.Response, error) {
+	return r.ApiService.CreateRetailCustomerExecute(r)
 }
 
 /*
-OBPv600CreateRetailCustomer Create Retail Customer
+CreateRetailCustomer Create Retail Customer
 
 <p>Create a retail (individual) customer.</p>
 <p>This endpoint is specifically for creating individual/retail customers.<br />
@@ -81,12 +81,12 @@ date_of_birth and dob_of_dependants must be in ISO 8601 date format: <strong>YYY
 <p><a href="/glossary#">date_of_birth</a>: 2018-03-09</p>
 <p><a href="/glossary#">dependants</a>: 1</p>
 <p><a href="/glossary#dob_of_dependants">dob_of_dependants</a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#">email</a>: <a href="&#109;&#x61;i&#x6c;to&#x3a;&#x66;&#x65;&#108;&#x69;x&#x73;&#109;i&#x74;h@&#101;&#x78;&#x61;&#109;pl&#101;.&#x63;&#111;&#109;">&#102;&#101;l&#105;x&#115;&#x6d;&#105;&#116;&#x68;&#x40;e&#x78;&#x61;&#x6d;&#x70;&#108;e.&#x63;o&#x6d;</a></p>
+<p><a href="/glossary#">email</a>: <a href="&#109;&#97;i&#x6c;t&#x6f;:&#x66;&#101;&#x6c;&#105;&#120;&#115;&#x6d;&#x69;&#116;&#104;&#64;&#x65;&#120;a&#109;p&#108;&#x65;&#46;&#99;&#111;&#109;">&#102;&#x65;&#x6c;&#x69;&#x78;&#x73;&#109;&#x69;&#x74;&#x68;@&#x65;&#120;a&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;o&#x6d;</a></p>
 <p><a href="/glossary#">employment_status</a>: worker</p>
 <p><a href="/glossary#face_image">face_image</a>:</p>
 <p><a href="/glossary#">highest_education_attained</a>: Master</p>
 <p><a href="/glossary#">kyc_status</a>: false</p>
-<p><a href="/glossary#last_ok_date">last_ok_date</a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date">last_ok_date</a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#">name_suffix</a>: Sr</p>
 <p><a href="/glossary#">relationship_status</a>: single</p>
 <p><a href="/glossary#">title</a>: Dr.</p>
@@ -102,12 +102,12 @@ date_of_birth and dob_of_dependants must be in ISO 8601 date format: <strong>YYY
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;&#x69;&#108;to&#x3a;&#x66;&#x65;&#108;&#105;&#x78;&#x73;&#x6d;&#105;t&#104;&#x40;e&#x78;&#x61;&#x6d;p&#108;&#x65;.&#x63;&#x6f;m">&#102;&#x65;&#108;&#105;&#x78;&#115;&#109;&#x69;&#x74;&#x68;&#x40;&#x65;x&#97;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;a&#105;&#108;&#x74;&#111;&#x3a;&#x66;&#101;&#x6c;&#x69;&#x78;&#115;&#x6d;&#x69;&#116;&#104;@e&#x78;&#x61;&#109;&#x70;&#x6c;e&#x2e;&#99;&#x6f;&#109;">&#102;&#x65;&#108;i&#x78;&#x73;m&#105;&#x74;h&#64;&#101;&#120;a&#109;&#x70;&#x6c;&#101;.&#x63;&#111;m</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -123,10 +123,10 @@ date_of_birth and dob_of_dependants must be in ISO 8601 date format: <strong>YYY
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv600CreateRetailCustomerRequest
+ @return ApiCreateRetailCustomerRequest
 */
-func (a *RetailCustomerAPIService) OBPv600CreateRetailCustomer(ctx context.Context, bankid string) ApiOBPv600CreateRetailCustomerRequest {
-	return ApiOBPv600CreateRetailCustomerRequest{
+func (a *RetailCustomerAPIService) CreateRetailCustomer(ctx context.Context, bankid string) ApiCreateRetailCustomerRequest {
+	return ApiCreateRetailCustomerRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -134,16 +134,16 @@ func (a *RetailCustomerAPIService) OBPv600CreateRetailCustomer(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems
-func (a *RetailCustomerAPIService) OBPv600CreateRetailCustomerExecute(r ApiOBPv600CreateRetailCustomerRequest) (*OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems, *http.Response, error) {
+//  @return GetCustomerChildren200ResponseCustomersInner
+func (a *RetailCustomerAPIService) CreateRetailCustomerExecute(r ApiCreateRetailCustomerRequest) (*GetCustomerChildren200ResponseCustomersInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems
+		localVarReturnValue  *GetCustomerChildren200ResponseCustomersInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RetailCustomerAPIService.OBPv600CreateRetailCustomer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RetailCustomerAPIService.CreateRetailCustomer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -154,8 +154,8 @@ func (a *RetailCustomerAPIService) OBPv600CreateRetailCustomerExecute(r ApiOBPv6
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreateRetailCustomerRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateRetailCustomerRequest is required and must be specified")
+	if r.createRetailCustomerRequest == nil {
+		return localVarReturnValue, nil, reportError("createRetailCustomerRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -176,7 +176,7 @@ func (a *RetailCustomerAPIService) OBPv600CreateRetailCustomerExecute(r ApiOBPv6
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreateRetailCustomerRequest
+	localVarPostBody = r.createRetailCustomerRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -201,7 +201,7 @@ func (a *RetailCustomerAPIService) OBPv600CreateRetailCustomerExecute(r ApiOBPv6
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -242,19 +242,19 @@ func (a *RetailCustomerAPIService) OBPv600CreateRetailCustomerExecute(r ApiOBPv6
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetRetailCustomerByCustomerIdRequest struct {
+type ApiGetRetailCustomerByCustomerIdRequest struct {
 	ctx context.Context
 	ApiService *RetailCustomerAPIService
 	bankid string
 	customerid string
 }
 
-func (r ApiOBPv600GetRetailCustomerByCustomerIdRequest) Execute() (*OBPv600GetCustomerByCustomerNumber200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetRetailCustomerByCustomerIdExecute(r)
+func (r ApiGetRetailCustomerByCustomerIdRequest) Execute() (*GetCustomerByCustomerNumber200Response, *http.Response, error) {
+	return r.ApiService.GetRetailCustomerByCustomerIdExecute(r)
 }
 
 /*
-OBPv600GetRetailCustomerByCustomerId Get Retail Customer by CUSTOMER_ID
+GetRetailCustomerByCustomerId Get Retail Customer by CUSTOMER_ID
 
 <p>Gets the Retail Customer specified by CUSTOMER_ID.</p>
 <p>Returns 404 if the customer exists but is not of type INDIVIDUAL.<br />
@@ -280,12 +280,12 @@ date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <stron
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#102;&#x65;&#x6c;&#x69;x&#x73;&#109;&#x69;&#116;&#104;&#64;&#x65;x&#x61;&#x6d;&#112;&#108;&#101;.&#x63;&#x6f;&#109;">&#x66;&#101;l&#x69;&#120;&#x73;&#x6d;&#105;&#116;h&#x40;&#101;&#x78;&#x61;&#x6d;p&#x6c;&#101;.&#99;o&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;&#108;t&#111;&#x3a;&#102;&#101;l&#x69;&#x78;&#115;&#109;&#x69;&#116;&#104;&#64;&#101;xa&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#102;&#x65;&#x6c;&#x69;&#x78;&#x73;&#109;&#x69;&#116;&#104;&#64;&#x65;xam&#x70;&#x6c;&#x65;&#x2e;c&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
@@ -305,10 +305,10 @@ date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <stron
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param customerid The CUSTOMERID identifier
- @return ApiOBPv600GetRetailCustomerByCustomerIdRequest
+ @return ApiGetRetailCustomerByCustomerIdRequest
 */
-func (a *RetailCustomerAPIService) OBPv600GetRetailCustomerByCustomerId(ctx context.Context, bankid string, customerid string) ApiOBPv600GetRetailCustomerByCustomerIdRequest {
-	return ApiOBPv600GetRetailCustomerByCustomerIdRequest{
+func (a *RetailCustomerAPIService) GetRetailCustomerByCustomerId(ctx context.Context, bankid string, customerid string) ApiGetRetailCustomerByCustomerIdRequest {
+	return ApiGetRetailCustomerByCustomerIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -317,16 +317,16 @@ func (a *RetailCustomerAPIService) OBPv600GetRetailCustomerByCustomerId(ctx cont
 }
 
 // Execute executes the request
-//  @return OBPv600GetCustomerByCustomerNumber200Response
-func (a *RetailCustomerAPIService) OBPv600GetRetailCustomerByCustomerIdExecute(r ApiOBPv600GetRetailCustomerByCustomerIdRequest) (*OBPv600GetCustomerByCustomerNumber200Response, *http.Response, error) {
+//  @return GetCustomerByCustomerNumber200Response
+func (a *RetailCustomerAPIService) GetRetailCustomerByCustomerIdExecute(r ApiGetRetailCustomerByCustomerIdRequest) (*GetCustomerByCustomerNumber200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetCustomerByCustomerNumber200Response
+		localVarReturnValue  *GetCustomerByCustomerNumber200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RetailCustomerAPIService.OBPv600GetRetailCustomerByCustomerId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RetailCustomerAPIService.GetRetailCustomerByCustomerId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -380,7 +380,7 @@ func (a *RetailCustomerAPIService) OBPv600GetRetailCustomerByCustomerIdExecute(r
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -421,18 +421,18 @@ func (a *RetailCustomerAPIService) OBPv600GetRetailCustomerByCustomerIdExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetRetailCustomersAtOneBankRequest struct {
+type ApiGetRetailCustomersAtOneBankRequest struct {
 	ctx context.Context
 	ApiService *RetailCustomerAPIService
 	bankid string
 }
 
-func (r ApiOBPv600GetRetailCustomersAtOneBankRequest) Execute() (*OBPv600GetCustomerChildren200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetRetailCustomersAtOneBankExecute(r)
+func (r ApiGetRetailCustomersAtOneBankRequest) Execute() (*GetCustomerChildren200Response, *http.Response, error) {
+	return r.ApiService.GetRetailCustomersAtOneBankExecute(r)
 }
 
 /*
-OBPv600GetRetailCustomersAtOneBank Get Retail Customers at Bank
+GetRetailCustomersAtOneBank Get Retail Customers at Bank
 
 <p>Get Retail (Individual) Customers at Bank.</p>
 <p>Returns a list of customers with customer_type INDIVIDUAL at the specified bank.</p>
@@ -459,12 +459,12 @@ date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <stron
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#x69;l&#116;&#111;&#58;&#102;&#x65;&#108;&#105;&#x78;&#115;&#x6d;&#105;&#x74;&#x68;&#64;&#101;x&#x61;mp&#x6c;&#x65;&#46;c&#x6f;&#109;">f&#101;&#x6c;&#x69;&#120;s&#109;&#105;&#116;&#104;&#64;&#x65;&#x78;&#x61;m&#112;&#108;&#x65;&#x2e;c&#x6f;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x66;&#101;&#108;ix&#x73;&#109;&#x69;&#116;&#x68;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;m">&#x66;&#x65;l&#x69;x&#x73;&#x6d;it&#104;&#x40;e&#x78;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -480,10 +480,10 @@ date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <stron
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv600GetRetailCustomersAtOneBankRequest
+ @return ApiGetRetailCustomersAtOneBankRequest
 */
-func (a *RetailCustomerAPIService) OBPv600GetRetailCustomersAtOneBank(ctx context.Context, bankid string) ApiOBPv600GetRetailCustomersAtOneBankRequest {
-	return ApiOBPv600GetRetailCustomersAtOneBankRequest{
+func (a *RetailCustomerAPIService) GetRetailCustomersAtOneBank(ctx context.Context, bankid string) ApiGetRetailCustomersAtOneBankRequest {
+	return ApiGetRetailCustomersAtOneBankRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -491,16 +491,16 @@ func (a *RetailCustomerAPIService) OBPv600GetRetailCustomersAtOneBank(ctx contex
 }
 
 // Execute executes the request
-//  @return OBPv600GetCustomerChildren200Response
-func (a *RetailCustomerAPIService) OBPv600GetRetailCustomersAtOneBankExecute(r ApiOBPv600GetRetailCustomersAtOneBankRequest) (*OBPv600GetCustomerChildren200Response, *http.Response, error) {
+//  @return GetCustomerChildren200Response
+func (a *RetailCustomerAPIService) GetRetailCustomersAtOneBankExecute(r ApiGetRetailCustomersAtOneBankRequest) (*GetCustomerChildren200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetCustomerChildren200Response
+		localVarReturnValue  *GetCustomerChildren200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RetailCustomerAPIService.OBPv600GetRetailCustomersAtOneBank")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RetailCustomerAPIService.GetRetailCustomersAtOneBank")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -553,7 +553,7 @@ func (a *RetailCustomerAPIService) OBPv600GetRetailCustomersAtOneBankExecute(r A
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

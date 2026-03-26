@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,16 +75,16 @@ class BranchApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv300CreateBranch' => [
+        'createBranch' => [
             'application/json',
         ],
-        'oBPv300GetBranch' => [
+        'deleteBranch' => [
             'application/json',
         ],
-        'oBPv300GetBranches' => [
+        'getBranch' => [
             'application/json',
         ],
-        'oBPv310DeleteBranch' => [
+        'getBranches' => [
             'application/json',
         ],
     ];
@@ -136,40 +136,40 @@ class BranchApi
     }
 
     /**
-     * Operation oBPv300CreateBranch
+     * Operation createBranch
      *
      * Create Branch
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems $obpv300_get_branches200_response_properties_branches_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300CreateBranch'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetBranches200ResponseBranchesInner $get_branches200_response_branches_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBranch'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems
+     * @return \OpenBankProject\Model\GetBranches200ResponseBranchesInner
      */
-    public function oBPv300CreateBranch($bankid, $obpv300_get_branches200_response_properties_branches_items, string $contentType = self::contentTypes['oBPv300CreateBranch'][0])
+    public function createBranch($bankid, $get_branches200_response_branches_inner, string $contentType = self::contentTypes['createBranch'][0])
     {
-        list($response) = $this->oBPv300CreateBranchWithHttpInfo($bankid, $obpv300_get_branches200_response_properties_branches_items, $contentType);
+        list($response) = $this->createBranchWithHttpInfo($bankid, $get_branches200_response_branches_inner, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv300CreateBranchWithHttpInfo
+     * Operation createBranchWithHttpInfo
      *
      * Create Branch
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems $obpv300_get_branches200_response_properties_branches_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300CreateBranch'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetBranches200ResponseBranchesInner $get_branches200_response_branches_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBranch'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetBranches200ResponseBranchesInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv300CreateBranchWithHttpInfo($bankid, $obpv300_get_branches200_response_properties_branches_items, string $contentType = self::contentTypes['oBPv300CreateBranch'][0])
+    public function createBranchWithHttpInfo($bankid, $get_branches200_response_branches_inner, string $contentType = self::contentTypes['createBranch'][0])
     {
-        $request = $this->oBPv300CreateBranchRequest($bankid, $obpv300_get_branches200_response_properties_branches_items, $contentType);
+        $request = $this->createBranchRequest($bankid, $get_branches200_response_branches_inner, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -197,7 +197,7 @@ class BranchApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems',
+                        '\OpenBankProject\Model\GetBranches200ResponseBranchesInner',
                         $request,
                         $response,
                     );
@@ -219,7 +219,7 @@ class BranchApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems',
+                '\OpenBankProject\Model\GetBranches200ResponseBranchesInner',
                 $request,
                 $response,
             );
@@ -228,7 +228,7 @@ class BranchApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems',
+                        '\OpenBankProject\Model\GetBranches200ResponseBranchesInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -241,20 +241,20 @@ class BranchApi
     }
 
     /**
-     * Operation oBPv300CreateBranchAsync
+     * Operation createBranchAsync
      *
      * Create Branch
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems $obpv300_get_branches200_response_properties_branches_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300CreateBranch'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetBranches200ResponseBranchesInner $get_branches200_response_branches_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBranch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300CreateBranchAsync($bankid, $obpv300_get_branches200_response_properties_branches_items, string $contentType = self::contentTypes['oBPv300CreateBranch'][0])
+    public function createBranchAsync($bankid, $get_branches200_response_branches_inner, string $contentType = self::contentTypes['createBranch'][0])
     {
-        return $this->oBPv300CreateBranchAsyncWithHttpInfo($bankid, $obpv300_get_branches200_response_properties_branches_items, $contentType)
+        return $this->createBranchAsyncWithHttpInfo($bankid, $get_branches200_response_branches_inner, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -263,21 +263,21 @@ class BranchApi
     }
 
     /**
-     * Operation oBPv300CreateBranchAsyncWithHttpInfo
+     * Operation createBranchAsyncWithHttpInfo
      *
      * Create Branch
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems $obpv300_get_branches200_response_properties_branches_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300CreateBranch'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetBranches200ResponseBranchesInner $get_branches200_response_branches_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBranch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300CreateBranchAsyncWithHttpInfo($bankid, $obpv300_get_branches200_response_properties_branches_items, string $contentType = self::contentTypes['oBPv300CreateBranch'][0])
+    public function createBranchAsyncWithHttpInfo($bankid, $get_branches200_response_branches_inner, string $contentType = self::contentTypes['createBranch'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems';
-        $request = $this->oBPv300CreateBranchRequest($bankid, $obpv300_get_branches200_response_properties_branches_items, $contentType);
+        $returnType = '\OpenBankProject\Model\GetBranches200ResponseBranchesInner';
+        $request = $this->createBranchRequest($bankid, $get_branches200_response_branches_inner, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -316,29 +316,29 @@ class BranchApi
     }
 
     /**
-     * Create request for operation 'oBPv300CreateBranch'
+     * Create request for operation 'createBranch'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems $obpv300_get_branches200_response_properties_branches_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300CreateBranch'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetBranches200ResponseBranchesInner $get_branches200_response_branches_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBranch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv300CreateBranchRequest($bankid, $obpv300_get_branches200_response_properties_branches_items, string $contentType = self::contentTypes['oBPv300CreateBranch'][0])
+    public function createBranchRequest($bankid, $get_branches200_response_branches_inner, string $contentType = self::contentTypes['createBranch'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv300CreateBranch'
+                'Missing the required parameter $bankid when calling createBranch'
             );
         }
 
-        // verify the required parameter 'obpv300_get_branches200_response_properties_branches_items' is set
-        if ($obpv300_get_branches200_response_properties_branches_items === null || (is_array($obpv300_get_branches200_response_properties_branches_items) && count($obpv300_get_branches200_response_properties_branches_items) === 0)) {
+        // verify the required parameter 'get_branches200_response_branches_inner' is set
+        if ($get_branches200_response_branches_inner === null || (is_array($get_branches200_response_branches_inner) && count($get_branches200_response_branches_inner) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv300_get_branches200_response_properties_branches_items when calling oBPv300CreateBranch'
+                'Missing the required parameter $get_branches200_response_branches_inner when calling createBranch'
             );
         }
 
@@ -369,12 +369,12 @@ class BranchApi
         );
 
         // for model (json/xml)
-        if (isset($obpv300_get_branches200_response_properties_branches_items)) {
+        if (isset($get_branches200_response_branches_inner)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv300_get_branches200_response_properties_branches_items));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($get_branches200_response_branches_inner));
             } else {
-                $httpBody = $obpv300_get_branches200_response_properties_branches_items;
+                $httpBody = $get_branches200_response_branches_inner;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -410,9 +410,9 @@ class BranchApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -437,40 +437,292 @@ class BranchApi
     }
 
     /**
-     * Operation oBPv300GetBranch
+     * Operation deleteBranch
+     *
+     * Delete Branch
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $branchid The BRANCHID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBranch'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteBranch($bankid, $branchid, string $contentType = self::contentTypes['deleteBranch'][0])
+    {
+        $this->deleteBranchWithHttpInfo($bankid, $branchid, $contentType);
+    }
+
+    /**
+     * Operation deleteBranchWithHttpInfo
+     *
+     * Delete Branch
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $branchid The BRANCHID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBranch'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteBranchWithHttpInfo($bankid, $branchid, string $contentType = self::contentTypes['deleteBranch'][0])
+    {
+        $request = $this->deleteBranchRequest($bankid, $branchid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteBranchAsync
+     *
+     * Delete Branch
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $branchid The BRANCHID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBranch'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteBranchAsync($bankid, $branchid, string $contentType = self::contentTypes['deleteBranch'][0])
+    {
+        return $this->deleteBranchAsyncWithHttpInfo($bankid, $branchid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteBranchAsyncWithHttpInfo
+     *
+     * Delete Branch
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $branchid The BRANCHID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBranch'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteBranchAsyncWithHttpInfo($bankid, $branchid, string $contentType = self::contentTypes['deleteBranch'][0])
+    {
+        $returnType = '';
+        $request = $this->deleteBranchRequest($bankid, $branchid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteBranch'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $branchid The BRANCHID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBranch'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteBranchRequest($bankid, $branchid, string $contentType = self::contentTypes['deleteBranch'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling deleteBranch'
+            );
+        }
+
+        // verify the required parameter 'branchid' is set
+        if ($branchid === null || (is_array($branchid) && count($branchid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $branchid when calling deleteBranch'
+            );
+        }
+
+
+        $resourcePath = '/obp/v3.1.0/banks/{bankid}/branches/{branchid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($branchid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'branchid' . '}',
+                ObjectSerializer::toPathValue($branchid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'DELETE',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getBranch
      *
      * Get Branch
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $branchid The BRANCHID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetBranch'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBranch'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems
+     * @return \OpenBankProject\Model\GetBranches200ResponseBranchesInner
      */
-    public function oBPv300GetBranch($bankid, $branchid, string $contentType = self::contentTypes['oBPv300GetBranch'][0])
+    public function getBranch($bankid, $branchid, string $contentType = self::contentTypes['getBranch'][0])
     {
-        list($response) = $this->oBPv300GetBranchWithHttpInfo($bankid, $branchid, $contentType);
+        list($response) = $this->getBranchWithHttpInfo($bankid, $branchid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv300GetBranchWithHttpInfo
+     * Operation getBranchWithHttpInfo
      *
      * Get Branch
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $branchid The BRANCHID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetBranch'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBranch'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetBranches200ResponseBranchesInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv300GetBranchWithHttpInfo($bankid, $branchid, string $contentType = self::contentTypes['oBPv300GetBranch'][0])
+    public function getBranchWithHttpInfo($bankid, $branchid, string $contentType = self::contentTypes['getBranch'][0])
     {
-        $request = $this->oBPv300GetBranchRequest($bankid, $branchid, $contentType);
+        $request = $this->getBranchRequest($bankid, $branchid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -498,7 +750,7 @@ class BranchApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems',
+                        '\OpenBankProject\Model\GetBranches200ResponseBranchesInner',
                         $request,
                         $response,
                     );
@@ -520,7 +772,7 @@ class BranchApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems',
+                '\OpenBankProject\Model\GetBranches200ResponseBranchesInner',
                 $request,
                 $response,
             );
@@ -529,7 +781,7 @@ class BranchApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems',
+                        '\OpenBankProject\Model\GetBranches200ResponseBranchesInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -542,20 +794,20 @@ class BranchApi
     }
 
     /**
-     * Operation oBPv300GetBranchAsync
+     * Operation getBranchAsync
      *
      * Get Branch
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $branchid The BRANCHID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetBranch'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBranch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300GetBranchAsync($bankid, $branchid, string $contentType = self::contentTypes['oBPv300GetBranch'][0])
+    public function getBranchAsync($bankid, $branchid, string $contentType = self::contentTypes['getBranch'][0])
     {
-        return $this->oBPv300GetBranchAsyncWithHttpInfo($bankid, $branchid, $contentType)
+        return $this->getBranchAsyncWithHttpInfo($bankid, $branchid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -564,21 +816,21 @@ class BranchApi
     }
 
     /**
-     * Operation oBPv300GetBranchAsyncWithHttpInfo
+     * Operation getBranchAsyncWithHttpInfo
      *
      * Get Branch
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $branchid The BRANCHID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetBranch'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBranch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300GetBranchAsyncWithHttpInfo($bankid, $branchid, string $contentType = self::contentTypes['oBPv300GetBranch'][0])
+    public function getBranchAsyncWithHttpInfo($bankid, $branchid, string $contentType = self::contentTypes['getBranch'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems';
-        $request = $this->oBPv300GetBranchRequest($bankid, $branchid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetBranches200ResponseBranchesInner';
+        $request = $this->getBranchRequest($bankid, $branchid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -617,29 +869,29 @@ class BranchApi
     }
 
     /**
-     * Create request for operation 'oBPv300GetBranch'
+     * Create request for operation 'getBranch'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $branchid The BRANCHID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetBranch'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBranch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv300GetBranchRequest($bankid, $branchid, string $contentType = self::contentTypes['oBPv300GetBranch'][0])
+    public function getBranchRequest($bankid, $branchid, string $contentType = self::contentTypes['getBranch'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv300GetBranch'
+                'Missing the required parameter $bankid when calling getBranch'
             );
         }
 
         // verify the required parameter 'branchid' is set
         if ($branchid === null || (is_array($branchid) && count($branchid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $branchid when calling oBPv300GetBranch'
+                'Missing the required parameter $branchid when calling getBranch'
             );
         }
 
@@ -725,38 +977,38 @@ class BranchApi
     }
 
     /**
-     * Operation oBPv300GetBranches
+     * Operation getBranches
      *
      * Get Branches for a Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetBranches'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBranches'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv300GetBranches200Response
+     * @return \OpenBankProject\Model\GetBranches200Response
      */
-    public function oBPv300GetBranches($bankid, string $contentType = self::contentTypes['oBPv300GetBranches'][0])
+    public function getBranches($bankid, string $contentType = self::contentTypes['getBranches'][0])
     {
-        list($response) = $this->oBPv300GetBranchesWithHttpInfo($bankid, $contentType);
+        list($response) = $this->getBranchesWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv300GetBranchesWithHttpInfo
+     * Operation getBranchesWithHttpInfo
      *
      * Get Branches for a Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetBranches'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBranches'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv300GetBranches200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetBranches200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv300GetBranchesWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv300GetBranches'][0])
+    public function getBranchesWithHttpInfo($bankid, string $contentType = self::contentTypes['getBranches'][0])
     {
-        $request = $this->oBPv300GetBranchesRequest($bankid, $contentType);
+        $request = $this->getBranchesRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -784,7 +1036,7 @@ class BranchApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv300GetBranches200Response',
+                        '\OpenBankProject\Model\GetBranches200Response',
                         $request,
                         $response,
                     );
@@ -806,7 +1058,7 @@ class BranchApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv300GetBranches200Response',
+                '\OpenBankProject\Model\GetBranches200Response',
                 $request,
                 $response,
             );
@@ -815,7 +1067,7 @@ class BranchApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv300GetBranches200Response',
+                        '\OpenBankProject\Model\GetBranches200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -828,19 +1080,19 @@ class BranchApi
     }
 
     /**
-     * Operation oBPv300GetBranchesAsync
+     * Operation getBranchesAsync
      *
      * Get Branches for a Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetBranches'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBranches'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300GetBranchesAsync($bankid, string $contentType = self::contentTypes['oBPv300GetBranches'][0])
+    public function getBranchesAsync($bankid, string $contentType = self::contentTypes['getBranches'][0])
     {
-        return $this->oBPv300GetBranchesAsyncWithHttpInfo($bankid, $contentType)
+        return $this->getBranchesAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -849,20 +1101,20 @@ class BranchApi
     }
 
     /**
-     * Operation oBPv300GetBranchesAsyncWithHttpInfo
+     * Operation getBranchesAsyncWithHttpInfo
      *
      * Get Branches for a Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetBranches'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBranches'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300GetBranchesAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv300GetBranches'][0])
+    public function getBranchesAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getBranches'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv300GetBranches200Response';
-        $request = $this->oBPv300GetBranchesRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetBranches200Response';
+        $request = $this->getBranchesRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -901,21 +1153,21 @@ class BranchApi
     }
 
     /**
-     * Create request for operation 'oBPv300GetBranches'
+     * Create request for operation 'getBranches'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetBranches'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBranches'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv300GetBranchesRequest($bankid, string $contentType = self::contentTypes['oBPv300GetBranches'][0])
+    public function getBranchesRequest($bankid, string $contentType = self::contentTypes['getBranches'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv300GetBranches'
+                'Missing the required parameter $bankid when calling getBranches'
             );
         }
 
@@ -986,258 +1238,6 @@ class BranchApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv310DeleteBranch
-     *
-     * Delete Branch
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $branchid The BRANCHID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310DeleteBranch'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv310DeleteBranch($bankid, $branchid, string $contentType = self::contentTypes['oBPv310DeleteBranch'][0])
-    {
-        $this->oBPv310DeleteBranchWithHttpInfo($bankid, $branchid, $contentType);
-    }
-
-    /**
-     * Operation oBPv310DeleteBranchWithHttpInfo
-     *
-     * Delete Branch
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $branchid The BRANCHID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310DeleteBranch'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv310DeleteBranchWithHttpInfo($bankid, $branchid, string $contentType = self::contentTypes['oBPv310DeleteBranch'][0])
-    {
-        $request = $this->oBPv310DeleteBranchRequest($bankid, $branchid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv310DeleteBranchAsync
-     *
-     * Delete Branch
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $branchid The BRANCHID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310DeleteBranch'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv310DeleteBranchAsync($bankid, $branchid, string $contentType = self::contentTypes['oBPv310DeleteBranch'][0])
-    {
-        return $this->oBPv310DeleteBranchAsyncWithHttpInfo($bankid, $branchid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv310DeleteBranchAsyncWithHttpInfo
-     *
-     * Delete Branch
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $branchid The BRANCHID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310DeleteBranch'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv310DeleteBranchAsyncWithHttpInfo($bankid, $branchid, string $contentType = self::contentTypes['oBPv310DeleteBranch'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv310DeleteBranchRequest($bankid, $branchid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv310DeleteBranch'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $branchid The BRANCHID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310DeleteBranch'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv310DeleteBranchRequest($bankid, $branchid, string $contentType = self::contentTypes['oBPv310DeleteBranch'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv310DeleteBranch'
-            );
-        }
-
-        // verify the required parameter 'branchid' is set
-        if ($branchid === null || (is_array($branchid) && count($branchid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $branchid when calling oBPv310DeleteBranch'
-            );
-        }
-
-
-        $resourcePath = '/obp/v3.1.0/banks/{bankid}/branches/{branchid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($branchid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'branchid' . '}',
-                ObjectSerializer::toPathValue($branchid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

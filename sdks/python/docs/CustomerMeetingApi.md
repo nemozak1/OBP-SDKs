@@ -4,13 +4,13 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv3_1_0_create_meeting**](CustomerMeetingApi.md#o_bpv3_1_0_create_meeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
-[**o_bpv3_1_0_get_meeting**](CustomerMeetingApi.md#o_bpv3_1_0_get_meeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
-[**o_bpv3_1_0_get_meetings**](CustomerMeetingApi.md#o_bpv3_1_0_get_meetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
+[**create_meeting**](CustomerMeetingApi.md#create_meeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
+[**get_meeting**](CustomerMeetingApi.md#get_meeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
+[**get_meetings**](CustomerMeetingApi.md#get_meetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
 
 
-# **o_bpv3_1_0_create_meeting**
-> OBPv310GetMeeting200Response o_bpv3_1_0_create_meeting(bankid, obpv310_create_meeting_request)
+# **create_meeting**
+> GetMeeting200Response create_meeting(bankid, create_meeting_request)
 
 Create Meeting (video conference/call)
 
@@ -64,8 +64,8 @@ Create Meeting (video conference/call)
 
 ```python
 import obp_python
-from obp_python.models.obpv310_create_meeting_request import OBPv310CreateMeetingRequest
-from obp_python.models.obpv310_get_meeting200_response import OBPv310GetMeeting200Response
+from obp_python.models.create_meeting_request import CreateMeetingRequest
+from obp_python.models.get_meeting200_response import GetMeeting200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -99,15 +99,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.CustomerMeetingApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv310_create_meeting_request = {"type":"object","properties":{"date":{"type":"string","format":"date-time"},"invitees":{"type":"array","items":{"type":"object","properties":{"status":{"type":"string"},"contact_details":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}}},"provider_id":{"type":"string"},"purpose_id":{"type":"string"},"creator":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}} # OBPv310CreateMeetingRequest | Request body
+    create_meeting_request = {"type":"object","properties":{"date":{"type":"string","format":"date-time"},"invitees":{"type":"array","items":{"type":"object","properties":{"status":{"type":"string"},"contact_details":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}}},"provider_id":{"type":"string"},"purpose_id":{"type":"string"},"creator":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}} # CreateMeetingRequest | Request body
 
     try:
         # Create Meeting (video conference/call)
-        api_response = api_instance.o_bpv3_1_0_create_meeting(bankid, obpv310_create_meeting_request)
-        print("The response of CustomerMeetingApi->o_bpv3_1_0_create_meeting:\n")
+        api_response = api_instance.create_meeting(bankid, create_meeting_request)
+        print("The response of CustomerMeetingApi->create_meeting:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomerMeetingApi->o_bpv3_1_0_create_meeting: %s\n" % e)
+        print("Exception when calling CustomerMeetingApi->create_meeting: %s\n" % e)
 ```
 
 
@@ -118,11 +118,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv310_create_meeting_request** | [**OBPv310CreateMeetingRequest**](OBPv310CreateMeetingRequest.md)| Request body | 
+ **create_meeting_request** | [**CreateMeetingRequest**](CreateMeetingRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 ### Authorization
 
@@ -143,8 +143,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_1_0_get_meeting**
-> OBPv310GetMeeting200Response o_bpv3_1_0_get_meeting(bankid, meetingid)
+# **get_meeting**
+> GetMeeting200Response get_meeting(bankid, meetingid)
 
 Get Meeting
 
@@ -187,7 +187,7 @@ Meetings contain meta data about, and are used to facilitate, video conferences 
 
 ```python
 import obp_python
-from obp_python.models.obpv310_get_meeting200_response import OBPv310GetMeeting200Response
+from obp_python.models.get_meeting200_response import GetMeeting200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -225,11 +225,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Meeting
-        api_response = api_instance.o_bpv3_1_0_get_meeting(bankid, meetingid)
-        print("The response of CustomerMeetingApi->o_bpv3_1_0_get_meeting:\n")
+        api_response = api_instance.get_meeting(bankid, meetingid)
+        print("The response of CustomerMeetingApi->get_meeting:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomerMeetingApi->o_bpv3_1_0_get_meeting: %s\n" % e)
+        print("Exception when calling CustomerMeetingApi->get_meeting: %s\n" % e)
 ```
 
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 ### Authorization
 
@@ -265,8 +265,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_1_0_get_meetings**
-> OBPv310GetMeetings200Response o_bpv3_1_0_get_meetings(bankid)
+# **get_meetings**
+> GetMeetings200Response get_meetings(bankid)
 
 Get Meetings
 
@@ -308,7 +308,7 @@ Get Meetings
 
 ```python
 import obp_python
-from obp_python.models.obpv310_get_meetings200_response import OBPv310GetMeetings200Response
+from obp_python.models.get_meetings200_response import GetMeetings200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -345,11 +345,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Meetings
-        api_response = api_instance.o_bpv3_1_0_get_meetings(bankid)
-        print("The response of CustomerMeetingApi->o_bpv3_1_0_get_meetings:\n")
+        api_response = api_instance.get_meetings(bankid)
+        print("The response of CustomerMeetingApi->get_meetings:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomerMeetingApi->o_bpv3_1_0_get_meetings: %s\n" % e)
+        print("Exception when calling CustomerMeetingApi->get_meetings: %s\n" % e)
 ```
 
 
@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetMeetings200Response**](OBPv310GetMeetings200Response.md)
+[**GetMeetings200Response**](GetMeetings200Response.md)
 
 ### Authorization
 

@@ -1,19 +1,19 @@
 # \AccountApplicationAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv310CreateAccountApplication**](AccountApplicationAPI.md#OBPv310CreateAccountApplication) | **Post** /obp/v3.1.0/banks/{bankid}/account-applications | Create Account Application
-[**OBPv310GetAccountApplication**](AccountApplicationAPI.md#OBPv310GetAccountApplication) | **Get** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Get Account Application by Id
-[**OBPv310GetAccountApplications**](AccountApplicationAPI.md#OBPv310GetAccountApplications) | **Get** /obp/v3.1.0/banks/{bankid}/account-applications | Get Account Applications
-[**OBPv310UpdateAccountApplicationStatus**](AccountApplicationAPI.md#OBPv310UpdateAccountApplicationStatus) | **Put** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Update Account Application Status
+[**CreateAccountApplication**](AccountApplicationAPI.md#CreateAccountApplication) | **Post** /obp/v3.1.0/banks/{bankid}/account-applications | Create Account Application
+[**GetAccountApplication**](AccountApplicationAPI.md#GetAccountApplication) | **Get** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Get Account Application by Id
+[**GetAccountApplications**](AccountApplicationAPI.md#GetAccountApplications) | **Get** /obp/v3.1.0/banks/{bankid}/account-applications | Get Account Applications
+[**UpdateAccountApplicationStatus**](AccountApplicationAPI.md#UpdateAccountApplicationStatus) | **Put** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Update Account Application Status
 
 
 
-## OBPv310CreateAccountApplication
+## CreateAccountApplication
 
-> OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems OBPv310CreateAccountApplication(ctx, bankid).OBPv310CreateAccountApplicationRequest(oBPv310CreateAccountApplicationRequest).Execute()
+> GetAccountApplications200ResponseAccountApplicationsInner CreateAccountApplication(ctx, bankid).CreateAccountApplicationRequest(createAccountApplicationRequest).Execute()
 
 Create Account Application
 
@@ -33,17 +33,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv310CreateAccountApplicationRequest := *openapiclient.NewOBPv310CreateAccountApplicationRequest("Type_example", *openapiclient.NewOBPv310CreateAccountApplicationRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv310CreateAccountApplicationRequest | Request body
+	createAccountApplicationRequest := *openapiclient.NewCreateAccountApplicationRequest() // CreateAccountApplicationRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountApplicationAPI.OBPv310CreateAccountApplication(context.Background(), bankid).OBPv310CreateAccountApplicationRequest(oBPv310CreateAccountApplicationRequest).Execute()
+	resp, r, err := apiClient.AccountApplicationAPI.CreateAccountApplication(context.Background(), bankid).CreateAccountApplicationRequest(createAccountApplicationRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountApplicationAPI.OBPv310CreateAccountApplication``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountApplicationAPI.CreateAccountApplication``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310CreateAccountApplication`: OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems
-	fmt.Fprintf(os.Stdout, "Response from `AccountApplicationAPI.OBPv310CreateAccountApplication`: %v\n", resp)
+	// response from `CreateAccountApplication`: GetAccountApplications200ResponseAccountApplicationsInner
+	fmt.Fprintf(os.Stdout, "Response from `AccountApplicationAPI.CreateAccountApplication`: %v\n", resp)
 }
 ```
 
@@ -57,17 +57,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310CreateAccountApplicationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateAccountApplicationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv310CreateAccountApplicationRequest** | [**OBPv310CreateAccountApplicationRequest**](OBPv310CreateAccountApplicationRequest.md) | Request body | 
+ **createAccountApplicationRequest** | [**CreateAccountApplicationRequest**](CreateAccountApplicationRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems**](OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems.md)
+[**GetAccountApplications200ResponseAccountApplicationsInner**](GetAccountApplications200ResponseAccountApplicationsInner.md)
 
 ### Authorization
 
@@ -83,9 +83,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv310GetAccountApplication
+## GetAccountApplication
 
-> OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems OBPv310GetAccountApplication(ctx, bankid, accountapplicationid).Execute()
+> GetAccountApplications200ResponseAccountApplicationsInner GetAccountApplication(ctx, bankid, accountapplicationid).Execute()
 
 Get Account Application by Id
 
@@ -109,13 +109,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountApplicationAPI.OBPv310GetAccountApplication(context.Background(), bankid, accountapplicationid).Execute()
+	resp, r, err := apiClient.AccountApplicationAPI.GetAccountApplication(context.Background(), bankid, accountapplicationid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountApplicationAPI.OBPv310GetAccountApplication``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountApplicationAPI.GetAccountApplication``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310GetAccountApplication`: OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems
-	fmt.Fprintf(os.Stdout, "Response from `AccountApplicationAPI.OBPv310GetAccountApplication`: %v\n", resp)
+	// response from `GetAccountApplication`: GetAccountApplications200ResponseAccountApplicationsInner
+	fmt.Fprintf(os.Stdout, "Response from `AccountApplicationAPI.GetAccountApplication`: %v\n", resp)
 }
 ```
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310GetAccountApplicationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAccountApplicationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems**](OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems.md)
+[**GetAccountApplications200ResponseAccountApplicationsInner**](GetAccountApplications200ResponseAccountApplicationsInner.md)
 
 ### Authorization
 
@@ -156,9 +156,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv310GetAccountApplications
+## GetAccountApplications
 
-> OBPv310GetAccountApplications200Response OBPv310GetAccountApplications(ctx, bankid).Execute()
+> GetAccountApplications200Response GetAccountApplications(ctx, bankid).Execute()
 
 Get Account Applications
 
@@ -181,13 +181,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountApplicationAPI.OBPv310GetAccountApplications(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.AccountApplicationAPI.GetAccountApplications(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountApplicationAPI.OBPv310GetAccountApplications``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountApplicationAPI.GetAccountApplications``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310GetAccountApplications`: OBPv310GetAccountApplications200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountApplicationAPI.OBPv310GetAccountApplications`: %v\n", resp)
+	// response from `GetAccountApplications`: GetAccountApplications200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountApplicationAPI.GetAccountApplications`: %v\n", resp)
 }
 ```
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310GetAccountApplicationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAccountApplicationsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetAccountApplications200Response**](OBPv310GetAccountApplications200Response.md)
+[**GetAccountApplications200Response**](GetAccountApplications200Response.md)
 
 ### Authorization
 
@@ -226,9 +226,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv310UpdateAccountApplicationStatus
+## UpdateAccountApplicationStatus
 
-> OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems OBPv310UpdateAccountApplicationStatus(ctx, bankid, accountapplicationid).OBPv510UpdateTransactionRequestStatusRequest(oBPv510UpdateTransactionRequestStatusRequest).Execute()
+> GetAccountApplications200ResponseAccountApplicationsInner UpdateAccountApplicationStatus(ctx, bankid, accountapplicationid).UpdateTransactionRequestStatusRequest(updateTransactionRequestStatusRequest).Execute()
 
 Update Account Application Status
 
@@ -249,17 +249,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountapplicationid := "accountapplicationid_example" // string | The ACCOUNTAPPLICATIONID identifier
-	oBPv510UpdateTransactionRequestStatusRequest := *openapiclient.NewOBPv510UpdateTransactionRequestStatusRequest("Type_example", *openapiclient.NewOBPv510UpdateTransactionRequestStatusRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateTransactionRequestStatusRequest | Request body
+	updateTransactionRequestStatusRequest := *openapiclient.NewUpdateTransactionRequestStatusRequest() // UpdateTransactionRequestStatusRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountApplicationAPI.OBPv310UpdateAccountApplicationStatus(context.Background(), bankid, accountapplicationid).OBPv510UpdateTransactionRequestStatusRequest(oBPv510UpdateTransactionRequestStatusRequest).Execute()
+	resp, r, err := apiClient.AccountApplicationAPI.UpdateAccountApplicationStatus(context.Background(), bankid, accountapplicationid).UpdateTransactionRequestStatusRequest(updateTransactionRequestStatusRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountApplicationAPI.OBPv310UpdateAccountApplicationStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountApplicationAPI.UpdateAccountApplicationStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310UpdateAccountApplicationStatus`: OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems
-	fmt.Fprintf(os.Stdout, "Response from `AccountApplicationAPI.OBPv310UpdateAccountApplicationStatus`: %v\n", resp)
+	// response from `UpdateAccountApplicationStatus`: GetAccountApplications200ResponseAccountApplicationsInner
+	fmt.Fprintf(os.Stdout, "Response from `AccountApplicationAPI.UpdateAccountApplicationStatus`: %v\n", resp)
 }
 ```
 
@@ -274,18 +274,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310UpdateAccountApplicationStatusRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateAccountApplicationStatusRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv510UpdateTransactionRequestStatusRequest** | [**OBPv510UpdateTransactionRequestStatusRequest**](OBPv510UpdateTransactionRequestStatusRequest.md) | Request body | 
+ **updateTransactionRequestStatusRequest** | [**UpdateTransactionRequestStatusRequest**](UpdateTransactionRequestStatusRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems**](OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems.md)
+[**GetAccountApplications200ResponseAccountApplicationsInner**](GetAccountApplications200ResponseAccountApplicationsInner.md)
 
 ### Authorization
 

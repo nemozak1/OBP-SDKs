@@ -3,7 +3,7 @@
 The Open Bank Project API v6.0.0 provides standardized banking APIs.
 
 This specification was automatically generated from the OBP API codebase.
-Generated on: 2026-03-22T07:16:47.250257
+Generated on: 2026-03-25T12:23:21.276369
 
 For more information, visit: https://github.com/OpenBankProject/OBP-API
 
@@ -63,9 +63,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ABACApi(
@@ -74,2946 +74,2074 @@ $apiInstance = new OpenBankProject\Api\ABACApi(
     new GuzzleHttp\Client(),
     $config
 );
-$obpv600_update_abac_rule_request = {type=object, properties={rule_name={type=string}, is_active={type=boolean}, description={type=string}, rule_code={type=string}, policy={type=string}}}; // \OpenBankProject\Model\OBPv600UpdateAbacRuleRequest | Request body
+$update_abac_rule_request = {type=object, properties={rule_name={type=string}, is_active={type=boolean}, description={type=string}, rule_code={type=string}, policy={type=string}}}; // \OpenBankProject\Model\UpdateAbacRuleRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600CreateAbacRule($obpv600_update_abac_rule_request);
+    $result = $apiInstance->createAbacRule($update_abac_rule_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ABACApi->oBPv600CreateAbacRule: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ABACApi->createAbacRule: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
 
 ## API Endpoints
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ABACApi* | [**oBPv600CreateAbacRule**](docs/Api/ABACApi.md#obpv600createabacrule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule
-*ABACApi* | [**oBPv600DeleteAbacRule**](docs/Api/ABACApi.md#obpv600deleteabacrule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule
-*ABACApi* | [**oBPv600ExecuteAbacPolicy**](docs/Api/ABACApi.md#obpv600executeabacpolicy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy
-*ABACApi* | [**oBPv600ExecuteAbacRule**](docs/Api/ABACApi.md#obpv600executeabacrule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule
-*ABACApi* | [**oBPv600GetAbacPolicies**](docs/Api/ABACApi.md#obpv600getabacpolicies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies
-*ABACApi* | [**oBPv600GetAbacRule**](docs/Api/ABACApi.md#obpv600getabacrule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule
-*ABACApi* | [**oBPv600GetAbacRuleSchema**](docs/Api/ABACApi.md#obpv600getabacruleschema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema
-*ABACApi* | [**oBPv600GetAbacRules**](docs/Api/ABACApi.md#obpv600getabacrules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules
-*ABACApi* | [**oBPv600GetAbacRulesByPolicy**](docs/Api/ABACApi.md#obpv600getabacrulesbypolicy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy
-*ABACApi* | [**oBPv600UpdateAbacRule**](docs/Api/ABACApi.md#obpv600updateabacrule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule
-*ABACApi* | [**oBPv600ValidateAbacRule**](docs/Api/ABACApi.md#obpv600validateabacrule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule
-*AIAgentApi* | [**oBPv600DeleteSignalChannel**](docs/Api/AIAgentApi.md#obpv600deletesignalchannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
-*AIAgentApi* | [**oBPv600GetSignalChannelInfo**](docs/Api/AIAgentApi.md#obpv600getsignalchannelinfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
-*AIAgentApi* | [**oBPv600GetSignalChannels**](docs/Api/AIAgentApi.md#obpv600getsignalchannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
-*AIAgentApi* | [**oBPv600GetSignalMessages**](docs/Api/AIAgentApi.md#obpv600getsignalmessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
-*AIAgentApi* | [**oBPv600GetSignalStats**](docs/Api/AIAgentApi.md#obpv600getsignalstats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
-*AIAgentApi* | [**oBPv600PublishSignalMessage**](docs/Api/AIAgentApi.md#obpv600publishsignalmessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
-*APIApi* | [**oBPv140GetBankLevelDynamicResourceDocsObp**](docs/Api/APIApi.md#obpv140getbankleveldynamicresourcedocsobp) | **GET** /obp/v1.4.0/banks/{bankid}/resource-docs/{apiversion}/obp | Get Bank Level Dynamic Resource Docs
-*APIApi* | [**oBPv140GetResourceDocsObp**](docs/Api/APIApi.md#obpv140getresourcedocsobp) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/obp | Get Resource Docs
-*APIApi* | [**oBPv140GetResourceDocsOpenAPI31**](docs/Api/APIApi.md#obpv140getresourcedocsopenapi31) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/openapi | Get OpenAPI 3.1 documentation
-*APIApi* | [**oBPv140GetResourceDocsSwagger**](docs/Api/APIApi.md#obpv140getresourcedocsswagger) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/swagger | Get Swagger documentation
-*APIApi* | [**oBPv200ElasticSearchMetrics**](docs/Api/APIApi.md#obpv200elasticsearchmetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
-*APIApi* | [**oBPv220GetConnectorMetrics**](docs/Api/APIApi.md#obpv220getconnectormetrics) | **GET** /obp/v2.2.0/management/connector/metrics | Get Connector Metrics
-*APIApi* | [**oBPv220GetMessageDocs**](docs/Api/APIApi.md#obpv220getmessagedocs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
-*APIApi* | [**oBPv300GetAdapterInfoForBank**](docs/Api/APIApi.md#obpv300getadapterinfoforbank) | **GET** /obp/v3.0.0/banks/{bankid}/adapter | Get Adapter Info for a bank
-*APIApi* | [**oBPv310Config**](docs/Api/APIApi.md#obpv310config) | **GET** /obp/v3.1.0/config | Get API Configuration
-*APIApi* | [**oBPv310CreateMethodRouting**](docs/Api/APIApi.md#obpv310createmethodrouting) | **POST** /obp/v3.1.0/management/method_routings | Create MethodRouting
-*APIApi* | [**oBPv310DeleteMethodRouting**](docs/Api/APIApi.md#obpv310deletemethodrouting) | **DELETE** /obp/v3.1.0/management/method_routings/{methodroutingid} | Delete MethodRouting
-*APIApi* | [**oBPv310GetMessageDocsSwagger**](docs/Api/APIApi.md#obpv310getmessagedocsswagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
-*APIApi* | [**oBPv310GetMethodRoutings**](docs/Api/APIApi.md#obpv310getmethodroutings) | **GET** /obp/v3.1.0/management/method_routings | Get MethodRoutings
-*APIApi* | [**oBPv310GetOAuth2ServerJWKsURIs**](docs/Api/APIApi.md#obpv310getoauth2serverjwksuris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
-*APIApi* | [**oBPv310GetObpConnectorLoopback**](docs/Api/APIApi.md#obpv310getobpconnectorloopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
-*APIApi* | [**oBPv310GetRateLimitingInfo**](docs/Api/APIApi.md#obpv310getratelimitinginfo) | **GET** /obp/v3.1.0/rate-limiting | Get Rate Limiting Info
-*APIApi* | [**oBPv310GetServerJWK**](docs/Api/APIApi.md#obpv310getserverjwk) | **GET** /obp/v3.1.0/certs | Get JSON Web Key (JWK)
-*APIApi* | [**oBPv310UpdateMethodRouting**](docs/Api/APIApi.md#obpv310updatemethodrouting) | **PUT** /obp/v3.1.0/management/method_routings/{methodroutingid} | Update MethodRouting
-*APIApi* | [**oBPv400CreateBankLevelDynamicEndpoint**](docs/Api/APIApi.md#obpv400createbankleveldynamicendpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint
-*APIApi* | [**oBPv400CreateBankLevelEndpointTag**](docs/Api/APIApi.md#obpv400createbanklevelendpointtag) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags | Create Bank Level Endpoint Tag
-*APIApi* | [**oBPv400CreateDynamicEndpoint**](docs/Api/APIApi.md#obpv400createdynamicendpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint
-*APIApi* | [**oBPv400CreateSystemLevelEndpointTag**](docs/Api/APIApi.md#obpv400createsystemlevelendpointtag) | **POST** /obp/v4.0.0/management/endpoints/{operationid}/tags | Create System Level Endpoint Tag
-*APIApi* | [**oBPv400DeleteBankLevelDynamicEndpoint**](docs/Api/APIApi.md#obpv400deletebankleveldynamicendpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} | Delete Bank Level Dynamic Endpoint
-*APIApi* | [**oBPv400DeleteBankLevelDynamicEntity**](docs/Api/APIApi.md#obpv400deletebankleveldynamicentity) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Delete Bank Level Dynamic Entity
-*APIApi* | [**oBPv400DeleteBankLevelEndpointTag**](docs/Api/APIApi.md#obpv400deletebanklevelendpointtag) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags/{endpointtagid} | Delete Bank Level Endpoint Tag
-*APIApi* | [**oBPv400DeleteDynamicEndpoint**](docs/Api/APIApi.md#obpv400deletedynamicendpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Delete Dynamic Endpoint
-*APIApi* | [**oBPv400DeleteMyDynamicEndpoint**](docs/Api/APIApi.md#obpv400deletemydynamicendpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint
-*APIApi* | [**oBPv400DeleteMyDynamicEntity**](docs/Api/APIApi.md#obpv400deletemydynamicentity) | **DELETE** /obp/v4.0.0/my/dynamic-entities/{dynamicentityid} | Delete My Dynamic Entity
-*APIApi* | [**oBPv400DeleteSystemDynamicEntity**](docs/Api/APIApi.md#obpv400deletesystemdynamicentity) | **DELETE** /obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid} | Delete System Level Dynamic Entity
-*APIApi* | [**oBPv400DeleteSystemLevelEndpointTag**](docs/Api/APIApi.md#obpv400deletesystemlevelendpointtag) | **DELETE** /obp/v4.0.0/management/endpoints/{operationid}/tags/{endpointtagid} | Delete System Level Endpoint Tag
-*APIApi* | [**oBPv400GetBankLevelDynamicEndpoint**](docs/Api/APIApi.md#obpv400getbankleveldynamicendpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} | Get Bank Level Dynamic Endpoint
-*APIApi* | [**oBPv400GetBankLevelDynamicEndpoints**](docs/Api/APIApi.md#obpv400getbankleveldynamicendpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints
-*APIApi* | [**oBPv400GetBankLevelEndpointTags**](docs/Api/APIApi.md#obpv400getbanklevelendpointtags) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags | Get Bank Level Endpoint Tags
-*APIApi* | [**oBPv400GetCallContext**](docs/Api/APIApi.md#obpv400getcallcontext) | **GET** /obp/v4.0.0/development/call_context | Get the Call Context of a current call
-*APIApi* | [**oBPv400GetDynamicEndpoint**](docs/Api/APIApi.md#obpv400getdynamicendpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint
-*APIApi* | [**oBPv400GetDynamicEndpoints**](docs/Api/APIApi.md#obpv400getdynamicendpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints | Get Dynamic Endpoints
-*APIApi* | [**oBPv400GetMapperDatabaseInfo**](docs/Api/APIApi.md#obpv400getmapperdatabaseinfo) | **GET** /obp/v4.0.0/database/info | Get Mapper Database Info
-*APIApi* | [**oBPv400GetMyDynamicEndpoints**](docs/Api/APIApi.md#obpv400getmydynamicendpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints
-*APIApi* | [**oBPv400GetSystemLevelEndpointTags**](docs/Api/APIApi.md#obpv400getsystemlevelendpointtags) | **GET** /obp/v4.0.0/management/endpoints/{operationid}/tags | Get System Level Endpoint Tags
-*APIApi* | [**oBPv400UpdateBankLevelDynamicEndpointHost**](docs/Api/APIApi.md#obpv400updatebankleveldynamicendpointhost) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host | Update Bank Level Dynamic Endpoint Host
-*APIApi* | [**oBPv400UpdateBankLevelEndpointTag**](docs/Api/APIApi.md#obpv400updatebanklevelendpointtag) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags/{endpointtagid} | Update Bank Level Endpoint Tag
-*APIApi* | [**oBPv400UpdateDynamicEndpointHost**](docs/Api/APIApi.md#obpv400updatedynamicendpointhost) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host | Update Dynamic Endpoint Host
-*APIApi* | [**oBPv400UpdateSystemLevelEndpointTag**](docs/Api/APIApi.md#obpv400updatesystemlevelendpointtag) | **PUT** /obp/v4.0.0/management/endpoints/{operationid}/tags/{endpointtagid} | Update System Level Endpoint Tag
-*APIApi* | [**oBPv400VerifyRequestSignResponse**](docs/Api/APIApi.md#obpv400verifyrequestsignresponse) | **GET** /obp/v4.0.0/development/echo/jws-verified-request-jws-signed-response | Verify Request and Sign Response of a current call
-*APIApi* | [**oBPv500GetAdapterInfo**](docs/Api/APIApi.md#obpv500getadapterinfo) | **GET** /obp/v5.0.0/adapter | Get Adapter Info
-*APIApi* | [**oBPv500GetMetricsAtBank**](docs/Api/APIApi.md#obpv500getmetricsatbank) | **GET** /obp/v5.0.0/management/metrics/banks/{bankid} | Get Metrics at Bank
-*APIApi* | [**oBPv510CreateRegulatedEntity**](docs/Api/APIApi.md#obpv510createregulatedentity) | **POST** /obp/v5.1.0/regulated-entities | Create Regulated Entity
-*APIApi* | [**oBPv510CreateRegulatedEntityAttribute**](docs/Api/APIApi.md#obpv510createregulatedentityattribute) | **POST** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
-*APIApi* | [**oBPv510DeleteRegulatedEntity**](docs/Api/APIApi.md#obpv510deleteregulatedentity) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
-*APIApi* | [**oBPv510DeleteRegulatedEntityAttribute**](docs/Api/APIApi.md#obpv510deleteregulatedentityattribute) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
-*APIApi* | [**oBPv510GetAllRegulatedEntityAttributes**](docs/Api/APIApi.md#obpv510getallregulatedentityattributes) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
-*APIApi* | [**oBPv510GetApiTags**](docs/Api/APIApi.md#obpv510getapitags) | **GET** /obp/v5.1.0/tags | Get API Tags
-*APIApi* | [**oBPv510GetOAuth2ServerWellKnown**](docs/Api/APIApi.md#obpv510getoauth2serverwellknown) | **GET** /obp/v5.1.0/well-known | Get Well Known URIs
-*APIApi* | [**oBPv510GetRegulatedEntityAttributeById**](docs/Api/APIApi.md#obpv510getregulatedentityattributebyid) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
-*APIApi* | [**oBPv510GetRegulatedEntityById**](docs/Api/APIApi.md#obpv510getregulatedentitybyid) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
-*APIApi* | [**oBPv510LogCacheAllEndpoint**](docs/Api/APIApi.md#obpv510logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
-*APIApi* | [**oBPv510LogCacheDebugEndpoint**](docs/Api/APIApi.md#obpv510logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
-*APIApi* | [**oBPv510LogCacheErrorEndpoint**](docs/Api/APIApi.md#obpv510logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
-*APIApi* | [**oBPv510LogCacheInfoEndpoint**](docs/Api/APIApi.md#obpv510logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
-*APIApi* | [**oBPv510LogCacheTraceEndpoint**](docs/Api/APIApi.md#obpv510logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
-*APIApi* | [**oBPv510LogCacheWarningEndpoint**](docs/Api/APIApi.md#obpv510logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
-*APIApi* | [**oBPv510RegulatedEntities**](docs/Api/APIApi.md#obpv510regulatedentities) | **GET** /obp/v5.1.0/regulated-entities | Get Regulated Entities
-*APIApi* | [**oBPv510SuggestedSessionTimeout**](docs/Api/APIApi.md#obpv510suggestedsessiontimeout) | **GET** /obp/v5.1.0/ui/suggested-session-timeout | Get Suggested Session Timeout
-*APIApi* | [**oBPv510UpdateRegulatedEntityAttribute**](docs/Api/APIApi.md#obpv510updateregulatedentityattribute) | **PUT** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
-*APIApi* | [**oBPv510WaitingForGodot**](docs/Api/APIApi.md#obpv510waitingforgodot) | **GET** /obp/v5.1.0/waiting-for-godot | Waiting For Godot
-*APIApi* | [**oBPv600BackupBankLevelDynamicEntity**](docs/Api/APIApi.md#obpv600backupbankleveldynamicentity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup | Backup Bank Level Dynamic Entity
-*APIApi* | [**oBPv600BackupSystemDynamicEntity**](docs/Api/APIApi.md#obpv600backupsystemdynamicentity) | **POST** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup | Backup System Level Dynamic Entity
-*APIApi* | [**oBPv600CleanupOrphanedDynamicEntityRecords**](docs/Api/APIApi.md#obpv600cleanuporphaneddynamicentityrecords) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
-*APIApi* | [**oBPv600CreateApiProduct**](docs/Api/APIApi.md#obpv600createapiproduct) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product
-*APIApi* | [**oBPv600CreateApiProductAttribute**](docs/Api/APIApi.md#obpv600createapiproductattribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
-*APIApi* | [**oBPv600CreateBankLevelDynamicEntity**](docs/Api/APIApi.md#obpv600createbankleveldynamicentity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Create Bank Level Dynamic Entity
-*APIApi* | [**oBPv600CreateFeaturedApiCollection**](docs/Api/APIApi.md#obpv600createfeaturedapicollection) | **POST** /obp/v6.0.0/management/api-collections/featured | Create Featured Api Collection
-*APIApi* | [**oBPv600CreateOrUpdateApiProduct**](docs/Api/APIApi.md#obpv600createorupdateapiproduct) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product
-*APIApi* | [**oBPv600CreateSystemDynamicEntity**](docs/Api/APIApi.md#obpv600createsystemdynamicentity) | **POST** /obp/v6.0.0/management/system-dynamic-entities | Create System Level Dynamic Entity
-*APIApi* | [**oBPv600DeleteApiProduct**](docs/Api/APIApi.md#obpv600deleteapiproduct) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product
-*APIApi* | [**oBPv600DeleteApiProductAttribute**](docs/Api/APIApi.md#obpv600deleteapiproductattribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
-*APIApi* | [**oBPv600DeleteFeaturedApiCollection**](docs/Api/APIApi.md#obpv600deletefeaturedapicollection) | **DELETE** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Delete Featured Api Collection
-*APIApi* | [**oBPv600DeleteSystemDynamicEntityCascade**](docs/Api/APIApi.md#obpv600deletesystemdynamicentitycascade) | **DELETE** /obp/v6.0.0/management/system-dynamic-entities/cascade/{dynamicentityid} | Delete System Level Dynamic Entity Cascade
-*APIApi* | [**oBPv600GetApiProduct**](docs/Api/APIApi.md#obpv600getapiproduct) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product
-*APIApi* | [**oBPv600GetApiProductAttribute**](docs/Api/APIApi.md#obpv600getapiproductattribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
-*APIApi* | [**oBPv600GetApiProducts**](docs/Api/APIApi.md#obpv600getapiproducts) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products
-*APIApi* | [**oBPv600GetAvailablePersonalDynamicEntities**](docs/Api/APIApi.md#obpv600getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
-*APIApi* | [**oBPv600GetBankLevelDynamicEntities**](docs/Api/APIApi.md#obpv600getbankleveldynamicentities) | **GET** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Get Bank Level Dynamic Entities
-*APIApi* | [**oBPv600GetCacheConfig**](docs/Api/APIApi.md#obpv600getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
-*APIApi* | [**oBPv600GetCacheInfo**](docs/Api/APIApi.md#obpv600getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
-*APIApi* | [**oBPv600GetCacheNamespaces**](docs/Api/APIApi.md#obpv600getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
-*APIApi* | [**oBPv600GetConfigProps**](docs/Api/APIApi.md#obpv600getconfigprops) | **GET** /obp/v6.0.0/management/config-props | Get Config Props
-*APIApi* | [**oBPv600GetConnectorCallCounts**](docs/Api/APIApi.md#obpv600getconnectorcallcounts) | **GET** /obp/v6.0.0/management/connector/metrics/counts | Get Connector Call Counts
-*APIApi* | [**oBPv600GetConnectorMethodNames**](docs/Api/APIApi.md#obpv600getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
-*APIApi* | [**oBPv600GetConnectorTraces**](docs/Api/APIApi.md#obpv600getconnectortraces) | **GET** /obp/v6.0.0/management/connector/traces | Get Connector Traces
-*APIApi* | [**oBPv600GetConnectors**](docs/Api/APIApi.md#obpv600getconnectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
-*APIApi* | [**oBPv600GetCurrentConsumer**](docs/Api/APIApi.md#obpv600getcurrentconsumer) | **GET** /obp/v6.0.0/consumers/current | Get Current Consumer
-*APIApi* | [**oBPv600GetDatabasePoolInfo**](docs/Api/APIApi.md#obpv600getdatabasepoolinfo) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information
-*APIApi* | [**oBPv600GetDynamicEntityDiagnostics**](docs/Api/APIApi.md#obpv600getdynamicentitydiagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
-*APIApi* | [**oBPv600GetFeaturedApiCollectionsAdmin**](docs/Api/APIApi.md#obpv600getfeaturedapicollectionsadmin) | **GET** /obp/v6.0.0/management/api-collections/featured | Get Featured Api Collections (Admin)
-*APIApi* | [**oBPv600GetMessageDocsJsonSchema**](docs/Api/APIApi.md#obpv600getmessagedocsjsonschema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
-*APIApi* | [**oBPv600GetMetrics**](docs/Api/APIApi.md#obpv600getmetrics) | **GET** /obp/v6.0.0/management/metrics | Get Metrics
-*APIApi* | [**oBPv600GetMigrations**](docs/Api/APIApi.md#obpv600getmigrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations
-*APIApi* | [**oBPv600GetMyDynamicEntities**](docs/Api/APIApi.md#obpv600getmydynamicentities) | **GET** /obp/v6.0.0/my/dynamic-entities | Get My Dynamic Entities
-*APIApi* | [**oBPv600GetPopularApis**](docs/Api/APIApi.md#obpv600getpopularapis) | **GET** /obp/v6.0.0/api/popular-endpoints | Get Popular Endpoints
-*APIApi* | [**oBPv600GetReferenceTypes**](docs/Api/APIApi.md#obpv600getreferencetypes) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
-*APIApi* | [**oBPv600GetScannedApiVersions**](docs/Api/APIApi.md#obpv600getscannedapiversions) | **GET** /obp/v6.0.0/api/versions | Get Scanned API Versions
-*APIApi* | [**oBPv600GetStoredProcedureConnectorHealth**](docs/Api/APIApi.md#obpv600getstoredprocedureconnectorhealth) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
-*APIApi* | [**oBPv600GetSystemDynamicEntities**](docs/Api/APIApi.md#obpv600getsystemdynamicentities) | **GET** /obp/v6.0.0/management/system-dynamic-entities | Get System Dynamic Entities
-*APIApi* | [**oBPv600GetTopAPIs**](docs/Api/APIApi.md#obpv600gettopapis) | **GET** /obp/v6.0.0/management/metrics/top-apis | Get Top APIs
-*APIApi* | [**oBPv600InvalidateCacheNamespace**](docs/Api/APIApi.md#obpv600invalidatecachenamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
-*APIApi* | [**oBPv600Root**](docs/Api/APIApi.md#obpv600root) | **GET** /obp/v6.0.0/root | Get API Info (root)
-*APIApi* | [**oBPv600UpdateApiProductAttribute**](docs/Api/APIApi.md#obpv600updateapiproductattribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
-*APIApi* | [**oBPv600UpdateBankLevelDynamicEntity**](docs/Api/APIApi.md#obpv600updatebankleveldynamicentity) | **PUT** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Update Bank Level Dynamic Entity
-*APIApi* | [**oBPv600UpdateFeaturedApiCollection**](docs/Api/APIApi.md#obpv600updatefeaturedapicollection) | **PUT** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Update Featured Api Collection
-*APIApi* | [**oBPv600UpdateMyDynamicEntity**](docs/Api/APIApi.md#obpv600updatemydynamicentity) | **PUT** /obp/v6.0.0/my/dynamic-entities/{dynamicentityid} | Update My Dynamic Entity
-*APIApi* | [**oBPv600UpdateSystemDynamicEntity**](docs/Api/APIApi.md#obpv600updatesystemdynamicentity) | **PUT** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid} | Update System Level Dynamic Entity
-*ATMApi* | [**oBPv400UpdateAtmAccessibilityFeatures**](docs/Api/ATMApi.md#obpv400updateatmaccessibilityfeatures) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/accessibility-features | Update ATM Accessibility Features
-*ATMApi* | [**oBPv400UpdateAtmLocationCategories**](docs/Api/ATMApi.md#obpv400updateatmlocationcategories) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/location-categories | Update ATM Location Categories
-*ATMApi* | [**oBPv400UpdateAtmNotes**](docs/Api/ATMApi.md#obpv400updateatmnotes) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/notes | Update ATM Notes
-*ATMApi* | [**oBPv400UpdateAtmServices**](docs/Api/ATMApi.md#obpv400updateatmservices) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/services | Update ATM Services
-*ATMApi* | [**oBPv400UpdateAtmSupportedCurrencies**](docs/Api/ATMApi.md#obpv400updateatmsupportedcurrencies) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-currencies | Update ATM Supported Currencies
-*ATMApi* | [**oBPv400UpdateAtmSupportedLanguages**](docs/Api/ATMApi.md#obpv400updateatmsupportedlanguages) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-languages | Update ATM Supported Languages
-*ATMApi* | [**oBPv500HeadAtms**](docs/Api/ATMApi.md#obpv500headatms) | **HEAD** /obp/v5.0.0/banks/{bankid}/atms | Head Bank ATMS
-*ATMApi* | [**oBPv510CreateAtm**](docs/Api/ATMApi.md#obpv510createatm) | **POST** /obp/v5.1.0/banks/{bankid}/atms | Create ATM
-*ATMApi* | [**oBPv510CreateAtmAttribute**](docs/Api/ATMApi.md#obpv510createatmattribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
-*ATMApi* | [**oBPv510DeleteAtm**](docs/Api/ATMApi.md#obpv510deleteatm) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | Delete ATM
-*ATMApi* | [**oBPv510DeleteAtmAttribute**](docs/Api/ATMApi.md#obpv510deleteatmattribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
-*ATMApi* | [**oBPv510GetAtm**](docs/Api/ATMApi.md#obpv510getatm) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | Get Bank ATM
-*ATMApi* | [**oBPv510GetAtmAttribute**](docs/Api/ATMApi.md#obpv510getatmattribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
-*ATMApi* | [**oBPv510GetAtmAttributes**](docs/Api/ATMApi.md#obpv510getatmattributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
-*ATMApi* | [**oBPv510GetAtms**](docs/Api/ATMApi.md#obpv510getatms) | **GET** /obp/v5.1.0/banks/{bankid}/atms | Get Bank ATMS
-*ATMApi* | [**oBPv510UpdateAtm**](docs/Api/ATMApi.md#obpv510updateatm) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | UPDATE ATM
-*ATMApi* | [**oBPv510UpdateAtmAttribute**](docs/Api/ATMApi.md#obpv510updateatmattribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
-*ATMAttributeApi* | [**oBPv510CreateAtmAttribute**](docs/Api/ATMAttributeApi.md#obpv510createatmattribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
-*ATMAttributeApi* | [**oBPv510DeleteAtmAttribute**](docs/Api/ATMAttributeApi.md#obpv510deleteatmattribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
-*ATMAttributeApi* | [**oBPv510GetAtmAttribute**](docs/Api/ATMAttributeApi.md#obpv510getatmattribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
-*ATMAttributeApi* | [**oBPv510GetAtmAttributes**](docs/Api/ATMAttributeApi.md#obpv510getatmattributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
-*ATMAttributeApi* | [**oBPv510UpdateAtmAttribute**](docs/Api/ATMAttributeApi.md#obpv510updateatmattribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
-*AccountApi* | [**oBPv121DeleteViewForBankAccount**](docs/Api/AccountApi.md#obpv121deleteviewforbankaccount) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/views/{viewid} | Delete Custom View
-*AccountApi* | [**oBPv200GetPermissionsForBankAccount**](docs/Api/AccountApi.md#obpv200getpermissionsforbankaccount) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
-*AccountApi* | [**oBPv200PublicAccountsAllBanks**](docs/Api/AccountApi.md#obpv200publicaccountsallbanks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks
-*AccountApi* | [**oBPv200PublicAccountsAtOneBank**](docs/Api/AccountApi.md#obpv200publicaccountsatonebank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank
-*AccountApi* | [**oBPv300CorePrivateAccountsAllBanks**](docs/Api/AccountApi.md#obpv300coreprivateaccountsallbanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
-*AccountApi* | [**oBPv300CreateViewForBankAccount**](docs/Api/AccountApi.md#obpv300createviewforbankaccount) | **POST** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views | Create Custom View
-*AccountApi* | [**oBPv300GetAccountsHeld**](docs/Api/AccountApi.md#obpv300getaccountsheld) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
-*AccountApi* | [**oBPv300GetCoreTransactionsForBankAccount**](docs/Api/AccountApi.md#obpv300getcoretransactionsforbankaccount) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
-*AccountApi* | [**oBPv300GetOtherAccountByIdForBankAccount**](docs/Api/AccountApi.md#obpv300getotheraccountbyidforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid} | Get Other Account by Id
-*AccountApi* | [**oBPv300GetOtherAccountsForBankAccount**](docs/Api/AccountApi.md#obpv300getotheraccountsforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts | Get Other Accounts of one Account
-*AccountApi* | [**oBPv300GetPermissionForUserForBankAccount**](docs/Api/AccountApi.md#obpv300getpermissionforuserforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid} | Get Account access for User
-*AccountApi* | [**oBPv300GetPrivateAccountIdsbyBankId**](docs/Api/AccountApi.md#obpv300getprivateaccountidsbybankid) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/account_ids/private | Get Accounts at Bank (IDs only)
-*AccountApi* | [**oBPv300GetPublicAccountById**](docs/Api/AccountApi.md#obpv300getpublicaccountbyid) | **GET** /obp/v3.0.0/banks/{bankid}/public/accounts/{accountid}/{viewid}/account | Get Public Account by Id
-*AccountApi* | [**oBPv300PrivateAccountsAtOneBank**](docs/Api/AccountApi.md#obpv300privateaccountsatonebank) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/private | Get Accounts at Bank (Minimal)
-*AccountApi* | [**oBPv300UpdateViewForBankAccount**](docs/Api/AccountApi.md#obpv300updateviewforbankaccount) | **PUT** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Update Custom View
-*AccountApi* | [**oBPv310CheckFundsAvailable**](docs/Api/AccountApi.md#obpv310checkfundsavailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
-*AccountApi* | [**oBPv310CreateAccountApplication**](docs/Api/AccountApi.md#obpv310createaccountapplication) | **POST** /obp/v3.1.0/banks/{bankid}/account-applications | Create Account Application
-*AccountApi* | [**oBPv310CreateAccountAttribute**](docs/Api/AccountApi.md#obpv310createaccountattribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute
-*AccountApi* | [**oBPv310GetAccountApplication**](docs/Api/AccountApi.md#obpv310getaccountapplication) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Get Account Application by Id
-*AccountApi* | [**oBPv310GetAccountApplications**](docs/Api/AccountApi.md#obpv310getaccountapplications) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications | Get Account Applications
-*AccountApi* | [**oBPv310GetCheckbookOrders**](docs/Api/AccountApi.md#obpv310getcheckbookorders) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/checkbook/orders | Get Checkbook orders
-*AccountApi* | [**oBPv310UpdateAccount**](docs/Api/AccountApi.md#obpv310updateaccount) | **PUT** /obp/v3.1.0/management/banks/{bankid}/accounts/{accountid} | Update Account
-*AccountApi* | [**oBPv310UpdateAccountApplicationStatus**](docs/Api/AccountApi.md#obpv310updateaccountapplicationstatus) | **PUT** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Update Account Application Status
-*AccountApi* | [**oBPv310UpdateAccountAttribute**](docs/Api/AccountApi.md#obpv310updateaccountattribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute
-*AccountApi* | [**oBPv400AddAccount**](docs/Api/AccountApi.md#obpv400addaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts | Create Account (POST)
-*AccountApi* | [**oBPv400AddTagForViewOnAccount**](docs/Api/AccountApi.md#obpv400addtagforviewonaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
-*AccountApi* | [**oBPv400CreateCounterparty**](docs/Api/AccountApi.md#obpv400createcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty (Explicit)
-*AccountApi* | [**oBPv400CreateCounterpartyForAnyAccount**](docs/Api/AccountApi.md#obpv400createcounterpartyforanyaccount) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty for any account (Explicit)
-*AccountApi* | [**oBPv400CreateDirectDebit**](docs/Api/AccountApi.md#obpv400createdirectdebit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
-*AccountApi* | [**oBPv400CreateDirectDebitManagement**](docs/Api/AccountApi.md#obpv400createdirectdebitmanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
-*AccountApi* | [**oBPv400CreateOrUpdateAccountAttributeDefinition**](docs/Api/AccountApi.md#obpv400createorupdateaccountattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition
-*AccountApi* | [**oBPv400CreateStandingOrder**](docs/Api/AccountApi.md#obpv400createstandingorder) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
-*AccountApi* | [**oBPv400CreateStandingOrderManagement**](docs/Api/AccountApi.md#obpv400createstandingordermanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
-*AccountApi* | [**oBPv400DeleteAccountAttributeDefinition**](docs/Api/AccountApi.md#obpv400deleteaccountattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition
-*AccountApi* | [**oBPv400DeleteAccountCascade**](docs/Api/AccountApi.md#obpv400deleteaccountcascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid} | Delete Account Cascade
-*AccountApi* | [**oBPv400DeleteCounterpartyForAnyAccount**](docs/Api/AccountApi.md#obpv400deletecounterpartyforanyaccount) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty for any account (Explicit)
-*AccountApi* | [**oBPv400DeleteExplicitCounterparty**](docs/Api/AccountApi.md#obpv400deleteexplicitcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty (Explicit)
-*AccountApi* | [**oBPv400DeleteTagForViewOnAccount**](docs/Api/AccountApi.md#obpv400deletetagforviewonaccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
-*AccountApi* | [**oBPv400GetAccountAttributeDefinition**](docs/Api/AccountApi.md#obpv400getaccountattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition
-*AccountApi* | [**oBPv400GetAccountByAccountRouting**](docs/Api/AccountApi.md#obpv400getaccountbyaccountrouting) | **POST** /obp/v4.0.0/management/accounts/account-routing-query | Get Account by Account Routing
-*AccountApi* | [**oBPv400GetAccountsByAccountRoutingRegex**](docs/Api/AccountApi.md#obpv400getaccountsbyaccountroutingregex) | **POST** /obp/v4.0.0/management/accounts/account-routing-regex-query | Get Accounts by Account Routing Regex
-*AccountApi* | [**oBPv400GetAccountsMinimalByCustomerId**](docs/Api/AccountApi.md#obpv400getaccountsminimalbycustomerid) | **GET** /obp/v4.0.0/customers/{customerid}/accounts-minimal | Get Accounts Minimal for a Customer
-*AccountApi* | [**oBPv400GetCounterpartiesForAnyAccount**](docs/Api/AccountApi.md#obpv400getcounterpartiesforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
-*AccountApi* | [**oBPv400GetCounterpartyByIdForAnyAccount**](docs/Api/AccountApi.md#obpv400getcounterpartybyidforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id for any account (Explicit)
-*AccountApi* | [**oBPv400GetCounterpartyByNameForAnyAccount**](docs/Api/AccountApi.md#obpv400getcounterpartybynameforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname} | Get Counterparty by name for any account (Explicit)
-*AccountApi* | [**oBPv400GetExplicitCounterpartiesForAccount**](docs/Api/AccountApi.md#obpv400getexplicitcounterpartiesforaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
-*AccountApi* | [**oBPv400GetFastFirehoseAccountsAtOneBank**](docs/Api/AccountApi.md#obpv400getfastfirehoseaccountsatonebank) | **GET** /obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts | Get Fast Firehose Accounts at Bank
-*AccountApi* | [**oBPv400GetFirehoseAccountsAtOneBank**](docs/Api/AccountApi.md#obpv400getfirehoseaccountsatonebank) | **GET** /obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid} | Get Firehose Accounts at Bank
-*AccountApi* | [**oBPv400GetPrivateAccountByIdFull**](docs/Api/AccountApi.md#obpv400getprivateaccountbyidfull) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/account | Get Account by Id (Full)
-*AccountApi* | [**oBPv400GetTagsForViewOnAccount**](docs/Api/AccountApi.md#obpv400gettagsforviewonaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
-*AccountApi* | [**oBPv400IbanChecker**](docs/Api/AccountApi.md#obpv400ibanchecker) | **POST** /obp/v4.0.0/account/check/scheme/iban | Validate and check IBAN
-*AccountApi* | [**oBPv400UpdateAccountLabel**](docs/Api/AccountApi.md#obpv400updateaccountlabel) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid} | Update Account Label
-*AccountApi* | [**oBPv500CreateAccount**](docs/Api/AccountApi.md#obpv500createaccount) | **PUT** /obp/v5.0.0/banks/{bankid}/accounts/{accountid} | Create Account (PUT)
-*AccountApi* | [**oBPv500CreateCustomerAccountLink**](docs/Api/AccountApi.md#obpv500createcustomeraccountlink) | **POST** /obp/v5.0.0/banks/{bankid}/customer-account-links | Create Customer Account Link
-*AccountApi* | [**oBPv500GetViewsForBankAccount**](docs/Api/AccountApi.md#obpv500getviewsforbankaccount) | **GET** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/views | Get Views for Account
-*AccountApi* | [**oBPv510CreateBankAccountBalance**](docs/Api/AccountApi.md#obpv510createbankaccountbalance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
-*AccountApi* | [**oBPv510CreateCustomView**](docs/Api/AccountApi.md#obpv510createcustomview) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views | Create Custom View
-*AccountApi* | [**oBPv510CreateUserWithAccountAccessById**](docs/Api/AccountApi.md#obpv510createuserwithaccountaccessbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
-*AccountApi* | [**oBPv510DeleteBankAccountBalance**](docs/Api/AccountApi.md#obpv510deletebankaccountbalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
-*AccountApi* | [**oBPv510DeleteCustomView**](docs/Api/AccountApi.md#obpv510deletecustomview) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Delete Custom View
-*AccountApi* | [**oBPv510GetAccountAccessByUserId**](docs/Api/AccountApi.md#obpv510getaccountaccessbyuserid) | **GET** /obp/v5.1.0/users/{userid}/account-access | Get Account Access by USER_ID
-*AccountApi* | [**oBPv510GetAccountsHeldByUser**](docs/Api/AccountApi.md#obpv510getaccountsheldbyuser) | **GET** /obp/v5.1.0/users/{userid}/accounts-held | Get Accounts Held By User
-*AccountApi* | [**oBPv510GetAccountsHeldByUserAtBank**](docs/Api/AccountApi.md#obpv510getaccountsheldbyuseratbank) | **GET** /obp/v5.1.0/users/{userid}/banks/{bankid}/accounts-held | Get Accounts Held By User
-*AccountApi* | [**oBPv510GetAgent**](docs/Api/AccountApi.md#obpv510getagent) | **GET** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Get Agent
-*AccountApi* | [**oBPv510GetAgents**](docs/Api/AccountApi.md#obpv510getagents) | **GET** /obp/v5.1.0/banks/{bankid}/agents | Get Agents at Bank
-*AccountApi* | [**oBPv510GetAllBankAccountBalances**](docs/Api/AccountApi.md#obpv510getallbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
-*AccountApi* | [**oBPv510GetBankAccountBalanceById**](docs/Api/AccountApi.md#obpv510getbankaccountbalancebyid) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
-*AccountApi* | [**oBPv510GetBankAccountBalances**](docs/Api/AccountApi.md#obpv510getbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/balances | Get Account Balances by BANK_ID and ACCOUNT_ID through the VIEW_ID
-*AccountApi* | [**oBPv510GetBankAccountsBalances**](docs/Api/AccountApi.md#obpv510getbankaccountsbalances) | **GET** /obp/v5.1.0/banks/{bankid}/balances | Get Account Balances by BANK_ID
-*AccountApi* | [**oBPv510GetBankAccountsBalancesThroughView**](docs/Api/AccountApi.md#obpv510getbankaccountsbalancesthroughview) | **GET** /obp/v5.1.0/banks/{bankid}/views/{viewid}/balances | Get Account Balances by BANK_ID through the VIEW_ID
-*AccountApi* | [**oBPv510GetCoreAccountByIdThroughView**](docs/Api/AccountApi.md#obpv510getcoreaccountbyidthroughview) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Account by Id (Core) through the VIEW_ID
-*AccountApi* | [**oBPv510GetCustomView**](docs/Api/AccountApi.md#obpv510getcustomview) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Get Custom View
-*AccountApi* | [**oBPv510GrantUserAccessToViewById**](docs/Api/AccountApi.md#obpv510grantuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
-*AccountApi* | [**oBPv510RevokeUserAccessToViewById**](docs/Api/AccountApi.md#obpv510revokeuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
-*AccountApi* | [**oBPv510UpdateBankAccountBalance**](docs/Api/AccountApi.md#obpv510updatebankaccountbalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
-*AccountApi* | [**oBPv510UpdateCustomView**](docs/Api/AccountApi.md#obpv510updatecustomview) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Update Custom View
-*AccountApi* | [**oBPv600CreateCustomViewManagement**](docs/Api/AccountApi.md#obpv600createcustomviewmanagement) | **POST** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views | Create Custom View (Management)
-*AccountApi* | [**oBPv600GetAccountDirectory**](docs/Api/AccountApi.md#obpv600getaccountdirectory) | **GET** /obp/v6.0.0/banks/{bankid}/account-directory | Get Account Directory at Bank
-*AccountApi* | [**oBPv600GetAccountsAtBank**](docs/Api/AccountApi.md#obpv600getaccountsatbank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
-*AccountApi* | [**oBPv600GetCoreAccountByIdV600**](docs/Api/AccountApi.md#obpv600getcoreaccountbyidv600) | **GET** /obp/v6.0.0/my/banks/{bankid}/accounts/{accountid}/account | Get Account by Id (Core)
-*AccountApi* | [**oBPv600GetHoldingAccountByReleaser**](docs/Api/AccountApi.md#obpv600getholdingaccountbyreleaser) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/holding-accounts | Get Holding Accounts By Releaser
-*AccountApi* | [**oBPv600GetTransactionsForBankAccount**](docs/Api/AccountApi.md#obpv600gettransactionsforbankaccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions | Get Transactions for Account (Full)
-*AccountApi* | [**oBPv600HasAccountAccess**](docs/Api/AccountApi.md#obpv600hasaccountaccess) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/has-account-access | Has Account Access
-*AccountAccessApi* | [**oBPv510CreateUserWithAccountAccessById**](docs/Api/AccountAccessApi.md#obpv510createuserwithaccountaccessbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
-*AccountAccessApi* | [**oBPv510GrantUserAccessToViewById**](docs/Api/AccountAccessApi.md#obpv510grantuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
-*AccountAccessApi* | [**oBPv510RevokeUserAccessToViewById**](docs/Api/AccountAccessApi.md#obpv510revokeuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
-*AccountAccessRequestApi* | [**oBPv600ApproveAccountAccessRequest**](docs/Api/AccountAccessRequestApi.md#obpv600approveaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request
-*AccountAccessRequestApi* | [**oBPv600CreateAccountAccessRequest**](docs/Api/AccountAccessRequestApi.md#obpv600createaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request
-*AccountAccessRequestApi* | [**oBPv600GetAccountAccessRequestById**](docs/Api/AccountAccessRequestApi.md#obpv600getaccountaccessrequestbyid) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id
-*AccountAccessRequestApi* | [**oBPv600GetAccountAccessRequestsForAccount**](docs/Api/AccountAccessRequestApi.md#obpv600getaccountaccessrequestsforaccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account
-*AccountAccessRequestApi* | [**oBPv600GetMyAccountAccessRequests**](docs/Api/AccountAccessRequestApi.md#obpv600getmyaccountaccessrequests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests
-*AccountAccessRequestApi* | [**oBPv600RejectAccountAccessRequest**](docs/Api/AccountAccessRequestApi.md#obpv600rejectaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request
-*AccountApplicationApi* | [**oBPv310CreateAccountApplication**](docs/Api/AccountApplicationApi.md#obpv310createaccountapplication) | **POST** /obp/v3.1.0/banks/{bankid}/account-applications | Create Account Application
-*AccountApplicationApi* | [**oBPv310GetAccountApplication**](docs/Api/AccountApplicationApi.md#obpv310getaccountapplication) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Get Account Application by Id
-*AccountApplicationApi* | [**oBPv310GetAccountApplications**](docs/Api/AccountApplicationApi.md#obpv310getaccountapplications) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications | Get Account Applications
-*AccountApplicationApi* | [**oBPv310UpdateAccountApplicationStatus**](docs/Api/AccountApplicationApi.md#obpv310updateaccountapplicationstatus) | **PUT** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Update Account Application Status
-*AccountAttributeApi* | [**oBPv310CreateAccountAttribute**](docs/Api/AccountAttributeApi.md#obpv310createaccountattribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute
-*AccountAttributeApi* | [**oBPv310UpdateAccountAttribute**](docs/Api/AccountAttributeApi.md#obpv310updateaccountattribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute
-*AccountAttributeApi* | [**oBPv400CreateOrUpdateAccountAttributeDefinition**](docs/Api/AccountAttributeApi.md#obpv400createorupdateaccountattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition
-*AccountAttributeApi* | [**oBPv400DeleteAccountAttributeDefinition**](docs/Api/AccountAttributeApi.md#obpv400deleteaccountattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition
-*AccountAttributeApi* | [**oBPv400GetAccountAttributeDefinition**](docs/Api/AccountAttributeApi.md#obpv400getaccountattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition
-*AccountFirehoseApi* | [**oBPv300GetFirehoseTransactionsForBankAccount**](docs/Api/AccountFirehoseApi.md#obpv300getfirehosetransactionsforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
-*AccountFirehoseApi* | [**oBPv400GetFastFirehoseAccountsAtOneBank**](docs/Api/AccountFirehoseApi.md#obpv400getfastfirehoseaccountsatonebank) | **GET** /obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts | Get Fast Firehose Accounts at Bank
-*AccountFirehoseApi* | [**oBPv400GetFirehoseAccountsAtOneBank**](docs/Api/AccountFirehoseApi.md#obpv400getfirehoseaccountsatonebank) | **GET** /obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid} | Get Firehose Accounts at Bank
-*AccountInformationServiceAISApi* | [**oBPv200GetTransactionTypes**](docs/Api/AccountInformationServiceAISApi.md#obpv200gettransactiontypes) | **GET** /obp/v2.0.0/banks/{bankid}/transaction-types | Get Transaction Types at Bank
-*AccountInformationServiceAISApi* | [**oBPv300CorePrivateAccountsAllBanks**](docs/Api/AccountInformationServiceAISApi.md#obpv300coreprivateaccountsallbanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
-*AccountInformationServiceAISApi* | [**oBPv300GetAccountsHeld**](docs/Api/AccountInformationServiceAISApi.md#obpv300getaccountsheld) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
-*AccountInformationServiceAISApi* | [**oBPv300GetCoreTransactionsForBankAccount**](docs/Api/AccountInformationServiceAISApi.md#obpv300getcoretransactionsforbankaccount) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
-*AccountInformationServiceAISApi* | [**oBPv300GetPrivateAccountIdsbyBankId**](docs/Api/AccountInformationServiceAISApi.md#obpv300getprivateaccountidsbybankid) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/account_ids/private | Get Accounts at Bank (IDs only)
-*AccountInformationServiceAISApi* | [**oBPv300PrivateAccountsAtOneBank**](docs/Api/AccountInformationServiceAISApi.md#obpv300privateaccountsatonebank) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/private | Get Accounts at Bank (Minimal)
-*AccountInformationServiceAISApi* | [**oBPv310AnswerConsentChallenge**](docs/Api/AccountInformationServiceAISApi.md#obpv310answerconsentchallenge) | **POST** /obp/v3.1.0/banks/{bankid}/consents/{consentid}/challenge | Answer Consent Challenge
-*AccountInformationServiceAISApi* | [**oBPv310CreateConsentEmail**](docs/Api/AccountInformationServiceAISApi.md#obpv310createconsentemail) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{email} | Create Consent (EMAIL)
-*AccountInformationServiceAISApi* | [**oBPv310CreateConsentImplicit**](docs/Api/AccountInformationServiceAISApi.md#obpv310createconsentimplicit) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{implicit} | Create Consent (IMPLICIT)
-*AccountInformationServiceAISApi* | [**oBPv310CreateConsentSms**](docs/Api/AccountInformationServiceAISApi.md#obpv310createconsentsms) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{sms} | Create Consent (SMS)
-*AccountInformationServiceAISApi* | [**oBPv310GetServerJWK**](docs/Api/AccountInformationServiceAISApi.md#obpv310getserverjwk) | **GET** /obp/v3.1.0/certs | Get JSON Web Key (JWK)
-*AccountInformationServiceAISApi* | [**oBPv400AddConsentUser**](docs/Api/AccountInformationServiceAISApi.md#obpv400addconsentuser) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid}/user-update-request | Add User to a Consent
-*AccountInformationServiceAISApi* | [**oBPv400GetConsentInfos**](docs/Api/AccountInformationServiceAISApi.md#obpv400getconsentinfos) | **GET** /obp/v4.0.0/my/consent-infos | Get My Consents Info
-*AccountInformationServiceAISApi* | [**oBPv400GetConsentInfosByBank**](docs/Api/AccountInformationServiceAISApi.md#obpv400getconsentinfosbybank) | **GET** /obp/v4.0.0/banks/{bankid}/my/consent-infos | Get My Consents Info At Bank
-*AccountInformationServiceAISApi* | [**oBPv400UpdateConsentStatus**](docs/Api/AccountInformationServiceAISApi.md#obpv400updateconsentstatus) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid} | Update Consent Status
-*AccountInformationServiceAISApi* | [**oBPv500CreateConsentByConsentRequestIdEmail**](docs/Api/AccountInformationServiceAISApi.md#obpv500createconsentbyconsentrequestidemail) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
-*AccountInformationServiceAISApi* | [**oBPv500CreateConsentByConsentRequestIdImplicit**](docs/Api/AccountInformationServiceAISApi.md#obpv500createconsentbyconsentrequestidimplicit) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{implicit}/consents | Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
-*AccountInformationServiceAISApi* | [**oBPv500CreateConsentByConsentRequestIdSms**](docs/Api/AccountInformationServiceAISApi.md#obpv500createconsentbyconsentrequestidsms) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{sms}/consents | Create Consent By CONSENT_REQUEST_ID (SMS)
-*AccountInformationServiceAISApi* | [**oBPv500CreateConsentRequest**](docs/Api/AccountInformationServiceAISApi.md#obpv500createconsentrequest) | **POST** /obp/v5.0.0/consumer/consent-requests | Create Consent Request
-*AccountInformationServiceAISApi* | [**oBPv500GetConsentByConsentRequestId**](docs/Api/AccountInformationServiceAISApi.md#obpv500getconsentbyconsentrequestid) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/consents | Get Consent By Consent Request Id via Consumer
-*AccountInformationServiceAISApi* | [**oBPv500GetConsentRequest**](docs/Api/AccountInformationServiceAISApi.md#obpv500getconsentrequest) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid} | Get Consent Request
-*AccountInformationServiceAISApi* | [**oBPv510CreateConsentImplicit**](docs/Api/AccountInformationServiceAISApi.md#obpv510createconsentimplicit) | **POST** /obp/v5.1.0/my/consents/{implicit} | Create Consent (IMPLICIT)
-*AccountInformationServiceAISApi* | [**oBPv510GetBankAccountBalances**](docs/Api/AccountInformationServiceAISApi.md#obpv510getbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/balances | Get Account Balances by BANK_ID and ACCOUNT_ID through the VIEW_ID
-*AccountInformationServiceAISApi* | [**oBPv510GetBankAccountsBalances**](docs/Api/AccountInformationServiceAISApi.md#obpv510getbankaccountsbalances) | **GET** /obp/v5.1.0/banks/{bankid}/balances | Get Account Balances by BANK_ID
-*AccountInformationServiceAISApi* | [**oBPv510GetBankAccountsBalancesThroughView**](docs/Api/AccountInformationServiceAISApi.md#obpv510getbankaccountsbalancesthroughview) | **GET** /obp/v5.1.0/banks/{bankid}/views/{viewid}/balances | Get Account Balances by BANK_ID through the VIEW_ID
-*AccountInformationServiceAISApi* | [**oBPv510GetConsentByConsentId**](docs/Api/AccountInformationServiceAISApi.md#obpv510getconsentbyconsentid) | **GET** /obp/v5.1.0/user/current/consents/{consentid} | Get Consent By Consent Id via User
-*AccountInformationServiceAISApi* | [**oBPv510GetConsentByConsentIdViaConsumer**](docs/Api/AccountInformationServiceAISApi.md#obpv510getconsentbyconsentidviaconsumer) | **GET** /obp/v5.1.0/consumer/current/consents/{consentid} | Get Consent By Consent Id via Consumer
-*AccountInformationServiceAISApi* | [**oBPv510GetConsents**](docs/Api/AccountInformationServiceAISApi.md#obpv510getconsents) | **GET** /obp/v5.1.0/management/consents | Get Consents
-*AccountInformationServiceAISApi* | [**oBPv510GetConsentsAtBank**](docs/Api/AccountInformationServiceAISApi.md#obpv510getconsentsatbank) | **GET** /obp/v5.1.0/management/consents/banks/{bankid} | Get Consents at Bank
-*AccountInformationServiceAISApi* | [**oBPv510GetCoreAccountByIdThroughView**](docs/Api/AccountInformationServiceAISApi.md#obpv510getcoreaccountbyidthroughview) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Account by Id (Core) through the VIEW_ID
-*AccountInformationServiceAISApi* | [**oBPv510GetMyConsents**](docs/Api/AccountInformationServiceAISApi.md#obpv510getmyconsents) | **GET** /obp/v5.1.0/my/consents | Get My Consents
-*AccountInformationServiceAISApi* | [**oBPv510GetMyConsentsByBank**](docs/Api/AccountInformationServiceAISApi.md#obpv510getmyconsentsbybank) | **GET** /obp/v5.1.0/banks/{bankid}/my/consents | Get My Consents at Bank
-*AccountInformationServiceAISApi* | [**oBPv510MtlsClientCertificateInfo**](docs/Api/AccountInformationServiceAISApi.md#obpv510mtlsclientcertificateinfo) | **GET** /obp/v5.1.0/my/mtls/certificate/current | Provide client&#39;s certificate info of a current call
-*AccountInformationServiceAISApi* | [**oBPv510RevokeConsentAtBank**](docs/Api/AccountInformationServiceAISApi.md#obpv510revokeconsentatbank) | **DELETE** /obp/v5.1.0/banks/{bankid}/consents/{consentid} | Revoke Consent at Bank
-*AccountInformationServiceAISApi* | [**oBPv510RevokeMyConsent**](docs/Api/AccountInformationServiceAISApi.md#obpv510revokemyconsent) | **DELETE** /obp/v5.1.0/my/consents/{consentid} | Revoke My Consent
-*AccountInformationServiceAISApi* | [**oBPv510SelfRevokeConsent**](docs/Api/AccountInformationServiceAISApi.md#obpv510selfrevokeconsent) | **DELETE** /obp/v5.1.0/my/consent/current | Revoke Consent used in the Current Call
-*AccountInformationServiceAISApi* | [**oBPv510UpdateConsentAccountAccessByConsentId**](docs/Api/AccountInformationServiceAISApi.md#obpv510updateconsentaccountaccessbyconsentid) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/account-access | Update Consent Account Access by CONSENT_ID
-*AccountInformationServiceAISApi* | [**oBPv510UpdateConsentStatusByConsent**](docs/Api/AccountInformationServiceAISApi.md#obpv510updateconsentstatusbyconsent) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid} | Update Consent Status by CONSENT_ID
-*AccountInformationServiceAISApi* | [**oBPv510UpdateConsentUserIdByConsentId**](docs/Api/AccountInformationServiceAISApi.md#obpv510updateconsentuseridbyconsentid) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/created-by-user | Update Created by User of Consent by CONSENT_ID
-*AccountInformationServiceAISApi* | [**oBPv600GetBank**](docs/Api/AccountInformationServiceAISApi.md#obpv600getbank) | **GET** /obp/v6.0.0/banks/{bankid} | Get Bank
-*AccountInformationServiceAISApi* | [**oBPv600GetBanks**](docs/Api/AccountInformationServiceAISApi.md#obpv600getbanks) | **GET** /obp/v6.0.0/banks | Get Banks
-*AccountInformationServiceAISApi* | [**oBPv600GetCoreAccountByIdV600**](docs/Api/AccountInformationServiceAISApi.md#obpv600getcoreaccountbyidv600) | **GET** /obp/v6.0.0/my/banks/{bankid}/accounts/{accountid}/account | Get Account by Id (Core)
-*AccountMetadataApi* | [**oBPv400AddTagForViewOnAccount**](docs/Api/AccountMetadataApi.md#obpv400addtagforviewonaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
-*AccountMetadataApi* | [**oBPv400DeleteTagForViewOnAccount**](docs/Api/AccountMetadataApi.md#obpv400deletetagforviewonaccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
-*AccountMetadataApi* | [**oBPv400GetTagsForViewOnAccount**](docs/Api/AccountMetadataApi.md#obpv400gettagsforviewonaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
-*AccountPublicApi* | [**oBPv200PublicAccountsAllBanks**](docs/Api/AccountPublicApi.md#obpv200publicaccountsallbanks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks
-*AccountPublicApi* | [**oBPv200PublicAccountsAtOneBank**](docs/Api/AccountPublicApi.md#obpv200publicaccountsatonebank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank
-*AccountPublicApi* | [**oBPv300GetPublicAccountById**](docs/Api/AccountPublicApi.md#obpv300getpublicaccountbyid) | **GET** /obp/v3.0.0/banks/{bankid}/public/accounts/{accountid}/{viewid}/account | Get Public Account by Id
-*AggregateMetricsApi* | [**oBPv600GetAggregateMetrics**](docs/Api/AggregateMetricsApi.md#obpv600getaggregatemetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
-*ApiCollectionApi* | [**oBPv400CreateMyApiCollection**](docs/Api/ApiCollectionApi.md#obpv400createmyapicollection) | **POST** /obp/v4.0.0/my/api-collections | Create My Api Collection
-*ApiCollectionApi* | [**oBPv400CreateMyApiCollectionEndpoint**](docs/Api/ApiCollectionApi.md#obpv400createmyapicollectionendpoint) | **POST** /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints | Create My Api Collection Endpoint
-*ApiCollectionApi* | [**oBPv400CreateMyApiCollectionEndpointById**](docs/Api/ApiCollectionApi.md#obpv400createmyapicollectionendpointbyid) | **POST** /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints | Create My Api Collection Endpoint By Id
-*ApiCollectionApi* | [**oBPv400DeleteMyApiCollection**](docs/Api/ApiCollectionApi.md#obpv400deletemyapicollection) | **DELETE** /obp/v4.0.0/my/api-collections/{apicollectionid} | Delete My Api Collection
-*ApiCollectionApi* | [**oBPv400DeleteMyApiCollectionEndpoint**](docs/Api/ApiCollectionApi.md#obpv400deletemyapicollectionendpoint) | **DELETE** /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid} | Delete My Api Collection Endpoint
-*ApiCollectionApi* | [**oBPv400DeleteMyApiCollectionEndpointById**](docs/Api/ApiCollectionApi.md#obpv400deletemyapicollectionendpointbyid) | **DELETE** /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoint-ids/{apicollectionendpointid} | Delete My Api Collection Endpoint By Id
-*ApiCollectionApi* | [**oBPv400DeleteMyApiCollectionEndpointByOperationId**](docs/Api/ApiCollectionApi.md#obpv400deletemyapicollectionendpointbyoperationid) | **DELETE** /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints/{operationid} | Delete My Api Collection Endpoint By Id
-*ApiCollectionApi* | [**oBPv400GetApiCollectionEndpoints**](docs/Api/ApiCollectionApi.md#obpv400getapicollectionendpoints) | **GET** /obp/v4.0.0/api-collections/{apicollectionid}/api-collection-endpoints | Get Api Collection Endpoints
-*ApiCollectionApi* | [**oBPv400GetApiCollectionsForUser**](docs/Api/ApiCollectionApi.md#obpv400getapicollectionsforuser) | **GET** /obp/v4.0.0/users/{userid}/api-collections | Get Api Collections for User
-*ApiCollectionApi* | [**oBPv400GetFeaturedApiCollections**](docs/Api/ApiCollectionApi.md#obpv400getfeaturedapicollections) | **GET** /obp/v4.0.0/api-collections/featured | Get Featured Api Collections
-*ApiCollectionApi* | [**oBPv400GetMyApiCollectionById**](docs/Api/ApiCollectionApi.md#obpv400getmyapicollectionbyid) | **GET** /obp/v4.0.0/my/api-collections/{apicollectionid} | Get My Api Collection By Id
-*ApiCollectionApi* | [**oBPv400GetMyApiCollectionByName**](docs/Api/ApiCollectionApi.md#obpv400getmyapicollectionbyname) | **GET** /obp/v4.0.0/my/api-collections/name/{apicollectionname} | Get My Api Collection By Name
-*ApiCollectionApi* | [**oBPv400GetMyApiCollectionEndpoint**](docs/Api/ApiCollectionApi.md#obpv400getmyapicollectionendpoint) | **GET** /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid} | Get My Api Collection Endpoint
-*ApiCollectionApi* | [**oBPv400GetMyApiCollectionEndpoints**](docs/Api/ApiCollectionApi.md#obpv400getmyapicollectionendpoints) | **GET** /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints | Get My Api Collection Endpoints
-*ApiCollectionApi* | [**oBPv400GetMyApiCollectionEndpointsById**](docs/Api/ApiCollectionApi.md#obpv400getmyapicollectionendpointsbyid) | **GET** /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints | Get My Api Collection Endpoints By Id
-*ApiCollectionApi* | [**oBPv400GetMyApiCollections**](docs/Api/ApiCollectionApi.md#obpv400getmyapicollections) | **GET** /obp/v4.0.0/my/api-collections | Get My Api Collections
-*ApiCollectionApi* | [**oBPv400GetSharableApiCollectionById**](docs/Api/ApiCollectionApi.md#obpv400getsharableapicollectionbyid) | **GET** /obp/v4.0.0/api-collections/sharable/{apicollectionid} | Get Sharable Api Collection By Id
-*ApiCollectionApi* | [**oBPv510GetAllApiCollections**](docs/Api/ApiCollectionApi.md#obpv510getallapicollections) | **GET** /obp/v5.1.0/management/api-collections | Get All API Collections
-*ApiCollectionApi* | [**oBPv510UpdateMyApiCollection**](docs/Api/ApiCollectionApi.md#obpv510updatemyapicollection) | **PUT** /obp/v5.1.0/my/api-collections/{apicollectionid} | Update My Api Collection By API_COLLECTION_ID
-*ApiCollectionApi* | [**oBPv600CreateFeaturedApiCollection**](docs/Api/ApiCollectionApi.md#obpv600createfeaturedapicollection) | **POST** /obp/v6.0.0/management/api-collections/featured | Create Featured Api Collection
-*ApiCollectionApi* | [**oBPv600DeleteFeaturedApiCollection**](docs/Api/ApiCollectionApi.md#obpv600deletefeaturedapicollection) | **DELETE** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Delete Featured Api Collection
-*ApiCollectionApi* | [**oBPv600GetFeaturedApiCollectionsAdmin**](docs/Api/ApiCollectionApi.md#obpv600getfeaturedapicollectionsadmin) | **GET** /obp/v6.0.0/management/api-collections/featured | Get Featured Api Collections (Admin)
-*ApiCollectionApi* | [**oBPv600UpdateFeaturedApiCollection**](docs/Api/ApiCollectionApi.md#obpv600updatefeaturedapicollection) | **PUT** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Update Featured Api Collection
-*ApiProductApi* | [**oBPv600CreateApiProduct**](docs/Api/ApiProductApi.md#obpv600createapiproduct) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product
-*ApiProductApi* | [**oBPv600CreateOrUpdateApiProduct**](docs/Api/ApiProductApi.md#obpv600createorupdateapiproduct) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product
-*ApiProductApi* | [**oBPv600DeleteApiProduct**](docs/Api/ApiProductApi.md#obpv600deleteapiproduct) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product
-*ApiProductApi* | [**oBPv600GetApiProduct**](docs/Api/ApiProductApi.md#obpv600getapiproduct) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product
-*ApiProductApi* | [**oBPv600GetApiProducts**](docs/Api/ApiProductApi.md#obpv600getapiproducts) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products
-*ApiProductAttributeApi* | [**oBPv600CreateApiProductAttribute**](docs/Api/ApiProductAttributeApi.md#obpv600createapiproductattribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
-*ApiProductAttributeApi* | [**oBPv600DeleteApiProductAttribute**](docs/Api/ApiProductAttributeApi.md#obpv600deleteapiproductattribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
-*ApiProductAttributeApi* | [**oBPv600GetApiProductAttribute**](docs/Api/ApiProductAttributeApi.md#obpv600getapiproductattribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
-*ApiProductAttributeApi* | [**oBPv600UpdateApiProductAttribute**](docs/Api/ApiProductAttributeApi.md#obpv600updateapiproductattribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
-*AttributeApi* | [**oBPv310CreateAccountAttribute**](docs/Api/AttributeApi.md#obpv310createaccountattribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute
-*AttributeApi* | [**oBPv310CreateCardAttribute**](docs/Api/AttributeApi.md#obpv310createcardattribute) | **POST** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attribute | Create Card Attribute
-*AttributeApi* | [**oBPv310DeleteProductAttribute**](docs/Api/AttributeApi.md#obpv310deleteproductattribute) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute
-*AttributeApi* | [**oBPv310UpdateAccountAttribute**](docs/Api/AttributeApi.md#obpv310updateaccountattribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute
-*AttributeApi* | [**oBPv310UpdateCardAttribute**](docs/Api/AttributeApi.md#obpv310updatecardattribute) | **PUT** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid} | Update Card Attribute
-*AttributeApi* | [**oBPv400CreateBankAttribute**](docs/Api/AttributeApi.md#obpv400createbankattribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
-*AttributeApi* | [**oBPv400CreateCustomerAttribute**](docs/Api/AttributeApi.md#obpv400createcustomerattribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
-*AttributeApi* | [**oBPv400CreateOrUpdateAccountAttributeDefinition**](docs/Api/AttributeApi.md#obpv400createorupdateaccountattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition
-*AttributeApi* | [**oBPv400CreateOrUpdateBankAttributeDefinition**](docs/Api/AttributeApi.md#obpv400createorupdatebankattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
-*AttributeApi* | [**oBPv400CreateOrUpdateCardAttributeDefinition**](docs/Api/AttributeApi.md#obpv400createorupdatecardattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Create or Update Card Attribute Definition
-*AttributeApi* | [**oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition**](docs/Api/AttributeApi.md#obpv400createorupdatecustomerattributeattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
-*AttributeApi* | [**oBPv400CreateOrUpdateProductAttributeDefinition**](docs/Api/AttributeApi.md#obpv400createorupdateproductattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition
-*AttributeApi* | [**oBPv400CreateOrUpdateTransactionAttributeDefinition**](docs/Api/AttributeApi.md#obpv400createorupdatetransactionattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
-*AttributeApi* | [**oBPv400CreateOrUpdateTransactionRequestAttributeDefinition**](docs/Api/AttributeApi.md#obpv400createorupdatetransactionrequestattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
-*AttributeApi* | [**oBPv400CreateProductAttribute**](docs/Api/AttributeApi.md#obpv400createproductattribute) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute
-*AttributeApi* | [**oBPv400CreateTransactionAttribute**](docs/Api/AttributeApi.md#obpv400createtransactionattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
-*AttributeApi* | [**oBPv400CreateTransactionRequestAttribute**](docs/Api/AttributeApi.md#obpv400createtransactionrequestattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
-*AttributeApi* | [**oBPv400DeleteAccountAttributeDefinition**](docs/Api/AttributeApi.md#obpv400deleteaccountattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition
-*AttributeApi* | [**oBPv400DeleteBankAttribute**](docs/Api/AttributeApi.md#obpv400deletebankattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
-*AttributeApi* | [**oBPv400DeleteCardAttributeDefinition**](docs/Api/AttributeApi.md#obpv400deletecardattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/card | Delete Card Attribute Definition
-*AttributeApi* | [**oBPv400DeleteCustomerAttribute**](docs/Api/AttributeApi.md#obpv400deletecustomerattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
-*AttributeApi* | [**oBPv400DeleteCustomerAttributeDefinition**](docs/Api/AttributeApi.md#obpv400deletecustomerattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
-*AttributeApi* | [**oBPv400DeleteProductAttributeDefinition**](docs/Api/AttributeApi.md#obpv400deleteproductattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition
-*AttributeApi* | [**oBPv400DeleteTransactionAttributeDefinition**](docs/Api/AttributeApi.md#obpv400deletetransactionattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
-*AttributeApi* | [**oBPv400DeleteTransactionRequestAttributeDefinition**](docs/Api/AttributeApi.md#obpv400deletetransactionrequestattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
-*AttributeApi* | [**oBPv400GetAccountAttributeDefinition**](docs/Api/AttributeApi.md#obpv400getaccountattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition
-*AttributeApi* | [**oBPv400GetBankAttribute**](docs/Api/AttributeApi.md#obpv400getbankattribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
-*AttributeApi* | [**oBPv400GetBankAttributes**](docs/Api/AttributeApi.md#obpv400getbankattributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
-*AttributeApi* | [**oBPv400GetCardAttributeDefinition**](docs/Api/AttributeApi.md#obpv400getcardattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Get Card Attribute Definition
-*AttributeApi* | [**oBPv400GetCustomerAttributeById**](docs/Api/AttributeApi.md#obpv400getcustomerattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
-*AttributeApi* | [**oBPv400GetCustomerAttributeDefinition**](docs/Api/AttributeApi.md#obpv400getcustomerattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
-*AttributeApi* | [**oBPv400GetCustomerAttributes**](docs/Api/AttributeApi.md#obpv400getcustomerattributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
-*AttributeApi* | [**oBPv400GetProductAttribute**](docs/Api/AttributeApi.md#obpv400getproductattribute) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute
-*AttributeApi* | [**oBPv400GetProductAttributeDefinition**](docs/Api/AttributeApi.md#obpv400getproductattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition
-*AttributeApi* | [**oBPv400GetTransactionAttributeById**](docs/Api/AttributeApi.md#obpv400gettransactionattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
-*AttributeApi* | [**oBPv400GetTransactionAttributeDefinition**](docs/Api/AttributeApi.md#obpv400gettransactionattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
-*AttributeApi* | [**oBPv400GetTransactionAttributes**](docs/Api/AttributeApi.md#obpv400gettransactionattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
-*AttributeApi* | [**oBPv400GetTransactionRequestAttributeById**](docs/Api/AttributeApi.md#obpv400gettransactionrequestattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
-*AttributeApi* | [**oBPv400GetTransactionRequestAttributeDefinition**](docs/Api/AttributeApi.md#obpv400gettransactionrequestattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
-*AttributeApi* | [**oBPv400GetTransactionRequestAttributes**](docs/Api/AttributeApi.md#obpv400gettransactionrequestattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
-*AttributeApi* | [**oBPv400UpdateBankAttribute**](docs/Api/AttributeApi.md#obpv400updatebankattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
-*AttributeApi* | [**oBPv400UpdateCustomerAttribute**](docs/Api/AttributeApi.md#obpv400updatecustomerattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
-*AttributeApi* | [**oBPv400UpdateProductAttribute**](docs/Api/AttributeApi.md#obpv400updateproductattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute
-*AttributeApi* | [**oBPv400UpdateTransactionAttribute**](docs/Api/AttributeApi.md#obpv400updatetransactionattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
-*AttributeApi* | [**oBPv400UpdateTransactionRequestAttribute**](docs/Api/AttributeApi.md#obpv400updatetransactionrequestattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
-*AttributeApi* | [**oBPv510CreateAtmAttribute**](docs/Api/AttributeApi.md#obpv510createatmattribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
-*AttributeApi* | [**oBPv510DeleteAtmAttribute**](docs/Api/AttributeApi.md#obpv510deleteatmattribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
-*AttributeApi* | [**oBPv510GetAtmAttribute**](docs/Api/AttributeApi.md#obpv510getatmattribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
-*AttributeApi* | [**oBPv510GetAtmAttributes**](docs/Api/AttributeApi.md#obpv510getatmattributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
-*AttributeApi* | [**oBPv510UpdateAtmAttribute**](docs/Api/AttributeApi.md#obpv510updateatmattribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
-*AttributeApi* | [**oBPv600CreatePersonalDataField**](docs/Api/AttributeApi.md#obpv600createpersonaldatafield) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
-*AttributeApi* | [**oBPv600CreateUserAttribute**](docs/Api/AttributeApi.md#obpv600createuserattribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
-*AttributeApi* | [**oBPv600DeletePersonalDataField**](docs/Api/AttributeApi.md#obpv600deletepersonaldatafield) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
-*AttributeApi* | [**oBPv600DeleteUserAttribute**](docs/Api/AttributeApi.md#obpv600deleteuserattribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
-*AttributeApi* | [**oBPv600GetPersonalDataFieldById**](docs/Api/AttributeApi.md#obpv600getpersonaldatafieldbyid) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
-*AttributeApi* | [**oBPv600GetPersonalDataFields**](docs/Api/AttributeApi.md#obpv600getpersonaldatafields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
-*AttributeApi* | [**oBPv600GetUserAttributeById**](docs/Api/AttributeApi.md#obpv600getuserattributebyid) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
-*AttributeApi* | [**oBPv600GetUserAttributes**](docs/Api/AttributeApi.md#obpv600getuserattributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
-*AttributeApi* | [**oBPv600UpdatePersonalDataField**](docs/Api/AttributeApi.md#obpv600updatepersonaldatafield) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
-*AttributeApi* | [**oBPv600UpdateUserAttribute**](docs/Api/AttributeApi.md#obpv600updateuserattribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
-*AuthenticationTypeValidationApi* | [**oBPv400CreateAuthenticationTypeValidation**](docs/Api/AuthenticationTypeValidationApi.md#obpv400createauthenticationtypevalidation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation
-*AuthenticationTypeValidationApi* | [**oBPv400DeleteAuthenticationTypeValidation**](docs/Api/AuthenticationTypeValidationApi.md#obpv400deleteauthenticationtypevalidation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation
-*AuthenticationTypeValidationApi* | [**oBPv400GetAllAuthenticationTypeValidations**](docs/Api/AuthenticationTypeValidationApi.md#obpv400getallauthenticationtypevalidations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations
-*AuthenticationTypeValidationApi* | [**oBPv400GetAllAuthenticationTypeValidationsPublic**](docs/Api/AuthenticationTypeValidationApi.md#obpv400getallauthenticationtypevalidationspublic) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public
-*AuthenticationTypeValidationApi* | [**oBPv400GetAuthenticationTypeValidation**](docs/Api/AuthenticationTypeValidationApi.md#obpv400getauthenticationtypevalidation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation
-*AuthenticationTypeValidationApi* | [**oBPv400UpdateAuthenticationTypeValidation**](docs/Api/AuthenticationTypeValidationApi.md#obpv400updateauthenticationtypevalidation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation
-*BalanceApi* | [**oBPv510CreateBankAccountBalance**](docs/Api/BalanceApi.md#obpv510createbankaccountbalance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
-*BalanceApi* | [**oBPv510DeleteBankAccountBalance**](docs/Api/BalanceApi.md#obpv510deletebankaccountbalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
-*BalanceApi* | [**oBPv510GetAllBankAccountBalances**](docs/Api/BalanceApi.md#obpv510getallbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
-*BalanceApi* | [**oBPv510GetBankAccountBalanceById**](docs/Api/BalanceApi.md#obpv510getbankaccountbalancebyid) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
-*BalanceApi* | [**oBPv510UpdateBankAccountBalance**](docs/Api/BalanceApi.md#obpv510updatebankaccountbalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
-*BankApi* | [**oBPv200GetTransactionTypes**](docs/Api/BankApi.md#obpv200gettransactiontypes) | **GET** /obp/v2.0.0/banks/{bankid}/transaction-types | Get Transaction Types at Bank
-*BankApi* | [**oBPv210CreateTransactionType**](docs/Api/BankApi.md#obpv210createtransactiontype) | **PUT** /obp/v2.1.0/banks/{bankid}/transaction-types | Create Transaction Type at bank
-*BankApi* | [**oBPv210GetTransactionRequestTypesSupportedByBank**](docs/Api/BankApi.md#obpv210gettransactionrequesttypessupportedbybank) | **GET** /obp/v2.1.0/banks/{bankid}/transaction-request-types | Get Transaction Request Types at Bank
-*BankApi* | [**oBPv300GetBranch**](docs/Api/BankApi.md#obpv300getbranch) | **GET** /obp/v3.0.0/banks/{bankid}/branches/{branchid} | Get Branch
-*BankApi* | [**oBPv300GetBranches**](docs/Api/BankApi.md#obpv300getbranches) | **GET** /obp/v3.0.0/banks/{bankid}/branches | Get Branches for a Bank
-*BankApi* | [**oBPv310CreateAccountWebhook**](docs/Api/BankApi.md#obpv310createaccountwebhook) | **POST** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Create an Account Webhook
-*BankApi* | [**oBPv310EnableDisableAccountWebhook**](docs/Api/BankApi.md#obpv310enabledisableaccountwebhook) | **PUT** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Enable/Disable an Account Webhook
-*BankApi* | [**oBPv310GetAccountWebhooks**](docs/Api/BankApi.md#obpv310getaccountwebhooks) | **GET** /obp/v3.1.0/management/banks/{bankid}/account-web-hooks | Get Account Webhooks
-*BankApi* | [**oBPv400CreateBankAccountNotificationWebhook**](docs/Api/BankApi.md#obpv400createbankaccountnotificationwebhook) | **POST** /obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction | Create bank level Account Notification Webhook
-*BankApi* | [**oBPv400CreateBankAttribute**](docs/Api/BankApi.md#obpv400createbankattribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
-*BankApi* | [**oBPv400CreateOrUpdateBankAttributeDefinition**](docs/Api/BankApi.md#obpv400createorupdatebankattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
-*BankApi* | [**oBPv400CreateSettlementAccount**](docs/Api/BankApi.md#obpv400createsettlementaccount) | **POST** /obp/v4.0.0/banks/{bankid}/settlement-accounts | Create Settlement Account
-*BankApi* | [**oBPv400CreateSystemAccountNotificationWebhook**](docs/Api/BankApi.md#obpv400createsystemaccountnotificationwebhook) | **POST** /obp/v4.0.0/web-hooks/account/notifications/on-create-transaction | Create system level Account Notification Webhook
-*BankApi* | [**oBPv400DeleteBankAttribute**](docs/Api/BankApi.md#obpv400deletebankattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
-*BankApi* | [**oBPv400DeleteBankCascade**](docs/Api/BankApi.md#obpv400deletebankcascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid} | Delete Bank Cascade
-*BankApi* | [**oBPv400GetBankAttribute**](docs/Api/BankApi.md#obpv400getbankattribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
-*BankApi* | [**oBPv400GetBankAttributes**](docs/Api/BankApi.md#obpv400getbankattributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
-*BankApi* | [**oBPv400GetSettlementAccounts**](docs/Api/BankApi.md#obpv400getsettlementaccounts) | **GET** /obp/v4.0.0/banks/{bankid}/settlement-accounts | Get Settlement accounts at Bank
-*BankApi* | [**oBPv400UpdateBankAttribute**](docs/Api/BankApi.md#obpv400updatebankattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
-*BankApi* | [**oBPv500UpdateBank**](docs/Api/BankApi.md#obpv500updatebank) | **PUT** /obp/v5.0.0/banks | Update Bank
-*BankApi* | [**oBPv600CreateBank**](docs/Api/BankApi.md#obpv600createbank) | **POST** /obp/v6.0.0/banks | Create Bank
-*BankApi* | [**oBPv600GetBank**](docs/Api/BankApi.md#obpv600getbank) | **GET** /obp/v6.0.0/banks/{bankid} | Get Bank
-*BankApi* | [**oBPv600GetBanks**](docs/Api/BankApi.md#obpv600getbanks) | **GET** /obp/v6.0.0/banks | Get Banks
-*BankAttributeApi* | [**oBPv400CreateBankAttribute**](docs/Api/BankAttributeApi.md#obpv400createbankattribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
-*BankAttributeApi* | [**oBPv400CreateOrUpdateBankAttributeDefinition**](docs/Api/BankAttributeApi.md#obpv400createorupdatebankattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
-*BankAttributeApi* | [**oBPv400DeleteBankAttribute**](docs/Api/BankAttributeApi.md#obpv400deletebankattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
-*BankAttributeApi* | [**oBPv400GetBankAttribute**](docs/Api/BankAttributeApi.md#obpv400getbankattribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
-*BankAttributeApi* | [**oBPv400GetBankAttributes**](docs/Api/BankAttributeApi.md#obpv400getbankattributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
-*BankAttributeApi* | [**oBPv400UpdateBankAttribute**](docs/Api/BankAttributeApi.md#obpv400updatebankattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
-*BranchApi* | [**oBPv300CreateBranch**](docs/Api/BranchApi.md#obpv300createbranch) | **POST** /obp/v3.0.0/banks/{bankid}/branches | Create Branch
-*BranchApi* | [**oBPv300GetBranch**](docs/Api/BranchApi.md#obpv300getbranch) | **GET** /obp/v3.0.0/banks/{bankid}/branches/{branchid} | Get Branch
-*BranchApi* | [**oBPv300GetBranches**](docs/Api/BranchApi.md#obpv300getbranches) | **GET** /obp/v3.0.0/banks/{bankid}/branches | Get Branches for a Bank
-*BranchApi* | [**oBPv310DeleteBranch**](docs/Api/BranchApi.md#obpv310deletebranch) | **DELETE** /obp/v3.1.0/banks/{bankid}/branches/{branchid} | Delete Branch
-*CacheApi* | [**oBPv600GetCacheConfig**](docs/Api/CacheApi.md#obpv600getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
-*CacheApi* | [**oBPv600GetCacheInfo**](docs/Api/CacheApi.md#obpv600getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
-*CacheApi* | [**oBPv600GetCacheNamespaces**](docs/Api/CacheApi.md#obpv600getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
-*CacheApi* | [**oBPv600InvalidateCacheNamespace**](docs/Api/CacheApi.md#obpv600invalidatecachenamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
-*CardApi* | [**oBPv130GetCards**](docs/Api/CardApi.md#obpv130getcards) | **GET** /obp/v1.3.0/cards | Get cards for the current user
-*CardApi* | [**oBPv310CreateCardAttribute**](docs/Api/CardApi.md#obpv310createcardattribute) | **POST** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attribute | Create Card Attribute
-*CardApi* | [**oBPv310DeleteCardForBank**](docs/Api/CardApi.md#obpv310deletecardforbank) | **DELETE** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid} | Delete Card
-*CardApi* | [**oBPv310GetCardForBank**](docs/Api/CardApi.md#obpv310getcardforbank) | **GET** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid} | Get Card By Id
-*CardApi* | [**oBPv310GetCardsForBank**](docs/Api/CardApi.md#obpv310getcardsforbank) | **GET** /obp/v3.1.0/management/banks/{bankid}/cards | Get Cards for the specified bank
-*CardApi* | [**oBPv310GetStatusOfCreditCardOrder**](docs/Api/CardApi.md#obpv310getstatusofcreditcardorder) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/credit_cards/orders | Get status of Credit Card order
-*CardApi* | [**oBPv310UpdateCardAttribute**](docs/Api/CardApi.md#obpv310updatecardattribute) | **PUT** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid} | Update Card Attribute
-*CardApi* | [**oBPv310UpdatedCardForBank**](docs/Api/CardApi.md#obpv310updatedcardforbank) | **PUT** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid} | Update Card
-*CardApi* | [**oBPv400CreateOrUpdateCardAttributeDefinition**](docs/Api/CardApi.md#obpv400createorupdatecardattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Create or Update Card Attribute Definition
-*CardApi* | [**oBPv400DeleteCardAttributeDefinition**](docs/Api/CardApi.md#obpv400deletecardattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/card | Delete Card Attribute Definition
-*CardApi* | [**oBPv400GetCardAttributeDefinition**](docs/Api/CardApi.md#obpv400getcardattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Get Card Attribute Definition
-*CardApi* | [**oBPv500AddCardForBank**](docs/Api/CardApi.md#obpv500addcardforbank) | **POST** /obp/v5.0.0/management/banks/{bankid}/cards | Create Card
-*CardAttributeApi* | [**oBPv310CreateCardAttribute**](docs/Api/CardAttributeApi.md#obpv310createcardattribute) | **POST** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attribute | Create Card Attribute
-*CardAttributeApi* | [**oBPv310UpdateCardAttribute**](docs/Api/CardAttributeApi.md#obpv310updatecardattribute) | **PUT** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid} | Update Card Attribute
-*CardAttributeApi* | [**oBPv400CreateOrUpdateCardAttributeDefinition**](docs/Api/CardAttributeApi.md#obpv400createorupdatecardattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Create or Update Card Attribute Definition
-*CardAttributeApi* | [**oBPv400DeleteCardAttributeDefinition**](docs/Api/CardAttributeApi.md#obpv400deletecardattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/card | Delete Card Attribute Definition
-*CardAttributeApi* | [**oBPv400GetCardAttributeDefinition**](docs/Api/CardAttributeApi.md#obpv400getcardattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Get Card Attribute Definition
-*ChannelApi* | [**oBPv600DeleteSignalChannel**](docs/Api/ChannelApi.md#obpv600deletesignalchannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
-*ChannelApi* | [**oBPv600GetSignalChannelInfo**](docs/Api/ChannelApi.md#obpv600getsignalchannelinfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
-*ChannelApi* | [**oBPv600GetSignalChannels**](docs/Api/ChannelApi.md#obpv600getsignalchannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
-*ChannelApi* | [**oBPv600GetSignalMessages**](docs/Api/ChannelApi.md#obpv600getsignalmessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
-*ChannelApi* | [**oBPv600GetSignalStats**](docs/Api/ChannelApi.md#obpv600getsignalstats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
-*ChannelApi* | [**oBPv600PublishSignalMessage**](docs/Api/ChannelApi.md#obpv600publishsignalmessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
-*ConfirmationOfFundsServicePIISApi* | [**oBPv310CheckFundsAvailable**](docs/Api/ConfirmationOfFundsServicePIISApi.md#obpv310checkfundsavailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
-*ConnectorApi* | [**oBPv600GetConnectors**](docs/Api/ConnectorApi.md#obpv600getconnectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
-*ConnectorApi* | [**oBPv600GetStoredProcedureConnectorHealth**](docs/Api/ConnectorApi.md#obpv600getstoredprocedureconnectorhealth) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
-*ConnectorMethodApi* | [**oBPv400CreateConnectorMethod**](docs/Api/ConnectorMethodApi.md#obpv400createconnectormethod) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method
-*ConnectorMethodApi* | [**oBPv400GetAllConnectorMethods**](docs/Api/ConnectorMethodApi.md#obpv400getallconnectormethods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods
-*ConnectorMethodApi* | [**oBPv400GetConnectorMethod**](docs/Api/ConnectorMethodApi.md#obpv400getconnectormethod) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id
-*ConnectorMethodApi* | [**oBPv400UpdateConnectorMethod**](docs/Api/ConnectorMethodApi.md#obpv400updateconnectormethod) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method
-*ConnectorMethodApi* | [**oBPv600GetConnectorMethodNames**](docs/Api/ConnectorMethodApi.md#obpv600getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
-*ConsentApi* | [**oBPv310AnswerConsentChallenge**](docs/Api/ConsentApi.md#obpv310answerconsentchallenge) | **POST** /obp/v3.1.0/banks/{bankid}/consents/{consentid}/challenge | Answer Consent Challenge
-*ConsentApi* | [**oBPv310CreateConsentEmail**](docs/Api/ConsentApi.md#obpv310createconsentemail) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{email} | Create Consent (EMAIL)
-*ConsentApi* | [**oBPv310CreateConsentImplicit**](docs/Api/ConsentApi.md#obpv310createconsentimplicit) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{implicit} | Create Consent (IMPLICIT)
-*ConsentApi* | [**oBPv310CreateConsentSms**](docs/Api/ConsentApi.md#obpv310createconsentsms) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{sms} | Create Consent (SMS)
-*ConsentApi* | [**oBPv400AddConsentUser**](docs/Api/ConsentApi.md#obpv400addconsentuser) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid}/user-update-request | Add User to a Consent
-*ConsentApi* | [**oBPv400GetConsentInfos**](docs/Api/ConsentApi.md#obpv400getconsentinfos) | **GET** /obp/v4.0.0/my/consent-infos | Get My Consents Info
-*ConsentApi* | [**oBPv400GetConsentInfosByBank**](docs/Api/ConsentApi.md#obpv400getconsentinfosbybank) | **GET** /obp/v4.0.0/banks/{bankid}/my/consent-infos | Get My Consents Info At Bank
-*ConsentApi* | [**oBPv400UpdateConsentStatus**](docs/Api/ConsentApi.md#obpv400updateconsentstatus) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid} | Update Consent Status
-*ConsentApi* | [**oBPv500CreateConsentByConsentRequestIdEmail**](docs/Api/ConsentApi.md#obpv500createconsentbyconsentrequestidemail) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
-*ConsentApi* | [**oBPv500CreateConsentByConsentRequestIdImplicit**](docs/Api/ConsentApi.md#obpv500createconsentbyconsentrequestidimplicit) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{implicit}/consents | Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
-*ConsentApi* | [**oBPv500CreateConsentByConsentRequestIdSms**](docs/Api/ConsentApi.md#obpv500createconsentbyconsentrequestidsms) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{sms}/consents | Create Consent By CONSENT_REQUEST_ID (SMS)
-*ConsentApi* | [**oBPv500CreateConsentRequest**](docs/Api/ConsentApi.md#obpv500createconsentrequest) | **POST** /obp/v5.0.0/consumer/consent-requests | Create Consent Request
-*ConsentApi* | [**oBPv500GetConsentByConsentRequestId**](docs/Api/ConsentApi.md#obpv500getconsentbyconsentrequestid) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/consents | Get Consent By Consent Request Id via Consumer
-*ConsentApi* | [**oBPv500GetConsentRequest**](docs/Api/ConsentApi.md#obpv500getconsentrequest) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid} | Get Consent Request
-*ConsentApi* | [**oBPv510CreateConsentImplicit**](docs/Api/ConsentApi.md#obpv510createconsentimplicit) | **POST** /obp/v5.1.0/my/consents/{implicit} | Create Consent (IMPLICIT)
-*ConsentApi* | [**oBPv510CreateVRPConsentRequest**](docs/Api/ConsentApi.md#obpv510createvrpconsentrequest) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
-*ConsentApi* | [**oBPv510GetConsentByConsentId**](docs/Api/ConsentApi.md#obpv510getconsentbyconsentid) | **GET** /obp/v5.1.0/user/current/consents/{consentid} | Get Consent By Consent Id via User
-*ConsentApi* | [**oBPv510GetConsentByConsentIdViaConsumer**](docs/Api/ConsentApi.md#obpv510getconsentbyconsentidviaconsumer) | **GET** /obp/v5.1.0/consumer/current/consents/{consentid} | Get Consent By Consent Id via Consumer
-*ConsentApi* | [**oBPv510GetConsents**](docs/Api/ConsentApi.md#obpv510getconsents) | **GET** /obp/v5.1.0/management/consents | Get Consents
-*ConsentApi* | [**oBPv510GetConsentsAtBank**](docs/Api/ConsentApi.md#obpv510getconsentsatbank) | **GET** /obp/v5.1.0/management/consents/banks/{bankid} | Get Consents at Bank
-*ConsentApi* | [**oBPv510GetMyConsents**](docs/Api/ConsentApi.md#obpv510getmyconsents) | **GET** /obp/v5.1.0/my/consents | Get My Consents
-*ConsentApi* | [**oBPv510GetMyConsentsByBank**](docs/Api/ConsentApi.md#obpv510getmyconsentsbybank) | **GET** /obp/v5.1.0/banks/{bankid}/my/consents | Get My Consents at Bank
-*ConsentApi* | [**oBPv510MtlsClientCertificateInfo**](docs/Api/ConsentApi.md#obpv510mtlsclientcertificateinfo) | **GET** /obp/v5.1.0/my/mtls/certificate/current | Provide client&#39;s certificate info of a current call
-*ConsentApi* | [**oBPv510RevokeConsentAtBank**](docs/Api/ConsentApi.md#obpv510revokeconsentatbank) | **DELETE** /obp/v5.1.0/banks/{bankid}/consents/{consentid} | Revoke Consent at Bank
-*ConsentApi* | [**oBPv510RevokeMyConsent**](docs/Api/ConsentApi.md#obpv510revokemyconsent) | **DELETE** /obp/v5.1.0/my/consents/{consentid} | Revoke My Consent
-*ConsentApi* | [**oBPv510SelfRevokeConsent**](docs/Api/ConsentApi.md#obpv510selfrevokeconsent) | **DELETE** /obp/v5.1.0/my/consent/current | Revoke Consent used in the Current Call
-*ConsentApi* | [**oBPv510UpdateConsentAccountAccessByConsentId**](docs/Api/ConsentApi.md#obpv510updateconsentaccountaccessbyconsentid) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/account-access | Update Consent Account Access by CONSENT_ID
-*ConsentApi* | [**oBPv510UpdateConsentStatusByConsent**](docs/Api/ConsentApi.md#obpv510updateconsentstatusbyconsent) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid} | Update Consent Status by CONSENT_ID
-*ConsentApi* | [**oBPv510UpdateConsentUserIdByConsentId**](docs/Api/ConsentApi.md#obpv510updateconsentuseridbyconsentid) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/created-by-user | Update Created by User of Consent by CONSENT_ID
-*ConsumerApi* | [**oBPv300DeleteScope**](docs/Api/ConsumerApi.md#obpv300deletescope) | **DELETE** /obp/v3.0.0/consumers/{consumerid}/scope/{scopeid} | Delete Consumer Scope
-*ConsumerApi* | [**oBPv310EnableDisableConsumers**](docs/Api/ConsumerApi.md#obpv310enabledisableconsumers) | **PUT** /obp/v3.1.0/management/consumers/{consumerid} | Enable or Disable Consumers
-*ConsumerApi* | [**oBPv310GetCallsLimit**](docs/Api/ConsumerApi.md#obpv310getcallslimit) | **GET** /obp/v3.1.0/management/consumers/{consumerid}/consumer/call-limits | Get Rate Limits for a Consumer
-*ConsumerApi* | [**oBPv310GetConsumersForCurrentUser**](docs/Api/ConsumerApi.md#obpv310getconsumersforcurrentuser) | **GET** /obp/v3.1.0/management/users/current/consumers | Get Consumers (logged in User)
-*ConsumerApi* | [**oBPv400AddScope**](docs/Api/ConsumerApi.md#obpv400addscope) | **POST** /obp/v4.0.0/consumers/{consumerid}/scopes | Create Scope for a Consumer
-*ConsumerApi* | [**oBPv400CallsLimit**](docs/Api/ConsumerApi.md#obpv400callslimit) | **PUT** /obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits | Set Rate Limits / Call Limits per Consumer
-*ConsumerApi* | [**oBPv400GetScopes**](docs/Api/ConsumerApi.md#obpv400getscopes) | **GET** /obp/v4.0.0/consumers/{consumerid}/scopes | Get Scopes for Consumer
-*ConsumerApi* | [**oBPv510CreateConsumer**](docs/Api/ConsumerApi.md#obpv510createconsumer) | **POST** /obp/v5.1.0/management/consumers | Create a Consumer
-*ConsumerApi* | [**oBPv510CreateConsumerDynamicRegistration**](docs/Api/ConsumerApi.md#obpv510createconsumerdynamicregistration) | **POST** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
-*ConsumerApi* | [**oBPv510CreateMyConsumer**](docs/Api/ConsumerApi.md#obpv510createmyconsumer) | **POST** /obp/v5.1.0/my/consumers | Create a Consumer
-*ConsumerApi* | [**oBPv510GetCallsLimit**](docs/Api/ConsumerApi.md#obpv510getcallslimit) | **GET** /obp/v5.1.0/management/consumers/{consumerid}/consumer/rate-limits | Get Rate Limits for a Consumer
-*ConsumerApi* | [**oBPv510GetConsumers**](docs/Api/ConsumerApi.md#obpv510getconsumers) | **GET** /obp/v5.1.0/management/consumers | Get Consumers
-*ConsumerApi* | [**oBPv510UpdateConsumerCertificate**](docs/Api/ConsumerApi.md#obpv510updateconsumercertificate) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/certificate | Update Consumer Certificate
-*ConsumerApi* | [**oBPv510UpdateConsumerLogoURL**](docs/Api/ConsumerApi.md#obpv510updateconsumerlogourl) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/logo_url | Update Consumer LogoURL
-*ConsumerApi* | [**oBPv510UpdateConsumerName**](docs/Api/ConsumerApi.md#obpv510updateconsumername) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/name | Update Consumer Name
-*ConsumerApi* | [**oBPv510UpdateConsumerRedirectURL**](docs/Api/ConsumerApi.md#obpv510updateconsumerredirecturl) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/redirect_url | Update Consumer RedirectURL
-*ConsumerApi* | [**oBPv600CreateCallLimits**](docs/Api/ConsumerApi.md#obpv600createcalllimits) | **POST** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits | Create Rate Limits for a Consumer
-*ConsumerApi* | [**oBPv600DeleteCallLimits**](docs/Api/ConsumerApi.md#obpv600deletecalllimits) | **DELETE** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Delete Rate Limit by Rate Limiting ID
-*ConsumerApi* | [**oBPv600GetActiveRateLimitsAtDate**](docs/Api/ConsumerApi.md#obpv600getactiveratelimitsatdate) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/active-rate-limits/{datewithhour} | Get Active Rate Limits for Hour
-*ConsumerApi* | [**oBPv600GetActiveRateLimitsNow**](docs/Api/ConsumerApi.md#obpv600getactiveratelimitsnow) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/active-rate-limits | Get Active Rate Limits (Current)
-*ConsumerApi* | [**oBPv600GetConsumer**](docs/Api/ConsumerApi.md#obpv600getconsumer) | **GET** /obp/v6.0.0/management/consumers/{consumerid} | Get Consumer
-*ConsumerApi* | [**oBPv600GetConsumerCallCounters**](docs/Api/ConsumerApi.md#obpv600getconsumercallcounters) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/call-counters | Get Call Counts for Consumer
-*ConsumerApi* | [**oBPv600GetCurrentConsumer**](docs/Api/ConsumerApi.md#obpv600getcurrentconsumer) | **GET** /obp/v6.0.0/consumers/current | Get Current Consumer
-*ConsumerApi* | [**oBPv600GetOidcClient**](docs/Api/ConsumerApi.md#obpv600getoidcclient) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
-*ConsumerApi* | [**oBPv600UpdateRateLimits**](docs/Api/ConsumerApi.md#obpv600updateratelimits) | **PUT** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Set Rate Limits / Call Limits per Consumer
-*ConsumerApi* | [**oBPv600VerifyOidcClient**](docs/Api/ConsumerApi.md#obpv600verifyoidcclient) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
-*CorporateCustomerApi* | [**oBPv600CreateCorporateCustomer**](docs/Api/CorporateCustomerApi.md#obpv600createcorporatecustomer) | **POST** /obp/v6.0.0/banks/{bankid}/corporate-customers | Create Corporate Customer
-*CorporateCustomerApi* | [**oBPv600GetCorporateCustomerByCustomerId**](docs/Api/CorporateCustomerApi.md#obpv600getcorporatecustomerbycustomerid) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid} | Get Corporate Customer by CUSTOMER_ID
-*CorporateCustomerApi* | [**oBPv600GetCorporateCustomerSubsidiaries**](docs/Api/CorporateCustomerApi.md#obpv600getcorporatecustomersubsidiaries) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid}/subsidiaries | Get Corporate Customer Subsidiaries
-*CorporateCustomerApi* | [**oBPv600GetCorporateCustomersAtOneBank**](docs/Api/CorporateCustomerApi.md#obpv600getcorporatecustomersatonebank) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers | Get Corporate Customers at Bank
-*CounterpartyApi* | [**oBPv121AddCounterpartyCorporateLocation**](docs/Api/CounterpartyApi.md#obpv121addcounterpartycorporatelocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty
-*CounterpartyApi* | [**oBPv121AddCounterpartyImageUrl**](docs/Api/CounterpartyApi.md#obpv121addcounterpartyimageurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account
-*CounterpartyApi* | [**oBPv121AddCounterpartyMoreInfo**](docs/Api/CounterpartyApi.md#obpv121addcounterpartymoreinfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info
-*CounterpartyApi* | [**oBPv121AddCounterpartyOpenCorporatesUrl**](docs/Api/CounterpartyApi.md#obpv121addcounterpartyopencorporatesurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty
-*CounterpartyApi* | [**oBPv121AddCounterpartyPhysicalLocation**](docs/Api/CounterpartyApi.md#obpv121addcounterpartyphysicallocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account
-*CounterpartyApi* | [**oBPv121AddCounterpartyPublicAlias**](docs/Api/CounterpartyApi.md#obpv121addcounterpartypublicalias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account
-*CounterpartyApi* | [**oBPv121AddCounterpartyUrl**](docs/Api/CounterpartyApi.md#obpv121addcounterpartyurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account
-*CounterpartyApi* | [**oBPv121AddOtherAccountPrivateAlias**](docs/Api/CounterpartyApi.md#obpv121addotheraccountprivatealias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias
-*CounterpartyApi* | [**oBPv121DeleteCounterpartyCorporateLocation**](docs/Api/CounterpartyApi.md#obpv121deletecounterpartycorporatelocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location
-*CounterpartyApi* | [**oBPv121DeleteCounterpartyImageUrl**](docs/Api/CounterpartyApi.md#obpv121deletecounterpartyimageurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL
-*CounterpartyApi* | [**oBPv121DeleteCounterpartyMoreInfo**](docs/Api/CounterpartyApi.md#obpv121deletecounterpartymoreinfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account
-*CounterpartyApi* | [**oBPv121DeleteCounterpartyOpenCorporatesUrl**](docs/Api/CounterpartyApi.md#obpv121deletecounterpartyopencorporatesurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL
-*CounterpartyApi* | [**oBPv121DeleteCounterpartyPhysicalLocation**](docs/Api/CounterpartyApi.md#obpv121deletecounterpartyphysicallocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location
-*CounterpartyApi* | [**oBPv121DeleteCounterpartyPrivateAlias**](docs/Api/CounterpartyApi.md#obpv121deletecounterpartyprivatealias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias
-*CounterpartyApi* | [**oBPv121DeleteCounterpartyPublicAlias**](docs/Api/CounterpartyApi.md#obpv121deletecounterpartypublicalias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias
-*CounterpartyApi* | [**oBPv121DeleteCounterpartyUrl**](docs/Api/CounterpartyApi.md#obpv121deletecounterpartyurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account
-*CounterpartyApi* | [**oBPv121GetCounterpartyPublicAlias**](docs/Api/CounterpartyApi.md#obpv121getcounterpartypublicalias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account
-*CounterpartyApi* | [**oBPv121GetOtherAccountForTransaction**](docs/Api/CounterpartyApi.md#obpv121getotheraccountfortransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account | Get Other Account of Transaction
-*CounterpartyApi* | [**oBPv121GetOtherAccountMetadata**](docs/Api/CounterpartyApi.md#obpv121getotheraccountmetadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata
-*CounterpartyApi* | [**oBPv121GetOtherAccountPrivateAlias**](docs/Api/CounterpartyApi.md#obpv121getotheraccountprivatealias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias
-*CounterpartyApi* | [**oBPv121UpdateCounterpartyCorporateLocation**](docs/Api/CounterpartyApi.md#obpv121updatecounterpartycorporatelocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location
-*CounterpartyApi* | [**oBPv121UpdateCounterpartyImageUrl**](docs/Api/CounterpartyApi.md#obpv121updatecounterpartyimageurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url
-*CounterpartyApi* | [**oBPv121UpdateCounterpartyMoreInfo**](docs/Api/CounterpartyApi.md#obpv121updatecounterpartymoreinfo) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info
-*CounterpartyApi* | [**oBPv121UpdateCounterpartyOpenCorporatesUrl**](docs/Api/CounterpartyApi.md#obpv121updatecounterpartyopencorporatesurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty
-*CounterpartyApi* | [**oBPv121UpdateCounterpartyPhysicalLocation**](docs/Api/CounterpartyApi.md#obpv121updatecounterpartyphysicallocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location
-*CounterpartyApi* | [**oBPv121UpdateCounterpartyPrivateAlias**](docs/Api/CounterpartyApi.md#obpv121updatecounterpartyprivatealias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias
-*CounterpartyApi* | [**oBPv121UpdateCounterpartyPublicAlias**](docs/Api/CounterpartyApi.md#obpv121updatecounterpartypublicalias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account
-*CounterpartyApi* | [**oBPv121UpdateCounterpartyUrl**](docs/Api/CounterpartyApi.md#obpv121updatecounterpartyurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account
-*CounterpartyApi* | [**oBPv300GetOtherAccountByIdForBankAccount**](docs/Api/CounterpartyApi.md#obpv300getotheraccountbyidforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid} | Get Other Account by Id
-*CounterpartyApi* | [**oBPv300GetOtherAccountsForBankAccount**](docs/Api/CounterpartyApi.md#obpv300getotheraccountsforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts | Get Other Accounts of one Account
-*CounterpartyApi* | [**oBPv400CreateCounterparty**](docs/Api/CounterpartyApi.md#obpv400createcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty (Explicit)
-*CounterpartyApi* | [**oBPv400CreateCounterpartyForAnyAccount**](docs/Api/CounterpartyApi.md#obpv400createcounterpartyforanyaccount) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty for any account (Explicit)
-*CounterpartyApi* | [**oBPv400DeleteCounterpartyForAnyAccount**](docs/Api/CounterpartyApi.md#obpv400deletecounterpartyforanyaccount) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty for any account (Explicit)
-*CounterpartyApi* | [**oBPv400DeleteExplicitCounterparty**](docs/Api/CounterpartyApi.md#obpv400deleteexplicitcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty (Explicit)
-*CounterpartyApi* | [**oBPv400GetCounterpartiesForAnyAccount**](docs/Api/CounterpartyApi.md#obpv400getcounterpartiesforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
-*CounterpartyApi* | [**oBPv400GetCounterpartyByIdForAnyAccount**](docs/Api/CounterpartyApi.md#obpv400getcounterpartybyidforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id for any account (Explicit)
-*CounterpartyApi* | [**oBPv400GetCounterpartyByNameForAnyAccount**](docs/Api/CounterpartyApi.md#obpv400getcounterpartybynameforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname} | Get Counterparty by name for any account (Explicit)
-*CounterpartyApi* | [**oBPv400GetExplicitCounterpartiesForAccount**](docs/Api/CounterpartyApi.md#obpv400getexplicitcounterpartiesforaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
-*CounterpartyApi* | [**oBPv400GetExplicitCounterpartyById**](docs/Api/CounterpartyApi.md#obpv400getexplicitcounterpartybyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
-*CounterpartyLimitsApi* | [**oBPv510CreateCounterpartyLimit**](docs/Api/CounterpartyLimitsApi.md#obpv510createcounterpartylimit) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Create Counterparty Limit
-*CounterpartyLimitsApi* | [**oBPv510DeleteCounterpartyLimit**](docs/Api/CounterpartyLimitsApi.md#obpv510deletecounterpartylimit) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Delete Counterparty Limit
-*CounterpartyLimitsApi* | [**oBPv510GetCounterpartyLimit**](docs/Api/CounterpartyLimitsApi.md#obpv510getcounterpartylimit) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Get Counterparty Limit
-*CounterpartyLimitsApi* | [**oBPv510GetCounterpartyLimitStatus**](docs/Api/CounterpartyLimitsApi.md#obpv510getcounterpartylimitstatus) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limit-status | Get Counterparty Limit Status
-*CounterpartyLimitsApi* | [**oBPv510UpdateCounterpartyLimit**](docs/Api/CounterpartyLimitsApi.md#obpv510updatecounterpartylimit) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Update Counterparty Limit
-*CounterpartyMetadataApi* | [**oBPv121AddCounterpartyCorporateLocation**](docs/Api/CounterpartyMetadataApi.md#obpv121addcounterpartycorporatelocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty
-*CounterpartyMetadataApi* | [**oBPv121AddCounterpartyImageUrl**](docs/Api/CounterpartyMetadataApi.md#obpv121addcounterpartyimageurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account
-*CounterpartyMetadataApi* | [**oBPv121AddCounterpartyMoreInfo**](docs/Api/CounterpartyMetadataApi.md#obpv121addcounterpartymoreinfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info
-*CounterpartyMetadataApi* | [**oBPv121AddCounterpartyOpenCorporatesUrl**](docs/Api/CounterpartyMetadataApi.md#obpv121addcounterpartyopencorporatesurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty
-*CounterpartyMetadataApi* | [**oBPv121AddCounterpartyPhysicalLocation**](docs/Api/CounterpartyMetadataApi.md#obpv121addcounterpartyphysicallocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account
-*CounterpartyMetadataApi* | [**oBPv121AddCounterpartyPublicAlias**](docs/Api/CounterpartyMetadataApi.md#obpv121addcounterpartypublicalias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account
-*CounterpartyMetadataApi* | [**oBPv121AddCounterpartyUrl**](docs/Api/CounterpartyMetadataApi.md#obpv121addcounterpartyurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account
-*CounterpartyMetadataApi* | [**oBPv121AddOtherAccountPrivateAlias**](docs/Api/CounterpartyMetadataApi.md#obpv121addotheraccountprivatealias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias
-*CounterpartyMetadataApi* | [**oBPv121DeleteCounterpartyCorporateLocation**](docs/Api/CounterpartyMetadataApi.md#obpv121deletecounterpartycorporatelocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location
-*CounterpartyMetadataApi* | [**oBPv121DeleteCounterpartyImageUrl**](docs/Api/CounterpartyMetadataApi.md#obpv121deletecounterpartyimageurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL
-*CounterpartyMetadataApi* | [**oBPv121DeleteCounterpartyMoreInfo**](docs/Api/CounterpartyMetadataApi.md#obpv121deletecounterpartymoreinfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account
-*CounterpartyMetadataApi* | [**oBPv121DeleteCounterpartyOpenCorporatesUrl**](docs/Api/CounterpartyMetadataApi.md#obpv121deletecounterpartyopencorporatesurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL
-*CounterpartyMetadataApi* | [**oBPv121DeleteCounterpartyPhysicalLocation**](docs/Api/CounterpartyMetadataApi.md#obpv121deletecounterpartyphysicallocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location
-*CounterpartyMetadataApi* | [**oBPv121DeleteCounterpartyPrivateAlias**](docs/Api/CounterpartyMetadataApi.md#obpv121deletecounterpartyprivatealias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias
-*CounterpartyMetadataApi* | [**oBPv121DeleteCounterpartyPublicAlias**](docs/Api/CounterpartyMetadataApi.md#obpv121deletecounterpartypublicalias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias
-*CounterpartyMetadataApi* | [**oBPv121DeleteCounterpartyUrl**](docs/Api/CounterpartyMetadataApi.md#obpv121deletecounterpartyurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account
-*CounterpartyMetadataApi* | [**oBPv121GetCounterpartyPublicAlias**](docs/Api/CounterpartyMetadataApi.md#obpv121getcounterpartypublicalias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account
-*CounterpartyMetadataApi* | [**oBPv121GetOtherAccountMetadata**](docs/Api/CounterpartyMetadataApi.md#obpv121getotheraccountmetadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata
-*CounterpartyMetadataApi* | [**oBPv121GetOtherAccountPrivateAlias**](docs/Api/CounterpartyMetadataApi.md#obpv121getotheraccountprivatealias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias
-*CounterpartyMetadataApi* | [**oBPv121UpdateCounterpartyCorporateLocation**](docs/Api/CounterpartyMetadataApi.md#obpv121updatecounterpartycorporatelocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location
-*CounterpartyMetadataApi* | [**oBPv121UpdateCounterpartyImageUrl**](docs/Api/CounterpartyMetadataApi.md#obpv121updatecounterpartyimageurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url
-*CounterpartyMetadataApi* | [**oBPv121UpdateCounterpartyMoreInfo**](docs/Api/CounterpartyMetadataApi.md#obpv121updatecounterpartymoreinfo) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info
-*CounterpartyMetadataApi* | [**oBPv121UpdateCounterpartyOpenCorporatesUrl**](docs/Api/CounterpartyMetadataApi.md#obpv121updatecounterpartyopencorporatesurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty
-*CounterpartyMetadataApi* | [**oBPv121UpdateCounterpartyPhysicalLocation**](docs/Api/CounterpartyMetadataApi.md#obpv121updatecounterpartyphysicallocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location
-*CounterpartyMetadataApi* | [**oBPv121UpdateCounterpartyPrivateAlias**](docs/Api/CounterpartyMetadataApi.md#obpv121updatecounterpartyprivatealias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias
-*CounterpartyMetadataApi* | [**oBPv121UpdateCounterpartyPublicAlias**](docs/Api/CounterpartyMetadataApi.md#obpv121updatecounterpartypublicalias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account
-*CounterpartyMetadataApi* | [**oBPv121UpdateCounterpartyUrl**](docs/Api/CounterpartyMetadataApi.md#obpv121updatecounterpartyurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account
-*CounterpartyMetadataApi* | [**oBPv400GetExplicitCounterpartyById**](docs/Api/CounterpartyMetadataApi.md#obpv400getexplicitcounterpartybyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
-*CustomerApi* | [**oBPv140AddCustomerMessage**](docs/Api/CustomerApi.md#obpv140addcustomermessage) | **POST** /obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages | Create Customer Message
-*CustomerApi* | [**oBPv140GetCrmEvents**](docs/Api/CustomerApi.md#obpv140getcrmevents) | **GET** /obp/v1.4.0/banks/{bankid}/crm-events | Get CRM Events
-*CustomerApi* | [**oBPv140GetCustomersMessages**](docs/Api/CustomerApi.md#obpv140getcustomersmessages) | **GET** /obp/v1.4.0/banks/{bankid}/customer/messages | Get Customer Messages for all Customers
-*CustomerApi* | [**oBPv200AddKycCheck**](docs/Api/CustomerApi.md#obpv200addkyccheck) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_check/{kyccheckid} | Add KYC Check
-*CustomerApi* | [**oBPv200AddKycDocument**](docs/Api/CustomerApi.md#obpv200addkycdocument) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_documents/{kycdocumentid} | Add KYC Document
-*CustomerApi* | [**oBPv200AddKycMedia**](docs/Api/CustomerApi.md#obpv200addkycmedia) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_media/{kycmediaid} | Add KYC Media
-*CustomerApi* | [**oBPv200AddKycStatus**](docs/Api/CustomerApi.md#obpv200addkycstatus) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_statuses | Add KYC Status
-*CustomerApi* | [**oBPv200AddSocialMediaHandle**](docs/Api/CustomerApi.md#obpv200addsocialmediahandle) | **POST** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/social_media_handles | Create Customer Social Media Handle
-*CustomerApi* | [**oBPv200GetKycChecks**](docs/Api/CustomerApi.md#obpv200getkycchecks) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_checks | Get Customer KYC Checks
-*CustomerApi* | [**oBPv200GetKycDocuments**](docs/Api/CustomerApi.md#obpv200getkycdocuments) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_documents | Get Customer KYC Documents
-*CustomerApi* | [**oBPv200GetKycMedia**](docs/Api/CustomerApi.md#obpv200getkycmedia) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_media | Get KYC Media for a customer
-*CustomerApi* | [**oBPv200GetKycStatuses**](docs/Api/CustomerApi.md#obpv200getkycstatuses) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_statuses | Get Customer KYC statuses
-*CustomerApi* | [**oBPv200GetSocialMediaHandles**](docs/Api/CustomerApi.md#obpv200getsocialmediahandles) | **GET** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/social_media_handles | Get Customer Social Media Handles
-*CustomerApi* | [**oBPv300GetCustomersForUser**](docs/Api/CustomerApi.md#obpv300getcustomersforuser) | **GET** /obp/v3.0.0/users/current/customers | Get Customers for Current User
-*CustomerApi* | [**oBPv310CreateCustomerAddress**](docs/Api/CustomerApi.md#obpv310createcustomeraddress) | **POST** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/address | Create Address
-*CustomerApi* | [**oBPv310CreateMeeting**](docs/Api/CustomerApi.md#obpv310createmeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
-*CustomerApi* | [**oBPv310CreateTaxResidence**](docs/Api/CustomerApi.md#obpv310createtaxresidence) | **POST** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residence | Create Tax Residence
-*CustomerApi* | [**oBPv310DeleteCustomerAddress**](docs/Api/CustomerApi.md#obpv310deletecustomeraddress) | **DELETE** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses/{customeraddressid} | Delete Customer Address
-*CustomerApi* | [**oBPv310DeleteTaxResidence**](docs/Api/CustomerApi.md#obpv310deletetaxresidence) | **DELETE** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax_residencies/{taxresidenceid} | Delete Tax Residence
-*CustomerApi* | [**oBPv310GetCustomerAddresses**](docs/Api/CustomerApi.md#obpv310getcustomeraddresses) | **GET** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses | Get Customer Addresses
-*CustomerApi* | [**oBPv310GetFirehoseCustomers**](docs/Api/CustomerApi.md#obpv310getfirehosecustomers) | **GET** /obp/v3.1.0/banks/{bankid}/firehose/customers | Get Firehose Customers
-*CustomerApi* | [**oBPv310GetMeeting**](docs/Api/CustomerApi.md#obpv310getmeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
-*CustomerApi* | [**oBPv310GetMeetings**](docs/Api/CustomerApi.md#obpv310getmeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
-*CustomerApi* | [**oBPv310GetTaxResidence**](docs/Api/CustomerApi.md#obpv310gettaxresidence) | **GET** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residences | Get Tax Residences of Customer
-*CustomerApi* | [**oBPv310UpdateCustomerAddress**](docs/Api/CustomerApi.md#obpv310updatecustomeraddress) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses/{customeraddressid} | Update the Address of a Customer
-*CustomerApi* | [**oBPv310UpdateCustomerBranch**](docs/Api/CustomerApi.md#obpv310updatecustomerbranch) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/branch | Update the Branch of a Customer
-*CustomerApi* | [**oBPv310UpdateCustomerCreditLimit**](docs/Api/CustomerApi.md#obpv310updatecustomercreditlimit) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/credit-limit | Update the credit limit of a Customer
-*CustomerApi* | [**oBPv310UpdateCustomerCreditRatingAndSource**](docs/Api/CustomerApi.md#obpv310updatecustomercreditratingandsource) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/credit-rating-and-source | Update the credit rating and source of a Customer
-*CustomerApi* | [**oBPv310UpdateCustomerData**](docs/Api/CustomerApi.md#obpv310updatecustomerdata) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/data | Update the other data of a Customer
-*CustomerApi* | [**oBPv310UpdateCustomerEmail**](docs/Api/CustomerApi.md#obpv310updatecustomeremail) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/email | Update the email of a Customer
-*CustomerApi* | [**oBPv310UpdateCustomerIdentity**](docs/Api/CustomerApi.md#obpv310updatecustomeridentity) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/identity | Update the identity data of a Customer
-*CustomerApi* | [**oBPv310UpdateCustomerMobileNumber**](docs/Api/CustomerApi.md#obpv310updatecustomermobilenumber) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/mobile-number | Update the mobile number of a Customer
-*CustomerApi* | [**oBPv310UpdateCustomerNumber**](docs/Api/CustomerApi.md#obpv310updatecustomernumber) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/number | Update the number of a Customer
-*CustomerApi* | [**oBPv400CreateCustomerAttribute**](docs/Api/CustomerApi.md#obpv400createcustomerattribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
-*CustomerApi* | [**oBPv400CreateCustomerMessage**](docs/Api/CustomerApi.md#obpv400createcustomermessage) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Create Customer Message
-*CustomerApi* | [**oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition**](docs/Api/CustomerApi.md#obpv400createorupdatecustomerattributeattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
-*CustomerApi* | [**oBPv400CreateUserCustomerLinks**](docs/Api/CustomerApi.md#obpv400createusercustomerlinks) | **POST** /obp/v4.0.0/banks/{bankid}/user_customer_links | Create User Customer Link
-*CustomerApi* | [**oBPv400DeleteCustomerAttribute**](docs/Api/CustomerApi.md#obpv400deletecustomerattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
-*CustomerApi* | [**oBPv400DeleteCustomerAttributeDefinition**](docs/Api/CustomerApi.md#obpv400deletecustomerattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
-*CustomerApi* | [**oBPv400DeleteCustomerCascade**](docs/Api/CustomerApi.md#obpv400deletecustomercascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/customers/{customerid} | Delete Customer Cascade
-*CustomerApi* | [**oBPv400DeleteUserCustomerLink**](docs/Api/CustomerApi.md#obpv400deleteusercustomerlink) | **DELETE** /obp/v4.0.0/banks/{bankid}/user_customer_links/{usercustomerlinkid} | Delete User Customer Link
-*CustomerApi* | [**oBPv400GetCorrelatedUsersInfoByCustomerId**](docs/Api/CustomerApi.md#obpv400getcorrelatedusersinfobycustomerid) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/correlated-users | Get Correlated User Info by Customer
-*CustomerApi* | [**oBPv400GetCustomerAttributeById**](docs/Api/CustomerApi.md#obpv400getcustomerattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
-*CustomerApi* | [**oBPv400GetCustomerAttributeDefinition**](docs/Api/CustomerApi.md#obpv400getcustomerattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
-*CustomerApi* | [**oBPv400GetCustomerAttributes**](docs/Api/CustomerApi.md#obpv400getcustomerattributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
-*CustomerApi* | [**oBPv400GetCustomerMessages**](docs/Api/CustomerApi.md#obpv400getcustomermessages) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Get Customer Messages for a Customer
-*CustomerApi* | [**oBPv400GetCustomersByCustomerPhoneNumber**](docs/Api/CustomerApi.md#obpv400getcustomersbycustomerphonenumber) | **POST** /obp/v4.0.0/banks/{bankid}/search/customers/mobile-phone-number | Get Customers by MOBILE_PHONE_NUMBER
-*CustomerApi* | [**oBPv400GetCustomersMinimalAtAnyBank**](docs/Api/CustomerApi.md#obpv400getcustomersminimalatanybank) | **GET** /obp/v4.0.0/customers-minimal | Get Customers Minimal at Any Bank
-*CustomerApi* | [**oBPv400GetMyCorrelatedEntities**](docs/Api/CustomerApi.md#obpv400getmycorrelatedentities) | **GET** /obp/v4.0.0/my/correlated-entities | Get Correlated Entities for the current User
-*CustomerApi* | [**oBPv400GetUserCustomerLinksByCustomerId**](docs/Api/CustomerApi.md#obpv400getusercustomerlinksbycustomerid) | **GET** /obp/v4.0.0/banks/{bankid}/user_customer_links/customers/{customerid} | Get User Customer Links by Customer
-*CustomerApi* | [**oBPv400GetUserCustomerLinksByUserId**](docs/Api/CustomerApi.md#obpv400getusercustomerlinksbyuserid) | **GET** /obp/v4.0.0/banks/{bankid}/user_customer_links/users/{userid} | Get User Customer Links by User
-*CustomerApi* | [**oBPv400UpdateCustomerAttribute**](docs/Api/CustomerApi.md#obpv400updatecustomerattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
-*CustomerApi* | [**oBPv500CreateCustomerAccountLink**](docs/Api/CustomerApi.md#obpv500createcustomeraccountlink) | **POST** /obp/v5.0.0/banks/{bankid}/customer-account-links | Create Customer Account Link
-*CustomerApi* | [**oBPv500DeleteCustomerAccountLinkById**](docs/Api/CustomerApi.md#obpv500deletecustomeraccountlinkbyid) | **DELETE** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Delete Customer Account Link
-*CustomerApi* | [**oBPv500GetCustomerAccountLinkById**](docs/Api/CustomerApi.md#obpv500getcustomeraccountlinkbyid) | **GET** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Get Customer Account Link by Id
-*CustomerApi* | [**oBPv500GetCustomerAccountLinksByBankIdAccountId**](docs/Api/CustomerApi.md#obpv500getcustomeraccountlinksbybankidaccountid) | **GET** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/customer-account-links | Get Customer Account Links by ACCOUNT_ID
-*CustomerApi* | [**oBPv500GetCustomerAccountLinksByCustomerId**](docs/Api/CustomerApi.md#obpv500getcustomeraccountlinksbycustomerid) | **GET** /obp/v5.0.0/banks/{bankid}/customers/{customerid}/customer-account-links | Get Customer Account Links by CUSTOMER_ID
-*CustomerApi* | [**oBPv500GetCustomerOverview**](docs/Api/CustomerApi.md#obpv500getcustomeroverview) | **POST** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview | Get Customer Overview
-*CustomerApi* | [**oBPv500GetCustomerOverviewFlat**](docs/Api/CustomerApi.md#obpv500getcustomeroverviewflat) | **POST** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview-flat | Get Customer Overview Flat
-*CustomerApi* | [**oBPv500GetCustomersMinimalAtOneBank**](docs/Api/CustomerApi.md#obpv500getcustomersminimalatonebank) | **GET** /obp/v5.0.0/banks/{bankid}/customers-minimal | Get Customers Minimal at Bank
-*CustomerApi* | [**oBPv500GetMyCustomersAtAnyBank**](docs/Api/CustomerApi.md#obpv500getmycustomersatanybank) | **GET** /obp/v5.0.0/my/customers | Get My Customers
-*CustomerApi* | [**oBPv500GetMyCustomersAtBank**](docs/Api/CustomerApi.md#obpv500getmycustomersatbank) | **GET** /obp/v5.0.0/banks/{bankid}/my/customers | Get My Customers at Bank
-*CustomerApi* | [**oBPv500UpdateCustomerAccountLinkById**](docs/Api/CustomerApi.md#obpv500updatecustomeraccountlinkbyid) | **PUT** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Update Customer Account Link by Id
-*CustomerApi* | [**oBPv510CreateAgent**](docs/Api/CustomerApi.md#obpv510createagent) | **POST** /obp/v5.1.0/banks/{bankid}/agents | Create Agent
-*CustomerApi* | [**oBPv510GetCustomersForUserIdsOnly**](docs/Api/CustomerApi.md#obpv510getcustomersforuseridsonly) | **GET** /obp/v5.1.0/users/current/customers/customer_ids | Get Customers for Current User (IDs only)
-*CustomerApi* | [**oBPv510UpdateAgentStatus**](docs/Api/CustomerApi.md#obpv510updateagentstatus) | **PUT** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Update Agent status
-*CustomerApi* | [**oBPv600CreateCorporateCustomer**](docs/Api/CustomerApi.md#obpv600createcorporatecustomer) | **POST** /obp/v6.0.0/banks/{bankid}/corporate-customers | Create Corporate Customer
-*CustomerApi* | [**oBPv600CreateCustomer**](docs/Api/CustomerApi.md#obpv600createcustomer) | **POST** /obp/v6.0.0/banks/{bankid}/customers | Create Customer
-*CustomerApi* | [**oBPv600CreateRetailCustomer**](docs/Api/CustomerApi.md#obpv600createretailcustomer) | **POST** /obp/v6.0.0/banks/{bankid}/retail-customers | Create Retail Customer
-*CustomerApi* | [**oBPv600GetCorporateCustomerByCustomerId**](docs/Api/CustomerApi.md#obpv600getcorporatecustomerbycustomerid) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid} | Get Corporate Customer by CUSTOMER_ID
-*CustomerApi* | [**oBPv600GetCorporateCustomerSubsidiaries**](docs/Api/CustomerApi.md#obpv600getcorporatecustomersubsidiaries) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid}/subsidiaries | Get Corporate Customer Subsidiaries
-*CustomerApi* | [**oBPv600GetCorporateCustomersAtOneBank**](docs/Api/CustomerApi.md#obpv600getcorporatecustomersatonebank) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers | Get Corporate Customers at Bank
-*CustomerApi* | [**oBPv600GetCustomerByCustomerId**](docs/Api/CustomerApi.md#obpv600getcustomerbycustomerid) | **GET** /obp/v6.0.0/banks/{bankid}/customers/{customerid} | Get Customer by CUSTOMER_ID
-*CustomerApi* | [**oBPv600GetCustomerByCustomerNumber**](docs/Api/CustomerApi.md#obpv600getcustomerbycustomernumber) | **POST** /obp/v6.0.0/banks/{bankid}/customers/customer-number | Get Customer by CUSTOMER_NUMBER
-*CustomerApi* | [**oBPv600GetCustomerChildren**](docs/Api/CustomerApi.md#obpv600getcustomerchildren) | **GET** /obp/v6.0.0/banks/{bankid}/customers/{customerid}/children | Get Customer Children
-*CustomerApi* | [**oBPv600GetCustomersAtAllBanks**](docs/Api/CustomerApi.md#obpv600getcustomersatallbanks) | **GET** /obp/v6.0.0/customers | Get Customers at All Banks
-*CustomerApi* | [**oBPv600GetCustomersAtOneBank**](docs/Api/CustomerApi.md#obpv600getcustomersatonebank) | **GET** /obp/v6.0.0/banks/{bankid}/customers | Get Customers at Bank
-*CustomerApi* | [**oBPv600GetCustomersByLegalName**](docs/Api/CustomerApi.md#obpv600getcustomersbylegalname) | **POST** /obp/v6.0.0/banks/{bankid}/customers/legal-name | Get Customers by Legal Name
-*CustomerApi* | [**oBPv600GetRetailCustomerByCustomerId**](docs/Api/CustomerApi.md#obpv600getretailcustomerbycustomerid) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers/{customerid} | Get Retail Customer by CUSTOMER_ID
-*CustomerApi* | [**oBPv600GetRetailCustomersAtOneBank**](docs/Api/CustomerApi.md#obpv600getretailcustomersatonebank) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers | Get Retail Customers at Bank
-*CustomerAttributeApi* | [**oBPv400CreateCustomerAttribute**](docs/Api/CustomerAttributeApi.md#obpv400createcustomerattribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
-*CustomerAttributeApi* | [**oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition**](docs/Api/CustomerAttributeApi.md#obpv400createorupdatecustomerattributeattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
-*CustomerAttributeApi* | [**oBPv400DeleteCustomerAttribute**](docs/Api/CustomerAttributeApi.md#obpv400deletecustomerattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
-*CustomerAttributeApi* | [**oBPv400DeleteCustomerAttributeDefinition**](docs/Api/CustomerAttributeApi.md#obpv400deletecustomerattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
-*CustomerAttributeApi* | [**oBPv400GetCustomerAttributeById**](docs/Api/CustomerAttributeApi.md#obpv400getcustomerattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
-*CustomerAttributeApi* | [**oBPv400GetCustomerAttributeDefinition**](docs/Api/CustomerAttributeApi.md#obpv400getcustomerattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
-*CustomerAttributeApi* | [**oBPv400GetCustomerAttributes**](docs/Api/CustomerAttributeApi.md#obpv400getcustomerattributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
-*CustomerAttributeApi* | [**oBPv400UpdateCustomerAttribute**](docs/Api/CustomerAttributeApi.md#obpv400updatecustomerattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
-*CustomerMeetingApi* | [**oBPv310CreateMeeting**](docs/Api/CustomerMeetingApi.md#obpv310createmeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
-*CustomerMeetingApi* | [**oBPv310GetMeeting**](docs/Api/CustomerMeetingApi.md#obpv310getmeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
-*CustomerMeetingApi* | [**oBPv310GetMeetings**](docs/Api/CustomerMeetingApi.md#obpv310getmeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
-*CustomerMessageApi* | [**oBPv140AddCustomerMessage**](docs/Api/CustomerMessageApi.md#obpv140addcustomermessage) | **POST** /obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages | Create Customer Message
-*CustomerMessageApi* | [**oBPv140GetCustomersMessages**](docs/Api/CustomerMessageApi.md#obpv140getcustomersmessages) | **GET** /obp/v1.4.0/banks/{bankid}/customer/messages | Get Customer Messages for all Customers
-*CustomerMessageApi* | [**oBPv400CreateCustomerMessage**](docs/Api/CustomerMessageApi.md#obpv400createcustomermessage) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Create Customer Message
-*CustomerMessageApi* | [**oBPv400GetCustomerMessages**](docs/Api/CustomerMessageApi.md#obpv400getcustomermessages) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Get Customer Messages for a Customer
-*DAuthApi* | [**oBPv400CreateUserWithRoles**](docs/Api/DAuthApi.md#obpv400createuserwithroles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
-*DAuthApi* | [**oBPv510CreateUserWithAccountAccessById**](docs/Api/DAuthApi.md#obpv510createuserwithaccountaccessbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
-*DataWarehouseApi* | [**oBPv300DataWarehouseSearch**](docs/Api/DataWarehouseApi.md#obpv300datawarehousesearch) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search
-*DataWarehouseApi* | [**oBPv300DataWarehouseStatistics**](docs/Api/DataWarehouseApi.md#obpv300datawarehousestatistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics
-*DirectDebitApi* | [**oBPv400CreateDirectDebit**](docs/Api/DirectDebitApi.md#obpv400createdirectdebit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
-*DirectDebitApi* | [**oBPv400CreateDirectDebitManagement**](docs/Api/DirectDebitApi.md#obpv400createdirectdebitmanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
-*DirectoryApi* | [**oBPv510CreateConsumerDynamicRegistration**](docs/Api/DirectoryApi.md#obpv510createconsumerdynamicregistration) | **POST** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
-*DirectoryApi* | [**oBPv510CreateRegulatedEntity**](docs/Api/DirectoryApi.md#obpv510createregulatedentity) | **POST** /obp/v5.1.0/regulated-entities | Create Regulated Entity
-*DirectoryApi* | [**oBPv510CreateRegulatedEntityAttribute**](docs/Api/DirectoryApi.md#obpv510createregulatedentityattribute) | **POST** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
-*DirectoryApi* | [**oBPv510DeleteRegulatedEntity**](docs/Api/DirectoryApi.md#obpv510deleteregulatedentity) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
-*DirectoryApi* | [**oBPv510DeleteRegulatedEntityAttribute**](docs/Api/DirectoryApi.md#obpv510deleteregulatedentityattribute) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
-*DirectoryApi* | [**oBPv510GetAllRegulatedEntityAttributes**](docs/Api/DirectoryApi.md#obpv510getallregulatedentityattributes) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
-*DirectoryApi* | [**oBPv510GetRegulatedEntityAttributeById**](docs/Api/DirectoryApi.md#obpv510getregulatedentityattributebyid) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
-*DirectoryApi* | [**oBPv510GetRegulatedEntityById**](docs/Api/DirectoryApi.md#obpv510getregulatedentitybyid) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
-*DirectoryApi* | [**oBPv510RegulatedEntities**](docs/Api/DirectoryApi.md#obpv510regulatedentities) | **GET** /obp/v5.1.0/regulated-entities | Get Regulated Entities
-*DirectoryApi* | [**oBPv510UpdateRegulatedEntityAttribute**](docs/Api/DirectoryApi.md#obpv510updateregulatedentityattribute) | **PUT** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
-*DocumentationApi* | [**oBPv140GetBankLevelDynamicResourceDocsObp**](docs/Api/DocumentationApi.md#obpv140getbankleveldynamicresourcedocsobp) | **GET** /obp/v1.4.0/banks/{bankid}/resource-docs/{apiversion}/obp | Get Bank Level Dynamic Resource Docs
-*DocumentationApi* | [**oBPv140GetResourceDocsObp**](docs/Api/DocumentationApi.md#obpv140getresourcedocsobp) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/obp | Get Resource Docs
-*DocumentationApi* | [**oBPv140GetResourceDocsOpenAPI31**](docs/Api/DocumentationApi.md#obpv140getresourcedocsopenapi31) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/openapi | Get OpenAPI 3.1 documentation
-*DocumentationApi* | [**oBPv140GetResourceDocsSwagger**](docs/Api/DocumentationApi.md#obpv140getresourcedocsswagger) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/swagger | Get Swagger documentation
-*DocumentationApi* | [**oBPv220GetMessageDocs**](docs/Api/DocumentationApi.md#obpv220getmessagedocs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
-*DocumentationApi* | [**oBPv300GetApiGlossary**](docs/Api/DocumentationApi.md#obpv300getapiglossary) | **GET** /obp/v3.0.0/api/glossary | Get Glossary of the API
-*DocumentationApi* | [**oBPv310GetMessageDocsSwagger**](docs/Api/DocumentationApi.md#obpv310getmessagedocsswagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
-*DocumentationApi* | [**oBPv600GetMessageDocsJsonSchema**](docs/Api/DocumentationApi.md#obpv600getmessagedocsjsonschema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
-*DocumentationApi* | [**oBPv600GetScannedApiVersions**](docs/Api/DocumentationApi.md#obpv600getscannedapiversions) | **GET** /obp/v6.0.0/api/versions | Get Scanned API Versions
-*DynamicEndpointManageApi* | [**oBPv400CreateBankLevelDynamicEndpoint**](docs/Api/DynamicEndpointManageApi.md#obpv400createbankleveldynamicendpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint
-*DynamicEndpointManageApi* | [**oBPv400CreateDynamicEndpoint**](docs/Api/DynamicEndpointManageApi.md#obpv400createdynamicendpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint
-*DynamicEndpointManageApi* | [**oBPv400DeleteBankLevelDynamicEndpoint**](docs/Api/DynamicEndpointManageApi.md#obpv400deletebankleveldynamicendpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} | Delete Bank Level Dynamic Endpoint
-*DynamicEndpointManageApi* | [**oBPv400DeleteDynamicEndpoint**](docs/Api/DynamicEndpointManageApi.md#obpv400deletedynamicendpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Delete Dynamic Endpoint
-*DynamicEndpointManageApi* | [**oBPv400DeleteMyDynamicEndpoint**](docs/Api/DynamicEndpointManageApi.md#obpv400deletemydynamicendpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint
-*DynamicEndpointManageApi* | [**oBPv400GetBankLevelDynamicEndpoint**](docs/Api/DynamicEndpointManageApi.md#obpv400getbankleveldynamicendpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} | Get Bank Level Dynamic Endpoint
-*DynamicEndpointManageApi* | [**oBPv400GetBankLevelDynamicEndpoints**](docs/Api/DynamicEndpointManageApi.md#obpv400getbankleveldynamicendpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints
-*DynamicEndpointManageApi* | [**oBPv400GetDynamicEndpoint**](docs/Api/DynamicEndpointManageApi.md#obpv400getdynamicendpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint
-*DynamicEndpointManageApi* | [**oBPv400GetDynamicEndpoints**](docs/Api/DynamicEndpointManageApi.md#obpv400getdynamicendpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints | Get Dynamic Endpoints
-*DynamicEndpointManageApi* | [**oBPv400GetMyDynamicEndpoints**](docs/Api/DynamicEndpointManageApi.md#obpv400getmydynamicendpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints
-*DynamicEndpointManageApi* | [**oBPv400UpdateBankLevelDynamicEndpointHost**](docs/Api/DynamicEndpointManageApi.md#obpv400updatebankleveldynamicendpointhost) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host | Update Bank Level Dynamic Endpoint Host
-*DynamicEndpointManageApi* | [**oBPv400UpdateDynamicEndpointHost**](docs/Api/DynamicEndpointManageApi.md#obpv400updatedynamicendpointhost) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host | Update Dynamic Endpoint Host
-*DynamicEntityApi* | [**oBPv600CleanupOrphanedDynamicEntityRecords**](docs/Api/DynamicEntityApi.md#obpv600cleanuporphaneddynamicentityrecords) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
-*DynamicEntityApi* | [**oBPv600GetAvailablePersonalDynamicEntities**](docs/Api/DynamicEntityApi.md#obpv600getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
-*DynamicEntityApi* | [**oBPv600GetDynamicEntityDiagnostics**](docs/Api/DynamicEntityApi.md#obpv600getdynamicentitydiagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
-*DynamicEntityApi* | [**oBPv600GetReferenceTypes**](docs/Api/DynamicEntityApi.md#obpv600getreferencetypes) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
-*DynamicEntityManageApi* | [**oBPv400DeleteBankLevelDynamicEntity**](docs/Api/DynamicEntityManageApi.md#obpv400deletebankleveldynamicentity) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Delete Bank Level Dynamic Entity
-*DynamicEntityManageApi* | [**oBPv400DeleteMyDynamicEntity**](docs/Api/DynamicEntityManageApi.md#obpv400deletemydynamicentity) | **DELETE** /obp/v4.0.0/my/dynamic-entities/{dynamicentityid} | Delete My Dynamic Entity
-*DynamicEntityManageApi* | [**oBPv400DeleteSystemDynamicEntity**](docs/Api/DynamicEntityManageApi.md#obpv400deletesystemdynamicentity) | **DELETE** /obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid} | Delete System Level Dynamic Entity
-*DynamicEntityManageApi* | [**oBPv600BackupBankLevelDynamicEntity**](docs/Api/DynamicEntityManageApi.md#obpv600backupbankleveldynamicentity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup | Backup Bank Level Dynamic Entity
-*DynamicEntityManageApi* | [**oBPv600BackupSystemDynamicEntity**](docs/Api/DynamicEntityManageApi.md#obpv600backupsystemdynamicentity) | **POST** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup | Backup System Level Dynamic Entity
-*DynamicEntityManageApi* | [**oBPv600CreateBankLevelDynamicEntity**](docs/Api/DynamicEntityManageApi.md#obpv600createbankleveldynamicentity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Create Bank Level Dynamic Entity
-*DynamicEntityManageApi* | [**oBPv600CreateSystemDynamicEntity**](docs/Api/DynamicEntityManageApi.md#obpv600createsystemdynamicentity) | **POST** /obp/v6.0.0/management/system-dynamic-entities | Create System Level Dynamic Entity
-*DynamicEntityManageApi* | [**oBPv600DeleteSystemDynamicEntityCascade**](docs/Api/DynamicEntityManageApi.md#obpv600deletesystemdynamicentitycascade) | **DELETE** /obp/v6.0.0/management/system-dynamic-entities/cascade/{dynamicentityid} | Delete System Level Dynamic Entity Cascade
-*DynamicEntityManageApi* | [**oBPv600GetBankLevelDynamicEntities**](docs/Api/DynamicEntityManageApi.md#obpv600getbankleveldynamicentities) | **GET** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Get Bank Level Dynamic Entities
-*DynamicEntityManageApi* | [**oBPv600GetMyDynamicEntities**](docs/Api/DynamicEntityManageApi.md#obpv600getmydynamicentities) | **GET** /obp/v6.0.0/my/dynamic-entities | Get My Dynamic Entities
-*DynamicEntityManageApi* | [**oBPv600GetSystemDynamicEntities**](docs/Api/DynamicEntityManageApi.md#obpv600getsystemdynamicentities) | **GET** /obp/v6.0.0/management/system-dynamic-entities | Get System Dynamic Entities
-*DynamicEntityManageApi* | [**oBPv600UpdateBankLevelDynamicEntity**](docs/Api/DynamicEntityManageApi.md#obpv600updatebankleveldynamicentity) | **PUT** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Update Bank Level Dynamic Entity
-*DynamicEntityManageApi* | [**oBPv600UpdateMyDynamicEntity**](docs/Api/DynamicEntityManageApi.md#obpv600updatemydynamicentity) | **PUT** /obp/v6.0.0/my/dynamic-entities/{dynamicentityid} | Update My Dynamic Entity
-*DynamicEntityManageApi* | [**oBPv600UpdateSystemDynamicEntity**](docs/Api/DynamicEntityManageApi.md#obpv600updatesystemdynamicentity) | **PUT** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid} | Update System Level Dynamic Entity
-*DynamicMessageDocApi* | [**oBPv400CreateBankLevelDynamicMessageDoc**](docs/Api/DynamicMessageDocApi.md#obpv400createbankleveldynamicmessagedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc
-*DynamicMessageDocApi* | [**oBPv400CreateDynamicMessageDoc**](docs/Api/DynamicMessageDocApi.md#obpv400createdynamicmessagedoc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc
-*DynamicMessageDocApi* | [**oBPv400DeleteBankLevelDynamicMessageDoc**](docs/Api/DynamicMessageDocApi.md#obpv400deletebankleveldynamicmessagedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc
-*DynamicMessageDocApi* | [**oBPv400DeleteDynamicMessageDoc**](docs/Api/DynamicMessageDocApi.md#obpv400deletedynamicmessagedoc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc
-*DynamicMessageDocApi* | [**oBPv400GetAllBankLevelDynamicMessageDocs**](docs/Api/DynamicMessageDocApi.md#obpv400getallbankleveldynamicmessagedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs
-*DynamicMessageDocApi* | [**oBPv400GetAllDynamicMessageDocs**](docs/Api/DynamicMessageDocApi.md#obpv400getalldynamicmessagedocs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs
-*DynamicMessageDocApi* | [**oBPv400GetBankLevelDynamicMessageDoc**](docs/Api/DynamicMessageDocApi.md#obpv400getbankleveldynamicmessagedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc
-*DynamicMessageDocApi* | [**oBPv400GetDynamicMessageDoc**](docs/Api/DynamicMessageDocApi.md#obpv400getdynamicmessagedoc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc
-*DynamicMessageDocApi* | [**oBPv400UpdateBankLevelDynamicMessageDoc**](docs/Api/DynamicMessageDocApi.md#obpv400updatebankleveldynamicmessagedoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc
-*DynamicMessageDocApi* | [**oBPv400UpdateDynamicMessageDoc**](docs/Api/DynamicMessageDocApi.md#obpv400updatedynamicmessagedoc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc
-*DynamicResourceDocApi* | [**oBPv400BuildDynamicEndpointTemplate**](docs/Api/DynamicResourceDocApi.md#obpv400builddynamicendpointtemplate) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code
-*DynamicResourceDocApi* | [**oBPv400CreateBankLevelDynamicResourceDoc**](docs/Api/DynamicResourceDocApi.md#obpv400createbankleveldynamicresourcedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc
-*DynamicResourceDocApi* | [**oBPv400CreateDynamicResourceDoc**](docs/Api/DynamicResourceDocApi.md#obpv400createdynamicresourcedoc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc
-*DynamicResourceDocApi* | [**oBPv400DeleteBankLevelDynamicResourceDoc**](docs/Api/DynamicResourceDocApi.md#obpv400deletebankleveldynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc
-*DynamicResourceDocApi* | [**oBPv400DeleteDynamicResourceDoc**](docs/Api/DynamicResourceDocApi.md#obpv400deletedynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc
-*DynamicResourceDocApi* | [**oBPv400GetAllBankLevelDynamicResourceDocs**](docs/Api/DynamicResourceDocApi.md#obpv400getallbankleveldynamicresourcedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs
-*DynamicResourceDocApi* | [**oBPv400GetAllDynamicResourceDocs**](docs/Api/DynamicResourceDocApi.md#obpv400getalldynamicresourcedocs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs
-*DynamicResourceDocApi* | [**oBPv400GetBankLevelDynamicResourceDoc**](docs/Api/DynamicResourceDocApi.md#obpv400getbankleveldynamicresourcedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id
-*DynamicResourceDocApi* | [**oBPv400GetDynamicResourceDoc**](docs/Api/DynamicResourceDocApi.md#obpv400getdynamicresourcedoc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id
-*DynamicResourceDocApi* | [**oBPv400UpdateBankLevelDynamicResourceDoc**](docs/Api/DynamicResourceDocApi.md#obpv400updatebankleveldynamicresourcedoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc
-*DynamicResourceDocApi* | [**oBPv400UpdateDynamicResourceDoc**](docs/Api/DynamicResourceDocApi.md#obpv400updatedynamicresourcedoc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc
-*EndpointMappingApi* | [**oBPv400CreateBankLevelEndpointMapping**](docs/Api/EndpointMappingApi.md#obpv400createbanklevelendpointmapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping
-*EndpointMappingApi* | [**oBPv400CreateEndpointMapping**](docs/Api/EndpointMappingApi.md#obpv400createendpointmapping) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping
-*EndpointMappingApi* | [**oBPv400DeleteBankLevelEndpointMapping**](docs/Api/EndpointMappingApi.md#obpv400deletebanklevelendpointmapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping
-*EndpointMappingApi* | [**oBPv400DeleteEndpointMapping**](docs/Api/EndpointMappingApi.md#obpv400deleteendpointmapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping
-*EndpointMappingApi* | [**oBPv400GetAllBankLevelEndpointMappings**](docs/Api/EndpointMappingApi.md#obpv400getallbanklevelendpointmappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings
-*EndpointMappingApi* | [**oBPv400GetAllEndpointMappings**](docs/Api/EndpointMappingApi.md#obpv400getallendpointmappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings
-*EndpointMappingApi* | [**oBPv400GetBankLevelEndpointMapping**](docs/Api/EndpointMappingApi.md#obpv400getbanklevelendpointmapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping
-*EndpointMappingApi* | [**oBPv400GetEndpointMapping**](docs/Api/EndpointMappingApi.md#obpv400getendpointmapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id
-*EndpointMappingApi* | [**oBPv400UpdateBankLevelEndpointMapping**](docs/Api/EndpointMappingApi.md#obpv400updatebanklevelendpointmapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping
-*EndpointMappingApi* | [**oBPv400UpdateEndpointMapping**](docs/Api/EndpointMappingApi.md#obpv400updateendpointmapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping
-*EntitlementApi* | [**oBPv200AddEntitlement**](docs/Api/EntitlementApi.md#obpv200addentitlement) | **POST** /obp/v2.0.0/users/{userid}/entitlements | Add Entitlement for a User
-*EntitlementApi* | [**oBPv200DeleteEntitlement**](docs/Api/EntitlementApi.md#obpv200deleteentitlement) | **DELETE** /obp/v2.0.0/users/{userid}/entitlement/{entitlementid} | Delete Entitlement
-*EntitlementApi* | [**oBPv200GetPermissionsForBankAccount**](docs/Api/EntitlementApi.md#obpv200getpermissionsforbankaccount) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
-*EntitlementApi* | [**oBPv210GetEntitlementsByBankAndUser**](docs/Api/EntitlementApi.md#obpv210getentitlementsbybankanduser) | **GET** /obp/v2.1.0/banks/{bankid}/users/{userid}/entitlements | Get Entitlements for User at Bank
-*EntitlementApi* | [**oBPv300AddEntitlementRequest**](docs/Api/EntitlementApi.md#obpv300addentitlementrequest) | **POST** /obp/v3.0.0/entitlement-requests | Create Entitlement Request for current User
-*EntitlementApi* | [**oBPv300DeleteEntitlementRequest**](docs/Api/EntitlementApi.md#obpv300deleteentitlementrequest) | **DELETE** /obp/v3.0.0/entitlement-requests/{entitlementrequestid} | Delete Entitlement Request
-*EntitlementApi* | [**oBPv300GetAllEntitlementRequests**](docs/Api/EntitlementApi.md#obpv300getallentitlementrequests) | **GET** /obp/v3.0.0/entitlement-requests | Get all Entitlement Requests
-*EntitlementApi* | [**oBPv300GetEntitlementRequests**](docs/Api/EntitlementApi.md#obpv300getentitlementrequests) | **GET** /obp/v3.0.0/users/{userid}/entitlement-requests | Get Entitlement Requests for a User
-*EntitlementApi* | [**oBPv300GetEntitlementRequestsForCurrentUser**](docs/Api/EntitlementApi.md#obpv300getentitlementrequestsforcurrentuser) | **GET** /obp/v3.0.0/my/entitlement-requests | Get Entitlement Requests for the current User
-*EntitlementApi* | [**oBPv300GetEntitlementsForCurrentUser**](docs/Api/EntitlementApi.md#obpv300getentitlementsforcurrentuser) | **GET** /obp/v3.0.0/my/entitlements | Get Entitlements for the current User
-*EntitlementApi* | [**oBPv310GetAllEntitlements**](docs/Api/EntitlementApi.md#obpv310getallentitlements) | **GET** /obp/v3.1.0/entitlements | Get all Entitlements
-*EntitlementApi* | [**oBPv400CreateUserWithRoles**](docs/Api/EntitlementApi.md#obpv400createuserwithroles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
-*EntitlementApi* | [**oBPv400GetEntitlements**](docs/Api/EntitlementApi.md#obpv400getentitlements) | **GET** /obp/v4.0.0/users/{userid}/entitlements | Get Entitlements for User
-*EntitlementApi* | [**oBPv400GetEntitlementsForBank**](docs/Api/EntitlementApi.md#obpv400getentitlementsforbank) | **GET** /obp/v4.0.0/banks/{bankid}/entitlements | Get Entitlements for One Bank
-*EntitlementApi* | [**oBPv510GetEntitlementsAndPermissions**](docs/Api/EntitlementApi.md#obpv510getentitlementsandpermissions) | **GET** /obp/v5.1.0/users/{userid}/entitlements-and-permissions | Get Entitlements and Permissions for a User
-*EntitlementApi* | [**oBPv600AddUserToGroup**](docs/Api/EntitlementApi.md#obpv600addusertogroup) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
-*EntitlementApi* | [**oBPv600DeleteEntitlement**](docs/Api/EntitlementApi.md#obpv600deleteentitlement) | **DELETE** /obp/v6.0.0/entitlements/{entitlementid} | Delete Entitlement
-*EntitlementApi* | [**oBPv600GetGroupEntitlements**](docs/Api/EntitlementApi.md#obpv600getgroupentitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements
-*EntitlementApi* | [**oBPv600GetRolesWithEntitlementCountsAtAllBanks**](docs/Api/EntitlementApi.md#obpv600getroleswithentitlementcountsatallbanks) | **GET** /obp/v6.0.0/management/roles-with-entitlement-counts | Get Roles with Entitlement Counts
-*EntitlementApi* | [**oBPv600GetUserGroupMemberships**](docs/Api/EntitlementApi.md#obpv600getusergroupmemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships
-*EntitlementApi* | [**oBPv600RemoveUserFromGroup**](docs/Api/EntitlementApi.md#obpv600removeuserfromgroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
-*ExperimentalApi* | [**oBPv310CreateMeeting**](docs/Api/ExperimentalApi.md#obpv310createmeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
-*ExperimentalApi* | [**oBPv310GetMeeting**](docs/Api/ExperimentalApi.md#obpv310getmeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
-*ExperimentalApi* | [**oBPv310GetMeetings**](docs/Api/ExperimentalApi.md#obpv310getmeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
-*FXApi* | [**oBPv220CreateFx**](docs/Api/FXApi.md#obpv220createfx) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx
-*FXApi* | [**oBPv220GetCurrentFxRate**](docs/Api/FXApi.md#obpv220getcurrentfxrate) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate
-*FXApi* | [**oBPv510GetCurrenciesAtBank**](docs/Api/FXApi.md#obpv510getcurrenciesatbank) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank
-*FirehoseDataApi* | [**oBPv300GetFirehoseTransactionsForBankAccount**](docs/Api/FirehoseDataApi.md#obpv300getfirehosetransactionsforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
-*FirehoseDataApi* | [**oBPv310GetFirehoseCustomers**](docs/Api/FirehoseDataApi.md#obpv310getfirehosecustomers) | **GET** /obp/v3.1.0/banks/{bankid}/firehose/customers | Get Firehose Customers
-*FirehoseDataApi* | [**oBPv400GetFastFirehoseAccountsAtOneBank**](docs/Api/FirehoseDataApi.md#obpv400getfastfirehoseaccountsatonebank) | **GET** /obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts | Get Fast Firehose Accounts at Bank
-*FirehoseDataApi* | [**oBPv400GetFirehoseAccountsAtOneBank**](docs/Api/FirehoseDataApi.md#obpv400getfirehoseaccountsatonebank) | **GET** /obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid} | Get Firehose Accounts at Bank
-*GroupApi* | [**oBPv600AddUserToGroup**](docs/Api/GroupApi.md#obpv600addusertogroup) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
-*GroupApi* | [**oBPv600CreateGroup**](docs/Api/GroupApi.md#obpv600creategroup) | **POST** /obp/v6.0.0/management/groups | Create Group
-*GroupApi* | [**oBPv600DeleteGroup**](docs/Api/GroupApi.md#obpv600deletegroup) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group
-*GroupApi* | [**oBPv600GetGroup**](docs/Api/GroupApi.md#obpv600getgroup) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group
-*GroupApi* | [**oBPv600GetGroupEntitlements**](docs/Api/GroupApi.md#obpv600getgroupentitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements
-*GroupApi* | [**oBPv600GetGroups**](docs/Api/GroupApi.md#obpv600getgroups) | **GET** /obp/v6.0.0/management/groups | Get Groups
-*GroupApi* | [**oBPv600GetUserGroupMemberships**](docs/Api/GroupApi.md#obpv600getusergroupmemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships
-*GroupApi* | [**oBPv600RemoveUserFromGroup**](docs/Api/GroupApi.md#obpv600removeuserfromgroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
-*GroupApi* | [**oBPv600UpdateGroup**](docs/Api/GroupApi.md#obpv600updategroup) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group
-*JSONSchemaValidationApi* | [**oBPv400CreateJsonSchemaValidation**](docs/Api/JSONSchemaValidationApi.md#obpv400createjsonschemavalidation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation
-*JSONSchemaValidationApi* | [**oBPv400DeleteJsonSchemaValidation**](docs/Api/JSONSchemaValidationApi.md#obpv400deletejsonschemavalidation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation
-*JSONSchemaValidationApi* | [**oBPv400GetAllJsonSchemaValidations**](docs/Api/JSONSchemaValidationApi.md#obpv400getalljsonschemavalidations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations
-*JSONSchemaValidationApi* | [**oBPv400GetAllJsonSchemaValidationsPublic**](docs/Api/JSONSchemaValidationApi.md#obpv400getalljsonschemavalidationspublic) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public
-*JSONSchemaValidationApi* | [**oBPv400GetJsonSchemaValidation**](docs/Api/JSONSchemaValidationApi.md#obpv400getjsonschemavalidation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation
-*JSONSchemaValidationApi* | [**oBPv400UpdateJsonSchemaValidation**](docs/Api/JSONSchemaValidationApi.md#obpv400updatejsonschemavalidation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation
-*KYCApi* | [**oBPv200AddKycCheck**](docs/Api/KYCApi.md#obpv200addkyccheck) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_check/{kyccheckid} | Add KYC Check
-*KYCApi* | [**oBPv200AddKycDocument**](docs/Api/KYCApi.md#obpv200addkycdocument) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_documents/{kycdocumentid} | Add KYC Document
-*KYCApi* | [**oBPv200AddKycMedia**](docs/Api/KYCApi.md#obpv200addkycmedia) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_media/{kycmediaid} | Add KYC Media
-*KYCApi* | [**oBPv200AddKycStatus**](docs/Api/KYCApi.md#obpv200addkycstatus) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_statuses | Add KYC Status
-*KYCApi* | [**oBPv200GetKycChecks**](docs/Api/KYCApi.md#obpv200getkycchecks) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_checks | Get Customer KYC Checks
-*KYCApi* | [**oBPv200GetKycDocuments**](docs/Api/KYCApi.md#obpv200getkycdocuments) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_documents | Get Customer KYC Documents
-*KYCApi* | [**oBPv200GetKycMedia**](docs/Api/KYCApi.md#obpv200getkycmedia) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_media | Get KYC Media for a customer
-*KYCApi* | [**oBPv200GetKycStatuses**](docs/Api/KYCApi.md#obpv200getkycstatuses) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_statuses | Get Customer KYC statuses
-*KYCApi* | [**oBPv310CreateTaxResidence**](docs/Api/KYCApi.md#obpv310createtaxresidence) | **POST** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residence | Create Tax Residence
-*KYCApi* | [**oBPv310DeleteCustomerAddress**](docs/Api/KYCApi.md#obpv310deletecustomeraddress) | **DELETE** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses/{customeraddressid} | Delete Customer Address
-*KYCApi* | [**oBPv310DeleteTaxResidence**](docs/Api/KYCApi.md#obpv310deletetaxresidence) | **DELETE** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax_residencies/{taxresidenceid} | Delete Tax Residence
-*KYCApi* | [**oBPv310GetCustomerAddresses**](docs/Api/KYCApi.md#obpv310getcustomeraddresses) | **GET** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses | Get Customer Addresses
-*KYCApi* | [**oBPv310GetTaxResidence**](docs/Api/KYCApi.md#obpv310gettaxresidence) | **GET** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residences | Get Tax Residences of Customer
-*KYCApi* | [**oBPv400CreateUserInvitation**](docs/Api/KYCApi.md#obpv400createuserinvitation) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitation | Create User Invitation
-*KYCApi* | [**oBPv400GetCustomersByCustomerPhoneNumber**](docs/Api/KYCApi.md#obpv400getcustomersbycustomerphonenumber) | **POST** /obp/v4.0.0/banks/{bankid}/search/customers/mobile-phone-number | Get Customers by MOBILE_PHONE_NUMBER
-*KYCApi* | [**oBPv400GetUserInvitationAnonymous**](docs/Api/KYCApi.md#obpv400getuserinvitationanonymous) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitation Information
-*KYCApi* | [**oBPv500GetCustomerOverview**](docs/Api/KYCApi.md#obpv500getcustomeroverview) | **POST** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview | Get Customer Overview
-*KYCApi* | [**oBPv500GetCustomerOverviewFlat**](docs/Api/KYCApi.md#obpv500getcustomeroverviewflat) | **POST** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview-flat | Get Customer Overview Flat
-*KYCApi* | [**oBPv600GetCustomerByCustomerNumber**](docs/Api/KYCApi.md#obpv600getcustomerbycustomernumber) | **POST** /obp/v6.0.0/banks/{bankid}/customers/customer-number | Get Customer by CUSTOMER_NUMBER
-*KYCApi* | [**oBPv600GetCustomersByLegalName**](docs/Api/KYCApi.md#obpv600getcustomersbylegalname) | **POST** /obp/v6.0.0/banks/{bankid}/customers/legal-name | Get Customers by Legal Name
-*LogCacheApi* | [**oBPv510LogCacheAllEndpoint**](docs/Api/LogCacheApi.md#obpv510logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
-*LogCacheApi* | [**oBPv510LogCacheDebugEndpoint**](docs/Api/LogCacheApi.md#obpv510logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
-*LogCacheApi* | [**oBPv510LogCacheErrorEndpoint**](docs/Api/LogCacheApi.md#obpv510logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
-*LogCacheApi* | [**oBPv510LogCacheInfoEndpoint**](docs/Api/LogCacheApi.md#obpv510logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
-*LogCacheApi* | [**oBPv510LogCacheTraceEndpoint**](docs/Api/LogCacheApi.md#obpv510logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
-*LogCacheApi* | [**oBPv510LogCacheWarningEndpoint**](docs/Api/LogCacheApi.md#obpv510logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
-*MessageDocApi* | [**oBPv220GetMessageDocs**](docs/Api/MessageDocApi.md#obpv220getmessagedocs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
-*MessageDocApi* | [**oBPv310GetMessageDocsSwagger**](docs/Api/MessageDocApi.md#obpv310getmessagedocsswagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
-*MessageDocApi* | [**oBPv600GetMessageDocsJsonSchema**](docs/Api/MessageDocApi.md#obpv600getmessagedocsjsonschema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
-*MethodRoutingApi* | [**oBPv310CreateMethodRouting**](docs/Api/MethodRoutingApi.md#obpv310createmethodrouting) | **POST** /obp/v3.1.0/management/method_routings | Create MethodRouting
-*MethodRoutingApi* | [**oBPv310DeleteMethodRouting**](docs/Api/MethodRoutingApi.md#obpv310deletemethodrouting) | **DELETE** /obp/v3.1.0/management/method_routings/{methodroutingid} | Delete MethodRouting
-*MethodRoutingApi* | [**oBPv310GetMethodRoutings**](docs/Api/MethodRoutingApi.md#obpv310getmethodroutings) | **GET** /obp/v3.1.0/management/method_routings | Get MethodRoutings
-*MethodRoutingApi* | [**oBPv310UpdateMethodRouting**](docs/Api/MethodRoutingApi.md#obpv310updatemethodrouting) | **PUT** /obp/v3.1.0/management/method_routings/{methodroutingid} | Update MethodRouting
-*MethodRoutingApi* | [**oBPv600GetConnectorMethodNames**](docs/Api/MethodRoutingApi.md#obpv600getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
-*MetricApi* | [**oBPv200ElasticSearchMetrics**](docs/Api/MetricApi.md#obpv200elasticsearchmetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
-*MetricApi* | [**oBPv220GetConnectorMetrics**](docs/Api/MetricApi.md#obpv220getconnectormetrics) | **GET** /obp/v2.2.0/management/connector/metrics | Get Connector Metrics
-*MetricApi* | [**oBPv310GetMetricsTopConsumers**](docs/Api/MetricApi.md#obpv310getmetricstopconsumers) | **GET** /obp/v3.1.0/management/metrics/top-consumers | Get Top Consumers
-*MetricApi* | [**oBPv500GetMetricsAtBank**](docs/Api/MetricApi.md#obpv500getmetricsatbank) | **GET** /obp/v5.0.0/management/metrics/banks/{bankid} | Get Metrics at Bank
-*MetricApi* | [**oBPv600GetAggregateMetrics**](docs/Api/MetricApi.md#obpv600getaggregatemetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
-*MetricApi* | [**oBPv600GetConnectorCallCounts**](docs/Api/MetricApi.md#obpv600getconnectorcallcounts) | **GET** /obp/v6.0.0/management/connector/metrics/counts | Get Connector Call Counts
-*MetricApi* | [**oBPv600GetConnectorTraces**](docs/Api/MetricApi.md#obpv600getconnectortraces) | **GET** /obp/v6.0.0/management/connector/traces | Get Connector Traces
-*MetricApi* | [**oBPv600GetMetrics**](docs/Api/MetricApi.md#obpv600getmetrics) | **GET** /obp/v6.0.0/management/metrics | Get Metrics
-*MetricApi* | [**oBPv600GetPopularApis**](docs/Api/MetricApi.md#obpv600getpopularapis) | **GET** /obp/v6.0.0/api/popular-endpoints | Get Popular Endpoints
-*MetricApi* | [**oBPv600GetTopAPIs**](docs/Api/MetricApi.md#obpv600gettopapis) | **GET** /obp/v6.0.0/management/metrics/top-apis | Get Top APIs
-*OAuthApi* | [**oBPv310GetOAuth2ServerJWKsURIs**](docs/Api/OAuthApi.md#obpv310getoauth2serverjwksuris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
-*OAuthApi* | [**oBPv310GetObpConnectorLoopback**](docs/Api/OAuthApi.md#obpv310getobpconnectorloopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
-*OAuthApi* | [**oBPv600GetOidcClient**](docs/Api/OAuthApi.md#obpv600getoidcclient) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
-*OAuthApi* | [**oBPv600VerifyOidcClient**](docs/Api/OAuthApi.md#obpv600verifyoidcclient) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
-*OIDCApi* | [**oBPv310GetOAuth2ServerJWKsURIs**](docs/Api/OIDCApi.md#obpv310getoauth2serverjwksuris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
-*OIDCApi* | [**oBPv310GetObpConnectorLoopback**](docs/Api/OIDCApi.md#obpv310getobpconnectorloopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
-*OIDCApi* | [**oBPv600GetOidcClient**](docs/Api/OIDCApi.md#obpv600getoidcclient) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
-*OIDCApi* | [**oBPv600VerifyOidcClient**](docs/Api/OIDCApi.md#obpv600verifyoidcclient) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
-*OldStyleApi* | [**oBPv200ElasticSearchMetrics**](docs/Api/OldStyleApi.md#obpv200elasticsearchmetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
-*OnboardingApi* | [**oBPv500CreateAccount**](docs/Api/OnboardingApi.md#obpv500createaccount) | **PUT** /obp/v5.0.0/banks/{bankid}/accounts/{accountid} | Create Account (PUT)
-*OnboardingApi* | [**oBPv600CreateUser**](docs/Api/OnboardingApi.md#obpv600createuser) | **POST** /obp/v6.0.0/users | Create User (v6.0.0)
-*OwnerViewRequiredApi* | [**oBPv510CreateUserWithAccountAccessById**](docs/Api/OwnerViewRequiredApi.md#obpv510createuserwithaccountaccessbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
-*OwnerViewRequiredApi* | [**oBPv510GrantUserAccessToViewById**](docs/Api/OwnerViewRequiredApi.md#obpv510grantuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
-*OwnerViewRequiredApi* | [**oBPv510RevokeUserAccessToViewById**](docs/Api/OwnerViewRequiredApi.md#obpv510revokeuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
-*PSD2Api* | [**oBPv140GetTransactionRequestTypes**](docs/Api/PSD2Api.md#obpv140gettransactionrequesttypes) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account
-*PSD2Api* | [**oBPv200GetTransactionTypes**](docs/Api/PSD2Api.md#obpv200gettransactiontypes) | **GET** /obp/v2.0.0/banks/{bankid}/transaction-types | Get Transaction Types at Bank
-*PSD2Api* | [**oBPv210CreateTransactionRequestSandboxTan**](docs/Api/PSD2Api.md#obpv210createtransactionrequestsandboxtan) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN)
-*PSD2Api* | [**oBPv300CorePrivateAccountsAllBanks**](docs/Api/PSD2Api.md#obpv300coreprivateaccountsallbanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
-*PSD2Api* | [**oBPv300GetAccountsHeld**](docs/Api/PSD2Api.md#obpv300getaccountsheld) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
-*PSD2Api* | [**oBPv300GetCoreTransactionsForBankAccount**](docs/Api/PSD2Api.md#obpv300getcoretransactionsforbankaccount) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
-*PSD2Api* | [**oBPv300GetPrivateAccountIdsbyBankId**](docs/Api/PSD2Api.md#obpv300getprivateaccountidsbybankid) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/account_ids/private | Get Accounts at Bank (IDs only)
-*PSD2Api* | [**oBPv300PrivateAccountsAtOneBank**](docs/Api/PSD2Api.md#obpv300privateaccountsatonebank) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/private | Get Accounts at Bank (Minimal)
-*PSD2Api* | [**oBPv310AnswerConsentChallenge**](docs/Api/PSD2Api.md#obpv310answerconsentchallenge) | **POST** /obp/v3.1.0/banks/{bankid}/consents/{consentid}/challenge | Answer Consent Challenge
-*PSD2Api* | [**oBPv310CheckFundsAvailable**](docs/Api/PSD2Api.md#obpv310checkfundsavailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
-*PSD2Api* | [**oBPv310CreateConsentEmail**](docs/Api/PSD2Api.md#obpv310createconsentemail) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{email} | Create Consent (EMAIL)
-*PSD2Api* | [**oBPv310CreateConsentImplicit**](docs/Api/PSD2Api.md#obpv310createconsentimplicit) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{implicit} | Create Consent (IMPLICIT)
-*PSD2Api* | [**oBPv310CreateConsentSms**](docs/Api/PSD2Api.md#obpv310createconsentsms) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{sms} | Create Consent (SMS)
-*PSD2Api* | [**oBPv310GetServerJWK**](docs/Api/PSD2Api.md#obpv310getserverjwk) | **GET** /obp/v3.1.0/certs | Get JSON Web Key (JWK)
-*PSD2Api* | [**oBPv400AnswerTransactionRequestChallenge**](docs/Api/PSD2Api.md#obpv400answertransactionrequestchallenge) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge
-*PSD2Api* | [**oBPv400CreateTransactionRequestAccount**](docs/Api/PSD2Api.md#obpv400createtransactionrequestaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT)
-*PSD2Api* | [**oBPv400CreateTransactionRequestAccountOtp**](docs/Api/PSD2Api.md#obpv400createtransactionrequestaccountotp) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP)
-*PSD2Api* | [**oBPv400CreateTransactionRequestAgentCashWithDrawal**](docs/Api/PSD2Api.md#obpv400createtransactionrequestagentcashwithdrawal) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL)
-*PSD2Api* | [**oBPv400CreateTransactionRequestCard**](docs/Api/PSD2Api.md#obpv400createtransactionrequestcard) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD)
-*PSD2Api* | [**oBPv400CreateTransactionRequestCounterparty**](docs/Api/PSD2Api.md#obpv400createtransactionrequestcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY)
-*PSD2Api* | [**oBPv400CreateTransactionRequestRefund**](docs/Api/PSD2Api.md#obpv400createtransactionrequestrefund) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND)
-*PSD2Api* | [**oBPv400CreateTransactionRequestSepa**](docs/Api/PSD2Api.md#obpv400createtransactionrequestsepa) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA)
-*PSD2Api* | [**oBPv400CreateTransactionRequestSimple**](docs/Api/PSD2Api.md#obpv400createtransactionrequestsimple) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE)
-*PSD2Api* | [**oBPv400GetConsentInfos**](docs/Api/PSD2Api.md#obpv400getconsentinfos) | **GET** /obp/v4.0.0/my/consent-infos | Get My Consents Info
-*PSD2Api* | [**oBPv400GetConsentInfosByBank**](docs/Api/PSD2Api.md#obpv400getconsentinfosbybank) | **GET** /obp/v4.0.0/banks/{bankid}/my/consent-infos | Get My Consents Info At Bank
-*PSD2Api* | [**oBPv400GetCounterpartiesForAnyAccount**](docs/Api/PSD2Api.md#obpv400getcounterpartiesforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
-*PSD2Api* | [**oBPv400GetExplicitCounterpartiesForAccount**](docs/Api/PSD2Api.md#obpv400getexplicitcounterpartiesforaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
-*PSD2Api* | [**oBPv400GetExplicitCounterpartyById**](docs/Api/PSD2Api.md#obpv400getexplicitcounterpartybyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
-*PSD2Api* | [**oBPv400GetSettlementAccounts**](docs/Api/PSD2Api.md#obpv400getsettlementaccounts) | **GET** /obp/v4.0.0/banks/{bankid}/settlement-accounts | Get Settlement accounts at Bank
-*PSD2Api* | [**oBPv400GetTransactionRequest**](docs/Api/PSD2Api.md#obpv400gettransactionrequest) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request
-*PSD2Api* | [**oBPv500CreateConsentByConsentRequestIdEmail**](docs/Api/PSD2Api.md#obpv500createconsentbyconsentrequestidemail) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
-*PSD2Api* | [**oBPv500CreateConsentByConsentRequestIdImplicit**](docs/Api/PSD2Api.md#obpv500createconsentbyconsentrequestidimplicit) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{implicit}/consents | Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
-*PSD2Api* | [**oBPv500CreateConsentByConsentRequestIdSms**](docs/Api/PSD2Api.md#obpv500createconsentbyconsentrequestidsms) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{sms}/consents | Create Consent By CONSENT_REQUEST_ID (SMS)
-*PSD2Api* | [**oBPv500CreateConsentRequest**](docs/Api/PSD2Api.md#obpv500createconsentrequest) | **POST** /obp/v5.0.0/consumer/consent-requests | Create Consent Request
-*PSD2Api* | [**oBPv500GetConsentByConsentRequestId**](docs/Api/PSD2Api.md#obpv500getconsentbyconsentrequestid) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/consents | Get Consent By Consent Request Id via Consumer
-*PSD2Api* | [**oBPv500GetConsentRequest**](docs/Api/PSD2Api.md#obpv500getconsentrequest) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid} | Get Consent Request
-*PSD2Api* | [**oBPv510CreateConsentImplicit**](docs/Api/PSD2Api.md#obpv510createconsentimplicit) | **POST** /obp/v5.1.0/my/consents/{implicit} | Create Consent (IMPLICIT)
-*PSD2Api* | [**oBPv510GetBankAccountBalances**](docs/Api/PSD2Api.md#obpv510getbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/balances | Get Account Balances by BANK_ID and ACCOUNT_ID through the VIEW_ID
-*PSD2Api* | [**oBPv510GetBankAccountsBalances**](docs/Api/PSD2Api.md#obpv510getbankaccountsbalances) | **GET** /obp/v5.1.0/banks/{bankid}/balances | Get Account Balances by BANK_ID
-*PSD2Api* | [**oBPv510GetBankAccountsBalancesThroughView**](docs/Api/PSD2Api.md#obpv510getbankaccountsbalancesthroughview) | **GET** /obp/v5.1.0/banks/{bankid}/views/{viewid}/balances | Get Account Balances by BANK_ID through the VIEW_ID
-*PSD2Api* | [**oBPv510GetConsentByConsentId**](docs/Api/PSD2Api.md#obpv510getconsentbyconsentid) | **GET** /obp/v5.1.0/user/current/consents/{consentid} | Get Consent By Consent Id via User
-*PSD2Api* | [**oBPv510GetConsentByConsentIdViaConsumer**](docs/Api/PSD2Api.md#obpv510getconsentbyconsentidviaconsumer) | **GET** /obp/v5.1.0/consumer/current/consents/{consentid} | Get Consent By Consent Id via Consumer
-*PSD2Api* | [**oBPv510GetConsents**](docs/Api/PSD2Api.md#obpv510getconsents) | **GET** /obp/v5.1.0/management/consents | Get Consents
-*PSD2Api* | [**oBPv510GetConsentsAtBank**](docs/Api/PSD2Api.md#obpv510getconsentsatbank) | **GET** /obp/v5.1.0/management/consents/banks/{bankid} | Get Consents at Bank
-*PSD2Api* | [**oBPv510GetCoreAccountByIdThroughView**](docs/Api/PSD2Api.md#obpv510getcoreaccountbyidthroughview) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Account by Id (Core) through the VIEW_ID
-*PSD2Api* | [**oBPv510GetMyConsents**](docs/Api/PSD2Api.md#obpv510getmyconsents) | **GET** /obp/v5.1.0/my/consents | Get My Consents
-*PSD2Api* | [**oBPv510GetMyConsentsByBank**](docs/Api/PSD2Api.md#obpv510getmyconsentsbybank) | **GET** /obp/v5.1.0/banks/{bankid}/my/consents | Get My Consents at Bank
-*PSD2Api* | [**oBPv510GetTransactionRequestById**](docs/Api/PSD2Api.md#obpv510gettransactionrequestbyid) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID
-*PSD2Api* | [**oBPv510MtlsClientCertificateInfo**](docs/Api/PSD2Api.md#obpv510mtlsclientcertificateinfo) | **GET** /obp/v5.1.0/my/mtls/certificate/current | Provide client&#39;s certificate info of a current call
-*PSD2Api* | [**oBPv510RevokeConsentAtBank**](docs/Api/PSD2Api.md#obpv510revokeconsentatbank) | **DELETE** /obp/v5.1.0/banks/{bankid}/consents/{consentid} | Revoke Consent at Bank
-*PSD2Api* | [**oBPv510RevokeMyConsent**](docs/Api/PSD2Api.md#obpv510revokemyconsent) | **DELETE** /obp/v5.1.0/my/consents/{consentid} | Revoke My Consent
-*PSD2Api* | [**oBPv510SelfRevokeConsent**](docs/Api/PSD2Api.md#obpv510selfrevokeconsent) | **DELETE** /obp/v5.1.0/my/consent/current | Revoke Consent used in the Current Call
-*PSD2Api* | [**oBPv600CreateTransactionRequestCardano**](docs/Api/PSD2Api.md#obpv600createtransactionrequestcardano) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO)
-*PSD2Api* | [**oBPv600CreateTransactionRequestEthSendRawTransaction**](docs/Api/PSD2Api.md#obpv600createtransactionrequestethsendrawtransaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
-*PSD2Api* | [**oBPv600CreateTransactionRequestEthereumeSendTransaction**](docs/Api/PSD2Api.md#obpv600createtransactionrequestethereumesendtransaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION)
-*PSD2Api* | [**oBPv600CreateTransactionRequestHold**](docs/Api/PSD2Api.md#obpv600createtransactionrequesthold) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD)
-*PSD2Api* | [**oBPv600GetBank**](docs/Api/PSD2Api.md#obpv600getbank) | **GET** /obp/v6.0.0/banks/{bankid} | Get Bank
-*PSD2Api* | [**oBPv600GetBanks**](docs/Api/PSD2Api.md#obpv600getbanks) | **GET** /obp/v6.0.0/banks | Get Banks
-*PSD2Api* | [**oBPv600GetCoreAccountByIdV600**](docs/Api/PSD2Api.md#obpv600getcoreaccountbyidv600) | **GET** /obp/v6.0.0/my/banks/{bankid}/accounts/{accountid}/account | Get Account by Id (Core)
-*PaymentInitiationServicePISApi* | [**oBPv140GetTransactionRequestTypes**](docs/Api/PaymentInitiationServicePISApi.md#obpv140gettransactionrequesttypes) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account
-*PaymentInitiationServicePISApi* | [**oBPv210CreateTransactionRequestSandboxTan**](docs/Api/PaymentInitiationServicePISApi.md#obpv210createtransactionrequestsandboxtan) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN)
-*PaymentInitiationServicePISApi* | [**oBPv400AnswerTransactionRequestChallenge**](docs/Api/PaymentInitiationServicePISApi.md#obpv400answertransactionrequestchallenge) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge
-*PaymentInitiationServicePISApi* | [**oBPv400CreateTransactionRequestAccount**](docs/Api/PaymentInitiationServicePISApi.md#obpv400createtransactionrequestaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT)
-*PaymentInitiationServicePISApi* | [**oBPv400CreateTransactionRequestAccountOtp**](docs/Api/PaymentInitiationServicePISApi.md#obpv400createtransactionrequestaccountotp) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP)
-*PaymentInitiationServicePISApi* | [**oBPv400CreateTransactionRequestAgentCashWithDrawal**](docs/Api/PaymentInitiationServicePISApi.md#obpv400createtransactionrequestagentcashwithdrawal) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL)
-*PaymentInitiationServicePISApi* | [**oBPv400CreateTransactionRequestCard**](docs/Api/PaymentInitiationServicePISApi.md#obpv400createtransactionrequestcard) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD)
-*PaymentInitiationServicePISApi* | [**oBPv400CreateTransactionRequestCounterparty**](docs/Api/PaymentInitiationServicePISApi.md#obpv400createtransactionrequestcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY)
-*PaymentInitiationServicePISApi* | [**oBPv400CreateTransactionRequestFreeForm**](docs/Api/PaymentInitiationServicePISApi.md#obpv400createtransactionrequestfreeform) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests | Create Transaction Request (FREE_FORM)
-*PaymentInitiationServicePISApi* | [**oBPv400CreateTransactionRequestRefund**](docs/Api/PaymentInitiationServicePISApi.md#obpv400createtransactionrequestrefund) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND)
-*PaymentInitiationServicePISApi* | [**oBPv400CreateTransactionRequestSepa**](docs/Api/PaymentInitiationServicePISApi.md#obpv400createtransactionrequestsepa) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA)
-*PaymentInitiationServicePISApi* | [**oBPv400CreateTransactionRequestSimple**](docs/Api/PaymentInitiationServicePISApi.md#obpv400createtransactionrequestsimple) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE)
-*PaymentInitiationServicePISApi* | [**oBPv400GetCounterpartiesForAnyAccount**](docs/Api/PaymentInitiationServicePISApi.md#obpv400getcounterpartiesforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
-*PaymentInitiationServicePISApi* | [**oBPv400GetExplicitCounterpartiesForAccount**](docs/Api/PaymentInitiationServicePISApi.md#obpv400getexplicitcounterpartiesforaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
-*PaymentInitiationServicePISApi* | [**oBPv400GetExplicitCounterpartyById**](docs/Api/PaymentInitiationServicePISApi.md#obpv400getexplicitcounterpartybyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
-*PaymentInitiationServicePISApi* | [**oBPv400GetTransactionRequest**](docs/Api/PaymentInitiationServicePISApi.md#obpv400gettransactionrequest) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request
-*PaymentInitiationServicePISApi* | [**oBPv510GetTransactionRequestById**](docs/Api/PaymentInitiationServicePISApi.md#obpv510gettransactionrequestbyid) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID
-*PaymentInitiationServicePISApi* | [**oBPv510GetTransactionRequests**](docs/Api/PaymentInitiationServicePISApi.md#obpv510gettransactionrequests) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests | Get Transaction Requests
-*PaymentInitiationServicePISApi* | [**oBPv600CreateTransactionRequestCardano**](docs/Api/PaymentInitiationServicePISApi.md#obpv600createtransactionrequestcardano) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO)
-*PaymentInitiationServicePISApi* | [**oBPv600CreateTransactionRequestEthSendRawTransaction**](docs/Api/PaymentInitiationServicePISApi.md#obpv600createtransactionrequestethsendrawtransaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
-*PaymentInitiationServicePISApi* | [**oBPv600CreateTransactionRequestEthereumeSendTransaction**](docs/Api/PaymentInitiationServicePISApi.md#obpv600createtransactionrequestethereumesendtransaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION)
-*PaymentInitiationServicePISApi* | [**oBPv600CreateTransactionRequestHold**](docs/Api/PaymentInitiationServicePISApi.md#obpv600createtransactionrequesthold) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD)
-*PersonApi* | [**oBPv140AddCustomerMessage**](docs/Api/PersonApi.md#obpv140addcustomermessage) | **POST** /obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages | Create Customer Message
-*PersonApi* | [**oBPv400CreateCustomerMessage**](docs/Api/PersonApi.md#obpv400createcustomermessage) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Create Customer Message
-*PersonApi* | [**oBPv510CreateAgent**](docs/Api/PersonApi.md#obpv510createagent) | **POST** /obp/v5.1.0/banks/{bankid}/agents | Create Agent
-*PersonApi* | [**oBPv510UpdateAgentStatus**](docs/Api/PersonApi.md#obpv510updateagentstatus) | **PUT** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Update Agent status
-*PersonApi* | [**oBPv600CreateCustomer**](docs/Api/PersonApi.md#obpv600createcustomer) | **POST** /obp/v6.0.0/banks/{bankid}/customers | Create Customer
-*PersonalDynamicEntityApi* | [**oBPv600GetAvailablePersonalDynamicEntities**](docs/Api/PersonalDynamicEntityApi.md#obpv600getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
-*PrivateDataApi* | [**oBPv300CorePrivateAccountsAllBanks**](docs/Api/PrivateDataApi.md#obpv300coreprivateaccountsallbanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
-*PrivateDataApi* | [**oBPv600GetAccountsAtBank**](docs/Api/PrivateDataApi.md#obpv600getaccountsatbank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
-*ProductApi* | [**oBPv310CreateProductCollection**](docs/Api/ProductApi.md#obpv310createproductcollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection
-*ProductApi* | [**oBPv310DeleteProductAttribute**](docs/Api/ProductApi.md#obpv310deleteproductattribute) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute
-*ProductApi* | [**oBPv310GetProductCollection**](docs/Api/ProductApi.md#obpv310getproductcollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection
-*ProductApi* | [**oBPv310GetProductTree**](docs/Api/ProductApi.md#obpv310getproducttree) | **GET** /obp/v3.1.0/banks/{bankid}/product-tree/{productcode} | Get Product Tree
-*ProductApi* | [**oBPv400CreateOrUpdateProductAttributeDefinition**](docs/Api/ProductApi.md#obpv400createorupdateproductattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition
-*ProductApi* | [**oBPv400CreateProductAttribute**](docs/Api/ProductApi.md#obpv400createproductattribute) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute
-*ProductApi* | [**oBPv400CreateProductFee**](docs/Api/ProductApi.md#obpv400createproductfee) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fee | Create Product Fee
-*ProductApi* | [**oBPv400DeleteProductAttributeDefinition**](docs/Api/ProductApi.md#obpv400deleteproductattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition
-*ProductApi* | [**oBPv400DeleteProductCascade**](docs/Api/ProductApi.md#obpv400deleteproductcascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/products/{productcode} | Delete Product Cascade
-*ProductApi* | [**oBPv400DeleteProductFee**](docs/Api/ProductApi.md#obpv400deleteproductfee) | **DELETE** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Delete Product Fee
-*ProductApi* | [**oBPv400GetProduct**](docs/Api/ProductApi.md#obpv400getproduct) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode} | Get Bank Product
-*ProductApi* | [**oBPv400GetProductAttribute**](docs/Api/ProductApi.md#obpv400getproductattribute) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute
-*ProductApi* | [**oBPv400GetProductAttributeDefinition**](docs/Api/ProductApi.md#obpv400getproductattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition
-*ProductApi* | [**oBPv400GetProductFee**](docs/Api/ProductApi.md#obpv400getproductfee) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Get Product Fee
-*ProductApi* | [**oBPv400GetProductFees**](docs/Api/ProductApi.md#obpv400getproductfees) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees | Get Product Fees
-*ProductApi* | [**oBPv400GetProducts**](docs/Api/ProductApi.md#obpv400getproducts) | **GET** /obp/v4.0.0/banks/{bankid}/products | Get Products
-*ProductApi* | [**oBPv400UpdateProductAttribute**](docs/Api/ProductApi.md#obpv400updateproductattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute
-*ProductApi* | [**oBPv400UpdateProductFee**](docs/Api/ProductApi.md#obpv400updateproductfee) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Update Product Fee
-*ProductApi* | [**oBPv500CreateProduct**](docs/Api/ProductApi.md#obpv500createproduct) | **PUT** /obp/v5.0.0/banks/{bankid}/products/{productcode} | Create Product
-*ProductAttributeApi* | [**oBPv310DeleteProductAttribute**](docs/Api/ProductAttributeApi.md#obpv310deleteproductattribute) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute
-*ProductAttributeApi* | [**oBPv400CreateOrUpdateProductAttributeDefinition**](docs/Api/ProductAttributeApi.md#obpv400createorupdateproductattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition
-*ProductAttributeApi* | [**oBPv400CreateProductAttribute**](docs/Api/ProductAttributeApi.md#obpv400createproductattribute) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute
-*ProductAttributeApi* | [**oBPv400DeleteProductAttributeDefinition**](docs/Api/ProductAttributeApi.md#obpv400deleteproductattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition
-*ProductAttributeApi* | [**oBPv400GetProductAttribute**](docs/Api/ProductAttributeApi.md#obpv400getproductattribute) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute
-*ProductAttributeApi* | [**oBPv400GetProductAttributeDefinition**](docs/Api/ProductAttributeApi.md#obpv400getproductattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition
-*ProductAttributeApi* | [**oBPv400UpdateProductAttribute**](docs/Api/ProductAttributeApi.md#obpv400updateproductattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute
-*ProductCollectionApi* | [**oBPv310CreateProductCollection**](docs/Api/ProductCollectionApi.md#obpv310createproductcollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection
-*ProductCollectionApi* | [**oBPv310GetProductCollection**](docs/Api/ProductCollectionApi.md#obpv310getproductcollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection
-*PublicDataApi* | [**oBPv200PublicAccountsAllBanks**](docs/Api/PublicDataApi.md#obpv200publicaccountsallbanks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks
-*PublicDataApi* | [**oBPv200PublicAccountsAtOneBank**](docs/Api/PublicDataApi.md#obpv200publicaccountsatonebank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank
-*PublicDataApi* | [**oBPv600GetAccountsAtBank**](docs/Api/PublicDataApi.md#obpv600getaccountsatbank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
-*RateLimitsApi* | [**oBPv310GetRateLimitingInfo**](docs/Api/RateLimitsApi.md#obpv310getratelimitinginfo) | **GET** /obp/v3.1.0/rate-limiting | Get Rate Limiting Info
-*RateLimitsApi* | [**oBPv400CallsLimit**](docs/Api/RateLimitsApi.md#obpv400callslimit) | **PUT** /obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits | Set Rate Limits / Call Limits per Consumer
-*RateLimitsApi* | [**oBPv600UpdateRateLimits**](docs/Api/RateLimitsApi.md#obpv600updateratelimits) | **PUT** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Set Rate Limits / Call Limits per Consumer
-*RetailCustomerApi* | [**oBPv600CreateRetailCustomer**](docs/Api/RetailCustomerApi.md#obpv600createretailcustomer) | **POST** /obp/v6.0.0/banks/{bankid}/retail-customers | Create Retail Customer
-*RetailCustomerApi* | [**oBPv600GetRetailCustomerByCustomerId**](docs/Api/RetailCustomerApi.md#obpv600getretailcustomerbycustomerid) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers/{customerid} | Get Retail Customer by CUSTOMER_ID
-*RetailCustomerApi* | [**oBPv600GetRetailCustomersAtOneBank**](docs/Api/RetailCustomerApi.md#obpv600getretailcustomersatonebank) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers | Get Retail Customers at Bank
-*RoleApi* | [**oBPv200AddEntitlement**](docs/Api/RoleApi.md#obpv200addentitlement) | **POST** /obp/v2.0.0/users/{userid}/entitlements | Add Entitlement for a User
-*RoleApi* | [**oBPv200DeleteEntitlement**](docs/Api/RoleApi.md#obpv200deleteentitlement) | **DELETE** /obp/v2.0.0/users/{userid}/entitlement/{entitlementid} | Delete Entitlement
-*RoleApi* | [**oBPv210GetEntitlementsByBankAndUser**](docs/Api/RoleApi.md#obpv210getentitlementsbybankanduser) | **GET** /obp/v2.1.0/banks/{bankid}/users/{userid}/entitlements | Get Entitlements for User at Bank
-*RoleApi* | [**oBPv210GetRoles**](docs/Api/RoleApi.md#obpv210getroles) | **GET** /obp/v2.1.0/roles | Get Roles
-*RoleApi* | [**oBPv300AddEntitlementRequest**](docs/Api/RoleApi.md#obpv300addentitlementrequest) | **POST** /obp/v3.0.0/entitlement-requests | Create Entitlement Request for current User
-*RoleApi* | [**oBPv300DeleteEntitlementRequest**](docs/Api/RoleApi.md#obpv300deleteentitlementrequest) | **DELETE** /obp/v3.0.0/entitlement-requests/{entitlementrequestid} | Delete Entitlement Request
-*RoleApi* | [**oBPv300GetAllEntitlementRequests**](docs/Api/RoleApi.md#obpv300getallentitlementrequests) | **GET** /obp/v3.0.0/entitlement-requests | Get all Entitlement Requests
-*RoleApi* | [**oBPv300GetEntitlementRequests**](docs/Api/RoleApi.md#obpv300getentitlementrequests) | **GET** /obp/v3.0.0/users/{userid}/entitlement-requests | Get Entitlement Requests for a User
-*RoleApi* | [**oBPv300GetEntitlementRequestsForCurrentUser**](docs/Api/RoleApi.md#obpv300getentitlementrequestsforcurrentuser) | **GET** /obp/v3.0.0/my/entitlement-requests | Get Entitlement Requests for the current User
-*RoleApi* | [**oBPv300GetEntitlementsForCurrentUser**](docs/Api/RoleApi.md#obpv300getentitlementsforcurrentuser) | **GET** /obp/v3.0.0/my/entitlements | Get Entitlements for the current User
-*RoleApi* | [**oBPv310GetAllEntitlements**](docs/Api/RoleApi.md#obpv310getallentitlements) | **GET** /obp/v3.1.0/entitlements | Get all Entitlements
-*RoleApi* | [**oBPv400CreateUserWithRoles**](docs/Api/RoleApi.md#obpv400createuserwithroles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
-*RoleApi* | [**oBPv400GetEntitlements**](docs/Api/RoleApi.md#obpv400getentitlements) | **GET** /obp/v4.0.0/users/{userid}/entitlements | Get Entitlements for User
-*RoleApi* | [**oBPv400GetEntitlementsForBank**](docs/Api/RoleApi.md#obpv400getentitlementsforbank) | **GET** /obp/v4.0.0/banks/{bankid}/entitlements | Get Entitlements for One Bank
-*RoleApi* | [**oBPv510GetEntitlementsAndPermissions**](docs/Api/RoleApi.md#obpv510getentitlementsandpermissions) | **GET** /obp/v5.1.0/users/{userid}/entitlements-and-permissions | Get Entitlements and Permissions for a User
-*RoleApi* | [**oBPv600DeleteEntitlement**](docs/Api/RoleApi.md#obpv600deleteentitlement) | **DELETE** /obp/v6.0.0/entitlements/{entitlementid} | Delete Entitlement
-*RoleApi* | [**oBPv600GetRolesWithEntitlementCountsAtAllBanks**](docs/Api/RoleApi.md#obpv600getroleswithentitlementcountsatallbanks) | **GET** /obp/v6.0.0/management/roles-with-entitlement-counts | Get Roles with Entitlement Counts
-*SandboxApi* | [**oBPv210SandboxDataImport**](docs/Api/SandboxApi.md#obpv210sandboxdataimport) | **POST** /obp/v2.1.0/sandbox/data-import | Create sandbox
-*ScopeApi* | [**oBPv300DeleteScope**](docs/Api/ScopeApi.md#obpv300deletescope) | **DELETE** /obp/v3.0.0/consumers/{consumerid}/scope/{scopeid} | Delete Consumer Scope
-*ScopeApi* | [**oBPv400AddScope**](docs/Api/ScopeApi.md#obpv400addscope) | **POST** /obp/v4.0.0/consumers/{consumerid}/scopes | Create Scope for a Consumer
-*ScopeApi* | [**oBPv400GetScopes**](docs/Api/ScopeApi.md#obpv400getscopes) | **GET** /obp/v4.0.0/consumers/{consumerid}/scopes | Get Scopes for Consumer
-*SignalApi* | [**oBPv600DeleteSignalChannel**](docs/Api/SignalApi.md#obpv600deletesignalchannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
-*SignalApi* | [**oBPv600GetSignalChannelInfo**](docs/Api/SignalApi.md#obpv600getsignalchannelinfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
-*SignalApi* | [**oBPv600GetSignalChannels**](docs/Api/SignalApi.md#obpv600getsignalchannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
-*SignalApi* | [**oBPv600GetSignalMessages**](docs/Api/SignalApi.md#obpv600getsignalmessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
-*SignalApi* | [**oBPv600GetSignalStats**](docs/Api/SignalApi.md#obpv600getsignalstats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
-*SignalApi* | [**oBPv600PublishSignalMessage**](docs/Api/SignalApi.md#obpv600publishsignalmessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
-*SignallingApi* | [**oBPv600DeleteSignalChannel**](docs/Api/SignallingApi.md#obpv600deletesignalchannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
-*SignallingApi* | [**oBPv600GetSignalChannelInfo**](docs/Api/SignallingApi.md#obpv600getsignalchannelinfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
-*SignallingApi* | [**oBPv600GetSignalChannels**](docs/Api/SignallingApi.md#obpv600getsignalchannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
-*SignallingApi* | [**oBPv600GetSignalMessages**](docs/Api/SignallingApi.md#obpv600getsignalmessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
-*SignallingApi* | [**oBPv600GetSignalStats**](docs/Api/SignallingApi.md#obpv600getsignalstats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
-*SignallingApi* | [**oBPv600PublishSignalMessage**](docs/Api/SignallingApi.md#obpv600publishsignalmessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
-*StandingOrderApi* | [**oBPv400CreateStandingOrder**](docs/Api/StandingOrderApi.md#obpv400createstandingorder) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
-*StandingOrderApi* | [**oBPv400CreateStandingOrderManagement**](docs/Api/StandingOrderApi.md#obpv400createstandingordermanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
-*SystemApi* | [**oBPv510LogCacheAllEndpoint**](docs/Api/SystemApi.md#obpv510logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
-*SystemApi* | [**oBPv510LogCacheDebugEndpoint**](docs/Api/SystemApi.md#obpv510logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
-*SystemApi* | [**oBPv510LogCacheErrorEndpoint**](docs/Api/SystemApi.md#obpv510logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
-*SystemApi* | [**oBPv510LogCacheInfoEndpoint**](docs/Api/SystemApi.md#obpv510logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
-*SystemApi* | [**oBPv510LogCacheTraceEndpoint**](docs/Api/SystemApi.md#obpv510logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
-*SystemApi* | [**oBPv510LogCacheWarningEndpoint**](docs/Api/SystemApi.md#obpv510logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
-*SystemApi* | [**oBPv600GetCacheConfig**](docs/Api/SystemApi.md#obpv600getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
-*SystemApi* | [**oBPv600GetCacheInfo**](docs/Api/SystemApi.md#obpv600getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
-*SystemApi* | [**oBPv600GetCacheNamespaces**](docs/Api/SystemApi.md#obpv600getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
-*SystemApi* | [**oBPv600GetConnectorMethodNames**](docs/Api/SystemApi.md#obpv600getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
-*SystemApi* | [**oBPv600GetConnectors**](docs/Api/SystemApi.md#obpv600getconnectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
-*SystemApi* | [**oBPv600GetDatabasePoolInfo**](docs/Api/SystemApi.md#obpv600getdatabasepoolinfo) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information
-*SystemApi* | [**oBPv600GetMigrations**](docs/Api/SystemApi.md#obpv600getmigrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations
-*SystemApi* | [**oBPv600GetStoredProcedureConnectorHealth**](docs/Api/SystemApi.md#obpv600getstoredprocedureconnectorhealth) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
-*SystemApi* | [**oBPv600InvalidateCacheNamespace**](docs/Api/SystemApi.md#obpv600invalidatecachenamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
-*SystemIntegrityApi* | [**oBPv510AccountAccessUniqueIndexCheck**](docs/Api/SystemIntegrityApi.md#obpv510accountaccessuniqueindexcheck) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access
-*SystemIntegrityApi* | [**oBPv510AccountCurrencyCheck**](docs/Api/SystemIntegrityApi.md#obpv510accountcurrencycheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies
-*SystemIntegrityApi* | [**oBPv510CustomViewNamesCheck**](docs/Api/SystemIntegrityApi.md#obpv510customviewnamescheck) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names
-*SystemIntegrityApi* | [**oBPv510OrphanedAccountCheck**](docs/Api/SystemIntegrityApi.md#obpv510orphanedaccountcheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts
-*SystemIntegrityApi* | [**oBPv510SystemViewNamesCheck**](docs/Api/SystemIntegrityApi.md#obpv510systemviewnamescheck) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names
-*TransactionApi* | [**oBPv121AddCommentForViewOnTransaction**](docs/Api/TransactionApi.md#obpv121addcommentforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment
-*TransactionApi* | [**oBPv121AddImageForViewOnTransaction**](docs/Api/TransactionApi.md#obpv121addimageforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image
-*TransactionApi* | [**oBPv121AddTagForViewOnTransaction**](docs/Api/TransactionApi.md#obpv121addtagforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag
-*TransactionApi* | [**oBPv121AddTransactionNarrative**](docs/Api/TransactionApi.md#obpv121addtransactionnarrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative
-*TransactionApi* | [**oBPv121AddWhereTagForViewOnTransaction**](docs/Api/TransactionApi.md#obpv121addwheretagforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag
-*TransactionApi* | [**oBPv121DeleteCommentForViewOnTransaction**](docs/Api/TransactionApi.md#obpv121deletecommentforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment
-*TransactionApi* | [**oBPv121DeleteImageForViewOnTransaction**](docs/Api/TransactionApi.md#obpv121deleteimageforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image
-*TransactionApi* | [**oBPv121DeleteTagForViewOnTransaction**](docs/Api/TransactionApi.md#obpv121deletetagforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag
-*TransactionApi* | [**oBPv121DeleteTransactionNarrative**](docs/Api/TransactionApi.md#obpv121deletetransactionnarrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative
-*TransactionApi* | [**oBPv121DeleteWhereTagForViewOnTransaction**](docs/Api/TransactionApi.md#obpv121deletewheretagforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag
-*TransactionApi* | [**oBPv121GetCommentsForViewOnTransaction**](docs/Api/TransactionApi.md#obpv121getcommentsforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments
-*TransactionApi* | [**oBPv121GetImagesForViewOnTransaction**](docs/Api/TransactionApi.md#obpv121getimagesforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images
-*TransactionApi* | [**oBPv121GetOtherAccountForTransaction**](docs/Api/TransactionApi.md#obpv121getotheraccountfortransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account | Get Other Account of Transaction
-*TransactionApi* | [**oBPv121GetTagsForViewOnTransaction**](docs/Api/TransactionApi.md#obpv121gettagsforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags
-*TransactionApi* | [**oBPv121GetTransactionNarrative**](docs/Api/TransactionApi.md#obpv121gettransactionnarrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative
-*TransactionApi* | [**oBPv121GetWhereTagForViewOnTransaction**](docs/Api/TransactionApi.md#obpv121getwheretagforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag
-*TransactionApi* | [**oBPv121UpdateTransactionNarrative**](docs/Api/TransactionApi.md#obpv121updatetransactionnarrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative
-*TransactionApi* | [**oBPv121UpdateWhereTagForViewOnTransaction**](docs/Api/TransactionApi.md#obpv121updatewheretagforviewontransaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag
-*TransactionApi* | [**oBPv300GetCoreTransactionsForBankAccount**](docs/Api/TransactionApi.md#obpv300getcoretransactionsforbankaccount) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
-*TransactionApi* | [**oBPv300GetFirehoseTransactionsForBankAccount**](docs/Api/TransactionApi.md#obpv300getfirehosetransactionsforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
-*TransactionApi* | [**oBPv310GetTransactionByIdForBankAccount**](docs/Api/TransactionApi.md#obpv310gettransactionbyidforbankaccount) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/transaction | Get Transaction by Id
-*TransactionApi* | [**oBPv400CreateOrUpdateTransactionAttributeDefinition**](docs/Api/TransactionApi.md#obpv400createorupdatetransactionattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
-*TransactionApi* | [**oBPv400CreateTransactionAttribute**](docs/Api/TransactionApi.md#obpv400createtransactionattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
-*TransactionApi* | [**oBPv400DeleteTransactionAttributeDefinition**](docs/Api/TransactionApi.md#obpv400deletetransactionattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
-*TransactionApi* | [**oBPv400DeleteTransactionCascade**](docs/Api/TransactionApi.md#obpv400deletetransactioncascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid}/transactions/{transactionid} | Delete Transaction Cascade
-*TransactionApi* | [**oBPv400GetBalancingTransaction**](docs/Api/TransactionApi.md#obpv400getbalancingtransaction) | **GET** /obp/v4.0.0/transactions/{transactionid}/balancing-transaction | Get Balancing Transaction
-*TransactionApi* | [**oBPv400GetDoubleEntryTransaction**](docs/Api/TransactionApi.md#obpv400getdoubleentrytransaction) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/double-entry-transaction | Get Double Entry Transaction
-*TransactionApi* | [**oBPv400GetTransactionAttributeById**](docs/Api/TransactionApi.md#obpv400gettransactionattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
-*TransactionApi* | [**oBPv400GetTransactionAttributeDefinition**](docs/Api/TransactionApi.md#obpv400gettransactionattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
-*TransactionApi* | [**oBPv400GetTransactionAttributes**](docs/Api/TransactionApi.md#obpv400gettransactionattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
-*TransactionApi* | [**oBPv400UpdateTransactionAttribute**](docs/Api/TransactionApi.md#obpv400updatetransactionattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
-*TransactionApi* | [**oBPv600GetTransactionsForBankAccount**](docs/Api/TransactionApi.md#obpv600gettransactionsforbankaccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions | Get Transactions for Account (Full)
-*TransactionAttributeApi* | [**oBPv400CreateOrUpdateTransactionAttributeDefinition**](docs/Api/TransactionAttributeApi.md#obpv400createorupdatetransactionattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
-*TransactionAttributeApi* | [**oBPv400CreateTransactionAttribute**](docs/Api/TransactionAttributeApi.md#obpv400createtransactionattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
-*TransactionAttributeApi* | [**oBPv400DeleteTransactionAttributeDefinition**](docs/Api/TransactionAttributeApi.md#obpv400deletetransactionattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
-*TransactionAttributeApi* | [**oBPv400GetTransactionAttributeById**](docs/Api/TransactionAttributeApi.md#obpv400gettransactionattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
-*TransactionAttributeApi* | [**oBPv400GetTransactionAttributeDefinition**](docs/Api/TransactionAttributeApi.md#obpv400gettransactionattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
-*TransactionAttributeApi* | [**oBPv400GetTransactionAttributes**](docs/Api/TransactionAttributeApi.md#obpv400gettransactionattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
-*TransactionAttributeApi* | [**oBPv400UpdateTransactionAttribute**](docs/Api/TransactionAttributeApi.md#obpv400updatetransactionattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
-*TransactionFirehoseApi* | [**oBPv300GetFirehoseTransactionsForBankAccount**](docs/Api/TransactionFirehoseApi.md#obpv300getfirehosetransactionsforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
-*TransactionMetadataApi* | [**oBPv121AddCommentForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#obpv121addcommentforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment
-*TransactionMetadataApi* | [**oBPv121AddImageForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#obpv121addimageforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image
-*TransactionMetadataApi* | [**oBPv121AddTagForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#obpv121addtagforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag
-*TransactionMetadataApi* | [**oBPv121AddTransactionNarrative**](docs/Api/TransactionMetadataApi.md#obpv121addtransactionnarrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative
-*TransactionMetadataApi* | [**oBPv121AddWhereTagForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#obpv121addwheretagforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag
-*TransactionMetadataApi* | [**oBPv121DeleteCommentForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#obpv121deletecommentforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment
-*TransactionMetadataApi* | [**oBPv121DeleteImageForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#obpv121deleteimageforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image
-*TransactionMetadataApi* | [**oBPv121DeleteTagForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#obpv121deletetagforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag
-*TransactionMetadataApi* | [**oBPv121DeleteTransactionNarrative**](docs/Api/TransactionMetadataApi.md#obpv121deletetransactionnarrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative
-*TransactionMetadataApi* | [**oBPv121DeleteWhereTagForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#obpv121deletewheretagforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag
-*TransactionMetadataApi* | [**oBPv121GetCommentsForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#obpv121getcommentsforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments
-*TransactionMetadataApi* | [**oBPv121GetImagesForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#obpv121getimagesforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images
-*TransactionMetadataApi* | [**oBPv121GetTagsForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#obpv121gettagsforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags
-*TransactionMetadataApi* | [**oBPv121GetTransactionNarrative**](docs/Api/TransactionMetadataApi.md#obpv121gettransactionnarrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative
-*TransactionMetadataApi* | [**oBPv121GetWhereTagForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#obpv121getwheretagforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag
-*TransactionMetadataApi* | [**oBPv121UpdateTransactionNarrative**](docs/Api/TransactionMetadataApi.md#obpv121updatetransactionnarrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative
-*TransactionMetadataApi* | [**oBPv121UpdateWhereTagForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#obpv121updatewheretagforviewontransaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag
-*TransactionRequestApi* | [**oBPv140GetTransactionRequestTypes**](docs/Api/TransactionRequestApi.md#obpv140gettransactionrequesttypes) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account
-*TransactionRequestApi* | [**oBPv210CreateTransactionRequestSandboxTan**](docs/Api/TransactionRequestApi.md#obpv210createtransactionrequestsandboxtan) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN)
-*TransactionRequestApi* | [**oBPv210GetTransactionRequestTypesSupportedByBank**](docs/Api/TransactionRequestApi.md#obpv210gettransactionrequesttypessupportedbybank) | **GET** /obp/v2.1.0/banks/{bankid}/transaction-request-types | Get Transaction Request Types at Bank
-*TransactionRequestApi* | [**oBPv310SaveHistoricalTransaction**](docs/Api/TransactionRequestApi.md#obpv310savehistoricaltransaction) | **POST** /obp/v3.1.0/management/historical/transactions  | Save Historical Transactions
-*TransactionRequestApi* | [**oBPv400AnswerTransactionRequestChallenge**](docs/Api/TransactionRequestApi.md#obpv400answertransactionrequestchallenge) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge
-*TransactionRequestApi* | [**oBPv400CreateHistoricalTransactionAtBank**](docs/Api/TransactionRequestApi.md#obpv400createhistoricaltransactionatbank) | **POST** /obp/v4.0.0/banks/{bankid}/management/historical/transactions | Create Historical Transactions
-*TransactionRequestApi* | [**oBPv400CreateOrUpdateTransactionRequestAttributeDefinition**](docs/Api/TransactionRequestApi.md#obpv400createorupdatetransactionrequestattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
-*TransactionRequestApi* | [**oBPv400CreateTransactionRequestAccount**](docs/Api/TransactionRequestApi.md#obpv400createtransactionrequestaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT)
-*TransactionRequestApi* | [**oBPv400CreateTransactionRequestAccountOtp**](docs/Api/TransactionRequestApi.md#obpv400createtransactionrequestaccountotp) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP)
-*TransactionRequestApi* | [**oBPv400CreateTransactionRequestAgentCashWithDrawal**](docs/Api/TransactionRequestApi.md#obpv400createtransactionrequestagentcashwithdrawal) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL)
-*TransactionRequestApi* | [**oBPv400CreateTransactionRequestAttribute**](docs/Api/TransactionRequestApi.md#obpv400createtransactionrequestattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
-*TransactionRequestApi* | [**oBPv400CreateTransactionRequestCard**](docs/Api/TransactionRequestApi.md#obpv400createtransactionrequestcard) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD)
-*TransactionRequestApi* | [**oBPv400CreateTransactionRequestCounterparty**](docs/Api/TransactionRequestApi.md#obpv400createtransactionrequestcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY)
-*TransactionRequestApi* | [**oBPv400CreateTransactionRequestFreeForm**](docs/Api/TransactionRequestApi.md#obpv400createtransactionrequestfreeform) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests | Create Transaction Request (FREE_FORM)
-*TransactionRequestApi* | [**oBPv400CreateTransactionRequestRefund**](docs/Api/TransactionRequestApi.md#obpv400createtransactionrequestrefund) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND)
-*TransactionRequestApi* | [**oBPv400CreateTransactionRequestSepa**](docs/Api/TransactionRequestApi.md#obpv400createtransactionrequestsepa) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA)
-*TransactionRequestApi* | [**oBPv400CreateTransactionRequestSimple**](docs/Api/TransactionRequestApi.md#obpv400createtransactionrequestsimple) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE)
-*TransactionRequestApi* | [**oBPv400DeleteTransactionRequestAttributeDefinition**](docs/Api/TransactionRequestApi.md#obpv400deletetransactionrequestattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
-*TransactionRequestApi* | [**oBPv400GetTransactionRequest**](docs/Api/TransactionRequestApi.md#obpv400gettransactionrequest) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request
-*TransactionRequestApi* | [**oBPv400GetTransactionRequestAttributeById**](docs/Api/TransactionRequestApi.md#obpv400gettransactionrequestattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
-*TransactionRequestApi* | [**oBPv400GetTransactionRequestAttributeDefinition**](docs/Api/TransactionRequestApi.md#obpv400gettransactionrequestattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
-*TransactionRequestApi* | [**oBPv400GetTransactionRequestAttributes**](docs/Api/TransactionRequestApi.md#obpv400gettransactionrequestattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
-*TransactionRequestApi* | [**oBPv400UpdateTransactionRequestAttribute**](docs/Api/TransactionRequestApi.md#obpv400updatetransactionrequestattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
-*TransactionRequestApi* | [**oBPv510CreateVRPConsentRequest**](docs/Api/TransactionRequestApi.md#obpv510createvrpconsentrequest) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
-*TransactionRequestApi* | [**oBPv510GetTransactionRequestById**](docs/Api/TransactionRequestApi.md#obpv510gettransactionrequestbyid) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID
-*TransactionRequestApi* | [**oBPv510GetTransactionRequests**](docs/Api/TransactionRequestApi.md#obpv510gettransactionrequests) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests | Get Transaction Requests
-*TransactionRequestApi* | [**oBPv510UpdateTransactionRequestStatus**](docs/Api/TransactionRequestApi.md#obpv510updatetransactionrequeststatus) | **PUT** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Update Transaction Request Status
-*TransactionRequestApi* | [**oBPv600CreateTransactionRequestCardano**](docs/Api/TransactionRequestApi.md#obpv600createtransactionrequestcardano) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO)
-*TransactionRequestApi* | [**oBPv600CreateTransactionRequestEthSendRawTransaction**](docs/Api/TransactionRequestApi.md#obpv600createtransactionrequestethsendrawtransaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
-*TransactionRequestApi* | [**oBPv600CreateTransactionRequestEthereumeSendTransaction**](docs/Api/TransactionRequestApi.md#obpv600createtransactionrequestethereumesendtransaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION)
-*TransactionRequestApi* | [**oBPv600CreateTransactionRequestHold**](docs/Api/TransactionRequestApi.md#obpv600createtransactionrequesthold) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD)
-*TransactionRequestAttributeApi* | [**oBPv400CreateOrUpdateTransactionRequestAttributeDefinition**](docs/Api/TransactionRequestAttributeApi.md#obpv400createorupdatetransactionrequestattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
-*TransactionRequestAttributeApi* | [**oBPv400CreateTransactionRequestAttribute**](docs/Api/TransactionRequestAttributeApi.md#obpv400createtransactionrequestattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
-*TransactionRequestAttributeApi* | [**oBPv400DeleteTransactionRequestAttributeDefinition**](docs/Api/TransactionRequestAttributeApi.md#obpv400deletetransactionrequestattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
-*TransactionRequestAttributeApi* | [**oBPv400GetTransactionRequestAttributeById**](docs/Api/TransactionRequestAttributeApi.md#obpv400gettransactionrequestattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
-*TransactionRequestAttributeApi* | [**oBPv400GetTransactionRequestAttributeDefinition**](docs/Api/TransactionRequestAttributeApi.md#obpv400gettransactionrequestattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
-*TransactionRequestAttributeApi* | [**oBPv400GetTransactionRequestAttributes**](docs/Api/TransactionRequestAttributeApi.md#obpv400gettransactionrequestattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
-*TransactionRequestAttributeApi* | [**oBPv400UpdateTransactionRequestAttribute**](docs/Api/TransactionRequestAttributeApi.md#obpv400updatetransactionrequestattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
-*UserApi* | [**oBPv200AddEntitlement**](docs/Api/UserApi.md#obpv200addentitlement) | **POST** /obp/v2.0.0/users/{userid}/entitlements | Add Entitlement for a User
-*UserApi* | [**oBPv200DeleteEntitlement**](docs/Api/UserApi.md#obpv200deleteentitlement) | **DELETE** /obp/v2.0.0/users/{userid}/entitlement/{entitlementid} | Delete Entitlement
-*UserApi* | [**oBPv200GetPermissionsForBankAccount**](docs/Api/UserApi.md#obpv200getpermissionsforbankaccount) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
-*UserApi* | [**oBPv210GetEntitlementsByBankAndUser**](docs/Api/UserApi.md#obpv210getentitlementsbybankanduser) | **GET** /obp/v2.1.0/banks/{bankid}/users/{userid}/entitlements | Get Entitlements for User at Bank
-*UserApi* | [**oBPv300AddEntitlementRequest**](docs/Api/UserApi.md#obpv300addentitlementrequest) | **POST** /obp/v3.0.0/entitlement-requests | Create Entitlement Request for current User
-*UserApi* | [**oBPv300DeleteEntitlementRequest**](docs/Api/UserApi.md#obpv300deleteentitlementrequest) | **DELETE** /obp/v3.0.0/entitlement-requests/{entitlementrequestid} | Delete Entitlement Request
-*UserApi* | [**oBPv300GetAllEntitlementRequests**](docs/Api/UserApi.md#obpv300getallentitlementrequests) | **GET** /obp/v3.0.0/entitlement-requests | Get all Entitlement Requests
-*UserApi* | [**oBPv300GetCustomersForUser**](docs/Api/UserApi.md#obpv300getcustomersforuser) | **GET** /obp/v3.0.0/users/current/customers | Get Customers for Current User
-*UserApi* | [**oBPv300GetEntitlementRequests**](docs/Api/UserApi.md#obpv300getentitlementrequests) | **GET** /obp/v3.0.0/users/{userid}/entitlement-requests | Get Entitlement Requests for a User
-*UserApi* | [**oBPv300GetEntitlementRequestsForCurrentUser**](docs/Api/UserApi.md#obpv300getentitlementrequestsforcurrentuser) | **GET** /obp/v3.0.0/my/entitlement-requests | Get Entitlement Requests for the current User
-*UserApi* | [**oBPv300GetEntitlementsForCurrentUser**](docs/Api/UserApi.md#obpv300getentitlementsforcurrentuser) | **GET** /obp/v3.0.0/my/entitlements | Get Entitlements for the current User
-*UserApi* | [**oBPv300GetPermissionForUserForBankAccount**](docs/Api/UserApi.md#obpv300getpermissionforuserforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid} | Get Account access for User
-*UserApi* | [**oBPv310DeleteUserAuthContextById**](docs/Api/UserApi.md#obpv310deleteuserauthcontextbyid) | **DELETE** /obp/v3.1.0/users/{userid}/auth-context/{userauthcontextid} | Delete User Auth Context
-*UserApi* | [**oBPv310DeleteUserAuthContexts**](docs/Api/UserApi.md#obpv310deleteuserauthcontexts) | **DELETE** /obp/v3.1.0/users/{userid}/auth-context | Delete User&#39;s Auth Contexts
-*UserApi* | [**oBPv310RefreshUser**](docs/Api/UserApi.md#obpv310refreshuser) | **POST** /obp/v3.1.0/users/{userid}/refresh | Refresh User
-*UserApi* | [**oBPv400CreateUserCustomerLinks**](docs/Api/UserApi.md#obpv400createusercustomerlinks) | **POST** /obp/v4.0.0/banks/{bankid}/user_customer_links | Create User Customer Link
-*UserApi* | [**oBPv400CreateUserWithRoles**](docs/Api/UserApi.md#obpv400createuserwithroles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
-*UserApi* | [**oBPv400DeleteUser**](docs/Api/UserApi.md#obpv400deleteuser) | **DELETE** /obp/v4.0.0/users/{userid} | Delete a User
-*UserApi* | [**oBPv400GetCurrentUserId**](docs/Api/UserApi.md#obpv400getcurrentuserid) | **GET** /obp/v4.0.0/users/current/user_id | Get User Id (Current)
-*UserApi* | [**oBPv400GetCustomersMinimalAtAnyBank**](docs/Api/UserApi.md#obpv400getcustomersminimalatanybank) | **GET** /obp/v4.0.0/customers-minimal | Get Customers Minimal at Any Bank
-*UserApi* | [**oBPv400GetEntitlements**](docs/Api/UserApi.md#obpv400getentitlements) | **GET** /obp/v4.0.0/users/{userid}/entitlements | Get Entitlements for User
-*UserApi* | [**oBPv400GetEntitlementsForBank**](docs/Api/UserApi.md#obpv400getentitlementsforbank) | **GET** /obp/v4.0.0/banks/{bankid}/entitlements | Get Entitlements for One Bank
-*UserApi* | [**oBPv400GetLogoutLink**](docs/Api/UserApi.md#obpv400getlogoutlink) | **GET** /obp/v4.0.0/users/current/logout-link | Get Logout Link
-*UserApi* | [**oBPv400GetMySpaces**](docs/Api/UserApi.md#obpv400getmyspaces) | **GET** /obp/v4.0.0/my/spaces | Get My Spaces
-*UserApi* | [**oBPv400GetUserByUserId**](docs/Api/UserApi.md#obpv400getuserbyuserid) | **GET** /obp/v4.0.0/users/user_id/{userid} | Get User by USER_ID
-*UserApi* | [**oBPv400GetUsersByEmail**](docs/Api/UserApi.md#obpv400getusersbyemail) | **GET** /obp/v4.0.0/users/email/{email}/terminator | Get Users by Email Address
-*UserApi* | [**oBPv500AnswerUserAuthContextUpdateChallenge**](docs/Api/UserApi.md#obpv500answeruserauthcontextupdatechallenge) | **POST** /obp/v5.0.0/banks/{bankid}/users/current/auth-context-updates/{authcontextupdateid}/challenge | Answer User Auth Context Update Challenge
-*UserApi* | [**oBPv500CreateUserAuthContext**](docs/Api/UserApi.md#obpv500createuserauthcontext) | **POST** /obp/v5.0.0/users/{userid}/auth-context | Create User Auth Context
-*UserApi* | [**oBPv500CreateUserAuthContextUpdateRequest**](docs/Api/UserApi.md#obpv500createuserauthcontextupdaterequest) | **POST** /obp/v5.0.0/banks/{bankid}/users/current/auth-context-updates/{scamethod} | Create User Auth Context Update Request
-*UserApi* | [**oBPv500GetCustomersMinimalAtOneBank**](docs/Api/UserApi.md#obpv500getcustomersminimalatonebank) | **GET** /obp/v5.0.0/banks/{bankid}/customers-minimal | Get Customers Minimal at Bank
-*UserApi* | [**oBPv500GetMyCustomersAtAnyBank**](docs/Api/UserApi.md#obpv500getmycustomersatanybank) | **GET** /obp/v5.0.0/my/customers | Get My Customers
-*UserApi* | [**oBPv500GetUserAuthContexts**](docs/Api/UserApi.md#obpv500getuserauthcontexts) | **GET** /obp/v5.0.0/users/{userid}/auth-context | Get User Auth Contexts
-*UserApi* | [**oBPv510CreateUserWithAccountAccessById**](docs/Api/UserApi.md#obpv510createuserwithaccountaccessbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
-*UserApi* | [**oBPv510GetCustomersForUserIdsOnly**](docs/Api/UserApi.md#obpv510getcustomersforuseridsonly) | **GET** /obp/v5.1.0/users/current/customers/customer_ids | Get Customers for Current User (IDs only)
-*UserApi* | [**oBPv510GetEntitlementsAndPermissions**](docs/Api/UserApi.md#obpv510getentitlementsandpermissions) | **GET** /obp/v5.1.0/users/{userid}/entitlements-and-permissions | Get Entitlements and Permissions for a User
-*UserApi* | [**oBPv510GetUserByProviderAndUsername**](docs/Api/UserApi.md#obpv510getuserbyproviderandusername) | **GET** /obp/v5.1.0/users/provider/{provider}/username/{username} | Get User by USERNAME
-*UserApi* | [**oBPv510GetUserLockStatus**](docs/Api/UserApi.md#obpv510getuserlockstatus) | **GET** /obp/v5.1.0/users/{provider}/{username}/lock-status | Get User Lock Status
-*UserApi* | [**oBPv510GrantUserAccessToViewById**](docs/Api/UserApi.md#obpv510grantuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
-*UserApi* | [**oBPv510LockUserByProviderAndUsername**](docs/Api/UserApi.md#obpv510lockuserbyproviderandusername) | **POST** /obp/v5.1.0/users/{provider}/{username}/locks | Lock the user
-*UserApi* | [**oBPv510RevokeUserAccessToViewById**](docs/Api/UserApi.md#obpv510revokeuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
-*UserApi* | [**oBPv510SyncExternalUser**](docs/Api/UserApi.md#obpv510syncexternaluser) | **POST** /obp/v5.1.0/users/{provider}/{providerid}/sync | Sync User
-*UserApi* | [**oBPv510UnlockUserByProviderAndUsername**](docs/Api/UserApi.md#obpv510unlockuserbyproviderandusername) | **PUT** /obp/v5.1.0/users/{provider}/{username}/lock-status | Unlock the user
-*UserApi* | [**oBPv510ValidateUserByUserId**](docs/Api/UserApi.md#obpv510validateuserbyuserid) | **PUT** /obp/v5.1.0/management/users/{userid} | Validate a user
-*UserApi* | [**oBPv600AddUserToGroup**](docs/Api/UserApi.md#obpv600addusertogroup) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
-*UserApi* | [**oBPv600CreatePersonalDataField**](docs/Api/UserApi.md#obpv600createpersonaldatafield) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
-*UserApi* | [**oBPv600CreateUser**](docs/Api/UserApi.md#obpv600createuser) | **POST** /obp/v6.0.0/users | Create User (v6.0.0)
-*UserApi* | [**oBPv600CreateUserAttribute**](docs/Api/UserApi.md#obpv600createuserattribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
-*UserApi* | [**oBPv600DeleteEntitlement**](docs/Api/UserApi.md#obpv600deleteentitlement) | **DELETE** /obp/v6.0.0/entitlements/{entitlementid} | Delete Entitlement
-*UserApi* | [**oBPv600DeletePersonalDataField**](docs/Api/UserApi.md#obpv600deletepersonaldatafield) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
-*UserApi* | [**oBPv600DeleteUserAttribute**](docs/Api/UserApi.md#obpv600deleteuserattribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
-*UserApi* | [**oBPv600DirectLoginEndpoint**](docs/Api/UserApi.md#obpv600directloginendpoint) | **POST** /obp/v6.0.0/my/logins/direct | Direct Login
-*UserApi* | [**oBPv600GetCurrentUser**](docs/Api/UserApi.md#obpv600getcurrentuser) | **GET** /obp/v6.0.0/users/current | Get User (Current)
-*UserApi* | [**oBPv600GetCustomersAtAllBanks**](docs/Api/UserApi.md#obpv600getcustomersatallbanks) | **GET** /obp/v6.0.0/customers | Get Customers at All Banks
-*UserApi* | [**oBPv600GetCustomersAtOneBank**](docs/Api/UserApi.md#obpv600getcustomersatonebank) | **GET** /obp/v6.0.0/banks/{bankid}/customers | Get Customers at Bank
-*UserApi* | [**oBPv600GetPersonalDataFieldById**](docs/Api/UserApi.md#obpv600getpersonaldatafieldbyid) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
-*UserApi* | [**oBPv600GetPersonalDataFields**](docs/Api/UserApi.md#obpv600getpersonaldatafields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
-*UserApi* | [**oBPv600GetProviders**](docs/Api/UserApi.md#obpv600getproviders) | **GET** /obp/v6.0.0/providers | Get Providers
-*UserApi* | [**oBPv600GetUserAttributeById**](docs/Api/UserApi.md#obpv600getuserattributebyid) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
-*UserApi* | [**oBPv600GetUserAttributes**](docs/Api/UserApi.md#obpv600getuserattributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
-*UserApi* | [**oBPv600GetUserByUserId**](docs/Api/UserApi.md#obpv600getuserbyuserid) | **GET** /obp/v6.0.0/users/user-id/{userid} | Get User by USER_ID
-*UserApi* | [**oBPv600GetUserGroupMemberships**](docs/Api/UserApi.md#obpv600getusergroupmemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships
-*UserApi* | [**oBPv600GetUsers**](docs/Api/UserApi.md#obpv600getusers) | **GET** /obp/v6.0.0/users | Get all Users
-*UserApi* | [**oBPv600RemoveUserFromGroup**](docs/Api/UserApi.md#obpv600removeuserfromgroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
-*UserApi* | [**oBPv600ResetPasswordComplete**](docs/Api/UserApi.md#obpv600resetpasswordcomplete) | **POST** /obp/v6.0.0/users/password | Complete Password Reset
-*UserApi* | [**oBPv600ResetPasswordUrl**](docs/Api/UserApi.md#obpv600resetpasswordurl) | **POST** /obp/v6.0.0/management/user/reset-password-url | Create Password Reset URL and Send Email
-*UserApi* | [**oBPv600ResetPasswordUrlAnonymous**](docs/Api/UserApi.md#obpv600resetpasswordurlanonymous) | **POST** /obp/v6.0.0/users/password-reset-url | Request Password Reset Email
-*UserApi* | [**oBPv600UpdatePersonalDataField**](docs/Api/UserApi.md#obpv600updatepersonaldatafield) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
-*UserApi* | [**oBPv600UpdateUserAttribute**](docs/Api/UserApi.md#obpv600updateuserattribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
-*UserApi* | [**oBPv600ValidateUserEmail**](docs/Api/UserApi.md#obpv600validateuseremail) | **POST** /obp/v6.0.0/users/email-validation | Validate User Email
-*UserApi* | [**oBPv600VerifyUserCredentials**](docs/Api/UserApi.md#obpv600verifyusercredentials) | **POST** /obp/v6.0.0/users/verify-credentials | Verify User Credentials
-*UserAttributeApi* | [**oBPv600CreatePersonalDataField**](docs/Api/UserAttributeApi.md#obpv600createpersonaldatafield) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
-*UserAttributeApi* | [**oBPv600CreateUserAttribute**](docs/Api/UserAttributeApi.md#obpv600createuserattribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
-*UserAttributeApi* | [**oBPv600DeletePersonalDataField**](docs/Api/UserAttributeApi.md#obpv600deletepersonaldatafield) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
-*UserAttributeApi* | [**oBPv600DeleteUserAttribute**](docs/Api/UserAttributeApi.md#obpv600deleteuserattribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
-*UserAttributeApi* | [**oBPv600GetPersonalDataFieldById**](docs/Api/UserAttributeApi.md#obpv600getpersonaldatafieldbyid) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
-*UserAttributeApi* | [**oBPv600GetPersonalDataFields**](docs/Api/UserAttributeApi.md#obpv600getpersonaldatafields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
-*UserAttributeApi* | [**oBPv600GetUserAttributeById**](docs/Api/UserAttributeApi.md#obpv600getuserattributebyid) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
-*UserAttributeApi* | [**oBPv600GetUserAttributes**](docs/Api/UserAttributeApi.md#obpv600getuserattributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
-*UserAttributeApi* | [**oBPv600UpdatePersonalDataField**](docs/Api/UserAttributeApi.md#obpv600updatepersonaldatafield) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
-*UserAttributeApi* | [**oBPv600UpdateUserAttribute**](docs/Api/UserAttributeApi.md#obpv600updateuserattribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
-*UserInvitationApi* | [**oBPv400CreateUserInvitation**](docs/Api/UserInvitationApi.md#obpv400createuserinvitation) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitation | Create User Invitation
-*UserInvitationApi* | [**oBPv400GetUserInvitation**](docs/Api/UserInvitationApi.md#obpv400getuserinvitation) | **GET** /obp/v4.0.0/banks/{bankid}/user-invitations/{secretlink} | Get User Invitation
-*UserInvitationApi* | [**oBPv400GetUserInvitationAnonymous**](docs/Api/UserInvitationApi.md#obpv400getuserinvitationanonymous) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitation Information
-*UserInvitationApi* | [**oBPv400GetUserInvitations**](docs/Api/UserInvitationApi.md#obpv400getuserinvitations) | **GET** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitations
-*VRPApi* | [**oBPv500CreateConsentByConsentRequestIdEmail**](docs/Api/VRPApi.md#obpv500createconsentbyconsentrequestidemail) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
-*VRPApi* | [**oBPv510CreateVRPConsentRequest**](docs/Api/VRPApi.md#obpv510createvrpconsentrequest) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
-*ViewCustomApi* | [**oBPv121DeleteViewForBankAccount**](docs/Api/ViewCustomApi.md#obpv121deleteviewforbankaccount) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/views/{viewid} | Delete Custom View
-*ViewCustomApi* | [**oBPv200GetPermissionsForBankAccount**](docs/Api/ViewCustomApi.md#obpv200getpermissionsforbankaccount) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
-*ViewCustomApi* | [**oBPv300CreateViewForBankAccount**](docs/Api/ViewCustomApi.md#obpv300createviewforbankaccount) | **POST** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views | Create Custom View
-*ViewCustomApi* | [**oBPv300GetAccountsHeld**](docs/Api/ViewCustomApi.md#obpv300getaccountsheld) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
-*ViewCustomApi* | [**oBPv300GetPermissionForUserForBankAccount**](docs/Api/ViewCustomApi.md#obpv300getpermissionforuserforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid} | Get Account access for User
-*ViewCustomApi* | [**oBPv300UpdateViewForBankAccount**](docs/Api/ViewCustomApi.md#obpv300updateviewforbankaccount) | **PUT** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Update Custom View
-*ViewCustomApi* | [**oBPv500GetViewsForBankAccount**](docs/Api/ViewCustomApi.md#obpv500getviewsforbankaccount) | **GET** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/views | Get Views for Account
-*ViewCustomApi* | [**oBPv510CreateCustomView**](docs/Api/ViewCustomApi.md#obpv510createcustomview) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views | Create Custom View
-*ViewCustomApi* | [**oBPv510CreateUserWithAccountAccessById**](docs/Api/ViewCustomApi.md#obpv510createuserwithaccountaccessbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
-*ViewCustomApi* | [**oBPv510DeleteCustomView**](docs/Api/ViewCustomApi.md#obpv510deletecustomview) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Delete Custom View
-*ViewCustomApi* | [**oBPv510GetCustomView**](docs/Api/ViewCustomApi.md#obpv510getcustomview) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Get Custom View
-*ViewCustomApi* | [**oBPv510GrantUserAccessToViewById**](docs/Api/ViewCustomApi.md#obpv510grantuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
-*ViewCustomApi* | [**oBPv510RevokeUserAccessToViewById**](docs/Api/ViewCustomApi.md#obpv510revokeuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
-*ViewCustomApi* | [**oBPv510UpdateCustomView**](docs/Api/ViewCustomApi.md#obpv510updatecustomview) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Update Custom View
-*ViewCustomApi* | [**oBPv600CreateCustomViewManagement**](docs/Api/ViewCustomApi.md#obpv600createcustomviewmanagement) | **POST** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views | Create Custom View (Management)
-*ViewCustomApi* | [**oBPv600GetCustomViews**](docs/Api/ViewCustomApi.md#obpv600getcustomviews) | **GET** /obp/v6.0.0/management/custom-views | Get Custom Views
-*ViewCustomApi* | [**oBPv600GetSystemViewById**](docs/Api/ViewCustomApi.md#obpv600getsystemviewbyid) | **GET** /obp/v6.0.0/management/system-views/{viewid} | Get System View
-*ViewCustomApi* | [**oBPv600GetSystemViews**](docs/Api/ViewCustomApi.md#obpv600getsystemviews) | **GET** /obp/v6.0.0/management/system-views | Get System Views
-*ViewCustomApi* | [**oBPv600GetViewPermissions**](docs/Api/ViewCustomApi.md#obpv600getviewpermissions) | **GET** /obp/v6.0.0/management/view-permissions | Get View Permissions
-*ViewCustomApi* | [**oBPv600HasAccountAccess**](docs/Api/ViewCustomApi.md#obpv600hasaccountaccess) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/has-account-access | Has Account Access
-*ViewCustomApi* | [**oBPv600UpdateSystemView**](docs/Api/ViewCustomApi.md#obpv600updatesystemview) | **PUT** /obp/v6.0.0/system-views/{viewid} | Update System View
-*ViewSystemApi* | [**oBPv500CreateSystemView**](docs/Api/ViewSystemApi.md#obpv500createsystemview) | **POST** /obp/v5.0.0/system-views | Create System View
-*ViewSystemApi* | [**oBPv500DeleteSystemView**](docs/Api/ViewSystemApi.md#obpv500deletesystemview) | **DELETE** /obp/v5.0.0/system-views/{viewid} | Delete System View
-*ViewSystemApi* | [**oBPv500GetSystemView**](docs/Api/ViewSystemApi.md#obpv500getsystemview) | **GET** /obp/v5.0.0/system-views/{viewid} | Get System View
-*ViewSystemApi* | [**oBPv500GetSystemViewsIds**](docs/Api/ViewSystemApi.md#obpv500getsystemviewsids) | **GET** /obp/v5.0.0/system-views-ids | Get Ids of System Views
-*ViewSystemApi* | [**oBPv510AddSystemViewPermission**](docs/Api/ViewSystemApi.md#obpv510addsystemviewpermission) | **POST** /obp/v5.1.0/system-views/{viewid}/permissions | Add Permission to a System View
-*ViewSystemApi* | [**oBPv510DeleteSystemViewPermission**](docs/Api/ViewSystemApi.md#obpv510deletesystemviewpermission) | **DELETE** /obp/v5.1.0/system-views/{viewid}/permissions/{permissionname} | Delete Permission to a System View
-*ViewSystemApi* | [**oBPv600GetCustomViews**](docs/Api/ViewSystemApi.md#obpv600getcustomviews) | **GET** /obp/v6.0.0/management/custom-views | Get Custom Views
-*ViewSystemApi* | [**oBPv600GetSystemViewById**](docs/Api/ViewSystemApi.md#obpv600getsystemviewbyid) | **GET** /obp/v6.0.0/management/system-views/{viewid} | Get System View
-*ViewSystemApi* | [**oBPv600GetSystemViews**](docs/Api/ViewSystemApi.md#obpv600getsystemviews) | **GET** /obp/v6.0.0/management/system-views | Get System Views
-*ViewSystemApi* | [**oBPv600GetViewPermissions**](docs/Api/ViewSystemApi.md#obpv600getviewpermissions) | **GET** /obp/v6.0.0/management/view-permissions | Get View Permissions
-*ViewSystemApi* | [**oBPv600UpdateSystemView**](docs/Api/ViewSystemApi.md#obpv600updatesystemview) | **PUT** /obp/v6.0.0/system-views/{viewid} | Update System View
-*WebUiPropsApi* | [**oBPv310CreateWebUiProps**](docs/Api/WebUiPropsApi.md#obpv310createwebuiprops) | **POST** /obp/v3.1.0/management/webui_props | Create WebUiProps
-*WebUiPropsApi* | [**oBPv310DeleteWebUiProps**](docs/Api/WebUiPropsApi.md#obpv310deletewebuiprops) | **DELETE** /obp/v3.1.0/management/webui_props/{webuipropsid} | Delete WebUiProps
-*WebUiPropsApi* | [**oBPv310GetWebUiProps**](docs/Api/WebUiPropsApi.md#obpv310getwebuiprops) | **GET** /obp/v3.1.0/management/webui_props | Get WebUiProps
-*WebUiPropsApi* | [**oBPv600CreateOrUpdateWebUiProps**](docs/Api/WebUiPropsApi.md#obpv600createorupdatewebuiprops) | **PUT** /obp/v6.0.0/management/webui_props/{webuipropname} | Create or Update WebUiProps
-*WebUiPropsApi* | [**oBPv600DeleteWebUiProps**](docs/Api/WebUiPropsApi.md#obpv600deletewebuiprops) | **DELETE** /obp/v6.0.0/management/webui_props/{webuipropname} | Delete WebUiProps
-*WebUiPropsApi* | [**oBPv600GetWebUiProp**](docs/Api/WebUiPropsApi.md#obpv600getwebuiprop) | **GET** /obp/v6.0.0/webui-props/{webuipropname} | Get WebUiProp by Name
-*WebUiPropsApi* | [**oBPv600GetWebUiProps**](docs/Api/WebUiPropsApi.md#obpv600getwebuiprops) | **GET** /obp/v6.0.0/webui-props | Get WebUiProps
-*WebhookApi* | [**oBPv310CreateAccountWebhook**](docs/Api/WebhookApi.md#obpv310createaccountwebhook) | **POST** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Create an Account Webhook
-*WebhookApi* | [**oBPv310EnableDisableAccountWebhook**](docs/Api/WebhookApi.md#obpv310enabledisableaccountwebhook) | **PUT** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Enable/Disable an Account Webhook
-*WebhookApi* | [**oBPv310GetAccountWebhooks**](docs/Api/WebhookApi.md#obpv310getaccountwebhooks) | **GET** /obp/v3.1.0/management/banks/{bankid}/account-web-hooks | Get Account Webhooks
-*WebhookApi* | [**oBPv400CreateBankAccountNotificationWebhook**](docs/Api/WebhookApi.md#obpv400createbankaccountnotificationwebhook) | **POST** /obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction | Create bank level Account Notification Webhook
-*WebhookApi* | [**oBPv400CreateSystemAccountNotificationWebhook**](docs/Api/WebhookApi.md#obpv400createsystemaccountnotificationwebhook) | **POST** /obp/v4.0.0/web-hooks/account/notifications/on-create-transaction | Create system level Account Notification Webhook
+*ABACApi* | [**createAbacRule**](docs/Api/ABACApi.md#createabacrule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule
+*ABACApi* | [**deleteAbacRule**](docs/Api/ABACApi.md#deleteabacrule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule
+*ABACApi* | [**executeAbacPolicy**](docs/Api/ABACApi.md#executeabacpolicy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy
+*ABACApi* | [**executeAbacRule**](docs/Api/ABACApi.md#executeabacrule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule
+*ABACApi* | [**getAbacPolicies**](docs/Api/ABACApi.md#getabacpolicies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies
+*ABACApi* | [**getAbacRule**](docs/Api/ABACApi.md#getabacrule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule
+*ABACApi* | [**getAbacRuleSchema**](docs/Api/ABACApi.md#getabacruleschema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema
+*ABACApi* | [**getAbacRules**](docs/Api/ABACApi.md#getabacrules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules
+*ABACApi* | [**getAbacRulesByPolicy**](docs/Api/ABACApi.md#getabacrulesbypolicy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy
+*ABACApi* | [**updateAbacRule**](docs/Api/ABACApi.md#updateabacrule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule
+*ABACApi* | [**validateAbacRule**](docs/Api/ABACApi.md#validateabacrule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule
+*AIAgentApi* | [**deleteSignalChannel**](docs/Api/AIAgentApi.md#deletesignalchannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
+*AIAgentApi* | [**getSignalChannelInfo**](docs/Api/AIAgentApi.md#getsignalchannelinfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
+*AIAgentApi* | [**getSignalChannels**](docs/Api/AIAgentApi.md#getsignalchannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
+*AIAgentApi* | [**getSignalMessages**](docs/Api/AIAgentApi.md#getsignalmessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
+*AIAgentApi* | [**getSignalStats**](docs/Api/AIAgentApi.md#getsignalstats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
+*AIAgentApi* | [**publishSignalMessage**](docs/Api/AIAgentApi.md#publishsignalmessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
+*APIApi* | [**backupBankLevelDynamicEntity**](docs/Api/APIApi.md#backupbankleveldynamicentity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup | Backup Bank Level Dynamic Entity
+*APIApi* | [**backupSystemDynamicEntity**](docs/Api/APIApi.md#backupsystemdynamicentity) | **POST** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup | Backup System Level Dynamic Entity
+*APIApi* | [**cleanupOrphanedDynamicEntityRecords**](docs/Api/APIApi.md#cleanuporphaneddynamicentityrecords) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
+*APIApi* | [**config**](docs/Api/APIApi.md#config) | **GET** /obp/v3.1.0/config | Get API Configuration
+*APIApi* | [**createApiProduct**](docs/Api/APIApi.md#createapiproduct) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product
+*APIApi* | [**createApiProductAttribute**](docs/Api/APIApi.md#createapiproductattribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
+*APIApi* | [**createBankLevelDynamicEndpoint**](docs/Api/APIApi.md#createbankleveldynamicendpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint
+*APIApi* | [**createBankLevelDynamicEntity**](docs/Api/APIApi.md#createbankleveldynamicentity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Create Bank Level Dynamic Entity
+*APIApi* | [**createBankLevelEndpointTag**](docs/Api/APIApi.md#createbanklevelendpointtag) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags | Create Bank Level Endpoint Tag
+*APIApi* | [**createCounterpartyAttribute**](docs/Api/APIApi.md#createcounterpartyattribute) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes | Create Counterparty Attribute
+*APIApi* | [**createDynamicEndpoint**](docs/Api/APIApi.md#createdynamicendpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint
+*APIApi* | [**createFeaturedApiCollection**](docs/Api/APIApi.md#createfeaturedapicollection) | **POST** /obp/v6.0.0/management/api-collections/featured | Create Featured Api Collection
+*APIApi* | [**createMethodRouting**](docs/Api/APIApi.md#createmethodrouting) | **POST** /obp/v3.1.0/management/method_routings | Create MethodRouting
+*APIApi* | [**createOrUpdateApiProduct**](docs/Api/APIApi.md#createorupdateapiproduct) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product
+*APIApi* | [**createRegulatedEntity**](docs/Api/APIApi.md#createregulatedentity) | **POST** /obp/v5.1.0/regulated-entities | Create Regulated Entity
+*APIApi* | [**createRegulatedEntityAttribute**](docs/Api/APIApi.md#createregulatedentityattribute) | **POST** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
+*APIApi* | [**createSystemDynamicEntity**](docs/Api/APIApi.md#createsystemdynamicentity) | **POST** /obp/v6.0.0/management/system-dynamic-entities | Create System Level Dynamic Entity
+*APIApi* | [**createSystemLevelEndpointTag**](docs/Api/APIApi.md#createsystemlevelendpointtag) | **POST** /obp/v4.0.0/management/endpoints/{operationid}/tags | Create System Level Endpoint Tag
+*APIApi* | [**deleteApiProduct**](docs/Api/APIApi.md#deleteapiproduct) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product
+*APIApi* | [**deleteApiProductAttribute**](docs/Api/APIApi.md#deleteapiproductattribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
+*APIApi* | [**deleteBankLevelDynamicEndpoint**](docs/Api/APIApi.md#deletebankleveldynamicendpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} | Delete Bank Level Dynamic Endpoint
+*APIApi* | [**deleteBankLevelDynamicEntity**](docs/Api/APIApi.md#deletebankleveldynamicentity) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Delete Bank Level Dynamic Entity
+*APIApi* | [**deleteBankLevelEndpointTag**](docs/Api/APIApi.md#deletebanklevelendpointtag) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags/{endpointtagid} | Delete Bank Level Endpoint Tag
+*APIApi* | [**deleteCounterpartyAttribute**](docs/Api/APIApi.md#deletecounterpartyattribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Delete Counterparty Attribute
+*APIApi* | [**deleteDynamicEndpoint**](docs/Api/APIApi.md#deletedynamicendpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Delete Dynamic Endpoint
+*APIApi* | [**deleteFeaturedApiCollection**](docs/Api/APIApi.md#deletefeaturedapicollection) | **DELETE** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Delete Featured Api Collection
+*APIApi* | [**deleteMethodRouting**](docs/Api/APIApi.md#deletemethodrouting) | **DELETE** /obp/v3.1.0/management/method_routings/{methodroutingid} | Delete MethodRouting
+*APIApi* | [**deleteMyDynamicEndpoint**](docs/Api/APIApi.md#deletemydynamicendpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint
+*APIApi* | [**deleteMyDynamicEntity**](docs/Api/APIApi.md#deletemydynamicentity) | **DELETE** /obp/v4.0.0/my/dynamic-entities/{dynamicentityid} | Delete My Dynamic Entity
+*APIApi* | [**deleteRegulatedEntity**](docs/Api/APIApi.md#deleteregulatedentity) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
+*APIApi* | [**deleteRegulatedEntityAttribute**](docs/Api/APIApi.md#deleteregulatedentityattribute) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
+*APIApi* | [**deleteSystemDynamicEntity**](docs/Api/APIApi.md#deletesystemdynamicentity) | **DELETE** /obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid} | Delete System Level Dynamic Entity
+*APIApi* | [**deleteSystemDynamicEntityCascade**](docs/Api/APIApi.md#deletesystemdynamicentitycascade) | **DELETE** /obp/v6.0.0/management/system-dynamic-entities/cascade/{dynamicentityid} | Delete System Level Dynamic Entity Cascade
+*APIApi* | [**deleteSystemLevelEndpointTag**](docs/Api/APIApi.md#deletesystemlevelendpointtag) | **DELETE** /obp/v4.0.0/management/endpoints/{operationid}/tags/{endpointtagid} | Delete System Level Endpoint Tag
+*APIApi* | [**elasticSearchMetrics**](docs/Api/APIApi.md#elasticsearchmetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
+*APIApi* | [**getAdapterInfo**](docs/Api/APIApi.md#getadapterinfo) | **GET** /obp/v5.0.0/adapter | Get Adapter Info
+*APIApi* | [**getAdapterInfoForBank**](docs/Api/APIApi.md#getadapterinfoforbank) | **GET** /obp/v3.0.0/banks/{bankid}/adapter | Get Adapter Info for a bank
+*APIApi* | [**getAllCounterpartyAttributes**](docs/Api/APIApi.md#getallcounterpartyattributes) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes | Get All Counterparty Attributes
+*APIApi* | [**getAllRegulatedEntityAttributes**](docs/Api/APIApi.md#getallregulatedentityattributes) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
+*APIApi* | [**getApiProduct**](docs/Api/APIApi.md#getapiproduct) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product
+*APIApi* | [**getApiProductAttribute**](docs/Api/APIApi.md#getapiproductattribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
+*APIApi* | [**getApiProducts**](docs/Api/APIApi.md#getapiproducts) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products
+*APIApi* | [**getApiTags**](docs/Api/APIApi.md#getapitags) | **GET** /obp/v5.1.0/tags | Get API Tags
+*APIApi* | [**getAppDirectory**](docs/Api/APIApi.md#getappdirectory) | **GET** /obp/v6.0.0/app-directory | Get App Directory
+*APIApi* | [**getAvailablePersonalDynamicEntities**](docs/Api/APIApi.md#getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
+*APIApi* | [**getBankLevelDynamicEndpoint**](docs/Api/APIApi.md#getbankleveldynamicendpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} | Get Bank Level Dynamic Endpoint
+*APIApi* | [**getBankLevelDynamicEndpoints**](docs/Api/APIApi.md#getbankleveldynamicendpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints
+*APIApi* | [**getBankLevelDynamicEntities**](docs/Api/APIApi.md#getbankleveldynamicentities) | **GET** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Get Bank Level Dynamic Entities
+*APIApi* | [**getBankLevelDynamicResourceDocsObp**](docs/Api/APIApi.md#getbankleveldynamicresourcedocsobp) | **GET** /obp/v1.4.0/banks/{bankid}/resource-docs/{apiversion}/obp | Get Bank Level Dynamic Resource Docs
+*APIApi* | [**getBankLevelEndpointTags**](docs/Api/APIApi.md#getbanklevelendpointtags) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags | Get Bank Level Endpoint Tags
+*APIApi* | [**getCacheConfig**](docs/Api/APIApi.md#getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
+*APIApi* | [**getCacheInfo**](docs/Api/APIApi.md#getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
+*APIApi* | [**getCacheNamespaces**](docs/Api/APIApi.md#getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
+*APIApi* | [**getCallContext**](docs/Api/APIApi.md#getcallcontext) | **GET** /obp/v4.0.0/development/call_context | Get the Call Context of a current call
+*APIApi* | [**getConfigProps**](docs/Api/APIApi.md#getconfigprops) | **GET** /obp/v6.0.0/management/config-props | Get Config Props
+*APIApi* | [**getConnectorCallCounts**](docs/Api/APIApi.md#getconnectorcallcounts) | **GET** /obp/v6.0.0/management/connector/metrics/counts | Get Connector Call Counts
+*APIApi* | [**getConnectorMethodNames**](docs/Api/APIApi.md#getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+*APIApi* | [**getConnectorMetrics**](docs/Api/APIApi.md#getconnectormetrics) | **GET** /obp/v2.2.0/management/connector/metrics | Get Connector Metrics
+*APIApi* | [**getConnectorTraces**](docs/Api/APIApi.md#getconnectortraces) | **GET** /obp/v6.0.0/management/connector/traces | Get Connector Traces
+*APIApi* | [**getConnectors**](docs/Api/APIApi.md#getconnectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
+*APIApi* | [**getCounterpartyAttributeById**](docs/Api/APIApi.md#getcounterpartyattributebyid) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Get Counterparty Attribute By ID
+*APIApi* | [**getCurrentConsumer**](docs/Api/APIApi.md#getcurrentconsumer) | **GET** /obp/v6.0.0/consumers/current | Get Current Consumer
+*APIApi* | [**getDatabasePoolInfo**](docs/Api/APIApi.md#getdatabasepoolinfo) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information
+*APIApi* | [**getDynamicEndpoint**](docs/Api/APIApi.md#getdynamicendpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint
+*APIApi* | [**getDynamicEndpoints**](docs/Api/APIApi.md#getdynamicendpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints | Get Dynamic Endpoints
+*APIApi* | [**getDynamicEntityDiagnostics**](docs/Api/APIApi.md#getdynamicentitydiagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
+*APIApi* | [**getFeaturedApiCollectionsAdmin**](docs/Api/APIApi.md#getfeaturedapicollectionsadmin) | **GET** /obp/v6.0.0/management/api-collections/featured | Get Featured Api Collections (Admin)
+*APIApi* | [**getFeatures**](docs/Api/APIApi.md#getfeatures) | **GET** /obp/v6.0.0/features | Get Features
+*APIApi* | [**getMapperDatabaseInfo**](docs/Api/APIApi.md#getmapperdatabaseinfo) | **GET** /obp/v4.0.0/database/info | Get Mapper Database Info
+*APIApi* | [**getMessageDocs**](docs/Api/APIApi.md#getmessagedocs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
+*APIApi* | [**getMessageDocsJsonSchema**](docs/Api/APIApi.md#getmessagedocsjsonschema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
+*APIApi* | [**getMessageDocsSwagger**](docs/Api/APIApi.md#getmessagedocsswagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
+*APIApi* | [**getMethodRoutings**](docs/Api/APIApi.md#getmethodroutings) | **GET** /obp/v3.1.0/management/method_routings | Get MethodRoutings
+*APIApi* | [**getMetrics**](docs/Api/APIApi.md#getmetrics) | **GET** /obp/v6.0.0/management/metrics | Get Metrics
+*APIApi* | [**getMetricsAtBank**](docs/Api/APIApi.md#getmetricsatbank) | **GET** /obp/v5.0.0/management/metrics/banks/{bankid} | Get Metrics at Bank
+*APIApi* | [**getMigrations**](docs/Api/APIApi.md#getmigrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations
+*APIApi* | [**getMyDynamicEndpoints**](docs/Api/APIApi.md#getmydynamicendpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints
+*APIApi* | [**getMyDynamicEntities**](docs/Api/APIApi.md#getmydynamicentities) | **GET** /obp/v6.0.0/my/dynamic-entities | Get My Dynamic Entities
+*APIApi* | [**getOAuth2ServerJWKsURIs**](docs/Api/APIApi.md#getoauth2serverjwksuris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
+*APIApi* | [**getOAuth2ServerWellKnown**](docs/Api/APIApi.md#getoauth2serverwellknown) | **GET** /obp/v5.1.0/well-known | Get Well Known URIs
+*APIApi* | [**getObpConnectorLoopback**](docs/Api/APIApi.md#getobpconnectorloopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
+*APIApi* | [**getPopularApis**](docs/Api/APIApi.md#getpopularapis) | **GET** /obp/v6.0.0/api/popular-endpoints | Get Popular Endpoints
+*APIApi* | [**getRateLimitingInfo**](docs/Api/APIApi.md#getratelimitinginfo) | **GET** /obp/v3.1.0/rate-limiting | Get Rate Limiting Info
+*APIApi* | [**getReferenceTypes**](docs/Api/APIApi.md#getreferencetypes) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
+*APIApi* | [**getRegulatedEntityAttributeById**](docs/Api/APIApi.md#getregulatedentityattributebyid) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
+*APIApi* | [**getRegulatedEntityById**](docs/Api/APIApi.md#getregulatedentitybyid) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
+*APIApi* | [**getResourceDocsObp**](docs/Api/APIApi.md#getresourcedocsobp) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/obp | Get Resource Docs
+*APIApi* | [**getResourceDocsOpenAPI31**](docs/Api/APIApi.md#getresourcedocsopenapi31) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/openapi | Get OpenAPI 3.1 documentation
+*APIApi* | [**getResourceDocsSwagger**](docs/Api/APIApi.md#getresourcedocsswagger) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/swagger | Get Swagger documentation
+*APIApi* | [**getScannedApiVersions**](docs/Api/APIApi.md#getscannedapiversions) | **GET** /obp/v6.0.0/api/versions | Get Scanned API Versions
+*APIApi* | [**getServerJWK**](docs/Api/APIApi.md#getserverjwk) | **GET** /obp/v3.1.0/certs | Get JSON Web Key (JWK)
+*APIApi* | [**getStoredProcedureConnectorHealth**](docs/Api/APIApi.md#getstoredprocedureconnectorhealth) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
+*APIApi* | [**getSystemDynamicEntities**](docs/Api/APIApi.md#getsystemdynamicentities) | **GET** /obp/v6.0.0/management/system-dynamic-entities | Get System Dynamic Entities
+*APIApi* | [**getSystemLevelEndpointTags**](docs/Api/APIApi.md#getsystemlevelendpointtags) | **GET** /obp/v4.0.0/management/endpoints/{operationid}/tags | Get System Level Endpoint Tags
+*APIApi* | [**getTopAPIs**](docs/Api/APIApi.md#gettopapis) | **GET** /obp/v6.0.0/management/metrics/top-apis | Get Top APIs
+*APIApi* | [**invalidateCacheNamespace**](docs/Api/APIApi.md#invalidatecachenamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
+*APIApi* | [**logCacheAllEndpoint**](docs/Api/APIApi.md#logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
+*APIApi* | [**logCacheDebugEndpoint**](docs/Api/APIApi.md#logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
+*APIApi* | [**logCacheErrorEndpoint**](docs/Api/APIApi.md#logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
+*APIApi* | [**logCacheInfoEndpoint**](docs/Api/APIApi.md#logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
+*APIApi* | [**logCacheTraceEndpoint**](docs/Api/APIApi.md#logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
+*APIApi* | [**logCacheWarningEndpoint**](docs/Api/APIApi.md#logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
+*APIApi* | [**regulatedEntities**](docs/Api/APIApi.md#regulatedentities) | **GET** /obp/v5.1.0/regulated-entities | Get Regulated Entities
+*APIApi* | [**root**](docs/Api/APIApi.md#root) | **GET** /obp/v6.0.0/root | Get API Info (root)
+*APIApi* | [**suggestedSessionTimeout**](docs/Api/APIApi.md#suggestedsessiontimeout) | **GET** /obp/v5.1.0/ui/suggested-session-timeout | Get Suggested Session Timeout
+*APIApi* | [**updateApiProductAttribute**](docs/Api/APIApi.md#updateapiproductattribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
+*APIApi* | [**updateBankLevelDynamicEndpointHost**](docs/Api/APIApi.md#updatebankleveldynamicendpointhost) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host | Update Bank Level Dynamic Endpoint Host
+*APIApi* | [**updateBankLevelDynamicEntity**](docs/Api/APIApi.md#updatebankleveldynamicentity) | **PUT** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Update Bank Level Dynamic Entity
+*APIApi* | [**updateBankLevelEndpointTag**](docs/Api/APIApi.md#updatebanklevelendpointtag) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags/{endpointtagid} | Update Bank Level Endpoint Tag
+*APIApi* | [**updateCounterpartyAttribute**](docs/Api/APIApi.md#updatecounterpartyattribute) | **PUT** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Update Counterparty Attribute
+*APIApi* | [**updateDynamicEndpointHost**](docs/Api/APIApi.md#updatedynamicendpointhost) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host | Update Dynamic Endpoint Host
+*APIApi* | [**updateFeaturedApiCollection**](docs/Api/APIApi.md#updatefeaturedapicollection) | **PUT** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Update Featured Api Collection
+*APIApi* | [**updateMethodRouting**](docs/Api/APIApi.md#updatemethodrouting) | **PUT** /obp/v3.1.0/management/method_routings/{methodroutingid} | Update MethodRouting
+*APIApi* | [**updateMyDynamicEntity**](docs/Api/APIApi.md#updatemydynamicentity) | **PUT** /obp/v6.0.0/my/dynamic-entities/{dynamicentityid} | Update My Dynamic Entity
+*APIApi* | [**updateRegulatedEntityAttribute**](docs/Api/APIApi.md#updateregulatedentityattribute) | **PUT** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
+*APIApi* | [**updateSystemDynamicEntity**](docs/Api/APIApi.md#updatesystemdynamicentity) | **PUT** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid} | Update System Level Dynamic Entity
+*APIApi* | [**updateSystemLevelEndpointTag**](docs/Api/APIApi.md#updatesystemlevelendpointtag) | **PUT** /obp/v4.0.0/management/endpoints/{operationid}/tags/{endpointtagid} | Update System Level Endpoint Tag
+*APIApi* | [**verifyRequestSignResponse**](docs/Api/APIApi.md#verifyrequestsignresponse) | **GET** /obp/v4.0.0/development/echo/jws-verified-request-jws-signed-response | Verify Request and Sign Response of a current call
+*APIApi* | [**waitingForGodot**](docs/Api/APIApi.md#waitingforgodot) | **GET** /obp/v5.1.0/waiting-for-godot | Waiting For Godot
+*ATMApi* | [**createAtm**](docs/Api/ATMApi.md#createatm) | **POST** /obp/v5.1.0/banks/{bankid}/atms | Create ATM
+*ATMApi* | [**createAtmAttribute**](docs/Api/ATMApi.md#createatmattribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
+*ATMApi* | [**deleteAtm**](docs/Api/ATMApi.md#deleteatm) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | Delete ATM
+*ATMApi* | [**deleteAtmAttribute**](docs/Api/ATMApi.md#deleteatmattribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
+*ATMApi* | [**getAtm**](docs/Api/ATMApi.md#getatm) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | Get Bank ATM
+*ATMApi* | [**getAtmAttribute**](docs/Api/ATMApi.md#getatmattribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
+*ATMApi* | [**getAtmAttributes**](docs/Api/ATMApi.md#getatmattributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
+*ATMApi* | [**getAtms**](docs/Api/ATMApi.md#getatms) | **GET** /obp/v5.1.0/banks/{bankid}/atms | Get Bank ATMS
+*ATMApi* | [**headAtms**](docs/Api/ATMApi.md#headatms) | **HEAD** /obp/v5.0.0/banks/{bankid}/atms | Head Bank ATMS
+*ATMApi* | [**updateAtm**](docs/Api/ATMApi.md#updateatm) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | UPDATE ATM
+*ATMApi* | [**updateAtmAccessibilityFeatures**](docs/Api/ATMApi.md#updateatmaccessibilityfeatures) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/accessibility-features | Update ATM Accessibility Features
+*ATMApi* | [**updateAtmAttribute**](docs/Api/ATMApi.md#updateatmattribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
+*ATMApi* | [**updateAtmLocationCategories**](docs/Api/ATMApi.md#updateatmlocationcategories) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/location-categories | Update ATM Location Categories
+*ATMApi* | [**updateAtmNotes**](docs/Api/ATMApi.md#updateatmnotes) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/notes | Update ATM Notes
+*ATMApi* | [**updateAtmServices**](docs/Api/ATMApi.md#updateatmservices) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/services | Update ATM Services
+*ATMApi* | [**updateAtmSupportedCurrencies**](docs/Api/ATMApi.md#updateatmsupportedcurrencies) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-currencies | Update ATM Supported Currencies
+*ATMApi* | [**updateAtmSupportedLanguages**](docs/Api/ATMApi.md#updateatmsupportedlanguages) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-languages | Update ATM Supported Languages
+*ATMAttributeApi* | [**createAtmAttribute**](docs/Api/ATMAttributeApi.md#createatmattribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
+*ATMAttributeApi* | [**deleteAtmAttribute**](docs/Api/ATMAttributeApi.md#deleteatmattribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
+*ATMAttributeApi* | [**getAtmAttribute**](docs/Api/ATMAttributeApi.md#getatmattribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
+*ATMAttributeApi* | [**getAtmAttributes**](docs/Api/ATMAttributeApi.md#getatmattributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
+*ATMAttributeApi* | [**updateAtmAttribute**](docs/Api/ATMAttributeApi.md#updateatmattribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
+*AccountApi* | [**addAccount**](docs/Api/AccountApi.md#addaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts | Create Account (POST)
+*AccountApi* | [**addTagForViewOnAccount**](docs/Api/AccountApi.md#addtagforviewonaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
+*AccountApi* | [**checkFundsAvailable**](docs/Api/AccountApi.md#checkfundsavailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
+*AccountApi* | [**corePrivateAccountsAllBanks**](docs/Api/AccountApi.md#coreprivateaccountsallbanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
+*AccountApi* | [**createAccount**](docs/Api/AccountApi.md#createaccount) | **PUT** /obp/v5.0.0/banks/{bankid}/accounts/{accountid} | Create Account (PUT)
+*AccountApi* | [**createAccountApplication**](docs/Api/AccountApi.md#createaccountapplication) | **POST** /obp/v3.1.0/banks/{bankid}/account-applications | Create Account Application
+*AccountApi* | [**createAccountAttribute**](docs/Api/AccountApi.md#createaccountattribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute
+*AccountApi* | [**createBankAccountBalance**](docs/Api/AccountApi.md#createbankaccountbalance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
+*AccountApi* | [**createCounterparty**](docs/Api/AccountApi.md#createcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty (Explicit)
+*AccountApi* | [**createCounterpartyForAnyAccount**](docs/Api/AccountApi.md#createcounterpartyforanyaccount) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty for any account (Explicit)
+*AccountApi* | [**createCustomView**](docs/Api/AccountApi.md#createcustomview) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views | Create Custom View
+*AccountApi* | [**createCustomViewManagement**](docs/Api/AccountApi.md#createcustomviewmanagement) | **POST** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views | Create Custom View (Management)
+*AccountApi* | [**createCustomerAccountLink**](docs/Api/AccountApi.md#createcustomeraccountlink) | **POST** /obp/v5.0.0/banks/{bankid}/customer-account-links | Create Customer Account Link
+*AccountApi* | [**createDirectDebit**](docs/Api/AccountApi.md#createdirectdebit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
+*AccountApi* | [**createDirectDebitManagement**](docs/Api/AccountApi.md#createdirectdebitmanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
+*AccountApi* | [**createOrUpdateAccountAttributeDefinition**](docs/Api/AccountApi.md#createorupdateaccountattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition
+*AccountApi* | [**createStandingOrder**](docs/Api/AccountApi.md#createstandingorder) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
+*AccountApi* | [**createStandingOrderManagement**](docs/Api/AccountApi.md#createstandingordermanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
+*AccountApi* | [**createUserWithAccountAccessById**](docs/Api/AccountApi.md#createuserwithaccountaccessbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+*AccountApi* | [**createViewForBankAccount**](docs/Api/AccountApi.md#createviewforbankaccount) | **POST** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views | Create Custom View
+*AccountApi* | [**deleteAccountAttributeDefinition**](docs/Api/AccountApi.md#deleteaccountattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition
+*AccountApi* | [**deleteAccountCascade**](docs/Api/AccountApi.md#deleteaccountcascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid} | Delete Account Cascade
+*AccountApi* | [**deleteBankAccountBalance**](docs/Api/AccountApi.md#deletebankaccountbalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
+*AccountApi* | [**deleteCounterpartyForAnyAccount**](docs/Api/AccountApi.md#deletecounterpartyforanyaccount) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty for any account (Explicit)
+*AccountApi* | [**deleteCustomView**](docs/Api/AccountApi.md#deletecustomview) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Delete Custom View
+*AccountApi* | [**deleteExplicitCounterparty**](docs/Api/AccountApi.md#deleteexplicitcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty (Explicit)
+*AccountApi* | [**deleteTagForViewOnAccount**](docs/Api/AccountApi.md#deletetagforviewonaccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
+*AccountApi* | [**deleteViewForBankAccount**](docs/Api/AccountApi.md#deleteviewforbankaccount) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/views/{viewid} | Delete Custom View
+*AccountApi* | [**getAccountAccessByUserId**](docs/Api/AccountApi.md#getaccountaccessbyuserid) | **GET** /obp/v5.1.0/users/{userid}/account-access | Get Account Access by USER_ID
+*AccountApi* | [**getAccountApplication**](docs/Api/AccountApi.md#getaccountapplication) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Get Account Application by Id
+*AccountApi* | [**getAccountApplications**](docs/Api/AccountApi.md#getaccountapplications) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications | Get Account Applications
+*AccountApi* | [**getAccountAttributeDefinition**](docs/Api/AccountApi.md#getaccountattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition
+*AccountApi* | [**getAccountByAccountRouting**](docs/Api/AccountApi.md#getaccountbyaccountrouting) | **POST** /obp/v4.0.0/management/accounts/account-routing-query | Get Account by Account Routing
+*AccountApi* | [**getAccountDirectory**](docs/Api/AccountApi.md#getaccountdirectory) | **GET** /obp/v6.0.0/banks/{bankid}/account-directory | Get Account Directory at Bank
+*AccountApi* | [**getAccountsAtBank**](docs/Api/AccountApi.md#getaccountsatbank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
+*AccountApi* | [**getAccountsByAccountRoutingRegex**](docs/Api/AccountApi.md#getaccountsbyaccountroutingregex) | **POST** /obp/v4.0.0/management/accounts/account-routing-regex-query | Get Accounts by Account Routing Regex
+*AccountApi* | [**getAccountsHeld**](docs/Api/AccountApi.md#getaccountsheld) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
+*AccountApi* | [**getAccountsHeldByUser**](docs/Api/AccountApi.md#getaccountsheldbyuser) | **GET** /obp/v5.1.0/users/{userid}/accounts-held | Get Accounts Held By User
+*AccountApi* | [**getAccountsHeldByUserAtBank**](docs/Api/AccountApi.md#getaccountsheldbyuseratbank) | **GET** /obp/v5.1.0/users/{userid}/banks/{bankid}/accounts-held | Get Accounts Held By User
+*AccountApi* | [**getAccountsMinimalByCustomerId**](docs/Api/AccountApi.md#getaccountsminimalbycustomerid) | **GET** /obp/v4.0.0/customers/{customerid}/accounts-minimal | Get Accounts Minimal for a Customer
+*AccountApi* | [**getAgent**](docs/Api/AccountApi.md#getagent) | **GET** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Get Agent
+*AccountApi* | [**getAgents**](docs/Api/AccountApi.md#getagents) | **GET** /obp/v5.1.0/banks/{bankid}/agents | Get Agents at Bank
+*AccountApi* | [**getAllBankAccountBalances**](docs/Api/AccountApi.md#getallbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
+*AccountApi* | [**getBankAccountBalanceById**](docs/Api/AccountApi.md#getbankaccountbalancebyid) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
+*AccountApi* | [**getBankAccountBalances**](docs/Api/AccountApi.md#getbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/balances | Get Account Balances by BANK_ID and ACCOUNT_ID through the VIEW_ID
+*AccountApi* | [**getBankAccountsBalances**](docs/Api/AccountApi.md#getbankaccountsbalances) | **GET** /obp/v5.1.0/banks/{bankid}/balances | Get Account Balances by BANK_ID
+*AccountApi* | [**getBankAccountsBalancesThroughView**](docs/Api/AccountApi.md#getbankaccountsbalancesthroughview) | **GET** /obp/v5.1.0/banks/{bankid}/views/{viewid}/balances | Get Account Balances by BANK_ID through the VIEW_ID
+*AccountApi* | [**getCheckbookOrders**](docs/Api/AccountApi.md#getcheckbookorders) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/checkbook/orders | Get Checkbook orders
+*AccountApi* | [**getCoreAccountByIdThroughView**](docs/Api/AccountApi.md#getcoreaccountbyidthroughview) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Account by Id (Core) through the VIEW_ID
+*AccountApi* | [**getCoreAccountByIdV600**](docs/Api/AccountApi.md#getcoreaccountbyidv600) | **GET** /obp/v6.0.0/my/banks/{bankid}/accounts/{accountid}/account | Get Account by Id (Core)
+*AccountApi* | [**getCoreTransactionsForBankAccount**](docs/Api/AccountApi.md#getcoretransactionsforbankaccount) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
+*AccountApi* | [**getCounterpartiesForAnyAccount**](docs/Api/AccountApi.md#getcounterpartiesforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
+*AccountApi* | [**getCounterpartyByIdForAnyAccount**](docs/Api/AccountApi.md#getcounterpartybyidforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id for any account (Explicit)
+*AccountApi* | [**getCounterpartyByNameForAnyAccount**](docs/Api/AccountApi.md#getcounterpartybynameforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname} | Get Counterparty by name for any account (Explicit)
+*AccountApi* | [**getCustomView**](docs/Api/AccountApi.md#getcustomview) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Get Custom View
+*AccountApi* | [**getExplicitCounterpartiesForAccount**](docs/Api/AccountApi.md#getexplicitcounterpartiesforaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
+*AccountApi* | [**getFastFirehoseAccountsAtOneBank**](docs/Api/AccountApi.md#getfastfirehoseaccountsatonebank) | **GET** /obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts | Get Fast Firehose Accounts at Bank
+*AccountApi* | [**getFirehoseAccountsAtOneBank**](docs/Api/AccountApi.md#getfirehoseaccountsatonebank) | **GET** /obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid} | Get Firehose Accounts at Bank
+*AccountApi* | [**getHoldingAccountByReleaser**](docs/Api/AccountApi.md#getholdingaccountbyreleaser) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/holding-accounts | Get Holding Accounts By Releaser
+*AccountApi* | [**getOtherAccountByIdForBankAccount**](docs/Api/AccountApi.md#getotheraccountbyidforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid} | Get Other Account by Id
+*AccountApi* | [**getOtherAccountsForBankAccount**](docs/Api/AccountApi.md#getotheraccountsforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts | Get Other Accounts of one Account
+*AccountApi* | [**getPermissionForUserForBankAccount**](docs/Api/AccountApi.md#getpermissionforuserforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid} | Get Account access for User
+*AccountApi* | [**getPermissionsForBankAccount**](docs/Api/AccountApi.md#getpermissionsforbankaccount) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
+*AccountApi* | [**getPrivateAccountByIdFull**](docs/Api/AccountApi.md#getprivateaccountbyidfull) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/account | Get Account by Id (Full)
+*AccountApi* | [**getPrivateAccountIdsbyBankId**](docs/Api/AccountApi.md#getprivateaccountidsbybankid) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/account_ids/private | Get Accounts at Bank (IDs only)
+*AccountApi* | [**getPublicAccountById**](docs/Api/AccountApi.md#getpublicaccountbyid) | **GET** /obp/v3.0.0/banks/{bankid}/public/accounts/{accountid}/{viewid}/account | Get Public Account by Id
+*AccountApi* | [**getTagsForViewOnAccount**](docs/Api/AccountApi.md#gettagsforviewonaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
+*AccountApi* | [**getTransactionsForBankAccount**](docs/Api/AccountApi.md#gettransactionsforbankaccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions | Get Transactions for Account (Full)
+*AccountApi* | [**getUsersWithAccountAccess**](docs/Api/AccountApi.md#getuserswithaccountaccess) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/users-with-access | Get Users With Account Access
+*AccountApi* | [**getViewsForBankAccount**](docs/Api/AccountApi.md#getviewsforbankaccount) | **GET** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/views | Get Views for Account
+*AccountApi* | [**grantUserAccessToViewById**](docs/Api/AccountApi.md#grantuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
+*AccountApi* | [**hasAccountAccess**](docs/Api/AccountApi.md#hasaccountaccess) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/has-account-access | Has Account Access
+*AccountApi* | [**ibanChecker**](docs/Api/AccountApi.md#ibanchecker) | **POST** /obp/v4.0.0/account/check/scheme/iban | Validate and check IBAN
+*AccountApi* | [**privateAccountsAtOneBank**](docs/Api/AccountApi.md#privateaccountsatonebank) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/private | Get Accounts at Bank (Minimal)
+*AccountApi* | [**publicAccountsAllBanks**](docs/Api/AccountApi.md#publicaccountsallbanks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks
+*AccountApi* | [**publicAccountsAtOneBank**](docs/Api/AccountApi.md#publicaccountsatonebank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank
+*AccountApi* | [**revokeUserAccessToViewById**](docs/Api/AccountApi.md#revokeuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
+*AccountApi* | [**updateAccount**](docs/Api/AccountApi.md#updateaccount) | **PUT** /obp/v3.1.0/management/banks/{bankid}/accounts/{accountid} | Update Account
+*AccountApi* | [**updateAccountApplicationStatus**](docs/Api/AccountApi.md#updateaccountapplicationstatus) | **PUT** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Update Account Application Status
+*AccountApi* | [**updateAccountAttribute**](docs/Api/AccountApi.md#updateaccountattribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute
+*AccountApi* | [**updateAccountLabel**](docs/Api/AccountApi.md#updateaccountlabel) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid} | Update Account Label
+*AccountApi* | [**updateBankAccountBalance**](docs/Api/AccountApi.md#updatebankaccountbalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
+*AccountApi* | [**updateCustomView**](docs/Api/AccountApi.md#updatecustomview) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Update Custom View
+*AccountApi* | [**updateViewForBankAccount**](docs/Api/AccountApi.md#updateviewforbankaccount) | **PUT** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Update Custom View
+*AccountAccessApi* | [**createUserWithAccountAccessById**](docs/Api/AccountAccessApi.md#createuserwithaccountaccessbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+*AccountAccessApi* | [**grantUserAccessToViewById**](docs/Api/AccountAccessApi.md#grantuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
+*AccountAccessApi* | [**revokeUserAccessToViewById**](docs/Api/AccountAccessApi.md#revokeuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
+*AccountAccessRequestApi* | [**approveAccountAccessRequest**](docs/Api/AccountAccessRequestApi.md#approveaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request
+*AccountAccessRequestApi* | [**createAccountAccessRequest**](docs/Api/AccountAccessRequestApi.md#createaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request
+*AccountAccessRequestApi* | [**getAccountAccessRequestById**](docs/Api/AccountAccessRequestApi.md#getaccountaccessrequestbyid) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id
+*AccountAccessRequestApi* | [**getAccountAccessRequestsForAccount**](docs/Api/AccountAccessRequestApi.md#getaccountaccessrequestsforaccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account
+*AccountAccessRequestApi* | [**getMyAccountAccessRequests**](docs/Api/AccountAccessRequestApi.md#getmyaccountaccessrequests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests
+*AccountAccessRequestApi* | [**rejectAccountAccessRequest**](docs/Api/AccountAccessRequestApi.md#rejectaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request
+*AccountApplicationApi* | [**createAccountApplication**](docs/Api/AccountApplicationApi.md#createaccountapplication) | **POST** /obp/v3.1.0/banks/{bankid}/account-applications | Create Account Application
+*AccountApplicationApi* | [**getAccountApplication**](docs/Api/AccountApplicationApi.md#getaccountapplication) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Get Account Application by Id
+*AccountApplicationApi* | [**getAccountApplications**](docs/Api/AccountApplicationApi.md#getaccountapplications) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications | Get Account Applications
+*AccountApplicationApi* | [**updateAccountApplicationStatus**](docs/Api/AccountApplicationApi.md#updateaccountapplicationstatus) | **PUT** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Update Account Application Status
+*AccountAttributeApi* | [**createAccountAttribute**](docs/Api/AccountAttributeApi.md#createaccountattribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute
+*AccountAttributeApi* | [**createOrUpdateAccountAttributeDefinition**](docs/Api/AccountAttributeApi.md#createorupdateaccountattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition
+*AccountAttributeApi* | [**deleteAccountAttributeDefinition**](docs/Api/AccountAttributeApi.md#deleteaccountattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition
+*AccountAttributeApi* | [**getAccountAttributeDefinition**](docs/Api/AccountAttributeApi.md#getaccountattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition
+*AccountAttributeApi* | [**updateAccountAttribute**](docs/Api/AccountAttributeApi.md#updateaccountattribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute
+*AccountFirehoseApi* | [**getFastFirehoseAccountsAtOneBank**](docs/Api/AccountFirehoseApi.md#getfastfirehoseaccountsatonebank) | **GET** /obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts | Get Fast Firehose Accounts at Bank
+*AccountFirehoseApi* | [**getFirehoseAccountsAtOneBank**](docs/Api/AccountFirehoseApi.md#getfirehoseaccountsatonebank) | **GET** /obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid} | Get Firehose Accounts at Bank
+*AccountFirehoseApi* | [**getFirehoseTransactionsForBankAccount**](docs/Api/AccountFirehoseApi.md#getfirehosetransactionsforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
+*AccountInformationServiceAISApi* | [**addConsentUser**](docs/Api/AccountInformationServiceAISApi.md#addconsentuser) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid}/user-update-request | Add User to a Consent
+*AccountInformationServiceAISApi* | [**answerConsentChallenge**](docs/Api/AccountInformationServiceAISApi.md#answerconsentchallenge) | **POST** /obp/v3.1.0/banks/{bankid}/consents/{consentid}/challenge | Answer Consent Challenge
+*AccountInformationServiceAISApi* | [**corePrivateAccountsAllBanks**](docs/Api/AccountInformationServiceAISApi.md#coreprivateaccountsallbanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
+*AccountInformationServiceAISApi* | [**createConsentByConsentRequestIdEmail**](docs/Api/AccountInformationServiceAISApi.md#createconsentbyconsentrequestidemail) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
+*AccountInformationServiceAISApi* | [**createConsentByConsentRequestIdImplicit**](docs/Api/AccountInformationServiceAISApi.md#createconsentbyconsentrequestidimplicit) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{implicit}/consents | Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
+*AccountInformationServiceAISApi* | [**createConsentByConsentRequestIdSms**](docs/Api/AccountInformationServiceAISApi.md#createconsentbyconsentrequestidsms) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{sms}/consents | Create Consent By CONSENT_REQUEST_ID (SMS)
+*AccountInformationServiceAISApi* | [**createConsentEmail**](docs/Api/AccountInformationServiceAISApi.md#createconsentemail) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{email} | Create Consent (EMAIL)
+*AccountInformationServiceAISApi* | [**createConsentImplicit**](docs/Api/AccountInformationServiceAISApi.md#createconsentimplicit) | **POST** /obp/v5.1.0/my/consents/{implicit} | Create Consent (IMPLICIT)
+*AccountInformationServiceAISApi* | [**createConsentRequest**](docs/Api/AccountInformationServiceAISApi.md#createconsentrequest) | **POST** /obp/v5.0.0/consumer/consent-requests | Create Consent Request
+*AccountInformationServiceAISApi* | [**createConsentSms**](docs/Api/AccountInformationServiceAISApi.md#createconsentsms) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{sms} | Create Consent (SMS)
+*AccountInformationServiceAISApi* | [**getAccountsHeld**](docs/Api/AccountInformationServiceAISApi.md#getaccountsheld) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
+*AccountInformationServiceAISApi* | [**getBank**](docs/Api/AccountInformationServiceAISApi.md#getbank) | **GET** /obp/v6.0.0/banks/{bankid} | Get Bank
+*AccountInformationServiceAISApi* | [**getBankAccountBalances**](docs/Api/AccountInformationServiceAISApi.md#getbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/balances | Get Account Balances by BANK_ID and ACCOUNT_ID through the VIEW_ID
+*AccountInformationServiceAISApi* | [**getBankAccountsBalances**](docs/Api/AccountInformationServiceAISApi.md#getbankaccountsbalances) | **GET** /obp/v5.1.0/banks/{bankid}/balances | Get Account Balances by BANK_ID
+*AccountInformationServiceAISApi* | [**getBankAccountsBalancesThroughView**](docs/Api/AccountInformationServiceAISApi.md#getbankaccountsbalancesthroughview) | **GET** /obp/v5.1.0/banks/{bankid}/views/{viewid}/balances | Get Account Balances by BANK_ID through the VIEW_ID
+*AccountInformationServiceAISApi* | [**getBanks**](docs/Api/AccountInformationServiceAISApi.md#getbanks) | **GET** /obp/v6.0.0/banks | Get Banks
+*AccountInformationServiceAISApi* | [**getConsentByConsentId**](docs/Api/AccountInformationServiceAISApi.md#getconsentbyconsentid) | **GET** /obp/v5.1.0/user/current/consents/{consentid} | Get Consent By Consent Id via User
+*AccountInformationServiceAISApi* | [**getConsentByConsentIdViaConsumer**](docs/Api/AccountInformationServiceAISApi.md#getconsentbyconsentidviaconsumer) | **GET** /obp/v5.1.0/consumer/current/consents/{consentid} | Get Consent By Consent Id via Consumer
+*AccountInformationServiceAISApi* | [**getConsentByConsentRequestId**](docs/Api/AccountInformationServiceAISApi.md#getconsentbyconsentrequestid) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/consents | Get Consent By Consent Request Id via Consumer
+*AccountInformationServiceAISApi* | [**getConsentInfos**](docs/Api/AccountInformationServiceAISApi.md#getconsentinfos) | **GET** /obp/v4.0.0/my/consent-infos | Get My Consents Info
+*AccountInformationServiceAISApi* | [**getConsentInfosByBank**](docs/Api/AccountInformationServiceAISApi.md#getconsentinfosbybank) | **GET** /obp/v4.0.0/banks/{bankid}/my/consent-infos | Get My Consents Info At Bank
+*AccountInformationServiceAISApi* | [**getConsentRequest**](docs/Api/AccountInformationServiceAISApi.md#getconsentrequest) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid} | Get Consent Request
+*AccountInformationServiceAISApi* | [**getConsents**](docs/Api/AccountInformationServiceAISApi.md#getconsents) | **GET** /obp/v5.1.0/management/consents | Get Consents
+*AccountInformationServiceAISApi* | [**getConsentsAtBank**](docs/Api/AccountInformationServiceAISApi.md#getconsentsatbank) | **GET** /obp/v5.1.0/management/consents/banks/{bankid} | Get Consents at Bank
+*AccountInformationServiceAISApi* | [**getCoreAccountByIdThroughView**](docs/Api/AccountInformationServiceAISApi.md#getcoreaccountbyidthroughview) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Account by Id (Core) through the VIEW_ID
+*AccountInformationServiceAISApi* | [**getCoreAccountByIdV600**](docs/Api/AccountInformationServiceAISApi.md#getcoreaccountbyidv600) | **GET** /obp/v6.0.0/my/banks/{bankid}/accounts/{accountid}/account | Get Account by Id (Core)
+*AccountInformationServiceAISApi* | [**getCoreTransactionsForBankAccount**](docs/Api/AccountInformationServiceAISApi.md#getcoretransactionsforbankaccount) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
+*AccountInformationServiceAISApi* | [**getMyConsents**](docs/Api/AccountInformationServiceAISApi.md#getmyconsents) | **GET** /obp/v5.1.0/my/consents | Get My Consents
+*AccountInformationServiceAISApi* | [**getMyConsentsByBank**](docs/Api/AccountInformationServiceAISApi.md#getmyconsentsbybank) | **GET** /obp/v5.1.0/banks/{bankid}/my/consents | Get My Consents at Bank
+*AccountInformationServiceAISApi* | [**getPrivateAccountIdsbyBankId**](docs/Api/AccountInformationServiceAISApi.md#getprivateaccountidsbybankid) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/account_ids/private | Get Accounts at Bank (IDs only)
+*AccountInformationServiceAISApi* | [**getServerJWK**](docs/Api/AccountInformationServiceAISApi.md#getserverjwk) | **GET** /obp/v3.1.0/certs | Get JSON Web Key (JWK)
+*AccountInformationServiceAISApi* | [**getTransactionTypes**](docs/Api/AccountInformationServiceAISApi.md#gettransactiontypes) | **GET** /obp/v2.0.0/banks/{bankid}/transaction-types | Get Transaction Types at Bank
+*AccountInformationServiceAISApi* | [**mtlsClientCertificateInfo**](docs/Api/AccountInformationServiceAISApi.md#mtlsclientcertificateinfo) | **GET** /obp/v5.1.0/my/mtls/certificate/current | Provide client&#39;s certificate info of a current call
+*AccountInformationServiceAISApi* | [**privateAccountsAtOneBank**](docs/Api/AccountInformationServiceAISApi.md#privateaccountsatonebank) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/private | Get Accounts at Bank (Minimal)
+*AccountInformationServiceAISApi* | [**revokeConsentAtBank**](docs/Api/AccountInformationServiceAISApi.md#revokeconsentatbank) | **DELETE** /obp/v5.1.0/banks/{bankid}/consents/{consentid} | Revoke Consent at Bank
+*AccountInformationServiceAISApi* | [**revokeMyConsent**](docs/Api/AccountInformationServiceAISApi.md#revokemyconsent) | **DELETE** /obp/v5.1.0/my/consents/{consentid} | Revoke My Consent
+*AccountInformationServiceAISApi* | [**selfRevokeConsent**](docs/Api/AccountInformationServiceAISApi.md#selfrevokeconsent) | **DELETE** /obp/v5.1.0/my/consent/current | Revoke Consent used in the Current Call
+*AccountInformationServiceAISApi* | [**updateConsentAccountAccessByConsentId**](docs/Api/AccountInformationServiceAISApi.md#updateconsentaccountaccessbyconsentid) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/account-access | Update Consent Account Access by CONSENT_ID
+*AccountInformationServiceAISApi* | [**updateConsentStatus**](docs/Api/AccountInformationServiceAISApi.md#updateconsentstatus) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid} | Update Consent Status
+*AccountInformationServiceAISApi* | [**updateConsentStatusByConsent**](docs/Api/AccountInformationServiceAISApi.md#updateconsentstatusbyconsent) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid} | Update Consent Status by CONSENT_ID
+*AccountInformationServiceAISApi* | [**updateConsentUserIdByConsentId**](docs/Api/AccountInformationServiceAISApi.md#updateconsentuseridbyconsentid) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/created-by-user | Update Created by User of Consent by CONSENT_ID
+*AccountMetadataApi* | [**addTagForViewOnAccount**](docs/Api/AccountMetadataApi.md#addtagforviewonaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
+*AccountMetadataApi* | [**deleteTagForViewOnAccount**](docs/Api/AccountMetadataApi.md#deletetagforviewonaccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
+*AccountMetadataApi* | [**getTagsForViewOnAccount**](docs/Api/AccountMetadataApi.md#gettagsforviewonaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
+*AccountPublicApi* | [**getPublicAccountById**](docs/Api/AccountPublicApi.md#getpublicaccountbyid) | **GET** /obp/v3.0.0/banks/{bankid}/public/accounts/{accountid}/{viewid}/account | Get Public Account by Id
+*AccountPublicApi* | [**publicAccountsAllBanks**](docs/Api/AccountPublicApi.md#publicaccountsallbanks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks
+*AccountPublicApi* | [**publicAccountsAtOneBank**](docs/Api/AccountPublicApi.md#publicaccountsatonebank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank
+*AggregateMetricsApi* | [**getAggregateMetrics**](docs/Api/AggregateMetricsApi.md#getaggregatemetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
+*ApiCollectionApi* | [**createFeaturedApiCollection**](docs/Api/ApiCollectionApi.md#createfeaturedapicollection) | **POST** /obp/v6.0.0/management/api-collections/featured | Create Featured Api Collection
+*ApiCollectionApi* | [**createMyApiCollection**](docs/Api/ApiCollectionApi.md#createmyapicollection) | **POST** /obp/v4.0.0/my/api-collections | Create My Api Collection
+*ApiCollectionApi* | [**createMyApiCollectionEndpoint**](docs/Api/ApiCollectionApi.md#createmyapicollectionendpoint) | **POST** /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints | Create My Api Collection Endpoint
+*ApiCollectionApi* | [**createMyApiCollectionEndpointById**](docs/Api/ApiCollectionApi.md#createmyapicollectionendpointbyid) | **POST** /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints | Create My Api Collection Endpoint By Id
+*ApiCollectionApi* | [**deleteFeaturedApiCollection**](docs/Api/ApiCollectionApi.md#deletefeaturedapicollection) | **DELETE** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Delete Featured Api Collection
+*ApiCollectionApi* | [**deleteMyApiCollection**](docs/Api/ApiCollectionApi.md#deletemyapicollection) | **DELETE** /obp/v4.0.0/my/api-collections/{apicollectionid} | Delete My Api Collection
+*ApiCollectionApi* | [**deleteMyApiCollectionEndpoint**](docs/Api/ApiCollectionApi.md#deletemyapicollectionendpoint) | **DELETE** /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid} | Delete My Api Collection Endpoint
+*ApiCollectionApi* | [**deleteMyApiCollectionEndpointById**](docs/Api/ApiCollectionApi.md#deletemyapicollectionendpointbyid) | **DELETE** /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoint-ids/{apicollectionendpointid} | Delete My Api Collection Endpoint By Id
+*ApiCollectionApi* | [**deleteMyApiCollectionEndpointByOperationId**](docs/Api/ApiCollectionApi.md#deletemyapicollectionendpointbyoperationid) | **DELETE** /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints/{operationid} | Delete My Api Collection Endpoint By Id
+*ApiCollectionApi* | [**getAllApiCollections**](docs/Api/ApiCollectionApi.md#getallapicollections) | **GET** /obp/v5.1.0/management/api-collections | Get All API Collections
+*ApiCollectionApi* | [**getApiCollectionEndpoints**](docs/Api/ApiCollectionApi.md#getapicollectionendpoints) | **GET** /obp/v4.0.0/api-collections/{apicollectionid}/api-collection-endpoints | Get Api Collection Endpoints
+*ApiCollectionApi* | [**getApiCollectionsForUser**](docs/Api/ApiCollectionApi.md#getapicollectionsforuser) | **GET** /obp/v4.0.0/users/{userid}/api-collections | Get Api Collections for User
+*ApiCollectionApi* | [**getFeaturedApiCollections**](docs/Api/ApiCollectionApi.md#getfeaturedapicollections) | **GET** /obp/v4.0.0/api-collections/featured | Get Featured Api Collections
+*ApiCollectionApi* | [**getFeaturedApiCollectionsAdmin**](docs/Api/ApiCollectionApi.md#getfeaturedapicollectionsadmin) | **GET** /obp/v6.0.0/management/api-collections/featured | Get Featured Api Collections (Admin)
+*ApiCollectionApi* | [**getMyApiCollectionById**](docs/Api/ApiCollectionApi.md#getmyapicollectionbyid) | **GET** /obp/v4.0.0/my/api-collections/{apicollectionid} | Get My Api Collection By Id
+*ApiCollectionApi* | [**getMyApiCollectionByName**](docs/Api/ApiCollectionApi.md#getmyapicollectionbyname) | **GET** /obp/v4.0.0/my/api-collections/name/{apicollectionname} | Get My Api Collection By Name
+*ApiCollectionApi* | [**getMyApiCollectionEndpoint**](docs/Api/ApiCollectionApi.md#getmyapicollectionendpoint) | **GET** /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid} | Get My Api Collection Endpoint
+*ApiCollectionApi* | [**getMyApiCollectionEndpoints**](docs/Api/ApiCollectionApi.md#getmyapicollectionendpoints) | **GET** /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints | Get My Api Collection Endpoints
+*ApiCollectionApi* | [**getMyApiCollectionEndpointsById**](docs/Api/ApiCollectionApi.md#getmyapicollectionendpointsbyid) | **GET** /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints | Get My Api Collection Endpoints By Id
+*ApiCollectionApi* | [**getMyApiCollections**](docs/Api/ApiCollectionApi.md#getmyapicollections) | **GET** /obp/v4.0.0/my/api-collections | Get My Api Collections
+*ApiCollectionApi* | [**getSharableApiCollectionById**](docs/Api/ApiCollectionApi.md#getsharableapicollectionbyid) | **GET** /obp/v4.0.0/api-collections/sharable/{apicollectionid} | Get Sharable Api Collection By Id
+*ApiCollectionApi* | [**updateFeaturedApiCollection**](docs/Api/ApiCollectionApi.md#updatefeaturedapicollection) | **PUT** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Update Featured Api Collection
+*ApiCollectionApi* | [**updateMyApiCollection**](docs/Api/ApiCollectionApi.md#updatemyapicollection) | **PUT** /obp/v5.1.0/my/api-collections/{apicollectionid} | Update My Api Collection By API_COLLECTION_ID
+*ApiProductApi* | [**createApiProduct**](docs/Api/ApiProductApi.md#createapiproduct) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product
+*ApiProductApi* | [**createOrUpdateApiProduct**](docs/Api/ApiProductApi.md#createorupdateapiproduct) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product
+*ApiProductApi* | [**deleteApiProduct**](docs/Api/ApiProductApi.md#deleteapiproduct) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product
+*ApiProductApi* | [**getApiProduct**](docs/Api/ApiProductApi.md#getapiproduct) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product
+*ApiProductApi* | [**getApiProducts**](docs/Api/ApiProductApi.md#getapiproducts) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products
+*ApiProductAttributeApi* | [**createApiProductAttribute**](docs/Api/ApiProductAttributeApi.md#createapiproductattribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
+*ApiProductAttributeApi* | [**deleteApiProductAttribute**](docs/Api/ApiProductAttributeApi.md#deleteapiproductattribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
+*ApiProductAttributeApi* | [**getApiProductAttribute**](docs/Api/ApiProductAttributeApi.md#getapiproductattribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
+*ApiProductAttributeApi* | [**updateApiProductAttribute**](docs/Api/ApiProductAttributeApi.md#updateapiproductattribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
+*AttributeApi* | [**createAccountAttribute**](docs/Api/AttributeApi.md#createaccountattribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute
+*AttributeApi* | [**createAtmAttribute**](docs/Api/AttributeApi.md#createatmattribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
+*AttributeApi* | [**createBankAttribute**](docs/Api/AttributeApi.md#createbankattribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
+*AttributeApi* | [**createCardAttribute**](docs/Api/AttributeApi.md#createcardattribute) | **POST** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attribute | Create Card Attribute
+*AttributeApi* | [**createCustomerAttribute**](docs/Api/AttributeApi.md#createcustomerattribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
+*AttributeApi* | [**createOrUpdateAccountAttributeDefinition**](docs/Api/AttributeApi.md#createorupdateaccountattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition
+*AttributeApi* | [**createOrUpdateBankAttributeDefinition**](docs/Api/AttributeApi.md#createorupdatebankattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
+*AttributeApi* | [**createOrUpdateCardAttributeDefinition**](docs/Api/AttributeApi.md#createorupdatecardattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Create or Update Card Attribute Definition
+*AttributeApi* | [**createOrUpdateCustomerAttributeAttributeDefinition**](docs/Api/AttributeApi.md#createorupdatecustomerattributeattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
+*AttributeApi* | [**createOrUpdateProductAttributeDefinition**](docs/Api/AttributeApi.md#createorupdateproductattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition
+*AttributeApi* | [**createOrUpdateTransactionAttributeDefinition**](docs/Api/AttributeApi.md#createorupdatetransactionattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
+*AttributeApi* | [**createOrUpdateTransactionRequestAttributeDefinition**](docs/Api/AttributeApi.md#createorupdatetransactionrequestattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
+*AttributeApi* | [**createPersonalDataField**](docs/Api/AttributeApi.md#createpersonaldatafield) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
+*AttributeApi* | [**createProductAttribute**](docs/Api/AttributeApi.md#createproductattribute) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute
+*AttributeApi* | [**createTransactionAttribute**](docs/Api/AttributeApi.md#createtransactionattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
+*AttributeApi* | [**createTransactionRequestAttribute**](docs/Api/AttributeApi.md#createtransactionrequestattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
+*AttributeApi* | [**createUserAttribute**](docs/Api/AttributeApi.md#createuserattribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
+*AttributeApi* | [**deleteAccountAttributeDefinition**](docs/Api/AttributeApi.md#deleteaccountattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition
+*AttributeApi* | [**deleteAtmAttribute**](docs/Api/AttributeApi.md#deleteatmattribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
+*AttributeApi* | [**deleteBankAttribute**](docs/Api/AttributeApi.md#deletebankattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
+*AttributeApi* | [**deleteCardAttributeDefinition**](docs/Api/AttributeApi.md#deletecardattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/card | Delete Card Attribute Definition
+*AttributeApi* | [**deleteCustomerAttribute**](docs/Api/AttributeApi.md#deletecustomerattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
+*AttributeApi* | [**deleteCustomerAttributeDefinition**](docs/Api/AttributeApi.md#deletecustomerattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
+*AttributeApi* | [**deletePersonalDataField**](docs/Api/AttributeApi.md#deletepersonaldatafield) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
+*AttributeApi* | [**deleteProductAttribute**](docs/Api/AttributeApi.md#deleteproductattribute) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute
+*AttributeApi* | [**deleteProductAttributeDefinition**](docs/Api/AttributeApi.md#deleteproductattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition
+*AttributeApi* | [**deleteTransactionAttributeDefinition**](docs/Api/AttributeApi.md#deletetransactionattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
+*AttributeApi* | [**deleteTransactionRequestAttributeDefinition**](docs/Api/AttributeApi.md#deletetransactionrequestattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
+*AttributeApi* | [**deleteUserAttribute**](docs/Api/AttributeApi.md#deleteuserattribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
+*AttributeApi* | [**getAccountAttributeDefinition**](docs/Api/AttributeApi.md#getaccountattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition
+*AttributeApi* | [**getAtmAttribute**](docs/Api/AttributeApi.md#getatmattribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
+*AttributeApi* | [**getAtmAttributes**](docs/Api/AttributeApi.md#getatmattributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
+*AttributeApi* | [**getBankAttribute**](docs/Api/AttributeApi.md#getbankattribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
+*AttributeApi* | [**getBankAttributes**](docs/Api/AttributeApi.md#getbankattributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
+*AttributeApi* | [**getCardAttributeDefinition**](docs/Api/AttributeApi.md#getcardattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Get Card Attribute Definition
+*AttributeApi* | [**getCustomerAttributeById**](docs/Api/AttributeApi.md#getcustomerattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
+*AttributeApi* | [**getCustomerAttributeDefinition**](docs/Api/AttributeApi.md#getcustomerattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
+*AttributeApi* | [**getCustomerAttributes**](docs/Api/AttributeApi.md#getcustomerattributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
+*AttributeApi* | [**getPersonalDataFieldById**](docs/Api/AttributeApi.md#getpersonaldatafieldbyid) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
+*AttributeApi* | [**getPersonalDataFields**](docs/Api/AttributeApi.md#getpersonaldatafields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
+*AttributeApi* | [**getProductAttribute**](docs/Api/AttributeApi.md#getproductattribute) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute
+*AttributeApi* | [**getProductAttributeDefinition**](docs/Api/AttributeApi.md#getproductattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition
+*AttributeApi* | [**getTransactionAttributeById**](docs/Api/AttributeApi.md#gettransactionattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
+*AttributeApi* | [**getTransactionAttributeDefinition**](docs/Api/AttributeApi.md#gettransactionattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
+*AttributeApi* | [**getTransactionAttributes**](docs/Api/AttributeApi.md#gettransactionattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
+*AttributeApi* | [**getTransactionRequestAttributeById**](docs/Api/AttributeApi.md#gettransactionrequestattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
+*AttributeApi* | [**getTransactionRequestAttributeDefinition**](docs/Api/AttributeApi.md#gettransactionrequestattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
+*AttributeApi* | [**getTransactionRequestAttributes**](docs/Api/AttributeApi.md#gettransactionrequestattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
+*AttributeApi* | [**getUserAttributeById**](docs/Api/AttributeApi.md#getuserattributebyid) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
+*AttributeApi* | [**getUserAttributes**](docs/Api/AttributeApi.md#getuserattributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
+*AttributeApi* | [**updateAccountAttribute**](docs/Api/AttributeApi.md#updateaccountattribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute
+*AttributeApi* | [**updateAtmAttribute**](docs/Api/AttributeApi.md#updateatmattribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
+*AttributeApi* | [**updateBankAttribute**](docs/Api/AttributeApi.md#updatebankattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
+*AttributeApi* | [**updateCardAttribute**](docs/Api/AttributeApi.md#updatecardattribute) | **PUT** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid} | Update Card Attribute
+*AttributeApi* | [**updateCustomerAttribute**](docs/Api/AttributeApi.md#updatecustomerattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
+*AttributeApi* | [**updatePersonalDataField**](docs/Api/AttributeApi.md#updatepersonaldatafield) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
+*AttributeApi* | [**updateProductAttribute**](docs/Api/AttributeApi.md#updateproductattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute
+*AttributeApi* | [**updateTransactionAttribute**](docs/Api/AttributeApi.md#updatetransactionattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
+*AttributeApi* | [**updateTransactionRequestAttribute**](docs/Api/AttributeApi.md#updatetransactionrequestattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
+*AttributeApi* | [**updateUserAttribute**](docs/Api/AttributeApi.md#updateuserattribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
+*AuthenticationTypeValidationApi* | [**createAuthenticationTypeValidation**](docs/Api/AuthenticationTypeValidationApi.md#createauthenticationtypevalidation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation
+*AuthenticationTypeValidationApi* | [**deleteAuthenticationTypeValidation**](docs/Api/AuthenticationTypeValidationApi.md#deleteauthenticationtypevalidation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation
+*AuthenticationTypeValidationApi* | [**getAllAuthenticationTypeValidations**](docs/Api/AuthenticationTypeValidationApi.md#getallauthenticationtypevalidations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations
+*AuthenticationTypeValidationApi* | [**getAllAuthenticationTypeValidationsPublic**](docs/Api/AuthenticationTypeValidationApi.md#getallauthenticationtypevalidationspublic) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public
+*AuthenticationTypeValidationApi* | [**getAuthenticationTypeValidation**](docs/Api/AuthenticationTypeValidationApi.md#getauthenticationtypevalidation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation
+*AuthenticationTypeValidationApi* | [**updateAuthenticationTypeValidation**](docs/Api/AuthenticationTypeValidationApi.md#updateauthenticationtypevalidation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation
+*BalanceApi* | [**createBankAccountBalance**](docs/Api/BalanceApi.md#createbankaccountbalance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
+*BalanceApi* | [**deleteBankAccountBalance**](docs/Api/BalanceApi.md#deletebankaccountbalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
+*BalanceApi* | [**getAllBankAccountBalances**](docs/Api/BalanceApi.md#getallbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
+*BalanceApi* | [**getBankAccountBalanceById**](docs/Api/BalanceApi.md#getbankaccountbalancebyid) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
+*BalanceApi* | [**updateBankAccountBalance**](docs/Api/BalanceApi.md#updatebankaccountbalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
+*BankApi* | [**createAccountWebhook**](docs/Api/BankApi.md#createaccountwebhook) | **POST** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Create an Account Webhook
+*BankApi* | [**createBank**](docs/Api/BankApi.md#createbank) | **POST** /obp/v6.0.0/banks | Create Bank
+*BankApi* | [**createBankAccountNotificationWebhook**](docs/Api/BankApi.md#createbankaccountnotificationwebhook) | **POST** /obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction | Create bank level Account Notification Webhook
+*BankApi* | [**createBankAttribute**](docs/Api/BankApi.md#createbankattribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
+*BankApi* | [**createOrUpdateBankAttributeDefinition**](docs/Api/BankApi.md#createorupdatebankattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
+*BankApi* | [**createSettlementAccount**](docs/Api/BankApi.md#createsettlementaccount) | **POST** /obp/v4.0.0/banks/{bankid}/settlement-accounts | Create Settlement Account
+*BankApi* | [**createSystemAccountNotificationWebhook**](docs/Api/BankApi.md#createsystemaccountnotificationwebhook) | **POST** /obp/v4.0.0/web-hooks/account/notifications/on-create-transaction | Create system level Account Notification Webhook
+*BankApi* | [**createTransactionType**](docs/Api/BankApi.md#createtransactiontype) | **PUT** /obp/v2.1.0/banks/{bankid}/transaction-types | Create Transaction Type at bank
+*BankApi* | [**deleteBankAttribute**](docs/Api/BankApi.md#deletebankattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
+*BankApi* | [**deleteBankCascade**](docs/Api/BankApi.md#deletebankcascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid} | Delete Bank Cascade
+*BankApi* | [**enableDisableAccountWebhook**](docs/Api/BankApi.md#enabledisableaccountwebhook) | **PUT** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Enable/Disable an Account Webhook
+*BankApi* | [**getAccountWebhooks**](docs/Api/BankApi.md#getaccountwebhooks) | **GET** /obp/v3.1.0/management/banks/{bankid}/account-web-hooks | Get Account Webhooks
+*BankApi* | [**getBank**](docs/Api/BankApi.md#getbank) | **GET** /obp/v6.0.0/banks/{bankid} | Get Bank
+*BankApi* | [**getBankAttribute**](docs/Api/BankApi.md#getbankattribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
+*BankApi* | [**getBankAttributes**](docs/Api/BankApi.md#getbankattributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
+*BankApi* | [**getBanks**](docs/Api/BankApi.md#getbanks) | **GET** /obp/v6.0.0/banks | Get Banks
+*BankApi* | [**getBranch**](docs/Api/BankApi.md#getbranch) | **GET** /obp/v3.0.0/banks/{bankid}/branches/{branchid} | Get Branch
+*BankApi* | [**getBranches**](docs/Api/BankApi.md#getbranches) | **GET** /obp/v3.0.0/banks/{bankid}/branches | Get Branches for a Bank
+*BankApi* | [**getSettlementAccounts**](docs/Api/BankApi.md#getsettlementaccounts) | **GET** /obp/v4.0.0/banks/{bankid}/settlement-accounts | Get Settlement accounts at Bank
+*BankApi* | [**getTransactionRequestTypesSupportedByBank**](docs/Api/BankApi.md#gettransactionrequesttypessupportedbybank) | **GET** /obp/v2.1.0/banks/{bankid}/transaction-request-types | Get Transaction Request Types at Bank
+*BankApi* | [**getTransactionTypes**](docs/Api/BankApi.md#gettransactiontypes) | **GET** /obp/v2.0.0/banks/{bankid}/transaction-types | Get Transaction Types at Bank
+*BankApi* | [**updateBank**](docs/Api/BankApi.md#updatebank) | **PUT** /obp/v5.0.0/banks | Update Bank
+*BankApi* | [**updateBankAttribute**](docs/Api/BankApi.md#updatebankattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
+*BankAttributeApi* | [**createBankAttribute**](docs/Api/BankAttributeApi.md#createbankattribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
+*BankAttributeApi* | [**createOrUpdateBankAttributeDefinition**](docs/Api/BankAttributeApi.md#createorupdatebankattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
+*BankAttributeApi* | [**deleteBankAttribute**](docs/Api/BankAttributeApi.md#deletebankattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
+*BankAttributeApi* | [**getBankAttribute**](docs/Api/BankAttributeApi.md#getbankattribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
+*BankAttributeApi* | [**getBankAttributes**](docs/Api/BankAttributeApi.md#getbankattributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
+*BankAttributeApi* | [**updateBankAttribute**](docs/Api/BankAttributeApi.md#updatebankattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
+*BranchApi* | [**createBranch**](docs/Api/BranchApi.md#createbranch) | **POST** /obp/v3.0.0/banks/{bankid}/branches | Create Branch
+*BranchApi* | [**deleteBranch**](docs/Api/BranchApi.md#deletebranch) | **DELETE** /obp/v3.1.0/banks/{bankid}/branches/{branchid} | Delete Branch
+*BranchApi* | [**getBranch**](docs/Api/BranchApi.md#getbranch) | **GET** /obp/v3.0.0/banks/{bankid}/branches/{branchid} | Get Branch
+*BranchApi* | [**getBranches**](docs/Api/BranchApi.md#getbranches) | **GET** /obp/v3.0.0/banks/{bankid}/branches | Get Branches for a Bank
+*CacheApi* | [**getCacheConfig**](docs/Api/CacheApi.md#getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
+*CacheApi* | [**getCacheInfo**](docs/Api/CacheApi.md#getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
+*CacheApi* | [**getCacheNamespaces**](docs/Api/CacheApi.md#getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
+*CacheApi* | [**invalidateCacheNamespace**](docs/Api/CacheApi.md#invalidatecachenamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
+*CardApi* | [**addCardForBank**](docs/Api/CardApi.md#addcardforbank) | **POST** /obp/v5.0.0/management/banks/{bankid}/cards | Create Card
+*CardApi* | [**createCardAttribute**](docs/Api/CardApi.md#createcardattribute) | **POST** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attribute | Create Card Attribute
+*CardApi* | [**createOrUpdateCardAttributeDefinition**](docs/Api/CardApi.md#createorupdatecardattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Create or Update Card Attribute Definition
+*CardApi* | [**deleteCardAttributeDefinition**](docs/Api/CardApi.md#deletecardattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/card | Delete Card Attribute Definition
+*CardApi* | [**deleteCardForBank**](docs/Api/CardApi.md#deletecardforbank) | **DELETE** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid} | Delete Card
+*CardApi* | [**getCardAttributeDefinition**](docs/Api/CardApi.md#getcardattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Get Card Attribute Definition
+*CardApi* | [**getCardForBank**](docs/Api/CardApi.md#getcardforbank) | **GET** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid} | Get Card By Id
+*CardApi* | [**getCards**](docs/Api/CardApi.md#getcards) | **GET** /obp/v1.3.0/cards | Get cards for the current user
+*CardApi* | [**getCardsForBank**](docs/Api/CardApi.md#getcardsforbank) | **GET** /obp/v3.1.0/management/banks/{bankid}/cards | Get Cards for the specified bank
+*CardApi* | [**getStatusOfCreditCardOrder**](docs/Api/CardApi.md#getstatusofcreditcardorder) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/credit_cards/orders | Get status of Credit Card order
+*CardApi* | [**updateCardAttribute**](docs/Api/CardApi.md#updatecardattribute) | **PUT** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid} | Update Card Attribute
+*CardApi* | [**updatedCardForBank**](docs/Api/CardApi.md#updatedcardforbank) | **PUT** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid} | Update Card
+*CardAttributeApi* | [**createCardAttribute**](docs/Api/CardAttributeApi.md#createcardattribute) | **POST** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attribute | Create Card Attribute
+*CardAttributeApi* | [**createOrUpdateCardAttributeDefinition**](docs/Api/CardAttributeApi.md#createorupdatecardattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Create or Update Card Attribute Definition
+*CardAttributeApi* | [**deleteCardAttributeDefinition**](docs/Api/CardAttributeApi.md#deletecardattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/card | Delete Card Attribute Definition
+*CardAttributeApi* | [**getCardAttributeDefinition**](docs/Api/CardAttributeApi.md#getcardattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Get Card Attribute Definition
+*CardAttributeApi* | [**updateCardAttribute**](docs/Api/CardAttributeApi.md#updatecardattribute) | **PUT** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid} | Update Card Attribute
+*ChannelApi* | [**deleteSignalChannel**](docs/Api/ChannelApi.md#deletesignalchannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
+*ChannelApi* | [**getSignalChannelInfo**](docs/Api/ChannelApi.md#getsignalchannelinfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
+*ChannelApi* | [**getSignalChannels**](docs/Api/ChannelApi.md#getsignalchannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
+*ChannelApi* | [**getSignalMessages**](docs/Api/ChannelApi.md#getsignalmessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
+*ChannelApi* | [**getSignalStats**](docs/Api/ChannelApi.md#getsignalstats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
+*ChannelApi* | [**publishSignalMessage**](docs/Api/ChannelApi.md#publishsignalmessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
+*ConfirmationOfFundsServicePIISApi* | [**checkFundsAvailable**](docs/Api/ConfirmationOfFundsServicePIISApi.md#checkfundsavailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
+*ConnectorApi* | [**getConnectors**](docs/Api/ConnectorApi.md#getconnectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
+*ConnectorApi* | [**getStoredProcedureConnectorHealth**](docs/Api/ConnectorApi.md#getstoredprocedureconnectorhealth) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
+*ConnectorMethodApi* | [**createConnectorMethod**](docs/Api/ConnectorMethodApi.md#createconnectormethod) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method
+*ConnectorMethodApi* | [**getAllConnectorMethods**](docs/Api/ConnectorMethodApi.md#getallconnectormethods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods
+*ConnectorMethodApi* | [**getConnectorMethod**](docs/Api/ConnectorMethodApi.md#getconnectormethod) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id
+*ConnectorMethodApi* | [**getConnectorMethodNames**](docs/Api/ConnectorMethodApi.md#getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+*ConnectorMethodApi* | [**updateConnectorMethod**](docs/Api/ConnectorMethodApi.md#updateconnectormethod) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method
+*ConsentApi* | [**addConsentUser**](docs/Api/ConsentApi.md#addconsentuser) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid}/user-update-request | Add User to a Consent
+*ConsentApi* | [**answerConsentChallenge**](docs/Api/ConsentApi.md#answerconsentchallenge) | **POST** /obp/v3.1.0/banks/{bankid}/consents/{consentid}/challenge | Answer Consent Challenge
+*ConsentApi* | [**createConsentByConsentRequestIdEmail**](docs/Api/ConsentApi.md#createconsentbyconsentrequestidemail) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
+*ConsentApi* | [**createConsentByConsentRequestIdImplicit**](docs/Api/ConsentApi.md#createconsentbyconsentrequestidimplicit) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{implicit}/consents | Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
+*ConsentApi* | [**createConsentByConsentRequestIdSms**](docs/Api/ConsentApi.md#createconsentbyconsentrequestidsms) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{sms}/consents | Create Consent By CONSENT_REQUEST_ID (SMS)
+*ConsentApi* | [**createConsentEmail**](docs/Api/ConsentApi.md#createconsentemail) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{email} | Create Consent (EMAIL)
+*ConsentApi* | [**createConsentImplicit**](docs/Api/ConsentApi.md#createconsentimplicit) | **POST** /obp/v5.1.0/my/consents/{implicit} | Create Consent (IMPLICIT)
+*ConsentApi* | [**createConsentRequest**](docs/Api/ConsentApi.md#createconsentrequest) | **POST** /obp/v5.0.0/consumer/consent-requests | Create Consent Request
+*ConsentApi* | [**createConsentSms**](docs/Api/ConsentApi.md#createconsentsms) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{sms} | Create Consent (SMS)
+*ConsentApi* | [**createVRPConsentRequest**](docs/Api/ConsentApi.md#createvrpconsentrequest) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
+*ConsentApi* | [**getConsentByConsentId**](docs/Api/ConsentApi.md#getconsentbyconsentid) | **GET** /obp/v5.1.0/user/current/consents/{consentid} | Get Consent By Consent Id via User
+*ConsentApi* | [**getConsentByConsentIdViaConsumer**](docs/Api/ConsentApi.md#getconsentbyconsentidviaconsumer) | **GET** /obp/v5.1.0/consumer/current/consents/{consentid} | Get Consent By Consent Id via Consumer
+*ConsentApi* | [**getConsentByConsentRequestId**](docs/Api/ConsentApi.md#getconsentbyconsentrequestid) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/consents | Get Consent By Consent Request Id via Consumer
+*ConsentApi* | [**getConsentInfos**](docs/Api/ConsentApi.md#getconsentinfos) | **GET** /obp/v4.0.0/my/consent-infos | Get My Consents Info
+*ConsentApi* | [**getConsentInfosByBank**](docs/Api/ConsentApi.md#getconsentinfosbybank) | **GET** /obp/v4.0.0/banks/{bankid}/my/consent-infos | Get My Consents Info At Bank
+*ConsentApi* | [**getConsentRequest**](docs/Api/ConsentApi.md#getconsentrequest) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid} | Get Consent Request
+*ConsentApi* | [**getConsents**](docs/Api/ConsentApi.md#getconsents) | **GET** /obp/v5.1.0/management/consents | Get Consents
+*ConsentApi* | [**getConsentsAtBank**](docs/Api/ConsentApi.md#getconsentsatbank) | **GET** /obp/v5.1.0/management/consents/banks/{bankid} | Get Consents at Bank
+*ConsentApi* | [**getMyConsents**](docs/Api/ConsentApi.md#getmyconsents) | **GET** /obp/v5.1.0/my/consents | Get My Consents
+*ConsentApi* | [**getMyConsentsByBank**](docs/Api/ConsentApi.md#getmyconsentsbybank) | **GET** /obp/v5.1.0/banks/{bankid}/my/consents | Get My Consents at Bank
+*ConsentApi* | [**mtlsClientCertificateInfo**](docs/Api/ConsentApi.md#mtlsclientcertificateinfo) | **GET** /obp/v5.1.0/my/mtls/certificate/current | Provide client&#39;s certificate info of a current call
+*ConsentApi* | [**revokeConsentAtBank**](docs/Api/ConsentApi.md#revokeconsentatbank) | **DELETE** /obp/v5.1.0/banks/{bankid}/consents/{consentid} | Revoke Consent at Bank
+*ConsentApi* | [**revokeMyConsent**](docs/Api/ConsentApi.md#revokemyconsent) | **DELETE** /obp/v5.1.0/my/consents/{consentid} | Revoke My Consent
+*ConsentApi* | [**selfRevokeConsent**](docs/Api/ConsentApi.md#selfrevokeconsent) | **DELETE** /obp/v5.1.0/my/consent/current | Revoke Consent used in the Current Call
+*ConsentApi* | [**updateConsentAccountAccessByConsentId**](docs/Api/ConsentApi.md#updateconsentaccountaccessbyconsentid) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/account-access | Update Consent Account Access by CONSENT_ID
+*ConsentApi* | [**updateConsentStatus**](docs/Api/ConsentApi.md#updateconsentstatus) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid} | Update Consent Status
+*ConsentApi* | [**updateConsentStatusByConsent**](docs/Api/ConsentApi.md#updateconsentstatusbyconsent) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid} | Update Consent Status by CONSENT_ID
+*ConsentApi* | [**updateConsentUserIdByConsentId**](docs/Api/ConsentApi.md#updateconsentuseridbyconsentid) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/created-by-user | Update Created by User of Consent by CONSENT_ID
+*ConsumerApi* | [**addScope**](docs/Api/ConsumerApi.md#addscope) | **POST** /obp/v4.0.0/consumers/{consumerid}/scopes | Create Scope for a Consumer
+*ConsumerApi* | [**callsLimit**](docs/Api/ConsumerApi.md#callslimit) | **PUT** /obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits | Set Rate Limits / Call Limits per Consumer
+*ConsumerApi* | [**createCallLimits**](docs/Api/ConsumerApi.md#createcalllimits) | **POST** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits | Create Rate Limits for a Consumer
+*ConsumerApi* | [**createConsumer**](docs/Api/ConsumerApi.md#createconsumer) | **POST** /obp/v5.1.0/management/consumers | Create a Consumer
+*ConsumerApi* | [**createConsumerDynamicRegistration**](docs/Api/ConsumerApi.md#createconsumerdynamicregistration) | **POST** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
+*ConsumerApi* | [**createMyConsumer**](docs/Api/ConsumerApi.md#createmyconsumer) | **POST** /obp/v5.1.0/my/consumers | Create a Consumer
+*ConsumerApi* | [**deleteCallLimits**](docs/Api/ConsumerApi.md#deletecalllimits) | **DELETE** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Delete Rate Limit by Rate Limiting ID
+*ConsumerApi* | [**deleteScope**](docs/Api/ConsumerApi.md#deletescope) | **DELETE** /obp/v3.0.0/consumers/{consumerid}/scope/{scopeid} | Delete Consumer Scope
+*ConsumerApi* | [**enableDisableConsumers**](docs/Api/ConsumerApi.md#enabledisableconsumers) | **PUT** /obp/v3.1.0/management/consumers/{consumerid} | Enable or Disable Consumers
+*ConsumerApi* | [**getActiveRateLimitsAtDate**](docs/Api/ConsumerApi.md#getactiveratelimitsatdate) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/active-rate-limits/{datewithhour} | Get Active Rate Limits for Hour
+*ConsumerApi* | [**getActiveRateLimitsNow**](docs/Api/ConsumerApi.md#getactiveratelimitsnow) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/active-rate-limits | Get Active Rate Limits (Current)
+*ConsumerApi* | [**getCallsLimit**](docs/Api/ConsumerApi.md#getcallslimit) | **GET** /obp/v5.1.0/management/consumers/{consumerid}/consumer/rate-limits | Get Rate Limits for a Consumer
+*ConsumerApi* | [**getConsumer**](docs/Api/ConsumerApi.md#getconsumer) | **GET** /obp/v6.0.0/management/consumers/{consumerid} | Get Consumer
+*ConsumerApi* | [**getConsumerCallCounters**](docs/Api/ConsumerApi.md#getconsumercallcounters) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/call-counters | Get Call Counts for Consumer
+*ConsumerApi* | [**getConsumers**](docs/Api/ConsumerApi.md#getconsumers) | **GET** /obp/v5.1.0/management/consumers | Get Consumers
+*ConsumerApi* | [**getConsumersForCurrentUser**](docs/Api/ConsumerApi.md#getconsumersforcurrentuser) | **GET** /obp/v3.1.0/management/users/current/consumers | Get Consumers (logged in User)
+*ConsumerApi* | [**getCurrentConsumer**](docs/Api/ConsumerApi.md#getcurrentconsumer) | **GET** /obp/v6.0.0/consumers/current | Get Current Consumer
+*ConsumerApi* | [**getOidcClient**](docs/Api/ConsumerApi.md#getoidcclient) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
+*ConsumerApi* | [**getScopes**](docs/Api/ConsumerApi.md#getscopes) | **GET** /obp/v4.0.0/consumers/{consumerid}/scopes | Get Scopes for Consumer
+*ConsumerApi* | [**updateConsumerCertificate**](docs/Api/ConsumerApi.md#updateconsumercertificate) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/certificate | Update Consumer Certificate
+*ConsumerApi* | [**updateConsumerLogoURL**](docs/Api/ConsumerApi.md#updateconsumerlogourl) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/logo_url | Update Consumer LogoURL
+*ConsumerApi* | [**updateConsumerName**](docs/Api/ConsumerApi.md#updateconsumername) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/name | Update Consumer Name
+*ConsumerApi* | [**updateConsumerRedirectURL**](docs/Api/ConsumerApi.md#updateconsumerredirecturl) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/redirect_url | Update Consumer RedirectURL
+*ConsumerApi* | [**updateRateLimits**](docs/Api/ConsumerApi.md#updateratelimits) | **PUT** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Set Rate Limits / Call Limits per Consumer
+*ConsumerApi* | [**verifyOidcClient**](docs/Api/ConsumerApi.md#verifyoidcclient) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
+*CorporateCustomerApi* | [**createCorporateCustomer**](docs/Api/CorporateCustomerApi.md#createcorporatecustomer) | **POST** /obp/v6.0.0/banks/{bankid}/corporate-customers | Create Corporate Customer
+*CorporateCustomerApi* | [**getCorporateCustomerByCustomerId**](docs/Api/CorporateCustomerApi.md#getcorporatecustomerbycustomerid) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid} | Get Corporate Customer by CUSTOMER_ID
+*CorporateCustomerApi* | [**getCorporateCustomerSubsidiaries**](docs/Api/CorporateCustomerApi.md#getcorporatecustomersubsidiaries) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid}/subsidiaries | Get Corporate Customer Subsidiaries
+*CorporateCustomerApi* | [**getCorporateCustomersAtOneBank**](docs/Api/CorporateCustomerApi.md#getcorporatecustomersatonebank) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers | Get Corporate Customers at Bank
+*CounterpartyApi* | [**addCounterpartyCorporateLocation**](docs/Api/CounterpartyApi.md#addcounterpartycorporatelocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty
+*CounterpartyApi* | [**addCounterpartyImageUrl**](docs/Api/CounterpartyApi.md#addcounterpartyimageurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account
+*CounterpartyApi* | [**addCounterpartyMoreInfo**](docs/Api/CounterpartyApi.md#addcounterpartymoreinfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info
+*CounterpartyApi* | [**addCounterpartyOpenCorporatesUrl**](docs/Api/CounterpartyApi.md#addcounterpartyopencorporatesurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty
+*CounterpartyApi* | [**addCounterpartyPhysicalLocation**](docs/Api/CounterpartyApi.md#addcounterpartyphysicallocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account
+*CounterpartyApi* | [**addCounterpartyPublicAlias**](docs/Api/CounterpartyApi.md#addcounterpartypublicalias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account
+*CounterpartyApi* | [**addCounterpartyUrl**](docs/Api/CounterpartyApi.md#addcounterpartyurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account
+*CounterpartyApi* | [**addOtherAccountPrivateAlias**](docs/Api/CounterpartyApi.md#addotheraccountprivatealias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias
+*CounterpartyApi* | [**createCounterparty**](docs/Api/CounterpartyApi.md#createcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty (Explicit)
+*CounterpartyApi* | [**createCounterpartyForAnyAccount**](docs/Api/CounterpartyApi.md#createcounterpartyforanyaccount) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty for any account (Explicit)
+*CounterpartyApi* | [**deleteCounterpartyCorporateLocation**](docs/Api/CounterpartyApi.md#deletecounterpartycorporatelocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location
+*CounterpartyApi* | [**deleteCounterpartyForAnyAccount**](docs/Api/CounterpartyApi.md#deletecounterpartyforanyaccount) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty for any account (Explicit)
+*CounterpartyApi* | [**deleteCounterpartyImageUrl**](docs/Api/CounterpartyApi.md#deletecounterpartyimageurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL
+*CounterpartyApi* | [**deleteCounterpartyMoreInfo**](docs/Api/CounterpartyApi.md#deletecounterpartymoreinfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account
+*CounterpartyApi* | [**deleteCounterpartyOpenCorporatesUrl**](docs/Api/CounterpartyApi.md#deletecounterpartyopencorporatesurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL
+*CounterpartyApi* | [**deleteCounterpartyPhysicalLocation**](docs/Api/CounterpartyApi.md#deletecounterpartyphysicallocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location
+*CounterpartyApi* | [**deleteCounterpartyPrivateAlias**](docs/Api/CounterpartyApi.md#deletecounterpartyprivatealias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias
+*CounterpartyApi* | [**deleteCounterpartyPublicAlias**](docs/Api/CounterpartyApi.md#deletecounterpartypublicalias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias
+*CounterpartyApi* | [**deleteCounterpartyUrl**](docs/Api/CounterpartyApi.md#deletecounterpartyurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account
+*CounterpartyApi* | [**deleteExplicitCounterparty**](docs/Api/CounterpartyApi.md#deleteexplicitcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty (Explicit)
+*CounterpartyApi* | [**getCounterpartiesForAnyAccount**](docs/Api/CounterpartyApi.md#getcounterpartiesforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
+*CounterpartyApi* | [**getCounterpartyByIdForAnyAccount**](docs/Api/CounterpartyApi.md#getcounterpartybyidforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id for any account (Explicit)
+*CounterpartyApi* | [**getCounterpartyByNameForAnyAccount**](docs/Api/CounterpartyApi.md#getcounterpartybynameforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname} | Get Counterparty by name for any account (Explicit)
+*CounterpartyApi* | [**getCounterpartyPublicAlias**](docs/Api/CounterpartyApi.md#getcounterpartypublicalias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account
+*CounterpartyApi* | [**getExplicitCounterpartiesForAccount**](docs/Api/CounterpartyApi.md#getexplicitcounterpartiesforaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
+*CounterpartyApi* | [**getExplicitCounterpartyById**](docs/Api/CounterpartyApi.md#getexplicitcounterpartybyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
+*CounterpartyApi* | [**getOtherAccountByIdForBankAccount**](docs/Api/CounterpartyApi.md#getotheraccountbyidforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid} | Get Other Account by Id
+*CounterpartyApi* | [**getOtherAccountForTransaction**](docs/Api/CounterpartyApi.md#getotheraccountfortransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account | Get Other Account of Transaction
+*CounterpartyApi* | [**getOtherAccountMetadata**](docs/Api/CounterpartyApi.md#getotheraccountmetadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata
+*CounterpartyApi* | [**getOtherAccountPrivateAlias**](docs/Api/CounterpartyApi.md#getotheraccountprivatealias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias
+*CounterpartyApi* | [**getOtherAccountsForBankAccount**](docs/Api/CounterpartyApi.md#getotheraccountsforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts | Get Other Accounts of one Account
+*CounterpartyApi* | [**updateCounterpartyCorporateLocation**](docs/Api/CounterpartyApi.md#updatecounterpartycorporatelocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location
+*CounterpartyApi* | [**updateCounterpartyImageUrl**](docs/Api/CounterpartyApi.md#updatecounterpartyimageurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url
+*CounterpartyApi* | [**updateCounterpartyMoreInfo**](docs/Api/CounterpartyApi.md#updatecounterpartymoreinfo) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info
+*CounterpartyApi* | [**updateCounterpartyOpenCorporatesUrl**](docs/Api/CounterpartyApi.md#updatecounterpartyopencorporatesurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty
+*CounterpartyApi* | [**updateCounterpartyPhysicalLocation**](docs/Api/CounterpartyApi.md#updatecounterpartyphysicallocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location
+*CounterpartyApi* | [**updateCounterpartyPrivateAlias**](docs/Api/CounterpartyApi.md#updatecounterpartyprivatealias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias
+*CounterpartyApi* | [**updateCounterpartyPublicAlias**](docs/Api/CounterpartyApi.md#updatecounterpartypublicalias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account
+*CounterpartyApi* | [**updateCounterpartyUrl**](docs/Api/CounterpartyApi.md#updatecounterpartyurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account
+*CounterpartyAttributeApi* | [**createCounterpartyAttribute**](docs/Api/CounterpartyAttributeApi.md#createcounterpartyattribute) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes | Create Counterparty Attribute
+*CounterpartyAttributeApi* | [**deleteCounterpartyAttribute**](docs/Api/CounterpartyAttributeApi.md#deletecounterpartyattribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Delete Counterparty Attribute
+*CounterpartyAttributeApi* | [**getAllCounterpartyAttributes**](docs/Api/CounterpartyAttributeApi.md#getallcounterpartyattributes) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes | Get All Counterparty Attributes
+*CounterpartyAttributeApi* | [**getCounterpartyAttributeById**](docs/Api/CounterpartyAttributeApi.md#getcounterpartyattributebyid) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Get Counterparty Attribute By ID
+*CounterpartyAttributeApi* | [**updateCounterpartyAttribute**](docs/Api/CounterpartyAttributeApi.md#updatecounterpartyattribute) | **PUT** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Update Counterparty Attribute
+*CounterpartyLimitsApi* | [**createCounterpartyLimit**](docs/Api/CounterpartyLimitsApi.md#createcounterpartylimit) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Create Counterparty Limit
+*CounterpartyLimitsApi* | [**deleteCounterpartyLimit**](docs/Api/CounterpartyLimitsApi.md#deletecounterpartylimit) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Delete Counterparty Limit
+*CounterpartyLimitsApi* | [**getCounterpartyLimit**](docs/Api/CounterpartyLimitsApi.md#getcounterpartylimit) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Get Counterparty Limit
+*CounterpartyLimitsApi* | [**getCounterpartyLimitStatus**](docs/Api/CounterpartyLimitsApi.md#getcounterpartylimitstatus) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limit-status | Get Counterparty Limit Status
+*CounterpartyLimitsApi* | [**updateCounterpartyLimit**](docs/Api/CounterpartyLimitsApi.md#updatecounterpartylimit) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Update Counterparty Limit
+*CounterpartyMetadataApi* | [**addCounterpartyCorporateLocation**](docs/Api/CounterpartyMetadataApi.md#addcounterpartycorporatelocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty
+*CounterpartyMetadataApi* | [**addCounterpartyImageUrl**](docs/Api/CounterpartyMetadataApi.md#addcounterpartyimageurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account
+*CounterpartyMetadataApi* | [**addCounterpartyMoreInfo**](docs/Api/CounterpartyMetadataApi.md#addcounterpartymoreinfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info
+*CounterpartyMetadataApi* | [**addCounterpartyOpenCorporatesUrl**](docs/Api/CounterpartyMetadataApi.md#addcounterpartyopencorporatesurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty
+*CounterpartyMetadataApi* | [**addCounterpartyPhysicalLocation**](docs/Api/CounterpartyMetadataApi.md#addcounterpartyphysicallocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account
+*CounterpartyMetadataApi* | [**addCounterpartyPublicAlias**](docs/Api/CounterpartyMetadataApi.md#addcounterpartypublicalias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account
+*CounterpartyMetadataApi* | [**addCounterpartyUrl**](docs/Api/CounterpartyMetadataApi.md#addcounterpartyurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account
+*CounterpartyMetadataApi* | [**addOtherAccountPrivateAlias**](docs/Api/CounterpartyMetadataApi.md#addotheraccountprivatealias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias
+*CounterpartyMetadataApi* | [**deleteCounterpartyCorporateLocation**](docs/Api/CounterpartyMetadataApi.md#deletecounterpartycorporatelocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location
+*CounterpartyMetadataApi* | [**deleteCounterpartyImageUrl**](docs/Api/CounterpartyMetadataApi.md#deletecounterpartyimageurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL
+*CounterpartyMetadataApi* | [**deleteCounterpartyMoreInfo**](docs/Api/CounterpartyMetadataApi.md#deletecounterpartymoreinfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account
+*CounterpartyMetadataApi* | [**deleteCounterpartyOpenCorporatesUrl**](docs/Api/CounterpartyMetadataApi.md#deletecounterpartyopencorporatesurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL
+*CounterpartyMetadataApi* | [**deleteCounterpartyPhysicalLocation**](docs/Api/CounterpartyMetadataApi.md#deletecounterpartyphysicallocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location
+*CounterpartyMetadataApi* | [**deleteCounterpartyPrivateAlias**](docs/Api/CounterpartyMetadataApi.md#deletecounterpartyprivatealias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias
+*CounterpartyMetadataApi* | [**deleteCounterpartyPublicAlias**](docs/Api/CounterpartyMetadataApi.md#deletecounterpartypublicalias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias
+*CounterpartyMetadataApi* | [**deleteCounterpartyUrl**](docs/Api/CounterpartyMetadataApi.md#deletecounterpartyurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account
+*CounterpartyMetadataApi* | [**getCounterpartyPublicAlias**](docs/Api/CounterpartyMetadataApi.md#getcounterpartypublicalias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account
+*CounterpartyMetadataApi* | [**getExplicitCounterpartyById**](docs/Api/CounterpartyMetadataApi.md#getexplicitcounterpartybyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
+*CounterpartyMetadataApi* | [**getOtherAccountMetadata**](docs/Api/CounterpartyMetadataApi.md#getotheraccountmetadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata
+*CounterpartyMetadataApi* | [**getOtherAccountPrivateAlias**](docs/Api/CounterpartyMetadataApi.md#getotheraccountprivatealias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias
+*CounterpartyMetadataApi* | [**updateCounterpartyCorporateLocation**](docs/Api/CounterpartyMetadataApi.md#updatecounterpartycorporatelocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location
+*CounterpartyMetadataApi* | [**updateCounterpartyImageUrl**](docs/Api/CounterpartyMetadataApi.md#updatecounterpartyimageurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url
+*CounterpartyMetadataApi* | [**updateCounterpartyMoreInfo**](docs/Api/CounterpartyMetadataApi.md#updatecounterpartymoreinfo) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info
+*CounterpartyMetadataApi* | [**updateCounterpartyOpenCorporatesUrl**](docs/Api/CounterpartyMetadataApi.md#updatecounterpartyopencorporatesurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty
+*CounterpartyMetadataApi* | [**updateCounterpartyPhysicalLocation**](docs/Api/CounterpartyMetadataApi.md#updatecounterpartyphysicallocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location
+*CounterpartyMetadataApi* | [**updateCounterpartyPrivateAlias**](docs/Api/CounterpartyMetadataApi.md#updatecounterpartyprivatealias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias
+*CounterpartyMetadataApi* | [**updateCounterpartyPublicAlias**](docs/Api/CounterpartyMetadataApi.md#updatecounterpartypublicalias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account
+*CounterpartyMetadataApi* | [**updateCounterpartyUrl**](docs/Api/CounterpartyMetadataApi.md#updatecounterpartyurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account
+*CustomerApi* | [**addCustomerMessage**](docs/Api/CustomerApi.md#addcustomermessage) | **POST** /obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages | Create Customer Message
+*CustomerApi* | [**addKycCheck**](docs/Api/CustomerApi.md#addkyccheck) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_check/{kyccheckid} | Add KYC Check
+*CustomerApi* | [**addKycDocument**](docs/Api/CustomerApi.md#addkycdocument) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_documents/{kycdocumentid} | Add KYC Document
+*CustomerApi* | [**addKycMedia**](docs/Api/CustomerApi.md#addkycmedia) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_media/{kycmediaid} | Add KYC Media
+*CustomerApi* | [**addKycStatus**](docs/Api/CustomerApi.md#addkycstatus) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_statuses | Add KYC Status
+*CustomerApi* | [**addSocialMediaHandle**](docs/Api/CustomerApi.md#addsocialmediahandle) | **POST** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/social_media_handles | Create Customer Social Media Handle
+*CustomerApi* | [**createAgent**](docs/Api/CustomerApi.md#createagent) | **POST** /obp/v5.1.0/banks/{bankid}/agents | Create Agent
+*CustomerApi* | [**createCorporateCustomer**](docs/Api/CustomerApi.md#createcorporatecustomer) | **POST** /obp/v6.0.0/banks/{bankid}/corporate-customers | Create Corporate Customer
+*CustomerApi* | [**createCustomer**](docs/Api/CustomerApi.md#createcustomer) | **POST** /obp/v6.0.0/banks/{bankid}/customers | Create Customer
+*CustomerApi* | [**createCustomerAccountLink**](docs/Api/CustomerApi.md#createcustomeraccountlink) | **POST** /obp/v5.0.0/banks/{bankid}/customer-account-links | Create Customer Account Link
+*CustomerApi* | [**createCustomerAddress**](docs/Api/CustomerApi.md#createcustomeraddress) | **POST** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/address | Create Address
+*CustomerApi* | [**createCustomerAttribute**](docs/Api/CustomerApi.md#createcustomerattribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
+*CustomerApi* | [**createCustomerMessage**](docs/Api/CustomerApi.md#createcustomermessage) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Create Customer Message
+*CustomerApi* | [**createMeeting**](docs/Api/CustomerApi.md#createmeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
+*CustomerApi* | [**createOrUpdateCustomerAttributeAttributeDefinition**](docs/Api/CustomerApi.md#createorupdatecustomerattributeattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
+*CustomerApi* | [**createRetailCustomer**](docs/Api/CustomerApi.md#createretailcustomer) | **POST** /obp/v6.0.0/banks/{bankid}/retail-customers | Create Retail Customer
+*CustomerApi* | [**createTaxResidence**](docs/Api/CustomerApi.md#createtaxresidence) | **POST** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residence | Create Tax Residence
+*CustomerApi* | [**createUserCustomerLinks**](docs/Api/CustomerApi.md#createusercustomerlinks) | **POST** /obp/v4.0.0/banks/{bankid}/user_customer_links | Create User Customer Link
+*CustomerApi* | [**deleteCustomerAccountLinkById**](docs/Api/CustomerApi.md#deletecustomeraccountlinkbyid) | **DELETE** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Delete Customer Account Link
+*CustomerApi* | [**deleteCustomerAddress**](docs/Api/CustomerApi.md#deletecustomeraddress) | **DELETE** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses/{customeraddressid} | Delete Customer Address
+*CustomerApi* | [**deleteCustomerAttribute**](docs/Api/CustomerApi.md#deletecustomerattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
+*CustomerApi* | [**deleteCustomerAttributeDefinition**](docs/Api/CustomerApi.md#deletecustomerattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
+*CustomerApi* | [**deleteCustomerCascade**](docs/Api/CustomerApi.md#deletecustomercascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/customers/{customerid} | Delete Customer Cascade
+*CustomerApi* | [**deleteTaxResidence**](docs/Api/CustomerApi.md#deletetaxresidence) | **DELETE** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax_residencies/{taxresidenceid} | Delete Tax Residence
+*CustomerApi* | [**deleteUserCustomerLink**](docs/Api/CustomerApi.md#deleteusercustomerlink) | **DELETE** /obp/v4.0.0/banks/{bankid}/user_customer_links/{usercustomerlinkid} | Delete User Customer Link
+*CustomerApi* | [**getCorporateCustomerByCustomerId**](docs/Api/CustomerApi.md#getcorporatecustomerbycustomerid) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid} | Get Corporate Customer by CUSTOMER_ID
+*CustomerApi* | [**getCorporateCustomerSubsidiaries**](docs/Api/CustomerApi.md#getcorporatecustomersubsidiaries) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid}/subsidiaries | Get Corporate Customer Subsidiaries
+*CustomerApi* | [**getCorporateCustomersAtOneBank**](docs/Api/CustomerApi.md#getcorporatecustomersatonebank) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers | Get Corporate Customers at Bank
+*CustomerApi* | [**getCorrelatedUsersInfoByCustomerId**](docs/Api/CustomerApi.md#getcorrelatedusersinfobycustomerid) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/correlated-users | Get Correlated User Info by Customer
+*CustomerApi* | [**getCrmEvents**](docs/Api/CustomerApi.md#getcrmevents) | **GET** /obp/v1.4.0/banks/{bankid}/crm-events | Get CRM Events
+*CustomerApi* | [**getCustomerAccountLinkById**](docs/Api/CustomerApi.md#getcustomeraccountlinkbyid) | **GET** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Get Customer Account Link by Id
+*CustomerApi* | [**getCustomerAccountLinksByBankIdAccountId**](docs/Api/CustomerApi.md#getcustomeraccountlinksbybankidaccountid) | **GET** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/customer-account-links | Get Customer Account Links by ACCOUNT_ID
+*CustomerApi* | [**getCustomerAccountLinksByCustomerId**](docs/Api/CustomerApi.md#getcustomeraccountlinksbycustomerid) | **GET** /obp/v5.0.0/banks/{bankid}/customers/{customerid}/customer-account-links | Get Customer Account Links by CUSTOMER_ID
+*CustomerApi* | [**getCustomerAddresses**](docs/Api/CustomerApi.md#getcustomeraddresses) | **GET** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses | Get Customer Addresses
+*CustomerApi* | [**getCustomerAttributeById**](docs/Api/CustomerApi.md#getcustomerattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
+*CustomerApi* | [**getCustomerAttributeDefinition**](docs/Api/CustomerApi.md#getcustomerattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
+*CustomerApi* | [**getCustomerAttributes**](docs/Api/CustomerApi.md#getcustomerattributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
+*CustomerApi* | [**getCustomerByCustomerId**](docs/Api/CustomerApi.md#getcustomerbycustomerid) | **GET** /obp/v6.0.0/banks/{bankid}/customers/{customerid} | Get Customer by CUSTOMER_ID
+*CustomerApi* | [**getCustomerByCustomerNumber**](docs/Api/CustomerApi.md#getcustomerbycustomernumber) | **POST** /obp/v6.0.0/banks/{bankid}/customers/customer-number | Get Customer by CUSTOMER_NUMBER
+*CustomerApi* | [**getCustomerChildren**](docs/Api/CustomerApi.md#getcustomerchildren) | **GET** /obp/v6.0.0/banks/{bankid}/customers/{customerid}/children | Get Customer Children
+*CustomerApi* | [**getCustomerMessages**](docs/Api/CustomerApi.md#getcustomermessages) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Get Customer Messages for a Customer
+*CustomerApi* | [**getCustomerOverview**](docs/Api/CustomerApi.md#getcustomeroverview) | **POST** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview | Get Customer Overview
+*CustomerApi* | [**getCustomerOverviewFlat**](docs/Api/CustomerApi.md#getcustomeroverviewflat) | **POST** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview-flat | Get Customer Overview Flat
+*CustomerApi* | [**getCustomersAtAllBanks**](docs/Api/CustomerApi.md#getcustomersatallbanks) | **GET** /obp/v6.0.0/customers | Get Customers at All Banks
+*CustomerApi* | [**getCustomersAtOneBank**](docs/Api/CustomerApi.md#getcustomersatonebank) | **GET** /obp/v6.0.0/banks/{bankid}/customers | Get Customers at Bank
+*CustomerApi* | [**getCustomersByCustomerPhoneNumber**](docs/Api/CustomerApi.md#getcustomersbycustomerphonenumber) | **POST** /obp/v4.0.0/banks/{bankid}/search/customers/mobile-phone-number | Get Customers by MOBILE_PHONE_NUMBER
+*CustomerApi* | [**getCustomersByLegalName**](docs/Api/CustomerApi.md#getcustomersbylegalname) | **POST** /obp/v6.0.0/banks/{bankid}/customers/legal-name | Get Customers by Legal Name
+*CustomerApi* | [**getCustomersForUser**](docs/Api/CustomerApi.md#getcustomersforuser) | **GET** /obp/v3.0.0/users/current/customers | Get Customers for Current User
+*CustomerApi* | [**getCustomersForUserIdsOnly**](docs/Api/CustomerApi.md#getcustomersforuseridsonly) | **GET** /obp/v5.1.0/users/current/customers/customer_ids | Get Customers for Current User (IDs only)
+*CustomerApi* | [**getCustomersMessages**](docs/Api/CustomerApi.md#getcustomersmessages) | **GET** /obp/v1.4.0/banks/{bankid}/customer/messages | Get Customer Messages for all Customers
+*CustomerApi* | [**getCustomersMinimalAtAnyBank**](docs/Api/CustomerApi.md#getcustomersminimalatanybank) | **GET** /obp/v4.0.0/customers-minimal | Get Customers Minimal at Any Bank
+*CustomerApi* | [**getCustomersMinimalAtOneBank**](docs/Api/CustomerApi.md#getcustomersminimalatonebank) | **GET** /obp/v5.0.0/banks/{bankid}/customers-minimal | Get Customers Minimal at Bank
+*CustomerApi* | [**getFirehoseCustomers**](docs/Api/CustomerApi.md#getfirehosecustomers) | **GET** /obp/v3.1.0/banks/{bankid}/firehose/customers | Get Firehose Customers
+*CustomerApi* | [**getKycChecks**](docs/Api/CustomerApi.md#getkycchecks) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_checks | Get Customer KYC Checks
+*CustomerApi* | [**getKycDocuments**](docs/Api/CustomerApi.md#getkycdocuments) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_documents | Get Customer KYC Documents
+*CustomerApi* | [**getKycMedia**](docs/Api/CustomerApi.md#getkycmedia) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_media | Get KYC Media for a customer
+*CustomerApi* | [**getKycStatuses**](docs/Api/CustomerApi.md#getkycstatuses) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_statuses | Get Customer KYC statuses
+*CustomerApi* | [**getMeeting**](docs/Api/CustomerApi.md#getmeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
+*CustomerApi* | [**getMeetings**](docs/Api/CustomerApi.md#getmeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
+*CustomerApi* | [**getMyCorrelatedEntities**](docs/Api/CustomerApi.md#getmycorrelatedentities) | **GET** /obp/v4.0.0/my/correlated-entities | Get Correlated Entities for the current User
+*CustomerApi* | [**getMyCustomersAtAnyBank**](docs/Api/CustomerApi.md#getmycustomersatanybank) | **GET** /obp/v5.0.0/my/customers | Get My Customers
+*CustomerApi* | [**getMyCustomersAtBank**](docs/Api/CustomerApi.md#getmycustomersatbank) | **GET** /obp/v5.0.0/banks/{bankid}/my/customers | Get My Customers at Bank
+*CustomerApi* | [**getRetailCustomerByCustomerId**](docs/Api/CustomerApi.md#getretailcustomerbycustomerid) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers/{customerid} | Get Retail Customer by CUSTOMER_ID
+*CustomerApi* | [**getRetailCustomersAtOneBank**](docs/Api/CustomerApi.md#getretailcustomersatonebank) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers | Get Retail Customers at Bank
+*CustomerApi* | [**getSocialMediaHandles**](docs/Api/CustomerApi.md#getsocialmediahandles) | **GET** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/social_media_handles | Get Customer Social Media Handles
+*CustomerApi* | [**getTaxResidence**](docs/Api/CustomerApi.md#gettaxresidence) | **GET** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residences | Get Tax Residences of Customer
+*CustomerApi* | [**getUserCustomerLinksByCustomerId**](docs/Api/CustomerApi.md#getusercustomerlinksbycustomerid) | **GET** /obp/v4.0.0/banks/{bankid}/user_customer_links/customers/{customerid} | Get User Customer Links by Customer
+*CustomerApi* | [**getUserCustomerLinksByUserId**](docs/Api/CustomerApi.md#getusercustomerlinksbyuserid) | **GET** /obp/v4.0.0/banks/{bankid}/user_customer_links/users/{userid} | Get User Customer Links by User
+*CustomerApi* | [**updateAgentStatus**](docs/Api/CustomerApi.md#updateagentstatus) | **PUT** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Update Agent status
+*CustomerApi* | [**updateCustomerAccountLinkById**](docs/Api/CustomerApi.md#updatecustomeraccountlinkbyid) | **PUT** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Update Customer Account Link by Id
+*CustomerApi* | [**updateCustomerAddress**](docs/Api/CustomerApi.md#updatecustomeraddress) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses/{customeraddressid} | Update the Address of a Customer
+*CustomerApi* | [**updateCustomerAttribute**](docs/Api/CustomerApi.md#updatecustomerattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
+*CustomerApi* | [**updateCustomerBranch**](docs/Api/CustomerApi.md#updatecustomerbranch) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/branch | Update the Branch of a Customer
+*CustomerApi* | [**updateCustomerCreditLimit**](docs/Api/CustomerApi.md#updatecustomercreditlimit) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/credit-limit | Update the credit limit of a Customer
+*CustomerApi* | [**updateCustomerCreditRatingAndSource**](docs/Api/CustomerApi.md#updatecustomercreditratingandsource) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/credit-rating-and-source | Update the credit rating and source of a Customer
+*CustomerApi* | [**updateCustomerData**](docs/Api/CustomerApi.md#updatecustomerdata) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/data | Update the other data of a Customer
+*CustomerApi* | [**updateCustomerEmail**](docs/Api/CustomerApi.md#updatecustomeremail) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/email | Update the email of a Customer
+*CustomerApi* | [**updateCustomerIdentity**](docs/Api/CustomerApi.md#updatecustomeridentity) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/identity | Update the identity data of a Customer
+*CustomerApi* | [**updateCustomerMobileNumber**](docs/Api/CustomerApi.md#updatecustomermobilenumber) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/mobile-number | Update the mobile number of a Customer
+*CustomerApi* | [**updateCustomerNumber**](docs/Api/CustomerApi.md#updatecustomernumber) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/number | Update the number of a Customer
+*CustomerAttributeApi* | [**createCustomerAttribute**](docs/Api/CustomerAttributeApi.md#createcustomerattribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
+*CustomerAttributeApi* | [**createOrUpdateCustomerAttributeAttributeDefinition**](docs/Api/CustomerAttributeApi.md#createorupdatecustomerattributeattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
+*CustomerAttributeApi* | [**deleteCustomerAttribute**](docs/Api/CustomerAttributeApi.md#deletecustomerattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
+*CustomerAttributeApi* | [**deleteCustomerAttributeDefinition**](docs/Api/CustomerAttributeApi.md#deletecustomerattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
+*CustomerAttributeApi* | [**getCustomerAttributeById**](docs/Api/CustomerAttributeApi.md#getcustomerattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
+*CustomerAttributeApi* | [**getCustomerAttributeDefinition**](docs/Api/CustomerAttributeApi.md#getcustomerattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
+*CustomerAttributeApi* | [**getCustomerAttributes**](docs/Api/CustomerAttributeApi.md#getcustomerattributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
+*CustomerAttributeApi* | [**updateCustomerAttribute**](docs/Api/CustomerAttributeApi.md#updatecustomerattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
+*CustomerMeetingApi* | [**createMeeting**](docs/Api/CustomerMeetingApi.md#createmeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
+*CustomerMeetingApi* | [**getMeeting**](docs/Api/CustomerMeetingApi.md#getmeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
+*CustomerMeetingApi* | [**getMeetings**](docs/Api/CustomerMeetingApi.md#getmeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
+*CustomerMessageApi* | [**addCustomerMessage**](docs/Api/CustomerMessageApi.md#addcustomermessage) | **POST** /obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages | Create Customer Message
+*CustomerMessageApi* | [**createCustomerMessage**](docs/Api/CustomerMessageApi.md#createcustomermessage) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Create Customer Message
+*CustomerMessageApi* | [**getCustomerMessages**](docs/Api/CustomerMessageApi.md#getcustomermessages) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Get Customer Messages for a Customer
+*CustomerMessageApi* | [**getCustomersMessages**](docs/Api/CustomerMessageApi.md#getcustomersmessages) | **GET** /obp/v1.4.0/banks/{bankid}/customer/messages | Get Customer Messages for all Customers
+*DAuthApi* | [**createUserWithAccountAccessById**](docs/Api/DAuthApi.md#createuserwithaccountaccessbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+*DAuthApi* | [**createUserWithRoles**](docs/Api/DAuthApi.md#createuserwithroles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
+*DataWarehouseApi* | [**dataWarehouseSearch**](docs/Api/DataWarehouseApi.md#datawarehousesearch) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search
+*DataWarehouseApi* | [**dataWarehouseStatistics**](docs/Api/DataWarehouseApi.md#datawarehousestatistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics
+*DirectDebitApi* | [**createDirectDebit**](docs/Api/DirectDebitApi.md#createdirectdebit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
+*DirectDebitApi* | [**createDirectDebitManagement**](docs/Api/DirectDebitApi.md#createdirectdebitmanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
+*DirectoryApi* | [**createConsumerDynamicRegistration**](docs/Api/DirectoryApi.md#createconsumerdynamicregistration) | **POST** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
+*DirectoryApi* | [**createRegulatedEntity**](docs/Api/DirectoryApi.md#createregulatedentity) | **POST** /obp/v5.1.0/regulated-entities | Create Regulated Entity
+*DirectoryApi* | [**createRegulatedEntityAttribute**](docs/Api/DirectoryApi.md#createregulatedentityattribute) | **POST** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
+*DirectoryApi* | [**deleteRegulatedEntity**](docs/Api/DirectoryApi.md#deleteregulatedentity) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
+*DirectoryApi* | [**deleteRegulatedEntityAttribute**](docs/Api/DirectoryApi.md#deleteregulatedentityattribute) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
+*DirectoryApi* | [**getAllRegulatedEntityAttributes**](docs/Api/DirectoryApi.md#getallregulatedentityattributes) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
+*DirectoryApi* | [**getRegulatedEntityAttributeById**](docs/Api/DirectoryApi.md#getregulatedentityattributebyid) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
+*DirectoryApi* | [**getRegulatedEntityById**](docs/Api/DirectoryApi.md#getregulatedentitybyid) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
+*DirectoryApi* | [**regulatedEntities**](docs/Api/DirectoryApi.md#regulatedentities) | **GET** /obp/v5.1.0/regulated-entities | Get Regulated Entities
+*DirectoryApi* | [**updateRegulatedEntityAttribute**](docs/Api/DirectoryApi.md#updateregulatedentityattribute) | **PUT** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
+*DocumentationApi* | [**getApiGlossary**](docs/Api/DocumentationApi.md#getapiglossary) | **GET** /obp/v3.0.0/api/glossary | Get Glossary of the API
+*DocumentationApi* | [**getBankLevelDynamicResourceDocsObp**](docs/Api/DocumentationApi.md#getbankleveldynamicresourcedocsobp) | **GET** /obp/v1.4.0/banks/{bankid}/resource-docs/{apiversion}/obp | Get Bank Level Dynamic Resource Docs
+*DocumentationApi* | [**getMessageDocs**](docs/Api/DocumentationApi.md#getmessagedocs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
+*DocumentationApi* | [**getMessageDocsJsonSchema**](docs/Api/DocumentationApi.md#getmessagedocsjsonschema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
+*DocumentationApi* | [**getMessageDocsSwagger**](docs/Api/DocumentationApi.md#getmessagedocsswagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
+*DocumentationApi* | [**getResourceDocsObp**](docs/Api/DocumentationApi.md#getresourcedocsobp) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/obp | Get Resource Docs
+*DocumentationApi* | [**getResourceDocsOpenAPI31**](docs/Api/DocumentationApi.md#getresourcedocsopenapi31) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/openapi | Get OpenAPI 3.1 documentation
+*DocumentationApi* | [**getResourceDocsSwagger**](docs/Api/DocumentationApi.md#getresourcedocsswagger) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/swagger | Get Swagger documentation
+*DocumentationApi* | [**getScannedApiVersions**](docs/Api/DocumentationApi.md#getscannedapiversions) | **GET** /obp/v6.0.0/api/versions | Get Scanned API Versions
+*DynamicEndpointManageApi* | [**createBankLevelDynamicEndpoint**](docs/Api/DynamicEndpointManageApi.md#createbankleveldynamicendpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint
+*DynamicEndpointManageApi* | [**createDynamicEndpoint**](docs/Api/DynamicEndpointManageApi.md#createdynamicendpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint
+*DynamicEndpointManageApi* | [**deleteBankLevelDynamicEndpoint**](docs/Api/DynamicEndpointManageApi.md#deletebankleveldynamicendpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} | Delete Bank Level Dynamic Endpoint
+*DynamicEndpointManageApi* | [**deleteDynamicEndpoint**](docs/Api/DynamicEndpointManageApi.md#deletedynamicendpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Delete Dynamic Endpoint
+*DynamicEndpointManageApi* | [**deleteMyDynamicEndpoint**](docs/Api/DynamicEndpointManageApi.md#deletemydynamicendpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint
+*DynamicEndpointManageApi* | [**getBankLevelDynamicEndpoint**](docs/Api/DynamicEndpointManageApi.md#getbankleveldynamicendpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} | Get Bank Level Dynamic Endpoint
+*DynamicEndpointManageApi* | [**getBankLevelDynamicEndpoints**](docs/Api/DynamicEndpointManageApi.md#getbankleveldynamicendpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints
+*DynamicEndpointManageApi* | [**getDynamicEndpoint**](docs/Api/DynamicEndpointManageApi.md#getdynamicendpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint
+*DynamicEndpointManageApi* | [**getDynamicEndpoints**](docs/Api/DynamicEndpointManageApi.md#getdynamicendpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints | Get Dynamic Endpoints
+*DynamicEndpointManageApi* | [**getMyDynamicEndpoints**](docs/Api/DynamicEndpointManageApi.md#getmydynamicendpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints
+*DynamicEndpointManageApi* | [**updateBankLevelDynamicEndpointHost**](docs/Api/DynamicEndpointManageApi.md#updatebankleveldynamicendpointhost) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host | Update Bank Level Dynamic Endpoint Host
+*DynamicEndpointManageApi* | [**updateDynamicEndpointHost**](docs/Api/DynamicEndpointManageApi.md#updatedynamicendpointhost) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host | Update Dynamic Endpoint Host
+*DynamicEntityApi* | [**cleanupOrphanedDynamicEntityRecords**](docs/Api/DynamicEntityApi.md#cleanuporphaneddynamicentityrecords) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
+*DynamicEntityApi* | [**getAvailablePersonalDynamicEntities**](docs/Api/DynamicEntityApi.md#getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
+*DynamicEntityApi* | [**getDynamicEntityDiagnostics**](docs/Api/DynamicEntityApi.md#getdynamicentitydiagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
+*DynamicEntityApi* | [**getReferenceTypes**](docs/Api/DynamicEntityApi.md#getreferencetypes) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
+*DynamicEntityManageApi* | [**backupBankLevelDynamicEntity**](docs/Api/DynamicEntityManageApi.md#backupbankleveldynamicentity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup | Backup Bank Level Dynamic Entity
+*DynamicEntityManageApi* | [**backupSystemDynamicEntity**](docs/Api/DynamicEntityManageApi.md#backupsystemdynamicentity) | **POST** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup | Backup System Level Dynamic Entity
+*DynamicEntityManageApi* | [**createBankLevelDynamicEntity**](docs/Api/DynamicEntityManageApi.md#createbankleveldynamicentity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Create Bank Level Dynamic Entity
+*DynamicEntityManageApi* | [**createSystemDynamicEntity**](docs/Api/DynamicEntityManageApi.md#createsystemdynamicentity) | **POST** /obp/v6.0.0/management/system-dynamic-entities | Create System Level Dynamic Entity
+*DynamicEntityManageApi* | [**deleteBankLevelDynamicEntity**](docs/Api/DynamicEntityManageApi.md#deletebankleveldynamicentity) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Delete Bank Level Dynamic Entity
+*DynamicEntityManageApi* | [**deleteMyDynamicEntity**](docs/Api/DynamicEntityManageApi.md#deletemydynamicentity) | **DELETE** /obp/v4.0.0/my/dynamic-entities/{dynamicentityid} | Delete My Dynamic Entity
+*DynamicEntityManageApi* | [**deleteSystemDynamicEntity**](docs/Api/DynamicEntityManageApi.md#deletesystemdynamicentity) | **DELETE** /obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid} | Delete System Level Dynamic Entity
+*DynamicEntityManageApi* | [**deleteSystemDynamicEntityCascade**](docs/Api/DynamicEntityManageApi.md#deletesystemdynamicentitycascade) | **DELETE** /obp/v6.0.0/management/system-dynamic-entities/cascade/{dynamicentityid} | Delete System Level Dynamic Entity Cascade
+*DynamicEntityManageApi* | [**getBankLevelDynamicEntities**](docs/Api/DynamicEntityManageApi.md#getbankleveldynamicentities) | **GET** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Get Bank Level Dynamic Entities
+*DynamicEntityManageApi* | [**getMyDynamicEntities**](docs/Api/DynamicEntityManageApi.md#getmydynamicentities) | **GET** /obp/v6.0.0/my/dynamic-entities | Get My Dynamic Entities
+*DynamicEntityManageApi* | [**getSystemDynamicEntities**](docs/Api/DynamicEntityManageApi.md#getsystemdynamicentities) | **GET** /obp/v6.0.0/management/system-dynamic-entities | Get System Dynamic Entities
+*DynamicEntityManageApi* | [**updateBankLevelDynamicEntity**](docs/Api/DynamicEntityManageApi.md#updatebankleveldynamicentity) | **PUT** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Update Bank Level Dynamic Entity
+*DynamicEntityManageApi* | [**updateMyDynamicEntity**](docs/Api/DynamicEntityManageApi.md#updatemydynamicentity) | **PUT** /obp/v6.0.0/my/dynamic-entities/{dynamicentityid} | Update My Dynamic Entity
+*DynamicEntityManageApi* | [**updateSystemDynamicEntity**](docs/Api/DynamicEntityManageApi.md#updatesystemdynamicentity) | **PUT** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid} | Update System Level Dynamic Entity
+*DynamicMessageDocApi* | [**createBankLevelDynamicMessageDoc**](docs/Api/DynamicMessageDocApi.md#createbankleveldynamicmessagedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc
+*DynamicMessageDocApi* | [**createDynamicMessageDoc**](docs/Api/DynamicMessageDocApi.md#createdynamicmessagedoc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc
+*DynamicMessageDocApi* | [**deleteBankLevelDynamicMessageDoc**](docs/Api/DynamicMessageDocApi.md#deletebankleveldynamicmessagedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc
+*DynamicMessageDocApi* | [**deleteDynamicMessageDoc**](docs/Api/DynamicMessageDocApi.md#deletedynamicmessagedoc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc
+*DynamicMessageDocApi* | [**getAllBankLevelDynamicMessageDocs**](docs/Api/DynamicMessageDocApi.md#getallbankleveldynamicmessagedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs
+*DynamicMessageDocApi* | [**getAllDynamicMessageDocs**](docs/Api/DynamicMessageDocApi.md#getalldynamicmessagedocs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs
+*DynamicMessageDocApi* | [**getBankLevelDynamicMessageDoc**](docs/Api/DynamicMessageDocApi.md#getbankleveldynamicmessagedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc
+*DynamicMessageDocApi* | [**getDynamicMessageDoc**](docs/Api/DynamicMessageDocApi.md#getdynamicmessagedoc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc
+*DynamicMessageDocApi* | [**updateBankLevelDynamicMessageDoc**](docs/Api/DynamicMessageDocApi.md#updatebankleveldynamicmessagedoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc
+*DynamicMessageDocApi* | [**updateDynamicMessageDoc**](docs/Api/DynamicMessageDocApi.md#updatedynamicmessagedoc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc
+*DynamicResourceDocApi* | [**buildDynamicEndpointTemplate**](docs/Api/DynamicResourceDocApi.md#builddynamicendpointtemplate) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code
+*DynamicResourceDocApi* | [**createBankLevelDynamicResourceDoc**](docs/Api/DynamicResourceDocApi.md#createbankleveldynamicresourcedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc
+*DynamicResourceDocApi* | [**createDynamicResourceDoc**](docs/Api/DynamicResourceDocApi.md#createdynamicresourcedoc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc
+*DynamicResourceDocApi* | [**deleteBankLevelDynamicResourceDoc**](docs/Api/DynamicResourceDocApi.md#deletebankleveldynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc
+*DynamicResourceDocApi* | [**deleteDynamicResourceDoc**](docs/Api/DynamicResourceDocApi.md#deletedynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc
+*DynamicResourceDocApi* | [**getAllBankLevelDynamicResourceDocs**](docs/Api/DynamicResourceDocApi.md#getallbankleveldynamicresourcedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs
+*DynamicResourceDocApi* | [**getAllDynamicResourceDocs**](docs/Api/DynamicResourceDocApi.md#getalldynamicresourcedocs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs
+*DynamicResourceDocApi* | [**getBankLevelDynamicResourceDoc**](docs/Api/DynamicResourceDocApi.md#getbankleveldynamicresourcedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id
+*DynamicResourceDocApi* | [**getDynamicResourceDoc**](docs/Api/DynamicResourceDocApi.md#getdynamicresourcedoc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id
+*DynamicResourceDocApi* | [**updateBankLevelDynamicResourceDoc**](docs/Api/DynamicResourceDocApi.md#updatebankleveldynamicresourcedoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc
+*DynamicResourceDocApi* | [**updateDynamicResourceDoc**](docs/Api/DynamicResourceDocApi.md#updatedynamicresourcedoc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc
+*EndpointMappingApi* | [**createBankLevelEndpointMapping**](docs/Api/EndpointMappingApi.md#createbanklevelendpointmapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping
+*EndpointMappingApi* | [**createEndpointMapping**](docs/Api/EndpointMappingApi.md#createendpointmapping) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping
+*EndpointMappingApi* | [**deleteBankLevelEndpointMapping**](docs/Api/EndpointMappingApi.md#deletebanklevelendpointmapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping
+*EndpointMappingApi* | [**deleteEndpointMapping**](docs/Api/EndpointMappingApi.md#deleteendpointmapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping
+*EndpointMappingApi* | [**getAllBankLevelEndpointMappings**](docs/Api/EndpointMappingApi.md#getallbanklevelendpointmappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings
+*EndpointMappingApi* | [**getAllEndpointMappings**](docs/Api/EndpointMappingApi.md#getallendpointmappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings
+*EndpointMappingApi* | [**getBankLevelEndpointMapping**](docs/Api/EndpointMappingApi.md#getbanklevelendpointmapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping
+*EndpointMappingApi* | [**getEndpointMapping**](docs/Api/EndpointMappingApi.md#getendpointmapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id
+*EndpointMappingApi* | [**updateBankLevelEndpointMapping**](docs/Api/EndpointMappingApi.md#updatebanklevelendpointmapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping
+*EndpointMappingApi* | [**updateEndpointMapping**](docs/Api/EndpointMappingApi.md#updateendpointmapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping
+*EntitlementApi* | [**addEntitlement**](docs/Api/EntitlementApi.md#addentitlement) | **POST** /obp/v2.0.0/users/{userid}/entitlements | Add Entitlement for a User
+*EntitlementApi* | [**addEntitlementRequest**](docs/Api/EntitlementApi.md#addentitlementrequest) | **POST** /obp/v3.0.0/entitlement-requests | Create Entitlement Request for current User
+*EntitlementApi* | [**addUserToGroup**](docs/Api/EntitlementApi.md#addusertogroup) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
+*EntitlementApi* | [**createUserWithRoles**](docs/Api/EntitlementApi.md#createuserwithroles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
+*EntitlementApi* | [**deleteEntitlement**](docs/Api/EntitlementApi.md#deleteentitlement) | **DELETE** /obp/v6.0.0/entitlements/{entitlementid} | Delete Entitlement
+*EntitlementApi* | [**deleteEntitlementRequest**](docs/Api/EntitlementApi.md#deleteentitlementrequest) | **DELETE** /obp/v3.0.0/entitlement-requests/{entitlementrequestid} | Delete Entitlement Request
+*EntitlementApi* | [**getAllEntitlementRequests**](docs/Api/EntitlementApi.md#getallentitlementrequests) | **GET** /obp/v3.0.0/entitlement-requests | Get all Entitlement Requests
+*EntitlementApi* | [**getAllEntitlements**](docs/Api/EntitlementApi.md#getallentitlements) | **GET** /obp/v3.1.0/entitlements | Get all Entitlements
+*EntitlementApi* | [**getEntitlementRequests**](docs/Api/EntitlementApi.md#getentitlementrequests) | **GET** /obp/v3.0.0/users/{userid}/entitlement-requests | Get Entitlement Requests for a User
+*EntitlementApi* | [**getEntitlementRequestsForCurrentUser**](docs/Api/EntitlementApi.md#getentitlementrequestsforcurrentuser) | **GET** /obp/v3.0.0/my/entitlement-requests | Get Entitlement Requests for the current User
+*EntitlementApi* | [**getEntitlements**](docs/Api/EntitlementApi.md#getentitlements) | **GET** /obp/v4.0.0/users/{userid}/entitlements | Get Entitlements for User
+*EntitlementApi* | [**getEntitlementsAndPermissions**](docs/Api/EntitlementApi.md#getentitlementsandpermissions) | **GET** /obp/v5.1.0/users/{userid}/entitlements-and-permissions | Get Entitlements and Permissions for a User
+*EntitlementApi* | [**getEntitlementsByBankAndUser**](docs/Api/EntitlementApi.md#getentitlementsbybankanduser) | **GET** /obp/v2.1.0/banks/{bankid}/users/{userid}/entitlements | Get Entitlements for User at Bank
+*EntitlementApi* | [**getEntitlementsForBank**](docs/Api/EntitlementApi.md#getentitlementsforbank) | **GET** /obp/v4.0.0/banks/{bankid}/entitlements | Get Entitlements for One Bank
+*EntitlementApi* | [**getEntitlementsForCurrentUser**](docs/Api/EntitlementApi.md#getentitlementsforcurrentuser) | **GET** /obp/v3.0.0/my/entitlements | Get Entitlements for the current User
+*EntitlementApi* | [**getGroupEntitlements**](docs/Api/EntitlementApi.md#getgroupentitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements
+*EntitlementApi* | [**getPermissionsForBankAccount**](docs/Api/EntitlementApi.md#getpermissionsforbankaccount) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
+*EntitlementApi* | [**getRolesWithEntitlementCountsAtAllBanks**](docs/Api/EntitlementApi.md#getroleswithentitlementcountsatallbanks) | **GET** /obp/v6.0.0/management/roles-with-entitlement-counts | Get Roles with Entitlement Counts
+*EntitlementApi* | [**getUserGroupMemberships**](docs/Api/EntitlementApi.md#getusergroupmemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships
+*EntitlementApi* | [**removeUserFromGroup**](docs/Api/EntitlementApi.md#removeuserfromgroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
+*ExperimentalApi* | [**createMeeting**](docs/Api/ExperimentalApi.md#createmeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
+*ExperimentalApi* | [**getMeeting**](docs/Api/ExperimentalApi.md#getmeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
+*ExperimentalApi* | [**getMeetings**](docs/Api/ExperimentalApi.md#getmeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
+*FXApi* | [**createFx**](docs/Api/FXApi.md#createfx) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx
+*FXApi* | [**getCurrenciesAtBank**](docs/Api/FXApi.md#getcurrenciesatbank) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank
+*FXApi* | [**getCurrentFxRate**](docs/Api/FXApi.md#getcurrentfxrate) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate
+*FirehoseDataApi* | [**getFastFirehoseAccountsAtOneBank**](docs/Api/FirehoseDataApi.md#getfastfirehoseaccountsatonebank) | **GET** /obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts | Get Fast Firehose Accounts at Bank
+*FirehoseDataApi* | [**getFirehoseAccountsAtOneBank**](docs/Api/FirehoseDataApi.md#getfirehoseaccountsatonebank) | **GET** /obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid} | Get Firehose Accounts at Bank
+*FirehoseDataApi* | [**getFirehoseCustomers**](docs/Api/FirehoseDataApi.md#getfirehosecustomers) | **GET** /obp/v3.1.0/banks/{bankid}/firehose/customers | Get Firehose Customers
+*FirehoseDataApi* | [**getFirehoseTransactionsForBankAccount**](docs/Api/FirehoseDataApi.md#getfirehosetransactionsforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
+*GroupApi* | [**addUserToGroup**](docs/Api/GroupApi.md#addusertogroup) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
+*GroupApi* | [**createGroup**](docs/Api/GroupApi.md#creategroup) | **POST** /obp/v6.0.0/management/groups | Create Group
+*GroupApi* | [**deleteGroup**](docs/Api/GroupApi.md#deletegroup) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group
+*GroupApi* | [**getGroup**](docs/Api/GroupApi.md#getgroup) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group
+*GroupApi* | [**getGroupEntitlements**](docs/Api/GroupApi.md#getgroupentitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements
+*GroupApi* | [**getGroups**](docs/Api/GroupApi.md#getgroups) | **GET** /obp/v6.0.0/management/groups | Get Groups
+*GroupApi* | [**getUserGroupMemberships**](docs/Api/GroupApi.md#getusergroupmemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships
+*GroupApi* | [**removeUserFromGroup**](docs/Api/GroupApi.md#removeuserfromgroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
+*GroupApi* | [**updateGroup**](docs/Api/GroupApi.md#updategroup) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group
+*JSONSchemaValidationApi* | [**createJsonSchemaValidation**](docs/Api/JSONSchemaValidationApi.md#createjsonschemavalidation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation
+*JSONSchemaValidationApi* | [**deleteJsonSchemaValidation**](docs/Api/JSONSchemaValidationApi.md#deletejsonschemavalidation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation
+*JSONSchemaValidationApi* | [**getAllJsonSchemaValidations**](docs/Api/JSONSchemaValidationApi.md#getalljsonschemavalidations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations
+*JSONSchemaValidationApi* | [**getAllJsonSchemaValidationsPublic**](docs/Api/JSONSchemaValidationApi.md#getalljsonschemavalidationspublic) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public
+*JSONSchemaValidationApi* | [**getJsonSchemaValidation**](docs/Api/JSONSchemaValidationApi.md#getjsonschemavalidation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation
+*JSONSchemaValidationApi* | [**updateJsonSchemaValidation**](docs/Api/JSONSchemaValidationApi.md#updatejsonschemavalidation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation
+*KYCApi* | [**addKycCheck**](docs/Api/KYCApi.md#addkyccheck) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_check/{kyccheckid} | Add KYC Check
+*KYCApi* | [**addKycDocument**](docs/Api/KYCApi.md#addkycdocument) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_documents/{kycdocumentid} | Add KYC Document
+*KYCApi* | [**addKycMedia**](docs/Api/KYCApi.md#addkycmedia) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_media/{kycmediaid} | Add KYC Media
+*KYCApi* | [**addKycStatus**](docs/Api/KYCApi.md#addkycstatus) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_statuses | Add KYC Status
+*KYCApi* | [**createTaxResidence**](docs/Api/KYCApi.md#createtaxresidence) | **POST** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residence | Create Tax Residence
+*KYCApi* | [**createUserInvitation**](docs/Api/KYCApi.md#createuserinvitation) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitation | Create User Invitation
+*KYCApi* | [**deleteCustomerAddress**](docs/Api/KYCApi.md#deletecustomeraddress) | **DELETE** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses/{customeraddressid} | Delete Customer Address
+*KYCApi* | [**deleteTaxResidence**](docs/Api/KYCApi.md#deletetaxresidence) | **DELETE** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax_residencies/{taxresidenceid} | Delete Tax Residence
+*KYCApi* | [**getCustomerAddresses**](docs/Api/KYCApi.md#getcustomeraddresses) | **GET** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses | Get Customer Addresses
+*KYCApi* | [**getCustomerByCustomerNumber**](docs/Api/KYCApi.md#getcustomerbycustomernumber) | **POST** /obp/v6.0.0/banks/{bankid}/customers/customer-number | Get Customer by CUSTOMER_NUMBER
+*KYCApi* | [**getCustomerOverview**](docs/Api/KYCApi.md#getcustomeroverview) | **POST** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview | Get Customer Overview
+*KYCApi* | [**getCustomerOverviewFlat**](docs/Api/KYCApi.md#getcustomeroverviewflat) | **POST** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview-flat | Get Customer Overview Flat
+*KYCApi* | [**getCustomersByCustomerPhoneNumber**](docs/Api/KYCApi.md#getcustomersbycustomerphonenumber) | **POST** /obp/v4.0.0/banks/{bankid}/search/customers/mobile-phone-number | Get Customers by MOBILE_PHONE_NUMBER
+*KYCApi* | [**getCustomersByLegalName**](docs/Api/KYCApi.md#getcustomersbylegalname) | **POST** /obp/v6.0.0/banks/{bankid}/customers/legal-name | Get Customers by Legal Name
+*KYCApi* | [**getKycChecks**](docs/Api/KYCApi.md#getkycchecks) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_checks | Get Customer KYC Checks
+*KYCApi* | [**getKycDocuments**](docs/Api/KYCApi.md#getkycdocuments) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_documents | Get Customer KYC Documents
+*KYCApi* | [**getKycMedia**](docs/Api/KYCApi.md#getkycmedia) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_media | Get KYC Media for a customer
+*KYCApi* | [**getKycStatuses**](docs/Api/KYCApi.md#getkycstatuses) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_statuses | Get Customer KYC statuses
+*KYCApi* | [**getTaxResidence**](docs/Api/KYCApi.md#gettaxresidence) | **GET** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residences | Get Tax Residences of Customer
+*KYCApi* | [**getUserInvitationAnonymous**](docs/Api/KYCApi.md#getuserinvitationanonymous) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitation Information
+*LogCacheApi* | [**logCacheAllEndpoint**](docs/Api/LogCacheApi.md#logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
+*LogCacheApi* | [**logCacheDebugEndpoint**](docs/Api/LogCacheApi.md#logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
+*LogCacheApi* | [**logCacheErrorEndpoint**](docs/Api/LogCacheApi.md#logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
+*LogCacheApi* | [**logCacheInfoEndpoint**](docs/Api/LogCacheApi.md#logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
+*LogCacheApi* | [**logCacheTraceEndpoint**](docs/Api/LogCacheApi.md#logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
+*LogCacheApi* | [**logCacheWarningEndpoint**](docs/Api/LogCacheApi.md#logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
+*MandateApi* | [**createMandate**](docs/Api/MandateApi.md#createmandate) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates | Create Mandate
+*MandateApi* | [**createMandateProvision**](docs/Api/MandateApi.md#createmandateprovision) | **POST** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions | Create Mandate Provision
+*MandateApi* | [**createSignatoryPanel**](docs/Api/MandateApi.md#createsignatorypanel) | **POST** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels | Create Signatory Panel
+*MandateApi* | [**deleteMandate**](docs/Api/MandateApi.md#deletemandate) | **DELETE** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates/{mandateid} | Delete Mandate
+*MandateApi* | [**deleteMandateProvision**](docs/Api/MandateApi.md#deletemandateprovision) | **DELETE** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions/{provisionid} | Delete Mandate Provision
+*MandateApi* | [**deleteSignatoryPanel**](docs/Api/MandateApi.md#deletesignatorypanel) | **DELETE** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels/{panelid} | Delete Signatory Panel
+*MandateApi* | [**getMandate**](docs/Api/MandateApi.md#getmandate) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates/{mandateid} | Get Mandate
+*MandateApi* | [**getMandateProvision**](docs/Api/MandateApi.md#getmandateprovision) | **GET** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions/{provisionid} | Get Mandate Provision
+*MandateApi* | [**getMandateProvisions**](docs/Api/MandateApi.md#getmandateprovisions) | **GET** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions | Get Mandate Provisions
+*MandateApi* | [**getMandates**](docs/Api/MandateApi.md#getmandates) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates | Get Mandates for Account
+*MandateApi* | [**getSignatoryPanel**](docs/Api/MandateApi.md#getsignatorypanel) | **GET** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels/{panelid} | Get Signatory Panel
+*MandateApi* | [**getSignatoryPanels**](docs/Api/MandateApi.md#getsignatorypanels) | **GET** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels | Get Signatory Panels
+*MandateApi* | [**updateMandate**](docs/Api/MandateApi.md#updatemandate) | **PUT** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates/{mandateid} | Update Mandate
+*MandateApi* | [**updateMandateProvision**](docs/Api/MandateApi.md#updatemandateprovision) | **PUT** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions/{provisionid} | Update Mandate Provision
+*MandateApi* | [**updateSignatoryPanel**](docs/Api/MandateApi.md#updatesignatorypanel) | **PUT** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels/{panelid} | Update Signatory Panel
+*MessageDocApi* | [**getMessageDocs**](docs/Api/MessageDocApi.md#getmessagedocs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
+*MessageDocApi* | [**getMessageDocsJsonSchema**](docs/Api/MessageDocApi.md#getmessagedocsjsonschema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
+*MessageDocApi* | [**getMessageDocsSwagger**](docs/Api/MessageDocApi.md#getmessagedocsswagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
+*MethodRoutingApi* | [**createMethodRouting**](docs/Api/MethodRoutingApi.md#createmethodrouting) | **POST** /obp/v3.1.0/management/method_routings | Create MethodRouting
+*MethodRoutingApi* | [**deleteMethodRouting**](docs/Api/MethodRoutingApi.md#deletemethodrouting) | **DELETE** /obp/v3.1.0/management/method_routings/{methodroutingid} | Delete MethodRouting
+*MethodRoutingApi* | [**getConnectorMethodNames**](docs/Api/MethodRoutingApi.md#getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+*MethodRoutingApi* | [**getMethodRoutings**](docs/Api/MethodRoutingApi.md#getmethodroutings) | **GET** /obp/v3.1.0/management/method_routings | Get MethodRoutings
+*MethodRoutingApi* | [**updateMethodRouting**](docs/Api/MethodRoutingApi.md#updatemethodrouting) | **PUT** /obp/v3.1.0/management/method_routings/{methodroutingid} | Update MethodRouting
+*MetricApi* | [**elasticSearchMetrics**](docs/Api/MetricApi.md#elasticsearchmetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
+*MetricApi* | [**getAggregateMetrics**](docs/Api/MetricApi.md#getaggregatemetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
+*MetricApi* | [**getConnectorCallCounts**](docs/Api/MetricApi.md#getconnectorcallcounts) | **GET** /obp/v6.0.0/management/connector/metrics/counts | Get Connector Call Counts
+*MetricApi* | [**getConnectorMetrics**](docs/Api/MetricApi.md#getconnectormetrics) | **GET** /obp/v2.2.0/management/connector/metrics | Get Connector Metrics
+*MetricApi* | [**getConnectorTraces**](docs/Api/MetricApi.md#getconnectortraces) | **GET** /obp/v6.0.0/management/connector/traces | Get Connector Traces
+*MetricApi* | [**getMetrics**](docs/Api/MetricApi.md#getmetrics) | **GET** /obp/v6.0.0/management/metrics | Get Metrics
+*MetricApi* | [**getMetricsAtBank**](docs/Api/MetricApi.md#getmetricsatbank) | **GET** /obp/v5.0.0/management/metrics/banks/{bankid} | Get Metrics at Bank
+*MetricApi* | [**getMetricsTopConsumers**](docs/Api/MetricApi.md#getmetricstopconsumers) | **GET** /obp/v3.1.0/management/metrics/top-consumers | Get Top Consumers
+*MetricApi* | [**getPopularApis**](docs/Api/MetricApi.md#getpopularapis) | **GET** /obp/v6.0.0/api/popular-endpoints | Get Popular Endpoints
+*MetricApi* | [**getTopAPIs**](docs/Api/MetricApi.md#gettopapis) | **GET** /obp/v6.0.0/management/metrics/top-apis | Get Top APIs
+*OAuthApi* | [**getOAuth2ServerJWKsURIs**](docs/Api/OAuthApi.md#getoauth2serverjwksuris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
+*OAuthApi* | [**getObpConnectorLoopback**](docs/Api/OAuthApi.md#getobpconnectorloopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
+*OAuthApi* | [**getOidcClient**](docs/Api/OAuthApi.md#getoidcclient) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
+*OAuthApi* | [**verifyOidcClient**](docs/Api/OAuthApi.md#verifyoidcclient) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
+*OIDCApi* | [**getOAuth2ServerJWKsURIs**](docs/Api/OIDCApi.md#getoauth2serverjwksuris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
+*OIDCApi* | [**getObpConnectorLoopback**](docs/Api/OIDCApi.md#getobpconnectorloopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
+*OIDCApi* | [**getOidcClient**](docs/Api/OIDCApi.md#getoidcclient) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
+*OIDCApi* | [**verifyOidcClient**](docs/Api/OIDCApi.md#verifyoidcclient) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
+*OldStyleApi* | [**elasticSearchMetrics**](docs/Api/OldStyleApi.md#elasticsearchmetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
+*OnboardingApi* | [**createAccount**](docs/Api/OnboardingApi.md#createaccount) | **PUT** /obp/v5.0.0/banks/{bankid}/accounts/{accountid} | Create Account (PUT)
+*OnboardingApi* | [**createUser**](docs/Api/OnboardingApi.md#createuser) | **POST** /obp/v6.0.0/users | Create User (v6.0.0)
+*OwnerViewRequiredApi* | [**createUserWithAccountAccessById**](docs/Api/OwnerViewRequiredApi.md#createuserwithaccountaccessbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+*OwnerViewRequiredApi* | [**grantUserAccessToViewById**](docs/Api/OwnerViewRequiredApi.md#grantuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
+*OwnerViewRequiredApi* | [**revokeUserAccessToViewById**](docs/Api/OwnerViewRequiredApi.md#revokeuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
+*PSD2Api* | [**answerConsentChallenge**](docs/Api/PSD2Api.md#answerconsentchallenge) | **POST** /obp/v3.1.0/banks/{bankid}/consents/{consentid}/challenge | Answer Consent Challenge
+*PSD2Api* | [**answerTransactionRequestChallenge**](docs/Api/PSD2Api.md#answertransactionrequestchallenge) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge
+*PSD2Api* | [**checkFundsAvailable**](docs/Api/PSD2Api.md#checkfundsavailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
+*PSD2Api* | [**corePrivateAccountsAllBanks**](docs/Api/PSD2Api.md#coreprivateaccountsallbanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
+*PSD2Api* | [**createConsentByConsentRequestIdEmail**](docs/Api/PSD2Api.md#createconsentbyconsentrequestidemail) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
+*PSD2Api* | [**createConsentByConsentRequestIdImplicit**](docs/Api/PSD2Api.md#createconsentbyconsentrequestidimplicit) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{implicit}/consents | Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
+*PSD2Api* | [**createConsentByConsentRequestIdSms**](docs/Api/PSD2Api.md#createconsentbyconsentrequestidsms) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{sms}/consents | Create Consent By CONSENT_REQUEST_ID (SMS)
+*PSD2Api* | [**createConsentEmail**](docs/Api/PSD2Api.md#createconsentemail) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{email} | Create Consent (EMAIL)
+*PSD2Api* | [**createConsentImplicit**](docs/Api/PSD2Api.md#createconsentimplicit) | **POST** /obp/v5.1.0/my/consents/{implicit} | Create Consent (IMPLICIT)
+*PSD2Api* | [**createConsentRequest**](docs/Api/PSD2Api.md#createconsentrequest) | **POST** /obp/v5.0.0/consumer/consent-requests | Create Consent Request
+*PSD2Api* | [**createConsentSms**](docs/Api/PSD2Api.md#createconsentsms) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{sms} | Create Consent (SMS)
+*PSD2Api* | [**createTransactionRequestAccount**](docs/Api/PSD2Api.md#createtransactionrequestaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT)
+*PSD2Api* | [**createTransactionRequestAccountOtp**](docs/Api/PSD2Api.md#createtransactionrequestaccountotp) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP)
+*PSD2Api* | [**createTransactionRequestAgentCashWithDrawal**](docs/Api/PSD2Api.md#createtransactionrequestagentcashwithdrawal) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL)
+*PSD2Api* | [**createTransactionRequestCard**](docs/Api/PSD2Api.md#createtransactionrequestcard) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD)
+*PSD2Api* | [**createTransactionRequestCardano**](docs/Api/PSD2Api.md#createtransactionrequestcardano) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO)
+*PSD2Api* | [**createTransactionRequestCounterparty**](docs/Api/PSD2Api.md#createtransactionrequestcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY)
+*PSD2Api* | [**createTransactionRequestEthSendRawTransaction**](docs/Api/PSD2Api.md#createtransactionrequestethsendrawtransaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
+*PSD2Api* | [**createTransactionRequestEthereumeSendTransaction**](docs/Api/PSD2Api.md#createtransactionrequestethereumesendtransaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION)
+*PSD2Api* | [**createTransactionRequestHold**](docs/Api/PSD2Api.md#createtransactionrequesthold) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD)
+*PSD2Api* | [**createTransactionRequestRefund**](docs/Api/PSD2Api.md#createtransactionrequestrefund) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND)
+*PSD2Api* | [**createTransactionRequestSandboxTan**](docs/Api/PSD2Api.md#createtransactionrequestsandboxtan) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN)
+*PSD2Api* | [**createTransactionRequestSepa**](docs/Api/PSD2Api.md#createtransactionrequestsepa) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA)
+*PSD2Api* | [**createTransactionRequestSimple**](docs/Api/PSD2Api.md#createtransactionrequestsimple) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE)
+*PSD2Api* | [**getAccountsHeld**](docs/Api/PSD2Api.md#getaccountsheld) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
+*PSD2Api* | [**getBank**](docs/Api/PSD2Api.md#getbank) | **GET** /obp/v6.0.0/banks/{bankid} | Get Bank
+*PSD2Api* | [**getBankAccountBalances**](docs/Api/PSD2Api.md#getbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/balances | Get Account Balances by BANK_ID and ACCOUNT_ID through the VIEW_ID
+*PSD2Api* | [**getBankAccountsBalances**](docs/Api/PSD2Api.md#getbankaccountsbalances) | **GET** /obp/v5.1.0/banks/{bankid}/balances | Get Account Balances by BANK_ID
+*PSD2Api* | [**getBankAccountsBalancesThroughView**](docs/Api/PSD2Api.md#getbankaccountsbalancesthroughview) | **GET** /obp/v5.1.0/banks/{bankid}/views/{viewid}/balances | Get Account Balances by BANK_ID through the VIEW_ID
+*PSD2Api* | [**getBanks**](docs/Api/PSD2Api.md#getbanks) | **GET** /obp/v6.0.0/banks | Get Banks
+*PSD2Api* | [**getConsentByConsentId**](docs/Api/PSD2Api.md#getconsentbyconsentid) | **GET** /obp/v5.1.0/user/current/consents/{consentid} | Get Consent By Consent Id via User
+*PSD2Api* | [**getConsentByConsentIdViaConsumer**](docs/Api/PSD2Api.md#getconsentbyconsentidviaconsumer) | **GET** /obp/v5.1.0/consumer/current/consents/{consentid} | Get Consent By Consent Id via Consumer
+*PSD2Api* | [**getConsentByConsentRequestId**](docs/Api/PSD2Api.md#getconsentbyconsentrequestid) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/consents | Get Consent By Consent Request Id via Consumer
+*PSD2Api* | [**getConsentInfos**](docs/Api/PSD2Api.md#getconsentinfos) | **GET** /obp/v4.0.0/my/consent-infos | Get My Consents Info
+*PSD2Api* | [**getConsentInfosByBank**](docs/Api/PSD2Api.md#getconsentinfosbybank) | **GET** /obp/v4.0.0/banks/{bankid}/my/consent-infos | Get My Consents Info At Bank
+*PSD2Api* | [**getConsentRequest**](docs/Api/PSD2Api.md#getconsentrequest) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid} | Get Consent Request
+*PSD2Api* | [**getConsents**](docs/Api/PSD2Api.md#getconsents) | **GET** /obp/v5.1.0/management/consents | Get Consents
+*PSD2Api* | [**getConsentsAtBank**](docs/Api/PSD2Api.md#getconsentsatbank) | **GET** /obp/v5.1.0/management/consents/banks/{bankid} | Get Consents at Bank
+*PSD2Api* | [**getCoreAccountByIdThroughView**](docs/Api/PSD2Api.md#getcoreaccountbyidthroughview) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Account by Id (Core) through the VIEW_ID
+*PSD2Api* | [**getCoreAccountByIdV600**](docs/Api/PSD2Api.md#getcoreaccountbyidv600) | **GET** /obp/v6.0.0/my/banks/{bankid}/accounts/{accountid}/account | Get Account by Id (Core)
+*PSD2Api* | [**getCoreTransactionsForBankAccount**](docs/Api/PSD2Api.md#getcoretransactionsforbankaccount) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
+*PSD2Api* | [**getCounterpartiesForAnyAccount**](docs/Api/PSD2Api.md#getcounterpartiesforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
+*PSD2Api* | [**getExplicitCounterpartiesForAccount**](docs/Api/PSD2Api.md#getexplicitcounterpartiesforaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
+*PSD2Api* | [**getExplicitCounterpartyById**](docs/Api/PSD2Api.md#getexplicitcounterpartybyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
+*PSD2Api* | [**getMyConsents**](docs/Api/PSD2Api.md#getmyconsents) | **GET** /obp/v5.1.0/my/consents | Get My Consents
+*PSD2Api* | [**getMyConsentsByBank**](docs/Api/PSD2Api.md#getmyconsentsbybank) | **GET** /obp/v5.1.0/banks/{bankid}/my/consents | Get My Consents at Bank
+*PSD2Api* | [**getPrivateAccountIdsbyBankId**](docs/Api/PSD2Api.md#getprivateaccountidsbybankid) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/account_ids/private | Get Accounts at Bank (IDs only)
+*PSD2Api* | [**getServerJWK**](docs/Api/PSD2Api.md#getserverjwk) | **GET** /obp/v3.1.0/certs | Get JSON Web Key (JWK)
+*PSD2Api* | [**getSettlementAccounts**](docs/Api/PSD2Api.md#getsettlementaccounts) | **GET** /obp/v4.0.0/banks/{bankid}/settlement-accounts | Get Settlement accounts at Bank
+*PSD2Api* | [**getTransactionRequest**](docs/Api/PSD2Api.md#gettransactionrequest) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request
+*PSD2Api* | [**getTransactionRequestById**](docs/Api/PSD2Api.md#gettransactionrequestbyid) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID
+*PSD2Api* | [**getTransactionRequestTypes**](docs/Api/PSD2Api.md#gettransactionrequesttypes) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account
+*PSD2Api* | [**getTransactionTypes**](docs/Api/PSD2Api.md#gettransactiontypes) | **GET** /obp/v2.0.0/banks/{bankid}/transaction-types | Get Transaction Types at Bank
+*PSD2Api* | [**mtlsClientCertificateInfo**](docs/Api/PSD2Api.md#mtlsclientcertificateinfo) | **GET** /obp/v5.1.0/my/mtls/certificate/current | Provide client&#39;s certificate info of a current call
+*PSD2Api* | [**privateAccountsAtOneBank**](docs/Api/PSD2Api.md#privateaccountsatonebank) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/private | Get Accounts at Bank (Minimal)
+*PSD2Api* | [**revokeConsentAtBank**](docs/Api/PSD2Api.md#revokeconsentatbank) | **DELETE** /obp/v5.1.0/banks/{bankid}/consents/{consentid} | Revoke Consent at Bank
+*PSD2Api* | [**revokeMyConsent**](docs/Api/PSD2Api.md#revokemyconsent) | **DELETE** /obp/v5.1.0/my/consents/{consentid} | Revoke My Consent
+*PSD2Api* | [**selfRevokeConsent**](docs/Api/PSD2Api.md#selfrevokeconsent) | **DELETE** /obp/v5.1.0/my/consent/current | Revoke Consent used in the Current Call
+*PaymentInitiationServicePISApi* | [**answerTransactionRequestChallenge**](docs/Api/PaymentInitiationServicePISApi.md#answertransactionrequestchallenge) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge
+*PaymentInitiationServicePISApi* | [**createTransactionRequestAccount**](docs/Api/PaymentInitiationServicePISApi.md#createtransactionrequestaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT)
+*PaymentInitiationServicePISApi* | [**createTransactionRequestAccountOtp**](docs/Api/PaymentInitiationServicePISApi.md#createtransactionrequestaccountotp) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP)
+*PaymentInitiationServicePISApi* | [**createTransactionRequestAgentCashWithDrawal**](docs/Api/PaymentInitiationServicePISApi.md#createtransactionrequestagentcashwithdrawal) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL)
+*PaymentInitiationServicePISApi* | [**createTransactionRequestCard**](docs/Api/PaymentInitiationServicePISApi.md#createtransactionrequestcard) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD)
+*PaymentInitiationServicePISApi* | [**createTransactionRequestCardano**](docs/Api/PaymentInitiationServicePISApi.md#createtransactionrequestcardano) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO)
+*PaymentInitiationServicePISApi* | [**createTransactionRequestCounterparty**](docs/Api/PaymentInitiationServicePISApi.md#createtransactionrequestcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY)
+*PaymentInitiationServicePISApi* | [**createTransactionRequestEthSendRawTransaction**](docs/Api/PaymentInitiationServicePISApi.md#createtransactionrequestethsendrawtransaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
+*PaymentInitiationServicePISApi* | [**createTransactionRequestEthereumeSendTransaction**](docs/Api/PaymentInitiationServicePISApi.md#createtransactionrequestethereumesendtransaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION)
+*PaymentInitiationServicePISApi* | [**createTransactionRequestFreeForm**](docs/Api/PaymentInitiationServicePISApi.md#createtransactionrequestfreeform) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests | Create Transaction Request (FREE_FORM)
+*PaymentInitiationServicePISApi* | [**createTransactionRequestHold**](docs/Api/PaymentInitiationServicePISApi.md#createtransactionrequesthold) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD)
+*PaymentInitiationServicePISApi* | [**createTransactionRequestRefund**](docs/Api/PaymentInitiationServicePISApi.md#createtransactionrequestrefund) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND)
+*PaymentInitiationServicePISApi* | [**createTransactionRequestSandboxTan**](docs/Api/PaymentInitiationServicePISApi.md#createtransactionrequestsandboxtan) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN)
+*PaymentInitiationServicePISApi* | [**createTransactionRequestSepa**](docs/Api/PaymentInitiationServicePISApi.md#createtransactionrequestsepa) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA)
+*PaymentInitiationServicePISApi* | [**createTransactionRequestSimple**](docs/Api/PaymentInitiationServicePISApi.md#createtransactionrequestsimple) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE)
+*PaymentInitiationServicePISApi* | [**getCounterpartiesForAnyAccount**](docs/Api/PaymentInitiationServicePISApi.md#getcounterpartiesforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
+*PaymentInitiationServicePISApi* | [**getExplicitCounterpartiesForAccount**](docs/Api/PaymentInitiationServicePISApi.md#getexplicitcounterpartiesforaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
+*PaymentInitiationServicePISApi* | [**getExplicitCounterpartyById**](docs/Api/PaymentInitiationServicePISApi.md#getexplicitcounterpartybyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
+*PaymentInitiationServicePISApi* | [**getTransactionRequest**](docs/Api/PaymentInitiationServicePISApi.md#gettransactionrequest) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request
+*PaymentInitiationServicePISApi* | [**getTransactionRequestById**](docs/Api/PaymentInitiationServicePISApi.md#gettransactionrequestbyid) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID
+*PaymentInitiationServicePISApi* | [**getTransactionRequestTypes**](docs/Api/PaymentInitiationServicePISApi.md#gettransactionrequesttypes) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account
+*PaymentInitiationServicePISApi* | [**getTransactionRequests**](docs/Api/PaymentInitiationServicePISApi.md#gettransactionrequests) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests | Get Transaction Requests
+*PersonApi* | [**addCustomerMessage**](docs/Api/PersonApi.md#addcustomermessage) | **POST** /obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages | Create Customer Message
+*PersonApi* | [**createAgent**](docs/Api/PersonApi.md#createagent) | **POST** /obp/v5.1.0/banks/{bankid}/agents | Create Agent
+*PersonApi* | [**createCustomer**](docs/Api/PersonApi.md#createcustomer) | **POST** /obp/v6.0.0/banks/{bankid}/customers | Create Customer
+*PersonApi* | [**createCustomerMessage**](docs/Api/PersonApi.md#createcustomermessage) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Create Customer Message
+*PersonApi* | [**updateAgentStatus**](docs/Api/PersonApi.md#updateagentstatus) | **PUT** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Update Agent status
+*PersonalDynamicEntityApi* | [**getAvailablePersonalDynamicEntities**](docs/Api/PersonalDynamicEntityApi.md#getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
+*PrivateDataApi* | [**corePrivateAccountsAllBanks**](docs/Api/PrivateDataApi.md#coreprivateaccountsallbanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
+*PrivateDataApi* | [**getAccountsAtBank**](docs/Api/PrivateDataApi.md#getaccountsatbank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
+*ProductApi* | [**createOrUpdateProductAttributeDefinition**](docs/Api/ProductApi.md#createorupdateproductattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition
+*ProductApi* | [**createProduct**](docs/Api/ProductApi.md#createproduct) | **PUT** /obp/v5.0.0/banks/{bankid}/products/{productcode} | Create Product
+*ProductApi* | [**createProductAttribute**](docs/Api/ProductApi.md#createproductattribute) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute
+*ProductApi* | [**createProductCollection**](docs/Api/ProductApi.md#createproductcollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection
+*ProductApi* | [**createProductFee**](docs/Api/ProductApi.md#createproductfee) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fee | Create Product Fee
+*ProductApi* | [**deleteProductAttribute**](docs/Api/ProductApi.md#deleteproductattribute) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute
+*ProductApi* | [**deleteProductAttributeDefinition**](docs/Api/ProductApi.md#deleteproductattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition
+*ProductApi* | [**deleteProductCascade**](docs/Api/ProductApi.md#deleteproductcascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/products/{productcode} | Delete Product Cascade
+*ProductApi* | [**deleteProductFee**](docs/Api/ProductApi.md#deleteproductfee) | **DELETE** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Delete Product Fee
+*ProductApi* | [**getProduct**](docs/Api/ProductApi.md#getproduct) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode} | Get Bank Product
+*ProductApi* | [**getProductAttribute**](docs/Api/ProductApi.md#getproductattribute) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute
+*ProductApi* | [**getProductAttributeDefinition**](docs/Api/ProductApi.md#getproductattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition
+*ProductApi* | [**getProductCollection**](docs/Api/ProductApi.md#getproductcollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection
+*ProductApi* | [**getProductFee**](docs/Api/ProductApi.md#getproductfee) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Get Product Fee
+*ProductApi* | [**getProductFees**](docs/Api/ProductApi.md#getproductfees) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees | Get Product Fees
+*ProductApi* | [**getProductTree**](docs/Api/ProductApi.md#getproducttree) | **GET** /obp/v3.1.0/banks/{bankid}/product-tree/{productcode} | Get Product Tree
+*ProductApi* | [**getProducts**](docs/Api/ProductApi.md#getproducts) | **GET** /obp/v4.0.0/banks/{bankid}/products | Get Products
+*ProductApi* | [**updateProductAttribute**](docs/Api/ProductApi.md#updateproductattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute
+*ProductApi* | [**updateProductFee**](docs/Api/ProductApi.md#updateproductfee) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Update Product Fee
+*ProductAttributeApi* | [**createOrUpdateProductAttributeDefinition**](docs/Api/ProductAttributeApi.md#createorupdateproductattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition
+*ProductAttributeApi* | [**createProductAttribute**](docs/Api/ProductAttributeApi.md#createproductattribute) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute
+*ProductAttributeApi* | [**deleteProductAttribute**](docs/Api/ProductAttributeApi.md#deleteproductattribute) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute
+*ProductAttributeApi* | [**deleteProductAttributeDefinition**](docs/Api/ProductAttributeApi.md#deleteproductattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition
+*ProductAttributeApi* | [**getProductAttribute**](docs/Api/ProductAttributeApi.md#getproductattribute) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute
+*ProductAttributeApi* | [**getProductAttributeDefinition**](docs/Api/ProductAttributeApi.md#getproductattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition
+*ProductAttributeApi* | [**updateProductAttribute**](docs/Api/ProductAttributeApi.md#updateproductattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute
+*ProductCollectionApi* | [**createProductCollection**](docs/Api/ProductCollectionApi.md#createproductcollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection
+*ProductCollectionApi* | [**getProductCollection**](docs/Api/ProductCollectionApi.md#getproductcollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection
+*PublicDataApi* | [**getAccountsAtBank**](docs/Api/PublicDataApi.md#getaccountsatbank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
+*PublicDataApi* | [**publicAccountsAllBanks**](docs/Api/PublicDataApi.md#publicaccountsallbanks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks
+*PublicDataApi* | [**publicAccountsAtOneBank**](docs/Api/PublicDataApi.md#publicaccountsatonebank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank
+*RateLimitsApi* | [**callsLimit**](docs/Api/RateLimitsApi.md#callslimit) | **PUT** /obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits | Set Rate Limits / Call Limits per Consumer
+*RateLimitsApi* | [**getRateLimitingInfo**](docs/Api/RateLimitsApi.md#getratelimitinginfo) | **GET** /obp/v3.1.0/rate-limiting | Get Rate Limiting Info
+*RateLimitsApi* | [**updateRateLimits**](docs/Api/RateLimitsApi.md#updateratelimits) | **PUT** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Set Rate Limits / Call Limits per Consumer
+*RetailCustomerApi* | [**createRetailCustomer**](docs/Api/RetailCustomerApi.md#createretailcustomer) | **POST** /obp/v6.0.0/banks/{bankid}/retail-customers | Create Retail Customer
+*RetailCustomerApi* | [**getRetailCustomerByCustomerId**](docs/Api/RetailCustomerApi.md#getretailcustomerbycustomerid) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers/{customerid} | Get Retail Customer by CUSTOMER_ID
+*RetailCustomerApi* | [**getRetailCustomersAtOneBank**](docs/Api/RetailCustomerApi.md#getretailcustomersatonebank) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers | Get Retail Customers at Bank
+*RoleApi* | [**addEntitlement**](docs/Api/RoleApi.md#addentitlement) | **POST** /obp/v2.0.0/users/{userid}/entitlements | Add Entitlement for a User
+*RoleApi* | [**addEntitlementRequest**](docs/Api/RoleApi.md#addentitlementrequest) | **POST** /obp/v3.0.0/entitlement-requests | Create Entitlement Request for current User
+*RoleApi* | [**createUserWithRoles**](docs/Api/RoleApi.md#createuserwithroles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
+*RoleApi* | [**deleteEntitlement**](docs/Api/RoleApi.md#deleteentitlement) | **DELETE** /obp/v6.0.0/entitlements/{entitlementid} | Delete Entitlement
+*RoleApi* | [**deleteEntitlementRequest**](docs/Api/RoleApi.md#deleteentitlementrequest) | **DELETE** /obp/v3.0.0/entitlement-requests/{entitlementrequestid} | Delete Entitlement Request
+*RoleApi* | [**getAllEntitlementRequests**](docs/Api/RoleApi.md#getallentitlementrequests) | **GET** /obp/v3.0.0/entitlement-requests | Get all Entitlement Requests
+*RoleApi* | [**getAllEntitlements**](docs/Api/RoleApi.md#getallentitlements) | **GET** /obp/v3.1.0/entitlements | Get all Entitlements
+*RoleApi* | [**getEntitlementRequests**](docs/Api/RoleApi.md#getentitlementrequests) | **GET** /obp/v3.0.0/users/{userid}/entitlement-requests | Get Entitlement Requests for a User
+*RoleApi* | [**getEntitlementRequestsForCurrentUser**](docs/Api/RoleApi.md#getentitlementrequestsforcurrentuser) | **GET** /obp/v3.0.0/my/entitlement-requests | Get Entitlement Requests for the current User
+*RoleApi* | [**getEntitlements**](docs/Api/RoleApi.md#getentitlements) | **GET** /obp/v4.0.0/users/{userid}/entitlements | Get Entitlements for User
+*RoleApi* | [**getEntitlementsAndPermissions**](docs/Api/RoleApi.md#getentitlementsandpermissions) | **GET** /obp/v5.1.0/users/{userid}/entitlements-and-permissions | Get Entitlements and Permissions for a User
+*RoleApi* | [**getEntitlementsByBankAndUser**](docs/Api/RoleApi.md#getentitlementsbybankanduser) | **GET** /obp/v2.1.0/banks/{bankid}/users/{userid}/entitlements | Get Entitlements for User at Bank
+*RoleApi* | [**getEntitlementsForBank**](docs/Api/RoleApi.md#getentitlementsforbank) | **GET** /obp/v4.0.0/banks/{bankid}/entitlements | Get Entitlements for One Bank
+*RoleApi* | [**getEntitlementsForCurrentUser**](docs/Api/RoleApi.md#getentitlementsforcurrentuser) | **GET** /obp/v3.0.0/my/entitlements | Get Entitlements for the current User
+*RoleApi* | [**getRoles**](docs/Api/RoleApi.md#getroles) | **GET** /obp/v2.1.0/roles | Get Roles
+*RoleApi* | [**getRolesWithEntitlementCountsAtAllBanks**](docs/Api/RoleApi.md#getroleswithentitlementcountsatallbanks) | **GET** /obp/v6.0.0/management/roles-with-entitlement-counts | Get Roles with Entitlement Counts
+*SandboxApi* | [**sandboxDataImport**](docs/Api/SandboxApi.md#sandboxdataimport) | **POST** /obp/v2.1.0/sandbox/data-import | Create sandbox
+*ScopeApi* | [**addScope**](docs/Api/ScopeApi.md#addscope) | **POST** /obp/v4.0.0/consumers/{consumerid}/scopes | Create Scope for a Consumer
+*ScopeApi* | [**deleteScope**](docs/Api/ScopeApi.md#deletescope) | **DELETE** /obp/v3.0.0/consumers/{consumerid}/scope/{scopeid} | Delete Consumer Scope
+*ScopeApi* | [**getScopes**](docs/Api/ScopeApi.md#getscopes) | **GET** /obp/v4.0.0/consumers/{consumerid}/scopes | Get Scopes for Consumer
+*SignalApi* | [**deleteSignalChannel**](docs/Api/SignalApi.md#deletesignalchannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
+*SignalApi* | [**getSignalChannelInfo**](docs/Api/SignalApi.md#getsignalchannelinfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
+*SignalApi* | [**getSignalChannels**](docs/Api/SignalApi.md#getsignalchannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
+*SignalApi* | [**getSignalMessages**](docs/Api/SignalApi.md#getsignalmessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
+*SignalApi* | [**getSignalStats**](docs/Api/SignalApi.md#getsignalstats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
+*SignalApi* | [**publishSignalMessage**](docs/Api/SignalApi.md#publishsignalmessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
+*SignallingApi* | [**deleteSignalChannel**](docs/Api/SignallingApi.md#deletesignalchannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
+*SignallingApi* | [**getSignalChannelInfo**](docs/Api/SignallingApi.md#getsignalchannelinfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
+*SignallingApi* | [**getSignalChannels**](docs/Api/SignallingApi.md#getsignalchannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
+*SignallingApi* | [**getSignalMessages**](docs/Api/SignallingApi.md#getsignalmessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
+*SignallingApi* | [**getSignalStats**](docs/Api/SignallingApi.md#getsignalstats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
+*SignallingApi* | [**publishSignalMessage**](docs/Api/SignallingApi.md#publishsignalmessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
+*StandingOrderApi* | [**createStandingOrder**](docs/Api/StandingOrderApi.md#createstandingorder) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
+*StandingOrderApi* | [**createStandingOrderManagement**](docs/Api/StandingOrderApi.md#createstandingordermanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
+*SystemApi* | [**getCacheConfig**](docs/Api/SystemApi.md#getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
+*SystemApi* | [**getCacheInfo**](docs/Api/SystemApi.md#getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
+*SystemApi* | [**getCacheNamespaces**](docs/Api/SystemApi.md#getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
+*SystemApi* | [**getConnectorMethodNames**](docs/Api/SystemApi.md#getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+*SystemApi* | [**getConnectors**](docs/Api/SystemApi.md#getconnectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
+*SystemApi* | [**getDatabasePoolInfo**](docs/Api/SystemApi.md#getdatabasepoolinfo) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information
+*SystemApi* | [**getMigrations**](docs/Api/SystemApi.md#getmigrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations
+*SystemApi* | [**getStoredProcedureConnectorHealth**](docs/Api/SystemApi.md#getstoredprocedureconnectorhealth) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
+*SystemApi* | [**invalidateCacheNamespace**](docs/Api/SystemApi.md#invalidatecachenamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
+*SystemApi* | [**logCacheAllEndpoint**](docs/Api/SystemApi.md#logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
+*SystemApi* | [**logCacheDebugEndpoint**](docs/Api/SystemApi.md#logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
+*SystemApi* | [**logCacheErrorEndpoint**](docs/Api/SystemApi.md#logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
+*SystemApi* | [**logCacheInfoEndpoint**](docs/Api/SystemApi.md#logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
+*SystemApi* | [**logCacheTraceEndpoint**](docs/Api/SystemApi.md#logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
+*SystemApi* | [**logCacheWarningEndpoint**](docs/Api/SystemApi.md#logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
+*SystemIntegrityApi* | [**accountAccessUniqueIndexCheck**](docs/Api/SystemIntegrityApi.md#accountaccessuniqueindexcheck) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access
+*SystemIntegrityApi* | [**accountCurrencyCheck**](docs/Api/SystemIntegrityApi.md#accountcurrencycheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies
+*SystemIntegrityApi* | [**customViewNamesCheck**](docs/Api/SystemIntegrityApi.md#customviewnamescheck) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names
+*SystemIntegrityApi* | [**orphanedAccountCheck**](docs/Api/SystemIntegrityApi.md#orphanedaccountcheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts
+*SystemIntegrityApi* | [**systemViewNamesCheck**](docs/Api/SystemIntegrityApi.md#systemviewnamescheck) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names
+*TransactionApi* | [**addCommentForViewOnTransaction**](docs/Api/TransactionApi.md#addcommentforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment
+*TransactionApi* | [**addImageForViewOnTransaction**](docs/Api/TransactionApi.md#addimageforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image
+*TransactionApi* | [**addTagForViewOnTransaction**](docs/Api/TransactionApi.md#addtagforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag
+*TransactionApi* | [**addTransactionNarrative**](docs/Api/TransactionApi.md#addtransactionnarrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative
+*TransactionApi* | [**addWhereTagForViewOnTransaction**](docs/Api/TransactionApi.md#addwheretagforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag
+*TransactionApi* | [**createOrUpdateTransactionAttributeDefinition**](docs/Api/TransactionApi.md#createorupdatetransactionattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
+*TransactionApi* | [**createTransactionAttribute**](docs/Api/TransactionApi.md#createtransactionattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
+*TransactionApi* | [**deleteCommentForViewOnTransaction**](docs/Api/TransactionApi.md#deletecommentforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment
+*TransactionApi* | [**deleteImageForViewOnTransaction**](docs/Api/TransactionApi.md#deleteimageforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image
+*TransactionApi* | [**deleteTagForViewOnTransaction**](docs/Api/TransactionApi.md#deletetagforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag
+*TransactionApi* | [**deleteTransactionAttributeDefinition**](docs/Api/TransactionApi.md#deletetransactionattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
+*TransactionApi* | [**deleteTransactionCascade**](docs/Api/TransactionApi.md#deletetransactioncascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid}/transactions/{transactionid} | Delete Transaction Cascade
+*TransactionApi* | [**deleteTransactionNarrative**](docs/Api/TransactionApi.md#deletetransactionnarrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative
+*TransactionApi* | [**deleteWhereTagForViewOnTransaction**](docs/Api/TransactionApi.md#deletewheretagforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag
+*TransactionApi* | [**getBalancingTransaction**](docs/Api/TransactionApi.md#getbalancingtransaction) | **GET** /obp/v4.0.0/transactions/{transactionid}/balancing-transaction | Get Balancing Transaction
+*TransactionApi* | [**getCommentsForViewOnTransaction**](docs/Api/TransactionApi.md#getcommentsforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments
+*TransactionApi* | [**getCoreTransactionsForBankAccount**](docs/Api/TransactionApi.md#getcoretransactionsforbankaccount) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
+*TransactionApi* | [**getDoubleEntryTransaction**](docs/Api/TransactionApi.md#getdoubleentrytransaction) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/double-entry-transaction | Get Double Entry Transaction
+*TransactionApi* | [**getFirehoseTransactionsForBankAccount**](docs/Api/TransactionApi.md#getfirehosetransactionsforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
+*TransactionApi* | [**getImagesForViewOnTransaction**](docs/Api/TransactionApi.md#getimagesforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images
+*TransactionApi* | [**getOtherAccountForTransaction**](docs/Api/TransactionApi.md#getotheraccountfortransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account | Get Other Account of Transaction
+*TransactionApi* | [**getTagsForViewOnTransaction**](docs/Api/TransactionApi.md#gettagsforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags
+*TransactionApi* | [**getTransactionAttributeById**](docs/Api/TransactionApi.md#gettransactionattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
+*TransactionApi* | [**getTransactionAttributeDefinition**](docs/Api/TransactionApi.md#gettransactionattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
+*TransactionApi* | [**getTransactionAttributes**](docs/Api/TransactionApi.md#gettransactionattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
+*TransactionApi* | [**getTransactionByIdForBankAccount**](docs/Api/TransactionApi.md#gettransactionbyidforbankaccount) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/transaction | Get Transaction by Id
+*TransactionApi* | [**getTransactionNarrative**](docs/Api/TransactionApi.md#gettransactionnarrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative
+*TransactionApi* | [**getTransactionsForBankAccount**](docs/Api/TransactionApi.md#gettransactionsforbankaccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions | Get Transactions for Account (Full)
+*TransactionApi* | [**getWhereTagForViewOnTransaction**](docs/Api/TransactionApi.md#getwheretagforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag
+*TransactionApi* | [**updateTransactionAttribute**](docs/Api/TransactionApi.md#updatetransactionattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
+*TransactionApi* | [**updateTransactionNarrative**](docs/Api/TransactionApi.md#updatetransactionnarrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative
+*TransactionApi* | [**updateWhereTagForViewOnTransaction**](docs/Api/TransactionApi.md#updatewheretagforviewontransaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag
+*TransactionAttributeApi* | [**createOrUpdateTransactionAttributeDefinition**](docs/Api/TransactionAttributeApi.md#createorupdatetransactionattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
+*TransactionAttributeApi* | [**createTransactionAttribute**](docs/Api/TransactionAttributeApi.md#createtransactionattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
+*TransactionAttributeApi* | [**deleteTransactionAttributeDefinition**](docs/Api/TransactionAttributeApi.md#deletetransactionattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
+*TransactionAttributeApi* | [**getTransactionAttributeById**](docs/Api/TransactionAttributeApi.md#gettransactionattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
+*TransactionAttributeApi* | [**getTransactionAttributeDefinition**](docs/Api/TransactionAttributeApi.md#gettransactionattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
+*TransactionAttributeApi* | [**getTransactionAttributes**](docs/Api/TransactionAttributeApi.md#gettransactionattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
+*TransactionAttributeApi* | [**updateTransactionAttribute**](docs/Api/TransactionAttributeApi.md#updatetransactionattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
+*TransactionFirehoseApi* | [**getFirehoseTransactionsForBankAccount**](docs/Api/TransactionFirehoseApi.md#getfirehosetransactionsforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
+*TransactionMetadataApi* | [**addCommentForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#addcommentforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment
+*TransactionMetadataApi* | [**addImageForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#addimageforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image
+*TransactionMetadataApi* | [**addTagForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#addtagforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag
+*TransactionMetadataApi* | [**addTransactionNarrative**](docs/Api/TransactionMetadataApi.md#addtransactionnarrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative
+*TransactionMetadataApi* | [**addWhereTagForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#addwheretagforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag
+*TransactionMetadataApi* | [**deleteCommentForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#deletecommentforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment
+*TransactionMetadataApi* | [**deleteImageForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#deleteimageforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image
+*TransactionMetadataApi* | [**deleteTagForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#deletetagforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag
+*TransactionMetadataApi* | [**deleteTransactionNarrative**](docs/Api/TransactionMetadataApi.md#deletetransactionnarrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative
+*TransactionMetadataApi* | [**deleteWhereTagForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#deletewheretagforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag
+*TransactionMetadataApi* | [**getCommentsForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#getcommentsforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments
+*TransactionMetadataApi* | [**getImagesForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#getimagesforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images
+*TransactionMetadataApi* | [**getTagsForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#gettagsforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags
+*TransactionMetadataApi* | [**getTransactionNarrative**](docs/Api/TransactionMetadataApi.md#gettransactionnarrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative
+*TransactionMetadataApi* | [**getWhereTagForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#getwheretagforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag
+*TransactionMetadataApi* | [**updateTransactionNarrative**](docs/Api/TransactionMetadataApi.md#updatetransactionnarrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative
+*TransactionMetadataApi* | [**updateWhereTagForViewOnTransaction**](docs/Api/TransactionMetadataApi.md#updatewheretagforviewontransaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag
+*TransactionRequestApi* | [**answerTransactionRequestChallenge**](docs/Api/TransactionRequestApi.md#answertransactionrequestchallenge) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge
+*TransactionRequestApi* | [**createHistoricalTransactionAtBank**](docs/Api/TransactionRequestApi.md#createhistoricaltransactionatbank) | **POST** /obp/v4.0.0/banks/{bankid}/management/historical/transactions | Create Historical Transactions
+*TransactionRequestApi* | [**createOrUpdateTransactionRequestAttributeDefinition**](docs/Api/TransactionRequestApi.md#createorupdatetransactionrequestattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
+*TransactionRequestApi* | [**createTransactionRequestAccount**](docs/Api/TransactionRequestApi.md#createtransactionrequestaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT)
+*TransactionRequestApi* | [**createTransactionRequestAccountOtp**](docs/Api/TransactionRequestApi.md#createtransactionrequestaccountotp) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP)
+*TransactionRequestApi* | [**createTransactionRequestAgentCashWithDrawal**](docs/Api/TransactionRequestApi.md#createtransactionrequestagentcashwithdrawal) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL)
+*TransactionRequestApi* | [**createTransactionRequestAttribute**](docs/Api/TransactionRequestApi.md#createtransactionrequestattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
+*TransactionRequestApi* | [**createTransactionRequestCard**](docs/Api/TransactionRequestApi.md#createtransactionrequestcard) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD)
+*TransactionRequestApi* | [**createTransactionRequestCardano**](docs/Api/TransactionRequestApi.md#createtransactionrequestcardano) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO)
+*TransactionRequestApi* | [**createTransactionRequestCounterparty**](docs/Api/TransactionRequestApi.md#createtransactionrequestcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY)
+*TransactionRequestApi* | [**createTransactionRequestEthSendRawTransaction**](docs/Api/TransactionRequestApi.md#createtransactionrequestethsendrawtransaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
+*TransactionRequestApi* | [**createTransactionRequestEthereumeSendTransaction**](docs/Api/TransactionRequestApi.md#createtransactionrequestethereumesendtransaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION)
+*TransactionRequestApi* | [**createTransactionRequestFreeForm**](docs/Api/TransactionRequestApi.md#createtransactionrequestfreeform) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests | Create Transaction Request (FREE_FORM)
+*TransactionRequestApi* | [**createTransactionRequestHold**](docs/Api/TransactionRequestApi.md#createtransactionrequesthold) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD)
+*TransactionRequestApi* | [**createTransactionRequestRefund**](docs/Api/TransactionRequestApi.md#createtransactionrequestrefund) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND)
+*TransactionRequestApi* | [**createTransactionRequestSandboxTan**](docs/Api/TransactionRequestApi.md#createtransactionrequestsandboxtan) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN)
+*TransactionRequestApi* | [**createTransactionRequestSepa**](docs/Api/TransactionRequestApi.md#createtransactionrequestsepa) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA)
+*TransactionRequestApi* | [**createTransactionRequestSimple**](docs/Api/TransactionRequestApi.md#createtransactionrequestsimple) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE)
+*TransactionRequestApi* | [**createVRPConsentRequest**](docs/Api/TransactionRequestApi.md#createvrpconsentrequest) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
+*TransactionRequestApi* | [**deleteTransactionRequestAttributeDefinition**](docs/Api/TransactionRequestApi.md#deletetransactionrequestattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
+*TransactionRequestApi* | [**getTransactionRequest**](docs/Api/TransactionRequestApi.md#gettransactionrequest) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request
+*TransactionRequestApi* | [**getTransactionRequestAttributeById**](docs/Api/TransactionRequestApi.md#gettransactionrequestattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
+*TransactionRequestApi* | [**getTransactionRequestAttributeDefinition**](docs/Api/TransactionRequestApi.md#gettransactionrequestattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
+*TransactionRequestApi* | [**getTransactionRequestAttributes**](docs/Api/TransactionRequestApi.md#gettransactionrequestattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
+*TransactionRequestApi* | [**getTransactionRequestById**](docs/Api/TransactionRequestApi.md#gettransactionrequestbyid) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID
+*TransactionRequestApi* | [**getTransactionRequestTypes**](docs/Api/TransactionRequestApi.md#gettransactionrequesttypes) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account
+*TransactionRequestApi* | [**getTransactionRequestTypesSupportedByBank**](docs/Api/TransactionRequestApi.md#gettransactionrequesttypessupportedbybank) | **GET** /obp/v2.1.0/banks/{bankid}/transaction-request-types | Get Transaction Request Types at Bank
+*TransactionRequestApi* | [**getTransactionRequests**](docs/Api/TransactionRequestApi.md#gettransactionrequests) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests | Get Transaction Requests
+*TransactionRequestApi* | [**saveHistoricalTransaction**](docs/Api/TransactionRequestApi.md#savehistoricaltransaction) | **POST** /obp/v3.1.0/management/historical/transactions  | Save Historical Transactions
+*TransactionRequestApi* | [**updateTransactionRequestAttribute**](docs/Api/TransactionRequestApi.md#updatetransactionrequestattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
+*TransactionRequestApi* | [**updateTransactionRequestStatus**](docs/Api/TransactionRequestApi.md#updatetransactionrequeststatus) | **PUT** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Update Transaction Request Status
+*TransactionRequestAttributeApi* | [**createOrUpdateTransactionRequestAttributeDefinition**](docs/Api/TransactionRequestAttributeApi.md#createorupdatetransactionrequestattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
+*TransactionRequestAttributeApi* | [**createTransactionRequestAttribute**](docs/Api/TransactionRequestAttributeApi.md#createtransactionrequestattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
+*TransactionRequestAttributeApi* | [**deleteTransactionRequestAttributeDefinition**](docs/Api/TransactionRequestAttributeApi.md#deletetransactionrequestattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
+*TransactionRequestAttributeApi* | [**getTransactionRequestAttributeById**](docs/Api/TransactionRequestAttributeApi.md#gettransactionrequestattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
+*TransactionRequestAttributeApi* | [**getTransactionRequestAttributeDefinition**](docs/Api/TransactionRequestAttributeApi.md#gettransactionrequestattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
+*TransactionRequestAttributeApi* | [**getTransactionRequestAttributes**](docs/Api/TransactionRequestAttributeApi.md#gettransactionrequestattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
+*TransactionRequestAttributeApi* | [**updateTransactionRequestAttribute**](docs/Api/TransactionRequestAttributeApi.md#updatetransactionrequestattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
+*UserApi* | [**addEntitlement**](docs/Api/UserApi.md#addentitlement) | **POST** /obp/v2.0.0/users/{userid}/entitlements | Add Entitlement for a User
+*UserApi* | [**addEntitlementRequest**](docs/Api/UserApi.md#addentitlementrequest) | **POST** /obp/v3.0.0/entitlement-requests | Create Entitlement Request for current User
+*UserApi* | [**addUserToGroup**](docs/Api/UserApi.md#addusertogroup) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
+*UserApi* | [**answerUserAuthContextUpdateChallenge**](docs/Api/UserApi.md#answeruserauthcontextupdatechallenge) | **POST** /obp/v5.0.0/banks/{bankid}/users/current/auth-context-updates/{authcontextupdateid}/challenge | Answer User Auth Context Update Challenge
+*UserApi* | [**createPersonalDataField**](docs/Api/UserApi.md#createpersonaldatafield) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
+*UserApi* | [**createUser**](docs/Api/UserApi.md#createuser) | **POST** /obp/v6.0.0/users | Create User (v6.0.0)
+*UserApi* | [**createUserAttribute**](docs/Api/UserApi.md#createuserattribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
+*UserApi* | [**createUserAuthContext**](docs/Api/UserApi.md#createuserauthcontext) | **POST** /obp/v5.0.0/users/{userid}/auth-context | Create User Auth Context
+*UserApi* | [**createUserAuthContextUpdateRequest**](docs/Api/UserApi.md#createuserauthcontextupdaterequest) | **POST** /obp/v5.0.0/banks/{bankid}/users/current/auth-context-updates/{scamethod} | Create User Auth Context Update Request
+*UserApi* | [**createUserCustomerLinks**](docs/Api/UserApi.md#createusercustomerlinks) | **POST** /obp/v4.0.0/banks/{bankid}/user_customer_links | Create User Customer Link
+*UserApi* | [**createUserWithAccountAccessById**](docs/Api/UserApi.md#createuserwithaccountaccessbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+*UserApi* | [**createUserWithRoles**](docs/Api/UserApi.md#createuserwithroles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
+*UserApi* | [**deleteEntitlement**](docs/Api/UserApi.md#deleteentitlement) | **DELETE** /obp/v6.0.0/entitlements/{entitlementid} | Delete Entitlement
+*UserApi* | [**deleteEntitlementRequest**](docs/Api/UserApi.md#deleteentitlementrequest) | **DELETE** /obp/v3.0.0/entitlement-requests/{entitlementrequestid} | Delete Entitlement Request
+*UserApi* | [**deletePersonalDataField**](docs/Api/UserApi.md#deletepersonaldatafield) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
+*UserApi* | [**deleteUser**](docs/Api/UserApi.md#deleteuser) | **DELETE** /obp/v4.0.0/users/{userid} | Delete a User
+*UserApi* | [**deleteUserAttribute**](docs/Api/UserApi.md#deleteuserattribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
+*UserApi* | [**deleteUserAuthContextById**](docs/Api/UserApi.md#deleteuserauthcontextbyid) | **DELETE** /obp/v3.1.0/users/{userid}/auth-context/{userauthcontextid} | Delete User Auth Context
+*UserApi* | [**deleteUserAuthContexts**](docs/Api/UserApi.md#deleteuserauthcontexts) | **DELETE** /obp/v3.1.0/users/{userid}/auth-context | Delete User&#39;s Auth Contexts
+*UserApi* | [**directLoginEndpoint**](docs/Api/UserApi.md#directloginendpoint) | **POST** /obp/v6.0.0/my/logins/direct | Direct Login
+*UserApi* | [**getAllEntitlementRequests**](docs/Api/UserApi.md#getallentitlementrequests) | **GET** /obp/v3.0.0/entitlement-requests | Get all Entitlement Requests
+*UserApi* | [**getCurrentUser**](docs/Api/UserApi.md#getcurrentuser) | **GET** /obp/v6.0.0/users/current | Get User (Current)
+*UserApi* | [**getCurrentUserId**](docs/Api/UserApi.md#getcurrentuserid) | **GET** /obp/v4.0.0/users/current/user_id | Get User Id (Current)
+*UserApi* | [**getCustomersAtAllBanks**](docs/Api/UserApi.md#getcustomersatallbanks) | **GET** /obp/v6.0.0/customers | Get Customers at All Banks
+*UserApi* | [**getCustomersAtOneBank**](docs/Api/UserApi.md#getcustomersatonebank) | **GET** /obp/v6.0.0/banks/{bankid}/customers | Get Customers at Bank
+*UserApi* | [**getCustomersForUser**](docs/Api/UserApi.md#getcustomersforuser) | **GET** /obp/v3.0.0/users/current/customers | Get Customers for Current User
+*UserApi* | [**getCustomersForUserIdsOnly**](docs/Api/UserApi.md#getcustomersforuseridsonly) | **GET** /obp/v5.1.0/users/current/customers/customer_ids | Get Customers for Current User (IDs only)
+*UserApi* | [**getCustomersMinimalAtAnyBank**](docs/Api/UserApi.md#getcustomersminimalatanybank) | **GET** /obp/v4.0.0/customers-minimal | Get Customers Minimal at Any Bank
+*UserApi* | [**getCustomersMinimalAtOneBank**](docs/Api/UserApi.md#getcustomersminimalatonebank) | **GET** /obp/v5.0.0/banks/{bankid}/customers-minimal | Get Customers Minimal at Bank
+*UserApi* | [**getEntitlementRequests**](docs/Api/UserApi.md#getentitlementrequests) | **GET** /obp/v3.0.0/users/{userid}/entitlement-requests | Get Entitlement Requests for a User
+*UserApi* | [**getEntitlementRequestsForCurrentUser**](docs/Api/UserApi.md#getentitlementrequestsforcurrentuser) | **GET** /obp/v3.0.0/my/entitlement-requests | Get Entitlement Requests for the current User
+*UserApi* | [**getEntitlements**](docs/Api/UserApi.md#getentitlements) | **GET** /obp/v4.0.0/users/{userid}/entitlements | Get Entitlements for User
+*UserApi* | [**getEntitlementsAndPermissions**](docs/Api/UserApi.md#getentitlementsandpermissions) | **GET** /obp/v5.1.0/users/{userid}/entitlements-and-permissions | Get Entitlements and Permissions for a User
+*UserApi* | [**getEntitlementsByBankAndUser**](docs/Api/UserApi.md#getentitlementsbybankanduser) | **GET** /obp/v2.1.0/banks/{bankid}/users/{userid}/entitlements | Get Entitlements for User at Bank
+*UserApi* | [**getEntitlementsForBank**](docs/Api/UserApi.md#getentitlementsforbank) | **GET** /obp/v4.0.0/banks/{bankid}/entitlements | Get Entitlements for One Bank
+*UserApi* | [**getEntitlementsForCurrentUser**](docs/Api/UserApi.md#getentitlementsforcurrentuser) | **GET** /obp/v3.0.0/my/entitlements | Get Entitlements for the current User
+*UserApi* | [**getLogoutLink**](docs/Api/UserApi.md#getlogoutlink) | **GET** /obp/v4.0.0/users/current/logout-link | Get Logout Link
+*UserApi* | [**getMyCustomersAtAnyBank**](docs/Api/UserApi.md#getmycustomersatanybank) | **GET** /obp/v5.0.0/my/customers | Get My Customers
+*UserApi* | [**getMySpaces**](docs/Api/UserApi.md#getmyspaces) | **GET** /obp/v4.0.0/my/spaces | Get My Spaces
+*UserApi* | [**getPermissionForUserForBankAccount**](docs/Api/UserApi.md#getpermissionforuserforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid} | Get Account access for User
+*UserApi* | [**getPermissionsForBankAccount**](docs/Api/UserApi.md#getpermissionsforbankaccount) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
+*UserApi* | [**getPersonalDataFieldById**](docs/Api/UserApi.md#getpersonaldatafieldbyid) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
+*UserApi* | [**getPersonalDataFields**](docs/Api/UserApi.md#getpersonaldatafields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
+*UserApi* | [**getProviders**](docs/Api/UserApi.md#getproviders) | **GET** /obp/v6.0.0/providers | Get Providers
+*UserApi* | [**getUserAttributeById**](docs/Api/UserApi.md#getuserattributebyid) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
+*UserApi* | [**getUserAttributes**](docs/Api/UserApi.md#getuserattributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
+*UserApi* | [**getUserAuthContexts**](docs/Api/UserApi.md#getuserauthcontexts) | **GET** /obp/v5.0.0/users/{userid}/auth-context | Get User Auth Contexts
+*UserApi* | [**getUserByProviderAndUsername**](docs/Api/UserApi.md#getuserbyproviderandusername) | **GET** /obp/v5.1.0/users/provider/{provider}/username/{username} | Get User by USERNAME
+*UserApi* | [**getUserByUserId**](docs/Api/UserApi.md#getuserbyuserid) | **GET** /obp/v6.0.0/users/user-id/{userid} | Get User by USER_ID
+*UserApi* | [**getUserGroupMemberships**](docs/Api/UserApi.md#getusergroupmemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships
+*UserApi* | [**getUserLockStatus**](docs/Api/UserApi.md#getuserlockstatus) | **GET** /obp/v5.1.0/users/{provider}/{username}/lock-status | Get User Lock Status
+*UserApi* | [**getUsers**](docs/Api/UserApi.md#getusers) | **GET** /obp/v6.0.0/users | Get all Users
+*UserApi* | [**getUsersByEmail**](docs/Api/UserApi.md#getusersbyemail) | **GET** /obp/v4.0.0/users/email/{email}/terminator | Get Users by Email Address
+*UserApi* | [**grantUserAccessToViewById**](docs/Api/UserApi.md#grantuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
+*UserApi* | [**lockUserByProviderAndUsername**](docs/Api/UserApi.md#lockuserbyproviderandusername) | **POST** /obp/v5.1.0/users/{provider}/{username}/locks | Lock the user
+*UserApi* | [**refreshUser**](docs/Api/UserApi.md#refreshuser) | **POST** /obp/v3.1.0/users/{userid}/refresh | Refresh User
+*UserApi* | [**removeUserFromGroup**](docs/Api/UserApi.md#removeuserfromgroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
+*UserApi* | [**resetPasswordComplete**](docs/Api/UserApi.md#resetpasswordcomplete) | **POST** /obp/v6.0.0/users/password | Complete Password Reset
+*UserApi* | [**resetPasswordUrl**](docs/Api/UserApi.md#resetpasswordurl) | **POST** /obp/v6.0.0/management/user/reset-password-url | Create Password Reset URL and Send Email
+*UserApi* | [**resetPasswordUrlAnonymous**](docs/Api/UserApi.md#resetpasswordurlanonymous) | **POST** /obp/v6.0.0/users/password-reset-url | Request Password Reset Email
+*UserApi* | [**revokeUserAccessToViewById**](docs/Api/UserApi.md#revokeuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
+*UserApi* | [**syncExternalUser**](docs/Api/UserApi.md#syncexternaluser) | **POST** /obp/v5.1.0/users/{provider}/{providerid}/sync | Sync User
+*UserApi* | [**unlockUserByProviderAndUsername**](docs/Api/UserApi.md#unlockuserbyproviderandusername) | **PUT** /obp/v5.1.0/users/{provider}/{username}/lock-status | Unlock the user
+*UserApi* | [**updatePersonalDataField**](docs/Api/UserApi.md#updatepersonaldatafield) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
+*UserApi* | [**updateUserAttribute**](docs/Api/UserApi.md#updateuserattribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
+*UserApi* | [**validateUserByUserId**](docs/Api/UserApi.md#validateuserbyuserid) | **PUT** /obp/v5.1.0/management/users/{userid} | Validate a user
+*UserApi* | [**validateUserEmail**](docs/Api/UserApi.md#validateuseremail) | **POST** /obp/v6.0.0/users/email-validation | Validate User Email
+*UserApi* | [**verifyUserCredentials**](docs/Api/UserApi.md#verifyusercredentials) | **POST** /obp/v6.0.0/users/verify-credentials | Verify User Credentials
+*UserAttributeApi* | [**createPersonalDataField**](docs/Api/UserAttributeApi.md#createpersonaldatafield) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
+*UserAttributeApi* | [**createUserAttribute**](docs/Api/UserAttributeApi.md#createuserattribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
+*UserAttributeApi* | [**deletePersonalDataField**](docs/Api/UserAttributeApi.md#deletepersonaldatafield) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
+*UserAttributeApi* | [**deleteUserAttribute**](docs/Api/UserAttributeApi.md#deleteuserattribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
+*UserAttributeApi* | [**getPersonalDataFieldById**](docs/Api/UserAttributeApi.md#getpersonaldatafieldbyid) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
+*UserAttributeApi* | [**getPersonalDataFields**](docs/Api/UserAttributeApi.md#getpersonaldatafields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
+*UserAttributeApi* | [**getUserAttributeById**](docs/Api/UserAttributeApi.md#getuserattributebyid) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
+*UserAttributeApi* | [**getUserAttributes**](docs/Api/UserAttributeApi.md#getuserattributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
+*UserAttributeApi* | [**updatePersonalDataField**](docs/Api/UserAttributeApi.md#updatepersonaldatafield) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
+*UserAttributeApi* | [**updateUserAttribute**](docs/Api/UserAttributeApi.md#updateuserattribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
+*UserInvitationApi* | [**createUserInvitation**](docs/Api/UserInvitationApi.md#createuserinvitation) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitation | Create User Invitation
+*UserInvitationApi* | [**getUserInvitation**](docs/Api/UserInvitationApi.md#getuserinvitation) | **GET** /obp/v4.0.0/banks/{bankid}/user-invitations/{secretlink} | Get User Invitation
+*UserInvitationApi* | [**getUserInvitationAnonymous**](docs/Api/UserInvitationApi.md#getuserinvitationanonymous) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitation Information
+*UserInvitationApi* | [**getUserInvitations**](docs/Api/UserInvitationApi.md#getuserinvitations) | **GET** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitations
+*VRPApi* | [**createConsentByConsentRequestIdEmail**](docs/Api/VRPApi.md#createconsentbyconsentrequestidemail) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
+*VRPApi* | [**createVRPConsentRequest**](docs/Api/VRPApi.md#createvrpconsentrequest) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
+*ViewCustomApi* | [**createCustomView**](docs/Api/ViewCustomApi.md#createcustomview) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views | Create Custom View
+*ViewCustomApi* | [**createCustomViewManagement**](docs/Api/ViewCustomApi.md#createcustomviewmanagement) | **POST** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views | Create Custom View (Management)
+*ViewCustomApi* | [**createUserWithAccountAccessById**](docs/Api/ViewCustomApi.md#createuserwithaccountaccessbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+*ViewCustomApi* | [**createViewForBankAccount**](docs/Api/ViewCustomApi.md#createviewforbankaccount) | **POST** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views | Create Custom View
+*ViewCustomApi* | [**deleteCustomView**](docs/Api/ViewCustomApi.md#deletecustomview) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Delete Custom View
+*ViewCustomApi* | [**deleteViewForBankAccount**](docs/Api/ViewCustomApi.md#deleteviewforbankaccount) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/views/{viewid} | Delete Custom View
+*ViewCustomApi* | [**getAccountsHeld**](docs/Api/ViewCustomApi.md#getaccountsheld) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
+*ViewCustomApi* | [**getCustomView**](docs/Api/ViewCustomApi.md#getcustomview) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Get Custom View
+*ViewCustomApi* | [**getCustomViewById**](docs/Api/ViewCustomApi.md#getcustomviewbyid) | **GET** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Custom View
+*ViewCustomApi* | [**getCustomViews**](docs/Api/ViewCustomApi.md#getcustomviews) | **GET** /obp/v6.0.0/management/custom-views | Get Custom Views
+*ViewCustomApi* | [**getPermissionForUserForBankAccount**](docs/Api/ViewCustomApi.md#getpermissionforuserforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid} | Get Account access for User
+*ViewCustomApi* | [**getPermissionsForBankAccount**](docs/Api/ViewCustomApi.md#getpermissionsforbankaccount) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
+*ViewCustomApi* | [**getSystemViewById**](docs/Api/ViewCustomApi.md#getsystemviewbyid) | **GET** /obp/v6.0.0/management/system-views/{viewid} | Get System View
+*ViewCustomApi* | [**getSystemViews**](docs/Api/ViewCustomApi.md#getsystemviews) | **GET** /obp/v6.0.0/management/system-views | Get System Views
+*ViewCustomApi* | [**getUsersWithAccountAccess**](docs/Api/ViewCustomApi.md#getuserswithaccountaccess) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/users-with-access | Get Users With Account Access
+*ViewCustomApi* | [**getViewPermissions**](docs/Api/ViewCustomApi.md#getviewpermissions) | **GET** /obp/v6.0.0/management/view-permissions | Get View Permissions
+*ViewCustomApi* | [**getViewsForBankAccount**](docs/Api/ViewCustomApi.md#getviewsforbankaccount) | **GET** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/views | Get Views for Account
+*ViewCustomApi* | [**grantUserAccessToViewById**](docs/Api/ViewCustomApi.md#grantuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
+*ViewCustomApi* | [**hasAccountAccess**](docs/Api/ViewCustomApi.md#hasaccountaccess) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/has-account-access | Has Account Access
+*ViewCustomApi* | [**revokeUserAccessToViewById**](docs/Api/ViewCustomApi.md#revokeuseraccesstoviewbyid) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
+*ViewCustomApi* | [**updateCustomView**](docs/Api/ViewCustomApi.md#updatecustomview) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Update Custom View
+*ViewCustomApi* | [**updateSystemView**](docs/Api/ViewCustomApi.md#updatesystemview) | **PUT** /obp/v6.0.0/system-views/{viewid} | Update System View
+*ViewCustomApi* | [**updateViewForBankAccount**](docs/Api/ViewCustomApi.md#updateviewforbankaccount) | **PUT** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Update Custom View
+*ViewSystemApi* | [**addSystemViewPermission**](docs/Api/ViewSystemApi.md#addsystemviewpermission) | **POST** /obp/v5.1.0/system-views/{viewid}/permissions | Add Permission to a System View
+*ViewSystemApi* | [**createSystemView**](docs/Api/ViewSystemApi.md#createsystemview) | **POST** /obp/v5.0.0/system-views | Create System View
+*ViewSystemApi* | [**deleteSystemView**](docs/Api/ViewSystemApi.md#deletesystemview) | **DELETE** /obp/v5.0.0/system-views/{viewid} | Delete System View
+*ViewSystemApi* | [**deleteSystemViewPermission**](docs/Api/ViewSystemApi.md#deletesystemviewpermission) | **DELETE** /obp/v5.1.0/system-views/{viewid}/permissions/{permissionname} | Delete Permission to a System View
+*ViewSystemApi* | [**getCustomViewById**](docs/Api/ViewSystemApi.md#getcustomviewbyid) | **GET** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Custom View
+*ViewSystemApi* | [**getCustomViews**](docs/Api/ViewSystemApi.md#getcustomviews) | **GET** /obp/v6.0.0/management/custom-views | Get Custom Views
+*ViewSystemApi* | [**getSystemView**](docs/Api/ViewSystemApi.md#getsystemview) | **GET** /obp/v5.0.0/system-views/{viewid} | Get System View
+*ViewSystemApi* | [**getSystemViewById**](docs/Api/ViewSystemApi.md#getsystemviewbyid) | **GET** /obp/v6.0.0/management/system-views/{viewid} | Get System View
+*ViewSystemApi* | [**getSystemViews**](docs/Api/ViewSystemApi.md#getsystemviews) | **GET** /obp/v6.0.0/management/system-views | Get System Views
+*ViewSystemApi* | [**getSystemViewsIds**](docs/Api/ViewSystemApi.md#getsystemviewsids) | **GET** /obp/v5.0.0/system-views-ids | Get Ids of System Views
+*ViewSystemApi* | [**getViewPermissions**](docs/Api/ViewSystemApi.md#getviewpermissions) | **GET** /obp/v6.0.0/management/view-permissions | Get View Permissions
+*ViewSystemApi* | [**updateSystemView**](docs/Api/ViewSystemApi.md#updatesystemview) | **PUT** /obp/v6.0.0/system-views/{viewid} | Update System View
+*WebUiPropsApi* | [**createOrUpdateWebUiProps**](docs/Api/WebUiPropsApi.md#createorupdatewebuiprops) | **PUT** /obp/v6.0.0/management/webui_props/{webuipropname} | Create or Update WebUiProps
+*WebUiPropsApi* | [**createWebUiProps**](docs/Api/WebUiPropsApi.md#createwebuiprops) | **POST** /obp/v3.1.0/management/webui_props | Create WebUiProps
+*WebUiPropsApi* | [**deleteWebUiProps**](docs/Api/WebUiPropsApi.md#deletewebuiprops) | **DELETE** /obp/v6.0.0/management/webui_props/{webuipropname} | Delete WebUiProps
+*WebUiPropsApi* | [**getWebUiProp**](docs/Api/WebUiPropsApi.md#getwebuiprop) | **GET** /obp/v6.0.0/webui-props/{webuipropname} | Get WebUiProp by Name
+*WebUiPropsApi* | [**getWebUiProps**](docs/Api/WebUiPropsApi.md#getwebuiprops) | **GET** /obp/v6.0.0/webui-props | Get WebUiProps
+*WebhookApi* | [**createAccountWebhook**](docs/Api/WebhookApi.md#createaccountwebhook) | **POST** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Create an Account Webhook
+*WebhookApi* | [**createBankAccountNotificationWebhook**](docs/Api/WebhookApi.md#createbankaccountnotificationwebhook) | **POST** /obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction | Create bank level Account Notification Webhook
+*WebhookApi* | [**createSystemAccountNotificationWebhook**](docs/Api/WebhookApi.md#createsystemaccountnotificationwebhook) | **POST** /obp/v4.0.0/web-hooks/account/notifications/on-create-transaction | Create system level Account Notification Webhook
+*WebhookApi* | [**enableDisableAccountWebhook**](docs/Api/WebhookApi.md#enabledisableaccountwebhook) | **PUT** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Enable/Disable an Account Webhook
+*WebhookApi* | [**getAccountWebhooks**](docs/Api/WebhookApi.md#getaccountwebhooks) | **GET** /obp/v3.1.0/management/banks/{bankid}/account-web-hooks | Get Account Webhooks
 
 ## Models
 
-- [OBPv121AddImageForViewOnTransactionRequest](docs/Model/OBPv121AddImageForViewOnTransactionRequest.md)
-- [OBPv121AddImageForViewOnTransactionRequestProperties](docs/Model/OBPv121AddImageForViewOnTransactionRequestProperties.md)
-- [OBPv121GetCommentsForViewOnTransaction200Response](docs/Model/OBPv121GetCommentsForViewOnTransaction200Response.md)
-- [OBPv121GetCommentsForViewOnTransaction200ResponseProperties](docs/Model/OBPv121GetCommentsForViewOnTransaction200ResponseProperties.md)
-- [OBPv121GetCounterpartyPublicAlias200Response](docs/Model/OBPv121GetCounterpartyPublicAlias200Response.md)
-- [OBPv121GetCounterpartyPublicAlias200ResponseProperties](docs/Model/OBPv121GetCounterpartyPublicAlias200ResponseProperties.md)
-- [OBPv121GetImagesForViewOnTransaction200Response](docs/Model/OBPv121GetImagesForViewOnTransaction200Response.md)
-- [OBPv121GetImagesForViewOnTransaction200ResponseProperties](docs/Model/OBPv121GetImagesForViewOnTransaction200ResponseProperties.md)
-- [OBPv121GetOtherAccountForTransaction200Response](docs/Model/OBPv121GetOtherAccountForTransaction200Response.md)
-- [OBPv121GetOtherAccountForTransaction200ResponseProperties](docs/Model/OBPv121GetOtherAccountForTransaction200ResponseProperties.md)
-- [OBPv121GetOtherAccountForTransaction200ResponsePropertiesBank](docs/Model/OBPv121GetOtherAccountForTransaction200ResponsePropertiesBank.md)
-- [OBPv121GetOtherAccountForTransaction200ResponsePropertiesBankProperties](docs/Model/OBPv121GetOtherAccountForTransaction200ResponsePropertiesBankProperties.md)
-- [OBPv121GetOtherAccountMetadata200Response](docs/Model/OBPv121GetOtherAccountMetadata200Response.md)
-- [OBPv121GetOtherAccountMetadata200ResponseProperties](docs/Model/OBPv121GetOtherAccountMetadata200ResponseProperties.md)
-- [OBPv121GetOtherAccountMetadata200ResponsePropertiesPhysicalLocation](docs/Model/OBPv121GetOtherAccountMetadata200ResponsePropertiesPhysicalLocation.md)
-- [OBPv121GetOtherAccountMetadata200ResponsePropertiesPhysicalLocationProperties](docs/Model/OBPv121GetOtherAccountMetadata200ResponsePropertiesPhysicalLocationProperties.md)
-- [OBPv121GetTransactionNarrative200Response](docs/Model/OBPv121GetTransactionNarrative200Response.md)
-- [OBPv121GetTransactionNarrative200ResponseProperties](docs/Model/OBPv121GetTransactionNarrative200ResponseProperties.md)
-- [OBPv121GetWhereTagForViewOnTransaction200Response](docs/Model/OBPv121GetWhereTagForViewOnTransaction200Response.md)
-- [OBPv121GetWhereTagForViewOnTransaction200ResponseProperties](docs/Model/OBPv121GetWhereTagForViewOnTransaction200ResponseProperties.md)
-- [OBPv121UpdateCounterpartyCorporateLocationRequest](docs/Model/OBPv121UpdateCounterpartyCorporateLocationRequest.md)
-- [OBPv121UpdateCounterpartyCorporateLocationRequestProperties](docs/Model/OBPv121UpdateCounterpartyCorporateLocationRequestProperties.md)
-- [OBPv121UpdateCounterpartyImageUrlRequest](docs/Model/OBPv121UpdateCounterpartyImageUrlRequest.md)
-- [OBPv121UpdateCounterpartyImageUrlRequestProperties](docs/Model/OBPv121UpdateCounterpartyImageUrlRequestProperties.md)
-- [OBPv121UpdateCounterpartyMoreInfoRequest](docs/Model/OBPv121UpdateCounterpartyMoreInfoRequest.md)
-- [OBPv121UpdateCounterpartyMoreInfoRequestProperties](docs/Model/OBPv121UpdateCounterpartyMoreInfoRequestProperties.md)
-- [OBPv121UpdateCounterpartyOpenCorporatesUrlRequest](docs/Model/OBPv121UpdateCounterpartyOpenCorporatesUrlRequest.md)
-- [OBPv121UpdateCounterpartyOpenCorporatesUrlRequestProperties](docs/Model/OBPv121UpdateCounterpartyOpenCorporatesUrlRequestProperties.md)
-- [OBPv121UpdateCounterpartyPhysicalLocationRequest](docs/Model/OBPv121UpdateCounterpartyPhysicalLocationRequest.md)
-- [OBPv121UpdateCounterpartyPhysicalLocationRequestProperties](docs/Model/OBPv121UpdateCounterpartyPhysicalLocationRequestProperties.md)
-- [OBPv121UpdateCounterpartyUrlRequest](docs/Model/OBPv121UpdateCounterpartyUrlRequest.md)
-- [OBPv121UpdateCounterpartyUrlRequestProperties](docs/Model/OBPv121UpdateCounterpartyUrlRequestProperties.md)
-- [OBPv121UpdateTransactionNarrative200Response](docs/Model/OBPv121UpdateTransactionNarrative200Response.md)
-- [OBPv121UpdateTransactionNarrative200ResponseProperties](docs/Model/OBPv121UpdateTransactionNarrative200ResponseProperties.md)
-- [OBPv121UpdateWhereTagForViewOnTransactionRequest](docs/Model/OBPv121UpdateWhereTagForViewOnTransactionRequest.md)
-- [OBPv121UpdateWhereTagForViewOnTransactionRequestProperties](docs/Model/OBPv121UpdateWhereTagForViewOnTransactionRequestProperties.md)
-- [OBPv130GetCards200Response](docs/Model/OBPv130GetCards200Response.md)
-- [OBPv130GetCards200ResponseProperties](docs/Model/OBPv130GetCards200ResponseProperties.md)
-- [OBPv130GetCards200ResponsePropertiesCards](docs/Model/OBPv130GetCards200ResponsePropertiesCards.md)
-- [OBPv130GetCards200ResponsePropertiesCardsItems](docs/Model/OBPv130GetCards200ResponsePropertiesCardsItems.md)
-- [OBPv130GetCards200ResponsePropertiesCardsItemsProperties](docs/Model/OBPv130GetCards200ResponsePropertiesCardsItemsProperties.md)
-- [OBPv140AddCustomerMessageRequest](docs/Model/OBPv140AddCustomerMessageRequest.md)
-- [OBPv140AddCustomerMessageRequestProperties](docs/Model/OBPv140AddCustomerMessageRequestProperties.md)
-- [OBPv140GetCrmEvents200Response](docs/Model/OBPv140GetCrmEvents200Response.md)
-- [OBPv140GetCrmEvents200ResponseProperties](docs/Model/OBPv140GetCrmEvents200ResponseProperties.md)
-- [OBPv140GetCrmEvents200ResponsePropertiesCrmEvents](docs/Model/OBPv140GetCrmEvents200ResponsePropertiesCrmEvents.md)
-- [OBPv140GetCrmEvents200ResponsePropertiesCrmEventsItems](docs/Model/OBPv140GetCrmEvents200ResponsePropertiesCrmEventsItems.md)
-- [OBPv140GetCrmEvents200ResponsePropertiesCrmEventsItemsProperties](docs/Model/OBPv140GetCrmEvents200ResponsePropertiesCrmEventsItemsProperties.md)
-- [OBPv140GetCustomersMessages200Response](docs/Model/OBPv140GetCustomersMessages200Response.md)
-- [OBPv140GetCustomersMessages200ResponseProperties](docs/Model/OBPv140GetCustomersMessages200ResponseProperties.md)
-- [OBPv140GetCustomersMessages200ResponsePropertiesMessages](docs/Model/OBPv140GetCustomersMessages200ResponsePropertiesMessages.md)
-- [OBPv140GetCustomersMessages200ResponsePropertiesMessagesItems](docs/Model/OBPv140GetCustomersMessages200ResponsePropertiesMessagesItems.md)
-- [OBPv140GetCustomersMessages200ResponsePropertiesMessagesItemsProperties](docs/Model/OBPv140GetCustomersMessages200ResponsePropertiesMessagesItemsProperties.md)
-- [OBPv140GetTransactionRequestTypes200Response](docs/Model/OBPv140GetTransactionRequestTypes200Response.md)
-- [OBPv140GetTransactionRequestTypes200ResponseProperties](docs/Model/OBPv140GetTransactionRequestTypes200ResponseProperties.md)
-- [OBPv140GetTransactionRequestTypes200ResponsePropertiesTransactionRequestTypes](docs/Model/OBPv140GetTransactionRequestTypes200ResponsePropertiesTransactionRequestTypes.md)
-- [OBPv140GetTransactionRequestTypes200ResponsePropertiesTransactionRequestTypesItems](docs/Model/OBPv140GetTransactionRequestTypes200ResponsePropertiesTransactionRequestTypesItems.md)
-- [OBPv140GetTransactionRequestTypes200ResponsePropertiesTransactionRequestTypesItemsProperties](docs/Model/OBPv140GetTransactionRequestTypes200ResponsePropertiesTransactionRequestTypesItemsProperties.md)
-- [OBPv200AddKycCheckRequest](docs/Model/OBPv200AddKycCheckRequest.md)
-- [OBPv200AddKycCheckRequestProperties](docs/Model/OBPv200AddKycCheckRequestProperties.md)
-- [OBPv200AddKycDocument200Response](docs/Model/OBPv200AddKycDocument200Response.md)
-- [OBPv200AddKycDocument200ResponseProperties](docs/Model/OBPv200AddKycDocument200ResponseProperties.md)
-- [OBPv200AddKycDocumentRequest](docs/Model/OBPv200AddKycDocumentRequest.md)
-- [OBPv200AddKycDocumentRequestProperties](docs/Model/OBPv200AddKycDocumentRequestProperties.md)
-- [OBPv200AddKycMedia200Response](docs/Model/OBPv200AddKycMedia200Response.md)
-- [OBPv200AddKycMedia200ResponseProperties](docs/Model/OBPv200AddKycMedia200ResponseProperties.md)
-- [OBPv200AddKycMediaRequest](docs/Model/OBPv200AddKycMediaRequest.md)
-- [OBPv200AddKycMediaRequestProperties](docs/Model/OBPv200AddKycMediaRequestProperties.md)
-- [OBPv200AddKycStatusRequest](docs/Model/OBPv200AddKycStatusRequest.md)
-- [OBPv200AddKycStatusRequestProperties](docs/Model/OBPv200AddKycStatusRequestProperties.md)
-- [OBPv200GetKycChecks200Response](docs/Model/OBPv200GetKycChecks200Response.md)
-- [OBPv200GetKycChecks200ResponseProperties](docs/Model/OBPv200GetKycChecks200ResponseProperties.md)
-- [OBPv200GetKycChecks200ResponsePropertiesChecks](docs/Model/OBPv200GetKycChecks200ResponsePropertiesChecks.md)
-- [OBPv200GetKycChecks200ResponsePropertiesChecksItems](docs/Model/OBPv200GetKycChecks200ResponsePropertiesChecksItems.md)
-- [OBPv200GetKycChecks200ResponsePropertiesChecksItemsProperties](docs/Model/OBPv200GetKycChecks200ResponsePropertiesChecksItemsProperties.md)
-- [OBPv200GetKycDocuments200Response](docs/Model/OBPv200GetKycDocuments200Response.md)
-- [OBPv200GetKycDocuments200ResponseProperties](docs/Model/OBPv200GetKycDocuments200ResponseProperties.md)
-- [OBPv200GetKycDocuments200ResponsePropertiesDocuments](docs/Model/OBPv200GetKycDocuments200ResponsePropertiesDocuments.md)
-- [OBPv200GetKycMedia200Response](docs/Model/OBPv200GetKycMedia200Response.md)
-- [OBPv200GetKycMedia200ResponseProperties](docs/Model/OBPv200GetKycMedia200ResponseProperties.md)
-- [OBPv200GetKycMedia200ResponsePropertiesMedias](docs/Model/OBPv200GetKycMedia200ResponsePropertiesMedias.md)
-- [OBPv200GetKycStatuses200Response](docs/Model/OBPv200GetKycStatuses200Response.md)
-- [OBPv200GetKycStatuses200ResponseProperties](docs/Model/OBPv200GetKycStatuses200ResponseProperties.md)
-- [OBPv200GetKycStatuses200ResponsePropertiesStatuses](docs/Model/OBPv200GetKycStatuses200ResponsePropertiesStatuses.md)
-- [OBPv200GetKycStatuses200ResponsePropertiesStatusesItems](docs/Model/OBPv200GetKycStatuses200ResponsePropertiesStatusesItems.md)
-- [OBPv200GetKycStatuses200ResponsePropertiesStatusesItemsProperties](docs/Model/OBPv200GetKycStatuses200ResponsePropertiesStatusesItemsProperties.md)
-- [OBPv200GetPermissionsForBankAccount200Response](docs/Model/OBPv200GetPermissionsForBankAccount200Response.md)
-- [OBPv200GetPermissionsForBankAccount200ResponseProperties](docs/Model/OBPv200GetPermissionsForBankAccount200ResponseProperties.md)
-- [OBPv200GetPermissionsForBankAccount200ResponsePropertiesPermissions](docs/Model/OBPv200GetPermissionsForBankAccount200ResponsePropertiesPermissions.md)
-- [OBPv200GetPermissionsForBankAccount200ResponsePropertiesPermissionsItems](docs/Model/OBPv200GetPermissionsForBankAccount200ResponsePropertiesPermissionsItems.md)
-- [OBPv200GetPermissionsForBankAccount200ResponsePropertiesPermissionsItemsProperties](docs/Model/OBPv200GetPermissionsForBankAccount200ResponsePropertiesPermissionsItemsProperties.md)
-- [OBPv200GetSocialMediaHandles200Response](docs/Model/OBPv200GetSocialMediaHandles200Response.md)
-- [OBPv200GetSocialMediaHandles200ResponseProperties](docs/Model/OBPv200GetSocialMediaHandles200ResponseProperties.md)
-- [OBPv200GetSocialMediaHandles200ResponsePropertiesChecks](docs/Model/OBPv200GetSocialMediaHandles200ResponsePropertiesChecks.md)
-- [OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems](docs/Model/OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems.md)
-- [OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItemsProperties](docs/Model/OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItemsProperties.md)
-- [OBPv200GetTransactionTypes200Response](docs/Model/OBPv200GetTransactionTypes200Response.md)
-- [OBPv200GetTransactionTypes200ResponseProperties](docs/Model/OBPv200GetTransactionTypes200ResponseProperties.md)
-- [OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypes](docs/Model/OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypes.md)
-- [OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems](docs/Model/OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems.md)
-- [OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItemsProperties](docs/Model/OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItemsProperties.md)
-- [OBPv200PublicAccountsAllBanks200Response](docs/Model/OBPv200PublicAccountsAllBanks200Response.md)
-- [OBPv200PublicAccountsAllBanks200ResponseProperties](docs/Model/OBPv200PublicAccountsAllBanks200ResponseProperties.md)
-- [OBPv200PublicAccountsAllBanks200ResponsePropertiesAccounts](docs/Model/OBPv200PublicAccountsAllBanks200ResponsePropertiesAccounts.md)
-- [OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItems](docs/Model/OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItems.md)
-- [OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItemsProperties](docs/Model/OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItemsProperties.md)
-- [OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItemsPropertiesViewsAvailable](docs/Model/OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItemsPropertiesViewsAvailable.md)
-- [OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItemsPropertiesViewsAvailableItems](docs/Model/OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItemsPropertiesViewsAvailableItems.md)
-- [OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItemsPropertiesViewsAvailableItemsProperties](docs/Model/OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItemsPropertiesViewsAvailableItemsProperties.md)
-- [OBPv210CreateTransactionType200Response](docs/Model/OBPv210CreateTransactionType200Response.md)
-- [OBPv210CreateTransactionType200ResponseProperties](docs/Model/OBPv210CreateTransactionType200ResponseProperties.md)
-- [OBPv210GetRoles200Response](docs/Model/OBPv210GetRoles200Response.md)
-- [OBPv210GetRoles200ResponseProperties](docs/Model/OBPv210GetRoles200ResponseProperties.md)
-- [OBPv210GetRoles200ResponsePropertiesRoles](docs/Model/OBPv210GetRoles200ResponsePropertiesRoles.md)
-- [OBPv210GetRoles200ResponsePropertiesRolesItems](docs/Model/OBPv210GetRoles200ResponsePropertiesRolesItems.md)
-- [OBPv210GetRoles200ResponsePropertiesRolesItemsProperties](docs/Model/OBPv210GetRoles200ResponsePropertiesRolesItemsProperties.md)
-- [OBPv210GetTransactionRequestTypesSupportedByBank200Response](docs/Model/OBPv210GetTransactionRequestTypesSupportedByBank200Response.md)
-- [OBPv210GetTransactionRequestTypesSupportedByBank200ResponseProperties](docs/Model/OBPv210GetTransactionRequestTypesSupportedByBank200ResponseProperties.md)
-- [OBPv210GetTransactionRequestTypesSupportedByBank200ResponsePropertiesTransactionRequestTypes](docs/Model/OBPv210GetTransactionRequestTypesSupportedByBank200ResponsePropertiesTransactionRequestTypes.md)
-- [OBPv210GetTransactionRequestTypesSupportedByBank200ResponsePropertiesTransactionRequestTypesItems](docs/Model/OBPv210GetTransactionRequestTypesSupportedByBank200ResponsePropertiesTransactionRequestTypesItems.md)
-- [OBPv210GetTransactionRequestTypesSupportedByBank200ResponsePropertiesTransactionRequestTypesItemsProperties](docs/Model/OBPv210GetTransactionRequestTypesSupportedByBank200ResponsePropertiesTransactionRequestTypesItemsProperties.md)
-- [OBPv210SandboxDataImportRequest](docs/Model/OBPv210SandboxDataImportRequest.md)
-- [OBPv210SandboxDataImportRequestProperties](docs/Model/OBPv210SandboxDataImportRequestProperties.md)
-- [OBPv210SandboxDataImportRequestPropertiesAccounts](docs/Model/OBPv210SandboxDataImportRequestPropertiesAccounts.md)
-- [OBPv210SandboxDataImportRequestPropertiesAccountsItems](docs/Model/OBPv210SandboxDataImportRequestPropertiesAccountsItems.md)
-- [OBPv210SandboxDataImportRequestPropertiesAccountsItemsProperties](docs/Model/OBPv210SandboxDataImportRequestPropertiesAccountsItemsProperties.md)
-- [OBPv210SandboxDataImportRequestPropertiesAtms](docs/Model/OBPv210SandboxDataImportRequestPropertiesAtms.md)
-- [OBPv210SandboxDataImportRequestPropertiesAtmsItems](docs/Model/OBPv210SandboxDataImportRequestPropertiesAtmsItems.md)
-- [OBPv210SandboxDataImportRequestPropertiesAtmsItemsProperties](docs/Model/OBPv210SandboxDataImportRequestPropertiesAtmsItemsProperties.md)
-- [OBPv210SandboxDataImportRequestPropertiesBanks](docs/Model/OBPv210SandboxDataImportRequestPropertiesBanks.md)
-- [OBPv210SandboxDataImportRequestPropertiesBanksItems](docs/Model/OBPv210SandboxDataImportRequestPropertiesBanksItems.md)
-- [OBPv210SandboxDataImportRequestPropertiesBanksItemsProperties](docs/Model/OBPv210SandboxDataImportRequestPropertiesBanksItemsProperties.md)
-- [OBPv210SandboxDataImportRequestPropertiesBranches](docs/Model/OBPv210SandboxDataImportRequestPropertiesBranches.md)
-- [OBPv210SandboxDataImportRequestPropertiesBranchesItems](docs/Model/OBPv210SandboxDataImportRequestPropertiesBranchesItems.md)
-- [OBPv210SandboxDataImportRequestPropertiesBranchesItemsProperties](docs/Model/OBPv210SandboxDataImportRequestPropertiesBranchesItemsProperties.md)
-- [OBPv210SandboxDataImportRequestPropertiesBranchesItemsPropertiesAddress](docs/Model/OBPv210SandboxDataImportRequestPropertiesBranchesItemsPropertiesAddress.md)
-- [OBPv210SandboxDataImportRequestPropertiesBranchesItemsPropertiesAddressProperties](docs/Model/OBPv210SandboxDataImportRequestPropertiesBranchesItemsPropertiesAddressProperties.md)
-- [OBPv210SandboxDataImportRequestPropertiesBranchesItemsPropertiesDriveUp](docs/Model/OBPv210SandboxDataImportRequestPropertiesBranchesItemsPropertiesDriveUp.md)
-- [OBPv210SandboxDataImportRequestPropertiesBranchesItemsPropertiesDriveUpProperties](docs/Model/OBPv210SandboxDataImportRequestPropertiesBranchesItemsPropertiesDriveUpProperties.md)
-- [OBPv210SandboxDataImportRequestPropertiesCrmEvents](docs/Model/OBPv210SandboxDataImportRequestPropertiesCrmEvents.md)
-- [OBPv210SandboxDataImportRequestPropertiesCrmEventsItems](docs/Model/OBPv210SandboxDataImportRequestPropertiesCrmEventsItems.md)
-- [OBPv210SandboxDataImportRequestPropertiesCrmEventsItemsProperties](docs/Model/OBPv210SandboxDataImportRequestPropertiesCrmEventsItemsProperties.md)
-- [OBPv210SandboxDataImportRequestPropertiesCrmEventsItemsPropertiesCustomer](docs/Model/OBPv210SandboxDataImportRequestPropertiesCrmEventsItemsPropertiesCustomer.md)
-- [OBPv210SandboxDataImportRequestPropertiesCrmEventsItemsPropertiesCustomerProperties](docs/Model/OBPv210SandboxDataImportRequestPropertiesCrmEventsItemsPropertiesCustomerProperties.md)
-- [OBPv210SandboxDataImportRequestPropertiesProducts](docs/Model/OBPv210SandboxDataImportRequestPropertiesProducts.md)
-- [OBPv210SandboxDataImportRequestPropertiesProductsItems](docs/Model/OBPv210SandboxDataImportRequestPropertiesProductsItems.md)
-- [OBPv210SandboxDataImportRequestPropertiesProductsItemsProperties](docs/Model/OBPv210SandboxDataImportRequestPropertiesProductsItemsProperties.md)
-- [OBPv210SandboxDataImportRequestPropertiesTransactions](docs/Model/OBPv210SandboxDataImportRequestPropertiesTransactions.md)
-- [OBPv210SandboxDataImportRequestPropertiesTransactionsItems](docs/Model/OBPv210SandboxDataImportRequestPropertiesTransactionsItems.md)
-- [OBPv210SandboxDataImportRequestPropertiesTransactionsItemsProperties](docs/Model/OBPv210SandboxDataImportRequestPropertiesTransactionsItemsProperties.md)
-- [OBPv210SandboxDataImportRequestPropertiesTransactionsItemsPropertiesDetails](docs/Model/OBPv210SandboxDataImportRequestPropertiesTransactionsItemsPropertiesDetails.md)
-- [OBPv210SandboxDataImportRequestPropertiesTransactionsItemsPropertiesDetailsProperties](docs/Model/OBPv210SandboxDataImportRequestPropertiesTransactionsItemsPropertiesDetailsProperties.md)
-- [OBPv210SandboxDataImportRequestPropertiesTransactionsItemsPropertiesThisAccount](docs/Model/OBPv210SandboxDataImportRequestPropertiesTransactionsItemsPropertiesThisAccount.md)
-- [OBPv210SandboxDataImportRequestPropertiesTransactionsItemsPropertiesThisAccountProperties](docs/Model/OBPv210SandboxDataImportRequestPropertiesTransactionsItemsPropertiesThisAccountProperties.md)
-- [OBPv210SandboxDataImportRequestPropertiesUsers](docs/Model/OBPv210SandboxDataImportRequestPropertiesUsers.md)
-- [OBPv210SandboxDataImportRequestPropertiesUsersItems](docs/Model/OBPv210SandboxDataImportRequestPropertiesUsersItems.md)
-- [OBPv210SandboxDataImportRequestPropertiesUsersItemsProperties](docs/Model/OBPv210SandboxDataImportRequestPropertiesUsersItemsProperties.md)
-- [OBPv220CreateFxRequest](docs/Model/OBPv220CreateFxRequest.md)
-- [OBPv220CreateFxRequestProperties](docs/Model/OBPv220CreateFxRequestProperties.md)
-- [OBPv220GetConnectorMetrics200Response](docs/Model/OBPv220GetConnectorMetrics200Response.md)
-- [OBPv220GetConnectorMetrics200ResponseProperties](docs/Model/OBPv220GetConnectorMetrics200ResponseProperties.md)
-- [OBPv220GetConnectorMetrics200ResponsePropertiesMetrics](docs/Model/OBPv220GetConnectorMetrics200ResponsePropertiesMetrics.md)
-- [OBPv220GetConnectorMetrics200ResponsePropertiesMetricsItems](docs/Model/OBPv220GetConnectorMetrics200ResponsePropertiesMetricsItems.md)
-- [OBPv220GetConnectorMetrics200ResponsePropertiesMetricsItemsProperties](docs/Model/OBPv220GetConnectorMetrics200ResponsePropertiesMetricsItemsProperties.md)
-- [OBPv220GetMessageDocs200Response](docs/Model/OBPv220GetMessageDocs200Response.md)
-- [OBPv220GetMessageDocs200ResponseProperties](docs/Model/OBPv220GetMessageDocs200ResponseProperties.md)
-- [OBPv220GetMessageDocs200ResponsePropertiesMessageDocs](docs/Model/OBPv220GetMessageDocs200ResponsePropertiesMessageDocs.md)
-- [OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItems](docs/Model/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItems.md)
-- [OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsProperties](docs/Model/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsProperties.md)
-- [OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesAdapterImplementation](docs/Model/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesAdapterImplementation.md)
-- [OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesAdapterImplementationProperties](docs/Model/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesAdapterImplementationProperties.md)
-- [OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesDependentEndpoints](docs/Model/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesDependentEndpoints.md)
-- [OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesDependentEndpointsItems](docs/Model/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesDependentEndpointsItems.md)
-- [OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesDependentEndpointsItemsProperties](docs/Model/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesDependentEndpointsItemsProperties.md)
-- [OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesOutboundAvroSchema](docs/Model/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesOutboundAvroSchema.md)
-- [OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesOutboundAvroSchemaProperties](docs/Model/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesOutboundAvroSchemaProperties.md)
-- [OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesRequiredFieldInfo](docs/Model/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesRequiredFieldInfo.md)
-- [OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesRequiredFieldInfoProperties](docs/Model/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesRequiredFieldInfoProperties.md)
-- [OBPv300DataWarehouseSearchRequest](docs/Model/OBPv300DataWarehouseSearchRequest.md)
-- [OBPv300DataWarehouseSearchRequestProperties](docs/Model/OBPv300DataWarehouseSearchRequestProperties.md)
-- [OBPv300DataWarehouseSearchRequestPropertiesQuery](docs/Model/OBPv300DataWarehouseSearchRequestPropertiesQuery.md)
-- [OBPv300DataWarehouseSearchRequestPropertiesQueryProperties](docs/Model/OBPv300DataWarehouseSearchRequestPropertiesQueryProperties.md)
-- [OBPv300GetAllEntitlementRequests200Response](docs/Model/OBPv300GetAllEntitlementRequests200Response.md)
-- [OBPv300GetAllEntitlementRequests200ResponseProperties](docs/Model/OBPv300GetAllEntitlementRequests200ResponseProperties.md)
-- [OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequests](docs/Model/OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequests.md)
-- [OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequestsItems](docs/Model/OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequestsItems.md)
-- [OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequestsItemsProperties](docs/Model/OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequestsItemsProperties.md)
-- [OBPv300GetApiGlossary200Response](docs/Model/OBPv300GetApiGlossary200Response.md)
-- [OBPv300GetApiGlossary200ResponseProperties](docs/Model/OBPv300GetApiGlossary200ResponseProperties.md)
-- [OBPv300GetApiGlossary200ResponsePropertiesGlossaryItems](docs/Model/OBPv300GetApiGlossary200ResponsePropertiesGlossaryItems.md)
-- [OBPv300GetApiGlossary200ResponsePropertiesGlossaryItemsItems](docs/Model/OBPv300GetApiGlossary200ResponsePropertiesGlossaryItemsItems.md)
-- [OBPv300GetApiGlossary200ResponsePropertiesGlossaryItemsItemsProperties](docs/Model/OBPv300GetApiGlossary200ResponsePropertiesGlossaryItemsItemsProperties.md)
-- [OBPv300GetApiGlossary200ResponsePropertiesGlossaryItemsItemsPropertiesDescription](docs/Model/OBPv300GetApiGlossary200ResponsePropertiesGlossaryItemsItemsPropertiesDescription.md)
-- [OBPv300GetApiGlossary200ResponsePropertiesGlossaryItemsItemsPropertiesDescriptionProperties](docs/Model/OBPv300GetApiGlossary200ResponsePropertiesGlossaryItemsItemsPropertiesDescriptionProperties.md)
-- [OBPv300GetBranches200Response](docs/Model/OBPv300GetBranches200Response.md)
-- [OBPv300GetBranches200ResponseProperties](docs/Model/OBPv300GetBranches200ResponseProperties.md)
-- [OBPv300GetBranches200ResponsePropertiesBranches](docs/Model/OBPv300GetBranches200ResponsePropertiesBranches.md)
-- [OBPv300GetBranches200ResponsePropertiesBranchesItems](docs/Model/OBPv300GetBranches200ResponsePropertiesBranchesItems.md)
-- [OBPv300GetBranches200ResponsePropertiesBranchesItemsProperties](docs/Model/OBPv300GetBranches200ResponsePropertiesBranchesItemsProperties.md)
-- [OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesAddress](docs/Model/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesAddress.md)
-- [OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesAddressProperties](docs/Model/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesAddressProperties.md)
-- [OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUp](docs/Model/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUp.md)
-- [OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpProperties](docs/Model/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpProperties.md)
-- [OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday](docs/Model/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday.md)
-- [OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties](docs/Model/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties.md)
-- [OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobby](docs/Model/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobby.md)
-- [OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobbyProperties](docs/Model/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobbyProperties.md)
-- [OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobbyPropertiesSunday](docs/Model/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobbyPropertiesSunday.md)
-- [OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocation](docs/Model/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocation.md)
-- [OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocationProperties](docs/Model/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocationProperties.md)
-- [OBPv300GetCoreTransactionsForBankAccount200Response](docs/Model/OBPv300GetCoreTransactionsForBankAccount200Response.md)
-- [OBPv300GetCoreTransactionsForBankAccount200ResponseProperties](docs/Model/OBPv300GetCoreTransactionsForBankAccount200ResponseProperties.md)
-- [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactions](docs/Model/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactions.md)
-- [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItems](docs/Model/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItems.md)
-- [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsProperties](docs/Model/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsProperties.md)
-- [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesDetails](docs/Model/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesDetails.md)
-- [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesDetailsProperties](docs/Model/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesDetailsProperties.md)
-- [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesOtherAccount](docs/Model/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesOtherAccount.md)
-- [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesOtherAccountProperties](docs/Model/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesOtherAccountProperties.md)
-- [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccount](docs/Model/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccount.md)
-- [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountProperties](docs/Model/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountProperties.md)
-- [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountPropertiesHolders](docs/Model/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountPropertiesHolders.md)
-- [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountPropertiesHoldersItems](docs/Model/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountPropertiesHoldersItems.md)
-- [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountPropertiesHoldersItemsProperties](docs/Model/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountPropertiesHoldersItemsProperties.md)
-- [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributes](docs/Model/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributes.md)
-- [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems](docs/Model/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
-- [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItemsProperties](docs/Model/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItemsProperties.md)
-- [OBPv300GetCustomersForUser200Response](docs/Model/OBPv300GetCustomersForUser200Response.md)
-- [OBPv300GetCustomersForUser200ResponseProperties](docs/Model/OBPv300GetCustomersForUser200ResponseProperties.md)
-- [OBPv300GetCustomersForUser200ResponsePropertiesCustomers](docs/Model/OBPv300GetCustomersForUser200ResponsePropertiesCustomers.md)
-- [OBPv300GetCustomersForUser200ResponsePropertiesCustomersItems](docs/Model/OBPv300GetCustomersForUser200ResponsePropertiesCustomersItems.md)
-- [OBPv300GetCustomersForUser200ResponsePropertiesCustomersItemsProperties](docs/Model/OBPv300GetCustomersForUser200ResponsePropertiesCustomersItemsProperties.md)
-- [OBPv300GetFirehoseTransactionsForBankAccount200Response](docs/Model/OBPv300GetFirehoseTransactionsForBankAccount200Response.md)
-- [OBPv300GetFirehoseTransactionsForBankAccount200ResponseProperties](docs/Model/OBPv300GetFirehoseTransactionsForBankAccount200ResponseProperties.md)
-- [OBPv300GetFirehoseTransactionsForBankAccount200ResponsePropertiesTransactions](docs/Model/OBPv300GetFirehoseTransactionsForBankAccount200ResponsePropertiesTransactions.md)
-- [OBPv300GetOtherAccountsForBankAccount200Response](docs/Model/OBPv300GetOtherAccountsForBankAccount200Response.md)
-- [OBPv300GetOtherAccountsForBankAccount200ResponseProperties](docs/Model/OBPv300GetOtherAccountsForBankAccount200ResponseProperties.md)
-- [OBPv300GetOtherAccountsForBankAccount200ResponsePropertiesOtherAccounts](docs/Model/OBPv300GetOtherAccountsForBankAccount200ResponsePropertiesOtherAccounts.md)
-- [OBPv300GetPermissionForUserForBankAccount200Response](docs/Model/OBPv300GetPermissionForUserForBankAccount200Response.md)
-- [OBPv300GetPermissionForUserForBankAccount200ResponseProperties](docs/Model/OBPv300GetPermissionForUserForBankAccount200ResponseProperties.md)
-- [OBPv300GetPermissionForUserForBankAccount200ResponsePropertiesViews](docs/Model/OBPv300GetPermissionForUserForBankAccount200ResponsePropertiesViews.md)
-- [OBPv300GetPrivateAccountIdsbyBankId200Response](docs/Model/OBPv300GetPrivateAccountIdsbyBankId200Response.md)
-- [OBPv300GetPrivateAccountIdsbyBankId200ResponseProperties](docs/Model/OBPv300GetPrivateAccountIdsbyBankId200ResponseProperties.md)
-- [OBPv300GetPublicAccountById200Response](docs/Model/OBPv300GetPublicAccountById200Response.md)
-- [OBPv300GetPublicAccountById200ResponseProperties](docs/Model/OBPv300GetPublicAccountById200ResponseProperties.md)
-- [OBPv300GetPublicAccountById200ResponsePropertiesAccountRules](docs/Model/OBPv300GetPublicAccountById200ResponsePropertiesAccountRules.md)
-- [OBPv300GetPublicAccountById200ResponsePropertiesAccountRulesItems](docs/Model/OBPv300GetPublicAccountById200ResponsePropertiesAccountRulesItems.md)
-- [OBPv300GetPublicAccountById200ResponsePropertiesAccountRulesItemsProperties](docs/Model/OBPv300GetPublicAccountById200ResponsePropertiesAccountRulesItemsProperties.md)
-- [OBPv300PrivateAccountsAtOneBank200Response](docs/Model/OBPv300PrivateAccountsAtOneBank200Response.md)
-- [OBPv300PrivateAccountsAtOneBank200ResponseProperties](docs/Model/OBPv300PrivateAccountsAtOneBank200ResponseProperties.md)
-- [OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccounts](docs/Model/OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccounts.md)
-- [OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItems](docs/Model/OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItems.md)
-- [OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItemsProperties](docs/Model/OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItemsProperties.md)
-- [OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesViews](docs/Model/OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesViews.md)
-- [OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesViewsItems](docs/Model/OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesViewsItems.md)
-- [OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesViewsItemsProperties](docs/Model/OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesViewsItemsProperties.md)
-- [OBPv300UpdateViewForBankAccountRequest](docs/Model/OBPv300UpdateViewForBankAccountRequest.md)
-- [OBPv300UpdateViewForBankAccountRequestProperties](docs/Model/OBPv300UpdateViewForBankAccountRequestProperties.md)
-- [OBPv310AnswerConsentChallengeRequest](docs/Model/OBPv310AnswerConsentChallengeRequest.md)
-- [OBPv310AnswerConsentChallengeRequestProperties](docs/Model/OBPv310AnswerConsentChallengeRequestProperties.md)
-- [OBPv310CheckFundsAvailable200Response](docs/Model/OBPv310CheckFundsAvailable200Response.md)
-- [OBPv310CheckFundsAvailable200ResponseProperties](docs/Model/OBPv310CheckFundsAvailable200ResponseProperties.md)
-- [OBPv310Config200Response](docs/Model/OBPv310Config200Response.md)
-- [OBPv310Config200ResponseProperties](docs/Model/OBPv310Config200ResponseProperties.md)
-- [OBPv310Config200ResponsePropertiesAkka](docs/Model/OBPv310Config200ResponsePropertiesAkka.md)
-- [OBPv310Config200ResponsePropertiesAkkaProperties](docs/Model/OBPv310Config200ResponsePropertiesAkkaProperties.md)
-- [OBPv310Config200ResponsePropertiesCache](docs/Model/OBPv310Config200ResponsePropertiesCache.md)
-- [OBPv310Config200ResponsePropertiesCacheItems](docs/Model/OBPv310Config200ResponsePropertiesCacheItems.md)
-- [OBPv310Config200ResponsePropertiesCacheItemsProperties](docs/Model/OBPv310Config200ResponsePropertiesCacheItemsProperties.md)
-- [OBPv310Config200ResponsePropertiesElasticSearch](docs/Model/OBPv310Config200ResponsePropertiesElasticSearch.md)
-- [OBPv310Config200ResponsePropertiesElasticSearchProperties](docs/Model/OBPv310Config200ResponsePropertiesElasticSearchProperties.md)
-- [OBPv310Config200ResponsePropertiesElasticSearchPropertiesMetrics](docs/Model/OBPv310Config200ResponsePropertiesElasticSearchPropertiesMetrics.md)
-- [OBPv310Config200ResponsePropertiesElasticSearchPropertiesMetricsItems](docs/Model/OBPv310Config200ResponsePropertiesElasticSearchPropertiesMetricsItems.md)
-- [OBPv310Config200ResponsePropertiesElasticSearchPropertiesMetricsItemsProperties](docs/Model/OBPv310Config200ResponsePropertiesElasticSearchPropertiesMetricsItemsProperties.md)
-- [OBPv310Config200ResponsePropertiesScopes](docs/Model/OBPv310Config200ResponsePropertiesScopes.md)
-- [OBPv310Config200ResponsePropertiesScopesProperties](docs/Model/OBPv310Config200ResponsePropertiesScopesProperties.md)
-- [OBPv310CreateAccountApplicationRequest](docs/Model/OBPv310CreateAccountApplicationRequest.md)
-- [OBPv310CreateAccountApplicationRequestProperties](docs/Model/OBPv310CreateAccountApplicationRequestProperties.md)
-- [OBPv310CreateAccountWebhookRequest](docs/Model/OBPv310CreateAccountWebhookRequest.md)
-- [OBPv310CreateAccountWebhookRequestProperties](docs/Model/OBPv310CreateAccountWebhookRequestProperties.md)
-- [OBPv310CreateCardAttribute200Response](docs/Model/OBPv310CreateCardAttribute200Response.md)
-- [OBPv310CreateCardAttribute200ResponseProperties](docs/Model/OBPv310CreateCardAttribute200ResponseProperties.md)
-- [OBPv310CreateCardAttribute200ResponsePropertiesAttributeType](docs/Model/OBPv310CreateCardAttribute200ResponsePropertiesAttributeType.md)
-- [OBPv310CreateConsentEmailRequest](docs/Model/OBPv310CreateConsentEmailRequest.md)
-- [OBPv310CreateConsentEmailRequestProperties](docs/Model/OBPv310CreateConsentEmailRequestProperties.md)
-- [OBPv310CreateConsentSmsRequest](docs/Model/OBPv310CreateConsentSmsRequest.md)
-- [OBPv310CreateConsentSmsRequestProperties](docs/Model/OBPv310CreateConsentSmsRequestProperties.md)
-- [OBPv310CreateCustomerAddress200Response](docs/Model/OBPv310CreateCustomerAddress200Response.md)
-- [OBPv310CreateCustomerAddress200ResponseProperties](docs/Model/OBPv310CreateCustomerAddress200ResponseProperties.md)
-- [OBPv310CreateCustomerAddressRequest](docs/Model/OBPv310CreateCustomerAddressRequest.md)
-- [OBPv310CreateCustomerAddressRequestProperties](docs/Model/OBPv310CreateCustomerAddressRequestProperties.md)
-- [OBPv310CreateMeetingRequest](docs/Model/OBPv310CreateMeetingRequest.md)
-- [OBPv310CreateMeetingRequestProperties](docs/Model/OBPv310CreateMeetingRequestProperties.md)
-- [OBPv310CreateMethodRoutingRequest](docs/Model/OBPv310CreateMethodRoutingRequest.md)
-- [OBPv310CreateMethodRoutingRequestProperties](docs/Model/OBPv310CreateMethodRoutingRequestProperties.md)
-- [OBPv310CreateProductCollection200Response](docs/Model/OBPv310CreateProductCollection200Response.md)
-- [OBPv310CreateProductCollection200ResponseProperties](docs/Model/OBPv310CreateProductCollection200ResponseProperties.md)
-- [OBPv310CreateProductCollection200ResponsePropertiesProductCollection](docs/Model/OBPv310CreateProductCollection200ResponsePropertiesProductCollection.md)
-- [OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItems](docs/Model/OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItems.md)
-- [OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItemsProperties](docs/Model/OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItemsProperties.md)
-- [OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItemsPropertiesItems](docs/Model/OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItemsPropertiesItems.md)
-- [OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItemsPropertiesItemsItems](docs/Model/OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItemsPropertiesItemsItems.md)
-- [OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItemsPropertiesItemsItemsProperties](docs/Model/OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItemsPropertiesItemsItemsProperties.md)
-- [OBPv310CreateProductCollectionRequest](docs/Model/OBPv310CreateProductCollectionRequest.md)
-- [OBPv310CreateProductCollectionRequestProperties](docs/Model/OBPv310CreateProductCollectionRequestProperties.md)
-- [OBPv310CreateTaxResidence200Response](docs/Model/OBPv310CreateTaxResidence200Response.md)
-- [OBPv310CreateTaxResidence200ResponseProperties](docs/Model/OBPv310CreateTaxResidence200ResponseProperties.md)
-- [OBPv310CreateTaxResidenceRequest](docs/Model/OBPv310CreateTaxResidenceRequest.md)
-- [OBPv310CreateTaxResidenceRequestProperties](docs/Model/OBPv310CreateTaxResidenceRequestProperties.md)
-- [OBPv310EnableDisableAccountWebhook200Response](docs/Model/OBPv310EnableDisableAccountWebhook200Response.md)
-- [OBPv310EnableDisableAccountWebhook200ResponseProperties](docs/Model/OBPv310EnableDisableAccountWebhook200ResponseProperties.md)
-- [OBPv310EnableDisableAccountWebhookRequest](docs/Model/OBPv310EnableDisableAccountWebhookRequest.md)
-- [OBPv310EnableDisableAccountWebhookRequestProperties](docs/Model/OBPv310EnableDisableAccountWebhookRequestProperties.md)
-- [OBPv310EnableDisableConsumersRequest](docs/Model/OBPv310EnableDisableConsumersRequest.md)
-- [OBPv310EnableDisableConsumersRequestProperties](docs/Model/OBPv310EnableDisableConsumersRequestProperties.md)
-- [OBPv310GetAccountApplications200Response](docs/Model/OBPv310GetAccountApplications200Response.md)
-- [OBPv310GetAccountApplications200ResponseProperties](docs/Model/OBPv310GetAccountApplications200ResponseProperties.md)
-- [OBPv310GetAccountApplications200ResponsePropertiesAccountApplications](docs/Model/OBPv310GetAccountApplications200ResponsePropertiesAccountApplications.md)
-- [OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems](docs/Model/OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems.md)
-- [OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItemsProperties](docs/Model/OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItemsProperties.md)
-- [OBPv310GetAccountWebhooks200Response](docs/Model/OBPv310GetAccountWebhooks200Response.md)
-- [OBPv310GetAccountWebhooks200ResponseProperties](docs/Model/OBPv310GetAccountWebhooks200ResponseProperties.md)
-- [OBPv310GetAccountWebhooks200ResponsePropertiesWebHooks](docs/Model/OBPv310GetAccountWebhooks200ResponsePropertiesWebHooks.md)
-- [OBPv310GetAllEntitlements200Response](docs/Model/OBPv310GetAllEntitlements200Response.md)
-- [OBPv310GetAllEntitlements200ResponseProperties](docs/Model/OBPv310GetAllEntitlements200ResponseProperties.md)
-- [OBPv310GetAllEntitlements200ResponsePropertiesList](docs/Model/OBPv310GetAllEntitlements200ResponsePropertiesList.md)
-- [OBPv310GetAllEntitlements200ResponsePropertiesListItems](docs/Model/OBPv310GetAllEntitlements200ResponsePropertiesListItems.md)
-- [OBPv310GetAllEntitlements200ResponsePropertiesListItemsProperties](docs/Model/OBPv310GetAllEntitlements200ResponsePropertiesListItemsProperties.md)
-- [OBPv310GetCallsLimit200Response](docs/Model/OBPv310GetCallsLimit200Response.md)
-- [OBPv310GetCallsLimit200ResponseProperties](docs/Model/OBPv310GetCallsLimit200ResponseProperties.md)
-- [OBPv310GetCallsLimit200ResponsePropertiesCurrentState](docs/Model/OBPv310GetCallsLimit200ResponsePropertiesCurrentState.md)
-- [OBPv310GetCallsLimit200ResponsePropertiesCurrentStateProperties](docs/Model/OBPv310GetCallsLimit200ResponsePropertiesCurrentStateProperties.md)
-- [OBPv310GetCallsLimit200ResponsePropertiesCurrentStatePropertiesPerWeek](docs/Model/OBPv310GetCallsLimit200ResponsePropertiesCurrentStatePropertiesPerWeek.md)
-- [OBPv310GetCallsLimit200ResponsePropertiesCurrentStatePropertiesPerWeekProperties](docs/Model/OBPv310GetCallsLimit200ResponsePropertiesCurrentStatePropertiesPerWeekProperties.md)
-- [OBPv310GetCardForBank200Response](docs/Model/OBPv310GetCardForBank200Response.md)
-- [OBPv310GetCardForBank200ResponseProperties](docs/Model/OBPv310GetCardForBank200ResponseProperties.md)
-- [OBPv310GetCardForBank200ResponsePropertiesAccount](docs/Model/OBPv310GetCardForBank200ResponsePropertiesAccount.md)
-- [OBPv310GetCardForBank200ResponsePropertiesAccountProperties](docs/Model/OBPv310GetCardForBank200ResponsePropertiesAccountProperties.md)
-- [OBPv310GetCardForBank200ResponsePropertiesAccountPropertiesViewsAvailable](docs/Model/OBPv310GetCardForBank200ResponsePropertiesAccountPropertiesViewsAvailable.md)
-- [OBPv310GetCardForBank200ResponsePropertiesAccountPropertiesViewsAvailableItems](docs/Model/OBPv310GetCardForBank200ResponsePropertiesAccountPropertiesViewsAvailableItems.md)
-- [OBPv310GetCardForBank200ResponsePropertiesAccountPropertiesViewsAvailableItemsProperties](docs/Model/OBPv310GetCardForBank200ResponsePropertiesAccountPropertiesViewsAvailableItemsProperties.md)
-- [OBPv310GetCardForBank200ResponsePropertiesCardAttributes](docs/Model/OBPv310GetCardForBank200ResponsePropertiesCardAttributes.md)
-- [OBPv310GetCardsForBank200Response](docs/Model/OBPv310GetCardsForBank200Response.md)
-- [OBPv310GetCardsForBank200ResponseProperties](docs/Model/OBPv310GetCardsForBank200ResponseProperties.md)
-- [OBPv310GetCardsForBank200ResponsePropertiesCards](docs/Model/OBPv310GetCardsForBank200ResponsePropertiesCards.md)
-- [OBPv310GetCardsForBank200ResponsePropertiesCardsItems](docs/Model/OBPv310GetCardsForBank200ResponsePropertiesCardsItems.md)
-- [OBPv310GetCardsForBank200ResponsePropertiesCardsItemsProperties](docs/Model/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsProperties.md)
-- [OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccount](docs/Model/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccount.md)
-- [OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccountProperties](docs/Model/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccountProperties.md)
-- [OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccountPropertiesViewsAvailable](docs/Model/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccountPropertiesViewsAvailable.md)
-- [OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccountPropertiesViewsAvailableItems](docs/Model/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccountPropertiesViewsAvailableItems.md)
-- [OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccountPropertiesViewsAvailableItemsProperties](docs/Model/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccountPropertiesViewsAvailableItemsProperties.md)
-- [OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesPinReset](docs/Model/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesPinReset.md)
-- [OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesReplacement](docs/Model/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesReplacement.md)
-- [OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesReplacementProperties](docs/Model/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesReplacementProperties.md)
-- [OBPv310GetCheckbookOrders200Response](docs/Model/OBPv310GetCheckbookOrders200Response.md)
-- [OBPv310GetCheckbookOrders200ResponseProperties](docs/Model/OBPv310GetCheckbookOrders200ResponseProperties.md)
-- [OBPv310GetCheckbookOrders200ResponsePropertiesAccount](docs/Model/OBPv310GetCheckbookOrders200ResponsePropertiesAccount.md)
-- [OBPv310GetCheckbookOrders200ResponsePropertiesAccountProperties](docs/Model/OBPv310GetCheckbookOrders200ResponsePropertiesAccountProperties.md)
-- [OBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutings](docs/Model/OBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutings.md)
-- [OBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems](docs/Model/OBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems.md)
-- [OBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties](docs/Model/OBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties.md)
-- [OBPv310GetCheckbookOrders200ResponsePropertiesOrders](docs/Model/OBPv310GetCheckbookOrders200ResponsePropertiesOrders.md)
-- [OBPv310GetCheckbookOrders200ResponsePropertiesOrdersItems](docs/Model/OBPv310GetCheckbookOrders200ResponsePropertiesOrdersItems.md)
-- [OBPv310GetCheckbookOrders200ResponsePropertiesOrdersItemsProperties](docs/Model/OBPv310GetCheckbookOrders200ResponsePropertiesOrdersItemsProperties.md)
-- [OBPv310GetCheckbookOrders200ResponsePropertiesOrdersItemsPropertiesOrder](docs/Model/OBPv310GetCheckbookOrders200ResponsePropertiesOrdersItemsPropertiesOrder.md)
-- [OBPv310GetCheckbookOrders200ResponsePropertiesOrdersItemsPropertiesOrderProperties](docs/Model/OBPv310GetCheckbookOrders200ResponsePropertiesOrdersItemsPropertiesOrderProperties.md)
-- [OBPv310GetConsumersForCurrentUser200Response](docs/Model/OBPv310GetConsumersForCurrentUser200Response.md)
-- [OBPv310GetConsumersForCurrentUser200ResponseProperties](docs/Model/OBPv310GetConsumersForCurrentUser200ResponseProperties.md)
-- [OBPv310GetConsumersForCurrentUser200ResponsePropertiesConsumers](docs/Model/OBPv310GetConsumersForCurrentUser200ResponsePropertiesConsumers.md)
-- [OBPv310GetConsumersForCurrentUser200ResponsePropertiesConsumersItems](docs/Model/OBPv310GetConsumersForCurrentUser200ResponsePropertiesConsumersItems.md)
-- [OBPv310GetConsumersForCurrentUser200ResponsePropertiesConsumersItemsProperties](docs/Model/OBPv310GetConsumersForCurrentUser200ResponsePropertiesConsumersItemsProperties.md)
-- [OBPv310GetCustomerAddresses200Response](docs/Model/OBPv310GetCustomerAddresses200Response.md)
-- [OBPv310GetCustomerAddresses200ResponseProperties](docs/Model/OBPv310GetCustomerAddresses200ResponseProperties.md)
-- [OBPv310GetCustomerAddresses200ResponsePropertiesAddresses](docs/Model/OBPv310GetCustomerAddresses200ResponsePropertiesAddresses.md)
-- [OBPv310GetMeeting200Response](docs/Model/OBPv310GetMeeting200Response.md)
-- [OBPv310GetMeeting200ResponseProperties](docs/Model/OBPv310GetMeeting200ResponseProperties.md)
-- [OBPv310GetMeeting200ResponsePropertiesCreator](docs/Model/OBPv310GetMeeting200ResponsePropertiesCreator.md)
-- [OBPv310GetMeeting200ResponsePropertiesCreatorProperties](docs/Model/OBPv310GetMeeting200ResponsePropertiesCreatorProperties.md)
-- [OBPv310GetMeeting200ResponsePropertiesInvitees](docs/Model/OBPv310GetMeeting200ResponsePropertiesInvitees.md)
-- [OBPv310GetMeeting200ResponsePropertiesInviteesItems](docs/Model/OBPv310GetMeeting200ResponsePropertiesInviteesItems.md)
-- [OBPv310GetMeeting200ResponsePropertiesInviteesItemsProperties](docs/Model/OBPv310GetMeeting200ResponsePropertiesInviteesItemsProperties.md)
-- [OBPv310GetMeeting200ResponsePropertiesKeys](docs/Model/OBPv310GetMeeting200ResponsePropertiesKeys.md)
-- [OBPv310GetMeeting200ResponsePropertiesKeysProperties](docs/Model/OBPv310GetMeeting200ResponsePropertiesKeysProperties.md)
-- [OBPv310GetMeeting200ResponsePropertiesPresent](docs/Model/OBPv310GetMeeting200ResponsePropertiesPresent.md)
-- [OBPv310GetMeeting200ResponsePropertiesPresentProperties](docs/Model/OBPv310GetMeeting200ResponsePropertiesPresentProperties.md)
-- [OBPv310GetMeetings200Response](docs/Model/OBPv310GetMeetings200Response.md)
-- [OBPv310GetMeetings200ResponseProperties](docs/Model/OBPv310GetMeetings200ResponseProperties.md)
-- [OBPv310GetMeetings200ResponsePropertiesMeetings](docs/Model/OBPv310GetMeetings200ResponsePropertiesMeetings.md)
-- [OBPv310GetMethodRoutings200Response](docs/Model/OBPv310GetMethodRoutings200Response.md)
-- [OBPv310GetMethodRoutings200ResponseProperties](docs/Model/OBPv310GetMethodRoutings200ResponseProperties.md)
-- [OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutings](docs/Model/OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutings.md)
-- [OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems](docs/Model/OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems.md)
-- [OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItemsProperties](docs/Model/OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItemsProperties.md)
-- [OBPv310GetMetricsTopConsumers200Response](docs/Model/OBPv310GetMetricsTopConsumers200Response.md)
-- [OBPv310GetMetricsTopConsumers200ResponseProperties](docs/Model/OBPv310GetMetricsTopConsumers200ResponseProperties.md)
-- [OBPv310GetMetricsTopConsumers200ResponsePropertiesTopConsumers](docs/Model/OBPv310GetMetricsTopConsumers200ResponsePropertiesTopConsumers.md)
-- [OBPv310GetMetricsTopConsumers200ResponsePropertiesTopConsumersItems](docs/Model/OBPv310GetMetricsTopConsumers200ResponsePropertiesTopConsumersItems.md)
-- [OBPv310GetMetricsTopConsumers200ResponsePropertiesTopConsumersItemsProperties](docs/Model/OBPv310GetMetricsTopConsumers200ResponsePropertiesTopConsumersItemsProperties.md)
-- [OBPv310GetOAuth2ServerJWKsURIs200Response](docs/Model/OBPv310GetOAuth2ServerJWKsURIs200Response.md)
-- [OBPv310GetOAuth2ServerJWKsURIs200ResponseProperties](docs/Model/OBPv310GetOAuth2ServerJWKsURIs200ResponseProperties.md)
-- [OBPv310GetOAuth2ServerJWKsURIs200ResponsePropertiesJwksUris](docs/Model/OBPv310GetOAuth2ServerJWKsURIs200ResponsePropertiesJwksUris.md)
-- [OBPv310GetOAuth2ServerJWKsURIs200ResponsePropertiesJwksUrisItems](docs/Model/OBPv310GetOAuth2ServerJWKsURIs200ResponsePropertiesJwksUrisItems.md)
-- [OBPv310GetOAuth2ServerJWKsURIs200ResponsePropertiesJwksUrisItemsProperties](docs/Model/OBPv310GetOAuth2ServerJWKsURIs200ResponsePropertiesJwksUrisItemsProperties.md)
-- [OBPv310GetObpConnectorLoopback200Response](docs/Model/OBPv310GetObpConnectorLoopback200Response.md)
-- [OBPv310GetObpConnectorLoopback200ResponseProperties](docs/Model/OBPv310GetObpConnectorLoopback200ResponseProperties.md)
-- [OBPv310GetProductCollection200Response](docs/Model/OBPv310GetProductCollection200Response.md)
-- [OBPv310GetProductCollection200ResponseProperties](docs/Model/OBPv310GetProductCollection200ResponseProperties.md)
-- [OBPv310GetProductCollection200ResponsePropertiesProducts](docs/Model/OBPv310GetProductCollection200ResponsePropertiesProducts.md)
-- [OBPv310GetProductCollection200ResponsePropertiesProductsItems](docs/Model/OBPv310GetProductCollection200ResponsePropertiesProductsItems.md)
-- [OBPv310GetProductCollection200ResponsePropertiesProductsItemsProperties](docs/Model/OBPv310GetProductCollection200ResponsePropertiesProductsItemsProperties.md)
-- [OBPv310GetProductTree200Response](docs/Model/OBPv310GetProductTree200Response.md)
-- [OBPv310GetProductTree200ResponseProperties](docs/Model/OBPv310GetProductTree200ResponseProperties.md)
-- [OBPv310GetProductTree200ResponsePropertiesParentProduct](docs/Model/OBPv310GetProductTree200ResponsePropertiesParentProduct.md)
-- [OBPv310GetProductTree200ResponsePropertiesParentProductProperties](docs/Model/OBPv310GetProductTree200ResponsePropertiesParentProductProperties.md)
-- [OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProduct](docs/Model/OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProduct.md)
-- [OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductProperties](docs/Model/OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductProperties.md)
-- [OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMeta](docs/Model/OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMeta.md)
-- [OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaProperties](docs/Model/OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaProperties.md)
-- [OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaPropertiesLicense](docs/Model/OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaPropertiesLicense.md)
-- [OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaPropertiesLicenseProperties](docs/Model/OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaPropertiesLicenseProperties.md)
-- [OBPv310GetRateLimitingInfo200Response](docs/Model/OBPv310GetRateLimitingInfo200Response.md)
-- [OBPv310GetRateLimitingInfo200ResponseProperties](docs/Model/OBPv310GetRateLimitingInfo200ResponseProperties.md)
-- [OBPv310GetServerJWK200Response](docs/Model/OBPv310GetServerJWK200Response.md)
-- [OBPv310GetServerJWK200ResponseProperties](docs/Model/OBPv310GetServerJWK200ResponseProperties.md)
-- [OBPv310GetStatusOfCreditCardOrder200Response](docs/Model/OBPv310GetStatusOfCreditCardOrder200Response.md)
-- [OBPv310GetStatusOfCreditCardOrder200ResponseProperties](docs/Model/OBPv310GetStatusOfCreditCardOrder200ResponseProperties.md)
-- [OBPv310GetStatusOfCreditCardOrder200ResponsePropertiesCards](docs/Model/OBPv310GetStatusOfCreditCardOrder200ResponsePropertiesCards.md)
-- [OBPv310GetStatusOfCreditCardOrder200ResponsePropertiesCardsItems](docs/Model/OBPv310GetStatusOfCreditCardOrder200ResponsePropertiesCardsItems.md)
-- [OBPv310GetStatusOfCreditCardOrder200ResponsePropertiesCardsItemsProperties](docs/Model/OBPv310GetStatusOfCreditCardOrder200ResponsePropertiesCardsItemsProperties.md)
-- [OBPv310GetTaxResidence200Response](docs/Model/OBPv310GetTaxResidence200Response.md)
-- [OBPv310GetTaxResidence200ResponseProperties](docs/Model/OBPv310GetTaxResidence200ResponseProperties.md)
-- [OBPv310GetTaxResidence200ResponsePropertiesTaxResidence](docs/Model/OBPv310GetTaxResidence200ResponsePropertiesTaxResidence.md)
-- [OBPv310GetTransactionByIdForBankAccount200Response](docs/Model/OBPv310GetTransactionByIdForBankAccount200Response.md)
-- [OBPv310GetTransactionByIdForBankAccount200ResponseProperties](docs/Model/OBPv310GetTransactionByIdForBankAccount200ResponseProperties.md)
-- [OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadata](docs/Model/OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadata.md)
-- [OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataProperties](docs/Model/OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataProperties.md)
-- [OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImages](docs/Model/OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImages.md)
-- [OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems](docs/Model/OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems.md)
-- [OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItemsProperties](docs/Model/OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItemsProperties.md)
-- [OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount](docs/Model/OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount.md)
-- [OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccountProperties](docs/Model/OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccountProperties.md)
-- [OBPv310GetWebUiProps200Response](docs/Model/OBPv310GetWebUiProps200Response.md)
-- [OBPv310GetWebUiProps200ResponseProperties](docs/Model/OBPv310GetWebUiProps200ResponseProperties.md)
-- [OBPv310GetWebUiProps200ResponsePropertiesWebuiProps](docs/Model/OBPv310GetWebUiProps200ResponsePropertiesWebuiProps.md)
-- [OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems](docs/Model/OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems.md)
-- [OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItemsProperties](docs/Model/OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItemsProperties.md)
-- [OBPv310RefreshUser200Response](docs/Model/OBPv310RefreshUser200Response.md)
-- [OBPv310RefreshUser200ResponseProperties](docs/Model/OBPv310RefreshUser200ResponseProperties.md)
-- [OBPv310SaveHistoricalTransaction200Response](docs/Model/OBPv310SaveHistoricalTransaction200Response.md)
-- [OBPv310SaveHistoricalTransaction200ResponseProperties](docs/Model/OBPv310SaveHistoricalTransaction200ResponseProperties.md)
-- [OBPv310SaveHistoricalTransactionRequest](docs/Model/OBPv310SaveHistoricalTransactionRequest.md)
-- [OBPv310SaveHistoricalTransactionRequestProperties](docs/Model/OBPv310SaveHistoricalTransactionRequestProperties.md)
-- [OBPv310SaveHistoricalTransactionRequestPropertiesTo](docs/Model/OBPv310SaveHistoricalTransactionRequestPropertiesTo.md)
-- [OBPv310SaveHistoricalTransactionRequestPropertiesToProperties](docs/Model/OBPv310SaveHistoricalTransactionRequestPropertiesToProperties.md)
-- [OBPv310UpdateAccount200Response](docs/Model/OBPv310UpdateAccount200Response.md)
-- [OBPv310UpdateAccount200ResponseProperties](docs/Model/OBPv310UpdateAccount200ResponseProperties.md)
-- [OBPv310UpdateAccountAttributeRequest](docs/Model/OBPv310UpdateAccountAttributeRequest.md)
-- [OBPv310UpdateAccountAttributeRequestProperties](docs/Model/OBPv310UpdateAccountAttributeRequestProperties.md)
-- [OBPv310UpdateAccountRequest](docs/Model/OBPv310UpdateAccountRequest.md)
-- [OBPv310UpdateAccountRequestProperties](docs/Model/OBPv310UpdateAccountRequestProperties.md)
-- [OBPv310UpdateCustomerBranch200Response](docs/Model/OBPv310UpdateCustomerBranch200Response.md)
-- [OBPv310UpdateCustomerBranch200ResponseProperties](docs/Model/OBPv310UpdateCustomerBranch200ResponseProperties.md)
-- [OBPv310UpdateCustomerBranchRequest](docs/Model/OBPv310UpdateCustomerBranchRequest.md)
-- [OBPv310UpdateCustomerBranchRequestProperties](docs/Model/OBPv310UpdateCustomerBranchRequestProperties.md)
-- [OBPv310UpdateCustomerCreditLimitRequest](docs/Model/OBPv310UpdateCustomerCreditLimitRequest.md)
-- [OBPv310UpdateCustomerCreditLimitRequestProperties](docs/Model/OBPv310UpdateCustomerCreditLimitRequestProperties.md)
-- [OBPv310UpdateCustomerCreditRatingAndSourceRequest](docs/Model/OBPv310UpdateCustomerCreditRatingAndSourceRequest.md)
-- [OBPv310UpdateCustomerCreditRatingAndSourceRequestProperties](docs/Model/OBPv310UpdateCustomerCreditRatingAndSourceRequestProperties.md)
-- [OBPv310UpdateCustomerDataRequest](docs/Model/OBPv310UpdateCustomerDataRequest.md)
-- [OBPv310UpdateCustomerDataRequestProperties](docs/Model/OBPv310UpdateCustomerDataRequestProperties.md)
-- [OBPv310UpdateCustomerEmailRequest](docs/Model/OBPv310UpdateCustomerEmailRequest.md)
-- [OBPv310UpdateCustomerEmailRequestProperties](docs/Model/OBPv310UpdateCustomerEmailRequestProperties.md)
-- [OBPv310UpdateCustomerIdentityRequest](docs/Model/OBPv310UpdateCustomerIdentityRequest.md)
-- [OBPv310UpdateCustomerIdentityRequestProperties](docs/Model/OBPv310UpdateCustomerIdentityRequestProperties.md)
-- [OBPv310UpdatedCardForBankRequest](docs/Model/OBPv310UpdatedCardForBankRequest.md)
-- [OBPv310UpdatedCardForBankRequestProperties](docs/Model/OBPv310UpdatedCardForBankRequestProperties.md)
-- [OBPv400AddAccount200Response](docs/Model/OBPv400AddAccount200Response.md)
-- [OBPv400AddAccount200ResponseProperties](docs/Model/OBPv400AddAccount200ResponseProperties.md)
-- [OBPv400AddAccountRequest](docs/Model/OBPv400AddAccountRequest.md)
-- [OBPv400AddAccountRequestProperties](docs/Model/OBPv400AddAccountRequestProperties.md)
-- [OBPv400AddConsentUserRequest](docs/Model/OBPv400AddConsentUserRequest.md)
-- [OBPv400AddConsentUserRequestProperties](docs/Model/OBPv400AddConsentUserRequestProperties.md)
-- [OBPv400AnswerTransactionRequestChallengeRequest](docs/Model/OBPv400AnswerTransactionRequestChallengeRequest.md)
-- [OBPv400AnswerTransactionRequestChallengeRequestProperties](docs/Model/OBPv400AnswerTransactionRequestChallengeRequestProperties.md)
-- [OBPv400BuildDynamicEndpointTemplate200Response](docs/Model/OBPv400BuildDynamicEndpointTemplate200Response.md)
-- [OBPv400BuildDynamicEndpointTemplate200ResponseProperties](docs/Model/OBPv400BuildDynamicEndpointTemplate200ResponseProperties.md)
-- [OBPv400BuildDynamicEndpointTemplateRequest](docs/Model/OBPv400BuildDynamicEndpointTemplateRequest.md)
-- [OBPv400BuildDynamicEndpointTemplateRequestProperties](docs/Model/OBPv400BuildDynamicEndpointTemplateRequestProperties.md)
-- [OBPv400CreateBankAccountNotificationWebhook200Response](docs/Model/OBPv400CreateBankAccountNotificationWebhook200Response.md)
-- [OBPv400CreateBankAccountNotificationWebhook200ResponseProperties](docs/Model/OBPv400CreateBankAccountNotificationWebhook200ResponseProperties.md)
-- [OBPv400CreateConnectorMethodRequest](docs/Model/OBPv400CreateConnectorMethodRequest.md)
-- [OBPv400CreateConnectorMethodRequestProperties](docs/Model/OBPv400CreateConnectorMethodRequestProperties.md)
-- [OBPv400CreateCounterpartyForAnyAccountRequest](docs/Model/OBPv400CreateCounterpartyForAnyAccountRequest.md)
-- [OBPv400CreateCounterpartyForAnyAccountRequestProperties](docs/Model/OBPv400CreateCounterpartyForAnyAccountRequestProperties.md)
-- [OBPv400CreateCustomerMessageRequest](docs/Model/OBPv400CreateCustomerMessageRequest.md)
-- [OBPv400CreateCustomerMessageRequestProperties](docs/Model/OBPv400CreateCustomerMessageRequestProperties.md)
-- [OBPv400CreateDirectDebit200Response](docs/Model/OBPv400CreateDirectDebit200Response.md)
-- [OBPv400CreateDirectDebit200ResponseProperties](docs/Model/OBPv400CreateDirectDebit200ResponseProperties.md)
-- [OBPv400CreateDirectDebitRequest](docs/Model/OBPv400CreateDirectDebitRequest.md)
-- [OBPv400CreateDirectDebitRequestProperties](docs/Model/OBPv400CreateDirectDebitRequestProperties.md)
-- [OBPv400CreateEndpointMappingRequest](docs/Model/OBPv400CreateEndpointMappingRequest.md)
-- [OBPv400CreateEndpointMappingRequestProperties](docs/Model/OBPv400CreateEndpointMappingRequestProperties.md)
-- [OBPv400CreateHistoricalTransactionAtBankRequest](docs/Model/OBPv400CreateHistoricalTransactionAtBankRequest.md)
-- [OBPv400CreateHistoricalTransactionAtBankRequestProperties](docs/Model/OBPv400CreateHistoricalTransactionAtBankRequestProperties.md)
-- [OBPv400CreateMyApiCollectionEndpointRequest](docs/Model/OBPv400CreateMyApiCollectionEndpointRequest.md)
-- [OBPv400CreateMyApiCollectionEndpointRequestProperties](docs/Model/OBPv400CreateMyApiCollectionEndpointRequestProperties.md)
-- [OBPv400CreateMyApiCollectionRequest](docs/Model/OBPv400CreateMyApiCollectionRequest.md)
-- [OBPv400CreateMyApiCollectionRequestProperties](docs/Model/OBPv400CreateMyApiCollectionRequestProperties.md)
-- [OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest](docs/Model/OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
-- [OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestProperties](docs/Model/OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestProperties.md)
-- [OBPv400CreateProductAttribute200Response](docs/Model/OBPv400CreateProductAttribute200Response.md)
-- [OBPv400CreateProductAttribute200ResponseProperties](docs/Model/OBPv400CreateProductAttribute200ResponseProperties.md)
-- [OBPv400CreateSettlementAccount200Response](docs/Model/OBPv400CreateSettlementAccount200Response.md)
-- [OBPv400CreateSettlementAccount200ResponseProperties](docs/Model/OBPv400CreateSettlementAccount200ResponseProperties.md)
-- [OBPv400CreateSettlementAccountRequest](docs/Model/OBPv400CreateSettlementAccountRequest.md)
-- [OBPv400CreateSettlementAccountRequestProperties](docs/Model/OBPv400CreateSettlementAccountRequestProperties.md)
-- [OBPv400CreateStandingOrder200Response](docs/Model/OBPv400CreateStandingOrder200Response.md)
-- [OBPv400CreateStandingOrder200ResponseProperties](docs/Model/OBPv400CreateStandingOrder200ResponseProperties.md)
-- [OBPv400CreateStandingOrderRequest](docs/Model/OBPv400CreateStandingOrderRequest.md)
-- [OBPv400CreateStandingOrderRequestProperties](docs/Model/OBPv400CreateStandingOrderRequestProperties.md)
-- [OBPv400CreateStandingOrderRequestPropertiesWhen](docs/Model/OBPv400CreateStandingOrderRequestPropertiesWhen.md)
-- [OBPv400CreateStandingOrderRequestPropertiesWhenProperties](docs/Model/OBPv400CreateStandingOrderRequestPropertiesWhenProperties.md)
-- [OBPv400CreateSystemAccountNotificationWebhook200Response](docs/Model/OBPv400CreateSystemAccountNotificationWebhook200Response.md)
-- [OBPv400CreateSystemAccountNotificationWebhook200ResponseProperties](docs/Model/OBPv400CreateSystemAccountNotificationWebhook200ResponseProperties.md)
-- [OBPv400CreateSystemAccountNotificationWebhookRequest](docs/Model/OBPv400CreateSystemAccountNotificationWebhookRequest.md)
-- [OBPv400CreateSystemAccountNotificationWebhookRequestProperties](docs/Model/OBPv400CreateSystemAccountNotificationWebhookRequestProperties.md)
-- [OBPv400CreateTransactionRequestAccountRequest](docs/Model/OBPv400CreateTransactionRequestAccountRequest.md)
-- [OBPv400CreateTransactionRequestAccountRequestProperties](docs/Model/OBPv400CreateTransactionRequestAccountRequestProperties.md)
-- [OBPv400CreateTransactionRequestAgentCashWithDrawalRequest](docs/Model/OBPv400CreateTransactionRequestAgentCashWithDrawalRequest.md)
-- [OBPv400CreateTransactionRequestAgentCashWithDrawalRequestProperties](docs/Model/OBPv400CreateTransactionRequestAgentCashWithDrawalRequestProperties.md)
-- [OBPv400CreateTransactionRequestCardRequest](docs/Model/OBPv400CreateTransactionRequestCardRequest.md)
-- [OBPv400CreateTransactionRequestCardRequestProperties](docs/Model/OBPv400CreateTransactionRequestCardRequestProperties.md)
-- [OBPv400CreateTransactionRequestCardRequestPropertiesCard](docs/Model/OBPv400CreateTransactionRequestCardRequestPropertiesCard.md)
-- [OBPv400CreateTransactionRequestCardRequestPropertiesCardProperties](docs/Model/OBPv400CreateTransactionRequestCardRequestPropertiesCardProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200Response](docs/Model/OBPv400CreateTransactionRequestCounterparty200Response.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponseProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponseProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributes](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributes.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItemsProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItemsProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesChallenges](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesChallenges.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesChallengesItems](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesChallengesItems.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesChallengesItemsProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesChallengesItemsProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesCharge](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesCharge.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesChargeProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesChargeProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetails](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetails.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToAgent](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToAgent.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToAgentProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToAgentProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfers](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfers.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfersProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfersProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfersPropertiesDebtorAccount](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfersPropertiesDebtorAccount.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfersPropertiesDebtorAccountProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfersPropertiesDebtorAccountProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSimple](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSimple.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSimpleProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSimpleProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccount](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccount.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountPropertiesTo](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountPropertiesTo.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountPropertiesToProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountPropertiesToProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountPropertiesToPropertiesAccount](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountPropertiesToPropertiesAccount.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountPropertiesToPropertiesAccountProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountPropertiesToPropertiesAccountProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtm](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtm.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmPropertiesTo](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmPropertiesTo.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmPropertiesToProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmPropertiesToProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmPropertiesToPropertiesKycDocument](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmPropertiesToPropertiesKycDocument.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmPropertiesToPropertiesKycDocumentProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmPropertiesToPropertiesKycDocumentProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhone](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhone.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhoneProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhoneProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesFrom](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesFrom.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesFromProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesFromProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesToProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesToProperties.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesFrom](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesFrom.md)
-- [OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesFromProperties](docs/Model/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesFromProperties.md)
-- [OBPv400CreateTransactionRequestCounterpartyRequest](docs/Model/OBPv400CreateTransactionRequestCounterpartyRequest.md)
-- [OBPv400CreateTransactionRequestCounterpartyRequestProperties](docs/Model/OBPv400CreateTransactionRequestCounterpartyRequestProperties.md)
-- [OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributes](docs/Model/OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributes.md)
-- [OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems](docs/Model/OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems.md)
-- [OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItemsProperties](docs/Model/OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItemsProperties.md)
-- [OBPv400CreateTransactionRequestCounterpartyRequestPropertiesTo](docs/Model/OBPv400CreateTransactionRequestCounterpartyRequestPropertiesTo.md)
-- [OBPv400CreateTransactionRequestCounterpartyRequestPropertiesToProperties](docs/Model/OBPv400CreateTransactionRequestCounterpartyRequestPropertiesToProperties.md)
-- [OBPv400CreateTransactionRequestFreeFormRequest](docs/Model/OBPv400CreateTransactionRequestFreeFormRequest.md)
-- [OBPv400CreateTransactionRequestFreeFormRequestProperties](docs/Model/OBPv400CreateTransactionRequestFreeFormRequestProperties.md)
-- [OBPv400CreateTransactionRequestRefundRequest](docs/Model/OBPv400CreateTransactionRequestRefundRequest.md)
-- [OBPv400CreateTransactionRequestRefundRequestProperties](docs/Model/OBPv400CreateTransactionRequestRefundRequestProperties.md)
-- [OBPv400CreateTransactionRequestRefundRequestPropertiesRefund](docs/Model/OBPv400CreateTransactionRequestRefundRequestPropertiesRefund.md)
-- [OBPv400CreateTransactionRequestRefundRequestPropertiesRefundProperties](docs/Model/OBPv400CreateTransactionRequestRefundRequestPropertiesRefundProperties.md)
-- [OBPv400CreateTransactionRequestSepaRequest](docs/Model/OBPv400CreateTransactionRequestSepaRequest.md)
-- [OBPv400CreateTransactionRequestSepaRequestProperties](docs/Model/OBPv400CreateTransactionRequestSepaRequestProperties.md)
-- [OBPv400CreateTransactionRequestSepaRequestPropertiesReasons](docs/Model/OBPv400CreateTransactionRequestSepaRequestPropertiesReasons.md)
-- [OBPv400CreateTransactionRequestSepaRequestPropertiesReasonsItems](docs/Model/OBPv400CreateTransactionRequestSepaRequestPropertiesReasonsItems.md)
-- [OBPv400CreateTransactionRequestSepaRequestPropertiesReasonsItemsProperties](docs/Model/OBPv400CreateTransactionRequestSepaRequestPropertiesReasonsItemsProperties.md)
-- [OBPv400CreateTransactionRequestSimpleRequest](docs/Model/OBPv400CreateTransactionRequestSimpleRequest.md)
-- [OBPv400CreateTransactionRequestSimpleRequestProperties](docs/Model/OBPv400CreateTransactionRequestSimpleRequestProperties.md)
-- [OBPv400CreateTransactionRequestSimpleRequestPropertiesTo](docs/Model/OBPv400CreateTransactionRequestSimpleRequestPropertiesTo.md)
-- [OBPv400CreateTransactionRequestSimpleRequestPropertiesToProperties](docs/Model/OBPv400CreateTransactionRequestSimpleRequestPropertiesToProperties.md)
-- [OBPv400CreateUserCustomerLinksRequest](docs/Model/OBPv400CreateUserCustomerLinksRequest.md)
-- [OBPv400CreateUserCustomerLinksRequestProperties](docs/Model/OBPv400CreateUserCustomerLinksRequestProperties.md)
-- [OBPv400CreateUserInvitationRequest](docs/Model/OBPv400CreateUserInvitationRequest.md)
-- [OBPv400CreateUserInvitationRequestProperties](docs/Model/OBPv400CreateUserInvitationRequestProperties.md)
-- [OBPv400CreateUserWithRolesRequest](docs/Model/OBPv400CreateUserWithRolesRequest.md)
-- [OBPv400CreateUserWithRolesRequestProperties](docs/Model/OBPv400CreateUserWithRolesRequestProperties.md)
-- [OBPv400DeleteSystemLevelEndpointTag200Response](docs/Model/OBPv400DeleteSystemLevelEndpointTag200Response.md)
-- [OBPv400DeleteSystemLevelEndpointTag200ResponseProperties](docs/Model/OBPv400DeleteSystemLevelEndpointTag200ResponseProperties.md)
-- [OBPv400GetAccountsByAccountRoutingRegex200Response](docs/Model/OBPv400GetAccountsByAccountRoutingRegex200Response.md)
-- [OBPv400GetAccountsByAccountRoutingRegex200ResponseProperties](docs/Model/OBPv400GetAccountsByAccountRoutingRegex200ResponseProperties.md)
-- [OBPv400GetAccountsByAccountRoutingRegex200ResponsePropertiesAccounts](docs/Model/OBPv400GetAccountsByAccountRoutingRegex200ResponsePropertiesAccounts.md)
-- [OBPv400GetAccountsByAccountRoutingRegexRequest](docs/Model/OBPv400GetAccountsByAccountRoutingRegexRequest.md)
-- [OBPv400GetAccountsByAccountRoutingRegexRequestProperties](docs/Model/OBPv400GetAccountsByAccountRoutingRegexRequestProperties.md)
-- [OBPv400GetAllAuthenticationTypeValidationsPublic200Response](docs/Model/OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
-- [OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseProperties](docs/Model/OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseProperties.md)
-- [OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidations](docs/Model/OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidations.md)
-- [OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems](docs/Model/OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
-- [OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItemsProperties](docs/Model/OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItemsProperties.md)
-- [OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItemsPropertiesAuthTypes](docs/Model/OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItemsPropertiesAuthTypes.md)
-- [OBPv400GetAllBankLevelDynamicMessageDocs200Response](docs/Model/OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
-- [OBPv400GetAllBankLevelDynamicMessageDocs200ResponseProperties](docs/Model/OBPv400GetAllBankLevelDynamicMessageDocs200ResponseProperties.md)
-- [OBPv400GetAllBankLevelDynamicMessageDocs200ResponsePropertiesDynamicMessageDocs](docs/Model/OBPv400GetAllBankLevelDynamicMessageDocs200ResponsePropertiesDynamicMessageDocs.md)
-- [OBPv400GetAllConnectorMethods200Response](docs/Model/OBPv400GetAllConnectorMethods200Response.md)
-- [OBPv400GetAllConnectorMethods200ResponseProperties](docs/Model/OBPv400GetAllConnectorMethods200ResponseProperties.md)
-- [OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethods](docs/Model/OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethods.md)
-- [OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems](docs/Model/OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
-- [OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItemsProperties](docs/Model/OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItemsProperties.md)
-- [OBPv400GetAllDynamicResourceDocs200Response](docs/Model/OBPv400GetAllDynamicResourceDocs200Response.md)
-- [OBPv400GetAllDynamicResourceDocs200ResponseProperties](docs/Model/OBPv400GetAllDynamicResourceDocs200ResponseProperties.md)
-- [OBPv400GetAllDynamicResourceDocs200ResponsePropertiesDynamicResourceDocs](docs/Model/OBPv400GetAllDynamicResourceDocs200ResponsePropertiesDynamicResourceDocs.md)
-- [OBPv400GetAllEndpointMappings200Response](docs/Model/OBPv400GetAllEndpointMappings200Response.md)
-- [OBPv400GetAllEndpointMappings200ResponseProperties](docs/Model/OBPv400GetAllEndpointMappings200ResponseProperties.md)
-- [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappings](docs/Model/OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappings.md)
-- [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems](docs/Model/OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
-- [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsProperties](docs/Model/OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsProperties.md)
-- [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMapping](docs/Model/OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMapping.md)
-- [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingProperties](docs/Model/OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingProperties.md)
-- [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesName](docs/Model/OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesName.md)
-- [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesNameProperties](docs/Model/OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesNameProperties.md)
-- [OBPv400GetAllJsonSchemaValidationsPublic200Response](docs/Model/OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
-- [OBPv400GetAllJsonSchemaValidationsPublic200ResponseProperties](docs/Model/OBPv400GetAllJsonSchemaValidationsPublic200ResponseProperties.md)
-- [OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidations](docs/Model/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidations.md)
-- [OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems](docs/Model/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
-- [OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsProperties](docs/Model/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsProperties.md)
-- [OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema](docs/Model/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md)
-- [OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaProperties](docs/Model/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaProperties.md)
-- [OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesProperties](docs/Model/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesProperties.md)
-- [OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesProperties](docs/Model/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesProperties.md)
-- [OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesPropertiesXxxId](docs/Model/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesPropertiesXxxId.md)
-- [OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesPropertiesXxxIdProperties](docs/Model/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesPropertiesXxxIdProperties.md)
-- [OBPv400GetApiCollectionsForUser200Response](docs/Model/OBPv400GetApiCollectionsForUser200Response.md)
-- [OBPv400GetApiCollectionsForUser200ResponseProperties](docs/Model/OBPv400GetApiCollectionsForUser200ResponseProperties.md)
-- [OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollections](docs/Model/OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollections.md)
-- [OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems](docs/Model/OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems.md)
-- [OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItemsProperties](docs/Model/OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItemsProperties.md)
-- [OBPv400GetBankAttributes200Response](docs/Model/OBPv400GetBankAttributes200Response.md)
-- [OBPv400GetBankAttributes200ResponseProperties](docs/Model/OBPv400GetBankAttributes200ResponseProperties.md)
-- [OBPv400GetBankAttributes200ResponsePropertiesBankAttributes](docs/Model/OBPv400GetBankAttributes200ResponsePropertiesBankAttributes.md)
-- [OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems](docs/Model/OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems.md)
-- [OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItemsProperties](docs/Model/OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItemsProperties.md)
-- [OBPv400GetBankLevelDynamicResourceDoc200Response](docs/Model/OBPv400GetBankLevelDynamicResourceDoc200Response.md)
-- [OBPv400GetBankLevelDynamicResourceDoc200ResponseProperties](docs/Model/OBPv400GetBankLevelDynamicResourceDoc200ResponseProperties.md)
-- [OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBody](docs/Model/OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBody.md)
-- [OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBodyProperties](docs/Model/OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBodyProperties.md)
-- [OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBody](docs/Model/OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBody.md)
-- [OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyProperties](docs/Model/OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyProperties.md)
-- [OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields](docs/Model/OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields.md)
-- [OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems](docs/Model/OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems.md)
-- [OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties](docs/Model/OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties.md)
-- [OBPv400GetBankLevelEndpointTags200Response](docs/Model/OBPv400GetBankLevelEndpointTags200Response.md)
-- [OBPv400GetBankLevelEndpointTags200ResponseProperties](docs/Model/OBPv400GetBankLevelEndpointTags200ResponseProperties.md)
-- [OBPv400GetConsentInfos200Response](docs/Model/OBPv400GetConsentInfos200Response.md)
-- [OBPv400GetConsentInfos200ResponseProperties](docs/Model/OBPv400GetConsentInfos200ResponseProperties.md)
-- [OBPv400GetConsentInfos200ResponsePropertiesConsents](docs/Model/OBPv400GetConsentInfos200ResponsePropertiesConsents.md)
-- [OBPv400GetConsentInfos200ResponsePropertiesConsentsItems](docs/Model/OBPv400GetConsentInfos200ResponsePropertiesConsentsItems.md)
-- [OBPv400GetConsentInfos200ResponsePropertiesConsentsItemsProperties](docs/Model/OBPv400GetConsentInfos200ResponsePropertiesConsentsItemsProperties.md)
-- [OBPv400GetCounterpartiesForAnyAccount200Response](docs/Model/OBPv400GetCounterpartiesForAnyAccount200Response.md)
-- [OBPv400GetCounterpartiesForAnyAccount200ResponseProperties](docs/Model/OBPv400GetCounterpartiesForAnyAccount200ResponseProperties.md)
-- [OBPv400GetCounterpartiesForAnyAccount200ResponsePropertiesCounterparties](docs/Model/OBPv400GetCounterpartiesForAnyAccount200ResponsePropertiesCounterparties.md)
-- [OBPv400GetCounterpartiesForAnyAccount200ResponsePropertiesCounterpartiesItems](docs/Model/OBPv400GetCounterpartiesForAnyAccount200ResponsePropertiesCounterpartiesItems.md)
-- [OBPv400GetCounterpartiesForAnyAccount200ResponsePropertiesCounterpartiesItemsProperties](docs/Model/OBPv400GetCounterpartiesForAnyAccount200ResponsePropertiesCounterpartiesItemsProperties.md)
-- [OBPv400GetCustomerAttributes200Response](docs/Model/OBPv400GetCustomerAttributes200Response.md)
-- [OBPv400GetCustomerAttributes200ResponseProperties](docs/Model/OBPv400GetCustomerAttributes200ResponseProperties.md)
-- [OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributes](docs/Model/OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributes.md)
-- [OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems](docs/Model/OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
-- [OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItemsProperties](docs/Model/OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItemsProperties.md)
-- [OBPv400GetCustomerMessages200Response](docs/Model/OBPv400GetCustomerMessages200Response.md)
-- [OBPv400GetCustomerMessages200ResponseProperties](docs/Model/OBPv400GetCustomerMessages200ResponseProperties.md)
-- [OBPv400GetCustomerMessages200ResponsePropertiesMessages](docs/Model/OBPv400GetCustomerMessages200ResponsePropertiesMessages.md)
-- [OBPv400GetCustomerMessages200ResponsePropertiesMessagesItems](docs/Model/OBPv400GetCustomerMessages200ResponsePropertiesMessagesItems.md)
-- [OBPv400GetCustomerMessages200ResponsePropertiesMessagesItemsProperties](docs/Model/OBPv400GetCustomerMessages200ResponsePropertiesMessagesItemsProperties.md)
-- [OBPv400GetCustomersMinimalAtAnyBank200Response](docs/Model/OBPv400GetCustomersMinimalAtAnyBank200Response.md)
-- [OBPv400GetCustomersMinimalAtAnyBank200ResponseProperties](docs/Model/OBPv400GetCustomersMinimalAtAnyBank200ResponseProperties.md)
-- [OBPv400GetCustomersMinimalAtAnyBank200ResponsePropertiesCustomers](docs/Model/OBPv400GetCustomersMinimalAtAnyBank200ResponsePropertiesCustomers.md)
-- [OBPv400GetCustomersMinimalAtAnyBank200ResponsePropertiesCustomersItems](docs/Model/OBPv400GetCustomersMinimalAtAnyBank200ResponsePropertiesCustomersItems.md)
-- [OBPv400GetCustomersMinimalAtAnyBank200ResponsePropertiesCustomersItemsProperties](docs/Model/OBPv400GetCustomersMinimalAtAnyBank200ResponsePropertiesCustomersItemsProperties.md)
-- [OBPv400GetDoubleEntryTransaction200Response](docs/Model/OBPv400GetDoubleEntryTransaction200Response.md)
-- [OBPv400GetDoubleEntryTransaction200ResponseProperties](docs/Model/OBPv400GetDoubleEntryTransaction200ResponseProperties.md)
-- [OBPv400GetDoubleEntryTransaction200ResponsePropertiesDebitTransaction](docs/Model/OBPv400GetDoubleEntryTransaction200ResponsePropertiesDebitTransaction.md)
-- [OBPv400GetDoubleEntryTransaction200ResponsePropertiesDebitTransactionProperties](docs/Model/OBPv400GetDoubleEntryTransaction200ResponsePropertiesDebitTransactionProperties.md)
-- [OBPv400GetDoubleEntryTransaction200ResponsePropertiesTransactionRequest](docs/Model/OBPv400GetDoubleEntryTransaction200ResponsePropertiesTransactionRequest.md)
-- [OBPv400GetDoubleEntryTransaction200ResponsePropertiesTransactionRequestProperties](docs/Model/OBPv400GetDoubleEntryTransaction200ResponsePropertiesTransactionRequestProperties.md)
-- [OBPv400GetDynamicEndpoints200Response](docs/Model/OBPv400GetDynamicEndpoints200Response.md)
-- [OBPv400GetDynamicEndpoints200ResponseProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponseProperties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpoints](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpoints.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsProperties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringProperties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitions](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitions.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsProperties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountName](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountName.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNameProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNameProperties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesProperties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesProperties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesBalance](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesBalance.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesBalanceProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesBalanceProperties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesName](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesName.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesNameProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesNameProperties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesInfo](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesInfo.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesInfoProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesInfoProperties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPaths](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPaths.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsProperties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccounts](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccounts.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountId](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountId.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdProperties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGet](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGet.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetProperties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetPropertiesResponses](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetPropertiesResponses.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetPropertiesResponsesProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetPropertiesResponsesProperties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsProperties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPost](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPost.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostProperties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponses](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponses.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201Properties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201Properties.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchema](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchema.md)
-- [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchemaProperties](docs/Model/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchemaProperties.md)
-- [OBPv400GetDynamicMessageDoc200Response](docs/Model/OBPv400GetDynamicMessageDoc200Response.md)
-- [OBPv400GetDynamicMessageDoc200ResponseProperties](docs/Model/OBPv400GetDynamicMessageDoc200ResponseProperties.md)
-- [OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage](docs/Model/OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
-- [OBPv400GetEntitlements200Response](docs/Model/OBPv400GetEntitlements200Response.md)
-- [OBPv400GetEntitlements200ResponseProperties](docs/Model/OBPv400GetEntitlements200ResponseProperties.md)
-- [OBPv400GetEntitlements200ResponsePropertiesList](docs/Model/OBPv400GetEntitlements200ResponsePropertiesList.md)
-- [OBPv400GetEntitlements200ResponsePropertiesListItems](docs/Model/OBPv400GetEntitlements200ResponsePropertiesListItems.md)
-- [OBPv400GetEntitlements200ResponsePropertiesListItemsProperties](docs/Model/OBPv400GetEntitlements200ResponsePropertiesListItemsProperties.md)
-- [OBPv400GetExplicitCounterpartyById200Response](docs/Model/OBPv400GetExplicitCounterpartyById200Response.md)
-- [OBPv400GetExplicitCounterpartyById200ResponseProperties](docs/Model/OBPv400GetExplicitCounterpartyById200ResponseProperties.md)
-- [OBPv400GetExplicitCounterpartyById200ResponsePropertiesBespoke](docs/Model/OBPv400GetExplicitCounterpartyById200ResponsePropertiesBespoke.md)
-- [OBPv400GetExplicitCounterpartyById200ResponsePropertiesBespokeItems](docs/Model/OBPv400GetExplicitCounterpartyById200ResponsePropertiesBespokeItems.md)
-- [OBPv400GetExplicitCounterpartyById200ResponsePropertiesBespokeItemsProperties](docs/Model/OBPv400GetExplicitCounterpartyById200ResponsePropertiesBespokeItemsProperties.md)
-- [OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadata](docs/Model/OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadata.md)
-- [OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataProperties](docs/Model/OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataProperties.md)
-- [OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataPropertiesPhysicalLocation](docs/Model/OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataPropertiesPhysicalLocation.md)
-- [OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataPropertiesPhysicalLocationProperties](docs/Model/OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataPropertiesPhysicalLocationProperties.md)
-- [OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataPropertiesPhysicalLocationPropertiesUser](docs/Model/OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataPropertiesPhysicalLocationPropertiesUser.md)
-- [OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataPropertiesPhysicalLocationPropertiesUserProperties](docs/Model/OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataPropertiesPhysicalLocationPropertiesUserProperties.md)
-- [OBPv400GetFastFirehoseAccountsAtOneBank200Response](docs/Model/OBPv400GetFastFirehoseAccountsAtOneBank200Response.md)
-- [OBPv400GetFastFirehoseAccountsAtOneBank200ResponseProperties](docs/Model/OBPv400GetFastFirehoseAccountsAtOneBank200ResponseProperties.md)
-- [OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccounts](docs/Model/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccounts.md)
-- [OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItems](docs/Model/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItems.md)
-- [OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsProperties](docs/Model/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsProperties.md)
-- [OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesAccountAttributes](docs/Model/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesAccountAttributes.md)
-- [OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesAccountAttributesItems](docs/Model/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesAccountAttributesItems.md)
-- [OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesAccountAttributesItemsProperties](docs/Model/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesAccountAttributesItemsProperties.md)
-- [OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesAccountRoutings](docs/Model/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesAccountRoutings.md)
-- [OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesOwners](docs/Model/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesOwners.md)
-- [OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesOwnersItems](docs/Model/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesOwnersItems.md)
-- [OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesOwnersItemsProperties](docs/Model/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesOwnersItemsProperties.md)
-- [OBPv400GetFirehoseAccountsAtOneBank200Response](docs/Model/OBPv400GetFirehoseAccountsAtOneBank200Response.md)
-- [OBPv400GetFirehoseAccountsAtOneBank200ResponseProperties](docs/Model/OBPv400GetFirehoseAccountsAtOneBank200ResponseProperties.md)
-- [OBPv400GetFirehoseAccountsAtOneBank200ResponsePropertiesAccounts](docs/Model/OBPv400GetFirehoseAccountsAtOneBank200ResponsePropertiesAccounts.md)
-- [OBPv400GetFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItems](docs/Model/OBPv400GetFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItems.md)
-- [OBPv400GetFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsProperties](docs/Model/OBPv400GetFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsProperties.md)
-- [OBPv400GetLogoutLink200Response](docs/Model/OBPv400GetLogoutLink200Response.md)
-- [OBPv400GetLogoutLink200ResponseProperties](docs/Model/OBPv400GetLogoutLink200ResponseProperties.md)
-- [OBPv400GetMapperDatabaseInfo200Response](docs/Model/OBPv400GetMapperDatabaseInfo200Response.md)
-- [OBPv400GetMapperDatabaseInfo200ResponseProperties](docs/Model/OBPv400GetMapperDatabaseInfo200ResponseProperties.md)
-- [OBPv400GetMyApiCollectionEndpoints200Response](docs/Model/OBPv400GetMyApiCollectionEndpoints200Response.md)
-- [OBPv400GetMyApiCollectionEndpoints200ResponseProperties](docs/Model/OBPv400GetMyApiCollectionEndpoints200ResponseProperties.md)
-- [OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpoints](docs/Model/OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpoints.md)
-- [OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems](docs/Model/OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems.md)
-- [OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItemsProperties](docs/Model/OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItemsProperties.md)
-- [OBPv400GetMyCorrelatedEntities200Response](docs/Model/OBPv400GetMyCorrelatedEntities200Response.md)
-- [OBPv400GetMyCorrelatedEntities200ResponseProperties](docs/Model/OBPv400GetMyCorrelatedEntities200ResponseProperties.md)
-- [OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntities](docs/Model/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntities.md)
-- [OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItems](docs/Model/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItems.md)
-- [OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsProperties](docs/Model/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsProperties.md)
-- [OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsers](docs/Model/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsers.md)
-- [OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItems](docs/Model/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItems.md)
-- [OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItemsProperties](docs/Model/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItemsProperties.md)
-- [OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItemsPropertiesUserAttributes](docs/Model/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItemsPropertiesUserAttributes.md)
-- [OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItemsPropertiesUserAttributesItems](docs/Model/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItemsPropertiesUserAttributesItems.md)
-- [OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItemsPropertiesUserAttributesItemsProperties](docs/Model/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItemsPropertiesUserAttributesItemsProperties.md)
-- [OBPv400GetMySpaces200Response](docs/Model/OBPv400GetMySpaces200Response.md)
-- [OBPv400GetMySpaces200ResponseProperties](docs/Model/OBPv400GetMySpaces200ResponseProperties.md)
-- [OBPv400GetPrivateAccountByIdFull200Response](docs/Model/OBPv400GetPrivateAccountByIdFull200Response.md)
-- [OBPv400GetPrivateAccountByIdFull200ResponseProperties](docs/Model/OBPv400GetPrivateAccountByIdFull200ResponseProperties.md)
-- [OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributes](docs/Model/OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributes.md)
-- [OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems](docs/Model/OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems.md)
-- [OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItemsProperties](docs/Model/OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItemsProperties.md)
-- [OBPv400GetPrivateAccountByIdFull200ResponsePropertiesOwners](docs/Model/OBPv400GetPrivateAccountByIdFull200ResponsePropertiesOwners.md)
-- [OBPv400GetProduct200Response](docs/Model/OBPv400GetProduct200Response.md)
-- [OBPv400GetProduct200ResponseProperties](docs/Model/OBPv400GetProduct200ResponseProperties.md)
-- [OBPv400GetProduct200ResponsePropertiesAttributes](docs/Model/OBPv400GetProduct200ResponsePropertiesAttributes.md)
-- [OBPv400GetProduct200ResponsePropertiesAttributesItems](docs/Model/OBPv400GetProduct200ResponsePropertiesAttributesItems.md)
-- [OBPv400GetProduct200ResponsePropertiesAttributesItemsProperties](docs/Model/OBPv400GetProduct200ResponsePropertiesAttributesItemsProperties.md)
-- [OBPv400GetProduct200ResponsePropertiesFees](docs/Model/OBPv400GetProduct200ResponsePropertiesFees.md)
-- [OBPv400GetProduct200ResponsePropertiesFeesItems](docs/Model/OBPv400GetProduct200ResponsePropertiesFeesItems.md)
-- [OBPv400GetProduct200ResponsePropertiesFeesItemsProperties](docs/Model/OBPv400GetProduct200ResponsePropertiesFeesItemsProperties.md)
-- [OBPv400GetProductFee200Response](docs/Model/OBPv400GetProductFee200Response.md)
-- [OBPv400GetProductFee200ResponseProperties](docs/Model/OBPv400GetProductFee200ResponseProperties.md)
-- [OBPv400GetProductFee200ResponsePropertiesValue](docs/Model/OBPv400GetProductFee200ResponsePropertiesValue.md)
-- [OBPv400GetProductFee200ResponsePropertiesValueProperties](docs/Model/OBPv400GetProductFee200ResponsePropertiesValueProperties.md)
-- [OBPv400GetProductFees200Response](docs/Model/OBPv400GetProductFees200Response.md)
-- [OBPv400GetProductFees200ResponseProperties](docs/Model/OBPv400GetProductFees200ResponseProperties.md)
-- [OBPv400GetProductFees200ResponsePropertiesProductFees](docs/Model/OBPv400GetProductFees200ResponsePropertiesProductFees.md)
-- [OBPv400GetProducts200Response](docs/Model/OBPv400GetProducts200Response.md)
-- [OBPv400GetProducts200ResponseProperties](docs/Model/OBPv400GetProducts200ResponseProperties.md)
-- [OBPv400GetProducts200ResponsePropertiesProducts](docs/Model/OBPv400GetProducts200ResponsePropertiesProducts.md)
-- [OBPv400GetScopes200Response](docs/Model/OBPv400GetScopes200Response.md)
-- [OBPv400GetScopes200ResponseProperties](docs/Model/OBPv400GetScopes200ResponseProperties.md)
-- [OBPv400GetScopes200ResponsePropertiesList](docs/Model/OBPv400GetScopes200ResponsePropertiesList.md)
-- [OBPv400GetScopes200ResponsePropertiesListItems](docs/Model/OBPv400GetScopes200ResponsePropertiesListItems.md)
-- [OBPv400GetScopes200ResponsePropertiesListItemsProperties](docs/Model/OBPv400GetScopes200ResponsePropertiesListItemsProperties.md)
-- [OBPv400GetSettlementAccounts200Response](docs/Model/OBPv400GetSettlementAccounts200Response.md)
-- [OBPv400GetSettlementAccounts200ResponseProperties](docs/Model/OBPv400GetSettlementAccounts200ResponseProperties.md)
-- [OBPv400GetSettlementAccounts200ResponsePropertiesSettlementAccounts](docs/Model/OBPv400GetSettlementAccounts200ResponsePropertiesSettlementAccounts.md)
-- [OBPv400GetSettlementAccounts200ResponsePropertiesSettlementAccountsItems](docs/Model/OBPv400GetSettlementAccounts200ResponsePropertiesSettlementAccountsItems.md)
-- [OBPv400GetSettlementAccounts200ResponsePropertiesSettlementAccountsItemsProperties](docs/Model/OBPv400GetSettlementAccounts200ResponsePropertiesSettlementAccountsItemsProperties.md)
-- [OBPv400GetTagsForViewOnAccount200Response](docs/Model/OBPv400GetTagsForViewOnAccount200Response.md)
-- [OBPv400GetTagsForViewOnAccount200ResponseProperties](docs/Model/OBPv400GetTagsForViewOnAccount200ResponseProperties.md)
-- [OBPv400GetTagsForViewOnAccount200ResponsePropertiesTags](docs/Model/OBPv400GetTagsForViewOnAccount200ResponsePropertiesTags.md)
-- [OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems](docs/Model/OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
-- [OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsProperties](docs/Model/OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsProperties.md)
-- [OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsPropertiesUser](docs/Model/OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsPropertiesUser.md)
-- [OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsPropertiesUserProperties](docs/Model/OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsPropertiesUserProperties.md)
-- [OBPv400GetTransactionAttributes200Response](docs/Model/OBPv400GetTransactionAttributes200Response.md)
-- [OBPv400GetTransactionAttributes200ResponseProperties](docs/Model/OBPv400GetTransactionAttributes200ResponseProperties.md)
-- [OBPv400GetTransactionRequestAttributeById200Response](docs/Model/OBPv400GetTransactionRequestAttributeById200Response.md)
-- [OBPv400GetTransactionRequestAttributeById200ResponseProperties](docs/Model/OBPv400GetTransactionRequestAttributeById200ResponseProperties.md)
-- [OBPv400GetTransactionRequestAttributeDefinition200Response](docs/Model/OBPv400GetTransactionRequestAttributeDefinition200Response.md)
-- [OBPv400GetTransactionRequestAttributeDefinition200ResponseProperties](docs/Model/OBPv400GetTransactionRequestAttributeDefinition200ResponseProperties.md)
-- [OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributes](docs/Model/OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributes.md)
-- [OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems](docs/Model/OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
-- [OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItemsProperties](docs/Model/OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItemsProperties.md)
-- [OBPv400GetTransactionRequestAttributes200Response](docs/Model/OBPv400GetTransactionRequestAttributes200Response.md)
-- [OBPv400GetTransactionRequestAttributes200ResponseProperties](docs/Model/OBPv400GetTransactionRequestAttributes200ResponseProperties.md)
-- [OBPv400GetTransactionRequestAttributes200ResponsePropertiesTransactionRequestAttributes](docs/Model/OBPv400GetTransactionRequestAttributes200ResponsePropertiesTransactionRequestAttributes.md)
-- [OBPv400GetUserCustomerLinksByCustomerId200Response](docs/Model/OBPv400GetUserCustomerLinksByCustomerId200Response.md)
-- [OBPv400GetUserCustomerLinksByCustomerId200ResponseProperties](docs/Model/OBPv400GetUserCustomerLinksByCustomerId200ResponseProperties.md)
-- [OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinks](docs/Model/OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinks.md)
-- [OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItems](docs/Model/OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItems.md)
-- [OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItemsProperties](docs/Model/OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItemsProperties.md)
-- [OBPv400GetUserInvitationAnonymousRequest](docs/Model/OBPv400GetUserInvitationAnonymousRequest.md)
-- [OBPv400GetUserInvitationAnonymousRequestProperties](docs/Model/OBPv400GetUserInvitationAnonymousRequestProperties.md)
-- [OBPv400GetUserInvitations200Response](docs/Model/OBPv400GetUserInvitations200Response.md)
-- [OBPv400GetUserInvitations200ResponseProperties](docs/Model/OBPv400GetUserInvitations200ResponseProperties.md)
-- [OBPv400GetUsersByEmail200Response](docs/Model/OBPv400GetUsersByEmail200Response.md)
-- [OBPv400GetUsersByEmail200ResponseProperties](docs/Model/OBPv400GetUsersByEmail200ResponseProperties.md)
-- [OBPv400GetUsersByEmail200ResponsePropertiesUsers](docs/Model/OBPv400GetUsersByEmail200ResponsePropertiesUsers.md)
-- [OBPv400IbanChecker200Response](docs/Model/OBPv400IbanChecker200Response.md)
-- [OBPv400IbanChecker200ResponseProperties](docs/Model/OBPv400IbanChecker200ResponseProperties.md)
-- [OBPv400IbanChecker200ResponsePropertiesDetails](docs/Model/OBPv400IbanChecker200ResponsePropertiesDetails.md)
-- [OBPv400IbanChecker200ResponsePropertiesDetailsProperties](docs/Model/OBPv400IbanChecker200ResponsePropertiesDetailsProperties.md)
-- [OBPv400IbanCheckerRequest](docs/Model/OBPv400IbanCheckerRequest.md)
-- [OBPv400IbanCheckerRequestProperties](docs/Model/OBPv400IbanCheckerRequestProperties.md)
-- [OBPv400UpdateAccountLabelRequest](docs/Model/OBPv400UpdateAccountLabelRequest.md)
-- [OBPv400UpdateAccountLabelRequestProperties](docs/Model/OBPv400UpdateAccountLabelRequestProperties.md)
-- [OBPv400UpdateAtmAccessibilityFeatures200Response](docs/Model/OBPv400UpdateAtmAccessibilityFeatures200Response.md)
-- [OBPv400UpdateAtmAccessibilityFeatures200ResponseProperties](docs/Model/OBPv400UpdateAtmAccessibilityFeatures200ResponseProperties.md)
-- [OBPv400UpdateAtmAccessibilityFeaturesRequest](docs/Model/OBPv400UpdateAtmAccessibilityFeaturesRequest.md)
-- [OBPv400UpdateAtmAccessibilityFeaturesRequestProperties](docs/Model/OBPv400UpdateAtmAccessibilityFeaturesRequestProperties.md)
-- [OBPv400UpdateAtmLocationCategories200Response](docs/Model/OBPv400UpdateAtmLocationCategories200Response.md)
-- [OBPv400UpdateAtmLocationCategories200ResponseProperties](docs/Model/OBPv400UpdateAtmLocationCategories200ResponseProperties.md)
-- [OBPv400UpdateAtmLocationCategoriesRequest](docs/Model/OBPv400UpdateAtmLocationCategoriesRequest.md)
-- [OBPv400UpdateAtmLocationCategoriesRequestProperties](docs/Model/OBPv400UpdateAtmLocationCategoriesRequestProperties.md)
-- [OBPv400UpdateAtmNotes200Response](docs/Model/OBPv400UpdateAtmNotes200Response.md)
-- [OBPv400UpdateAtmNotes200ResponseProperties](docs/Model/OBPv400UpdateAtmNotes200ResponseProperties.md)
-- [OBPv400UpdateAtmNotesRequest](docs/Model/OBPv400UpdateAtmNotesRequest.md)
-- [OBPv400UpdateAtmNotesRequestProperties](docs/Model/OBPv400UpdateAtmNotesRequestProperties.md)
-- [OBPv400UpdateAtmServices200Response](docs/Model/OBPv400UpdateAtmServices200Response.md)
-- [OBPv400UpdateAtmServices200ResponseProperties](docs/Model/OBPv400UpdateAtmServices200ResponseProperties.md)
-- [OBPv400UpdateAtmServicesRequest](docs/Model/OBPv400UpdateAtmServicesRequest.md)
-- [OBPv400UpdateAtmServicesRequestProperties](docs/Model/OBPv400UpdateAtmServicesRequestProperties.md)
-- [OBPv400UpdateAtmSupportedCurrencies200Response](docs/Model/OBPv400UpdateAtmSupportedCurrencies200Response.md)
-- [OBPv400UpdateAtmSupportedCurrencies200ResponseProperties](docs/Model/OBPv400UpdateAtmSupportedCurrencies200ResponseProperties.md)
-- [OBPv400UpdateAtmSupportedCurrenciesRequest](docs/Model/OBPv400UpdateAtmSupportedCurrenciesRequest.md)
-- [OBPv400UpdateAtmSupportedCurrenciesRequestProperties](docs/Model/OBPv400UpdateAtmSupportedCurrenciesRequestProperties.md)
-- [OBPv400UpdateAtmSupportedLanguages200Response](docs/Model/OBPv400UpdateAtmSupportedLanguages200Response.md)
-- [OBPv400UpdateAtmSupportedLanguages200ResponseProperties](docs/Model/OBPv400UpdateAtmSupportedLanguages200ResponseProperties.md)
-- [OBPv400UpdateAtmSupportedLanguagesRequest](docs/Model/OBPv400UpdateAtmSupportedLanguagesRequest.md)
-- [OBPv400UpdateAtmSupportedLanguagesRequestProperties](docs/Model/OBPv400UpdateAtmSupportedLanguagesRequestProperties.md)
-- [OBPv400UpdateAuthenticationTypeValidationRequest](docs/Model/OBPv400UpdateAuthenticationTypeValidationRequest.md)
-- [OBPv400UpdateAuthenticationTypeValidationRequestProperties](docs/Model/OBPv400UpdateAuthenticationTypeValidationRequestProperties.md)
-- [OBPv400UpdateBankLevelDynamicEndpointHostRequest](docs/Model/OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
-- [OBPv400UpdateBankLevelDynamicEndpointHostRequestProperties](docs/Model/OBPv400UpdateBankLevelDynamicEndpointHostRequestProperties.md)
-- [OBPv400UpdateBankLevelDynamicResourceDocRequest](docs/Model/OBPv400UpdateBankLevelDynamicResourceDocRequest.md)
-- [OBPv400UpdateBankLevelDynamicResourceDocRequestProperties](docs/Model/OBPv400UpdateBankLevelDynamicResourceDocRequestProperties.md)
-- [OBPv400UpdateConnectorMethodRequest](docs/Model/OBPv400UpdateConnectorMethodRequest.md)
-- [OBPv400UpdateConnectorMethodRequestProperties](docs/Model/OBPv400UpdateConnectorMethodRequestProperties.md)
-- [OBPv400UpdateDynamicMessageDocRequest](docs/Model/OBPv400UpdateDynamicMessageDocRequest.md)
-- [OBPv400UpdateDynamicMessageDocRequestProperties](docs/Model/OBPv400UpdateDynamicMessageDocRequestProperties.md)
-- [OBPv400UpdateProductFeeRequest](docs/Model/OBPv400UpdateProductFeeRequest.md)
-- [OBPv400UpdateProductFeeRequestProperties](docs/Model/OBPv400UpdateProductFeeRequestProperties.md)
-- [OBPv400UpdateSystemLevelEndpointTag200Response](docs/Model/OBPv400UpdateSystemLevelEndpointTag200Response.md)
-- [OBPv400UpdateSystemLevelEndpointTag200ResponseProperties](docs/Model/OBPv400UpdateSystemLevelEndpointTag200ResponseProperties.md)
-- [OBPv400UpdateSystemLevelEndpointTagRequest](docs/Model/OBPv400UpdateSystemLevelEndpointTagRequest.md)
-- [OBPv400UpdateSystemLevelEndpointTagRequestProperties](docs/Model/OBPv400UpdateSystemLevelEndpointTagRequestProperties.md)
-- [OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName](docs/Model/OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.md)
-- [OBPv500AddCardForBank200Response](docs/Model/OBPv500AddCardForBank200Response.md)
-- [OBPv500AddCardForBank200ResponseProperties](docs/Model/OBPv500AddCardForBank200ResponseProperties.md)
-- [OBPv500AddCardForBankRequest](docs/Model/OBPv500AddCardForBankRequest.md)
-- [OBPv500AddCardForBankRequestProperties](docs/Model/OBPv500AddCardForBankRequestProperties.md)
-- [OBPv500AnswerUserAuthContextUpdateChallenge200Response](docs/Model/OBPv500AnswerUserAuthContextUpdateChallenge200Response.md)
-- [OBPv500AnswerUserAuthContextUpdateChallenge200ResponseProperties](docs/Model/OBPv500AnswerUserAuthContextUpdateChallenge200ResponseProperties.md)
-- [OBPv500CreateConsentRequestRequest](docs/Model/OBPv500CreateConsentRequestRequest.md)
-- [OBPv500CreateConsentRequestRequestProperties](docs/Model/OBPv500CreateConsentRequestRequestProperties.md)
-- [OBPv500CreateCustomerAccountLinkRequest](docs/Model/OBPv500CreateCustomerAccountLinkRequest.md)
-- [OBPv500CreateCustomerAccountLinkRequestProperties](docs/Model/OBPv500CreateCustomerAccountLinkRequestProperties.md)
-- [OBPv500CreateProduct200Response](docs/Model/OBPv500CreateProduct200Response.md)
-- [OBPv500CreateProduct200ResponseProperties](docs/Model/OBPv500CreateProduct200ResponseProperties.md)
-- [OBPv500CreateProductRequest](docs/Model/OBPv500CreateProductRequest.md)
-- [OBPv500CreateProductRequestProperties](docs/Model/OBPv500CreateProductRequestProperties.md)
-- [OBPv500CreateSystemViewRequest](docs/Model/OBPv500CreateSystemViewRequest.md)
-- [OBPv500CreateSystemViewRequestProperties](docs/Model/OBPv500CreateSystemViewRequestProperties.md)
-- [OBPv500GetAdapterInfo200Response](docs/Model/OBPv500GetAdapterInfo200Response.md)
-- [OBPv500GetAdapterInfo200ResponseProperties](docs/Model/OBPv500GetAdapterInfo200ResponseProperties.md)
-- [OBPv500GetAdapterInfo200ResponsePropertiesBackendMessages](docs/Model/OBPv500GetAdapterInfo200ResponsePropertiesBackendMessages.md)
-- [OBPv500GetAdapterInfo200ResponsePropertiesBackendMessagesItems](docs/Model/OBPv500GetAdapterInfo200ResponsePropertiesBackendMessagesItems.md)
-- [OBPv500GetAdapterInfo200ResponsePropertiesBackendMessagesItemsProperties](docs/Model/OBPv500GetAdapterInfo200ResponsePropertiesBackendMessagesItemsProperties.md)
-- [OBPv500GetConsentByConsentRequestId200Response](docs/Model/OBPv500GetConsentByConsentRequestId200Response.md)
-- [OBPv500GetConsentByConsentRequestId200ResponseProperties](docs/Model/OBPv500GetConsentByConsentRequestId200ResponseProperties.md)
-- [OBPv500GetConsentRequest200Response](docs/Model/OBPv500GetConsentRequest200Response.md)
-- [OBPv500GetConsentRequest200ResponseProperties](docs/Model/OBPv500GetConsentRequest200ResponseProperties.md)
-- [OBPv500GetConsentRequest200ResponsePropertiesPayload](docs/Model/OBPv500GetConsentRequest200ResponsePropertiesPayload.md)
-- [OBPv500GetConsentRequest200ResponsePropertiesPayloadProperties](docs/Model/OBPv500GetConsentRequest200ResponsePropertiesPayloadProperties.md)
-- [OBPv500GetConsentRequest200ResponsePropertiesPayloadPropertiesAccountAccess](docs/Model/OBPv500GetConsentRequest200ResponsePropertiesPayloadPropertiesAccountAccess.md)
-- [OBPv500GetConsentRequest200ResponsePropertiesPayloadPropertiesAccountAccessItems](docs/Model/OBPv500GetConsentRequest200ResponsePropertiesPayloadPropertiesAccountAccessItems.md)
-- [OBPv500GetConsentRequest200ResponsePropertiesPayloadPropertiesAccountAccessItemsProperties](docs/Model/OBPv500GetConsentRequest200ResponsePropertiesPayloadPropertiesAccountAccessItemsProperties.md)
-- [OBPv500GetCustomerAccountLinksByCustomerId200Response](docs/Model/OBPv500GetCustomerAccountLinksByCustomerId200Response.md)
-- [OBPv500GetCustomerAccountLinksByCustomerId200ResponseProperties](docs/Model/OBPv500GetCustomerAccountLinksByCustomerId200ResponseProperties.md)
-- [OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinks](docs/Model/OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinks.md)
-- [OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems](docs/Model/OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems.md)
-- [OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItemsProperties](docs/Model/OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItemsProperties.md)
-- [OBPv500GetCustomerOverview200Response](docs/Model/OBPv500GetCustomerOverview200Response.md)
-- [OBPv500GetCustomerOverview200ResponseProperties](docs/Model/OBPv500GetCustomerOverview200ResponseProperties.md)
-- [OBPv500GetCustomerOverview200ResponsePropertiesAccounts](docs/Model/OBPv500GetCustomerOverview200ResponsePropertiesAccounts.md)
-- [OBPv500GetCustomerOverview200ResponsePropertiesAccountsItems](docs/Model/OBPv500GetCustomerOverview200ResponsePropertiesAccountsItems.md)
-- [OBPv500GetCustomerOverview200ResponsePropertiesAccountsItemsProperties](docs/Model/OBPv500GetCustomerOverview200ResponsePropertiesAccountsItemsProperties.md)
-- [OBPv500GetCustomerOverviewFlat200Response](docs/Model/OBPv500GetCustomerOverviewFlat200Response.md)
-- [OBPv500GetCustomerOverviewFlat200ResponseProperties](docs/Model/OBPv500GetCustomerOverviewFlat200ResponseProperties.md)
-- [OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccounts](docs/Model/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccounts.md)
-- [OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItems](docs/Model/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItems.md)
-- [OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsProperties](docs/Model/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsProperties.md)
-- [OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesAccountAttributes](docs/Model/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesAccountAttributes.md)
-- [OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesAccountAttributesItems](docs/Model/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesAccountAttributesItems.md)
-- [OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesAccountAttributesItemsProperties](docs/Model/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesAccountAttributesItemsProperties.md)
-- [OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesContracts](docs/Model/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesContracts.md)
-- [OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesContractsItems](docs/Model/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesContractsItems.md)
-- [OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesContractsItemsProperties](docs/Model/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesContractsItemsProperties.md)
-- [OBPv500GetCustomerOverviewFlatRequest](docs/Model/OBPv500GetCustomerOverviewFlatRequest.md)
-- [OBPv500GetCustomerOverviewFlatRequestProperties](docs/Model/OBPv500GetCustomerOverviewFlatRequestProperties.md)
-- [OBPv500GetMetricsAtBank200Response](docs/Model/OBPv500GetMetricsAtBank200Response.md)
-- [OBPv500GetMetricsAtBank200ResponseProperties](docs/Model/OBPv500GetMetricsAtBank200ResponseProperties.md)
-- [OBPv500GetMetricsAtBank200ResponsePropertiesMetrics](docs/Model/OBPv500GetMetricsAtBank200ResponsePropertiesMetrics.md)
-- [OBPv500GetMetricsAtBank200ResponsePropertiesMetricsItems](docs/Model/OBPv500GetMetricsAtBank200ResponsePropertiesMetricsItems.md)
-- [OBPv500GetMetricsAtBank200ResponsePropertiesMetricsItemsProperties](docs/Model/OBPv500GetMetricsAtBank200ResponsePropertiesMetricsItemsProperties.md)
-- [OBPv500GetMyCustomersAtBank200Response](docs/Model/OBPv500GetMyCustomersAtBank200Response.md)
-- [OBPv500GetMyCustomersAtBank200ResponseProperties](docs/Model/OBPv500GetMyCustomersAtBank200ResponseProperties.md)
-- [OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomers](docs/Model/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomers.md)
-- [OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItems](docs/Model/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItems.md)
-- [OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsProperties](docs/Model/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsProperties.md)
-- [OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit](docs/Model/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit.md)
-- [OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties](docs/Model/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties.md)
-- [OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditRating](docs/Model/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditRating.md)
-- [OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditRatingProperties](docs/Model/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditRatingProperties.md)
-- [OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesDobOfDependants](docs/Model/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesDobOfDependants.md)
-- [OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesFaceImage](docs/Model/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesFaceImage.md)
-- [OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesFaceImageProperties](docs/Model/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesFaceImageProperties.md)
-- [OBPv500GetSystemViewsIds200Response](docs/Model/OBPv500GetSystemViewsIds200Response.md)
-- [OBPv500GetSystemViewsIds200ResponseProperties](docs/Model/OBPv500GetSystemViewsIds200ResponseProperties.md)
-- [OBPv500GetSystemViewsIds200ResponsePropertiesViews](docs/Model/OBPv500GetSystemViewsIds200ResponsePropertiesViews.md)
-- [OBPv500GetSystemViewsIds200ResponsePropertiesViewsItems](docs/Model/OBPv500GetSystemViewsIds200ResponsePropertiesViewsItems.md)
-- [OBPv500GetSystemViewsIds200ResponsePropertiesViewsItemsProperties](docs/Model/OBPv500GetSystemViewsIds200ResponsePropertiesViewsItemsProperties.md)
-- [OBPv500GetUserAuthContexts200Response](docs/Model/OBPv500GetUserAuthContexts200Response.md)
-- [OBPv500GetUserAuthContexts200ResponseProperties](docs/Model/OBPv500GetUserAuthContexts200ResponseProperties.md)
-- [OBPv500GetViewsForBankAccount200Response](docs/Model/OBPv500GetViewsForBankAccount200Response.md)
-- [OBPv500GetViewsForBankAccount200ResponseProperties](docs/Model/OBPv500GetViewsForBankAccount200ResponseProperties.md)
-- [OBPv500GetViewsForBankAccount200ResponsePropertiesViews](docs/Model/OBPv500GetViewsForBankAccount200ResponsePropertiesViews.md)
-- [OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems](docs/Model/OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems.md)
-- [OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItemsProperties](docs/Model/OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItemsProperties.md)
-- [OBPv500HeadAtms200Response](docs/Model/OBPv500HeadAtms200Response.md)
-- [OBPv500HeadAtms200ResponseProperties](docs/Model/OBPv500HeadAtms200ResponseProperties.md)
-- [OBPv500HeadAtms200ResponsePropertiesAtms](docs/Model/OBPv500HeadAtms200ResponsePropertiesAtms.md)
-- [OBPv500HeadAtms200ResponsePropertiesAtmsItems](docs/Model/OBPv500HeadAtms200ResponsePropertiesAtmsItems.md)
-- [OBPv500HeadAtms200ResponsePropertiesAtmsItemsProperties](docs/Model/OBPv500HeadAtms200ResponsePropertiesAtmsItemsProperties.md)
-- [OBPv500UpdateBank200Response](docs/Model/OBPv500UpdateBank200Response.md)
-- [OBPv500UpdateBank200ResponseProperties](docs/Model/OBPv500UpdateBank200ResponseProperties.md)
-- [OBPv500UpdateBankRequest](docs/Model/OBPv500UpdateBankRequest.md)
-- [OBPv500UpdateBankRequestProperties](docs/Model/OBPv500UpdateBankRequestProperties.md)
-- [OBPv500UpdateCustomerAccountLinkByIdRequest](docs/Model/OBPv500UpdateCustomerAccountLinkByIdRequest.md)
-- [OBPv500UpdateCustomerAccountLinkByIdRequestProperties](docs/Model/OBPv500UpdateCustomerAccountLinkByIdRequestProperties.md)
-- [OBPv510AddSystemViewPermission200Response](docs/Model/OBPv510AddSystemViewPermission200Response.md)
-- [OBPv510AddSystemViewPermission200ResponseProperties](docs/Model/OBPv510AddSystemViewPermission200ResponseProperties.md)
-- [OBPv510AddSystemViewPermissionRequest](docs/Model/OBPv510AddSystemViewPermissionRequest.md)
-- [OBPv510AddSystemViewPermissionRequestProperties](docs/Model/OBPv510AddSystemViewPermissionRequestProperties.md)
-- [OBPv510CreateAgentRequest](docs/Model/OBPv510CreateAgentRequest.md)
-- [OBPv510CreateAgentRequestProperties](docs/Model/OBPv510CreateAgentRequestProperties.md)
-- [OBPv510CreateAtmRequest](docs/Model/OBPv510CreateAtmRequest.md)
-- [OBPv510CreateAtmRequestProperties](docs/Model/OBPv510CreateAtmRequestProperties.md)
-- [OBPv510CreateBankAccountBalanceRequest](docs/Model/OBPv510CreateBankAccountBalanceRequest.md)
-- [OBPv510CreateBankAccountBalanceRequestProperties](docs/Model/OBPv510CreateBankAccountBalanceRequestProperties.md)
-- [OBPv510CreateConsentImplicit200Response](docs/Model/OBPv510CreateConsentImplicit200Response.md)
-- [OBPv510CreateConsentImplicit200ResponseProperties](docs/Model/OBPv510CreateConsentImplicit200ResponseProperties.md)
-- [OBPv510CreateConsentImplicitRequest](docs/Model/OBPv510CreateConsentImplicitRequest.md)
-- [OBPv510CreateConsentImplicitRequestProperties](docs/Model/OBPv510CreateConsentImplicitRequestProperties.md)
-- [OBPv510CreateConsumer200Response](docs/Model/OBPv510CreateConsumer200Response.md)
-- [OBPv510CreateConsumer200ResponseProperties](docs/Model/OBPv510CreateConsumer200ResponseProperties.md)
-- [OBPv510CreateConsumerDynamicRegistrationRequest](docs/Model/OBPv510CreateConsumerDynamicRegistrationRequest.md)
-- [OBPv510CreateConsumerDynamicRegistrationRequestProperties](docs/Model/OBPv510CreateConsumerDynamicRegistrationRequestProperties.md)
-- [OBPv510CreateConsumerRequest](docs/Model/OBPv510CreateConsumerRequest.md)
-- [OBPv510CreateConsumerRequestProperties](docs/Model/OBPv510CreateConsumerRequestProperties.md)
-- [OBPv510CreateCustomView200Response](docs/Model/OBPv510CreateCustomView200Response.md)
-- [OBPv510CreateCustomView200ResponseProperties](docs/Model/OBPv510CreateCustomView200ResponseProperties.md)
-- [OBPv510CreateCustomViewRequest](docs/Model/OBPv510CreateCustomViewRequest.md)
-- [OBPv510CreateCustomViewRequestProperties](docs/Model/OBPv510CreateCustomViewRequestProperties.md)
-- [OBPv510CreateRegulatedEntityRequest](docs/Model/OBPv510CreateRegulatedEntityRequest.md)
-- [OBPv510CreateRegulatedEntityRequestProperties](docs/Model/OBPv510CreateRegulatedEntityRequestProperties.md)
-- [OBPv510CreateUserWithAccountAccessById200Response](docs/Model/OBPv510CreateUserWithAccountAccessById200Response.md)
-- [OBPv510CreateUserWithAccountAccessById200ResponseProperties](docs/Model/OBPv510CreateUserWithAccountAccessById200ResponseProperties.md)
-- [OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead](docs/Model/OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead.md)
-- [OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHeadProperties](docs/Model/OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHeadProperties.md)
-- [OBPv510CreateUserWithAccountAccessByIdRequest](docs/Model/OBPv510CreateUserWithAccountAccessByIdRequest.md)
-- [OBPv510CreateUserWithAccountAccessByIdRequestProperties](docs/Model/OBPv510CreateUserWithAccountAccessByIdRequestProperties.md)
-- [OBPv510CreateUserWithAccountAccessByIdRequestPropertiesViews](docs/Model/OBPv510CreateUserWithAccountAccessByIdRequestPropertiesViews.md)
-- [OBPv510CreateUserWithAccountAccessByIdRequestPropertiesViewsItems](docs/Model/OBPv510CreateUserWithAccountAccessByIdRequestPropertiesViewsItems.md)
-- [OBPv510CreateUserWithAccountAccessByIdRequestPropertiesViewsItemsProperties](docs/Model/OBPv510CreateUserWithAccountAccessByIdRequestPropertiesViewsItemsProperties.md)
-- [OBPv510CreateVRPConsentRequest200Response](docs/Model/OBPv510CreateVRPConsentRequest200Response.md)
-- [OBPv510CreateVRPConsentRequest200ResponseProperties](docs/Model/OBPv510CreateVRPConsentRequest200ResponseProperties.md)
-- [OBPv510CreateVRPConsentRequest200ResponsePropertiesPayload](docs/Model/OBPv510CreateVRPConsentRequest200ResponsePropertiesPayload.md)
-- [OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadProperties](docs/Model/OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadProperties.md)
-- [OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadPropertiesToAccount](docs/Model/OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadPropertiesToAccount.md)
-- [OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadPropertiesToAccountProperties](docs/Model/OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadPropertiesToAccountProperties.md)
-- [OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadPropertiesToAccountPropertiesLimit](docs/Model/OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadPropertiesToAccountPropertiesLimit.md)
-- [OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadPropertiesToAccountPropertiesLimitProperties](docs/Model/OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadPropertiesToAccountPropertiesLimitProperties.md)
-- [OBPv510CreateVRPConsentRequestRequest](docs/Model/OBPv510CreateVRPConsentRequestRequest.md)
-- [OBPv510CreateVRPConsentRequestRequestProperties](docs/Model/OBPv510CreateVRPConsentRequestRequestProperties.md)
-- [OBPv510CreateVRPConsentRequestRequestPropertiesFromAccount](docs/Model/OBPv510CreateVRPConsentRequestRequestPropertiesFromAccount.md)
-- [OBPv510CreateVRPConsentRequestRequestPropertiesFromAccountProperties](docs/Model/OBPv510CreateVRPConsentRequestRequestPropertiesFromAccountProperties.md)
-- [OBPv510CreateVRPConsentRequestRequestPropertiesToAccount](docs/Model/OBPv510CreateVRPConsentRequestRequestPropertiesToAccount.md)
-- [OBPv510CreateVRPConsentRequestRequestPropertiesToAccountProperties](docs/Model/OBPv510CreateVRPConsentRequestRequestPropertiesToAccountProperties.md)
-- [OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit](docs/Model/OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit.md)
-- [OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimitProperties](docs/Model/OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimitProperties.md)
-- [OBPv510GetAccountsHeldByUserAtBank200Response](docs/Model/OBPv510GetAccountsHeldByUserAtBank200Response.md)
-- [OBPv510GetAccountsHeldByUserAtBank200ResponseProperties](docs/Model/OBPv510GetAccountsHeldByUserAtBank200ResponseProperties.md)
-- [OBPv510GetAccountsHeldByUserAtBank200ResponsePropertiesAccounts](docs/Model/OBPv510GetAccountsHeldByUserAtBank200ResponsePropertiesAccounts.md)
-- [OBPv510GetAccountsHeldByUserAtBank200ResponsePropertiesAccountsItems](docs/Model/OBPv510GetAccountsHeldByUserAtBank200ResponsePropertiesAccountsItems.md)
-- [OBPv510GetAccountsHeldByUserAtBank200ResponsePropertiesAccountsItemsProperties](docs/Model/OBPv510GetAccountsHeldByUserAtBank200ResponsePropertiesAccountsItemsProperties.md)
-- [OBPv510GetAgent200Response](docs/Model/OBPv510GetAgent200Response.md)
-- [OBPv510GetAgent200ResponseProperties](docs/Model/OBPv510GetAgent200ResponseProperties.md)
-- [OBPv510GetAgents200Response](docs/Model/OBPv510GetAgents200Response.md)
-- [OBPv510GetAgents200ResponseProperties](docs/Model/OBPv510GetAgents200ResponseProperties.md)
-- [OBPv510GetAgents200ResponsePropertiesAgents](docs/Model/OBPv510GetAgents200ResponsePropertiesAgents.md)
-- [OBPv510GetAgents200ResponsePropertiesAgentsItems](docs/Model/OBPv510GetAgents200ResponsePropertiesAgentsItems.md)
-- [OBPv510GetAgents200ResponsePropertiesAgentsItemsProperties](docs/Model/OBPv510GetAgents200ResponsePropertiesAgentsItemsProperties.md)
-- [OBPv510GetAllBankAccountBalances200Response](docs/Model/OBPv510GetAllBankAccountBalances200Response.md)
-- [OBPv510GetAllBankAccountBalances200ResponseProperties](docs/Model/OBPv510GetAllBankAccountBalances200ResponseProperties.md)
-- [OBPv510GetAllBankAccountBalances200ResponsePropertiesBalances](docs/Model/OBPv510GetAllBankAccountBalances200ResponsePropertiesBalances.md)
-- [OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems](docs/Model/OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
-- [OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItemsProperties](docs/Model/OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItemsProperties.md)
-- [OBPv510GetAllRegulatedEntityAttributes200Response](docs/Model/OBPv510GetAllRegulatedEntityAttributes200Response.md)
-- [OBPv510GetAllRegulatedEntityAttributes200ResponseProperties](docs/Model/OBPv510GetAllRegulatedEntityAttributes200ResponseProperties.md)
-- [OBPv510GetAllRegulatedEntityAttributes200ResponsePropertiesAttributes](docs/Model/OBPv510GetAllRegulatedEntityAttributes200ResponsePropertiesAttributes.md)
-- [OBPv510GetApiTags200Response](docs/Model/OBPv510GetApiTags200Response.md)
-- [OBPv510GetApiTags200ResponseProperties](docs/Model/OBPv510GetApiTags200ResponseProperties.md)
-- [OBPv510GetApiTags200ResponsePropertiesAccounts](docs/Model/OBPv510GetApiTags200ResponsePropertiesAccounts.md)
-- [OBPv510GetApiTags200ResponsePropertiesAccountsItems](docs/Model/OBPv510GetApiTags200ResponsePropertiesAccountsItems.md)
-- [OBPv510GetApiTags200ResponsePropertiesAccountsItemsProperties](docs/Model/OBPv510GetApiTags200ResponsePropertiesAccountsItemsProperties.md)
-- [OBPv510GetAtm200Response](docs/Model/OBPv510GetAtm200Response.md)
-- [OBPv510GetAtm200ResponseProperties](docs/Model/OBPv510GetAtm200ResponseProperties.md)
-- [OBPv510GetAtm200ResponsePropertiesAttributes](docs/Model/OBPv510GetAtm200ResponsePropertiesAttributes.md)
-- [OBPv510GetAtmAttribute200Response](docs/Model/OBPv510GetAtmAttribute200Response.md)
-- [OBPv510GetAtmAttribute200ResponseProperties](docs/Model/OBPv510GetAtmAttribute200ResponseProperties.md)
-- [OBPv510GetAtmAttributes200Response](docs/Model/OBPv510GetAtmAttributes200Response.md)
-- [OBPv510GetAtmAttributes200ResponseProperties](docs/Model/OBPv510GetAtmAttributes200ResponseProperties.md)
-- [OBPv510GetAtms200Response](docs/Model/OBPv510GetAtms200Response.md)
-- [OBPv510GetAtms200ResponseProperties](docs/Model/OBPv510GetAtms200ResponseProperties.md)
-- [OBPv510GetAtms200ResponsePropertiesAtms](docs/Model/OBPv510GetAtms200ResponsePropertiesAtms.md)
-- [OBPv510GetBankAccountsBalances200Response](docs/Model/OBPv510GetBankAccountsBalances200Response.md)
-- [OBPv510GetBankAccountsBalances200ResponseProperties](docs/Model/OBPv510GetBankAccountsBalances200ResponseProperties.md)
-- [OBPv510GetBankAccountsBalances200ResponsePropertiesAccounts](docs/Model/OBPv510GetBankAccountsBalances200ResponsePropertiesAccounts.md)
-- [OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItems](docs/Model/OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItems.md)
-- [OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItemsProperties](docs/Model/OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItemsProperties.md)
-- [OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItemsPropertiesBalances](docs/Model/OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItemsPropertiesBalances.md)
-- [OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItemsPropertiesBalancesItems](docs/Model/OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItemsPropertiesBalancesItems.md)
-- [OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItemsPropertiesBalancesItemsProperties](docs/Model/OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItemsPropertiesBalancesItemsProperties.md)
-- [OBPv510GetCallsLimit200Response](docs/Model/OBPv510GetCallsLimit200Response.md)
-- [OBPv510GetCallsLimit200ResponseProperties](docs/Model/OBPv510GetCallsLimit200ResponseProperties.md)
-- [OBPv510GetCallsLimit200ResponsePropertiesLimits](docs/Model/OBPv510GetCallsLimit200ResponsePropertiesLimits.md)
-- [OBPv510GetCallsLimit200ResponsePropertiesLimitsItems](docs/Model/OBPv510GetCallsLimit200ResponsePropertiesLimitsItems.md)
-- [OBPv510GetCallsLimit200ResponsePropertiesLimitsItemsProperties](docs/Model/OBPv510GetCallsLimit200ResponsePropertiesLimitsItemsProperties.md)
-- [OBPv510GetConsentByConsentId200Response](docs/Model/OBPv510GetConsentByConsentId200Response.md)
-- [OBPv510GetConsentByConsentId200ResponseProperties](docs/Model/OBPv510GetConsentByConsentId200ResponseProperties.md)
-- [OBPv510GetConsents200Response](docs/Model/OBPv510GetConsents200Response.md)
-- [OBPv510GetConsents200ResponseProperties](docs/Model/OBPv510GetConsents200ResponseProperties.md)
-- [OBPv510GetConsents200ResponsePropertiesConsents](docs/Model/OBPv510GetConsents200ResponsePropertiesConsents.md)
-- [OBPv510GetConsents200ResponsePropertiesConsentsItems](docs/Model/OBPv510GetConsents200ResponsePropertiesConsentsItems.md)
-- [OBPv510GetConsents200ResponsePropertiesConsentsItemsProperties](docs/Model/OBPv510GetConsents200ResponsePropertiesConsentsItemsProperties.md)
-- [OBPv510GetConsumers200Response](docs/Model/OBPv510GetConsumers200Response.md)
-- [OBPv510GetConsumers200ResponseProperties](docs/Model/OBPv510GetConsumers200ResponseProperties.md)
-- [OBPv510GetConsumers200ResponsePropertiesConsumers](docs/Model/OBPv510GetConsumers200ResponsePropertiesConsumers.md)
-- [OBPv510GetCoreAccountByIdThroughView200Response](docs/Model/OBPv510GetCoreAccountByIdThroughView200Response.md)
-- [OBPv510GetCoreAccountByIdThroughView200ResponseProperties](docs/Model/OBPv510GetCoreAccountByIdThroughView200ResponseProperties.md)
-- [OBPv510GetCounterpartyLimit200Response](docs/Model/OBPv510GetCounterpartyLimit200Response.md)
-- [OBPv510GetCounterpartyLimit200ResponseProperties](docs/Model/OBPv510GetCounterpartyLimit200ResponseProperties.md)
-- [OBPv510GetCounterpartyLimitStatus200Response](docs/Model/OBPv510GetCounterpartyLimitStatus200Response.md)
-- [OBPv510GetCounterpartyLimitStatus200ResponseProperties](docs/Model/OBPv510GetCounterpartyLimitStatus200ResponseProperties.md)
-- [OBPv510GetCounterpartyLimitStatus200ResponsePropertiesStatus](docs/Model/OBPv510GetCounterpartyLimitStatus200ResponsePropertiesStatus.md)
-- [OBPv510GetCounterpartyLimitStatus200ResponsePropertiesStatusProperties](docs/Model/OBPv510GetCounterpartyLimitStatus200ResponsePropertiesStatusProperties.md)
-- [OBPv510GetCurrenciesAtBank200Response](docs/Model/OBPv510GetCurrenciesAtBank200Response.md)
-- [OBPv510GetCurrenciesAtBank200ResponseProperties](docs/Model/OBPv510GetCurrenciesAtBank200ResponseProperties.md)
-- [OBPv510GetCurrenciesAtBank200ResponsePropertiesCurrencies](docs/Model/OBPv510GetCurrenciesAtBank200ResponsePropertiesCurrencies.md)
-- [OBPv510GetCurrenciesAtBank200ResponsePropertiesCurrenciesItems](docs/Model/OBPv510GetCurrenciesAtBank200ResponsePropertiesCurrenciesItems.md)
-- [OBPv510GetCurrenciesAtBank200ResponsePropertiesCurrenciesItemsProperties](docs/Model/OBPv510GetCurrenciesAtBank200ResponsePropertiesCurrenciesItemsProperties.md)
-- [OBPv510GetEntitlementsAndPermissions200Response](docs/Model/OBPv510GetEntitlementsAndPermissions200Response.md)
-- [OBPv510GetEntitlementsAndPermissions200ResponseProperties](docs/Model/OBPv510GetEntitlementsAndPermissions200ResponseProperties.md)
-- [OBPv510GetMyConsentsByBank200Response](docs/Model/OBPv510GetMyConsentsByBank200Response.md)
-- [OBPv510GetMyConsentsByBank200ResponseProperties](docs/Model/OBPv510GetMyConsentsByBank200ResponseProperties.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsents](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsents.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItems](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItems.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsProperties](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsProperties.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayload](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayload.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadProperties](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadProperties.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccess](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccess.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccessProperties](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccessProperties.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccessPropertiesTransactions](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccessPropertiesTransactions.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccessPropertiesTransactionsItems](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccessPropertiesTransactionsItems.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccessPropertiesTransactionsItemsProperties](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccessPropertiesTransactionsItemsProperties.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlements](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlements.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItemsProperties](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItemsProperties.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesRequestHeaders](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesRequestHeaders.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesRequestHeadersItems](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesRequestHeadersItems.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesRequestHeadersItemsProperties](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesRequestHeadersItemsProperties.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViews](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViews.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViewsItems](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViewsItems.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViewsItemsProperties](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViewsItemsProperties.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViewsItemsPropertiesHelperInfo](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViewsItemsPropertiesHelperInfo.md)
-- [OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViewsItemsPropertiesHelperInfoProperties](docs/Model/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViewsItemsPropertiesHelperInfoProperties.md)
-- [OBPv510GetRegulatedEntityAttributeById200Response](docs/Model/OBPv510GetRegulatedEntityAttributeById200Response.md)
-- [OBPv510GetRegulatedEntityAttributeById200ResponseProperties](docs/Model/OBPv510GetRegulatedEntityAttributeById200ResponseProperties.md)
-- [OBPv510GetRegulatedEntityById200Response](docs/Model/OBPv510GetRegulatedEntityById200Response.md)
-- [OBPv510GetRegulatedEntityById200ResponseProperties](docs/Model/OBPv510GetRegulatedEntityById200ResponseProperties.md)
-- [OBPv510GetRegulatedEntityById200ResponsePropertiesAttributes](docs/Model/OBPv510GetRegulatedEntityById200ResponsePropertiesAttributes.md)
-- [OBPv510GetRegulatedEntityById200ResponsePropertiesAttributesItems](docs/Model/OBPv510GetRegulatedEntityById200ResponsePropertiesAttributesItems.md)
-- [OBPv510GetRegulatedEntityById200ResponsePropertiesAttributesItemsProperties](docs/Model/OBPv510GetRegulatedEntityById200ResponsePropertiesAttributesItemsProperties.md)
-- [OBPv510GetRegulatedEntityById200ResponsePropertiesServices](docs/Model/OBPv510GetRegulatedEntityById200ResponsePropertiesServices.md)
-- [OBPv510GetRegulatedEntityById200ResponsePropertiesServicesItems](docs/Model/OBPv510GetRegulatedEntityById200ResponsePropertiesServicesItems.md)
-- [OBPv510GetRegulatedEntityById200ResponsePropertiesServicesItemsProperties](docs/Model/OBPv510GetRegulatedEntityById200ResponsePropertiesServicesItemsProperties.md)
-- [OBPv510GetTransactionRequestById200Response](docs/Model/OBPv510GetTransactionRequestById200Response.md)
-- [OBPv510GetTransactionRequestById200ResponseProperties](docs/Model/OBPv510GetTransactionRequestById200ResponseProperties.md)
-- [OBPv510GetTransactionRequestById200ResponsePropertiesChallenge](docs/Model/OBPv510GetTransactionRequestById200ResponsePropertiesChallenge.md)
-- [OBPv510GetTransactionRequestById200ResponsePropertiesChallengeProperties](docs/Model/OBPv510GetTransactionRequestById200ResponsePropertiesChallengeProperties.md)
-- [OBPv510GetTransactionRequests200Response](docs/Model/OBPv510GetTransactionRequests200Response.md)
-- [OBPv510GetTransactionRequests200ResponseProperties](docs/Model/OBPv510GetTransactionRequests200ResponseProperties.md)
-- [OBPv510GetTransactionRequests200ResponsePropertiesTransactionRequestsWithCharges](docs/Model/OBPv510GetTransactionRequests200ResponsePropertiesTransactionRequestsWithCharges.md)
-- [OBPv510GetUserByProviderAndUsername200Response](docs/Model/OBPv510GetUserByProviderAndUsername200Response.md)
-- [OBPv510GetUserByProviderAndUsername200ResponseProperties](docs/Model/OBPv510GetUserByProviderAndUsername200ResponseProperties.md)
-- [OBPv510GetUserByProviderAndUsername200ResponsePropertiesAgreements](docs/Model/OBPv510GetUserByProviderAndUsername200ResponsePropertiesAgreements.md)
-- [OBPv510GetUserByProviderAndUsername200ResponsePropertiesAgreementsItems](docs/Model/OBPv510GetUserByProviderAndUsername200ResponsePropertiesAgreementsItems.md)
-- [OBPv510GetUserByProviderAndUsername200ResponsePropertiesAgreementsItemsProperties](docs/Model/OBPv510GetUserByProviderAndUsername200ResponsePropertiesAgreementsItemsProperties.md)
-- [OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlements](docs/Model/OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlements.md)
-- [OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlementsProperties](docs/Model/OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlementsProperties.md)
-- [OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlementsPropertiesList](docs/Model/OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlementsPropertiesList.md)
-- [OBPv510GetUserByProviderAndUsername200ResponsePropertiesViews](docs/Model/OBPv510GetUserByProviderAndUsername200ResponsePropertiesViews.md)
-- [OBPv510GetUserByProviderAndUsername200ResponsePropertiesViewsProperties](docs/Model/OBPv510GetUserByProviderAndUsername200ResponsePropertiesViewsProperties.md)
-- [OBPv510GetUserLockStatus200Response](docs/Model/OBPv510GetUserLockStatus200Response.md)
-- [OBPv510GetUserLockStatus200ResponseProperties](docs/Model/OBPv510GetUserLockStatus200ResponseProperties.md)
-- [OBPv510LockUserByProviderAndUsername200Response](docs/Model/OBPv510LockUserByProviderAndUsername200Response.md)
-- [OBPv510LockUserByProviderAndUsername200ResponseProperties](docs/Model/OBPv510LockUserByProviderAndUsername200ResponseProperties.md)
-- [OBPv510RegulatedEntities200Response](docs/Model/OBPv510RegulatedEntities200Response.md)
-- [OBPv510RegulatedEntities200ResponseProperties](docs/Model/OBPv510RegulatedEntities200ResponseProperties.md)
-- [OBPv510RegulatedEntities200ResponsePropertiesEntities](docs/Model/OBPv510RegulatedEntities200ResponsePropertiesEntities.md)
-- [OBPv510RevokeUserAccessToViewById200Response](docs/Model/OBPv510RevokeUserAccessToViewById200Response.md)
-- [OBPv510RevokeUserAccessToViewById200ResponseProperties](docs/Model/OBPv510RevokeUserAccessToViewById200ResponseProperties.md)
-- [OBPv510RevokeUserAccessToViewByIdRequest](docs/Model/OBPv510RevokeUserAccessToViewByIdRequest.md)
-- [OBPv510RevokeUserAccessToViewByIdRequestProperties](docs/Model/OBPv510RevokeUserAccessToViewByIdRequestProperties.md)
-- [OBPv510SuggestedSessionTimeout200Response](docs/Model/OBPv510SuggestedSessionTimeout200Response.md)
-- [OBPv510SuggestedSessionTimeout200ResponseProperties](docs/Model/OBPv510SuggestedSessionTimeout200ResponseProperties.md)
-- [OBPv510UpdateAgentStatusRequest](docs/Model/OBPv510UpdateAgentStatusRequest.md)
-- [OBPv510UpdateAgentStatusRequestProperties](docs/Model/OBPv510UpdateAgentStatusRequestProperties.md)
-- [OBPv510UpdateAtmAttributeRequest](docs/Model/OBPv510UpdateAtmAttributeRequest.md)
-- [OBPv510UpdateAtmAttributeRequestProperties](docs/Model/OBPv510UpdateAtmAttributeRequestProperties.md)
-- [OBPv510UpdateAtmRequest](docs/Model/OBPv510UpdateAtmRequest.md)
-- [OBPv510UpdateAtmRequestProperties](docs/Model/OBPv510UpdateAtmRequestProperties.md)
-- [OBPv510UpdateConsentAccountAccessByConsentIdRequest](docs/Model/OBPv510UpdateConsentAccountAccessByConsentIdRequest.md)
-- [OBPv510UpdateConsentAccountAccessByConsentIdRequestProperties](docs/Model/OBPv510UpdateConsentAccountAccessByConsentIdRequestProperties.md)
-- [OBPv510UpdateConsentAccountAccessByConsentIdRequestPropertiesAccess](docs/Model/OBPv510UpdateConsentAccountAccessByConsentIdRequestPropertiesAccess.md)
-- [OBPv510UpdateConsentAccountAccessByConsentIdRequestPropertiesAccessProperties](docs/Model/OBPv510UpdateConsentAccountAccessByConsentIdRequestPropertiesAccessProperties.md)
-- [OBPv510UpdateConsentAccountAccessByConsentIdRequestPropertiesAccessPropertiesAccounts](docs/Model/OBPv510UpdateConsentAccountAccessByConsentIdRequestPropertiesAccessPropertiesAccounts.md)
-- [OBPv510UpdateConsumerCertificateRequest](docs/Model/OBPv510UpdateConsumerCertificateRequest.md)
-- [OBPv510UpdateConsumerCertificateRequestProperties](docs/Model/OBPv510UpdateConsumerCertificateRequestProperties.md)
-- [OBPv510UpdateConsumerLogoURLRequest](docs/Model/OBPv510UpdateConsumerLogoURLRequest.md)
-- [OBPv510UpdateConsumerLogoURLRequestProperties](docs/Model/OBPv510UpdateConsumerLogoURLRequestProperties.md)
-- [OBPv510UpdateConsumerName200Response](docs/Model/OBPv510UpdateConsumerName200Response.md)
-- [OBPv510UpdateConsumerName200ResponseProperties](docs/Model/OBPv510UpdateConsumerName200ResponseProperties.md)
-- [OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfo](docs/Model/OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfo.md)
-- [OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfoProperties](docs/Model/OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfoProperties.md)
-- [OBPv510UpdateConsumerName200ResponsePropertiesCreatedByUser](docs/Model/OBPv510UpdateConsumerName200ResponsePropertiesCreatedByUser.md)
-- [OBPv510UpdateConsumerName200ResponsePropertiesCreatedByUserProperties](docs/Model/OBPv510UpdateConsumerName200ResponsePropertiesCreatedByUserProperties.md)
-- [OBPv510UpdateConsumerNameRequest](docs/Model/OBPv510UpdateConsumerNameRequest.md)
-- [OBPv510UpdateConsumerNameRequestProperties](docs/Model/OBPv510UpdateConsumerNameRequestProperties.md)
-- [OBPv510UpdateConsumerRedirectURL200Response](docs/Model/OBPv510UpdateConsumerRedirectURL200Response.md)
-- [OBPv510UpdateConsumerRedirectURL200ResponseProperties](docs/Model/OBPv510UpdateConsumerRedirectURL200ResponseProperties.md)
-- [OBPv510UpdateConsumerRedirectURLRequest](docs/Model/OBPv510UpdateConsumerRedirectURLRequest.md)
-- [OBPv510UpdateConsumerRedirectURLRequestProperties](docs/Model/OBPv510UpdateConsumerRedirectURLRequestProperties.md)
-- [OBPv510UpdateCustomViewRequest](docs/Model/OBPv510UpdateCustomViewRequest.md)
-- [OBPv510UpdateCustomViewRequestProperties](docs/Model/OBPv510UpdateCustomViewRequestProperties.md)
-- [OBPv510UpdateRegulatedEntityAttributeRequest](docs/Model/OBPv510UpdateRegulatedEntityAttributeRequest.md)
-- [OBPv510UpdateRegulatedEntityAttributeRequestProperties](docs/Model/OBPv510UpdateRegulatedEntityAttributeRequestProperties.md)
-- [OBPv510UpdateTransactionRequestStatusRequest](docs/Model/OBPv510UpdateTransactionRequestStatusRequest.md)
-- [OBPv510UpdateTransactionRequestStatusRequestProperties](docs/Model/OBPv510UpdateTransactionRequestStatusRequestProperties.md)
-- [OBPv510WaitingForGodot200Response](docs/Model/OBPv510WaitingForGodot200Response.md)
-- [OBPv510WaitingForGodot200ResponseProperties](docs/Model/OBPv510WaitingForGodot200ResponseProperties.md)
-- [OBPv600AddUserToGroup200Response](docs/Model/OBPv600AddUserToGroup200Response.md)
-- [OBPv600AddUserToGroup200ResponseProperties](docs/Model/OBPv600AddUserToGroup200ResponseProperties.md)
-- [OBPv600AddUserToGroupRequest](docs/Model/OBPv600AddUserToGroupRequest.md)
-- [OBPv600AddUserToGroupRequestProperties](docs/Model/OBPv600AddUserToGroupRequestProperties.md)
-- [OBPv600BackupBankLevelDynamicEntity200Response](docs/Model/OBPv600BackupBankLevelDynamicEntity200Response.md)
-- [OBPv600BackupBankLevelDynamicEntity200ResponseProperties](docs/Model/OBPv600BackupBankLevelDynamicEntity200ResponseProperties.md)
-- [OBPv600BackupBankLevelDynamicEntity200ResponsePropertiesSchema](docs/Model/OBPv600BackupBankLevelDynamicEntity200ResponsePropertiesSchema.md)
-- [OBPv600BackupBankLevelDynamicEntity200ResponsePropertiesSchemaProperties](docs/Model/OBPv600BackupBankLevelDynamicEntity200ResponsePropertiesSchemaProperties.md)
-- [OBPv600BackupBankLevelDynamicEntity200ResponsePropertiesSchemaPropertiesProperties](docs/Model/OBPv600BackupBankLevelDynamicEntity200ResponsePropertiesSchemaPropertiesProperties.md)
-- [OBPv600BackupBankLevelDynamicEntity200ResponsePropertiesSchemaPropertiesPropertiesProperties](docs/Model/OBPv600BackupBankLevelDynamicEntity200ResponsePropertiesSchemaPropertiesPropertiesProperties.md)
-- [OBPv600BackupSystemDynamicEntity200Response](docs/Model/OBPv600BackupSystemDynamicEntity200Response.md)
-- [OBPv600BackupSystemDynamicEntity200ResponseProperties](docs/Model/OBPv600BackupSystemDynamicEntity200ResponseProperties.md)
-- [OBPv600CleanupOrphanedDynamicEntityRecords200Response](docs/Model/OBPv600CleanupOrphanedDynamicEntityRecords200Response.md)
-- [OBPv600CleanupOrphanedDynamicEntityRecords200ResponseProperties](docs/Model/OBPv600CleanupOrphanedDynamicEntityRecords200ResponseProperties.md)
-- [OBPv600CleanupOrphanedDynamicEntityRecords200ResponsePropertiesDeletedOrphanedEntities](docs/Model/OBPv600CleanupOrphanedDynamicEntityRecords200ResponsePropertiesDeletedOrphanedEntities.md)
-- [OBPv600CleanupOrphanedDynamicEntityRecords200ResponsePropertiesDeletedOrphanedEntitiesItems](docs/Model/OBPv600CleanupOrphanedDynamicEntityRecords200ResponsePropertiesDeletedOrphanedEntitiesItems.md)
-- [OBPv600CleanupOrphanedDynamicEntityRecords200ResponsePropertiesDeletedOrphanedEntitiesItemsProperties](docs/Model/OBPv600CleanupOrphanedDynamicEntityRecords200ResponsePropertiesDeletedOrphanedEntitiesItemsProperties.md)
-- [OBPv600CreateAccountAccessRequestRequest](docs/Model/OBPv600CreateAccountAccessRequestRequest.md)
-- [OBPv600CreateAccountAccessRequestRequestProperties](docs/Model/OBPv600CreateAccountAccessRequestRequestProperties.md)
-- [OBPv600CreateApiProductAttribute200Response](docs/Model/OBPv600CreateApiProductAttribute200Response.md)
-- [OBPv600CreateApiProductAttribute200ResponseProperties](docs/Model/OBPv600CreateApiProductAttribute200ResponseProperties.md)
-- [OBPv600CreateBankLevelDynamicEntity200Response](docs/Model/OBPv600CreateBankLevelDynamicEntity200Response.md)
-- [OBPv600CreateBankLevelDynamicEntity200ResponseProperties](docs/Model/OBPv600CreateBankLevelDynamicEntity200ResponseProperties.md)
-- [OBPv600CreateBankRequest](docs/Model/OBPv600CreateBankRequest.md)
-- [OBPv600CreateBankRequestProperties](docs/Model/OBPv600CreateBankRequestProperties.md)
-- [OBPv600CreateCallLimits200Response](docs/Model/OBPv600CreateCallLimits200Response.md)
-- [OBPv600CreateCallLimits200ResponseProperties](docs/Model/OBPv600CreateCallLimits200ResponseProperties.md)
-- [OBPv600CreateCallLimitsRequest](docs/Model/OBPv600CreateCallLimitsRequest.md)
-- [OBPv600CreateCallLimitsRequestProperties](docs/Model/OBPv600CreateCallLimitsRequestProperties.md)
-- [OBPv600CreateCorporateCustomerRequest](docs/Model/OBPv600CreateCorporateCustomerRequest.md)
-- [OBPv600CreateCorporateCustomerRequestProperties](docs/Model/OBPv600CreateCorporateCustomerRequestProperties.md)
-- [OBPv600CreateCustomViewManagementRequest](docs/Model/OBPv600CreateCustomViewManagementRequest.md)
-- [OBPv600CreateCustomViewManagementRequestProperties](docs/Model/OBPv600CreateCustomViewManagementRequestProperties.md)
-- [OBPv600CreateCustomerRequest](docs/Model/OBPv600CreateCustomerRequest.md)
-- [OBPv600CreateCustomerRequestProperties](docs/Model/OBPv600CreateCustomerRequestProperties.md)
-- [OBPv600CreateFeaturedApiCollectionRequest](docs/Model/OBPv600CreateFeaturedApiCollectionRequest.md)
-- [OBPv600CreateFeaturedApiCollectionRequestProperties](docs/Model/OBPv600CreateFeaturedApiCollectionRequestProperties.md)
-- [OBPv600CreateGroupRequest](docs/Model/OBPv600CreateGroupRequest.md)
-- [OBPv600CreateGroupRequestProperties](docs/Model/OBPv600CreateGroupRequestProperties.md)
-- [OBPv600CreateOrUpdateApiProductRequest](docs/Model/OBPv600CreateOrUpdateApiProductRequest.md)
-- [OBPv600CreateOrUpdateApiProductRequestProperties](docs/Model/OBPv600CreateOrUpdateApiProductRequestProperties.md)
-- [OBPv600CreatePersonalDataFieldRequest](docs/Model/OBPv600CreatePersonalDataFieldRequest.md)
-- [OBPv600CreatePersonalDataFieldRequestProperties](docs/Model/OBPv600CreatePersonalDataFieldRequestProperties.md)
-- [OBPv600CreateRetailCustomerRequest](docs/Model/OBPv600CreateRetailCustomerRequest.md)
-- [OBPv600CreateRetailCustomerRequestProperties](docs/Model/OBPv600CreateRetailCustomerRequestProperties.md)
-- [OBPv600CreateSystemDynamicEntity200Response](docs/Model/OBPv600CreateSystemDynamicEntity200Response.md)
-- [OBPv600CreateSystemDynamicEntity200ResponseProperties](docs/Model/OBPv600CreateSystemDynamicEntity200ResponseProperties.md)
-- [OBPv600CreateSystemDynamicEntityRequest](docs/Model/OBPv600CreateSystemDynamicEntityRequest.md)
-- [OBPv600CreateSystemDynamicEntityRequestProperties](docs/Model/OBPv600CreateSystemDynamicEntityRequestProperties.md)
-- [OBPv600CreateSystemDynamicEntityRequestPropertiesSchema](docs/Model/OBPv600CreateSystemDynamicEntityRequestPropertiesSchema.md)
-- [OBPv600CreateSystemDynamicEntityRequestPropertiesSchemaProperties](docs/Model/OBPv600CreateSystemDynamicEntityRequestPropertiesSchemaProperties.md)
-- [OBPv600CreateSystemDynamicEntityRequestPropertiesSchemaPropertiesProperties](docs/Model/OBPv600CreateSystemDynamicEntityRequestPropertiesSchemaPropertiesProperties.md)
-- [OBPv600CreateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesProperties](docs/Model/OBPv600CreateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesProperties.md)
-- [OBPv600CreateTransactionRequestCardanoRequest](docs/Model/OBPv600CreateTransactionRequestCardanoRequest.md)
-- [OBPv600CreateTransactionRequestCardanoRequestProperties](docs/Model/OBPv600CreateTransactionRequestCardanoRequestProperties.md)
-- [OBPv600CreateTransactionRequestCardanoRequestPropertiesMetadata](docs/Model/OBPv600CreateTransactionRequestCardanoRequestPropertiesMetadata.md)
-- [OBPv600CreateTransactionRequestCardanoRequestPropertiesMetadataProperties](docs/Model/OBPv600CreateTransactionRequestCardanoRequestPropertiesMetadataProperties.md)
-- [OBPv600CreateTransactionRequestCardanoRequestPropertiesMetadataPropertiesValue1](docs/Model/OBPv600CreateTransactionRequestCardanoRequestPropertiesMetadataPropertiesValue1.md)
-- [OBPv600CreateTransactionRequestCardanoRequestPropertiesMetadataPropertiesValue1Properties](docs/Model/OBPv600CreateTransactionRequestCardanoRequestPropertiesMetadataPropertiesValue1Properties.md)
-- [OBPv600CreateTransactionRequestCardanoRequestPropertiesTo](docs/Model/OBPv600CreateTransactionRequestCardanoRequestPropertiesTo.md)
-- [OBPv600CreateTransactionRequestCardanoRequestPropertiesToProperties](docs/Model/OBPv600CreateTransactionRequestCardanoRequestPropertiesToProperties.md)
-- [OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAmount](docs/Model/OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAmount.md)
-- [OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAmountProperties](docs/Model/OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAmountProperties.md)
-- [OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAssets](docs/Model/OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAssets.md)
-- [OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAssetsItems](docs/Model/OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAssetsItems.md)
-- [OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAssetsItemsProperties](docs/Model/OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAssetsItemsProperties.md)
-- [OBPv600CreateTransactionRequestEthSendRawTransactionRequest](docs/Model/OBPv600CreateTransactionRequestEthSendRawTransactionRequest.md)
-- [OBPv600CreateTransactionRequestEthSendRawTransactionRequestProperties](docs/Model/OBPv600CreateTransactionRequestEthSendRawTransactionRequestProperties.md)
-- [OBPv600CreateTransactionRequestEthereumeSendTransactionRequest](docs/Model/OBPv600CreateTransactionRequestEthereumeSendTransactionRequest.md)
-- [OBPv600CreateTransactionRequestEthereumeSendTransactionRequestProperties](docs/Model/OBPv600CreateTransactionRequestEthereumeSendTransactionRequestProperties.md)
-- [OBPv600CreateUserRequest](docs/Model/OBPv600CreateUserRequest.md)
-- [OBPv600CreateUserRequestProperties](docs/Model/OBPv600CreateUserRequestProperties.md)
-- [OBPv600DeleteSignalChannel200Response](docs/Model/OBPv600DeleteSignalChannel200Response.md)
-- [OBPv600DeleteSignalChannel200ResponseProperties](docs/Model/OBPv600DeleteSignalChannel200ResponseProperties.md)
-- [OBPv600ExecuteAbacPolicy200Response](docs/Model/OBPv600ExecuteAbacPolicy200Response.md)
-- [OBPv600ExecuteAbacPolicy200ResponseProperties](docs/Model/OBPv600ExecuteAbacPolicy200ResponseProperties.md)
-- [OBPv600ExecuteAbacPolicyRequest](docs/Model/OBPv600ExecuteAbacPolicyRequest.md)
-- [OBPv600ExecuteAbacPolicyRequestProperties](docs/Model/OBPv600ExecuteAbacPolicyRequestProperties.md)
-- [OBPv600GetAbacPolicies200Response](docs/Model/OBPv600GetAbacPolicies200Response.md)
-- [OBPv600GetAbacPolicies200ResponseProperties](docs/Model/OBPv600GetAbacPolicies200ResponseProperties.md)
-- [OBPv600GetAbacPolicies200ResponsePropertiesPolicies](docs/Model/OBPv600GetAbacPolicies200ResponsePropertiesPolicies.md)
-- [OBPv600GetAbacPolicies200ResponsePropertiesPoliciesItems](docs/Model/OBPv600GetAbacPolicies200ResponsePropertiesPoliciesItems.md)
-- [OBPv600GetAbacPolicies200ResponsePropertiesPoliciesItemsProperties](docs/Model/OBPv600GetAbacPolicies200ResponsePropertiesPoliciesItemsProperties.md)
-- [OBPv600GetAbacRule200Response](docs/Model/OBPv600GetAbacRule200Response.md)
-- [OBPv600GetAbacRule200ResponseProperties](docs/Model/OBPv600GetAbacRule200ResponseProperties.md)
-- [OBPv600GetAbacRuleSchema200Response](docs/Model/OBPv600GetAbacRuleSchema200Response.md)
-- [OBPv600GetAbacRuleSchema200ResponseProperties](docs/Model/OBPv600GetAbacRuleSchema200ResponseProperties.md)
-- [OBPv600GetAbacRuleSchema200ResponsePropertiesExamples](docs/Model/OBPv600GetAbacRuleSchema200ResponsePropertiesExamples.md)
-- [OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypes](docs/Model/OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypes.md)
-- [OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItems](docs/Model/OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItems.md)
-- [OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItemsProperties](docs/Model/OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItemsProperties.md)
-- [OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItemsPropertiesProperties](docs/Model/OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItemsPropertiesProperties.md)
-- [OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItemsPropertiesPropertiesItems](docs/Model/OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItemsPropertiesPropertiesItems.md)
-- [OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItemsPropertiesPropertiesItemsProperties](docs/Model/OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItemsPropertiesPropertiesItemsProperties.md)
-- [OBPv600GetAbacRuleSchema200ResponsePropertiesParameters](docs/Model/OBPv600GetAbacRuleSchema200ResponsePropertiesParameters.md)
-- [OBPv600GetAbacRuleSchema200ResponsePropertiesParametersItems](docs/Model/OBPv600GetAbacRuleSchema200ResponsePropertiesParametersItems.md)
-- [OBPv600GetAbacRuleSchema200ResponsePropertiesParametersItemsProperties](docs/Model/OBPv600GetAbacRuleSchema200ResponsePropertiesParametersItemsProperties.md)
-- [OBPv600GetAbacRulesByPolicy200Response](docs/Model/OBPv600GetAbacRulesByPolicy200Response.md)
-- [OBPv600GetAbacRulesByPolicy200ResponseProperties](docs/Model/OBPv600GetAbacRulesByPolicy200ResponseProperties.md)
-- [OBPv600GetAbacRulesByPolicy200ResponsePropertiesAbacRules](docs/Model/OBPv600GetAbacRulesByPolicy200ResponsePropertiesAbacRules.md)
-- [OBPv600GetAccountAccessRequestsForAccount200Response](docs/Model/OBPv600GetAccountAccessRequestsForAccount200Response.md)
-- [OBPv600GetAccountAccessRequestsForAccount200ResponseProperties](docs/Model/OBPv600GetAccountAccessRequestsForAccount200ResponseProperties.md)
-- [OBPv600GetAccountAccessRequestsForAccount200ResponsePropertiesAccountAccessRequests](docs/Model/OBPv600GetAccountAccessRequestsForAccount200ResponsePropertiesAccountAccessRequests.md)
-- [OBPv600GetAccountDirectory200Response](docs/Model/OBPv600GetAccountDirectory200Response.md)
-- [OBPv600GetAccountDirectory200ResponseProperties](docs/Model/OBPv600GetAccountDirectory200ResponseProperties.md)
-- [OBPv600GetAccountDirectory200ResponsePropertiesAccounts](docs/Model/OBPv600GetAccountDirectory200ResponsePropertiesAccounts.md)
-- [OBPv600GetAccountDirectory200ResponsePropertiesAccountsItems](docs/Model/OBPv600GetAccountDirectory200ResponsePropertiesAccountsItems.md)
-- [OBPv600GetAccountDirectory200ResponsePropertiesAccountsItemsProperties](docs/Model/OBPv600GetAccountDirectory200ResponsePropertiesAccountsItemsProperties.md)
-- [OBPv600GetAccountsAtBank200Response](docs/Model/OBPv600GetAccountsAtBank200Response.md)
-- [OBPv600GetAccountsAtBank200ResponseProperties](docs/Model/OBPv600GetAccountsAtBank200ResponseProperties.md)
-- [OBPv600GetAccountsAtBank200ResponsePropertiesAccounts](docs/Model/OBPv600GetAccountsAtBank200ResponsePropertiesAccounts.md)
-- [OBPv600GetAccountsAtBank200ResponsePropertiesAccountsItems](docs/Model/OBPv600GetAccountsAtBank200ResponsePropertiesAccountsItems.md)
-- [OBPv600GetAccountsAtBank200ResponsePropertiesAccountsItemsProperties](docs/Model/OBPv600GetAccountsAtBank200ResponsePropertiesAccountsItemsProperties.md)
-- [OBPv600GetActiveRateLimitsAtDate200Response](docs/Model/OBPv600GetActiveRateLimitsAtDate200Response.md)
-- [OBPv600GetActiveRateLimitsAtDate200ResponseProperties](docs/Model/OBPv600GetActiveRateLimitsAtDate200ResponseProperties.md)
-- [OBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds](docs/Model/OBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds.md)
-- [OBPv600GetAggregateMetrics200Response](docs/Model/OBPv600GetAggregateMetrics200Response.md)
-- [OBPv600GetAggregateMetrics200ResponseProperties](docs/Model/OBPv600GetAggregateMetrics200ResponseProperties.md)
-- [OBPv600GetApiProducts200Response](docs/Model/OBPv600GetApiProducts200Response.md)
-- [OBPv600GetApiProducts200ResponseProperties](docs/Model/OBPv600GetApiProducts200ResponseProperties.md)
-- [OBPv600GetApiProducts200ResponsePropertiesApiProducts](docs/Model/OBPv600GetApiProducts200ResponsePropertiesApiProducts.md)
-- [OBPv600GetApiProducts200ResponsePropertiesApiProductsItems](docs/Model/OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
-- [OBPv600GetApiProducts200ResponsePropertiesApiProductsItemsProperties](docs/Model/OBPv600GetApiProducts200ResponsePropertiesApiProductsItemsProperties.md)
-- [OBPv600GetApiProducts200ResponsePropertiesApiProductsItemsPropertiesAttributes](docs/Model/OBPv600GetApiProducts200ResponsePropertiesApiProductsItemsPropertiesAttributes.md)
-- [OBPv600GetAvailablePersonalDynamicEntities200Response](docs/Model/OBPv600GetAvailablePersonalDynamicEntities200Response.md)
-- [OBPv600GetAvailablePersonalDynamicEntities200ResponseProperties](docs/Model/OBPv600GetAvailablePersonalDynamicEntities200ResponseProperties.md)
-- [OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntities](docs/Model/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntities.md)
-- [OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItems](docs/Model/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItems.md)
-- [OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsProperties](docs/Model/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsProperties.md)
-- [OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinks](docs/Model/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinks.md)
-- [OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinksProperties](docs/Model/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinksProperties.md)
-- [OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinksPropertiesRelated](docs/Model/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinksPropertiesRelated.md)
-- [OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinksPropertiesRelatedItems](docs/Model/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinksPropertiesRelatedItems.md)
-- [OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinksPropertiesRelatedItemsProperties](docs/Model/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinksPropertiesRelatedItemsProperties.md)
-- [OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchema](docs/Model/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchema.md)
-- [OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaProperties](docs/Model/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaProperties.md)
-- [OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaPropertiesProperties](docs/Model/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaPropertiesProperties.md)
-- [OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaPropertiesPropertiesProperties](docs/Model/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaPropertiesPropertiesProperties.md)
-- [OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaPropertiesPropertiesPropertiesTheme](docs/Model/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaPropertiesPropertiesPropertiesTheme.md)
-- [OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties](docs/Model/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties.md)
-- [OBPv600GetBank200Response](docs/Model/OBPv600GetBank200Response.md)
-- [OBPv600GetBank200ResponseProperties](docs/Model/OBPv600GetBank200ResponseProperties.md)
-- [OBPv600GetBankLevelDynamicEntities200Response](docs/Model/OBPv600GetBankLevelDynamicEntities200Response.md)
-- [OBPv600GetBankLevelDynamicEntities200ResponseProperties](docs/Model/OBPv600GetBankLevelDynamicEntities200ResponseProperties.md)
-- [OBPv600GetBankLevelDynamicEntities200ResponsePropertiesDynamicEntities](docs/Model/OBPv600GetBankLevelDynamicEntities200ResponsePropertiesDynamicEntities.md)
-- [OBPv600GetBankLevelDynamicEntities200ResponsePropertiesDynamicEntitiesItems](docs/Model/OBPv600GetBankLevelDynamicEntities200ResponsePropertiesDynamicEntitiesItems.md)
-- [OBPv600GetBankLevelDynamicEntities200ResponsePropertiesDynamicEntitiesItemsProperties](docs/Model/OBPv600GetBankLevelDynamicEntities200ResponsePropertiesDynamicEntitiesItemsProperties.md)
-- [OBPv600GetBanks200Response](docs/Model/OBPv600GetBanks200Response.md)
-- [OBPv600GetBanks200ResponseProperties](docs/Model/OBPv600GetBanks200ResponseProperties.md)
-- [OBPv600GetBanks200ResponsePropertiesBanks](docs/Model/OBPv600GetBanks200ResponsePropertiesBanks.md)
-- [OBPv600GetCacheConfig200Response](docs/Model/OBPv600GetCacheConfig200Response.md)
-- [OBPv600GetCacheConfig200ResponseProperties](docs/Model/OBPv600GetCacheConfig200ResponseProperties.md)
-- [OBPv600GetCacheConfig200ResponsePropertiesInMemoryStatus](docs/Model/OBPv600GetCacheConfig200ResponsePropertiesInMemoryStatus.md)
-- [OBPv600GetCacheConfig200ResponsePropertiesInMemoryStatusProperties](docs/Model/OBPv600GetCacheConfig200ResponsePropertiesInMemoryStatusProperties.md)
-- [OBPv600GetCacheConfig200ResponsePropertiesRedisStatus](docs/Model/OBPv600GetCacheConfig200ResponsePropertiesRedisStatus.md)
-- [OBPv600GetCacheConfig200ResponsePropertiesRedisStatusProperties](docs/Model/OBPv600GetCacheConfig200ResponsePropertiesRedisStatusProperties.md)
-- [OBPv600GetCacheInfo200Response](docs/Model/OBPv600GetCacheInfo200Response.md)
-- [OBPv600GetCacheInfo200ResponseProperties](docs/Model/OBPv600GetCacheInfo200ResponseProperties.md)
-- [OBPv600GetCacheInfo200ResponsePropertiesNamespaces](docs/Model/OBPv600GetCacheInfo200ResponsePropertiesNamespaces.md)
-- [OBPv600GetCacheInfo200ResponsePropertiesNamespacesItems](docs/Model/OBPv600GetCacheInfo200ResponsePropertiesNamespacesItems.md)
-- [OBPv600GetCacheInfo200ResponsePropertiesNamespacesItemsProperties](docs/Model/OBPv600GetCacheInfo200ResponsePropertiesNamespacesItemsProperties.md)
-- [OBPv600GetCacheNamespaces200Response](docs/Model/OBPv600GetCacheNamespaces200Response.md)
-- [OBPv600GetCacheNamespaces200ResponseProperties](docs/Model/OBPv600GetCacheNamespaces200ResponseProperties.md)
-- [OBPv600GetCacheNamespaces200ResponsePropertiesNamespaces](docs/Model/OBPv600GetCacheNamespaces200ResponsePropertiesNamespaces.md)
-- [OBPv600GetCacheNamespaces200ResponsePropertiesNamespacesItems](docs/Model/OBPv600GetCacheNamespaces200ResponsePropertiesNamespacesItems.md)
-- [OBPv600GetCacheNamespaces200ResponsePropertiesNamespacesItemsProperties](docs/Model/OBPv600GetCacheNamespaces200ResponsePropertiesNamespacesItemsProperties.md)
-- [OBPv600GetConfigProps200Response](docs/Model/OBPv600GetConfigProps200Response.md)
-- [OBPv600GetConfigProps200ResponseProperties](docs/Model/OBPv600GetConfigProps200ResponseProperties.md)
-- [OBPv600GetConnectorCallCounts200Response](docs/Model/OBPv600GetConnectorCallCounts200Response.md)
-- [OBPv600GetConnectorCallCounts200ResponseProperties](docs/Model/OBPv600GetConnectorCallCounts200ResponseProperties.md)
-- [OBPv600GetConnectorCallCounts200ResponsePropertiesConnectorCounts](docs/Model/OBPv600GetConnectorCallCounts200ResponsePropertiesConnectorCounts.md)
-- [OBPv600GetConnectorCallCounts200ResponsePropertiesConnectorCountsItems](docs/Model/OBPv600GetConnectorCallCounts200ResponsePropertiesConnectorCountsItems.md)
-- [OBPv600GetConnectorCallCounts200ResponsePropertiesConnectorCountsItemsProperties](docs/Model/OBPv600GetConnectorCallCounts200ResponsePropertiesConnectorCountsItemsProperties.md)
-- [OBPv600GetConnectorMethodNames200Response](docs/Model/OBPv600GetConnectorMethodNames200Response.md)
-- [OBPv600GetConnectorMethodNames200ResponseProperties](docs/Model/OBPv600GetConnectorMethodNames200ResponseProperties.md)
-- [OBPv600GetConnectorTraces200Response](docs/Model/OBPv600GetConnectorTraces200Response.md)
-- [OBPv600GetConnectorTraces200ResponseProperties](docs/Model/OBPv600GetConnectorTraces200ResponseProperties.md)
-- [OBPv600GetConnectorTraces200ResponsePropertiesConnectorTraces](docs/Model/OBPv600GetConnectorTraces200ResponsePropertiesConnectorTraces.md)
-- [OBPv600GetConnectorTraces200ResponsePropertiesConnectorTracesItems](docs/Model/OBPv600GetConnectorTraces200ResponsePropertiesConnectorTracesItems.md)
-- [OBPv600GetConnectorTraces200ResponsePropertiesConnectorTracesItemsProperties](docs/Model/OBPv600GetConnectorTraces200ResponsePropertiesConnectorTracesItemsProperties.md)
-- [OBPv600GetConnectors200Response](docs/Model/OBPv600GetConnectors200Response.md)
-- [OBPv600GetConnectors200ResponseProperties](docs/Model/OBPv600GetConnectors200ResponseProperties.md)
-- [OBPv600GetConnectors200ResponsePropertiesConnectors](docs/Model/OBPv600GetConnectors200ResponsePropertiesConnectors.md)
-- [OBPv600GetConnectors200ResponsePropertiesConnectorsItems](docs/Model/OBPv600GetConnectors200ResponsePropertiesConnectorsItems.md)
-- [OBPv600GetConnectors200ResponsePropertiesConnectorsItemsProperties](docs/Model/OBPv600GetConnectors200ResponsePropertiesConnectorsItemsProperties.md)
-- [OBPv600GetConsumer200Response](docs/Model/OBPv600GetConsumer200Response.md)
-- [OBPv600GetConsumer200ResponseProperties](docs/Model/OBPv600GetConsumer200ResponseProperties.md)
-- [OBPv600GetCoreAccountByIdV600200Response](docs/Model/OBPv600GetCoreAccountByIdV600200Response.md)
-- [OBPv600GetCoreAccountByIdV600200ResponseProperties](docs/Model/OBPv600GetCoreAccountByIdV600200ResponseProperties.md)
-- [OBPv600GetCurrentConsumer200Response](docs/Model/OBPv600GetCurrentConsumer200Response.md)
-- [OBPv600GetCurrentConsumer200ResponseProperties](docs/Model/OBPv600GetCurrentConsumer200ResponseProperties.md)
-- [OBPv600GetCurrentConsumer200ResponsePropertiesCallCounters](docs/Model/OBPv600GetCurrentConsumer200ResponsePropertiesCallCounters.md)
-- [OBPv600GetCurrentConsumer200ResponsePropertiesCallCountersProperties](docs/Model/OBPv600GetCurrentConsumer200ResponsePropertiesCallCountersProperties.md)
-- [OBPv600GetCurrentConsumer200ResponsePropertiesCallCountersPropertiesPerWeek](docs/Model/OBPv600GetCurrentConsumer200ResponsePropertiesCallCountersPropertiesPerWeek.md)
-- [OBPv600GetCurrentConsumer200ResponsePropertiesCallCountersPropertiesPerWeekProperties](docs/Model/OBPv600GetCurrentConsumer200ResponsePropertiesCallCountersPropertiesPerWeekProperties.md)
-- [OBPv600GetCustomViews200Response](docs/Model/OBPv600GetCustomViews200Response.md)
-- [OBPv600GetCustomViews200ResponseProperties](docs/Model/OBPv600GetCustomViews200ResponseProperties.md)
-- [OBPv600GetCustomerByCustomerNumber200Response](docs/Model/OBPv600GetCustomerByCustomerNumber200Response.md)
-- [OBPv600GetCustomerByCustomerNumber200ResponseProperties](docs/Model/OBPv600GetCustomerByCustomerNumber200ResponseProperties.md)
-- [OBPv600GetCustomerChildren200Response](docs/Model/OBPv600GetCustomerChildren200Response.md)
-- [OBPv600GetCustomerChildren200ResponseProperties](docs/Model/OBPv600GetCustomerChildren200ResponseProperties.md)
-- [OBPv600GetCustomerChildren200ResponsePropertiesCustomers](docs/Model/OBPv600GetCustomerChildren200ResponsePropertiesCustomers.md)
-- [OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems](docs/Model/OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems.md)
-- [OBPv600GetCustomerChildren200ResponsePropertiesCustomersItemsProperties](docs/Model/OBPv600GetCustomerChildren200ResponsePropertiesCustomersItemsProperties.md)
-- [OBPv600GetCustomersByLegalNameRequest](docs/Model/OBPv600GetCustomersByLegalNameRequest.md)
-- [OBPv600GetCustomersByLegalNameRequestProperties](docs/Model/OBPv600GetCustomersByLegalNameRequestProperties.md)
-- [OBPv600GetDatabasePoolInfo200Response](docs/Model/OBPv600GetDatabasePoolInfo200Response.md)
-- [OBPv600GetDatabasePoolInfo200ResponseProperties](docs/Model/OBPv600GetDatabasePoolInfo200ResponseProperties.md)
-- [OBPv600GetDynamicEntityDiagnostics200Response](docs/Model/OBPv600GetDynamicEntityDiagnostics200Response.md)
-- [OBPv600GetDynamicEntityDiagnostics200ResponseProperties](docs/Model/OBPv600GetDynamicEntityDiagnostics200ResponseProperties.md)
-- [OBPv600GetDynamicEntityDiagnostics200ResponsePropertiesIssues](docs/Model/OBPv600GetDynamicEntityDiagnostics200ResponsePropertiesIssues.md)
-- [OBPv600GetDynamicEntityDiagnostics200ResponsePropertiesIssuesItems](docs/Model/OBPv600GetDynamicEntityDiagnostics200ResponsePropertiesIssuesItems.md)
-- [OBPv600GetDynamicEntityDiagnostics200ResponsePropertiesIssuesItemsProperties](docs/Model/OBPv600GetDynamicEntityDiagnostics200ResponsePropertiesIssuesItemsProperties.md)
-- [OBPv600GetFeaturedApiCollectionsAdmin200Response](docs/Model/OBPv600GetFeaturedApiCollectionsAdmin200Response.md)
-- [OBPv600GetFeaturedApiCollectionsAdmin200ResponseProperties](docs/Model/OBPv600GetFeaturedApiCollectionsAdmin200ResponseProperties.md)
-- [OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollections](docs/Model/OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollections.md)
-- [OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems](docs/Model/OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems.md)
-- [OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItemsProperties](docs/Model/OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItemsProperties.md)
-- [OBPv600GetGroupEntitlements200Response](docs/Model/OBPv600GetGroupEntitlements200Response.md)
-- [OBPv600GetGroupEntitlements200ResponseProperties](docs/Model/OBPv600GetGroupEntitlements200ResponseProperties.md)
-- [OBPv600GetGroupEntitlements200ResponsePropertiesEntitlements](docs/Model/OBPv600GetGroupEntitlements200ResponsePropertiesEntitlements.md)
-- [OBPv600GetGroupEntitlements200ResponsePropertiesEntitlementsItems](docs/Model/OBPv600GetGroupEntitlements200ResponsePropertiesEntitlementsItems.md)
-- [OBPv600GetGroupEntitlements200ResponsePropertiesEntitlementsItemsProperties](docs/Model/OBPv600GetGroupEntitlements200ResponsePropertiesEntitlementsItemsProperties.md)
-- [OBPv600GetGroups200Response](docs/Model/OBPv600GetGroups200Response.md)
-- [OBPv600GetGroups200ResponseProperties](docs/Model/OBPv600GetGroups200ResponseProperties.md)
-- [OBPv600GetGroups200ResponsePropertiesGroups](docs/Model/OBPv600GetGroups200ResponsePropertiesGroups.md)
-- [OBPv600GetGroups200ResponsePropertiesGroupsItems](docs/Model/OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
-- [OBPv600GetGroups200ResponsePropertiesGroupsItemsProperties](docs/Model/OBPv600GetGroups200ResponsePropertiesGroupsItemsProperties.md)
-- [OBPv600GetHoldingAccountByReleaser200Response](docs/Model/OBPv600GetHoldingAccountByReleaser200Response.md)
-- [OBPv600GetHoldingAccountByReleaser200ResponseProperties](docs/Model/OBPv600GetHoldingAccountByReleaser200ResponseProperties.md)
-- [OBPv600GetHoldingAccountByReleaser200ResponsePropertiesAccounts](docs/Model/OBPv600GetHoldingAccountByReleaser200ResponsePropertiesAccounts.md)
-- [OBPv600GetMetrics200Response](docs/Model/OBPv600GetMetrics200Response.md)
-- [OBPv600GetMetrics200ResponseProperties](docs/Model/OBPv600GetMetrics200ResponseProperties.md)
-- [OBPv600GetMetrics200ResponsePropertiesMetrics](docs/Model/OBPv600GetMetrics200ResponsePropertiesMetrics.md)
-- [OBPv600GetMetrics200ResponsePropertiesMetricsItems](docs/Model/OBPv600GetMetrics200ResponsePropertiesMetricsItems.md)
-- [OBPv600GetMetrics200ResponsePropertiesMetricsItemsProperties](docs/Model/OBPv600GetMetrics200ResponsePropertiesMetricsItemsProperties.md)
-- [OBPv600GetMetrics200ResponsePropertiesMetricsItemsPropertiesResponseBody](docs/Model/OBPv600GetMetrics200ResponsePropertiesMetricsItemsPropertiesResponseBody.md)
-- [OBPv600GetMetrics200ResponsePropertiesMetricsItemsPropertiesResponseBodyProperties](docs/Model/OBPv600GetMetrics200ResponsePropertiesMetricsItemsPropertiesResponseBodyProperties.md)
-- [OBPv600GetMigrations200Response](docs/Model/OBPv600GetMigrations200Response.md)
-- [OBPv600GetMigrations200ResponseProperties](docs/Model/OBPv600GetMigrations200ResponseProperties.md)
-- [OBPv600GetMigrations200ResponsePropertiesMigrationScriptLogs](docs/Model/OBPv600GetMigrations200ResponsePropertiesMigrationScriptLogs.md)
-- [OBPv600GetMigrations200ResponsePropertiesMigrationScriptLogsItems](docs/Model/OBPv600GetMigrations200ResponsePropertiesMigrationScriptLogsItems.md)
-- [OBPv600GetMigrations200ResponsePropertiesMigrationScriptLogsItemsProperties](docs/Model/OBPv600GetMigrations200ResponsePropertiesMigrationScriptLogsItemsProperties.md)
-- [OBPv600GetOidcClient200Response](docs/Model/OBPv600GetOidcClient200Response.md)
-- [OBPv600GetOidcClient200ResponseProperties](docs/Model/OBPv600GetOidcClient200ResponseProperties.md)
-- [OBPv600GetPersonalDataFields200Response](docs/Model/OBPv600GetPersonalDataFields200Response.md)
-- [OBPv600GetPersonalDataFields200ResponseProperties](docs/Model/OBPv600GetPersonalDataFields200ResponseProperties.md)
-- [OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributes](docs/Model/OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributes.md)
-- [OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems](docs/Model/OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
-- [OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItemsProperties](docs/Model/OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItemsProperties.md)
-- [OBPv600GetPopularApis200Response](docs/Model/OBPv600GetPopularApis200Response.md)
-- [OBPv600GetPopularApis200ResponseProperties](docs/Model/OBPv600GetPopularApis200ResponseProperties.md)
-- [OBPv600GetProviders200Response](docs/Model/OBPv600GetProviders200Response.md)
-- [OBPv600GetProviders200ResponseProperties](docs/Model/OBPv600GetProviders200ResponseProperties.md)
-- [OBPv600GetReferenceTypes200Response](docs/Model/OBPv600GetReferenceTypes200Response.md)
-- [OBPv600GetReferenceTypes200ResponseProperties](docs/Model/OBPv600GetReferenceTypes200ResponseProperties.md)
-- [OBPv600GetReferenceTypes200ResponsePropertiesReferenceTypes](docs/Model/OBPv600GetReferenceTypes200ResponsePropertiesReferenceTypes.md)
-- [OBPv600GetReferenceTypes200ResponsePropertiesReferenceTypesItems](docs/Model/OBPv600GetReferenceTypes200ResponsePropertiesReferenceTypesItems.md)
-- [OBPv600GetReferenceTypes200ResponsePropertiesReferenceTypesItemsProperties](docs/Model/OBPv600GetReferenceTypes200ResponsePropertiesReferenceTypesItemsProperties.md)
-- [OBPv600GetRolesWithEntitlementCountsAtAllBanks200Response](docs/Model/OBPv600GetRolesWithEntitlementCountsAtAllBanks200Response.md)
-- [OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponseProperties](docs/Model/OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponseProperties.md)
-- [OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponsePropertiesRoles](docs/Model/OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponsePropertiesRoles.md)
-- [OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponsePropertiesRolesItems](docs/Model/OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponsePropertiesRolesItems.md)
-- [OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponsePropertiesRolesItemsProperties](docs/Model/OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponsePropertiesRolesItemsProperties.md)
-- [OBPv600GetScannedApiVersions200Response](docs/Model/OBPv600GetScannedApiVersions200Response.md)
-- [OBPv600GetScannedApiVersions200ResponseProperties](docs/Model/OBPv600GetScannedApiVersions200ResponseProperties.md)
-- [OBPv600GetScannedApiVersions200ResponsePropertiesScannedApiVersions](docs/Model/OBPv600GetScannedApiVersions200ResponsePropertiesScannedApiVersions.md)
-- [OBPv600GetScannedApiVersions200ResponsePropertiesScannedApiVersionsItems](docs/Model/OBPv600GetScannedApiVersions200ResponsePropertiesScannedApiVersionsItems.md)
-- [OBPv600GetScannedApiVersions200ResponsePropertiesScannedApiVersionsItemsProperties](docs/Model/OBPv600GetScannedApiVersions200ResponsePropertiesScannedApiVersionsItemsProperties.md)
-- [OBPv600GetSignalChannelInfo200Response](docs/Model/OBPv600GetSignalChannelInfo200Response.md)
-- [OBPv600GetSignalChannelInfo200ResponseProperties](docs/Model/OBPv600GetSignalChannelInfo200ResponseProperties.md)
-- [OBPv600GetSignalChannels200Response](docs/Model/OBPv600GetSignalChannels200Response.md)
-- [OBPv600GetSignalChannels200ResponseProperties](docs/Model/OBPv600GetSignalChannels200ResponseProperties.md)
-- [OBPv600GetSignalChannels200ResponsePropertiesChannels](docs/Model/OBPv600GetSignalChannels200ResponsePropertiesChannels.md)
-- [OBPv600GetSignalMessages200Response](docs/Model/OBPv600GetSignalMessages200Response.md)
-- [OBPv600GetSignalMessages200ResponseProperties](docs/Model/OBPv600GetSignalMessages200ResponseProperties.md)
-- [OBPv600GetSignalMessages200ResponsePropertiesMessages](docs/Model/OBPv600GetSignalMessages200ResponsePropertiesMessages.md)
-- [OBPv600GetSignalMessages200ResponsePropertiesMessagesItems](docs/Model/OBPv600GetSignalMessages200ResponsePropertiesMessagesItems.md)
-- [OBPv600GetSignalMessages200ResponsePropertiesMessagesItemsProperties](docs/Model/OBPv600GetSignalMessages200ResponsePropertiesMessagesItemsProperties.md)
-- [OBPv600GetSignalMessages200ResponsePropertiesMessagesItemsPropertiesPayload](docs/Model/OBPv600GetSignalMessages200ResponsePropertiesMessagesItemsPropertiesPayload.md)
-- [OBPv600GetSignalMessages200ResponsePropertiesMessagesItemsPropertiesPayloadProperties](docs/Model/OBPv600GetSignalMessages200ResponsePropertiesMessagesItemsPropertiesPayloadProperties.md)
-- [OBPv600GetSignalStats200Response](docs/Model/OBPv600GetSignalStats200Response.md)
-- [OBPv600GetSignalStats200ResponseProperties](docs/Model/OBPv600GetSignalStats200ResponseProperties.md)
-- [OBPv600GetStoredProcedureConnectorHealth200Response](docs/Model/OBPv600GetStoredProcedureConnectorHealth200Response.md)
-- [OBPv600GetStoredProcedureConnectorHealth200ResponseProperties](docs/Model/OBPv600GetStoredProcedureConnectorHealth200ResponseProperties.md)
-- [OBPv600GetSystemDynamicEntities200Response](docs/Model/OBPv600GetSystemDynamicEntities200Response.md)
-- [OBPv600GetSystemDynamicEntities200ResponseProperties](docs/Model/OBPv600GetSystemDynamicEntities200ResponseProperties.md)
-- [OBPv600GetSystemDynamicEntities200ResponsePropertiesDynamicEntities](docs/Model/OBPv600GetSystemDynamicEntities200ResponsePropertiesDynamicEntities.md)
-- [OBPv600GetSystemDynamicEntities200ResponsePropertiesDynamicEntitiesItems](docs/Model/OBPv600GetSystemDynamicEntities200ResponsePropertiesDynamicEntitiesItems.md)
-- [OBPv600GetSystemDynamicEntities200ResponsePropertiesDynamicEntitiesItemsProperties](docs/Model/OBPv600GetSystemDynamicEntities200ResponsePropertiesDynamicEntitiesItemsProperties.md)
-- [OBPv600GetSystemViewById200Response](docs/Model/OBPv600GetSystemViewById200Response.md)
-- [OBPv600GetSystemViewById200ResponseProperties](docs/Model/OBPv600GetSystemViewById200ResponseProperties.md)
-- [OBPv600GetSystemViews200Response](docs/Model/OBPv600GetSystemViews200Response.md)
-- [OBPv600GetSystemViews200ResponseProperties](docs/Model/OBPv600GetSystemViews200ResponseProperties.md)
-- [OBPv600GetSystemViews200ResponsePropertiesViews](docs/Model/OBPv600GetSystemViews200ResponsePropertiesViews.md)
-- [OBPv600GetTopAPIs200Response](docs/Model/OBPv600GetTopAPIs200Response.md)
-- [OBPv600GetTopAPIs200ResponseProperties](docs/Model/OBPv600GetTopAPIs200ResponseProperties.md)
-- [OBPv600GetTopAPIs200ResponsePropertiesTopApis](docs/Model/OBPv600GetTopAPIs200ResponsePropertiesTopApis.md)
-- [OBPv600GetTopAPIs200ResponsePropertiesTopApisItems](docs/Model/OBPv600GetTopAPIs200ResponsePropertiesTopApisItems.md)
-- [OBPv600GetTopAPIs200ResponsePropertiesTopApisItemsProperties](docs/Model/OBPv600GetTopAPIs200ResponsePropertiesTopApisItemsProperties.md)
-- [OBPv600GetTransactionsForBankAccount200Response](docs/Model/OBPv600GetTransactionsForBankAccount200Response.md)
-- [OBPv600GetTransactionsForBankAccount200ResponseProperties](docs/Model/OBPv600GetTransactionsForBankAccount200ResponseProperties.md)
-- [OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactions](docs/Model/OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactions.md)
-- [OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItems](docs/Model/OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItems.md)
-- [OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsProperties](docs/Model/OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsProperties.md)
-- [OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesOtherAccount](docs/Model/OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesOtherAccount.md)
-- [OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesOtherAccountProperties](docs/Model/OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesOtherAccountProperties.md)
-- [OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccount](docs/Model/OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccount.md)
-- [OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountProperties](docs/Model/OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountProperties.md)
-- [OBPv600GetUserGroupMemberships200Response](docs/Model/OBPv600GetUserGroupMemberships200Response.md)
-- [OBPv600GetUserGroupMemberships200ResponseProperties](docs/Model/OBPv600GetUserGroupMemberships200ResponseProperties.md)
-- [OBPv600GetUserGroupMemberships200ResponsePropertiesGroupEntitlements](docs/Model/OBPv600GetUserGroupMemberships200ResponsePropertiesGroupEntitlements.md)
-- [OBPv600GetUserGroupMemberships200ResponsePropertiesGroupEntitlementsItems](docs/Model/OBPv600GetUserGroupMemberships200ResponsePropertiesGroupEntitlementsItems.md)
-- [OBPv600GetUserGroupMemberships200ResponsePropertiesGroupEntitlementsItemsProperties](docs/Model/OBPv600GetUserGroupMemberships200ResponsePropertiesGroupEntitlementsItemsProperties.md)
-- [OBPv600GetUsers200Response](docs/Model/OBPv600GetUsers200Response.md)
-- [OBPv600GetUsers200ResponseProperties](docs/Model/OBPv600GetUsers200ResponseProperties.md)
-- [OBPv600GetUsers200ResponsePropertiesUsers](docs/Model/OBPv600GetUsers200ResponsePropertiesUsers.md)
-- [OBPv600GetUsers200ResponsePropertiesUsersItems](docs/Model/OBPv600GetUsers200ResponsePropertiesUsersItems.md)
-- [OBPv600GetUsers200ResponsePropertiesUsersItemsProperties](docs/Model/OBPv600GetUsers200ResponsePropertiesUsersItemsProperties.md)
-- [OBPv600GetViewPermissions200Response](docs/Model/OBPv600GetViewPermissions200Response.md)
-- [OBPv600GetViewPermissions200ResponseProperties](docs/Model/OBPv600GetViewPermissions200ResponseProperties.md)
-- [OBPv600GetViewPermissions200ResponsePropertiesPermissions](docs/Model/OBPv600GetViewPermissions200ResponsePropertiesPermissions.md)
-- [OBPv600GetViewPermissions200ResponsePropertiesPermissionsItems](docs/Model/OBPv600GetViewPermissions200ResponsePropertiesPermissionsItems.md)
-- [OBPv600GetViewPermissions200ResponsePropertiesPermissionsItemsProperties](docs/Model/OBPv600GetViewPermissions200ResponsePropertiesPermissionsItemsProperties.md)
-- [OBPv600GetWebUiProps200Response](docs/Model/OBPv600GetWebUiProps200Response.md)
-- [OBPv600GetWebUiProps200ResponseProperties](docs/Model/OBPv600GetWebUiProps200ResponseProperties.md)
-- [OBPv600GetWebUiProps200ResponsePropertiesWebuiProps](docs/Model/OBPv600GetWebUiProps200ResponsePropertiesWebuiProps.md)
-- [OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems](docs/Model/OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems.md)
-- [OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItemsProperties](docs/Model/OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItemsProperties.md)
-- [OBPv600HasAccountAccess200Response](docs/Model/OBPv600HasAccountAccess200Response.md)
-- [OBPv600HasAccountAccess200ResponseProperties](docs/Model/OBPv600HasAccountAccess200ResponseProperties.md)
-- [OBPv600InvalidateCacheNamespace200Response](docs/Model/OBPv600InvalidateCacheNamespace200Response.md)
-- [OBPv600InvalidateCacheNamespace200ResponseProperties](docs/Model/OBPv600InvalidateCacheNamespace200ResponseProperties.md)
-- [OBPv600InvalidateCacheNamespaceRequest](docs/Model/OBPv600InvalidateCacheNamespaceRequest.md)
-- [OBPv600InvalidateCacheNamespaceRequestProperties](docs/Model/OBPv600InvalidateCacheNamespaceRequestProperties.md)
-- [OBPv600PublishSignalMessage200Response](docs/Model/OBPv600PublishSignalMessage200Response.md)
-- [OBPv600PublishSignalMessage200ResponseProperties](docs/Model/OBPv600PublishSignalMessage200ResponseProperties.md)
-- [OBPv600PublishSignalMessageRequest](docs/Model/OBPv600PublishSignalMessageRequest.md)
-- [OBPv600PublishSignalMessageRequestProperties](docs/Model/OBPv600PublishSignalMessageRequestProperties.md)
-- [OBPv600RejectAccountAccessRequest200Response](docs/Model/OBPv600RejectAccountAccessRequest200Response.md)
-- [OBPv600RejectAccountAccessRequest200ResponseProperties](docs/Model/OBPv600RejectAccountAccessRequest200ResponseProperties.md)
-- [OBPv600RejectAccountAccessRequestRequest](docs/Model/OBPv600RejectAccountAccessRequestRequest.md)
-- [OBPv600RejectAccountAccessRequestRequestProperties](docs/Model/OBPv600RejectAccountAccessRequestRequestProperties.md)
-- [OBPv600ResetPasswordComplete200Response](docs/Model/OBPv600ResetPasswordComplete200Response.md)
-- [OBPv600ResetPasswordComplete200ResponseProperties](docs/Model/OBPv600ResetPasswordComplete200ResponseProperties.md)
-- [OBPv600ResetPasswordCompleteRequest](docs/Model/OBPv600ResetPasswordCompleteRequest.md)
-- [OBPv600ResetPasswordCompleteRequestProperties](docs/Model/OBPv600ResetPasswordCompleteRequestProperties.md)
-- [OBPv600ResetPasswordUrl200Response](docs/Model/OBPv600ResetPasswordUrl200Response.md)
-- [OBPv600ResetPasswordUrl200ResponseProperties](docs/Model/OBPv600ResetPasswordUrl200ResponseProperties.md)
-- [OBPv600ResetPasswordUrlAnonymousRequest](docs/Model/OBPv600ResetPasswordUrlAnonymousRequest.md)
-- [OBPv600ResetPasswordUrlAnonymousRequestProperties](docs/Model/OBPv600ResetPasswordUrlAnonymousRequestProperties.md)
-- [OBPv600ResetPasswordUrlRequest](docs/Model/OBPv600ResetPasswordUrlRequest.md)
-- [OBPv600ResetPasswordUrlRequestProperties](docs/Model/OBPv600ResetPasswordUrlRequestProperties.md)
-- [OBPv600Root200Response](docs/Model/OBPv600Root200Response.md)
-- [OBPv600Root200ResponseProperties](docs/Model/OBPv600Root200ResponseProperties.md)
-- [OBPv600Root200ResponsePropertiesHostedAt](docs/Model/OBPv600Root200ResponsePropertiesHostedAt.md)
-- [OBPv600Root200ResponsePropertiesHostedAtProperties](docs/Model/OBPv600Root200ResponsePropertiesHostedAtProperties.md)
-- [OBPv600Root200ResponsePropertiesHostedBy](docs/Model/OBPv600Root200ResponsePropertiesHostedBy.md)
-- [OBPv600Root200ResponsePropertiesHostedByProperties](docs/Model/OBPv600Root200ResponsePropertiesHostedByProperties.md)
-- [OBPv600UpdateAbacRuleRequest](docs/Model/OBPv600UpdateAbacRuleRequest.md)
-- [OBPv600UpdateAbacRuleRequestProperties](docs/Model/OBPv600UpdateAbacRuleRequestProperties.md)
-- [OBPv600UpdateBankLevelDynamicEntity200Response](docs/Model/OBPv600UpdateBankLevelDynamicEntity200Response.md)
-- [OBPv600UpdateBankLevelDynamicEntity200ResponseProperties](docs/Model/OBPv600UpdateBankLevelDynamicEntity200ResponseProperties.md)
-- [OBPv600UpdateFeaturedApiCollectionRequest](docs/Model/OBPv600UpdateFeaturedApiCollectionRequest.md)
-- [OBPv600UpdateFeaturedApiCollectionRequestProperties](docs/Model/OBPv600UpdateFeaturedApiCollectionRequestProperties.md)
-- [OBPv600UpdateGroupRequest](docs/Model/OBPv600UpdateGroupRequest.md)
-- [OBPv600UpdateGroupRequestProperties](docs/Model/OBPv600UpdateGroupRequestProperties.md)
-- [OBPv600UpdateRateLimitsRequest](docs/Model/OBPv600UpdateRateLimitsRequest.md)
-- [OBPv600UpdateRateLimitsRequestProperties](docs/Model/OBPv600UpdateRateLimitsRequestProperties.md)
-- [OBPv600UpdateRateLimitsRequestPropertiesFromDate](docs/Model/OBPv600UpdateRateLimitsRequestPropertiesFromDate.md)
-- [OBPv600UpdateSystemDynamicEntity200Response](docs/Model/OBPv600UpdateSystemDynamicEntity200Response.md)
-- [OBPv600UpdateSystemDynamicEntity200ResponseProperties](docs/Model/OBPv600UpdateSystemDynamicEntity200ResponseProperties.md)
-- [OBPv600UpdateSystemDynamicEntityRequest](docs/Model/OBPv600UpdateSystemDynamicEntityRequest.md)
-- [OBPv600UpdateSystemDynamicEntityRequestProperties](docs/Model/OBPv600UpdateSystemDynamicEntityRequestProperties.md)
-- [OBPv600UpdateSystemDynamicEntityRequestPropertiesSchema](docs/Model/OBPv600UpdateSystemDynamicEntityRequestPropertiesSchema.md)
-- [OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaProperties](docs/Model/OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaProperties.md)
-- [OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesProperties](docs/Model/OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesProperties.md)
-- [OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesProperties](docs/Model/OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesProperties.md)
-- [OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesNotificationsEnabled](docs/Model/OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesNotificationsEnabled.md)
-- [OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesNotificationsEnabledProperties](docs/Model/OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesNotificationsEnabledProperties.md)
-- [OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesTheme](docs/Model/OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesTheme.md)
-- [OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties](docs/Model/OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties.md)
-- [OBPv600UpdateSystemViewRequest](docs/Model/OBPv600UpdateSystemViewRequest.md)
-- [OBPv600UpdateSystemViewRequestProperties](docs/Model/OBPv600UpdateSystemViewRequestProperties.md)
-- [OBPv600ValidateAbacRule200Response](docs/Model/OBPv600ValidateAbacRule200Response.md)
-- [OBPv600ValidateAbacRule200ResponseProperties](docs/Model/OBPv600ValidateAbacRule200ResponseProperties.md)
-- [OBPv600ValidateAbacRuleRequest](docs/Model/OBPv600ValidateAbacRuleRequest.md)
-- [OBPv600ValidateAbacRuleRequestProperties](docs/Model/OBPv600ValidateAbacRuleRequestProperties.md)
-- [OBPv600ValidateUserEmail200Response](docs/Model/OBPv600ValidateUserEmail200Response.md)
-- [OBPv600ValidateUserEmail200ResponseProperties](docs/Model/OBPv600ValidateUserEmail200ResponseProperties.md)
-- [OBPv600ValidateUserEmailRequest](docs/Model/OBPv600ValidateUserEmailRequest.md)
-- [OBPv600ValidateUserEmailRequestProperties](docs/Model/OBPv600ValidateUserEmailRequestProperties.md)
-- [OBPv600VerifyOidcClient200Response](docs/Model/OBPv600VerifyOidcClient200Response.md)
-- [OBPv600VerifyOidcClient200ResponseProperties](docs/Model/OBPv600VerifyOidcClient200ResponseProperties.md)
-- [OBPv600VerifyOidcClientRequest](docs/Model/OBPv600VerifyOidcClientRequest.md)
-- [OBPv600VerifyOidcClientRequestProperties](docs/Model/OBPv600VerifyOidcClientRequestProperties.md)
-- [OBPv600VerifyUserCredentials200Response](docs/Model/OBPv600VerifyUserCredentials200Response.md)
-- [OBPv600VerifyUserCredentials200ResponseProperties](docs/Model/OBPv600VerifyUserCredentials200ResponseProperties.md)
-- [OBPv600VerifyUserCredentialsRequest](docs/Model/OBPv600VerifyUserCredentialsRequest.md)
-- [OBPv600VerifyUserCredentialsRequestProperties](docs/Model/OBPv600VerifyUserCredentialsRequestProperties.md)
+- [AccountAccessUniqueIndexCheck200Response](docs/Model/AccountAccessUniqueIndexCheck200Response.md)
+- [AddAccount200Response](docs/Model/AddAccount200Response.md)
+- [AddAccountRequest](docs/Model/AddAccountRequest.md)
+- [AddCardForBank200Response](docs/Model/AddCardForBank200Response.md)
+- [AddCardForBankRequest](docs/Model/AddCardForBankRequest.md)
+- [AddConsentUserRequest](docs/Model/AddConsentUserRequest.md)
+- [AddCustomerMessageRequest](docs/Model/AddCustomerMessageRequest.md)
+- [AddImageForViewOnTransactionRequest](docs/Model/AddImageForViewOnTransactionRequest.md)
+- [AddKycCheckRequest](docs/Model/AddKycCheckRequest.md)
+- [AddKycDocument200Response](docs/Model/AddKycDocument200Response.md)
+- [AddKycDocumentRequest](docs/Model/AddKycDocumentRequest.md)
+- [AddKycMedia200Response](docs/Model/AddKycMedia200Response.md)
+- [AddKycMediaRequest](docs/Model/AddKycMediaRequest.md)
+- [AddKycStatusRequest](docs/Model/AddKycStatusRequest.md)
+- [AddSystemViewPermission200Response](docs/Model/AddSystemViewPermission200Response.md)
+- [AddSystemViewPermissionRequest](docs/Model/AddSystemViewPermissionRequest.md)
+- [AddUserToGroup200Response](docs/Model/AddUserToGroup200Response.md)
+- [AddUserToGroupRequest](docs/Model/AddUserToGroupRequest.md)
+- [AnswerConsentChallengeRequest](docs/Model/AnswerConsentChallengeRequest.md)
+- [AnswerTransactionRequestChallengeRequest](docs/Model/AnswerTransactionRequestChallengeRequest.md)
+- [AnswerUserAuthContextUpdateChallenge200Response](docs/Model/AnswerUserAuthContextUpdateChallenge200Response.md)
+- [BackupBankLevelDynamicEntity200Response](docs/Model/BackupBankLevelDynamicEntity200Response.md)
+- [BackupBankLevelDynamicEntity200ResponseSchema](docs/Model/BackupBankLevelDynamicEntity200ResponseSchema.md)
+- [BackupBankLevelDynamicEntity200ResponseSchemaProperties](docs/Model/BackupBankLevelDynamicEntity200ResponseSchemaProperties.md)
+- [BackupSystemDynamicEntity200Response](docs/Model/BackupSystemDynamicEntity200Response.md)
+- [BuildDynamicEndpointTemplate200Response](docs/Model/BuildDynamicEndpointTemplate200Response.md)
+- [BuildDynamicEndpointTemplateRequest](docs/Model/BuildDynamicEndpointTemplateRequest.md)
+- [CheckFundsAvailable200Response](docs/Model/CheckFundsAvailable200Response.md)
+- [CleanupOrphanedDynamicEntityRecords200Response](docs/Model/CleanupOrphanedDynamicEntityRecords200Response.md)
+- [CleanupOrphanedDynamicEntityRecords200ResponseDeletedOrphanedEntitiesInner](docs/Model/CleanupOrphanedDynamicEntityRecords200ResponseDeletedOrphanedEntitiesInner.md)
+- [Config200Response](docs/Model/Config200Response.md)
+- [Config200ResponseAkka](docs/Model/Config200ResponseAkka.md)
+- [Config200ResponseCacheInner](docs/Model/Config200ResponseCacheInner.md)
+- [Config200ResponseElasticSearch](docs/Model/Config200ResponseElasticSearch.md)
+- [Config200ResponseElasticSearchMetricsInner](docs/Model/Config200ResponseElasticSearchMetricsInner.md)
+- [Config200ResponseScopes](docs/Model/Config200ResponseScopes.md)
+- [CreateAccountAccessRequestRequest](docs/Model/CreateAccountAccessRequestRequest.md)
+- [CreateAccountApplicationRequest](docs/Model/CreateAccountApplicationRequest.md)
+- [CreateAccountWebhookRequest](docs/Model/CreateAccountWebhookRequest.md)
+- [CreateAgentRequest](docs/Model/CreateAgentRequest.md)
+- [CreateApiProductAttribute200Response](docs/Model/CreateApiProductAttribute200Response.md)
+- [CreateAtmRequest](docs/Model/CreateAtmRequest.md)
+- [CreateBankAccountBalanceRequest](docs/Model/CreateBankAccountBalanceRequest.md)
+- [CreateBankAccountNotificationWebhook200Response](docs/Model/CreateBankAccountNotificationWebhook200Response.md)
+- [CreateBankLevelDynamicEntity200Response](docs/Model/CreateBankLevelDynamicEntity200Response.md)
+- [CreateBankRequest](docs/Model/CreateBankRequest.md)
+- [CreateCallLimits200Response](docs/Model/CreateCallLimits200Response.md)
+- [CreateCallLimitsRequest](docs/Model/CreateCallLimitsRequest.md)
+- [CreateCardAttribute200Response](docs/Model/CreateCardAttribute200Response.md)
+- [CreateConnectorMethodRequest](docs/Model/CreateConnectorMethodRequest.md)
+- [CreateConsentEmailRequest](docs/Model/CreateConsentEmailRequest.md)
+- [CreateConsentImplicit200Response](docs/Model/CreateConsentImplicit200Response.md)
+- [CreateConsentImplicitRequest](docs/Model/CreateConsentImplicitRequest.md)
+- [CreateConsentImplicitRequestEntitlementsInner](docs/Model/CreateConsentImplicitRequestEntitlementsInner.md)
+- [CreateConsentRequestRequest](docs/Model/CreateConsentRequestRequest.md)
+- [CreateConsentSmsRequest](docs/Model/CreateConsentSmsRequest.md)
+- [CreateConsumer200Response](docs/Model/CreateConsumer200Response.md)
+- [CreateConsumerDynamicRegistrationRequest](docs/Model/CreateConsumerDynamicRegistrationRequest.md)
+- [CreateConsumerRequest](docs/Model/CreateConsumerRequest.md)
+- [CreateCorporateCustomerRequest](docs/Model/CreateCorporateCustomerRequest.md)
+- [CreateCounterpartyAttributeRequest](docs/Model/CreateCounterpartyAttributeRequest.md)
+- [CreateCounterpartyForAnyAccountRequest](docs/Model/CreateCounterpartyForAnyAccountRequest.md)
+- [CreateCustomView200Response](docs/Model/CreateCustomView200Response.md)
+- [CreateCustomViewManagementRequest](docs/Model/CreateCustomViewManagementRequest.md)
+- [CreateCustomViewRequest](docs/Model/CreateCustomViewRequest.md)
+- [CreateCustomerAccountLinkRequest](docs/Model/CreateCustomerAccountLinkRequest.md)
+- [CreateCustomerAddress200Response](docs/Model/CreateCustomerAddress200Response.md)
+- [CreateCustomerAddressRequest](docs/Model/CreateCustomerAddressRequest.md)
+- [CreateCustomerMessageRequest](docs/Model/CreateCustomerMessageRequest.md)
+- [CreateCustomerRequest](docs/Model/CreateCustomerRequest.md)
+- [CreateDirectDebit200Response](docs/Model/CreateDirectDebit200Response.md)
+- [CreateDirectDebitRequest](docs/Model/CreateDirectDebitRequest.md)
+- [CreateEndpointMappingRequest](docs/Model/CreateEndpointMappingRequest.md)
+- [CreateFeaturedApiCollectionRequest](docs/Model/CreateFeaturedApiCollectionRequest.md)
+- [CreateFxRequest](docs/Model/CreateFxRequest.md)
+- [CreateGroupRequest](docs/Model/CreateGroupRequest.md)
+- [CreateHistoricalTransactionAtBankRequest](docs/Model/CreateHistoricalTransactionAtBankRequest.md)
+- [CreateMandateRequest](docs/Model/CreateMandateRequest.md)
+- [CreateMeetingRequest](docs/Model/CreateMeetingRequest.md)
+- [CreateMethodRoutingRequest](docs/Model/CreateMethodRoutingRequest.md)
+- [CreateMyApiCollectionEndpointRequest](docs/Model/CreateMyApiCollectionEndpointRequest.md)
+- [CreateMyApiCollectionRequest](docs/Model/CreateMyApiCollectionRequest.md)
+- [CreateOrUpdateApiProductRequest](docs/Model/CreateOrUpdateApiProductRequest.md)
+- [CreateOrUpdateTransactionRequestAttributeDefinitionRequest](docs/Model/CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
+- [CreatePersonalDataFieldRequest](docs/Model/CreatePersonalDataFieldRequest.md)
+- [CreateProduct200Response](docs/Model/CreateProduct200Response.md)
+- [CreateProductAttribute200Response](docs/Model/CreateProductAttribute200Response.md)
+- [CreateProductCollection200Response](docs/Model/CreateProductCollection200Response.md)
+- [CreateProductCollection200ResponseProductCollectionInner](docs/Model/CreateProductCollection200ResponseProductCollectionInner.md)
+- [CreateProductCollection200ResponseProductCollectionInnerItemsInner](docs/Model/CreateProductCollection200ResponseProductCollectionInnerItemsInner.md)
+- [CreateProductCollectionRequest](docs/Model/CreateProductCollectionRequest.md)
+- [CreateProductRequest](docs/Model/CreateProductRequest.md)
+- [CreateRegulatedEntityRequest](docs/Model/CreateRegulatedEntityRequest.md)
+- [CreateRetailCustomerRequest](docs/Model/CreateRetailCustomerRequest.md)
+- [CreateSettlementAccount200Response](docs/Model/CreateSettlementAccount200Response.md)
+- [CreateSettlementAccountRequest](docs/Model/CreateSettlementAccountRequest.md)
+- [CreateStandingOrder200Response](docs/Model/CreateStandingOrder200Response.md)
+- [CreateStandingOrderRequest](docs/Model/CreateStandingOrderRequest.md)
+- [CreateStandingOrderRequestWhen](docs/Model/CreateStandingOrderRequestWhen.md)
+- [CreateSystemAccountNotificationWebhook200Response](docs/Model/CreateSystemAccountNotificationWebhook200Response.md)
+- [CreateSystemAccountNotificationWebhookRequest](docs/Model/CreateSystemAccountNotificationWebhookRequest.md)
+- [CreateSystemDynamicEntity200Response](docs/Model/CreateSystemDynamicEntity200Response.md)
+- [CreateSystemDynamicEntityRequest](docs/Model/CreateSystemDynamicEntityRequest.md)
+- [CreateSystemDynamicEntityRequestSchema](docs/Model/CreateSystemDynamicEntityRequestSchema.md)
+- [CreateSystemDynamicEntityRequestSchemaProperties](docs/Model/CreateSystemDynamicEntityRequestSchemaProperties.md)
+- [CreateSystemViewRequest](docs/Model/CreateSystemViewRequest.md)
+- [CreateTaxResidence200Response](docs/Model/CreateTaxResidence200Response.md)
+- [CreateTaxResidenceRequest](docs/Model/CreateTaxResidenceRequest.md)
+- [CreateTransactionRequestAccountRequest](docs/Model/CreateTransactionRequestAccountRequest.md)
+- [CreateTransactionRequestAgentCashWithDrawalRequest](docs/Model/CreateTransactionRequestAgentCashWithDrawalRequest.md)
+- [CreateTransactionRequestCardRequest](docs/Model/CreateTransactionRequestCardRequest.md)
+- [CreateTransactionRequestCardRequestCard](docs/Model/CreateTransactionRequestCardRequestCard.md)
+- [CreateTransactionRequestCardanoRequest](docs/Model/CreateTransactionRequestCardanoRequest.md)
+- [CreateTransactionRequestCardanoRequestMetadata](docs/Model/CreateTransactionRequestCardanoRequestMetadata.md)
+- [CreateTransactionRequestCardanoRequestMetadataValue1](docs/Model/CreateTransactionRequestCardanoRequestMetadataValue1.md)
+- [CreateTransactionRequestCardanoRequestTo](docs/Model/CreateTransactionRequestCardanoRequestTo.md)
+- [CreateTransactionRequestCardanoRequestToAmount](docs/Model/CreateTransactionRequestCardanoRequestToAmount.md)
+- [CreateTransactionRequestCardanoRequestToAssetsInner](docs/Model/CreateTransactionRequestCardanoRequestToAssetsInner.md)
+- [CreateTransactionRequestCounterparty200Response](docs/Model/CreateTransactionRequestCounterparty200Response.md)
+- [CreateTransactionRequestCounterparty200ResponseAttributesInner](docs/Model/CreateTransactionRequestCounterparty200ResponseAttributesInner.md)
+- [CreateTransactionRequestCounterparty200ResponseChallengesInner](docs/Model/CreateTransactionRequestCounterparty200ResponseChallengesInner.md)
+- [CreateTransactionRequestCounterparty200ResponseCharge](docs/Model/CreateTransactionRequestCounterparty200ResponseCharge.md)
+- [CreateTransactionRequestCounterparty200ResponseDetails](docs/Model/CreateTransactionRequestCounterparty200ResponseDetails.md)
+- [CreateTransactionRequestCounterparty200ResponseDetailsToAgent](docs/Model/CreateTransactionRequestCounterparty200ResponseDetailsToAgent.md)
+- [CreateTransactionRequestCounterparty200ResponseDetailsToSepaCreditTransfers](docs/Model/CreateTransactionRequestCounterparty200ResponseDetailsToSepaCreditTransfers.md)
+- [CreateTransactionRequestCounterparty200ResponseDetailsToSepaCreditTransfersDebtorAccount](docs/Model/CreateTransactionRequestCounterparty200ResponseDetailsToSepaCreditTransfersDebtorAccount.md)
+- [CreateTransactionRequestCounterparty200ResponseDetailsToSimple](docs/Model/CreateTransactionRequestCounterparty200ResponseDetailsToSimple.md)
+- [CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAccount](docs/Model/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAccount.md)
+- [CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAccountTo](docs/Model/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAccountTo.md)
+- [CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAccountToAccount](docs/Model/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAccountToAccount.md)
+- [CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAtm](docs/Model/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAtm.md)
+- [CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAtmTo](docs/Model/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAtmTo.md)
+- [CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAtmToKycDocument](docs/Model/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAtmToKycDocument.md)
+- [CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhone](docs/Model/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhone.md)
+- [CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneFrom](docs/Model/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneFrom.md)
+- [CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo](docs/Model/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo.md)
+- [CreateTransactionRequestCounterparty200ResponseFrom](docs/Model/CreateTransactionRequestCounterparty200ResponseFrom.md)
+- [CreateTransactionRequestCounterpartyRequest](docs/Model/CreateTransactionRequestCounterpartyRequest.md)
+- [CreateTransactionRequestCounterpartyRequestAttributesInner](docs/Model/CreateTransactionRequestCounterpartyRequestAttributesInner.md)
+- [CreateTransactionRequestCounterpartyRequestTo](docs/Model/CreateTransactionRequestCounterpartyRequestTo.md)
+- [CreateTransactionRequestEthSendRawTransactionRequest](docs/Model/CreateTransactionRequestEthSendRawTransactionRequest.md)
+- [CreateTransactionRequestEthereumeSendTransactionRequest](docs/Model/CreateTransactionRequestEthereumeSendTransactionRequest.md)
+- [CreateTransactionRequestFreeFormRequest](docs/Model/CreateTransactionRequestFreeFormRequest.md)
+- [CreateTransactionRequestRefundRequest](docs/Model/CreateTransactionRequestRefundRequest.md)
+- [CreateTransactionRequestRefundRequestRefund](docs/Model/CreateTransactionRequestRefundRequestRefund.md)
+- [CreateTransactionRequestSepaRequest](docs/Model/CreateTransactionRequestSepaRequest.md)
+- [CreateTransactionRequestSepaRequestReasonsInner](docs/Model/CreateTransactionRequestSepaRequestReasonsInner.md)
+- [CreateTransactionRequestSimpleRequest](docs/Model/CreateTransactionRequestSimpleRequest.md)
+- [CreateTransactionRequestSimpleRequestTo](docs/Model/CreateTransactionRequestSimpleRequestTo.md)
+- [CreateTransactionType200Response](docs/Model/CreateTransactionType200Response.md)
+- [CreateUserCustomerLinksRequest](docs/Model/CreateUserCustomerLinksRequest.md)
+- [CreateUserInvitationRequest](docs/Model/CreateUserInvitationRequest.md)
+- [CreateUserRequest](docs/Model/CreateUserRequest.md)
+- [CreateUserWithAccountAccessById200Response](docs/Model/CreateUserWithAccountAccessById200Response.md)
+- [CreateUserWithAccountAccessById200ResponseHead](docs/Model/CreateUserWithAccountAccessById200ResponseHead.md)
+- [CreateUserWithAccountAccessByIdRequest](docs/Model/CreateUserWithAccountAccessByIdRequest.md)
+- [CreateUserWithAccountAccessByIdRequestViewsInner](docs/Model/CreateUserWithAccountAccessByIdRequestViewsInner.md)
+- [CreateUserWithRolesRequest](docs/Model/CreateUserWithRolesRequest.md)
+- [CreateVRPConsentRequest200Response](docs/Model/CreateVRPConsentRequest200Response.md)
+- [CreateVRPConsentRequest200ResponsePayload](docs/Model/CreateVRPConsentRequest200ResponsePayload.md)
+- [CreateVRPConsentRequest200ResponsePayloadToAccount](docs/Model/CreateVRPConsentRequest200ResponsePayloadToAccount.md)
+- [CreateVRPConsentRequest200ResponsePayloadToAccountLimit](docs/Model/CreateVRPConsentRequest200ResponsePayloadToAccountLimit.md)
+- [CreateVRPConsentRequestRequest](docs/Model/CreateVRPConsentRequestRequest.md)
+- [CreateVRPConsentRequestRequestFromAccount](docs/Model/CreateVRPConsentRequestRequestFromAccount.md)
+- [CreateVRPConsentRequestRequestToAccount](docs/Model/CreateVRPConsentRequestRequestToAccount.md)
+- [CreateVRPConsentRequestRequestToAccountLimit](docs/Model/CreateVRPConsentRequestRequestToAccountLimit.md)
+- [CreateWebUiProps200Response](docs/Model/CreateWebUiProps200Response.md)
+- [DataWarehouseSearchRequest](docs/Model/DataWarehouseSearchRequest.md)
+- [DataWarehouseSearchRequestQuery](docs/Model/DataWarehouseSearchRequestQuery.md)
+- [DeleteSignalChannel200Response](docs/Model/DeleteSignalChannel200Response.md)
+- [DeleteSystemLevelEndpointTag200Response](docs/Model/DeleteSystemLevelEndpointTag200Response.md)
+- [EnableDisableAccountWebhook200Response](docs/Model/EnableDisableAccountWebhook200Response.md)
+- [EnableDisableAccountWebhookRequest](docs/Model/EnableDisableAccountWebhookRequest.md)
+- [EnableDisableConsumersRequest](docs/Model/EnableDisableConsumersRequest.md)
+- [ExecuteAbacPolicy200Response](docs/Model/ExecuteAbacPolicy200Response.md)
+- [ExecuteAbacPolicyRequest](docs/Model/ExecuteAbacPolicyRequest.md)
+- [GetAbacPolicies200Response](docs/Model/GetAbacPolicies200Response.md)
+- [GetAbacPolicies200ResponsePoliciesInner](docs/Model/GetAbacPolicies200ResponsePoliciesInner.md)
+- [GetAbacRule200Response](docs/Model/GetAbacRule200Response.md)
+- [GetAbacRuleSchema200Response](docs/Model/GetAbacRuleSchema200Response.md)
+- [GetAbacRuleSchema200ResponseObjectTypesInner](docs/Model/GetAbacRuleSchema200ResponseObjectTypesInner.md)
+- [GetAbacRuleSchema200ResponseObjectTypesInnerPropertiesInner](docs/Model/GetAbacRuleSchema200ResponseObjectTypesInnerPropertiesInner.md)
+- [GetAbacRuleSchema200ResponseParametersInner](docs/Model/GetAbacRuleSchema200ResponseParametersInner.md)
+- [GetAbacRulesByPolicy200Response](docs/Model/GetAbacRulesByPolicy200Response.md)
+- [GetAccountAccessRequestsForAccount200Response](docs/Model/GetAccountAccessRequestsForAccount200Response.md)
+- [GetAccountApplications200Response](docs/Model/GetAccountApplications200Response.md)
+- [GetAccountApplications200ResponseAccountApplicationsInner](docs/Model/GetAccountApplications200ResponseAccountApplicationsInner.md)
+- [GetAccountDirectory200Response](docs/Model/GetAccountDirectory200Response.md)
+- [GetAccountDirectory200ResponseAccountsInner](docs/Model/GetAccountDirectory200ResponseAccountsInner.md)
+- [GetAccountWebhooks200Response](docs/Model/GetAccountWebhooks200Response.md)
+- [GetAccountsAtBank200Response](docs/Model/GetAccountsAtBank200Response.md)
+- [GetAccountsAtBank200ResponseAccountsInner](docs/Model/GetAccountsAtBank200ResponseAccountsInner.md)
+- [GetAccountsByAccountRoutingRegex200Response](docs/Model/GetAccountsByAccountRoutingRegex200Response.md)
+- [GetAccountsByAccountRoutingRegex200ResponseAccountsInner](docs/Model/GetAccountsByAccountRoutingRegex200ResponseAccountsInner.md)
+- [GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner](docs/Model/GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner.md)
+- [GetAccountsByAccountRoutingRegexRequest](docs/Model/GetAccountsByAccountRoutingRegexRequest.md)
+- [GetAccountsHeldByUserAtBank200Response](docs/Model/GetAccountsHeldByUserAtBank200Response.md)
+- [GetAccountsHeldByUserAtBank200ResponseAccountsInner](docs/Model/GetAccountsHeldByUserAtBank200ResponseAccountsInner.md)
+- [GetActiveRateLimitsAtDate200Response](docs/Model/GetActiveRateLimitsAtDate200Response.md)
+- [GetAdapterInfo200Response](docs/Model/GetAdapterInfo200Response.md)
+- [GetAdapterInfo200ResponseBackendMessagesInner](docs/Model/GetAdapterInfo200ResponseBackendMessagesInner.md)
+- [GetAgent200Response](docs/Model/GetAgent200Response.md)
+- [GetAgents200Response](docs/Model/GetAgents200Response.md)
+- [GetAgents200ResponseAgentsInner](docs/Model/GetAgents200ResponseAgentsInner.md)
+- [GetAggregateMetrics200Response](docs/Model/GetAggregateMetrics200Response.md)
+- [GetAllAuthenticationTypeValidationsPublic200Response](docs/Model/GetAllAuthenticationTypeValidationsPublic200Response.md)
+- [GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner](docs/Model/GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
+- [GetAllBankAccountBalances200Response](docs/Model/GetAllBankAccountBalances200Response.md)
+- [GetAllBankAccountBalances200ResponseBalancesInner](docs/Model/GetAllBankAccountBalances200ResponseBalancesInner.md)
+- [GetAllBankLevelDynamicMessageDocs200Response](docs/Model/GetAllBankLevelDynamicMessageDocs200Response.md)
+- [GetAllConnectorMethods200Response](docs/Model/GetAllConnectorMethods200Response.md)
+- [GetAllConnectorMethods200ResponseConnectorsMethodsInner](docs/Model/GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
+- [GetAllCounterpartyAttributes200Response](docs/Model/GetAllCounterpartyAttributes200Response.md)
+- [GetAllCounterpartyAttributes200ResponseAttributesInner](docs/Model/GetAllCounterpartyAttributes200ResponseAttributesInner.md)
+- [GetAllDynamicResourceDocs200Response](docs/Model/GetAllDynamicResourceDocs200Response.md)
+- [GetAllEndpointMappings200Response](docs/Model/GetAllEndpointMappings200Response.md)
+- [GetAllEndpointMappings200ResponseEndpointMappingsInner](docs/Model/GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
+- [GetAllEndpointMappings200ResponseEndpointMappingsInnerResponseMapping](docs/Model/GetAllEndpointMappings200ResponseEndpointMappingsInnerResponseMapping.md)
+- [GetAllEndpointMappings200ResponseEndpointMappingsInnerResponseMappingName](docs/Model/GetAllEndpointMappings200ResponseEndpointMappingsInnerResponseMappingName.md)
+- [GetAllEntitlementRequests200Response](docs/Model/GetAllEntitlementRequests200Response.md)
+- [GetAllEntitlementRequests200ResponseEntitlementRequestsInner](docs/Model/GetAllEntitlementRequests200ResponseEntitlementRequestsInner.md)
+- [GetAllEntitlements200Response](docs/Model/GetAllEntitlements200Response.md)
+- [GetAllEntitlements200ResponseListInner](docs/Model/GetAllEntitlements200ResponseListInner.md)
+- [GetAllJsonSchemaValidationsPublic200Response](docs/Model/GetAllJsonSchemaValidationsPublic200Response.md)
+- [GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner](docs/Model/GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
+- [GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema](docs/Model/GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)
+- [GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchemaProperties](docs/Model/GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchemaProperties.md)
+- [GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchemaPropertiesXxxId](docs/Model/GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchemaPropertiesXxxId.md)
+- [GetAllRegulatedEntityAttributes200Response](docs/Model/GetAllRegulatedEntityAttributes200Response.md)
+- [GetApiCollectionsForUser200Response](docs/Model/GetApiCollectionsForUser200Response.md)
+- [GetApiCollectionsForUser200ResponseApiCollectionsInner](docs/Model/GetApiCollectionsForUser200ResponseApiCollectionsInner.md)
+- [GetApiGlossary200Response](docs/Model/GetApiGlossary200Response.md)
+- [GetApiGlossary200ResponseGlossaryItemsInner](docs/Model/GetApiGlossary200ResponseGlossaryItemsInner.md)
+- [GetApiGlossary200ResponseGlossaryItemsInnerDescription](docs/Model/GetApiGlossary200ResponseGlossaryItemsInnerDescription.md)
+- [GetApiProducts200Response](docs/Model/GetApiProducts200Response.md)
+- [GetApiProducts200ResponseApiProductsInner](docs/Model/GetApiProducts200ResponseApiProductsInner.md)
+- [GetApiTags200Response](docs/Model/GetApiTags200Response.md)
+- [GetApiTags200ResponseAccountsInner](docs/Model/GetApiTags200ResponseAccountsInner.md)
+- [GetAppDirectory200Response](docs/Model/GetAppDirectory200Response.md)
+- [GetAtm200Response](docs/Model/GetAtm200Response.md)
+- [GetAtmAttribute200Response](docs/Model/GetAtmAttribute200Response.md)
+- [GetAtmAttributes200Response](docs/Model/GetAtmAttributes200Response.md)
+- [GetAtms200Response](docs/Model/GetAtms200Response.md)
+- [GetAvailablePersonalDynamicEntities200Response](docs/Model/GetAvailablePersonalDynamicEntities200Response.md)
+- [GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInner](docs/Model/GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInner.md)
+- [GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerLinks](docs/Model/GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerLinks.md)
+- [GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerLinksRelatedInner](docs/Model/GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerLinksRelatedInner.md)
+- [GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerSchema](docs/Model/GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerSchema.md)
+- [GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerSchemaProperties](docs/Model/GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerSchemaProperties.md)
+- [GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerSchemaPropertiesTheme](docs/Model/GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerSchemaPropertiesTheme.md)
+- [GetBank200Response](docs/Model/GetBank200Response.md)
+- [GetBankAccountsBalances200Response](docs/Model/GetBankAccountsBalances200Response.md)
+- [GetBankAccountsBalances200ResponseAccountsInner](docs/Model/GetBankAccountsBalances200ResponseAccountsInner.md)
+- [GetBankAccountsBalances200ResponseAccountsInnerBalancesInner](docs/Model/GetBankAccountsBalances200ResponseAccountsInnerBalancesInner.md)
+- [GetBankAttributes200Response](docs/Model/GetBankAttributes200Response.md)
+- [GetBankAttributes200ResponseBankAttributesInner](docs/Model/GetBankAttributes200ResponseBankAttributesInner.md)
+- [GetBankLevelDynamicEntities200Response](docs/Model/GetBankLevelDynamicEntities200Response.md)
+- [GetBankLevelDynamicEntities200ResponseDynamicEntitiesInner](docs/Model/GetBankLevelDynamicEntities200ResponseDynamicEntitiesInner.md)
+- [GetBankLevelDynamicResourceDoc200Response](docs/Model/GetBankLevelDynamicResourceDoc200Response.md)
+- [GetBankLevelDynamicResourceDoc200ResponseExampleRequestBody](docs/Model/GetBankLevelDynamicResourceDoc200ResponseExampleRequestBody.md)
+- [GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBody](docs/Model/GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBody.md)
+- [GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBodyOptionalFieldsInner](docs/Model/GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBodyOptionalFieldsInner.md)
+- [GetBankLevelEndpointTags200Response](docs/Model/GetBankLevelEndpointTags200Response.md)
+- [GetBanks200Response](docs/Model/GetBanks200Response.md)
+- [GetBranches200Response](docs/Model/GetBranches200Response.md)
+- [GetBranches200ResponseBranchesInner](docs/Model/GetBranches200ResponseBranchesInner.md)
+- [GetBranches200ResponseBranchesInnerAddress](docs/Model/GetBranches200ResponseBranchesInnerAddress.md)
+- [GetBranches200ResponseBranchesInnerDriveUp](docs/Model/GetBranches200ResponseBranchesInnerDriveUp.md)
+- [GetBranches200ResponseBranchesInnerDriveUpSunday](docs/Model/GetBranches200ResponseBranchesInnerDriveUpSunday.md)
+- [GetBranches200ResponseBranchesInnerLobby](docs/Model/GetBranches200ResponseBranchesInnerLobby.md)
+- [GetBranches200ResponseBranchesInnerLocation](docs/Model/GetBranches200ResponseBranchesInnerLocation.md)
+- [GetCacheConfig200Response](docs/Model/GetCacheConfig200Response.md)
+- [GetCacheConfig200ResponseInMemoryStatus](docs/Model/GetCacheConfig200ResponseInMemoryStatus.md)
+- [GetCacheConfig200ResponseRedisStatus](docs/Model/GetCacheConfig200ResponseRedisStatus.md)
+- [GetCacheInfo200Response](docs/Model/GetCacheInfo200Response.md)
+- [GetCacheInfo200ResponseNamespacesInner](docs/Model/GetCacheInfo200ResponseNamespacesInner.md)
+- [GetCacheNamespaces200Response](docs/Model/GetCacheNamespaces200Response.md)
+- [GetCacheNamespaces200ResponseNamespacesInner](docs/Model/GetCacheNamespaces200ResponseNamespacesInner.md)
+- [GetCallsLimit200Response](docs/Model/GetCallsLimit200Response.md)
+- [GetCallsLimit200ResponseLimitsInner](docs/Model/GetCallsLimit200ResponseLimitsInner.md)
+- [GetCardForBank200Response](docs/Model/GetCardForBank200Response.md)
+- [GetCardForBank200ResponseAccount](docs/Model/GetCardForBank200ResponseAccount.md)
+- [GetCardForBank200ResponseAccountViewsAvailableInner](docs/Model/GetCardForBank200ResponseAccountViewsAvailableInner.md)
+- [GetCards200Response](docs/Model/GetCards200Response.md)
+- [GetCards200ResponseCardsInner](docs/Model/GetCards200ResponseCardsInner.md)
+- [GetCardsForBank200Response](docs/Model/GetCardsForBank200Response.md)
+- [GetCardsForBank200ResponseCardsInner](docs/Model/GetCardsForBank200ResponseCardsInner.md)
+- [GetCardsForBank200ResponseCardsInnerAccount](docs/Model/GetCardsForBank200ResponseCardsInnerAccount.md)
+- [GetCardsForBank200ResponseCardsInnerAccountViewsAvailableInner](docs/Model/GetCardsForBank200ResponseCardsInnerAccountViewsAvailableInner.md)
+- [GetCardsForBank200ResponseCardsInnerReplacement](docs/Model/GetCardsForBank200ResponseCardsInnerReplacement.md)
+- [GetCheckbookOrders200Response](docs/Model/GetCheckbookOrders200Response.md)
+- [GetCheckbookOrders200ResponseAccount](docs/Model/GetCheckbookOrders200ResponseAccount.md)
+- [GetCheckbookOrders200ResponseAccountAccountRoutingsInner](docs/Model/GetCheckbookOrders200ResponseAccountAccountRoutingsInner.md)
+- [GetCheckbookOrders200ResponseOrdersInner](docs/Model/GetCheckbookOrders200ResponseOrdersInner.md)
+- [GetCheckbookOrders200ResponseOrdersInnerOrder](docs/Model/GetCheckbookOrders200ResponseOrdersInnerOrder.md)
+- [GetCommentsForViewOnTransaction200Response](docs/Model/GetCommentsForViewOnTransaction200Response.md)
+- [GetConfigProps200Response](docs/Model/GetConfigProps200Response.md)
+- [GetConnectorCallCounts200Response](docs/Model/GetConnectorCallCounts200Response.md)
+- [GetConnectorCallCounts200ResponseConnectorCountsInner](docs/Model/GetConnectorCallCounts200ResponseConnectorCountsInner.md)
+- [GetConnectorMethodNames200Response](docs/Model/GetConnectorMethodNames200Response.md)
+- [GetConnectorMetrics200Response](docs/Model/GetConnectorMetrics200Response.md)
+- [GetConnectorMetrics200ResponseMetricsInner](docs/Model/GetConnectorMetrics200ResponseMetricsInner.md)
+- [GetConnectorTraces200Response](docs/Model/GetConnectorTraces200Response.md)
+- [GetConnectorTraces200ResponseConnectorTracesInner](docs/Model/GetConnectorTraces200ResponseConnectorTracesInner.md)
+- [GetConnectors200Response](docs/Model/GetConnectors200Response.md)
+- [GetConnectors200ResponseConnectorsInner](docs/Model/GetConnectors200ResponseConnectorsInner.md)
+- [GetConsentByConsentId200Response](docs/Model/GetConsentByConsentId200Response.md)
+- [GetConsentByConsentRequestId200Response](docs/Model/GetConsentByConsentRequestId200Response.md)
+- [GetConsentInfos200Response](docs/Model/GetConsentInfos200Response.md)
+- [GetConsentInfos200ResponseConsentsInner](docs/Model/GetConsentInfos200ResponseConsentsInner.md)
+- [GetConsentRequest200Response](docs/Model/GetConsentRequest200Response.md)
+- [GetConsentRequest200ResponsePayload](docs/Model/GetConsentRequest200ResponsePayload.md)
+- [GetConsentRequest200ResponsePayloadAccountAccessInner](docs/Model/GetConsentRequest200ResponsePayloadAccountAccessInner.md)
+- [GetConsents200Response](docs/Model/GetConsents200Response.md)
+- [GetConsents200ResponseConsentsInner](docs/Model/GetConsents200ResponseConsentsInner.md)
+- [GetConsents200ResponseConsentsInnerJwtPayload](docs/Model/GetConsents200ResponseConsentsInnerJwtPayload.md)
+- [GetConsents200ResponseConsentsInnerJwtPayloadAccess](docs/Model/GetConsents200ResponseConsentsInnerJwtPayloadAccess.md)
+- [GetConsents200ResponseConsentsInnerJwtPayloadAccessTransactionsInner](docs/Model/GetConsents200ResponseConsentsInnerJwtPayloadAccessTransactionsInner.md)
+- [GetConsents200ResponseConsentsInnerJwtPayloadRequestHeadersInner](docs/Model/GetConsents200ResponseConsentsInnerJwtPayloadRequestHeadersInner.md)
+- [GetConsents200ResponseConsentsInnerJwtPayloadViewsInner](docs/Model/GetConsents200ResponseConsentsInnerJwtPayloadViewsInner.md)
+- [GetConsents200ResponseConsentsInnerJwtPayloadViewsInnerHelperInfo](docs/Model/GetConsents200ResponseConsentsInnerJwtPayloadViewsInnerHelperInfo.md)
+- [GetConsumer200Response](docs/Model/GetConsumer200Response.md)
+- [GetConsumers200Response](docs/Model/GetConsumers200Response.md)
+- [GetConsumersForCurrentUser200Response](docs/Model/GetConsumersForCurrentUser200Response.md)
+- [GetConsumersForCurrentUser200ResponseConsumersInner](docs/Model/GetConsumersForCurrentUser200ResponseConsumersInner.md)
+- [GetCoreAccountByIdThroughView200Response](docs/Model/GetCoreAccountByIdThroughView200Response.md)
+- [GetCoreAccountByIdV600200Response](docs/Model/GetCoreAccountByIdV600200Response.md)
+- [GetCoreTransactionsForBankAccount200Response](docs/Model/GetCoreTransactionsForBankAccount200Response.md)
+- [GetCoreTransactionsForBankAccount200ResponseTransactionsInner](docs/Model/GetCoreTransactionsForBankAccount200ResponseTransactionsInner.md)
+- [GetCoreTransactionsForBankAccount200ResponseTransactionsInnerDetails](docs/Model/GetCoreTransactionsForBankAccount200ResponseTransactionsInnerDetails.md)
+- [GetCoreTransactionsForBankAccount200ResponseTransactionsInnerOtherAccount](docs/Model/GetCoreTransactionsForBankAccount200ResponseTransactionsInnerOtherAccount.md)
+- [GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccount](docs/Model/GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccount.md)
+- [GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccountHoldersInner](docs/Model/GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccountHoldersInner.md)
+- [GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner](docs/Model/GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
+- [GetCounterpartiesForAnyAccount200Response](docs/Model/GetCounterpartiesForAnyAccount200Response.md)
+- [GetCounterpartiesForAnyAccount200ResponseCounterpartiesInner](docs/Model/GetCounterpartiesForAnyAccount200ResponseCounterpartiesInner.md)
+- [GetCounterpartyLimit200Response](docs/Model/GetCounterpartyLimit200Response.md)
+- [GetCounterpartyLimitStatus200Response](docs/Model/GetCounterpartyLimitStatus200Response.md)
+- [GetCounterpartyLimitStatus200ResponseStatus](docs/Model/GetCounterpartyLimitStatus200ResponseStatus.md)
+- [GetCounterpartyPublicAlias200Response](docs/Model/GetCounterpartyPublicAlias200Response.md)
+- [GetCrmEvents200Response](docs/Model/GetCrmEvents200Response.md)
+- [GetCrmEvents200ResponseCrmEventsInner](docs/Model/GetCrmEvents200ResponseCrmEventsInner.md)
+- [GetCurrenciesAtBank200Response](docs/Model/GetCurrenciesAtBank200Response.md)
+- [GetCurrenciesAtBank200ResponseCurrenciesInner](docs/Model/GetCurrenciesAtBank200ResponseCurrenciesInner.md)
+- [GetCurrentConsumer200Response](docs/Model/GetCurrentConsumer200Response.md)
+- [GetCurrentConsumer200ResponseCallCounters](docs/Model/GetCurrentConsumer200ResponseCallCounters.md)
+- [GetCurrentConsumer200ResponseCallCountersPerWeek](docs/Model/GetCurrentConsumer200ResponseCallCountersPerWeek.md)
+- [GetCustomViews200Response](docs/Model/GetCustomViews200Response.md)
+- [GetCustomerAccountLinksByCustomerId200Response](docs/Model/GetCustomerAccountLinksByCustomerId200Response.md)
+- [GetCustomerAccountLinksByCustomerId200ResponseLinksInner](docs/Model/GetCustomerAccountLinksByCustomerId200ResponseLinksInner.md)
+- [GetCustomerAddresses200Response](docs/Model/GetCustomerAddresses200Response.md)
+- [GetCustomerAttributes200Response](docs/Model/GetCustomerAttributes200Response.md)
+- [GetCustomerAttributes200ResponseCustomerAttributesInner](docs/Model/GetCustomerAttributes200ResponseCustomerAttributesInner.md)
+- [GetCustomerByCustomerNumber200Response](docs/Model/GetCustomerByCustomerNumber200Response.md)
+- [GetCustomerChildren200Response](docs/Model/GetCustomerChildren200Response.md)
+- [GetCustomerChildren200ResponseCustomersInner](docs/Model/GetCustomerChildren200ResponseCustomersInner.md)
+- [GetCustomerMessages200Response](docs/Model/GetCustomerMessages200Response.md)
+- [GetCustomerMessages200ResponseMessagesInner](docs/Model/GetCustomerMessages200ResponseMessagesInner.md)
+- [GetCustomerOverview200Response](docs/Model/GetCustomerOverview200Response.md)
+- [GetCustomerOverview200ResponseAccountsInner](docs/Model/GetCustomerOverview200ResponseAccountsInner.md)
+- [GetCustomerOverviewFlat200Response](docs/Model/GetCustomerOverviewFlat200Response.md)
+- [GetCustomerOverviewFlat200ResponseAccountsInner](docs/Model/GetCustomerOverviewFlat200ResponseAccountsInner.md)
+- [GetCustomerOverviewFlat200ResponseAccountsInnerAccountAttributesInner](docs/Model/GetCustomerOverviewFlat200ResponseAccountsInnerAccountAttributesInner.md)
+- [GetCustomerOverviewFlat200ResponseAccountsInnerContractsInner](docs/Model/GetCustomerOverviewFlat200ResponseAccountsInnerContractsInner.md)
+- [GetCustomerOverviewFlatRequest](docs/Model/GetCustomerOverviewFlatRequest.md)
+- [GetCustomersByLegalNameRequest](docs/Model/GetCustomersByLegalNameRequest.md)
+- [GetCustomersForUser200Response](docs/Model/GetCustomersForUser200Response.md)
+- [GetCustomersForUser200ResponseCustomersInner](docs/Model/GetCustomersForUser200ResponseCustomersInner.md)
+- [GetCustomersMessages200Response](docs/Model/GetCustomersMessages200Response.md)
+- [GetCustomersMessages200ResponseMessagesInner](docs/Model/GetCustomersMessages200ResponseMessagesInner.md)
+- [GetCustomersMinimalAtAnyBank200Response](docs/Model/GetCustomersMinimalAtAnyBank200Response.md)
+- [GetCustomersMinimalAtAnyBank200ResponseCustomersInner](docs/Model/GetCustomersMinimalAtAnyBank200ResponseCustomersInner.md)
+- [GetDatabasePoolInfo200Response](docs/Model/GetDatabasePoolInfo200Response.md)
+- [GetDoubleEntryTransaction200Response](docs/Model/GetDoubleEntryTransaction200Response.md)
+- [GetDoubleEntryTransaction200ResponseDebitTransaction](docs/Model/GetDoubleEntryTransaction200ResponseDebitTransaction.md)
+- [GetDoubleEntryTransaction200ResponseTransactionRequest](docs/Model/GetDoubleEntryTransaction200ResponseTransactionRequest.md)
+- [GetDynamicEndpoints200Response](docs/Model/GetDynamicEndpoints200Response.md)
+- [GetDynamicEndpoints200ResponseDynamicEndpointsInner](docs/Model/GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
+- [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString](docs/Model/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md)
+- [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitions](docs/Model/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitions.md)
+- [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitionsAccountName](docs/Model/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitionsAccountName.md)
+- [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitionsAccountNameProperties](docs/Model/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitionsAccountNameProperties.md)
+- [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitionsAccountNamePropertiesBalance](docs/Model/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitionsAccountNamePropertiesBalance.md)
+- [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitionsAccountNamePropertiesName](docs/Model/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitionsAccountNamePropertiesName.md)
+- [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringInfo](docs/Model/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringInfo.md)
+- [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPaths](docs/Model/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPaths.md)
+- [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccounts](docs/Model/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccounts.md)
+- [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsAccountId](docs/Model/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsAccountId.md)
+- [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsAccountIdGet](docs/Model/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsAccountIdGet.md)
+- [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsAccountIdGetResponses](docs/Model/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsAccountIdGetResponses.md)
+- [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsPost](docs/Model/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsPost.md)
+- [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsPostResponses](docs/Model/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsPostResponses.md)
+- [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsPostResponses201](docs/Model/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsPostResponses201.md)
+- [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsPostResponses201Schema](docs/Model/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsPostResponses201Schema.md)
+- [GetDynamicEntityDiagnostics200Response](docs/Model/GetDynamicEntityDiagnostics200Response.md)
+- [GetDynamicEntityDiagnostics200ResponseIssuesInner](docs/Model/GetDynamicEntityDiagnostics200ResponseIssuesInner.md)
+- [GetDynamicMessageDoc200Response](docs/Model/GetDynamicMessageDoc200Response.md)
+- [GetEntitlements200Response](docs/Model/GetEntitlements200Response.md)
+- [GetEntitlements200ResponseListInner](docs/Model/GetEntitlements200ResponseListInner.md)
+- [GetEntitlementsAndPermissions200Response](docs/Model/GetEntitlementsAndPermissions200Response.md)
+- [GetExplicitCounterpartyById200Response](docs/Model/GetExplicitCounterpartyById200Response.md)
+- [GetExplicitCounterpartyById200ResponseBespokeInner](docs/Model/GetExplicitCounterpartyById200ResponseBespokeInner.md)
+- [GetExplicitCounterpartyById200ResponseMetadata](docs/Model/GetExplicitCounterpartyById200ResponseMetadata.md)
+- [GetExplicitCounterpartyById200ResponseMetadataPhysicalLocation](docs/Model/GetExplicitCounterpartyById200ResponseMetadataPhysicalLocation.md)
+- [GetExplicitCounterpartyById200ResponseMetadataPhysicalLocationUser](docs/Model/GetExplicitCounterpartyById200ResponseMetadataPhysicalLocationUser.md)
+- [GetFastFirehoseAccountsAtOneBank200Response](docs/Model/GetFastFirehoseAccountsAtOneBank200Response.md)
+- [GetFastFirehoseAccountsAtOneBank200ResponseAccountsInner](docs/Model/GetFastFirehoseAccountsAtOneBank200ResponseAccountsInner.md)
+- [GetFastFirehoseAccountsAtOneBank200ResponseAccountsInnerAccountAttributesInner](docs/Model/GetFastFirehoseAccountsAtOneBank200ResponseAccountsInnerAccountAttributesInner.md)
+- [GetFastFirehoseAccountsAtOneBank200ResponseAccountsInnerOwnersInner](docs/Model/GetFastFirehoseAccountsAtOneBank200ResponseAccountsInnerOwnersInner.md)
+- [GetFeaturedApiCollectionsAdmin200Response](docs/Model/GetFeaturedApiCollectionsAdmin200Response.md)
+- [GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner](docs/Model/GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner.md)
+- [GetFeatures200Response](docs/Model/GetFeatures200Response.md)
+- [GetFirehoseAccountsAtOneBank200Response](docs/Model/GetFirehoseAccountsAtOneBank200Response.md)
+- [GetFirehoseAccountsAtOneBank200ResponseAccountsInner](docs/Model/GetFirehoseAccountsAtOneBank200ResponseAccountsInner.md)
+- [GetFirehoseTransactionsForBankAccount200Response](docs/Model/GetFirehoseTransactionsForBankAccount200Response.md)
+- [GetGroupEntitlements200Response](docs/Model/GetGroupEntitlements200Response.md)
+- [GetGroupEntitlements200ResponseEntitlementsInner](docs/Model/GetGroupEntitlements200ResponseEntitlementsInner.md)
+- [GetGroups200Response](docs/Model/GetGroups200Response.md)
+- [GetGroups200ResponseGroupsInner](docs/Model/GetGroups200ResponseGroupsInner.md)
+- [GetHoldingAccountByReleaser200Response](docs/Model/GetHoldingAccountByReleaser200Response.md)
+- [GetImagesForViewOnTransaction200Response](docs/Model/GetImagesForViewOnTransaction200Response.md)
+- [GetKycChecks200Response](docs/Model/GetKycChecks200Response.md)
+- [GetKycChecks200ResponseChecksInner](docs/Model/GetKycChecks200ResponseChecksInner.md)
+- [GetKycDocuments200Response](docs/Model/GetKycDocuments200Response.md)
+- [GetKycMedia200Response](docs/Model/GetKycMedia200Response.md)
+- [GetKycStatuses200Response](docs/Model/GetKycStatuses200Response.md)
+- [GetKycStatuses200ResponseStatusesInner](docs/Model/GetKycStatuses200ResponseStatusesInner.md)
+- [GetLogoutLink200Response](docs/Model/GetLogoutLink200Response.md)
+- [GetMandate200Response](docs/Model/GetMandate200Response.md)
+- [GetMandateProvision200Response](docs/Model/GetMandateProvision200Response.md)
+- [GetMandateProvision200ResponseSignatoryRequirementsInner](docs/Model/GetMandateProvision200ResponseSignatoryRequirementsInner.md)
+- [GetMandateProvisions200Response](docs/Model/GetMandateProvisions200Response.md)
+- [GetMandates200Response](docs/Model/GetMandates200Response.md)
+- [GetMapperDatabaseInfo200Response](docs/Model/GetMapperDatabaseInfo200Response.md)
+- [GetMeeting200Response](docs/Model/GetMeeting200Response.md)
+- [GetMeeting200ResponseCreator](docs/Model/GetMeeting200ResponseCreator.md)
+- [GetMeeting200ResponseInviteesInner](docs/Model/GetMeeting200ResponseInviteesInner.md)
+- [GetMeeting200ResponseKeys](docs/Model/GetMeeting200ResponseKeys.md)
+- [GetMeeting200ResponsePresent](docs/Model/GetMeeting200ResponsePresent.md)
+- [GetMeetings200Response](docs/Model/GetMeetings200Response.md)
+- [GetMessageDocs200Response](docs/Model/GetMessageDocs200Response.md)
+- [GetMessageDocs200ResponseMessageDocsInner](docs/Model/GetMessageDocs200ResponseMessageDocsInner.md)
+- [GetMessageDocs200ResponseMessageDocsInnerAdapterImplementation](docs/Model/GetMessageDocs200ResponseMessageDocsInnerAdapterImplementation.md)
+- [GetMessageDocs200ResponseMessageDocsInnerDependentEndpointsInner](docs/Model/GetMessageDocs200ResponseMessageDocsInnerDependentEndpointsInner.md)
+- [GetMessageDocs200ResponseMessageDocsInnerOutboundAvroSchema](docs/Model/GetMessageDocs200ResponseMessageDocsInnerOutboundAvroSchema.md)
+- [GetMessageDocs200ResponseMessageDocsInnerRequiredFieldInfo](docs/Model/GetMessageDocs200ResponseMessageDocsInnerRequiredFieldInfo.md)
+- [GetMethodRoutings200Response](docs/Model/GetMethodRoutings200Response.md)
+- [GetMethodRoutings200ResponseMethodRoutingsInner](docs/Model/GetMethodRoutings200ResponseMethodRoutingsInner.md)
+- [GetMetrics200Response](docs/Model/GetMetrics200Response.md)
+- [GetMetrics200ResponseMetricsInner](docs/Model/GetMetrics200ResponseMetricsInner.md)
+- [GetMetrics200ResponseMetricsInnerResponseBody](docs/Model/GetMetrics200ResponseMetricsInnerResponseBody.md)
+- [GetMetricsAtBank200Response](docs/Model/GetMetricsAtBank200Response.md)
+- [GetMetricsAtBank200ResponseMetricsInner](docs/Model/GetMetricsAtBank200ResponseMetricsInner.md)
+- [GetMetricsTopConsumers200Response](docs/Model/GetMetricsTopConsumers200Response.md)
+- [GetMetricsTopConsumers200ResponseTopConsumersInner](docs/Model/GetMetricsTopConsumers200ResponseTopConsumersInner.md)
+- [GetMigrations200Response](docs/Model/GetMigrations200Response.md)
+- [GetMigrations200ResponseMigrationScriptLogsInner](docs/Model/GetMigrations200ResponseMigrationScriptLogsInner.md)
+- [GetMyApiCollectionEndpoints200Response](docs/Model/GetMyApiCollectionEndpoints200Response.md)
+- [GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner](docs/Model/GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner.md)
+- [GetMyConsentsByBank200Response](docs/Model/GetMyConsentsByBank200Response.md)
+- [GetMyConsentsByBank200ResponseConsentsInner](docs/Model/GetMyConsentsByBank200ResponseConsentsInner.md)
+- [GetMyCorrelatedEntities200Response](docs/Model/GetMyCorrelatedEntities200Response.md)
+- [GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner](docs/Model/GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner.md)
+- [GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInnerUsersInner](docs/Model/GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInnerUsersInner.md)
+- [GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInnerUsersInnerUserAttributesInner](docs/Model/GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInnerUsersInnerUserAttributesInner.md)
+- [GetMyCustomersAtBank200Response](docs/Model/GetMyCustomersAtBank200Response.md)
+- [GetMyCustomersAtBank200ResponseCustomersInner](docs/Model/GetMyCustomersAtBank200ResponseCustomersInner.md)
+- [GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit](docs/Model/GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md)
+- [GetMyCustomersAtBank200ResponseCustomersInnerCreditRating](docs/Model/GetMyCustomersAtBank200ResponseCustomersInnerCreditRating.md)
+- [GetMyCustomersAtBank200ResponseCustomersInnerFaceImage](docs/Model/GetMyCustomersAtBank200ResponseCustomersInnerFaceImage.md)
+- [GetMySpaces200Response](docs/Model/GetMySpaces200Response.md)
+- [GetOAuth2ServerJWKsURIs200Response](docs/Model/GetOAuth2ServerJWKsURIs200Response.md)
+- [GetOAuth2ServerJWKsURIs200ResponseJwksUrisInner](docs/Model/GetOAuth2ServerJWKsURIs200ResponseJwksUrisInner.md)
+- [GetObpConnectorLoopback200Response](docs/Model/GetObpConnectorLoopback200Response.md)
+- [GetOidcClient200Response](docs/Model/GetOidcClient200Response.md)
+- [GetOtherAccountForTransaction200Response](docs/Model/GetOtherAccountForTransaction200Response.md)
+- [GetOtherAccountForTransaction200ResponseBank](docs/Model/GetOtherAccountForTransaction200ResponseBank.md)
+- [GetOtherAccountMetadata200Response](docs/Model/GetOtherAccountMetadata200Response.md)
+- [GetOtherAccountMetadata200ResponsePhysicalLocation](docs/Model/GetOtherAccountMetadata200ResponsePhysicalLocation.md)
+- [GetOtherAccountsForBankAccount200Response](docs/Model/GetOtherAccountsForBankAccount200Response.md)
+- [GetPermissionForUserForBankAccount200Response](docs/Model/GetPermissionForUserForBankAccount200Response.md)
+- [GetPermissionsForBankAccount200Response](docs/Model/GetPermissionsForBankAccount200Response.md)
+- [GetPermissionsForBankAccount200ResponsePermissionsInner](docs/Model/GetPermissionsForBankAccount200ResponsePermissionsInner.md)
+- [GetPersonalDataFields200Response](docs/Model/GetPersonalDataFields200Response.md)
+- [GetPersonalDataFields200ResponseUserAttributesInner](docs/Model/GetPersonalDataFields200ResponseUserAttributesInner.md)
+- [GetPopularApis200Response](docs/Model/GetPopularApis200Response.md)
+- [GetPrivateAccountByIdFull200Response](docs/Model/GetPrivateAccountByIdFull200Response.md)
+- [GetPrivateAccountIdsbyBankId200Response](docs/Model/GetPrivateAccountIdsbyBankId200Response.md)
+- [GetProduct200Response](docs/Model/GetProduct200Response.md)
+- [GetProduct200ResponseAttributesInner](docs/Model/GetProduct200ResponseAttributesInner.md)
+- [GetProduct200ResponseFeesInner](docs/Model/GetProduct200ResponseFeesInner.md)
+- [GetProductCollection200Response](docs/Model/GetProductCollection200Response.md)
+- [GetProductCollection200ResponseProductsInner](docs/Model/GetProductCollection200ResponseProductsInner.md)
+- [GetProductFee200Response](docs/Model/GetProductFee200Response.md)
+- [GetProductFee200ResponseValue](docs/Model/GetProductFee200ResponseValue.md)
+- [GetProductFees200Response](docs/Model/GetProductFees200Response.md)
+- [GetProductTree200Response](docs/Model/GetProductTree200Response.md)
+- [GetProductTree200ResponseParentProduct](docs/Model/GetProductTree200ResponseParentProduct.md)
+- [GetProductTree200ResponseParentProductParentProduct](docs/Model/GetProductTree200ResponseParentProductParentProduct.md)
+- [GetProductTree200ResponseParentProductParentProductMeta](docs/Model/GetProductTree200ResponseParentProductParentProductMeta.md)
+- [GetProductTree200ResponseParentProductParentProductMetaLicense](docs/Model/GetProductTree200ResponseParentProductParentProductMetaLicense.md)
+- [GetProducts200Response](docs/Model/GetProducts200Response.md)
+- [GetProviders200Response](docs/Model/GetProviders200Response.md)
+- [GetPublicAccountById200Response](docs/Model/GetPublicAccountById200Response.md)
+- [GetPublicAccountById200ResponseAccountRulesInner](docs/Model/GetPublicAccountById200ResponseAccountRulesInner.md)
+- [GetRateLimitingInfo200Response](docs/Model/GetRateLimitingInfo200Response.md)
+- [GetReferenceTypes200Response](docs/Model/GetReferenceTypes200Response.md)
+- [GetReferenceTypes200ResponseReferenceTypesInner](docs/Model/GetReferenceTypes200ResponseReferenceTypesInner.md)
+- [GetRegulatedEntityAttributeById200Response](docs/Model/GetRegulatedEntityAttributeById200Response.md)
+- [GetRegulatedEntityById200Response](docs/Model/GetRegulatedEntityById200Response.md)
+- [GetRegulatedEntityById200ResponseAttributesInner](docs/Model/GetRegulatedEntityById200ResponseAttributesInner.md)
+- [GetRegulatedEntityById200ResponseServicesInner](docs/Model/GetRegulatedEntityById200ResponseServicesInner.md)
+- [GetRoles200Response](docs/Model/GetRoles200Response.md)
+- [GetRoles200ResponseRolesInner](docs/Model/GetRoles200ResponseRolesInner.md)
+- [GetRolesWithEntitlementCountsAtAllBanks200Response](docs/Model/GetRolesWithEntitlementCountsAtAllBanks200Response.md)
+- [GetRolesWithEntitlementCountsAtAllBanks200ResponseRolesInner](docs/Model/GetRolesWithEntitlementCountsAtAllBanks200ResponseRolesInner.md)
+- [GetScannedApiVersions200Response](docs/Model/GetScannedApiVersions200Response.md)
+- [GetScannedApiVersions200ResponseScannedApiVersionsInner](docs/Model/GetScannedApiVersions200ResponseScannedApiVersionsInner.md)
+- [GetScopes200Response](docs/Model/GetScopes200Response.md)
+- [GetScopes200ResponseListInner](docs/Model/GetScopes200ResponseListInner.md)
+- [GetServerJWK200Response](docs/Model/GetServerJWK200Response.md)
+- [GetSettlementAccounts200Response](docs/Model/GetSettlementAccounts200Response.md)
+- [GetSettlementAccounts200ResponseSettlementAccountsInner](docs/Model/GetSettlementAccounts200ResponseSettlementAccountsInner.md)
+- [GetSignalChannelInfo200Response](docs/Model/GetSignalChannelInfo200Response.md)
+- [GetSignalChannels200Response](docs/Model/GetSignalChannels200Response.md)
+- [GetSignalMessages200Response](docs/Model/GetSignalMessages200Response.md)
+- [GetSignalMessages200ResponseMessagesInner](docs/Model/GetSignalMessages200ResponseMessagesInner.md)
+- [GetSignalMessages200ResponseMessagesInnerPayload](docs/Model/GetSignalMessages200ResponseMessagesInnerPayload.md)
+- [GetSignalStats200Response](docs/Model/GetSignalStats200Response.md)
+- [GetSignatoryPanel200Response](docs/Model/GetSignatoryPanel200Response.md)
+- [GetSignatoryPanels200Response](docs/Model/GetSignatoryPanels200Response.md)
+- [GetSocialMediaHandles200Response](docs/Model/GetSocialMediaHandles200Response.md)
+- [GetSocialMediaHandles200ResponseChecksInner](docs/Model/GetSocialMediaHandles200ResponseChecksInner.md)
+- [GetStatusOfCreditCardOrder200Response](docs/Model/GetStatusOfCreditCardOrder200Response.md)
+- [GetStatusOfCreditCardOrder200ResponseCardsInner](docs/Model/GetStatusOfCreditCardOrder200ResponseCardsInner.md)
+- [GetStoredProcedureConnectorHealth200Response](docs/Model/GetStoredProcedureConnectorHealth200Response.md)
+- [GetSystemDynamicEntities200Response](docs/Model/GetSystemDynamicEntities200Response.md)
+- [GetSystemDynamicEntities200ResponseDynamicEntitiesInner](docs/Model/GetSystemDynamicEntities200ResponseDynamicEntitiesInner.md)
+- [GetSystemViewById200Response](docs/Model/GetSystemViewById200Response.md)
+- [GetSystemViews200Response](docs/Model/GetSystemViews200Response.md)
+- [GetSystemViewsIds200Response](docs/Model/GetSystemViewsIds200Response.md)
+- [GetSystemViewsIds200ResponseViewsInner](docs/Model/GetSystemViewsIds200ResponseViewsInner.md)
+- [GetTagsForViewOnAccount200Response](docs/Model/GetTagsForViewOnAccount200Response.md)
+- [GetTagsForViewOnAccount200ResponseTagsInner](docs/Model/GetTagsForViewOnAccount200ResponseTagsInner.md)
+- [GetTagsForViewOnAccount200ResponseTagsInnerUser](docs/Model/GetTagsForViewOnAccount200ResponseTagsInnerUser.md)
+- [GetTaxResidence200Response](docs/Model/GetTaxResidence200Response.md)
+- [GetTopAPIs200Response](docs/Model/GetTopAPIs200Response.md)
+- [GetTopAPIs200ResponseTopApisInner](docs/Model/GetTopAPIs200ResponseTopApisInner.md)
+- [GetTransactionAttributes200Response](docs/Model/GetTransactionAttributes200Response.md)
+- [GetTransactionByIdForBankAccount200Response](docs/Model/GetTransactionByIdForBankAccount200Response.md)
+- [GetTransactionByIdForBankAccount200ResponseMetadata](docs/Model/GetTransactionByIdForBankAccount200ResponseMetadata.md)
+- [GetTransactionByIdForBankAccount200ResponseMetadataImagesInner](docs/Model/GetTransactionByIdForBankAccount200ResponseMetadataImagesInner.md)
+- [GetTransactionByIdForBankAccount200ResponseOtherAccount](docs/Model/GetTransactionByIdForBankAccount200ResponseOtherAccount.md)
+- [GetTransactionNarrative200Response](docs/Model/GetTransactionNarrative200Response.md)
+- [GetTransactionRequestAttributeById200Response](docs/Model/GetTransactionRequestAttributeById200Response.md)
+- [GetTransactionRequestAttributeDefinition200Response](docs/Model/GetTransactionRequestAttributeDefinition200Response.md)
+- [GetTransactionRequestAttributeDefinition200ResponseAttributesInner](docs/Model/GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
+- [GetTransactionRequestAttributes200Response](docs/Model/GetTransactionRequestAttributes200Response.md)
+- [GetTransactionRequestById200Response](docs/Model/GetTransactionRequestById200Response.md)
+- [GetTransactionRequestById200ResponseChallenge](docs/Model/GetTransactionRequestById200ResponseChallenge.md)
+- [GetTransactionRequestTypes200Response](docs/Model/GetTransactionRequestTypes200Response.md)
+- [GetTransactionRequestTypes200ResponseTransactionRequestTypesInner](docs/Model/GetTransactionRequestTypes200ResponseTransactionRequestTypesInner.md)
+- [GetTransactionRequestTypesSupportedByBank200Response](docs/Model/GetTransactionRequestTypesSupportedByBank200Response.md)
+- [GetTransactionRequestTypesSupportedByBank200ResponseTransactionRequestTypesInner](docs/Model/GetTransactionRequestTypesSupportedByBank200ResponseTransactionRequestTypesInner.md)
+- [GetTransactionRequests200Response](docs/Model/GetTransactionRequests200Response.md)
+- [GetTransactionTypes200Response](docs/Model/GetTransactionTypes200Response.md)
+- [GetTransactionTypes200ResponseTransactionTypesInner](docs/Model/GetTransactionTypes200ResponseTransactionTypesInner.md)
+- [GetTransactionTypes200ResponseTransactionTypesInnerId](docs/Model/GetTransactionTypes200ResponseTransactionTypesInnerId.md)
+- [GetTransactionsForBankAccount200Response](docs/Model/GetTransactionsForBankAccount200Response.md)
+- [GetTransactionsForBankAccount200ResponseTransactionsInner](docs/Model/GetTransactionsForBankAccount200ResponseTransactionsInner.md)
+- [GetTransactionsForBankAccount200ResponseTransactionsInnerOtherAccount](docs/Model/GetTransactionsForBankAccount200ResponseTransactionsInnerOtherAccount.md)
+- [GetTransactionsForBankAccount200ResponseTransactionsInnerThisAccount](docs/Model/GetTransactionsForBankAccount200ResponseTransactionsInnerThisAccount.md)
+- [GetUserAuthContexts200Response](docs/Model/GetUserAuthContexts200Response.md)
+- [GetUserByProviderAndUsername200Response](docs/Model/GetUserByProviderAndUsername200Response.md)
+- [GetUserByProviderAndUsername200ResponseAgreementsInner](docs/Model/GetUserByProviderAndUsername200ResponseAgreementsInner.md)
+- [GetUserByProviderAndUsername200ResponseEntitlements](docs/Model/GetUserByProviderAndUsername200ResponseEntitlements.md)
+- [GetUserByProviderAndUsername200ResponseViews](docs/Model/GetUserByProviderAndUsername200ResponseViews.md)
+- [GetUserCustomerLinksByCustomerId200Response](docs/Model/GetUserCustomerLinksByCustomerId200Response.md)
+- [GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner](docs/Model/GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner.md)
+- [GetUserGroupMemberships200Response](docs/Model/GetUserGroupMemberships200Response.md)
+- [GetUserGroupMemberships200ResponseGroupEntitlementsInner](docs/Model/GetUserGroupMemberships200ResponseGroupEntitlementsInner.md)
+- [GetUserInvitationAnonymousRequest](docs/Model/GetUserInvitationAnonymousRequest.md)
+- [GetUserInvitations200Response](docs/Model/GetUserInvitations200Response.md)
+- [GetUserLockStatus200Response](docs/Model/GetUserLockStatus200Response.md)
+- [GetUsers200Response](docs/Model/GetUsers200Response.md)
+- [GetUsers200ResponseUsersInner](docs/Model/GetUsers200ResponseUsersInner.md)
+- [GetUsersByEmail200Response](docs/Model/GetUsersByEmail200Response.md)
+- [GetUsersByEmail200ResponseUsersInner](docs/Model/GetUsersByEmail200ResponseUsersInner.md)
+- [GetUsersWithAccountAccess200Response](docs/Model/GetUsersWithAccountAccess200Response.md)
+- [GetUsersWithAccountAccess200ResponseUsersInner](docs/Model/GetUsersWithAccountAccess200ResponseUsersInner.md)
+- [GetViewPermissions200Response](docs/Model/GetViewPermissions200Response.md)
+- [GetViewPermissions200ResponsePermissionsInner](docs/Model/GetViewPermissions200ResponsePermissionsInner.md)
+- [GetViewsForBankAccount200Response](docs/Model/GetViewsForBankAccount200Response.md)
+- [GetViewsForBankAccount200ResponseViewsInner](docs/Model/GetViewsForBankAccount200ResponseViewsInner.md)
+- [GetWebUiProps200Response](docs/Model/GetWebUiProps200Response.md)
+- [GetWebUiProps200ResponseWebuiPropsInner](docs/Model/GetWebUiProps200ResponseWebuiPropsInner.md)
+- [GetWhereTagForViewOnTransaction200Response](docs/Model/GetWhereTagForViewOnTransaction200Response.md)
+- [HasAccountAccess200Response](docs/Model/HasAccountAccess200Response.md)
+- [HeadAtms200Response](docs/Model/HeadAtms200Response.md)
+- [HeadAtms200ResponseAtmsInner](docs/Model/HeadAtms200ResponseAtmsInner.md)
+- [IbanChecker200Response](docs/Model/IbanChecker200Response.md)
+- [IbanChecker200ResponseDetails](docs/Model/IbanChecker200ResponseDetails.md)
+- [IbanCheckerRequest](docs/Model/IbanCheckerRequest.md)
+- [InvalidateCacheNamespace200Response](docs/Model/InvalidateCacheNamespace200Response.md)
+- [InvalidateCacheNamespaceRequest](docs/Model/InvalidateCacheNamespaceRequest.md)
+- [LockUserByProviderAndUsername200Response](docs/Model/LockUserByProviderAndUsername200Response.md)
+- [PrivateAccountsAtOneBank200Response](docs/Model/PrivateAccountsAtOneBank200Response.md)
+- [PrivateAccountsAtOneBank200ResponseAccountsInner](docs/Model/PrivateAccountsAtOneBank200ResponseAccountsInner.md)
+- [PrivateAccountsAtOneBank200ResponseAccountsInnerViewsInner](docs/Model/PrivateAccountsAtOneBank200ResponseAccountsInnerViewsInner.md)
+- [PublicAccountsAllBanks200Response](docs/Model/PublicAccountsAllBanks200Response.md)
+- [PublicAccountsAllBanks200ResponseAccountsInner](docs/Model/PublicAccountsAllBanks200ResponseAccountsInner.md)
+- [PublicAccountsAllBanks200ResponseAccountsInnerViewsAvailableInner](docs/Model/PublicAccountsAllBanks200ResponseAccountsInnerViewsAvailableInner.md)
+- [PublishSignalMessage200Response](docs/Model/PublishSignalMessage200Response.md)
+- [PublishSignalMessageRequest](docs/Model/PublishSignalMessageRequest.md)
+- [RefreshUser200Response](docs/Model/RefreshUser200Response.md)
+- [RegulatedEntities200Response](docs/Model/RegulatedEntities200Response.md)
+- [RejectAccountAccessRequest200Response](docs/Model/RejectAccountAccessRequest200Response.md)
+- [RejectAccountAccessRequestRequest](docs/Model/RejectAccountAccessRequestRequest.md)
+- [ResetPasswordComplete200Response](docs/Model/ResetPasswordComplete200Response.md)
+- [ResetPasswordCompleteRequest](docs/Model/ResetPasswordCompleteRequest.md)
+- [ResetPasswordUrl200Response](docs/Model/ResetPasswordUrl200Response.md)
+- [ResetPasswordUrlAnonymousRequest](docs/Model/ResetPasswordUrlAnonymousRequest.md)
+- [ResetPasswordUrlRequest](docs/Model/ResetPasswordUrlRequest.md)
+- [RevokeUserAccessToViewById200Response](docs/Model/RevokeUserAccessToViewById200Response.md)
+- [RevokeUserAccessToViewByIdRequest](docs/Model/RevokeUserAccessToViewByIdRequest.md)
+- [Root200Response](docs/Model/Root200Response.md)
+- [Root200ResponseHostedAt](docs/Model/Root200ResponseHostedAt.md)
+- [Root200ResponseHostedBy](docs/Model/Root200ResponseHostedBy.md)
+- [SandboxDataImportRequest](docs/Model/SandboxDataImportRequest.md)
+- [SandboxDataImportRequestAccountsInner](docs/Model/SandboxDataImportRequestAccountsInner.md)
+- [SandboxDataImportRequestAtmsInner](docs/Model/SandboxDataImportRequestAtmsInner.md)
+- [SandboxDataImportRequestBanksInner](docs/Model/SandboxDataImportRequestBanksInner.md)
+- [SandboxDataImportRequestBranchesInner](docs/Model/SandboxDataImportRequestBranchesInner.md)
+- [SandboxDataImportRequestBranchesInnerAddress](docs/Model/SandboxDataImportRequestBranchesInnerAddress.md)
+- [SandboxDataImportRequestBranchesInnerDriveUp](docs/Model/SandboxDataImportRequestBranchesInnerDriveUp.md)
+- [SandboxDataImportRequestCrmEventsInner](docs/Model/SandboxDataImportRequestCrmEventsInner.md)
+- [SandboxDataImportRequestCrmEventsInnerCustomer](docs/Model/SandboxDataImportRequestCrmEventsInnerCustomer.md)
+- [SandboxDataImportRequestProductsInner](docs/Model/SandboxDataImportRequestProductsInner.md)
+- [SandboxDataImportRequestTransactionsInner](docs/Model/SandboxDataImportRequestTransactionsInner.md)
+- [SandboxDataImportRequestTransactionsInnerDetails](docs/Model/SandboxDataImportRequestTransactionsInnerDetails.md)
+- [SandboxDataImportRequestTransactionsInnerThisAccount](docs/Model/SandboxDataImportRequestTransactionsInnerThisAccount.md)
+- [SandboxDataImportRequestUsersInner](docs/Model/SandboxDataImportRequestUsersInner.md)
+- [SaveHistoricalTransaction200Response](docs/Model/SaveHistoricalTransaction200Response.md)
+- [SaveHistoricalTransactionRequest](docs/Model/SaveHistoricalTransactionRequest.md)
+- [SaveHistoricalTransactionRequestTo](docs/Model/SaveHistoricalTransactionRequestTo.md)
+- [SuggestedSessionTimeout200Response](docs/Model/SuggestedSessionTimeout200Response.md)
+- [UpdateAbacRuleRequest](docs/Model/UpdateAbacRuleRequest.md)
+- [UpdateAccount200Response](docs/Model/UpdateAccount200Response.md)
+- [UpdateAccountAttributeRequest](docs/Model/UpdateAccountAttributeRequest.md)
+- [UpdateAccountLabelRequest](docs/Model/UpdateAccountLabelRequest.md)
+- [UpdateAccountRequest](docs/Model/UpdateAccountRequest.md)
+- [UpdateAgentStatusRequest](docs/Model/UpdateAgentStatusRequest.md)
+- [UpdateAtmAccessibilityFeatures200Response](docs/Model/UpdateAtmAccessibilityFeatures200Response.md)
+- [UpdateAtmAccessibilityFeaturesRequest](docs/Model/UpdateAtmAccessibilityFeaturesRequest.md)
+- [UpdateAtmAttributeRequest](docs/Model/UpdateAtmAttributeRequest.md)
+- [UpdateAtmLocationCategories200Response](docs/Model/UpdateAtmLocationCategories200Response.md)
+- [UpdateAtmLocationCategoriesRequest](docs/Model/UpdateAtmLocationCategoriesRequest.md)
+- [UpdateAtmNotes200Response](docs/Model/UpdateAtmNotes200Response.md)
+- [UpdateAtmNotesRequest](docs/Model/UpdateAtmNotesRequest.md)
+- [UpdateAtmRequest](docs/Model/UpdateAtmRequest.md)
+- [UpdateAtmServices200Response](docs/Model/UpdateAtmServices200Response.md)
+- [UpdateAtmServicesRequest](docs/Model/UpdateAtmServicesRequest.md)
+- [UpdateAtmSupportedCurrencies200Response](docs/Model/UpdateAtmSupportedCurrencies200Response.md)
+- [UpdateAtmSupportedCurrenciesRequest](docs/Model/UpdateAtmSupportedCurrenciesRequest.md)
+- [UpdateAtmSupportedLanguages200Response](docs/Model/UpdateAtmSupportedLanguages200Response.md)
+- [UpdateAtmSupportedLanguagesRequest](docs/Model/UpdateAtmSupportedLanguagesRequest.md)
+- [UpdateAuthenticationTypeValidationRequest](docs/Model/UpdateAuthenticationTypeValidationRequest.md)
+- [UpdateBank200Response](docs/Model/UpdateBank200Response.md)
+- [UpdateBankLevelDynamicEndpointHostRequest](docs/Model/UpdateBankLevelDynamicEndpointHostRequest.md)
+- [UpdateBankLevelDynamicEntity200Response](docs/Model/UpdateBankLevelDynamicEntity200Response.md)
+- [UpdateBankLevelDynamicResourceDocRequest](docs/Model/UpdateBankLevelDynamicResourceDocRequest.md)
+- [UpdateBankRequest](docs/Model/UpdateBankRequest.md)
+- [UpdateConnectorMethodRequest](docs/Model/UpdateConnectorMethodRequest.md)
+- [UpdateConsentAccountAccessByConsentIdRequest](docs/Model/UpdateConsentAccountAccessByConsentIdRequest.md)
+- [UpdateConsentAccountAccessByConsentIdRequestAccess](docs/Model/UpdateConsentAccountAccessByConsentIdRequestAccess.md)
+- [UpdateConsumerCertificateRequest](docs/Model/UpdateConsumerCertificateRequest.md)
+- [UpdateConsumerLogoURLRequest](docs/Model/UpdateConsumerLogoURLRequest.md)
+- [UpdateConsumerName200Response](docs/Model/UpdateConsumerName200Response.md)
+- [UpdateConsumerName200ResponseCertificateInfo](docs/Model/UpdateConsumerName200ResponseCertificateInfo.md)
+- [UpdateConsumerName200ResponseCreatedByUser](docs/Model/UpdateConsumerName200ResponseCreatedByUser.md)
+- [UpdateConsumerNameRequest](docs/Model/UpdateConsumerNameRequest.md)
+- [UpdateConsumerRedirectURL200Response](docs/Model/UpdateConsumerRedirectURL200Response.md)
+- [UpdateConsumerRedirectURLRequest](docs/Model/UpdateConsumerRedirectURLRequest.md)
+- [UpdateCounterpartyCorporateLocationRequest](docs/Model/UpdateCounterpartyCorporateLocationRequest.md)
+- [UpdateCounterpartyImageUrlRequest](docs/Model/UpdateCounterpartyImageUrlRequest.md)
+- [UpdateCounterpartyMoreInfoRequest](docs/Model/UpdateCounterpartyMoreInfoRequest.md)
+- [UpdateCounterpartyOpenCorporatesUrlRequest](docs/Model/UpdateCounterpartyOpenCorporatesUrlRequest.md)
+- [UpdateCounterpartyPhysicalLocationRequest](docs/Model/UpdateCounterpartyPhysicalLocationRequest.md)
+- [UpdateCounterpartyUrlRequest](docs/Model/UpdateCounterpartyUrlRequest.md)
+- [UpdateCustomViewRequest](docs/Model/UpdateCustomViewRequest.md)
+- [UpdateCustomerAccountLinkByIdRequest](docs/Model/UpdateCustomerAccountLinkByIdRequest.md)
+- [UpdateCustomerBranch200Response](docs/Model/UpdateCustomerBranch200Response.md)
+- [UpdateCustomerBranchRequest](docs/Model/UpdateCustomerBranchRequest.md)
+- [UpdateCustomerCreditLimitRequest](docs/Model/UpdateCustomerCreditLimitRequest.md)
+- [UpdateCustomerCreditRatingAndSourceRequest](docs/Model/UpdateCustomerCreditRatingAndSourceRequest.md)
+- [UpdateCustomerDataRequest](docs/Model/UpdateCustomerDataRequest.md)
+- [UpdateCustomerEmailRequest](docs/Model/UpdateCustomerEmailRequest.md)
+- [UpdateCustomerIdentityRequest](docs/Model/UpdateCustomerIdentityRequest.md)
+- [UpdateDynamicMessageDocRequest](docs/Model/UpdateDynamicMessageDocRequest.md)
+- [UpdateFeaturedApiCollectionRequest](docs/Model/UpdateFeaturedApiCollectionRequest.md)
+- [UpdateGroupRequest](docs/Model/UpdateGroupRequest.md)
+- [UpdateMandateProvisionRequest](docs/Model/UpdateMandateProvisionRequest.md)
+- [UpdateMandateRequest](docs/Model/UpdateMandateRequest.md)
+- [UpdateProductFeeRequest](docs/Model/UpdateProductFeeRequest.md)
+- [UpdateRateLimitsRequest](docs/Model/UpdateRateLimitsRequest.md)
+- [UpdateSignatoryPanelRequest](docs/Model/UpdateSignatoryPanelRequest.md)
+- [UpdateSystemDynamicEntity200Response](docs/Model/UpdateSystemDynamicEntity200Response.md)
+- [UpdateSystemDynamicEntityRequest](docs/Model/UpdateSystemDynamicEntityRequest.md)
+- [UpdateSystemDynamicEntityRequestSchema](docs/Model/UpdateSystemDynamicEntityRequestSchema.md)
+- [UpdateSystemDynamicEntityRequestSchemaProperties](docs/Model/UpdateSystemDynamicEntityRequestSchemaProperties.md)
+- [UpdateSystemDynamicEntityRequestSchemaPropertiesNotificationsEnabled](docs/Model/UpdateSystemDynamicEntityRequestSchemaPropertiesNotificationsEnabled.md)
+- [UpdateSystemDynamicEntityRequestSchemaPropertiesTheme](docs/Model/UpdateSystemDynamicEntityRequestSchemaPropertiesTheme.md)
+- [UpdateSystemLevelEndpointTag200Response](docs/Model/UpdateSystemLevelEndpointTag200Response.md)
+- [UpdateSystemLevelEndpointTagRequest](docs/Model/UpdateSystemLevelEndpointTagRequest.md)
+- [UpdateSystemViewRequest](docs/Model/UpdateSystemViewRequest.md)
+- [UpdateTransactionNarrative200Response](docs/Model/UpdateTransactionNarrative200Response.md)
+- [UpdateTransactionRequestStatusRequest](docs/Model/UpdateTransactionRequestStatusRequest.md)
+- [UpdateViewForBankAccountRequest](docs/Model/UpdateViewForBankAccountRequest.md)
+- [UpdateWhereTagForViewOnTransactionRequest](docs/Model/UpdateWhereTagForViewOnTransactionRequest.md)
+- [UpdatedCardForBankRequest](docs/Model/UpdatedCardForBankRequest.md)
+- [ValidateAbacRule200Response](docs/Model/ValidateAbacRule200Response.md)
+- [ValidateAbacRuleRequest](docs/Model/ValidateAbacRuleRequest.md)
+- [ValidateUserByUserId200Response](docs/Model/ValidateUserByUserId200Response.md)
+- [ValidateUserEmail200Response](docs/Model/ValidateUserEmail200Response.md)
+- [ValidateUserEmailRequest](docs/Model/ValidateUserEmailRequest.md)
+- [VerifyOidcClient200Response](docs/Model/VerifyOidcClient200Response.md)
+- [VerifyOidcClientRequest](docs/Model/VerifyOidcClientRequest.md)
+- [VerifyUserCredentials200Response](docs/Model/VerifyUserCredentials200Response.md)
+- [VerifyUserCredentialsRequest](docs/Model/VerifyUserCredentialsRequest.md)
+- [WaitingForGodot200Response](docs/Model/WaitingForGodot200Response.md)
 
 ## Authorization
 
@@ -3021,7 +2149,7 @@ Authentication schemes defined for the API:
 ### DirectLogin
 
 - **Type**: API key
-- **API key parameter name**: Authorization
+- **API key parameter name**: DirectLogin
 - **Location**: HTTP header
 
 
@@ -3036,7 +2164,7 @@ Authentication schemes defined for the API:
 
 - **Type**: `OAuth`
 - **Flow**: `accessCode`
-- **Authorization URL**: `/oauth/authorize`
+- **Authorization URL**: `http://127.0.0.1:8080/oauth/authorize`
 - **Scopes**: N/A
 
 ## Tests

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,68 +15,68 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems,
-  OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest,
-  OBPv400GetTransactionAttributes200Response,
-  OBPv400GetTransactionRequestAttributeDefinition200Response,
-  OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems,
-  OBPv600CreatePersonalDataFieldRequest,
+  CreateOrUpdateTransactionRequestAttributeDefinitionRequest,
+  CreatePersonalDataFieldRequest,
+  GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner,
+  GetTransactionAttributes200Response,
+  GetTransactionRequestAttributeDefinition200Response,
+  GetTransactionRequestAttributeDefinition200ResponseAttributesInner,
 } from '../models/index';
 import {
-    OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItemsFromJSON,
-    OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItemsToJSON,
-    OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestFromJSON,
-    OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestToJSON,
-    OBPv400GetTransactionAttributes200ResponseFromJSON,
-    OBPv400GetTransactionAttributes200ResponseToJSON,
-    OBPv400GetTransactionRequestAttributeDefinition200ResponseFromJSON,
-    OBPv400GetTransactionRequestAttributeDefinition200ResponseToJSON,
-    OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItemsFromJSON,
-    OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItemsToJSON,
-    OBPv600CreatePersonalDataFieldRequestFromJSON,
-    OBPv600CreatePersonalDataFieldRequestToJSON,
+    CreateOrUpdateTransactionRequestAttributeDefinitionRequestFromJSON,
+    CreateOrUpdateTransactionRequestAttributeDefinitionRequestToJSON,
+    CreatePersonalDataFieldRequestFromJSON,
+    CreatePersonalDataFieldRequestToJSON,
+    GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInnerFromJSON,
+    GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInnerToJSON,
+    GetTransactionAttributes200ResponseFromJSON,
+    GetTransactionAttributes200ResponseToJSON,
+    GetTransactionRequestAttributeDefinition200ResponseFromJSON,
+    GetTransactionRequestAttributeDefinition200ResponseToJSON,
+    GetTransactionRequestAttributeDefinition200ResponseAttributesInnerFromJSON,
+    GetTransactionRequestAttributeDefinition200ResponseAttributesInnerToJSON,
 } from '../models/index';
 
-export interface OBPv400CreateOrUpdateTransactionAttributeDefinitionRequest {
+export interface CreateOrUpdateTransactionAttributeDefinitionRequest {
     bankid: string;
-    oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest;
+    createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest;
 }
 
-export interface OBPv400CreateTransactionAttributeRequest {
+export interface CreateTransactionAttributeRequest {
     bankid: string;
     accountid: string;
     transactionid: string;
-    oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest;
+    createPersonalDataFieldRequest: CreatePersonalDataFieldRequest;
 }
 
-export interface OBPv400DeleteTransactionAttributeDefinitionRequest {
+export interface DeleteTransactionAttributeDefinitionRequest {
     bankid: string;
     attributedefinitionid: string;
 }
 
-export interface OBPv400GetTransactionAttributeByIdRequest {
+export interface GetTransactionAttributeByIdRequest {
     bankid: string;
     accountid: string;
     transactionid: string;
     attributeid: string;
 }
 
-export interface OBPv400GetTransactionAttributeDefinitionRequest {
+export interface GetTransactionAttributeDefinitionRequest {
     bankid: string;
 }
 
-export interface OBPv400GetTransactionAttributesRequest {
+export interface GetTransactionAttributesRequest {
     bankid: string;
     accountid: string;
     transactionid: string;
 }
 
-export interface OBPv400UpdateTransactionAttributeRequest {
+export interface UpdateTransactionAttributeRequest {
     bankid: string;
     accountid: string;
     transactionid: string;
     accountattributeid: string;
-    oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest;
+    createPersonalDataFieldRequest: CreatePersonalDataFieldRequest;
 }
 
 /**
@@ -85,20 +85,20 @@ export interface OBPv400UpdateTransactionAttributeRequest {
 export class TransactionAttributeApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv400CreateOrUpdateTransactionAttributeDefinition without sending the request
+     * Creates request options for createOrUpdateTransactionAttributeDefinition without sending the request
      */
-    async oBPv400CreateOrUpdateTransactionAttributeDefinitionRequestOpts(requestParameters: OBPv400CreateOrUpdateTransactionAttributeDefinitionRequest): Promise<runtime.RequestOpts> {
+    async createOrUpdateTransactionAttributeDefinitionRequestOpts(requestParameters: CreateOrUpdateTransactionAttributeDefinitionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400CreateOrUpdateTransactionAttributeDefinition().'
+                'Required parameter "bankid" was null or undefined when calling createOrUpdateTransactionAttributeDefinition().'
             );
         }
 
-        if (requestParameters['oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest'] == null) {
+        if (requestParameters['createOrUpdateTransactionRequestAttributeDefinitionRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest',
-                'Required parameter "oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest" was null or undefined when calling oBPv400CreateOrUpdateTransactionAttributeDefinition().'
+                'createOrUpdateTransactionRequestAttributeDefinitionRequest',
+                'Required parameter "createOrUpdateTransactionRequestAttributeDefinitionRequest" was null or undefined when calling createOrUpdateTransactionAttributeDefinition().'
             );
         }
 
@@ -118,7 +118,7 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -130,7 +130,7 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestToJSON(requestParameters['oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest']),
+            body: CreateOrUpdateTransactionRequestAttributeDefinitionRequestToJSON(requestParameters['createOrUpdateTransactionRequestAttributeDefinitionRequest']),
         };
     }
 
@@ -138,51 +138,51 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
      * <p>Create or Update Transaction Attribute Definition</p> <p>The category field must be Transaction</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
      * Create or Update Transaction Attribute Definition
      */
-    async oBPv400CreateOrUpdateTransactionAttributeDefinitionRaw(requestParameters: OBPv400CreateOrUpdateTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>> {
-        const requestOptions = await this.oBPv400CreateOrUpdateTransactionAttributeDefinitionRequestOpts(requestParameters);
+    async createOrUpdateTransactionAttributeDefinitionRaw(requestParameters: CreateOrUpdateTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>> {
+        const requestOptions = await this.createOrUpdateTransactionAttributeDefinitionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetTransactionRequestAttributeDefinition200ResponseAttributesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create or Update Transaction Attribute Definition</p> <p>The category field must be Transaction</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
      * Create or Update Transaction Attribute Definition
      */
-    async oBPv400CreateOrUpdateTransactionAttributeDefinition(requestParameters: OBPv400CreateOrUpdateTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> {
-        const response = await this.oBPv400CreateOrUpdateTransactionAttributeDefinitionRaw(requestParameters, initOverrides);
+    async createOrUpdateTransactionAttributeDefinition(requestParameters: CreateOrUpdateTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> {
+        const response = await this.createOrUpdateTransactionAttributeDefinitionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400CreateTransactionAttribute without sending the request
+     * Creates request options for createTransactionAttribute without sending the request
      */
-    async oBPv400CreateTransactionAttributeRequestOpts(requestParameters: OBPv400CreateTransactionAttributeRequest): Promise<runtime.RequestOpts> {
+    async createTransactionAttributeRequestOpts(requestParameters: CreateTransactionAttributeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400CreateTransactionAttribute().'
+                'Required parameter "bankid" was null or undefined when calling createTransactionAttribute().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400CreateTransactionAttribute().'
+                'Required parameter "accountid" was null or undefined when calling createTransactionAttribute().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv400CreateTransactionAttribute().'
+                'Required parameter "transactionid" was null or undefined when calling createTransactionAttribute().'
             );
         }
 
-        if (requestParameters['oBPv600CreatePersonalDataFieldRequest'] == null) {
+        if (requestParameters['createPersonalDataFieldRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600CreatePersonalDataFieldRequest',
-                'Required parameter "oBPv600CreatePersonalDataFieldRequest" was null or undefined when calling oBPv400CreateTransactionAttribute().'
+                'createPersonalDataFieldRequest',
+                'Required parameter "createPersonalDataFieldRequest" was null or undefined when calling createTransactionAttribute().'
             );
         }
 
@@ -202,7 +202,7 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -216,7 +216,7 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600CreatePersonalDataFieldRequestToJSON(requestParameters['oBPv600CreatePersonalDataFieldRequest']),
+            body: CreatePersonalDataFieldRequestToJSON(requestParameters['createPersonalDataFieldRequest']),
         };
     }
 
@@ -224,37 +224,37 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
      * <p>Create Transaction Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Create Transaction Attribute
      */
-    async oBPv400CreateTransactionAttributeRaw(requestParameters: OBPv400CreateTransactionAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>> {
-        const requestOptions = await this.oBPv400CreateTransactionAttributeRequestOpts(requestParameters);
+    async createTransactionAttributeRaw(requestParameters: CreateTransactionAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>> {
+        const requestOptions = await this.createTransactionAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create Transaction Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Create Transaction Attribute
      */
-    async oBPv400CreateTransactionAttribute(requestParameters: OBPv400CreateTransactionAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> {
-        const response = await this.oBPv400CreateTransactionAttributeRaw(requestParameters, initOverrides);
+    async createTransactionAttribute(requestParameters: CreateTransactionAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> {
+        const response = await this.createTransactionAttributeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400DeleteTransactionAttributeDefinition without sending the request
+     * Creates request options for deleteTransactionAttributeDefinition without sending the request
      */
-    async oBPv400DeleteTransactionAttributeDefinitionRequestOpts(requestParameters: OBPv400DeleteTransactionAttributeDefinitionRequest): Promise<runtime.RequestOpts> {
+    async deleteTransactionAttributeDefinitionRequestOpts(requestParameters: DeleteTransactionAttributeDefinitionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400DeleteTransactionAttributeDefinition().'
+                'Required parameter "bankid" was null or undefined when calling deleteTransactionAttributeDefinition().'
             );
         }
 
         if (requestParameters['attributedefinitionid'] == null) {
             throw new runtime.RequiredError(
                 'attributedefinitionid',
-                'Required parameter "attributedefinitionid" was null or undefined when calling oBPv400DeleteTransactionAttributeDefinition().'
+                'Required parameter "attributedefinitionid" was null or undefined when calling deleteTransactionAttributeDefinition().'
             );
         }
 
@@ -272,7 +272,7 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -292,8 +292,8 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
      * <p>Delete Transaction Attribute Definition by ATTRIBUTE_DEFINITION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#attribute_definition_id\">ATTRIBUTE_DEFINITION_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Transaction Attribute Definition
      */
-    async oBPv400DeleteTransactionAttributeDefinitionRaw(requestParameters: OBPv400DeleteTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteTransactionAttributeDefinitionRequestOpts(requestParameters);
+    async deleteTransactionAttributeDefinitionRaw(requestParameters: DeleteTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteTransactionAttributeDefinitionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -303,39 +303,39 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
      * <p>Delete Transaction Attribute Definition by ATTRIBUTE_DEFINITION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#attribute_definition_id\">ATTRIBUTE_DEFINITION_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Transaction Attribute Definition
      */
-    async oBPv400DeleteTransactionAttributeDefinition(requestParameters: OBPv400DeleteTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteTransactionAttributeDefinitionRaw(requestParameters, initOverrides);
+    async deleteTransactionAttributeDefinition(requestParameters: DeleteTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteTransactionAttributeDefinitionRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv400GetTransactionAttributeById without sending the request
+     * Creates request options for getTransactionAttributeById without sending the request
      */
-    async oBPv400GetTransactionAttributeByIdRequestOpts(requestParameters: OBPv400GetTransactionAttributeByIdRequest): Promise<runtime.RequestOpts> {
+    async getTransactionAttributeByIdRequestOpts(requestParameters: GetTransactionAttributeByIdRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetTransactionAttributeById().'
+                'Required parameter "bankid" was null or undefined when calling getTransactionAttributeById().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400GetTransactionAttributeById().'
+                'Required parameter "accountid" was null or undefined when calling getTransactionAttributeById().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv400GetTransactionAttributeById().'
+                'Required parameter "transactionid" was null or undefined when calling getTransactionAttributeById().'
             );
         }
 
         if (requestParameters['attributeid'] == null) {
             throw new runtime.RequiredError(
                 'attributeid',
-                'Required parameter "attributeid" was null or undefined when calling oBPv400GetTransactionAttributeById().'
+                'Required parameter "attributeid" was null or undefined when calling getTransactionAttributeById().'
             );
         }
 
@@ -353,7 +353,7 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -375,30 +375,30 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
      * <p>Get Transaction Attribute By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get Transaction Attribute By Id
      */
-    async oBPv400GetTransactionAttributeByIdRaw(requestParameters: OBPv400GetTransactionAttributeByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>> {
-        const requestOptions = await this.oBPv400GetTransactionAttributeByIdRequestOpts(requestParameters);
+    async getTransactionAttributeByIdRaw(requestParameters: GetTransactionAttributeByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>> {
+        const requestOptions = await this.getTransactionAttributeByIdRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Transaction Attribute By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get Transaction Attribute By Id
      */
-    async oBPv400GetTransactionAttributeById(requestParameters: OBPv400GetTransactionAttributeByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> {
-        const response = await this.oBPv400GetTransactionAttributeByIdRaw(requestParameters, initOverrides);
+    async getTransactionAttributeById(requestParameters: GetTransactionAttributeByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> {
+        const response = await this.getTransactionAttributeByIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetTransactionAttributeDefinition without sending the request
+     * Creates request options for getTransactionAttributeDefinition without sending the request
      */
-    async oBPv400GetTransactionAttributeDefinitionRequestOpts(requestParameters: OBPv400GetTransactionAttributeDefinitionRequest): Promise<runtime.RequestOpts> {
+    async getTransactionAttributeDefinitionRequestOpts(requestParameters: GetTransactionAttributeDefinitionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetTransactionAttributeDefinition().'
+                'Required parameter "bankid" was null or undefined when calling getTransactionAttributeDefinition().'
             );
         }
 
@@ -416,7 +416,7 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -435,44 +435,44 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
      * <p>Get Transaction Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
      * Get Transaction Attribute Definition
      */
-    async oBPv400GetTransactionAttributeDefinitionRaw(requestParameters: OBPv400GetTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response>> {
-        const requestOptions = await this.oBPv400GetTransactionAttributeDefinitionRequestOpts(requestParameters);
+    async getTransactionAttributeDefinitionRaw(requestParameters: GetTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetTransactionRequestAttributeDefinition200Response>> {
+        const requestOptions = await this.getTransactionAttributeDefinitionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetTransactionRequestAttributeDefinition200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetTransactionRequestAttributeDefinition200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Transaction Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
      * Get Transaction Attribute Definition
      */
-    async oBPv400GetTransactionAttributeDefinition(requestParameters: OBPv400GetTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetTransactionRequestAttributeDefinition200Response> {
-        const response = await this.oBPv400GetTransactionAttributeDefinitionRaw(requestParameters, initOverrides);
+    async getTransactionAttributeDefinition(requestParameters: GetTransactionAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetTransactionRequestAttributeDefinition200Response> {
+        const response = await this.getTransactionAttributeDefinitionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetTransactionAttributes without sending the request
+     * Creates request options for getTransactionAttributes without sending the request
      */
-    async oBPv400GetTransactionAttributesRequestOpts(requestParameters: OBPv400GetTransactionAttributesRequest): Promise<runtime.RequestOpts> {
+    async getTransactionAttributesRequestOpts(requestParameters: GetTransactionAttributesRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetTransactionAttributes().'
+                'Required parameter "bankid" was null or undefined when calling getTransactionAttributes().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400GetTransactionAttributes().'
+                'Required parameter "accountid" was null or undefined when calling getTransactionAttributes().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv400GetTransactionAttributes().'
+                'Required parameter "transactionid" was null or undefined when calling getTransactionAttributes().'
             );
         }
 
@@ -490,7 +490,7 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -511,58 +511,58 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
      * <p>Get Transaction Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get Transaction Attributes
      */
-    async oBPv400GetTransactionAttributesRaw(requestParameters: OBPv400GetTransactionAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetTransactionAttributes200Response>> {
-        const requestOptions = await this.oBPv400GetTransactionAttributesRequestOpts(requestParameters);
+    async getTransactionAttributesRaw(requestParameters: GetTransactionAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetTransactionAttributes200Response>> {
+        const requestOptions = await this.getTransactionAttributesRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetTransactionAttributes200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetTransactionAttributes200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Transaction Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get Transaction Attributes
      */
-    async oBPv400GetTransactionAttributes(requestParameters: OBPv400GetTransactionAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetTransactionAttributes200Response> {
-        const response = await this.oBPv400GetTransactionAttributesRaw(requestParameters, initOverrides);
+    async getTransactionAttributes(requestParameters: GetTransactionAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetTransactionAttributes200Response> {
+        const response = await this.getTransactionAttributesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400UpdateTransactionAttribute without sending the request
+     * Creates request options for updateTransactionAttribute without sending the request
      */
-    async oBPv400UpdateTransactionAttributeRequestOpts(requestParameters: OBPv400UpdateTransactionAttributeRequest): Promise<runtime.RequestOpts> {
+    async updateTransactionAttributeRequestOpts(requestParameters: UpdateTransactionAttributeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400UpdateTransactionAttribute().'
+                'Required parameter "bankid" was null or undefined when calling updateTransactionAttribute().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400UpdateTransactionAttribute().'
+                'Required parameter "accountid" was null or undefined when calling updateTransactionAttribute().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv400UpdateTransactionAttribute().'
+                'Required parameter "transactionid" was null or undefined when calling updateTransactionAttribute().'
             );
         }
 
         if (requestParameters['accountattributeid'] == null) {
             throw new runtime.RequiredError(
                 'accountattributeid',
-                'Required parameter "accountattributeid" was null or undefined when calling oBPv400UpdateTransactionAttribute().'
+                'Required parameter "accountattributeid" was null or undefined when calling updateTransactionAttribute().'
             );
         }
 
-        if (requestParameters['oBPv600CreatePersonalDataFieldRequest'] == null) {
+        if (requestParameters['createPersonalDataFieldRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600CreatePersonalDataFieldRequest',
-                'Required parameter "oBPv600CreatePersonalDataFieldRequest" was null or undefined when calling oBPv400UpdateTransactionAttribute().'
+                'createPersonalDataFieldRequest',
+                'Required parameter "createPersonalDataFieldRequest" was null or undefined when calling updateTransactionAttribute().'
             );
         }
 
@@ -582,7 +582,7 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -597,7 +597,7 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600CreatePersonalDataFieldRequestToJSON(requestParameters['oBPv600CreatePersonalDataFieldRequest']),
+            body: CreatePersonalDataFieldRequestToJSON(requestParameters['createPersonalDataFieldRequest']),
         };
     }
 
@@ -605,19 +605,19 @@ export class TransactionAttributeApi extends runtime.BaseAPI {
      * <p>Update Transaction Attribute</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#account_attribute_id\">ACCOUNT_ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Update Transaction Attribute
      */
-    async oBPv400UpdateTransactionAttributeRaw(requestParameters: OBPv400UpdateTransactionAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>> {
-        const requestOptions = await this.oBPv400UpdateTransactionAttributeRequestOpts(requestParameters);
+    async updateTransactionAttributeRaw(requestParameters: UpdateTransactionAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>> {
+        const requestOptions = await this.updateTransactionAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Update Transaction Attribute</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#account_attribute_id\">ACCOUNT_ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Update Transaction Attribute
      */
-    async oBPv400UpdateTransactionAttribute(requestParameters: OBPv400UpdateTransactionAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> {
-        const response = await this.oBPv400UpdateTransactionAttributeRaw(requestParameters, initOverrides);
+    async updateTransactionAttribute(requestParameters: UpdateTransactionAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> {
+        const response = await this.updateTransactionAttributeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

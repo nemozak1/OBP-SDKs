@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -46,10 +46,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationid">The OPERATIONID identifier</param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest">Request body</param>
+        /// <param name="updateAuthenticationTypeValidationRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateAuthenticationTypeValidationApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateAuthenticationTypeValidationApiResponse> OBPv400CreateAuthenticationTypeValidationAsync(string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAuthenticationTypeValidationApiResponse"/>&gt;</returns>
+        Task<ICreateAuthenticationTypeValidationApiResponse> CreateAuthenticationTypeValidationAsync(string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create an Authentication Type Validation
@@ -58,10 +58,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </remarks>
         /// <param name="operationid">The OPERATIONID identifier</param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest">Request body</param>
+        /// <param name="updateAuthenticationTypeValidationRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateAuthenticationTypeValidationApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateAuthenticationTypeValidationApiResponse?> OBPv400CreateAuthenticationTypeValidationOrDefaultAsync(string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAuthenticationTypeValidationApiResponse"/>?&gt;</returns>
+        Task<ICreateAuthenticationTypeValidationApiResponse?> CreateAuthenticationTypeValidationOrDefaultAsync(string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete an Authentication Type Validation
@@ -72,8 +72,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteAuthenticationTypeValidationApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteAuthenticationTypeValidationApiResponse> OBPv400DeleteAuthenticationTypeValidationAsync(string operationid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteAuthenticationTypeValidationApiResponse"/>&gt;</returns>
+        Task<IDeleteAuthenticationTypeValidationApiResponse> DeleteAuthenticationTypeValidationAsync(string operationid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete an Authentication Type Validation
@@ -83,8 +83,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteAuthenticationTypeValidationApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteAuthenticationTypeValidationApiResponse?> OBPv400DeleteAuthenticationTypeValidationOrDefaultAsync(string operationid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteAuthenticationTypeValidationApiResponse"/>?&gt;</returns>
+        Task<IDeleteAuthenticationTypeValidationApiResponse?> DeleteAuthenticationTypeValidationOrDefaultAsync(string operationid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all Authentication Type Validations
@@ -94,8 +94,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllAuthenticationTypeValidationsApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetAllAuthenticationTypeValidationsApiResponse> OBPv400GetAllAuthenticationTypeValidationsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllAuthenticationTypeValidationsApiResponse"/>&gt;</returns>
+        Task<IGetAllAuthenticationTypeValidationsApiResponse> GetAllAuthenticationTypeValidationsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all Authentication Type Validations
@@ -104,8 +104,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get all Authentication Type Validations.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllAuthenticationTypeValidationsApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetAllAuthenticationTypeValidationsApiResponse?> OBPv400GetAllAuthenticationTypeValidationsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllAuthenticationTypeValidationsApiResponse"/>?&gt;</returns>
+        Task<IGetAllAuthenticationTypeValidationsApiResponse?> GetAllAuthenticationTypeValidationsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all Authentication Type Validations - public
@@ -115,8 +115,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllAuthenticationTypeValidationsPublicApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetAllAuthenticationTypeValidationsPublicApiResponse> OBPv400GetAllAuthenticationTypeValidationsPublicAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllAuthenticationTypeValidationsPublicApiResponse"/>&gt;</returns>
+        Task<IGetAllAuthenticationTypeValidationsPublicApiResponse> GetAllAuthenticationTypeValidationsPublicAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all Authentication Type Validations - public
@@ -125,8 +125,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get all Authentication Type Validations - public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllAuthenticationTypeValidationsPublicApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetAllAuthenticationTypeValidationsPublicApiResponse?> OBPv400GetAllAuthenticationTypeValidationsPublicOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllAuthenticationTypeValidationsPublicApiResponse"/>?&gt;</returns>
+        Task<IGetAllAuthenticationTypeValidationsPublicApiResponse?> GetAllAuthenticationTypeValidationsPublicOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get an Authentication Type Validation
@@ -137,8 +137,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAuthenticationTypeValidationApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetAuthenticationTypeValidationApiResponse> OBPv400GetAuthenticationTypeValidationAsync(string operationid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAuthenticationTypeValidationApiResponse"/>&gt;</returns>
+        Task<IGetAuthenticationTypeValidationApiResponse> GetAuthenticationTypeValidationAsync(string operationid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get an Authentication Type Validation
@@ -148,8 +148,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAuthenticationTypeValidationApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetAuthenticationTypeValidationApiResponse?> OBPv400GetAuthenticationTypeValidationOrDefaultAsync(string operationid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAuthenticationTypeValidationApiResponse"/>?&gt;</returns>
+        Task<IGetAuthenticationTypeValidationApiResponse?> GetAuthenticationTypeValidationOrDefaultAsync(string operationid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update an Authentication Type Validation
@@ -159,10 +159,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationid">The OPERATIONID identifier</param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest">Request body</param>
+        /// <param name="updateAuthenticationTypeValidationRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateAuthenticationTypeValidationApiResponse"/>&gt;</returns>
-        Task<IOBPv400UpdateAuthenticationTypeValidationApiResponse> OBPv400UpdateAuthenticationTypeValidationAsync(string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateAuthenticationTypeValidationApiResponse"/>&gt;</returns>
+        Task<IUpdateAuthenticationTypeValidationApiResponse> UpdateAuthenticationTypeValidationAsync(string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update an Authentication Type Validation
@@ -171,16 +171,16 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Update an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </remarks>
         /// <param name="operationid">The OPERATIONID identifier</param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest">Request body</param>
+        /// <param name="updateAuthenticationTypeValidationRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateAuthenticationTypeValidationApiResponse"/>?&gt;</returns>
-        Task<IOBPv400UpdateAuthenticationTypeValidationApiResponse?> OBPv400UpdateAuthenticationTypeValidationOrDefaultAsync(string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateAuthenticationTypeValidationApiResponse"/>?&gt;</returns>
+        Task<IUpdateAuthenticationTypeValidationApiResponse?> UpdateAuthenticationTypeValidationOrDefaultAsync(string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400CreateAuthenticationTypeValidationApiResponse"/>
+    /// The <see cref="ICreateAuthenticationTypeValidationApiResponse"/>
     /// </summary>
-    public interface IOBPv400CreateAuthenticationTypeValidationApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems?>
+    public interface ICreateAuthenticationTypeValidationApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -196,9 +196,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400DeleteAuthenticationTypeValidationApiResponse"/>
+    /// The <see cref="IDeleteAuthenticationTypeValidationApiResponse"/>
     /// </summary>
-    public interface IOBPv400DeleteAuthenticationTypeValidationApiResponse : OpenBankProject.Client.IApiResponse
+    public interface IDeleteAuthenticationTypeValidationApiResponse : OpenBankProject.Client.IApiResponse
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -214,9 +214,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetAllAuthenticationTypeValidationsApiResponse"/>
+    /// The <see cref="IGetAllAuthenticationTypeValidationsApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetAllAuthenticationTypeValidationsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200Response?>
+    public interface IGetAllAuthenticationTypeValidationsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -232,9 +232,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetAllAuthenticationTypeValidationsPublicApiResponse"/>
+    /// The <see cref="IGetAllAuthenticationTypeValidationsPublicApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetAllAuthenticationTypeValidationsPublicApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200Response?>
+    public interface IGetAllAuthenticationTypeValidationsPublicApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -250,9 +250,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetAuthenticationTypeValidationApiResponse"/>
+    /// The <see cref="IGetAuthenticationTypeValidationApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetAuthenticationTypeValidationApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems?>
+    public interface IGetAuthenticationTypeValidationApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -268,9 +268,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400UpdateAuthenticationTypeValidationApiResponse"/>
+    /// The <see cref="IUpdateAuthenticationTypeValidationApiResponse"/>
     /// </summary>
-    public interface IOBPv400UpdateAuthenticationTypeValidationApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems?>
+    public interface IUpdateAuthenticationTypeValidationApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -293,121 +293,121 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateAuthenticationTypeValidation;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateAuthenticationTypeValidation;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateAuthenticationTypeValidation;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateAuthenticationTypeValidation;
 
-        internal void ExecuteOnOBPv400CreateAuthenticationTypeValidation(AuthenticationTypeValidationApi.OBPv400CreateAuthenticationTypeValidationApiResponse apiResponse)
+        internal void ExecuteOnCreateAuthenticationTypeValidation(AuthenticationTypeValidationApi.CreateAuthenticationTypeValidationApiResponse apiResponse)
         {
-            OnOBPv400CreateAuthenticationTypeValidation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateAuthenticationTypeValidation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateAuthenticationTypeValidation(Exception exception)
+        internal void ExecuteOnErrorCreateAuthenticationTypeValidation(Exception exception)
         {
-            OnErrorOBPv400CreateAuthenticationTypeValidation?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateAuthenticationTypeValidation?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteAuthenticationTypeValidation;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteAuthenticationTypeValidation;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteAuthenticationTypeValidation;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteAuthenticationTypeValidation;
 
-        internal void ExecuteOnOBPv400DeleteAuthenticationTypeValidation(AuthenticationTypeValidationApi.OBPv400DeleteAuthenticationTypeValidationApiResponse apiResponse)
+        internal void ExecuteOnDeleteAuthenticationTypeValidation(AuthenticationTypeValidationApi.DeleteAuthenticationTypeValidationApiResponse apiResponse)
         {
-            OnOBPv400DeleteAuthenticationTypeValidation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteAuthenticationTypeValidation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteAuthenticationTypeValidation(Exception exception)
+        internal void ExecuteOnErrorDeleteAuthenticationTypeValidation(Exception exception)
         {
-            OnErrorOBPv400DeleteAuthenticationTypeValidation?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteAuthenticationTypeValidation?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetAllAuthenticationTypeValidations;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAllAuthenticationTypeValidations;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetAllAuthenticationTypeValidations;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAllAuthenticationTypeValidations;
 
-        internal void ExecuteOnOBPv400GetAllAuthenticationTypeValidations(AuthenticationTypeValidationApi.OBPv400GetAllAuthenticationTypeValidationsApiResponse apiResponse)
+        internal void ExecuteOnGetAllAuthenticationTypeValidations(AuthenticationTypeValidationApi.GetAllAuthenticationTypeValidationsApiResponse apiResponse)
         {
-            OnOBPv400GetAllAuthenticationTypeValidations?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAllAuthenticationTypeValidations?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetAllAuthenticationTypeValidations(Exception exception)
+        internal void ExecuteOnErrorGetAllAuthenticationTypeValidations(Exception exception)
         {
-            OnErrorOBPv400GetAllAuthenticationTypeValidations?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAllAuthenticationTypeValidations?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetAllAuthenticationTypeValidationsPublic;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAllAuthenticationTypeValidationsPublic;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetAllAuthenticationTypeValidationsPublic;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAllAuthenticationTypeValidationsPublic;
 
-        internal void ExecuteOnOBPv400GetAllAuthenticationTypeValidationsPublic(AuthenticationTypeValidationApi.OBPv400GetAllAuthenticationTypeValidationsPublicApiResponse apiResponse)
+        internal void ExecuteOnGetAllAuthenticationTypeValidationsPublic(AuthenticationTypeValidationApi.GetAllAuthenticationTypeValidationsPublicApiResponse apiResponse)
         {
-            OnOBPv400GetAllAuthenticationTypeValidationsPublic?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAllAuthenticationTypeValidationsPublic?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetAllAuthenticationTypeValidationsPublic(Exception exception)
+        internal void ExecuteOnErrorGetAllAuthenticationTypeValidationsPublic(Exception exception)
         {
-            OnErrorOBPv400GetAllAuthenticationTypeValidationsPublic?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAllAuthenticationTypeValidationsPublic?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetAuthenticationTypeValidation;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAuthenticationTypeValidation;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetAuthenticationTypeValidation;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAuthenticationTypeValidation;
 
-        internal void ExecuteOnOBPv400GetAuthenticationTypeValidation(AuthenticationTypeValidationApi.OBPv400GetAuthenticationTypeValidationApiResponse apiResponse)
+        internal void ExecuteOnGetAuthenticationTypeValidation(AuthenticationTypeValidationApi.GetAuthenticationTypeValidationApiResponse apiResponse)
         {
-            OnOBPv400GetAuthenticationTypeValidation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAuthenticationTypeValidation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetAuthenticationTypeValidation(Exception exception)
+        internal void ExecuteOnErrorGetAuthenticationTypeValidation(Exception exception)
         {
-            OnErrorOBPv400GetAuthenticationTypeValidation?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAuthenticationTypeValidation?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400UpdateAuthenticationTypeValidation;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateAuthenticationTypeValidation;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400UpdateAuthenticationTypeValidation;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateAuthenticationTypeValidation;
 
-        internal void ExecuteOnOBPv400UpdateAuthenticationTypeValidation(AuthenticationTypeValidationApi.OBPv400UpdateAuthenticationTypeValidationApiResponse apiResponse)
+        internal void ExecuteOnUpdateAuthenticationTypeValidation(AuthenticationTypeValidationApi.UpdateAuthenticationTypeValidationApiResponse apiResponse)
         {
-            OnOBPv400UpdateAuthenticationTypeValidation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateAuthenticationTypeValidation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400UpdateAuthenticationTypeValidation(Exception exception)
+        internal void ExecuteOnErrorUpdateAuthenticationTypeValidation(Exception exception)
         {
-            OnErrorOBPv400UpdateAuthenticationTypeValidation?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateAuthenticationTypeValidation?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -465,21 +465,21 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv400CreateAuthenticationTypeValidation(ref string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest);
+        partial void FormatCreateAuthenticationTypeValidation(ref string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest"></param>
+        /// <param name="updateAuthenticationTypeValidationRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateAuthenticationTypeValidation(string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest)
+        private void ValidateCreateAuthenticationTypeValidation(string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest)
         {
             if (operationid == null)
                 throw new ArgumentNullException(nameof(operationid));
 
-            if (oBPv400UpdateAuthenticationTypeValidationRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400UpdateAuthenticationTypeValidationRequest));
+            if (updateAuthenticationTypeValidationRequest == null)
+                throw new ArgumentNullException(nameof(updateAuthenticationTypeValidationRequest));
         }
 
         /// <summary>
@@ -487,11 +487,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest"></param>
-        private void AfterOBPv400CreateAuthenticationTypeValidationDefaultImplementation(IOBPv400CreateAuthenticationTypeValidationApiResponse apiResponseLocalVar, string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest)
+        /// <param name="updateAuthenticationTypeValidationRequest"></param>
+        private void AfterCreateAuthenticationTypeValidationDefaultImplementation(ICreateAuthenticationTypeValidationApiResponse apiResponseLocalVar, string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateAuthenticationTypeValidation(ref suppressDefaultLog, apiResponseLocalVar, operationid, oBPv400UpdateAuthenticationTypeValidationRequest);
+            AfterCreateAuthenticationTypeValidation(ref suppressDefaultLog, apiResponseLocalVar, operationid, updateAuthenticationTypeValidationRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -502,8 +502,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest"></param>
-        partial void AfterOBPv400CreateAuthenticationTypeValidation(ref bool suppressDefaultLog, IOBPv400CreateAuthenticationTypeValidationApiResponse apiResponseLocalVar, string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest);
+        /// <param name="updateAuthenticationTypeValidationRequest"></param>
+        partial void AfterCreateAuthenticationTypeValidation(ref bool suppressDefaultLog, ICreateAuthenticationTypeValidationApiResponse apiResponseLocalVar, string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -512,11 +512,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest"></param>
-        private void OnErrorOBPv400CreateAuthenticationTypeValidationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest)
+        /// <param name="updateAuthenticationTypeValidationRequest"></param>
+        private void OnErrorCreateAuthenticationTypeValidationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateAuthenticationTypeValidation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, operationid, oBPv400UpdateAuthenticationTypeValidationRequest);
+            OnErrorCreateAuthenticationTypeValidation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, operationid, updateAuthenticationTypeValidationRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -529,21 +529,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest"></param>
-        partial void OnErrorOBPv400CreateAuthenticationTypeValidation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest);
+        /// <param name="updateAuthenticationTypeValidationRequest"></param>
+        partial void OnErrorCreateAuthenticationTypeValidation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest);
 
         /// <summary>
         /// Create an Authentication Type Validation &lt;p&gt;Create an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="operationid">The OPERATIONID identifier</param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest">Request body</param>
+        /// <param name="updateAuthenticationTypeValidationRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateAuthenticationTypeValidationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateAuthenticationTypeValidationApiResponse?> OBPv400CreateAuthenticationTypeValidationOrDefaultAsync(string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAuthenticationTypeValidationApiResponse"/>&gt;</returns>
+        public async Task<ICreateAuthenticationTypeValidationApiResponse?> CreateAuthenticationTypeValidationOrDefaultAsync(string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateAuthenticationTypeValidationAsync(operationid, oBPv400UpdateAuthenticationTypeValidationRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateAuthenticationTypeValidationAsync(operationid, updateAuthenticationTypeValidationRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -556,18 +556,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationid">The OPERATIONID identifier</param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest">Request body</param>
+        /// <param name="updateAuthenticationTypeValidationRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateAuthenticationTypeValidationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateAuthenticationTypeValidationApiResponse> OBPv400CreateAuthenticationTypeValidationAsync(string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAuthenticationTypeValidationApiResponse"/>&gt;</returns>
+        public async Task<ICreateAuthenticationTypeValidationApiResponse> CreateAuthenticationTypeValidationAsync(string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateAuthenticationTypeValidation(operationid, oBPv400UpdateAuthenticationTypeValidationRequest);
+                ValidateCreateAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest);
 
-                FormatOBPv400CreateAuthenticationTypeValidation(ref operationid, oBPv400UpdateAuthenticationTypeValidationRequest);
+                FormatCreateAuthenticationTypeValidation(ref operationid, updateAuthenticationTypeValidationRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -579,16 +579,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/authentication-type-validations/{operationid}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Boperationid%7D", Uri.EscapeDataString(operationid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400UpdateAuthenticationTypeValidationRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateAuthenticationTypeValidationRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400UpdateAuthenticationTypeValidationRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateAuthenticationTypeValidationRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -624,8 +624,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400CreateAuthenticationTypeValidationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400CreateAuthenticationTypeValidationApiResponse>();
-                        OBPv400CreateAuthenticationTypeValidationApiResponse apiResponseLocalVar;
+                        ILogger<CreateAuthenticationTypeValidationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateAuthenticationTypeValidationApiResponse>();
+                        CreateAuthenticationTypeValidationApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -636,9 +636,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateAuthenticationTypeValidationDefaultImplementation(apiResponseLocalVar, operationid, oBPv400UpdateAuthenticationTypeValidationRequest);
+                        AfterCreateAuthenticationTypeValidationDefaultImplementation(apiResponseLocalVar, operationid, updateAuthenticationTypeValidationRequest);
 
-                        Events.ExecuteOnOBPv400CreateAuthenticationTypeValidation(apiResponseLocalVar);
+                        Events.ExecuteOnCreateAuthenticationTypeValidation(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -650,24 +650,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateAuthenticationTypeValidationDefaultImplementation(e, "/obp/v4.0.0/management/authentication-type-validations/{operationid}", uriBuilderLocalVar.Path, operationid, oBPv400UpdateAuthenticationTypeValidationRequest);
-                Events.ExecuteOnErrorOBPv400CreateAuthenticationTypeValidation(e);
+                OnErrorCreateAuthenticationTypeValidationDefaultImplementation(e, "/obp/v4.0.0/management/authentication-type-validations/{operationid}", uriBuilderLocalVar.Path, operationid, updateAuthenticationTypeValidationRequest);
+                Events.ExecuteOnErrorCreateAuthenticationTypeValidation(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400CreateAuthenticationTypeValidationApiResponse"/>
+        /// The <see cref="CreateAuthenticationTypeValidationApiResponse"/>
         /// </summary>
-        public partial class OBPv400CreateAuthenticationTypeValidationApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400CreateAuthenticationTypeValidationApiResponse
+        public partial class CreateAuthenticationTypeValidationApiResponse : OpenBankProject.Client.ApiResponse, ICreateAuthenticationTypeValidationApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400CreateAuthenticationTypeValidationApiResponse> Logger { get; }
+            public ILogger<CreateAuthenticationTypeValidationApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateAuthenticationTypeValidationApiResponse"/>
+            /// The <see cref="CreateAuthenticationTypeValidationApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -676,14 +676,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateAuthenticationTypeValidationApiResponse(ILogger<OBPv400CreateAuthenticationTypeValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateAuthenticationTypeValidationApiResponse(ILogger<CreateAuthenticationTypeValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateAuthenticationTypeValidationApiResponse"/>
+            /// The <see cref="CreateAuthenticationTypeValidationApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -692,7 +692,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateAuthenticationTypeValidationApiResponse(ILogger<OBPv400CreateAuthenticationTypeValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateAuthenticationTypeValidationApiResponse(ILogger<CreateAuthenticationTypeValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -710,11 +710,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems? Ok()
+            public OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -723,7 +723,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner? result)
             {
                 result = null;
 
@@ -755,14 +755,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400DeleteAuthenticationTypeValidation(ref string operationid);
+        partial void FormatDeleteAuthenticationTypeValidation(ref string operationid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="operationid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteAuthenticationTypeValidation(string operationid)
+        private void ValidateDeleteAuthenticationTypeValidation(string operationid)
         {
             if (operationid == null)
                 throw new ArgumentNullException(nameof(operationid));
@@ -773,10 +773,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="operationid"></param>
-        private void AfterOBPv400DeleteAuthenticationTypeValidationDefaultImplementation(IOBPv400DeleteAuthenticationTypeValidationApiResponse apiResponseLocalVar, string operationid)
+        private void AfterDeleteAuthenticationTypeValidationDefaultImplementation(IDeleteAuthenticationTypeValidationApiResponse apiResponseLocalVar, string operationid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteAuthenticationTypeValidation(ref suppressDefaultLog, apiResponseLocalVar, operationid);
+            AfterDeleteAuthenticationTypeValidation(ref suppressDefaultLog, apiResponseLocalVar, operationid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -787,7 +787,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="operationid"></param>
-        partial void AfterOBPv400DeleteAuthenticationTypeValidation(ref bool suppressDefaultLog, IOBPv400DeleteAuthenticationTypeValidationApiResponse apiResponseLocalVar, string operationid);
+        partial void AfterDeleteAuthenticationTypeValidation(ref bool suppressDefaultLog, IDeleteAuthenticationTypeValidationApiResponse apiResponseLocalVar, string operationid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -796,10 +796,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="operationid"></param>
-        private void OnErrorOBPv400DeleteAuthenticationTypeValidationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid)
+        private void OnErrorDeleteAuthenticationTypeValidationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteAuthenticationTypeValidation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, operationid);
+            OnErrorDeleteAuthenticationTypeValidation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, operationid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -812,19 +812,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="operationid"></param>
-        partial void OnErrorOBPv400DeleteAuthenticationTypeValidation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid);
+        partial void OnErrorDeleteAuthenticationTypeValidation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid);
 
         /// <summary>
         /// Delete an Authentication Type Validation &lt;p&gt;Delete an Authentication Type Validation by operation_id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteAuthenticationTypeValidationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteAuthenticationTypeValidationApiResponse?> OBPv400DeleteAuthenticationTypeValidationOrDefaultAsync(string operationid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteAuthenticationTypeValidationApiResponse"/>&gt;</returns>
+        public async Task<IDeleteAuthenticationTypeValidationApiResponse?> DeleteAuthenticationTypeValidationOrDefaultAsync(string operationid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteAuthenticationTypeValidationAsync(operationid, cancellationToken).ConfigureAwait(false);
+                return await DeleteAuthenticationTypeValidationAsync(operationid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -838,16 +838,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteAuthenticationTypeValidationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteAuthenticationTypeValidationApiResponse> OBPv400DeleteAuthenticationTypeValidationAsync(string operationid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteAuthenticationTypeValidationApiResponse"/>&gt;</returns>
+        public async Task<IDeleteAuthenticationTypeValidationApiResponse> DeleteAuthenticationTypeValidationAsync(string operationid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteAuthenticationTypeValidation(operationid);
+                ValidateDeleteAuthenticationTypeValidation(operationid);
 
-                FormatOBPv400DeleteAuthenticationTypeValidation(ref operationid);
+                FormatDeleteAuthenticationTypeValidation(ref operationid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -864,7 +864,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -882,8 +882,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400DeleteAuthenticationTypeValidationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400DeleteAuthenticationTypeValidationApiResponse>();
-                        OBPv400DeleteAuthenticationTypeValidationApiResponse apiResponseLocalVar;
+                        ILogger<DeleteAuthenticationTypeValidationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteAuthenticationTypeValidationApiResponse>();
+                        DeleteAuthenticationTypeValidationApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -894,9 +894,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteAuthenticationTypeValidationDefaultImplementation(apiResponseLocalVar, operationid);
+                        AfterDeleteAuthenticationTypeValidationDefaultImplementation(apiResponseLocalVar, operationid);
 
-                        Events.ExecuteOnOBPv400DeleteAuthenticationTypeValidation(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteAuthenticationTypeValidation(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -908,24 +908,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteAuthenticationTypeValidationDefaultImplementation(e, "/obp/v4.0.0/management/authentication-type-validations/{operationid}", uriBuilderLocalVar.Path, operationid);
-                Events.ExecuteOnErrorOBPv400DeleteAuthenticationTypeValidation(e);
+                OnErrorDeleteAuthenticationTypeValidationDefaultImplementation(e, "/obp/v4.0.0/management/authentication-type-validations/{operationid}", uriBuilderLocalVar.Path, operationid);
+                Events.ExecuteOnErrorDeleteAuthenticationTypeValidation(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400DeleteAuthenticationTypeValidationApiResponse"/>
+        /// The <see cref="DeleteAuthenticationTypeValidationApiResponse"/>
         /// </summary>
-        public partial class OBPv400DeleteAuthenticationTypeValidationApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400DeleteAuthenticationTypeValidationApiResponse
+        public partial class DeleteAuthenticationTypeValidationApiResponse : OpenBankProject.Client.ApiResponse, IDeleteAuthenticationTypeValidationApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400DeleteAuthenticationTypeValidationApiResponse> Logger { get; }
+            public ILogger<DeleteAuthenticationTypeValidationApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteAuthenticationTypeValidationApiResponse"/>
+            /// The <see cref="DeleteAuthenticationTypeValidationApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -934,14 +934,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteAuthenticationTypeValidationApiResponse(ILogger<OBPv400DeleteAuthenticationTypeValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DeleteAuthenticationTypeValidationApiResponse(ILogger<DeleteAuthenticationTypeValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteAuthenticationTypeValidationApiResponse"/>
+            /// The <see cref="DeleteAuthenticationTypeValidationApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -950,7 +950,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteAuthenticationTypeValidationApiResponse(ILogger<OBPv400DeleteAuthenticationTypeValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DeleteAuthenticationTypeValidationApiResponse(ILogger<DeleteAuthenticationTypeValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -985,10 +985,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv400GetAllAuthenticationTypeValidationsDefaultImplementation(IOBPv400GetAllAuthenticationTypeValidationsApiResponse apiResponseLocalVar)
+        private void AfterGetAllAuthenticationTypeValidationsDefaultImplementation(IGetAllAuthenticationTypeValidationsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetAllAuthenticationTypeValidations(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetAllAuthenticationTypeValidations(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -998,7 +998,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv400GetAllAuthenticationTypeValidations(ref bool suppressDefaultLog, IOBPv400GetAllAuthenticationTypeValidationsApiResponse apiResponseLocalVar);
+        partial void AfterGetAllAuthenticationTypeValidations(ref bool suppressDefaultLog, IGetAllAuthenticationTypeValidationsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1006,10 +1006,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv400GetAllAuthenticationTypeValidationsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetAllAuthenticationTypeValidationsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetAllAuthenticationTypeValidations(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetAllAuthenticationTypeValidations(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1021,18 +1021,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv400GetAllAuthenticationTypeValidations(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetAllAuthenticationTypeValidations(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get all Authentication Type Validations &lt;p&gt;Get all Authentication Type Validations.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllAuthenticationTypeValidationsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllAuthenticationTypeValidationsApiResponse?> OBPv400GetAllAuthenticationTypeValidationsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllAuthenticationTypeValidationsApiResponse"/>&gt;</returns>
+        public async Task<IGetAllAuthenticationTypeValidationsApiResponse?> GetAllAuthenticationTypeValidationsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetAllAuthenticationTypeValidationsAsync(cancellationToken).ConfigureAwait(false);
+                return await GetAllAuthenticationTypeValidationsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1045,8 +1045,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllAuthenticationTypeValidationsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllAuthenticationTypeValidationsApiResponse> OBPv400GetAllAuthenticationTypeValidationsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllAuthenticationTypeValidationsApiResponse"/>&gt;</returns>
+        public async Task<IGetAllAuthenticationTypeValidationsApiResponse> GetAllAuthenticationTypeValidationsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -1066,7 +1066,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1093,8 +1093,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetAllAuthenticationTypeValidationsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetAllAuthenticationTypeValidationsApiResponse>();
-                        OBPv400GetAllAuthenticationTypeValidationsApiResponse apiResponseLocalVar;
+                        ILogger<GetAllAuthenticationTypeValidationsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAllAuthenticationTypeValidationsApiResponse>();
+                        GetAllAuthenticationTypeValidationsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1105,9 +1105,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetAllAuthenticationTypeValidationsDefaultImplementation(apiResponseLocalVar);
+                        AfterGetAllAuthenticationTypeValidationsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv400GetAllAuthenticationTypeValidations(apiResponseLocalVar);
+                        Events.ExecuteOnGetAllAuthenticationTypeValidations(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1119,24 +1119,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetAllAuthenticationTypeValidationsDefaultImplementation(e, "/obp/v4.0.0/management/authentication-type-validations", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv400GetAllAuthenticationTypeValidations(e);
+                OnErrorGetAllAuthenticationTypeValidationsDefaultImplementation(e, "/obp/v4.0.0/management/authentication-type-validations", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetAllAuthenticationTypeValidations(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetAllAuthenticationTypeValidationsApiResponse"/>
+        /// The <see cref="GetAllAuthenticationTypeValidationsApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetAllAuthenticationTypeValidationsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetAllAuthenticationTypeValidationsApiResponse
+        public partial class GetAllAuthenticationTypeValidationsApiResponse : OpenBankProject.Client.ApiResponse, IGetAllAuthenticationTypeValidationsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetAllAuthenticationTypeValidationsApiResponse> Logger { get; }
+            public ILogger<GetAllAuthenticationTypeValidationsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllAuthenticationTypeValidationsApiResponse"/>
+            /// The <see cref="GetAllAuthenticationTypeValidationsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1145,14 +1145,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllAuthenticationTypeValidationsApiResponse(ILogger<OBPv400GetAllAuthenticationTypeValidationsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetAllAuthenticationTypeValidationsApiResponse(ILogger<GetAllAuthenticationTypeValidationsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllAuthenticationTypeValidationsApiResponse"/>
+            /// The <see cref="GetAllAuthenticationTypeValidationsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1161,7 +1161,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllAuthenticationTypeValidationsApiResponse(ILogger<OBPv400GetAllAuthenticationTypeValidationsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetAllAuthenticationTypeValidationsApiResponse(ILogger<GetAllAuthenticationTypeValidationsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1179,11 +1179,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200Response? Ok()
+            public OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1192,7 +1192,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200Response? result)
             {
                 result = null;
 
@@ -1228,10 +1228,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv400GetAllAuthenticationTypeValidationsPublicDefaultImplementation(IOBPv400GetAllAuthenticationTypeValidationsPublicApiResponse apiResponseLocalVar)
+        private void AfterGetAllAuthenticationTypeValidationsPublicDefaultImplementation(IGetAllAuthenticationTypeValidationsPublicApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetAllAuthenticationTypeValidationsPublic(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetAllAuthenticationTypeValidationsPublic(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1241,7 +1241,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv400GetAllAuthenticationTypeValidationsPublic(ref bool suppressDefaultLog, IOBPv400GetAllAuthenticationTypeValidationsPublicApiResponse apiResponseLocalVar);
+        partial void AfterGetAllAuthenticationTypeValidationsPublic(ref bool suppressDefaultLog, IGetAllAuthenticationTypeValidationsPublicApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1249,10 +1249,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv400GetAllAuthenticationTypeValidationsPublicDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetAllAuthenticationTypeValidationsPublicDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetAllAuthenticationTypeValidationsPublic(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetAllAuthenticationTypeValidationsPublic(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1264,18 +1264,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv400GetAllAuthenticationTypeValidationsPublic(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetAllAuthenticationTypeValidationsPublic(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get all Authentication Type Validations - public &lt;p&gt;Get all Authentication Type Validations - public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllAuthenticationTypeValidationsPublicApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllAuthenticationTypeValidationsPublicApiResponse?> OBPv400GetAllAuthenticationTypeValidationsPublicOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllAuthenticationTypeValidationsPublicApiResponse"/>&gt;</returns>
+        public async Task<IGetAllAuthenticationTypeValidationsPublicApiResponse?> GetAllAuthenticationTypeValidationsPublicOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetAllAuthenticationTypeValidationsPublicAsync(cancellationToken).ConfigureAwait(false);
+                return await GetAllAuthenticationTypeValidationsPublicAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1288,8 +1288,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllAuthenticationTypeValidationsPublicApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllAuthenticationTypeValidationsPublicApiResponse> OBPv400GetAllAuthenticationTypeValidationsPublicAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllAuthenticationTypeValidationsPublicApiResponse"/>&gt;</returns>
+        public async Task<IGetAllAuthenticationTypeValidationsPublicApiResponse> GetAllAuthenticationTypeValidationsPublicAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -1321,8 +1321,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetAllAuthenticationTypeValidationsPublicApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetAllAuthenticationTypeValidationsPublicApiResponse>();
-                        OBPv400GetAllAuthenticationTypeValidationsPublicApiResponse apiResponseLocalVar;
+                        ILogger<GetAllAuthenticationTypeValidationsPublicApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAllAuthenticationTypeValidationsPublicApiResponse>();
+                        GetAllAuthenticationTypeValidationsPublicApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1333,9 +1333,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetAllAuthenticationTypeValidationsPublicDefaultImplementation(apiResponseLocalVar);
+                        AfterGetAllAuthenticationTypeValidationsPublicDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv400GetAllAuthenticationTypeValidationsPublic(apiResponseLocalVar);
+                        Events.ExecuteOnGetAllAuthenticationTypeValidationsPublic(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -1343,24 +1343,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetAllAuthenticationTypeValidationsPublicDefaultImplementation(e, "/obp/v4.0.0/endpoints/authentication-type-validations", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv400GetAllAuthenticationTypeValidationsPublic(e);
+                OnErrorGetAllAuthenticationTypeValidationsPublicDefaultImplementation(e, "/obp/v4.0.0/endpoints/authentication-type-validations", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetAllAuthenticationTypeValidationsPublic(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetAllAuthenticationTypeValidationsPublicApiResponse"/>
+        /// The <see cref="GetAllAuthenticationTypeValidationsPublicApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetAllAuthenticationTypeValidationsPublicApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetAllAuthenticationTypeValidationsPublicApiResponse
+        public partial class GetAllAuthenticationTypeValidationsPublicApiResponse : OpenBankProject.Client.ApiResponse, IGetAllAuthenticationTypeValidationsPublicApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetAllAuthenticationTypeValidationsPublicApiResponse> Logger { get; }
+            public ILogger<GetAllAuthenticationTypeValidationsPublicApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllAuthenticationTypeValidationsPublicApiResponse"/>
+            /// The <see cref="GetAllAuthenticationTypeValidationsPublicApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1369,14 +1369,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllAuthenticationTypeValidationsPublicApiResponse(ILogger<OBPv400GetAllAuthenticationTypeValidationsPublicApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetAllAuthenticationTypeValidationsPublicApiResponse(ILogger<GetAllAuthenticationTypeValidationsPublicApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllAuthenticationTypeValidationsPublicApiResponse"/>
+            /// The <see cref="GetAllAuthenticationTypeValidationsPublicApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1385,7 +1385,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllAuthenticationTypeValidationsPublicApiResponse(ILogger<OBPv400GetAllAuthenticationTypeValidationsPublicApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetAllAuthenticationTypeValidationsPublicApiResponse(ILogger<GetAllAuthenticationTypeValidationsPublicApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1403,11 +1403,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200Response? Ok()
+            public OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1416,7 +1416,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200Response? result)
             {
                 result = null;
 
@@ -1448,14 +1448,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetAuthenticationTypeValidation(ref string operationid);
+        partial void FormatGetAuthenticationTypeValidation(ref string operationid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="operationid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetAuthenticationTypeValidation(string operationid)
+        private void ValidateGetAuthenticationTypeValidation(string operationid)
         {
             if (operationid == null)
                 throw new ArgumentNullException(nameof(operationid));
@@ -1466,10 +1466,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="operationid"></param>
-        private void AfterOBPv400GetAuthenticationTypeValidationDefaultImplementation(IOBPv400GetAuthenticationTypeValidationApiResponse apiResponseLocalVar, string operationid)
+        private void AfterGetAuthenticationTypeValidationDefaultImplementation(IGetAuthenticationTypeValidationApiResponse apiResponseLocalVar, string operationid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetAuthenticationTypeValidation(ref suppressDefaultLog, apiResponseLocalVar, operationid);
+            AfterGetAuthenticationTypeValidation(ref suppressDefaultLog, apiResponseLocalVar, operationid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1480,7 +1480,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="operationid"></param>
-        partial void AfterOBPv400GetAuthenticationTypeValidation(ref bool suppressDefaultLog, IOBPv400GetAuthenticationTypeValidationApiResponse apiResponseLocalVar, string operationid);
+        partial void AfterGetAuthenticationTypeValidation(ref bool suppressDefaultLog, IGetAuthenticationTypeValidationApiResponse apiResponseLocalVar, string operationid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1489,10 +1489,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="operationid"></param>
-        private void OnErrorOBPv400GetAuthenticationTypeValidationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid)
+        private void OnErrorGetAuthenticationTypeValidationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetAuthenticationTypeValidation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, operationid);
+            OnErrorGetAuthenticationTypeValidation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, operationid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1505,19 +1505,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="operationid"></param>
-        partial void OnErrorOBPv400GetAuthenticationTypeValidation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid);
+        partial void OnErrorGetAuthenticationTypeValidation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid);
 
         /// <summary>
         /// Get an Authentication Type Validation &lt;p&gt;Get an Authentication Type Validation by operation_id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAuthenticationTypeValidationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAuthenticationTypeValidationApiResponse?> OBPv400GetAuthenticationTypeValidationOrDefaultAsync(string operationid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAuthenticationTypeValidationApiResponse"/>&gt;</returns>
+        public async Task<IGetAuthenticationTypeValidationApiResponse?> GetAuthenticationTypeValidationOrDefaultAsync(string operationid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetAuthenticationTypeValidationAsync(operationid, cancellationToken).ConfigureAwait(false);
+                return await GetAuthenticationTypeValidationAsync(operationid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1531,16 +1531,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAuthenticationTypeValidationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAuthenticationTypeValidationApiResponse> OBPv400GetAuthenticationTypeValidationAsync(string operationid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAuthenticationTypeValidationApiResponse"/>&gt;</returns>
+        public async Task<IGetAuthenticationTypeValidationApiResponse> GetAuthenticationTypeValidationAsync(string operationid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetAuthenticationTypeValidation(operationid);
+                ValidateGetAuthenticationTypeValidation(operationid);
 
-                FormatOBPv400GetAuthenticationTypeValidation(ref operationid);
+                FormatGetAuthenticationTypeValidation(ref operationid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1557,7 +1557,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1584,8 +1584,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetAuthenticationTypeValidationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetAuthenticationTypeValidationApiResponse>();
-                        OBPv400GetAuthenticationTypeValidationApiResponse apiResponseLocalVar;
+                        ILogger<GetAuthenticationTypeValidationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAuthenticationTypeValidationApiResponse>();
+                        GetAuthenticationTypeValidationApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1596,9 +1596,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetAuthenticationTypeValidationDefaultImplementation(apiResponseLocalVar, operationid);
+                        AfterGetAuthenticationTypeValidationDefaultImplementation(apiResponseLocalVar, operationid);
 
-                        Events.ExecuteOnOBPv400GetAuthenticationTypeValidation(apiResponseLocalVar);
+                        Events.ExecuteOnGetAuthenticationTypeValidation(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1610,24 +1610,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetAuthenticationTypeValidationDefaultImplementation(e, "/obp/v4.0.0/management/authentication-type-validations/{operationid}", uriBuilderLocalVar.Path, operationid);
-                Events.ExecuteOnErrorOBPv400GetAuthenticationTypeValidation(e);
+                OnErrorGetAuthenticationTypeValidationDefaultImplementation(e, "/obp/v4.0.0/management/authentication-type-validations/{operationid}", uriBuilderLocalVar.Path, operationid);
+                Events.ExecuteOnErrorGetAuthenticationTypeValidation(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetAuthenticationTypeValidationApiResponse"/>
+        /// The <see cref="GetAuthenticationTypeValidationApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetAuthenticationTypeValidationApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetAuthenticationTypeValidationApiResponse
+        public partial class GetAuthenticationTypeValidationApiResponse : OpenBankProject.Client.ApiResponse, IGetAuthenticationTypeValidationApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetAuthenticationTypeValidationApiResponse> Logger { get; }
+            public ILogger<GetAuthenticationTypeValidationApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAuthenticationTypeValidationApiResponse"/>
+            /// The <see cref="GetAuthenticationTypeValidationApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1636,14 +1636,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAuthenticationTypeValidationApiResponse(ILogger<OBPv400GetAuthenticationTypeValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetAuthenticationTypeValidationApiResponse(ILogger<GetAuthenticationTypeValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAuthenticationTypeValidationApiResponse"/>
+            /// The <see cref="GetAuthenticationTypeValidationApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1652,7 +1652,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAuthenticationTypeValidationApiResponse(ILogger<OBPv400GetAuthenticationTypeValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetAuthenticationTypeValidationApiResponse(ILogger<GetAuthenticationTypeValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1670,11 +1670,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems? Ok()
+            public OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1683,7 +1683,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner? result)
             {
                 result = null;
 
@@ -1715,21 +1715,21 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400UpdateAuthenticationTypeValidation(ref string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest);
+        partial void FormatUpdateAuthenticationTypeValidation(ref string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest"></param>
+        /// <param name="updateAuthenticationTypeValidationRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400UpdateAuthenticationTypeValidation(string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest)
+        private void ValidateUpdateAuthenticationTypeValidation(string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest)
         {
             if (operationid == null)
                 throw new ArgumentNullException(nameof(operationid));
 
-            if (oBPv400UpdateAuthenticationTypeValidationRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400UpdateAuthenticationTypeValidationRequest));
+            if (updateAuthenticationTypeValidationRequest == null)
+                throw new ArgumentNullException(nameof(updateAuthenticationTypeValidationRequest));
         }
 
         /// <summary>
@@ -1737,11 +1737,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest"></param>
-        private void AfterOBPv400UpdateAuthenticationTypeValidationDefaultImplementation(IOBPv400UpdateAuthenticationTypeValidationApiResponse apiResponseLocalVar, string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest)
+        /// <param name="updateAuthenticationTypeValidationRequest"></param>
+        private void AfterUpdateAuthenticationTypeValidationDefaultImplementation(IUpdateAuthenticationTypeValidationApiResponse apiResponseLocalVar, string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400UpdateAuthenticationTypeValidation(ref suppressDefaultLog, apiResponseLocalVar, operationid, oBPv400UpdateAuthenticationTypeValidationRequest);
+            AfterUpdateAuthenticationTypeValidation(ref suppressDefaultLog, apiResponseLocalVar, operationid, updateAuthenticationTypeValidationRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1752,8 +1752,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest"></param>
-        partial void AfterOBPv400UpdateAuthenticationTypeValidation(ref bool suppressDefaultLog, IOBPv400UpdateAuthenticationTypeValidationApiResponse apiResponseLocalVar, string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest);
+        /// <param name="updateAuthenticationTypeValidationRequest"></param>
+        partial void AfterUpdateAuthenticationTypeValidation(ref bool suppressDefaultLog, IUpdateAuthenticationTypeValidationApiResponse apiResponseLocalVar, string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1762,11 +1762,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest"></param>
-        private void OnErrorOBPv400UpdateAuthenticationTypeValidationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest)
+        /// <param name="updateAuthenticationTypeValidationRequest"></param>
+        private void OnErrorUpdateAuthenticationTypeValidationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400UpdateAuthenticationTypeValidation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, operationid, oBPv400UpdateAuthenticationTypeValidationRequest);
+            OnErrorUpdateAuthenticationTypeValidation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, operationid, updateAuthenticationTypeValidationRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1779,21 +1779,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest"></param>
-        partial void OnErrorOBPv400UpdateAuthenticationTypeValidation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest);
+        /// <param name="updateAuthenticationTypeValidationRequest"></param>
+        partial void OnErrorUpdateAuthenticationTypeValidation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest);
 
         /// <summary>
         /// Update an Authentication Type Validation &lt;p&gt;Update an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="operationid">The OPERATIONID identifier</param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest">Request body</param>
+        /// <param name="updateAuthenticationTypeValidationRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateAuthenticationTypeValidationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateAuthenticationTypeValidationApiResponse?> OBPv400UpdateAuthenticationTypeValidationOrDefaultAsync(string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateAuthenticationTypeValidationApiResponse"/>&gt;</returns>
+        public async Task<IUpdateAuthenticationTypeValidationApiResponse?> UpdateAuthenticationTypeValidationOrDefaultAsync(string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400UpdateAuthenticationTypeValidationAsync(operationid, oBPv400UpdateAuthenticationTypeValidationRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateAuthenticationTypeValidationAsync(operationid, updateAuthenticationTypeValidationRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1806,18 +1806,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationid">The OPERATIONID identifier</param>
-        /// <param name="oBPv400UpdateAuthenticationTypeValidationRequest">Request body</param>
+        /// <param name="updateAuthenticationTypeValidationRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateAuthenticationTypeValidationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateAuthenticationTypeValidationApiResponse> OBPv400UpdateAuthenticationTypeValidationAsync(string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateAuthenticationTypeValidationApiResponse"/>&gt;</returns>
+        public async Task<IUpdateAuthenticationTypeValidationApiResponse> UpdateAuthenticationTypeValidationAsync(string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400UpdateAuthenticationTypeValidation(operationid, oBPv400UpdateAuthenticationTypeValidationRequest);
+                ValidateUpdateAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest);
 
-                FormatOBPv400UpdateAuthenticationTypeValidation(ref operationid, oBPv400UpdateAuthenticationTypeValidationRequest);
+                FormatUpdateAuthenticationTypeValidation(ref operationid, updateAuthenticationTypeValidationRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1829,16 +1829,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/authentication-type-validations/{operationid}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Boperationid%7D", Uri.EscapeDataString(operationid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400UpdateAuthenticationTypeValidationRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateAuthenticationTypeValidationRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400UpdateAuthenticationTypeValidationRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateAuthenticationTypeValidationRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1874,8 +1874,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400UpdateAuthenticationTypeValidationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400UpdateAuthenticationTypeValidationApiResponse>();
-                        OBPv400UpdateAuthenticationTypeValidationApiResponse apiResponseLocalVar;
+                        ILogger<UpdateAuthenticationTypeValidationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<UpdateAuthenticationTypeValidationApiResponse>();
+                        UpdateAuthenticationTypeValidationApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1886,9 +1886,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400UpdateAuthenticationTypeValidationDefaultImplementation(apiResponseLocalVar, operationid, oBPv400UpdateAuthenticationTypeValidationRequest);
+                        AfterUpdateAuthenticationTypeValidationDefaultImplementation(apiResponseLocalVar, operationid, updateAuthenticationTypeValidationRequest);
 
-                        Events.ExecuteOnOBPv400UpdateAuthenticationTypeValidation(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateAuthenticationTypeValidation(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1900,24 +1900,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400UpdateAuthenticationTypeValidationDefaultImplementation(e, "/obp/v4.0.0/management/authentication-type-validations/{operationid}", uriBuilderLocalVar.Path, operationid, oBPv400UpdateAuthenticationTypeValidationRequest);
-                Events.ExecuteOnErrorOBPv400UpdateAuthenticationTypeValidation(e);
+                OnErrorUpdateAuthenticationTypeValidationDefaultImplementation(e, "/obp/v4.0.0/management/authentication-type-validations/{operationid}", uriBuilderLocalVar.Path, operationid, updateAuthenticationTypeValidationRequest);
+                Events.ExecuteOnErrorUpdateAuthenticationTypeValidation(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400UpdateAuthenticationTypeValidationApiResponse"/>
+        /// The <see cref="UpdateAuthenticationTypeValidationApiResponse"/>
         /// </summary>
-        public partial class OBPv400UpdateAuthenticationTypeValidationApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400UpdateAuthenticationTypeValidationApiResponse
+        public partial class UpdateAuthenticationTypeValidationApiResponse : OpenBankProject.Client.ApiResponse, IUpdateAuthenticationTypeValidationApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400UpdateAuthenticationTypeValidationApiResponse> Logger { get; }
+            public ILogger<UpdateAuthenticationTypeValidationApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400UpdateAuthenticationTypeValidationApiResponse"/>
+            /// The <see cref="UpdateAuthenticationTypeValidationApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1926,14 +1926,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400UpdateAuthenticationTypeValidationApiResponse(ILogger<OBPv400UpdateAuthenticationTypeValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public UpdateAuthenticationTypeValidationApiResponse(ILogger<UpdateAuthenticationTypeValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400UpdateAuthenticationTypeValidationApiResponse"/>
+            /// The <see cref="UpdateAuthenticationTypeValidationApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1942,7 +1942,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400UpdateAuthenticationTypeValidationApiResponse(ILogger<OBPv400UpdateAuthenticationTypeValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public UpdateAuthenticationTypeValidationApiResponse(ILogger<UpdateAuthenticationTypeValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1960,11 +1960,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems? Ok()
+            public OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1973,7 +1973,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner? result)
             {
                 result = null;
 

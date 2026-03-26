@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,98 +24,79 @@ import (
 // ProductAPIService ProductAPI service
 type ProductAPIService service
 
-type ApiOBPv310CreateProductCollectionRequest struct {
+type ApiCreateOrUpdateProductAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	bankid string
-	collectioncode string
-	oBPv310CreateProductCollectionRequest *OBPv310CreateProductCollectionRequest
+	createOrUpdateTransactionRequestAttributeDefinitionRequest *CreateOrUpdateTransactionRequestAttributeDefinitionRequest
 }
 
 // Request body
-func (r ApiOBPv310CreateProductCollectionRequest) OBPv310CreateProductCollectionRequest(oBPv310CreateProductCollectionRequest OBPv310CreateProductCollectionRequest) ApiOBPv310CreateProductCollectionRequest {
-	r.oBPv310CreateProductCollectionRequest = &oBPv310CreateProductCollectionRequest
+func (r ApiCreateOrUpdateProductAttributeDefinitionRequest) CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiCreateOrUpdateProductAttributeDefinitionRequest {
+	r.createOrUpdateTransactionRequestAttributeDefinitionRequest = &createOrUpdateTransactionRequestAttributeDefinitionRequest
 	return r
 }
 
-func (r ApiOBPv310CreateProductCollectionRequest) Execute() (*OBPv310CreateProductCollection200Response, *http.Response, error) {
-	return r.ApiService.OBPv310CreateProductCollectionExecute(r)
+func (r ApiCreateOrUpdateProductAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateOrUpdateProductAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv310CreateProductCollection Create Product Collection
+CreateOrUpdateProductAttributeDefinition Create or Update Product Attribute Definition
 
-<p>Create or Update a Product Collection at the Bank.</p>
-<p>Use Product Collections to create Product &quot;Baskets&quot;, &quot;Portfolios&quot;, &quot;Indices&quot;, &quot;Collections&quot;, &quot;Underlyings-lists&quot;, &quot;Buckets&quot; etc. etc.</p>
-<p>There is a many to many relationship between Products and Product Collections:</p>
-<ul>
-<li>
-<p>A Product can exist in many Collections</p>
-</li>
-<li>
-<p>A Collection can contain many Products.</p>
-</li>
-</ul>
-<p>A collection has collection code, one parent Product and one or more child Products.</p>
-<p>Product hiearchy vs Product Collections:</p>
-<ul>
-<li>
-<p>You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.</p>
-</li>
-<li>
-<p>You can define a collection (also known as baskets or buckets) of products using Product Collections.</p>
-</li>
-</ul>
+<p>Create or Update Product Attribute Definition</p>
+<p>The category field must be Product</p>
+<p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#collection_code">COLLECTION_CODE</a>:</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#collection_code"><strong>collection_code</strong></a>:</p>
-<p><a href="/glossary#items"><strong>items</strong></a>:</p>
-<p><a href="/glossary#member_product_code"><strong>member_product_code</strong></a>:</p>
-<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
-<p><a href="/glossary#product_collection"><strong>product_collection</strong></a>:</p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#attribute_definition_id"><strong>attribute_definition_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#can_be_seen_on_views"><strong>can_be_seen_on_views</strong></a>: false</p>
+<p><a href="/glossary#category"><strong>category</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @param collectioncode The COLLECTIONCODE identifier
- @return ApiOBPv310CreateProductCollectionRequest
+ @return ApiCreateOrUpdateProductAttributeDefinitionRequest
 */
-func (a *ProductAPIService) OBPv310CreateProductCollection(ctx context.Context, bankid string, collectioncode string) ApiOBPv310CreateProductCollectionRequest {
-	return ApiOBPv310CreateProductCollectionRequest{
+func (a *ProductAPIService) CreateOrUpdateProductAttributeDefinition(ctx context.Context, bankid string) ApiCreateOrUpdateProductAttributeDefinitionRequest {
+	return ApiCreateOrUpdateProductAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
-		collectioncode: collectioncode,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv310CreateProductCollection200Response
-func (a *ProductAPIService) OBPv310CreateProductCollectionExecute(r ApiOBPv310CreateProductCollectionRequest) (*OBPv310CreateProductCollection200Response, *http.Response, error) {
+//  @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+func (a *ProductAPIService) CreateOrUpdateProductAttributeDefinitionExecute(r ApiCreateOrUpdateProductAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310CreateProductCollection200Response
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv310CreateProductCollection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.CreateOrUpdateProductAttributeDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}"
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product"
 	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"collectioncode"+"}", url.PathEscape(parameterValueToString(r.collectioncode, "collectioncode")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv310CreateProductCollectionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv310CreateProductCollectionRequest is required and must be specified")
+	if r.createOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
+		return localVarReturnValue, nil, reportError("createOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -136,7 +117,7 @@ func (a *ProductAPIService) OBPv310CreateProductCollectionExecute(r ApiOBPv310Cr
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv310CreateProductCollectionRequest
+	localVarPostBody = r.createOrUpdateTransactionRequestAttributeDefinitionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -161,7 +142,7 @@ func (a *ProductAPIService) OBPv310CreateProductCollectionExecute(r ApiOBPv310Cr
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -202,7 +183,717 @@ func (a *ProductAPIService) OBPv310CreateProductCollectionExecute(r ApiOBPv310Cr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv310DeleteProductAttributeRequest struct {
+type ApiCreateProductRequest struct {
+	ctx context.Context
+	ApiService *ProductAPIService
+	bankid string
+	productcode string
+	createProductRequest *CreateProductRequest
+}
+
+// Request body
+func (r ApiCreateProductRequest) CreateProductRequest(createProductRequest CreateProductRequest) ApiCreateProductRequest {
+	r.createProductRequest = &createProductRequest
+	return r
+}
+
+func (r ApiCreateProductRequest) Execute() (*CreateProduct200Response, *http.Response, error) {
+	return r.ApiService.CreateProductExecute(r)
+}
+
+/*
+CreateProduct Create Product
+
+<p>Create or Update Product for the Bank.</p>
+<p>The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.</p>
+<p>Typical Super Family values / Asset classes are:</p>
+<p>Debt<br />
+Equity<br />
+FX<br />
+Commodity<br />
+Derivative</p>
+<p>Product hiearchy vs Product Collections:</p>
+<ul>
+<li>
+<p>You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.</p>
+</li>
+<li>
+<p>You can define a collection (also known as baskets or buckets) of products using Product Collections.</p>
+</li>
+</ul>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#product_code">PRODUCT_CODE</a>: 1234BW</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#license"><strong>license</strong></a>:</p>
+<p><a href="/glossary#meta"><strong>meta</strong></a>:</p>
+<p><a href="/glossary#more_info_url"><strong>more_info_url</strong></a>: <a href="http://www.example.com/abc">www.example.com/abc</a></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#parent_product_code"><strong>parent_product_code</strong></a>: 787LOW</p>
+<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
+<p><a href="/glossary#"><strong>terms_and_conditions_url</strong></a>: <a href="http://www.example.com/xyz">www.example.com/xyz</a></p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">fees</a>: fees</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param productcode The PRODUCTCODE identifier
+ @return ApiCreateProductRequest
+*/
+func (a *ProductAPIService) CreateProduct(ctx context.Context, bankid string, productcode string) ApiCreateProductRequest {
+	return ApiCreateProductRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		productcode: productcode,
+	}
+}
+
+// Execute executes the request
+//  @return CreateProduct200Response
+func (a *ProductAPIService) CreateProductExecute(r ApiCreateProductRequest) (*CreateProduct200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateProduct200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.CreateProduct")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.0.0/banks/{bankid}/products/{productcode}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"productcode"+"}", url.PathEscape(parameterValueToString(r.productcode, "productcode")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createProductRequest == nil {
+		return localVarReturnValue, nil, reportError("createProductRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createProductRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateProductAttributeRequest struct {
+	ctx context.Context
+	ApiService *ProductAPIService
+	bankid string
+	productcode string
+	updateAtmAttributeRequest *UpdateAtmAttributeRequest
+}
+
+// Request body
+func (r ApiCreateProductAttributeRequest) UpdateAtmAttributeRequest(updateAtmAttributeRequest UpdateAtmAttributeRequest) ApiCreateProductAttributeRequest {
+	r.updateAtmAttributeRequest = &updateAtmAttributeRequest
+	return r
+}
+
+func (r ApiCreateProductAttributeRequest) Execute() (*CreateProductAttribute200Response, *http.Response, error) {
+	return r.ApiService.CreateProductAttributeExecute(r)
+}
+
+/*
+CreateProductAttribute Create Product Attribute
+
+<p>Create Product Attribute</p>
+<p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p>
+<p>Each Product Attribute is linked to its Product by PRODUCT_CODE</p>
+<p>Typical product attributes might be:</p>
+<p>ISIN (for International bonds)<br />
+VKN (for German bonds)<br />
+REDCODE (markit short code for credit derivative)<br />
+LOAN_ID (e.g. used for Anacredit reporting)</p>
+<p>ISSUE_DATE (When the bond was issued in the market)<br />
+MATURITY_DATE (End of life time of a product)<br />
+TRADABLE</p>
+<p>See <a href="http://www.fpml.org/">FPML</a> for more examples.</p>
+<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#product_code">PRODUCT_CODE</a>: 1234BW</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#product_attribute_id"><strong>product_attribute_id</strong></a>:</p>
+<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param productcode The PRODUCTCODE identifier
+ @return ApiCreateProductAttributeRequest
+*/
+func (a *ProductAPIService) CreateProductAttribute(ctx context.Context, bankid string, productcode string) ApiCreateProductAttributeRequest {
+	return ApiCreateProductAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		productcode: productcode,
+	}
+}
+
+// Execute executes the request
+//  @return CreateProductAttribute200Response
+func (a *ProductAPIService) CreateProductAttributeExecute(r ApiCreateProductAttributeRequest) (*CreateProductAttribute200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateProductAttribute200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.CreateProductAttribute")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"productcode"+"}", url.PathEscape(parameterValueToString(r.productcode, "productcode")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateAtmAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmAttributeRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateAtmAttributeRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateProductCollectionRequest struct {
+	ctx context.Context
+	ApiService *ProductAPIService
+	bankid string
+	collectioncode string
+	createProductCollectionRequest *CreateProductCollectionRequest
+}
+
+// Request body
+func (r ApiCreateProductCollectionRequest) CreateProductCollectionRequest(createProductCollectionRequest CreateProductCollectionRequest) ApiCreateProductCollectionRequest {
+	r.createProductCollectionRequest = &createProductCollectionRequest
+	return r
+}
+
+func (r ApiCreateProductCollectionRequest) Execute() (*CreateProductCollection200Response, *http.Response, error) {
+	return r.ApiService.CreateProductCollectionExecute(r)
+}
+
+/*
+CreateProductCollection Create Product Collection
+
+<p>Create or Update a Product Collection at the Bank.</p>
+<p>Use Product Collections to create Product &quot;Baskets&quot;, &quot;Portfolios&quot;, &quot;Indices&quot;, &quot;Collections&quot;, &quot;Underlyings-lists&quot;, &quot;Buckets&quot; etc. etc.</p>
+<p>There is a many to many relationship between Products and Product Collections:</p>
+<ul>
+<li>
+<p>A Product can exist in many Collections</p>
+</li>
+<li>
+<p>A Collection can contain many Products.</p>
+</li>
+</ul>
+<p>A collection has collection code, one parent Product and one or more child Products.</p>
+<p>Product hiearchy vs Product Collections:</p>
+<ul>
+<li>
+<p>You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.</p>
+</li>
+<li>
+<p>You can define a collection (also known as baskets or buckets) of products using Product Collections.</p>
+</li>
+</ul>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#collection_code">COLLECTION_CODE</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#collection_code"><strong>collection_code</strong></a>:</p>
+<p><a href="/glossary#items"><strong>items</strong></a>:</p>
+<p><a href="/glossary#member_product_code"><strong>member_product_code</strong></a>:</p>
+<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
+<p><a href="/glossary#product_collection"><strong>product_collection</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param collectioncode The COLLECTIONCODE identifier
+ @return ApiCreateProductCollectionRequest
+*/
+func (a *ProductAPIService) CreateProductCollection(ctx context.Context, bankid string, collectioncode string) ApiCreateProductCollectionRequest {
+	return ApiCreateProductCollectionRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		collectioncode: collectioncode,
+	}
+}
+
+// Execute executes the request
+//  @return CreateProductCollection200Response
+func (a *ProductAPIService) CreateProductCollectionExecute(r ApiCreateProductCollectionRequest) (*CreateProductCollection200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateProductCollection200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.CreateProductCollection")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"collectioncode"+"}", url.PathEscape(parameterValueToString(r.collectioncode, "collectioncode")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createProductCollectionRequest == nil {
+		return localVarReturnValue, nil, reportError("createProductCollectionRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createProductCollectionRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateProductFeeRequest struct {
+	ctx context.Context
+	ApiService *ProductAPIService
+	bankid string
+	productcode string
+	updateProductFeeRequest *UpdateProductFeeRequest
+}
+
+// Request body
+func (r ApiCreateProductFeeRequest) UpdateProductFeeRequest(updateProductFeeRequest UpdateProductFeeRequest) ApiCreateProductFeeRequest {
+	r.updateProductFeeRequest = &updateProductFeeRequest
+	return r
+}
+
+func (r ApiCreateProductFeeRequest) Execute() (*GetProductFee200Response, *http.Response, error) {
+	return r.ApiService.CreateProductFeeExecute(r)
+}
+
+/*
+CreateProductFee Create Product Fee
+
+<p>Create Product Fee</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#product_code">PRODUCT_CODE</a>: 1234BW</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#frequency"><strong>frequency</strong></a>: DAILY</p>
+<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
+<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#product_fee_id">product_fee_id</a>: 696hlAHLFKUHE37469287634</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#frequency"><strong>frequency</strong></a>: DAILY</p>
+<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
+<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
+<p><a href="/glossary#product_fee_id"><strong>product_fee_id</strong></a>: 696hlAHLFKUHE37469287634</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param productcode The PRODUCTCODE identifier
+ @return ApiCreateProductFeeRequest
+*/
+func (a *ProductAPIService) CreateProductFee(ctx context.Context, bankid string, productcode string) ApiCreateProductFeeRequest {
+	return ApiCreateProductFeeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		productcode: productcode,
+	}
+}
+
+// Execute executes the request
+//  @return GetProductFee200Response
+func (a *ProductAPIService) CreateProductFeeExecute(r ApiCreateProductFeeRequest) (*GetProductFee200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetProductFee200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.CreateProductFee")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fee"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"productcode"+"}", url.PathEscape(parameterValueToString(r.productcode, "productcode")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateProductFeeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateProductFeeRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateProductFeeRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiDeleteProductAttributeRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	bankid string
@@ -210,12 +901,12 @@ type ApiOBPv310DeleteProductAttributeRequest struct {
 	productattributeid string
 }
 
-func (r ApiOBPv310DeleteProductAttributeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv310DeleteProductAttributeExecute(r)
+func (r ApiDeleteProductAttributeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteProductAttributeExecute(r)
 }
 
 /*
-OBPv310DeleteProductAttribute Delete Product Attribute
+DeleteProductAttribute Delete Product Attribute
 
 <p>Delete Product Attribute</p>
 <p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p>
@@ -233,10 +924,10 @@ OBPv310DeleteProductAttribute Delete Product Attribute
  @param bankid The BANKID identifier
  @param productcode The PRODUCTCODE identifier
  @param productattributeid The PRODUCTATTRIBUTEID identifier
- @return ApiOBPv310DeleteProductAttributeRequest
+ @return ApiDeleteProductAttributeRequest
 */
-func (a *ProductAPIService) OBPv310DeleteProductAttribute(ctx context.Context, bankid string, productcode string, productattributeid string) ApiOBPv310DeleteProductAttributeRequest {
-	return ApiOBPv310DeleteProductAttributeRequest{
+func (a *ProductAPIService) DeleteProductAttribute(ctx context.Context, bankid string, productcode string, productattributeid string) ApiDeleteProductAttributeRequest {
+	return ApiDeleteProductAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -246,14 +937,14 @@ func (a *ProductAPIService) OBPv310DeleteProductAttribute(ctx context.Context, b
 }
 
 // Execute executes the request
-func (a *ProductAPIService) OBPv310DeleteProductAttributeExecute(r ApiOBPv310DeleteProductAttributeRequest) (*http.Response, error) {
+func (a *ProductAPIService) DeleteProductAttributeExecute(r ApiDeleteProductAttributeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv310DeleteProductAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.DeleteProductAttribute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -308,7 +999,7 @@ func (a *ProductAPIService) OBPv310DeleteProductAttributeExecute(r ApiOBPv310Del
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -340,830 +1031,19 @@ func (a *ProductAPIService) OBPv310DeleteProductAttributeExecute(r ApiOBPv310Del
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv310GetProductCollectionRequest struct {
-	ctx context.Context
-	ApiService *ProductAPIService
-	bankid string
-	collectioncode string
-}
-
-func (r ApiOBPv310GetProductCollectionRequest) Execute() (*OBPv310GetProductCollection200Response, *http.Response, error) {
-	return r.ApiService.OBPv310GetProductCollectionExecute(r)
-}
-
-/*
-OBPv310GetProductCollection Get Product Collection
-
-<p>Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#collection_code">COLLECTION_CODE</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#category"><strong>category</strong></a>:</p>
-<p><a href="/glossary#code"><strong>code</strong></a>: 125</p>
-<p><a href="/glossary#collection_code"><strong>collection_code</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#family"><strong>family</strong></a>:</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#license"><strong>license</strong></a>:</p>
-<p><a href="/glossary#meta"><strong>meta</strong></a>:</p>
-<p><a href="/glossary#more_info_url"><strong>more_info_url</strong></a>: <a href="http://www.example.com/abc">www.example.com/abc</a></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#parent_product_code"><strong>parent_product_code</strong></a>: 787LOW</p>
-<p><a href="/glossary#product_attribute_id"><strong>product_attribute_id</strong></a>:</p>
-<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
-<p><a href="/glossary#products"><strong>products</strong></a>:</p>
-<p><a href="/glossary#super_family"><strong>super_family</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#product_attributes">product_attributes</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param collectioncode The COLLECTIONCODE identifier
- @return ApiOBPv310GetProductCollectionRequest
-*/
-func (a *ProductAPIService) OBPv310GetProductCollection(ctx context.Context, bankid string, collectioncode string) ApiOBPv310GetProductCollectionRequest {
-	return ApiOBPv310GetProductCollectionRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		collectioncode: collectioncode,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv310GetProductCollection200Response
-func (a *ProductAPIService) OBPv310GetProductCollectionExecute(r ApiOBPv310GetProductCollectionRequest) (*OBPv310GetProductCollection200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetProductCollection200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv310GetProductCollection")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"collectioncode"+"}", url.PathEscape(parameterValueToString(r.collectioncode, "collectioncode")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv310GetProductTreeRequest struct {
-	ctx context.Context
-	ApiService *ProductAPIService
-	bankid string
-	productcode string
-}
-
-func (r ApiOBPv310GetProductTreeRequest) Execute() (*OBPv310GetProductTree200Response, *http.Response, error) {
-	return r.ApiService.OBPv310GetProductTreeExecute(r)
-}
-
-/*
-OBPv310GetProductTree Get Product Tree
-
-<p>Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE<br />
-and it's parent product(s) recursively as specified by parent_product_code.</p>
-<p>Each product includes the following information.</p>
-<ul>
-<li>Name</li>
-<li>Code</li>
-<li>Parent Product Code</li>
-<li>Category</li>
-<li>Family</li>
-<li>Super Family</li>
-<li>More info URL</li>
-<li>Description</li>
-<li>Terms and Conditions</li>
-<li>License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.</li>
-</ul>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#product_code">PRODUCT_CODE</a>: 1234BW</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#category"><strong>category</strong></a>:</p>
-<p><a href="/glossary#code"><strong>code</strong></a>: 125</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#family"><strong>family</strong></a>:</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#license"><strong>license</strong></a>:</p>
-<p><a href="/glossary#meta"><strong>meta</strong></a>:</p>
-<p><a href="/glossary#more_info_url"><strong>more_info_url</strong></a>: <a href="http://www.example.com/abc">www.example.com/abc</a></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#super_family"><strong>super_family</strong></a>:</p>
-<p><a href="/glossary#parent_product">parent_product</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param productcode The PRODUCTCODE identifier
- @return ApiOBPv310GetProductTreeRequest
-*/
-func (a *ProductAPIService) OBPv310GetProductTree(ctx context.Context, bankid string, productcode string) ApiOBPv310GetProductTreeRequest {
-	return ApiOBPv310GetProductTreeRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		productcode: productcode,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv310GetProductTree200Response
-func (a *ProductAPIService) OBPv310GetProductTreeExecute(r ApiOBPv310GetProductTreeRequest) (*OBPv310GetProductTree200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetProductTree200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv310GetProductTree")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/banks/{bankid}/product-tree/{productcode}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"productcode"+"}", url.PathEscape(parameterValueToString(r.productcode, "productcode")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateOrUpdateProductAttributeDefinitionRequest struct {
-	ctx context.Context
-	ApiService *ProductAPIService
-	bankid string
-	oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest *OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateOrUpdateProductAttributeDefinitionRequest) OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiOBPv400CreateOrUpdateProductAttributeDefinitionRequest {
-	r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = &oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-	return r
-}
-
-func (r ApiOBPv400CreateOrUpdateProductAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateOrUpdateProductAttributeDefinitionExecute(r)
-}
-
-/*
-OBPv400CreateOrUpdateProductAttributeDefinition Create or Update Product Attribute Definition
-
-<p>Create or Update Product Attribute Definition</p>
-<p>The category field must be Product</p>
-<p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#attribute_definition_id"><strong>attribute_definition_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#can_be_seen_on_views"><strong>can_be_seen_on_views</strong></a>: false</p>
-<p><a href="/glossary#category"><strong>category</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @return ApiOBPv400CreateOrUpdateProductAttributeDefinitionRequest
-*/
-func (a *ProductAPIService) OBPv400CreateOrUpdateProductAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400CreateOrUpdateProductAttributeDefinitionRequest {
-	return ApiOBPv400CreateOrUpdateProductAttributeDefinitionRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-func (a *ProductAPIService) OBPv400CreateOrUpdateProductAttributeDefinitionExecute(r ApiOBPv400CreateOrUpdateProductAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv400CreateOrUpdateProductAttributeDefinition")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateProductAttributeRequest struct {
-	ctx context.Context
-	ApiService *ProductAPIService
-	bankid string
-	productcode string
-	oBPv510UpdateAtmAttributeRequest *OBPv510UpdateAtmAttributeRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateProductAttributeRequest) OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest OBPv510UpdateAtmAttributeRequest) ApiOBPv400CreateProductAttributeRequest {
-	r.oBPv510UpdateAtmAttributeRequest = &oBPv510UpdateAtmAttributeRequest
-	return r
-}
-
-func (r ApiOBPv400CreateProductAttributeRequest) Execute() (*OBPv400CreateProductAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateProductAttributeExecute(r)
-}
-
-/*
-OBPv400CreateProductAttribute Create Product Attribute
-
-<p>Create Product Attribute</p>
-<p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p>
-<p>Each Product Attribute is linked to its Product by PRODUCT_CODE</p>
-<p>Typical product attributes might be:</p>
-<p>ISIN (for International bonds)<br />
-VKN (for German bonds)<br />
-REDCODE (markit short code for credit derivative)<br />
-LOAN_ID (e.g. used for Anacredit reporting)</p>
-<p>ISSUE_DATE (When the bond was issued in the market)<br />
-MATURITY_DATE (End of life time of a product)<br />
-TRADABLE</p>
-<p>See <a href="http://www.fpml.org/">FPML</a> for more examples.</p>
-<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#product_code">PRODUCT_CODE</a>: 1234BW</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#is_active">is_active</a>: false</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#product_attribute_id"><strong>product_attribute_id</strong></a>:</p>
-<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#is_active">is_active</a>: false</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param productcode The PRODUCTCODE identifier
- @return ApiOBPv400CreateProductAttributeRequest
-*/
-func (a *ProductAPIService) OBPv400CreateProductAttribute(ctx context.Context, bankid string, productcode string) ApiOBPv400CreateProductAttributeRequest {
-	return ApiOBPv400CreateProductAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		productcode: productcode,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400CreateProductAttribute200Response
-func (a *ProductAPIService) OBPv400CreateProductAttributeExecute(r ApiOBPv400CreateProductAttributeRequest) (*OBPv400CreateProductAttribute200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateProductAttribute200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv400CreateProductAttribute")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"productcode"+"}", url.PathEscape(parameterValueToString(r.productcode, "productcode")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAtmAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAtmAttributeRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv510UpdateAtmAttributeRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateProductFeeRequest struct {
-	ctx context.Context
-	ApiService *ProductAPIService
-	bankid string
-	productcode string
-	oBPv400UpdateProductFeeRequest *OBPv400UpdateProductFeeRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateProductFeeRequest) OBPv400UpdateProductFeeRequest(oBPv400UpdateProductFeeRequest OBPv400UpdateProductFeeRequest) ApiOBPv400CreateProductFeeRequest {
-	r.oBPv400UpdateProductFeeRequest = &oBPv400UpdateProductFeeRequest
-	return r
-}
-
-func (r ApiOBPv400CreateProductFeeRequest) Execute() (*OBPv400GetProductFee200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateProductFeeExecute(r)
-}
-
-/*
-OBPv400CreateProductFee Create Product Fee
-
-<p>Create Product Fee</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#product_code">PRODUCT_CODE</a>: 1234BW</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#frequency"><strong>frequency</strong></a>: DAILY</p>
-<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
-<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#product_fee_id">product_fee_id</a>: 696hlAHLFKUHE37469287634</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#frequency"><strong>frequency</strong></a>: DAILY</p>
-<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
-<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
-<p><a href="/glossary#product_fee_id"><strong>product_fee_id</strong></a>: 696hlAHLFKUHE37469287634</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param productcode The PRODUCTCODE identifier
- @return ApiOBPv400CreateProductFeeRequest
-*/
-func (a *ProductAPIService) OBPv400CreateProductFee(ctx context.Context, bankid string, productcode string) ApiOBPv400CreateProductFeeRequest {
-	return ApiOBPv400CreateProductFeeRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		productcode: productcode,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetProductFee200Response
-func (a *ProductAPIService) OBPv400CreateProductFeeExecute(r ApiOBPv400CreateProductFeeRequest) (*OBPv400GetProductFee200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetProductFee200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv400CreateProductFee")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fee"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"productcode"+"}", url.PathEscape(parameterValueToString(r.productcode, "productcode")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateProductFeeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateProductFeeRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400UpdateProductFeeRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400DeleteProductAttributeDefinitionRequest struct {
+type ApiDeleteProductAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	bankid string
 	attributedefinitionid string
 }
 
-func (r ApiOBPv400DeleteProductAttributeDefinitionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteProductAttributeDefinitionExecute(r)
+func (r ApiDeleteProductAttributeDefinitionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteProductAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400DeleteProductAttributeDefinition Delete Product Attribute Definition
+DeleteProductAttributeDefinition Delete Product Attribute Definition
 
 <p>Delete Product Attribute Definition by ATTRIBUTE_DEFINITION_ID</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1176,10 +1056,10 @@ OBPv400DeleteProductAttributeDefinition Delete Product Attribute Definition
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier
- @return ApiOBPv400DeleteProductAttributeDefinitionRequest
+ @return ApiDeleteProductAttributeDefinitionRequest
 */
-func (a *ProductAPIService) OBPv400DeleteProductAttributeDefinition(ctx context.Context, bankid string, attributedefinitionid string) ApiOBPv400DeleteProductAttributeDefinitionRequest {
-	return ApiOBPv400DeleteProductAttributeDefinitionRequest{
+func (a *ProductAPIService) DeleteProductAttributeDefinition(ctx context.Context, bankid string, attributedefinitionid string) ApiDeleteProductAttributeDefinitionRequest {
+	return ApiDeleteProductAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1188,14 +1068,14 @@ func (a *ProductAPIService) OBPv400DeleteProductAttributeDefinition(ctx context.
 }
 
 // Execute executes the request
-func (a *ProductAPIService) OBPv400DeleteProductAttributeDefinitionExecute(r ApiOBPv400DeleteProductAttributeDefinitionRequest) (*http.Response, error) {
+func (a *ProductAPIService) DeleteProductAttributeDefinitionExecute(r ApiDeleteProductAttributeDefinitionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv400DeleteProductAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.DeleteProductAttributeDefinition")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1249,7 +1129,7 @@ func (a *ProductAPIService) OBPv400DeleteProductAttributeDefinitionExecute(r Api
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1281,19 +1161,19 @@ func (a *ProductAPIService) OBPv400DeleteProductAttributeDefinitionExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteProductCascadeRequest struct {
+type ApiDeleteProductCascadeRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	bankid string
 	productcode string
 }
 
-func (r ApiOBPv400DeleteProductCascadeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteProductCascadeExecute(r)
+func (r ApiDeleteProductCascadeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteProductCascadeExecute(r)
 }
 
 /*
-OBPv400DeleteProductCascade Delete Product Cascade
+DeleteProductCascade Delete Product Cascade
 
 <p>Delete a Product Cascade specified by PRODUCT_CODE.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1306,10 +1186,10 @@ OBPv400DeleteProductCascade Delete Product Cascade
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param productcode The PRODUCTCODE identifier
- @return ApiOBPv400DeleteProductCascadeRequest
+ @return ApiDeleteProductCascadeRequest
 */
-func (a *ProductAPIService) OBPv400DeleteProductCascade(ctx context.Context, bankid string, productcode string) ApiOBPv400DeleteProductCascadeRequest {
-	return ApiOBPv400DeleteProductCascadeRequest{
+func (a *ProductAPIService) DeleteProductCascade(ctx context.Context, bankid string, productcode string) ApiDeleteProductCascadeRequest {
+	return ApiDeleteProductCascadeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1318,14 +1198,14 @@ func (a *ProductAPIService) OBPv400DeleteProductCascade(ctx context.Context, ban
 }
 
 // Execute executes the request
-func (a *ProductAPIService) OBPv400DeleteProductCascadeExecute(r ApiOBPv400DeleteProductCascadeRequest) (*http.Response, error) {
+func (a *ProductAPIService) DeleteProductCascadeExecute(r ApiDeleteProductCascadeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv400DeleteProductCascade")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.DeleteProductCascade")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1379,7 +1259,7 @@ func (a *ProductAPIService) OBPv400DeleteProductCascadeExecute(r ApiOBPv400Delet
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1411,7 +1291,7 @@ func (a *ProductAPIService) OBPv400DeleteProductCascadeExecute(r ApiOBPv400Delet
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteProductFeeRequest struct {
+type ApiDeleteProductFeeRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	bankid string
@@ -1419,12 +1299,12 @@ type ApiOBPv400DeleteProductFeeRequest struct {
 	productfeeid string
 }
 
-func (r ApiOBPv400DeleteProductFeeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteProductFeeExecute(r)
+func (r ApiDeleteProductFeeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteProductFeeExecute(r)
 }
 
 /*
-OBPv400DeleteProductFee Delete Product Fee
+DeleteProductFee Delete Product Fee
 
 <p>Delete Product Fee</p>
 <p>Delete one product fee by its id.</p>
@@ -1440,10 +1320,10 @@ OBPv400DeleteProductFee Delete Product Fee
  @param bankid The BANKID identifier
  @param productcode The PRODUCTCODE identifier
  @param productfeeid The PRODUCTFEEID identifier
- @return ApiOBPv400DeleteProductFeeRequest
+ @return ApiDeleteProductFeeRequest
 */
-func (a *ProductAPIService) OBPv400DeleteProductFee(ctx context.Context, bankid string, productcode string, productfeeid string) ApiOBPv400DeleteProductFeeRequest {
-	return ApiOBPv400DeleteProductFeeRequest{
+func (a *ProductAPIService) DeleteProductFee(ctx context.Context, bankid string, productcode string, productfeeid string) ApiDeleteProductFeeRequest {
+	return ApiDeleteProductFeeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1453,14 +1333,14 @@ func (a *ProductAPIService) OBPv400DeleteProductFee(ctx context.Context, bankid 
 }
 
 // Execute executes the request
-func (a *ProductAPIService) OBPv400DeleteProductFeeExecute(r ApiOBPv400DeleteProductFeeRequest) (*http.Response, error) {
+func (a *ProductAPIService) DeleteProductFeeExecute(r ApiDeleteProductFeeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv400DeleteProductFee")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.DeleteProductFee")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1515,7 +1395,7 @@ func (a *ProductAPIService) OBPv400DeleteProductFeeExecute(r ApiOBPv400DeletePro
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1547,19 +1427,19 @@ func (a *ProductAPIService) OBPv400DeleteProductFeeExecute(r ApiOBPv400DeletePro
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetProductRequest struct {
+type ApiGetProductRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	bankid string
 	productcode string
 }
 
-func (r ApiOBPv400GetProductRequest) Execute() (*OBPv400GetProduct200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetProductExecute(r)
+func (r ApiGetProductRequest) Execute() (*GetProduct200Response, *http.Response, error) {
+	return r.ApiService.GetProductExecute(r)
 }
 
 /*
-OBPv400GetProduct Get Bank Product
+GetProduct Get Bank Product
 
 <p>Returns information about a financial Product offered by the bank specified by BANK_ID and PRODUCT_CODE including:</p>
 <ul>
@@ -1606,10 +1486,10 @@ OBPv400GetProduct Get Bank Product
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param productcode The PRODUCTCODE identifier
- @return ApiOBPv400GetProductRequest
+ @return ApiGetProductRequest
 */
-func (a *ProductAPIService) OBPv400GetProduct(ctx context.Context, bankid string, productcode string) ApiOBPv400GetProductRequest {
-	return ApiOBPv400GetProductRequest{
+func (a *ProductAPIService) GetProduct(ctx context.Context, bankid string, productcode string) ApiGetProductRequest {
+	return ApiGetProductRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1618,16 +1498,16 @@ func (a *ProductAPIService) OBPv400GetProduct(ctx context.Context, bankid string
 }
 
 // Execute executes the request
-//  @return OBPv400GetProduct200Response
-func (a *ProductAPIService) OBPv400GetProductExecute(r ApiOBPv400GetProductRequest) (*OBPv400GetProduct200Response, *http.Response, error) {
+//  @return GetProduct200Response
+func (a *ProductAPIService) GetProductExecute(r ApiGetProductRequest) (*GetProduct200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetProduct200Response
+		localVarReturnValue  *GetProduct200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv400GetProduct")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.GetProduct")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1694,7 +1574,7 @@ func (a *ProductAPIService) OBPv400GetProductExecute(r ApiOBPv400GetProductReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetProductAttributeRequest struct {
+type ApiGetProductAttributeRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	bankid string
@@ -1702,12 +1582,12 @@ type ApiOBPv400GetProductAttributeRequest struct {
 	productattributeid string
 }
 
-func (r ApiOBPv400GetProductAttributeRequest) Execute() (*OBPv400CreateProductAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetProductAttributeExecute(r)
+func (r ApiGetProductAttributeRequest) Execute() (*CreateProductAttribute200Response, *http.Response, error) {
+	return r.ApiService.GetProductAttributeExecute(r)
 }
 
 /*
-OBPv400GetProductAttribute Get Product Attribute
+GetProductAttribute Get Product Attribute
 
 <p>Get Product Attribute</p>
 <p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p>
@@ -1732,10 +1612,10 @@ OBPv400GetProductAttribute Get Product Attribute
  @param bankid The BANKID identifier
  @param productcode The PRODUCTCODE identifier
  @param productattributeid The PRODUCTATTRIBUTEID identifier
- @return ApiOBPv400GetProductAttributeRequest
+ @return ApiGetProductAttributeRequest
 */
-func (a *ProductAPIService) OBPv400GetProductAttribute(ctx context.Context, bankid string, productcode string, productattributeid string) ApiOBPv400GetProductAttributeRequest {
-	return ApiOBPv400GetProductAttributeRequest{
+func (a *ProductAPIService) GetProductAttribute(ctx context.Context, bankid string, productcode string, productattributeid string) ApiGetProductAttributeRequest {
+	return ApiGetProductAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1745,16 +1625,16 @@ func (a *ProductAPIService) OBPv400GetProductAttribute(ctx context.Context, bank
 }
 
 // Execute executes the request
-//  @return OBPv400CreateProductAttribute200Response
-func (a *ProductAPIService) OBPv400GetProductAttributeExecute(r ApiOBPv400GetProductAttributeRequest) (*OBPv400CreateProductAttribute200Response, *http.Response, error) {
+//  @return CreateProductAttribute200Response
+func (a *ProductAPIService) GetProductAttributeExecute(r ApiGetProductAttributeRequest) (*CreateProductAttribute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateProductAttribute200Response
+		localVarReturnValue  *CreateProductAttribute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv400GetProductAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.GetProductAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1809,7 +1689,7 @@ func (a *ProductAPIService) OBPv400GetProductAttributeExecute(r ApiOBPv400GetPro
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1850,18 +1730,18 @@ func (a *ProductAPIService) OBPv400GetProductAttributeExecute(r ApiOBPv400GetPro
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetProductAttributeDefinitionRequest struct {
+type ApiGetProductAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	bankid string
 }
 
-func (r ApiOBPv400GetProductAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetProductAttributeDefinitionExecute(r)
+func (r ApiGetProductAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
+	return r.ApiService.GetProductAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400GetProductAttributeDefinition Get Product Attribute Definition
+GetProductAttributeDefinition Get Product Attribute Definition
 
 <p>Get Product Attribute Definition</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1882,10 +1762,10 @@ OBPv400GetProductAttributeDefinition Get Product Attribute Definition
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400GetProductAttributeDefinitionRequest
+ @return ApiGetProductAttributeDefinitionRequest
 */
-func (a *ProductAPIService) OBPv400GetProductAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400GetProductAttributeDefinitionRequest {
-	return ApiOBPv400GetProductAttributeDefinitionRequest{
+func (a *ProductAPIService) GetProductAttributeDefinition(ctx context.Context, bankid string) ApiGetProductAttributeDefinitionRequest {
+	return ApiGetProductAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1893,16 +1773,16 @@ func (a *ProductAPIService) OBPv400GetProductAttributeDefinition(ctx context.Con
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200Response
-func (a *ProductAPIService) OBPv400GetProductAttributeDefinitionExecute(r ApiOBPv400GetProductAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
+//  @return GetTransactionRequestAttributeDefinition200Response
+func (a *ProductAPIService) GetProductAttributeDefinitionExecute(r ApiGetProductAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200Response
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv400GetProductAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.GetProductAttributeDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1955,7 +1835,7 @@ func (a *ProductAPIService) OBPv400GetProductAttributeDefinitionExecute(r ApiOBP
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1996,7 +1876,168 @@ func (a *ProductAPIService) OBPv400GetProductAttributeDefinitionExecute(r ApiOBP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetProductFeeRequest struct {
+type ApiGetProductCollectionRequest struct {
+	ctx context.Context
+	ApiService *ProductAPIService
+	bankid string
+	collectioncode string
+}
+
+func (r ApiGetProductCollectionRequest) Execute() (*GetProductCollection200Response, *http.Response, error) {
+	return r.ApiService.GetProductCollectionExecute(r)
+}
+
+/*
+GetProductCollection Get Product Collection
+
+<p>Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#collection_code">COLLECTION_CODE</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#category"><strong>category</strong></a>:</p>
+<p><a href="/glossary#code"><strong>code</strong></a>: 125</p>
+<p><a href="/glossary#collection_code"><strong>collection_code</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#family"><strong>family</strong></a>:</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#license"><strong>license</strong></a>:</p>
+<p><a href="/glossary#meta"><strong>meta</strong></a>:</p>
+<p><a href="/glossary#more_info_url"><strong>more_info_url</strong></a>: <a href="http://www.example.com/abc">www.example.com/abc</a></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#parent_product_code"><strong>parent_product_code</strong></a>: 787LOW</p>
+<p><a href="/glossary#product_attribute_id"><strong>product_attribute_id</strong></a>:</p>
+<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
+<p><a href="/glossary#products"><strong>products</strong></a>:</p>
+<p><a href="/glossary#super_family"><strong>super_family</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#product_attributes">product_attributes</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param collectioncode The COLLECTIONCODE identifier
+ @return ApiGetProductCollectionRequest
+*/
+func (a *ProductAPIService) GetProductCollection(ctx context.Context, bankid string, collectioncode string) ApiGetProductCollectionRequest {
+	return ApiGetProductCollectionRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		collectioncode: collectioncode,
+	}
+}
+
+// Execute executes the request
+//  @return GetProductCollection200Response
+func (a *ProductAPIService) GetProductCollectionExecute(r ApiGetProductCollectionRequest) (*GetProductCollection200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetProductCollection200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.GetProductCollection")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"collectioncode"+"}", url.PathEscape(parameterValueToString(r.collectioncode, "collectioncode")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetProductFeeRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	bankid string
@@ -2004,12 +2045,12 @@ type ApiOBPv400GetProductFeeRequest struct {
 	productfeeid string
 }
 
-func (r ApiOBPv400GetProductFeeRequest) Execute() (*OBPv400GetProductFee200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetProductFeeExecute(r)
+func (r ApiGetProductFeeRequest) Execute() (*GetProductFee200Response, *http.Response, error) {
+	return r.ApiService.GetProductFeeExecute(r)
 }
 
 /*
-OBPv400GetProductFee Get Product Fee
+GetProductFee Get Product Fee
 
 <p>Get Product Fee</p>
 <p>Get one product fee by its id.</p>
@@ -2036,10 +2077,10 @@ OBPv400GetProductFee Get Product Fee
  @param bankid The BANKID identifier
  @param productcode The PRODUCTCODE identifier
  @param productfeeid The PRODUCTFEEID identifier
- @return ApiOBPv400GetProductFeeRequest
+ @return ApiGetProductFeeRequest
 */
-func (a *ProductAPIService) OBPv400GetProductFee(ctx context.Context, bankid string, productcode string, productfeeid string) ApiOBPv400GetProductFeeRequest {
-	return ApiOBPv400GetProductFeeRequest{
+func (a *ProductAPIService) GetProductFee(ctx context.Context, bankid string, productcode string, productfeeid string) ApiGetProductFeeRequest {
+	return ApiGetProductFeeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2049,16 +2090,16 @@ func (a *ProductAPIService) OBPv400GetProductFee(ctx context.Context, bankid str
 }
 
 // Execute executes the request
-//  @return OBPv400GetProductFee200Response
-func (a *ProductAPIService) OBPv400GetProductFeeExecute(r ApiOBPv400GetProductFeeRequest) (*OBPv400GetProductFee200Response, *http.Response, error) {
+//  @return GetProductFee200Response
+func (a *ProductAPIService) GetProductFeeExecute(r ApiGetProductFeeRequest) (*GetProductFee200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetProductFee200Response
+		localVarReturnValue  *GetProductFee200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv400GetProductFee")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.GetProductFee")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2126,19 +2167,19 @@ func (a *ProductAPIService) OBPv400GetProductFeeExecute(r ApiOBPv400GetProductFe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetProductFeesRequest struct {
+type ApiGetProductFeesRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	bankid string
 	productcode string
 }
 
-func (r ApiOBPv400GetProductFeesRequest) Execute() (*OBPv400GetProductFees200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetProductFeesExecute(r)
+func (r ApiGetProductFeesRequest) Execute() (*GetProductFees200Response, *http.Response, error) {
+	return r.ApiService.GetProductFeesExecute(r)
 }
 
 /*
-OBPv400GetProductFees Get Product Fees
+GetProductFees Get Product Fees
 
 <p>Get Product Fees</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
@@ -2163,10 +2204,10 @@ OBPv400GetProductFees Get Product Fees
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param productcode The PRODUCTCODE identifier
- @return ApiOBPv400GetProductFeesRequest
+ @return ApiGetProductFeesRequest
 */
-func (a *ProductAPIService) OBPv400GetProductFees(ctx context.Context, bankid string, productcode string) ApiOBPv400GetProductFeesRequest {
-	return ApiOBPv400GetProductFeesRequest{
+func (a *ProductAPIService) GetProductFees(ctx context.Context, bankid string, productcode string) ApiGetProductFeesRequest {
+	return ApiGetProductFeesRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2175,16 +2216,16 @@ func (a *ProductAPIService) OBPv400GetProductFees(ctx context.Context, bankid st
 }
 
 // Execute executes the request
-//  @return OBPv400GetProductFees200Response
-func (a *ProductAPIService) OBPv400GetProductFeesExecute(r ApiOBPv400GetProductFeesRequest) (*OBPv400GetProductFees200Response, *http.Response, error) {
+//  @return GetProductFees200Response
+func (a *ProductAPIService) GetProductFeesExecute(r ApiGetProductFeesRequest) (*GetProductFees200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetProductFees200Response
+		localVarReturnValue  *GetProductFees200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv400GetProductFees")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.GetProductFees")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2251,18 +2292,158 @@ func (a *ProductAPIService) OBPv400GetProductFeesExecute(r ApiOBPv400GetProductF
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetProductsRequest struct {
+type ApiGetProductTreeRequest struct {
+	ctx context.Context
+	ApiService *ProductAPIService
+	bankid string
+	productcode string
+}
+
+func (r ApiGetProductTreeRequest) Execute() (*GetProductTree200Response, *http.Response, error) {
+	return r.ApiService.GetProductTreeExecute(r)
+}
+
+/*
+GetProductTree Get Product Tree
+
+<p>Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE<br />
+and it's parent product(s) recursively as specified by parent_product_code.</p>
+<p>Each product includes the following information.</p>
+<ul>
+<li>Name</li>
+<li>Code</li>
+<li>Parent Product Code</li>
+<li>Category</li>
+<li>Family</li>
+<li>Super Family</li>
+<li>More info URL</li>
+<li>Description</li>
+<li>Terms and Conditions</li>
+<li>License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.</li>
+</ul>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#product_code">PRODUCT_CODE</a>: 1234BW</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#category"><strong>category</strong></a>:</p>
+<p><a href="/glossary#code"><strong>code</strong></a>: 125</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#family"><strong>family</strong></a>:</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#license"><strong>license</strong></a>:</p>
+<p><a href="/glossary#meta"><strong>meta</strong></a>:</p>
+<p><a href="/glossary#more_info_url"><strong>more_info_url</strong></a>: <a href="http://www.example.com/abc">www.example.com/abc</a></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#super_family"><strong>super_family</strong></a>:</p>
+<p><a href="/glossary#parent_product">parent_product</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param productcode The PRODUCTCODE identifier
+ @return ApiGetProductTreeRequest
+*/
+func (a *ProductAPIService) GetProductTree(ctx context.Context, bankid string, productcode string) ApiGetProductTreeRequest {
+	return ApiGetProductTreeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		productcode: productcode,
+	}
+}
+
+// Execute executes the request
+//  @return GetProductTree200Response
+func (a *ProductAPIService) GetProductTreeExecute(r ApiGetProductTreeRequest) (*GetProductTree200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetProductTree200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.GetProductTree")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/banks/{bankid}/product-tree/{productcode}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"productcode"+"}", url.PathEscape(parameterValueToString(r.productcode, "productcode")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetProductsRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	bankid string
 }
 
-func (r ApiOBPv400GetProductsRequest) Execute() (*OBPv400GetProducts200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetProductsExecute(r)
+func (r ApiGetProductsRequest) Execute() (*GetProducts200Response, *http.Response, error) {
+	return r.ApiService.GetProductsExecute(r)
 }
 
 /*
-OBPv400GetProducts Get Products
+GetProducts Get Products
 
 <p>Returns information about the financial products offered by a bank specified by BANK_ID including:</p>
 <ul>
@@ -2299,10 +2480,10 @@ URL params example: /banks/some-bank-id/products?&amp;limit=50&amp;offset=1</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400GetProductsRequest
+ @return ApiGetProductsRequest
 */
-func (a *ProductAPIService) OBPv400GetProducts(ctx context.Context, bankid string) ApiOBPv400GetProductsRequest {
-	return ApiOBPv400GetProductsRequest{
+func (a *ProductAPIService) GetProducts(ctx context.Context, bankid string) ApiGetProductsRequest {
+	return ApiGetProductsRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2310,16 +2491,16 @@ func (a *ProductAPIService) OBPv400GetProducts(ctx context.Context, bankid strin
 }
 
 // Execute executes the request
-//  @return OBPv400GetProducts200Response
-func (a *ProductAPIService) OBPv400GetProductsExecute(r ApiOBPv400GetProductsRequest) (*OBPv400GetProducts200Response, *http.Response, error) {
+//  @return GetProducts200Response
+func (a *ProductAPIService) GetProductsExecute(r ApiGetProductsRequest) (*GetProducts200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetProducts200Response
+		localVarReturnValue  *GetProducts200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv400GetProducts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.GetProducts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2385,27 +2566,27 @@ func (a *ProductAPIService) OBPv400GetProductsExecute(r ApiOBPv400GetProductsReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateProductAttributeRequest struct {
+type ApiUpdateProductAttributeRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	bankid string
 	productcode string
 	productattributeid string
-	oBPv510UpdateAtmAttributeRequest *OBPv510UpdateAtmAttributeRequest
+	updateAtmAttributeRequest *UpdateAtmAttributeRequest
 }
 
 // Request body
-func (r ApiOBPv400UpdateProductAttributeRequest) OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest OBPv510UpdateAtmAttributeRequest) ApiOBPv400UpdateProductAttributeRequest {
-	r.oBPv510UpdateAtmAttributeRequest = &oBPv510UpdateAtmAttributeRequest
+func (r ApiUpdateProductAttributeRequest) UpdateAtmAttributeRequest(updateAtmAttributeRequest UpdateAtmAttributeRequest) ApiUpdateProductAttributeRequest {
+	r.updateAtmAttributeRequest = &updateAtmAttributeRequest
 	return r
 }
 
-func (r ApiOBPv400UpdateProductAttributeRequest) Execute() (*OBPv400CreateProductAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateProductAttributeExecute(r)
+func (r ApiUpdateProductAttributeRequest) Execute() (*CreateProductAttribute200Response, *http.Response, error) {
+	return r.ApiService.UpdateProductAttributeExecute(r)
 }
 
 /*
-OBPv400UpdateProductAttribute Update Product Attribute
+UpdateProductAttribute Update Product Attribute
 
 <p>Update Product Attribute.</p>
 <p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p>
@@ -2430,10 +2611,10 @@ OBPv400UpdateProductAttribute Update Product Attribute
  @param bankid The BANKID identifier
  @param productcode The PRODUCTCODE identifier
  @param productattributeid The PRODUCTATTRIBUTEID identifier
- @return ApiOBPv400UpdateProductAttributeRequest
+ @return ApiUpdateProductAttributeRequest
 */
-func (a *ProductAPIService) OBPv400UpdateProductAttribute(ctx context.Context, bankid string, productcode string, productattributeid string) ApiOBPv400UpdateProductAttributeRequest {
-	return ApiOBPv400UpdateProductAttributeRequest{
+func (a *ProductAPIService) UpdateProductAttribute(ctx context.Context, bankid string, productcode string, productattributeid string) ApiUpdateProductAttributeRequest {
+	return ApiUpdateProductAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2443,16 +2624,16 @@ func (a *ProductAPIService) OBPv400UpdateProductAttribute(ctx context.Context, b
 }
 
 // Execute executes the request
-//  @return OBPv400CreateProductAttribute200Response
-func (a *ProductAPIService) OBPv400UpdateProductAttributeExecute(r ApiOBPv400UpdateProductAttributeRequest) (*OBPv400CreateProductAttribute200Response, *http.Response, error) {
+//  @return CreateProductAttribute200Response
+func (a *ProductAPIService) UpdateProductAttributeExecute(r ApiUpdateProductAttributeRequest) (*CreateProductAttribute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateProductAttribute200Response
+		localVarReturnValue  *CreateProductAttribute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv400UpdateProductAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.UpdateProductAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2465,8 +2646,8 @@ func (a *ProductAPIService) OBPv400UpdateProductAttributeExecute(r ApiOBPv400Upd
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAtmAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAtmAttributeRequest is required and must be specified")
+	if r.updateAtmAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmAttributeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2487,7 +2668,7 @@ func (a *ProductAPIService) OBPv400UpdateProductAttributeExecute(r ApiOBPv400Upd
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateAtmAttributeRequest
+	localVarPostBody = r.updateAtmAttributeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2512,7 +2693,7 @@ func (a *ProductAPIService) OBPv400UpdateProductAttributeExecute(r ApiOBPv400Upd
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2553,27 +2734,27 @@ func (a *ProductAPIService) OBPv400UpdateProductAttributeExecute(r ApiOBPv400Upd
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateProductFeeRequest struct {
+type ApiUpdateProductFeeRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	bankid string
 	productcode string
 	productfeeid string
-	oBPv400UpdateProductFeeRequest *OBPv400UpdateProductFeeRequest
+	updateProductFeeRequest *UpdateProductFeeRequest
 }
 
 // Request body
-func (r ApiOBPv400UpdateProductFeeRequest) OBPv400UpdateProductFeeRequest(oBPv400UpdateProductFeeRequest OBPv400UpdateProductFeeRequest) ApiOBPv400UpdateProductFeeRequest {
-	r.oBPv400UpdateProductFeeRequest = &oBPv400UpdateProductFeeRequest
+func (r ApiUpdateProductFeeRequest) UpdateProductFeeRequest(updateProductFeeRequest UpdateProductFeeRequest) ApiUpdateProductFeeRequest {
+	r.updateProductFeeRequest = &updateProductFeeRequest
 	return r
 }
 
-func (r ApiOBPv400UpdateProductFeeRequest) Execute() (*OBPv400GetProductFee200Response, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateProductFeeExecute(r)
+func (r ApiUpdateProductFeeRequest) Execute() (*GetProductFee200Response, *http.Response, error) {
+	return r.ApiService.UpdateProductFeeExecute(r)
 }
 
 /*
-OBPv400UpdateProductFee Update Product Fee
+UpdateProductFee Update Product Fee
 
 <p>Update Product Fee.</p>
 <p>Update one Product Fee by its id.</p>
@@ -2600,10 +2781,10 @@ OBPv400UpdateProductFee Update Product Fee
  @param bankid The BANKID identifier
  @param productcode The PRODUCTCODE identifier
  @param productfeeid The PRODUCTFEEID identifier
- @return ApiOBPv400UpdateProductFeeRequest
+ @return ApiUpdateProductFeeRequest
 */
-func (a *ProductAPIService) OBPv400UpdateProductFee(ctx context.Context, bankid string, productcode string, productfeeid string) ApiOBPv400UpdateProductFeeRequest {
-	return ApiOBPv400UpdateProductFeeRequest{
+func (a *ProductAPIService) UpdateProductFee(ctx context.Context, bankid string, productcode string, productfeeid string) ApiUpdateProductFeeRequest {
+	return ApiUpdateProductFeeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2613,16 +2794,16 @@ func (a *ProductAPIService) OBPv400UpdateProductFee(ctx context.Context, bankid 
 }
 
 // Execute executes the request
-//  @return OBPv400GetProductFee200Response
-func (a *ProductAPIService) OBPv400UpdateProductFeeExecute(r ApiOBPv400UpdateProductFeeRequest) (*OBPv400GetProductFee200Response, *http.Response, error) {
+//  @return GetProductFee200Response
+func (a *ProductAPIService) UpdateProductFeeExecute(r ApiUpdateProductFeeRequest) (*GetProductFee200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetProductFee200Response
+		localVarReturnValue  *GetProductFee200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv400UpdateProductFee")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.UpdateProductFee")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2635,8 +2816,8 @@ func (a *ProductAPIService) OBPv400UpdateProductFeeExecute(r ApiOBPv400UpdatePro
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateProductFeeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateProductFeeRequest is required and must be specified")
+	if r.updateProductFeeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateProductFeeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2657,7 +2838,7 @@ func (a *ProductAPIService) OBPv400UpdateProductFeeExecute(r ApiOBPv400UpdatePro
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400UpdateProductFeeRequest
+	localVarPostBody = r.updateProductFeeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2682,188 +2863,7 @@ func (a *ProductAPIService) OBPv400UpdateProductFeeExecute(r ApiOBPv400UpdatePro
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv500CreateProductRequest struct {
-	ctx context.Context
-	ApiService *ProductAPIService
-	bankid string
-	productcode string
-	oBPv500CreateProductRequest *OBPv500CreateProductRequest
-}
-
-// Request body
-func (r ApiOBPv500CreateProductRequest) OBPv500CreateProductRequest(oBPv500CreateProductRequest OBPv500CreateProductRequest) ApiOBPv500CreateProductRequest {
-	r.oBPv500CreateProductRequest = &oBPv500CreateProductRequest
-	return r
-}
-
-func (r ApiOBPv500CreateProductRequest) Execute() (*OBPv500CreateProduct200Response, *http.Response, error) {
-	return r.ApiService.OBPv500CreateProductExecute(r)
-}
-
-/*
-OBPv500CreateProduct Create Product
-
-<p>Create or Update Product for the Bank.</p>
-<p>The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.</p>
-<p>Typical Super Family values / Asset classes are:</p>
-<p>Debt<br />
-Equity<br />
-FX<br />
-Commodity<br />
-Derivative</p>
-<p>Product hiearchy vs Product Collections:</p>
-<ul>
-<li>
-<p>You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.</p>
-</li>
-<li>
-<p>You can define a collection (also known as baskets or buckets) of products using Product Collections.</p>
-</li>
-</ul>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#product_code">PRODUCT_CODE</a>: 1234BW</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#license"><strong>license</strong></a>:</p>
-<p><a href="/glossary#meta"><strong>meta</strong></a>:</p>
-<p><a href="/glossary#more_info_url"><strong>more_info_url</strong></a>: <a href="http://www.example.com/abc">www.example.com/abc</a></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#parent_product_code"><strong>parent_product_code</strong></a>: 787LOW</p>
-<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
-<p><a href="/glossary#"><strong>terms_and_conditions_url</strong></a>: <a href="http://www.example.com/xyz">www.example.com/xyz</a></p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">fees</a>: fees</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param productcode The PRODUCTCODE identifier
- @return ApiOBPv500CreateProductRequest
-*/
-func (a *ProductAPIService) OBPv500CreateProduct(ctx context.Context, bankid string, productcode string) ApiOBPv500CreateProductRequest {
-	return ApiOBPv500CreateProductRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		productcode: productcode,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv500CreateProduct200Response
-func (a *ProductAPIService) OBPv500CreateProductExecute(r ApiOBPv500CreateProductRequest) (*OBPv500CreateProduct200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv500CreateProduct200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.OBPv500CreateProduct")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.0.0/banks/{bankid}/products/{productcode}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"productcode"+"}", url.PathEscape(parameterValueToString(r.productcode, "productcode")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv500CreateProductRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv500CreateProductRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv500CreateProductRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

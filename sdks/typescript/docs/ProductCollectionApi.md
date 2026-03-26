@@ -1,17 +1,17 @@
 # ProductCollectionApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv310CreateProductCollection**](ProductCollectionApi.md#obpv310createproductcollectionoperation) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
-| [**oBPv310GetProductCollection**](ProductCollectionApi.md#obpv310getproductcollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
+| [**createProductCollection**](ProductCollectionApi.md#createproductcollectionoperation) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
+| [**getProductCollection**](ProductCollectionApi.md#getproductcollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
 
 
 
-## oBPv310CreateProductCollection
+## createProductCollection
 
-> OBPv310CreateProductCollection200Response oBPv310CreateProductCollection(bankid, collectioncode, oBPv310CreateProductCollectionRequest)
+> CreateProductCollection200Response createProductCollection(bankid, collectioncode, createProductCollectionRequest)
 
 Create Product Collection
 
@@ -24,7 +24,7 @@ import {
   Configuration,
   ProductCollectionApi,
 } from 'obp-typescript';
-import type { OBPv310CreateProductCollectionOperationRequest } from 'obp-typescript';
+import type { CreateProductCollectionOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -43,12 +43,12 @@ async function example() {
     bankid: bankid_example,
     // string | The COLLECTIONCODE identifier
     collectioncode: collectioncode_example,
-    // OBPv310CreateProductCollectionRequest | Request body
-    oBPv310CreateProductCollectionRequest: {"type":"object","properties":{"parent_product_code":{"type":"string"},"children_product_codes":{"type":"array","items":{"type":"string"}}}},
-  } satisfies OBPv310CreateProductCollectionOperationRequest;
+    // CreateProductCollectionRequest | Request body
+    createProductCollectionRequest: {"type":"object","properties":{"parent_product_code":{"type":"string"},"children_product_codes":{"type":"array","items":{"type":"string"}}}},
+  } satisfies CreateProductCollectionOperationRequest;
 
   try {
-    const data = await api.oBPv310CreateProductCollection(body);
+    const data = await api.createProductCollection(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -66,11 +66,11 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **collectioncode** | `string` | The COLLECTIONCODE identifier | [Defaults to `undefined`] |
-| **oBPv310CreateProductCollectionRequest** | [OBPv310CreateProductCollectionRequest](OBPv310CreateProductCollectionRequest.md) | Request body | |
+| **createProductCollectionRequest** | [CreateProductCollectionRequest](CreateProductCollectionRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv310CreateProductCollection200Response**](OBPv310CreateProductCollection200Response.md)
+[**CreateProductCollection200Response**](CreateProductCollection200Response.md)
 
 ### Authorization
 
@@ -92,9 +92,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv310GetProductCollection
+## getProductCollection
 
-> OBPv310GetProductCollection200Response oBPv310GetProductCollection(bankid, collectioncode)
+> GetProductCollection200Response getProductCollection(bankid, collectioncode)
 
 Get Product Collection
 
@@ -107,7 +107,7 @@ import {
   Configuration,
   ProductCollectionApi,
 } from 'obp-typescript';
-import type { OBPv310GetProductCollectionRequest } from 'obp-typescript';
+import type { GetProductCollectionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -126,10 +126,10 @@ async function example() {
     bankid: bankid_example,
     // string | The COLLECTIONCODE identifier
     collectioncode: collectioncode_example,
-  } satisfies OBPv310GetProductCollectionRequest;
+  } satisfies GetProductCollectionRequest;
 
   try {
-    const data = await api.oBPv310GetProductCollection(body);
+    const data = await api.getProductCollection(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -150,7 +150,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv310GetProductCollection200Response**](OBPv310GetProductCollection200Response.md)
+[**GetProductCollection200Response**](GetProductCollection200Response.md)
 
 ### Authorization
 

@@ -1,37 +1,37 @@
 # AbacApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600CreateAbacRule**](AbacApi.md#oBPv600CreateAbacRule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule |
-| [**oBPv600CreateAbacRuleWithHttpInfo**](AbacApi.md#oBPv600CreateAbacRuleWithHttpInfo) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule |
-| [**oBPv600DeleteAbacRule**](AbacApi.md#oBPv600DeleteAbacRule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule |
-| [**oBPv600DeleteAbacRuleWithHttpInfo**](AbacApi.md#oBPv600DeleteAbacRuleWithHttpInfo) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule |
-| [**oBPv600ExecuteAbacPolicy**](AbacApi.md#oBPv600ExecuteAbacPolicy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy |
-| [**oBPv600ExecuteAbacPolicyWithHttpInfo**](AbacApi.md#oBPv600ExecuteAbacPolicyWithHttpInfo) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy |
-| [**oBPv600ExecuteAbacRule**](AbacApi.md#oBPv600ExecuteAbacRule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule |
-| [**oBPv600ExecuteAbacRuleWithHttpInfo**](AbacApi.md#oBPv600ExecuteAbacRuleWithHttpInfo) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule |
-| [**oBPv600GetAbacPolicies**](AbacApi.md#oBPv600GetAbacPolicies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies |
-| [**oBPv600GetAbacPoliciesWithHttpInfo**](AbacApi.md#oBPv600GetAbacPoliciesWithHttpInfo) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies |
-| [**oBPv600GetAbacRule**](AbacApi.md#oBPv600GetAbacRule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule |
-| [**oBPv600GetAbacRuleWithHttpInfo**](AbacApi.md#oBPv600GetAbacRuleWithHttpInfo) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule |
-| [**oBPv600GetAbacRuleSchema**](AbacApi.md#oBPv600GetAbacRuleSchema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema |
-| [**oBPv600GetAbacRuleSchemaWithHttpInfo**](AbacApi.md#oBPv600GetAbacRuleSchemaWithHttpInfo) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema |
-| [**oBPv600GetAbacRules**](AbacApi.md#oBPv600GetAbacRules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules |
-| [**oBPv600GetAbacRulesWithHttpInfo**](AbacApi.md#oBPv600GetAbacRulesWithHttpInfo) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules |
-| [**oBPv600GetAbacRulesByPolicy**](AbacApi.md#oBPv600GetAbacRulesByPolicy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy |
-| [**oBPv600GetAbacRulesByPolicyWithHttpInfo**](AbacApi.md#oBPv600GetAbacRulesByPolicyWithHttpInfo) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy |
-| [**oBPv600UpdateAbacRule**](AbacApi.md#oBPv600UpdateAbacRule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule |
-| [**oBPv600UpdateAbacRuleWithHttpInfo**](AbacApi.md#oBPv600UpdateAbacRuleWithHttpInfo) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule |
-| [**oBPv600ValidateAbacRule**](AbacApi.md#oBPv600ValidateAbacRule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule |
-| [**oBPv600ValidateAbacRuleWithHttpInfo**](AbacApi.md#oBPv600ValidateAbacRuleWithHttpInfo) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule |
+| [**createAbacRule**](AbacApi.md#createAbacRule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule |
+| [**createAbacRuleWithHttpInfo**](AbacApi.md#createAbacRuleWithHttpInfo) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule |
+| [**deleteAbacRule**](AbacApi.md#deleteAbacRule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule |
+| [**deleteAbacRuleWithHttpInfo**](AbacApi.md#deleteAbacRuleWithHttpInfo) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule |
+| [**executeAbacPolicy**](AbacApi.md#executeAbacPolicy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy |
+| [**executeAbacPolicyWithHttpInfo**](AbacApi.md#executeAbacPolicyWithHttpInfo) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy |
+| [**executeAbacRule**](AbacApi.md#executeAbacRule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule |
+| [**executeAbacRuleWithHttpInfo**](AbacApi.md#executeAbacRuleWithHttpInfo) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule |
+| [**getAbacPolicies**](AbacApi.md#getAbacPolicies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies |
+| [**getAbacPoliciesWithHttpInfo**](AbacApi.md#getAbacPoliciesWithHttpInfo) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies |
+| [**getAbacRule**](AbacApi.md#getAbacRule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule |
+| [**getAbacRuleWithHttpInfo**](AbacApi.md#getAbacRuleWithHttpInfo) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule |
+| [**getAbacRuleSchema**](AbacApi.md#getAbacRuleSchema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema |
+| [**getAbacRuleSchemaWithHttpInfo**](AbacApi.md#getAbacRuleSchemaWithHttpInfo) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema |
+| [**getAbacRules**](AbacApi.md#getAbacRules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules |
+| [**getAbacRulesWithHttpInfo**](AbacApi.md#getAbacRulesWithHttpInfo) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules |
+| [**getAbacRulesByPolicy**](AbacApi.md#getAbacRulesByPolicy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy |
+| [**getAbacRulesByPolicyWithHttpInfo**](AbacApi.md#getAbacRulesByPolicyWithHttpInfo) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy |
+| [**updateAbacRule**](AbacApi.md#updateAbacRule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule |
+| [**updateAbacRuleWithHttpInfo**](AbacApi.md#updateAbacRuleWithHttpInfo) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule |
+| [**validateAbacRule**](AbacApi.md#validateAbacRule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule |
+| [**validateAbacRuleWithHttpInfo**](AbacApi.md#validateAbacRuleWithHttpInfo) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule |
 
 
 
-## oBPv600CreateAbacRule
+## createAbacRule
 
-> OBPv600GetAbacRule200Response oBPv600CreateAbacRule(obPv600UpdateAbacRuleRequest)
+> GetAbacRule200Response createAbacRule(updateAbacRuleRequest)
 
 Create ABAC Rule
 
@@ -51,7 +51,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -70,12 +70,12 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         AbacApi apiInstance = new AbacApi(defaultClient);
-        OBPv600UpdateAbacRuleRequest obPv600UpdateAbacRuleRequest = new OBPv600UpdateAbacRuleRequest(); // OBPv600UpdateAbacRuleRequest | Request body
+        UpdateAbacRuleRequest updateAbacRuleRequest = new UpdateAbacRuleRequest(); // UpdateAbacRuleRequest | Request body
         try {
-            OBPv600GetAbacRule200Response result = apiInstance.oBPv600CreateAbacRule(obPv600UpdateAbacRuleRequest);
+            GetAbacRule200Response result = apiInstance.createAbacRule(updateAbacRuleRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600CreateAbacRule");
+            System.err.println("Exception when calling AbacApi#createAbacRule");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -90,11 +90,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv600UpdateAbacRuleRequest** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md)| Request body | |
+| **updateAbacRuleRequest** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 
 ### Authorization
@@ -112,9 +112,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600CreateAbacRuleWithHttpInfo
+## createAbacRuleWithHttpInfo
 
-> ApiResponse<OBPv600GetAbacRule200Response> oBPv600CreateAbacRule oBPv600CreateAbacRuleWithHttpInfo(obPv600UpdateAbacRuleRequest)
+> ApiResponse<GetAbacRule200Response> createAbacRule createAbacRuleWithHttpInfo(updateAbacRuleRequest)
 
 Create ABAC Rule
 
@@ -135,7 +135,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -154,14 +154,14 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         AbacApi apiInstance = new AbacApi(defaultClient);
-        OBPv600UpdateAbacRuleRequest obPv600UpdateAbacRuleRequest = new OBPv600UpdateAbacRuleRequest(); // OBPv600UpdateAbacRuleRequest | Request body
+        UpdateAbacRuleRequest updateAbacRuleRequest = new UpdateAbacRuleRequest(); // UpdateAbacRuleRequest | Request body
         try {
-            ApiResponse<OBPv600GetAbacRule200Response> response = apiInstance.oBPv600CreateAbacRuleWithHttpInfo(obPv600UpdateAbacRuleRequest);
+            ApiResponse<GetAbacRule200Response> response = apiInstance.createAbacRuleWithHttpInfo(updateAbacRuleRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600CreateAbacRule");
+            System.err.println("Exception when calling AbacApi#createAbacRule");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -176,11 +176,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv600UpdateAbacRuleRequest** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md)| Request body | |
+| **updateAbacRuleRequest** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)>
+ApiResponse<[**GetAbacRule200Response**](GetAbacRule200Response.md)>
 
 
 ### Authorization
@@ -199,9 +199,9 @@ ApiResponse<[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600DeleteAbacRule
+## deleteAbacRule
 
-> void oBPv600DeleteAbacRule(abacruleid)
+> void deleteAbacRule(abacruleid)
 
 Delete ABAC Rule
 
@@ -221,7 +221,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -242,9 +242,9 @@ public class Example {
         AbacApi apiInstance = new AbacApi(defaultClient);
         String abacruleid = "abacruleid_example"; // String | The ABACRULEID identifier
         try {
-            apiInstance.oBPv600DeleteAbacRule(abacruleid);
+            apiInstance.deleteAbacRule(abacruleid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600DeleteAbacRule");
+            System.err.println("Exception when calling AbacApi#deleteAbacRule");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -281,9 +281,9 @@ null (empty response body)
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600DeleteAbacRuleWithHttpInfo
+## deleteAbacRuleWithHttpInfo
 
-> ApiResponse<Void> oBPv600DeleteAbacRule oBPv600DeleteAbacRuleWithHttpInfo(abacruleid)
+> ApiResponse<Void> deleteAbacRule deleteAbacRuleWithHttpInfo(abacruleid)
 
 Delete ABAC Rule
 
@@ -304,7 +304,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -325,11 +325,11 @@ public class Example {
         AbacApi apiInstance = new AbacApi(defaultClient);
         String abacruleid = "abacruleid_example"; // String | The ABACRULEID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv600DeleteAbacRuleWithHttpInfo(abacruleid);
+            ApiResponse<Void> response = apiInstance.deleteAbacRuleWithHttpInfo(abacruleid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600DeleteAbacRule");
+            System.err.println("Exception when calling AbacApi#deleteAbacRule");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -367,9 +367,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600ExecuteAbacPolicy
+## executeAbacPolicy
 
-> OBPv600ExecuteAbacPolicy200Response oBPv600ExecuteAbacPolicy(policy, obPv600ExecuteAbacPolicyRequest)
+> ExecuteAbacPolicy200Response executeAbacPolicy(policy, executeAbacPolicyRequest)
 
 Execute ABAC Policy
 
@@ -389,7 +389,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -409,12 +409,12 @@ public class Example {
 
         AbacApi apiInstance = new AbacApi(defaultClient);
         String policy = "policy_example"; // String | The POLICY identifier
-        OBPv600ExecuteAbacPolicyRequest obPv600ExecuteAbacPolicyRequest = new OBPv600ExecuteAbacPolicyRequest(); // OBPv600ExecuteAbacPolicyRequest | Request body
+        ExecuteAbacPolicyRequest executeAbacPolicyRequest = new ExecuteAbacPolicyRequest(); // ExecuteAbacPolicyRequest | Request body
         try {
-            OBPv600ExecuteAbacPolicy200Response result = apiInstance.oBPv600ExecuteAbacPolicy(policy, obPv600ExecuteAbacPolicyRequest);
+            ExecuteAbacPolicy200Response result = apiInstance.executeAbacPolicy(policy, executeAbacPolicyRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600ExecuteAbacPolicy");
+            System.err.println("Exception when calling AbacApi#executeAbacPolicy");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -430,11 +430,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **policy** | **String**| The POLICY identifier | |
-| **obPv600ExecuteAbacPolicyRequest** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md)| Request body | |
+| **executeAbacPolicyRequest** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 
 ### Authorization
@@ -452,9 +452,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600ExecuteAbacPolicyWithHttpInfo
+## executeAbacPolicyWithHttpInfo
 
-> ApiResponse<OBPv600ExecuteAbacPolicy200Response> oBPv600ExecuteAbacPolicy oBPv600ExecuteAbacPolicyWithHttpInfo(policy, obPv600ExecuteAbacPolicyRequest)
+> ApiResponse<ExecuteAbacPolicy200Response> executeAbacPolicy executeAbacPolicyWithHttpInfo(policy, executeAbacPolicyRequest)
 
 Execute ABAC Policy
 
@@ -475,7 +475,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -495,14 +495,14 @@ public class Example {
 
         AbacApi apiInstance = new AbacApi(defaultClient);
         String policy = "policy_example"; // String | The POLICY identifier
-        OBPv600ExecuteAbacPolicyRequest obPv600ExecuteAbacPolicyRequest = new OBPv600ExecuteAbacPolicyRequest(); // OBPv600ExecuteAbacPolicyRequest | Request body
+        ExecuteAbacPolicyRequest executeAbacPolicyRequest = new ExecuteAbacPolicyRequest(); // ExecuteAbacPolicyRequest | Request body
         try {
-            ApiResponse<OBPv600ExecuteAbacPolicy200Response> response = apiInstance.oBPv600ExecuteAbacPolicyWithHttpInfo(policy, obPv600ExecuteAbacPolicyRequest);
+            ApiResponse<ExecuteAbacPolicy200Response> response = apiInstance.executeAbacPolicyWithHttpInfo(policy, executeAbacPolicyRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600ExecuteAbacPolicy");
+            System.err.println("Exception when calling AbacApi#executeAbacPolicy");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -518,11 +518,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **policy** | **String**| The POLICY identifier | |
-| **obPv600ExecuteAbacPolicyRequest** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md)| Request body | |
+| **executeAbacPolicyRequest** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)>
+ApiResponse<[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)>
 
 
 ### Authorization
@@ -541,9 +541,9 @@ ApiResponse<[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy20
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600ExecuteAbacRule
+## executeAbacRule
 
-> OBPv600ExecuteAbacPolicy200Response oBPv600ExecuteAbacRule(abacruleid, obPv600ExecuteAbacPolicyRequest)
+> ExecuteAbacPolicy200Response executeAbacRule(abacruleid, executeAbacPolicyRequest)
 
 Execute ABAC Rule
 
@@ -563,7 +563,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -583,12 +583,12 @@ public class Example {
 
         AbacApi apiInstance = new AbacApi(defaultClient);
         String abacruleid = "abacruleid_example"; // String | The ABACRULEID identifier
-        OBPv600ExecuteAbacPolicyRequest obPv600ExecuteAbacPolicyRequest = new OBPv600ExecuteAbacPolicyRequest(); // OBPv600ExecuteAbacPolicyRequest | Request body
+        ExecuteAbacPolicyRequest executeAbacPolicyRequest = new ExecuteAbacPolicyRequest(); // ExecuteAbacPolicyRequest | Request body
         try {
-            OBPv600ExecuteAbacPolicy200Response result = apiInstance.oBPv600ExecuteAbacRule(abacruleid, obPv600ExecuteAbacPolicyRequest);
+            ExecuteAbacPolicy200Response result = apiInstance.executeAbacRule(abacruleid, executeAbacPolicyRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600ExecuteAbacRule");
+            System.err.println("Exception when calling AbacApi#executeAbacRule");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -604,11 +604,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **abacruleid** | **String**| The ABACRULEID identifier | |
-| **obPv600ExecuteAbacPolicyRequest** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md)| Request body | |
+| **executeAbacPolicyRequest** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 
 ### Authorization
@@ -626,9 +626,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600ExecuteAbacRuleWithHttpInfo
+## executeAbacRuleWithHttpInfo
 
-> ApiResponse<OBPv600ExecuteAbacPolicy200Response> oBPv600ExecuteAbacRule oBPv600ExecuteAbacRuleWithHttpInfo(abacruleid, obPv600ExecuteAbacPolicyRequest)
+> ApiResponse<ExecuteAbacPolicy200Response> executeAbacRule executeAbacRuleWithHttpInfo(abacruleid, executeAbacPolicyRequest)
 
 Execute ABAC Rule
 
@@ -649,7 +649,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -669,14 +669,14 @@ public class Example {
 
         AbacApi apiInstance = new AbacApi(defaultClient);
         String abacruleid = "abacruleid_example"; // String | The ABACRULEID identifier
-        OBPv600ExecuteAbacPolicyRequest obPv600ExecuteAbacPolicyRequest = new OBPv600ExecuteAbacPolicyRequest(); // OBPv600ExecuteAbacPolicyRequest | Request body
+        ExecuteAbacPolicyRequest executeAbacPolicyRequest = new ExecuteAbacPolicyRequest(); // ExecuteAbacPolicyRequest | Request body
         try {
-            ApiResponse<OBPv600ExecuteAbacPolicy200Response> response = apiInstance.oBPv600ExecuteAbacRuleWithHttpInfo(abacruleid, obPv600ExecuteAbacPolicyRequest);
+            ApiResponse<ExecuteAbacPolicy200Response> response = apiInstance.executeAbacRuleWithHttpInfo(abacruleid, executeAbacPolicyRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600ExecuteAbacRule");
+            System.err.println("Exception when calling AbacApi#executeAbacRule");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -692,11 +692,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **abacruleid** | **String**| The ABACRULEID identifier | |
-| **obPv600ExecuteAbacPolicyRequest** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md)| Request body | |
+| **executeAbacPolicyRequest** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)>
+ApiResponse<[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)>
 
 
 ### Authorization
@@ -715,9 +715,9 @@ ApiResponse<[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy20
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetAbacPolicies
+## getAbacPolicies
 
-> OBPv600GetAbacPolicies200Response oBPv600GetAbacPolicies()
+> GetAbacPolicies200Response getAbacPolicies()
 
 Get ABAC Policies
 
@@ -737,7 +737,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -757,10 +757,10 @@ public class Example {
 
         AbacApi apiInstance = new AbacApi(defaultClient);
         try {
-            OBPv600GetAbacPolicies200Response result = apiInstance.oBPv600GetAbacPolicies();
+            GetAbacPolicies200Response result = apiInstance.getAbacPolicies();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600GetAbacPolicies");
+            System.err.println("Exception when calling AbacApi#getAbacPolicies");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -776,7 +776,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacPolicies200Response**](OBPv600GetAbacPolicies200Response.md)
+[**GetAbacPolicies200Response**](GetAbacPolicies200Response.md)
 
 
 ### Authorization
@@ -794,9 +794,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetAbacPoliciesWithHttpInfo
+## getAbacPoliciesWithHttpInfo
 
-> ApiResponse<OBPv600GetAbacPolicies200Response> oBPv600GetAbacPolicies oBPv600GetAbacPoliciesWithHttpInfo()
+> ApiResponse<GetAbacPolicies200Response> getAbacPolicies getAbacPoliciesWithHttpInfo()
 
 Get ABAC Policies
 
@@ -817,7 +817,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -837,12 +837,12 @@ public class Example {
 
         AbacApi apiInstance = new AbacApi(defaultClient);
         try {
-            ApiResponse<OBPv600GetAbacPolicies200Response> response = apiInstance.oBPv600GetAbacPoliciesWithHttpInfo();
+            ApiResponse<GetAbacPolicies200Response> response = apiInstance.getAbacPoliciesWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600GetAbacPolicies");
+            System.err.println("Exception when calling AbacApi#getAbacPolicies");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -858,7 +858,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv600GetAbacPolicies200Response**](OBPv600GetAbacPolicies200Response.md)>
+ApiResponse<[**GetAbacPolicies200Response**](GetAbacPolicies200Response.md)>
 
 
 ### Authorization
@@ -877,9 +877,9 @@ ApiResponse<[**OBPv600GetAbacPolicies200Response**](OBPv600GetAbacPolicies200Res
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetAbacRule
+## getAbacRule
 
-> OBPv600GetAbacRule200Response oBPv600GetAbacRule(abacruleid)
+> GetAbacRule200Response getAbacRule(abacruleid)
 
 Get ABAC Rule
 
@@ -899,7 +899,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -920,10 +920,10 @@ public class Example {
         AbacApi apiInstance = new AbacApi(defaultClient);
         String abacruleid = "abacruleid_example"; // String | The ABACRULEID identifier
         try {
-            OBPv600GetAbacRule200Response result = apiInstance.oBPv600GetAbacRule(abacruleid);
+            GetAbacRule200Response result = apiInstance.getAbacRule(abacruleid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600GetAbacRule");
+            System.err.println("Exception when calling AbacApi#getAbacRule");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -942,7 +942,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 
 ### Authorization
@@ -960,9 +960,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetAbacRuleWithHttpInfo
+## getAbacRuleWithHttpInfo
 
-> ApiResponse<OBPv600GetAbacRule200Response> oBPv600GetAbacRule oBPv600GetAbacRuleWithHttpInfo(abacruleid)
+> ApiResponse<GetAbacRule200Response> getAbacRule getAbacRuleWithHttpInfo(abacruleid)
 
 Get ABAC Rule
 
@@ -983,7 +983,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1004,12 +1004,12 @@ public class Example {
         AbacApi apiInstance = new AbacApi(defaultClient);
         String abacruleid = "abacruleid_example"; // String | The ABACRULEID identifier
         try {
-            ApiResponse<OBPv600GetAbacRule200Response> response = apiInstance.oBPv600GetAbacRuleWithHttpInfo(abacruleid);
+            ApiResponse<GetAbacRule200Response> response = apiInstance.getAbacRuleWithHttpInfo(abacruleid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600GetAbacRule");
+            System.err.println("Exception when calling AbacApi#getAbacRule");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1028,7 +1028,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)>
+ApiResponse<[**GetAbacRule200Response**](GetAbacRule200Response.md)>
 
 
 ### Authorization
@@ -1047,9 +1047,9 @@ ApiResponse<[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetAbacRuleSchema
+## getAbacRuleSchema
 
-> OBPv600GetAbacRuleSchema200Response oBPv600GetAbacRuleSchema()
+> GetAbacRuleSchema200Response getAbacRuleSchema()
 
 Get ABAC Rule Schema
 
@@ -1069,7 +1069,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1089,10 +1089,10 @@ public class Example {
 
         AbacApi apiInstance = new AbacApi(defaultClient);
         try {
-            OBPv600GetAbacRuleSchema200Response result = apiInstance.oBPv600GetAbacRuleSchema();
+            GetAbacRuleSchema200Response result = apiInstance.getAbacRuleSchema();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600GetAbacRuleSchema");
+            System.err.println("Exception when calling AbacApi#getAbacRuleSchema");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1108,7 +1108,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacRuleSchema200Response**](OBPv600GetAbacRuleSchema200Response.md)
+[**GetAbacRuleSchema200Response**](GetAbacRuleSchema200Response.md)
 
 
 ### Authorization
@@ -1126,9 +1126,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetAbacRuleSchemaWithHttpInfo
+## getAbacRuleSchemaWithHttpInfo
 
-> ApiResponse<OBPv600GetAbacRuleSchema200Response> oBPv600GetAbacRuleSchema oBPv600GetAbacRuleSchemaWithHttpInfo()
+> ApiResponse<GetAbacRuleSchema200Response> getAbacRuleSchema getAbacRuleSchemaWithHttpInfo()
 
 Get ABAC Rule Schema
 
@@ -1149,7 +1149,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1169,12 +1169,12 @@ public class Example {
 
         AbacApi apiInstance = new AbacApi(defaultClient);
         try {
-            ApiResponse<OBPv600GetAbacRuleSchema200Response> response = apiInstance.oBPv600GetAbacRuleSchemaWithHttpInfo();
+            ApiResponse<GetAbacRuleSchema200Response> response = apiInstance.getAbacRuleSchemaWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600GetAbacRuleSchema");
+            System.err.println("Exception when calling AbacApi#getAbacRuleSchema");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1190,7 +1190,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv600GetAbacRuleSchema200Response**](OBPv600GetAbacRuleSchema200Response.md)>
+ApiResponse<[**GetAbacRuleSchema200Response**](GetAbacRuleSchema200Response.md)>
 
 
 ### Authorization
@@ -1209,9 +1209,9 @@ ApiResponse<[**OBPv600GetAbacRuleSchema200Response**](OBPv600GetAbacRuleSchema20
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetAbacRules
+## getAbacRules
 
-> OBPv600GetAbacRulesByPolicy200Response oBPv600GetAbacRules()
+> GetAbacRulesByPolicy200Response getAbacRules()
 
 Get ABAC Rules
 
@@ -1231,7 +1231,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1251,10 +1251,10 @@ public class Example {
 
         AbacApi apiInstance = new AbacApi(defaultClient);
         try {
-            OBPv600GetAbacRulesByPolicy200Response result = apiInstance.oBPv600GetAbacRules();
+            GetAbacRulesByPolicy200Response result = apiInstance.getAbacRules();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600GetAbacRules");
+            System.err.println("Exception when calling AbacApi#getAbacRules");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1270,7 +1270,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 
 ### Authorization
@@ -1288,9 +1288,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetAbacRulesWithHttpInfo
+## getAbacRulesWithHttpInfo
 
-> ApiResponse<OBPv600GetAbacRulesByPolicy200Response> oBPv600GetAbacRules oBPv600GetAbacRulesWithHttpInfo()
+> ApiResponse<GetAbacRulesByPolicy200Response> getAbacRules getAbacRulesWithHttpInfo()
 
 Get ABAC Rules
 
@@ -1311,7 +1311,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1331,12 +1331,12 @@ public class Example {
 
         AbacApi apiInstance = new AbacApi(defaultClient);
         try {
-            ApiResponse<OBPv600GetAbacRulesByPolicy200Response> response = apiInstance.oBPv600GetAbacRulesWithHttpInfo();
+            ApiResponse<GetAbacRulesByPolicy200Response> response = apiInstance.getAbacRulesWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600GetAbacRules");
+            System.err.println("Exception when calling AbacApi#getAbacRules");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1352,7 +1352,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)>
+ApiResponse<[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)>
 
 
 ### Authorization
@@ -1371,9 +1371,9 @@ ApiResponse<[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPo
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetAbacRulesByPolicy
+## getAbacRulesByPolicy
 
-> OBPv600GetAbacRulesByPolicy200Response oBPv600GetAbacRulesByPolicy(policy)
+> GetAbacRulesByPolicy200Response getAbacRulesByPolicy(policy)
 
 Get ABAC Rules by Policy
 
@@ -1393,7 +1393,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1414,10 +1414,10 @@ public class Example {
         AbacApi apiInstance = new AbacApi(defaultClient);
         String policy = "policy_example"; // String | The POLICY identifier
         try {
-            OBPv600GetAbacRulesByPolicy200Response result = apiInstance.oBPv600GetAbacRulesByPolicy(policy);
+            GetAbacRulesByPolicy200Response result = apiInstance.getAbacRulesByPolicy(policy);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600GetAbacRulesByPolicy");
+            System.err.println("Exception when calling AbacApi#getAbacRulesByPolicy");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1436,7 +1436,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 
 ### Authorization
@@ -1454,9 +1454,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetAbacRulesByPolicyWithHttpInfo
+## getAbacRulesByPolicyWithHttpInfo
 
-> ApiResponse<OBPv600GetAbacRulesByPolicy200Response> oBPv600GetAbacRulesByPolicy oBPv600GetAbacRulesByPolicyWithHttpInfo(policy)
+> ApiResponse<GetAbacRulesByPolicy200Response> getAbacRulesByPolicy getAbacRulesByPolicyWithHttpInfo(policy)
 
 Get ABAC Rules by Policy
 
@@ -1477,7 +1477,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1498,12 +1498,12 @@ public class Example {
         AbacApi apiInstance = new AbacApi(defaultClient);
         String policy = "policy_example"; // String | The POLICY identifier
         try {
-            ApiResponse<OBPv600GetAbacRulesByPolicy200Response> response = apiInstance.oBPv600GetAbacRulesByPolicyWithHttpInfo(policy);
+            ApiResponse<GetAbacRulesByPolicy200Response> response = apiInstance.getAbacRulesByPolicyWithHttpInfo(policy);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600GetAbacRulesByPolicy");
+            System.err.println("Exception when calling AbacApi#getAbacRulesByPolicy");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1522,7 +1522,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)>
+ApiResponse<[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)>
 
 
 ### Authorization
@@ -1541,9 +1541,9 @@ ApiResponse<[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPo
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600UpdateAbacRule
+## updateAbacRule
 
-> OBPv600GetAbacRule200Response oBPv600UpdateAbacRule(abacruleid, obPv600UpdateAbacRuleRequest)
+> GetAbacRule200Response updateAbacRule(abacruleid, updateAbacRuleRequest)
 
 Update ABAC Rule
 
@@ -1563,7 +1563,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1583,12 +1583,12 @@ public class Example {
 
         AbacApi apiInstance = new AbacApi(defaultClient);
         String abacruleid = "abacruleid_example"; // String | The ABACRULEID identifier
-        OBPv600UpdateAbacRuleRequest obPv600UpdateAbacRuleRequest = new OBPv600UpdateAbacRuleRequest(); // OBPv600UpdateAbacRuleRequest | Request body
+        UpdateAbacRuleRequest updateAbacRuleRequest = new UpdateAbacRuleRequest(); // UpdateAbacRuleRequest | Request body
         try {
-            OBPv600GetAbacRule200Response result = apiInstance.oBPv600UpdateAbacRule(abacruleid, obPv600UpdateAbacRuleRequest);
+            GetAbacRule200Response result = apiInstance.updateAbacRule(abacruleid, updateAbacRuleRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600UpdateAbacRule");
+            System.err.println("Exception when calling AbacApi#updateAbacRule");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1604,11 +1604,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **abacruleid** | **String**| The ABACRULEID identifier | |
-| **obPv600UpdateAbacRuleRequest** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md)| Request body | |
+| **updateAbacRuleRequest** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 
 ### Authorization
@@ -1626,9 +1626,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600UpdateAbacRuleWithHttpInfo
+## updateAbacRuleWithHttpInfo
 
-> ApiResponse<OBPv600GetAbacRule200Response> oBPv600UpdateAbacRule oBPv600UpdateAbacRuleWithHttpInfo(abacruleid, obPv600UpdateAbacRuleRequest)
+> ApiResponse<GetAbacRule200Response> updateAbacRule updateAbacRuleWithHttpInfo(abacruleid, updateAbacRuleRequest)
 
 Update ABAC Rule
 
@@ -1649,7 +1649,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1669,14 +1669,14 @@ public class Example {
 
         AbacApi apiInstance = new AbacApi(defaultClient);
         String abacruleid = "abacruleid_example"; // String | The ABACRULEID identifier
-        OBPv600UpdateAbacRuleRequest obPv600UpdateAbacRuleRequest = new OBPv600UpdateAbacRuleRequest(); // OBPv600UpdateAbacRuleRequest | Request body
+        UpdateAbacRuleRequest updateAbacRuleRequest = new UpdateAbacRuleRequest(); // UpdateAbacRuleRequest | Request body
         try {
-            ApiResponse<OBPv600GetAbacRule200Response> response = apiInstance.oBPv600UpdateAbacRuleWithHttpInfo(abacruleid, obPv600UpdateAbacRuleRequest);
+            ApiResponse<GetAbacRule200Response> response = apiInstance.updateAbacRuleWithHttpInfo(abacruleid, updateAbacRuleRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600UpdateAbacRule");
+            System.err.println("Exception when calling AbacApi#updateAbacRule");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1692,11 +1692,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **abacruleid** | **String**| The ABACRULEID identifier | |
-| **obPv600UpdateAbacRuleRequest** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md)| Request body | |
+| **updateAbacRuleRequest** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)>
+ApiResponse<[**GetAbacRule200Response**](GetAbacRule200Response.md)>
 
 
 ### Authorization
@@ -1715,9 +1715,9 @@ ApiResponse<[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600ValidateAbacRule
+## validateAbacRule
 
-> OBPv600ValidateAbacRule200Response oBPv600ValidateAbacRule(obPv600ValidateAbacRuleRequest)
+> ValidateAbacRule200Response validateAbacRule(validateAbacRuleRequest)
 
 Validate ABAC Rule
 
@@ -1737,7 +1737,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1756,12 +1756,12 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         AbacApi apiInstance = new AbacApi(defaultClient);
-        OBPv600ValidateAbacRuleRequest obPv600ValidateAbacRuleRequest = new OBPv600ValidateAbacRuleRequest(); // OBPv600ValidateAbacRuleRequest | Request body
+        ValidateAbacRuleRequest validateAbacRuleRequest = new ValidateAbacRuleRequest(); // ValidateAbacRuleRequest | Request body
         try {
-            OBPv600ValidateAbacRule200Response result = apiInstance.oBPv600ValidateAbacRule(obPv600ValidateAbacRuleRequest);
+            ValidateAbacRule200Response result = apiInstance.validateAbacRule(validateAbacRuleRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600ValidateAbacRule");
+            System.err.println("Exception when calling AbacApi#validateAbacRule");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1776,11 +1776,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv600ValidateAbacRuleRequest** | [**OBPv600ValidateAbacRuleRequest**](OBPv600ValidateAbacRuleRequest.md)| Request body | |
+| **validateAbacRuleRequest** | [**ValidateAbacRuleRequest**](ValidateAbacRuleRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600ValidateAbacRule200Response**](OBPv600ValidateAbacRule200Response.md)
+[**ValidateAbacRule200Response**](ValidateAbacRule200Response.md)
 
 
 ### Authorization
@@ -1798,9 +1798,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600ValidateAbacRuleWithHttpInfo
+## validateAbacRuleWithHttpInfo
 
-> ApiResponse<OBPv600ValidateAbacRule200Response> oBPv600ValidateAbacRule oBPv600ValidateAbacRuleWithHttpInfo(obPv600ValidateAbacRuleRequest)
+> ApiResponse<ValidateAbacRule200Response> validateAbacRule validateAbacRuleWithHttpInfo(validateAbacRuleRequest)
 
 Validate ABAC Rule
 
@@ -1821,7 +1821,7 @@ import com.openbankproject.api.AbacApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1840,14 +1840,14 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         AbacApi apiInstance = new AbacApi(defaultClient);
-        OBPv600ValidateAbacRuleRequest obPv600ValidateAbacRuleRequest = new OBPv600ValidateAbacRuleRequest(); // OBPv600ValidateAbacRuleRequest | Request body
+        ValidateAbacRuleRequest validateAbacRuleRequest = new ValidateAbacRuleRequest(); // ValidateAbacRuleRequest | Request body
         try {
-            ApiResponse<OBPv600ValidateAbacRule200Response> response = apiInstance.oBPv600ValidateAbacRuleWithHttpInfo(obPv600ValidateAbacRuleRequest);
+            ApiResponse<ValidateAbacRule200Response> response = apiInstance.validateAbacRuleWithHttpInfo(validateAbacRuleRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AbacApi#oBPv600ValidateAbacRule");
+            System.err.println("Exception when calling AbacApi#validateAbacRule");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1862,11 +1862,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv600ValidateAbacRuleRequest** | [**OBPv600ValidateAbacRuleRequest**](OBPv600ValidateAbacRuleRequest.md)| Request body | |
+| **validateAbacRuleRequest** | [**ValidateAbacRuleRequest**](ValidateAbacRuleRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600ValidateAbacRule200Response**](OBPv600ValidateAbacRule200Response.md)>
+ApiResponse<[**ValidateAbacRule200Response**](ValidateAbacRule200Response.md)>
 
 
 ### Authorization

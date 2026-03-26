@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,27 +15,27 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv400CreateDirectDebit200Response,
-  OBPv400CreateDirectDebitRequest,
+  CreateDirectDebit200Response,
+  CreateDirectDebitRequest,
 } from '../models/index';
 import {
-    OBPv400CreateDirectDebit200ResponseFromJSON,
-    OBPv400CreateDirectDebit200ResponseToJSON,
-    OBPv400CreateDirectDebitRequestFromJSON,
-    OBPv400CreateDirectDebitRequestToJSON,
+    CreateDirectDebit200ResponseFromJSON,
+    CreateDirectDebit200ResponseToJSON,
+    CreateDirectDebitRequestFromJSON,
+    CreateDirectDebitRequestToJSON,
 } from '../models/index';
 
-export interface OBPv400CreateDirectDebitOperationRequest {
+export interface CreateDirectDebitOperationRequest {
     bankid: string;
     accountid: string;
     viewid: string;
-    oBPv400CreateDirectDebitRequest: OBPv400CreateDirectDebitRequest;
+    createDirectDebitRequest: CreateDirectDebitRequest;
 }
 
-export interface OBPv400CreateDirectDebitManagementRequest {
+export interface CreateDirectDebitManagementRequest {
     bankid: string;
     accountid: string;
-    oBPv400CreateDirectDebitRequest: OBPv400CreateDirectDebitRequest;
+    createDirectDebitRequest: CreateDirectDebitRequest;
 }
 
 /**
@@ -44,34 +44,34 @@ export interface OBPv400CreateDirectDebitManagementRequest {
 export class DirectDebitApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv400CreateDirectDebit without sending the request
+     * Creates request options for createDirectDebit without sending the request
      */
-    async oBPv400CreateDirectDebitRequestOpts(requestParameters: OBPv400CreateDirectDebitOperationRequest): Promise<runtime.RequestOpts> {
+    async createDirectDebitRequestOpts(requestParameters: CreateDirectDebitOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400CreateDirectDebit().'
+                'Required parameter "bankid" was null or undefined when calling createDirectDebit().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400CreateDirectDebit().'
+                'Required parameter "accountid" was null or undefined when calling createDirectDebit().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv400CreateDirectDebit().'
+                'Required parameter "viewid" was null or undefined when calling createDirectDebit().'
             );
         }
 
-        if (requestParameters['oBPv400CreateDirectDebitRequest'] == null) {
+        if (requestParameters['createDirectDebitRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400CreateDirectDebitRequest',
-                'Required parameter "oBPv400CreateDirectDebitRequest" was null or undefined when calling oBPv400CreateDirectDebit().'
+                'createDirectDebitRequest',
+                'Required parameter "createDirectDebitRequest" was null or undefined when calling createDirectDebit().'
             );
         }
 
@@ -91,7 +91,7 @@ export class DirectDebitApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -105,7 +105,7 @@ export class DirectDebitApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400CreateDirectDebitRequestToJSON(requestParameters['oBPv400CreateDirectDebitRequest']),
+            body: CreateDirectDebitRequestToJSON(requestParameters['createDirectDebitRequest']),
         };
     }
 
@@ -113,44 +113,44 @@ export class DirectDebitApi extends runtime.BaseAPI {
      * <p>Create direct debit for an account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">date_expires</a>: 2021-01-27</p> <p><a href=\"/glossary#\">date_signed</a>: 2020-01-27</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#active\"><strong>active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_cancelled</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_expires</strong></a>: 2021-01-27</p> <p><a href=\"/glossary#\"><strong>date_signed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#direct_debit_id\"><strong>direct_debit_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Create Direct Debit
      */
-    async oBPv400CreateDirectDebitRaw(requestParameters: OBPv400CreateDirectDebitOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400CreateDirectDebit200Response>> {
-        const requestOptions = await this.oBPv400CreateDirectDebitRequestOpts(requestParameters);
+    async createDirectDebitRaw(requestParameters: CreateDirectDebitOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CreateDirectDebit200Response>> {
+        const requestOptions = await this.createDirectDebitRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400CreateDirectDebit200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateDirectDebit200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Create direct debit for an account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">date_expires</a>: 2021-01-27</p> <p><a href=\"/glossary#\">date_signed</a>: 2020-01-27</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#active\"><strong>active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_cancelled</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_expires</strong></a>: 2021-01-27</p> <p><a href=\"/glossary#\"><strong>date_signed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#direct_debit_id\"><strong>direct_debit_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Create Direct Debit
      */
-    async oBPv400CreateDirectDebit(requestParameters: OBPv400CreateDirectDebitOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400CreateDirectDebit200Response> {
-        const response = await this.oBPv400CreateDirectDebitRaw(requestParameters, initOverrides);
+    async createDirectDebit(requestParameters: CreateDirectDebitOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CreateDirectDebit200Response> {
+        const response = await this.createDirectDebitRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400CreateDirectDebitManagement without sending the request
+     * Creates request options for createDirectDebitManagement without sending the request
      */
-    async oBPv400CreateDirectDebitManagementRequestOpts(requestParameters: OBPv400CreateDirectDebitManagementRequest): Promise<runtime.RequestOpts> {
+    async createDirectDebitManagementRequestOpts(requestParameters: CreateDirectDebitManagementRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400CreateDirectDebitManagement().'
+                'Required parameter "bankid" was null or undefined when calling createDirectDebitManagement().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400CreateDirectDebitManagement().'
+                'Required parameter "accountid" was null or undefined when calling createDirectDebitManagement().'
             );
         }
 
-        if (requestParameters['oBPv400CreateDirectDebitRequest'] == null) {
+        if (requestParameters['createDirectDebitRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400CreateDirectDebitRequest',
-                'Required parameter "oBPv400CreateDirectDebitRequest" was null or undefined when calling oBPv400CreateDirectDebitManagement().'
+                'createDirectDebitRequest',
+                'Required parameter "createDirectDebitRequest" was null or undefined when calling createDirectDebitManagement().'
             );
         }
 
@@ -170,7 +170,7 @@ export class DirectDebitApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -183,7 +183,7 @@ export class DirectDebitApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400CreateDirectDebitRequestToJSON(requestParameters['oBPv400CreateDirectDebitRequest']),
+            body: CreateDirectDebitRequestToJSON(requestParameters['createDirectDebitRequest']),
         };
     }
 
@@ -191,19 +191,19 @@ export class DirectDebitApi extends runtime.BaseAPI {
      * <p>Create direct debit for an account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">date_expires</a>: 2021-01-27</p> <p><a href=\"/glossary#\">date_signed</a>: 2020-01-27</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#active\"><strong>active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_cancelled</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_expires</strong></a>: 2021-01-27</p> <p><a href=\"/glossary#\"><strong>date_signed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#direct_debit_id\"><strong>direct_debit_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Create Direct Debit (management)
      */
-    async oBPv400CreateDirectDebitManagementRaw(requestParameters: OBPv400CreateDirectDebitManagementRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400CreateDirectDebit200Response>> {
-        const requestOptions = await this.oBPv400CreateDirectDebitManagementRequestOpts(requestParameters);
+    async createDirectDebitManagementRaw(requestParameters: CreateDirectDebitManagementRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CreateDirectDebit200Response>> {
+        const requestOptions = await this.createDirectDebitManagementRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400CreateDirectDebit200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateDirectDebit200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Create direct debit for an account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">date_expires</a>: 2021-01-27</p> <p><a href=\"/glossary#\">date_signed</a>: 2020-01-27</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#active\"><strong>active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_cancelled</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_expires</strong></a>: 2021-01-27</p> <p><a href=\"/glossary#\"><strong>date_signed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#direct_debit_id\"><strong>direct_debit_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Create Direct Debit (management)
      */
-    async oBPv400CreateDirectDebitManagement(requestParameters: OBPv400CreateDirectDebitManagementRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400CreateDirectDebit200Response> {
-        const response = await this.oBPv400CreateDirectDebitManagementRaw(requestParameters, initOverrides);
+    async createDirectDebitManagement(requestParameters: CreateDirectDebitManagementRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CreateDirectDebit200Response> {
+        const response = await this.createDirectDebitManagementRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

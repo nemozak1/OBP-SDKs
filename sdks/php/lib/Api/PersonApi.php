@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,19 +75,19 @@ class PersonApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv140AddCustomerMessage' => [
+        'addCustomerMessage' => [
             'application/json',
         ],
-        'oBPv400CreateCustomerMessage' => [
+        'createAgent' => [
             'application/json',
         ],
-        'oBPv510CreateAgent' => [
+        'createCustomer' => [
             'application/json',
         ],
-        'oBPv510UpdateAgentStatus' => [
+        'createCustomerMessage' => [
             'application/json',
         ],
-        'oBPv600CreateCustomer' => [
+        'updateAgentStatus' => [
             'application/json',
         ],
     ];
@@ -139,42 +139,42 @@ class PersonApi
     }
 
     /**
-     * Operation oBPv140AddCustomerMessage
+     * Operation addCustomerMessage
      *
      * Create Customer Message
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $customerid The CUSTOMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv140AddCustomerMessageRequest $obpv140_add_customer_message_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140AddCustomerMessage'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\AddCustomerMessageRequest $add_customer_message_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCustomerMessage'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
      */
-    public function oBPv140AddCustomerMessage($bankid, $customerid, $obpv140_add_customer_message_request, string $contentType = self::contentTypes['oBPv140AddCustomerMessage'][0])
+    public function addCustomerMessage($bankid, $customerid, $add_customer_message_request, string $contentType = self::contentTypes['addCustomerMessage'][0])
     {
-        list($response) = $this->oBPv140AddCustomerMessageWithHttpInfo($bankid, $customerid, $obpv140_add_customer_message_request, $contentType);
+        list($response) = $this->addCustomerMessageWithHttpInfo($bankid, $customerid, $add_customer_message_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv140AddCustomerMessageWithHttpInfo
+     * Operation addCustomerMessageWithHttpInfo
      *
      * Create Customer Message
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $customerid The CUSTOMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv140AddCustomerMessageRequest $obpv140_add_customer_message_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140AddCustomerMessage'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\AddCustomerMessageRequest $add_customer_message_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCustomerMessage'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv140AddCustomerMessageWithHttpInfo($bankid, $customerid, $obpv140_add_customer_message_request, string $contentType = self::contentTypes['oBPv140AddCustomerMessage'][0])
+    public function addCustomerMessageWithHttpInfo($bankid, $customerid, $add_customer_message_request, string $contentType = self::contentTypes['addCustomerMessage'][0])
     {
-        $request = $this->oBPv140AddCustomerMessageRequest($bankid, $customerid, $obpv140_add_customer_message_request, $contentType);
+        $request = $this->addCustomerMessageRequest($bankid, $customerid, $add_customer_message_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -202,7 +202,7 @@ class PersonApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $request,
                         $response,
                     );
@@ -224,7 +224,7 @@ class PersonApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                 $request,
                 $response,
             );
@@ -233,7 +233,7 @@ class PersonApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -246,21 +246,21 @@ class PersonApi
     }
 
     /**
-     * Operation oBPv140AddCustomerMessageAsync
+     * Operation addCustomerMessageAsync
      *
      * Create Customer Message
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $customerid The CUSTOMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv140AddCustomerMessageRequest $obpv140_add_customer_message_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140AddCustomerMessage'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\AddCustomerMessageRequest $add_customer_message_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCustomerMessage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv140AddCustomerMessageAsync($bankid, $customerid, $obpv140_add_customer_message_request, string $contentType = self::contentTypes['oBPv140AddCustomerMessage'][0])
+    public function addCustomerMessageAsync($bankid, $customerid, $add_customer_message_request, string $contentType = self::contentTypes['addCustomerMessage'][0])
     {
-        return $this->oBPv140AddCustomerMessageAsyncWithHttpInfo($bankid, $customerid, $obpv140_add_customer_message_request, $contentType)
+        return $this->addCustomerMessageAsyncWithHttpInfo($bankid, $customerid, $add_customer_message_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -269,22 +269,22 @@ class PersonApi
     }
 
     /**
-     * Operation oBPv140AddCustomerMessageAsyncWithHttpInfo
+     * Operation addCustomerMessageAsyncWithHttpInfo
      *
      * Create Customer Message
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $customerid The CUSTOMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv140AddCustomerMessageRequest $obpv140_add_customer_message_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140AddCustomerMessage'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\AddCustomerMessageRequest $add_customer_message_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCustomerMessage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv140AddCustomerMessageAsyncWithHttpInfo($bankid, $customerid, $obpv140_add_customer_message_request, string $contentType = self::contentTypes['oBPv140AddCustomerMessage'][0])
+    public function addCustomerMessageAsyncWithHttpInfo($bankid, $customerid, $add_customer_message_request, string $contentType = self::contentTypes['addCustomerMessage'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv140AddCustomerMessageRequest($bankid, $customerid, $obpv140_add_customer_message_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->addCustomerMessageRequest($bankid, $customerid, $add_customer_message_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -323,37 +323,37 @@ class PersonApi
     }
 
     /**
-     * Create request for operation 'oBPv140AddCustomerMessage'
+     * Create request for operation 'addCustomerMessage'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $customerid The CUSTOMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv140AddCustomerMessageRequest $obpv140_add_customer_message_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140AddCustomerMessage'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\AddCustomerMessageRequest $add_customer_message_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCustomerMessage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv140AddCustomerMessageRequest($bankid, $customerid, $obpv140_add_customer_message_request, string $contentType = self::contentTypes['oBPv140AddCustomerMessage'][0])
+    public function addCustomerMessageRequest($bankid, $customerid, $add_customer_message_request, string $contentType = self::contentTypes['addCustomerMessage'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv140AddCustomerMessage'
+                'Missing the required parameter $bankid when calling addCustomerMessage'
             );
         }
 
         // verify the required parameter 'customerid' is set
         if ($customerid === null || (is_array($customerid) && count($customerid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $customerid when calling oBPv140AddCustomerMessage'
+                'Missing the required parameter $customerid when calling addCustomerMessage'
             );
         }
 
-        // verify the required parameter 'obpv140_add_customer_message_request' is set
-        if ($obpv140_add_customer_message_request === null || (is_array($obpv140_add_customer_message_request) && count($obpv140_add_customer_message_request) === 0)) {
+        // verify the required parameter 'add_customer_message_request' is set
+        if ($add_customer_message_request === null || (is_array($add_customer_message_request) && count($add_customer_message_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv140_add_customer_message_request when calling oBPv140AddCustomerMessage'
+                'Missing the required parameter $add_customer_message_request when calling addCustomerMessage'
             );
         }
 
@@ -392,12 +392,12 @@ class PersonApi
         );
 
         // for model (json/xml)
-        if (isset($obpv140_add_customer_message_request)) {
+        if (isset($add_customer_message_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv140_add_customer_message_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($add_customer_message_request));
             } else {
-                $httpBody = $obpv140_add_customer_message_request;
+                $httpBody = $add_customer_message_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -433,9 +433,9 @@ class PersonApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -460,42 +460,40 @@ class PersonApi
     }
 
     /**
-     * Operation oBPv400CreateCustomerMessage
+     * Operation createAgent
      *
-     * Create Customer Message
+     * Create Agent
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $customerid The CUSTOMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateCustomerMessageRequest $obpv400_create_customer_message_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateCustomerMessage'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAgentRequest $create_agent_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAgent'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+     * @return \OpenBankProject\Model\GetAgent200Response
      */
-    public function oBPv400CreateCustomerMessage($bankid, $customerid, $obpv400_create_customer_message_request, string $contentType = self::contentTypes['oBPv400CreateCustomerMessage'][0])
+    public function createAgent($bankid, $create_agent_request, string $contentType = self::contentTypes['createAgent'][0])
     {
-        list($response) = $this->oBPv400CreateCustomerMessageWithHttpInfo($bankid, $customerid, $obpv400_create_customer_message_request, $contentType);
+        list($response) = $this->createAgentWithHttpInfo($bankid, $create_agent_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateCustomerMessageWithHttpInfo
+     * Operation createAgentWithHttpInfo
      *
-     * Create Customer Message
+     * Create Agent
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $customerid The CUSTOMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateCustomerMessageRequest $obpv400_create_customer_message_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateCustomerMessage'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAgentRequest $create_agent_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAgent'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAgent200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateCustomerMessageWithHttpInfo($bankid, $customerid, $obpv400_create_customer_message_request, string $contentType = self::contentTypes['oBPv400CreateCustomerMessage'][0])
+    public function createAgentWithHttpInfo($bankid, $create_agent_request, string $contentType = self::contentTypes['createAgent'][0])
     {
-        $request = $this->oBPv400CreateCustomerMessageRequest($bankid, $customerid, $obpv400_create_customer_message_request, $contentType);
+        $request = $this->createAgentRequest($bankid, $create_agent_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -523,7 +521,7 @@ class PersonApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\GetAgent200Response',
                         $request,
                         $response,
                     );
@@ -545,7 +543,7 @@ class PersonApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                '\OpenBankProject\Model\GetAgent200Response',
                 $request,
                 $response,
             );
@@ -554,7 +552,7 @@ class PersonApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\GetAgent200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -567,21 +565,20 @@ class PersonApi
     }
 
     /**
-     * Operation oBPv400CreateCustomerMessageAsync
+     * Operation createAgentAsync
      *
-     * Create Customer Message
+     * Create Agent
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $customerid The CUSTOMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateCustomerMessageRequest $obpv400_create_customer_message_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateCustomerMessage'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAgentRequest $create_agent_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAgent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateCustomerMessageAsync($bankid, $customerid, $obpv400_create_customer_message_request, string $contentType = self::contentTypes['oBPv400CreateCustomerMessage'][0])
+    public function createAgentAsync($bankid, $create_agent_request, string $contentType = self::contentTypes['createAgent'][0])
     {
-        return $this->oBPv400CreateCustomerMessageAsyncWithHttpInfo($bankid, $customerid, $obpv400_create_customer_message_request, $contentType)
+        return $this->createAgentAsyncWithHttpInfo($bankid, $create_agent_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -590,22 +587,21 @@ class PersonApi
     }
 
     /**
-     * Operation oBPv400CreateCustomerMessageAsyncWithHttpInfo
+     * Operation createAgentAsyncWithHttpInfo
      *
-     * Create Customer Message
+     * Create Agent
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $customerid The CUSTOMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateCustomerMessageRequest $obpv400_create_customer_message_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateCustomerMessage'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAgentRequest $create_agent_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAgent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateCustomerMessageAsyncWithHttpInfo($bankid, $customerid, $obpv400_create_customer_message_request, string $contentType = self::contentTypes['oBPv400CreateCustomerMessage'][0])
+    public function createAgentAsyncWithHttpInfo($bankid, $create_agent_request, string $contentType = self::contentTypes['createAgent'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv400CreateCustomerMessageRequest($bankid, $customerid, $obpv400_create_customer_message_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAgent200Response';
+        $request = $this->createAgentRequest($bankid, $create_agent_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -644,37 +640,643 @@ class PersonApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateCustomerMessage'
+     * Create request for operation 'createAgent'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $customerid The CUSTOMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateCustomerMessageRequest $obpv400_create_customer_message_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateCustomerMessage'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAgentRequest $create_agent_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAgent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateCustomerMessageRequest($bankid, $customerid, $obpv400_create_customer_message_request, string $contentType = self::contentTypes['oBPv400CreateCustomerMessage'][0])
+    public function createAgentRequest($bankid, $create_agent_request, string $contentType = self::contentTypes['createAgent'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400CreateCustomerMessage'
+                'Missing the required parameter $bankid when calling createAgent'
+            );
+        }
+
+        // verify the required parameter 'create_agent_request' is set
+        if ($create_agent_request === null || (is_array($create_agent_request) && count($create_agent_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_agent_request when calling createAgent'
+            );
+        }
+
+
+        $resourcePath = '/obp/v5.1.0/banks/{bankid}/agents';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_agent_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_agent_request));
+            } else {
+                $httpBody = $create_agent_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createCustomer
+     *
+     * Create Customer
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCustomerRequest $create_customer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomer'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetCustomerChildren200ResponseCustomersInner
+     */
+    public function createCustomer($bankid, $create_customer_request, string $contentType = self::contentTypes['createCustomer'][0])
+    {
+        list($response) = $this->createCustomerWithHttpInfo($bankid, $create_customer_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createCustomerWithHttpInfo
+     *
+     * Create Customer
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCustomerRequest $create_customer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomer'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetCustomerChildren200ResponseCustomersInner, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createCustomerWithHttpInfo($bankid, $create_customer_request, string $contentType = self::contentTypes['createCustomer'][0])
+    {
+        $request = $this->createCustomerRequest($bankid, $create_customer_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetCustomerChildren200ResponseCustomersInner',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetCustomerChildren200ResponseCustomersInner',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetCustomerChildren200ResponseCustomersInner',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createCustomerAsync
+     *
+     * Create Customer
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCustomerRequest $create_customer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createCustomerAsync($bankid, $create_customer_request, string $contentType = self::contentTypes['createCustomer'][0])
+    {
+        return $this->createCustomerAsyncWithHttpInfo($bankid, $create_customer_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createCustomerAsyncWithHttpInfo
+     *
+     * Create Customer
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCustomerRequest $create_customer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createCustomerAsyncWithHttpInfo($bankid, $create_customer_request, string $contentType = self::contentTypes['createCustomer'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetCustomerChildren200ResponseCustomersInner';
+        $request = $this->createCustomerRequest($bankid, $create_customer_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createCustomer'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCustomerRequest $create_customer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createCustomerRequest($bankid, $create_customer_request, string $contentType = self::contentTypes['createCustomer'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling createCustomer'
+            );
+        }
+
+        // verify the required parameter 'create_customer_request' is set
+        if ($create_customer_request === null || (is_array($create_customer_request) && count($create_customer_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_customer_request when calling createCustomer'
+            );
+        }
+
+
+        $resourcePath = '/obp/v6.0.0/banks/{bankid}/customers';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_customer_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_customer_request));
+            } else {
+                $httpBody = $create_customer_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createCustomerMessage
+     *
+     * Create Customer Message
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $customerid The CUSTOMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCustomerMessageRequest $create_customer_message_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomerMessage'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
+     */
+    public function createCustomerMessage($bankid, $customerid, $create_customer_message_request, string $contentType = self::contentTypes['createCustomerMessage'][0])
+    {
+        list($response) = $this->createCustomerMessageWithHttpInfo($bankid, $customerid, $create_customer_message_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createCustomerMessageWithHttpInfo
+     *
+     * Create Customer Message
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $customerid The CUSTOMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCustomerMessageRequest $create_customer_message_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomerMessage'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createCustomerMessageWithHttpInfo($bankid, $customerid, $create_customer_message_request, string $contentType = self::contentTypes['createCustomerMessage'][0])
+    {
+        $request = $this->createCustomerMessageRequest($bankid, $customerid, $create_customer_message_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createCustomerMessageAsync
+     *
+     * Create Customer Message
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $customerid The CUSTOMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCustomerMessageRequest $create_customer_message_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomerMessage'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createCustomerMessageAsync($bankid, $customerid, $create_customer_message_request, string $contentType = self::contentTypes['createCustomerMessage'][0])
+    {
+        return $this->createCustomerMessageAsyncWithHttpInfo($bankid, $customerid, $create_customer_message_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createCustomerMessageAsyncWithHttpInfo
+     *
+     * Create Customer Message
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $customerid The CUSTOMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCustomerMessageRequest $create_customer_message_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomerMessage'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createCustomerMessageAsyncWithHttpInfo($bankid, $customerid, $create_customer_message_request, string $contentType = self::contentTypes['createCustomerMessage'][0])
+    {
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->createCustomerMessageRequest($bankid, $customerid, $create_customer_message_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createCustomerMessage'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $customerid The CUSTOMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCustomerMessageRequest $create_customer_message_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomerMessage'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createCustomerMessageRequest($bankid, $customerid, $create_customer_message_request, string $contentType = self::contentTypes['createCustomerMessage'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling createCustomerMessage'
             );
         }
 
         // verify the required parameter 'customerid' is set
         if ($customerid === null || (is_array($customerid) && count($customerid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $customerid when calling oBPv400CreateCustomerMessage'
+                'Missing the required parameter $customerid when calling createCustomerMessage'
             );
         }
 
-        // verify the required parameter 'obpv400_create_customer_message_request' is set
-        if ($obpv400_create_customer_message_request === null || (is_array($obpv400_create_customer_message_request) && count($obpv400_create_customer_message_request) === 0)) {
+        // verify the required parameter 'create_customer_message_request' is set
+        if ($create_customer_message_request === null || (is_array($create_customer_message_request) && count($create_customer_message_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_customer_message_request when calling oBPv400CreateCustomerMessage'
+                'Missing the required parameter $create_customer_message_request when calling createCustomerMessage'
             );
         }
 
@@ -713,12 +1315,12 @@ class PersonApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_customer_message_request)) {
+        if (isset($create_customer_message_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_customer_message_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_customer_message_request));
             } else {
-                $httpBody = $obpv400_create_customer_message_request;
+                $httpBody = $create_customer_message_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -754,9 +1356,9 @@ class PersonApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -781,40 +1383,42 @@ class PersonApi
     }
 
     /**
-     * Operation oBPv510CreateAgent
+     * Operation updateAgentStatus
      *
-     * Create Agent
+     * Update Agent status
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateAgentRequest $obpv510_create_agent_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateAgent'] to see the possible values for this operation
+     * @param  string $agentid The AGENTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAgentStatusRequest $update_agent_status_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAgentStatus'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetAgent200Response
+     * @return \OpenBankProject\Model\GetAgent200Response
      */
-    public function oBPv510CreateAgent($bankid, $obpv510_create_agent_request, string $contentType = self::contentTypes['oBPv510CreateAgent'][0])
+    public function updateAgentStatus($bankid, $agentid, $update_agent_status_request, string $contentType = self::contentTypes['updateAgentStatus'][0])
     {
-        list($response) = $this->oBPv510CreateAgentWithHttpInfo($bankid, $obpv510_create_agent_request, $contentType);
+        list($response) = $this->updateAgentStatusWithHttpInfo($bankid, $agentid, $update_agent_status_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510CreateAgentWithHttpInfo
+     * Operation updateAgentStatusWithHttpInfo
      *
-     * Create Agent
+     * Update Agent status
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateAgentRequest $obpv510_create_agent_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateAgent'] to see the possible values for this operation
+     * @param  string $agentid The AGENTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAgentStatusRequest $update_agent_status_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAgentStatus'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetAgent200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAgent200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510CreateAgentWithHttpInfo($bankid, $obpv510_create_agent_request, string $contentType = self::contentTypes['oBPv510CreateAgent'][0])
+    public function updateAgentStatusWithHttpInfo($bankid, $agentid, $update_agent_status_request, string $contentType = self::contentTypes['updateAgentStatus'][0])
     {
-        $request = $this->oBPv510CreateAgentRequest($bankid, $obpv510_create_agent_request, $contentType);
+        $request = $this->updateAgentStatusRequest($bankid, $agentid, $update_agent_status_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -842,7 +1446,7 @@ class PersonApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetAgent200Response',
+                        '\OpenBankProject\Model\GetAgent200Response',
                         $request,
                         $response,
                     );
@@ -864,7 +1468,7 @@ class PersonApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetAgent200Response',
+                '\OpenBankProject\Model\GetAgent200Response',
                 $request,
                 $response,
             );
@@ -873,7 +1477,7 @@ class PersonApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetAgent200Response',
+                        '\OpenBankProject\Model\GetAgent200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -886,20 +1490,21 @@ class PersonApi
     }
 
     /**
-     * Operation oBPv510CreateAgentAsync
+     * Operation updateAgentStatusAsync
      *
-     * Create Agent
+     * Update Agent status
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateAgentRequest $obpv510_create_agent_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateAgent'] to see the possible values for this operation
+     * @param  string $agentid The AGENTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAgentStatusRequest $update_agent_status_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAgentStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateAgentAsync($bankid, $obpv510_create_agent_request, string $contentType = self::contentTypes['oBPv510CreateAgent'][0])
+    public function updateAgentStatusAsync($bankid, $agentid, $update_agent_status_request, string $contentType = self::contentTypes['updateAgentStatus'][0])
     {
-        return $this->oBPv510CreateAgentAsyncWithHttpInfo($bankid, $obpv510_create_agent_request, $contentType)
+        return $this->updateAgentStatusAsyncWithHttpInfo($bankid, $agentid, $update_agent_status_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -908,21 +1513,22 @@ class PersonApi
     }
 
     /**
-     * Operation oBPv510CreateAgentAsyncWithHttpInfo
+     * Operation updateAgentStatusAsyncWithHttpInfo
      *
-     * Create Agent
+     * Update Agent status
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateAgentRequest $obpv510_create_agent_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateAgent'] to see the possible values for this operation
+     * @param  string $agentid The AGENTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAgentStatusRequest $update_agent_status_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAgentStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateAgentAsyncWithHttpInfo($bankid, $obpv510_create_agent_request, string $contentType = self::contentTypes['oBPv510CreateAgent'][0])
+    public function updateAgentStatusAsyncWithHttpInfo($bankid, $agentid, $update_agent_status_request, string $contentType = self::contentTypes['updateAgentStatus'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetAgent200Response';
-        $request = $this->oBPv510CreateAgentRequest($bankid, $obpv510_create_agent_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAgent200Response';
+        $request = $this->updateAgentStatusRequest($bankid, $agentid, $update_agent_status_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -961,342 +1567,37 @@ class PersonApi
     }
 
     /**
-     * Create request for operation 'oBPv510CreateAgent'
+     * Create request for operation 'updateAgentStatus'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateAgentRequest $obpv510_create_agent_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateAgent'] to see the possible values for this operation
+     * @param  string $agentid The AGENTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAgentStatusRequest $update_agent_status_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAgentStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510CreateAgentRequest($bankid, $obpv510_create_agent_request, string $contentType = self::contentTypes['oBPv510CreateAgent'][0])
+    public function updateAgentStatusRequest($bankid, $agentid, $update_agent_status_request, string $contentType = self::contentTypes['updateAgentStatus'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510CreateAgent'
-            );
-        }
-
-        // verify the required parameter 'obpv510_create_agent_request' is set
-        if ($obpv510_create_agent_request === null || (is_array($obpv510_create_agent_request) && count($obpv510_create_agent_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_create_agent_request when calling oBPv510CreateAgent'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/banks/{bankid}/agents';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv510_create_agent_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_create_agent_request));
-            } else {
-                $httpBody = $obpv510_create_agent_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510UpdateAgentStatus
-     *
-     * Update Agent status
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $agentid The AGENTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAgentStatusRequest $obpv510_update_agent_status_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateAgentStatus'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetAgent200Response
-     */
-    public function oBPv510UpdateAgentStatus($bankid, $agentid, $obpv510_update_agent_status_request, string $contentType = self::contentTypes['oBPv510UpdateAgentStatus'][0])
-    {
-        list($response) = $this->oBPv510UpdateAgentStatusWithHttpInfo($bankid, $agentid, $obpv510_update_agent_status_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510UpdateAgentStatusWithHttpInfo
-     *
-     * Update Agent status
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $agentid The AGENTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAgentStatusRequest $obpv510_update_agent_status_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateAgentStatus'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetAgent200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510UpdateAgentStatusWithHttpInfo($bankid, $agentid, $obpv510_update_agent_status_request, string $contentType = self::contentTypes['oBPv510UpdateAgentStatus'][0])
-    {
-        $request = $this->oBPv510UpdateAgentStatusRequest($bankid, $agentid, $obpv510_update_agent_status_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetAgent200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetAgent200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetAgent200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510UpdateAgentStatusAsync
-     *
-     * Update Agent status
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $agentid The AGENTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAgentStatusRequest $obpv510_update_agent_status_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateAgentStatus'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510UpdateAgentStatusAsync($bankid, $agentid, $obpv510_update_agent_status_request, string $contentType = self::contentTypes['oBPv510UpdateAgentStatus'][0])
-    {
-        return $this->oBPv510UpdateAgentStatusAsyncWithHttpInfo($bankid, $agentid, $obpv510_update_agent_status_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510UpdateAgentStatusAsyncWithHttpInfo
-     *
-     * Update Agent status
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $agentid The AGENTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAgentStatusRequest $obpv510_update_agent_status_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateAgentStatus'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510UpdateAgentStatusAsyncWithHttpInfo($bankid, $agentid, $obpv510_update_agent_status_request, string $contentType = self::contentTypes['oBPv510UpdateAgentStatus'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510GetAgent200Response';
-        $request = $this->oBPv510UpdateAgentStatusRequest($bankid, $agentid, $obpv510_update_agent_status_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510UpdateAgentStatus'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $agentid The AGENTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAgentStatusRequest $obpv510_update_agent_status_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateAgentStatus'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510UpdateAgentStatusRequest($bankid, $agentid, $obpv510_update_agent_status_request, string $contentType = self::contentTypes['oBPv510UpdateAgentStatus'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510UpdateAgentStatus'
+                'Missing the required parameter $bankid when calling updateAgentStatus'
             );
         }
 
         // verify the required parameter 'agentid' is set
         if ($agentid === null || (is_array($agentid) && count($agentid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $agentid when calling oBPv510UpdateAgentStatus'
+                'Missing the required parameter $agentid when calling updateAgentStatus'
             );
         }
 
-        // verify the required parameter 'obpv510_update_agent_status_request' is set
-        if ($obpv510_update_agent_status_request === null || (is_array($obpv510_update_agent_status_request) && count($obpv510_update_agent_status_request) === 0)) {
+        // verify the required parameter 'update_agent_status_request' is set
+        if ($update_agent_status_request === null || (is_array($update_agent_status_request) && count($update_agent_status_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_update_agent_status_request when calling oBPv510UpdateAgentStatus'
+                'Missing the required parameter $update_agent_status_request when calling updateAgentStatus'
             );
         }
 
@@ -1335,12 +1636,12 @@ class PersonApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_update_agent_status_request)) {
+        if (isset($update_agent_status_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_update_agent_status_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_agent_status_request));
             } else {
-                $httpBody = $obpv510_update_agent_status_request;
+                $httpBody = $update_agent_status_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1376,9 +1677,9 @@ class PersonApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1396,307 +1697,6 @@ class PersonApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600CreateCustomer
-     *
-     * Create Customer
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateCustomerRequest $obpv600_create_customer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateCustomer'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems
-     */
-    public function oBPv600CreateCustomer($bankid, $obpv600_create_customer_request, string $contentType = self::contentTypes['oBPv600CreateCustomer'][0])
-    {
-        list($response) = $this->oBPv600CreateCustomerWithHttpInfo($bankid, $obpv600_create_customer_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv600CreateCustomerWithHttpInfo
-     *
-     * Create Customer
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateCustomerRequest $obpv600_create_customer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateCustomer'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600CreateCustomerWithHttpInfo($bankid, $obpv600_create_customer_request, string $contentType = self::contentTypes['oBPv600CreateCustomer'][0])
-    {
-        $request = $this->oBPv600CreateCustomerRequest($bankid, $obpv600_create_customer_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600CreateCustomerAsync
-     *
-     * Create Customer
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateCustomerRequest $obpv600_create_customer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateCustomer'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600CreateCustomerAsync($bankid, $obpv600_create_customer_request, string $contentType = self::contentTypes['oBPv600CreateCustomer'][0])
-    {
-        return $this->oBPv600CreateCustomerAsyncWithHttpInfo($bankid, $obpv600_create_customer_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600CreateCustomerAsyncWithHttpInfo
-     *
-     * Create Customer
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateCustomerRequest $obpv600_create_customer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateCustomer'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600CreateCustomerAsyncWithHttpInfo($bankid, $obpv600_create_customer_request, string $contentType = self::contentTypes['oBPv600CreateCustomer'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems';
-        $request = $this->oBPv600CreateCustomerRequest($bankid, $obpv600_create_customer_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600CreateCustomer'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateCustomerRequest $obpv600_create_customer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateCustomer'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600CreateCustomerRequest($bankid, $obpv600_create_customer_request, string $contentType = self::contentTypes['oBPv600CreateCustomer'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600CreateCustomer'
-            );
-        }
-
-        // verify the required parameter 'obpv600_create_customer_request' is set
-        if ($obpv600_create_customer_request === null || (is_array($obpv600_create_customer_request) && count($obpv600_create_customer_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_create_customer_request when calling oBPv600CreateCustomer'
-            );
-        }
-
-
-        $resourcePath = '/obp/v6.0.0/banks/{bankid}/customers';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv600_create_customer_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_create_customer_request));
-            } else {
-                $httpBody = $obpv600_create_customer_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

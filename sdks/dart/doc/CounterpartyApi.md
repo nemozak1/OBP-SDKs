@@ -5,53 +5,53 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv121AddCounterpartyCorporateLocation**](CounterpartyApi.md#obpv121addcounterpartycorporatelocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty
-[**oBPv121AddCounterpartyImageUrl**](CounterpartyApi.md#obpv121addcounterpartyimageurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account
-[**oBPv121AddCounterpartyMoreInfo**](CounterpartyApi.md#obpv121addcounterpartymoreinfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info
-[**oBPv121AddCounterpartyOpenCorporatesUrl**](CounterpartyApi.md#obpv121addcounterpartyopencorporatesurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty
-[**oBPv121AddCounterpartyPhysicalLocation**](CounterpartyApi.md#obpv121addcounterpartyphysicallocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account
-[**oBPv121AddCounterpartyPublicAlias**](CounterpartyApi.md#obpv121addcounterpartypublicalias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account
-[**oBPv121AddCounterpartyUrl**](CounterpartyApi.md#obpv121addcounterpartyurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account
-[**oBPv121AddOtherAccountPrivateAlias**](CounterpartyApi.md#obpv121addotheraccountprivatealias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias
-[**oBPv121DeleteCounterpartyCorporateLocation**](CounterpartyApi.md#obpv121deletecounterpartycorporatelocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location
-[**oBPv121DeleteCounterpartyImageUrl**](CounterpartyApi.md#obpv121deletecounterpartyimageurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL
-[**oBPv121DeleteCounterpartyMoreInfo**](CounterpartyApi.md#obpv121deletecounterpartymoreinfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account
-[**oBPv121DeleteCounterpartyOpenCorporatesUrl**](CounterpartyApi.md#obpv121deletecounterpartyopencorporatesurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL
-[**oBPv121DeleteCounterpartyPhysicalLocation**](CounterpartyApi.md#obpv121deletecounterpartyphysicallocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location
-[**oBPv121DeleteCounterpartyPrivateAlias**](CounterpartyApi.md#obpv121deletecounterpartyprivatealias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias
-[**oBPv121DeleteCounterpartyPublicAlias**](CounterpartyApi.md#obpv121deletecounterpartypublicalias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias
-[**oBPv121DeleteCounterpartyUrl**](CounterpartyApi.md#obpv121deletecounterpartyurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account
-[**oBPv121GetCounterpartyPublicAlias**](CounterpartyApi.md#obpv121getcounterpartypublicalias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account
-[**oBPv121GetOtherAccountForTransaction**](CounterpartyApi.md#obpv121getotheraccountfortransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account | Get Other Account of Transaction
-[**oBPv121GetOtherAccountMetadata**](CounterpartyApi.md#obpv121getotheraccountmetadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata
-[**oBPv121GetOtherAccountPrivateAlias**](CounterpartyApi.md#obpv121getotheraccountprivatealias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias
-[**oBPv121UpdateCounterpartyCorporateLocation**](CounterpartyApi.md#obpv121updatecounterpartycorporatelocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location
-[**oBPv121UpdateCounterpartyImageUrl**](CounterpartyApi.md#obpv121updatecounterpartyimageurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url
-[**oBPv121UpdateCounterpartyMoreInfo**](CounterpartyApi.md#obpv121updatecounterpartymoreinfo) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info
-[**oBPv121UpdateCounterpartyOpenCorporatesUrl**](CounterpartyApi.md#obpv121updatecounterpartyopencorporatesurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty
-[**oBPv121UpdateCounterpartyPhysicalLocation**](CounterpartyApi.md#obpv121updatecounterpartyphysicallocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location
-[**oBPv121UpdateCounterpartyPrivateAlias**](CounterpartyApi.md#obpv121updatecounterpartyprivatealias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias
-[**oBPv121UpdateCounterpartyPublicAlias**](CounterpartyApi.md#obpv121updatecounterpartypublicalias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account
-[**oBPv121UpdateCounterpartyUrl**](CounterpartyApi.md#obpv121updatecounterpartyurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account
-[**oBPv300GetOtherAccountByIdForBankAccount**](CounterpartyApi.md#obpv300getotheraccountbyidforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid} | Get Other Account by Id
-[**oBPv300GetOtherAccountsForBankAccount**](CounterpartyApi.md#obpv300getotheraccountsforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts | Get Other Accounts of one Account
-[**oBPv400CreateCounterparty**](CounterpartyApi.md#obpv400createcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty (Explicit)
-[**oBPv400CreateCounterpartyForAnyAccount**](CounterpartyApi.md#obpv400createcounterpartyforanyaccount) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty for any account (Explicit)
-[**oBPv400DeleteCounterpartyForAnyAccount**](CounterpartyApi.md#obpv400deletecounterpartyforanyaccount) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty for any account (Explicit)
-[**oBPv400DeleteExplicitCounterparty**](CounterpartyApi.md#obpv400deleteexplicitcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty (Explicit)
-[**oBPv400GetCounterpartiesForAnyAccount**](CounterpartyApi.md#obpv400getcounterpartiesforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
-[**oBPv400GetCounterpartyByIdForAnyAccount**](CounterpartyApi.md#obpv400getcounterpartybyidforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id for any account (Explicit)
-[**oBPv400GetCounterpartyByNameForAnyAccount**](CounterpartyApi.md#obpv400getcounterpartybynameforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname} | Get Counterparty by name for any account (Explicit) 
-[**oBPv400GetExplicitCounterpartiesForAccount**](CounterpartyApi.md#obpv400getexplicitcounterpartiesforaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
-[**oBPv400GetExplicitCounterpartyById**](CounterpartyApi.md#obpv400getexplicitcounterpartybyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
+[**addCounterpartyCorporateLocation**](CounterpartyApi.md#addcounterpartycorporatelocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty
+[**addCounterpartyImageUrl**](CounterpartyApi.md#addcounterpartyimageurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account
+[**addCounterpartyMoreInfo**](CounterpartyApi.md#addcounterpartymoreinfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info
+[**addCounterpartyOpenCorporatesUrl**](CounterpartyApi.md#addcounterpartyopencorporatesurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty
+[**addCounterpartyPhysicalLocation**](CounterpartyApi.md#addcounterpartyphysicallocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account
+[**addCounterpartyPublicAlias**](CounterpartyApi.md#addcounterpartypublicalias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account
+[**addCounterpartyUrl**](CounterpartyApi.md#addcounterpartyurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account
+[**addOtherAccountPrivateAlias**](CounterpartyApi.md#addotheraccountprivatealias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias
+[**createCounterparty**](CounterpartyApi.md#createcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty (Explicit)
+[**createCounterpartyForAnyAccount**](CounterpartyApi.md#createcounterpartyforanyaccount) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty for any account (Explicit)
+[**deleteCounterpartyCorporateLocation**](CounterpartyApi.md#deletecounterpartycorporatelocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location
+[**deleteCounterpartyForAnyAccount**](CounterpartyApi.md#deletecounterpartyforanyaccount) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty for any account (Explicit)
+[**deleteCounterpartyImageUrl**](CounterpartyApi.md#deletecounterpartyimageurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL
+[**deleteCounterpartyMoreInfo**](CounterpartyApi.md#deletecounterpartymoreinfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account
+[**deleteCounterpartyOpenCorporatesUrl**](CounterpartyApi.md#deletecounterpartyopencorporatesurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL
+[**deleteCounterpartyPhysicalLocation**](CounterpartyApi.md#deletecounterpartyphysicallocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location
+[**deleteCounterpartyPrivateAlias**](CounterpartyApi.md#deletecounterpartyprivatealias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias
+[**deleteCounterpartyPublicAlias**](CounterpartyApi.md#deletecounterpartypublicalias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias
+[**deleteCounterpartyUrl**](CounterpartyApi.md#deletecounterpartyurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account
+[**deleteExplicitCounterparty**](CounterpartyApi.md#deleteexplicitcounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty (Explicit)
+[**getCounterpartiesForAnyAccount**](CounterpartyApi.md#getcounterpartiesforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
+[**getCounterpartyByIdForAnyAccount**](CounterpartyApi.md#getcounterpartybyidforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id for any account (Explicit)
+[**getCounterpartyByNameForAnyAccount**](CounterpartyApi.md#getcounterpartybynameforanyaccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname} | Get Counterparty by name for any account (Explicit) 
+[**getCounterpartyPublicAlias**](CounterpartyApi.md#getcounterpartypublicalias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account
+[**getExplicitCounterpartiesForAccount**](CounterpartyApi.md#getexplicitcounterpartiesforaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
+[**getExplicitCounterpartyById**](CounterpartyApi.md#getexplicitcounterpartybyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
+[**getOtherAccountByIdForBankAccount**](CounterpartyApi.md#getotheraccountbyidforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid} | Get Other Account by Id
+[**getOtherAccountForTransaction**](CounterpartyApi.md#getotheraccountfortransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account | Get Other Account of Transaction
+[**getOtherAccountMetadata**](CounterpartyApi.md#getotheraccountmetadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata
+[**getOtherAccountPrivateAlias**](CounterpartyApi.md#getotheraccountprivatealias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias
+[**getOtherAccountsForBankAccount**](CounterpartyApi.md#getotheraccountsforbankaccount) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts | Get Other Accounts of one Account
+[**updateCounterpartyCorporateLocation**](CounterpartyApi.md#updatecounterpartycorporatelocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location
+[**updateCounterpartyImageUrl**](CounterpartyApi.md#updatecounterpartyimageurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url
+[**updateCounterpartyMoreInfo**](CounterpartyApi.md#updatecounterpartymoreinfo) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info
+[**updateCounterpartyOpenCorporatesUrl**](CounterpartyApi.md#updatecounterpartyopencorporatesurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty
+[**updateCounterpartyPhysicalLocation**](CounterpartyApi.md#updatecounterpartyphysicallocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location
+[**updateCounterpartyPrivateAlias**](CounterpartyApi.md#updatecounterpartyprivatealias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias
+[**updateCounterpartyPublicAlias**](CounterpartyApi.md#updatecounterpartypublicalias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account
+[**updateCounterpartyUrl**](CounterpartyApi.md#updatecounterpartyurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account
 
 
-# **oBPv121AddCounterpartyCorporateLocation**
-> OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest)
+# **addCounterpartyCorporateLocation**
+> UpdateTransactionNarrative200Response addCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest)
 
 Add Corporate Location to Counterparty
 
@@ -76,13 +76,13 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
 final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-final OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest = {type=object, properties={corporate_location={type=object, properties={longitude={type=number}, latitude={type=number}}}}}; // OBPv121UpdateCounterpartyCorporateLocationRequest | Request body
+final UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest = {type=object, properties={corporate_location={type=object, properties={longitude={type=number}, latitude={type=number}}}}}; // UpdateCounterpartyCorporateLocationRequest | Request body
 
 try {
-    final response = api.oBPv121AddCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest);
+    final response = api.addCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121AddCounterpartyCorporateLocation: $e\n');
+    print('Exception when calling CounterpartyApi->addCounterpartyCorporateLocation: $e\n');
 }
 ```
 
@@ -94,11 +94,11 @@ Name | Type | Description  | Notes
  **accountid** | **String**| The ACCOUNTID identifier | 
  **viewid** | **String**| The VIEWID identifier | 
  **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyCorporateLocationRequest** | [**OBPv121UpdateCounterpartyCorporateLocationRequest**](OBPv121UpdateCounterpartyCorporateLocationRequest.md)| Request body | 
+ **updateCounterpartyCorporateLocationRequest** | [**UpdateCounterpartyCorporateLocationRequest**](UpdateCounterpartyCorporateLocationRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -111,8 +111,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121AddCounterpartyImageUrl**
-> OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest)
+# **addCounterpartyImageUrl**
+> UpdateTransactionNarrative200Response addCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest)
 
 Add image url to other bank account
 
@@ -137,13 +137,13 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
 final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-final OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest = {type=object, properties={image_URL={type=string}}}; // OBPv121UpdateCounterpartyImageUrlRequest | Request body
+final UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest = {type=object, properties={image_URL={type=string}}}; // UpdateCounterpartyImageUrlRequest | Request body
 
 try {
-    final response = api.oBPv121AddCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest);
+    final response = api.addCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121AddCounterpartyImageUrl: $e\n');
+    print('Exception when calling CounterpartyApi->addCounterpartyImageUrl: $e\n');
 }
 ```
 
@@ -155,11 +155,11 @@ Name | Type | Description  | Notes
  **accountid** | **String**| The ACCOUNTID identifier | 
  **viewid** | **String**| The VIEWID identifier | 
  **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyImageUrlRequest** | [**OBPv121UpdateCounterpartyImageUrlRequest**](OBPv121UpdateCounterpartyImageUrlRequest.md)| Request body | 
+ **updateCounterpartyImageUrlRequest** | [**UpdateCounterpartyImageUrlRequest**](UpdateCounterpartyImageUrlRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -172,8 +172,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121AddCounterpartyMoreInfo**
-> OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest)
+# **addCounterpartyMoreInfo**
+> UpdateTransactionNarrative200Response addCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest)
 
 Add Counterparty More Info
 
@@ -198,13 +198,13 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
 final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-final OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest = {type=object, properties={more_info={type=string}}}; // OBPv121UpdateCounterpartyMoreInfoRequest | Request body
+final UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest = {type=object, properties={more_info={type=string}}}; // UpdateCounterpartyMoreInfoRequest | Request body
 
 try {
-    final response = api.oBPv121AddCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest);
+    final response = api.addCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121AddCounterpartyMoreInfo: $e\n');
+    print('Exception when calling CounterpartyApi->addCounterpartyMoreInfo: $e\n');
 }
 ```
 
@@ -216,11 +216,11 @@ Name | Type | Description  | Notes
  **accountid** | **String**| The ACCOUNTID identifier | 
  **viewid** | **String**| The VIEWID identifier | 
  **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyMoreInfoRequest** | [**OBPv121UpdateCounterpartyMoreInfoRequest**](OBPv121UpdateCounterpartyMoreInfoRequest.md)| Request body | 
+ **updateCounterpartyMoreInfoRequest** | [**UpdateCounterpartyMoreInfoRequest**](UpdateCounterpartyMoreInfoRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -233,8 +233,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121AddCounterpartyOpenCorporatesUrl**
-> OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest)
+# **addCounterpartyOpenCorporatesUrl**
+> UpdateTransactionNarrative200Response addCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest)
 
 Add Open Corporates URL to Counterparty
 
@@ -249,13 +249,13 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
 final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-final OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest = {type=object, properties={open_corporates_URL={type=string}}}; // OBPv121UpdateCounterpartyOpenCorporatesUrlRequest | Request body
+final UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest = {type=object, properties={open_corporates_URL={type=string}}}; // UpdateCounterpartyOpenCorporatesUrlRequest | Request body
 
 try {
-    final response = api.oBPv121AddCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
+    final response = api.addCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121AddCounterpartyOpenCorporatesUrl: $e\n');
+    print('Exception when calling CounterpartyApi->addCounterpartyOpenCorporatesUrl: $e\n');
 }
 ```
 
@@ -267,11 +267,11 @@ Name | Type | Description  | Notes
  **accountid** | **String**| The ACCOUNTID identifier | 
  **viewid** | **String**| The VIEWID identifier | 
  **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyOpenCorporatesUrlRequest** | [**OBPv121UpdateCounterpartyOpenCorporatesUrlRequest**](OBPv121UpdateCounterpartyOpenCorporatesUrlRequest.md)| Request body | 
+ **updateCounterpartyOpenCorporatesUrlRequest** | [**UpdateCounterpartyOpenCorporatesUrlRequest**](UpdateCounterpartyOpenCorporatesUrlRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -284,8 +284,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121AddCounterpartyPhysicalLocation**
-> OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest)
+# **addCounterpartyPhysicalLocation**
+> UpdateTransactionNarrative200Response addCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest)
 
 Add physical location to other bank account
 
@@ -310,13 +310,13 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
 final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-final OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest = {type=object, properties={physical_location={type=object, properties={longitude={type=number}, latitude={type=number}}}}}; // OBPv121UpdateCounterpartyPhysicalLocationRequest | Request body
+final UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest = {type=object, properties={physical_location={type=object, properties={longitude={type=number}, latitude={type=number}}}}}; // UpdateCounterpartyPhysicalLocationRequest | Request body
 
 try {
-    final response = api.oBPv121AddCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest);
+    final response = api.addCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121AddCounterpartyPhysicalLocation: $e\n');
+    print('Exception when calling CounterpartyApi->addCounterpartyPhysicalLocation: $e\n');
 }
 ```
 
@@ -328,11 +328,11 @@ Name | Type | Description  | Notes
  **accountid** | **String**| The ACCOUNTID identifier | 
  **viewid** | **String**| The VIEWID identifier | 
  **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyPhysicalLocationRequest** | [**OBPv121UpdateCounterpartyPhysicalLocationRequest**](OBPv121UpdateCounterpartyPhysicalLocationRequest.md)| Request body | 
+ **updateCounterpartyPhysicalLocationRequest** | [**UpdateCounterpartyPhysicalLocationRequest**](UpdateCounterpartyPhysicalLocationRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -345,8 +345,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121AddCounterpartyPublicAlias**
-> OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response)
+# **addCounterpartyPublicAlias**
+> UpdateTransactionNarrative200Response addCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response)
 
 Add public alias to other bank account
 
@@ -371,13 +371,13 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
 final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-final OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response = {type=object, properties={alias={type=string}}}; // OBPv121GetCounterpartyPublicAlias200Response | Request body
+final GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response = {type=object, properties={alias={type=string}}}; // GetCounterpartyPublicAlias200Response | Request body
 
 try {
-    final response = api.oBPv121AddCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
+    final response = api.addCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121AddCounterpartyPublicAlias: $e\n');
+    print('Exception when calling CounterpartyApi->addCounterpartyPublicAlias: $e\n');
 }
 ```
 
@@ -389,11 +389,11 @@ Name | Type | Description  | Notes
  **accountid** | **String**| The ACCOUNTID identifier | 
  **viewid** | **String**| The VIEWID identifier | 
  **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
- **oBPv121GetCounterpartyPublicAlias200Response** | [**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md)| Request body | 
+ **getCounterpartyPublicAlias200Response** | [**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -406,8 +406,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121AddCounterpartyUrl**
-> OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyUrlRequest)
+# **addCounterpartyUrl**
+> UpdateTransactionNarrative200Response addCounterpartyUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest)
 
 Add url to other bank account
 
@@ -432,13 +432,13 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
 final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-final OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest = {type=object, properties={URL={type=string}}}; // OBPv121UpdateCounterpartyUrlRequest | Request body
+final UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest = {type=object, properties={URL={type=string}}}; // UpdateCounterpartyUrlRequest | Request body
 
 try {
-    final response = api.oBPv121AddCounterpartyUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyUrlRequest);
+    final response = api.addCounterpartyUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121AddCounterpartyUrl: $e\n');
+    print('Exception when calling CounterpartyApi->addCounterpartyUrl: $e\n');
 }
 ```
 
@@ -450,11 +450,11 @@ Name | Type | Description  | Notes
  **accountid** | **String**| The ACCOUNTID identifier | 
  **viewid** | **String**| The VIEWID identifier | 
  **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyUrlRequest** | [**OBPv121UpdateCounterpartyUrlRequest**](OBPv121UpdateCounterpartyUrlRequest.md)| Request body | 
+ **updateCounterpartyUrlRequest** | [**UpdateCounterpartyUrlRequest**](UpdateCounterpartyUrlRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -467,8 +467,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121AddOtherAccountPrivateAlias**
-> OBPv121UpdateTransactionNarrative200Response oBPv121AddOtherAccountPrivateAlias(bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response)
+# **addOtherAccountPrivateAlias**
+> UpdateTransactionNarrative200Response addOtherAccountPrivateAlias(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response)
 
 Create Other Account Private Alias
 
@@ -493,13 +493,13 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
 final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-final OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response = {type=object, properties={alias={type=string}}}; // OBPv121GetCounterpartyPublicAlias200Response | Request body
+final GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response = {type=object, properties={alias={type=string}}}; // GetCounterpartyPublicAlias200Response | Request body
 
 try {
-    final response = api.oBPv121AddOtherAccountPrivateAlias(bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
+    final response = api.addOtherAccountPrivateAlias(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121AddOtherAccountPrivateAlias: $e\n');
+    print('Exception when calling CounterpartyApi->addOtherAccountPrivateAlias: $e\n');
 }
 ```
 
@@ -511,11 +511,11 @@ Name | Type | Description  | Notes
  **accountid** | **String**| The ACCOUNTID identifier | 
  **viewid** | **String**| The VIEWID identifier | 
  **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
- **oBPv121GetCounterpartyPublicAlias200Response** | [**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md)| Request body | 
+ **getCounterpartyPublicAlias200Response** | [**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -528,8 +528,126 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121DeleteCounterpartyCorporateLocation**
-> oBPv121DeleteCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid)
+# **createCounterparty**
+> GetExplicitCounterpartyById200Response createCounterparty(bankid, accountid, viewid, createCounterpartyForAnyAccountRequest)
+
+Create Counterparty (Explicit)
+
+<p>This endpoint creates an (Explicit) Counterparty for an Account.</p> <p>For an introduction to Counterparties in OBP see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final CreateCounterpartyForAnyAccountRequest createCounterpartyForAnyAccountRequest = {type=object, properties={bespoke={type=array, items={type=object, properties={value={type=string}, key={type=string}}}}, other_account_routing_address={type=string}, name={type=string}, other_bank_routing_scheme={type=string}, currency={type=string}, other_account_secondary_routing_address={type=string}, other_account_routing_scheme={type=string}, description={type=string}, other_bank_routing_address={type=string}, other_branch_routing_scheme={type=string}, other_account_secondary_routing_scheme={type=string}, is_beneficiary={type=boolean}, other_branch_routing_address={type=string}}}; // CreateCounterpartyForAnyAccountRequest | Request body
+
+try {
+    final response = api.createCounterparty(bankid, accountid, viewid, createCounterpartyForAnyAccountRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->createCounterparty: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **createCounterpartyForAnyAccountRequest** | [**CreateCounterpartyForAnyAccountRequest**](CreateCounterpartyForAnyAccountRequest.md)| Request body | 
+
+### Return type
+
+[**GetExplicitCounterpartyById200Response**](GetExplicitCounterpartyById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **createCounterpartyForAnyAccount**
+> GetExplicitCounterpartyById200Response createCounterpartyForAnyAccount(bankid, accountid, viewid, createCounterpartyForAnyAccountRequest)
+
+Create Counterparty for any account (Explicit)
+
+<p>This is a management endpoint that allows the creation of a Counterparty on any Account.</p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final CreateCounterpartyForAnyAccountRequest createCounterpartyForAnyAccountRequest = {"type":"object","properties":{"bespoke":{"type":"array","items":{"type":"object","properties":{"value":{"type":"string"},"key":{"type":"string"}}}},"other_account_routing_address":{"type":"string"},"name":{"type":"string"},"other_bank_routing_scheme":{"type":"string"},"currency":{"type":"string"},"other_account_secondary_routing_address":{"type":"string"},"other_account_routing_scheme":{"type":"string"},"description":{"type":"string"},"other_bank_routing_address":{"type":"string"},"other_branch_routing_scheme":{"type":"string"},"other_account_secondary_routing_scheme":{"type":"string"},"is_beneficiary":{"type":"boolean"},"other_branch_routing_address":{"type":"string"}}}; // CreateCounterpartyForAnyAccountRequest | Request body
+
+try {
+    final response = api.createCounterpartyForAnyAccount(bankid, accountid, viewid, createCounterpartyForAnyAccountRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->createCounterpartyForAnyAccount: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **createCounterpartyForAnyAccountRequest** | [**CreateCounterpartyForAnyAccountRequest**](CreateCounterpartyForAnyAccountRequest.md)| Request body | 
+
+### Return type
+
+[**GetExplicitCounterpartyById200Response**](GetExplicitCounterpartyById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteCounterpartyCorporateLocation**
+> deleteCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid)
 
 Delete Counterparty Corporate Location
 
@@ -556,9 +674,9 @@ final String viewid = viewid_example; // String | The VIEWID identifier
 final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
 
 try {
-    api.oBPv121DeleteCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid);
+    api.deleteCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121DeleteCounterpartyCorporateLocation: $e\n');
+    print('Exception when calling CounterpartyApi->deleteCounterpartyCorporateLocation: $e\n');
 }
 ```
 
@@ -586,1342 +704,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121DeleteCounterpartyImageUrl**
-> oBPv121DeleteCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid)
-
-Delete Counterparty Image URL
-
-<p>Delete image url of other bank account</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-
-try {
-    api.oBPv121DeleteCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121DeleteCounterpartyImageUrl: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121DeleteCounterpartyMoreInfo**
-> oBPv121DeleteCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid)
-
-Delete more info of other bank account
-
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-
-try {
-    api.oBPv121DeleteCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121DeleteCounterpartyMoreInfo: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121DeleteCounterpartyOpenCorporatesUrl**
-> oBPv121DeleteCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid)
-
-Delete Counterparty Open Corporates URL
-
-<p>Delete open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-
-try {
-    api.oBPv121DeleteCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121DeleteCounterpartyOpenCorporatesUrl: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121DeleteCounterpartyPhysicalLocation**
-> oBPv121DeleteCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid)
-
-Delete Counterparty Physical Location
-
-<p>Delete physical location of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-
-try {
-    api.oBPv121DeleteCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121DeleteCounterpartyPhysicalLocation: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121DeleteCounterpartyPrivateAlias**
-> oBPv121DeleteCounterpartyPrivateAlias(bankid, accountid, viewid, otheraccountid)
-
-Delete Counterparty Private Alias
-
-<p>Deletes the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-
-try {
-    api.oBPv121DeleteCounterpartyPrivateAlias(bankid, accountid, viewid, otheraccountid);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121DeleteCounterpartyPrivateAlias: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121DeleteCounterpartyPublicAlias**
-> oBPv121DeleteCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid)
-
-Delete Counterparty Public Alias
-
-<p>Deletes the public alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-
-try {
-    api.oBPv121DeleteCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121DeleteCounterpartyPublicAlias: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121DeleteCounterpartyUrl**
-> oBPv121DeleteCounterpartyUrl(bankid, accountid, viewid, otheraccountid)
-
-Delete url of other bank account
-
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-
-try {
-    api.oBPv121DeleteCounterpartyUrl(bankid, accountid, viewid, otheraccountid);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121DeleteCounterpartyUrl: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121GetCounterpartyPublicAlias**
-> OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid)
-
-Get public alias of other bank account
-
-<p>Returns the public alias of the other account OTHER_ACCOUNT_ID.<br /> User Authentication is Optional. The User need not be logged in.<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated. if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-
-try {
-    final response = api.oBPv121GetCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121GetCounterpartyPublicAlias: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
-
-### Return type
-
-[**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121GetOtherAccountForTransaction**
-> OBPv121GetOtherAccountForTransaction200Response oBPv121GetOtherAccountForTransaction(bankid, accountid, viewid, transactionid)
-
-Get Other Account of Transaction
-
-<p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String transactionid = transactionid_example; // String | The TRANSACTIONID identifier
-
-try {
-    final response = api.oBPv121GetOtherAccountForTransaction(bankid, accountid, viewid, transactionid);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121GetOtherAccountForTransaction: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **transactionid** | **String**| The TRANSACTIONID identifier | 
-
-### Return type
-
-[**OBPv121GetOtherAccountForTransaction200Response**](OBPv121GetOtherAccountForTransaction200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121GetOtherAccountMetadata**
-> OBPv121GetOtherAccountMetadata200Response oBPv121GetOtherAccountMetadata(bankid, accountid, viewid, otheraccountid)
-
-Get Other Account Metadata
-
-<p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-
-try {
-    final response = api.oBPv121GetOtherAccountMetadata(bankid, accountid, viewid, otheraccountid);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121GetOtherAccountMetadata: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
-
-### Return type
-
-[**OBPv121GetOtherAccountMetadata200Response**](OBPv121GetOtherAccountMetadata200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121GetOtherAccountPrivateAlias**
-> OBPv121GetCounterpartyPublicAlias200Response oBPv121GetOtherAccountPrivateAlias(bankid, accountid, viewid, otheraccountid)
-
-Get Other Account Private Alias
-
-<p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-
-try {
-    final response = api.oBPv121GetOtherAccountPrivateAlias(bankid, accountid, viewid, otheraccountid);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121GetOtherAccountPrivateAlias: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
-
-### Return type
-
-[**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121UpdateCounterpartyCorporateLocation**
-> OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest)
-
-Update Counterparty Corporate Location
-
-<p>Update the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-final OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest = {"type":"object","properties":{"corporate_location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}}; // OBPv121UpdateCounterpartyCorporateLocationRequest | Request body
-
-try {
-    final response = api.oBPv121UpdateCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121UpdateCounterpartyCorporateLocation: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyCorporateLocationRequest** | [**OBPv121UpdateCounterpartyCorporateLocationRequest**](OBPv121UpdateCounterpartyCorporateLocationRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121UpdateCounterpartyImageUrl**
-> OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest)
-
-Update Counterparty Image Url
-
-<p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-final OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest = {"type":"object","properties":{"image_URL":{"type":"string"}}}; // OBPv121UpdateCounterpartyImageUrlRequest | Request body
-
-try {
-    final response = api.oBPv121UpdateCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121UpdateCounterpartyImageUrl: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyImageUrlRequest** | [**OBPv121UpdateCounterpartyImageUrlRequest**](OBPv121UpdateCounterpartyImageUrlRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121UpdateCounterpartyMoreInfo**
-> OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest)
-
-Update Counterparty More Info
-
-<p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-final OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest = {"type":"object","properties":{"more_info":{"type":"string"}}}; // OBPv121UpdateCounterpartyMoreInfoRequest | Request body
-
-try {
-    final response = api.oBPv121UpdateCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121UpdateCounterpartyMoreInfo: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyMoreInfoRequest** | [**OBPv121UpdateCounterpartyMoreInfoRequest**](OBPv121UpdateCounterpartyMoreInfoRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121UpdateCounterpartyOpenCorporatesUrl**
-> OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest)
-
-Update Open Corporates Url of Counterparty
-
-<p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-final OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest = {"type":"object","properties":{"open_corporates_URL":{"type":"string"}}}; // OBPv121UpdateCounterpartyOpenCorporatesUrlRequest | Request body
-
-try {
-    final response = api.oBPv121UpdateCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121UpdateCounterpartyOpenCorporatesUrl: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyOpenCorporatesUrlRequest** | [**OBPv121UpdateCounterpartyOpenCorporatesUrlRequest**](OBPv121UpdateCounterpartyOpenCorporatesUrlRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121UpdateCounterpartyPhysicalLocation**
-> OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest)
-
-Update Counterparty Physical Location
-
-<p>Update geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-final OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest = {"type":"object","properties":{"physical_location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}}; // OBPv121UpdateCounterpartyPhysicalLocationRequest | Request body
-
-try {
-    final response = api.oBPv121UpdateCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121UpdateCounterpartyPhysicalLocation: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyPhysicalLocationRequest** | [**OBPv121UpdateCounterpartyPhysicalLocationRequest**](OBPv121UpdateCounterpartyPhysicalLocationRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121UpdateCounterpartyPrivateAlias**
-> OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyPrivateAlias(bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response)
-
-Update Counterparty Private Alias
-
-<p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-final OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response = {type=object, properties={alias={type=string}}}; // OBPv121GetCounterpartyPublicAlias200Response | Request body
-
-try {
-    final response = api.oBPv121UpdateCounterpartyPrivateAlias(bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121UpdateCounterpartyPrivateAlias: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
- **oBPv121GetCounterpartyPublicAlias200Response** | [**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121UpdateCounterpartyPublicAlias**
-> OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response)
-
-Update public alias of other bank account
-
-<p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-final OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response = {"type":"object","properties":{"alias":{"type":"string"}}}; // OBPv121GetCounterpartyPublicAlias200Response | Request body
-
-try {
-    final response = api.oBPv121UpdateCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121UpdateCounterpartyPublicAlias: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
- **oBPv121GetCounterpartyPublicAlias200Response** | [**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121UpdateCounterpartyUrl**
-> OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyUrlRequest)
-
-Update url of other bank account
-
-<p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-final OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest = {"type":"object","properties":{"URL":{"type":"string"}}}; // OBPv121UpdateCounterpartyUrlRequest | Request body
-
-try {
-    final response = api.oBPv121UpdateCounterpartyUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyUrlRequest);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv121UpdateCounterpartyUrl: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyUrlRequest** | [**OBPv121UpdateCounterpartyUrlRequest**](OBPv121UpdateCounterpartyUrlRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv300GetOtherAccountByIdForBankAccount**
-> OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount oBPv300GetOtherAccountByIdForBankAccount(bankid, accountid, viewid, otheraccountid)
-
-Get Other Account by Id
-
-<p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
-
-try {
-    final response = api.oBPv300GetOtherAccountByIdForBankAccount(bankid, accountid, viewid, otheraccountid);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv300GetOtherAccountByIdForBankAccount: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
-
-### Return type
-
-[**OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount**](OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv300GetOtherAccountsForBankAccount**
-> OBPv300GetOtherAccountsForBankAccount200Response oBPv300GetOtherAccountsForBankAccount(bankid, accountid, viewid)
-
-Get Other Accounts of one Account
-
-<p>Returns data about all the other accounts that have shared at least one transaction with the ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view VIEW_ID is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_accounts\"><strong>other_accounts</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-
-try {
-    final response = api.oBPv300GetOtherAccountsForBankAccount(bankid, accountid, viewid);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv300GetOtherAccountsForBankAccount: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
-
-### Return type
-
-[**OBPv300GetOtherAccountsForBankAccount200Response**](OBPv300GetOtherAccountsForBankAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv400CreateCounterparty**
-> OBPv400GetExplicitCounterpartyById200Response oBPv400CreateCounterparty(bankid, accountid, viewid, oBPv400CreateCounterpartyForAnyAccountRequest)
-
-Create Counterparty (Explicit)
-
-<p>This endpoint creates an (Explicit) Counterparty for an Account.</p> <p>For an introduction to Counterparties in OBP see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final OBPv400CreateCounterpartyForAnyAccountRequest oBPv400CreateCounterpartyForAnyAccountRequest = {type=object, properties={bespoke={type=array, items={type=object, properties={value={type=string}, key={type=string}}}}, other_account_routing_address={type=string}, name={type=string}, other_bank_routing_scheme={type=string}, currency={type=string}, other_account_secondary_routing_address={type=string}, other_account_routing_scheme={type=string}, description={type=string}, other_bank_routing_address={type=string}, other_branch_routing_scheme={type=string}, other_account_secondary_routing_scheme={type=string}, is_beneficiary={type=boolean}, other_branch_routing_address={type=string}}}; // OBPv400CreateCounterpartyForAnyAccountRequest | Request body
-
-try {
-    final response = api.oBPv400CreateCounterparty(bankid, accountid, viewid, oBPv400CreateCounterpartyForAnyAccountRequest);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv400CreateCounterparty: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **oBPv400CreateCounterpartyForAnyAccountRequest** | [**OBPv400CreateCounterpartyForAnyAccountRequest**](OBPv400CreateCounterpartyForAnyAccountRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400GetExplicitCounterpartyById200Response**](OBPv400GetExplicitCounterpartyById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv400CreateCounterpartyForAnyAccount**
-> OBPv400GetExplicitCounterpartyById200Response oBPv400CreateCounterpartyForAnyAccount(bankid, accountid, viewid, oBPv400CreateCounterpartyForAnyAccountRequest)
-
-Create Counterparty for any account (Explicit)
-
-<p>This is a management endpoint that allows the creation of a Counterparty on any Account.</p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getCounterpartyApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final String viewid = viewid_example; // String | The VIEWID identifier
-final OBPv400CreateCounterpartyForAnyAccountRequest oBPv400CreateCounterpartyForAnyAccountRequest = {"type":"object","properties":{"bespoke":{"type":"array","items":{"type":"object","properties":{"value":{"type":"string"},"key":{"type":"string"}}}},"other_account_routing_address":{"type":"string"},"name":{"type":"string"},"other_bank_routing_scheme":{"type":"string"},"currency":{"type":"string"},"other_account_secondary_routing_address":{"type":"string"},"other_account_routing_scheme":{"type":"string"},"description":{"type":"string"},"other_bank_routing_address":{"type":"string"},"other_branch_routing_scheme":{"type":"string"},"other_account_secondary_routing_scheme":{"type":"string"},"is_beneficiary":{"type":"boolean"},"other_branch_routing_address":{"type":"string"}}}; // OBPv400CreateCounterpartyForAnyAccountRequest | Request body
-
-try {
-    final response = api.oBPv400CreateCounterpartyForAnyAccount(bankid, accountid, viewid, oBPv400CreateCounterpartyForAnyAccountRequest);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv400CreateCounterpartyForAnyAccount: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **accountid** | **String**| The ACCOUNTID identifier | 
- **viewid** | **String**| The VIEWID identifier | 
- **oBPv400CreateCounterpartyForAnyAccountRequest** | [**OBPv400CreateCounterpartyForAnyAccountRequest**](OBPv400CreateCounterpartyForAnyAccountRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400GetExplicitCounterpartyById200Response**](OBPv400GetExplicitCounterpartyById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv400DeleteCounterpartyForAnyAccount**
-> oBPv400DeleteCounterpartyForAnyAccount(bankid, accountid, viewid, counterpartyid)
+# **deleteCounterpartyForAnyAccount**
+> deleteCounterpartyForAnyAccount(bankid, accountid, viewid, counterpartyid)
 
 Delete Counterparty for any account (Explicit)
 
@@ -1948,9 +732,9 @@ final String viewid = viewid_example; // String | The VIEWID identifier
 final String counterpartyid = counterpartyid_example; // String | The COUNTERPARTYID identifier
 
 try {
-    api.oBPv400DeleteCounterpartyForAnyAccount(bankid, accountid, viewid, counterpartyid);
+    api.deleteCounterpartyForAnyAccount(bankid, accountid, viewid, counterpartyid);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv400DeleteCounterpartyForAnyAccount: $e\n');
+    print('Exception when calling CounterpartyApi->deleteCounterpartyForAnyAccount: $e\n');
 }
 ```
 
@@ -1978,8 +762,404 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteExplicitCounterparty**
-> oBPv400DeleteExplicitCounterparty(bankid, accountid, viewid, counterpartyid)
+# **deleteCounterpartyImageUrl**
+> deleteCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid)
+
+Delete Counterparty Image URL
+
+<p>Delete image url of other bank account</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+
+try {
+    api.deleteCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->deleteCounterpartyImageUrl: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteCounterpartyMoreInfo**
+> deleteCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid)
+
+Delete more info of other bank account
+
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+
+try {
+    api.deleteCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->deleteCounterpartyMoreInfo: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteCounterpartyOpenCorporatesUrl**
+> deleteCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid)
+
+Delete Counterparty Open Corporates URL
+
+<p>Delete open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+
+try {
+    api.deleteCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->deleteCounterpartyOpenCorporatesUrl: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteCounterpartyPhysicalLocation**
+> deleteCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid)
+
+Delete Counterparty Physical Location
+
+<p>Delete physical location of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+
+try {
+    api.deleteCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->deleteCounterpartyPhysicalLocation: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteCounterpartyPrivateAlias**
+> deleteCounterpartyPrivateAlias(bankid, accountid, viewid, otheraccountid)
+
+Delete Counterparty Private Alias
+
+<p>Deletes the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+
+try {
+    api.deleteCounterpartyPrivateAlias(bankid, accountid, viewid, otheraccountid);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->deleteCounterpartyPrivateAlias: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteCounterpartyPublicAlias**
+> deleteCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid)
+
+Delete Counterparty Public Alias
+
+<p>Deletes the public alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+
+try {
+    api.deleteCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->deleteCounterpartyPublicAlias: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteCounterpartyUrl**
+> deleteCounterpartyUrl(bankid, accountid, viewid, otheraccountid)
+
+Delete url of other bank account
+
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+
+try {
+    api.deleteCounterpartyUrl(bankid, accountid, viewid, otheraccountid);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->deleteCounterpartyUrl: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteExplicitCounterparty**
+> deleteExplicitCounterparty(bankid, accountid, viewid, counterpartyid)
 
 Delete Counterparty (Explicit)
 
@@ -2006,9 +1186,9 @@ final String viewid = viewid_example; // String | The VIEWID identifier
 final String counterpartyid = counterpartyid_example; // String | The COUNTERPARTYID identifier
 
 try {
-    api.oBPv400DeleteExplicitCounterparty(bankid, accountid, viewid, counterpartyid);
+    api.deleteExplicitCounterparty(bankid, accountid, viewid, counterpartyid);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv400DeleteExplicitCounterparty: $e\n');
+    print('Exception when calling CounterpartyApi->deleteExplicitCounterparty: $e\n');
 }
 ```
 
@@ -2036,8 +1216,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetCounterpartiesForAnyAccount**
-> OBPv400GetCounterpartiesForAnyAccount200Response oBPv400GetCounterpartiesForAnyAccount(bankid, accountid, viewid)
+# **getCounterpartiesForAnyAccount**
+> GetCounterpartiesForAnyAccount200Response getCounterpartiesForAnyAccount(bankid, accountid, viewid)
 
 Get Counterparties for any account (Explicit)
 
@@ -2063,10 +1243,10 @@ final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
 
 try {
-    final response = api.oBPv400GetCounterpartiesForAnyAccount(bankid, accountid, viewid);
+    final response = api.getCounterpartiesForAnyAccount(bankid, accountid, viewid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv400GetCounterpartiesForAnyAccount: $e\n');
+    print('Exception when calling CounterpartyApi->getCounterpartiesForAnyAccount: $e\n');
 }
 ```
 
@@ -2080,7 +1260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetCounterpartiesForAnyAccount200Response**](OBPv400GetCounterpartiesForAnyAccount200Response.md)
+[**GetCounterpartiesForAnyAccount200Response**](GetCounterpartiesForAnyAccount200Response.md)
 
 ### Authorization
 
@@ -2093,8 +1273,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetCounterpartyByIdForAnyAccount**
-> OBPv400GetExplicitCounterpartyById200Response oBPv400GetCounterpartyByIdForAnyAccount(bankid, accountid, viewid, counterpartyid)
+# **getCounterpartyByIdForAnyAccount**
+> GetExplicitCounterpartyById200Response getCounterpartyByIdForAnyAccount(bankid, accountid, viewid, counterpartyid)
 
 Get Counterparty by Id for any account (Explicit)
 
@@ -2121,10 +1301,10 @@ final String viewid = viewid_example; // String | The VIEWID identifier
 final String counterpartyid = counterpartyid_example; // String | The COUNTERPARTYID identifier
 
 try {
-    final response = api.oBPv400GetCounterpartyByIdForAnyAccount(bankid, accountid, viewid, counterpartyid);
+    final response = api.getCounterpartyByIdForAnyAccount(bankid, accountid, viewid, counterpartyid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv400GetCounterpartyByIdForAnyAccount: $e\n');
+    print('Exception when calling CounterpartyApi->getCounterpartyByIdForAnyAccount: $e\n');
 }
 ```
 
@@ -2139,7 +1319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetExplicitCounterpartyById200Response**](OBPv400GetExplicitCounterpartyById200Response.md)
+[**GetExplicitCounterpartyById200Response**](GetExplicitCounterpartyById200Response.md)
 
 ### Authorization
 
@@ -2152,8 +1332,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetCounterpartyByNameForAnyAccount**
-> OBPv400GetExplicitCounterpartyById200Response oBPv400GetCounterpartyByNameForAnyAccount(bankid, accountid, viewid, counterpartyname)
+# **getCounterpartyByNameForAnyAccount**
+> GetExplicitCounterpartyById200Response getCounterpartyByNameForAnyAccount(bankid, accountid, viewid, counterpartyname)
 
 Get Counterparty by name for any account (Explicit) 
 
@@ -2180,10 +1360,10 @@ final String viewid = viewid_example; // String | The VIEWID identifier
 final String counterpartyname = counterpartyname_example; // String | The COUNTERPARTYNAME identifier
 
 try {
-    final response = api.oBPv400GetCounterpartyByNameForAnyAccount(bankid, accountid, viewid, counterpartyname);
+    final response = api.getCounterpartyByNameForAnyAccount(bankid, accountid, viewid, counterpartyname);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv400GetCounterpartyByNameForAnyAccount: $e\n');
+    print('Exception when calling CounterpartyApi->getCounterpartyByNameForAnyAccount: $e\n');
 }
 ```
 
@@ -2198,7 +1378,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetExplicitCounterpartyById200Response**](OBPv400GetExplicitCounterpartyById200Response.md)
+[**GetExplicitCounterpartyById200Response**](GetExplicitCounterpartyById200Response.md)
 
 ### Authorization
 
@@ -2211,8 +1391,67 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetExplicitCounterpartiesForAccount**
-> OBPv400GetCounterpartiesForAnyAccount200Response oBPv400GetExplicitCounterpartiesForAccount(bankid, accountid, viewid)
+# **getCounterpartyPublicAlias**
+> GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid)
+
+Get public alias of other bank account
+
+<p>Returns the public alias of the other account OTHER_ACCOUNT_ID.<br /> User Authentication is Optional. The User need not be logged in.<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated. if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+
+try {
+    final response = api.getCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->getCounterpartyPublicAlias: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+
+### Return type
+
+[**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getExplicitCounterpartiesForAccount**
+> GetCounterpartiesForAnyAccount200Response getExplicitCounterpartiesForAccount(bankid, accountid, viewid)
 
 Get Counterparties (Explicit)
 
@@ -2238,10 +1477,10 @@ final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
 
 try {
-    final response = api.oBPv400GetExplicitCounterpartiesForAccount(bankid, accountid, viewid);
+    final response = api.getExplicitCounterpartiesForAccount(bankid, accountid, viewid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv400GetExplicitCounterpartiesForAccount: $e\n');
+    print('Exception when calling CounterpartyApi->getExplicitCounterpartiesForAccount: $e\n');
 }
 ```
 
@@ -2255,7 +1494,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetCounterpartiesForAnyAccount200Response**](OBPv400GetCounterpartiesForAnyAccount200Response.md)
+[**GetCounterpartiesForAnyAccount200Response**](GetCounterpartiesForAnyAccount200Response.md)
 
 ### Authorization
 
@@ -2268,8 +1507,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetExplicitCounterpartyById**
-> OBPv400GetExplicitCounterpartyById200Response oBPv400GetExplicitCounterpartyById(bankid, accountid, viewid, counterpartyid)
+# **getExplicitCounterpartyById**
+> GetExplicitCounterpartyById200Response getExplicitCounterpartyById(bankid, accountid, viewid, counterpartyid)
 
 Get Counterparty by Id (Explicit)
 
@@ -2296,10 +1535,10 @@ final String viewid = viewid_example; // String | The VIEWID identifier
 final String counterpartyid = counterpartyid_example; // String | The COUNTERPARTYID identifier
 
 try {
-    final response = api.oBPv400GetExplicitCounterpartyById(bankid, accountid, viewid, counterpartyid);
+    final response = api.getExplicitCounterpartyById(bankid, accountid, viewid, counterpartyid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyApi->oBPv400GetExplicitCounterpartyById: $e\n');
+    print('Exception when calling CounterpartyApi->getExplicitCounterpartyById: $e\n');
 }
 ```
 
@@ -2314,7 +1553,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetExplicitCounterpartyById200Response**](OBPv400GetExplicitCounterpartyById200Response.md)
+[**GetExplicitCounterpartyById200Response**](GetExplicitCounterpartyById200Response.md)
 
 ### Authorization
 
@@ -2323,6 +1562,767 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getOtherAccountByIdForBankAccount**
+> GetTransactionByIdForBankAccount200ResponseOtherAccount getOtherAccountByIdForBankAccount(bankid, accountid, viewid, otheraccountid)
+
+Get Other Account by Id
+
+<p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+
+try {
+    final response = api.getOtherAccountByIdForBankAccount(bankid, accountid, viewid, otheraccountid);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->getOtherAccountByIdForBankAccount: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+
+### Return type
+
+[**GetTransactionByIdForBankAccount200ResponseOtherAccount**](GetTransactionByIdForBankAccount200ResponseOtherAccount.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getOtherAccountForTransaction**
+> GetOtherAccountForTransaction200Response getOtherAccountForTransaction(bankid, accountid, viewid, transactionid)
+
+Get Other Account of Transaction
+
+<p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String transactionid = transactionid_example; // String | The TRANSACTIONID identifier
+
+try {
+    final response = api.getOtherAccountForTransaction(bankid, accountid, viewid, transactionid);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->getOtherAccountForTransaction: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **transactionid** | **String**| The TRANSACTIONID identifier | 
+
+### Return type
+
+[**GetOtherAccountForTransaction200Response**](GetOtherAccountForTransaction200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getOtherAccountMetadata**
+> GetOtherAccountMetadata200Response getOtherAccountMetadata(bankid, accountid, viewid, otheraccountid)
+
+Get Other Account Metadata
+
+<p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+
+try {
+    final response = api.getOtherAccountMetadata(bankid, accountid, viewid, otheraccountid);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->getOtherAccountMetadata: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+
+### Return type
+
+[**GetOtherAccountMetadata200Response**](GetOtherAccountMetadata200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getOtherAccountPrivateAlias**
+> GetCounterpartyPublicAlias200Response getOtherAccountPrivateAlias(bankid, accountid, viewid, otheraccountid)
+
+Get Other Account Private Alias
+
+<p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+
+try {
+    final response = api.getOtherAccountPrivateAlias(bankid, accountid, viewid, otheraccountid);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->getOtherAccountPrivateAlias: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+
+### Return type
+
+[**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getOtherAccountsForBankAccount**
+> GetOtherAccountsForBankAccount200Response getOtherAccountsForBankAccount(bankid, accountid, viewid)
+
+Get Other Accounts of one Account
+
+<p>Returns data about all the other accounts that have shared at least one transaction with the ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view VIEW_ID is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_accounts\"><strong>other_accounts</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+
+try {
+    final response = api.getOtherAccountsForBankAccount(bankid, accountid, viewid);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->getOtherAccountsForBankAccount: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+
+### Return type
+
+[**GetOtherAccountsForBankAccount200Response**](GetOtherAccountsForBankAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCounterpartyCorporateLocation**
+> UpdateTransactionNarrative200Response updateCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest)
+
+Update Counterparty Corporate Location
+
+<p>Update the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+final UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest = {"type":"object","properties":{"corporate_location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}}; // UpdateCounterpartyCorporateLocationRequest | Request body
+
+try {
+    final response = api.updateCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->updateCounterpartyCorporateLocation: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+ **updateCounterpartyCorporateLocationRequest** | [**UpdateCounterpartyCorporateLocationRequest**](UpdateCounterpartyCorporateLocationRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCounterpartyImageUrl**
+> UpdateTransactionNarrative200Response updateCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest)
+
+Update Counterparty Image Url
+
+<p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+final UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest = {"type":"object","properties":{"image_URL":{"type":"string"}}}; // UpdateCounterpartyImageUrlRequest | Request body
+
+try {
+    final response = api.updateCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->updateCounterpartyImageUrl: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+ **updateCounterpartyImageUrlRequest** | [**UpdateCounterpartyImageUrlRequest**](UpdateCounterpartyImageUrlRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCounterpartyMoreInfo**
+> UpdateTransactionNarrative200Response updateCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest)
+
+Update Counterparty More Info
+
+<p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+final UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest = {"type":"object","properties":{"more_info":{"type":"string"}}}; // UpdateCounterpartyMoreInfoRequest | Request body
+
+try {
+    final response = api.updateCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->updateCounterpartyMoreInfo: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+ **updateCounterpartyMoreInfoRequest** | [**UpdateCounterpartyMoreInfoRequest**](UpdateCounterpartyMoreInfoRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCounterpartyOpenCorporatesUrl**
+> UpdateTransactionNarrative200Response updateCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest)
+
+Update Open Corporates Url of Counterparty
+
+<p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+final UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest = {"type":"object","properties":{"open_corporates_URL":{"type":"string"}}}; // UpdateCounterpartyOpenCorporatesUrlRequest | Request body
+
+try {
+    final response = api.updateCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->updateCounterpartyOpenCorporatesUrl: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+ **updateCounterpartyOpenCorporatesUrlRequest** | [**UpdateCounterpartyOpenCorporatesUrlRequest**](UpdateCounterpartyOpenCorporatesUrlRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCounterpartyPhysicalLocation**
+> UpdateTransactionNarrative200Response updateCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest)
+
+Update Counterparty Physical Location
+
+<p>Update geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+final UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest = {"type":"object","properties":{"physical_location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}}; // UpdateCounterpartyPhysicalLocationRequest | Request body
+
+try {
+    final response = api.updateCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->updateCounterpartyPhysicalLocation: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+ **updateCounterpartyPhysicalLocationRequest** | [**UpdateCounterpartyPhysicalLocationRequest**](UpdateCounterpartyPhysicalLocationRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCounterpartyPrivateAlias**
+> UpdateTransactionNarrative200Response updateCounterpartyPrivateAlias(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response)
+
+Update Counterparty Private Alias
+
+<p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+final GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response = {type=object, properties={alias={type=string}}}; // GetCounterpartyPublicAlias200Response | Request body
+
+try {
+    final response = api.updateCounterpartyPrivateAlias(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->updateCounterpartyPrivateAlias: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+ **getCounterpartyPublicAlias200Response** | [**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCounterpartyPublicAlias**
+> UpdateTransactionNarrative200Response updateCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response)
+
+Update public alias of other bank account
+
+<p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+final GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response = {"type":"object","properties":{"alias":{"type":"string"}}}; // GetCounterpartyPublicAlias200Response | Request body
+
+try {
+    final response = api.updateCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->updateCounterpartyPublicAlias: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+ **getCounterpartyPublicAlias200Response** | [**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCounterpartyUrl**
+> UpdateTransactionNarrative200Response updateCounterpartyUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest)
+
+Update url of other bank account
+
+<p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getCounterpartyApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String accountid = accountid_example; // String | The ACCOUNTID identifier
+final String viewid = viewid_example; // String | The VIEWID identifier
+final String otheraccountid = otheraccountid_example; // String | The OTHERACCOUNTID identifier
+final UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest = {"type":"object","properties":{"URL":{"type":"string"}}}; // UpdateCounterpartyUrlRequest | Request body
+
+try {
+    final response = api.updateCounterpartyUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CounterpartyApi->updateCounterpartyUrl: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **accountid** | **String**| The ACCOUNTID identifier | 
+ **viewid** | **String**| The VIEWID identifier | 
+ **otheraccountid** | **String**| The OTHERACCOUNTID identifier | 
+ **updateCounterpartyUrlRequest** | [**UpdateCounterpartyUrlRequest**](UpdateCounterpartyUrlRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,27 +24,27 @@ import (
 // AttributeAPIService AttributeAPI service
 type AttributeAPIService service
 
-type ApiOBPv310CreateAccountAttributeRequest struct {
+type ApiCreateAccountAttributeRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	accountid string
 	productcode string
-	oBPv310UpdateAccountAttributeRequest *OBPv310UpdateAccountAttributeRequest
+	updateAccountAttributeRequest *UpdateAccountAttributeRequest
 }
 
 // Request body
-func (r ApiOBPv310CreateAccountAttributeRequest) OBPv310UpdateAccountAttributeRequest(oBPv310UpdateAccountAttributeRequest OBPv310UpdateAccountAttributeRequest) ApiOBPv310CreateAccountAttributeRequest {
-	r.oBPv310UpdateAccountAttributeRequest = &oBPv310UpdateAccountAttributeRequest
+func (r ApiCreateAccountAttributeRequest) UpdateAccountAttributeRequest(updateAccountAttributeRequest UpdateAccountAttributeRequest) ApiCreateAccountAttributeRequest {
+	r.updateAccountAttributeRequest = &updateAccountAttributeRequest
 	return r
 }
 
-func (r ApiOBPv310CreateAccountAttributeRequest) Execute() (*OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv310CreateAccountAttributeExecute(r)
+func (r ApiCreateAccountAttributeRequest) Execute() (*GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateAccountAttributeExecute(r)
 }
 
 /*
-OBPv310CreateAccountAttribute Create Account Attribute
+CreateAccountAttribute Create Account Attribute
 
 <p>Create Account Attribute</p>
 <p>Account Attributes are used to describe a financial Product with a list of typed key value pairs.</p>
@@ -82,10 +82,10 @@ TRADABLE</p>
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param productcode The PRODUCTCODE identifier
- @return ApiOBPv310CreateAccountAttributeRequest
+ @return ApiCreateAccountAttributeRequest
 */
-func (a *AttributeAPIService) OBPv310CreateAccountAttribute(ctx context.Context, bankid string, accountid string, productcode string) ApiOBPv310CreateAccountAttributeRequest {
-	return ApiOBPv310CreateAccountAttributeRequest{
+func (a *AttributeAPIService) CreateAccountAttribute(ctx context.Context, bankid string, accountid string, productcode string) ApiCreateAccountAttributeRequest {
+	return ApiCreateAccountAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -95,16 +95,16 @@ func (a *AttributeAPIService) OBPv310CreateAccountAttribute(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems
-func (a *AttributeAPIService) OBPv310CreateAccountAttributeExecute(r ApiOBPv310CreateAccountAttributeRequest) (*OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems, *http.Response, error) {
+//  @return GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner
+func (a *AttributeAPIService) CreateAccountAttributeExecute(r ApiCreateAccountAttributeRequest) (*GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems
+		localVarReturnValue  *GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv310CreateAccountAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.CreateAccountAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -117,8 +117,8 @@ func (a *AttributeAPIService) OBPv310CreateAccountAttributeExecute(r ApiOBPv310C
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv310UpdateAccountAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv310UpdateAccountAttributeRequest is required and must be specified")
+	if r.updateAccountAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAccountAttributeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -139,7 +139,7 @@ func (a *AttributeAPIService) OBPv310CreateAccountAttributeExecute(r ApiOBPv310C
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv310UpdateAccountAttributeRequest
+	localVarPostBody = r.updateAccountAttributeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -164,7 +164,7 @@ func (a *AttributeAPIService) OBPv310CreateAccountAttributeExecute(r ApiOBPv310C
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -205,82 +205,86 @@ func (a *AttributeAPIService) OBPv310CreateAccountAttributeExecute(r ApiOBPv310C
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv310CreateCardAttributeRequest struct {
+type ApiCreateAtmAttributeRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
-	cardid string
-	oBPv600CreatePersonalDataFieldRequest *OBPv600CreatePersonalDataFieldRequest
+	atmid string
+	updateAtmAttributeRequest *UpdateAtmAttributeRequest
 }
 
 // Request body
-func (r ApiOBPv310CreateCardAttributeRequest) OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest OBPv600CreatePersonalDataFieldRequest) ApiOBPv310CreateCardAttributeRequest {
-	r.oBPv600CreatePersonalDataFieldRequest = &oBPv600CreatePersonalDataFieldRequest
+func (r ApiCreateAtmAttributeRequest) UpdateAtmAttributeRequest(updateAtmAttributeRequest UpdateAtmAttributeRequest) ApiCreateAtmAttributeRequest {
+	r.updateAtmAttributeRequest = &updateAtmAttributeRequest
 	return r
 }
 
-func (r ApiOBPv310CreateCardAttributeRequest) Execute() (*OBPv310CreateCardAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv310CreateCardAttributeExecute(r)
+func (r ApiCreateAtmAttributeRequest) Execute() (*GetAtmAttribute200Response, *http.Response, error) {
+	return r.ApiService.CreateAtmAttributeExecute(r)
 }
 
 /*
-OBPv310CreateCardAttribute Create Card Attribute
+CreateAtmAttribute Create ATM Attribute
 
-<p>Create Card Attribute</p>
-<p>Card Attributes are used to describe a financial Product with a list of typed key value pairs.</p>
-<p>Each Card Attribute is linked to its Card by CARD_ID</p>
+<p>Create ATM Attribute</p>
 <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">CARD_ID</a>: 36f8a9e6-c2b1-407a-8bd0-421b7119307e</p>
 <p><strong>JSON request body fields:</strong></p>
 <p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
 <p><a href="/glossary#type"><strong>type</strong></a>:</p>
 <p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
 <p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
 <p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
 <p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @param cardid The CARDID identifier
- @return ApiOBPv310CreateCardAttributeRequest
+ @param atmid The ATMID identifier
+ @return ApiCreateAtmAttributeRequest
 */
-func (a *AttributeAPIService) OBPv310CreateCardAttribute(ctx context.Context, bankid string, cardid string) ApiOBPv310CreateCardAttributeRequest {
-	return ApiOBPv310CreateCardAttributeRequest{
+func (a *AttributeAPIService) CreateAtmAttribute(ctx context.Context, bankid string, atmid string) ApiCreateAtmAttributeRequest {
+	return ApiCreateAtmAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
-		cardid: cardid,
+		atmid: atmid,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv310CreateCardAttribute200Response
-func (a *AttributeAPIService) OBPv310CreateCardAttributeExecute(r ApiOBPv310CreateCardAttributeRequest) (*OBPv310CreateCardAttribute200Response, *http.Response, error) {
+//  @return GetAtmAttribute200Response
+func (a *AttributeAPIService) CreateAtmAttributeExecute(r ApiCreateAtmAttributeRequest) (*GetAtmAttribute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310CreateCardAttribute200Response
+		localVarReturnValue  *GetAtmAttribute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv310CreateCardAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.CreateAtmAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attribute"
+	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes"
 	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"cardid"+"}", url.PathEscape(parameterValueToString(r.cardid, "cardid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreatePersonalDataFieldRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreatePersonalDataFieldRequest is required and must be specified")
+	if r.updateAtmAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmAttributeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -301,7 +305,7 @@ func (a *AttributeAPIService) OBPv310CreateCardAttributeExecute(r ApiOBPv310Crea
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreatePersonalDataFieldRequest
+	localVarPostBody = r.updateAtmAttributeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -326,7 +330,7 @@ func (a *AttributeAPIService) OBPv310CreateCardAttributeExecute(r ApiOBPv310Crea
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -367,505 +371,25 @@ func (a *AttributeAPIService) OBPv310CreateCardAttributeExecute(r ApiOBPv310Crea
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv310DeleteProductAttributeRequest struct {
+type ApiCreateBankAttributeRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
-	productcode string
-	productattributeid string
-}
-
-func (r ApiOBPv310DeleteProductAttributeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv310DeleteProductAttributeExecute(r)
-}
-
-/*
-OBPv310DeleteProductAttribute Delete Product Attribute
-
-<p>Delete Product Attribute</p>
-<p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p>
-<p>Each Product Attribute is linked to its Product by PRODUCT_CODE</p>
-<p>Delete a Product Attribute by its id.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#product_attribute_id">PRODUCT_ATTRIBUTE_ID</a>:</p>
-<p><a href="/glossary#product_code">PRODUCT_CODE</a>: 1234BW</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param productcode The PRODUCTCODE identifier
- @param productattributeid The PRODUCTATTRIBUTEID identifier
- @return ApiOBPv310DeleteProductAttributeRequest
-*/
-func (a *AttributeAPIService) OBPv310DeleteProductAttribute(ctx context.Context, bankid string, productcode string, productattributeid string) ApiOBPv310DeleteProductAttributeRequest {
-	return ApiOBPv310DeleteProductAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		productcode: productcode,
-		productattributeid: productattributeid,
-	}
-}
-
-// Execute executes the request
-func (a *AttributeAPIService) OBPv310DeleteProductAttributeExecute(r ApiOBPv310DeleteProductAttributeRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv310DeleteProductAttribute")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"productcode"+"}", url.PathEscape(parameterValueToString(r.productcode, "productcode")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"productattributeid"+"}", url.PathEscape(parameterValueToString(r.productattributeid, "productattributeid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv310UpdateAccountAttributeRequest struct {
-	ctx context.Context
-	ApiService *AttributeAPIService
-	bankid string
-	accountid string
-	productcode string
-	accountattributeid string
-	oBPv310UpdateAccountAttributeRequest *OBPv310UpdateAccountAttributeRequest
+	updateAtmAttributeRequest *UpdateAtmAttributeRequest
 }
 
 // Request body
-func (r ApiOBPv310UpdateAccountAttributeRequest) OBPv310UpdateAccountAttributeRequest(oBPv310UpdateAccountAttributeRequest OBPv310UpdateAccountAttributeRequest) ApiOBPv310UpdateAccountAttributeRequest {
-	r.oBPv310UpdateAccountAttributeRequest = &oBPv310UpdateAccountAttributeRequest
+func (r ApiCreateBankAttributeRequest) UpdateAtmAttributeRequest(updateAtmAttributeRequest UpdateAtmAttributeRequest) ApiCreateBankAttributeRequest {
+	r.updateAtmAttributeRequest = &updateAtmAttributeRequest
 	return r
 }
 
-func (r ApiOBPv310UpdateAccountAttributeRequest) Execute() (*OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv310UpdateAccountAttributeExecute(r)
+func (r ApiCreateBankAttributeRequest) Execute() (*GetBankAttributes200ResponseBankAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateBankAttributeExecute(r)
 }
 
 /*
-OBPv310UpdateAccountAttribute Update Account Attribute
-
-<p>Update Account Attribute</p>
-<p>Account Attributes are used to describe a financial Product with a list of typed key value pairs.</p>
-<p>Each Account Attribute is linked to its Account by ACCOUNT_ID</p>
-<p>Typical account attributes might be:</p>
-<p>ISIN (for International bonds)<br />
-VKN (for German bonds)<br />
-REDCODE (markit short code for credit derivative)<br />
-LOAN_ID (e.g. used for Anacredit reporting)</p>
-<p>ISSUE_DATE (When the bond was issued in the market)<br />
-MATURITY_DATE (End of life time of a product)<br />
-TRADABLE</p>
-<p>See <a href="http://www.fpml.org/">FPML</a> for more examples.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#account_attribute_id">ACCOUNT_ATTRIBUTE_ID</a>:</p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#product_code">PRODUCT_CODE</a>: 1234BW</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#account_attribute_id"><strong>account_attribute_id</strong></a>:</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#">product_instance_code</a>: product_instance_code</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param productcode The PRODUCTCODE identifier
- @param accountattributeid The ACCOUNTATTRIBUTEID identifier
- @return ApiOBPv310UpdateAccountAttributeRequest
-*/
-func (a *AttributeAPIService) OBPv310UpdateAccountAttribute(ctx context.Context, bankid string, accountid string, productcode string, accountattributeid string) ApiOBPv310UpdateAccountAttributeRequest {
-	return ApiOBPv310UpdateAccountAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		productcode: productcode,
-		accountattributeid: accountattributeid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems
-func (a *AttributeAPIService) OBPv310UpdateAccountAttributeExecute(r ApiOBPv310UpdateAccountAttributeRequest) (*OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv310UpdateAccountAttribute")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"productcode"+"}", url.PathEscape(parameterValueToString(r.productcode, "productcode")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountattributeid"+"}", url.PathEscape(parameterValueToString(r.accountattributeid, "accountattributeid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv310UpdateAccountAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv310UpdateAccountAttributeRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv310UpdateAccountAttributeRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv310UpdateCardAttributeRequest struct {
-	ctx context.Context
-	ApiService *AttributeAPIService
-	bankid string
-	cardid string
-	cardattributeid string
-	oBPv600CreatePersonalDataFieldRequest *OBPv600CreatePersonalDataFieldRequest
-}
-
-// Request body
-func (r ApiOBPv310UpdateCardAttributeRequest) OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest OBPv600CreatePersonalDataFieldRequest) ApiOBPv310UpdateCardAttributeRequest {
-	r.oBPv600CreatePersonalDataFieldRequest = &oBPv600CreatePersonalDataFieldRequest
-	return r
-}
-
-func (r ApiOBPv310UpdateCardAttributeRequest) Execute() (*OBPv310CreateCardAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv310UpdateCardAttributeExecute(r)
-}
-
-/*
-OBPv310UpdateCardAttribute Update Card Attribute
-
-<p>Update Card Attribute</p>
-<p>Card Attributes are used to describe a financial Product with a list of typed key value pairs.</p>
-<p>Each Card Attribute is linked to its Card by CARD_ID</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">CARD_ATTRIBUTE_ID</a>: b4e0352a-9a0f-4bfa-b30b-9003aa467f50</p>
-<p><a href="/glossary#">CARD_ID</a>: 36f8a9e6-c2b1-407a-8bd0-421b7119307e</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param cardid The CARDID identifier
- @param cardattributeid The CARDATTRIBUTEID identifier
- @return ApiOBPv310UpdateCardAttributeRequest
-*/
-func (a *AttributeAPIService) OBPv310UpdateCardAttribute(ctx context.Context, bankid string, cardid string, cardattributeid string) ApiOBPv310UpdateCardAttributeRequest {
-	return ApiOBPv310UpdateCardAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		cardid: cardid,
-		cardattributeid: cardattributeid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv310CreateCardAttribute200Response
-func (a *AttributeAPIService) OBPv310UpdateCardAttributeExecute(r ApiOBPv310UpdateCardAttributeRequest) (*OBPv310CreateCardAttribute200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv310CreateCardAttribute200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv310UpdateCardAttribute")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"cardid"+"}", url.PathEscape(parameterValueToString(r.cardid, "cardid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"cardattributeid"+"}", url.PathEscape(parameterValueToString(r.cardattributeid, "cardattributeid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv600CreatePersonalDataFieldRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreatePersonalDataFieldRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv600CreatePersonalDataFieldRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateBankAttributeRequest struct {
-	ctx context.Context
-	ApiService *AttributeAPIService
-	bankid string
-	oBPv510UpdateAtmAttributeRequest *OBPv510UpdateAtmAttributeRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateBankAttributeRequest) OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest OBPv510UpdateAtmAttributeRequest) ApiOBPv400CreateBankAttributeRequest {
-	r.oBPv510UpdateAtmAttributeRequest = &oBPv510UpdateAtmAttributeRequest
-	return r
-}
-
-func (r ApiOBPv400CreateBankAttributeRequest) Execute() (*OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateBankAttributeExecute(r)
-}
-
-/*
-OBPv400CreateBankAttribute Create Bank Attribute
+CreateBankAttribute Create Bank Attribute
 
 <p>Create Bank Attribute</p>
 <p>Typical product attributes might be:</p>
@@ -897,10 +421,10 @@ TRADABLE</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400CreateBankAttributeRequest
+ @return ApiCreateBankAttributeRequest
 */
-func (a *AttributeAPIService) OBPv400CreateBankAttribute(ctx context.Context, bankid string) ApiOBPv400CreateBankAttributeRequest {
-	return ApiOBPv400CreateBankAttributeRequest{
+func (a *AttributeAPIService) CreateBankAttribute(ctx context.Context, bankid string) ApiCreateBankAttributeRequest {
+	return ApiCreateBankAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -908,16 +432,16 @@ func (a *AttributeAPIService) OBPv400CreateBankAttribute(ctx context.Context, ba
 }
 
 // Execute executes the request
-//  @return OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems
-func (a *AttributeAPIService) OBPv400CreateBankAttributeExecute(r ApiOBPv400CreateBankAttributeRequest) (*OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems, *http.Response, error) {
+//  @return GetBankAttributes200ResponseBankAttributesInner
+func (a *AttributeAPIService) CreateBankAttributeExecute(r ApiCreateBankAttributeRequest) (*GetBankAttributes200ResponseBankAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems
+		localVarReturnValue  *GetBankAttributes200ResponseBankAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400CreateBankAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.CreateBankAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -928,8 +452,8 @@ func (a *AttributeAPIService) OBPv400CreateBankAttributeExecute(r ApiOBPv400Crea
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAtmAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAtmAttributeRequest is required and must be specified")
+	if r.updateAtmAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmAttributeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -950,7 +474,7 @@ func (a *AttributeAPIService) OBPv400CreateBankAttributeExecute(r ApiOBPv400Crea
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateAtmAttributeRequest
+	localVarPostBody = r.updateAtmAttributeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -975,7 +499,7 @@ func (a *AttributeAPIService) OBPv400CreateBankAttributeExecute(r ApiOBPv400Crea
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1016,26 +540,188 @@ func (a *AttributeAPIService) OBPv400CreateBankAttributeExecute(r ApiOBPv400Crea
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateCustomerAttributeRequest struct {
+type ApiCreateCardAttributeRequest struct {
+	ctx context.Context
+	ApiService *AttributeAPIService
+	bankid string
+	cardid string
+	createPersonalDataFieldRequest *CreatePersonalDataFieldRequest
+}
+
+// Request body
+func (r ApiCreateCardAttributeRequest) CreatePersonalDataFieldRequest(createPersonalDataFieldRequest CreatePersonalDataFieldRequest) ApiCreateCardAttributeRequest {
+	r.createPersonalDataFieldRequest = &createPersonalDataFieldRequest
+	return r
+}
+
+func (r ApiCreateCardAttributeRequest) Execute() (*CreateCardAttribute200Response, *http.Response, error) {
+	return r.ApiService.CreateCardAttributeExecute(r)
+}
+
+/*
+CreateCardAttribute Create Card Attribute
+
+<p>Create Card Attribute</p>
+<p>Card Attributes are used to describe a financial Product with a list of typed key value pairs.</p>
+<p>Each Card Attribute is linked to its Card by CARD_ID</p>
+<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">CARD_ID</a>: 36f8a9e6-c2b1-407a-8bd0-421b7119307e</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param cardid The CARDID identifier
+ @return ApiCreateCardAttributeRequest
+*/
+func (a *AttributeAPIService) CreateCardAttribute(ctx context.Context, bankid string, cardid string) ApiCreateCardAttributeRequest {
+	return ApiCreateCardAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		cardid: cardid,
+	}
+}
+
+// Execute executes the request
+//  @return CreateCardAttribute200Response
+func (a *AttributeAPIService) CreateCardAttributeExecute(r ApiCreateCardAttributeRequest) (*CreateCardAttribute200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateCardAttribute200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.CreateCardAttribute")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attribute"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cardid"+"}", url.PathEscape(parameterValueToString(r.cardid, "cardid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createPersonalDataFieldRequest == nil {
+		return localVarReturnValue, nil, reportError("createPersonalDataFieldRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createPersonalDataFieldRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateCustomerAttributeRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	customerid string
-	oBPv600CreatePersonalDataFieldRequest *OBPv600CreatePersonalDataFieldRequest
+	createPersonalDataFieldRequest *CreatePersonalDataFieldRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateCustomerAttributeRequest) OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest OBPv600CreatePersonalDataFieldRequest) ApiOBPv400CreateCustomerAttributeRequest {
-	r.oBPv600CreatePersonalDataFieldRequest = &oBPv600CreatePersonalDataFieldRequest
+func (r ApiCreateCustomerAttributeRequest) CreatePersonalDataFieldRequest(createPersonalDataFieldRequest CreatePersonalDataFieldRequest) ApiCreateCustomerAttributeRequest {
+	r.createPersonalDataFieldRequest = &createPersonalDataFieldRequest
 	return r
 }
 
-func (r ApiOBPv400CreateCustomerAttributeRequest) Execute() (*OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateCustomerAttributeExecute(r)
+func (r ApiCreateCustomerAttributeRequest) Execute() (*GetCustomerAttributes200ResponseCustomerAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateCustomerAttributeExecute(r)
 }
 
 /*
-OBPv400CreateCustomerAttribute Create Customer Attribute
+CreateCustomerAttribute Create Customer Attribute
 
 <p>Create Customer Attribute</p>
 <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p>
@@ -1057,10 +743,10 @@ OBPv400CreateCustomerAttribute Create Customer Attribute
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param customerid The CUSTOMERID identifier
- @return ApiOBPv400CreateCustomerAttributeRequest
+ @return ApiCreateCustomerAttributeRequest
 */
-func (a *AttributeAPIService) OBPv400CreateCustomerAttribute(ctx context.Context, bankid string, customerid string) ApiOBPv400CreateCustomerAttributeRequest {
-	return ApiOBPv400CreateCustomerAttributeRequest{
+func (a *AttributeAPIService) CreateCustomerAttribute(ctx context.Context, bankid string, customerid string) ApiCreateCustomerAttributeRequest {
+	return ApiCreateCustomerAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1069,16 +755,16 @@ func (a *AttributeAPIService) OBPv400CreateCustomerAttribute(ctx context.Context
 }
 
 // Execute executes the request
-//  @return OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
-func (a *AttributeAPIService) OBPv400CreateCustomerAttributeExecute(r ApiOBPv400CreateCustomerAttributeRequest) (*OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems, *http.Response, error) {
+//  @return GetCustomerAttributes200ResponseCustomerAttributesInner
+func (a *AttributeAPIService) CreateCustomerAttributeExecute(r ApiCreateCustomerAttributeRequest) (*GetCustomerAttributes200ResponseCustomerAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
+		localVarReturnValue  *GetCustomerAttributes200ResponseCustomerAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400CreateCustomerAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.CreateCustomerAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1090,8 +776,8 @@ func (a *AttributeAPIService) OBPv400CreateCustomerAttributeExecute(r ApiOBPv400
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreatePersonalDataFieldRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreatePersonalDataFieldRequest is required and must be specified")
+	if r.createPersonalDataFieldRequest == nil {
+		return localVarReturnValue, nil, reportError("createPersonalDataFieldRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1112,7 +798,7 @@ func (a *AttributeAPIService) OBPv400CreateCustomerAttributeExecute(r ApiOBPv400
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreatePersonalDataFieldRequest
+	localVarPostBody = r.createPersonalDataFieldRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1137,7 +823,7 @@ func (a *AttributeAPIService) OBPv400CreateCustomerAttributeExecute(r ApiOBPv400
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1178,25 +864,25 @@ func (a *AttributeAPIService) OBPv400CreateCustomerAttributeExecute(r ApiOBPv400
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateOrUpdateAccountAttributeDefinitionRequest struct {
+type ApiCreateOrUpdateAccountAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
-	oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest *OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+	createOrUpdateTransactionRequestAttributeDefinitionRequest *CreateOrUpdateTransactionRequestAttributeDefinitionRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateOrUpdateAccountAttributeDefinitionRequest) OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiOBPv400CreateOrUpdateAccountAttributeDefinitionRequest {
-	r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = &oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+func (r ApiCreateOrUpdateAccountAttributeDefinitionRequest) CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiCreateOrUpdateAccountAttributeDefinitionRequest {
+	r.createOrUpdateTransactionRequestAttributeDefinitionRequest = &createOrUpdateTransactionRequestAttributeDefinitionRequest
 	return r
 }
 
-func (r ApiOBPv400CreateOrUpdateAccountAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateOrUpdateAccountAttributeDefinitionExecute(r)
+func (r ApiCreateOrUpdateAccountAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateOrUpdateAccountAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400CreateOrUpdateAccountAttributeDefinition Create or Update Account Attribute Definition
+CreateOrUpdateAccountAttributeDefinition Create or Update Account Attribute Definition
 
 <p>Create or Update Account Attribute Definition</p>
 <p>The category field must be Account</p>
@@ -1218,10 +904,10 @@ OBPv400CreateOrUpdateAccountAttributeDefinition Create or Update Account Attribu
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400CreateOrUpdateAccountAttributeDefinitionRequest
+ @return ApiCreateOrUpdateAccountAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400CreateOrUpdateAccountAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400CreateOrUpdateAccountAttributeDefinitionRequest {
-	return ApiOBPv400CreateOrUpdateAccountAttributeDefinitionRequest{
+func (a *AttributeAPIService) CreateOrUpdateAccountAttributeDefinition(ctx context.Context, bankid string) ApiCreateOrUpdateAccountAttributeDefinitionRequest {
+	return ApiCreateOrUpdateAccountAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1229,16 +915,16 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateAccountAttributeDefinition(ct
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-func (a *AttributeAPIService) OBPv400CreateOrUpdateAccountAttributeDefinitionExecute(r ApiOBPv400CreateOrUpdateAccountAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
+//  @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+func (a *AttributeAPIService) CreateOrUpdateAccountAttributeDefinitionExecute(r ApiCreateOrUpdateAccountAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400CreateOrUpdateAccountAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.CreateOrUpdateAccountAttributeDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1249,8 +935,8 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateAccountAttributeDefinitionExe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
+	if r.createOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
+		return localVarReturnValue, nil, reportError("createOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1271,7 +957,7 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateAccountAttributeDefinitionExe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+	localVarPostBody = r.createOrUpdateTransactionRequestAttributeDefinitionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1296,7 +982,7 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateAccountAttributeDefinitionExe
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1337,25 +1023,25 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateAccountAttributeDefinitionExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateOrUpdateBankAttributeDefinitionRequest struct {
+type ApiCreateOrUpdateBankAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
-	oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest *OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+	createOrUpdateTransactionRequestAttributeDefinitionRequest *CreateOrUpdateTransactionRequestAttributeDefinitionRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateOrUpdateBankAttributeDefinitionRequest) OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiOBPv400CreateOrUpdateBankAttributeDefinitionRequest {
-	r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = &oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+func (r ApiCreateOrUpdateBankAttributeDefinitionRequest) CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiCreateOrUpdateBankAttributeDefinitionRequest {
+	r.createOrUpdateTransactionRequestAttributeDefinitionRequest = &createOrUpdateTransactionRequestAttributeDefinitionRequest
 	return r
 }
 
-func (r ApiOBPv400CreateOrUpdateBankAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateOrUpdateBankAttributeDefinitionExecute(r)
+func (r ApiCreateOrUpdateBankAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateOrUpdateBankAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400CreateOrUpdateBankAttributeDefinition Create or Update Bank Attribute Definition
+CreateOrUpdateBankAttributeDefinition Create or Update Bank Attribute Definition
 
 <p>Create or Update Bank Attribute Definition</p>
 <p>The category field must be Bank</p>
@@ -1377,10 +1063,10 @@ OBPv400CreateOrUpdateBankAttributeDefinition Create or Update Bank Attribute Def
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400CreateOrUpdateBankAttributeDefinitionRequest
+ @return ApiCreateOrUpdateBankAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400CreateOrUpdateBankAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400CreateOrUpdateBankAttributeDefinitionRequest {
-	return ApiOBPv400CreateOrUpdateBankAttributeDefinitionRequest{
+func (a *AttributeAPIService) CreateOrUpdateBankAttributeDefinition(ctx context.Context, bankid string) ApiCreateOrUpdateBankAttributeDefinitionRequest {
+	return ApiCreateOrUpdateBankAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1388,16 +1074,16 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateBankAttributeDefinition(ctx c
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-func (a *AttributeAPIService) OBPv400CreateOrUpdateBankAttributeDefinitionExecute(r ApiOBPv400CreateOrUpdateBankAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
+//  @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+func (a *AttributeAPIService) CreateOrUpdateBankAttributeDefinitionExecute(r ApiCreateOrUpdateBankAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400CreateOrUpdateBankAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.CreateOrUpdateBankAttributeDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1408,8 +1094,8 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateBankAttributeDefinitionExecut
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
+	if r.createOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
+		return localVarReturnValue, nil, reportError("createOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1430,7 +1116,7 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateBankAttributeDefinitionExecut
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+	localVarPostBody = r.createOrUpdateTransactionRequestAttributeDefinitionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1455,7 +1141,7 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateBankAttributeDefinitionExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1496,25 +1182,25 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateBankAttributeDefinitionExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateOrUpdateCardAttributeDefinitionRequest struct {
+type ApiCreateOrUpdateCardAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
-	oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest *OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+	createOrUpdateTransactionRequestAttributeDefinitionRequest *CreateOrUpdateTransactionRequestAttributeDefinitionRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateOrUpdateCardAttributeDefinitionRequest) OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiOBPv400CreateOrUpdateCardAttributeDefinitionRequest {
-	r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = &oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+func (r ApiCreateOrUpdateCardAttributeDefinitionRequest) CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiCreateOrUpdateCardAttributeDefinitionRequest {
+	r.createOrUpdateTransactionRequestAttributeDefinitionRequest = &createOrUpdateTransactionRequestAttributeDefinitionRequest
 	return r
 }
 
-func (r ApiOBPv400CreateOrUpdateCardAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateOrUpdateCardAttributeDefinitionExecute(r)
+func (r ApiCreateOrUpdateCardAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateOrUpdateCardAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400CreateOrUpdateCardAttributeDefinition Create or Update Card Attribute Definition
+CreateOrUpdateCardAttributeDefinition Create or Update Card Attribute Definition
 
 <p>Create or Update Card Attribute Definition</p>
 <p>The category field must be Card</p>
@@ -1536,10 +1222,10 @@ OBPv400CreateOrUpdateCardAttributeDefinition Create or Update Card Attribute Def
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400CreateOrUpdateCardAttributeDefinitionRequest
+ @return ApiCreateOrUpdateCardAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400CreateOrUpdateCardAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400CreateOrUpdateCardAttributeDefinitionRequest {
-	return ApiOBPv400CreateOrUpdateCardAttributeDefinitionRequest{
+func (a *AttributeAPIService) CreateOrUpdateCardAttributeDefinition(ctx context.Context, bankid string) ApiCreateOrUpdateCardAttributeDefinitionRequest {
+	return ApiCreateOrUpdateCardAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1547,16 +1233,16 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateCardAttributeDefinition(ctx c
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-func (a *AttributeAPIService) OBPv400CreateOrUpdateCardAttributeDefinitionExecute(r ApiOBPv400CreateOrUpdateCardAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
+//  @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+func (a *AttributeAPIService) CreateOrUpdateCardAttributeDefinitionExecute(r ApiCreateOrUpdateCardAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400CreateOrUpdateCardAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.CreateOrUpdateCardAttributeDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1567,8 +1253,8 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateCardAttributeDefinitionExecut
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
+	if r.createOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
+		return localVarReturnValue, nil, reportError("createOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1589,7 +1275,7 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateCardAttributeDefinitionExecut
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+	localVarPostBody = r.createOrUpdateTransactionRequestAttributeDefinitionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1614,7 +1300,7 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateCardAttributeDefinitionExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1655,25 +1341,25 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateCardAttributeDefinitionExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionRequest struct {
+type ApiCreateOrUpdateCustomerAttributeAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
-	oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest *OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+	createOrUpdateTransactionRequestAttributeDefinitionRequest *CreateOrUpdateTransactionRequestAttributeDefinitionRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionRequest) OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionRequest {
-	r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = &oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+func (r ApiCreateOrUpdateCustomerAttributeAttributeDefinitionRequest) CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiCreateOrUpdateCustomerAttributeAttributeDefinitionRequest {
+	r.createOrUpdateTransactionRequestAttributeDefinitionRequest = &createOrUpdateTransactionRequestAttributeDefinitionRequest
 	return r
 }
 
-func (r ApiOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionExecute(r)
+func (r ApiCreateOrUpdateCustomerAttributeAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateOrUpdateCustomerAttributeAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition Create or Update Customer Attribute Definition
+CreateOrUpdateCustomerAttributeAttributeDefinition Create or Update Customer Attribute Definition
 
 <p>Create or Update Customer Attribute Definition</p>
 <p>The category field must be one of: Customer</p>
@@ -1695,10 +1381,10 @@ OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition Create or Update Custo
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionRequest
+ @return ApiCreateOrUpdateCustomerAttributeAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionRequest {
-	return ApiOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionRequest{
+func (a *AttributeAPIService) CreateOrUpdateCustomerAttributeAttributeDefinition(ctx context.Context, bankid string) ApiCreateOrUpdateCustomerAttributeAttributeDefinitionRequest {
+	return ApiCreateOrUpdateCustomerAttributeAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1706,16 +1392,16 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateCustomerAttributeAttributeDef
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-func (a *AttributeAPIService) OBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionExecute(r ApiOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
+//  @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+func (a *AttributeAPIService) CreateOrUpdateCustomerAttributeAttributeDefinitionExecute(r ApiCreateOrUpdateCustomerAttributeAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.CreateOrUpdateCustomerAttributeAttributeDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1726,8 +1412,8 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateCustomerAttributeAttributeDef
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
+	if r.createOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
+		return localVarReturnValue, nil, reportError("createOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1748,7 +1434,7 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateCustomerAttributeAttributeDef
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+	localVarPostBody = r.createOrUpdateTransactionRequestAttributeDefinitionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1773,7 +1459,7 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateCustomerAttributeAttributeDef
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1814,25 +1500,25 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateCustomerAttributeAttributeDef
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateOrUpdateProductAttributeDefinitionRequest struct {
+type ApiCreateOrUpdateProductAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
-	oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest *OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+	createOrUpdateTransactionRequestAttributeDefinitionRequest *CreateOrUpdateTransactionRequestAttributeDefinitionRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateOrUpdateProductAttributeDefinitionRequest) OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiOBPv400CreateOrUpdateProductAttributeDefinitionRequest {
-	r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = &oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+func (r ApiCreateOrUpdateProductAttributeDefinitionRequest) CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiCreateOrUpdateProductAttributeDefinitionRequest {
+	r.createOrUpdateTransactionRequestAttributeDefinitionRequest = &createOrUpdateTransactionRequestAttributeDefinitionRequest
 	return r
 }
 
-func (r ApiOBPv400CreateOrUpdateProductAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateOrUpdateProductAttributeDefinitionExecute(r)
+func (r ApiCreateOrUpdateProductAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateOrUpdateProductAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400CreateOrUpdateProductAttributeDefinition Create or Update Product Attribute Definition
+CreateOrUpdateProductAttributeDefinition Create or Update Product Attribute Definition
 
 <p>Create or Update Product Attribute Definition</p>
 <p>The category field must be Product</p>
@@ -1854,10 +1540,10 @@ OBPv400CreateOrUpdateProductAttributeDefinition Create or Update Product Attribu
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400CreateOrUpdateProductAttributeDefinitionRequest
+ @return ApiCreateOrUpdateProductAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400CreateOrUpdateProductAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400CreateOrUpdateProductAttributeDefinitionRequest {
-	return ApiOBPv400CreateOrUpdateProductAttributeDefinitionRequest{
+func (a *AttributeAPIService) CreateOrUpdateProductAttributeDefinition(ctx context.Context, bankid string) ApiCreateOrUpdateProductAttributeDefinitionRequest {
+	return ApiCreateOrUpdateProductAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1865,16 +1551,16 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateProductAttributeDefinition(ct
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-func (a *AttributeAPIService) OBPv400CreateOrUpdateProductAttributeDefinitionExecute(r ApiOBPv400CreateOrUpdateProductAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
+//  @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+func (a *AttributeAPIService) CreateOrUpdateProductAttributeDefinitionExecute(r ApiCreateOrUpdateProductAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400CreateOrUpdateProductAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.CreateOrUpdateProductAttributeDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1885,8 +1571,8 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateProductAttributeDefinitionExe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
+	if r.createOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
+		return localVarReturnValue, nil, reportError("createOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1907,7 +1593,7 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateProductAttributeDefinitionExe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+	localVarPostBody = r.createOrUpdateTransactionRequestAttributeDefinitionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1932,7 +1618,7 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateProductAttributeDefinitionExe
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1973,25 +1659,25 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateProductAttributeDefinitionExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateOrUpdateTransactionAttributeDefinitionRequest struct {
+type ApiCreateOrUpdateTransactionAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
-	oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest *OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+	createOrUpdateTransactionRequestAttributeDefinitionRequest *CreateOrUpdateTransactionRequestAttributeDefinitionRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateOrUpdateTransactionAttributeDefinitionRequest) OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiOBPv400CreateOrUpdateTransactionAttributeDefinitionRequest {
-	r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = &oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+func (r ApiCreateOrUpdateTransactionAttributeDefinitionRequest) CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiCreateOrUpdateTransactionAttributeDefinitionRequest {
+	r.createOrUpdateTransactionRequestAttributeDefinitionRequest = &createOrUpdateTransactionRequestAttributeDefinitionRequest
 	return r
 }
 
-func (r ApiOBPv400CreateOrUpdateTransactionAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateOrUpdateTransactionAttributeDefinitionExecute(r)
+func (r ApiCreateOrUpdateTransactionAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateOrUpdateTransactionAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400CreateOrUpdateTransactionAttributeDefinition Create or Update Transaction Attribute Definition
+CreateOrUpdateTransactionAttributeDefinition Create or Update Transaction Attribute Definition
 
 <p>Create or Update Transaction Attribute Definition</p>
 <p>The category field must be Transaction</p>
@@ -2013,10 +1699,10 @@ OBPv400CreateOrUpdateTransactionAttributeDefinition Create or Update Transaction
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400CreateOrUpdateTransactionAttributeDefinitionRequest
+ @return ApiCreateOrUpdateTransactionAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400CreateOrUpdateTransactionAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400CreateOrUpdateTransactionAttributeDefinitionRequest {
-	return ApiOBPv400CreateOrUpdateTransactionAttributeDefinitionRequest{
+func (a *AttributeAPIService) CreateOrUpdateTransactionAttributeDefinition(ctx context.Context, bankid string) ApiCreateOrUpdateTransactionAttributeDefinitionRequest {
+	return ApiCreateOrUpdateTransactionAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2024,16 +1710,16 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateTransactionAttributeDefinitio
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-func (a *AttributeAPIService) OBPv400CreateOrUpdateTransactionAttributeDefinitionExecute(r ApiOBPv400CreateOrUpdateTransactionAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
+//  @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+func (a *AttributeAPIService) CreateOrUpdateTransactionAttributeDefinitionExecute(r ApiCreateOrUpdateTransactionAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400CreateOrUpdateTransactionAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.CreateOrUpdateTransactionAttributeDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2044,8 +1730,8 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateTransactionAttributeDefinitio
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
+	if r.createOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
+		return localVarReturnValue, nil, reportError("createOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2066,7 +1752,7 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateTransactionAttributeDefinitio
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+	localVarPostBody = r.createOrUpdateTransactionRequestAttributeDefinitionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2091,7 +1777,7 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateTransactionAttributeDefinitio
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2132,25 +1818,25 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateTransactionAttributeDefinitio
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest struct {
+type ApiCreateOrUpdateTransactionRequestAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
-	oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest *OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+	createOrUpdateTransactionRequestAttributeDefinitionRequest *CreateOrUpdateTransactionRequestAttributeDefinitionRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest {
-	r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = &oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+func (r ApiCreateOrUpdateTransactionRequestAttributeDefinitionRequest) CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiCreateOrUpdateTransactionRequestAttributeDefinitionRequest {
+	r.createOrUpdateTransactionRequestAttributeDefinitionRequest = &createOrUpdateTransactionRequestAttributeDefinitionRequest
 	return r
 }
 
-func (r ApiOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionExecute(r)
+func (r ApiCreateOrUpdateTransactionRequestAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateOrUpdateTransactionRequestAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400CreateOrUpdateTransactionRequestAttributeDefinition Create or Update Transaction Request Attribute Definition
+CreateOrUpdateTransactionRequestAttributeDefinition Create or Update Transaction Request Attribute Definition
 
 <p>Create or Update Transaction Request Attribute Definition</p>
 <p>The category field must be TransactionRequest</p>
@@ -2172,10 +1858,10 @@ OBPv400CreateOrUpdateTransactionRequestAttributeDefinition Create or Update Tran
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+ @return ApiCreateOrUpdateTransactionRequestAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400CreateOrUpdateTransactionRequestAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest {
-	return ApiOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest{
+func (a *AttributeAPIService) CreateOrUpdateTransactionRequestAttributeDefinition(ctx context.Context, bankid string) ApiCreateOrUpdateTransactionRequestAttributeDefinitionRequest {
+	return ApiCreateOrUpdateTransactionRequestAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2183,16 +1869,16 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateTransactionRequestAttributeDe
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-func (a *AttributeAPIService) OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionExecute(r ApiOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
+//  @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+func (a *AttributeAPIService) CreateOrUpdateTransactionRequestAttributeDefinitionExecute(r ApiCreateOrUpdateTransactionRequestAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400CreateOrUpdateTransactionRequestAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.CreateOrUpdateTransactionRequestAttributeDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2203,8 +1889,8 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateTransactionRequestAttributeDe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
+	if r.createOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
+		return localVarReturnValue, nil, reportError("createOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2225,7 +1911,7 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateTransactionRequestAttributeDe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+	localVarPostBody = r.createOrUpdateTransactionRequestAttributeDefinitionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2250,7 +1936,7 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateTransactionRequestAttributeDe
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2291,26 +1977,182 @@ func (a *AttributeAPIService) OBPv400CreateOrUpdateTransactionRequestAttributeDe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateProductAttributeRequest struct {
+type ApiCreatePersonalDataFieldRequest struct {
+	ctx context.Context
+	ApiService *AttributeAPIService
+	createPersonalDataFieldRequest *CreatePersonalDataFieldRequest
+}
+
+// Request body
+func (r ApiCreatePersonalDataFieldRequest) CreatePersonalDataFieldRequest(createPersonalDataFieldRequest CreatePersonalDataFieldRequest) ApiCreatePersonalDataFieldRequest {
+	r.createPersonalDataFieldRequest = &createPersonalDataFieldRequest
+	return r
+}
+
+func (r ApiCreatePersonalDataFieldRequest) Execute() (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
+	return r.ApiService.CreatePersonalDataFieldExecute(r)
+}
+
+/*
+CreatePersonalDataField Create Personal Data Field
+
+<p>Create a Personal Data Field for the currently authenticated user.</p>
+<p>Personal Data Fields (IsPersonal=true) are managed by the user themselves and do not require special roles.<br />
+This data is not available in ABAC rules for privacy reasons.</p>
+<p>For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.</p>
+<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>insert_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#"><strong>is_personal</strong></a>: is_personal</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCreatePersonalDataFieldRequest
+*/
+func (a *AttributeAPIService) CreatePersonalDataField(ctx context.Context) ApiCreatePersonalDataFieldRequest {
+	return ApiCreatePersonalDataFieldRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetPersonalDataFields200ResponseUserAttributesInner
+func (a *AttributeAPIService) CreatePersonalDataFieldExecute(r ApiCreatePersonalDataFieldRequest) (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetPersonalDataFields200ResponseUserAttributesInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.CreatePersonalDataField")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/my/personal-data-fields"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createPersonalDataFieldRequest == nil {
+		return localVarReturnValue, nil, reportError("createPersonalDataFieldRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createPersonalDataFieldRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateProductAttributeRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	productcode string
-	oBPv510UpdateAtmAttributeRequest *OBPv510UpdateAtmAttributeRequest
+	updateAtmAttributeRequest *UpdateAtmAttributeRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateProductAttributeRequest) OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest OBPv510UpdateAtmAttributeRequest) ApiOBPv400CreateProductAttributeRequest {
-	r.oBPv510UpdateAtmAttributeRequest = &oBPv510UpdateAtmAttributeRequest
+func (r ApiCreateProductAttributeRequest) UpdateAtmAttributeRequest(updateAtmAttributeRequest UpdateAtmAttributeRequest) ApiCreateProductAttributeRequest {
+	r.updateAtmAttributeRequest = &updateAtmAttributeRequest
 	return r
 }
 
-func (r ApiOBPv400CreateProductAttributeRequest) Execute() (*OBPv400CreateProductAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateProductAttributeExecute(r)
+func (r ApiCreateProductAttributeRequest) Execute() (*CreateProductAttribute200Response, *http.Response, error) {
+	return r.ApiService.CreateProductAttributeExecute(r)
 }
 
 /*
-OBPv400CreateProductAttribute Create Product Attribute
+CreateProductAttribute Create Product Attribute
 
 <p>Create Product Attribute</p>
 <p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p>
@@ -2347,10 +2189,10 @@ TRADABLE</p>
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param productcode The PRODUCTCODE identifier
- @return ApiOBPv400CreateProductAttributeRequest
+ @return ApiCreateProductAttributeRequest
 */
-func (a *AttributeAPIService) OBPv400CreateProductAttribute(ctx context.Context, bankid string, productcode string) ApiOBPv400CreateProductAttributeRequest {
-	return ApiOBPv400CreateProductAttributeRequest{
+func (a *AttributeAPIService) CreateProductAttribute(ctx context.Context, bankid string, productcode string) ApiCreateProductAttributeRequest {
+	return ApiCreateProductAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2359,16 +2201,16 @@ func (a *AttributeAPIService) OBPv400CreateProductAttribute(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return OBPv400CreateProductAttribute200Response
-func (a *AttributeAPIService) OBPv400CreateProductAttributeExecute(r ApiOBPv400CreateProductAttributeRequest) (*OBPv400CreateProductAttribute200Response, *http.Response, error) {
+//  @return CreateProductAttribute200Response
+func (a *AttributeAPIService) CreateProductAttributeExecute(r ApiCreateProductAttributeRequest) (*CreateProductAttribute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateProductAttribute200Response
+		localVarReturnValue  *CreateProductAttribute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400CreateProductAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.CreateProductAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2380,8 +2222,8 @@ func (a *AttributeAPIService) OBPv400CreateProductAttributeExecute(r ApiOBPv400C
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAtmAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAtmAttributeRequest is required and must be specified")
+	if r.updateAtmAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmAttributeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2402,7 +2244,7 @@ func (a *AttributeAPIService) OBPv400CreateProductAttributeExecute(r ApiOBPv400C
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateAtmAttributeRequest
+	localVarPostBody = r.updateAtmAttributeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2427,7 +2269,7 @@ func (a *AttributeAPIService) OBPv400CreateProductAttributeExecute(r ApiOBPv400C
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2468,27 +2310,27 @@ func (a *AttributeAPIService) OBPv400CreateProductAttributeExecute(r ApiOBPv400C
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateTransactionAttributeRequest struct {
+type ApiCreateTransactionAttributeRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	accountid string
 	transactionid string
-	oBPv600CreatePersonalDataFieldRequest *OBPv600CreatePersonalDataFieldRequest
+	createPersonalDataFieldRequest *CreatePersonalDataFieldRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateTransactionAttributeRequest) OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest OBPv600CreatePersonalDataFieldRequest) ApiOBPv400CreateTransactionAttributeRequest {
-	r.oBPv600CreatePersonalDataFieldRequest = &oBPv600CreatePersonalDataFieldRequest
+func (r ApiCreateTransactionAttributeRequest) CreatePersonalDataFieldRequest(createPersonalDataFieldRequest CreatePersonalDataFieldRequest) ApiCreateTransactionAttributeRequest {
+	r.createPersonalDataFieldRequest = &createPersonalDataFieldRequest
 	return r
 }
 
-func (r ApiOBPv400CreateTransactionAttributeRequest) Execute() (*OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateTransactionAttributeExecute(r)
+func (r ApiCreateTransactionAttributeRequest) Execute() (*GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateTransactionAttributeExecute(r)
 }
 
 /*
-OBPv400CreateTransactionAttribute Create Transaction Attribute
+CreateTransactionAttribute Create Transaction Attribute
 
 <p>Create Transaction Attribute</p>
 <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p>
@@ -2512,10 +2354,10 @@ OBPv400CreateTransactionAttribute Create Transaction Attribute
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv400CreateTransactionAttributeRequest
+ @return ApiCreateTransactionAttributeRequest
 */
-func (a *AttributeAPIService) OBPv400CreateTransactionAttribute(ctx context.Context, bankid string, accountid string, transactionid string) ApiOBPv400CreateTransactionAttributeRequest {
-	return ApiOBPv400CreateTransactionAttributeRequest{
+func (a *AttributeAPIService) CreateTransactionAttribute(ctx context.Context, bankid string, accountid string, transactionid string) ApiCreateTransactionAttributeRequest {
+	return ApiCreateTransactionAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2525,16 +2367,16 @@ func (a *AttributeAPIService) OBPv400CreateTransactionAttribute(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
-func (a *AttributeAPIService) OBPv400CreateTransactionAttributeExecute(r ApiOBPv400CreateTransactionAttributeRequest) (*OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, *http.Response, error) {
+//  @return GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
+func (a *AttributeAPIService) CreateTransactionAttributeExecute(r ApiCreateTransactionAttributeRequest) (*GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
+		localVarReturnValue  *GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400CreateTransactionAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.CreateTransactionAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2547,8 +2389,8 @@ func (a *AttributeAPIService) OBPv400CreateTransactionAttributeExecute(r ApiOBPv
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreatePersonalDataFieldRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreatePersonalDataFieldRequest is required and must be specified")
+	if r.createPersonalDataFieldRequest == nil {
+		return localVarReturnValue, nil, reportError("createPersonalDataFieldRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2569,7 +2411,7 @@ func (a *AttributeAPIService) OBPv400CreateTransactionAttributeExecute(r ApiOBPv
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreatePersonalDataFieldRequest
+	localVarPostBody = r.createPersonalDataFieldRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2594,7 +2436,7 @@ func (a *AttributeAPIService) OBPv400CreateTransactionAttributeExecute(r ApiOBPv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2635,27 +2477,27 @@ func (a *AttributeAPIService) OBPv400CreateTransactionAttributeExecute(r ApiOBPv
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateTransactionRequestAttributeRequest struct {
+type ApiCreateTransactionRequestAttributeRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	accountid string
 	transactionrequestid string
-	oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems *OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+	createTransactionRequestCounterpartyRequestAttributesInner *CreateTransactionRequestCounterpartyRequestAttributesInner
 }
 
 // Request body
-func (r ApiOBPv400CreateTransactionRequestAttributeRequest) OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems(oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems) ApiOBPv400CreateTransactionRequestAttributeRequest {
-	r.oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems = &oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+func (r ApiCreateTransactionRequestAttributeRequest) CreateTransactionRequestCounterpartyRequestAttributesInner(createTransactionRequestCounterpartyRequestAttributesInner CreateTransactionRequestCounterpartyRequestAttributesInner) ApiCreateTransactionRequestAttributeRequest {
+	r.createTransactionRequestCounterpartyRequestAttributesInner = &createTransactionRequestCounterpartyRequestAttributesInner
 	return r
 }
 
-func (r ApiOBPv400CreateTransactionRequestAttributeRequest) Execute() (*OBPv400GetTransactionRequestAttributeById200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateTransactionRequestAttributeExecute(r)
+func (r ApiCreateTransactionRequestAttributeRequest) Execute() (*GetTransactionRequestAttributeById200Response, *http.Response, error) {
+	return r.ApiService.CreateTransactionRequestAttributeExecute(r)
 }
 
 /*
-OBPv400CreateTransactionRequestAttribute Create Transaction Request Attribute
+CreateTransactionRequestAttribute Create Transaction Request Attribute
 
 <p>Create Transaction Request Attribute</p>
 <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p>
@@ -2679,10 +2521,10 @@ OBPv400CreateTransactionRequestAttribute Create Transaction Request Attribute
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param transactionrequestid The TRANSACTIONREQUESTID identifier
- @return ApiOBPv400CreateTransactionRequestAttributeRequest
+ @return ApiCreateTransactionRequestAttributeRequest
 */
-func (a *AttributeAPIService) OBPv400CreateTransactionRequestAttribute(ctx context.Context, bankid string, accountid string, transactionrequestid string) ApiOBPv400CreateTransactionRequestAttributeRequest {
-	return ApiOBPv400CreateTransactionRequestAttributeRequest{
+func (a *AttributeAPIService) CreateTransactionRequestAttribute(ctx context.Context, bankid string, accountid string, transactionrequestid string) ApiCreateTransactionRequestAttributeRequest {
+	return ApiCreateTransactionRequestAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2692,16 +2534,16 @@ func (a *AttributeAPIService) OBPv400CreateTransactionRequestAttribute(ctx conte
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeById200Response
-func (a *AttributeAPIService) OBPv400CreateTransactionRequestAttributeExecute(r ApiOBPv400CreateTransactionRequestAttributeRequest) (*OBPv400GetTransactionRequestAttributeById200Response, *http.Response, error) {
+//  @return GetTransactionRequestAttributeById200Response
+func (a *AttributeAPIService) CreateTransactionRequestAttributeExecute(r ApiCreateTransactionRequestAttributeRequest) (*GetTransactionRequestAttributeById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeById200Response
+		localVarReturnValue  *GetTransactionRequestAttributeById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400CreateTransactionRequestAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.CreateTransactionRequestAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2714,8 +2556,8 @@ func (a *AttributeAPIService) OBPv400CreateTransactionRequestAttributeExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems is required and must be specified")
+	if r.createTransactionRequestCounterpartyRequestAttributesInner == nil {
+		return localVarReturnValue, nil, reportError("createTransactionRequestCounterpartyRequestAttributesInner is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2736,7 +2578,7 @@ func (a *AttributeAPIService) OBPv400CreateTransactionRequestAttributeExecute(r 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+	localVarPostBody = r.createTransactionRequestCounterpartyRequestAttributesInner
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2761,7 +2603,7 @@ func (a *AttributeAPIService) OBPv400CreateTransactionRequestAttributeExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2802,19 +2644,181 @@ func (a *AttributeAPIService) OBPv400CreateTransactionRequestAttributeExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteAccountAttributeDefinitionRequest struct {
+type ApiCreateUserAttributeRequest struct {
+	ctx context.Context
+	ApiService *AttributeAPIService
+	userid string
+	createPersonalDataFieldRequest *CreatePersonalDataFieldRequest
+}
+
+// Request body
+func (r ApiCreateUserAttributeRequest) CreatePersonalDataFieldRequest(createPersonalDataFieldRequest CreatePersonalDataFieldRequest) ApiCreateUserAttributeRequest {
+	r.createPersonalDataFieldRequest = &createPersonalDataFieldRequest
+	return r
+}
+
+func (r ApiCreateUserAttributeRequest) Execute() (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateUserAttributeExecute(r)
+}
+
+/*
+CreateUserAttribute Create User Attribute
+
+<p>Create a User Attribute for the user specified by USER_ID.</p>
+<p>User Attributes are non-personal attributes (IsPersonal=false) that can be used in ABAC rules.<br />
+They require a role to set, similar to Customer Attributes, Account Attributes, etc.</p>
+<p>For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.</p>
+<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>insert_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#"><strong>is_personal</strong></a>: is_personal</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param userid The USERID identifier
+ @return ApiCreateUserAttributeRequest
+*/
+func (a *AttributeAPIService) CreateUserAttribute(ctx context.Context, userid string) ApiCreateUserAttributeRequest {
+	return ApiCreateUserAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		userid: userid,
+	}
+}
+
+// Execute executes the request
+//  @return GetPersonalDataFields200ResponseUserAttributesInner
+func (a *AttributeAPIService) CreateUserAttributeExecute(r ApiCreateUserAttributeRequest) (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetPersonalDataFields200ResponseUserAttributesInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.CreateUserAttribute")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/users/{userid}/attributes"
+	localVarPath = strings.Replace(localVarPath, "{"+"userid"+"}", url.PathEscape(parameterValueToString(r.userid, "userid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createPersonalDataFieldRequest == nil {
+		return localVarReturnValue, nil, reportError("createPersonalDataFieldRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createPersonalDataFieldRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiDeleteAccountAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	attributedefinitionid string
 }
 
-func (r ApiOBPv400DeleteAccountAttributeDefinitionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteAccountAttributeDefinitionExecute(r)
+func (r ApiDeleteAccountAttributeDefinitionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteAccountAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400DeleteAccountAttributeDefinition Delete Account Attribute Definition
+DeleteAccountAttributeDefinition Delete Account Attribute Definition
 
 <p>Delete Account Attribute Definition by ATTRIBUTE_DEFINITION_ID</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -2827,10 +2831,10 @@ OBPv400DeleteAccountAttributeDefinition Delete Account Attribute Definition
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier
- @return ApiOBPv400DeleteAccountAttributeDefinitionRequest
+ @return ApiDeleteAccountAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400DeleteAccountAttributeDefinition(ctx context.Context, bankid string, attributedefinitionid string) ApiOBPv400DeleteAccountAttributeDefinitionRequest {
-	return ApiOBPv400DeleteAccountAttributeDefinitionRequest{
+func (a *AttributeAPIService) DeleteAccountAttributeDefinition(ctx context.Context, bankid string, attributedefinitionid string) ApiDeleteAccountAttributeDefinitionRequest {
+	return ApiDeleteAccountAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2839,14 +2843,14 @@ func (a *AttributeAPIService) OBPv400DeleteAccountAttributeDefinition(ctx contex
 }
 
 // Execute executes the request
-func (a *AttributeAPIService) OBPv400DeleteAccountAttributeDefinitionExecute(r ApiOBPv400DeleteAccountAttributeDefinitionRequest) (*http.Response, error) {
+func (a *AttributeAPIService) DeleteAccountAttributeDefinitionExecute(r ApiDeleteAccountAttributeDefinitionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400DeleteAccountAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.DeleteAccountAttributeDefinition")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2900,7 +2904,7 @@ func (a *AttributeAPIService) OBPv400DeleteAccountAttributeDefinitionExecute(r A
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2932,19 +2936,155 @@ func (a *AttributeAPIService) OBPv400DeleteAccountAttributeDefinitionExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteBankAttributeRequest struct {
+type ApiDeleteAtmAttributeRequest struct {
+	ctx context.Context
+	ApiService *AttributeAPIService
+	bankid string
+	atmid string
+	atmattributeid string
+}
+
+func (r ApiDeleteAtmAttributeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteAtmAttributeExecute(r)
+}
+
+/*
+DeleteAtmAttribute Delete ATM Attribute
+
+<p>Delete ATM Attribute</p>
+<p>Delete a Atm Attribute by its id.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param atmid The ATMID identifier
+ @param atmattributeid The ATMATTRIBUTEID identifier
+ @return ApiDeleteAtmAttributeRequest
+*/
+func (a *AttributeAPIService) DeleteAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiDeleteAtmAttributeRequest {
+	return ApiDeleteAtmAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		atmid: atmid,
+		atmattributeid: atmattributeid,
+	}
+}
+
+// Execute executes the request
+func (a *AttributeAPIService) DeleteAtmAttributeExecute(r ApiDeleteAtmAttributeRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.DeleteAtmAttribute")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"atmattributeid"+"}", url.PathEscape(parameterValueToString(r.atmattributeid, "atmattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteBankAttributeRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	bankattributeid string
 }
 
-func (r ApiOBPv400DeleteBankAttributeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteBankAttributeExecute(r)
+func (r ApiDeleteBankAttributeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteBankAttributeExecute(r)
 }
 
 /*
-OBPv400DeleteBankAttribute Delete Bank Attribute
+DeleteBankAttribute Delete Bank Attribute
 
 <p>Delete Bank Attribute</p>
 <p>Delete a Bank Attribute by its id.</p>
@@ -2958,10 +3098,10 @@ OBPv400DeleteBankAttribute Delete Bank Attribute
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param bankattributeid The BANKATTRIBUTEID identifier
- @return ApiOBPv400DeleteBankAttributeRequest
+ @return ApiDeleteBankAttributeRequest
 */
-func (a *AttributeAPIService) OBPv400DeleteBankAttribute(ctx context.Context, bankid string, bankattributeid string) ApiOBPv400DeleteBankAttributeRequest {
-	return ApiOBPv400DeleteBankAttributeRequest{
+func (a *AttributeAPIService) DeleteBankAttribute(ctx context.Context, bankid string, bankattributeid string) ApiDeleteBankAttributeRequest {
+	return ApiDeleteBankAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2970,14 +3110,14 @@ func (a *AttributeAPIService) OBPv400DeleteBankAttribute(ctx context.Context, ba
 }
 
 // Execute executes the request
-func (a *AttributeAPIService) OBPv400DeleteBankAttributeExecute(r ApiOBPv400DeleteBankAttributeRequest) (*http.Response, error) {
+func (a *AttributeAPIService) DeleteBankAttributeExecute(r ApiDeleteBankAttributeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400DeleteBankAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.DeleteBankAttribute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3031,7 +3171,7 @@ func (a *AttributeAPIService) OBPv400DeleteBankAttributeExecute(r ApiOBPv400Dele
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3063,19 +3203,19 @@ func (a *AttributeAPIService) OBPv400DeleteBankAttributeExecute(r ApiOBPv400Dele
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteCardAttributeDefinitionRequest struct {
+type ApiDeleteCardAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	attributedefinitionid string
 }
 
-func (r ApiOBPv400DeleteCardAttributeDefinitionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteCardAttributeDefinitionExecute(r)
+func (r ApiDeleteCardAttributeDefinitionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCardAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400DeleteCardAttributeDefinition Delete Card Attribute Definition
+DeleteCardAttributeDefinition Delete Card Attribute Definition
 
 <p>Delete Card Attribute Definition by ATTRIBUTE_DEFINITION_ID</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -3088,10 +3228,10 @@ OBPv400DeleteCardAttributeDefinition Delete Card Attribute Definition
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier
- @return ApiOBPv400DeleteCardAttributeDefinitionRequest
+ @return ApiDeleteCardAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400DeleteCardAttributeDefinition(ctx context.Context, bankid string, attributedefinitionid string) ApiOBPv400DeleteCardAttributeDefinitionRequest {
-	return ApiOBPv400DeleteCardAttributeDefinitionRequest{
+func (a *AttributeAPIService) DeleteCardAttributeDefinition(ctx context.Context, bankid string, attributedefinitionid string) ApiDeleteCardAttributeDefinitionRequest {
+	return ApiDeleteCardAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -3100,14 +3240,14 @@ func (a *AttributeAPIService) OBPv400DeleteCardAttributeDefinition(ctx context.C
 }
 
 // Execute executes the request
-func (a *AttributeAPIService) OBPv400DeleteCardAttributeDefinitionExecute(r ApiOBPv400DeleteCardAttributeDefinitionRequest) (*http.Response, error) {
+func (a *AttributeAPIService) DeleteCardAttributeDefinitionExecute(r ApiDeleteCardAttributeDefinitionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400DeleteCardAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.DeleteCardAttributeDefinition")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3161,7 +3301,7 @@ func (a *AttributeAPIService) OBPv400DeleteCardAttributeDefinitionExecute(r ApiO
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3193,7 +3333,7 @@ func (a *AttributeAPIService) OBPv400DeleteCardAttributeDefinitionExecute(r ApiO
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteCustomerAttributeRequest struct {
+type ApiDeleteCustomerAttributeRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
@@ -3201,12 +3341,12 @@ type ApiOBPv400DeleteCustomerAttributeRequest struct {
 	customerattributeid string
 }
 
-func (r ApiOBPv400DeleteCustomerAttributeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteCustomerAttributeExecute(r)
+func (r ApiDeleteCustomerAttributeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCustomerAttributeExecute(r)
 }
 
 /*
-OBPv400DeleteCustomerAttribute Delete Customer Attribute
+DeleteCustomerAttribute Delete Customer Attribute
 
 <p>Delete Customer Attribute</p>
 <p>CustomerAttributes are used to enhance the OBP Customer object with Bank specific entities.</p>
@@ -3223,10 +3363,10 @@ OBPv400DeleteCustomerAttribute Delete Customer Attribute
  @param bankid The BANKID identifier
  @param customerid The CUSTOMERID identifier
  @param customerattributeid The CUSTOMERATTRIBUTEID identifier
- @return ApiOBPv400DeleteCustomerAttributeRequest
+ @return ApiDeleteCustomerAttributeRequest
 */
-func (a *AttributeAPIService) OBPv400DeleteCustomerAttribute(ctx context.Context, bankid string, customerid string, customerattributeid string) ApiOBPv400DeleteCustomerAttributeRequest {
-	return ApiOBPv400DeleteCustomerAttributeRequest{
+func (a *AttributeAPIService) DeleteCustomerAttribute(ctx context.Context, bankid string, customerid string, customerattributeid string) ApiDeleteCustomerAttributeRequest {
+	return ApiDeleteCustomerAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -3236,14 +3376,14 @@ func (a *AttributeAPIService) OBPv400DeleteCustomerAttribute(ctx context.Context
 }
 
 // Execute executes the request
-func (a *AttributeAPIService) OBPv400DeleteCustomerAttributeExecute(r ApiOBPv400DeleteCustomerAttributeRequest) (*http.Response, error) {
+func (a *AttributeAPIService) DeleteCustomerAttributeExecute(r ApiDeleteCustomerAttributeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400DeleteCustomerAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.DeleteCustomerAttribute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3298,7 +3438,7 @@ func (a *AttributeAPIService) OBPv400DeleteCustomerAttributeExecute(r ApiOBPv400
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3330,19 +3470,19 @@ func (a *AttributeAPIService) OBPv400DeleteCustomerAttributeExecute(r ApiOBPv400
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteCustomerAttributeDefinitionRequest struct {
+type ApiDeleteCustomerAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	attributedefinitionid string
 }
 
-func (r ApiOBPv400DeleteCustomerAttributeDefinitionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteCustomerAttributeDefinitionExecute(r)
+func (r ApiDeleteCustomerAttributeDefinitionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCustomerAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400DeleteCustomerAttributeDefinition Delete Customer Attribute Definition
+DeleteCustomerAttributeDefinition Delete Customer Attribute Definition
 
 <p>Delete Customer Attribute Definition by ATTRIBUTE_DEFINITION_ID</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -3355,10 +3495,10 @@ OBPv400DeleteCustomerAttributeDefinition Delete Customer Attribute Definition
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier
- @return ApiOBPv400DeleteCustomerAttributeDefinitionRequest
+ @return ApiDeleteCustomerAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400DeleteCustomerAttributeDefinition(ctx context.Context, bankid string, attributedefinitionid string) ApiOBPv400DeleteCustomerAttributeDefinitionRequest {
-	return ApiOBPv400DeleteCustomerAttributeDefinitionRequest{
+func (a *AttributeAPIService) DeleteCustomerAttributeDefinition(ctx context.Context, bankid string, attributedefinitionid string) ApiDeleteCustomerAttributeDefinitionRequest {
+	return ApiDeleteCustomerAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -3367,14 +3507,14 @@ func (a *AttributeAPIService) OBPv400DeleteCustomerAttributeDefinition(ctx conte
 }
 
 // Execute executes the request
-func (a *AttributeAPIService) OBPv400DeleteCustomerAttributeDefinitionExecute(r ApiOBPv400DeleteCustomerAttributeDefinitionRequest) (*http.Response, error) {
+func (a *AttributeAPIService) DeleteCustomerAttributeDefinitionExecute(r ApiDeleteCustomerAttributeDefinitionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400DeleteCustomerAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.DeleteCustomerAttributeDefinition")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3428,7 +3568,7 @@ func (a *AttributeAPIService) OBPv400DeleteCustomerAttributeDefinitionExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3460,19 +3600,282 @@ func (a *AttributeAPIService) OBPv400DeleteCustomerAttributeDefinitionExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteProductAttributeDefinitionRequest struct {
+type ApiDeletePersonalDataFieldRequest struct {
+	ctx context.Context
+	ApiService *AttributeAPIService
+	userattributeid string
+}
+
+func (r ApiDeletePersonalDataFieldRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeletePersonalDataFieldExecute(r)
+}
+
+/*
+DeletePersonalDataField Delete Personal Data Field
+
+<p>Delete a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param userattributeid The USERATTRIBUTEID identifier
+ @return ApiDeletePersonalDataFieldRequest
+*/
+func (a *AttributeAPIService) DeletePersonalDataField(ctx context.Context, userattributeid string) ApiDeletePersonalDataFieldRequest {
+	return ApiDeletePersonalDataFieldRequest{
+		ApiService: a,
+		ctx: ctx,
+		userattributeid: userattributeid,
+	}
+}
+
+// Execute executes the request
+func (a *AttributeAPIService) DeletePersonalDataFieldExecute(r ApiDeletePersonalDataFieldRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.DeletePersonalDataField")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/my/personal-data-fields/{userattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"userattributeid"+"}", url.PathEscape(parameterValueToString(r.userattributeid, "userattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteProductAttributeRequest struct {
+	ctx context.Context
+	ApiService *AttributeAPIService
+	bankid string
+	productcode string
+	productattributeid string
+}
+
+func (r ApiDeleteProductAttributeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteProductAttributeExecute(r)
+}
+
+/*
+DeleteProductAttribute Delete Product Attribute
+
+<p>Delete Product Attribute</p>
+<p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p>
+<p>Each Product Attribute is linked to its Product by PRODUCT_CODE</p>
+<p>Delete a Product Attribute by its id.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#product_attribute_id">PRODUCT_ATTRIBUTE_ID</a>:</p>
+<p><a href="/glossary#product_code">PRODUCT_CODE</a>: 1234BW</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param productcode The PRODUCTCODE identifier
+ @param productattributeid The PRODUCTATTRIBUTEID identifier
+ @return ApiDeleteProductAttributeRequest
+*/
+func (a *AttributeAPIService) DeleteProductAttribute(ctx context.Context, bankid string, productcode string, productattributeid string) ApiDeleteProductAttributeRequest {
+	return ApiDeleteProductAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		productcode: productcode,
+		productattributeid: productattributeid,
+	}
+}
+
+// Execute executes the request
+func (a *AttributeAPIService) DeleteProductAttributeExecute(r ApiDeleteProductAttributeRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.DeleteProductAttribute")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"productcode"+"}", url.PathEscape(parameterValueToString(r.productcode, "productcode")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"productattributeid"+"}", url.PathEscape(parameterValueToString(r.productattributeid, "productattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteProductAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	attributedefinitionid string
 }
 
-func (r ApiOBPv400DeleteProductAttributeDefinitionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteProductAttributeDefinitionExecute(r)
+func (r ApiDeleteProductAttributeDefinitionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteProductAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400DeleteProductAttributeDefinition Delete Product Attribute Definition
+DeleteProductAttributeDefinition Delete Product Attribute Definition
 
 <p>Delete Product Attribute Definition by ATTRIBUTE_DEFINITION_ID</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -3485,10 +3888,10 @@ OBPv400DeleteProductAttributeDefinition Delete Product Attribute Definition
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier
- @return ApiOBPv400DeleteProductAttributeDefinitionRequest
+ @return ApiDeleteProductAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400DeleteProductAttributeDefinition(ctx context.Context, bankid string, attributedefinitionid string) ApiOBPv400DeleteProductAttributeDefinitionRequest {
-	return ApiOBPv400DeleteProductAttributeDefinitionRequest{
+func (a *AttributeAPIService) DeleteProductAttributeDefinition(ctx context.Context, bankid string, attributedefinitionid string) ApiDeleteProductAttributeDefinitionRequest {
+	return ApiDeleteProductAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -3497,14 +3900,14 @@ func (a *AttributeAPIService) OBPv400DeleteProductAttributeDefinition(ctx contex
 }
 
 // Execute executes the request
-func (a *AttributeAPIService) OBPv400DeleteProductAttributeDefinitionExecute(r ApiOBPv400DeleteProductAttributeDefinitionRequest) (*http.Response, error) {
+func (a *AttributeAPIService) DeleteProductAttributeDefinitionExecute(r ApiDeleteProductAttributeDefinitionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400DeleteProductAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.DeleteProductAttributeDefinition")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3558,7 +3961,7 @@ func (a *AttributeAPIService) OBPv400DeleteProductAttributeDefinitionExecute(r A
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3590,19 +3993,19 @@ func (a *AttributeAPIService) OBPv400DeleteProductAttributeDefinitionExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteTransactionAttributeDefinitionRequest struct {
+type ApiDeleteTransactionAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	attributedefinitionid string
 }
 
-func (r ApiOBPv400DeleteTransactionAttributeDefinitionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteTransactionAttributeDefinitionExecute(r)
+func (r ApiDeleteTransactionAttributeDefinitionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteTransactionAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400DeleteTransactionAttributeDefinition Delete Transaction Attribute Definition
+DeleteTransactionAttributeDefinition Delete Transaction Attribute Definition
 
 <p>Delete Transaction Attribute Definition by ATTRIBUTE_DEFINITION_ID</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -3615,10 +4018,10 @@ OBPv400DeleteTransactionAttributeDefinition Delete Transaction Attribute Definit
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier
- @return ApiOBPv400DeleteTransactionAttributeDefinitionRequest
+ @return ApiDeleteTransactionAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400DeleteTransactionAttributeDefinition(ctx context.Context, bankid string, attributedefinitionid string) ApiOBPv400DeleteTransactionAttributeDefinitionRequest {
-	return ApiOBPv400DeleteTransactionAttributeDefinitionRequest{
+func (a *AttributeAPIService) DeleteTransactionAttributeDefinition(ctx context.Context, bankid string, attributedefinitionid string) ApiDeleteTransactionAttributeDefinitionRequest {
+	return ApiDeleteTransactionAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -3627,14 +4030,14 @@ func (a *AttributeAPIService) OBPv400DeleteTransactionAttributeDefinition(ctx co
 }
 
 // Execute executes the request
-func (a *AttributeAPIService) OBPv400DeleteTransactionAttributeDefinitionExecute(r ApiOBPv400DeleteTransactionAttributeDefinitionRequest) (*http.Response, error) {
+func (a *AttributeAPIService) DeleteTransactionAttributeDefinitionExecute(r ApiDeleteTransactionAttributeDefinitionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400DeleteTransactionAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.DeleteTransactionAttributeDefinition")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3688,7 +4091,7 @@ func (a *AttributeAPIService) OBPv400DeleteTransactionAttributeDefinitionExecute
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3720,19 +4123,19 @@ func (a *AttributeAPIService) OBPv400DeleteTransactionAttributeDefinitionExecute
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteTransactionRequestAttributeDefinitionRequest struct {
+type ApiDeleteTransactionRequestAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	attributedefinitionid string
 }
 
-func (r ApiOBPv400DeleteTransactionRequestAttributeDefinitionRequest) Execute() (*OBPv400DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
-	return r.ApiService.OBPv400DeleteTransactionRequestAttributeDefinitionExecute(r)
+func (r ApiDeleteTransactionRequestAttributeDefinitionRequest) Execute() (*DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
+	return r.ApiService.DeleteTransactionRequestAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400DeleteTransactionRequestAttributeDefinition Delete Transaction Request Attribute Definition
+DeleteTransactionRequestAttributeDefinition Delete Transaction Request Attribute Definition
 
 <p>Delete Transaction Request Attribute Definition by ATTRIBUTE_DEFINITION_ID</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -3745,10 +4148,10 @@ OBPv400DeleteTransactionRequestAttributeDefinition Delete Transaction Request At
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier
- @return ApiOBPv400DeleteTransactionRequestAttributeDefinitionRequest
+ @return ApiDeleteTransactionRequestAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400DeleteTransactionRequestAttributeDefinition(ctx context.Context, bankid string, attributedefinitionid string) ApiOBPv400DeleteTransactionRequestAttributeDefinitionRequest {
-	return ApiOBPv400DeleteTransactionRequestAttributeDefinitionRequest{
+func (a *AttributeAPIService) DeleteTransactionRequestAttributeDefinition(ctx context.Context, bankid string, attributedefinitionid string) ApiDeleteTransactionRequestAttributeDefinitionRequest {
+	return ApiDeleteTransactionRequestAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -3757,16 +4160,16 @@ func (a *AttributeAPIService) OBPv400DeleteTransactionRequestAttributeDefinition
 }
 
 // Execute executes the request
-//  @return OBPv400DeleteSystemLevelEndpointTag200Response
-func (a *AttributeAPIService) OBPv400DeleteTransactionRequestAttributeDefinitionExecute(r ApiOBPv400DeleteTransactionRequestAttributeDefinitionRequest) (*OBPv400DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
+//  @return DeleteSystemLevelEndpointTag200Response
+func (a *AttributeAPIService) DeleteTransactionRequestAttributeDefinitionExecute(r ApiDeleteTransactionRequestAttributeDefinitionRequest) (*DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400DeleteSystemLevelEndpointTag200Response
+		localVarReturnValue  *DeleteSystemLevelEndpointTag200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400DeleteTransactionRequestAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.DeleteTransactionRequestAttributeDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3820,7 +4223,7 @@ func (a *AttributeAPIService) OBPv400DeleteTransactionRequestAttributeDefinition
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3861,18 +4264,148 @@ func (a *AttributeAPIService) OBPv400DeleteTransactionRequestAttributeDefinition
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetAccountAttributeDefinitionRequest struct {
+type ApiDeleteUserAttributeRequest struct {
+	ctx context.Context
+	ApiService *AttributeAPIService
+	userid string
+	userattributeid string
+}
+
+func (r ApiDeleteUserAttributeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteUserAttributeExecute(r)
+}
+
+/*
+DeleteUserAttribute Delete User Attribute
+
+<p>Delete a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param userid The USERID identifier
+ @param userattributeid The USERATTRIBUTEID identifier
+ @return ApiDeleteUserAttributeRequest
+*/
+func (a *AttributeAPIService) DeleteUserAttribute(ctx context.Context, userid string, userattributeid string) ApiDeleteUserAttributeRequest {
+	return ApiDeleteUserAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		userid: userid,
+		userattributeid: userattributeid,
+	}
+}
+
+// Execute executes the request
+func (a *AttributeAPIService) DeleteUserAttributeExecute(r ApiDeleteUserAttributeRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.DeleteUserAttribute")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/users/{userid}/attributes/{userattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"userid"+"}", url.PathEscape(parameterValueToString(r.userid, "userid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"userattributeid"+"}", url.PathEscape(parameterValueToString(r.userattributeid, "userattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiGetAccountAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 }
 
-func (r ApiOBPv400GetAccountAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetAccountAttributeDefinitionExecute(r)
+func (r ApiGetAccountAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
+	return r.ApiService.GetAccountAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400GetAccountAttributeDefinition Get Account Attribute Definition
+GetAccountAttributeDefinition Get Account Attribute Definition
 
 <p>Get Account Attribute Definition</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -3893,10 +4426,10 @@ OBPv400GetAccountAttributeDefinition Get Account Attribute Definition
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400GetAccountAttributeDefinitionRequest
+ @return ApiGetAccountAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400GetAccountAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400GetAccountAttributeDefinitionRequest {
-	return ApiOBPv400GetAccountAttributeDefinitionRequest{
+func (a *AttributeAPIService) GetAccountAttributeDefinition(ctx context.Context, bankid string) ApiGetAccountAttributeDefinitionRequest {
+	return ApiGetAccountAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -3904,16 +4437,16 @@ func (a *AttributeAPIService) OBPv400GetAccountAttributeDefinition(ctx context.C
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200Response
-func (a *AttributeAPIService) OBPv400GetAccountAttributeDefinitionExecute(r ApiOBPv400GetAccountAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
+//  @return GetTransactionRequestAttributeDefinition200Response
+func (a *AttributeAPIService) GetAccountAttributeDefinitionExecute(r ApiGetAccountAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200Response
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400GetAccountAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetAccountAttributeDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3966,7 +4499,7 @@ func (a *AttributeAPIService) OBPv400GetAccountAttributeDefinitionExecute(r ApiO
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -4007,19 +4540,321 @@ func (a *AttributeAPIService) OBPv400GetAccountAttributeDefinitionExecute(r ApiO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetBankAttributeRequest struct {
+type ApiGetAtmAttributeRequest struct {
+	ctx context.Context
+	ApiService *AttributeAPIService
+	bankid string
+	atmid string
+	atmattributeid string
+}
+
+func (r ApiGetAtmAttributeRequest) Execute() (*GetAtmAttribute200Response, *http.Response, error) {
+	return r.ApiService.GetAtmAttributeExecute(r)
+}
+
+/*
+GetAtmAttribute Get ATM Attribute By ATM_ATTRIBUTE_ID
+
+<p>Get ATM Attribute By ATM_ATTRIBUTE_ID</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param atmid The ATMID identifier
+ @param atmattributeid The ATMATTRIBUTEID identifier
+ @return ApiGetAtmAttributeRequest
+*/
+func (a *AttributeAPIService) GetAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiGetAtmAttributeRequest {
+	return ApiGetAtmAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		atmid: atmid,
+		atmattributeid: atmattributeid,
+	}
+}
+
+// Execute executes the request
+//  @return GetAtmAttribute200Response
+func (a *AttributeAPIService) GetAtmAttributeExecute(r ApiGetAtmAttributeRequest) (*GetAtmAttribute200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetAtmAttribute200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetAtmAttribute")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"atmattributeid"+"}", url.PathEscape(parameterValueToString(r.atmattributeid, "atmattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetAtmAttributesRequest struct {
+	ctx context.Context
+	ApiService *AttributeAPIService
+	bankid string
+	atmid string
+}
+
+func (r ApiGetAtmAttributesRequest) Execute() (*GetAtmAttributes200Response, *http.Response, error) {
+	return r.ApiService.GetAtmAttributesExecute(r)
+}
+
+/*
+GetAtmAttributes Get ATM Attributes
+
+<p>Get ATM Attributes</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#"><strong>atm_attributes</strong></a>: atm_attributes</p>
+<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param atmid The ATMID identifier
+ @return ApiGetAtmAttributesRequest
+*/
+func (a *AttributeAPIService) GetAtmAttributes(ctx context.Context, bankid string, atmid string) ApiGetAtmAttributesRequest {
+	return ApiGetAtmAttributesRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		atmid: atmid,
+	}
+}
+
+// Execute executes the request
+//  @return GetAtmAttributes200Response
+func (a *AttributeAPIService) GetAtmAttributesExecute(r ApiGetAtmAttributesRequest) (*GetAtmAttributes200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetAtmAttributes200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetAtmAttributes")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetBankAttributeRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	bankattributeid string
 }
 
-func (r ApiOBPv400GetBankAttributeRequest) Execute() (*OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetBankAttributeExecute(r)
+func (r ApiGetBankAttributeRequest) Execute() (*GetBankAttributes200ResponseBankAttributesInner, *http.Response, error) {
+	return r.ApiService.GetBankAttributeExecute(r)
 }
 
 /*
-OBPv400GetBankAttribute Get Bank Attribute By BANK_ATTRIBUTE_ID
+GetBankAttribute Get Bank Attribute By BANK_ATTRIBUTE_ID
 
 <p>Get Bank Attribute By BANK_ATTRIBUTE_ID</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -4038,10 +4873,10 @@ OBPv400GetBankAttribute Get Bank Attribute By BANK_ATTRIBUTE_ID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param bankattributeid The BANKATTRIBUTEID identifier
- @return ApiOBPv400GetBankAttributeRequest
+ @return ApiGetBankAttributeRequest
 */
-func (a *AttributeAPIService) OBPv400GetBankAttribute(ctx context.Context, bankid string, bankattributeid string) ApiOBPv400GetBankAttributeRequest {
-	return ApiOBPv400GetBankAttributeRequest{
+func (a *AttributeAPIService) GetBankAttribute(ctx context.Context, bankid string, bankattributeid string) ApiGetBankAttributeRequest {
+	return ApiGetBankAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -4050,16 +4885,16 @@ func (a *AttributeAPIService) OBPv400GetBankAttribute(ctx context.Context, banki
 }
 
 // Execute executes the request
-//  @return OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems
-func (a *AttributeAPIService) OBPv400GetBankAttributeExecute(r ApiOBPv400GetBankAttributeRequest) (*OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems, *http.Response, error) {
+//  @return GetBankAttributes200ResponseBankAttributesInner
+func (a *AttributeAPIService) GetBankAttributeExecute(r ApiGetBankAttributeRequest) (*GetBankAttributes200ResponseBankAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems
+		localVarReturnValue  *GetBankAttributes200ResponseBankAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400GetBankAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetBankAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4113,7 +4948,7 @@ func (a *AttributeAPIService) OBPv400GetBankAttributeExecute(r ApiOBPv400GetBank
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -4154,18 +4989,18 @@ func (a *AttributeAPIService) OBPv400GetBankAttributeExecute(r ApiOBPv400GetBank
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetBankAttributesRequest struct {
+type ApiGetBankAttributesRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 }
 
-func (r ApiOBPv400GetBankAttributesRequest) Execute() (*OBPv400GetBankAttributes200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetBankAttributesExecute(r)
+func (r ApiGetBankAttributesRequest) Execute() (*GetBankAttributes200Response, *http.Response, error) {
+	return r.ApiService.GetBankAttributesExecute(r)
 }
 
 /*
-OBPv400GetBankAttributes Get Bank Attributes
+GetBankAttributes Get Bank Attributes
 
 <p>Get Bank Attributes</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -4183,10 +5018,10 @@ OBPv400GetBankAttributes Get Bank Attributes
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400GetBankAttributesRequest
+ @return ApiGetBankAttributesRequest
 */
-func (a *AttributeAPIService) OBPv400GetBankAttributes(ctx context.Context, bankid string) ApiOBPv400GetBankAttributesRequest {
-	return ApiOBPv400GetBankAttributesRequest{
+func (a *AttributeAPIService) GetBankAttributes(ctx context.Context, bankid string) ApiGetBankAttributesRequest {
+	return ApiGetBankAttributesRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -4194,16 +5029,16 @@ func (a *AttributeAPIService) OBPv400GetBankAttributes(ctx context.Context, bank
 }
 
 // Execute executes the request
-//  @return OBPv400GetBankAttributes200Response
-func (a *AttributeAPIService) OBPv400GetBankAttributesExecute(r ApiOBPv400GetBankAttributesRequest) (*OBPv400GetBankAttributes200Response, *http.Response, error) {
+//  @return GetBankAttributes200Response
+func (a *AttributeAPIService) GetBankAttributesExecute(r ApiGetBankAttributesRequest) (*GetBankAttributes200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetBankAttributes200Response
+		localVarReturnValue  *GetBankAttributes200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400GetBankAttributes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetBankAttributes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4256,7 +5091,7 @@ func (a *AttributeAPIService) OBPv400GetBankAttributesExecute(r ApiOBPv400GetBan
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -4297,18 +5132,18 @@ func (a *AttributeAPIService) OBPv400GetBankAttributesExecute(r ApiOBPv400GetBan
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetCardAttributeDefinitionRequest struct {
+type ApiGetCardAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 }
 
-func (r ApiOBPv400GetCardAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetCardAttributeDefinitionExecute(r)
+func (r ApiGetCardAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
+	return r.ApiService.GetCardAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400GetCardAttributeDefinition Get Card Attribute Definition
+GetCardAttributeDefinition Get Card Attribute Definition
 
 <p>Get Card Attribute Definition</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -4329,10 +5164,10 @@ OBPv400GetCardAttributeDefinition Get Card Attribute Definition
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400GetCardAttributeDefinitionRequest
+ @return ApiGetCardAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400GetCardAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400GetCardAttributeDefinitionRequest {
-	return ApiOBPv400GetCardAttributeDefinitionRequest{
+func (a *AttributeAPIService) GetCardAttributeDefinition(ctx context.Context, bankid string) ApiGetCardAttributeDefinitionRequest {
+	return ApiGetCardAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -4340,16 +5175,16 @@ func (a *AttributeAPIService) OBPv400GetCardAttributeDefinition(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200Response
-func (a *AttributeAPIService) OBPv400GetCardAttributeDefinitionExecute(r ApiOBPv400GetCardAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
+//  @return GetTransactionRequestAttributeDefinition200Response
+func (a *AttributeAPIService) GetCardAttributeDefinitionExecute(r ApiGetCardAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200Response
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400GetCardAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetCardAttributeDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4402,7 +5237,7 @@ func (a *AttributeAPIService) OBPv400GetCardAttributeDefinitionExecute(r ApiOBPv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -4443,7 +5278,7 @@ func (a *AttributeAPIService) OBPv400GetCardAttributeDefinitionExecute(r ApiOBPv
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetCustomerAttributeByIdRequest struct {
+type ApiGetCustomerAttributeByIdRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
@@ -4451,12 +5286,12 @@ type ApiOBPv400GetCustomerAttributeByIdRequest struct {
 	attributeid string
 }
 
-func (r ApiOBPv400GetCustomerAttributeByIdRequest) Execute() (*OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetCustomerAttributeByIdExecute(r)
+func (r ApiGetCustomerAttributeByIdRequest) Execute() (*GetCustomerAttributes200ResponseCustomerAttributesInner, *http.Response, error) {
+	return r.ApiService.GetCustomerAttributeByIdExecute(r)
 }
 
 /*
-OBPv400GetCustomerAttributeById Get Customer Attribute By Id
+GetCustomerAttributeById Get Customer Attribute By Id
 
 <p>Get Customer Attribute By Id</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -4475,10 +5310,10 @@ OBPv400GetCustomerAttributeById Get Customer Attribute By Id
  @param bankid The BANKID identifier
  @param customerid The CUSTOMERID identifier
  @param attributeid The ATTRIBUTEID identifier
- @return ApiOBPv400GetCustomerAttributeByIdRequest
+ @return ApiGetCustomerAttributeByIdRequest
 */
-func (a *AttributeAPIService) OBPv400GetCustomerAttributeById(ctx context.Context, bankid string, customerid string, attributeid string) ApiOBPv400GetCustomerAttributeByIdRequest {
-	return ApiOBPv400GetCustomerAttributeByIdRequest{
+func (a *AttributeAPIService) GetCustomerAttributeById(ctx context.Context, bankid string, customerid string, attributeid string) ApiGetCustomerAttributeByIdRequest {
+	return ApiGetCustomerAttributeByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -4488,16 +5323,16 @@ func (a *AttributeAPIService) OBPv400GetCustomerAttributeById(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
-func (a *AttributeAPIService) OBPv400GetCustomerAttributeByIdExecute(r ApiOBPv400GetCustomerAttributeByIdRequest) (*OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems, *http.Response, error) {
+//  @return GetCustomerAttributes200ResponseCustomerAttributesInner
+func (a *AttributeAPIService) GetCustomerAttributeByIdExecute(r ApiGetCustomerAttributeByIdRequest) (*GetCustomerAttributes200ResponseCustomerAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
+		localVarReturnValue  *GetCustomerAttributes200ResponseCustomerAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400GetCustomerAttributeById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetCustomerAttributeById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4552,7 +5387,7 @@ func (a *AttributeAPIService) OBPv400GetCustomerAttributeByIdExecute(r ApiOBPv40
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -4593,18 +5428,18 @@ func (a *AttributeAPIService) OBPv400GetCustomerAttributeByIdExecute(r ApiOBPv40
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetCustomerAttributeDefinitionRequest struct {
+type ApiGetCustomerAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 }
 
-func (r ApiOBPv400GetCustomerAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetCustomerAttributeDefinitionExecute(r)
+func (r ApiGetCustomerAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
+	return r.ApiService.GetCustomerAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400GetCustomerAttributeDefinition Get Customer Attribute Definition
+GetCustomerAttributeDefinition Get Customer Attribute Definition
 
 <p>Get Customer Attribute Definition</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -4625,10 +5460,10 @@ OBPv400GetCustomerAttributeDefinition Get Customer Attribute Definition
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400GetCustomerAttributeDefinitionRequest
+ @return ApiGetCustomerAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400GetCustomerAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400GetCustomerAttributeDefinitionRequest {
-	return ApiOBPv400GetCustomerAttributeDefinitionRequest{
+func (a *AttributeAPIService) GetCustomerAttributeDefinition(ctx context.Context, bankid string) ApiGetCustomerAttributeDefinitionRequest {
+	return ApiGetCustomerAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -4636,16 +5471,16 @@ func (a *AttributeAPIService) OBPv400GetCustomerAttributeDefinition(ctx context.
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200Response
-func (a *AttributeAPIService) OBPv400GetCustomerAttributeDefinitionExecute(r ApiOBPv400GetCustomerAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
+//  @return GetTransactionRequestAttributeDefinition200Response
+func (a *AttributeAPIService) GetCustomerAttributeDefinitionExecute(r ApiGetCustomerAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200Response
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400GetCustomerAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetCustomerAttributeDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4698,7 +5533,7 @@ func (a *AttributeAPIService) OBPv400GetCustomerAttributeDefinitionExecute(r Api
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -4739,19 +5574,19 @@ func (a *AttributeAPIService) OBPv400GetCustomerAttributeDefinitionExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetCustomerAttributesRequest struct {
+type ApiGetCustomerAttributesRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	customerid string
 }
 
-func (r ApiOBPv400GetCustomerAttributesRequest) Execute() (*OBPv400GetCustomerAttributes200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetCustomerAttributesExecute(r)
+func (r ApiGetCustomerAttributesRequest) Execute() (*GetCustomerAttributes200Response, *http.Response, error) {
+	return r.ApiService.GetCustomerAttributesExecute(r)
 }
 
 /*
-OBPv400GetCustomerAttributes Get Customer Attributes
+GetCustomerAttributes Get Customer Attributes
 
 <p>Get Customer Attributes</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -4769,10 +5604,10 @@ OBPv400GetCustomerAttributes Get Customer Attributes
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param customerid The CUSTOMERID identifier
- @return ApiOBPv400GetCustomerAttributesRequest
+ @return ApiGetCustomerAttributesRequest
 */
-func (a *AttributeAPIService) OBPv400GetCustomerAttributes(ctx context.Context, bankid string, customerid string) ApiOBPv400GetCustomerAttributesRequest {
-	return ApiOBPv400GetCustomerAttributesRequest{
+func (a *AttributeAPIService) GetCustomerAttributes(ctx context.Context, bankid string, customerid string) ApiGetCustomerAttributesRequest {
+	return ApiGetCustomerAttributesRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -4781,16 +5616,16 @@ func (a *AttributeAPIService) OBPv400GetCustomerAttributes(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return OBPv400GetCustomerAttributes200Response
-func (a *AttributeAPIService) OBPv400GetCustomerAttributesExecute(r ApiOBPv400GetCustomerAttributesRequest) (*OBPv400GetCustomerAttributes200Response, *http.Response, error) {
+//  @return GetCustomerAttributes200Response
+func (a *AttributeAPIService) GetCustomerAttributesExecute(r ApiGetCustomerAttributesRequest) (*GetCustomerAttributes200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetCustomerAttributes200Response
+		localVarReturnValue  *GetCustomerAttributes200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400GetCustomerAttributes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetCustomerAttributes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4844,7 +5679,7 @@ func (a *AttributeAPIService) OBPv400GetCustomerAttributesExecute(r ApiOBPv400Ge
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -4885,7 +5720,287 @@ func (a *AttributeAPIService) OBPv400GetCustomerAttributesExecute(r ApiOBPv400Ge
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetProductAttributeRequest struct {
+type ApiGetPersonalDataFieldByIdRequest struct {
+	ctx context.Context
+	ApiService *AttributeAPIService
+	userattributeid string
+}
+
+func (r ApiGetPersonalDataFieldByIdRequest) Execute() (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
+	return r.ApiService.GetPersonalDataFieldByIdExecute(r)
+}
+
+/*
+GetPersonalDataFieldById Get Personal Data Field By Id
+
+<p>Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>insert_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#"><strong>is_personal</strong></a>: is_personal</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param userattributeid The USERATTRIBUTEID identifier
+ @return ApiGetPersonalDataFieldByIdRequest
+*/
+func (a *AttributeAPIService) GetPersonalDataFieldById(ctx context.Context, userattributeid string) ApiGetPersonalDataFieldByIdRequest {
+	return ApiGetPersonalDataFieldByIdRequest{
+		ApiService: a,
+		ctx: ctx,
+		userattributeid: userattributeid,
+	}
+}
+
+// Execute executes the request
+//  @return GetPersonalDataFields200ResponseUserAttributesInner
+func (a *AttributeAPIService) GetPersonalDataFieldByIdExecute(r ApiGetPersonalDataFieldByIdRequest) (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetPersonalDataFields200ResponseUserAttributesInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetPersonalDataFieldById")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/my/personal-data-fields/{userattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"userattributeid"+"}", url.PathEscape(parameterValueToString(r.userattributeid, "userattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetPersonalDataFieldsRequest struct {
+	ctx context.Context
+	ApiService *AttributeAPIService
+}
+
+func (r ApiGetPersonalDataFieldsRequest) Execute() (*GetPersonalDataFields200Response, *http.Response, error) {
+	return r.ApiService.GetPersonalDataFieldsExecute(r)
+}
+
+/*
+GetPersonalDataFields Get Personal Data Fields
+
+<p>Get Personal Data Fields for the currently authenticated user.</p>
+<p>Returns Personal Data Fields (IsPersonal=true) that are managed by the user.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>insert_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#"><strong>is_personal</strong></a>: is_personal</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>user_attributes</strong></a>: user_attributes</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetPersonalDataFieldsRequest
+*/
+func (a *AttributeAPIService) GetPersonalDataFields(ctx context.Context) ApiGetPersonalDataFieldsRequest {
+	return ApiGetPersonalDataFieldsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetPersonalDataFields200Response
+func (a *AttributeAPIService) GetPersonalDataFieldsExecute(r ApiGetPersonalDataFieldsRequest) (*GetPersonalDataFields200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetPersonalDataFields200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetPersonalDataFields")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/my/personal-data-fields"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetProductAttributeRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
@@ -4893,12 +6008,12 @@ type ApiOBPv400GetProductAttributeRequest struct {
 	productattributeid string
 }
 
-func (r ApiOBPv400GetProductAttributeRequest) Execute() (*OBPv400CreateProductAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetProductAttributeExecute(r)
+func (r ApiGetProductAttributeRequest) Execute() (*CreateProductAttribute200Response, *http.Response, error) {
+	return r.ApiService.GetProductAttributeExecute(r)
 }
 
 /*
-OBPv400GetProductAttribute Get Product Attribute
+GetProductAttribute Get Product Attribute
 
 <p>Get Product Attribute</p>
 <p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p>
@@ -4923,10 +6038,10 @@ OBPv400GetProductAttribute Get Product Attribute
  @param bankid The BANKID identifier
  @param productcode The PRODUCTCODE identifier
  @param productattributeid The PRODUCTATTRIBUTEID identifier
- @return ApiOBPv400GetProductAttributeRequest
+ @return ApiGetProductAttributeRequest
 */
-func (a *AttributeAPIService) OBPv400GetProductAttribute(ctx context.Context, bankid string, productcode string, productattributeid string) ApiOBPv400GetProductAttributeRequest {
-	return ApiOBPv400GetProductAttributeRequest{
+func (a *AttributeAPIService) GetProductAttribute(ctx context.Context, bankid string, productcode string, productattributeid string) ApiGetProductAttributeRequest {
+	return ApiGetProductAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -4936,16 +6051,16 @@ func (a *AttributeAPIService) OBPv400GetProductAttribute(ctx context.Context, ba
 }
 
 // Execute executes the request
-//  @return OBPv400CreateProductAttribute200Response
-func (a *AttributeAPIService) OBPv400GetProductAttributeExecute(r ApiOBPv400GetProductAttributeRequest) (*OBPv400CreateProductAttribute200Response, *http.Response, error) {
+//  @return CreateProductAttribute200Response
+func (a *AttributeAPIService) GetProductAttributeExecute(r ApiGetProductAttributeRequest) (*CreateProductAttribute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateProductAttribute200Response
+		localVarReturnValue  *CreateProductAttribute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400GetProductAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetProductAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5000,7 +6115,7 @@ func (a *AttributeAPIService) OBPv400GetProductAttributeExecute(r ApiOBPv400GetP
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -5041,18 +6156,18 @@ func (a *AttributeAPIService) OBPv400GetProductAttributeExecute(r ApiOBPv400GetP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetProductAttributeDefinitionRequest struct {
+type ApiGetProductAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 }
 
-func (r ApiOBPv400GetProductAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetProductAttributeDefinitionExecute(r)
+func (r ApiGetProductAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
+	return r.ApiService.GetProductAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400GetProductAttributeDefinition Get Product Attribute Definition
+GetProductAttributeDefinition Get Product Attribute Definition
 
 <p>Get Product Attribute Definition</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -5073,10 +6188,10 @@ OBPv400GetProductAttributeDefinition Get Product Attribute Definition
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400GetProductAttributeDefinitionRequest
+ @return ApiGetProductAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400GetProductAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400GetProductAttributeDefinitionRequest {
-	return ApiOBPv400GetProductAttributeDefinitionRequest{
+func (a *AttributeAPIService) GetProductAttributeDefinition(ctx context.Context, bankid string) ApiGetProductAttributeDefinitionRequest {
+	return ApiGetProductAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -5084,16 +6199,16 @@ func (a *AttributeAPIService) OBPv400GetProductAttributeDefinition(ctx context.C
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200Response
-func (a *AttributeAPIService) OBPv400GetProductAttributeDefinitionExecute(r ApiOBPv400GetProductAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
+//  @return GetTransactionRequestAttributeDefinition200Response
+func (a *AttributeAPIService) GetProductAttributeDefinitionExecute(r ApiGetProductAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200Response
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400GetProductAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetProductAttributeDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5146,7 +6261,7 @@ func (a *AttributeAPIService) OBPv400GetProductAttributeDefinitionExecute(r ApiO
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -5187,7 +6302,7 @@ func (a *AttributeAPIService) OBPv400GetProductAttributeDefinitionExecute(r ApiO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetTransactionAttributeByIdRequest struct {
+type ApiGetTransactionAttributeByIdRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
@@ -5196,12 +6311,12 @@ type ApiOBPv400GetTransactionAttributeByIdRequest struct {
 	attributeid string
 }
 
-func (r ApiOBPv400GetTransactionAttributeByIdRequest) Execute() (*OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetTransactionAttributeByIdExecute(r)
+func (r ApiGetTransactionAttributeByIdRequest) Execute() (*GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, *http.Response, error) {
+	return r.ApiService.GetTransactionAttributeByIdExecute(r)
 }
 
 /*
-OBPv400GetTransactionAttributeById Get Transaction Attribute By Id
+GetTransactionAttributeById Get Transaction Attribute By Id
 
 <p>Get Transaction Attribute By Id</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -5222,10 +6337,10 @@ OBPv400GetTransactionAttributeById Get Transaction Attribute By Id
  @param accountid The ACCOUNTID identifier
  @param transactionid The TRANSACTIONID identifier
  @param attributeid The ATTRIBUTEID identifier
- @return ApiOBPv400GetTransactionAttributeByIdRequest
+ @return ApiGetTransactionAttributeByIdRequest
 */
-func (a *AttributeAPIService) OBPv400GetTransactionAttributeById(ctx context.Context, bankid string, accountid string, transactionid string, attributeid string) ApiOBPv400GetTransactionAttributeByIdRequest {
-	return ApiOBPv400GetTransactionAttributeByIdRequest{
+func (a *AttributeAPIService) GetTransactionAttributeById(ctx context.Context, bankid string, accountid string, transactionid string, attributeid string) ApiGetTransactionAttributeByIdRequest {
+	return ApiGetTransactionAttributeByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -5236,16 +6351,16 @@ func (a *AttributeAPIService) OBPv400GetTransactionAttributeById(ctx context.Con
 }
 
 // Execute executes the request
-//  @return OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
-func (a *AttributeAPIService) OBPv400GetTransactionAttributeByIdExecute(r ApiOBPv400GetTransactionAttributeByIdRequest) (*OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, *http.Response, error) {
+//  @return GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
+func (a *AttributeAPIService) GetTransactionAttributeByIdExecute(r ApiGetTransactionAttributeByIdRequest) (*GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
+		localVarReturnValue  *GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400GetTransactionAttributeById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetTransactionAttributeById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5301,7 +6416,7 @@ func (a *AttributeAPIService) OBPv400GetTransactionAttributeByIdExecute(r ApiOBP
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -5342,18 +6457,18 @@ func (a *AttributeAPIService) OBPv400GetTransactionAttributeByIdExecute(r ApiOBP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetTransactionAttributeDefinitionRequest struct {
+type ApiGetTransactionAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 }
 
-func (r ApiOBPv400GetTransactionAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetTransactionAttributeDefinitionExecute(r)
+func (r ApiGetTransactionAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
+	return r.ApiService.GetTransactionAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400GetTransactionAttributeDefinition Get Transaction Attribute Definition
+GetTransactionAttributeDefinition Get Transaction Attribute Definition
 
 <p>Get Transaction Attribute Definition</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -5374,10 +6489,10 @@ OBPv400GetTransactionAttributeDefinition Get Transaction Attribute Definition
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400GetTransactionAttributeDefinitionRequest
+ @return ApiGetTransactionAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400GetTransactionAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400GetTransactionAttributeDefinitionRequest {
-	return ApiOBPv400GetTransactionAttributeDefinitionRequest{
+func (a *AttributeAPIService) GetTransactionAttributeDefinition(ctx context.Context, bankid string) ApiGetTransactionAttributeDefinitionRequest {
+	return ApiGetTransactionAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -5385,16 +6500,16 @@ func (a *AttributeAPIService) OBPv400GetTransactionAttributeDefinition(ctx conte
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200Response
-func (a *AttributeAPIService) OBPv400GetTransactionAttributeDefinitionExecute(r ApiOBPv400GetTransactionAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
+//  @return GetTransactionRequestAttributeDefinition200Response
+func (a *AttributeAPIService) GetTransactionAttributeDefinitionExecute(r ApiGetTransactionAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200Response
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400GetTransactionAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetTransactionAttributeDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5447,7 +6562,7 @@ func (a *AttributeAPIService) OBPv400GetTransactionAttributeDefinitionExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -5488,7 +6603,7 @@ func (a *AttributeAPIService) OBPv400GetTransactionAttributeDefinitionExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetTransactionAttributesRequest struct {
+type ApiGetTransactionAttributesRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
@@ -5496,12 +6611,12 @@ type ApiOBPv400GetTransactionAttributesRequest struct {
 	transactionid string
 }
 
-func (r ApiOBPv400GetTransactionAttributesRequest) Execute() (*OBPv400GetTransactionAttributes200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetTransactionAttributesExecute(r)
+func (r ApiGetTransactionAttributesRequest) Execute() (*GetTransactionAttributes200Response, *http.Response, error) {
+	return r.ApiService.GetTransactionAttributesExecute(r)
 }
 
 /*
-OBPv400GetTransactionAttributes Get Transaction Attributes
+GetTransactionAttributes Get Transaction Attributes
 
 <p>Get Transaction Attributes</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -5521,10 +6636,10 @@ OBPv400GetTransactionAttributes Get Transaction Attributes
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv400GetTransactionAttributesRequest
+ @return ApiGetTransactionAttributesRequest
 */
-func (a *AttributeAPIService) OBPv400GetTransactionAttributes(ctx context.Context, bankid string, accountid string, transactionid string) ApiOBPv400GetTransactionAttributesRequest {
-	return ApiOBPv400GetTransactionAttributesRequest{
+func (a *AttributeAPIService) GetTransactionAttributes(ctx context.Context, bankid string, accountid string, transactionid string) ApiGetTransactionAttributesRequest {
+	return ApiGetTransactionAttributesRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -5534,16 +6649,16 @@ func (a *AttributeAPIService) OBPv400GetTransactionAttributes(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionAttributes200Response
-func (a *AttributeAPIService) OBPv400GetTransactionAttributesExecute(r ApiOBPv400GetTransactionAttributesRequest) (*OBPv400GetTransactionAttributes200Response, *http.Response, error) {
+//  @return GetTransactionAttributes200Response
+func (a *AttributeAPIService) GetTransactionAttributesExecute(r ApiGetTransactionAttributesRequest) (*GetTransactionAttributes200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionAttributes200Response
+		localVarReturnValue  *GetTransactionAttributes200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400GetTransactionAttributes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetTransactionAttributes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5598,7 +6713,7 @@ func (a *AttributeAPIService) OBPv400GetTransactionAttributesExecute(r ApiOBPv40
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -5639,7 +6754,7 @@ func (a *AttributeAPIService) OBPv400GetTransactionAttributesExecute(r ApiOBPv40
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetTransactionRequestAttributeByIdRequest struct {
+type ApiGetTransactionRequestAttributeByIdRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
@@ -5648,12 +6763,12 @@ type ApiOBPv400GetTransactionRequestAttributeByIdRequest struct {
 	attributeid string
 }
 
-func (r ApiOBPv400GetTransactionRequestAttributeByIdRequest) Execute() (*OBPv400GetTransactionRequestAttributeById200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetTransactionRequestAttributeByIdExecute(r)
+func (r ApiGetTransactionRequestAttributeByIdRequest) Execute() (*GetTransactionRequestAttributeById200Response, *http.Response, error) {
+	return r.ApiService.GetTransactionRequestAttributeByIdExecute(r)
 }
 
 /*
-OBPv400GetTransactionRequestAttributeById Get Transaction Request Attribute By Id
+GetTransactionRequestAttributeById Get Transaction Request Attribute By Id
 
 <p>Get Transaction Request Attribute By Id</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -5674,10 +6789,10 @@ OBPv400GetTransactionRequestAttributeById Get Transaction Request Attribute By I
  @param accountid The ACCOUNTID identifier
  @param transactionrequestid The TRANSACTIONREQUESTID identifier
  @param attributeid The ATTRIBUTEID identifier
- @return ApiOBPv400GetTransactionRequestAttributeByIdRequest
+ @return ApiGetTransactionRequestAttributeByIdRequest
 */
-func (a *AttributeAPIService) OBPv400GetTransactionRequestAttributeById(ctx context.Context, bankid string, accountid string, transactionrequestid string, attributeid string) ApiOBPv400GetTransactionRequestAttributeByIdRequest {
-	return ApiOBPv400GetTransactionRequestAttributeByIdRequest{
+func (a *AttributeAPIService) GetTransactionRequestAttributeById(ctx context.Context, bankid string, accountid string, transactionrequestid string, attributeid string) ApiGetTransactionRequestAttributeByIdRequest {
+	return ApiGetTransactionRequestAttributeByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -5688,16 +6803,16 @@ func (a *AttributeAPIService) OBPv400GetTransactionRequestAttributeById(ctx cont
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeById200Response
-func (a *AttributeAPIService) OBPv400GetTransactionRequestAttributeByIdExecute(r ApiOBPv400GetTransactionRequestAttributeByIdRequest) (*OBPv400GetTransactionRequestAttributeById200Response, *http.Response, error) {
+//  @return GetTransactionRequestAttributeById200Response
+func (a *AttributeAPIService) GetTransactionRequestAttributeByIdExecute(r ApiGetTransactionRequestAttributeByIdRequest) (*GetTransactionRequestAttributeById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeById200Response
+		localVarReturnValue  *GetTransactionRequestAttributeById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400GetTransactionRequestAttributeById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetTransactionRequestAttributeById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5753,7 +6868,7 @@ func (a *AttributeAPIService) OBPv400GetTransactionRequestAttributeByIdExecute(r
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -5794,18 +6909,18 @@ func (a *AttributeAPIService) OBPv400GetTransactionRequestAttributeByIdExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetTransactionRequestAttributeDefinitionRequest struct {
+type ApiGetTransactionRequestAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 }
 
-func (r ApiOBPv400GetTransactionRequestAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetTransactionRequestAttributeDefinitionExecute(r)
+func (r ApiGetTransactionRequestAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
+	return r.ApiService.GetTransactionRequestAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400GetTransactionRequestAttributeDefinition Get Transaction Request Attribute Definition
+GetTransactionRequestAttributeDefinition Get Transaction Request Attribute Definition
 
 <p>Get Transaction Request Attribute Definition</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -5826,10 +6941,10 @@ OBPv400GetTransactionRequestAttributeDefinition Get Transaction Request Attribut
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400GetTransactionRequestAttributeDefinitionRequest
+ @return ApiGetTransactionRequestAttributeDefinitionRequest
 */
-func (a *AttributeAPIService) OBPv400GetTransactionRequestAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400GetTransactionRequestAttributeDefinitionRequest {
-	return ApiOBPv400GetTransactionRequestAttributeDefinitionRequest{
+func (a *AttributeAPIService) GetTransactionRequestAttributeDefinition(ctx context.Context, bankid string) ApiGetTransactionRequestAttributeDefinitionRequest {
+	return ApiGetTransactionRequestAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -5837,16 +6952,16 @@ func (a *AttributeAPIService) OBPv400GetTransactionRequestAttributeDefinition(ct
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200Response
-func (a *AttributeAPIService) OBPv400GetTransactionRequestAttributeDefinitionExecute(r ApiOBPv400GetTransactionRequestAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
+//  @return GetTransactionRequestAttributeDefinition200Response
+func (a *AttributeAPIService) GetTransactionRequestAttributeDefinitionExecute(r ApiGetTransactionRequestAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200Response
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400GetTransactionRequestAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetTransactionRequestAttributeDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5899,7 +7014,7 @@ func (a *AttributeAPIService) OBPv400GetTransactionRequestAttributeDefinitionExe
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -5940,7 +7055,7 @@ func (a *AttributeAPIService) OBPv400GetTransactionRequestAttributeDefinitionExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetTransactionRequestAttributesRequest struct {
+type ApiGetTransactionRequestAttributesRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
@@ -5948,12 +7063,12 @@ type ApiOBPv400GetTransactionRequestAttributesRequest struct {
 	transactionrequestid string
 }
 
-func (r ApiOBPv400GetTransactionRequestAttributesRequest) Execute() (*OBPv400GetTransactionRequestAttributes200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetTransactionRequestAttributesExecute(r)
+func (r ApiGetTransactionRequestAttributesRequest) Execute() (*GetTransactionRequestAttributes200Response, *http.Response, error) {
+	return r.ApiService.GetTransactionRequestAttributesExecute(r)
 }
 
 /*
-OBPv400GetTransactionRequestAttributes Get Transaction Request Attributes
+GetTransactionRequestAttributes Get Transaction Request Attributes
 
 <p>Get Transaction Request Attributes</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -5973,10 +7088,10 @@ OBPv400GetTransactionRequestAttributes Get Transaction Request Attributes
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param transactionrequestid The TRANSACTIONREQUESTID identifier
- @return ApiOBPv400GetTransactionRequestAttributesRequest
+ @return ApiGetTransactionRequestAttributesRequest
 */
-func (a *AttributeAPIService) OBPv400GetTransactionRequestAttributes(ctx context.Context, bankid string, accountid string, transactionrequestid string) ApiOBPv400GetTransactionRequestAttributesRequest {
-	return ApiOBPv400GetTransactionRequestAttributesRequest{
+func (a *AttributeAPIService) GetTransactionRequestAttributes(ctx context.Context, bankid string, accountid string, transactionrequestid string) ApiGetTransactionRequestAttributesRequest {
+	return ApiGetTransactionRequestAttributesRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -5986,16 +7101,16 @@ func (a *AttributeAPIService) OBPv400GetTransactionRequestAttributes(ctx context
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributes200Response
-func (a *AttributeAPIService) OBPv400GetTransactionRequestAttributesExecute(r ApiOBPv400GetTransactionRequestAttributesRequest) (*OBPv400GetTransactionRequestAttributes200Response, *http.Response, error) {
+//  @return GetTransactionRequestAttributes200Response
+func (a *AttributeAPIService) GetTransactionRequestAttributesExecute(r ApiGetTransactionRequestAttributesRequest) (*GetTransactionRequestAttributes200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributes200Response
+		localVarReturnValue  *GetTransactionRequestAttributes200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400GetTransactionRequestAttributes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetTransactionRequestAttributes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6050,7 +7165,7 @@ func (a *AttributeAPIService) OBPv400GetTransactionRequestAttributesExecute(r Ap
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -6091,26 +7206,663 @@ func (a *AttributeAPIService) OBPv400GetTransactionRequestAttributesExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateBankAttributeRequest struct {
+type ApiGetUserAttributeByIdRequest struct {
+	ctx context.Context
+	ApiService *AttributeAPIService
+	userid string
+	userattributeid string
+}
+
+func (r ApiGetUserAttributeByIdRequest) Execute() (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
+	return r.ApiService.GetUserAttributeByIdExecute(r)
+}
+
+/*
+GetUserAttributeById Get User Attribute By Id
+
+<p>Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>insert_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#"><strong>is_personal</strong></a>: is_personal</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param userid The USERID identifier
+ @param userattributeid The USERATTRIBUTEID identifier
+ @return ApiGetUserAttributeByIdRequest
+*/
+func (a *AttributeAPIService) GetUserAttributeById(ctx context.Context, userid string, userattributeid string) ApiGetUserAttributeByIdRequest {
+	return ApiGetUserAttributeByIdRequest{
+		ApiService: a,
+		ctx: ctx,
+		userid: userid,
+		userattributeid: userattributeid,
+	}
+}
+
+// Execute executes the request
+//  @return GetPersonalDataFields200ResponseUserAttributesInner
+func (a *AttributeAPIService) GetUserAttributeByIdExecute(r ApiGetUserAttributeByIdRequest) (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetPersonalDataFields200ResponseUserAttributesInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetUserAttributeById")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/users/{userid}/attributes/{userattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"userid"+"}", url.PathEscape(parameterValueToString(r.userid, "userid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"userattributeid"+"}", url.PathEscape(parameterValueToString(r.userattributeid, "userattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetUserAttributesRequest struct {
+	ctx context.Context
+	ApiService *AttributeAPIService
+	userid string
+}
+
+func (r ApiGetUserAttributesRequest) Execute() (*GetPersonalDataFields200Response, *http.Response, error) {
+	return r.ApiService.GetUserAttributesExecute(r)
+}
+
+/*
+GetUserAttributes Get User Attributes
+
+<p>Get User Attributes for the user specified by USER_ID.</p>
+<p>Returns non-personal user attributes (IsPersonal=false) that can be used in ABAC rules.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>insert_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#"><strong>is_personal</strong></a>: is_personal</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>user_attributes</strong></a>: user_attributes</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param userid The USERID identifier
+ @return ApiGetUserAttributesRequest
+*/
+func (a *AttributeAPIService) GetUserAttributes(ctx context.Context, userid string) ApiGetUserAttributesRequest {
+	return ApiGetUserAttributesRequest{
+		ApiService: a,
+		ctx: ctx,
+		userid: userid,
+	}
+}
+
+// Execute executes the request
+//  @return GetPersonalDataFields200Response
+func (a *AttributeAPIService) GetUserAttributesExecute(r ApiGetUserAttributesRequest) (*GetPersonalDataFields200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetPersonalDataFields200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.GetUserAttributes")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/users/{userid}/attributes"
+	localVarPath = strings.Replace(localVarPath, "{"+"userid"+"}", url.PathEscape(parameterValueToString(r.userid, "userid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateAccountAttributeRequest struct {
+	ctx context.Context
+	ApiService *AttributeAPIService
+	bankid string
+	accountid string
+	productcode string
+	accountattributeid string
+	updateAccountAttributeRequest *UpdateAccountAttributeRequest
+}
+
+// Request body
+func (r ApiUpdateAccountAttributeRequest) UpdateAccountAttributeRequest(updateAccountAttributeRequest UpdateAccountAttributeRequest) ApiUpdateAccountAttributeRequest {
+	r.updateAccountAttributeRequest = &updateAccountAttributeRequest
+	return r
+}
+
+func (r ApiUpdateAccountAttributeRequest) Execute() (*GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner, *http.Response, error) {
+	return r.ApiService.UpdateAccountAttributeExecute(r)
+}
+
+/*
+UpdateAccountAttribute Update Account Attribute
+
+<p>Update Account Attribute</p>
+<p>Account Attributes are used to describe a financial Product with a list of typed key value pairs.</p>
+<p>Each Account Attribute is linked to its Account by ACCOUNT_ID</p>
+<p>Typical account attributes might be:</p>
+<p>ISIN (for International bonds)<br />
+VKN (for German bonds)<br />
+REDCODE (markit short code for credit derivative)<br />
+LOAN_ID (e.g. used for Anacredit reporting)</p>
+<p>ISSUE_DATE (When the bond was issued in the market)<br />
+MATURITY_DATE (End of life time of a product)<br />
+TRADABLE</p>
+<p>See <a href="http://www.fpml.org/">FPML</a> for more examples.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#account_attribute_id">ACCOUNT_ATTRIBUTE_ID</a>:</p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#product_code">PRODUCT_CODE</a>: 1234BW</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#account_attribute_id"><strong>account_attribute_id</strong></a>:</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#">product_instance_code</a>: product_instance_code</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param productcode The PRODUCTCODE identifier
+ @param accountattributeid The ACCOUNTATTRIBUTEID identifier
+ @return ApiUpdateAccountAttributeRequest
+*/
+func (a *AttributeAPIService) UpdateAccountAttribute(ctx context.Context, bankid string, accountid string, productcode string, accountattributeid string) ApiUpdateAccountAttributeRequest {
+	return ApiUpdateAccountAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		productcode: productcode,
+		accountattributeid: accountattributeid,
+	}
+}
+
+// Execute executes the request
+//  @return GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner
+func (a *AttributeAPIService) UpdateAccountAttributeExecute(r ApiUpdateAccountAttributeRequest) (*GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.UpdateAccountAttribute")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"productcode"+"}", url.PathEscape(parameterValueToString(r.productcode, "productcode")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountattributeid"+"}", url.PathEscape(parameterValueToString(r.accountattributeid, "accountattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateAccountAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAccountAttributeRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateAccountAttributeRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateAtmAttributeRequest struct {
+	ctx context.Context
+	ApiService *AttributeAPIService
+	bankid string
+	atmid string
+	atmattributeid string
+	updateAtmAttributeRequest *UpdateAtmAttributeRequest
+}
+
+// Request body
+func (r ApiUpdateAtmAttributeRequest) UpdateAtmAttributeRequest(updateAtmAttributeRequest UpdateAtmAttributeRequest) ApiUpdateAtmAttributeRequest {
+	r.updateAtmAttributeRequest = &updateAtmAttributeRequest
+	return r
+}
+
+func (r ApiUpdateAtmAttributeRequest) Execute() (*GetAtmAttribute200Response, *http.Response, error) {
+	return r.ApiService.UpdateAtmAttributeExecute(r)
+}
+
+/*
+UpdateAtmAttribute Update ATM Attribute
+
+<p>Update ATM Attribute.</p>
+<p>Update an ATM Attribute by its id.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param atmid The ATMID identifier
+ @param atmattributeid The ATMATTRIBUTEID identifier
+ @return ApiUpdateAtmAttributeRequest
+*/
+func (a *AttributeAPIService) UpdateAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiUpdateAtmAttributeRequest {
+	return ApiUpdateAtmAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		atmid: atmid,
+		atmattributeid: atmattributeid,
+	}
+}
+
+// Execute executes the request
+//  @return GetAtmAttribute200Response
+func (a *AttributeAPIService) UpdateAtmAttributeExecute(r ApiUpdateAtmAttributeRequest) (*GetAtmAttribute200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetAtmAttribute200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.UpdateAtmAttribute")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"atmattributeid"+"}", url.PathEscape(parameterValueToString(r.atmattributeid, "atmattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateAtmAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmAttributeRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateAtmAttributeRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateBankAttributeRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	bankattributeid string
-	oBPv510UpdateAtmAttributeRequest *OBPv510UpdateAtmAttributeRequest
+	updateAtmAttributeRequest *UpdateAtmAttributeRequest
 }
 
 // Request body
-func (r ApiOBPv400UpdateBankAttributeRequest) OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest OBPv510UpdateAtmAttributeRequest) ApiOBPv400UpdateBankAttributeRequest {
-	r.oBPv510UpdateAtmAttributeRequest = &oBPv510UpdateAtmAttributeRequest
+func (r ApiUpdateBankAttributeRequest) UpdateAtmAttributeRequest(updateAtmAttributeRequest UpdateAtmAttributeRequest) ApiUpdateBankAttributeRequest {
+	r.updateAtmAttributeRequest = &updateAtmAttributeRequest
 	return r
 }
 
-func (r ApiOBPv400UpdateBankAttributeRequest) Execute() (*OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateBankAttributeExecute(r)
+func (r ApiUpdateBankAttributeRequest) Execute() (*CreateOrUpdateTransactionRequestAttributeDefinitionRequest, *http.Response, error) {
+	return r.ApiService.UpdateBankAttributeExecute(r)
 }
 
 /*
-OBPv400UpdateBankAttribute Update Bank Attribute
+UpdateBankAttribute Update Bank Attribute
 
 <p>Update Bank Attribute.</p>
 <p>Update one Bak Attribute by its id.</p>
@@ -6131,10 +7883,10 @@ OBPv400UpdateBankAttribute Update Bank Attribute
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param bankattributeid The BANKATTRIBUTEID identifier
- @return ApiOBPv400UpdateBankAttributeRequest
+ @return ApiUpdateBankAttributeRequest
 */
-func (a *AttributeAPIService) OBPv400UpdateBankAttribute(ctx context.Context, bankid string, bankattributeid string) ApiOBPv400UpdateBankAttributeRequest {
-	return ApiOBPv400UpdateBankAttributeRequest{
+func (a *AttributeAPIService) UpdateBankAttribute(ctx context.Context, bankid string, bankattributeid string) ApiUpdateBankAttributeRequest {
+	return ApiUpdateBankAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -6143,16 +7895,16 @@ func (a *AttributeAPIService) OBPv400UpdateBankAttribute(ctx context.Context, ba
 }
 
 // Execute executes the request
-//  @return OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-func (a *AttributeAPIService) OBPv400UpdateBankAttributeExecute(r ApiOBPv400UpdateBankAttributeRequest) (*OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, *http.Response, error) {
+//  @return CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+func (a *AttributeAPIService) UpdateBankAttributeExecute(r ApiUpdateBankAttributeRequest) (*CreateOrUpdateTransactionRequestAttributeDefinitionRequest, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+		localVarReturnValue  *CreateOrUpdateTransactionRequestAttributeDefinitionRequest
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400UpdateBankAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.UpdateBankAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6164,8 +7916,8 @@ func (a *AttributeAPIService) OBPv400UpdateBankAttributeExecute(r ApiOBPv400Upda
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAtmAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAtmAttributeRequest is required and must be specified")
+	if r.updateAtmAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmAttributeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -6186,7 +7938,7 @@ func (a *AttributeAPIService) OBPv400UpdateBankAttributeExecute(r ApiOBPv400Upda
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateAtmAttributeRequest
+	localVarPostBody = r.updateAtmAttributeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -6211,7 +7963,7 @@ func (a *AttributeAPIService) OBPv400UpdateBankAttributeExecute(r ApiOBPv400Upda
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -6252,27 +8004,189 @@ func (a *AttributeAPIService) OBPv400UpdateBankAttributeExecute(r ApiOBPv400Upda
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateCustomerAttributeRequest struct {
+type ApiUpdateCardAttributeRequest struct {
+	ctx context.Context
+	ApiService *AttributeAPIService
+	bankid string
+	cardid string
+	cardattributeid string
+	createPersonalDataFieldRequest *CreatePersonalDataFieldRequest
+}
+
+// Request body
+func (r ApiUpdateCardAttributeRequest) CreatePersonalDataFieldRequest(createPersonalDataFieldRequest CreatePersonalDataFieldRequest) ApiUpdateCardAttributeRequest {
+	r.createPersonalDataFieldRequest = &createPersonalDataFieldRequest
+	return r
+}
+
+func (r ApiUpdateCardAttributeRequest) Execute() (*CreateCardAttribute200Response, *http.Response, error) {
+	return r.ApiService.UpdateCardAttributeExecute(r)
+}
+
+/*
+UpdateCardAttribute Update Card Attribute
+
+<p>Update Card Attribute</p>
+<p>Card Attributes are used to describe a financial Product with a list of typed key value pairs.</p>
+<p>Each Card Attribute is linked to its Card by CARD_ID</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">CARD_ATTRIBUTE_ID</a>: b4e0352a-9a0f-4bfa-b30b-9003aa467f50</p>
+<p><a href="/glossary#">CARD_ID</a>: 36f8a9e6-c2b1-407a-8bd0-421b7119307e</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param cardid The CARDID identifier
+ @param cardattributeid The CARDATTRIBUTEID identifier
+ @return ApiUpdateCardAttributeRequest
+*/
+func (a *AttributeAPIService) UpdateCardAttribute(ctx context.Context, bankid string, cardid string, cardattributeid string) ApiUpdateCardAttributeRequest {
+	return ApiUpdateCardAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		cardid: cardid,
+		cardattributeid: cardattributeid,
+	}
+}
+
+// Execute executes the request
+//  @return CreateCardAttribute200Response
+func (a *AttributeAPIService) UpdateCardAttributeExecute(r ApiUpdateCardAttributeRequest) (*CreateCardAttribute200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateCardAttribute200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.UpdateCardAttribute")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cardid"+"}", url.PathEscape(parameterValueToString(r.cardid, "cardid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cardattributeid"+"}", url.PathEscape(parameterValueToString(r.cardattributeid, "cardattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createPersonalDataFieldRequest == nil {
+		return localVarReturnValue, nil, reportError("createPersonalDataFieldRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createPersonalDataFieldRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateCustomerAttributeRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	customerid string
 	customerattributeid string
-	oBPv600CreatePersonalDataFieldRequest *OBPv600CreatePersonalDataFieldRequest
+	createPersonalDataFieldRequest *CreatePersonalDataFieldRequest
 }
 
 // Request body
-func (r ApiOBPv400UpdateCustomerAttributeRequest) OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest OBPv600CreatePersonalDataFieldRequest) ApiOBPv400UpdateCustomerAttributeRequest {
-	r.oBPv600CreatePersonalDataFieldRequest = &oBPv600CreatePersonalDataFieldRequest
+func (r ApiUpdateCustomerAttributeRequest) CreatePersonalDataFieldRequest(createPersonalDataFieldRequest CreatePersonalDataFieldRequest) ApiUpdateCustomerAttributeRequest {
+	r.createPersonalDataFieldRequest = &createPersonalDataFieldRequest
 	return r
 }
 
-func (r ApiOBPv400UpdateCustomerAttributeRequest) Execute() (*OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateCustomerAttributeExecute(r)
+func (r ApiUpdateCustomerAttributeRequest) Execute() (*GetCustomerAttributes200ResponseCustomerAttributesInner, *http.Response, error) {
+	return r.ApiService.UpdateCustomerAttributeExecute(r)
 }
 
 /*
-OBPv400UpdateCustomerAttribute Update Customer Attribute
+UpdateCustomerAttribute Update Customer Attribute
 
 <p>Update Customer Attribute</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -6291,10 +8205,10 @@ OBPv400UpdateCustomerAttribute Update Customer Attribute
  @param bankid The BANKID identifier
  @param customerid The CUSTOMERID identifier
  @param customerattributeid The CUSTOMERATTRIBUTEID identifier
- @return ApiOBPv400UpdateCustomerAttributeRequest
+ @return ApiUpdateCustomerAttributeRequest
 */
-func (a *AttributeAPIService) OBPv400UpdateCustomerAttribute(ctx context.Context, bankid string, customerid string, customerattributeid string) ApiOBPv400UpdateCustomerAttributeRequest {
-	return ApiOBPv400UpdateCustomerAttributeRequest{
+func (a *AttributeAPIService) UpdateCustomerAttribute(ctx context.Context, bankid string, customerid string, customerattributeid string) ApiUpdateCustomerAttributeRequest {
+	return ApiUpdateCustomerAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -6304,16 +8218,16 @@ func (a *AttributeAPIService) OBPv400UpdateCustomerAttribute(ctx context.Context
 }
 
 // Execute executes the request
-//  @return OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
-func (a *AttributeAPIService) OBPv400UpdateCustomerAttributeExecute(r ApiOBPv400UpdateCustomerAttributeRequest) (*OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems, *http.Response, error) {
+//  @return GetCustomerAttributes200ResponseCustomerAttributesInner
+func (a *AttributeAPIService) UpdateCustomerAttributeExecute(r ApiUpdateCustomerAttributeRequest) (*GetCustomerAttributes200ResponseCustomerAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
+		localVarReturnValue  *GetCustomerAttributes200ResponseCustomerAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400UpdateCustomerAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.UpdateCustomerAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6326,8 +8240,8 @@ func (a *AttributeAPIService) OBPv400UpdateCustomerAttributeExecute(r ApiOBPv400
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreatePersonalDataFieldRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreatePersonalDataFieldRequest is required and must be specified")
+	if r.createPersonalDataFieldRequest == nil {
+		return localVarReturnValue, nil, reportError("createPersonalDataFieldRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -6348,7 +8262,7 @@ func (a *AttributeAPIService) OBPv400UpdateCustomerAttributeExecute(r ApiOBPv400
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreatePersonalDataFieldRequest
+	localVarPostBody = r.createPersonalDataFieldRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -6373,7 +8287,7 @@ func (a *AttributeAPIService) OBPv400UpdateCustomerAttributeExecute(r ApiOBPv400
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -6414,27 +8328,181 @@ func (a *AttributeAPIService) OBPv400UpdateCustomerAttributeExecute(r ApiOBPv400
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateProductAttributeRequest struct {
+type ApiUpdatePersonalDataFieldRequest struct {
+	ctx context.Context
+	ApiService *AttributeAPIService
+	userattributeid string
+	createPersonalDataFieldRequest *CreatePersonalDataFieldRequest
+}
+
+// Request body
+func (r ApiUpdatePersonalDataFieldRequest) CreatePersonalDataFieldRequest(createPersonalDataFieldRequest CreatePersonalDataFieldRequest) ApiUpdatePersonalDataFieldRequest {
+	r.createPersonalDataFieldRequest = &createPersonalDataFieldRequest
+	return r
+}
+
+func (r ApiUpdatePersonalDataFieldRequest) Execute() (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
+	return r.ApiService.UpdatePersonalDataFieldExecute(r)
+}
+
+/*
+UpdatePersonalDataField Update Personal Data Field
+
+<p>Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>insert_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#"><strong>is_personal</strong></a>: is_personal</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param userattributeid The USERATTRIBUTEID identifier
+ @return ApiUpdatePersonalDataFieldRequest
+*/
+func (a *AttributeAPIService) UpdatePersonalDataField(ctx context.Context, userattributeid string) ApiUpdatePersonalDataFieldRequest {
+	return ApiUpdatePersonalDataFieldRequest{
+		ApiService: a,
+		ctx: ctx,
+		userattributeid: userattributeid,
+	}
+}
+
+// Execute executes the request
+//  @return GetPersonalDataFields200ResponseUserAttributesInner
+func (a *AttributeAPIService) UpdatePersonalDataFieldExecute(r ApiUpdatePersonalDataFieldRequest) (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetPersonalDataFields200ResponseUserAttributesInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.UpdatePersonalDataField")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/my/personal-data-fields/{userattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"userattributeid"+"}", url.PathEscape(parameterValueToString(r.userattributeid, "userattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createPersonalDataFieldRequest == nil {
+		return localVarReturnValue, nil, reportError("createPersonalDataFieldRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createPersonalDataFieldRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateProductAttributeRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	productcode string
 	productattributeid string
-	oBPv510UpdateAtmAttributeRequest *OBPv510UpdateAtmAttributeRequest
+	updateAtmAttributeRequest *UpdateAtmAttributeRequest
 }
 
 // Request body
-func (r ApiOBPv400UpdateProductAttributeRequest) OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest OBPv510UpdateAtmAttributeRequest) ApiOBPv400UpdateProductAttributeRequest {
-	r.oBPv510UpdateAtmAttributeRequest = &oBPv510UpdateAtmAttributeRequest
+func (r ApiUpdateProductAttributeRequest) UpdateAtmAttributeRequest(updateAtmAttributeRequest UpdateAtmAttributeRequest) ApiUpdateProductAttributeRequest {
+	r.updateAtmAttributeRequest = &updateAtmAttributeRequest
 	return r
 }
 
-func (r ApiOBPv400UpdateProductAttributeRequest) Execute() (*OBPv400CreateProductAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateProductAttributeExecute(r)
+func (r ApiUpdateProductAttributeRequest) Execute() (*CreateProductAttribute200Response, *http.Response, error) {
+	return r.ApiService.UpdateProductAttributeExecute(r)
 }
 
 /*
-OBPv400UpdateProductAttribute Update Product Attribute
+UpdateProductAttribute Update Product Attribute
 
 <p>Update Product Attribute.</p>
 <p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p>
@@ -6459,10 +8527,10 @@ OBPv400UpdateProductAttribute Update Product Attribute
  @param bankid The BANKID identifier
  @param productcode The PRODUCTCODE identifier
  @param productattributeid The PRODUCTATTRIBUTEID identifier
- @return ApiOBPv400UpdateProductAttributeRequest
+ @return ApiUpdateProductAttributeRequest
 */
-func (a *AttributeAPIService) OBPv400UpdateProductAttribute(ctx context.Context, bankid string, productcode string, productattributeid string) ApiOBPv400UpdateProductAttributeRequest {
-	return ApiOBPv400UpdateProductAttributeRequest{
+func (a *AttributeAPIService) UpdateProductAttribute(ctx context.Context, bankid string, productcode string, productattributeid string) ApiUpdateProductAttributeRequest {
+	return ApiUpdateProductAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -6472,16 +8540,16 @@ func (a *AttributeAPIService) OBPv400UpdateProductAttribute(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return OBPv400CreateProductAttribute200Response
-func (a *AttributeAPIService) OBPv400UpdateProductAttributeExecute(r ApiOBPv400UpdateProductAttributeRequest) (*OBPv400CreateProductAttribute200Response, *http.Response, error) {
+//  @return CreateProductAttribute200Response
+func (a *AttributeAPIService) UpdateProductAttributeExecute(r ApiUpdateProductAttributeRequest) (*CreateProductAttribute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateProductAttribute200Response
+		localVarReturnValue  *CreateProductAttribute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400UpdateProductAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.UpdateProductAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6494,8 +8562,8 @@ func (a *AttributeAPIService) OBPv400UpdateProductAttributeExecute(r ApiOBPv400U
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAtmAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAtmAttributeRequest is required and must be specified")
+	if r.updateAtmAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmAttributeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -6516,7 +8584,7 @@ func (a *AttributeAPIService) OBPv400UpdateProductAttributeExecute(r ApiOBPv400U
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateAtmAttributeRequest
+	localVarPostBody = r.updateAtmAttributeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -6541,7 +8609,7 @@ func (a *AttributeAPIService) OBPv400UpdateProductAttributeExecute(r ApiOBPv400U
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -6582,28 +8650,28 @@ func (a *AttributeAPIService) OBPv400UpdateProductAttributeExecute(r ApiOBPv400U
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateTransactionAttributeRequest struct {
+type ApiUpdateTransactionAttributeRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	accountid string
 	transactionid string
 	accountattributeid string
-	oBPv600CreatePersonalDataFieldRequest *OBPv600CreatePersonalDataFieldRequest
+	createPersonalDataFieldRequest *CreatePersonalDataFieldRequest
 }
 
 // Request body
-func (r ApiOBPv400UpdateTransactionAttributeRequest) OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest OBPv600CreatePersonalDataFieldRequest) ApiOBPv400UpdateTransactionAttributeRequest {
-	r.oBPv600CreatePersonalDataFieldRequest = &oBPv600CreatePersonalDataFieldRequest
+func (r ApiUpdateTransactionAttributeRequest) CreatePersonalDataFieldRequest(createPersonalDataFieldRequest CreatePersonalDataFieldRequest) ApiUpdateTransactionAttributeRequest {
+	r.createPersonalDataFieldRequest = &createPersonalDataFieldRequest
 	return r
 }
 
-func (r ApiOBPv400UpdateTransactionAttributeRequest) Execute() (*OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateTransactionAttributeExecute(r)
+func (r ApiUpdateTransactionAttributeRequest) Execute() (*GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, *http.Response, error) {
+	return r.ApiService.UpdateTransactionAttributeExecute(r)
 }
 
 /*
-OBPv400UpdateTransactionAttribute Update Transaction Attribute
+UpdateTransactionAttribute Update Transaction Attribute
 
 <p>Update Transaction Attribute</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -6624,10 +8692,10 @@ OBPv400UpdateTransactionAttribute Update Transaction Attribute
  @param accountid The ACCOUNTID identifier
  @param transactionid The TRANSACTIONID identifier
  @param accountattributeid The ACCOUNTATTRIBUTEID identifier
- @return ApiOBPv400UpdateTransactionAttributeRequest
+ @return ApiUpdateTransactionAttributeRequest
 */
-func (a *AttributeAPIService) OBPv400UpdateTransactionAttribute(ctx context.Context, bankid string, accountid string, transactionid string, accountattributeid string) ApiOBPv400UpdateTransactionAttributeRequest {
-	return ApiOBPv400UpdateTransactionAttributeRequest{
+func (a *AttributeAPIService) UpdateTransactionAttribute(ctx context.Context, bankid string, accountid string, transactionid string, accountattributeid string) ApiUpdateTransactionAttributeRequest {
+	return ApiUpdateTransactionAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -6638,16 +8706,16 @@ func (a *AttributeAPIService) OBPv400UpdateTransactionAttribute(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
-func (a *AttributeAPIService) OBPv400UpdateTransactionAttributeExecute(r ApiOBPv400UpdateTransactionAttributeRequest) (*OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, *http.Response, error) {
+//  @return GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
+func (a *AttributeAPIService) UpdateTransactionAttributeExecute(r ApiUpdateTransactionAttributeRequest) (*GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
+		localVarReturnValue  *GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400UpdateTransactionAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.UpdateTransactionAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6661,8 +8729,8 @@ func (a *AttributeAPIService) OBPv400UpdateTransactionAttributeExecute(r ApiOBPv
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreatePersonalDataFieldRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreatePersonalDataFieldRequest is required and must be specified")
+	if r.createPersonalDataFieldRequest == nil {
+		return localVarReturnValue, nil, reportError("createPersonalDataFieldRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -6683,7 +8751,7 @@ func (a *AttributeAPIService) OBPv400UpdateTransactionAttributeExecute(r ApiOBPv
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreatePersonalDataFieldRequest
+	localVarPostBody = r.createPersonalDataFieldRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -6708,7 +8776,7 @@ func (a *AttributeAPIService) OBPv400UpdateTransactionAttributeExecute(r ApiOBPv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -6749,28 +8817,28 @@ func (a *AttributeAPIService) OBPv400UpdateTransactionAttributeExecute(r ApiOBPv
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateTransactionRequestAttributeRequest struct {
+type ApiUpdateTransactionRequestAttributeRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	bankid string
 	accountid string
 	transactionrequestid string
 	attributeid string
-	oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems *OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+	createTransactionRequestCounterpartyRequestAttributesInner *CreateTransactionRequestCounterpartyRequestAttributesInner
 }
 
 // Request body
-func (r ApiOBPv400UpdateTransactionRequestAttributeRequest) OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems(oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems) ApiOBPv400UpdateTransactionRequestAttributeRequest {
-	r.oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems = &oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+func (r ApiUpdateTransactionRequestAttributeRequest) CreateTransactionRequestCounterpartyRequestAttributesInner(createTransactionRequestCounterpartyRequestAttributesInner CreateTransactionRequestCounterpartyRequestAttributesInner) ApiUpdateTransactionRequestAttributeRequest {
+	r.createTransactionRequestCounterpartyRequestAttributesInner = &createTransactionRequestCounterpartyRequestAttributesInner
 	return r
 }
 
-func (r ApiOBPv400UpdateTransactionRequestAttributeRequest) Execute() (*OBPv400GetTransactionRequestAttributeById200Response, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateTransactionRequestAttributeExecute(r)
+func (r ApiUpdateTransactionRequestAttributeRequest) Execute() (*GetTransactionRequestAttributeById200Response, *http.Response, error) {
+	return r.ApiService.UpdateTransactionRequestAttributeExecute(r)
 }
 
 /*
-OBPv400UpdateTransactionRequestAttribute Update Transaction Request Attribute
+UpdateTransactionRequestAttribute Update Transaction Request Attribute
 
 <p>Update Transaction Request Attribute</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -6791,10 +8859,10 @@ OBPv400UpdateTransactionRequestAttribute Update Transaction Request Attribute
  @param accountid The ACCOUNTID identifier
  @param transactionrequestid The TRANSACTIONREQUESTID identifier
  @param attributeid The ATTRIBUTEID identifier
- @return ApiOBPv400UpdateTransactionRequestAttributeRequest
+ @return ApiUpdateTransactionRequestAttributeRequest
 */
-func (a *AttributeAPIService) OBPv400UpdateTransactionRequestAttribute(ctx context.Context, bankid string, accountid string, transactionrequestid string, attributeid string) ApiOBPv400UpdateTransactionRequestAttributeRequest {
-	return ApiOBPv400UpdateTransactionRequestAttributeRequest{
+func (a *AttributeAPIService) UpdateTransactionRequestAttribute(ctx context.Context, bankid string, accountid string, transactionrequestid string, attributeid string) ApiUpdateTransactionRequestAttributeRequest {
+	return ApiUpdateTransactionRequestAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -6805,16 +8873,16 @@ func (a *AttributeAPIService) OBPv400UpdateTransactionRequestAttribute(ctx conte
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeById200Response
-func (a *AttributeAPIService) OBPv400UpdateTransactionRequestAttributeExecute(r ApiOBPv400UpdateTransactionRequestAttributeRequest) (*OBPv400GetTransactionRequestAttributeById200Response, *http.Response, error) {
+//  @return GetTransactionRequestAttributeById200Response
+func (a *AttributeAPIService) UpdateTransactionRequestAttributeExecute(r ApiUpdateTransactionRequestAttributeRequest) (*GetTransactionRequestAttributeById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeById200Response
+		localVarReturnValue  *GetTransactionRequestAttributeById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv400UpdateTransactionRequestAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.UpdateTransactionRequestAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6828,8 +8896,8 @@ func (a *AttributeAPIService) OBPv400UpdateTransactionRequestAttributeExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems is required and must be specified")
+	if r.createTransactionRequestCounterpartyRequestAttributesInner == nil {
+		return localVarReturnValue, nil, reportError("createTransactionRequestCounterpartyRequestAttributesInner is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -6850,7 +8918,7 @@ func (a *AttributeAPIService) OBPv400UpdateTransactionRequestAttributeExecute(r 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+	localVarPostBody = r.createTransactionRequestCounterpartyRequestAttributesInner
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -6875,7 +8943,7 @@ func (a *AttributeAPIService) OBPv400UpdateTransactionRequestAttributeExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -6916,2094 +8984,26 @@ func (a *AttributeAPIService) OBPv400UpdateTransactionRequestAttributeExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510CreateAtmAttributeRequest struct {
-	ctx context.Context
-	ApiService *AttributeAPIService
-	bankid string
-	atmid string
-	oBPv510UpdateAtmAttributeRequest *OBPv510UpdateAtmAttributeRequest
-}
-
-// Request body
-func (r ApiOBPv510CreateAtmAttributeRequest) OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest OBPv510UpdateAtmAttributeRequest) ApiOBPv510CreateAtmAttributeRequest {
-	r.oBPv510UpdateAtmAttributeRequest = &oBPv510UpdateAtmAttributeRequest
-	return r
-}
-
-func (r ApiOBPv510CreateAtmAttributeRequest) Execute() (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateAtmAttributeExecute(r)
-}
-
-/*
-OBPv510CreateAtmAttribute Create ATM Attribute
-
-<p>Create ATM Attribute</p>
-<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#is_active">is_active</a>: false</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#is_active">is_active</a>: false</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param atmid The ATMID identifier
- @return ApiOBPv510CreateAtmAttributeRequest
-*/
-func (a *AttributeAPIService) OBPv510CreateAtmAttribute(ctx context.Context, bankid string, atmid string) ApiOBPv510CreateAtmAttributeRequest {
-	return ApiOBPv510CreateAtmAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		atmid: atmid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510GetAtmAttribute200Response
-func (a *AttributeAPIService) OBPv510CreateAtmAttributeExecute(r ApiOBPv510CreateAtmAttributeRequest) (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAtmAttribute200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv510CreateAtmAttribute")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAtmAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAtmAttributeRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv510UpdateAtmAttributeRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510DeleteAtmAttributeRequest struct {
-	ctx context.Context
-	ApiService *AttributeAPIService
-	bankid string
-	atmid string
-	atmattributeid string
-}
-
-func (r ApiOBPv510DeleteAtmAttributeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510DeleteAtmAttributeExecute(r)
-}
-
-/*
-OBPv510DeleteAtmAttribute Delete ATM Attribute
-
-<p>Delete ATM Attribute</p>
-<p>Delete a Atm Attribute by its id.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param atmid The ATMID identifier
- @param atmattributeid The ATMATTRIBUTEID identifier
- @return ApiOBPv510DeleteAtmAttributeRequest
-*/
-func (a *AttributeAPIService) OBPv510DeleteAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiOBPv510DeleteAtmAttributeRequest {
-	return ApiOBPv510DeleteAtmAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		atmid: atmid,
-		atmattributeid: atmattributeid,
-	}
-}
-
-// Execute executes the request
-func (a *AttributeAPIService) OBPv510DeleteAtmAttributeExecute(r ApiOBPv510DeleteAtmAttributeRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv510DeleteAtmAttribute")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"atmattributeid"+"}", url.PathEscape(parameterValueToString(r.atmattributeid, "atmattributeid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv510GetAtmAttributeRequest struct {
-	ctx context.Context
-	ApiService *AttributeAPIService
-	bankid string
-	atmid string
-	atmattributeid string
-}
-
-func (r ApiOBPv510GetAtmAttributeRequest) Execute() (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetAtmAttributeExecute(r)
-}
-
-/*
-OBPv510GetAtmAttribute Get ATM Attribute By ATM_ATTRIBUTE_ID
-
-<p>Get ATM Attribute By ATM_ATTRIBUTE_ID</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#is_active">is_active</a>: false</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param atmid The ATMID identifier
- @param atmattributeid The ATMATTRIBUTEID identifier
- @return ApiOBPv510GetAtmAttributeRequest
-*/
-func (a *AttributeAPIService) OBPv510GetAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiOBPv510GetAtmAttributeRequest {
-	return ApiOBPv510GetAtmAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		atmid: atmid,
-		atmattributeid: atmattributeid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510GetAtmAttribute200Response
-func (a *AttributeAPIService) OBPv510GetAtmAttributeExecute(r ApiOBPv510GetAtmAttributeRequest) (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAtmAttribute200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv510GetAtmAttribute")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"atmattributeid"+"}", url.PathEscape(parameterValueToString(r.atmattributeid, "atmattributeid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510GetAtmAttributesRequest struct {
-	ctx context.Context
-	ApiService *AttributeAPIService
-	bankid string
-	atmid string
-}
-
-func (r ApiOBPv510GetAtmAttributesRequest) Execute() (*OBPv510GetAtmAttributes200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetAtmAttributesExecute(r)
-}
-
-/*
-OBPv510GetAtmAttributes Get ATM Attributes
-
-<p>Get ATM Attributes</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#"><strong>atm_attributes</strong></a>: atm_attributes</p>
-<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#is_active">is_active</a>: false</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param atmid The ATMID identifier
- @return ApiOBPv510GetAtmAttributesRequest
-*/
-func (a *AttributeAPIService) OBPv510GetAtmAttributes(ctx context.Context, bankid string, atmid string) ApiOBPv510GetAtmAttributesRequest {
-	return ApiOBPv510GetAtmAttributesRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		atmid: atmid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510GetAtmAttributes200Response
-func (a *AttributeAPIService) OBPv510GetAtmAttributesExecute(r ApiOBPv510GetAtmAttributesRequest) (*OBPv510GetAtmAttributes200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAtmAttributes200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv510GetAtmAttributes")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510UpdateAtmAttributeRequest struct {
-	ctx context.Context
-	ApiService *AttributeAPIService
-	bankid string
-	atmid string
-	atmattributeid string
-	oBPv510UpdateAtmAttributeRequest *OBPv510UpdateAtmAttributeRequest
-}
-
-// Request body
-func (r ApiOBPv510UpdateAtmAttributeRequest) OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest OBPv510UpdateAtmAttributeRequest) ApiOBPv510UpdateAtmAttributeRequest {
-	r.oBPv510UpdateAtmAttributeRequest = &oBPv510UpdateAtmAttributeRequest
-	return r
-}
-
-func (r ApiOBPv510UpdateAtmAttributeRequest) Execute() (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv510UpdateAtmAttributeExecute(r)
-}
-
-/*
-OBPv510UpdateAtmAttribute Update ATM Attribute
-
-<p>Update ATM Attribute.</p>
-<p>Update an ATM Attribute by its id.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#is_active">is_active</a>: false</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param atmid The ATMID identifier
- @param atmattributeid The ATMATTRIBUTEID identifier
- @return ApiOBPv510UpdateAtmAttributeRequest
-*/
-func (a *AttributeAPIService) OBPv510UpdateAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiOBPv510UpdateAtmAttributeRequest {
-	return ApiOBPv510UpdateAtmAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		atmid: atmid,
-		atmattributeid: atmattributeid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510GetAtmAttribute200Response
-func (a *AttributeAPIService) OBPv510UpdateAtmAttributeExecute(r ApiOBPv510UpdateAtmAttributeRequest) (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAtmAttribute200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv510UpdateAtmAttribute")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"atmattributeid"+"}", url.PathEscape(parameterValueToString(r.atmattributeid, "atmattributeid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAtmAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAtmAttributeRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv510UpdateAtmAttributeRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600CreatePersonalDataFieldRequest struct {
-	ctx context.Context
-	ApiService *AttributeAPIService
-	oBPv600CreatePersonalDataFieldRequest *OBPv600CreatePersonalDataFieldRequest
-}
-
-// Request body
-func (r ApiOBPv600CreatePersonalDataFieldRequest) OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest OBPv600CreatePersonalDataFieldRequest) ApiOBPv600CreatePersonalDataFieldRequest {
-	r.oBPv600CreatePersonalDataFieldRequest = &oBPv600CreatePersonalDataFieldRequest
-	return r
-}
-
-func (r ApiOBPv600CreatePersonalDataFieldRequest) Execute() (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv600CreatePersonalDataFieldExecute(r)
-}
-
-/*
-OBPv600CreatePersonalDataField Create Personal Data Field
-
-<p>Create a Personal Data Field for the currently authenticated user.</p>
-<p>Personal Data Fields (IsPersonal=true) are managed by the user themselves and do not require special roles.<br />
-This data is not available in ABAC rules for privacy reasons.</p>
-<p>For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.</p>
-<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>insert_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#"><strong>is_personal</strong></a>: is_personal</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600CreatePersonalDataFieldRequest
-*/
-func (a *AttributeAPIService) OBPv600CreatePersonalDataField(ctx context.Context) ApiOBPv600CreatePersonalDataFieldRequest {
-	return ApiOBPv600CreatePersonalDataFieldRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-func (a *AttributeAPIService) OBPv600CreatePersonalDataFieldExecute(r ApiOBPv600CreatePersonalDataFieldRequest) (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv600CreatePersonalDataField")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/my/personal-data-fields"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv600CreatePersonalDataFieldRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreatePersonalDataFieldRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv600CreatePersonalDataFieldRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600CreateUserAttributeRequest struct {
-	ctx context.Context
-	ApiService *AttributeAPIService
-	userid string
-	oBPv600CreatePersonalDataFieldRequest *OBPv600CreatePersonalDataFieldRequest
-}
-
-// Request body
-func (r ApiOBPv600CreateUserAttributeRequest) OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest OBPv600CreatePersonalDataFieldRequest) ApiOBPv600CreateUserAttributeRequest {
-	r.oBPv600CreatePersonalDataFieldRequest = &oBPv600CreatePersonalDataFieldRequest
-	return r
-}
-
-func (r ApiOBPv600CreateUserAttributeRequest) Execute() (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv600CreateUserAttributeExecute(r)
-}
-
-/*
-OBPv600CreateUserAttribute Create User Attribute
-
-<p>Create a User Attribute for the user specified by USER_ID.</p>
-<p>User Attributes are non-personal attributes (IsPersonal=false) that can be used in ABAC rules.<br />
-They require a role to set, similar to Customer Attributes, Account Attributes, etc.</p>
-<p>For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.</p>
-<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>insert_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#"><strong>is_personal</strong></a>: is_personal</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param userid The USERID identifier
- @return ApiOBPv600CreateUserAttributeRequest
-*/
-func (a *AttributeAPIService) OBPv600CreateUserAttribute(ctx context.Context, userid string) ApiOBPv600CreateUserAttributeRequest {
-	return ApiOBPv600CreateUserAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
-		userid: userid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-func (a *AttributeAPIService) OBPv600CreateUserAttributeExecute(r ApiOBPv600CreateUserAttributeRequest) (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv600CreateUserAttribute")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/users/{userid}/attributes"
-	localVarPath = strings.Replace(localVarPath, "{"+"userid"+"}", url.PathEscape(parameterValueToString(r.userid, "userid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv600CreatePersonalDataFieldRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreatePersonalDataFieldRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv600CreatePersonalDataFieldRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600DeletePersonalDataFieldRequest struct {
-	ctx context.Context
-	ApiService *AttributeAPIService
-	userattributeid string
-}
-
-func (r ApiOBPv600DeletePersonalDataFieldRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv600DeletePersonalDataFieldExecute(r)
-}
-
-/*
-OBPv600DeletePersonalDataField Delete Personal Data Field
-
-<p>Delete a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param userattributeid The USERATTRIBUTEID identifier
- @return ApiOBPv600DeletePersonalDataFieldRequest
-*/
-func (a *AttributeAPIService) OBPv600DeletePersonalDataField(ctx context.Context, userattributeid string) ApiOBPv600DeletePersonalDataFieldRequest {
-	return ApiOBPv600DeletePersonalDataFieldRequest{
-		ApiService: a,
-		ctx: ctx,
-		userattributeid: userattributeid,
-	}
-}
-
-// Execute executes the request
-func (a *AttributeAPIService) OBPv600DeletePersonalDataFieldExecute(r ApiOBPv600DeletePersonalDataFieldRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv600DeletePersonalDataField")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/my/personal-data-fields/{userattributeid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"userattributeid"+"}", url.PathEscape(parameterValueToString(r.userattributeid, "userattributeid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv600DeleteUserAttributeRequest struct {
+type ApiUpdateUserAttributeRequest struct {
 	ctx context.Context
 	ApiService *AttributeAPIService
 	userid string
 	userattributeid string
-}
-
-func (r ApiOBPv600DeleteUserAttributeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv600DeleteUserAttributeExecute(r)
-}
-
-/*
-OBPv600DeleteUserAttribute Delete User Attribute
-
-<p>Delete a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param userid The USERID identifier
- @param userattributeid The USERATTRIBUTEID identifier
- @return ApiOBPv600DeleteUserAttributeRequest
-*/
-func (a *AttributeAPIService) OBPv600DeleteUserAttribute(ctx context.Context, userid string, userattributeid string) ApiOBPv600DeleteUserAttributeRequest {
-	return ApiOBPv600DeleteUserAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
-		userid: userid,
-		userattributeid: userattributeid,
-	}
-}
-
-// Execute executes the request
-func (a *AttributeAPIService) OBPv600DeleteUserAttributeExecute(r ApiOBPv600DeleteUserAttributeRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv600DeleteUserAttribute")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/users/{userid}/attributes/{userattributeid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"userid"+"}", url.PathEscape(parameterValueToString(r.userid, "userid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"userattributeid"+"}", url.PathEscape(parameterValueToString(r.userattributeid, "userattributeid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv600GetPersonalDataFieldByIdRequest struct {
-	ctx context.Context
-	ApiService *AttributeAPIService
-	userattributeid string
-}
-
-func (r ApiOBPv600GetPersonalDataFieldByIdRequest) Execute() (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv600GetPersonalDataFieldByIdExecute(r)
-}
-
-/*
-OBPv600GetPersonalDataFieldById Get Personal Data Field By Id
-
-<p>Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>insert_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#"><strong>is_personal</strong></a>: is_personal</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param userattributeid The USERATTRIBUTEID identifier
- @return ApiOBPv600GetPersonalDataFieldByIdRequest
-*/
-func (a *AttributeAPIService) OBPv600GetPersonalDataFieldById(ctx context.Context, userattributeid string) ApiOBPv600GetPersonalDataFieldByIdRequest {
-	return ApiOBPv600GetPersonalDataFieldByIdRequest{
-		ApiService: a,
-		ctx: ctx,
-		userattributeid: userattributeid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-func (a *AttributeAPIService) OBPv600GetPersonalDataFieldByIdExecute(r ApiOBPv600GetPersonalDataFieldByIdRequest) (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv600GetPersonalDataFieldById")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/my/personal-data-fields/{userattributeid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"userattributeid"+"}", url.PathEscape(parameterValueToString(r.userattributeid, "userattributeid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600GetPersonalDataFieldsRequest struct {
-	ctx context.Context
-	ApiService *AttributeAPIService
-}
-
-func (r ApiOBPv600GetPersonalDataFieldsRequest) Execute() (*OBPv600GetPersonalDataFields200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetPersonalDataFieldsExecute(r)
-}
-
-/*
-OBPv600GetPersonalDataFields Get Personal Data Fields
-
-<p>Get Personal Data Fields for the currently authenticated user.</p>
-<p>Returns Personal Data Fields (IsPersonal=true) that are managed by the user.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>insert_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#"><strong>is_personal</strong></a>: is_personal</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>user_attributes</strong></a>: user_attributes</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetPersonalDataFieldsRequest
-*/
-func (a *AttributeAPIService) OBPv600GetPersonalDataFields(ctx context.Context) ApiOBPv600GetPersonalDataFieldsRequest {
-	return ApiOBPv600GetPersonalDataFieldsRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600GetPersonalDataFields200Response
-func (a *AttributeAPIService) OBPv600GetPersonalDataFieldsExecute(r ApiOBPv600GetPersonalDataFieldsRequest) (*OBPv600GetPersonalDataFields200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetPersonalDataFields200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv600GetPersonalDataFields")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/my/personal-data-fields"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600GetUserAttributeByIdRequest struct {
-	ctx context.Context
-	ApiService *AttributeAPIService
-	userid string
-	userattributeid string
-}
-
-func (r ApiOBPv600GetUserAttributeByIdRequest) Execute() (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv600GetUserAttributeByIdExecute(r)
-}
-
-/*
-OBPv600GetUserAttributeById Get User Attribute By Id
-
-<p>Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>insert_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#"><strong>is_personal</strong></a>: is_personal</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param userid The USERID identifier
- @param userattributeid The USERATTRIBUTEID identifier
- @return ApiOBPv600GetUserAttributeByIdRequest
-*/
-func (a *AttributeAPIService) OBPv600GetUserAttributeById(ctx context.Context, userid string, userattributeid string) ApiOBPv600GetUserAttributeByIdRequest {
-	return ApiOBPv600GetUserAttributeByIdRequest{
-		ApiService: a,
-		ctx: ctx,
-		userid: userid,
-		userattributeid: userattributeid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-func (a *AttributeAPIService) OBPv600GetUserAttributeByIdExecute(r ApiOBPv600GetUserAttributeByIdRequest) (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv600GetUserAttributeById")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/users/{userid}/attributes/{userattributeid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"userid"+"}", url.PathEscape(parameterValueToString(r.userid, "userid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"userattributeid"+"}", url.PathEscape(parameterValueToString(r.userattributeid, "userattributeid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600GetUserAttributesRequest struct {
-	ctx context.Context
-	ApiService *AttributeAPIService
-	userid string
-}
-
-func (r ApiOBPv600GetUserAttributesRequest) Execute() (*OBPv600GetPersonalDataFields200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetUserAttributesExecute(r)
-}
-
-/*
-OBPv600GetUserAttributes Get User Attributes
-
-<p>Get User Attributes for the user specified by USER_ID.</p>
-<p>Returns non-personal user attributes (IsPersonal=false) that can be used in ABAC rules.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>insert_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#"><strong>is_personal</strong></a>: is_personal</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>user_attributes</strong></a>: user_attributes</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param userid The USERID identifier
- @return ApiOBPv600GetUserAttributesRequest
-*/
-func (a *AttributeAPIService) OBPv600GetUserAttributes(ctx context.Context, userid string) ApiOBPv600GetUserAttributesRequest {
-	return ApiOBPv600GetUserAttributesRequest{
-		ApiService: a,
-		ctx: ctx,
-		userid: userid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600GetPersonalDataFields200Response
-func (a *AttributeAPIService) OBPv600GetUserAttributesExecute(r ApiOBPv600GetUserAttributesRequest) (*OBPv600GetPersonalDataFields200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetPersonalDataFields200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv600GetUserAttributes")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/users/{userid}/attributes"
-	localVarPath = strings.Replace(localVarPath, "{"+"userid"+"}", url.PathEscape(parameterValueToString(r.userid, "userid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600UpdatePersonalDataFieldRequest struct {
-	ctx context.Context
-	ApiService *AttributeAPIService
-	userattributeid string
-	oBPv600CreatePersonalDataFieldRequest *OBPv600CreatePersonalDataFieldRequest
+	createPersonalDataFieldRequest *CreatePersonalDataFieldRequest
 }
 
 // Request body
-func (r ApiOBPv600UpdatePersonalDataFieldRequest) OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest OBPv600CreatePersonalDataFieldRequest) ApiOBPv600UpdatePersonalDataFieldRequest {
-	r.oBPv600CreatePersonalDataFieldRequest = &oBPv600CreatePersonalDataFieldRequest
+func (r ApiUpdateUserAttributeRequest) CreatePersonalDataFieldRequest(createPersonalDataFieldRequest CreatePersonalDataFieldRequest) ApiUpdateUserAttributeRequest {
+	r.createPersonalDataFieldRequest = &createPersonalDataFieldRequest
 	return r
 }
 
-func (r ApiOBPv600UpdatePersonalDataFieldRequest) Execute() (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv600UpdatePersonalDataFieldExecute(r)
+func (r ApiUpdateUserAttributeRequest) Execute() (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
+	return r.ApiService.UpdateUserAttributeExecute(r)
 }
 
 /*
-OBPv600UpdatePersonalDataField Update Personal Data Field
-
-<p>Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>insert_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#"><strong>is_personal</strong></a>: is_personal</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param userattributeid The USERATTRIBUTEID identifier
- @return ApiOBPv600UpdatePersonalDataFieldRequest
-*/
-func (a *AttributeAPIService) OBPv600UpdatePersonalDataField(ctx context.Context, userattributeid string) ApiOBPv600UpdatePersonalDataFieldRequest {
-	return ApiOBPv600UpdatePersonalDataFieldRequest{
-		ApiService: a,
-		ctx: ctx,
-		userattributeid: userattributeid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-func (a *AttributeAPIService) OBPv600UpdatePersonalDataFieldExecute(r ApiOBPv600UpdatePersonalDataFieldRequest) (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv600UpdatePersonalDataField")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/my/personal-data-fields/{userattributeid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"userattributeid"+"}", url.PathEscape(parameterValueToString(r.userattributeid, "userattributeid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv600CreatePersonalDataFieldRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreatePersonalDataFieldRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv600CreatePersonalDataFieldRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600UpdateUserAttributeRequest struct {
-	ctx context.Context
-	ApiService *AttributeAPIService
-	userid string
-	userattributeid string
-	oBPv600CreatePersonalDataFieldRequest *OBPv600CreatePersonalDataFieldRequest
-}
-
-// Request body
-func (r ApiOBPv600UpdateUserAttributeRequest) OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest OBPv600CreatePersonalDataFieldRequest) ApiOBPv600UpdateUserAttributeRequest {
-	r.oBPv600CreatePersonalDataFieldRequest = &oBPv600CreatePersonalDataFieldRequest
-	return r
-}
-
-func (r ApiOBPv600UpdateUserAttributeRequest) Execute() (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv600UpdateUserAttributeExecute(r)
-}
-
-/*
-OBPv600UpdateUserAttribute Update User Attribute
+UpdateUserAttribute Update User Attribute
 
 <p>Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -9022,10 +9022,10 @@ OBPv600UpdateUserAttribute Update User Attribute
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param userid The USERID identifier
  @param userattributeid The USERATTRIBUTEID identifier
- @return ApiOBPv600UpdateUserAttributeRequest
+ @return ApiUpdateUserAttributeRequest
 */
-func (a *AttributeAPIService) OBPv600UpdateUserAttribute(ctx context.Context, userid string, userattributeid string) ApiOBPv600UpdateUserAttributeRequest {
-	return ApiOBPv600UpdateUserAttributeRequest{
+func (a *AttributeAPIService) UpdateUserAttribute(ctx context.Context, userid string, userattributeid string) ApiUpdateUserAttributeRequest {
+	return ApiUpdateUserAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		userid: userid,
@@ -9034,16 +9034,16 @@ func (a *AttributeAPIService) OBPv600UpdateUserAttribute(ctx context.Context, us
 }
 
 // Execute executes the request
-//  @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-func (a *AttributeAPIService) OBPv600UpdateUserAttributeExecute(r ApiOBPv600UpdateUserAttributeRequest) (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
+//  @return GetPersonalDataFields200ResponseUserAttributesInner
+func (a *AttributeAPIService) UpdateUserAttributeExecute(r ApiUpdateUserAttributeRequest) (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+		localVarReturnValue  *GetPersonalDataFields200ResponseUserAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.OBPv600UpdateUserAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeAPIService.UpdateUserAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9055,8 +9055,8 @@ func (a *AttributeAPIService) OBPv600UpdateUserAttributeExecute(r ApiOBPv600Upda
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreatePersonalDataFieldRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreatePersonalDataFieldRequest is required and must be specified")
+	if r.createPersonalDataFieldRequest == nil {
+		return localVarReturnValue, nil, reportError("createPersonalDataFieldRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -9077,7 +9077,7 @@ func (a *AttributeAPIService) OBPv600UpdateUserAttributeExecute(r ApiOBPv600Upda
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreatePersonalDataFieldRequest
+	localVarPostBody = r.createPersonalDataFieldRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -9102,7 +9102,7 @@ func (a *AttributeAPIService) OBPv600UpdateUserAttributeExecute(r ApiOBPv600Upda
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

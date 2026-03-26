@@ -1,21 +1,21 @@
 # AccountMetadataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400AddTagForViewOnAccount**](AccountMetadataApi.md#oBPv400AddTagForViewOnAccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account |
-| [**oBPv400AddTagForViewOnAccountWithHttpInfo**](AccountMetadataApi.md#oBPv400AddTagForViewOnAccountWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account |
-| [**oBPv400DeleteTagForViewOnAccount**](AccountMetadataApi.md#oBPv400DeleteTagForViewOnAccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account |
-| [**oBPv400DeleteTagForViewOnAccountWithHttpInfo**](AccountMetadataApi.md#oBPv400DeleteTagForViewOnAccountWithHttpInfo) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account |
-| [**oBPv400GetTagsForViewOnAccount**](AccountMetadataApi.md#oBPv400GetTagsForViewOnAccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account |
-| [**oBPv400GetTagsForViewOnAccountWithHttpInfo**](AccountMetadataApi.md#oBPv400GetTagsForViewOnAccountWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account |
+| [**addTagForViewOnAccount**](AccountMetadataApi.md#addTagForViewOnAccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account |
+| [**addTagForViewOnAccountWithHttpInfo**](AccountMetadataApi.md#addTagForViewOnAccountWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account |
+| [**deleteTagForViewOnAccount**](AccountMetadataApi.md#deleteTagForViewOnAccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account |
+| [**deleteTagForViewOnAccountWithHttpInfo**](AccountMetadataApi.md#deleteTagForViewOnAccountWithHttpInfo) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account |
+| [**getTagsForViewOnAccount**](AccountMetadataApi.md#getTagsForViewOnAccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account |
+| [**getTagsForViewOnAccountWithHttpInfo**](AccountMetadataApi.md#getTagsForViewOnAccountWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account |
 
 
 
-## oBPv400AddTagForViewOnAccount
+## addTagForViewOnAccount
 
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems oBPv400AddTagForViewOnAccount(bankid, accountid, viewid, obPv400DeleteSystemLevelEndpointTag200Response)
+> GetTagsForViewOnAccount200ResponseTagsInner addTagForViewOnAccount(bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId)
 
 Create a tag on account
 
@@ -35,7 +35,7 @@ import com.openbankproject.api.AccountMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -57,12 +57,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
-        OBPv400DeleteSystemLevelEndpointTag200Response obPv400DeleteSystemLevelEndpointTag200Response = new OBPv400DeleteSystemLevelEndpointTag200Response(); // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+        GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId = new GetTransactionTypes200ResponseTransactionTypesInnerId(); // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
         try {
-            OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems result = apiInstance.oBPv400AddTagForViewOnAccount(bankid, accountid, viewid, obPv400DeleteSystemLevelEndpointTag200Response);
+            GetTagsForViewOnAccount200ResponseTagsInner result = apiInstance.addTagForViewOnAccount(bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountMetadataApi#oBPv400AddTagForViewOnAccount");
+            System.err.println("Exception when calling AccountMetadataApi#addTagForViewOnAccount");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -80,11 +80,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
-| **obPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)| Request body | |
+| **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 
 ### Authorization
@@ -103,9 +103,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400AddTagForViewOnAccountWithHttpInfo
+## addTagForViewOnAccountWithHttpInfo
 
-> ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> oBPv400AddTagForViewOnAccount oBPv400AddTagForViewOnAccountWithHttpInfo(bankid, accountid, viewid, obPv400DeleteSystemLevelEndpointTag200Response)
+> ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner> addTagForViewOnAccount addTagForViewOnAccountWithHttpInfo(bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId)
 
 Create a tag on account
 
@@ -126,7 +126,7 @@ import com.openbankproject.api.AccountMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -148,14 +148,14 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
-        OBPv400DeleteSystemLevelEndpointTag200Response obPv400DeleteSystemLevelEndpointTag200Response = new OBPv400DeleteSystemLevelEndpointTag200Response(); // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+        GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId = new GetTransactionTypes200ResponseTransactionTypesInnerId(); // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
         try {
-            ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> response = apiInstance.oBPv400AddTagForViewOnAccountWithHttpInfo(bankid, accountid, viewid, obPv400DeleteSystemLevelEndpointTag200Response);
+            ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner> response = apiInstance.addTagForViewOnAccountWithHttpInfo(bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountMetadataApi#oBPv400AddTagForViewOnAccount");
+            System.err.println("Exception when calling AccountMetadataApi#addTagForViewOnAccount");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -173,11 +173,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
-| **obPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)| Request body | |
+| **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)>
+ApiResponse<[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)>
 
 
 ### Authorization
@@ -197,9 +197,9 @@ ApiResponse<[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](O
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteTagForViewOnAccount
+## deleteTagForViewOnAccount
 
-> void oBPv400DeleteTagForViewOnAccount(bankid, accountid, viewid, tagid)
+> void deleteTagForViewOnAccount(bankid, accountid, viewid, tagid)
 
 Delete a tag on account
 
@@ -219,7 +219,7 @@ import com.openbankproject.api.AccountMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -243,9 +243,9 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String tagid = "tagid_example"; // String | The TAGID identifier
         try {
-            apiInstance.oBPv400DeleteTagForViewOnAccount(bankid, accountid, viewid, tagid);
+            apiInstance.deleteTagForViewOnAccount(bankid, accountid, viewid, tagid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountMetadataApi#oBPv400DeleteTagForViewOnAccount");
+            System.err.println("Exception when calling AccountMetadataApi#deleteTagForViewOnAccount");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -286,9 +286,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteTagForViewOnAccountWithHttpInfo
+## deleteTagForViewOnAccountWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteTagForViewOnAccount oBPv400DeleteTagForViewOnAccountWithHttpInfo(bankid, accountid, viewid, tagid)
+> ApiResponse<Void> deleteTagForViewOnAccount deleteTagForViewOnAccountWithHttpInfo(bankid, accountid, viewid, tagid)
 
 Delete a tag on account
 
@@ -309,7 +309,7 @@ import com.openbankproject.api.AccountMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -333,11 +333,11 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String tagid = "tagid_example"; // String | The TAGID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteTagForViewOnAccountWithHttpInfo(bankid, accountid, viewid, tagid);
+            ApiResponse<Void> response = apiInstance.deleteTagForViewOnAccountWithHttpInfo(bankid, accountid, viewid, tagid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountMetadataApi#oBPv400DeleteTagForViewOnAccount");
+            System.err.println("Exception when calling AccountMetadataApi#deleteTagForViewOnAccount");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -379,9 +379,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetTagsForViewOnAccount
+## getTagsForViewOnAccount
 
-> OBPv400GetTagsForViewOnAccount200Response oBPv400GetTagsForViewOnAccount(bankid, accountid, viewid)
+> GetTagsForViewOnAccount200Response getTagsForViewOnAccount(bankid, accountid, viewid)
 
 Get tags on account
 
@@ -401,7 +401,7 @@ import com.openbankproject.api.AccountMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -424,10 +424,10 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         try {
-            OBPv400GetTagsForViewOnAccount200Response result = apiInstance.oBPv400GetTagsForViewOnAccount(bankid, accountid, viewid);
+            GetTagsForViewOnAccount200Response result = apiInstance.getTagsForViewOnAccount(bankid, accountid, viewid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountMetadataApi#oBPv400GetTagsForViewOnAccount");
+            System.err.println("Exception when calling AccountMetadataApi#getTagsForViewOnAccount");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -448,7 +448,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200Response**](OBPv400GetTagsForViewOnAccount200Response.md)
+[**GetTagsForViewOnAccount200Response**](GetTagsForViewOnAccount200Response.md)
 
 
 ### Authorization
@@ -467,9 +467,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetTagsForViewOnAccountWithHttpInfo
+## getTagsForViewOnAccountWithHttpInfo
 
-> ApiResponse<OBPv400GetTagsForViewOnAccount200Response> oBPv400GetTagsForViewOnAccount oBPv400GetTagsForViewOnAccountWithHttpInfo(bankid, accountid, viewid)
+> ApiResponse<GetTagsForViewOnAccount200Response> getTagsForViewOnAccount getTagsForViewOnAccountWithHttpInfo(bankid, accountid, viewid)
 
 Get tags on account
 
@@ -490,7 +490,7 @@ import com.openbankproject.api.AccountMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -513,12 +513,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         try {
-            ApiResponse<OBPv400GetTagsForViewOnAccount200Response> response = apiInstance.oBPv400GetTagsForViewOnAccountWithHttpInfo(bankid, accountid, viewid);
+            ApiResponse<GetTagsForViewOnAccount200Response> response = apiInstance.getTagsForViewOnAccountWithHttpInfo(bankid, accountid, viewid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountMetadataApi#oBPv400GetTagsForViewOnAccount");
+            System.err.println("Exception when calling AccountMetadataApi#getTagsForViewOnAccount");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -539,7 +539,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetTagsForViewOnAccount200Response**](OBPv400GetTagsForViewOnAccount200Response.md)>
+ApiResponse<[**GetTagsForViewOnAccount200Response**](GetTagsForViewOnAccount200Response.md)>
 
 
 ### Authorization

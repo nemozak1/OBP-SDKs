@@ -1,16 +1,16 @@
 # \ConfirmationOfFundsServicePIISAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv310CheckFundsAvailable**](ConfirmationOfFundsServicePIISAPI.md#OBPv310CheckFundsAvailable) | **Get** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
+[**CheckFundsAvailable**](ConfirmationOfFundsServicePIISAPI.md#CheckFundsAvailable) | **Get** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
 
 
 
-## OBPv310CheckFundsAvailable
+## CheckFundsAvailable
 
-> OBPv310CheckFundsAvailable200Response OBPv310CheckFundsAvailable(ctx, bankid, accountid, viewid).Execute()
+> CheckFundsAvailable200Response CheckFundsAvailable(ctx, bankid, accountid, viewid).Execute()
 
 Check Available Funds
 
@@ -35,13 +35,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConfirmationOfFundsServicePIISAPI.OBPv310CheckFundsAvailable(context.Background(), bankid, accountid, viewid).Execute()
+	resp, r, err := apiClient.ConfirmationOfFundsServicePIISAPI.CheckFundsAvailable(context.Background(), bankid, accountid, viewid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConfirmationOfFundsServicePIISAPI.OBPv310CheckFundsAvailable``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConfirmationOfFundsServicePIISAPI.CheckFundsAvailable``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310CheckFundsAvailable`: OBPv310CheckFundsAvailable200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConfirmationOfFundsServicePIISAPI.OBPv310CheckFundsAvailable`: %v\n", resp)
+	// response from `CheckFundsAvailable`: CheckFundsAvailable200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConfirmationOfFundsServicePIISAPI.CheckFundsAvailable`: %v\n", resp)
 }
 ```
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310CheckFundsAvailableRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCheckFundsAvailableRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310CheckFundsAvailable200Response**](OBPv310CheckFundsAvailable200Response.md)
+[**CheckFundsAvailable200Response**](CheckFundsAvailable200Response.md)
 
 ### Authorization
 

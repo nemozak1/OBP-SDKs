@@ -13,12 +13,12 @@ open class DataWarehouseAPI {
      Data Warehouse Search
      
      - parameter index: (path) The INDEX identifier 
-     - parameter oBPv300DataWarehouseSearchRequest: (body) Request body 
+     - parameter dataWarehouseSearchRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+     - returns: JSONValue
      */
-    open class func oBPv300DataWarehouseSearch(index: String, oBPv300DataWarehouseSearchRequest: OBPv300DataWarehouseSearchRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage {
-        return try await oBPv300DataWarehouseSearchWithRequestBuilder(index: index, oBPv300DataWarehouseSearchRequest: oBPv300DataWarehouseSearchRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func dataWarehouseSearch(index: String, dataWarehouseSearchRequest: DataWarehouseSearchRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> JSONValue {
+        return try await dataWarehouseSearchWithRequestBuilder(index: index, dataWarehouseSearchRequest: dataWarehouseSearchRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -32,20 +32,20 @@ open class DataWarehouseAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter index: (path) The INDEX identifier 
-     - parameter oBPv300DataWarehouseSearchRequest: (body) Request body 
+     - parameter dataWarehouseSearchRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> 
+     - returns: RequestBuilder<JSONValue> 
      */
-    open class func oBPv300DataWarehouseSearchWithRequestBuilder(index: String, oBPv300DataWarehouseSearchRequest: OBPv300DataWarehouseSearchRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> {
+    open class func dataWarehouseSearchWithRequestBuilder(index: String, dataWarehouseSearchRequest: DataWarehouseSearchRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<JSONValue> {
         var localVariablePath = "/obp/v3.0.0/search/warehouse/{index}"
         let indexPreEscape = "\(APIHelper.mapValueToPathItem(index))"
         let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv300DataWarehouseSearchRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: dataWarehouseSearchRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -55,7 +55,7 @@ open class DataWarehouseAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<JSONValue>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -65,12 +65,12 @@ open class DataWarehouseAPI {
      
      - parameter index: (path) The INDEX identifier 
      - parameter field: (path) The FIELD identifier 
-     - parameter oBPv300DataWarehouseSearchRequest: (body) Request body 
+     - parameter dataWarehouseSearchRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+     - returns: JSONValue
      */
-    open class func oBPv300DataWarehouseStatistics(index: String, field: String, oBPv300DataWarehouseSearchRequest: OBPv300DataWarehouseSearchRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage {
-        return try await oBPv300DataWarehouseStatisticsWithRequestBuilder(index: index, field: field, oBPv300DataWarehouseSearchRequest: oBPv300DataWarehouseSearchRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func dataWarehouseStatistics(index: String, field: String, dataWarehouseSearchRequest: DataWarehouseSearchRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> JSONValue {
+        return try await dataWarehouseStatisticsWithRequestBuilder(index: index, field: field, dataWarehouseSearchRequest: dataWarehouseSearchRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -84,15 +84,15 @@ open class DataWarehouseAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter index: (path) The INDEX identifier 
      - parameter field: (path) The FIELD identifier 
-     - parameter oBPv300DataWarehouseSearchRequest: (body) Request body 
+     - parameter dataWarehouseSearchRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> 
+     - returns: RequestBuilder<JSONValue> 
      */
-    open class func oBPv300DataWarehouseStatisticsWithRequestBuilder(index: String, field: String, oBPv300DataWarehouseSearchRequest: OBPv300DataWarehouseSearchRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> {
+    open class func dataWarehouseStatisticsWithRequestBuilder(index: String, field: String, dataWarehouseSearchRequest: DataWarehouseSearchRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<JSONValue> {
         var localVariablePath = "/obp/v3.0.0/search/warehouse/statistics/{index}/{field}"
         let indexPreEscape = "\(APIHelper.mapValueToPathItem(index))"
         let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -101,7 +101,7 @@ open class DataWarehouseAPI {
         let fieldPostEscape = fieldPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{field}", with: fieldPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv300DataWarehouseSearchRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: dataWarehouseSearchRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -111,7 +111,7 @@ open class DataWarehouseAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<JSONValue>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

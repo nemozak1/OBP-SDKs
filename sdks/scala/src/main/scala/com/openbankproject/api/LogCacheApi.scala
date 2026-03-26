@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -16,7 +16,7 @@ import sttp.client4._
 import sttp.model.Method
 
 object LogCacheApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new LogCacheApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new LogCacheApi(baseUrl)
 }
 
 class LogCacheApi(baseUrl: String) {
@@ -32,12 +32,12 @@ class LogCacheApi(baseUrl: String) {
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv510LogCacheAllEndpoint(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], Unit]] =
+  def logCacheAllEndpoint(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v5.1.0/system/log-cache/all")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -51,12 +51,12 @@ class LogCacheApi(baseUrl: String) {
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv510LogCacheDebugEndpoint(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], Unit]] =
+  def logCacheDebugEndpoint(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v5.1.0/system/log-cache/debug")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -70,12 +70,12 @@ class LogCacheApi(baseUrl: String) {
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv510LogCacheErrorEndpoint(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], Unit]] =
+  def logCacheErrorEndpoint(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v5.1.0/system/log-cache/error")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -89,12 +89,12 @@ class LogCacheApi(baseUrl: String) {
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv510LogCacheInfoEndpoint(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], Unit]] =
+  def logCacheInfoEndpoint(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v5.1.0/system/log-cache/info")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -108,12 +108,12 @@ class LogCacheApi(baseUrl: String) {
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv510LogCacheTraceEndpoint(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], Unit]] =
+  def logCacheTraceEndpoint(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v5.1.0/system/log-cache/trace")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -127,12 +127,12 @@ class LogCacheApi(baseUrl: String) {
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv510LogCacheWarningEndpoint(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], Unit]] =
+  def logCacheWarningEndpoint(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v5.1.0/system/log-cache/warning")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
 }

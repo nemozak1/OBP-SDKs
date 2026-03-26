@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -47,10 +47,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="atmid">The ATMID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510CreateAtmAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv510CreateAtmAttributeApiResponse> OBPv510CreateAtmAttributeAsync(string bankid, string atmid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAtmAttributeApiResponse"/>&gt;</returns>
+        Task<ICreateAtmAttributeApiResponse> CreateAtmAttributeAsync(string bankid, string atmid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create ATM Attribute
@@ -60,10 +60,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="atmid">The ATMID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510CreateAtmAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv510CreateAtmAttributeApiResponse?> OBPv510CreateAtmAttributeOrDefaultAsync(string bankid, string atmid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAtmAttributeApiResponse"/>?&gt;</returns>
+        Task<ICreateAtmAttributeApiResponse?> CreateAtmAttributeOrDefaultAsync(string bankid, string atmid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete ATM Attribute
@@ -76,8 +76,8 @@ namespace OpenBankProject.Api
         /// <param name="atmid">The ATMID identifier</param>
         /// <param name="atmattributeid">The ATMATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510DeleteAtmAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv510DeleteAtmAttributeApiResponse> OBPv510DeleteAtmAttributeAsync(string bankid, string atmid, string atmattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteAtmAttributeApiResponse"/>&gt;</returns>
+        Task<IDeleteAtmAttributeApiResponse> DeleteAtmAttributeAsync(string bankid, string atmid, string atmattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete ATM Attribute
@@ -89,8 +89,8 @@ namespace OpenBankProject.Api
         /// <param name="atmid">The ATMID identifier</param>
         /// <param name="atmattributeid">The ATMATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510DeleteAtmAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv510DeleteAtmAttributeApiResponse?> OBPv510DeleteAtmAttributeOrDefaultAsync(string bankid, string atmid, string atmattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteAtmAttributeApiResponse"/>?&gt;</returns>
+        Task<IDeleteAtmAttributeApiResponse?> DeleteAtmAttributeOrDefaultAsync(string bankid, string atmid, string atmattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get ATM Attribute By ATM_ATTRIBUTE_ID
@@ -103,8 +103,8 @@ namespace OpenBankProject.Api
         /// <param name="atmid">The ATMID identifier</param>
         /// <param name="atmattributeid">The ATMATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetAtmAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv510GetAtmAttributeApiResponse> OBPv510GetAtmAttributeAsync(string bankid, string atmid, string atmattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAtmAttributeApiResponse"/>&gt;</returns>
+        Task<IGetAtmAttributeApiResponse> GetAtmAttributeAsync(string bankid, string atmid, string atmattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get ATM Attribute By ATM_ATTRIBUTE_ID
@@ -116,8 +116,8 @@ namespace OpenBankProject.Api
         /// <param name="atmid">The ATMID identifier</param>
         /// <param name="atmattributeid">The ATMATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetAtmAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv510GetAtmAttributeApiResponse?> OBPv510GetAtmAttributeOrDefaultAsync(string bankid, string atmid, string atmattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAtmAttributeApiResponse"/>?&gt;</returns>
+        Task<IGetAtmAttributeApiResponse?> GetAtmAttributeOrDefaultAsync(string bankid, string atmid, string atmattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get ATM Attributes
@@ -129,8 +129,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="atmid">The ATMID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetAtmAttributesApiResponse"/>&gt;</returns>
-        Task<IOBPv510GetAtmAttributesApiResponse> OBPv510GetAtmAttributesAsync(string bankid, string atmid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAtmAttributesApiResponse"/>&gt;</returns>
+        Task<IGetAtmAttributesApiResponse> GetAtmAttributesAsync(string bankid, string atmid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get ATM Attributes
@@ -141,8 +141,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="atmid">The ATMID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetAtmAttributesApiResponse"/>?&gt;</returns>
-        Task<IOBPv510GetAtmAttributesApiResponse?> OBPv510GetAtmAttributesOrDefaultAsync(string bankid, string atmid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAtmAttributesApiResponse"/>?&gt;</returns>
+        Task<IGetAtmAttributesApiResponse?> GetAtmAttributesOrDefaultAsync(string bankid, string atmid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update ATM Attribute
@@ -154,10 +154,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="atmid">The ATMID identifier</param>
         /// <param name="atmattributeid">The ATMATTRIBUTEID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510UpdateAtmAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv510UpdateAtmAttributeApiResponse> OBPv510UpdateAtmAttributeAsync(string bankid, string atmid, string atmattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateAtmAttributeApiResponse"/>&gt;</returns>
+        Task<IUpdateAtmAttributeApiResponse> UpdateAtmAttributeAsync(string bankid, string atmid, string atmattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update ATM Attribute
@@ -168,10 +168,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="atmid">The ATMID identifier</param>
         /// <param name="atmattributeid">The ATMATTRIBUTEID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510UpdateAtmAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv510UpdateAtmAttributeApiResponse?> OBPv510UpdateAtmAttributeOrDefaultAsync(string bankid, string atmid, string atmattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateAtmAttributeApiResponse"/>?&gt;</returns>
+        Task<IUpdateAtmAttributeApiResponse?> UpdateAtmAttributeOrDefaultAsync(string bankid, string atmid, string atmattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -182,101 +182,101 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510CreateAtmAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateAtmAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510CreateAtmAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateAtmAttribute;
 
-        internal void ExecuteOnOBPv510CreateAtmAttribute(ATMApi.OBPv510CreateAtmAttributeApiResponse apiResponse)
+        internal void ExecuteOnCreateAtmAttribute(ATMApi.CreateAtmAttributeApiResponse apiResponse)
         {
-            OnOBPv510CreateAtmAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateAtmAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510CreateAtmAttribute(Exception exception)
+        internal void ExecuteOnErrorCreateAtmAttribute(Exception exception)
         {
-            OnErrorOBPv510CreateAtmAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateAtmAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510DeleteAtmAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteAtmAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510DeleteAtmAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteAtmAttribute;
 
-        internal void ExecuteOnOBPv510DeleteAtmAttribute(ATMApi.OBPv510DeleteAtmAttributeApiResponse apiResponse)
+        internal void ExecuteOnDeleteAtmAttribute(ATMApi.DeleteAtmAttributeApiResponse apiResponse)
         {
-            OnOBPv510DeleteAtmAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteAtmAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510DeleteAtmAttribute(Exception exception)
+        internal void ExecuteOnErrorDeleteAtmAttribute(Exception exception)
         {
-            OnErrorOBPv510DeleteAtmAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteAtmAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510GetAtmAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAtmAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510GetAtmAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAtmAttribute;
 
-        internal void ExecuteOnOBPv510GetAtmAttribute(ATMApi.OBPv510GetAtmAttributeApiResponse apiResponse)
+        internal void ExecuteOnGetAtmAttribute(ATMApi.GetAtmAttributeApiResponse apiResponse)
         {
-            OnOBPv510GetAtmAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAtmAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510GetAtmAttribute(Exception exception)
+        internal void ExecuteOnErrorGetAtmAttribute(Exception exception)
         {
-            OnErrorOBPv510GetAtmAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAtmAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510GetAtmAttributes;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAtmAttributes;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510GetAtmAttributes;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAtmAttributes;
 
-        internal void ExecuteOnOBPv510GetAtmAttributes(ATMApi.OBPv510GetAtmAttributesApiResponse apiResponse)
+        internal void ExecuteOnGetAtmAttributes(ATMApi.GetAtmAttributesApiResponse apiResponse)
         {
-            OnOBPv510GetAtmAttributes?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAtmAttributes?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510GetAtmAttributes(Exception exception)
+        internal void ExecuteOnErrorGetAtmAttributes(Exception exception)
         {
-            OnErrorOBPv510GetAtmAttributes?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAtmAttributes?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510UpdateAtmAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateAtmAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510UpdateAtmAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateAtmAttribute;
 
-        internal void ExecuteOnOBPv510UpdateAtmAttribute(ATMApi.OBPv510UpdateAtmAttributeApiResponse apiResponse)
+        internal void ExecuteOnUpdateAtmAttribute(ATMApi.UpdateAtmAttributeApiResponse apiResponse)
         {
-            OnOBPv510UpdateAtmAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateAtmAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510UpdateAtmAttribute(Exception exception)
+        internal void ExecuteOnErrorUpdateAtmAttribute(Exception exception)
         {
-            OnErrorOBPv510UpdateAtmAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateAtmAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -334,16 +334,16 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv510CreateAtmAttribute(ref string bankid, ref string atmid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        partial void FormatCreateAtmAttribute(ref string bankid, ref string atmid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv510CreateAtmAttribute(string bankid, string atmid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        private void ValidateCreateAtmAttribute(string bankid, string atmid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -351,8 +351,8 @@ namespace OpenBankProject.Api
             if (atmid == null)
                 throw new ArgumentNullException(nameof(atmid));
 
-            if (oBPv510UpdateAtmAttributeRequest == null)
-                throw new ArgumentNullException(nameof(oBPv510UpdateAtmAttributeRequest));
+            if (updateAtmAttributeRequest == null)
+                throw new ArgumentNullException(nameof(updateAtmAttributeRequest));
         }
 
         /// <summary>
@@ -361,11 +361,11 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        private void AfterOBPv510CreateAtmAttributeDefaultImplementation(IOBPv510CreateAtmAttributeApiResponse apiResponseLocalVar, string bankid, string atmid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        /// <param name="updateAtmAttributeRequest"></param>
+        private void AfterCreateAtmAttributeDefaultImplementation(ICreateAtmAttributeApiResponse apiResponseLocalVar, string bankid, string atmid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510CreateAtmAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, atmid, oBPv510UpdateAtmAttributeRequest);
+            AfterCreateAtmAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, atmid, updateAtmAttributeRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -377,8 +377,8 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        partial void AfterOBPv510CreateAtmAttribute(ref bool suppressDefaultLog, IOBPv510CreateAtmAttributeApiResponse apiResponseLocalVar, string bankid, string atmid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        /// <param name="updateAtmAttributeRequest"></param>
+        partial void AfterCreateAtmAttribute(ref bool suppressDefaultLog, ICreateAtmAttributeApiResponse apiResponseLocalVar, string bankid, string atmid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -388,11 +388,11 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        private void OnErrorOBPv510CreateAtmAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        /// <param name="updateAtmAttributeRequest"></param>
+        private void OnErrorCreateAtmAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510CreateAtmAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, atmid, oBPv510UpdateAtmAttributeRequest);
+            OnErrorCreateAtmAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, atmid, updateAtmAttributeRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -406,22 +406,22 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        partial void OnErrorOBPv510CreateAtmAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        /// <param name="updateAtmAttributeRequest"></param>
+        partial void OnErrorCreateAtmAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
         /// Create ATM Attribute &lt;p&gt;Create ATM Attribute&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attribute_id&lt;/strong&gt;&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="atmid">The ATMID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510CreateAtmAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510CreateAtmAttributeApiResponse?> OBPv510CreateAtmAttributeOrDefaultAsync(string bankid, string atmid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAtmAttributeApiResponse"/>&gt;</returns>
+        public async Task<ICreateAtmAttributeApiResponse?> CreateAtmAttributeOrDefaultAsync(string bankid, string atmid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510CreateAtmAttributeAsync(bankid, atmid, oBPv510UpdateAtmAttributeRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateAtmAttributeAsync(bankid, atmid, updateAtmAttributeRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -435,18 +435,18 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="atmid">The ATMID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510CreateAtmAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510CreateAtmAttributeApiResponse> OBPv510CreateAtmAttributeAsync(string bankid, string atmid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAtmAttributeApiResponse"/>&gt;</returns>
+        public async Task<ICreateAtmAttributeApiResponse> CreateAtmAttributeAsync(string bankid, string atmid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510CreateAtmAttribute(bankid, atmid, oBPv510UpdateAtmAttributeRequest);
+                ValidateCreateAtmAttribute(bankid, atmid, updateAtmAttributeRequest);
 
-                FormatOBPv510CreateAtmAttribute(ref bankid, ref atmid, oBPv510UpdateAtmAttributeRequest);
+                FormatCreateAtmAttribute(ref bankid, ref atmid, updateAtmAttributeRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -459,16 +459,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Batmid%7D", Uri.EscapeDataString(atmid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv510UpdateAtmAttributeRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateAtmAttributeRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv510UpdateAtmAttributeRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateAtmAttributeRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -504,8 +504,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<ATMApi.OBPv510CreateAtmAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ATMApi.OBPv510CreateAtmAttributeApiResponse>();
-                        ATMApi.OBPv510CreateAtmAttributeApiResponse apiResponseLocalVar;
+                        ILogger<ATMApi.CreateAtmAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ATMApi.CreateAtmAttributeApiResponse>();
+                        ATMApi.CreateAtmAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -516,9 +516,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510CreateAtmAttributeDefaultImplementation(apiResponseLocalVar, bankid, atmid, oBPv510UpdateAtmAttributeRequest);
+                        AfterCreateAtmAttributeDefaultImplementation(apiResponseLocalVar, bankid, atmid, updateAtmAttributeRequest);
 
-                        Events.ExecuteOnOBPv510CreateAtmAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnCreateAtmAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -530,13 +530,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510CreateAtmAttributeDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes", uriBuilderLocalVar.Path, bankid, atmid, oBPv510UpdateAtmAttributeRequest);
-                Events.ExecuteOnErrorOBPv510CreateAtmAttribute(e);
+                OnErrorCreateAtmAttributeDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes", uriBuilderLocalVar.Path, bankid, atmid, updateAtmAttributeRequest);
+                Events.ExecuteOnErrorCreateAtmAttribute(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv510DeleteAtmAttribute(ref string bankid, ref string atmid, ref string atmattributeid);
+        partial void FormatDeleteAtmAttribute(ref string bankid, ref string atmid, ref string atmattributeid);
 
         /// <summary>
         /// Validates the request parameters
@@ -545,7 +545,7 @@ namespace OpenBankProject.Api
         /// <param name="atmid"></param>
         /// <param name="atmattributeid"></param>
         /// <returns></returns>
-        private void ValidateOBPv510DeleteAtmAttribute(string bankid, string atmid, string atmattributeid)
+        private void ValidateDeleteAtmAttribute(string bankid, string atmid, string atmattributeid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -564,10 +564,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
         /// <param name="atmattributeid"></param>
-        private void AfterOBPv510DeleteAtmAttributeDefaultImplementation(IOBPv510DeleteAtmAttributeApiResponse apiResponseLocalVar, string bankid, string atmid, string atmattributeid)
+        private void AfterDeleteAtmAttributeDefaultImplementation(IDeleteAtmAttributeApiResponse apiResponseLocalVar, string bankid, string atmid, string atmattributeid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510DeleteAtmAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, atmid, atmattributeid);
+            AfterDeleteAtmAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, atmid, atmattributeid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -580,7 +580,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
         /// <param name="atmattributeid"></param>
-        partial void AfterOBPv510DeleteAtmAttribute(ref bool suppressDefaultLog, IOBPv510DeleteAtmAttributeApiResponse apiResponseLocalVar, string bankid, string atmid, string atmattributeid);
+        partial void AfterDeleteAtmAttribute(ref bool suppressDefaultLog, IDeleteAtmAttributeApiResponse apiResponseLocalVar, string bankid, string atmid, string atmattributeid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -591,10 +591,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
         /// <param name="atmattributeid"></param>
-        private void OnErrorOBPv510DeleteAtmAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid, string atmattributeid)
+        private void OnErrorDeleteAtmAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid, string atmattributeid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510DeleteAtmAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, atmid, atmattributeid);
+            OnErrorDeleteAtmAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, atmid, atmattributeid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -609,7 +609,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
         /// <param name="atmattributeid"></param>
-        partial void OnErrorOBPv510DeleteAtmAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid, string atmattributeid);
+        partial void OnErrorDeleteAtmAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid, string atmattributeid);
 
         /// <summary>
         /// Delete ATM Attribute &lt;p&gt;Delete ATM Attribute&lt;/p&gt; &lt;p&gt;Delete a Atm Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ATM_ATTRIBUTE_ID&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -618,12 +618,12 @@ namespace OpenBankProject.Api
         /// <param name="atmid">The ATMID identifier</param>
         /// <param name="atmattributeid">The ATMATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510DeleteAtmAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510DeleteAtmAttributeApiResponse?> OBPv510DeleteAtmAttributeOrDefaultAsync(string bankid, string atmid, string atmattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteAtmAttributeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteAtmAttributeApiResponse?> DeleteAtmAttributeOrDefaultAsync(string bankid, string atmid, string atmattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510DeleteAtmAttributeAsync(bankid, atmid, atmattributeid, cancellationToken).ConfigureAwait(false);
+                return await DeleteAtmAttributeAsync(bankid, atmid, atmattributeid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -639,16 +639,16 @@ namespace OpenBankProject.Api
         /// <param name="atmid">The ATMID identifier</param>
         /// <param name="atmattributeid">The ATMATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510DeleteAtmAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510DeleteAtmAttributeApiResponse> OBPv510DeleteAtmAttributeAsync(string bankid, string atmid, string atmattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteAtmAttributeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteAtmAttributeApiResponse> DeleteAtmAttributeAsync(string bankid, string atmid, string atmattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510DeleteAtmAttribute(bankid, atmid, atmattributeid);
+                ValidateDeleteAtmAttribute(bankid, atmid, atmattributeid);
 
-                FormatOBPv510DeleteAtmAttribute(ref bankid, ref atmid, ref atmattributeid);
+                FormatDeleteAtmAttribute(ref bankid, ref atmid, ref atmattributeid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -667,7 +667,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -685,8 +685,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<ATMApi.OBPv510DeleteAtmAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ATMApi.OBPv510DeleteAtmAttributeApiResponse>();
-                        ATMApi.OBPv510DeleteAtmAttributeApiResponse apiResponseLocalVar;
+                        ILogger<ATMApi.DeleteAtmAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ATMApi.DeleteAtmAttributeApiResponse>();
+                        ATMApi.DeleteAtmAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -697,9 +697,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510DeleteAtmAttributeDefaultImplementation(apiResponseLocalVar, bankid, atmid, atmattributeid);
+                        AfterDeleteAtmAttributeDefaultImplementation(apiResponseLocalVar, bankid, atmid, atmattributeid);
 
-                        Events.ExecuteOnOBPv510DeleteAtmAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteAtmAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -711,13 +711,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510DeleteAtmAttributeDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}", uriBuilderLocalVar.Path, bankid, atmid, atmattributeid);
-                Events.ExecuteOnErrorOBPv510DeleteAtmAttribute(e);
+                OnErrorDeleteAtmAttributeDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}", uriBuilderLocalVar.Path, bankid, atmid, atmattributeid);
+                Events.ExecuteOnErrorDeleteAtmAttribute(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv510GetAtmAttribute(ref string bankid, ref string atmid, ref string atmattributeid);
+        partial void FormatGetAtmAttribute(ref string bankid, ref string atmid, ref string atmattributeid);
 
         /// <summary>
         /// Validates the request parameters
@@ -726,7 +726,7 @@ namespace OpenBankProject.Api
         /// <param name="atmid"></param>
         /// <param name="atmattributeid"></param>
         /// <returns></returns>
-        private void ValidateOBPv510GetAtmAttribute(string bankid, string atmid, string atmattributeid)
+        private void ValidateGetAtmAttribute(string bankid, string atmid, string atmattributeid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -745,10 +745,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
         /// <param name="atmattributeid"></param>
-        private void AfterOBPv510GetAtmAttributeDefaultImplementation(IOBPv510GetAtmAttributeApiResponse apiResponseLocalVar, string bankid, string atmid, string atmattributeid)
+        private void AfterGetAtmAttributeDefaultImplementation(IGetAtmAttributeApiResponse apiResponseLocalVar, string bankid, string atmid, string atmattributeid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510GetAtmAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, atmid, atmattributeid);
+            AfterGetAtmAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, atmid, atmattributeid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -761,7 +761,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
         /// <param name="atmattributeid"></param>
-        partial void AfterOBPv510GetAtmAttribute(ref bool suppressDefaultLog, IOBPv510GetAtmAttributeApiResponse apiResponseLocalVar, string bankid, string atmid, string atmattributeid);
+        partial void AfterGetAtmAttribute(ref bool suppressDefaultLog, IGetAtmAttributeApiResponse apiResponseLocalVar, string bankid, string atmid, string atmattributeid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -772,10 +772,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
         /// <param name="atmattributeid"></param>
-        private void OnErrorOBPv510GetAtmAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid, string atmattributeid)
+        private void OnErrorGetAtmAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid, string atmattributeid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510GetAtmAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, atmid, atmattributeid);
+            OnErrorGetAtmAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, atmid, atmattributeid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -790,7 +790,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
         /// <param name="atmattributeid"></param>
-        partial void OnErrorOBPv510GetAtmAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid, string atmattributeid);
+        partial void OnErrorGetAtmAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid, string atmattributeid);
 
         /// <summary>
         /// Get ATM Attribute By ATM_ATTRIBUTE_ID &lt;p&gt;Get ATM Attribute By ATM_ATTRIBUTE_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ATM_ATTRIBUTE_ID&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attribute_id&lt;/strong&gt;&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
@@ -799,12 +799,12 @@ namespace OpenBankProject.Api
         /// <param name="atmid">The ATMID identifier</param>
         /// <param name="atmattributeid">The ATMATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetAtmAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510GetAtmAttributeApiResponse?> OBPv510GetAtmAttributeOrDefaultAsync(string bankid, string atmid, string atmattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAtmAttributeApiResponse"/>&gt;</returns>
+        public async Task<IGetAtmAttributeApiResponse?> GetAtmAttributeOrDefaultAsync(string bankid, string atmid, string atmattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510GetAtmAttributeAsync(bankid, atmid, atmattributeid, cancellationToken).ConfigureAwait(false);
+                return await GetAtmAttributeAsync(bankid, atmid, atmattributeid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -820,16 +820,16 @@ namespace OpenBankProject.Api
         /// <param name="atmid">The ATMID identifier</param>
         /// <param name="atmattributeid">The ATMATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetAtmAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510GetAtmAttributeApiResponse> OBPv510GetAtmAttributeAsync(string bankid, string atmid, string atmattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAtmAttributeApiResponse"/>&gt;</returns>
+        public async Task<IGetAtmAttributeApiResponse> GetAtmAttributeAsync(string bankid, string atmid, string atmattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510GetAtmAttribute(bankid, atmid, atmattributeid);
+                ValidateGetAtmAttribute(bankid, atmid, atmattributeid);
 
-                FormatOBPv510GetAtmAttribute(ref bankid, ref atmid, ref atmattributeid);
+                FormatGetAtmAttribute(ref bankid, ref atmid, ref atmattributeid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -848,7 +848,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -875,8 +875,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<ATMApi.OBPv510GetAtmAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ATMApi.OBPv510GetAtmAttributeApiResponse>();
-                        ATMApi.OBPv510GetAtmAttributeApiResponse apiResponseLocalVar;
+                        ILogger<ATMApi.GetAtmAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ATMApi.GetAtmAttributeApiResponse>();
+                        ATMApi.GetAtmAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -887,9 +887,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510GetAtmAttributeDefaultImplementation(apiResponseLocalVar, bankid, atmid, atmattributeid);
+                        AfterGetAtmAttributeDefaultImplementation(apiResponseLocalVar, bankid, atmid, atmattributeid);
 
-                        Events.ExecuteOnOBPv510GetAtmAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnGetAtmAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -901,13 +901,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510GetAtmAttributeDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}", uriBuilderLocalVar.Path, bankid, atmid, atmattributeid);
-                Events.ExecuteOnErrorOBPv510GetAtmAttribute(e);
+                OnErrorGetAtmAttributeDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}", uriBuilderLocalVar.Path, bankid, atmid, atmattributeid);
+                Events.ExecuteOnErrorGetAtmAttribute(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv510GetAtmAttributes(ref string bankid, ref string atmid);
+        partial void FormatGetAtmAttributes(ref string bankid, ref string atmid);
 
         /// <summary>
         /// Validates the request parameters
@@ -915,7 +915,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
         /// <returns></returns>
-        private void ValidateOBPv510GetAtmAttributes(string bankid, string atmid)
+        private void ValidateGetAtmAttributes(string bankid, string atmid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -930,10 +930,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
-        private void AfterOBPv510GetAtmAttributesDefaultImplementation(IOBPv510GetAtmAttributesApiResponse apiResponseLocalVar, string bankid, string atmid)
+        private void AfterGetAtmAttributesDefaultImplementation(IGetAtmAttributesApiResponse apiResponseLocalVar, string bankid, string atmid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510GetAtmAttributes(ref suppressDefaultLog, apiResponseLocalVar, bankid, atmid);
+            AfterGetAtmAttributes(ref suppressDefaultLog, apiResponseLocalVar, bankid, atmid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -945,7 +945,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
-        partial void AfterOBPv510GetAtmAttributes(ref bool suppressDefaultLog, IOBPv510GetAtmAttributesApiResponse apiResponseLocalVar, string bankid, string atmid);
+        partial void AfterGetAtmAttributes(ref bool suppressDefaultLog, IGetAtmAttributesApiResponse apiResponseLocalVar, string bankid, string atmid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -955,10 +955,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
-        private void OnErrorOBPv510GetAtmAttributesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid)
+        private void OnErrorGetAtmAttributesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510GetAtmAttributes(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, atmid);
+            OnErrorGetAtmAttributes(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, atmid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -972,7 +972,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
-        partial void OnErrorOBPv510GetAtmAttributes(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid);
+        partial void OnErrorGetAtmAttributes(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid);
 
         /// <summary>
         /// Get ATM Attributes &lt;p&gt;Get ATM Attributes&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attribute_id&lt;/strong&gt;&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attributes&lt;/strong&gt;&lt;/a&gt;: atm_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
@@ -980,12 +980,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="atmid">The ATMID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetAtmAttributesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510GetAtmAttributesApiResponse?> OBPv510GetAtmAttributesOrDefaultAsync(string bankid, string atmid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAtmAttributesApiResponse"/>&gt;</returns>
+        public async Task<IGetAtmAttributesApiResponse?> GetAtmAttributesOrDefaultAsync(string bankid, string atmid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510GetAtmAttributesAsync(bankid, atmid, cancellationToken).ConfigureAwait(false);
+                return await GetAtmAttributesAsync(bankid, atmid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1000,16 +1000,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="atmid">The ATMID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetAtmAttributesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510GetAtmAttributesApiResponse> OBPv510GetAtmAttributesAsync(string bankid, string atmid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAtmAttributesApiResponse"/>&gt;</returns>
+        public async Task<IGetAtmAttributesApiResponse> GetAtmAttributesAsync(string bankid, string atmid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510GetAtmAttributes(bankid, atmid);
+                ValidateGetAtmAttributes(bankid, atmid);
 
-                FormatOBPv510GetAtmAttributes(ref bankid, ref atmid);
+                FormatGetAtmAttributes(ref bankid, ref atmid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1027,7 +1027,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1054,8 +1054,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<ATMApi.OBPv510GetAtmAttributesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ATMApi.OBPv510GetAtmAttributesApiResponse>();
-                        ATMApi.OBPv510GetAtmAttributesApiResponse apiResponseLocalVar;
+                        ILogger<ATMApi.GetAtmAttributesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ATMApi.GetAtmAttributesApiResponse>();
+                        ATMApi.GetAtmAttributesApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1066,9 +1066,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510GetAtmAttributesDefaultImplementation(apiResponseLocalVar, bankid, atmid);
+                        AfterGetAtmAttributesDefaultImplementation(apiResponseLocalVar, bankid, atmid);
 
-                        Events.ExecuteOnOBPv510GetAtmAttributes(apiResponseLocalVar);
+                        Events.ExecuteOnGetAtmAttributes(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1080,13 +1080,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510GetAtmAttributesDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes", uriBuilderLocalVar.Path, bankid, atmid);
-                Events.ExecuteOnErrorOBPv510GetAtmAttributes(e);
+                OnErrorGetAtmAttributesDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes", uriBuilderLocalVar.Path, bankid, atmid);
+                Events.ExecuteOnErrorGetAtmAttributes(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv510UpdateAtmAttribute(ref string bankid, ref string atmid, ref string atmattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        partial void FormatUpdateAtmAttribute(ref string bankid, ref string atmid, ref string atmattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -1094,9 +1094,9 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
         /// <param name="atmattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv510UpdateAtmAttribute(string bankid, string atmid, string atmattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        private void ValidateUpdateAtmAttribute(string bankid, string atmid, string atmattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1107,8 +1107,8 @@ namespace OpenBankProject.Api
             if (atmattributeid == null)
                 throw new ArgumentNullException(nameof(atmattributeid));
 
-            if (oBPv510UpdateAtmAttributeRequest == null)
-                throw new ArgumentNullException(nameof(oBPv510UpdateAtmAttributeRequest));
+            if (updateAtmAttributeRequest == null)
+                throw new ArgumentNullException(nameof(updateAtmAttributeRequest));
         }
 
         /// <summary>
@@ -1118,11 +1118,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
         /// <param name="atmattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        private void AfterOBPv510UpdateAtmAttributeDefaultImplementation(IOBPv510UpdateAtmAttributeApiResponse apiResponseLocalVar, string bankid, string atmid, string atmattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        /// <param name="updateAtmAttributeRequest"></param>
+        private void AfterUpdateAtmAttributeDefaultImplementation(IUpdateAtmAttributeApiResponse apiResponseLocalVar, string bankid, string atmid, string atmattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510UpdateAtmAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, atmid, atmattributeid, oBPv510UpdateAtmAttributeRequest);
+            AfterUpdateAtmAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, atmid, atmattributeid, updateAtmAttributeRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1135,8 +1135,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
         /// <param name="atmattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        partial void AfterOBPv510UpdateAtmAttribute(ref bool suppressDefaultLog, IOBPv510UpdateAtmAttributeApiResponse apiResponseLocalVar, string bankid, string atmid, string atmattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        /// <param name="updateAtmAttributeRequest"></param>
+        partial void AfterUpdateAtmAttribute(ref bool suppressDefaultLog, IUpdateAtmAttributeApiResponse apiResponseLocalVar, string bankid, string atmid, string atmattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1147,11 +1147,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
         /// <param name="atmattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        private void OnErrorOBPv510UpdateAtmAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid, string atmattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        /// <param name="updateAtmAttributeRequest"></param>
+        private void OnErrorUpdateAtmAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid, string atmattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510UpdateAtmAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, atmid, atmattributeid, oBPv510UpdateAtmAttributeRequest);
+            OnErrorUpdateAtmAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, atmid, atmattributeid, updateAtmAttributeRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1166,8 +1166,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="atmid"></param>
         /// <param name="atmattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        partial void OnErrorOBPv510UpdateAtmAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid, string atmattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        /// <param name="updateAtmAttributeRequest"></param>
+        partial void OnErrorUpdateAtmAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string atmid, string atmattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
         /// Update ATM Attribute &lt;p&gt;Update ATM Attribute.&lt;/p&gt; &lt;p&gt;Update an ATM Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ATM_ATTRIBUTE_ID&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attribute_id&lt;/strong&gt;&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
@@ -1175,14 +1175,14 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="atmid">The ATMID identifier</param>
         /// <param name="atmattributeid">The ATMATTRIBUTEID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510UpdateAtmAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510UpdateAtmAttributeApiResponse?> OBPv510UpdateAtmAttributeOrDefaultAsync(string bankid, string atmid, string atmattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateAtmAttributeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateAtmAttributeApiResponse?> UpdateAtmAttributeOrDefaultAsync(string bankid, string atmid, string atmattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510UpdateAtmAttributeAsync(bankid, atmid, atmattributeid, oBPv510UpdateAtmAttributeRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateAtmAttributeAsync(bankid, atmid, atmattributeid, updateAtmAttributeRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1197,18 +1197,18 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="atmid">The ATMID identifier</param>
         /// <param name="atmattributeid">The ATMATTRIBUTEID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510UpdateAtmAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510UpdateAtmAttributeApiResponse> OBPv510UpdateAtmAttributeAsync(string bankid, string atmid, string atmattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateAtmAttributeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateAtmAttributeApiResponse> UpdateAtmAttributeAsync(string bankid, string atmid, string atmattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510UpdateAtmAttribute(bankid, atmid, atmattributeid, oBPv510UpdateAtmAttributeRequest);
+                ValidateUpdateAtmAttribute(bankid, atmid, atmattributeid, updateAtmAttributeRequest);
 
-                FormatOBPv510UpdateAtmAttribute(ref bankid, ref atmid, ref atmattributeid, oBPv510UpdateAtmAttributeRequest);
+                FormatUpdateAtmAttribute(ref bankid, ref atmid, ref atmattributeid, updateAtmAttributeRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1222,16 +1222,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Batmid%7D", Uri.EscapeDataString(atmid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Batmattributeid%7D", Uri.EscapeDataString(atmattributeid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv510UpdateAtmAttributeRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateAtmAttributeRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv510UpdateAtmAttributeRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateAtmAttributeRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1267,8 +1267,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<ATMApi.OBPv510UpdateAtmAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ATMApi.OBPv510UpdateAtmAttributeApiResponse>();
-                        ATMApi.OBPv510UpdateAtmAttributeApiResponse apiResponseLocalVar;
+                        ILogger<ATMApi.UpdateAtmAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ATMApi.UpdateAtmAttributeApiResponse>();
+                        ATMApi.UpdateAtmAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1279,9 +1279,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510UpdateAtmAttributeDefaultImplementation(apiResponseLocalVar, bankid, atmid, atmattributeid, oBPv510UpdateAtmAttributeRequest);
+                        AfterUpdateAtmAttributeDefaultImplementation(apiResponseLocalVar, bankid, atmid, atmattributeid, updateAtmAttributeRequest);
 
-                        Events.ExecuteOnOBPv510UpdateAtmAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateAtmAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1293,8 +1293,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510UpdateAtmAttributeDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}", uriBuilderLocalVar.Path, bankid, atmid, atmattributeid, oBPv510UpdateAtmAttributeRequest);
-                Events.ExecuteOnErrorOBPv510UpdateAtmAttribute(e);
+                OnErrorUpdateAtmAttributeDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}", uriBuilderLocalVar.Path, bankid, atmid, atmattributeid, updateAtmAttributeRequest);
+                Events.ExecuteOnErrorUpdateAtmAttribute(e);
                 throw;
             }
         }

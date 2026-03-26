@@ -1,31 +1,31 @@
 # TransactionMetadataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv121AddCommentForViewOnTransaction**](TransactionMetadataApi.md#oBPv121AddCommentForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment |
-| [**oBPv121AddImageForViewOnTransaction**](TransactionMetadataApi.md#oBPv121AddImageForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image |
-| [**oBPv121AddTagForViewOnTransaction**](TransactionMetadataApi.md#oBPv121AddTagForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag |
-| [**oBPv121AddTransactionNarrative**](TransactionMetadataApi.md#oBPv121AddTransactionNarrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative |
-| [**oBPv121AddWhereTagForViewOnTransaction**](TransactionMetadataApi.md#oBPv121AddWhereTagForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag |
-| [**oBPv121DeleteCommentForViewOnTransaction**](TransactionMetadataApi.md#oBPv121DeleteCommentForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment |
-| [**oBPv121DeleteImageForViewOnTransaction**](TransactionMetadataApi.md#oBPv121DeleteImageForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image |
-| [**oBPv121DeleteTagForViewOnTransaction**](TransactionMetadataApi.md#oBPv121DeleteTagForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag |
-| [**oBPv121DeleteTransactionNarrative**](TransactionMetadataApi.md#oBPv121DeleteTransactionNarrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative |
-| [**oBPv121DeleteWhereTagForViewOnTransaction**](TransactionMetadataApi.md#oBPv121DeleteWhereTagForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag |
-| [**oBPv121GetCommentsForViewOnTransaction**](TransactionMetadataApi.md#oBPv121GetCommentsForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments |
-| [**oBPv121GetImagesForViewOnTransaction**](TransactionMetadataApi.md#oBPv121GetImagesForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images |
-| [**oBPv121GetTagsForViewOnTransaction**](TransactionMetadataApi.md#oBPv121GetTagsForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags |
-| [**oBPv121GetTransactionNarrative**](TransactionMetadataApi.md#oBPv121GetTransactionNarrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative |
-| [**oBPv121GetWhereTagForViewOnTransaction**](TransactionMetadataApi.md#oBPv121GetWhereTagForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag |
-| [**oBPv121UpdateTransactionNarrative**](TransactionMetadataApi.md#oBPv121UpdateTransactionNarrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative |
-| [**oBPv121UpdateWhereTagForViewOnTransaction**](TransactionMetadataApi.md#oBPv121UpdateWhereTagForViewOnTransaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag |
+| [**addCommentForViewOnTransaction**](TransactionMetadataApi.md#addCommentForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment |
+| [**addImageForViewOnTransaction**](TransactionMetadataApi.md#addImageForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image |
+| [**addTagForViewOnTransaction**](TransactionMetadataApi.md#addTagForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag |
+| [**addTransactionNarrative**](TransactionMetadataApi.md#addTransactionNarrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative |
+| [**addWhereTagForViewOnTransaction**](TransactionMetadataApi.md#addWhereTagForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag |
+| [**deleteCommentForViewOnTransaction**](TransactionMetadataApi.md#deleteCommentForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment |
+| [**deleteImageForViewOnTransaction**](TransactionMetadataApi.md#deleteImageForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image |
+| [**deleteTagForViewOnTransaction**](TransactionMetadataApi.md#deleteTagForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag |
+| [**deleteTransactionNarrative**](TransactionMetadataApi.md#deleteTransactionNarrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative |
+| [**deleteWhereTagForViewOnTransaction**](TransactionMetadataApi.md#deleteWhereTagForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag |
+| [**getCommentsForViewOnTransaction**](TransactionMetadataApi.md#getCommentsForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments |
+| [**getImagesForViewOnTransaction**](TransactionMetadataApi.md#getImagesForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images |
+| [**getTagsForViewOnTransaction**](TransactionMetadataApi.md#getTagsForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags |
+| [**getTransactionNarrative**](TransactionMetadataApi.md#getTransactionNarrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative |
+| [**getWhereTagForViewOnTransaction**](TransactionMetadataApi.md#getWhereTagForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag |
+| [**updateTransactionNarrative**](TransactionMetadataApi.md#updateTransactionNarrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative |
+| [**updateWhereTagForViewOnTransaction**](TransactionMetadataApi.md#updateWhereTagForViewOnTransaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag |
 
 
-<a id="oBPv121AddCommentForViewOnTransaction"></a>
-# **oBPv121AddCommentForViewOnTransaction**
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems oBPv121AddCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv400DeleteSystemLevelEndpointTag200Response)
+<a id="addCommentForViewOnTransaction"></a>
+# **addCommentForViewOnTransaction**
+> GetTagsForViewOnAccount200ResponseTagsInner addCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId)
 
 Add a Transaction Comment
 
@@ -42,15 +42,15 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 val transactionid : kotlin.String = transactionid_example // kotlin.String | The TRANSACTIONID identifier
-val obPv400DeleteSystemLevelEndpointTag200Response : OBPv400DeleteSystemLevelEndpointTag200Response = {type=object, properties={value={type=string}}} // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+val getTransactionTypes200ResponseTransactionTypesInnerId : GetTransactionTypes200ResponseTransactionTypesInnerId = {type=object, properties={value={type=string}}} // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 try {
-    val result : OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems = apiInstance.oBPv121AddCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv400DeleteSystemLevelEndpointTag200Response)
+    val result : GetTagsForViewOnAccount200ResponseTagsInner = apiInstance.addCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionMetadataApi#oBPv121AddCommentForViewOnTransaction")
+    println("4xx response calling TransactionMetadataApi#addCommentForViewOnTransaction")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionMetadataApi#oBPv121AddCommentForViewOnTransaction")
+    println("5xx response calling TransactionMetadataApi#addCommentForViewOnTransaction")
     e.printStackTrace()
 }
 ```
@@ -62,11 +62,11 @@ try {
 | **transactionid** | **kotlin.String**| The TRANSACTIONID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)| Request body | |
+| **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -77,17 +77,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv121AddImageForViewOnTransaction"></a>
-# **oBPv121AddImageForViewOnTransaction**
-> OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems oBPv121AddImageForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv121AddImageForViewOnTransactionRequest)
+<a id="addImageForViewOnTransaction"></a>
+# **addImageForViewOnTransaction**
+> GetTransactionByIdForBankAccount200ResponseMetadataImagesInner addImageForViewOnTransaction(bankid, accountid, viewid, transactionid, addImageForViewOnTransactionRequest)
 
 Add a Transaction Image
 
@@ -104,15 +104,15 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 val transactionid : kotlin.String = transactionid_example // kotlin.String | The TRANSACTIONID identifier
-val obPv121AddImageForViewOnTransactionRequest : OBPv121AddImageForViewOnTransactionRequest = {"type":"object","properties":{"URL":{"type":"string"},"label":{"type":"string"}}} // OBPv121AddImageForViewOnTransactionRequest | Request body
+val addImageForViewOnTransactionRequest : AddImageForViewOnTransactionRequest = {"type":"object","properties":{"URL":{"type":"string"},"label":{"type":"string"}}} // AddImageForViewOnTransactionRequest | Request body
 try {
-    val result : OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems = apiInstance.oBPv121AddImageForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv121AddImageForViewOnTransactionRequest)
+    val result : GetTransactionByIdForBankAccount200ResponseMetadataImagesInner = apiInstance.addImageForViewOnTransaction(bankid, accountid, viewid, transactionid, addImageForViewOnTransactionRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionMetadataApi#oBPv121AddImageForViewOnTransaction")
+    println("4xx response calling TransactionMetadataApi#addImageForViewOnTransaction")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionMetadataApi#oBPv121AddImageForViewOnTransaction")
+    println("5xx response calling TransactionMetadataApi#addImageForViewOnTransaction")
     e.printStackTrace()
 }
 ```
@@ -124,11 +124,11 @@ try {
 | **transactionid** | **kotlin.String**| The TRANSACTIONID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv121AddImageForViewOnTransactionRequest** | [**OBPv121AddImageForViewOnTransactionRequest**](OBPv121AddImageForViewOnTransactionRequest.md)| Request body | |
+| **addImageForViewOnTransactionRequest** | [**AddImageForViewOnTransactionRequest**](AddImageForViewOnTransactionRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems**](OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems.md)
+[**GetTransactionByIdForBankAccount200ResponseMetadataImagesInner**](GetTransactionByIdForBankAccount200ResponseMetadataImagesInner.md)
 
 ### Authorization
 
@@ -139,17 +139,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv121AddTagForViewOnTransaction"></a>
-# **oBPv121AddTagForViewOnTransaction**
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems oBPv121AddTagForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv400DeleteSystemLevelEndpointTag200Response)
+<a id="addTagForViewOnTransaction"></a>
+# **addTagForViewOnTransaction**
+> GetTagsForViewOnAccount200ResponseTagsInner addTagForViewOnTransaction(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId)
 
 Add a Transaction Tag
 
@@ -166,15 +166,15 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 val transactionid : kotlin.String = transactionid_example // kotlin.String | The TRANSACTIONID identifier
-val obPv400DeleteSystemLevelEndpointTag200Response : OBPv400DeleteSystemLevelEndpointTag200Response = {type=object, properties={value={type=string}}} // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+val getTransactionTypes200ResponseTransactionTypesInnerId : GetTransactionTypes200ResponseTransactionTypesInnerId = {type=object, properties={value={type=string}}} // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 try {
-    val result : OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems = apiInstance.oBPv121AddTagForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv400DeleteSystemLevelEndpointTag200Response)
+    val result : GetTagsForViewOnAccount200ResponseTagsInner = apiInstance.addTagForViewOnTransaction(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionMetadataApi#oBPv121AddTagForViewOnTransaction")
+    println("4xx response calling TransactionMetadataApi#addTagForViewOnTransaction")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionMetadataApi#oBPv121AddTagForViewOnTransaction")
+    println("5xx response calling TransactionMetadataApi#addTagForViewOnTransaction")
     e.printStackTrace()
 }
 ```
@@ -186,11 +186,11 @@ try {
 | **transactionid** | **kotlin.String**| The TRANSACTIONID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)| Request body | |
+| **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -201,17 +201,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv121AddTransactionNarrative"></a>
-# **oBPv121AddTransactionNarrative**
-> OBPv121UpdateTransactionNarrative200Response oBPv121AddTransactionNarrative(bankid, accountid, viewid, transactionid, obPv121GetTransactionNarrative200Response)
+<a id="addTransactionNarrative"></a>
+# **addTransactionNarrative**
+> UpdateTransactionNarrative200Response addTransactionNarrative(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response)
 
 Add a Transaction Narrative
 
@@ -228,15 +228,15 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 val transactionid : kotlin.String = transactionid_example // kotlin.String | The TRANSACTIONID identifier
-val obPv121GetTransactionNarrative200Response : OBPv121GetTransactionNarrative200Response = {type=object, properties={narrative={type=string}}} // OBPv121GetTransactionNarrative200Response | Request body
+val getTransactionNarrative200Response : GetTransactionNarrative200Response = {type=object, properties={narrative={type=string}}} // GetTransactionNarrative200Response | Request body
 try {
-    val result : OBPv121UpdateTransactionNarrative200Response = apiInstance.oBPv121AddTransactionNarrative(bankid, accountid, viewid, transactionid, obPv121GetTransactionNarrative200Response)
+    val result : UpdateTransactionNarrative200Response = apiInstance.addTransactionNarrative(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionMetadataApi#oBPv121AddTransactionNarrative")
+    println("4xx response calling TransactionMetadataApi#addTransactionNarrative")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionMetadataApi#oBPv121AddTransactionNarrative")
+    println("5xx response calling TransactionMetadataApi#addTransactionNarrative")
     e.printStackTrace()
 }
 ```
@@ -248,11 +248,11 @@ try {
 | **transactionid** | **kotlin.String**| The TRANSACTIONID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv121GetTransactionNarrative200Response** | [**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)| Request body | |
+| **getTransactionNarrative200Response** | [**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)| Request body | |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -263,17 +263,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv121AddWhereTagForViewOnTransaction"></a>
-# **oBPv121AddWhereTagForViewOnTransaction**
-> OBPv121UpdateTransactionNarrative200Response oBPv121AddWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv121UpdateWhereTagForViewOnTransactionRequest)
+<a id="addWhereTagForViewOnTransaction"></a>
+# **addWhereTagForViewOnTransaction**
+> UpdateTransactionNarrative200Response addWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest)
 
 Add a Transaction where Tag
 
@@ -290,15 +290,15 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 val transactionid : kotlin.String = transactionid_example // kotlin.String | The TRANSACTIONID identifier
-val obPv121UpdateWhereTagForViewOnTransactionRequest : OBPv121UpdateWhereTagForViewOnTransactionRequest = {type=object, properties={where={type=object, properties={longitude={type=number}, latitude={type=number}}}}} // OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
+val updateWhereTagForViewOnTransactionRequest : UpdateWhereTagForViewOnTransactionRequest = {type=object, properties={where={type=object, properties={longitude={type=number}, latitude={type=number}}}}} // UpdateWhereTagForViewOnTransactionRequest | Request body
 try {
-    val result : OBPv121UpdateTransactionNarrative200Response = apiInstance.oBPv121AddWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv121UpdateWhereTagForViewOnTransactionRequest)
+    val result : UpdateTransactionNarrative200Response = apiInstance.addWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionMetadataApi#oBPv121AddWhereTagForViewOnTransaction")
+    println("4xx response calling TransactionMetadataApi#addWhereTagForViewOnTransaction")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionMetadataApi#oBPv121AddWhereTagForViewOnTransaction")
+    println("5xx response calling TransactionMetadataApi#addWhereTagForViewOnTransaction")
     e.printStackTrace()
 }
 ```
@@ -310,11 +310,11 @@ try {
 | **transactionid** | **kotlin.String**| The TRANSACTIONID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv121UpdateWhereTagForViewOnTransactionRequest** | [**OBPv121UpdateWhereTagForViewOnTransactionRequest**](OBPv121UpdateWhereTagForViewOnTransactionRequest.md)| Request body | |
+| **updateWhereTagForViewOnTransactionRequest** | [**UpdateWhereTagForViewOnTransactionRequest**](UpdateWhereTagForViewOnTransactionRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -325,17 +325,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv121DeleteCommentForViewOnTransaction"></a>
-# **oBPv121DeleteCommentForViewOnTransaction**
-> oBPv121DeleteCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, commentid)
+<a id="deleteCommentForViewOnTransaction"></a>
+# **deleteCommentForViewOnTransaction**
+> deleteCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, commentid)
 
 Delete a Transaction Comment
 
@@ -354,12 +354,12 @@ val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identi
 val transactionid : kotlin.String = transactionid_example // kotlin.String | The TRANSACTIONID identifier
 val commentid : kotlin.String = commentid_example // kotlin.String | The COMMENTID identifier
 try {
-    apiInstance.oBPv121DeleteCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, commentid)
+    apiInstance.deleteCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, commentid)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionMetadataApi#oBPv121DeleteCommentForViewOnTransaction")
+    println("4xx response calling TransactionMetadataApi#deleteCommentForViewOnTransaction")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionMetadataApi#oBPv121DeleteCommentForViewOnTransaction")
+    println("5xx response calling TransactionMetadataApi#deleteCommentForViewOnTransaction")
     e.printStackTrace()
 }
 ```
@@ -386,17 +386,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv121DeleteImageForViewOnTransaction"></a>
-# **oBPv121DeleteImageForViewOnTransaction**
-> oBPv121DeleteImageForViewOnTransaction(bankid, accountid, viewid, transactionid, imageid)
+<a id="deleteImageForViewOnTransaction"></a>
+# **deleteImageForViewOnTransaction**
+> deleteImageForViewOnTransaction(bankid, accountid, viewid, transactionid, imageid)
 
 Delete a Transaction Image
 
@@ -415,12 +415,12 @@ val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identi
 val transactionid : kotlin.String = transactionid_example // kotlin.String | The TRANSACTIONID identifier
 val imageid : kotlin.String = imageid_example // kotlin.String | The IMAGEID identifier
 try {
-    apiInstance.oBPv121DeleteImageForViewOnTransaction(bankid, accountid, viewid, transactionid, imageid)
+    apiInstance.deleteImageForViewOnTransaction(bankid, accountid, viewid, transactionid, imageid)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionMetadataApi#oBPv121DeleteImageForViewOnTransaction")
+    println("4xx response calling TransactionMetadataApi#deleteImageForViewOnTransaction")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionMetadataApi#oBPv121DeleteImageForViewOnTransaction")
+    println("5xx response calling TransactionMetadataApi#deleteImageForViewOnTransaction")
     e.printStackTrace()
 }
 ```
@@ -447,17 +447,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv121DeleteTagForViewOnTransaction"></a>
-# **oBPv121DeleteTagForViewOnTransaction**
-> oBPv121DeleteTagForViewOnTransaction(bankid, accountid, viewid, transactionid, tagid)
+<a id="deleteTagForViewOnTransaction"></a>
+# **deleteTagForViewOnTransaction**
+> deleteTagForViewOnTransaction(bankid, accountid, viewid, transactionid, tagid)
 
 Delete a Transaction Tag
 
@@ -476,12 +476,12 @@ val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identi
 val transactionid : kotlin.String = transactionid_example // kotlin.String | The TRANSACTIONID identifier
 val tagid : kotlin.String = tagid_example // kotlin.String | The TAGID identifier
 try {
-    apiInstance.oBPv121DeleteTagForViewOnTransaction(bankid, accountid, viewid, transactionid, tagid)
+    apiInstance.deleteTagForViewOnTransaction(bankid, accountid, viewid, transactionid, tagid)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionMetadataApi#oBPv121DeleteTagForViewOnTransaction")
+    println("4xx response calling TransactionMetadataApi#deleteTagForViewOnTransaction")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionMetadataApi#oBPv121DeleteTagForViewOnTransaction")
+    println("5xx response calling TransactionMetadataApi#deleteTagForViewOnTransaction")
     e.printStackTrace()
 }
 ```
@@ -508,9 +508,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv121DeleteTransactionNarrative"></a>
-# **oBPv121DeleteTransactionNarrative**
-> oBPv121DeleteTransactionNarrative(bankid, accountid, viewid, transactionid)
+<a id="deleteTransactionNarrative"></a>
+# **deleteTransactionNarrative**
+> deleteTransactionNarrative(bankid, accountid, viewid, transactionid)
 
 Delete a Transaction Narrative
 
@@ -528,12 +528,12 @@ val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNT
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 val transactionid : kotlin.String = transactionid_example // kotlin.String | The TRANSACTIONID identifier
 try {
-    apiInstance.oBPv121DeleteTransactionNarrative(bankid, accountid, viewid, transactionid)
+    apiInstance.deleteTransactionNarrative(bankid, accountid, viewid, transactionid)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionMetadataApi#oBPv121DeleteTransactionNarrative")
+    println("4xx response calling TransactionMetadataApi#deleteTransactionNarrative")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionMetadataApi#oBPv121DeleteTransactionNarrative")
+    println("5xx response calling TransactionMetadataApi#deleteTransactionNarrative")
     e.printStackTrace()
 }
 ```
@@ -559,17 +559,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv121DeleteWhereTagForViewOnTransaction"></a>
-# **oBPv121DeleteWhereTagForViewOnTransaction**
-> oBPv121DeleteWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid)
+<a id="deleteWhereTagForViewOnTransaction"></a>
+# **deleteWhereTagForViewOnTransaction**
+> deleteWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid)
 
 Delete a Transaction Tag
 
@@ -587,12 +587,12 @@ val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNT
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 val transactionid : kotlin.String = transactionid_example // kotlin.String | The TRANSACTIONID identifier
 try {
-    apiInstance.oBPv121DeleteWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid)
+    apiInstance.deleteWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionMetadataApi#oBPv121DeleteWhereTagForViewOnTransaction")
+    println("4xx response calling TransactionMetadataApi#deleteWhereTagForViewOnTransaction")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionMetadataApi#oBPv121DeleteWhereTagForViewOnTransaction")
+    println("5xx response calling TransactionMetadataApi#deleteWhereTagForViewOnTransaction")
     e.printStackTrace()
 }
 ```
@@ -618,17 +618,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv121GetCommentsForViewOnTransaction"></a>
-# **oBPv121GetCommentsForViewOnTransaction**
-> OBPv121GetCommentsForViewOnTransaction200Response oBPv121GetCommentsForViewOnTransaction(bankid, accountid, viewid, transactionid)
+<a id="getCommentsForViewOnTransaction"></a>
+# **getCommentsForViewOnTransaction**
+> GetCommentsForViewOnTransaction200Response getCommentsForViewOnTransaction(bankid, accountid, viewid, transactionid)
 
 Get Transaction Comments
 
@@ -646,13 +646,13 @@ val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNT
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 val transactionid : kotlin.String = transactionid_example // kotlin.String | The TRANSACTIONID identifier
 try {
-    val result : OBPv121GetCommentsForViewOnTransaction200Response = apiInstance.oBPv121GetCommentsForViewOnTransaction(bankid, accountid, viewid, transactionid)
+    val result : GetCommentsForViewOnTransaction200Response = apiInstance.getCommentsForViewOnTransaction(bankid, accountid, viewid, transactionid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionMetadataApi#oBPv121GetCommentsForViewOnTransaction")
+    println("4xx response calling TransactionMetadataApi#getCommentsForViewOnTransaction")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionMetadataApi#oBPv121GetCommentsForViewOnTransaction")
+    println("5xx response calling TransactionMetadataApi#getCommentsForViewOnTransaction")
     e.printStackTrace()
 }
 ```
@@ -667,7 +667,7 @@ try {
 
 ### Return type
 
-[**OBPv121GetCommentsForViewOnTransaction200Response**](OBPv121GetCommentsForViewOnTransaction200Response.md)
+[**GetCommentsForViewOnTransaction200Response**](GetCommentsForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -678,17 +678,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv121GetImagesForViewOnTransaction"></a>
-# **oBPv121GetImagesForViewOnTransaction**
-> OBPv121GetImagesForViewOnTransaction200Response oBPv121GetImagesForViewOnTransaction(bankid, accountid, viewid, transactionid)
+<a id="getImagesForViewOnTransaction"></a>
+# **getImagesForViewOnTransaction**
+> GetImagesForViewOnTransaction200Response getImagesForViewOnTransaction(bankid, accountid, viewid, transactionid)
 
 Get Transaction Images
 
@@ -706,13 +706,13 @@ val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNT
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 val transactionid : kotlin.String = transactionid_example // kotlin.String | The TRANSACTIONID identifier
 try {
-    val result : OBPv121GetImagesForViewOnTransaction200Response = apiInstance.oBPv121GetImagesForViewOnTransaction(bankid, accountid, viewid, transactionid)
+    val result : GetImagesForViewOnTransaction200Response = apiInstance.getImagesForViewOnTransaction(bankid, accountid, viewid, transactionid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionMetadataApi#oBPv121GetImagesForViewOnTransaction")
+    println("4xx response calling TransactionMetadataApi#getImagesForViewOnTransaction")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionMetadataApi#oBPv121GetImagesForViewOnTransaction")
+    println("5xx response calling TransactionMetadataApi#getImagesForViewOnTransaction")
     e.printStackTrace()
 }
 ```
@@ -727,7 +727,7 @@ try {
 
 ### Return type
 
-[**OBPv121GetImagesForViewOnTransaction200Response**](OBPv121GetImagesForViewOnTransaction200Response.md)
+[**GetImagesForViewOnTransaction200Response**](GetImagesForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -738,17 +738,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv121GetTagsForViewOnTransaction"></a>
-# **oBPv121GetTagsForViewOnTransaction**
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems oBPv121GetTagsForViewOnTransaction(bankid, accountid, viewid, transactionid)
+<a id="getTagsForViewOnTransaction"></a>
+# **getTagsForViewOnTransaction**
+> GetTagsForViewOnAccount200ResponseTagsInner getTagsForViewOnTransaction(bankid, accountid, viewid, transactionid)
 
 Get Transaction Tags
 
@@ -766,13 +766,13 @@ val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNT
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 val transactionid : kotlin.String = transactionid_example // kotlin.String | The TRANSACTIONID identifier
 try {
-    val result : OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems = apiInstance.oBPv121GetTagsForViewOnTransaction(bankid, accountid, viewid, transactionid)
+    val result : GetTagsForViewOnAccount200ResponseTagsInner = apiInstance.getTagsForViewOnTransaction(bankid, accountid, viewid, transactionid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionMetadataApi#oBPv121GetTagsForViewOnTransaction")
+    println("4xx response calling TransactionMetadataApi#getTagsForViewOnTransaction")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionMetadataApi#oBPv121GetTagsForViewOnTransaction")
+    println("5xx response calling TransactionMetadataApi#getTagsForViewOnTransaction")
     e.printStackTrace()
 }
 ```
@@ -787,7 +787,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -798,9 +798,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv121GetTransactionNarrative"></a>
-# **oBPv121GetTransactionNarrative**
-> OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative(bankid, accountid, viewid, transactionid)
+<a id="getTransactionNarrative"></a>
+# **getTransactionNarrative**
+> GetTransactionNarrative200Response getTransactionNarrative(bankid, accountid, viewid, transactionid)
 
 Get a Transaction Narrative
 
@@ -818,13 +818,13 @@ val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNT
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 val transactionid : kotlin.String = transactionid_example // kotlin.String | The TRANSACTIONID identifier
 try {
-    val result : OBPv121GetTransactionNarrative200Response = apiInstance.oBPv121GetTransactionNarrative(bankid, accountid, viewid, transactionid)
+    val result : GetTransactionNarrative200Response = apiInstance.getTransactionNarrative(bankid, accountid, viewid, transactionid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionMetadataApi#oBPv121GetTransactionNarrative")
+    println("4xx response calling TransactionMetadataApi#getTransactionNarrative")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionMetadataApi#oBPv121GetTransactionNarrative")
+    println("5xx response calling TransactionMetadataApi#getTransactionNarrative")
     e.printStackTrace()
 }
 ```
@@ -839,7 +839,7 @@ try {
 
 ### Return type
 
-[**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)
+[**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -850,9 +850,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv121GetWhereTagForViewOnTransaction"></a>
-# **oBPv121GetWhereTagForViewOnTransaction**
-> OBPv121GetWhereTagForViewOnTransaction200Response oBPv121GetWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid)
+<a id="getWhereTagForViewOnTransaction"></a>
+# **getWhereTagForViewOnTransaction**
+> GetWhereTagForViewOnTransaction200Response getWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid)
 
 Get a Transaction where Tag
 
@@ -870,13 +870,13 @@ val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNT
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 val transactionid : kotlin.String = transactionid_example // kotlin.String | The TRANSACTIONID identifier
 try {
-    val result : OBPv121GetWhereTagForViewOnTransaction200Response = apiInstance.oBPv121GetWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid)
+    val result : GetWhereTagForViewOnTransaction200Response = apiInstance.getWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionMetadataApi#oBPv121GetWhereTagForViewOnTransaction")
+    println("4xx response calling TransactionMetadataApi#getWhereTagForViewOnTransaction")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionMetadataApi#oBPv121GetWhereTagForViewOnTransaction")
+    println("5xx response calling TransactionMetadataApi#getWhereTagForViewOnTransaction")
     e.printStackTrace()
 }
 ```
@@ -891,7 +891,7 @@ try {
 
 ### Return type
 
-[**OBPv121GetWhereTagForViewOnTransaction200Response**](OBPv121GetWhereTagForViewOnTransaction200Response.md)
+[**GetWhereTagForViewOnTransaction200Response**](GetWhereTagForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -902,9 +902,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv121UpdateTransactionNarrative"></a>
-# **oBPv121UpdateTransactionNarrative**
-> OBPv121UpdateTransactionNarrative200Response oBPv121UpdateTransactionNarrative(bankid, accountid, viewid, transactionid, obPv121GetTransactionNarrative200Response)
+<a id="updateTransactionNarrative"></a>
+# **updateTransactionNarrative**
+> UpdateTransactionNarrative200Response updateTransactionNarrative(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response)
 
 Update a Transaction Narrative
 
@@ -921,15 +921,15 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 val transactionid : kotlin.String = transactionid_example // kotlin.String | The TRANSACTIONID identifier
-val obPv121GetTransactionNarrative200Response : OBPv121GetTransactionNarrative200Response = {"type":"object","properties":{"narrative":{"type":"string"}}} // OBPv121GetTransactionNarrative200Response | Request body
+val getTransactionNarrative200Response : GetTransactionNarrative200Response = {"type":"object","properties":{"narrative":{"type":"string"}}} // GetTransactionNarrative200Response | Request body
 try {
-    val result : OBPv121UpdateTransactionNarrative200Response = apiInstance.oBPv121UpdateTransactionNarrative(bankid, accountid, viewid, transactionid, obPv121GetTransactionNarrative200Response)
+    val result : UpdateTransactionNarrative200Response = apiInstance.updateTransactionNarrative(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionMetadataApi#oBPv121UpdateTransactionNarrative")
+    println("4xx response calling TransactionMetadataApi#updateTransactionNarrative")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionMetadataApi#oBPv121UpdateTransactionNarrative")
+    println("5xx response calling TransactionMetadataApi#updateTransactionNarrative")
     e.printStackTrace()
 }
 ```
@@ -941,11 +941,11 @@ try {
 | **transactionid** | **kotlin.String**| The TRANSACTIONID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv121GetTransactionNarrative200Response** | [**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)| Request body | |
+| **getTransactionNarrative200Response** | [**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)| Request body | |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -956,9 +956,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv121UpdateWhereTagForViewOnTransaction"></a>
-# **oBPv121UpdateWhereTagForViewOnTransaction**
-> OBPv121UpdateTransactionNarrative200Response oBPv121UpdateWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv121UpdateWhereTagForViewOnTransactionRequest)
+<a id="updateWhereTagForViewOnTransaction"></a>
+# **updateWhereTagForViewOnTransaction**
+> UpdateTransactionNarrative200Response updateWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest)
 
 Update a Transaction where Tag
 
@@ -975,15 +975,15 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 val transactionid : kotlin.String = transactionid_example // kotlin.String | The TRANSACTIONID identifier
-val obPv121UpdateWhereTagForViewOnTransactionRequest : OBPv121UpdateWhereTagForViewOnTransactionRequest = {"type":"object","properties":{"where":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}} // OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
+val updateWhereTagForViewOnTransactionRequest : UpdateWhereTagForViewOnTransactionRequest = {"type":"object","properties":{"where":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}} // UpdateWhereTagForViewOnTransactionRequest | Request body
 try {
-    val result : OBPv121UpdateTransactionNarrative200Response = apiInstance.oBPv121UpdateWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv121UpdateWhereTagForViewOnTransactionRequest)
+    val result : UpdateTransactionNarrative200Response = apiInstance.updateWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionMetadataApi#oBPv121UpdateWhereTagForViewOnTransaction")
+    println("4xx response calling TransactionMetadataApi#updateWhereTagForViewOnTransaction")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionMetadataApi#oBPv121UpdateWhereTagForViewOnTransaction")
+    println("5xx response calling TransactionMetadataApi#updateWhereTagForViewOnTransaction")
     e.printStackTrace()
 }
 ```
@@ -995,11 +995,11 @@ try {
 | **transactionid** | **kotlin.String**| The TRANSACTIONID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv121UpdateWhereTagForViewOnTransactionRequest** | [**OBPv121UpdateWhereTagForViewOnTransactionRequest**](OBPv121UpdateWhereTagForViewOnTransactionRequest.md)| Request body | |
+| **updateWhereTagForViewOnTransactionRequest** | [**UpdateWhereTagForViewOnTransactionRequest**](UpdateWhereTagForViewOnTransactionRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1010,8 +1010,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

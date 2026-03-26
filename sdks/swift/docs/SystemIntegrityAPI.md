@@ -1,19 +1,19 @@
 # SystemIntegrityAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv510AccountAccessUniqueIndexCheck**](SystemIntegrityAPI.md#obpv510accountaccessuniqueindexcheck) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access
-[**oBPv510AccountCurrencyCheck**](SystemIntegrityAPI.md#obpv510accountcurrencycheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies
-[**oBPv510CustomViewNamesCheck**](SystemIntegrityAPI.md#obpv510customviewnamescheck) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names
-[**oBPv510OrphanedAccountCheck**](SystemIntegrityAPI.md#obpv510orphanedaccountcheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts
-[**oBPv510SystemViewNamesCheck**](SystemIntegrityAPI.md#obpv510systemviewnamescheck) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names
+[**accountAccessUniqueIndexCheck**](SystemIntegrityAPI.md#accountaccessuniqueindexcheck) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access
+[**accountCurrencyCheck**](SystemIntegrityAPI.md#accountcurrencycheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies
+[**customViewNamesCheck**](SystemIntegrityAPI.md#customviewnamescheck) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names
+[**orphanedAccountCheck**](SystemIntegrityAPI.md#orphanedaccountcheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts
+[**systemViewNamesCheck**](SystemIntegrityAPI.md#systemviewnamescheck) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names
 
 
-# **oBPv510AccountAccessUniqueIndexCheck**
+# **accountAccessUniqueIndexCheck**
 ```swift
-    open class func oBPv510AccountAccessUniqueIndexCheck(completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+    open class func accountAccessUniqueIndexCheck(completion: @escaping (_ data: AccountAccessUniqueIndexCheck200Response?, _ error: Error?) -> Void)
 ```
 
 Check Unique Index at Account Access
@@ -27,7 +27,7 @@ import OBPSwift
 
 
 // Check Unique Index at Account Access
-SystemIntegrityAPI.oBPv510AccountAccessUniqueIndexCheck() { (response, error) in
+SystemIntegrityAPI.accountAccessUniqueIndexCheck() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -44,7 +44,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -57,9 +57,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510AccountCurrencyCheck**
+# **accountCurrencyCheck**
 ```swift
-    open class func oBPv510AccountCurrencyCheck(bankid: String, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+    open class func accountCurrencyCheck(bankid: String, completion: @escaping (_ data: AccountAccessUniqueIndexCheck200Response?, _ error: Error?) -> Void)
 ```
 
 Check for Sensible Currencies
@@ -74,7 +74,7 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 
 // Check for Sensible Currencies
-SystemIntegrityAPI.oBPv510AccountCurrencyCheck(bankid: bankid) { (response, error) in
+SystemIntegrityAPI.accountCurrencyCheck(bankid: bankid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -107,9 +107,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510CustomViewNamesCheck**
+# **customViewNamesCheck**
 ```swift
-    open class func oBPv510CustomViewNamesCheck(completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+    open class func customViewNamesCheck(completion: @escaping (_ data: AccountAccessUniqueIndexCheck200Response?, _ error: Error?) -> Void)
 ```
 
 Check Custom View Names
@@ -123,7 +123,7 @@ import OBPSwift
 
 
 // Check Custom View Names
-SystemIntegrityAPI.oBPv510CustomViewNamesCheck() { (response, error) in
+SystemIntegrityAPI.customViewNamesCheck() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -140,7 +140,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -153,9 +153,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510OrphanedAccountCheck**
+# **orphanedAccountCheck**
 ```swift
-    open class func oBPv510OrphanedAccountCheck(bankid: String, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+    open class func orphanedAccountCheck(bankid: String, completion: @escaping (_ data: AccountAccessUniqueIndexCheck200Response?, _ error: Error?) -> Void)
 ```
 
 Check for Orphaned Accounts
@@ -170,7 +170,7 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 
 // Check for Orphaned Accounts
-SystemIntegrityAPI.oBPv510OrphanedAccountCheck(bankid: bankid) { (response, error) in
+SystemIntegrityAPI.orphanedAccountCheck(bankid: bankid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -203,9 +203,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510SystemViewNamesCheck**
+# **systemViewNamesCheck**
 ```swift
-    open class func oBPv510SystemViewNamesCheck(completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+    open class func systemViewNamesCheck(completion: @escaping (_ data: AccountAccessUniqueIndexCheck200Response?, _ error: Error?) -> Void)
 ```
 
 Check System View Names
@@ -219,7 +219,7 @@ import OBPSwift
 
 
 // Check System View Names
-SystemIntegrityAPI.oBPv510SystemViewNamesCheck() { (response, error) in
+SystemIntegrityAPI.systemViewNamesCheck() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -236,7 +236,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 

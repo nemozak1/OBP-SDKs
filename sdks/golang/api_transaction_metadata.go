@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,28 +24,28 @@ import (
 // TransactionMetadataAPIService TransactionMetadataAPI service
 type TransactionMetadataAPIService service
 
-type ApiOBPv121AddCommentForViewOnTransactionRequest struct {
+type ApiAddCommentForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionMetadataAPIService
 	bankid string
 	accountid string
 	viewid string
 	transactionid string
-	oBPv400DeleteSystemLevelEndpointTag200Response *OBPv400DeleteSystemLevelEndpointTag200Response
+	getTransactionTypes200ResponseTransactionTypesInnerId *GetTransactionTypes200ResponseTransactionTypesInnerId
 }
 
 // Request body
-func (r ApiOBPv121AddCommentForViewOnTransactionRequest) OBPv400DeleteSystemLevelEndpointTag200Response(oBPv400DeleteSystemLevelEndpointTag200Response OBPv400DeleteSystemLevelEndpointTag200Response) ApiOBPv121AddCommentForViewOnTransactionRequest {
-	r.oBPv400DeleteSystemLevelEndpointTag200Response = &oBPv400DeleteSystemLevelEndpointTag200Response
+func (r ApiAddCommentForViewOnTransactionRequest) GetTransactionTypes200ResponseTransactionTypesInnerId(getTransactionTypes200ResponseTransactionTypesInnerId GetTransactionTypes200ResponseTransactionTypesInnerId) ApiAddCommentForViewOnTransactionRequest {
+	r.getTransactionTypes200ResponseTransactionTypesInnerId = &getTransactionTypes200ResponseTransactionTypesInnerId
 	return r
 }
 
-func (r ApiOBPv121AddCommentForViewOnTransactionRequest) Execute() (*OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, *http.Response, error) {
-	return r.ApiService.OBPv121AddCommentForViewOnTransactionExecute(r)
+func (r ApiAddCommentForViewOnTransactionRequest) Execute() (*GetTagsForViewOnAccount200ResponseTagsInner, *http.Response, error) {
+	return r.ApiService.AddCommentForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121AddCommentForViewOnTransaction Add a Transaction Comment
+AddCommentForViewOnTransaction Add a Transaction Comment
 
 <p>Posts a comment about a transaction TRANSACTION_ID on a <a href="#1_2_1-getViewsForBankAccount">view</a> VIEW_ID.</p>
 <p>${authenticationRequiredMessage(false)}</p>
@@ -72,10 +72,10 @@ OBPv121AddCommentForViewOnTransaction Add a Transaction Comment
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121AddCommentForViewOnTransactionRequest
+ @return ApiAddCommentForViewOnTransactionRequest
 */
-func (a *TransactionMetadataAPIService) OBPv121AddCommentForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121AddCommentForViewOnTransactionRequest {
-	return ApiOBPv121AddCommentForViewOnTransactionRequest{
+func (a *TransactionMetadataAPIService) AddCommentForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiAddCommentForViewOnTransactionRequest {
+	return ApiAddCommentForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -86,16 +86,16 @@ func (a *TransactionMetadataAPIService) OBPv121AddCommentForViewOnTransaction(ct
 }
 
 // Execute executes the request
-//  @return OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
-func (a *TransactionMetadataAPIService) OBPv121AddCommentForViewOnTransactionExecute(r ApiOBPv121AddCommentForViewOnTransactionRequest) (*OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, *http.Response, error) {
+//  @return GetTagsForViewOnAccount200ResponseTagsInner
+func (a *TransactionMetadataAPIService) AddCommentForViewOnTransactionExecute(r ApiAddCommentForViewOnTransactionRequest) (*GetTagsForViewOnAccount200ResponseTagsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+		localVarReturnValue  *GetTagsForViewOnAccount200ResponseTagsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.OBPv121AddCommentForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.AddCommentForViewOnTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -109,8 +109,8 @@ func (a *TransactionMetadataAPIService) OBPv121AddCommentForViewOnTransactionExe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400DeleteSystemLevelEndpointTag200Response == nil {
-		return localVarReturnValue, nil, reportError("oBPv400DeleteSystemLevelEndpointTag200Response is required and must be specified")
+	if r.getTransactionTypes200ResponseTransactionTypesInnerId == nil {
+		return localVarReturnValue, nil, reportError("getTransactionTypes200ResponseTransactionTypesInnerId is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -131,7 +131,7 @@ func (a *TransactionMetadataAPIService) OBPv121AddCommentForViewOnTransactionExe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400DeleteSystemLevelEndpointTag200Response
+	localVarPostBody = r.getTransactionTypes200ResponseTransactionTypesInnerId
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -156,7 +156,7 @@ func (a *TransactionMetadataAPIService) OBPv121AddCommentForViewOnTransactionExe
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -197,28 +197,28 @@ func (a *TransactionMetadataAPIService) OBPv121AddCommentForViewOnTransactionExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121AddImageForViewOnTransactionRequest struct {
+type ApiAddImageForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionMetadataAPIService
 	bankid string
 	accountid string
 	viewid string
 	transactionid string
-	oBPv121AddImageForViewOnTransactionRequest *OBPv121AddImageForViewOnTransactionRequest
+	addImageForViewOnTransactionRequest *AddImageForViewOnTransactionRequest
 }
 
 // Request body
-func (r ApiOBPv121AddImageForViewOnTransactionRequest) OBPv121AddImageForViewOnTransactionRequest(oBPv121AddImageForViewOnTransactionRequest OBPv121AddImageForViewOnTransactionRequest) ApiOBPv121AddImageForViewOnTransactionRequest {
-	r.oBPv121AddImageForViewOnTransactionRequest = &oBPv121AddImageForViewOnTransactionRequest
+func (r ApiAddImageForViewOnTransactionRequest) AddImageForViewOnTransactionRequest(addImageForViewOnTransactionRequest AddImageForViewOnTransactionRequest) ApiAddImageForViewOnTransactionRequest {
+	r.addImageForViewOnTransactionRequest = &addImageForViewOnTransactionRequest
 	return r
 }
 
-func (r ApiOBPv121AddImageForViewOnTransactionRequest) Execute() (*OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems, *http.Response, error) {
-	return r.ApiService.OBPv121AddImageForViewOnTransactionExecute(r)
+func (r ApiAddImageForViewOnTransactionRequest) Execute() (*GetTransactionByIdForBankAccount200ResponseMetadataImagesInner, *http.Response, error) {
+	return r.ApiService.AddImageForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121AddImageForViewOnTransaction Add a Transaction Image
+AddImageForViewOnTransaction Add a Transaction Image
 
 <p>Posts an image about a transaction TRANSACTION_ID on a <a href="#1_2_1-getViewsForBankAccount">view</a> VIEW_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -246,10 +246,10 @@ OBPv121AddImageForViewOnTransaction Add a Transaction Image
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121AddImageForViewOnTransactionRequest
+ @return ApiAddImageForViewOnTransactionRequest
 */
-func (a *TransactionMetadataAPIService) OBPv121AddImageForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121AddImageForViewOnTransactionRequest {
-	return ApiOBPv121AddImageForViewOnTransactionRequest{
+func (a *TransactionMetadataAPIService) AddImageForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiAddImageForViewOnTransactionRequest {
+	return ApiAddImageForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -260,16 +260,16 @@ func (a *TransactionMetadataAPIService) OBPv121AddImageForViewOnTransaction(ctx 
 }
 
 // Execute executes the request
-//  @return OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems
-func (a *TransactionMetadataAPIService) OBPv121AddImageForViewOnTransactionExecute(r ApiOBPv121AddImageForViewOnTransactionRequest) (*OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems, *http.Response, error) {
+//  @return GetTransactionByIdForBankAccount200ResponseMetadataImagesInner
+func (a *TransactionMetadataAPIService) AddImageForViewOnTransactionExecute(r ApiAddImageForViewOnTransactionRequest) (*GetTransactionByIdForBankAccount200ResponseMetadataImagesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems
+		localVarReturnValue  *GetTransactionByIdForBankAccount200ResponseMetadataImagesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.OBPv121AddImageForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.AddImageForViewOnTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -283,8 +283,8 @@ func (a *TransactionMetadataAPIService) OBPv121AddImageForViewOnTransactionExecu
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv121AddImageForViewOnTransactionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121AddImageForViewOnTransactionRequest is required and must be specified")
+	if r.addImageForViewOnTransactionRequest == nil {
+		return localVarReturnValue, nil, reportError("addImageForViewOnTransactionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -305,7 +305,7 @@ func (a *TransactionMetadataAPIService) OBPv121AddImageForViewOnTransactionExecu
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv121AddImageForViewOnTransactionRequest
+	localVarPostBody = r.addImageForViewOnTransactionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -330,7 +330,7 @@ func (a *TransactionMetadataAPIService) OBPv121AddImageForViewOnTransactionExecu
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -371,28 +371,28 @@ func (a *TransactionMetadataAPIService) OBPv121AddImageForViewOnTransactionExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121AddTagForViewOnTransactionRequest struct {
+type ApiAddTagForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionMetadataAPIService
 	bankid string
 	accountid string
 	viewid string
 	transactionid string
-	oBPv400DeleteSystemLevelEndpointTag200Response *OBPv400DeleteSystemLevelEndpointTag200Response
+	getTransactionTypes200ResponseTransactionTypesInnerId *GetTransactionTypes200ResponseTransactionTypesInnerId
 }
 
 // Request body
-func (r ApiOBPv121AddTagForViewOnTransactionRequest) OBPv400DeleteSystemLevelEndpointTag200Response(oBPv400DeleteSystemLevelEndpointTag200Response OBPv400DeleteSystemLevelEndpointTag200Response) ApiOBPv121AddTagForViewOnTransactionRequest {
-	r.oBPv400DeleteSystemLevelEndpointTag200Response = &oBPv400DeleteSystemLevelEndpointTag200Response
+func (r ApiAddTagForViewOnTransactionRequest) GetTransactionTypes200ResponseTransactionTypesInnerId(getTransactionTypes200ResponseTransactionTypesInnerId GetTransactionTypes200ResponseTransactionTypesInnerId) ApiAddTagForViewOnTransactionRequest {
+	r.getTransactionTypes200ResponseTransactionTypesInnerId = &getTransactionTypes200ResponseTransactionTypesInnerId
 	return r
 }
 
-func (r ApiOBPv121AddTagForViewOnTransactionRequest) Execute() (*OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, *http.Response, error) {
-	return r.ApiService.OBPv121AddTagForViewOnTransactionExecute(r)
+func (r ApiAddTagForViewOnTransactionRequest) Execute() (*GetTagsForViewOnAccount200ResponseTagsInner, *http.Response, error) {
+	return r.ApiService.AddTagForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121AddTagForViewOnTransaction Add a Transaction Tag
+AddTagForViewOnTransaction Add a Transaction Tag
 
 <p>Posts a tag about a transaction TRANSACTION_ID on a <a href="#1_2_1-getViewsForBankAccount">view</a> VIEW_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -418,10 +418,10 @@ OBPv121AddTagForViewOnTransaction Add a Transaction Tag
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121AddTagForViewOnTransactionRequest
+ @return ApiAddTagForViewOnTransactionRequest
 */
-func (a *TransactionMetadataAPIService) OBPv121AddTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121AddTagForViewOnTransactionRequest {
-	return ApiOBPv121AddTagForViewOnTransactionRequest{
+func (a *TransactionMetadataAPIService) AddTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiAddTagForViewOnTransactionRequest {
+	return ApiAddTagForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -432,16 +432,16 @@ func (a *TransactionMetadataAPIService) OBPv121AddTagForViewOnTransaction(ctx co
 }
 
 // Execute executes the request
-//  @return OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
-func (a *TransactionMetadataAPIService) OBPv121AddTagForViewOnTransactionExecute(r ApiOBPv121AddTagForViewOnTransactionRequest) (*OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, *http.Response, error) {
+//  @return GetTagsForViewOnAccount200ResponseTagsInner
+func (a *TransactionMetadataAPIService) AddTagForViewOnTransactionExecute(r ApiAddTagForViewOnTransactionRequest) (*GetTagsForViewOnAccount200ResponseTagsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+		localVarReturnValue  *GetTagsForViewOnAccount200ResponseTagsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.OBPv121AddTagForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.AddTagForViewOnTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -455,8 +455,8 @@ func (a *TransactionMetadataAPIService) OBPv121AddTagForViewOnTransactionExecute
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400DeleteSystemLevelEndpointTag200Response == nil {
-		return localVarReturnValue, nil, reportError("oBPv400DeleteSystemLevelEndpointTag200Response is required and must be specified")
+	if r.getTransactionTypes200ResponseTransactionTypesInnerId == nil {
+		return localVarReturnValue, nil, reportError("getTransactionTypes200ResponseTransactionTypesInnerId is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -477,7 +477,7 @@ func (a *TransactionMetadataAPIService) OBPv121AddTagForViewOnTransactionExecute
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400DeleteSystemLevelEndpointTag200Response
+	localVarPostBody = r.getTransactionTypes200ResponseTransactionTypesInnerId
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -502,7 +502,7 @@ func (a *TransactionMetadataAPIService) OBPv121AddTagForViewOnTransactionExecute
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -543,28 +543,28 @@ func (a *TransactionMetadataAPIService) OBPv121AddTagForViewOnTransactionExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121AddTransactionNarrativeRequest struct {
+type ApiAddTransactionNarrativeRequest struct {
 	ctx context.Context
 	ApiService *TransactionMetadataAPIService
 	bankid string
 	accountid string
 	viewid string
 	transactionid string
-	oBPv121GetTransactionNarrative200Response *OBPv121GetTransactionNarrative200Response
+	getTransactionNarrative200Response *GetTransactionNarrative200Response
 }
 
 // Request body
-func (r ApiOBPv121AddTransactionNarrativeRequest) OBPv121GetTransactionNarrative200Response(oBPv121GetTransactionNarrative200Response OBPv121GetTransactionNarrative200Response) ApiOBPv121AddTransactionNarrativeRequest {
-	r.oBPv121GetTransactionNarrative200Response = &oBPv121GetTransactionNarrative200Response
+func (r ApiAddTransactionNarrativeRequest) GetTransactionNarrative200Response(getTransactionNarrative200Response GetTransactionNarrative200Response) ApiAddTransactionNarrativeRequest {
+	r.getTransactionNarrative200Response = &getTransactionNarrative200Response
 	return r
 }
 
-func (r ApiOBPv121AddTransactionNarrativeRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121AddTransactionNarrativeExecute(r)
+func (r ApiAddTransactionNarrativeRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.AddTransactionNarrativeExecute(r)
 }
 
 /*
-OBPv121AddTransactionNarrative Add a Transaction Narrative
+AddTransactionNarrative Add a Transaction Narrative
 
 <p>Creates a description of the transaction TRANSACTION_ID.</p>
 <p>Note: Unlike other items of metadata, there is only one &quot;narrative&quot; per transaction accross all views.<br />
@@ -587,10 +587,10 @@ Authentication is required if the view is not public.</p>
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121AddTransactionNarrativeRequest
+ @return ApiAddTransactionNarrativeRequest
 */
-func (a *TransactionMetadataAPIService) OBPv121AddTransactionNarrative(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121AddTransactionNarrativeRequest {
-	return ApiOBPv121AddTransactionNarrativeRequest{
+func (a *TransactionMetadataAPIService) AddTransactionNarrative(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiAddTransactionNarrativeRequest {
+	return ApiAddTransactionNarrativeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -601,16 +601,16 @@ func (a *TransactionMetadataAPIService) OBPv121AddTransactionNarrative(ctx conte
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *TransactionMetadataAPIService) OBPv121AddTransactionNarrativeExecute(r ApiOBPv121AddTransactionNarrativeRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *TransactionMetadataAPIService) AddTransactionNarrativeExecute(r ApiAddTransactionNarrativeRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.OBPv121AddTransactionNarrative")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.AddTransactionNarrative")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -624,8 +624,8 @@ func (a *TransactionMetadataAPIService) OBPv121AddTransactionNarrativeExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv121GetTransactionNarrative200Response == nil {
-		return localVarReturnValue, nil, reportError("oBPv121GetTransactionNarrative200Response is required and must be specified")
+	if r.getTransactionNarrative200Response == nil {
+		return localVarReturnValue, nil, reportError("getTransactionNarrative200Response is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -646,7 +646,7 @@ func (a *TransactionMetadataAPIService) OBPv121AddTransactionNarrativeExecute(r 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv121GetTransactionNarrative200Response
+	localVarPostBody = r.getTransactionNarrative200Response
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -671,7 +671,7 @@ func (a *TransactionMetadataAPIService) OBPv121AddTransactionNarrativeExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -712,28 +712,28 @@ func (a *TransactionMetadataAPIService) OBPv121AddTransactionNarrativeExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121AddWhereTagForViewOnTransactionRequest struct {
+type ApiAddWhereTagForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionMetadataAPIService
 	bankid string
 	accountid string
 	viewid string
 	transactionid string
-	oBPv121UpdateWhereTagForViewOnTransactionRequest *OBPv121UpdateWhereTagForViewOnTransactionRequest
+	updateWhereTagForViewOnTransactionRequest *UpdateWhereTagForViewOnTransactionRequest
 }
 
 // Request body
-func (r ApiOBPv121AddWhereTagForViewOnTransactionRequest) OBPv121UpdateWhereTagForViewOnTransactionRequest(oBPv121UpdateWhereTagForViewOnTransactionRequest OBPv121UpdateWhereTagForViewOnTransactionRequest) ApiOBPv121AddWhereTagForViewOnTransactionRequest {
-	r.oBPv121UpdateWhereTagForViewOnTransactionRequest = &oBPv121UpdateWhereTagForViewOnTransactionRequest
+func (r ApiAddWhereTagForViewOnTransactionRequest) UpdateWhereTagForViewOnTransactionRequest(updateWhereTagForViewOnTransactionRequest UpdateWhereTagForViewOnTransactionRequest) ApiAddWhereTagForViewOnTransactionRequest {
+	r.updateWhereTagForViewOnTransactionRequest = &updateWhereTagForViewOnTransactionRequest
 	return r
 }
 
-func (r ApiOBPv121AddWhereTagForViewOnTransactionRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121AddWhereTagForViewOnTransactionExecute(r)
+func (r ApiAddWhereTagForViewOnTransactionRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.AddWhereTagForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121AddWhereTagForViewOnTransaction Add a Transaction where Tag
+AddWhereTagForViewOnTransaction Add a Transaction where Tag
 
 <p>Creates a &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href="#1_2_1-getViewsForBankAccount">view</a>.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -756,10 +756,10 @@ OBPv121AddWhereTagForViewOnTransaction Add a Transaction where Tag
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121AddWhereTagForViewOnTransactionRequest
+ @return ApiAddWhereTagForViewOnTransactionRequest
 */
-func (a *TransactionMetadataAPIService) OBPv121AddWhereTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121AddWhereTagForViewOnTransactionRequest {
-	return ApiOBPv121AddWhereTagForViewOnTransactionRequest{
+func (a *TransactionMetadataAPIService) AddWhereTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiAddWhereTagForViewOnTransactionRequest {
+	return ApiAddWhereTagForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -770,16 +770,16 @@ func (a *TransactionMetadataAPIService) OBPv121AddWhereTagForViewOnTransaction(c
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *TransactionMetadataAPIService) OBPv121AddWhereTagForViewOnTransactionExecute(r ApiOBPv121AddWhereTagForViewOnTransactionRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *TransactionMetadataAPIService) AddWhereTagForViewOnTransactionExecute(r ApiAddWhereTagForViewOnTransactionRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.OBPv121AddWhereTagForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.AddWhereTagForViewOnTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -793,8 +793,8 @@ func (a *TransactionMetadataAPIService) OBPv121AddWhereTagForViewOnTransactionEx
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv121UpdateWhereTagForViewOnTransactionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121UpdateWhereTagForViewOnTransactionRequest is required and must be specified")
+	if r.updateWhereTagForViewOnTransactionRequest == nil {
+		return localVarReturnValue, nil, reportError("updateWhereTagForViewOnTransactionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -815,7 +815,7 @@ func (a *TransactionMetadataAPIService) OBPv121AddWhereTagForViewOnTransactionEx
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv121UpdateWhereTagForViewOnTransactionRequest
+	localVarPostBody = r.updateWhereTagForViewOnTransactionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -840,7 +840,7 @@ func (a *TransactionMetadataAPIService) OBPv121AddWhereTagForViewOnTransactionEx
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -881,7 +881,7 @@ func (a *TransactionMetadataAPIService) OBPv121AddWhereTagForViewOnTransactionEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteCommentForViewOnTransactionRequest struct {
+type ApiDeleteCommentForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionMetadataAPIService
 	bankid string
@@ -891,12 +891,12 @@ type ApiOBPv121DeleteCommentForViewOnTransactionRequest struct {
 	commentid string
 }
 
-func (r ApiOBPv121DeleteCommentForViewOnTransactionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteCommentForViewOnTransactionExecute(r)
+func (r ApiDeleteCommentForViewOnTransactionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCommentForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121DeleteCommentForViewOnTransaction Delete a Transaction Comment
+DeleteCommentForViewOnTransaction Delete a Transaction Comment
 
 <p>Delete the comment COMMENT_ID about the transaction TRANSACTION_ID made on <a href="#1_2_1-getViewsForBankAccount">view</a>.</p>
 <p>Authentication via OAuth is required. The user must either have owner privileges for this account, or must be the user that posted the comment.</p>
@@ -916,10 +916,10 @@ OBPv121DeleteCommentForViewOnTransaction Delete a Transaction Comment
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
  @param commentid The COMMENTID identifier
- @return ApiOBPv121DeleteCommentForViewOnTransactionRequest
+ @return ApiDeleteCommentForViewOnTransactionRequest
 */
-func (a *TransactionMetadataAPIService) OBPv121DeleteCommentForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string, commentid string) ApiOBPv121DeleteCommentForViewOnTransactionRequest {
-	return ApiOBPv121DeleteCommentForViewOnTransactionRequest{
+func (a *TransactionMetadataAPIService) DeleteCommentForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string, commentid string) ApiDeleteCommentForViewOnTransactionRequest {
+	return ApiDeleteCommentForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -931,14 +931,14 @@ func (a *TransactionMetadataAPIService) OBPv121DeleteCommentForViewOnTransaction
 }
 
 // Execute executes the request
-func (a *TransactionMetadataAPIService) OBPv121DeleteCommentForViewOnTransactionExecute(r ApiOBPv121DeleteCommentForViewOnTransactionRequest) (*http.Response, error) {
+func (a *TransactionMetadataAPIService) DeleteCommentForViewOnTransactionExecute(r ApiDeleteCommentForViewOnTransactionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.OBPv121DeleteCommentForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.DeleteCommentForViewOnTransaction")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -995,7 +995,7 @@ func (a *TransactionMetadataAPIService) OBPv121DeleteCommentForViewOnTransaction
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1027,7 +1027,7 @@ func (a *TransactionMetadataAPIService) OBPv121DeleteCommentForViewOnTransaction
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteImageForViewOnTransactionRequest struct {
+type ApiDeleteImageForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionMetadataAPIService
 	bankid string
@@ -1037,12 +1037,12 @@ type ApiOBPv121DeleteImageForViewOnTransactionRequest struct {
 	imageid string
 }
 
-func (r ApiOBPv121DeleteImageForViewOnTransactionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteImageForViewOnTransactionExecute(r)
+func (r ApiDeleteImageForViewOnTransactionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteImageForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121DeleteImageForViewOnTransaction Delete a Transaction Image
+DeleteImageForViewOnTransaction Delete a Transaction Image
 
 <p>Deletes the image IMAGE_ID about the transaction TRANSACTION_ID made on <a href="#1_2_1-getViewsForBankAccount">view</a>.</p>
 <p>Authentication via OAuth is required. The user must either have owner privileges for this account, or must be the user that posted the image.</p>
@@ -1062,10 +1062,10 @@ OBPv121DeleteImageForViewOnTransaction Delete a Transaction Image
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
  @param imageid The IMAGEID identifier
- @return ApiOBPv121DeleteImageForViewOnTransactionRequest
+ @return ApiDeleteImageForViewOnTransactionRequest
 */
-func (a *TransactionMetadataAPIService) OBPv121DeleteImageForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string, imageid string) ApiOBPv121DeleteImageForViewOnTransactionRequest {
-	return ApiOBPv121DeleteImageForViewOnTransactionRequest{
+func (a *TransactionMetadataAPIService) DeleteImageForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string, imageid string) ApiDeleteImageForViewOnTransactionRequest {
+	return ApiDeleteImageForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1077,14 +1077,14 @@ func (a *TransactionMetadataAPIService) OBPv121DeleteImageForViewOnTransaction(c
 }
 
 // Execute executes the request
-func (a *TransactionMetadataAPIService) OBPv121DeleteImageForViewOnTransactionExecute(r ApiOBPv121DeleteImageForViewOnTransactionRequest) (*http.Response, error) {
+func (a *TransactionMetadataAPIService) DeleteImageForViewOnTransactionExecute(r ApiDeleteImageForViewOnTransactionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.OBPv121DeleteImageForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.DeleteImageForViewOnTransaction")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1141,7 +1141,7 @@ func (a *TransactionMetadataAPIService) OBPv121DeleteImageForViewOnTransactionEx
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1173,7 +1173,7 @@ func (a *TransactionMetadataAPIService) OBPv121DeleteImageForViewOnTransactionEx
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteTagForViewOnTransactionRequest struct {
+type ApiDeleteTagForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionMetadataAPIService
 	bankid string
@@ -1183,12 +1183,12 @@ type ApiOBPv121DeleteTagForViewOnTransactionRequest struct {
 	tagid string
 }
 
-func (r ApiOBPv121DeleteTagForViewOnTransactionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteTagForViewOnTransactionExecute(r)
+func (r ApiDeleteTagForViewOnTransactionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteTagForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121DeleteTagForViewOnTransaction Delete a Transaction Tag
+DeleteTagForViewOnTransaction Delete a Transaction Tag
 
 <p>Deletes the tag TAG_ID about the transaction TRANSACTION_ID made on <a href="#1_2_1-getViewsForBankAccount">view</a>.<br />
 Authentication via OAuth is required. The user must either have owner privileges for this account,<br />
@@ -1209,10 +1209,10 @@ or must be the user that posted the tag.</p>
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
  @param tagid The TAGID identifier
- @return ApiOBPv121DeleteTagForViewOnTransactionRequest
+ @return ApiDeleteTagForViewOnTransactionRequest
 */
-func (a *TransactionMetadataAPIService) OBPv121DeleteTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string, tagid string) ApiOBPv121DeleteTagForViewOnTransactionRequest {
-	return ApiOBPv121DeleteTagForViewOnTransactionRequest{
+func (a *TransactionMetadataAPIService) DeleteTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string, tagid string) ApiDeleteTagForViewOnTransactionRequest {
+	return ApiDeleteTagForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1224,14 +1224,14 @@ func (a *TransactionMetadataAPIService) OBPv121DeleteTagForViewOnTransaction(ctx
 }
 
 // Execute executes the request
-func (a *TransactionMetadataAPIService) OBPv121DeleteTagForViewOnTransactionExecute(r ApiOBPv121DeleteTagForViewOnTransactionRequest) (*http.Response, error) {
+func (a *TransactionMetadataAPIService) DeleteTagForViewOnTransactionExecute(r ApiDeleteTagForViewOnTransactionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.OBPv121DeleteTagForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.DeleteTagForViewOnTransaction")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1292,7 +1292,7 @@ func (a *TransactionMetadataAPIService) OBPv121DeleteTagForViewOnTransactionExec
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteTransactionNarrativeRequest struct {
+type ApiDeleteTransactionNarrativeRequest struct {
 	ctx context.Context
 	ApiService *TransactionMetadataAPIService
 	bankid string
@@ -1301,12 +1301,12 @@ type ApiOBPv121DeleteTransactionNarrativeRequest struct {
 	transactionid string
 }
 
-func (r ApiOBPv121DeleteTransactionNarrativeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteTransactionNarrativeExecute(r)
+func (r ApiDeleteTransactionNarrativeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteTransactionNarrativeExecute(r)
 }
 
 /*
-OBPv121DeleteTransactionNarrative Delete a Transaction Narrative
+DeleteTransactionNarrative Delete a Transaction Narrative
 
 <p>Deletes the description of the transaction TRANSACTION_ID.</p>
 <p>Authentication via OAuth is required if the view is not public.</p>
@@ -1324,10 +1324,10 @@ OBPv121DeleteTransactionNarrative Delete a Transaction Narrative
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121DeleteTransactionNarrativeRequest
+ @return ApiDeleteTransactionNarrativeRequest
 */
-func (a *TransactionMetadataAPIService) OBPv121DeleteTransactionNarrative(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121DeleteTransactionNarrativeRequest {
-	return ApiOBPv121DeleteTransactionNarrativeRequest{
+func (a *TransactionMetadataAPIService) DeleteTransactionNarrative(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiDeleteTransactionNarrativeRequest {
+	return ApiDeleteTransactionNarrativeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1338,14 +1338,14 @@ func (a *TransactionMetadataAPIService) OBPv121DeleteTransactionNarrative(ctx co
 }
 
 // Execute executes the request
-func (a *TransactionMetadataAPIService) OBPv121DeleteTransactionNarrativeExecute(r ApiOBPv121DeleteTransactionNarrativeRequest) (*http.Response, error) {
+func (a *TransactionMetadataAPIService) DeleteTransactionNarrativeExecute(r ApiDeleteTransactionNarrativeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.OBPv121DeleteTransactionNarrative")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.DeleteTransactionNarrative")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1401,7 +1401,7 @@ func (a *TransactionMetadataAPIService) OBPv121DeleteTransactionNarrativeExecute
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1433,7 +1433,7 @@ func (a *TransactionMetadataAPIService) OBPv121DeleteTransactionNarrativeExecute
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteWhereTagForViewOnTransactionRequest struct {
+type ApiDeleteWhereTagForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionMetadataAPIService
 	bankid string
@@ -1442,12 +1442,12 @@ type ApiOBPv121DeleteWhereTagForViewOnTransactionRequest struct {
 	transactionid string
 }
 
-func (r ApiOBPv121DeleteWhereTagForViewOnTransactionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteWhereTagForViewOnTransactionExecute(r)
+func (r ApiDeleteWhereTagForViewOnTransactionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteWhereTagForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121DeleteWhereTagForViewOnTransaction Delete a Transaction Tag
+DeleteWhereTagForViewOnTransaction Delete a Transaction Tag
 
 <p>Deletes the where tag of the transaction TRANSACTION_ID made on <a href="#1_2_1-getViewsForBankAccount">view</a>.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1465,10 +1465,10 @@ OBPv121DeleteWhereTagForViewOnTransaction Delete a Transaction Tag
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121DeleteWhereTagForViewOnTransactionRequest
+ @return ApiDeleteWhereTagForViewOnTransactionRequest
 */
-func (a *TransactionMetadataAPIService) OBPv121DeleteWhereTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121DeleteWhereTagForViewOnTransactionRequest {
-	return ApiOBPv121DeleteWhereTagForViewOnTransactionRequest{
+func (a *TransactionMetadataAPIService) DeleteWhereTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiDeleteWhereTagForViewOnTransactionRequest {
+	return ApiDeleteWhereTagForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1479,14 +1479,14 @@ func (a *TransactionMetadataAPIService) OBPv121DeleteWhereTagForViewOnTransactio
 }
 
 // Execute executes the request
-func (a *TransactionMetadataAPIService) OBPv121DeleteWhereTagForViewOnTransactionExecute(r ApiOBPv121DeleteWhereTagForViewOnTransactionRequest) (*http.Response, error) {
+func (a *TransactionMetadataAPIService) DeleteWhereTagForViewOnTransactionExecute(r ApiDeleteWhereTagForViewOnTransactionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.OBPv121DeleteWhereTagForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.DeleteWhereTagForViewOnTransaction")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1542,7 +1542,7 @@ func (a *TransactionMetadataAPIService) OBPv121DeleteWhereTagForViewOnTransactio
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1574,7 +1574,7 @@ func (a *TransactionMetadataAPIService) OBPv121DeleteWhereTagForViewOnTransactio
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121GetCommentsForViewOnTransactionRequest struct {
+type ApiGetCommentsForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionMetadataAPIService
 	bankid string
@@ -1583,12 +1583,12 @@ type ApiOBPv121GetCommentsForViewOnTransactionRequest struct {
 	transactionid string
 }
 
-func (r ApiOBPv121GetCommentsForViewOnTransactionRequest) Execute() (*OBPv121GetCommentsForViewOnTransaction200Response, *http.Response, error) {
-	return r.ApiService.OBPv121GetCommentsForViewOnTransactionExecute(r)
+func (r ApiGetCommentsForViewOnTransactionRequest) Execute() (*GetCommentsForViewOnTransaction200Response, *http.Response, error) {
+	return r.ApiService.GetCommentsForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121GetCommentsForViewOnTransaction Get Transaction Comments
+GetCommentsForViewOnTransaction Get Transaction Comments
 
 <p>Returns the transaction TRANSACTION_ID comments made on a <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).</p>
 <p>Authentication via OAuth is required if the view is not public.</p>
@@ -1613,10 +1613,10 @@ OBPv121GetCommentsForViewOnTransaction Get Transaction Comments
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121GetCommentsForViewOnTransactionRequest
+ @return ApiGetCommentsForViewOnTransactionRequest
 */
-func (a *TransactionMetadataAPIService) OBPv121GetCommentsForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121GetCommentsForViewOnTransactionRequest {
-	return ApiOBPv121GetCommentsForViewOnTransactionRequest{
+func (a *TransactionMetadataAPIService) GetCommentsForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiGetCommentsForViewOnTransactionRequest {
+	return ApiGetCommentsForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1627,16 +1627,16 @@ func (a *TransactionMetadataAPIService) OBPv121GetCommentsForViewOnTransaction(c
 }
 
 // Execute executes the request
-//  @return OBPv121GetCommentsForViewOnTransaction200Response
-func (a *TransactionMetadataAPIService) OBPv121GetCommentsForViewOnTransactionExecute(r ApiOBPv121GetCommentsForViewOnTransactionRequest) (*OBPv121GetCommentsForViewOnTransaction200Response, *http.Response, error) {
+//  @return GetCommentsForViewOnTransaction200Response
+func (a *TransactionMetadataAPIService) GetCommentsForViewOnTransactionExecute(r ApiGetCommentsForViewOnTransactionRequest) (*GetCommentsForViewOnTransaction200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121GetCommentsForViewOnTransaction200Response
+		localVarReturnValue  *GetCommentsForViewOnTransaction200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.OBPv121GetCommentsForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.GetCommentsForViewOnTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1692,7 +1692,7 @@ func (a *TransactionMetadataAPIService) OBPv121GetCommentsForViewOnTransactionEx
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1733,7 +1733,7 @@ func (a *TransactionMetadataAPIService) OBPv121GetCommentsForViewOnTransactionEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121GetImagesForViewOnTransactionRequest struct {
+type ApiGetImagesForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionMetadataAPIService
 	bankid string
@@ -1742,12 +1742,12 @@ type ApiOBPv121GetImagesForViewOnTransactionRequest struct {
 	transactionid string
 }
 
-func (r ApiOBPv121GetImagesForViewOnTransactionRequest) Execute() (*OBPv121GetImagesForViewOnTransaction200Response, *http.Response, error) {
-	return r.ApiService.OBPv121GetImagesForViewOnTransactionExecute(r)
+func (r ApiGetImagesForViewOnTransactionRequest) Execute() (*GetImagesForViewOnTransaction200Response, *http.Response, error) {
+	return r.ApiService.GetImagesForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121GetImagesForViewOnTransaction Get Transaction Images
+GetImagesForViewOnTransaction Get Transaction Images
 
 <p>Returns the transaction TRANSACTION_ID images made on a <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
 Authentication via OAuth is required if the view is not public.</p>
@@ -1773,10 +1773,10 @@ Authentication via OAuth is required if the view is not public.</p>
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121GetImagesForViewOnTransactionRequest
+ @return ApiGetImagesForViewOnTransactionRequest
 */
-func (a *TransactionMetadataAPIService) OBPv121GetImagesForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121GetImagesForViewOnTransactionRequest {
-	return ApiOBPv121GetImagesForViewOnTransactionRequest{
+func (a *TransactionMetadataAPIService) GetImagesForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiGetImagesForViewOnTransactionRequest {
+	return ApiGetImagesForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1787,16 +1787,16 @@ func (a *TransactionMetadataAPIService) OBPv121GetImagesForViewOnTransaction(ctx
 }
 
 // Execute executes the request
-//  @return OBPv121GetImagesForViewOnTransaction200Response
-func (a *TransactionMetadataAPIService) OBPv121GetImagesForViewOnTransactionExecute(r ApiOBPv121GetImagesForViewOnTransactionRequest) (*OBPv121GetImagesForViewOnTransaction200Response, *http.Response, error) {
+//  @return GetImagesForViewOnTransaction200Response
+func (a *TransactionMetadataAPIService) GetImagesForViewOnTransactionExecute(r ApiGetImagesForViewOnTransactionRequest) (*GetImagesForViewOnTransaction200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121GetImagesForViewOnTransaction200Response
+		localVarReturnValue  *GetImagesForViewOnTransaction200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.OBPv121GetImagesForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.GetImagesForViewOnTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1852,7 +1852,7 @@ func (a *TransactionMetadataAPIService) OBPv121GetImagesForViewOnTransactionExec
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1893,7 +1893,7 @@ func (a *TransactionMetadataAPIService) OBPv121GetImagesForViewOnTransactionExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121GetTagsForViewOnTransactionRequest struct {
+type ApiGetTagsForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionMetadataAPIService
 	bankid string
@@ -1902,12 +1902,12 @@ type ApiOBPv121GetTagsForViewOnTransactionRequest struct {
 	transactionid string
 }
 
-func (r ApiOBPv121GetTagsForViewOnTransactionRequest) Execute() (*OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, *http.Response, error) {
-	return r.ApiService.OBPv121GetTagsForViewOnTransactionExecute(r)
+func (r ApiGetTagsForViewOnTransactionRequest) Execute() (*GetTagsForViewOnAccount200ResponseTagsInner, *http.Response, error) {
+	return r.ApiService.GetTagsForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121GetTagsForViewOnTransaction Get Transaction Tags
+GetTagsForViewOnTransaction Get Transaction Tags
 
 <p>Returns the transaction TRANSACTION_ID tags made on a <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
 Authentication via OAuth is required if the view is not public.</p>
@@ -1931,10 +1931,10 @@ Authentication via OAuth is required if the view is not public.</p>
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121GetTagsForViewOnTransactionRequest
+ @return ApiGetTagsForViewOnTransactionRequest
 */
-func (a *TransactionMetadataAPIService) OBPv121GetTagsForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121GetTagsForViewOnTransactionRequest {
-	return ApiOBPv121GetTagsForViewOnTransactionRequest{
+func (a *TransactionMetadataAPIService) GetTagsForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiGetTagsForViewOnTransactionRequest {
+	return ApiGetTagsForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1945,16 +1945,16 @@ func (a *TransactionMetadataAPIService) OBPv121GetTagsForViewOnTransaction(ctx c
 }
 
 // Execute executes the request
-//  @return OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
-func (a *TransactionMetadataAPIService) OBPv121GetTagsForViewOnTransactionExecute(r ApiOBPv121GetTagsForViewOnTransactionRequest) (*OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, *http.Response, error) {
+//  @return GetTagsForViewOnAccount200ResponseTagsInner
+func (a *TransactionMetadataAPIService) GetTagsForViewOnTransactionExecute(r ApiGetTagsForViewOnTransactionRequest) (*GetTagsForViewOnAccount200ResponseTagsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+		localVarReturnValue  *GetTagsForViewOnAccount200ResponseTagsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.OBPv121GetTagsForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.GetTagsForViewOnTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2023,7 +2023,7 @@ func (a *TransactionMetadataAPIService) OBPv121GetTagsForViewOnTransactionExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121GetTransactionNarrativeRequest struct {
+type ApiGetTransactionNarrativeRequest struct {
 	ctx context.Context
 	ApiService *TransactionMetadataAPIService
 	bankid string
@@ -2032,12 +2032,12 @@ type ApiOBPv121GetTransactionNarrativeRequest struct {
 	transactionid string
 }
 
-func (r ApiOBPv121GetTransactionNarrativeRequest) Execute() (*OBPv121GetTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121GetTransactionNarrativeExecute(r)
+func (r ApiGetTransactionNarrativeRequest) Execute() (*GetTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.GetTransactionNarrativeExecute(r)
 }
 
 /*
-OBPv121GetTransactionNarrative Get a Transaction Narrative
+GetTransactionNarrative Get a Transaction Narrative
 
 <p>Returns the account owner description of the transaction <a href="#1_2_1-getViewsForBankAccount">moderated</a> by the view.</p>
 <p>Authentication via OAuth is required if the view is not public.</p>
@@ -2056,10 +2056,10 @@ OBPv121GetTransactionNarrative Get a Transaction Narrative
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121GetTransactionNarrativeRequest
+ @return ApiGetTransactionNarrativeRequest
 */
-func (a *TransactionMetadataAPIService) OBPv121GetTransactionNarrative(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121GetTransactionNarrativeRequest {
-	return ApiOBPv121GetTransactionNarrativeRequest{
+func (a *TransactionMetadataAPIService) GetTransactionNarrative(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiGetTransactionNarrativeRequest {
+	return ApiGetTransactionNarrativeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2070,16 +2070,16 @@ func (a *TransactionMetadataAPIService) OBPv121GetTransactionNarrative(ctx conte
 }
 
 // Execute executes the request
-//  @return OBPv121GetTransactionNarrative200Response
-func (a *TransactionMetadataAPIService) OBPv121GetTransactionNarrativeExecute(r ApiOBPv121GetTransactionNarrativeRequest) (*OBPv121GetTransactionNarrative200Response, *http.Response, error) {
+//  @return GetTransactionNarrative200Response
+func (a *TransactionMetadataAPIService) GetTransactionNarrativeExecute(r ApiGetTransactionNarrativeRequest) (*GetTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121GetTransactionNarrative200Response
+		localVarReturnValue  *GetTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.OBPv121GetTransactionNarrative")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.GetTransactionNarrative")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2148,7 +2148,7 @@ func (a *TransactionMetadataAPIService) OBPv121GetTransactionNarrativeExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121GetWhereTagForViewOnTransactionRequest struct {
+type ApiGetWhereTagForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionMetadataAPIService
 	bankid string
@@ -2157,12 +2157,12 @@ type ApiOBPv121GetWhereTagForViewOnTransactionRequest struct {
 	transactionid string
 }
 
-func (r ApiOBPv121GetWhereTagForViewOnTransactionRequest) Execute() (*OBPv121GetWhereTagForViewOnTransaction200Response, *http.Response, error) {
-	return r.ApiService.OBPv121GetWhereTagForViewOnTransactionExecute(r)
+func (r ApiGetWhereTagForViewOnTransactionRequest) Execute() (*GetWhereTagForViewOnTransaction200Response, *http.Response, error) {
+	return r.ApiService.GetWhereTagForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121GetWhereTagForViewOnTransaction Get a Transaction where Tag
+GetWhereTagForViewOnTransaction Get a Transaction where Tag
 
 <p>Returns the &quot;where&quot; Geo tag added to the transaction TRANSACTION_ID made on a <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
 It represents the location where the transaction has been initiated.</p>
@@ -2189,10 +2189,10 @@ It represents the location where the transaction has been initiated.</p>
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121GetWhereTagForViewOnTransactionRequest
+ @return ApiGetWhereTagForViewOnTransactionRequest
 */
-func (a *TransactionMetadataAPIService) OBPv121GetWhereTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121GetWhereTagForViewOnTransactionRequest {
-	return ApiOBPv121GetWhereTagForViewOnTransactionRequest{
+func (a *TransactionMetadataAPIService) GetWhereTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiGetWhereTagForViewOnTransactionRequest {
+	return ApiGetWhereTagForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2203,16 +2203,16 @@ func (a *TransactionMetadataAPIService) OBPv121GetWhereTagForViewOnTransaction(c
 }
 
 // Execute executes the request
-//  @return OBPv121GetWhereTagForViewOnTransaction200Response
-func (a *TransactionMetadataAPIService) OBPv121GetWhereTagForViewOnTransactionExecute(r ApiOBPv121GetWhereTagForViewOnTransactionRequest) (*OBPv121GetWhereTagForViewOnTransaction200Response, *http.Response, error) {
+//  @return GetWhereTagForViewOnTransaction200Response
+func (a *TransactionMetadataAPIService) GetWhereTagForViewOnTransactionExecute(r ApiGetWhereTagForViewOnTransactionRequest) (*GetWhereTagForViewOnTransaction200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121GetWhereTagForViewOnTransaction200Response
+		localVarReturnValue  *GetWhereTagForViewOnTransaction200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.OBPv121GetWhereTagForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.GetWhereTagForViewOnTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2281,28 +2281,28 @@ func (a *TransactionMetadataAPIService) OBPv121GetWhereTagForViewOnTransactionEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121UpdateTransactionNarrativeRequest struct {
+type ApiUpdateTransactionNarrativeRequest struct {
 	ctx context.Context
 	ApiService *TransactionMetadataAPIService
 	bankid string
 	accountid string
 	viewid string
 	transactionid string
-	oBPv121GetTransactionNarrative200Response *OBPv121GetTransactionNarrative200Response
+	getTransactionNarrative200Response *GetTransactionNarrative200Response
 }
 
 // Request body
-func (r ApiOBPv121UpdateTransactionNarrativeRequest) OBPv121GetTransactionNarrative200Response(oBPv121GetTransactionNarrative200Response OBPv121GetTransactionNarrative200Response) ApiOBPv121UpdateTransactionNarrativeRequest {
-	r.oBPv121GetTransactionNarrative200Response = &oBPv121GetTransactionNarrative200Response
+func (r ApiUpdateTransactionNarrativeRequest) GetTransactionNarrative200Response(getTransactionNarrative200Response GetTransactionNarrative200Response) ApiUpdateTransactionNarrativeRequest {
+	r.getTransactionNarrative200Response = &getTransactionNarrative200Response
 	return r
 }
 
-func (r ApiOBPv121UpdateTransactionNarrativeRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121UpdateTransactionNarrativeExecute(r)
+func (r ApiUpdateTransactionNarrativeRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.UpdateTransactionNarrativeExecute(r)
 }
 
 /*
-OBPv121UpdateTransactionNarrative Update a Transaction Narrative
+UpdateTransactionNarrative Update a Transaction Narrative
 
 <p>Updates the description of the transaction TRANSACTION_ID.</p>
 <p>Authentication via OAuth is required if the view is not public.</p>
@@ -2321,10 +2321,10 @@ OBPv121UpdateTransactionNarrative Update a Transaction Narrative
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121UpdateTransactionNarrativeRequest
+ @return ApiUpdateTransactionNarrativeRequest
 */
-func (a *TransactionMetadataAPIService) OBPv121UpdateTransactionNarrative(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121UpdateTransactionNarrativeRequest {
-	return ApiOBPv121UpdateTransactionNarrativeRequest{
+func (a *TransactionMetadataAPIService) UpdateTransactionNarrative(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiUpdateTransactionNarrativeRequest {
+	return ApiUpdateTransactionNarrativeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2335,16 +2335,16 @@ func (a *TransactionMetadataAPIService) OBPv121UpdateTransactionNarrative(ctx co
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *TransactionMetadataAPIService) OBPv121UpdateTransactionNarrativeExecute(r ApiOBPv121UpdateTransactionNarrativeRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *TransactionMetadataAPIService) UpdateTransactionNarrativeExecute(r ApiUpdateTransactionNarrativeRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.OBPv121UpdateTransactionNarrative")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.UpdateTransactionNarrative")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2358,8 +2358,8 @@ func (a *TransactionMetadataAPIService) OBPv121UpdateTransactionNarrativeExecute
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv121GetTransactionNarrative200Response == nil {
-		return localVarReturnValue, nil, reportError("oBPv121GetTransactionNarrative200Response is required and must be specified")
+	if r.getTransactionNarrative200Response == nil {
+		return localVarReturnValue, nil, reportError("getTransactionNarrative200Response is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2380,7 +2380,7 @@ func (a *TransactionMetadataAPIService) OBPv121UpdateTransactionNarrativeExecute
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv121GetTransactionNarrative200Response
+	localVarPostBody = r.getTransactionNarrative200Response
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2418,28 +2418,28 @@ func (a *TransactionMetadataAPIService) OBPv121UpdateTransactionNarrativeExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121UpdateWhereTagForViewOnTransactionRequest struct {
+type ApiUpdateWhereTagForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionMetadataAPIService
 	bankid string
 	accountid string
 	viewid string
 	transactionid string
-	oBPv121UpdateWhereTagForViewOnTransactionRequest *OBPv121UpdateWhereTagForViewOnTransactionRequest
+	updateWhereTagForViewOnTransactionRequest *UpdateWhereTagForViewOnTransactionRequest
 }
 
 // Request body
-func (r ApiOBPv121UpdateWhereTagForViewOnTransactionRequest) OBPv121UpdateWhereTagForViewOnTransactionRequest(oBPv121UpdateWhereTagForViewOnTransactionRequest OBPv121UpdateWhereTagForViewOnTransactionRequest) ApiOBPv121UpdateWhereTagForViewOnTransactionRequest {
-	r.oBPv121UpdateWhereTagForViewOnTransactionRequest = &oBPv121UpdateWhereTagForViewOnTransactionRequest
+func (r ApiUpdateWhereTagForViewOnTransactionRequest) UpdateWhereTagForViewOnTransactionRequest(updateWhereTagForViewOnTransactionRequest UpdateWhereTagForViewOnTransactionRequest) ApiUpdateWhereTagForViewOnTransactionRequest {
+	r.updateWhereTagForViewOnTransactionRequest = &updateWhereTagForViewOnTransactionRequest
 	return r
 }
 
-func (r ApiOBPv121UpdateWhereTagForViewOnTransactionRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121UpdateWhereTagForViewOnTransactionExecute(r)
+func (r ApiUpdateWhereTagForViewOnTransactionRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.UpdateWhereTagForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121UpdateWhereTagForViewOnTransaction Update a Transaction where Tag
+UpdateWhereTagForViewOnTransaction Update a Transaction where Tag
 
 <p>Updates the &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href="#1_2_1-getViewsForBankAccount">view</a>.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -2458,10 +2458,10 @@ OBPv121UpdateWhereTagForViewOnTransaction Update a Transaction where Tag
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121UpdateWhereTagForViewOnTransactionRequest
+ @return ApiUpdateWhereTagForViewOnTransactionRequest
 */
-func (a *TransactionMetadataAPIService) OBPv121UpdateWhereTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121UpdateWhereTagForViewOnTransactionRequest {
-	return ApiOBPv121UpdateWhereTagForViewOnTransactionRequest{
+func (a *TransactionMetadataAPIService) UpdateWhereTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiUpdateWhereTagForViewOnTransactionRequest {
+	return ApiUpdateWhereTagForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2472,16 +2472,16 @@ func (a *TransactionMetadataAPIService) OBPv121UpdateWhereTagForViewOnTransactio
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *TransactionMetadataAPIService) OBPv121UpdateWhereTagForViewOnTransactionExecute(r ApiOBPv121UpdateWhereTagForViewOnTransactionRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *TransactionMetadataAPIService) UpdateWhereTagForViewOnTransactionExecute(r ApiUpdateWhereTagForViewOnTransactionRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.OBPv121UpdateWhereTagForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionMetadataAPIService.UpdateWhereTagForViewOnTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2495,8 +2495,8 @@ func (a *TransactionMetadataAPIService) OBPv121UpdateWhereTagForViewOnTransactio
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv121UpdateWhereTagForViewOnTransactionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121UpdateWhereTagForViewOnTransactionRequest is required and must be specified")
+	if r.updateWhereTagForViewOnTransactionRequest == nil {
+		return localVarReturnValue, nil, reportError("updateWhereTagForViewOnTransactionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2517,7 +2517,7 @@ func (a *TransactionMetadataAPIService) OBPv121UpdateWhereTagForViewOnTransactio
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv121UpdateWhereTagForViewOnTransactionRequest
+	localVarPostBody = r.updateWhereTagForViewOnTransactionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2542,7 +2542,7 @@ func (a *TransactionMetadataAPIService) OBPv121UpdateWhereTagForViewOnTransactio
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

@@ -1,25 +1,25 @@
 # \DirectoryAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv510CreateConsumerDynamicRegistration**](DirectoryAPI.md#OBPv510CreateConsumerDynamicRegistration) | **Post** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
-[**OBPv510CreateRegulatedEntity**](DirectoryAPI.md#OBPv510CreateRegulatedEntity) | **Post** /obp/v5.1.0/regulated-entities | Create Regulated Entity
-[**OBPv510CreateRegulatedEntityAttribute**](DirectoryAPI.md#OBPv510CreateRegulatedEntityAttribute) | **Post** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
-[**OBPv510DeleteRegulatedEntity**](DirectoryAPI.md#OBPv510DeleteRegulatedEntity) | **Delete** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
-[**OBPv510DeleteRegulatedEntityAttribute**](DirectoryAPI.md#OBPv510DeleteRegulatedEntityAttribute) | **Delete** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
-[**OBPv510GetAllRegulatedEntityAttributes**](DirectoryAPI.md#OBPv510GetAllRegulatedEntityAttributes) | **Get** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
-[**OBPv510GetRegulatedEntityAttributeById**](DirectoryAPI.md#OBPv510GetRegulatedEntityAttributeById) | **Get** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
-[**OBPv510GetRegulatedEntityById**](DirectoryAPI.md#OBPv510GetRegulatedEntityById) | **Get** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
-[**OBPv510RegulatedEntities**](DirectoryAPI.md#OBPv510RegulatedEntities) | **Get** /obp/v5.1.0/regulated-entities | Get Regulated Entities
-[**OBPv510UpdateRegulatedEntityAttribute**](DirectoryAPI.md#OBPv510UpdateRegulatedEntityAttribute) | **Put** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
+[**CreateConsumerDynamicRegistration**](DirectoryAPI.md#CreateConsumerDynamicRegistration) | **Post** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
+[**CreateRegulatedEntity**](DirectoryAPI.md#CreateRegulatedEntity) | **Post** /obp/v5.1.0/regulated-entities | Create Regulated Entity
+[**CreateRegulatedEntityAttribute**](DirectoryAPI.md#CreateRegulatedEntityAttribute) | **Post** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
+[**DeleteRegulatedEntity**](DirectoryAPI.md#DeleteRegulatedEntity) | **Delete** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
+[**DeleteRegulatedEntityAttribute**](DirectoryAPI.md#DeleteRegulatedEntityAttribute) | **Delete** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
+[**GetAllRegulatedEntityAttributes**](DirectoryAPI.md#GetAllRegulatedEntityAttributes) | **Get** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
+[**GetRegulatedEntityAttributeById**](DirectoryAPI.md#GetRegulatedEntityAttributeById) | **Get** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
+[**GetRegulatedEntityById**](DirectoryAPI.md#GetRegulatedEntityById) | **Get** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
+[**RegulatedEntities**](DirectoryAPI.md#RegulatedEntities) | **Get** /obp/v5.1.0/regulated-entities | Get Regulated Entities
+[**UpdateRegulatedEntityAttribute**](DirectoryAPI.md#UpdateRegulatedEntityAttribute) | **Put** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
 
 
 
-## OBPv510CreateConsumerDynamicRegistration
+## CreateConsumerDynamicRegistration
 
-> OBPv510UpdateConsumerName200Response OBPv510CreateConsumerDynamicRegistration(ctx).OBPv510CreateConsumerDynamicRegistrationRequest(oBPv510CreateConsumerDynamicRegistrationRequest).Execute()
+> UpdateConsumerName200Response CreateConsumerDynamicRegistration(ctx).CreateConsumerDynamicRegistrationRequest(createConsumerDynamicRegistrationRequest).Execute()
 
 Create a Consumer(Dynamic Registration)
 
@@ -38,17 +38,17 @@ import (
 )
 
 func main() {
-	oBPv510CreateConsumerDynamicRegistrationRequest := *openapiclient.NewOBPv510CreateConsumerDynamicRegistrationRequest("Type_example", *openapiclient.NewOBPv510CreateConsumerDynamicRegistrationRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510CreateConsumerDynamicRegistrationRequest | Request body
+	createConsumerDynamicRegistrationRequest := *openapiclient.NewCreateConsumerDynamicRegistrationRequest() // CreateConsumerDynamicRegistrationRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DirectoryAPI.OBPv510CreateConsumerDynamicRegistration(context.Background()).OBPv510CreateConsumerDynamicRegistrationRequest(oBPv510CreateConsumerDynamicRegistrationRequest).Execute()
+	resp, r, err := apiClient.DirectoryAPI.CreateConsumerDynamicRegistration(context.Background()).CreateConsumerDynamicRegistrationRequest(createConsumerDynamicRegistrationRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.OBPv510CreateConsumerDynamicRegistration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.CreateConsumerDynamicRegistration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510CreateConsumerDynamicRegistration`: OBPv510UpdateConsumerName200Response
-	fmt.Fprintf(os.Stdout, "Response from `DirectoryAPI.OBPv510CreateConsumerDynamicRegistration`: %v\n", resp)
+	// response from `CreateConsumerDynamicRegistration`: UpdateConsumerName200Response
+	fmt.Fprintf(os.Stdout, "Response from `DirectoryAPI.CreateConsumerDynamicRegistration`: %v\n", resp)
 }
 ```
 
@@ -58,16 +58,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510CreateConsumerDynamicRegistrationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateConsumerDynamicRegistrationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv510CreateConsumerDynamicRegistrationRequest** | [**OBPv510CreateConsumerDynamicRegistrationRequest**](OBPv510CreateConsumerDynamicRegistrationRequest.md) | Request body | 
+ **createConsumerDynamicRegistrationRequest** | [**CreateConsumerDynamicRegistrationRequest**](CreateConsumerDynamicRegistrationRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510UpdateConsumerName200Response**](OBPv510UpdateConsumerName200Response.md)
+[**UpdateConsumerName200Response**](UpdateConsumerName200Response.md)
 
 ### Authorization
 
@@ -83,9 +83,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510CreateRegulatedEntity
+## CreateRegulatedEntity
 
-> OBPv510GetRegulatedEntityById200Response OBPv510CreateRegulatedEntity(ctx).OBPv510CreateRegulatedEntityRequest(oBPv510CreateRegulatedEntityRequest).Execute()
+> GetRegulatedEntityById200Response CreateRegulatedEntity(ctx).CreateRegulatedEntityRequest(createRegulatedEntityRequest).Execute()
 
 Create Regulated Entity
 
@@ -104,17 +104,17 @@ import (
 )
 
 func main() {
-	oBPv510CreateRegulatedEntityRequest := *openapiclient.NewOBPv510CreateRegulatedEntityRequest("Type_example", *openapiclient.NewOBPv510CreateRegulatedEntityRequestProperties(*openapiclient.NewOBPv510GetRegulatedEntityById200ResponsePropertiesServices("Type_example", *openapiclient.NewOBPv510GetRegulatedEntityById200ResponsePropertiesServicesItems("Type_example", *openapiclient.NewOBPv510GetRegulatedEntityById200ResponsePropertiesServicesItemsProperties(*openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))))))), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), , , , , *openapiclient.NewOBPv510GetRegulatedEntityById200ResponsePropertiesAttributes("Type_example", *openapiclient.NewOBPv510GetRegulatedEntityById200ResponsePropertiesAttributesItems("Type_example", *openapiclient.NewOBPv510GetRegulatedEntityById200ResponsePropertiesAttributesItemsProperties(, , ))), , , , , )) // OBPv510CreateRegulatedEntityRequest | Request body
+	createRegulatedEntityRequest := *openapiclient.NewCreateRegulatedEntityRequest() // CreateRegulatedEntityRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DirectoryAPI.OBPv510CreateRegulatedEntity(context.Background()).OBPv510CreateRegulatedEntityRequest(oBPv510CreateRegulatedEntityRequest).Execute()
+	resp, r, err := apiClient.DirectoryAPI.CreateRegulatedEntity(context.Background()).CreateRegulatedEntityRequest(createRegulatedEntityRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.OBPv510CreateRegulatedEntity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.CreateRegulatedEntity``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510CreateRegulatedEntity`: OBPv510GetRegulatedEntityById200Response
-	fmt.Fprintf(os.Stdout, "Response from `DirectoryAPI.OBPv510CreateRegulatedEntity`: %v\n", resp)
+	// response from `CreateRegulatedEntity`: GetRegulatedEntityById200Response
+	fmt.Fprintf(os.Stdout, "Response from `DirectoryAPI.CreateRegulatedEntity`: %v\n", resp)
 }
 ```
 
@@ -124,16 +124,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510CreateRegulatedEntityRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateRegulatedEntityRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv510CreateRegulatedEntityRequest** | [**OBPv510CreateRegulatedEntityRequest**](OBPv510CreateRegulatedEntityRequest.md) | Request body | 
+ **createRegulatedEntityRequest** | [**CreateRegulatedEntityRequest**](CreateRegulatedEntityRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityById200Response**](OBPv510GetRegulatedEntityById200Response.md)
+[**GetRegulatedEntityById200Response**](GetRegulatedEntityById200Response.md)
 
 ### Authorization
 
@@ -149,9 +149,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510CreateRegulatedEntityAttribute
+## CreateRegulatedEntityAttribute
 
-> OBPv510GetRegulatedEntityAttributeById200Response OBPv510CreateRegulatedEntityAttribute(ctx, regulatedentityid).OBPv510UpdateRegulatedEntityAttributeRequest(oBPv510UpdateRegulatedEntityAttributeRequest).Execute()
+> GetRegulatedEntityAttributeById200Response CreateRegulatedEntityAttribute(ctx, regulatedentityid).CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest).Execute()
 
 Create Regulated Entity Attribute
 
@@ -171,17 +171,17 @@ import (
 
 func main() {
 	regulatedentityid := "regulatedentityid_example" // string | The REGULATEDENTITYID identifier
-	oBPv510UpdateRegulatedEntityAttributeRequest := *openapiclient.NewOBPv510UpdateRegulatedEntityAttributeRequest("Type_example", *openapiclient.NewOBPv510UpdateRegulatedEntityAttributeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateRegulatedEntityAttributeRequest | Request body
+	createCounterpartyAttributeRequest := *openapiclient.NewCreateCounterpartyAttributeRequest() // CreateCounterpartyAttributeRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DirectoryAPI.OBPv510CreateRegulatedEntityAttribute(context.Background(), regulatedentityid).OBPv510UpdateRegulatedEntityAttributeRequest(oBPv510UpdateRegulatedEntityAttributeRequest).Execute()
+	resp, r, err := apiClient.DirectoryAPI.CreateRegulatedEntityAttribute(context.Background(), regulatedentityid).CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.OBPv510CreateRegulatedEntityAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.CreateRegulatedEntityAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510CreateRegulatedEntityAttribute`: OBPv510GetRegulatedEntityAttributeById200Response
-	fmt.Fprintf(os.Stdout, "Response from `DirectoryAPI.OBPv510CreateRegulatedEntityAttribute`: %v\n", resp)
+	// response from `CreateRegulatedEntityAttribute`: GetRegulatedEntityAttributeById200Response
+	fmt.Fprintf(os.Stdout, "Response from `DirectoryAPI.CreateRegulatedEntityAttribute`: %v\n", resp)
 }
 ```
 
@@ -195,17 +195,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510CreateRegulatedEntityAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateRegulatedEntityAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv510UpdateRegulatedEntityAttributeRequest** | [**OBPv510UpdateRegulatedEntityAttributeRequest**](OBPv510UpdateRegulatedEntityAttributeRequest.md) | Request body | 
+ **createCounterpartyAttributeRequest** | [**CreateCounterpartyAttributeRequest**](CreateCounterpartyAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityAttributeById200Response**](OBPv510GetRegulatedEntityAttributeById200Response.md)
+[**GetRegulatedEntityAttributeById200Response**](GetRegulatedEntityAttributeById200Response.md)
 
 ### Authorization
 
@@ -221,9 +221,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510DeleteRegulatedEntity
+## DeleteRegulatedEntity
 
-> OBPv510DeleteRegulatedEntity(ctx, regulatedentityid).Execute()
+> DeleteRegulatedEntity(ctx, regulatedentityid).Execute()
 
 Delete Regulated Entity
 
@@ -246,9 +246,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DirectoryAPI.OBPv510DeleteRegulatedEntity(context.Background(), regulatedentityid).Execute()
+	r, err := apiClient.DirectoryAPI.DeleteRegulatedEntity(context.Background(), regulatedentityid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.OBPv510DeleteRegulatedEntity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.DeleteRegulatedEntity``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510DeleteRegulatedEntityRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteRegulatedEntityRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -289,9 +289,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510DeleteRegulatedEntityAttribute
+## DeleteRegulatedEntityAttribute
 
-> OBPv510DeleteRegulatedEntityAttribute(ctx, regulatedentityid, regulatedentityattributeid).Execute()
+> DeleteRegulatedEntityAttribute(ctx, regulatedentityid, regulatedentityattributeid).Execute()
 
 Delete Regulated Entity Attribute
 
@@ -315,9 +315,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DirectoryAPI.OBPv510DeleteRegulatedEntityAttribute(context.Background(), regulatedentityid, regulatedentityattributeid).Execute()
+	r, err := apiClient.DirectoryAPI.DeleteRegulatedEntityAttribute(context.Background(), regulatedentityid, regulatedentityattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.OBPv510DeleteRegulatedEntityAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.DeleteRegulatedEntityAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510DeleteRegulatedEntityAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteRegulatedEntityAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -360,9 +360,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetAllRegulatedEntityAttributes
+## GetAllRegulatedEntityAttributes
 
-> OBPv510GetAllRegulatedEntityAttributes200Response OBPv510GetAllRegulatedEntityAttributes(ctx, regulatedentityid).Execute()
+> GetAllRegulatedEntityAttributes200Response GetAllRegulatedEntityAttributes(ctx, regulatedentityid).Execute()
 
 Get All Regulated Entity Attributes
 
@@ -385,13 +385,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DirectoryAPI.OBPv510GetAllRegulatedEntityAttributes(context.Background(), regulatedentityid).Execute()
+	resp, r, err := apiClient.DirectoryAPI.GetAllRegulatedEntityAttributes(context.Background(), regulatedentityid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.OBPv510GetAllRegulatedEntityAttributes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.GetAllRegulatedEntityAttributes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetAllRegulatedEntityAttributes`: OBPv510GetAllRegulatedEntityAttributes200Response
-	fmt.Fprintf(os.Stdout, "Response from `DirectoryAPI.OBPv510GetAllRegulatedEntityAttributes`: %v\n", resp)
+	// response from `GetAllRegulatedEntityAttributes`: GetAllRegulatedEntityAttributes200Response
+	fmt.Fprintf(os.Stdout, "Response from `DirectoryAPI.GetAllRegulatedEntityAttributes`: %v\n", resp)
 }
 ```
 
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetAllRegulatedEntityAttributesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAllRegulatedEntityAttributesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAllRegulatedEntityAttributes200Response**](OBPv510GetAllRegulatedEntityAttributes200Response.md)
+[**GetAllRegulatedEntityAttributes200Response**](GetAllRegulatedEntityAttributes200Response.md)
 
 ### Authorization
 
@@ -430,9 +430,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetRegulatedEntityAttributeById
+## GetRegulatedEntityAttributeById
 
-> OBPv510GetRegulatedEntityAttributeById200Response OBPv510GetRegulatedEntityAttributeById(ctx, regulatedentityid, regulatedentityattributeid).Execute()
+> GetRegulatedEntityAttributeById200Response GetRegulatedEntityAttributeById(ctx, regulatedentityid, regulatedentityattributeid).Execute()
 
 Get Regulated Entity Attribute By ID
 
@@ -456,13 +456,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DirectoryAPI.OBPv510GetRegulatedEntityAttributeById(context.Background(), regulatedentityid, regulatedentityattributeid).Execute()
+	resp, r, err := apiClient.DirectoryAPI.GetRegulatedEntityAttributeById(context.Background(), regulatedentityid, regulatedentityattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.OBPv510GetRegulatedEntityAttributeById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.GetRegulatedEntityAttributeById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetRegulatedEntityAttributeById`: OBPv510GetRegulatedEntityAttributeById200Response
-	fmt.Fprintf(os.Stdout, "Response from `DirectoryAPI.OBPv510GetRegulatedEntityAttributeById`: %v\n", resp)
+	// response from `GetRegulatedEntityAttributeById`: GetRegulatedEntityAttributeById200Response
+	fmt.Fprintf(os.Stdout, "Response from `DirectoryAPI.GetRegulatedEntityAttributeById`: %v\n", resp)
 }
 ```
 
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetRegulatedEntityAttributeByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetRegulatedEntityAttributeByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -487,7 +487,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityAttributeById200Response**](OBPv510GetRegulatedEntityAttributeById200Response.md)
+[**GetRegulatedEntityAttributeById200Response**](GetRegulatedEntityAttributeById200Response.md)
 
 ### Authorization
 
@@ -503,9 +503,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetRegulatedEntityById
+## GetRegulatedEntityById
 
-> OBPv510GetRegulatedEntityById200Response OBPv510GetRegulatedEntityById(ctx, regulatedentityid).Execute()
+> GetRegulatedEntityById200Response GetRegulatedEntityById(ctx, regulatedentityid).Execute()
 
 Get Regulated Entity
 
@@ -528,13 +528,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DirectoryAPI.OBPv510GetRegulatedEntityById(context.Background(), regulatedentityid).Execute()
+	resp, r, err := apiClient.DirectoryAPI.GetRegulatedEntityById(context.Background(), regulatedentityid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.OBPv510GetRegulatedEntityById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.GetRegulatedEntityById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetRegulatedEntityById`: OBPv510GetRegulatedEntityById200Response
-	fmt.Fprintf(os.Stdout, "Response from `DirectoryAPI.OBPv510GetRegulatedEntityById`: %v\n", resp)
+	// response from `GetRegulatedEntityById`: GetRegulatedEntityById200Response
+	fmt.Fprintf(os.Stdout, "Response from `DirectoryAPI.GetRegulatedEntityById`: %v\n", resp)
 }
 ```
 
@@ -548,7 +548,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetRegulatedEntityByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetRegulatedEntityByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -557,7 +557,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityById200Response**](OBPv510GetRegulatedEntityById200Response.md)
+[**GetRegulatedEntityById200Response**](GetRegulatedEntityById200Response.md)
 
 ### Authorization
 
@@ -573,9 +573,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv510RegulatedEntities
+## RegulatedEntities
 
-> OBPv510RegulatedEntities200Response OBPv510RegulatedEntities(ctx).Execute()
+> RegulatedEntities200Response RegulatedEntities(ctx).Execute()
 
 Get Regulated Entities
 
@@ -597,13 +597,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DirectoryAPI.OBPv510RegulatedEntities(context.Background()).Execute()
+	resp, r, err := apiClient.DirectoryAPI.RegulatedEntities(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.OBPv510RegulatedEntities``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.RegulatedEntities``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510RegulatedEntities`: OBPv510RegulatedEntities200Response
-	fmt.Fprintf(os.Stdout, "Response from `DirectoryAPI.OBPv510RegulatedEntities`: %v\n", resp)
+	// response from `RegulatedEntities`: RegulatedEntities200Response
+	fmt.Fprintf(os.Stdout, "Response from `DirectoryAPI.RegulatedEntities`: %v\n", resp)
 }
 ```
 
@@ -613,12 +613,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510RegulatedEntitiesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRegulatedEntitiesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv510RegulatedEntities200Response**](OBPv510RegulatedEntities200Response.md)
+[**RegulatedEntities200Response**](RegulatedEntities200Response.md)
 
 ### Authorization
 
@@ -634,9 +634,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv510UpdateRegulatedEntityAttribute
+## UpdateRegulatedEntityAttribute
 
-> OBPv510GetRegulatedEntityAttributeById200Response OBPv510UpdateRegulatedEntityAttribute(ctx, regulatedentityid, regulatedentityattributeid).OBPv510UpdateRegulatedEntityAttributeRequest(oBPv510UpdateRegulatedEntityAttributeRequest).Execute()
+> GetRegulatedEntityAttributeById200Response UpdateRegulatedEntityAttribute(ctx, regulatedentityid, regulatedentityattributeid).CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest).Execute()
 
 Update Regulated Entity Attribute
 
@@ -657,17 +657,17 @@ import (
 func main() {
 	regulatedentityid := "regulatedentityid_example" // string | The REGULATEDENTITYID identifier
 	regulatedentityattributeid := "regulatedentityattributeid_example" // string | The REGULATEDENTITYATTRIBUTEID identifier
-	oBPv510UpdateRegulatedEntityAttributeRequest := *openapiclient.NewOBPv510UpdateRegulatedEntityAttributeRequest("Type_example", *openapiclient.NewOBPv510UpdateRegulatedEntityAttributeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateRegulatedEntityAttributeRequest | Request body
+	createCounterpartyAttributeRequest := *openapiclient.NewCreateCounterpartyAttributeRequest() // CreateCounterpartyAttributeRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DirectoryAPI.OBPv510UpdateRegulatedEntityAttribute(context.Background(), regulatedentityid, regulatedentityattributeid).OBPv510UpdateRegulatedEntityAttributeRequest(oBPv510UpdateRegulatedEntityAttributeRequest).Execute()
+	resp, r, err := apiClient.DirectoryAPI.UpdateRegulatedEntityAttribute(context.Background(), regulatedentityid, regulatedentityattributeid).CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.OBPv510UpdateRegulatedEntityAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DirectoryAPI.UpdateRegulatedEntityAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510UpdateRegulatedEntityAttribute`: OBPv510GetRegulatedEntityAttributeById200Response
-	fmt.Fprintf(os.Stdout, "Response from `DirectoryAPI.OBPv510UpdateRegulatedEntityAttribute`: %v\n", resp)
+	// response from `UpdateRegulatedEntityAttribute`: GetRegulatedEntityAttributeById200Response
+	fmt.Fprintf(os.Stdout, "Response from `DirectoryAPI.UpdateRegulatedEntityAttribute`: %v\n", resp)
 }
 ```
 
@@ -682,18 +682,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510UpdateRegulatedEntityAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateRegulatedEntityAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv510UpdateRegulatedEntityAttributeRequest** | [**OBPv510UpdateRegulatedEntityAttributeRequest**](OBPv510UpdateRegulatedEntityAttributeRequest.md) | Request body | 
+ **createCounterpartyAttributeRequest** | [**CreateCounterpartyAttributeRequest**](CreateCounterpartyAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityAttributeById200Response**](OBPv510GetRegulatedEntityAttributeById200Response.md)
+[**GetRegulatedEntityAttributeById200Response**](GetRegulatedEntityAttributeById200Response.md)
 
 ### Authorization
 

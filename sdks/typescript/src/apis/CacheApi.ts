@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,27 +15,27 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv600GetCacheConfig200Response,
-  OBPv600GetCacheInfo200Response,
-  OBPv600GetCacheNamespaces200Response,
-  OBPv600InvalidateCacheNamespace200Response,
-  OBPv600InvalidateCacheNamespaceRequest,
+  GetCacheConfig200Response,
+  GetCacheInfo200Response,
+  GetCacheNamespaces200Response,
+  InvalidateCacheNamespace200Response,
+  InvalidateCacheNamespaceRequest,
 } from '../models/index';
 import {
-    OBPv600GetCacheConfig200ResponseFromJSON,
-    OBPv600GetCacheConfig200ResponseToJSON,
-    OBPv600GetCacheInfo200ResponseFromJSON,
-    OBPv600GetCacheInfo200ResponseToJSON,
-    OBPv600GetCacheNamespaces200ResponseFromJSON,
-    OBPv600GetCacheNamespaces200ResponseToJSON,
-    OBPv600InvalidateCacheNamespace200ResponseFromJSON,
-    OBPv600InvalidateCacheNamespace200ResponseToJSON,
-    OBPv600InvalidateCacheNamespaceRequestFromJSON,
-    OBPv600InvalidateCacheNamespaceRequestToJSON,
+    GetCacheConfig200ResponseFromJSON,
+    GetCacheConfig200ResponseToJSON,
+    GetCacheInfo200ResponseFromJSON,
+    GetCacheInfo200ResponseToJSON,
+    GetCacheNamespaces200ResponseFromJSON,
+    GetCacheNamespaces200ResponseToJSON,
+    InvalidateCacheNamespace200ResponseFromJSON,
+    InvalidateCacheNamespace200ResponseToJSON,
+    InvalidateCacheNamespaceRequestFromJSON,
+    InvalidateCacheNamespaceRequestToJSON,
 } from '../models/index';
 
-export interface OBPv600InvalidateCacheNamespaceOperationRequest {
-    oBPv600InvalidateCacheNamespaceRequest: OBPv600InvalidateCacheNamespaceRequest;
+export interface InvalidateCacheNamespaceOperationRequest {
+    invalidateCacheNamespaceRequest: InvalidateCacheNamespaceRequest;
 }
 
 /**
@@ -44,9 +44,9 @@ export interface OBPv600InvalidateCacheNamespaceOperationRequest {
 export class CacheApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv600GetCacheConfig without sending the request
+     * Creates request options for getCacheConfig without sending the request
      */
-    async oBPv600GetCacheConfigRequestOpts(): Promise<runtime.RequestOpts> {
+    async getCacheConfigRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -61,7 +61,7 @@ export class CacheApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -79,26 +79,26 @@ export class CacheApi extends runtime.BaseAPI {
      * <p>Returns cache configuration information including:</p> <ul> <li>Redis status: availability, connection details (URL, port, SSL)</li> <li>In-memory cache status: availability and current size</li> <li>Instance ID and environment</li> <li>Global cache namespace prefix</li> </ul> <p>This helps understand what cache backend is being used and how it\'s configured.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>available</strong></a>: available</p> <p><a href=\"/glossary#\"><strong>current_size</strong></a>: current_size</p> <p><a href=\"/glossary#\"><strong>environment</strong></a>: environment</p> <p><a href=\"/glossary#\"><strong>global_prefix</strong></a>: global_prefix</p> <p><a href=\"/glossary#\"><strong>in_memory_status</strong></a>: in_memory_status</p> <p><a href=\"/glossary#\"><strong>instance_id</strong></a>: instance_id</p> <p><a href=\"/glossary#\"><strong>port</strong></a>: port</p> <p><a href=\"/glossary#\"><strong>redis_status</strong></a>: redis_status</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>use_ssl</strong></a>: use_ssl</p> 
      * Get Cache Configuration
      */
-    async oBPv600GetCacheConfigRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetCacheConfig200Response>> {
-        const requestOptions = await this.oBPv600GetCacheConfigRequestOpts();
+    async getCacheConfigRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCacheConfig200Response>> {
+        const requestOptions = await this.getCacheConfigRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetCacheConfig200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCacheConfig200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Returns cache configuration information including:</p> <ul> <li>Redis status: availability, connection details (URL, port, SSL)</li> <li>In-memory cache status: availability and current size</li> <li>Instance ID and environment</li> <li>Global cache namespace prefix</li> </ul> <p>This helps understand what cache backend is being used and how it\'s configured.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>available</strong></a>: available</p> <p><a href=\"/glossary#\"><strong>current_size</strong></a>: current_size</p> <p><a href=\"/glossary#\"><strong>environment</strong></a>: environment</p> <p><a href=\"/glossary#\"><strong>global_prefix</strong></a>: global_prefix</p> <p><a href=\"/glossary#\"><strong>in_memory_status</strong></a>: in_memory_status</p> <p><a href=\"/glossary#\"><strong>instance_id</strong></a>: instance_id</p> <p><a href=\"/glossary#\"><strong>port</strong></a>: port</p> <p><a href=\"/glossary#\"><strong>redis_status</strong></a>: redis_status</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>use_ssl</strong></a>: use_ssl</p> 
      * Get Cache Configuration
      */
-    async oBPv600GetCacheConfig(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetCacheConfig200Response> {
-        const response = await this.oBPv600GetCacheConfigRaw(initOverrides);
+    async getCacheConfig(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCacheConfig200Response> {
+        const response = await this.getCacheConfigRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetCacheInfo without sending the request
+     * Creates request options for getCacheInfo without sending the request
      */
-    async oBPv600GetCacheInfoRequestOpts(): Promise<runtime.RequestOpts> {
+    async getCacheInfoRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -113,7 +113,7 @@ export class CacheApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -131,26 +131,26 @@ export class CacheApi extends runtime.BaseAPI {
      * <p>Returns detailed cache information for all namespaces:</p> <ul> <li>Namespace ID and versioned prefix</li> <li>Current version counter</li> <li>Number of keys in each namespace</li> <li>Description and category</li> <li>Storage location (redis, memory, both, or unknown)</li> <li>&quot;redis&quot;: Keys stored in Redis</li> <li>&quot;memory&quot;: Keys stored in in-memory cache</li> <li>&quot;both&quot;: Keys in both locations (indicates a BUG - should never happen)</li> <li>&quot;unknown&quot;: No keys found, storage location cannot be determined</li> <li>TTL info: Sampled TTL information from actual keys</li> <li>Shows actual TTL values from up to 5 sample keys</li> <li>Format: &quot;123s&quot; (fixed), &quot;range 60s to 3600s (avg 1800s)&quot; (variable), &quot;no expiry&quot; (persistent)</li> <li>Total key count across all namespaces</li> <li>Redis availability status</li> </ul> <p>This endpoint helps monitor cache usage and identify which namespaces contain the most data.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#\"><strong>current_version</strong></a>: current_version</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>key_count</strong></a>: key_count</p> <p><a href=\"/glossary#\"><strong>namespace_id</strong></a>: namespace_id</p> <p><a href=\"/glossary#\"><strong>namespaces</strong></a>: namespaces</p> <p><a href=\"/glossary#\"><strong>prefix</strong></a>: prefix</p> <p><a href=\"/glossary#\"><strong>redis_available</strong></a>: redis_available</p> <p><a href=\"/glossary#\"><strong>storage_location</strong></a>: storage_location</p> <p><a href=\"/glossary#\"><strong>total_keys</strong></a>: total_keys</p> <p><a href=\"/glossary#\"><strong>ttl_info</strong></a>: ttl_info</p> 
      * Get Cache Information
      */
-    async oBPv600GetCacheInfoRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetCacheInfo200Response>> {
-        const requestOptions = await this.oBPv600GetCacheInfoRequestOpts();
+    async getCacheInfoRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCacheInfo200Response>> {
+        const requestOptions = await this.getCacheInfoRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetCacheInfo200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCacheInfo200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Returns detailed cache information for all namespaces:</p> <ul> <li>Namespace ID and versioned prefix</li> <li>Current version counter</li> <li>Number of keys in each namespace</li> <li>Description and category</li> <li>Storage location (redis, memory, both, or unknown)</li> <li>&quot;redis&quot;: Keys stored in Redis</li> <li>&quot;memory&quot;: Keys stored in in-memory cache</li> <li>&quot;both&quot;: Keys in both locations (indicates a BUG - should never happen)</li> <li>&quot;unknown&quot;: No keys found, storage location cannot be determined</li> <li>TTL info: Sampled TTL information from actual keys</li> <li>Shows actual TTL values from up to 5 sample keys</li> <li>Format: &quot;123s&quot; (fixed), &quot;range 60s to 3600s (avg 1800s)&quot; (variable), &quot;no expiry&quot; (persistent)</li> <li>Total key count across all namespaces</li> <li>Redis availability status</li> </ul> <p>This endpoint helps monitor cache usage and identify which namespaces contain the most data.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#\"><strong>current_version</strong></a>: current_version</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>key_count</strong></a>: key_count</p> <p><a href=\"/glossary#\"><strong>namespace_id</strong></a>: namespace_id</p> <p><a href=\"/glossary#\"><strong>namespaces</strong></a>: namespaces</p> <p><a href=\"/glossary#\"><strong>prefix</strong></a>: prefix</p> <p><a href=\"/glossary#\"><strong>redis_available</strong></a>: redis_available</p> <p><a href=\"/glossary#\"><strong>storage_location</strong></a>: storage_location</p> <p><a href=\"/glossary#\"><strong>total_keys</strong></a>: total_keys</p> <p><a href=\"/glossary#\"><strong>ttl_info</strong></a>: ttl_info</p> 
      * Get Cache Information
      */
-    async oBPv600GetCacheInfo(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetCacheInfo200Response> {
-        const response = await this.oBPv600GetCacheInfoRaw(initOverrides);
+    async getCacheInfo(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCacheInfo200Response> {
+        const response = await this.getCacheInfoRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetCacheNamespaces without sending the request
+     * Creates request options for getCacheNamespaces without sending the request
      */
-    async oBPv600GetCacheNamespacesRequestOpts(): Promise<runtime.RequestOpts> {
+    async getCacheNamespacesRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -165,7 +165,7 @@ export class CacheApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -183,30 +183,30 @@ export class CacheApi extends runtime.BaseAPI {
      * <p>Returns information about all cache namespaces in the system.</p> <p>This endpoint provides visibility into:<br /> * Cache namespace prefixes and their purposes<br /> * Number of keys in each namespace<br /> * TTL configurations<br /> * Example keys for each namespace</p> <p>This is useful for:<br /> * Monitoring cache usage<br /> * Understanding cache structure<br /> * Debugging cache-related issues<br /> * Planning cache management operations</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>example_key</strong></a>: example_key</p> <p><a href=\"/glossary#\"><strong>key_count</strong></a>: key_count</p> <p><a href=\"/glossary#\"><strong>namespaces</strong></a>: namespaces</p> <p><a href=\"/glossary#\"><strong>prefix</strong></a>: prefix</p> <p><a href=\"/glossary#\"><strong>ttl_seconds</strong></a>: ttl_seconds</p> 
      * Get Cache Namespaces
      */
-    async oBPv600GetCacheNamespacesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetCacheNamespaces200Response>> {
-        const requestOptions = await this.oBPv600GetCacheNamespacesRequestOpts();
+    async getCacheNamespacesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCacheNamespaces200Response>> {
+        const requestOptions = await this.getCacheNamespacesRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetCacheNamespaces200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCacheNamespaces200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Returns information about all cache namespaces in the system.</p> <p>This endpoint provides visibility into:<br /> * Cache namespace prefixes and their purposes<br /> * Number of keys in each namespace<br /> * TTL configurations<br /> * Example keys for each namespace</p> <p>This is useful for:<br /> * Monitoring cache usage<br /> * Understanding cache structure<br /> * Debugging cache-related issues<br /> * Planning cache management operations</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>example_key</strong></a>: example_key</p> <p><a href=\"/glossary#\"><strong>key_count</strong></a>: key_count</p> <p><a href=\"/glossary#\"><strong>namespaces</strong></a>: namespaces</p> <p><a href=\"/glossary#\"><strong>prefix</strong></a>: prefix</p> <p><a href=\"/glossary#\"><strong>ttl_seconds</strong></a>: ttl_seconds</p> 
      * Get Cache Namespaces
      */
-    async oBPv600GetCacheNamespaces(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetCacheNamespaces200Response> {
-        const response = await this.oBPv600GetCacheNamespacesRaw(initOverrides);
+    async getCacheNamespaces(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCacheNamespaces200Response> {
+        const response = await this.getCacheNamespacesRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600InvalidateCacheNamespace without sending the request
+     * Creates request options for invalidateCacheNamespace without sending the request
      */
-    async oBPv600InvalidateCacheNamespaceRequestOpts(requestParameters: OBPv600InvalidateCacheNamespaceOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['oBPv600InvalidateCacheNamespaceRequest'] == null) {
+    async invalidateCacheNamespaceRequestOpts(requestParameters: InvalidateCacheNamespaceOperationRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['invalidateCacheNamespaceRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600InvalidateCacheNamespaceRequest',
-                'Required parameter "oBPv600InvalidateCacheNamespaceRequest" was null or undefined when calling oBPv600InvalidateCacheNamespace().'
+                'invalidateCacheNamespaceRequest',
+                'Required parameter "invalidateCacheNamespaceRequest" was null or undefined when calling invalidateCacheNamespace().'
             );
         }
 
@@ -226,7 +226,7 @@ export class CacheApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -237,7 +237,7 @@ export class CacheApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600InvalidateCacheNamespaceRequestToJSON(requestParameters['oBPv600InvalidateCacheNamespaceRequest']),
+            body: InvalidateCacheNamespaceRequestToJSON(requestParameters['invalidateCacheNamespaceRequest']),
         };
     }
 
@@ -245,19 +245,19 @@ export class CacheApi extends runtime.BaseAPI {
      * <p>Invalidates a cache namespace by incrementing its version counter.</p> <p>This provides instant cache invalidation without deleting individual keys.<br /> Incrementing the version counter makes all keys with the old version unreachable.</p> <p>Available namespace IDs: call_counter, rl_active, rd_localised, rd_dynamic,<br /> rd_static, rd_all, swagger_static, connector, metrics_stable, metrics_recent, abac_rule</p> <p>Use after updating rate limits, translations, endpoints, or CBS data.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>namespace_id</strong></a>: namespace_id</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>namespace_id</strong></a>: namespace_id</p> <p><a href=\"/glossary#\"><strong>new_version</strong></a>: new_version</p> <p><a href=\"/glossary#\"><strong>old_version</strong></a>: old_version</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> 
      * Invalidate Cache Namespace
      */
-    async oBPv600InvalidateCacheNamespaceRaw(requestParameters: OBPv600InvalidateCacheNamespaceOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600InvalidateCacheNamespace200Response>> {
-        const requestOptions = await this.oBPv600InvalidateCacheNamespaceRequestOpts(requestParameters);
+    async invalidateCacheNamespaceRaw(requestParameters: InvalidateCacheNamespaceOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InvalidateCacheNamespace200Response>> {
+        const requestOptions = await this.invalidateCacheNamespaceRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600InvalidateCacheNamespace200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => InvalidateCacheNamespace200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Invalidates a cache namespace by incrementing its version counter.</p> <p>This provides instant cache invalidation without deleting individual keys.<br /> Incrementing the version counter makes all keys with the old version unreachable.</p> <p>Available namespace IDs: call_counter, rl_active, rd_localised, rd_dynamic,<br /> rd_static, rd_all, swagger_static, connector, metrics_stable, metrics_recent, abac_rule</p> <p>Use after updating rate limits, translations, endpoints, or CBS data.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>namespace_id</strong></a>: namespace_id</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>namespace_id</strong></a>: namespace_id</p> <p><a href=\"/glossary#\"><strong>new_version</strong></a>: new_version</p> <p><a href=\"/glossary#\"><strong>old_version</strong></a>: old_version</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> 
      * Invalidate Cache Namespace
      */
-    async oBPv600InvalidateCacheNamespace(requestParameters: OBPv600InvalidateCacheNamespaceOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600InvalidateCacheNamespace200Response> {
-        const response = await this.oBPv600InvalidateCacheNamespaceRaw(requestParameters, initOverrides);
+    async invalidateCacheNamespace(requestParameters: InvalidateCacheNamespaceOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InvalidateCacheNamespace200Response> {
+        const response = await this.invalidateCacheNamespaceRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

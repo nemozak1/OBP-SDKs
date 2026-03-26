@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,19 +75,19 @@ class MethodRoutingApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv310CreateMethodRouting' => [
+        'createMethodRouting' => [
             'application/json',
         ],
-        'oBPv310DeleteMethodRouting' => [
+        'deleteMethodRouting' => [
             'application/json',
         ],
-        'oBPv310GetMethodRoutings' => [
+        'getConnectorMethodNames' => [
             'application/json',
         ],
-        'oBPv310UpdateMethodRouting' => [
+        'getMethodRoutings' => [
             'application/json',
         ],
-        'oBPv600GetConnectorMethodNames' => [
+        'updateMethodRouting' => [
             'application/json',
         ],
     ];
@@ -139,38 +139,38 @@ class MethodRoutingApi
     }
 
     /**
-     * Operation oBPv310CreateMethodRouting
+     * Operation createMethodRouting
      *
      * Create MethodRouting
      *
-     * @param  \OpenBankProject\Model\OBPv310CreateMethodRoutingRequest $obpv310_create_method_routing_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateMethodRouting'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMethodRoutingRequest $create_method_routing_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMethodRouting'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems
+     * @return \OpenBankProject\Model\GetMethodRoutings200ResponseMethodRoutingsInner
      */
-    public function oBPv310CreateMethodRouting($obpv310_create_method_routing_request, string $contentType = self::contentTypes['oBPv310CreateMethodRouting'][0])
+    public function createMethodRouting($create_method_routing_request, string $contentType = self::contentTypes['createMethodRouting'][0])
     {
-        list($response) = $this->oBPv310CreateMethodRoutingWithHttpInfo($obpv310_create_method_routing_request, $contentType);
+        list($response) = $this->createMethodRoutingWithHttpInfo($create_method_routing_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310CreateMethodRoutingWithHttpInfo
+     * Operation createMethodRoutingWithHttpInfo
      *
      * Create MethodRouting
      *
-     * @param  \OpenBankProject\Model\OBPv310CreateMethodRoutingRequest $obpv310_create_method_routing_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateMethodRouting'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMethodRoutingRequest $create_method_routing_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMethodRouting'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetMethodRoutings200ResponseMethodRoutingsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310CreateMethodRoutingWithHttpInfo($obpv310_create_method_routing_request, string $contentType = self::contentTypes['oBPv310CreateMethodRouting'][0])
+    public function createMethodRoutingWithHttpInfo($create_method_routing_request, string $contentType = self::contentTypes['createMethodRouting'][0])
     {
-        $request = $this->oBPv310CreateMethodRoutingRequest($obpv310_create_method_routing_request, $contentType);
+        $request = $this->createMethodRoutingRequest($create_method_routing_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -198,7 +198,7 @@ class MethodRoutingApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems',
+                        '\OpenBankProject\Model\GetMethodRoutings200ResponseMethodRoutingsInner',
                         $request,
                         $response,
                     );
@@ -220,7 +220,7 @@ class MethodRoutingApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems',
+                '\OpenBankProject\Model\GetMethodRoutings200ResponseMethodRoutingsInner',
                 $request,
                 $response,
             );
@@ -229,7 +229,7 @@ class MethodRoutingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems',
+                        '\OpenBankProject\Model\GetMethodRoutings200ResponseMethodRoutingsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -242,19 +242,19 @@ class MethodRoutingApi
     }
 
     /**
-     * Operation oBPv310CreateMethodRoutingAsync
+     * Operation createMethodRoutingAsync
      *
      * Create MethodRouting
      *
-     * @param  \OpenBankProject\Model\OBPv310CreateMethodRoutingRequest $obpv310_create_method_routing_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateMethodRouting'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMethodRoutingRequest $create_method_routing_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMethodRouting'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310CreateMethodRoutingAsync($obpv310_create_method_routing_request, string $contentType = self::contentTypes['oBPv310CreateMethodRouting'][0])
+    public function createMethodRoutingAsync($create_method_routing_request, string $contentType = self::contentTypes['createMethodRouting'][0])
     {
-        return $this->oBPv310CreateMethodRoutingAsyncWithHttpInfo($obpv310_create_method_routing_request, $contentType)
+        return $this->createMethodRoutingAsyncWithHttpInfo($create_method_routing_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -263,20 +263,20 @@ class MethodRoutingApi
     }
 
     /**
-     * Operation oBPv310CreateMethodRoutingAsyncWithHttpInfo
+     * Operation createMethodRoutingAsyncWithHttpInfo
      *
      * Create MethodRouting
      *
-     * @param  \OpenBankProject\Model\OBPv310CreateMethodRoutingRequest $obpv310_create_method_routing_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateMethodRouting'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMethodRoutingRequest $create_method_routing_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMethodRouting'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310CreateMethodRoutingAsyncWithHttpInfo($obpv310_create_method_routing_request, string $contentType = self::contentTypes['oBPv310CreateMethodRouting'][0])
+    public function createMethodRoutingAsyncWithHttpInfo($create_method_routing_request, string $contentType = self::contentTypes['createMethodRouting'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems';
-        $request = $this->oBPv310CreateMethodRoutingRequest($obpv310_create_method_routing_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetMethodRoutings200ResponseMethodRoutingsInner';
+        $request = $this->createMethodRoutingRequest($create_method_routing_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -315,21 +315,21 @@ class MethodRoutingApi
     }
 
     /**
-     * Create request for operation 'oBPv310CreateMethodRouting'
+     * Create request for operation 'createMethodRouting'
      *
-     * @param  \OpenBankProject\Model\OBPv310CreateMethodRoutingRequest $obpv310_create_method_routing_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateMethodRouting'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMethodRoutingRequest $create_method_routing_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMethodRouting'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310CreateMethodRoutingRequest($obpv310_create_method_routing_request, string $contentType = self::contentTypes['oBPv310CreateMethodRouting'][0])
+    public function createMethodRoutingRequest($create_method_routing_request, string $contentType = self::contentTypes['createMethodRouting'][0])
     {
 
-        // verify the required parameter 'obpv310_create_method_routing_request' is set
-        if ($obpv310_create_method_routing_request === null || (is_array($obpv310_create_method_routing_request) && count($obpv310_create_method_routing_request) === 0)) {
+        // verify the required parameter 'create_method_routing_request' is set
+        if ($create_method_routing_request === null || (is_array($create_method_routing_request) && count($create_method_routing_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv310_create_method_routing_request when calling oBPv310CreateMethodRouting'
+                'Missing the required parameter $create_method_routing_request when calling createMethodRouting'
             );
         }
 
@@ -352,12 +352,12 @@ class MethodRoutingApi
         );
 
         // for model (json/xml)
-        if (isset($obpv310_create_method_routing_request)) {
+        if (isset($create_method_routing_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv310_create_method_routing_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_method_routing_request));
             } else {
-                $httpBody = $obpv310_create_method_routing_request;
+                $httpBody = $create_method_routing_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -393,9 +393,9 @@ class MethodRoutingApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -420,37 +420,37 @@ class MethodRoutingApi
     }
 
     /**
-     * Operation oBPv310DeleteMethodRouting
+     * Operation deleteMethodRouting
      *
      * Delete MethodRouting
      *
      * @param  string $methodroutingid The METHODROUTINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310DeleteMethodRouting'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMethodRouting'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv310DeleteMethodRouting($methodroutingid, string $contentType = self::contentTypes['oBPv310DeleteMethodRouting'][0])
+    public function deleteMethodRouting($methodroutingid, string $contentType = self::contentTypes['deleteMethodRouting'][0])
     {
-        $this->oBPv310DeleteMethodRoutingWithHttpInfo($methodroutingid, $contentType);
+        $this->deleteMethodRoutingWithHttpInfo($methodroutingid, $contentType);
     }
 
     /**
-     * Operation oBPv310DeleteMethodRoutingWithHttpInfo
+     * Operation deleteMethodRoutingWithHttpInfo
      *
      * Delete MethodRouting
      *
      * @param  string $methodroutingid The METHODROUTINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310DeleteMethodRouting'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMethodRouting'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310DeleteMethodRoutingWithHttpInfo($methodroutingid, string $contentType = self::contentTypes['oBPv310DeleteMethodRouting'][0])
+    public function deleteMethodRoutingWithHttpInfo($methodroutingid, string $contentType = self::contentTypes['deleteMethodRouting'][0])
     {
-        $request = $this->oBPv310DeleteMethodRoutingRequest($methodroutingid, $contentType);
+        $request = $this->deleteMethodRoutingRequest($methodroutingid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -486,19 +486,19 @@ class MethodRoutingApi
     }
 
     /**
-     * Operation oBPv310DeleteMethodRoutingAsync
+     * Operation deleteMethodRoutingAsync
      *
      * Delete MethodRouting
      *
      * @param  string $methodroutingid The METHODROUTINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310DeleteMethodRouting'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMethodRouting'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310DeleteMethodRoutingAsync($methodroutingid, string $contentType = self::contentTypes['oBPv310DeleteMethodRouting'][0])
+    public function deleteMethodRoutingAsync($methodroutingid, string $contentType = self::contentTypes['deleteMethodRouting'][0])
     {
-        return $this->oBPv310DeleteMethodRoutingAsyncWithHttpInfo($methodroutingid, $contentType)
+        return $this->deleteMethodRoutingAsyncWithHttpInfo($methodroutingid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -507,20 +507,20 @@ class MethodRoutingApi
     }
 
     /**
-     * Operation oBPv310DeleteMethodRoutingAsyncWithHttpInfo
+     * Operation deleteMethodRoutingAsyncWithHttpInfo
      *
      * Delete MethodRouting
      *
      * @param  string $methodroutingid The METHODROUTINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310DeleteMethodRouting'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMethodRouting'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310DeleteMethodRoutingAsyncWithHttpInfo($methodroutingid, string $contentType = self::contentTypes['oBPv310DeleteMethodRouting'][0])
+    public function deleteMethodRoutingAsyncWithHttpInfo($methodroutingid, string $contentType = self::contentTypes['deleteMethodRouting'][0])
     {
         $returnType = '';
-        $request = $this->oBPv310DeleteMethodRoutingRequest($methodroutingid, $contentType);
+        $request = $this->deleteMethodRoutingRequest($methodroutingid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -546,21 +546,21 @@ class MethodRoutingApi
     }
 
     /**
-     * Create request for operation 'oBPv310DeleteMethodRouting'
+     * Create request for operation 'deleteMethodRouting'
      *
      * @param  string $methodroutingid The METHODROUTINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310DeleteMethodRouting'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMethodRouting'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310DeleteMethodRoutingRequest($methodroutingid, string $contentType = self::contentTypes['oBPv310DeleteMethodRouting'][0])
+    public function deleteMethodRoutingRequest($methodroutingid, string $contentType = self::contentTypes['deleteMethodRouting'][0])
     {
 
         // verify the required parameter 'methodroutingid' is set
         if ($methodroutingid === null || (is_array($methodroutingid) && count($methodroutingid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $methodroutingid when calling oBPv310DeleteMethodRouting'
+                'Missing the required parameter $methodroutingid when calling deleteMethodRouting'
             );
         }
 
@@ -625,9 +625,9 @@ class MethodRoutingApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -652,36 +652,36 @@ class MethodRoutingApi
     }
 
     /**
-     * Operation oBPv310GetMethodRoutings
+     * Operation getConnectorMethodNames
      *
-     * Get MethodRoutings
+     * Get Connector Method Names
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMethodRoutings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethodNames'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetMethodRoutings200Response
+     * @return \OpenBankProject\Model\GetConnectorMethodNames200Response
      */
-    public function oBPv310GetMethodRoutings(string $contentType = self::contentTypes['oBPv310GetMethodRoutings'][0])
+    public function getConnectorMethodNames(string $contentType = self::contentTypes['getConnectorMethodNames'][0])
     {
-        list($response) = $this->oBPv310GetMethodRoutingsWithHttpInfo($contentType);
+        list($response) = $this->getConnectorMethodNamesWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310GetMethodRoutingsWithHttpInfo
+     * Operation getConnectorMethodNamesWithHttpInfo
      *
-     * Get MethodRoutings
+     * Get Connector Method Names
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMethodRoutings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethodNames'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetMethodRoutings200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetConnectorMethodNames200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310GetMethodRoutingsWithHttpInfo(string $contentType = self::contentTypes['oBPv310GetMethodRoutings'][0])
+    public function getConnectorMethodNamesWithHttpInfo(string $contentType = self::contentTypes['getConnectorMethodNames'][0])
     {
-        $request = $this->oBPv310GetMethodRoutingsRequest($contentType);
+        $request = $this->getConnectorMethodNamesRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -709,7 +709,7 @@ class MethodRoutingApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetMethodRoutings200Response',
+                        '\OpenBankProject\Model\GetConnectorMethodNames200Response',
                         $request,
                         $response,
                     );
@@ -731,7 +731,7 @@ class MethodRoutingApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetMethodRoutings200Response',
+                '\OpenBankProject\Model\GetConnectorMethodNames200Response',
                 $request,
                 $response,
             );
@@ -740,7 +740,7 @@ class MethodRoutingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetMethodRoutings200Response',
+                        '\OpenBankProject\Model\GetConnectorMethodNames200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -753,18 +753,18 @@ class MethodRoutingApi
     }
 
     /**
-     * Operation oBPv310GetMethodRoutingsAsync
+     * Operation getConnectorMethodNamesAsync
      *
-     * Get MethodRoutings
+     * Get Connector Method Names
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMethodRoutings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethodNames'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetMethodRoutingsAsync(string $contentType = self::contentTypes['oBPv310GetMethodRoutings'][0])
+    public function getConnectorMethodNamesAsync(string $contentType = self::contentTypes['getConnectorMethodNames'][0])
     {
-        return $this->oBPv310GetMethodRoutingsAsyncWithHttpInfo($contentType)
+        return $this->getConnectorMethodNamesAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -773,19 +773,19 @@ class MethodRoutingApi
     }
 
     /**
-     * Operation oBPv310GetMethodRoutingsAsyncWithHttpInfo
+     * Operation getConnectorMethodNamesAsyncWithHttpInfo
      *
-     * Get MethodRoutings
+     * Get Connector Method Names
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMethodRoutings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethodNames'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetMethodRoutingsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv310GetMethodRoutings'][0])
+    public function getConnectorMethodNamesAsyncWithHttpInfo(string $contentType = self::contentTypes['getConnectorMethodNames'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310GetMethodRoutings200Response';
-        $request = $this->oBPv310GetMethodRoutingsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetConnectorMethodNames200Response';
+        $request = $this->getConnectorMethodNamesRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -824,577 +824,14 @@ class MethodRoutingApi
     }
 
     /**
-     * Create request for operation 'oBPv310GetMethodRoutings'
+     * Create request for operation 'getConnectorMethodNames'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMethodRoutings'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv310GetMethodRoutingsRequest(string $contentType = self::contentTypes['oBPv310GetMethodRoutings'][0])
-    {
-
-
-        $resourcePath = '/obp/v3.1.0/management/method_routings';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv310UpdateMethodRouting
-     *
-     * Update MethodRouting
-     *
-     * @param  string $methodroutingid The METHODROUTINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateMethodRoutingRequest $obpv310_create_method_routing_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310UpdateMethodRouting'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems
-     */
-    public function oBPv310UpdateMethodRouting($methodroutingid, $obpv310_create_method_routing_request, string $contentType = self::contentTypes['oBPv310UpdateMethodRouting'][0])
-    {
-        list($response) = $this->oBPv310UpdateMethodRoutingWithHttpInfo($methodroutingid, $obpv310_create_method_routing_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv310UpdateMethodRoutingWithHttpInfo
-     *
-     * Update MethodRouting
-     *
-     * @param  string $methodroutingid The METHODROUTINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateMethodRoutingRequest $obpv310_create_method_routing_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310UpdateMethodRouting'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv310UpdateMethodRoutingWithHttpInfo($methodroutingid, $obpv310_create_method_routing_request, string $contentType = self::contentTypes['oBPv310UpdateMethodRouting'][0])
-    {
-        $request = $this->oBPv310UpdateMethodRoutingRequest($methodroutingid, $obpv310_create_method_routing_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv310UpdateMethodRoutingAsync
-     *
-     * Update MethodRouting
-     *
-     * @param  string $methodroutingid The METHODROUTINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateMethodRoutingRequest $obpv310_create_method_routing_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310UpdateMethodRouting'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv310UpdateMethodRoutingAsync($methodroutingid, $obpv310_create_method_routing_request, string $contentType = self::contentTypes['oBPv310UpdateMethodRouting'][0])
-    {
-        return $this->oBPv310UpdateMethodRoutingAsyncWithHttpInfo($methodroutingid, $obpv310_create_method_routing_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv310UpdateMethodRoutingAsyncWithHttpInfo
-     *
-     * Update MethodRouting
-     *
-     * @param  string $methodroutingid The METHODROUTINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateMethodRoutingRequest $obpv310_create_method_routing_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310UpdateMethodRouting'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv310UpdateMethodRoutingAsyncWithHttpInfo($methodroutingid, $obpv310_create_method_routing_request, string $contentType = self::contentTypes['oBPv310UpdateMethodRouting'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems';
-        $request = $this->oBPv310UpdateMethodRoutingRequest($methodroutingid, $obpv310_create_method_routing_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv310UpdateMethodRouting'
-     *
-     * @param  string $methodroutingid The METHODROUTINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateMethodRoutingRequest $obpv310_create_method_routing_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310UpdateMethodRouting'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethodNames'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310UpdateMethodRoutingRequest($methodroutingid, $obpv310_create_method_routing_request, string $contentType = self::contentTypes['oBPv310UpdateMethodRouting'][0])
-    {
-
-        // verify the required parameter 'methodroutingid' is set
-        if ($methodroutingid === null || (is_array($methodroutingid) && count($methodroutingid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $methodroutingid when calling oBPv310UpdateMethodRouting'
-            );
-        }
-
-        // verify the required parameter 'obpv310_create_method_routing_request' is set
-        if ($obpv310_create_method_routing_request === null || (is_array($obpv310_create_method_routing_request) && count($obpv310_create_method_routing_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv310_create_method_routing_request when calling oBPv310UpdateMethodRouting'
-            );
-        }
-
-
-        $resourcePath = '/obp/v3.1.0/management/method_routings/{methodroutingid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($methodroutingid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'methodroutingid' . '}',
-                ObjectSerializer::toPathValue($methodroutingid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv310_create_method_routing_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv310_create_method_routing_request));
-            } else {
-                $httpBody = $obpv310_create_method_routing_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600GetConnectorMethodNames
-     *
-     * Get Connector Method Names
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorMethodNames'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response
-     */
-    public function oBPv600GetConnectorMethodNames(string $contentType = self::contentTypes['oBPv600GetConnectorMethodNames'][0])
-    {
-        list($response) = $this->oBPv600GetConnectorMethodNamesWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv600GetConnectorMethodNamesWithHttpInfo
-     *
-     * Get Connector Method Names
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorMethodNames'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600GetConnectorMethodNamesWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetConnectorMethodNames'][0])
-    {
-        $request = $this->oBPv600GetConnectorMethodNamesRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600GetConnectorMethodNamesAsync
-     *
-     * Get Connector Method Names
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorMethodNames'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetConnectorMethodNamesAsync(string $contentType = self::contentTypes['oBPv600GetConnectorMethodNames'][0])
-    {
-        return $this->oBPv600GetConnectorMethodNamesAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600GetConnectorMethodNamesAsyncWithHttpInfo
-     *
-     * Get Connector Method Names
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorMethodNames'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetConnectorMethodNamesAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetConnectorMethodNames'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response';
-        $request = $this->oBPv600GetConnectorMethodNamesRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600GetConnectorMethodNames'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorMethodNames'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600GetConnectorMethodNamesRequest(string $contentType = self::contentTypes['oBPv600GetConnectorMethodNames'][0])
+    public function getConnectorMethodNamesRequest(string $contentType = self::contentTypes['getConnectorMethodNames'][0])
     {
 
 
@@ -1450,9 +887,9 @@ class MethodRoutingApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1470,6 +907,569 @@ class MethodRoutingApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getMethodRoutings
+     *
+     * Get MethodRoutings
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMethodRoutings'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetMethodRoutings200Response
+     */
+    public function getMethodRoutings(string $contentType = self::contentTypes['getMethodRoutings'][0])
+    {
+        list($response) = $this->getMethodRoutingsWithHttpInfo($contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getMethodRoutingsWithHttpInfo
+     *
+     * Get MethodRoutings
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMethodRoutings'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetMethodRoutings200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getMethodRoutingsWithHttpInfo(string $contentType = self::contentTypes['getMethodRoutings'][0])
+    {
+        $request = $this->getMethodRoutingsRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetMethodRoutings200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetMethodRoutings200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetMethodRoutings200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getMethodRoutingsAsync
+     *
+     * Get MethodRoutings
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMethodRoutings'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getMethodRoutingsAsync(string $contentType = self::contentTypes['getMethodRoutings'][0])
+    {
+        return $this->getMethodRoutingsAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getMethodRoutingsAsyncWithHttpInfo
+     *
+     * Get MethodRoutings
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMethodRoutings'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getMethodRoutingsAsyncWithHttpInfo(string $contentType = self::contentTypes['getMethodRoutings'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetMethodRoutings200Response';
+        $request = $this->getMethodRoutingsRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getMethodRoutings'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMethodRoutings'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getMethodRoutingsRequest(string $contentType = self::contentTypes['getMethodRoutings'][0])
+    {
+
+
+        $resourcePath = '/obp/v3.1.0/management/method_routings';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateMethodRouting
+     *
+     * Update MethodRouting
+     *
+     * @param  string $methodroutingid The METHODROUTINGID identifier (required)
+     * @param  \OpenBankProject\Model\CreateMethodRoutingRequest $create_method_routing_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMethodRouting'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetMethodRoutings200ResponseMethodRoutingsInner
+     */
+    public function updateMethodRouting($methodroutingid, $create_method_routing_request, string $contentType = self::contentTypes['updateMethodRouting'][0])
+    {
+        list($response) = $this->updateMethodRoutingWithHttpInfo($methodroutingid, $create_method_routing_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateMethodRoutingWithHttpInfo
+     *
+     * Update MethodRouting
+     *
+     * @param  string $methodroutingid The METHODROUTINGID identifier (required)
+     * @param  \OpenBankProject\Model\CreateMethodRoutingRequest $create_method_routing_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMethodRouting'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetMethodRoutings200ResponseMethodRoutingsInner, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateMethodRoutingWithHttpInfo($methodroutingid, $create_method_routing_request, string $contentType = self::contentTypes['updateMethodRouting'][0])
+    {
+        $request = $this->updateMethodRoutingRequest($methodroutingid, $create_method_routing_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetMethodRoutings200ResponseMethodRoutingsInner',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetMethodRoutings200ResponseMethodRoutingsInner',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetMethodRoutings200ResponseMethodRoutingsInner',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateMethodRoutingAsync
+     *
+     * Update MethodRouting
+     *
+     * @param  string $methodroutingid The METHODROUTINGID identifier (required)
+     * @param  \OpenBankProject\Model\CreateMethodRoutingRequest $create_method_routing_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMethodRouting'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateMethodRoutingAsync($methodroutingid, $create_method_routing_request, string $contentType = self::contentTypes['updateMethodRouting'][0])
+    {
+        return $this->updateMethodRoutingAsyncWithHttpInfo($methodroutingid, $create_method_routing_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateMethodRoutingAsyncWithHttpInfo
+     *
+     * Update MethodRouting
+     *
+     * @param  string $methodroutingid The METHODROUTINGID identifier (required)
+     * @param  \OpenBankProject\Model\CreateMethodRoutingRequest $create_method_routing_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMethodRouting'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateMethodRoutingAsyncWithHttpInfo($methodroutingid, $create_method_routing_request, string $contentType = self::contentTypes['updateMethodRouting'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetMethodRoutings200ResponseMethodRoutingsInner';
+        $request = $this->updateMethodRoutingRequest($methodroutingid, $create_method_routing_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateMethodRouting'
+     *
+     * @param  string $methodroutingid The METHODROUTINGID identifier (required)
+     * @param  \OpenBankProject\Model\CreateMethodRoutingRequest $create_method_routing_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMethodRouting'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateMethodRoutingRequest($methodroutingid, $create_method_routing_request, string $contentType = self::contentTypes['updateMethodRouting'][0])
+    {
+
+        // verify the required parameter 'methodroutingid' is set
+        if ($methodroutingid === null || (is_array($methodroutingid) && count($methodroutingid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $methodroutingid when calling updateMethodRouting'
+            );
+        }
+
+        // verify the required parameter 'create_method_routing_request' is set
+        if ($create_method_routing_request === null || (is_array($create_method_routing_request) && count($create_method_routing_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_method_routing_request when calling updateMethodRouting'
+            );
+        }
+
+
+        $resourcePath = '/obp/v3.1.0/management/method_routings/{methodroutingid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($methodroutingid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'methodroutingid' . '}',
+                ObjectSerializer::toPathValue($methodroutingid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_method_routing_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_method_routing_request));
+            } else {
+                $httpBody = $create_method_routing_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

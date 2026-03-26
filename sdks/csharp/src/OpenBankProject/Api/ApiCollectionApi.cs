@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -39,16 +39,27 @@ namespace OpenBankProject.Api
         ApiCollectionApiEvents Events { get; }
 
         /// <summary>
-        /// Create My Api Collection
+        /// Create Featured Api Collection
         /// </summary>
         /// <remarks>
-        /// &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400CreateMyApiCollectionRequest">Request body</param>
+        /// <param name="createFeaturedApiCollectionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateMyApiCollectionApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateMyApiCollectionApiResponse> OBPv400CreateMyApiCollectionAsync(OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateFeaturedApiCollectionApiResponse"/>&gt;</returns>
+        Task<ICreateFeaturedApiCollectionApiResponse> CreateFeaturedApiCollectionAsync(CreateFeaturedApiCollectionRequest createFeaturedApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create Featured Api Collection
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="createFeaturedApiCollectionRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateFeaturedApiCollectionApiResponse"/>?&gt;</returns>
+        Task<ICreateFeaturedApiCollectionApiResponse?> CreateFeaturedApiCollectionOrDefaultAsync(CreateFeaturedApiCollectionRequest createFeaturedApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create My Api Collection
@@ -56,10 +67,22 @@ namespace OpenBankProject.Api
         /// <remarks>
         /// &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
         /// </remarks>
-        /// <param name="oBPv400CreateMyApiCollectionRequest">Request body</param>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createMyApiCollectionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateMyApiCollectionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateMyApiCollectionApiResponse?> OBPv400CreateMyApiCollectionOrDefaultAsync(OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateMyApiCollectionApiResponse"/>&gt;</returns>
+        Task<ICreateMyApiCollectionApiResponse> CreateMyApiCollectionAsync(CreateMyApiCollectionRequest createMyApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create My Api Collection
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="createMyApiCollectionRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateMyApiCollectionApiResponse"/>?&gt;</returns>
+        Task<ICreateMyApiCollectionApiResponse?> CreateMyApiCollectionOrDefaultAsync(CreateMyApiCollectionRequest createMyApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create My Api Collection Endpoint
@@ -69,10 +92,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest">Request body</param>
+        /// <param name="createMyApiCollectionEndpointRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateMyApiCollectionEndpointApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateMyApiCollectionEndpointApiResponse> OBPv400CreateMyApiCollectionEndpointAsync(string apicollectionname, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateMyApiCollectionEndpointApiResponse"/>&gt;</returns>
+        Task<ICreateMyApiCollectionEndpointApiResponse> CreateMyApiCollectionEndpointAsync(string apicollectionname, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create My Api Collection Endpoint
@@ -81,10 +104,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create Api Collection Endpoint.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
         /// </remarks>
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest">Request body</param>
+        /// <param name="createMyApiCollectionEndpointRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateMyApiCollectionEndpointApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateMyApiCollectionEndpointApiResponse?> OBPv400CreateMyApiCollectionEndpointOrDefaultAsync(string apicollectionname, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateMyApiCollectionEndpointApiResponse"/>?&gt;</returns>
+        Task<ICreateMyApiCollectionEndpointApiResponse?> CreateMyApiCollectionEndpointOrDefaultAsync(string apicollectionname, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create My Api Collection Endpoint By Id
@@ -94,10 +117,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest">Request body</param>
+        /// <param name="createMyApiCollectionEndpointRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateMyApiCollectionEndpointByIdApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateMyApiCollectionEndpointByIdApiResponse> OBPv400CreateMyApiCollectionEndpointByIdAsync(string apicollectionid, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateMyApiCollectionEndpointByIdApiResponse"/>&gt;</returns>
+        Task<ICreateMyApiCollectionEndpointByIdApiResponse> CreateMyApiCollectionEndpointByIdAsync(string apicollectionid, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create My Api Collection Endpoint By Id
@@ -106,10 +129,33 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create Api Collection Endpoint By Id.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
         /// </remarks>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest">Request body</param>
+        /// <param name="createMyApiCollectionEndpointRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateMyApiCollectionEndpointByIdApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateMyApiCollectionEndpointByIdApiResponse?> OBPv400CreateMyApiCollectionEndpointByIdOrDefaultAsync(string apicollectionid, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateMyApiCollectionEndpointByIdApiResponse"/>?&gt;</returns>
+        Task<ICreateMyApiCollectionEndpointByIdApiResponse?> CreateMyApiCollectionEndpointByIdOrDefaultAsync(string apicollectionid, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Delete Featured Api Collection
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Remove an API Collection from the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteFeaturedApiCollectionApiResponse"/>&gt;</returns>
+        Task<IDeleteFeaturedApiCollectionApiResponse> DeleteFeaturedApiCollectionAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Delete Featured Api Collection
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Remove an API Collection from the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteFeaturedApiCollectionApiResponse"/>?&gt;</returns>
+        Task<IDeleteFeaturedApiCollectionApiResponse?> DeleteFeaturedApiCollectionOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete My Api Collection
@@ -120,8 +166,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyApiCollectionApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteMyApiCollectionApiResponse> OBPv400DeleteMyApiCollectionAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyApiCollectionApiResponse"/>&gt;</returns>
+        Task<IDeleteMyApiCollectionApiResponse> DeleteMyApiCollectionAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete My Api Collection
@@ -131,8 +177,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyApiCollectionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteMyApiCollectionApiResponse?> OBPv400DeleteMyApiCollectionOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyApiCollectionApiResponse"/>?&gt;</returns>
+        Task<IDeleteMyApiCollectionApiResponse?> DeleteMyApiCollectionOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete My Api Collection Endpoint
@@ -144,8 +190,8 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyApiCollectionEndpointApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteMyApiCollectionEndpointApiResponse> OBPv400DeleteMyApiCollectionEndpointAsync(string apicollectionname, string operationid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyApiCollectionEndpointApiResponse"/>&gt;</returns>
+        Task<IDeleteMyApiCollectionEndpointApiResponse> DeleteMyApiCollectionEndpointAsync(string apicollectionname, string operationid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete My Api Collection Endpoint
@@ -156,8 +202,8 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyApiCollectionEndpointApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteMyApiCollectionEndpointApiResponse?> OBPv400DeleteMyApiCollectionEndpointOrDefaultAsync(string apicollectionname, string operationid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyApiCollectionEndpointApiResponse"/>?&gt;</returns>
+        Task<IDeleteMyApiCollectionEndpointApiResponse?> DeleteMyApiCollectionEndpointOrDefaultAsync(string apicollectionname, string operationid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete My Api Collection Endpoint By Id
@@ -169,8 +215,8 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="apicollectionendpointid">The APICOLLECTIONENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyApiCollectionEndpointByIdApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteMyApiCollectionEndpointByIdApiResponse> OBPv400DeleteMyApiCollectionEndpointByIdAsync(string apicollectionid, string apicollectionendpointid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyApiCollectionEndpointByIdApiResponse"/>&gt;</returns>
+        Task<IDeleteMyApiCollectionEndpointByIdApiResponse> DeleteMyApiCollectionEndpointByIdAsync(string apicollectionid, string apicollectionendpointid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete My Api Collection Endpoint By Id
@@ -181,8 +227,8 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="apicollectionendpointid">The APICOLLECTIONENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyApiCollectionEndpointByIdApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteMyApiCollectionEndpointByIdApiResponse?> OBPv400DeleteMyApiCollectionEndpointByIdOrDefaultAsync(string apicollectionid, string apicollectionendpointid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyApiCollectionEndpointByIdApiResponse"/>?&gt;</returns>
+        Task<IDeleteMyApiCollectionEndpointByIdApiResponse?> DeleteMyApiCollectionEndpointByIdOrDefaultAsync(string apicollectionid, string apicollectionendpointid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete My Api Collection Endpoint By Id
@@ -194,8 +240,8 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse> OBPv400DeleteMyApiCollectionEndpointByOperationIdAsync(string apicollectionid, string operationid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyApiCollectionEndpointByOperationIdApiResponse"/>&gt;</returns>
+        Task<IDeleteMyApiCollectionEndpointByOperationIdApiResponse> DeleteMyApiCollectionEndpointByOperationIdAsync(string apicollectionid, string operationid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete My Api Collection Endpoint By Id
@@ -206,8 +252,29 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse?> OBPv400DeleteMyApiCollectionEndpointByOperationIdOrDefaultAsync(string apicollectionid, string operationid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyApiCollectionEndpointByOperationIdApiResponse"/>?&gt;</returns>
+        Task<IDeleteMyApiCollectionEndpointByOperationIdApiResponse?> DeleteMyApiCollectionEndpointByOperationIdOrDefaultAsync(string apicollectionid, string operationid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get All API Collections
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllApiCollectionsApiResponse"/>&gt;</returns>
+        Task<IGetAllApiCollectionsApiResponse> GetAllApiCollectionsAsync(System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get All API Collections
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllApiCollectionsApiResponse"/>?&gt;</returns>
+        Task<IGetAllApiCollectionsApiResponse?> GetAllApiCollectionsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Api Collection Endpoints
@@ -218,8 +285,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetApiCollectionEndpointsApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetApiCollectionEndpointsApiResponse> OBPv400GetApiCollectionEndpointsAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetApiCollectionEndpointsApiResponse"/>&gt;</returns>
+        Task<IGetApiCollectionEndpointsApiResponse> GetApiCollectionEndpointsAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Api Collection Endpoints
@@ -229,8 +296,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetApiCollectionEndpointsApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetApiCollectionEndpointsApiResponse?> OBPv400GetApiCollectionEndpointsOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetApiCollectionEndpointsApiResponse"/>?&gt;</returns>
+        Task<IGetApiCollectionEndpointsApiResponse?> GetApiCollectionEndpointsOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Api Collections for User
@@ -241,8 +308,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userid">The USERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetApiCollectionsForUserApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetApiCollectionsForUserApiResponse> OBPv400GetApiCollectionsForUserAsync(string userid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetApiCollectionsForUserApiResponse"/>&gt;</returns>
+        Task<IGetApiCollectionsForUserApiResponse> GetApiCollectionsForUserAsync(string userid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Api Collections for User
@@ -252,8 +319,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="userid">The USERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetApiCollectionsForUserApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetApiCollectionsForUserApiResponse?> OBPv400GetApiCollectionsForUserOrDefaultAsync(string userid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetApiCollectionsForUserApiResponse"/>?&gt;</returns>
+        Task<IGetApiCollectionsForUserApiResponse?> GetApiCollectionsForUserOrDefaultAsync(string userid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Featured Api Collections
@@ -263,8 +330,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetFeaturedApiCollectionsApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetFeaturedApiCollectionsApiResponse> OBPv400GetFeaturedApiCollectionsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetFeaturedApiCollectionsApiResponse"/>&gt;</returns>
+        Task<IGetFeaturedApiCollectionsApiResponse> GetFeaturedApiCollectionsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Featured Api Collections
@@ -273,8 +340,29 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get Featured Api Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetFeaturedApiCollectionsApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetFeaturedApiCollectionsApiResponse?> OBPv400GetFeaturedApiCollectionsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetFeaturedApiCollectionsApiResponse"/>?&gt;</returns>
+        Task<IGetFeaturedApiCollectionsApiResponse?> GetFeaturedApiCollectionsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Featured Api Collections (Admin)
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetFeaturedApiCollectionsAdminApiResponse"/>&gt;</returns>
+        Task<IGetFeaturedApiCollectionsAdminApiResponse> GetFeaturedApiCollectionsAdminAsync(System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Featured Api Collections (Admin)
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetFeaturedApiCollectionsAdminApiResponse"/>?&gt;</returns>
+        Task<IGetFeaturedApiCollectionsAdminApiResponse?> GetFeaturedApiCollectionsAdminOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get My Api Collection By Id
@@ -285,8 +373,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionByIdApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetMyApiCollectionByIdApiResponse> OBPv400GetMyApiCollectionByIdAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionByIdApiResponse"/>&gt;</returns>
+        Task<IGetMyApiCollectionByIdApiResponse> GetMyApiCollectionByIdAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get My Api Collection By Id
@@ -296,8 +384,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionByIdApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetMyApiCollectionByIdApiResponse?> OBPv400GetMyApiCollectionByIdOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionByIdApiResponse"/>?&gt;</returns>
+        Task<IGetMyApiCollectionByIdApiResponse?> GetMyApiCollectionByIdOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get My Api Collection By Name
@@ -308,8 +396,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionByNameApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetMyApiCollectionByNameApiResponse> OBPv400GetMyApiCollectionByNameAsync(string apicollectionname, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionByNameApiResponse"/>&gt;</returns>
+        Task<IGetMyApiCollectionByNameApiResponse> GetMyApiCollectionByNameAsync(string apicollectionname, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get My Api Collection By Name
@@ -319,8 +407,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionByNameApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetMyApiCollectionByNameApiResponse?> OBPv400GetMyApiCollectionByNameOrDefaultAsync(string apicollectionname, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionByNameApiResponse"/>?&gt;</returns>
+        Task<IGetMyApiCollectionByNameApiResponse?> GetMyApiCollectionByNameOrDefaultAsync(string apicollectionname, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get My Api Collection Endpoint
@@ -332,8 +420,8 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionEndpointApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetMyApiCollectionEndpointApiResponse> OBPv400GetMyApiCollectionEndpointAsync(string apicollectionname, string operationid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionEndpointApiResponse"/>&gt;</returns>
+        Task<IGetMyApiCollectionEndpointApiResponse> GetMyApiCollectionEndpointAsync(string apicollectionname, string operationid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get My Api Collection Endpoint
@@ -344,8 +432,8 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionEndpointApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetMyApiCollectionEndpointApiResponse?> OBPv400GetMyApiCollectionEndpointOrDefaultAsync(string apicollectionname, string operationid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionEndpointApiResponse"/>?&gt;</returns>
+        Task<IGetMyApiCollectionEndpointApiResponse?> GetMyApiCollectionEndpointOrDefaultAsync(string apicollectionname, string operationid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get My Api Collection Endpoints
@@ -356,8 +444,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionEndpointsApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetMyApiCollectionEndpointsApiResponse> OBPv400GetMyApiCollectionEndpointsAsync(string apicollectionname, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionEndpointsApiResponse"/>&gt;</returns>
+        Task<IGetMyApiCollectionEndpointsApiResponse> GetMyApiCollectionEndpointsAsync(string apicollectionname, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get My Api Collection Endpoints
@@ -367,8 +455,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionEndpointsApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetMyApiCollectionEndpointsApiResponse?> OBPv400GetMyApiCollectionEndpointsOrDefaultAsync(string apicollectionname, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionEndpointsApiResponse"/>?&gt;</returns>
+        Task<IGetMyApiCollectionEndpointsApiResponse?> GetMyApiCollectionEndpointsOrDefaultAsync(string apicollectionname, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get My Api Collection Endpoints By Id
@@ -379,8 +467,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionEndpointsByIdApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetMyApiCollectionEndpointsByIdApiResponse> OBPv400GetMyApiCollectionEndpointsByIdAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionEndpointsByIdApiResponse"/>&gt;</returns>
+        Task<IGetMyApiCollectionEndpointsByIdApiResponse> GetMyApiCollectionEndpointsByIdAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get My Api Collection Endpoints By Id
@@ -390,29 +478,29 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionEndpointsByIdApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetMyApiCollectionEndpointsByIdApiResponse?> OBPv400GetMyApiCollectionEndpointsByIdOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionEndpointsByIdApiResponse"/>?&gt;</returns>
+        Task<IGetMyApiCollectionEndpointsByIdApiResponse?> GetMyApiCollectionEndpointsByIdOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get My Api Collections
         /// </summary>
         /// <remarks>
-        /// &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;1 limit (for pagination: defaults to 50)  eg:limit&#x3D;200&lt;/p&gt; &lt;p&gt;2 offset (for pagination: zero index, defaults to 0) eg: offset&#x3D;10&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionsApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetMyApiCollectionsApiResponse> OBPv400GetMyApiCollectionsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionsApiResponse"/>&gt;</returns>
+        Task<IGetMyApiCollectionsApiResponse> GetMyApiCollectionsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get My Api Collections
         /// </summary>
         /// <remarks>
-        /// &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;1 limit (for pagination: defaults to 50)  eg:limit&#x3D;200&lt;/p&gt; &lt;p&gt;2 offset (for pagination: zero index, defaults to 0) eg: offset&#x3D;10&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionsApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetMyApiCollectionsApiResponse?> OBPv400GetMyApiCollectionsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionsApiResponse"/>?&gt;</returns>
+        Task<IGetMyApiCollectionsApiResponse?> GetMyApiCollectionsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Sharable Api Collection By Id
@@ -423,8 +511,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetSharableApiCollectionByIdApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetSharableApiCollectionByIdApiResponse> OBPv400GetSharableApiCollectionByIdAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSharableApiCollectionByIdApiResponse"/>&gt;</returns>
+        Task<IGetSharableApiCollectionByIdApiResponse> GetSharableApiCollectionByIdAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Sharable Api Collection By Id
@@ -434,121 +522,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetSharableApiCollectionByIdApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetSharableApiCollectionByIdApiResponse?> OBPv400GetSharableApiCollectionByIdOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get All API Collections
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetAllApiCollectionsApiResponse"/>&gt;</returns>
-        Task<IOBPv510GetAllApiCollectionsApiResponse> OBPv510GetAllApiCollectionsAsync(System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get All API Collections
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetAllApiCollectionsApiResponse"/>?&gt;</returns>
-        Task<IOBPv510GetAllApiCollectionsApiResponse?> OBPv510GetAllApiCollectionsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update My Api Collection By API_COLLECTION_ID
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
-        /// <param name="oBPv400CreateMyApiCollectionRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510UpdateMyApiCollectionApiResponse"/>&gt;</returns>
-        Task<IOBPv510UpdateMyApiCollectionApiResponse> OBPv510UpdateMyApiCollectionAsync(string apicollectionid, OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update My Api Collection By API_COLLECTION_ID
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
-        /// <param name="oBPv400CreateMyApiCollectionRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510UpdateMyApiCollectionApiResponse"/>?&gt;</returns>
-        Task<IOBPv510UpdateMyApiCollectionApiResponse?> OBPv510UpdateMyApiCollectionOrDefaultAsync(string apicollectionid, OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create Featured Api Collection
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv600CreateFeaturedApiCollectionRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateFeaturedApiCollectionApiResponse"/>&gt;</returns>
-        Task<IOBPv600CreateFeaturedApiCollectionApiResponse> OBPv600CreateFeaturedApiCollectionAsync(OBPv600CreateFeaturedApiCollectionRequest oBPv600CreateFeaturedApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create Featured Api Collection
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="oBPv600CreateFeaturedApiCollectionRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateFeaturedApiCollectionApiResponse"/>?&gt;</returns>
-        Task<IOBPv600CreateFeaturedApiCollectionApiResponse?> OBPv600CreateFeaturedApiCollectionOrDefaultAsync(OBPv600CreateFeaturedApiCollectionRequest oBPv600CreateFeaturedApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Delete Featured Api Collection
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Remove an API Collection from the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteFeaturedApiCollectionApiResponse"/>&gt;</returns>
-        Task<IOBPv600DeleteFeaturedApiCollectionApiResponse> OBPv600DeleteFeaturedApiCollectionAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Delete Featured Api Collection
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Remove an API Collection from the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteFeaturedApiCollectionApiResponse"/>?&gt;</returns>
-        Task<IOBPv600DeleteFeaturedApiCollectionApiResponse?> OBPv600DeleteFeaturedApiCollectionOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Featured Api Collections (Admin)
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetFeaturedApiCollectionsAdminApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetFeaturedApiCollectionsAdminApiResponse> OBPv600GetFeaturedApiCollectionsAdminAsync(System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Featured Api Collections (Admin)
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetFeaturedApiCollectionsAdminApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetFeaturedApiCollectionsAdminApiResponse?> OBPv600GetFeaturedApiCollectionsAdminOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSharableApiCollectionByIdApiResponse"/>?&gt;</returns>
+        Task<IGetSharableApiCollectionByIdApiResponse?> GetSharableApiCollectionByIdOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Featured Api Collection
@@ -558,10 +533,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
-        /// <param name="oBPv600UpdateFeaturedApiCollectionRequest">Request body</param>
+        /// <param name="updateFeaturedApiCollectionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateFeaturedApiCollectionApiResponse"/>&gt;</returns>
-        Task<IOBPv600UpdateFeaturedApiCollectionApiResponse> OBPv600UpdateFeaturedApiCollectionAsync(string apicollectionid, OBPv600UpdateFeaturedApiCollectionRequest oBPv600UpdateFeaturedApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateFeaturedApiCollectionApiResponse"/>&gt;</returns>
+        Task<IUpdateFeaturedApiCollectionApiResponse> UpdateFeaturedApiCollectionAsync(string apicollectionid, UpdateFeaturedApiCollectionRequest updateFeaturedApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Featured Api Collection
@@ -570,16 +545,41 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Update the sort order of a featured API collection.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
         /// </remarks>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
-        /// <param name="oBPv600UpdateFeaturedApiCollectionRequest">Request body</param>
+        /// <param name="updateFeaturedApiCollectionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateFeaturedApiCollectionApiResponse"/>?&gt;</returns>
-        Task<IOBPv600UpdateFeaturedApiCollectionApiResponse?> OBPv600UpdateFeaturedApiCollectionOrDefaultAsync(string apicollectionid, OBPv600UpdateFeaturedApiCollectionRequest oBPv600UpdateFeaturedApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateFeaturedApiCollectionApiResponse"/>?&gt;</returns>
+        Task<IUpdateFeaturedApiCollectionApiResponse?> UpdateFeaturedApiCollectionOrDefaultAsync(string apicollectionid, UpdateFeaturedApiCollectionRequest updateFeaturedApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update My Api Collection By API_COLLECTION_ID
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
+        /// <param name="createMyApiCollectionRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateMyApiCollectionApiResponse"/>&gt;</returns>
+        Task<IUpdateMyApiCollectionApiResponse> UpdateMyApiCollectionAsync(string apicollectionid, CreateMyApiCollectionRequest createMyApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update My Api Collection By API_COLLECTION_ID
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
+        /// <param name="createMyApiCollectionRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateMyApiCollectionApiResponse"/>?&gt;</returns>
+        Task<IUpdateMyApiCollectionApiResponse?> UpdateMyApiCollectionOrDefaultAsync(string apicollectionid, CreateMyApiCollectionRequest createMyApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400CreateMyApiCollectionApiResponse"/>
+    /// The <see cref="ICreateMyApiCollectionApiResponse"/>
     /// </summary>
-    public interface IOBPv400CreateMyApiCollectionApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems?>
+    public interface ICreateMyApiCollectionApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -601,9 +601,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400CreateMyApiCollectionEndpointApiResponse"/>
+    /// The <see cref="ICreateMyApiCollectionEndpointApiResponse"/>
     /// </summary>
-    public interface IOBPv400CreateMyApiCollectionEndpointApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems?>
+    public interface ICreateMyApiCollectionEndpointApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -619,9 +619,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400CreateMyApiCollectionEndpointByIdApiResponse"/>
+    /// The <see cref="ICreateMyApiCollectionEndpointByIdApiResponse"/>
     /// </summary>
-    public interface IOBPv400CreateMyApiCollectionEndpointByIdApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems?>
+    public interface ICreateMyApiCollectionEndpointByIdApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -637,33 +637,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400DeleteMyApiCollectionApiResponse"/>
+    /// The <see cref="IDeleteMyApiCollectionApiResponse"/>
     /// </summary>
-    public interface IOBPv400DeleteMyApiCollectionApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400DeleteSystemLevelEndpointTag200Response?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 404 NotFound
-        /// </summary>
-        /// <returns></returns>
-        bool IsNotFound { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv400DeleteMyApiCollectionEndpointApiResponse"/>
-    /// </summary>
-    public interface IOBPv400DeleteMyApiCollectionEndpointApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400DeleteSystemLevelEndpointTag200Response?>
+    public interface IDeleteMyApiCollectionApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.DeleteSystemLevelEndpointTag200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -685,9 +661,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400DeleteMyApiCollectionEndpointByIdApiResponse"/>
+    /// The <see cref="IDeleteMyApiCollectionEndpointApiResponse"/>
     /// </summary>
-    public interface IOBPv400DeleteMyApiCollectionEndpointByIdApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400DeleteSystemLevelEndpointTag200Response?>
+    public interface IDeleteMyApiCollectionEndpointApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.DeleteSystemLevelEndpointTag200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -709,9 +685,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse"/>
+    /// The <see cref="IDeleteMyApiCollectionEndpointByIdApiResponse"/>
     /// </summary>
-    public interface IOBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400DeleteSystemLevelEndpointTag200Response?>
+    public interface IDeleteMyApiCollectionEndpointByIdApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.DeleteSystemLevelEndpointTag200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -733,27 +709,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetApiCollectionEndpointsApiResponse"/>
+    /// The <see cref="IDeleteMyApiCollectionEndpointByOperationIdApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetApiCollectionEndpointsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200Response?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv400GetApiCollectionsForUserApiResponse"/>
-    /// </summary>
-    public interface IOBPv400GetApiCollectionsForUserApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200Response?>
+    public interface IDeleteMyApiCollectionEndpointByOperationIdApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.DeleteSystemLevelEndpointTag200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -775,9 +733,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetFeaturedApiCollectionsApiResponse"/>
+    /// The <see cref="IGetAllApiCollectionsApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetFeaturedApiCollectionsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200Response?>
+    public interface IGetAllApiCollectionsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetApiCollectionsForUser200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -793,21 +751,15 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetMyApiCollectionByIdApiResponse"/>
+    /// The <see cref="IGetApiCollectionEndpointsApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetMyApiCollectionByIdApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems?>
+    public interface IGetApiCollectionEndpointsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetMyApiCollectionEndpoints200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
         /// </summary>
         /// <returns></returns>
         bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 404 NotFound
-        /// </summary>
-        /// <returns></returns>
-        bool IsNotFound { get; }
 
         /// <summary>
         /// Returns true if the response is 500 InternalServerError
@@ -817,33 +769,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetMyApiCollectionByNameApiResponse"/>
+    /// The <see cref="IGetApiCollectionsForUserApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetMyApiCollectionByNameApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 404 NotFound
-        /// </summary>
-        /// <returns></returns>
-        bool IsNotFound { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv400GetMyApiCollectionEndpointApiResponse"/>
-    /// </summary>
-    public interface IOBPv400GetMyApiCollectionEndpointApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems?>
+    public interface IGetApiCollectionsForUserApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetApiCollectionsForUser200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -865,9 +793,27 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetMyApiCollectionEndpointsApiResponse"/>
+    /// The <see cref="IGetFeaturedApiCollectionsApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetMyApiCollectionEndpointsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200Response?>
+    public interface IGetFeaturedApiCollectionsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetApiCollectionsForUser200Response?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="IGetMyApiCollectionByIdApiResponse"/>
+    /// </summary>
+    public interface IGetMyApiCollectionByIdApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -889,9 +835,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetMyApiCollectionEndpointsByIdApiResponse"/>
+    /// The <see cref="IGetMyApiCollectionByNameApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetMyApiCollectionEndpointsByIdApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200Response?>
+    public interface IGetMyApiCollectionByNameApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -913,9 +859,81 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetMyApiCollectionsApiResponse"/>
+    /// The <see cref="IGetMyApiCollectionEndpointApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetMyApiCollectionsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200Response?>
+    public interface IGetMyApiCollectionEndpointApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 404 NotFound
+        /// </summary>
+        /// <returns></returns>
+        bool IsNotFound { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="IGetMyApiCollectionEndpointsApiResponse"/>
+    /// </summary>
+    public interface IGetMyApiCollectionEndpointsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetMyApiCollectionEndpoints200Response?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 404 NotFound
+        /// </summary>
+        /// <returns></returns>
+        bool IsNotFound { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="IGetMyApiCollectionEndpointsByIdApiResponse"/>
+    /// </summary>
+    public interface IGetMyApiCollectionEndpointsByIdApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetMyApiCollectionEndpoints200Response?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 404 NotFound
+        /// </summary>
+        /// <returns></returns>
+        bool IsNotFound { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="IGetMyApiCollectionsApiResponse"/>
+    /// </summary>
+    public interface IGetMyApiCollectionsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetApiCollectionsForUser200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -931,9 +949,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetSharableApiCollectionByIdApiResponse"/>
+    /// The <see cref="IGetSharableApiCollectionByIdApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetSharableApiCollectionByIdApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems?>
+    public interface IGetSharableApiCollectionByIdApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -949,27 +967,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv510GetAllApiCollectionsApiResponse"/>
+    /// The <see cref="IUpdateMyApiCollectionApiResponse"/>
     /// </summary>
-    public interface IOBPv510GetAllApiCollectionsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200Response?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv510UpdateMyApiCollectionApiResponse"/>
-    /// </summary>
-    public interface IOBPv510UpdateMyApiCollectionApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems?>
+    public interface IUpdateMyApiCollectionApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -998,461 +998,461 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateMyApiCollection;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateFeaturedApiCollection;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateMyApiCollection;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateFeaturedApiCollection;
 
-        internal void ExecuteOnOBPv400CreateMyApiCollection(ApiCollectionApi.OBPv400CreateMyApiCollectionApiResponse apiResponse)
+        internal void ExecuteOnCreateFeaturedApiCollection(APIApi.CreateFeaturedApiCollectionApiResponse apiResponse)
         {
-            OnOBPv400CreateMyApiCollection?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateFeaturedApiCollection?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateMyApiCollection(Exception exception)
+        internal void ExecuteOnErrorCreateFeaturedApiCollection(Exception exception)
         {
-            OnErrorOBPv400CreateMyApiCollection?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateFeaturedApiCollection?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateMyApiCollectionEndpoint;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateMyApiCollection;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateMyApiCollectionEndpoint;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateMyApiCollection;
 
-        internal void ExecuteOnOBPv400CreateMyApiCollectionEndpoint(ApiCollectionApi.OBPv400CreateMyApiCollectionEndpointApiResponse apiResponse)
+        internal void ExecuteOnCreateMyApiCollection(ApiCollectionApi.CreateMyApiCollectionApiResponse apiResponse)
         {
-            OnOBPv400CreateMyApiCollectionEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateMyApiCollection?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateMyApiCollectionEndpoint(Exception exception)
+        internal void ExecuteOnErrorCreateMyApiCollection(Exception exception)
         {
-            OnErrorOBPv400CreateMyApiCollectionEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateMyApiCollection?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateMyApiCollectionEndpointById;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateMyApiCollectionEndpoint;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateMyApiCollectionEndpointById;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateMyApiCollectionEndpoint;
 
-        internal void ExecuteOnOBPv400CreateMyApiCollectionEndpointById(ApiCollectionApi.OBPv400CreateMyApiCollectionEndpointByIdApiResponse apiResponse)
+        internal void ExecuteOnCreateMyApiCollectionEndpoint(ApiCollectionApi.CreateMyApiCollectionEndpointApiResponse apiResponse)
         {
-            OnOBPv400CreateMyApiCollectionEndpointById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateMyApiCollectionEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateMyApiCollectionEndpointById(Exception exception)
+        internal void ExecuteOnErrorCreateMyApiCollectionEndpoint(Exception exception)
         {
-            OnErrorOBPv400CreateMyApiCollectionEndpointById?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateMyApiCollectionEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteMyApiCollection;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateMyApiCollectionEndpointById;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteMyApiCollection;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateMyApiCollectionEndpointById;
 
-        internal void ExecuteOnOBPv400DeleteMyApiCollection(ApiCollectionApi.OBPv400DeleteMyApiCollectionApiResponse apiResponse)
+        internal void ExecuteOnCreateMyApiCollectionEndpointById(ApiCollectionApi.CreateMyApiCollectionEndpointByIdApiResponse apiResponse)
         {
-            OnOBPv400DeleteMyApiCollection?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateMyApiCollectionEndpointById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteMyApiCollection(Exception exception)
+        internal void ExecuteOnErrorCreateMyApiCollectionEndpointById(Exception exception)
         {
-            OnErrorOBPv400DeleteMyApiCollection?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateMyApiCollectionEndpointById?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteMyApiCollectionEndpoint;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteFeaturedApiCollection;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteMyApiCollectionEndpoint;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteFeaturedApiCollection;
 
-        internal void ExecuteOnOBPv400DeleteMyApiCollectionEndpoint(ApiCollectionApi.OBPv400DeleteMyApiCollectionEndpointApiResponse apiResponse)
+        internal void ExecuteOnDeleteFeaturedApiCollection(APIApi.DeleteFeaturedApiCollectionApiResponse apiResponse)
         {
-            OnOBPv400DeleteMyApiCollectionEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteFeaturedApiCollection?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteMyApiCollectionEndpoint(Exception exception)
+        internal void ExecuteOnErrorDeleteFeaturedApiCollection(Exception exception)
         {
-            OnErrorOBPv400DeleteMyApiCollectionEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteFeaturedApiCollection?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteMyApiCollectionEndpointById;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteMyApiCollection;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteMyApiCollectionEndpointById;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteMyApiCollection;
 
-        internal void ExecuteOnOBPv400DeleteMyApiCollectionEndpointById(ApiCollectionApi.OBPv400DeleteMyApiCollectionEndpointByIdApiResponse apiResponse)
+        internal void ExecuteOnDeleteMyApiCollection(ApiCollectionApi.DeleteMyApiCollectionApiResponse apiResponse)
         {
-            OnOBPv400DeleteMyApiCollectionEndpointById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteMyApiCollection?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteMyApiCollectionEndpointById(Exception exception)
+        internal void ExecuteOnErrorDeleteMyApiCollection(Exception exception)
         {
-            OnErrorOBPv400DeleteMyApiCollectionEndpointById?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteMyApiCollection?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteMyApiCollectionEndpointByOperationId;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteMyApiCollectionEndpoint;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteMyApiCollectionEndpointByOperationId;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteMyApiCollectionEndpoint;
 
-        internal void ExecuteOnOBPv400DeleteMyApiCollectionEndpointByOperationId(ApiCollectionApi.OBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse apiResponse)
+        internal void ExecuteOnDeleteMyApiCollectionEndpoint(ApiCollectionApi.DeleteMyApiCollectionEndpointApiResponse apiResponse)
         {
-            OnOBPv400DeleteMyApiCollectionEndpointByOperationId?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteMyApiCollectionEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteMyApiCollectionEndpointByOperationId(Exception exception)
+        internal void ExecuteOnErrorDeleteMyApiCollectionEndpoint(Exception exception)
         {
-            OnErrorOBPv400DeleteMyApiCollectionEndpointByOperationId?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteMyApiCollectionEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetApiCollectionEndpoints;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteMyApiCollectionEndpointById;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetApiCollectionEndpoints;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteMyApiCollectionEndpointById;
 
-        internal void ExecuteOnOBPv400GetApiCollectionEndpoints(ApiCollectionApi.OBPv400GetApiCollectionEndpointsApiResponse apiResponse)
+        internal void ExecuteOnDeleteMyApiCollectionEndpointById(ApiCollectionApi.DeleteMyApiCollectionEndpointByIdApiResponse apiResponse)
         {
-            OnOBPv400GetApiCollectionEndpoints?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteMyApiCollectionEndpointById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetApiCollectionEndpoints(Exception exception)
+        internal void ExecuteOnErrorDeleteMyApiCollectionEndpointById(Exception exception)
         {
-            OnErrorOBPv400GetApiCollectionEndpoints?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteMyApiCollectionEndpointById?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetApiCollectionsForUser;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteMyApiCollectionEndpointByOperationId;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetApiCollectionsForUser;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteMyApiCollectionEndpointByOperationId;
 
-        internal void ExecuteOnOBPv400GetApiCollectionsForUser(ApiCollectionApi.OBPv400GetApiCollectionsForUserApiResponse apiResponse)
+        internal void ExecuteOnDeleteMyApiCollectionEndpointByOperationId(ApiCollectionApi.DeleteMyApiCollectionEndpointByOperationIdApiResponse apiResponse)
         {
-            OnOBPv400GetApiCollectionsForUser?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteMyApiCollectionEndpointByOperationId?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetApiCollectionsForUser(Exception exception)
+        internal void ExecuteOnErrorDeleteMyApiCollectionEndpointByOperationId(Exception exception)
         {
-            OnErrorOBPv400GetApiCollectionsForUser?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteMyApiCollectionEndpointByOperationId?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetFeaturedApiCollections;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAllApiCollections;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetFeaturedApiCollections;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAllApiCollections;
 
-        internal void ExecuteOnOBPv400GetFeaturedApiCollections(ApiCollectionApi.OBPv400GetFeaturedApiCollectionsApiResponse apiResponse)
+        internal void ExecuteOnGetAllApiCollections(ApiCollectionApi.GetAllApiCollectionsApiResponse apiResponse)
         {
-            OnOBPv400GetFeaturedApiCollections?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAllApiCollections?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetFeaturedApiCollections(Exception exception)
+        internal void ExecuteOnErrorGetAllApiCollections(Exception exception)
         {
-            OnErrorOBPv400GetFeaturedApiCollections?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAllApiCollections?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetMyApiCollectionById;
+        public event EventHandler<ApiResponseEventArgs>? OnGetApiCollectionEndpoints;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetMyApiCollectionById;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetApiCollectionEndpoints;
 
-        internal void ExecuteOnOBPv400GetMyApiCollectionById(ApiCollectionApi.OBPv400GetMyApiCollectionByIdApiResponse apiResponse)
+        internal void ExecuteOnGetApiCollectionEndpoints(ApiCollectionApi.GetApiCollectionEndpointsApiResponse apiResponse)
         {
-            OnOBPv400GetMyApiCollectionById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetApiCollectionEndpoints?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetMyApiCollectionById(Exception exception)
+        internal void ExecuteOnErrorGetApiCollectionEndpoints(Exception exception)
         {
-            OnErrorOBPv400GetMyApiCollectionById?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetApiCollectionEndpoints?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetMyApiCollectionByName;
+        public event EventHandler<ApiResponseEventArgs>? OnGetApiCollectionsForUser;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetMyApiCollectionByName;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetApiCollectionsForUser;
 
-        internal void ExecuteOnOBPv400GetMyApiCollectionByName(ApiCollectionApi.OBPv400GetMyApiCollectionByNameApiResponse apiResponse)
+        internal void ExecuteOnGetApiCollectionsForUser(ApiCollectionApi.GetApiCollectionsForUserApiResponse apiResponse)
         {
-            OnOBPv400GetMyApiCollectionByName?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetApiCollectionsForUser?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetMyApiCollectionByName(Exception exception)
+        internal void ExecuteOnErrorGetApiCollectionsForUser(Exception exception)
         {
-            OnErrorOBPv400GetMyApiCollectionByName?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetApiCollectionsForUser?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetMyApiCollectionEndpoint;
+        public event EventHandler<ApiResponseEventArgs>? OnGetFeaturedApiCollections;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetMyApiCollectionEndpoint;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetFeaturedApiCollections;
 
-        internal void ExecuteOnOBPv400GetMyApiCollectionEndpoint(ApiCollectionApi.OBPv400GetMyApiCollectionEndpointApiResponse apiResponse)
+        internal void ExecuteOnGetFeaturedApiCollections(ApiCollectionApi.GetFeaturedApiCollectionsApiResponse apiResponse)
         {
-            OnOBPv400GetMyApiCollectionEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetFeaturedApiCollections?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetMyApiCollectionEndpoint(Exception exception)
+        internal void ExecuteOnErrorGetFeaturedApiCollections(Exception exception)
         {
-            OnErrorOBPv400GetMyApiCollectionEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetFeaturedApiCollections?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetMyApiCollectionEndpoints;
+        public event EventHandler<ApiResponseEventArgs>? OnGetFeaturedApiCollectionsAdmin;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetMyApiCollectionEndpoints;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetFeaturedApiCollectionsAdmin;
 
-        internal void ExecuteOnOBPv400GetMyApiCollectionEndpoints(ApiCollectionApi.OBPv400GetMyApiCollectionEndpointsApiResponse apiResponse)
+        internal void ExecuteOnGetFeaturedApiCollectionsAdmin(APIApi.GetFeaturedApiCollectionsAdminApiResponse apiResponse)
         {
-            OnOBPv400GetMyApiCollectionEndpoints?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetFeaturedApiCollectionsAdmin?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetMyApiCollectionEndpoints(Exception exception)
+        internal void ExecuteOnErrorGetFeaturedApiCollectionsAdmin(Exception exception)
         {
-            OnErrorOBPv400GetMyApiCollectionEndpoints?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetFeaturedApiCollectionsAdmin?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetMyApiCollectionEndpointsById;
+        public event EventHandler<ApiResponseEventArgs>? OnGetMyApiCollectionById;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetMyApiCollectionEndpointsById;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetMyApiCollectionById;
 
-        internal void ExecuteOnOBPv400GetMyApiCollectionEndpointsById(ApiCollectionApi.OBPv400GetMyApiCollectionEndpointsByIdApiResponse apiResponse)
+        internal void ExecuteOnGetMyApiCollectionById(ApiCollectionApi.GetMyApiCollectionByIdApiResponse apiResponse)
         {
-            OnOBPv400GetMyApiCollectionEndpointsById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetMyApiCollectionById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetMyApiCollectionEndpointsById(Exception exception)
+        internal void ExecuteOnErrorGetMyApiCollectionById(Exception exception)
         {
-            OnErrorOBPv400GetMyApiCollectionEndpointsById?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetMyApiCollectionById?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetMyApiCollections;
+        public event EventHandler<ApiResponseEventArgs>? OnGetMyApiCollectionByName;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetMyApiCollections;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetMyApiCollectionByName;
 
-        internal void ExecuteOnOBPv400GetMyApiCollections(ApiCollectionApi.OBPv400GetMyApiCollectionsApiResponse apiResponse)
+        internal void ExecuteOnGetMyApiCollectionByName(ApiCollectionApi.GetMyApiCollectionByNameApiResponse apiResponse)
         {
-            OnOBPv400GetMyApiCollections?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetMyApiCollectionByName?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetMyApiCollections(Exception exception)
+        internal void ExecuteOnErrorGetMyApiCollectionByName(Exception exception)
         {
-            OnErrorOBPv400GetMyApiCollections?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetMyApiCollectionByName?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetSharableApiCollectionById;
+        public event EventHandler<ApiResponseEventArgs>? OnGetMyApiCollectionEndpoint;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetSharableApiCollectionById;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetMyApiCollectionEndpoint;
 
-        internal void ExecuteOnOBPv400GetSharableApiCollectionById(ApiCollectionApi.OBPv400GetSharableApiCollectionByIdApiResponse apiResponse)
+        internal void ExecuteOnGetMyApiCollectionEndpoint(ApiCollectionApi.GetMyApiCollectionEndpointApiResponse apiResponse)
         {
-            OnOBPv400GetSharableApiCollectionById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetMyApiCollectionEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetSharableApiCollectionById(Exception exception)
+        internal void ExecuteOnErrorGetMyApiCollectionEndpoint(Exception exception)
         {
-            OnErrorOBPv400GetSharableApiCollectionById?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetMyApiCollectionEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510GetAllApiCollections;
+        public event EventHandler<ApiResponseEventArgs>? OnGetMyApiCollectionEndpoints;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510GetAllApiCollections;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetMyApiCollectionEndpoints;
 
-        internal void ExecuteOnOBPv510GetAllApiCollections(ApiCollectionApi.OBPv510GetAllApiCollectionsApiResponse apiResponse)
+        internal void ExecuteOnGetMyApiCollectionEndpoints(ApiCollectionApi.GetMyApiCollectionEndpointsApiResponse apiResponse)
         {
-            OnOBPv510GetAllApiCollections?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetMyApiCollectionEndpoints?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510GetAllApiCollections(Exception exception)
+        internal void ExecuteOnErrorGetMyApiCollectionEndpoints(Exception exception)
         {
-            OnErrorOBPv510GetAllApiCollections?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetMyApiCollectionEndpoints?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510UpdateMyApiCollection;
+        public event EventHandler<ApiResponseEventArgs>? OnGetMyApiCollectionEndpointsById;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510UpdateMyApiCollection;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetMyApiCollectionEndpointsById;
 
-        internal void ExecuteOnOBPv510UpdateMyApiCollection(ApiCollectionApi.OBPv510UpdateMyApiCollectionApiResponse apiResponse)
+        internal void ExecuteOnGetMyApiCollectionEndpointsById(ApiCollectionApi.GetMyApiCollectionEndpointsByIdApiResponse apiResponse)
         {
-            OnOBPv510UpdateMyApiCollection?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetMyApiCollectionEndpointsById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510UpdateMyApiCollection(Exception exception)
+        internal void ExecuteOnErrorGetMyApiCollectionEndpointsById(Exception exception)
         {
-            OnErrorOBPv510UpdateMyApiCollection?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetMyApiCollectionEndpointsById?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600CreateFeaturedApiCollection;
+        public event EventHandler<ApiResponseEventArgs>? OnGetMyApiCollections;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600CreateFeaturedApiCollection;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetMyApiCollections;
 
-        internal void ExecuteOnOBPv600CreateFeaturedApiCollection(APIApi.OBPv600CreateFeaturedApiCollectionApiResponse apiResponse)
+        internal void ExecuteOnGetMyApiCollections(ApiCollectionApi.GetMyApiCollectionsApiResponse apiResponse)
         {
-            OnOBPv600CreateFeaturedApiCollection?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetMyApiCollections?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600CreateFeaturedApiCollection(Exception exception)
+        internal void ExecuteOnErrorGetMyApiCollections(Exception exception)
         {
-            OnErrorOBPv600CreateFeaturedApiCollection?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetMyApiCollections?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600DeleteFeaturedApiCollection;
+        public event EventHandler<ApiResponseEventArgs>? OnGetSharableApiCollectionById;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600DeleteFeaturedApiCollection;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetSharableApiCollectionById;
 
-        internal void ExecuteOnOBPv600DeleteFeaturedApiCollection(APIApi.OBPv600DeleteFeaturedApiCollectionApiResponse apiResponse)
+        internal void ExecuteOnGetSharableApiCollectionById(ApiCollectionApi.GetSharableApiCollectionByIdApiResponse apiResponse)
         {
-            OnOBPv600DeleteFeaturedApiCollection?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetSharableApiCollectionById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600DeleteFeaturedApiCollection(Exception exception)
+        internal void ExecuteOnErrorGetSharableApiCollectionById(Exception exception)
         {
-            OnErrorOBPv600DeleteFeaturedApiCollection?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetSharableApiCollectionById?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetFeaturedApiCollectionsAdmin;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateFeaturedApiCollection;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetFeaturedApiCollectionsAdmin;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateFeaturedApiCollection;
 
-        internal void ExecuteOnOBPv600GetFeaturedApiCollectionsAdmin(APIApi.OBPv600GetFeaturedApiCollectionsAdminApiResponse apiResponse)
+        internal void ExecuteOnUpdateFeaturedApiCollection(APIApi.UpdateFeaturedApiCollectionApiResponse apiResponse)
         {
-            OnOBPv600GetFeaturedApiCollectionsAdmin?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateFeaturedApiCollection?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetFeaturedApiCollectionsAdmin(Exception exception)
+        internal void ExecuteOnErrorUpdateFeaturedApiCollection(Exception exception)
         {
-            OnErrorOBPv600GetFeaturedApiCollectionsAdmin?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateFeaturedApiCollection?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600UpdateFeaturedApiCollection;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateMyApiCollection;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600UpdateFeaturedApiCollection;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateMyApiCollection;
 
-        internal void ExecuteOnOBPv600UpdateFeaturedApiCollection(APIApi.OBPv600UpdateFeaturedApiCollectionApiResponse apiResponse)
+        internal void ExecuteOnUpdateMyApiCollection(ApiCollectionApi.UpdateMyApiCollectionApiResponse apiResponse)
         {
-            OnOBPv600UpdateFeaturedApiCollection?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateMyApiCollection?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600UpdateFeaturedApiCollection(Exception exception)
+        internal void ExecuteOnErrorUpdateMyApiCollection(Exception exception)
         {
-            OnErrorOBPv600UpdateFeaturedApiCollection?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateMyApiCollection?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -1510,28 +1510,28 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv400CreateMyApiCollection(OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest);
+        partial void FormatCreateFeaturedApiCollection(CreateFeaturedApiCollectionRequest createFeaturedApiCollectionRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
-        /// <param name="oBPv400CreateMyApiCollectionRequest"></param>
+        /// <param name="createFeaturedApiCollectionRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateMyApiCollection(OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest)
+        private void ValidateCreateFeaturedApiCollection(CreateFeaturedApiCollectionRequest createFeaturedApiCollectionRequest)
         {
-            if (oBPv400CreateMyApiCollectionRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateMyApiCollectionRequest));
+            if (createFeaturedApiCollectionRequest == null)
+                throw new ArgumentNullException(nameof(createFeaturedApiCollectionRequest));
         }
 
         /// <summary>
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400CreateMyApiCollectionRequest"></param>
-        private void AfterOBPv400CreateMyApiCollectionDefaultImplementation(IOBPv400CreateMyApiCollectionApiResponse apiResponseLocalVar, OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest)
+        /// <param name="createFeaturedApiCollectionRequest"></param>
+        private void AfterCreateFeaturedApiCollectionDefaultImplementation(ICreateFeaturedApiCollectionApiResponse apiResponseLocalVar, CreateFeaturedApiCollectionRequest createFeaturedApiCollectionRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateMyApiCollection(ref suppressDefaultLog, apiResponseLocalVar, oBPv400CreateMyApiCollectionRequest);
+            AfterCreateFeaturedApiCollection(ref suppressDefaultLog, apiResponseLocalVar, createFeaturedApiCollectionRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1541,8 +1541,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400CreateMyApiCollectionRequest"></param>
-        partial void AfterOBPv400CreateMyApiCollection(ref bool suppressDefaultLog, IOBPv400CreateMyApiCollectionApiResponse apiResponseLocalVar, OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest);
+        /// <param name="createFeaturedApiCollectionRequest"></param>
+        partial void AfterCreateFeaturedApiCollection(ref bool suppressDefaultLog, ICreateFeaturedApiCollectionApiResponse apiResponseLocalVar, CreateFeaturedApiCollectionRequest createFeaturedApiCollectionRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1550,11 +1550,11 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400CreateMyApiCollectionRequest"></param>
-        private void OnErrorOBPv400CreateMyApiCollectionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest)
+        /// <param name="createFeaturedApiCollectionRequest"></param>
+        private void OnErrorCreateFeaturedApiCollectionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreateFeaturedApiCollectionRequest createFeaturedApiCollectionRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateMyApiCollection(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, oBPv400CreateMyApiCollectionRequest);
+            OnErrorCreateFeaturedApiCollection(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, createFeaturedApiCollectionRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1566,20 +1566,20 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400CreateMyApiCollectionRequest"></param>
-        partial void OnErrorOBPv400CreateMyApiCollection(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest);
+        /// <param name="createFeaturedApiCollectionRequest"></param>
+        partial void OnErrorCreateFeaturedApiCollection(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreateFeaturedApiCollectionRequest createFeaturedApiCollectionRequest);
 
         /// <summary>
-        /// Create My Api Collection &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// Create Featured Api Collection &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
         /// </summary>
-        /// <param name="oBPv400CreateMyApiCollectionRequest">Request body</param>
+        /// <param name="createFeaturedApiCollectionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateMyApiCollectionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateMyApiCollectionApiResponse?> OBPv400CreateMyApiCollectionOrDefaultAsync(OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateFeaturedApiCollectionApiResponse"/>&gt;</returns>
+        public async Task<ICreateFeaturedApiCollectionApiResponse?> CreateFeaturedApiCollectionOrDefaultAsync(CreateFeaturedApiCollectionRequest createFeaturedApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateMyApiCollectionAsync(oBPv400CreateMyApiCollectionRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateFeaturedApiCollectionAsync(createFeaturedApiCollectionRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1588,21 +1588,21 @@ namespace OpenBankProject.Api
         }
 
         /// <summary>
-        /// Create My Api Collection &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// Create Featured Api Collection &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400CreateMyApiCollectionRequest">Request body</param>
+        /// <param name="createFeaturedApiCollectionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateMyApiCollectionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateMyApiCollectionApiResponse> OBPv400CreateMyApiCollectionAsync(OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateFeaturedApiCollectionApiResponse"/>&gt;</returns>
+        public async Task<ICreateFeaturedApiCollectionApiResponse> CreateFeaturedApiCollectionAsync(CreateFeaturedApiCollectionRequest createFeaturedApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateMyApiCollection(oBPv400CreateMyApiCollectionRequest);
+                ValidateCreateFeaturedApiCollection(createFeaturedApiCollectionRequest);
 
-                FormatOBPv400CreateMyApiCollection(oBPv400CreateMyApiCollectionRequest);
+                FormatCreateFeaturedApiCollection(createFeaturedApiCollectionRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1610,19 +1610,19 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/my/api-collections"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/my/api-collections");
+                        ? "/obp/v6.0.0/management/api-collections/featured"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/management/api-collections/featured");
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateMyApiCollectionRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createFeaturedApiCollectionRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateMyApiCollectionRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createFeaturedApiCollectionRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1658,21 +1658,21 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400CreateMyApiCollectionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400CreateMyApiCollectionApiResponse>();
-                        OBPv400CreateMyApiCollectionApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.CreateFeaturedApiCollectionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.CreateFeaturedApiCollectionApiResponse>();
+                        APIApi.CreateFeaturedApiCollectionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/my/api-collections", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v6.0.0/management/api-collections/featured", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
                         }
 
-                        AfterOBPv400CreateMyApiCollectionDefaultImplementation(apiResponseLocalVar, oBPv400CreateMyApiCollectionRequest);
+                        AfterCreateFeaturedApiCollectionDefaultImplementation(apiResponseLocalVar, createFeaturedApiCollectionRequest);
 
-                        Events.ExecuteOnOBPv400CreateMyApiCollection(apiResponseLocalVar);
+                        Events.ExecuteOnCreateFeaturedApiCollection(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1684,24 +1684,204 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateMyApiCollectionDefaultImplementation(e, "/obp/v4.0.0/my/api-collections", uriBuilderLocalVar.Path, oBPv400CreateMyApiCollectionRequest);
-                Events.ExecuteOnErrorOBPv400CreateMyApiCollection(e);
+                OnErrorCreateFeaturedApiCollectionDefaultImplementation(e, "/obp/v6.0.0/management/api-collections/featured", uriBuilderLocalVar.Path, createFeaturedApiCollectionRequest);
+                Events.ExecuteOnErrorCreateFeaturedApiCollection(e);
+                throw;
+            }
+        }
+
+        partial void FormatCreateMyApiCollection(CreateMyApiCollectionRequest createMyApiCollectionRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="createMyApiCollectionRequest"></param>
+        /// <returns></returns>
+        private void ValidateCreateMyApiCollection(CreateMyApiCollectionRequest createMyApiCollectionRequest)
+        {
+            if (createMyApiCollectionRequest == null)
+                throw new ArgumentNullException(nameof(createMyApiCollectionRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="createMyApiCollectionRequest"></param>
+        private void AfterCreateMyApiCollectionDefaultImplementation(ICreateMyApiCollectionApiResponse apiResponseLocalVar, CreateMyApiCollectionRequest createMyApiCollectionRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterCreateMyApiCollection(ref suppressDefaultLog, apiResponseLocalVar, createMyApiCollectionRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="createMyApiCollectionRequest"></param>
+        partial void AfterCreateMyApiCollection(ref bool suppressDefaultLog, ICreateMyApiCollectionApiResponse apiResponseLocalVar, CreateMyApiCollectionRequest createMyApiCollectionRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="createMyApiCollectionRequest"></param>
+        private void OnErrorCreateMyApiCollectionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreateMyApiCollectionRequest createMyApiCollectionRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorCreateMyApiCollection(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, createMyApiCollectionRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="createMyApiCollectionRequest"></param>
+        partial void OnErrorCreateMyApiCollection(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreateMyApiCollectionRequest createMyApiCollectionRequest);
+
+        /// <summary>
+        /// Create My Api Collection &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// </summary>
+        /// <param name="createMyApiCollectionRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateMyApiCollectionApiResponse"/>&gt;</returns>
+        public async Task<ICreateMyApiCollectionApiResponse?> CreateMyApiCollectionOrDefaultAsync(CreateMyApiCollectionRequest createMyApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await CreateMyApiCollectionAsync(createMyApiCollectionRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Create My Api Collection &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createMyApiCollectionRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateMyApiCollectionApiResponse"/>&gt;</returns>
+        public async Task<ICreateMyApiCollectionApiResponse> CreateMyApiCollectionAsync(CreateMyApiCollectionRequest createMyApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateCreateMyApiCollection(createMyApiCollectionRequest);
+
+                FormatCreateMyApiCollection(createMyApiCollectionRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v4.0.0/my/api-collections"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/my/api-collections");
+
+                    httpRequestMessageLocalVar.Content = (createMyApiCollectionRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createMyApiCollectionRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CreateMyApiCollectionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateMyApiCollectionApiResponse>();
+                        CreateMyApiCollectionApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/my/api-collections", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterCreateMyApiCollectionDefaultImplementation(apiResponseLocalVar, createMyApiCollectionRequest);
+
+                        Events.ExecuteOnCreateMyApiCollection(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorCreateMyApiCollectionDefaultImplementation(e, "/obp/v4.0.0/my/api-collections", uriBuilderLocalVar.Path, createMyApiCollectionRequest);
+                Events.ExecuteOnErrorCreateMyApiCollection(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400CreateMyApiCollectionApiResponse"/>
+        /// The <see cref="CreateMyApiCollectionApiResponse"/>
         /// </summary>
-        public partial class OBPv400CreateMyApiCollectionApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400CreateMyApiCollectionApiResponse
+        public partial class CreateMyApiCollectionApiResponse : OpenBankProject.Client.ApiResponse, ICreateMyApiCollectionApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400CreateMyApiCollectionApiResponse> Logger { get; }
+            public ILogger<CreateMyApiCollectionApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateMyApiCollectionApiResponse"/>
+            /// The <see cref="CreateMyApiCollectionApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1710,14 +1890,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateMyApiCollectionApiResponse(ILogger<OBPv400CreateMyApiCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateMyApiCollectionApiResponse(ILogger<CreateMyApiCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateMyApiCollectionApiResponse"/>
+            /// The <see cref="CreateMyApiCollectionApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1726,7 +1906,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateMyApiCollectionApiResponse(ILogger<OBPv400CreateMyApiCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateMyApiCollectionApiResponse(ILogger<CreateMyApiCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1744,11 +1924,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems? Ok()
+            public OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1757,7 +1937,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner? result)
             {
                 result = null;
 
@@ -1795,21 +1975,21 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400CreateMyApiCollectionEndpoint(ref string apicollectionname, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest);
+        partial void FormatCreateMyApiCollectionEndpoint(ref string apicollectionname, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="apicollectionname"></param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest"></param>
+        /// <param name="createMyApiCollectionEndpointRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateMyApiCollectionEndpoint(string apicollectionname, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest)
+        private void ValidateCreateMyApiCollectionEndpoint(string apicollectionname, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest)
         {
             if (apicollectionname == null)
                 throw new ArgumentNullException(nameof(apicollectionname));
 
-            if (oBPv400CreateMyApiCollectionEndpointRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateMyApiCollectionEndpointRequest));
+            if (createMyApiCollectionEndpointRequest == null)
+                throw new ArgumentNullException(nameof(createMyApiCollectionEndpointRequest));
         }
 
         /// <summary>
@@ -1817,11 +1997,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionname"></param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest"></param>
-        private void AfterOBPv400CreateMyApiCollectionEndpointDefaultImplementation(IOBPv400CreateMyApiCollectionEndpointApiResponse apiResponseLocalVar, string apicollectionname, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest)
+        /// <param name="createMyApiCollectionEndpointRequest"></param>
+        private void AfterCreateMyApiCollectionEndpointDefaultImplementation(ICreateMyApiCollectionEndpointApiResponse apiResponseLocalVar, string apicollectionname, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateMyApiCollectionEndpoint(ref suppressDefaultLog, apiResponseLocalVar, apicollectionname, oBPv400CreateMyApiCollectionEndpointRequest);
+            AfterCreateMyApiCollectionEndpoint(ref suppressDefaultLog, apiResponseLocalVar, apicollectionname, createMyApiCollectionEndpointRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1832,8 +2012,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionname"></param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest"></param>
-        partial void AfterOBPv400CreateMyApiCollectionEndpoint(ref bool suppressDefaultLog, IOBPv400CreateMyApiCollectionEndpointApiResponse apiResponseLocalVar, string apicollectionname, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest);
+        /// <param name="createMyApiCollectionEndpointRequest"></param>
+        partial void AfterCreateMyApiCollectionEndpoint(ref bool suppressDefaultLog, ICreateMyApiCollectionEndpointApiResponse apiResponseLocalVar, string apicollectionname, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1842,11 +2022,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionname"></param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest"></param>
-        private void OnErrorOBPv400CreateMyApiCollectionEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest)
+        /// <param name="createMyApiCollectionEndpointRequest"></param>
+        private void OnErrorCreateMyApiCollectionEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateMyApiCollectionEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionname, oBPv400CreateMyApiCollectionEndpointRequest);
+            OnErrorCreateMyApiCollectionEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionname, createMyApiCollectionEndpointRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1859,21 +2039,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionname"></param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest"></param>
-        partial void OnErrorOBPv400CreateMyApiCollectionEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest);
+        /// <param name="createMyApiCollectionEndpointRequest"></param>
+        partial void OnErrorCreateMyApiCollectionEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest);
 
         /// <summary>
         /// Create My Api Collection Endpoint &lt;p&gt;Create Api Collection Endpoint.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
         /// </summary>
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest">Request body</param>
+        /// <param name="createMyApiCollectionEndpointRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateMyApiCollectionEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateMyApiCollectionEndpointApiResponse?> OBPv400CreateMyApiCollectionEndpointOrDefaultAsync(string apicollectionname, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateMyApiCollectionEndpointApiResponse"/>&gt;</returns>
+        public async Task<ICreateMyApiCollectionEndpointApiResponse?> CreateMyApiCollectionEndpointOrDefaultAsync(string apicollectionname, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateMyApiCollectionEndpointAsync(apicollectionname, oBPv400CreateMyApiCollectionEndpointRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateMyApiCollectionEndpointAsync(apicollectionname, createMyApiCollectionEndpointRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1886,18 +2066,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest">Request body</param>
+        /// <param name="createMyApiCollectionEndpointRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateMyApiCollectionEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateMyApiCollectionEndpointApiResponse> OBPv400CreateMyApiCollectionEndpointAsync(string apicollectionname, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateMyApiCollectionEndpointApiResponse"/>&gt;</returns>
+        public async Task<ICreateMyApiCollectionEndpointApiResponse> CreateMyApiCollectionEndpointAsync(string apicollectionname, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateMyApiCollectionEndpoint(apicollectionname, oBPv400CreateMyApiCollectionEndpointRequest);
+                ValidateCreateMyApiCollectionEndpoint(apicollectionname, createMyApiCollectionEndpointRequest);
 
-                FormatOBPv400CreateMyApiCollectionEndpoint(ref apicollectionname, oBPv400CreateMyApiCollectionEndpointRequest);
+                FormatCreateMyApiCollectionEndpoint(ref apicollectionname, createMyApiCollectionEndpointRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1909,16 +2089,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bapicollectionname%7D", Uri.EscapeDataString(apicollectionname.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateMyApiCollectionEndpointRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createMyApiCollectionEndpointRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateMyApiCollectionEndpointRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createMyApiCollectionEndpointRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1954,8 +2134,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400CreateMyApiCollectionEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400CreateMyApiCollectionEndpointApiResponse>();
-                        OBPv400CreateMyApiCollectionEndpointApiResponse apiResponseLocalVar;
+                        ILogger<CreateMyApiCollectionEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateMyApiCollectionEndpointApiResponse>();
+                        CreateMyApiCollectionEndpointApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1966,9 +2146,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateMyApiCollectionEndpointDefaultImplementation(apiResponseLocalVar, apicollectionname, oBPv400CreateMyApiCollectionEndpointRequest);
+                        AfterCreateMyApiCollectionEndpointDefaultImplementation(apiResponseLocalVar, apicollectionname, createMyApiCollectionEndpointRequest);
 
-                        Events.ExecuteOnOBPv400CreateMyApiCollectionEndpoint(apiResponseLocalVar);
+                        Events.ExecuteOnCreateMyApiCollectionEndpoint(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1980,24 +2160,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateMyApiCollectionEndpointDefaultImplementation(e, "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints", uriBuilderLocalVar.Path, apicollectionname, oBPv400CreateMyApiCollectionEndpointRequest);
-                Events.ExecuteOnErrorOBPv400CreateMyApiCollectionEndpoint(e);
+                OnErrorCreateMyApiCollectionEndpointDefaultImplementation(e, "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints", uriBuilderLocalVar.Path, apicollectionname, createMyApiCollectionEndpointRequest);
+                Events.ExecuteOnErrorCreateMyApiCollectionEndpoint(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400CreateMyApiCollectionEndpointApiResponse"/>
+        /// The <see cref="CreateMyApiCollectionEndpointApiResponse"/>
         /// </summary>
-        public partial class OBPv400CreateMyApiCollectionEndpointApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400CreateMyApiCollectionEndpointApiResponse
+        public partial class CreateMyApiCollectionEndpointApiResponse : OpenBankProject.Client.ApiResponse, ICreateMyApiCollectionEndpointApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400CreateMyApiCollectionEndpointApiResponse> Logger { get; }
+            public ILogger<CreateMyApiCollectionEndpointApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateMyApiCollectionEndpointApiResponse"/>
+            /// The <see cref="CreateMyApiCollectionEndpointApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2006,14 +2186,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateMyApiCollectionEndpointApiResponse(ILogger<OBPv400CreateMyApiCollectionEndpointApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateMyApiCollectionEndpointApiResponse(ILogger<CreateMyApiCollectionEndpointApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateMyApiCollectionEndpointApiResponse"/>
+            /// The <see cref="CreateMyApiCollectionEndpointApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2022,7 +2202,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateMyApiCollectionEndpointApiResponse(ILogger<OBPv400CreateMyApiCollectionEndpointApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateMyApiCollectionEndpointApiResponse(ILogger<CreateMyApiCollectionEndpointApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2040,11 +2220,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems? Ok()
+            public OpenBankProject.Model.GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2053,7 +2233,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner? result)
             {
                 result = null;
 
@@ -2085,21 +2265,21 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400CreateMyApiCollectionEndpointById(ref string apicollectionid, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest);
+        partial void FormatCreateMyApiCollectionEndpointById(ref string apicollectionid, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="apicollectionid"></param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest"></param>
+        /// <param name="createMyApiCollectionEndpointRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateMyApiCollectionEndpointById(string apicollectionid, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest)
+        private void ValidateCreateMyApiCollectionEndpointById(string apicollectionid, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest)
         {
             if (apicollectionid == null)
                 throw new ArgumentNullException(nameof(apicollectionid));
 
-            if (oBPv400CreateMyApiCollectionEndpointRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateMyApiCollectionEndpointRequest));
+            if (createMyApiCollectionEndpointRequest == null)
+                throw new ArgumentNullException(nameof(createMyApiCollectionEndpointRequest));
         }
 
         /// <summary>
@@ -2107,11 +2287,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest"></param>
-        private void AfterOBPv400CreateMyApiCollectionEndpointByIdDefaultImplementation(IOBPv400CreateMyApiCollectionEndpointByIdApiResponse apiResponseLocalVar, string apicollectionid, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest)
+        /// <param name="createMyApiCollectionEndpointRequest"></param>
+        private void AfterCreateMyApiCollectionEndpointByIdDefaultImplementation(ICreateMyApiCollectionEndpointByIdApiResponse apiResponseLocalVar, string apicollectionid, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateMyApiCollectionEndpointById(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid, oBPv400CreateMyApiCollectionEndpointRequest);
+            AfterCreateMyApiCollectionEndpointById(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid, createMyApiCollectionEndpointRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2122,8 +2302,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest"></param>
-        partial void AfterOBPv400CreateMyApiCollectionEndpointById(ref bool suppressDefaultLog, IOBPv400CreateMyApiCollectionEndpointByIdApiResponse apiResponseLocalVar, string apicollectionid, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest);
+        /// <param name="createMyApiCollectionEndpointRequest"></param>
+        partial void AfterCreateMyApiCollectionEndpointById(ref bool suppressDefaultLog, ICreateMyApiCollectionEndpointByIdApiResponse apiResponseLocalVar, string apicollectionid, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2132,11 +2312,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest"></param>
-        private void OnErrorOBPv400CreateMyApiCollectionEndpointByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest)
+        /// <param name="createMyApiCollectionEndpointRequest"></param>
+        private void OnErrorCreateMyApiCollectionEndpointByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateMyApiCollectionEndpointById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid, oBPv400CreateMyApiCollectionEndpointRequest);
+            OnErrorCreateMyApiCollectionEndpointById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid, createMyApiCollectionEndpointRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2149,21 +2329,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest"></param>
-        partial void OnErrorOBPv400CreateMyApiCollectionEndpointById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest);
+        /// <param name="createMyApiCollectionEndpointRequest"></param>
+        partial void OnErrorCreateMyApiCollectionEndpointById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest);
 
         /// <summary>
         /// Create My Api Collection Endpoint By Id &lt;p&gt;Create Api Collection Endpoint By Id.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
         /// </summary>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest">Request body</param>
+        /// <param name="createMyApiCollectionEndpointRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateMyApiCollectionEndpointByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateMyApiCollectionEndpointByIdApiResponse?> OBPv400CreateMyApiCollectionEndpointByIdOrDefaultAsync(string apicollectionid, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateMyApiCollectionEndpointByIdApiResponse"/>&gt;</returns>
+        public async Task<ICreateMyApiCollectionEndpointByIdApiResponse?> CreateMyApiCollectionEndpointByIdOrDefaultAsync(string apicollectionid, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateMyApiCollectionEndpointByIdAsync(apicollectionid, oBPv400CreateMyApiCollectionEndpointRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateMyApiCollectionEndpointByIdAsync(apicollectionid, createMyApiCollectionEndpointRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2176,18 +2356,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
-        /// <param name="oBPv400CreateMyApiCollectionEndpointRequest">Request body</param>
+        /// <param name="createMyApiCollectionEndpointRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateMyApiCollectionEndpointByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateMyApiCollectionEndpointByIdApiResponse> OBPv400CreateMyApiCollectionEndpointByIdAsync(string apicollectionid, OBPv400CreateMyApiCollectionEndpointRequest oBPv400CreateMyApiCollectionEndpointRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateMyApiCollectionEndpointByIdApiResponse"/>&gt;</returns>
+        public async Task<ICreateMyApiCollectionEndpointByIdApiResponse> CreateMyApiCollectionEndpointByIdAsync(string apicollectionid, CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateMyApiCollectionEndpointById(apicollectionid, oBPv400CreateMyApiCollectionEndpointRequest);
+                ValidateCreateMyApiCollectionEndpointById(apicollectionid, createMyApiCollectionEndpointRequest);
 
-                FormatOBPv400CreateMyApiCollectionEndpointById(ref apicollectionid, oBPv400CreateMyApiCollectionEndpointRequest);
+                FormatCreateMyApiCollectionEndpointById(ref apicollectionid, createMyApiCollectionEndpointRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2199,16 +2379,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bapicollectionid%7D", Uri.EscapeDataString(apicollectionid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateMyApiCollectionEndpointRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createMyApiCollectionEndpointRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateMyApiCollectionEndpointRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createMyApiCollectionEndpointRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2244,8 +2424,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400CreateMyApiCollectionEndpointByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400CreateMyApiCollectionEndpointByIdApiResponse>();
-                        OBPv400CreateMyApiCollectionEndpointByIdApiResponse apiResponseLocalVar;
+                        ILogger<CreateMyApiCollectionEndpointByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateMyApiCollectionEndpointByIdApiResponse>();
+                        CreateMyApiCollectionEndpointByIdApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2256,9 +2436,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateMyApiCollectionEndpointByIdDefaultImplementation(apiResponseLocalVar, apicollectionid, oBPv400CreateMyApiCollectionEndpointRequest);
+                        AfterCreateMyApiCollectionEndpointByIdDefaultImplementation(apiResponseLocalVar, apicollectionid, createMyApiCollectionEndpointRequest);
 
-                        Events.ExecuteOnOBPv400CreateMyApiCollectionEndpointById(apiResponseLocalVar);
+                        Events.ExecuteOnCreateMyApiCollectionEndpointById(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2270,24 +2450,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateMyApiCollectionEndpointByIdDefaultImplementation(e, "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints", uriBuilderLocalVar.Path, apicollectionid, oBPv400CreateMyApiCollectionEndpointRequest);
-                Events.ExecuteOnErrorOBPv400CreateMyApiCollectionEndpointById(e);
+                OnErrorCreateMyApiCollectionEndpointByIdDefaultImplementation(e, "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints", uriBuilderLocalVar.Path, apicollectionid, createMyApiCollectionEndpointRequest);
+                Events.ExecuteOnErrorCreateMyApiCollectionEndpointById(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400CreateMyApiCollectionEndpointByIdApiResponse"/>
+        /// The <see cref="CreateMyApiCollectionEndpointByIdApiResponse"/>
         /// </summary>
-        public partial class OBPv400CreateMyApiCollectionEndpointByIdApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400CreateMyApiCollectionEndpointByIdApiResponse
+        public partial class CreateMyApiCollectionEndpointByIdApiResponse : OpenBankProject.Client.ApiResponse, ICreateMyApiCollectionEndpointByIdApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400CreateMyApiCollectionEndpointByIdApiResponse> Logger { get; }
+            public ILogger<CreateMyApiCollectionEndpointByIdApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateMyApiCollectionEndpointByIdApiResponse"/>
+            /// The <see cref="CreateMyApiCollectionEndpointByIdApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2296,14 +2476,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateMyApiCollectionEndpointByIdApiResponse(ILogger<OBPv400CreateMyApiCollectionEndpointByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateMyApiCollectionEndpointByIdApiResponse(ILogger<CreateMyApiCollectionEndpointByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateMyApiCollectionEndpointByIdApiResponse"/>
+            /// The <see cref="CreateMyApiCollectionEndpointByIdApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2312,7 +2492,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateMyApiCollectionEndpointByIdApiResponse(ILogger<OBPv400CreateMyApiCollectionEndpointByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateMyApiCollectionEndpointByIdApiResponse(ILogger<CreateMyApiCollectionEndpointByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2330,11 +2510,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems? Ok()
+            public OpenBankProject.Model.GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2343,7 +2523,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner? result)
             {
                 result = null;
 
@@ -2375,14 +2555,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400DeleteMyApiCollection(ref string apicollectionid);
+        partial void FormatDeleteFeaturedApiCollection(ref string apicollectionid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="apicollectionid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteMyApiCollection(string apicollectionid)
+        private void ValidateDeleteFeaturedApiCollection(string apicollectionid)
         {
             if (apicollectionid == null)
                 throw new ArgumentNullException(nameof(apicollectionid));
@@ -2393,10 +2573,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        private void AfterOBPv400DeleteMyApiCollectionDefaultImplementation(IOBPv400DeleteMyApiCollectionApiResponse apiResponseLocalVar, string apicollectionid)
+        private void AfterDeleteFeaturedApiCollectionDefaultImplementation(IDeleteFeaturedApiCollectionApiResponse apiResponseLocalVar, string apicollectionid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteMyApiCollection(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid);
+            AfterDeleteFeaturedApiCollection(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2407,7 +2587,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        partial void AfterOBPv400DeleteMyApiCollection(ref bool suppressDefaultLog, IOBPv400DeleteMyApiCollectionApiResponse apiResponseLocalVar, string apicollectionid);
+        partial void AfterDeleteFeaturedApiCollection(ref bool suppressDefaultLog, IDeleteFeaturedApiCollectionApiResponse apiResponseLocalVar, string apicollectionid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2416,10 +2596,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        private void OnErrorOBPv400DeleteMyApiCollectionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid)
+        private void OnErrorDeleteFeaturedApiCollectionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteMyApiCollection(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid);
+            OnErrorDeleteFeaturedApiCollection(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2432,19 +2612,178 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        partial void OnErrorOBPv400DeleteMyApiCollection(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid);
+        partial void OnErrorDeleteFeaturedApiCollection(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid);
+
+        /// <summary>
+        /// Delete Featured Api Collection &lt;p&gt;Remove an API Collection from the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </summary>
+        /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteFeaturedApiCollectionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteFeaturedApiCollectionApiResponse?> DeleteFeaturedApiCollectionOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await DeleteFeaturedApiCollectionAsync(apicollectionid, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Delete Featured Api Collection &lt;p&gt;Remove an API Collection from the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteFeaturedApiCollectionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteFeaturedApiCollectionApiResponse> DeleteFeaturedApiCollectionAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateDeleteFeaturedApiCollection(apicollectionid);
+
+                FormatDeleteFeaturedApiCollection(ref apicollectionid);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bapicollectionid%7D", Uri.EscapeDataString(apicollectionid.ToString()));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Delete;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<APIApi.DeleteFeaturedApiCollectionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.DeleteFeaturedApiCollectionApiResponse>();
+                        APIApi.DeleteFeaturedApiCollectionApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterDeleteFeaturedApiCollectionDefaultImplementation(apiResponseLocalVar, apicollectionid);
+
+                        Events.ExecuteOnDeleteFeaturedApiCollection(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorDeleteFeaturedApiCollectionDefaultImplementation(e, "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}", uriBuilderLocalVar.Path, apicollectionid);
+                Events.ExecuteOnErrorDeleteFeaturedApiCollection(e);
+                throw;
+            }
+        }
+
+        partial void FormatDeleteMyApiCollection(ref string apicollectionid);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="apicollectionid"></param>
+        /// <returns></returns>
+        private void ValidateDeleteMyApiCollection(string apicollectionid)
+        {
+            if (apicollectionid == null)
+                throw new ArgumentNullException(nameof(apicollectionid));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="apicollectionid"></param>
+        private void AfterDeleteMyApiCollectionDefaultImplementation(IDeleteMyApiCollectionApiResponse apiResponseLocalVar, string apicollectionid)
+        {
+            bool suppressDefaultLog = false;
+            AfterDeleteMyApiCollection(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="apicollectionid"></param>
+        partial void AfterDeleteMyApiCollection(ref bool suppressDefaultLog, IDeleteMyApiCollectionApiResponse apiResponseLocalVar, string apicollectionid);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="apicollectionid"></param>
+        private void OnErrorDeleteMyApiCollectionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorDeleteMyApiCollection(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="apicollectionid"></param>
+        partial void OnErrorDeleteMyApiCollection(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid);
 
         /// <summary>
         /// Delete My Api Collection &lt;p&gt;Delete Api Collection By API_COLLECTION_ID&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyApiCollectionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteMyApiCollectionApiResponse?> OBPv400DeleteMyApiCollectionOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyApiCollectionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteMyApiCollectionApiResponse?> DeleteMyApiCollectionOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteMyApiCollectionAsync(apicollectionid, cancellationToken).ConfigureAwait(false);
+                return await DeleteMyApiCollectionAsync(apicollectionid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2458,16 +2797,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyApiCollectionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteMyApiCollectionApiResponse> OBPv400DeleteMyApiCollectionAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyApiCollectionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteMyApiCollectionApiResponse> DeleteMyApiCollectionAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteMyApiCollection(apicollectionid);
+                ValidateDeleteMyApiCollection(apicollectionid);
 
-                FormatOBPv400DeleteMyApiCollection(ref apicollectionid);
+                FormatDeleteMyApiCollection(ref apicollectionid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2484,7 +2823,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2511,8 +2850,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400DeleteMyApiCollectionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400DeleteMyApiCollectionApiResponse>();
-                        OBPv400DeleteMyApiCollectionApiResponse apiResponseLocalVar;
+                        ILogger<DeleteMyApiCollectionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteMyApiCollectionApiResponse>();
+                        DeleteMyApiCollectionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2523,9 +2862,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteMyApiCollectionDefaultImplementation(apiResponseLocalVar, apicollectionid);
+                        AfterDeleteMyApiCollectionDefaultImplementation(apiResponseLocalVar, apicollectionid);
 
-                        Events.ExecuteOnOBPv400DeleteMyApiCollection(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteMyApiCollection(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2537,24 +2876,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteMyApiCollectionDefaultImplementation(e, "/obp/v4.0.0/my/api-collections/{apicollectionid}", uriBuilderLocalVar.Path, apicollectionid);
-                Events.ExecuteOnErrorOBPv400DeleteMyApiCollection(e);
+                OnErrorDeleteMyApiCollectionDefaultImplementation(e, "/obp/v4.0.0/my/api-collections/{apicollectionid}", uriBuilderLocalVar.Path, apicollectionid);
+                Events.ExecuteOnErrorDeleteMyApiCollection(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400DeleteMyApiCollectionApiResponse"/>
+        /// The <see cref="DeleteMyApiCollectionApiResponse"/>
         /// </summary>
-        public partial class OBPv400DeleteMyApiCollectionApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400DeleteMyApiCollectionApiResponse
+        public partial class DeleteMyApiCollectionApiResponse : OpenBankProject.Client.ApiResponse, IDeleteMyApiCollectionApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400DeleteMyApiCollectionApiResponse> Logger { get; }
+            public ILogger<DeleteMyApiCollectionApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteMyApiCollectionApiResponse"/>
+            /// The <see cref="DeleteMyApiCollectionApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2563,14 +2902,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteMyApiCollectionApiResponse(ILogger<OBPv400DeleteMyApiCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DeleteMyApiCollectionApiResponse(ILogger<DeleteMyApiCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteMyApiCollectionApiResponse"/>
+            /// The <see cref="DeleteMyApiCollectionApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2579,7 +2918,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteMyApiCollectionApiResponse(ILogger<OBPv400DeleteMyApiCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DeleteMyApiCollectionApiResponse(ILogger<DeleteMyApiCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2597,11 +2936,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400DeleteSystemLevelEndpointTag200Response? Ok()
+            public OpenBankProject.Model.DeleteSystemLevelEndpointTag200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400DeleteSystemLevelEndpointTag200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.DeleteSystemLevelEndpointTag200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2610,7 +2949,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400DeleteSystemLevelEndpointTag200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.DeleteSystemLevelEndpointTag200Response? result)
             {
                 result = null;
 
@@ -2648,7 +2987,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400DeleteMyApiCollectionEndpoint(ref string apicollectionname, ref string operationid);
+        partial void FormatDeleteMyApiCollectionEndpoint(ref string apicollectionname, ref string operationid);
 
         /// <summary>
         /// Validates the request parameters
@@ -2656,7 +2995,7 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionname"></param>
         /// <param name="operationid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteMyApiCollectionEndpoint(string apicollectionname, string operationid)
+        private void ValidateDeleteMyApiCollectionEndpoint(string apicollectionname, string operationid)
         {
             if (apicollectionname == null)
                 throw new ArgumentNullException(nameof(apicollectionname));
@@ -2671,10 +3010,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionname"></param>
         /// <param name="operationid"></param>
-        private void AfterOBPv400DeleteMyApiCollectionEndpointDefaultImplementation(IOBPv400DeleteMyApiCollectionEndpointApiResponse apiResponseLocalVar, string apicollectionname, string operationid)
+        private void AfterDeleteMyApiCollectionEndpointDefaultImplementation(IDeleteMyApiCollectionEndpointApiResponse apiResponseLocalVar, string apicollectionname, string operationid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteMyApiCollectionEndpoint(ref suppressDefaultLog, apiResponseLocalVar, apicollectionname, operationid);
+            AfterDeleteMyApiCollectionEndpoint(ref suppressDefaultLog, apiResponseLocalVar, apicollectionname, operationid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2686,7 +3025,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionname"></param>
         /// <param name="operationid"></param>
-        partial void AfterOBPv400DeleteMyApiCollectionEndpoint(ref bool suppressDefaultLog, IOBPv400DeleteMyApiCollectionEndpointApiResponse apiResponseLocalVar, string apicollectionname, string operationid);
+        partial void AfterDeleteMyApiCollectionEndpoint(ref bool suppressDefaultLog, IDeleteMyApiCollectionEndpointApiResponse apiResponseLocalVar, string apicollectionname, string operationid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2696,10 +3035,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionname"></param>
         /// <param name="operationid"></param>
-        private void OnErrorOBPv400DeleteMyApiCollectionEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname, string operationid)
+        private void OnErrorDeleteMyApiCollectionEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname, string operationid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteMyApiCollectionEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionname, operationid);
+            OnErrorDeleteMyApiCollectionEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionname, operationid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2713,7 +3052,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionname"></param>
         /// <param name="operationid"></param>
-        partial void OnErrorOBPv400DeleteMyApiCollectionEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname, string operationid);
+        partial void OnErrorDeleteMyApiCollectionEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname, string operationid);
 
         /// <summary>
         /// Delete My Api Collection Endpoint &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;Delete Api Collection Endpoint By OPERATION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -2721,12 +3060,12 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyApiCollectionEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteMyApiCollectionEndpointApiResponse?> OBPv400DeleteMyApiCollectionEndpointOrDefaultAsync(string apicollectionname, string operationid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyApiCollectionEndpointApiResponse"/>&gt;</returns>
+        public async Task<IDeleteMyApiCollectionEndpointApiResponse?> DeleteMyApiCollectionEndpointOrDefaultAsync(string apicollectionname, string operationid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteMyApiCollectionEndpointAsync(apicollectionname, operationid, cancellationToken).ConfigureAwait(false);
+                return await DeleteMyApiCollectionEndpointAsync(apicollectionname, operationid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2741,16 +3080,16 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyApiCollectionEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteMyApiCollectionEndpointApiResponse> OBPv400DeleteMyApiCollectionEndpointAsync(string apicollectionname, string operationid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyApiCollectionEndpointApiResponse"/>&gt;</returns>
+        public async Task<IDeleteMyApiCollectionEndpointApiResponse> DeleteMyApiCollectionEndpointAsync(string apicollectionname, string operationid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteMyApiCollectionEndpoint(apicollectionname, operationid);
+                ValidateDeleteMyApiCollectionEndpoint(apicollectionname, operationid);
 
-                FormatOBPv400DeleteMyApiCollectionEndpoint(ref apicollectionname, ref operationid);
+                FormatDeleteMyApiCollectionEndpoint(ref apicollectionname, ref operationid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2768,7 +3107,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2795,8 +3134,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400DeleteMyApiCollectionEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400DeleteMyApiCollectionEndpointApiResponse>();
-                        OBPv400DeleteMyApiCollectionEndpointApiResponse apiResponseLocalVar;
+                        ILogger<DeleteMyApiCollectionEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteMyApiCollectionEndpointApiResponse>();
+                        DeleteMyApiCollectionEndpointApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2807,9 +3146,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteMyApiCollectionEndpointDefaultImplementation(apiResponseLocalVar, apicollectionname, operationid);
+                        AfterDeleteMyApiCollectionEndpointDefaultImplementation(apiResponseLocalVar, apicollectionname, operationid);
 
-                        Events.ExecuteOnOBPv400DeleteMyApiCollectionEndpoint(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteMyApiCollectionEndpoint(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2821,24 +3160,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteMyApiCollectionEndpointDefaultImplementation(e, "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}", uriBuilderLocalVar.Path, apicollectionname, operationid);
-                Events.ExecuteOnErrorOBPv400DeleteMyApiCollectionEndpoint(e);
+                OnErrorDeleteMyApiCollectionEndpointDefaultImplementation(e, "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}", uriBuilderLocalVar.Path, apicollectionname, operationid);
+                Events.ExecuteOnErrorDeleteMyApiCollectionEndpoint(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400DeleteMyApiCollectionEndpointApiResponse"/>
+        /// The <see cref="DeleteMyApiCollectionEndpointApiResponse"/>
         /// </summary>
-        public partial class OBPv400DeleteMyApiCollectionEndpointApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400DeleteMyApiCollectionEndpointApiResponse
+        public partial class DeleteMyApiCollectionEndpointApiResponse : OpenBankProject.Client.ApiResponse, IDeleteMyApiCollectionEndpointApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400DeleteMyApiCollectionEndpointApiResponse> Logger { get; }
+            public ILogger<DeleteMyApiCollectionEndpointApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteMyApiCollectionEndpointApiResponse"/>
+            /// The <see cref="DeleteMyApiCollectionEndpointApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2847,14 +3186,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteMyApiCollectionEndpointApiResponse(ILogger<OBPv400DeleteMyApiCollectionEndpointApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DeleteMyApiCollectionEndpointApiResponse(ILogger<DeleteMyApiCollectionEndpointApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteMyApiCollectionEndpointApiResponse"/>
+            /// The <see cref="DeleteMyApiCollectionEndpointApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2863,7 +3202,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteMyApiCollectionEndpointApiResponse(ILogger<OBPv400DeleteMyApiCollectionEndpointApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DeleteMyApiCollectionEndpointApiResponse(ILogger<DeleteMyApiCollectionEndpointApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2881,11 +3220,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400DeleteSystemLevelEndpointTag200Response? Ok()
+            public OpenBankProject.Model.DeleteSystemLevelEndpointTag200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400DeleteSystemLevelEndpointTag200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.DeleteSystemLevelEndpointTag200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2894,7 +3233,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400DeleteSystemLevelEndpointTag200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.DeleteSystemLevelEndpointTag200Response? result)
             {
                 result = null;
 
@@ -2932,7 +3271,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400DeleteMyApiCollectionEndpointById(ref string apicollectionid, ref string apicollectionendpointid);
+        partial void FormatDeleteMyApiCollectionEndpointById(ref string apicollectionid, ref string apicollectionendpointid);
 
         /// <summary>
         /// Validates the request parameters
@@ -2940,7 +3279,7 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionid"></param>
         /// <param name="apicollectionendpointid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteMyApiCollectionEndpointById(string apicollectionid, string apicollectionendpointid)
+        private void ValidateDeleteMyApiCollectionEndpointById(string apicollectionid, string apicollectionendpointid)
         {
             if (apicollectionid == null)
                 throw new ArgumentNullException(nameof(apicollectionid));
@@ -2955,10 +3294,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
         /// <param name="apicollectionendpointid"></param>
-        private void AfterOBPv400DeleteMyApiCollectionEndpointByIdDefaultImplementation(IOBPv400DeleteMyApiCollectionEndpointByIdApiResponse apiResponseLocalVar, string apicollectionid, string apicollectionendpointid)
+        private void AfterDeleteMyApiCollectionEndpointByIdDefaultImplementation(IDeleteMyApiCollectionEndpointByIdApiResponse apiResponseLocalVar, string apicollectionid, string apicollectionendpointid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteMyApiCollectionEndpointById(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid, apicollectionendpointid);
+            AfterDeleteMyApiCollectionEndpointById(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid, apicollectionendpointid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2970,7 +3309,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
         /// <param name="apicollectionendpointid"></param>
-        partial void AfterOBPv400DeleteMyApiCollectionEndpointById(ref bool suppressDefaultLog, IOBPv400DeleteMyApiCollectionEndpointByIdApiResponse apiResponseLocalVar, string apicollectionid, string apicollectionendpointid);
+        partial void AfterDeleteMyApiCollectionEndpointById(ref bool suppressDefaultLog, IDeleteMyApiCollectionEndpointByIdApiResponse apiResponseLocalVar, string apicollectionid, string apicollectionendpointid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2980,10 +3319,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
         /// <param name="apicollectionendpointid"></param>
-        private void OnErrorOBPv400DeleteMyApiCollectionEndpointByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, string apicollectionendpointid)
+        private void OnErrorDeleteMyApiCollectionEndpointByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, string apicollectionendpointid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteMyApiCollectionEndpointById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid, apicollectionendpointid);
+            OnErrorDeleteMyApiCollectionEndpointById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid, apicollectionendpointid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2997,7 +3336,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
         /// <param name="apicollectionendpointid"></param>
-        partial void OnErrorOBPv400DeleteMyApiCollectionEndpointById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, string apicollectionendpointid);
+        partial void OnErrorDeleteMyApiCollectionEndpointById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, string apicollectionendpointid);
 
         /// <summary>
         /// Delete My Api Collection Endpoint By Id &lt;p&gt;glossary-item-not-found&lt;br /&gt; Delete Api Collection Endpoint&lt;br /&gt; Delete Api Collection Endpoint By Id&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ENDPOINT_ID&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -3005,12 +3344,12 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="apicollectionendpointid">The APICOLLECTIONENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyApiCollectionEndpointByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteMyApiCollectionEndpointByIdApiResponse?> OBPv400DeleteMyApiCollectionEndpointByIdOrDefaultAsync(string apicollectionid, string apicollectionendpointid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyApiCollectionEndpointByIdApiResponse"/>&gt;</returns>
+        public async Task<IDeleteMyApiCollectionEndpointByIdApiResponse?> DeleteMyApiCollectionEndpointByIdOrDefaultAsync(string apicollectionid, string apicollectionendpointid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteMyApiCollectionEndpointByIdAsync(apicollectionid, apicollectionendpointid, cancellationToken).ConfigureAwait(false);
+                return await DeleteMyApiCollectionEndpointByIdAsync(apicollectionid, apicollectionendpointid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3025,16 +3364,16 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="apicollectionendpointid">The APICOLLECTIONENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyApiCollectionEndpointByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteMyApiCollectionEndpointByIdApiResponse> OBPv400DeleteMyApiCollectionEndpointByIdAsync(string apicollectionid, string apicollectionendpointid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyApiCollectionEndpointByIdApiResponse"/>&gt;</returns>
+        public async Task<IDeleteMyApiCollectionEndpointByIdApiResponse> DeleteMyApiCollectionEndpointByIdAsync(string apicollectionid, string apicollectionendpointid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteMyApiCollectionEndpointById(apicollectionid, apicollectionendpointid);
+                ValidateDeleteMyApiCollectionEndpointById(apicollectionid, apicollectionendpointid);
 
-                FormatOBPv400DeleteMyApiCollectionEndpointById(ref apicollectionid, ref apicollectionendpointid);
+                FormatDeleteMyApiCollectionEndpointById(ref apicollectionid, ref apicollectionendpointid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3052,7 +3391,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3079,8 +3418,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400DeleteMyApiCollectionEndpointByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400DeleteMyApiCollectionEndpointByIdApiResponse>();
-                        OBPv400DeleteMyApiCollectionEndpointByIdApiResponse apiResponseLocalVar;
+                        ILogger<DeleteMyApiCollectionEndpointByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteMyApiCollectionEndpointByIdApiResponse>();
+                        DeleteMyApiCollectionEndpointByIdApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3091,9 +3430,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteMyApiCollectionEndpointByIdDefaultImplementation(apiResponseLocalVar, apicollectionid, apicollectionendpointid);
+                        AfterDeleteMyApiCollectionEndpointByIdDefaultImplementation(apiResponseLocalVar, apicollectionid, apicollectionendpointid);
 
-                        Events.ExecuteOnOBPv400DeleteMyApiCollectionEndpointById(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteMyApiCollectionEndpointById(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3105,24 +3444,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteMyApiCollectionEndpointByIdDefaultImplementation(e, "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoint-ids/{apicollectionendpointid}", uriBuilderLocalVar.Path, apicollectionid, apicollectionendpointid);
-                Events.ExecuteOnErrorOBPv400DeleteMyApiCollectionEndpointById(e);
+                OnErrorDeleteMyApiCollectionEndpointByIdDefaultImplementation(e, "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoint-ids/{apicollectionendpointid}", uriBuilderLocalVar.Path, apicollectionid, apicollectionendpointid);
+                Events.ExecuteOnErrorDeleteMyApiCollectionEndpointById(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400DeleteMyApiCollectionEndpointByIdApiResponse"/>
+        /// The <see cref="DeleteMyApiCollectionEndpointByIdApiResponse"/>
         /// </summary>
-        public partial class OBPv400DeleteMyApiCollectionEndpointByIdApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400DeleteMyApiCollectionEndpointByIdApiResponse
+        public partial class DeleteMyApiCollectionEndpointByIdApiResponse : OpenBankProject.Client.ApiResponse, IDeleteMyApiCollectionEndpointByIdApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400DeleteMyApiCollectionEndpointByIdApiResponse> Logger { get; }
+            public ILogger<DeleteMyApiCollectionEndpointByIdApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteMyApiCollectionEndpointByIdApiResponse"/>
+            /// The <see cref="DeleteMyApiCollectionEndpointByIdApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3131,14 +3470,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteMyApiCollectionEndpointByIdApiResponse(ILogger<OBPv400DeleteMyApiCollectionEndpointByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DeleteMyApiCollectionEndpointByIdApiResponse(ILogger<DeleteMyApiCollectionEndpointByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteMyApiCollectionEndpointByIdApiResponse"/>
+            /// The <see cref="DeleteMyApiCollectionEndpointByIdApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3147,7 +3486,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteMyApiCollectionEndpointByIdApiResponse(ILogger<OBPv400DeleteMyApiCollectionEndpointByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DeleteMyApiCollectionEndpointByIdApiResponse(ILogger<DeleteMyApiCollectionEndpointByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -3165,11 +3504,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400DeleteSystemLevelEndpointTag200Response? Ok()
+            public OpenBankProject.Model.DeleteSystemLevelEndpointTag200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400DeleteSystemLevelEndpointTag200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.DeleteSystemLevelEndpointTag200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -3178,7 +3517,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400DeleteSystemLevelEndpointTag200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.DeleteSystemLevelEndpointTag200Response? result)
             {
                 result = null;
 
@@ -3216,7 +3555,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400DeleteMyApiCollectionEndpointByOperationId(ref string apicollectionid, ref string operationid);
+        partial void FormatDeleteMyApiCollectionEndpointByOperationId(ref string apicollectionid, ref string operationid);
 
         /// <summary>
         /// Validates the request parameters
@@ -3224,7 +3563,7 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionid"></param>
         /// <param name="operationid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteMyApiCollectionEndpointByOperationId(string apicollectionid, string operationid)
+        private void ValidateDeleteMyApiCollectionEndpointByOperationId(string apicollectionid, string operationid)
         {
             if (apicollectionid == null)
                 throw new ArgumentNullException(nameof(apicollectionid));
@@ -3239,10 +3578,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
         /// <param name="operationid"></param>
-        private void AfterOBPv400DeleteMyApiCollectionEndpointByOperationIdDefaultImplementation(IOBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse apiResponseLocalVar, string apicollectionid, string operationid)
+        private void AfterDeleteMyApiCollectionEndpointByOperationIdDefaultImplementation(IDeleteMyApiCollectionEndpointByOperationIdApiResponse apiResponseLocalVar, string apicollectionid, string operationid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteMyApiCollectionEndpointByOperationId(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid, operationid);
+            AfterDeleteMyApiCollectionEndpointByOperationId(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid, operationid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3254,7 +3593,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
         /// <param name="operationid"></param>
-        partial void AfterOBPv400DeleteMyApiCollectionEndpointByOperationId(ref bool suppressDefaultLog, IOBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse apiResponseLocalVar, string apicollectionid, string operationid);
+        partial void AfterDeleteMyApiCollectionEndpointByOperationId(ref bool suppressDefaultLog, IDeleteMyApiCollectionEndpointByOperationIdApiResponse apiResponseLocalVar, string apicollectionid, string operationid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3264,10 +3603,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
         /// <param name="operationid"></param>
-        private void OnErrorOBPv400DeleteMyApiCollectionEndpointByOperationIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, string operationid)
+        private void OnErrorDeleteMyApiCollectionEndpointByOperationIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, string operationid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteMyApiCollectionEndpointByOperationId(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid, operationid);
+            OnErrorDeleteMyApiCollectionEndpointByOperationId(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid, operationid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3281,7 +3620,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
         /// <param name="operationid"></param>
-        partial void OnErrorOBPv400DeleteMyApiCollectionEndpointByOperationId(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, string operationid);
+        partial void OnErrorDeleteMyApiCollectionEndpointByOperationId(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, string operationid);
 
         /// <summary>
         /// Delete My Api Collection Endpoint By Id &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;Delete Api Collection Endpoint By OPERATION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -3289,12 +3628,12 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse?> OBPv400DeleteMyApiCollectionEndpointByOperationIdOrDefaultAsync(string apicollectionid, string operationid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyApiCollectionEndpointByOperationIdApiResponse"/>&gt;</returns>
+        public async Task<IDeleteMyApiCollectionEndpointByOperationIdApiResponse?> DeleteMyApiCollectionEndpointByOperationIdOrDefaultAsync(string apicollectionid, string operationid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteMyApiCollectionEndpointByOperationIdAsync(apicollectionid, operationid, cancellationToken).ConfigureAwait(false);
+                return await DeleteMyApiCollectionEndpointByOperationIdAsync(apicollectionid, operationid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3309,16 +3648,16 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse> OBPv400DeleteMyApiCollectionEndpointByOperationIdAsync(string apicollectionid, string operationid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyApiCollectionEndpointByOperationIdApiResponse"/>&gt;</returns>
+        public async Task<IDeleteMyApiCollectionEndpointByOperationIdApiResponse> DeleteMyApiCollectionEndpointByOperationIdAsync(string apicollectionid, string operationid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteMyApiCollectionEndpointByOperationId(apicollectionid, operationid);
+                ValidateDeleteMyApiCollectionEndpointByOperationId(apicollectionid, operationid);
 
-                FormatOBPv400DeleteMyApiCollectionEndpointByOperationId(ref apicollectionid, ref operationid);
+                FormatDeleteMyApiCollectionEndpointByOperationId(ref apicollectionid, ref operationid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3336,7 +3675,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3363,8 +3702,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse>();
-                        OBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse apiResponseLocalVar;
+                        ILogger<DeleteMyApiCollectionEndpointByOperationIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteMyApiCollectionEndpointByOperationIdApiResponse>();
+                        DeleteMyApiCollectionEndpointByOperationIdApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3375,9 +3714,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteMyApiCollectionEndpointByOperationIdDefaultImplementation(apiResponseLocalVar, apicollectionid, operationid);
+                        AfterDeleteMyApiCollectionEndpointByOperationIdDefaultImplementation(apiResponseLocalVar, apicollectionid, operationid);
 
-                        Events.ExecuteOnOBPv400DeleteMyApiCollectionEndpointByOperationId(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteMyApiCollectionEndpointByOperationId(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3389,24 +3728,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteMyApiCollectionEndpointByOperationIdDefaultImplementation(e, "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints/{operationid}", uriBuilderLocalVar.Path, apicollectionid, operationid);
-                Events.ExecuteOnErrorOBPv400DeleteMyApiCollectionEndpointByOperationId(e);
+                OnErrorDeleteMyApiCollectionEndpointByOperationIdDefaultImplementation(e, "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints/{operationid}", uriBuilderLocalVar.Path, apicollectionid, operationid);
+                Events.ExecuteOnErrorDeleteMyApiCollectionEndpointByOperationId(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse"/>
+        /// The <see cref="DeleteMyApiCollectionEndpointByOperationIdApiResponse"/>
         /// </summary>
-        public partial class OBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse
+        public partial class DeleteMyApiCollectionEndpointByOperationIdApiResponse : OpenBankProject.Client.ApiResponse, IDeleteMyApiCollectionEndpointByOperationIdApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse> Logger { get; }
+            public ILogger<DeleteMyApiCollectionEndpointByOperationIdApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse"/>
+            /// The <see cref="DeleteMyApiCollectionEndpointByOperationIdApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3415,14 +3754,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse(ILogger<OBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DeleteMyApiCollectionEndpointByOperationIdApiResponse(ILogger<DeleteMyApiCollectionEndpointByOperationIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse"/>
+            /// The <see cref="DeleteMyApiCollectionEndpointByOperationIdApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3431,7 +3770,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse(ILogger<OBPv400DeleteMyApiCollectionEndpointByOperationIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DeleteMyApiCollectionEndpointByOperationIdApiResponse(ILogger<DeleteMyApiCollectionEndpointByOperationIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -3449,11 +3788,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400DeleteSystemLevelEndpointTag200Response? Ok()
+            public OpenBankProject.Model.DeleteSystemLevelEndpointTag200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400DeleteSystemLevelEndpointTag200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.DeleteSystemLevelEndpointTag200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -3462,7 +3801,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400DeleteSystemLevelEndpointTag200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.DeleteSystemLevelEndpointTag200Response? result)
             {
                 result = null;
 
@@ -3500,14 +3839,257 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetApiCollectionEndpoints(ref string apicollectionid);
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        private void AfterGetAllApiCollectionsDefaultImplementation(IGetAllApiCollectionsApiResponse apiResponseLocalVar)
+        {
+            bool suppressDefaultLog = false;
+            AfterGetAllApiCollections(ref suppressDefaultLog, apiResponseLocalVar);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        partial void AfterGetAllApiCollections(ref bool suppressDefaultLog, IGetAllApiCollectionsApiResponse apiResponseLocalVar);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        private void OnErrorGetAllApiCollectionsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorGetAllApiCollections(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        partial void OnErrorGetAllApiCollections(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+
+        /// <summary>
+        /// Get All API Collections &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllApiCollectionsApiResponse"/>&gt;</returns>
+        public async Task<IGetAllApiCollectionsApiResponse?> GetAllApiCollectionsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await GetAllApiCollectionsAsync(cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Get All API Collections &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllApiCollectionsApiResponse"/>&gt;</returns>
+        public async Task<IGetAllApiCollectionsApiResponse> GetAllApiCollectionsAsync(System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v5.1.0/management/api-collections"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v5.1.0/management/api-collections");
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<GetAllApiCollectionsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAllApiCollectionsApiResponse>();
+                        GetAllApiCollectionsApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v5.1.0/management/api-collections", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterGetAllApiCollectionsDefaultImplementation(apiResponseLocalVar);
+
+                        Events.ExecuteOnGetAllApiCollections(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorGetAllApiCollectionsDefaultImplementation(e, "/obp/v5.1.0/management/api-collections", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetAllApiCollections(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// The <see cref="GetAllApiCollectionsApiResponse"/>
+        /// </summary>
+        public partial class GetAllApiCollectionsApiResponse : OpenBankProject.Client.ApiResponse, IGetAllApiCollectionsApiResponse
+        {
+            /// <summary>
+            /// The logger
+            /// </summary>
+            public ILogger<GetAllApiCollectionsApiResponse> Logger { get; }
+
+            /// <summary>
+            /// The <see cref="GetAllApiCollectionsApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="rawContent"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public GetAllApiCollectionsApiResponse(ILogger<GetAllApiCollectionsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="GetAllApiCollectionsApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public GetAllApiCollectionsApiResponse(ILogger<GetAllApiCollectionsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public bool IsOk => 200 == (int)StatusCode;
+
+            /// <summary>
+            /// Deserializes the response if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public OpenBankProject.Model.GetApiCollectionsForUser200Response? Ok()
+            {
+                // This logic may be modified with the AsModel.mustache template
+                return IsOk
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetApiCollectionsForUser200Response>(RawContent, _jsonSerializerOptions)
+                    : null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok and the deserialized response is not null
+            /// </summary>
+            /// <param name="result"></param>
+            /// <returns></returns>
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetApiCollectionsForUser200Response? result)
+            {
+                result = null;
+
+                try
+                {
+                    result = Ok();
+                } catch (Exception e)
+                {
+                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
+                }
+
+                return result != null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 500 InternalServerError
+            /// </summary>
+            /// <returns></returns>
+            public bool IsInternalServerError => 500 == (int)StatusCode;
+
+            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
+            {
+                bool suppressDefaultLog = false;
+                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
+                if (!suppressDefaultLog)
+                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+            }
+
+            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
+        }
+
+        partial void FormatGetApiCollectionEndpoints(ref string apicollectionid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="apicollectionid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetApiCollectionEndpoints(string apicollectionid)
+        private void ValidateGetApiCollectionEndpoints(string apicollectionid)
         {
             if (apicollectionid == null)
                 throw new ArgumentNullException(nameof(apicollectionid));
@@ -3518,10 +4100,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        private void AfterOBPv400GetApiCollectionEndpointsDefaultImplementation(IOBPv400GetApiCollectionEndpointsApiResponse apiResponseLocalVar, string apicollectionid)
+        private void AfterGetApiCollectionEndpointsDefaultImplementation(IGetApiCollectionEndpointsApiResponse apiResponseLocalVar, string apicollectionid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetApiCollectionEndpoints(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid);
+            AfterGetApiCollectionEndpoints(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3532,7 +4114,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        partial void AfterOBPv400GetApiCollectionEndpoints(ref bool suppressDefaultLog, IOBPv400GetApiCollectionEndpointsApiResponse apiResponseLocalVar, string apicollectionid);
+        partial void AfterGetApiCollectionEndpoints(ref bool suppressDefaultLog, IGetApiCollectionEndpointsApiResponse apiResponseLocalVar, string apicollectionid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3541,10 +4123,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        private void OnErrorOBPv400GetApiCollectionEndpointsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid)
+        private void OnErrorGetApiCollectionEndpointsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetApiCollectionEndpoints(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid);
+            OnErrorGetApiCollectionEndpoints(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3557,19 +4139,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        partial void OnErrorOBPv400GetApiCollectionEndpoints(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid);
+        partial void OnErrorGetApiCollectionEndpoints(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid);
 
         /// <summary>
         /// Get Api Collection Endpoints &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
         /// </summary>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetApiCollectionEndpointsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetApiCollectionEndpointsApiResponse?> OBPv400GetApiCollectionEndpointsOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetApiCollectionEndpointsApiResponse"/>&gt;</returns>
+        public async Task<IGetApiCollectionEndpointsApiResponse?> GetApiCollectionEndpointsOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetApiCollectionEndpointsAsync(apicollectionid, cancellationToken).ConfigureAwait(false);
+                return await GetApiCollectionEndpointsAsync(apicollectionid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3583,16 +4165,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetApiCollectionEndpointsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetApiCollectionEndpointsApiResponse> OBPv400GetApiCollectionEndpointsAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetApiCollectionEndpointsApiResponse"/>&gt;</returns>
+        public async Task<IGetApiCollectionEndpointsApiResponse> GetApiCollectionEndpointsAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetApiCollectionEndpoints(apicollectionid);
+                ValidateGetApiCollectionEndpoints(apicollectionid);
 
-                FormatOBPv400GetApiCollectionEndpoints(ref apicollectionid);
+                FormatGetApiCollectionEndpoints(ref apicollectionid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3621,8 +4203,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetApiCollectionEndpointsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetApiCollectionEndpointsApiResponse>();
-                        OBPv400GetApiCollectionEndpointsApiResponse apiResponseLocalVar;
+                        ILogger<GetApiCollectionEndpointsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetApiCollectionEndpointsApiResponse>();
+                        GetApiCollectionEndpointsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3633,9 +4215,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetApiCollectionEndpointsDefaultImplementation(apiResponseLocalVar, apicollectionid);
+                        AfterGetApiCollectionEndpointsDefaultImplementation(apiResponseLocalVar, apicollectionid);
 
-                        Events.ExecuteOnOBPv400GetApiCollectionEndpoints(apiResponseLocalVar);
+                        Events.ExecuteOnGetApiCollectionEndpoints(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -3643,24 +4225,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetApiCollectionEndpointsDefaultImplementation(e, "/obp/v4.0.0/api-collections/{apicollectionid}/api-collection-endpoints", uriBuilderLocalVar.Path, apicollectionid);
-                Events.ExecuteOnErrorOBPv400GetApiCollectionEndpoints(e);
+                OnErrorGetApiCollectionEndpointsDefaultImplementation(e, "/obp/v4.0.0/api-collections/{apicollectionid}/api-collection-endpoints", uriBuilderLocalVar.Path, apicollectionid);
+                Events.ExecuteOnErrorGetApiCollectionEndpoints(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetApiCollectionEndpointsApiResponse"/>
+        /// The <see cref="GetApiCollectionEndpointsApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetApiCollectionEndpointsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetApiCollectionEndpointsApiResponse
+        public partial class GetApiCollectionEndpointsApiResponse : OpenBankProject.Client.ApiResponse, IGetApiCollectionEndpointsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetApiCollectionEndpointsApiResponse> Logger { get; }
+            public ILogger<GetApiCollectionEndpointsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetApiCollectionEndpointsApiResponse"/>
+            /// The <see cref="GetApiCollectionEndpointsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3669,14 +4251,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetApiCollectionEndpointsApiResponse(ILogger<OBPv400GetApiCollectionEndpointsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetApiCollectionEndpointsApiResponse(ILogger<GetApiCollectionEndpointsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetApiCollectionEndpointsApiResponse"/>
+            /// The <see cref="GetApiCollectionEndpointsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3685,7 +4267,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetApiCollectionEndpointsApiResponse(ILogger<OBPv400GetApiCollectionEndpointsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetApiCollectionEndpointsApiResponse(ILogger<GetApiCollectionEndpointsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -3703,11 +4285,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200Response? Ok()
+            public OpenBankProject.Model.GetMyApiCollectionEndpoints200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetMyApiCollectionEndpoints200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -3716,7 +4298,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetMyApiCollectionEndpoints200Response? result)
             {
                 result = null;
 
@@ -3748,14 +4330,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetApiCollectionsForUser(ref string userid);
+        partial void FormatGetApiCollectionsForUser(ref string userid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="userid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetApiCollectionsForUser(string userid)
+        private void ValidateGetApiCollectionsForUser(string userid)
         {
             if (userid == null)
                 throw new ArgumentNullException(nameof(userid));
@@ -3766,10 +4348,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
-        private void AfterOBPv400GetApiCollectionsForUserDefaultImplementation(IOBPv400GetApiCollectionsForUserApiResponse apiResponseLocalVar, string userid)
+        private void AfterGetApiCollectionsForUserDefaultImplementation(IGetApiCollectionsForUserApiResponse apiResponseLocalVar, string userid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetApiCollectionsForUser(ref suppressDefaultLog, apiResponseLocalVar, userid);
+            AfterGetApiCollectionsForUser(ref suppressDefaultLog, apiResponseLocalVar, userid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3780,7 +4362,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
-        partial void AfterOBPv400GetApiCollectionsForUser(ref bool suppressDefaultLog, IOBPv400GetApiCollectionsForUserApiResponse apiResponseLocalVar, string userid);
+        partial void AfterGetApiCollectionsForUser(ref bool suppressDefaultLog, IGetApiCollectionsForUserApiResponse apiResponseLocalVar, string userid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3789,10 +4371,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
-        private void OnErrorOBPv400GetApiCollectionsForUserDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid)
+        private void OnErrorGetApiCollectionsForUserDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetApiCollectionsForUser(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid);
+            OnErrorGetApiCollectionsForUser(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3805,19 +4387,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
-        partial void OnErrorOBPv400GetApiCollectionsForUser(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid);
+        partial void OnErrorGetApiCollectionsForUser(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid);
 
         /// <summary>
         /// Get Api Collections for User &lt;p&gt;Get Api Collections for User.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
         /// </summary>
         /// <param name="userid">The USERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetApiCollectionsForUserApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetApiCollectionsForUserApiResponse?> OBPv400GetApiCollectionsForUserOrDefaultAsync(string userid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetApiCollectionsForUserApiResponse"/>&gt;</returns>
+        public async Task<IGetApiCollectionsForUserApiResponse?> GetApiCollectionsForUserOrDefaultAsync(string userid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetApiCollectionsForUserAsync(userid, cancellationToken).ConfigureAwait(false);
+                return await GetApiCollectionsForUserAsync(userid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3831,16 +4413,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userid">The USERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetApiCollectionsForUserApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetApiCollectionsForUserApiResponse> OBPv400GetApiCollectionsForUserAsync(string userid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetApiCollectionsForUserApiResponse"/>&gt;</returns>
+        public async Task<IGetApiCollectionsForUserApiResponse> GetApiCollectionsForUserAsync(string userid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetApiCollectionsForUser(userid);
+                ValidateGetApiCollectionsForUser(userid);
 
-                FormatOBPv400GetApiCollectionsForUser(ref userid);
+                FormatGetApiCollectionsForUser(ref userid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3857,7 +4439,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3884,8 +4466,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetApiCollectionsForUserApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetApiCollectionsForUserApiResponse>();
-                        OBPv400GetApiCollectionsForUserApiResponse apiResponseLocalVar;
+                        ILogger<GetApiCollectionsForUserApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetApiCollectionsForUserApiResponse>();
+                        GetApiCollectionsForUserApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3896,9 +4478,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetApiCollectionsForUserDefaultImplementation(apiResponseLocalVar, userid);
+                        AfterGetApiCollectionsForUserDefaultImplementation(apiResponseLocalVar, userid);
 
-                        Events.ExecuteOnOBPv400GetApiCollectionsForUser(apiResponseLocalVar);
+                        Events.ExecuteOnGetApiCollectionsForUser(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3910,24 +4492,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetApiCollectionsForUserDefaultImplementation(e, "/obp/v4.0.0/users/{userid}/api-collections", uriBuilderLocalVar.Path, userid);
-                Events.ExecuteOnErrorOBPv400GetApiCollectionsForUser(e);
+                OnErrorGetApiCollectionsForUserDefaultImplementation(e, "/obp/v4.0.0/users/{userid}/api-collections", uriBuilderLocalVar.Path, userid);
+                Events.ExecuteOnErrorGetApiCollectionsForUser(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetApiCollectionsForUserApiResponse"/>
+        /// The <see cref="GetApiCollectionsForUserApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetApiCollectionsForUserApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetApiCollectionsForUserApiResponse
+        public partial class GetApiCollectionsForUserApiResponse : OpenBankProject.Client.ApiResponse, IGetApiCollectionsForUserApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetApiCollectionsForUserApiResponse> Logger { get; }
+            public ILogger<GetApiCollectionsForUserApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetApiCollectionsForUserApiResponse"/>
+            /// The <see cref="GetApiCollectionsForUserApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3936,14 +4518,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetApiCollectionsForUserApiResponse(ILogger<OBPv400GetApiCollectionsForUserApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetApiCollectionsForUserApiResponse(ILogger<GetApiCollectionsForUserApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetApiCollectionsForUserApiResponse"/>
+            /// The <see cref="GetApiCollectionsForUserApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3952,7 +4534,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetApiCollectionsForUserApiResponse(ILogger<OBPv400GetApiCollectionsForUserApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetApiCollectionsForUserApiResponse(ILogger<GetApiCollectionsForUserApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -3970,11 +4552,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetApiCollectionsForUser200Response? Ok()
+            public OpenBankProject.Model.GetApiCollectionsForUser200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetApiCollectionsForUser200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -3983,7 +4565,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetApiCollectionsForUser200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetApiCollectionsForUser200Response? result)
             {
                 result = null;
 
@@ -4025,10 +4607,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv400GetFeaturedApiCollectionsDefaultImplementation(IOBPv400GetFeaturedApiCollectionsApiResponse apiResponseLocalVar)
+        private void AfterGetFeaturedApiCollectionsDefaultImplementation(IGetFeaturedApiCollectionsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetFeaturedApiCollections(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetFeaturedApiCollections(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -4038,7 +4620,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv400GetFeaturedApiCollections(ref bool suppressDefaultLog, IOBPv400GetFeaturedApiCollectionsApiResponse apiResponseLocalVar);
+        partial void AfterGetFeaturedApiCollections(ref bool suppressDefaultLog, IGetFeaturedApiCollectionsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -4046,10 +4628,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv400GetFeaturedApiCollectionsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetFeaturedApiCollectionsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetFeaturedApiCollections(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetFeaturedApiCollections(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -4061,18 +4643,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv400GetFeaturedApiCollections(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetFeaturedApiCollections(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Featured Api Collections &lt;p&gt;Get Featured Api Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetFeaturedApiCollectionsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetFeaturedApiCollectionsApiResponse?> OBPv400GetFeaturedApiCollectionsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetFeaturedApiCollectionsApiResponse"/>&gt;</returns>
+        public async Task<IGetFeaturedApiCollectionsApiResponse?> GetFeaturedApiCollectionsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetFeaturedApiCollectionsAsync(cancellationToken).ConfigureAwait(false);
+                return await GetFeaturedApiCollectionsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -4085,8 +4667,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetFeaturedApiCollectionsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetFeaturedApiCollectionsApiResponse> OBPv400GetFeaturedApiCollectionsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetFeaturedApiCollectionsApiResponse"/>&gt;</returns>
+        public async Task<IGetFeaturedApiCollectionsApiResponse> GetFeaturedApiCollectionsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -4118,8 +4700,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetFeaturedApiCollectionsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetFeaturedApiCollectionsApiResponse>();
-                        OBPv400GetFeaturedApiCollectionsApiResponse apiResponseLocalVar;
+                        ILogger<GetFeaturedApiCollectionsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetFeaturedApiCollectionsApiResponse>();
+                        GetFeaturedApiCollectionsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -4130,9 +4712,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetFeaturedApiCollectionsDefaultImplementation(apiResponseLocalVar);
+                        AfterGetFeaturedApiCollectionsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv400GetFeaturedApiCollections(apiResponseLocalVar);
+                        Events.ExecuteOnGetFeaturedApiCollections(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -4140,24 +4722,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetFeaturedApiCollectionsDefaultImplementation(e, "/obp/v4.0.0/api-collections/featured", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv400GetFeaturedApiCollections(e);
+                OnErrorGetFeaturedApiCollectionsDefaultImplementation(e, "/obp/v4.0.0/api-collections/featured", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetFeaturedApiCollections(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetFeaturedApiCollectionsApiResponse"/>
+        /// The <see cref="GetFeaturedApiCollectionsApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetFeaturedApiCollectionsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetFeaturedApiCollectionsApiResponse
+        public partial class GetFeaturedApiCollectionsApiResponse : OpenBankProject.Client.ApiResponse, IGetFeaturedApiCollectionsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetFeaturedApiCollectionsApiResponse> Logger { get; }
+            public ILogger<GetFeaturedApiCollectionsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetFeaturedApiCollectionsApiResponse"/>
+            /// The <see cref="GetFeaturedApiCollectionsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -4166,14 +4748,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetFeaturedApiCollectionsApiResponse(ILogger<OBPv400GetFeaturedApiCollectionsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetFeaturedApiCollectionsApiResponse(ILogger<GetFeaturedApiCollectionsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetFeaturedApiCollectionsApiResponse"/>
+            /// The <see cref="GetFeaturedApiCollectionsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -4182,7 +4764,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetFeaturedApiCollectionsApiResponse(ILogger<OBPv400GetFeaturedApiCollectionsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetFeaturedApiCollectionsApiResponse(ILogger<GetFeaturedApiCollectionsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -4200,11 +4782,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetApiCollectionsForUser200Response? Ok()
+            public OpenBankProject.Model.GetApiCollectionsForUser200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetApiCollectionsForUser200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -4213,7 +4795,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetApiCollectionsForUser200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetApiCollectionsForUser200Response? result)
             {
                 result = null;
 
@@ -4245,14 +4827,158 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetMyApiCollectionById(ref string apicollectionid);
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        private void AfterGetFeaturedApiCollectionsAdminDefaultImplementation(IGetFeaturedApiCollectionsAdminApiResponse apiResponseLocalVar)
+        {
+            bool suppressDefaultLog = false;
+            AfterGetFeaturedApiCollectionsAdmin(ref suppressDefaultLog, apiResponseLocalVar);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        partial void AfterGetFeaturedApiCollectionsAdmin(ref bool suppressDefaultLog, IGetFeaturedApiCollectionsAdminApiResponse apiResponseLocalVar);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        private void OnErrorGetFeaturedApiCollectionsAdminDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorGetFeaturedApiCollectionsAdmin(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        partial void OnErrorGetFeaturedApiCollectionsAdmin(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+
+        /// <summary>
+        /// Get Featured Api Collections (Admin) &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetFeaturedApiCollectionsAdminApiResponse"/>&gt;</returns>
+        public async Task<IGetFeaturedApiCollectionsAdminApiResponse?> GetFeaturedApiCollectionsAdminOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await GetFeaturedApiCollectionsAdminAsync(cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Get Featured Api Collections (Admin) &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetFeaturedApiCollectionsAdminApiResponse"/>&gt;</returns>
+        public async Task<IGetFeaturedApiCollectionsAdminApiResponse> GetFeaturedApiCollectionsAdminAsync(System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v6.0.0/management/api-collections/featured"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/management/api-collections/featured");
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<APIApi.GetFeaturedApiCollectionsAdminApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetFeaturedApiCollectionsAdminApiResponse>();
+                        APIApi.GetFeaturedApiCollectionsAdminApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v6.0.0/management/api-collections/featured", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterGetFeaturedApiCollectionsAdminDefaultImplementation(apiResponseLocalVar);
+
+                        Events.ExecuteOnGetFeaturedApiCollectionsAdmin(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorGetFeaturedApiCollectionsAdminDefaultImplementation(e, "/obp/v6.0.0/management/api-collections/featured", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetFeaturedApiCollectionsAdmin(e);
+                throw;
+            }
+        }
+
+        partial void FormatGetMyApiCollectionById(ref string apicollectionid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="apicollectionid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetMyApiCollectionById(string apicollectionid)
+        private void ValidateGetMyApiCollectionById(string apicollectionid)
         {
             if (apicollectionid == null)
                 throw new ArgumentNullException(nameof(apicollectionid));
@@ -4263,10 +4989,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        private void AfterOBPv400GetMyApiCollectionByIdDefaultImplementation(IOBPv400GetMyApiCollectionByIdApiResponse apiResponseLocalVar, string apicollectionid)
+        private void AfterGetMyApiCollectionByIdDefaultImplementation(IGetMyApiCollectionByIdApiResponse apiResponseLocalVar, string apicollectionid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetMyApiCollectionById(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid);
+            AfterGetMyApiCollectionById(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -4277,7 +5003,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        partial void AfterOBPv400GetMyApiCollectionById(ref bool suppressDefaultLog, IOBPv400GetMyApiCollectionByIdApiResponse apiResponseLocalVar, string apicollectionid);
+        partial void AfterGetMyApiCollectionById(ref bool suppressDefaultLog, IGetMyApiCollectionByIdApiResponse apiResponseLocalVar, string apicollectionid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -4286,10 +5012,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        private void OnErrorOBPv400GetMyApiCollectionByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid)
+        private void OnErrorGetMyApiCollectionByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetMyApiCollectionById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid);
+            OnErrorGetMyApiCollectionById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -4302,19 +5028,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        partial void OnErrorOBPv400GetMyApiCollectionById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid);
+        partial void OnErrorGetMyApiCollectionById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid);
 
         /// <summary>
         /// Get My Api Collection By Id &lt;p&gt;Get Api Collection By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
         /// </summary>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetMyApiCollectionByIdApiResponse?> OBPv400GetMyApiCollectionByIdOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetMyApiCollectionByIdApiResponse?> GetMyApiCollectionByIdOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetMyApiCollectionByIdAsync(apicollectionid, cancellationToken).ConfigureAwait(false);
+                return await GetMyApiCollectionByIdAsync(apicollectionid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -4328,16 +5054,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetMyApiCollectionByIdApiResponse> OBPv400GetMyApiCollectionByIdAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetMyApiCollectionByIdApiResponse> GetMyApiCollectionByIdAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetMyApiCollectionById(apicollectionid);
+                ValidateGetMyApiCollectionById(apicollectionid);
 
-                FormatOBPv400GetMyApiCollectionById(ref apicollectionid);
+                FormatGetMyApiCollectionById(ref apicollectionid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -4354,7 +5080,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -4381,8 +5107,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetMyApiCollectionByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetMyApiCollectionByIdApiResponse>();
-                        OBPv400GetMyApiCollectionByIdApiResponse apiResponseLocalVar;
+                        ILogger<GetMyApiCollectionByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetMyApiCollectionByIdApiResponse>();
+                        GetMyApiCollectionByIdApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -4393,9 +5119,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetMyApiCollectionByIdDefaultImplementation(apiResponseLocalVar, apicollectionid);
+                        AfterGetMyApiCollectionByIdDefaultImplementation(apiResponseLocalVar, apicollectionid);
 
-                        Events.ExecuteOnOBPv400GetMyApiCollectionById(apiResponseLocalVar);
+                        Events.ExecuteOnGetMyApiCollectionById(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -4407,24 +5133,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetMyApiCollectionByIdDefaultImplementation(e, "/obp/v4.0.0/my/api-collections/{apicollectionid}", uriBuilderLocalVar.Path, apicollectionid);
-                Events.ExecuteOnErrorOBPv400GetMyApiCollectionById(e);
+                OnErrorGetMyApiCollectionByIdDefaultImplementation(e, "/obp/v4.0.0/my/api-collections/{apicollectionid}", uriBuilderLocalVar.Path, apicollectionid);
+                Events.ExecuteOnErrorGetMyApiCollectionById(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetMyApiCollectionByIdApiResponse"/>
+        /// The <see cref="GetMyApiCollectionByIdApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetMyApiCollectionByIdApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetMyApiCollectionByIdApiResponse
+        public partial class GetMyApiCollectionByIdApiResponse : OpenBankProject.Client.ApiResponse, IGetMyApiCollectionByIdApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetMyApiCollectionByIdApiResponse> Logger { get; }
+            public ILogger<GetMyApiCollectionByIdApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetMyApiCollectionByIdApiResponse"/>
+            /// The <see cref="GetMyApiCollectionByIdApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -4433,14 +5159,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetMyApiCollectionByIdApiResponse(ILogger<OBPv400GetMyApiCollectionByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetMyApiCollectionByIdApiResponse(ILogger<GetMyApiCollectionByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetMyApiCollectionByIdApiResponse"/>
+            /// The <see cref="GetMyApiCollectionByIdApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -4449,7 +5175,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetMyApiCollectionByIdApiResponse(ILogger<OBPv400GetMyApiCollectionByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetMyApiCollectionByIdApiResponse(ILogger<GetMyApiCollectionByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -4467,11 +5193,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems? Ok()
+            public OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -4480,7 +5206,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner? result)
             {
                 result = null;
 
@@ -4518,14 +5244,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetMyApiCollectionByName(ref string apicollectionname);
+        partial void FormatGetMyApiCollectionByName(ref string apicollectionname);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="apicollectionname"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetMyApiCollectionByName(string apicollectionname)
+        private void ValidateGetMyApiCollectionByName(string apicollectionname)
         {
             if (apicollectionname == null)
                 throw new ArgumentNullException(nameof(apicollectionname));
@@ -4536,10 +5262,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionname"></param>
-        private void AfterOBPv400GetMyApiCollectionByNameDefaultImplementation(IOBPv400GetMyApiCollectionByNameApiResponse apiResponseLocalVar, string apicollectionname)
+        private void AfterGetMyApiCollectionByNameDefaultImplementation(IGetMyApiCollectionByNameApiResponse apiResponseLocalVar, string apicollectionname)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetMyApiCollectionByName(ref suppressDefaultLog, apiResponseLocalVar, apicollectionname);
+            AfterGetMyApiCollectionByName(ref suppressDefaultLog, apiResponseLocalVar, apicollectionname);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -4550,7 +5276,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionname"></param>
-        partial void AfterOBPv400GetMyApiCollectionByName(ref bool suppressDefaultLog, IOBPv400GetMyApiCollectionByNameApiResponse apiResponseLocalVar, string apicollectionname);
+        partial void AfterGetMyApiCollectionByName(ref bool suppressDefaultLog, IGetMyApiCollectionByNameApiResponse apiResponseLocalVar, string apicollectionname);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -4559,10 +5285,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionname"></param>
-        private void OnErrorOBPv400GetMyApiCollectionByNameDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname)
+        private void OnErrorGetMyApiCollectionByNameDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetMyApiCollectionByName(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionname);
+            OnErrorGetMyApiCollectionByName(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionname);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -4575,19 +5301,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionname"></param>
-        partial void OnErrorOBPv400GetMyApiCollectionByName(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname);
+        partial void OnErrorGetMyApiCollectionByName(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname);
 
         /// <summary>
         /// Get My Api Collection By Name &lt;p&gt;Get Api Collection By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
         /// </summary>
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionByNameApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetMyApiCollectionByNameApiResponse?> OBPv400GetMyApiCollectionByNameOrDefaultAsync(string apicollectionname, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionByNameApiResponse"/>&gt;</returns>
+        public async Task<IGetMyApiCollectionByNameApiResponse?> GetMyApiCollectionByNameOrDefaultAsync(string apicollectionname, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetMyApiCollectionByNameAsync(apicollectionname, cancellationToken).ConfigureAwait(false);
+                return await GetMyApiCollectionByNameAsync(apicollectionname, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -4601,16 +5327,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionByNameApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetMyApiCollectionByNameApiResponse> OBPv400GetMyApiCollectionByNameAsync(string apicollectionname, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionByNameApiResponse"/>&gt;</returns>
+        public async Task<IGetMyApiCollectionByNameApiResponse> GetMyApiCollectionByNameAsync(string apicollectionname, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetMyApiCollectionByName(apicollectionname);
+                ValidateGetMyApiCollectionByName(apicollectionname);
 
-                FormatOBPv400GetMyApiCollectionByName(ref apicollectionname);
+                FormatGetMyApiCollectionByName(ref apicollectionname);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -4627,7 +5353,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -4654,8 +5380,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetMyApiCollectionByNameApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetMyApiCollectionByNameApiResponse>();
-                        OBPv400GetMyApiCollectionByNameApiResponse apiResponseLocalVar;
+                        ILogger<GetMyApiCollectionByNameApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetMyApiCollectionByNameApiResponse>();
+                        GetMyApiCollectionByNameApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -4666,9 +5392,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetMyApiCollectionByNameDefaultImplementation(apiResponseLocalVar, apicollectionname);
+                        AfterGetMyApiCollectionByNameDefaultImplementation(apiResponseLocalVar, apicollectionname);
 
-                        Events.ExecuteOnOBPv400GetMyApiCollectionByName(apiResponseLocalVar);
+                        Events.ExecuteOnGetMyApiCollectionByName(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -4680,24 +5406,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetMyApiCollectionByNameDefaultImplementation(e, "/obp/v4.0.0/my/api-collections/name/{apicollectionname}", uriBuilderLocalVar.Path, apicollectionname);
-                Events.ExecuteOnErrorOBPv400GetMyApiCollectionByName(e);
+                OnErrorGetMyApiCollectionByNameDefaultImplementation(e, "/obp/v4.0.0/my/api-collections/name/{apicollectionname}", uriBuilderLocalVar.Path, apicollectionname);
+                Events.ExecuteOnErrorGetMyApiCollectionByName(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetMyApiCollectionByNameApiResponse"/>
+        /// The <see cref="GetMyApiCollectionByNameApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetMyApiCollectionByNameApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetMyApiCollectionByNameApiResponse
+        public partial class GetMyApiCollectionByNameApiResponse : OpenBankProject.Client.ApiResponse, IGetMyApiCollectionByNameApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetMyApiCollectionByNameApiResponse> Logger { get; }
+            public ILogger<GetMyApiCollectionByNameApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetMyApiCollectionByNameApiResponse"/>
+            /// The <see cref="GetMyApiCollectionByNameApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -4706,14 +5432,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetMyApiCollectionByNameApiResponse(ILogger<OBPv400GetMyApiCollectionByNameApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetMyApiCollectionByNameApiResponse(ILogger<GetMyApiCollectionByNameApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetMyApiCollectionByNameApiResponse"/>
+            /// The <see cref="GetMyApiCollectionByNameApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -4722,7 +5448,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetMyApiCollectionByNameApiResponse(ILogger<OBPv400GetMyApiCollectionByNameApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetMyApiCollectionByNameApiResponse(ILogger<GetMyApiCollectionByNameApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -4740,11 +5466,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems? Ok()
+            public OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -4753,7 +5479,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner? result)
             {
                 result = null;
 
@@ -4791,7 +5517,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetMyApiCollectionEndpoint(ref string apicollectionname, ref string operationid);
+        partial void FormatGetMyApiCollectionEndpoint(ref string apicollectionname, ref string operationid);
 
         /// <summary>
         /// Validates the request parameters
@@ -4799,7 +5525,7 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionname"></param>
         /// <param name="operationid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetMyApiCollectionEndpoint(string apicollectionname, string operationid)
+        private void ValidateGetMyApiCollectionEndpoint(string apicollectionname, string operationid)
         {
             if (apicollectionname == null)
                 throw new ArgumentNullException(nameof(apicollectionname));
@@ -4814,10 +5540,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionname"></param>
         /// <param name="operationid"></param>
-        private void AfterOBPv400GetMyApiCollectionEndpointDefaultImplementation(IOBPv400GetMyApiCollectionEndpointApiResponse apiResponseLocalVar, string apicollectionname, string operationid)
+        private void AfterGetMyApiCollectionEndpointDefaultImplementation(IGetMyApiCollectionEndpointApiResponse apiResponseLocalVar, string apicollectionname, string operationid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetMyApiCollectionEndpoint(ref suppressDefaultLog, apiResponseLocalVar, apicollectionname, operationid);
+            AfterGetMyApiCollectionEndpoint(ref suppressDefaultLog, apiResponseLocalVar, apicollectionname, operationid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -4829,7 +5555,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionname"></param>
         /// <param name="operationid"></param>
-        partial void AfterOBPv400GetMyApiCollectionEndpoint(ref bool suppressDefaultLog, IOBPv400GetMyApiCollectionEndpointApiResponse apiResponseLocalVar, string apicollectionname, string operationid);
+        partial void AfterGetMyApiCollectionEndpoint(ref bool suppressDefaultLog, IGetMyApiCollectionEndpointApiResponse apiResponseLocalVar, string apicollectionname, string operationid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -4839,10 +5565,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionname"></param>
         /// <param name="operationid"></param>
-        private void OnErrorOBPv400GetMyApiCollectionEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname, string operationid)
+        private void OnErrorGetMyApiCollectionEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname, string operationid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetMyApiCollectionEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionname, operationid);
+            OnErrorGetMyApiCollectionEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionname, operationid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -4856,7 +5582,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionname"></param>
         /// <param name="operationid"></param>
-        partial void OnErrorOBPv400GetMyApiCollectionEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname, string operationid);
+        partial void OnErrorGetMyApiCollectionEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname, string operationid);
 
         /// <summary>
         /// Get My Api Collection Endpoint &lt;p&gt;Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
@@ -4864,12 +5590,12 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetMyApiCollectionEndpointApiResponse?> OBPv400GetMyApiCollectionEndpointOrDefaultAsync(string apicollectionname, string operationid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionEndpointApiResponse"/>&gt;</returns>
+        public async Task<IGetMyApiCollectionEndpointApiResponse?> GetMyApiCollectionEndpointOrDefaultAsync(string apicollectionname, string operationid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetMyApiCollectionEndpointAsync(apicollectionname, operationid, cancellationToken).ConfigureAwait(false);
+                return await GetMyApiCollectionEndpointAsync(apicollectionname, operationid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -4884,16 +5610,16 @@ namespace OpenBankProject.Api
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetMyApiCollectionEndpointApiResponse> OBPv400GetMyApiCollectionEndpointAsync(string apicollectionname, string operationid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionEndpointApiResponse"/>&gt;</returns>
+        public async Task<IGetMyApiCollectionEndpointApiResponse> GetMyApiCollectionEndpointAsync(string apicollectionname, string operationid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetMyApiCollectionEndpoint(apicollectionname, operationid);
+                ValidateGetMyApiCollectionEndpoint(apicollectionname, operationid);
 
-                FormatOBPv400GetMyApiCollectionEndpoint(ref apicollectionname, ref operationid);
+                FormatGetMyApiCollectionEndpoint(ref apicollectionname, ref operationid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -4923,8 +5649,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetMyApiCollectionEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetMyApiCollectionEndpointApiResponse>();
-                        OBPv400GetMyApiCollectionEndpointApiResponse apiResponseLocalVar;
+                        ILogger<GetMyApiCollectionEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetMyApiCollectionEndpointApiResponse>();
+                        GetMyApiCollectionEndpointApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -4935,9 +5661,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetMyApiCollectionEndpointDefaultImplementation(apiResponseLocalVar, apicollectionname, operationid);
+                        AfterGetMyApiCollectionEndpointDefaultImplementation(apiResponseLocalVar, apicollectionname, operationid);
 
-                        Events.ExecuteOnOBPv400GetMyApiCollectionEndpoint(apiResponseLocalVar);
+                        Events.ExecuteOnGetMyApiCollectionEndpoint(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -4945,24 +5671,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetMyApiCollectionEndpointDefaultImplementation(e, "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}", uriBuilderLocalVar.Path, apicollectionname, operationid);
-                Events.ExecuteOnErrorOBPv400GetMyApiCollectionEndpoint(e);
+                OnErrorGetMyApiCollectionEndpointDefaultImplementation(e, "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}", uriBuilderLocalVar.Path, apicollectionname, operationid);
+                Events.ExecuteOnErrorGetMyApiCollectionEndpoint(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetMyApiCollectionEndpointApiResponse"/>
+        /// The <see cref="GetMyApiCollectionEndpointApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetMyApiCollectionEndpointApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetMyApiCollectionEndpointApiResponse
+        public partial class GetMyApiCollectionEndpointApiResponse : OpenBankProject.Client.ApiResponse, IGetMyApiCollectionEndpointApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetMyApiCollectionEndpointApiResponse> Logger { get; }
+            public ILogger<GetMyApiCollectionEndpointApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetMyApiCollectionEndpointApiResponse"/>
+            /// The <see cref="GetMyApiCollectionEndpointApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -4971,14 +5697,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetMyApiCollectionEndpointApiResponse(ILogger<OBPv400GetMyApiCollectionEndpointApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetMyApiCollectionEndpointApiResponse(ILogger<GetMyApiCollectionEndpointApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetMyApiCollectionEndpointApiResponse"/>
+            /// The <see cref="GetMyApiCollectionEndpointApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -4987,7 +5713,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetMyApiCollectionEndpointApiResponse(ILogger<OBPv400GetMyApiCollectionEndpointApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetMyApiCollectionEndpointApiResponse(ILogger<GetMyApiCollectionEndpointApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -5005,11 +5731,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems? Ok()
+            public OpenBankProject.Model.GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -5018,7 +5744,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner? result)
             {
                 result = null;
 
@@ -5056,14 +5782,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetMyApiCollectionEndpoints(ref string apicollectionname);
+        partial void FormatGetMyApiCollectionEndpoints(ref string apicollectionname);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="apicollectionname"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetMyApiCollectionEndpoints(string apicollectionname)
+        private void ValidateGetMyApiCollectionEndpoints(string apicollectionname)
         {
             if (apicollectionname == null)
                 throw new ArgumentNullException(nameof(apicollectionname));
@@ -5074,10 +5800,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionname"></param>
-        private void AfterOBPv400GetMyApiCollectionEndpointsDefaultImplementation(IOBPv400GetMyApiCollectionEndpointsApiResponse apiResponseLocalVar, string apicollectionname)
+        private void AfterGetMyApiCollectionEndpointsDefaultImplementation(IGetMyApiCollectionEndpointsApiResponse apiResponseLocalVar, string apicollectionname)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetMyApiCollectionEndpoints(ref suppressDefaultLog, apiResponseLocalVar, apicollectionname);
+            AfterGetMyApiCollectionEndpoints(ref suppressDefaultLog, apiResponseLocalVar, apicollectionname);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -5088,7 +5814,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionname"></param>
-        partial void AfterOBPv400GetMyApiCollectionEndpoints(ref bool suppressDefaultLog, IOBPv400GetMyApiCollectionEndpointsApiResponse apiResponseLocalVar, string apicollectionname);
+        partial void AfterGetMyApiCollectionEndpoints(ref bool suppressDefaultLog, IGetMyApiCollectionEndpointsApiResponse apiResponseLocalVar, string apicollectionname);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -5097,10 +5823,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionname"></param>
-        private void OnErrorOBPv400GetMyApiCollectionEndpointsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname)
+        private void OnErrorGetMyApiCollectionEndpointsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetMyApiCollectionEndpoints(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionname);
+            OnErrorGetMyApiCollectionEndpoints(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionname);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -5113,19 +5839,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionname"></param>
-        partial void OnErrorOBPv400GetMyApiCollectionEndpoints(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname);
+        partial void OnErrorGetMyApiCollectionEndpoints(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionname);
 
         /// <summary>
         /// Get My Api Collection Endpoints &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
         /// </summary>
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionEndpointsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetMyApiCollectionEndpointsApiResponse?> OBPv400GetMyApiCollectionEndpointsOrDefaultAsync(string apicollectionname, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionEndpointsApiResponse"/>&gt;</returns>
+        public async Task<IGetMyApiCollectionEndpointsApiResponse?> GetMyApiCollectionEndpointsOrDefaultAsync(string apicollectionname, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetMyApiCollectionEndpointsAsync(apicollectionname, cancellationToken).ConfigureAwait(false);
+                return await GetMyApiCollectionEndpointsAsync(apicollectionname, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -5139,16 +5865,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionname">The APICOLLECTIONNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionEndpointsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetMyApiCollectionEndpointsApiResponse> OBPv400GetMyApiCollectionEndpointsAsync(string apicollectionname, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionEndpointsApiResponse"/>&gt;</returns>
+        public async Task<IGetMyApiCollectionEndpointsApiResponse> GetMyApiCollectionEndpointsAsync(string apicollectionname, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetMyApiCollectionEndpoints(apicollectionname);
+                ValidateGetMyApiCollectionEndpoints(apicollectionname);
 
-                FormatOBPv400GetMyApiCollectionEndpoints(ref apicollectionname);
+                FormatGetMyApiCollectionEndpoints(ref apicollectionname);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -5165,7 +5891,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -5192,8 +5918,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetMyApiCollectionEndpointsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetMyApiCollectionEndpointsApiResponse>();
-                        OBPv400GetMyApiCollectionEndpointsApiResponse apiResponseLocalVar;
+                        ILogger<GetMyApiCollectionEndpointsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetMyApiCollectionEndpointsApiResponse>();
+                        GetMyApiCollectionEndpointsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -5204,9 +5930,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetMyApiCollectionEndpointsDefaultImplementation(apiResponseLocalVar, apicollectionname);
+                        AfterGetMyApiCollectionEndpointsDefaultImplementation(apiResponseLocalVar, apicollectionname);
 
-                        Events.ExecuteOnOBPv400GetMyApiCollectionEndpoints(apiResponseLocalVar);
+                        Events.ExecuteOnGetMyApiCollectionEndpoints(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -5218,24 +5944,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetMyApiCollectionEndpointsDefaultImplementation(e, "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints", uriBuilderLocalVar.Path, apicollectionname);
-                Events.ExecuteOnErrorOBPv400GetMyApiCollectionEndpoints(e);
+                OnErrorGetMyApiCollectionEndpointsDefaultImplementation(e, "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints", uriBuilderLocalVar.Path, apicollectionname);
+                Events.ExecuteOnErrorGetMyApiCollectionEndpoints(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetMyApiCollectionEndpointsApiResponse"/>
+        /// The <see cref="GetMyApiCollectionEndpointsApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetMyApiCollectionEndpointsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetMyApiCollectionEndpointsApiResponse
+        public partial class GetMyApiCollectionEndpointsApiResponse : OpenBankProject.Client.ApiResponse, IGetMyApiCollectionEndpointsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetMyApiCollectionEndpointsApiResponse> Logger { get; }
+            public ILogger<GetMyApiCollectionEndpointsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetMyApiCollectionEndpointsApiResponse"/>
+            /// The <see cref="GetMyApiCollectionEndpointsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -5244,14 +5970,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetMyApiCollectionEndpointsApiResponse(ILogger<OBPv400GetMyApiCollectionEndpointsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetMyApiCollectionEndpointsApiResponse(ILogger<GetMyApiCollectionEndpointsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetMyApiCollectionEndpointsApiResponse"/>
+            /// The <see cref="GetMyApiCollectionEndpointsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -5260,7 +5986,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetMyApiCollectionEndpointsApiResponse(ILogger<OBPv400GetMyApiCollectionEndpointsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetMyApiCollectionEndpointsApiResponse(ILogger<GetMyApiCollectionEndpointsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -5278,11 +6004,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200Response? Ok()
+            public OpenBankProject.Model.GetMyApiCollectionEndpoints200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetMyApiCollectionEndpoints200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -5291,7 +6017,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetMyApiCollectionEndpoints200Response? result)
             {
                 result = null;
 
@@ -5329,14 +6055,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetMyApiCollectionEndpointsById(ref string apicollectionid);
+        partial void FormatGetMyApiCollectionEndpointsById(ref string apicollectionid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="apicollectionid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetMyApiCollectionEndpointsById(string apicollectionid)
+        private void ValidateGetMyApiCollectionEndpointsById(string apicollectionid)
         {
             if (apicollectionid == null)
                 throw new ArgumentNullException(nameof(apicollectionid));
@@ -5347,10 +6073,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        private void AfterOBPv400GetMyApiCollectionEndpointsByIdDefaultImplementation(IOBPv400GetMyApiCollectionEndpointsByIdApiResponse apiResponseLocalVar, string apicollectionid)
+        private void AfterGetMyApiCollectionEndpointsByIdDefaultImplementation(IGetMyApiCollectionEndpointsByIdApiResponse apiResponseLocalVar, string apicollectionid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetMyApiCollectionEndpointsById(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid);
+            AfterGetMyApiCollectionEndpointsById(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -5361,7 +6087,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        partial void AfterOBPv400GetMyApiCollectionEndpointsById(ref bool suppressDefaultLog, IOBPv400GetMyApiCollectionEndpointsByIdApiResponse apiResponseLocalVar, string apicollectionid);
+        partial void AfterGetMyApiCollectionEndpointsById(ref bool suppressDefaultLog, IGetMyApiCollectionEndpointsByIdApiResponse apiResponseLocalVar, string apicollectionid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -5370,10 +6096,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        private void OnErrorOBPv400GetMyApiCollectionEndpointsByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid)
+        private void OnErrorGetMyApiCollectionEndpointsByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetMyApiCollectionEndpointsById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid);
+            OnErrorGetMyApiCollectionEndpointsById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -5386,19 +6112,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        partial void OnErrorOBPv400GetMyApiCollectionEndpointsById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid);
+        partial void OnErrorGetMyApiCollectionEndpointsById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid);
 
         /// <summary>
         /// Get My Api Collection Endpoints By Id &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
         /// </summary>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionEndpointsByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetMyApiCollectionEndpointsByIdApiResponse?> OBPv400GetMyApiCollectionEndpointsByIdOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionEndpointsByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetMyApiCollectionEndpointsByIdApiResponse?> GetMyApiCollectionEndpointsByIdOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetMyApiCollectionEndpointsByIdAsync(apicollectionid, cancellationToken).ConfigureAwait(false);
+                return await GetMyApiCollectionEndpointsByIdAsync(apicollectionid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -5412,16 +6138,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionEndpointsByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetMyApiCollectionEndpointsByIdApiResponse> OBPv400GetMyApiCollectionEndpointsByIdAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionEndpointsByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetMyApiCollectionEndpointsByIdApiResponse> GetMyApiCollectionEndpointsByIdAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetMyApiCollectionEndpointsById(apicollectionid);
+                ValidateGetMyApiCollectionEndpointsById(apicollectionid);
 
-                FormatOBPv400GetMyApiCollectionEndpointsById(ref apicollectionid);
+                FormatGetMyApiCollectionEndpointsById(ref apicollectionid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -5438,7 +6164,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -5465,8 +6191,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetMyApiCollectionEndpointsByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetMyApiCollectionEndpointsByIdApiResponse>();
-                        OBPv400GetMyApiCollectionEndpointsByIdApiResponse apiResponseLocalVar;
+                        ILogger<GetMyApiCollectionEndpointsByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetMyApiCollectionEndpointsByIdApiResponse>();
+                        GetMyApiCollectionEndpointsByIdApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -5477,9 +6203,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetMyApiCollectionEndpointsByIdDefaultImplementation(apiResponseLocalVar, apicollectionid);
+                        AfterGetMyApiCollectionEndpointsByIdDefaultImplementation(apiResponseLocalVar, apicollectionid);
 
-                        Events.ExecuteOnOBPv400GetMyApiCollectionEndpointsById(apiResponseLocalVar);
+                        Events.ExecuteOnGetMyApiCollectionEndpointsById(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -5491,24 +6217,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetMyApiCollectionEndpointsByIdDefaultImplementation(e, "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints", uriBuilderLocalVar.Path, apicollectionid);
-                Events.ExecuteOnErrorOBPv400GetMyApiCollectionEndpointsById(e);
+                OnErrorGetMyApiCollectionEndpointsByIdDefaultImplementation(e, "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints", uriBuilderLocalVar.Path, apicollectionid);
+                Events.ExecuteOnErrorGetMyApiCollectionEndpointsById(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetMyApiCollectionEndpointsByIdApiResponse"/>
+        /// The <see cref="GetMyApiCollectionEndpointsByIdApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetMyApiCollectionEndpointsByIdApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetMyApiCollectionEndpointsByIdApiResponse
+        public partial class GetMyApiCollectionEndpointsByIdApiResponse : OpenBankProject.Client.ApiResponse, IGetMyApiCollectionEndpointsByIdApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetMyApiCollectionEndpointsByIdApiResponse> Logger { get; }
+            public ILogger<GetMyApiCollectionEndpointsByIdApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetMyApiCollectionEndpointsByIdApiResponse"/>
+            /// The <see cref="GetMyApiCollectionEndpointsByIdApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -5517,14 +6243,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetMyApiCollectionEndpointsByIdApiResponse(ILogger<OBPv400GetMyApiCollectionEndpointsByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetMyApiCollectionEndpointsByIdApiResponse(ILogger<GetMyApiCollectionEndpointsByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetMyApiCollectionEndpointsByIdApiResponse"/>
+            /// The <see cref="GetMyApiCollectionEndpointsByIdApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -5533,7 +6259,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetMyApiCollectionEndpointsByIdApiResponse(ILogger<OBPv400GetMyApiCollectionEndpointsByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetMyApiCollectionEndpointsByIdApiResponse(ILogger<GetMyApiCollectionEndpointsByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -5551,11 +6277,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200Response? Ok()
+            public OpenBankProject.Model.GetMyApiCollectionEndpoints200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetMyApiCollectionEndpoints200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -5564,7 +6290,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetMyApiCollectionEndpoints200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetMyApiCollectionEndpoints200Response? result)
             {
                 result = null;
 
@@ -5606,10 +6332,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv400GetMyApiCollectionsDefaultImplementation(IOBPv400GetMyApiCollectionsApiResponse apiResponseLocalVar)
+        private void AfterGetMyApiCollectionsDefaultImplementation(IGetMyApiCollectionsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetMyApiCollections(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetMyApiCollections(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -5619,7 +6345,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv400GetMyApiCollections(ref bool suppressDefaultLog, IOBPv400GetMyApiCollectionsApiResponse apiResponseLocalVar);
+        partial void AfterGetMyApiCollections(ref bool suppressDefaultLog, IGetMyApiCollectionsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -5627,10 +6353,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv400GetMyApiCollectionsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetMyApiCollectionsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetMyApiCollections(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetMyApiCollections(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -5642,18 +6368,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv400GetMyApiCollections(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetMyApiCollections(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
-        /// Get My Api Collections &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// Get My Api Collections &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;1 limit (for pagination: defaults to 50)  eg:limit&#x3D;200&lt;/p&gt; &lt;p&gt;2 offset (for pagination: zero index, defaults to 0) eg: offset&#x3D;10&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetMyApiCollectionsApiResponse?> OBPv400GetMyApiCollectionsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionsApiResponse"/>&gt;</returns>
+        public async Task<IGetMyApiCollectionsApiResponse?> GetMyApiCollectionsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetMyApiCollectionsAsync(cancellationToken).ConfigureAwait(false);
+                return await GetMyApiCollectionsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -5662,12 +6388,12 @@ namespace OpenBankProject.Api
         }
 
         /// <summary>
-        /// Get My Api Collections &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// Get My Api Collections &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;1 limit (for pagination: defaults to 50)  eg:limit&#x3D;200&lt;/p&gt; &lt;p&gt;2 offset (for pagination: zero index, defaults to 0) eg: offset&#x3D;10&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyApiCollectionsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetMyApiCollectionsApiResponse> OBPv400GetMyApiCollectionsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyApiCollectionsApiResponse"/>&gt;</returns>
+        public async Task<IGetMyApiCollectionsApiResponse> GetMyApiCollectionsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -5687,7 +6413,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -5714,8 +6440,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetMyApiCollectionsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetMyApiCollectionsApiResponse>();
-                        OBPv400GetMyApiCollectionsApiResponse apiResponseLocalVar;
+                        ILogger<GetMyApiCollectionsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetMyApiCollectionsApiResponse>();
+                        GetMyApiCollectionsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -5726,9 +6452,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetMyApiCollectionsDefaultImplementation(apiResponseLocalVar);
+                        AfterGetMyApiCollectionsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv400GetMyApiCollections(apiResponseLocalVar);
+                        Events.ExecuteOnGetMyApiCollections(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -5740,24 +6466,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetMyApiCollectionsDefaultImplementation(e, "/obp/v4.0.0/my/api-collections", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv400GetMyApiCollections(e);
+                OnErrorGetMyApiCollectionsDefaultImplementation(e, "/obp/v4.0.0/my/api-collections", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetMyApiCollections(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetMyApiCollectionsApiResponse"/>
+        /// The <see cref="GetMyApiCollectionsApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetMyApiCollectionsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetMyApiCollectionsApiResponse
+        public partial class GetMyApiCollectionsApiResponse : OpenBankProject.Client.ApiResponse, IGetMyApiCollectionsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetMyApiCollectionsApiResponse> Logger { get; }
+            public ILogger<GetMyApiCollectionsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetMyApiCollectionsApiResponse"/>
+            /// The <see cref="GetMyApiCollectionsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -5766,14 +6492,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetMyApiCollectionsApiResponse(ILogger<OBPv400GetMyApiCollectionsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetMyApiCollectionsApiResponse(ILogger<GetMyApiCollectionsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetMyApiCollectionsApiResponse"/>
+            /// The <see cref="GetMyApiCollectionsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -5782,7 +6508,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetMyApiCollectionsApiResponse(ILogger<OBPv400GetMyApiCollectionsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetMyApiCollectionsApiResponse(ILogger<GetMyApiCollectionsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -5800,11 +6526,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetApiCollectionsForUser200Response? Ok()
+            public OpenBankProject.Model.GetApiCollectionsForUser200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetApiCollectionsForUser200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -5813,7 +6539,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetApiCollectionsForUser200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetApiCollectionsForUser200Response? result)
             {
                 result = null;
 
@@ -5845,14 +6571,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetSharableApiCollectionById(ref string apicollectionid);
+        partial void FormatGetSharableApiCollectionById(ref string apicollectionid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="apicollectionid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetSharableApiCollectionById(string apicollectionid)
+        private void ValidateGetSharableApiCollectionById(string apicollectionid)
         {
             if (apicollectionid == null)
                 throw new ArgumentNullException(nameof(apicollectionid));
@@ -5863,10 +6589,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        private void AfterOBPv400GetSharableApiCollectionByIdDefaultImplementation(IOBPv400GetSharableApiCollectionByIdApiResponse apiResponseLocalVar, string apicollectionid)
+        private void AfterGetSharableApiCollectionByIdDefaultImplementation(IGetSharableApiCollectionByIdApiResponse apiResponseLocalVar, string apicollectionid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetSharableApiCollectionById(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid);
+            AfterGetSharableApiCollectionById(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -5877,7 +6603,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        partial void AfterOBPv400GetSharableApiCollectionById(ref bool suppressDefaultLog, IOBPv400GetSharableApiCollectionByIdApiResponse apiResponseLocalVar, string apicollectionid);
+        partial void AfterGetSharableApiCollectionById(ref bool suppressDefaultLog, IGetSharableApiCollectionByIdApiResponse apiResponseLocalVar, string apicollectionid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -5886,10 +6612,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        private void OnErrorOBPv400GetSharableApiCollectionByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid)
+        private void OnErrorGetSharableApiCollectionByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetSharableApiCollectionById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid);
+            OnErrorGetSharableApiCollectionById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -5902,19 +6628,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        partial void OnErrorOBPv400GetSharableApiCollectionById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid);
+        partial void OnErrorGetSharableApiCollectionById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid);
 
         /// <summary>
         /// Get Sharable Api Collection By Id &lt;p&gt;Get Sharable Api Collection By Id.&lt;br /&gt; User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
         /// </summary>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetSharableApiCollectionByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetSharableApiCollectionByIdApiResponse?> OBPv400GetSharableApiCollectionByIdOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSharableApiCollectionByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetSharableApiCollectionByIdApiResponse?> GetSharableApiCollectionByIdOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetSharableApiCollectionByIdAsync(apicollectionid, cancellationToken).ConfigureAwait(false);
+                return await GetSharableApiCollectionByIdAsync(apicollectionid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -5928,16 +6654,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetSharableApiCollectionByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetSharableApiCollectionByIdApiResponse> OBPv400GetSharableApiCollectionByIdAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSharableApiCollectionByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetSharableApiCollectionByIdApiResponse> GetSharableApiCollectionByIdAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetSharableApiCollectionById(apicollectionid);
+                ValidateGetSharableApiCollectionById(apicollectionid);
 
-                FormatOBPv400GetSharableApiCollectionById(ref apicollectionid);
+                FormatGetSharableApiCollectionById(ref apicollectionid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -5966,8 +6692,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetSharableApiCollectionByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetSharableApiCollectionByIdApiResponse>();
-                        OBPv400GetSharableApiCollectionByIdApiResponse apiResponseLocalVar;
+                        ILogger<GetSharableApiCollectionByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetSharableApiCollectionByIdApiResponse>();
+                        GetSharableApiCollectionByIdApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -5978,9 +6704,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetSharableApiCollectionByIdDefaultImplementation(apiResponseLocalVar, apicollectionid);
+                        AfterGetSharableApiCollectionByIdDefaultImplementation(apiResponseLocalVar, apicollectionid);
 
-                        Events.ExecuteOnOBPv400GetSharableApiCollectionById(apiResponseLocalVar);
+                        Events.ExecuteOnGetSharableApiCollectionById(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -5988,24 +6714,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetSharableApiCollectionByIdDefaultImplementation(e, "/obp/v4.0.0/api-collections/sharable/{apicollectionid}", uriBuilderLocalVar.Path, apicollectionid);
-                Events.ExecuteOnErrorOBPv400GetSharableApiCollectionById(e);
+                OnErrorGetSharableApiCollectionByIdDefaultImplementation(e, "/obp/v4.0.0/api-collections/sharable/{apicollectionid}", uriBuilderLocalVar.Path, apicollectionid);
+                Events.ExecuteOnErrorGetSharableApiCollectionById(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetSharableApiCollectionByIdApiResponse"/>
+        /// The <see cref="GetSharableApiCollectionByIdApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetSharableApiCollectionByIdApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetSharableApiCollectionByIdApiResponse
+        public partial class GetSharableApiCollectionByIdApiResponse : OpenBankProject.Client.ApiResponse, IGetSharableApiCollectionByIdApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetSharableApiCollectionByIdApiResponse> Logger { get; }
+            public ILogger<GetSharableApiCollectionByIdApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetSharableApiCollectionByIdApiResponse"/>
+            /// The <see cref="GetSharableApiCollectionByIdApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -6014,14 +6740,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetSharableApiCollectionByIdApiResponse(ILogger<OBPv400GetSharableApiCollectionByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetSharableApiCollectionByIdApiResponse(ILogger<GetSharableApiCollectionByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetSharableApiCollectionByIdApiResponse"/>
+            /// The <see cref="GetSharableApiCollectionByIdApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -6030,7 +6756,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetSharableApiCollectionByIdApiResponse(ILogger<OBPv400GetSharableApiCollectionByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetSharableApiCollectionByIdApiResponse(ILogger<GetSharableApiCollectionByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -6048,11 +6774,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems? Ok()
+            public OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -6061,7 +6787,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner? result)
             {
                 result = null;
 
@@ -6093,264 +6819,21 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv510GetAllApiCollectionsDefaultImplementation(IOBPv510GetAllApiCollectionsApiResponse apiResponseLocalVar)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv510GetAllApiCollections(ref suppressDefaultLog, apiResponseLocalVar);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv510GetAllApiCollections(ref bool suppressDefaultLog, IOBPv510GetAllApiCollectionsApiResponse apiResponseLocalVar);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv510GetAllApiCollectionsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510GetAllApiCollections(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv510GetAllApiCollections(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
-
-        /// <summary>
-        /// Get All API Collections &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetAllApiCollectionsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510GetAllApiCollectionsApiResponse?> OBPv510GetAllApiCollectionsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv510GetAllApiCollectionsAsync(cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Get All API Collections &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetAllApiCollectionsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510GetAllApiCollectionsApiResponse> OBPv510GetAllApiCollectionsAsync(System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v5.1.0/management/api-collections"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v5.1.0/management/api-collections");
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<OBPv510GetAllApiCollectionsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv510GetAllApiCollectionsApiResponse>();
-                        OBPv510GetAllApiCollectionsApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v5.1.0/management/api-collections", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv510GetAllApiCollectionsDefaultImplementation(apiResponseLocalVar);
-
-                        Events.ExecuteOnOBPv510GetAllApiCollections(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv510GetAllApiCollectionsDefaultImplementation(e, "/obp/v5.1.0/management/api-collections", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv510GetAllApiCollections(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OBPv510GetAllApiCollectionsApiResponse"/>
-        /// </summary>
-        public partial class OBPv510GetAllApiCollectionsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv510GetAllApiCollectionsApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<OBPv510GetAllApiCollectionsApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="OBPv510GetAllApiCollectionsApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv510GetAllApiCollectionsApiResponse(ILogger<OBPv510GetAllApiCollectionsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            /// <summary>
-            /// The <see cref="OBPv510GetAllApiCollectionsApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="contentStream"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv510GetAllApiCollectionsApiResponse(ILogger<OBPv510GetAllApiCollectionsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Deserializes the response if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetApiCollectionsForUser200Response? Ok()
-            {
-                // This logic may be modified with the AsModel.mustache template
-                return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200Response>(RawContent, _jsonSerializerOptions)
-                    : null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok and the deserialized response is not null
-            /// </summary>
-            /// <param name="result"></param>
-            /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetApiCollectionsForUser200Response? result)
-            {
-                result = null;
-
-                try
-                {
-                    result = Ok();
-                } catch (Exception e)
-                {
-                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
-                }
-
-                return result != null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 500 InternalServerError
-            /// </summary>
-            /// <returns></returns>
-            public bool IsInternalServerError => 500 == (int)StatusCode;
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatOBPv510UpdateMyApiCollection(ref string apicollectionid, OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest);
+        partial void FormatUpdateFeaturedApiCollection(ref string apicollectionid, UpdateFeaturedApiCollectionRequest updateFeaturedApiCollectionRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="apicollectionid"></param>
-        /// <param name="oBPv400CreateMyApiCollectionRequest"></param>
+        /// <param name="updateFeaturedApiCollectionRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv510UpdateMyApiCollection(string apicollectionid, OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest)
+        private void ValidateUpdateFeaturedApiCollection(string apicollectionid, UpdateFeaturedApiCollectionRequest updateFeaturedApiCollectionRequest)
         {
             if (apicollectionid == null)
                 throw new ArgumentNullException(nameof(apicollectionid));
 
-            if (oBPv400CreateMyApiCollectionRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateMyApiCollectionRequest));
+            if (updateFeaturedApiCollectionRequest == null)
+                throw new ArgumentNullException(nameof(updateFeaturedApiCollectionRequest));
         }
 
         /// <summary>
@@ -6358,11 +6841,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        /// <param name="oBPv400CreateMyApiCollectionRequest"></param>
-        private void AfterOBPv510UpdateMyApiCollectionDefaultImplementation(IOBPv510UpdateMyApiCollectionApiResponse apiResponseLocalVar, string apicollectionid, OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest)
+        /// <param name="updateFeaturedApiCollectionRequest"></param>
+        private void AfterUpdateFeaturedApiCollectionDefaultImplementation(IUpdateFeaturedApiCollectionApiResponse apiResponseLocalVar, string apicollectionid, UpdateFeaturedApiCollectionRequest updateFeaturedApiCollectionRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510UpdateMyApiCollection(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid, oBPv400CreateMyApiCollectionRequest);
+            AfterUpdateFeaturedApiCollection(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid, updateFeaturedApiCollectionRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -6373,8 +6856,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        /// <param name="oBPv400CreateMyApiCollectionRequest"></param>
-        partial void AfterOBPv510UpdateMyApiCollection(ref bool suppressDefaultLog, IOBPv510UpdateMyApiCollectionApiResponse apiResponseLocalVar, string apicollectionid, OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest);
+        /// <param name="updateFeaturedApiCollectionRequest"></param>
+        partial void AfterUpdateFeaturedApiCollection(ref bool suppressDefaultLog, IUpdateFeaturedApiCollectionApiResponse apiResponseLocalVar, string apicollectionid, UpdateFeaturedApiCollectionRequest updateFeaturedApiCollectionRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -6383,11 +6866,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        /// <param name="oBPv400CreateMyApiCollectionRequest"></param>
-        private void OnErrorOBPv510UpdateMyApiCollectionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest)
+        /// <param name="updateFeaturedApiCollectionRequest"></param>
+        private void OnErrorUpdateFeaturedApiCollectionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, UpdateFeaturedApiCollectionRequest updateFeaturedApiCollectionRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510UpdateMyApiCollection(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid, oBPv400CreateMyApiCollectionRequest);
+            OnErrorUpdateFeaturedApiCollection(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid, updateFeaturedApiCollectionRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -6400,21 +6883,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="apicollectionid"></param>
-        /// <param name="oBPv400CreateMyApiCollectionRequest"></param>
-        partial void OnErrorOBPv510UpdateMyApiCollection(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest);
+        /// <param name="updateFeaturedApiCollectionRequest"></param>
+        partial void OnErrorUpdateFeaturedApiCollection(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, UpdateFeaturedApiCollectionRequest updateFeaturedApiCollectionRequest);
 
         /// <summary>
-        /// Update My Api Collection By API_COLLECTION_ID &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// Update Featured Api Collection &lt;p&gt;Update the sort order of a featured API collection.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
         /// </summary>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
-        /// <param name="oBPv400CreateMyApiCollectionRequest">Request body</param>
+        /// <param name="updateFeaturedApiCollectionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510UpdateMyApiCollectionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510UpdateMyApiCollectionApiResponse?> OBPv510UpdateMyApiCollectionOrDefaultAsync(string apicollectionid, OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateFeaturedApiCollectionApiResponse"/>&gt;</returns>
+        public async Task<IUpdateFeaturedApiCollectionApiResponse?> UpdateFeaturedApiCollectionOrDefaultAsync(string apicollectionid, UpdateFeaturedApiCollectionRequest updateFeaturedApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510UpdateMyApiCollectionAsync(apicollectionid, oBPv400CreateMyApiCollectionRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateFeaturedApiCollectionAsync(apicollectionid, updateFeaturedApiCollectionRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -6423,22 +6906,22 @@ namespace OpenBankProject.Api
         }
 
         /// <summary>
-        /// Update My Api Collection By API_COLLECTION_ID &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// Update Featured Api Collection &lt;p&gt;Update the sort order of a featured API collection.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
-        /// <param name="oBPv400CreateMyApiCollectionRequest">Request body</param>
+        /// <param name="updateFeaturedApiCollectionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510UpdateMyApiCollectionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510UpdateMyApiCollectionApiResponse> OBPv510UpdateMyApiCollectionAsync(string apicollectionid, OBPv400CreateMyApiCollectionRequest oBPv400CreateMyApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateFeaturedApiCollectionApiResponse"/>&gt;</returns>
+        public async Task<IUpdateFeaturedApiCollectionApiResponse> UpdateFeaturedApiCollectionAsync(string apicollectionid, UpdateFeaturedApiCollectionRequest updateFeaturedApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510UpdateMyApiCollection(apicollectionid, oBPv400CreateMyApiCollectionRequest);
+                ValidateUpdateFeaturedApiCollection(apicollectionid, updateFeaturedApiCollectionRequest);
 
-                FormatOBPv510UpdateMyApiCollection(ref apicollectionid, oBPv400CreateMyApiCollectionRequest);
+                FormatUpdateFeaturedApiCollection(ref apicollectionid, updateFeaturedApiCollectionRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -6446,20 +6929,20 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v5.1.0/my/api-collections/{apicollectionid}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v5.1.0/my/api-collections/{apicollectionid}");
+                        ? "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bapicollectionid%7D", Uri.EscapeDataString(apicollectionid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateMyApiCollectionRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateFeaturedApiCollectionRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateMyApiCollectionRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateFeaturedApiCollectionRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -6495,21 +6978,21 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv510UpdateMyApiCollectionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv510UpdateMyApiCollectionApiResponse>();
-                        OBPv510UpdateMyApiCollectionApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.UpdateFeaturedApiCollectionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.UpdateFeaturedApiCollectionApiResponse>();
+                        APIApi.UpdateFeaturedApiCollectionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v5.1.0/my/api-collections/{apicollectionid}", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
                         }
 
-                        AfterOBPv510UpdateMyApiCollectionDefaultImplementation(apiResponseLocalVar, apicollectionid, oBPv400CreateMyApiCollectionRequest);
+                        AfterUpdateFeaturedApiCollectionDefaultImplementation(apiResponseLocalVar, apicollectionid, updateFeaturedApiCollectionRequest);
 
-                        Events.ExecuteOnOBPv510UpdateMyApiCollection(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateFeaturedApiCollection(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -6521,24 +7004,215 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510UpdateMyApiCollectionDefaultImplementation(e, "/obp/v5.1.0/my/api-collections/{apicollectionid}", uriBuilderLocalVar.Path, apicollectionid, oBPv400CreateMyApiCollectionRequest);
-                Events.ExecuteOnErrorOBPv510UpdateMyApiCollection(e);
+                OnErrorUpdateFeaturedApiCollectionDefaultImplementation(e, "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}", uriBuilderLocalVar.Path, apicollectionid, updateFeaturedApiCollectionRequest);
+                Events.ExecuteOnErrorUpdateFeaturedApiCollection(e);
+                throw;
+            }
+        }
+
+        partial void FormatUpdateMyApiCollection(ref string apicollectionid, CreateMyApiCollectionRequest createMyApiCollectionRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="apicollectionid"></param>
+        /// <param name="createMyApiCollectionRequest"></param>
+        /// <returns></returns>
+        private void ValidateUpdateMyApiCollection(string apicollectionid, CreateMyApiCollectionRequest createMyApiCollectionRequest)
+        {
+            if (apicollectionid == null)
+                throw new ArgumentNullException(nameof(apicollectionid));
+
+            if (createMyApiCollectionRequest == null)
+                throw new ArgumentNullException(nameof(createMyApiCollectionRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="apicollectionid"></param>
+        /// <param name="createMyApiCollectionRequest"></param>
+        private void AfterUpdateMyApiCollectionDefaultImplementation(IUpdateMyApiCollectionApiResponse apiResponseLocalVar, string apicollectionid, CreateMyApiCollectionRequest createMyApiCollectionRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterUpdateMyApiCollection(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid, createMyApiCollectionRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="apicollectionid"></param>
+        /// <param name="createMyApiCollectionRequest"></param>
+        partial void AfterUpdateMyApiCollection(ref bool suppressDefaultLog, IUpdateMyApiCollectionApiResponse apiResponseLocalVar, string apicollectionid, CreateMyApiCollectionRequest createMyApiCollectionRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="apicollectionid"></param>
+        /// <param name="createMyApiCollectionRequest"></param>
+        private void OnErrorUpdateMyApiCollectionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, CreateMyApiCollectionRequest createMyApiCollectionRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorUpdateMyApiCollection(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid, createMyApiCollectionRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="apicollectionid"></param>
+        /// <param name="createMyApiCollectionRequest"></param>
+        partial void OnErrorUpdateMyApiCollection(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, CreateMyApiCollectionRequest createMyApiCollectionRequest);
+
+        /// <summary>
+        /// Update My Api Collection By API_COLLECTION_ID &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// </summary>
+        /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
+        /// <param name="createMyApiCollectionRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateMyApiCollectionApiResponse"/>&gt;</returns>
+        public async Task<IUpdateMyApiCollectionApiResponse?> UpdateMyApiCollectionOrDefaultAsync(string apicollectionid, CreateMyApiCollectionRequest createMyApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await UpdateMyApiCollectionAsync(apicollectionid, createMyApiCollectionRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Update My Api Collection By API_COLLECTION_ID &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
+        /// <param name="createMyApiCollectionRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateMyApiCollectionApiResponse"/>&gt;</returns>
+        public async Task<IUpdateMyApiCollectionApiResponse> UpdateMyApiCollectionAsync(string apicollectionid, CreateMyApiCollectionRequest createMyApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateUpdateMyApiCollection(apicollectionid, createMyApiCollectionRequest);
+
+                FormatUpdateMyApiCollection(ref apicollectionid, createMyApiCollectionRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v5.1.0/my/api-collections/{apicollectionid}"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v5.1.0/my/api-collections/{apicollectionid}");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bapicollectionid%7D", Uri.EscapeDataString(apicollectionid.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (createMyApiCollectionRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createMyApiCollectionRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<UpdateMyApiCollectionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<UpdateMyApiCollectionApiResponse>();
+                        UpdateMyApiCollectionApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v5.1.0/my/api-collections/{apicollectionid}", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterUpdateMyApiCollectionDefaultImplementation(apiResponseLocalVar, apicollectionid, createMyApiCollectionRequest);
+
+                        Events.ExecuteOnUpdateMyApiCollection(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorUpdateMyApiCollectionDefaultImplementation(e, "/obp/v5.1.0/my/api-collections/{apicollectionid}", uriBuilderLocalVar.Path, apicollectionid, createMyApiCollectionRequest);
+                Events.ExecuteOnErrorUpdateMyApiCollection(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv510UpdateMyApiCollectionApiResponse"/>
+        /// The <see cref="UpdateMyApiCollectionApiResponse"/>
         /// </summary>
-        public partial class OBPv510UpdateMyApiCollectionApiResponse : OpenBankProject.Client.ApiResponse, IOBPv510UpdateMyApiCollectionApiResponse
+        public partial class UpdateMyApiCollectionApiResponse : OpenBankProject.Client.ApiResponse, IUpdateMyApiCollectionApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv510UpdateMyApiCollectionApiResponse> Logger { get; }
+            public ILogger<UpdateMyApiCollectionApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv510UpdateMyApiCollectionApiResponse"/>
+            /// The <see cref="UpdateMyApiCollectionApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -6547,14 +7221,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510UpdateMyApiCollectionApiResponse(ILogger<OBPv510UpdateMyApiCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public UpdateMyApiCollectionApiResponse(ILogger<UpdateMyApiCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv510UpdateMyApiCollectionApiResponse"/>
+            /// The <see cref="UpdateMyApiCollectionApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -6563,7 +7237,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510UpdateMyApiCollectionApiResponse(ILogger<OBPv510UpdateMyApiCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public UpdateMyApiCollectionApiResponse(ILogger<UpdateMyApiCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -6581,11 +7255,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems? Ok()
+            public OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -6594,7 +7268,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetApiCollectionsForUser200ResponseApiCollectionsInner? result)
             {
                 result = null;
 
@@ -6630,680 +7304,6 @@ namespace OpenBankProject.Api
             }
 
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatOBPv600CreateFeaturedApiCollection(OBPv600CreateFeaturedApiCollectionRequest oBPv600CreateFeaturedApiCollectionRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="oBPv600CreateFeaturedApiCollectionRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv600CreateFeaturedApiCollection(OBPv600CreateFeaturedApiCollectionRequest oBPv600CreateFeaturedApiCollectionRequest)
-        {
-            if (oBPv600CreateFeaturedApiCollectionRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600CreateFeaturedApiCollectionRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv600CreateFeaturedApiCollectionRequest"></param>
-        private void AfterOBPv600CreateFeaturedApiCollectionDefaultImplementation(IOBPv600CreateFeaturedApiCollectionApiResponse apiResponseLocalVar, OBPv600CreateFeaturedApiCollectionRequest oBPv600CreateFeaturedApiCollectionRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv600CreateFeaturedApiCollection(ref suppressDefaultLog, apiResponseLocalVar, oBPv600CreateFeaturedApiCollectionRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv600CreateFeaturedApiCollectionRequest"></param>
-        partial void AfterOBPv600CreateFeaturedApiCollection(ref bool suppressDefaultLog, IOBPv600CreateFeaturedApiCollectionApiResponse apiResponseLocalVar, OBPv600CreateFeaturedApiCollectionRequest oBPv600CreateFeaturedApiCollectionRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv600CreateFeaturedApiCollectionRequest"></param>
-        private void OnErrorOBPv600CreateFeaturedApiCollectionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv600CreateFeaturedApiCollectionRequest oBPv600CreateFeaturedApiCollectionRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600CreateFeaturedApiCollection(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, oBPv600CreateFeaturedApiCollectionRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv600CreateFeaturedApiCollectionRequest"></param>
-        partial void OnErrorOBPv600CreateFeaturedApiCollection(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv600CreateFeaturedApiCollectionRequest oBPv600CreateFeaturedApiCollectionRequest);
-
-        /// <summary>
-        /// Create Featured Api Collection &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-        /// </summary>
-        /// <param name="oBPv600CreateFeaturedApiCollectionRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateFeaturedApiCollectionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateFeaturedApiCollectionApiResponse?> OBPv600CreateFeaturedApiCollectionOrDefaultAsync(OBPv600CreateFeaturedApiCollectionRequest oBPv600CreateFeaturedApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv600CreateFeaturedApiCollectionAsync(oBPv600CreateFeaturedApiCollectionRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Create Featured Api Collection &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv600CreateFeaturedApiCollectionRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateFeaturedApiCollectionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateFeaturedApiCollectionApiResponse> OBPv600CreateFeaturedApiCollectionAsync(OBPv600CreateFeaturedApiCollectionRequest oBPv600CreateFeaturedApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv600CreateFeaturedApiCollection(oBPv600CreateFeaturedApiCollectionRequest);
-
-                FormatOBPv600CreateFeaturedApiCollection(oBPv600CreateFeaturedApiCollectionRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v6.0.0/management/api-collections/featured"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/management/api-collections/featured");
-
-                    httpRequestMessageLocalVar.Content = (oBPv600CreateFeaturedApiCollectionRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600CreateFeaturedApiCollectionRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<APIApi.OBPv600CreateFeaturedApiCollectionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600CreateFeaturedApiCollectionApiResponse>();
-                        APIApi.OBPv600CreateFeaturedApiCollectionApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v6.0.0/management/api-collections/featured", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv600CreateFeaturedApiCollectionDefaultImplementation(apiResponseLocalVar, oBPv600CreateFeaturedApiCollectionRequest);
-
-                        Events.ExecuteOnOBPv600CreateFeaturedApiCollection(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv600CreateFeaturedApiCollectionDefaultImplementation(e, "/obp/v6.0.0/management/api-collections/featured", uriBuilderLocalVar.Path, oBPv600CreateFeaturedApiCollectionRequest);
-                Events.ExecuteOnErrorOBPv600CreateFeaturedApiCollection(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv600DeleteFeaturedApiCollection(ref string apicollectionid);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="apicollectionid"></param>
-        /// <returns></returns>
-        private void ValidateOBPv600DeleteFeaturedApiCollection(string apicollectionid)
-        {
-            if (apicollectionid == null)
-                throw new ArgumentNullException(nameof(apicollectionid));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="apicollectionid"></param>
-        private void AfterOBPv600DeleteFeaturedApiCollectionDefaultImplementation(IOBPv600DeleteFeaturedApiCollectionApiResponse apiResponseLocalVar, string apicollectionid)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv600DeleteFeaturedApiCollection(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="apicollectionid"></param>
-        partial void AfterOBPv600DeleteFeaturedApiCollection(ref bool suppressDefaultLog, IOBPv600DeleteFeaturedApiCollectionApiResponse apiResponseLocalVar, string apicollectionid);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="apicollectionid"></param>
-        private void OnErrorOBPv600DeleteFeaturedApiCollectionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600DeleteFeaturedApiCollection(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="apicollectionid"></param>
-        partial void OnErrorOBPv600DeleteFeaturedApiCollection(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid);
-
-        /// <summary>
-        /// Delete Featured Api Collection &lt;p&gt;Remove an API Collection from the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteFeaturedApiCollectionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600DeleteFeaturedApiCollectionApiResponse?> OBPv600DeleteFeaturedApiCollectionOrDefaultAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv600DeleteFeaturedApiCollectionAsync(apicollectionid, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Delete Featured Api Collection &lt;p&gt;Remove an API Collection from the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteFeaturedApiCollectionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600DeleteFeaturedApiCollectionApiResponse> OBPv600DeleteFeaturedApiCollectionAsync(string apicollectionid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv600DeleteFeaturedApiCollection(apicollectionid);
-
-                FormatOBPv600DeleteFeaturedApiCollection(ref apicollectionid);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bapicollectionid%7D", Uri.EscapeDataString(apicollectionid.ToString()));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Delete;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<APIApi.OBPv600DeleteFeaturedApiCollectionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600DeleteFeaturedApiCollectionApiResponse>();
-                        APIApi.OBPv600DeleteFeaturedApiCollectionApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv600DeleteFeaturedApiCollectionDefaultImplementation(apiResponseLocalVar, apicollectionid);
-
-                        Events.ExecuteOnOBPv600DeleteFeaturedApiCollection(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv600DeleteFeaturedApiCollectionDefaultImplementation(e, "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}", uriBuilderLocalVar.Path, apicollectionid);
-                Events.ExecuteOnErrorOBPv600DeleteFeaturedApiCollection(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetFeaturedApiCollectionsAdminDefaultImplementation(IOBPv600GetFeaturedApiCollectionsAdminApiResponse apiResponseLocalVar)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv600GetFeaturedApiCollectionsAdmin(ref suppressDefaultLog, apiResponseLocalVar);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetFeaturedApiCollectionsAdmin(ref bool suppressDefaultLog, IOBPv600GetFeaturedApiCollectionsAdminApiResponse apiResponseLocalVar);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetFeaturedApiCollectionsAdminDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetFeaturedApiCollectionsAdmin(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetFeaturedApiCollectionsAdmin(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
-
-        /// <summary>
-        /// Get Featured Api Collections (Admin) &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetFeaturedApiCollectionsAdminApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetFeaturedApiCollectionsAdminApiResponse?> OBPv600GetFeaturedApiCollectionsAdminOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv600GetFeaturedApiCollectionsAdminAsync(cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Get Featured Api Collections (Admin) &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetFeaturedApiCollectionsAdminApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetFeaturedApiCollectionsAdminApiResponse> OBPv600GetFeaturedApiCollectionsAdminAsync(System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v6.0.0/management/api-collections/featured"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/management/api-collections/featured");
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<APIApi.OBPv600GetFeaturedApiCollectionsAdminApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600GetFeaturedApiCollectionsAdminApiResponse>();
-                        APIApi.OBPv600GetFeaturedApiCollectionsAdminApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v6.0.0/management/api-collections/featured", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv600GetFeaturedApiCollectionsAdminDefaultImplementation(apiResponseLocalVar);
-
-                        Events.ExecuteOnOBPv600GetFeaturedApiCollectionsAdmin(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv600GetFeaturedApiCollectionsAdminDefaultImplementation(e, "/obp/v6.0.0/management/api-collections/featured", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetFeaturedApiCollectionsAdmin(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv600UpdateFeaturedApiCollection(ref string apicollectionid, OBPv600UpdateFeaturedApiCollectionRequest oBPv600UpdateFeaturedApiCollectionRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="apicollectionid"></param>
-        /// <param name="oBPv600UpdateFeaturedApiCollectionRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv600UpdateFeaturedApiCollection(string apicollectionid, OBPv600UpdateFeaturedApiCollectionRequest oBPv600UpdateFeaturedApiCollectionRequest)
-        {
-            if (apicollectionid == null)
-                throw new ArgumentNullException(nameof(apicollectionid));
-
-            if (oBPv600UpdateFeaturedApiCollectionRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600UpdateFeaturedApiCollectionRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="apicollectionid"></param>
-        /// <param name="oBPv600UpdateFeaturedApiCollectionRequest"></param>
-        private void AfterOBPv600UpdateFeaturedApiCollectionDefaultImplementation(IOBPv600UpdateFeaturedApiCollectionApiResponse apiResponseLocalVar, string apicollectionid, OBPv600UpdateFeaturedApiCollectionRequest oBPv600UpdateFeaturedApiCollectionRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv600UpdateFeaturedApiCollection(ref suppressDefaultLog, apiResponseLocalVar, apicollectionid, oBPv600UpdateFeaturedApiCollectionRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="apicollectionid"></param>
-        /// <param name="oBPv600UpdateFeaturedApiCollectionRequest"></param>
-        partial void AfterOBPv600UpdateFeaturedApiCollection(ref bool suppressDefaultLog, IOBPv600UpdateFeaturedApiCollectionApiResponse apiResponseLocalVar, string apicollectionid, OBPv600UpdateFeaturedApiCollectionRequest oBPv600UpdateFeaturedApiCollectionRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="apicollectionid"></param>
-        /// <param name="oBPv600UpdateFeaturedApiCollectionRequest"></param>
-        private void OnErrorOBPv600UpdateFeaturedApiCollectionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, OBPv600UpdateFeaturedApiCollectionRequest oBPv600UpdateFeaturedApiCollectionRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600UpdateFeaturedApiCollection(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, apicollectionid, oBPv600UpdateFeaturedApiCollectionRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="apicollectionid"></param>
-        /// <param name="oBPv600UpdateFeaturedApiCollectionRequest"></param>
-        partial void OnErrorOBPv600UpdateFeaturedApiCollection(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string apicollectionid, OBPv600UpdateFeaturedApiCollectionRequest oBPv600UpdateFeaturedApiCollectionRequest);
-
-        /// <summary>
-        /// Update Featured Api Collection &lt;p&gt;Update the sort order of a featured API collection.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-        /// </summary>
-        /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
-        /// <param name="oBPv600UpdateFeaturedApiCollectionRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateFeaturedApiCollectionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600UpdateFeaturedApiCollectionApiResponse?> OBPv600UpdateFeaturedApiCollectionOrDefaultAsync(string apicollectionid, OBPv600UpdateFeaturedApiCollectionRequest oBPv600UpdateFeaturedApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv600UpdateFeaturedApiCollectionAsync(apicollectionid, oBPv600UpdateFeaturedApiCollectionRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Update Featured Api Collection &lt;p&gt;Update the sort order of a featured API collection.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apicollectionid">The APICOLLECTIONID identifier</param>
-        /// <param name="oBPv600UpdateFeaturedApiCollectionRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateFeaturedApiCollectionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600UpdateFeaturedApiCollectionApiResponse> OBPv600UpdateFeaturedApiCollectionAsync(string apicollectionid, OBPv600UpdateFeaturedApiCollectionRequest oBPv600UpdateFeaturedApiCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv600UpdateFeaturedApiCollection(apicollectionid, oBPv600UpdateFeaturedApiCollectionRequest);
-
-                FormatOBPv600UpdateFeaturedApiCollection(ref apicollectionid, oBPv600UpdateFeaturedApiCollectionRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bapicollectionid%7D", Uri.EscapeDataString(apicollectionid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv600UpdateFeaturedApiCollectionRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600UpdateFeaturedApiCollectionRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<APIApi.OBPv600UpdateFeaturedApiCollectionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600UpdateFeaturedApiCollectionApiResponse>();
-                        APIApi.OBPv600UpdateFeaturedApiCollectionApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv600UpdateFeaturedApiCollectionDefaultImplementation(apiResponseLocalVar, apicollectionid, oBPv600UpdateFeaturedApiCollectionRequest);
-
-                        Events.ExecuteOnOBPv600UpdateFeaturedApiCollection(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv600UpdateFeaturedApiCollectionDefaultImplementation(e, "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}", uriBuilderLocalVar.Path, apicollectionid, oBPv600UpdateFeaturedApiCollectionRequest);
-                Events.ExecuteOnErrorOBPv600UpdateFeaturedApiCollection(e);
-                throw;
-            }
         }
     }
 }

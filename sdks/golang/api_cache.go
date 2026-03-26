@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -23,17 +23,17 @@ import (
 // CacheAPIService CacheAPI service
 type CacheAPIService service
 
-type ApiOBPv600GetCacheConfigRequest struct {
+type ApiGetCacheConfigRequest struct {
 	ctx context.Context
 	ApiService *CacheAPIService
 }
 
-func (r ApiOBPv600GetCacheConfigRequest) Execute() (*OBPv600GetCacheConfig200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetCacheConfigExecute(r)
+func (r ApiGetCacheConfigRequest) Execute() (*GetCacheConfig200Response, *http.Response, error) {
+	return r.ApiService.GetCacheConfigExecute(r)
 }
 
 /*
-OBPv600GetCacheConfig Get Cache Configuration
+GetCacheConfig Get Cache Configuration
 
 <p>Returns cache configuration information including:</p>
 <ul>
@@ -59,26 +59,26 @@ OBPv600GetCacheConfig Get Cache Configuration
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetCacheConfigRequest
+ @return ApiGetCacheConfigRequest
 */
-func (a *CacheAPIService) OBPv600GetCacheConfig(ctx context.Context) ApiOBPv600GetCacheConfigRequest {
-	return ApiOBPv600GetCacheConfigRequest{
+func (a *CacheAPIService) GetCacheConfig(ctx context.Context) ApiGetCacheConfigRequest {
+	return ApiGetCacheConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetCacheConfig200Response
-func (a *CacheAPIService) OBPv600GetCacheConfigExecute(r ApiOBPv600GetCacheConfigRequest) (*OBPv600GetCacheConfig200Response, *http.Response, error) {
+//  @return GetCacheConfig200Response
+func (a *CacheAPIService) GetCacheConfigExecute(r ApiGetCacheConfigRequest) (*GetCacheConfig200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetCacheConfig200Response
+		localVarReturnValue  *GetCacheConfig200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CacheAPIService.OBPv600GetCacheConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CacheAPIService.GetCacheConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -130,7 +130,7 @@ func (a *CacheAPIService) OBPv600GetCacheConfigExecute(r ApiOBPv600GetCacheConfi
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -171,17 +171,17 @@ func (a *CacheAPIService) OBPv600GetCacheConfigExecute(r ApiOBPv600GetCacheConfi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetCacheInfoRequest struct {
+type ApiGetCacheInfoRequest struct {
 	ctx context.Context
 	ApiService *CacheAPIService
 }
 
-func (r ApiOBPv600GetCacheInfoRequest) Execute() (*OBPv600GetCacheInfo200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetCacheInfoExecute(r)
+func (r ApiGetCacheInfoRequest) Execute() (*GetCacheInfo200Response, *http.Response, error) {
+	return r.ApiService.GetCacheInfoExecute(r)
 }
 
 /*
-OBPv600GetCacheInfo Get Cache Information
+GetCacheInfo Get Cache Information
 
 <p>Returns detailed cache information for all namespaces:</p>
 <ul>
@@ -218,26 +218,26 @@ OBPv600GetCacheInfo Get Cache Information
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetCacheInfoRequest
+ @return ApiGetCacheInfoRequest
 */
-func (a *CacheAPIService) OBPv600GetCacheInfo(ctx context.Context) ApiOBPv600GetCacheInfoRequest {
-	return ApiOBPv600GetCacheInfoRequest{
+func (a *CacheAPIService) GetCacheInfo(ctx context.Context) ApiGetCacheInfoRequest {
+	return ApiGetCacheInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetCacheInfo200Response
-func (a *CacheAPIService) OBPv600GetCacheInfoExecute(r ApiOBPv600GetCacheInfoRequest) (*OBPv600GetCacheInfo200Response, *http.Response, error) {
+//  @return GetCacheInfo200Response
+func (a *CacheAPIService) GetCacheInfoExecute(r ApiGetCacheInfoRequest) (*GetCacheInfo200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetCacheInfo200Response
+		localVarReturnValue  *GetCacheInfo200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CacheAPIService.OBPv600GetCacheInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CacheAPIService.GetCacheInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -289,7 +289,7 @@ func (a *CacheAPIService) OBPv600GetCacheInfoExecute(r ApiOBPv600GetCacheInfoReq
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -330,17 +330,17 @@ func (a *CacheAPIService) OBPv600GetCacheInfoExecute(r ApiOBPv600GetCacheInfoReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetCacheNamespacesRequest struct {
+type ApiGetCacheNamespacesRequest struct {
 	ctx context.Context
 	ApiService *CacheAPIService
 }
 
-func (r ApiOBPv600GetCacheNamespacesRequest) Execute() (*OBPv600GetCacheNamespaces200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetCacheNamespacesExecute(r)
+func (r ApiGetCacheNamespacesRequest) Execute() (*GetCacheNamespaces200Response, *http.Response, error) {
+	return r.ApiService.GetCacheNamespacesExecute(r)
 }
 
 /*
-OBPv600GetCacheNamespaces Get Cache Namespaces
+GetCacheNamespaces Get Cache Namespaces
 
 <p>Returns information about all cache namespaces in the system.</p>
 <p>This endpoint provides visibility into:<br />
@@ -365,26 +365,26 @@ OBPv600GetCacheNamespaces Get Cache Namespaces
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetCacheNamespacesRequest
+ @return ApiGetCacheNamespacesRequest
 */
-func (a *CacheAPIService) OBPv600GetCacheNamespaces(ctx context.Context) ApiOBPv600GetCacheNamespacesRequest {
-	return ApiOBPv600GetCacheNamespacesRequest{
+func (a *CacheAPIService) GetCacheNamespaces(ctx context.Context) ApiGetCacheNamespacesRequest {
+	return ApiGetCacheNamespacesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetCacheNamespaces200Response
-func (a *CacheAPIService) OBPv600GetCacheNamespacesExecute(r ApiOBPv600GetCacheNamespacesRequest) (*OBPv600GetCacheNamespaces200Response, *http.Response, error) {
+//  @return GetCacheNamespaces200Response
+func (a *CacheAPIService) GetCacheNamespacesExecute(r ApiGetCacheNamespacesRequest) (*GetCacheNamespaces200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetCacheNamespaces200Response
+		localVarReturnValue  *GetCacheNamespaces200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CacheAPIService.OBPv600GetCacheNamespaces")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CacheAPIService.GetCacheNamespaces")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -436,7 +436,7 @@ func (a *CacheAPIService) OBPv600GetCacheNamespacesExecute(r ApiOBPv600GetCacheN
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -477,24 +477,24 @@ func (a *CacheAPIService) OBPv600GetCacheNamespacesExecute(r ApiOBPv600GetCacheN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600InvalidateCacheNamespaceRequest struct {
+type ApiInvalidateCacheNamespaceRequest struct {
 	ctx context.Context
 	ApiService *CacheAPIService
-	oBPv600InvalidateCacheNamespaceRequest *OBPv600InvalidateCacheNamespaceRequest
+	invalidateCacheNamespaceRequest *InvalidateCacheNamespaceRequest
 }
 
 // Request body
-func (r ApiOBPv600InvalidateCacheNamespaceRequest) OBPv600InvalidateCacheNamespaceRequest(oBPv600InvalidateCacheNamespaceRequest OBPv600InvalidateCacheNamespaceRequest) ApiOBPv600InvalidateCacheNamespaceRequest {
-	r.oBPv600InvalidateCacheNamespaceRequest = &oBPv600InvalidateCacheNamespaceRequest
+func (r ApiInvalidateCacheNamespaceRequest) InvalidateCacheNamespaceRequest(invalidateCacheNamespaceRequest InvalidateCacheNamespaceRequest) ApiInvalidateCacheNamespaceRequest {
+	r.invalidateCacheNamespaceRequest = &invalidateCacheNamespaceRequest
 	return r
 }
 
-func (r ApiOBPv600InvalidateCacheNamespaceRequest) Execute() (*OBPv600InvalidateCacheNamespace200Response, *http.Response, error) {
-	return r.ApiService.OBPv600InvalidateCacheNamespaceExecute(r)
+func (r ApiInvalidateCacheNamespaceRequest) Execute() (*InvalidateCacheNamespace200Response, *http.Response, error) {
+	return r.ApiService.InvalidateCacheNamespaceExecute(r)
 }
 
 /*
-OBPv600InvalidateCacheNamespace Invalidate Cache Namespace
+InvalidateCacheNamespace Invalidate Cache Namespace
 
 <p>Invalidates a cache namespace by incrementing its version counter.</p>
 <p>This provides instant cache invalidation without deleting individual keys.<br />
@@ -514,26 +514,26 @@ rd_static, rd_all, swagger_static, connector, metrics_stable, metrics_recent, ab
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600InvalidateCacheNamespaceRequest
+ @return ApiInvalidateCacheNamespaceRequest
 */
-func (a *CacheAPIService) OBPv600InvalidateCacheNamespace(ctx context.Context) ApiOBPv600InvalidateCacheNamespaceRequest {
-	return ApiOBPv600InvalidateCacheNamespaceRequest{
+func (a *CacheAPIService) InvalidateCacheNamespace(ctx context.Context) ApiInvalidateCacheNamespaceRequest {
+	return ApiInvalidateCacheNamespaceRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600InvalidateCacheNamespace200Response
-func (a *CacheAPIService) OBPv600InvalidateCacheNamespaceExecute(r ApiOBPv600InvalidateCacheNamespaceRequest) (*OBPv600InvalidateCacheNamespace200Response, *http.Response, error) {
+//  @return InvalidateCacheNamespace200Response
+func (a *CacheAPIService) InvalidateCacheNamespaceExecute(r ApiInvalidateCacheNamespaceRequest) (*InvalidateCacheNamespace200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600InvalidateCacheNamespace200Response
+		localVarReturnValue  *InvalidateCacheNamespace200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CacheAPIService.OBPv600InvalidateCacheNamespace")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CacheAPIService.InvalidateCacheNamespace")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -543,8 +543,8 @@ func (a *CacheAPIService) OBPv600InvalidateCacheNamespaceExecute(r ApiOBPv600Inv
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600InvalidateCacheNamespaceRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600InvalidateCacheNamespaceRequest is required and must be specified")
+	if r.invalidateCacheNamespaceRequest == nil {
+		return localVarReturnValue, nil, reportError("invalidateCacheNamespaceRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -565,7 +565,7 @@ func (a *CacheAPIService) OBPv600InvalidateCacheNamespaceExecute(r ApiOBPv600Inv
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600InvalidateCacheNamespaceRequest
+	localVarPostBody = r.invalidateCacheNamespaceRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -590,7 +590,7 @@ func (a *CacheAPIService) OBPv600InvalidateCacheNamespaceExecute(r ApiOBPv600Inv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

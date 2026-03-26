@@ -4,15 +4,15 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv6_0_0_create_api_product**](ApiProductApi.md#o_bpv6_0_0_create_api_product) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product
-[**o_bpv6_0_0_create_or_update_api_product**](ApiProductApi.md#o_bpv6_0_0_create_or_update_api_product) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product
-[**o_bpv6_0_0_delete_api_product**](ApiProductApi.md#o_bpv6_0_0_delete_api_product) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product
-[**o_bpv6_0_0_get_api_product**](ApiProductApi.md#o_bpv6_0_0_get_api_product) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product
-[**o_bpv6_0_0_get_api_products**](ApiProductApi.md#o_bpv6_0_0_get_api_products) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products
+[**create_api_product**](ApiProductApi.md#create_api_product) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product
+[**create_or_update_api_product**](ApiProductApi.md#create_or_update_api_product) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product
+[**delete_api_product**](ApiProductApi.md#delete_api_product) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product
+[**get_api_product**](ApiProductApi.md#get_api_product) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product
+[**get_api_products**](ApiProductApi.md#get_api_products) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products
 
 
-# **o_bpv6_0_0_create_api_product**
-> OBPv600GetApiProducts200ResponseApiProductsInner o_bpv6_0_0_create_api_product(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
+# **create_api_product**
+> GetApiProducts200ResponseApiProductsInner create_api_product(bankid, apiproductcode, create_or_update_api_product_request)
 
 Create Api Product
 
@@ -72,8 +72,8 @@ Create Api Product
 
 ```python
 import obp_python
-from obp_python.models.obpv600_create_or_update_api_product_request import OBPv600CreateOrUpdateApiProductRequest
-from obp_python.models.obpv600_get_api_products200_response_api_products_inner import OBPv600GetApiProducts200ResponseApiProductsInner
+from obp_python.models.create_or_update_api_product_request import CreateOrUpdateApiProductRequest
+from obp_python.models.get_api_products200_response_api_products_inner import GetApiProducts200ResponseApiProductsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -108,15 +108,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.ApiProductApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     apiproductcode = 'apiproductcode_example' # str | The APIPRODUCTCODE identifier
-    obpv600_create_or_update_api_product_request = {type=object, properties={name={type=string}, category={type=string}, monthly_subscription_currency={type=string}, description={type=string}, monthly_subscription_amount={type=string}, terms_and_conditions_url={type=string}, collection_id={type=string}, per_month_call_limit={type=integer}, per_second_call_limit={type=integer}, parent_api_product_code={type=string}, per_minute_call_limit={type=integer}, per_hour_call_limit={type=integer}, more_info_url={type=string}, per_week_call_limit={type=integer}, per_day_call_limit={type=integer}}} # OBPv600CreateOrUpdateApiProductRequest | Request body
+    create_or_update_api_product_request = {type=object, properties={name={type=string}, category={type=string}, monthly_subscription_currency={type=string}, description={type=string}, monthly_subscription_amount={type=string}, terms_and_conditions_url={type=string}, collection_id={type=string}, per_month_call_limit={type=integer}, per_second_call_limit={type=integer}, parent_api_product_code={type=string}, per_minute_call_limit={type=integer}, per_hour_call_limit={type=integer}, more_info_url={type=string}, per_week_call_limit={type=integer}, per_day_call_limit={type=integer}}} # CreateOrUpdateApiProductRequest | Request body
 
     try:
         # Create Api Product
-        api_response = api_instance.o_bpv6_0_0_create_api_product(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
-        print("The response of ApiProductApi->o_bpv6_0_0_create_api_product:\n")
+        api_response = api_instance.create_api_product(bankid, apiproductcode, create_or_update_api_product_request)
+        print("The response of ApiProductApi->create_api_product:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ApiProductApi->o_bpv6_0_0_create_api_product: %s\n" % e)
+        print("Exception when calling ApiProductApi->create_api_product: %s\n" % e)
 ```
 
 
@@ -128,11 +128,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **apiproductcode** | **str**| The APIPRODUCTCODE identifier | 
- **obpv600_create_or_update_api_product_request** | [**OBPv600CreateOrUpdateApiProductRequest**](OBPv600CreateOrUpdateApiProductRequest.md)| Request body | 
+ **create_or_update_api_product_request** | [**CreateOrUpdateApiProductRequest**](CreateOrUpdateApiProductRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponseApiProductsInner**](OBPv600GetApiProducts200ResponseApiProductsInner.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -152,8 +152,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_create_or_update_api_product**
-> OBPv600GetApiProducts200ResponseApiProductsInner o_bpv6_0_0_create_or_update_api_product(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
+# **create_or_update_api_product**
+> GetApiProducts200ResponseApiProductsInner create_or_update_api_product(bankid, apiproductcode, create_or_update_api_product_request)
 
 Create or Update Api Product
 
@@ -197,8 +197,8 @@ Create or Update Api Product
 
 ```python
 import obp_python
-from obp_python.models.obpv600_create_or_update_api_product_request import OBPv600CreateOrUpdateApiProductRequest
-from obp_python.models.obpv600_get_api_products200_response_api_products_inner import OBPv600GetApiProducts200ResponseApiProductsInner
+from obp_python.models.create_or_update_api_product_request import CreateOrUpdateApiProductRequest
+from obp_python.models.get_api_products200_response_api_products_inner import GetApiProducts200ResponseApiProductsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -233,15 +233,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.ApiProductApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     apiproductcode = 'apiproductcode_example' # str | The APIPRODUCTCODE identifier
-    obpv600_create_or_update_api_product_request = {"type":"object","properties":{"name":{"type":"string"},"category":{"type":"string"},"monthly_subscription_currency":{"type":"string"},"description":{"type":"string"},"monthly_subscription_amount":{"type":"string"},"terms_and_conditions_url":{"type":"string"},"collection_id":{"type":"string"},"per_month_call_limit":{"type":"integer"},"per_second_call_limit":{"type":"integer"},"parent_api_product_code":{"type":"string"},"per_minute_call_limit":{"type":"integer"},"per_hour_call_limit":{"type":"integer"},"more_info_url":{"type":"string"},"per_week_call_limit":{"type":"integer"},"per_day_call_limit":{"type":"integer"}}} # OBPv600CreateOrUpdateApiProductRequest | Request body
+    create_or_update_api_product_request = {"type":"object","properties":{"name":{"type":"string"},"category":{"type":"string"},"monthly_subscription_currency":{"type":"string"},"description":{"type":"string"},"monthly_subscription_amount":{"type":"string"},"terms_and_conditions_url":{"type":"string"},"collection_id":{"type":"string"},"per_month_call_limit":{"type":"integer"},"per_second_call_limit":{"type":"integer"},"parent_api_product_code":{"type":"string"},"per_minute_call_limit":{"type":"integer"},"per_hour_call_limit":{"type":"integer"},"more_info_url":{"type":"string"},"per_week_call_limit":{"type":"integer"},"per_day_call_limit":{"type":"integer"}}} # CreateOrUpdateApiProductRequest | Request body
 
     try:
         # Create or Update Api Product
-        api_response = api_instance.o_bpv6_0_0_create_or_update_api_product(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
-        print("The response of ApiProductApi->o_bpv6_0_0_create_or_update_api_product:\n")
+        api_response = api_instance.create_or_update_api_product(bankid, apiproductcode, create_or_update_api_product_request)
+        print("The response of ApiProductApi->create_or_update_api_product:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ApiProductApi->o_bpv6_0_0_create_or_update_api_product: %s\n" % e)
+        print("Exception when calling ApiProductApi->create_or_update_api_product: %s\n" % e)
 ```
 
 
@@ -253,11 +253,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **apiproductcode** | **str**| The APIPRODUCTCODE identifier | 
- **obpv600_create_or_update_api_product_request** | [**OBPv600CreateOrUpdateApiProductRequest**](OBPv600CreateOrUpdateApiProductRequest.md)| Request body | 
+ **create_or_update_api_product_request** | [**CreateOrUpdateApiProductRequest**](CreateOrUpdateApiProductRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponseApiProductsInner**](OBPv600GetApiProducts200ResponseApiProductsInner.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -277,8 +277,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_delete_api_product**
-> o_bpv6_0_0_delete_api_product(bankid, apiproductcode)
+# **delete_api_product**
+> delete_api_product(bankid, apiproductcode)
 
 Delete Api Product
 
@@ -336,9 +336,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Api Product
-        api_instance.o_bpv6_0_0_delete_api_product(bankid, apiproductcode)
+        api_instance.delete_api_product(bankid, apiproductcode)
     except Exception as e:
-        print("Exception when calling ApiProductApi->o_bpv6_0_0_delete_api_product: %s\n" % e)
+        print("Exception when calling ApiProductApi->delete_api_product: %s\n" % e)
 ```
 
 
@@ -374,8 +374,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_api_product**
-> OBPv600GetApiProducts200ResponseApiProductsInner o_bpv6_0_0_get_api_product(bankid, apiproductcode)
+# **get_api_product**
+> GetApiProducts200ResponseApiProductsInner get_api_product(bankid, apiproductcode)
 
 Get Api Product
 
@@ -416,7 +416,7 @@ Get Api Product
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_api_products200_response_api_products_inner import OBPv600GetApiProducts200ResponseApiProductsInner
+from obp_python.models.get_api_products200_response_api_products_inner import GetApiProducts200ResponseApiProductsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -436,11 +436,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Api Product
-        api_response = api_instance.o_bpv6_0_0_get_api_product(bankid, apiproductcode)
-        print("The response of ApiProductApi->o_bpv6_0_0_get_api_product:\n")
+        api_response = api_instance.get_api_product(bankid, apiproductcode)
+        print("The response of ApiProductApi->get_api_product:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ApiProductApi->o_bpv6_0_0_get_api_product: %s\n" % e)
+        print("Exception when calling ApiProductApi->get_api_product: %s\n" % e)
 ```
 
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponseApiProductsInner**](OBPv600GetApiProducts200ResponseApiProductsInner.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -476,8 +476,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_api_products**
-> OBPv600GetApiProducts200Response o_bpv6_0_0_get_api_products(bankid)
+# **get_api_products**
+> GetApiProducts200Response get_api_products(bankid)
 
 Get Api Products
 
@@ -517,7 +517,7 @@ Get Api Products
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_api_products200_response import OBPv600GetApiProducts200Response
+from obp_python.models.get_api_products200_response import GetApiProducts200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -536,11 +536,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Api Products
-        api_response = api_instance.o_bpv6_0_0_get_api_products(bankid)
-        print("The response of ApiProductApi->o_bpv6_0_0_get_api_products:\n")
+        api_response = api_instance.get_api_products(bankid)
+        print("The response of ApiProductApi->get_api_products:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ApiProductApi->o_bpv6_0_0_get_api_products: %s\n" % e)
+        print("Exception when calling ApiProductApi->get_api_products: %s\n" % e)
 ```
 
 
@@ -554,7 +554,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetApiProducts200Response**](OBPv600GetApiProducts200Response.md)
+[**GetApiProducts200Response**](GetApiProducts200Response.md)
 
 ### Authorization
 

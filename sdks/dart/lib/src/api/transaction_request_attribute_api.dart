@@ -9,13 +9,13 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv400_create_or_update_transaction_request_attribute_definition_request.dart';
-import 'package:obp_dart/src/model/obpv400_create_transaction_request_counterparty_request_properties_attributes_items.dart';
-import 'package:obp_dart/src/model/obpv400_delete_system_level_endpoint_tag200_response.dart';
-import 'package:obp_dart/src/model/obpv400_get_transaction_request_attribute_by_id200_response.dart';
-import 'package:obp_dart/src/model/obpv400_get_transaction_request_attribute_definition200_response.dart';
-import 'package:obp_dart/src/model/obpv400_get_transaction_request_attribute_definition200_response_properties_attributes_items.dart';
-import 'package:obp_dart/src/model/obpv400_get_transaction_request_attributes200_response.dart';
+import 'package:obp_dart/src/model/create_or_update_transaction_request_attribute_definition_request.dart';
+import 'package:obp_dart/src/model/create_transaction_request_counterparty_request_attributes_inner.dart';
+import 'package:obp_dart/src/model/delete_system_level_endpoint_tag200_response.dart';
+import 'package:obp_dart/src/model/get_transaction_request_attribute_by_id200_response.dart';
+import 'package:obp_dart/src/model/get_transaction_request_attribute_definition200_response.dart';
+import 'package:obp_dart/src/model/get_transaction_request_attribute_definition200_response_attributes_inner.dart';
+import 'package:obp_dart/src/model/get_transaction_request_attributes200_response.dart';
 
 class TransactionRequestAttributeApi {
 
@@ -30,7 +30,7 @@ class TransactionRequestAttributeApi {
   ///
   /// Parameters:
   /// * [bankid] - The BANKID identifier
-  /// * [oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest] - Request body
+  /// * [createOrUpdateTransactionRequestAttributeDefinitionRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -38,11 +38,11 @@ class TransactionRequestAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetTransactionRequestAttributeDefinition200ResponseAttributesInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>> oBPv400CreateOrUpdateTransactionRequestAttributeDefinition({ 
+  Future<Response<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>> createOrUpdateTransactionRequestAttributeDefinition({ 
     required String bankid,
-    required OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest,
+    required CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -69,7 +69,7 @@ class TransactionRequestAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -82,8 +82,8 @@ class TransactionRequestAttributeApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-      _bodyData = _serializers.serialize(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, specifiedType: _type);
+      const _type = FullType(CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+      _bodyData = _serializers.serialize(createOrUpdateTransactionRequestAttributeDefinitionRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -106,14 +106,14 @@ class TransactionRequestAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems? _responseData;
+    GetTransactionRequestAttributeDefinition200ResponseAttributesInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems),
-      ) as OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems;
+        specifiedType: const FullType(GetTransactionRequestAttributeDefinition200ResponseAttributesInner),
+      ) as GetTransactionRequestAttributeDefinition200ResponseAttributesInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -125,7 +125,7 @@ class TransactionRequestAttributeApi {
       );
     }
 
-    return Response<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>(
+    return Response<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -144,7 +144,7 @@ class TransactionRequestAttributeApi {
   /// * [bankid] - The BANKID identifier
   /// * [accountid] - The ACCOUNTID identifier
   /// * [transactionrequestid] - The TRANSACTIONREQUESTID identifier
-  /// * [oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems] - Request body
+  /// * [createTransactionRequestCounterpartyRequestAttributesInner] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -152,13 +152,13 @@ class TransactionRequestAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetTransactionRequestAttributeById200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetTransactionRequestAttributeById200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetTransactionRequestAttributeById200Response>> oBPv400CreateTransactionRequestAttribute({ 
+  Future<Response<GetTransactionRequestAttributeById200Response>> createTransactionRequestAttribute({ 
     required String bankid,
     required String accountid,
     required String transactionrequestid,
-    required OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems,
+    required CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -185,7 +185,7 @@ class TransactionRequestAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -198,8 +198,8 @@ class TransactionRequestAttributeApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
-      _bodyData = _serializers.serialize(oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, specifiedType: _type);
+      const _type = FullType(CreateTransactionRequestCounterpartyRequestAttributesInner);
+      _bodyData = _serializers.serialize(createTransactionRequestCounterpartyRequestAttributesInner, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -222,14 +222,14 @@ class TransactionRequestAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetTransactionRequestAttributeById200Response? _responseData;
+    GetTransactionRequestAttributeById200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetTransactionRequestAttributeById200Response),
-      ) as OBPv400GetTransactionRequestAttributeById200Response;
+        specifiedType: const FullType(GetTransactionRequestAttributeById200Response),
+      ) as GetTransactionRequestAttributeById200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -241,7 +241,7 @@ class TransactionRequestAttributeApi {
       );
     }
 
-    return Response<OBPv400GetTransactionRequestAttributeById200Response>(
+    return Response<GetTransactionRequestAttributeById200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -266,9 +266,9 @@ class TransactionRequestAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400DeleteSystemLevelEndpointTag200Response] as data
+  /// Returns a [Future] containing a [Response] with a [DeleteSystemLevelEndpointTag200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400DeleteSystemLevelEndpointTag200Response>> oBPv400DeleteTransactionRequestAttributeDefinition({ 
+  Future<Response<DeleteSystemLevelEndpointTag200Response>> deleteTransactionRequestAttributeDefinition({ 
     required String bankid,
     required String attributedefinitionid,
     CancelToken? cancelToken,
@@ -297,7 +297,7 @@ class TransactionRequestAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -314,14 +314,14 @@ class TransactionRequestAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400DeleteSystemLevelEndpointTag200Response? _responseData;
+    DeleteSystemLevelEndpointTag200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400DeleteSystemLevelEndpointTag200Response),
-      ) as OBPv400DeleteSystemLevelEndpointTag200Response;
+        specifiedType: const FullType(DeleteSystemLevelEndpointTag200Response),
+      ) as DeleteSystemLevelEndpointTag200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -333,7 +333,7 @@ class TransactionRequestAttributeApi {
       );
     }
 
-    return Response<OBPv400DeleteSystemLevelEndpointTag200Response>(
+    return Response<DeleteSystemLevelEndpointTag200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -360,9 +360,9 @@ class TransactionRequestAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetTransactionRequestAttributeById200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetTransactionRequestAttributeById200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetTransactionRequestAttributeById200Response>> oBPv400GetTransactionRequestAttributeById({ 
+  Future<Response<GetTransactionRequestAttributeById200Response>> getTransactionRequestAttributeById({ 
     required String bankid,
     required String accountid,
     required String transactionrequestid,
@@ -393,7 +393,7 @@ class TransactionRequestAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -410,14 +410,14 @@ class TransactionRequestAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetTransactionRequestAttributeById200Response? _responseData;
+    GetTransactionRequestAttributeById200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetTransactionRequestAttributeById200Response),
-      ) as OBPv400GetTransactionRequestAttributeById200Response;
+        specifiedType: const FullType(GetTransactionRequestAttributeById200Response),
+      ) as GetTransactionRequestAttributeById200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -429,7 +429,7 @@ class TransactionRequestAttributeApi {
       );
     }
 
-    return Response<OBPv400GetTransactionRequestAttributeById200Response>(
+    return Response<GetTransactionRequestAttributeById200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -453,9 +453,9 @@ class TransactionRequestAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetTransactionRequestAttributeDefinition200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetTransactionRequestAttributeDefinition200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetTransactionRequestAttributeDefinition200Response>> oBPv400GetTransactionRequestAttributeDefinition({ 
+  Future<Response<GetTransactionRequestAttributeDefinition200Response>> getTransactionRequestAttributeDefinition({ 
     required String bankid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -483,7 +483,7 @@ class TransactionRequestAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -500,14 +500,14 @@ class TransactionRequestAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetTransactionRequestAttributeDefinition200Response? _responseData;
+    GetTransactionRequestAttributeDefinition200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetTransactionRequestAttributeDefinition200Response),
-      ) as OBPv400GetTransactionRequestAttributeDefinition200Response;
+        specifiedType: const FullType(GetTransactionRequestAttributeDefinition200Response),
+      ) as GetTransactionRequestAttributeDefinition200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -519,7 +519,7 @@ class TransactionRequestAttributeApi {
       );
     }
 
-    return Response<OBPv400GetTransactionRequestAttributeDefinition200Response>(
+    return Response<GetTransactionRequestAttributeDefinition200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -545,9 +545,9 @@ class TransactionRequestAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetTransactionRequestAttributes200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetTransactionRequestAttributes200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetTransactionRequestAttributes200Response>> oBPv400GetTransactionRequestAttributes({ 
+  Future<Response<GetTransactionRequestAttributes200Response>> getTransactionRequestAttributes({ 
     required String bankid,
     required String accountid,
     required String transactionrequestid,
@@ -577,7 +577,7 @@ class TransactionRequestAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -594,14 +594,14 @@ class TransactionRequestAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetTransactionRequestAttributes200Response? _responseData;
+    GetTransactionRequestAttributes200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetTransactionRequestAttributes200Response),
-      ) as OBPv400GetTransactionRequestAttributes200Response;
+        specifiedType: const FullType(GetTransactionRequestAttributes200Response),
+      ) as GetTransactionRequestAttributes200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -613,7 +613,7 @@ class TransactionRequestAttributeApi {
       );
     }
 
-    return Response<OBPv400GetTransactionRequestAttributes200Response>(
+    return Response<GetTransactionRequestAttributes200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -633,7 +633,7 @@ class TransactionRequestAttributeApi {
   /// * [accountid] - The ACCOUNTID identifier
   /// * [transactionrequestid] - The TRANSACTIONREQUESTID identifier
   /// * [attributeid] - The ATTRIBUTEID identifier
-  /// * [oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems] - Request body
+  /// * [createTransactionRequestCounterpartyRequestAttributesInner] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -641,14 +641,14 @@ class TransactionRequestAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetTransactionRequestAttributeById200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetTransactionRequestAttributeById200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetTransactionRequestAttributeById200Response>> oBPv400UpdateTransactionRequestAttribute({ 
+  Future<Response<GetTransactionRequestAttributeById200Response>> updateTransactionRequestAttribute({ 
     required String bankid,
     required String accountid,
     required String transactionrequestid,
     required String attributeid,
-    required OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems,
+    required CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -675,7 +675,7 @@ class TransactionRequestAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -688,8 +688,8 @@ class TransactionRequestAttributeApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
-      _bodyData = _serializers.serialize(oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, specifiedType: _type);
+      const _type = FullType(CreateTransactionRequestCounterpartyRequestAttributesInner);
+      _bodyData = _serializers.serialize(createTransactionRequestCounterpartyRequestAttributesInner, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -712,14 +712,14 @@ class TransactionRequestAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetTransactionRequestAttributeById200Response? _responseData;
+    GetTransactionRequestAttributeById200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetTransactionRequestAttributeById200Response),
-      ) as OBPv400GetTransactionRequestAttributeById200Response;
+        specifiedType: const FullType(GetTransactionRequestAttributeById200Response),
+      ) as GetTransactionRequestAttributeById200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -731,7 +731,7 @@ class TransactionRequestAttributeApi {
       );
     }
 
-    return Response<OBPv400GetTransactionRequestAttributeById200Response>(
+    return Response<GetTransactionRequestAttributeById200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

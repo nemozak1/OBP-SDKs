@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,57 +15,57 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv5_1_0_log_cache_all_endpoint`]
+/// struct for typed errors of method [`log_cache_all_endpoint`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510LogCacheAllEndpointError {
+pub enum LogCacheAllEndpointError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv5_1_0_log_cache_debug_endpoint`]
+/// struct for typed errors of method [`log_cache_debug_endpoint`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510LogCacheDebugEndpointError {
+pub enum LogCacheDebugEndpointError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv5_1_0_log_cache_error_endpoint`]
+/// struct for typed errors of method [`log_cache_error_endpoint`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510LogCacheErrorEndpointError {
+pub enum LogCacheErrorEndpointError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv5_1_0_log_cache_info_endpoint`]
+/// struct for typed errors of method [`log_cache_info_endpoint`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510LogCacheInfoEndpointError {
+pub enum LogCacheInfoEndpointError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv5_1_0_log_cache_trace_endpoint`]
+/// struct for typed errors of method [`log_cache_trace_endpoint`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510LogCacheTraceEndpointError {
+pub enum LogCacheTraceEndpointError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv5_1_0_log_cache_warning_endpoint`]
+/// struct for typed errors of method [`log_cache_warning_endpoint`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510LogCacheWarningEndpointError {
+pub enum LogCacheWarningEndpointError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
 
 /// <p>Returns logs of all levels from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/all?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv5_1_0_log_cache_all_endpoint(configuration: &configuration::Configuration, ) -> Result<(), Error<OBpv510LogCacheAllEndpointError>> {
+pub async fn log_cache_all_endpoint(configuration: &configuration::Configuration, ) -> Result<(), Error<LogCacheAllEndpointError>> {
 
     let uri_str = format!("{}/obp/v5.1.0/system/log-cache/all", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -90,7 +90,7 @@ pub async fn o_bpv5_1_0_log_cache_all_endpoint(configuration: &configuration::Co
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -102,13 +102,13 @@ pub async fn o_bpv5_1_0_log_cache_all_endpoint(configuration: &configuration::Co
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510LogCacheAllEndpointError> = serde_json::from_str(&content).ok();
+        let entity: Option<LogCacheAllEndpointError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Returns DEBUG level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/debug?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv5_1_0_log_cache_debug_endpoint(configuration: &configuration::Configuration, ) -> Result<(), Error<OBpv510LogCacheDebugEndpointError>> {
+pub async fn log_cache_debug_endpoint(configuration: &configuration::Configuration, ) -> Result<(), Error<LogCacheDebugEndpointError>> {
 
     let uri_str = format!("{}/obp/v5.1.0/system/log-cache/debug", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -133,7 +133,7 @@ pub async fn o_bpv5_1_0_log_cache_debug_endpoint(configuration: &configuration::
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -145,13 +145,13 @@ pub async fn o_bpv5_1_0_log_cache_debug_endpoint(configuration: &configuration::
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510LogCacheDebugEndpointError> = serde_json::from_str(&content).ok();
+        let entity: Option<LogCacheDebugEndpointError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Returns ERROR level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/error?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv5_1_0_log_cache_error_endpoint(configuration: &configuration::Configuration, ) -> Result<(), Error<OBpv510LogCacheErrorEndpointError>> {
+pub async fn log_cache_error_endpoint(configuration: &configuration::Configuration, ) -> Result<(), Error<LogCacheErrorEndpointError>> {
 
     let uri_str = format!("{}/obp/v5.1.0/system/log-cache/error", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -176,7 +176,7 @@ pub async fn o_bpv5_1_0_log_cache_error_endpoint(configuration: &configuration::
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -188,13 +188,13 @@ pub async fn o_bpv5_1_0_log_cache_error_endpoint(configuration: &configuration::
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510LogCacheErrorEndpointError> = serde_json::from_str(&content).ok();
+        let entity: Option<LogCacheErrorEndpointError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Returns INFO level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/info?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv5_1_0_log_cache_info_endpoint(configuration: &configuration::Configuration, ) -> Result<(), Error<OBpv510LogCacheInfoEndpointError>> {
+pub async fn log_cache_info_endpoint(configuration: &configuration::Configuration, ) -> Result<(), Error<LogCacheInfoEndpointError>> {
 
     let uri_str = format!("{}/obp/v5.1.0/system/log-cache/info", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -219,7 +219,7 @@ pub async fn o_bpv5_1_0_log_cache_info_endpoint(configuration: &configuration::C
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -231,13 +231,13 @@ pub async fn o_bpv5_1_0_log_cache_info_endpoint(configuration: &configuration::C
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510LogCacheInfoEndpointError> = serde_json::from_str(&content).ok();
+        let entity: Option<LogCacheInfoEndpointError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Returns TRACE level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/trace?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv5_1_0_log_cache_trace_endpoint(configuration: &configuration::Configuration, ) -> Result<(), Error<OBpv510LogCacheTraceEndpointError>> {
+pub async fn log_cache_trace_endpoint(configuration: &configuration::Configuration, ) -> Result<(), Error<LogCacheTraceEndpointError>> {
 
     let uri_str = format!("{}/obp/v5.1.0/system/log-cache/trace", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -262,7 +262,7 @@ pub async fn o_bpv5_1_0_log_cache_trace_endpoint(configuration: &configuration::
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -274,13 +274,13 @@ pub async fn o_bpv5_1_0_log_cache_trace_endpoint(configuration: &configuration::
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510LogCacheTraceEndpointError> = serde_json::from_str(&content).ok();
+        let entity: Option<LogCacheTraceEndpointError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Returns WARNING level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/warning?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv5_1_0_log_cache_warning_endpoint(configuration: &configuration::Configuration, ) -> Result<(), Error<OBpv510LogCacheWarningEndpointError>> {
+pub async fn log_cache_warning_endpoint(configuration: &configuration::Configuration, ) -> Result<(), Error<LogCacheWarningEndpointError>> {
 
     let uri_str = format!("{}/obp/v5.1.0/system/log-cache/warning", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -305,7 +305,7 @@ pub async fn o_bpv5_1_0_log_cache_warning_endpoint(configuration: &configuration
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -317,7 +317,7 @@ pub async fn o_bpv5_1_0_log_cache_warning_endpoint(configuration: &configuration
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510LogCacheWarningEndpointError> = serde_json::from_str(&content).ok();
+        let entity: Option<LogCacheWarningEndpointError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

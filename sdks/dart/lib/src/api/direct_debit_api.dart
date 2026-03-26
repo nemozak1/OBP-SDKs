@@ -9,8 +9,8 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv400_create_direct_debit200_response.dart';
-import 'package:obp_dart/src/model/obpv400_create_direct_debit_request.dart';
+import 'package:obp_dart/src/model/create_direct_debit200_response.dart';
+import 'package:obp_dart/src/model/create_direct_debit_request.dart';
 
 class DirectDebitApi {
 
@@ -27,7 +27,7 @@ class DirectDebitApi {
   /// * [bankid] - The BANKID identifier
   /// * [accountid] - The ACCOUNTID identifier
   /// * [viewid] - The VIEWID identifier
-  /// * [oBPv400CreateDirectDebitRequest] - Request body
+  /// * [createDirectDebitRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -35,13 +35,13 @@ class DirectDebitApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400CreateDirectDebit200Response] as data
+  /// Returns a [Future] containing a [Response] with a [CreateDirectDebit200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400CreateDirectDebit200Response>> oBPv400CreateDirectDebit({ 
+  Future<Response<CreateDirectDebit200Response>> createDirectDebit({ 
     required String bankid,
     required String accountid,
     required String viewid,
-    required OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest,
+    required CreateDirectDebitRequest createDirectDebitRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -68,7 +68,7 @@ class DirectDebitApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -81,8 +81,8 @@ class DirectDebitApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400CreateDirectDebitRequest);
-      _bodyData = _serializers.serialize(oBPv400CreateDirectDebitRequest, specifiedType: _type);
+      const _type = FullType(CreateDirectDebitRequest);
+      _bodyData = _serializers.serialize(createDirectDebitRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -105,14 +105,14 @@ class DirectDebitApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400CreateDirectDebit200Response? _responseData;
+    CreateDirectDebit200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400CreateDirectDebit200Response),
-      ) as OBPv400CreateDirectDebit200Response;
+        specifiedType: const FullType(CreateDirectDebit200Response),
+      ) as CreateDirectDebit200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -124,7 +124,7 @@ class DirectDebitApi {
       );
     }
 
-    return Response<OBPv400CreateDirectDebit200Response>(
+    return Response<CreateDirectDebit200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -142,7 +142,7 @@ class DirectDebitApi {
   /// Parameters:
   /// * [bankid] - The BANKID identifier
   /// * [accountid] - The ACCOUNTID identifier
-  /// * [oBPv400CreateDirectDebitRequest] - Request body
+  /// * [createDirectDebitRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -150,12 +150,12 @@ class DirectDebitApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400CreateDirectDebit200Response] as data
+  /// Returns a [Future] containing a [Response] with a [CreateDirectDebit200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400CreateDirectDebit200Response>> oBPv400CreateDirectDebitManagement({ 
+  Future<Response<CreateDirectDebit200Response>> createDirectDebitManagement({ 
     required String bankid,
     required String accountid,
-    required OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest,
+    required CreateDirectDebitRequest createDirectDebitRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -182,7 +182,7 @@ class DirectDebitApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -195,8 +195,8 @@ class DirectDebitApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400CreateDirectDebitRequest);
-      _bodyData = _serializers.serialize(oBPv400CreateDirectDebitRequest, specifiedType: _type);
+      const _type = FullType(CreateDirectDebitRequest);
+      _bodyData = _serializers.serialize(createDirectDebitRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -219,14 +219,14 @@ class DirectDebitApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400CreateDirectDebit200Response? _responseData;
+    CreateDirectDebit200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400CreateDirectDebit200Response),
-      ) as OBPv400CreateDirectDebit200Response;
+        specifiedType: const FullType(CreateDirectDebit200Response),
+      ) as CreateDirectDebit200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -238,7 +238,7 @@ class DirectDebitApi {
       );
     }
 
-    return Response<OBPv400CreateDirectDebit200Response>(
+    return Response<CreateDirectDebit200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

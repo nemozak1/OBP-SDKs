@@ -1,53 +1,587 @@
 # ProductApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv310CreateProductCollection**](ProductApi.md#oBPv310CreateProductCollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
-| [**oBPv310CreateProductCollectionWithHttpInfo**](ProductApi.md#oBPv310CreateProductCollectionWithHttpInfo) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
-| [**oBPv310DeleteProductAttribute**](ProductApi.md#oBPv310DeleteProductAttribute) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute |
-| [**oBPv310DeleteProductAttributeWithHttpInfo**](ProductApi.md#oBPv310DeleteProductAttributeWithHttpInfo) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute |
-| [**oBPv310GetProductCollection**](ProductApi.md#oBPv310GetProductCollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
-| [**oBPv310GetProductCollectionWithHttpInfo**](ProductApi.md#oBPv310GetProductCollectionWithHttpInfo) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
-| [**oBPv310GetProductTree**](ProductApi.md#oBPv310GetProductTree) | **GET** /obp/v3.1.0/banks/{bankid}/product-tree/{productcode} | Get Product Tree |
-| [**oBPv310GetProductTreeWithHttpInfo**](ProductApi.md#oBPv310GetProductTreeWithHttpInfo) | **GET** /obp/v3.1.0/banks/{bankid}/product-tree/{productcode} | Get Product Tree |
-| [**oBPv400CreateOrUpdateProductAttributeDefinition**](ProductApi.md#oBPv400CreateOrUpdateProductAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition |
-| [**oBPv400CreateOrUpdateProductAttributeDefinitionWithHttpInfo**](ProductApi.md#oBPv400CreateOrUpdateProductAttributeDefinitionWithHttpInfo) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition |
-| [**oBPv400CreateProductAttribute**](ProductApi.md#oBPv400CreateProductAttribute) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute |
-| [**oBPv400CreateProductAttributeWithHttpInfo**](ProductApi.md#oBPv400CreateProductAttributeWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute |
-| [**oBPv400CreateProductFee**](ProductApi.md#oBPv400CreateProductFee) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fee | Create Product Fee |
-| [**oBPv400CreateProductFeeWithHttpInfo**](ProductApi.md#oBPv400CreateProductFeeWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fee | Create Product Fee |
-| [**oBPv400DeleteProductAttributeDefinition**](ProductApi.md#oBPv400DeleteProductAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition |
-| [**oBPv400DeleteProductAttributeDefinitionWithHttpInfo**](ProductApi.md#oBPv400DeleteProductAttributeDefinitionWithHttpInfo) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition |
-| [**oBPv400DeleteProductCascade**](ProductApi.md#oBPv400DeleteProductCascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/products/{productcode} | Delete Product Cascade |
-| [**oBPv400DeleteProductCascadeWithHttpInfo**](ProductApi.md#oBPv400DeleteProductCascadeWithHttpInfo) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/products/{productcode} | Delete Product Cascade |
-| [**oBPv400DeleteProductFee**](ProductApi.md#oBPv400DeleteProductFee) | **DELETE** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Delete Product Fee |
-| [**oBPv400DeleteProductFeeWithHttpInfo**](ProductApi.md#oBPv400DeleteProductFeeWithHttpInfo) | **DELETE** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Delete Product Fee |
-| [**oBPv400GetProduct**](ProductApi.md#oBPv400GetProduct) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode} | Get Bank Product |
-| [**oBPv400GetProductWithHttpInfo**](ProductApi.md#oBPv400GetProductWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode} | Get Bank Product |
-| [**oBPv400GetProductAttribute**](ProductApi.md#oBPv400GetProductAttribute) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute |
-| [**oBPv400GetProductAttributeWithHttpInfo**](ProductApi.md#oBPv400GetProductAttributeWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute |
-| [**oBPv400GetProductAttributeDefinition**](ProductApi.md#oBPv400GetProductAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition |
-| [**oBPv400GetProductAttributeDefinitionWithHttpInfo**](ProductApi.md#oBPv400GetProductAttributeDefinitionWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition |
-| [**oBPv400GetProductFee**](ProductApi.md#oBPv400GetProductFee) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Get Product Fee |
-| [**oBPv400GetProductFeeWithHttpInfo**](ProductApi.md#oBPv400GetProductFeeWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Get Product Fee |
-| [**oBPv400GetProductFees**](ProductApi.md#oBPv400GetProductFees) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees | Get Product Fees |
-| [**oBPv400GetProductFeesWithHttpInfo**](ProductApi.md#oBPv400GetProductFeesWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees | Get Product Fees |
-| [**oBPv400GetProducts**](ProductApi.md#oBPv400GetProducts) | **GET** /obp/v4.0.0/banks/{bankid}/products | Get Products |
-| [**oBPv400GetProductsWithHttpInfo**](ProductApi.md#oBPv400GetProductsWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/products | Get Products |
-| [**oBPv400UpdateProductAttribute**](ProductApi.md#oBPv400UpdateProductAttribute) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute |
-| [**oBPv400UpdateProductAttributeWithHttpInfo**](ProductApi.md#oBPv400UpdateProductAttributeWithHttpInfo) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute |
-| [**oBPv400UpdateProductFee**](ProductApi.md#oBPv400UpdateProductFee) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Update Product Fee |
-| [**oBPv400UpdateProductFeeWithHttpInfo**](ProductApi.md#oBPv400UpdateProductFeeWithHttpInfo) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Update Product Fee |
-| [**oBPv500CreateProduct**](ProductApi.md#oBPv500CreateProduct) | **PUT** /obp/v5.0.0/banks/{bankid}/products/{productcode} | Create Product |
-| [**oBPv500CreateProductWithHttpInfo**](ProductApi.md#oBPv500CreateProductWithHttpInfo) | **PUT** /obp/v5.0.0/banks/{bankid}/products/{productcode} | Create Product |
+| [**createOrUpdateProductAttributeDefinition**](ProductApi.md#createOrUpdateProductAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition |
+| [**createOrUpdateProductAttributeDefinitionWithHttpInfo**](ProductApi.md#createOrUpdateProductAttributeDefinitionWithHttpInfo) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition |
+| [**createProduct**](ProductApi.md#createProduct) | **PUT** /obp/v5.0.0/banks/{bankid}/products/{productcode} | Create Product |
+| [**createProductWithHttpInfo**](ProductApi.md#createProductWithHttpInfo) | **PUT** /obp/v5.0.0/banks/{bankid}/products/{productcode} | Create Product |
+| [**createProductAttribute**](ProductApi.md#createProductAttribute) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute |
+| [**createProductAttributeWithHttpInfo**](ProductApi.md#createProductAttributeWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute |
+| [**createProductCollection**](ProductApi.md#createProductCollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
+| [**createProductCollectionWithHttpInfo**](ProductApi.md#createProductCollectionWithHttpInfo) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
+| [**createProductFee**](ProductApi.md#createProductFee) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fee | Create Product Fee |
+| [**createProductFeeWithHttpInfo**](ProductApi.md#createProductFeeWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fee | Create Product Fee |
+| [**deleteProductAttribute**](ProductApi.md#deleteProductAttribute) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute |
+| [**deleteProductAttributeWithHttpInfo**](ProductApi.md#deleteProductAttributeWithHttpInfo) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute |
+| [**deleteProductAttributeDefinition**](ProductApi.md#deleteProductAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition |
+| [**deleteProductAttributeDefinitionWithHttpInfo**](ProductApi.md#deleteProductAttributeDefinitionWithHttpInfo) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition |
+| [**deleteProductCascade**](ProductApi.md#deleteProductCascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/products/{productcode} | Delete Product Cascade |
+| [**deleteProductCascadeWithHttpInfo**](ProductApi.md#deleteProductCascadeWithHttpInfo) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/products/{productcode} | Delete Product Cascade |
+| [**deleteProductFee**](ProductApi.md#deleteProductFee) | **DELETE** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Delete Product Fee |
+| [**deleteProductFeeWithHttpInfo**](ProductApi.md#deleteProductFeeWithHttpInfo) | **DELETE** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Delete Product Fee |
+| [**getProduct**](ProductApi.md#getProduct) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode} | Get Bank Product |
+| [**getProductWithHttpInfo**](ProductApi.md#getProductWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode} | Get Bank Product |
+| [**getProductAttribute**](ProductApi.md#getProductAttribute) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute |
+| [**getProductAttributeWithHttpInfo**](ProductApi.md#getProductAttributeWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute |
+| [**getProductAttributeDefinition**](ProductApi.md#getProductAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition |
+| [**getProductAttributeDefinitionWithHttpInfo**](ProductApi.md#getProductAttributeDefinitionWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition |
+| [**getProductCollection**](ProductApi.md#getProductCollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
+| [**getProductCollectionWithHttpInfo**](ProductApi.md#getProductCollectionWithHttpInfo) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
+| [**getProductFee**](ProductApi.md#getProductFee) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Get Product Fee |
+| [**getProductFeeWithHttpInfo**](ProductApi.md#getProductFeeWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Get Product Fee |
+| [**getProductFees**](ProductApi.md#getProductFees) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees | Get Product Fees |
+| [**getProductFeesWithHttpInfo**](ProductApi.md#getProductFeesWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees | Get Product Fees |
+| [**getProductTree**](ProductApi.md#getProductTree) | **GET** /obp/v3.1.0/banks/{bankid}/product-tree/{productcode} | Get Product Tree |
+| [**getProductTreeWithHttpInfo**](ProductApi.md#getProductTreeWithHttpInfo) | **GET** /obp/v3.1.0/banks/{bankid}/product-tree/{productcode} | Get Product Tree |
+| [**getProducts**](ProductApi.md#getProducts) | **GET** /obp/v4.0.0/banks/{bankid}/products | Get Products |
+| [**getProductsWithHttpInfo**](ProductApi.md#getProductsWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/products | Get Products |
+| [**updateProductAttribute**](ProductApi.md#updateProductAttribute) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute |
+| [**updateProductAttributeWithHttpInfo**](ProductApi.md#updateProductAttributeWithHttpInfo) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute |
+| [**updateProductFee**](ProductApi.md#updateProductFee) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Update Product Fee |
+| [**updateProductFeeWithHttpInfo**](ProductApi.md#updateProductFeeWithHttpInfo) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Update Product Fee |
 
 
 
-## oBPv310CreateProductCollection
+## createOrUpdateProductAttributeDefinition
 
-> OBPv310CreateProductCollection200Response oBPv310CreateProductCollection(bankid, collectioncode, obPv310CreateProductCollectionRequest)
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateProductAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
+
+Create or Update Product Attribute Definition
+
+&lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.ProductApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        ProductApi apiInstance = new ProductApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest = new CreateOrUpdateTransactionRequestAttributeDefinitionRequest(); // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+        try {
+            GetTransactionRequestAttributeDefinition200ResponseAttributesInner result = apiInstance.createOrUpdateProductAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductApi#createOrUpdateProductAttributeDefinition");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
+
+### Return type
+
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+## createOrUpdateProductAttributeDefinitionWithHttpInfo
+
+> ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> createOrUpdateProductAttributeDefinition createOrUpdateProductAttributeDefinitionWithHttpInfo(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
+
+Create or Update Product Attribute Definition
+
+&lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.ApiResponse;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.ProductApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        ProductApi apiInstance = new ProductApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest = new CreateOrUpdateTransactionRequestAttributeDefinitionRequest(); // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+        try {
+            ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> response = apiInstance.createOrUpdateProductAttributeDefinitionWithHttpInfo(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductApi#createOrUpdateProductAttributeDefinition");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
+
+### Return type
+
+ApiResponse<[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)>
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+
+## createProduct
+
+> CreateProduct200Response createProduct(bankid, productcode, createProductRequest)
+
+Create Product
+
+&lt;p&gt;Create or Update Product for the Bank.&lt;/p&gt; &lt;p&gt;The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.&lt;/p&gt; &lt;p&gt;Typical Super Family values / Asset classes are:&lt;/p&gt; &lt;p&gt;Debt&lt;br /&gt; Equity&lt;br /&gt; FX&lt;br /&gt; Commodity&lt;br /&gt; Derivative&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.ProductApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        ProductApi apiInstance = new ProductApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
+        CreateProductRequest createProductRequest = new CreateProductRequest(); // CreateProductRequest | Request body
+        try {
+            CreateProduct200Response result = apiInstance.createProduct(bankid, productcode, createProductRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductApi#createProduct");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **productcode** | **String**| The PRODUCTCODE identifier | |
+| **createProductRequest** | [**CreateProductRequest**](CreateProductRequest.md)| Request body | |
+
+### Return type
+
+[**CreateProduct200Response**](CreateProduct200Response.md)
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+## createProductWithHttpInfo
+
+> ApiResponse<CreateProduct200Response> createProduct createProductWithHttpInfo(bankid, productcode, createProductRequest)
+
+Create Product
+
+&lt;p&gt;Create or Update Product for the Bank.&lt;/p&gt; &lt;p&gt;The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.&lt;/p&gt; &lt;p&gt;Typical Super Family values / Asset classes are:&lt;/p&gt; &lt;p&gt;Debt&lt;br /&gt; Equity&lt;br /&gt; FX&lt;br /&gt; Commodity&lt;br /&gt; Derivative&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.ApiResponse;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.ProductApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        ProductApi apiInstance = new ProductApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
+        CreateProductRequest createProductRequest = new CreateProductRequest(); // CreateProductRequest | Request body
+        try {
+            ApiResponse<CreateProduct200Response> response = apiInstance.createProductWithHttpInfo(bankid, productcode, createProductRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductApi#createProduct");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **productcode** | **String**| The PRODUCTCODE identifier | |
+| **createProductRequest** | [**CreateProductRequest**](CreateProductRequest.md)| Request body | |
+
+### Return type
+
+ApiResponse<[**CreateProduct200Response**](CreateProduct200Response.md)>
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+
+## createProductAttribute
+
+> CreateProductAttribute200Response createProductAttribute(bankid, productcode, updateAtmAttributeRequest)
+
+Create Product Attribute
+
+&lt;p&gt;Create Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.ProductApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        ProductApi apiInstance = new ProductApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
+        UpdateAtmAttributeRequest updateAtmAttributeRequest = new UpdateAtmAttributeRequest(); // UpdateAtmAttributeRequest | Request body
+        try {
+            CreateProductAttribute200Response result = apiInstance.createProductAttribute(bankid, productcode, updateAtmAttributeRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductApi#createProductAttribute");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **productcode** | **String**| The PRODUCTCODE identifier | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
+
+### Return type
+
+[**CreateProductAttribute200Response**](CreateProductAttribute200Response.md)
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+## createProductAttributeWithHttpInfo
+
+> ApiResponse<CreateProductAttribute200Response> createProductAttribute createProductAttributeWithHttpInfo(bankid, productcode, updateAtmAttributeRequest)
+
+Create Product Attribute
+
+&lt;p&gt;Create Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.ApiResponse;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.ProductApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        ProductApi apiInstance = new ProductApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
+        UpdateAtmAttributeRequest updateAtmAttributeRequest = new UpdateAtmAttributeRequest(); // UpdateAtmAttributeRequest | Request body
+        try {
+            ApiResponse<CreateProductAttribute200Response> response = apiInstance.createProductAttributeWithHttpInfo(bankid, productcode, updateAtmAttributeRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductApi#createProductAttribute");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **productcode** | **String**| The PRODUCTCODE identifier | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
+
+### Return type
+
+ApiResponse<[**CreateProductAttribute200Response**](CreateProductAttribute200Response.md)>
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+
+## createProductCollection
+
+> CreateProductCollection200Response createProductCollection(bankid, collectioncode, createProductCollectionRequest)
 
 Create Product Collection
 
@@ -67,7 +601,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -88,12 +622,12 @@ public class Example {
         ProductApi apiInstance = new ProductApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String collectioncode = "collectioncode_example"; // String | The COLLECTIONCODE identifier
-        OBPv310CreateProductCollectionRequest obPv310CreateProductCollectionRequest = new OBPv310CreateProductCollectionRequest(); // OBPv310CreateProductCollectionRequest | Request body
+        CreateProductCollectionRequest createProductCollectionRequest = new CreateProductCollectionRequest(); // CreateProductCollectionRequest | Request body
         try {
-            OBPv310CreateProductCollection200Response result = apiInstance.oBPv310CreateProductCollection(bankid, collectioncode, obPv310CreateProductCollectionRequest);
+            CreateProductCollection200Response result = apiInstance.createProductCollection(bankid, collectioncode, createProductCollectionRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv310CreateProductCollection");
+            System.err.println("Exception when calling ProductApi#createProductCollection");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -110,11 +644,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **collectioncode** | **String**| The COLLECTIONCODE identifier | |
-| **obPv310CreateProductCollectionRequest** | [**OBPv310CreateProductCollectionRequest**](OBPv310CreateProductCollectionRequest.md)| Request body | |
+| **createProductCollectionRequest** | [**CreateProductCollectionRequest**](CreateProductCollectionRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv310CreateProductCollection200Response**](OBPv310CreateProductCollection200Response.md)
+[**CreateProductCollection200Response**](CreateProductCollection200Response.md)
 
 
 ### Authorization
@@ -133,9 +667,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv310CreateProductCollectionWithHttpInfo
+## createProductCollectionWithHttpInfo
 
-> ApiResponse<OBPv310CreateProductCollection200Response> oBPv310CreateProductCollection oBPv310CreateProductCollectionWithHttpInfo(bankid, collectioncode, obPv310CreateProductCollectionRequest)
+> ApiResponse<CreateProductCollection200Response> createProductCollection createProductCollectionWithHttpInfo(bankid, collectioncode, createProductCollectionRequest)
 
 Create Product Collection
 
@@ -156,7 +690,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -177,14 +711,14 @@ public class Example {
         ProductApi apiInstance = new ProductApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String collectioncode = "collectioncode_example"; // String | The COLLECTIONCODE identifier
-        OBPv310CreateProductCollectionRequest obPv310CreateProductCollectionRequest = new OBPv310CreateProductCollectionRequest(); // OBPv310CreateProductCollectionRequest | Request body
+        CreateProductCollectionRequest createProductCollectionRequest = new CreateProductCollectionRequest(); // CreateProductCollectionRequest | Request body
         try {
-            ApiResponse<OBPv310CreateProductCollection200Response> response = apiInstance.oBPv310CreateProductCollectionWithHttpInfo(bankid, collectioncode, obPv310CreateProductCollectionRequest);
+            ApiResponse<CreateProductCollection200Response> response = apiInstance.createProductCollectionWithHttpInfo(bankid, collectioncode, createProductCollectionRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv310CreateProductCollection");
+            System.err.println("Exception when calling ProductApi#createProductCollection");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -201,11 +735,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **collectioncode** | **String**| The COLLECTIONCODE identifier | |
-| **obPv310CreateProductCollectionRequest** | [**OBPv310CreateProductCollectionRequest**](OBPv310CreateProductCollectionRequest.md)| Request body | |
+| **createProductCollectionRequest** | [**CreateProductCollectionRequest**](CreateProductCollectionRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv310CreateProductCollection200Response**](OBPv310CreateProductCollection200Response.md)>
+ApiResponse<[**CreateProductCollection200Response**](CreateProductCollection200Response.md)>
 
 
 ### Authorization
@@ -225,9 +759,189 @@ ApiResponse<[**OBPv310CreateProductCollection200Response**](OBPv310CreateProduct
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv310DeleteProductAttribute
+## createProductFee
 
-> void oBPv310DeleteProductAttribute(bankid, productcode, productattributeid)
+> GetProductFee200Response createProductFee(bankid, productcode, updateProductFeeRequest)
+
+Create Product Fee
+
+&lt;p&gt;Create Product Fee&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;product_fee_id&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.ProductApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        ProductApi apiInstance = new ProductApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
+        UpdateProductFeeRequest updateProductFeeRequest = new UpdateProductFeeRequest(); // UpdateProductFeeRequest | Request body
+        try {
+            GetProductFee200Response result = apiInstance.createProductFee(bankid, productcode, updateProductFeeRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductApi#createProductFee");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **productcode** | **String**| The PRODUCTCODE identifier | |
+| **updateProductFeeRequest** | [**UpdateProductFeeRequest**](UpdateProductFeeRequest.md)| Request body | |
+
+### Return type
+
+[**GetProductFee200Response**](GetProductFee200Response.md)
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+## createProductFeeWithHttpInfo
+
+> ApiResponse<GetProductFee200Response> createProductFee createProductFeeWithHttpInfo(bankid, productcode, updateProductFeeRequest)
+
+Create Product Fee
+
+&lt;p&gt;Create Product Fee&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;product_fee_id&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.ApiResponse;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.ProductApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        ProductApi apiInstance = new ProductApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
+        UpdateProductFeeRequest updateProductFeeRequest = new UpdateProductFeeRequest(); // UpdateProductFeeRequest | Request body
+        try {
+            ApiResponse<GetProductFee200Response> response = apiInstance.createProductFeeWithHttpInfo(bankid, productcode, updateProductFeeRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductApi#createProductFee");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **productcode** | **String**| The PRODUCTCODE identifier | |
+| **updateProductFeeRequest** | [**UpdateProductFeeRequest**](UpdateProductFeeRequest.md)| Request body | |
+
+### Return type
+
+ApiResponse<[**GetProductFee200Response**](GetProductFee200Response.md)>
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+
+## deleteProductAttribute
+
+> void deleteProductAttribute(bankid, productcode, productattributeid)
 
 Delete Product Attribute
 
@@ -247,7 +961,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -270,9 +984,9 @@ public class Example {
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         String productattributeid = "productattributeid_example"; // String | The PRODUCTATTRIBUTEID identifier
         try {
-            apiInstance.oBPv310DeleteProductAttribute(bankid, productcode, productattributeid);
+            apiInstance.deleteProductAttribute(bankid, productcode, productattributeid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv310DeleteProductAttribute");
+            System.err.println("Exception when calling ProductApi#deleteProductAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -312,9 +1026,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv310DeleteProductAttributeWithHttpInfo
+## deleteProductAttributeWithHttpInfo
 
-> ApiResponse<Void> oBPv310DeleteProductAttribute oBPv310DeleteProductAttributeWithHttpInfo(bankid, productcode, productattributeid)
+> ApiResponse<Void> deleteProductAttribute deleteProductAttributeWithHttpInfo(bankid, productcode, productattributeid)
 
 Delete Product Attribute
 
@@ -335,7 +1049,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -358,11 +1072,11 @@ public class Example {
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         String productattributeid = "productattributeid_example"; // String | The PRODUCTATTRIBUTEID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv310DeleteProductAttributeWithHttpInfo(bankid, productcode, productattributeid);
+            ApiResponse<Void> response = apiInstance.deleteProductAttributeWithHttpInfo(bankid, productcode, productattributeid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv310DeleteProductAttribute");
+            System.err.println("Exception when calling ProductApi#deleteProductAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -403,861 +1117,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv310GetProductCollection
+## deleteProductAttributeDefinition
 
-> OBPv310GetProductCollection200Response oBPv310GetProductCollection(bankid, collectioncode)
-
-Get Product Collection
-
-&lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.ProductApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        ProductApi apiInstance = new ProductApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String collectioncode = "collectioncode_example"; // String | The COLLECTIONCODE identifier
-        try {
-            OBPv310GetProductCollection200Response result = apiInstance.oBPv310GetProductCollection(bankid, collectioncode);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv310GetProductCollection");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **collectioncode** | **String**| The COLLECTIONCODE identifier | |
-
-### Return type
-
-[**OBPv310GetProductCollection200Response**](OBPv310GetProductCollection200Response.md)
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-## oBPv310GetProductCollectionWithHttpInfo
-
-> ApiResponse<OBPv310GetProductCollection200Response> oBPv310GetProductCollection oBPv310GetProductCollectionWithHttpInfo(bankid, collectioncode)
-
-Get Product Collection
-
-&lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.ApiResponse;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.ProductApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        ProductApi apiInstance = new ProductApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String collectioncode = "collectioncode_example"; // String | The COLLECTIONCODE identifier
-        try {
-            ApiResponse<OBPv310GetProductCollection200Response> response = apiInstance.oBPv310GetProductCollectionWithHttpInfo(bankid, collectioncode);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders());
-            System.out.println("Response body: " + response.getData());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv310GetProductCollection");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **collectioncode** | **String**| The COLLECTIONCODE identifier | |
-
-### Return type
-
-ApiResponse<[**OBPv310GetProductCollection200Response**](OBPv310GetProductCollection200Response.md)>
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-
-## oBPv310GetProductTree
-
-> OBPv310GetProductTree200Response oBPv310GetProductTree(bankid, productcode)
-
-Get Product Tree
-
-&lt;p&gt;Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE&lt;br /&gt; and it&#39;s parent product(s) recursively as specified by parent_product_code.&lt;/p&gt; &lt;p&gt;Each product includes the following information.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;Category&lt;/li&gt; &lt;li&gt;Family&lt;/li&gt; &lt;li&gt;Super Family&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product\&quot;&gt;parent_product&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.Configuration;
-import com.openbankproject.models.*;
-import com.openbankproject.api.ProductApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-
-        ProductApi apiInstance = new ProductApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
-        try {
-            OBPv310GetProductTree200Response result = apiInstance.oBPv310GetProductTree(bankid, productcode);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv310GetProductTree");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **productcode** | **String**| The PRODUCTCODE identifier | |
-
-### Return type
-
-[**OBPv310GetProductTree200Response**](OBPv310GetProductTree200Response.md)
-
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-## oBPv310GetProductTreeWithHttpInfo
-
-> ApiResponse<OBPv310GetProductTree200Response> oBPv310GetProductTree oBPv310GetProductTreeWithHttpInfo(bankid, productcode)
-
-Get Product Tree
-
-&lt;p&gt;Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE&lt;br /&gt; and it&#39;s parent product(s) recursively as specified by parent_product_code.&lt;/p&gt; &lt;p&gt;Each product includes the following information.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;Category&lt;/li&gt; &lt;li&gt;Family&lt;/li&gt; &lt;li&gt;Super Family&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product\&quot;&gt;parent_product&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.ApiResponse;
-import com.openbankproject.Configuration;
-import com.openbankproject.models.*;
-import com.openbankproject.api.ProductApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-
-        ProductApi apiInstance = new ProductApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
-        try {
-            ApiResponse<OBPv310GetProductTree200Response> response = apiInstance.oBPv310GetProductTreeWithHttpInfo(bankid, productcode);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders());
-            System.out.println("Response body: " + response.getData());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv310GetProductTree");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **productcode** | **String**| The PRODUCTCODE identifier | |
-
-### Return type
-
-ApiResponse<[**OBPv310GetProductTree200Response**](OBPv310GetProductTree200Response.md)>
-
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-
-## oBPv400CreateOrUpdateProductAttributeDefinition
-
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateProductAttributeDefinition(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-
-Create or Update Product Attribute Definition
-
-&lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.ProductApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        ProductApi apiInstance = new ProductApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = new OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(); // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
-        try {
-            OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems result = apiInstance.oBPv400CreateOrUpdateProductAttributeDefinition(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400CreateOrUpdateProductAttributeDefinition");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-## oBPv400CreateOrUpdateProductAttributeDefinitionWithHttpInfo
-
-> ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> oBPv400CreateOrUpdateProductAttributeDefinition oBPv400CreateOrUpdateProductAttributeDefinitionWithHttpInfo(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-
-Create or Update Product Attribute Definition
-
-&lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.ApiResponse;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.ProductApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        ProductApi apiInstance = new ProductApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = new OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(); // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
-        try {
-            ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> response = apiInstance.oBPv400CreateOrUpdateProductAttributeDefinitionWithHttpInfo(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders());
-            System.out.println("Response body: " + response.getData());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400CreateOrUpdateProductAttributeDefinition");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
-
-### Return type
-
-ApiResponse<[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)>
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-
-## oBPv400CreateProductAttribute
-
-> OBPv400CreateProductAttribute200Response oBPv400CreateProductAttribute(bankid, productcode, obPv510UpdateAtmAttributeRequest)
-
-Create Product Attribute
-
-&lt;p&gt;Create Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.ProductApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        ProductApi apiInstance = new ProductApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
-        OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest = new OBPv510UpdateAtmAttributeRequest(); // OBPv510UpdateAtmAttributeRequest | Request body
-        try {
-            OBPv400CreateProductAttribute200Response result = apiInstance.oBPv400CreateProductAttribute(bankid, productcode, obPv510UpdateAtmAttributeRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400CreateProductAttribute");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **productcode** | **String**| The PRODUCTCODE identifier | |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400CreateProductAttribute200Response**](OBPv400CreateProductAttribute200Response.md)
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-## oBPv400CreateProductAttributeWithHttpInfo
-
-> ApiResponse<OBPv400CreateProductAttribute200Response> oBPv400CreateProductAttribute oBPv400CreateProductAttributeWithHttpInfo(bankid, productcode, obPv510UpdateAtmAttributeRequest)
-
-Create Product Attribute
-
-&lt;p&gt;Create Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.ApiResponse;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.ProductApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        ProductApi apiInstance = new ProductApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
-        OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest = new OBPv510UpdateAtmAttributeRequest(); // OBPv510UpdateAtmAttributeRequest | Request body
-        try {
-            ApiResponse<OBPv400CreateProductAttribute200Response> response = apiInstance.oBPv400CreateProductAttributeWithHttpInfo(bankid, productcode, obPv510UpdateAtmAttributeRequest);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders());
-            System.out.println("Response body: " + response.getData());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400CreateProductAttribute");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **productcode** | **String**| The PRODUCTCODE identifier | |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
-
-### Return type
-
-ApiResponse<[**OBPv400CreateProductAttribute200Response**](OBPv400CreateProductAttribute200Response.md)>
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-
-## oBPv400CreateProductFee
-
-> OBPv400GetProductFee200Response oBPv400CreateProductFee(bankid, productcode, obPv400UpdateProductFeeRequest)
-
-Create Product Fee
-
-&lt;p&gt;Create Product Fee&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;product_fee_id&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.ProductApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        ProductApi apiInstance = new ProductApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
-        OBPv400UpdateProductFeeRequest obPv400UpdateProductFeeRequest = new OBPv400UpdateProductFeeRequest(); // OBPv400UpdateProductFeeRequest | Request body
-        try {
-            OBPv400GetProductFee200Response result = apiInstance.oBPv400CreateProductFee(bankid, productcode, obPv400UpdateProductFeeRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400CreateProductFee");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **productcode** | **String**| The PRODUCTCODE identifier | |
-| **obPv400UpdateProductFeeRequest** | [**OBPv400UpdateProductFeeRequest**](OBPv400UpdateProductFeeRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400GetProductFee200Response**](OBPv400GetProductFee200Response.md)
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-## oBPv400CreateProductFeeWithHttpInfo
-
-> ApiResponse<OBPv400GetProductFee200Response> oBPv400CreateProductFee oBPv400CreateProductFeeWithHttpInfo(bankid, productcode, obPv400UpdateProductFeeRequest)
-
-Create Product Fee
-
-&lt;p&gt;Create Product Fee&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;product_fee_id&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.ApiResponse;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.ProductApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        ProductApi apiInstance = new ProductApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
-        OBPv400UpdateProductFeeRequest obPv400UpdateProductFeeRequest = new OBPv400UpdateProductFeeRequest(); // OBPv400UpdateProductFeeRequest | Request body
-        try {
-            ApiResponse<OBPv400GetProductFee200Response> response = apiInstance.oBPv400CreateProductFeeWithHttpInfo(bankid, productcode, obPv400UpdateProductFeeRequest);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders());
-            System.out.println("Response body: " + response.getData());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400CreateProductFee");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **productcode** | **String**| The PRODUCTCODE identifier | |
-| **obPv400UpdateProductFeeRequest** | [**OBPv400UpdateProductFeeRequest**](OBPv400UpdateProductFeeRequest.md)| Request body | |
-
-### Return type
-
-ApiResponse<[**OBPv400GetProductFee200Response**](OBPv400GetProductFee200Response.md)>
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-
-## oBPv400DeleteProductAttributeDefinition
-
-> void oBPv400DeleteProductAttributeDefinition(bankid, attributedefinitionid)
+> void deleteProductAttributeDefinition(bankid, attributedefinitionid)
 
 Delete Product Attribute Definition
 
@@ -1277,7 +1139,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1299,9 +1161,9 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String attributedefinitionid = "attributedefinitionid_example"; // String | The ATTRIBUTEDEFINITIONID identifier
         try {
-            apiInstance.oBPv400DeleteProductAttributeDefinition(bankid, attributedefinitionid);
+            apiInstance.deleteProductAttributeDefinition(bankid, attributedefinitionid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400DeleteProductAttributeDefinition");
+            System.err.println("Exception when calling ProductApi#deleteProductAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1340,9 +1202,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteProductAttributeDefinitionWithHttpInfo
+## deleteProductAttributeDefinitionWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteProductAttributeDefinition oBPv400DeleteProductAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid)
+> ApiResponse<Void> deleteProductAttributeDefinition deleteProductAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid)
 
 Delete Product Attribute Definition
 
@@ -1363,7 +1225,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1385,11 +1247,11 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String attributedefinitionid = "attributedefinitionid_example"; // String | The ATTRIBUTEDEFINITIONID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteProductAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid);
+            ApiResponse<Void> response = apiInstance.deleteProductAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400DeleteProductAttributeDefinition");
+            System.err.println("Exception when calling ProductApi#deleteProductAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1429,9 +1291,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteProductCascade
+## deleteProductCascade
 
-> void oBPv400DeleteProductCascade(bankid, productcode)
+> void deleteProductCascade(bankid, productcode)
 
 Delete Product Cascade
 
@@ -1451,7 +1313,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1473,9 +1335,9 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         try {
-            apiInstance.oBPv400DeleteProductCascade(bankid, productcode);
+            apiInstance.deleteProductCascade(bankid, productcode);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400DeleteProductCascade");
+            System.err.println("Exception when calling ProductApi#deleteProductCascade");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1514,9 +1376,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteProductCascadeWithHttpInfo
+## deleteProductCascadeWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteProductCascade oBPv400DeleteProductCascadeWithHttpInfo(bankid, productcode)
+> ApiResponse<Void> deleteProductCascade deleteProductCascadeWithHttpInfo(bankid, productcode)
 
 Delete Product Cascade
 
@@ -1537,7 +1399,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1559,11 +1421,11 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteProductCascadeWithHttpInfo(bankid, productcode);
+            ApiResponse<Void> response = apiInstance.deleteProductCascadeWithHttpInfo(bankid, productcode);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400DeleteProductCascade");
+            System.err.println("Exception when calling ProductApi#deleteProductCascade");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1603,9 +1465,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteProductFee
+## deleteProductFee
 
-> void oBPv400DeleteProductFee(bankid, productcode, productfeeid)
+> void deleteProductFee(bankid, productcode, productfeeid)
 
 Delete Product Fee
 
@@ -1625,7 +1487,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1648,9 +1510,9 @@ public class Example {
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         String productfeeid = "productfeeid_example"; // String | The PRODUCTFEEID identifier
         try {
-            apiInstance.oBPv400DeleteProductFee(bankid, productcode, productfeeid);
+            apiInstance.deleteProductFee(bankid, productcode, productfeeid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400DeleteProductFee");
+            System.err.println("Exception when calling ProductApi#deleteProductFee");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1690,9 +1552,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteProductFeeWithHttpInfo
+## deleteProductFeeWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteProductFee oBPv400DeleteProductFeeWithHttpInfo(bankid, productcode, productfeeid)
+> ApiResponse<Void> deleteProductFee deleteProductFeeWithHttpInfo(bankid, productcode, productfeeid)
 
 Delete Product Fee
 
@@ -1713,7 +1575,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1736,11 +1598,11 @@ public class Example {
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         String productfeeid = "productfeeid_example"; // String | The PRODUCTFEEID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteProductFeeWithHttpInfo(bankid, productcode, productfeeid);
+            ApiResponse<Void> response = apiInstance.deleteProductFeeWithHttpInfo(bankid, productcode, productfeeid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400DeleteProductFee");
+            System.err.println("Exception when calling ProductApi#deleteProductFee");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1781,9 +1643,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetProduct
+## getProduct
 
-> OBPv400GetProduct200Response oBPv400GetProduct(bankid, productcode)
+> GetProduct200Response getProduct(bankid, productcode)
 
 Get Bank Product
 
@@ -1802,16 +1664,16 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         ProductApi apiInstance = new ProductApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         try {
-            OBPv400GetProduct200Response result = apiInstance.oBPv400GetProduct(bankid, productcode);
+            GetProduct200Response result = apiInstance.getProduct(bankid, productcode);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400GetProduct");
+            System.err.println("Exception when calling ProductApi#getProduct");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1831,7 +1693,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetProduct200Response**](OBPv400GetProduct200Response.md)
+[**GetProduct200Response**](GetProduct200Response.md)
 
 
 ### Authorization
@@ -1850,9 +1712,9 @@ No authorization required
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetProductWithHttpInfo
+## getProductWithHttpInfo
 
-> ApiResponse<OBPv400GetProduct200Response> oBPv400GetProduct oBPv400GetProductWithHttpInfo(bankid, productcode)
+> ApiResponse<GetProduct200Response> getProduct getProductWithHttpInfo(bankid, productcode)
 
 Get Bank Product
 
@@ -1872,18 +1734,18 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         ProductApi apiInstance = new ProductApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         try {
-            ApiResponse<OBPv400GetProduct200Response> response = apiInstance.oBPv400GetProductWithHttpInfo(bankid, productcode);
+            ApiResponse<GetProduct200Response> response = apiInstance.getProductWithHttpInfo(bankid, productcode);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400GetProduct");
+            System.err.println("Exception when calling ProductApi#getProduct");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1903,7 +1765,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetProduct200Response**](OBPv400GetProduct200Response.md)>
+ApiResponse<[**GetProduct200Response**](GetProduct200Response.md)>
 
 
 ### Authorization
@@ -1923,9 +1785,9 @@ No authorization required
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetProductAttribute
+## getProductAttribute
 
-> OBPv400CreateProductAttribute200Response oBPv400GetProductAttribute(bankid, productcode, productattributeid)
+> CreateProductAttribute200Response getProductAttribute(bankid, productcode, productattributeid)
 
 Get Product Attribute
 
@@ -1945,7 +1807,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1968,10 +1830,10 @@ public class Example {
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         String productattributeid = "productattributeid_example"; // String | The PRODUCTATTRIBUTEID identifier
         try {
-            OBPv400CreateProductAttribute200Response result = apiInstance.oBPv400GetProductAttribute(bankid, productcode, productattributeid);
+            CreateProductAttribute200Response result = apiInstance.getProductAttribute(bankid, productcode, productattributeid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400GetProductAttribute");
+            System.err.println("Exception when calling ProductApi#getProductAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1992,7 +1854,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400CreateProductAttribute200Response**](OBPv400CreateProductAttribute200Response.md)
+[**CreateProductAttribute200Response**](CreateProductAttribute200Response.md)
 
 
 ### Authorization
@@ -2010,9 +1872,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetProductAttributeWithHttpInfo
+## getProductAttributeWithHttpInfo
 
-> ApiResponse<OBPv400CreateProductAttribute200Response> oBPv400GetProductAttribute oBPv400GetProductAttributeWithHttpInfo(bankid, productcode, productattributeid)
+> ApiResponse<CreateProductAttribute200Response> getProductAttribute getProductAttributeWithHttpInfo(bankid, productcode, productattributeid)
 
 Get Product Attribute
 
@@ -2033,7 +1895,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2056,12 +1918,12 @@ public class Example {
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         String productattributeid = "productattributeid_example"; // String | The PRODUCTATTRIBUTEID identifier
         try {
-            ApiResponse<OBPv400CreateProductAttribute200Response> response = apiInstance.oBPv400GetProductAttributeWithHttpInfo(bankid, productcode, productattributeid);
+            ApiResponse<CreateProductAttribute200Response> response = apiInstance.getProductAttributeWithHttpInfo(bankid, productcode, productattributeid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400GetProductAttribute");
+            System.err.println("Exception when calling ProductApi#getProductAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2082,7 +1944,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400CreateProductAttribute200Response**](OBPv400CreateProductAttribute200Response.md)>
+ApiResponse<[**CreateProductAttribute200Response**](CreateProductAttribute200Response.md)>
 
 
 ### Authorization
@@ -2101,9 +1963,9 @@ ApiResponse<[**OBPv400CreateProductAttribute200Response**](OBPv400CreateProductA
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetProductAttributeDefinition
+## getProductAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200Response oBPv400GetProductAttributeDefinition(bankid)
+> GetTransactionRequestAttributeDefinition200Response getProductAttributeDefinition(bankid)
 
 Get Product Attribute Definition
 
@@ -2123,7 +1985,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2144,10 +2006,10 @@ public class Example {
         ProductApi apiInstance = new ProductApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            OBPv400GetTransactionRequestAttributeDefinition200Response result = apiInstance.oBPv400GetProductAttributeDefinition(bankid);
+            GetTransactionRequestAttributeDefinition200Response result = apiInstance.getProductAttributeDefinition(bankid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400GetProductAttributeDefinition");
+            System.err.println("Exception when calling ProductApi#getProductAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2166,7 +2028,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 
 ### Authorization
@@ -2185,9 +2047,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetProductAttributeDefinitionWithHttpInfo
+## getProductAttributeDefinitionWithHttpInfo
 
-> ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response> oBPv400GetProductAttributeDefinition oBPv400GetProductAttributeDefinitionWithHttpInfo(bankid)
+> ApiResponse<GetTransactionRequestAttributeDefinition200Response> getProductAttributeDefinition getProductAttributeDefinitionWithHttpInfo(bankid)
 
 Get Product Attribute Definition
 
@@ -2208,7 +2070,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2229,12 +2091,12 @@ public class Example {
         ProductApi apiInstance = new ProductApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response> response = apiInstance.oBPv400GetProductAttributeDefinitionWithHttpInfo(bankid);
+            ApiResponse<GetTransactionRequestAttributeDefinition200Response> response = apiInstance.getProductAttributeDefinitionWithHttpInfo(bankid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400GetProductAttributeDefinition");
+            System.err.println("Exception when calling ProductApi#getProductAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2253,7 +2115,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)>
+ApiResponse<[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)>
 
 
 ### Authorization
@@ -2273,9 +2135,185 @@ ApiResponse<[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBP
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetProductFee
+## getProductCollection
 
-> OBPv400GetProductFee200Response oBPv400GetProductFee(bankid, productcode, productfeeid)
+> GetProductCollection200Response getProductCollection(bankid, collectioncode)
+
+Get Product Collection
+
+&lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.ProductApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        ProductApi apiInstance = new ProductApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String collectioncode = "collectioncode_example"; // String | The COLLECTIONCODE identifier
+        try {
+            GetProductCollection200Response result = apiInstance.getProductCollection(bankid, collectioncode);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductApi#getProductCollection");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **collectioncode** | **String**| The COLLECTIONCODE identifier | |
+
+### Return type
+
+[**GetProductCollection200Response**](GetProductCollection200Response.md)
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+## getProductCollectionWithHttpInfo
+
+> ApiResponse<GetProductCollection200Response> getProductCollection getProductCollectionWithHttpInfo(bankid, collectioncode)
+
+Get Product Collection
+
+&lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.ApiResponse;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.ProductApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        ProductApi apiInstance = new ProductApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String collectioncode = "collectioncode_example"; // String | The COLLECTIONCODE identifier
+        try {
+            ApiResponse<GetProductCollection200Response> response = apiInstance.getProductCollectionWithHttpInfo(bankid, collectioncode);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductApi#getProductCollection");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **collectioncode** | **String**| The COLLECTIONCODE identifier | |
+
+### Return type
+
+ApiResponse<[**GetProductCollection200Response**](GetProductCollection200Response.md)>
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+
+## getProductFee
+
+> GetProductFee200Response getProductFee(bankid, productcode, productfeeid)
 
 Get Product Fee
 
@@ -2294,17 +2332,17 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         ProductApi apiInstance = new ProductApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         String productfeeid = "productfeeid_example"; // String | The PRODUCTFEEID identifier
         try {
-            OBPv400GetProductFee200Response result = apiInstance.oBPv400GetProductFee(bankid, productcode, productfeeid);
+            GetProductFee200Response result = apiInstance.getProductFee(bankid, productcode, productfeeid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400GetProductFee");
+            System.err.println("Exception when calling ProductApi#getProductFee");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2325,7 +2363,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetProductFee200Response**](OBPv400GetProductFee200Response.md)
+[**GetProductFee200Response**](GetProductFee200Response.md)
 
 
 ### Authorization
@@ -2344,9 +2382,9 @@ No authorization required
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetProductFeeWithHttpInfo
+## getProductFeeWithHttpInfo
 
-> ApiResponse<OBPv400GetProductFee200Response> oBPv400GetProductFee oBPv400GetProductFeeWithHttpInfo(bankid, productcode, productfeeid)
+> ApiResponse<GetProductFee200Response> getProductFee getProductFeeWithHttpInfo(bankid, productcode, productfeeid)
 
 Get Product Fee
 
@@ -2366,19 +2404,19 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         ProductApi apiInstance = new ProductApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         String productfeeid = "productfeeid_example"; // String | The PRODUCTFEEID identifier
         try {
-            ApiResponse<OBPv400GetProductFee200Response> response = apiInstance.oBPv400GetProductFeeWithHttpInfo(bankid, productcode, productfeeid);
+            ApiResponse<GetProductFee200Response> response = apiInstance.getProductFeeWithHttpInfo(bankid, productcode, productfeeid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400GetProductFee");
+            System.err.println("Exception when calling ProductApi#getProductFee");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2399,7 +2437,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetProductFee200Response**](OBPv400GetProductFee200Response.md)>
+ApiResponse<[**GetProductFee200Response**](GetProductFee200Response.md)>
 
 
 ### Authorization
@@ -2419,9 +2457,9 @@ No authorization required
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetProductFees
+## getProductFees
 
-> OBPv400GetProductFees200Response oBPv400GetProductFees(bankid, productcode)
+> GetProductFees200Response getProductFees(bankid, productcode)
 
 Get Product Fees
 
@@ -2440,16 +2478,16 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         ProductApi apiInstance = new ProductApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         try {
-            OBPv400GetProductFees200Response result = apiInstance.oBPv400GetProductFees(bankid, productcode);
+            GetProductFees200Response result = apiInstance.getProductFees(bankid, productcode);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400GetProductFees");
+            System.err.println("Exception when calling ProductApi#getProductFees");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2469,7 +2507,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetProductFees200Response**](OBPv400GetProductFees200Response.md)
+[**GetProductFees200Response**](GetProductFees200Response.md)
 
 
 ### Authorization
@@ -2488,9 +2526,9 @@ No authorization required
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetProductFeesWithHttpInfo
+## getProductFeesWithHttpInfo
 
-> ApiResponse<OBPv400GetProductFees200Response> oBPv400GetProductFees oBPv400GetProductFeesWithHttpInfo(bankid, productcode)
+> ApiResponse<GetProductFees200Response> getProductFees getProductFeesWithHttpInfo(bankid, productcode)
 
 Get Product Fees
 
@@ -2510,18 +2548,18 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         ProductApi apiInstance = new ProductApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         try {
-            ApiResponse<OBPv400GetProductFees200Response> response = apiInstance.oBPv400GetProductFeesWithHttpInfo(bankid, productcode);
+            ApiResponse<GetProductFees200Response> response = apiInstance.getProductFeesWithHttpInfo(bankid, productcode);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400GetProductFees");
+            System.err.println("Exception when calling ProductApi#getProductFees");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2541,7 +2579,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetProductFees200Response**](OBPv400GetProductFees200Response.md)>
+ApiResponse<[**GetProductFees200Response**](GetProductFees200Response.md)>
 
 
 ### Authorization
@@ -2561,9 +2599,151 @@ No authorization required
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetProducts
+## getProductTree
 
-> OBPv400GetProducts200Response oBPv400GetProducts(bankid)
+> GetProductTree200Response getProductTree(bankid, productcode)
+
+Get Product Tree
+
+&lt;p&gt;Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE&lt;br /&gt; and it&#39;s parent product(s) recursively as specified by parent_product_code.&lt;/p&gt; &lt;p&gt;Each product includes the following information.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;Category&lt;/li&gt; &lt;li&gt;Family&lt;/li&gt; &lt;li&gt;Super Family&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product\&quot;&gt;parent_product&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.Configuration;
+import com.openbankproject.models.*;
+import com.openbankproject.api.ProductApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+
+        ProductApi apiInstance = new ProductApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
+        try {
+            GetProductTree200Response result = apiInstance.getProductTree(bankid, productcode);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductApi#getProductTree");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **productcode** | **String**| The PRODUCTCODE identifier | |
+
+### Return type
+
+[**GetProductTree200Response**](GetProductTree200Response.md)
+
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+## getProductTreeWithHttpInfo
+
+> ApiResponse<GetProductTree200Response> getProductTree getProductTreeWithHttpInfo(bankid, productcode)
+
+Get Product Tree
+
+&lt;p&gt;Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE&lt;br /&gt; and it&#39;s parent product(s) recursively as specified by parent_product_code.&lt;/p&gt; &lt;p&gt;Each product includes the following information.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;Category&lt;/li&gt; &lt;li&gt;Family&lt;/li&gt; &lt;li&gt;Super Family&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product\&quot;&gt;parent_product&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.ApiResponse;
+import com.openbankproject.Configuration;
+import com.openbankproject.models.*;
+import com.openbankproject.api.ProductApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+
+        ProductApi apiInstance = new ProductApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
+        try {
+            ApiResponse<GetProductTree200Response> response = apiInstance.getProductTreeWithHttpInfo(bankid, productcode);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductApi#getProductTree");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **productcode** | **String**| The PRODUCTCODE identifier | |
+
+### Return type
+
+ApiResponse<[**GetProductTree200Response**](GetProductTree200Response.md)>
+
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+
+## getProducts
+
+> GetProducts200Response getProducts(bankid)
 
 Get Products
 
@@ -2582,15 +2762,15 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         ProductApi apiInstance = new ProductApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            OBPv400GetProducts200Response result = apiInstance.oBPv400GetProducts(bankid);
+            GetProducts200Response result = apiInstance.getProducts(bankid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400GetProducts");
+            System.err.println("Exception when calling ProductApi#getProducts");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2609,7 +2789,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetProducts200Response**](OBPv400GetProducts200Response.md)
+[**GetProducts200Response**](GetProducts200Response.md)
 
 
 ### Authorization
@@ -2628,9 +2808,9 @@ No authorization required
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetProductsWithHttpInfo
+## getProductsWithHttpInfo
 
-> ApiResponse<OBPv400GetProducts200Response> oBPv400GetProducts oBPv400GetProductsWithHttpInfo(bankid)
+> ApiResponse<GetProducts200Response> getProducts getProductsWithHttpInfo(bankid)
 
 Get Products
 
@@ -2650,17 +2830,17 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         ProductApi apiInstance = new ProductApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            ApiResponse<OBPv400GetProducts200Response> response = apiInstance.oBPv400GetProductsWithHttpInfo(bankid);
+            ApiResponse<GetProducts200Response> response = apiInstance.getProductsWithHttpInfo(bankid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400GetProducts");
+            System.err.println("Exception when calling ProductApi#getProducts");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2679,7 +2859,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetProducts200Response**](OBPv400GetProducts200Response.md)>
+ApiResponse<[**GetProducts200Response**](GetProducts200Response.md)>
 
 
 ### Authorization
@@ -2699,9 +2879,9 @@ No authorization required
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400UpdateProductAttribute
+## updateProductAttribute
 
-> OBPv400CreateProductAttribute200Response oBPv400UpdateProductAttribute(bankid, productcode, productattributeid, obPv510UpdateAtmAttributeRequest)
+> CreateProductAttribute200Response updateProductAttribute(bankid, productcode, productattributeid, updateAtmAttributeRequest)
 
 Update Product Attribute
 
@@ -2721,7 +2901,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2743,12 +2923,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         String productattributeid = "productattributeid_example"; // String | The PRODUCTATTRIBUTEID identifier
-        OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest = new OBPv510UpdateAtmAttributeRequest(); // OBPv510UpdateAtmAttributeRequest | Request body
+        UpdateAtmAttributeRequest updateAtmAttributeRequest = new UpdateAtmAttributeRequest(); // UpdateAtmAttributeRequest | Request body
         try {
-            OBPv400CreateProductAttribute200Response result = apiInstance.oBPv400UpdateProductAttribute(bankid, productcode, productattributeid, obPv510UpdateAtmAttributeRequest);
+            CreateProductAttribute200Response result = apiInstance.updateProductAttribute(bankid, productcode, productattributeid, updateAtmAttributeRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400UpdateProductAttribute");
+            System.err.println("Exception when calling ProductApi#updateProductAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2766,11 +2946,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **productcode** | **String**| The PRODUCTCODE identifier | |
 | **productattributeid** | **String**| The PRODUCTATTRIBUTEID identifier | |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateProductAttribute200Response**](OBPv400CreateProductAttribute200Response.md)
+[**CreateProductAttribute200Response**](CreateProductAttribute200Response.md)
 
 
 ### Authorization
@@ -2788,9 +2968,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400UpdateProductAttributeWithHttpInfo
+## updateProductAttributeWithHttpInfo
 
-> ApiResponse<OBPv400CreateProductAttribute200Response> oBPv400UpdateProductAttribute oBPv400UpdateProductAttributeWithHttpInfo(bankid, productcode, productattributeid, obPv510UpdateAtmAttributeRequest)
+> ApiResponse<CreateProductAttribute200Response> updateProductAttribute updateProductAttributeWithHttpInfo(bankid, productcode, productattributeid, updateAtmAttributeRequest)
 
 Update Product Attribute
 
@@ -2811,7 +2991,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2833,14 +3013,14 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         String productattributeid = "productattributeid_example"; // String | The PRODUCTATTRIBUTEID identifier
-        OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest = new OBPv510UpdateAtmAttributeRequest(); // OBPv510UpdateAtmAttributeRequest | Request body
+        UpdateAtmAttributeRequest updateAtmAttributeRequest = new UpdateAtmAttributeRequest(); // UpdateAtmAttributeRequest | Request body
         try {
-            ApiResponse<OBPv400CreateProductAttribute200Response> response = apiInstance.oBPv400UpdateProductAttributeWithHttpInfo(bankid, productcode, productattributeid, obPv510UpdateAtmAttributeRequest);
+            ApiResponse<CreateProductAttribute200Response> response = apiInstance.updateProductAttributeWithHttpInfo(bankid, productcode, productattributeid, updateAtmAttributeRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400UpdateProductAttribute");
+            System.err.println("Exception when calling ProductApi#updateProductAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2858,11 +3038,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **productcode** | **String**| The PRODUCTCODE identifier | |
 | **productattributeid** | **String**| The PRODUCTATTRIBUTEID identifier | |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400CreateProductAttribute200Response**](OBPv400CreateProductAttribute200Response.md)>
+ApiResponse<[**CreateProductAttribute200Response**](CreateProductAttribute200Response.md)>
 
 
 ### Authorization
@@ -2881,9 +3061,9 @@ ApiResponse<[**OBPv400CreateProductAttribute200Response**](OBPv400CreateProductA
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400UpdateProductFee
+## updateProductFee
 
-> OBPv400GetProductFee200Response oBPv400UpdateProductFee(bankid, productcode, productfeeid, obPv400UpdateProductFeeRequest)
+> GetProductFee200Response updateProductFee(bankid, productcode, productfeeid, updateProductFeeRequest)
 
 Update Product Fee
 
@@ -2903,7 +3083,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2925,12 +3105,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         String productfeeid = "productfeeid_example"; // String | The PRODUCTFEEID identifier
-        OBPv400UpdateProductFeeRequest obPv400UpdateProductFeeRequest = new OBPv400UpdateProductFeeRequest(); // OBPv400UpdateProductFeeRequest | Request body
+        UpdateProductFeeRequest updateProductFeeRequest = new UpdateProductFeeRequest(); // UpdateProductFeeRequest | Request body
         try {
-            OBPv400GetProductFee200Response result = apiInstance.oBPv400UpdateProductFee(bankid, productcode, productfeeid, obPv400UpdateProductFeeRequest);
+            GetProductFee200Response result = apiInstance.updateProductFee(bankid, productcode, productfeeid, updateProductFeeRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400UpdateProductFee");
+            System.err.println("Exception when calling ProductApi#updateProductFee");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2948,11 +3128,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **productcode** | **String**| The PRODUCTCODE identifier | |
 | **productfeeid** | **String**| The PRODUCTFEEID identifier | |
-| **obPv400UpdateProductFeeRequest** | [**OBPv400UpdateProductFeeRequest**](OBPv400UpdateProductFeeRequest.md)| Request body | |
+| **updateProductFeeRequest** | [**UpdateProductFeeRequest**](UpdateProductFeeRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetProductFee200Response**](OBPv400GetProductFee200Response.md)
+[**GetProductFee200Response**](GetProductFee200Response.md)
 
 
 ### Authorization
@@ -2971,9 +3151,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400UpdateProductFeeWithHttpInfo
+## updateProductFeeWithHttpInfo
 
-> ApiResponse<OBPv400GetProductFee200Response> oBPv400UpdateProductFee oBPv400UpdateProductFeeWithHttpInfo(bankid, productcode, productfeeid, obPv400UpdateProductFeeRequest)
+> ApiResponse<GetProductFee200Response> updateProductFee updateProductFeeWithHttpInfo(bankid, productcode, productfeeid, updateProductFeeRequest)
 
 Update Product Fee
 
@@ -2994,7 +3174,7 @@ import com.openbankproject.api.ProductApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -3016,14 +3196,14 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
         String productfeeid = "productfeeid_example"; // String | The PRODUCTFEEID identifier
-        OBPv400UpdateProductFeeRequest obPv400UpdateProductFeeRequest = new OBPv400UpdateProductFeeRequest(); // OBPv400UpdateProductFeeRequest | Request body
+        UpdateProductFeeRequest updateProductFeeRequest = new UpdateProductFeeRequest(); // UpdateProductFeeRequest | Request body
         try {
-            ApiResponse<OBPv400GetProductFee200Response> response = apiInstance.oBPv400UpdateProductFeeWithHttpInfo(bankid, productcode, productfeeid, obPv400UpdateProductFeeRequest);
+            ApiResponse<GetProductFee200Response> response = apiInstance.updateProductFeeWithHttpInfo(bankid, productcode, productfeeid, updateProductFeeRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv400UpdateProductFee");
+            System.err.println("Exception when calling ProductApi#updateProductFee");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -3041,191 +3221,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **productcode** | **String**| The PRODUCTCODE identifier | |
 | **productfeeid** | **String**| The PRODUCTFEEID identifier | |
-| **obPv400UpdateProductFeeRequest** | [**OBPv400UpdateProductFeeRequest**](OBPv400UpdateProductFeeRequest.md)| Request body | |
+| **updateProductFeeRequest** | [**UpdateProductFeeRequest**](UpdateProductFeeRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetProductFee200Response**](OBPv400GetProductFee200Response.md)>
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-
-## oBPv500CreateProduct
-
-> OBPv500CreateProduct200Response oBPv500CreateProduct(bankid, productcode, obPv500CreateProductRequest)
-
-Create Product
-
-&lt;p&gt;Create or Update Product for the Bank.&lt;/p&gt; &lt;p&gt;The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.&lt;/p&gt; &lt;p&gt;Typical Super Family values / Asset classes are:&lt;/p&gt; &lt;p&gt;Debt&lt;br /&gt; Equity&lt;br /&gt; FX&lt;br /&gt; Commodity&lt;br /&gt; Derivative&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.ProductApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        ProductApi apiInstance = new ProductApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
-        OBPv500CreateProductRequest obPv500CreateProductRequest = new OBPv500CreateProductRequest(); // OBPv500CreateProductRequest | Request body
-        try {
-            OBPv500CreateProduct200Response result = apiInstance.oBPv500CreateProduct(bankid, productcode, obPv500CreateProductRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv500CreateProduct");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **productcode** | **String**| The PRODUCTCODE identifier | |
-| **obPv500CreateProductRequest** | [**OBPv500CreateProductRequest**](OBPv500CreateProductRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv500CreateProduct200Response**](OBPv500CreateProduct200Response.md)
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-## oBPv500CreateProductWithHttpInfo
-
-> ApiResponse<OBPv500CreateProduct200Response> oBPv500CreateProduct oBPv500CreateProductWithHttpInfo(bankid, productcode, obPv500CreateProductRequest)
-
-Create Product
-
-&lt;p&gt;Create or Update Product for the Bank.&lt;/p&gt; &lt;p&gt;The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.&lt;/p&gt; &lt;p&gt;Typical Super Family values / Asset classes are:&lt;/p&gt; &lt;p&gt;Debt&lt;br /&gt; Equity&lt;br /&gt; FX&lt;br /&gt; Commodity&lt;br /&gt; Derivative&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.ApiResponse;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.ProductApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        ProductApi apiInstance = new ProductApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
-        OBPv500CreateProductRequest obPv500CreateProductRequest = new OBPv500CreateProductRequest(); // OBPv500CreateProductRequest | Request body
-        try {
-            ApiResponse<OBPv500CreateProduct200Response> response = apiInstance.oBPv500CreateProductWithHttpInfo(bankid, productcode, obPv500CreateProductRequest);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders());
-            System.out.println("Response body: " + response.getData());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductApi#oBPv500CreateProduct");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **productcode** | **String**| The PRODUCTCODE identifier | |
-| **obPv500CreateProductRequest** | [**OBPv500CreateProductRequest**](OBPv500CreateProductRequest.md)| Request body | |
-
-### Return type
-
-ApiResponse<[**OBPv500CreateProduct200Response**](OBPv500CreateProduct200Response.md)>
+ApiResponse<[**GetProductFee200Response**](GetProductFee200Response.md)>
 
 
 ### Authorization

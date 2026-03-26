@@ -2,18 +2,18 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv310CreateProductCollection()**](ProductCollectionApi.md#oBPv310CreateProductCollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
-| [**oBPv310GetProductCollection()**](ProductCollectionApi.md#oBPv310GetProductCollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
+| [**createProductCollection()**](ProductCollectionApi.md#createProductCollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
+| [**getProductCollection()**](ProductCollectionApi.md#getProductCollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
 
 
-## `oBPv310CreateProductCollection()`
+## `createProductCollection()`
 
 ```php
-oBPv310CreateProductCollection($bankid, $collectioncode, $obpv310_create_product_collection_request): \OpenBankProject\Model\OBPv310CreateProductCollection200Response
+createProductCollection($bankid, $collectioncode, $create_product_collection_request): \OpenBankProject\Model\CreateProductCollection200Response
 ```
 
 Create Product Collection
@@ -36,9 +36,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ProductCollectionApi(
@@ -49,13 +49,13 @@ $apiInstance = new OpenBankProject\Api\ProductCollectionApi(
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $collectioncode = 'collectioncode_example'; // string | The COLLECTIONCODE identifier
-$obpv310_create_product_collection_request = {"type":"object","properties":{"parent_product_code":{"type":"string"},"children_product_codes":{"type":"array","items":{"type":"string"}}}}; // \OpenBankProject\Model\OBPv310CreateProductCollectionRequest | Request body
+$create_product_collection_request = {"type":"object","properties":{"parent_product_code":{"type":"string"},"children_product_codes":{"type":"array","items":{"type":"string"}}}}; // \OpenBankProject\Model\CreateProductCollectionRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv310CreateProductCollection($bankid, $collectioncode, $obpv310_create_product_collection_request);
+    $result = $apiInstance->createProductCollection($bankid, $collectioncode, $create_product_collection_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductCollectionApi->oBPv310CreateProductCollection: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductCollectionApi->createProductCollection: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -65,11 +65,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
 | **collectioncode** | **string**| The COLLECTIONCODE identifier | |
-| **obpv310_create_product_collection_request** | [**\OpenBankProject\Model\OBPv310CreateProductCollectionRequest**](../Model/OBPv310CreateProductCollectionRequest.md)| Request body | |
+| **create_product_collection_request** | [**\OpenBankProject\Model\CreateProductCollectionRequest**](../Model/CreateProductCollectionRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv310CreateProductCollection200Response**](../Model/OBPv310CreateProductCollection200Response.md)
+[**\OpenBankProject\Model\CreateProductCollection200Response**](../Model/CreateProductCollection200Response.md)
 
 ### Authorization
 
@@ -84,10 +84,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv310GetProductCollection()`
+## `getProductCollection()`
 
 ```php
-oBPv310GetProductCollection($bankid, $collectioncode): \OpenBankProject\Model\OBPv310GetProductCollection200Response
+getProductCollection($bankid, $collectioncode): \OpenBankProject\Model\GetProductCollection200Response
 ```
 
 Get Product Collection
@@ -110,9 +110,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ProductCollectionApi(
@@ -125,10 +125,10 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $collectioncode = 'collectioncode_example'; // string | The COLLECTIONCODE identifier
 
 try {
-    $result = $apiInstance->oBPv310GetProductCollection($bankid, $collectioncode);
+    $result = $apiInstance->getProductCollection($bankid, $collectioncode);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductCollectionApi->oBPv310GetProductCollection: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductCollectionApi->getProductCollection: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -141,7 +141,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv310GetProductCollection200Response**](../Model/OBPv310GetProductCollection200Response.md)
+[**\OpenBankProject\Model\GetProductCollection200Response**](../Model/GetProductCollection200Response.md)
 
 ### Authorization
 

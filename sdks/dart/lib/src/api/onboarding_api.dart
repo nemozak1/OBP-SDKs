@@ -9,10 +9,10 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv400_add_account200_response.dart';
-import 'package:obp_dart/src/model/obpv400_add_account_request.dart';
-import 'package:obp_dart/src/model/obpv600_create_user_request.dart';
-import 'package:obp_dart/src/model/obpv600_verify_user_credentials200_response.dart';
+import 'package:obp_dart/src/model/add_account200_response.dart';
+import 'package:obp_dart/src/model/add_account_request.dart';
+import 'package:obp_dart/src/model/create_user_request.dart';
+import 'package:obp_dart/src/model/verify_user_credentials200_response.dart';
 
 class OnboardingApi {
 
@@ -28,7 +28,7 @@ class OnboardingApi {
   /// Parameters:
   /// * [bankid] - The BANKID identifier
   /// * [accountid] - The ACCOUNTID identifier
-  /// * [oBPv400AddAccountRequest] - Request body
+  /// * [addAccountRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -36,12 +36,12 @@ class OnboardingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400AddAccount200Response] as data
+  /// Returns a [Future] containing a [Response] with a [AddAccount200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400AddAccount200Response>> oBPv500CreateAccount({ 
+  Future<Response<AddAccount200Response>> createAccount({ 
     required String bankid,
     required String accountid,
-    required OBPv400AddAccountRequest oBPv400AddAccountRequest,
+    required AddAccountRequest addAccountRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -68,7 +68,7 @@ class OnboardingApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -81,8 +81,8 @@ class OnboardingApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400AddAccountRequest);
-      _bodyData = _serializers.serialize(oBPv400AddAccountRequest, specifiedType: _type);
+      const _type = FullType(AddAccountRequest);
+      _bodyData = _serializers.serialize(addAccountRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -105,14 +105,14 @@ class OnboardingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400AddAccount200Response? _responseData;
+    AddAccount200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400AddAccount200Response),
-      ) as OBPv400AddAccount200Response;
+        specifiedType: const FullType(AddAccount200Response),
+      ) as AddAccount200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -124,7 +124,7 @@ class OnboardingApi {
       );
     }
 
-    return Response<OBPv400AddAccount200Response>(
+    return Response<AddAccount200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -137,10 +137,10 @@ class OnboardingApi {
   }
 
   /// Create User (v6.0.0)
-  /// &lt;p&gt;Creates OBP user.&lt;br /&gt; No authorisation required.&lt;/p&gt; &lt;p&gt;Mimics current webform to Register.&lt;/p&gt; &lt;p&gt;Requires username(email), password, first_name, last_name, and email.&lt;/p&gt; &lt;p&gt;Validation checks performed:&lt;br /&gt; - Password must meet strong password requirements (InvalidStrongPasswordFormat error if not)&lt;br /&gt; - Username must be unique (409 error if username already exists)&lt;br /&gt; - All required fields must be present in valid JSON format&lt;/p&gt; &lt;p&gt;Email validation behavior:&lt;br /&gt; - Controlled by property &#39;authUser.skipEmailValidation&#39; (default: false)&lt;br /&gt; - When false: User is created with validated&#x3D;false and a validation email is sent to the user&#39;s email address&lt;br /&gt; - The validation link is constructed using the &lt;code&gt;portal_external_url&lt;/code&gt; property which must be set&lt;br /&gt; - When true: User is created with validated&#x3D;true and no validation email is sent&lt;br /&gt; - Default entitlements are granted immediately regardless of validation status&lt;/p&gt; &lt;p&gt;Note: If email validation is required (skipEmailValidation&#x3D;false), the user must click the validation link&lt;br /&gt; in the email before they can log in, even though entitlements are already granted.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;email&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;&amp;#109;&amp;#x61;&amp;#x69;&amp;#x6c;&amp;#x74;o&amp;#x3a;&amp;#102;&amp;#101;&amp;#108;&amp;#105;&amp;#x78;s&amp;#109;&amp;#105;&amp;#x74;&amp;#x68;&amp;#x40;&amp;#x65;&amp;#120;&amp;#x61;&amp;#x6d;ple&amp;#46;co&amp;#x6d;\&quot;&gt;&amp;#x66;&amp;#x65;&amp;#x6c;&amp;#105;&amp;#120;&amp;#x73;&amp;#x6d;it&amp;#x68;&amp;#x40;&amp;#x65;&amp;#120;&amp;#97;&amp;#109;&amp;#112;&amp;#108;&amp;#x65;&amp;#x2e;&amp;#99;&amp;#111;&amp;#x6d;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#first_name\&quot;&gt;&lt;strong&gt;first_name&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#last_name\&quot;&gt;&lt;strong&gt;last_name&lt;/strong&gt;&lt;/a&gt;: Smith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;password&lt;/strong&gt;&lt;/a&gt;: password&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;email&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;&amp;#109;&amp;#97;&amp;#x69;&amp;#108;&amp;#x74;o&amp;#58;&amp;#x66;&amp;#101;&amp;#108;&amp;#105;&amp;#120;&amp;#x73;mi&amp;#x74;&amp;#104;&amp;#x40;e&amp;#x78;&amp;#97;&amp;#109;&amp;#112;&amp;#108;&amp;#101;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#x6d;\&quot;&gt;&amp;#102;&amp;#x65;li&amp;#x78;&amp;#115;&amp;#109;i&amp;#x74;&amp;#104;&amp;#64;&amp;#101;&amp;#x78;&amp;#97;&amp;#109;&amp;#x70;&amp;#x6c;&amp;#x65;&amp;#x2e;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlement_id\&quot;&gt;&lt;strong&gt;entitlement_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlements\&quot;&gt;&lt;strong&gt;entitlements&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#list\&quot;&gt;&lt;strong&gt;list&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; 
+  /// &lt;p&gt;Creates OBP user.&lt;br /&gt; No authorisation required.&lt;/p&gt; &lt;p&gt;Mimics current webform to Register.&lt;/p&gt; &lt;p&gt;Requires username(email), password, first_name, last_name, and email.&lt;/p&gt; &lt;p&gt;Validation checks performed:&lt;br /&gt; - Password must meet strong password requirements (InvalidStrongPasswordFormat error if not)&lt;br /&gt; - Username must be unique (409 error if username already exists)&lt;br /&gt; - All required fields must be present in valid JSON format&lt;/p&gt; &lt;p&gt;Email validation behavior:&lt;br /&gt; - Controlled by property &#39;authUser.skipEmailValidation&#39; (default: false)&lt;br /&gt; - When false: User is created with validated&#x3D;false and a validation email is sent to the user&#39;s email address&lt;br /&gt; - The validation link is constructed using the &lt;code&gt;portal_external_url&lt;/code&gt; property which must be set&lt;br /&gt; - When true: User is created with validated&#x3D;true and no validation email is sent&lt;br /&gt; - Default entitlements are granted immediately regardless of validation status&lt;/p&gt; &lt;p&gt;Note: If email validation is required (skipEmailValidation&#x3D;false), the user must click the validation link&lt;br /&gt; in the email before they can log in, even though entitlements are already granted.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;email&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;&amp;#109;&amp;#97;i&amp;#108;&amp;#116;&amp;#x6f;:&amp;#102;&amp;#101;&amp;#108;&amp;#x69;&amp;#120;s&amp;#109;ith&amp;#64;&amp;#x65;&amp;#x78;&amp;#x61;m&amp;#x70;le&amp;#46;&amp;#99;&amp;#111;&amp;#109;\&quot;&gt;f&amp;#101;&amp;#108;&amp;#105;&amp;#x78;&amp;#x73;&amp;#x6d;&amp;#x69;&amp;#116;&amp;#104;@&amp;#x65;&amp;#120;a&amp;#x6d;&amp;#x70;l&amp;#101;&amp;#46;&amp;#99;o&amp;#109;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#first_name\&quot;&gt;&lt;strong&gt;first_name&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#last_name\&quot;&gt;&lt;strong&gt;last_name&lt;/strong&gt;&lt;/a&gt;: Smith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;password&lt;/strong&gt;&lt;/a&gt;: passwordpasswordpassword&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;email&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;&amp;#x6d;a&amp;#x69;&amp;#x6c;to:&amp;#x66;&amp;#x65;&amp;#108;i&amp;#120;&amp;#x73;&amp;#109;&amp;#105;&amp;#x74;h&amp;#64;&amp;#101;&amp;#x78;&amp;#x61;m&amp;#112;&amp;#x6c;&amp;#101;&amp;#x2e;c&amp;#111;m\&quot;&gt;f&amp;#101;&amp;#x6c;&amp;#x69;x&amp;#x73;&amp;#x6d;&amp;#105;&amp;#x74;h&amp;#64;e&amp;#x78;&amp;#97;mp&amp;#108;e&amp;#x2e;&amp;#99;o&amp;#x6d;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlement_id\&quot;&gt;&lt;strong&gt;entitlement_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlements\&quot;&gt;&lt;strong&gt;entitlements&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#list\&quot;&gt;&lt;strong&gt;list&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; 
   ///
   /// Parameters:
-  /// * [oBPv600CreateUserRequest] - Request body
+  /// * [createUserRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -148,10 +148,10 @@ class OnboardingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600VerifyUserCredentials200Response] as data
+  /// Returns a [Future] containing a [Response] with a [VerifyUserCredentials200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600VerifyUserCredentials200Response>> oBPv600CreateUser({ 
-    required OBPv600CreateUserRequest oBPv600CreateUserRequest,
+  Future<Response<VerifyUserCredentials200Response>> createUser({ 
+    required CreateUserRequest createUserRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -176,8 +176,8 @@ class OnboardingApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv600CreateUserRequest);
-      _bodyData = _serializers.serialize(oBPv600CreateUserRequest, specifiedType: _type);
+      const _type = FullType(CreateUserRequest);
+      _bodyData = _serializers.serialize(createUserRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -200,14 +200,14 @@ class OnboardingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600VerifyUserCredentials200Response? _responseData;
+    VerifyUserCredentials200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600VerifyUserCredentials200Response),
-      ) as OBPv600VerifyUserCredentials200Response;
+        specifiedType: const FullType(VerifyUserCredentials200Response),
+      ) as VerifyUserCredentials200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -219,7 +219,7 @@ class OnboardingApi {
       );
     }
 
-    return Response<OBPv600VerifyUserCredentials200Response>(
+    return Response<VerifyUserCredentials200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

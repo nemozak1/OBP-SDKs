@@ -4,12 +4,12 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv4_0_0_create_standing_order**](StandingOrderApi.md#o_bpv4_0_0_create_standing_order) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
-[**o_bpv4_0_0_create_standing_order_management**](StandingOrderApi.md#o_bpv4_0_0_create_standing_order_management) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
+[**create_standing_order**](StandingOrderApi.md#create_standing_order) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
+[**create_standing_order_management**](StandingOrderApi.md#create_standing_order_management) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
 
 
-# **o_bpv4_0_0_create_standing_order**
-> OBPv400CreateStandingOrder200Response o_bpv4_0_0_create_standing_order(bankid, accountid, viewid, obpv400_create_standing_order_request)
+# **create_standing_order**
+> CreateStandingOrder200Response create_standing_order(bankid, accountid, viewid, create_standing_order_request)
 
 Create Standing Order
 
@@ -60,8 +60,8 @@ when -&gt; detail = { ‘FIRST_MONDAY’, ‘FIRST_DAY’, ‘LAST_DAY’}}</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_standing_order200_response import OBPv400CreateStandingOrder200Response
-from obp_python.models.obpv400_create_standing_order_request import OBPv400CreateStandingOrderRequest
+from obp_python.models.create_standing_order200_response import CreateStandingOrder200Response
+from obp_python.models.create_standing_order_request import CreateStandingOrderRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -97,15 +97,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
-    obpv400_create_standing_order_request = {"type":"object","properties":{"customer_id":{"type":"string"},"date_signed":{"type":"string","format":"date-time"},"counterparty_id":{"type":"string"},"date_expires":{"type":"string","format":"date-time"},"when":{"type":"object","properties":{"frequency":{"type":"string"},"detail":{"type":"string"}}},"date_starts":{"type":"string","format":"date-time"},"amount":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"user_id":{"type":"string"}}} # OBPv400CreateStandingOrderRequest | Request body
+    create_standing_order_request = {"type":"object","properties":{"customer_id":{"type":"string"},"date_signed":{"type":"string","format":"date-time"},"counterparty_id":{"type":"string"},"date_expires":{"type":"string","format":"date-time"},"when":{"type":"object","properties":{"frequency":{"type":"string"},"detail":{"type":"string"}}},"date_starts":{"type":"string","format":"date-time"},"amount":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"user_id":{"type":"string"}}} # CreateStandingOrderRequest | Request body
 
     try:
         # Create Standing Order
-        api_response = api_instance.o_bpv4_0_0_create_standing_order(bankid, accountid, viewid, obpv400_create_standing_order_request)
-        print("The response of StandingOrderApi->o_bpv4_0_0_create_standing_order:\n")
+        api_response = api_instance.create_standing_order(bankid, accountid, viewid, create_standing_order_request)
+        print("The response of StandingOrderApi->create_standing_order:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling StandingOrderApi->o_bpv4_0_0_create_standing_order: %s\n" % e)
+        print("Exception when calling StandingOrderApi->create_standing_order: %s\n" % e)
 ```
 
 
@@ -118,11 +118,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
- **obpv400_create_standing_order_request** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md)| Request body | 
+ **create_standing_order_request** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 
@@ -143,8 +143,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_create_standing_order_management**
-> OBPv400CreateStandingOrder200Response o_bpv4_0_0_create_standing_order_management(bankid, accountid, obpv400_create_standing_order_request)
+# **create_standing_order_management**
+> CreateStandingOrder200Response create_standing_order_management(bankid, accountid, create_standing_order_request)
 
 Create Standing Order (management)
 
@@ -194,8 +194,8 @@ when -&gt; detail = { ‘FIRST_MONDAY’, ‘FIRST_DAY’, ‘LAST_DAY’}}</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_standing_order200_response import OBPv400CreateStandingOrder200Response
-from obp_python.models.obpv400_create_standing_order_request import OBPv400CreateStandingOrderRequest
+from obp_python.models.create_standing_order200_response import CreateStandingOrder200Response
+from obp_python.models.create_standing_order_request import CreateStandingOrderRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -230,15 +230,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.StandingOrderApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    obpv400_create_standing_order_request = {type=object, properties={customer_id={type=string}, date_signed={type=string, format=date-time}, counterparty_id={type=string}, date_expires={type=string, format=date-time}, when={type=object, properties={frequency={type=string}, detail={type=string}}}, date_starts={type=string, format=date-time}, amount={type=object, properties={currency={type=string}, amount={type=string}}}, user_id={type=string}}} # OBPv400CreateStandingOrderRequest | Request body
+    create_standing_order_request = {type=object, properties={customer_id={type=string}, date_signed={type=string, format=date-time}, counterparty_id={type=string}, date_expires={type=string, format=date-time}, when={type=object, properties={frequency={type=string}, detail={type=string}}}, date_starts={type=string, format=date-time}, amount={type=object, properties={currency={type=string}, amount={type=string}}}, user_id={type=string}}} # CreateStandingOrderRequest | Request body
 
     try:
         # Create Standing Order (management)
-        api_response = api_instance.o_bpv4_0_0_create_standing_order_management(bankid, accountid, obpv400_create_standing_order_request)
-        print("The response of StandingOrderApi->o_bpv4_0_0_create_standing_order_management:\n")
+        api_response = api_instance.create_standing_order_management(bankid, accountid, create_standing_order_request)
+        print("The response of StandingOrderApi->create_standing_order_management:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling StandingOrderApi->o_bpv4_0_0_create_standing_order_management: %s\n" % e)
+        print("Exception when calling StandingOrderApi->create_standing_order_management: %s\n" % e)
 ```
 
 
@@ -250,11 +250,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
- **obpv400_create_standing_order_request** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md)| Request body | 
+ **create_standing_order_request** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 

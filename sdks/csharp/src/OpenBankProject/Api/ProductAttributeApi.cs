@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -39,33 +39,6 @@ namespace OpenBankProject.Api
         ProductAttributeApiEvents Events { get; }
 
         /// <summary>
-        /// Delete Product Attribute
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Delete Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Delete a Product Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;PRODUCT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310DeleteProductAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv310DeleteProductAttributeApiResponse> OBPv310DeleteProductAttributeAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Delete Product Attribute
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Delete Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Delete a Product Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;PRODUCT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310DeleteProductAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv310DeleteProductAttributeApiResponse?> OBPv310DeleteProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
         /// Create or Update Product Attribute Definition
         /// </summary>
         /// <remarks>
@@ -73,10 +46,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse> OBPv400CreateOrUpdateProductAttributeDefinitionAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        Task<ICreateOrUpdateProductAttributeDefinitionApiResponse> CreateOrUpdateProductAttributeDefinitionAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create or Update Product Attribute Definition
@@ -85,10 +58,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse?> OBPv400CreateOrUpdateProductAttributeDefinitionOrDefaultAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateProductAttributeDefinitionApiResponse"/>?&gt;</returns>
+        Task<ICreateOrUpdateProductAttributeDefinitionApiResponse?> CreateOrUpdateProductAttributeDefinitionOrDefaultAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Product Attribute
@@ -99,10 +72,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateProductAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateProductAttributeApiResponse> OBPv400CreateProductAttributeAsync(string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductAttributeApiResponse"/>&gt;</returns>
+        Task<ICreateProductAttributeApiResponse> CreateProductAttributeAsync(string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Product Attribute
@@ -112,10 +85,37 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateProductAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateProductAttributeApiResponse?> OBPv400CreateProductAttributeOrDefaultAsync(string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductAttributeApiResponse"/>?&gt;</returns>
+        Task<ICreateProductAttributeApiResponse?> CreateProductAttributeOrDefaultAsync(string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Delete Product Attribute
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Delete Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Delete a Product Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;PRODUCT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductAttributeApiResponse"/>&gt;</returns>
+        Task<IDeleteProductAttributeApiResponse> DeleteProductAttributeAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Delete Product Attribute
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Delete Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Delete a Product Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;PRODUCT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductAttributeApiResponse"/>?&gt;</returns>
+        Task<IDeleteProductAttributeApiResponse?> DeleteProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Product Attribute Definition
@@ -127,8 +127,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteProductAttributeDefinitionApiResponse> OBPv400DeleteProductAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        Task<IDeleteProductAttributeDefinitionApiResponse> DeleteProductAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Product Attribute Definition
@@ -139,8 +139,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteProductAttributeDefinitionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteProductAttributeDefinitionApiResponse?> OBPv400DeleteProductAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductAttributeDefinitionApiResponse"/>?&gt;</returns>
+        Task<IDeleteProductAttributeDefinitionApiResponse?> DeleteProductAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Product Attribute
@@ -153,8 +153,8 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetProductAttributeApiResponse> OBPv400GetProductAttributeAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductAttributeApiResponse"/>&gt;</returns>
+        Task<IGetProductAttributeApiResponse> GetProductAttributeAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Product Attribute
@@ -166,8 +166,8 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetProductAttributeApiResponse?> OBPv400GetProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductAttributeApiResponse"/>?&gt;</returns>
+        Task<IGetProductAttributeApiResponse?> GetProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Product Attribute Definition
@@ -178,8 +178,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetProductAttributeDefinitionApiResponse> OBPv400GetProductAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        Task<IGetProductAttributeDefinitionApiResponse> GetProductAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Product Attribute Definition
@@ -189,8 +189,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductAttributeDefinitionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetProductAttributeDefinitionApiResponse?> OBPv400GetProductAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductAttributeDefinitionApiResponse"/>?&gt;</returns>
+        Task<IGetProductAttributeDefinitionApiResponse?> GetProductAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Product Attribute
@@ -202,10 +202,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateProductAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv400UpdateProductAttributeApiResponse> OBPv400UpdateProductAttributeAsync(string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateProductAttributeApiResponse"/>&gt;</returns>
+        Task<IUpdateProductAttributeApiResponse> UpdateProductAttributeAsync(string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Product Attribute
@@ -216,10 +216,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateProductAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400UpdateProductAttributeApiResponse?> OBPv400UpdateProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateProductAttributeApiResponse"/>?&gt;</returns>
+        Task<IUpdateProductAttributeApiResponse?> UpdateProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -230,141 +230,141 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310DeleteProductAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateOrUpdateProductAttributeDefinition;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310DeleteProductAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateOrUpdateProductAttributeDefinition;
 
-        internal void ExecuteOnOBPv310DeleteProductAttribute(AttributeApi.OBPv310DeleteProductAttributeApiResponse apiResponse)
+        internal void ExecuteOnCreateOrUpdateProductAttributeDefinition(AttributeApi.CreateOrUpdateProductAttributeDefinitionApiResponse apiResponse)
         {
-            OnOBPv310DeleteProductAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateOrUpdateProductAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310DeleteProductAttribute(Exception exception)
+        internal void ExecuteOnErrorCreateOrUpdateProductAttributeDefinition(Exception exception)
         {
-            OnErrorOBPv310DeleteProductAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateOrUpdateProductAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateOrUpdateProductAttributeDefinition;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateProductAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateOrUpdateProductAttributeDefinition;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateProductAttribute;
 
-        internal void ExecuteOnOBPv400CreateOrUpdateProductAttributeDefinition(AttributeApi.OBPv400CreateOrUpdateProductAttributeDefinitionApiResponse apiResponse)
+        internal void ExecuteOnCreateProductAttribute(AttributeApi.CreateProductAttributeApiResponse apiResponse)
         {
-            OnOBPv400CreateOrUpdateProductAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateProductAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateOrUpdateProductAttributeDefinition(Exception exception)
+        internal void ExecuteOnErrorCreateProductAttribute(Exception exception)
         {
-            OnErrorOBPv400CreateOrUpdateProductAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateProductAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateProductAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteProductAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateProductAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteProductAttribute;
 
-        internal void ExecuteOnOBPv400CreateProductAttribute(AttributeApi.OBPv400CreateProductAttributeApiResponse apiResponse)
+        internal void ExecuteOnDeleteProductAttribute(AttributeApi.DeleteProductAttributeApiResponse apiResponse)
         {
-            OnOBPv400CreateProductAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteProductAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateProductAttribute(Exception exception)
+        internal void ExecuteOnErrorDeleteProductAttribute(Exception exception)
         {
-            OnErrorOBPv400CreateProductAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteProductAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteProductAttributeDefinition;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteProductAttributeDefinition;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteProductAttributeDefinition;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteProductAttributeDefinition;
 
-        internal void ExecuteOnOBPv400DeleteProductAttributeDefinition(AttributeApi.OBPv400DeleteProductAttributeDefinitionApiResponse apiResponse)
+        internal void ExecuteOnDeleteProductAttributeDefinition(AttributeApi.DeleteProductAttributeDefinitionApiResponse apiResponse)
         {
-            OnOBPv400DeleteProductAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteProductAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteProductAttributeDefinition(Exception exception)
+        internal void ExecuteOnErrorDeleteProductAttributeDefinition(Exception exception)
         {
-            OnErrorOBPv400DeleteProductAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteProductAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetProductAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnGetProductAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetProductAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetProductAttribute;
 
-        internal void ExecuteOnOBPv400GetProductAttribute(AttributeApi.OBPv400GetProductAttributeApiResponse apiResponse)
+        internal void ExecuteOnGetProductAttribute(AttributeApi.GetProductAttributeApiResponse apiResponse)
         {
-            OnOBPv400GetProductAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetProductAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetProductAttribute(Exception exception)
+        internal void ExecuteOnErrorGetProductAttribute(Exception exception)
         {
-            OnErrorOBPv400GetProductAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetProductAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetProductAttributeDefinition;
+        public event EventHandler<ApiResponseEventArgs>? OnGetProductAttributeDefinition;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetProductAttributeDefinition;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetProductAttributeDefinition;
 
-        internal void ExecuteOnOBPv400GetProductAttributeDefinition(AttributeApi.OBPv400GetProductAttributeDefinitionApiResponse apiResponse)
+        internal void ExecuteOnGetProductAttributeDefinition(AttributeApi.GetProductAttributeDefinitionApiResponse apiResponse)
         {
-            OnOBPv400GetProductAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetProductAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetProductAttributeDefinition(Exception exception)
+        internal void ExecuteOnErrorGetProductAttributeDefinition(Exception exception)
         {
-            OnErrorOBPv400GetProductAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetProductAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400UpdateProductAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateProductAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400UpdateProductAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateProductAttribute;
 
-        internal void ExecuteOnOBPv400UpdateProductAttribute(AttributeApi.OBPv400UpdateProductAttributeApiResponse apiResponse)
+        internal void ExecuteOnUpdateProductAttribute(AttributeApi.UpdateProductAttributeApiResponse apiResponse)
         {
-            OnOBPv400UpdateProductAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateProductAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400UpdateProductAttribute(Exception exception)
+        internal void ExecuteOnErrorUpdateProductAttribute(Exception exception)
         {
-            OnErrorOBPv400UpdateProductAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateProductAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -422,25 +422,21 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv310DeleteProductAttribute(ref string bankid, ref string productcode, ref string productattributeid);
+        partial void FormatCreateOrUpdateProductAttributeDefinition(ref string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="productattributeid"></param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv310DeleteProductAttribute(string bankid, string productcode, string productattributeid)
+        private void ValidateCreateOrUpdateProductAttributeDefinition(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
 
-            if (productcode == null)
-                throw new ArgumentNullException(nameof(productcode));
-
-            if (productattributeid == null)
-                throw new ArgumentNullException(nameof(productattributeid));
+            if (createOrUpdateTransactionRequestAttributeDefinitionRequest == null)
+                throw new ArgumentNullException(nameof(createOrUpdateTransactionRequestAttributeDefinitionRequest));
         }
 
         /// <summary>
@@ -448,12 +444,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="productattributeid"></param>
-        private void AfterOBPv310DeleteProductAttributeDefaultImplementation(IOBPv310DeleteProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid)
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        private void AfterCreateOrUpdateProductAttributeDefinitionDefaultImplementation(ICreateOrUpdateProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv310DeleteProductAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productattributeid);
+            AfterCreateOrUpdateProductAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -464,9 +459,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="productattributeid"></param>
-        partial void AfterOBPv310DeleteProductAttribute(ref bool suppressDefaultLog, IOBPv310DeleteProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid);
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        partial void AfterCreateOrUpdateProductAttributeDefinition(ref bool suppressDefaultLog, ICreateOrUpdateProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -475,12 +469,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="productattributeid"></param>
-        private void OnErrorOBPv310DeleteProductAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid)
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        private void OnErrorCreateOrUpdateProductAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310DeleteProductAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productattributeid);
+            OnErrorCreateOrUpdateProductAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -493,195 +486,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="productattributeid"></param>
-        partial void OnErrorOBPv310DeleteProductAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid);
-
-        /// <summary>
-        /// Delete Product Attribute &lt;p&gt;Delete Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Delete a Product Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;PRODUCT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310DeleteProductAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310DeleteProductAttributeApiResponse?> OBPv310DeleteProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv310DeleteProductAttributeAsync(bankid, productcode, productattributeid, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Delete Product Attribute &lt;p&gt;Delete Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Delete a Product Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;PRODUCT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310DeleteProductAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310DeleteProductAttributeApiResponse> OBPv310DeleteProductAttributeAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv310DeleteProductAttribute(bankid, productcode, productattributeid);
-
-                FormatOBPv310DeleteProductAttribute(ref bankid, ref productcode, ref productattributeid);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductcode%7D", Uri.EscapeDataString(productcode.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductattributeid%7D", Uri.EscapeDataString(productattributeid.ToString()));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Delete;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<AttributeApi.OBPv310DeleteProductAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv310DeleteProductAttributeApiResponse>();
-                        AttributeApi.OBPv310DeleteProductAttributeApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv310DeleteProductAttributeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productattributeid);
-
-                        Events.ExecuteOnOBPv310DeleteProductAttribute(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv310DeleteProductAttributeDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}", uriBuilderLocalVar.Path, bankid, productcode, productattributeid);
-                Events.ExecuteOnErrorOBPv310DeleteProductAttribute(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv400CreateOrUpdateProductAttributeDefinition(ref string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400CreateOrUpdateProductAttributeDefinition(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        private void AfterOBPv400CreateOrUpdateProductAttributeDefinitionDefaultImplementation(IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400CreateOrUpdateProductAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        partial void AfterOBPv400CreateOrUpdateProductAttributeDefinition(ref bool suppressDefaultLog, IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        private void OnErrorOBPv400CreateOrUpdateProductAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateOrUpdateProductAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        partial void OnErrorOBPv400CreateOrUpdateProductAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        partial void OnErrorCreateOrUpdateProductAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
         /// <summary>
         /// Create or Update Product Attribute Definition &lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse?> OBPv400CreateOrUpdateProductAttributeDefinitionOrDefaultAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<ICreateOrUpdateProductAttributeDefinitionApiResponse?> CreateOrUpdateProductAttributeDefinitionOrDefaultAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateOrUpdateProductAttributeDefinitionAsync(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateOrUpdateProductAttributeDefinitionAsync(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -694,18 +513,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse> OBPv400CreateOrUpdateProductAttributeDefinitionAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<ICreateOrUpdateProductAttributeDefinitionApiResponse> CreateOrUpdateProductAttributeDefinitionAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateOrUpdateProductAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+                ValidateCreateOrUpdateProductAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
-                FormatOBPv400CreateOrUpdateProductAttributeDefinition(ref bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+                FormatCreateOrUpdateProductAttributeDefinition(ref bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -717,16 +536,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createOrUpdateTransactionRequestAttributeDefinitionRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createOrUpdateTransactionRequestAttributeDefinitionRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -762,8 +581,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400CreateOrUpdateProductAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400CreateOrUpdateProductAttributeDefinitionApiResponse>();
-                        AttributeApi.OBPv400CreateOrUpdateProductAttributeDefinitionApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.CreateOrUpdateProductAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.CreateOrUpdateProductAttributeDefinitionApiResponse>();
+                        AttributeApi.CreateOrUpdateProductAttributeDefinitionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -774,9 +593,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateOrUpdateProductAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+                        AfterCreateOrUpdateProductAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
-                        Events.ExecuteOnOBPv400CreateOrUpdateProductAttributeDefinition(apiResponseLocalVar);
+                        Events.ExecuteOnCreateOrUpdateProductAttributeDefinition(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -788,22 +607,22 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateOrUpdateProductAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product", uriBuilderLocalVar.Path, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-                Events.ExecuteOnErrorOBPv400CreateOrUpdateProductAttributeDefinition(e);
+                OnErrorCreateOrUpdateProductAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product", uriBuilderLocalVar.Path, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
+                Events.ExecuteOnErrorCreateOrUpdateProductAttributeDefinition(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400CreateProductAttribute(ref string bankid, ref string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        partial void FormatCreateProductAttribute(ref string bankid, ref string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateProductAttribute(string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        private void ValidateCreateProductAttribute(string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -811,8 +630,8 @@ namespace OpenBankProject.Api
             if (productcode == null)
                 throw new ArgumentNullException(nameof(productcode));
 
-            if (oBPv510UpdateAtmAttributeRequest == null)
-                throw new ArgumentNullException(nameof(oBPv510UpdateAtmAttributeRequest));
+            if (updateAtmAttributeRequest == null)
+                throw new ArgumentNullException(nameof(updateAtmAttributeRequest));
         }
 
         /// <summary>
@@ -821,11 +640,11 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        private void AfterOBPv400CreateProductAttributeDefaultImplementation(IOBPv400CreateProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        /// <param name="updateAtmAttributeRequest"></param>
+        private void AfterCreateProductAttributeDefaultImplementation(ICreateProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateProductAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, oBPv510UpdateAtmAttributeRequest);
+            AfterCreateProductAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, updateAtmAttributeRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -837,8 +656,8 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        partial void AfterOBPv400CreateProductAttribute(ref bool suppressDefaultLog, IOBPv400CreateProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        /// <param name="updateAtmAttributeRequest"></param>
+        partial void AfterCreateProductAttribute(ref bool suppressDefaultLog, ICreateProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -848,11 +667,11 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        private void OnErrorOBPv400CreateProductAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        /// <param name="updateAtmAttributeRequest"></param>
+        private void OnErrorCreateProductAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateProductAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, oBPv510UpdateAtmAttributeRequest);
+            OnErrorCreateProductAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, updateAtmAttributeRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -866,22 +685,22 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        partial void OnErrorOBPv400CreateProductAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        /// <param name="updateAtmAttributeRequest"></param>
+        partial void OnErrorCreateProductAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
         /// Create Product Attribute &lt;p&gt;Create Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateProductAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateProductAttributeApiResponse?> OBPv400CreateProductAttributeOrDefaultAsync(string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductAttributeApiResponse"/>&gt;</returns>
+        public async Task<ICreateProductAttributeApiResponse?> CreateProductAttributeOrDefaultAsync(string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateProductAttributeAsync(bankid, productcode, oBPv510UpdateAtmAttributeRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateProductAttributeAsync(bankid, productcode, updateAtmAttributeRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -895,18 +714,18 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateProductAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateProductAttributeApiResponse> OBPv400CreateProductAttributeAsync(string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductAttributeApiResponse"/>&gt;</returns>
+        public async Task<ICreateProductAttributeApiResponse> CreateProductAttributeAsync(string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateProductAttribute(bankid, productcode, oBPv510UpdateAtmAttributeRequest);
+                ValidateCreateProductAttribute(bankid, productcode, updateAtmAttributeRequest);
 
-                FormatOBPv400CreateProductAttribute(ref bankid, ref productcode, oBPv510UpdateAtmAttributeRequest);
+                FormatCreateProductAttribute(ref bankid, ref productcode, updateAtmAttributeRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -919,16 +738,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductcode%7D", Uri.EscapeDataString(productcode.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv510UpdateAtmAttributeRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateAtmAttributeRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv510UpdateAtmAttributeRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateAtmAttributeRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -964,8 +783,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400CreateProductAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400CreateProductAttributeApiResponse>();
-                        AttributeApi.OBPv400CreateProductAttributeApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.CreateProductAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.CreateProductAttributeApiResponse>();
+                        AttributeApi.CreateProductAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -976,9 +795,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateProductAttributeDefaultImplementation(apiResponseLocalVar, bankid, productcode, oBPv510UpdateAtmAttributeRequest);
+                        AfterCreateProductAttributeDefaultImplementation(apiResponseLocalVar, bankid, productcode, updateAtmAttributeRequest);
 
-                        Events.ExecuteOnOBPv400CreateProductAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnCreateProductAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -990,27 +809,31 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateProductAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute", uriBuilderLocalVar.Path, bankid, productcode, oBPv510UpdateAtmAttributeRequest);
-                Events.ExecuteOnErrorOBPv400CreateProductAttribute(e);
+                OnErrorCreateProductAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute", uriBuilderLocalVar.Path, bankid, productcode, updateAtmAttributeRequest);
+                Events.ExecuteOnErrorCreateProductAttribute(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400DeleteProductAttributeDefinition(ref string bankid, ref string attributedefinitionid);
+        partial void FormatDeleteProductAttribute(ref string bankid, ref string productcode, ref string productattributeid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
-        /// <param name="attributedefinitionid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="productattributeid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteProductAttributeDefinition(string bankid, string attributedefinitionid)
+        private void ValidateDeleteProductAttribute(string bankid, string productcode, string productattributeid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
 
-            if (attributedefinitionid == null)
-                throw new ArgumentNullException(nameof(attributedefinitionid));
+            if (productcode == null)
+                throw new ArgumentNullException(nameof(productcode));
+
+            if (productattributeid == null)
+                throw new ArgumentNullException(nameof(productattributeid));
         }
 
         /// <summary>
@@ -1018,11 +841,12 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="attributedefinitionid"></param>
-        private void AfterOBPv400DeleteProductAttributeDefinitionDefaultImplementation(IOBPv400DeleteProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid)
+        /// <param name="productcode"></param>
+        /// <param name="productattributeid"></param>
+        private void AfterDeleteProductAttributeDefaultImplementation(IDeleteProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteProductAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, attributedefinitionid);
+            AfterDeleteProductAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productattributeid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1033,8 +857,9 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="attributedefinitionid"></param>
-        partial void AfterOBPv400DeleteProductAttributeDefinition(ref bool suppressDefaultLog, IOBPv400DeleteProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid);
+        /// <param name="productcode"></param>
+        /// <param name="productattributeid"></param>
+        partial void AfterDeleteProductAttribute(ref bool suppressDefaultLog, IDeleteProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1043,11 +868,12 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="attributedefinitionid"></param>
-        private void OnErrorOBPv400DeleteProductAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid)
+        /// <param name="productcode"></param>
+        /// <param name="productattributeid"></param>
+        private void OnErrorDeleteProductAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteProductAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, attributedefinitionid);
+            OnErrorDeleteProductAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productattributeid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1060,21 +886,23 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="attributedefinitionid"></param>
-        partial void OnErrorOBPv400DeleteProductAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid);
+        /// <param name="productcode"></param>
+        /// <param name="productattributeid"></param>
+        partial void OnErrorDeleteProductAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid);
 
         /// <summary>
-        /// Delete Product Attribute Definition &lt;p&gt;Delete Product Attribute Definition by ATTRIBUTE_DEFINITION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;ATTRIBUTE_DEFINITION_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// Delete Product Attribute &lt;p&gt;Delete Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Delete a Product Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;PRODUCT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteProductAttributeDefinitionApiResponse?> OBPv400DeleteProductAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductAttributeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteProductAttributeApiResponse?> DeleteProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteProductAttributeDefinitionAsync(bankid, attributedefinitionid, cancellationToken).ConfigureAwait(false);
+                return await DeleteProductAttributeAsync(bankid, productcode, productattributeid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1083,22 +911,23 @@ namespace OpenBankProject.Api
         }
 
         /// <summary>
-        /// Delete Product Attribute Definition &lt;p&gt;Delete Product Attribute Definition by ATTRIBUTE_DEFINITION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;ATTRIBUTE_DEFINITION_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// Delete Product Attribute &lt;p&gt;Delete Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Delete a Product Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;PRODUCT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteProductAttributeDefinitionApiResponse> OBPv400DeleteProductAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductAttributeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteProductAttributeApiResponse> DeleteProductAttributeAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteProductAttributeDefinition(bankid, attributedefinitionid);
+                ValidateDeleteProductAttribute(bankid, productcode, productattributeid);
 
-                FormatOBPv400DeleteProductAttributeDefinition(ref bankid, ref attributedefinitionid);
+                FormatDeleteProductAttribute(ref bankid, ref productcode, ref productattributeid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1106,17 +935,18 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product");
+                        ? "/obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Battributedefinitionid%7D", Uri.EscapeDataString(attributedefinitionid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductcode%7D", Uri.EscapeDataString(productcode.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductattributeid%7D", Uri.EscapeDataString(productattributeid.ToString()));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1134,21 +964,21 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400DeleteProductAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400DeleteProductAttributeDefinitionApiResponse>();
-                        AttributeApi.OBPv400DeleteProductAttributeDefinitionApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.DeleteProductAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.DeleteProductAttributeApiResponse>();
+                        AttributeApi.DeleteProductAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
                         }
 
-                        AfterOBPv400DeleteProductAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, attributedefinitionid);
+                        AfterDeleteProductAttributeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productattributeid);
 
-                        Events.ExecuteOnOBPv400DeleteProductAttributeDefinition(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteProductAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1160,13 +990,183 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteProductAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product", uriBuilderLocalVar.Path, bankid, attributedefinitionid);
-                Events.ExecuteOnErrorOBPv400DeleteProductAttributeDefinition(e);
+                OnErrorDeleteProductAttributeDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}", uriBuilderLocalVar.Path, bankid, productcode, productattributeid);
+                Events.ExecuteOnErrorDeleteProductAttribute(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400GetProductAttribute(ref string bankid, ref string productcode, ref string productattributeid);
+        partial void FormatDeleteProductAttributeDefinition(ref string bankid, ref string attributedefinitionid);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="attributedefinitionid"></param>
+        /// <returns></returns>
+        private void ValidateDeleteProductAttributeDefinition(string bankid, string attributedefinitionid)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (attributedefinitionid == null)
+                throw new ArgumentNullException(nameof(attributedefinitionid));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="attributedefinitionid"></param>
+        private void AfterDeleteProductAttributeDefinitionDefaultImplementation(IDeleteProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid)
+        {
+            bool suppressDefaultLog = false;
+            AfterDeleteProductAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, attributedefinitionid);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="attributedefinitionid"></param>
+        partial void AfterDeleteProductAttributeDefinition(ref bool suppressDefaultLog, IDeleteProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="attributedefinitionid"></param>
+        private void OnErrorDeleteProductAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorDeleteProductAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, attributedefinitionid);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="attributedefinitionid"></param>
+        partial void OnErrorDeleteProductAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid);
+
+        /// <summary>
+        /// Delete Product Attribute Definition &lt;p&gt;Delete Product Attribute Definition by ATTRIBUTE_DEFINITION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;ATTRIBUTE_DEFINITION_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteProductAttributeDefinitionApiResponse?> DeleteProductAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await DeleteProductAttributeDefinitionAsync(bankid, attributedefinitionid, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Delete Product Attribute Definition &lt;p&gt;Delete Product Attribute Definition by ATTRIBUTE_DEFINITION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;ATTRIBUTE_DEFINITION_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteProductAttributeDefinitionApiResponse> DeleteProductAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateDeleteProductAttributeDefinition(bankid, attributedefinitionid);
+
+                FormatDeleteProductAttributeDefinition(ref bankid, ref attributedefinitionid);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Battributedefinitionid%7D", Uri.EscapeDataString(attributedefinitionid.ToString()));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Delete;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<AttributeApi.DeleteProductAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.DeleteProductAttributeDefinitionApiResponse>();
+                        AttributeApi.DeleteProductAttributeDefinitionApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterDeleteProductAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, attributedefinitionid);
+
+                        Events.ExecuteOnDeleteProductAttributeDefinition(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorDeleteProductAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product", uriBuilderLocalVar.Path, bankid, attributedefinitionid);
+                Events.ExecuteOnErrorDeleteProductAttributeDefinition(e);
+                throw;
+            }
+        }
+
+        partial void FormatGetProductAttribute(ref string bankid, ref string productcode, ref string productattributeid);
 
         /// <summary>
         /// Validates the request parameters
@@ -1175,7 +1175,7 @@ namespace OpenBankProject.Api
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetProductAttribute(string bankid, string productcode, string productattributeid)
+        private void ValidateGetProductAttribute(string bankid, string productcode, string productattributeid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1194,10 +1194,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        private void AfterOBPv400GetProductAttributeDefaultImplementation(IOBPv400GetProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid)
+        private void AfterGetProductAttributeDefaultImplementation(IGetProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetProductAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productattributeid);
+            AfterGetProductAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productattributeid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1210,7 +1210,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        partial void AfterOBPv400GetProductAttribute(ref bool suppressDefaultLog, IOBPv400GetProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid);
+        partial void AfterGetProductAttribute(ref bool suppressDefaultLog, IGetProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1221,10 +1221,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        private void OnErrorOBPv400GetProductAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid)
+        private void OnErrorGetProductAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetProductAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productattributeid);
+            OnErrorGetProductAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productattributeid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1239,7 +1239,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        partial void OnErrorOBPv400GetProductAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid);
+        partial void OnErrorGetProductAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid);
 
         /// <summary>
         /// Get Product Attribute &lt;p&gt;Get Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Get one product attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;PRODUCT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
@@ -1248,12 +1248,12 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetProductAttributeApiResponse?> OBPv400GetProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductAttributeApiResponse"/>&gt;</returns>
+        public async Task<IGetProductAttributeApiResponse?> GetProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetProductAttributeAsync(bankid, productcode, productattributeid, cancellationToken).ConfigureAwait(false);
+                return await GetProductAttributeAsync(bankid, productcode, productattributeid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1269,16 +1269,16 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetProductAttributeApiResponse> OBPv400GetProductAttributeAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductAttributeApiResponse"/>&gt;</returns>
+        public async Task<IGetProductAttributeApiResponse> GetProductAttributeAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetProductAttribute(bankid, productcode, productattributeid);
+                ValidateGetProductAttribute(bankid, productcode, productattributeid);
 
-                FormatOBPv400GetProductAttribute(ref bankid, ref productcode, ref productattributeid);
+                FormatGetProductAttribute(ref bankid, ref productcode, ref productattributeid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1297,7 +1297,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1324,8 +1324,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400GetProductAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400GetProductAttributeApiResponse>();
-                        AttributeApi.OBPv400GetProductAttributeApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.GetProductAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.GetProductAttributeApiResponse>();
+                        AttributeApi.GetProductAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1336,9 +1336,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetProductAttributeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productattributeid);
+                        AfterGetProductAttributeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productattributeid);
 
-                        Events.ExecuteOnOBPv400GetProductAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnGetProductAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1350,20 +1350,20 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetProductAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}", uriBuilderLocalVar.Path, bankid, productcode, productattributeid);
-                Events.ExecuteOnErrorOBPv400GetProductAttribute(e);
+                OnErrorGetProductAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}", uriBuilderLocalVar.Path, bankid, productcode, productattributeid);
+                Events.ExecuteOnErrorGetProductAttribute(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400GetProductAttributeDefinition(ref string bankid);
+        partial void FormatGetProductAttributeDefinition(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetProductAttributeDefinition(string bankid)
+        private void ValidateGetProductAttributeDefinition(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1374,10 +1374,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv400GetProductAttributeDefinitionDefaultImplementation(IOBPv400GetProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid)
+        private void AfterGetProductAttributeDefinitionDefaultImplementation(IGetProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetProductAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterGetProductAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1388,7 +1388,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv400GetProductAttributeDefinition(ref bool suppressDefaultLog, IOBPv400GetProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid);
+        partial void AfterGetProductAttributeDefinition(ref bool suppressDefaultLog, IGetProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1397,10 +1397,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv400GetProductAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        private void OnErrorGetProductAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetProductAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorGetProductAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1413,19 +1413,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv400GetProductAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        partial void OnErrorGetProductAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Get Product Attribute Definition &lt;p&gt;Get Product Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetProductAttributeDefinitionApiResponse?> OBPv400GetProductAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IGetProductAttributeDefinitionApiResponse?> GetProductAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetProductAttributeDefinitionAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await GetProductAttributeDefinitionAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1439,16 +1439,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetProductAttributeDefinitionApiResponse> OBPv400GetProductAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IGetProductAttributeDefinitionApiResponse> GetProductAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetProductAttributeDefinition(bankid);
+                ValidateGetProductAttributeDefinition(bankid);
 
-                FormatOBPv400GetProductAttributeDefinition(ref bankid);
+                FormatGetProductAttributeDefinition(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1465,7 +1465,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1492,8 +1492,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400GetProductAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400GetProductAttributeDefinitionApiResponse>();
-                        AttributeApi.OBPv400GetProductAttributeDefinitionApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.GetProductAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.GetProductAttributeDefinitionApiResponse>();
+                        AttributeApi.GetProductAttributeDefinitionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1504,9 +1504,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetProductAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterGetProductAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv400GetProductAttributeDefinition(apiResponseLocalVar);
+                        Events.ExecuteOnGetProductAttributeDefinition(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1518,13 +1518,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetProductAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv400GetProductAttributeDefinition(e);
+                OnErrorGetProductAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetProductAttributeDefinition(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400UpdateProductAttribute(ref string bankid, ref string productcode, ref string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        partial void FormatUpdateProductAttribute(ref string bankid, ref string productcode, ref string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -1532,9 +1532,9 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400UpdateProductAttribute(string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        private void ValidateUpdateProductAttribute(string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1545,8 +1545,8 @@ namespace OpenBankProject.Api
             if (productattributeid == null)
                 throw new ArgumentNullException(nameof(productattributeid));
 
-            if (oBPv510UpdateAtmAttributeRequest == null)
-                throw new ArgumentNullException(nameof(oBPv510UpdateAtmAttributeRequest));
+            if (updateAtmAttributeRequest == null)
+                throw new ArgumentNullException(nameof(updateAtmAttributeRequest));
         }
 
         /// <summary>
@@ -1556,11 +1556,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        private void AfterOBPv400UpdateProductAttributeDefaultImplementation(IOBPv400UpdateProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        /// <param name="updateAtmAttributeRequest"></param>
+        private void AfterUpdateProductAttributeDefaultImplementation(IUpdateProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400UpdateProductAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productattributeid, oBPv510UpdateAtmAttributeRequest);
+            AfterUpdateProductAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productattributeid, updateAtmAttributeRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1573,8 +1573,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        partial void AfterOBPv400UpdateProductAttribute(ref bool suppressDefaultLog, IOBPv400UpdateProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        /// <param name="updateAtmAttributeRequest"></param>
+        partial void AfterUpdateProductAttribute(ref bool suppressDefaultLog, IUpdateProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1585,11 +1585,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        private void OnErrorOBPv400UpdateProductAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        /// <param name="updateAtmAttributeRequest"></param>
+        private void OnErrorUpdateProductAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400UpdateProductAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productattributeid, oBPv510UpdateAtmAttributeRequest);
+            OnErrorUpdateProductAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productattributeid, updateAtmAttributeRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1604,8 +1604,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        partial void OnErrorOBPv400UpdateProductAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        /// <param name="updateAtmAttributeRequest"></param>
+        partial void OnErrorUpdateProductAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
         /// Update Product Attribute &lt;p&gt;Update Product Attribute.&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Update one Product Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;PRODUCT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
@@ -1613,14 +1613,14 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateProductAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateProductAttributeApiResponse?> OBPv400UpdateProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateProductAttributeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateProductAttributeApiResponse?> UpdateProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400UpdateProductAttributeAsync(bankid, productcode, productattributeid, oBPv510UpdateAtmAttributeRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateProductAttributeAsync(bankid, productcode, productattributeid, updateAtmAttributeRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1635,18 +1635,18 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateProductAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateProductAttributeApiResponse> OBPv400UpdateProductAttributeAsync(string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateProductAttributeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateProductAttributeApiResponse> UpdateProductAttributeAsync(string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400UpdateProductAttribute(bankid, productcode, productattributeid, oBPv510UpdateAtmAttributeRequest);
+                ValidateUpdateProductAttribute(bankid, productcode, productattributeid, updateAtmAttributeRequest);
 
-                FormatOBPv400UpdateProductAttribute(ref bankid, ref productcode, ref productattributeid, oBPv510UpdateAtmAttributeRequest);
+                FormatUpdateProductAttribute(ref bankid, ref productcode, ref productattributeid, updateAtmAttributeRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1660,16 +1660,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductcode%7D", Uri.EscapeDataString(productcode.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductattributeid%7D", Uri.EscapeDataString(productattributeid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv510UpdateAtmAttributeRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateAtmAttributeRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv510UpdateAtmAttributeRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateAtmAttributeRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1705,8 +1705,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400UpdateProductAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400UpdateProductAttributeApiResponse>();
-                        AttributeApi.OBPv400UpdateProductAttributeApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.UpdateProductAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.UpdateProductAttributeApiResponse>();
+                        AttributeApi.UpdateProductAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1717,9 +1717,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400UpdateProductAttributeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productattributeid, oBPv510UpdateAtmAttributeRequest);
+                        AfterUpdateProductAttributeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productattributeid, updateAtmAttributeRequest);
 
-                        Events.ExecuteOnOBPv400UpdateProductAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateProductAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1731,8 +1731,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400UpdateProductAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}", uriBuilderLocalVar.Path, bankid, productcode, productattributeid, oBPv510UpdateAtmAttributeRequest);
-                Events.ExecuteOnErrorOBPv400UpdateProductAttribute(e);
+                OnErrorUpdateProductAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}", uriBuilderLocalVar.Path, bankid, productcode, productattributeid, updateAtmAttributeRequest);
+                Events.ExecuteOnErrorUpdateProductAttribute(e);
                 throw;
             }
         }

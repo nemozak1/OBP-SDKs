@@ -1,23 +1,23 @@
 # OidcApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv310GetOAuth2ServerJWKsURIs**](OidcApi.md#oBPv310GetOAuth2ServerJWKsURIs) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs |
-| [**oBPv310GetOAuth2ServerJWKsURIsWithHttpInfo**](OidcApi.md#oBPv310GetOAuth2ServerJWKsURIsWithHttpInfo) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs |
-| [**oBPv310GetObpConnectorLoopback**](OidcApi.md#oBPv310GetObpConnectorLoopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback) |
-| [**oBPv310GetObpConnectorLoopbackWithHttpInfo**](OidcApi.md#oBPv310GetObpConnectorLoopbackWithHttpInfo) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback) |
-| [**oBPv600GetOidcClient**](OidcApi.md#oBPv600GetOidcClient) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client |
-| [**oBPv600GetOidcClientWithHttpInfo**](OidcApi.md#oBPv600GetOidcClientWithHttpInfo) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client |
-| [**oBPv600VerifyOidcClient**](OidcApi.md#oBPv600VerifyOidcClient) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client |
-| [**oBPv600VerifyOidcClientWithHttpInfo**](OidcApi.md#oBPv600VerifyOidcClientWithHttpInfo) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client |
+| [**getOAuth2ServerJWKsURIs**](OidcApi.md#getOAuth2ServerJWKsURIs) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs |
+| [**getOAuth2ServerJWKsURIsWithHttpInfo**](OidcApi.md#getOAuth2ServerJWKsURIsWithHttpInfo) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs |
+| [**getObpConnectorLoopback**](OidcApi.md#getObpConnectorLoopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback) |
+| [**getObpConnectorLoopbackWithHttpInfo**](OidcApi.md#getObpConnectorLoopbackWithHttpInfo) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback) |
+| [**getOidcClient**](OidcApi.md#getOidcClient) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client |
+| [**getOidcClientWithHttpInfo**](OidcApi.md#getOidcClientWithHttpInfo) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client |
+| [**verifyOidcClient**](OidcApi.md#verifyOidcClient) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client |
+| [**verifyOidcClientWithHttpInfo**](OidcApi.md#verifyOidcClientWithHttpInfo) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client |
 
 
 
-## oBPv310GetOAuth2ServerJWKsURIs
+## getOAuth2ServerJWKsURIs
 
-> OBPv310GetOAuth2ServerJWKsURIs200Response oBPv310GetOAuth2ServerJWKsURIs()
+> GetOAuth2ServerJWKsURIs200Response getOAuth2ServerJWKsURIs()
 
 Get JSON Web Key (JWK) URIs
 
@@ -36,14 +36,14 @@ import com.openbankproject.api.OidcApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         OidcApi apiInstance = new OidcApi(defaultClient);
         try {
-            OBPv310GetOAuth2ServerJWKsURIs200Response result = apiInstance.oBPv310GetOAuth2ServerJWKsURIs();
+            GetOAuth2ServerJWKsURIs200Response result = apiInstance.getOAuth2ServerJWKsURIs();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling OidcApi#oBPv310GetOAuth2ServerJWKsURIs");
+            System.err.println("Exception when calling OidcApi#getOAuth2ServerJWKsURIs");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -59,7 +59,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv310GetOAuth2ServerJWKsURIs200Response**](OBPv310GetOAuth2ServerJWKsURIs200Response.md)
+[**GetOAuth2ServerJWKsURIs200Response**](GetOAuth2ServerJWKsURIs200Response.md)
 
 
 ### Authorization
@@ -77,9 +77,9 @@ No authorization required
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv310GetOAuth2ServerJWKsURIsWithHttpInfo
+## getOAuth2ServerJWKsURIsWithHttpInfo
 
-> ApiResponse<OBPv310GetOAuth2ServerJWKsURIs200Response> oBPv310GetOAuth2ServerJWKsURIs oBPv310GetOAuth2ServerJWKsURIsWithHttpInfo()
+> ApiResponse<GetOAuth2ServerJWKsURIs200Response> getOAuth2ServerJWKsURIs getOAuth2ServerJWKsURIsWithHttpInfo()
 
 Get JSON Web Key (JWK) URIs
 
@@ -99,16 +99,16 @@ import com.openbankproject.api.OidcApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         OidcApi apiInstance = new OidcApi(defaultClient);
         try {
-            ApiResponse<OBPv310GetOAuth2ServerJWKsURIs200Response> response = apiInstance.oBPv310GetOAuth2ServerJWKsURIsWithHttpInfo();
+            ApiResponse<GetOAuth2ServerJWKsURIs200Response> response = apiInstance.getOAuth2ServerJWKsURIsWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling OidcApi#oBPv310GetOAuth2ServerJWKsURIs");
+            System.err.println("Exception when calling OidcApi#getOAuth2ServerJWKsURIs");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -124,7 +124,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv310GetOAuth2ServerJWKsURIs200Response**](OBPv310GetOAuth2ServerJWKsURIs200Response.md)>
+ApiResponse<[**GetOAuth2ServerJWKsURIs200Response**](GetOAuth2ServerJWKsURIs200Response.md)>
 
 
 ### Authorization
@@ -143,9 +143,9 @@ No authorization required
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv310GetObpConnectorLoopback
+## getObpConnectorLoopback
 
-> OBPv310GetObpConnectorLoopback200Response oBPv310GetObpConnectorLoopback()
+> GetObpConnectorLoopback200Response getObpConnectorLoopback()
 
 Get Connector Status (Loopback)
 
@@ -165,7 +165,7 @@ import com.openbankproject.api.OidcApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -185,10 +185,10 @@ public class Example {
 
         OidcApi apiInstance = new OidcApi(defaultClient);
         try {
-            OBPv310GetObpConnectorLoopback200Response result = apiInstance.oBPv310GetObpConnectorLoopback();
+            GetObpConnectorLoopback200Response result = apiInstance.getObpConnectorLoopback();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling OidcApi#oBPv310GetObpConnectorLoopback");
+            System.err.println("Exception when calling OidcApi#getObpConnectorLoopback");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -204,7 +204,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv310GetObpConnectorLoopback200Response**](OBPv310GetObpConnectorLoopback200Response.md)
+[**GetObpConnectorLoopback200Response**](GetObpConnectorLoopback200Response.md)
 
 
 ### Authorization
@@ -222,9 +222,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv310GetObpConnectorLoopbackWithHttpInfo
+## getObpConnectorLoopbackWithHttpInfo
 
-> ApiResponse<OBPv310GetObpConnectorLoopback200Response> oBPv310GetObpConnectorLoopback oBPv310GetObpConnectorLoopbackWithHttpInfo()
+> ApiResponse<GetObpConnectorLoopback200Response> getObpConnectorLoopback getObpConnectorLoopbackWithHttpInfo()
 
 Get Connector Status (Loopback)
 
@@ -245,7 +245,7 @@ import com.openbankproject.api.OidcApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -265,12 +265,12 @@ public class Example {
 
         OidcApi apiInstance = new OidcApi(defaultClient);
         try {
-            ApiResponse<OBPv310GetObpConnectorLoopback200Response> response = apiInstance.oBPv310GetObpConnectorLoopbackWithHttpInfo();
+            ApiResponse<GetObpConnectorLoopback200Response> response = apiInstance.getObpConnectorLoopbackWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling OidcApi#oBPv310GetObpConnectorLoopback");
+            System.err.println("Exception when calling OidcApi#getObpConnectorLoopback");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -286,7 +286,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv310GetObpConnectorLoopback200Response**](OBPv310GetObpConnectorLoopback200Response.md)>
+ApiResponse<[**GetObpConnectorLoopback200Response**](GetObpConnectorLoopback200Response.md)>
 
 
 ### Authorization
@@ -305,13 +305,13 @@ ApiResponse<[**OBPv310GetObpConnectorLoopback200Response**](OBPv310GetObpConnect
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetOidcClient
+## getOidcClient
 
-> OBPv600GetOidcClient200Response oBPv600GetOidcClient(clientid)
+> GetOidcClient200Response getOidcClient(clientid)
 
 Get OIDC Client
 
-&lt;p&gt;Gets an OIDC/OAuth2 client&#39;s metadata by client_id.&lt;/p&gt; &lt;p&gt;Returns client information including name, consumer_id, redirect_uris, and enabled status.&lt;br /&gt; This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CLIENT_ID&lt;/a&gt;: CLIENT_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_name&lt;/strong&gt;&lt;/a&gt;: client_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;consumer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;redirect_uris&lt;/strong&gt;&lt;/a&gt;: redirect_uris&lt;/p&gt; 
+&lt;p&gt;Gets an OIDC/OAuth2 client&#39;s metadata by client_id.&lt;/p&gt; &lt;p&gt;Returns client information including name, consumer_id, redirect_uris, and enabled status.&lt;br /&gt; This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CLIENT_ID&lt;/a&gt;: CLIENT_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_name&lt;/strong&gt;&lt;/a&gt;: client_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;consumer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;redirect_uris&lt;/strong&gt;&lt;/a&gt;: redirect_uris&lt;/p&gt; 
 
 ### Example
 
@@ -327,7 +327,7 @@ import com.openbankproject.api.OidcApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -348,10 +348,10 @@ public class Example {
         OidcApi apiInstance = new OidcApi(defaultClient);
         String clientid = "clientid_example"; // String | The CLIENTID identifier
         try {
-            OBPv600GetOidcClient200Response result = apiInstance.oBPv600GetOidcClient(clientid);
+            GetOidcClient200Response result = apiInstance.getOidcClient(clientid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling OidcApi#oBPv600GetOidcClient");
+            System.err.println("Exception when calling OidcApi#getOidcClient");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -370,7 +370,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv600GetOidcClient200Response**](OBPv600GetOidcClient200Response.md)
+[**GetOidcClient200Response**](GetOidcClient200Response.md)
 
 
 ### Authorization
@@ -388,13 +388,13 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetOidcClientWithHttpInfo
+## getOidcClientWithHttpInfo
 
-> ApiResponse<OBPv600GetOidcClient200Response> oBPv600GetOidcClient oBPv600GetOidcClientWithHttpInfo(clientid)
+> ApiResponse<GetOidcClient200Response> getOidcClient getOidcClientWithHttpInfo(clientid)
 
 Get OIDC Client
 
-&lt;p&gt;Gets an OIDC/OAuth2 client&#39;s metadata by client_id.&lt;/p&gt; &lt;p&gt;Returns client information including name, consumer_id, redirect_uris, and enabled status.&lt;br /&gt; This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CLIENT_ID&lt;/a&gt;: CLIENT_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_name&lt;/strong&gt;&lt;/a&gt;: client_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;consumer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;redirect_uris&lt;/strong&gt;&lt;/a&gt;: redirect_uris&lt;/p&gt; 
+&lt;p&gt;Gets an OIDC/OAuth2 client&#39;s metadata by client_id.&lt;/p&gt; &lt;p&gt;Returns client information including name, consumer_id, redirect_uris, and enabled status.&lt;br /&gt; This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CLIENT_ID&lt;/a&gt;: CLIENT_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_name&lt;/strong&gt;&lt;/a&gt;: client_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;consumer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;redirect_uris&lt;/strong&gt;&lt;/a&gt;: redirect_uris&lt;/p&gt; 
 
 ### Example
 
@@ -411,7 +411,7 @@ import com.openbankproject.api.OidcApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -432,12 +432,12 @@ public class Example {
         OidcApi apiInstance = new OidcApi(defaultClient);
         String clientid = "clientid_example"; // String | The CLIENTID identifier
         try {
-            ApiResponse<OBPv600GetOidcClient200Response> response = apiInstance.oBPv600GetOidcClientWithHttpInfo(clientid);
+            ApiResponse<GetOidcClient200Response> response = apiInstance.getOidcClientWithHttpInfo(clientid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling OidcApi#oBPv600GetOidcClient");
+            System.err.println("Exception when calling OidcApi#getOidcClient");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -456,7 +456,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv600GetOidcClient200Response**](OBPv600GetOidcClient200Response.md)>
+ApiResponse<[**GetOidcClient200Response**](GetOidcClient200Response.md)>
 
 
 ### Authorization
@@ -475,13 +475,13 @@ ApiResponse<[**OBPv600GetOidcClient200Response**](OBPv600GetOidcClient200Respons
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600VerifyOidcClient
+## verifyOidcClient
 
-> OBPv600VerifyOidcClient200Response oBPv600VerifyOidcClient(obPv600VerifyOidcClientRequest)
+> VerifyOidcClient200Response verifyOidcClient(verifyOidcClientRequest)
 
 Verify OIDC Client
 
-&lt;p&gt;Verifies an OIDC/OAuth2 client&#39;s credentials.&lt;/p&gt; &lt;p&gt;Returns &lt;code&gt;valid: true&lt;/code&gt; if the client_id and client_secret match an active consumer.&lt;br /&gt; Also returns the consumer_id and redirect_uris for use by the OIDC provider.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_secret&lt;/strong&gt;&lt;/a&gt;: client_secret&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;valid&lt;/strong&gt;&lt;/a&gt;: valid&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;client_id&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;consumer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;redirect_uris&lt;/a&gt;: redirect_uris&lt;/p&gt; 
+&lt;p&gt;Verifies an OIDC/OAuth2 client&#39;s credentials.&lt;/p&gt; &lt;p&gt;Returns &lt;code&gt;valid: true&lt;/code&gt; if the client_id and client_secret match an active consumer.&lt;br /&gt; Also returns the consumer_id and redirect_uris for use by the OIDC provider.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_secret&lt;/strong&gt;&lt;/a&gt;: client_secret&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;valid&lt;/strong&gt;&lt;/a&gt;: valid&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;client_id&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;consumer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;redirect_uris&lt;/a&gt;: redirect_uris&lt;/p&gt; 
 
 ### Example
 
@@ -497,7 +497,7 @@ import com.openbankproject.api.OidcApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -516,12 +516,12 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         OidcApi apiInstance = new OidcApi(defaultClient);
-        OBPv600VerifyOidcClientRequest obPv600VerifyOidcClientRequest = new OBPv600VerifyOidcClientRequest(); // OBPv600VerifyOidcClientRequest | Request body
+        VerifyOidcClientRequest verifyOidcClientRequest = new VerifyOidcClientRequest(); // VerifyOidcClientRequest | Request body
         try {
-            OBPv600VerifyOidcClient200Response result = apiInstance.oBPv600VerifyOidcClient(obPv600VerifyOidcClientRequest);
+            VerifyOidcClient200Response result = apiInstance.verifyOidcClient(verifyOidcClientRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling OidcApi#oBPv600VerifyOidcClient");
+            System.err.println("Exception when calling OidcApi#verifyOidcClient");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -536,11 +536,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv600VerifyOidcClientRequest** | [**OBPv600VerifyOidcClientRequest**](OBPv600VerifyOidcClientRequest.md)| Request body | |
+| **verifyOidcClientRequest** | [**VerifyOidcClientRequest**](VerifyOidcClientRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600VerifyOidcClient200Response**](OBPv600VerifyOidcClient200Response.md)
+[**VerifyOidcClient200Response**](VerifyOidcClient200Response.md)
 
 
 ### Authorization
@@ -558,13 +558,13 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600VerifyOidcClientWithHttpInfo
+## verifyOidcClientWithHttpInfo
 
-> ApiResponse<OBPv600VerifyOidcClient200Response> oBPv600VerifyOidcClient oBPv600VerifyOidcClientWithHttpInfo(obPv600VerifyOidcClientRequest)
+> ApiResponse<VerifyOidcClient200Response> verifyOidcClient verifyOidcClientWithHttpInfo(verifyOidcClientRequest)
 
 Verify OIDC Client
 
-&lt;p&gt;Verifies an OIDC/OAuth2 client&#39;s credentials.&lt;/p&gt; &lt;p&gt;Returns &lt;code&gt;valid: true&lt;/code&gt; if the client_id and client_secret match an active consumer.&lt;br /&gt; Also returns the consumer_id and redirect_uris for use by the OIDC provider.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_secret&lt;/strong&gt;&lt;/a&gt;: client_secret&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;valid&lt;/strong&gt;&lt;/a&gt;: valid&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;client_id&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;consumer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;redirect_uris&lt;/a&gt;: redirect_uris&lt;/p&gt; 
+&lt;p&gt;Verifies an OIDC/OAuth2 client&#39;s credentials.&lt;/p&gt; &lt;p&gt;Returns &lt;code&gt;valid: true&lt;/code&gt; if the client_id and client_secret match an active consumer.&lt;br /&gt; Also returns the consumer_id and redirect_uris for use by the OIDC provider.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_secret&lt;/strong&gt;&lt;/a&gt;: client_secret&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;valid&lt;/strong&gt;&lt;/a&gt;: valid&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;client_id&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;consumer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;redirect_uris&lt;/a&gt;: redirect_uris&lt;/p&gt; 
 
 ### Example
 
@@ -581,7 +581,7 @@ import com.openbankproject.api.OidcApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -600,14 +600,14 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         OidcApi apiInstance = new OidcApi(defaultClient);
-        OBPv600VerifyOidcClientRequest obPv600VerifyOidcClientRequest = new OBPv600VerifyOidcClientRequest(); // OBPv600VerifyOidcClientRequest | Request body
+        VerifyOidcClientRequest verifyOidcClientRequest = new VerifyOidcClientRequest(); // VerifyOidcClientRequest | Request body
         try {
-            ApiResponse<OBPv600VerifyOidcClient200Response> response = apiInstance.oBPv600VerifyOidcClientWithHttpInfo(obPv600VerifyOidcClientRequest);
+            ApiResponse<VerifyOidcClient200Response> response = apiInstance.verifyOidcClientWithHttpInfo(verifyOidcClientRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling OidcApi#oBPv600VerifyOidcClient");
+            System.err.println("Exception when calling OidcApi#verifyOidcClient");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -622,11 +622,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv600VerifyOidcClientRequest** | [**OBPv600VerifyOidcClientRequest**](OBPv600VerifyOidcClientRequest.md)| Request body | |
+| **verifyOidcClientRequest** | [**VerifyOidcClientRequest**](VerifyOidcClientRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600VerifyOidcClient200Response**](OBPv600VerifyOidcClient200Response.md)>
+ApiResponse<[**VerifyOidcClient200Response**](VerifyOidcClient200Response.md)>
 
 
 ### Authorization

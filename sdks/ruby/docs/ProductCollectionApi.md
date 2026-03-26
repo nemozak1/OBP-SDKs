@@ -1,16 +1,16 @@
 # OpenBankProject::ProductCollectionApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv3_1_0_create_product_collection**](ProductCollectionApi.md#o_bpv3_1_0_create_product_collection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
-| [**o_bpv3_1_0_get_product_collection**](ProductCollectionApi.md#o_bpv3_1_0_get_product_collection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
+| [**create_product_collection**](ProductCollectionApi.md#create_product_collection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
+| [**get_product_collection**](ProductCollectionApi.md#get_product_collection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
 
 
-## o_bpv3_1_0_create_product_collection
+## create_product_collection
 
-> <OBPv310CreateProductCollection200Response> o_bpv3_1_0_create_product_collection(bankid, collectioncode, obpv310_create_product_collection_request)
+> <CreateProductCollection200Response> create_product_collection(bankid, collectioncode, create_product_collection_request)
 
 Create Product Collection
 
@@ -32,40 +32,40 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ProductCollectionApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 collectioncode = 'collectioncode_example' # String | The COLLECTIONCODE identifier
-obpv310_create_product_collection_request = OpenBankProject::OBPv310CreateProductCollectionRequest.new({type: 'type_example', properties: OpenBankProject::OBPv310CreateProductCollectionRequestProperties.new({parent_product_code: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), children_product_codes: OpenBankProject::OBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds.new({type: 'type_example', items: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})})}) # OBPv310CreateProductCollectionRequest | Request body
+create_product_collection_request = OpenBankProject::CreateProductCollectionRequest.new # CreateProductCollectionRequest | Request body
 
 begin
   # Create Product Collection
-  result = api_instance.o_bpv3_1_0_create_product_collection(bankid, collectioncode, obpv310_create_product_collection_request)
+  result = api_instance.create_product_collection(bankid, collectioncode, create_product_collection_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ProductCollectionApi->o_bpv3_1_0_create_product_collection: #{e}"
+  puts "Error when calling ProductCollectionApi->create_product_collection: #{e}"
 end
 ```
 
-#### Using the o_bpv3_1_0_create_product_collection_with_http_info variant
+#### Using the create_product_collection_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv310CreateProductCollection200Response>, Integer, Hash)> o_bpv3_1_0_create_product_collection_with_http_info(bankid, collectioncode, obpv310_create_product_collection_request)
+> <Array(<CreateProductCollection200Response>, Integer, Hash)> create_product_collection_with_http_info(bankid, collectioncode, create_product_collection_request)
 
 ```ruby
 begin
   # Create Product Collection
-  data, status_code, headers = api_instance.o_bpv3_1_0_create_product_collection_with_http_info(bankid, collectioncode, obpv310_create_product_collection_request)
+  data, status_code, headers = api_instance.create_product_collection_with_http_info(bankid, collectioncode, create_product_collection_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv310CreateProductCollection200Response>
+  p data # => <CreateProductCollection200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ProductCollectionApi->o_bpv3_1_0_create_product_collection_with_http_info: #{e}"
+  puts "Error when calling ProductCollectionApi->create_product_collection_with_http_info: #{e}"
 end
 ```
 
@@ -75,11 +75,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
 | **collectioncode** | **String** | The COLLECTIONCODE identifier |  |
-| **obpv310_create_product_collection_request** | [**OBPv310CreateProductCollectionRequest**](OBPv310CreateProductCollectionRequest.md) | Request body |  |
+| **create_product_collection_request** | [**CreateProductCollectionRequest**](CreateProductCollectionRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv310CreateProductCollection200Response**](OBPv310CreateProductCollection200Response.md)
+[**CreateProductCollection200Response**](CreateProductCollection200Response.md)
 
 ### Authorization
 
@@ -91,9 +91,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv3_1_0_get_product_collection
+## get_product_collection
 
-> <OBPv310GetProductCollection200Response> o_bpv3_1_0_get_product_collection(bankid, collectioncode)
+> <GetProductCollection200Response> get_product_collection(bankid, collectioncode)
 
 Get Product Collection
 
@@ -115,9 +115,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ProductCollectionApi.new
@@ -126,28 +126,28 @@ collectioncode = 'collectioncode_example' # String | The COLLECTIONCODE identifi
 
 begin
   # Get Product Collection
-  result = api_instance.o_bpv3_1_0_get_product_collection(bankid, collectioncode)
+  result = api_instance.get_product_collection(bankid, collectioncode)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ProductCollectionApi->o_bpv3_1_0_get_product_collection: #{e}"
+  puts "Error when calling ProductCollectionApi->get_product_collection: #{e}"
 end
 ```
 
-#### Using the o_bpv3_1_0_get_product_collection_with_http_info variant
+#### Using the get_product_collection_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv310GetProductCollection200Response>, Integer, Hash)> o_bpv3_1_0_get_product_collection_with_http_info(bankid, collectioncode)
+> <Array(<GetProductCollection200Response>, Integer, Hash)> get_product_collection_with_http_info(bankid, collectioncode)
 
 ```ruby
 begin
   # Get Product Collection
-  data, status_code, headers = api_instance.o_bpv3_1_0_get_product_collection_with_http_info(bankid, collectioncode)
+  data, status_code, headers = api_instance.get_product_collection_with_http_info(bankid, collectioncode)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv310GetProductCollection200Response>
+  p data # => <GetProductCollection200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ProductCollectionApi->o_bpv3_1_0_get_product_collection_with_http_info: #{e}"
+  puts "Error when calling ProductCollectionApi->get_product_collection_with_http_info: #{e}"
 end
 ```
 
@@ -160,7 +160,7 @@ end
 
 ### Return type
 
-[**OBPv310GetProductCollection200Response**](OBPv310GetProductCollection200Response.md)
+[**GetProductCollection200Response**](GetProductCollection200Response.md)
 
 ### Authorization
 

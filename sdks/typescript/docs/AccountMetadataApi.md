@@ -1,18 +1,18 @@
 # AccountMetadataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400AddTagForViewOnAccount**](AccountMetadataApi.md#obpv400addtagforviewonaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account |
-| [**oBPv400DeleteTagForViewOnAccount**](AccountMetadataApi.md#obpv400deletetagforviewonaccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account |
-| [**oBPv400GetTagsForViewOnAccount**](AccountMetadataApi.md#obpv400gettagsforviewonaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account |
+| [**addTagForViewOnAccount**](AccountMetadataApi.md#addtagforviewonaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account |
+| [**deleteTagForViewOnAccount**](AccountMetadataApi.md#deletetagforviewonaccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account |
+| [**getTagsForViewOnAccount**](AccountMetadataApi.md#gettagsforviewonaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account |
 
 
 
-## oBPv400AddTagForViewOnAccount
+## addTagForViewOnAccount
 
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems oBPv400AddTagForViewOnAccount(bankid, accountid, viewid, oBPv400DeleteSystemLevelEndpointTag200Response)
+> GetTagsForViewOnAccount200ResponseTagsInner addTagForViewOnAccount(bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId)
 
 Create a tag on account
 
@@ -25,7 +25,7 @@ import {
   Configuration,
   AccountMetadataApi,
 } from 'obp-typescript';
-import type { OBPv400AddTagForViewOnAccountRequest } from 'obp-typescript';
+import type { AddTagForViewOnAccountRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -46,12 +46,12 @@ async function example() {
     accountid: accountid_example,
     // string | The VIEWID identifier
     viewid: viewid_example,
-    // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
-    oBPv400DeleteSystemLevelEndpointTag200Response: {"type":"object","properties":{"value":{"type":"string"}}},
-  } satisfies OBPv400AddTagForViewOnAccountRequest;
+    // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
+    getTransactionTypes200ResponseTransactionTypesInnerId: {"type":"object","properties":{"value":{"type":"string"}}},
+  } satisfies AddTagForViewOnAccountRequest;
 
   try {
-    const data = await api.oBPv400AddTagForViewOnAccount(body);
+    const data = await api.addTagForViewOnAccount(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -70,11 +70,11 @@ example().catch(console.error);
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
 | **viewid** | `string` | The VIEWID identifier | [Defaults to `undefined`] |
-| **oBPv400DeleteSystemLevelEndpointTag200Response** | [OBPv400DeleteSystemLevelEndpointTag200Response](OBPv400DeleteSystemLevelEndpointTag200Response.md) | Request body | |
+| **getTransactionTypes200ResponseTransactionTypesInnerId** | [GetTransactionTypes200ResponseTransactionTypesInnerId](GetTransactionTypes200ResponseTransactionTypesInnerId.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -96,9 +96,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400DeleteTagForViewOnAccount
+## deleteTagForViewOnAccount
 
-> oBPv400DeleteTagForViewOnAccount(bankid, accountid, viewid, tagid)
+> deleteTagForViewOnAccount(bankid, accountid, viewid, tagid)
 
 Delete a tag on account
 
@@ -111,7 +111,7 @@ import {
   Configuration,
   AccountMetadataApi,
 } from 'obp-typescript';
-import type { OBPv400DeleteTagForViewOnAccountRequest } from 'obp-typescript';
+import type { DeleteTagForViewOnAccountRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -134,10 +134,10 @@ async function example() {
     viewid: viewid_example,
     // string | The TAGID identifier
     tagid: tagid_example,
-  } satisfies OBPv400DeleteTagForViewOnAccountRequest;
+  } satisfies DeleteTagForViewOnAccountRequest;
 
   try {
-    const data = await api.oBPv400DeleteTagForViewOnAccount(body);
+    const data = await api.deleteTagForViewOnAccount(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -182,9 +182,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetTagsForViewOnAccount
+## getTagsForViewOnAccount
 
-> OBPv400GetTagsForViewOnAccount200Response oBPv400GetTagsForViewOnAccount(bankid, accountid, viewid)
+> GetTagsForViewOnAccount200Response getTagsForViewOnAccount(bankid, accountid, viewid)
 
 Get tags on account
 
@@ -197,7 +197,7 @@ import {
   Configuration,
   AccountMetadataApi,
 } from 'obp-typescript';
-import type { OBPv400GetTagsForViewOnAccountRequest } from 'obp-typescript';
+import type { GetTagsForViewOnAccountRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -218,10 +218,10 @@ async function example() {
     accountid: accountid_example,
     // string | The VIEWID identifier
     viewid: viewid_example,
-  } satisfies OBPv400GetTagsForViewOnAccountRequest;
+  } satisfies GetTagsForViewOnAccountRequest;
 
   try {
-    const data = await api.oBPv400GetTagsForViewOnAccount(body);
+    const data = await api.getTagsForViewOnAccount(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -243,7 +243,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200Response**](OBPv400GetTagsForViewOnAccount200Response.md)
+[**GetTagsForViewOnAccount200Response**](GetTagsForViewOnAccount200Response.md)
 
 ### Authorization
 

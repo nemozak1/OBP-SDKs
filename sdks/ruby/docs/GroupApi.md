@@ -1,23 +1,23 @@
 # OpenBankProject::GroupApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv6_0_0_add_user_to_group**](GroupApi.md#o_bpv6_0_0_add_user_to_group) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements |
-| [**o_bpv6_0_0_create_group**](GroupApi.md#o_bpv6_0_0_create_group) | **POST** /obp/v6.0.0/management/groups | Create Group |
-| [**o_bpv6_0_0_delete_group**](GroupApi.md#o_bpv6_0_0_delete_group) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group |
-| [**o_bpv6_0_0_get_group**](GroupApi.md#o_bpv6_0_0_get_group) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group |
-| [**o_bpv6_0_0_get_group_entitlements**](GroupApi.md#o_bpv6_0_0_get_group_entitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements |
-| [**o_bpv6_0_0_get_groups**](GroupApi.md#o_bpv6_0_0_get_groups) | **GET** /obp/v6.0.0/management/groups | Get Groups |
-| [**o_bpv6_0_0_get_user_group_memberships**](GroupApi.md#o_bpv6_0_0_get_user_group_memberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships |
-| [**o_bpv6_0_0_remove_user_from_group**](GroupApi.md#o_bpv6_0_0_remove_user_from_group) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group |
-| [**o_bpv6_0_0_update_group**](GroupApi.md#o_bpv6_0_0_update_group) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group |
+| [**add_user_to_group**](GroupApi.md#add_user_to_group) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements |
+| [**create_group**](GroupApi.md#create_group) | **POST** /obp/v6.0.0/management/groups | Create Group |
+| [**delete_group**](GroupApi.md#delete_group) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group |
+| [**get_group**](GroupApi.md#get_group) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group |
+| [**get_group_entitlements**](GroupApi.md#get_group_entitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements |
+| [**get_groups**](GroupApi.md#get_groups) | **GET** /obp/v6.0.0/management/groups | Get Groups |
+| [**get_user_group_memberships**](GroupApi.md#get_user_group_memberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships |
+| [**remove_user_from_group**](GroupApi.md#remove_user_from_group) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group |
+| [**update_group**](GroupApi.md#update_group) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group |
 
 
-## o_bpv6_0_0_add_user_to_group
+## add_user_to_group
 
-> <OBPv600AddUserToGroup200Response> o_bpv6_0_0_add_user_to_group(userid, obpv600_add_user_to_group_request)
+> <AddUserToGroup200Response> add_user_to_group(userid, add_user_to_group_request)
 
 Grant User Membership to Group Entitlements
 
@@ -39,39 +39,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::GroupApi.new
 userid = 'userid_example' # String | The USERID identifier
-obpv600_add_user_to_group_request = OpenBankProject::OBPv600AddUserToGroupRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600AddUserToGroupRequestProperties.new({group_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})}) # OBPv600AddUserToGroupRequest | Request body
+add_user_to_group_request = OpenBankProject::AddUserToGroupRequest.new # AddUserToGroupRequest | Request body
 
 begin
   # Grant User Membership to Group Entitlements
-  result = api_instance.o_bpv6_0_0_add_user_to_group(userid, obpv600_add_user_to_group_request)
+  result = api_instance.add_user_to_group(userid, add_user_to_group_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_add_user_to_group: #{e}"
+  puts "Error when calling GroupApi->add_user_to_group: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_add_user_to_group_with_http_info variant
+#### Using the add_user_to_group_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600AddUserToGroup200Response>, Integer, Hash)> o_bpv6_0_0_add_user_to_group_with_http_info(userid, obpv600_add_user_to_group_request)
+> <Array(<AddUserToGroup200Response>, Integer, Hash)> add_user_to_group_with_http_info(userid, add_user_to_group_request)
 
 ```ruby
 begin
   # Grant User Membership to Group Entitlements
-  data, status_code, headers = api_instance.o_bpv6_0_0_add_user_to_group_with_http_info(userid, obpv600_add_user_to_group_request)
+  data, status_code, headers = api_instance.add_user_to_group_with_http_info(userid, add_user_to_group_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600AddUserToGroup200Response>
+  p data # => <AddUserToGroup200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_add_user_to_group_with_http_info: #{e}"
+  puts "Error when calling GroupApi->add_user_to_group_with_http_info: #{e}"
 end
 ```
 
@@ -80,11 +80,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **userid** | **String** | The USERID identifier |  |
-| **obpv600_add_user_to_group_request** | [**OBPv600AddUserToGroupRequest**](OBPv600AddUserToGroupRequest.md) | Request body |  |
+| **add_user_to_group_request** | [**AddUserToGroupRequest**](AddUserToGroupRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600AddUserToGroup200Response**](OBPv600AddUserToGroup200Response.md)
+[**AddUserToGroup200Response**](AddUserToGroup200Response.md)
 
 ### Authorization
 
@@ -96,9 +96,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_create_group
+## create_group
 
-> <OBPv600GetGroups200ResponsePropertiesGroupsItems> o_bpv6_0_0_create_group(obpv600_create_group_request)
+> <GetGroups200ResponseGroupsInner> create_group(create_group_request)
 
 Create Group
 
@@ -120,38 +120,38 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::GroupApi.new
-obpv600_create_group_request = OpenBankProject::OBPv600CreateGroupRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600CreateGroupRequestProperties.new({list_of_roles: OpenBankProject::OBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds.new({type: 'type_example', items: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})}), bank_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), group_name: , is_enabled: , group_description: })}) # OBPv600CreateGroupRequest | Request body
+create_group_request = OpenBankProject::CreateGroupRequest.new # CreateGroupRequest | Request body
 
 begin
   # Create Group
-  result = api_instance.o_bpv6_0_0_create_group(obpv600_create_group_request)
+  result = api_instance.create_group(create_group_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_create_group: #{e}"
+  puts "Error when calling GroupApi->create_group: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_create_group_with_http_info variant
+#### Using the create_group_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetGroups200ResponsePropertiesGroupsItems>, Integer, Hash)> o_bpv6_0_0_create_group_with_http_info(obpv600_create_group_request)
+> <Array(<GetGroups200ResponseGroupsInner>, Integer, Hash)> create_group_with_http_info(create_group_request)
 
 ```ruby
 begin
   # Create Group
-  data, status_code, headers = api_instance.o_bpv6_0_0_create_group_with_http_info(obpv600_create_group_request)
+  data, status_code, headers = api_instance.create_group_with_http_info(create_group_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetGroups200ResponsePropertiesGroupsItems>
+  p data # => <GetGroups200ResponseGroupsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_create_group_with_http_info: #{e}"
+  puts "Error when calling GroupApi->create_group_with_http_info: #{e}"
 end
 ```
 
@@ -159,11 +159,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obpv600_create_group_request** | [**OBPv600CreateGroupRequest**](OBPv600CreateGroupRequest.md) | Request body |  |
+| **create_group_request** | [**CreateGroupRequest**](CreateGroupRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -175,9 +175,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_delete_group
+## delete_group
 
-> o_bpv6_0_0_delete_group(groupid)
+> delete_group(groupid)
 
 Delete Group
 
@@ -199,9 +199,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::GroupApi.new
@@ -209,27 +209,27 @@ groupid = 'groupid_example' # String | The GROUPID identifier
 
 begin
   # Delete Group
-  api_instance.o_bpv6_0_0_delete_group(groupid)
+  api_instance.delete_group(groupid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_delete_group: #{e}"
+  puts "Error when calling GroupApi->delete_group: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_delete_group_with_http_info variant
+#### Using the delete_group_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv6_0_0_delete_group_with_http_info(groupid)
+> <Array(nil, Integer, Hash)> delete_group_with_http_info(groupid)
 
 ```ruby
 begin
   # Delete Group
-  data, status_code, headers = api_instance.o_bpv6_0_0_delete_group_with_http_info(groupid)
+  data, status_code, headers = api_instance.delete_group_with_http_info(groupid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_delete_group_with_http_info: #{e}"
+  puts "Error when calling GroupApi->delete_group_with_http_info: #{e}"
 end
 ```
 
@@ -253,9 +253,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv6_0_0_get_group
+## get_group
 
-> <OBPv600GetGroups200ResponsePropertiesGroupsItems> o_bpv6_0_0_get_group(groupid)
+> <GetGroups200ResponseGroupsInner> get_group(groupid)
 
 Get Group
 
@@ -277,9 +277,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::GroupApi.new
@@ -287,28 +287,28 @@ groupid = 'groupid_example' # String | The GROUPID identifier
 
 begin
   # Get Group
-  result = api_instance.o_bpv6_0_0_get_group(groupid)
+  result = api_instance.get_group(groupid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_get_group: #{e}"
+  puts "Error when calling GroupApi->get_group: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_group_with_http_info variant
+#### Using the get_group_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetGroups200ResponsePropertiesGroupsItems>, Integer, Hash)> o_bpv6_0_0_get_group_with_http_info(groupid)
+> <Array(<GetGroups200ResponseGroupsInner>, Integer, Hash)> get_group_with_http_info(groupid)
 
 ```ruby
 begin
   # Get Group
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_group_with_http_info(groupid)
+  data, status_code, headers = api_instance.get_group_with_http_info(groupid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetGroups200ResponsePropertiesGroupsItems>
+  p data # => <GetGroups200ResponseGroupsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_get_group_with_http_info: #{e}"
+  puts "Error when calling GroupApi->get_group_with_http_info: #{e}"
 end
 ```
 
@@ -320,7 +320,7 @@ end
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -332,9 +332,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_group_entitlements
+## get_group_entitlements
 
-> <OBPv600GetGroupEntitlements200Response> o_bpv6_0_0_get_group_entitlements(groupid)
+> <GetGroupEntitlements200Response> get_group_entitlements(groupid)
 
 Get Group Entitlements
 
@@ -356,9 +356,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::GroupApi.new
@@ -366,28 +366,28 @@ groupid = 'groupid_example' # String | The GROUPID identifier
 
 begin
   # Get Group Entitlements
-  result = api_instance.o_bpv6_0_0_get_group_entitlements(groupid)
+  result = api_instance.get_group_entitlements(groupid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_get_group_entitlements: #{e}"
+  puts "Error when calling GroupApi->get_group_entitlements: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_group_entitlements_with_http_info variant
+#### Using the get_group_entitlements_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetGroupEntitlements200Response>, Integer, Hash)> o_bpv6_0_0_get_group_entitlements_with_http_info(groupid)
+> <Array(<GetGroupEntitlements200Response>, Integer, Hash)> get_group_entitlements_with_http_info(groupid)
 
 ```ruby
 begin
   # Get Group Entitlements
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_group_entitlements_with_http_info(groupid)
+  data, status_code, headers = api_instance.get_group_entitlements_with_http_info(groupid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetGroupEntitlements200Response>
+  p data # => <GetGroupEntitlements200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_get_group_entitlements_with_http_info: #{e}"
+  puts "Error when calling GroupApi->get_group_entitlements_with_http_info: #{e}"
 end
 ```
 
@@ -399,7 +399,7 @@ end
 
 ### Return type
 
-[**OBPv600GetGroupEntitlements200Response**](OBPv600GetGroupEntitlements200Response.md)
+[**GetGroupEntitlements200Response**](GetGroupEntitlements200Response.md)
 
 ### Authorization
 
@@ -411,9 +411,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_groups
+## get_groups
 
-> <OBPv600GetGroups200Response> o_bpv6_0_0_get_groups
+> <GetGroups200Response> get_groups
 
 Get Groups
 
@@ -435,37 +435,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::GroupApi.new
 
 begin
   # Get Groups
-  result = api_instance.o_bpv6_0_0_get_groups
+  result = api_instance.get_groups
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_get_groups: #{e}"
+  puts "Error when calling GroupApi->get_groups: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_groups_with_http_info variant
+#### Using the get_groups_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetGroups200Response>, Integer, Hash)> o_bpv6_0_0_get_groups_with_http_info
+> <Array(<GetGroups200Response>, Integer, Hash)> get_groups_with_http_info
 
 ```ruby
 begin
   # Get Groups
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_groups_with_http_info
+  data, status_code, headers = api_instance.get_groups_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetGroups200Response>
+  p data # => <GetGroups200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_get_groups_with_http_info: #{e}"
+  puts "Error when calling GroupApi->get_groups_with_http_info: #{e}"
 end
 ```
 
@@ -475,7 +475,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetGroups200Response**](OBPv600GetGroups200Response.md)
+[**GetGroups200Response**](GetGroups200Response.md)
 
 ### Authorization
 
@@ -487,9 +487,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_user_group_memberships
+## get_user_group_memberships
 
-> <OBPv600GetUserGroupMemberships200Response> o_bpv6_0_0_get_user_group_memberships(userid)
+> <GetUserGroupMemberships200Response> get_user_group_memberships(userid)
 
 Get User's Group Memberships
 
@@ -511,9 +511,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::GroupApi.new
@@ -521,28 +521,28 @@ userid = 'userid_example' # String | The USERID identifier
 
 begin
   # Get User's Group Memberships
-  result = api_instance.o_bpv6_0_0_get_user_group_memberships(userid)
+  result = api_instance.get_user_group_memberships(userid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_get_user_group_memberships: #{e}"
+  puts "Error when calling GroupApi->get_user_group_memberships: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_user_group_memberships_with_http_info variant
+#### Using the get_user_group_memberships_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetUserGroupMemberships200Response>, Integer, Hash)> o_bpv6_0_0_get_user_group_memberships_with_http_info(userid)
+> <Array(<GetUserGroupMemberships200Response>, Integer, Hash)> get_user_group_memberships_with_http_info(userid)
 
 ```ruby
 begin
   # Get User's Group Memberships
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_user_group_memberships_with_http_info(userid)
+  data, status_code, headers = api_instance.get_user_group_memberships_with_http_info(userid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetUserGroupMemberships200Response>
+  p data # => <GetUserGroupMemberships200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_get_user_group_memberships_with_http_info: #{e}"
+  puts "Error when calling GroupApi->get_user_group_memberships_with_http_info: #{e}"
 end
 ```
 
@@ -554,7 +554,7 @@ end
 
 ### Return type
 
-[**OBPv600GetUserGroupMemberships200Response**](OBPv600GetUserGroupMemberships200Response.md)
+[**GetUserGroupMemberships200Response**](GetUserGroupMemberships200Response.md)
 
 ### Authorization
 
@@ -566,9 +566,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_remove_user_from_group
+## remove_user_from_group
 
-> o_bpv6_0_0_remove_user_from_group(userid, groupid)
+> remove_user_from_group(userid, groupid)
 
 Remove User from Group
 
@@ -590,9 +590,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::GroupApi.new
@@ -601,27 +601,27 @@ groupid = 'groupid_example' # String | The GROUPID identifier
 
 begin
   # Remove User from Group
-  api_instance.o_bpv6_0_0_remove_user_from_group(userid, groupid)
+  api_instance.remove_user_from_group(userid, groupid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_remove_user_from_group: #{e}"
+  puts "Error when calling GroupApi->remove_user_from_group: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_remove_user_from_group_with_http_info variant
+#### Using the remove_user_from_group_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv6_0_0_remove_user_from_group_with_http_info(userid, groupid)
+> <Array(nil, Integer, Hash)> remove_user_from_group_with_http_info(userid, groupid)
 
 ```ruby
 begin
   # Remove User from Group
-  data, status_code, headers = api_instance.o_bpv6_0_0_remove_user_from_group_with_http_info(userid, groupid)
+  data, status_code, headers = api_instance.remove_user_from_group_with_http_info(userid, groupid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_remove_user_from_group_with_http_info: #{e}"
+  puts "Error when calling GroupApi->remove_user_from_group_with_http_info: #{e}"
 end
 ```
 
@@ -646,9 +646,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv6_0_0_update_group
+## update_group
 
-> <OBPv600GetGroups200ResponsePropertiesGroupsItems> o_bpv6_0_0_update_group(groupid, obpv600_update_group_request)
+> <GetGroups200ResponseGroupsInner> update_group(groupid, update_group_request)
 
 Update Group
 
@@ -670,39 +670,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::GroupApi.new
 groupid = 'groupid_example' # String | The GROUPID identifier
-obpv600_update_group_request = OpenBankProject::OBPv600UpdateGroupRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600UpdateGroupRequestProperties.new({group_name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), group_description: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), list_of_roles: OpenBankProject::OBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds.new({type: 'type_example', items: }), is_enabled: })}) # OBPv600UpdateGroupRequest | Request body
+update_group_request = OpenBankProject::UpdateGroupRequest.new # UpdateGroupRequest | Request body
 
 begin
   # Update Group
-  result = api_instance.o_bpv6_0_0_update_group(groupid, obpv600_update_group_request)
+  result = api_instance.update_group(groupid, update_group_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_update_group: #{e}"
+  puts "Error when calling GroupApi->update_group: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_update_group_with_http_info variant
+#### Using the update_group_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetGroups200ResponsePropertiesGroupsItems>, Integer, Hash)> o_bpv6_0_0_update_group_with_http_info(groupid, obpv600_update_group_request)
+> <Array(<GetGroups200ResponseGroupsInner>, Integer, Hash)> update_group_with_http_info(groupid, update_group_request)
 
 ```ruby
 begin
   # Update Group
-  data, status_code, headers = api_instance.o_bpv6_0_0_update_group_with_http_info(groupid, obpv600_update_group_request)
+  data, status_code, headers = api_instance.update_group_with_http_info(groupid, update_group_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetGroups200ResponsePropertiesGroupsItems>
+  p data # => <GetGroups200ResponseGroupsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling GroupApi->o_bpv6_0_0_update_group_with_http_info: #{e}"
+  puts "Error when calling GroupApi->update_group_with_http_info: #{e}"
 end
 ```
 
@@ -711,11 +711,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **groupid** | **String** | The GROUPID identifier |  |
-| **obpv600_update_group_request** | [**OBPv600UpdateGroupRequest**](OBPv600UpdateGroupRequest.md) | Request body |  |
+| **update_group_request** | [**UpdateGroupRequest**](UpdateGroupRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 

@@ -13,12 +13,12 @@ open class FXAPI {
      Create Fx
      
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv220CreateFxRequest: (body) Request body 
+     - parameter createFxRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv220CreateFxRequest
+     - returns: CreateFxRequest
      */
-    open class func oBPv220CreateFx(bankid: String, oBPv220CreateFxRequest: OBPv220CreateFxRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv220CreateFxRequest {
-        return try await oBPv220CreateFxWithRequestBuilder(bankid: bankid, oBPv220CreateFxRequest: oBPv220CreateFxRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createFx(bankid: String, createFxRequest: CreateFxRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> CreateFxRequest {
+        return try await createFxWithRequestBuilder(bankid: bankid, createFxRequest: createFxRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -32,20 +32,20 @@ open class FXAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv220CreateFxRequest: (body) Request body 
+     - parameter createFxRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv220CreateFxRequest> 
+     - returns: RequestBuilder<CreateFxRequest> 
      */
-    open class func oBPv220CreateFxWithRequestBuilder(bankid: String, oBPv220CreateFxRequest: OBPv220CreateFxRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv220CreateFxRequest> {
+    open class func createFxWithRequestBuilder(bankid: String, createFxRequest: CreateFxRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<CreateFxRequest> {
         var localVariablePath = "/obp/v2.2.0/banks/{bankid}/fx"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv220CreateFxRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createFxRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -55,9 +55,58 @@ open class FXAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv220CreateFxRequest>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<CreateFxRequest>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Currencies at a Bank
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetCurrenciesAtBank200Response
+     */
+    open class func getCurrenciesAtBank(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCurrenciesAtBank200Response {
+        return try await getCurrenciesAtBankWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Currencies at a Bank
+     - GET /obp/v5.1.0/banks/{bankid}/currencies
+     - <p>Get Currencies specified by BANK_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>alphanumeric_code</strong></a>: alphanumeric_code</p> <p><a href=\"/glossary#\"><strong>currencies</strong></a>: currencies</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetCurrenciesAtBank200Response> 
+     */
+    open class func getCurrenciesAtBankWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCurrenciesAtBank200Response> {
+        var localVariablePath = "/obp/v5.1.0/banks/{bankid}/currencies"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetCurrenciesAtBank200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -67,10 +116,10 @@ open class FXAPI {
      - parameter fromcurrencycode: (path) The FROMCURRENCYCODE identifier 
      - parameter tocurrencycode: (path) The TOCURRENCYCODE identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv220CreateFxRequest
+     - returns: CreateFxRequest
      */
-    open class func oBPv220GetCurrentFxRate(bankid: String, fromcurrencycode: String, tocurrencycode: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv220CreateFxRequest {
-        return try await oBPv220GetCurrentFxRateWithRequestBuilder(bankid: bankid, fromcurrencycode: fromcurrencycode, tocurrencycode: tocurrencycode, apiConfiguration: apiConfiguration).execute().body
+    open class func getCurrentFxRate(bankid: String, fromcurrencycode: String, tocurrencycode: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> CreateFxRequest {
+        return try await getCurrentFxRateWithRequestBuilder(bankid: bankid, fromcurrencycode: fromcurrencycode, tocurrencycode: tocurrencycode, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -84,15 +133,15 @@ open class FXAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter fromcurrencycode: (path) The FROMCURRENCYCODE identifier 
      - parameter tocurrencycode: (path) The TOCURRENCYCODE identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv220CreateFxRequest> 
+     - returns: RequestBuilder<CreateFxRequest> 
      */
-    open class func oBPv220GetCurrentFxRateWithRequestBuilder(bankid: String, fromcurrencycode: String, tocurrencycode: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv220CreateFxRequest> {
+    open class func getCurrentFxRateWithRequestBuilder(bankid: String, fromcurrencycode: String, tocurrencycode: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<CreateFxRequest> {
         var localVariablePath = "/obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -114,56 +163,7 @@ open class FXAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv220CreateFxRequest>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get Currencies at a Bank
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv510GetCurrenciesAtBank200Response
-     */
-    open class func oBPv510GetCurrenciesAtBank(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv510GetCurrenciesAtBank200Response {
-        return try await oBPv510GetCurrenciesAtBankWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Currencies at a Bank
-     - GET /obp/v5.1.0/banks/{bankid}/currencies
-     - <p>Get Currencies specified by BANK_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>alphanumeric_code</strong></a>: alphanumeric_code</p> <p><a href=\"/glossary#\"><strong>currencies</strong></a>: currencies</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv510GetCurrenciesAtBank200Response> 
-     */
-    open class func oBPv510GetCurrenciesAtBankWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv510GetCurrenciesAtBank200Response> {
-        var localVariablePath = "/obp/v5.1.0/banks/{bankid}/currencies"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv510GetCurrenciesAtBank200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<CreateFxRequest>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

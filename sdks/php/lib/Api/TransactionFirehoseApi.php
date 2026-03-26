@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,7 +75,7 @@ class TransactionFirehoseApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv300GetFirehoseTransactionsForBankAccount' => [
+        'getFirehoseTransactionsForBankAccount' => [
             'application/json',
         ],
     ];
@@ -127,42 +127,42 @@ class TransactionFirehoseApi
     }
 
     /**
-     * Operation oBPv300GetFirehoseTransactionsForBankAccount
+     * Operation getFirehoseTransactionsForBankAccount
      *
      * Get Firehose Transactions for Account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFirehoseTransactionsForBankAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv300GetFirehoseTransactionsForBankAccount200Response
+     * @return \OpenBankProject\Model\GetFirehoseTransactionsForBankAccount200Response
      */
-    public function oBPv300GetFirehoseTransactionsForBankAccount($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'][0])
+    public function getFirehoseTransactionsForBankAccount($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getFirehoseTransactionsForBankAccount'][0])
     {
-        list($response) = $this->oBPv300GetFirehoseTransactionsForBankAccountWithHttpInfo($bankid, $accountid, $viewid, $contentType);
+        list($response) = $this->getFirehoseTransactionsForBankAccountWithHttpInfo($bankid, $accountid, $viewid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv300GetFirehoseTransactionsForBankAccountWithHttpInfo
+     * Operation getFirehoseTransactionsForBankAccountWithHttpInfo
      *
      * Get Firehose Transactions for Account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFirehoseTransactionsForBankAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv300GetFirehoseTransactionsForBankAccount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetFirehoseTransactionsForBankAccount200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv300GetFirehoseTransactionsForBankAccountWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'][0])
+    public function getFirehoseTransactionsForBankAccountWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getFirehoseTransactionsForBankAccount'][0])
     {
-        $request = $this->oBPv300GetFirehoseTransactionsForBankAccountRequest($bankid, $accountid, $viewid, $contentType);
+        $request = $this->getFirehoseTransactionsForBankAccountRequest($bankid, $accountid, $viewid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -190,7 +190,7 @@ class TransactionFirehoseApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv300GetFirehoseTransactionsForBankAccount200Response',
+                        '\OpenBankProject\Model\GetFirehoseTransactionsForBankAccount200Response',
                         $request,
                         $response,
                     );
@@ -212,7 +212,7 @@ class TransactionFirehoseApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv300GetFirehoseTransactionsForBankAccount200Response',
+                '\OpenBankProject\Model\GetFirehoseTransactionsForBankAccount200Response',
                 $request,
                 $response,
             );
@@ -221,7 +221,7 @@ class TransactionFirehoseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv300GetFirehoseTransactionsForBankAccount200Response',
+                        '\OpenBankProject\Model\GetFirehoseTransactionsForBankAccount200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -234,21 +234,21 @@ class TransactionFirehoseApi
     }
 
     /**
-     * Operation oBPv300GetFirehoseTransactionsForBankAccountAsync
+     * Operation getFirehoseTransactionsForBankAccountAsync
      *
      * Get Firehose Transactions for Account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFirehoseTransactionsForBankAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300GetFirehoseTransactionsForBankAccountAsync($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'][0])
+    public function getFirehoseTransactionsForBankAccountAsync($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getFirehoseTransactionsForBankAccount'][0])
     {
-        return $this->oBPv300GetFirehoseTransactionsForBankAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $contentType)
+        return $this->getFirehoseTransactionsForBankAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -257,22 +257,22 @@ class TransactionFirehoseApi
     }
 
     /**
-     * Operation oBPv300GetFirehoseTransactionsForBankAccountAsyncWithHttpInfo
+     * Operation getFirehoseTransactionsForBankAccountAsyncWithHttpInfo
      *
      * Get Firehose Transactions for Account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFirehoseTransactionsForBankAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300GetFirehoseTransactionsForBankAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'][0])
+    public function getFirehoseTransactionsForBankAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getFirehoseTransactionsForBankAccount'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv300GetFirehoseTransactionsForBankAccount200Response';
-        $request = $this->oBPv300GetFirehoseTransactionsForBankAccountRequest($bankid, $accountid, $viewid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetFirehoseTransactionsForBankAccount200Response';
+        $request = $this->getFirehoseTransactionsForBankAccountRequest($bankid, $accountid, $viewid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -311,37 +311,37 @@ class TransactionFirehoseApi
     }
 
     /**
-     * Create request for operation 'oBPv300GetFirehoseTransactionsForBankAccount'
+     * Create request for operation 'getFirehoseTransactionsForBankAccount'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFirehoseTransactionsForBankAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv300GetFirehoseTransactionsForBankAccountRequest($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'][0])
+    public function getFirehoseTransactionsForBankAccountRequest($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getFirehoseTransactionsForBankAccount'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv300GetFirehoseTransactionsForBankAccount'
+                'Missing the required parameter $bankid when calling getFirehoseTransactionsForBankAccount'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv300GetFirehoseTransactionsForBankAccount'
+                'Missing the required parameter $accountid when calling getFirehoseTransactionsForBankAccount'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv300GetFirehoseTransactionsForBankAccount'
+                'Missing the required parameter $viewid when calling getFirehoseTransactionsForBankAccount'
             );
         }
 
@@ -422,9 +422,9 @@ class TransactionFirehoseApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

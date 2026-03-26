@@ -13,12 +13,12 @@ open class BankAttributeAPI {
      Create Bank Attribute
      
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv510UpdateAtmAttributeRequest: (body) Request body 
+     - parameter updateAtmAttributeRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems
+     - returns: GetBankAttributes200ResponseBankAttributesInner
      */
-    open class func oBPv400CreateBankAttribute(bankid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems {
-        return try await oBPv400CreateBankAttributeWithRequestBuilder(bankid: bankid, oBPv510UpdateAtmAttributeRequest: oBPv510UpdateAtmAttributeRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createBankAttribute(bankid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetBankAttributes200ResponseBankAttributesInner {
+        return try await createBankAttributeWithRequestBuilder(bankid: bankid, updateAtmAttributeRequest: updateAtmAttributeRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -32,20 +32,20 @@ open class BankAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv510UpdateAtmAttributeRequest: (body) Request body 
+     - parameter updateAtmAttributeRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems> 
+     - returns: RequestBuilder<GetBankAttributes200ResponseBankAttributesInner> 
      */
-    open class func oBPv400CreateBankAttributeWithRequestBuilder(bankid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems> {
+    open class func createBankAttributeWithRequestBuilder(bankid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetBankAttributes200ResponseBankAttributesInner> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/attribute"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv510UpdateAtmAttributeRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateAtmAttributeRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -55,7 +55,7 @@ open class BankAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetBankAttributes200ResponseBankAttributesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -64,12 +64,12 @@ open class BankAttributeAPI {
      Create or Update Bank Attribute Definition
      
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: (body) Request body 
+     - parameter createOrUpdateTransactionRequestAttributeDefinitionRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+     - returns: GetTransactionRequestAttributeDefinition200ResponseAttributesInner
      */
-    open class func oBPv400CreateOrUpdateBankAttributeDefinition(bankid: String, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems {
-        return try await oBPv400CreateOrUpdateBankAttributeDefinitionWithRequestBuilder(bankid: bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createOrUpdateBankAttributeDefinition(bankid: String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetTransactionRequestAttributeDefinition200ResponseAttributesInner {
+        return try await createOrUpdateBankAttributeDefinitionWithRequestBuilder(bankid: bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest: createOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -83,20 +83,20 @@ open class BankAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: (body) Request body 
+     - parameter createOrUpdateTransactionRequestAttributeDefinitionRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> 
+     - returns: RequestBuilder<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> 
      */
-    open class func oBPv400CreateOrUpdateBankAttributeDefinitionWithRequestBuilder(bankid: String, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> {
+    open class func createOrUpdateBankAttributeDefinitionWithRequestBuilder(bankid: String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/attribute-definitions/bank"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createOrUpdateTransactionRequestAttributeDefinitionRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -106,7 +106,7 @@ open class BankAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -119,8 +119,8 @@ open class BankAttributeAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv400DeleteBankAttribute(bankid: String, bankattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv400DeleteBankAttributeWithRequestBuilder(bankid: bankid, bankattributeid: bankattributeid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteBankAttribute(bankid: String, bankattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteBankAttributeWithRequestBuilder(bankid: bankid, bankattributeid: bankattributeid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -134,14 +134,14 @@ open class BankAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter bankattributeid: (path) The BANKATTRIBUTEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv400DeleteBankAttributeWithRequestBuilder(bankid: String, bankattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteBankAttributeWithRequestBuilder(bankid: String, bankattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -171,10 +171,10 @@ open class BankAttributeAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter bankattributeid: (path) The BANKATTRIBUTEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems
+     - returns: GetBankAttributes200ResponseBankAttributesInner
      */
-    open class func oBPv400GetBankAttribute(bankid: String, bankattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems {
-        return try await oBPv400GetBankAttributeWithRequestBuilder(bankid: bankid, bankattributeid: bankattributeid, apiConfiguration: apiConfiguration).execute().body
+    open class func getBankAttribute(bankid: String, bankattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetBankAttributes200ResponseBankAttributesInner {
+        return try await getBankAttributeWithRequestBuilder(bankid: bankid, bankattributeid: bankattributeid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -188,14 +188,14 @@ open class BankAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter bankattributeid: (path) The BANKATTRIBUTEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems> 
+     - returns: RequestBuilder<GetBankAttributes200ResponseBankAttributesInner> 
      */
-    open class func oBPv400GetBankAttributeWithRequestBuilder(bankid: String, bankattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems> {
+    open class func getBankAttributeWithRequestBuilder(bankid: String, bankattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetBankAttributes200ResponseBankAttributesInner> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -214,7 +214,7 @@ open class BankAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetBankAttributes200ResponseBankAttributesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -224,10 +224,10 @@ open class BankAttributeAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetBankAttributes200Response
+     - returns: GetBankAttributes200Response
      */
-    open class func oBPv400GetBankAttributes(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetBankAttributes200Response {
-        return try await oBPv400GetBankAttributesWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
+    open class func getBankAttributes(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetBankAttributes200Response {
+        return try await getBankAttributesWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -241,13 +241,13 @@ open class BankAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetBankAttributes200Response> 
+     - returns: RequestBuilder<GetBankAttributes200Response> 
      */
-    open class func oBPv400GetBankAttributesWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetBankAttributes200Response> {
+    open class func getBankAttributesWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetBankAttributes200Response> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/attributes"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -263,7 +263,7 @@ open class BankAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetBankAttributes200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetBankAttributes200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -273,12 +273,12 @@ open class BankAttributeAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter bankattributeid: (path) The BANKATTRIBUTEID identifier 
-     - parameter oBPv510UpdateAtmAttributeRequest: (body) Request body 
+     - parameter updateAtmAttributeRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+     - returns: CreateOrUpdateTransactionRequestAttributeDefinitionRequest
      */
-    open class func oBPv400UpdateBankAttribute(bankid: String, bankattributeid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest {
-        return try await oBPv400UpdateBankAttributeWithRequestBuilder(bankid: bankid, bankattributeid: bankattributeid, oBPv510UpdateAtmAttributeRequest: oBPv510UpdateAtmAttributeRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateBankAttribute(bankid: String, bankattributeid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> CreateOrUpdateTransactionRequestAttributeDefinitionRequest {
+        return try await updateBankAttributeWithRequestBuilder(bankid: bankid, bankattributeid: bankattributeid, updateAtmAttributeRequest: updateAtmAttributeRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -292,15 +292,15 @@ open class BankAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter bankattributeid: (path) The BANKATTRIBUTEID identifier 
-     - parameter oBPv510UpdateAtmAttributeRequest: (body) Request body 
+     - parameter updateAtmAttributeRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest> 
+     - returns: RequestBuilder<CreateOrUpdateTransactionRequestAttributeDefinitionRequest> 
      */
-    open class func oBPv400UpdateBankAttributeWithRequestBuilder(bankid: String, bankattributeid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest> {
+    open class func updateBankAttributeWithRequestBuilder(bankid: String, bankattributeid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<CreateOrUpdateTransactionRequestAttributeDefinitionRequest> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -309,7 +309,7 @@ open class BankAttributeAPI {
         let bankattributeidPostEscape = bankattributeidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{bankattributeid}", with: bankattributeidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv510UpdateAtmAttributeRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateAtmAttributeRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -319,7 +319,7 @@ open class BankAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<CreateOrUpdateTransactionRequestAttributeDefinitionRequest>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

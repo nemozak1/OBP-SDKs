@@ -1,17 +1,17 @@
 # ConfirmationOfFundsServicePiisApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv310CheckFundsAvailable**](ConfirmationOfFundsServicePiisApi.md#oBPv310CheckFundsAvailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds |
-| [**oBPv310CheckFundsAvailableWithHttpInfo**](ConfirmationOfFundsServicePiisApi.md#oBPv310CheckFundsAvailableWithHttpInfo) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds |
+| [**checkFundsAvailable**](ConfirmationOfFundsServicePiisApi.md#checkFundsAvailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds |
+| [**checkFundsAvailableWithHttpInfo**](ConfirmationOfFundsServicePiisApi.md#checkFundsAvailableWithHttpInfo) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds |
 
 
 
-## oBPv310CheckFundsAvailable
+## checkFundsAvailable
 
-> OBPv310CheckFundsAvailable200Response oBPv310CheckFundsAvailable(bankid, accountid, viewid)
+> CheckFundsAvailable200Response checkFundsAvailable(bankid, accountid, viewid)
 
 Check Available Funds
 
@@ -31,7 +31,7 @@ import com.openbankproject.api.ConfirmationOfFundsServicePiisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -54,10 +54,10 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         try {
-            OBPv310CheckFundsAvailable200Response result = apiInstance.oBPv310CheckFundsAvailable(bankid, accountid, viewid);
+            CheckFundsAvailable200Response result = apiInstance.checkFundsAvailable(bankid, accountid, viewid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConfirmationOfFundsServicePiisApi#oBPv310CheckFundsAvailable");
+            System.err.println("Exception when calling ConfirmationOfFundsServicePiisApi#checkFundsAvailable");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -78,7 +78,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv310CheckFundsAvailable200Response**](OBPv310CheckFundsAvailable200Response.md)
+[**CheckFundsAvailable200Response**](CheckFundsAvailable200Response.md)
 
 
 ### Authorization
@@ -97,9 +97,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv310CheckFundsAvailableWithHttpInfo
+## checkFundsAvailableWithHttpInfo
 
-> ApiResponse<OBPv310CheckFundsAvailable200Response> oBPv310CheckFundsAvailable oBPv310CheckFundsAvailableWithHttpInfo(bankid, accountid, viewid)
+> ApiResponse<CheckFundsAvailable200Response> checkFundsAvailable checkFundsAvailableWithHttpInfo(bankid, accountid, viewid)
 
 Check Available Funds
 
@@ -120,7 +120,7 @@ import com.openbankproject.api.ConfirmationOfFundsServicePiisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -143,12 +143,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         try {
-            ApiResponse<OBPv310CheckFundsAvailable200Response> response = apiInstance.oBPv310CheckFundsAvailableWithHttpInfo(bankid, accountid, viewid);
+            ApiResponse<CheckFundsAvailable200Response> response = apiInstance.checkFundsAvailableWithHttpInfo(bankid, accountid, viewid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConfirmationOfFundsServicePiisApi#oBPv310CheckFundsAvailable");
+            System.err.println("Exception when calling ConfirmationOfFundsServicePiisApi#checkFundsAvailable");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -169,7 +169,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv310CheckFundsAvailable200Response**](OBPv310CheckFundsAvailable200Response.md)>
+ApiResponse<[**CheckFundsAvailable200Response**](CheckFundsAvailable200Response.md)>
 
 
 ### Authorization

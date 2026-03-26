@@ -1,16 +1,16 @@
 # OldStyleApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv200ElasticSearchMetrics**](OldStyleApi.md#obpv200elasticsearchmetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch |
+| [**elasticSearchMetrics**](OldStyleApi.md#elasticsearchmetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch |
 
 
 
-## oBPv200ElasticSearchMetrics
+## elasticSearchMetrics
 
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage oBPv200ElasticSearchMetrics()
+> object elasticSearchMetrics()
 
 Search API Metrics via Elasticsearch
 
@@ -23,7 +23,7 @@ import {
   Configuration,
   OldStyleApi,
 } from 'obp-typescript';
-import type { OBPv200ElasticSearchMetricsRequest } from 'obp-typescript';
+import type { ElasticSearchMetricsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -38,7 +38,7 @@ async function example() {
   const api = new OldStyleApi(config);
 
   try {
-    const data = await api.oBPv200ElasticSearchMetrics();
+    const data = await api.elasticSearchMetrics();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -55,7 +55,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**object**
 
 ### Authorization
 

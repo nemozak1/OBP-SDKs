@@ -1,16 +1,16 @@
 # ConfirmationOfFundsServicePIISApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv310CheckFundsAvailable**](ConfirmationOfFundsServicePIISApi.md#obpv310checkfundsavailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds |
+| [**checkFundsAvailable**](ConfirmationOfFundsServicePIISApi.md#checkfundsavailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds |
 
 
 
-## oBPv310CheckFundsAvailable
+## checkFundsAvailable
 
-> OBPv310CheckFundsAvailable200Response oBPv310CheckFundsAvailable(bankid, accountid, viewid)
+> CheckFundsAvailable200Response checkFundsAvailable(bankid, accountid, viewid)
 
 Check Available Funds
 
@@ -23,7 +23,7 @@ import {
   Configuration,
   ConfirmationOfFundsServicePIISApi,
 } from 'obp-typescript';
-import type { OBPv310CheckFundsAvailableRequest } from 'obp-typescript';
+import type { CheckFundsAvailableRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -44,10 +44,10 @@ async function example() {
     accountid: accountid_example,
     // string | The VIEWID identifier
     viewid: viewid_example,
-  } satisfies OBPv310CheckFundsAvailableRequest;
+  } satisfies CheckFundsAvailableRequest;
 
   try {
-    const data = await api.oBPv310CheckFundsAvailable(body);
+    const data = await api.checkFundsAvailable(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -69,7 +69,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv310CheckFundsAvailable200Response**](OBPv310CheckFundsAvailable200Response.md)
+[**CheckFundsAvailable200Response**](CheckFundsAvailable200Response.md)
 
 ### Authorization
 

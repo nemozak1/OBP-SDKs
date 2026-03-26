@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,154 +15,154 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv1_2_1_add_comment_for_view_on_transaction`]
+/// struct for typed errors of method [`add_comment_for_view_on_transaction`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv121AddCommentForViewOnTransactionError {
+pub enum AddCommentForViewOnTransactionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv1_2_1_add_image_for_view_on_transaction`]
+/// struct for typed errors of method [`add_image_for_view_on_transaction`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv121AddImageForViewOnTransactionError {
+pub enum AddImageForViewOnTransactionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv1_2_1_add_tag_for_view_on_transaction`]
+/// struct for typed errors of method [`add_tag_for_view_on_transaction`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv121AddTagForViewOnTransactionError {
+pub enum AddTagForViewOnTransactionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv1_2_1_add_transaction_narrative`]
+/// struct for typed errors of method [`add_transaction_narrative`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv121AddTransactionNarrativeError {
+pub enum AddTransactionNarrativeError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv1_2_1_add_where_tag_for_view_on_transaction`]
+/// struct for typed errors of method [`add_where_tag_for_view_on_transaction`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv121AddWhereTagForViewOnTransactionError {
+pub enum AddWhereTagForViewOnTransactionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv1_2_1_delete_comment_for_view_on_transaction`]
+/// struct for typed errors of method [`delete_comment_for_view_on_transaction`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv121DeleteCommentForViewOnTransactionError {
+pub enum DeleteCommentForViewOnTransactionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv1_2_1_delete_image_for_view_on_transaction`]
+/// struct for typed errors of method [`delete_image_for_view_on_transaction`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv121DeleteImageForViewOnTransactionError {
+pub enum DeleteImageForViewOnTransactionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv1_2_1_delete_tag_for_view_on_transaction`]
+/// struct for typed errors of method [`delete_tag_for_view_on_transaction`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv121DeleteTagForViewOnTransactionError {
+pub enum DeleteTagForViewOnTransactionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv1_2_1_delete_transaction_narrative`]
+/// struct for typed errors of method [`delete_transaction_narrative`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv121DeleteTransactionNarrativeError {
+pub enum DeleteTransactionNarrativeError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv1_2_1_delete_where_tag_for_view_on_transaction`]
+/// struct for typed errors of method [`delete_where_tag_for_view_on_transaction`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv121DeleteWhereTagForViewOnTransactionError {
+pub enum DeleteWhereTagForViewOnTransactionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv1_2_1_get_comments_for_view_on_transaction`]
+/// struct for typed errors of method [`get_comments_for_view_on_transaction`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv121GetCommentsForViewOnTransactionError {
+pub enum GetCommentsForViewOnTransactionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv1_2_1_get_images_for_view_on_transaction`]
+/// struct for typed errors of method [`get_images_for_view_on_transaction`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv121GetImagesForViewOnTransactionError {
+pub enum GetImagesForViewOnTransactionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv1_2_1_get_tags_for_view_on_transaction`]
+/// struct for typed errors of method [`get_tags_for_view_on_transaction`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv121GetTagsForViewOnTransactionError {
+pub enum GetTagsForViewOnTransactionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv1_2_1_get_transaction_narrative`]
+/// struct for typed errors of method [`get_transaction_narrative`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv121GetTransactionNarrativeError {
+pub enum GetTransactionNarrativeError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv1_2_1_get_where_tag_for_view_on_transaction`]
+/// struct for typed errors of method [`get_where_tag_for_view_on_transaction`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv121GetWhereTagForViewOnTransactionError {
+pub enum GetWhereTagForViewOnTransactionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv1_2_1_update_transaction_narrative`]
+/// struct for typed errors of method [`update_transaction_narrative`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv121UpdateTransactionNarrativeError {
+pub enum UpdateTransactionNarrativeError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv1_2_1_update_where_tag_for_view_on_transaction`]
+/// struct for typed errors of method [`update_where_tag_for_view_on_transaction`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv121UpdateWhereTagForViewOnTransactionError {
+pub enum UpdateWhereTagForViewOnTransactionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
@@ -170,13 +170,13 @@ pub enum OBpv121UpdateWhereTagForViewOnTransactionError {
 
 
 /// <p>Posts a comment about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>${authenticationRequiredMessage(false)}</p> <p>Authentication is required since the comment is linked with the user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv1_2_1_add_comment_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, obpv400_delete_system_level_endpoint_tag200_response: models::Obpv400DeleteSystemLevelEndpointTag200Response) -> Result<models::Obpv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, Error<OBpv121AddCommentForViewOnTransactionError>> {
+pub async fn add_comment_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, get_transaction_types200_response_transaction_types_inner_id: models::GetTransactionTypes200ResponseTransactionTypesInnerId) -> Result<models::GetTagsForViewOnAccount200ResponseTagsInner, Error<AddCommentForViewOnTransactionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
     let p_path_viewid = viewid;
     let p_path_transactionid = transactionid;
-    let p_body_obpv400_delete_system_level_endpoint_tag200_response = obpv400_delete_system_level_endpoint_tag200_response;
+    let p_body_get_transaction_types200_response_transaction_types_inner_id = get_transaction_types200_response_transaction_types_inner_id;
 
     let uri_str = format!("{}/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), accountid=crate::apis::urlencode(p_path_accountid), viewid=crate::apis::urlencode(p_path_viewid), transactionid=crate::apis::urlencode(p_path_transactionid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -201,9 +201,9 @@ pub async fn o_bpv1_2_1_add_comment_for_view_on_transaction(configuration: &conf
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_delete_system_level_endpoint_tag200_response);
+    req_builder = req_builder.json(&p_body_get_transaction_types200_response_transaction_types_inner_id);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -220,24 +220,24 @@ pub async fn o_bpv1_2_1_add_comment_for_view_on_transaction(configuration: &conf
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetTagsForViewOnAccount200ResponseTagsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetTagsForViewOnAccount200ResponseTagsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv121AddCommentForViewOnTransactionError> = serde_json::from_str(&content).ok();
+        let entity: Option<AddCommentForViewOnTransactionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Posts an image about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The image is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-pub async fn o_bpv1_2_1_add_image_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, obpv121_add_image_for_view_on_transaction_request: models::Obpv121AddImageForViewOnTransactionRequest) -> Result<models::Obpv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems, Error<OBpv121AddImageForViewOnTransactionError>> {
+pub async fn add_image_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, add_image_for_view_on_transaction_request: models::AddImageForViewOnTransactionRequest) -> Result<models::GetTransactionByIdForBankAccount200ResponseMetadataImagesInner, Error<AddImageForViewOnTransactionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
     let p_path_viewid = viewid;
     let p_path_transactionid = transactionid;
-    let p_body_obpv121_add_image_for_view_on_transaction_request = obpv121_add_image_for_view_on_transaction_request;
+    let p_body_add_image_for_view_on_transaction_request = add_image_for_view_on_transaction_request;
 
     let uri_str = format!("{}/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), accountid=crate::apis::urlencode(p_path_accountid), viewid=crate::apis::urlencode(p_path_viewid), transactionid=crate::apis::urlencode(p_path_transactionid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -262,9 +262,9 @@ pub async fn o_bpv1_2_1_add_image_for_view_on_transaction(configuration: &config
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv121_add_image_for_view_on_transaction_request);
+    req_builder = req_builder.json(&p_body_add_image_for_view_on_transaction_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -281,24 +281,24 @@ pub async fn o_bpv1_2_1_add_image_for_view_on_transaction(configuration: &config
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetTransactionByIdForBankAccount200ResponseMetadataImagesInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetTransactionByIdForBankAccount200ResponseMetadataImagesInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv121AddImageForViewOnTransactionError> = serde_json::from_str(&content).ok();
+        let entity: Option<AddImageForViewOnTransactionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Posts a tag about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv1_2_1_add_tag_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, obpv400_delete_system_level_endpoint_tag200_response: models::Obpv400DeleteSystemLevelEndpointTag200Response) -> Result<models::Obpv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, Error<OBpv121AddTagForViewOnTransactionError>> {
+pub async fn add_tag_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, get_transaction_types200_response_transaction_types_inner_id: models::GetTransactionTypes200ResponseTransactionTypesInnerId) -> Result<models::GetTagsForViewOnAccount200ResponseTagsInner, Error<AddTagForViewOnTransactionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
     let p_path_viewid = viewid;
     let p_path_transactionid = transactionid;
-    let p_body_obpv400_delete_system_level_endpoint_tag200_response = obpv400_delete_system_level_endpoint_tag200_response;
+    let p_body_get_transaction_types200_response_transaction_types_inner_id = get_transaction_types200_response_transaction_types_inner_id;
 
     let uri_str = format!("{}/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), accountid=crate::apis::urlencode(p_path_accountid), viewid=crate::apis::urlencode(p_path_viewid), transactionid=crate::apis::urlencode(p_path_transactionid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -323,9 +323,9 @@ pub async fn o_bpv1_2_1_add_tag_for_view_on_transaction(configuration: &configur
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_delete_system_level_endpoint_tag200_response);
+    req_builder = req_builder.json(&p_body_get_transaction_types200_response_transaction_types_inner_id);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -342,24 +342,24 @@ pub async fn o_bpv1_2_1_add_tag_for_view_on_transaction(configuration: &configur
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetTagsForViewOnAccount200ResponseTagsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetTagsForViewOnAccount200ResponseTagsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv121AddTagForViewOnTransactionError> = serde_json::from_str(&content).ok();
+        let entity: Option<AddTagForViewOnTransactionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Creates a description of the transaction TRANSACTION_ID.</p> <p>Note: Unlike other items of metadata, there is only one &quot;narrative&quot; per transaction accross all views.<br /> If you set narrative via a view e.g. view-x it will be seen via view-y (as long as view-y has permission to see the narrative).</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-pub async fn o_bpv1_2_1_add_transaction_narrative(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, obpv121_get_transaction_narrative200_response: models::Obpv121GetTransactionNarrative200Response) -> Result<models::Obpv121UpdateTransactionNarrative200Response, Error<OBpv121AddTransactionNarrativeError>> {
+pub async fn add_transaction_narrative(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, get_transaction_narrative200_response: models::GetTransactionNarrative200Response) -> Result<models::UpdateTransactionNarrative200Response, Error<AddTransactionNarrativeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
     let p_path_viewid = viewid;
     let p_path_transactionid = transactionid;
-    let p_body_obpv121_get_transaction_narrative200_response = obpv121_get_transaction_narrative200_response;
+    let p_body_get_transaction_narrative200_response = get_transaction_narrative200_response;
 
     let uri_str = format!("{}/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), accountid=crate::apis::urlencode(p_path_accountid), viewid=crate::apis::urlencode(p_path_viewid), transactionid=crate::apis::urlencode(p_path_transactionid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -384,9 +384,9 @@ pub async fn o_bpv1_2_1_add_transaction_narrative(configuration: &configuration:
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv121_get_transaction_narrative200_response);
+    req_builder = req_builder.json(&p_body_get_transaction_narrative200_response);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -403,24 +403,24 @@ pub async fn o_bpv1_2_1_add_transaction_narrative(configuration: &configuration:
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::UpdateTransactionNarrative200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::UpdateTransactionNarrative200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv121AddTransactionNarrativeError> = serde_json::from_str(&content).ok();
+        let entity: Option<AddTransactionNarrativeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Creates a &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-pub async fn o_bpv1_2_1_add_where_tag_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, obpv121_update_where_tag_for_view_on_transaction_request: models::Obpv121UpdateWhereTagForViewOnTransactionRequest) -> Result<models::Obpv121UpdateTransactionNarrative200Response, Error<OBpv121AddWhereTagForViewOnTransactionError>> {
+pub async fn add_where_tag_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, update_where_tag_for_view_on_transaction_request: models::UpdateWhereTagForViewOnTransactionRequest) -> Result<models::UpdateTransactionNarrative200Response, Error<AddWhereTagForViewOnTransactionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
     let p_path_viewid = viewid;
     let p_path_transactionid = transactionid;
-    let p_body_obpv121_update_where_tag_for_view_on_transaction_request = obpv121_update_where_tag_for_view_on_transaction_request;
+    let p_body_update_where_tag_for_view_on_transaction_request = update_where_tag_for_view_on_transaction_request;
 
     let uri_str = format!("{}/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), accountid=crate::apis::urlencode(p_path_accountid), viewid=crate::apis::urlencode(p_path_viewid), transactionid=crate::apis::urlencode(p_path_transactionid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -445,9 +445,9 @@ pub async fn o_bpv1_2_1_add_where_tag_for_view_on_transaction(configuration: &co
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv121_update_where_tag_for_view_on_transaction_request);
+    req_builder = req_builder.json(&p_body_update_where_tag_for_view_on_transaction_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -464,18 +464,18 @@ pub async fn o_bpv1_2_1_add_where_tag_for_view_on_transaction(configuration: &co
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::UpdateTransactionNarrative200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::UpdateTransactionNarrative200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv121AddWhereTagForViewOnTransactionError> = serde_json::from_str(&content).ok();
+        let entity: Option<AddWhereTagForViewOnTransactionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete the comment COMMENT_ID about the transaction TRANSACTION_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>Authentication via OAuth is required. The user must either have owner privileges for this account, or must be the user that posted the comment.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#comment_id\">COMMENT_ID</a>:</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv1_2_1_delete_comment_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, commentid: &str) -> Result<(), Error<OBpv121DeleteCommentForViewOnTransactionError>> {
+pub async fn delete_comment_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, commentid: &str) -> Result<(), Error<DeleteCommentForViewOnTransactionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
@@ -506,7 +506,7 @@ pub async fn o_bpv1_2_1_delete_comment_for_view_on_transaction(configuration: &c
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -518,13 +518,13 @@ pub async fn o_bpv1_2_1_delete_comment_for_view_on_transaction(configuration: &c
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv121DeleteCommentForViewOnTransactionError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteCommentForViewOnTransactionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Deletes the image IMAGE_ID about the transaction TRANSACTION_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>Authentication via OAuth is required. The user must either have owner privileges for this account, or must be the user that posted the image.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#image_id\">IMAGE_ID</a>:</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv1_2_1_delete_image_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, imageid: &str) -> Result<(), Error<OBpv121DeleteImageForViewOnTransactionError>> {
+pub async fn delete_image_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, imageid: &str) -> Result<(), Error<DeleteImageForViewOnTransactionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
@@ -555,7 +555,7 @@ pub async fn o_bpv1_2_1_delete_image_for_view_on_transaction(configuration: &con
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -567,13 +567,13 @@ pub async fn o_bpv1_2_1_delete_image_for_view_on_transaction(configuration: &con
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv121DeleteImageForViewOnTransactionError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteImageForViewOnTransactionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Deletes the tag TAG_ID about the transaction TRANSACTION_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.<br /> Authentication via OAuth is required. The user must either have owner privileges for this account,<br /> or must be the user that posted the tag.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#tag_id\">TAG_ID</a>:</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv1_2_1_delete_tag_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, tagid: &str) -> Result<(), Error<OBpv121DeleteTagForViewOnTransactionError>> {
+pub async fn delete_tag_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, tagid: &str) -> Result<(), Error<DeleteTagForViewOnTransactionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
@@ -597,13 +597,13 @@ pub async fn o_bpv1_2_1_delete_tag_for_view_on_transaction(configuration: &confi
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv121DeleteTagForViewOnTransactionError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteTagForViewOnTransactionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Deletes the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv1_2_1_delete_transaction_narrative(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str) -> Result<(), Error<OBpv121DeleteTransactionNarrativeError>> {
+pub async fn delete_transaction_narrative(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str) -> Result<(), Error<DeleteTransactionNarrativeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
@@ -633,7 +633,7 @@ pub async fn o_bpv1_2_1_delete_transaction_narrative(configuration: &configurati
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -645,13 +645,13 @@ pub async fn o_bpv1_2_1_delete_transaction_narrative(configuration: &configurati
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv121DeleteTransactionNarrativeError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteTransactionNarrativeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Deletes the where tag of the transaction TRANSACTION_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The user must either have owner privileges for this account, or must be the user that posted the geo tag.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv1_2_1_delete_where_tag_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str) -> Result<(), Error<OBpv121DeleteWhereTagForViewOnTransactionError>> {
+pub async fn delete_where_tag_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str) -> Result<(), Error<DeleteWhereTagForViewOnTransactionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
@@ -681,7 +681,7 @@ pub async fn o_bpv1_2_1_delete_where_tag_for_view_on_transaction(configuration: 
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -693,13 +693,13 @@ pub async fn o_bpv1_2_1_delete_where_tag_for_view_on_transaction(configuration: 
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv121DeleteWhereTagForViewOnTransactionError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteWhereTagForViewOnTransactionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Returns the transaction TRANSACTION_ID comments made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv1_2_1_get_comments_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str) -> Result<models::Obpv121GetCommentsForViewOnTransaction200Response, Error<OBpv121GetCommentsForViewOnTransactionError>> {
+pub async fn get_comments_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str) -> Result<models::GetCommentsForViewOnTransaction200Response, Error<GetCommentsForViewOnTransactionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
@@ -729,7 +729,7 @@ pub async fn o_bpv1_2_1_get_comments_for_view_on_transaction(configuration: &con
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -747,18 +747,18 @@ pub async fn o_bpv1_2_1_get_comments_for_view_on_transaction(configuration: &con
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv121GetCommentsForViewOnTransaction200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv121GetCommentsForViewOnTransaction200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetCommentsForViewOnTransaction200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetCommentsForViewOnTransaction200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv121GetCommentsForViewOnTransactionError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetCommentsForViewOnTransactionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Returns the transaction TRANSACTION_ID images made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-pub async fn o_bpv1_2_1_get_images_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str) -> Result<models::Obpv121GetImagesForViewOnTransaction200Response, Error<OBpv121GetImagesForViewOnTransactionError>> {
+pub async fn get_images_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str) -> Result<models::GetImagesForViewOnTransaction200Response, Error<GetImagesForViewOnTransactionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
@@ -788,7 +788,7 @@ pub async fn o_bpv1_2_1_get_images_for_view_on_transaction(configuration: &confi
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -806,18 +806,18 @@ pub async fn o_bpv1_2_1_get_images_for_view_on_transaction(configuration: &confi
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv121GetImagesForViewOnTransaction200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv121GetImagesForViewOnTransaction200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetImagesForViewOnTransaction200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetImagesForViewOnTransaction200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv121GetImagesForViewOnTransactionError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetImagesForViewOnTransactionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Returns the transaction TRANSACTION_ID tags made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv1_2_1_get_tags_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str) -> Result<models::Obpv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, Error<OBpv121GetTagsForViewOnTransactionError>> {
+pub async fn get_tags_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str) -> Result<models::GetTagsForViewOnAccount200ResponseTagsInner, Error<GetTagsForViewOnTransactionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
@@ -846,18 +846,18 @@ pub async fn o_bpv1_2_1_get_tags_for_view_on_transaction(configuration: &configu
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetTagsForViewOnAccount200ResponseTagsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetTagsForViewOnAccount200ResponseTagsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv121GetTagsForViewOnTransactionError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetTagsForViewOnTransactionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Returns the account owner description of the transaction <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> 
-pub async fn o_bpv1_2_1_get_transaction_narrative(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str) -> Result<models::Obpv121GetTransactionNarrative200Response, Error<OBpv121GetTransactionNarrativeError>> {
+pub async fn get_transaction_narrative(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str) -> Result<models::GetTransactionNarrative200Response, Error<GetTransactionNarrativeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
@@ -886,18 +886,18 @@ pub async fn o_bpv1_2_1_get_transaction_narrative(configuration: &configuration:
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv121GetTransactionNarrative200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv121GetTransactionNarrative200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetTransactionNarrative200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetTransactionNarrative200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv121GetTransactionNarrativeError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetTransactionNarrativeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Returns the &quot;where&quot; Geo tag added to the transaction TRANSACTION_ID made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> It represents the location where the transaction has been initiated.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
-pub async fn o_bpv1_2_1_get_where_tag_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str) -> Result<models::Obpv121GetWhereTagForViewOnTransaction200Response, Error<OBpv121GetWhereTagForViewOnTransactionError>> {
+pub async fn get_where_tag_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str) -> Result<models::GetWhereTagForViewOnTransaction200Response, Error<GetWhereTagForViewOnTransactionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
@@ -926,24 +926,24 @@ pub async fn o_bpv1_2_1_get_where_tag_for_view_on_transaction(configuration: &co
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv121GetWhereTagForViewOnTransaction200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv121GetWhereTagForViewOnTransaction200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetWhereTagForViewOnTransaction200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetWhereTagForViewOnTransaction200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv121GetWhereTagForViewOnTransactionError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetWhereTagForViewOnTransactionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Updates the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-pub async fn o_bpv1_2_1_update_transaction_narrative(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, obpv121_get_transaction_narrative200_response: models::Obpv121GetTransactionNarrative200Response) -> Result<models::Obpv121UpdateTransactionNarrative200Response, Error<OBpv121UpdateTransactionNarrativeError>> {
+pub async fn update_transaction_narrative(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, get_transaction_narrative200_response: models::GetTransactionNarrative200Response) -> Result<models::UpdateTransactionNarrative200Response, Error<UpdateTransactionNarrativeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
     let p_path_viewid = viewid;
     let p_path_transactionid = transactionid;
-    let p_body_obpv121_get_transaction_narrative200_response = obpv121_get_transaction_narrative200_response;
+    let p_body_get_transaction_narrative200_response = get_transaction_narrative200_response;
 
     let uri_str = format!("{}/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), accountid=crate::apis::urlencode(p_path_accountid), viewid=crate::apis::urlencode(p_path_viewid), transactionid=crate::apis::urlencode(p_path_transactionid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -951,7 +951,7 @@ pub async fn o_bpv1_2_1_update_transaction_narrative(configuration: &configurati
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    req_builder = req_builder.json(&p_body_obpv121_get_transaction_narrative200_response);
+    req_builder = req_builder.json(&p_body_get_transaction_narrative200_response);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -968,24 +968,24 @@ pub async fn o_bpv1_2_1_update_transaction_narrative(configuration: &configurati
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::UpdateTransactionNarrative200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::UpdateTransactionNarrative200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv121UpdateTransactionNarrativeError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateTransactionNarrativeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Updates the &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-pub async fn o_bpv1_2_1_update_where_tag_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, obpv121_update_where_tag_for_view_on_transaction_request: models::Obpv121UpdateWhereTagForViewOnTransactionRequest) -> Result<models::Obpv121UpdateTransactionNarrative200Response, Error<OBpv121UpdateWhereTagForViewOnTransactionError>> {
+pub async fn update_where_tag_for_view_on_transaction(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, transactionid: &str, update_where_tag_for_view_on_transaction_request: models::UpdateWhereTagForViewOnTransactionRequest) -> Result<models::UpdateTransactionNarrative200Response, Error<UpdateWhereTagForViewOnTransactionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
     let p_path_viewid = viewid;
     let p_path_transactionid = transactionid;
-    let p_body_obpv121_update_where_tag_for_view_on_transaction_request = obpv121_update_where_tag_for_view_on_transaction_request;
+    let p_body_update_where_tag_for_view_on_transaction_request = update_where_tag_for_view_on_transaction_request;
 
     let uri_str = format!("{}/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), accountid=crate::apis::urlencode(p_path_accountid), viewid=crate::apis::urlencode(p_path_viewid), transactionid=crate::apis::urlencode(p_path_transactionid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -1010,9 +1010,9 @@ pub async fn o_bpv1_2_1_update_where_tag_for_view_on_transaction(configuration: 
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv121_update_where_tag_for_view_on_transaction_request);
+    req_builder = req_builder.json(&p_body_update_where_tag_for_view_on_transaction_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -1029,12 +1029,12 @@ pub async fn o_bpv1_2_1_update_where_tag_for_view_on_transaction(configuration: 
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::UpdateTransactionNarrative200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::UpdateTransactionNarrative200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv121UpdateWhereTagForViewOnTransactionError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateWhereTagForViewOnTransactionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

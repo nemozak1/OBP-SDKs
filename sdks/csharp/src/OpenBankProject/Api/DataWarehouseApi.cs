@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -46,10 +46,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="index">The INDEX identifier</param>
-        /// <param name="oBPv300DataWarehouseSearchRequest">Request body</param>
+        /// <param name="dataWarehouseSearchRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300DataWarehouseSearchApiResponse"/>&gt;</returns>
-        Task<IOBPv300DataWarehouseSearchApiResponse> OBPv300DataWarehouseSearchAsync(string index, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDataWarehouseSearchApiResponse"/>&gt;</returns>
+        Task<IDataWarehouseSearchApiResponse> DataWarehouseSearchAsync(string index, DataWarehouseSearchRequest dataWarehouseSearchRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Data Warehouse Search
@@ -58,10 +58,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Search the data warehouse and get row level results.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanSearchWarehouse entitlement is required. You can request the Role below.&lt;/p&gt; &lt;p&gt;Elastic (search) is used in the background. See links below for syntax.&lt;/p&gt; &lt;p&gt;Examples of usage:&lt;/p&gt; &lt;p&gt;POST /search/warehouse/THE_INDEX_YOU_WANT_TO_USE&lt;/p&gt; &lt;p&gt;POST /search/warehouse/INDEX1,INDEX2&lt;/p&gt; &lt;p&gt;POST /search/warehouse/ALL&lt;/p&gt; &lt;p&gt;{ Any valid elasticsearch query DSL in the body }&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\&quot;&gt;Elasticsearch query DSL&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\&quot;&gt;Elastic simple query&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\&quot;&gt;Elastic aggregations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#index\&quot;&gt;INDEX&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#match_all\&quot;&gt;&lt;strong&gt;match_all&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#query\&quot;&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
         /// </remarks>
         /// <param name="index">The INDEX identifier</param>
-        /// <param name="oBPv300DataWarehouseSearchRequest">Request body</param>
+        /// <param name="dataWarehouseSearchRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300DataWarehouseSearchApiResponse"/>?&gt;</returns>
-        Task<IOBPv300DataWarehouseSearchApiResponse?> OBPv300DataWarehouseSearchOrDefaultAsync(string index, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDataWarehouseSearchApiResponse"/>?&gt;</returns>
+        Task<IDataWarehouseSearchApiResponse?> DataWarehouseSearchOrDefaultAsync(string index, DataWarehouseSearchRequest dataWarehouseSearchRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Data Warehouse Statistics
@@ -72,10 +72,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="index">The INDEX identifier</param>
         /// <param name="field">The FIELD identifier</param>
-        /// <param name="oBPv300DataWarehouseSearchRequest">Request body</param>
+        /// <param name="dataWarehouseSearchRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300DataWarehouseStatisticsApiResponse"/>&gt;</returns>
-        Task<IOBPv300DataWarehouseStatisticsApiResponse> OBPv300DataWarehouseStatisticsAsync(string index, string field, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDataWarehouseStatisticsApiResponse"/>&gt;</returns>
+        Task<IDataWarehouseStatisticsApiResponse> DataWarehouseStatisticsAsync(string index, string field, DataWarehouseSearchRequest dataWarehouseSearchRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Data Warehouse Statistics
@@ -85,16 +85,16 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="index">The INDEX identifier</param>
         /// <param name="field">The FIELD identifier</param>
-        /// <param name="oBPv300DataWarehouseSearchRequest">Request body</param>
+        /// <param name="dataWarehouseSearchRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300DataWarehouseStatisticsApiResponse"/>?&gt;</returns>
-        Task<IOBPv300DataWarehouseStatisticsApiResponse?> OBPv300DataWarehouseStatisticsOrDefaultAsync(string index, string field, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDataWarehouseStatisticsApiResponse"/>?&gt;</returns>
+        Task<IDataWarehouseStatisticsApiResponse?> DataWarehouseStatisticsOrDefaultAsync(string index, string field, DataWarehouseSearchRequest dataWarehouseSearchRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IOBPv300DataWarehouseSearchApiResponse"/>
+    /// The <see cref="IDataWarehouseSearchApiResponse"/>
     /// </summary>
-    public interface IOBPv300DataWarehouseSearchApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage?>
+    public interface IDataWarehouseSearchApiResponse : OpenBankProject.Client.IApiResponse, IOk<Object?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -110,9 +110,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv300DataWarehouseStatisticsApiResponse"/>
+    /// The <see cref="IDataWarehouseStatisticsApiResponse"/>
     /// </summary>
-    public interface IOBPv300DataWarehouseStatisticsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage?>
+    public interface IDataWarehouseStatisticsApiResponse : OpenBankProject.Client.IApiResponse, IOk<Object?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -135,41 +135,41 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv300DataWarehouseSearch;
+        public event EventHandler<ApiResponseEventArgs>? OnDataWarehouseSearch;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv300DataWarehouseSearch;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDataWarehouseSearch;
 
-        internal void ExecuteOnOBPv300DataWarehouseSearch(DataWarehouseApi.OBPv300DataWarehouseSearchApiResponse apiResponse)
+        internal void ExecuteOnDataWarehouseSearch(DataWarehouseApi.DataWarehouseSearchApiResponse apiResponse)
         {
-            OnOBPv300DataWarehouseSearch?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDataWarehouseSearch?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv300DataWarehouseSearch(Exception exception)
+        internal void ExecuteOnErrorDataWarehouseSearch(Exception exception)
         {
-            OnErrorOBPv300DataWarehouseSearch?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDataWarehouseSearch?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv300DataWarehouseStatistics;
+        public event EventHandler<ApiResponseEventArgs>? OnDataWarehouseStatistics;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv300DataWarehouseStatistics;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDataWarehouseStatistics;
 
-        internal void ExecuteOnOBPv300DataWarehouseStatistics(DataWarehouseApi.OBPv300DataWarehouseStatisticsApiResponse apiResponse)
+        internal void ExecuteOnDataWarehouseStatistics(DataWarehouseApi.DataWarehouseStatisticsApiResponse apiResponse)
         {
-            OnOBPv300DataWarehouseStatistics?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDataWarehouseStatistics?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv300DataWarehouseStatistics(Exception exception)
+        internal void ExecuteOnErrorDataWarehouseStatistics(Exception exception)
         {
-            OnErrorOBPv300DataWarehouseStatistics?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDataWarehouseStatistics?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -227,21 +227,21 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv300DataWarehouseSearch(ref string index, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest);
+        partial void FormatDataWarehouseSearch(ref string index, DataWarehouseSearchRequest dataWarehouseSearchRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="index"></param>
-        /// <param name="oBPv300DataWarehouseSearchRequest"></param>
+        /// <param name="dataWarehouseSearchRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv300DataWarehouseSearch(string index, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest)
+        private void ValidateDataWarehouseSearch(string index, DataWarehouseSearchRequest dataWarehouseSearchRequest)
         {
             if (index == null)
                 throw new ArgumentNullException(nameof(index));
 
-            if (oBPv300DataWarehouseSearchRequest == null)
-                throw new ArgumentNullException(nameof(oBPv300DataWarehouseSearchRequest));
+            if (dataWarehouseSearchRequest == null)
+                throw new ArgumentNullException(nameof(dataWarehouseSearchRequest));
         }
 
         /// <summary>
@@ -249,11 +249,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="index"></param>
-        /// <param name="oBPv300DataWarehouseSearchRequest"></param>
-        private void AfterOBPv300DataWarehouseSearchDefaultImplementation(IOBPv300DataWarehouseSearchApiResponse apiResponseLocalVar, string index, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest)
+        /// <param name="dataWarehouseSearchRequest"></param>
+        private void AfterDataWarehouseSearchDefaultImplementation(IDataWarehouseSearchApiResponse apiResponseLocalVar, string index, DataWarehouseSearchRequest dataWarehouseSearchRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv300DataWarehouseSearch(ref suppressDefaultLog, apiResponseLocalVar, index, oBPv300DataWarehouseSearchRequest);
+            AfterDataWarehouseSearch(ref suppressDefaultLog, apiResponseLocalVar, index, dataWarehouseSearchRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -264,8 +264,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="index"></param>
-        /// <param name="oBPv300DataWarehouseSearchRequest"></param>
-        partial void AfterOBPv300DataWarehouseSearch(ref bool suppressDefaultLog, IOBPv300DataWarehouseSearchApiResponse apiResponseLocalVar, string index, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest);
+        /// <param name="dataWarehouseSearchRequest"></param>
+        partial void AfterDataWarehouseSearch(ref bool suppressDefaultLog, IDataWarehouseSearchApiResponse apiResponseLocalVar, string index, DataWarehouseSearchRequest dataWarehouseSearchRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -274,11 +274,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="index"></param>
-        /// <param name="oBPv300DataWarehouseSearchRequest"></param>
-        private void OnErrorOBPv300DataWarehouseSearchDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string index, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest)
+        /// <param name="dataWarehouseSearchRequest"></param>
+        private void OnErrorDataWarehouseSearchDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string index, DataWarehouseSearchRequest dataWarehouseSearchRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv300DataWarehouseSearch(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, index, oBPv300DataWarehouseSearchRequest);
+            OnErrorDataWarehouseSearch(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, index, dataWarehouseSearchRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -291,21 +291,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="index"></param>
-        /// <param name="oBPv300DataWarehouseSearchRequest"></param>
-        partial void OnErrorOBPv300DataWarehouseSearch(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string index, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest);
+        /// <param name="dataWarehouseSearchRequest"></param>
+        partial void OnErrorDataWarehouseSearch(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string index, DataWarehouseSearchRequest dataWarehouseSearchRequest);
 
         /// <summary>
         /// Data Warehouse Search &lt;p&gt;Search the data warehouse and get row level results.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanSearchWarehouse entitlement is required. You can request the Role below.&lt;/p&gt; &lt;p&gt;Elastic (search) is used in the background. See links below for syntax.&lt;/p&gt; &lt;p&gt;Examples of usage:&lt;/p&gt; &lt;p&gt;POST /search/warehouse/THE_INDEX_YOU_WANT_TO_USE&lt;/p&gt; &lt;p&gt;POST /search/warehouse/INDEX1,INDEX2&lt;/p&gt; &lt;p&gt;POST /search/warehouse/ALL&lt;/p&gt; &lt;p&gt;{ Any valid elasticsearch query DSL in the body }&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\&quot;&gt;Elasticsearch query DSL&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\&quot;&gt;Elastic simple query&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\&quot;&gt;Elastic aggregations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#index\&quot;&gt;INDEX&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#match_all\&quot;&gt;&lt;strong&gt;match_all&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#query\&quot;&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="index">The INDEX identifier</param>
-        /// <param name="oBPv300DataWarehouseSearchRequest">Request body</param>
+        /// <param name="dataWarehouseSearchRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300DataWarehouseSearchApiResponse"/>&gt;</returns>
-        public async Task<IOBPv300DataWarehouseSearchApiResponse?> OBPv300DataWarehouseSearchOrDefaultAsync(string index, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDataWarehouseSearchApiResponse"/>&gt;</returns>
+        public async Task<IDataWarehouseSearchApiResponse?> DataWarehouseSearchOrDefaultAsync(string index, DataWarehouseSearchRequest dataWarehouseSearchRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv300DataWarehouseSearchAsync(index, oBPv300DataWarehouseSearchRequest, cancellationToken).ConfigureAwait(false);
+                return await DataWarehouseSearchAsync(index, dataWarehouseSearchRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -318,18 +318,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="index">The INDEX identifier</param>
-        /// <param name="oBPv300DataWarehouseSearchRequest">Request body</param>
+        /// <param name="dataWarehouseSearchRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300DataWarehouseSearchApiResponse"/>&gt;</returns>
-        public async Task<IOBPv300DataWarehouseSearchApiResponse> OBPv300DataWarehouseSearchAsync(string index, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDataWarehouseSearchApiResponse"/>&gt;</returns>
+        public async Task<IDataWarehouseSearchApiResponse> DataWarehouseSearchAsync(string index, DataWarehouseSearchRequest dataWarehouseSearchRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv300DataWarehouseSearch(index, oBPv300DataWarehouseSearchRequest);
+                ValidateDataWarehouseSearch(index, dataWarehouseSearchRequest);
 
-                FormatOBPv300DataWarehouseSearch(ref index, oBPv300DataWarehouseSearchRequest);
+                FormatDataWarehouseSearch(ref index, dataWarehouseSearchRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -341,16 +341,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.0.0/search/warehouse/{index}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bindex%7D", Uri.EscapeDataString(index.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv300DataWarehouseSearchRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (dataWarehouseSearchRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv300DataWarehouseSearchRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(dataWarehouseSearchRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -386,8 +386,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv300DataWarehouseSearchApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv300DataWarehouseSearchApiResponse>();
-                        OBPv300DataWarehouseSearchApiResponse apiResponseLocalVar;
+                        ILogger<DataWarehouseSearchApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DataWarehouseSearchApiResponse>();
+                        DataWarehouseSearchApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -398,9 +398,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv300DataWarehouseSearchDefaultImplementation(apiResponseLocalVar, index, oBPv300DataWarehouseSearchRequest);
+                        AfterDataWarehouseSearchDefaultImplementation(apiResponseLocalVar, index, dataWarehouseSearchRequest);
 
-                        Events.ExecuteOnOBPv300DataWarehouseSearch(apiResponseLocalVar);
+                        Events.ExecuteOnDataWarehouseSearch(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -412,24 +412,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv300DataWarehouseSearchDefaultImplementation(e, "/obp/v3.0.0/search/warehouse/{index}", uriBuilderLocalVar.Path, index, oBPv300DataWarehouseSearchRequest);
-                Events.ExecuteOnErrorOBPv300DataWarehouseSearch(e);
+                OnErrorDataWarehouseSearchDefaultImplementation(e, "/obp/v3.0.0/search/warehouse/{index}", uriBuilderLocalVar.Path, index, dataWarehouseSearchRequest);
+                Events.ExecuteOnErrorDataWarehouseSearch(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv300DataWarehouseSearchApiResponse"/>
+        /// The <see cref="DataWarehouseSearchApiResponse"/>
         /// </summary>
-        public partial class OBPv300DataWarehouseSearchApiResponse : OpenBankProject.Client.ApiResponse, IOBPv300DataWarehouseSearchApiResponse
+        public partial class DataWarehouseSearchApiResponse : OpenBankProject.Client.ApiResponse, IDataWarehouseSearchApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv300DataWarehouseSearchApiResponse> Logger { get; }
+            public ILogger<DataWarehouseSearchApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv300DataWarehouseSearchApiResponse"/>
+            /// The <see cref="DataWarehouseSearchApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -438,14 +438,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv300DataWarehouseSearchApiResponse(ILogger<OBPv300DataWarehouseSearchApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DataWarehouseSearchApiResponse(ILogger<DataWarehouseSearchApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv300DataWarehouseSearchApiResponse"/>
+            /// The <see cref="DataWarehouseSearchApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -454,7 +454,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv300DataWarehouseSearchApiResponse(ILogger<OBPv300DataWarehouseSearchApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DataWarehouseSearchApiResponse(ILogger<DataWarehouseSearchApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -472,11 +472,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage? Ok()
+            public Object? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<Object>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -485,7 +485,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage? result)
+            public bool TryOk([NotNullWhen(true)]out Object? result)
             {
                 result = null;
 
@@ -517,16 +517,16 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv300DataWarehouseStatistics(ref string index, ref string field, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest);
+        partial void FormatDataWarehouseStatistics(ref string index, ref string field, DataWarehouseSearchRequest dataWarehouseSearchRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="index"></param>
         /// <param name="field"></param>
-        /// <param name="oBPv300DataWarehouseSearchRequest"></param>
+        /// <param name="dataWarehouseSearchRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv300DataWarehouseStatistics(string index, string field, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest)
+        private void ValidateDataWarehouseStatistics(string index, string field, DataWarehouseSearchRequest dataWarehouseSearchRequest)
         {
             if (index == null)
                 throw new ArgumentNullException(nameof(index));
@@ -534,8 +534,8 @@ namespace OpenBankProject.Api
             if (field == null)
                 throw new ArgumentNullException(nameof(field));
 
-            if (oBPv300DataWarehouseSearchRequest == null)
-                throw new ArgumentNullException(nameof(oBPv300DataWarehouseSearchRequest));
+            if (dataWarehouseSearchRequest == null)
+                throw new ArgumentNullException(nameof(dataWarehouseSearchRequest));
         }
 
         /// <summary>
@@ -544,11 +544,11 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="index"></param>
         /// <param name="field"></param>
-        /// <param name="oBPv300DataWarehouseSearchRequest"></param>
-        private void AfterOBPv300DataWarehouseStatisticsDefaultImplementation(IOBPv300DataWarehouseStatisticsApiResponse apiResponseLocalVar, string index, string field, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest)
+        /// <param name="dataWarehouseSearchRequest"></param>
+        private void AfterDataWarehouseStatisticsDefaultImplementation(IDataWarehouseStatisticsApiResponse apiResponseLocalVar, string index, string field, DataWarehouseSearchRequest dataWarehouseSearchRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv300DataWarehouseStatistics(ref suppressDefaultLog, apiResponseLocalVar, index, field, oBPv300DataWarehouseSearchRequest);
+            AfterDataWarehouseStatistics(ref suppressDefaultLog, apiResponseLocalVar, index, field, dataWarehouseSearchRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -560,8 +560,8 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="index"></param>
         /// <param name="field"></param>
-        /// <param name="oBPv300DataWarehouseSearchRequest"></param>
-        partial void AfterOBPv300DataWarehouseStatistics(ref bool suppressDefaultLog, IOBPv300DataWarehouseStatisticsApiResponse apiResponseLocalVar, string index, string field, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest);
+        /// <param name="dataWarehouseSearchRequest"></param>
+        partial void AfterDataWarehouseStatistics(ref bool suppressDefaultLog, IDataWarehouseStatisticsApiResponse apiResponseLocalVar, string index, string field, DataWarehouseSearchRequest dataWarehouseSearchRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -571,11 +571,11 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="index"></param>
         /// <param name="field"></param>
-        /// <param name="oBPv300DataWarehouseSearchRequest"></param>
-        private void OnErrorOBPv300DataWarehouseStatisticsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string index, string field, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest)
+        /// <param name="dataWarehouseSearchRequest"></param>
+        private void OnErrorDataWarehouseStatisticsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string index, string field, DataWarehouseSearchRequest dataWarehouseSearchRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv300DataWarehouseStatistics(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, index, field, oBPv300DataWarehouseSearchRequest);
+            OnErrorDataWarehouseStatistics(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, index, field, dataWarehouseSearchRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -589,22 +589,22 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="index"></param>
         /// <param name="field"></param>
-        /// <param name="oBPv300DataWarehouseSearchRequest"></param>
-        partial void OnErrorOBPv300DataWarehouseStatistics(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string index, string field, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest);
+        /// <param name="dataWarehouseSearchRequest"></param>
+        partial void OnErrorDataWarehouseStatistics(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string index, string field, DataWarehouseSearchRequest dataWarehouseSearchRequest);
 
         /// <summary>
         /// Data Warehouse Statistics &lt;p&gt;Search the data warehouse and get statistical aggregations over a warehouse field&lt;/p&gt; &lt;p&gt;Does a stats aggregation over some numeric field:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html\&quot;&gt;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanSearchWarehouseStats Role is required. You can request this below.&lt;/p&gt; &lt;p&gt;Elastic (search) is used in the background. See links below for syntax.&lt;/p&gt; &lt;p&gt;Examples of usage:&lt;/p&gt; &lt;p&gt;POST /search/warehouse/statistics/INDEX/FIELD&lt;/p&gt; &lt;p&gt;POST /search/warehouse/statistics/ALL/FIELD&lt;/p&gt; &lt;p&gt;{ Any valid elasticsearch query DSL in the body }&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\&quot;&gt;Elasticsearch query DSL&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\&quot;&gt;Elastic simple query&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\&quot;&gt;Elastic aggregations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#field\&quot;&gt;FIELD&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#index\&quot;&gt;INDEX&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#match_all\&quot;&gt;&lt;strong&gt;match_all&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#query\&quot;&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="index">The INDEX identifier</param>
         /// <param name="field">The FIELD identifier</param>
-        /// <param name="oBPv300DataWarehouseSearchRequest">Request body</param>
+        /// <param name="dataWarehouseSearchRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300DataWarehouseStatisticsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv300DataWarehouseStatisticsApiResponse?> OBPv300DataWarehouseStatisticsOrDefaultAsync(string index, string field, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDataWarehouseStatisticsApiResponse"/>&gt;</returns>
+        public async Task<IDataWarehouseStatisticsApiResponse?> DataWarehouseStatisticsOrDefaultAsync(string index, string field, DataWarehouseSearchRequest dataWarehouseSearchRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv300DataWarehouseStatisticsAsync(index, field, oBPv300DataWarehouseSearchRequest, cancellationToken).ConfigureAwait(false);
+                return await DataWarehouseStatisticsAsync(index, field, dataWarehouseSearchRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -618,18 +618,18 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="index">The INDEX identifier</param>
         /// <param name="field">The FIELD identifier</param>
-        /// <param name="oBPv300DataWarehouseSearchRequest">Request body</param>
+        /// <param name="dataWarehouseSearchRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300DataWarehouseStatisticsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv300DataWarehouseStatisticsApiResponse> OBPv300DataWarehouseStatisticsAsync(string index, string field, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDataWarehouseStatisticsApiResponse"/>&gt;</returns>
+        public async Task<IDataWarehouseStatisticsApiResponse> DataWarehouseStatisticsAsync(string index, string field, DataWarehouseSearchRequest dataWarehouseSearchRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv300DataWarehouseStatistics(index, field, oBPv300DataWarehouseSearchRequest);
+                ValidateDataWarehouseStatistics(index, field, dataWarehouseSearchRequest);
 
-                FormatOBPv300DataWarehouseStatistics(ref index, ref field, oBPv300DataWarehouseSearchRequest);
+                FormatDataWarehouseStatistics(ref index, ref field, dataWarehouseSearchRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -642,16 +642,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bindex%7D", Uri.EscapeDataString(index.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bfield%7D", Uri.EscapeDataString(field.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv300DataWarehouseSearchRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (dataWarehouseSearchRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv300DataWarehouseSearchRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(dataWarehouseSearchRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -687,8 +687,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv300DataWarehouseStatisticsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv300DataWarehouseStatisticsApiResponse>();
-                        OBPv300DataWarehouseStatisticsApiResponse apiResponseLocalVar;
+                        ILogger<DataWarehouseStatisticsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DataWarehouseStatisticsApiResponse>();
+                        DataWarehouseStatisticsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -699,9 +699,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv300DataWarehouseStatisticsDefaultImplementation(apiResponseLocalVar, index, field, oBPv300DataWarehouseSearchRequest);
+                        AfterDataWarehouseStatisticsDefaultImplementation(apiResponseLocalVar, index, field, dataWarehouseSearchRequest);
 
-                        Events.ExecuteOnOBPv300DataWarehouseStatistics(apiResponseLocalVar);
+                        Events.ExecuteOnDataWarehouseStatistics(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -713,24 +713,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv300DataWarehouseStatisticsDefaultImplementation(e, "/obp/v3.0.0/search/warehouse/statistics/{index}/{field}", uriBuilderLocalVar.Path, index, field, oBPv300DataWarehouseSearchRequest);
-                Events.ExecuteOnErrorOBPv300DataWarehouseStatistics(e);
+                OnErrorDataWarehouseStatisticsDefaultImplementation(e, "/obp/v3.0.0/search/warehouse/statistics/{index}/{field}", uriBuilderLocalVar.Path, index, field, dataWarehouseSearchRequest);
+                Events.ExecuteOnErrorDataWarehouseStatistics(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv300DataWarehouseStatisticsApiResponse"/>
+        /// The <see cref="DataWarehouseStatisticsApiResponse"/>
         /// </summary>
-        public partial class OBPv300DataWarehouseStatisticsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv300DataWarehouseStatisticsApiResponse
+        public partial class DataWarehouseStatisticsApiResponse : OpenBankProject.Client.ApiResponse, IDataWarehouseStatisticsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv300DataWarehouseStatisticsApiResponse> Logger { get; }
+            public ILogger<DataWarehouseStatisticsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv300DataWarehouseStatisticsApiResponse"/>
+            /// The <see cref="DataWarehouseStatisticsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -739,14 +739,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv300DataWarehouseStatisticsApiResponse(ILogger<OBPv300DataWarehouseStatisticsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DataWarehouseStatisticsApiResponse(ILogger<DataWarehouseStatisticsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv300DataWarehouseStatisticsApiResponse"/>
+            /// The <see cref="DataWarehouseStatisticsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -755,7 +755,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv300DataWarehouseStatisticsApiResponse(ILogger<OBPv300DataWarehouseStatisticsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DataWarehouseStatisticsApiResponse(ILogger<DataWarehouseStatisticsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -773,11 +773,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage? Ok()
+            public Object? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<Object>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -786,7 +786,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage? result)
+            public bool TryOk([NotNullWhen(true)]out Object? result)
             {
                 result = null;
 

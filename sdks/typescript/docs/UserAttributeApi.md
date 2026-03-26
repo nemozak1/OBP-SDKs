@@ -1,25 +1,25 @@
 # UserAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600CreatePersonalDataField**](UserAttributeApi.md#obpv600createpersonaldatafieldoperation) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field |
-| [**oBPv600CreateUserAttribute**](UserAttributeApi.md#obpv600createuserattribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute |
-| [**oBPv600DeletePersonalDataField**](UserAttributeApi.md#obpv600deletepersonaldatafield) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field |
-| [**oBPv600DeleteUserAttribute**](UserAttributeApi.md#obpv600deleteuserattribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute |
-| [**oBPv600GetPersonalDataFieldById**](UserAttributeApi.md#obpv600getpersonaldatafieldbyid) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id |
-| [**oBPv600GetPersonalDataFields**](UserAttributeApi.md#obpv600getpersonaldatafields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields |
-| [**oBPv600GetUserAttributeById**](UserAttributeApi.md#obpv600getuserattributebyid) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id |
-| [**oBPv600GetUserAttributes**](UserAttributeApi.md#obpv600getuserattributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes |
-| [**oBPv600UpdatePersonalDataField**](UserAttributeApi.md#obpv600updatepersonaldatafield) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field |
-| [**oBPv600UpdateUserAttribute**](UserAttributeApi.md#obpv600updateuserattribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute |
+| [**createPersonalDataField**](UserAttributeApi.md#createpersonaldatafieldoperation) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field |
+| [**createUserAttribute**](UserAttributeApi.md#createuserattribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute |
+| [**deletePersonalDataField**](UserAttributeApi.md#deletepersonaldatafield) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field |
+| [**deleteUserAttribute**](UserAttributeApi.md#deleteuserattribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute |
+| [**getPersonalDataFieldById**](UserAttributeApi.md#getpersonaldatafieldbyid) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id |
+| [**getPersonalDataFields**](UserAttributeApi.md#getpersonaldatafields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields |
+| [**getUserAttributeById**](UserAttributeApi.md#getuserattributebyid) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id |
+| [**getUserAttributes**](UserAttributeApi.md#getuserattributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes |
+| [**updatePersonalDataField**](UserAttributeApi.md#updatepersonaldatafield) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field |
+| [**updateUserAttribute**](UserAttributeApi.md#updateuserattribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute |
 
 
 
-## oBPv600CreatePersonalDataField
+## createPersonalDataField
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600CreatePersonalDataField(oBPv600CreatePersonalDataFieldRequest)
+> GetPersonalDataFields200ResponseUserAttributesInner createPersonalDataField(createPersonalDataFieldRequest)
 
 Create Personal Data Field
 
@@ -32,7 +32,7 @@ import {
   Configuration,
   UserAttributeApi,
 } from 'obp-typescript';
-import type { OBPv600CreatePersonalDataFieldOperationRequest } from 'obp-typescript';
+import type { CreatePersonalDataFieldOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -47,12 +47,12 @@ async function example() {
   const api = new UserAttributeApi(config);
 
   const body = {
-    // OBPv600CreatePersonalDataFieldRequest | Request body
-    oBPv600CreatePersonalDataFieldRequest: {"type":"object","properties":{"name":{"type":"string"},"type":{"type":"string"},"value":{"type":"string"}}},
-  } satisfies OBPv600CreatePersonalDataFieldOperationRequest;
+    // CreatePersonalDataFieldRequest | Request body
+    createPersonalDataFieldRequest: {"type":"object","properties":{"name":{"type":"string"},"type":{"type":"string"},"value":{"type":"string"}}},
+  } satisfies CreatePersonalDataFieldOperationRequest;
 
   try {
-    const data = await api.oBPv600CreatePersonalDataField(body);
+    const data = await api.createPersonalDataField(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -68,11 +68,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **oBPv600CreatePersonalDataFieldRequest** | [OBPv600CreatePersonalDataFieldRequest](OBPv600CreatePersonalDataFieldRequest.md) | Request body | |
+| **createPersonalDataFieldRequest** | [CreatePersonalDataFieldRequest](CreatePersonalDataFieldRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -93,9 +93,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600CreateUserAttribute
+## createUserAttribute
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600CreateUserAttribute(userid, oBPv600CreatePersonalDataFieldRequest)
+> GetPersonalDataFields200ResponseUserAttributesInner createUserAttribute(userid, createPersonalDataFieldRequest)
 
 Create User Attribute
 
@@ -108,7 +108,7 @@ import {
   Configuration,
   UserAttributeApi,
 } from 'obp-typescript';
-import type { OBPv600CreateUserAttributeRequest } from 'obp-typescript';
+import type { CreateUserAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -125,12 +125,12 @@ async function example() {
   const body = {
     // string | The USERID identifier
     userid: userid_example,
-    // OBPv600CreatePersonalDataFieldRequest | Request body
-    oBPv600CreatePersonalDataFieldRequest: {type=object, properties={name={type=string}, type={type=string}, value={type=string}}},
-  } satisfies OBPv600CreateUserAttributeRequest;
+    // CreatePersonalDataFieldRequest | Request body
+    createPersonalDataFieldRequest: {type=object, properties={name={type=string}, type={type=string}, value={type=string}}},
+  } satisfies CreateUserAttributeRequest;
 
   try {
-    const data = await api.oBPv600CreateUserAttribute(body);
+    const data = await api.createUserAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -147,11 +147,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userid** | `string` | The USERID identifier | [Defaults to `undefined`] |
-| **oBPv600CreatePersonalDataFieldRequest** | [OBPv600CreatePersonalDataFieldRequest](OBPv600CreatePersonalDataFieldRequest.md) | Request body | |
+| **createPersonalDataFieldRequest** | [CreatePersonalDataFieldRequest](CreatePersonalDataFieldRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -173,9 +173,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600DeletePersonalDataField
+## deletePersonalDataField
 
-> oBPv600DeletePersonalDataField(userattributeid)
+> deletePersonalDataField(userattributeid)
 
 Delete Personal Data Field
 
@@ -188,7 +188,7 @@ import {
   Configuration,
   UserAttributeApi,
 } from 'obp-typescript';
-import type { OBPv600DeletePersonalDataFieldRequest } from 'obp-typescript';
+import type { DeletePersonalDataFieldRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -205,10 +205,10 @@ async function example() {
   const body = {
     // string | The USERATTRIBUTEID identifier
     userattributeid: userattributeid_example,
-  } satisfies OBPv600DeletePersonalDataFieldRequest;
+  } satisfies DeletePersonalDataFieldRequest;
 
   try {
-    const data = await api.oBPv600DeletePersonalDataField(body);
+    const data = await api.deletePersonalDataField(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -250,9 +250,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600DeleteUserAttribute
+## deleteUserAttribute
 
-> oBPv600DeleteUserAttribute(userid, userattributeid)
+> deleteUserAttribute(userid, userattributeid)
 
 Delete User Attribute
 
@@ -265,7 +265,7 @@ import {
   Configuration,
   UserAttributeApi,
 } from 'obp-typescript';
-import type { OBPv600DeleteUserAttributeRequest } from 'obp-typescript';
+import type { DeleteUserAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -284,10 +284,10 @@ async function example() {
     userid: userid_example,
     // string | The USERATTRIBUTEID identifier
     userattributeid: userattributeid_example,
-  } satisfies OBPv600DeleteUserAttributeRequest;
+  } satisfies DeleteUserAttributeRequest;
 
   try {
-    const data = await api.oBPv600DeleteUserAttribute(body);
+    const data = await api.deleteUserAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -330,9 +330,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetPersonalDataFieldById
+## getPersonalDataFieldById
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600GetPersonalDataFieldById(userattributeid)
+> GetPersonalDataFields200ResponseUserAttributesInner getPersonalDataFieldById(userattributeid)
 
 Get Personal Data Field By Id
 
@@ -345,7 +345,7 @@ import {
   Configuration,
   UserAttributeApi,
 } from 'obp-typescript';
-import type { OBPv600GetPersonalDataFieldByIdRequest } from 'obp-typescript';
+import type { GetPersonalDataFieldByIdRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -362,10 +362,10 @@ async function example() {
   const body = {
     // string | The USERATTRIBUTEID identifier
     userattributeid: userattributeid_example,
-  } satisfies OBPv600GetPersonalDataFieldByIdRequest;
+  } satisfies GetPersonalDataFieldByIdRequest;
 
   try {
-    const data = await api.oBPv600GetPersonalDataFieldById(body);
+    const data = await api.getPersonalDataFieldById(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -385,7 +385,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -407,9 +407,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetPersonalDataFields
+## getPersonalDataFields
 
-> OBPv600GetPersonalDataFields200Response oBPv600GetPersonalDataFields()
+> GetPersonalDataFields200Response getPersonalDataFields()
 
 Get Personal Data Fields
 
@@ -422,7 +422,7 @@ import {
   Configuration,
   UserAttributeApi,
 } from 'obp-typescript';
-import type { OBPv600GetPersonalDataFieldsRequest } from 'obp-typescript';
+import type { GetPersonalDataFieldsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -437,7 +437,7 @@ async function example() {
   const api = new UserAttributeApi(config);
 
   try {
-    const data = await api.oBPv600GetPersonalDataFields();
+    const data = await api.getPersonalDataFields();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -454,7 +454,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -475,9 +475,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetUserAttributeById
+## getUserAttributeById
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600GetUserAttributeById(userid, userattributeid)
+> GetPersonalDataFields200ResponseUserAttributesInner getUserAttributeById(userid, userattributeid)
 
 Get User Attribute By Id
 
@@ -490,7 +490,7 @@ import {
   Configuration,
   UserAttributeApi,
 } from 'obp-typescript';
-import type { OBPv600GetUserAttributeByIdRequest } from 'obp-typescript';
+import type { GetUserAttributeByIdRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -509,10 +509,10 @@ async function example() {
     userid: userid_example,
     // string | The USERATTRIBUTEID identifier
     userattributeid: userattributeid_example,
-  } satisfies OBPv600GetUserAttributeByIdRequest;
+  } satisfies GetUserAttributeByIdRequest;
 
   try {
-    const data = await api.oBPv600GetUserAttributeById(body);
+    const data = await api.getUserAttributeById(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -533,7 +533,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -555,9 +555,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetUserAttributes
+## getUserAttributes
 
-> OBPv600GetPersonalDataFields200Response oBPv600GetUserAttributes(userid)
+> GetPersonalDataFields200Response getUserAttributes(userid)
 
 Get User Attributes
 
@@ -570,7 +570,7 @@ import {
   Configuration,
   UserAttributeApi,
 } from 'obp-typescript';
-import type { OBPv600GetUserAttributesRequest } from 'obp-typescript';
+import type { GetUserAttributesRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -587,10 +587,10 @@ async function example() {
   const body = {
     // string | The USERID identifier
     userid: userid_example,
-  } satisfies OBPv600GetUserAttributesRequest;
+  } satisfies GetUserAttributesRequest;
 
   try {
-    const data = await api.oBPv600GetUserAttributes(body);
+    const data = await api.getUserAttributes(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -610,7 +610,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -632,9 +632,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600UpdatePersonalDataField
+## updatePersonalDataField
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600UpdatePersonalDataField(userattributeid, oBPv600CreatePersonalDataFieldRequest)
+> GetPersonalDataFields200ResponseUserAttributesInner updatePersonalDataField(userattributeid, createPersonalDataFieldRequest)
 
 Update Personal Data Field
 
@@ -647,7 +647,7 @@ import {
   Configuration,
   UserAttributeApi,
 } from 'obp-typescript';
-import type { OBPv600UpdatePersonalDataFieldRequest } from 'obp-typescript';
+import type { UpdatePersonalDataFieldRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -664,12 +664,12 @@ async function example() {
   const body = {
     // string | The USERATTRIBUTEID identifier
     userattributeid: userattributeid_example,
-    // OBPv600CreatePersonalDataFieldRequest | Request body
-    oBPv600CreatePersonalDataFieldRequest: {type=object, properties={name={type=string}, type={type=string}, value={type=string}}},
-  } satisfies OBPv600UpdatePersonalDataFieldRequest;
+    // CreatePersonalDataFieldRequest | Request body
+    createPersonalDataFieldRequest: {type=object, properties={name={type=string}, type={type=string}, value={type=string}}},
+  } satisfies UpdatePersonalDataFieldRequest;
 
   try {
-    const data = await api.oBPv600UpdatePersonalDataField(body);
+    const data = await api.updatePersonalDataField(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -686,11 +686,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userattributeid** | `string` | The USERATTRIBUTEID identifier | [Defaults to `undefined`] |
-| **oBPv600CreatePersonalDataFieldRequest** | [OBPv600CreatePersonalDataFieldRequest](OBPv600CreatePersonalDataFieldRequest.md) | Request body | |
+| **createPersonalDataFieldRequest** | [CreatePersonalDataFieldRequest](CreatePersonalDataFieldRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -712,9 +712,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600UpdateUserAttribute
+## updateUserAttribute
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600UpdateUserAttribute(userid, userattributeid, oBPv600CreatePersonalDataFieldRequest)
+> GetPersonalDataFields200ResponseUserAttributesInner updateUserAttribute(userid, userattributeid, createPersonalDataFieldRequest)
 
 Update User Attribute
 
@@ -727,7 +727,7 @@ import {
   Configuration,
   UserAttributeApi,
 } from 'obp-typescript';
-import type { OBPv600UpdateUserAttributeRequest } from 'obp-typescript';
+import type { UpdateUserAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -746,12 +746,12 @@ async function example() {
     userid: userid_example,
     // string | The USERATTRIBUTEID identifier
     userattributeid: userattributeid_example,
-    // OBPv600CreatePersonalDataFieldRequest | Request body
-    oBPv600CreatePersonalDataFieldRequest: {type=object, properties={name={type=string}, type={type=string}, value={type=string}}},
-  } satisfies OBPv600UpdateUserAttributeRequest;
+    // CreatePersonalDataFieldRequest | Request body
+    createPersonalDataFieldRequest: {type=object, properties={name={type=string}, type={type=string}, value={type=string}}},
+  } satisfies UpdateUserAttributeRequest;
 
   try {
-    const data = await api.oBPv600UpdateUserAttribute(body);
+    const data = await api.updateUserAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -769,11 +769,11 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **userid** | `string` | The USERID identifier | [Defaults to `undefined`] |
 | **userattributeid** | `string` | The USERATTRIBUTEID identifier | [Defaults to `undefined`] |
-| **oBPv600CreatePersonalDataFieldRequest** | [OBPv600CreatePersonalDataFieldRequest](OBPv600CreatePersonalDataFieldRequest.md) | Request body | |
+| **createPersonalDataFieldRequest** | [CreatePersonalDataFieldRequest](CreatePersonalDataFieldRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 

@@ -1,27 +1,178 @@
 # OpenBankProject.Api.DynamicEntityManageApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv400DeleteBankLevelDynamicEntity**](DynamicEntityManageApi.md#obpv400deletebankleveldynamicentity) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Delete Bank Level Dynamic Entity |
-| [**OBPv400DeleteMyDynamicEntity**](DynamicEntityManageApi.md#obpv400deletemydynamicentity) | **DELETE** /obp/v4.0.0/my/dynamic-entities/{dynamicentityid} | Delete My Dynamic Entity |
-| [**OBPv400DeleteSystemDynamicEntity**](DynamicEntityManageApi.md#obpv400deletesystemdynamicentity) | **DELETE** /obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid} | Delete System Level Dynamic Entity |
-| [**OBPv600BackupBankLevelDynamicEntity**](DynamicEntityManageApi.md#obpv600backupbankleveldynamicentity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup | Backup Bank Level Dynamic Entity |
-| [**OBPv600BackupSystemDynamicEntity**](DynamicEntityManageApi.md#obpv600backupsystemdynamicentity) | **POST** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup | Backup System Level Dynamic Entity |
-| [**OBPv600CreateBankLevelDynamicEntity**](DynamicEntityManageApi.md#obpv600createbankleveldynamicentity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Create Bank Level Dynamic Entity |
-| [**OBPv600CreateSystemDynamicEntity**](DynamicEntityManageApi.md#obpv600createsystemdynamicentity) | **POST** /obp/v6.0.0/management/system-dynamic-entities | Create System Level Dynamic Entity |
-| [**OBPv600DeleteSystemDynamicEntityCascade**](DynamicEntityManageApi.md#obpv600deletesystemdynamicentitycascade) | **DELETE** /obp/v6.0.0/management/system-dynamic-entities/cascade/{dynamicentityid} | Delete System Level Dynamic Entity Cascade |
-| [**OBPv600GetBankLevelDynamicEntities**](DynamicEntityManageApi.md#obpv600getbankleveldynamicentities) | **GET** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Get Bank Level Dynamic Entities |
-| [**OBPv600GetMyDynamicEntities**](DynamicEntityManageApi.md#obpv600getmydynamicentities) | **GET** /obp/v6.0.0/my/dynamic-entities | Get My Dynamic Entities |
-| [**OBPv600GetSystemDynamicEntities**](DynamicEntityManageApi.md#obpv600getsystemdynamicentities) | **GET** /obp/v6.0.0/management/system-dynamic-entities | Get System Dynamic Entities |
-| [**OBPv600UpdateBankLevelDynamicEntity**](DynamicEntityManageApi.md#obpv600updatebankleveldynamicentity) | **PUT** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Update Bank Level Dynamic Entity |
-| [**OBPv600UpdateMyDynamicEntity**](DynamicEntityManageApi.md#obpv600updatemydynamicentity) | **PUT** /obp/v6.0.0/my/dynamic-entities/{dynamicentityid} | Update My Dynamic Entity |
-| [**OBPv600UpdateSystemDynamicEntity**](DynamicEntityManageApi.md#obpv600updatesystemdynamicentity) | **PUT** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid} | Update System Level Dynamic Entity |
+| [**BackupBankLevelDynamicEntity**](DynamicEntityManageApi.md#backupbankleveldynamicentity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup | Backup Bank Level Dynamic Entity |
+| [**BackupSystemDynamicEntity**](DynamicEntityManageApi.md#backupsystemdynamicentity) | **POST** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup | Backup System Level Dynamic Entity |
+| [**CreateBankLevelDynamicEntity**](DynamicEntityManageApi.md#createbankleveldynamicentity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Create Bank Level Dynamic Entity |
+| [**CreateSystemDynamicEntity**](DynamicEntityManageApi.md#createsystemdynamicentity) | **POST** /obp/v6.0.0/management/system-dynamic-entities | Create System Level Dynamic Entity |
+| [**DeleteBankLevelDynamicEntity**](DynamicEntityManageApi.md#deletebankleveldynamicentity) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Delete Bank Level Dynamic Entity |
+| [**DeleteMyDynamicEntity**](DynamicEntityManageApi.md#deletemydynamicentity) | **DELETE** /obp/v4.0.0/my/dynamic-entities/{dynamicentityid} | Delete My Dynamic Entity |
+| [**DeleteSystemDynamicEntity**](DynamicEntityManageApi.md#deletesystemdynamicentity) | **DELETE** /obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid} | Delete System Level Dynamic Entity |
+| [**DeleteSystemDynamicEntityCascade**](DynamicEntityManageApi.md#deletesystemdynamicentitycascade) | **DELETE** /obp/v6.0.0/management/system-dynamic-entities/cascade/{dynamicentityid} | Delete System Level Dynamic Entity Cascade |
+| [**GetBankLevelDynamicEntities**](DynamicEntityManageApi.md#getbankleveldynamicentities) | **GET** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Get Bank Level Dynamic Entities |
+| [**GetMyDynamicEntities**](DynamicEntityManageApi.md#getmydynamicentities) | **GET** /obp/v6.0.0/my/dynamic-entities | Get My Dynamic Entities |
+| [**GetSystemDynamicEntities**](DynamicEntityManageApi.md#getsystemdynamicentities) | **GET** /obp/v6.0.0/management/system-dynamic-entities | Get System Dynamic Entities |
+| [**UpdateBankLevelDynamicEntity**](DynamicEntityManageApi.md#updatebankleveldynamicentity) | **PUT** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Update Bank Level Dynamic Entity |
+| [**UpdateMyDynamicEntity**](DynamicEntityManageApi.md#updatemydynamicentity) | **PUT** /obp/v6.0.0/my/dynamic-entities/{dynamicentityid} | Update My Dynamic Entity |
+| [**UpdateSystemDynamicEntity**](DynamicEntityManageApi.md#updatesystemdynamicentity) | **PUT** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid} | Update System Level Dynamic Entity |
 
-<a id="obpv400deletebankleveldynamicentity"></a>
-# **OBPv400DeleteBankLevelDynamicEntity**
-> void OBPv400DeleteBankLevelDynamicEntity (string bankid, string dynamicentityid)
+<a id="backupbankleveldynamicentity"></a>
+# **BackupBankLevelDynamicEntity**
+> BackupBankLevelDynamicEntity200Response BackupBankLevelDynamicEntity (string bankid, string dynamicentityid)
+
+Backup Bank Level Dynamic Entity
+
+<p>Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **bankid** | **string** | The BANKID identifier |  |
+| **dynamicentityid** | **string** | The DYNAMICENTITYID identifier |  |
+
+### Return type
+
+[**BackupBankLevelDynamicEntity200Response**](BackupBankLevelDynamicEntity200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+<a id="backupsystemdynamicentity"></a>
+# **BackupSystemDynamicEntity**
+> BackupSystemDynamicEntity200Response BackupSystemDynamicEntity (string dynamicentityid)
+
+Backup System Level Dynamic Entity
+
+<p>Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **dynamicentityid** | **string** | The DYNAMICENTITYID identifier |  |
+
+### Return type
+
+[**BackupSystemDynamicEntity200Response**](BackupSystemDynamicEntity200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+<a id="createbankleveldynamicentity"></a>
+# **CreateBankLevelDynamicEntity**
+> CreateBankLevelDynamicEntity200Response CreateBankLevelDynamicEntity (string bankid, CreateSystemDynamicEntityRequest createSystemDynamicEntityRequest)
+
+Create Bank Level Dynamic Entity
+
+<p>Create a bank level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **bankid** | **string** | The BANKID identifier |  |
+| **createSystemDynamicEntityRequest** | [**CreateSystemDynamicEntityRequest**](CreateSystemDynamicEntityRequest.md) | Request body |  |
+
+### Return type
+
+[**CreateBankLevelDynamicEntity200Response**](CreateBankLevelDynamicEntity200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+<a id="createsystemdynamicentity"></a>
+# **CreateSystemDynamicEntity**
+> CreateSystemDynamicEntity200Response CreateSystemDynamicEntity (CreateSystemDynamicEntityRequest createSystemDynamicEntityRequest)
+
+Create System Level Dynamic Entity
+
+<p>Create a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> 
+
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **createSystemDynamicEntityRequest** | [**CreateSystemDynamicEntityRequest**](CreateSystemDynamicEntityRequest.md) | Request body |  |
+
+### Return type
+
+[**CreateSystemDynamicEntity200Response**](CreateSystemDynamicEntity200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+<a id="deletebankleveldynamicentity"></a>
+# **DeleteBankLevelDynamicEntity**
+> void DeleteBankLevelDynamicEntity (string bankid, string dynamicentityid)
 
 Delete Bank Level Dynamic Entity
 
@@ -58,9 +209,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deletemydynamicentity"></a>
-# **OBPv400DeleteMyDynamicEntity**
-> void OBPv400DeleteMyDynamicEntity (string dynamicentityid)
+<a id="deletemydynamicentity"></a>
+# **DeleteMyDynamicEntity**
+> void DeleteMyDynamicEntity (string dynamicentityid)
 
 Delete My Dynamic Entity
 
@@ -95,9 +246,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deletesystemdynamicentity"></a>
-# **OBPv400DeleteSystemDynamicEntity**
-> void OBPv400DeleteSystemDynamicEntity (string dynamicentityid)
+<a id="deletesystemdynamicentity"></a>
+# **DeleteSystemDynamicEntity**
+> void DeleteSystemDynamicEntity (string dynamicentityid)
 
 Delete System Level Dynamic Entity
 
@@ -132,160 +283,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600backupbankleveldynamicentity"></a>
-# **OBPv600BackupBankLevelDynamicEntity**
-> OBPv600BackupBankLevelDynamicEntity200Response OBPv600BackupBankLevelDynamicEntity (string bankid, string dynamicentityid)
-
-Backup Bank Level Dynamic Entity
-
-<p>Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **bankid** | **string** | The BANKID identifier |  |
-| **dynamicentityid** | **string** | The DYNAMICENTITYID identifier |  |
-
-### Return type
-
-[**OBPv600BackupBankLevelDynamicEntity200Response**](OBPv600BackupBankLevelDynamicEntity200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-<a id="obpv600backupsystemdynamicentity"></a>
-# **OBPv600BackupSystemDynamicEntity**
-> OBPv600BackupSystemDynamicEntity200Response OBPv600BackupSystemDynamicEntity (string dynamicentityid)
-
-Backup System Level Dynamic Entity
-
-<p>Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **dynamicentityid** | **string** | The DYNAMICENTITYID identifier |  |
-
-### Return type
-
-[**OBPv600BackupSystemDynamicEntity200Response**](OBPv600BackupSystemDynamicEntity200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-<a id="obpv600createbankleveldynamicentity"></a>
-# **OBPv600CreateBankLevelDynamicEntity**
-> OBPv600CreateBankLevelDynamicEntity200Response OBPv600CreateBankLevelDynamicEntity (string bankid, OBPv600CreateSystemDynamicEntityRequest oBPv600CreateSystemDynamicEntityRequest)
-
-Create Bank Level Dynamic Entity
-
-<p>Create a bank level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **bankid** | **string** | The BANKID identifier |  |
-| **oBPv600CreateSystemDynamicEntityRequest** | [**OBPv600CreateSystemDynamicEntityRequest**](OBPv600CreateSystemDynamicEntityRequest.md) | Request body |  |
-
-### Return type
-
-[**OBPv600CreateBankLevelDynamicEntity200Response**](OBPv600CreateBankLevelDynamicEntity200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-<a id="obpv600createsystemdynamicentity"></a>
-# **OBPv600CreateSystemDynamicEntity**
-> OBPv600CreateSystemDynamicEntity200Response OBPv600CreateSystemDynamicEntity (OBPv600CreateSystemDynamicEntityRequest oBPv600CreateSystemDynamicEntityRequest)
-
-Create System Level Dynamic Entity
-
-<p>Create a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **oBPv600CreateSystemDynamicEntityRequest** | [**OBPv600CreateSystemDynamicEntityRequest**](OBPv600CreateSystemDynamicEntityRequest.md) | Request body |  |
-
-### Return type
-
-[**OBPv600CreateSystemDynamicEntity200Response**](OBPv600CreateSystemDynamicEntity200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-<a id="obpv600deletesystemdynamicentitycascade"></a>
-# **OBPv600DeleteSystemDynamicEntityCascade**
-> void OBPv600DeleteSystemDynamicEntityCascade (string dynamicentityid)
+<a id="deletesystemdynamicentitycascade"></a>
+# **DeleteSystemDynamicEntityCascade**
+> void DeleteSystemDynamicEntityCascade (string dynamicentityid)
 
 Delete System Level Dynamic Entity Cascade
 
@@ -320,9 +320,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getbankleveldynamicentities"></a>
-# **OBPv600GetBankLevelDynamicEntities**
-> OBPv600GetBankLevelDynamicEntities200Response OBPv600GetBankLevelDynamicEntities (string bankid)
+<a id="getbankleveldynamicentities"></a>
+# **GetBankLevelDynamicEntities**
+> GetBankLevelDynamicEntities200Response GetBankLevelDynamicEntities (string bankid)
 
 Get Bank Level Dynamic Entities
 
@@ -337,7 +337,7 @@ Get Bank Level Dynamic Entities
 
 ### Return type
 
-[**OBPv600GetBankLevelDynamicEntities200Response**](OBPv600GetBankLevelDynamicEntities200Response.md)
+[**GetBankLevelDynamicEntities200Response**](GetBankLevelDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -358,9 +358,9 @@ Get Bank Level Dynamic Entities
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getmydynamicentities"></a>
-# **OBPv600GetMyDynamicEntities**
-> OBPv600GetAvailablePersonalDynamicEntities200Response OBPv600GetMyDynamicEntities ()
+<a id="getmydynamicentities"></a>
+# **GetMyDynamicEntities**
+> GetAvailablePersonalDynamicEntities200Response GetMyDynamicEntities ()
 
 Get My Dynamic Entities
 
@@ -371,7 +371,7 @@ Get My Dynamic Entities
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -391,9 +391,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getsystemdynamicentities"></a>
-# **OBPv600GetSystemDynamicEntities**
-> OBPv600GetSystemDynamicEntities200Response OBPv600GetSystemDynamicEntities ()
+<a id="getsystemdynamicentities"></a>
+# **GetSystemDynamicEntities**
+> GetSystemDynamicEntities200Response GetSystemDynamicEntities ()
 
 Get System Dynamic Entities
 
@@ -404,7 +404,7 @@ Get System Dynamic Entities
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv600GetSystemDynamicEntities200Response**](OBPv600GetSystemDynamicEntities200Response.md)
+[**GetSystemDynamicEntities200Response**](GetSystemDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -424,9 +424,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600updatebankleveldynamicentity"></a>
-# **OBPv600UpdateBankLevelDynamicEntity**
-> OBPv600UpdateBankLevelDynamicEntity200Response OBPv600UpdateBankLevelDynamicEntity (string bankid, string dynamicentityid, OBPv600UpdateSystemDynamicEntityRequest oBPv600UpdateSystemDynamicEntityRequest)
+<a id="updatebankleveldynamicentity"></a>
+# **UpdateBankLevelDynamicEntity**
+> UpdateBankLevelDynamicEntity200Response UpdateBankLevelDynamicEntity (string bankid, string dynamicentityid, UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest)
 
 Update Bank Level Dynamic Entity
 
@@ -439,11 +439,11 @@ Update Bank Level Dynamic Entity
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
 | **dynamicentityid** | **string** | The DYNAMICENTITYID identifier |  |
-| **oBPv600UpdateSystemDynamicEntityRequest** | [**OBPv600UpdateSystemDynamicEntityRequest**](OBPv600UpdateSystemDynamicEntityRequest.md) | Request body |  |
+| **updateSystemDynamicEntityRequest** | [**UpdateSystemDynamicEntityRequest**](UpdateSystemDynamicEntityRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600UpdateBankLevelDynamicEntity200Response**](OBPv600UpdateBankLevelDynamicEntity200Response.md)
+[**UpdateBankLevelDynamicEntity200Response**](UpdateBankLevelDynamicEntity200Response.md)
 
 ### Authorization
 
@@ -464,9 +464,9 @@ Update Bank Level Dynamic Entity
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600updatemydynamicentity"></a>
-# **OBPv600UpdateMyDynamicEntity**
-> OBPv600UpdateSystemDynamicEntity200Response OBPv600UpdateMyDynamicEntity (string dynamicentityid, OBPv600UpdateSystemDynamicEntityRequest oBPv600UpdateSystemDynamicEntityRequest)
+<a id="updatemydynamicentity"></a>
+# **UpdateMyDynamicEntity**
+> UpdateSystemDynamicEntity200Response UpdateMyDynamicEntity (string dynamicentityid, UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest)
 
 Update My Dynamic Entity
 
@@ -478,11 +478,11 @@ Update My Dynamic Entity
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **dynamicentityid** | **string** | The DYNAMICENTITYID identifier |  |
-| **oBPv600UpdateSystemDynamicEntityRequest** | [**OBPv600UpdateSystemDynamicEntityRequest**](OBPv600UpdateSystemDynamicEntityRequest.md) | Request body |  |
+| **updateSystemDynamicEntityRequest** | [**UpdateSystemDynamicEntityRequest**](UpdateSystemDynamicEntityRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600UpdateSystemDynamicEntity200Response**](OBPv600UpdateSystemDynamicEntity200Response.md)
+[**UpdateSystemDynamicEntity200Response**](UpdateSystemDynamicEntity200Response.md)
 
 ### Authorization
 
@@ -502,9 +502,9 @@ Update My Dynamic Entity
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600updatesystemdynamicentity"></a>
-# **OBPv600UpdateSystemDynamicEntity**
-> OBPv600UpdateSystemDynamicEntity200Response OBPv600UpdateSystemDynamicEntity (string dynamicentityid, OBPv600UpdateSystemDynamicEntityRequest oBPv600UpdateSystemDynamicEntityRequest)
+<a id="updatesystemdynamicentity"></a>
+# **UpdateSystemDynamicEntity**
+> UpdateSystemDynamicEntity200Response UpdateSystemDynamicEntity (string dynamicentityid, UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest)
 
 Update System Level Dynamic Entity
 
@@ -516,11 +516,11 @@ Update System Level Dynamic Entity
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **dynamicentityid** | **string** | The DYNAMICENTITYID identifier |  |
-| **oBPv600UpdateSystemDynamicEntityRequest** | [**OBPv600UpdateSystemDynamicEntityRequest**](OBPv600UpdateSystemDynamicEntityRequest.md) | Request body |  |
+| **updateSystemDynamicEntityRequest** | [**UpdateSystemDynamicEntityRequest**](UpdateSystemDynamicEntityRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600UpdateSystemDynamicEntity200Response**](OBPv600UpdateSystemDynamicEntity200Response.md)
+[**UpdateSystemDynamicEntity200Response**](UpdateSystemDynamicEntity200Response.md)
 
 ### Authorization
 

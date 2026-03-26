@@ -1,24 +1,24 @@
 # GroupApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600AddUserToGroup**](GroupApi.md#obpv600addusertogroupoperation) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements |
-| [**oBPv600CreateGroup**](GroupApi.md#obpv600creategroupoperation) | **POST** /obp/v6.0.0/management/groups | Create Group |
-| [**oBPv600DeleteGroup**](GroupApi.md#obpv600deletegroup) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group |
-| [**oBPv600GetGroup**](GroupApi.md#obpv600getgroup) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group |
-| [**oBPv600GetGroupEntitlements**](GroupApi.md#obpv600getgroupentitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements |
-| [**oBPv600GetGroups**](GroupApi.md#obpv600getgroups) | **GET** /obp/v6.0.0/management/groups | Get Groups |
-| [**oBPv600GetUserGroupMemberships**](GroupApi.md#obpv600getusergroupmemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User\&#39;s Group Memberships |
-| [**oBPv600RemoveUserFromGroup**](GroupApi.md#obpv600removeuserfromgroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group |
-| [**oBPv600UpdateGroup**](GroupApi.md#obpv600updategroupoperation) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group |
+| [**addUserToGroup**](GroupApi.md#addusertogroupoperation) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements |
+| [**createGroup**](GroupApi.md#creategroupoperation) | **POST** /obp/v6.0.0/management/groups | Create Group |
+| [**deleteGroup**](GroupApi.md#deletegroup) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group |
+| [**getGroup**](GroupApi.md#getgroup) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group |
+| [**getGroupEntitlements**](GroupApi.md#getgroupentitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements |
+| [**getGroups**](GroupApi.md#getgroups) | **GET** /obp/v6.0.0/management/groups | Get Groups |
+| [**getUserGroupMemberships**](GroupApi.md#getusergroupmemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User\&#39;s Group Memberships |
+| [**removeUserFromGroup**](GroupApi.md#removeuserfromgroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group |
+| [**updateGroup**](GroupApi.md#updategroupoperation) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group |
 
 
 
-## oBPv600AddUserToGroup
+## addUserToGroup
 
-> OBPv600AddUserToGroup200Response oBPv600AddUserToGroup(userid, oBPv600AddUserToGroupRequest)
+> AddUserToGroup200Response addUserToGroup(userid, addUserToGroupRequest)
 
 Grant User Membership to Group Entitlements
 
@@ -31,7 +31,7 @@ import {
   Configuration,
   GroupApi,
 } from 'obp-typescript';
-import type { OBPv600AddUserToGroupOperationRequest } from 'obp-typescript';
+import type { AddUserToGroupOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -48,12 +48,12 @@ async function example() {
   const body = {
     // string | The USERID identifier
     userid: userid_example,
-    // OBPv600AddUserToGroupRequest | Request body
-    oBPv600AddUserToGroupRequest: {"type":"object","properties":{"group_id":{"type":"string"}}},
-  } satisfies OBPv600AddUserToGroupOperationRequest;
+    // AddUserToGroupRequest | Request body
+    addUserToGroupRequest: {"type":"object","properties":{"group_id":{"type":"string"}}},
+  } satisfies AddUserToGroupOperationRequest;
 
   try {
-    const data = await api.oBPv600AddUserToGroup(body);
+    const data = await api.addUserToGroup(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -70,11 +70,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userid** | `string` | The USERID identifier | [Defaults to `undefined`] |
-| **oBPv600AddUserToGroupRequest** | [OBPv600AddUserToGroupRequest](OBPv600AddUserToGroupRequest.md) | Request body | |
+| **addUserToGroupRequest** | [AddUserToGroupRequest](AddUserToGroupRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600AddUserToGroup200Response**](OBPv600AddUserToGroup200Response.md)
+[**AddUserToGroup200Response**](AddUserToGroup200Response.md)
 
 ### Authorization
 
@@ -95,9 +95,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600CreateGroup
+## createGroup
 
-> OBPv600GetGroups200ResponsePropertiesGroupsItems oBPv600CreateGroup(oBPv600CreateGroupRequest)
+> GetGroups200ResponseGroupsInner createGroup(createGroupRequest)
 
 Create Group
 
@@ -110,7 +110,7 @@ import {
   Configuration,
   GroupApi,
 } from 'obp-typescript';
-import type { OBPv600CreateGroupOperationRequest } from 'obp-typescript';
+import type { CreateGroupOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -125,12 +125,12 @@ async function example() {
   const api = new GroupApi(config);
 
   const body = {
-    // OBPv600CreateGroupRequest | Request body
-    oBPv600CreateGroupRequest: {"type":"object","properties":{"group_name":{"type":"string"},"group_description":{"type":"string"},"bank_id":{"type":"string"},"is_enabled":{"type":"boolean"},"list_of_roles":{"type":"array","items":{"type":"string"}}}},
-  } satisfies OBPv600CreateGroupOperationRequest;
+    // CreateGroupRequest | Request body
+    createGroupRequest: {"type":"object","properties":{"group_name":{"type":"string"},"group_description":{"type":"string"},"bank_id":{"type":"string"},"is_enabled":{"type":"boolean"},"list_of_roles":{"type":"array","items":{"type":"string"}}}},
+  } satisfies CreateGroupOperationRequest;
 
   try {
-    const data = await api.oBPv600CreateGroup(body);
+    const data = await api.createGroup(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -146,11 +146,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **oBPv600CreateGroupRequest** | [OBPv600CreateGroupRequest](OBPv600CreateGroupRequest.md) | Request body | |
+| **createGroupRequest** | [CreateGroupRequest](CreateGroupRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -171,9 +171,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600DeleteGroup
+## deleteGroup
 
-> oBPv600DeleteGroup(groupid)
+> deleteGroup(groupid)
 
 Delete Group
 
@@ -186,7 +186,7 @@ import {
   Configuration,
   GroupApi,
 } from 'obp-typescript';
-import type { OBPv600DeleteGroupRequest } from 'obp-typescript';
+import type { DeleteGroupRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -203,10 +203,10 @@ async function example() {
   const body = {
     // string | The GROUPID identifier
     groupid: groupid_example,
-  } satisfies OBPv600DeleteGroupRequest;
+  } satisfies DeleteGroupRequest;
 
   try {
-    const data = await api.oBPv600DeleteGroup(body);
+    const data = await api.deleteGroup(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -247,9 +247,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetGroup
+## getGroup
 
-> OBPv600GetGroups200ResponsePropertiesGroupsItems oBPv600GetGroup(groupid)
+> GetGroups200ResponseGroupsInner getGroup(groupid)
 
 Get Group
 
@@ -262,7 +262,7 @@ import {
   Configuration,
   GroupApi,
 } from 'obp-typescript';
-import type { OBPv600GetGroupRequest } from 'obp-typescript';
+import type { GetGroupRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -279,10 +279,10 @@ async function example() {
   const body = {
     // string | The GROUPID identifier
     groupid: groupid_example,
-  } satisfies OBPv600GetGroupRequest;
+  } satisfies GetGroupRequest;
 
   try {
-    const data = await api.oBPv600GetGroup(body);
+    const data = await api.getGroup(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -302,7 +302,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -323,9 +323,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetGroupEntitlements
+## getGroupEntitlements
 
-> OBPv600GetGroupEntitlements200Response oBPv600GetGroupEntitlements(groupid)
+> GetGroupEntitlements200Response getGroupEntitlements(groupid)
 
 Get Group Entitlements
 
@@ -338,7 +338,7 @@ import {
   Configuration,
   GroupApi,
 } from 'obp-typescript';
-import type { OBPv600GetGroupEntitlementsRequest } from 'obp-typescript';
+import type { GetGroupEntitlementsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -355,10 +355,10 @@ async function example() {
   const body = {
     // string | The GROUPID identifier
     groupid: groupid_example,
-  } satisfies OBPv600GetGroupEntitlementsRequest;
+  } satisfies GetGroupEntitlementsRequest;
 
   try {
-    const data = await api.oBPv600GetGroupEntitlements(body);
+    const data = await api.getGroupEntitlements(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -378,7 +378,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600GetGroupEntitlements200Response**](OBPv600GetGroupEntitlements200Response.md)
+[**GetGroupEntitlements200Response**](GetGroupEntitlements200Response.md)
 
 ### Authorization
 
@@ -399,9 +399,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetGroups
+## getGroups
 
-> OBPv600GetGroups200Response oBPv600GetGroups()
+> GetGroups200Response getGroups()
 
 Get Groups
 
@@ -414,7 +414,7 @@ import {
   Configuration,
   GroupApi,
 } from 'obp-typescript';
-import type { OBPv600GetGroupsRequest } from 'obp-typescript';
+import type { GetGroupsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -429,7 +429,7 @@ async function example() {
   const api = new GroupApi(config);
 
   try {
-    const data = await api.oBPv600GetGroups();
+    const data = await api.getGroups();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -446,7 +446,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetGroups200Response**](OBPv600GetGroups200Response.md)
+[**GetGroups200Response**](GetGroups200Response.md)
 
 ### Authorization
 
@@ -467,9 +467,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetUserGroupMemberships
+## getUserGroupMemberships
 
-> OBPv600GetUserGroupMemberships200Response oBPv600GetUserGroupMemberships(userid)
+> GetUserGroupMemberships200Response getUserGroupMemberships(userid)
 
 Get User\&#39;s Group Memberships
 
@@ -482,7 +482,7 @@ import {
   Configuration,
   GroupApi,
 } from 'obp-typescript';
-import type { OBPv600GetUserGroupMembershipsRequest } from 'obp-typescript';
+import type { GetUserGroupMembershipsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -499,10 +499,10 @@ async function example() {
   const body = {
     // string | The USERID identifier
     userid: userid_example,
-  } satisfies OBPv600GetUserGroupMembershipsRequest;
+  } satisfies GetUserGroupMembershipsRequest;
 
   try {
-    const data = await api.oBPv600GetUserGroupMemberships(body);
+    const data = await api.getUserGroupMemberships(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -522,7 +522,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600GetUserGroupMemberships200Response**](OBPv600GetUserGroupMemberships200Response.md)
+[**GetUserGroupMemberships200Response**](GetUserGroupMemberships200Response.md)
 
 ### Authorization
 
@@ -543,9 +543,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600RemoveUserFromGroup
+## removeUserFromGroup
 
-> oBPv600RemoveUserFromGroup(userid, groupid)
+> removeUserFromGroup(userid, groupid)
 
 Remove User from Group
 
@@ -558,7 +558,7 @@ import {
   Configuration,
   GroupApi,
 } from 'obp-typescript';
-import type { OBPv600RemoveUserFromGroupRequest } from 'obp-typescript';
+import type { RemoveUserFromGroupRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -577,10 +577,10 @@ async function example() {
     userid: userid_example,
     // string | The GROUPID identifier
     groupid: groupid_example,
-  } satisfies OBPv600RemoveUserFromGroupRequest;
+  } satisfies RemoveUserFromGroupRequest;
 
   try {
-    const data = await api.oBPv600RemoveUserFromGroup(body);
+    const data = await api.removeUserFromGroup(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -622,9 +622,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600UpdateGroup
+## updateGroup
 
-> OBPv600GetGroups200ResponsePropertiesGroupsItems oBPv600UpdateGroup(groupid, oBPv600UpdateGroupRequest)
+> GetGroups200ResponseGroupsInner updateGroup(groupid, updateGroupRequest)
 
 Update Group
 
@@ -637,7 +637,7 @@ import {
   Configuration,
   GroupApi,
 } from 'obp-typescript';
-import type { OBPv600UpdateGroupOperationRequest } from 'obp-typescript';
+import type { UpdateGroupOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -654,12 +654,12 @@ async function example() {
   const body = {
     // string | The GROUPID identifier
     groupid: groupid_example,
-    // OBPv600UpdateGroupRequest | Request body
-    oBPv600UpdateGroupRequest: {"type":"object","properties":{"group_name":{"type":"string"},"group_description":{"type":"string"},"list_of_roles":{"type":"array","items":{"type":"string"}},"is_enabled":{"type":"boolean"}}},
-  } satisfies OBPv600UpdateGroupOperationRequest;
+    // UpdateGroupRequest | Request body
+    updateGroupRequest: {"type":"object","properties":{"group_name":{"type":"string"},"group_description":{"type":"string"},"list_of_roles":{"type":"array","items":{"type":"string"}},"is_enabled":{"type":"boolean"}}},
+  } satisfies UpdateGroupOperationRequest;
 
   try {
-    const data = await api.oBPv600UpdateGroup(body);
+    const data = await api.updateGroup(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -676,11 +676,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **groupid** | `string` | The GROUPID identifier | [Defaults to `undefined`] |
-| **oBPv600UpdateGroupRequest** | [OBPv600UpdateGroupRequest](OBPv600UpdateGroupRequest.md) | Request body | |
+| **updateGroupRequest** | [UpdateGroupRequest](UpdateGroupRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 

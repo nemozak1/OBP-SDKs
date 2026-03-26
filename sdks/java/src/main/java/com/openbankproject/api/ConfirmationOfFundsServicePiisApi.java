@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,7 +18,7 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv310CheckFundsAvailable200Response;
+import com.openbankproject.model.CheckFundsAvailable200Response;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -45,7 +45,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class ConfirmationOfFundsServicePiisApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -168,11 +168,11 @@ public class ConfirmationOfFundsServicePiisApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
-   * @return OBPv310CheckFundsAvailable200Response
+   * @return CheckFundsAvailable200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv310CheckFundsAvailable200Response oBPv310CheckFundsAvailable(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid) throws ApiException {
-    return oBPv310CheckFundsAvailable(bankid, accountid, viewid, null);
+  public CheckFundsAvailable200Response checkFundsAvailable(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid) throws ApiException {
+    return checkFundsAvailable(bankid, accountid, viewid, null);
   }
 
   /**
@@ -182,11 +182,11 @@ public class ConfirmationOfFundsServicePiisApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv310CheckFundsAvailable200Response
+   * @return CheckFundsAvailable200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv310CheckFundsAvailable200Response oBPv310CheckFundsAvailable(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv310CheckFundsAvailable200Response> localVarResponse = oBPv310CheckFundsAvailableWithHttpInfo(bankid, accountid, viewid, headers);
+  public CheckFundsAvailable200Response checkFundsAvailable(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, Map<String, String> headers) throws ApiException {
+    ApiResponse<CheckFundsAvailable200Response> localVarResponse = checkFundsAvailableWithHttpInfo(bankid, accountid, viewid, headers);
     return localVarResponse.getData();
   }
 
@@ -196,11 +196,11 @@ public class ConfirmationOfFundsServicePiisApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
-   * @return ApiResponse&lt;OBPv310CheckFundsAvailable200Response&gt;
+   * @return ApiResponse&lt;CheckFundsAvailable200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310CheckFundsAvailable200Response> oBPv310CheckFundsAvailableWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid) throws ApiException {
-    return oBPv310CheckFundsAvailableWithHttpInfo(bankid, accountid, viewid, null);
+  public ApiResponse<CheckFundsAvailable200Response> checkFundsAvailableWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid) throws ApiException {
+    return checkFundsAvailableWithHttpInfo(bankid, accountid, viewid, null);
   }
 
   /**
@@ -210,11 +210,11 @@ public class ConfirmationOfFundsServicePiisApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv310CheckFundsAvailable200Response&gt;
+   * @return ApiResponse&lt;CheckFundsAvailable200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310CheckFundsAvailable200Response> oBPv310CheckFundsAvailableWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv310CheckFundsAvailableRequestBuilder(bankid, accountid, viewid, headers);
+  public ApiResponse<CheckFundsAvailable200Response> checkFundsAvailableWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = checkFundsAvailableRequestBuilder(bankid, accountid, viewid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -225,11 +225,11 @@ public class ConfirmationOfFundsServicePiisApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv310CheckFundsAvailable", localVarResponse);
+          throw getApiException("checkFundsAvailable", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv310CheckFundsAvailable200Response>(
+          return new ApiResponse<CheckFundsAvailable200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -239,10 +239,10 @@ public class ConfirmationOfFundsServicePiisApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv310CheckFundsAvailable200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv310CheckFundsAvailable200Response>() {});
+        CheckFundsAvailable200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CheckFundsAvailable200Response>() {});
         
 
-        return new ApiResponse<OBPv310CheckFundsAvailable200Response>(
+        return new ApiResponse<CheckFundsAvailable200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -261,18 +261,18 @@ public class ConfirmationOfFundsServicePiisApi {
     }
   }
 
-  private HttpRequest.Builder oBPv310CheckFundsAvailableRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder checkFundsAvailableRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv310CheckFundsAvailable");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling checkFundsAvailable");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv310CheckFundsAvailable");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling checkFundsAvailable");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv310CheckFundsAvailable");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling checkFundsAvailable");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();

@@ -1,189 +1,28 @@
 # DynamicEntityManageApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400DeleteBankLevelDynamicEntity**](DynamicEntityManageApi.md#oBPv400DeleteBankLevelDynamicEntity) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Delete Bank Level Dynamic Entity |
-| [**oBPv400DeleteMyDynamicEntity**](DynamicEntityManageApi.md#oBPv400DeleteMyDynamicEntity) | **DELETE** /obp/v4.0.0/my/dynamic-entities/{dynamicentityid} | Delete My Dynamic Entity |
-| [**oBPv400DeleteSystemDynamicEntity**](DynamicEntityManageApi.md#oBPv400DeleteSystemDynamicEntity) | **DELETE** /obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid} | Delete System Level Dynamic Entity |
-| [**oBPv600BackupBankLevelDynamicEntity**](DynamicEntityManageApi.md#oBPv600BackupBankLevelDynamicEntity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup | Backup Bank Level Dynamic Entity |
-| [**oBPv600BackupSystemDynamicEntity**](DynamicEntityManageApi.md#oBPv600BackupSystemDynamicEntity) | **POST** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup | Backup System Level Dynamic Entity |
-| [**oBPv600CreateBankLevelDynamicEntity**](DynamicEntityManageApi.md#oBPv600CreateBankLevelDynamicEntity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Create Bank Level Dynamic Entity |
-| [**oBPv600CreateSystemDynamicEntity**](DynamicEntityManageApi.md#oBPv600CreateSystemDynamicEntity) | **POST** /obp/v6.0.0/management/system-dynamic-entities | Create System Level Dynamic Entity |
-| [**oBPv600DeleteSystemDynamicEntityCascade**](DynamicEntityManageApi.md#oBPv600DeleteSystemDynamicEntityCascade) | **DELETE** /obp/v6.0.0/management/system-dynamic-entities/cascade/{dynamicentityid} | Delete System Level Dynamic Entity Cascade |
-| [**oBPv600GetBankLevelDynamicEntities**](DynamicEntityManageApi.md#oBPv600GetBankLevelDynamicEntities) | **GET** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Get Bank Level Dynamic Entities |
-| [**oBPv600GetMyDynamicEntities**](DynamicEntityManageApi.md#oBPv600GetMyDynamicEntities) | **GET** /obp/v6.0.0/my/dynamic-entities | Get My Dynamic Entities |
-| [**oBPv600GetSystemDynamicEntities**](DynamicEntityManageApi.md#oBPv600GetSystemDynamicEntities) | **GET** /obp/v6.0.0/management/system-dynamic-entities | Get System Dynamic Entities |
-| [**oBPv600UpdateBankLevelDynamicEntity**](DynamicEntityManageApi.md#oBPv600UpdateBankLevelDynamicEntity) | **PUT** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Update Bank Level Dynamic Entity |
-| [**oBPv600UpdateMyDynamicEntity**](DynamicEntityManageApi.md#oBPv600UpdateMyDynamicEntity) | **PUT** /obp/v6.0.0/my/dynamic-entities/{dynamicentityid} | Update My Dynamic Entity |
-| [**oBPv600UpdateSystemDynamicEntity**](DynamicEntityManageApi.md#oBPv600UpdateSystemDynamicEntity) | **PUT** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid} | Update System Level Dynamic Entity |
+| [**backupBankLevelDynamicEntity**](DynamicEntityManageApi.md#backupBankLevelDynamicEntity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup | Backup Bank Level Dynamic Entity |
+| [**backupSystemDynamicEntity**](DynamicEntityManageApi.md#backupSystemDynamicEntity) | **POST** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup | Backup System Level Dynamic Entity |
+| [**createBankLevelDynamicEntity**](DynamicEntityManageApi.md#createBankLevelDynamicEntity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Create Bank Level Dynamic Entity |
+| [**createSystemDynamicEntity**](DynamicEntityManageApi.md#createSystemDynamicEntity) | **POST** /obp/v6.0.0/management/system-dynamic-entities | Create System Level Dynamic Entity |
+| [**deleteBankLevelDynamicEntity**](DynamicEntityManageApi.md#deleteBankLevelDynamicEntity) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Delete Bank Level Dynamic Entity |
+| [**deleteMyDynamicEntity**](DynamicEntityManageApi.md#deleteMyDynamicEntity) | **DELETE** /obp/v4.0.0/my/dynamic-entities/{dynamicentityid} | Delete My Dynamic Entity |
+| [**deleteSystemDynamicEntity**](DynamicEntityManageApi.md#deleteSystemDynamicEntity) | **DELETE** /obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid} | Delete System Level Dynamic Entity |
+| [**deleteSystemDynamicEntityCascade**](DynamicEntityManageApi.md#deleteSystemDynamicEntityCascade) | **DELETE** /obp/v6.0.0/management/system-dynamic-entities/cascade/{dynamicentityid} | Delete System Level Dynamic Entity Cascade |
+| [**getBankLevelDynamicEntities**](DynamicEntityManageApi.md#getBankLevelDynamicEntities) | **GET** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Get Bank Level Dynamic Entities |
+| [**getMyDynamicEntities**](DynamicEntityManageApi.md#getMyDynamicEntities) | **GET** /obp/v6.0.0/my/dynamic-entities | Get My Dynamic Entities |
+| [**getSystemDynamicEntities**](DynamicEntityManageApi.md#getSystemDynamicEntities) | **GET** /obp/v6.0.0/management/system-dynamic-entities | Get System Dynamic Entities |
+| [**updateBankLevelDynamicEntity**](DynamicEntityManageApi.md#updateBankLevelDynamicEntity) | **PUT** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Update Bank Level Dynamic Entity |
+| [**updateMyDynamicEntity**](DynamicEntityManageApi.md#updateMyDynamicEntity) | **PUT** /obp/v6.0.0/my/dynamic-entities/{dynamicentityid} | Update My Dynamic Entity |
+| [**updateSystemDynamicEntity**](DynamicEntityManageApi.md#updateSystemDynamicEntity) | **PUT** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid} | Update System Level Dynamic Entity |
 
 
-<a id="oBPv400DeleteBankLevelDynamicEntity"></a>
-# **oBPv400DeleteBankLevelDynamicEntity**
-> oBPv400DeleteBankLevelDynamicEntity(bankid, dynamicentityid)
-
-Delete Bank Level Dynamic Entity
-
-&lt;p&gt;Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;/&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = DynamicEntityManageApi()
-val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val dynamicentityid : kotlin.String = dynamicentityid_example // kotlin.String | The DYNAMICENTITYID identifier
-try {
-    apiInstance.oBPv400DeleteBankLevelDynamicEntity(bankid, dynamicentityid)
-} catch (e: ClientException) {
-    println("4xx response calling DynamicEntityManageApi#oBPv400DeleteBankLevelDynamicEntity")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling DynamicEntityManageApi#oBPv400DeleteBankLevelDynamicEntity")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **bankid** | **kotlin.String**| The BANKID identifier | |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **dynamicentityid** | **kotlin.String**| The DYNAMICENTITYID identifier | |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a id="oBPv400DeleteMyDynamicEntity"></a>
-# **oBPv400DeleteMyDynamicEntity**
-> oBPv400DeleteMyDynamicEntity(dynamicentityid)
-
-Delete My Dynamic Entity
-
-&lt;p&gt;Delete my DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = DynamicEntityManageApi()
-val dynamicentityid : kotlin.String = dynamicentityid_example // kotlin.String | The DYNAMICENTITYID identifier
-try {
-    apiInstance.oBPv400DeleteMyDynamicEntity(dynamicentityid)
-} catch (e: ClientException) {
-    println("4xx response calling DynamicEntityManageApi#oBPv400DeleteMyDynamicEntity")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling DynamicEntityManageApi#oBPv400DeleteMyDynamicEntity")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **dynamicentityid** | **kotlin.String**| The DYNAMICENTITYID identifier | |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a id="oBPv400DeleteSystemDynamicEntity"></a>
-# **oBPv400DeleteSystemDynamicEntity**
-> oBPv400DeleteSystemDynamicEntity(dynamicentityid)
-
-Delete System Level Dynamic Entity
-
-&lt;p&gt;Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;/&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = DynamicEntityManageApi()
-val dynamicentityid : kotlin.String = dynamicentityid_example // kotlin.String | The DYNAMICENTITYID identifier
-try {
-    apiInstance.oBPv400DeleteSystemDynamicEntity(dynamicentityid)
-} catch (e: ClientException) {
-    println("4xx response calling DynamicEntityManageApi#oBPv400DeleteSystemDynamicEntity")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling DynamicEntityManageApi#oBPv400DeleteSystemDynamicEntity")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **dynamicentityid** | **kotlin.String**| The DYNAMICENTITYID identifier | |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a id="oBPv600BackupBankLevelDynamicEntity"></a>
-# **oBPv600BackupBankLevelDynamicEntity**
-> OBPv600BackupBankLevelDynamicEntity200Response oBPv600BackupBankLevelDynamicEntity(bankid, dynamicentityid)
+<a id="backupBankLevelDynamicEntity"></a>
+# **backupBankLevelDynamicEntity**
+> BackupBankLevelDynamicEntity200Response backupBankLevelDynamicEntity(bankid, dynamicentityid)
 
 Backup Bank Level Dynamic Entity
 
@@ -199,13 +38,13 @@ val apiInstance = DynamicEntityManageApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val dynamicentityid : kotlin.String = dynamicentityid_example // kotlin.String | The DYNAMICENTITYID identifier
 try {
-    val result : OBPv600BackupBankLevelDynamicEntity200Response = apiInstance.oBPv600BackupBankLevelDynamicEntity(bankid, dynamicentityid)
+    val result : BackupBankLevelDynamicEntity200Response = apiInstance.backupBankLevelDynamicEntity(bankid, dynamicentityid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEntityManageApi#oBPv600BackupBankLevelDynamicEntity")
+    println("4xx response calling DynamicEntityManageApi#backupBankLevelDynamicEntity")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEntityManageApi#oBPv600BackupBankLevelDynamicEntity")
+    println("5xx response calling DynamicEntityManageApi#backupBankLevelDynamicEntity")
     e.printStackTrace()
 }
 ```
@@ -218,7 +57,7 @@ try {
 
 ### Return type
 
-[**OBPv600BackupBankLevelDynamicEntity200Response**](OBPv600BackupBankLevelDynamicEntity200Response.md)
+[**BackupBankLevelDynamicEntity200Response**](BackupBankLevelDynamicEntity200Response.md)
 
 ### Authorization
 
@@ -229,17 +68,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600BackupSystemDynamicEntity"></a>
-# **oBPv600BackupSystemDynamicEntity**
-> OBPv600BackupSystemDynamicEntity200Response oBPv600BackupSystemDynamicEntity(dynamicentityid)
+<a id="backupSystemDynamicEntity"></a>
+# **backupSystemDynamicEntity**
+> BackupSystemDynamicEntity200Response backupSystemDynamicEntity(dynamicentityid)
 
 Backup System Level Dynamic Entity
 
@@ -254,13 +93,13 @@ Backup System Level Dynamic Entity
 val apiInstance = DynamicEntityManageApi()
 val dynamicentityid : kotlin.String = dynamicentityid_example // kotlin.String | The DYNAMICENTITYID identifier
 try {
-    val result : OBPv600BackupSystemDynamicEntity200Response = apiInstance.oBPv600BackupSystemDynamicEntity(dynamicentityid)
+    val result : BackupSystemDynamicEntity200Response = apiInstance.backupSystemDynamicEntity(dynamicentityid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEntityManageApi#oBPv600BackupSystemDynamicEntity")
+    println("4xx response calling DynamicEntityManageApi#backupSystemDynamicEntity")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEntityManageApi#oBPv600BackupSystemDynamicEntity")
+    println("5xx response calling DynamicEntityManageApi#backupSystemDynamicEntity")
     e.printStackTrace()
 }
 ```
@@ -272,7 +111,7 @@ try {
 
 ### Return type
 
-[**OBPv600BackupSystemDynamicEntity200Response**](OBPv600BackupSystemDynamicEntity200Response.md)
+[**BackupSystemDynamicEntity200Response**](BackupSystemDynamicEntity200Response.md)
 
 ### Authorization
 
@@ -283,17 +122,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600CreateBankLevelDynamicEntity"></a>
-# **oBPv600CreateBankLevelDynamicEntity**
-> OBPv600CreateBankLevelDynamicEntity200Response oBPv600CreateBankLevelDynamicEntity(bankid, obPv600CreateSystemDynamicEntityRequest)
+<a id="createBankLevelDynamicEntity"></a>
+# **createBankLevelDynamicEntity**
+> CreateBankLevelDynamicEntity200Response createBankLevelDynamicEntity(bankid, createSystemDynamicEntityRequest)
 
 Create Bank Level Dynamic Entity
 
@@ -307,15 +146,15 @@ Create Bank Level Dynamic Entity
 
 val apiInstance = DynamicEntityManageApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val obPv600CreateSystemDynamicEntityRequest : OBPv600CreateSystemDynamicEntityRequest = {type=object, properties={has_community_access={type=boolean}, schema={type=object, properties={description={type=string}, required={type=array, items={type=object, properties={s={type=string}}}}, properties={type=object, properties={theme={type=object, properties={minLength={type=integer}, description={type=string}, type={type=string}, maxLength={type=integer}, example={type=string}}}, language={type=object, properties={minLength={type=integer}, description={type=string}, type={type=string}, example={type=string}, maxLength={type=integer}}}}}}}, has_personal_entity={type=boolean}, personal_requires_role={type=boolean}, entity_name={type=string}, has_public_access={type=boolean}}} // OBPv600CreateSystemDynamicEntityRequest | Request body
+val createSystemDynamicEntityRequest : CreateSystemDynamicEntityRequest = {type=object, properties={has_community_access={type=boolean}, schema={type=object, properties={description={type=string}, required={type=array, items={type=object, properties={s={type=string}}}}, properties={type=object, properties={theme={type=object, properties={minLength={type=integer}, description={type=string}, type={type=string}, maxLength={type=integer}, example={type=string}}}, language={type=object, properties={minLength={type=integer}, description={type=string}, type={type=string}, example={type=string}, maxLength={type=integer}}}}}}}, has_personal_entity={type=boolean}, personal_requires_role={type=boolean}, entity_name={type=string}, has_public_access={type=boolean}}} // CreateSystemDynamicEntityRequest | Request body
 try {
-    val result : OBPv600CreateBankLevelDynamicEntity200Response = apiInstance.oBPv600CreateBankLevelDynamicEntity(bankid, obPv600CreateSystemDynamicEntityRequest)
+    val result : CreateBankLevelDynamicEntity200Response = apiInstance.createBankLevelDynamicEntity(bankid, createSystemDynamicEntityRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEntityManageApi#oBPv600CreateBankLevelDynamicEntity")
+    println("4xx response calling DynamicEntityManageApi#createBankLevelDynamicEntity")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEntityManageApi#oBPv600CreateBankLevelDynamicEntity")
+    println("5xx response calling DynamicEntityManageApi#createBankLevelDynamicEntity")
     e.printStackTrace()
 }
 ```
@@ -324,11 +163,11 @@ try {
 | **bankid** | **kotlin.String**| The BANKID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600CreateSystemDynamicEntityRequest** | [**OBPv600CreateSystemDynamicEntityRequest**](OBPv600CreateSystemDynamicEntityRequest.md)| Request body | |
+| **createSystemDynamicEntityRequest** | [**CreateSystemDynamicEntityRequest**](CreateSystemDynamicEntityRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600CreateBankLevelDynamicEntity200Response**](OBPv600CreateBankLevelDynamicEntity200Response.md)
+[**CreateBankLevelDynamicEntity200Response**](CreateBankLevelDynamicEntity200Response.md)
 
 ### Authorization
 
@@ -339,21 +178,21 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600CreateSystemDynamicEntity"></a>
-# **oBPv600CreateSystemDynamicEntity**
-> OBPv600CreateSystemDynamicEntity200Response oBPv600CreateSystemDynamicEntity(obPv600CreateSystemDynamicEntityRequest)
+<a id="createSystemDynamicEntity"></a>
+# **createSystemDynamicEntity**
+> CreateSystemDynamicEntity200Response createSystemDynamicEntity(createSystemDynamicEntityRequest)
 
 Create System Level Dynamic Entity
 
-&lt;p&gt;Create a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+&lt;p&gt;Create a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; 
 
 ### Example
 ```kotlin
@@ -362,15 +201,15 @@ Create System Level Dynamic Entity
 //import com.openbankproject.models.*
 
 val apiInstance = DynamicEntityManageApi()
-val obPv600CreateSystemDynamicEntityRequest : OBPv600CreateSystemDynamicEntityRequest = {"type":"object","properties":{"has_community_access":{"type":"boolean"},"schema":{"type":"object","properties":{"description":{"type":"string"},"required":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"properties":{"type":"object","properties":{"theme":{"type":"object","properties":{"minLength":{"type":"integer"},"description":{"type":"string"},"type":{"type":"string"},"maxLength":{"type":"integer"},"example":{"type":"string"}}},"language":{"type":"object","properties":{"minLength":{"type":"integer"},"description":{"type":"string"},"type":{"type":"string"},"example":{"type":"string"},"maxLength":{"type":"integer"}}}}}}},"has_personal_entity":{"type":"boolean"},"personal_requires_role":{"type":"boolean"},"entity_name":{"type":"string"},"has_public_access":{"type":"boolean"}}} // OBPv600CreateSystemDynamicEntityRequest | Request body
+val createSystemDynamicEntityRequest : CreateSystemDynamicEntityRequest = {"type":"object","properties":{"has_community_access":{"type":"boolean"},"schema":{"type":"object","properties":{"description":{"type":"string"},"required":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"properties":{"type":"object","properties":{"theme":{"type":"object","properties":{"minLength":{"type":"integer"},"description":{"type":"string"},"type":{"type":"string"},"maxLength":{"type":"integer"},"example":{"type":"string"}}},"language":{"type":"object","properties":{"minLength":{"type":"integer"},"description":{"type":"string"},"type":{"type":"string"},"example":{"type":"string"},"maxLength":{"type":"integer"}}}}}}},"has_personal_entity":{"type":"boolean"},"personal_requires_role":{"type":"boolean"},"entity_name":{"type":"string"},"has_public_access":{"type":"boolean"}}} // CreateSystemDynamicEntityRequest | Request body
 try {
-    val result : OBPv600CreateSystemDynamicEntity200Response = apiInstance.oBPv600CreateSystemDynamicEntity(obPv600CreateSystemDynamicEntityRequest)
+    val result : CreateSystemDynamicEntity200Response = apiInstance.createSystemDynamicEntity(createSystemDynamicEntityRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEntityManageApi#oBPv600CreateSystemDynamicEntity")
+    println("4xx response calling DynamicEntityManageApi#createSystemDynamicEntity")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEntityManageApi#oBPv600CreateSystemDynamicEntity")
+    println("5xx response calling DynamicEntityManageApi#createSystemDynamicEntity")
     e.printStackTrace()
 }
 ```
@@ -378,11 +217,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600CreateSystemDynamicEntityRequest** | [**OBPv600CreateSystemDynamicEntityRequest**](OBPv600CreateSystemDynamicEntityRequest.md)| Request body | |
+| **createSystemDynamicEntityRequest** | [**CreateSystemDynamicEntityRequest**](CreateSystemDynamicEntityRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600CreateSystemDynamicEntity200Response**](OBPv600CreateSystemDynamicEntity200Response.md)
+[**CreateSystemDynamicEntity200Response**](CreateSystemDynamicEntity200Response.md)
 
 ### Authorization
 
@@ -393,21 +232,76 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600DeleteSystemDynamicEntityCascade"></a>
-# **oBPv600DeleteSystemDynamicEntityCascade**
-> oBPv600DeleteSystemDynamicEntityCascade(dynamicentityid)
+<a id="deleteBankLevelDynamicEntity"></a>
+# **deleteBankLevelDynamicEntity**
+> deleteBankLevelDynamicEntity(bankid, dynamicentityid)
 
-Delete System Level Dynamic Entity Cascade
+Delete Bank Level Dynamic Entity
 
-&lt;p&gt;Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID and all its data records.&lt;/p&gt; &lt;p&gt;This endpoint performs a cascade delete:&lt;br /&gt; 1. Automatically backs up the entity definition and all data records to a ZZ_BAK_ prefixed entity (e.g. my_entity is backed up to ZZ_BAK_my_entity). If a previous ZZ_BAK_ backup exists, it is overwritten.&lt;br /&gt; 2. Deletes all data records associated with the dynamic entity&lt;br /&gt; 3. Deletes the dynamic entity definition itself&lt;/p&gt; &lt;p&gt;Note: Entities whose name already starts with ZZ_BAK_ are not backed up again (to avoid infinite backup chains).&lt;/p&gt; &lt;p&gt;This operation is only allowed for non-personal entities (hasPersonalEntity&#x3D;false).&lt;br /&gt; For personal entities (hasPersonalEntity&#x3D;true), you must delete the records and definition separately.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;/&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+&lt;p&gt;Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;/&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = DynamicEntityManageApi()
+val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
+val dynamicentityid : kotlin.String = dynamicentityid_example // kotlin.String | The DYNAMICENTITYID identifier
+try {
+    apiInstance.deleteBankLevelDynamicEntity(bankid, dynamicentityid)
+} catch (e: ClientException) {
+    println("4xx response calling DynamicEntityManageApi#deleteBankLevelDynamicEntity")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling DynamicEntityManageApi#deleteBankLevelDynamicEntity")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **bankid** | **kotlin.String**| The BANKID identifier | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dynamicentityid** | **kotlin.String**| The DYNAMICENTITYID identifier | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a id="deleteMyDynamicEntity"></a>
+# **deleteMyDynamicEntity**
+> deleteMyDynamicEntity(dynamicentityid)
+
+Delete My Dynamic Entity
+
+&lt;p&gt;Delete my DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
 
 ### Example
 ```kotlin
@@ -418,12 +312,12 @@ Delete System Level Dynamic Entity Cascade
 val apiInstance = DynamicEntityManageApi()
 val dynamicentityid : kotlin.String = dynamicentityid_example // kotlin.String | The DYNAMICENTITYID identifier
 try {
-    apiInstance.oBPv600DeleteSystemDynamicEntityCascade(dynamicentityid)
+    apiInstance.deleteMyDynamicEntity(dynamicentityid)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEntityManageApi#oBPv600DeleteSystemDynamicEntityCascade")
+    println("4xx response calling DynamicEntityManageApi#deleteMyDynamicEntity")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEntityManageApi#oBPv600DeleteSystemDynamicEntityCascade")
+    println("5xx response calling DynamicEntityManageApi#deleteMyDynamicEntity")
     e.printStackTrace()
 }
 ```
@@ -446,17 +340,123 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv600GetBankLevelDynamicEntities"></a>
-# **oBPv600GetBankLevelDynamicEntities**
-> OBPv600GetBankLevelDynamicEntities200Response oBPv600GetBankLevelDynamicEntities(bankid)
+<a id="deleteSystemDynamicEntity"></a>
+# **deleteSystemDynamicEntity**
+> deleteSystemDynamicEntity(dynamicentityid)
+
+Delete System Level Dynamic Entity
+
+&lt;p&gt;Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;/&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = DynamicEntityManageApi()
+val dynamicentityid : kotlin.String = dynamicentityid_example // kotlin.String | The DYNAMICENTITYID identifier
+try {
+    apiInstance.deleteSystemDynamicEntity(dynamicentityid)
+} catch (e: ClientException) {
+    println("4xx response calling DynamicEntityManageApi#deleteSystemDynamicEntity")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling DynamicEntityManageApi#deleteSystemDynamicEntity")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dynamicentityid** | **kotlin.String**| The DYNAMICENTITYID identifier | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a id="deleteSystemDynamicEntityCascade"></a>
+# **deleteSystemDynamicEntityCascade**
+> deleteSystemDynamicEntityCascade(dynamicentityid)
+
+Delete System Level Dynamic Entity Cascade
+
+&lt;p&gt;Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID and all its data records.&lt;/p&gt; &lt;p&gt;This endpoint performs a cascade delete:&lt;br /&gt; 1. Automatically backs up the entity definition and all data records to a ZZ_BAK_ prefixed entity (e.g. my_entity is backed up to ZZ_BAK_my_entity). If a previous ZZ_BAK_ backup exists, it is overwritten.&lt;br /&gt; 2. Deletes all data records associated with the dynamic entity&lt;br /&gt; 3. Deletes the dynamic entity definition itself&lt;/p&gt; &lt;p&gt;Note: Entities whose name already starts with ZZ_BAK_ are not backed up again (to avoid infinite backup chains).&lt;/p&gt; &lt;p&gt;This operation is only allowed for non-personal entities (hasPersonalEntity&#x3D;false).&lt;br /&gt; For personal entities (hasPersonalEntity&#x3D;true), you must delete the records and definition separately.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;/&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = DynamicEntityManageApi()
+val dynamicentityid : kotlin.String = dynamicentityid_example // kotlin.String | The DYNAMICENTITYID identifier
+try {
+    apiInstance.deleteSystemDynamicEntityCascade(dynamicentityid)
+} catch (e: ClientException) {
+    println("4xx response calling DynamicEntityManageApi#deleteSystemDynamicEntityCascade")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling DynamicEntityManageApi#deleteSystemDynamicEntityCascade")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dynamicentityid** | **kotlin.String**| The DYNAMICENTITYID identifier | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a id="getBankLevelDynamicEntities"></a>
+# **getBankLevelDynamicEntities**
+> GetBankLevelDynamicEntities200Response getBankLevelDynamicEntities(bankid)
 
 Get Bank Level Dynamic Entities
 
@@ -471,13 +471,13 @@ Get Bank Level Dynamic Entities
 val apiInstance = DynamicEntityManageApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 try {
-    val result : OBPv600GetBankLevelDynamicEntities200Response = apiInstance.oBPv600GetBankLevelDynamicEntities(bankid)
+    val result : GetBankLevelDynamicEntities200Response = apiInstance.getBankLevelDynamicEntities(bankid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEntityManageApi#oBPv600GetBankLevelDynamicEntities")
+    println("4xx response calling DynamicEntityManageApi#getBankLevelDynamicEntities")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEntityManageApi#oBPv600GetBankLevelDynamicEntities")
+    println("5xx response calling DynamicEntityManageApi#getBankLevelDynamicEntities")
     e.printStackTrace()
 }
 ```
@@ -489,7 +489,7 @@ try {
 
 ### Return type
 
-[**OBPv600GetBankLevelDynamicEntities200Response**](OBPv600GetBankLevelDynamicEntities200Response.md)
+[**GetBankLevelDynamicEntities200Response**](GetBankLevelDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -500,17 +500,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetMyDynamicEntities"></a>
-# **oBPv600GetMyDynamicEntities**
-> OBPv600GetAvailablePersonalDynamicEntities200Response oBPv600GetMyDynamicEntities()
+<a id="getMyDynamicEntities"></a>
+# **getMyDynamicEntities**
+> GetAvailablePersonalDynamicEntities200Response getMyDynamicEntities()
 
 Get My Dynamic Entities
 
@@ -524,13 +524,13 @@ Get My Dynamic Entities
 
 val apiInstance = DynamicEntityManageApi()
 try {
-    val result : OBPv600GetAvailablePersonalDynamicEntities200Response = apiInstance.oBPv600GetMyDynamicEntities()
+    val result : GetAvailablePersonalDynamicEntities200Response = apiInstance.getMyDynamicEntities()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEntityManageApi#oBPv600GetMyDynamicEntities")
+    println("4xx response calling DynamicEntityManageApi#getMyDynamicEntities")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEntityManageApi#oBPv600GetMyDynamicEntities")
+    println("5xx response calling DynamicEntityManageApi#getMyDynamicEntities")
     e.printStackTrace()
 }
 ```
@@ -540,7 +540,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -551,17 +551,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetSystemDynamicEntities"></a>
-# **oBPv600GetSystemDynamicEntities**
-> OBPv600GetSystemDynamicEntities200Response oBPv600GetSystemDynamicEntities()
+<a id="getSystemDynamicEntities"></a>
+# **getSystemDynamicEntities**
+> GetSystemDynamicEntities200Response getSystemDynamicEntities()
 
 Get System Dynamic Entities
 
@@ -575,13 +575,13 @@ Get System Dynamic Entities
 
 val apiInstance = DynamicEntityManageApi()
 try {
-    val result : OBPv600GetSystemDynamicEntities200Response = apiInstance.oBPv600GetSystemDynamicEntities()
+    val result : GetSystemDynamicEntities200Response = apiInstance.getSystemDynamicEntities()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEntityManageApi#oBPv600GetSystemDynamicEntities")
+    println("4xx response calling DynamicEntityManageApi#getSystemDynamicEntities")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEntityManageApi#oBPv600GetSystemDynamicEntities")
+    println("5xx response calling DynamicEntityManageApi#getSystemDynamicEntities")
     e.printStackTrace()
 }
 ```
@@ -591,7 +591,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetSystemDynamicEntities200Response**](OBPv600GetSystemDynamicEntities200Response.md)
+[**GetSystemDynamicEntities200Response**](GetSystemDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -602,17 +602,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600UpdateBankLevelDynamicEntity"></a>
-# **oBPv600UpdateBankLevelDynamicEntity**
-> OBPv600UpdateBankLevelDynamicEntity200Response oBPv600UpdateBankLevelDynamicEntity(bankid, dynamicentityid, obPv600UpdateSystemDynamicEntityRequest)
+<a id="updateBankLevelDynamicEntity"></a>
+# **updateBankLevelDynamicEntity**
+> UpdateBankLevelDynamicEntity200Response updateBankLevelDynamicEntity(bankid, dynamicentityid, updateSystemDynamicEntityRequest)
 
 Update Bank Level Dynamic Entity
 
@@ -627,15 +627,15 @@ Update Bank Level Dynamic Entity
 val apiInstance = DynamicEntityManageApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val dynamicentityid : kotlin.String = dynamicentityid_example // kotlin.String | The DYNAMICENTITYID identifier
-val obPv600UpdateSystemDynamicEntityRequest : OBPv600UpdateSystemDynamicEntityRequest = {type=object, properties={schema={type=object, properties={description={type=string}, required={type=array, items={type=object, properties={s={type=string}}}}, properties={type=object, properties={theme={type=object, properties={minLength={type=integer}, description={type=string}, type={type=string}, maxLength={type=integer}, example={type=string}}}, language={type=object, properties={minLength={type=integer}, description={type=string}, type={type=string}, example={type=string}, maxLength={type=integer}}}, notifications_enabled={type=object, properties={type={type=string}, example={type=string}, description={type=string}}}}}}}, has_personal_entity={type=boolean}, entity_name={type=string}, has_public_access={type=boolean}}} // OBPv600UpdateSystemDynamicEntityRequest | Request body
+val updateSystemDynamicEntityRequest : UpdateSystemDynamicEntityRequest = {type=object, properties={schema={type=object, properties={description={type=string}, required={type=array, items={type=object, properties={s={type=string}}}}, properties={type=object, properties={theme={type=object, properties={minLength={type=integer}, description={type=string}, type={type=string}, maxLength={type=integer}, example={type=string}}}, language={type=object, properties={minLength={type=integer}, description={type=string}, type={type=string}, example={type=string}, maxLength={type=integer}}}, notifications_enabled={type=object, properties={type={type=string}, example={type=string}, description={type=string}}}}}}}, has_personal_entity={type=boolean}, entity_name={type=string}, has_public_access={type=boolean}}} // UpdateSystemDynamicEntityRequest | Request body
 try {
-    val result : OBPv600UpdateBankLevelDynamicEntity200Response = apiInstance.oBPv600UpdateBankLevelDynamicEntity(bankid, dynamicentityid, obPv600UpdateSystemDynamicEntityRequest)
+    val result : UpdateBankLevelDynamicEntity200Response = apiInstance.updateBankLevelDynamicEntity(bankid, dynamicentityid, updateSystemDynamicEntityRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEntityManageApi#oBPv600UpdateBankLevelDynamicEntity")
+    println("4xx response calling DynamicEntityManageApi#updateBankLevelDynamicEntity")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEntityManageApi#oBPv600UpdateBankLevelDynamicEntity")
+    println("5xx response calling DynamicEntityManageApi#updateBankLevelDynamicEntity")
     e.printStackTrace()
 }
 ```
@@ -645,11 +645,11 @@ try {
 | **dynamicentityid** | **kotlin.String**| The DYNAMICENTITYID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600UpdateSystemDynamicEntityRequest** | [**OBPv600UpdateSystemDynamicEntityRequest**](OBPv600UpdateSystemDynamicEntityRequest.md)| Request body | |
+| **updateSystemDynamicEntityRequest** | [**UpdateSystemDynamicEntityRequest**](UpdateSystemDynamicEntityRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600UpdateBankLevelDynamicEntity200Response**](OBPv600UpdateBankLevelDynamicEntity200Response.md)
+[**UpdateBankLevelDynamicEntity200Response**](UpdateBankLevelDynamicEntity200Response.md)
 
 ### Authorization
 
@@ -660,17 +660,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600UpdateMyDynamicEntity"></a>
-# **oBPv600UpdateMyDynamicEntity**
-> OBPv600UpdateSystemDynamicEntity200Response oBPv600UpdateMyDynamicEntity(dynamicentityid, obPv600UpdateSystemDynamicEntityRequest)
+<a id="updateMyDynamicEntity"></a>
+# **updateMyDynamicEntity**
+> UpdateSystemDynamicEntity200Response updateMyDynamicEntity(dynamicentityid, updateSystemDynamicEntityRequest)
 
 Update My Dynamic Entity
 
@@ -684,15 +684,15 @@ Update My Dynamic Entity
 
 val apiInstance = DynamicEntityManageApi()
 val dynamicentityid : kotlin.String = dynamicentityid_example // kotlin.String | The DYNAMICENTITYID identifier
-val obPv600UpdateSystemDynamicEntityRequest : OBPv600UpdateSystemDynamicEntityRequest = {type=object, properties={schema={type=object, properties={description={type=string}, required={type=array, items={type=object, properties={s={type=string}}}}, properties={type=object, properties={theme={type=object, properties={minLength={type=integer}, description={type=string}, type={type=string}, maxLength={type=integer}, example={type=string}}}, language={type=object, properties={minLength={type=integer}, description={type=string}, type={type=string}, example={type=string}, maxLength={type=integer}}}, notifications_enabled={type=object, properties={type={type=string}, example={type=string}, description={type=string}}}}}}}, has_personal_entity={type=boolean}, entity_name={type=string}, has_public_access={type=boolean}}} // OBPv600UpdateSystemDynamicEntityRequest | Request body
+val updateSystemDynamicEntityRequest : UpdateSystemDynamicEntityRequest = {type=object, properties={schema={type=object, properties={description={type=string}, required={type=array, items={type=object, properties={s={type=string}}}}, properties={type=object, properties={theme={type=object, properties={minLength={type=integer}, description={type=string}, type={type=string}, maxLength={type=integer}, example={type=string}}}, language={type=object, properties={minLength={type=integer}, description={type=string}, type={type=string}, example={type=string}, maxLength={type=integer}}}, notifications_enabled={type=object, properties={type={type=string}, example={type=string}, description={type=string}}}}}}}, has_personal_entity={type=boolean}, entity_name={type=string}, has_public_access={type=boolean}}} // UpdateSystemDynamicEntityRequest | Request body
 try {
-    val result : OBPv600UpdateSystemDynamicEntity200Response = apiInstance.oBPv600UpdateMyDynamicEntity(dynamicentityid, obPv600UpdateSystemDynamicEntityRequest)
+    val result : UpdateSystemDynamicEntity200Response = apiInstance.updateMyDynamicEntity(dynamicentityid, updateSystemDynamicEntityRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEntityManageApi#oBPv600UpdateMyDynamicEntity")
+    println("4xx response calling DynamicEntityManageApi#updateMyDynamicEntity")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEntityManageApi#oBPv600UpdateMyDynamicEntity")
+    println("5xx response calling DynamicEntityManageApi#updateMyDynamicEntity")
     e.printStackTrace()
 }
 ```
@@ -701,11 +701,11 @@ try {
 | **dynamicentityid** | **kotlin.String**| The DYNAMICENTITYID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600UpdateSystemDynamicEntityRequest** | [**OBPv600UpdateSystemDynamicEntityRequest**](OBPv600UpdateSystemDynamicEntityRequest.md)| Request body | |
+| **updateSystemDynamicEntityRequest** | [**UpdateSystemDynamicEntityRequest**](UpdateSystemDynamicEntityRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600UpdateSystemDynamicEntity200Response**](OBPv600UpdateSystemDynamicEntity200Response.md)
+[**UpdateSystemDynamicEntity200Response**](UpdateSystemDynamicEntity200Response.md)
 
 ### Authorization
 
@@ -716,17 +716,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600UpdateSystemDynamicEntity"></a>
-# **oBPv600UpdateSystemDynamicEntity**
-> OBPv600UpdateSystemDynamicEntity200Response oBPv600UpdateSystemDynamicEntity(dynamicentityid, obPv600UpdateSystemDynamicEntityRequest)
+<a id="updateSystemDynamicEntity"></a>
+# **updateSystemDynamicEntity**
+> UpdateSystemDynamicEntity200Response updateSystemDynamicEntity(dynamicentityid, updateSystemDynamicEntityRequest)
 
 Update System Level Dynamic Entity
 
@@ -740,15 +740,15 @@ Update System Level Dynamic Entity
 
 val apiInstance = DynamicEntityManageApi()
 val dynamicentityid : kotlin.String = dynamicentityid_example // kotlin.String | The DYNAMICENTITYID identifier
-val obPv600UpdateSystemDynamicEntityRequest : OBPv600UpdateSystemDynamicEntityRequest = {"type":"object","properties":{"schema":{"type":"object","properties":{"description":{"type":"string"},"required":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"properties":{"type":"object","properties":{"theme":{"type":"object","properties":{"minLength":{"type":"integer"},"description":{"type":"string"},"type":{"type":"string"},"maxLength":{"type":"integer"},"example":{"type":"string"}}},"language":{"type":"object","properties":{"minLength":{"type":"integer"},"description":{"type":"string"},"type":{"type":"string"},"example":{"type":"string"},"maxLength":{"type":"integer"}}},"notifications_enabled":{"type":"object","properties":{"type":{"type":"string"},"example":{"type":"string"},"description":{"type":"string"}}}}}}},"has_personal_entity":{"type":"boolean"},"entity_name":{"type":"string"},"has_public_access":{"type":"boolean"}}} // OBPv600UpdateSystemDynamicEntityRequest | Request body
+val updateSystemDynamicEntityRequest : UpdateSystemDynamicEntityRequest = {"type":"object","properties":{"schema":{"type":"object","properties":{"description":{"type":"string"},"required":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"properties":{"type":"object","properties":{"theme":{"type":"object","properties":{"minLength":{"type":"integer"},"description":{"type":"string"},"type":{"type":"string"},"maxLength":{"type":"integer"},"example":{"type":"string"}}},"language":{"type":"object","properties":{"minLength":{"type":"integer"},"description":{"type":"string"},"type":{"type":"string"},"example":{"type":"string"},"maxLength":{"type":"integer"}}},"notifications_enabled":{"type":"object","properties":{"type":{"type":"string"},"example":{"type":"string"},"description":{"type":"string"}}}}}}},"has_personal_entity":{"type":"boolean"},"entity_name":{"type":"string"},"has_public_access":{"type":"boolean"}}} // UpdateSystemDynamicEntityRequest | Request body
 try {
-    val result : OBPv600UpdateSystemDynamicEntity200Response = apiInstance.oBPv600UpdateSystemDynamicEntity(dynamicentityid, obPv600UpdateSystemDynamicEntityRequest)
+    val result : UpdateSystemDynamicEntity200Response = apiInstance.updateSystemDynamicEntity(dynamicentityid, updateSystemDynamicEntityRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEntityManageApi#oBPv600UpdateSystemDynamicEntity")
+    println("4xx response calling DynamicEntityManageApi#updateSystemDynamicEntity")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEntityManageApi#oBPv600UpdateSystemDynamicEntity")
+    println("5xx response calling DynamicEntityManageApi#updateSystemDynamicEntity")
     e.printStackTrace()
 }
 ```
@@ -757,11 +757,11 @@ try {
 | **dynamicentityid** | **kotlin.String**| The DYNAMICENTITYID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600UpdateSystemDynamicEntityRequest** | [**OBPv600UpdateSystemDynamicEntityRequest**](OBPv600UpdateSystemDynamicEntityRequest.md)| Request body | |
+| **updateSystemDynamicEntityRequest** | [**UpdateSystemDynamicEntityRequest**](UpdateSystemDynamicEntityRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600UpdateSystemDynamicEntity200Response**](OBPv600UpdateSystemDynamicEntity200Response.md)
+[**UpdateSystemDynamicEntity200Response**](UpdateSystemDynamicEntity200Response.md)
 
 ### Authorization
 
@@ -772,8 +772,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

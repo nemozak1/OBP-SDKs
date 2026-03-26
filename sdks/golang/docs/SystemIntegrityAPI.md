@@ -1,20 +1,20 @@
 # \SystemIntegrityAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv510AccountAccessUniqueIndexCheck**](SystemIntegrityAPI.md#OBPv510AccountAccessUniqueIndexCheck) | **Get** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access
-[**OBPv510AccountCurrencyCheck**](SystemIntegrityAPI.md#OBPv510AccountCurrencyCheck) | **Get** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies
-[**OBPv510CustomViewNamesCheck**](SystemIntegrityAPI.md#OBPv510CustomViewNamesCheck) | **Get** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names
-[**OBPv510OrphanedAccountCheck**](SystemIntegrityAPI.md#OBPv510OrphanedAccountCheck) | **Get** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts
-[**OBPv510SystemViewNamesCheck**](SystemIntegrityAPI.md#OBPv510SystemViewNamesCheck) | **Get** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names
+[**AccountAccessUniqueIndexCheck**](SystemIntegrityAPI.md#AccountAccessUniqueIndexCheck) | **Get** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access
+[**AccountCurrencyCheck**](SystemIntegrityAPI.md#AccountCurrencyCheck) | **Get** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies
+[**CustomViewNamesCheck**](SystemIntegrityAPI.md#CustomViewNamesCheck) | **Get** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names
+[**OrphanedAccountCheck**](SystemIntegrityAPI.md#OrphanedAccountCheck) | **Get** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts
+[**SystemViewNamesCheck**](SystemIntegrityAPI.md#SystemViewNamesCheck) | **Get** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names
 
 
 
-## OBPv510AccountAccessUniqueIndexCheck
+## AccountAccessUniqueIndexCheck
 
-> OBPv121UpdateTransactionNarrative200Response OBPv510AccountAccessUniqueIndexCheck(ctx).Execute()
+> AccountAccessUniqueIndexCheck200Response AccountAccessUniqueIndexCheck(ctx).Execute()
 
 Check Unique Index at Account Access
 
@@ -36,13 +36,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemIntegrityAPI.OBPv510AccountAccessUniqueIndexCheck(context.Background()).Execute()
+	resp, r, err := apiClient.SystemIntegrityAPI.AccountAccessUniqueIndexCheck(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemIntegrityAPI.OBPv510AccountAccessUniqueIndexCheck``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemIntegrityAPI.AccountAccessUniqueIndexCheck``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510AccountAccessUniqueIndexCheck`: OBPv121UpdateTransactionNarrative200Response
-	fmt.Fprintf(os.Stdout, "Response from `SystemIntegrityAPI.OBPv510AccountAccessUniqueIndexCheck`: %v\n", resp)
+	// response from `AccountAccessUniqueIndexCheck`: AccountAccessUniqueIndexCheck200Response
+	fmt.Fprintf(os.Stdout, "Response from `SystemIntegrityAPI.AccountAccessUniqueIndexCheck`: %v\n", resp)
 }
 ```
 
@@ -52,12 +52,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510AccountAccessUniqueIndexCheckRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAccountAccessUniqueIndexCheckRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -73,9 +73,9 @@ Other parameters are passed through a pointer to a apiOBPv510AccountAccessUnique
 [[Back to README]](../README.md)
 
 
-## OBPv510AccountCurrencyCheck
+## AccountCurrencyCheck
 
-> OBPv121UpdateTransactionNarrative200Response OBPv510AccountCurrencyCheck(ctx, bankid).Execute()
+> AccountAccessUniqueIndexCheck200Response AccountCurrencyCheck(ctx, bankid).Execute()
 
 Check for Sensible Currencies
 
@@ -98,13 +98,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemIntegrityAPI.OBPv510AccountCurrencyCheck(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.SystemIntegrityAPI.AccountCurrencyCheck(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemIntegrityAPI.OBPv510AccountCurrencyCheck``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemIntegrityAPI.AccountCurrencyCheck``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510AccountCurrencyCheck`: OBPv121UpdateTransactionNarrative200Response
-	fmt.Fprintf(os.Stdout, "Response from `SystemIntegrityAPI.OBPv510AccountCurrencyCheck`: %v\n", resp)
+	// response from `AccountCurrencyCheck`: AccountAccessUniqueIndexCheck200Response
+	fmt.Fprintf(os.Stdout, "Response from `SystemIntegrityAPI.AccountCurrencyCheck`: %v\n", resp)
 }
 ```
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510AccountCurrencyCheckRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAccountCurrencyCheckRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -143,9 +143,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510CustomViewNamesCheck
+## CustomViewNamesCheck
 
-> OBPv121UpdateTransactionNarrative200Response OBPv510CustomViewNamesCheck(ctx).Execute()
+> AccountAccessUniqueIndexCheck200Response CustomViewNamesCheck(ctx).Execute()
 
 Check Custom View Names
 
@@ -167,13 +167,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemIntegrityAPI.OBPv510CustomViewNamesCheck(context.Background()).Execute()
+	resp, r, err := apiClient.SystemIntegrityAPI.CustomViewNamesCheck(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemIntegrityAPI.OBPv510CustomViewNamesCheck``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemIntegrityAPI.CustomViewNamesCheck``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510CustomViewNamesCheck`: OBPv121UpdateTransactionNarrative200Response
-	fmt.Fprintf(os.Stdout, "Response from `SystemIntegrityAPI.OBPv510CustomViewNamesCheck`: %v\n", resp)
+	// response from `CustomViewNamesCheck`: AccountAccessUniqueIndexCheck200Response
+	fmt.Fprintf(os.Stdout, "Response from `SystemIntegrityAPI.CustomViewNamesCheck`: %v\n", resp)
 }
 ```
 
@@ -183,12 +183,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510CustomViewNamesCheckRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomViewNamesCheckRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -204,9 +204,9 @@ Other parameters are passed through a pointer to a apiOBPv510CustomViewNamesChec
 [[Back to README]](../README.md)
 
 
-## OBPv510OrphanedAccountCheck
+## OrphanedAccountCheck
 
-> OBPv121UpdateTransactionNarrative200Response OBPv510OrphanedAccountCheck(ctx, bankid).Execute()
+> AccountAccessUniqueIndexCheck200Response OrphanedAccountCheck(ctx, bankid).Execute()
 
 Check for Orphaned Accounts
 
@@ -229,13 +229,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemIntegrityAPI.OBPv510OrphanedAccountCheck(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.SystemIntegrityAPI.OrphanedAccountCheck(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemIntegrityAPI.OBPv510OrphanedAccountCheck``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemIntegrityAPI.OrphanedAccountCheck``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510OrphanedAccountCheck`: OBPv121UpdateTransactionNarrative200Response
-	fmt.Fprintf(os.Stdout, "Response from `SystemIntegrityAPI.OBPv510OrphanedAccountCheck`: %v\n", resp)
+	// response from `OrphanedAccountCheck`: AccountAccessUniqueIndexCheck200Response
+	fmt.Fprintf(os.Stdout, "Response from `SystemIntegrityAPI.OrphanedAccountCheck`: %v\n", resp)
 }
 ```
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510OrphanedAccountCheckRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiOrphanedAccountCheckRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -274,9 +274,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510SystemViewNamesCheck
+## SystemViewNamesCheck
 
-> OBPv121UpdateTransactionNarrative200Response OBPv510SystemViewNamesCheck(ctx).Execute()
+> AccountAccessUniqueIndexCheck200Response SystemViewNamesCheck(ctx).Execute()
 
 Check System View Names
 
@@ -298,13 +298,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemIntegrityAPI.OBPv510SystemViewNamesCheck(context.Background()).Execute()
+	resp, r, err := apiClient.SystemIntegrityAPI.SystemViewNamesCheck(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemIntegrityAPI.OBPv510SystemViewNamesCheck``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemIntegrityAPI.SystemViewNamesCheck``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510SystemViewNamesCheck`: OBPv121UpdateTransactionNarrative200Response
-	fmt.Fprintf(os.Stdout, "Response from `SystemIntegrityAPI.OBPv510SystemViewNamesCheck`: %v\n", resp)
+	// response from `SystemViewNamesCheck`: AccountAccessUniqueIndexCheck200Response
+	fmt.Fprintf(os.Stdout, "Response from `SystemIntegrityAPI.SystemViewNamesCheck`: %v\n", resp)
 }
 ```
 
@@ -314,12 +314,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510SystemViewNamesCheckRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSystemViewNamesCheckRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 

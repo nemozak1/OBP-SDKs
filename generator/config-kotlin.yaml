@@ -1,6 +1,6 @@
 generatorName: kotlin
 outputDir: ../sdks/kotlin
-inputSpec: ../openapi-spec/obp-openapi.json
+inputSpec: ../openapi-spec/obp-openapi-simplified.json
 additionalProperties:
   groupId: com.openbankproject
   artifactId: obp-kotlin

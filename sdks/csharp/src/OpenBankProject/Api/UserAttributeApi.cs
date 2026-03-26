@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -45,10 +45,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create a Personal Data Field for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Personal Data Fields (IsPersonal&#x3D;true) are managed by the user themselves and do not require special roles.&lt;br /&gt; This data is not available in ABAC rules for privacy reasons.&lt;/p&gt; &lt;p&gt;For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreatePersonalDataFieldApiResponse"/>&gt;</returns>
-        Task<IOBPv600CreatePersonalDataFieldApiResponse> OBPv600CreatePersonalDataFieldAsync(OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreatePersonalDataFieldApiResponse"/>&gt;</returns>
+        Task<ICreatePersonalDataFieldApiResponse> CreatePersonalDataFieldAsync(CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Personal Data Field
@@ -56,10 +56,10 @@ namespace OpenBankProject.Api
         /// <remarks>
         /// &lt;p&gt;Create a Personal Data Field for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Personal Data Fields (IsPersonal&#x3D;true) are managed by the user themselves and do not require special roles.&lt;br /&gt; This data is not available in ABAC rules for privacy reasons.&lt;/p&gt; &lt;p&gt;For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
         /// </remarks>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreatePersonalDataFieldApiResponse"/>?&gt;</returns>
-        Task<IOBPv600CreatePersonalDataFieldApiResponse?> OBPv600CreatePersonalDataFieldOrDefaultAsync(OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreatePersonalDataFieldApiResponse"/>?&gt;</returns>
+        Task<ICreatePersonalDataFieldApiResponse?> CreatePersonalDataFieldOrDefaultAsync(CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create User Attribute
@@ -69,10 +69,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userid">The USERID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateUserAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv600CreateUserAttributeApiResponse> OBPv600CreateUserAttributeAsync(string userid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateUserAttributeApiResponse"/>&gt;</returns>
+        Task<ICreateUserAttributeApiResponse> CreateUserAttributeAsync(string userid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create User Attribute
@@ -81,10 +81,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create a User Attribute for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Attributes are non-personal attributes (IsPersonal&#x3D;false) that can be used in ABAC rules.&lt;br /&gt; They require a role to set, similar to Customer Attributes, Account Attributes, etc.&lt;/p&gt; &lt;p&gt;For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
         /// </remarks>
         /// <param name="userid">The USERID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateUserAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv600CreateUserAttributeApiResponse?> OBPv600CreateUserAttributeOrDefaultAsync(string userid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateUserAttributeApiResponse"/>?&gt;</returns>
+        Task<ICreateUserAttributeApiResponse?> CreateUserAttributeOrDefaultAsync(string userid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Personal Data Field
@@ -95,8 +95,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeletePersonalDataFieldApiResponse"/>&gt;</returns>
-        Task<IOBPv600DeletePersonalDataFieldApiResponse> OBPv600DeletePersonalDataFieldAsync(string userattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeletePersonalDataFieldApiResponse"/>&gt;</returns>
+        Task<IDeletePersonalDataFieldApiResponse> DeletePersonalDataFieldAsync(string userattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Personal Data Field
@@ -106,8 +106,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeletePersonalDataFieldApiResponse"/>?&gt;</returns>
-        Task<IOBPv600DeletePersonalDataFieldApiResponse?> OBPv600DeletePersonalDataFieldOrDefaultAsync(string userattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeletePersonalDataFieldApiResponse"/>?&gt;</returns>
+        Task<IDeletePersonalDataFieldApiResponse?> DeletePersonalDataFieldOrDefaultAsync(string userattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete User Attribute
@@ -119,8 +119,8 @@ namespace OpenBankProject.Api
         /// <param name="userid">The USERID identifier</param>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteUserAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv600DeleteUserAttributeApiResponse> OBPv600DeleteUserAttributeAsync(string userid, string userattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteUserAttributeApiResponse"/>&gt;</returns>
+        Task<IDeleteUserAttributeApiResponse> DeleteUserAttributeAsync(string userid, string userattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete User Attribute
@@ -131,8 +131,8 @@ namespace OpenBankProject.Api
         /// <param name="userid">The USERID identifier</param>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteUserAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv600DeleteUserAttributeApiResponse?> OBPv600DeleteUserAttributeOrDefaultAsync(string userid, string userattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteUserAttributeApiResponse"/>?&gt;</returns>
+        Task<IDeleteUserAttributeApiResponse?> DeleteUserAttributeOrDefaultAsync(string userid, string userattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Personal Data Field By Id
@@ -143,8 +143,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetPersonalDataFieldByIdApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetPersonalDataFieldByIdApiResponse> OBPv600GetPersonalDataFieldByIdAsync(string userattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetPersonalDataFieldByIdApiResponse"/>&gt;</returns>
+        Task<IGetPersonalDataFieldByIdApiResponse> GetPersonalDataFieldByIdAsync(string userattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Personal Data Field By Id
@@ -154,8 +154,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetPersonalDataFieldByIdApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetPersonalDataFieldByIdApiResponse?> OBPv600GetPersonalDataFieldByIdOrDefaultAsync(string userattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetPersonalDataFieldByIdApiResponse"/>?&gt;</returns>
+        Task<IGetPersonalDataFieldByIdApiResponse?> GetPersonalDataFieldByIdOrDefaultAsync(string userattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Personal Data Fields
@@ -165,8 +165,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetPersonalDataFieldsApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetPersonalDataFieldsApiResponse> OBPv600GetPersonalDataFieldsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetPersonalDataFieldsApiResponse"/>&gt;</returns>
+        Task<IGetPersonalDataFieldsApiResponse> GetPersonalDataFieldsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Personal Data Fields
@@ -175,8 +175,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get Personal Data Fields for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Returns Personal Data Fields (IsPersonal&#x3D;true) that are managed by the user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attributes&lt;/strong&gt;&lt;/a&gt;: user_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetPersonalDataFieldsApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetPersonalDataFieldsApiResponse?> OBPv600GetPersonalDataFieldsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetPersonalDataFieldsApiResponse"/>?&gt;</returns>
+        Task<IGetPersonalDataFieldsApiResponse?> GetPersonalDataFieldsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get User Attribute By Id
@@ -188,8 +188,8 @@ namespace OpenBankProject.Api
         /// <param name="userid">The USERID identifier</param>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetUserAttributeByIdApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetUserAttributeByIdApiResponse> OBPv600GetUserAttributeByIdAsync(string userid, string userattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetUserAttributeByIdApiResponse"/>&gt;</returns>
+        Task<IGetUserAttributeByIdApiResponse> GetUserAttributeByIdAsync(string userid, string userattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get User Attribute By Id
@@ -200,8 +200,8 @@ namespace OpenBankProject.Api
         /// <param name="userid">The USERID identifier</param>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetUserAttributeByIdApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetUserAttributeByIdApiResponse?> OBPv600GetUserAttributeByIdOrDefaultAsync(string userid, string userattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetUserAttributeByIdApiResponse"/>?&gt;</returns>
+        Task<IGetUserAttributeByIdApiResponse?> GetUserAttributeByIdOrDefaultAsync(string userid, string userattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get User Attributes
@@ -212,8 +212,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userid">The USERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetUserAttributesApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetUserAttributesApiResponse> OBPv600GetUserAttributesAsync(string userid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetUserAttributesApiResponse"/>&gt;</returns>
+        Task<IGetUserAttributesApiResponse> GetUserAttributesAsync(string userid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get User Attributes
@@ -223,8 +223,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="userid">The USERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetUserAttributesApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetUserAttributesApiResponse?> OBPv600GetUserAttributesOrDefaultAsync(string userid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetUserAttributesApiResponse"/>?&gt;</returns>
+        Task<IGetUserAttributesApiResponse?> GetUserAttributesOrDefaultAsync(string userid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Personal Data Field
@@ -234,10 +234,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdatePersonalDataFieldApiResponse"/>&gt;</returns>
-        Task<IOBPv600UpdatePersonalDataFieldApiResponse> OBPv600UpdatePersonalDataFieldAsync(string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdatePersonalDataFieldApiResponse"/>&gt;</returns>
+        Task<IUpdatePersonalDataFieldApiResponse> UpdatePersonalDataFieldAsync(string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Personal Data Field
@@ -246,10 +246,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
         /// </remarks>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdatePersonalDataFieldApiResponse"/>?&gt;</returns>
-        Task<IOBPv600UpdatePersonalDataFieldApiResponse?> OBPv600UpdatePersonalDataFieldOrDefaultAsync(string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdatePersonalDataFieldApiResponse"/>?&gt;</returns>
+        Task<IUpdatePersonalDataFieldApiResponse?> UpdatePersonalDataFieldOrDefaultAsync(string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update User Attribute
@@ -260,10 +260,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userid">The USERID identifier</param>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateUserAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv600UpdateUserAttributeApiResponse> OBPv600UpdateUserAttributeAsync(string userid, string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateUserAttributeApiResponse"/>&gt;</returns>
+        Task<IUpdateUserAttributeApiResponse> UpdateUserAttributeAsync(string userid, string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update User Attribute
@@ -273,10 +273,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="userid">The USERID identifier</param>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateUserAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv600UpdateUserAttributeApiResponse?> OBPv600UpdateUserAttributeOrDefaultAsync(string userid, string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateUserAttributeApiResponse"/>?&gt;</returns>
+        Task<IUpdateUserAttributeApiResponse?> UpdateUserAttributeOrDefaultAsync(string userid, string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -287,201 +287,201 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600CreatePersonalDataField;
+        public event EventHandler<ApiResponseEventArgs>? OnCreatePersonalDataField;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600CreatePersonalDataField;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreatePersonalDataField;
 
-        internal void ExecuteOnOBPv600CreatePersonalDataField(AttributeApi.OBPv600CreatePersonalDataFieldApiResponse apiResponse)
+        internal void ExecuteOnCreatePersonalDataField(AttributeApi.CreatePersonalDataFieldApiResponse apiResponse)
         {
-            OnOBPv600CreatePersonalDataField?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreatePersonalDataField?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600CreatePersonalDataField(Exception exception)
+        internal void ExecuteOnErrorCreatePersonalDataField(Exception exception)
         {
-            OnErrorOBPv600CreatePersonalDataField?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreatePersonalDataField?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600CreateUserAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateUserAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600CreateUserAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateUserAttribute;
 
-        internal void ExecuteOnOBPv600CreateUserAttribute(AttributeApi.OBPv600CreateUserAttributeApiResponse apiResponse)
+        internal void ExecuteOnCreateUserAttribute(AttributeApi.CreateUserAttributeApiResponse apiResponse)
         {
-            OnOBPv600CreateUserAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateUserAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600CreateUserAttribute(Exception exception)
+        internal void ExecuteOnErrorCreateUserAttribute(Exception exception)
         {
-            OnErrorOBPv600CreateUserAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateUserAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600DeletePersonalDataField;
+        public event EventHandler<ApiResponseEventArgs>? OnDeletePersonalDataField;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600DeletePersonalDataField;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeletePersonalDataField;
 
-        internal void ExecuteOnOBPv600DeletePersonalDataField(AttributeApi.OBPv600DeletePersonalDataFieldApiResponse apiResponse)
+        internal void ExecuteOnDeletePersonalDataField(AttributeApi.DeletePersonalDataFieldApiResponse apiResponse)
         {
-            OnOBPv600DeletePersonalDataField?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeletePersonalDataField?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600DeletePersonalDataField(Exception exception)
+        internal void ExecuteOnErrorDeletePersonalDataField(Exception exception)
         {
-            OnErrorOBPv600DeletePersonalDataField?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeletePersonalDataField?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600DeleteUserAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteUserAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600DeleteUserAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteUserAttribute;
 
-        internal void ExecuteOnOBPv600DeleteUserAttribute(AttributeApi.OBPv600DeleteUserAttributeApiResponse apiResponse)
+        internal void ExecuteOnDeleteUserAttribute(AttributeApi.DeleteUserAttributeApiResponse apiResponse)
         {
-            OnOBPv600DeleteUserAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteUserAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600DeleteUserAttribute(Exception exception)
+        internal void ExecuteOnErrorDeleteUserAttribute(Exception exception)
         {
-            OnErrorOBPv600DeleteUserAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteUserAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetPersonalDataFieldById;
+        public event EventHandler<ApiResponseEventArgs>? OnGetPersonalDataFieldById;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetPersonalDataFieldById;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetPersonalDataFieldById;
 
-        internal void ExecuteOnOBPv600GetPersonalDataFieldById(AttributeApi.OBPv600GetPersonalDataFieldByIdApiResponse apiResponse)
+        internal void ExecuteOnGetPersonalDataFieldById(AttributeApi.GetPersonalDataFieldByIdApiResponse apiResponse)
         {
-            OnOBPv600GetPersonalDataFieldById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetPersonalDataFieldById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetPersonalDataFieldById(Exception exception)
+        internal void ExecuteOnErrorGetPersonalDataFieldById(Exception exception)
         {
-            OnErrorOBPv600GetPersonalDataFieldById?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetPersonalDataFieldById?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetPersonalDataFields;
+        public event EventHandler<ApiResponseEventArgs>? OnGetPersonalDataFields;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetPersonalDataFields;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetPersonalDataFields;
 
-        internal void ExecuteOnOBPv600GetPersonalDataFields(AttributeApi.OBPv600GetPersonalDataFieldsApiResponse apiResponse)
+        internal void ExecuteOnGetPersonalDataFields(AttributeApi.GetPersonalDataFieldsApiResponse apiResponse)
         {
-            OnOBPv600GetPersonalDataFields?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetPersonalDataFields?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetPersonalDataFields(Exception exception)
+        internal void ExecuteOnErrorGetPersonalDataFields(Exception exception)
         {
-            OnErrorOBPv600GetPersonalDataFields?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetPersonalDataFields?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetUserAttributeById;
+        public event EventHandler<ApiResponseEventArgs>? OnGetUserAttributeById;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetUserAttributeById;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetUserAttributeById;
 
-        internal void ExecuteOnOBPv600GetUserAttributeById(AttributeApi.OBPv600GetUserAttributeByIdApiResponse apiResponse)
+        internal void ExecuteOnGetUserAttributeById(AttributeApi.GetUserAttributeByIdApiResponse apiResponse)
         {
-            OnOBPv600GetUserAttributeById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetUserAttributeById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetUserAttributeById(Exception exception)
+        internal void ExecuteOnErrorGetUserAttributeById(Exception exception)
         {
-            OnErrorOBPv600GetUserAttributeById?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetUserAttributeById?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetUserAttributes;
+        public event EventHandler<ApiResponseEventArgs>? OnGetUserAttributes;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetUserAttributes;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetUserAttributes;
 
-        internal void ExecuteOnOBPv600GetUserAttributes(AttributeApi.OBPv600GetUserAttributesApiResponse apiResponse)
+        internal void ExecuteOnGetUserAttributes(AttributeApi.GetUserAttributesApiResponse apiResponse)
         {
-            OnOBPv600GetUserAttributes?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetUserAttributes?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetUserAttributes(Exception exception)
+        internal void ExecuteOnErrorGetUserAttributes(Exception exception)
         {
-            OnErrorOBPv600GetUserAttributes?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetUserAttributes?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600UpdatePersonalDataField;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdatePersonalDataField;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600UpdatePersonalDataField;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdatePersonalDataField;
 
-        internal void ExecuteOnOBPv600UpdatePersonalDataField(AttributeApi.OBPv600UpdatePersonalDataFieldApiResponse apiResponse)
+        internal void ExecuteOnUpdatePersonalDataField(AttributeApi.UpdatePersonalDataFieldApiResponse apiResponse)
         {
-            OnOBPv600UpdatePersonalDataField?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdatePersonalDataField?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600UpdatePersonalDataField(Exception exception)
+        internal void ExecuteOnErrorUpdatePersonalDataField(Exception exception)
         {
-            OnErrorOBPv600UpdatePersonalDataField?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdatePersonalDataField?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600UpdateUserAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateUserAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600UpdateUserAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateUserAttribute;
 
-        internal void ExecuteOnOBPv600UpdateUserAttribute(AttributeApi.OBPv600UpdateUserAttributeApiResponse apiResponse)
+        internal void ExecuteOnUpdateUserAttribute(AttributeApi.UpdateUserAttributeApiResponse apiResponse)
         {
-            OnOBPv600UpdateUserAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateUserAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600UpdateUserAttribute(Exception exception)
+        internal void ExecuteOnErrorUpdateUserAttribute(Exception exception)
         {
-            OnErrorOBPv600UpdateUserAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateUserAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -539,28 +539,28 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv600CreatePersonalDataField(OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        partial void FormatCreatePersonalDataField(CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
+        /// <param name="createPersonalDataFieldRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600CreatePersonalDataField(OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        private void ValidateCreatePersonalDataField(CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
-            if (oBPv600CreatePersonalDataFieldRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600CreatePersonalDataFieldRequest));
+            if (createPersonalDataFieldRequest == null)
+                throw new ArgumentNullException(nameof(createPersonalDataFieldRequest));
         }
 
         /// <summary>
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        private void AfterOBPv600CreatePersonalDataFieldDefaultImplementation(IOBPv600CreatePersonalDataFieldApiResponse apiResponseLocalVar, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        /// <param name="createPersonalDataFieldRequest"></param>
+        private void AfterCreatePersonalDataFieldDefaultImplementation(ICreatePersonalDataFieldApiResponse apiResponseLocalVar, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600CreatePersonalDataField(ref suppressDefaultLog, apiResponseLocalVar, oBPv600CreatePersonalDataFieldRequest);
+            AfterCreatePersonalDataField(ref suppressDefaultLog, apiResponseLocalVar, createPersonalDataFieldRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -570,8 +570,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        partial void AfterOBPv600CreatePersonalDataField(ref bool suppressDefaultLog, IOBPv600CreatePersonalDataFieldApiResponse apiResponseLocalVar, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        /// <param name="createPersonalDataFieldRequest"></param>
+        partial void AfterCreatePersonalDataField(ref bool suppressDefaultLog, ICreatePersonalDataFieldApiResponse apiResponseLocalVar, CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -579,11 +579,11 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        private void OnErrorOBPv600CreatePersonalDataFieldDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        /// <param name="createPersonalDataFieldRequest"></param>
+        private void OnErrorCreatePersonalDataFieldDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600CreatePersonalDataField(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, oBPv600CreatePersonalDataFieldRequest);
+            OnErrorCreatePersonalDataField(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, createPersonalDataFieldRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -595,20 +595,20 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        partial void OnErrorOBPv600CreatePersonalDataField(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        /// <param name="createPersonalDataFieldRequest"></param>
+        partial void OnErrorCreatePersonalDataField(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Create Personal Data Field &lt;p&gt;Create a Personal Data Field for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Personal Data Fields (IsPersonal&#x3D;true) are managed by the user themselves and do not require special roles.&lt;br /&gt; This data is not available in ABAC rules for privacy reasons.&lt;/p&gt; &lt;p&gt;For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
         /// </summary>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreatePersonalDataFieldApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreatePersonalDataFieldApiResponse?> OBPv600CreatePersonalDataFieldOrDefaultAsync(OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreatePersonalDataFieldApiResponse"/>&gt;</returns>
+        public async Task<ICreatePersonalDataFieldApiResponse?> CreatePersonalDataFieldOrDefaultAsync(CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600CreatePersonalDataFieldAsync(oBPv600CreatePersonalDataFieldRequest, cancellationToken).ConfigureAwait(false);
+                return await CreatePersonalDataFieldAsync(createPersonalDataFieldRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -620,18 +620,18 @@ namespace OpenBankProject.Api
         /// Create Personal Data Field &lt;p&gt;Create a Personal Data Field for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Personal Data Fields (IsPersonal&#x3D;true) are managed by the user themselves and do not require special roles.&lt;br /&gt; This data is not available in ABAC rules for privacy reasons.&lt;/p&gt; &lt;p&gt;For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreatePersonalDataFieldApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreatePersonalDataFieldApiResponse> OBPv600CreatePersonalDataFieldAsync(OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreatePersonalDataFieldApiResponse"/>&gt;</returns>
+        public async Task<ICreatePersonalDataFieldApiResponse> CreatePersonalDataFieldAsync(CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600CreatePersonalDataField(oBPv600CreatePersonalDataFieldRequest);
+                ValidateCreatePersonalDataField(createPersonalDataFieldRequest);
 
-                FormatOBPv600CreatePersonalDataField(oBPv600CreatePersonalDataFieldRequest);
+                FormatCreatePersonalDataField(createPersonalDataFieldRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -642,16 +642,16 @@ namespace OpenBankProject.Api
                         ? "/obp/v6.0.0/my/personal-data-fields"
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/my/personal-data-fields");
 
-                    httpRequestMessageLocalVar.Content = (oBPv600CreatePersonalDataFieldRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createPersonalDataFieldRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600CreatePersonalDataFieldRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createPersonalDataFieldRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -687,8 +687,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv600CreatePersonalDataFieldApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv600CreatePersonalDataFieldApiResponse>();
-                        AttributeApi.OBPv600CreatePersonalDataFieldApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.CreatePersonalDataFieldApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.CreatePersonalDataFieldApiResponse>();
+                        AttributeApi.CreatePersonalDataFieldApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -699,9 +699,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600CreatePersonalDataFieldDefaultImplementation(apiResponseLocalVar, oBPv600CreatePersonalDataFieldRequest);
+                        AfterCreatePersonalDataFieldDefaultImplementation(apiResponseLocalVar, createPersonalDataFieldRequest);
 
-                        Events.ExecuteOnOBPv600CreatePersonalDataField(apiResponseLocalVar);
+                        Events.ExecuteOnCreatePersonalDataField(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -713,27 +713,27 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600CreatePersonalDataFieldDefaultImplementation(e, "/obp/v6.0.0/my/personal-data-fields", uriBuilderLocalVar.Path, oBPv600CreatePersonalDataFieldRequest);
-                Events.ExecuteOnErrorOBPv600CreatePersonalDataField(e);
+                OnErrorCreatePersonalDataFieldDefaultImplementation(e, "/obp/v6.0.0/my/personal-data-fields", uriBuilderLocalVar.Path, createPersonalDataFieldRequest);
+                Events.ExecuteOnErrorCreatePersonalDataField(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600CreateUserAttribute(ref string userid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        partial void FormatCreateUserAttribute(ref string userid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="userid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
+        /// <param name="createPersonalDataFieldRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600CreateUserAttribute(string userid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        private void ValidateCreateUserAttribute(string userid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
             if (userid == null)
                 throw new ArgumentNullException(nameof(userid));
 
-            if (oBPv600CreatePersonalDataFieldRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600CreatePersonalDataFieldRequest));
+            if (createPersonalDataFieldRequest == null)
+                throw new ArgumentNullException(nameof(createPersonalDataFieldRequest));
         }
 
         /// <summary>
@@ -741,11 +741,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        private void AfterOBPv600CreateUserAttributeDefaultImplementation(IOBPv600CreateUserAttributeApiResponse apiResponseLocalVar, string userid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        /// <param name="createPersonalDataFieldRequest"></param>
+        private void AfterCreateUserAttributeDefaultImplementation(ICreateUserAttributeApiResponse apiResponseLocalVar, string userid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600CreateUserAttribute(ref suppressDefaultLog, apiResponseLocalVar, userid, oBPv600CreatePersonalDataFieldRequest);
+            AfterCreateUserAttribute(ref suppressDefaultLog, apiResponseLocalVar, userid, createPersonalDataFieldRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -756,8 +756,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        partial void AfterOBPv600CreateUserAttribute(ref bool suppressDefaultLog, IOBPv600CreateUserAttributeApiResponse apiResponseLocalVar, string userid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        /// <param name="createPersonalDataFieldRequest"></param>
+        partial void AfterCreateUserAttribute(ref bool suppressDefaultLog, ICreateUserAttributeApiResponse apiResponseLocalVar, string userid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -766,11 +766,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        private void OnErrorOBPv600CreateUserAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        /// <param name="createPersonalDataFieldRequest"></param>
+        private void OnErrorCreateUserAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600CreateUserAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid, oBPv600CreatePersonalDataFieldRequest);
+            OnErrorCreateUserAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid, createPersonalDataFieldRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -783,21 +783,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        partial void OnErrorOBPv600CreateUserAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        /// <param name="createPersonalDataFieldRequest"></param>
+        partial void OnErrorCreateUserAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Create User Attribute &lt;p&gt;Create a User Attribute for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Attributes are non-personal attributes (IsPersonal&#x3D;false) that can be used in ABAC rules.&lt;br /&gt; They require a role to set, similar to Customer Attributes, Account Attributes, etc.&lt;/p&gt; &lt;p&gt;For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
         /// </summary>
         /// <param name="userid">The USERID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateUserAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateUserAttributeApiResponse?> OBPv600CreateUserAttributeOrDefaultAsync(string userid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateUserAttributeApiResponse"/>&gt;</returns>
+        public async Task<ICreateUserAttributeApiResponse?> CreateUserAttributeOrDefaultAsync(string userid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600CreateUserAttributeAsync(userid, oBPv600CreatePersonalDataFieldRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateUserAttributeAsync(userid, createPersonalDataFieldRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -810,18 +810,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userid">The USERID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateUserAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateUserAttributeApiResponse> OBPv600CreateUserAttributeAsync(string userid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateUserAttributeApiResponse"/>&gt;</returns>
+        public async Task<ICreateUserAttributeApiResponse> CreateUserAttributeAsync(string userid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600CreateUserAttribute(userid, oBPv600CreatePersonalDataFieldRequest);
+                ValidateCreateUserAttribute(userid, createPersonalDataFieldRequest);
 
-                FormatOBPv600CreateUserAttribute(ref userid, oBPv600CreatePersonalDataFieldRequest);
+                FormatCreateUserAttribute(ref userid, createPersonalDataFieldRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -833,16 +833,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/users/{userid}/attributes");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Buserid%7D", Uri.EscapeDataString(userid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600CreatePersonalDataFieldRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createPersonalDataFieldRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600CreatePersonalDataFieldRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createPersonalDataFieldRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -878,8 +878,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv600CreateUserAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv600CreateUserAttributeApiResponse>();
-                        AttributeApi.OBPv600CreateUserAttributeApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.CreateUserAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.CreateUserAttributeApiResponse>();
+                        AttributeApi.CreateUserAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -890,9 +890,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600CreateUserAttributeDefaultImplementation(apiResponseLocalVar, userid, oBPv600CreatePersonalDataFieldRequest);
+                        AfterCreateUserAttributeDefaultImplementation(apiResponseLocalVar, userid, createPersonalDataFieldRequest);
 
-                        Events.ExecuteOnOBPv600CreateUserAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnCreateUserAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -904,20 +904,20 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600CreateUserAttributeDefaultImplementation(e, "/obp/v6.0.0/users/{userid}/attributes", uriBuilderLocalVar.Path, userid, oBPv600CreatePersonalDataFieldRequest);
-                Events.ExecuteOnErrorOBPv600CreateUserAttribute(e);
+                OnErrorCreateUserAttributeDefaultImplementation(e, "/obp/v6.0.0/users/{userid}/attributes", uriBuilderLocalVar.Path, userid, createPersonalDataFieldRequest);
+                Events.ExecuteOnErrorCreateUserAttribute(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600DeletePersonalDataField(ref string userattributeid);
+        partial void FormatDeletePersonalDataField(ref string userattributeid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="userattributeid"></param>
         /// <returns></returns>
-        private void ValidateOBPv600DeletePersonalDataField(string userattributeid)
+        private void ValidateDeletePersonalDataField(string userattributeid)
         {
             if (userattributeid == null)
                 throw new ArgumentNullException(nameof(userattributeid));
@@ -928,10 +928,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userattributeid"></param>
-        private void AfterOBPv600DeletePersonalDataFieldDefaultImplementation(IOBPv600DeletePersonalDataFieldApiResponse apiResponseLocalVar, string userattributeid)
+        private void AfterDeletePersonalDataFieldDefaultImplementation(IDeletePersonalDataFieldApiResponse apiResponseLocalVar, string userattributeid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600DeletePersonalDataField(ref suppressDefaultLog, apiResponseLocalVar, userattributeid);
+            AfterDeletePersonalDataField(ref suppressDefaultLog, apiResponseLocalVar, userattributeid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -942,7 +942,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userattributeid"></param>
-        partial void AfterOBPv600DeletePersonalDataField(ref bool suppressDefaultLog, IOBPv600DeletePersonalDataFieldApiResponse apiResponseLocalVar, string userattributeid);
+        partial void AfterDeletePersonalDataField(ref bool suppressDefaultLog, IDeletePersonalDataFieldApiResponse apiResponseLocalVar, string userattributeid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -951,10 +951,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="userattributeid"></param>
-        private void OnErrorOBPv600DeletePersonalDataFieldDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userattributeid)
+        private void OnErrorDeletePersonalDataFieldDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userattributeid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600DeletePersonalDataField(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userattributeid);
+            OnErrorDeletePersonalDataField(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userattributeid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -967,19 +967,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="userattributeid"></param>
-        partial void OnErrorOBPv600DeletePersonalDataField(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userattributeid);
+        partial void OnErrorDeletePersonalDataField(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userattributeid);
 
         /// <summary>
         /// Delete Personal Data Field &lt;p&gt;Delete a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeletePersonalDataFieldApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600DeletePersonalDataFieldApiResponse?> OBPv600DeletePersonalDataFieldOrDefaultAsync(string userattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeletePersonalDataFieldApiResponse"/>&gt;</returns>
+        public async Task<IDeletePersonalDataFieldApiResponse?> DeletePersonalDataFieldOrDefaultAsync(string userattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600DeletePersonalDataFieldAsync(userattributeid, cancellationToken).ConfigureAwait(false);
+                return await DeletePersonalDataFieldAsync(userattributeid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -993,16 +993,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeletePersonalDataFieldApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600DeletePersonalDataFieldApiResponse> OBPv600DeletePersonalDataFieldAsync(string userattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeletePersonalDataFieldApiResponse"/>&gt;</returns>
+        public async Task<IDeletePersonalDataFieldApiResponse> DeletePersonalDataFieldAsync(string userattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600DeletePersonalDataField(userattributeid);
+                ValidateDeletePersonalDataField(userattributeid);
 
-                FormatOBPv600DeletePersonalDataField(ref userattributeid);
+                FormatDeletePersonalDataField(ref userattributeid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1019,7 +1019,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1037,8 +1037,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv600DeletePersonalDataFieldApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv600DeletePersonalDataFieldApiResponse>();
-                        AttributeApi.OBPv600DeletePersonalDataFieldApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.DeletePersonalDataFieldApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.DeletePersonalDataFieldApiResponse>();
+                        AttributeApi.DeletePersonalDataFieldApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1049,9 +1049,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600DeletePersonalDataFieldDefaultImplementation(apiResponseLocalVar, userattributeid);
+                        AfterDeletePersonalDataFieldDefaultImplementation(apiResponseLocalVar, userattributeid);
 
-                        Events.ExecuteOnOBPv600DeletePersonalDataField(apiResponseLocalVar);
+                        Events.ExecuteOnDeletePersonalDataField(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1063,13 +1063,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600DeletePersonalDataFieldDefaultImplementation(e, "/obp/v6.0.0/my/personal-data-fields/{userattributeid}", uriBuilderLocalVar.Path, userattributeid);
-                Events.ExecuteOnErrorOBPv600DeletePersonalDataField(e);
+                OnErrorDeletePersonalDataFieldDefaultImplementation(e, "/obp/v6.0.0/my/personal-data-fields/{userattributeid}", uriBuilderLocalVar.Path, userattributeid);
+                Events.ExecuteOnErrorDeletePersonalDataField(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600DeleteUserAttribute(ref string userid, ref string userattributeid);
+        partial void FormatDeleteUserAttribute(ref string userid, ref string userattributeid);
 
         /// <summary>
         /// Validates the request parameters
@@ -1077,7 +1077,7 @@ namespace OpenBankProject.Api
         /// <param name="userid"></param>
         /// <param name="userattributeid"></param>
         /// <returns></returns>
-        private void ValidateOBPv600DeleteUserAttribute(string userid, string userattributeid)
+        private void ValidateDeleteUserAttribute(string userid, string userattributeid)
         {
             if (userid == null)
                 throw new ArgumentNullException(nameof(userid));
@@ -1092,10 +1092,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
         /// <param name="userattributeid"></param>
-        private void AfterOBPv600DeleteUserAttributeDefaultImplementation(IOBPv600DeleteUserAttributeApiResponse apiResponseLocalVar, string userid, string userattributeid)
+        private void AfterDeleteUserAttributeDefaultImplementation(IDeleteUserAttributeApiResponse apiResponseLocalVar, string userid, string userattributeid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600DeleteUserAttribute(ref suppressDefaultLog, apiResponseLocalVar, userid, userattributeid);
+            AfterDeleteUserAttribute(ref suppressDefaultLog, apiResponseLocalVar, userid, userattributeid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1107,7 +1107,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
         /// <param name="userattributeid"></param>
-        partial void AfterOBPv600DeleteUserAttribute(ref bool suppressDefaultLog, IOBPv600DeleteUserAttributeApiResponse apiResponseLocalVar, string userid, string userattributeid);
+        partial void AfterDeleteUserAttribute(ref bool suppressDefaultLog, IDeleteUserAttributeApiResponse apiResponseLocalVar, string userid, string userattributeid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1117,10 +1117,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
         /// <param name="userattributeid"></param>
-        private void OnErrorOBPv600DeleteUserAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, string userattributeid)
+        private void OnErrorDeleteUserAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, string userattributeid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600DeleteUserAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid, userattributeid);
+            OnErrorDeleteUserAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid, userattributeid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1134,7 +1134,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
         /// <param name="userattributeid"></param>
-        partial void OnErrorOBPv600DeleteUserAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, string userattributeid);
+        partial void OnErrorDeleteUserAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, string userattributeid);
 
         /// <summary>
         /// Delete User Attribute &lt;p&gt;Delete a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -1142,12 +1142,12 @@ namespace OpenBankProject.Api
         /// <param name="userid">The USERID identifier</param>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteUserAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600DeleteUserAttributeApiResponse?> OBPv600DeleteUserAttributeOrDefaultAsync(string userid, string userattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteUserAttributeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteUserAttributeApiResponse?> DeleteUserAttributeOrDefaultAsync(string userid, string userattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600DeleteUserAttributeAsync(userid, userattributeid, cancellationToken).ConfigureAwait(false);
+                return await DeleteUserAttributeAsync(userid, userattributeid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1162,16 +1162,16 @@ namespace OpenBankProject.Api
         /// <param name="userid">The USERID identifier</param>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteUserAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600DeleteUserAttributeApiResponse> OBPv600DeleteUserAttributeAsync(string userid, string userattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteUserAttributeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteUserAttributeApiResponse> DeleteUserAttributeAsync(string userid, string userattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600DeleteUserAttribute(userid, userattributeid);
+                ValidateDeleteUserAttribute(userid, userattributeid);
 
-                FormatOBPv600DeleteUserAttribute(ref userid, ref userattributeid);
+                FormatDeleteUserAttribute(ref userid, ref userattributeid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1189,7 +1189,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1207,8 +1207,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv600DeleteUserAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv600DeleteUserAttributeApiResponse>();
-                        AttributeApi.OBPv600DeleteUserAttributeApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.DeleteUserAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.DeleteUserAttributeApiResponse>();
+                        AttributeApi.DeleteUserAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1219,9 +1219,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600DeleteUserAttributeDefaultImplementation(apiResponseLocalVar, userid, userattributeid);
+                        AfterDeleteUserAttributeDefaultImplementation(apiResponseLocalVar, userid, userattributeid);
 
-                        Events.ExecuteOnOBPv600DeleteUserAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteUserAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1233,20 +1233,20 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600DeleteUserAttributeDefaultImplementation(e, "/obp/v6.0.0/users/{userid}/attributes/{userattributeid}", uriBuilderLocalVar.Path, userid, userattributeid);
-                Events.ExecuteOnErrorOBPv600DeleteUserAttribute(e);
+                OnErrorDeleteUserAttributeDefaultImplementation(e, "/obp/v6.0.0/users/{userid}/attributes/{userattributeid}", uriBuilderLocalVar.Path, userid, userattributeid);
+                Events.ExecuteOnErrorDeleteUserAttribute(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600GetPersonalDataFieldById(ref string userattributeid);
+        partial void FormatGetPersonalDataFieldById(ref string userattributeid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="userattributeid"></param>
         /// <returns></returns>
-        private void ValidateOBPv600GetPersonalDataFieldById(string userattributeid)
+        private void ValidateGetPersonalDataFieldById(string userattributeid)
         {
             if (userattributeid == null)
                 throw new ArgumentNullException(nameof(userattributeid));
@@ -1257,10 +1257,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userattributeid"></param>
-        private void AfterOBPv600GetPersonalDataFieldByIdDefaultImplementation(IOBPv600GetPersonalDataFieldByIdApiResponse apiResponseLocalVar, string userattributeid)
+        private void AfterGetPersonalDataFieldByIdDefaultImplementation(IGetPersonalDataFieldByIdApiResponse apiResponseLocalVar, string userattributeid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetPersonalDataFieldById(ref suppressDefaultLog, apiResponseLocalVar, userattributeid);
+            AfterGetPersonalDataFieldById(ref suppressDefaultLog, apiResponseLocalVar, userattributeid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1271,7 +1271,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userattributeid"></param>
-        partial void AfterOBPv600GetPersonalDataFieldById(ref bool suppressDefaultLog, IOBPv600GetPersonalDataFieldByIdApiResponse apiResponseLocalVar, string userattributeid);
+        partial void AfterGetPersonalDataFieldById(ref bool suppressDefaultLog, IGetPersonalDataFieldByIdApiResponse apiResponseLocalVar, string userattributeid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1280,10 +1280,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="userattributeid"></param>
-        private void OnErrorOBPv600GetPersonalDataFieldByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userattributeid)
+        private void OnErrorGetPersonalDataFieldByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userattributeid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetPersonalDataFieldById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userattributeid);
+            OnErrorGetPersonalDataFieldById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userattributeid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1296,19 +1296,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="userattributeid"></param>
-        partial void OnErrorOBPv600GetPersonalDataFieldById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userattributeid);
+        partial void OnErrorGetPersonalDataFieldById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userattributeid);
 
         /// <summary>
         /// Get Personal Data Field By Id &lt;p&gt;Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
         /// </summary>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetPersonalDataFieldByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetPersonalDataFieldByIdApiResponse?> OBPv600GetPersonalDataFieldByIdOrDefaultAsync(string userattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetPersonalDataFieldByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetPersonalDataFieldByIdApiResponse?> GetPersonalDataFieldByIdOrDefaultAsync(string userattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetPersonalDataFieldByIdAsync(userattributeid, cancellationToken).ConfigureAwait(false);
+                return await GetPersonalDataFieldByIdAsync(userattributeid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1322,16 +1322,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetPersonalDataFieldByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetPersonalDataFieldByIdApiResponse> OBPv600GetPersonalDataFieldByIdAsync(string userattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetPersonalDataFieldByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetPersonalDataFieldByIdApiResponse> GetPersonalDataFieldByIdAsync(string userattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600GetPersonalDataFieldById(userattributeid);
+                ValidateGetPersonalDataFieldById(userattributeid);
 
-                FormatOBPv600GetPersonalDataFieldById(ref userattributeid);
+                FormatGetPersonalDataFieldById(ref userattributeid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1348,7 +1348,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1375,8 +1375,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv600GetPersonalDataFieldByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv600GetPersonalDataFieldByIdApiResponse>();
-                        AttributeApi.OBPv600GetPersonalDataFieldByIdApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.GetPersonalDataFieldByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.GetPersonalDataFieldByIdApiResponse>();
+                        AttributeApi.GetPersonalDataFieldByIdApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1387,9 +1387,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetPersonalDataFieldByIdDefaultImplementation(apiResponseLocalVar, userattributeid);
+                        AfterGetPersonalDataFieldByIdDefaultImplementation(apiResponseLocalVar, userattributeid);
 
-                        Events.ExecuteOnOBPv600GetPersonalDataFieldById(apiResponseLocalVar);
+                        Events.ExecuteOnGetPersonalDataFieldById(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1401,8 +1401,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetPersonalDataFieldByIdDefaultImplementation(e, "/obp/v6.0.0/my/personal-data-fields/{userattributeid}", uriBuilderLocalVar.Path, userattributeid);
-                Events.ExecuteOnErrorOBPv600GetPersonalDataFieldById(e);
+                OnErrorGetPersonalDataFieldByIdDefaultImplementation(e, "/obp/v6.0.0/my/personal-data-fields/{userattributeid}", uriBuilderLocalVar.Path, userattributeid);
+                Events.ExecuteOnErrorGetPersonalDataFieldById(e);
                 throw;
             }
         }
@@ -1411,10 +1411,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetPersonalDataFieldsDefaultImplementation(IOBPv600GetPersonalDataFieldsApiResponse apiResponseLocalVar)
+        private void AfterGetPersonalDataFieldsDefaultImplementation(IGetPersonalDataFieldsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetPersonalDataFields(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetPersonalDataFields(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1424,7 +1424,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetPersonalDataFields(ref bool suppressDefaultLog, IOBPv600GetPersonalDataFieldsApiResponse apiResponseLocalVar);
+        partial void AfterGetPersonalDataFields(ref bool suppressDefaultLog, IGetPersonalDataFieldsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1432,10 +1432,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetPersonalDataFieldsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetPersonalDataFieldsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetPersonalDataFields(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetPersonalDataFields(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1447,18 +1447,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetPersonalDataFields(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetPersonalDataFields(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Personal Data Fields &lt;p&gt;Get Personal Data Fields for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Returns Personal Data Fields (IsPersonal&#x3D;true) that are managed by the user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attributes&lt;/strong&gt;&lt;/a&gt;: user_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetPersonalDataFieldsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetPersonalDataFieldsApiResponse?> OBPv600GetPersonalDataFieldsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetPersonalDataFieldsApiResponse"/>&gt;</returns>
+        public async Task<IGetPersonalDataFieldsApiResponse?> GetPersonalDataFieldsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetPersonalDataFieldsAsync(cancellationToken).ConfigureAwait(false);
+                return await GetPersonalDataFieldsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1471,8 +1471,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetPersonalDataFieldsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetPersonalDataFieldsApiResponse> OBPv600GetPersonalDataFieldsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetPersonalDataFieldsApiResponse"/>&gt;</returns>
+        public async Task<IGetPersonalDataFieldsApiResponse> GetPersonalDataFieldsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -1492,7 +1492,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1519,8 +1519,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv600GetPersonalDataFieldsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv600GetPersonalDataFieldsApiResponse>();
-                        AttributeApi.OBPv600GetPersonalDataFieldsApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.GetPersonalDataFieldsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.GetPersonalDataFieldsApiResponse>();
+                        AttributeApi.GetPersonalDataFieldsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1531,9 +1531,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetPersonalDataFieldsDefaultImplementation(apiResponseLocalVar);
+                        AfterGetPersonalDataFieldsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv600GetPersonalDataFields(apiResponseLocalVar);
+                        Events.ExecuteOnGetPersonalDataFields(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1545,13 +1545,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetPersonalDataFieldsDefaultImplementation(e, "/obp/v6.0.0/my/personal-data-fields", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetPersonalDataFields(e);
+                OnErrorGetPersonalDataFieldsDefaultImplementation(e, "/obp/v6.0.0/my/personal-data-fields", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetPersonalDataFields(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600GetUserAttributeById(ref string userid, ref string userattributeid);
+        partial void FormatGetUserAttributeById(ref string userid, ref string userattributeid);
 
         /// <summary>
         /// Validates the request parameters
@@ -1559,7 +1559,7 @@ namespace OpenBankProject.Api
         /// <param name="userid"></param>
         /// <param name="userattributeid"></param>
         /// <returns></returns>
-        private void ValidateOBPv600GetUserAttributeById(string userid, string userattributeid)
+        private void ValidateGetUserAttributeById(string userid, string userattributeid)
         {
             if (userid == null)
                 throw new ArgumentNullException(nameof(userid));
@@ -1574,10 +1574,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
         /// <param name="userattributeid"></param>
-        private void AfterOBPv600GetUserAttributeByIdDefaultImplementation(IOBPv600GetUserAttributeByIdApiResponse apiResponseLocalVar, string userid, string userattributeid)
+        private void AfterGetUserAttributeByIdDefaultImplementation(IGetUserAttributeByIdApiResponse apiResponseLocalVar, string userid, string userattributeid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetUserAttributeById(ref suppressDefaultLog, apiResponseLocalVar, userid, userattributeid);
+            AfterGetUserAttributeById(ref suppressDefaultLog, apiResponseLocalVar, userid, userattributeid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1589,7 +1589,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
         /// <param name="userattributeid"></param>
-        partial void AfterOBPv600GetUserAttributeById(ref bool suppressDefaultLog, IOBPv600GetUserAttributeByIdApiResponse apiResponseLocalVar, string userid, string userattributeid);
+        partial void AfterGetUserAttributeById(ref bool suppressDefaultLog, IGetUserAttributeByIdApiResponse apiResponseLocalVar, string userid, string userattributeid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1599,10 +1599,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
         /// <param name="userattributeid"></param>
-        private void OnErrorOBPv600GetUserAttributeByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, string userattributeid)
+        private void OnErrorGetUserAttributeByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, string userattributeid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetUserAttributeById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid, userattributeid);
+            OnErrorGetUserAttributeById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid, userattributeid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1616,7 +1616,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
         /// <param name="userattributeid"></param>
-        partial void OnErrorOBPv600GetUserAttributeById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, string userattributeid);
+        partial void OnErrorGetUserAttributeById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, string userattributeid);
 
         /// <summary>
         /// Get User Attribute By Id &lt;p&gt;Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -1624,12 +1624,12 @@ namespace OpenBankProject.Api
         /// <param name="userid">The USERID identifier</param>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetUserAttributeByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetUserAttributeByIdApiResponse?> OBPv600GetUserAttributeByIdOrDefaultAsync(string userid, string userattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetUserAttributeByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetUserAttributeByIdApiResponse?> GetUserAttributeByIdOrDefaultAsync(string userid, string userattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetUserAttributeByIdAsync(userid, userattributeid, cancellationToken).ConfigureAwait(false);
+                return await GetUserAttributeByIdAsync(userid, userattributeid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1644,16 +1644,16 @@ namespace OpenBankProject.Api
         /// <param name="userid">The USERID identifier</param>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetUserAttributeByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetUserAttributeByIdApiResponse> OBPv600GetUserAttributeByIdAsync(string userid, string userattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetUserAttributeByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetUserAttributeByIdApiResponse> GetUserAttributeByIdAsync(string userid, string userattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600GetUserAttributeById(userid, userattributeid);
+                ValidateGetUserAttributeById(userid, userattributeid);
 
-                FormatOBPv600GetUserAttributeById(ref userid, ref userattributeid);
+                FormatGetUserAttributeById(ref userid, ref userattributeid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1671,7 +1671,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1698,8 +1698,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv600GetUserAttributeByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv600GetUserAttributeByIdApiResponse>();
-                        AttributeApi.OBPv600GetUserAttributeByIdApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.GetUserAttributeByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.GetUserAttributeByIdApiResponse>();
+                        AttributeApi.GetUserAttributeByIdApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1710,9 +1710,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetUserAttributeByIdDefaultImplementation(apiResponseLocalVar, userid, userattributeid);
+                        AfterGetUserAttributeByIdDefaultImplementation(apiResponseLocalVar, userid, userattributeid);
 
-                        Events.ExecuteOnOBPv600GetUserAttributeById(apiResponseLocalVar);
+                        Events.ExecuteOnGetUserAttributeById(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1724,20 +1724,20 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetUserAttributeByIdDefaultImplementation(e, "/obp/v6.0.0/users/{userid}/attributes/{userattributeid}", uriBuilderLocalVar.Path, userid, userattributeid);
-                Events.ExecuteOnErrorOBPv600GetUserAttributeById(e);
+                OnErrorGetUserAttributeByIdDefaultImplementation(e, "/obp/v6.0.0/users/{userid}/attributes/{userattributeid}", uriBuilderLocalVar.Path, userid, userattributeid);
+                Events.ExecuteOnErrorGetUserAttributeById(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600GetUserAttributes(ref string userid);
+        partial void FormatGetUserAttributes(ref string userid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="userid"></param>
         /// <returns></returns>
-        private void ValidateOBPv600GetUserAttributes(string userid)
+        private void ValidateGetUserAttributes(string userid)
         {
             if (userid == null)
                 throw new ArgumentNullException(nameof(userid));
@@ -1748,10 +1748,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
-        private void AfterOBPv600GetUserAttributesDefaultImplementation(IOBPv600GetUserAttributesApiResponse apiResponseLocalVar, string userid)
+        private void AfterGetUserAttributesDefaultImplementation(IGetUserAttributesApiResponse apiResponseLocalVar, string userid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetUserAttributes(ref suppressDefaultLog, apiResponseLocalVar, userid);
+            AfterGetUserAttributes(ref suppressDefaultLog, apiResponseLocalVar, userid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1762,7 +1762,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
-        partial void AfterOBPv600GetUserAttributes(ref bool suppressDefaultLog, IOBPv600GetUserAttributesApiResponse apiResponseLocalVar, string userid);
+        partial void AfterGetUserAttributes(ref bool suppressDefaultLog, IGetUserAttributesApiResponse apiResponseLocalVar, string userid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1771,10 +1771,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
-        private void OnErrorOBPv600GetUserAttributesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid)
+        private void OnErrorGetUserAttributesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetUserAttributes(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid);
+            OnErrorGetUserAttributes(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1787,19 +1787,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
-        partial void OnErrorOBPv600GetUserAttributes(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid);
+        partial void OnErrorGetUserAttributes(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid);
 
         /// <summary>
         /// Get User Attributes &lt;p&gt;Get User Attributes for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;Returns non-personal user attributes (IsPersonal&#x3D;false) that can be used in ABAC rules.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attributes&lt;/strong&gt;&lt;/a&gt;: user_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
         /// </summary>
         /// <param name="userid">The USERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetUserAttributesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetUserAttributesApiResponse?> OBPv600GetUserAttributesOrDefaultAsync(string userid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetUserAttributesApiResponse"/>&gt;</returns>
+        public async Task<IGetUserAttributesApiResponse?> GetUserAttributesOrDefaultAsync(string userid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetUserAttributesAsync(userid, cancellationToken).ConfigureAwait(false);
+                return await GetUserAttributesAsync(userid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1813,16 +1813,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userid">The USERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetUserAttributesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetUserAttributesApiResponse> OBPv600GetUserAttributesAsync(string userid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetUserAttributesApiResponse"/>&gt;</returns>
+        public async Task<IGetUserAttributesApiResponse> GetUserAttributesAsync(string userid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600GetUserAttributes(userid);
+                ValidateGetUserAttributes(userid);
 
-                FormatOBPv600GetUserAttributes(ref userid);
+                FormatGetUserAttributes(ref userid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1839,7 +1839,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1866,8 +1866,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv600GetUserAttributesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv600GetUserAttributesApiResponse>();
-                        AttributeApi.OBPv600GetUserAttributesApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.GetUserAttributesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.GetUserAttributesApiResponse>();
+                        AttributeApi.GetUserAttributesApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1878,9 +1878,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetUserAttributesDefaultImplementation(apiResponseLocalVar, userid);
+                        AfterGetUserAttributesDefaultImplementation(apiResponseLocalVar, userid);
 
-                        Events.ExecuteOnOBPv600GetUserAttributes(apiResponseLocalVar);
+                        Events.ExecuteOnGetUserAttributes(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1892,27 +1892,27 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetUserAttributesDefaultImplementation(e, "/obp/v6.0.0/users/{userid}/attributes", uriBuilderLocalVar.Path, userid);
-                Events.ExecuteOnErrorOBPv600GetUserAttributes(e);
+                OnErrorGetUserAttributesDefaultImplementation(e, "/obp/v6.0.0/users/{userid}/attributes", uriBuilderLocalVar.Path, userid);
+                Events.ExecuteOnErrorGetUserAttributes(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600UpdatePersonalDataField(ref string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        partial void FormatUpdatePersonalDataField(ref string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="userattributeid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
+        /// <param name="createPersonalDataFieldRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600UpdatePersonalDataField(string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        private void ValidateUpdatePersonalDataField(string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
             if (userattributeid == null)
                 throw new ArgumentNullException(nameof(userattributeid));
 
-            if (oBPv600CreatePersonalDataFieldRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600CreatePersonalDataFieldRequest));
+            if (createPersonalDataFieldRequest == null)
+                throw new ArgumentNullException(nameof(createPersonalDataFieldRequest));
         }
 
         /// <summary>
@@ -1920,11 +1920,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userattributeid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        private void AfterOBPv600UpdatePersonalDataFieldDefaultImplementation(IOBPv600UpdatePersonalDataFieldApiResponse apiResponseLocalVar, string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        /// <param name="createPersonalDataFieldRequest"></param>
+        private void AfterUpdatePersonalDataFieldDefaultImplementation(IUpdatePersonalDataFieldApiResponse apiResponseLocalVar, string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600UpdatePersonalDataField(ref suppressDefaultLog, apiResponseLocalVar, userattributeid, oBPv600CreatePersonalDataFieldRequest);
+            AfterUpdatePersonalDataField(ref suppressDefaultLog, apiResponseLocalVar, userattributeid, createPersonalDataFieldRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1935,8 +1935,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userattributeid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        partial void AfterOBPv600UpdatePersonalDataField(ref bool suppressDefaultLog, IOBPv600UpdatePersonalDataFieldApiResponse apiResponseLocalVar, string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        /// <param name="createPersonalDataFieldRequest"></param>
+        partial void AfterUpdatePersonalDataField(ref bool suppressDefaultLog, IUpdatePersonalDataFieldApiResponse apiResponseLocalVar, string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1945,11 +1945,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="userattributeid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        private void OnErrorOBPv600UpdatePersonalDataFieldDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        /// <param name="createPersonalDataFieldRequest"></param>
+        private void OnErrorUpdatePersonalDataFieldDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600UpdatePersonalDataField(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userattributeid, oBPv600CreatePersonalDataFieldRequest);
+            OnErrorUpdatePersonalDataField(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userattributeid, createPersonalDataFieldRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1962,21 +1962,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="userattributeid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        partial void OnErrorOBPv600UpdatePersonalDataField(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        /// <param name="createPersonalDataFieldRequest"></param>
+        partial void OnErrorUpdatePersonalDataField(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Update Personal Data Field &lt;p&gt;Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
         /// </summary>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdatePersonalDataFieldApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600UpdatePersonalDataFieldApiResponse?> OBPv600UpdatePersonalDataFieldOrDefaultAsync(string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdatePersonalDataFieldApiResponse"/>&gt;</returns>
+        public async Task<IUpdatePersonalDataFieldApiResponse?> UpdatePersonalDataFieldOrDefaultAsync(string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600UpdatePersonalDataFieldAsync(userattributeid, oBPv600CreatePersonalDataFieldRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdatePersonalDataFieldAsync(userattributeid, createPersonalDataFieldRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1989,18 +1989,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdatePersonalDataFieldApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600UpdatePersonalDataFieldApiResponse> OBPv600UpdatePersonalDataFieldAsync(string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdatePersonalDataFieldApiResponse"/>&gt;</returns>
+        public async Task<IUpdatePersonalDataFieldApiResponse> UpdatePersonalDataFieldAsync(string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600UpdatePersonalDataField(userattributeid, oBPv600CreatePersonalDataFieldRequest);
+                ValidateUpdatePersonalDataField(userattributeid, createPersonalDataFieldRequest);
 
-                FormatOBPv600UpdatePersonalDataField(ref userattributeid, oBPv600CreatePersonalDataFieldRequest);
+                FormatUpdatePersonalDataField(ref userattributeid, createPersonalDataFieldRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2012,16 +2012,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/my/personal-data-fields/{userattributeid}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Buserattributeid%7D", Uri.EscapeDataString(userattributeid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600CreatePersonalDataFieldRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createPersonalDataFieldRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600CreatePersonalDataFieldRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createPersonalDataFieldRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2057,8 +2057,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv600UpdatePersonalDataFieldApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv600UpdatePersonalDataFieldApiResponse>();
-                        AttributeApi.OBPv600UpdatePersonalDataFieldApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.UpdatePersonalDataFieldApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.UpdatePersonalDataFieldApiResponse>();
+                        AttributeApi.UpdatePersonalDataFieldApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2069,9 +2069,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600UpdatePersonalDataFieldDefaultImplementation(apiResponseLocalVar, userattributeid, oBPv600CreatePersonalDataFieldRequest);
+                        AfterUpdatePersonalDataFieldDefaultImplementation(apiResponseLocalVar, userattributeid, createPersonalDataFieldRequest);
 
-                        Events.ExecuteOnOBPv600UpdatePersonalDataField(apiResponseLocalVar);
+                        Events.ExecuteOnUpdatePersonalDataField(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2083,22 +2083,22 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600UpdatePersonalDataFieldDefaultImplementation(e, "/obp/v6.0.0/my/personal-data-fields/{userattributeid}", uriBuilderLocalVar.Path, userattributeid, oBPv600CreatePersonalDataFieldRequest);
-                Events.ExecuteOnErrorOBPv600UpdatePersonalDataField(e);
+                OnErrorUpdatePersonalDataFieldDefaultImplementation(e, "/obp/v6.0.0/my/personal-data-fields/{userattributeid}", uriBuilderLocalVar.Path, userattributeid, createPersonalDataFieldRequest);
+                Events.ExecuteOnErrorUpdatePersonalDataField(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600UpdateUserAttribute(ref string userid, ref string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        partial void FormatUpdateUserAttribute(ref string userid, ref string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="userid"></param>
         /// <param name="userattributeid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
+        /// <param name="createPersonalDataFieldRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600UpdateUserAttribute(string userid, string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        private void ValidateUpdateUserAttribute(string userid, string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
             if (userid == null)
                 throw new ArgumentNullException(nameof(userid));
@@ -2106,8 +2106,8 @@ namespace OpenBankProject.Api
             if (userattributeid == null)
                 throw new ArgumentNullException(nameof(userattributeid));
 
-            if (oBPv600CreatePersonalDataFieldRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600CreatePersonalDataFieldRequest));
+            if (createPersonalDataFieldRequest == null)
+                throw new ArgumentNullException(nameof(createPersonalDataFieldRequest));
         }
 
         /// <summary>
@@ -2116,11 +2116,11 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
         /// <param name="userattributeid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        private void AfterOBPv600UpdateUserAttributeDefaultImplementation(IOBPv600UpdateUserAttributeApiResponse apiResponseLocalVar, string userid, string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        /// <param name="createPersonalDataFieldRequest"></param>
+        private void AfterUpdateUserAttributeDefaultImplementation(IUpdateUserAttributeApiResponse apiResponseLocalVar, string userid, string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600UpdateUserAttribute(ref suppressDefaultLog, apiResponseLocalVar, userid, userattributeid, oBPv600CreatePersonalDataFieldRequest);
+            AfterUpdateUserAttribute(ref suppressDefaultLog, apiResponseLocalVar, userid, userattributeid, createPersonalDataFieldRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2132,8 +2132,8 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
         /// <param name="userattributeid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        partial void AfterOBPv600UpdateUserAttribute(ref bool suppressDefaultLog, IOBPv600UpdateUserAttributeApiResponse apiResponseLocalVar, string userid, string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        /// <param name="createPersonalDataFieldRequest"></param>
+        partial void AfterUpdateUserAttribute(ref bool suppressDefaultLog, IUpdateUserAttributeApiResponse apiResponseLocalVar, string userid, string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2143,11 +2143,11 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
         /// <param name="userattributeid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        private void OnErrorOBPv600UpdateUserAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+        /// <param name="createPersonalDataFieldRequest"></param>
+        private void OnErrorUpdateUserAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600UpdateUserAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid, userattributeid, oBPv600CreatePersonalDataFieldRequest);
+            OnErrorUpdateUserAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid, userattributeid, createPersonalDataFieldRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2161,22 +2161,22 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
         /// <param name="userattributeid"></param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest"></param>
-        partial void OnErrorOBPv600UpdateUserAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest);
+        /// <param name="createPersonalDataFieldRequest"></param>
+        partial void OnErrorUpdateUserAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest);
 
         /// <summary>
         /// Update User Attribute &lt;p&gt;Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
         /// </summary>
         /// <param name="userid">The USERID identifier</param>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateUserAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600UpdateUserAttributeApiResponse?> OBPv600UpdateUserAttributeOrDefaultAsync(string userid, string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateUserAttributeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateUserAttributeApiResponse?> UpdateUserAttributeOrDefaultAsync(string userid, string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600UpdateUserAttributeAsync(userid, userattributeid, oBPv600CreatePersonalDataFieldRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateUserAttributeAsync(userid, userattributeid, createPersonalDataFieldRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2190,18 +2190,18 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userid">The USERID identifier</param>
         /// <param name="userattributeid">The USERATTRIBUTEID identifier</param>
-        /// <param name="oBPv600CreatePersonalDataFieldRequest">Request body</param>
+        /// <param name="createPersonalDataFieldRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateUserAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600UpdateUserAttributeApiResponse> OBPv600UpdateUserAttributeAsync(string userid, string userattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateUserAttributeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateUserAttributeApiResponse> UpdateUserAttributeAsync(string userid, string userattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600UpdateUserAttribute(userid, userattributeid, oBPv600CreatePersonalDataFieldRequest);
+                ValidateUpdateUserAttribute(userid, userattributeid, createPersonalDataFieldRequest);
 
-                FormatOBPv600UpdateUserAttribute(ref userid, ref userattributeid, oBPv600CreatePersonalDataFieldRequest);
+                FormatUpdateUserAttribute(ref userid, ref userattributeid, createPersonalDataFieldRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2214,16 +2214,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Buserid%7D", Uri.EscapeDataString(userid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Buserattributeid%7D", Uri.EscapeDataString(userattributeid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600CreatePersonalDataFieldRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createPersonalDataFieldRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600CreatePersonalDataFieldRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createPersonalDataFieldRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2259,8 +2259,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv600UpdateUserAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv600UpdateUserAttributeApiResponse>();
-                        AttributeApi.OBPv600UpdateUserAttributeApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.UpdateUserAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.UpdateUserAttributeApiResponse>();
+                        AttributeApi.UpdateUserAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2271,9 +2271,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600UpdateUserAttributeDefaultImplementation(apiResponseLocalVar, userid, userattributeid, oBPv600CreatePersonalDataFieldRequest);
+                        AfterUpdateUserAttributeDefaultImplementation(apiResponseLocalVar, userid, userattributeid, createPersonalDataFieldRequest);
 
-                        Events.ExecuteOnOBPv600UpdateUserAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateUserAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2285,8 +2285,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600UpdateUserAttributeDefaultImplementation(e, "/obp/v6.0.0/users/{userid}/attributes/{userattributeid}", uriBuilderLocalVar.Path, userid, userattributeid, oBPv600CreatePersonalDataFieldRequest);
-                Events.ExecuteOnErrorOBPv600UpdateUserAttribute(e);
+                OnErrorUpdateUserAttributeDefaultImplementation(e, "/obp/v6.0.0/users/{userid}/attributes/{userattributeid}", uriBuilderLocalVar.Path, userid, userattributeid, createPersonalDataFieldRequest);
+                Events.ExecuteOnErrorUpdateUserAttribute(e);
                 throw;
             }
         }

@@ -1,16 +1,16 @@
 # PersonalDynamicEntityApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600GetAvailablePersonalDynamicEntities**](PersonalDynamicEntityApi.md#obpv600getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
+| [**getAvailablePersonalDynamicEntities**](PersonalDynamicEntityApi.md#getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
 
 
 
-## oBPv600GetAvailablePersonalDynamicEntities
+## getAvailablePersonalDynamicEntities
 
-> OBPv600GetAvailablePersonalDynamicEntities200Response oBPv600GetAvailablePersonalDynamicEntities()
+> GetAvailablePersonalDynamicEntities200Response getAvailablePersonalDynamicEntities()
 
 Get Available Personal Dynamic Entities
 
@@ -23,7 +23,7 @@ import {
   Configuration,
   PersonalDynamicEntityApi,
 } from 'obp-typescript';
-import type { OBPv600GetAvailablePersonalDynamicEntitiesRequest } from 'obp-typescript';
+import type { GetAvailablePersonalDynamicEntitiesRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -38,7 +38,7 @@ async function example() {
   const api = new PersonalDynamicEntityApi(config);
 
   try {
-    const data = await api.oBPv600GetAvailablePersonalDynamicEntities();
+    const data = await api.getAvailablePersonalDynamicEntities();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -55,7 +55,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 

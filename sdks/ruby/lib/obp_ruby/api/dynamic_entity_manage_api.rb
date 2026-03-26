@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -19,14 +19,288 @@ module OpenBankProject
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # Backup Bank Level Dynamic Entity
+    # <p>Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param dynamicentityid [String] The DYNAMICENTITYID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [BackupBankLevelDynamicEntity200Response]
+    def backup_bank_level_dynamic_entity(bankid, dynamicentityid, opts = {})
+      data, _status_code, _headers = backup_bank_level_dynamic_entity_with_http_info(bankid, dynamicentityid, opts)
+      data
+    end
+
+    # Backup Bank Level Dynamic Entity
+    # &lt;p&gt;Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param dynamicentityid [String] The DYNAMICENTITYID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(BackupBankLevelDynamicEntity200Response, Integer, Hash)>] BackupBankLevelDynamicEntity200Response data, response status code and response headers
+    def backup_bank_level_dynamic_entity_with_http_info(bankid, dynamicentityid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.backup_bank_level_dynamic_entity ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEntityManageApi.backup_bank_level_dynamic_entity"
+      end
+      # verify the required parameter 'dynamicentityid' is set
+      if @api_client.config.client_side_validation && dynamicentityid.nil?
+        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.backup_bank_level_dynamic_entity"
+      end
+      # resource path
+      local_var_path = '/obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'dynamicentityid' + '}', CGI.escape(dynamicentityid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'BackupBankLevelDynamicEntity200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"DynamicEntityManageApi.backup_bank_level_dynamic_entity",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DynamicEntityManageApi#backup_bank_level_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Backup System Level Dynamic Entity
+    # <p>Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+    # @param dynamicentityid [String] The DYNAMICENTITYID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [BackupSystemDynamicEntity200Response]
+    def backup_system_dynamic_entity(dynamicentityid, opts = {})
+      data, _status_code, _headers = backup_system_dynamic_entity_with_http_info(dynamicentityid, opts)
+      data
+    end
+
+    # Backup System Level Dynamic Entity
+    # &lt;p&gt;Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+    # @param dynamicentityid [String] The DYNAMICENTITYID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(BackupSystemDynamicEntity200Response, Integer, Hash)>] BackupSystemDynamicEntity200Response data, response status code and response headers
+    def backup_system_dynamic_entity_with_http_info(dynamicentityid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.backup_system_dynamic_entity ...'
+      end
+      # verify the required parameter 'dynamicentityid' is set
+      if @api_client.config.client_side_validation && dynamicentityid.nil?
+        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.backup_system_dynamic_entity"
+      end
+      # resource path
+      local_var_path = '/obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup'.sub('{' + 'dynamicentityid' + '}', CGI.escape(dynamicentityid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'BackupSystemDynamicEntity200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"DynamicEntityManageApi.backup_system_dynamic_entity",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DynamicEntityManageApi#backup_system_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Create Bank Level Dynamic Entity
+    # <p>Create a bank level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param create_system_dynamic_entity_request [CreateSystemDynamicEntityRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [CreateBankLevelDynamicEntity200Response]
+    def create_bank_level_dynamic_entity(bankid, create_system_dynamic_entity_request, opts = {})
+      data, _status_code, _headers = create_bank_level_dynamic_entity_with_http_info(bankid, create_system_dynamic_entity_request, opts)
+      data
+    end
+
+    # Create Bank Level Dynamic Entity
+    # &lt;p&gt;Create a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param create_system_dynamic_entity_request [CreateSystemDynamicEntityRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateBankLevelDynamicEntity200Response, Integer, Hash)>] CreateBankLevelDynamicEntity200Response data, response status code and response headers
+    def create_bank_level_dynamic_entity_with_http_info(bankid, create_system_dynamic_entity_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.create_bank_level_dynamic_entity ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEntityManageApi.create_bank_level_dynamic_entity"
+      end
+      # verify the required parameter 'create_system_dynamic_entity_request' is set
+      if @api_client.config.client_side_validation && create_system_dynamic_entity_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_system_dynamic_entity_request' when calling DynamicEntityManageApi.create_bank_level_dynamic_entity"
+      end
+      # resource path
+      local_var_path = '/obp/v6.0.0/management/banks/{bankid}/dynamic-entities'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_system_dynamic_entity_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CreateBankLevelDynamicEntity200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"DynamicEntityManageApi.create_bank_level_dynamic_entity",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DynamicEntityManageApi#create_bank_level_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Create System Level Dynamic Entity
+    # <p>Create a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> 
+    # @param create_system_dynamic_entity_request [CreateSystemDynamicEntityRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [CreateSystemDynamicEntity200Response]
+    def create_system_dynamic_entity(create_system_dynamic_entity_request, opts = {})
+      data, _status_code, _headers = create_system_dynamic_entity_with_http_info(create_system_dynamic_entity_request, opts)
+      data
+    end
+
+    # Create System Level Dynamic Entity
+    # &lt;p&gt;Create a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; 
+    # @param create_system_dynamic_entity_request [CreateSystemDynamicEntityRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateSystemDynamicEntity200Response, Integer, Hash)>] CreateSystemDynamicEntity200Response data, response status code and response headers
+    def create_system_dynamic_entity_with_http_info(create_system_dynamic_entity_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.create_system_dynamic_entity ...'
+      end
+      # verify the required parameter 'create_system_dynamic_entity_request' is set
+      if @api_client.config.client_side_validation && create_system_dynamic_entity_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_system_dynamic_entity_request' when calling DynamicEntityManageApi.create_system_dynamic_entity"
+      end
+      # resource path
+      local_var_path = '/obp/v6.0.0/management/system-dynamic-entities'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_system_dynamic_entity_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CreateSystemDynamicEntity200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"DynamicEntityManageApi.create_system_dynamic_entity",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DynamicEntityManageApi#create_system_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Delete Bank Level Dynamic Entity
     # <p>Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
     # @param bankid [String] The BANKID identifier
     # @param dynamicentityid [String] The DYNAMICENTITYID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_bank_level_dynamic_entity(bankid, dynamicentityid, opts = {})
-      o_bpv4_0_0_delete_bank_level_dynamic_entity_with_http_info(bankid, dynamicentityid, opts)
+    def delete_bank_level_dynamic_entity(bankid, dynamicentityid, opts = {})
+      delete_bank_level_dynamic_entity_with_http_info(bankid, dynamicentityid, opts)
       nil
     end
 
@@ -36,17 +310,17 @@ module OpenBankProject
     # @param dynamicentityid [String] The DYNAMICENTITYID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_bank_level_dynamic_entity_with_http_info(bankid, dynamicentityid, opts = {})
+    def delete_bank_level_dynamic_entity_with_http_info(bankid, dynamicentityid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.o_bpv4_0_0_delete_bank_level_dynamic_entity ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.delete_bank_level_dynamic_entity ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEntityManageApi.o_bpv4_0_0_delete_bank_level_dynamic_entity"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEntityManageApi.delete_bank_level_dynamic_entity"
       end
       # verify the required parameter 'dynamicentityid' is set
       if @api_client.config.client_side_validation && dynamicentityid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.o_bpv4_0_0_delete_bank_level_dynamic_entity"
+        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.delete_bank_level_dynamic_entity"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'dynamicentityid' + '}', CGI.escape(dynamicentityid.to_s))
@@ -70,7 +344,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEntityManageApi.o_bpv4_0_0_delete_bank_level_dynamic_entity",
+        :operation => :"DynamicEntityManageApi.delete_bank_level_dynamic_entity",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -81,7 +355,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEntityManageApi#o_bpv4_0_0_delete_bank_level_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEntityManageApi#delete_bank_level_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -91,8 +365,8 @@ module OpenBankProject
     # @param dynamicentityid [String] The DYNAMICENTITYID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_my_dynamic_entity(dynamicentityid, opts = {})
-      o_bpv4_0_0_delete_my_dynamic_entity_with_http_info(dynamicentityid, opts)
+    def delete_my_dynamic_entity(dynamicentityid, opts = {})
+      delete_my_dynamic_entity_with_http_info(dynamicentityid, opts)
       nil
     end
 
@@ -101,13 +375,13 @@ module OpenBankProject
     # @param dynamicentityid [String] The DYNAMICENTITYID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_my_dynamic_entity_with_http_info(dynamicentityid, opts = {})
+    def delete_my_dynamic_entity_with_http_info(dynamicentityid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.o_bpv4_0_0_delete_my_dynamic_entity ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.delete_my_dynamic_entity ...'
       end
       # verify the required parameter 'dynamicentityid' is set
       if @api_client.config.client_side_validation && dynamicentityid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.o_bpv4_0_0_delete_my_dynamic_entity"
+        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.delete_my_dynamic_entity"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/my/dynamic-entities/{dynamicentityid}'.sub('{' + 'dynamicentityid' + '}', CGI.escape(dynamicentityid.to_s))
@@ -131,7 +405,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEntityManageApi.o_bpv4_0_0_delete_my_dynamic_entity",
+        :operation => :"DynamicEntityManageApi.delete_my_dynamic_entity",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -142,7 +416,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEntityManageApi#o_bpv4_0_0_delete_my_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEntityManageApi#delete_my_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -152,8 +426,8 @@ module OpenBankProject
     # @param dynamicentityid [String] The DYNAMICENTITYID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_system_dynamic_entity(dynamicentityid, opts = {})
-      o_bpv4_0_0_delete_system_dynamic_entity_with_http_info(dynamicentityid, opts)
+    def delete_system_dynamic_entity(dynamicentityid, opts = {})
+      delete_system_dynamic_entity_with_http_info(dynamicentityid, opts)
       nil
     end
 
@@ -162,13 +436,13 @@ module OpenBankProject
     # @param dynamicentityid [String] The DYNAMICENTITYID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_system_dynamic_entity_with_http_info(dynamicentityid, opts = {})
+    def delete_system_dynamic_entity_with_http_info(dynamicentityid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.o_bpv4_0_0_delete_system_dynamic_entity ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.delete_system_dynamic_entity ...'
       end
       # verify the required parameter 'dynamicentityid' is set
       if @api_client.config.client_side_validation && dynamicentityid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.o_bpv4_0_0_delete_system_dynamic_entity"
+        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.delete_system_dynamic_entity"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid}'.sub('{' + 'dynamicentityid' + '}', CGI.escape(dynamicentityid.to_s))
@@ -192,7 +466,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEntityManageApi.o_bpv4_0_0_delete_system_dynamic_entity",
+        :operation => :"DynamicEntityManageApi.delete_system_dynamic_entity",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -203,281 +477,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEntityManageApi#o_bpv4_0_0_delete_system_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Backup Bank Level Dynamic Entity
-    # <p>Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param dynamicentityid [String] The DYNAMICENTITYID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv600BackupBankLevelDynamicEntity200Response]
-    def o_bpv6_0_0_backup_bank_level_dynamic_entity(bankid, dynamicentityid, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_backup_bank_level_dynamic_entity_with_http_info(bankid, dynamicentityid, opts)
-      data
-    end
-
-    # Backup Bank Level Dynamic Entity
-    # &lt;p&gt;Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param dynamicentityid [String] The DYNAMICENTITYID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600BackupBankLevelDynamicEntity200Response, Integer, Hash)>] OBPv600BackupBankLevelDynamicEntity200Response data, response status code and response headers
-    def o_bpv6_0_0_backup_bank_level_dynamic_entity_with_http_info(bankid, dynamicentityid, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.o_bpv6_0_0_backup_bank_level_dynamic_entity ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEntityManageApi.o_bpv6_0_0_backup_bank_level_dynamic_entity"
-      end
-      # verify the required parameter 'dynamicentityid' is set
-      if @api_client.config.client_side_validation && dynamicentityid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.o_bpv6_0_0_backup_bank_level_dynamic_entity"
-      end
-      # resource path
-      local_var_path = '/obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'dynamicentityid' + '}', CGI.escape(dynamicentityid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600BackupBankLevelDynamicEntity200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"DynamicEntityManageApi.o_bpv6_0_0_backup_bank_level_dynamic_entity",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEntityManageApi#o_bpv6_0_0_backup_bank_level_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Backup System Level Dynamic Entity
-    # <p>Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-    # @param dynamicentityid [String] The DYNAMICENTITYID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv600BackupSystemDynamicEntity200Response]
-    def o_bpv6_0_0_backup_system_dynamic_entity(dynamicentityid, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_backup_system_dynamic_entity_with_http_info(dynamicentityid, opts)
-      data
-    end
-
-    # Backup System Level Dynamic Entity
-    # &lt;p&gt;Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-    # @param dynamicentityid [String] The DYNAMICENTITYID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600BackupSystemDynamicEntity200Response, Integer, Hash)>] OBPv600BackupSystemDynamicEntity200Response data, response status code and response headers
-    def o_bpv6_0_0_backup_system_dynamic_entity_with_http_info(dynamicentityid, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.o_bpv6_0_0_backup_system_dynamic_entity ...'
-      end
-      # verify the required parameter 'dynamicentityid' is set
-      if @api_client.config.client_side_validation && dynamicentityid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.o_bpv6_0_0_backup_system_dynamic_entity"
-      end
-      # resource path
-      local_var_path = '/obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup'.sub('{' + 'dynamicentityid' + '}', CGI.escape(dynamicentityid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600BackupSystemDynamicEntity200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"DynamicEntityManageApi.o_bpv6_0_0_backup_system_dynamic_entity",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEntityManageApi#o_bpv6_0_0_backup_system_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Create Bank Level Dynamic Entity
-    # <p>Create a bank level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param obpv600_create_system_dynamic_entity_request [OBPv600CreateSystemDynamicEntityRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv600CreateBankLevelDynamicEntity200Response]
-    def o_bpv6_0_0_create_bank_level_dynamic_entity(bankid, obpv600_create_system_dynamic_entity_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_create_bank_level_dynamic_entity_with_http_info(bankid, obpv600_create_system_dynamic_entity_request, opts)
-      data
-    end
-
-    # Create Bank Level Dynamic Entity
-    # &lt;p&gt;Create a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param obpv600_create_system_dynamic_entity_request [OBPv600CreateSystemDynamicEntityRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600CreateBankLevelDynamicEntity200Response, Integer, Hash)>] OBPv600CreateBankLevelDynamicEntity200Response data, response status code and response headers
-    def o_bpv6_0_0_create_bank_level_dynamic_entity_with_http_info(bankid, obpv600_create_system_dynamic_entity_request, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.o_bpv6_0_0_create_bank_level_dynamic_entity ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEntityManageApi.o_bpv6_0_0_create_bank_level_dynamic_entity"
-      end
-      # verify the required parameter 'obpv600_create_system_dynamic_entity_request' is set
-      if @api_client.config.client_side_validation && obpv600_create_system_dynamic_entity_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_create_system_dynamic_entity_request' when calling DynamicEntityManageApi.o_bpv6_0_0_create_bank_level_dynamic_entity"
-      end
-      # resource path
-      local_var_path = '/obp/v6.0.0/management/banks/{bankid}/dynamic-entities'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_create_system_dynamic_entity_request)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600CreateBankLevelDynamicEntity200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"DynamicEntityManageApi.o_bpv6_0_0_create_bank_level_dynamic_entity",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEntityManageApi#o_bpv6_0_0_create_bank_level_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Create System Level Dynamic Entity
-    # <p>Create a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-    # @param obpv600_create_system_dynamic_entity_request [OBPv600CreateSystemDynamicEntityRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv600CreateSystemDynamicEntity200Response]
-    def o_bpv6_0_0_create_system_dynamic_entity(obpv600_create_system_dynamic_entity_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_create_system_dynamic_entity_with_http_info(obpv600_create_system_dynamic_entity_request, opts)
-      data
-    end
-
-    # Create System Level Dynamic Entity
-    # &lt;p&gt;Create a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-    # @param obpv600_create_system_dynamic_entity_request [OBPv600CreateSystemDynamicEntityRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600CreateSystemDynamicEntity200Response, Integer, Hash)>] OBPv600CreateSystemDynamicEntity200Response data, response status code and response headers
-    def o_bpv6_0_0_create_system_dynamic_entity_with_http_info(obpv600_create_system_dynamic_entity_request, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.o_bpv6_0_0_create_system_dynamic_entity ...'
-      end
-      # verify the required parameter 'obpv600_create_system_dynamic_entity_request' is set
-      if @api_client.config.client_side_validation && obpv600_create_system_dynamic_entity_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_create_system_dynamic_entity_request' when calling DynamicEntityManageApi.o_bpv6_0_0_create_system_dynamic_entity"
-      end
-      # resource path
-      local_var_path = '/obp/v6.0.0/management/system-dynamic-entities'
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_create_system_dynamic_entity_request)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600CreateSystemDynamicEntity200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"DynamicEntityManageApi.o_bpv6_0_0_create_system_dynamic_entity",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEntityManageApi#o_bpv6_0_0_create_system_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEntityManageApi#delete_system_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -487,8 +487,8 @@ module OpenBankProject
     # @param dynamicentityid [String] The DYNAMICENTITYID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv6_0_0_delete_system_dynamic_entity_cascade(dynamicentityid, opts = {})
-      o_bpv6_0_0_delete_system_dynamic_entity_cascade_with_http_info(dynamicentityid, opts)
+    def delete_system_dynamic_entity_cascade(dynamicentityid, opts = {})
+      delete_system_dynamic_entity_cascade_with_http_info(dynamicentityid, opts)
       nil
     end
 
@@ -497,13 +497,13 @@ module OpenBankProject
     # @param dynamicentityid [String] The DYNAMICENTITYID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv6_0_0_delete_system_dynamic_entity_cascade_with_http_info(dynamicentityid, opts = {})
+    def delete_system_dynamic_entity_cascade_with_http_info(dynamicentityid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.o_bpv6_0_0_delete_system_dynamic_entity_cascade ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.delete_system_dynamic_entity_cascade ...'
       end
       # verify the required parameter 'dynamicentityid' is set
       if @api_client.config.client_side_validation && dynamicentityid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.o_bpv6_0_0_delete_system_dynamic_entity_cascade"
+        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.delete_system_dynamic_entity_cascade"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/system-dynamic-entities/cascade/{dynamicentityid}'.sub('{' + 'dynamicentityid' + '}', CGI.escape(dynamicentityid.to_s))
@@ -527,7 +527,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEntityManageApi.o_bpv6_0_0_delete_system_dynamic_entity_cascade",
+        :operation => :"DynamicEntityManageApi.delete_system_dynamic_entity_cascade",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -538,7 +538,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEntityManageApi#o_bpv6_0_0_delete_system_dynamic_entity_cascade\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEntityManageApi#delete_system_dynamic_entity_cascade\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -547,9 +547,9 @@ module OpenBankProject
     # <p>Get all Bank Level Dynamic Entities for one bank with record counts.</p> <p>Each dynamic entity in the response includes a <code>record_count</code> field showing how many data records exist for that entity.</p> <p>This v6.0.0 endpoint returns snake_case field names and an explicit <code>entity_name</code> field.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetBankLevelDynamicEntities200Response]
-    def o_bpv6_0_0_get_bank_level_dynamic_entities(bankid, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_bank_level_dynamic_entities_with_http_info(bankid, opts)
+    # @return [GetBankLevelDynamicEntities200Response]
+    def get_bank_level_dynamic_entities(bankid, opts = {})
+      data, _status_code, _headers = get_bank_level_dynamic_entities_with_http_info(bankid, opts)
       data
     end
 
@@ -557,14 +557,14 @@ module OpenBankProject
     # &lt;p&gt;Get all Bank Level Dynamic Entities for one bank with record counts.&lt;/p&gt; &lt;p&gt;Each dynamic entity in the response includes a &lt;code&gt;record_count&lt;/code&gt; field showing how many data records exist for that entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns snake_case field names and an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetBankLevelDynamicEntities200Response, Integer, Hash)>] OBPv600GetBankLevelDynamicEntities200Response data, response status code and response headers
-    def o_bpv6_0_0_get_bank_level_dynamic_entities_with_http_info(bankid, opts = {})
+    # @return [Array<(GetBankLevelDynamicEntities200Response, Integer, Hash)>] GetBankLevelDynamicEntities200Response data, response status code and response headers
+    def get_bank_level_dynamic_entities_with_http_info(bankid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.o_bpv6_0_0_get_bank_level_dynamic_entities ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.get_bank_level_dynamic_entities ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEntityManageApi.o_bpv6_0_0_get_bank_level_dynamic_entities"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEntityManageApi.get_bank_level_dynamic_entities"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/banks/{bankid}/dynamic-entities'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -584,13 +584,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetBankLevelDynamicEntities200Response'
+      return_type = opts[:debug_return_type] || 'GetBankLevelDynamicEntities200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEntityManageApi.o_bpv6_0_0_get_bank_level_dynamic_entities",
+        :operation => :"DynamicEntityManageApi.get_bank_level_dynamic_entities",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -601,7 +601,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEntityManageApi#o_bpv6_0_0_get_bank_level_dynamic_entities\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEntityManageApi#get_bank_level_dynamic_entities\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -609,19 +609,19 @@ module OpenBankProject
     # Get My Dynamic Entities
     # <p>Get all Dynamic Entity definitions I created.</p> <p>This v6.0.0 endpoint returns a cleaner response format with:<br /> * snake_case field names (dynamic_entity_id, user_id, bank_id, has_personal_entity)<br /> * An explicit entity_name field instead of using the entity name as a dynamic JSON key<br /> * The entity schema in a separate definition object</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetAvailablePersonalDynamicEntities200Response]
-    def o_bpv6_0_0_get_my_dynamic_entities(opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_my_dynamic_entities_with_http_info(opts)
+    # @return [GetAvailablePersonalDynamicEntities200Response]
+    def get_my_dynamic_entities(opts = {})
+      data, _status_code, _headers = get_my_dynamic_entities_with_http_info(opts)
       data
     end
 
     # Get My Dynamic Entities
     # &lt;p&gt;Get all Dynamic Entity definitions I created.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns a cleaner response format with:&lt;br /&gt; * snake_case field names (dynamic_entity_id, user_id, bank_id, has_personal_entity)&lt;br /&gt; * An explicit entity_name field instead of using the entity name as a dynamic JSON key&lt;br /&gt; * The entity schema in a separate definition object&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetAvailablePersonalDynamicEntities200Response, Integer, Hash)>] OBPv600GetAvailablePersonalDynamicEntities200Response data, response status code and response headers
-    def o_bpv6_0_0_get_my_dynamic_entities_with_http_info(opts = {})
+    # @return [Array<(GetAvailablePersonalDynamicEntities200Response, Integer, Hash)>] GetAvailablePersonalDynamicEntities200Response data, response status code and response headers
+    def get_my_dynamic_entities_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.o_bpv6_0_0_get_my_dynamic_entities ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.get_my_dynamic_entities ...'
       end
       # resource path
       local_var_path = '/obp/v6.0.0/my/dynamic-entities'
@@ -641,13 +641,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetAvailablePersonalDynamicEntities200Response'
+      return_type = opts[:debug_return_type] || 'GetAvailablePersonalDynamicEntities200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEntityManageApi.o_bpv6_0_0_get_my_dynamic_entities",
+        :operation => :"DynamicEntityManageApi.get_my_dynamic_entities",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -658,7 +658,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEntityManageApi#o_bpv6_0_0_get_my_dynamic_entities\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEntityManageApi#get_my_dynamic_entities\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -666,19 +666,19 @@ module OpenBankProject
     # Get System Dynamic Entities
     # <p>Get all System Dynamic Entities with record counts.</p> <p>Each dynamic entity in the response includes a <code>record_count</code> field showing how many data records exist for that entity.</p> <p>This v6.0.0 endpoint returns snake_case field names and an explicit <code>entity_name</code> field.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetSystemDynamicEntities200Response]
-    def o_bpv6_0_0_get_system_dynamic_entities(opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_system_dynamic_entities_with_http_info(opts)
+    # @return [GetSystemDynamicEntities200Response]
+    def get_system_dynamic_entities(opts = {})
+      data, _status_code, _headers = get_system_dynamic_entities_with_http_info(opts)
       data
     end
 
     # Get System Dynamic Entities
     # &lt;p&gt;Get all System Dynamic Entities with record counts.&lt;/p&gt; &lt;p&gt;Each dynamic entity in the response includes a &lt;code&gt;record_count&lt;/code&gt; field showing how many data records exist for that entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns snake_case field names and an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetSystemDynamicEntities200Response, Integer, Hash)>] OBPv600GetSystemDynamicEntities200Response data, response status code and response headers
-    def o_bpv6_0_0_get_system_dynamic_entities_with_http_info(opts = {})
+    # @return [Array<(GetSystemDynamicEntities200Response, Integer, Hash)>] GetSystemDynamicEntities200Response data, response status code and response headers
+    def get_system_dynamic_entities_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.o_bpv6_0_0_get_system_dynamic_entities ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.get_system_dynamic_entities ...'
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/system-dynamic-entities'
@@ -698,13 +698,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetSystemDynamicEntities200Response'
+      return_type = opts[:debug_return_type] || 'GetSystemDynamicEntities200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEntityManageApi.o_bpv6_0_0_get_system_dynamic_entities",
+        :operation => :"DynamicEntityManageApi.get_system_dynamic_entities",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -715,7 +715,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEntityManageApi#o_bpv6_0_0_get_system_dynamic_entities\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEntityManageApi#get_system_dynamic_entities\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -724,11 +724,11 @@ module OpenBankProject
     # <p>Update a bank level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences updated&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;},       &quot;notifications_enabled&quot;: {&quot;type&quot;: &quot;boolean&quot;, &quot;example&quot;: &quot;true&quot;, &quot;description&quot;: &quot;Whether to send notifications&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
     # @param bankid [String] The BANKID identifier
     # @param dynamicentityid [String] The DYNAMICENTITYID identifier
-    # @param obpv600_update_system_dynamic_entity_request [OBPv600UpdateSystemDynamicEntityRequest] Request body
+    # @param update_system_dynamic_entity_request [UpdateSystemDynamicEntityRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600UpdateBankLevelDynamicEntity200Response]
-    def o_bpv6_0_0_update_bank_level_dynamic_entity(bankid, dynamicentityid, obpv600_update_system_dynamic_entity_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_update_bank_level_dynamic_entity_with_http_info(bankid, dynamicentityid, obpv600_update_system_dynamic_entity_request, opts)
+    # @return [UpdateBankLevelDynamicEntity200Response]
+    def update_bank_level_dynamic_entity(bankid, dynamicentityid, update_system_dynamic_entity_request, opts = {})
+      data, _status_code, _headers = update_bank_level_dynamic_entity_with_http_info(bankid, dynamicentityid, update_system_dynamic_entity_request, opts)
       data
     end
 
@@ -736,24 +736,24 @@ module OpenBankProject
     # &lt;p&gt;Update a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param dynamicentityid [String] The DYNAMICENTITYID identifier
-    # @param obpv600_update_system_dynamic_entity_request [OBPv600UpdateSystemDynamicEntityRequest] Request body
+    # @param update_system_dynamic_entity_request [UpdateSystemDynamicEntityRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600UpdateBankLevelDynamicEntity200Response, Integer, Hash)>] OBPv600UpdateBankLevelDynamicEntity200Response data, response status code and response headers
-    def o_bpv6_0_0_update_bank_level_dynamic_entity_with_http_info(bankid, dynamicentityid, obpv600_update_system_dynamic_entity_request, opts = {})
+    # @return [Array<(UpdateBankLevelDynamicEntity200Response, Integer, Hash)>] UpdateBankLevelDynamicEntity200Response data, response status code and response headers
+    def update_bank_level_dynamic_entity_with_http_info(bankid, dynamicentityid, update_system_dynamic_entity_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.o_bpv6_0_0_update_bank_level_dynamic_entity ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.update_bank_level_dynamic_entity ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEntityManageApi.o_bpv6_0_0_update_bank_level_dynamic_entity"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEntityManageApi.update_bank_level_dynamic_entity"
       end
       # verify the required parameter 'dynamicentityid' is set
       if @api_client.config.client_side_validation && dynamicentityid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.o_bpv6_0_0_update_bank_level_dynamic_entity"
+        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.update_bank_level_dynamic_entity"
       end
-      # verify the required parameter 'obpv600_update_system_dynamic_entity_request' is set
-      if @api_client.config.client_side_validation && obpv600_update_system_dynamic_entity_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_update_system_dynamic_entity_request' when calling DynamicEntityManageApi.o_bpv6_0_0_update_bank_level_dynamic_entity"
+      # verify the required parameter 'update_system_dynamic_entity_request' is set
+      if @api_client.config.client_side_validation && update_system_dynamic_entity_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_system_dynamic_entity_request' when calling DynamicEntityManageApi.update_bank_level_dynamic_entity"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'dynamicentityid' + '}', CGI.escape(dynamicentityid.to_s))
@@ -775,16 +775,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_update_system_dynamic_entity_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_system_dynamic_entity_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600UpdateBankLevelDynamicEntity200Response'
+      return_type = opts[:debug_return_type] || 'UpdateBankLevelDynamicEntity200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEntityManageApi.o_bpv6_0_0_update_bank_level_dynamic_entity",
+        :operation => :"DynamicEntityManageApi.update_bank_level_dynamic_entity",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -795,7 +795,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEntityManageApi#o_bpv6_0_0_update_bank_level_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEntityManageApi#update_bank_level_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -803,31 +803,31 @@ module OpenBankProject
     # Update My Dynamic Entity
     # <p>Update a Dynamic Entity that I created.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences updated&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;},       &quot;notifications_enabled&quot;: {&quot;type&quot;: &quot;boolean&quot;, &quot;example&quot;: &quot;true&quot;, &quot;description&quot;: &quot;Whether to send notifications&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
     # @param dynamicentityid [String] The DYNAMICENTITYID identifier
-    # @param obpv600_update_system_dynamic_entity_request [OBPv600UpdateSystemDynamicEntityRequest] Request body
+    # @param update_system_dynamic_entity_request [UpdateSystemDynamicEntityRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600UpdateSystemDynamicEntity200Response]
-    def o_bpv6_0_0_update_my_dynamic_entity(dynamicentityid, obpv600_update_system_dynamic_entity_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_update_my_dynamic_entity_with_http_info(dynamicentityid, obpv600_update_system_dynamic_entity_request, opts)
+    # @return [UpdateSystemDynamicEntity200Response]
+    def update_my_dynamic_entity(dynamicentityid, update_system_dynamic_entity_request, opts = {})
+      data, _status_code, _headers = update_my_dynamic_entity_with_http_info(dynamicentityid, update_system_dynamic_entity_request, opts)
       data
     end
 
     # Update My Dynamic Entity
     # &lt;p&gt;Update a Dynamic Entity that I created.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
     # @param dynamicentityid [String] The DYNAMICENTITYID identifier
-    # @param obpv600_update_system_dynamic_entity_request [OBPv600UpdateSystemDynamicEntityRequest] Request body
+    # @param update_system_dynamic_entity_request [UpdateSystemDynamicEntityRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600UpdateSystemDynamicEntity200Response, Integer, Hash)>] OBPv600UpdateSystemDynamicEntity200Response data, response status code and response headers
-    def o_bpv6_0_0_update_my_dynamic_entity_with_http_info(dynamicentityid, obpv600_update_system_dynamic_entity_request, opts = {})
+    # @return [Array<(UpdateSystemDynamicEntity200Response, Integer, Hash)>] UpdateSystemDynamicEntity200Response data, response status code and response headers
+    def update_my_dynamic_entity_with_http_info(dynamicentityid, update_system_dynamic_entity_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.o_bpv6_0_0_update_my_dynamic_entity ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.update_my_dynamic_entity ...'
       end
       # verify the required parameter 'dynamicentityid' is set
       if @api_client.config.client_side_validation && dynamicentityid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.o_bpv6_0_0_update_my_dynamic_entity"
+        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.update_my_dynamic_entity"
       end
-      # verify the required parameter 'obpv600_update_system_dynamic_entity_request' is set
-      if @api_client.config.client_side_validation && obpv600_update_system_dynamic_entity_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_update_system_dynamic_entity_request' when calling DynamicEntityManageApi.o_bpv6_0_0_update_my_dynamic_entity"
+      # verify the required parameter 'update_system_dynamic_entity_request' is set
+      if @api_client.config.client_side_validation && update_system_dynamic_entity_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_system_dynamic_entity_request' when calling DynamicEntityManageApi.update_my_dynamic_entity"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/my/dynamic-entities/{dynamicentityid}'.sub('{' + 'dynamicentityid' + '}', CGI.escape(dynamicentityid.to_s))
@@ -849,16 +849,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_update_system_dynamic_entity_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_system_dynamic_entity_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600UpdateSystemDynamicEntity200Response'
+      return_type = opts[:debug_return_type] || 'UpdateSystemDynamicEntity200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEntityManageApi.o_bpv6_0_0_update_my_dynamic_entity",
+        :operation => :"DynamicEntityManageApi.update_my_dynamic_entity",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -869,7 +869,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEntityManageApi#o_bpv6_0_0_update_my_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEntityManageApi#update_my_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -877,31 +877,31 @@ module OpenBankProject
     # Update System Level Dynamic Entity
     # <p>Update a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences updated&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;},       &quot;notifications_enabled&quot;: {&quot;type&quot;: &quot;boolean&quot;, &quot;example&quot;: &quot;true&quot;, &quot;description&quot;: &quot;Whether to send notifications&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
     # @param dynamicentityid [String] The DYNAMICENTITYID identifier
-    # @param obpv600_update_system_dynamic_entity_request [OBPv600UpdateSystemDynamicEntityRequest] Request body
+    # @param update_system_dynamic_entity_request [UpdateSystemDynamicEntityRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600UpdateSystemDynamicEntity200Response]
-    def o_bpv6_0_0_update_system_dynamic_entity(dynamicentityid, obpv600_update_system_dynamic_entity_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_update_system_dynamic_entity_with_http_info(dynamicentityid, obpv600_update_system_dynamic_entity_request, opts)
+    # @return [UpdateSystemDynamicEntity200Response]
+    def update_system_dynamic_entity(dynamicentityid, update_system_dynamic_entity_request, opts = {})
+      data, _status_code, _headers = update_system_dynamic_entity_with_http_info(dynamicentityid, update_system_dynamic_entity_request, opts)
       data
     end
 
     # Update System Level Dynamic Entity
     # &lt;p&gt;Update a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
     # @param dynamicentityid [String] The DYNAMICENTITYID identifier
-    # @param obpv600_update_system_dynamic_entity_request [OBPv600UpdateSystemDynamicEntityRequest] Request body
+    # @param update_system_dynamic_entity_request [UpdateSystemDynamicEntityRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600UpdateSystemDynamicEntity200Response, Integer, Hash)>] OBPv600UpdateSystemDynamicEntity200Response data, response status code and response headers
-    def o_bpv6_0_0_update_system_dynamic_entity_with_http_info(dynamicentityid, obpv600_update_system_dynamic_entity_request, opts = {})
+    # @return [Array<(UpdateSystemDynamicEntity200Response, Integer, Hash)>] UpdateSystemDynamicEntity200Response data, response status code and response headers
+    def update_system_dynamic_entity_with_http_info(dynamicentityid, update_system_dynamic_entity_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.o_bpv6_0_0_update_system_dynamic_entity ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEntityManageApi.update_system_dynamic_entity ...'
       end
       # verify the required parameter 'dynamicentityid' is set
       if @api_client.config.client_side_validation && dynamicentityid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.o_bpv6_0_0_update_system_dynamic_entity"
+        fail ArgumentError, "Missing the required parameter 'dynamicentityid' when calling DynamicEntityManageApi.update_system_dynamic_entity"
       end
-      # verify the required parameter 'obpv600_update_system_dynamic_entity_request' is set
-      if @api_client.config.client_side_validation && obpv600_update_system_dynamic_entity_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_update_system_dynamic_entity_request' when calling DynamicEntityManageApi.o_bpv6_0_0_update_system_dynamic_entity"
+      # verify the required parameter 'update_system_dynamic_entity_request' is set
+      if @api_client.config.client_side_validation && update_system_dynamic_entity_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_system_dynamic_entity_request' when calling DynamicEntityManageApi.update_system_dynamic_entity"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}'.sub('{' + 'dynamicentityid' + '}', CGI.escape(dynamicentityid.to_s))
@@ -923,16 +923,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_update_system_dynamic_entity_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_system_dynamic_entity_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600UpdateSystemDynamicEntity200Response'
+      return_type = opts[:debug_return_type] || 'UpdateSystemDynamicEntity200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEntityManageApi.o_bpv6_0_0_update_system_dynamic_entity",
+        :operation => :"DynamicEntityManageApi.update_system_dynamic_entity",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -943,7 +943,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEntityManageApi#o_bpv6_0_0_update_system_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEntityManageApi#update_system_dynamic_entity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

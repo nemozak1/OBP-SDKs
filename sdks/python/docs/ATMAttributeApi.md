@@ -4,15 +4,15 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv5_1_0_create_atm_attribute**](ATMAttributeApi.md#o_bpv5_1_0_create_atm_attribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
-[**o_bpv5_1_0_delete_atm_attribute**](ATMAttributeApi.md#o_bpv5_1_0_delete_atm_attribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
-[**o_bpv5_1_0_get_atm_attribute**](ATMAttributeApi.md#o_bpv5_1_0_get_atm_attribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
-[**o_bpv5_1_0_get_atm_attributes**](ATMAttributeApi.md#o_bpv5_1_0_get_atm_attributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
-[**o_bpv5_1_0_update_atm_attribute**](ATMAttributeApi.md#o_bpv5_1_0_update_atm_attribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
+[**create_atm_attribute**](ATMAttributeApi.md#create_atm_attribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
+[**delete_atm_attribute**](ATMAttributeApi.md#delete_atm_attribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
+[**get_atm_attribute**](ATMAttributeApi.md#get_atm_attribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
+[**get_atm_attributes**](ATMAttributeApi.md#get_atm_attributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
+[**update_atm_attribute**](ATMAttributeApi.md#update_atm_attribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
 
 
-# **o_bpv5_1_0_create_atm_attribute**
-> OBPv510GetAtmAttribute200Response o_bpv5_1_0_create_atm_attribute(bankid, atmid, obpv510_update_atm_attribute_request)
+# **create_atm_attribute**
+> GetAtmAttribute200Response create_atm_attribute(bankid, atmid, update_atm_attribute_request)
 
 Create ATM Attribute
 
@@ -45,8 +45,8 @@ Create ATM Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_atm_attribute200_response import OBPv510GetAtmAttribute200Response
-from obp_python.models.obpv510_update_atm_attribute_request import OBPv510UpdateAtmAttributeRequest
+from obp_python.models.get_atm_attribute200_response import GetAtmAttribute200Response
+from obp_python.models.update_atm_attribute_request import UpdateAtmAttributeRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -81,15 +81,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.ATMAttributeApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     atmid = 'atmid_example' # str | The ATMID identifier
-    obpv510_update_atm_attribute_request = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} # OBPv510UpdateAtmAttributeRequest | Request body
+    update_atm_attribute_request = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} # UpdateAtmAttributeRequest | Request body
 
     try:
         # Create ATM Attribute
-        api_response = api_instance.o_bpv5_1_0_create_atm_attribute(bankid, atmid, obpv510_update_atm_attribute_request)
-        print("The response of ATMAttributeApi->o_bpv5_1_0_create_atm_attribute:\n")
+        api_response = api_instance.create_atm_attribute(bankid, atmid, update_atm_attribute_request)
+        print("The response of ATMAttributeApi->create_atm_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ATMAttributeApi->o_bpv5_1_0_create_atm_attribute: %s\n" % e)
+        print("Exception when calling ATMAttributeApi->create_atm_attribute: %s\n" % e)
 ```
 
 
@@ -101,11 +101,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **atmid** | **str**| The ATMID identifier | 
- **obpv510_update_atm_attribute_request** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | 
+ **update_atm_attribute_request** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -126,8 +126,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_delete_atm_attribute**
-> o_bpv5_1_0_delete_atm_attribute(bankid, atmid, atmattributeid)
+# **delete_atm_attribute**
+> delete_atm_attribute(bankid, atmid, atmattributeid)
 
 Delete ATM Attribute
 
@@ -187,9 +187,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete ATM Attribute
-        api_instance.o_bpv5_1_0_delete_atm_attribute(bankid, atmid, atmattributeid)
+        api_instance.delete_atm_attribute(bankid, atmid, atmattributeid)
     except Exception as e:
-        print("Exception when calling ATMAttributeApi->o_bpv5_1_0_delete_atm_attribute: %s\n" % e)
+        print("Exception when calling ATMAttributeApi->delete_atm_attribute: %s\n" % e)
 ```
 
 
@@ -226,8 +226,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_get_atm_attribute**
-> OBPv510GetAtmAttribute200Response o_bpv5_1_0_get_atm_attribute(bankid, atmid, atmattributeid)
+# **get_atm_attribute**
+> GetAtmAttribute200Response get_atm_attribute(bankid, atmid, atmattributeid)
 
 Get ATM Attribute By ATM_ATTRIBUTE_ID
 
@@ -255,7 +255,7 @@ Get ATM Attribute By ATM_ATTRIBUTE_ID
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_atm_attribute200_response import OBPv510GetAtmAttribute200Response
+from obp_python.models.get_atm_attribute200_response import GetAtmAttribute200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -294,11 +294,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get ATM Attribute By ATM_ATTRIBUTE_ID
-        api_response = api_instance.o_bpv5_1_0_get_atm_attribute(bankid, atmid, atmattributeid)
-        print("The response of ATMAttributeApi->o_bpv5_1_0_get_atm_attribute:\n")
+        api_response = api_instance.get_atm_attribute(bankid, atmid, atmattributeid)
+        print("The response of ATMAttributeApi->get_atm_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ATMAttributeApi->o_bpv5_1_0_get_atm_attribute: %s\n" % e)
+        print("Exception when calling ATMAttributeApi->get_atm_attribute: %s\n" % e)
 ```
 
 
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -335,8 +335,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_get_atm_attributes**
-> OBPv510GetAtmAttributes200Response o_bpv5_1_0_get_atm_attributes(bankid, atmid)
+# **get_atm_attributes**
+> GetAtmAttributes200Response get_atm_attributes(bankid, atmid)
 
 Get ATM Attributes
 
@@ -364,7 +364,7 @@ Get ATM Attributes
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_atm_attributes200_response import OBPv510GetAtmAttributes200Response
+from obp_python.models.get_atm_attributes200_response import GetAtmAttributes200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -402,11 +402,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get ATM Attributes
-        api_response = api_instance.o_bpv5_1_0_get_atm_attributes(bankid, atmid)
-        print("The response of ATMAttributeApi->o_bpv5_1_0_get_atm_attributes:\n")
+        api_response = api_instance.get_atm_attributes(bankid, atmid)
+        print("The response of ATMAttributeApi->get_atm_attributes:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ATMAttributeApi->o_bpv5_1_0_get_atm_attributes: %s\n" % e)
+        print("Exception when calling ATMAttributeApi->get_atm_attributes: %s\n" % e)
 ```
 
 
@@ -421,7 +421,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAtmAttributes200Response**](OBPv510GetAtmAttributes200Response.md)
+[**GetAtmAttributes200Response**](GetAtmAttributes200Response.md)
 
 ### Authorization
 
@@ -442,8 +442,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_update_atm_attribute**
-> OBPv510GetAtmAttribute200Response o_bpv5_1_0_update_atm_attribute(bankid, atmid, atmattributeid, obpv510_update_atm_attribute_request)
+# **update_atm_attribute**
+> GetAtmAttribute200Response update_atm_attribute(bankid, atmid, atmattributeid, update_atm_attribute_request)
 
 Update ATM Attribute
 
@@ -472,8 +472,8 @@ Update ATM Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_atm_attribute200_response import OBPv510GetAtmAttribute200Response
-from obp_python.models.obpv510_update_atm_attribute_request import OBPv510UpdateAtmAttributeRequest
+from obp_python.models.get_atm_attribute200_response import GetAtmAttribute200Response
+from obp_python.models.update_atm_attribute_request import UpdateAtmAttributeRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -509,15 +509,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     atmid = 'atmid_example' # str | The ATMID identifier
     atmattributeid = 'atmattributeid_example' # str | The ATMATTRIBUTEID identifier
-    obpv510_update_atm_attribute_request = {"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"},"is_active":{"type":"boolean"},"type":{"type":"string"}}} # OBPv510UpdateAtmAttributeRequest | Request body
+    update_atm_attribute_request = {"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"},"is_active":{"type":"boolean"},"type":{"type":"string"}}} # UpdateAtmAttributeRequest | Request body
 
     try:
         # Update ATM Attribute
-        api_response = api_instance.o_bpv5_1_0_update_atm_attribute(bankid, atmid, atmattributeid, obpv510_update_atm_attribute_request)
-        print("The response of ATMAttributeApi->o_bpv5_1_0_update_atm_attribute:\n")
+        api_response = api_instance.update_atm_attribute(bankid, atmid, atmattributeid, update_atm_attribute_request)
+        print("The response of ATMAttributeApi->update_atm_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ATMAttributeApi->o_bpv5_1_0_update_atm_attribute: %s\n" % e)
+        print("Exception when calling ATMAttributeApi->update_atm_attribute: %s\n" % e)
 ```
 
 
@@ -530,11 +530,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **atmid** | **str**| The ATMID identifier | 
  **atmattributeid** | **str**| The ATMATTRIBUTEID identifier | 
- **obpv510_update_atm_attribute_request** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | 
+ **update_atm_attribute_request** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 

@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,25 +24,25 @@ import (
 // BankAttributeAPIService BankAttributeAPI service
 type BankAttributeAPIService service
 
-type ApiOBPv400CreateBankAttributeRequest struct {
+type ApiCreateBankAttributeRequest struct {
 	ctx context.Context
 	ApiService *BankAttributeAPIService
 	bankid string
-	oBPv510UpdateAtmAttributeRequest *OBPv510UpdateAtmAttributeRequest
+	updateAtmAttributeRequest *UpdateAtmAttributeRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateBankAttributeRequest) OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest OBPv510UpdateAtmAttributeRequest) ApiOBPv400CreateBankAttributeRequest {
-	r.oBPv510UpdateAtmAttributeRequest = &oBPv510UpdateAtmAttributeRequest
+func (r ApiCreateBankAttributeRequest) UpdateAtmAttributeRequest(updateAtmAttributeRequest UpdateAtmAttributeRequest) ApiCreateBankAttributeRequest {
+	r.updateAtmAttributeRequest = &updateAtmAttributeRequest
 	return r
 }
 
-func (r ApiOBPv400CreateBankAttributeRequest) Execute() (*OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateBankAttributeExecute(r)
+func (r ApiCreateBankAttributeRequest) Execute() (*GetBankAttributes200ResponseBankAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateBankAttributeExecute(r)
 }
 
 /*
-OBPv400CreateBankAttribute Create Bank Attribute
+CreateBankAttribute Create Bank Attribute
 
 <p>Create Bank Attribute</p>
 <p>Typical product attributes might be:</p>
@@ -74,10 +74,10 @@ TRADABLE</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400CreateBankAttributeRequest
+ @return ApiCreateBankAttributeRequest
 */
-func (a *BankAttributeAPIService) OBPv400CreateBankAttribute(ctx context.Context, bankid string) ApiOBPv400CreateBankAttributeRequest {
-	return ApiOBPv400CreateBankAttributeRequest{
+func (a *BankAttributeAPIService) CreateBankAttribute(ctx context.Context, bankid string) ApiCreateBankAttributeRequest {
+	return ApiCreateBankAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -85,16 +85,16 @@ func (a *BankAttributeAPIService) OBPv400CreateBankAttribute(ctx context.Context
 }
 
 // Execute executes the request
-//  @return OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems
-func (a *BankAttributeAPIService) OBPv400CreateBankAttributeExecute(r ApiOBPv400CreateBankAttributeRequest) (*OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems, *http.Response, error) {
+//  @return GetBankAttributes200ResponseBankAttributesInner
+func (a *BankAttributeAPIService) CreateBankAttributeExecute(r ApiCreateBankAttributeRequest) (*GetBankAttributes200ResponseBankAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems
+		localVarReturnValue  *GetBankAttributes200ResponseBankAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BankAttributeAPIService.OBPv400CreateBankAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BankAttributeAPIService.CreateBankAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -105,8 +105,8 @@ func (a *BankAttributeAPIService) OBPv400CreateBankAttributeExecute(r ApiOBPv400
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAtmAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAtmAttributeRequest is required and must be specified")
+	if r.updateAtmAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmAttributeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -127,7 +127,7 @@ func (a *BankAttributeAPIService) OBPv400CreateBankAttributeExecute(r ApiOBPv400
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateAtmAttributeRequest
+	localVarPostBody = r.updateAtmAttributeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -152,7 +152,7 @@ func (a *BankAttributeAPIService) OBPv400CreateBankAttributeExecute(r ApiOBPv400
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -193,25 +193,25 @@ func (a *BankAttributeAPIService) OBPv400CreateBankAttributeExecute(r ApiOBPv400
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateOrUpdateBankAttributeDefinitionRequest struct {
+type ApiCreateOrUpdateBankAttributeDefinitionRequest struct {
 	ctx context.Context
 	ApiService *BankAttributeAPIService
 	bankid string
-	oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest *OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+	createOrUpdateTransactionRequestAttributeDefinitionRequest *CreateOrUpdateTransactionRequestAttributeDefinitionRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateOrUpdateBankAttributeDefinitionRequest) OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiOBPv400CreateOrUpdateBankAttributeDefinitionRequest {
-	r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = &oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+func (r ApiCreateOrUpdateBankAttributeDefinitionRequest) CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiCreateOrUpdateBankAttributeDefinitionRequest {
+	r.createOrUpdateTransactionRequestAttributeDefinitionRequest = &createOrUpdateTransactionRequestAttributeDefinitionRequest
 	return r
 }
 
-func (r ApiOBPv400CreateOrUpdateBankAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateOrUpdateBankAttributeDefinitionExecute(r)
+func (r ApiCreateOrUpdateBankAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateOrUpdateBankAttributeDefinitionExecute(r)
 }
 
 /*
-OBPv400CreateOrUpdateBankAttributeDefinition Create or Update Bank Attribute Definition
+CreateOrUpdateBankAttributeDefinition Create or Update Bank Attribute Definition
 
 <p>Create or Update Bank Attribute Definition</p>
 <p>The category field must be Bank</p>
@@ -233,10 +233,10 @@ OBPv400CreateOrUpdateBankAttributeDefinition Create or Update Bank Attribute Def
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400CreateOrUpdateBankAttributeDefinitionRequest
+ @return ApiCreateOrUpdateBankAttributeDefinitionRequest
 */
-func (a *BankAttributeAPIService) OBPv400CreateOrUpdateBankAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400CreateOrUpdateBankAttributeDefinitionRequest {
-	return ApiOBPv400CreateOrUpdateBankAttributeDefinitionRequest{
+func (a *BankAttributeAPIService) CreateOrUpdateBankAttributeDefinition(ctx context.Context, bankid string) ApiCreateOrUpdateBankAttributeDefinitionRequest {
+	return ApiCreateOrUpdateBankAttributeDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -244,16 +244,16 @@ func (a *BankAttributeAPIService) OBPv400CreateOrUpdateBankAttributeDefinition(c
 }
 
 // Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-func (a *BankAttributeAPIService) OBPv400CreateOrUpdateBankAttributeDefinitionExecute(r ApiOBPv400CreateOrUpdateBankAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
+//  @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+func (a *BankAttributeAPIService) CreateOrUpdateBankAttributeDefinitionExecute(r ApiCreateOrUpdateBankAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BankAttributeAPIService.OBPv400CreateOrUpdateBankAttributeDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BankAttributeAPIService.CreateOrUpdateBankAttributeDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -264,8 +264,8 @@ func (a *BankAttributeAPIService) OBPv400CreateOrUpdateBankAttributeDefinitionEx
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
+	if r.createOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
+		return localVarReturnValue, nil, reportError("createOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -286,7 +286,7 @@ func (a *BankAttributeAPIService) OBPv400CreateOrUpdateBankAttributeDefinitionEx
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+	localVarPostBody = r.createOrUpdateTransactionRequestAttributeDefinitionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -311,7 +311,7 @@ func (a *BankAttributeAPIService) OBPv400CreateOrUpdateBankAttributeDefinitionEx
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -352,19 +352,19 @@ func (a *BankAttributeAPIService) OBPv400CreateOrUpdateBankAttributeDefinitionEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteBankAttributeRequest struct {
+type ApiDeleteBankAttributeRequest struct {
 	ctx context.Context
 	ApiService *BankAttributeAPIService
 	bankid string
 	bankattributeid string
 }
 
-func (r ApiOBPv400DeleteBankAttributeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteBankAttributeExecute(r)
+func (r ApiDeleteBankAttributeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteBankAttributeExecute(r)
 }
 
 /*
-OBPv400DeleteBankAttribute Delete Bank Attribute
+DeleteBankAttribute Delete Bank Attribute
 
 <p>Delete Bank Attribute</p>
 <p>Delete a Bank Attribute by its id.</p>
@@ -378,10 +378,10 @@ OBPv400DeleteBankAttribute Delete Bank Attribute
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param bankattributeid The BANKATTRIBUTEID identifier
- @return ApiOBPv400DeleteBankAttributeRequest
+ @return ApiDeleteBankAttributeRequest
 */
-func (a *BankAttributeAPIService) OBPv400DeleteBankAttribute(ctx context.Context, bankid string, bankattributeid string) ApiOBPv400DeleteBankAttributeRequest {
-	return ApiOBPv400DeleteBankAttributeRequest{
+func (a *BankAttributeAPIService) DeleteBankAttribute(ctx context.Context, bankid string, bankattributeid string) ApiDeleteBankAttributeRequest {
+	return ApiDeleteBankAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -390,14 +390,14 @@ func (a *BankAttributeAPIService) OBPv400DeleteBankAttribute(ctx context.Context
 }
 
 // Execute executes the request
-func (a *BankAttributeAPIService) OBPv400DeleteBankAttributeExecute(r ApiOBPv400DeleteBankAttributeRequest) (*http.Response, error) {
+func (a *BankAttributeAPIService) DeleteBankAttributeExecute(r ApiDeleteBankAttributeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BankAttributeAPIService.OBPv400DeleteBankAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BankAttributeAPIService.DeleteBankAttribute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -451,7 +451,7 @@ func (a *BankAttributeAPIService) OBPv400DeleteBankAttributeExecute(r ApiOBPv400
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -483,19 +483,19 @@ func (a *BankAttributeAPIService) OBPv400DeleteBankAttributeExecute(r ApiOBPv400
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetBankAttributeRequest struct {
+type ApiGetBankAttributeRequest struct {
 	ctx context.Context
 	ApiService *BankAttributeAPIService
 	bankid string
 	bankattributeid string
 }
 
-func (r ApiOBPv400GetBankAttributeRequest) Execute() (*OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetBankAttributeExecute(r)
+func (r ApiGetBankAttributeRequest) Execute() (*GetBankAttributes200ResponseBankAttributesInner, *http.Response, error) {
+	return r.ApiService.GetBankAttributeExecute(r)
 }
 
 /*
-OBPv400GetBankAttribute Get Bank Attribute By BANK_ATTRIBUTE_ID
+GetBankAttribute Get Bank Attribute By BANK_ATTRIBUTE_ID
 
 <p>Get Bank Attribute By BANK_ATTRIBUTE_ID</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -514,10 +514,10 @@ OBPv400GetBankAttribute Get Bank Attribute By BANK_ATTRIBUTE_ID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param bankattributeid The BANKATTRIBUTEID identifier
- @return ApiOBPv400GetBankAttributeRequest
+ @return ApiGetBankAttributeRequest
 */
-func (a *BankAttributeAPIService) OBPv400GetBankAttribute(ctx context.Context, bankid string, bankattributeid string) ApiOBPv400GetBankAttributeRequest {
-	return ApiOBPv400GetBankAttributeRequest{
+func (a *BankAttributeAPIService) GetBankAttribute(ctx context.Context, bankid string, bankattributeid string) ApiGetBankAttributeRequest {
+	return ApiGetBankAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -526,16 +526,16 @@ func (a *BankAttributeAPIService) OBPv400GetBankAttribute(ctx context.Context, b
 }
 
 // Execute executes the request
-//  @return OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems
-func (a *BankAttributeAPIService) OBPv400GetBankAttributeExecute(r ApiOBPv400GetBankAttributeRequest) (*OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems, *http.Response, error) {
+//  @return GetBankAttributes200ResponseBankAttributesInner
+func (a *BankAttributeAPIService) GetBankAttributeExecute(r ApiGetBankAttributeRequest) (*GetBankAttributes200ResponseBankAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems
+		localVarReturnValue  *GetBankAttributes200ResponseBankAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BankAttributeAPIService.OBPv400GetBankAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BankAttributeAPIService.GetBankAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -589,7 +589,7 @@ func (a *BankAttributeAPIService) OBPv400GetBankAttributeExecute(r ApiOBPv400Get
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -630,18 +630,18 @@ func (a *BankAttributeAPIService) OBPv400GetBankAttributeExecute(r ApiOBPv400Get
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetBankAttributesRequest struct {
+type ApiGetBankAttributesRequest struct {
 	ctx context.Context
 	ApiService *BankAttributeAPIService
 	bankid string
 }
 
-func (r ApiOBPv400GetBankAttributesRequest) Execute() (*OBPv400GetBankAttributes200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetBankAttributesExecute(r)
+func (r ApiGetBankAttributesRequest) Execute() (*GetBankAttributes200Response, *http.Response, error) {
+	return r.ApiService.GetBankAttributesExecute(r)
 }
 
 /*
-OBPv400GetBankAttributes Get Bank Attributes
+GetBankAttributes Get Bank Attributes
 
 <p>Get Bank Attributes</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -659,10 +659,10 @@ OBPv400GetBankAttributes Get Bank Attributes
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400GetBankAttributesRequest
+ @return ApiGetBankAttributesRequest
 */
-func (a *BankAttributeAPIService) OBPv400GetBankAttributes(ctx context.Context, bankid string) ApiOBPv400GetBankAttributesRequest {
-	return ApiOBPv400GetBankAttributesRequest{
+func (a *BankAttributeAPIService) GetBankAttributes(ctx context.Context, bankid string) ApiGetBankAttributesRequest {
+	return ApiGetBankAttributesRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -670,16 +670,16 @@ func (a *BankAttributeAPIService) OBPv400GetBankAttributes(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return OBPv400GetBankAttributes200Response
-func (a *BankAttributeAPIService) OBPv400GetBankAttributesExecute(r ApiOBPv400GetBankAttributesRequest) (*OBPv400GetBankAttributes200Response, *http.Response, error) {
+//  @return GetBankAttributes200Response
+func (a *BankAttributeAPIService) GetBankAttributesExecute(r ApiGetBankAttributesRequest) (*GetBankAttributes200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetBankAttributes200Response
+		localVarReturnValue  *GetBankAttributes200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BankAttributeAPIService.OBPv400GetBankAttributes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BankAttributeAPIService.GetBankAttributes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -732,7 +732,7 @@ func (a *BankAttributeAPIService) OBPv400GetBankAttributesExecute(r ApiOBPv400Ge
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -773,26 +773,26 @@ func (a *BankAttributeAPIService) OBPv400GetBankAttributesExecute(r ApiOBPv400Ge
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateBankAttributeRequest struct {
+type ApiUpdateBankAttributeRequest struct {
 	ctx context.Context
 	ApiService *BankAttributeAPIService
 	bankid string
 	bankattributeid string
-	oBPv510UpdateAtmAttributeRequest *OBPv510UpdateAtmAttributeRequest
+	updateAtmAttributeRequest *UpdateAtmAttributeRequest
 }
 
 // Request body
-func (r ApiOBPv400UpdateBankAttributeRequest) OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest OBPv510UpdateAtmAttributeRequest) ApiOBPv400UpdateBankAttributeRequest {
-	r.oBPv510UpdateAtmAttributeRequest = &oBPv510UpdateAtmAttributeRequest
+func (r ApiUpdateBankAttributeRequest) UpdateAtmAttributeRequest(updateAtmAttributeRequest UpdateAtmAttributeRequest) ApiUpdateBankAttributeRequest {
+	r.updateAtmAttributeRequest = &updateAtmAttributeRequest
 	return r
 }
 
-func (r ApiOBPv400UpdateBankAttributeRequest) Execute() (*OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateBankAttributeExecute(r)
+func (r ApiUpdateBankAttributeRequest) Execute() (*CreateOrUpdateTransactionRequestAttributeDefinitionRequest, *http.Response, error) {
+	return r.ApiService.UpdateBankAttributeExecute(r)
 }
 
 /*
-OBPv400UpdateBankAttribute Update Bank Attribute
+UpdateBankAttribute Update Bank Attribute
 
 <p>Update Bank Attribute.</p>
 <p>Update one Bak Attribute by its id.</p>
@@ -813,10 +813,10 @@ OBPv400UpdateBankAttribute Update Bank Attribute
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param bankattributeid The BANKATTRIBUTEID identifier
- @return ApiOBPv400UpdateBankAttributeRequest
+ @return ApiUpdateBankAttributeRequest
 */
-func (a *BankAttributeAPIService) OBPv400UpdateBankAttribute(ctx context.Context, bankid string, bankattributeid string) ApiOBPv400UpdateBankAttributeRequest {
-	return ApiOBPv400UpdateBankAttributeRequest{
+func (a *BankAttributeAPIService) UpdateBankAttribute(ctx context.Context, bankid string, bankattributeid string) ApiUpdateBankAttributeRequest {
+	return ApiUpdateBankAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -825,16 +825,16 @@ func (a *BankAttributeAPIService) OBPv400UpdateBankAttribute(ctx context.Context
 }
 
 // Execute executes the request
-//  @return OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-func (a *BankAttributeAPIService) OBPv400UpdateBankAttributeExecute(r ApiOBPv400UpdateBankAttributeRequest) (*OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, *http.Response, error) {
+//  @return CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+func (a *BankAttributeAPIService) UpdateBankAttributeExecute(r ApiUpdateBankAttributeRequest) (*CreateOrUpdateTransactionRequestAttributeDefinitionRequest, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+		localVarReturnValue  *CreateOrUpdateTransactionRequestAttributeDefinitionRequest
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BankAttributeAPIService.OBPv400UpdateBankAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BankAttributeAPIService.UpdateBankAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -846,8 +846,8 @@ func (a *BankAttributeAPIService) OBPv400UpdateBankAttributeExecute(r ApiOBPv400
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAtmAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAtmAttributeRequest is required and must be specified")
+	if r.updateAtmAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmAttributeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -868,7 +868,7 @@ func (a *BankAttributeAPIService) OBPv400UpdateBankAttributeExecute(r ApiOBPv400
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateAtmAttributeRequest
+	localVarPostBody = r.updateAtmAttributeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -893,7 +893,7 @@ func (a *BankAttributeAPIService) OBPv400UpdateBankAttributeExecute(r ApiOBPv400
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

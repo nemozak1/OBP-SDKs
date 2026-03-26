@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,22 +75,22 @@ class LogCacheApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv510LogCacheAllEndpoint' => [
+        'logCacheAllEndpoint' => [
             'application/json',
         ],
-        'oBPv510LogCacheDebugEndpoint' => [
+        'logCacheDebugEndpoint' => [
             'application/json',
         ],
-        'oBPv510LogCacheErrorEndpoint' => [
+        'logCacheErrorEndpoint' => [
             'application/json',
         ],
-        'oBPv510LogCacheInfoEndpoint' => [
+        'logCacheInfoEndpoint' => [
             'application/json',
         ],
-        'oBPv510LogCacheTraceEndpoint' => [
+        'logCacheTraceEndpoint' => [
             'application/json',
         ],
-        'oBPv510LogCacheWarningEndpoint' => [
+        'logCacheWarningEndpoint' => [
             'application/json',
         ],
     ];
@@ -142,35 +142,35 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheAllEndpoint
+     * Operation logCacheAllEndpoint
      *
      * Get All Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheAllEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheAllEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv510LogCacheAllEndpoint(string $contentType = self::contentTypes['oBPv510LogCacheAllEndpoint'][0])
+    public function logCacheAllEndpoint(string $contentType = self::contentTypes['logCacheAllEndpoint'][0])
     {
-        $this->oBPv510LogCacheAllEndpointWithHttpInfo($contentType);
+        $this->logCacheAllEndpointWithHttpInfo($contentType);
     }
 
     /**
-     * Operation oBPv510LogCacheAllEndpointWithHttpInfo
+     * Operation logCacheAllEndpointWithHttpInfo
      *
      * Get All Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheAllEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheAllEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510LogCacheAllEndpointWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheAllEndpoint'][0])
+    public function logCacheAllEndpointWithHttpInfo(string $contentType = self::contentTypes['logCacheAllEndpoint'][0])
     {
-        $request = $this->oBPv510LogCacheAllEndpointRequest($contentType);
+        $request = $this->logCacheAllEndpointRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -206,18 +206,18 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheAllEndpointAsync
+     * Operation logCacheAllEndpointAsync
      *
      * Get All Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheAllEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheAllEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510LogCacheAllEndpointAsync(string $contentType = self::contentTypes['oBPv510LogCacheAllEndpoint'][0])
+    public function logCacheAllEndpointAsync(string $contentType = self::contentTypes['logCacheAllEndpoint'][0])
     {
-        return $this->oBPv510LogCacheAllEndpointAsyncWithHttpInfo($contentType)
+        return $this->logCacheAllEndpointAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -226,19 +226,19 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheAllEndpointAsyncWithHttpInfo
+     * Operation logCacheAllEndpointAsyncWithHttpInfo
      *
      * Get All Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheAllEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheAllEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510LogCacheAllEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheAllEndpoint'][0])
+    public function logCacheAllEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['logCacheAllEndpoint'][0])
     {
         $returnType = '';
-        $request = $this->oBPv510LogCacheAllEndpointRequest($contentType);
+        $request = $this->logCacheAllEndpointRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -264,14 +264,14 @@ class LogCacheApi
     }
 
     /**
-     * Create request for operation 'oBPv510LogCacheAllEndpoint'
+     * Create request for operation 'logCacheAllEndpoint'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheAllEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheAllEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510LogCacheAllEndpointRequest(string $contentType = self::contentTypes['oBPv510LogCacheAllEndpoint'][0])
+    public function logCacheAllEndpointRequest(string $contentType = self::contentTypes['logCacheAllEndpoint'][0])
     {
 
 
@@ -327,9 +327,9 @@ class LogCacheApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -354,35 +354,35 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheDebugEndpoint
+     * Operation logCacheDebugEndpoint
      *
      * Get Debug Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheDebugEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheDebugEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv510LogCacheDebugEndpoint(string $contentType = self::contentTypes['oBPv510LogCacheDebugEndpoint'][0])
+    public function logCacheDebugEndpoint(string $contentType = self::contentTypes['logCacheDebugEndpoint'][0])
     {
-        $this->oBPv510LogCacheDebugEndpointWithHttpInfo($contentType);
+        $this->logCacheDebugEndpointWithHttpInfo($contentType);
     }
 
     /**
-     * Operation oBPv510LogCacheDebugEndpointWithHttpInfo
+     * Operation logCacheDebugEndpointWithHttpInfo
      *
      * Get Debug Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheDebugEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheDebugEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510LogCacheDebugEndpointWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheDebugEndpoint'][0])
+    public function logCacheDebugEndpointWithHttpInfo(string $contentType = self::contentTypes['logCacheDebugEndpoint'][0])
     {
-        $request = $this->oBPv510LogCacheDebugEndpointRequest($contentType);
+        $request = $this->logCacheDebugEndpointRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -418,18 +418,18 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheDebugEndpointAsync
+     * Operation logCacheDebugEndpointAsync
      *
      * Get Debug Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheDebugEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheDebugEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510LogCacheDebugEndpointAsync(string $contentType = self::contentTypes['oBPv510LogCacheDebugEndpoint'][0])
+    public function logCacheDebugEndpointAsync(string $contentType = self::contentTypes['logCacheDebugEndpoint'][0])
     {
-        return $this->oBPv510LogCacheDebugEndpointAsyncWithHttpInfo($contentType)
+        return $this->logCacheDebugEndpointAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -438,19 +438,19 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheDebugEndpointAsyncWithHttpInfo
+     * Operation logCacheDebugEndpointAsyncWithHttpInfo
      *
      * Get Debug Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheDebugEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheDebugEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510LogCacheDebugEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheDebugEndpoint'][0])
+    public function logCacheDebugEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['logCacheDebugEndpoint'][0])
     {
         $returnType = '';
-        $request = $this->oBPv510LogCacheDebugEndpointRequest($contentType);
+        $request = $this->logCacheDebugEndpointRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -476,14 +476,14 @@ class LogCacheApi
     }
 
     /**
-     * Create request for operation 'oBPv510LogCacheDebugEndpoint'
+     * Create request for operation 'logCacheDebugEndpoint'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheDebugEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheDebugEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510LogCacheDebugEndpointRequest(string $contentType = self::contentTypes['oBPv510LogCacheDebugEndpoint'][0])
+    public function logCacheDebugEndpointRequest(string $contentType = self::contentTypes['logCacheDebugEndpoint'][0])
     {
 
 
@@ -539,9 +539,9 @@ class LogCacheApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -566,35 +566,35 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheErrorEndpoint
+     * Operation logCacheErrorEndpoint
      *
      * Get Error Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheErrorEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheErrorEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv510LogCacheErrorEndpoint(string $contentType = self::contentTypes['oBPv510LogCacheErrorEndpoint'][0])
+    public function logCacheErrorEndpoint(string $contentType = self::contentTypes['logCacheErrorEndpoint'][0])
     {
-        $this->oBPv510LogCacheErrorEndpointWithHttpInfo($contentType);
+        $this->logCacheErrorEndpointWithHttpInfo($contentType);
     }
 
     /**
-     * Operation oBPv510LogCacheErrorEndpointWithHttpInfo
+     * Operation logCacheErrorEndpointWithHttpInfo
      *
      * Get Error Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheErrorEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheErrorEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510LogCacheErrorEndpointWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheErrorEndpoint'][0])
+    public function logCacheErrorEndpointWithHttpInfo(string $contentType = self::contentTypes['logCacheErrorEndpoint'][0])
     {
-        $request = $this->oBPv510LogCacheErrorEndpointRequest($contentType);
+        $request = $this->logCacheErrorEndpointRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -630,18 +630,18 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheErrorEndpointAsync
+     * Operation logCacheErrorEndpointAsync
      *
      * Get Error Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheErrorEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheErrorEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510LogCacheErrorEndpointAsync(string $contentType = self::contentTypes['oBPv510LogCacheErrorEndpoint'][0])
+    public function logCacheErrorEndpointAsync(string $contentType = self::contentTypes['logCacheErrorEndpoint'][0])
     {
-        return $this->oBPv510LogCacheErrorEndpointAsyncWithHttpInfo($contentType)
+        return $this->logCacheErrorEndpointAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -650,19 +650,19 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheErrorEndpointAsyncWithHttpInfo
+     * Operation logCacheErrorEndpointAsyncWithHttpInfo
      *
      * Get Error Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheErrorEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheErrorEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510LogCacheErrorEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheErrorEndpoint'][0])
+    public function logCacheErrorEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['logCacheErrorEndpoint'][0])
     {
         $returnType = '';
-        $request = $this->oBPv510LogCacheErrorEndpointRequest($contentType);
+        $request = $this->logCacheErrorEndpointRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -688,14 +688,14 @@ class LogCacheApi
     }
 
     /**
-     * Create request for operation 'oBPv510LogCacheErrorEndpoint'
+     * Create request for operation 'logCacheErrorEndpoint'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheErrorEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheErrorEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510LogCacheErrorEndpointRequest(string $contentType = self::contentTypes['oBPv510LogCacheErrorEndpoint'][0])
+    public function logCacheErrorEndpointRequest(string $contentType = self::contentTypes['logCacheErrorEndpoint'][0])
     {
 
 
@@ -751,9 +751,9 @@ class LogCacheApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -778,35 +778,35 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheInfoEndpoint
+     * Operation logCacheInfoEndpoint
      *
      * Get Info Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheInfoEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheInfoEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv510LogCacheInfoEndpoint(string $contentType = self::contentTypes['oBPv510LogCacheInfoEndpoint'][0])
+    public function logCacheInfoEndpoint(string $contentType = self::contentTypes['logCacheInfoEndpoint'][0])
     {
-        $this->oBPv510LogCacheInfoEndpointWithHttpInfo($contentType);
+        $this->logCacheInfoEndpointWithHttpInfo($contentType);
     }
 
     /**
-     * Operation oBPv510LogCacheInfoEndpointWithHttpInfo
+     * Operation logCacheInfoEndpointWithHttpInfo
      *
      * Get Info Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheInfoEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheInfoEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510LogCacheInfoEndpointWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheInfoEndpoint'][0])
+    public function logCacheInfoEndpointWithHttpInfo(string $contentType = self::contentTypes['logCacheInfoEndpoint'][0])
     {
-        $request = $this->oBPv510LogCacheInfoEndpointRequest($contentType);
+        $request = $this->logCacheInfoEndpointRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -842,18 +842,18 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheInfoEndpointAsync
+     * Operation logCacheInfoEndpointAsync
      *
      * Get Info Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheInfoEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheInfoEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510LogCacheInfoEndpointAsync(string $contentType = self::contentTypes['oBPv510LogCacheInfoEndpoint'][0])
+    public function logCacheInfoEndpointAsync(string $contentType = self::contentTypes['logCacheInfoEndpoint'][0])
     {
-        return $this->oBPv510LogCacheInfoEndpointAsyncWithHttpInfo($contentType)
+        return $this->logCacheInfoEndpointAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -862,19 +862,19 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheInfoEndpointAsyncWithHttpInfo
+     * Operation logCacheInfoEndpointAsyncWithHttpInfo
      *
      * Get Info Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheInfoEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheInfoEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510LogCacheInfoEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheInfoEndpoint'][0])
+    public function logCacheInfoEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['logCacheInfoEndpoint'][0])
     {
         $returnType = '';
-        $request = $this->oBPv510LogCacheInfoEndpointRequest($contentType);
+        $request = $this->logCacheInfoEndpointRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -900,14 +900,14 @@ class LogCacheApi
     }
 
     /**
-     * Create request for operation 'oBPv510LogCacheInfoEndpoint'
+     * Create request for operation 'logCacheInfoEndpoint'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheInfoEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheInfoEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510LogCacheInfoEndpointRequest(string $contentType = self::contentTypes['oBPv510LogCacheInfoEndpoint'][0])
+    public function logCacheInfoEndpointRequest(string $contentType = self::contentTypes['logCacheInfoEndpoint'][0])
     {
 
 
@@ -963,9 +963,9 @@ class LogCacheApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -990,35 +990,35 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheTraceEndpoint
+     * Operation logCacheTraceEndpoint
      *
      * Get Trace Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheTraceEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheTraceEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv510LogCacheTraceEndpoint(string $contentType = self::contentTypes['oBPv510LogCacheTraceEndpoint'][0])
+    public function logCacheTraceEndpoint(string $contentType = self::contentTypes['logCacheTraceEndpoint'][0])
     {
-        $this->oBPv510LogCacheTraceEndpointWithHttpInfo($contentType);
+        $this->logCacheTraceEndpointWithHttpInfo($contentType);
     }
 
     /**
-     * Operation oBPv510LogCacheTraceEndpointWithHttpInfo
+     * Operation logCacheTraceEndpointWithHttpInfo
      *
      * Get Trace Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheTraceEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheTraceEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510LogCacheTraceEndpointWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheTraceEndpoint'][0])
+    public function logCacheTraceEndpointWithHttpInfo(string $contentType = self::contentTypes['logCacheTraceEndpoint'][0])
     {
-        $request = $this->oBPv510LogCacheTraceEndpointRequest($contentType);
+        $request = $this->logCacheTraceEndpointRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1054,18 +1054,18 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheTraceEndpointAsync
+     * Operation logCacheTraceEndpointAsync
      *
      * Get Trace Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheTraceEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheTraceEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510LogCacheTraceEndpointAsync(string $contentType = self::contentTypes['oBPv510LogCacheTraceEndpoint'][0])
+    public function logCacheTraceEndpointAsync(string $contentType = self::contentTypes['logCacheTraceEndpoint'][0])
     {
-        return $this->oBPv510LogCacheTraceEndpointAsyncWithHttpInfo($contentType)
+        return $this->logCacheTraceEndpointAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1074,19 +1074,19 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheTraceEndpointAsyncWithHttpInfo
+     * Operation logCacheTraceEndpointAsyncWithHttpInfo
      *
      * Get Trace Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheTraceEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheTraceEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510LogCacheTraceEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheTraceEndpoint'][0])
+    public function logCacheTraceEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['logCacheTraceEndpoint'][0])
     {
         $returnType = '';
-        $request = $this->oBPv510LogCacheTraceEndpointRequest($contentType);
+        $request = $this->logCacheTraceEndpointRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1112,14 +1112,14 @@ class LogCacheApi
     }
 
     /**
-     * Create request for operation 'oBPv510LogCacheTraceEndpoint'
+     * Create request for operation 'logCacheTraceEndpoint'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheTraceEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheTraceEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510LogCacheTraceEndpointRequest(string $contentType = self::contentTypes['oBPv510LogCacheTraceEndpoint'][0])
+    public function logCacheTraceEndpointRequest(string $contentType = self::contentTypes['logCacheTraceEndpoint'][0])
     {
 
 
@@ -1175,9 +1175,9 @@ class LogCacheApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1202,35 +1202,35 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheWarningEndpoint
+     * Operation logCacheWarningEndpoint
      *
      * Get Warning Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheWarningEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheWarningEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv510LogCacheWarningEndpoint(string $contentType = self::contentTypes['oBPv510LogCacheWarningEndpoint'][0])
+    public function logCacheWarningEndpoint(string $contentType = self::contentTypes['logCacheWarningEndpoint'][0])
     {
-        $this->oBPv510LogCacheWarningEndpointWithHttpInfo($contentType);
+        $this->logCacheWarningEndpointWithHttpInfo($contentType);
     }
 
     /**
-     * Operation oBPv510LogCacheWarningEndpointWithHttpInfo
+     * Operation logCacheWarningEndpointWithHttpInfo
      *
      * Get Warning Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheWarningEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheWarningEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510LogCacheWarningEndpointWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheWarningEndpoint'][0])
+    public function logCacheWarningEndpointWithHttpInfo(string $contentType = self::contentTypes['logCacheWarningEndpoint'][0])
     {
-        $request = $this->oBPv510LogCacheWarningEndpointRequest($contentType);
+        $request = $this->logCacheWarningEndpointRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1266,18 +1266,18 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheWarningEndpointAsync
+     * Operation logCacheWarningEndpointAsync
      *
      * Get Warning Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheWarningEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheWarningEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510LogCacheWarningEndpointAsync(string $contentType = self::contentTypes['oBPv510LogCacheWarningEndpoint'][0])
+    public function logCacheWarningEndpointAsync(string $contentType = self::contentTypes['logCacheWarningEndpoint'][0])
     {
-        return $this->oBPv510LogCacheWarningEndpointAsyncWithHttpInfo($contentType)
+        return $this->logCacheWarningEndpointAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1286,19 +1286,19 @@ class LogCacheApi
     }
 
     /**
-     * Operation oBPv510LogCacheWarningEndpointAsyncWithHttpInfo
+     * Operation logCacheWarningEndpointAsyncWithHttpInfo
      *
      * Get Warning Level Log Cache
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheWarningEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheWarningEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510LogCacheWarningEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheWarningEndpoint'][0])
+    public function logCacheWarningEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['logCacheWarningEndpoint'][0])
     {
         $returnType = '';
-        $request = $this->oBPv510LogCacheWarningEndpointRequest($contentType);
+        $request = $this->logCacheWarningEndpointRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1324,14 +1324,14 @@ class LogCacheApi
     }
 
     /**
-     * Create request for operation 'oBPv510LogCacheWarningEndpoint'
+     * Create request for operation 'logCacheWarningEndpoint'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheWarningEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheWarningEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510LogCacheWarningEndpointRequest(string $contentType = self::contentTypes['oBPv510LogCacheWarningEndpoint'][0])
+    public function logCacheWarningEndpointRequest(string $contentType = self::contentTypes['logCacheWarningEndpoint'][0])
     {
 
 
@@ -1387,9 +1387,9 @@ class LogCacheApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

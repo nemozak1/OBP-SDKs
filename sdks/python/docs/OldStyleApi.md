@@ -4,11 +4,11 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv2_0_0_elastic_search_metrics**](OldStyleApi.md#o_bpv2_0_0_elastic_search_metrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
+[**elastic_search_metrics**](OldStyleApi.md#elastic_search_metrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
 
 
-# **o_bpv2_0_0_elastic_search_metrics**
-> object o_bpv2_0_0_elastic_search_metrics()
+# **elastic_search_metrics**
+> object elastic_search_metrics()
 
 Search API Metrics via Elasticsearch
 
@@ -89,11 +89,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Search API Metrics via Elasticsearch
-        api_response = api_instance.o_bpv2_0_0_elastic_search_metrics()
-        print("The response of OldStyleApi->o_bpv2_0_0_elastic_search_metrics:\n")
+        api_response = api_instance.elastic_search_metrics()
+        print("The response of OldStyleApi->elastic_search_metrics:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OldStyleApi->o_bpv2_0_0_elastic_search_metrics: %s\n" % e)
+        print("Exception when calling OldStyleApi->elastic_search_metrics: %s\n" % e)
 ```
 
 

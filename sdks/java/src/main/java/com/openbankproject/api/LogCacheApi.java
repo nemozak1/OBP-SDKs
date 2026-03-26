@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -44,7 +44,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class LogCacheApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -166,8 +166,8 @@ public class LogCacheApi {
    * &lt;p&gt;Returns logs of all levels from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/all?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510LogCacheAllEndpoint() throws ApiException {
-    oBPv510LogCacheAllEndpoint(null);
+  public void logCacheAllEndpoint() throws ApiException {
+    logCacheAllEndpoint(null);
   }
 
   /**
@@ -176,8 +176,8 @@ public class LogCacheApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510LogCacheAllEndpoint(Map<String, String> headers) throws ApiException {
-    oBPv510LogCacheAllEndpointWithHttpInfo(headers);
+  public void logCacheAllEndpoint(Map<String, String> headers) throws ApiException {
+    logCacheAllEndpointWithHttpInfo(headers);
   }
 
   /**
@@ -186,8 +186,8 @@ public class LogCacheApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510LogCacheAllEndpointWithHttpInfo() throws ApiException {
-    return oBPv510LogCacheAllEndpointWithHttpInfo(null);
+  public ApiResponse<Void> logCacheAllEndpointWithHttpInfo() throws ApiException {
+    return logCacheAllEndpointWithHttpInfo(null);
   }
 
   /**
@@ -197,8 +197,8 @@ public class LogCacheApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510LogCacheAllEndpointWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510LogCacheAllEndpointRequestBuilder(headers);
+  public ApiResponse<Void> logCacheAllEndpointWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = logCacheAllEndpointRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -209,7 +209,7 @@ public class LogCacheApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510LogCacheAllEndpoint", localVarResponse);
+          throw getApiException("logCacheAllEndpoint", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -234,7 +234,7 @@ public class LogCacheApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510LogCacheAllEndpointRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder logCacheAllEndpointRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -261,8 +261,8 @@ public class LogCacheApi {
    * &lt;p&gt;Returns DEBUG level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/debug?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510LogCacheDebugEndpoint() throws ApiException {
-    oBPv510LogCacheDebugEndpoint(null);
+  public void logCacheDebugEndpoint() throws ApiException {
+    logCacheDebugEndpoint(null);
   }
 
   /**
@@ -271,8 +271,8 @@ public class LogCacheApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510LogCacheDebugEndpoint(Map<String, String> headers) throws ApiException {
-    oBPv510LogCacheDebugEndpointWithHttpInfo(headers);
+  public void logCacheDebugEndpoint(Map<String, String> headers) throws ApiException {
+    logCacheDebugEndpointWithHttpInfo(headers);
   }
 
   /**
@@ -281,8 +281,8 @@ public class LogCacheApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510LogCacheDebugEndpointWithHttpInfo() throws ApiException {
-    return oBPv510LogCacheDebugEndpointWithHttpInfo(null);
+  public ApiResponse<Void> logCacheDebugEndpointWithHttpInfo() throws ApiException {
+    return logCacheDebugEndpointWithHttpInfo(null);
   }
 
   /**
@@ -292,8 +292,8 @@ public class LogCacheApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510LogCacheDebugEndpointWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510LogCacheDebugEndpointRequestBuilder(headers);
+  public ApiResponse<Void> logCacheDebugEndpointWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = logCacheDebugEndpointRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -304,7 +304,7 @@ public class LogCacheApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510LogCacheDebugEndpoint", localVarResponse);
+          throw getApiException("logCacheDebugEndpoint", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -329,7 +329,7 @@ public class LogCacheApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510LogCacheDebugEndpointRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder logCacheDebugEndpointRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -356,8 +356,8 @@ public class LogCacheApi {
    * &lt;p&gt;Returns ERROR level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/error?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510LogCacheErrorEndpoint() throws ApiException {
-    oBPv510LogCacheErrorEndpoint(null);
+  public void logCacheErrorEndpoint() throws ApiException {
+    logCacheErrorEndpoint(null);
   }
 
   /**
@@ -366,8 +366,8 @@ public class LogCacheApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510LogCacheErrorEndpoint(Map<String, String> headers) throws ApiException {
-    oBPv510LogCacheErrorEndpointWithHttpInfo(headers);
+  public void logCacheErrorEndpoint(Map<String, String> headers) throws ApiException {
+    logCacheErrorEndpointWithHttpInfo(headers);
   }
 
   /**
@@ -376,8 +376,8 @@ public class LogCacheApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510LogCacheErrorEndpointWithHttpInfo() throws ApiException {
-    return oBPv510LogCacheErrorEndpointWithHttpInfo(null);
+  public ApiResponse<Void> logCacheErrorEndpointWithHttpInfo() throws ApiException {
+    return logCacheErrorEndpointWithHttpInfo(null);
   }
 
   /**
@@ -387,8 +387,8 @@ public class LogCacheApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510LogCacheErrorEndpointWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510LogCacheErrorEndpointRequestBuilder(headers);
+  public ApiResponse<Void> logCacheErrorEndpointWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = logCacheErrorEndpointRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -399,7 +399,7 @@ public class LogCacheApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510LogCacheErrorEndpoint", localVarResponse);
+          throw getApiException("logCacheErrorEndpoint", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -424,7 +424,7 @@ public class LogCacheApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510LogCacheErrorEndpointRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder logCacheErrorEndpointRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -451,8 +451,8 @@ public class LogCacheApi {
    * &lt;p&gt;Returns INFO level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/info?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510LogCacheInfoEndpoint() throws ApiException {
-    oBPv510LogCacheInfoEndpoint(null);
+  public void logCacheInfoEndpoint() throws ApiException {
+    logCacheInfoEndpoint(null);
   }
 
   /**
@@ -461,8 +461,8 @@ public class LogCacheApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510LogCacheInfoEndpoint(Map<String, String> headers) throws ApiException {
-    oBPv510LogCacheInfoEndpointWithHttpInfo(headers);
+  public void logCacheInfoEndpoint(Map<String, String> headers) throws ApiException {
+    logCacheInfoEndpointWithHttpInfo(headers);
   }
 
   /**
@@ -471,8 +471,8 @@ public class LogCacheApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510LogCacheInfoEndpointWithHttpInfo() throws ApiException {
-    return oBPv510LogCacheInfoEndpointWithHttpInfo(null);
+  public ApiResponse<Void> logCacheInfoEndpointWithHttpInfo() throws ApiException {
+    return logCacheInfoEndpointWithHttpInfo(null);
   }
 
   /**
@@ -482,8 +482,8 @@ public class LogCacheApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510LogCacheInfoEndpointWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510LogCacheInfoEndpointRequestBuilder(headers);
+  public ApiResponse<Void> logCacheInfoEndpointWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = logCacheInfoEndpointRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -494,7 +494,7 @@ public class LogCacheApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510LogCacheInfoEndpoint", localVarResponse);
+          throw getApiException("logCacheInfoEndpoint", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -519,7 +519,7 @@ public class LogCacheApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510LogCacheInfoEndpointRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder logCacheInfoEndpointRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -546,8 +546,8 @@ public class LogCacheApi {
    * &lt;p&gt;Returns TRACE level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/trace?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510LogCacheTraceEndpoint() throws ApiException {
-    oBPv510LogCacheTraceEndpoint(null);
+  public void logCacheTraceEndpoint() throws ApiException {
+    logCacheTraceEndpoint(null);
   }
 
   /**
@@ -556,8 +556,8 @@ public class LogCacheApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510LogCacheTraceEndpoint(Map<String, String> headers) throws ApiException {
-    oBPv510LogCacheTraceEndpointWithHttpInfo(headers);
+  public void logCacheTraceEndpoint(Map<String, String> headers) throws ApiException {
+    logCacheTraceEndpointWithHttpInfo(headers);
   }
 
   /**
@@ -566,8 +566,8 @@ public class LogCacheApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510LogCacheTraceEndpointWithHttpInfo() throws ApiException {
-    return oBPv510LogCacheTraceEndpointWithHttpInfo(null);
+  public ApiResponse<Void> logCacheTraceEndpointWithHttpInfo() throws ApiException {
+    return logCacheTraceEndpointWithHttpInfo(null);
   }
 
   /**
@@ -577,8 +577,8 @@ public class LogCacheApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510LogCacheTraceEndpointWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510LogCacheTraceEndpointRequestBuilder(headers);
+  public ApiResponse<Void> logCacheTraceEndpointWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = logCacheTraceEndpointRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -589,7 +589,7 @@ public class LogCacheApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510LogCacheTraceEndpoint", localVarResponse);
+          throw getApiException("logCacheTraceEndpoint", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -614,7 +614,7 @@ public class LogCacheApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510LogCacheTraceEndpointRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder logCacheTraceEndpointRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -641,8 +641,8 @@ public class LogCacheApi {
    * &lt;p&gt;Returns WARNING level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/warning?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510LogCacheWarningEndpoint() throws ApiException {
-    oBPv510LogCacheWarningEndpoint(null);
+  public void logCacheWarningEndpoint() throws ApiException {
+    logCacheWarningEndpoint(null);
   }
 
   /**
@@ -651,8 +651,8 @@ public class LogCacheApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510LogCacheWarningEndpoint(Map<String, String> headers) throws ApiException {
-    oBPv510LogCacheWarningEndpointWithHttpInfo(headers);
+  public void logCacheWarningEndpoint(Map<String, String> headers) throws ApiException {
+    logCacheWarningEndpointWithHttpInfo(headers);
   }
 
   /**
@@ -661,8 +661,8 @@ public class LogCacheApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510LogCacheWarningEndpointWithHttpInfo() throws ApiException {
-    return oBPv510LogCacheWarningEndpointWithHttpInfo(null);
+  public ApiResponse<Void> logCacheWarningEndpointWithHttpInfo() throws ApiException {
+    return logCacheWarningEndpointWithHttpInfo(null);
   }
 
   /**
@@ -672,8 +672,8 @@ public class LogCacheApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510LogCacheWarningEndpointWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510LogCacheWarningEndpointRequestBuilder(headers);
+  public ApiResponse<Void> logCacheWarningEndpointWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = logCacheWarningEndpointRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -684,7 +684,7 @@ public class LogCacheApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510LogCacheWarningEndpoint", localVarResponse);
+          throw getApiException("logCacheWarningEndpoint", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -709,7 +709,7 @@ public class LogCacheApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510LogCacheWarningEndpointRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder logCacheWarningEndpointRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 

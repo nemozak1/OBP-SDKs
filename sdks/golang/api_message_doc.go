@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,18 +24,18 @@ import (
 // MessageDocAPIService MessageDocAPI service
 type MessageDocAPIService service
 
-type ApiOBPv220GetMessageDocsRequest struct {
+type ApiGetMessageDocsRequest struct {
 	ctx context.Context
 	ApiService *MessageDocAPIService
 	connector string
 }
 
-func (r ApiOBPv220GetMessageDocsRequest) Execute() (*OBPv220GetMessageDocs200Response, *http.Response, error) {
-	return r.ApiService.OBPv220GetMessageDocsExecute(r)
+func (r ApiGetMessageDocsRequest) Execute() (*GetMessageDocs200Response, *http.Response, error) {
+	return r.ApiService.GetMessageDocsExecute(r)
 }
 
 /*
-OBPv220GetMessageDocs Get Message Docs
+GetMessageDocs Get Message Docs
 
 <p>These message docs provide example messages sent by OBP to the (RabbitMq) message queue for processing by the Core Banking / Payment system Adapter - together with an example expected response and possible error codes.<br />
 Integrators can use these messages to build Adapters that provide core banking services to OBP.</p>
@@ -66,10 +66,10 @@ Integrators can use these messages to build Adapters that provide core banking s
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param connector The CONNECTOR identifier
- @return ApiOBPv220GetMessageDocsRequest
+ @return ApiGetMessageDocsRequest
 */
-func (a *MessageDocAPIService) OBPv220GetMessageDocs(ctx context.Context, connector string) ApiOBPv220GetMessageDocsRequest {
-	return ApiOBPv220GetMessageDocsRequest{
+func (a *MessageDocAPIService) GetMessageDocs(ctx context.Context, connector string) ApiGetMessageDocsRequest {
+	return ApiGetMessageDocsRequest{
 		ApiService: a,
 		ctx: ctx,
 		connector: connector,
@@ -77,16 +77,16 @@ func (a *MessageDocAPIService) OBPv220GetMessageDocs(ctx context.Context, connec
 }
 
 // Execute executes the request
-//  @return OBPv220GetMessageDocs200Response
-func (a *MessageDocAPIService) OBPv220GetMessageDocsExecute(r ApiOBPv220GetMessageDocsRequest) (*OBPv220GetMessageDocs200Response, *http.Response, error) {
+//  @return GetMessageDocs200Response
+func (a *MessageDocAPIService) GetMessageDocsExecute(r ApiGetMessageDocsRequest) (*GetMessageDocs200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv220GetMessageDocs200Response
+		localVarReturnValue  *GetMessageDocs200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MessageDocAPIService.OBPv220GetMessageDocs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MessageDocAPIService.GetMessageDocs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -152,25 +152,49 @@ func (a *MessageDocAPIService) OBPv220GetMessageDocsExecute(r ApiOBPv220GetMessa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv310GetMessageDocsSwaggerRequest struct {
+type ApiGetMessageDocsJsonSchemaRequest struct {
 	ctx context.Context
 	ApiService *MessageDocAPIService
 	connector string
 }
 
-func (r ApiOBPv310GetMessageDocsSwaggerRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv310GetMessageDocsSwaggerExecute(r)
+func (r ApiGetMessageDocsJsonSchemaRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetMessageDocsJsonSchemaExecute(r)
 }
 
 /*
-OBPv310GetMessageDocsSwagger Get Message Docs Swagger
+GetMessageDocsJsonSchema Get Message Docs as JSON Schema
 
-<p>This endpoint provides example message docs in swagger format.<br />
-It is only relavent for REST Connectors.</p>
-<p>This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).<br />
-That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.</p>
-<p>i.e.:</p>
-<p>OBP API (Core OBP API code) -&gt; OBP REST Connector (OBP REST Connector code) -&gt; OBP REST Adapter (Adapter developer code) -&gt; CBS (Main Frame)</p>
+<p>Returns message documentation as JSON Schema format for code generation in any language.</p>
+<p>This endpoint provides machine-readable schemas instead of just examples, making it ideal for:<br />
+- AI-powered code generation<br />
+- Automatic adapter creation in multiple languages<br />
+- Type-safe client generation with tools like quicktype</p>
+<p><strong>Supported Connectors:</strong><br />
+- rabbitmq_vOct2024 - RabbitMQ connector message schemas<br />
+- rest_vMar2019 - REST connector message schemas<br />
+- akka_vDec2018 - Akka connector message schemas<br />
+- kafka_vMay2019 - Kafka connector message schemas (if available)</p>
+<p><strong>Code Generation Examples:</strong></p>
+<p>Generate Scala code with Circe:</p>
+<pre><code class="language-bash">curl https://api.../message-docs/rabbitmq_vOct2024/json-schema &gt; schemas.json
+quicktype -s schema schemas.json -o Messages.scala --framework circe
+</code></pre>
+<p>Generate Python code:</p>
+<pre><code class="language-bash">quicktype -s schema schemas.json -o messages.py --lang python
+</code></pre>
+<p>Generate TypeScript code:</p>
+<pre><code class="language-bash">quicktype -s schema schemas.json -o messages.ts --lang typescript
+</code></pre>
+<p><strong>Schema Structure:</strong><br />
+Each message includes:<br />
+- <code>process</code> - The connector method name (e.g., &quot;obp.getAdapterInfo&quot;)<br />
+- <code>description</code> - Human-readable description of what the message does<br />
+- <code>outbound_schema</code> - JSON Schema for request messages (OBP-API -&gt; Adapter)<br />
+- <code>inbound_schema</code> - JSON Schema for response messages (Adapter -&gt; OBP-API)</p>
+<p>All nested type definitions are included in the <code>definitions</code> section for reuse.</p>
+<p><strong>Authentication:</strong><br />
+This endpoint is publicly accessible (no authentication required) to facilitate adapter development.</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Connector">CONNECTOR</a>: CONNECTOR</p>
@@ -179,10 +203,10 @@ That is, the Adapter developer can use the Swagger surfaced here to build the RE
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param connector The CONNECTOR identifier
- @return ApiOBPv310GetMessageDocsSwaggerRequest
+ @return ApiGetMessageDocsJsonSchemaRequest
 */
-func (a *MessageDocAPIService) OBPv310GetMessageDocsSwagger(ctx context.Context, connector string) ApiOBPv310GetMessageDocsSwaggerRequest {
-	return ApiOBPv310GetMessageDocsSwaggerRequest{
+func (a *MessageDocAPIService) GetMessageDocsJsonSchema(ctx context.Context, connector string) ApiGetMessageDocsJsonSchemaRequest {
+	return ApiGetMessageDocsJsonSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
 		connector: connector,
@@ -190,19 +214,19 @@ func (a *MessageDocAPIService) OBPv310GetMessageDocsSwagger(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *MessageDocAPIService) OBPv310GetMessageDocsSwaggerExecute(r ApiOBPv310GetMessageDocsSwaggerRequest) (*http.Response, error) {
+func (a *MessageDocAPIService) GetMessageDocsJsonSchemaExecute(r ApiGetMessageDocsJsonSchemaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MessageDocAPIService.OBPv310GetMessageDocsSwagger")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MessageDocAPIService.GetMessageDocsJsonSchema")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v3.1.0/message-docs/{connector}/swagger2.0"
+	localVarPath := localBasePath + "/obp/v6.0.0/message-docs/{connector}/json-schema"
 	localVarPath = strings.Replace(localVarPath, "{"+"connector"+"}", url.PathEscape(parameterValueToString(r.connector, "connector")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -254,49 +278,25 @@ func (a *MessageDocAPIService) OBPv310GetMessageDocsSwaggerExecute(r ApiOBPv310G
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetMessageDocsJsonSchemaRequest struct {
+type ApiGetMessageDocsSwaggerRequest struct {
 	ctx context.Context
 	ApiService *MessageDocAPIService
 	connector string
 }
 
-func (r ApiOBPv600GetMessageDocsJsonSchemaRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv600GetMessageDocsJsonSchemaExecute(r)
+func (r ApiGetMessageDocsSwaggerRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetMessageDocsSwaggerExecute(r)
 }
 
 /*
-OBPv600GetMessageDocsJsonSchema Get Message Docs as JSON Schema
+GetMessageDocsSwagger Get Message Docs Swagger
 
-<p>Returns message documentation as JSON Schema format for code generation in any language.</p>
-<p>This endpoint provides machine-readable schemas instead of just examples, making it ideal for:<br />
-- AI-powered code generation<br />
-- Automatic adapter creation in multiple languages<br />
-- Type-safe client generation with tools like quicktype</p>
-<p><strong>Supported Connectors:</strong><br />
-- rabbitmq_vOct2024 - RabbitMQ connector message schemas<br />
-- rest_vMar2019 - REST connector message schemas<br />
-- akka_vDec2018 - Akka connector message schemas<br />
-- kafka_vMay2019 - Kafka connector message schemas (if available)</p>
-<p><strong>Code Generation Examples:</strong></p>
-<p>Generate Scala code with Circe:</p>
-<pre><code class="language-bash">curl https://api.../message-docs/rabbitmq_vOct2024/json-schema &gt; schemas.json
-quicktype -s schema schemas.json -o Messages.scala --framework circe
-</code></pre>
-<p>Generate Python code:</p>
-<pre><code class="language-bash">quicktype -s schema schemas.json -o messages.py --lang python
-</code></pre>
-<p>Generate TypeScript code:</p>
-<pre><code class="language-bash">quicktype -s schema schemas.json -o messages.ts --lang typescript
-</code></pre>
-<p><strong>Schema Structure:</strong><br />
-Each message includes:<br />
-- <code>process</code> - The connector method name (e.g., &quot;obp.getAdapterInfo&quot;)<br />
-- <code>description</code> - Human-readable description of what the message does<br />
-- <code>outbound_schema</code> - JSON Schema for request messages (OBP-API -&gt; Adapter)<br />
-- <code>inbound_schema</code> - JSON Schema for response messages (Adapter -&gt; OBP-API)</p>
-<p>All nested type definitions are included in the <code>definitions</code> section for reuse.</p>
-<p><strong>Authentication:</strong><br />
-This endpoint is publicly accessible (no authentication required) to facilitate adapter development.</p>
+<p>This endpoint provides example message docs in swagger format.<br />
+It is only relavent for REST Connectors.</p>
+<p>This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).<br />
+That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.</p>
+<p>i.e.:</p>
+<p>OBP API (Core OBP API code) -&gt; OBP REST Connector (OBP REST Connector code) -&gt; OBP REST Adapter (Adapter developer code) -&gt; CBS (Main Frame)</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Connector">CONNECTOR</a>: CONNECTOR</p>
@@ -305,10 +305,10 @@ This endpoint is publicly accessible (no authentication required) to facilitate 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param connector The CONNECTOR identifier
- @return ApiOBPv600GetMessageDocsJsonSchemaRequest
+ @return ApiGetMessageDocsSwaggerRequest
 */
-func (a *MessageDocAPIService) OBPv600GetMessageDocsJsonSchema(ctx context.Context, connector string) ApiOBPv600GetMessageDocsJsonSchemaRequest {
-	return ApiOBPv600GetMessageDocsJsonSchemaRequest{
+func (a *MessageDocAPIService) GetMessageDocsSwagger(ctx context.Context, connector string) ApiGetMessageDocsSwaggerRequest {
+	return ApiGetMessageDocsSwaggerRequest{
 		ApiService: a,
 		ctx: ctx,
 		connector: connector,
@@ -316,19 +316,19 @@ func (a *MessageDocAPIService) OBPv600GetMessageDocsJsonSchema(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *MessageDocAPIService) OBPv600GetMessageDocsJsonSchemaExecute(r ApiOBPv600GetMessageDocsJsonSchemaRequest) (*http.Response, error) {
+func (a *MessageDocAPIService) GetMessageDocsSwaggerExecute(r ApiGetMessageDocsSwaggerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MessageDocAPIService.OBPv600GetMessageDocsJsonSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MessageDocAPIService.GetMessageDocsSwagger")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v6.0.0/message-docs/{connector}/json-schema"
+	localVarPath := localBasePath + "/obp/v3.1.0/message-docs/{connector}/swagger2.0"
 	localVarPath = strings.Replace(localVarPath, "{"+"connector"+"}", url.PathEscape(parameterValueToString(r.connector, "connector")), -1)
 
 	localVarHeaderParams := make(map[string]string)

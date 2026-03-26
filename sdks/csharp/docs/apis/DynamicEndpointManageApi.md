@@ -1,25 +1,25 @@
 # OpenBankProject.Api.DynamicEndpointManageApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv400CreateBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#obpv400createbankleveldynamicendpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint |
-| [**OBPv400CreateDynamicEndpoint**](DynamicEndpointManageApi.md#obpv400createdynamicendpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint |
-| [**OBPv400DeleteBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#obpv400deletebankleveldynamicendpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint |
-| [**OBPv400DeleteDynamicEndpoint**](DynamicEndpointManageApi.md#obpv400deletedynamicendpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint |
-| [**OBPv400DeleteMyDynamicEndpoint**](DynamicEndpointManageApi.md#obpv400deletemydynamicendpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint |
-| [**OBPv400GetBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#obpv400getbankleveldynamicendpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint |
-| [**OBPv400GetBankLevelDynamicEndpoints**](DynamicEndpointManageApi.md#obpv400getbankleveldynamicendpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints |
-| [**OBPv400GetDynamicEndpoint**](DynamicEndpointManageApi.md#obpv400getdynamicendpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint |
-| [**OBPv400GetDynamicEndpoints**](DynamicEndpointManageApi.md#obpv400getdynamicendpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints |
-| [**OBPv400GetMyDynamicEndpoints**](DynamicEndpointManageApi.md#obpv400getmydynamicendpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints |
-| [**OBPv400UpdateBankLevelDynamicEndpointHost**](DynamicEndpointManageApi.md#obpv400updatebankleveldynamicendpointhost) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host |
-| [**OBPv400UpdateDynamicEndpointHost**](DynamicEndpointManageApi.md#obpv400updatedynamicendpointhost) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host |
+| [**CreateBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#createbankleveldynamicendpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint |
+| [**CreateDynamicEndpoint**](DynamicEndpointManageApi.md#createdynamicendpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint |
+| [**DeleteBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#deletebankleveldynamicendpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint |
+| [**DeleteDynamicEndpoint**](DynamicEndpointManageApi.md#deletedynamicendpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint |
+| [**DeleteMyDynamicEndpoint**](DynamicEndpointManageApi.md#deletemydynamicendpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint |
+| [**GetBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#getbankleveldynamicendpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint |
+| [**GetBankLevelDynamicEndpoints**](DynamicEndpointManageApi.md#getbankleveldynamicendpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints |
+| [**GetDynamicEndpoint**](DynamicEndpointManageApi.md#getdynamicendpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint |
+| [**GetDynamicEndpoints**](DynamicEndpointManageApi.md#getdynamicendpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints |
+| [**GetMyDynamicEndpoints**](DynamicEndpointManageApi.md#getmydynamicendpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints |
+| [**UpdateBankLevelDynamicEndpointHost**](DynamicEndpointManageApi.md#updatebankleveldynamicendpointhost) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host |
+| [**UpdateDynamicEndpointHost**](DynamicEndpointManageApi.md#updatedynamicendpointhost) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host |
 
-<a id="obpv400createbankleveldynamicendpoint"></a>
-# **OBPv400CreateBankLevelDynamicEndpoint**
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems OBPv400CreateBankLevelDynamicEndpoint (string bankid, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+<a id="createbankleveldynamicendpoint"></a>
+# **CreateBankLevelDynamicEndpoint**
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner CreateBankLevelDynamicEndpoint (string bankid, GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
 
 Create Bank Level Dynamic Endpoint
 
@@ -31,11 +31,11 @@ Create Bank Level Dynamic Endpoint
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
-| **oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md) | Request body |  |
+| **getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString** | [**GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -56,9 +56,9 @@ Create Bank Level Dynamic Endpoint
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400createdynamicendpoint"></a>
-# **OBPv400CreateDynamicEndpoint**
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems OBPv400CreateDynamicEndpoint (OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+<a id="createdynamicendpoint"></a>
+# **CreateDynamicEndpoint**
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner CreateDynamicEndpoint (GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
 
 Create Dynamic Endpoint
 
@@ -69,11 +69,11 @@ Create Dynamic Endpoint
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md) | Request body |  |
+| **getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString** | [**GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -93,9 +93,9 @@ Create Dynamic Endpoint
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deletebankleveldynamicendpoint"></a>
-# **OBPv400DeleteBankLevelDynamicEndpoint**
-> void OBPv400DeleteBankLevelDynamicEndpoint (string bankid, string dynamicendpointid)
+<a id="deletebankleveldynamicendpoint"></a>
+# **DeleteBankLevelDynamicEndpoint**
+> void DeleteBankLevelDynamicEndpoint (string bankid, string dynamicendpointid)
 
  Delete Bank Level Dynamic Endpoint
 
@@ -132,9 +132,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deletedynamicendpoint"></a>
-# **OBPv400DeleteDynamicEndpoint**
-> void OBPv400DeleteDynamicEndpoint (string dynamicendpointid)
+<a id="deletedynamicendpoint"></a>
+# **DeleteDynamicEndpoint**
+> void DeleteDynamicEndpoint (string dynamicendpointid)
 
  Delete Dynamic Endpoint
 
@@ -170,9 +170,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deletemydynamicendpoint"></a>
-# **OBPv400DeleteMyDynamicEndpoint**
-> void OBPv400DeleteMyDynamicEndpoint (string dynamicendpointid)
+<a id="deletemydynamicendpoint"></a>
+# **DeleteMyDynamicEndpoint**
+> void DeleteMyDynamicEndpoint (string dynamicendpointid)
 
 Delete My Dynamic Endpoint
 
@@ -208,9 +208,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getbankleveldynamicendpoint"></a>
-# **OBPv400GetBankLevelDynamicEndpoint**
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems OBPv400GetBankLevelDynamicEndpoint (string bankid, string dynamicendpointid)
+<a id="getbankleveldynamicendpoint"></a>
+# **GetBankLevelDynamicEndpoint**
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner GetBankLevelDynamicEndpoint (string bankid, string dynamicendpointid)
 
  Get Bank Level Dynamic Endpoint
 
@@ -226,7 +226,7 @@ void (empty response body)
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -247,9 +247,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getbankleveldynamicendpoints"></a>
-# **OBPv400GetBankLevelDynamicEndpoints**
-> OBPv400GetDynamicEndpoints200Response OBPv400GetBankLevelDynamicEndpoints (string bankid)
+<a id="getbankleveldynamicendpoints"></a>
+# **GetBankLevelDynamicEndpoints**
+> GetDynamicEndpoints200Response GetBankLevelDynamicEndpoints (string bankid)
 
 Get Bank Level Dynamic Endpoints
 
@@ -264,7 +264,7 @@ Get Bank Level Dynamic Endpoints
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -285,9 +285,9 @@ Get Bank Level Dynamic Endpoints
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getdynamicendpoint"></a>
-# **OBPv400GetDynamicEndpoint**
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems OBPv400GetDynamicEndpoint (string dynamicendpointid)
+<a id="getdynamicendpoint"></a>
+# **GetDynamicEndpoint**
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner GetDynamicEndpoint (string dynamicendpointid)
 
 Get Dynamic Endpoint
 
@@ -302,7 +302,7 @@ Get Dynamic Endpoint
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -323,9 +323,9 @@ Get Dynamic Endpoint
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getdynamicendpoints"></a>
-# **OBPv400GetDynamicEndpoints**
-> OBPv400GetDynamicEndpoints200Response OBPv400GetDynamicEndpoints ()
+<a id="getdynamicendpoints"></a>
+# **GetDynamicEndpoints**
+> GetDynamicEndpoints200Response GetDynamicEndpoints ()
 
  Get Dynamic Endpoints
 
@@ -336,7 +336,7 @@ Get Dynamic Endpoint
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -356,9 +356,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getmydynamicendpoints"></a>
-# **OBPv400GetMyDynamicEndpoints**
-> OBPv400GetDynamicEndpoints200Response OBPv400GetMyDynamicEndpoints ()
+<a id="getmydynamicendpoints"></a>
+# **GetMyDynamicEndpoints**
+> GetDynamicEndpoints200Response GetMyDynamicEndpoints ()
 
 Get My Dynamic Endpoints
 
@@ -369,7 +369,7 @@ Get My Dynamic Endpoints
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -389,9 +389,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400updatebankleveldynamicendpointhost"></a>
-# **OBPv400UpdateBankLevelDynamicEndpointHost**
-> OBPv400UpdateBankLevelDynamicEndpointHostRequest OBPv400UpdateBankLevelDynamicEndpointHost (string bankid, string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest)
+<a id="updatebankleveldynamicendpointhost"></a>
+# **UpdateBankLevelDynamicEndpointHost**
+> UpdateBankLevelDynamicEndpointHostRequest UpdateBankLevelDynamicEndpointHost (string bankid, string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest)
 
  Update Bank Level Dynamic Endpoint Host
 
@@ -404,11 +404,11 @@ This endpoint does not need any parameter.
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
 | **dynamicendpointid** | **string** | The DYNAMICENDPOINTID identifier |  |
-| **oBPv400UpdateBankLevelDynamicEndpointHostRequest** | [**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md) | Request body |  |
+| **updateBankLevelDynamicEndpointHostRequest** | [**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
+[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)
 
 ### Authorization
 
@@ -429,9 +429,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400updatedynamicendpointhost"></a>
-# **OBPv400UpdateDynamicEndpointHost**
-> OBPv400UpdateBankLevelDynamicEndpointHostRequest OBPv400UpdateDynamicEndpointHost (string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest)
+<a id="updatedynamicendpointhost"></a>
+# **UpdateDynamicEndpointHost**
+> UpdateBankLevelDynamicEndpointHostRequest UpdateDynamicEndpointHost (string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest)
 
  Update Dynamic Endpoint Host
 
@@ -443,11 +443,11 @@ This endpoint does not need any parameter.
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **dynamicendpointid** | **string** | The DYNAMICENDPOINTID identifier |  |
-| **oBPv400UpdateBankLevelDynamicEndpointHostRequest** | [**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md) | Request body |  |
+| **updateBankLevelDynamicEndpointHostRequest** | [**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
+[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)
 
 ### Authorization
 

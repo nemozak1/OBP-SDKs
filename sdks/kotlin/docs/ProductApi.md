@@ -1,33 +1,205 @@
 # ProductApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv310CreateProductCollection**](ProductApi.md#oBPv310CreateProductCollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
-| [**oBPv310DeleteProductAttribute**](ProductApi.md#oBPv310DeleteProductAttribute) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute |
-| [**oBPv310GetProductCollection**](ProductApi.md#oBPv310GetProductCollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
-| [**oBPv310GetProductTree**](ProductApi.md#oBPv310GetProductTree) | **GET** /obp/v3.1.0/banks/{bankid}/product-tree/{productcode} | Get Product Tree |
-| [**oBPv400CreateOrUpdateProductAttributeDefinition**](ProductApi.md#oBPv400CreateOrUpdateProductAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition |
-| [**oBPv400CreateProductAttribute**](ProductApi.md#oBPv400CreateProductAttribute) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute |
-| [**oBPv400CreateProductFee**](ProductApi.md#oBPv400CreateProductFee) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fee | Create Product Fee |
-| [**oBPv400DeleteProductAttributeDefinition**](ProductApi.md#oBPv400DeleteProductAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition |
-| [**oBPv400DeleteProductCascade**](ProductApi.md#oBPv400DeleteProductCascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/products/{productcode} | Delete Product Cascade |
-| [**oBPv400DeleteProductFee**](ProductApi.md#oBPv400DeleteProductFee) | **DELETE** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Delete Product Fee |
-| [**oBPv400GetProduct**](ProductApi.md#oBPv400GetProduct) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode} | Get Bank Product |
-| [**oBPv400GetProductAttribute**](ProductApi.md#oBPv400GetProductAttribute) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute |
-| [**oBPv400GetProductAttributeDefinition**](ProductApi.md#oBPv400GetProductAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition |
-| [**oBPv400GetProductFee**](ProductApi.md#oBPv400GetProductFee) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Get Product Fee |
-| [**oBPv400GetProductFees**](ProductApi.md#oBPv400GetProductFees) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees | Get Product Fees |
-| [**oBPv400GetProducts**](ProductApi.md#oBPv400GetProducts) | **GET** /obp/v4.0.0/banks/{bankid}/products | Get Products |
-| [**oBPv400UpdateProductAttribute**](ProductApi.md#oBPv400UpdateProductAttribute) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute |
-| [**oBPv400UpdateProductFee**](ProductApi.md#oBPv400UpdateProductFee) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Update Product Fee |
-| [**oBPv500CreateProduct**](ProductApi.md#oBPv500CreateProduct) | **PUT** /obp/v5.0.0/banks/{bankid}/products/{productcode} | Create Product |
+| [**createOrUpdateProductAttributeDefinition**](ProductApi.md#createOrUpdateProductAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition |
+| [**createProduct**](ProductApi.md#createProduct) | **PUT** /obp/v5.0.0/banks/{bankid}/products/{productcode} | Create Product |
+| [**createProductAttribute**](ProductApi.md#createProductAttribute) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute |
+| [**createProductCollection**](ProductApi.md#createProductCollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
+| [**createProductFee**](ProductApi.md#createProductFee) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fee | Create Product Fee |
+| [**deleteProductAttribute**](ProductApi.md#deleteProductAttribute) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute |
+| [**deleteProductAttributeDefinition**](ProductApi.md#deleteProductAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition |
+| [**deleteProductCascade**](ProductApi.md#deleteProductCascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/products/{productcode} | Delete Product Cascade |
+| [**deleteProductFee**](ProductApi.md#deleteProductFee) | **DELETE** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Delete Product Fee |
+| [**getProduct**](ProductApi.md#getProduct) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode} | Get Bank Product |
+| [**getProductAttribute**](ProductApi.md#getProductAttribute) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute |
+| [**getProductAttributeDefinition**](ProductApi.md#getProductAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition |
+| [**getProductCollection**](ProductApi.md#getProductCollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
+| [**getProductFee**](ProductApi.md#getProductFee) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Get Product Fee |
+| [**getProductFees**](ProductApi.md#getProductFees) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees | Get Product Fees |
+| [**getProductTree**](ProductApi.md#getProductTree) | **GET** /obp/v3.1.0/banks/{bankid}/product-tree/{productcode} | Get Product Tree |
+| [**getProducts**](ProductApi.md#getProducts) | **GET** /obp/v4.0.0/banks/{bankid}/products | Get Products |
+| [**updateProductAttribute**](ProductApi.md#updateProductAttribute) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute |
+| [**updateProductFee**](ProductApi.md#updateProductFee) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Update Product Fee |
 
 
-<a id="oBPv310CreateProductCollection"></a>
-# **oBPv310CreateProductCollection**
-> OBPv310CreateProductCollection200Response oBPv310CreateProductCollection(bankid, collectioncode, obPv310CreateProductCollectionRequest)
+<a id="createOrUpdateProductAttributeDefinition"></a>
+# **createOrUpdateProductAttributeDefinition**
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateProductAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
+
+Create or Update Product Attribute Definition
+
+&lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = ProductApi()
+val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
+val createOrUpdateTransactionRequestAttributeDefinitionRequest : CreateOrUpdateTransactionRequestAttributeDefinitionRequest = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}} // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+try {
+    val result : GetTransactionRequestAttributeDefinition200ResponseAttributesInner = apiInstance.createOrUpdateProductAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling ProductApi#createOrUpdateProductAttributeDefinition")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ProductApi#createOrUpdateProductAttributeDefinition")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **bankid** | **kotlin.String**| The BANKID identifier | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
+
+### Return type
+
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="createProduct"></a>
+# **createProduct**
+> CreateProduct200Response createProduct(bankid, productcode, createProductRequest)
+
+Create Product
+
+&lt;p&gt;Create or Update Product for the Bank.&lt;/p&gt; &lt;p&gt;The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.&lt;/p&gt; &lt;p&gt;Typical Super Family values / Asset classes are:&lt;/p&gt; &lt;p&gt;Debt&lt;br /&gt; Equity&lt;br /&gt; FX&lt;br /&gt; Commodity&lt;br /&gt; Derivative&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = ProductApi()
+val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
+val productcode : kotlin.String = productcode_example // kotlin.String | The PRODUCTCODE identifier
+val createProductRequest : CreateProductRequest = {"type":"object","properties":{"description":{"type":"string"},"more_info_url":{"type":"string"},"terms_and_conditions_url":{"type":"string"},"parent_product_code":{"type":"string"},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"name":{"type":"string"}}} // CreateProductRequest | Request body
+try {
+    val result : CreateProduct200Response = apiInstance.createProduct(bankid, productcode, createProductRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling ProductApi#createProduct")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ProductApi#createProduct")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **bankid** | **kotlin.String**| The BANKID identifier | |
+| **productcode** | **kotlin.String**| The PRODUCTCODE identifier | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **createProductRequest** | [**CreateProductRequest**](CreateProductRequest.md)| Request body | |
+
+### Return type
+
+[**CreateProduct200Response**](CreateProduct200Response.md)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="createProductAttribute"></a>
+# **createProductAttribute**
+> CreateProductAttribute200Response createProductAttribute(bankid, productcode, updateAtmAttributeRequest)
+
+Create Product Attribute
+
+&lt;p&gt;Create Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = ProductApi()
+val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
+val productcode : kotlin.String = productcode_example // kotlin.String | The PRODUCTCODE identifier
+val updateAtmAttributeRequest : UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} // UpdateAtmAttributeRequest | Request body
+try {
+    val result : CreateProductAttribute200Response = apiInstance.createProductAttribute(bankid, productcode, updateAtmAttributeRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling ProductApi#createProductAttribute")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ProductApi#createProductAttribute")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **bankid** | **kotlin.String**| The BANKID identifier | |
+| **productcode** | **kotlin.String**| The PRODUCTCODE identifier | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
+
+### Return type
+
+[**CreateProductAttribute200Response**](CreateProductAttribute200Response.md)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="createProductCollection"></a>
+# **createProductCollection**
+> CreateProductCollection200Response createProductCollection(bankid, collectioncode, createProductCollectionRequest)
 
 Create Product Collection
 
@@ -42,15 +214,15 @@ Create Product Collection
 val apiInstance = ProductApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val collectioncode : kotlin.String = collectioncode_example // kotlin.String | The COLLECTIONCODE identifier
-val obPv310CreateProductCollectionRequest : OBPv310CreateProductCollectionRequest = {"type":"object","properties":{"parent_product_code":{"type":"string"},"children_product_codes":{"type":"array","items":{"type":"string"}}}} // OBPv310CreateProductCollectionRequest | Request body
+val createProductCollectionRequest : CreateProductCollectionRequest = {"type":"object","properties":{"parent_product_code":{"type":"string"},"children_product_codes":{"type":"array","items":{"type":"string"}}}} // CreateProductCollectionRequest | Request body
 try {
-    val result : OBPv310CreateProductCollection200Response = apiInstance.oBPv310CreateProductCollection(bankid, collectioncode, obPv310CreateProductCollectionRequest)
+    val result : CreateProductCollection200Response = apiInstance.createProductCollection(bankid, collectioncode, createProductCollectionRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv310CreateProductCollection")
+    println("4xx response calling ProductApi#createProductCollection")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv310CreateProductCollection")
+    println("5xx response calling ProductApi#createProductCollection")
     e.printStackTrace()
 }
 ```
@@ -60,11 +232,11 @@ try {
 | **collectioncode** | **kotlin.String**| The COLLECTIONCODE identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv310CreateProductCollectionRequest** | [**OBPv310CreateProductCollectionRequest**](OBPv310CreateProductCollectionRequest.md)| Request body | |
+| **createProductCollectionRequest** | [**CreateProductCollectionRequest**](CreateProductCollectionRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv310CreateProductCollection200Response**](OBPv310CreateProductCollection200Response.md)
+[**CreateProductCollection200Response**](CreateProductCollection200Response.md)
 
 ### Authorization
 
@@ -75,17 +247,75 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv310DeleteProductAttribute"></a>
-# **oBPv310DeleteProductAttribute**
-> oBPv310DeleteProductAttribute(bankid, productcode, productattributeid)
+<a id="createProductFee"></a>
+# **createProductFee**
+> GetProductFee200Response createProductFee(bankid, productcode, updateProductFeeRequest)
+
+Create Product Fee
+
+&lt;p&gt;Create Product Fee&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;product_fee_id&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = ProductApi()
+val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
+val productcode : kotlin.String = productcode_example // kotlin.String | The PRODUCTCODE identifier
+val updateProductFeeRequest : UpdateProductFeeRequest = {type=object, properties={is_active={type=boolean}, name={type=string}, more_info={type=string}, value={type=object, properties={type={type=string}, currency={type=string}, frequency={type=string}, amount={type=number}}}}} // UpdateProductFeeRequest | Request body
+try {
+    val result : GetProductFee200Response = apiInstance.createProductFee(bankid, productcode, updateProductFeeRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling ProductApi#createProductFee")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ProductApi#createProductFee")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **bankid** | **kotlin.String**| The BANKID identifier | |
+| **productcode** | **kotlin.String**| The PRODUCTCODE identifier | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **updateProductFeeRequest** | [**UpdateProductFeeRequest**](UpdateProductFeeRequest.md)| Request body | |
+
+### Return type
+
+[**GetProductFee200Response**](GetProductFee200Response.md)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="deleteProductAttribute"></a>
+# **deleteProductAttribute**
+> deleteProductAttribute(bankid, productcode, productattributeid)
 
 Delete Product Attribute
 
@@ -102,12 +332,12 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val productcode : kotlin.String = productcode_example // kotlin.String | The PRODUCTCODE identifier
 val productattributeid : kotlin.String = productattributeid_example // kotlin.String | The PRODUCTATTRIBUTEID identifier
 try {
-    apiInstance.oBPv310DeleteProductAttribute(bankid, productcode, productattributeid)
+    apiInstance.deleteProductAttribute(bankid, productcode, productattributeid)
 } catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv310DeleteProductAttribute")
+    println("4xx response calling ProductApi#deleteProductAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv310DeleteProductAttribute")
+    println("5xx response calling ProductApi#deleteProductAttribute")
     e.printStackTrace()
 }
 ```
@@ -132,293 +362,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv310GetProductCollection"></a>
-# **oBPv310GetProductCollection**
-> OBPv310GetProductCollection200Response oBPv310GetProductCollection(bankid, collectioncode)
-
-Get Product Collection
-
-&lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = ProductApi()
-val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val collectioncode : kotlin.String = collectioncode_example // kotlin.String | The COLLECTIONCODE identifier
-try {
-    val result : OBPv310GetProductCollection200Response = apiInstance.oBPv310GetProductCollection(bankid, collectioncode)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv310GetProductCollection")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv310GetProductCollection")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **bankid** | **kotlin.String**| The BANKID identifier | |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **collectioncode** | **kotlin.String**| The COLLECTIONCODE identifier | |
-
-### Return type
-
-[**OBPv310GetProductCollection200Response**](OBPv310GetProductCollection200Response.md)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a id="oBPv310GetProductTree"></a>
-# **oBPv310GetProductTree**
-> OBPv310GetProductTree200Response oBPv310GetProductTree(bankid, productcode)
-
-Get Product Tree
-
-&lt;p&gt;Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE&lt;br /&gt; and it&#39;s parent product(s) recursively as specified by parent_product_code.&lt;/p&gt; &lt;p&gt;Each product includes the following information.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;Category&lt;/li&gt; &lt;li&gt;Family&lt;/li&gt; &lt;li&gt;Super Family&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product\&quot;&gt;parent_product&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = ProductApi()
-val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val productcode : kotlin.String = productcode_example // kotlin.String | The PRODUCTCODE identifier
-try {
-    val result : OBPv310GetProductTree200Response = apiInstance.oBPv310GetProductTree(bankid, productcode)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv310GetProductTree")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv310GetProductTree")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **bankid** | **kotlin.String**| The BANKID identifier | |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **productcode** | **kotlin.String**| The PRODUCTCODE identifier | |
-
-### Return type
-
-[**OBPv310GetProductTree200Response**](OBPv310GetProductTree200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a id="oBPv400CreateOrUpdateProductAttributeDefinition"></a>
-# **oBPv400CreateOrUpdateProductAttributeDefinition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateProductAttributeDefinition(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-
-Create or Update Product Attribute Definition
-
-&lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = ProductApi()
-val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest : OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}} // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
-try {
-    val result : OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems = apiInstance.oBPv400CreateOrUpdateProductAttributeDefinition(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv400CreateOrUpdateProductAttributeDefinition")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv400CreateOrUpdateProductAttributeDefinition")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **bankid** | **kotlin.String**| The BANKID identifier | |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a id="oBPv400CreateProductAttribute"></a>
-# **oBPv400CreateProductAttribute**
-> OBPv400CreateProductAttribute200Response oBPv400CreateProductAttribute(bankid, productcode, obPv510UpdateAtmAttributeRequest)
-
-Create Product Attribute
-
-&lt;p&gt;Create Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = ProductApi()
-val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val productcode : kotlin.String = productcode_example // kotlin.String | The PRODUCTCODE identifier
-val obPv510UpdateAtmAttributeRequest : OBPv510UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} // OBPv510UpdateAtmAttributeRequest | Request body
-try {
-    val result : OBPv400CreateProductAttribute200Response = apiInstance.oBPv400CreateProductAttribute(bankid, productcode, obPv510UpdateAtmAttributeRequest)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv400CreateProductAttribute")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv400CreateProductAttribute")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **bankid** | **kotlin.String**| The BANKID identifier | |
-| **productcode** | **kotlin.String**| The PRODUCTCODE identifier | |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400CreateProductAttribute200Response**](OBPv400CreateProductAttribute200Response.md)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a id="oBPv400CreateProductFee"></a>
-# **oBPv400CreateProductFee**
-> OBPv400GetProductFee200Response oBPv400CreateProductFee(bankid, productcode, obPv400UpdateProductFeeRequest)
-
-Create Product Fee
-
-&lt;p&gt;Create Product Fee&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;product_fee_id&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = ProductApi()
-val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val productcode : kotlin.String = productcode_example // kotlin.String | The PRODUCTCODE identifier
-val obPv400UpdateProductFeeRequest : OBPv400UpdateProductFeeRequest = {type=object, properties={is_active={type=boolean}, name={type=string}, more_info={type=string}, value={type=object, properties={type={type=string}, currency={type=string}, frequency={type=string}, amount={type=number}}}}} // OBPv400UpdateProductFeeRequest | Request body
-try {
-    val result : OBPv400GetProductFee200Response = apiInstance.oBPv400CreateProductFee(bankid, productcode, obPv400UpdateProductFeeRequest)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv400CreateProductFee")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv400CreateProductFee")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **bankid** | **kotlin.String**| The BANKID identifier | |
-| **productcode** | **kotlin.String**| The PRODUCTCODE identifier | |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateProductFeeRequest** | [**OBPv400UpdateProductFeeRequest**](OBPv400UpdateProductFeeRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400GetProductFee200Response**](OBPv400GetProductFee200Response.md)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a id="oBPv400DeleteProductAttributeDefinition"></a>
-# **oBPv400DeleteProductAttributeDefinition**
-> oBPv400DeleteProductAttributeDefinition(bankid, attributedefinitionid)
+<a id="deleteProductAttributeDefinition"></a>
+# **deleteProductAttributeDefinition**
+> deleteProductAttributeDefinition(bankid, attributedefinitionid)
 
 Delete Product Attribute Definition
 
@@ -434,12 +388,12 @@ val apiInstance = ProductApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val attributedefinitionid : kotlin.String = attributedefinitionid_example // kotlin.String | The ATTRIBUTEDEFINITIONID identifier
 try {
-    apiInstance.oBPv400DeleteProductAttributeDefinition(bankid, attributedefinitionid)
+    apiInstance.deleteProductAttributeDefinition(bankid, attributedefinitionid)
 } catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv400DeleteProductAttributeDefinition")
+    println("4xx response calling ProductApi#deleteProductAttributeDefinition")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv400DeleteProductAttributeDefinition")
+    println("5xx response calling ProductApi#deleteProductAttributeDefinition")
     e.printStackTrace()
 }
 ```
@@ -463,17 +417,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv400DeleteProductCascade"></a>
-# **oBPv400DeleteProductCascade**
-> oBPv400DeleteProductCascade(bankid, productcode)
+<a id="deleteProductCascade"></a>
+# **deleteProductCascade**
+> deleteProductCascade(bankid, productcode)
 
 Delete Product Cascade
 
@@ -489,12 +443,12 @@ val apiInstance = ProductApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val productcode : kotlin.String = productcode_example // kotlin.String | The PRODUCTCODE identifier
 try {
-    apiInstance.oBPv400DeleteProductCascade(bankid, productcode)
+    apiInstance.deleteProductCascade(bankid, productcode)
 } catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv400DeleteProductCascade")
+    println("4xx response calling ProductApi#deleteProductCascade")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv400DeleteProductCascade")
+    println("5xx response calling ProductApi#deleteProductCascade")
     e.printStackTrace()
 }
 ```
@@ -518,17 +472,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv400DeleteProductFee"></a>
-# **oBPv400DeleteProductFee**
-> oBPv400DeleteProductFee(bankid, productcode, productfeeid)
+<a id="deleteProductFee"></a>
+# **deleteProductFee**
+> deleteProductFee(bankid, productcode, productfeeid)
 
 Delete Product Fee
 
@@ -545,12 +499,12 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val productcode : kotlin.String = productcode_example // kotlin.String | The PRODUCTCODE identifier
 val productfeeid : kotlin.String = productfeeid_example // kotlin.String | The PRODUCTFEEID identifier
 try {
-    apiInstance.oBPv400DeleteProductFee(bankid, productcode, productfeeid)
+    apiInstance.deleteProductFee(bankid, productcode, productfeeid)
 } catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv400DeleteProductFee")
+    println("4xx response calling ProductApi#deleteProductFee")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv400DeleteProductFee")
+    println("5xx response calling ProductApi#deleteProductFee")
     e.printStackTrace()
 }
 ```
@@ -575,17 +529,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv400GetProduct"></a>
-# **oBPv400GetProduct**
-> OBPv400GetProduct200Response oBPv400GetProduct(bankid, productcode)
+<a id="getProduct"></a>
+# **getProduct**
+> GetProduct200Response getProduct(bankid, productcode)
 
 Get Bank Product
 
@@ -601,13 +555,13 @@ val apiInstance = ProductApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val productcode : kotlin.String = productcode_example // kotlin.String | The PRODUCTCODE identifier
 try {
-    val result : OBPv400GetProduct200Response = apiInstance.oBPv400GetProduct(bankid, productcode)
+    val result : GetProduct200Response = apiInstance.getProduct(bankid, productcode)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv400GetProduct")
+    println("4xx response calling ProductApi#getProduct")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv400GetProduct")
+    println("5xx response calling ProductApi#getProduct")
     e.printStackTrace()
 }
 ```
@@ -620,7 +574,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetProduct200Response**](OBPv400GetProduct200Response.md)
+[**GetProduct200Response**](GetProduct200Response.md)
 
 ### Authorization
 
@@ -631,9 +585,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetProductAttribute"></a>
-# **oBPv400GetProductAttribute**
-> OBPv400CreateProductAttribute200Response oBPv400GetProductAttribute(bankid, productcode, productattributeid)
+<a id="getProductAttribute"></a>
+# **getProductAttribute**
+> CreateProductAttribute200Response getProductAttribute(bankid, productcode, productattributeid)
 
 Get Product Attribute
 
@@ -650,13 +604,13 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val productcode : kotlin.String = productcode_example // kotlin.String | The PRODUCTCODE identifier
 val productattributeid : kotlin.String = productattributeid_example // kotlin.String | The PRODUCTATTRIBUTEID identifier
 try {
-    val result : OBPv400CreateProductAttribute200Response = apiInstance.oBPv400GetProductAttribute(bankid, productcode, productattributeid)
+    val result : CreateProductAttribute200Response = apiInstance.getProductAttribute(bankid, productcode, productattributeid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv400GetProductAttribute")
+    println("4xx response calling ProductApi#getProductAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv400GetProductAttribute")
+    println("5xx response calling ProductApi#getProductAttribute")
     e.printStackTrace()
 }
 ```
@@ -670,7 +624,7 @@ try {
 
 ### Return type
 
-[**OBPv400CreateProductAttribute200Response**](OBPv400CreateProductAttribute200Response.md)
+[**CreateProductAttribute200Response**](CreateProductAttribute200Response.md)
 
 ### Authorization
 
@@ -681,17 +635,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetProductAttributeDefinition"></a>
-# **oBPv400GetProductAttributeDefinition**
-> OBPv400GetTransactionRequestAttributeDefinition200Response oBPv400GetProductAttributeDefinition(bankid)
+<a id="getProductAttributeDefinition"></a>
+# **getProductAttributeDefinition**
+> GetTransactionRequestAttributeDefinition200Response getProductAttributeDefinition(bankid)
 
 Get Product Attribute Definition
 
@@ -706,13 +660,13 @@ Get Product Attribute Definition
 val apiInstance = ProductApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 try {
-    val result : OBPv400GetTransactionRequestAttributeDefinition200Response = apiInstance.oBPv400GetProductAttributeDefinition(bankid)
+    val result : GetTransactionRequestAttributeDefinition200Response = apiInstance.getProductAttributeDefinition(bankid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv400GetProductAttributeDefinition")
+    println("4xx response calling ProductApi#getProductAttributeDefinition")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv400GetProductAttributeDefinition")
+    println("5xx response calling ProductApi#getProductAttributeDefinition")
     e.printStackTrace()
 }
 ```
@@ -724,7 +678,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -735,17 +689,73 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetProductFee"></a>
-# **oBPv400GetProductFee**
-> OBPv400GetProductFee200Response oBPv400GetProductFee(bankid, productcode, productfeeid)
+<a id="getProductCollection"></a>
+# **getProductCollection**
+> GetProductCollection200Response getProductCollection(bankid, collectioncode)
+
+Get Product Collection
+
+&lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = ProductApi()
+val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
+val collectioncode : kotlin.String = collectioncode_example // kotlin.String | The COLLECTIONCODE identifier
+try {
+    val result : GetProductCollection200Response = apiInstance.getProductCollection(bankid, collectioncode)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling ProductApi#getProductCollection")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ProductApi#getProductCollection")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **bankid** | **kotlin.String**| The BANKID identifier | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **collectioncode** | **kotlin.String**| The COLLECTIONCODE identifier | |
+
+### Return type
+
+[**GetProductCollection200Response**](GetProductCollection200Response.md)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="getProductFee"></a>
+# **getProductFee**
+> GetProductFee200Response getProductFee(bankid, productcode, productfeeid)
 
 Get Product Fee
 
@@ -762,13 +772,13 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val productcode : kotlin.String = productcode_example // kotlin.String | The PRODUCTCODE identifier
 val productfeeid : kotlin.String = productfeeid_example // kotlin.String | The PRODUCTFEEID identifier
 try {
-    val result : OBPv400GetProductFee200Response = apiInstance.oBPv400GetProductFee(bankid, productcode, productfeeid)
+    val result : GetProductFee200Response = apiInstance.getProductFee(bankid, productcode, productfeeid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv400GetProductFee")
+    println("4xx response calling ProductApi#getProductFee")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv400GetProductFee")
+    println("5xx response calling ProductApi#getProductFee")
     e.printStackTrace()
 }
 ```
@@ -782,7 +792,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetProductFee200Response**](OBPv400GetProductFee200Response.md)
+[**GetProductFee200Response**](GetProductFee200Response.md)
 
 ### Authorization
 
@@ -793,9 +803,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetProductFees"></a>
-# **oBPv400GetProductFees**
-> OBPv400GetProductFees200Response oBPv400GetProductFees(bankid, productcode)
+<a id="getProductFees"></a>
+# **getProductFees**
+> GetProductFees200Response getProductFees(bankid, productcode)
 
 Get Product Fees
 
@@ -811,13 +821,13 @@ val apiInstance = ProductApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val productcode : kotlin.String = productcode_example // kotlin.String | The PRODUCTCODE identifier
 try {
-    val result : OBPv400GetProductFees200Response = apiInstance.oBPv400GetProductFees(bankid, productcode)
+    val result : GetProductFees200Response = apiInstance.getProductFees(bankid, productcode)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv400GetProductFees")
+    println("4xx response calling ProductApi#getProductFees")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv400GetProductFees")
+    println("5xx response calling ProductApi#getProductFees")
     e.printStackTrace()
 }
 ```
@@ -830,7 +840,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetProductFees200Response**](OBPv400GetProductFees200Response.md)
+[**GetProductFees200Response**](GetProductFees200Response.md)
 
 ### Authorization
 
@@ -841,9 +851,57 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetProducts"></a>
-# **oBPv400GetProducts**
-> OBPv400GetProducts200Response oBPv400GetProducts(bankid)
+<a id="getProductTree"></a>
+# **getProductTree**
+> GetProductTree200Response getProductTree(bankid, productcode)
+
+Get Product Tree
+
+&lt;p&gt;Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE&lt;br /&gt; and it&#39;s parent product(s) recursively as specified by parent_product_code.&lt;/p&gt; &lt;p&gt;Each product includes the following information.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;Category&lt;/li&gt; &lt;li&gt;Family&lt;/li&gt; &lt;li&gt;Super Family&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product\&quot;&gt;parent_product&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = ProductApi()
+val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
+val productcode : kotlin.String = productcode_example // kotlin.String | The PRODUCTCODE identifier
+try {
+    val result : GetProductTree200Response = apiInstance.getProductTree(bankid, productcode)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling ProductApi#getProductTree")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ProductApi#getProductTree")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **bankid** | **kotlin.String**| The BANKID identifier | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **productcode** | **kotlin.String**| The PRODUCTCODE identifier | |
+
+### Return type
+
+[**GetProductTree200Response**](GetProductTree200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="getProducts"></a>
+# **getProducts**
+> GetProducts200Response getProducts(bankid)
 
 Get Products
 
@@ -858,13 +916,13 @@ Get Products
 val apiInstance = ProductApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 try {
-    val result : OBPv400GetProducts200Response = apiInstance.oBPv400GetProducts(bankid)
+    val result : GetProducts200Response = apiInstance.getProducts(bankid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv400GetProducts")
+    println("4xx response calling ProductApi#getProducts")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv400GetProducts")
+    println("5xx response calling ProductApi#getProducts")
     e.printStackTrace()
 }
 ```
@@ -876,7 +934,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetProducts200Response**](OBPv400GetProducts200Response.md)
+[**GetProducts200Response**](GetProducts200Response.md)
 
 ### Authorization
 
@@ -887,9 +945,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400UpdateProductAttribute"></a>
-# **oBPv400UpdateProductAttribute**
-> OBPv400CreateProductAttribute200Response oBPv400UpdateProductAttribute(bankid, productcode, productattributeid, obPv510UpdateAtmAttributeRequest)
+<a id="updateProductAttribute"></a>
+# **updateProductAttribute**
+> CreateProductAttribute200Response updateProductAttribute(bankid, productcode, productattributeid, updateAtmAttributeRequest)
 
 Update Product Attribute
 
@@ -905,15 +963,15 @@ val apiInstance = ProductApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val productcode : kotlin.String = productcode_example // kotlin.String | The PRODUCTCODE identifier
 val productattributeid : kotlin.String = productattributeid_example // kotlin.String | The PRODUCTATTRIBUTEID identifier
-val obPv510UpdateAtmAttributeRequest : OBPv510UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} // OBPv510UpdateAtmAttributeRequest | Request body
+val updateAtmAttributeRequest : UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} // UpdateAtmAttributeRequest | Request body
 try {
-    val result : OBPv400CreateProductAttribute200Response = apiInstance.oBPv400UpdateProductAttribute(bankid, productcode, productattributeid, obPv510UpdateAtmAttributeRequest)
+    val result : CreateProductAttribute200Response = apiInstance.updateProductAttribute(bankid, productcode, productattributeid, updateAtmAttributeRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv400UpdateProductAttribute")
+    println("4xx response calling ProductApi#updateProductAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv400UpdateProductAttribute")
+    println("5xx response calling ProductApi#updateProductAttribute")
     e.printStackTrace()
 }
 ```
@@ -924,11 +982,11 @@ try {
 | **productattributeid** | **kotlin.String**| The PRODUCTATTRIBUTEID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateProductAttribute200Response**](OBPv400CreateProductAttribute200Response.md)
+[**CreateProductAttribute200Response**](CreateProductAttribute200Response.md)
 
 ### Authorization
 
@@ -939,17 +997,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400UpdateProductFee"></a>
-# **oBPv400UpdateProductFee**
-> OBPv400GetProductFee200Response oBPv400UpdateProductFee(bankid, productcode, productfeeid, obPv400UpdateProductFeeRequest)
+<a id="updateProductFee"></a>
+# **updateProductFee**
+> GetProductFee200Response updateProductFee(bankid, productcode, productfeeid, updateProductFeeRequest)
 
 Update Product Fee
 
@@ -965,15 +1023,15 @@ val apiInstance = ProductApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val productcode : kotlin.String = productcode_example // kotlin.String | The PRODUCTCODE identifier
 val productfeeid : kotlin.String = productfeeid_example // kotlin.String | The PRODUCTFEEID identifier
-val obPv400UpdateProductFeeRequest : OBPv400UpdateProductFeeRequest = {"type":"object","properties":{"is_active":{"type":"boolean"},"name":{"type":"string"},"more_info":{"type":"string"},"value":{"type":"object","properties":{"type":{"type":"string"},"currency":{"type":"string"},"frequency":{"type":"string"},"amount":{"type":"number"}}}}} // OBPv400UpdateProductFeeRequest | Request body
+val updateProductFeeRequest : UpdateProductFeeRequest = {"type":"object","properties":{"is_active":{"type":"boolean"},"name":{"type":"string"},"more_info":{"type":"string"},"value":{"type":"object","properties":{"type":{"type":"string"},"currency":{"type":"string"},"frequency":{"type":"string"},"amount":{"type":"number"}}}}} // UpdateProductFeeRequest | Request body
 try {
-    val result : OBPv400GetProductFee200Response = apiInstance.oBPv400UpdateProductFee(bankid, productcode, productfeeid, obPv400UpdateProductFeeRequest)
+    val result : GetProductFee200Response = apiInstance.updateProductFee(bankid, productcode, productfeeid, updateProductFeeRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv400UpdateProductFee")
+    println("4xx response calling ProductApi#updateProductFee")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv400UpdateProductFee")
+    println("5xx response calling ProductApi#updateProductFee")
     e.printStackTrace()
 }
 ```
@@ -984,11 +1042,11 @@ try {
 | **productfeeid** | **kotlin.String**| The PRODUCTFEEID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateProductFeeRequest** | [**OBPv400UpdateProductFeeRequest**](OBPv400UpdateProductFeeRequest.md)| Request body | |
+| **updateProductFeeRequest** | [**UpdateProductFeeRequest**](UpdateProductFeeRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetProductFee200Response**](OBPv400GetProductFee200Response.md)
+[**GetProductFee200Response**](GetProductFee200Response.md)
 
 ### Authorization
 
@@ -999,66 +1057,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a id="oBPv500CreateProduct"></a>
-# **oBPv500CreateProduct**
-> OBPv500CreateProduct200Response oBPv500CreateProduct(bankid, productcode, obPv500CreateProductRequest)
-
-Create Product
-
-&lt;p&gt;Create or Update Product for the Bank.&lt;/p&gt; &lt;p&gt;The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.&lt;/p&gt; &lt;p&gt;Typical Super Family values / Asset classes are:&lt;/p&gt; &lt;p&gt;Debt&lt;br /&gt; Equity&lt;br /&gt; FX&lt;br /&gt; Commodity&lt;br /&gt; Derivative&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = ProductApi()
-val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val productcode : kotlin.String = productcode_example // kotlin.String | The PRODUCTCODE identifier
-val obPv500CreateProductRequest : OBPv500CreateProductRequest = {"type":"object","properties":{"description":{"type":"string"},"more_info_url":{"type":"string"},"terms_and_conditions_url":{"type":"string"},"parent_product_code":{"type":"string"},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"name":{"type":"string"}}} // OBPv500CreateProductRequest | Request body
-try {
-    val result : OBPv500CreateProduct200Response = apiInstance.oBPv500CreateProduct(bankid, productcode, obPv500CreateProductRequest)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ProductApi#oBPv500CreateProduct")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ProductApi#oBPv500CreateProduct")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **bankid** | **kotlin.String**| The BANKID identifier | |
-| **productcode** | **kotlin.String**| The PRODUCTCODE identifier | |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **obPv500CreateProductRequest** | [**OBPv500CreateProductRequest**](OBPv500CreateProductRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv500CreateProduct200Response**](OBPv500CreateProduct200Response.md)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

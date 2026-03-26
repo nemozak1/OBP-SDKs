@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,25 +24,25 @@ import (
 // WebhookAPIService WebhookAPI service
 type WebhookAPIService service
 
-type ApiOBPv310CreateAccountWebhookRequest struct {
+type ApiCreateAccountWebhookRequest struct {
 	ctx context.Context
 	ApiService *WebhookAPIService
 	bankid string
-	oBPv310CreateAccountWebhookRequest *OBPv310CreateAccountWebhookRequest
+	createAccountWebhookRequest *CreateAccountWebhookRequest
 }
 
 // Request body
-func (r ApiOBPv310CreateAccountWebhookRequest) OBPv310CreateAccountWebhookRequest(oBPv310CreateAccountWebhookRequest OBPv310CreateAccountWebhookRequest) ApiOBPv310CreateAccountWebhookRequest {
-	r.oBPv310CreateAccountWebhookRequest = &oBPv310CreateAccountWebhookRequest
+func (r ApiCreateAccountWebhookRequest) CreateAccountWebhookRequest(createAccountWebhookRequest CreateAccountWebhookRequest) ApiCreateAccountWebhookRequest {
+	r.createAccountWebhookRequest = &createAccountWebhookRequest
 	return r
 }
 
-func (r ApiOBPv310CreateAccountWebhookRequest) Execute() (*OBPv310EnableDisableAccountWebhook200Response, *http.Response, error) {
-	return r.ApiService.OBPv310CreateAccountWebhookExecute(r)
+func (r ApiCreateAccountWebhookRequest) Execute() (*EnableDisableAccountWebhook200Response, *http.Response, error) {
+	return r.ApiService.CreateAccountWebhookExecute(r)
 }
 
 /*
-OBPv310CreateAccountWebhook Create an Account Webhook
+CreateAccountWebhook Create an Account Webhook
 
 <p>Create an Account Webhook</p>
 <p>Webhooks are used to call external URLs when certain events happen.</p>
@@ -73,10 +73,10 @@ OBPv310CreateAccountWebhook Create an Account Webhook
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv310CreateAccountWebhookRequest
+ @return ApiCreateAccountWebhookRequest
 */
-func (a *WebhookAPIService) OBPv310CreateAccountWebhook(ctx context.Context, bankid string) ApiOBPv310CreateAccountWebhookRequest {
-	return ApiOBPv310CreateAccountWebhookRequest{
+func (a *WebhookAPIService) CreateAccountWebhook(ctx context.Context, bankid string) ApiCreateAccountWebhookRequest {
+	return ApiCreateAccountWebhookRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -84,16 +84,16 @@ func (a *WebhookAPIService) OBPv310CreateAccountWebhook(ctx context.Context, ban
 }
 
 // Execute executes the request
-//  @return OBPv310EnableDisableAccountWebhook200Response
-func (a *WebhookAPIService) OBPv310CreateAccountWebhookExecute(r ApiOBPv310CreateAccountWebhookRequest) (*OBPv310EnableDisableAccountWebhook200Response, *http.Response, error) {
+//  @return EnableDisableAccountWebhook200Response
+func (a *WebhookAPIService) CreateAccountWebhookExecute(r ApiCreateAccountWebhookRequest) (*EnableDisableAccountWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310EnableDisableAccountWebhook200Response
+		localVarReturnValue  *EnableDisableAccountWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookAPIService.OBPv310CreateAccountWebhook")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookAPIService.CreateAccountWebhook")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -104,8 +104,8 @@ func (a *WebhookAPIService) OBPv310CreateAccountWebhookExecute(r ApiOBPv310Creat
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv310CreateAccountWebhookRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv310CreateAccountWebhookRequest is required and must be specified")
+	if r.createAccountWebhookRequest == nil {
+		return localVarReturnValue, nil, reportError("createAccountWebhookRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -126,7 +126,7 @@ func (a *WebhookAPIService) OBPv310CreateAccountWebhookExecute(r ApiOBPv310Creat
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv310CreateAccountWebhookRequest
+	localVarPostBody = r.createAccountWebhookRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -151,7 +151,7 @@ func (a *WebhookAPIService) OBPv310CreateAccountWebhookExecute(r ApiOBPv310Creat
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -192,25 +192,378 @@ func (a *WebhookAPIService) OBPv310CreateAccountWebhookExecute(r ApiOBPv310Creat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv310EnableDisableAccountWebhookRequest struct {
+type ApiCreateBankAccountNotificationWebhookRequest struct {
 	ctx context.Context
 	ApiService *WebhookAPIService
 	bankid string
-	oBPv310EnableDisableAccountWebhookRequest *OBPv310EnableDisableAccountWebhookRequest
+	createSystemAccountNotificationWebhookRequest *CreateSystemAccountNotificationWebhookRequest
 }
 
 // Request body
-func (r ApiOBPv310EnableDisableAccountWebhookRequest) OBPv310EnableDisableAccountWebhookRequest(oBPv310EnableDisableAccountWebhookRequest OBPv310EnableDisableAccountWebhookRequest) ApiOBPv310EnableDisableAccountWebhookRequest {
-	r.oBPv310EnableDisableAccountWebhookRequest = &oBPv310EnableDisableAccountWebhookRequest
+func (r ApiCreateBankAccountNotificationWebhookRequest) CreateSystemAccountNotificationWebhookRequest(createSystemAccountNotificationWebhookRequest CreateSystemAccountNotificationWebhookRequest) ApiCreateBankAccountNotificationWebhookRequest {
+	r.createSystemAccountNotificationWebhookRequest = &createSystemAccountNotificationWebhookRequest
 	return r
 }
 
-func (r ApiOBPv310EnableDisableAccountWebhookRequest) Execute() (*OBPv310EnableDisableAccountWebhook200Response, *http.Response, error) {
-	return r.ApiService.OBPv310EnableDisableAccountWebhookExecute(r)
+func (r ApiCreateBankAccountNotificationWebhookRequest) Execute() (*CreateBankAccountNotificationWebhook200Response, *http.Response, error) {
+	return r.ApiService.CreateBankAccountNotificationWebhookExecute(r)
 }
 
 /*
-OBPv310EnableDisableAccountWebhook Enable/Disable an Account Webhook
+CreateBankAccountNotificationWebhook Create bank level Account Notification Webhook
+
+<p>Create a notification Webhook that will fire for all accounts on the specified Bank.</p>
+<p>Webhooks are used to call external web services when certain events happen.</p>
+<p>For instance, a webhook can be used to notify an external service if a transaction is created on an account.</p>
+<p>When an account notification webhook fires it will POST to the URL you specify during the creation of the webhook.</p>
+<p>Inside the payload you will find account_id and transaction_id and also user_ids and customer_ids of the Users / Customers linked to the Account.</p>
+<p>The webhook will POST the following structure to your service:</p>
+<p>{<br />
+&quot;event_name&quot;: &quot;OnCreateTransaction&quot;,<br />
+&quot;event_id&quot;: &quot;9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;,<br />
+&quot;bank_id&quot;: &quot;gh.29.uk&quot;,<br />
+&quot;account_id&quot;: &quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;,<br />
+&quot;transaction_id&quot;: &quot;7ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;,<br />
+&quot;related_entities&quot;: [<br />
+{<br />
+&quot;user_id&quot;: &quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;,<br />
+&quot;customer_ids&quot;: [&quot;3ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;]<br />
+}<br />
+]<br />
+}</p>
+<p>Thus, your service should accept the above POST body structure.</p>
+<p>In this way, your web service can be informed about an event on an account and act accordingly.</p>
+<p>Further information about the account, transaction or related entities can then be retrieved using the standard REST APIs.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#http_method"><strong>http_method</strong></a>: GET</p>
+<p><a href="/glossary#http_protocol"><strong>http_protocol</strong></a>:</p>
+<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
+<p><a href="/glossary#http_method"><strong>http_method</strong></a>: GET</p>
+<p><a href="/glossary#http_protocol"><strong>http_protocol</strong></a>:</p>
+<p><a href="/glossary#trigger_name"><strong>trigger_name</strong></a>:</p>
+<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
+<p><a href="/glossary#"><strong>webhook_id</strong></a>: webhook_id</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @return ApiCreateBankAccountNotificationWebhookRequest
+*/
+func (a *WebhookAPIService) CreateBankAccountNotificationWebhook(ctx context.Context, bankid string) ApiCreateBankAccountNotificationWebhookRequest {
+	return ApiCreateBankAccountNotificationWebhookRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+	}
+}
+
+// Execute executes the request
+//  @return CreateBankAccountNotificationWebhook200Response
+func (a *WebhookAPIService) CreateBankAccountNotificationWebhookExecute(r ApiCreateBankAccountNotificationWebhookRequest) (*CreateBankAccountNotificationWebhook200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateBankAccountNotificationWebhook200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookAPIService.CreateBankAccountNotificationWebhook")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createSystemAccountNotificationWebhookRequest == nil {
+		return localVarReturnValue, nil, reportError("createSystemAccountNotificationWebhookRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createSystemAccountNotificationWebhookRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateSystemAccountNotificationWebhookRequest struct {
+	ctx context.Context
+	ApiService *WebhookAPIService
+	createSystemAccountNotificationWebhookRequest *CreateSystemAccountNotificationWebhookRequest
+}
+
+// Request body
+func (r ApiCreateSystemAccountNotificationWebhookRequest) CreateSystemAccountNotificationWebhookRequest(createSystemAccountNotificationWebhookRequest CreateSystemAccountNotificationWebhookRequest) ApiCreateSystemAccountNotificationWebhookRequest {
+	r.createSystemAccountNotificationWebhookRequest = &createSystemAccountNotificationWebhookRequest
+	return r
+}
+
+func (r ApiCreateSystemAccountNotificationWebhookRequest) Execute() (*CreateSystemAccountNotificationWebhook200Response, *http.Response, error) {
+	return r.ApiService.CreateSystemAccountNotificationWebhookExecute(r)
+}
+
+/*
+CreateSystemAccountNotificationWebhook Create system level Account Notification Webhook
+
+<p>Create a notification Webhook that will fire for all accounts on the system.</p>
+<p>Webhooks are used to call external web services when certain events happen.</p>
+<p>For instance, a webhook can be used to notify an external service if a transaction is created on an account.</p>
+<p>When an account notification webhook fires it will POST to the URL you specify during the creation of the webhook.</p>
+<p>Inside the payload you will find account_id and transaction_id and also user_ids and customer_ids of the Users / Customers linked to the Account.</p>
+<p>The webhook will POST the following structure to your service:</p>
+<p>{<br />
+&quot;event_name&quot;: &quot;OnCreateTransaction&quot;,<br />
+&quot;event_id&quot;: &quot;9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;,<br />
+&quot;bank_id&quot;: &quot;gh.29.uk&quot;,<br />
+&quot;account_id&quot;: &quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;,<br />
+&quot;transaction_id&quot;: &quot;7ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;,<br />
+&quot;related_entities&quot;: [<br />
+{<br />
+&quot;user_id&quot;: &quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;,<br />
+&quot;customer_ids&quot;: [&quot;3ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;]<br />
+}<br />
+]<br />
+}</p>
+<p>Thus, your service should accept the above POST body structure.</p>
+<p>In this way, your web service can be informed about an event on an account and act accordingly.</p>
+<p>Further information about the account, transaction or related entities can then be retrieved using the standard REST APIs.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#http_method"><strong>http_method</strong></a>: GET</p>
+<p><a href="/glossary#http_protocol"><strong>http_protocol</strong></a>:</p>
+<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
+<p><a href="/glossary#http_method"><strong>http_method</strong></a>: GET</p>
+<p><a href="/glossary#http_protocol"><strong>http_protocol</strong></a>:</p>
+<p><a href="/glossary#trigger_name"><strong>trigger_name</strong></a>:</p>
+<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
+<p><a href="/glossary#"><strong>webhook_id</strong></a>: webhook_id</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCreateSystemAccountNotificationWebhookRequest
+*/
+func (a *WebhookAPIService) CreateSystemAccountNotificationWebhook(ctx context.Context) ApiCreateSystemAccountNotificationWebhookRequest {
+	return ApiCreateSystemAccountNotificationWebhookRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return CreateSystemAccountNotificationWebhook200Response
+func (a *WebhookAPIService) CreateSystemAccountNotificationWebhookExecute(r ApiCreateSystemAccountNotificationWebhookRequest) (*CreateSystemAccountNotificationWebhook200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateSystemAccountNotificationWebhook200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookAPIService.CreateSystemAccountNotificationWebhook")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/web-hooks/account/notifications/on-create-transaction"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createSystemAccountNotificationWebhookRequest == nil {
+		return localVarReturnValue, nil, reportError("createSystemAccountNotificationWebhookRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createSystemAccountNotificationWebhookRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiEnableDisableAccountWebhookRequest struct {
+	ctx context.Context
+	ApiService *WebhookAPIService
+	bankid string
+	enableDisableAccountWebhookRequest *EnableDisableAccountWebhookRequest
+}
+
+// Request body
+func (r ApiEnableDisableAccountWebhookRequest) EnableDisableAccountWebhookRequest(enableDisableAccountWebhookRequest EnableDisableAccountWebhookRequest) ApiEnableDisableAccountWebhookRequest {
+	r.enableDisableAccountWebhookRequest = &enableDisableAccountWebhookRequest
+	return r
+}
+
+func (r ApiEnableDisableAccountWebhookRequest) Execute() (*EnableDisableAccountWebhook200Response, *http.Response, error) {
+	return r.ApiService.EnableDisableAccountWebhookExecute(r)
+}
+
+/*
+EnableDisableAccountWebhook Enable/Disable an Account Webhook
 
 <p>Enable/Disable an Account Webhook</p>
 <p>Webhooks are used to call external URLs when certain events happen.</p>
@@ -234,10 +587,10 @@ OBPv310EnableDisableAccountWebhook Enable/Disable an Account Webhook
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv310EnableDisableAccountWebhookRequest
+ @return ApiEnableDisableAccountWebhookRequest
 */
-func (a *WebhookAPIService) OBPv310EnableDisableAccountWebhook(ctx context.Context, bankid string) ApiOBPv310EnableDisableAccountWebhookRequest {
-	return ApiOBPv310EnableDisableAccountWebhookRequest{
+func (a *WebhookAPIService) EnableDisableAccountWebhook(ctx context.Context, bankid string) ApiEnableDisableAccountWebhookRequest {
+	return ApiEnableDisableAccountWebhookRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -245,16 +598,16 @@ func (a *WebhookAPIService) OBPv310EnableDisableAccountWebhook(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return OBPv310EnableDisableAccountWebhook200Response
-func (a *WebhookAPIService) OBPv310EnableDisableAccountWebhookExecute(r ApiOBPv310EnableDisableAccountWebhookRequest) (*OBPv310EnableDisableAccountWebhook200Response, *http.Response, error) {
+//  @return EnableDisableAccountWebhook200Response
+func (a *WebhookAPIService) EnableDisableAccountWebhookExecute(r ApiEnableDisableAccountWebhookRequest) (*EnableDisableAccountWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310EnableDisableAccountWebhook200Response
+		localVarReturnValue  *EnableDisableAccountWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookAPIService.OBPv310EnableDisableAccountWebhook")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookAPIService.EnableDisableAccountWebhook")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -265,8 +618,8 @@ func (a *WebhookAPIService) OBPv310EnableDisableAccountWebhookExecute(r ApiOBPv3
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv310EnableDisableAccountWebhookRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv310EnableDisableAccountWebhookRequest is required and must be specified")
+	if r.enableDisableAccountWebhookRequest == nil {
+		return localVarReturnValue, nil, reportError("enableDisableAccountWebhookRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -287,7 +640,7 @@ func (a *WebhookAPIService) OBPv310EnableDisableAccountWebhookExecute(r ApiOBPv3
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv310EnableDisableAccountWebhookRequest
+	localVarPostBody = r.enableDisableAccountWebhookRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -312,7 +665,7 @@ func (a *WebhookAPIService) OBPv310EnableDisableAccountWebhookExecute(r ApiOBPv3
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -353,18 +706,18 @@ func (a *WebhookAPIService) OBPv310EnableDisableAccountWebhookExecute(r ApiOBPv3
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv310GetAccountWebhooksRequest struct {
+type ApiGetAccountWebhooksRequest struct {
 	ctx context.Context
 	ApiService *WebhookAPIService
 	bankid string
 }
 
-func (r ApiOBPv310GetAccountWebhooksRequest) Execute() (*OBPv310GetAccountWebhooks200Response, *http.Response, error) {
-	return r.ApiService.OBPv310GetAccountWebhooksExecute(r)
+func (r ApiGetAccountWebhooksRequest) Execute() (*GetAccountWebhooks200Response, *http.Response, error) {
+	return r.ApiService.GetAccountWebhooksExecute(r)
 }
 
 /*
-OBPv310GetAccountWebhooks Get Account Webhooks
+GetAccountWebhooks Get Account Webhooks
 
 <p>Get Account Webhooks.</p>
 <p>Possible custom URL parameters for pagination:</p>
@@ -396,10 +749,10 @@ OBPv310GetAccountWebhooks Get Account Webhooks
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv310GetAccountWebhooksRequest
+ @return ApiGetAccountWebhooksRequest
 */
-func (a *WebhookAPIService) OBPv310GetAccountWebhooks(ctx context.Context, bankid string) ApiOBPv310GetAccountWebhooksRequest {
-	return ApiOBPv310GetAccountWebhooksRequest{
+func (a *WebhookAPIService) GetAccountWebhooks(ctx context.Context, bankid string) ApiGetAccountWebhooksRequest {
+	return ApiGetAccountWebhooksRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -407,16 +760,16 @@ func (a *WebhookAPIService) OBPv310GetAccountWebhooks(ctx context.Context, banki
 }
 
 // Execute executes the request
-//  @return OBPv310GetAccountWebhooks200Response
-func (a *WebhookAPIService) OBPv310GetAccountWebhooksExecute(r ApiOBPv310GetAccountWebhooksRequest) (*OBPv310GetAccountWebhooks200Response, *http.Response, error) {
+//  @return GetAccountWebhooks200Response
+func (a *WebhookAPIService) GetAccountWebhooksExecute(r ApiGetAccountWebhooksRequest) (*GetAccountWebhooks200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetAccountWebhooks200Response
+		localVarReturnValue  *GetAccountWebhooks200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookAPIService.OBPv310GetAccountWebhooks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookAPIService.GetAccountWebhooks")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -469,360 +822,7 @@ func (a *WebhookAPIService) OBPv310GetAccountWebhooksExecute(r ApiOBPv310GetAcco
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateBankAccountNotificationWebhookRequest struct {
-	ctx context.Context
-	ApiService *WebhookAPIService
-	bankid string
-	oBPv400CreateSystemAccountNotificationWebhookRequest *OBPv400CreateSystemAccountNotificationWebhookRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateBankAccountNotificationWebhookRequest) OBPv400CreateSystemAccountNotificationWebhookRequest(oBPv400CreateSystemAccountNotificationWebhookRequest OBPv400CreateSystemAccountNotificationWebhookRequest) ApiOBPv400CreateBankAccountNotificationWebhookRequest {
-	r.oBPv400CreateSystemAccountNotificationWebhookRequest = &oBPv400CreateSystemAccountNotificationWebhookRequest
-	return r
-}
-
-func (r ApiOBPv400CreateBankAccountNotificationWebhookRequest) Execute() (*OBPv400CreateBankAccountNotificationWebhook200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateBankAccountNotificationWebhookExecute(r)
-}
-
-/*
-OBPv400CreateBankAccountNotificationWebhook Create bank level Account Notification Webhook
-
-<p>Create a notification Webhook that will fire for all accounts on the specified Bank.</p>
-<p>Webhooks are used to call external web services when certain events happen.</p>
-<p>For instance, a webhook can be used to notify an external service if a transaction is created on an account.</p>
-<p>When an account notification webhook fires it will POST to the URL you specify during the creation of the webhook.</p>
-<p>Inside the payload you will find account_id and transaction_id and also user_ids and customer_ids of the Users / Customers linked to the Account.</p>
-<p>The webhook will POST the following structure to your service:</p>
-<p>{<br />
-&quot;event_name&quot;: &quot;OnCreateTransaction&quot;,<br />
-&quot;event_id&quot;: &quot;9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;,<br />
-&quot;bank_id&quot;: &quot;gh.29.uk&quot;,<br />
-&quot;account_id&quot;: &quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;,<br />
-&quot;transaction_id&quot;: &quot;7ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;,<br />
-&quot;related_entities&quot;: [<br />
-{<br />
-&quot;user_id&quot;: &quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;,<br />
-&quot;customer_ids&quot;: [&quot;3ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;]<br />
-}<br />
-]<br />
-}</p>
-<p>Thus, your service should accept the above POST body structure.</p>
-<p>In this way, your web service can be informed about an event on an account and act accordingly.</p>
-<p>Further information about the account, transaction or related entities can then be retrieved using the standard REST APIs.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#http_method"><strong>http_method</strong></a>: GET</p>
-<p><a href="/glossary#http_protocol"><strong>http_protocol</strong></a>:</p>
-<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#http_method"><strong>http_method</strong></a>: GET</p>
-<p><a href="/glossary#http_protocol"><strong>http_protocol</strong></a>:</p>
-<p><a href="/glossary#trigger_name"><strong>trigger_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
-<p><a href="/glossary#"><strong>webhook_id</strong></a>: webhook_id</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @return ApiOBPv400CreateBankAccountNotificationWebhookRequest
-*/
-func (a *WebhookAPIService) OBPv400CreateBankAccountNotificationWebhook(ctx context.Context, bankid string) ApiOBPv400CreateBankAccountNotificationWebhookRequest {
-	return ApiOBPv400CreateBankAccountNotificationWebhookRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400CreateBankAccountNotificationWebhook200Response
-func (a *WebhookAPIService) OBPv400CreateBankAccountNotificationWebhookExecute(r ApiOBPv400CreateBankAccountNotificationWebhookRequest) (*OBPv400CreateBankAccountNotificationWebhook200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateBankAccountNotificationWebhook200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookAPIService.OBPv400CreateBankAccountNotificationWebhook")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400CreateSystemAccountNotificationWebhookRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateSystemAccountNotificationWebhookRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400CreateSystemAccountNotificationWebhookRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateSystemAccountNotificationWebhookRequest struct {
-	ctx context.Context
-	ApiService *WebhookAPIService
-	oBPv400CreateSystemAccountNotificationWebhookRequest *OBPv400CreateSystemAccountNotificationWebhookRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateSystemAccountNotificationWebhookRequest) OBPv400CreateSystemAccountNotificationWebhookRequest(oBPv400CreateSystemAccountNotificationWebhookRequest OBPv400CreateSystemAccountNotificationWebhookRequest) ApiOBPv400CreateSystemAccountNotificationWebhookRequest {
-	r.oBPv400CreateSystemAccountNotificationWebhookRequest = &oBPv400CreateSystemAccountNotificationWebhookRequest
-	return r
-}
-
-func (r ApiOBPv400CreateSystemAccountNotificationWebhookRequest) Execute() (*OBPv400CreateSystemAccountNotificationWebhook200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateSystemAccountNotificationWebhookExecute(r)
-}
-
-/*
-OBPv400CreateSystemAccountNotificationWebhook Create system level Account Notification Webhook
-
-<p>Create a notification Webhook that will fire for all accounts on the system.</p>
-<p>Webhooks are used to call external web services when certain events happen.</p>
-<p>For instance, a webhook can be used to notify an external service if a transaction is created on an account.</p>
-<p>When an account notification webhook fires it will POST to the URL you specify during the creation of the webhook.</p>
-<p>Inside the payload you will find account_id and transaction_id and also user_ids and customer_ids of the Users / Customers linked to the Account.</p>
-<p>The webhook will POST the following structure to your service:</p>
-<p>{<br />
-&quot;event_name&quot;: &quot;OnCreateTransaction&quot;,<br />
-&quot;event_id&quot;: &quot;9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;,<br />
-&quot;bank_id&quot;: &quot;gh.29.uk&quot;,<br />
-&quot;account_id&quot;: &quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;,<br />
-&quot;transaction_id&quot;: &quot;7ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;,<br />
-&quot;related_entities&quot;: [<br />
-{<br />
-&quot;user_id&quot;: &quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;,<br />
-&quot;customer_ids&quot;: [&quot;3ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&quot;]<br />
-}<br />
-]<br />
-}</p>
-<p>Thus, your service should accept the above POST body structure.</p>
-<p>In this way, your web service can be informed about an event on an account and act accordingly.</p>
-<p>Further information about the account, transaction or related entities can then be retrieved using the standard REST APIs.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#http_method"><strong>http_method</strong></a>: GET</p>
-<p><a href="/glossary#http_protocol"><strong>http_protocol</strong></a>:</p>
-<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#http_method"><strong>http_method</strong></a>: GET</p>
-<p><a href="/glossary#http_protocol"><strong>http_protocol</strong></a>:</p>
-<p><a href="/glossary#trigger_name"><strong>trigger_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
-<p><a href="/glossary#"><strong>webhook_id</strong></a>: webhook_id</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400CreateSystemAccountNotificationWebhookRequest
-*/
-func (a *WebhookAPIService) OBPv400CreateSystemAccountNotificationWebhook(ctx context.Context) ApiOBPv400CreateSystemAccountNotificationWebhookRequest {
-	return ApiOBPv400CreateSystemAccountNotificationWebhookRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400CreateSystemAccountNotificationWebhook200Response
-func (a *WebhookAPIService) OBPv400CreateSystemAccountNotificationWebhookExecute(r ApiOBPv400CreateSystemAccountNotificationWebhookRequest) (*OBPv400CreateSystemAccountNotificationWebhook200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateSystemAccountNotificationWebhook200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookAPIService.OBPv400CreateSystemAccountNotificationWebhook")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/web-hooks/account/notifications/on-create-transaction"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400CreateSystemAccountNotificationWebhookRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateSystemAccountNotificationWebhookRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400CreateSystemAccountNotificationWebhookRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

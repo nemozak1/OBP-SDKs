@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,28 +24,28 @@ import (
 // TransactionAPIService TransactionAPI service
 type TransactionAPIService service
 
-type ApiOBPv121AddCommentForViewOnTransactionRequest struct {
+type ApiAddCommentForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
 	accountid string
 	viewid string
 	transactionid string
-	oBPv400DeleteSystemLevelEndpointTag200Response *OBPv400DeleteSystemLevelEndpointTag200Response
+	getTransactionTypes200ResponseTransactionTypesInnerId *GetTransactionTypes200ResponseTransactionTypesInnerId
 }
 
 // Request body
-func (r ApiOBPv121AddCommentForViewOnTransactionRequest) OBPv400DeleteSystemLevelEndpointTag200Response(oBPv400DeleteSystemLevelEndpointTag200Response OBPv400DeleteSystemLevelEndpointTag200Response) ApiOBPv121AddCommentForViewOnTransactionRequest {
-	r.oBPv400DeleteSystemLevelEndpointTag200Response = &oBPv400DeleteSystemLevelEndpointTag200Response
+func (r ApiAddCommentForViewOnTransactionRequest) GetTransactionTypes200ResponseTransactionTypesInnerId(getTransactionTypes200ResponseTransactionTypesInnerId GetTransactionTypes200ResponseTransactionTypesInnerId) ApiAddCommentForViewOnTransactionRequest {
+	r.getTransactionTypes200ResponseTransactionTypesInnerId = &getTransactionTypes200ResponseTransactionTypesInnerId
 	return r
 }
 
-func (r ApiOBPv121AddCommentForViewOnTransactionRequest) Execute() (*OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, *http.Response, error) {
-	return r.ApiService.OBPv121AddCommentForViewOnTransactionExecute(r)
+func (r ApiAddCommentForViewOnTransactionRequest) Execute() (*GetTagsForViewOnAccount200ResponseTagsInner, *http.Response, error) {
+	return r.ApiService.AddCommentForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121AddCommentForViewOnTransaction Add a Transaction Comment
+AddCommentForViewOnTransaction Add a Transaction Comment
 
 <p>Posts a comment about a transaction TRANSACTION_ID on a <a href="#1_2_1-getViewsForBankAccount">view</a> VIEW_ID.</p>
 <p>${authenticationRequiredMessage(false)}</p>
@@ -72,10 +72,10 @@ OBPv121AddCommentForViewOnTransaction Add a Transaction Comment
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121AddCommentForViewOnTransactionRequest
+ @return ApiAddCommentForViewOnTransactionRequest
 */
-func (a *TransactionAPIService) OBPv121AddCommentForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121AddCommentForViewOnTransactionRequest {
-	return ApiOBPv121AddCommentForViewOnTransactionRequest{
+func (a *TransactionAPIService) AddCommentForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiAddCommentForViewOnTransactionRequest {
+	return ApiAddCommentForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -86,16 +86,16 @@ func (a *TransactionAPIService) OBPv121AddCommentForViewOnTransaction(ctx contex
 }
 
 // Execute executes the request
-//  @return OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
-func (a *TransactionAPIService) OBPv121AddCommentForViewOnTransactionExecute(r ApiOBPv121AddCommentForViewOnTransactionRequest) (*OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, *http.Response, error) {
+//  @return GetTagsForViewOnAccount200ResponseTagsInner
+func (a *TransactionAPIService) AddCommentForViewOnTransactionExecute(r ApiAddCommentForViewOnTransactionRequest) (*GetTagsForViewOnAccount200ResponseTagsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+		localVarReturnValue  *GetTagsForViewOnAccount200ResponseTagsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121AddCommentForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.AddCommentForViewOnTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -109,8 +109,8 @@ func (a *TransactionAPIService) OBPv121AddCommentForViewOnTransactionExecute(r A
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400DeleteSystemLevelEndpointTag200Response == nil {
-		return localVarReturnValue, nil, reportError("oBPv400DeleteSystemLevelEndpointTag200Response is required and must be specified")
+	if r.getTransactionTypes200ResponseTransactionTypesInnerId == nil {
+		return localVarReturnValue, nil, reportError("getTransactionTypes200ResponseTransactionTypesInnerId is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -131,7 +131,7 @@ func (a *TransactionAPIService) OBPv121AddCommentForViewOnTransactionExecute(r A
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400DeleteSystemLevelEndpointTag200Response
+	localVarPostBody = r.getTransactionTypes200ResponseTransactionTypesInnerId
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -156,7 +156,7 @@ func (a *TransactionAPIService) OBPv121AddCommentForViewOnTransactionExecute(r A
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -197,28 +197,28 @@ func (a *TransactionAPIService) OBPv121AddCommentForViewOnTransactionExecute(r A
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121AddImageForViewOnTransactionRequest struct {
+type ApiAddImageForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
 	accountid string
 	viewid string
 	transactionid string
-	oBPv121AddImageForViewOnTransactionRequest *OBPv121AddImageForViewOnTransactionRequest
+	addImageForViewOnTransactionRequest *AddImageForViewOnTransactionRequest
 }
 
 // Request body
-func (r ApiOBPv121AddImageForViewOnTransactionRequest) OBPv121AddImageForViewOnTransactionRequest(oBPv121AddImageForViewOnTransactionRequest OBPv121AddImageForViewOnTransactionRequest) ApiOBPv121AddImageForViewOnTransactionRequest {
-	r.oBPv121AddImageForViewOnTransactionRequest = &oBPv121AddImageForViewOnTransactionRequest
+func (r ApiAddImageForViewOnTransactionRequest) AddImageForViewOnTransactionRequest(addImageForViewOnTransactionRequest AddImageForViewOnTransactionRequest) ApiAddImageForViewOnTransactionRequest {
+	r.addImageForViewOnTransactionRequest = &addImageForViewOnTransactionRequest
 	return r
 }
 
-func (r ApiOBPv121AddImageForViewOnTransactionRequest) Execute() (*OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems, *http.Response, error) {
-	return r.ApiService.OBPv121AddImageForViewOnTransactionExecute(r)
+func (r ApiAddImageForViewOnTransactionRequest) Execute() (*GetTransactionByIdForBankAccount200ResponseMetadataImagesInner, *http.Response, error) {
+	return r.ApiService.AddImageForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121AddImageForViewOnTransaction Add a Transaction Image
+AddImageForViewOnTransaction Add a Transaction Image
 
 <p>Posts an image about a transaction TRANSACTION_ID on a <a href="#1_2_1-getViewsForBankAccount">view</a> VIEW_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -246,10 +246,10 @@ OBPv121AddImageForViewOnTransaction Add a Transaction Image
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121AddImageForViewOnTransactionRequest
+ @return ApiAddImageForViewOnTransactionRequest
 */
-func (a *TransactionAPIService) OBPv121AddImageForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121AddImageForViewOnTransactionRequest {
-	return ApiOBPv121AddImageForViewOnTransactionRequest{
+func (a *TransactionAPIService) AddImageForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiAddImageForViewOnTransactionRequest {
+	return ApiAddImageForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -260,16 +260,16 @@ func (a *TransactionAPIService) OBPv121AddImageForViewOnTransaction(ctx context.
 }
 
 // Execute executes the request
-//  @return OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems
-func (a *TransactionAPIService) OBPv121AddImageForViewOnTransactionExecute(r ApiOBPv121AddImageForViewOnTransactionRequest) (*OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems, *http.Response, error) {
+//  @return GetTransactionByIdForBankAccount200ResponseMetadataImagesInner
+func (a *TransactionAPIService) AddImageForViewOnTransactionExecute(r ApiAddImageForViewOnTransactionRequest) (*GetTransactionByIdForBankAccount200ResponseMetadataImagesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems
+		localVarReturnValue  *GetTransactionByIdForBankAccount200ResponseMetadataImagesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121AddImageForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.AddImageForViewOnTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -283,8 +283,8 @@ func (a *TransactionAPIService) OBPv121AddImageForViewOnTransactionExecute(r Api
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv121AddImageForViewOnTransactionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121AddImageForViewOnTransactionRequest is required and must be specified")
+	if r.addImageForViewOnTransactionRequest == nil {
+		return localVarReturnValue, nil, reportError("addImageForViewOnTransactionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -305,7 +305,7 @@ func (a *TransactionAPIService) OBPv121AddImageForViewOnTransactionExecute(r Api
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv121AddImageForViewOnTransactionRequest
+	localVarPostBody = r.addImageForViewOnTransactionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -330,7 +330,7 @@ func (a *TransactionAPIService) OBPv121AddImageForViewOnTransactionExecute(r Api
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -371,28 +371,28 @@ func (a *TransactionAPIService) OBPv121AddImageForViewOnTransactionExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121AddTagForViewOnTransactionRequest struct {
+type ApiAddTagForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
 	accountid string
 	viewid string
 	transactionid string
-	oBPv400DeleteSystemLevelEndpointTag200Response *OBPv400DeleteSystemLevelEndpointTag200Response
+	getTransactionTypes200ResponseTransactionTypesInnerId *GetTransactionTypes200ResponseTransactionTypesInnerId
 }
 
 // Request body
-func (r ApiOBPv121AddTagForViewOnTransactionRequest) OBPv400DeleteSystemLevelEndpointTag200Response(oBPv400DeleteSystemLevelEndpointTag200Response OBPv400DeleteSystemLevelEndpointTag200Response) ApiOBPv121AddTagForViewOnTransactionRequest {
-	r.oBPv400DeleteSystemLevelEndpointTag200Response = &oBPv400DeleteSystemLevelEndpointTag200Response
+func (r ApiAddTagForViewOnTransactionRequest) GetTransactionTypes200ResponseTransactionTypesInnerId(getTransactionTypes200ResponseTransactionTypesInnerId GetTransactionTypes200ResponseTransactionTypesInnerId) ApiAddTagForViewOnTransactionRequest {
+	r.getTransactionTypes200ResponseTransactionTypesInnerId = &getTransactionTypes200ResponseTransactionTypesInnerId
 	return r
 }
 
-func (r ApiOBPv121AddTagForViewOnTransactionRequest) Execute() (*OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, *http.Response, error) {
-	return r.ApiService.OBPv121AddTagForViewOnTransactionExecute(r)
+func (r ApiAddTagForViewOnTransactionRequest) Execute() (*GetTagsForViewOnAccount200ResponseTagsInner, *http.Response, error) {
+	return r.ApiService.AddTagForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121AddTagForViewOnTransaction Add a Transaction Tag
+AddTagForViewOnTransaction Add a Transaction Tag
 
 <p>Posts a tag about a transaction TRANSACTION_ID on a <a href="#1_2_1-getViewsForBankAccount">view</a> VIEW_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -418,10 +418,10 @@ OBPv121AddTagForViewOnTransaction Add a Transaction Tag
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121AddTagForViewOnTransactionRequest
+ @return ApiAddTagForViewOnTransactionRequest
 */
-func (a *TransactionAPIService) OBPv121AddTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121AddTagForViewOnTransactionRequest {
-	return ApiOBPv121AddTagForViewOnTransactionRequest{
+func (a *TransactionAPIService) AddTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiAddTagForViewOnTransactionRequest {
+	return ApiAddTagForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -432,16 +432,16 @@ func (a *TransactionAPIService) OBPv121AddTagForViewOnTransaction(ctx context.Co
 }
 
 // Execute executes the request
-//  @return OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
-func (a *TransactionAPIService) OBPv121AddTagForViewOnTransactionExecute(r ApiOBPv121AddTagForViewOnTransactionRequest) (*OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, *http.Response, error) {
+//  @return GetTagsForViewOnAccount200ResponseTagsInner
+func (a *TransactionAPIService) AddTagForViewOnTransactionExecute(r ApiAddTagForViewOnTransactionRequest) (*GetTagsForViewOnAccount200ResponseTagsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+		localVarReturnValue  *GetTagsForViewOnAccount200ResponseTagsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121AddTagForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.AddTagForViewOnTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -455,8 +455,8 @@ func (a *TransactionAPIService) OBPv121AddTagForViewOnTransactionExecute(r ApiOB
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400DeleteSystemLevelEndpointTag200Response == nil {
-		return localVarReturnValue, nil, reportError("oBPv400DeleteSystemLevelEndpointTag200Response is required and must be specified")
+	if r.getTransactionTypes200ResponseTransactionTypesInnerId == nil {
+		return localVarReturnValue, nil, reportError("getTransactionTypes200ResponseTransactionTypesInnerId is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -477,7 +477,7 @@ func (a *TransactionAPIService) OBPv121AddTagForViewOnTransactionExecute(r ApiOB
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400DeleteSystemLevelEndpointTag200Response
+	localVarPostBody = r.getTransactionTypes200ResponseTransactionTypesInnerId
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -502,7 +502,7 @@ func (a *TransactionAPIService) OBPv121AddTagForViewOnTransactionExecute(r ApiOB
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -543,28 +543,28 @@ func (a *TransactionAPIService) OBPv121AddTagForViewOnTransactionExecute(r ApiOB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121AddTransactionNarrativeRequest struct {
+type ApiAddTransactionNarrativeRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
 	accountid string
 	viewid string
 	transactionid string
-	oBPv121GetTransactionNarrative200Response *OBPv121GetTransactionNarrative200Response
+	getTransactionNarrative200Response *GetTransactionNarrative200Response
 }
 
 // Request body
-func (r ApiOBPv121AddTransactionNarrativeRequest) OBPv121GetTransactionNarrative200Response(oBPv121GetTransactionNarrative200Response OBPv121GetTransactionNarrative200Response) ApiOBPv121AddTransactionNarrativeRequest {
-	r.oBPv121GetTransactionNarrative200Response = &oBPv121GetTransactionNarrative200Response
+func (r ApiAddTransactionNarrativeRequest) GetTransactionNarrative200Response(getTransactionNarrative200Response GetTransactionNarrative200Response) ApiAddTransactionNarrativeRequest {
+	r.getTransactionNarrative200Response = &getTransactionNarrative200Response
 	return r
 }
 
-func (r ApiOBPv121AddTransactionNarrativeRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121AddTransactionNarrativeExecute(r)
+func (r ApiAddTransactionNarrativeRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.AddTransactionNarrativeExecute(r)
 }
 
 /*
-OBPv121AddTransactionNarrative Add a Transaction Narrative
+AddTransactionNarrative Add a Transaction Narrative
 
 <p>Creates a description of the transaction TRANSACTION_ID.</p>
 <p>Note: Unlike other items of metadata, there is only one &quot;narrative&quot; per transaction accross all views.<br />
@@ -587,10 +587,10 @@ Authentication is required if the view is not public.</p>
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121AddTransactionNarrativeRequest
+ @return ApiAddTransactionNarrativeRequest
 */
-func (a *TransactionAPIService) OBPv121AddTransactionNarrative(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121AddTransactionNarrativeRequest {
-	return ApiOBPv121AddTransactionNarrativeRequest{
+func (a *TransactionAPIService) AddTransactionNarrative(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiAddTransactionNarrativeRequest {
+	return ApiAddTransactionNarrativeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -601,16 +601,16 @@ func (a *TransactionAPIService) OBPv121AddTransactionNarrative(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *TransactionAPIService) OBPv121AddTransactionNarrativeExecute(r ApiOBPv121AddTransactionNarrativeRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *TransactionAPIService) AddTransactionNarrativeExecute(r ApiAddTransactionNarrativeRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121AddTransactionNarrative")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.AddTransactionNarrative")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -624,8 +624,8 @@ func (a *TransactionAPIService) OBPv121AddTransactionNarrativeExecute(r ApiOBPv1
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv121GetTransactionNarrative200Response == nil {
-		return localVarReturnValue, nil, reportError("oBPv121GetTransactionNarrative200Response is required and must be specified")
+	if r.getTransactionNarrative200Response == nil {
+		return localVarReturnValue, nil, reportError("getTransactionNarrative200Response is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -646,7 +646,7 @@ func (a *TransactionAPIService) OBPv121AddTransactionNarrativeExecute(r ApiOBPv1
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv121GetTransactionNarrative200Response
+	localVarPostBody = r.getTransactionNarrative200Response
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -671,7 +671,7 @@ func (a *TransactionAPIService) OBPv121AddTransactionNarrativeExecute(r ApiOBPv1
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -712,28 +712,28 @@ func (a *TransactionAPIService) OBPv121AddTransactionNarrativeExecute(r ApiOBPv1
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121AddWhereTagForViewOnTransactionRequest struct {
+type ApiAddWhereTagForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
 	accountid string
 	viewid string
 	transactionid string
-	oBPv121UpdateWhereTagForViewOnTransactionRequest *OBPv121UpdateWhereTagForViewOnTransactionRequest
+	updateWhereTagForViewOnTransactionRequest *UpdateWhereTagForViewOnTransactionRequest
 }
 
 // Request body
-func (r ApiOBPv121AddWhereTagForViewOnTransactionRequest) OBPv121UpdateWhereTagForViewOnTransactionRequest(oBPv121UpdateWhereTagForViewOnTransactionRequest OBPv121UpdateWhereTagForViewOnTransactionRequest) ApiOBPv121AddWhereTagForViewOnTransactionRequest {
-	r.oBPv121UpdateWhereTagForViewOnTransactionRequest = &oBPv121UpdateWhereTagForViewOnTransactionRequest
+func (r ApiAddWhereTagForViewOnTransactionRequest) UpdateWhereTagForViewOnTransactionRequest(updateWhereTagForViewOnTransactionRequest UpdateWhereTagForViewOnTransactionRequest) ApiAddWhereTagForViewOnTransactionRequest {
+	r.updateWhereTagForViewOnTransactionRequest = &updateWhereTagForViewOnTransactionRequest
 	return r
 }
 
-func (r ApiOBPv121AddWhereTagForViewOnTransactionRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121AddWhereTagForViewOnTransactionExecute(r)
+func (r ApiAddWhereTagForViewOnTransactionRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.AddWhereTagForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121AddWhereTagForViewOnTransaction Add a Transaction where Tag
+AddWhereTagForViewOnTransaction Add a Transaction where Tag
 
 <p>Creates a &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href="#1_2_1-getViewsForBankAccount">view</a>.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -756,10 +756,10 @@ OBPv121AddWhereTagForViewOnTransaction Add a Transaction where Tag
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121AddWhereTagForViewOnTransactionRequest
+ @return ApiAddWhereTagForViewOnTransactionRequest
 */
-func (a *TransactionAPIService) OBPv121AddWhereTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121AddWhereTagForViewOnTransactionRequest {
-	return ApiOBPv121AddWhereTagForViewOnTransactionRequest{
+func (a *TransactionAPIService) AddWhereTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiAddWhereTagForViewOnTransactionRequest {
+	return ApiAddWhereTagForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -770,16 +770,16 @@ func (a *TransactionAPIService) OBPv121AddWhereTagForViewOnTransaction(ctx conte
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *TransactionAPIService) OBPv121AddWhereTagForViewOnTransactionExecute(r ApiOBPv121AddWhereTagForViewOnTransactionRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *TransactionAPIService) AddWhereTagForViewOnTransactionExecute(r ApiAddWhereTagForViewOnTransactionRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121AddWhereTagForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.AddWhereTagForViewOnTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -793,8 +793,8 @@ func (a *TransactionAPIService) OBPv121AddWhereTagForViewOnTransactionExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv121UpdateWhereTagForViewOnTransactionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121UpdateWhereTagForViewOnTransactionRequest is required and must be specified")
+	if r.updateWhereTagForViewOnTransactionRequest == nil {
+		return localVarReturnValue, nil, reportError("updateWhereTagForViewOnTransactionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -815,7 +815,7 @@ func (a *TransactionAPIService) OBPv121AddWhereTagForViewOnTransactionExecute(r 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv121UpdateWhereTagForViewOnTransactionRequest
+	localVarPostBody = r.updateWhereTagForViewOnTransactionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -840,7 +840,7 @@ func (a *TransactionAPIService) OBPv121AddWhereTagForViewOnTransactionExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -881,7 +881,333 @@ func (a *TransactionAPIService) OBPv121AddWhereTagForViewOnTransactionExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteCommentForViewOnTransactionRequest struct {
+type ApiCreateOrUpdateTransactionAttributeDefinitionRequest struct {
+	ctx context.Context
+	ApiService *TransactionAPIService
+	bankid string
+	createOrUpdateTransactionRequestAttributeDefinitionRequest *CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+}
+
+// Request body
+func (r ApiCreateOrUpdateTransactionAttributeDefinitionRequest) CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiCreateOrUpdateTransactionAttributeDefinitionRequest {
+	r.createOrUpdateTransactionRequestAttributeDefinitionRequest = &createOrUpdateTransactionRequestAttributeDefinitionRequest
+	return r
+}
+
+func (r ApiCreateOrUpdateTransactionAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateOrUpdateTransactionAttributeDefinitionExecute(r)
+}
+
+/*
+CreateOrUpdateTransactionAttributeDefinition Create or Update Transaction Attribute Definition
+
+<p>Create or Update Transaction Attribute Definition</p>
+<p>The category field must be Transaction</p>
+<p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#attribute_definition_id"><strong>attribute_definition_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#can_be_seen_on_views"><strong>can_be_seen_on_views</strong></a>: false</p>
+<p><a href="/glossary#category"><strong>category</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @return ApiCreateOrUpdateTransactionAttributeDefinitionRequest
+*/
+func (a *TransactionAPIService) CreateOrUpdateTransactionAttributeDefinition(ctx context.Context, bankid string) ApiCreateOrUpdateTransactionAttributeDefinitionRequest {
+	return ApiCreateOrUpdateTransactionAttributeDefinitionRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+	}
+}
+
+// Execute executes the request
+//  @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+func (a *TransactionAPIService) CreateOrUpdateTransactionAttributeDefinitionExecute(r ApiCreateOrUpdateTransactionAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200ResponseAttributesInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.CreateOrUpdateTransactionAttributeDefinition")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
+		return localVarReturnValue, nil, reportError("createOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createOrUpdateTransactionRequestAttributeDefinitionRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateTransactionAttributeRequest struct {
+	ctx context.Context
+	ApiService *TransactionAPIService
+	bankid string
+	accountid string
+	transactionid string
+	createPersonalDataFieldRequest *CreatePersonalDataFieldRequest
+}
+
+// Request body
+func (r ApiCreateTransactionAttributeRequest) CreatePersonalDataFieldRequest(createPersonalDataFieldRequest CreatePersonalDataFieldRequest) ApiCreateTransactionAttributeRequest {
+	r.createPersonalDataFieldRequest = &createPersonalDataFieldRequest
+	return r
+}
+
+func (r ApiCreateTransactionAttributeRequest) Execute() (*GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateTransactionAttributeExecute(r)
+}
+
+/*
+CreateTransactionAttribute Create Transaction Attribute
+
+<p>Create Transaction Attribute</p>
+<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param transactionid The TRANSACTIONID identifier
+ @return ApiCreateTransactionAttributeRequest
+*/
+func (a *TransactionAPIService) CreateTransactionAttribute(ctx context.Context, bankid string, accountid string, transactionid string) ApiCreateTransactionAttributeRequest {
+	return ApiCreateTransactionAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		transactionid: transactionid,
+	}
+}
+
+// Execute executes the request
+//  @return GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
+func (a *TransactionAPIService) CreateTransactionAttributeExecute(r ApiCreateTransactionAttributeRequest) (*GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.CreateTransactionAttribute")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createPersonalDataFieldRequest == nil {
+		return localVarReturnValue, nil, reportError("createPersonalDataFieldRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createPersonalDataFieldRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiDeleteCommentForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
@@ -891,12 +1217,12 @@ type ApiOBPv121DeleteCommentForViewOnTransactionRequest struct {
 	commentid string
 }
 
-func (r ApiOBPv121DeleteCommentForViewOnTransactionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteCommentForViewOnTransactionExecute(r)
+func (r ApiDeleteCommentForViewOnTransactionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCommentForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121DeleteCommentForViewOnTransaction Delete a Transaction Comment
+DeleteCommentForViewOnTransaction Delete a Transaction Comment
 
 <p>Delete the comment COMMENT_ID about the transaction TRANSACTION_ID made on <a href="#1_2_1-getViewsForBankAccount">view</a>.</p>
 <p>Authentication via OAuth is required. The user must either have owner privileges for this account, or must be the user that posted the comment.</p>
@@ -916,10 +1242,10 @@ OBPv121DeleteCommentForViewOnTransaction Delete a Transaction Comment
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
  @param commentid The COMMENTID identifier
- @return ApiOBPv121DeleteCommentForViewOnTransactionRequest
+ @return ApiDeleteCommentForViewOnTransactionRequest
 */
-func (a *TransactionAPIService) OBPv121DeleteCommentForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string, commentid string) ApiOBPv121DeleteCommentForViewOnTransactionRequest {
-	return ApiOBPv121DeleteCommentForViewOnTransactionRequest{
+func (a *TransactionAPIService) DeleteCommentForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string, commentid string) ApiDeleteCommentForViewOnTransactionRequest {
+	return ApiDeleteCommentForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -931,14 +1257,14 @@ func (a *TransactionAPIService) OBPv121DeleteCommentForViewOnTransaction(ctx con
 }
 
 // Execute executes the request
-func (a *TransactionAPIService) OBPv121DeleteCommentForViewOnTransactionExecute(r ApiOBPv121DeleteCommentForViewOnTransactionRequest) (*http.Response, error) {
+func (a *TransactionAPIService) DeleteCommentForViewOnTransactionExecute(r ApiDeleteCommentForViewOnTransactionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121DeleteCommentForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.DeleteCommentForViewOnTransaction")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -995,7 +1321,7 @@ func (a *TransactionAPIService) OBPv121DeleteCommentForViewOnTransactionExecute(
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1027,7 +1353,7 @@ func (a *TransactionAPIService) OBPv121DeleteCommentForViewOnTransactionExecute(
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteImageForViewOnTransactionRequest struct {
+type ApiDeleteImageForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
@@ -1037,12 +1363,12 @@ type ApiOBPv121DeleteImageForViewOnTransactionRequest struct {
 	imageid string
 }
 
-func (r ApiOBPv121DeleteImageForViewOnTransactionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteImageForViewOnTransactionExecute(r)
+func (r ApiDeleteImageForViewOnTransactionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteImageForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121DeleteImageForViewOnTransaction Delete a Transaction Image
+DeleteImageForViewOnTransaction Delete a Transaction Image
 
 <p>Deletes the image IMAGE_ID about the transaction TRANSACTION_ID made on <a href="#1_2_1-getViewsForBankAccount">view</a>.</p>
 <p>Authentication via OAuth is required. The user must either have owner privileges for this account, or must be the user that posted the image.</p>
@@ -1062,10 +1388,10 @@ OBPv121DeleteImageForViewOnTransaction Delete a Transaction Image
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
  @param imageid The IMAGEID identifier
- @return ApiOBPv121DeleteImageForViewOnTransactionRequest
+ @return ApiDeleteImageForViewOnTransactionRequest
 */
-func (a *TransactionAPIService) OBPv121DeleteImageForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string, imageid string) ApiOBPv121DeleteImageForViewOnTransactionRequest {
-	return ApiOBPv121DeleteImageForViewOnTransactionRequest{
+func (a *TransactionAPIService) DeleteImageForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string, imageid string) ApiDeleteImageForViewOnTransactionRequest {
+	return ApiDeleteImageForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1077,14 +1403,14 @@ func (a *TransactionAPIService) OBPv121DeleteImageForViewOnTransaction(ctx conte
 }
 
 // Execute executes the request
-func (a *TransactionAPIService) OBPv121DeleteImageForViewOnTransactionExecute(r ApiOBPv121DeleteImageForViewOnTransactionRequest) (*http.Response, error) {
+func (a *TransactionAPIService) DeleteImageForViewOnTransactionExecute(r ApiDeleteImageForViewOnTransactionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121DeleteImageForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.DeleteImageForViewOnTransaction")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1141,7 +1467,7 @@ func (a *TransactionAPIService) OBPv121DeleteImageForViewOnTransactionExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1173,7 +1499,7 @@ func (a *TransactionAPIService) OBPv121DeleteImageForViewOnTransactionExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteTagForViewOnTransactionRequest struct {
+type ApiDeleteTagForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
@@ -1183,12 +1509,12 @@ type ApiOBPv121DeleteTagForViewOnTransactionRequest struct {
 	tagid string
 }
 
-func (r ApiOBPv121DeleteTagForViewOnTransactionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteTagForViewOnTransactionExecute(r)
+func (r ApiDeleteTagForViewOnTransactionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteTagForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121DeleteTagForViewOnTransaction Delete a Transaction Tag
+DeleteTagForViewOnTransaction Delete a Transaction Tag
 
 <p>Deletes the tag TAG_ID about the transaction TRANSACTION_ID made on <a href="#1_2_1-getViewsForBankAccount">view</a>.<br />
 Authentication via OAuth is required. The user must either have owner privileges for this account,<br />
@@ -1209,10 +1535,10 @@ or must be the user that posted the tag.</p>
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
  @param tagid The TAGID identifier
- @return ApiOBPv121DeleteTagForViewOnTransactionRequest
+ @return ApiDeleteTagForViewOnTransactionRequest
 */
-func (a *TransactionAPIService) OBPv121DeleteTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string, tagid string) ApiOBPv121DeleteTagForViewOnTransactionRequest {
-	return ApiOBPv121DeleteTagForViewOnTransactionRequest{
+func (a *TransactionAPIService) DeleteTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string, tagid string) ApiDeleteTagForViewOnTransactionRequest {
+	return ApiDeleteTagForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1224,14 +1550,14 @@ func (a *TransactionAPIService) OBPv121DeleteTagForViewOnTransaction(ctx context
 }
 
 // Execute executes the request
-func (a *TransactionAPIService) OBPv121DeleteTagForViewOnTransactionExecute(r ApiOBPv121DeleteTagForViewOnTransactionRequest) (*http.Response, error) {
+func (a *TransactionAPIService) DeleteTagForViewOnTransactionExecute(r ApiDeleteTagForViewOnTransactionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121DeleteTagForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.DeleteTagForViewOnTransaction")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1292,7 +1618,272 @@ func (a *TransactionAPIService) OBPv121DeleteTagForViewOnTransactionExecute(r Ap
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteTransactionNarrativeRequest struct {
+type ApiDeleteTransactionAttributeDefinitionRequest struct {
+	ctx context.Context
+	ApiService *TransactionAPIService
+	bankid string
+	attributedefinitionid string
+}
+
+func (r ApiDeleteTransactionAttributeDefinitionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteTransactionAttributeDefinitionExecute(r)
+}
+
+/*
+DeleteTransactionAttributeDefinition Delete Transaction Attribute Definition
+
+<p>Delete Transaction Attribute Definition by ATTRIBUTE_DEFINITION_ID</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#attribute_definition_id">ATTRIBUTE_DEFINITION_ID</a>:</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier
+ @return ApiDeleteTransactionAttributeDefinitionRequest
+*/
+func (a *TransactionAPIService) DeleteTransactionAttributeDefinition(ctx context.Context, bankid string, attributedefinitionid string) ApiDeleteTransactionAttributeDefinitionRequest {
+	return ApiDeleteTransactionAttributeDefinitionRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		attributedefinitionid: attributedefinitionid,
+	}
+}
+
+// Execute executes the request
+func (a *TransactionAPIService) DeleteTransactionAttributeDefinitionExecute(r ApiDeleteTransactionAttributeDefinitionRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.DeleteTransactionAttributeDefinition")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"attributedefinitionid"+"}", url.PathEscape(parameterValueToString(r.attributedefinitionid, "attributedefinitionid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteTransactionCascadeRequest struct {
+	ctx context.Context
+	ApiService *TransactionAPIService
+	bankid string
+	accountid string
+	transactionid string
+}
+
+func (r ApiDeleteTransactionCascadeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteTransactionCascadeExecute(r)
+}
+
+/*
+DeleteTransactionCascade Delete Transaction Cascade
+
+<p>Delete a Transaction Cascade specified by TRANSACTION_ID.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param transactionid The TRANSACTIONID identifier
+ @return ApiDeleteTransactionCascadeRequest
+*/
+func (a *TransactionAPIService) DeleteTransactionCascade(ctx context.Context, bankid string, accountid string, transactionid string) ApiDeleteTransactionCascadeRequest {
+	return ApiDeleteTransactionCascadeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		transactionid: transactionid,
+	}
+}
+
+// Execute executes the request
+func (a *TransactionAPIService) DeleteTransactionCascadeExecute(r ApiDeleteTransactionCascadeRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.DeleteTransactionCascade")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteTransactionNarrativeRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
@@ -1301,12 +1892,12 @@ type ApiOBPv121DeleteTransactionNarrativeRequest struct {
 	transactionid string
 }
 
-func (r ApiOBPv121DeleteTransactionNarrativeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteTransactionNarrativeExecute(r)
+func (r ApiDeleteTransactionNarrativeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteTransactionNarrativeExecute(r)
 }
 
 /*
-OBPv121DeleteTransactionNarrative Delete a Transaction Narrative
+DeleteTransactionNarrative Delete a Transaction Narrative
 
 <p>Deletes the description of the transaction TRANSACTION_ID.</p>
 <p>Authentication via OAuth is required if the view is not public.</p>
@@ -1324,10 +1915,10 @@ OBPv121DeleteTransactionNarrative Delete a Transaction Narrative
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121DeleteTransactionNarrativeRequest
+ @return ApiDeleteTransactionNarrativeRequest
 */
-func (a *TransactionAPIService) OBPv121DeleteTransactionNarrative(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121DeleteTransactionNarrativeRequest {
-	return ApiOBPv121DeleteTransactionNarrativeRequest{
+func (a *TransactionAPIService) DeleteTransactionNarrative(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiDeleteTransactionNarrativeRequest {
+	return ApiDeleteTransactionNarrativeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1338,14 +1929,14 @@ func (a *TransactionAPIService) OBPv121DeleteTransactionNarrative(ctx context.Co
 }
 
 // Execute executes the request
-func (a *TransactionAPIService) OBPv121DeleteTransactionNarrativeExecute(r ApiOBPv121DeleteTransactionNarrativeRequest) (*http.Response, error) {
+func (a *TransactionAPIService) DeleteTransactionNarrativeExecute(r ApiDeleteTransactionNarrativeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121DeleteTransactionNarrative")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.DeleteTransactionNarrative")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1401,7 +1992,7 @@ func (a *TransactionAPIService) OBPv121DeleteTransactionNarrativeExecute(r ApiOB
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1433,7 +2024,7 @@ func (a *TransactionAPIService) OBPv121DeleteTransactionNarrativeExecute(r ApiOB
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteWhereTagForViewOnTransactionRequest struct {
+type ApiDeleteWhereTagForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
@@ -1442,12 +2033,12 @@ type ApiOBPv121DeleteWhereTagForViewOnTransactionRequest struct {
 	transactionid string
 }
 
-func (r ApiOBPv121DeleteWhereTagForViewOnTransactionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteWhereTagForViewOnTransactionExecute(r)
+func (r ApiDeleteWhereTagForViewOnTransactionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteWhereTagForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121DeleteWhereTagForViewOnTransaction Delete a Transaction Tag
+DeleteWhereTagForViewOnTransaction Delete a Transaction Tag
 
 <p>Deletes the where tag of the transaction TRANSACTION_ID made on <a href="#1_2_1-getViewsForBankAccount">view</a>.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1465,10 +2056,10 @@ OBPv121DeleteWhereTagForViewOnTransaction Delete a Transaction Tag
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121DeleteWhereTagForViewOnTransactionRequest
+ @return ApiDeleteWhereTagForViewOnTransactionRequest
 */
-func (a *TransactionAPIService) OBPv121DeleteWhereTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121DeleteWhereTagForViewOnTransactionRequest {
-	return ApiOBPv121DeleteWhereTagForViewOnTransactionRequest{
+func (a *TransactionAPIService) DeleteWhereTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiDeleteWhereTagForViewOnTransactionRequest {
+	return ApiDeleteWhereTagForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1479,14 +2070,14 @@ func (a *TransactionAPIService) OBPv121DeleteWhereTagForViewOnTransaction(ctx co
 }
 
 // Execute executes the request
-func (a *TransactionAPIService) OBPv121DeleteWhereTagForViewOnTransactionExecute(r ApiOBPv121DeleteWhereTagForViewOnTransactionRequest) (*http.Response, error) {
+func (a *TransactionAPIService) DeleteWhereTagForViewOnTransactionExecute(r ApiDeleteWhereTagForViewOnTransactionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121DeleteWhereTagForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.DeleteWhereTagForViewOnTransaction")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1542,7 +2133,7 @@ func (a *TransactionAPIService) OBPv121DeleteWhereTagForViewOnTransactionExecute
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1574,7 +2165,150 @@ func (a *TransactionAPIService) OBPv121DeleteWhereTagForViewOnTransactionExecute
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121GetCommentsForViewOnTransactionRequest struct {
+type ApiGetBalancingTransactionRequest struct {
+	ctx context.Context
+	ApiService *TransactionAPIService
+	transactionid string
+}
+
+func (r ApiGetBalancingTransactionRequest) Execute() (*GetDoubleEntryTransaction200Response, *http.Response, error) {
+	return r.ApiService.GetBalancingTransactionExecute(r)
+}
+
+/*
+GetBalancingTransaction Get Balancing Transaction
+
+<p>Get Balancing Transaction</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>credit_transaction</strong></a>: credit_transaction</p>
+<p><a href="/glossary#"><strong>debit_transaction</strong></a>: debit_transaction</p>
+<p><a href="/glossary#"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#"><strong>transaction_request</strong></a>: transaction_request</p>
+<p><a href="/glossary#"><strong>transaction_request_id</strong></a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param transactionid The TRANSACTIONID identifier
+ @return ApiGetBalancingTransactionRequest
+*/
+func (a *TransactionAPIService) GetBalancingTransaction(ctx context.Context, transactionid string) ApiGetBalancingTransactionRequest {
+	return ApiGetBalancingTransactionRequest{
+		ApiService: a,
+		ctx: ctx,
+		transactionid: transactionid,
+	}
+}
+
+// Execute executes the request
+//  @return GetDoubleEntryTransaction200Response
+func (a *TransactionAPIService) GetBalancingTransactionExecute(r ApiGetBalancingTransactionRequest) (*GetDoubleEntryTransaction200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetDoubleEntryTransaction200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.GetBalancingTransaction")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/transactions/{transactionid}/balancing-transaction"
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetCommentsForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
@@ -1583,12 +2317,12 @@ type ApiOBPv121GetCommentsForViewOnTransactionRequest struct {
 	transactionid string
 }
 
-func (r ApiOBPv121GetCommentsForViewOnTransactionRequest) Execute() (*OBPv121GetCommentsForViewOnTransaction200Response, *http.Response, error) {
-	return r.ApiService.OBPv121GetCommentsForViewOnTransactionExecute(r)
+func (r ApiGetCommentsForViewOnTransactionRequest) Execute() (*GetCommentsForViewOnTransaction200Response, *http.Response, error) {
+	return r.ApiService.GetCommentsForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121GetCommentsForViewOnTransaction Get Transaction Comments
+GetCommentsForViewOnTransaction Get Transaction Comments
 
 <p>Returns the transaction TRANSACTION_ID comments made on a <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).</p>
 <p>Authentication via OAuth is required if the view is not public.</p>
@@ -1613,10 +2347,10 @@ OBPv121GetCommentsForViewOnTransaction Get Transaction Comments
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121GetCommentsForViewOnTransactionRequest
+ @return ApiGetCommentsForViewOnTransactionRequest
 */
-func (a *TransactionAPIService) OBPv121GetCommentsForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121GetCommentsForViewOnTransactionRequest {
-	return ApiOBPv121GetCommentsForViewOnTransactionRequest{
+func (a *TransactionAPIService) GetCommentsForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiGetCommentsForViewOnTransactionRequest {
+	return ApiGetCommentsForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1627,16 +2361,16 @@ func (a *TransactionAPIService) OBPv121GetCommentsForViewOnTransaction(ctx conte
 }
 
 // Execute executes the request
-//  @return OBPv121GetCommentsForViewOnTransaction200Response
-func (a *TransactionAPIService) OBPv121GetCommentsForViewOnTransactionExecute(r ApiOBPv121GetCommentsForViewOnTransactionRequest) (*OBPv121GetCommentsForViewOnTransaction200Response, *http.Response, error) {
+//  @return GetCommentsForViewOnTransaction200Response
+func (a *TransactionAPIService) GetCommentsForViewOnTransactionExecute(r ApiGetCommentsForViewOnTransactionRequest) (*GetCommentsForViewOnTransaction200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121GetCommentsForViewOnTransaction200Response
+		localVarReturnValue  *GetCommentsForViewOnTransaction200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121GetCommentsForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.GetCommentsForViewOnTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1692,7 +2426,7 @@ func (a *TransactionAPIService) OBPv121GetCommentsForViewOnTransactionExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1733,7 +2467,187 @@ func (a *TransactionAPIService) OBPv121GetCommentsForViewOnTransactionExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121GetImagesForViewOnTransactionRequest struct {
+type ApiGetCoreTransactionsForBankAccountRequest struct {
+	ctx context.Context
+	ApiService *TransactionAPIService
+	bankid string
+	accountid string
+}
+
+func (r ApiGetCoreTransactionsForBankAccountRequest) Execute() (*GetCoreTransactionsForBankAccount200Response, *http.Response, error) {
+	return r.ApiService.GetCoreTransactionsForBankAccountExecute(r)
+}
+
+/*
+GetCoreTransactionsForBankAccount Get Transactions for Account (Core)
+
+<p>Returns transactions list (Core info) of the account specified by ACCOUNT_ID.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>Possible custom url parameters for pagination:</p>
+<ul>
+<li>limit=NUMBER ==&gt; default value: 50</li>
+<li>offset=NUMBER ==&gt; default value: 0</li>
+</ul>
+<p>eg1:?limit=100&amp;offset=0</p>
+<ul>
+<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
+</ul>
+<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
+<ul>
+<li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
+<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.487Z. NOTE! The default value is now (2026-03-25T12:16:24.487Z).</li>
+</ul>
+<p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
+<p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
+<p><a href="/glossary#address"><strong>address</strong></a>:</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_routing"><strong>bank_routing</strong></a>:</p>
+<p><a href="/glossary#completed"><strong>completed</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#holder"><strong>holder</strong></a>:</p>
+<p><a href="/glossary#holders"><strong>holders</strong></a>:</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#is_alias"><strong>is_alias</strong></a>:</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#new_balance"><strong>new_balance</strong></a>: 20</p>
+<p><a href="/glossary#other_account"><strong>other_account</strong></a>:</p>
+<p><a href="/glossary#posted"><strong>posted</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
+<p><a href="/glossary#this_account"><strong>this_account</strong></a>:</p>
+<p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#transaction_attributes"><strong>transaction_attributes</strong></a>:</p>
+<p><a href="/glossary#transactions"><strong>transactions</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @return ApiGetCoreTransactionsForBankAccountRequest
+*/
+func (a *TransactionAPIService) GetCoreTransactionsForBankAccount(ctx context.Context, bankid string, accountid string) ApiGetCoreTransactionsForBankAccountRequest {
+	return ApiGetCoreTransactionsForBankAccountRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+	}
+}
+
+// Execute executes the request
+//  @return GetCoreTransactionsForBankAccount200Response
+func (a *TransactionAPIService) GetCoreTransactionsForBankAccountExecute(r ApiGetCoreTransactionsForBankAccountRequest) (*GetCoreTransactionsForBankAccount200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetCoreTransactionsForBankAccount200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.GetCoreTransactionsForBankAccount")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetDoubleEntryTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
@@ -1742,12 +2656,385 @@ type ApiOBPv121GetImagesForViewOnTransactionRequest struct {
 	transactionid string
 }
 
-func (r ApiOBPv121GetImagesForViewOnTransactionRequest) Execute() (*OBPv121GetImagesForViewOnTransaction200Response, *http.Response, error) {
-	return r.ApiService.OBPv121GetImagesForViewOnTransactionExecute(r)
+func (r ApiGetDoubleEntryTransactionRequest) Execute() (*GetDoubleEntryTransaction200Response, *http.Response, error) {
+	return r.ApiService.GetDoubleEntryTransactionExecute(r)
 }
 
 /*
-OBPv121GetImagesForViewOnTransaction Get Transaction Images
+GetDoubleEntryTransaction Get Double Entry Transaction
+
+<p>Get Double Entry Transaction</p>
+<p>This endpoint can be used to see the double entry transactions. It returns the <code>bank_id</code>, <code>account_id</code> and <code>transaction_id</code><br />
+for the debit end the credit transaction. The other side account can be a settlement account or an OBP account.</p>
+<p>The endpoint also provide the <code>transaction_request</code> object which contains the <code>bank_id</code>, <code>account_id</code> and<br />
+<code>transaction_request_id</code> of the transaction request at the origin of the transaction. Please note that if none<br />
+transaction request is at the origin of the transaction, the <code>transaction_request</code> object will be <code>null</code>.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>credit_transaction</strong></a>: credit_transaction</p>
+<p><a href="/glossary#"><strong>debit_transaction</strong></a>: debit_transaction</p>
+<p><a href="/glossary#"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#"><strong>transaction_request</strong></a>: transaction_request</p>
+<p><a href="/glossary#"><strong>transaction_request_id</strong></a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @param transactionid The TRANSACTIONID identifier
+ @return ApiGetDoubleEntryTransactionRequest
+*/
+func (a *TransactionAPIService) GetDoubleEntryTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiGetDoubleEntryTransactionRequest {
+	return ApiGetDoubleEntryTransactionRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+		transactionid: transactionid,
+	}
+}
+
+// Execute executes the request
+//  @return GetDoubleEntryTransaction200Response
+func (a *TransactionAPIService) GetDoubleEntryTransactionExecute(r ApiGetDoubleEntryTransactionRequest) (*GetDoubleEntryTransaction200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetDoubleEntryTransaction200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.GetDoubleEntryTransaction")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/double-entry-transaction"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetFirehoseTransactionsForBankAccountRequest struct {
+	ctx context.Context
+	ApiService *TransactionAPIService
+	bankid string
+	accountid string
+	viewid string
+}
+
+func (r ApiGetFirehoseTransactionsForBankAccountRequest) Execute() (*GetFirehoseTransactionsForBankAccount200Response, *http.Response, error) {
+	return r.ApiService.GetFirehoseTransactionsForBankAccountExecute(r)
+}
+
+/*
+GetFirehoseTransactionsForBankAccount Get Firehose Transactions for Account
+
+<p>Get Transactions for an Account that has a firehose View.</p>
+<p>Allows bulk access to an account's transactions.<br />
+User must have the CanUseFirehoseAtAnyBank Role</p>
+<p>To find ACCOUNT_IDs, use the getFirehoseAccountsAtOneBank call.</p>
+<p>For VIEW_ID try 'owner'</p>
+<p>Possible custom url parameters for pagination:</p>
+<ul>
+<li>limit=NUMBER ==&gt; default value: 50</li>
+<li>offset=NUMBER ==&gt; default value: 0</li>
+</ul>
+<p>eg1:?limit=100&amp;offset=0</p>
+<ul>
+<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
+</ul>
+<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
+<ul>
+<li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
+<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.487Z. NOTE! The default value is now (2026-03-25T12:16:24.487Z).</li>
+</ul>
+<p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
+<p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>URL</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
+<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
+<p><a href="/glossary#address"><strong>address</strong></a>:</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_routing"><strong>bank_routing</strong></a>:</p>
+<p><a href="/glossary#comments"><strong>comments</strong></a>:</p>
+<p><a href="/glossary#completed"><strong>completed</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
+<p><a href="/glossary#holder"><strong>holder</strong></a>:</p>
+<p><a href="/glossary#holders"><strong>holders</strong></a>:</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#image_url"><strong>image_URL</strong></a>:</p>
+<p><a href="/glossary#images"><strong>images</strong></a>:</p>
+<p><a href="/glossary#is_alias"><strong>is_alias</strong></a>:</p>
+<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
+<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
+<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
+<p><a href="/glossary#metadata"><strong>metadata</strong></a>:</p>
+<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#narrative"><strong>narrative</strong></a>:</p>
+<p><a href="/glossary#new_balance"><strong>new_balance</strong></a>: 20</p>
+<p><a href="/glossary#open_corporates_url"><strong>open_corporates_URL</strong></a>:</p>
+<p><a href="/glossary#other_account"><strong>other_account</strong></a>:</p>
+<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
+<p><a href="/glossary#posted"><strong>posted</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
+<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
+<p><a href="/glossary#tags"><strong>tags</strong></a>: Create-My-User</p>
+<p><a href="/glossary#this_account"><strong>this_account</strong></a>:</p>
+<p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#transaction_attributes"><strong>transaction_attributes</strong></a>:</p>
+<p><a href="/glossary#transactions"><strong>transactions</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#where"><strong>where</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @return ApiGetFirehoseTransactionsForBankAccountRequest
+*/
+func (a *TransactionAPIService) GetFirehoseTransactionsForBankAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiGetFirehoseTransactionsForBankAccountRequest {
+	return ApiGetFirehoseTransactionsForBankAccountRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+	}
+}
+
+// Execute executes the request
+//  @return GetFirehoseTransactionsForBankAccount200Response
+func (a *TransactionAPIService) GetFirehoseTransactionsForBankAccountExecute(r ApiGetFirehoseTransactionsForBankAccountRequest) (*GetFirehoseTransactionsForBankAccount200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetFirehoseTransactionsForBankAccount200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.GetFirehoseTransactionsForBankAccount")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetImagesForViewOnTransactionRequest struct {
+	ctx context.Context
+	ApiService *TransactionAPIService
+	bankid string
+	accountid string
+	viewid string
+	transactionid string
+}
+
+func (r ApiGetImagesForViewOnTransactionRequest) Execute() (*GetImagesForViewOnTransaction200Response, *http.Response, error) {
+	return r.ApiService.GetImagesForViewOnTransactionExecute(r)
+}
+
+/*
+GetImagesForViewOnTransaction Get Transaction Images
 
 <p>Returns the transaction TRANSACTION_ID images made on a <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
 Authentication via OAuth is required if the view is not public.</p>
@@ -1773,10 +3060,10 @@ Authentication via OAuth is required if the view is not public.</p>
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121GetImagesForViewOnTransactionRequest
+ @return ApiGetImagesForViewOnTransactionRequest
 */
-func (a *TransactionAPIService) OBPv121GetImagesForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121GetImagesForViewOnTransactionRequest {
-	return ApiOBPv121GetImagesForViewOnTransactionRequest{
+func (a *TransactionAPIService) GetImagesForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiGetImagesForViewOnTransactionRequest {
+	return ApiGetImagesForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1787,16 +3074,16 @@ func (a *TransactionAPIService) OBPv121GetImagesForViewOnTransaction(ctx context
 }
 
 // Execute executes the request
-//  @return OBPv121GetImagesForViewOnTransaction200Response
-func (a *TransactionAPIService) OBPv121GetImagesForViewOnTransactionExecute(r ApiOBPv121GetImagesForViewOnTransactionRequest) (*OBPv121GetImagesForViewOnTransaction200Response, *http.Response, error) {
+//  @return GetImagesForViewOnTransaction200Response
+func (a *TransactionAPIService) GetImagesForViewOnTransactionExecute(r ApiGetImagesForViewOnTransactionRequest) (*GetImagesForViewOnTransaction200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121GetImagesForViewOnTransaction200Response
+		localVarReturnValue  *GetImagesForViewOnTransaction200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121GetImagesForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.GetImagesForViewOnTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1852,7 +3139,7 @@ func (a *TransactionAPIService) OBPv121GetImagesForViewOnTransactionExecute(r Ap
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1893,7 +3180,7 @@ func (a *TransactionAPIService) OBPv121GetImagesForViewOnTransactionExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121GetOtherAccountForTransactionRequest struct {
+type ApiGetOtherAccountForTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
@@ -1902,12 +3189,12 @@ type ApiOBPv121GetOtherAccountForTransactionRequest struct {
 	transactionid string
 }
 
-func (r ApiOBPv121GetOtherAccountForTransactionRequest) Execute() (*OBPv121GetOtherAccountForTransaction200Response, *http.Response, error) {
-	return r.ApiService.OBPv121GetOtherAccountForTransactionExecute(r)
+func (r ApiGetOtherAccountForTransactionRequest) Execute() (*GetOtherAccountForTransaction200Response, *http.Response, error) {
+	return r.ApiService.GetOtherAccountForTransactionExecute(r)
 }
 
 /*
-OBPv121GetOtherAccountForTransaction Get Other Account of Transaction
+GetOtherAccountForTransaction Get Other Account of Transaction
 
 <p>Get other account of a transaction.<br />
 Returns details of the other party involved in the transaction, moderated by the <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
@@ -1951,10 +3238,10 @@ Authentication via OAuth is required if the view is not public.</p>
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121GetOtherAccountForTransactionRequest
+ @return ApiGetOtherAccountForTransactionRequest
 */
-func (a *TransactionAPIService) OBPv121GetOtherAccountForTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121GetOtherAccountForTransactionRequest {
-	return ApiOBPv121GetOtherAccountForTransactionRequest{
+func (a *TransactionAPIService) GetOtherAccountForTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiGetOtherAccountForTransactionRequest {
+	return ApiGetOtherAccountForTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1965,16 +3252,16 @@ func (a *TransactionAPIService) OBPv121GetOtherAccountForTransaction(ctx context
 }
 
 // Execute executes the request
-//  @return OBPv121GetOtherAccountForTransaction200Response
-func (a *TransactionAPIService) OBPv121GetOtherAccountForTransactionExecute(r ApiOBPv121GetOtherAccountForTransactionRequest) (*OBPv121GetOtherAccountForTransaction200Response, *http.Response, error) {
+//  @return GetOtherAccountForTransaction200Response
+func (a *TransactionAPIService) GetOtherAccountForTransactionExecute(r ApiGetOtherAccountForTransactionRequest) (*GetOtherAccountForTransaction200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121GetOtherAccountForTransaction200Response
+		localVarReturnValue  *GetOtherAccountForTransaction200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121GetOtherAccountForTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.GetOtherAccountForTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2043,7 +3330,7 @@ func (a *TransactionAPIService) OBPv121GetOtherAccountForTransactionExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121GetTagsForViewOnTransactionRequest struct {
+type ApiGetTagsForViewOnTransactionRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
@@ -2052,12 +3339,12 @@ type ApiOBPv121GetTagsForViewOnTransactionRequest struct {
 	transactionid string
 }
 
-func (r ApiOBPv121GetTagsForViewOnTransactionRequest) Execute() (*OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, *http.Response, error) {
-	return r.ApiService.OBPv121GetTagsForViewOnTransactionExecute(r)
+func (r ApiGetTagsForViewOnTransactionRequest) Execute() (*GetTagsForViewOnAccount200ResponseTagsInner, *http.Response, error) {
+	return r.ApiService.GetTagsForViewOnTransactionExecute(r)
 }
 
 /*
-OBPv121GetTagsForViewOnTransaction Get Transaction Tags
+GetTagsForViewOnTransaction Get Transaction Tags
 
 <p>Returns the transaction TRANSACTION_ID tags made on a <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
 Authentication via OAuth is required if the view is not public.</p>
@@ -2081,10 +3368,10 @@ Authentication via OAuth is required if the view is not public.</p>
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121GetTagsForViewOnTransactionRequest
+ @return ApiGetTagsForViewOnTransactionRequest
 */
-func (a *TransactionAPIService) OBPv121GetTagsForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121GetTagsForViewOnTransactionRequest {
-	return ApiOBPv121GetTagsForViewOnTransactionRequest{
+func (a *TransactionAPIService) GetTagsForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiGetTagsForViewOnTransactionRequest {
+	return ApiGetTagsForViewOnTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2095,16 +3382,16 @@ func (a *TransactionAPIService) OBPv121GetTagsForViewOnTransaction(ctx context.C
 }
 
 // Execute executes the request
-//  @return OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
-func (a *TransactionAPIService) OBPv121GetTagsForViewOnTransactionExecute(r ApiOBPv121GetTagsForViewOnTransactionRequest) (*OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, *http.Response, error) {
+//  @return GetTagsForViewOnAccount200ResponseTagsInner
+func (a *TransactionAPIService) GetTagsForViewOnTransactionExecute(r ApiGetTagsForViewOnTransactionRequest) (*GetTagsForViewOnAccount200ResponseTagsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+		localVarReturnValue  *GetTagsForViewOnAccount200ResponseTagsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121GetTagsForViewOnTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.GetTagsForViewOnTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2173,623 +3460,32 @@ func (a *TransactionAPIService) OBPv121GetTagsForViewOnTransactionExecute(r ApiO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121GetTransactionNarrativeRequest struct {
+type ApiGetTransactionAttributeByIdRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
 	accountid string
-	viewid string
 	transactionid string
+	attributeid string
 }
 
-func (r ApiOBPv121GetTransactionNarrativeRequest) Execute() (*OBPv121GetTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121GetTransactionNarrativeExecute(r)
+func (r ApiGetTransactionAttributeByIdRequest) Execute() (*GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, *http.Response, error) {
+	return r.ApiService.GetTransactionAttributeByIdExecute(r)
 }
 
 /*
-OBPv121GetTransactionNarrative Get a Transaction Narrative
+GetTransactionAttributeById Get Transaction Attribute By Id
 
-<p>Returns the account owner description of the transaction <a href="#1_2_1-getViewsForBankAccount">moderated</a> by the view.</p>
-<p>Authentication via OAuth is required if the view is not public.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#narrative"><strong>narrative</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121GetTransactionNarrativeRequest
-*/
-func (a *TransactionAPIService) OBPv121GetTransactionNarrative(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121GetTransactionNarrativeRequest {
-	return ApiOBPv121GetTransactionNarrativeRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		transactionid: transactionid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv121GetTransactionNarrative200Response
-func (a *TransactionAPIService) OBPv121GetTransactionNarrativeExecute(r ApiOBPv121GetTransactionNarrativeRequest) (*OBPv121GetTransactionNarrative200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv121GetTransactionNarrative200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121GetTransactionNarrative")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv121GetWhereTagForViewOnTransactionRequest struct {
-	ctx context.Context
-	ApiService *TransactionAPIService
-	bankid string
-	accountid string
-	viewid string
-	transactionid string
-}
-
-func (r ApiOBPv121GetWhereTagForViewOnTransactionRequest) Execute() (*OBPv121GetWhereTagForViewOnTransaction200Response, *http.Response, error) {
-	return r.ApiService.OBPv121GetWhereTagForViewOnTransactionExecute(r)
-}
-
-/*
-OBPv121GetWhereTagForViewOnTransaction Get a Transaction where Tag
-
-<p>Returns the &quot;where&quot; Geo tag added to the transaction TRANSACTION_ID made on a <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
-It represents the location where the transaction has been initiated.</p>
-<p>Authentication via OAuth is required if the view is not public.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
-<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
-<p><a href="/glossary#where"><strong>where</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121GetWhereTagForViewOnTransactionRequest
-*/
-func (a *TransactionAPIService) OBPv121GetWhereTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121GetWhereTagForViewOnTransactionRequest {
-	return ApiOBPv121GetWhereTagForViewOnTransactionRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		transactionid: transactionid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv121GetWhereTagForViewOnTransaction200Response
-func (a *TransactionAPIService) OBPv121GetWhereTagForViewOnTransactionExecute(r ApiOBPv121GetWhereTagForViewOnTransactionRequest) (*OBPv121GetWhereTagForViewOnTransaction200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv121GetWhereTagForViewOnTransaction200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121GetWhereTagForViewOnTransaction")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv121UpdateTransactionNarrativeRequest struct {
-	ctx context.Context
-	ApiService *TransactionAPIService
-	bankid string
-	accountid string
-	viewid string
-	transactionid string
-	oBPv121GetTransactionNarrative200Response *OBPv121GetTransactionNarrative200Response
-}
-
-// Request body
-func (r ApiOBPv121UpdateTransactionNarrativeRequest) OBPv121GetTransactionNarrative200Response(oBPv121GetTransactionNarrative200Response OBPv121GetTransactionNarrative200Response) ApiOBPv121UpdateTransactionNarrativeRequest {
-	r.oBPv121GetTransactionNarrative200Response = &oBPv121GetTransactionNarrative200Response
-	return r
-}
-
-func (r ApiOBPv121UpdateTransactionNarrativeRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121UpdateTransactionNarrativeExecute(r)
-}
-
-/*
-OBPv121UpdateTransactionNarrative Update a Transaction Narrative
-
-<p>Updates the description of the transaction TRANSACTION_ID.</p>
-<p>Authentication via OAuth is required if the view is not public.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121UpdateTransactionNarrativeRequest
-*/
-func (a *TransactionAPIService) OBPv121UpdateTransactionNarrative(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121UpdateTransactionNarrativeRequest {
-	return ApiOBPv121UpdateTransactionNarrativeRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		transactionid: transactionid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *TransactionAPIService) OBPv121UpdateTransactionNarrativeExecute(r ApiOBPv121UpdateTransactionNarrativeRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121UpdateTransactionNarrative")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv121GetTransactionNarrative200Response == nil {
-		return localVarReturnValue, nil, reportError("oBPv121GetTransactionNarrative200Response is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv121GetTransactionNarrative200Response
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv121UpdateWhereTagForViewOnTransactionRequest struct {
-	ctx context.Context
-	ApiService *TransactionAPIService
-	bankid string
-	accountid string
-	viewid string
-	transactionid string
-	oBPv121UpdateWhereTagForViewOnTransactionRequest *OBPv121UpdateWhereTagForViewOnTransactionRequest
-}
-
-// Request body
-func (r ApiOBPv121UpdateWhereTagForViewOnTransactionRequest) OBPv121UpdateWhereTagForViewOnTransactionRequest(oBPv121UpdateWhereTagForViewOnTransactionRequest OBPv121UpdateWhereTagForViewOnTransactionRequest) ApiOBPv121UpdateWhereTagForViewOnTransactionRequest {
-	r.oBPv121UpdateWhereTagForViewOnTransactionRequest = &oBPv121UpdateWhereTagForViewOnTransactionRequest
-	return r
-}
-
-func (r ApiOBPv121UpdateWhereTagForViewOnTransactionRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121UpdateWhereTagForViewOnTransactionExecute(r)
-}
-
-/*
-OBPv121UpdateWhereTagForViewOnTransaction Update a Transaction where Tag
-
-<p>Updates the &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href="#1_2_1-getViewsForBankAccount">view</a>.</p>
+<p>Get Transaction Attribute By Id</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>The geo tag is linked with the user.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Adapter.card_attribute_id">ATTRIBUTE_ID</a>:</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
 <p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121UpdateWhereTagForViewOnTransactionRequest
-*/
-func (a *TransactionAPIService) OBPv121UpdateWhereTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121UpdateWhereTagForViewOnTransactionRequest {
-	return ApiOBPv121UpdateWhereTagForViewOnTransactionRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		transactionid: transactionid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *TransactionAPIService) OBPv121UpdateWhereTagForViewOnTransactionExecute(r ApiOBPv121UpdateWhereTagForViewOnTransactionRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv121UpdateWhereTagForViewOnTransaction")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv121UpdateWhereTagForViewOnTransactionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121UpdateWhereTagForViewOnTransactionRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv121UpdateWhereTagForViewOnTransactionRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv300GetCoreTransactionsForBankAccountRequest struct {
-	ctx context.Context
-	ApiService *TransactionAPIService
-	bankid string
-	accountid string
-}
-
-func (r ApiOBPv300GetCoreTransactionsForBankAccountRequest) Execute() (*OBPv300GetCoreTransactionsForBankAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv300GetCoreTransactionsForBankAccountExecute(r)
-}
-
-/*
-OBPv300GetCoreTransactionsForBankAccount Get Transactions for Account (Core)
-
-<p>Returns transactions list (Core info) of the account specified by ACCOUNT_ID.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>Possible custom url parameters for pagination:</p>
-<ul>
-<li>limit=NUMBER ==&gt; default value: 50</li>
-<li>offset=NUMBER ==&gt; default value: 0</li>
-</ul>
-<p>eg1:?limit=100&amp;offset=0</p>
-<ul>
-<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
-</ul>
-<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
-<ul>
-<li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
-<li>to_date=DATE =&gt; example value: 2026-03-16T19:25:56.865Z. NOTE! The default value is now (2026-03-16T19:25:56.865Z).</li>
-</ul>
-<p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
-<p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
-<p><a href="/glossary#address"><strong>address</strong></a>:</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_routing"><strong>bank_routing</strong></a>:</p>
-<p><a href="/glossary#completed"><strong>completed</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#holder"><strong>holder</strong></a>:</p>
-<p><a href="/glossary#holders"><strong>holders</strong></a>:</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#is_alias"><strong>is_alias</strong></a>:</p>
 <p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#new_balance"><strong>new_balance</strong></a>: 20</p>
-<p><a href="/glossary#other_account"><strong>other_account</strong></a>:</p>
-<p><a href="/glossary#posted"><strong>posted</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
-<p><a href="/glossary#this_account"><strong>this_account</strong></a>:</p>
 <p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#transaction_attributes"><strong>transaction_attributes</strong></a>:</p>
-<p><a href="/glossary#transactions"><strong>transactions</strong></a>:</p>
 <p><a href="/glossary#type"><strong>type</strong></a>:</p>
 <p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
 
@@ -2797,35 +3493,41 @@ OBPv300GetCoreTransactionsForBankAccount Get Transactions for Account (Core)
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
- @return ApiOBPv300GetCoreTransactionsForBankAccountRequest
+ @param transactionid The TRANSACTIONID identifier
+ @param attributeid The ATTRIBUTEID identifier
+ @return ApiGetTransactionAttributeByIdRequest
 */
-func (a *TransactionAPIService) OBPv300GetCoreTransactionsForBankAccount(ctx context.Context, bankid string, accountid string) ApiOBPv300GetCoreTransactionsForBankAccountRequest {
-	return ApiOBPv300GetCoreTransactionsForBankAccountRequest{
+func (a *TransactionAPIService) GetTransactionAttributeById(ctx context.Context, bankid string, accountid string, transactionid string, attributeid string) ApiGetTransactionAttributeByIdRequest {
+	return ApiGetTransactionAttributeByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
 		accountid: accountid,
+		transactionid: transactionid,
+		attributeid: attributeid,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv300GetCoreTransactionsForBankAccount200Response
-func (a *TransactionAPIService) OBPv300GetCoreTransactionsForBankAccountExecute(r ApiOBPv300GetCoreTransactionsForBankAccountRequest) (*OBPv300GetCoreTransactionsForBankAccount200Response, *http.Response, error) {
+//  @return GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
+func (a *TransactionAPIService) GetTransactionAttributeByIdExecute(r ApiGetTransactionAttributeByIdRequest) (*GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv300GetCoreTransactionsForBankAccount200Response
+		localVarReturnValue  *GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv300GetCoreTransactionsForBankAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.GetTransactionAttributeById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions"
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid}"
 	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"attributeid"+"}", url.PathEscape(parameterValueToString(r.attributeid, "attributeid")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2872,7 +3574,7 @@ func (a *TransactionAPIService) OBPv300GetCoreTransactionsForBankAccountExecute(
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2913,129 +3615,216 @@ func (a *TransactionAPIService) OBPv300GetCoreTransactionsForBankAccountExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv300GetFirehoseTransactionsForBankAccountRequest struct {
+type ApiGetTransactionAttributeDefinitionRequest struct {
+	ctx context.Context
+	ApiService *TransactionAPIService
+	bankid string
+}
+
+func (r ApiGetTransactionAttributeDefinitionRequest) Execute() (*GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
+	return r.ApiService.GetTransactionAttributeDefinitionExecute(r)
+}
+
+/*
+GetTransactionAttributeDefinition Get Transaction Attribute Definition
+
+<p>Get Transaction Attribute Definition</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#attribute_definition_id"><strong>attribute_definition_id</strong></a>:</p>
+<p><a href="/glossary#attributes"><strong>attributes</strong></a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#can_be_seen_on_views"><strong>can_be_seen_on_views</strong></a>: false</p>
+<p><a href="/glossary#category"><strong>category</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @return ApiGetTransactionAttributeDefinitionRequest
+*/
+func (a *TransactionAPIService) GetTransactionAttributeDefinition(ctx context.Context, bankid string) ApiGetTransactionAttributeDefinitionRequest {
+	return ApiGetTransactionAttributeDefinitionRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+	}
+}
+
+// Execute executes the request
+//  @return GetTransactionRequestAttributeDefinition200Response
+func (a *TransactionAPIService) GetTransactionAttributeDefinitionExecute(r ApiGetTransactionAttributeDefinitionRequest) (*GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetTransactionRequestAttributeDefinition200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.GetTransactionAttributeDefinition")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetTransactionAttributesRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
 	accountid string
-	viewid string
+	transactionid string
 }
 
-func (r ApiOBPv300GetFirehoseTransactionsForBankAccountRequest) Execute() (*OBPv300GetFirehoseTransactionsForBankAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv300GetFirehoseTransactionsForBankAccountExecute(r)
+func (r ApiGetTransactionAttributesRequest) Execute() (*GetTransactionAttributes200Response, *http.Response, error) {
+	return r.ApiService.GetTransactionAttributesExecute(r)
 }
 
 /*
-OBPv300GetFirehoseTransactionsForBankAccount Get Firehose Transactions for Account
+GetTransactionAttributes Get Transaction Attributes
 
-<p>Get Transactions for an Account that has a firehose View.</p>
-<p>Allows bulk access to an account's transactions.<br />
-User must have the CanUseFirehoseAtAnyBank Role</p>
-<p>To find ACCOUNT_IDs, use the getFirehoseAccountsAtOneBank call.</p>
-<p>For VIEW_ID try 'owner'</p>
-<p>Possible custom url parameters for pagination:</p>
-<ul>
-<li>limit=NUMBER ==&gt; default value: 50</li>
-<li>offset=NUMBER ==&gt; default value: 0</li>
-</ul>
-<p>eg1:?limit=100&amp;offset=0</p>
-<ul>
-<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
-</ul>
-<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
-<ul>
-<li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
-<li>to_date=DATE =&gt; example value: 2026-03-16T19:25:56.865Z. NOTE! The default value is now (2026-03-16T19:25:56.865Z).</li>
-</ul>
-<p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
-<p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
+<p>Get Transaction Attributes</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>URL</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
-<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
-<p><a href="/glossary#address"><strong>address</strong></a>:</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_routing"><strong>bank_routing</strong></a>:</p>
-<p><a href="/glossary#comments"><strong>comments</strong></a>:</p>
-<p><a href="/glossary#completed"><strong>completed</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
-<p><a href="/glossary#holder"><strong>holder</strong></a>:</p>
-<p><a href="/glossary#holders"><strong>holders</strong></a>:</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#image_url"><strong>image_URL</strong></a>:</p>
-<p><a href="/glossary#images"><strong>images</strong></a>:</p>
-<p><a href="/glossary#is_alias"><strong>is_alias</strong></a>:</p>
-<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
-<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
-<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
-<p><a href="/glossary#metadata"><strong>metadata</strong></a>:</p>
-<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
 <p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#narrative"><strong>narrative</strong></a>:</p>
-<p><a href="/glossary#new_balance"><strong>new_balance</strong></a>: 20</p>
-<p><a href="/glossary#open_corporates_url"><strong>open_corporates_URL</strong></a>:</p>
-<p><a href="/glossary#other_account"><strong>other_account</strong></a>:</p>
-<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
-<p><a href="/glossary#posted"><strong>posted</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
-<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
-<p><a href="/glossary#tags"><strong>tags</strong></a>: Create-My-User</p>
-<p><a href="/glossary#this_account"><strong>this_account</strong></a>:</p>
 <p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
 <p><a href="/glossary#transaction_attributes"><strong>transaction_attributes</strong></a>:</p>
-<p><a href="/glossary#transactions"><strong>transactions</strong></a>:</p>
 <p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
 <p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#where"><strong>where</strong></a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @return ApiOBPv300GetFirehoseTransactionsForBankAccountRequest
+ @param transactionid The TRANSACTIONID identifier
+ @return ApiGetTransactionAttributesRequest
 */
-func (a *TransactionAPIService) OBPv300GetFirehoseTransactionsForBankAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv300GetFirehoseTransactionsForBankAccountRequest {
-	return ApiOBPv300GetFirehoseTransactionsForBankAccountRequest{
+func (a *TransactionAPIService) GetTransactionAttributes(ctx context.Context, bankid string, accountid string, transactionid string) ApiGetTransactionAttributesRequest {
+	return ApiGetTransactionAttributesRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
 		accountid: accountid,
-		viewid: viewid,
+		transactionid: transactionid,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv300GetFirehoseTransactionsForBankAccount200Response
-func (a *TransactionAPIService) OBPv300GetFirehoseTransactionsForBankAccountExecute(r ApiOBPv300GetFirehoseTransactionsForBankAccountRequest) (*OBPv300GetFirehoseTransactionsForBankAccount200Response, *http.Response, error) {
+//  @return GetTransactionAttributes200Response
+func (a *TransactionAPIService) GetTransactionAttributesExecute(r ApiGetTransactionAttributesRequest) (*GetTransactionAttributes200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv300GetFirehoseTransactionsForBankAccount200Response
+		localVarReturnValue  *GetTransactionAttributes200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv300GetFirehoseTransactionsForBankAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.GetTransactionAttributes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions"
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes"
 	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3082,7 +3871,7 @@ func (a *TransactionAPIService) OBPv300GetFirehoseTransactionsForBankAccountExec
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3123,7 +3912,7 @@ func (a *TransactionAPIService) OBPv300GetFirehoseTransactionsForBankAccountExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv310GetTransactionByIdForBankAccountRequest struct {
+type ApiGetTransactionByIdForBankAccountRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
@@ -3132,12 +3921,12 @@ type ApiOBPv310GetTransactionByIdForBankAccountRequest struct {
 	transactionid string
 }
 
-func (r ApiOBPv310GetTransactionByIdForBankAccountRequest) Execute() (*OBPv310GetTransactionByIdForBankAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv310GetTransactionByIdForBankAccountExecute(r)
+func (r ApiGetTransactionByIdForBankAccountRequest) Execute() (*GetTransactionByIdForBankAccount200Response, *http.Response, error) {
+	return r.ApiService.GetTransactionByIdForBankAccountExecute(r)
 }
 
 /*
-OBPv310GetTransactionByIdForBankAccount Get Transaction by Id
+GetTransactionByIdForBankAccount Get Transaction by Id
 
 <p>Returns one transaction specified by TRANSACTION_ID of the account ACCOUNT_ID and <a href="#1_2_1-getViewsForBankAccount">moderated</a> by the view (VIEW_ID).</p>
 <p>User Authentication is Optional. The User need not be logged in.<br />
@@ -3198,10 +3987,10 @@ Authentication is required if the view is not public.</p>
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv310GetTransactionByIdForBankAccountRequest
+ @return ApiGetTransactionByIdForBankAccountRequest
 */
-func (a *TransactionAPIService) OBPv310GetTransactionByIdForBankAccount(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv310GetTransactionByIdForBankAccountRequest {
-	return ApiOBPv310GetTransactionByIdForBankAccountRequest{
+func (a *TransactionAPIService) GetTransactionByIdForBankAccount(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiGetTransactionByIdForBankAccountRequest {
+	return ApiGetTransactionByIdForBankAccountRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -3212,16 +4001,16 @@ func (a *TransactionAPIService) OBPv310GetTransactionByIdForBankAccount(ctx cont
 }
 
 // Execute executes the request
-//  @return OBPv310GetTransactionByIdForBankAccount200Response
-func (a *TransactionAPIService) OBPv310GetTransactionByIdForBankAccountExecute(r ApiOBPv310GetTransactionByIdForBankAccountRequest) (*OBPv310GetTransactionByIdForBankAccount200Response, *http.Response, error) {
+//  @return GetTransactionByIdForBankAccount200Response
+func (a *TransactionAPIService) GetTransactionByIdForBankAccountExecute(r ApiGetTransactionByIdForBankAccountRequest) (*GetTransactionByIdForBankAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetTransactionByIdForBankAccount200Response
+		localVarReturnValue  *GetTransactionByIdForBankAccount200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv310GetTransactionByIdForBankAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.GetTransactionByIdForBankAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3277,7 +4066,7 @@ func (a *TransactionAPIService) OBPv310GetTransactionByIdForBankAccountExecute(r
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3318,741 +4107,7 @@ func (a *TransactionAPIService) OBPv310GetTransactionByIdForBankAccountExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateOrUpdateTransactionAttributeDefinitionRequest struct {
-	ctx context.Context
-	ApiService *TransactionAPIService
-	bankid string
-	oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest *OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateOrUpdateTransactionAttributeDefinitionRequest) OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) ApiOBPv400CreateOrUpdateTransactionAttributeDefinitionRequest {
-	r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = &oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-	return r
-}
-
-func (r ApiOBPv400CreateOrUpdateTransactionAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateOrUpdateTransactionAttributeDefinitionExecute(r)
-}
-
-/*
-OBPv400CreateOrUpdateTransactionAttributeDefinition Create or Update Transaction Attribute Definition
-
-<p>Create or Update Transaction Attribute Definition</p>
-<p>The category field must be Transaction</p>
-<p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#attribute_definition_id"><strong>attribute_definition_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#can_be_seen_on_views"><strong>can_be_seen_on_views</strong></a>: false</p>
-<p><a href="/glossary#category"><strong>category</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @return ApiOBPv400CreateOrUpdateTransactionAttributeDefinitionRequest
-*/
-func (a *TransactionAPIService) OBPv400CreateOrUpdateTransactionAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400CreateOrUpdateTransactionAttributeDefinitionRequest {
-	return ApiOBPv400CreateOrUpdateTransactionAttributeDefinitionRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-func (a *TransactionAPIService) OBPv400CreateOrUpdateTransactionAttributeDefinitionExecute(r ApiOBPv400CreateOrUpdateTransactionAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv400CreateOrUpdateTransactionAttributeDefinition")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateTransactionAttributeRequest struct {
-	ctx context.Context
-	ApiService *TransactionAPIService
-	bankid string
-	accountid string
-	transactionid string
-	oBPv600CreatePersonalDataFieldRequest *OBPv600CreatePersonalDataFieldRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateTransactionAttributeRequest) OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest OBPv600CreatePersonalDataFieldRequest) ApiOBPv400CreateTransactionAttributeRequest {
-	r.oBPv600CreatePersonalDataFieldRequest = &oBPv600CreatePersonalDataFieldRequest
-	return r
-}
-
-func (r ApiOBPv400CreateTransactionAttributeRequest) Execute() (*OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateTransactionAttributeExecute(r)
-}
-
-/*
-OBPv400CreateTransactionAttribute Create Transaction Attribute
-
-<p>Create Transaction Attribute</p>
-<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv400CreateTransactionAttributeRequest
-*/
-func (a *TransactionAPIService) OBPv400CreateTransactionAttribute(ctx context.Context, bankid string, accountid string, transactionid string) ApiOBPv400CreateTransactionAttributeRequest {
-	return ApiOBPv400CreateTransactionAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		transactionid: transactionid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
-func (a *TransactionAPIService) OBPv400CreateTransactionAttributeExecute(r ApiOBPv400CreateTransactionAttributeRequest) (*OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv400CreateTransactionAttribute")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv600CreatePersonalDataFieldRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreatePersonalDataFieldRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv600CreatePersonalDataFieldRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400DeleteTransactionAttributeDefinitionRequest struct {
-	ctx context.Context
-	ApiService *TransactionAPIService
-	bankid string
-	attributedefinitionid string
-}
-
-func (r ApiOBPv400DeleteTransactionAttributeDefinitionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteTransactionAttributeDefinitionExecute(r)
-}
-
-/*
-OBPv400DeleteTransactionAttributeDefinition Delete Transaction Attribute Definition
-
-<p>Delete Transaction Attribute Definition by ATTRIBUTE_DEFINITION_ID</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#attribute_definition_id">ATTRIBUTE_DEFINITION_ID</a>:</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier
- @return ApiOBPv400DeleteTransactionAttributeDefinitionRequest
-*/
-func (a *TransactionAPIService) OBPv400DeleteTransactionAttributeDefinition(ctx context.Context, bankid string, attributedefinitionid string) ApiOBPv400DeleteTransactionAttributeDefinitionRequest {
-	return ApiOBPv400DeleteTransactionAttributeDefinitionRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		attributedefinitionid: attributedefinitionid,
-	}
-}
-
-// Execute executes the request
-func (a *TransactionAPIService) OBPv400DeleteTransactionAttributeDefinitionExecute(r ApiOBPv400DeleteTransactionAttributeDefinitionRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv400DeleteTransactionAttributeDefinition")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"attributedefinitionid"+"}", url.PathEscape(parameterValueToString(r.attributedefinitionid, "attributedefinitionid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv400DeleteTransactionCascadeRequest struct {
-	ctx context.Context
-	ApiService *TransactionAPIService
-	bankid string
-	accountid string
-	transactionid string
-}
-
-func (r ApiOBPv400DeleteTransactionCascadeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteTransactionCascadeExecute(r)
-}
-
-/*
-OBPv400DeleteTransactionCascade Delete Transaction Cascade
-
-<p>Delete a Transaction Cascade specified by TRANSACTION_ID.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv400DeleteTransactionCascadeRequest
-*/
-func (a *TransactionAPIService) OBPv400DeleteTransactionCascade(ctx context.Context, bankid string, accountid string, transactionid string) ApiOBPv400DeleteTransactionCascadeRequest {
-	return ApiOBPv400DeleteTransactionCascadeRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		transactionid: transactionid,
-	}
-}
-
-// Execute executes the request
-func (a *TransactionAPIService) OBPv400DeleteTransactionCascadeExecute(r ApiOBPv400DeleteTransactionCascadeRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv400DeleteTransactionCascade")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetBalancingTransactionRequest struct {
-	ctx context.Context
-	ApiService *TransactionAPIService
-	transactionid string
-}
-
-func (r ApiOBPv400GetBalancingTransactionRequest) Execute() (*OBPv400GetDoubleEntryTransaction200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetBalancingTransactionExecute(r)
-}
-
-/*
-OBPv400GetBalancingTransaction Get Balancing Transaction
-
-<p>Get Balancing Transaction</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>credit_transaction</strong></a>: credit_transaction</p>
-<p><a href="/glossary#"><strong>debit_transaction</strong></a>: debit_transaction</p>
-<p><a href="/glossary#"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#"><strong>transaction_request</strong></a>: transaction_request</p>
-<p><a href="/glossary#"><strong>transaction_request_id</strong></a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv400GetBalancingTransactionRequest
-*/
-func (a *TransactionAPIService) OBPv400GetBalancingTransaction(ctx context.Context, transactionid string) ApiOBPv400GetBalancingTransactionRequest {
-	return ApiOBPv400GetBalancingTransactionRequest{
-		ApiService: a,
-		ctx: ctx,
-		transactionid: transactionid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetDoubleEntryTransaction200Response
-func (a *TransactionAPIService) OBPv400GetBalancingTransactionExecute(r ApiOBPv400GetBalancingTransactionRequest) (*OBPv400GetDoubleEntryTransaction200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDoubleEntryTransaction200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv400GetBalancingTransaction")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/transactions/{transactionid}/balancing-transaction"
-	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetDoubleEntryTransactionRequest struct {
+type ApiGetTransactionNarrativeRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
@@ -4061,33 +4116,23 @@ type ApiOBPv400GetDoubleEntryTransactionRequest struct {
 	transactionid string
 }
 
-func (r ApiOBPv400GetDoubleEntryTransactionRequest) Execute() (*OBPv400GetDoubleEntryTransaction200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetDoubleEntryTransactionExecute(r)
+func (r ApiGetTransactionNarrativeRequest) Execute() (*GetTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.GetTransactionNarrativeExecute(r)
 }
 
 /*
-OBPv400GetDoubleEntryTransaction Get Double Entry Transaction
+GetTransactionNarrative Get a Transaction Narrative
 
-<p>Get Double Entry Transaction</p>
-<p>This endpoint can be used to see the double entry transactions. It returns the <code>bank_id</code>, <code>account_id</code> and <code>transaction_id</code><br />
-for the debit end the credit transaction. The other side account can be a settlement account or an OBP account.</p>
-<p>The endpoint also provide the <code>transaction_request</code> object which contains the <code>bank_id</code>, <code>account_id</code> and<br />
-<code>transaction_request_id</code> of the transaction request at the origin of the transaction. Please note that if none<br />
-transaction request is at the origin of the transaction, the <code>transaction_request</code> object will be <code>null</code>.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>Returns the account owner description of the transaction <a href="#1_2_1-getViewsForBankAccount">moderated</a> by the view.</p>
+<p>Authentication via OAuth is required if the view is not public.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
 <p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
 <p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>credit_transaction</strong></a>: credit_transaction</p>
-<p><a href="/glossary#"><strong>debit_transaction</strong></a>: debit_transaction</p>
-<p><a href="/glossary#"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#"><strong>transaction_request</strong></a>: transaction_request</p>
-<p><a href="/glossary#"><strong>transaction_request_id</strong></a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
+<p><a href="/glossary#narrative"><strong>narrative</strong></a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -4095,10 +4140,10 @@ transaction request is at the origin of the transaction, the <code>transaction_r
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv400GetDoubleEntryTransactionRequest
+ @return ApiGetTransactionNarrativeRequest
 */
-func (a *TransactionAPIService) OBPv400GetDoubleEntryTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv400GetDoubleEntryTransactionRequest {
-	return ApiOBPv400GetDoubleEntryTransactionRequest{
+func (a *TransactionAPIService) GetTransactionNarrative(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiGetTransactionNarrativeRequest {
+	return ApiGetTransactionNarrativeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -4109,21 +4154,21 @@ func (a *TransactionAPIService) OBPv400GetDoubleEntryTransaction(ctx context.Con
 }
 
 // Execute executes the request
-//  @return OBPv400GetDoubleEntryTransaction200Response
-func (a *TransactionAPIService) OBPv400GetDoubleEntryTransactionExecute(r ApiOBPv400GetDoubleEntryTransactionRequest) (*OBPv400GetDoubleEntryTransaction200Response, *http.Response, error) {
+//  @return GetTransactionNarrative200Response
+func (a *TransactionAPIService) GetTransactionNarrativeExecute(r ApiGetTransactionNarrativeRequest) (*GetTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDoubleEntryTransaction200Response
+		localVarReturnValue  *GetTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv400GetDoubleEntryTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.GetTransactionNarrative")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/double-entry-transaction"
+	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative"
 	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
@@ -4150,34 +4195,6 @@ func (a *TransactionAPIService) OBPv400GetDoubleEntryTransactionExecute(r ApiOBP
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -4215,626 +4232,7 @@ func (a *TransactionAPIService) OBPv400GetDoubleEntryTransactionExecute(r ApiOBP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetTransactionAttributeByIdRequest struct {
-	ctx context.Context
-	ApiService *TransactionAPIService
-	bankid string
-	accountid string
-	transactionid string
-	attributeid string
-}
-
-func (r ApiOBPv400GetTransactionAttributeByIdRequest) Execute() (*OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetTransactionAttributeByIdExecute(r)
-}
-
-/*
-OBPv400GetTransactionAttributeById Get Transaction Attribute By Id
-
-<p>Get Transaction Attribute By Id</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Adapter.card_attribute_id">ATTRIBUTE_ID</a>:</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param transactionid The TRANSACTIONID identifier
- @param attributeid The ATTRIBUTEID identifier
- @return ApiOBPv400GetTransactionAttributeByIdRequest
-*/
-func (a *TransactionAPIService) OBPv400GetTransactionAttributeById(ctx context.Context, bankid string, accountid string, transactionid string, attributeid string) ApiOBPv400GetTransactionAttributeByIdRequest {
-	return ApiOBPv400GetTransactionAttributeByIdRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		transactionid: transactionid,
-		attributeid: attributeid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
-func (a *TransactionAPIService) OBPv400GetTransactionAttributeByIdExecute(r ApiOBPv400GetTransactionAttributeByIdRequest) (*OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv400GetTransactionAttributeById")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"attributeid"+"}", url.PathEscape(parameterValueToString(r.attributeid, "attributeid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetTransactionAttributeDefinitionRequest struct {
-	ctx context.Context
-	ApiService *TransactionAPIService
-	bankid string
-}
-
-func (r ApiOBPv400GetTransactionAttributeDefinitionRequest) Execute() (*OBPv400GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetTransactionAttributeDefinitionExecute(r)
-}
-
-/*
-OBPv400GetTransactionAttributeDefinition Get Transaction Attribute Definition
-
-<p>Get Transaction Attribute Definition</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#attribute_definition_id"><strong>attribute_definition_id</strong></a>:</p>
-<p><a href="/glossary#attributes"><strong>attributes</strong></a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#can_be_seen_on_views"><strong>can_be_seen_on_views</strong></a>: false</p>
-<p><a href="/glossary#category"><strong>category</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @return ApiOBPv400GetTransactionAttributeDefinitionRequest
-*/
-func (a *TransactionAPIService) OBPv400GetTransactionAttributeDefinition(ctx context.Context, bankid string) ApiOBPv400GetTransactionAttributeDefinitionRequest {
-	return ApiOBPv400GetTransactionAttributeDefinitionRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetTransactionRequestAttributeDefinition200Response
-func (a *TransactionAPIService) OBPv400GetTransactionAttributeDefinitionExecute(r ApiOBPv400GetTransactionAttributeDefinitionRequest) (*OBPv400GetTransactionRequestAttributeDefinition200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionRequestAttributeDefinition200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv400GetTransactionAttributeDefinition")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetTransactionAttributesRequest struct {
-	ctx context.Context
-	ApiService *TransactionAPIService
-	bankid string
-	accountid string
-	transactionid string
-}
-
-func (r ApiOBPv400GetTransactionAttributesRequest) Execute() (*OBPv400GetTransactionAttributes200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetTransactionAttributesExecute(r)
-}
-
-/*
-OBPv400GetTransactionAttributes Get Transaction Attributes
-
-<p>Get Transaction Attributes</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#transaction_attributes"><strong>transaction_attributes</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv400GetTransactionAttributesRequest
-*/
-func (a *TransactionAPIService) OBPv400GetTransactionAttributes(ctx context.Context, bankid string, accountid string, transactionid string) ApiOBPv400GetTransactionAttributesRequest {
-	return ApiOBPv400GetTransactionAttributesRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		transactionid: transactionid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetTransactionAttributes200Response
-func (a *TransactionAPIService) OBPv400GetTransactionAttributesExecute(r ApiOBPv400GetTransactionAttributesRequest) (*OBPv400GetTransactionAttributes200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTransactionAttributes200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv400GetTransactionAttributes")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400UpdateTransactionAttributeRequest struct {
-	ctx context.Context
-	ApiService *TransactionAPIService
-	bankid string
-	accountid string
-	transactionid string
-	accountattributeid string
-	oBPv600CreatePersonalDataFieldRequest *OBPv600CreatePersonalDataFieldRequest
-}
-
-// Request body
-func (r ApiOBPv400UpdateTransactionAttributeRequest) OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest OBPv600CreatePersonalDataFieldRequest) ApiOBPv400UpdateTransactionAttributeRequest {
-	r.oBPv600CreatePersonalDataFieldRequest = &oBPv600CreatePersonalDataFieldRequest
-	return r
-}
-
-func (r ApiOBPv400UpdateTransactionAttributeRequest) Execute() (*OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateTransactionAttributeExecute(r)
-}
-
-/*
-OBPv400UpdateTransactionAttribute Update Transaction Attribute
-
-<p>Update Transaction Attribute</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#account_attribute_id">ACCOUNT_ATTRIBUTE_ID</a>:</p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param transactionid The TRANSACTIONID identifier
- @param accountattributeid The ACCOUNTATTRIBUTEID identifier
- @return ApiOBPv400UpdateTransactionAttributeRequest
-*/
-func (a *TransactionAPIService) OBPv400UpdateTransactionAttribute(ctx context.Context, bankid string, accountid string, transactionid string, accountattributeid string) ApiOBPv400UpdateTransactionAttributeRequest {
-	return ApiOBPv400UpdateTransactionAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		transactionid: transactionid,
-		accountattributeid: accountattributeid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
-func (a *TransactionAPIService) OBPv400UpdateTransactionAttributeExecute(r ApiOBPv400UpdateTransactionAttributeRequest) (*OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv400UpdateTransactionAttribute")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountattributeid"+"}", url.PathEscape(parameterValueToString(r.accountattributeid, "accountattributeid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv600CreatePersonalDataFieldRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreatePersonalDataFieldRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv600CreatePersonalDataFieldRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600GetTransactionsForBankAccountRequest struct {
+type ApiGetTransactionsForBankAccountRequest struct {
 	ctx context.Context
 	ApiService *TransactionAPIService
 	bankid string
@@ -4842,12 +4240,12 @@ type ApiOBPv600GetTransactionsForBankAccountRequest struct {
 	viewid string
 }
 
-func (r ApiOBPv600GetTransactionsForBankAccountRequest) Execute() (*OBPv600GetTransactionsForBankAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetTransactionsForBankAccountExecute(r)
+func (r ApiGetTransactionsForBankAccountRequest) Execute() (*GetTransactionsForBankAccount200Response, *http.Response, error) {
+	return r.ApiService.GetTransactionsForBankAccountExecute(r)
 }
 
 /*
-OBPv600GetTransactionsForBankAccount Get Transactions for Account (Full)
+GetTransactionsForBankAccount Get Transactions for Account (Full)
 
 <p>Returns transactions list of the account specified by ACCOUNT_ID and <a href="#1_2_1-getViewsForBankAccount">moderated</a> by the view (VIEW_ID).</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
@@ -4864,7 +4262,7 @@ OBPv600GetTransactionsForBankAccount Get Transactions for Account (Full)
 <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
 <ul>
 <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
-<li>to_date=DATE =&gt; example value: 2026-03-16T19:25:59.748Z. NOTE! The default value is now (2026-03-16T19:25:59.748Z).</li>
+<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:25.480Z. NOTE! The default value is now (2026-03-25T12:16:25.480Z).</li>
 </ul>
 <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
 <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
@@ -4927,10 +4325,10 @@ making it easier to identify which bank each account belongs to without parsing 
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv600GetTransactionsForBankAccountRequest
+ @return ApiGetTransactionsForBankAccountRequest
 */
-func (a *TransactionAPIService) OBPv600GetTransactionsForBankAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv600GetTransactionsForBankAccountRequest {
-	return ApiOBPv600GetTransactionsForBankAccountRequest{
+func (a *TransactionAPIService) GetTransactionsForBankAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiGetTransactionsForBankAccountRequest {
+	return ApiGetTransactionsForBankAccountRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -4940,16 +4338,16 @@ func (a *TransactionAPIService) OBPv600GetTransactionsForBankAccount(ctx context
 }
 
 // Execute executes the request
-//  @return OBPv600GetTransactionsForBankAccount200Response
-func (a *TransactionAPIService) OBPv600GetTransactionsForBankAccountExecute(r ApiOBPv600GetTransactionsForBankAccountRequest) (*OBPv600GetTransactionsForBankAccount200Response, *http.Response, error) {
+//  @return GetTransactionsForBankAccount200Response
+func (a *TransactionAPIService) GetTransactionsForBankAccountExecute(r ApiGetTransactionsForBankAccountRequest) (*GetTransactionsForBankAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetTransactionsForBankAccount200Response
+		localVarReturnValue  *GetTransactionsForBankAccount200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.OBPv600GetTransactionsForBankAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.GetTransactionsForBankAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5004,7 +4402,609 @@ func (a *TransactionAPIService) OBPv600GetTransactionsForBankAccountExecute(r Ap
 				} else {
 					key = apiKey.Key
 				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetWhereTagForViewOnTransactionRequest struct {
+	ctx context.Context
+	ApiService *TransactionAPIService
+	bankid string
+	accountid string
+	viewid string
+	transactionid string
+}
+
+func (r ApiGetWhereTagForViewOnTransactionRequest) Execute() (*GetWhereTagForViewOnTransaction200Response, *http.Response, error) {
+	return r.ApiService.GetWhereTagForViewOnTransactionExecute(r)
+}
+
+/*
+GetWhereTagForViewOnTransaction Get a Transaction where Tag
+
+<p>Returns the &quot;where&quot; Geo tag added to the transaction TRANSACTION_ID made on a <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
+It represents the location where the transaction has been initiated.</p>
+<p>Authentication via OAuth is required if the view is not public.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
+<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+<p><a href="/glossary#where"><strong>where</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @param transactionid The TRANSACTIONID identifier
+ @return ApiGetWhereTagForViewOnTransactionRequest
+*/
+func (a *TransactionAPIService) GetWhereTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiGetWhereTagForViewOnTransactionRequest {
+	return ApiGetWhereTagForViewOnTransactionRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+		transactionid: transactionid,
+	}
+}
+
+// Execute executes the request
+//  @return GetWhereTagForViewOnTransaction200Response
+func (a *TransactionAPIService) GetWhereTagForViewOnTransactionExecute(r ApiGetWhereTagForViewOnTransactionRequest) (*GetWhereTagForViewOnTransaction200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetWhereTagForViewOnTransaction200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.GetWhereTagForViewOnTransaction")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateTransactionAttributeRequest struct {
+	ctx context.Context
+	ApiService *TransactionAPIService
+	bankid string
+	accountid string
+	transactionid string
+	accountattributeid string
+	createPersonalDataFieldRequest *CreatePersonalDataFieldRequest
+}
+
+// Request body
+func (r ApiUpdateTransactionAttributeRequest) CreatePersonalDataFieldRequest(createPersonalDataFieldRequest CreatePersonalDataFieldRequest) ApiUpdateTransactionAttributeRequest {
+	r.createPersonalDataFieldRequest = &createPersonalDataFieldRequest
+	return r
+}
+
+func (r ApiUpdateTransactionAttributeRequest) Execute() (*GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, *http.Response, error) {
+	return r.ApiService.UpdateTransactionAttributeExecute(r)
+}
+
+/*
+UpdateTransactionAttribute Update Transaction Attribute
+
+<p>Update Transaction Attribute</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#account_attribute_id">ACCOUNT_ATTRIBUTE_ID</a>:</p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param transactionid The TRANSACTIONID identifier
+ @param accountattributeid The ACCOUNTATTRIBUTEID identifier
+ @return ApiUpdateTransactionAttributeRequest
+*/
+func (a *TransactionAPIService) UpdateTransactionAttribute(ctx context.Context, bankid string, accountid string, transactionid string, accountattributeid string) ApiUpdateTransactionAttributeRequest {
+	return ApiUpdateTransactionAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		transactionid: transactionid,
+		accountattributeid: accountattributeid,
+	}
+}
+
+// Execute executes the request
+//  @return GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
+func (a *TransactionAPIService) UpdateTransactionAttributeExecute(r ApiUpdateTransactionAttributeRequest) (*GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.UpdateTransactionAttribute")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountattributeid"+"}", url.PathEscape(parameterValueToString(r.accountattributeid, "accountattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createPersonalDataFieldRequest == nil {
+		return localVarReturnValue, nil, reportError("createPersonalDataFieldRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createPersonalDataFieldRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
 				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateTransactionNarrativeRequest struct {
+	ctx context.Context
+	ApiService *TransactionAPIService
+	bankid string
+	accountid string
+	viewid string
+	transactionid string
+	getTransactionNarrative200Response *GetTransactionNarrative200Response
+}
+
+// Request body
+func (r ApiUpdateTransactionNarrativeRequest) GetTransactionNarrative200Response(getTransactionNarrative200Response GetTransactionNarrative200Response) ApiUpdateTransactionNarrativeRequest {
+	r.getTransactionNarrative200Response = &getTransactionNarrative200Response
+	return r
+}
+
+func (r ApiUpdateTransactionNarrativeRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.UpdateTransactionNarrativeExecute(r)
+}
+
+/*
+UpdateTransactionNarrative Update a Transaction Narrative
+
+<p>Updates the description of the transaction TRANSACTION_ID.</p>
+<p>Authentication via OAuth is required if the view is not public.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @param transactionid The TRANSACTIONID identifier
+ @return ApiUpdateTransactionNarrativeRequest
+*/
+func (a *TransactionAPIService) UpdateTransactionNarrative(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiUpdateTransactionNarrativeRequest {
+	return ApiUpdateTransactionNarrativeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+		transactionid: transactionid,
+	}
+}
+
+// Execute executes the request
+//  @return UpdateTransactionNarrative200Response
+func (a *TransactionAPIService) UpdateTransactionNarrativeExecute(r ApiUpdateTransactionNarrativeRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UpdateTransactionNarrative200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.UpdateTransactionNarrative")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.getTransactionNarrative200Response == nil {
+		return localVarReturnValue, nil, reportError("getTransactionNarrative200Response is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.getTransactionNarrative200Response
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateWhereTagForViewOnTransactionRequest struct {
+	ctx context.Context
+	ApiService *TransactionAPIService
+	bankid string
+	accountid string
+	viewid string
+	transactionid string
+	updateWhereTagForViewOnTransactionRequest *UpdateWhereTagForViewOnTransactionRequest
+}
+
+// Request body
+func (r ApiUpdateWhereTagForViewOnTransactionRequest) UpdateWhereTagForViewOnTransactionRequest(updateWhereTagForViewOnTransactionRequest UpdateWhereTagForViewOnTransactionRequest) ApiUpdateWhereTagForViewOnTransactionRequest {
+	r.updateWhereTagForViewOnTransactionRequest = &updateWhereTagForViewOnTransactionRequest
+	return r
+}
+
+func (r ApiUpdateWhereTagForViewOnTransactionRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.UpdateWhereTagForViewOnTransactionExecute(r)
+}
+
+/*
+UpdateWhereTagForViewOnTransaction Update a Transaction where Tag
+
+<p>Updates the &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href="#1_2_1-getViewsForBankAccount">view</a>.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>The geo tag is linked with the user.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @param transactionid The TRANSACTIONID identifier
+ @return ApiUpdateWhereTagForViewOnTransactionRequest
+*/
+func (a *TransactionAPIService) UpdateWhereTagForViewOnTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiUpdateWhereTagForViewOnTransactionRequest {
+	return ApiUpdateWhereTagForViewOnTransactionRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+		transactionid: transactionid,
+	}
+}
+
+// Execute executes the request
+//  @return UpdateTransactionNarrative200Response
+func (a *TransactionAPIService) UpdateWhereTagForViewOnTransactionExecute(r ApiUpdateWhereTagForViewOnTransactionRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UpdateTransactionNarrative200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionAPIService.UpdateWhereTagForViewOnTransaction")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionid"+"}", url.PathEscape(parameterValueToString(r.transactionid, "transactionid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateWhereTagForViewOnTransactionRequest == nil {
+		return localVarReturnValue, nil, reportError("updateWhereTagForViewOnTransactionRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateWhereTagForViewOnTransactionRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

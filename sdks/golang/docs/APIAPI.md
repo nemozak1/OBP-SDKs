@@ -1,4464 +1,134 @@
 # \APIAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv140GetBankLevelDynamicResourceDocsObp**](APIAPI.md#OBPv140GetBankLevelDynamicResourceDocsObp) | **Get** /obp/v1.4.0/banks/{bankid}/resource-docs/{apiversion}/obp | Get Bank Level Dynamic Resource Docs
-[**OBPv140GetResourceDocsObp**](APIAPI.md#OBPv140GetResourceDocsObp) | **Get** /obp/v1.4.0/resource-docs/{apiversion}/obp | Get Resource Docs
-[**OBPv140GetResourceDocsOpenAPI31**](APIAPI.md#OBPv140GetResourceDocsOpenAPI31) | **Get** /obp/v1.4.0/resource-docs/{apiversion}/openapi | Get OpenAPI 3.1 documentation
-[**OBPv140GetResourceDocsSwagger**](APIAPI.md#OBPv140GetResourceDocsSwagger) | **Get** /obp/v1.4.0/resource-docs/{apiversion}/swagger | Get Swagger documentation
-[**OBPv200ElasticSearchMetrics**](APIAPI.md#OBPv200ElasticSearchMetrics) | **Get** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
-[**OBPv220GetConnectorMetrics**](APIAPI.md#OBPv220GetConnectorMetrics) | **Get** /obp/v2.2.0/management/connector/metrics | Get Connector Metrics
-[**OBPv220GetMessageDocs**](APIAPI.md#OBPv220GetMessageDocs) | **Get** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
-[**OBPv300GetAdapterInfoForBank**](APIAPI.md#OBPv300GetAdapterInfoForBank) | **Get** /obp/v3.0.0/banks/{bankid}/adapter | Get Adapter Info for a bank
-[**OBPv310Config**](APIAPI.md#OBPv310Config) | **Get** /obp/v3.1.0/config | Get API Configuration
-[**OBPv310CreateMethodRouting**](APIAPI.md#OBPv310CreateMethodRouting) | **Post** /obp/v3.1.0/management/method_routings | Create MethodRouting
-[**OBPv310DeleteMethodRouting**](APIAPI.md#OBPv310DeleteMethodRouting) | **Delete** /obp/v3.1.0/management/method_routings/{methodroutingid} | Delete MethodRouting
-[**OBPv310GetMessageDocsSwagger**](APIAPI.md#OBPv310GetMessageDocsSwagger) | **Get** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
-[**OBPv310GetMethodRoutings**](APIAPI.md#OBPv310GetMethodRoutings) | **Get** /obp/v3.1.0/management/method_routings | Get MethodRoutings
-[**OBPv310GetOAuth2ServerJWKsURIs**](APIAPI.md#OBPv310GetOAuth2ServerJWKsURIs) | **Get** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
-[**OBPv310GetObpConnectorLoopback**](APIAPI.md#OBPv310GetObpConnectorLoopback) | **Get** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
-[**OBPv310GetRateLimitingInfo**](APIAPI.md#OBPv310GetRateLimitingInfo) | **Get** /obp/v3.1.0/rate-limiting | Get Rate Limiting Info
-[**OBPv310GetServerJWK**](APIAPI.md#OBPv310GetServerJWK) | **Get** /obp/v3.1.0/certs | Get JSON Web Key (JWK)
-[**OBPv310UpdateMethodRouting**](APIAPI.md#OBPv310UpdateMethodRouting) | **Put** /obp/v3.1.0/management/method_routings/{methodroutingid} | Update MethodRouting
-[**OBPv400CreateBankLevelDynamicEndpoint**](APIAPI.md#OBPv400CreateBankLevelDynamicEndpoint) | **Post** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint
-[**OBPv400CreateBankLevelEndpointTag**](APIAPI.md#OBPv400CreateBankLevelEndpointTag) | **Post** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags | Create Bank Level Endpoint Tag
-[**OBPv400CreateDynamicEndpoint**](APIAPI.md#OBPv400CreateDynamicEndpoint) | **Post** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint
-[**OBPv400CreateSystemLevelEndpointTag**](APIAPI.md#OBPv400CreateSystemLevelEndpointTag) | **Post** /obp/v4.0.0/management/endpoints/{operationid}/tags | Create System Level Endpoint Tag
-[**OBPv400DeleteBankLevelDynamicEndpoint**](APIAPI.md#OBPv400DeleteBankLevelDynamicEndpoint) | **Delete** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint
-[**OBPv400DeleteBankLevelDynamicEntity**](APIAPI.md#OBPv400DeleteBankLevelDynamicEntity) | **Delete** /obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Delete Bank Level Dynamic Entity
-[**OBPv400DeleteBankLevelEndpointTag**](APIAPI.md#OBPv400DeleteBankLevelEndpointTag) | **Delete** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags/{endpointtagid} | Delete Bank Level Endpoint Tag
-[**OBPv400DeleteDynamicEndpoint**](APIAPI.md#OBPv400DeleteDynamicEndpoint) | **Delete** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint
-[**OBPv400DeleteMyDynamicEndpoint**](APIAPI.md#OBPv400DeleteMyDynamicEndpoint) | **Delete** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint
-[**OBPv400DeleteMyDynamicEntity**](APIAPI.md#OBPv400DeleteMyDynamicEntity) | **Delete** /obp/v4.0.0/my/dynamic-entities/{dynamicentityid} | Delete My Dynamic Entity
-[**OBPv400DeleteSystemDynamicEntity**](APIAPI.md#OBPv400DeleteSystemDynamicEntity) | **Delete** /obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid} | Delete System Level Dynamic Entity
-[**OBPv400DeleteSystemLevelEndpointTag**](APIAPI.md#OBPv400DeleteSystemLevelEndpointTag) | **Delete** /obp/v4.0.0/management/endpoints/{operationid}/tags/{endpointtagid} | Delete System Level Endpoint Tag
-[**OBPv400GetBankLevelDynamicEndpoint**](APIAPI.md#OBPv400GetBankLevelDynamicEndpoint) | **Get** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint
-[**OBPv400GetBankLevelDynamicEndpoints**](APIAPI.md#OBPv400GetBankLevelDynamicEndpoints) | **Get** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints
-[**OBPv400GetBankLevelEndpointTags**](APIAPI.md#OBPv400GetBankLevelEndpointTags) | **Get** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags | Get Bank Level Endpoint Tags
-[**OBPv400GetCallContext**](APIAPI.md#OBPv400GetCallContext) | **Get** /obp/v4.0.0/development/call_context | Get the Call Context of a current call
-[**OBPv400GetDynamicEndpoint**](APIAPI.md#OBPv400GetDynamicEndpoint) | **Get** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint
-[**OBPv400GetDynamicEndpoints**](APIAPI.md#OBPv400GetDynamicEndpoints) | **Get** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints
-[**OBPv400GetMapperDatabaseInfo**](APIAPI.md#OBPv400GetMapperDatabaseInfo) | **Get** /obp/v4.0.0/database/info | Get Mapper Database Info
-[**OBPv400GetMyDynamicEndpoints**](APIAPI.md#OBPv400GetMyDynamicEndpoints) | **Get** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints
-[**OBPv400GetSystemLevelEndpointTags**](APIAPI.md#OBPv400GetSystemLevelEndpointTags) | **Get** /obp/v4.0.0/management/endpoints/{operationid}/tags | Get System Level Endpoint Tags
-[**OBPv400UpdateBankLevelDynamicEndpointHost**](APIAPI.md#OBPv400UpdateBankLevelDynamicEndpointHost) | **Put** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host
-[**OBPv400UpdateBankLevelEndpointTag**](APIAPI.md#OBPv400UpdateBankLevelEndpointTag) | **Put** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags/{endpointtagid} | Update Bank Level Endpoint Tag
-[**OBPv400UpdateDynamicEndpointHost**](APIAPI.md#OBPv400UpdateDynamicEndpointHost) | **Put** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host
-[**OBPv400UpdateSystemLevelEndpointTag**](APIAPI.md#OBPv400UpdateSystemLevelEndpointTag) | **Put** /obp/v4.0.0/management/endpoints/{operationid}/tags/{endpointtagid} | Update System Level Endpoint Tag
-[**OBPv400VerifyRequestSignResponse**](APIAPI.md#OBPv400VerifyRequestSignResponse) | **Get** /obp/v4.0.0/development/echo/jws-verified-request-jws-signed-response | Verify Request and Sign Response of a current call
-[**OBPv500GetAdapterInfo**](APIAPI.md#OBPv500GetAdapterInfo) | **Get** /obp/v5.0.0/adapter | Get Adapter Info
-[**OBPv500GetMetricsAtBank**](APIAPI.md#OBPv500GetMetricsAtBank) | **Get** /obp/v5.0.0/management/metrics/banks/{bankid} | Get Metrics at Bank
-[**OBPv510CreateRegulatedEntity**](APIAPI.md#OBPv510CreateRegulatedEntity) | **Post** /obp/v5.1.0/regulated-entities | Create Regulated Entity
-[**OBPv510CreateRegulatedEntityAttribute**](APIAPI.md#OBPv510CreateRegulatedEntityAttribute) | **Post** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
-[**OBPv510DeleteRegulatedEntity**](APIAPI.md#OBPv510DeleteRegulatedEntity) | **Delete** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
-[**OBPv510DeleteRegulatedEntityAttribute**](APIAPI.md#OBPv510DeleteRegulatedEntityAttribute) | **Delete** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
-[**OBPv510GetAllRegulatedEntityAttributes**](APIAPI.md#OBPv510GetAllRegulatedEntityAttributes) | **Get** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
-[**OBPv510GetApiTags**](APIAPI.md#OBPv510GetApiTags) | **Get** /obp/v5.1.0/tags | Get API Tags
-[**OBPv510GetOAuth2ServerWellKnown**](APIAPI.md#OBPv510GetOAuth2ServerWellKnown) | **Get** /obp/v5.1.0/well-known | Get Well Known URIs
-[**OBPv510GetRegulatedEntityAttributeById**](APIAPI.md#OBPv510GetRegulatedEntityAttributeById) | **Get** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
-[**OBPv510GetRegulatedEntityById**](APIAPI.md#OBPv510GetRegulatedEntityById) | **Get** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
-[**OBPv510LogCacheAllEndpoint**](APIAPI.md#OBPv510LogCacheAllEndpoint) | **Get** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
-[**OBPv510LogCacheDebugEndpoint**](APIAPI.md#OBPv510LogCacheDebugEndpoint) | **Get** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
-[**OBPv510LogCacheErrorEndpoint**](APIAPI.md#OBPv510LogCacheErrorEndpoint) | **Get** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
-[**OBPv510LogCacheInfoEndpoint**](APIAPI.md#OBPv510LogCacheInfoEndpoint) | **Get** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
-[**OBPv510LogCacheTraceEndpoint**](APIAPI.md#OBPv510LogCacheTraceEndpoint) | **Get** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
-[**OBPv510LogCacheWarningEndpoint**](APIAPI.md#OBPv510LogCacheWarningEndpoint) | **Get** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
-[**OBPv510RegulatedEntities**](APIAPI.md#OBPv510RegulatedEntities) | **Get** /obp/v5.1.0/regulated-entities | Get Regulated Entities
-[**OBPv510SuggestedSessionTimeout**](APIAPI.md#OBPv510SuggestedSessionTimeout) | **Get** /obp/v5.1.0/ui/suggested-session-timeout | Get Suggested Session Timeout
-[**OBPv510UpdateRegulatedEntityAttribute**](APIAPI.md#OBPv510UpdateRegulatedEntityAttribute) | **Put** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
-[**OBPv510WaitingForGodot**](APIAPI.md#OBPv510WaitingForGodot) | **Get** /obp/v5.1.0/waiting-for-godot | Waiting For Godot
-[**OBPv600BackupBankLevelDynamicEntity**](APIAPI.md#OBPv600BackupBankLevelDynamicEntity) | **Post** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup | Backup Bank Level Dynamic Entity
-[**OBPv600BackupSystemDynamicEntity**](APIAPI.md#OBPv600BackupSystemDynamicEntity) | **Post** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup | Backup System Level Dynamic Entity
-[**OBPv600CleanupOrphanedDynamicEntityRecords**](APIAPI.md#OBPv600CleanupOrphanedDynamicEntityRecords) | **Delete** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
-[**OBPv600CreateApiProduct**](APIAPI.md#OBPv600CreateApiProduct) | **Post** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product
-[**OBPv600CreateApiProductAttribute**](APIAPI.md#OBPv600CreateApiProductAttribute) | **Post** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
-[**OBPv600CreateBankLevelDynamicEntity**](APIAPI.md#OBPv600CreateBankLevelDynamicEntity) | **Post** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Create Bank Level Dynamic Entity
-[**OBPv600CreateFeaturedApiCollection**](APIAPI.md#OBPv600CreateFeaturedApiCollection) | **Post** /obp/v6.0.0/management/api-collections/featured | Create Featured Api Collection
-[**OBPv600CreateOrUpdateApiProduct**](APIAPI.md#OBPv600CreateOrUpdateApiProduct) | **Put** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product
-[**OBPv600CreateSystemDynamicEntity**](APIAPI.md#OBPv600CreateSystemDynamicEntity) | **Post** /obp/v6.0.0/management/system-dynamic-entities | Create System Level Dynamic Entity
-[**OBPv600DeleteApiProduct**](APIAPI.md#OBPv600DeleteApiProduct) | **Delete** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product
-[**OBPv600DeleteApiProductAttribute**](APIAPI.md#OBPv600DeleteApiProductAttribute) | **Delete** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
-[**OBPv600DeleteFeaturedApiCollection**](APIAPI.md#OBPv600DeleteFeaturedApiCollection) | **Delete** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Delete Featured Api Collection
-[**OBPv600DeleteSystemDynamicEntityCascade**](APIAPI.md#OBPv600DeleteSystemDynamicEntityCascade) | **Delete** /obp/v6.0.0/management/system-dynamic-entities/cascade/{dynamicentityid} | Delete System Level Dynamic Entity Cascade
-[**OBPv600GetApiProduct**](APIAPI.md#OBPv600GetApiProduct) | **Get** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product
-[**OBPv600GetApiProductAttribute**](APIAPI.md#OBPv600GetApiProductAttribute) | **Get** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
-[**OBPv600GetApiProducts**](APIAPI.md#OBPv600GetApiProducts) | **Get** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products
-[**OBPv600GetAvailablePersonalDynamicEntities**](APIAPI.md#OBPv600GetAvailablePersonalDynamicEntities) | **Get** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
-[**OBPv600GetBankLevelDynamicEntities**](APIAPI.md#OBPv600GetBankLevelDynamicEntities) | **Get** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Get Bank Level Dynamic Entities
-[**OBPv600GetCacheConfig**](APIAPI.md#OBPv600GetCacheConfig) | **Get** /obp/v6.0.0/system/cache/config | Get Cache Configuration
-[**OBPv600GetCacheInfo**](APIAPI.md#OBPv600GetCacheInfo) | **Get** /obp/v6.0.0/system/cache/info | Get Cache Information
-[**OBPv600GetCacheNamespaces**](APIAPI.md#OBPv600GetCacheNamespaces) | **Get** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
-[**OBPv600GetConfigProps**](APIAPI.md#OBPv600GetConfigProps) | **Get** /obp/v6.0.0/management/config-props | Get Config Props
-[**OBPv600GetConnectorCallCounts**](APIAPI.md#OBPv600GetConnectorCallCounts) | **Get** /obp/v6.0.0/management/connector/metrics/counts | Get Connector Call Counts
-[**OBPv600GetConnectorMethodNames**](APIAPI.md#OBPv600GetConnectorMethodNames) | **Get** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
-[**OBPv600GetConnectorTraces**](APIAPI.md#OBPv600GetConnectorTraces) | **Get** /obp/v6.0.0/management/connector/traces | Get Connector Traces
-[**OBPv600GetConnectors**](APIAPI.md#OBPv600GetConnectors) | **Get** /obp/v6.0.0/system/connectors | Get Connectors
-[**OBPv600GetCurrentConsumer**](APIAPI.md#OBPv600GetCurrentConsumer) | **Get** /obp/v6.0.0/consumers/current | Get Current Consumer
-[**OBPv600GetDatabasePoolInfo**](APIAPI.md#OBPv600GetDatabasePoolInfo) | **Get** /obp/v6.0.0/system/database/pool | Get Database Pool Information
-[**OBPv600GetDynamicEntityDiagnostics**](APIAPI.md#OBPv600GetDynamicEntityDiagnostics) | **Get** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
-[**OBPv600GetFeaturedApiCollectionsAdmin**](APIAPI.md#OBPv600GetFeaturedApiCollectionsAdmin) | **Get** /obp/v6.0.0/management/api-collections/featured | Get Featured Api Collections (Admin)
-[**OBPv600GetMessageDocsJsonSchema**](APIAPI.md#OBPv600GetMessageDocsJsonSchema) | **Get** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
-[**OBPv600GetMetrics**](APIAPI.md#OBPv600GetMetrics) | **Get** /obp/v6.0.0/management/metrics | Get Metrics
-[**OBPv600GetMigrations**](APIAPI.md#OBPv600GetMigrations) | **Get** /obp/v6.0.0/system/migrations | Get Database Migrations
-[**OBPv600GetMyDynamicEntities**](APIAPI.md#OBPv600GetMyDynamicEntities) | **Get** /obp/v6.0.0/my/dynamic-entities | Get My Dynamic Entities
-[**OBPv600GetPopularApis**](APIAPI.md#OBPv600GetPopularApis) | **Get** /obp/v6.0.0/api/popular-endpoints | Get Popular Endpoints
-[**OBPv600GetReferenceTypes**](APIAPI.md#OBPv600GetReferenceTypes) | **Get** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
-[**OBPv600GetScannedApiVersions**](APIAPI.md#OBPv600GetScannedApiVersions) | **Get** /obp/v6.0.0/api/versions | Get Scanned API Versions
-[**OBPv600GetStoredProcedureConnectorHealth**](APIAPI.md#OBPv600GetStoredProcedureConnectorHealth) | **Get** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
-[**OBPv600GetSystemDynamicEntities**](APIAPI.md#OBPv600GetSystemDynamicEntities) | **Get** /obp/v6.0.0/management/system-dynamic-entities | Get System Dynamic Entities
-[**OBPv600GetTopAPIs**](APIAPI.md#OBPv600GetTopAPIs) | **Get** /obp/v6.0.0/management/metrics/top-apis | Get Top APIs
-[**OBPv600InvalidateCacheNamespace**](APIAPI.md#OBPv600InvalidateCacheNamespace) | **Post** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
-[**OBPv600Root**](APIAPI.md#OBPv600Root) | **Get** /obp/v6.0.0/root | Get API Info (root)
-[**OBPv600UpdateApiProductAttribute**](APIAPI.md#OBPv600UpdateApiProductAttribute) | **Put** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
-[**OBPv600UpdateBankLevelDynamicEntity**](APIAPI.md#OBPv600UpdateBankLevelDynamicEntity) | **Put** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Update Bank Level Dynamic Entity
-[**OBPv600UpdateFeaturedApiCollection**](APIAPI.md#OBPv600UpdateFeaturedApiCollection) | **Put** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Update Featured Api Collection
-[**OBPv600UpdateMyDynamicEntity**](APIAPI.md#OBPv600UpdateMyDynamicEntity) | **Put** /obp/v6.0.0/my/dynamic-entities/{dynamicentityid} | Update My Dynamic Entity
-[**OBPv600UpdateSystemDynamicEntity**](APIAPI.md#OBPv600UpdateSystemDynamicEntity) | **Put** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid} | Update System Level Dynamic Entity
-
-
-
-## OBPv140GetBankLevelDynamicResourceDocsObp
-
-> OBPv140GetBankLevelDynamicResourceDocsObp(ctx, bankid, apiversion).Execute()
-
-Get Bank Level Dynamic Resource Docs
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	apiversion := "apiversion_example" // string | The APIVERSION identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv140GetBankLevelDynamicResourceDocsObp(context.Background(), bankid, apiversion).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv140GetBankLevelDynamicResourceDocsObp``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**apiversion** | **string** | The APIVERSION identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv140GetBankLevelDynamicResourceDocsObpRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv140GetResourceDocsObp
-
-> OBPv140GetResourceDocsObp(ctx, apiversion).Execute()
-
-Get Resource Docs
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	apiversion := "apiversion_example" // string | The APIVERSION identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv140GetResourceDocsObp(context.Background(), apiversion).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv140GetResourceDocsObp``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**apiversion** | **string** | The APIVERSION identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv140GetResourceDocsObpRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv140GetResourceDocsOpenAPI31
-
-> OBPv140GetResourceDocsOpenAPI31(ctx, apiversion).Execute()
-
-Get OpenAPI 3.1 documentation
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	apiversion := "apiversion_example" // string | The APIVERSION identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv140GetResourceDocsOpenAPI31(context.Background(), apiversion).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv140GetResourceDocsOpenAPI31``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**apiversion** | **string** | The APIVERSION identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv140GetResourceDocsOpenAPI31Request struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv140GetResourceDocsSwagger
-
-> OBPv140GetResourceDocsSwagger(ctx, apiversion).Execute()
-
-Get Swagger documentation
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	apiversion := "apiversion_example" // string | The APIVERSION identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv140GetResourceDocsSwagger(context.Background(), apiversion).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv140GetResourceDocsSwagger``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**apiversion** | **string** | The APIVERSION identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv140GetResourceDocsSwaggerRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv200ElasticSearchMetrics
-
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage OBPv200ElasticSearchMetrics(ctx).Execute()
-
-Search API Metrics via Elasticsearch
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv200ElasticSearchMetrics(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv200ElasticSearchMetrics``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv200ElasticSearchMetrics`: OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv200ElasticSearchMetrics`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv200ElasticSearchMetricsRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv220GetConnectorMetrics
-
-> OBPv220GetConnectorMetrics200Response OBPv220GetConnectorMetrics(ctx).Execute()
-
-Get Connector Metrics
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv220GetConnectorMetrics(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv220GetConnectorMetrics``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv220GetConnectorMetrics`: OBPv220GetConnectorMetrics200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv220GetConnectorMetrics`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv220GetConnectorMetricsRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv220GetConnectorMetrics200Response**](OBPv220GetConnectorMetrics200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv220GetMessageDocs
-
-> OBPv220GetMessageDocs200Response OBPv220GetMessageDocs(ctx, connector).Execute()
-
-Get Message Docs
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	connector := "connector_example" // string | The CONNECTOR identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv220GetMessageDocs(context.Background(), connector).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv220GetMessageDocs``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv220GetMessageDocs`: OBPv220GetMessageDocs200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv220GetMessageDocs`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**connector** | **string** | The CONNECTOR identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv220GetMessageDocsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv220GetMessageDocs200Response**](OBPv220GetMessageDocs200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv300GetAdapterInfoForBank
-
-> OBPv400GetMapperDatabaseInfo200Response OBPv300GetAdapterInfoForBank(ctx, bankid).Execute()
-
-Get Adapter Info for a bank
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv300GetAdapterInfoForBank(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv300GetAdapterInfoForBank``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv300GetAdapterInfoForBank`: OBPv400GetMapperDatabaseInfo200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv300GetAdapterInfoForBank`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv300GetAdapterInfoForBankRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv400GetMapperDatabaseInfo200Response**](OBPv400GetMapperDatabaseInfo200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310Config
-
-> OBPv310Config200Response OBPv310Config(ctx).Execute()
-
-Get API Configuration
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv310Config(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv310Config``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310Config`: OBPv310Config200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv310Config`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310ConfigRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv310Config200Response**](OBPv310Config200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310CreateMethodRouting
-
-> OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems OBPv310CreateMethodRouting(ctx).OBPv310CreateMethodRoutingRequest(oBPv310CreateMethodRoutingRequest).Execute()
-
-Create MethodRouting
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	oBPv310CreateMethodRoutingRequest := *openapiclient.NewOBPv310CreateMethodRoutingRequest("Type_example", *openapiclient.NewOBPv310CreateMethodRoutingRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetExplicitCounterpartyById200ResponsePropertiesBespoke("Type_example", *openapiclient.NewOBPv400GetExplicitCounterpartyById200ResponsePropertiesBespokeItems("Type_example", *openapiclient.NewOBPv400GetExplicitCounterpartyById200ResponsePropertiesBespokeItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), ))))) // OBPv310CreateMethodRoutingRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv310CreateMethodRouting(context.Background()).OBPv310CreateMethodRoutingRequest(oBPv310CreateMethodRoutingRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv310CreateMethodRouting``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310CreateMethodRouting`: OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv310CreateMethodRouting`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310CreateMethodRoutingRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **oBPv310CreateMethodRoutingRequest** | [**OBPv310CreateMethodRoutingRequest**](OBPv310CreateMethodRoutingRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems**](OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310DeleteMethodRouting
-
-> OBPv310DeleteMethodRouting(ctx, methodroutingid).Execute()
-
-Delete MethodRouting
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	methodroutingid := "methodroutingid_example" // string | The METHODROUTINGID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv310DeleteMethodRouting(context.Background(), methodroutingid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv310DeleteMethodRouting``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**methodroutingid** | **string** | The METHODROUTINGID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310DeleteMethodRoutingRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310GetMessageDocsSwagger
-
-> OBPv310GetMessageDocsSwagger(ctx, connector).Execute()
-
-Get Message Docs Swagger
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	connector := "connector_example" // string | The CONNECTOR identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv310GetMessageDocsSwagger(context.Background(), connector).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv310GetMessageDocsSwagger``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**connector** | **string** | The CONNECTOR identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310GetMessageDocsSwaggerRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310GetMethodRoutings
-
-> OBPv310GetMethodRoutings200Response OBPv310GetMethodRoutings(ctx).Execute()
-
-Get MethodRoutings
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv310GetMethodRoutings(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv310GetMethodRoutings``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310GetMethodRoutings`: OBPv310GetMethodRoutings200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv310GetMethodRoutings`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310GetMethodRoutingsRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv310GetMethodRoutings200Response**](OBPv310GetMethodRoutings200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310GetOAuth2ServerJWKsURIs
-
-> OBPv310GetOAuth2ServerJWKsURIs200Response OBPv310GetOAuth2ServerJWKsURIs(ctx).Execute()
-
-Get JSON Web Key (JWK) URIs
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv310GetOAuth2ServerJWKsURIs(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv310GetOAuth2ServerJWKsURIs``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310GetOAuth2ServerJWKsURIs`: OBPv310GetOAuth2ServerJWKsURIs200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv310GetOAuth2ServerJWKsURIs`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310GetOAuth2ServerJWKsURIsRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv310GetOAuth2ServerJWKsURIs200Response**](OBPv310GetOAuth2ServerJWKsURIs200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310GetObpConnectorLoopback
-
-> OBPv310GetObpConnectorLoopback200Response OBPv310GetObpConnectorLoopback(ctx).Execute()
-
-Get Connector Status (Loopback)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv310GetObpConnectorLoopback(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv310GetObpConnectorLoopback``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310GetObpConnectorLoopback`: OBPv310GetObpConnectorLoopback200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv310GetObpConnectorLoopback`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310GetObpConnectorLoopbackRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv310GetObpConnectorLoopback200Response**](OBPv310GetObpConnectorLoopback200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310GetRateLimitingInfo
-
-> OBPv310GetRateLimitingInfo200Response OBPv310GetRateLimitingInfo(ctx).Execute()
-
-Get Rate Limiting Info
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv310GetRateLimitingInfo(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv310GetRateLimitingInfo``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310GetRateLimitingInfo`: OBPv310GetRateLimitingInfo200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv310GetRateLimitingInfo`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310GetRateLimitingInfoRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv310GetRateLimitingInfo200Response**](OBPv310GetRateLimitingInfo200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310GetServerJWK
-
-> OBPv310GetServerJWK200Response OBPv310GetServerJWK(ctx).Execute()
-
-Get JSON Web Key (JWK)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv310GetServerJWK(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv310GetServerJWK``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310GetServerJWK`: OBPv310GetServerJWK200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv310GetServerJWK`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310GetServerJWKRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv310GetServerJWK200Response**](OBPv310GetServerJWK200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310UpdateMethodRouting
-
-> OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems OBPv310UpdateMethodRouting(ctx, methodroutingid).OBPv310CreateMethodRoutingRequest(oBPv310CreateMethodRoutingRequest).Execute()
-
-Update MethodRouting
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	methodroutingid := "methodroutingid_example" // string | The METHODROUTINGID identifier
-	oBPv310CreateMethodRoutingRequest := *openapiclient.NewOBPv310CreateMethodRoutingRequest("Type_example", *openapiclient.NewOBPv310CreateMethodRoutingRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetExplicitCounterpartyById200ResponsePropertiesBespoke("Type_example", *openapiclient.NewOBPv400GetExplicitCounterpartyById200ResponsePropertiesBespokeItems("Type_example", *openapiclient.NewOBPv400GetExplicitCounterpartyById200ResponsePropertiesBespokeItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), ))))) // OBPv310CreateMethodRoutingRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv310UpdateMethodRouting(context.Background(), methodroutingid).OBPv310CreateMethodRoutingRequest(oBPv310CreateMethodRoutingRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv310UpdateMethodRouting``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310UpdateMethodRouting`: OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv310UpdateMethodRouting`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**methodroutingid** | **string** | The METHODROUTINGID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310UpdateMethodRoutingRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv310CreateMethodRoutingRequest** | [**OBPv310CreateMethodRoutingRequest**](OBPv310CreateMethodRoutingRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems**](OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400CreateBankLevelDynamicEndpoint
-
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems OBPv400CreateBankLevelDynamicEndpoint(ctx, bankid).OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString).Execute()
-
-Create Bank Level Dynamic Endpoint
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString := *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPaths("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccounts("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPost("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), , *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), , *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponses("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201Properties(, *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchema("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchemaProperties()))))))))), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountId("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGet("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetProperties(, , *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), , *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetPropertiesResponses("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetPropertiesResponsesProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201Properties(, *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchema("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchemaProperties()))))))))))), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesInfo("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesInfoProperties(, )), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitions("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountName("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNameProperties(, *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesProperties("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesName("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesNameProperties(, )), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesBalance("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesBalanceProperties(, , )))))))), )) // OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400CreateBankLevelDynamicEndpoint(context.Background(), bankid).OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400CreateBankLevelDynamicEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400CreateBankLevelDynamicEndpoint`: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400CreateBankLevelDynamicEndpoint`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400CreateBankLevelDynamicEndpointRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md) | Request body | 
-
-### Return type
-
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400CreateBankLevelEndpointTag
-
-> OBPv400UpdateSystemLevelEndpointTag200Response OBPv400CreateBankLevelEndpointTag(ctx, bankid, operationid).OBPv400UpdateSystemLevelEndpointTagRequest(oBPv400UpdateSystemLevelEndpointTagRequest).Execute()
-
-Create Bank Level Endpoint Tag
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	operationid := "operationid_example" // string | The OPERATIONID identifier
-	oBPv400UpdateSystemLevelEndpointTagRequest := *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequest("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400UpdateSystemLevelEndpointTagRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400CreateBankLevelEndpointTag(context.Background(), bankid, operationid).OBPv400UpdateSystemLevelEndpointTagRequest(oBPv400UpdateSystemLevelEndpointTagRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400CreateBankLevelEndpointTag``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400CreateBankLevelEndpointTag`: OBPv400UpdateSystemLevelEndpointTag200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400CreateBankLevelEndpointTag`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**operationid** | **string** | The OPERATIONID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400CreateBankLevelEndpointTagRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv400UpdateSystemLevelEndpointTagRequest** | [**OBPv400UpdateSystemLevelEndpointTagRequest**](OBPv400UpdateSystemLevelEndpointTagRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400UpdateSystemLevelEndpointTag200Response**](OBPv400UpdateSystemLevelEndpointTag200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400CreateDynamicEndpoint
-
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems OBPv400CreateDynamicEndpoint(ctx).OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString).Execute()
-
-Create Dynamic Endpoint
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString := *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPaths("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccounts("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPost("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), , *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), , *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponses("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201Properties(, *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchema("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchemaProperties()))))))))), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountId("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGet("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetProperties(, , *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), , *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetPropertiesResponses("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetPropertiesResponsesProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201Properties(, *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchema("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchemaProperties()))))))))))), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesInfo("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesInfoProperties(, )), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitions("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountName("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNameProperties(, *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesProperties("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesName("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesNameProperties(, )), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesBalance("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesBalanceProperties(, , )))))))), )) // OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400CreateDynamicEndpoint(context.Background()).OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400CreateDynamicEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400CreateDynamicEndpoint`: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400CreateDynamicEndpoint`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400CreateDynamicEndpointRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md) | Request body | 
-
-### Return type
-
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400CreateSystemLevelEndpointTag
-
-> OBPv400UpdateSystemLevelEndpointTag200Response OBPv400CreateSystemLevelEndpointTag(ctx, operationid).OBPv400UpdateSystemLevelEndpointTagRequest(oBPv400UpdateSystemLevelEndpointTagRequest).Execute()
-
-Create System Level Endpoint Tag
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	operationid := "operationid_example" // string | The OPERATIONID identifier
-	oBPv400UpdateSystemLevelEndpointTagRequest := *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequest("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400UpdateSystemLevelEndpointTagRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400CreateSystemLevelEndpointTag(context.Background(), operationid).OBPv400UpdateSystemLevelEndpointTagRequest(oBPv400UpdateSystemLevelEndpointTagRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400CreateSystemLevelEndpointTag``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400CreateSystemLevelEndpointTag`: OBPv400UpdateSystemLevelEndpointTag200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400CreateSystemLevelEndpointTag`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**operationid** | **string** | The OPERATIONID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400CreateSystemLevelEndpointTagRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv400UpdateSystemLevelEndpointTagRequest** | [**OBPv400UpdateSystemLevelEndpointTagRequest**](OBPv400UpdateSystemLevelEndpointTagRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400UpdateSystemLevelEndpointTag200Response**](OBPv400UpdateSystemLevelEndpointTag200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400DeleteBankLevelDynamicEndpoint
-
-> OBPv400DeleteBankLevelDynamicEndpoint(ctx, bankid, dynamicendpointid).Execute()
-
- Delete Bank Level Dynamic Endpoint
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	dynamicendpointid := "dynamicendpointid_example" // string | The DYNAMICENDPOINTID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv400DeleteBankLevelDynamicEndpoint(context.Background(), bankid, dynamicendpointid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400DeleteBankLevelDynamicEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**dynamicendpointid** | **string** | The DYNAMICENDPOINTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400DeleteBankLevelDynamicEndpointRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400DeleteBankLevelDynamicEntity
-
-> OBPv400DeleteBankLevelDynamicEntity(ctx, bankid, dynamicentityid).Execute()
-
-Delete Bank Level Dynamic Entity
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	dynamicentityid := "dynamicentityid_example" // string | The DYNAMICENTITYID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv400DeleteBankLevelDynamicEntity(context.Background(), bankid, dynamicentityid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400DeleteBankLevelDynamicEntity``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**dynamicentityid** | **string** | The DYNAMICENTITYID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400DeleteBankLevelDynamicEntityRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400DeleteBankLevelEndpointTag
-
-> OBPv400DeleteSystemLevelEndpointTag200Response OBPv400DeleteBankLevelEndpointTag(ctx, bankid, operationid, endpointtagid).Execute()
-
-Delete Bank Level Endpoint Tag
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	operationid := "operationid_example" // string | The OPERATIONID identifier
-	endpointtagid := "endpointtagid_example" // string | The ENDPOINTTAGID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400DeleteBankLevelEndpointTag(context.Background(), bankid, operationid, endpointtagid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400DeleteBankLevelEndpointTag``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400DeleteBankLevelEndpointTag`: OBPv400DeleteSystemLevelEndpointTag200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400DeleteBankLevelEndpointTag`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**operationid** | **string** | The OPERATIONID identifier | 
-**endpointtagid** | **string** | The ENDPOINTTAGID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400DeleteBankLevelEndpointTagRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-### Return type
-
-[**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400DeleteDynamicEndpoint
-
-> OBPv400DeleteDynamicEndpoint(ctx, dynamicendpointid).Execute()
-
- Delete Dynamic Endpoint
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	dynamicendpointid := "dynamicendpointid_example" // string | The DYNAMICENDPOINTID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv400DeleteDynamicEndpoint(context.Background(), dynamicendpointid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400DeleteDynamicEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**dynamicendpointid** | **string** | The DYNAMICENDPOINTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400DeleteDynamicEndpointRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400DeleteMyDynamicEndpoint
-
-> OBPv400DeleteMyDynamicEndpoint(ctx, dynamicendpointid).Execute()
-
-Delete My Dynamic Endpoint
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	dynamicendpointid := "dynamicendpointid_example" // string | The DYNAMICENDPOINTID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv400DeleteMyDynamicEndpoint(context.Background(), dynamicendpointid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400DeleteMyDynamicEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**dynamicendpointid** | **string** | The DYNAMICENDPOINTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400DeleteMyDynamicEndpointRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400DeleteMyDynamicEntity
-
-> OBPv400DeleteMyDynamicEntity(ctx, dynamicentityid).Execute()
-
-Delete My Dynamic Entity
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	dynamicentityid := "dynamicentityid_example" // string | The DYNAMICENTITYID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv400DeleteMyDynamicEntity(context.Background(), dynamicentityid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400DeleteMyDynamicEntity``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**dynamicentityid** | **string** | The DYNAMICENTITYID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400DeleteMyDynamicEntityRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400DeleteSystemDynamicEntity
-
-> OBPv400DeleteSystemDynamicEntity(ctx, dynamicentityid).Execute()
-
-Delete System Level Dynamic Entity
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	dynamicentityid := "dynamicentityid_example" // string | The DYNAMICENTITYID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv400DeleteSystemDynamicEntity(context.Background(), dynamicentityid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400DeleteSystemDynamicEntity``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**dynamicentityid** | **string** | The DYNAMICENTITYID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400DeleteSystemDynamicEntityRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400DeleteSystemLevelEndpointTag
-
-> OBPv400DeleteSystemLevelEndpointTag200Response OBPv400DeleteSystemLevelEndpointTag(ctx, operationid, endpointtagid).Execute()
-
-Delete System Level Endpoint Tag
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	operationid := "operationid_example" // string | The OPERATIONID identifier
-	endpointtagid := "endpointtagid_example" // string | The ENDPOINTTAGID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400DeleteSystemLevelEndpointTag(context.Background(), operationid, endpointtagid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400DeleteSystemLevelEndpointTag``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400DeleteSystemLevelEndpointTag`: OBPv400DeleteSystemLevelEndpointTag200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400DeleteSystemLevelEndpointTag`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**operationid** | **string** | The OPERATIONID identifier | 
-**endpointtagid** | **string** | The ENDPOINTTAGID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400DeleteSystemLevelEndpointTagRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetBankLevelDynamicEndpoint
-
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems OBPv400GetBankLevelDynamicEndpoint(ctx, bankid, dynamicendpointid).Execute()
-
- Get Bank Level Dynamic Endpoint
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	dynamicendpointid := "dynamicendpointid_example" // string | The DYNAMICENDPOINTID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400GetBankLevelDynamicEndpoint(context.Background(), bankid, dynamicendpointid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400GetBankLevelDynamicEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetBankLevelDynamicEndpoint`: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400GetBankLevelDynamicEndpoint`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**dynamicendpointid** | **string** | The DYNAMICENDPOINTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetBankLevelDynamicEndpointRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetBankLevelDynamicEndpoints
-
-> OBPv400GetDynamicEndpoints200Response OBPv400GetBankLevelDynamicEndpoints(ctx, bankid).Execute()
-
-Get Bank Level Dynamic Endpoints
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400GetBankLevelDynamicEndpoints(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400GetBankLevelDynamicEndpoints``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetBankLevelDynamicEndpoints`: OBPv400GetDynamicEndpoints200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400GetBankLevelDynamicEndpoints`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetBankLevelDynamicEndpointsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetBankLevelEndpointTags
-
-> OBPv400GetBankLevelEndpointTags200Response OBPv400GetBankLevelEndpointTags(ctx, bankid, operationid).Execute()
-
-Get Bank Level Endpoint Tags
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	operationid := "operationid_example" // string | The OPERATIONID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400GetBankLevelEndpointTags(context.Background(), bankid, operationid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400GetBankLevelEndpointTags``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetBankLevelEndpointTags`: OBPv400GetBankLevelEndpointTags200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400GetBankLevelEndpointTags`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**operationid** | **string** | The OPERATIONID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetBankLevelEndpointTagsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv400GetBankLevelEndpointTags200Response**](OBPv400GetBankLevelEndpointTags200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetCallContext
-
-> OBPv400GetCallContext(ctx).Execute()
-
-Get the Call Context of a current call
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv400GetCallContext(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400GetCallContext``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetCallContextRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetDynamicEndpoint
-
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems OBPv400GetDynamicEndpoint(ctx, dynamicendpointid).Execute()
-
-Get Dynamic Endpoint
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	dynamicendpointid := "dynamicendpointid_example" // string | The DYNAMICENDPOINTID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400GetDynamicEndpoint(context.Background(), dynamicendpointid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400GetDynamicEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetDynamicEndpoint`: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400GetDynamicEndpoint`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**dynamicendpointid** | **string** | The DYNAMICENDPOINTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetDynamicEndpointRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetDynamicEndpoints
-
-> OBPv400GetDynamicEndpoints200Response OBPv400GetDynamicEndpoints(ctx).Execute()
-
- Get Dynamic Endpoints
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400GetDynamicEndpoints(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400GetDynamicEndpoints``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetDynamicEndpoints`: OBPv400GetDynamicEndpoints200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400GetDynamicEndpoints`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetDynamicEndpointsRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetMapperDatabaseInfo
-
-> OBPv400GetMapperDatabaseInfo200Response OBPv400GetMapperDatabaseInfo(ctx).Execute()
-
-Get Mapper Database Info
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400GetMapperDatabaseInfo(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400GetMapperDatabaseInfo``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetMapperDatabaseInfo`: OBPv400GetMapperDatabaseInfo200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400GetMapperDatabaseInfo`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetMapperDatabaseInfoRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv400GetMapperDatabaseInfo200Response**](OBPv400GetMapperDatabaseInfo200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetMyDynamicEndpoints
-
-> OBPv400GetDynamicEndpoints200Response OBPv400GetMyDynamicEndpoints(ctx).Execute()
-
-Get My Dynamic Endpoints
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400GetMyDynamicEndpoints(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400GetMyDynamicEndpoints``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetMyDynamicEndpoints`: OBPv400GetDynamicEndpoints200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400GetMyDynamicEndpoints`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetMyDynamicEndpointsRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetSystemLevelEndpointTags
-
-> OBPv400GetBankLevelEndpointTags200Response OBPv400GetSystemLevelEndpointTags(ctx, operationid).Execute()
-
-Get System Level Endpoint Tags
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	operationid := "operationid_example" // string | The OPERATIONID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400GetSystemLevelEndpointTags(context.Background(), operationid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400GetSystemLevelEndpointTags``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetSystemLevelEndpointTags`: OBPv400GetBankLevelEndpointTags200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400GetSystemLevelEndpointTags`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**operationid** | **string** | The OPERATIONID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetSystemLevelEndpointTagsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv400GetBankLevelEndpointTags200Response**](OBPv400GetBankLevelEndpointTags200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400UpdateBankLevelDynamicEndpointHost
-
-> OBPv400UpdateBankLevelDynamicEndpointHostRequest OBPv400UpdateBankLevelDynamicEndpointHost(ctx, bankid, dynamicendpointid).OBPv400UpdateBankLevelDynamicEndpointHostRequest(oBPv400UpdateBankLevelDynamicEndpointHostRequest).Execute()
-
- Update Bank Level Dynamic Endpoint Host
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	dynamicendpointid := "dynamicendpointid_example" // string | The DYNAMICENDPOINTID identifier
-	oBPv400UpdateBankLevelDynamicEndpointHostRequest := *openapiclient.NewOBPv400UpdateBankLevelDynamicEndpointHostRequest("Type_example", *openapiclient.NewOBPv400UpdateBankLevelDynamicEndpointHostRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400UpdateBankLevelDynamicEndpointHostRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400UpdateBankLevelDynamicEndpointHost(context.Background(), bankid, dynamicendpointid).OBPv400UpdateBankLevelDynamicEndpointHostRequest(oBPv400UpdateBankLevelDynamicEndpointHostRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400UpdateBankLevelDynamicEndpointHost``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400UpdateBankLevelDynamicEndpointHost`: OBPv400UpdateBankLevelDynamicEndpointHostRequest
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400UpdateBankLevelDynamicEndpointHost`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**dynamicendpointid** | **string** | The DYNAMICENDPOINTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400UpdateBankLevelDynamicEndpointHostRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv400UpdateBankLevelDynamicEndpointHostRequest** | [**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400UpdateBankLevelEndpointTag
-
-> OBPv400UpdateSystemLevelEndpointTag200Response OBPv400UpdateBankLevelEndpointTag(ctx, bankid, operationid, endpointtagid).OBPv400UpdateSystemLevelEndpointTagRequest(oBPv400UpdateSystemLevelEndpointTagRequest).Execute()
-
-Update Bank Level Endpoint Tag
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	operationid := "operationid_example" // string | The OPERATIONID identifier
-	endpointtagid := "endpointtagid_example" // string | The ENDPOINTTAGID identifier
-	oBPv400UpdateSystemLevelEndpointTagRequest := *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequest("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400UpdateSystemLevelEndpointTagRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400UpdateBankLevelEndpointTag(context.Background(), bankid, operationid, endpointtagid).OBPv400UpdateSystemLevelEndpointTagRequest(oBPv400UpdateSystemLevelEndpointTagRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400UpdateBankLevelEndpointTag``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400UpdateBankLevelEndpointTag`: OBPv400UpdateSystemLevelEndpointTag200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400UpdateBankLevelEndpointTag`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**operationid** | **string** | The OPERATIONID identifier | 
-**endpointtagid** | **string** | The ENDPOINTTAGID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400UpdateBankLevelEndpointTagRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **oBPv400UpdateSystemLevelEndpointTagRequest** | [**OBPv400UpdateSystemLevelEndpointTagRequest**](OBPv400UpdateSystemLevelEndpointTagRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400UpdateSystemLevelEndpointTag200Response**](OBPv400UpdateSystemLevelEndpointTag200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400UpdateDynamicEndpointHost
-
-> OBPv400UpdateBankLevelDynamicEndpointHostRequest OBPv400UpdateDynamicEndpointHost(ctx, dynamicendpointid).OBPv400UpdateBankLevelDynamicEndpointHostRequest(oBPv400UpdateBankLevelDynamicEndpointHostRequest).Execute()
-
- Update Dynamic Endpoint Host
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	dynamicendpointid := "dynamicendpointid_example" // string | The DYNAMICENDPOINTID identifier
-	oBPv400UpdateBankLevelDynamicEndpointHostRequest := *openapiclient.NewOBPv400UpdateBankLevelDynamicEndpointHostRequest("Type_example", *openapiclient.NewOBPv400UpdateBankLevelDynamicEndpointHostRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400UpdateBankLevelDynamicEndpointHostRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400UpdateDynamicEndpointHost(context.Background(), dynamicendpointid).OBPv400UpdateBankLevelDynamicEndpointHostRequest(oBPv400UpdateBankLevelDynamicEndpointHostRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400UpdateDynamicEndpointHost``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400UpdateDynamicEndpointHost`: OBPv400UpdateBankLevelDynamicEndpointHostRequest
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400UpdateDynamicEndpointHost`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**dynamicendpointid** | **string** | The DYNAMICENDPOINTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400UpdateDynamicEndpointHostRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv400UpdateBankLevelDynamicEndpointHostRequest** | [**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400UpdateSystemLevelEndpointTag
-
-> OBPv400UpdateSystemLevelEndpointTag200Response OBPv400UpdateSystemLevelEndpointTag(ctx, operationid, endpointtagid).OBPv400UpdateSystemLevelEndpointTagRequest(oBPv400UpdateSystemLevelEndpointTagRequest).Execute()
-
-Update System Level Endpoint Tag
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	operationid := "operationid_example" // string | The OPERATIONID identifier
-	endpointtagid := "endpointtagid_example" // string | The ENDPOINTTAGID identifier
-	oBPv400UpdateSystemLevelEndpointTagRequest := *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequest("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400UpdateSystemLevelEndpointTagRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv400UpdateSystemLevelEndpointTag(context.Background(), operationid, endpointtagid).OBPv400UpdateSystemLevelEndpointTagRequest(oBPv400UpdateSystemLevelEndpointTagRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400UpdateSystemLevelEndpointTag``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400UpdateSystemLevelEndpointTag`: OBPv400UpdateSystemLevelEndpointTag200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv400UpdateSystemLevelEndpointTag`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**operationid** | **string** | The OPERATIONID identifier | 
-**endpointtagid** | **string** | The ENDPOINTTAGID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400UpdateSystemLevelEndpointTagRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv400UpdateSystemLevelEndpointTagRequest** | [**OBPv400UpdateSystemLevelEndpointTagRequest**](OBPv400UpdateSystemLevelEndpointTagRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400UpdateSystemLevelEndpointTag200Response**](OBPv400UpdateSystemLevelEndpointTag200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400VerifyRequestSignResponse
-
-> OBPv400VerifyRequestSignResponse(ctx).Execute()
-
-Verify Request and Sign Response of a current call
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv400VerifyRequestSignResponse(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv400VerifyRequestSignResponse``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400VerifyRequestSignResponseRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500GetAdapterInfo
-
-> OBPv500GetAdapterInfo200Response OBPv500GetAdapterInfo(ctx).Execute()
-
-Get Adapter Info
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv500GetAdapterInfo(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv500GetAdapterInfo``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500GetAdapterInfo`: OBPv500GetAdapterInfo200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv500GetAdapterInfo`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500GetAdapterInfoRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv500GetAdapterInfo200Response**](OBPv500GetAdapterInfo200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500GetMetricsAtBank
-
-> OBPv500GetMetricsAtBank200Response OBPv500GetMetricsAtBank(ctx, bankid).Execute()
-
-Get Metrics at Bank
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv500GetMetricsAtBank(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv500GetMetricsAtBank``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500GetMetricsAtBank`: OBPv500GetMetricsAtBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv500GetMetricsAtBank`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500GetMetricsAtBankRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv500GetMetricsAtBank200Response**](OBPv500GetMetricsAtBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510CreateRegulatedEntity
-
-> OBPv510GetRegulatedEntityById200Response OBPv510CreateRegulatedEntity(ctx).OBPv510CreateRegulatedEntityRequest(oBPv510CreateRegulatedEntityRequest).Execute()
-
-Create Regulated Entity
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	oBPv510CreateRegulatedEntityRequest := *openapiclient.NewOBPv510CreateRegulatedEntityRequest("Type_example", *openapiclient.NewOBPv510CreateRegulatedEntityRequestProperties(*openapiclient.NewOBPv510GetRegulatedEntityById200ResponsePropertiesServices("Type_example", *openapiclient.NewOBPv510GetRegulatedEntityById200ResponsePropertiesServicesItems("Type_example", *openapiclient.NewOBPv510GetRegulatedEntityById200ResponsePropertiesServicesItemsProperties(*openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))))))), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), , , , , *openapiclient.NewOBPv510GetRegulatedEntityById200ResponsePropertiesAttributes("Type_example", *openapiclient.NewOBPv510GetRegulatedEntityById200ResponsePropertiesAttributesItems("Type_example", *openapiclient.NewOBPv510GetRegulatedEntityById200ResponsePropertiesAttributesItemsProperties(, , ))), , , , , )) // OBPv510CreateRegulatedEntityRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv510CreateRegulatedEntity(context.Background()).OBPv510CreateRegulatedEntityRequest(oBPv510CreateRegulatedEntityRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510CreateRegulatedEntity``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510CreateRegulatedEntity`: OBPv510GetRegulatedEntityById200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv510CreateRegulatedEntity`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510CreateRegulatedEntityRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **oBPv510CreateRegulatedEntityRequest** | [**OBPv510CreateRegulatedEntityRequest**](OBPv510CreateRegulatedEntityRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510GetRegulatedEntityById200Response**](OBPv510GetRegulatedEntityById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510CreateRegulatedEntityAttribute
-
-> OBPv510GetRegulatedEntityAttributeById200Response OBPv510CreateRegulatedEntityAttribute(ctx, regulatedentityid).OBPv510UpdateRegulatedEntityAttributeRequest(oBPv510UpdateRegulatedEntityAttributeRequest).Execute()
-
-Create Regulated Entity Attribute
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	regulatedentityid := "regulatedentityid_example" // string | The REGULATEDENTITYID identifier
-	oBPv510UpdateRegulatedEntityAttributeRequest := *openapiclient.NewOBPv510UpdateRegulatedEntityAttributeRequest("Type_example", *openapiclient.NewOBPv510UpdateRegulatedEntityAttributeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateRegulatedEntityAttributeRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv510CreateRegulatedEntityAttribute(context.Background(), regulatedentityid).OBPv510UpdateRegulatedEntityAttributeRequest(oBPv510UpdateRegulatedEntityAttributeRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510CreateRegulatedEntityAttribute``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510CreateRegulatedEntityAttribute`: OBPv510GetRegulatedEntityAttributeById200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv510CreateRegulatedEntityAttribute`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**regulatedentityid** | **string** | The REGULATEDENTITYID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510CreateRegulatedEntityAttributeRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv510UpdateRegulatedEntityAttributeRequest** | [**OBPv510UpdateRegulatedEntityAttributeRequest**](OBPv510UpdateRegulatedEntityAttributeRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510GetRegulatedEntityAttributeById200Response**](OBPv510GetRegulatedEntityAttributeById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510DeleteRegulatedEntity
-
-> OBPv510DeleteRegulatedEntity(ctx, regulatedentityid).Execute()
-
-Delete Regulated Entity
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	regulatedentityid := "regulatedentityid_example" // string | The REGULATEDENTITYID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv510DeleteRegulatedEntity(context.Background(), regulatedentityid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510DeleteRegulatedEntity``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**regulatedentityid** | **string** | The REGULATEDENTITYID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510DeleteRegulatedEntityRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510DeleteRegulatedEntityAttribute
-
-> OBPv510DeleteRegulatedEntityAttribute(ctx, regulatedentityid, regulatedentityattributeid).Execute()
-
-Delete Regulated Entity Attribute
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	regulatedentityid := "regulatedentityid_example" // string | The REGULATEDENTITYID identifier
-	regulatedentityattributeid := "regulatedentityattributeid_example" // string | The REGULATEDENTITYATTRIBUTEID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv510DeleteRegulatedEntityAttribute(context.Background(), regulatedentityid, regulatedentityattributeid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510DeleteRegulatedEntityAttribute``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**regulatedentityid** | **string** | The REGULATEDENTITYID identifier | 
-**regulatedentityattributeid** | **string** | The REGULATEDENTITYATTRIBUTEID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510DeleteRegulatedEntityAttributeRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510GetAllRegulatedEntityAttributes
-
-> OBPv510GetAllRegulatedEntityAttributes200Response OBPv510GetAllRegulatedEntityAttributes(ctx, regulatedentityid).Execute()
-
-Get All Regulated Entity Attributes
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	regulatedentityid := "regulatedentityid_example" // string | The REGULATEDENTITYID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv510GetAllRegulatedEntityAttributes(context.Background(), regulatedentityid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510GetAllRegulatedEntityAttributes``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510GetAllRegulatedEntityAttributes`: OBPv510GetAllRegulatedEntityAttributes200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv510GetAllRegulatedEntityAttributes`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**regulatedentityid** | **string** | The REGULATEDENTITYID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510GetAllRegulatedEntityAttributesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv510GetAllRegulatedEntityAttributes200Response**](OBPv510GetAllRegulatedEntityAttributes200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510GetApiTags
-
-> OBPv510GetApiTags200Response OBPv510GetApiTags(ctx).Execute()
-
-Get API Tags
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv510GetApiTags(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510GetApiTags``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510GetApiTags`: OBPv510GetApiTags200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv510GetApiTags`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510GetApiTagsRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv510GetApiTags200Response**](OBPv510GetApiTags200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510GetOAuth2ServerWellKnown
-
-> OBPv310GetOAuth2ServerJWKsURIs200Response OBPv510GetOAuth2ServerWellKnown(ctx).Execute()
-
-Get Well Known URIs
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv510GetOAuth2ServerWellKnown(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510GetOAuth2ServerWellKnown``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510GetOAuth2ServerWellKnown`: OBPv310GetOAuth2ServerJWKsURIs200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv510GetOAuth2ServerWellKnown`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510GetOAuth2ServerWellKnownRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv310GetOAuth2ServerJWKsURIs200Response**](OBPv310GetOAuth2ServerJWKsURIs200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510GetRegulatedEntityAttributeById
-
-> OBPv510GetRegulatedEntityAttributeById200Response OBPv510GetRegulatedEntityAttributeById(ctx, regulatedentityid, regulatedentityattributeid).Execute()
-
-Get Regulated Entity Attribute By ID
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	regulatedentityid := "regulatedentityid_example" // string | The REGULATEDENTITYID identifier
-	regulatedentityattributeid := "regulatedentityattributeid_example" // string | The REGULATEDENTITYATTRIBUTEID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv510GetRegulatedEntityAttributeById(context.Background(), regulatedentityid, regulatedentityattributeid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510GetRegulatedEntityAttributeById``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510GetRegulatedEntityAttributeById`: OBPv510GetRegulatedEntityAttributeById200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv510GetRegulatedEntityAttributeById`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**regulatedentityid** | **string** | The REGULATEDENTITYID identifier | 
-**regulatedentityattributeid** | **string** | The REGULATEDENTITYATTRIBUTEID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510GetRegulatedEntityAttributeByIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv510GetRegulatedEntityAttributeById200Response**](OBPv510GetRegulatedEntityAttributeById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510GetRegulatedEntityById
-
-> OBPv510GetRegulatedEntityById200Response OBPv510GetRegulatedEntityById(ctx, regulatedentityid).Execute()
-
-Get Regulated Entity
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	regulatedentityid := "regulatedentityid_example" // string | The REGULATEDENTITYID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv510GetRegulatedEntityById(context.Background(), regulatedentityid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510GetRegulatedEntityById``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510GetRegulatedEntityById`: OBPv510GetRegulatedEntityById200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv510GetRegulatedEntityById`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**regulatedentityid** | **string** | The REGULATEDENTITYID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510GetRegulatedEntityByIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv510GetRegulatedEntityById200Response**](OBPv510GetRegulatedEntityById200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510LogCacheAllEndpoint
-
-> OBPv510LogCacheAllEndpoint(ctx).Execute()
-
-Get All Level Log Cache
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv510LogCacheAllEndpoint(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510LogCacheAllEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510LogCacheAllEndpointRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510LogCacheDebugEndpoint
-
-> OBPv510LogCacheDebugEndpoint(ctx).Execute()
-
-Get Debug Level Log Cache
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv510LogCacheDebugEndpoint(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510LogCacheDebugEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510LogCacheDebugEndpointRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510LogCacheErrorEndpoint
-
-> OBPv510LogCacheErrorEndpoint(ctx).Execute()
-
-Get Error Level Log Cache
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv510LogCacheErrorEndpoint(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510LogCacheErrorEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510LogCacheErrorEndpointRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510LogCacheInfoEndpoint
-
-> OBPv510LogCacheInfoEndpoint(ctx).Execute()
-
-Get Info Level Log Cache
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv510LogCacheInfoEndpoint(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510LogCacheInfoEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510LogCacheInfoEndpointRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510LogCacheTraceEndpoint
-
-> OBPv510LogCacheTraceEndpoint(ctx).Execute()
-
-Get Trace Level Log Cache
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv510LogCacheTraceEndpoint(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510LogCacheTraceEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510LogCacheTraceEndpointRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510LogCacheWarningEndpoint
-
-> OBPv510LogCacheWarningEndpoint(ctx).Execute()
-
-Get Warning Level Log Cache
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv510LogCacheWarningEndpoint(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510LogCacheWarningEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510LogCacheWarningEndpointRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510RegulatedEntities
-
-> OBPv510RegulatedEntities200Response OBPv510RegulatedEntities(ctx).Execute()
-
-Get Regulated Entities
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv510RegulatedEntities(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510RegulatedEntities``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510RegulatedEntities`: OBPv510RegulatedEntities200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv510RegulatedEntities`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510RegulatedEntitiesRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv510RegulatedEntities200Response**](OBPv510RegulatedEntities200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510SuggestedSessionTimeout
-
-> OBPv510SuggestedSessionTimeout200Response OBPv510SuggestedSessionTimeout(ctx).Execute()
-
-Get Suggested Session Timeout
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv510SuggestedSessionTimeout(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510SuggestedSessionTimeout``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510SuggestedSessionTimeout`: OBPv510SuggestedSessionTimeout200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv510SuggestedSessionTimeout`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510SuggestedSessionTimeoutRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv510SuggestedSessionTimeout200Response**](OBPv510SuggestedSessionTimeout200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510UpdateRegulatedEntityAttribute
-
-> OBPv510GetRegulatedEntityAttributeById200Response OBPv510UpdateRegulatedEntityAttribute(ctx, regulatedentityid, regulatedentityattributeid).OBPv510UpdateRegulatedEntityAttributeRequest(oBPv510UpdateRegulatedEntityAttributeRequest).Execute()
-
-Update Regulated Entity Attribute
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	regulatedentityid := "regulatedentityid_example" // string | The REGULATEDENTITYID identifier
-	regulatedentityattributeid := "regulatedentityattributeid_example" // string | The REGULATEDENTITYATTRIBUTEID identifier
-	oBPv510UpdateRegulatedEntityAttributeRequest := *openapiclient.NewOBPv510UpdateRegulatedEntityAttributeRequest("Type_example", *openapiclient.NewOBPv510UpdateRegulatedEntityAttributeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateRegulatedEntityAttributeRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv510UpdateRegulatedEntityAttribute(context.Background(), regulatedentityid, regulatedentityattributeid).OBPv510UpdateRegulatedEntityAttributeRequest(oBPv510UpdateRegulatedEntityAttributeRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510UpdateRegulatedEntityAttribute``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510UpdateRegulatedEntityAttribute`: OBPv510GetRegulatedEntityAttributeById200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv510UpdateRegulatedEntityAttribute`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**regulatedentityid** | **string** | The REGULATEDENTITYID identifier | 
-**regulatedentityattributeid** | **string** | The REGULATEDENTITYATTRIBUTEID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510UpdateRegulatedEntityAttributeRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv510UpdateRegulatedEntityAttributeRequest** | [**OBPv510UpdateRegulatedEntityAttributeRequest**](OBPv510UpdateRegulatedEntityAttributeRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510GetRegulatedEntityAttributeById200Response**](OBPv510GetRegulatedEntityAttributeById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510WaitingForGodot
-
-> OBPv510WaitingForGodot200Response OBPv510WaitingForGodot(ctx).Execute()
-
-Waiting For Godot
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv510WaitingForGodot(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv510WaitingForGodot``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510WaitingForGodot`: OBPv510WaitingForGodot200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv510WaitingForGodot`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510WaitingForGodotRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv510WaitingForGodot200Response**](OBPv510WaitingForGodot200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600BackupBankLevelDynamicEntity
-
-> OBPv600BackupBankLevelDynamicEntity200Response OBPv600BackupBankLevelDynamicEntity(ctx, bankid, dynamicentityid).Execute()
+[**BackupBankLevelDynamicEntity**](APIAPI.md#BackupBankLevelDynamicEntity) | **Post** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup | Backup Bank Level Dynamic Entity
+[**BackupSystemDynamicEntity**](APIAPI.md#BackupSystemDynamicEntity) | **Post** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup | Backup System Level Dynamic Entity
+[**CleanupOrphanedDynamicEntityRecords**](APIAPI.md#CleanupOrphanedDynamicEntityRecords) | **Delete** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
+[**Config**](APIAPI.md#Config) | **Get** /obp/v3.1.0/config | Get API Configuration
+[**CreateApiProduct**](APIAPI.md#CreateApiProduct) | **Post** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product
+[**CreateApiProductAttribute**](APIAPI.md#CreateApiProductAttribute) | **Post** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
+[**CreateBankLevelDynamicEndpoint**](APIAPI.md#CreateBankLevelDynamicEndpoint) | **Post** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint
+[**CreateBankLevelDynamicEntity**](APIAPI.md#CreateBankLevelDynamicEntity) | **Post** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Create Bank Level Dynamic Entity
+[**CreateBankLevelEndpointTag**](APIAPI.md#CreateBankLevelEndpointTag) | **Post** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags | Create Bank Level Endpoint Tag
+[**CreateCounterpartyAttribute**](APIAPI.md#CreateCounterpartyAttribute) | **Post** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes | Create Counterparty Attribute
+[**CreateDynamicEndpoint**](APIAPI.md#CreateDynamicEndpoint) | **Post** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint
+[**CreateFeaturedApiCollection**](APIAPI.md#CreateFeaturedApiCollection) | **Post** /obp/v6.0.0/management/api-collections/featured | Create Featured Api Collection
+[**CreateMethodRouting**](APIAPI.md#CreateMethodRouting) | **Post** /obp/v3.1.0/management/method_routings | Create MethodRouting
+[**CreateOrUpdateApiProduct**](APIAPI.md#CreateOrUpdateApiProduct) | **Put** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product
+[**CreateRegulatedEntity**](APIAPI.md#CreateRegulatedEntity) | **Post** /obp/v5.1.0/regulated-entities | Create Regulated Entity
+[**CreateRegulatedEntityAttribute**](APIAPI.md#CreateRegulatedEntityAttribute) | **Post** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
+[**CreateSystemDynamicEntity**](APIAPI.md#CreateSystemDynamicEntity) | **Post** /obp/v6.0.0/management/system-dynamic-entities | Create System Level Dynamic Entity
+[**CreateSystemLevelEndpointTag**](APIAPI.md#CreateSystemLevelEndpointTag) | **Post** /obp/v4.0.0/management/endpoints/{operationid}/tags | Create System Level Endpoint Tag
+[**DeleteApiProduct**](APIAPI.md#DeleteApiProduct) | **Delete** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product
+[**DeleteApiProductAttribute**](APIAPI.md#DeleteApiProductAttribute) | **Delete** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
+[**DeleteBankLevelDynamicEndpoint**](APIAPI.md#DeleteBankLevelDynamicEndpoint) | **Delete** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint
+[**DeleteBankLevelDynamicEntity**](APIAPI.md#DeleteBankLevelDynamicEntity) | **Delete** /obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Delete Bank Level Dynamic Entity
+[**DeleteBankLevelEndpointTag**](APIAPI.md#DeleteBankLevelEndpointTag) | **Delete** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags/{endpointtagid} | Delete Bank Level Endpoint Tag
+[**DeleteCounterpartyAttribute**](APIAPI.md#DeleteCounterpartyAttribute) | **Delete** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Delete Counterparty Attribute
+[**DeleteDynamicEndpoint**](APIAPI.md#DeleteDynamicEndpoint) | **Delete** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint
+[**DeleteFeaturedApiCollection**](APIAPI.md#DeleteFeaturedApiCollection) | **Delete** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Delete Featured Api Collection
+[**DeleteMethodRouting**](APIAPI.md#DeleteMethodRouting) | **Delete** /obp/v3.1.0/management/method_routings/{methodroutingid} | Delete MethodRouting
+[**DeleteMyDynamicEndpoint**](APIAPI.md#DeleteMyDynamicEndpoint) | **Delete** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint
+[**DeleteMyDynamicEntity**](APIAPI.md#DeleteMyDynamicEntity) | **Delete** /obp/v4.0.0/my/dynamic-entities/{dynamicentityid} | Delete My Dynamic Entity
+[**DeleteRegulatedEntity**](APIAPI.md#DeleteRegulatedEntity) | **Delete** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
+[**DeleteRegulatedEntityAttribute**](APIAPI.md#DeleteRegulatedEntityAttribute) | **Delete** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
+[**DeleteSystemDynamicEntity**](APIAPI.md#DeleteSystemDynamicEntity) | **Delete** /obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid} | Delete System Level Dynamic Entity
+[**DeleteSystemDynamicEntityCascade**](APIAPI.md#DeleteSystemDynamicEntityCascade) | **Delete** /obp/v6.0.0/management/system-dynamic-entities/cascade/{dynamicentityid} | Delete System Level Dynamic Entity Cascade
+[**DeleteSystemLevelEndpointTag**](APIAPI.md#DeleteSystemLevelEndpointTag) | **Delete** /obp/v4.0.0/management/endpoints/{operationid}/tags/{endpointtagid} | Delete System Level Endpoint Tag
+[**ElasticSearchMetrics**](APIAPI.md#ElasticSearchMetrics) | **Get** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
+[**GetAdapterInfo**](APIAPI.md#GetAdapterInfo) | **Get** /obp/v5.0.0/adapter | Get Adapter Info
+[**GetAdapterInfoForBank**](APIAPI.md#GetAdapterInfoForBank) | **Get** /obp/v3.0.0/banks/{bankid}/adapter | Get Adapter Info for a bank
+[**GetAllCounterpartyAttributes**](APIAPI.md#GetAllCounterpartyAttributes) | **Get** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes | Get All Counterparty Attributes
+[**GetAllRegulatedEntityAttributes**](APIAPI.md#GetAllRegulatedEntityAttributes) | **Get** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
+[**GetApiProduct**](APIAPI.md#GetApiProduct) | **Get** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product
+[**GetApiProductAttribute**](APIAPI.md#GetApiProductAttribute) | **Get** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
+[**GetApiProducts**](APIAPI.md#GetApiProducts) | **Get** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products
+[**GetApiTags**](APIAPI.md#GetApiTags) | **Get** /obp/v5.1.0/tags | Get API Tags
+[**GetAppDirectory**](APIAPI.md#GetAppDirectory) | **Get** /obp/v6.0.0/app-directory | Get App Directory
+[**GetAvailablePersonalDynamicEntities**](APIAPI.md#GetAvailablePersonalDynamicEntities) | **Get** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
+[**GetBankLevelDynamicEndpoint**](APIAPI.md#GetBankLevelDynamicEndpoint) | **Get** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint
+[**GetBankLevelDynamicEndpoints**](APIAPI.md#GetBankLevelDynamicEndpoints) | **Get** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints
+[**GetBankLevelDynamicEntities**](APIAPI.md#GetBankLevelDynamicEntities) | **Get** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Get Bank Level Dynamic Entities
+[**GetBankLevelDynamicResourceDocsObp**](APIAPI.md#GetBankLevelDynamicResourceDocsObp) | **Get** /obp/v1.4.0/banks/{bankid}/resource-docs/{apiversion}/obp | Get Bank Level Dynamic Resource Docs
+[**GetBankLevelEndpointTags**](APIAPI.md#GetBankLevelEndpointTags) | **Get** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags | Get Bank Level Endpoint Tags
+[**GetCacheConfig**](APIAPI.md#GetCacheConfig) | **Get** /obp/v6.0.0/system/cache/config | Get Cache Configuration
+[**GetCacheInfo**](APIAPI.md#GetCacheInfo) | **Get** /obp/v6.0.0/system/cache/info | Get Cache Information
+[**GetCacheNamespaces**](APIAPI.md#GetCacheNamespaces) | **Get** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
+[**GetCallContext**](APIAPI.md#GetCallContext) | **Get** /obp/v4.0.0/development/call_context | Get the Call Context of a current call
+[**GetConfigProps**](APIAPI.md#GetConfigProps) | **Get** /obp/v6.0.0/management/config-props | Get Config Props
+[**GetConnectorCallCounts**](APIAPI.md#GetConnectorCallCounts) | **Get** /obp/v6.0.0/management/connector/metrics/counts | Get Connector Call Counts
+[**GetConnectorMethodNames**](APIAPI.md#GetConnectorMethodNames) | **Get** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+[**GetConnectorMetrics**](APIAPI.md#GetConnectorMetrics) | **Get** /obp/v2.2.0/management/connector/metrics | Get Connector Metrics
+[**GetConnectorTraces**](APIAPI.md#GetConnectorTraces) | **Get** /obp/v6.0.0/management/connector/traces | Get Connector Traces
+[**GetConnectors**](APIAPI.md#GetConnectors) | **Get** /obp/v6.0.0/system/connectors | Get Connectors
+[**GetCounterpartyAttributeById**](APIAPI.md#GetCounterpartyAttributeById) | **Get** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Get Counterparty Attribute By ID
+[**GetCurrentConsumer**](APIAPI.md#GetCurrentConsumer) | **Get** /obp/v6.0.0/consumers/current | Get Current Consumer
+[**GetDatabasePoolInfo**](APIAPI.md#GetDatabasePoolInfo) | **Get** /obp/v6.0.0/system/database/pool | Get Database Pool Information
+[**GetDynamicEndpoint**](APIAPI.md#GetDynamicEndpoint) | **Get** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint
+[**GetDynamicEndpoints**](APIAPI.md#GetDynamicEndpoints) | **Get** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints
+[**GetDynamicEntityDiagnostics**](APIAPI.md#GetDynamicEntityDiagnostics) | **Get** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
+[**GetFeaturedApiCollectionsAdmin**](APIAPI.md#GetFeaturedApiCollectionsAdmin) | **Get** /obp/v6.0.0/management/api-collections/featured | Get Featured Api Collections (Admin)
+[**GetFeatures**](APIAPI.md#GetFeatures) | **Get** /obp/v6.0.0/features | Get Features
+[**GetMapperDatabaseInfo**](APIAPI.md#GetMapperDatabaseInfo) | **Get** /obp/v4.0.0/database/info | Get Mapper Database Info
+[**GetMessageDocs**](APIAPI.md#GetMessageDocs) | **Get** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
+[**GetMessageDocsJsonSchema**](APIAPI.md#GetMessageDocsJsonSchema) | **Get** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
+[**GetMessageDocsSwagger**](APIAPI.md#GetMessageDocsSwagger) | **Get** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
+[**GetMethodRoutings**](APIAPI.md#GetMethodRoutings) | **Get** /obp/v3.1.0/management/method_routings | Get MethodRoutings
+[**GetMetrics**](APIAPI.md#GetMetrics) | **Get** /obp/v6.0.0/management/metrics | Get Metrics
+[**GetMetricsAtBank**](APIAPI.md#GetMetricsAtBank) | **Get** /obp/v5.0.0/management/metrics/banks/{bankid} | Get Metrics at Bank
+[**GetMigrations**](APIAPI.md#GetMigrations) | **Get** /obp/v6.0.0/system/migrations | Get Database Migrations
+[**GetMyDynamicEndpoints**](APIAPI.md#GetMyDynamicEndpoints) | **Get** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints
+[**GetMyDynamicEntities**](APIAPI.md#GetMyDynamicEntities) | **Get** /obp/v6.0.0/my/dynamic-entities | Get My Dynamic Entities
+[**GetOAuth2ServerJWKsURIs**](APIAPI.md#GetOAuth2ServerJWKsURIs) | **Get** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
+[**GetOAuth2ServerWellKnown**](APIAPI.md#GetOAuth2ServerWellKnown) | **Get** /obp/v5.1.0/well-known | Get Well Known URIs
+[**GetObpConnectorLoopback**](APIAPI.md#GetObpConnectorLoopback) | **Get** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
+[**GetPopularApis**](APIAPI.md#GetPopularApis) | **Get** /obp/v6.0.0/api/popular-endpoints | Get Popular Endpoints
+[**GetRateLimitingInfo**](APIAPI.md#GetRateLimitingInfo) | **Get** /obp/v3.1.0/rate-limiting | Get Rate Limiting Info
+[**GetReferenceTypes**](APIAPI.md#GetReferenceTypes) | **Get** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
+[**GetRegulatedEntityAttributeById**](APIAPI.md#GetRegulatedEntityAttributeById) | **Get** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
+[**GetRegulatedEntityById**](APIAPI.md#GetRegulatedEntityById) | **Get** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
+[**GetResourceDocsObp**](APIAPI.md#GetResourceDocsObp) | **Get** /obp/v1.4.0/resource-docs/{apiversion}/obp | Get Resource Docs
+[**GetResourceDocsOpenAPI31**](APIAPI.md#GetResourceDocsOpenAPI31) | **Get** /obp/v1.4.0/resource-docs/{apiversion}/openapi | Get OpenAPI 3.1 documentation
+[**GetResourceDocsSwagger**](APIAPI.md#GetResourceDocsSwagger) | **Get** /obp/v1.4.0/resource-docs/{apiversion}/swagger | Get Swagger documentation
+[**GetScannedApiVersions**](APIAPI.md#GetScannedApiVersions) | **Get** /obp/v6.0.0/api/versions | Get Scanned API Versions
+[**GetServerJWK**](APIAPI.md#GetServerJWK) | **Get** /obp/v3.1.0/certs | Get JSON Web Key (JWK)
+[**GetStoredProcedureConnectorHealth**](APIAPI.md#GetStoredProcedureConnectorHealth) | **Get** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
+[**GetSystemDynamicEntities**](APIAPI.md#GetSystemDynamicEntities) | **Get** /obp/v6.0.0/management/system-dynamic-entities | Get System Dynamic Entities
+[**GetSystemLevelEndpointTags**](APIAPI.md#GetSystemLevelEndpointTags) | **Get** /obp/v4.0.0/management/endpoints/{operationid}/tags | Get System Level Endpoint Tags
+[**GetTopAPIs**](APIAPI.md#GetTopAPIs) | **Get** /obp/v6.0.0/management/metrics/top-apis | Get Top APIs
+[**InvalidateCacheNamespace**](APIAPI.md#InvalidateCacheNamespace) | **Post** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
+[**LogCacheAllEndpoint**](APIAPI.md#LogCacheAllEndpoint) | **Get** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
+[**LogCacheDebugEndpoint**](APIAPI.md#LogCacheDebugEndpoint) | **Get** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
+[**LogCacheErrorEndpoint**](APIAPI.md#LogCacheErrorEndpoint) | **Get** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
+[**LogCacheInfoEndpoint**](APIAPI.md#LogCacheInfoEndpoint) | **Get** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
+[**LogCacheTraceEndpoint**](APIAPI.md#LogCacheTraceEndpoint) | **Get** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
+[**LogCacheWarningEndpoint**](APIAPI.md#LogCacheWarningEndpoint) | **Get** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
+[**RegulatedEntities**](APIAPI.md#RegulatedEntities) | **Get** /obp/v5.1.0/regulated-entities | Get Regulated Entities
+[**Root**](APIAPI.md#Root) | **Get** /obp/v6.0.0/root | Get API Info (root)
+[**SuggestedSessionTimeout**](APIAPI.md#SuggestedSessionTimeout) | **Get** /obp/v5.1.0/ui/suggested-session-timeout | Get Suggested Session Timeout
+[**UpdateApiProductAttribute**](APIAPI.md#UpdateApiProductAttribute) | **Put** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
+[**UpdateBankLevelDynamicEndpointHost**](APIAPI.md#UpdateBankLevelDynamicEndpointHost) | **Put** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host
+[**UpdateBankLevelDynamicEntity**](APIAPI.md#UpdateBankLevelDynamicEntity) | **Put** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Update Bank Level Dynamic Entity
+[**UpdateBankLevelEndpointTag**](APIAPI.md#UpdateBankLevelEndpointTag) | **Put** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags/{endpointtagid} | Update Bank Level Endpoint Tag
+[**UpdateCounterpartyAttribute**](APIAPI.md#UpdateCounterpartyAttribute) | **Put** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Update Counterparty Attribute
+[**UpdateDynamicEndpointHost**](APIAPI.md#UpdateDynamicEndpointHost) | **Put** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host
+[**UpdateFeaturedApiCollection**](APIAPI.md#UpdateFeaturedApiCollection) | **Put** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Update Featured Api Collection
+[**UpdateMethodRouting**](APIAPI.md#UpdateMethodRouting) | **Put** /obp/v3.1.0/management/method_routings/{methodroutingid} | Update MethodRouting
+[**UpdateMyDynamicEntity**](APIAPI.md#UpdateMyDynamicEntity) | **Put** /obp/v6.0.0/my/dynamic-entities/{dynamicentityid} | Update My Dynamic Entity
+[**UpdateRegulatedEntityAttribute**](APIAPI.md#UpdateRegulatedEntityAttribute) | **Put** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
+[**UpdateSystemDynamicEntity**](APIAPI.md#UpdateSystemDynamicEntity) | **Put** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid} | Update System Level Dynamic Entity
+[**UpdateSystemLevelEndpointTag**](APIAPI.md#UpdateSystemLevelEndpointTag) | **Put** /obp/v4.0.0/management/endpoints/{operationid}/tags/{endpointtagid} | Update System Level Endpoint Tag
+[**VerifyRequestSignResponse**](APIAPI.md#VerifyRequestSignResponse) | **Get** /obp/v4.0.0/development/echo/jws-verified-request-jws-signed-response | Verify Request and Sign Response of a current call
+[**WaitingForGodot**](APIAPI.md#WaitingForGodot) | **Get** /obp/v5.1.0/waiting-for-godot | Waiting For Godot
+
+
+
+## BackupBankLevelDynamicEntity
+
+> BackupBankLevelDynamicEntity200Response BackupBankLevelDynamicEntity(ctx, bankid, dynamicentityid).Execute()
 
 Backup Bank Level Dynamic Entity
 
@@ -4482,13 +152,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600BackupBankLevelDynamicEntity(context.Background(), bankid, dynamicentityid).Execute()
+	resp, r, err := apiClient.APIAPI.BackupBankLevelDynamicEntity(context.Background(), bankid, dynamicentityid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600BackupBankLevelDynamicEntity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.BackupBankLevelDynamicEntity``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600BackupBankLevelDynamicEntity`: OBPv600BackupBankLevelDynamicEntity200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600BackupBankLevelDynamicEntity`: %v\n", resp)
+	// response from `BackupBankLevelDynamicEntity`: BackupBankLevelDynamicEntity200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.BackupBankLevelDynamicEntity`: %v\n", resp)
 }
 ```
 
@@ -4503,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600BackupBankLevelDynamicEntityRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiBackupBankLevelDynamicEntityRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4513,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600BackupBankLevelDynamicEntity200Response**](OBPv600BackupBankLevelDynamicEntity200Response.md)
+[**BackupBankLevelDynamicEntity200Response**](BackupBankLevelDynamicEntity200Response.md)
 
 ### Authorization
 
@@ -4529,9 +199,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600BackupSystemDynamicEntity
+## BackupSystemDynamicEntity
 
-> OBPv600BackupSystemDynamicEntity200Response OBPv600BackupSystemDynamicEntity(ctx, dynamicentityid).Execute()
+> BackupSystemDynamicEntity200Response BackupSystemDynamicEntity(ctx, dynamicentityid).Execute()
 
 Backup System Level Dynamic Entity
 
@@ -4554,13 +224,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600BackupSystemDynamicEntity(context.Background(), dynamicentityid).Execute()
+	resp, r, err := apiClient.APIAPI.BackupSystemDynamicEntity(context.Background(), dynamicentityid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600BackupSystemDynamicEntity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.BackupSystemDynamicEntity``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600BackupSystemDynamicEntity`: OBPv600BackupSystemDynamicEntity200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600BackupSystemDynamicEntity`: %v\n", resp)
+	// response from `BackupSystemDynamicEntity`: BackupSystemDynamicEntity200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.BackupSystemDynamicEntity`: %v\n", resp)
 }
 ```
 
@@ -4574,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600BackupSystemDynamicEntityRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiBackupSystemDynamicEntityRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4583,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600BackupSystemDynamicEntity200Response**](OBPv600BackupSystemDynamicEntity200Response.md)
+[**BackupSystemDynamicEntity200Response**](BackupSystemDynamicEntity200Response.md)
 
 ### Authorization
 
@@ -4599,9 +269,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600CleanupOrphanedDynamicEntityRecords
+## CleanupOrphanedDynamicEntityRecords
 
-> OBPv600CleanupOrphanedDynamicEntityRecords200Response OBPv600CleanupOrphanedDynamicEntityRecords(ctx).Execute()
+> CleanupOrphanedDynamicEntityRecords200Response CleanupOrphanedDynamicEntityRecords(ctx).Execute()
 
 Cleanup Orphaned Dynamic Entity Records
 
@@ -4623,13 +293,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600CleanupOrphanedDynamicEntityRecords(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.CleanupOrphanedDynamicEntityRecords(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600CleanupOrphanedDynamicEntityRecords``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.CleanupOrphanedDynamicEntityRecords``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600CleanupOrphanedDynamicEntityRecords`: OBPv600CleanupOrphanedDynamicEntityRecords200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600CleanupOrphanedDynamicEntityRecords`: %v\n", resp)
+	// response from `CleanupOrphanedDynamicEntityRecords`: CleanupOrphanedDynamicEntityRecords200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.CleanupOrphanedDynamicEntityRecords`: %v\n", resp)
 }
 ```
 
@@ -4639,12 +309,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600CleanupOrphanedDynamicEntityRecordsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCleanupOrphanedDynamicEntityRecordsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600CleanupOrphanedDynamicEntityRecords200Response**](OBPv600CleanupOrphanedDynamicEntityRecords200Response.md)
+[**CleanupOrphanedDynamicEntityRecords200Response**](CleanupOrphanedDynamicEntityRecords200Response.md)
 
 ### Authorization
 
@@ -4660,9 +330,70 @@ Other parameters are passed through a pointer to a apiOBPv600CleanupOrphanedDyna
 [[Back to README]](../README.md)
 
 
-## OBPv600CreateApiProduct
+## Config
 
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems OBPv600CreateApiProduct(ctx, bankid, apiproductcode).OBPv600CreateOrUpdateApiProductRequest(oBPv600CreateOrUpdateApiProductRequest).Execute()
+> Config200Response Config(ctx).Execute()
+
+Get API Configuration
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.Config(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.Config``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `Config`: Config200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.Config`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiConfigRequest struct via the builder pattern
+
+
+### Return type
+
+[**Config200Response**](Config200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateApiProduct
+
+> GetApiProducts200ResponseApiProductsInner CreateApiProduct(ctx, bankid, apiproductcode).CreateOrUpdateApiProductRequest(createOrUpdateApiProductRequest).Execute()
 
 Create Api Product
 
@@ -4683,17 +414,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	apiproductcode := "apiproductcode_example" // string | The APIPRODUCTCODE identifier
-	oBPv600CreateOrUpdateApiProductRequest := *openapiclient.NewOBPv600CreateOrUpdateApiProductRequest("Type_example", *openapiclient.NewOBPv600CreateOrUpdateApiProductRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600CreateOrUpdateApiProductRequest | Request body
+	createOrUpdateApiProductRequest := *openapiclient.NewCreateOrUpdateApiProductRequest() // CreateOrUpdateApiProductRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600CreateApiProduct(context.Background(), bankid, apiproductcode).OBPv600CreateOrUpdateApiProductRequest(oBPv600CreateOrUpdateApiProductRequest).Execute()
+	resp, r, err := apiClient.APIAPI.CreateApiProduct(context.Background(), bankid, apiproductcode).CreateOrUpdateApiProductRequest(createOrUpdateApiProductRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600CreateApiProduct``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.CreateApiProduct``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600CreateApiProduct`: OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600CreateApiProduct`: %v\n", resp)
+	// response from `CreateApiProduct`: GetApiProducts200ResponseApiProductsInner
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.CreateApiProduct`: %v\n", resp)
 }
 ```
 
@@ -4708,18 +439,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600CreateApiProductRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateApiProductRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv600CreateOrUpdateApiProductRequest** | [**OBPv600CreateOrUpdateApiProductRequest**](OBPv600CreateOrUpdateApiProductRequest.md) | Request body | 
+ **createOrUpdateApiProductRequest** | [**CreateOrUpdateApiProductRequest**](CreateOrUpdateApiProductRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -4735,9 +466,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600CreateApiProductAttribute
+## CreateApiProductAttribute
 
-> OBPv600CreateApiProductAttribute200Response OBPv600CreateApiProductAttribute(ctx, bankid, apiproductcode).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+> CreateApiProductAttribute200Response CreateApiProductAttribute(ctx, bankid, apiproductcode).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 
 Create Api Product Attribute
 
@@ -4758,17 +489,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	apiproductcode := "apiproductcode_example" // string | The APIPRODUCTCODE identifier
-	oBPv510UpdateAtmAttributeRequest := *openapiclient.NewOBPv510UpdateAtmAttributeRequest("Type_example", *openapiclient.NewOBPv510UpdateAtmAttributeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateAtmAttributeRequest | Request body
+	updateAtmAttributeRequest := *openapiclient.NewUpdateAtmAttributeRequest() // UpdateAtmAttributeRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600CreateApiProductAttribute(context.Background(), bankid, apiproductcode).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+	resp, r, err := apiClient.APIAPI.CreateApiProductAttribute(context.Background(), bankid, apiproductcode).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600CreateApiProductAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.CreateApiProductAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600CreateApiProductAttribute`: OBPv600CreateApiProductAttribute200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600CreateApiProductAttribute`: %v\n", resp)
+	// response from `CreateApiProductAttribute`: CreateApiProductAttribute200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.CreateApiProductAttribute`: %v\n", resp)
 }
 ```
 
@@ -4783,18 +514,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600CreateApiProductAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateApiProductAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -4810,9 +541,81 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600CreateBankLevelDynamicEntity
+## CreateBankLevelDynamicEndpoint
 
-> OBPv600CreateBankLevelDynamicEntity200Response OBPv600CreateBankLevelDynamicEntity(ctx, bankid).OBPv600CreateSystemDynamicEntityRequest(oBPv600CreateSystemDynamicEntityRequest).Execute()
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner CreateBankLevelDynamicEndpoint(ctx, bankid).GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString).Execute()
+
+Create Bank Level Dynamic Endpoint
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString := *openapiclient.NewGetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString() // GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.CreateBankLevelDynamicEndpoint(context.Background(), bankid).GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.CreateBankLevelDynamicEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateBankLevelDynamicEndpoint`: GetDynamicEndpoints200ResponseDynamicEndpointsInner
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.CreateBankLevelDynamicEndpoint`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateBankLevelDynamicEndpointRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString** | [**GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md) | Request body | 
+
+### Return type
+
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateBankLevelDynamicEntity
+
+> CreateBankLevelDynamicEntity200Response CreateBankLevelDynamicEntity(ctx, bankid).CreateSystemDynamicEntityRequest(createSystemDynamicEntityRequest).Execute()
 
 Create Bank Level Dynamic Entity
 
@@ -4832,17 +635,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv600CreateSystemDynamicEntityRequest := *openapiclient.NewOBPv600CreateSystemDynamicEntityRequest("Type_example", *openapiclient.NewOBPv600CreateSystemDynamicEntityRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600CreateSystemDynamicEntityRequestPropertiesSchema("Type_example", *openapiclient.NewOBPv600CreateSystemDynamicEntityRequestPropertiesSchemaProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), *openapiclient.NewOBPv600CreateSystemDynamicEntityRequestPropertiesSchemaPropertiesProperties("Type_example", *openapiclient.NewOBPv600CreateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesProperties(*openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesTheme("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties(, , , , )), *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesTheme("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties(, , , , )))))), , , )) // OBPv600CreateSystemDynamicEntityRequest | Request body
+	createSystemDynamicEntityRequest := *openapiclient.NewCreateSystemDynamicEntityRequest() // CreateSystemDynamicEntityRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600CreateBankLevelDynamicEntity(context.Background(), bankid).OBPv600CreateSystemDynamicEntityRequest(oBPv600CreateSystemDynamicEntityRequest).Execute()
+	resp, r, err := apiClient.APIAPI.CreateBankLevelDynamicEntity(context.Background(), bankid).CreateSystemDynamicEntityRequest(createSystemDynamicEntityRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600CreateBankLevelDynamicEntity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.CreateBankLevelDynamicEntity``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600CreateBankLevelDynamicEntity`: OBPv600CreateBankLevelDynamicEntity200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600CreateBankLevelDynamicEntity`: %v\n", resp)
+	// response from `CreateBankLevelDynamicEntity`: CreateBankLevelDynamicEntity200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.CreateBankLevelDynamicEntity`: %v\n", resp)
 }
 ```
 
@@ -4856,17 +659,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600CreateBankLevelDynamicEntityRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateBankLevelDynamicEntityRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv600CreateSystemDynamicEntityRequest** | [**OBPv600CreateSystemDynamicEntityRequest**](OBPv600CreateSystemDynamicEntityRequest.md) | Request body | 
+ **createSystemDynamicEntityRequest** | [**CreateSystemDynamicEntityRequest**](CreateSystemDynamicEntityRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600CreateBankLevelDynamicEntity200Response**](OBPv600CreateBankLevelDynamicEntity200Response.md)
+[**CreateBankLevelDynamicEntity200Response**](CreateBankLevelDynamicEntity200Response.md)
 
 ### Authorization
 
@@ -4882,9 +685,228 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600CreateFeaturedApiCollection
+## CreateBankLevelEndpointTag
 
-> OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems OBPv600CreateFeaturedApiCollection(ctx).OBPv600CreateFeaturedApiCollectionRequest(oBPv600CreateFeaturedApiCollectionRequest).Execute()
+> UpdateSystemLevelEndpointTag200Response CreateBankLevelEndpointTag(ctx, bankid, operationid).UpdateSystemLevelEndpointTagRequest(updateSystemLevelEndpointTagRequest).Execute()
+
+Create Bank Level Endpoint Tag
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	operationid := "operationid_example" // string | The OPERATIONID identifier
+	updateSystemLevelEndpointTagRequest := *openapiclient.NewUpdateSystemLevelEndpointTagRequest() // UpdateSystemLevelEndpointTagRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.CreateBankLevelEndpointTag(context.Background(), bankid, operationid).UpdateSystemLevelEndpointTagRequest(updateSystemLevelEndpointTagRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.CreateBankLevelEndpointTag``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateBankLevelEndpointTag`: UpdateSystemLevelEndpointTag200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.CreateBankLevelEndpointTag`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**operationid** | **string** | The OPERATIONID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateBankLevelEndpointTagRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateSystemLevelEndpointTagRequest** | [**UpdateSystemLevelEndpointTagRequest**](UpdateSystemLevelEndpointTagRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateSystemLevelEndpointTag200Response**](UpdateSystemLevelEndpointTag200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateCounterpartyAttribute
+
+> GetAllCounterpartyAttributes200ResponseAttributesInner CreateCounterpartyAttribute(ctx, bankid, accountid, counterpartyid).CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest).Execute()
+
+Create Counterparty Attribute
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	counterpartyid := "counterpartyid_example" // string | The COUNTERPARTYID identifier
+	createCounterpartyAttributeRequest := *openapiclient.NewCreateCounterpartyAttributeRequest() // CreateCounterpartyAttributeRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.CreateCounterpartyAttribute(context.Background(), bankid, accountid, counterpartyid).CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.CreateCounterpartyAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCounterpartyAttribute`: GetAllCounterpartyAttributes200ResponseAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.CreateCounterpartyAttribute`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**counterpartyid** | **string** | The COUNTERPARTYID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateCounterpartyAttributeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **createCounterpartyAttributeRequest** | [**CreateCounterpartyAttributeRequest**](CreateCounterpartyAttributeRequest.md) | Request body | 
+
+### Return type
+
+[**GetAllCounterpartyAttributes200ResponseAttributesInner**](GetAllCounterpartyAttributes200ResponseAttributesInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateDynamicEndpoint
+
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner CreateDynamicEndpoint(ctx).GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString).Execute()
+
+Create Dynamic Endpoint
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString := *openapiclient.NewGetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString() // GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.CreateDynamicEndpoint(context.Background()).GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.CreateDynamicEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateDynamicEndpoint`: GetDynamicEndpoints200ResponseDynamicEndpointsInner
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.CreateDynamicEndpoint`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateDynamicEndpointRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString** | [**GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md) | Request body | 
+
+### Return type
+
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateFeaturedApiCollection
+
+> GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner CreateFeaturedApiCollection(ctx).CreateFeaturedApiCollectionRequest(createFeaturedApiCollectionRequest).Execute()
 
 Create Featured Api Collection
 
@@ -4903,17 +925,17 @@ import (
 )
 
 func main() {
-	oBPv600CreateFeaturedApiCollectionRequest := *openapiclient.NewOBPv600CreateFeaturedApiCollectionRequest("Type_example", *openapiclient.NewOBPv600CreateFeaturedApiCollectionRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600CreateFeaturedApiCollectionRequest | Request body
+	createFeaturedApiCollectionRequest := *openapiclient.NewCreateFeaturedApiCollectionRequest() // CreateFeaturedApiCollectionRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600CreateFeaturedApiCollection(context.Background()).OBPv600CreateFeaturedApiCollectionRequest(oBPv600CreateFeaturedApiCollectionRequest).Execute()
+	resp, r, err := apiClient.APIAPI.CreateFeaturedApiCollection(context.Background()).CreateFeaturedApiCollectionRequest(createFeaturedApiCollectionRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600CreateFeaturedApiCollection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.CreateFeaturedApiCollection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600CreateFeaturedApiCollection`: OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600CreateFeaturedApiCollection`: %v\n", resp)
+	// response from `CreateFeaturedApiCollection`: GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.CreateFeaturedApiCollection`: %v\n", resp)
 }
 ```
 
@@ -4923,16 +945,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600CreateFeaturedApiCollectionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateFeaturedApiCollectionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600CreateFeaturedApiCollectionRequest** | [**OBPv600CreateFeaturedApiCollectionRequest**](OBPv600CreateFeaturedApiCollectionRequest.md) | Request body | 
+ **createFeaturedApiCollectionRequest** | [**CreateFeaturedApiCollectionRequest**](CreateFeaturedApiCollectionRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems**](OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems.md)
+[**GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner**](GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner.md)
 
 ### Authorization
 
@@ -4948,9 +970,75 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600CreateOrUpdateApiProduct
+## CreateMethodRouting
 
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems OBPv600CreateOrUpdateApiProduct(ctx, bankid, apiproductcode).OBPv600CreateOrUpdateApiProductRequest(oBPv600CreateOrUpdateApiProductRequest).Execute()
+> GetMethodRoutings200ResponseMethodRoutingsInner CreateMethodRouting(ctx).CreateMethodRoutingRequest(createMethodRoutingRequest).Execute()
+
+Create MethodRouting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	createMethodRoutingRequest := *openapiclient.NewCreateMethodRoutingRequest() // CreateMethodRoutingRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.CreateMethodRouting(context.Background()).CreateMethodRoutingRequest(createMethodRoutingRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.CreateMethodRouting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateMethodRouting`: GetMethodRoutings200ResponseMethodRoutingsInner
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.CreateMethodRouting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateMethodRoutingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createMethodRoutingRequest** | [**CreateMethodRoutingRequest**](CreateMethodRoutingRequest.md) | Request body | 
+
+### Return type
+
+[**GetMethodRoutings200ResponseMethodRoutingsInner**](GetMethodRoutings200ResponseMethodRoutingsInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateOrUpdateApiProduct
+
+> GetApiProducts200ResponseApiProductsInner CreateOrUpdateApiProduct(ctx, bankid, apiproductcode).CreateOrUpdateApiProductRequest(createOrUpdateApiProductRequest).Execute()
 
 Create or Update Api Product
 
@@ -4971,17 +1059,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	apiproductcode := "apiproductcode_example" // string | The APIPRODUCTCODE identifier
-	oBPv600CreateOrUpdateApiProductRequest := *openapiclient.NewOBPv600CreateOrUpdateApiProductRequest("Type_example", *openapiclient.NewOBPv600CreateOrUpdateApiProductRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600CreateOrUpdateApiProductRequest | Request body
+	createOrUpdateApiProductRequest := *openapiclient.NewCreateOrUpdateApiProductRequest() // CreateOrUpdateApiProductRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600CreateOrUpdateApiProduct(context.Background(), bankid, apiproductcode).OBPv600CreateOrUpdateApiProductRequest(oBPv600CreateOrUpdateApiProductRequest).Execute()
+	resp, r, err := apiClient.APIAPI.CreateOrUpdateApiProduct(context.Background(), bankid, apiproductcode).CreateOrUpdateApiProductRequest(createOrUpdateApiProductRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600CreateOrUpdateApiProduct``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.CreateOrUpdateApiProduct``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600CreateOrUpdateApiProduct`: OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600CreateOrUpdateApiProduct`: %v\n", resp)
+	// response from `CreateOrUpdateApiProduct`: GetApiProducts200ResponseApiProductsInner
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.CreateOrUpdateApiProduct`: %v\n", resp)
 }
 ```
 
@@ -4996,18 +1084,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600CreateOrUpdateApiProductRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateOrUpdateApiProductRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv600CreateOrUpdateApiProductRequest** | [**OBPv600CreateOrUpdateApiProductRequest**](OBPv600CreateOrUpdateApiProductRequest.md) | Request body | 
+ **createOrUpdateApiProductRequest** | [**CreateOrUpdateApiProductRequest**](CreateOrUpdateApiProductRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -5023,9 +1111,147 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600CreateSystemDynamicEntity
+## CreateRegulatedEntity
 
-> OBPv600CreateSystemDynamicEntity200Response OBPv600CreateSystemDynamicEntity(ctx).OBPv600CreateSystemDynamicEntityRequest(oBPv600CreateSystemDynamicEntityRequest).Execute()
+> GetRegulatedEntityById200Response CreateRegulatedEntity(ctx).CreateRegulatedEntityRequest(createRegulatedEntityRequest).Execute()
+
+Create Regulated Entity
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	createRegulatedEntityRequest := *openapiclient.NewCreateRegulatedEntityRequest() // CreateRegulatedEntityRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.CreateRegulatedEntity(context.Background()).CreateRegulatedEntityRequest(createRegulatedEntityRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.CreateRegulatedEntity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateRegulatedEntity`: GetRegulatedEntityById200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.CreateRegulatedEntity`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateRegulatedEntityRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createRegulatedEntityRequest** | [**CreateRegulatedEntityRequest**](CreateRegulatedEntityRequest.md) | Request body | 
+
+### Return type
+
+[**GetRegulatedEntityById200Response**](GetRegulatedEntityById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateRegulatedEntityAttribute
+
+> GetRegulatedEntityAttributeById200Response CreateRegulatedEntityAttribute(ctx, regulatedentityid).CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest).Execute()
+
+Create Regulated Entity Attribute
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	regulatedentityid := "regulatedentityid_example" // string | The REGULATEDENTITYID identifier
+	createCounterpartyAttributeRequest := *openapiclient.NewCreateCounterpartyAttributeRequest() // CreateCounterpartyAttributeRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.CreateRegulatedEntityAttribute(context.Background(), regulatedentityid).CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.CreateRegulatedEntityAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateRegulatedEntityAttribute`: GetRegulatedEntityAttributeById200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.CreateRegulatedEntityAttribute`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**regulatedentityid** | **string** | The REGULATEDENTITYID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateRegulatedEntityAttributeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **createCounterpartyAttributeRequest** | [**CreateCounterpartyAttributeRequest**](CreateCounterpartyAttributeRequest.md) | Request body | 
+
+### Return type
+
+[**GetRegulatedEntityAttributeById200Response**](GetRegulatedEntityAttributeById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateSystemDynamicEntity
+
+> CreateSystemDynamicEntity200Response CreateSystemDynamicEntity(ctx).CreateSystemDynamicEntityRequest(createSystemDynamicEntityRequest).Execute()
 
 Create System Level Dynamic Entity
 
@@ -5044,17 +1270,17 @@ import (
 )
 
 func main() {
-	oBPv600CreateSystemDynamicEntityRequest := *openapiclient.NewOBPv600CreateSystemDynamicEntityRequest("Type_example", *openapiclient.NewOBPv600CreateSystemDynamicEntityRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600CreateSystemDynamicEntityRequestPropertiesSchema("Type_example", *openapiclient.NewOBPv600CreateSystemDynamicEntityRequestPropertiesSchemaProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), *openapiclient.NewOBPv600CreateSystemDynamicEntityRequestPropertiesSchemaPropertiesProperties("Type_example", *openapiclient.NewOBPv600CreateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesProperties(*openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesTheme("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties(, , , , )), *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesTheme("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties(, , , , )))))), , , )) // OBPv600CreateSystemDynamicEntityRequest | Request body
+	createSystemDynamicEntityRequest := *openapiclient.NewCreateSystemDynamicEntityRequest() // CreateSystemDynamicEntityRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600CreateSystemDynamicEntity(context.Background()).OBPv600CreateSystemDynamicEntityRequest(oBPv600CreateSystemDynamicEntityRequest).Execute()
+	resp, r, err := apiClient.APIAPI.CreateSystemDynamicEntity(context.Background()).CreateSystemDynamicEntityRequest(createSystemDynamicEntityRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600CreateSystemDynamicEntity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.CreateSystemDynamicEntity``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600CreateSystemDynamicEntity`: OBPv600CreateSystemDynamicEntity200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600CreateSystemDynamicEntity`: %v\n", resp)
+	// response from `CreateSystemDynamicEntity`: CreateSystemDynamicEntity200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.CreateSystemDynamicEntity`: %v\n", resp)
 }
 ```
 
@@ -5064,16 +1290,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600CreateSystemDynamicEntityRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateSystemDynamicEntityRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600CreateSystemDynamicEntityRequest** | [**OBPv600CreateSystemDynamicEntityRequest**](OBPv600CreateSystemDynamicEntityRequest.md) | Request body | 
+ **createSystemDynamicEntityRequest** | [**CreateSystemDynamicEntityRequest**](CreateSystemDynamicEntityRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600CreateSystemDynamicEntity200Response**](OBPv600CreateSystemDynamicEntity200Response.md)
+[**CreateSystemDynamicEntity200Response**](CreateSystemDynamicEntity200Response.md)
 
 ### Authorization
 
@@ -5089,9 +1315,81 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600DeleteApiProduct
+## CreateSystemLevelEndpointTag
 
-> OBPv600DeleteApiProduct(ctx, bankid, apiproductcode).Execute()
+> UpdateSystemLevelEndpointTag200Response CreateSystemLevelEndpointTag(ctx, operationid).UpdateSystemLevelEndpointTagRequest(updateSystemLevelEndpointTagRequest).Execute()
+
+Create System Level Endpoint Tag
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	operationid := "operationid_example" // string | The OPERATIONID identifier
+	updateSystemLevelEndpointTagRequest := *openapiclient.NewUpdateSystemLevelEndpointTagRequest() // UpdateSystemLevelEndpointTagRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.CreateSystemLevelEndpointTag(context.Background(), operationid).UpdateSystemLevelEndpointTagRequest(updateSystemLevelEndpointTagRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.CreateSystemLevelEndpointTag``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateSystemLevelEndpointTag`: UpdateSystemLevelEndpointTag200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.CreateSystemLevelEndpointTag`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**operationid** | **string** | The OPERATIONID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateSystemLevelEndpointTagRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **updateSystemLevelEndpointTagRequest** | [**UpdateSystemLevelEndpointTagRequest**](UpdateSystemLevelEndpointTagRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateSystemLevelEndpointTag200Response**](UpdateSystemLevelEndpointTag200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteApiProduct
+
+> DeleteApiProduct(ctx, bankid, apiproductcode).Execute()
 
 Delete Api Product
 
@@ -5115,9 +1413,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv600DeleteApiProduct(context.Background(), bankid, apiproductcode).Execute()
+	r, err := apiClient.APIAPI.DeleteApiProduct(context.Background(), bankid, apiproductcode).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600DeleteApiProduct``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.DeleteApiProduct``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -5134,7 +1432,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600DeleteApiProductRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteApiProductRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5160,9 +1458,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600DeleteApiProductAttribute
+## DeleteApiProductAttribute
 
-> OBPv600DeleteApiProductAttribute(ctx, bankid, apiproductcode, apiproductattributeid).Execute()
+> DeleteApiProductAttribute(ctx, bankid, apiproductcode, apiproductattributeid).Execute()
 
 Delete Api Product Attribute
 
@@ -5187,9 +1485,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv600DeleteApiProductAttribute(context.Background(), bankid, apiproductcode, apiproductattributeid).Execute()
+	r, err := apiClient.APIAPI.DeleteApiProductAttribute(context.Background(), bankid, apiproductcode, apiproductattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600DeleteApiProductAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.DeleteApiProductAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -5207,7 +1505,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600DeleteApiProductAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteApiProductAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5234,9 +1532,372 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600DeleteFeaturedApiCollection
+## DeleteBankLevelDynamicEndpoint
 
-> OBPv600DeleteFeaturedApiCollection(ctx, apicollectionid).Execute()
+> DeleteBankLevelDynamicEndpoint(ctx, bankid, dynamicendpointid).Execute()
+
+ Delete Bank Level Dynamic Endpoint
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	dynamicendpointid := "dynamicendpointid_example" // string | The DYNAMICENDPOINTID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.DeleteBankLevelDynamicEndpoint(context.Background(), bankid, dynamicendpointid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.DeleteBankLevelDynamicEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**dynamicendpointid** | **string** | The DYNAMICENDPOINTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteBankLevelDynamicEndpointRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteBankLevelDynamicEntity
+
+> DeleteBankLevelDynamicEntity(ctx, bankid, dynamicentityid).Execute()
+
+Delete Bank Level Dynamic Entity
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	dynamicentityid := "dynamicentityid_example" // string | The DYNAMICENTITYID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.DeleteBankLevelDynamicEntity(context.Background(), bankid, dynamicentityid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.DeleteBankLevelDynamicEntity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**dynamicentityid** | **string** | The DYNAMICENTITYID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteBankLevelDynamicEntityRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteBankLevelEndpointTag
+
+> DeleteSystemLevelEndpointTag200Response DeleteBankLevelEndpointTag(ctx, bankid, operationid, endpointtagid).Execute()
+
+Delete Bank Level Endpoint Tag
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	operationid := "operationid_example" // string | The OPERATIONID identifier
+	endpointtagid := "endpointtagid_example" // string | The ENDPOINTTAGID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.DeleteBankLevelEndpointTag(context.Background(), bankid, operationid, endpointtagid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.DeleteBankLevelEndpointTag``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteBankLevelEndpointTag`: DeleteSystemLevelEndpointTag200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.DeleteBankLevelEndpointTag`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**operationid** | **string** | The OPERATIONID identifier | 
+**endpointtagid** | **string** | The ENDPOINTTAGID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteBankLevelEndpointTagRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**DeleteSystemLevelEndpointTag200Response**](DeleteSystemLevelEndpointTag200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteCounterpartyAttribute
+
+> DeleteCounterpartyAttribute(ctx, bankid, accountid, counterpartyid, counterpartyattributeid).Execute()
+
+Delete Counterparty Attribute
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	counterpartyid := "counterpartyid_example" // string | The COUNTERPARTYID identifier
+	counterpartyattributeid := "counterpartyattributeid_example" // string | The COUNTERPARTYATTRIBUTEID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.DeleteCounterpartyAttribute(context.Background(), bankid, accountid, counterpartyid, counterpartyattributeid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.DeleteCounterpartyAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**counterpartyid** | **string** | The COUNTERPARTYID identifier | 
+**counterpartyattributeid** | **string** | The COUNTERPARTYATTRIBUTEID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteCounterpartyAttributeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteDynamicEndpoint
+
+> DeleteDynamicEndpoint(ctx, dynamicendpointid).Execute()
+
+ Delete Dynamic Endpoint
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	dynamicendpointid := "dynamicendpointid_example" // string | The DYNAMICENDPOINTID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.DeleteDynamicEndpoint(context.Background(), dynamicendpointid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.DeleteDynamicEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**dynamicendpointid** | **string** | The DYNAMICENDPOINTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteDynamicEndpointRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteFeaturedApiCollection
+
+> DeleteFeaturedApiCollection(ctx, apicollectionid).Execute()
 
 Delete Featured Api Collection
 
@@ -5259,9 +1920,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv600DeleteFeaturedApiCollection(context.Background(), apicollectionid).Execute()
+	r, err := apiClient.APIAPI.DeleteFeaturedApiCollection(context.Background(), apicollectionid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600DeleteFeaturedApiCollection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.DeleteFeaturedApiCollection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -5277,7 +1938,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600DeleteFeaturedApiCollectionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteFeaturedApiCollectionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5302,9 +1963,420 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600DeleteSystemDynamicEntityCascade
+## DeleteMethodRouting
 
-> OBPv600DeleteSystemDynamicEntityCascade(ctx, dynamicentityid).Execute()
+> DeleteMethodRouting(ctx, methodroutingid).Execute()
+
+Delete MethodRouting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	methodroutingid := "methodroutingid_example" // string | The METHODROUTINGID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.DeleteMethodRouting(context.Background(), methodroutingid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.DeleteMethodRouting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**methodroutingid** | **string** | The METHODROUTINGID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteMethodRoutingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteMyDynamicEndpoint
+
+> DeleteMyDynamicEndpoint(ctx, dynamicendpointid).Execute()
+
+Delete My Dynamic Endpoint
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	dynamicendpointid := "dynamicendpointid_example" // string | The DYNAMICENDPOINTID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.DeleteMyDynamicEndpoint(context.Background(), dynamicendpointid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.DeleteMyDynamicEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**dynamicendpointid** | **string** | The DYNAMICENDPOINTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteMyDynamicEndpointRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteMyDynamicEntity
+
+> DeleteMyDynamicEntity(ctx, dynamicentityid).Execute()
+
+Delete My Dynamic Entity
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	dynamicentityid := "dynamicentityid_example" // string | The DYNAMICENTITYID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.DeleteMyDynamicEntity(context.Background(), dynamicentityid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.DeleteMyDynamicEntity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**dynamicentityid** | **string** | The DYNAMICENTITYID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteMyDynamicEntityRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteRegulatedEntity
+
+> DeleteRegulatedEntity(ctx, regulatedentityid).Execute()
+
+Delete Regulated Entity
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	regulatedentityid := "regulatedentityid_example" // string | The REGULATEDENTITYID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.DeleteRegulatedEntity(context.Background(), regulatedentityid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.DeleteRegulatedEntity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**regulatedentityid** | **string** | The REGULATEDENTITYID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteRegulatedEntityRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteRegulatedEntityAttribute
+
+> DeleteRegulatedEntityAttribute(ctx, regulatedentityid, regulatedentityattributeid).Execute()
+
+Delete Regulated Entity Attribute
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	regulatedentityid := "regulatedentityid_example" // string | The REGULATEDENTITYID identifier
+	regulatedentityattributeid := "regulatedentityattributeid_example" // string | The REGULATEDENTITYATTRIBUTEID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.DeleteRegulatedEntityAttribute(context.Background(), regulatedentityid, regulatedentityattributeid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.DeleteRegulatedEntityAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**regulatedentityid** | **string** | The REGULATEDENTITYID identifier | 
+**regulatedentityattributeid** | **string** | The REGULATEDENTITYATTRIBUTEID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteRegulatedEntityAttributeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteSystemDynamicEntity
+
+> DeleteSystemDynamicEntity(ctx, dynamicentityid).Execute()
+
+Delete System Level Dynamic Entity
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	dynamicentityid := "dynamicentityid_example" // string | The DYNAMICENTITYID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.DeleteSystemDynamicEntity(context.Background(), dynamicentityid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.DeleteSystemDynamicEntity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**dynamicentityid** | **string** | The DYNAMICENTITYID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteSystemDynamicEntityRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteSystemDynamicEntityCascade
+
+> DeleteSystemDynamicEntityCascade(ctx, dynamicentityid).Execute()
 
 Delete System Level Dynamic Entity Cascade
 
@@ -5327,9 +2399,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv600DeleteSystemDynamicEntityCascade(context.Background(), dynamicentityid).Execute()
+	r, err := apiClient.APIAPI.DeleteSystemDynamicEntityCascade(context.Background(), dynamicentityid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600DeleteSystemDynamicEntityCascade``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.DeleteSystemDynamicEntityCascade``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -5345,7 +2417,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600DeleteSystemDynamicEntityCascadeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteSystemDynamicEntityCascadeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5370,9 +2442,420 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetApiProduct
+## DeleteSystemLevelEndpointTag
 
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems OBPv600GetApiProduct(ctx, bankid, apiproductcode).Execute()
+> DeleteSystemLevelEndpointTag200Response DeleteSystemLevelEndpointTag(ctx, operationid, endpointtagid).Execute()
+
+Delete System Level Endpoint Tag
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	operationid := "operationid_example" // string | The OPERATIONID identifier
+	endpointtagid := "endpointtagid_example" // string | The ENDPOINTTAGID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.DeleteSystemLevelEndpointTag(context.Background(), operationid, endpointtagid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.DeleteSystemLevelEndpointTag``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteSystemLevelEndpointTag`: DeleteSystemLevelEndpointTag200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.DeleteSystemLevelEndpointTag`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**operationid** | **string** | The OPERATIONID identifier | 
+**endpointtagid** | **string** | The ENDPOINTTAGID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteSystemLevelEndpointTagRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**DeleteSystemLevelEndpointTag200Response**](DeleteSystemLevelEndpointTag200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ElasticSearchMetrics
+
+> map[string]interface{} ElasticSearchMetrics(ctx).Execute()
+
+Search API Metrics via Elasticsearch
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.ElasticSearchMetrics(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.ElasticSearchMetrics``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ElasticSearchMetrics`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.ElasticSearchMetrics`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiElasticSearchMetricsRequest struct via the builder pattern
+
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAdapterInfo
+
+> GetAdapterInfo200Response GetAdapterInfo(ctx).Execute()
+
+Get Adapter Info
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetAdapterInfo(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetAdapterInfo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAdapterInfo`: GetAdapterInfo200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetAdapterInfo`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAdapterInfoRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetAdapterInfo200Response**](GetAdapterInfo200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAdapterInfoForBank
+
+> GetMapperDatabaseInfo200Response GetAdapterInfoForBank(ctx, bankid).Execute()
+
+Get Adapter Info for a bank
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetAdapterInfoForBank(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetAdapterInfoForBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAdapterInfoForBank`: GetMapperDatabaseInfo200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetAdapterInfoForBank`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAdapterInfoForBankRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetMapperDatabaseInfo200Response**](GetMapperDatabaseInfo200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAllCounterpartyAttributes
+
+> GetAllCounterpartyAttributes200Response GetAllCounterpartyAttributes(ctx, bankid, accountid, counterpartyid).Execute()
+
+Get All Counterparty Attributes
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	counterpartyid := "counterpartyid_example" // string | The COUNTERPARTYID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetAllCounterpartyAttributes(context.Background(), bankid, accountid, counterpartyid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetAllCounterpartyAttributes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAllCounterpartyAttributes`: GetAllCounterpartyAttributes200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetAllCounterpartyAttributes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**counterpartyid** | **string** | The COUNTERPARTYID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAllCounterpartyAttributesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**GetAllCounterpartyAttributes200Response**](GetAllCounterpartyAttributes200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAllRegulatedEntityAttributes
+
+> GetAllRegulatedEntityAttributes200Response GetAllRegulatedEntityAttributes(ctx, regulatedentityid).Execute()
+
+Get All Regulated Entity Attributes
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	regulatedentityid := "regulatedentityid_example" // string | The REGULATEDENTITYID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetAllRegulatedEntityAttributes(context.Background(), regulatedentityid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetAllRegulatedEntityAttributes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAllRegulatedEntityAttributes`: GetAllRegulatedEntityAttributes200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetAllRegulatedEntityAttributes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**regulatedentityid** | **string** | The REGULATEDENTITYID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAllRegulatedEntityAttributesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetAllRegulatedEntityAttributes200Response**](GetAllRegulatedEntityAttributes200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetApiProduct
+
+> GetApiProducts200ResponseApiProductsInner GetApiProduct(ctx, bankid, apiproductcode).Execute()
 
 Get Api Product
 
@@ -5396,13 +2879,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetApiProduct(context.Background(), bankid, apiproductcode).Execute()
+	resp, r, err := apiClient.APIAPI.GetApiProduct(context.Background(), bankid, apiproductcode).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetApiProduct``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetApiProduct``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetApiProduct`: OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetApiProduct`: %v\n", resp)
+	// response from `GetApiProduct`: GetApiProducts200ResponseApiProductsInner
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetApiProduct`: %v\n", resp)
 }
 ```
 
@@ -5417,7 +2900,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetApiProductRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetApiProductRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5427,7 +2910,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -5443,9 +2926,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv600GetApiProductAttribute
+## GetApiProductAttribute
 
-> OBPv600CreateApiProductAttribute200Response OBPv600GetApiProductAttribute(ctx, bankid, apiproductcode, apiproductattributeid).Execute()
+> CreateApiProductAttribute200Response GetApiProductAttribute(ctx, bankid, apiproductcode, apiproductattributeid).Execute()
 
 Get Api Product Attribute
 
@@ -5470,13 +2953,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetApiProductAttribute(context.Background(), bankid, apiproductcode, apiproductattributeid).Execute()
+	resp, r, err := apiClient.APIAPI.GetApiProductAttribute(context.Background(), bankid, apiproductcode, apiproductattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetApiProductAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetApiProductAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetApiProductAttribute`: OBPv600CreateApiProductAttribute200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetApiProductAttribute`: %v\n", resp)
+	// response from `GetApiProductAttribute`: CreateApiProductAttribute200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetApiProductAttribute`: %v\n", resp)
 }
 ```
 
@@ -5492,7 +2975,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetApiProductAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetApiProductAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5503,7 +2986,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -5519,9 +3002,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv600GetApiProducts
+## GetApiProducts
 
-> OBPv600GetApiProducts200Response OBPv600GetApiProducts(ctx, bankid).Execute()
+> GetApiProducts200Response GetApiProducts(ctx, bankid).Execute()
 
 Get Api Products
 
@@ -5544,13 +3027,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetApiProducts(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.APIAPI.GetApiProducts(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetApiProducts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetApiProducts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetApiProducts`: OBPv600GetApiProducts200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetApiProducts`: %v\n", resp)
+	// response from `GetApiProducts`: GetApiProducts200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetApiProducts`: %v\n", resp)
 }
 ```
 
@@ -5564,7 +3047,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetApiProductsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetApiProductsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5573,7 +3056,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetApiProducts200Response**](OBPv600GetApiProducts200Response.md)
+[**GetApiProducts200Response**](GetApiProducts200Response.md)
 
 ### Authorization
 
@@ -5589,9 +3072,131 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv600GetAvailablePersonalDynamicEntities
+## GetApiTags
 
-> OBPv600GetAvailablePersonalDynamicEntities200Response OBPv600GetAvailablePersonalDynamicEntities(ctx).Execute()
+> GetApiTags200Response GetApiTags(ctx).Execute()
+
+Get API Tags
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetApiTags(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetApiTags``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetApiTags`: GetApiTags200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetApiTags`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetApiTagsRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetApiTags200Response**](GetApiTags200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAppDirectory
+
+> GetAppDirectory200Response GetAppDirectory(ctx).Execute()
+
+Get App Directory
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetAppDirectory(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetAppDirectory``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAppDirectory`: GetAppDirectory200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetAppDirectory`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAppDirectoryRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetAppDirectory200Response**](GetAppDirectory200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAvailablePersonalDynamicEntities
+
+> GetAvailablePersonalDynamicEntities200Response GetAvailablePersonalDynamicEntities(ctx).Execute()
 
 Get Available Personal Dynamic Entities
 
@@ -5613,13 +3218,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetAvailablePersonalDynamicEntities(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetAvailablePersonalDynamicEntities(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetAvailablePersonalDynamicEntities``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetAvailablePersonalDynamicEntities``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetAvailablePersonalDynamicEntities`: OBPv600GetAvailablePersonalDynamicEntities200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetAvailablePersonalDynamicEntities`: %v\n", resp)
+	// response from `GetAvailablePersonalDynamicEntities`: GetAvailablePersonalDynamicEntities200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetAvailablePersonalDynamicEntities`: %v\n", resp)
 }
 ```
 
@@ -5629,12 +3234,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetAvailablePersonalDynamicEntitiesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAvailablePersonalDynamicEntitiesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -5650,9 +3255,152 @@ Other parameters are passed through a pointer to a apiOBPv600GetAvailablePersona
 [[Back to README]](../README.md)
 
 
-## OBPv600GetBankLevelDynamicEntities
+## GetBankLevelDynamicEndpoint
 
-> OBPv600GetBankLevelDynamicEntities200Response OBPv600GetBankLevelDynamicEntities(ctx, bankid).Execute()
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner GetBankLevelDynamicEndpoint(ctx, bankid, dynamicendpointid).Execute()
+
+ Get Bank Level Dynamic Endpoint
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	dynamicendpointid := "dynamicendpointid_example" // string | The DYNAMICENDPOINTID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetBankLevelDynamicEndpoint(context.Background(), bankid, dynamicendpointid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetBankLevelDynamicEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetBankLevelDynamicEndpoint`: GetDynamicEndpoints200ResponseDynamicEndpointsInner
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetBankLevelDynamicEndpoint`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**dynamicendpointid** | **string** | The DYNAMICENDPOINTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetBankLevelDynamicEndpointRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetBankLevelDynamicEndpoints
+
+> GetDynamicEndpoints200Response GetBankLevelDynamicEndpoints(ctx, bankid).Execute()
+
+Get Bank Level Dynamic Endpoints
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetBankLevelDynamicEndpoints(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetBankLevelDynamicEndpoints``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetBankLevelDynamicEndpoints`: GetDynamicEndpoints200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetBankLevelDynamicEndpoints`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetBankLevelDynamicEndpointsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetBankLevelDynamicEntities
+
+> GetBankLevelDynamicEntities200Response GetBankLevelDynamicEntities(ctx, bankid).Execute()
 
 Get Bank Level Dynamic Entities
 
@@ -5675,13 +3423,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetBankLevelDynamicEntities(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.APIAPI.GetBankLevelDynamicEntities(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetBankLevelDynamicEntities``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetBankLevelDynamicEntities``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetBankLevelDynamicEntities`: OBPv600GetBankLevelDynamicEntities200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetBankLevelDynamicEntities`: %v\n", resp)
+	// response from `GetBankLevelDynamicEntities`: GetBankLevelDynamicEntities200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetBankLevelDynamicEntities`: %v\n", resp)
 }
 ```
 
@@ -5695,7 +3443,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetBankLevelDynamicEntitiesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetBankLevelDynamicEntitiesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5704,7 +3452,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetBankLevelDynamicEntities200Response**](OBPv600GetBankLevelDynamicEntities200Response.md)
+[**GetBankLevelDynamicEntities200Response**](GetBankLevelDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -5720,9 +3468,153 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetCacheConfig
+## GetBankLevelDynamicResourceDocsObp
 
-> OBPv600GetCacheConfig200Response OBPv600GetCacheConfig(ctx).Execute()
+> GetBankLevelDynamicResourceDocsObp(ctx, bankid, apiversion).Execute()
+
+Get Bank Level Dynamic Resource Docs
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	apiversion := "apiversion_example" // string | The APIVERSION identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.GetBankLevelDynamicResourceDocsObp(context.Background(), bankid, apiversion).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetBankLevelDynamicResourceDocsObp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**apiversion** | **string** | The APIVERSION identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetBankLevelDynamicResourceDocsObpRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetBankLevelEndpointTags
+
+> GetBankLevelEndpointTags200Response GetBankLevelEndpointTags(ctx, bankid, operationid).Execute()
+
+Get Bank Level Endpoint Tags
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	operationid := "operationid_example" // string | The OPERATIONID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetBankLevelEndpointTags(context.Background(), bankid, operationid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetBankLevelEndpointTags``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetBankLevelEndpointTags`: GetBankLevelEndpointTags200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetBankLevelEndpointTags`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**operationid** | **string** | The OPERATIONID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetBankLevelEndpointTagsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetBankLevelEndpointTags200Response**](GetBankLevelEndpointTags200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCacheConfig
+
+> GetCacheConfig200Response GetCacheConfig(ctx).Execute()
 
 Get Cache Configuration
 
@@ -5744,13 +3636,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetCacheConfig(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetCacheConfig(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetCacheConfig``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetCacheConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetCacheConfig`: OBPv600GetCacheConfig200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetCacheConfig`: %v\n", resp)
+	// response from `GetCacheConfig`: GetCacheConfig200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetCacheConfig`: %v\n", resp)
 }
 ```
 
@@ -5760,12 +3652,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetCacheConfigRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCacheConfigRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Response.md)
+[**GetCacheConfig200Response**](GetCacheConfig200Response.md)
 
 ### Authorization
 
@@ -5781,9 +3673,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetCacheConfigReque
 [[Back to README]](../README.md)
 
 
-## OBPv600GetCacheInfo
+## GetCacheInfo
 
-> OBPv600GetCacheInfo200Response OBPv600GetCacheInfo(ctx).Execute()
+> GetCacheInfo200Response GetCacheInfo(ctx).Execute()
 
 Get Cache Information
 
@@ -5805,13 +3697,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetCacheInfo(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetCacheInfo(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetCacheInfo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetCacheInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetCacheInfo`: OBPv600GetCacheInfo200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetCacheInfo`: %v\n", resp)
+	// response from `GetCacheInfo`: GetCacheInfo200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetCacheInfo`: %v\n", resp)
 }
 ```
 
@@ -5821,12 +3713,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetCacheInfoRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCacheInfoRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.md)
+[**GetCacheInfo200Response**](GetCacheInfo200Response.md)
 
 ### Authorization
 
@@ -5842,9 +3734,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetCacheInfoRequest
 [[Back to README]](../README.md)
 
 
-## OBPv600GetCacheNamespaces
+## GetCacheNamespaces
 
-> OBPv600GetCacheNamespaces200Response OBPv600GetCacheNamespaces(ctx).Execute()
+> GetCacheNamespaces200Response GetCacheNamespaces(ctx).Execute()
 
 Get Cache Namespaces
 
@@ -5866,13 +3758,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetCacheNamespaces(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetCacheNamespaces(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetCacheNamespaces``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetCacheNamespaces``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetCacheNamespaces`: OBPv600GetCacheNamespaces200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetCacheNamespaces`: %v\n", resp)
+	// response from `GetCacheNamespaces`: GetCacheNamespaces200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetCacheNamespaces`: %v\n", resp)
 }
 ```
 
@@ -5882,12 +3774,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetCacheNamespacesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCacheNamespacesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces200Response.md)
+[**GetCacheNamespaces200Response**](GetCacheNamespaces200Response.md)
 
 ### Authorization
 
@@ -5903,9 +3795,68 @@ Other parameters are passed through a pointer to a apiOBPv600GetCacheNamespacesR
 [[Back to README]](../README.md)
 
 
-## OBPv600GetConfigProps
+## GetCallContext
 
-> OBPv600GetConfigProps200Response OBPv600GetConfigProps(ctx).Execute()
+> GetCallContext(ctx).Execute()
+
+Get the Call Context of a current call
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.GetCallContext(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetCallContext``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCallContextRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetConfigProps
+
+> GetConfigProps200Response GetConfigProps(ctx).Execute()
 
 Get Config Props
 
@@ -5927,13 +3878,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetConfigProps(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetConfigProps(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetConfigProps``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetConfigProps``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetConfigProps`: OBPv600GetConfigProps200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetConfigProps`: %v\n", resp)
+	// response from `GetConfigProps`: GetConfigProps200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetConfigProps`: %v\n", resp)
 }
 ```
 
@@ -5943,12 +3894,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetConfigPropsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetConfigPropsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetConfigProps200Response**](OBPv600GetConfigProps200Response.md)
+[**GetConfigProps200Response**](GetConfigProps200Response.md)
 
 ### Authorization
 
@@ -5964,9 +3915,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetConfigPropsReque
 [[Back to README]](../README.md)
 
 
-## OBPv600GetConnectorCallCounts
+## GetConnectorCallCounts
 
-> OBPv600GetConnectorCallCounts200Response OBPv600GetConnectorCallCounts(ctx).Execute()
+> GetConnectorCallCounts200Response GetConnectorCallCounts(ctx).Execute()
 
 Get Connector Call Counts
 
@@ -5988,13 +3939,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetConnectorCallCounts(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetConnectorCallCounts(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetConnectorCallCounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetConnectorCallCounts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetConnectorCallCounts`: OBPv600GetConnectorCallCounts200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetConnectorCallCounts`: %v\n", resp)
+	// response from `GetConnectorCallCounts`: GetConnectorCallCounts200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetConnectorCallCounts`: %v\n", resp)
 }
 ```
 
@@ -6004,12 +3955,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetConnectorCallCountsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetConnectorCallCountsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetConnectorCallCounts200Response**](OBPv600GetConnectorCallCounts200Response.md)
+[**GetConnectorCallCounts200Response**](GetConnectorCallCounts200Response.md)
 
 ### Authorization
 
@@ -6025,9 +3976,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetConnectorCallCou
 [[Back to README]](../README.md)
 
 
-## OBPv600GetConnectorMethodNames
+## GetConnectorMethodNames
 
-> OBPv600GetConnectorMethodNames200Response OBPv600GetConnectorMethodNames(ctx).Execute()
+> GetConnectorMethodNames200Response GetConnectorMethodNames(ctx).Execute()
 
 Get Connector Method Names
 
@@ -6049,13 +4000,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetConnectorMethodNames(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetConnectorMethodNames(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetConnectorMethodNames``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetConnectorMethodNames``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetConnectorMethodNames`: OBPv600GetConnectorMethodNames200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetConnectorMethodNames`: %v\n", resp)
+	// response from `GetConnectorMethodNames`: GetConnectorMethodNames200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetConnectorMethodNames`: %v\n", resp)
 }
 ```
 
@@ -6065,12 +4016,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetConnectorMethodNamesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetConnectorMethodNamesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetConnectorMethodNames200Response**](OBPv600GetConnectorMethodNames200Response.md)
+[**GetConnectorMethodNames200Response**](GetConnectorMethodNames200Response.md)
 
 ### Authorization
 
@@ -6086,9 +4037,70 @@ Other parameters are passed through a pointer to a apiOBPv600GetConnectorMethodN
 [[Back to README]](../README.md)
 
 
-## OBPv600GetConnectorTraces
+## GetConnectorMetrics
 
-> OBPv600GetConnectorTraces200Response OBPv600GetConnectorTraces(ctx).Execute()
+> GetConnectorMetrics200Response GetConnectorMetrics(ctx).Execute()
+
+Get Connector Metrics
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetConnectorMetrics(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetConnectorMetrics``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetConnectorMetrics`: GetConnectorMetrics200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetConnectorMetrics`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetConnectorMetricsRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetConnectorMetrics200Response**](GetConnectorMetrics200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetConnectorTraces
+
+> GetConnectorTraces200Response GetConnectorTraces(ctx).Execute()
 
 Get Connector Traces
 
@@ -6110,13 +4122,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetConnectorTraces(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetConnectorTraces(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetConnectorTraces``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetConnectorTraces``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetConnectorTraces`: OBPv600GetConnectorTraces200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetConnectorTraces`: %v\n", resp)
+	// response from `GetConnectorTraces`: GetConnectorTraces200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetConnectorTraces`: %v\n", resp)
 }
 ```
 
@@ -6126,12 +4138,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetConnectorTracesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetConnectorTracesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetConnectorTraces200Response**](OBPv600GetConnectorTraces200Response.md)
+[**GetConnectorTraces200Response**](GetConnectorTraces200Response.md)
 
 ### Authorization
 
@@ -6147,9 +4159,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetConnectorTracesR
 [[Back to README]](../README.md)
 
 
-## OBPv600GetConnectors
+## GetConnectors
 
-> OBPv600GetConnectors200Response OBPv600GetConnectors(ctx).Execute()
+> GetConnectors200Response GetConnectors(ctx).Execute()
 
 Get Connectors
 
@@ -6171,13 +4183,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetConnectors(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetConnectors(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetConnectors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetConnectors``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetConnectors`: OBPv600GetConnectors200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetConnectors`: %v\n", resp)
+	// response from `GetConnectors`: GetConnectors200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetConnectors`: %v\n", resp)
 }
 ```
 
@@ -6187,12 +4199,91 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetConnectorsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetConnectorsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetConnectors200Response**](OBPv600GetConnectors200Response.md)
+[**GetConnectors200Response**](GetConnectors200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCounterpartyAttributeById
+
+> GetAllCounterpartyAttributes200ResponseAttributesInner GetCounterpartyAttributeById(ctx, bankid, accountid, counterpartyid, counterpartyattributeid).Execute()
+
+Get Counterparty Attribute By ID
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	counterpartyid := "counterpartyid_example" // string | The COUNTERPARTYID identifier
+	counterpartyattributeid := "counterpartyattributeid_example" // string | The COUNTERPARTYATTRIBUTEID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetCounterpartyAttributeById(context.Background(), bankid, accountid, counterpartyid, counterpartyattributeid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetCounterpartyAttributeById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCounterpartyAttributeById`: GetAllCounterpartyAttributes200ResponseAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetCounterpartyAttributeById`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**counterpartyid** | **string** | The COUNTERPARTYID identifier | 
+**counterpartyattributeid** | **string** | The COUNTERPARTYATTRIBUTEID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCounterpartyAttributeByIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+[**GetAllCounterpartyAttributes200ResponseAttributesInner**](GetAllCounterpartyAttributes200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -6208,9 +4299,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetConnectorsReques
 [[Back to README]](../README.md)
 
 
-## OBPv600GetCurrentConsumer
+## GetCurrentConsumer
 
-> OBPv600GetCurrentConsumer200Response OBPv600GetCurrentConsumer(ctx).Execute()
+> GetCurrentConsumer200Response GetCurrentConsumer(ctx).Execute()
 
 Get Current Consumer
 
@@ -6232,13 +4323,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetCurrentConsumer(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetCurrentConsumer(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetCurrentConsumer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetCurrentConsumer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetCurrentConsumer`: OBPv600GetCurrentConsumer200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetCurrentConsumer`: %v\n", resp)
+	// response from `GetCurrentConsumer`: GetCurrentConsumer200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetCurrentConsumer`: %v\n", resp)
 }
 ```
 
@@ -6248,12 +4339,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetCurrentConsumerRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCurrentConsumerRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetCurrentConsumer200Response**](OBPv600GetCurrentConsumer200Response.md)
+[**GetCurrentConsumer200Response**](GetCurrentConsumer200Response.md)
 
 ### Authorization
 
@@ -6269,9 +4360,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetCurrentConsumerR
 [[Back to README]](../README.md)
 
 
-## OBPv600GetDatabasePoolInfo
+## GetDatabasePoolInfo
 
-> OBPv600GetDatabasePoolInfo200Response OBPv600GetDatabasePoolInfo(ctx).Execute()
+> GetDatabasePoolInfo200Response GetDatabasePoolInfo(ctx).Execute()
 
 Get Database Pool Information
 
@@ -6293,13 +4384,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetDatabasePoolInfo(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetDatabasePoolInfo(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetDatabasePoolInfo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetDatabasePoolInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetDatabasePoolInfo`: OBPv600GetDatabasePoolInfo200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetDatabasePoolInfo`: %v\n", resp)
+	// response from `GetDatabasePoolInfo`: GetDatabasePoolInfo200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetDatabasePoolInfo`: %v\n", resp)
 }
 ```
 
@@ -6309,12 +4400,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetDatabasePoolInfoRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetDatabasePoolInfoRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetDatabasePoolInfo200Response**](OBPv600GetDatabasePoolInfo200Response.md)
+[**GetDatabasePoolInfo200Response**](GetDatabasePoolInfo200Response.md)
 
 ### Authorization
 
@@ -6330,9 +4421,140 @@ Other parameters are passed through a pointer to a apiOBPv600GetDatabasePoolInfo
 [[Back to README]](../README.md)
 
 
-## OBPv600GetDynamicEntityDiagnostics
+## GetDynamicEndpoint
 
-> OBPv600GetDynamicEntityDiagnostics200Response OBPv600GetDynamicEntityDiagnostics(ctx).Execute()
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner GetDynamicEndpoint(ctx, dynamicendpointid).Execute()
+
+Get Dynamic Endpoint
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	dynamicendpointid := "dynamicendpointid_example" // string | The DYNAMICENDPOINTID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetDynamicEndpoint(context.Background(), dynamicendpointid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetDynamicEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDynamicEndpoint`: GetDynamicEndpoints200ResponseDynamicEndpointsInner
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetDynamicEndpoint`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**dynamicendpointid** | **string** | The DYNAMICENDPOINTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetDynamicEndpointRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetDynamicEndpoints
+
+> GetDynamicEndpoints200Response GetDynamicEndpoints(ctx).Execute()
+
+ Get Dynamic Endpoints
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetDynamicEndpoints(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetDynamicEndpoints``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDynamicEndpoints`: GetDynamicEndpoints200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetDynamicEndpoints`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetDynamicEndpointsRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetDynamicEntityDiagnostics
+
+> GetDynamicEntityDiagnostics200Response GetDynamicEntityDiagnostics(ctx).Execute()
 
 Get Dynamic Entity Diagnostics
 
@@ -6354,13 +4576,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetDynamicEntityDiagnostics(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetDynamicEntityDiagnostics(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetDynamicEntityDiagnostics``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetDynamicEntityDiagnostics``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetDynamicEntityDiagnostics`: OBPv600GetDynamicEntityDiagnostics200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetDynamicEntityDiagnostics`: %v\n", resp)
+	// response from `GetDynamicEntityDiagnostics`: GetDynamicEntityDiagnostics200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetDynamicEntityDiagnostics`: %v\n", resp)
 }
 ```
 
@@ -6370,12 +4592,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetDynamicEntityDiagnosticsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetDynamicEntityDiagnosticsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetDynamicEntityDiagnostics200Response**](OBPv600GetDynamicEntityDiagnostics200Response.md)
+[**GetDynamicEntityDiagnostics200Response**](GetDynamicEntityDiagnostics200Response.md)
 
 ### Authorization
 
@@ -6391,9 +4613,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetDynamicEntityDia
 [[Back to README]](../README.md)
 
 
-## OBPv600GetFeaturedApiCollectionsAdmin
+## GetFeaturedApiCollectionsAdmin
 
-> OBPv600GetFeaturedApiCollectionsAdmin200Response OBPv600GetFeaturedApiCollectionsAdmin(ctx).Execute()
+> GetFeaturedApiCollectionsAdmin200Response GetFeaturedApiCollectionsAdmin(ctx).Execute()
 
 Get Featured Api Collections (Admin)
 
@@ -6415,13 +4637,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetFeaturedApiCollectionsAdmin(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetFeaturedApiCollectionsAdmin(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetFeaturedApiCollectionsAdmin``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetFeaturedApiCollectionsAdmin``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetFeaturedApiCollectionsAdmin`: OBPv600GetFeaturedApiCollectionsAdmin200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetFeaturedApiCollectionsAdmin`: %v\n", resp)
+	// response from `GetFeaturedApiCollectionsAdmin`: GetFeaturedApiCollectionsAdmin200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetFeaturedApiCollectionsAdmin`: %v\n", resp)
 }
 ```
 
@@ -6431,12 +4653,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetFeaturedApiCollectionsAdminRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetFeaturedApiCollectionsAdminRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetFeaturedApiCollectionsAdmin200Response**](OBPv600GetFeaturedApiCollectionsAdmin200Response.md)
+[**GetFeaturedApiCollectionsAdmin200Response**](GetFeaturedApiCollectionsAdmin200Response.md)
 
 ### Authorization
 
@@ -6452,9 +4674,201 @@ Other parameters are passed through a pointer to a apiOBPv600GetFeaturedApiColle
 [[Back to README]](../README.md)
 
 
-## OBPv600GetMessageDocsJsonSchema
+## GetFeatures
 
-> OBPv600GetMessageDocsJsonSchema(ctx, connector).Execute()
+> GetFeatures200Response GetFeatures(ctx).Execute()
+
+Get Features
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetFeatures(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetFeatures``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetFeatures`: GetFeatures200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetFeatures`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetFeaturesRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetFeatures200Response**](GetFeatures200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetMapperDatabaseInfo
+
+> GetMapperDatabaseInfo200Response GetMapperDatabaseInfo(ctx).Execute()
+
+Get Mapper Database Info
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetMapperDatabaseInfo(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetMapperDatabaseInfo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMapperDatabaseInfo`: GetMapperDatabaseInfo200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetMapperDatabaseInfo`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMapperDatabaseInfoRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetMapperDatabaseInfo200Response**](GetMapperDatabaseInfo200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetMessageDocs
+
+> GetMessageDocs200Response GetMessageDocs(ctx, connector).Execute()
+
+Get Message Docs
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	connector := "connector_example" // string | The CONNECTOR identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetMessageDocs(context.Background(), connector).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetMessageDocs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMessageDocs`: GetMessageDocs200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetMessageDocs`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**connector** | **string** | The CONNECTOR identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMessageDocsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetMessageDocs200Response**](GetMessageDocs200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetMessageDocsJsonSchema
+
+> GetMessageDocsJsonSchema(ctx, connector).Execute()
 
 Get Message Docs as JSON Schema
 
@@ -6477,9 +4891,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.APIAPI.OBPv600GetMessageDocsJsonSchema(context.Background(), connector).Execute()
+	r, err := apiClient.APIAPI.GetMessageDocsJsonSchema(context.Background(), connector).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetMessageDocsJsonSchema``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetMessageDocsJsonSchema``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -6495,7 +4909,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetMessageDocsJsonSchemaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMessageDocsJsonSchemaRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6520,9 +4934,138 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv600GetMetrics
+## GetMessageDocsSwagger
 
-> OBPv600GetMetrics200Response OBPv600GetMetrics(ctx).Execute()
+> GetMessageDocsSwagger(ctx, connector).Execute()
+
+Get Message Docs Swagger
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	connector := "connector_example" // string | The CONNECTOR identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.GetMessageDocsSwagger(context.Background(), connector).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetMessageDocsSwagger``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**connector** | **string** | The CONNECTOR identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMessageDocsSwaggerRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetMethodRoutings
+
+> GetMethodRoutings200Response GetMethodRoutings(ctx).Execute()
+
+Get MethodRoutings
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetMethodRoutings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetMethodRoutings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMethodRoutings`: GetMethodRoutings200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetMethodRoutings`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMethodRoutingsRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetMethodRoutings200Response**](GetMethodRoutings200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetMetrics
+
+> GetMetrics200Response GetMetrics(ctx).Execute()
 
 Get Metrics
 
@@ -6544,13 +5087,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetMetrics(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetMetrics(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetMetrics``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetMetrics``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetMetrics`: OBPv600GetMetrics200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetMetrics`: %v\n", resp)
+	// response from `GetMetrics`: GetMetrics200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetMetrics`: %v\n", resp)
 }
 ```
 
@@ -6560,12 +5103,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetMetricsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMetricsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetMetrics200Response**](OBPv600GetMetrics200Response.md)
+[**GetMetrics200Response**](GetMetrics200Response.md)
 
 ### Authorization
 
@@ -6581,9 +5124,79 @@ Other parameters are passed through a pointer to a apiOBPv600GetMetricsRequest s
 [[Back to README]](../README.md)
 
 
-## OBPv600GetMigrations
+## GetMetricsAtBank
 
-> OBPv600GetMigrations200Response OBPv600GetMigrations(ctx).Execute()
+> GetMetricsAtBank200Response GetMetricsAtBank(ctx, bankid).Execute()
+
+Get Metrics at Bank
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetMetricsAtBank(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetMetricsAtBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMetricsAtBank`: GetMetricsAtBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetMetricsAtBank`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMetricsAtBankRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetMetricsAtBank200Response**](GetMetricsAtBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetMigrations
+
+> GetMigrations200Response GetMigrations(ctx).Execute()
 
 Get Database Migrations
 
@@ -6605,13 +5218,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetMigrations(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetMigrations(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetMigrations``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetMigrations``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetMigrations`: OBPv600GetMigrations200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetMigrations`: %v\n", resp)
+	// response from `GetMigrations`: GetMigrations200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetMigrations`: %v\n", resp)
 }
 ```
 
@@ -6621,12 +5234,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetMigrationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMigrationsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetMigrations200Response**](OBPv600GetMigrations200Response.md)
+[**GetMigrations200Response**](GetMigrations200Response.md)
 
 ### Authorization
 
@@ -6642,9 +5255,70 @@ Other parameters are passed through a pointer to a apiOBPv600GetMigrationsReques
 [[Back to README]](../README.md)
 
 
-## OBPv600GetMyDynamicEntities
+## GetMyDynamicEndpoints
 
-> OBPv600GetAvailablePersonalDynamicEntities200Response OBPv600GetMyDynamicEntities(ctx).Execute()
+> GetDynamicEndpoints200Response GetMyDynamicEndpoints(ctx).Execute()
+
+Get My Dynamic Endpoints
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetMyDynamicEndpoints(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetMyDynamicEndpoints``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMyDynamicEndpoints`: GetDynamicEndpoints200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetMyDynamicEndpoints`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMyDynamicEndpointsRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetMyDynamicEntities
+
+> GetAvailablePersonalDynamicEntities200Response GetMyDynamicEntities(ctx).Execute()
 
 Get My Dynamic Entities
 
@@ -6666,13 +5340,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetMyDynamicEntities(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetMyDynamicEntities(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetMyDynamicEntities``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetMyDynamicEntities``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetMyDynamicEntities`: OBPv600GetAvailablePersonalDynamicEntities200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetMyDynamicEntities`: %v\n", resp)
+	// response from `GetMyDynamicEntities`: GetAvailablePersonalDynamicEntities200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetMyDynamicEntities`: %v\n", resp)
 }
 ```
 
@@ -6682,12 +5356,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetMyDynamicEntitiesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMyDynamicEntitiesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -6703,9 +5377,192 @@ Other parameters are passed through a pointer to a apiOBPv600GetMyDynamicEntitie
 [[Back to README]](../README.md)
 
 
-## OBPv600GetPopularApis
+## GetOAuth2ServerJWKsURIs
 
-> OBPv600GetPopularApis200Response OBPv600GetPopularApis(ctx).Execute()
+> GetOAuth2ServerJWKsURIs200Response GetOAuth2ServerJWKsURIs(ctx).Execute()
+
+Get JSON Web Key (JWK) URIs
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetOAuth2ServerJWKsURIs(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetOAuth2ServerJWKsURIs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOAuth2ServerJWKsURIs`: GetOAuth2ServerJWKsURIs200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetOAuth2ServerJWKsURIs`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetOAuth2ServerJWKsURIsRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetOAuth2ServerJWKsURIs200Response**](GetOAuth2ServerJWKsURIs200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetOAuth2ServerWellKnown
+
+> GetOAuth2ServerJWKsURIs200Response GetOAuth2ServerWellKnown(ctx).Execute()
+
+Get Well Known URIs
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetOAuth2ServerWellKnown(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetOAuth2ServerWellKnown``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOAuth2ServerWellKnown`: GetOAuth2ServerJWKsURIs200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetOAuth2ServerWellKnown`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetOAuth2ServerWellKnownRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetOAuth2ServerJWKsURIs200Response**](GetOAuth2ServerJWKsURIs200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetObpConnectorLoopback
+
+> GetObpConnectorLoopback200Response GetObpConnectorLoopback(ctx).Execute()
+
+Get Connector Status (Loopback)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetObpConnectorLoopback(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetObpConnectorLoopback``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetObpConnectorLoopback`: GetObpConnectorLoopback200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetObpConnectorLoopback`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetObpConnectorLoopbackRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetObpConnectorLoopback200Response**](GetObpConnectorLoopback200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPopularApis
+
+> GetPopularApis200Response GetPopularApis(ctx).Execute()
 
 Get Popular Endpoints
 
@@ -6727,13 +5584,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetPopularApis(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetPopularApis(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetPopularApis``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetPopularApis``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetPopularApis`: OBPv600GetPopularApis200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetPopularApis`: %v\n", resp)
+	// response from `GetPopularApis`: GetPopularApis200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetPopularApis`: %v\n", resp)
 }
 ```
 
@@ -6743,12 +5600,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetPopularApisRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetPopularApisRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetPopularApis200Response**](OBPv600GetPopularApis200Response.md)
+[**GetPopularApis200Response**](GetPopularApis200Response.md)
 
 ### Authorization
 
@@ -6764,9 +5621,70 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv600GetReferenceTypes
+## GetRateLimitingInfo
 
-> OBPv600GetReferenceTypes200Response OBPv600GetReferenceTypes(ctx).Execute()
+> GetRateLimitingInfo200Response GetRateLimitingInfo(ctx).Execute()
+
+Get Rate Limiting Info
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetRateLimitingInfo(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetRateLimitingInfo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRateLimitingInfo`: GetRateLimitingInfo200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetRateLimitingInfo`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetRateLimitingInfoRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetRateLimitingInfo200Response**](GetRateLimitingInfo200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetReferenceTypes
+
+> GetReferenceTypes200Response GetReferenceTypes(ctx).Execute()
 
 Get Reference Types for Dynamic Entities
 
@@ -6788,13 +5706,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetReferenceTypes(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetReferenceTypes(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetReferenceTypes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetReferenceTypes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetReferenceTypes`: OBPv600GetReferenceTypes200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetReferenceTypes`: %v\n", resp)
+	// response from `GetReferenceTypes`: GetReferenceTypes200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetReferenceTypes`: %v\n", resp)
 }
 ```
 
@@ -6804,12 +5722,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetReferenceTypesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetReferenceTypesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetReferenceTypes200Response**](OBPv600GetReferenceTypes200Response.md)
+[**GetReferenceTypes200Response**](GetReferenceTypes200Response.md)
 
 ### Authorization
 
@@ -6825,9 +5743,356 @@ Other parameters are passed through a pointer to a apiOBPv600GetReferenceTypesRe
 [[Back to README]](../README.md)
 
 
-## OBPv600GetScannedApiVersions
+## GetRegulatedEntityAttributeById
 
-> OBPv600GetScannedApiVersions200Response OBPv600GetScannedApiVersions(ctx).Execute()
+> GetRegulatedEntityAttributeById200Response GetRegulatedEntityAttributeById(ctx, regulatedentityid, regulatedentityattributeid).Execute()
+
+Get Regulated Entity Attribute By ID
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	regulatedentityid := "regulatedentityid_example" // string | The REGULATEDENTITYID identifier
+	regulatedentityattributeid := "regulatedentityattributeid_example" // string | The REGULATEDENTITYATTRIBUTEID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetRegulatedEntityAttributeById(context.Background(), regulatedentityid, regulatedentityattributeid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetRegulatedEntityAttributeById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRegulatedEntityAttributeById`: GetRegulatedEntityAttributeById200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetRegulatedEntityAttributeById`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**regulatedentityid** | **string** | The REGULATEDENTITYID identifier | 
+**regulatedentityattributeid** | **string** | The REGULATEDENTITYATTRIBUTEID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetRegulatedEntityAttributeByIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetRegulatedEntityAttributeById200Response**](GetRegulatedEntityAttributeById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetRegulatedEntityById
+
+> GetRegulatedEntityById200Response GetRegulatedEntityById(ctx, regulatedentityid).Execute()
+
+Get Regulated Entity
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	regulatedentityid := "regulatedentityid_example" // string | The REGULATEDENTITYID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetRegulatedEntityById(context.Background(), regulatedentityid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetRegulatedEntityById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRegulatedEntityById`: GetRegulatedEntityById200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetRegulatedEntityById`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**regulatedentityid** | **string** | The REGULATEDENTITYID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetRegulatedEntityByIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetRegulatedEntityById200Response**](GetRegulatedEntityById200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetResourceDocsObp
+
+> GetResourceDocsObp(ctx, apiversion).Execute()
+
+Get Resource Docs
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	apiversion := "apiversion_example" // string | The APIVERSION identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.GetResourceDocsObp(context.Background(), apiversion).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetResourceDocsObp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**apiversion** | **string** | The APIVERSION identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetResourceDocsObpRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetResourceDocsOpenAPI31
+
+> GetResourceDocsOpenAPI31(ctx, apiversion).Execute()
+
+Get OpenAPI 3.1 documentation
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	apiversion := "apiversion_example" // string | The APIVERSION identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.GetResourceDocsOpenAPI31(context.Background(), apiversion).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetResourceDocsOpenAPI31``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**apiversion** | **string** | The APIVERSION identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetResourceDocsOpenAPI31Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetResourceDocsSwagger
+
+> GetResourceDocsSwagger(ctx, apiversion).Execute()
+
+Get Swagger documentation
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	apiversion := "apiversion_example" // string | The APIVERSION identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.GetResourceDocsSwagger(context.Background(), apiversion).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetResourceDocsSwagger``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**apiversion** | **string** | The APIVERSION identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetResourceDocsSwaggerRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetScannedApiVersions
+
+> GetScannedApiVersions200Response GetScannedApiVersions(ctx).Execute()
 
 Get Scanned API Versions
 
@@ -6849,13 +6114,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetScannedApiVersions(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetScannedApiVersions(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetScannedApiVersions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetScannedApiVersions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetScannedApiVersions`: OBPv600GetScannedApiVersions200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetScannedApiVersions`: %v\n", resp)
+	// response from `GetScannedApiVersions`: GetScannedApiVersions200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetScannedApiVersions`: %v\n", resp)
 }
 ```
 
@@ -6865,12 +6130,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetScannedApiVersionsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetScannedApiVersionsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetScannedApiVersions200Response**](OBPv600GetScannedApiVersions200Response.md)
+[**GetScannedApiVersions200Response**](GetScannedApiVersions200Response.md)
 
 ### Authorization
 
@@ -6886,9 +6151,70 @@ Other parameters are passed through a pointer to a apiOBPv600GetScannedApiVersio
 [[Back to README]](../README.md)
 
 
-## OBPv600GetStoredProcedureConnectorHealth
+## GetServerJWK
 
-> OBPv600GetStoredProcedureConnectorHealth200Response OBPv600GetStoredProcedureConnectorHealth(ctx).Execute()
+> GetServerJWK200Response GetServerJWK(ctx).Execute()
+
+Get JSON Web Key (JWK)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetServerJWK(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetServerJWK``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetServerJWK`: GetServerJWK200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetServerJWK`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetServerJWKRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetServerJWK200Response**](GetServerJWK200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetStoredProcedureConnectorHealth
+
+> GetStoredProcedureConnectorHealth200Response GetStoredProcedureConnectorHealth(ctx).Execute()
 
 Get Stored Procedure Connector Health
 
@@ -6910,13 +6236,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetStoredProcedureConnectorHealth(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetStoredProcedureConnectorHealth(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetStoredProcedureConnectorHealth``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetStoredProcedureConnectorHealth``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetStoredProcedureConnectorHealth`: OBPv600GetStoredProcedureConnectorHealth200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetStoredProcedureConnectorHealth`: %v\n", resp)
+	// response from `GetStoredProcedureConnectorHealth`: GetStoredProcedureConnectorHealth200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetStoredProcedureConnectorHealth`: %v\n", resp)
 }
 ```
 
@@ -6926,12 +6252,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetStoredProcedureConnectorHealthRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetStoredProcedureConnectorHealthRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetStoredProcedureConnectorHealth200Response**](OBPv600GetStoredProcedureConnectorHealth200Response.md)
+[**GetStoredProcedureConnectorHealth200Response**](GetStoredProcedureConnectorHealth200Response.md)
 
 ### Authorization
 
@@ -6947,9 +6273,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetStoredProcedureC
 [[Back to README]](../README.md)
 
 
-## OBPv600GetSystemDynamicEntities
+## GetSystemDynamicEntities
 
-> OBPv600GetSystemDynamicEntities200Response OBPv600GetSystemDynamicEntities(ctx).Execute()
+> GetSystemDynamicEntities200Response GetSystemDynamicEntities(ctx).Execute()
 
 Get System Dynamic Entities
 
@@ -6971,13 +6297,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetSystemDynamicEntities(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetSystemDynamicEntities(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetSystemDynamicEntities``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetSystemDynamicEntities``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetSystemDynamicEntities`: OBPv600GetSystemDynamicEntities200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetSystemDynamicEntities`: %v\n", resp)
+	// response from `GetSystemDynamicEntities`: GetSystemDynamicEntities200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetSystemDynamicEntities`: %v\n", resp)
 }
 ```
 
@@ -6987,12 +6313,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetSystemDynamicEntitiesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSystemDynamicEntitiesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetSystemDynamicEntities200Response**](OBPv600GetSystemDynamicEntities200Response.md)
+[**GetSystemDynamicEntities200Response**](GetSystemDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -7008,9 +6334,79 @@ Other parameters are passed through a pointer to a apiOBPv600GetSystemDynamicEnt
 [[Back to README]](../README.md)
 
 
-## OBPv600GetTopAPIs
+## GetSystemLevelEndpointTags
 
-> OBPv600GetTopAPIs200Response OBPv600GetTopAPIs(ctx).Execute()
+> GetBankLevelEndpointTags200Response GetSystemLevelEndpointTags(ctx, operationid).Execute()
+
+Get System Level Endpoint Tags
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	operationid := "operationid_example" // string | The OPERATIONID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.GetSystemLevelEndpointTags(context.Background(), operationid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetSystemLevelEndpointTags``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSystemLevelEndpointTags`: GetBankLevelEndpointTags200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetSystemLevelEndpointTags`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**operationid** | **string** | The OPERATIONID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSystemLevelEndpointTagsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetBankLevelEndpointTags200Response**](GetBankLevelEndpointTags200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetTopAPIs
+
+> GetTopAPIs200Response GetTopAPIs(ctx).Execute()
 
 Get Top APIs
 
@@ -7032,13 +6428,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600GetTopAPIs(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.GetTopAPIs(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600GetTopAPIs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.GetTopAPIs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetTopAPIs`: OBPv600GetTopAPIs200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600GetTopAPIs`: %v\n", resp)
+	// response from `GetTopAPIs`: GetTopAPIs200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.GetTopAPIs`: %v\n", resp)
 }
 ```
 
@@ -7048,12 +6444,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetTopAPIsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTopAPIsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetTopAPIs200Response**](OBPv600GetTopAPIs200Response.md)
+[**GetTopAPIs200Response**](GetTopAPIs200Response.md)
 
 ### Authorization
 
@@ -7069,9 +6465,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetTopAPIsRequest s
 [[Back to README]](../README.md)
 
 
-## OBPv600InvalidateCacheNamespace
+## InvalidateCacheNamespace
 
-> OBPv600InvalidateCacheNamespace200Response OBPv600InvalidateCacheNamespace(ctx).OBPv600InvalidateCacheNamespaceRequest(oBPv600InvalidateCacheNamespaceRequest).Execute()
+> InvalidateCacheNamespace200Response InvalidateCacheNamespace(ctx).InvalidateCacheNamespaceRequest(invalidateCacheNamespaceRequest).Execute()
 
 Invalidate Cache Namespace
 
@@ -7090,17 +6486,17 @@ import (
 )
 
 func main() {
-	oBPv600InvalidateCacheNamespaceRequest := *openapiclient.NewOBPv600InvalidateCacheNamespaceRequest("Type_example", *openapiclient.NewOBPv600InvalidateCacheNamespaceRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600InvalidateCacheNamespaceRequest | Request body
+	invalidateCacheNamespaceRequest := *openapiclient.NewInvalidateCacheNamespaceRequest() // InvalidateCacheNamespaceRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600InvalidateCacheNamespace(context.Background()).OBPv600InvalidateCacheNamespaceRequest(oBPv600InvalidateCacheNamespaceRequest).Execute()
+	resp, r, err := apiClient.APIAPI.InvalidateCacheNamespace(context.Background()).InvalidateCacheNamespaceRequest(invalidateCacheNamespaceRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600InvalidateCacheNamespace``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.InvalidateCacheNamespace``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600InvalidateCacheNamespace`: OBPv600InvalidateCacheNamespace200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600InvalidateCacheNamespace`: %v\n", resp)
+	// response from `InvalidateCacheNamespace`: InvalidateCacheNamespace200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.InvalidateCacheNamespace`: %v\n", resp)
 }
 ```
 
@@ -7110,16 +6506,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600InvalidateCacheNamespaceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiInvalidateCacheNamespaceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600InvalidateCacheNamespaceRequest** | [**OBPv600InvalidateCacheNamespaceRequest**](OBPv600InvalidateCacheNamespaceRequest.md) | Request body | 
+ **invalidateCacheNamespaceRequest** | [**InvalidateCacheNamespaceRequest**](InvalidateCacheNamespaceRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600InvalidateCacheNamespace200Response**](OBPv600InvalidateCacheNamespace200Response.md)
+[**InvalidateCacheNamespace200Response**](InvalidateCacheNamespace200Response.md)
 
 ### Authorization
 
@@ -7135,9 +6531,424 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600Root
+## LogCacheAllEndpoint
 
-> OBPv600Root200Response OBPv600Root(ctx).Execute()
+> LogCacheAllEndpoint(ctx).Execute()
+
+Get All Level Log Cache
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.LogCacheAllEndpoint(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.LogCacheAllEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLogCacheAllEndpointRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## LogCacheDebugEndpoint
+
+> LogCacheDebugEndpoint(ctx).Execute()
+
+Get Debug Level Log Cache
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.LogCacheDebugEndpoint(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.LogCacheDebugEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLogCacheDebugEndpointRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## LogCacheErrorEndpoint
+
+> LogCacheErrorEndpoint(ctx).Execute()
+
+Get Error Level Log Cache
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.LogCacheErrorEndpoint(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.LogCacheErrorEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLogCacheErrorEndpointRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## LogCacheInfoEndpoint
+
+> LogCacheInfoEndpoint(ctx).Execute()
+
+Get Info Level Log Cache
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.LogCacheInfoEndpoint(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.LogCacheInfoEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLogCacheInfoEndpointRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## LogCacheTraceEndpoint
+
+> LogCacheTraceEndpoint(ctx).Execute()
+
+Get Trace Level Log Cache
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.LogCacheTraceEndpoint(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.LogCacheTraceEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLogCacheTraceEndpointRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## LogCacheWarningEndpoint
+
+> LogCacheWarningEndpoint(ctx).Execute()
+
+Get Warning Level Log Cache
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.LogCacheWarningEndpoint(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.LogCacheWarningEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLogCacheWarningEndpointRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## RegulatedEntities
+
+> RegulatedEntities200Response RegulatedEntities(ctx).Execute()
+
+Get Regulated Entities
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.RegulatedEntities(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.RegulatedEntities``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RegulatedEntities`: RegulatedEntities200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.RegulatedEntities`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiRegulatedEntitiesRequest struct via the builder pattern
+
+
+### Return type
+
+[**RegulatedEntities200Response**](RegulatedEntities200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## Root
+
+> Root200Response Root(ctx).Execute()
 
 Get API Info (root)
 
@@ -7159,13 +6970,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600Root(context.Background()).Execute()
+	resp, r, err := apiClient.APIAPI.Root(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600Root``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.Root``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600Root`: OBPv600Root200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600Root`: %v\n", resp)
+	// response from `Root`: Root200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.Root`: %v\n", resp)
 }
 ```
 
@@ -7175,12 +6986,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600RootRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRootRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600Root200Response**](OBPv600Root200Response.md)
+[**Root200Response**](Root200Response.md)
 
 ### Authorization
 
@@ -7196,9 +7007,70 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv600UpdateApiProductAttribute
+## SuggestedSessionTimeout
 
-> OBPv600CreateApiProductAttribute200Response OBPv600UpdateApiProductAttribute(ctx, bankid, apiproductcode, apiproductattributeid).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+> SuggestedSessionTimeout200Response SuggestedSessionTimeout(ctx).Execute()
+
+Get Suggested Session Timeout
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.SuggestedSessionTimeout(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.SuggestedSessionTimeout``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SuggestedSessionTimeout`: SuggestedSessionTimeout200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.SuggestedSessionTimeout`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSuggestedSessionTimeoutRequest struct via the builder pattern
+
+
+### Return type
+
+[**SuggestedSessionTimeout200Response**](SuggestedSessionTimeout200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateApiProductAttribute
+
+> CreateApiProductAttribute200Response UpdateApiProductAttribute(ctx, bankid, apiproductcode, apiproductattributeid).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 
 Update Api Product Attribute
 
@@ -7220,17 +7092,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	apiproductcode := "apiproductcode_example" // string | The APIPRODUCTCODE identifier
 	apiproductattributeid := "apiproductattributeid_example" // string | The APIPRODUCTATTRIBUTEID identifier
-	oBPv510UpdateAtmAttributeRequest := *openapiclient.NewOBPv510UpdateAtmAttributeRequest("Type_example", *openapiclient.NewOBPv510UpdateAtmAttributeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateAtmAttributeRequest | Request body
+	updateAtmAttributeRequest := *openapiclient.NewUpdateAtmAttributeRequest() // UpdateAtmAttributeRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600UpdateApiProductAttribute(context.Background(), bankid, apiproductcode, apiproductattributeid).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+	resp, r, err := apiClient.APIAPI.UpdateApiProductAttribute(context.Background(), bankid, apiproductcode, apiproductattributeid).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600UpdateApiProductAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.UpdateApiProductAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600UpdateApiProductAttribute`: OBPv600CreateApiProductAttribute200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600UpdateApiProductAttribute`: %v\n", resp)
+	// response from `UpdateApiProductAttribute`: CreateApiProductAttribute200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.UpdateApiProductAttribute`: %v\n", resp)
 }
 ```
 
@@ -7246,7 +7118,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600UpdateApiProductAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateApiProductAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -7254,11 +7126,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -7274,9 +7146,84 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600UpdateBankLevelDynamicEntity
+## UpdateBankLevelDynamicEndpointHost
 
-> OBPv600UpdateBankLevelDynamicEntity200Response OBPv600UpdateBankLevelDynamicEntity(ctx, bankid, dynamicentityid).OBPv600UpdateSystemDynamicEntityRequest(oBPv600UpdateSystemDynamicEntityRequest).Execute()
+> UpdateBankLevelDynamicEndpointHostRequest UpdateBankLevelDynamicEndpointHost(ctx, bankid, dynamicendpointid).UpdateBankLevelDynamicEndpointHostRequest(updateBankLevelDynamicEndpointHostRequest).Execute()
+
+ Update Bank Level Dynamic Endpoint Host
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	dynamicendpointid := "dynamicendpointid_example" // string | The DYNAMICENDPOINTID identifier
+	updateBankLevelDynamicEndpointHostRequest := *openapiclient.NewUpdateBankLevelDynamicEndpointHostRequest() // UpdateBankLevelDynamicEndpointHostRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.UpdateBankLevelDynamicEndpointHost(context.Background(), bankid, dynamicendpointid).UpdateBankLevelDynamicEndpointHostRequest(updateBankLevelDynamicEndpointHostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.UpdateBankLevelDynamicEndpointHost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateBankLevelDynamicEndpointHost`: UpdateBankLevelDynamicEndpointHostRequest
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.UpdateBankLevelDynamicEndpointHost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**dynamicendpointid** | **string** | The DYNAMICENDPOINTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateBankLevelDynamicEndpointHostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateBankLevelDynamicEndpointHostRequest** | [**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateBankLevelDynamicEntity
+
+> UpdateBankLevelDynamicEntity200Response UpdateBankLevelDynamicEntity(ctx, bankid, dynamicentityid).UpdateSystemDynamicEntityRequest(updateSystemDynamicEntityRequest).Execute()
 
 Update Bank Level Dynamic Entity
 
@@ -7297,17 +7244,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	dynamicentityid := "dynamicentityid_example" // string | The DYNAMICENTITYID identifier
-	oBPv600UpdateSystemDynamicEntityRequest := *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequest("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestProperties(*openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchema("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")))), *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesProperties("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesProperties(*openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesTheme("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties(, , , , )), *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesTheme("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties(, , , , )), *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesNotificationsEnabled("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesNotificationsEnabledProperties(, , )))))), , , )) // OBPv600UpdateSystemDynamicEntityRequest | Request body
+	updateSystemDynamicEntityRequest := *openapiclient.NewUpdateSystemDynamicEntityRequest() // UpdateSystemDynamicEntityRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600UpdateBankLevelDynamicEntity(context.Background(), bankid, dynamicentityid).OBPv600UpdateSystemDynamicEntityRequest(oBPv600UpdateSystemDynamicEntityRequest).Execute()
+	resp, r, err := apiClient.APIAPI.UpdateBankLevelDynamicEntity(context.Background(), bankid, dynamicentityid).UpdateSystemDynamicEntityRequest(updateSystemDynamicEntityRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600UpdateBankLevelDynamicEntity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.UpdateBankLevelDynamicEntity``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600UpdateBankLevelDynamicEntity`: OBPv600UpdateBankLevelDynamicEntity200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600UpdateBankLevelDynamicEntity`: %v\n", resp)
+	// response from `UpdateBankLevelDynamicEntity`: UpdateBankLevelDynamicEntity200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.UpdateBankLevelDynamicEntity`: %v\n", resp)
 }
 ```
 
@@ -7322,18 +7269,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600UpdateBankLevelDynamicEntityRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateBankLevelDynamicEntityRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv600UpdateSystemDynamicEntityRequest** | [**OBPv600UpdateSystemDynamicEntityRequest**](OBPv600UpdateSystemDynamicEntityRequest.md) | Request body | 
+ **updateSystemDynamicEntityRequest** | [**UpdateSystemDynamicEntityRequest**](UpdateSystemDynamicEntityRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600UpdateBankLevelDynamicEntity200Response**](OBPv600UpdateBankLevelDynamicEntity200Response.md)
+[**UpdateBankLevelDynamicEntity200Response**](UpdateBankLevelDynamicEntity200Response.md)
 
 ### Authorization
 
@@ -7349,9 +7296,240 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600UpdateFeaturedApiCollection
+## UpdateBankLevelEndpointTag
 
-> OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems OBPv600UpdateFeaturedApiCollection(ctx, apicollectionid).OBPv600UpdateFeaturedApiCollectionRequest(oBPv600UpdateFeaturedApiCollectionRequest).Execute()
+> UpdateSystemLevelEndpointTag200Response UpdateBankLevelEndpointTag(ctx, bankid, operationid, endpointtagid).UpdateSystemLevelEndpointTagRequest(updateSystemLevelEndpointTagRequest).Execute()
+
+Update Bank Level Endpoint Tag
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	operationid := "operationid_example" // string | The OPERATIONID identifier
+	endpointtagid := "endpointtagid_example" // string | The ENDPOINTTAGID identifier
+	updateSystemLevelEndpointTagRequest := *openapiclient.NewUpdateSystemLevelEndpointTagRequest() // UpdateSystemLevelEndpointTagRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.UpdateBankLevelEndpointTag(context.Background(), bankid, operationid, endpointtagid).UpdateSystemLevelEndpointTagRequest(updateSystemLevelEndpointTagRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.UpdateBankLevelEndpointTag``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateBankLevelEndpointTag`: UpdateSystemLevelEndpointTag200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.UpdateBankLevelEndpointTag`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**operationid** | **string** | The OPERATIONID identifier | 
+**endpointtagid** | **string** | The ENDPOINTTAGID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateBankLevelEndpointTagRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **updateSystemLevelEndpointTagRequest** | [**UpdateSystemLevelEndpointTagRequest**](UpdateSystemLevelEndpointTagRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateSystemLevelEndpointTag200Response**](UpdateSystemLevelEndpointTag200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCounterpartyAttribute
+
+> GetAllCounterpartyAttributes200ResponseAttributesInner UpdateCounterpartyAttribute(ctx, bankid, accountid, counterpartyid, counterpartyattributeid).CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest).Execute()
+
+Update Counterparty Attribute
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	counterpartyid := "counterpartyid_example" // string | The COUNTERPARTYID identifier
+	counterpartyattributeid := "counterpartyattributeid_example" // string | The COUNTERPARTYATTRIBUTEID identifier
+	createCounterpartyAttributeRequest := *openapiclient.NewCreateCounterpartyAttributeRequest() // CreateCounterpartyAttributeRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.UpdateCounterpartyAttribute(context.Background(), bankid, accountid, counterpartyid, counterpartyattributeid).CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.UpdateCounterpartyAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCounterpartyAttribute`: GetAllCounterpartyAttributes200ResponseAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.UpdateCounterpartyAttribute`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**counterpartyid** | **string** | The COUNTERPARTYID identifier | 
+**counterpartyattributeid** | **string** | The COUNTERPARTYATTRIBUTEID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCounterpartyAttributeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **createCounterpartyAttributeRequest** | [**CreateCounterpartyAttributeRequest**](CreateCounterpartyAttributeRequest.md) | Request body | 
+
+### Return type
+
+[**GetAllCounterpartyAttributes200ResponseAttributesInner**](GetAllCounterpartyAttributes200ResponseAttributesInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateDynamicEndpointHost
+
+> UpdateBankLevelDynamicEndpointHostRequest UpdateDynamicEndpointHost(ctx, dynamicendpointid).UpdateBankLevelDynamicEndpointHostRequest(updateBankLevelDynamicEndpointHostRequest).Execute()
+
+ Update Dynamic Endpoint Host
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	dynamicendpointid := "dynamicendpointid_example" // string | The DYNAMICENDPOINTID identifier
+	updateBankLevelDynamicEndpointHostRequest := *openapiclient.NewUpdateBankLevelDynamicEndpointHostRequest() // UpdateBankLevelDynamicEndpointHostRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.UpdateDynamicEndpointHost(context.Background(), dynamicendpointid).UpdateBankLevelDynamicEndpointHostRequest(updateBankLevelDynamicEndpointHostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.UpdateDynamicEndpointHost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateDynamicEndpointHost`: UpdateBankLevelDynamicEndpointHostRequest
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.UpdateDynamicEndpointHost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**dynamicendpointid** | **string** | The DYNAMICENDPOINTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateDynamicEndpointHostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **updateBankLevelDynamicEndpointHostRequest** | [**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateFeaturedApiCollection
+
+> GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner UpdateFeaturedApiCollection(ctx, apicollectionid).UpdateFeaturedApiCollectionRequest(updateFeaturedApiCollectionRequest).Execute()
 
 Update Featured Api Collection
 
@@ -7371,17 +7549,17 @@ import (
 
 func main() {
 	apicollectionid := "apicollectionid_example" // string | The APICOLLECTIONID identifier
-	oBPv600UpdateFeaturedApiCollectionRequest := *openapiclient.NewOBPv600UpdateFeaturedApiCollectionRequest("Type_example", *openapiclient.NewOBPv600UpdateFeaturedApiCollectionRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600UpdateFeaturedApiCollectionRequest | Request body
+	updateFeaturedApiCollectionRequest := *openapiclient.NewUpdateFeaturedApiCollectionRequest() // UpdateFeaturedApiCollectionRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600UpdateFeaturedApiCollection(context.Background(), apicollectionid).OBPv600UpdateFeaturedApiCollectionRequest(oBPv600UpdateFeaturedApiCollectionRequest).Execute()
+	resp, r, err := apiClient.APIAPI.UpdateFeaturedApiCollection(context.Background(), apicollectionid).UpdateFeaturedApiCollectionRequest(updateFeaturedApiCollectionRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600UpdateFeaturedApiCollection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.UpdateFeaturedApiCollection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600UpdateFeaturedApiCollection`: OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600UpdateFeaturedApiCollection`: %v\n", resp)
+	// response from `UpdateFeaturedApiCollection`: GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.UpdateFeaturedApiCollection`: %v\n", resp)
 }
 ```
 
@@ -7395,17 +7573,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600UpdateFeaturedApiCollectionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateFeaturedApiCollectionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv600UpdateFeaturedApiCollectionRequest** | [**OBPv600UpdateFeaturedApiCollectionRequest**](OBPv600UpdateFeaturedApiCollectionRequest.md) | Request body | 
+ **updateFeaturedApiCollectionRequest** | [**UpdateFeaturedApiCollectionRequest**](UpdateFeaturedApiCollectionRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems**](OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems.md)
+[**GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner**](GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner.md)
 
 ### Authorization
 
@@ -7421,9 +7599,81 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600UpdateMyDynamicEntity
+## UpdateMethodRouting
 
-> OBPv600UpdateSystemDynamicEntity200Response OBPv600UpdateMyDynamicEntity(ctx, dynamicentityid).OBPv600UpdateSystemDynamicEntityRequest(oBPv600UpdateSystemDynamicEntityRequest).Execute()
+> GetMethodRoutings200ResponseMethodRoutingsInner UpdateMethodRouting(ctx, methodroutingid).CreateMethodRoutingRequest(createMethodRoutingRequest).Execute()
+
+Update MethodRouting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	methodroutingid := "methodroutingid_example" // string | The METHODROUTINGID identifier
+	createMethodRoutingRequest := *openapiclient.NewCreateMethodRoutingRequest() // CreateMethodRoutingRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.UpdateMethodRouting(context.Background(), methodroutingid).CreateMethodRoutingRequest(createMethodRoutingRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.UpdateMethodRouting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateMethodRouting`: GetMethodRoutings200ResponseMethodRoutingsInner
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.UpdateMethodRouting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**methodroutingid** | **string** | The METHODROUTINGID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateMethodRoutingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **createMethodRoutingRequest** | [**CreateMethodRoutingRequest**](CreateMethodRoutingRequest.md) | Request body | 
+
+### Return type
+
+[**GetMethodRoutings200ResponseMethodRoutingsInner**](GetMethodRoutings200ResponseMethodRoutingsInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateMyDynamicEntity
+
+> UpdateSystemDynamicEntity200Response UpdateMyDynamicEntity(ctx, dynamicentityid).UpdateSystemDynamicEntityRequest(updateSystemDynamicEntityRequest).Execute()
 
 Update My Dynamic Entity
 
@@ -7443,17 +7693,17 @@ import (
 
 func main() {
 	dynamicentityid := "dynamicentityid_example" // string | The DYNAMICENTITYID identifier
-	oBPv600UpdateSystemDynamicEntityRequest := *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequest("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestProperties(*openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchema("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")))), *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesProperties("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesProperties(*openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesTheme("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties(, , , , )), *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesTheme("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties(, , , , )), *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesNotificationsEnabled("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesNotificationsEnabledProperties(, , )))))), , , )) // OBPv600UpdateSystemDynamicEntityRequest | Request body
+	updateSystemDynamicEntityRequest := *openapiclient.NewUpdateSystemDynamicEntityRequest() // UpdateSystemDynamicEntityRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600UpdateMyDynamicEntity(context.Background(), dynamicentityid).OBPv600UpdateSystemDynamicEntityRequest(oBPv600UpdateSystemDynamicEntityRequest).Execute()
+	resp, r, err := apiClient.APIAPI.UpdateMyDynamicEntity(context.Background(), dynamicentityid).UpdateSystemDynamicEntityRequest(updateSystemDynamicEntityRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600UpdateMyDynamicEntity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.UpdateMyDynamicEntity``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600UpdateMyDynamicEntity`: OBPv600UpdateSystemDynamicEntity200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600UpdateMyDynamicEntity`: %v\n", resp)
+	// response from `UpdateMyDynamicEntity`: UpdateSystemDynamicEntity200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.UpdateMyDynamicEntity`: %v\n", resp)
 }
 ```
 
@@ -7467,17 +7717,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600UpdateMyDynamicEntityRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateMyDynamicEntityRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv600UpdateSystemDynamicEntityRequest** | [**OBPv600UpdateSystemDynamicEntityRequest**](OBPv600UpdateSystemDynamicEntityRequest.md) | Request body | 
+ **updateSystemDynamicEntityRequest** | [**UpdateSystemDynamicEntityRequest**](UpdateSystemDynamicEntityRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600UpdateSystemDynamicEntity200Response**](OBPv600UpdateSystemDynamicEntity200Response.md)
+[**UpdateSystemDynamicEntity200Response**](UpdateSystemDynamicEntity200Response.md)
 
 ### Authorization
 
@@ -7493,9 +7743,84 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600UpdateSystemDynamicEntity
+## UpdateRegulatedEntityAttribute
 
-> OBPv600UpdateSystemDynamicEntity200Response OBPv600UpdateSystemDynamicEntity(ctx, dynamicentityid).OBPv600UpdateSystemDynamicEntityRequest(oBPv600UpdateSystemDynamicEntityRequest).Execute()
+> GetRegulatedEntityAttributeById200Response UpdateRegulatedEntityAttribute(ctx, regulatedentityid, regulatedentityattributeid).CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest).Execute()
+
+Update Regulated Entity Attribute
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	regulatedentityid := "regulatedentityid_example" // string | The REGULATEDENTITYID identifier
+	regulatedentityattributeid := "regulatedentityattributeid_example" // string | The REGULATEDENTITYATTRIBUTEID identifier
+	createCounterpartyAttributeRequest := *openapiclient.NewCreateCounterpartyAttributeRequest() // CreateCounterpartyAttributeRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.UpdateRegulatedEntityAttribute(context.Background(), regulatedentityid, regulatedentityattributeid).CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.UpdateRegulatedEntityAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateRegulatedEntityAttribute`: GetRegulatedEntityAttributeById200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.UpdateRegulatedEntityAttribute`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**regulatedentityid** | **string** | The REGULATEDENTITYID identifier | 
+**regulatedentityattributeid** | **string** | The REGULATEDENTITYATTRIBUTEID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateRegulatedEntityAttributeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **createCounterpartyAttributeRequest** | [**CreateCounterpartyAttributeRequest**](CreateCounterpartyAttributeRequest.md) | Request body | 
+
+### Return type
+
+[**GetRegulatedEntityAttributeById200Response**](GetRegulatedEntityAttributeById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateSystemDynamicEntity
+
+> UpdateSystemDynamicEntity200Response UpdateSystemDynamicEntity(ctx, dynamicentityid).UpdateSystemDynamicEntityRequest(updateSystemDynamicEntityRequest).Execute()
 
 Update System Level Dynamic Entity
 
@@ -7515,17 +7840,17 @@ import (
 
 func main() {
 	dynamicentityid := "dynamicentityid_example" // string | The DYNAMICENTITYID identifier
-	oBPv600UpdateSystemDynamicEntityRequest := *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequest("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestProperties(*openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchema("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")))), *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesProperties("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesProperties(*openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesTheme("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties(, , , , )), *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesTheme("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties(, , , , )), *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesNotificationsEnabled("Type_example", *openapiclient.NewOBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesNotificationsEnabledProperties(, , )))))), , , )) // OBPv600UpdateSystemDynamicEntityRequest | Request body
+	updateSystemDynamicEntityRequest := *openapiclient.NewUpdateSystemDynamicEntityRequest() // UpdateSystemDynamicEntityRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.APIAPI.OBPv600UpdateSystemDynamicEntity(context.Background(), dynamicentityid).OBPv600UpdateSystemDynamicEntityRequest(oBPv600UpdateSystemDynamicEntityRequest).Execute()
+	resp, r, err := apiClient.APIAPI.UpdateSystemDynamicEntity(context.Background(), dynamicentityid).UpdateSystemDynamicEntityRequest(updateSystemDynamicEntityRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.OBPv600UpdateSystemDynamicEntity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.UpdateSystemDynamicEntity``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600UpdateSystemDynamicEntity`: OBPv600UpdateSystemDynamicEntity200Response
-	fmt.Fprintf(os.Stdout, "Response from `APIAPI.OBPv600UpdateSystemDynamicEntity`: %v\n", resp)
+	// response from `UpdateSystemDynamicEntity`: UpdateSystemDynamicEntity200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.UpdateSystemDynamicEntity`: %v\n", resp)
 }
 ```
 
@@ -7539,17 +7864,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600UpdateSystemDynamicEntityRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateSystemDynamicEntityRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv600UpdateSystemDynamicEntityRequest** | [**OBPv600UpdateSystemDynamicEntityRequest**](OBPv600UpdateSystemDynamicEntityRequest.md) | Request body | 
+ **updateSystemDynamicEntityRequest** | [**UpdateSystemDynamicEntityRequest**](UpdateSystemDynamicEntityRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600UpdateSystemDynamicEntity200Response**](OBPv600UpdateSystemDynamicEntity200Response.md)
+[**UpdateSystemDynamicEntity200Response**](UpdateSystemDynamicEntity200Response.md)
 
 ### Authorization
 
@@ -7558,6 +7883,201 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateSystemLevelEndpointTag
+
+> UpdateSystemLevelEndpointTag200Response UpdateSystemLevelEndpointTag(ctx, operationid, endpointtagid).UpdateSystemLevelEndpointTagRequest(updateSystemLevelEndpointTagRequest).Execute()
+
+Update System Level Endpoint Tag
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	operationid := "operationid_example" // string | The OPERATIONID identifier
+	endpointtagid := "endpointtagid_example" // string | The ENDPOINTTAGID identifier
+	updateSystemLevelEndpointTagRequest := *openapiclient.NewUpdateSystemLevelEndpointTagRequest() // UpdateSystemLevelEndpointTagRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.UpdateSystemLevelEndpointTag(context.Background(), operationid, endpointtagid).UpdateSystemLevelEndpointTagRequest(updateSystemLevelEndpointTagRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.UpdateSystemLevelEndpointTag``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSystemLevelEndpointTag`: UpdateSystemLevelEndpointTag200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.UpdateSystemLevelEndpointTag`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**operationid** | **string** | The OPERATIONID identifier | 
+**endpointtagid** | **string** | The ENDPOINTTAGID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateSystemLevelEndpointTagRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateSystemLevelEndpointTagRequest** | [**UpdateSystemLevelEndpointTagRequest**](UpdateSystemLevelEndpointTagRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateSystemLevelEndpointTag200Response**](UpdateSystemLevelEndpointTag200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VerifyRequestSignResponse
+
+> VerifyRequestSignResponse(ctx).Execute()
+
+Verify Request and Sign Response of a current call
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.APIAPI.VerifyRequestSignResponse(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.VerifyRequestSignResponse``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVerifyRequestSignResponseRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## WaitingForGodot
+
+> WaitingForGodot200Response WaitingForGodot(ctx).Execute()
+
+Waiting For Godot
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.APIAPI.WaitingForGodot(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `APIAPI.WaitingForGodot``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `WaitingForGodot`: WaitingForGodot200Response
+	fmt.Fprintf(os.Stdout, "Response from `APIAPI.WaitingForGodot`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiWaitingForGodotRequest struct via the builder pattern
+
+
+### Return type
+
+[**WaitingForGodot200Response**](WaitingForGodot200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

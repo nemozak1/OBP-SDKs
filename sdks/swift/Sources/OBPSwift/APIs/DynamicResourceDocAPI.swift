@@ -12,12 +12,12 @@ open class DynamicResourceDocAPI {
     /**
      Create Dynamic Resource Doc endpoint code
      
-     - parameter oBPv400BuildDynamicEndpointTemplateRequest: (body) Request body 
+     - parameter buildDynamicEndpointTemplateRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400BuildDynamicEndpointTemplate200Response
+     - returns: BuildDynamicEndpointTemplate200Response
      */
-    open class func oBPv400BuildDynamicEndpointTemplate(oBPv400BuildDynamicEndpointTemplateRequest: OBPv400BuildDynamicEndpointTemplateRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400BuildDynamicEndpointTemplate200Response {
-        return try await oBPv400BuildDynamicEndpointTemplateWithRequestBuilder(oBPv400BuildDynamicEndpointTemplateRequest: oBPv400BuildDynamicEndpointTemplateRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func buildDynamicEndpointTemplate(buildDynamicEndpointTemplateRequest: BuildDynamicEndpointTemplateRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> BuildDynamicEndpointTemplate200Response {
+        return try await buildDynamicEndpointTemplateWithRequestBuilder(buildDynamicEndpointTemplateRequest: buildDynamicEndpointTemplateRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -31,16 +31,16 @@ open class DynamicResourceDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
-     - parameter oBPv400BuildDynamicEndpointTemplateRequest: (body) Request body 
+     - parameter buildDynamicEndpointTemplateRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400BuildDynamicEndpointTemplate200Response> 
+     - returns: RequestBuilder<BuildDynamicEndpointTemplate200Response> 
      */
-    open class func oBPv400BuildDynamicEndpointTemplateWithRequestBuilder(oBPv400BuildDynamicEndpointTemplateRequest: OBPv400BuildDynamicEndpointTemplateRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400BuildDynamicEndpointTemplate200Response> {
+    open class func buildDynamicEndpointTemplateWithRequestBuilder(buildDynamicEndpointTemplateRequest: BuildDynamicEndpointTemplateRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<BuildDynamicEndpointTemplate200Response> {
         let localVariablePath = "/obp/v4.0.0/management/dynamic-resource-docs/endpoint-code"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400BuildDynamicEndpointTemplateRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: buildDynamicEndpointTemplateRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -50,7 +50,7 @@ open class DynamicResourceDocAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400BuildDynamicEndpointTemplate200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<BuildDynamicEndpointTemplate200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -59,12 +59,12 @@ open class DynamicResourceDocAPI {
      Create Bank Level Dynamic Resource Doc
      
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400UpdateBankLevelDynamicResourceDocRequest: (body) Request body 
+     - parameter updateBankLevelDynamicResourceDocRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetBankLevelDynamicResourceDoc200Response
+     - returns: GetBankLevelDynamicResourceDoc200Response
      */
-    open class func oBPv400CreateBankLevelDynamicResourceDoc(bankid: String, oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetBankLevelDynamicResourceDoc200Response {
-        return try await oBPv400CreateBankLevelDynamicResourceDocWithRequestBuilder(bankid: bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest: oBPv400UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createBankLevelDynamicResourceDoc(bankid: String, updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetBankLevelDynamicResourceDoc200Response {
+        return try await createBankLevelDynamicResourceDocWithRequestBuilder(bankid: bankid, updateBankLevelDynamicResourceDocRequest: updateBankLevelDynamicResourceDocRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -78,20 +78,20 @@ open class DynamicResourceDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400UpdateBankLevelDynamicResourceDocRequest: (body) Request body 
+     - parameter updateBankLevelDynamicResourceDocRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response> 
+     - returns: RequestBuilder<GetBankLevelDynamicResourceDoc200Response> 
      */
-    open class func oBPv400CreateBankLevelDynamicResourceDocWithRequestBuilder(bankid: String, oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response> {
+    open class func createBankLevelDynamicResourceDocWithRequestBuilder(bankid: String, updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetBankLevelDynamicResourceDoc200Response> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400UpdateBankLevelDynamicResourceDocRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateBankLevelDynamicResourceDocRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -101,7 +101,7 @@ open class DynamicResourceDocAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetBankLevelDynamicResourceDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -109,12 +109,12 @@ open class DynamicResourceDocAPI {
     /**
      Create Dynamic Resource Doc
      
-     - parameter oBPv400UpdateBankLevelDynamicResourceDocRequest: (body) Request body 
+     - parameter updateBankLevelDynamicResourceDocRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetBankLevelDynamicResourceDoc200Response
+     - returns: GetBankLevelDynamicResourceDoc200Response
      */
-    open class func oBPv400CreateDynamicResourceDoc(oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetBankLevelDynamicResourceDoc200Response {
-        return try await oBPv400CreateDynamicResourceDocWithRequestBuilder(oBPv400UpdateBankLevelDynamicResourceDocRequest: oBPv400UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetBankLevelDynamicResourceDoc200Response {
+        return try await createDynamicResourceDocWithRequestBuilder(updateBankLevelDynamicResourceDocRequest: updateBankLevelDynamicResourceDocRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -128,16 +128,16 @@ open class DynamicResourceDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
-     - parameter oBPv400UpdateBankLevelDynamicResourceDocRequest: (body) Request body 
+     - parameter updateBankLevelDynamicResourceDocRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response> 
+     - returns: RequestBuilder<GetBankLevelDynamicResourceDoc200Response> 
      */
-    open class func oBPv400CreateDynamicResourceDocWithRequestBuilder(oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response> {
+    open class func createDynamicResourceDocWithRequestBuilder(updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetBankLevelDynamicResourceDoc200Response> {
         let localVariablePath = "/obp/v4.0.0/management/dynamic-resource-docs"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400UpdateBankLevelDynamicResourceDocRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateBankLevelDynamicResourceDocRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -147,7 +147,7 @@ open class DynamicResourceDocAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetBankLevelDynamicResourceDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -159,8 +159,8 @@ open class DynamicResourceDocAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv400DeleteBankLevelDynamicResourceDoc(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv400DeleteBankLevelDynamicResourceDocWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteBankLevelDynamicResourceDoc(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteBankLevelDynamicResourceDocWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -174,13 +174,13 @@ open class DynamicResourceDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv400DeleteBankLevelDynamicResourceDocWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteBankLevelDynamicResourceDocWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -207,8 +207,8 @@ open class DynamicResourceDocAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv400DeleteDynamicResourceDoc(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv400DeleteDynamicResourceDocWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func deleteDynamicResourceDoc(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteDynamicResourceDocWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -222,12 +222,12 @@ open class DynamicResourceDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv400DeleteDynamicResourceDocWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteDynamicResourceDocWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         let localVariablePath = "/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -250,10 +250,10 @@ open class DynamicResourceDocAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllDynamicResourceDocs200Response
+     - returns: GetAllDynamicResourceDocs200Response
      */
-    open class func oBPv400GetAllBankLevelDynamicResourceDocs(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllDynamicResourceDocs200Response {
-        return try await oBPv400GetAllBankLevelDynamicResourceDocsWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
+    open class func getAllBankLevelDynamicResourceDocs(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllDynamicResourceDocs200Response {
+        return try await getAllBankLevelDynamicResourceDocsWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -267,13 +267,13 @@ open class DynamicResourceDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllDynamicResourceDocs200Response> 
+     - returns: RequestBuilder<GetAllDynamicResourceDocs200Response> 
      */
-    open class func oBPv400GetAllBankLevelDynamicResourceDocsWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllDynamicResourceDocs200Response> {
+    open class func getAllBankLevelDynamicResourceDocsWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllDynamicResourceDocs200Response> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -289,7 +289,7 @@ open class DynamicResourceDocAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllDynamicResourceDocs200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllDynamicResourceDocs200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -298,10 +298,10 @@ open class DynamicResourceDocAPI {
      Get all Dynamic Resource Docs
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllDynamicResourceDocs200Response
+     - returns: GetAllDynamicResourceDocs200Response
      */
-    open class func oBPv400GetAllDynamicResourceDocs(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllDynamicResourceDocs200Response {
-        return try await oBPv400GetAllDynamicResourceDocsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getAllDynamicResourceDocs(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllDynamicResourceDocs200Response {
+        return try await getAllDynamicResourceDocsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -315,12 +315,12 @@ open class DynamicResourceDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllDynamicResourceDocs200Response> 
+     - returns: RequestBuilder<GetAllDynamicResourceDocs200Response> 
      */
-    open class func oBPv400GetAllDynamicResourceDocsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllDynamicResourceDocs200Response> {
+    open class func getAllDynamicResourceDocsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllDynamicResourceDocs200Response> {
         let localVariablePath = "/obp/v4.0.0/management/dynamic-resource-docs"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -333,7 +333,7 @@ open class DynamicResourceDocAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllDynamicResourceDocs200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllDynamicResourceDocs200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -343,10 +343,10 @@ open class DynamicResourceDocAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetBankLevelDynamicResourceDoc200Response
+     - returns: GetBankLevelDynamicResourceDoc200Response
      */
-    open class func oBPv400GetBankLevelDynamicResourceDoc(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetBankLevelDynamicResourceDoc200Response {
-        return try await oBPv400GetBankLevelDynamicResourceDocWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
+    open class func getBankLevelDynamicResourceDoc(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetBankLevelDynamicResourceDoc200Response {
+        return try await getBankLevelDynamicResourceDocWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -360,13 +360,13 @@ open class DynamicResourceDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response> 
+     - returns: RequestBuilder<GetBankLevelDynamicResourceDoc200Response> 
      */
-    open class func oBPv400GetBankLevelDynamicResourceDocWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response> {
+    open class func getBankLevelDynamicResourceDocWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetBankLevelDynamicResourceDoc200Response> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -382,7 +382,7 @@ open class DynamicResourceDocAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetBankLevelDynamicResourceDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -391,10 +391,10 @@ open class DynamicResourceDocAPI {
      Get Dynamic Resource Doc by Id
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetBankLevelDynamicResourceDoc200Response
+     - returns: GetBankLevelDynamicResourceDoc200Response
      */
-    open class func oBPv400GetDynamicResourceDoc(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetBankLevelDynamicResourceDoc200Response {
-        return try await oBPv400GetDynamicResourceDocWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getDynamicResourceDoc(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetBankLevelDynamicResourceDoc200Response {
+        return try await getDynamicResourceDocWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -408,12 +408,12 @@ open class DynamicResourceDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response> 
+     - returns: RequestBuilder<GetBankLevelDynamicResourceDoc200Response> 
      */
-    open class func oBPv400GetDynamicResourceDocWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response> {
+    open class func getDynamicResourceDocWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetBankLevelDynamicResourceDoc200Response> {
         let localVariablePath = "/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -426,7 +426,7 @@ open class DynamicResourceDocAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetBankLevelDynamicResourceDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -435,12 +435,12 @@ open class DynamicResourceDocAPI {
      Update Bank Level Dynamic Resource Doc
      
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400UpdateBankLevelDynamicResourceDocRequest: (body) Request body 
+     - parameter updateBankLevelDynamicResourceDocRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetBankLevelDynamicResourceDoc200Response
+     - returns: GetBankLevelDynamicResourceDoc200Response
      */
-    open class func oBPv400UpdateBankLevelDynamicResourceDoc(bankid: String, oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetBankLevelDynamicResourceDoc200Response {
-        return try await oBPv400UpdateBankLevelDynamicResourceDocWithRequestBuilder(bankid: bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest: oBPv400UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateBankLevelDynamicResourceDoc(bankid: String, updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetBankLevelDynamicResourceDoc200Response {
+        return try await updateBankLevelDynamicResourceDocWithRequestBuilder(bankid: bankid, updateBankLevelDynamicResourceDocRequest: updateBankLevelDynamicResourceDocRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -454,20 +454,20 @@ open class DynamicResourceDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400UpdateBankLevelDynamicResourceDocRequest: (body) Request body 
+     - parameter updateBankLevelDynamicResourceDocRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response> 
+     - returns: RequestBuilder<GetBankLevelDynamicResourceDoc200Response> 
      */
-    open class func oBPv400UpdateBankLevelDynamicResourceDocWithRequestBuilder(bankid: String, oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response> {
+    open class func updateBankLevelDynamicResourceDocWithRequestBuilder(bankid: String, updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetBankLevelDynamicResourceDoc200Response> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400UpdateBankLevelDynamicResourceDocRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateBankLevelDynamicResourceDocRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -477,7 +477,7 @@ open class DynamicResourceDocAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetBankLevelDynamicResourceDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -485,12 +485,12 @@ open class DynamicResourceDocAPI {
     /**
      Update Dynamic Resource Doc
      
-     - parameter oBPv400UpdateBankLevelDynamicResourceDocRequest: (body) Request body 
+     - parameter updateBankLevelDynamicResourceDocRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetBankLevelDynamicResourceDoc200Response
+     - returns: GetBankLevelDynamicResourceDoc200Response
      */
-    open class func oBPv400UpdateDynamicResourceDoc(oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetBankLevelDynamicResourceDoc200Response {
-        return try await oBPv400UpdateDynamicResourceDocWithRequestBuilder(oBPv400UpdateBankLevelDynamicResourceDocRequest: oBPv400UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetBankLevelDynamicResourceDoc200Response {
+        return try await updateDynamicResourceDocWithRequestBuilder(updateBankLevelDynamicResourceDocRequest: updateBankLevelDynamicResourceDocRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -504,16 +504,16 @@ open class DynamicResourceDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
-     - parameter oBPv400UpdateBankLevelDynamicResourceDocRequest: (body) Request body 
+     - parameter updateBankLevelDynamicResourceDocRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response> 
+     - returns: RequestBuilder<GetBankLevelDynamicResourceDoc200Response> 
      */
-    open class func oBPv400UpdateDynamicResourceDocWithRequestBuilder(oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response> {
+    open class func updateDynamicResourceDocWithRequestBuilder(updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetBankLevelDynamicResourceDoc200Response> {
         let localVariablePath = "/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400UpdateBankLevelDynamicResourceDocRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateBankLevelDynamicResourceDocRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -523,7 +523,7 @@ open class DynamicResourceDocAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetBankLevelDynamicResourceDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetBankLevelDynamicResourceDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

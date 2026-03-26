@@ -1,21 +1,21 @@
 # \AccountAccessRequestAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv600ApproveAccountAccessRequest**](AccountAccessRequestAPI.md#OBPv600ApproveAccountAccessRequest) | **Post** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request
-[**OBPv600CreateAccountAccessRequest**](AccountAccessRequestAPI.md#OBPv600CreateAccountAccessRequest) | **Post** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request
-[**OBPv600GetAccountAccessRequestById**](AccountAccessRequestAPI.md#OBPv600GetAccountAccessRequestById) | **Get** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id
-[**OBPv600GetAccountAccessRequestsForAccount**](AccountAccessRequestAPI.md#OBPv600GetAccountAccessRequestsForAccount) | **Get** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account
-[**OBPv600GetMyAccountAccessRequests**](AccountAccessRequestAPI.md#OBPv600GetMyAccountAccessRequests) | **Get** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests
-[**OBPv600RejectAccountAccessRequest**](AccountAccessRequestAPI.md#OBPv600RejectAccountAccessRequest) | **Post** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request
+[**ApproveAccountAccessRequest**](AccountAccessRequestAPI.md#ApproveAccountAccessRequest) | **Post** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request
+[**CreateAccountAccessRequest**](AccountAccessRequestAPI.md#CreateAccountAccessRequest) | **Post** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request
+[**GetAccountAccessRequestById**](AccountAccessRequestAPI.md#GetAccountAccessRequestById) | **Get** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id
+[**GetAccountAccessRequestsForAccount**](AccountAccessRequestAPI.md#GetAccountAccessRequestsForAccount) | **Get** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account
+[**GetMyAccountAccessRequests**](AccountAccessRequestAPI.md#GetMyAccountAccessRequests) | **Get** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests
+[**RejectAccountAccessRequest**](AccountAccessRequestAPI.md#RejectAccountAccessRequest) | **Post** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request
 
 
 
-## OBPv600ApproveAccountAccessRequest
+## ApproveAccountAccessRequest
 
-> OBPv600RejectAccountAccessRequest200Response OBPv600ApproveAccountAccessRequest(ctx, bankid, accountid, accountaccessrequestid).OBPv600RejectAccountAccessRequestRequest(oBPv600RejectAccountAccessRequestRequest).Execute()
+> RejectAccountAccessRequest200Response ApproveAccountAccessRequest(ctx, bankid, accountid, accountaccessrequestid).RejectAccountAccessRequestRequest(rejectAccountAccessRequestRequest).Execute()
 
 Approve Account Access Request
 
@@ -37,17 +37,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	accountaccessrequestid := "accountaccessrequestid_example" // string | The ACCOUNTACCESSREQUESTID identifier
-	oBPv600RejectAccountAccessRequestRequest := *openapiclient.NewOBPv600RejectAccountAccessRequestRequest("Type_example", *openapiclient.NewOBPv600RejectAccountAccessRequestRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600RejectAccountAccessRequestRequest | Request body
+	rejectAccountAccessRequestRequest := *openapiclient.NewRejectAccountAccessRequestRequest() // RejectAccountAccessRequestRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAccessRequestAPI.OBPv600ApproveAccountAccessRequest(context.Background(), bankid, accountid, accountaccessrequestid).OBPv600RejectAccountAccessRequestRequest(oBPv600RejectAccountAccessRequestRequest).Execute()
+	resp, r, err := apiClient.AccountAccessRequestAPI.ApproveAccountAccessRequest(context.Background(), bankid, accountid, accountaccessrequestid).RejectAccountAccessRequestRequest(rejectAccountAccessRequestRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAccessRequestAPI.OBPv600ApproveAccountAccessRequest``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAccessRequestAPI.ApproveAccountAccessRequest``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600ApproveAccountAccessRequest`: OBPv600RejectAccountAccessRequest200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAccessRequestAPI.OBPv600ApproveAccountAccessRequest`: %v\n", resp)
+	// response from `ApproveAccountAccessRequest`: RejectAccountAccessRequest200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAccessRequestAPI.ApproveAccountAccessRequest`: %v\n", resp)
 }
 ```
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600ApproveAccountAccessRequestRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApproveAccountAccessRequestRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -71,11 +71,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv600RejectAccountAccessRequestRequest** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md) | Request body | 
+ **rejectAccountAccessRequestRequest** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -91,9 +91,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600CreateAccountAccessRequest
+## CreateAccountAccessRequest
 
-> OBPv600RejectAccountAccessRequest200Response OBPv600CreateAccountAccessRequest(ctx, bankid, accountid).OBPv600CreateAccountAccessRequestRequest(oBPv600CreateAccountAccessRequestRequest).Execute()
+> RejectAccountAccessRequest200Response CreateAccountAccessRequest(ctx, bankid, accountid).CreateAccountAccessRequestRequest(createAccountAccessRequestRequest).Execute()
 
 Create Account Access Request
 
@@ -114,17 +114,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	oBPv600CreateAccountAccessRequestRequest := *openapiclient.NewOBPv600CreateAccountAccessRequestRequest("Type_example", *openapiclient.NewOBPv600CreateAccountAccessRequestRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600CreateAccountAccessRequestRequest | Request body
+	createAccountAccessRequestRequest := *openapiclient.NewCreateAccountAccessRequestRequest() // CreateAccountAccessRequestRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAccessRequestAPI.OBPv600CreateAccountAccessRequest(context.Background(), bankid, accountid).OBPv600CreateAccountAccessRequestRequest(oBPv600CreateAccountAccessRequestRequest).Execute()
+	resp, r, err := apiClient.AccountAccessRequestAPI.CreateAccountAccessRequest(context.Background(), bankid, accountid).CreateAccountAccessRequestRequest(createAccountAccessRequestRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAccessRequestAPI.OBPv600CreateAccountAccessRequest``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAccessRequestAPI.CreateAccountAccessRequest``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600CreateAccountAccessRequest`: OBPv600RejectAccountAccessRequest200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAccessRequestAPI.OBPv600CreateAccountAccessRequest`: %v\n", resp)
+	// response from `CreateAccountAccessRequest`: RejectAccountAccessRequest200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAccessRequestAPI.CreateAccountAccessRequest`: %v\n", resp)
 }
 ```
 
@@ -139,18 +139,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600CreateAccountAccessRequestRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateAccountAccessRequestRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv600CreateAccountAccessRequestRequest** | [**OBPv600CreateAccountAccessRequestRequest**](OBPv600CreateAccountAccessRequestRequest.md) | Request body | 
+ **createAccountAccessRequestRequest** | [**CreateAccountAccessRequestRequest**](CreateAccountAccessRequestRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -166,9 +166,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetAccountAccessRequestById
+## GetAccountAccessRequestById
 
-> OBPv600RejectAccountAccessRequest200Response OBPv600GetAccountAccessRequestById(ctx, bankid, accountid, accountaccessrequestid).Execute()
+> RejectAccountAccessRequest200Response GetAccountAccessRequestById(ctx, bankid, accountid, accountaccessrequestid).Execute()
 
 Get Account Access Request by Id
 
@@ -193,13 +193,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAccessRequestAPI.OBPv600GetAccountAccessRequestById(context.Background(), bankid, accountid, accountaccessrequestid).Execute()
+	resp, r, err := apiClient.AccountAccessRequestAPI.GetAccountAccessRequestById(context.Background(), bankid, accountid, accountaccessrequestid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAccessRequestAPI.OBPv600GetAccountAccessRequestById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAccessRequestAPI.GetAccountAccessRequestById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetAccountAccessRequestById`: OBPv600RejectAccountAccessRequest200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAccessRequestAPI.OBPv600GetAccountAccessRequestById`: %v\n", resp)
+	// response from `GetAccountAccessRequestById`: RejectAccountAccessRequest200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAccessRequestAPI.GetAccountAccessRequestById`: %v\n", resp)
 }
 ```
 
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetAccountAccessRequestByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAccountAccessRequestByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -242,9 +242,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetAccountAccessRequestsForAccount
+## GetAccountAccessRequestsForAccount
 
-> OBPv600GetAccountAccessRequestsForAccount200Response OBPv600GetAccountAccessRequestsForAccount(ctx, bankid, accountid).Execute()
+> GetAccountAccessRequestsForAccount200Response GetAccountAccessRequestsForAccount(ctx, bankid, accountid).Execute()
 
 Get Account Access Requests for Account
 
@@ -268,13 +268,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAccessRequestAPI.OBPv600GetAccountAccessRequestsForAccount(context.Background(), bankid, accountid).Execute()
+	resp, r, err := apiClient.AccountAccessRequestAPI.GetAccountAccessRequestsForAccount(context.Background(), bankid, accountid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAccessRequestAPI.OBPv600GetAccountAccessRequestsForAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAccessRequestAPI.GetAccountAccessRequestsForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetAccountAccessRequestsForAccount`: OBPv600GetAccountAccessRequestsForAccount200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAccessRequestAPI.OBPv600GetAccountAccessRequestsForAccount`: %v\n", resp)
+	// response from `GetAccountAccessRequestsForAccount`: GetAccountAccessRequestsForAccount200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAccessRequestAPI.GetAccountAccessRequestsForAccount`: %v\n", resp)
 }
 ```
 
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetAccountAccessRequestsForAccountRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAccountAccessRequestsForAccountRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -315,9 +315,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetMyAccountAccessRequests
+## GetMyAccountAccessRequests
 
-> OBPv600GetAccountAccessRequestsForAccount200Response OBPv600GetMyAccountAccessRequests(ctx).Execute()
+> GetAccountAccessRequestsForAccount200Response GetMyAccountAccessRequests(ctx).Execute()
 
 Get My Account Access Requests
 
@@ -339,13 +339,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAccessRequestAPI.OBPv600GetMyAccountAccessRequests(context.Background()).Execute()
+	resp, r, err := apiClient.AccountAccessRequestAPI.GetMyAccountAccessRequests(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAccessRequestAPI.OBPv600GetMyAccountAccessRequests``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAccessRequestAPI.GetMyAccountAccessRequests``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetMyAccountAccessRequests`: OBPv600GetAccountAccessRequestsForAccount200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAccessRequestAPI.OBPv600GetMyAccountAccessRequests`: %v\n", resp)
+	// response from `GetMyAccountAccessRequests`: GetAccountAccessRequestsForAccount200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAccessRequestAPI.GetMyAccountAccessRequests`: %v\n", resp)
 }
 ```
 
@@ -355,12 +355,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetMyAccountAccessRequestsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMyAccountAccessRequestsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -376,9 +376,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetMyAccountAccessR
 [[Back to README]](../README.md)
 
 
-## OBPv600RejectAccountAccessRequest
+## RejectAccountAccessRequest
 
-> OBPv600RejectAccountAccessRequest200Response OBPv600RejectAccountAccessRequest(ctx, bankid, accountid, accountaccessrequestid).OBPv600RejectAccountAccessRequestRequest(oBPv600RejectAccountAccessRequestRequest).Execute()
+> RejectAccountAccessRequest200Response RejectAccountAccessRequest(ctx, bankid, accountid, accountaccessrequestid).RejectAccountAccessRequestRequest(rejectAccountAccessRequestRequest).Execute()
 
 Reject Account Access Request
 
@@ -400,17 +400,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	accountaccessrequestid := "accountaccessrequestid_example" // string | The ACCOUNTACCESSREQUESTID identifier
-	oBPv600RejectAccountAccessRequestRequest := *openapiclient.NewOBPv600RejectAccountAccessRequestRequest("Type_example", *openapiclient.NewOBPv600RejectAccountAccessRequestRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600RejectAccountAccessRequestRequest | Request body
+	rejectAccountAccessRequestRequest := *openapiclient.NewRejectAccountAccessRequestRequest() // RejectAccountAccessRequestRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAccessRequestAPI.OBPv600RejectAccountAccessRequest(context.Background(), bankid, accountid, accountaccessrequestid).OBPv600RejectAccountAccessRequestRequest(oBPv600RejectAccountAccessRequestRequest).Execute()
+	resp, r, err := apiClient.AccountAccessRequestAPI.RejectAccountAccessRequest(context.Background(), bankid, accountid, accountaccessrequestid).RejectAccountAccessRequestRequest(rejectAccountAccessRequestRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAccessRequestAPI.OBPv600RejectAccountAccessRequest``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAccessRequestAPI.RejectAccountAccessRequest``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600RejectAccountAccessRequest`: OBPv600RejectAccountAccessRequest200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAccessRequestAPI.OBPv600RejectAccountAccessRequest`: %v\n", resp)
+	// response from `RejectAccountAccessRequest`: RejectAccountAccessRequest200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAccessRequestAPI.RejectAccountAccessRequest`: %v\n", resp)
 }
 ```
 
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600RejectAccountAccessRequestRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRejectAccountAccessRequestRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -434,11 +434,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv600RejectAccountAccessRequestRequest** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md) | Request body | 
+ **rejectAccountAccessRequestRequest** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 

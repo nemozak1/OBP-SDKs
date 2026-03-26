@@ -1,17 +1,17 @@
 # DataWarehouseApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv300DataWarehouseSearch**](DataWarehouseApi.md#obpv300datawarehousesearchoperation) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search |
-| [**oBPv300DataWarehouseStatistics**](DataWarehouseApi.md#obpv300datawarehousestatistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics |
+| [**dataWarehouseSearch**](DataWarehouseApi.md#datawarehousesearchoperation) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search |
+| [**dataWarehouseStatistics**](DataWarehouseApi.md#datawarehousestatistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics |
 
 
 
-## oBPv300DataWarehouseSearch
+## dataWarehouseSearch
 
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage oBPv300DataWarehouseSearch(index, oBPv300DataWarehouseSearchRequest)
+> object dataWarehouseSearch(index, dataWarehouseSearchRequest)
 
 Data Warehouse Search
 
@@ -24,7 +24,7 @@ import {
   Configuration,
   DataWarehouseApi,
 } from 'obp-typescript';
-import type { OBPv300DataWarehouseSearchOperationRequest } from 'obp-typescript';
+import type { DataWarehouseSearchOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -41,12 +41,12 @@ async function example() {
   const body = {
     // string | The INDEX identifier
     index: index_example,
-    // OBPv300DataWarehouseSearchRequest | Request body
-    oBPv300DataWarehouseSearchRequest: {"type":"object","properties":{"query":{"type":"object","properties":{"match_all":{"type":"object","properties":{}}}}}},
-  } satisfies OBPv300DataWarehouseSearchOperationRequest;
+    // DataWarehouseSearchRequest | Request body
+    dataWarehouseSearchRequest: {"type":"object","properties":{"query":{"type":"object","properties":{"match_all":{"type":"object","properties":{}}}}}},
+  } satisfies DataWarehouseSearchOperationRequest;
 
   try {
-    const data = await api.oBPv300DataWarehouseSearch(body);
+    const data = await api.dataWarehouseSearch(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -63,11 +63,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **index** | `string` | The INDEX identifier | [Defaults to `undefined`] |
-| **oBPv300DataWarehouseSearchRequest** | [OBPv300DataWarehouseSearchRequest](OBPv300DataWarehouseSearchRequest.md) | Request body | |
+| **dataWarehouseSearchRequest** | [DataWarehouseSearchRequest](DataWarehouseSearchRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**object**
 
 ### Authorization
 
@@ -88,9 +88,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv300DataWarehouseStatistics
+## dataWarehouseStatistics
 
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage oBPv300DataWarehouseStatistics(index, field, oBPv300DataWarehouseSearchRequest)
+> object dataWarehouseStatistics(index, field, dataWarehouseSearchRequest)
 
 Data Warehouse Statistics
 
@@ -103,7 +103,7 @@ import {
   Configuration,
   DataWarehouseApi,
 } from 'obp-typescript';
-import type { OBPv300DataWarehouseStatisticsRequest } from 'obp-typescript';
+import type { DataWarehouseStatisticsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -122,12 +122,12 @@ async function example() {
     index: index_example,
     // string | The FIELD identifier
     field: field_example,
-    // OBPv300DataWarehouseSearchRequest | Request body
-    oBPv300DataWarehouseSearchRequest: {type=object, properties={query={type=object, properties={match_all={type=object, properties={}}}}}},
-  } satisfies OBPv300DataWarehouseStatisticsRequest;
+    // DataWarehouseSearchRequest | Request body
+    dataWarehouseSearchRequest: {type=object, properties={query={type=object, properties={match_all={type=object, properties={}}}}}},
+  } satisfies DataWarehouseStatisticsRequest;
 
   try {
-    const data = await api.oBPv300DataWarehouseStatistics(body);
+    const data = await api.dataWarehouseStatistics(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -145,11 +145,11 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **index** | `string` | The INDEX identifier | [Defaults to `undefined`] |
 | **field** | `string` | The FIELD identifier | [Defaults to `undefined`] |
-| **oBPv300DataWarehouseSearchRequest** | [OBPv300DataWarehouseSearchRequest](OBPv300DataWarehouseSearchRequest.md) | Request body | |
+| **dataWarehouseSearchRequest** | [DataWarehouseSearchRequest](DataWarehouseSearchRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**object**
 
 ### Authorization
 

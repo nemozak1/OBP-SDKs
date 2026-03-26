@@ -1,15 +1,15 @@
 # ConfirmationOfFundsServicePIISAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv310CheckFundsAvailable**](ConfirmationOfFundsServicePIISAPI.md#obpv310checkfundsavailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
+[**checkFundsAvailable**](ConfirmationOfFundsServicePIISAPI.md#checkfundsavailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
 
 
-# **oBPv310CheckFundsAvailable**
+# **checkFundsAvailable**
 ```swift
-    open class func oBPv310CheckFundsAvailable(bankid: String, accountid: String, viewid: String, completion: @escaping (_ data: OBPv310CheckFundsAvailable200Response?, _ error: Error?) -> Void)
+    open class func checkFundsAvailable(bankid: String, accountid: String, viewid: String, completion: @escaping (_ data: CheckFundsAvailable200Response?, _ error: Error?) -> Void)
 ```
 
 Check Available Funds
@@ -26,7 +26,7 @@ let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let viewid = "viewid_example" // String | The VIEWID identifier
 
 // Check Available Funds
-ConfirmationOfFundsServicePIISAPI.oBPv310CheckFundsAvailable(bankid: bankid, accountid: accountid, viewid: viewid) { (response, error) in
+ConfirmationOfFundsServicePIISAPI.checkFundsAvailable(bankid: bankid, accountid: accountid, viewid: viewid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310CheckFundsAvailable200Response**](OBPv310CheckFundsAvailable200Response.md)
+[**CheckFundsAvailable200Response**](CheckFundsAvailable200Response.md)
 
 ### Authorization
 

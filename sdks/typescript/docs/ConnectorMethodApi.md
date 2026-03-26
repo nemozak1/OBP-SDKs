@@ -1,20 +1,20 @@
 # ConnectorMethodApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateConnectorMethod**](ConnectorMethodApi.md#obpv400createconnectormethodoperation) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method |
-| [**oBPv400GetAllConnectorMethods**](ConnectorMethodApi.md#obpv400getallconnectormethods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods |
-| [**oBPv400GetConnectorMethod**](ConnectorMethodApi.md#obpv400getconnectormethod) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id |
-| [**oBPv400UpdateConnectorMethod**](ConnectorMethodApi.md#obpv400updateconnectormethodoperation) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method |
-| [**oBPv600GetConnectorMethodNames**](ConnectorMethodApi.md#obpv600getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
+| [**createConnectorMethod**](ConnectorMethodApi.md#createconnectormethodoperation) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method |
+| [**getAllConnectorMethods**](ConnectorMethodApi.md#getallconnectormethods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods |
+| [**getConnectorMethod**](ConnectorMethodApi.md#getconnectormethod) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id |
+| [**getConnectorMethodNames**](ConnectorMethodApi.md#getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
+| [**updateConnectorMethod**](ConnectorMethodApi.md#updateconnectormethodoperation) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method |
 
 
 
-## oBPv400CreateConnectorMethod
+## createConnectorMethod
 
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400CreateConnectorMethod(oBPv400CreateConnectorMethodRequest)
+> GetAllConnectorMethods200ResponseConnectorsMethodsInner createConnectorMethod(createConnectorMethodRequest)
 
 Create Connector Method
 
@@ -27,7 +27,7 @@ import {
   Configuration,
   ConnectorMethodApi,
 } from 'obp-typescript';
-import type { OBPv400CreateConnectorMethodOperationRequest } from 'obp-typescript';
+import type { CreateConnectorMethodOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -42,12 +42,12 @@ async function example() {
   const api = new ConnectorMethodApi(config);
 
   const body = {
-    // OBPv400CreateConnectorMethodRequest | Request body
-    oBPv400CreateConnectorMethodRequest: {"type":"object","properties":{"method_name":{"type":"string"},"programming_lang":{"type":"string"},"method_body":{"type":"string"}}},
-  } satisfies OBPv400CreateConnectorMethodOperationRequest;
+    // CreateConnectorMethodRequest | Request body
+    createConnectorMethodRequest: {"type":"object","properties":{"method_name":{"type":"string"},"programming_lang":{"type":"string"},"method_body":{"type":"string"}}},
+  } satisfies CreateConnectorMethodOperationRequest;
 
   try {
-    const data = await api.oBPv400CreateConnectorMethod(body);
+    const data = await api.createConnectorMethod(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -63,11 +63,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **oBPv400CreateConnectorMethodRequest** | [OBPv400CreateConnectorMethodRequest](OBPv400CreateConnectorMethodRequest.md) | Request body | |
+| **createConnectorMethodRequest** | [CreateConnectorMethodRequest](CreateConnectorMethodRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 ### Authorization
 
@@ -88,9 +88,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetAllConnectorMethods
+## getAllConnectorMethods
 
-> OBPv400GetAllConnectorMethods200Response oBPv400GetAllConnectorMethods()
+> GetAllConnectorMethods200Response getAllConnectorMethods()
 
 Get all Connector Methods
 
@@ -103,7 +103,7 @@ import {
   Configuration,
   ConnectorMethodApi,
 } from 'obp-typescript';
-import type { OBPv400GetAllConnectorMethodsRequest } from 'obp-typescript';
+import type { GetAllConnectorMethodsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -118,7 +118,7 @@ async function example() {
   const api = new ConnectorMethodApi(config);
 
   try {
-    const data = await api.oBPv400GetAllConnectorMethods();
+    const data = await api.getAllConnectorMethods();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -135,7 +135,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200Response**](OBPv400GetAllConnectorMethods200Response.md)
+[**GetAllConnectorMethods200Response**](GetAllConnectorMethods200Response.md)
 
 ### Authorization
 
@@ -156,9 +156,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetConnectorMethod
+## getConnectorMethod
 
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400GetConnectorMethod(connectormethodid)
+> GetAllConnectorMethods200ResponseConnectorsMethodsInner getConnectorMethod(connectormethodid)
 
 Get Connector Method by Id
 
@@ -171,7 +171,7 @@ import {
   Configuration,
   ConnectorMethodApi,
 } from 'obp-typescript';
-import type { OBPv400GetConnectorMethodRequest } from 'obp-typescript';
+import type { GetConnectorMethodRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -188,10 +188,10 @@ async function example() {
   const body = {
     // string | The CONNECTORMETHODID identifier
     connectormethodid: connectormethodid_example,
-  } satisfies OBPv400GetConnectorMethodRequest;
+  } satisfies GetConnectorMethodRequest;
 
   try {
-    const data = await api.oBPv400GetConnectorMethod(body);
+    const data = await api.getConnectorMethod(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -211,7 +211,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 ### Authorization
 
@@ -232,88 +232,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400UpdateConnectorMethod
+## getConnectorMethodNames
 
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400UpdateConnectorMethod(connectormethodid, oBPv400UpdateConnectorMethodRequest)
-
-Update Connector Method
-
-&lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-
-```ts
-import {
-  Configuration,
-  ConnectorMethodApi,
-} from 'obp-typescript';
-import type { OBPv400UpdateConnectorMethodOperationRequest } from 'obp-typescript';
-
-async function example() {
-  console.log("🚀 Testing obp-typescript SDK...");
-  const config = new Configuration({ 
-    // To configure OAuth2 access token for authorization: OAuth2 accessCode
-    accessToken: "YOUR ACCESS TOKEN",
-    // To configure API key authorization: GatewayLogin
-    apiKey: "YOUR API KEY",
-    // To configure API key authorization: DirectLogin
-    apiKey: "YOUR API KEY",
-  });
-  const api = new ConnectorMethodApi(config);
-
-  const body = {
-    // string | The CONNECTORMETHODID identifier
-    connectormethodid: connectormethodid_example,
-    // OBPv400UpdateConnectorMethodRequest | Request body
-    oBPv400UpdateConnectorMethodRequest: {"type":"object","properties":{"programming_lang":{"type":"string"},"method_body":{"type":"string"}}},
-  } satisfies OBPv400UpdateConnectorMethodOperationRequest;
-
-  try {
-    const data = await api.oBPv400UpdateConnectorMethod(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **connectormethodid** | `string` | The CONNECTORMETHODID identifier | [Defaults to `undefined`] |
-| **oBPv400UpdateConnectorMethodRequest** | [OBPv400UpdateConnectorMethodRequest](OBPv400UpdateConnectorMethodRequest.md) | Request body | |
-
-### Return type
-
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
-
-### Authorization
-
-[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## oBPv600GetConnectorMethodNames
-
-> OBPv600GetConnectorMethodNames200Response oBPv600GetConnectorMethodNames()
+> GetConnectorMethodNames200Response getConnectorMethodNames()
 
 Get Connector Method Names
 
@@ -326,7 +247,7 @@ import {
   Configuration,
   ConnectorMethodApi,
 } from 'obp-typescript';
-import type { OBPv600GetConnectorMethodNamesRequest } from 'obp-typescript';
+import type { GetConnectorMethodNamesRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -341,7 +262,7 @@ async function example() {
   const api = new ConnectorMethodApi(config);
 
   try {
-    const data = await api.oBPv600GetConnectorMethodNames();
+    const data = await api.getConnectorMethodNames();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -358,7 +279,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectorMethodNames200Response**](OBPv600GetConnectorMethodNames200Response.md)
+[**GetConnectorMethodNames200Response**](GetConnectorMethodNames200Response.md)
 
 ### Authorization
 
@@ -367,6 +288,85 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## updateConnectorMethod
+
+> GetAllConnectorMethods200ResponseConnectorsMethodsInner updateConnectorMethod(connectormethodid, updateConnectorMethodRequest)
+
+Update Connector Method
+
+&lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+
+```ts
+import {
+  Configuration,
+  ConnectorMethodApi,
+} from 'obp-typescript';
+import type { UpdateConnectorMethodOperationRequest } from 'obp-typescript';
+
+async function example() {
+  console.log("🚀 Testing obp-typescript SDK...");
+  const config = new Configuration({ 
+    // To configure OAuth2 access token for authorization: OAuth2 accessCode
+    accessToken: "YOUR ACCESS TOKEN",
+    // To configure API key authorization: GatewayLogin
+    apiKey: "YOUR API KEY",
+    // To configure API key authorization: DirectLogin
+    apiKey: "YOUR API KEY",
+  });
+  const api = new ConnectorMethodApi(config);
+
+  const body = {
+    // string | The CONNECTORMETHODID identifier
+    connectormethodid: connectormethodid_example,
+    // UpdateConnectorMethodRequest | Request body
+    updateConnectorMethodRequest: {"type":"object","properties":{"programming_lang":{"type":"string"},"method_body":{"type":"string"}}},
+  } satisfies UpdateConnectorMethodOperationRequest;
+
+  try {
+    const data = await api.updateConnectorMethod(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **connectormethodid** | `string` | The CONNECTORMETHODID identifier | [Defaults to `undefined`] |
+| **updateConnectorMethodRequest** | [UpdateConnectorMethodRequest](UpdateConnectorMethodRequest.md) | Request body | |
+
+### Return type
+
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
+
+### Authorization
+
+[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 

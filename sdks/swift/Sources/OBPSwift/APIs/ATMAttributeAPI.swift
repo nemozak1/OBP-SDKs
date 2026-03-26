@@ -14,12 +14,12 @@ open class ATMAttributeAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter atmid: (path) The ATMID identifier 
-     - parameter oBPv510UpdateAtmAttributeRequest: (body) Request body 
+     - parameter updateAtmAttributeRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv510GetAtmAttribute200Response
+     - returns: GetAtmAttribute200Response
      */
-    open class func oBPv510CreateAtmAttribute(bankid: String, atmid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv510GetAtmAttribute200Response {
-        return try await oBPv510CreateAtmAttributeWithRequestBuilder(bankid: bankid, atmid: atmid, oBPv510UpdateAtmAttributeRequest: oBPv510UpdateAtmAttributeRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createAtmAttribute(bankid: String, atmid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAtmAttribute200Response {
+        return try await createAtmAttributeWithRequestBuilder(bankid: bankid, atmid: atmid, updateAtmAttributeRequest: updateAtmAttributeRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -33,15 +33,15 @@ open class ATMAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter atmid: (path) The ATMID identifier 
-     - parameter oBPv510UpdateAtmAttributeRequest: (body) Request body 
+     - parameter updateAtmAttributeRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv510GetAtmAttribute200Response> 
+     - returns: RequestBuilder<GetAtmAttribute200Response> 
      */
-    open class func oBPv510CreateAtmAttributeWithRequestBuilder(bankid: String, atmid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv510GetAtmAttribute200Response> {
+    open class func createAtmAttributeWithRequestBuilder(bankid: String, atmid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAtmAttribute200Response> {
         var localVariablePath = "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -50,7 +50,7 @@ open class ATMAttributeAPI {
         let atmidPostEscape = atmidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{atmid}", with: atmidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv510UpdateAtmAttributeRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateAtmAttributeRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -60,7 +60,7 @@ open class ATMAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv510GetAtmAttribute200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAtmAttribute200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -74,8 +74,8 @@ open class ATMAttributeAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv510DeleteAtmAttribute(bankid: String, atmid: String, atmattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv510DeleteAtmAttributeWithRequestBuilder(bankid: bankid, atmid: atmid, atmattributeid: atmattributeid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteAtmAttribute(bankid: String, atmid: String, atmattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteAtmAttributeWithRequestBuilder(bankid: bankid, atmid: atmid, atmattributeid: atmattributeid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -89,7 +89,7 @@ open class ATMAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter atmid: (path) The ATMID identifier 
@@ -97,7 +97,7 @@ open class ATMAttributeAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv510DeleteAtmAttributeWithRequestBuilder(bankid: String, atmid: String, atmattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteAtmAttributeWithRequestBuilder(bankid: String, atmid: String, atmattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -131,10 +131,10 @@ open class ATMAttributeAPI {
      - parameter atmid: (path) The ATMID identifier 
      - parameter atmattributeid: (path) The ATMATTRIBUTEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv510GetAtmAttribute200Response
+     - returns: GetAtmAttribute200Response
      */
-    open class func oBPv510GetAtmAttribute(bankid: String, atmid: String, atmattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv510GetAtmAttribute200Response {
-        return try await oBPv510GetAtmAttributeWithRequestBuilder(bankid: bankid, atmid: atmid, atmattributeid: atmattributeid, apiConfiguration: apiConfiguration).execute().body
+    open class func getAtmAttribute(bankid: String, atmid: String, atmattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAtmAttribute200Response {
+        return try await getAtmAttributeWithRequestBuilder(bankid: bankid, atmid: atmid, atmattributeid: atmattributeid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -148,15 +148,15 @@ open class ATMAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter atmid: (path) The ATMID identifier 
      - parameter atmattributeid: (path) The ATMATTRIBUTEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv510GetAtmAttribute200Response> 
+     - returns: RequestBuilder<GetAtmAttribute200Response> 
      */
-    open class func oBPv510GetAtmAttributeWithRequestBuilder(bankid: String, atmid: String, atmattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv510GetAtmAttribute200Response> {
+    open class func getAtmAttributeWithRequestBuilder(bankid: String, atmid: String, atmattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAtmAttribute200Response> {
         var localVariablePath = "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -178,7 +178,7 @@ open class ATMAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv510GetAtmAttribute200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAtmAttribute200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -189,10 +189,10 @@ open class ATMAttributeAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter atmid: (path) The ATMID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv510GetAtmAttributes200Response
+     - returns: GetAtmAttributes200Response
      */
-    open class func oBPv510GetAtmAttributes(bankid: String, atmid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv510GetAtmAttributes200Response {
-        return try await oBPv510GetAtmAttributesWithRequestBuilder(bankid: bankid, atmid: atmid, apiConfiguration: apiConfiguration).execute().body
+    open class func getAtmAttributes(bankid: String, atmid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAtmAttributes200Response {
+        return try await getAtmAttributesWithRequestBuilder(bankid: bankid, atmid: atmid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -206,14 +206,14 @@ open class ATMAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter atmid: (path) The ATMID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv510GetAtmAttributes200Response> 
+     - returns: RequestBuilder<GetAtmAttributes200Response> 
      */
-    open class func oBPv510GetAtmAttributesWithRequestBuilder(bankid: String, atmid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv510GetAtmAttributes200Response> {
+    open class func getAtmAttributesWithRequestBuilder(bankid: String, atmid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAtmAttributes200Response> {
         var localVariablePath = "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -232,7 +232,7 @@ open class ATMAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv510GetAtmAttributes200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAtmAttributes200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -243,12 +243,12 @@ open class ATMAttributeAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter atmid: (path) The ATMID identifier 
      - parameter atmattributeid: (path) The ATMATTRIBUTEID identifier 
-     - parameter oBPv510UpdateAtmAttributeRequest: (body) Request body 
+     - parameter updateAtmAttributeRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv510GetAtmAttribute200Response
+     - returns: GetAtmAttribute200Response
      */
-    open class func oBPv510UpdateAtmAttribute(bankid: String, atmid: String, atmattributeid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv510GetAtmAttribute200Response {
-        return try await oBPv510UpdateAtmAttributeWithRequestBuilder(bankid: bankid, atmid: atmid, atmattributeid: atmattributeid, oBPv510UpdateAtmAttributeRequest: oBPv510UpdateAtmAttributeRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateAtmAttribute(bankid: String, atmid: String, atmattributeid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAtmAttribute200Response {
+        return try await updateAtmAttributeWithRequestBuilder(bankid: bankid, atmid: atmid, atmattributeid: atmattributeid, updateAtmAttributeRequest: updateAtmAttributeRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -262,16 +262,16 @@ open class ATMAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter atmid: (path) The ATMID identifier 
      - parameter atmattributeid: (path) The ATMATTRIBUTEID identifier 
-     - parameter oBPv510UpdateAtmAttributeRequest: (body) Request body 
+     - parameter updateAtmAttributeRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv510GetAtmAttribute200Response> 
+     - returns: RequestBuilder<GetAtmAttribute200Response> 
      */
-    open class func oBPv510UpdateAtmAttributeWithRequestBuilder(bankid: String, atmid: String, atmattributeid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv510GetAtmAttribute200Response> {
+    open class func updateAtmAttributeWithRequestBuilder(bankid: String, atmid: String, atmattributeid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAtmAttribute200Response> {
         var localVariablePath = "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -283,7 +283,7 @@ open class ATMAttributeAPI {
         let atmattributeidPostEscape = atmattributeidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{atmattributeid}", with: atmattributeidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv510UpdateAtmAttributeRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateAtmAttributeRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -293,7 +293,7 @@ open class ATMAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv510GetAtmAttribute200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAtmAttribute200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

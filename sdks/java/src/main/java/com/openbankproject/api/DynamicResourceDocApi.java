@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,11 +18,11 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv400BuildDynamicEndpointTemplate200Response;
-import com.openbankproject.model.OBPv400BuildDynamicEndpointTemplateRequest;
-import com.openbankproject.model.OBPv400GetAllDynamicResourceDocs200Response;
-import com.openbankproject.model.OBPv400GetBankLevelDynamicResourceDoc200Response;
-import com.openbankproject.model.OBPv400UpdateBankLevelDynamicResourceDocRequest;
+import com.openbankproject.model.BuildDynamicEndpointTemplate200Response;
+import com.openbankproject.model.BuildDynamicEndpointTemplateRequest;
+import com.openbankproject.model.GetAllDynamicResourceDocs200Response;
+import com.openbankproject.model.GetBankLevelDynamicResourceDoc200Response;
+import com.openbankproject.model.UpdateBankLevelDynamicResourceDocRequest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -49,7 +49,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class DynamicResourceDocApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -169,48 +169,48 @@ public class DynamicResourceDocApi {
   /**
    * Create Dynamic Resource Doc endpoint code
    * &lt;p&gt;Create a Dynamic Resource Doc endpoint code.&lt;/p&gt; &lt;p&gt;copy the response and past to PractiseEndpoint, So you can have the benefits of&lt;br /&gt; auto compilation and debug&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; 
-   * @param obPv400BuildDynamicEndpointTemplateRequest Request body (required)
-   * @return OBPv400BuildDynamicEndpointTemplate200Response
+   * @param buildDynamicEndpointTemplateRequest Request body (required)
+   * @return BuildDynamicEndpointTemplate200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400BuildDynamicEndpointTemplate200Response oBPv400BuildDynamicEndpointTemplate(@javax.annotation.Nonnull OBPv400BuildDynamicEndpointTemplateRequest obPv400BuildDynamicEndpointTemplateRequest) throws ApiException {
-    return oBPv400BuildDynamicEndpointTemplate(obPv400BuildDynamicEndpointTemplateRequest, null);
+  public BuildDynamicEndpointTemplate200Response buildDynamicEndpointTemplate(@javax.annotation.Nonnull BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest) throws ApiException {
+    return buildDynamicEndpointTemplate(buildDynamicEndpointTemplateRequest, null);
   }
 
   /**
    * Create Dynamic Resource Doc endpoint code
    * &lt;p&gt;Create a Dynamic Resource Doc endpoint code.&lt;/p&gt; &lt;p&gt;copy the response and past to PractiseEndpoint, So you can have the benefits of&lt;br /&gt; auto compilation and debug&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; 
-   * @param obPv400BuildDynamicEndpointTemplateRequest Request body (required)
+   * @param buildDynamicEndpointTemplateRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400BuildDynamicEndpointTemplate200Response
+   * @return BuildDynamicEndpointTemplate200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400BuildDynamicEndpointTemplate200Response oBPv400BuildDynamicEndpointTemplate(@javax.annotation.Nonnull OBPv400BuildDynamicEndpointTemplateRequest obPv400BuildDynamicEndpointTemplateRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400BuildDynamicEndpointTemplate200Response> localVarResponse = oBPv400BuildDynamicEndpointTemplateWithHttpInfo(obPv400BuildDynamicEndpointTemplateRequest, headers);
+  public BuildDynamicEndpointTemplate200Response buildDynamicEndpointTemplate(@javax.annotation.Nonnull BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<BuildDynamicEndpointTemplate200Response> localVarResponse = buildDynamicEndpointTemplateWithHttpInfo(buildDynamicEndpointTemplateRequest, headers);
     return localVarResponse.getData();
   }
 
   /**
    * Create Dynamic Resource Doc endpoint code
    * &lt;p&gt;Create a Dynamic Resource Doc endpoint code.&lt;/p&gt; &lt;p&gt;copy the response and past to PractiseEndpoint, So you can have the benefits of&lt;br /&gt; auto compilation and debug&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; 
-   * @param obPv400BuildDynamicEndpointTemplateRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400BuildDynamicEndpointTemplate200Response&gt;
+   * @param buildDynamicEndpointTemplateRequest Request body (required)
+   * @return ApiResponse&lt;BuildDynamicEndpointTemplate200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400BuildDynamicEndpointTemplate200Response> oBPv400BuildDynamicEndpointTemplateWithHttpInfo(@javax.annotation.Nonnull OBPv400BuildDynamicEndpointTemplateRequest obPv400BuildDynamicEndpointTemplateRequest) throws ApiException {
-    return oBPv400BuildDynamicEndpointTemplateWithHttpInfo(obPv400BuildDynamicEndpointTemplateRequest, null);
+  public ApiResponse<BuildDynamicEndpointTemplate200Response> buildDynamicEndpointTemplateWithHttpInfo(@javax.annotation.Nonnull BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest) throws ApiException {
+    return buildDynamicEndpointTemplateWithHttpInfo(buildDynamicEndpointTemplateRequest, null);
   }
 
   /**
    * Create Dynamic Resource Doc endpoint code
    * &lt;p&gt;Create a Dynamic Resource Doc endpoint code.&lt;/p&gt; &lt;p&gt;copy the response and past to PractiseEndpoint, So you can have the benefits of&lt;br /&gt; auto compilation and debug&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; 
-   * @param obPv400BuildDynamicEndpointTemplateRequest Request body (required)
+   * @param buildDynamicEndpointTemplateRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400BuildDynamicEndpointTemplate200Response&gt;
+   * @return ApiResponse&lt;BuildDynamicEndpointTemplate200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400BuildDynamicEndpointTemplate200Response> oBPv400BuildDynamicEndpointTemplateWithHttpInfo(@javax.annotation.Nonnull OBPv400BuildDynamicEndpointTemplateRequest obPv400BuildDynamicEndpointTemplateRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400BuildDynamicEndpointTemplateRequestBuilder(obPv400BuildDynamicEndpointTemplateRequest, headers);
+  public ApiResponse<BuildDynamicEndpointTemplate200Response> buildDynamicEndpointTemplateWithHttpInfo(@javax.annotation.Nonnull BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = buildDynamicEndpointTemplateRequestBuilder(buildDynamicEndpointTemplateRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -221,11 +221,11 @@ public class DynamicResourceDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400BuildDynamicEndpointTemplate", localVarResponse);
+          throw getApiException("buildDynamicEndpointTemplate", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400BuildDynamicEndpointTemplate200Response>(
+          return new ApiResponse<BuildDynamicEndpointTemplate200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -235,10 +235,10 @@ public class DynamicResourceDocApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400BuildDynamicEndpointTemplate200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400BuildDynamicEndpointTemplate200Response>() {});
+        BuildDynamicEndpointTemplate200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<BuildDynamicEndpointTemplate200Response>() {});
         
 
-        return new ApiResponse<OBPv400BuildDynamicEndpointTemplate200Response>(
+        return new ApiResponse<BuildDynamicEndpointTemplate200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -257,10 +257,10 @@ public class DynamicResourceDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400BuildDynamicEndpointTemplateRequestBuilder(@javax.annotation.Nonnull OBPv400BuildDynamicEndpointTemplateRequest obPv400BuildDynamicEndpointTemplateRequest, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'obPv400BuildDynamicEndpointTemplateRequest' is set
-    if (obPv400BuildDynamicEndpointTemplateRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400BuildDynamicEndpointTemplateRequest' when calling oBPv400BuildDynamicEndpointTemplate");
+  private HttpRequest.Builder buildDynamicEndpointTemplateRequestBuilder(@javax.annotation.Nonnull BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'buildDynamicEndpointTemplateRequest' is set
+    if (buildDynamicEndpointTemplateRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'buildDynamicEndpointTemplateRequest' when calling buildDynamicEndpointTemplate");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -273,7 +273,7 @@ public class DynamicResourceDocApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400BuildDynamicEndpointTemplateRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(buildDynamicEndpointTemplateRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -293,25 +293,25 @@ public class DynamicResourceDocApi {
    * Create Bank Level Dynamic Resource Doc
    * &lt;p&gt;Create a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body (required)
-   * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+   * @param updateBankLevelDynamicResourceDocRequest Request body (required)
+   * @return GetBankLevelDynamicResourceDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400CreateBankLevelDynamicResourceDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest) throws ApiException {
-    return oBPv400CreateBankLevelDynamicResourceDoc(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest, null);
+  public GetBankLevelDynamicResourceDoc200Response createBankLevelDynamicResourceDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest) throws ApiException {
+    return createBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest, null);
   }
 
   /**
    * Create Bank Level Dynamic Resource Doc
    * &lt;p&gt;Create a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body (required)
+   * @param updateBankLevelDynamicResourceDocRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+   * @return GetBankLevelDynamicResourceDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400CreateBankLevelDynamicResourceDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> localVarResponse = oBPv400CreateBankLevelDynamicResourceDocWithHttpInfo(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest, headers);
+  public GetBankLevelDynamicResourceDoc200Response createBankLevelDynamicResourceDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetBankLevelDynamicResourceDoc200Response> localVarResponse = createBankLevelDynamicResourceDocWithHttpInfo(bankid, updateBankLevelDynamicResourceDocRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -319,25 +319,25 @@ public class DynamicResourceDocApi {
    * Create Bank Level Dynamic Resource Doc
    * &lt;p&gt;Create a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetBankLevelDynamicResourceDoc200Response&gt;
+   * @param updateBankLevelDynamicResourceDocRequest Request body (required)
+   * @return ApiResponse&lt;GetBankLevelDynamicResourceDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400CreateBankLevelDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest) throws ApiException {
-    return oBPv400CreateBankLevelDynamicResourceDocWithHttpInfo(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest, null);
+  public ApiResponse<GetBankLevelDynamicResourceDoc200Response> createBankLevelDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest) throws ApiException {
+    return createBankLevelDynamicResourceDocWithHttpInfo(bankid, updateBankLevelDynamicResourceDocRequest, null);
   }
 
   /**
    * Create Bank Level Dynamic Resource Doc
    * &lt;p&gt;Create a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body (required)
+   * @param updateBankLevelDynamicResourceDocRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetBankLevelDynamicResourceDoc200Response&gt;
+   * @return ApiResponse&lt;GetBankLevelDynamicResourceDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400CreateBankLevelDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateBankLevelDynamicResourceDocRequestBuilder(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest, headers);
+  public ApiResponse<GetBankLevelDynamicResourceDoc200Response> createBankLevelDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createBankLevelDynamicResourceDocRequestBuilder(bankid, updateBankLevelDynamicResourceDocRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -348,11 +348,11 @@ public class DynamicResourceDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateBankLevelDynamicResourceDoc", localVarResponse);
+          throw getApiException("createBankLevelDynamicResourceDoc", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+          return new ApiResponse<GetBankLevelDynamicResourceDoc200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -362,10 +362,10 @@ public class DynamicResourceDocApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetBankLevelDynamicResourceDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetBankLevelDynamicResourceDoc200Response>() {});
+        GetBankLevelDynamicResourceDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetBankLevelDynamicResourceDoc200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+        return new ApiResponse<GetBankLevelDynamicResourceDoc200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -384,14 +384,14 @@ public class DynamicResourceDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateBankLevelDynamicResourceDocRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createBankLevelDynamicResourceDocRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400CreateBankLevelDynamicResourceDoc");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createBankLevelDynamicResourceDoc");
     }
-    // verify the required parameter 'obPv400UpdateBankLevelDynamicResourceDocRequest' is set
-    if (obPv400UpdateBankLevelDynamicResourceDocRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400UpdateBankLevelDynamicResourceDocRequest' when calling oBPv400CreateBankLevelDynamicResourceDoc");
+    // verify the required parameter 'updateBankLevelDynamicResourceDocRequest' is set
+    if (updateBankLevelDynamicResourceDocRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateBankLevelDynamicResourceDocRequest' when calling createBankLevelDynamicResourceDoc");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -405,7 +405,7 @@ public class DynamicResourceDocApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400UpdateBankLevelDynamicResourceDocRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateBankLevelDynamicResourceDocRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -424,48 +424,48 @@ public class DynamicResourceDocApi {
   /**
    * Create Dynamic Resource Doc
    * &lt;p&gt;Create a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-   * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body (required)
-   * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+   * @param updateBankLevelDynamicResourceDocRequest Request body (required)
+   * @return GetBankLevelDynamicResourceDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400CreateDynamicResourceDoc(@javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest) throws ApiException {
-    return oBPv400CreateDynamicResourceDoc(obPv400UpdateBankLevelDynamicResourceDocRequest, null);
+  public GetBankLevelDynamicResourceDoc200Response createDynamicResourceDoc(@javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest) throws ApiException {
+    return createDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest, null);
   }
 
   /**
    * Create Dynamic Resource Doc
    * &lt;p&gt;Create a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-   * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body (required)
+   * @param updateBankLevelDynamicResourceDocRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+   * @return GetBankLevelDynamicResourceDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400CreateDynamicResourceDoc(@javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> localVarResponse = oBPv400CreateDynamicResourceDocWithHttpInfo(obPv400UpdateBankLevelDynamicResourceDocRequest, headers);
+  public GetBankLevelDynamicResourceDoc200Response createDynamicResourceDoc(@javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetBankLevelDynamicResourceDoc200Response> localVarResponse = createDynamicResourceDocWithHttpInfo(updateBankLevelDynamicResourceDocRequest, headers);
     return localVarResponse.getData();
   }
 
   /**
    * Create Dynamic Resource Doc
    * &lt;p&gt;Create a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-   * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetBankLevelDynamicResourceDoc200Response&gt;
+   * @param updateBankLevelDynamicResourceDocRequest Request body (required)
+   * @return ApiResponse&lt;GetBankLevelDynamicResourceDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400CreateDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest) throws ApiException {
-    return oBPv400CreateDynamicResourceDocWithHttpInfo(obPv400UpdateBankLevelDynamicResourceDocRequest, null);
+  public ApiResponse<GetBankLevelDynamicResourceDoc200Response> createDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest) throws ApiException {
+    return createDynamicResourceDocWithHttpInfo(updateBankLevelDynamicResourceDocRequest, null);
   }
 
   /**
    * Create Dynamic Resource Doc
    * &lt;p&gt;Create a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-   * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body (required)
+   * @param updateBankLevelDynamicResourceDocRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetBankLevelDynamicResourceDoc200Response&gt;
+   * @return ApiResponse&lt;GetBankLevelDynamicResourceDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400CreateDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateDynamicResourceDocRequestBuilder(obPv400UpdateBankLevelDynamicResourceDocRequest, headers);
+  public ApiResponse<GetBankLevelDynamicResourceDoc200Response> createDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createDynamicResourceDocRequestBuilder(updateBankLevelDynamicResourceDocRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -476,11 +476,11 @@ public class DynamicResourceDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateDynamicResourceDoc", localVarResponse);
+          throw getApiException("createDynamicResourceDoc", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+          return new ApiResponse<GetBankLevelDynamicResourceDoc200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -490,10 +490,10 @@ public class DynamicResourceDocApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetBankLevelDynamicResourceDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetBankLevelDynamicResourceDoc200Response>() {});
+        GetBankLevelDynamicResourceDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetBankLevelDynamicResourceDoc200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+        return new ApiResponse<GetBankLevelDynamicResourceDoc200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -512,10 +512,10 @@ public class DynamicResourceDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateDynamicResourceDocRequestBuilder(@javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'obPv400UpdateBankLevelDynamicResourceDocRequest' is set
-    if (obPv400UpdateBankLevelDynamicResourceDocRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400UpdateBankLevelDynamicResourceDocRequest' when calling oBPv400CreateDynamicResourceDoc");
+  private HttpRequest.Builder createDynamicResourceDocRequestBuilder(@javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'updateBankLevelDynamicResourceDocRequest' is set
+    if (updateBankLevelDynamicResourceDocRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateBankLevelDynamicResourceDocRequest' when calling createDynamicResourceDoc");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -528,7 +528,7 @@ public class DynamicResourceDocApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400UpdateBankLevelDynamicResourceDocRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateBankLevelDynamicResourceDocRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -550,8 +550,8 @@ public class DynamicResourceDocApi {
    * @param bankid The BANKID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteBankLevelDynamicResourceDoc(@javax.annotation.Nonnull String bankid) throws ApiException {
-    oBPv400DeleteBankLevelDynamicResourceDoc(bankid, null);
+  public void deleteBankLevelDynamicResourceDoc(@javax.annotation.Nonnull String bankid) throws ApiException {
+    deleteBankLevelDynamicResourceDoc(bankid, null);
   }
 
   /**
@@ -561,8 +561,8 @@ public class DynamicResourceDocApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteBankLevelDynamicResourceDoc(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    oBPv400DeleteBankLevelDynamicResourceDocWithHttpInfo(bankid, headers);
+  public void deleteBankLevelDynamicResourceDoc(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    deleteBankLevelDynamicResourceDocWithHttpInfo(bankid, headers);
   }
 
   /**
@@ -572,8 +572,8 @@ public class DynamicResourceDocApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteBankLevelDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv400DeleteBankLevelDynamicResourceDocWithHttpInfo(bankid, null);
+  public ApiResponse<Void> deleteBankLevelDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return deleteBankLevelDynamicResourceDocWithHttpInfo(bankid, null);
   }
 
   /**
@@ -584,8 +584,8 @@ public class DynamicResourceDocApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteBankLevelDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteBankLevelDynamicResourceDocRequestBuilder(bankid, headers);
+  public ApiResponse<Void> deleteBankLevelDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteBankLevelDynamicResourceDocRequestBuilder(bankid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -596,7 +596,7 @@ public class DynamicResourceDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteBankLevelDynamicResourceDoc", localVarResponse);
+          throw getApiException("deleteBankLevelDynamicResourceDoc", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -621,10 +621,10 @@ public class DynamicResourceDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteBankLevelDynamicResourceDocRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteBankLevelDynamicResourceDocRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400DeleteBankLevelDynamicResourceDoc");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteBankLevelDynamicResourceDoc");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -653,8 +653,8 @@ public class DynamicResourceDocApi {
    * &lt;p&gt;Delete a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteDynamicResourceDoc() throws ApiException {
-    oBPv400DeleteDynamicResourceDoc(null);
+  public void deleteDynamicResourceDoc() throws ApiException {
+    deleteDynamicResourceDoc(null);
   }
 
   /**
@@ -663,8 +663,8 @@ public class DynamicResourceDocApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteDynamicResourceDoc(Map<String, String> headers) throws ApiException {
-    oBPv400DeleteDynamicResourceDocWithHttpInfo(headers);
+  public void deleteDynamicResourceDoc(Map<String, String> headers) throws ApiException {
+    deleteDynamicResourceDocWithHttpInfo(headers);
   }
 
   /**
@@ -673,8 +673,8 @@ public class DynamicResourceDocApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteDynamicResourceDocWithHttpInfo() throws ApiException {
-    return oBPv400DeleteDynamicResourceDocWithHttpInfo(null);
+  public ApiResponse<Void> deleteDynamicResourceDocWithHttpInfo() throws ApiException {
+    return deleteDynamicResourceDocWithHttpInfo(null);
   }
 
   /**
@@ -684,8 +684,8 @@ public class DynamicResourceDocApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteDynamicResourceDocWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteDynamicResourceDocRequestBuilder(headers);
+  public ApiResponse<Void> deleteDynamicResourceDocWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteDynamicResourceDocRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -696,7 +696,7 @@ public class DynamicResourceDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteDynamicResourceDoc", localVarResponse);
+          throw getApiException("deleteDynamicResourceDoc", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -721,7 +721,7 @@ public class DynamicResourceDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteDynamicResourceDocRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteDynamicResourceDocRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -747,11 +747,11 @@ public class DynamicResourceDocApi {
    * Get all Bank Level Dynamic Resource Docs
    * &lt;p&gt;Get all Bank Level Dynamic Resource Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return OBPv400GetAllDynamicResourceDocs200Response
+   * @return GetAllDynamicResourceDocs200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllDynamicResourceDocs200Response oBPv400GetAllBankLevelDynamicResourceDocs(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv400GetAllBankLevelDynamicResourceDocs(bankid, null);
+  public GetAllDynamicResourceDocs200Response getAllBankLevelDynamicResourceDocs(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getAllBankLevelDynamicResourceDocs(bankid, null);
   }
 
   /**
@@ -759,11 +759,11 @@ public class DynamicResourceDocApi {
    * &lt;p&gt;Get all Bank Level Dynamic Resource Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllDynamicResourceDocs200Response
+   * @return GetAllDynamicResourceDocs200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllDynamicResourceDocs200Response oBPv400GetAllBankLevelDynamicResourceDocs(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllDynamicResourceDocs200Response> localVarResponse = oBPv400GetAllBankLevelDynamicResourceDocsWithHttpInfo(bankid, headers);
+  public GetAllDynamicResourceDocs200Response getAllBankLevelDynamicResourceDocs(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllDynamicResourceDocs200Response> localVarResponse = getAllBankLevelDynamicResourceDocsWithHttpInfo(bankid, headers);
     return localVarResponse.getData();
   }
 
@@ -771,11 +771,11 @@ public class DynamicResourceDocApi {
    * Get all Bank Level Dynamic Resource Docs
    * &lt;p&gt;Get all Bank Level Dynamic Resource Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetAllDynamicResourceDocs200Response&gt;
+   * @return ApiResponse&lt;GetAllDynamicResourceDocs200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllDynamicResourceDocs200Response> oBPv400GetAllBankLevelDynamicResourceDocsWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv400GetAllBankLevelDynamicResourceDocsWithHttpInfo(bankid, null);
+  public ApiResponse<GetAllDynamicResourceDocs200Response> getAllBankLevelDynamicResourceDocsWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getAllBankLevelDynamicResourceDocsWithHttpInfo(bankid, null);
   }
 
   /**
@@ -783,11 +783,11 @@ public class DynamicResourceDocApi {
    * &lt;p&gt;Get all Bank Level Dynamic Resource Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllDynamicResourceDocs200Response&gt;
+   * @return ApiResponse&lt;GetAllDynamicResourceDocs200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllDynamicResourceDocs200Response> oBPv400GetAllBankLevelDynamicResourceDocsWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetAllBankLevelDynamicResourceDocsRequestBuilder(bankid, headers);
+  public ApiResponse<GetAllDynamicResourceDocs200Response> getAllBankLevelDynamicResourceDocsWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAllBankLevelDynamicResourceDocsRequestBuilder(bankid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -798,11 +798,11 @@ public class DynamicResourceDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetAllBankLevelDynamicResourceDocs", localVarResponse);
+          throw getApiException("getAllBankLevelDynamicResourceDocs", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllDynamicResourceDocs200Response>(
+          return new ApiResponse<GetAllDynamicResourceDocs200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -812,10 +812,10 @@ public class DynamicResourceDocApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllDynamicResourceDocs200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllDynamicResourceDocs200Response>() {});
+        GetAllDynamicResourceDocs200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllDynamicResourceDocs200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetAllDynamicResourceDocs200Response>(
+        return new ApiResponse<GetAllDynamicResourceDocs200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -834,10 +834,10 @@ public class DynamicResourceDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetAllBankLevelDynamicResourceDocsRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAllBankLevelDynamicResourceDocsRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400GetAllBankLevelDynamicResourceDocs");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getAllBankLevelDynamicResourceDocs");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -864,44 +864,44 @@ public class DynamicResourceDocApi {
   /**
    * Get all Dynamic Resource Docs
    * &lt;p&gt;Get all Dynamic Resource Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-   * @return OBPv400GetAllDynamicResourceDocs200Response
+   * @return GetAllDynamicResourceDocs200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllDynamicResourceDocs200Response oBPv400GetAllDynamicResourceDocs() throws ApiException {
-    return oBPv400GetAllDynamicResourceDocs(null);
+  public GetAllDynamicResourceDocs200Response getAllDynamicResourceDocs() throws ApiException {
+    return getAllDynamicResourceDocs(null);
   }
 
   /**
    * Get all Dynamic Resource Docs
    * &lt;p&gt;Get all Dynamic Resource Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllDynamicResourceDocs200Response
+   * @return GetAllDynamicResourceDocs200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllDynamicResourceDocs200Response oBPv400GetAllDynamicResourceDocs(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllDynamicResourceDocs200Response> localVarResponse = oBPv400GetAllDynamicResourceDocsWithHttpInfo(headers);
+  public GetAllDynamicResourceDocs200Response getAllDynamicResourceDocs(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllDynamicResourceDocs200Response> localVarResponse = getAllDynamicResourceDocsWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get all Dynamic Resource Docs
    * &lt;p&gt;Get all Dynamic Resource Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv400GetAllDynamicResourceDocs200Response&gt;
+   * @return ApiResponse&lt;GetAllDynamicResourceDocs200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllDynamicResourceDocs200Response> oBPv400GetAllDynamicResourceDocsWithHttpInfo() throws ApiException {
-    return oBPv400GetAllDynamicResourceDocsWithHttpInfo(null);
+  public ApiResponse<GetAllDynamicResourceDocs200Response> getAllDynamicResourceDocsWithHttpInfo() throws ApiException {
+    return getAllDynamicResourceDocsWithHttpInfo(null);
   }
 
   /**
    * Get all Dynamic Resource Docs
    * &lt;p&gt;Get all Dynamic Resource Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllDynamicResourceDocs200Response&gt;
+   * @return ApiResponse&lt;GetAllDynamicResourceDocs200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllDynamicResourceDocs200Response> oBPv400GetAllDynamicResourceDocsWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetAllDynamicResourceDocsRequestBuilder(headers);
+  public ApiResponse<GetAllDynamicResourceDocs200Response> getAllDynamicResourceDocsWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAllDynamicResourceDocsRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -912,11 +912,11 @@ public class DynamicResourceDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetAllDynamicResourceDocs", localVarResponse);
+          throw getApiException("getAllDynamicResourceDocs", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllDynamicResourceDocs200Response>(
+          return new ApiResponse<GetAllDynamicResourceDocs200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -926,10 +926,10 @@ public class DynamicResourceDocApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllDynamicResourceDocs200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllDynamicResourceDocs200Response>() {});
+        GetAllDynamicResourceDocs200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllDynamicResourceDocs200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetAllDynamicResourceDocs200Response>(
+        return new ApiResponse<GetAllDynamicResourceDocs200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -948,7 +948,7 @@ public class DynamicResourceDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetAllDynamicResourceDocsRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAllDynamicResourceDocsRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -974,11 +974,11 @@ public class DynamicResourceDocApi {
    * Get Bank Level Dynamic Resource Doc by Id
    * &lt;p&gt;Get a Bank Level Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+   * @return GetBankLevelDynamicResourceDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400GetBankLevelDynamicResourceDoc(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv400GetBankLevelDynamicResourceDoc(bankid, null);
+  public GetBankLevelDynamicResourceDoc200Response getBankLevelDynamicResourceDoc(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getBankLevelDynamicResourceDoc(bankid, null);
   }
 
   /**
@@ -986,11 +986,11 @@ public class DynamicResourceDocApi {
    * &lt;p&gt;Get a Bank Level Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+   * @return GetBankLevelDynamicResourceDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400GetBankLevelDynamicResourceDoc(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> localVarResponse = oBPv400GetBankLevelDynamicResourceDocWithHttpInfo(bankid, headers);
+  public GetBankLevelDynamicResourceDoc200Response getBankLevelDynamicResourceDoc(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetBankLevelDynamicResourceDoc200Response> localVarResponse = getBankLevelDynamicResourceDocWithHttpInfo(bankid, headers);
     return localVarResponse.getData();
   }
 
@@ -998,11 +998,11 @@ public class DynamicResourceDocApi {
    * Get Bank Level Dynamic Resource Doc by Id
    * &lt;p&gt;Get a Bank Level Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetBankLevelDynamicResourceDoc200Response&gt;
+   * @return ApiResponse&lt;GetBankLevelDynamicResourceDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400GetBankLevelDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv400GetBankLevelDynamicResourceDocWithHttpInfo(bankid, null);
+  public ApiResponse<GetBankLevelDynamicResourceDoc200Response> getBankLevelDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getBankLevelDynamicResourceDocWithHttpInfo(bankid, null);
   }
 
   /**
@@ -1010,11 +1010,11 @@ public class DynamicResourceDocApi {
    * &lt;p&gt;Get a Bank Level Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetBankLevelDynamicResourceDoc200Response&gt;
+   * @return ApiResponse&lt;GetBankLevelDynamicResourceDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400GetBankLevelDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetBankLevelDynamicResourceDocRequestBuilder(bankid, headers);
+  public ApiResponse<GetBankLevelDynamicResourceDoc200Response> getBankLevelDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getBankLevelDynamicResourceDocRequestBuilder(bankid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1025,11 +1025,11 @@ public class DynamicResourceDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetBankLevelDynamicResourceDoc", localVarResponse);
+          throw getApiException("getBankLevelDynamicResourceDoc", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+          return new ApiResponse<GetBankLevelDynamicResourceDoc200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1039,10 +1039,10 @@ public class DynamicResourceDocApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetBankLevelDynamicResourceDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetBankLevelDynamicResourceDoc200Response>() {});
+        GetBankLevelDynamicResourceDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetBankLevelDynamicResourceDoc200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+        return new ApiResponse<GetBankLevelDynamicResourceDoc200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1061,10 +1061,10 @@ public class DynamicResourceDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetBankLevelDynamicResourceDocRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getBankLevelDynamicResourceDocRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400GetBankLevelDynamicResourceDoc");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getBankLevelDynamicResourceDoc");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1091,44 +1091,44 @@ public class DynamicResourceDocApi {
   /**
    * Get Dynamic Resource Doc by Id
    * &lt;p&gt;Get a Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-   * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+   * @return GetBankLevelDynamicResourceDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400GetDynamicResourceDoc() throws ApiException {
-    return oBPv400GetDynamicResourceDoc(null);
+  public GetBankLevelDynamicResourceDoc200Response getDynamicResourceDoc() throws ApiException {
+    return getDynamicResourceDoc(null);
   }
 
   /**
    * Get Dynamic Resource Doc by Id
    * &lt;p&gt;Get a Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+   * @return GetBankLevelDynamicResourceDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400GetDynamicResourceDoc(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> localVarResponse = oBPv400GetDynamicResourceDocWithHttpInfo(headers);
+  public GetBankLevelDynamicResourceDoc200Response getDynamicResourceDoc(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetBankLevelDynamicResourceDoc200Response> localVarResponse = getDynamicResourceDocWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get Dynamic Resource Doc by Id
    * &lt;p&gt;Get a Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv400GetBankLevelDynamicResourceDoc200Response&gt;
+   * @return ApiResponse&lt;GetBankLevelDynamicResourceDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400GetDynamicResourceDocWithHttpInfo() throws ApiException {
-    return oBPv400GetDynamicResourceDocWithHttpInfo(null);
+  public ApiResponse<GetBankLevelDynamicResourceDoc200Response> getDynamicResourceDocWithHttpInfo() throws ApiException {
+    return getDynamicResourceDocWithHttpInfo(null);
   }
 
   /**
    * Get Dynamic Resource Doc by Id
    * &lt;p&gt;Get a Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetBankLevelDynamicResourceDoc200Response&gt;
+   * @return ApiResponse&lt;GetBankLevelDynamicResourceDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400GetDynamicResourceDocWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetDynamicResourceDocRequestBuilder(headers);
+  public ApiResponse<GetBankLevelDynamicResourceDoc200Response> getDynamicResourceDocWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getDynamicResourceDocRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1139,11 +1139,11 @@ public class DynamicResourceDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetDynamicResourceDoc", localVarResponse);
+          throw getApiException("getDynamicResourceDoc", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+          return new ApiResponse<GetBankLevelDynamicResourceDoc200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1153,10 +1153,10 @@ public class DynamicResourceDocApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetBankLevelDynamicResourceDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetBankLevelDynamicResourceDoc200Response>() {});
+        GetBankLevelDynamicResourceDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetBankLevelDynamicResourceDoc200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+        return new ApiResponse<GetBankLevelDynamicResourceDoc200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1175,7 +1175,7 @@ public class DynamicResourceDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetDynamicResourceDocRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getDynamicResourceDocRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -1201,25 +1201,25 @@ public class DynamicResourceDocApi {
    * Update Bank Level Dynamic Resource Doc
    * &lt;p&gt;Update a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body (required)
-   * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+   * @param updateBankLevelDynamicResourceDocRequest Request body (required)
+   * @return GetBankLevelDynamicResourceDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400UpdateBankLevelDynamicResourceDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest) throws ApiException {
-    return oBPv400UpdateBankLevelDynamicResourceDoc(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest, null);
+  public GetBankLevelDynamicResourceDoc200Response updateBankLevelDynamicResourceDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest) throws ApiException {
+    return updateBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest, null);
   }
 
   /**
    * Update Bank Level Dynamic Resource Doc
    * &lt;p&gt;Update a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body (required)
+   * @param updateBankLevelDynamicResourceDocRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+   * @return GetBankLevelDynamicResourceDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400UpdateBankLevelDynamicResourceDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> localVarResponse = oBPv400UpdateBankLevelDynamicResourceDocWithHttpInfo(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest, headers);
+  public GetBankLevelDynamicResourceDoc200Response updateBankLevelDynamicResourceDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetBankLevelDynamicResourceDoc200Response> localVarResponse = updateBankLevelDynamicResourceDocWithHttpInfo(bankid, updateBankLevelDynamicResourceDocRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1227,25 +1227,25 @@ public class DynamicResourceDocApi {
    * Update Bank Level Dynamic Resource Doc
    * &lt;p&gt;Update a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetBankLevelDynamicResourceDoc200Response&gt;
+   * @param updateBankLevelDynamicResourceDocRequest Request body (required)
+   * @return ApiResponse&lt;GetBankLevelDynamicResourceDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400UpdateBankLevelDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest) throws ApiException {
-    return oBPv400UpdateBankLevelDynamicResourceDocWithHttpInfo(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest, null);
+  public ApiResponse<GetBankLevelDynamicResourceDoc200Response> updateBankLevelDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest) throws ApiException {
+    return updateBankLevelDynamicResourceDocWithHttpInfo(bankid, updateBankLevelDynamicResourceDocRequest, null);
   }
 
   /**
    * Update Bank Level Dynamic Resource Doc
    * &lt;p&gt;Update a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body (required)
+   * @param updateBankLevelDynamicResourceDocRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetBankLevelDynamicResourceDoc200Response&gt;
+   * @return ApiResponse&lt;GetBankLevelDynamicResourceDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400UpdateBankLevelDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400UpdateBankLevelDynamicResourceDocRequestBuilder(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest, headers);
+  public ApiResponse<GetBankLevelDynamicResourceDoc200Response> updateBankLevelDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateBankLevelDynamicResourceDocRequestBuilder(bankid, updateBankLevelDynamicResourceDocRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1256,11 +1256,11 @@ public class DynamicResourceDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400UpdateBankLevelDynamicResourceDoc", localVarResponse);
+          throw getApiException("updateBankLevelDynamicResourceDoc", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+          return new ApiResponse<GetBankLevelDynamicResourceDoc200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1270,10 +1270,10 @@ public class DynamicResourceDocApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetBankLevelDynamicResourceDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetBankLevelDynamicResourceDoc200Response>() {});
+        GetBankLevelDynamicResourceDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetBankLevelDynamicResourceDoc200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+        return new ApiResponse<GetBankLevelDynamicResourceDoc200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1292,14 +1292,14 @@ public class DynamicResourceDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400UpdateBankLevelDynamicResourceDocRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateBankLevelDynamicResourceDocRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400UpdateBankLevelDynamicResourceDoc");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateBankLevelDynamicResourceDoc");
     }
-    // verify the required parameter 'obPv400UpdateBankLevelDynamicResourceDocRequest' is set
-    if (obPv400UpdateBankLevelDynamicResourceDocRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400UpdateBankLevelDynamicResourceDocRequest' when calling oBPv400UpdateBankLevelDynamicResourceDoc");
+    // verify the required parameter 'updateBankLevelDynamicResourceDocRequest' is set
+    if (updateBankLevelDynamicResourceDocRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateBankLevelDynamicResourceDocRequest' when calling updateBankLevelDynamicResourceDoc");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1313,7 +1313,7 @@ public class DynamicResourceDocApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400UpdateBankLevelDynamicResourceDocRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateBankLevelDynamicResourceDocRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -1332,48 +1332,48 @@ public class DynamicResourceDocApi {
   /**
    * Update Dynamic Resource Doc
    * &lt;p&gt;Update a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-   * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body (required)
-   * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+   * @param updateBankLevelDynamicResourceDocRequest Request body (required)
+   * @return GetBankLevelDynamicResourceDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400UpdateDynamicResourceDoc(@javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest) throws ApiException {
-    return oBPv400UpdateDynamicResourceDoc(obPv400UpdateBankLevelDynamicResourceDocRequest, null);
+  public GetBankLevelDynamicResourceDoc200Response updateDynamicResourceDoc(@javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest) throws ApiException {
+    return updateDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest, null);
   }
 
   /**
    * Update Dynamic Resource Doc
    * &lt;p&gt;Update a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-   * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body (required)
+   * @param updateBankLevelDynamicResourceDocRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+   * @return GetBankLevelDynamicResourceDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400UpdateDynamicResourceDoc(@javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> localVarResponse = oBPv400UpdateDynamicResourceDocWithHttpInfo(obPv400UpdateBankLevelDynamicResourceDocRequest, headers);
+  public GetBankLevelDynamicResourceDoc200Response updateDynamicResourceDoc(@javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetBankLevelDynamicResourceDoc200Response> localVarResponse = updateDynamicResourceDocWithHttpInfo(updateBankLevelDynamicResourceDocRequest, headers);
     return localVarResponse.getData();
   }
 
   /**
    * Update Dynamic Resource Doc
    * &lt;p&gt;Update a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-   * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetBankLevelDynamicResourceDoc200Response&gt;
+   * @param updateBankLevelDynamicResourceDocRequest Request body (required)
+   * @return ApiResponse&lt;GetBankLevelDynamicResourceDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400UpdateDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest) throws ApiException {
-    return oBPv400UpdateDynamicResourceDocWithHttpInfo(obPv400UpdateBankLevelDynamicResourceDocRequest, null);
+  public ApiResponse<GetBankLevelDynamicResourceDoc200Response> updateDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest) throws ApiException {
+    return updateDynamicResourceDocWithHttpInfo(updateBankLevelDynamicResourceDocRequest, null);
   }
 
   /**
    * Update Dynamic Resource Doc
    * &lt;p&gt;Update a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-   * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body (required)
+   * @param updateBankLevelDynamicResourceDocRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetBankLevelDynamicResourceDoc200Response&gt;
+   * @return ApiResponse&lt;GetBankLevelDynamicResourceDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400UpdateDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400UpdateDynamicResourceDocRequestBuilder(obPv400UpdateBankLevelDynamicResourceDocRequest, headers);
+  public ApiResponse<GetBankLevelDynamicResourceDoc200Response> updateDynamicResourceDocWithHttpInfo(@javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateDynamicResourceDocRequestBuilder(updateBankLevelDynamicResourceDocRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1384,11 +1384,11 @@ public class DynamicResourceDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400UpdateDynamicResourceDoc", localVarResponse);
+          throw getApiException("updateDynamicResourceDoc", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+          return new ApiResponse<GetBankLevelDynamicResourceDoc200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1398,10 +1398,10 @@ public class DynamicResourceDocApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetBankLevelDynamicResourceDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetBankLevelDynamicResourceDoc200Response>() {});
+        GetBankLevelDynamicResourceDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetBankLevelDynamicResourceDoc200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+        return new ApiResponse<GetBankLevelDynamicResourceDoc200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1420,10 +1420,10 @@ public class DynamicResourceDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400UpdateDynamicResourceDocRequestBuilder(@javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'obPv400UpdateBankLevelDynamicResourceDocRequest' is set
-    if (obPv400UpdateBankLevelDynamicResourceDocRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400UpdateBankLevelDynamicResourceDocRequest' when calling oBPv400UpdateDynamicResourceDoc");
+  private HttpRequest.Builder updateDynamicResourceDocRequestBuilder(@javax.annotation.Nonnull UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'updateBankLevelDynamicResourceDocRequest' is set
+    if (updateBankLevelDynamicResourceDocRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateBankLevelDynamicResourceDocRequest' when calling updateDynamicResourceDoc");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1436,7 +1436,7 @@ public class DynamicResourceDocApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400UpdateBankLevelDynamicResourceDocRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateBankLevelDynamicResourceDocRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

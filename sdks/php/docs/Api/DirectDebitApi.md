@@ -2,18 +2,18 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400CreateDirectDebit()**](DirectDebitApi.md#oBPv400CreateDirectDebit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit |
-| [**oBPv400CreateDirectDebitManagement()**](DirectDebitApi.md#oBPv400CreateDirectDebitManagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management) |
+| [**createDirectDebit()**](DirectDebitApi.md#createDirectDebit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit |
+| [**createDirectDebitManagement()**](DirectDebitApi.md#createDirectDebitManagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management) |
 
 
-## `oBPv400CreateDirectDebit()`
+## `createDirectDebit()`
 
 ```php
-oBPv400CreateDirectDebit($bankid, $accountid, $viewid, $obpv400_create_direct_debit_request): \OpenBankProject\Model\OBPv400CreateDirectDebit200Response
+createDirectDebit($bankid, $accountid, $viewid, $create_direct_debit_request): \OpenBankProject\Model\CreateDirectDebit200Response
 ```
 
 Create Direct Debit
@@ -36,9 +36,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DirectDebitApi(
@@ -50,13 +50,13 @@ $apiInstance = new OpenBankProject\Api\DirectDebitApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
-$obpv400_create_direct_debit_request = {"type":"object","properties":{"date_expires":{"type":"string","format":"date-time"},"date_starts":{"type":"string","format":"date-time"},"customer_id":{"type":"string"},"counterparty_id":{"type":"string"},"date_signed":{"type":"string","format":"date-time"},"user_id":{"type":"string"}}}; // \OpenBankProject\Model\OBPv400CreateDirectDebitRequest | Request body
+$create_direct_debit_request = {"type":"object","properties":{"customer_id":{"type":"string"},"date_signed":{"type":"string","format":"date-time"},"counterparty_id":{"type":"string"},"date_expires":{"type":"string","format":"date-time"},"date_starts":{"type":"string","format":"date-time"},"user_id":{"type":"string"}}}; // \OpenBankProject\Model\CreateDirectDebitRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400CreateDirectDebit($bankid, $accountid, $viewid, $obpv400_create_direct_debit_request);
+    $result = $apiInstance->createDirectDebit($bankid, $accountid, $viewid, $create_direct_debit_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DirectDebitApi->oBPv400CreateDirectDebit: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DirectDebitApi->createDirectDebit: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -67,11 +67,11 @@ try {
 | **bankid** | **string**| The BANKID identifier | |
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
-| **obpv400_create_direct_debit_request** | [**\OpenBankProject\Model\OBPv400CreateDirectDebitRequest**](../Model/OBPv400CreateDirectDebitRequest.md)| Request body | |
+| **create_direct_debit_request** | [**\OpenBankProject\Model\CreateDirectDebitRequest**](../Model/CreateDirectDebitRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400CreateDirectDebit200Response**](../Model/OBPv400CreateDirectDebit200Response.md)
+[**\OpenBankProject\Model\CreateDirectDebit200Response**](../Model/CreateDirectDebit200Response.md)
 
 ### Authorization
 
@@ -86,10 +86,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400CreateDirectDebitManagement()`
+## `createDirectDebitManagement()`
 
 ```php
-oBPv400CreateDirectDebitManagement($bankid, $accountid, $obpv400_create_direct_debit_request): \OpenBankProject\Model\OBPv400CreateDirectDebit200Response
+createDirectDebitManagement($bankid, $accountid, $create_direct_debit_request): \OpenBankProject\Model\CreateDirectDebit200Response
 ```
 
 Create Direct Debit (management)
@@ -112,9 +112,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DirectDebitApi(
@@ -125,13 +125,13 @@ $apiInstance = new OpenBankProject\Api\DirectDebitApi(
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
-$obpv400_create_direct_debit_request = {type=object, properties={date_expires={type=string, format=date-time}, date_starts={type=string, format=date-time}, customer_id={type=string}, counterparty_id={type=string}, date_signed={type=string, format=date-time}, user_id={type=string}}}; // \OpenBankProject\Model\OBPv400CreateDirectDebitRequest | Request body
+$create_direct_debit_request = {type=object, properties={customer_id={type=string}, date_signed={type=string, format=date-time}, counterparty_id={type=string}, date_expires={type=string, format=date-time}, date_starts={type=string, format=date-time}, user_id={type=string}}}; // \OpenBankProject\Model\CreateDirectDebitRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400CreateDirectDebitManagement($bankid, $accountid, $obpv400_create_direct_debit_request);
+    $result = $apiInstance->createDirectDebitManagement($bankid, $accountid, $create_direct_debit_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DirectDebitApi->oBPv400CreateDirectDebitManagement: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DirectDebitApi->createDirectDebitManagement: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -141,11 +141,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
 | **accountid** | **string**| The ACCOUNTID identifier | |
-| **obpv400_create_direct_debit_request** | [**\OpenBankProject\Model\OBPv400CreateDirectDebitRequest**](../Model/OBPv400CreateDirectDebitRequest.md)| Request body | |
+| **create_direct_debit_request** | [**\OpenBankProject\Model\CreateDirectDebitRequest**](../Model/CreateDirectDebitRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400CreateDirectDebit200Response**](../Model/OBPv400CreateDirectDebit200Response.md)
+[**\OpenBankProject\Model\CreateDirectDebit200Response**](../Model/CreateDirectDebit200Response.md)
 
 ### Authorization
 

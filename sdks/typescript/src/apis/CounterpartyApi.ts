@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,339 +15,339 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv121GetCounterpartyPublicAlias200Response,
-  OBPv121GetOtherAccountForTransaction200Response,
-  OBPv121GetOtherAccountMetadata200Response,
-  OBPv121UpdateCounterpartyCorporateLocationRequest,
-  OBPv121UpdateCounterpartyImageUrlRequest,
-  OBPv121UpdateCounterpartyMoreInfoRequest,
-  OBPv121UpdateCounterpartyOpenCorporatesUrlRequest,
-  OBPv121UpdateCounterpartyPhysicalLocationRequest,
-  OBPv121UpdateCounterpartyUrlRequest,
-  OBPv121UpdateTransactionNarrative200Response,
-  OBPv300GetOtherAccountsForBankAccount200Response,
-  OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount,
-  OBPv400CreateCounterpartyForAnyAccountRequest,
-  OBPv400GetCounterpartiesForAnyAccount200Response,
-  OBPv400GetExplicitCounterpartyById200Response,
+  CreateCounterpartyForAnyAccountRequest,
+  GetCounterpartiesForAnyAccount200Response,
+  GetCounterpartyPublicAlias200Response,
+  GetExplicitCounterpartyById200Response,
+  GetOtherAccountForTransaction200Response,
+  GetOtherAccountMetadata200Response,
+  GetOtherAccountsForBankAccount200Response,
+  GetTransactionByIdForBankAccount200ResponseOtherAccount,
+  UpdateCounterpartyCorporateLocationRequest,
+  UpdateCounterpartyImageUrlRequest,
+  UpdateCounterpartyMoreInfoRequest,
+  UpdateCounterpartyOpenCorporatesUrlRequest,
+  UpdateCounterpartyPhysicalLocationRequest,
+  UpdateCounterpartyUrlRequest,
+  UpdateTransactionNarrative200Response,
 } from '../models/index';
 import {
-    OBPv121GetCounterpartyPublicAlias200ResponseFromJSON,
-    OBPv121GetCounterpartyPublicAlias200ResponseToJSON,
-    OBPv121GetOtherAccountForTransaction200ResponseFromJSON,
-    OBPv121GetOtherAccountForTransaction200ResponseToJSON,
-    OBPv121GetOtherAccountMetadata200ResponseFromJSON,
-    OBPv121GetOtherAccountMetadata200ResponseToJSON,
-    OBPv121UpdateCounterpartyCorporateLocationRequestFromJSON,
-    OBPv121UpdateCounterpartyCorporateLocationRequestToJSON,
-    OBPv121UpdateCounterpartyImageUrlRequestFromJSON,
-    OBPv121UpdateCounterpartyImageUrlRequestToJSON,
-    OBPv121UpdateCounterpartyMoreInfoRequestFromJSON,
-    OBPv121UpdateCounterpartyMoreInfoRequestToJSON,
-    OBPv121UpdateCounterpartyOpenCorporatesUrlRequestFromJSON,
-    OBPv121UpdateCounterpartyOpenCorporatesUrlRequestToJSON,
-    OBPv121UpdateCounterpartyPhysicalLocationRequestFromJSON,
-    OBPv121UpdateCounterpartyPhysicalLocationRequestToJSON,
-    OBPv121UpdateCounterpartyUrlRequestFromJSON,
-    OBPv121UpdateCounterpartyUrlRequestToJSON,
-    OBPv121UpdateTransactionNarrative200ResponseFromJSON,
-    OBPv121UpdateTransactionNarrative200ResponseToJSON,
-    OBPv300GetOtherAccountsForBankAccount200ResponseFromJSON,
-    OBPv300GetOtherAccountsForBankAccount200ResponseToJSON,
-    OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccountFromJSON,
-    OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccountToJSON,
-    OBPv400CreateCounterpartyForAnyAccountRequestFromJSON,
-    OBPv400CreateCounterpartyForAnyAccountRequestToJSON,
-    OBPv400GetCounterpartiesForAnyAccount200ResponseFromJSON,
-    OBPv400GetCounterpartiesForAnyAccount200ResponseToJSON,
-    OBPv400GetExplicitCounterpartyById200ResponseFromJSON,
-    OBPv400GetExplicitCounterpartyById200ResponseToJSON,
+    CreateCounterpartyForAnyAccountRequestFromJSON,
+    CreateCounterpartyForAnyAccountRequestToJSON,
+    GetCounterpartiesForAnyAccount200ResponseFromJSON,
+    GetCounterpartiesForAnyAccount200ResponseToJSON,
+    GetCounterpartyPublicAlias200ResponseFromJSON,
+    GetCounterpartyPublicAlias200ResponseToJSON,
+    GetExplicitCounterpartyById200ResponseFromJSON,
+    GetExplicitCounterpartyById200ResponseToJSON,
+    GetOtherAccountForTransaction200ResponseFromJSON,
+    GetOtherAccountForTransaction200ResponseToJSON,
+    GetOtherAccountMetadata200ResponseFromJSON,
+    GetOtherAccountMetadata200ResponseToJSON,
+    GetOtherAccountsForBankAccount200ResponseFromJSON,
+    GetOtherAccountsForBankAccount200ResponseToJSON,
+    GetTransactionByIdForBankAccount200ResponseOtherAccountFromJSON,
+    GetTransactionByIdForBankAccount200ResponseOtherAccountToJSON,
+    UpdateCounterpartyCorporateLocationRequestFromJSON,
+    UpdateCounterpartyCorporateLocationRequestToJSON,
+    UpdateCounterpartyImageUrlRequestFromJSON,
+    UpdateCounterpartyImageUrlRequestToJSON,
+    UpdateCounterpartyMoreInfoRequestFromJSON,
+    UpdateCounterpartyMoreInfoRequestToJSON,
+    UpdateCounterpartyOpenCorporatesUrlRequestFromJSON,
+    UpdateCounterpartyOpenCorporatesUrlRequestToJSON,
+    UpdateCounterpartyPhysicalLocationRequestFromJSON,
+    UpdateCounterpartyPhysicalLocationRequestToJSON,
+    UpdateCounterpartyUrlRequestFromJSON,
+    UpdateCounterpartyUrlRequestToJSON,
+    UpdateTransactionNarrative200ResponseFromJSON,
+    UpdateTransactionNarrative200ResponseToJSON,
 } from '../models/index';
 
-export interface OBPv121AddCounterpartyCorporateLocationRequest {
+export interface AddCounterpartyCorporateLocationRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     otheraccountid: string;
-    oBPv121UpdateCounterpartyCorporateLocationRequest: OBPv121UpdateCounterpartyCorporateLocationRequest;
+    updateCounterpartyCorporateLocationRequest: UpdateCounterpartyCorporateLocationRequest;
 }
 
-export interface OBPv121AddCounterpartyImageUrlRequest {
+export interface AddCounterpartyImageUrlRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     otheraccountid: string;
-    oBPv121UpdateCounterpartyImageUrlRequest: OBPv121UpdateCounterpartyImageUrlRequest;
+    updateCounterpartyImageUrlRequest: UpdateCounterpartyImageUrlRequest;
 }
 
-export interface OBPv121AddCounterpartyMoreInfoRequest {
+export interface AddCounterpartyMoreInfoRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     otheraccountid: string;
-    oBPv121UpdateCounterpartyMoreInfoRequest: OBPv121UpdateCounterpartyMoreInfoRequest;
+    updateCounterpartyMoreInfoRequest: UpdateCounterpartyMoreInfoRequest;
 }
 
-export interface OBPv121AddCounterpartyOpenCorporatesUrlRequest {
+export interface AddCounterpartyOpenCorporatesUrlRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     otheraccountid: string;
-    oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: OBPv121UpdateCounterpartyOpenCorporatesUrlRequest;
+    updateCounterpartyOpenCorporatesUrlRequest: UpdateCounterpartyOpenCorporatesUrlRequest;
 }
 
-export interface OBPv121AddCounterpartyPhysicalLocationRequest {
+export interface AddCounterpartyPhysicalLocationRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     otheraccountid: string;
-    oBPv121UpdateCounterpartyPhysicalLocationRequest: OBPv121UpdateCounterpartyPhysicalLocationRequest;
+    updateCounterpartyPhysicalLocationRequest: UpdateCounterpartyPhysicalLocationRequest;
 }
 
-export interface OBPv121AddCounterpartyPublicAliasRequest {
+export interface AddCounterpartyPublicAliasRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     otheraccountid: string;
-    oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response;
+    getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response;
 }
 
-export interface OBPv121AddCounterpartyUrlRequest {
+export interface AddCounterpartyUrlRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     otheraccountid: string;
-    oBPv121UpdateCounterpartyUrlRequest: OBPv121UpdateCounterpartyUrlRequest;
+    updateCounterpartyUrlRequest: UpdateCounterpartyUrlRequest;
 }
 
-export interface OBPv121AddOtherAccountPrivateAliasRequest {
+export interface AddOtherAccountPrivateAliasRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     otheraccountid: string;
-    oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response;
+    getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response;
 }
 
-export interface OBPv121DeleteCounterpartyCorporateLocationRequest {
+export interface CreateCounterpartyRequest {
     bankid: string;
     accountid: string;
     viewid: string;
-    otheraccountid: string;
+    createCounterpartyForAnyAccountRequest: CreateCounterpartyForAnyAccountRequest;
 }
 
-export interface OBPv121DeleteCounterpartyImageUrlRequest {
+export interface CreateCounterpartyForAnyAccountOperationRequest {
     bankid: string;
     accountid: string;
     viewid: string;
-    otheraccountid: string;
+    createCounterpartyForAnyAccountRequest: CreateCounterpartyForAnyAccountRequest;
 }
 
-export interface OBPv121DeleteCounterpartyMoreInfoRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    otheraccountid: string;
-}
-
-export interface OBPv121DeleteCounterpartyOpenCorporatesUrlRequest {
+export interface DeleteCounterpartyCorporateLocationRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     otheraccountid: string;
 }
 
-export interface OBPv121DeleteCounterpartyPhysicalLocationRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    otheraccountid: string;
-}
-
-export interface OBPv121DeleteCounterpartyPrivateAliasRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    otheraccountid: string;
-}
-
-export interface OBPv121DeleteCounterpartyPublicAliasRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    otheraccountid: string;
-}
-
-export interface OBPv121DeleteCounterpartyUrlRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    otheraccountid: string;
-}
-
-export interface OBPv121GetCounterpartyPublicAliasRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    otheraccountid: string;
-}
-
-export interface OBPv121GetOtherAccountForTransactionRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    transactionid: string;
-}
-
-export interface OBPv121GetOtherAccountMetadataRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    otheraccountid: string;
-}
-
-export interface OBPv121GetOtherAccountPrivateAliasRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    otheraccountid: string;
-}
-
-export interface OBPv121UpdateCounterpartyCorporateLocationOperationRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    otheraccountid: string;
-    oBPv121UpdateCounterpartyCorporateLocationRequest: OBPv121UpdateCounterpartyCorporateLocationRequest;
-}
-
-export interface OBPv121UpdateCounterpartyImageUrlOperationRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    otheraccountid: string;
-    oBPv121UpdateCounterpartyImageUrlRequest: OBPv121UpdateCounterpartyImageUrlRequest;
-}
-
-export interface OBPv121UpdateCounterpartyMoreInfoOperationRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    otheraccountid: string;
-    oBPv121UpdateCounterpartyMoreInfoRequest: OBPv121UpdateCounterpartyMoreInfoRequest;
-}
-
-export interface OBPv121UpdateCounterpartyOpenCorporatesUrlOperationRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    otheraccountid: string;
-    oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: OBPv121UpdateCounterpartyOpenCorporatesUrlRequest;
-}
-
-export interface OBPv121UpdateCounterpartyPhysicalLocationOperationRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    otheraccountid: string;
-    oBPv121UpdateCounterpartyPhysicalLocationRequest: OBPv121UpdateCounterpartyPhysicalLocationRequest;
-}
-
-export interface OBPv121UpdateCounterpartyPrivateAliasRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    otheraccountid: string;
-    oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response;
-}
-
-export interface OBPv121UpdateCounterpartyPublicAliasRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    otheraccountid: string;
-    oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response;
-}
-
-export interface OBPv121UpdateCounterpartyUrlOperationRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    otheraccountid: string;
-    oBPv121UpdateCounterpartyUrlRequest: OBPv121UpdateCounterpartyUrlRequest;
-}
-
-export interface OBPv300GetOtherAccountByIdForBankAccountRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    otheraccountid: string;
-}
-
-export interface OBPv300GetOtherAccountsForBankAccountRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-}
-
-export interface OBPv400CreateCounterpartyRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    oBPv400CreateCounterpartyForAnyAccountRequest: OBPv400CreateCounterpartyForAnyAccountRequest;
-}
-
-export interface OBPv400CreateCounterpartyForAnyAccountOperationRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    oBPv400CreateCounterpartyForAnyAccountRequest: OBPv400CreateCounterpartyForAnyAccountRequest;
-}
-
-export interface OBPv400DeleteCounterpartyForAnyAccountRequest {
+export interface DeleteCounterpartyForAnyAccountRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     counterpartyid: string;
 }
 
-export interface OBPv400DeleteExplicitCounterpartyRequest {
+export interface DeleteCounterpartyImageUrlRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+}
+
+export interface DeleteCounterpartyMoreInfoRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+}
+
+export interface DeleteCounterpartyOpenCorporatesUrlRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+}
+
+export interface DeleteCounterpartyPhysicalLocationRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+}
+
+export interface DeleteCounterpartyPrivateAliasRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+}
+
+export interface DeleteCounterpartyPublicAliasRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+}
+
+export interface DeleteCounterpartyUrlRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+}
+
+export interface DeleteExplicitCounterpartyRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     counterpartyid: string;
 }
 
-export interface OBPv400GetCounterpartiesForAnyAccountRequest {
+export interface GetCounterpartiesForAnyAccountRequest {
     bankid: string;
     accountid: string;
     viewid: string;
 }
 
-export interface OBPv400GetCounterpartyByIdForAnyAccountRequest {
+export interface GetCounterpartyByIdForAnyAccountRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     counterpartyid: string;
 }
 
-export interface OBPv400GetCounterpartyByNameForAnyAccountRequest {
+export interface GetCounterpartyByNameForAnyAccountRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     counterpartyname: string;
 }
 
-export interface OBPv400GetExplicitCounterpartiesForAccountRequest {
+export interface GetCounterpartyPublicAliasRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+}
+
+export interface GetExplicitCounterpartiesForAccountRequest {
     bankid: string;
     accountid: string;
     viewid: string;
 }
 
-export interface OBPv400GetExplicitCounterpartyByIdRequest {
+export interface GetExplicitCounterpartyByIdRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     counterpartyid: string;
+}
+
+export interface GetOtherAccountByIdForBankAccountRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+}
+
+export interface GetOtherAccountForTransactionRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    transactionid: string;
+}
+
+export interface GetOtherAccountMetadataRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+}
+
+export interface GetOtherAccountPrivateAliasRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+}
+
+export interface GetOtherAccountsForBankAccountRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+}
+
+export interface UpdateCounterpartyCorporateLocationOperationRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+    updateCounterpartyCorporateLocationRequest: UpdateCounterpartyCorporateLocationRequest;
+}
+
+export interface UpdateCounterpartyImageUrlOperationRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+    updateCounterpartyImageUrlRequest: UpdateCounterpartyImageUrlRequest;
+}
+
+export interface UpdateCounterpartyMoreInfoOperationRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+    updateCounterpartyMoreInfoRequest: UpdateCounterpartyMoreInfoRequest;
+}
+
+export interface UpdateCounterpartyOpenCorporatesUrlOperationRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+    updateCounterpartyOpenCorporatesUrlRequest: UpdateCounterpartyOpenCorporatesUrlRequest;
+}
+
+export interface UpdateCounterpartyPhysicalLocationOperationRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+    updateCounterpartyPhysicalLocationRequest: UpdateCounterpartyPhysicalLocationRequest;
+}
+
+export interface UpdateCounterpartyPrivateAliasRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+    getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response;
+}
+
+export interface UpdateCounterpartyPublicAliasRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+    getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response;
+}
+
+export interface UpdateCounterpartyUrlOperationRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    otheraccountid: string;
+    updateCounterpartyUrlRequest: UpdateCounterpartyUrlRequest;
 }
 
 /**
@@ -356,41 +356,41 @@ export interface OBPv400GetExplicitCounterpartyByIdRequest {
 export class CounterpartyApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv121AddCounterpartyCorporateLocation without sending the request
+     * Creates request options for addCounterpartyCorporateLocation without sending the request
      */
-    async oBPv121AddCounterpartyCorporateLocationRequestOpts(requestParameters: OBPv121AddCounterpartyCorporateLocationRequest): Promise<runtime.RequestOpts> {
+    async addCounterpartyCorporateLocationRequestOpts(requestParameters: AddCounterpartyCorporateLocationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121AddCounterpartyCorporateLocation().'
+                'Required parameter "bankid" was null or undefined when calling addCounterpartyCorporateLocation().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121AddCounterpartyCorporateLocation().'
+                'Required parameter "accountid" was null or undefined when calling addCounterpartyCorporateLocation().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121AddCounterpartyCorporateLocation().'
+                'Required parameter "viewid" was null or undefined when calling addCounterpartyCorporateLocation().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121AddCounterpartyCorporateLocation().'
+                'Required parameter "otheraccountid" was null or undefined when calling addCounterpartyCorporateLocation().'
             );
         }
 
-        if (requestParameters['oBPv121UpdateCounterpartyCorporateLocationRequest'] == null) {
+        if (requestParameters['updateCounterpartyCorporateLocationRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121UpdateCounterpartyCorporateLocationRequest',
-                'Required parameter "oBPv121UpdateCounterpartyCorporateLocationRequest" was null or undefined when calling oBPv121AddCounterpartyCorporateLocation().'
+                'updateCounterpartyCorporateLocationRequest',
+                'Required parameter "updateCounterpartyCorporateLocationRequest" was null or undefined when calling addCounterpartyCorporateLocation().'
             );
         }
 
@@ -410,7 +410,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -425,7 +425,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121UpdateCounterpartyCorporateLocationRequestToJSON(requestParameters['oBPv121UpdateCounterpartyCorporateLocationRequest']),
+            body: UpdateCounterpartyCorporateLocationRequestToJSON(requestParameters['updateCounterpartyCorporateLocationRequest']),
         };
     }
 
@@ -433,58 +433,58 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Add the geolocation of the counterparty\'s registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add Corporate Location to Counterparty
      */
-    async oBPv121AddCounterpartyCorporateLocationRaw(requestParameters: OBPv121AddCounterpartyCorporateLocationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121AddCounterpartyCorporateLocationRequestOpts(requestParameters);
+    async addCounterpartyCorporateLocationRaw(requestParameters: AddCounterpartyCorporateLocationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.addCounterpartyCorporateLocationRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Add the geolocation of the counterparty\'s registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add Corporate Location to Counterparty
      */
-    async oBPv121AddCounterpartyCorporateLocation(requestParameters: OBPv121AddCounterpartyCorporateLocationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121AddCounterpartyCorporateLocationRaw(requestParameters, initOverrides);
+    async addCounterpartyCorporateLocation(requestParameters: AddCounterpartyCorporateLocationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.addCounterpartyCorporateLocationRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121AddCounterpartyImageUrl without sending the request
+     * Creates request options for addCounterpartyImageUrl without sending the request
      */
-    async oBPv121AddCounterpartyImageUrlRequestOpts(requestParameters: OBPv121AddCounterpartyImageUrlRequest): Promise<runtime.RequestOpts> {
+    async addCounterpartyImageUrlRequestOpts(requestParameters: AddCounterpartyImageUrlRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121AddCounterpartyImageUrl().'
+                'Required parameter "bankid" was null or undefined when calling addCounterpartyImageUrl().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121AddCounterpartyImageUrl().'
+                'Required parameter "accountid" was null or undefined when calling addCounterpartyImageUrl().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121AddCounterpartyImageUrl().'
+                'Required parameter "viewid" was null or undefined when calling addCounterpartyImageUrl().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121AddCounterpartyImageUrl().'
+                'Required parameter "otheraccountid" was null or undefined when calling addCounterpartyImageUrl().'
             );
         }
 
-        if (requestParameters['oBPv121UpdateCounterpartyImageUrlRequest'] == null) {
+        if (requestParameters['updateCounterpartyImageUrlRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121UpdateCounterpartyImageUrlRequest',
-                'Required parameter "oBPv121UpdateCounterpartyImageUrlRequest" was null or undefined when calling oBPv121AddCounterpartyImageUrl().'
+                'updateCounterpartyImageUrlRequest',
+                'Required parameter "updateCounterpartyImageUrlRequest" was null or undefined when calling addCounterpartyImageUrl().'
             );
         }
 
@@ -504,7 +504,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -519,7 +519,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121UpdateCounterpartyImageUrlRequestToJSON(requestParameters['oBPv121UpdateCounterpartyImageUrlRequest']),
+            body: UpdateCounterpartyImageUrlRequestToJSON(requestParameters['updateCounterpartyImageUrlRequest']),
         };
     }
 
@@ -527,58 +527,58 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Add a url that points to the logo of the counterparty</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add image url to other bank account
      */
-    async oBPv121AddCounterpartyImageUrlRaw(requestParameters: OBPv121AddCounterpartyImageUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121AddCounterpartyImageUrlRequestOpts(requestParameters);
+    async addCounterpartyImageUrlRaw(requestParameters: AddCounterpartyImageUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.addCounterpartyImageUrlRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Add a url that points to the logo of the counterparty</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add image url to other bank account
      */
-    async oBPv121AddCounterpartyImageUrl(requestParameters: OBPv121AddCounterpartyImageUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121AddCounterpartyImageUrlRaw(requestParameters, initOverrides);
+    async addCounterpartyImageUrl(requestParameters: AddCounterpartyImageUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.addCounterpartyImageUrlRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121AddCounterpartyMoreInfo without sending the request
+     * Creates request options for addCounterpartyMoreInfo without sending the request
      */
-    async oBPv121AddCounterpartyMoreInfoRequestOpts(requestParameters: OBPv121AddCounterpartyMoreInfoRequest): Promise<runtime.RequestOpts> {
+    async addCounterpartyMoreInfoRequestOpts(requestParameters: AddCounterpartyMoreInfoRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121AddCounterpartyMoreInfo().'
+                'Required parameter "bankid" was null or undefined when calling addCounterpartyMoreInfo().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121AddCounterpartyMoreInfo().'
+                'Required parameter "accountid" was null or undefined when calling addCounterpartyMoreInfo().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121AddCounterpartyMoreInfo().'
+                'Required parameter "viewid" was null or undefined when calling addCounterpartyMoreInfo().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121AddCounterpartyMoreInfo().'
+                'Required parameter "otheraccountid" was null or undefined when calling addCounterpartyMoreInfo().'
             );
         }
 
-        if (requestParameters['oBPv121UpdateCounterpartyMoreInfoRequest'] == null) {
+        if (requestParameters['updateCounterpartyMoreInfoRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121UpdateCounterpartyMoreInfoRequest',
-                'Required parameter "oBPv121UpdateCounterpartyMoreInfoRequest" was null or undefined when calling oBPv121AddCounterpartyMoreInfo().'
+                'updateCounterpartyMoreInfoRequest',
+                'Required parameter "updateCounterpartyMoreInfoRequest" was null or undefined when calling addCounterpartyMoreInfo().'
             );
         }
 
@@ -598,7 +598,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -613,7 +613,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121UpdateCounterpartyMoreInfoRequestToJSON(requestParameters['oBPv121UpdateCounterpartyMoreInfoRequest']),
+            body: UpdateCounterpartyMoreInfoRequestToJSON(requestParameters['updateCounterpartyMoreInfoRequest']),
         };
     }
 
@@ -621,58 +621,58 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Add a description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add Counterparty More Info
      */
-    async oBPv121AddCounterpartyMoreInfoRaw(requestParameters: OBPv121AddCounterpartyMoreInfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121AddCounterpartyMoreInfoRequestOpts(requestParameters);
+    async addCounterpartyMoreInfoRaw(requestParameters: AddCounterpartyMoreInfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.addCounterpartyMoreInfoRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Add a description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add Counterparty More Info
      */
-    async oBPv121AddCounterpartyMoreInfo(requestParameters: OBPv121AddCounterpartyMoreInfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121AddCounterpartyMoreInfoRaw(requestParameters, initOverrides);
+    async addCounterpartyMoreInfo(requestParameters: AddCounterpartyMoreInfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.addCounterpartyMoreInfoRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121AddCounterpartyOpenCorporatesUrl without sending the request
+     * Creates request options for addCounterpartyOpenCorporatesUrl without sending the request
      */
-    async oBPv121AddCounterpartyOpenCorporatesUrlRequestOpts(requestParameters: OBPv121AddCounterpartyOpenCorporatesUrlRequest): Promise<runtime.RequestOpts> {
+    async addCounterpartyOpenCorporatesUrlRequestOpts(requestParameters: AddCounterpartyOpenCorporatesUrlRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121AddCounterpartyOpenCorporatesUrl().'
+                'Required parameter "bankid" was null or undefined when calling addCounterpartyOpenCorporatesUrl().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121AddCounterpartyOpenCorporatesUrl().'
+                'Required parameter "accountid" was null or undefined when calling addCounterpartyOpenCorporatesUrl().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121AddCounterpartyOpenCorporatesUrl().'
+                'Required parameter "viewid" was null or undefined when calling addCounterpartyOpenCorporatesUrl().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121AddCounterpartyOpenCorporatesUrl().'
+                'Required parameter "otheraccountid" was null or undefined when calling addCounterpartyOpenCorporatesUrl().'
             );
         }
 
-        if (requestParameters['oBPv121UpdateCounterpartyOpenCorporatesUrlRequest'] == null) {
+        if (requestParameters['updateCounterpartyOpenCorporatesUrlRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121UpdateCounterpartyOpenCorporatesUrlRequest',
-                'Required parameter "oBPv121UpdateCounterpartyOpenCorporatesUrlRequest" was null or undefined when calling oBPv121AddCounterpartyOpenCorporatesUrl().'
+                'updateCounterpartyOpenCorporatesUrlRequest',
+                'Required parameter "updateCounterpartyOpenCorporatesUrlRequest" was null or undefined when calling addCounterpartyOpenCorporatesUrl().'
             );
         }
 
@@ -694,7 +694,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121UpdateCounterpartyOpenCorporatesUrlRequestToJSON(requestParameters['oBPv121UpdateCounterpartyOpenCorporatesUrlRequest']),
+            body: UpdateCounterpartyOpenCorporatesUrlRequestToJSON(requestParameters['updateCounterpartyOpenCorporatesUrlRequest']),
         };
     }
 
@@ -702,58 +702,58 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Add open corporates url to other bank account</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add Open Corporates URL to Counterparty
      */
-    async oBPv121AddCounterpartyOpenCorporatesUrlRaw(requestParameters: OBPv121AddCounterpartyOpenCorporatesUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121AddCounterpartyOpenCorporatesUrlRequestOpts(requestParameters);
+    async addCounterpartyOpenCorporatesUrlRaw(requestParameters: AddCounterpartyOpenCorporatesUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.addCounterpartyOpenCorporatesUrlRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Add open corporates url to other bank account</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add Open Corporates URL to Counterparty
      */
-    async oBPv121AddCounterpartyOpenCorporatesUrl(requestParameters: OBPv121AddCounterpartyOpenCorporatesUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121AddCounterpartyOpenCorporatesUrlRaw(requestParameters, initOverrides);
+    async addCounterpartyOpenCorporatesUrl(requestParameters: AddCounterpartyOpenCorporatesUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.addCounterpartyOpenCorporatesUrlRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121AddCounterpartyPhysicalLocation without sending the request
+     * Creates request options for addCounterpartyPhysicalLocation without sending the request
      */
-    async oBPv121AddCounterpartyPhysicalLocationRequestOpts(requestParameters: OBPv121AddCounterpartyPhysicalLocationRequest): Promise<runtime.RequestOpts> {
+    async addCounterpartyPhysicalLocationRequestOpts(requestParameters: AddCounterpartyPhysicalLocationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121AddCounterpartyPhysicalLocation().'
+                'Required parameter "bankid" was null or undefined when calling addCounterpartyPhysicalLocation().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121AddCounterpartyPhysicalLocation().'
+                'Required parameter "accountid" was null or undefined when calling addCounterpartyPhysicalLocation().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121AddCounterpartyPhysicalLocation().'
+                'Required parameter "viewid" was null or undefined when calling addCounterpartyPhysicalLocation().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121AddCounterpartyPhysicalLocation().'
+                'Required parameter "otheraccountid" was null or undefined when calling addCounterpartyPhysicalLocation().'
             );
         }
 
-        if (requestParameters['oBPv121UpdateCounterpartyPhysicalLocationRequest'] == null) {
+        if (requestParameters['updateCounterpartyPhysicalLocationRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121UpdateCounterpartyPhysicalLocationRequest',
-                'Required parameter "oBPv121UpdateCounterpartyPhysicalLocationRequest" was null or undefined when calling oBPv121AddCounterpartyPhysicalLocation().'
+                'updateCounterpartyPhysicalLocationRequest',
+                'Required parameter "updateCounterpartyPhysicalLocationRequest" was null or undefined when calling addCounterpartyPhysicalLocation().'
             );
         }
 
@@ -773,7 +773,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -788,7 +788,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121UpdateCounterpartyPhysicalLocationRequestToJSON(requestParameters['oBPv121UpdateCounterpartyPhysicalLocationRequest']),
+            body: UpdateCounterpartyPhysicalLocationRequestToJSON(requestParameters['updateCounterpartyPhysicalLocationRequest']),
         };
     }
 
@@ -796,58 +796,58 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Add geocoordinates of the counterparty\'s main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add physical location to other bank account
      */
-    async oBPv121AddCounterpartyPhysicalLocationRaw(requestParameters: OBPv121AddCounterpartyPhysicalLocationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121AddCounterpartyPhysicalLocationRequestOpts(requestParameters);
+    async addCounterpartyPhysicalLocationRaw(requestParameters: AddCounterpartyPhysicalLocationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.addCounterpartyPhysicalLocationRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Add geocoordinates of the counterparty\'s main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add physical location to other bank account
      */
-    async oBPv121AddCounterpartyPhysicalLocation(requestParameters: OBPv121AddCounterpartyPhysicalLocationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121AddCounterpartyPhysicalLocationRaw(requestParameters, initOverrides);
+    async addCounterpartyPhysicalLocation(requestParameters: AddCounterpartyPhysicalLocationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.addCounterpartyPhysicalLocationRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121AddCounterpartyPublicAlias without sending the request
+     * Creates request options for addCounterpartyPublicAlias without sending the request
      */
-    async oBPv121AddCounterpartyPublicAliasRequestOpts(requestParameters: OBPv121AddCounterpartyPublicAliasRequest): Promise<runtime.RequestOpts> {
+    async addCounterpartyPublicAliasRequestOpts(requestParameters: AddCounterpartyPublicAliasRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121AddCounterpartyPublicAlias().'
+                'Required parameter "bankid" was null or undefined when calling addCounterpartyPublicAlias().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121AddCounterpartyPublicAlias().'
+                'Required parameter "accountid" was null or undefined when calling addCounterpartyPublicAlias().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121AddCounterpartyPublicAlias().'
+                'Required parameter "viewid" was null or undefined when calling addCounterpartyPublicAlias().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121AddCounterpartyPublicAlias().'
+                'Required parameter "otheraccountid" was null or undefined when calling addCounterpartyPublicAlias().'
             );
         }
 
-        if (requestParameters['oBPv121GetCounterpartyPublicAlias200Response'] == null) {
+        if (requestParameters['getCounterpartyPublicAlias200Response'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121GetCounterpartyPublicAlias200Response',
-                'Required parameter "oBPv121GetCounterpartyPublicAlias200Response" was null or undefined when calling oBPv121AddCounterpartyPublicAlias().'
+                'getCounterpartyPublicAlias200Response',
+                'Required parameter "getCounterpartyPublicAlias200Response" was null or undefined when calling addCounterpartyPublicAlias().'
             );
         }
 
@@ -867,7 +867,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -882,7 +882,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121GetCounterpartyPublicAlias200ResponseToJSON(requestParameters['oBPv121GetCounterpartyPublicAlias200Response']),
+            body: GetCounterpartyPublicAlias200ResponseToJSON(requestParameters['getCounterpartyPublicAlias200Response']),
         };
     }
 
@@ -890,58 +890,58 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Creates the public alias for the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p>Note: Public aliases are automatically generated for new \'other accounts / counterparties\', so this call should only be used if<br /> the public alias was deleted.</p> <p>The VIEW_ID parameter should be a view the caller is permitted to access to and that has permission to create public aliases.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add public alias to other bank account
      */
-    async oBPv121AddCounterpartyPublicAliasRaw(requestParameters: OBPv121AddCounterpartyPublicAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121AddCounterpartyPublicAliasRequestOpts(requestParameters);
+    async addCounterpartyPublicAliasRaw(requestParameters: AddCounterpartyPublicAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.addCounterpartyPublicAliasRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Creates the public alias for the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p>Note: Public aliases are automatically generated for new \'other accounts / counterparties\', so this call should only be used if<br /> the public alias was deleted.</p> <p>The VIEW_ID parameter should be a view the caller is permitted to access to and that has permission to create public aliases.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add public alias to other bank account
      */
-    async oBPv121AddCounterpartyPublicAlias(requestParameters: OBPv121AddCounterpartyPublicAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121AddCounterpartyPublicAliasRaw(requestParameters, initOverrides);
+    async addCounterpartyPublicAlias(requestParameters: AddCounterpartyPublicAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.addCounterpartyPublicAliasRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121AddCounterpartyUrl without sending the request
+     * Creates request options for addCounterpartyUrl without sending the request
      */
-    async oBPv121AddCounterpartyUrlRequestOpts(requestParameters: OBPv121AddCounterpartyUrlRequest): Promise<runtime.RequestOpts> {
+    async addCounterpartyUrlRequestOpts(requestParameters: AddCounterpartyUrlRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121AddCounterpartyUrl().'
+                'Required parameter "bankid" was null or undefined when calling addCounterpartyUrl().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121AddCounterpartyUrl().'
+                'Required parameter "accountid" was null or undefined when calling addCounterpartyUrl().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121AddCounterpartyUrl().'
+                'Required parameter "viewid" was null or undefined when calling addCounterpartyUrl().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121AddCounterpartyUrl().'
+                'Required parameter "otheraccountid" was null or undefined when calling addCounterpartyUrl().'
             );
         }
 
-        if (requestParameters['oBPv121UpdateCounterpartyUrlRequest'] == null) {
+        if (requestParameters['updateCounterpartyUrlRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121UpdateCounterpartyUrlRequest',
-                'Required parameter "oBPv121UpdateCounterpartyUrlRequest" was null or undefined when calling oBPv121AddCounterpartyUrl().'
+                'updateCounterpartyUrlRequest',
+                'Required parameter "updateCounterpartyUrlRequest" was null or undefined when calling addCounterpartyUrl().'
             );
         }
 
@@ -961,7 +961,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -976,7 +976,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121UpdateCounterpartyUrlRequestToJSON(requestParameters['oBPv121UpdateCounterpartyUrlRequest']),
+            body: UpdateCounterpartyUrlRequestToJSON(requestParameters['updateCounterpartyUrlRequest']),
         };
     }
 
@@ -984,58 +984,58 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add url to other bank account
      */
-    async oBPv121AddCounterpartyUrlRaw(requestParameters: OBPv121AddCounterpartyUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121AddCounterpartyUrlRequestOpts(requestParameters);
+    async addCounterpartyUrlRaw(requestParameters: AddCounterpartyUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.addCounterpartyUrlRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Add url to other bank account
      */
-    async oBPv121AddCounterpartyUrl(requestParameters: OBPv121AddCounterpartyUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121AddCounterpartyUrlRaw(requestParameters, initOverrides);
+    async addCounterpartyUrl(requestParameters: AddCounterpartyUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.addCounterpartyUrlRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121AddOtherAccountPrivateAlias without sending the request
+     * Creates request options for addOtherAccountPrivateAlias without sending the request
      */
-    async oBPv121AddOtherAccountPrivateAliasRequestOpts(requestParameters: OBPv121AddOtherAccountPrivateAliasRequest): Promise<runtime.RequestOpts> {
+    async addOtherAccountPrivateAliasRequestOpts(requestParameters: AddOtherAccountPrivateAliasRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121AddOtherAccountPrivateAlias().'
+                'Required parameter "bankid" was null or undefined when calling addOtherAccountPrivateAlias().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121AddOtherAccountPrivateAlias().'
+                'Required parameter "accountid" was null or undefined when calling addOtherAccountPrivateAlias().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121AddOtherAccountPrivateAlias().'
+                'Required parameter "viewid" was null or undefined when calling addOtherAccountPrivateAlias().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121AddOtherAccountPrivateAlias().'
+                'Required parameter "otheraccountid" was null or undefined when calling addOtherAccountPrivateAlias().'
             );
         }
 
-        if (requestParameters['oBPv121GetCounterpartyPublicAlias200Response'] == null) {
+        if (requestParameters['getCounterpartyPublicAlias200Response'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121GetCounterpartyPublicAlias200Response',
-                'Required parameter "oBPv121GetCounterpartyPublicAlias200Response" was null or undefined when calling oBPv121AddOtherAccountPrivateAlias().'
+                'getCounterpartyPublicAlias200Response',
+                'Required parameter "getCounterpartyPublicAlias200Response" was null or undefined when calling addOtherAccountPrivateAlias().'
             );
         }
 
@@ -1055,7 +1055,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -1070,7 +1070,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121GetCounterpartyPublicAlias200ResponseToJSON(requestParameters['oBPv121GetCounterpartyPublicAlias200Response']),
+            body: GetCounterpartyPublicAlias200ResponseToJSON(requestParameters['getCounterpartyPublicAlias200Response']),
         };
     }
 
@@ -1078,51 +1078,223 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Creates a private alias for the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Create Other Account Private Alias
      */
-    async oBPv121AddOtherAccountPrivateAliasRaw(requestParameters: OBPv121AddOtherAccountPrivateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121AddOtherAccountPrivateAliasRequestOpts(requestParameters);
+    async addOtherAccountPrivateAliasRaw(requestParameters: AddOtherAccountPrivateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.addOtherAccountPrivateAliasRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Creates a private alias for the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Create Other Account Private Alias
      */
-    async oBPv121AddOtherAccountPrivateAlias(requestParameters: OBPv121AddOtherAccountPrivateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121AddOtherAccountPrivateAliasRaw(requestParameters, initOverrides);
+    async addOtherAccountPrivateAlias(requestParameters: AddOtherAccountPrivateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.addOtherAccountPrivateAliasRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121DeleteCounterpartyCorporateLocation without sending the request
+     * Creates request options for createCounterparty without sending the request
      */
-    async oBPv121DeleteCounterpartyCorporateLocationRequestOpts(requestParameters: OBPv121DeleteCounterpartyCorporateLocationRequest): Promise<runtime.RequestOpts> {
+    async createCounterpartyRequestOpts(requestParameters: CreateCounterpartyRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121DeleteCounterpartyCorporateLocation().'
+                'Required parameter "bankid" was null or undefined when calling createCounterparty().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121DeleteCounterpartyCorporateLocation().'
+                'Required parameter "accountid" was null or undefined when calling createCounterparty().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121DeleteCounterpartyCorporateLocation().'
+                'Required parameter "viewid" was null or undefined when calling createCounterparty().'
+            );
+        }
+
+        if (requestParameters['createCounterpartyForAnyAccountRequest'] == null) {
+            throw new runtime.RequiredError(
+                'createCounterpartyForAnyAccountRequest',
+                'Required parameter "createCounterpartyForAnyAccountRequest" was null or undefined when calling createCounterparty().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateCounterpartyForAnyAccountRequestToJSON(requestParameters['createCounterpartyForAnyAccountRequest']),
+        };
+    }
+
+    /**
+     * <p>This endpoint creates an (Explicit) Counterparty for an Account.</p> <p>For an introduction to Counterparties in OBP see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Create Counterparty (Explicit)
+     */
+    async createCounterpartyRaw(requestParameters: CreateCounterpartyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetExplicitCounterpartyById200Response>> {
+        const requestOptions = await this.createCounterpartyRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetExplicitCounterpartyById200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>This endpoint creates an (Explicit) Counterparty for an Account.</p> <p>For an introduction to Counterparties in OBP see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Create Counterparty (Explicit)
+     */
+    async createCounterparty(requestParameters: CreateCounterpartyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetExplicitCounterpartyById200Response> {
+        const response = await this.createCounterpartyRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for createCounterpartyForAnyAccount without sending the request
+     */
+    async createCounterpartyForAnyAccountRequestOpts(requestParameters: CreateCounterpartyForAnyAccountOperationRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling createCounterpartyForAnyAccount().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling createCounterpartyForAnyAccount().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling createCounterpartyForAnyAccount().'
+            );
+        }
+
+        if (requestParameters['createCounterpartyForAnyAccountRequest'] == null) {
+            throw new runtime.RequiredError(
+                'createCounterpartyForAnyAccountRequest',
+                'Required parameter "createCounterpartyForAnyAccountRequest" was null or undefined when calling createCounterpartyForAnyAccount().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateCounterpartyForAnyAccountRequestToJSON(requestParameters['createCounterpartyForAnyAccountRequest']),
+        };
+    }
+
+    /**
+     * <p>This is a management endpoint that allows the creation of a Counterparty on any Account.</p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Create Counterparty for any account (Explicit)
+     */
+    async createCounterpartyForAnyAccountRaw(requestParameters: CreateCounterpartyForAnyAccountOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetExplicitCounterpartyById200Response>> {
+        const requestOptions = await this.createCounterpartyForAnyAccountRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetExplicitCounterpartyById200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>This is a management endpoint that allows the creation of a Counterparty on any Account.</p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Create Counterparty for any account (Explicit)
+     */
+    async createCounterpartyForAnyAccount(requestParameters: CreateCounterpartyForAnyAccountOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetExplicitCounterpartyById200Response> {
+        const response = await this.createCounterpartyForAnyAccountRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for deleteCounterpartyCorporateLocation without sending the request
+     */
+    async deleteCounterpartyCorporateLocationRequestOpts(requestParameters: DeleteCounterpartyCorporateLocationRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling deleteCounterpartyCorporateLocation().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling deleteCounterpartyCorporateLocation().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling deleteCounterpartyCorporateLocation().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121DeleteCounterpartyCorporateLocation().'
+                'Required parameter "otheraccountid" was null or undefined when calling deleteCounterpartyCorporateLocation().'
             );
         }
 
@@ -1140,7 +1312,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -1162,8 +1334,8 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Delete corporate location of other bank account. Delete the geolocation of the counterparty\'s registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Counterparty Corporate Location
      */
-    async oBPv121DeleteCounterpartyCorporateLocationRaw(requestParameters: OBPv121DeleteCounterpartyCorporateLocationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv121DeleteCounterpartyCorporateLocationRequestOpts(requestParameters);
+    async deleteCounterpartyCorporateLocationRaw(requestParameters: DeleteCounterpartyCorporateLocationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteCounterpartyCorporateLocationRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1173,39 +1345,122 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Delete corporate location of other bank account. Delete the geolocation of the counterparty\'s registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Counterparty Corporate Location
      */
-    async oBPv121DeleteCounterpartyCorporateLocation(requestParameters: OBPv121DeleteCounterpartyCorporateLocationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv121DeleteCounterpartyCorporateLocationRaw(requestParameters, initOverrides);
+    async deleteCounterpartyCorporateLocation(requestParameters: DeleteCounterpartyCorporateLocationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCounterpartyCorporateLocationRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv121DeleteCounterpartyImageUrl without sending the request
+     * Creates request options for deleteCounterpartyForAnyAccount without sending the request
      */
-    async oBPv121DeleteCounterpartyImageUrlRequestOpts(requestParameters: OBPv121DeleteCounterpartyImageUrlRequest): Promise<runtime.RequestOpts> {
+    async deleteCounterpartyForAnyAccountRequestOpts(requestParameters: DeleteCounterpartyForAnyAccountRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121DeleteCounterpartyImageUrl().'
+                'Required parameter "bankid" was null or undefined when calling deleteCounterpartyForAnyAccount().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121DeleteCounterpartyImageUrl().'
+                'Required parameter "accountid" was null or undefined when calling deleteCounterpartyForAnyAccount().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121DeleteCounterpartyImageUrl().'
+                'Required parameter "viewid" was null or undefined when calling deleteCounterpartyForAnyAccount().'
+            );
+        }
+
+        if (requestParameters['counterpartyid'] == null) {
+            throw new runtime.RequiredError(
+                'counterpartyid',
+                'Required parameter "counterpartyid" was null or undefined when calling deleteCounterpartyForAnyAccount().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+        urlPath = urlPath.replace(`{${"counterpartyid"}}`, encodeURIComponent(String(requestParameters['counterpartyid'])));
+
+        return {
+            path: urlPath,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>This is a management endpoint that enables the deletion of any specified Counterparty along with any related Metadata of that Counterparty.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+     * Delete Counterparty for any account (Explicit)
+     */
+    async deleteCounterpartyForAnyAccountRaw(requestParameters: DeleteCounterpartyForAnyAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteCounterpartyForAnyAccountRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * <p>This is a management endpoint that enables the deletion of any specified Counterparty along with any related Metadata of that Counterparty.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+     * Delete Counterparty for any account (Explicit)
+     */
+    async deleteCounterpartyForAnyAccount(requestParameters: DeleteCounterpartyForAnyAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCounterpartyForAnyAccountRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Creates request options for deleteCounterpartyImageUrl without sending the request
+     */
+    async deleteCounterpartyImageUrlRequestOpts(requestParameters: DeleteCounterpartyImageUrlRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling deleteCounterpartyImageUrl().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling deleteCounterpartyImageUrl().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling deleteCounterpartyImageUrl().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121DeleteCounterpartyImageUrl().'
+                'Required parameter "otheraccountid" was null or undefined when calling deleteCounterpartyImageUrl().'
             );
         }
 
@@ -1232,8 +1487,8 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Delete image url of other bank account</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Counterparty Image URL
      */
-    async oBPv121DeleteCounterpartyImageUrlRaw(requestParameters: OBPv121DeleteCounterpartyImageUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv121DeleteCounterpartyImageUrlRequestOpts(requestParameters);
+    async deleteCounterpartyImageUrlRaw(requestParameters: DeleteCounterpartyImageUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteCounterpartyImageUrlRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1243,39 +1498,39 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Delete image url of other bank account</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Counterparty Image URL
      */
-    async oBPv121DeleteCounterpartyImageUrl(requestParameters: OBPv121DeleteCounterpartyImageUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv121DeleteCounterpartyImageUrlRaw(requestParameters, initOverrides);
+    async deleteCounterpartyImageUrl(requestParameters: DeleteCounterpartyImageUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCounterpartyImageUrlRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv121DeleteCounterpartyMoreInfo without sending the request
+     * Creates request options for deleteCounterpartyMoreInfo without sending the request
      */
-    async oBPv121DeleteCounterpartyMoreInfoRequestOpts(requestParameters: OBPv121DeleteCounterpartyMoreInfoRequest): Promise<runtime.RequestOpts> {
+    async deleteCounterpartyMoreInfoRequestOpts(requestParameters: DeleteCounterpartyMoreInfoRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121DeleteCounterpartyMoreInfo().'
+                'Required parameter "bankid" was null or undefined when calling deleteCounterpartyMoreInfo().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121DeleteCounterpartyMoreInfo().'
+                'Required parameter "accountid" was null or undefined when calling deleteCounterpartyMoreInfo().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121DeleteCounterpartyMoreInfo().'
+                'Required parameter "viewid" was null or undefined when calling deleteCounterpartyMoreInfo().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121DeleteCounterpartyMoreInfo().'
+                'Required parameter "otheraccountid" was null or undefined when calling deleteCounterpartyMoreInfo().'
             );
         }
 
@@ -1293,7 +1548,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -1315,8 +1570,8 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete more info of other bank account
      */
-    async oBPv121DeleteCounterpartyMoreInfoRaw(requestParameters: OBPv121DeleteCounterpartyMoreInfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv121DeleteCounterpartyMoreInfoRequestOpts(requestParameters);
+    async deleteCounterpartyMoreInfoRaw(requestParameters: DeleteCounterpartyMoreInfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteCounterpartyMoreInfoRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1326,39 +1581,39 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete more info of other bank account
      */
-    async oBPv121DeleteCounterpartyMoreInfo(requestParameters: OBPv121DeleteCounterpartyMoreInfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv121DeleteCounterpartyMoreInfoRaw(requestParameters, initOverrides);
+    async deleteCounterpartyMoreInfo(requestParameters: DeleteCounterpartyMoreInfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCounterpartyMoreInfoRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv121DeleteCounterpartyOpenCorporatesUrl without sending the request
+     * Creates request options for deleteCounterpartyOpenCorporatesUrl without sending the request
      */
-    async oBPv121DeleteCounterpartyOpenCorporatesUrlRequestOpts(requestParameters: OBPv121DeleteCounterpartyOpenCorporatesUrlRequest): Promise<runtime.RequestOpts> {
+    async deleteCounterpartyOpenCorporatesUrlRequestOpts(requestParameters: DeleteCounterpartyOpenCorporatesUrlRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121DeleteCounterpartyOpenCorporatesUrl().'
+                'Required parameter "bankid" was null or undefined when calling deleteCounterpartyOpenCorporatesUrl().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121DeleteCounterpartyOpenCorporatesUrl().'
+                'Required parameter "accountid" was null or undefined when calling deleteCounterpartyOpenCorporatesUrl().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121DeleteCounterpartyOpenCorporatesUrl().'
+                'Required parameter "viewid" was null or undefined when calling deleteCounterpartyOpenCorporatesUrl().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121DeleteCounterpartyOpenCorporatesUrl().'
+                'Required parameter "otheraccountid" was null or undefined when calling deleteCounterpartyOpenCorporatesUrl().'
             );
         }
 
@@ -1376,7 +1631,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -1398,8 +1653,8 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Delete open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Counterparty Open Corporates URL
      */
-    async oBPv121DeleteCounterpartyOpenCorporatesUrlRaw(requestParameters: OBPv121DeleteCounterpartyOpenCorporatesUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv121DeleteCounterpartyOpenCorporatesUrlRequestOpts(requestParameters);
+    async deleteCounterpartyOpenCorporatesUrlRaw(requestParameters: DeleteCounterpartyOpenCorporatesUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteCounterpartyOpenCorporatesUrlRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1409,39 +1664,39 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Delete open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Counterparty Open Corporates URL
      */
-    async oBPv121DeleteCounterpartyOpenCorporatesUrl(requestParameters: OBPv121DeleteCounterpartyOpenCorporatesUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv121DeleteCounterpartyOpenCorporatesUrlRaw(requestParameters, initOverrides);
+    async deleteCounterpartyOpenCorporatesUrl(requestParameters: DeleteCounterpartyOpenCorporatesUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCounterpartyOpenCorporatesUrlRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv121DeleteCounterpartyPhysicalLocation without sending the request
+     * Creates request options for deleteCounterpartyPhysicalLocation without sending the request
      */
-    async oBPv121DeleteCounterpartyPhysicalLocationRequestOpts(requestParameters: OBPv121DeleteCounterpartyPhysicalLocationRequest): Promise<runtime.RequestOpts> {
+    async deleteCounterpartyPhysicalLocationRequestOpts(requestParameters: DeleteCounterpartyPhysicalLocationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121DeleteCounterpartyPhysicalLocation().'
+                'Required parameter "bankid" was null or undefined when calling deleteCounterpartyPhysicalLocation().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121DeleteCounterpartyPhysicalLocation().'
+                'Required parameter "accountid" was null or undefined when calling deleteCounterpartyPhysicalLocation().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121DeleteCounterpartyPhysicalLocation().'
+                'Required parameter "viewid" was null or undefined when calling deleteCounterpartyPhysicalLocation().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121DeleteCounterpartyPhysicalLocation().'
+                'Required parameter "otheraccountid" was null or undefined when calling deleteCounterpartyPhysicalLocation().'
             );
         }
 
@@ -1459,7 +1714,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -1481,8 +1736,8 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Delete physical location of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Counterparty Physical Location
      */
-    async oBPv121DeleteCounterpartyPhysicalLocationRaw(requestParameters: OBPv121DeleteCounterpartyPhysicalLocationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv121DeleteCounterpartyPhysicalLocationRequestOpts(requestParameters);
+    async deleteCounterpartyPhysicalLocationRaw(requestParameters: DeleteCounterpartyPhysicalLocationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteCounterpartyPhysicalLocationRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1492,39 +1747,39 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Delete physical location of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Counterparty Physical Location
      */
-    async oBPv121DeleteCounterpartyPhysicalLocation(requestParameters: OBPv121DeleteCounterpartyPhysicalLocationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv121DeleteCounterpartyPhysicalLocationRaw(requestParameters, initOverrides);
+    async deleteCounterpartyPhysicalLocation(requestParameters: DeleteCounterpartyPhysicalLocationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCounterpartyPhysicalLocationRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv121DeleteCounterpartyPrivateAlias without sending the request
+     * Creates request options for deleteCounterpartyPrivateAlias without sending the request
      */
-    async oBPv121DeleteCounterpartyPrivateAliasRequestOpts(requestParameters: OBPv121DeleteCounterpartyPrivateAliasRequest): Promise<runtime.RequestOpts> {
+    async deleteCounterpartyPrivateAliasRequestOpts(requestParameters: DeleteCounterpartyPrivateAliasRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121DeleteCounterpartyPrivateAlias().'
+                'Required parameter "bankid" was null or undefined when calling deleteCounterpartyPrivateAlias().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121DeleteCounterpartyPrivateAlias().'
+                'Required parameter "accountid" was null or undefined when calling deleteCounterpartyPrivateAlias().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121DeleteCounterpartyPrivateAlias().'
+                'Required parameter "viewid" was null or undefined when calling deleteCounterpartyPrivateAlias().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121DeleteCounterpartyPrivateAlias().'
+                'Required parameter "otheraccountid" was null or undefined when calling deleteCounterpartyPrivateAlias().'
             );
         }
 
@@ -1542,7 +1797,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -1564,8 +1819,8 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Deletes the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Counterparty Private Alias
      */
-    async oBPv121DeleteCounterpartyPrivateAliasRaw(requestParameters: OBPv121DeleteCounterpartyPrivateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv121DeleteCounterpartyPrivateAliasRequestOpts(requestParameters);
+    async deleteCounterpartyPrivateAliasRaw(requestParameters: DeleteCounterpartyPrivateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteCounterpartyPrivateAliasRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1575,39 +1830,39 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Deletes the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Counterparty Private Alias
      */
-    async oBPv121DeleteCounterpartyPrivateAlias(requestParameters: OBPv121DeleteCounterpartyPrivateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv121DeleteCounterpartyPrivateAliasRaw(requestParameters, initOverrides);
+    async deleteCounterpartyPrivateAlias(requestParameters: DeleteCounterpartyPrivateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCounterpartyPrivateAliasRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv121DeleteCounterpartyPublicAlias without sending the request
+     * Creates request options for deleteCounterpartyPublicAlias without sending the request
      */
-    async oBPv121DeleteCounterpartyPublicAliasRequestOpts(requestParameters: OBPv121DeleteCounterpartyPublicAliasRequest): Promise<runtime.RequestOpts> {
+    async deleteCounterpartyPublicAliasRequestOpts(requestParameters: DeleteCounterpartyPublicAliasRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121DeleteCounterpartyPublicAlias().'
+                'Required parameter "bankid" was null or undefined when calling deleteCounterpartyPublicAlias().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121DeleteCounterpartyPublicAlias().'
+                'Required parameter "accountid" was null or undefined when calling deleteCounterpartyPublicAlias().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121DeleteCounterpartyPublicAlias().'
+                'Required parameter "viewid" was null or undefined when calling deleteCounterpartyPublicAlias().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121DeleteCounterpartyPublicAlias().'
+                'Required parameter "otheraccountid" was null or undefined when calling deleteCounterpartyPublicAlias().'
             );
         }
 
@@ -1625,7 +1880,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -1647,8 +1902,8 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Deletes the public alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Counterparty Public Alias
      */
-    async oBPv121DeleteCounterpartyPublicAliasRaw(requestParameters: OBPv121DeleteCounterpartyPublicAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv121DeleteCounterpartyPublicAliasRequestOpts(requestParameters);
+    async deleteCounterpartyPublicAliasRaw(requestParameters: DeleteCounterpartyPublicAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteCounterpartyPublicAliasRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1658,39 +1913,39 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Deletes the public alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Counterparty Public Alias
      */
-    async oBPv121DeleteCounterpartyPublicAlias(requestParameters: OBPv121DeleteCounterpartyPublicAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv121DeleteCounterpartyPublicAliasRaw(requestParameters, initOverrides);
+    async deleteCounterpartyPublicAlias(requestParameters: DeleteCounterpartyPublicAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCounterpartyPublicAliasRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv121DeleteCounterpartyUrl without sending the request
+     * Creates request options for deleteCounterpartyUrl without sending the request
      */
-    async oBPv121DeleteCounterpartyUrlRequestOpts(requestParameters: OBPv121DeleteCounterpartyUrlRequest): Promise<runtime.RequestOpts> {
+    async deleteCounterpartyUrlRequestOpts(requestParameters: DeleteCounterpartyUrlRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121DeleteCounterpartyUrl().'
+                'Required parameter "bankid" was null or undefined when calling deleteCounterpartyUrl().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121DeleteCounterpartyUrl().'
+                'Required parameter "accountid" was null or undefined when calling deleteCounterpartyUrl().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121DeleteCounterpartyUrl().'
+                'Required parameter "viewid" was null or undefined when calling deleteCounterpartyUrl().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121DeleteCounterpartyUrl().'
+                'Required parameter "otheraccountid" was null or undefined when calling deleteCounterpartyUrl().'
             );
         }
 
@@ -1708,7 +1963,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -1730,8 +1985,8 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete url of other bank account
      */
-    async oBPv121DeleteCounterpartyUrlRaw(requestParameters: OBPv121DeleteCounterpartyUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv121DeleteCounterpartyUrlRequestOpts(requestParameters);
+    async deleteCounterpartyUrlRaw(requestParameters: DeleteCounterpartyUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteCounterpartyUrlRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1741,39 +1996,39 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete url of other bank account
      */
-    async oBPv121DeleteCounterpartyUrl(requestParameters: OBPv121DeleteCounterpartyUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv121DeleteCounterpartyUrlRaw(requestParameters, initOverrides);
+    async deleteCounterpartyUrl(requestParameters: DeleteCounterpartyUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCounterpartyUrlRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv121GetCounterpartyPublicAlias without sending the request
+     * Creates request options for deleteExplicitCounterparty without sending the request
      */
-    async oBPv121GetCounterpartyPublicAliasRequestOpts(requestParameters: OBPv121GetCounterpartyPublicAliasRequest): Promise<runtime.RequestOpts> {
+    async deleteExplicitCounterpartyRequestOpts(requestParameters: DeleteExplicitCounterpartyRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121GetCounterpartyPublicAlias().'
+                'Required parameter "bankid" was null or undefined when calling deleteExplicitCounterparty().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121GetCounterpartyPublicAlias().'
+                'Required parameter "accountid" was null or undefined when calling deleteExplicitCounterparty().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121GetCounterpartyPublicAlias().'
+                'Required parameter "viewid" was null or undefined when calling deleteExplicitCounterparty().'
             );
         }
 
-        if (requestParameters['otheraccountid'] == null) {
+        if (requestParameters['counterpartyid'] == null) {
             throw new runtime.RequiredError(
-                'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121GetCounterpartyPublicAlias().'
+                'counterpartyid',
+                'Required parameter "counterpartyid" was null or undefined when calling deleteExplicitCounterparty().'
             );
         }
 
@@ -1791,7 +2046,334 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+        urlPath = urlPath.replace(`{${"counterpartyid"}}`, encodeURIComponent(String(requestParameters['counterpartyid'])));
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>This endpoint deletes the Counterparty on the Account / View specified by the COUNTERPARTY_ID.<br /> It also deletes any related Counterparty Metadata.</p> <p>The User calling this endpoint must have access to the View specified in the URL and that View must have the permission <code>can_delete_counterparty</code>.</p> <p>For a general introduction to Counterparties in OBP see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
+     * Delete Counterparty (Explicit)
+     */
+    async deleteExplicitCounterpartyRaw(requestParameters: DeleteExplicitCounterpartyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteExplicitCounterpartyRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * <p>This endpoint deletes the Counterparty on the Account / View specified by the COUNTERPARTY_ID.<br /> It also deletes any related Counterparty Metadata.</p> <p>The User calling this endpoint must have access to the View specified in the URL and that View must have the permission <code>can_delete_counterparty</code>.</p> <p>For a general introduction to Counterparties in OBP see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
+     * Delete Counterparty (Explicit)
+     */
+    async deleteExplicitCounterparty(requestParameters: DeleteExplicitCounterpartyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteExplicitCounterpartyRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Creates request options for getCounterpartiesForAnyAccount without sending the request
+     */
+    async getCounterpartiesForAnyAccountRequestOpts(requestParameters: GetCounterpartiesForAnyAccountRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling getCounterpartiesForAnyAccount().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling getCounterpartiesForAnyAccount().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling getCounterpartiesForAnyAccount().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>This is a management endpoint that gets the Counterparties that have been explicitly created for an Account / View.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#Counterparties\"><strong>counterparties</strong></a>:</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Get Counterparties for any account (Explicit)
+     */
+    async getCounterpartiesForAnyAccountRaw(requestParameters: GetCounterpartiesForAnyAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCounterpartiesForAnyAccount200Response>> {
+        const requestOptions = await this.getCounterpartiesForAnyAccountRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCounterpartiesForAnyAccount200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>This is a management endpoint that gets the Counterparties that have been explicitly created for an Account / View.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#Counterparties\"><strong>counterparties</strong></a>:</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Get Counterparties for any account (Explicit)
+     */
+    async getCounterpartiesForAnyAccount(requestParameters: GetCounterpartiesForAnyAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCounterpartiesForAnyAccount200Response> {
+        const response = await this.getCounterpartiesForAnyAccountRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getCounterpartyByIdForAnyAccount without sending the request
+     */
+    async getCounterpartyByIdForAnyAccountRequestOpts(requestParameters: GetCounterpartyByIdForAnyAccountRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling getCounterpartyByIdForAnyAccount().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling getCounterpartyByIdForAnyAccount().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling getCounterpartyByIdForAnyAccount().'
+            );
+        }
+
+        if (requestParameters['counterpartyid'] == null) {
+            throw new runtime.RequiredError(
+                'counterpartyid',
+                'Required parameter "counterpartyid" was null or undefined when calling getCounterpartyByIdForAnyAccount().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+        urlPath = urlPath.replace(`{${"counterpartyid"}}`, encodeURIComponent(String(requestParameters['counterpartyid'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>This is a management endpoint that gets information about any single explicitly created Counterparty on an Account / View specified by its COUNTERPARTY_ID&quot;,</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Get Counterparty by Id for any account (Explicit)
+     */
+    async getCounterpartyByIdForAnyAccountRaw(requestParameters: GetCounterpartyByIdForAnyAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetExplicitCounterpartyById200Response>> {
+        const requestOptions = await this.getCounterpartyByIdForAnyAccountRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetExplicitCounterpartyById200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>This is a management endpoint that gets information about any single explicitly created Counterparty on an Account / View specified by its COUNTERPARTY_ID&quot;,</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Get Counterparty by Id for any account (Explicit)
+     */
+    async getCounterpartyByIdForAnyAccount(requestParameters: GetCounterpartyByIdForAnyAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetExplicitCounterpartyById200Response> {
+        const response = await this.getCounterpartyByIdForAnyAccountRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getCounterpartyByNameForAnyAccount without sending the request
+     */
+    async getCounterpartyByNameForAnyAccountRequestOpts(requestParameters: GetCounterpartyByNameForAnyAccountRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling getCounterpartyByNameForAnyAccount().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling getCounterpartyByNameForAnyAccount().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling getCounterpartyByNameForAnyAccount().'
+            );
+        }
+
+        if (requestParameters['counterpartyname'] == null) {
+            throw new runtime.RequiredError(
+                'counterpartyname',
+                'Required parameter "counterpartyname" was null or undefined when calling getCounterpartyByNameForAnyAccount().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname}`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+        urlPath = urlPath.replace(`{${"counterpartyname"}}`, encodeURIComponent(String(requestParameters['counterpartyname'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>This is a management endpoint that allows the retrieval of any Counterparty on an Account / View by its Name.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_NAME</a>: John Smith Ltd.</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Get Counterparty by name for any account (Explicit) 
+     */
+    async getCounterpartyByNameForAnyAccountRaw(requestParameters: GetCounterpartyByNameForAnyAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetExplicitCounterpartyById200Response>> {
+        const requestOptions = await this.getCounterpartyByNameForAnyAccountRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetExplicitCounterpartyById200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>This is a management endpoint that allows the retrieval of any Counterparty on an Account / View by its Name.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_NAME</a>: John Smith Ltd.</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Get Counterparty by name for any account (Explicit) 
+     */
+    async getCounterpartyByNameForAnyAccount(requestParameters: GetCounterpartyByNameForAnyAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetExplicitCounterpartyById200Response> {
+        const response = await this.getCounterpartyByNameForAnyAccountRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getCounterpartyPublicAlias without sending the request
+     */
+    async getCounterpartyPublicAliasRequestOpts(requestParameters: GetCounterpartyPublicAliasRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling getCounterpartyPublicAlias().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling getCounterpartyPublicAlias().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling getCounterpartyPublicAlias().'
+            );
+        }
+
+        if (requestParameters['otheraccountid'] == null) {
+            throw new runtime.RequiredError(
+                'otheraccountid',
+                'Required parameter "otheraccountid" was null or undefined when calling getCounterpartyPublicAlias().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -1813,51 +2395,295 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Returns the public alias of the other account OTHER_ACCOUNT_ID.<br /> User Authentication is Optional. The User need not be logged in.<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated. if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
      * Get public alias of other bank account
      */
-    async oBPv121GetCounterpartyPublicAliasRaw(requestParameters: OBPv121GetCounterpartyPublicAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121GetCounterpartyPublicAlias200Response>> {
-        const requestOptions = await this.oBPv121GetCounterpartyPublicAliasRequestOpts(requestParameters);
+    async getCounterpartyPublicAliasRaw(requestParameters: GetCounterpartyPublicAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCounterpartyPublicAlias200Response>> {
+        const requestOptions = await this.getCounterpartyPublicAliasRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121GetCounterpartyPublicAlias200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCounterpartyPublicAlias200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Returns the public alias of the other account OTHER_ACCOUNT_ID.<br /> User Authentication is Optional. The User need not be logged in.<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated. if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
      * Get public alias of other bank account
      */
-    async oBPv121GetCounterpartyPublicAlias(requestParameters: OBPv121GetCounterpartyPublicAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121GetCounterpartyPublicAlias200Response> {
-        const response = await this.oBPv121GetCounterpartyPublicAliasRaw(requestParameters, initOverrides);
+    async getCounterpartyPublicAlias(requestParameters: GetCounterpartyPublicAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCounterpartyPublicAlias200Response> {
+        const response = await this.getCounterpartyPublicAliasRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121GetOtherAccountForTransaction without sending the request
+     * Creates request options for getExplicitCounterpartiesForAccount without sending the request
      */
-    async oBPv121GetOtherAccountForTransactionRequestOpts(requestParameters: OBPv121GetOtherAccountForTransactionRequest): Promise<runtime.RequestOpts> {
+    async getExplicitCounterpartiesForAccountRequestOpts(requestParameters: GetExplicitCounterpartiesForAccountRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121GetOtherAccountForTransaction().'
+                'Required parameter "bankid" was null or undefined when calling getExplicitCounterpartiesForAccount().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121GetOtherAccountForTransaction().'
+                'Required parameter "accountid" was null or undefined when calling getExplicitCounterpartiesForAccount().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121GetOtherAccountForTransaction().'
+                'Required parameter "viewid" was null or undefined when calling getExplicitCounterpartiesForAccount().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Get the Counterparties that have been explicitly created on the specified Account / View.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#Counterparties\"><strong>counterparties</strong></a>:</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Get Counterparties (Explicit)
+     */
+    async getExplicitCounterpartiesForAccountRaw(requestParameters: GetExplicitCounterpartiesForAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCounterpartiesForAnyAccount200Response>> {
+        const requestOptions = await this.getExplicitCounterpartiesForAccountRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCounterpartiesForAnyAccount200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Get the Counterparties that have been explicitly created on the specified Account / View.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#Counterparties\"><strong>counterparties</strong></a>:</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Get Counterparties (Explicit)
+     */
+    async getExplicitCounterpartiesForAccount(requestParameters: GetExplicitCounterpartiesForAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCounterpartiesForAnyAccount200Response> {
+        const response = await this.getExplicitCounterpartiesForAccountRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getExplicitCounterpartyById without sending the request
+     */
+    async getExplicitCounterpartyByIdRequestOpts(requestParameters: GetExplicitCounterpartyByIdRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling getExplicitCounterpartyById().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling getExplicitCounterpartyById().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling getExplicitCounterpartyById().'
+            );
+        }
+
+        if (requestParameters['counterpartyid'] == null) {
+            throw new runtime.RequiredError(
+                'counterpartyid',
+                'Required parameter "counterpartyid" was null or undefined when calling getExplicitCounterpartyById().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+        urlPath = urlPath.replace(`{${"counterpartyid"}}`, encodeURIComponent(String(requestParameters['counterpartyid'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Get Counterparty by Id (Explicit)
+     */
+    async getExplicitCounterpartyByIdRaw(requestParameters: GetExplicitCounterpartyByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetExplicitCounterpartyById200Response>> {
+        const requestOptions = await this.getExplicitCounterpartyByIdRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetExplicitCounterpartyById200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+     * Get Counterparty by Id (Explicit)
+     */
+    async getExplicitCounterpartyById(requestParameters: GetExplicitCounterpartyByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetExplicitCounterpartyById200Response> {
+        const response = await this.getExplicitCounterpartyByIdRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getOtherAccountByIdForBankAccount without sending the request
+     */
+    async getOtherAccountByIdForBankAccountRequestOpts(requestParameters: GetOtherAccountByIdForBankAccountRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling getOtherAccountByIdForBankAccount().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling getOtherAccountByIdForBankAccount().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling getOtherAccountByIdForBankAccount().'
+            );
+        }
+
+        if (requestParameters['otheraccountid'] == null) {
+            throw new runtime.RequiredError(
+                'otheraccountid',
+                'Required parameter "otheraccountid" was null or undefined when calling getOtherAccountByIdForBankAccount().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+        urlPath = urlPath.replace(`{${"otheraccountid"}}`, encodeURIComponent(String(requestParameters['otheraccountid'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+     * Get Other Account by Id
+     */
+    async getOtherAccountByIdForBankAccountRaw(requestParameters: GetOtherAccountByIdForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetTransactionByIdForBankAccount200ResponseOtherAccount>> {
+        const requestOptions = await this.getOtherAccountByIdForBankAccountRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetTransactionByIdForBankAccount200ResponseOtherAccountFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+     * Get Other Account by Id
+     */
+    async getOtherAccountByIdForBankAccount(requestParameters: GetOtherAccountByIdForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetTransactionByIdForBankAccount200ResponseOtherAccount> {
+        const response = await this.getOtherAccountByIdForBankAccountRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getOtherAccountForTransaction without sending the request
+     */
+    async getOtherAccountForTransactionRequestOpts(requestParameters: GetOtherAccountForTransactionRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling getOtherAccountForTransaction().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling getOtherAccountForTransaction().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling getOtherAccountForTransaction().'
             );
         }
 
         if (requestParameters['transactionid'] == null) {
             throw new runtime.RequiredError(
                 'transactionid',
-                'Required parameter "transactionid" was null or undefined when calling oBPv121GetOtherAccountForTransaction().'
+                'Required parameter "transactionid" was null or undefined when calling getOtherAccountForTransaction().'
             );
         }
 
@@ -1884,51 +2710,51 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
      * Get Other Account of Transaction
      */
-    async oBPv121GetOtherAccountForTransactionRaw(requestParameters: OBPv121GetOtherAccountForTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121GetOtherAccountForTransaction200Response>> {
-        const requestOptions = await this.oBPv121GetOtherAccountForTransactionRequestOpts(requestParameters);
+    async getOtherAccountForTransactionRaw(requestParameters: GetOtherAccountForTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetOtherAccountForTransaction200Response>> {
+        const requestOptions = await this.getOtherAccountForTransactionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121GetOtherAccountForTransaction200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetOtherAccountForTransaction200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
      * Get Other Account of Transaction
      */
-    async oBPv121GetOtherAccountForTransaction(requestParameters: OBPv121GetOtherAccountForTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121GetOtherAccountForTransaction200Response> {
-        const response = await this.oBPv121GetOtherAccountForTransactionRaw(requestParameters, initOverrides);
+    async getOtherAccountForTransaction(requestParameters: GetOtherAccountForTransactionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetOtherAccountForTransaction200Response> {
+        const response = await this.getOtherAccountForTransactionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121GetOtherAccountMetadata without sending the request
+     * Creates request options for getOtherAccountMetadata without sending the request
      */
-    async oBPv121GetOtherAccountMetadataRequestOpts(requestParameters: OBPv121GetOtherAccountMetadataRequest): Promise<runtime.RequestOpts> {
+    async getOtherAccountMetadataRequestOpts(requestParameters: GetOtherAccountMetadataRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121GetOtherAccountMetadata().'
+                'Required parameter "bankid" was null or undefined when calling getOtherAccountMetadata().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121GetOtherAccountMetadata().'
+                'Required parameter "accountid" was null or undefined when calling getOtherAccountMetadata().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121GetOtherAccountMetadata().'
+                'Required parameter "viewid" was null or undefined when calling getOtherAccountMetadata().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121GetOtherAccountMetadata().'
+                'Required parameter "otheraccountid" was null or undefined when calling getOtherAccountMetadata().'
             );
         }
 
@@ -1946,7 +2772,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -1968,51 +2794,51 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
      * Get Other Account Metadata
      */
-    async oBPv121GetOtherAccountMetadataRaw(requestParameters: OBPv121GetOtherAccountMetadataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121GetOtherAccountMetadata200Response>> {
-        const requestOptions = await this.oBPv121GetOtherAccountMetadataRequestOpts(requestParameters);
+    async getOtherAccountMetadataRaw(requestParameters: GetOtherAccountMetadataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetOtherAccountMetadata200Response>> {
+        const requestOptions = await this.getOtherAccountMetadataRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121GetOtherAccountMetadata200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetOtherAccountMetadata200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
      * Get Other Account Metadata
      */
-    async oBPv121GetOtherAccountMetadata(requestParameters: OBPv121GetOtherAccountMetadataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121GetOtherAccountMetadata200Response> {
-        const response = await this.oBPv121GetOtherAccountMetadataRaw(requestParameters, initOverrides);
+    async getOtherAccountMetadata(requestParameters: GetOtherAccountMetadataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetOtherAccountMetadata200Response> {
+        const response = await this.getOtherAccountMetadataRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121GetOtherAccountPrivateAlias without sending the request
+     * Creates request options for getOtherAccountPrivateAlias without sending the request
      */
-    async oBPv121GetOtherAccountPrivateAliasRequestOpts(requestParameters: OBPv121GetOtherAccountPrivateAliasRequest): Promise<runtime.RequestOpts> {
+    async getOtherAccountPrivateAliasRequestOpts(requestParameters: GetOtherAccountPrivateAliasRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121GetOtherAccountPrivateAlias().'
+                'Required parameter "bankid" was null or undefined when calling getOtherAccountPrivateAlias().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121GetOtherAccountPrivateAlias().'
+                'Required parameter "accountid" was null or undefined when calling getOtherAccountPrivateAlias().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121GetOtherAccountPrivateAlias().'
+                'Required parameter "viewid" was null or undefined when calling getOtherAccountPrivateAlias().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121GetOtherAccountPrivateAlias().'
+                'Required parameter "otheraccountid" was null or undefined when calling getOtherAccountPrivateAlias().'
             );
         }
 
@@ -2030,7 +2856,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -2052,58 +2878,134 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
      * Get Other Account Private Alias
      */
-    async oBPv121GetOtherAccountPrivateAliasRaw(requestParameters: OBPv121GetOtherAccountPrivateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121GetCounterpartyPublicAlias200Response>> {
-        const requestOptions = await this.oBPv121GetOtherAccountPrivateAliasRequestOpts(requestParameters);
+    async getOtherAccountPrivateAliasRaw(requestParameters: GetOtherAccountPrivateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCounterpartyPublicAlias200Response>> {
+        const requestOptions = await this.getOtherAccountPrivateAliasRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121GetCounterpartyPublicAlias200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCounterpartyPublicAlias200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
      * Get Other Account Private Alias
      */
-    async oBPv121GetOtherAccountPrivateAlias(requestParameters: OBPv121GetOtherAccountPrivateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121GetCounterpartyPublicAlias200Response> {
-        const response = await this.oBPv121GetOtherAccountPrivateAliasRaw(requestParameters, initOverrides);
+    async getOtherAccountPrivateAlias(requestParameters: GetOtherAccountPrivateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCounterpartyPublicAlias200Response> {
+        const response = await this.getOtherAccountPrivateAliasRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121UpdateCounterpartyCorporateLocation without sending the request
+     * Creates request options for getOtherAccountsForBankAccount without sending the request
      */
-    async oBPv121UpdateCounterpartyCorporateLocationRequestOpts(requestParameters: OBPv121UpdateCounterpartyCorporateLocationOperationRequest): Promise<runtime.RequestOpts> {
+    async getOtherAccountsForBankAccountRequestOpts(requestParameters: GetOtherAccountsForBankAccountRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121UpdateCounterpartyCorporateLocation().'
+                'Required parameter "bankid" was null or undefined when calling getOtherAccountsForBankAccount().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121UpdateCounterpartyCorporateLocation().'
+                'Required parameter "accountid" was null or undefined when calling getOtherAccountsForBankAccount().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121UpdateCounterpartyCorporateLocation().'
+                'Required parameter "viewid" was null or undefined when calling getOtherAccountsForBankAccount().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
+        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Returns data about all the other accounts that have shared at least one transaction with the ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view VIEW_ID is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_accounts\"><strong>other_accounts</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+     * Get Other Accounts of one Account
+     */
+    async getOtherAccountsForBankAccountRaw(requestParameters: GetOtherAccountsForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetOtherAccountsForBankAccount200Response>> {
+        const requestOptions = await this.getOtherAccountsForBankAccountRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetOtherAccountsForBankAccount200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Returns data about all the other accounts that have shared at least one transaction with the ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view VIEW_ID is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_accounts\"><strong>other_accounts</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+     * Get Other Accounts of one Account
+     */
+    async getOtherAccountsForBankAccount(requestParameters: GetOtherAccountsForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetOtherAccountsForBankAccount200Response> {
+        const response = await this.getOtherAccountsForBankAccountRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for updateCounterpartyCorporateLocation without sending the request
+     */
+    async updateCounterpartyCorporateLocationRequestOpts(requestParameters: UpdateCounterpartyCorporateLocationOperationRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling updateCounterpartyCorporateLocation().'
+            );
+        }
+
+        if (requestParameters['accountid'] == null) {
+            throw new runtime.RequiredError(
+                'accountid',
+                'Required parameter "accountid" was null or undefined when calling updateCounterpartyCorporateLocation().'
+            );
+        }
+
+        if (requestParameters['viewid'] == null) {
+            throw new runtime.RequiredError(
+                'viewid',
+                'Required parameter "viewid" was null or undefined when calling updateCounterpartyCorporateLocation().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121UpdateCounterpartyCorporateLocation().'
+                'Required parameter "otheraccountid" was null or undefined when calling updateCounterpartyCorporateLocation().'
             );
         }
 
-        if (requestParameters['oBPv121UpdateCounterpartyCorporateLocationRequest'] == null) {
+        if (requestParameters['updateCounterpartyCorporateLocationRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121UpdateCounterpartyCorporateLocationRequest',
-                'Required parameter "oBPv121UpdateCounterpartyCorporateLocationRequest" was null or undefined when calling oBPv121UpdateCounterpartyCorporateLocation().'
+                'updateCounterpartyCorporateLocationRequest',
+                'Required parameter "updateCounterpartyCorporateLocationRequest" was null or undefined when calling updateCounterpartyCorporateLocation().'
             );
         }
 
@@ -2123,7 +3025,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -2138,7 +3040,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121UpdateCounterpartyCorporateLocationRequestToJSON(requestParameters['oBPv121UpdateCounterpartyCorporateLocationRequest']),
+            body: UpdateCounterpartyCorporateLocationRequestToJSON(requestParameters['updateCounterpartyCorporateLocationRequest']),
         };
     }
 
@@ -2146,58 +3048,58 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Update the geolocation of the counterparty\'s registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Update Counterparty Corporate Location
      */
-    async oBPv121UpdateCounterpartyCorporateLocationRaw(requestParameters: OBPv121UpdateCounterpartyCorporateLocationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121UpdateCounterpartyCorporateLocationRequestOpts(requestParameters);
+    async updateCounterpartyCorporateLocationRaw(requestParameters: UpdateCounterpartyCorporateLocationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.updateCounterpartyCorporateLocationRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Update the geolocation of the counterparty\'s registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Update Counterparty Corporate Location
      */
-    async oBPv121UpdateCounterpartyCorporateLocation(requestParameters: OBPv121UpdateCounterpartyCorporateLocationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121UpdateCounterpartyCorporateLocationRaw(requestParameters, initOverrides);
+    async updateCounterpartyCorporateLocation(requestParameters: UpdateCounterpartyCorporateLocationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.updateCounterpartyCorporateLocationRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121UpdateCounterpartyImageUrl without sending the request
+     * Creates request options for updateCounterpartyImageUrl without sending the request
      */
-    async oBPv121UpdateCounterpartyImageUrlRequestOpts(requestParameters: OBPv121UpdateCounterpartyImageUrlOperationRequest): Promise<runtime.RequestOpts> {
+    async updateCounterpartyImageUrlRequestOpts(requestParameters: UpdateCounterpartyImageUrlOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121UpdateCounterpartyImageUrl().'
+                'Required parameter "bankid" was null or undefined when calling updateCounterpartyImageUrl().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121UpdateCounterpartyImageUrl().'
+                'Required parameter "accountid" was null or undefined when calling updateCounterpartyImageUrl().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121UpdateCounterpartyImageUrl().'
+                'Required parameter "viewid" was null or undefined when calling updateCounterpartyImageUrl().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121UpdateCounterpartyImageUrl().'
+                'Required parameter "otheraccountid" was null or undefined when calling updateCounterpartyImageUrl().'
             );
         }
 
-        if (requestParameters['oBPv121UpdateCounterpartyImageUrlRequest'] == null) {
+        if (requestParameters['updateCounterpartyImageUrlRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121UpdateCounterpartyImageUrlRequest',
-                'Required parameter "oBPv121UpdateCounterpartyImageUrlRequest" was null or undefined when calling oBPv121UpdateCounterpartyImageUrl().'
+                'updateCounterpartyImageUrlRequest',
+                'Required parameter "updateCounterpartyImageUrlRequest" was null or undefined when calling updateCounterpartyImageUrl().'
             );
         }
 
@@ -2219,7 +3121,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121UpdateCounterpartyImageUrlRequestToJSON(requestParameters['oBPv121UpdateCounterpartyImageUrlRequest']),
+            body: UpdateCounterpartyImageUrlRequestToJSON(requestParameters['updateCounterpartyImageUrlRequest']),
         };
     }
 
@@ -2227,58 +3129,58 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Update Counterparty Image Url
      */
-    async oBPv121UpdateCounterpartyImageUrlRaw(requestParameters: OBPv121UpdateCounterpartyImageUrlOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121UpdateCounterpartyImageUrlRequestOpts(requestParameters);
+    async updateCounterpartyImageUrlRaw(requestParameters: UpdateCounterpartyImageUrlOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.updateCounterpartyImageUrlRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Update Counterparty Image Url
      */
-    async oBPv121UpdateCounterpartyImageUrl(requestParameters: OBPv121UpdateCounterpartyImageUrlOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121UpdateCounterpartyImageUrlRaw(requestParameters, initOverrides);
+    async updateCounterpartyImageUrl(requestParameters: UpdateCounterpartyImageUrlOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.updateCounterpartyImageUrlRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121UpdateCounterpartyMoreInfo without sending the request
+     * Creates request options for updateCounterpartyMoreInfo without sending the request
      */
-    async oBPv121UpdateCounterpartyMoreInfoRequestOpts(requestParameters: OBPv121UpdateCounterpartyMoreInfoOperationRequest): Promise<runtime.RequestOpts> {
+    async updateCounterpartyMoreInfoRequestOpts(requestParameters: UpdateCounterpartyMoreInfoOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121UpdateCounterpartyMoreInfo().'
+                'Required parameter "bankid" was null or undefined when calling updateCounterpartyMoreInfo().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121UpdateCounterpartyMoreInfo().'
+                'Required parameter "accountid" was null or undefined when calling updateCounterpartyMoreInfo().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121UpdateCounterpartyMoreInfo().'
+                'Required parameter "viewid" was null or undefined when calling updateCounterpartyMoreInfo().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121UpdateCounterpartyMoreInfo().'
+                'Required parameter "otheraccountid" was null or undefined when calling updateCounterpartyMoreInfo().'
             );
         }
 
-        if (requestParameters['oBPv121UpdateCounterpartyMoreInfoRequest'] == null) {
+        if (requestParameters['updateCounterpartyMoreInfoRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121UpdateCounterpartyMoreInfoRequest',
-                'Required parameter "oBPv121UpdateCounterpartyMoreInfoRequest" was null or undefined when calling oBPv121UpdateCounterpartyMoreInfo().'
+                'updateCounterpartyMoreInfoRequest',
+                'Required parameter "updateCounterpartyMoreInfoRequest" was null or undefined when calling updateCounterpartyMoreInfo().'
             );
         }
 
@@ -2298,7 +3200,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -2313,7 +3215,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121UpdateCounterpartyMoreInfoRequestToJSON(requestParameters['oBPv121UpdateCounterpartyMoreInfoRequest']),
+            body: UpdateCounterpartyMoreInfoRequestToJSON(requestParameters['updateCounterpartyMoreInfoRequest']),
         };
     }
 
@@ -2321,58 +3223,58 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Update Counterparty More Info
      */
-    async oBPv121UpdateCounterpartyMoreInfoRaw(requestParameters: OBPv121UpdateCounterpartyMoreInfoOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121UpdateCounterpartyMoreInfoRequestOpts(requestParameters);
+    async updateCounterpartyMoreInfoRaw(requestParameters: UpdateCounterpartyMoreInfoOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.updateCounterpartyMoreInfoRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Update Counterparty More Info
      */
-    async oBPv121UpdateCounterpartyMoreInfo(requestParameters: OBPv121UpdateCounterpartyMoreInfoOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121UpdateCounterpartyMoreInfoRaw(requestParameters, initOverrides);
+    async updateCounterpartyMoreInfo(requestParameters: UpdateCounterpartyMoreInfoOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.updateCounterpartyMoreInfoRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121UpdateCounterpartyOpenCorporatesUrl without sending the request
+     * Creates request options for updateCounterpartyOpenCorporatesUrl without sending the request
      */
-    async oBPv121UpdateCounterpartyOpenCorporatesUrlRequestOpts(requestParameters: OBPv121UpdateCounterpartyOpenCorporatesUrlOperationRequest): Promise<runtime.RequestOpts> {
+    async updateCounterpartyOpenCorporatesUrlRequestOpts(requestParameters: UpdateCounterpartyOpenCorporatesUrlOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121UpdateCounterpartyOpenCorporatesUrl().'
+                'Required parameter "bankid" was null or undefined when calling updateCounterpartyOpenCorporatesUrl().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121UpdateCounterpartyOpenCorporatesUrl().'
+                'Required parameter "accountid" was null or undefined when calling updateCounterpartyOpenCorporatesUrl().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121UpdateCounterpartyOpenCorporatesUrl().'
+                'Required parameter "viewid" was null or undefined when calling updateCounterpartyOpenCorporatesUrl().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121UpdateCounterpartyOpenCorporatesUrl().'
+                'Required parameter "otheraccountid" was null or undefined when calling updateCounterpartyOpenCorporatesUrl().'
             );
         }
 
-        if (requestParameters['oBPv121UpdateCounterpartyOpenCorporatesUrlRequest'] == null) {
+        if (requestParameters['updateCounterpartyOpenCorporatesUrlRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121UpdateCounterpartyOpenCorporatesUrlRequest',
-                'Required parameter "oBPv121UpdateCounterpartyOpenCorporatesUrlRequest" was null or undefined when calling oBPv121UpdateCounterpartyOpenCorporatesUrl().'
+                'updateCounterpartyOpenCorporatesUrlRequest',
+                'Required parameter "updateCounterpartyOpenCorporatesUrlRequest" was null or undefined when calling updateCounterpartyOpenCorporatesUrl().'
             );
         }
 
@@ -2392,7 +3294,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -2407,7 +3309,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121UpdateCounterpartyOpenCorporatesUrlRequestToJSON(requestParameters['oBPv121UpdateCounterpartyOpenCorporatesUrlRequest']),
+            body: UpdateCounterpartyOpenCorporatesUrlRequestToJSON(requestParameters['updateCounterpartyOpenCorporatesUrlRequest']),
         };
     }
 
@@ -2415,58 +3317,58 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Update Open Corporates Url of Counterparty
      */
-    async oBPv121UpdateCounterpartyOpenCorporatesUrlRaw(requestParameters: OBPv121UpdateCounterpartyOpenCorporatesUrlOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121UpdateCounterpartyOpenCorporatesUrlRequestOpts(requestParameters);
+    async updateCounterpartyOpenCorporatesUrlRaw(requestParameters: UpdateCounterpartyOpenCorporatesUrlOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.updateCounterpartyOpenCorporatesUrlRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Update Open Corporates Url of Counterparty
      */
-    async oBPv121UpdateCounterpartyOpenCorporatesUrl(requestParameters: OBPv121UpdateCounterpartyOpenCorporatesUrlOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121UpdateCounterpartyOpenCorporatesUrlRaw(requestParameters, initOverrides);
+    async updateCounterpartyOpenCorporatesUrl(requestParameters: UpdateCounterpartyOpenCorporatesUrlOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.updateCounterpartyOpenCorporatesUrlRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121UpdateCounterpartyPhysicalLocation without sending the request
+     * Creates request options for updateCounterpartyPhysicalLocation without sending the request
      */
-    async oBPv121UpdateCounterpartyPhysicalLocationRequestOpts(requestParameters: OBPv121UpdateCounterpartyPhysicalLocationOperationRequest): Promise<runtime.RequestOpts> {
+    async updateCounterpartyPhysicalLocationRequestOpts(requestParameters: UpdateCounterpartyPhysicalLocationOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121UpdateCounterpartyPhysicalLocation().'
+                'Required parameter "bankid" was null or undefined when calling updateCounterpartyPhysicalLocation().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121UpdateCounterpartyPhysicalLocation().'
+                'Required parameter "accountid" was null or undefined when calling updateCounterpartyPhysicalLocation().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121UpdateCounterpartyPhysicalLocation().'
+                'Required parameter "viewid" was null or undefined when calling updateCounterpartyPhysicalLocation().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121UpdateCounterpartyPhysicalLocation().'
+                'Required parameter "otheraccountid" was null or undefined when calling updateCounterpartyPhysicalLocation().'
             );
         }
 
-        if (requestParameters['oBPv121UpdateCounterpartyPhysicalLocationRequest'] == null) {
+        if (requestParameters['updateCounterpartyPhysicalLocationRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121UpdateCounterpartyPhysicalLocationRequest',
-                'Required parameter "oBPv121UpdateCounterpartyPhysicalLocationRequest" was null or undefined when calling oBPv121UpdateCounterpartyPhysicalLocation().'
+                'updateCounterpartyPhysicalLocationRequest',
+                'Required parameter "updateCounterpartyPhysicalLocationRequest" was null or undefined when calling updateCounterpartyPhysicalLocation().'
             );
         }
 
@@ -2486,7 +3388,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -2501,7 +3403,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121UpdateCounterpartyPhysicalLocationRequestToJSON(requestParameters['oBPv121UpdateCounterpartyPhysicalLocationRequest']),
+            body: UpdateCounterpartyPhysicalLocationRequestToJSON(requestParameters['updateCounterpartyPhysicalLocationRequest']),
         };
     }
 
@@ -2509,58 +3411,58 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Update geocoordinates of the counterparty\'s main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Update Counterparty Physical Location
      */
-    async oBPv121UpdateCounterpartyPhysicalLocationRaw(requestParameters: OBPv121UpdateCounterpartyPhysicalLocationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121UpdateCounterpartyPhysicalLocationRequestOpts(requestParameters);
+    async updateCounterpartyPhysicalLocationRaw(requestParameters: UpdateCounterpartyPhysicalLocationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.updateCounterpartyPhysicalLocationRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Update geocoordinates of the counterparty\'s main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Update Counterparty Physical Location
      */
-    async oBPv121UpdateCounterpartyPhysicalLocation(requestParameters: OBPv121UpdateCounterpartyPhysicalLocationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121UpdateCounterpartyPhysicalLocationRaw(requestParameters, initOverrides);
+    async updateCounterpartyPhysicalLocation(requestParameters: UpdateCounterpartyPhysicalLocationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.updateCounterpartyPhysicalLocationRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121UpdateCounterpartyPrivateAlias without sending the request
+     * Creates request options for updateCounterpartyPrivateAlias without sending the request
      */
-    async oBPv121UpdateCounterpartyPrivateAliasRequestOpts(requestParameters: OBPv121UpdateCounterpartyPrivateAliasRequest): Promise<runtime.RequestOpts> {
+    async updateCounterpartyPrivateAliasRequestOpts(requestParameters: UpdateCounterpartyPrivateAliasRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121UpdateCounterpartyPrivateAlias().'
+                'Required parameter "bankid" was null or undefined when calling updateCounterpartyPrivateAlias().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121UpdateCounterpartyPrivateAlias().'
+                'Required parameter "accountid" was null or undefined when calling updateCounterpartyPrivateAlias().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121UpdateCounterpartyPrivateAlias().'
+                'Required parameter "viewid" was null or undefined when calling updateCounterpartyPrivateAlias().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121UpdateCounterpartyPrivateAlias().'
+                'Required parameter "otheraccountid" was null or undefined when calling updateCounterpartyPrivateAlias().'
             );
         }
 
-        if (requestParameters['oBPv121GetCounterpartyPublicAlias200Response'] == null) {
+        if (requestParameters['getCounterpartyPublicAlias200Response'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121GetCounterpartyPublicAlias200Response',
-                'Required parameter "oBPv121GetCounterpartyPublicAlias200Response" was null or undefined when calling oBPv121UpdateCounterpartyPrivateAlias().'
+                'getCounterpartyPublicAlias200Response',
+                'Required parameter "getCounterpartyPublicAlias200Response" was null or undefined when calling updateCounterpartyPrivateAlias().'
             );
         }
 
@@ -2580,7 +3482,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -2595,7 +3497,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121GetCounterpartyPublicAlias200ResponseToJSON(requestParameters['oBPv121GetCounterpartyPublicAlias200Response']),
+            body: GetCounterpartyPublicAlias200ResponseToJSON(requestParameters['getCounterpartyPublicAlias200Response']),
         };
     }
 
@@ -2603,58 +3505,58 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Update Counterparty Private Alias
      */
-    async oBPv121UpdateCounterpartyPrivateAliasRaw(requestParameters: OBPv121UpdateCounterpartyPrivateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121UpdateCounterpartyPrivateAliasRequestOpts(requestParameters);
+    async updateCounterpartyPrivateAliasRaw(requestParameters: UpdateCounterpartyPrivateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.updateCounterpartyPrivateAliasRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Update Counterparty Private Alias
      */
-    async oBPv121UpdateCounterpartyPrivateAlias(requestParameters: OBPv121UpdateCounterpartyPrivateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121UpdateCounterpartyPrivateAliasRaw(requestParameters, initOverrides);
+    async updateCounterpartyPrivateAlias(requestParameters: UpdateCounterpartyPrivateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.updateCounterpartyPrivateAliasRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121UpdateCounterpartyPublicAlias without sending the request
+     * Creates request options for updateCounterpartyPublicAlias without sending the request
      */
-    async oBPv121UpdateCounterpartyPublicAliasRequestOpts(requestParameters: OBPv121UpdateCounterpartyPublicAliasRequest): Promise<runtime.RequestOpts> {
+    async updateCounterpartyPublicAliasRequestOpts(requestParameters: UpdateCounterpartyPublicAliasRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121UpdateCounterpartyPublicAlias().'
+                'Required parameter "bankid" was null or undefined when calling updateCounterpartyPublicAlias().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121UpdateCounterpartyPublicAlias().'
+                'Required parameter "accountid" was null or undefined when calling updateCounterpartyPublicAlias().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121UpdateCounterpartyPublicAlias().'
+                'Required parameter "viewid" was null or undefined when calling updateCounterpartyPublicAlias().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121UpdateCounterpartyPublicAlias().'
+                'Required parameter "otheraccountid" was null or undefined when calling updateCounterpartyPublicAlias().'
             );
         }
 
-        if (requestParameters['oBPv121GetCounterpartyPublicAlias200Response'] == null) {
+        if (requestParameters['getCounterpartyPublicAlias200Response'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121GetCounterpartyPublicAlias200Response',
-                'Required parameter "oBPv121GetCounterpartyPublicAlias200Response" was null or undefined when calling oBPv121UpdateCounterpartyPublicAlias().'
+                'getCounterpartyPublicAlias200Response',
+                'Required parameter "getCounterpartyPublicAlias200Response" was null or undefined when calling updateCounterpartyPublicAlias().'
             );
         }
 
@@ -2674,7 +3576,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -2689,7 +3591,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121GetCounterpartyPublicAlias200ResponseToJSON(requestParameters['oBPv121GetCounterpartyPublicAlias200Response']),
+            body: GetCounterpartyPublicAlias200ResponseToJSON(requestParameters['getCounterpartyPublicAlias200Response']),
         };
     }
 
@@ -2697,58 +3599,58 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Update public alias of other bank account
      */
-    async oBPv121UpdateCounterpartyPublicAliasRaw(requestParameters: OBPv121UpdateCounterpartyPublicAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121UpdateCounterpartyPublicAliasRequestOpts(requestParameters);
+    async updateCounterpartyPublicAliasRaw(requestParameters: UpdateCounterpartyPublicAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.updateCounterpartyPublicAliasRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Update public alias of other bank account
      */
-    async oBPv121UpdateCounterpartyPublicAlias(requestParameters: OBPv121UpdateCounterpartyPublicAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121UpdateCounterpartyPublicAliasRaw(requestParameters, initOverrides);
+    async updateCounterpartyPublicAlias(requestParameters: UpdateCounterpartyPublicAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.updateCounterpartyPublicAliasRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv121UpdateCounterpartyUrl without sending the request
+     * Creates request options for updateCounterpartyUrl without sending the request
      */
-    async oBPv121UpdateCounterpartyUrlRequestOpts(requestParameters: OBPv121UpdateCounterpartyUrlOperationRequest): Promise<runtime.RequestOpts> {
+    async updateCounterpartyUrlRequestOpts(requestParameters: UpdateCounterpartyUrlOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv121UpdateCounterpartyUrl().'
+                'Required parameter "bankid" was null or undefined when calling updateCounterpartyUrl().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv121UpdateCounterpartyUrl().'
+                'Required parameter "accountid" was null or undefined when calling updateCounterpartyUrl().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv121UpdateCounterpartyUrl().'
+                'Required parameter "viewid" was null or undefined when calling updateCounterpartyUrl().'
             );
         }
 
         if (requestParameters['otheraccountid'] == null) {
             throw new runtime.RequiredError(
                 'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv121UpdateCounterpartyUrl().'
+                'Required parameter "otheraccountid" was null or undefined when calling updateCounterpartyUrl().'
             );
         }
 
-        if (requestParameters['oBPv121UpdateCounterpartyUrlRequest'] == null) {
+        if (requestParameters['updateCounterpartyUrlRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv121UpdateCounterpartyUrlRequest',
-                'Required parameter "oBPv121UpdateCounterpartyUrlRequest" was null or undefined when calling oBPv121UpdateCounterpartyUrl().'
+                'updateCounterpartyUrlRequest',
+                'Required parameter "updateCounterpartyUrlRequest" was null or undefined when calling updateCounterpartyUrl().'
             );
         }
 
@@ -2768,7 +3670,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -2783,7 +3685,7 @@ export class CounterpartyApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv121UpdateCounterpartyUrlRequestToJSON(requestParameters['oBPv121UpdateCounterpartyUrlRequest']),
+            body: UpdateCounterpartyUrlRequestToJSON(requestParameters['updateCounterpartyUrlRequest']),
         };
     }
 
@@ -2791,921 +3693,19 @@ export class CounterpartyApi extends runtime.BaseAPI {
      * <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Update url of other bank account
      */
-    async oBPv121UpdateCounterpartyUrlRaw(requestParameters: OBPv121UpdateCounterpartyUrlOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv121UpdateCounterpartyUrlRequestOpts(requestParameters);
+    async updateCounterpartyUrlRaw(requestParameters: UpdateCounterpartyUrlOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.updateCounterpartyUrlRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Update url of other bank account
      */
-    async oBPv121UpdateCounterpartyUrl(requestParameters: OBPv121UpdateCounterpartyUrlOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv121UpdateCounterpartyUrlRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv300GetOtherAccountByIdForBankAccount without sending the request
-     */
-    async oBPv300GetOtherAccountByIdForBankAccountRequestOpts(requestParameters: OBPv300GetOtherAccountByIdForBankAccountRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv300GetOtherAccountByIdForBankAccount().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv300GetOtherAccountByIdForBankAccount().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv300GetOtherAccountByIdForBankAccount().'
-            );
-        }
-
-        if (requestParameters['otheraccountid'] == null) {
-            throw new runtime.RequiredError(
-                'otheraccountid',
-                'Required parameter "otheraccountid" was null or undefined when calling oBPv300GetOtherAccountByIdForBankAccount().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-        urlPath = urlPath.replace(`{${"otheraccountid"}}`, encodeURIComponent(String(requestParameters['otheraccountid'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-     * Get Other Account by Id
-     */
-    async oBPv300GetOtherAccountByIdForBankAccountRaw(requestParameters: OBPv300GetOtherAccountByIdForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount>> {
-        const requestOptions = await this.oBPv300GetOtherAccountByIdForBankAccountRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccountFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-     * Get Other Account by Id
-     */
-    async oBPv300GetOtherAccountByIdForBankAccount(requestParameters: OBPv300GetOtherAccountByIdForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount> {
-        const response = await this.oBPv300GetOtherAccountByIdForBankAccountRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv300GetOtherAccountsForBankAccount without sending the request
-     */
-    async oBPv300GetOtherAccountsForBankAccountRequestOpts(requestParameters: OBPv300GetOtherAccountsForBankAccountRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv300GetOtherAccountsForBankAccount().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv300GetOtherAccountsForBankAccount().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv300GetOtherAccountsForBankAccount().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Returns data about all the other accounts that have shared at least one transaction with the ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view VIEW_ID is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_accounts\"><strong>other_accounts</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-     * Get Other Accounts of one Account
-     */
-    async oBPv300GetOtherAccountsForBankAccountRaw(requestParameters: OBPv300GetOtherAccountsForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv300GetOtherAccountsForBankAccount200Response>> {
-        const requestOptions = await this.oBPv300GetOtherAccountsForBankAccountRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv300GetOtherAccountsForBankAccount200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Returns data about all the other accounts that have shared at least one transaction with the ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view VIEW_ID is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_accounts\"><strong>other_accounts</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-     * Get Other Accounts of one Account
-     */
-    async oBPv300GetOtherAccountsForBankAccount(requestParameters: OBPv300GetOtherAccountsForBankAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv300GetOtherAccountsForBankAccount200Response> {
-        const response = await this.oBPv300GetOtherAccountsForBankAccountRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv400CreateCounterparty without sending the request
-     */
-    async oBPv400CreateCounterpartyRequestOpts(requestParameters: OBPv400CreateCounterpartyRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400CreateCounterparty().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400CreateCounterparty().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv400CreateCounterparty().'
-            );
-        }
-
-        if (requestParameters['oBPv400CreateCounterpartyForAnyAccountRequest'] == null) {
-            throw new runtime.RequiredError(
-                'oBPv400CreateCounterpartyForAnyAccountRequest',
-                'Required parameter "oBPv400CreateCounterpartyForAnyAccountRequest" was null or undefined when calling oBPv400CreateCounterparty().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: OBPv400CreateCounterpartyForAnyAccountRequestToJSON(requestParameters['oBPv400CreateCounterpartyForAnyAccountRequest']),
-        };
-    }
-
-    /**
-     * <p>This endpoint creates an (Explicit) Counterparty for an Account.</p> <p>For an introduction to Counterparties in OBP see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Create Counterparty (Explicit)
-     */
-    async oBPv400CreateCounterpartyRaw(requestParameters: OBPv400CreateCounterpartyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetExplicitCounterpartyById200Response>> {
-        const requestOptions = await this.oBPv400CreateCounterpartyRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetExplicitCounterpartyById200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>This endpoint creates an (Explicit) Counterparty for an Account.</p> <p>For an introduction to Counterparties in OBP see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Create Counterparty (Explicit)
-     */
-    async oBPv400CreateCounterparty(requestParameters: OBPv400CreateCounterpartyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetExplicitCounterpartyById200Response> {
-        const response = await this.oBPv400CreateCounterpartyRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv400CreateCounterpartyForAnyAccount without sending the request
-     */
-    async oBPv400CreateCounterpartyForAnyAccountRequestOpts(requestParameters: OBPv400CreateCounterpartyForAnyAccountOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400CreateCounterpartyForAnyAccount().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400CreateCounterpartyForAnyAccount().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv400CreateCounterpartyForAnyAccount().'
-            );
-        }
-
-        if (requestParameters['oBPv400CreateCounterpartyForAnyAccountRequest'] == null) {
-            throw new runtime.RequiredError(
-                'oBPv400CreateCounterpartyForAnyAccountRequest',
-                'Required parameter "oBPv400CreateCounterpartyForAnyAccountRequest" was null or undefined when calling oBPv400CreateCounterpartyForAnyAccount().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: OBPv400CreateCounterpartyForAnyAccountRequestToJSON(requestParameters['oBPv400CreateCounterpartyForAnyAccountRequest']),
-        };
-    }
-
-    /**
-     * <p>This is a management endpoint that allows the creation of a Counterparty on any Account.</p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Create Counterparty for any account (Explicit)
-     */
-    async oBPv400CreateCounterpartyForAnyAccountRaw(requestParameters: OBPv400CreateCounterpartyForAnyAccountOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetExplicitCounterpartyById200Response>> {
-        const requestOptions = await this.oBPv400CreateCounterpartyForAnyAccountRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetExplicitCounterpartyById200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>This is a management endpoint that allows the creation of a Counterparty on any Account.</p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Create Counterparty for any account (Explicit)
-     */
-    async oBPv400CreateCounterpartyForAnyAccount(requestParameters: OBPv400CreateCounterpartyForAnyAccountOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetExplicitCounterpartyById200Response> {
-        const response = await this.oBPv400CreateCounterpartyForAnyAccountRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv400DeleteCounterpartyForAnyAccount without sending the request
-     */
-    async oBPv400DeleteCounterpartyForAnyAccountRequestOpts(requestParameters: OBPv400DeleteCounterpartyForAnyAccountRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400DeleteCounterpartyForAnyAccount().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400DeleteCounterpartyForAnyAccount().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv400DeleteCounterpartyForAnyAccount().'
-            );
-        }
-
-        if (requestParameters['counterpartyid'] == null) {
-            throw new runtime.RequiredError(
-                'counterpartyid',
-                'Required parameter "counterpartyid" was null or undefined when calling oBPv400DeleteCounterpartyForAnyAccount().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-        urlPath = urlPath.replace(`{${"counterpartyid"}}`, encodeURIComponent(String(requestParameters['counterpartyid'])));
-
-        return {
-            path: urlPath,
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>This is a management endpoint that enables the deletion of any specified Counterparty along with any related Metadata of that Counterparty.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-     * Delete Counterparty for any account (Explicit)
-     */
-    async oBPv400DeleteCounterpartyForAnyAccountRaw(requestParameters: OBPv400DeleteCounterpartyForAnyAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteCounterpartyForAnyAccountRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * <p>This is a management endpoint that enables the deletion of any specified Counterparty along with any related Metadata of that Counterparty.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-     * Delete Counterparty for any account (Explicit)
-     */
-    async oBPv400DeleteCounterpartyForAnyAccount(requestParameters: OBPv400DeleteCounterpartyForAnyAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteCounterpartyForAnyAccountRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for oBPv400DeleteExplicitCounterparty without sending the request
-     */
-    async oBPv400DeleteExplicitCounterpartyRequestOpts(requestParameters: OBPv400DeleteExplicitCounterpartyRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400DeleteExplicitCounterparty().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400DeleteExplicitCounterparty().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv400DeleteExplicitCounterparty().'
-            );
-        }
-
-        if (requestParameters['counterpartyid'] == null) {
-            throw new runtime.RequiredError(
-                'counterpartyid',
-                'Required parameter "counterpartyid" was null or undefined when calling oBPv400DeleteExplicitCounterparty().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-        urlPath = urlPath.replace(`{${"counterpartyid"}}`, encodeURIComponent(String(requestParameters['counterpartyid'])));
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>This endpoint deletes the Counterparty on the Account / View specified by the COUNTERPARTY_ID.<br /> It also deletes any related Counterparty Metadata.</p> <p>The User calling this endpoint must have access to the View specified in the URL and that View must have the permission <code>can_delete_counterparty</code>.</p> <p>For a general introduction to Counterparties in OBP see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
-     * Delete Counterparty (Explicit)
-     */
-    async oBPv400DeleteExplicitCounterpartyRaw(requestParameters: OBPv400DeleteExplicitCounterpartyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteExplicitCounterpartyRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * <p>This endpoint deletes the Counterparty on the Account / View specified by the COUNTERPARTY_ID.<br /> It also deletes any related Counterparty Metadata.</p> <p>The User calling this endpoint must have access to the View specified in the URL and that View must have the permission <code>can_delete_counterparty</code>.</p> <p>For a general introduction to Counterparties in OBP see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
-     * Delete Counterparty (Explicit)
-     */
-    async oBPv400DeleteExplicitCounterparty(requestParameters: OBPv400DeleteExplicitCounterpartyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteExplicitCounterpartyRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for oBPv400GetCounterpartiesForAnyAccount without sending the request
-     */
-    async oBPv400GetCounterpartiesForAnyAccountRequestOpts(requestParameters: OBPv400GetCounterpartiesForAnyAccountRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetCounterpartiesForAnyAccount().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400GetCounterpartiesForAnyAccount().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv400GetCounterpartiesForAnyAccount().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>This is a management endpoint that gets the Counterparties that have been explicitly created for an Account / View.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#Counterparties\"><strong>counterparties</strong></a>:</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Get Counterparties for any account (Explicit)
-     */
-    async oBPv400GetCounterpartiesForAnyAccountRaw(requestParameters: OBPv400GetCounterpartiesForAnyAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetCounterpartiesForAnyAccount200Response>> {
-        const requestOptions = await this.oBPv400GetCounterpartiesForAnyAccountRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetCounterpartiesForAnyAccount200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>This is a management endpoint that gets the Counterparties that have been explicitly created for an Account / View.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#Counterparties\"><strong>counterparties</strong></a>:</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Get Counterparties for any account (Explicit)
-     */
-    async oBPv400GetCounterpartiesForAnyAccount(requestParameters: OBPv400GetCounterpartiesForAnyAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetCounterpartiesForAnyAccount200Response> {
-        const response = await this.oBPv400GetCounterpartiesForAnyAccountRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv400GetCounterpartyByIdForAnyAccount without sending the request
-     */
-    async oBPv400GetCounterpartyByIdForAnyAccountRequestOpts(requestParameters: OBPv400GetCounterpartyByIdForAnyAccountRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetCounterpartyByIdForAnyAccount().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400GetCounterpartyByIdForAnyAccount().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv400GetCounterpartyByIdForAnyAccount().'
-            );
-        }
-
-        if (requestParameters['counterpartyid'] == null) {
-            throw new runtime.RequiredError(
-                'counterpartyid',
-                'Required parameter "counterpartyid" was null or undefined when calling oBPv400GetCounterpartyByIdForAnyAccount().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-        urlPath = urlPath.replace(`{${"counterpartyid"}}`, encodeURIComponent(String(requestParameters['counterpartyid'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>This is a management endpoint that gets information about any single explicitly created Counterparty on an Account / View specified by its COUNTERPARTY_ID&quot;,</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Get Counterparty by Id for any account (Explicit)
-     */
-    async oBPv400GetCounterpartyByIdForAnyAccountRaw(requestParameters: OBPv400GetCounterpartyByIdForAnyAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetExplicitCounterpartyById200Response>> {
-        const requestOptions = await this.oBPv400GetCounterpartyByIdForAnyAccountRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetExplicitCounterpartyById200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>This is a management endpoint that gets information about any single explicitly created Counterparty on an Account / View specified by its COUNTERPARTY_ID&quot;,</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Get Counterparty by Id for any account (Explicit)
-     */
-    async oBPv400GetCounterpartyByIdForAnyAccount(requestParameters: OBPv400GetCounterpartyByIdForAnyAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetExplicitCounterpartyById200Response> {
-        const response = await this.oBPv400GetCounterpartyByIdForAnyAccountRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv400GetCounterpartyByNameForAnyAccount without sending the request
-     */
-    async oBPv400GetCounterpartyByNameForAnyAccountRequestOpts(requestParameters: OBPv400GetCounterpartyByNameForAnyAccountRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetCounterpartyByNameForAnyAccount().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400GetCounterpartyByNameForAnyAccount().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv400GetCounterpartyByNameForAnyAccount().'
-            );
-        }
-
-        if (requestParameters['counterpartyname'] == null) {
-            throw new runtime.RequiredError(
-                'counterpartyname',
-                'Required parameter "counterpartyname" was null or undefined when calling oBPv400GetCounterpartyByNameForAnyAccount().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname}`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-        urlPath = urlPath.replace(`{${"counterpartyname"}}`, encodeURIComponent(String(requestParameters['counterpartyname'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>This is a management endpoint that allows the retrieval of any Counterparty on an Account / View by its Name.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_NAME</a>: John Smith Ltd.</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Get Counterparty by name for any account (Explicit) 
-     */
-    async oBPv400GetCounterpartyByNameForAnyAccountRaw(requestParameters: OBPv400GetCounterpartyByNameForAnyAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetExplicitCounterpartyById200Response>> {
-        const requestOptions = await this.oBPv400GetCounterpartyByNameForAnyAccountRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetExplicitCounterpartyById200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>This is a management endpoint that allows the retrieval of any Counterparty on an Account / View by its Name.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_NAME</a>: John Smith Ltd.</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Get Counterparty by name for any account (Explicit) 
-     */
-    async oBPv400GetCounterpartyByNameForAnyAccount(requestParameters: OBPv400GetCounterpartyByNameForAnyAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetExplicitCounterpartyById200Response> {
-        const response = await this.oBPv400GetCounterpartyByNameForAnyAccountRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv400GetExplicitCounterpartiesForAccount without sending the request
-     */
-    async oBPv400GetExplicitCounterpartiesForAccountRequestOpts(requestParameters: OBPv400GetExplicitCounterpartiesForAccountRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetExplicitCounterpartiesForAccount().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400GetExplicitCounterpartiesForAccount().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv400GetExplicitCounterpartiesForAccount().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Get the Counterparties that have been explicitly created on the specified Account / View.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#Counterparties\"><strong>counterparties</strong></a>:</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Get Counterparties (Explicit)
-     */
-    async oBPv400GetExplicitCounterpartiesForAccountRaw(requestParameters: OBPv400GetExplicitCounterpartiesForAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetCounterpartiesForAnyAccount200Response>> {
-        const requestOptions = await this.oBPv400GetExplicitCounterpartiesForAccountRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetCounterpartiesForAnyAccount200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Get the Counterparties that have been explicitly created on the specified Account / View.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#Counterparties\"><strong>counterparties</strong></a>:</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Get Counterparties (Explicit)
-     */
-    async oBPv400GetExplicitCounterpartiesForAccount(requestParameters: OBPv400GetExplicitCounterpartiesForAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetCounterpartiesForAnyAccount200Response> {
-        const response = await this.oBPv400GetExplicitCounterpartiesForAccountRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv400GetExplicitCounterpartyById without sending the request
-     */
-    async oBPv400GetExplicitCounterpartyByIdRequestOpts(requestParameters: OBPv400GetExplicitCounterpartyByIdRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetExplicitCounterpartyById().'
-            );
-        }
-
-        if (requestParameters['accountid'] == null) {
-            throw new runtime.RequiredError(
-                'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400GetExplicitCounterpartyById().'
-            );
-        }
-
-        if (requestParameters['viewid'] == null) {
-            throw new runtime.RequiredError(
-                'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv400GetExplicitCounterpartyById().'
-            );
-        }
-
-        if (requestParameters['counterpartyid'] == null) {
-            throw new runtime.RequiredError(
-                'counterpartyid',
-                'Required parameter "counterpartyid" was null or undefined when calling oBPv400GetExplicitCounterpartyById().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"accountid"}}`, encodeURIComponent(String(requestParameters['accountid'])));
-        urlPath = urlPath.replace(`{${"viewid"}}`, encodeURIComponent(String(requestParameters['viewid'])));
-        urlPath = urlPath.replace(`{${"counterpartyid"}}`, encodeURIComponent(String(requestParameters['counterpartyid'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Get Counterparty by Id (Explicit)
-     */
-    async oBPv400GetExplicitCounterpartyByIdRaw(requestParameters: OBPv400GetExplicitCounterpartyByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetExplicitCounterpartyById200Response>> {
-        const requestOptions = await this.oBPv400GetExplicitCounterpartyByIdRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetExplicitCounterpartyById200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-     * Get Counterparty by Id (Explicit)
-     */
-    async oBPv400GetExplicitCounterpartyById(requestParameters: OBPv400GetExplicitCounterpartyByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetExplicitCounterpartyById200Response> {
-        const response = await this.oBPv400GetExplicitCounterpartyByIdRaw(requestParameters, initOverrides);
+    async updateCounterpartyUrl(requestParameters: UpdateCounterpartyUrlOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.updateCounterpartyUrlRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

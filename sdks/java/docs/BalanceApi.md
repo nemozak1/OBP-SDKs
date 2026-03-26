@@ -1,25 +1,25 @@
 # BalanceApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv510CreateBankAccountBalance**](BalanceApi.md#oBPv510CreateBankAccountBalance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance |
-| [**oBPv510CreateBankAccountBalanceWithHttpInfo**](BalanceApi.md#oBPv510CreateBankAccountBalanceWithHttpInfo) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance |
-| [**oBPv510DeleteBankAccountBalance**](BalanceApi.md#oBPv510DeleteBankAccountBalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance |
-| [**oBPv510DeleteBankAccountBalanceWithHttpInfo**](BalanceApi.md#oBPv510DeleteBankAccountBalanceWithHttpInfo) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance |
-| [**oBPv510GetAllBankAccountBalances**](BalanceApi.md#oBPv510GetAllBankAccountBalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances |
-| [**oBPv510GetAllBankAccountBalancesWithHttpInfo**](BalanceApi.md#oBPv510GetAllBankAccountBalancesWithHttpInfo) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances |
-| [**oBPv510GetBankAccountBalanceById**](BalanceApi.md#oBPv510GetBankAccountBalanceById) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID |
-| [**oBPv510GetBankAccountBalanceByIdWithHttpInfo**](BalanceApi.md#oBPv510GetBankAccountBalanceByIdWithHttpInfo) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID |
-| [**oBPv510UpdateBankAccountBalance**](BalanceApi.md#oBPv510UpdateBankAccountBalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance |
-| [**oBPv510UpdateBankAccountBalanceWithHttpInfo**](BalanceApi.md#oBPv510UpdateBankAccountBalanceWithHttpInfo) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance |
+| [**createBankAccountBalance**](BalanceApi.md#createBankAccountBalance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance |
+| [**createBankAccountBalanceWithHttpInfo**](BalanceApi.md#createBankAccountBalanceWithHttpInfo) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance |
+| [**deleteBankAccountBalance**](BalanceApi.md#deleteBankAccountBalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance |
+| [**deleteBankAccountBalanceWithHttpInfo**](BalanceApi.md#deleteBankAccountBalanceWithHttpInfo) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance |
+| [**getAllBankAccountBalances**](BalanceApi.md#getAllBankAccountBalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances |
+| [**getAllBankAccountBalancesWithHttpInfo**](BalanceApi.md#getAllBankAccountBalancesWithHttpInfo) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances |
+| [**getBankAccountBalanceById**](BalanceApi.md#getBankAccountBalanceById) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID |
+| [**getBankAccountBalanceByIdWithHttpInfo**](BalanceApi.md#getBankAccountBalanceByIdWithHttpInfo) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID |
+| [**updateBankAccountBalance**](BalanceApi.md#updateBankAccountBalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance |
+| [**updateBankAccountBalanceWithHttpInfo**](BalanceApi.md#updateBankAccountBalanceWithHttpInfo) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance |
 
 
 
-## oBPv510CreateBankAccountBalance
+## createBankAccountBalance
 
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510CreateBankAccountBalance(bankid, accountid, obPv510CreateBankAccountBalanceRequest)
+> GetAllBankAccountBalances200ResponseBalancesInner createBankAccountBalance(bankid, accountid, createBankAccountBalanceRequest)
 
 Create Bank Account Balance
 
@@ -39,7 +39,7 @@ import com.openbankproject.api.BalanceApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -60,12 +60,12 @@ public class Example {
         BalanceApi apiInstance = new BalanceApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        OBPv510CreateBankAccountBalanceRequest obPv510CreateBankAccountBalanceRequest = new OBPv510CreateBankAccountBalanceRequest(); // OBPv510CreateBankAccountBalanceRequest | Request body
+        CreateBankAccountBalanceRequest createBankAccountBalanceRequest = new CreateBankAccountBalanceRequest(); // CreateBankAccountBalanceRequest | Request body
         try {
-            OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems result = apiInstance.oBPv510CreateBankAccountBalance(bankid, accountid, obPv510CreateBankAccountBalanceRequest);
+            GetAllBankAccountBalances200ResponseBalancesInner result = apiInstance.createBankAccountBalance(bankid, accountid, createBankAccountBalanceRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling BalanceApi#oBPv510CreateBankAccountBalance");
+            System.err.println("Exception when calling BalanceApi#createBankAccountBalance");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -82,11 +82,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
-| **obPv510CreateBankAccountBalanceRequest** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md)| Request body | |
+| **createBankAccountBalanceRequest** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 
 ### Authorization
@@ -104,9 +104,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510CreateBankAccountBalanceWithHttpInfo
+## createBankAccountBalanceWithHttpInfo
 
-> ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> oBPv510CreateBankAccountBalance oBPv510CreateBankAccountBalanceWithHttpInfo(bankid, accountid, obPv510CreateBankAccountBalanceRequest)
+> ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner> createBankAccountBalance createBankAccountBalanceWithHttpInfo(bankid, accountid, createBankAccountBalanceRequest)
 
 Create Bank Account Balance
 
@@ -127,7 +127,7 @@ import com.openbankproject.api.BalanceApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -148,14 +148,14 @@ public class Example {
         BalanceApi apiInstance = new BalanceApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        OBPv510CreateBankAccountBalanceRequest obPv510CreateBankAccountBalanceRequest = new OBPv510CreateBankAccountBalanceRequest(); // OBPv510CreateBankAccountBalanceRequest | Request body
+        CreateBankAccountBalanceRequest createBankAccountBalanceRequest = new CreateBankAccountBalanceRequest(); // CreateBankAccountBalanceRequest | Request body
         try {
-            ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> response = apiInstance.oBPv510CreateBankAccountBalanceWithHttpInfo(bankid, accountid, obPv510CreateBankAccountBalanceRequest);
+            ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner> response = apiInstance.createBankAccountBalanceWithHttpInfo(bankid, accountid, createBankAccountBalanceRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling BalanceApi#oBPv510CreateBankAccountBalance");
+            System.err.println("Exception when calling BalanceApi#createBankAccountBalance");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -172,11 +172,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
-| **obPv510CreateBankAccountBalanceRequest** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md)| Request body | |
+| **createBankAccountBalanceRequest** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)>
+ApiResponse<[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)>
 
 
 ### Authorization
@@ -195,9 +195,9 @@ ApiResponse<[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItem
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510DeleteBankAccountBalance
+## deleteBankAccountBalance
 
-> void oBPv510DeleteBankAccountBalance(bankid, accountid, balanceid)
+> void deleteBankAccountBalance(bankid, accountid, balanceid)
 
 Delete Bank Account Balance
 
@@ -217,7 +217,7 @@ import com.openbankproject.api.BalanceApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -240,9 +240,9 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String balanceid = "balanceid_example"; // String | The BALANCEID identifier
         try {
-            apiInstance.oBPv510DeleteBankAccountBalance(bankid, accountid, balanceid);
+            apiInstance.deleteBankAccountBalance(bankid, accountid, balanceid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling BalanceApi#oBPv510DeleteBankAccountBalance");
+            System.err.println("Exception when calling BalanceApi#deleteBankAccountBalance");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -281,9 +281,9 @@ null (empty response body)
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510DeleteBankAccountBalanceWithHttpInfo
+## deleteBankAccountBalanceWithHttpInfo
 
-> ApiResponse<Void> oBPv510DeleteBankAccountBalance oBPv510DeleteBankAccountBalanceWithHttpInfo(bankid, accountid, balanceid)
+> ApiResponse<Void> deleteBankAccountBalance deleteBankAccountBalanceWithHttpInfo(bankid, accountid, balanceid)
 
 Delete Bank Account Balance
 
@@ -304,7 +304,7 @@ import com.openbankproject.api.BalanceApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -327,11 +327,11 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String balanceid = "balanceid_example"; // String | The BALANCEID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv510DeleteBankAccountBalanceWithHttpInfo(bankid, accountid, balanceid);
+            ApiResponse<Void> response = apiInstance.deleteBankAccountBalanceWithHttpInfo(bankid, accountid, balanceid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling BalanceApi#oBPv510DeleteBankAccountBalance");
+            System.err.println("Exception when calling BalanceApi#deleteBankAccountBalance");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -371,9 +371,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510GetAllBankAccountBalances
+## getAllBankAccountBalances
 
-> OBPv510GetAllBankAccountBalances200Response oBPv510GetAllBankAccountBalances(bankid, accountid)
+> GetAllBankAccountBalances200Response getAllBankAccountBalances(bankid, accountid)
 
 Get All Bank Account Balances
 
@@ -393,7 +393,7 @@ import com.openbankproject.api.BalanceApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -415,10 +415,10 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         try {
-            OBPv510GetAllBankAccountBalances200Response result = apiInstance.oBPv510GetAllBankAccountBalances(bankid, accountid);
+            GetAllBankAccountBalances200Response result = apiInstance.getAllBankAccountBalances(bankid, accountid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling BalanceApi#oBPv510GetAllBankAccountBalances");
+            System.err.println("Exception when calling BalanceApi#getAllBankAccountBalances");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -438,7 +438,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200Response**](OBPv510GetAllBankAccountBalances200Response.md)
+[**GetAllBankAccountBalances200Response**](GetAllBankAccountBalances200Response.md)
 
 
 ### Authorization
@@ -456,9 +456,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510GetAllBankAccountBalancesWithHttpInfo
+## getAllBankAccountBalancesWithHttpInfo
 
-> ApiResponse<OBPv510GetAllBankAccountBalances200Response> oBPv510GetAllBankAccountBalances oBPv510GetAllBankAccountBalancesWithHttpInfo(bankid, accountid)
+> ApiResponse<GetAllBankAccountBalances200Response> getAllBankAccountBalances getAllBankAccountBalancesWithHttpInfo(bankid, accountid)
 
 Get All Bank Account Balances
 
@@ -479,7 +479,7 @@ import com.openbankproject.api.BalanceApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -501,12 +501,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         try {
-            ApiResponse<OBPv510GetAllBankAccountBalances200Response> response = apiInstance.oBPv510GetAllBankAccountBalancesWithHttpInfo(bankid, accountid);
+            ApiResponse<GetAllBankAccountBalances200Response> response = apiInstance.getAllBankAccountBalancesWithHttpInfo(bankid, accountid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling BalanceApi#oBPv510GetAllBankAccountBalances");
+            System.err.println("Exception when calling BalanceApi#getAllBankAccountBalances");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -526,7 +526,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv510GetAllBankAccountBalances200Response**](OBPv510GetAllBankAccountBalances200Response.md)>
+ApiResponse<[**GetAllBankAccountBalances200Response**](GetAllBankAccountBalances200Response.md)>
 
 
 ### Authorization
@@ -545,9 +545,9 @@ ApiResponse<[**OBPv510GetAllBankAccountBalances200Response**](OBPv510GetAllBankA
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510GetBankAccountBalanceById
+## getBankAccountBalanceById
 
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510GetBankAccountBalanceById(bankid, accountid, balanceid)
+> GetAllBankAccountBalances200ResponseBalancesInner getBankAccountBalanceById(bankid, accountid, balanceid)
 
 Get Bank Account Balance By ID
 
@@ -567,7 +567,7 @@ import com.openbankproject.api.BalanceApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -590,10 +590,10 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String balanceid = "balanceid_example"; // String | The BALANCEID identifier
         try {
-            OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems result = apiInstance.oBPv510GetBankAccountBalanceById(bankid, accountid, balanceid);
+            GetAllBankAccountBalances200ResponseBalancesInner result = apiInstance.getBankAccountBalanceById(bankid, accountid, balanceid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling BalanceApi#oBPv510GetBankAccountBalanceById");
+            System.err.println("Exception when calling BalanceApi#getBankAccountBalanceById");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -614,7 +614,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 
 ### Authorization
@@ -632,9 +632,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510GetBankAccountBalanceByIdWithHttpInfo
+## getBankAccountBalanceByIdWithHttpInfo
 
-> ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> oBPv510GetBankAccountBalanceById oBPv510GetBankAccountBalanceByIdWithHttpInfo(bankid, accountid, balanceid)
+> ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner> getBankAccountBalanceById getBankAccountBalanceByIdWithHttpInfo(bankid, accountid, balanceid)
 
 Get Bank Account Balance By ID
 
@@ -655,7 +655,7 @@ import com.openbankproject.api.BalanceApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -678,12 +678,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String balanceid = "balanceid_example"; // String | The BALANCEID identifier
         try {
-            ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> response = apiInstance.oBPv510GetBankAccountBalanceByIdWithHttpInfo(bankid, accountid, balanceid);
+            ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner> response = apiInstance.getBankAccountBalanceByIdWithHttpInfo(bankid, accountid, balanceid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling BalanceApi#oBPv510GetBankAccountBalanceById");
+            System.err.println("Exception when calling BalanceApi#getBankAccountBalanceById");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -704,7 +704,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)>
+ApiResponse<[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)>
 
 
 ### Authorization
@@ -723,9 +723,9 @@ ApiResponse<[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItem
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510UpdateBankAccountBalance
+## updateBankAccountBalance
 
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510UpdateBankAccountBalance(bankid, accountid, balanceid, obPv510CreateBankAccountBalanceRequest)
+> GetAllBankAccountBalances200ResponseBalancesInner updateBankAccountBalance(bankid, accountid, balanceid, createBankAccountBalanceRequest)
 
 Update Bank Account Balance
 
@@ -745,7 +745,7 @@ import com.openbankproject.api.BalanceApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -767,12 +767,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String balanceid = "balanceid_example"; // String | The BALANCEID identifier
-        OBPv510CreateBankAccountBalanceRequest obPv510CreateBankAccountBalanceRequest = new OBPv510CreateBankAccountBalanceRequest(); // OBPv510CreateBankAccountBalanceRequest | Request body
+        CreateBankAccountBalanceRequest createBankAccountBalanceRequest = new CreateBankAccountBalanceRequest(); // CreateBankAccountBalanceRequest | Request body
         try {
-            OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems result = apiInstance.oBPv510UpdateBankAccountBalance(bankid, accountid, balanceid, obPv510CreateBankAccountBalanceRequest);
+            GetAllBankAccountBalances200ResponseBalancesInner result = apiInstance.updateBankAccountBalance(bankid, accountid, balanceid, createBankAccountBalanceRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling BalanceApi#oBPv510UpdateBankAccountBalance");
+            System.err.println("Exception when calling BalanceApi#updateBankAccountBalance");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -790,11 +790,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **balanceid** | **String**| The BALANCEID identifier | |
-| **obPv510CreateBankAccountBalanceRequest** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md)| Request body | |
+| **createBankAccountBalanceRequest** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 
 ### Authorization
@@ -812,9 +812,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510UpdateBankAccountBalanceWithHttpInfo
+## updateBankAccountBalanceWithHttpInfo
 
-> ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> oBPv510UpdateBankAccountBalance oBPv510UpdateBankAccountBalanceWithHttpInfo(bankid, accountid, balanceid, obPv510CreateBankAccountBalanceRequest)
+> ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner> updateBankAccountBalance updateBankAccountBalanceWithHttpInfo(bankid, accountid, balanceid, createBankAccountBalanceRequest)
 
 Update Bank Account Balance
 
@@ -835,7 +835,7 @@ import com.openbankproject.api.BalanceApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -857,14 +857,14 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String balanceid = "balanceid_example"; // String | The BALANCEID identifier
-        OBPv510CreateBankAccountBalanceRequest obPv510CreateBankAccountBalanceRequest = new OBPv510CreateBankAccountBalanceRequest(); // OBPv510CreateBankAccountBalanceRequest | Request body
+        CreateBankAccountBalanceRequest createBankAccountBalanceRequest = new CreateBankAccountBalanceRequest(); // CreateBankAccountBalanceRequest | Request body
         try {
-            ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> response = apiInstance.oBPv510UpdateBankAccountBalanceWithHttpInfo(bankid, accountid, balanceid, obPv510CreateBankAccountBalanceRequest);
+            ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner> response = apiInstance.updateBankAccountBalanceWithHttpInfo(bankid, accountid, balanceid, createBankAccountBalanceRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling BalanceApi#oBPv510UpdateBankAccountBalance");
+            System.err.println("Exception when calling BalanceApi#updateBankAccountBalance");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -882,11 +882,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **balanceid** | **String**| The BALANCEID identifier | |
-| **obPv510CreateBankAccountBalanceRequest** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md)| Request body | |
+| **createBankAccountBalanceRequest** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)>
+ApiResponse<[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)>
 
 
 ### Authorization

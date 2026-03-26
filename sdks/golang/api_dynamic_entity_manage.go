@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,392 +24,19 @@ import (
 // DynamicEntityManageAPIService DynamicEntityManageAPI service
 type DynamicEntityManageAPIService service
 
-type ApiOBPv400DeleteBankLevelDynamicEntityRequest struct {
+type ApiBackupBankLevelDynamicEntityRequest struct {
 	ctx context.Context
 	ApiService *DynamicEntityManageAPIService
 	bankid string
 	dynamicentityid string
 }
 
-func (r ApiOBPv400DeleteBankLevelDynamicEntityRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteBankLevelDynamicEntityExecute(r)
+func (r ApiBackupBankLevelDynamicEntityRequest) Execute() (*BackupBankLevelDynamicEntity200Response, *http.Response, error) {
+	return r.ApiService.BackupBankLevelDynamicEntityExecute(r)
 }
 
 /*
-OBPv400DeleteBankLevelDynamicEntity Delete Bank Level Dynamic Entity
-
-<p>Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p>
-<p>For more information see <a href="/glossary#Dynamic-Entities">here</a>/</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv400DeleteBankLevelDynamicEntityRequest
-*/
-func (a *DynamicEntityManageAPIService) OBPv400DeleteBankLevelDynamicEntity(ctx context.Context, bankid string, dynamicentityid string) ApiOBPv400DeleteBankLevelDynamicEntityRequest {
-	return ApiOBPv400DeleteBankLevelDynamicEntityRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		dynamicentityid: dynamicentityid,
-	}
-}
-
-// Execute executes the request
-func (a *DynamicEntityManageAPIService) OBPv400DeleteBankLevelDynamicEntityExecute(r ApiOBPv400DeleteBankLevelDynamicEntityRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.OBPv400DeleteBankLevelDynamicEntity")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"dynamicentityid"+"}", url.PathEscape(parameterValueToString(r.dynamicentityid, "dynamicentityid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv400DeleteMyDynamicEntityRequest struct {
-	ctx context.Context
-	ApiService *DynamicEntityManageAPIService
-	dynamicentityid string
-}
-
-func (r ApiOBPv400DeleteMyDynamicEntityRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteMyDynamicEntityExecute(r)
-}
-
-/*
-OBPv400DeleteMyDynamicEntity Delete My Dynamic Entity
-
-<p>Delete my DynamicEntity specified by DYNAMIC_ENTITY_ID.</p>
-<p>For more information see <a href="/glossary#My-Dynamic-Entities">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv400DeleteMyDynamicEntityRequest
-*/
-func (a *DynamicEntityManageAPIService) OBPv400DeleteMyDynamicEntity(ctx context.Context, dynamicentityid string) ApiOBPv400DeleteMyDynamicEntityRequest {
-	return ApiOBPv400DeleteMyDynamicEntityRequest{
-		ApiService: a,
-		ctx: ctx,
-		dynamicentityid: dynamicentityid,
-	}
-}
-
-// Execute executes the request
-func (a *DynamicEntityManageAPIService) OBPv400DeleteMyDynamicEntityExecute(r ApiOBPv400DeleteMyDynamicEntityRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.OBPv400DeleteMyDynamicEntity")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/my/dynamic-entities/{dynamicentityid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"dynamicentityid"+"}", url.PathEscape(parameterValueToString(r.dynamicentityid, "dynamicentityid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv400DeleteSystemDynamicEntityRequest struct {
-	ctx context.Context
-	ApiService *DynamicEntityManageAPIService
-	dynamicentityid string
-}
-
-func (r ApiOBPv400DeleteSystemDynamicEntityRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteSystemDynamicEntityExecute(r)
-}
-
-/*
-OBPv400DeleteSystemDynamicEntity Delete System Level Dynamic Entity
-
-<p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID.</p>
-<p>For more information see <a href="/glossary#Dynamic-Entities">here</a>/</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv400DeleteSystemDynamicEntityRequest
-*/
-func (a *DynamicEntityManageAPIService) OBPv400DeleteSystemDynamicEntity(ctx context.Context, dynamicentityid string) ApiOBPv400DeleteSystemDynamicEntityRequest {
-	return ApiOBPv400DeleteSystemDynamicEntityRequest{
-		ApiService: a,
-		ctx: ctx,
-		dynamicentityid: dynamicentityid,
-	}
-}
-
-// Execute executes the request
-func (a *DynamicEntityManageAPIService) OBPv400DeleteSystemDynamicEntityExecute(r ApiOBPv400DeleteSystemDynamicEntityRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.OBPv400DeleteSystemDynamicEntity")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"dynamicentityid"+"}", url.PathEscape(parameterValueToString(r.dynamicentityid, "dynamicentityid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv600BackupBankLevelDynamicEntityRequest struct {
-	ctx context.Context
-	ApiService *DynamicEntityManageAPIService
-	bankid string
-	dynamicentityid string
-}
-
-func (r ApiOBPv600BackupBankLevelDynamicEntityRequest) Execute() (*OBPv600BackupBankLevelDynamicEntity200Response, *http.Response, error) {
-	return r.ApiService.OBPv600BackupBankLevelDynamicEntityExecute(r)
-}
-
-/*
-OBPv600BackupBankLevelDynamicEntity Backup Bank Level Dynamic Entity
+BackupBankLevelDynamicEntity Backup Bank Level Dynamic Entity
 
 <p>Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p>
 <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br />
@@ -424,10 +51,10 @@ If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p>
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv600BackupBankLevelDynamicEntityRequest
+ @return ApiBackupBankLevelDynamicEntityRequest
 */
-func (a *DynamicEntityManageAPIService) OBPv600BackupBankLevelDynamicEntity(ctx context.Context, bankid string, dynamicentityid string) ApiOBPv600BackupBankLevelDynamicEntityRequest {
-	return ApiOBPv600BackupBankLevelDynamicEntityRequest{
+func (a *DynamicEntityManageAPIService) BackupBankLevelDynamicEntity(ctx context.Context, bankid string, dynamicentityid string) ApiBackupBankLevelDynamicEntityRequest {
+	return ApiBackupBankLevelDynamicEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -436,16 +63,16 @@ func (a *DynamicEntityManageAPIService) OBPv600BackupBankLevelDynamicEntity(ctx 
 }
 
 // Execute executes the request
-//  @return OBPv600BackupBankLevelDynamicEntity200Response
-func (a *DynamicEntityManageAPIService) OBPv600BackupBankLevelDynamicEntityExecute(r ApiOBPv600BackupBankLevelDynamicEntityRequest) (*OBPv600BackupBankLevelDynamicEntity200Response, *http.Response, error) {
+//  @return BackupBankLevelDynamicEntity200Response
+func (a *DynamicEntityManageAPIService) BackupBankLevelDynamicEntityExecute(r ApiBackupBankLevelDynamicEntityRequest) (*BackupBankLevelDynamicEntity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600BackupBankLevelDynamicEntity200Response
+		localVarReturnValue  *BackupBankLevelDynamicEntity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.OBPv600BackupBankLevelDynamicEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.BackupBankLevelDynamicEntity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -499,7 +126,7 @@ func (a *DynamicEntityManageAPIService) OBPv600BackupBankLevelDynamicEntityExecu
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -540,18 +167,18 @@ func (a *DynamicEntityManageAPIService) OBPv600BackupBankLevelDynamicEntityExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600BackupSystemDynamicEntityRequest struct {
+type ApiBackupSystemDynamicEntityRequest struct {
 	ctx context.Context
 	ApiService *DynamicEntityManageAPIService
 	dynamicentityid string
 }
 
-func (r ApiOBPv600BackupSystemDynamicEntityRequest) Execute() (*OBPv600BackupSystemDynamicEntity200Response, *http.Response, error) {
-	return r.ApiService.OBPv600BackupSystemDynamicEntityExecute(r)
+func (r ApiBackupSystemDynamicEntityRequest) Execute() (*BackupSystemDynamicEntity200Response, *http.Response, error) {
+	return r.ApiService.BackupSystemDynamicEntityExecute(r)
 }
 
 /*
-OBPv600BackupSystemDynamicEntity Backup System Level Dynamic Entity
+BackupSystemDynamicEntity Backup System Level Dynamic Entity
 
 <p>Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p>
 <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br />
@@ -565,10 +192,10 @@ If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv600BackupSystemDynamicEntityRequest
+ @return ApiBackupSystemDynamicEntityRequest
 */
-func (a *DynamicEntityManageAPIService) OBPv600BackupSystemDynamicEntity(ctx context.Context, dynamicentityid string) ApiOBPv600BackupSystemDynamicEntityRequest {
-	return ApiOBPv600BackupSystemDynamicEntityRequest{
+func (a *DynamicEntityManageAPIService) BackupSystemDynamicEntity(ctx context.Context, dynamicentityid string) ApiBackupSystemDynamicEntityRequest {
+	return ApiBackupSystemDynamicEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 		dynamicentityid: dynamicentityid,
@@ -576,16 +203,16 @@ func (a *DynamicEntityManageAPIService) OBPv600BackupSystemDynamicEntity(ctx con
 }
 
 // Execute executes the request
-//  @return OBPv600BackupSystemDynamicEntity200Response
-func (a *DynamicEntityManageAPIService) OBPv600BackupSystemDynamicEntityExecute(r ApiOBPv600BackupSystemDynamicEntityRequest) (*OBPv600BackupSystemDynamicEntity200Response, *http.Response, error) {
+//  @return BackupSystemDynamicEntity200Response
+func (a *DynamicEntityManageAPIService) BackupSystemDynamicEntityExecute(r ApiBackupSystemDynamicEntityRequest) (*BackupSystemDynamicEntity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600BackupSystemDynamicEntity200Response
+		localVarReturnValue  *BackupSystemDynamicEntity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.OBPv600BackupSystemDynamicEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.BackupSystemDynamicEntity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -638,7 +265,7 @@ func (a *DynamicEntityManageAPIService) OBPv600BackupSystemDynamicEntityExecute(
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -679,25 +306,25 @@ func (a *DynamicEntityManageAPIService) OBPv600BackupSystemDynamicEntityExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600CreateBankLevelDynamicEntityRequest struct {
+type ApiCreateBankLevelDynamicEntityRequest struct {
 	ctx context.Context
 	ApiService *DynamicEntityManageAPIService
 	bankid string
-	oBPv600CreateSystemDynamicEntityRequest *OBPv600CreateSystemDynamicEntityRequest
+	createSystemDynamicEntityRequest *CreateSystemDynamicEntityRequest
 }
 
 // Request body
-func (r ApiOBPv600CreateBankLevelDynamicEntityRequest) OBPv600CreateSystemDynamicEntityRequest(oBPv600CreateSystemDynamicEntityRequest OBPv600CreateSystemDynamicEntityRequest) ApiOBPv600CreateBankLevelDynamicEntityRequest {
-	r.oBPv600CreateSystemDynamicEntityRequest = &oBPv600CreateSystemDynamicEntityRequest
+func (r ApiCreateBankLevelDynamicEntityRequest) CreateSystemDynamicEntityRequest(createSystemDynamicEntityRequest CreateSystemDynamicEntityRequest) ApiCreateBankLevelDynamicEntityRequest {
+	r.createSystemDynamicEntityRequest = &createSystemDynamicEntityRequest
 	return r
 }
 
-func (r ApiOBPv600CreateBankLevelDynamicEntityRequest) Execute() (*OBPv600CreateBankLevelDynamicEntity200Response, *http.Response, error) {
-	return r.ApiService.OBPv600CreateBankLevelDynamicEntityExecute(r)
+func (r ApiCreateBankLevelDynamicEntityRequest) Execute() (*CreateBankLevelDynamicEntity200Response, *http.Response, error) {
+	return r.ApiService.CreateBankLevelDynamicEntityExecute(r)
 }
 
 /*
-OBPv600CreateBankLevelDynamicEntity Create Bank Level Dynamic Entity
+CreateBankLevelDynamicEntity Create Bank Level Dynamic Entity
 
 <p>Create a bank level Dynamic Entity.</p>
 <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p>
@@ -731,10 +358,10 @@ OBPv600CreateBankLevelDynamicEntity Create Bank Level Dynamic Entity
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv600CreateBankLevelDynamicEntityRequest
+ @return ApiCreateBankLevelDynamicEntityRequest
 */
-func (a *DynamicEntityManageAPIService) OBPv600CreateBankLevelDynamicEntity(ctx context.Context, bankid string) ApiOBPv600CreateBankLevelDynamicEntityRequest {
-	return ApiOBPv600CreateBankLevelDynamicEntityRequest{
+func (a *DynamicEntityManageAPIService) CreateBankLevelDynamicEntity(ctx context.Context, bankid string) ApiCreateBankLevelDynamicEntityRequest {
+	return ApiCreateBankLevelDynamicEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -742,16 +369,16 @@ func (a *DynamicEntityManageAPIService) OBPv600CreateBankLevelDynamicEntity(ctx 
 }
 
 // Execute executes the request
-//  @return OBPv600CreateBankLevelDynamicEntity200Response
-func (a *DynamicEntityManageAPIService) OBPv600CreateBankLevelDynamicEntityExecute(r ApiOBPv600CreateBankLevelDynamicEntityRequest) (*OBPv600CreateBankLevelDynamicEntity200Response, *http.Response, error) {
+//  @return CreateBankLevelDynamicEntity200Response
+func (a *DynamicEntityManageAPIService) CreateBankLevelDynamicEntityExecute(r ApiCreateBankLevelDynamicEntityRequest) (*CreateBankLevelDynamicEntity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600CreateBankLevelDynamicEntity200Response
+		localVarReturnValue  *CreateBankLevelDynamicEntity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.OBPv600CreateBankLevelDynamicEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.CreateBankLevelDynamicEntity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -762,8 +389,8 @@ func (a *DynamicEntityManageAPIService) OBPv600CreateBankLevelDynamicEntityExecu
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreateSystemDynamicEntityRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateSystemDynamicEntityRequest is required and must be specified")
+	if r.createSystemDynamicEntityRequest == nil {
+		return localVarReturnValue, nil, reportError("createSystemDynamicEntityRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -784,7 +411,7 @@ func (a *DynamicEntityManageAPIService) OBPv600CreateBankLevelDynamicEntityExecu
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreateSystemDynamicEntityRequest
+	localVarPostBody = r.createSystemDynamicEntityRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -809,7 +436,7 @@ func (a *DynamicEntityManageAPIService) OBPv600CreateBankLevelDynamicEntityExecu
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -850,24 +477,24 @@ func (a *DynamicEntityManageAPIService) OBPv600CreateBankLevelDynamicEntityExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600CreateSystemDynamicEntityRequest struct {
+type ApiCreateSystemDynamicEntityRequest struct {
 	ctx context.Context
 	ApiService *DynamicEntityManageAPIService
-	oBPv600CreateSystemDynamicEntityRequest *OBPv600CreateSystemDynamicEntityRequest
+	createSystemDynamicEntityRequest *CreateSystemDynamicEntityRequest
 }
 
 // Request body
-func (r ApiOBPv600CreateSystemDynamicEntityRequest) OBPv600CreateSystemDynamicEntityRequest(oBPv600CreateSystemDynamicEntityRequest OBPv600CreateSystemDynamicEntityRequest) ApiOBPv600CreateSystemDynamicEntityRequest {
-	r.oBPv600CreateSystemDynamicEntityRequest = &oBPv600CreateSystemDynamicEntityRequest
+func (r ApiCreateSystemDynamicEntityRequest) CreateSystemDynamicEntityRequest(createSystemDynamicEntityRequest CreateSystemDynamicEntityRequest) ApiCreateSystemDynamicEntityRequest {
+	r.createSystemDynamicEntityRequest = &createSystemDynamicEntityRequest
 	return r
 }
 
-func (r ApiOBPv600CreateSystemDynamicEntityRequest) Execute() (*OBPv600CreateSystemDynamicEntity200Response, *http.Response, error) {
-	return r.ApiService.OBPv600CreateSystemDynamicEntityExecute(r)
+func (r ApiCreateSystemDynamicEntityRequest) Execute() (*CreateSystemDynamicEntity200Response, *http.Response, error) {
+	return r.ApiService.CreateSystemDynamicEntityExecute(r)
 }
 
 /*
-OBPv600CreateSystemDynamicEntity Create System Level Dynamic Entity
+CreateSystemDynamicEntity Create System Level Dynamic Entity
 
 <p>Create a system level Dynamic Entity.</p>
 <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p>
@@ -897,29 +524,35 @@ OBPv600CreateSystemDynamicEntity Create System Level Dynamic Entity
 * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p>
 <p>For more information see <a href="/glossary#Dynamic-Entities">here</a></p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600CreateSystemDynamicEntityRequest
+ @return ApiCreateSystemDynamicEntityRequest
 */
-func (a *DynamicEntityManageAPIService) OBPv600CreateSystemDynamicEntity(ctx context.Context) ApiOBPv600CreateSystemDynamicEntityRequest {
-	return ApiOBPv600CreateSystemDynamicEntityRequest{
+func (a *DynamicEntityManageAPIService) CreateSystemDynamicEntity(ctx context.Context) ApiCreateSystemDynamicEntityRequest {
+	return ApiCreateSystemDynamicEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600CreateSystemDynamicEntity200Response
-func (a *DynamicEntityManageAPIService) OBPv600CreateSystemDynamicEntityExecute(r ApiOBPv600CreateSystemDynamicEntityRequest) (*OBPv600CreateSystemDynamicEntity200Response, *http.Response, error) {
+//  @return CreateSystemDynamicEntity200Response
+func (a *DynamicEntityManageAPIService) CreateSystemDynamicEntityExecute(r ApiCreateSystemDynamicEntityRequest) (*CreateSystemDynamicEntity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600CreateSystemDynamicEntity200Response
+		localVarReturnValue  *CreateSystemDynamicEntity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.OBPv600CreateSystemDynamicEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.CreateSystemDynamicEntity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -929,8 +562,8 @@ func (a *DynamicEntityManageAPIService) OBPv600CreateSystemDynamicEntityExecute(
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreateSystemDynamicEntityRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateSystemDynamicEntityRequest is required and must be specified")
+	if r.createSystemDynamicEntityRequest == nil {
+		return localVarReturnValue, nil, reportError("createSystemDynamicEntityRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -951,7 +584,7 @@ func (a *DynamicEntityManageAPIService) OBPv600CreateSystemDynamicEntityExecute(
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreateSystemDynamicEntityRequest
+	localVarPostBody = r.createSystemDynamicEntityRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -976,7 +609,7 @@ func (a *DynamicEntityManageAPIService) OBPv600CreateSystemDynamicEntityExecute(
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1017,18 +650,391 @@ func (a *DynamicEntityManageAPIService) OBPv600CreateSystemDynamicEntityExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600DeleteSystemDynamicEntityCascadeRequest struct {
+type ApiDeleteBankLevelDynamicEntityRequest struct {
+	ctx context.Context
+	ApiService *DynamicEntityManageAPIService
+	bankid string
+	dynamicentityid string
+}
+
+func (r ApiDeleteBankLevelDynamicEntityRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteBankLevelDynamicEntityExecute(r)
+}
+
+/*
+DeleteBankLevelDynamicEntity Delete Bank Level Dynamic Entity
+
+<p>Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p>
+<p>For more information see <a href="/glossary#Dynamic-Entities">here</a>/</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param dynamicentityid The DYNAMICENTITYID identifier
+ @return ApiDeleteBankLevelDynamicEntityRequest
+*/
+func (a *DynamicEntityManageAPIService) DeleteBankLevelDynamicEntity(ctx context.Context, bankid string, dynamicentityid string) ApiDeleteBankLevelDynamicEntityRequest {
+	return ApiDeleteBankLevelDynamicEntityRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		dynamicentityid: dynamicentityid,
+	}
+}
+
+// Execute executes the request
+func (a *DynamicEntityManageAPIService) DeleteBankLevelDynamicEntityExecute(r ApiDeleteBankLevelDynamicEntityRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.DeleteBankLevelDynamicEntity")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"dynamicentityid"+"}", url.PathEscape(parameterValueToString(r.dynamicentityid, "dynamicentityid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteMyDynamicEntityRequest struct {
 	ctx context.Context
 	ApiService *DynamicEntityManageAPIService
 	dynamicentityid string
 }
 
-func (r ApiOBPv600DeleteSystemDynamicEntityCascadeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv600DeleteSystemDynamicEntityCascadeExecute(r)
+func (r ApiDeleteMyDynamicEntityRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteMyDynamicEntityExecute(r)
 }
 
 /*
-OBPv600DeleteSystemDynamicEntityCascade Delete System Level Dynamic Entity Cascade
+DeleteMyDynamicEntity Delete My Dynamic Entity
+
+<p>Delete my DynamicEntity specified by DYNAMIC_ENTITY_ID.</p>
+<p>For more information see <a href="/glossary#My-Dynamic-Entities">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param dynamicentityid The DYNAMICENTITYID identifier
+ @return ApiDeleteMyDynamicEntityRequest
+*/
+func (a *DynamicEntityManageAPIService) DeleteMyDynamicEntity(ctx context.Context, dynamicentityid string) ApiDeleteMyDynamicEntityRequest {
+	return ApiDeleteMyDynamicEntityRequest{
+		ApiService: a,
+		ctx: ctx,
+		dynamicentityid: dynamicentityid,
+	}
+}
+
+// Execute executes the request
+func (a *DynamicEntityManageAPIService) DeleteMyDynamicEntityExecute(r ApiDeleteMyDynamicEntityRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.DeleteMyDynamicEntity")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/my/dynamic-entities/{dynamicentityid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"dynamicentityid"+"}", url.PathEscape(parameterValueToString(r.dynamicentityid, "dynamicentityid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteSystemDynamicEntityRequest struct {
+	ctx context.Context
+	ApiService *DynamicEntityManageAPIService
+	dynamicentityid string
+}
+
+func (r ApiDeleteSystemDynamicEntityRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteSystemDynamicEntityExecute(r)
+}
+
+/*
+DeleteSystemDynamicEntity Delete System Level Dynamic Entity
+
+<p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID.</p>
+<p>For more information see <a href="/glossary#Dynamic-Entities">here</a>/</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param dynamicentityid The DYNAMICENTITYID identifier
+ @return ApiDeleteSystemDynamicEntityRequest
+*/
+func (a *DynamicEntityManageAPIService) DeleteSystemDynamicEntity(ctx context.Context, dynamicentityid string) ApiDeleteSystemDynamicEntityRequest {
+	return ApiDeleteSystemDynamicEntityRequest{
+		ApiService: a,
+		ctx: ctx,
+		dynamicentityid: dynamicentityid,
+	}
+}
+
+// Execute executes the request
+func (a *DynamicEntityManageAPIService) DeleteSystemDynamicEntityExecute(r ApiDeleteSystemDynamicEntityRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.DeleteSystemDynamicEntity")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"dynamicentityid"+"}", url.PathEscape(parameterValueToString(r.dynamicentityid, "dynamicentityid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteSystemDynamicEntityCascadeRequest struct {
+	ctx context.Context
+	ApiService *DynamicEntityManageAPIService
+	dynamicentityid string
+}
+
+func (r ApiDeleteSystemDynamicEntityCascadeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteSystemDynamicEntityCascadeExecute(r)
+}
+
+/*
+DeleteSystemDynamicEntityCascade Delete System Level Dynamic Entity Cascade
 
 <p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID and all its data records.</p>
 <p>This endpoint performs a cascade delete:<br />
@@ -1044,10 +1050,10 @@ For personal entities (hasPersonalEntity=true), you must delete the records and 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv600DeleteSystemDynamicEntityCascadeRequest
+ @return ApiDeleteSystemDynamicEntityCascadeRequest
 */
-func (a *DynamicEntityManageAPIService) OBPv600DeleteSystemDynamicEntityCascade(ctx context.Context, dynamicentityid string) ApiOBPv600DeleteSystemDynamicEntityCascadeRequest {
-	return ApiOBPv600DeleteSystemDynamicEntityCascadeRequest{
+func (a *DynamicEntityManageAPIService) DeleteSystemDynamicEntityCascade(ctx context.Context, dynamicentityid string) ApiDeleteSystemDynamicEntityCascadeRequest {
+	return ApiDeleteSystemDynamicEntityCascadeRequest{
 		ApiService: a,
 		ctx: ctx,
 		dynamicentityid: dynamicentityid,
@@ -1055,14 +1061,14 @@ func (a *DynamicEntityManageAPIService) OBPv600DeleteSystemDynamicEntityCascade(
 }
 
 // Execute executes the request
-func (a *DynamicEntityManageAPIService) OBPv600DeleteSystemDynamicEntityCascadeExecute(r ApiOBPv600DeleteSystemDynamicEntityCascadeRequest) (*http.Response, error) {
+func (a *DynamicEntityManageAPIService) DeleteSystemDynamicEntityCascadeExecute(r ApiDeleteSystemDynamicEntityCascadeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.OBPv600DeleteSystemDynamicEntityCascade")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.DeleteSystemDynamicEntityCascade")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1115,7 +1121,7 @@ func (a *DynamicEntityManageAPIService) OBPv600DeleteSystemDynamicEntityCascadeE
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1147,18 +1153,18 @@ func (a *DynamicEntityManageAPIService) OBPv600DeleteSystemDynamicEntityCascadeE
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetBankLevelDynamicEntitiesRequest struct {
+type ApiGetBankLevelDynamicEntitiesRequest struct {
 	ctx context.Context
 	ApiService *DynamicEntityManageAPIService
 	bankid string
 }
 
-func (r ApiOBPv600GetBankLevelDynamicEntitiesRequest) Execute() (*OBPv600GetBankLevelDynamicEntities200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetBankLevelDynamicEntitiesExecute(r)
+func (r ApiGetBankLevelDynamicEntitiesRequest) Execute() (*GetBankLevelDynamicEntities200Response, *http.Response, error) {
+	return r.ApiService.GetBankLevelDynamicEntitiesExecute(r)
 }
 
 /*
-OBPv600GetBankLevelDynamicEntities Get Bank Level Dynamic Entities
+GetBankLevelDynamicEntities Get Bank Level Dynamic Entities
 
 <p>Get all Bank Level Dynamic Entities for one bank with record counts.</p>
 <p>Each dynamic entity in the response includes a <code>record_count</code> field showing how many data records exist for that entity.</p>
@@ -1169,10 +1175,10 @@ OBPv600GetBankLevelDynamicEntities Get Bank Level Dynamic Entities
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv600GetBankLevelDynamicEntitiesRequest
+ @return ApiGetBankLevelDynamicEntitiesRequest
 */
-func (a *DynamicEntityManageAPIService) OBPv600GetBankLevelDynamicEntities(ctx context.Context, bankid string) ApiOBPv600GetBankLevelDynamicEntitiesRequest {
-	return ApiOBPv600GetBankLevelDynamicEntitiesRequest{
+func (a *DynamicEntityManageAPIService) GetBankLevelDynamicEntities(ctx context.Context, bankid string) ApiGetBankLevelDynamicEntitiesRequest {
+	return ApiGetBankLevelDynamicEntitiesRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1180,16 +1186,16 @@ func (a *DynamicEntityManageAPIService) OBPv600GetBankLevelDynamicEntities(ctx c
 }
 
 // Execute executes the request
-//  @return OBPv600GetBankLevelDynamicEntities200Response
-func (a *DynamicEntityManageAPIService) OBPv600GetBankLevelDynamicEntitiesExecute(r ApiOBPv600GetBankLevelDynamicEntitiesRequest) (*OBPv600GetBankLevelDynamicEntities200Response, *http.Response, error) {
+//  @return GetBankLevelDynamicEntities200Response
+func (a *DynamicEntityManageAPIService) GetBankLevelDynamicEntitiesExecute(r ApiGetBankLevelDynamicEntitiesRequest) (*GetBankLevelDynamicEntities200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetBankLevelDynamicEntities200Response
+		localVarReturnValue  *GetBankLevelDynamicEntities200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.OBPv600GetBankLevelDynamicEntities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.GetBankLevelDynamicEntities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1242,7 +1248,7 @@ func (a *DynamicEntityManageAPIService) OBPv600GetBankLevelDynamicEntitiesExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1283,17 +1289,17 @@ func (a *DynamicEntityManageAPIService) OBPv600GetBankLevelDynamicEntitiesExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetMyDynamicEntitiesRequest struct {
+type ApiGetMyDynamicEntitiesRequest struct {
 	ctx context.Context
 	ApiService *DynamicEntityManageAPIService
 }
 
-func (r ApiOBPv600GetMyDynamicEntitiesRequest) Execute() (*OBPv600GetAvailablePersonalDynamicEntities200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetMyDynamicEntitiesExecute(r)
+func (r ApiGetMyDynamicEntitiesRequest) Execute() (*GetAvailablePersonalDynamicEntities200Response, *http.Response, error) {
+	return r.ApiService.GetMyDynamicEntitiesExecute(r)
 }
 
 /*
-OBPv600GetMyDynamicEntities Get My Dynamic Entities
+GetMyDynamicEntities Get My Dynamic Entities
 
 <p>Get all Dynamic Entity definitions I created.</p>
 <p>This v6.0.0 endpoint returns a cleaner response format with:<br />
@@ -1305,26 +1311,26 @@ OBPv600GetMyDynamicEntities Get My Dynamic Entities
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetMyDynamicEntitiesRequest
+ @return ApiGetMyDynamicEntitiesRequest
 */
-func (a *DynamicEntityManageAPIService) OBPv600GetMyDynamicEntities(ctx context.Context) ApiOBPv600GetMyDynamicEntitiesRequest {
-	return ApiOBPv600GetMyDynamicEntitiesRequest{
+func (a *DynamicEntityManageAPIService) GetMyDynamicEntities(ctx context.Context) ApiGetMyDynamicEntitiesRequest {
+	return ApiGetMyDynamicEntitiesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetAvailablePersonalDynamicEntities200Response
-func (a *DynamicEntityManageAPIService) OBPv600GetMyDynamicEntitiesExecute(r ApiOBPv600GetMyDynamicEntitiesRequest) (*OBPv600GetAvailablePersonalDynamicEntities200Response, *http.Response, error) {
+//  @return GetAvailablePersonalDynamicEntities200Response
+func (a *DynamicEntityManageAPIService) GetMyDynamicEntitiesExecute(r ApiGetMyDynamicEntitiesRequest) (*GetAvailablePersonalDynamicEntities200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetAvailablePersonalDynamicEntities200Response
+		localVarReturnValue  *GetAvailablePersonalDynamicEntities200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.OBPv600GetMyDynamicEntities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.GetMyDynamicEntities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1376,7 +1382,7 @@ func (a *DynamicEntityManageAPIService) OBPv600GetMyDynamicEntitiesExecute(r Api
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1417,17 +1423,17 @@ func (a *DynamicEntityManageAPIService) OBPv600GetMyDynamicEntitiesExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetSystemDynamicEntitiesRequest struct {
+type ApiGetSystemDynamicEntitiesRequest struct {
 	ctx context.Context
 	ApiService *DynamicEntityManageAPIService
 }
 
-func (r ApiOBPv600GetSystemDynamicEntitiesRequest) Execute() (*OBPv600GetSystemDynamicEntities200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetSystemDynamicEntitiesExecute(r)
+func (r ApiGetSystemDynamicEntitiesRequest) Execute() (*GetSystemDynamicEntities200Response, *http.Response, error) {
+	return r.ApiService.GetSystemDynamicEntitiesExecute(r)
 }
 
 /*
-OBPv600GetSystemDynamicEntities Get System Dynamic Entities
+GetSystemDynamicEntities Get System Dynamic Entities
 
 <p>Get all System Dynamic Entities with record counts.</p>
 <p>Each dynamic entity in the response includes a <code>record_count</code> field showing how many data records exist for that entity.</p>
@@ -1437,26 +1443,26 @@ OBPv600GetSystemDynamicEntities Get System Dynamic Entities
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetSystemDynamicEntitiesRequest
+ @return ApiGetSystemDynamicEntitiesRequest
 */
-func (a *DynamicEntityManageAPIService) OBPv600GetSystemDynamicEntities(ctx context.Context) ApiOBPv600GetSystemDynamicEntitiesRequest {
-	return ApiOBPv600GetSystemDynamicEntitiesRequest{
+func (a *DynamicEntityManageAPIService) GetSystemDynamicEntities(ctx context.Context) ApiGetSystemDynamicEntitiesRequest {
+	return ApiGetSystemDynamicEntitiesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetSystemDynamicEntities200Response
-func (a *DynamicEntityManageAPIService) OBPv600GetSystemDynamicEntitiesExecute(r ApiOBPv600GetSystemDynamicEntitiesRequest) (*OBPv600GetSystemDynamicEntities200Response, *http.Response, error) {
+//  @return GetSystemDynamicEntities200Response
+func (a *DynamicEntityManageAPIService) GetSystemDynamicEntitiesExecute(r ApiGetSystemDynamicEntitiesRequest) (*GetSystemDynamicEntities200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetSystemDynamicEntities200Response
+		localVarReturnValue  *GetSystemDynamicEntities200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.OBPv600GetSystemDynamicEntities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.GetSystemDynamicEntities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1508,7 +1514,7 @@ func (a *DynamicEntityManageAPIService) OBPv600GetSystemDynamicEntitiesExecute(r
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1549,26 +1555,26 @@ func (a *DynamicEntityManageAPIService) OBPv600GetSystemDynamicEntitiesExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600UpdateBankLevelDynamicEntityRequest struct {
+type ApiUpdateBankLevelDynamicEntityRequest struct {
 	ctx context.Context
 	ApiService *DynamicEntityManageAPIService
 	bankid string
 	dynamicentityid string
-	oBPv600UpdateSystemDynamicEntityRequest *OBPv600UpdateSystemDynamicEntityRequest
+	updateSystemDynamicEntityRequest *UpdateSystemDynamicEntityRequest
 }
 
 // Request body
-func (r ApiOBPv600UpdateBankLevelDynamicEntityRequest) OBPv600UpdateSystemDynamicEntityRequest(oBPv600UpdateSystemDynamicEntityRequest OBPv600UpdateSystemDynamicEntityRequest) ApiOBPv600UpdateBankLevelDynamicEntityRequest {
-	r.oBPv600UpdateSystemDynamicEntityRequest = &oBPv600UpdateSystemDynamicEntityRequest
+func (r ApiUpdateBankLevelDynamicEntityRequest) UpdateSystemDynamicEntityRequest(updateSystemDynamicEntityRequest UpdateSystemDynamicEntityRequest) ApiUpdateBankLevelDynamicEntityRequest {
+	r.updateSystemDynamicEntityRequest = &updateSystemDynamicEntityRequest
 	return r
 }
 
-func (r ApiOBPv600UpdateBankLevelDynamicEntityRequest) Execute() (*OBPv600UpdateBankLevelDynamicEntity200Response, *http.Response, error) {
-	return r.ApiService.OBPv600UpdateBankLevelDynamicEntityExecute(r)
+func (r ApiUpdateBankLevelDynamicEntityRequest) Execute() (*UpdateBankLevelDynamicEntity200Response, *http.Response, error) {
+	return r.ApiService.UpdateBankLevelDynamicEntityExecute(r)
 }
 
 /*
-OBPv600UpdateBankLevelDynamicEntity Update Bank Level Dynamic Entity
+UpdateBankLevelDynamicEntity Update Bank Level Dynamic Entity
 
 <p>Update a bank level Dynamic Entity.</p>
 <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p>
@@ -1603,10 +1609,10 @@ OBPv600UpdateBankLevelDynamicEntity Update Bank Level Dynamic Entity
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv600UpdateBankLevelDynamicEntityRequest
+ @return ApiUpdateBankLevelDynamicEntityRequest
 */
-func (a *DynamicEntityManageAPIService) OBPv600UpdateBankLevelDynamicEntity(ctx context.Context, bankid string, dynamicentityid string) ApiOBPv600UpdateBankLevelDynamicEntityRequest {
-	return ApiOBPv600UpdateBankLevelDynamicEntityRequest{
+func (a *DynamicEntityManageAPIService) UpdateBankLevelDynamicEntity(ctx context.Context, bankid string, dynamicentityid string) ApiUpdateBankLevelDynamicEntityRequest {
+	return ApiUpdateBankLevelDynamicEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1615,16 +1621,16 @@ func (a *DynamicEntityManageAPIService) OBPv600UpdateBankLevelDynamicEntity(ctx 
 }
 
 // Execute executes the request
-//  @return OBPv600UpdateBankLevelDynamicEntity200Response
-func (a *DynamicEntityManageAPIService) OBPv600UpdateBankLevelDynamicEntityExecute(r ApiOBPv600UpdateBankLevelDynamicEntityRequest) (*OBPv600UpdateBankLevelDynamicEntity200Response, *http.Response, error) {
+//  @return UpdateBankLevelDynamicEntity200Response
+func (a *DynamicEntityManageAPIService) UpdateBankLevelDynamicEntityExecute(r ApiUpdateBankLevelDynamicEntityRequest) (*UpdateBankLevelDynamicEntity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600UpdateBankLevelDynamicEntity200Response
+		localVarReturnValue  *UpdateBankLevelDynamicEntity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.OBPv600UpdateBankLevelDynamicEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.UpdateBankLevelDynamicEntity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1636,8 +1642,8 @@ func (a *DynamicEntityManageAPIService) OBPv600UpdateBankLevelDynamicEntityExecu
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600UpdateSystemDynamicEntityRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600UpdateSystemDynamicEntityRequest is required and must be specified")
+	if r.updateSystemDynamicEntityRequest == nil {
+		return localVarReturnValue, nil, reportError("updateSystemDynamicEntityRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1658,7 +1664,7 @@ func (a *DynamicEntityManageAPIService) OBPv600UpdateBankLevelDynamicEntityExecu
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600UpdateSystemDynamicEntityRequest
+	localVarPostBody = r.updateSystemDynamicEntityRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1683,7 +1689,7 @@ func (a *DynamicEntityManageAPIService) OBPv600UpdateBankLevelDynamicEntityExecu
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1724,25 +1730,25 @@ func (a *DynamicEntityManageAPIService) OBPv600UpdateBankLevelDynamicEntityExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600UpdateMyDynamicEntityRequest struct {
+type ApiUpdateMyDynamicEntityRequest struct {
 	ctx context.Context
 	ApiService *DynamicEntityManageAPIService
 	dynamicentityid string
-	oBPv600UpdateSystemDynamicEntityRequest *OBPv600UpdateSystemDynamicEntityRequest
+	updateSystemDynamicEntityRequest *UpdateSystemDynamicEntityRequest
 }
 
 // Request body
-func (r ApiOBPv600UpdateMyDynamicEntityRequest) OBPv600UpdateSystemDynamicEntityRequest(oBPv600UpdateSystemDynamicEntityRequest OBPv600UpdateSystemDynamicEntityRequest) ApiOBPv600UpdateMyDynamicEntityRequest {
-	r.oBPv600UpdateSystemDynamicEntityRequest = &oBPv600UpdateSystemDynamicEntityRequest
+func (r ApiUpdateMyDynamicEntityRequest) UpdateSystemDynamicEntityRequest(updateSystemDynamicEntityRequest UpdateSystemDynamicEntityRequest) ApiUpdateMyDynamicEntityRequest {
+	r.updateSystemDynamicEntityRequest = &updateSystemDynamicEntityRequest
 	return r
 }
 
-func (r ApiOBPv600UpdateMyDynamicEntityRequest) Execute() (*OBPv600UpdateSystemDynamicEntity200Response, *http.Response, error) {
-	return r.ApiService.OBPv600UpdateMyDynamicEntityExecute(r)
+func (r ApiUpdateMyDynamicEntityRequest) Execute() (*UpdateSystemDynamicEntity200Response, *http.Response, error) {
+	return r.ApiService.UpdateMyDynamicEntityExecute(r)
 }
 
 /*
-OBPv600UpdateMyDynamicEntity Update My Dynamic Entity
+UpdateMyDynamicEntity Update My Dynamic Entity
 
 <p>Update a Dynamic Entity that I created.</p>
 <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p>
@@ -1776,10 +1782,10 @@ OBPv600UpdateMyDynamicEntity Update My Dynamic Entity
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv600UpdateMyDynamicEntityRequest
+ @return ApiUpdateMyDynamicEntityRequest
 */
-func (a *DynamicEntityManageAPIService) OBPv600UpdateMyDynamicEntity(ctx context.Context, dynamicentityid string) ApiOBPv600UpdateMyDynamicEntityRequest {
-	return ApiOBPv600UpdateMyDynamicEntityRequest{
+func (a *DynamicEntityManageAPIService) UpdateMyDynamicEntity(ctx context.Context, dynamicentityid string) ApiUpdateMyDynamicEntityRequest {
+	return ApiUpdateMyDynamicEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 		dynamicentityid: dynamicentityid,
@@ -1787,16 +1793,16 @@ func (a *DynamicEntityManageAPIService) OBPv600UpdateMyDynamicEntity(ctx context
 }
 
 // Execute executes the request
-//  @return OBPv600UpdateSystemDynamicEntity200Response
-func (a *DynamicEntityManageAPIService) OBPv600UpdateMyDynamicEntityExecute(r ApiOBPv600UpdateMyDynamicEntityRequest) (*OBPv600UpdateSystemDynamicEntity200Response, *http.Response, error) {
+//  @return UpdateSystemDynamicEntity200Response
+func (a *DynamicEntityManageAPIService) UpdateMyDynamicEntityExecute(r ApiUpdateMyDynamicEntityRequest) (*UpdateSystemDynamicEntity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600UpdateSystemDynamicEntity200Response
+		localVarReturnValue  *UpdateSystemDynamicEntity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.OBPv600UpdateMyDynamicEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.UpdateMyDynamicEntity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1807,8 +1813,8 @@ func (a *DynamicEntityManageAPIService) OBPv600UpdateMyDynamicEntityExecute(r Ap
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600UpdateSystemDynamicEntityRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600UpdateSystemDynamicEntityRequest is required and must be specified")
+	if r.updateSystemDynamicEntityRequest == nil {
+		return localVarReturnValue, nil, reportError("updateSystemDynamicEntityRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1829,7 +1835,7 @@ func (a *DynamicEntityManageAPIService) OBPv600UpdateMyDynamicEntityExecute(r Ap
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600UpdateSystemDynamicEntityRequest
+	localVarPostBody = r.updateSystemDynamicEntityRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1854,7 +1860,7 @@ func (a *DynamicEntityManageAPIService) OBPv600UpdateMyDynamicEntityExecute(r Ap
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1895,25 +1901,25 @@ func (a *DynamicEntityManageAPIService) OBPv600UpdateMyDynamicEntityExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600UpdateSystemDynamicEntityRequest struct {
+type ApiUpdateSystemDynamicEntityRequest struct {
 	ctx context.Context
 	ApiService *DynamicEntityManageAPIService
 	dynamicentityid string
-	oBPv600UpdateSystemDynamicEntityRequest *OBPv600UpdateSystemDynamicEntityRequest
+	updateSystemDynamicEntityRequest *UpdateSystemDynamicEntityRequest
 }
 
 // Request body
-func (r ApiOBPv600UpdateSystemDynamicEntityRequest) OBPv600UpdateSystemDynamicEntityRequest(oBPv600UpdateSystemDynamicEntityRequest OBPv600UpdateSystemDynamicEntityRequest) ApiOBPv600UpdateSystemDynamicEntityRequest {
-	r.oBPv600UpdateSystemDynamicEntityRequest = &oBPv600UpdateSystemDynamicEntityRequest
+func (r ApiUpdateSystemDynamicEntityRequest) UpdateSystemDynamicEntityRequest(updateSystemDynamicEntityRequest UpdateSystemDynamicEntityRequest) ApiUpdateSystemDynamicEntityRequest {
+	r.updateSystemDynamicEntityRequest = &updateSystemDynamicEntityRequest
 	return r
 }
 
-func (r ApiOBPv600UpdateSystemDynamicEntityRequest) Execute() (*OBPv600UpdateSystemDynamicEntity200Response, *http.Response, error) {
-	return r.ApiService.OBPv600UpdateSystemDynamicEntityExecute(r)
+func (r ApiUpdateSystemDynamicEntityRequest) Execute() (*UpdateSystemDynamicEntity200Response, *http.Response, error) {
+	return r.ApiService.UpdateSystemDynamicEntityExecute(r)
 }
 
 /*
-OBPv600UpdateSystemDynamicEntity Update System Level Dynamic Entity
+UpdateSystemDynamicEntity Update System Level Dynamic Entity
 
 <p>Update a system level Dynamic Entity.</p>
 <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p>
@@ -1947,10 +1953,10 @@ OBPv600UpdateSystemDynamicEntity Update System Level Dynamic Entity
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv600UpdateSystemDynamicEntityRequest
+ @return ApiUpdateSystemDynamicEntityRequest
 */
-func (a *DynamicEntityManageAPIService) OBPv600UpdateSystemDynamicEntity(ctx context.Context, dynamicentityid string) ApiOBPv600UpdateSystemDynamicEntityRequest {
-	return ApiOBPv600UpdateSystemDynamicEntityRequest{
+func (a *DynamicEntityManageAPIService) UpdateSystemDynamicEntity(ctx context.Context, dynamicentityid string) ApiUpdateSystemDynamicEntityRequest {
+	return ApiUpdateSystemDynamicEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 		dynamicentityid: dynamicentityid,
@@ -1958,16 +1964,16 @@ func (a *DynamicEntityManageAPIService) OBPv600UpdateSystemDynamicEntity(ctx con
 }
 
 // Execute executes the request
-//  @return OBPv600UpdateSystemDynamicEntity200Response
-func (a *DynamicEntityManageAPIService) OBPv600UpdateSystemDynamicEntityExecute(r ApiOBPv600UpdateSystemDynamicEntityRequest) (*OBPv600UpdateSystemDynamicEntity200Response, *http.Response, error) {
+//  @return UpdateSystemDynamicEntity200Response
+func (a *DynamicEntityManageAPIService) UpdateSystemDynamicEntityExecute(r ApiUpdateSystemDynamicEntityRequest) (*UpdateSystemDynamicEntity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600UpdateSystemDynamicEntity200Response
+		localVarReturnValue  *UpdateSystemDynamicEntity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.OBPv600UpdateSystemDynamicEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEntityManageAPIService.UpdateSystemDynamicEntity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1978,8 +1984,8 @@ func (a *DynamicEntityManageAPIService) OBPv600UpdateSystemDynamicEntityExecute(
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600UpdateSystemDynamicEntityRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600UpdateSystemDynamicEntityRequest is required and must be specified")
+	if r.updateSystemDynamicEntityRequest == nil {
+		return localVarReturnValue, nil, reportError("updateSystemDynamicEntityRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2000,7 +2006,7 @@ func (a *DynamicEntityManageAPIService) OBPv600UpdateSystemDynamicEntityExecute(
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600UpdateSystemDynamicEntityRequest
+	localVarPostBody = r.updateSystemDynamicEntityRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2025,7 +2031,7 @@ func (a *DynamicEntityManageAPIService) OBPv600UpdateSystemDynamicEntityExecute(
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

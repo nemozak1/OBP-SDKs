@@ -1,305 +1,29 @@
 # SystemAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv510LogCacheAllEndpoint**](SystemAPI.md#obpv510logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
-[**oBPv510LogCacheDebugEndpoint**](SystemAPI.md#obpv510logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
-[**oBPv510LogCacheErrorEndpoint**](SystemAPI.md#obpv510logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
-[**oBPv510LogCacheInfoEndpoint**](SystemAPI.md#obpv510logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
-[**oBPv510LogCacheTraceEndpoint**](SystemAPI.md#obpv510logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
-[**oBPv510LogCacheWarningEndpoint**](SystemAPI.md#obpv510logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
-[**oBPv600GetCacheConfig**](SystemAPI.md#obpv600getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
-[**oBPv600GetCacheInfo**](SystemAPI.md#obpv600getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
-[**oBPv600GetCacheNamespaces**](SystemAPI.md#obpv600getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
-[**oBPv600GetConnectorMethodNames**](SystemAPI.md#obpv600getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
-[**oBPv600GetConnectors**](SystemAPI.md#obpv600getconnectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
-[**oBPv600GetDatabasePoolInfo**](SystemAPI.md#obpv600getdatabasepoolinfo) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information
-[**oBPv600GetMigrations**](SystemAPI.md#obpv600getmigrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations
-[**oBPv600GetStoredProcedureConnectorHealth**](SystemAPI.md#obpv600getstoredprocedureconnectorhealth) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
-[**oBPv600InvalidateCacheNamespace**](SystemAPI.md#obpv600invalidatecachenamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
+[**getCacheConfig**](SystemAPI.md#getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
+[**getCacheInfo**](SystemAPI.md#getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
+[**getCacheNamespaces**](SystemAPI.md#getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
+[**getConnectorMethodNames**](SystemAPI.md#getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+[**getConnectors**](SystemAPI.md#getconnectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
+[**getDatabasePoolInfo**](SystemAPI.md#getdatabasepoolinfo) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information
+[**getMigrations**](SystemAPI.md#getmigrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations
+[**getStoredProcedureConnectorHealth**](SystemAPI.md#getstoredprocedureconnectorhealth) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
+[**invalidateCacheNamespace**](SystemAPI.md#invalidatecachenamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
+[**logCacheAllEndpoint**](SystemAPI.md#logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
+[**logCacheDebugEndpoint**](SystemAPI.md#logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
+[**logCacheErrorEndpoint**](SystemAPI.md#logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
+[**logCacheInfoEndpoint**](SystemAPI.md#logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
+[**logCacheTraceEndpoint**](SystemAPI.md#logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
+[**logCacheWarningEndpoint**](SystemAPI.md#logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
 
 
-# **oBPv510LogCacheAllEndpoint**
+# **getCacheConfig**
 ```swift
-    open class func oBPv510LogCacheAllEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
-```
-
-Get All Level Log Cache
-
-<p>Returns logs of all levels from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/all?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-
-// Get All Level Log Cache
-SystemAPI.oBPv510LogCacheAllEndpoint() { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-Void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv510LogCacheDebugEndpoint**
-```swift
-    open class func oBPv510LogCacheDebugEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
-```
-
-Get Debug Level Log Cache
-
-<p>Returns DEBUG level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/debug?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-
-// Get Debug Level Log Cache
-SystemAPI.oBPv510LogCacheDebugEndpoint() { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-Void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv510LogCacheErrorEndpoint**
-```swift
-    open class func oBPv510LogCacheErrorEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
-```
-
-Get Error Level Log Cache
-
-<p>Returns ERROR level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/error?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-
-// Get Error Level Log Cache
-SystemAPI.oBPv510LogCacheErrorEndpoint() { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-Void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv510LogCacheInfoEndpoint**
-```swift
-    open class func oBPv510LogCacheInfoEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
-```
-
-Get Info Level Log Cache
-
-<p>Returns INFO level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/info?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-
-// Get Info Level Log Cache
-SystemAPI.oBPv510LogCacheInfoEndpoint() { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-Void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv510LogCacheTraceEndpoint**
-```swift
-    open class func oBPv510LogCacheTraceEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
-```
-
-Get Trace Level Log Cache
-
-<p>Returns TRACE level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/trace?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-
-// Get Trace Level Log Cache
-SystemAPI.oBPv510LogCacheTraceEndpoint() { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-Void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv510LogCacheWarningEndpoint**
-```swift
-    open class func oBPv510LogCacheWarningEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
-```
-
-Get Warning Level Log Cache
-
-<p>Returns WARNING level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/warning?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-
-// Get Warning Level Log Cache
-SystemAPI.oBPv510LogCacheWarningEndpoint() { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-Void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv600GetCacheConfig**
-```swift
-    open class func oBPv600GetCacheConfig(completion: @escaping (_ data: OBPv600GetCacheConfig200Response?, _ error: Error?) -> Void)
+    open class func getCacheConfig(completion: @escaping (_ data: GetCacheConfig200Response?, _ error: Error?) -> Void)
 ```
 
 Get Cache Configuration
@@ -313,7 +37,7 @@ import OBPSwift
 
 
 // Get Cache Configuration
-SystemAPI.oBPv600GetCacheConfig() { (response, error) in
+SystemAPI.getCacheConfig() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -330,7 +54,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Response.md)
+[**GetCacheConfig200Response**](GetCacheConfig200Response.md)
 
 ### Authorization
 
@@ -343,9 +67,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetCacheInfo**
+# **getCacheInfo**
 ```swift
-    open class func oBPv600GetCacheInfo(completion: @escaping (_ data: OBPv600GetCacheInfo200Response?, _ error: Error?) -> Void)
+    open class func getCacheInfo(completion: @escaping (_ data: GetCacheInfo200Response?, _ error: Error?) -> Void)
 ```
 
 Get Cache Information
@@ -359,7 +83,7 @@ import OBPSwift
 
 
 // Get Cache Information
-SystemAPI.oBPv600GetCacheInfo() { (response, error) in
+SystemAPI.getCacheInfo() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -376,7 +100,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.md)
+[**GetCacheInfo200Response**](GetCacheInfo200Response.md)
 
 ### Authorization
 
@@ -389,9 +113,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetCacheNamespaces**
+# **getCacheNamespaces**
 ```swift
-    open class func oBPv600GetCacheNamespaces(completion: @escaping (_ data: OBPv600GetCacheNamespaces200Response?, _ error: Error?) -> Void)
+    open class func getCacheNamespaces(completion: @escaping (_ data: GetCacheNamespaces200Response?, _ error: Error?) -> Void)
 ```
 
 Get Cache Namespaces
@@ -405,7 +129,7 @@ import OBPSwift
 
 
 // Get Cache Namespaces
-SystemAPI.oBPv600GetCacheNamespaces() { (response, error) in
+SystemAPI.getCacheNamespaces() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -422,7 +146,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces200Response.md)
+[**GetCacheNamespaces200Response**](GetCacheNamespaces200Response.md)
 
 ### Authorization
 
@@ -435,9 +159,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetConnectorMethodNames**
+# **getConnectorMethodNames**
 ```swift
-    open class func oBPv600GetConnectorMethodNames(completion: @escaping (_ data: OBPv600GetConnectorMethodNames200Response?, _ error: Error?) -> Void)
+    open class func getConnectorMethodNames(completion: @escaping (_ data: GetConnectorMethodNames200Response?, _ error: Error?) -> Void)
 ```
 
 Get Connector Method Names
@@ -451,7 +175,7 @@ import OBPSwift
 
 
 // Get Connector Method Names
-SystemAPI.oBPv600GetConnectorMethodNames() { (response, error) in
+SystemAPI.getConnectorMethodNames() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -468,7 +192,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectorMethodNames200Response**](OBPv600GetConnectorMethodNames200Response.md)
+[**GetConnectorMethodNames200Response**](GetConnectorMethodNames200Response.md)
 
 ### Authorization
 
@@ -481,14 +205,14 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetConnectors**
+# **getConnectors**
 ```swift
-    open class func oBPv600GetConnectors(completion: @escaping (_ data: OBPv600GetConnectors200Response?, _ error: Error?) -> Void)
+    open class func getConnectors(completion: @escaping (_ data: GetConnectors200Response?, _ error: Error?) -> Void)
 ```
 
 Get Connectors
 
-<p>Get the list of connectors and their availability for method routing.</p> <p>Returns a sorted list of all connectors with their availability status for use in Method Routing.</p> <h2><a href=\"#response-fields\" id=\"response-fields\">Response Fields</a></h2> <ul> <li><strong>connector_name</strong> - The name of the connector</li> <li><strong>is_available_in_method_routing</strong> - Whether this connector can be used in Method Routing configuration.<br /> This depends on the <code>connector</code> and <code>starConnector_supported_types</code> props settings.</li> </ul> <h2><a href=\"#available-connectors\" id=\"available-connectors\">Available Connectors</a></h2> <p>The OBP-API supports multiple connectors for accessing banking data:</p> <ul> <li><strong>mapped</strong> - Local database connector using Lift Mapper ORM</li> <li><strong>akka_vDec2018</strong> - Akka-based connector for remote banking systems</li> <li><strong>rest_vMar2019</strong> - REST connector for external APIs</li> <li><strong>stored_procedure_vDec2019</strong> - Stored procedure connector for database-native operations</li> <li><strong>rabbitmq_vOct2024</strong> - RabbitMQ message queue connector</li> <li><strong>cardano_vJun2025</strong> - Cardano blockchain connector</li> <li><strong>ethereum_vSept2025</strong> - Ethereum blockchain connector</li> <li><strong>star</strong> - Star connector (special routing connector)</li> <li><strong>proxy</strong> - Proxy connector (for testing)</li> <li><strong>internal</strong> - Internal dynamic connector</li> </ul> <h2><a href=\"#use-case\" id=\"use-case\">Use Case</a></h2> <p>Use this endpoint to discover which connectors are available when configuring Method Routing.<br /> A connector is available for method routing if it matches the <code>connector</code> prop setting,<br /> or if <code>connector=star</code> and the connector is listed in <code>starConnector_supported_types</code>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>CanGetConnectorNames entitlement is required.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#connector_name\"><strong>connector_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>connectors</strong></a>: connectors</p> <p><a href=\"/glossary#\"><strong>is_available_in_method_routing</strong></a>: is_available_in_method_routing</p> 
+<p>Get the list of connectors and their availability for method routing.</p> <p>Returns a sorted list of all connectors with their availability status for use in Method Routing.</p> <h2><a href=\"#response-fields\" id=\"response-fields\">Response Fields</a></h2> <ul> <li><strong>connector_name</strong> - The name of the connector</li> <li><strong>is_available_in_method_routing</strong> - Whether this connector can be used in Method Routing configuration.<br /> This depends on the <code>connector</code> and <code>starConnector_supported_types</code> props settings.</li> </ul> <h2><a href=\"#available-connectors\" id=\"available-connectors\">Available Connectors</a></h2> <p>The OBP-API supports multiple connectors for accessing banking data:</p> <ul> <li><strong>mapped</strong> - Local database connector using Lift Mapper ORM</li> <li><strong>akka_vDec2018</strong> - Akka-based connector for remote banking systems</li> <li><strong>rest_vMar2019</strong> - REST connector for external APIs</li> <li><strong>stored_procedure_vDec2019</strong> - Stored procedure connector for database-native operations</li> <li><strong>rabbitmq_vOct2024</strong> - RabbitMQ message queue connector</li> <li><strong>cardano_vJun2025</strong> - Cardano blockchain connector</li> <li><strong>ethereum_vSept2025</strong> - Ethereum blockchain connector</li> <li><strong>star</strong> - Star connector (special routing connector)</li> <li><strong>proxy</strong> - Proxy connector (for testing)</li> <li><strong>internal</strong> - Internal dynamic connector</li> </ul> <h2><a href=\"#use-case\" id=\"use-case\">Use Case</a></h2> <p>Use this endpoint to discover which connectors are available when configuring Method Routing.<br /> A connector is available for method routing if it matches the <code>connector</code> prop setting,<br /> or if <code>connector=star</code> and the connector is listed in <code>starConnector_supported_types</code>.</p> <p>Authentication is Optional.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#connector_name\"><strong>connector_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>connectors</strong></a>: connectors</p> <p><a href=\"/glossary#\"><strong>is_available_in_method_routing</strong></a>: is_available_in_method_routing</p> 
 
 ### Example
 ```swift
@@ -497,7 +221,7 @@ import OBPSwift
 
 
 // Get Connectors
-SystemAPI.oBPv600GetConnectors() { (response, error) in
+SystemAPI.getConnectors() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -514,11 +238,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectors200Response**](OBPv600GetConnectors200Response.md)
+[**GetConnectors200Response**](GetConnectors200Response.md)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+No authorization required
 
 ### HTTP request headers
 
@@ -527,9 +251,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetDatabasePoolInfo**
+# **getDatabasePoolInfo**
 ```swift
-    open class func oBPv600GetDatabasePoolInfo(completion: @escaping (_ data: OBPv600GetDatabasePoolInfo200Response?, _ error: Error?) -> Void)
+    open class func getDatabasePoolInfo(completion: @escaping (_ data: GetDatabasePoolInfo200Response?, _ error: Error?) -> Void)
 ```
 
 Get Database Pool Information
@@ -543,7 +267,7 @@ import OBPSwift
 
 
 // Get Database Pool Information
-SystemAPI.oBPv600GetDatabasePoolInfo() { (response, error) in
+SystemAPI.getDatabasePoolInfo() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -560,7 +284,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetDatabasePoolInfo200Response**](OBPv600GetDatabasePoolInfo200Response.md)
+[**GetDatabasePoolInfo200Response**](GetDatabasePoolInfo200Response.md)
 
 ### Authorization
 
@@ -573,9 +297,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetMigrations**
+# **getMigrations**
 ```swift
-    open class func oBPv600GetMigrations(completion: @escaping (_ data: OBPv600GetMigrations200Response?, _ error: Error?) -> Void)
+    open class func getMigrations(completion: @escaping (_ data: GetMigrations200Response?, _ error: Error?) -> Void)
 ```
 
 Get Database Migrations
@@ -589,7 +313,7 @@ import OBPSwift
 
 
 // Get Database Migrations
-SystemAPI.oBPv600GetMigrations() { (response, error) in
+SystemAPI.getMigrations() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -606,7 +330,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetMigrations200Response**](OBPv600GetMigrations200Response.md)
+[**GetMigrations200Response**](GetMigrations200Response.md)
 
 ### Authorization
 
@@ -619,9 +343,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetStoredProcedureConnectorHealth**
+# **getStoredProcedureConnectorHealth**
 ```swift
-    open class func oBPv600GetStoredProcedureConnectorHealth(completion: @escaping (_ data: OBPv600GetStoredProcedureConnectorHealth200Response?, _ error: Error?) -> Void)
+    open class func getStoredProcedureConnectorHealth(completion: @escaping (_ data: GetStoredProcedureConnectorHealth200Response?, _ error: Error?) -> Void)
 ```
 
 Get Stored Procedure Connector Health
@@ -635,7 +359,7 @@ import OBPSwift
 
 
 // Get Stored Procedure Connector Health
-SystemAPI.oBPv600GetStoredProcedureConnectorHealth() { (response, error) in
+SystemAPI.getStoredProcedureConnectorHealth() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -652,7 +376,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetStoredProcedureConnectorHealth200Response**](OBPv600GetStoredProcedureConnectorHealth200Response.md)
+[**GetStoredProcedureConnectorHealth200Response**](GetStoredProcedureConnectorHealth200Response.md)
 
 ### Authorization
 
@@ -665,9 +389,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600InvalidateCacheNamespace**
+# **invalidateCacheNamespace**
 ```swift
-    open class func oBPv600InvalidateCacheNamespace(oBPv600InvalidateCacheNamespaceRequest: OBPv600InvalidateCacheNamespaceRequest, completion: @escaping (_ data: OBPv600InvalidateCacheNamespace200Response?, _ error: Error?) -> Void)
+    open class func invalidateCacheNamespace(invalidateCacheNamespaceRequest: InvalidateCacheNamespaceRequest, completion: @escaping (_ data: InvalidateCacheNamespace200Response?, _ error: Error?) -> Void)
 ```
 
 Invalidate Cache Namespace
@@ -679,10 +403,10 @@ Invalidate Cache Namespace
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OBPSwift
 
-let oBPv600InvalidateCacheNamespaceRequest = OBPv6_0_0_invalidateCacheNamespace_request(type: "type_example", properties: OBPv6_0_0_invalidateCacheNamespace_request_properties(namespaceId: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv600InvalidateCacheNamespaceRequest | Request body
+let invalidateCacheNamespaceRequest = invalidateCacheNamespace_request(namespaceId: "namespaceId_example") // InvalidateCacheNamespaceRequest | Request body
 
 // Invalidate Cache Namespace
-SystemAPI.oBPv600InvalidateCacheNamespace(oBPv600InvalidateCacheNamespaceRequest: oBPv600InvalidateCacheNamespaceRequest) { (response, error) in
+SystemAPI.invalidateCacheNamespace(invalidateCacheNamespaceRequest: invalidateCacheNamespaceRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -698,11 +422,11 @@ SystemAPI.oBPv600InvalidateCacheNamespace(oBPv600InvalidateCacheNamespaceRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600InvalidateCacheNamespaceRequest** | [**OBPv600InvalidateCacheNamespaceRequest**](OBPv600InvalidateCacheNamespaceRequest.md) | Request body | 
+ **invalidateCacheNamespaceRequest** | [**InvalidateCacheNamespaceRequest**](InvalidateCacheNamespaceRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600InvalidateCacheNamespace200Response**](OBPv600InvalidateCacheNamespace200Response.md)
+[**InvalidateCacheNamespace200Response**](InvalidateCacheNamespace200Response.md)
 
 ### Authorization
 
@@ -712,6 +436,282 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logCacheAllEndpoint**
+```swift
+    open class func logCacheAllEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+```
+
+Get All Level Log Cache
+
+<p>Returns logs of all levels from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/all?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+
+// Get All Level Log Cache
+SystemAPI.logCacheAllEndpoint() { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+Void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logCacheDebugEndpoint**
+```swift
+    open class func logCacheDebugEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+```
+
+Get Debug Level Log Cache
+
+<p>Returns DEBUG level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/debug?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+
+// Get Debug Level Log Cache
+SystemAPI.logCacheDebugEndpoint() { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+Void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logCacheErrorEndpoint**
+```swift
+    open class func logCacheErrorEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+```
+
+Get Error Level Log Cache
+
+<p>Returns ERROR level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/error?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+
+// Get Error Level Log Cache
+SystemAPI.logCacheErrorEndpoint() { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+Void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logCacheInfoEndpoint**
+```swift
+    open class func logCacheInfoEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+```
+
+Get Info Level Log Cache
+
+<p>Returns INFO level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/info?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+
+// Get Info Level Log Cache
+SystemAPI.logCacheInfoEndpoint() { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+Void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logCacheTraceEndpoint**
+```swift
+    open class func logCacheTraceEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+```
+
+Get Trace Level Log Cache
+
+<p>Returns TRACE level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/trace?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+
+// Get Trace Level Log Cache
+SystemAPI.logCacheTraceEndpoint() { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+Void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logCacheWarningEndpoint**
+```swift
+    open class func logCacheWarningEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+```
+
+Get Warning Level Log Cache
+
+<p>Returns WARNING level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/warning?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+
+// Get Warning Level Log Cache
+SystemAPI.logCacheWarningEndpoint() { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+Void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

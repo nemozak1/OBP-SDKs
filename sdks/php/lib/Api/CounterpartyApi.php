@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,121 +75,121 @@ class CounterpartyApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv121AddCounterpartyCorporateLocation' => [
+        'addCounterpartyCorporateLocation' => [
             'application/json',
         ],
-        'oBPv121AddCounterpartyImageUrl' => [
+        'addCounterpartyImageUrl' => [
             'application/json',
         ],
-        'oBPv121AddCounterpartyMoreInfo' => [
+        'addCounterpartyMoreInfo' => [
             'application/json',
         ],
-        'oBPv121AddCounterpartyOpenCorporatesUrl' => [
+        'addCounterpartyOpenCorporatesUrl' => [
             'application/json',
         ],
-        'oBPv121AddCounterpartyPhysicalLocation' => [
+        'addCounterpartyPhysicalLocation' => [
             'application/json',
         ],
-        'oBPv121AddCounterpartyPublicAlias' => [
+        'addCounterpartyPublicAlias' => [
             'application/json',
         ],
-        'oBPv121AddCounterpartyUrl' => [
+        'addCounterpartyUrl' => [
             'application/json',
         ],
-        'oBPv121AddOtherAccountPrivateAlias' => [
+        'addOtherAccountPrivateAlias' => [
             'application/json',
         ],
-        'oBPv121DeleteCounterpartyCorporateLocation' => [
+        'createCounterparty' => [
             'application/json',
         ],
-        'oBPv121DeleteCounterpartyImageUrl' => [
+        'createCounterpartyForAnyAccount' => [
             'application/json',
         ],
-        'oBPv121DeleteCounterpartyMoreInfo' => [
+        'deleteCounterpartyCorporateLocation' => [
             'application/json',
         ],
-        'oBPv121DeleteCounterpartyOpenCorporatesUrl' => [
+        'deleteCounterpartyForAnyAccount' => [
             'application/json',
         ],
-        'oBPv121DeleteCounterpartyPhysicalLocation' => [
+        'deleteCounterpartyImageUrl' => [
             'application/json',
         ],
-        'oBPv121DeleteCounterpartyPrivateAlias' => [
+        'deleteCounterpartyMoreInfo' => [
             'application/json',
         ],
-        'oBPv121DeleteCounterpartyPublicAlias' => [
+        'deleteCounterpartyOpenCorporatesUrl' => [
             'application/json',
         ],
-        'oBPv121DeleteCounterpartyUrl' => [
+        'deleteCounterpartyPhysicalLocation' => [
             'application/json',
         ],
-        'oBPv121GetCounterpartyPublicAlias' => [
+        'deleteCounterpartyPrivateAlias' => [
             'application/json',
         ],
-        'oBPv121GetOtherAccountForTransaction' => [
+        'deleteCounterpartyPublicAlias' => [
             'application/json',
         ],
-        'oBPv121GetOtherAccountMetadata' => [
+        'deleteCounterpartyUrl' => [
             'application/json',
         ],
-        'oBPv121GetOtherAccountPrivateAlias' => [
+        'deleteExplicitCounterparty' => [
             'application/json',
         ],
-        'oBPv121UpdateCounterpartyCorporateLocation' => [
+        'getCounterpartiesForAnyAccount' => [
             'application/json',
         ],
-        'oBPv121UpdateCounterpartyImageUrl' => [
+        'getCounterpartyByIdForAnyAccount' => [
             'application/json',
         ],
-        'oBPv121UpdateCounterpartyMoreInfo' => [
+        'getCounterpartyByNameForAnyAccount' => [
             'application/json',
         ],
-        'oBPv121UpdateCounterpartyOpenCorporatesUrl' => [
+        'getCounterpartyPublicAlias' => [
             'application/json',
         ],
-        'oBPv121UpdateCounterpartyPhysicalLocation' => [
+        'getExplicitCounterpartiesForAccount' => [
             'application/json',
         ],
-        'oBPv121UpdateCounterpartyPrivateAlias' => [
+        'getExplicitCounterpartyById' => [
             'application/json',
         ],
-        'oBPv121UpdateCounterpartyPublicAlias' => [
+        'getOtherAccountByIdForBankAccount' => [
             'application/json',
         ],
-        'oBPv121UpdateCounterpartyUrl' => [
+        'getOtherAccountForTransaction' => [
             'application/json',
         ],
-        'oBPv300GetOtherAccountByIdForBankAccount' => [
+        'getOtherAccountMetadata' => [
             'application/json',
         ],
-        'oBPv300GetOtherAccountsForBankAccount' => [
+        'getOtherAccountPrivateAlias' => [
             'application/json',
         ],
-        'oBPv400CreateCounterparty' => [
+        'getOtherAccountsForBankAccount' => [
             'application/json',
         ],
-        'oBPv400CreateCounterpartyForAnyAccount' => [
+        'updateCounterpartyCorporateLocation' => [
             'application/json',
         ],
-        'oBPv400DeleteCounterpartyForAnyAccount' => [
+        'updateCounterpartyImageUrl' => [
             'application/json',
         ],
-        'oBPv400DeleteExplicitCounterparty' => [
+        'updateCounterpartyMoreInfo' => [
             'application/json',
         ],
-        'oBPv400GetCounterpartiesForAnyAccount' => [
+        'updateCounterpartyOpenCorporatesUrl' => [
             'application/json',
         ],
-        'oBPv400GetCounterpartyByIdForAnyAccount' => [
+        'updateCounterpartyPhysicalLocation' => [
             'application/json',
         ],
-        'oBPv400GetCounterpartyByNameForAnyAccount' => [
+        'updateCounterpartyPrivateAlias' => [
             'application/json',
         ],
-        'oBPv400GetExplicitCounterpartiesForAccount' => [
+        'updateCounterpartyPublicAlias' => [
             'application/json',
         ],
-        'oBPv400GetExplicitCounterpartyById' => [
+        'updateCounterpartyUrl' => [
             'application/json',
         ],
     ];
@@ -241,7 +241,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyCorporateLocation
+     * Operation addCounterpartyCorporateLocation
      *
      * Add Corporate Location to Counterparty
      *
@@ -249,21 +249,21 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyCorporateLocationRequest $obpv121_update_counterparty_corporate_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyCorporateLocation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyCorporateLocationRequest $update_counterparty_corporate_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyCorporateLocation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
      */
-    public function oBPv121AddCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyCorporateLocation'][0])
+    public function addCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, string $contentType = self::contentTypes['addCounterpartyCorporateLocation'][0])
     {
-        list($response) = $this->oBPv121AddCounterpartyCorporateLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, $contentType);
+        list($response) = $this->addCounterpartyCorporateLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv121AddCounterpartyCorporateLocationWithHttpInfo
+     * Operation addCounterpartyCorporateLocationWithHttpInfo
      *
      * Add Corporate Location to Counterparty
      *
@@ -271,16 +271,16 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyCorporateLocationRequest $obpv121_update_counterparty_corporate_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyCorporateLocation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyCorporateLocationRequest $update_counterparty_corporate_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyCorporateLocation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121AddCounterpartyCorporateLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyCorporateLocation'][0])
+    public function addCounterpartyCorporateLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, string $contentType = self::contentTypes['addCounterpartyCorporateLocation'][0])
     {
-        $request = $this->oBPv121AddCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, $contentType);
+        $request = $this->addCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -308,7 +308,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $request,
                         $response,
                     );
@@ -330,7 +330,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                 $request,
                 $response,
             );
@@ -339,7 +339,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -352,7 +352,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyCorporateLocationAsync
+     * Operation addCounterpartyCorporateLocationAsync
      *
      * Add Corporate Location to Counterparty
      *
@@ -360,15 +360,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyCorporateLocationRequest $obpv121_update_counterparty_corporate_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyCorporateLocation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyCorporateLocationRequest $update_counterparty_corporate_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyCorporateLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121AddCounterpartyCorporateLocationAsync($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyCorporateLocation'][0])
+    public function addCounterpartyCorporateLocationAsync($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, string $contentType = self::contentTypes['addCounterpartyCorporateLocation'][0])
     {
-        return $this->oBPv121AddCounterpartyCorporateLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, $contentType)
+        return $this->addCounterpartyCorporateLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -377,7 +377,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyCorporateLocationAsyncWithHttpInfo
+     * Operation addCounterpartyCorporateLocationAsyncWithHttpInfo
      *
      * Add Corporate Location to Counterparty
      *
@@ -385,16 +385,16 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyCorporateLocationRequest $obpv121_update_counterparty_corporate_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyCorporateLocation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyCorporateLocationRequest $update_counterparty_corporate_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyCorporateLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121AddCounterpartyCorporateLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyCorporateLocation'][0])
+    public function addCounterpartyCorporateLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, string $contentType = self::contentTypes['addCounterpartyCorporateLocation'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv121AddCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->addCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -433,53 +433,53 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121AddCounterpartyCorporateLocation'
+     * Create request for operation 'addCounterpartyCorporateLocation'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyCorporateLocationRequest $obpv121_update_counterparty_corporate_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyCorporateLocation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyCorporateLocationRequest $update_counterparty_corporate_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyCorporateLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121AddCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyCorporateLocation'][0])
+    public function addCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, string $contentType = self::contentTypes['addCounterpartyCorporateLocation'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121AddCounterpartyCorporateLocation'
+                'Missing the required parameter $bankid when calling addCounterpartyCorporateLocation'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121AddCounterpartyCorporateLocation'
+                'Missing the required parameter $accountid when calling addCounterpartyCorporateLocation'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121AddCounterpartyCorporateLocation'
+                'Missing the required parameter $viewid when calling addCounterpartyCorporateLocation'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121AddCounterpartyCorporateLocation'
+                'Missing the required parameter $otheraccountid when calling addCounterpartyCorporateLocation'
             );
         }
 
-        // verify the required parameter 'obpv121_update_counterparty_corporate_location_request' is set
-        if ($obpv121_update_counterparty_corporate_location_request === null || (is_array($obpv121_update_counterparty_corporate_location_request) && count($obpv121_update_counterparty_corporate_location_request) === 0)) {
+        // verify the required parameter 'update_counterparty_corporate_location_request' is set
+        if ($update_counterparty_corporate_location_request === null || (is_array($update_counterparty_corporate_location_request) && count($update_counterparty_corporate_location_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv121_update_counterparty_corporate_location_request when calling oBPv121AddCounterpartyCorporateLocation'
+                'Missing the required parameter $update_counterparty_corporate_location_request when calling addCounterpartyCorporateLocation'
             );
         }
 
@@ -534,12 +534,12 @@ class CounterpartyApi
         );
 
         // for model (json/xml)
-        if (isset($obpv121_update_counterparty_corporate_location_request)) {
+        if (isset($update_counterparty_corporate_location_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv121_update_counterparty_corporate_location_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_counterparty_corporate_location_request));
             } else {
-                $httpBody = $obpv121_update_counterparty_corporate_location_request;
+                $httpBody = $update_counterparty_corporate_location_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -575,9 +575,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -602,7 +602,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyImageUrl
+     * Operation addCounterpartyImageUrl
      *
      * Add image url to other bank account
      *
@@ -610,21 +610,21 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyImageUrlRequest $obpv121_update_counterparty_image_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyImageUrl'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyImageUrlRequest $update_counterparty_image_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyImageUrl'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
      */
-    public function oBPv121AddCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyImageUrl'][0])
+    public function addCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, string $contentType = self::contentTypes['addCounterpartyImageUrl'][0])
     {
-        list($response) = $this->oBPv121AddCounterpartyImageUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, $contentType);
+        list($response) = $this->addCounterpartyImageUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv121AddCounterpartyImageUrlWithHttpInfo
+     * Operation addCounterpartyImageUrlWithHttpInfo
      *
      * Add image url to other bank account
      *
@@ -632,16 +632,16 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyImageUrlRequest $obpv121_update_counterparty_image_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyImageUrl'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyImageUrlRequest $update_counterparty_image_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyImageUrl'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121AddCounterpartyImageUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyImageUrl'][0])
+    public function addCounterpartyImageUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, string $contentType = self::contentTypes['addCounterpartyImageUrl'][0])
     {
-        $request = $this->oBPv121AddCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, $contentType);
+        $request = $this->addCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -669,7 +669,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $request,
                         $response,
                     );
@@ -691,7 +691,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                 $request,
                 $response,
             );
@@ -700,7 +700,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -713,7 +713,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyImageUrlAsync
+     * Operation addCounterpartyImageUrlAsync
      *
      * Add image url to other bank account
      *
@@ -721,15 +721,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyImageUrlRequest $obpv121_update_counterparty_image_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyImageUrl'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyImageUrlRequest $update_counterparty_image_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyImageUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121AddCounterpartyImageUrlAsync($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyImageUrl'][0])
+    public function addCounterpartyImageUrlAsync($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, string $contentType = self::contentTypes['addCounterpartyImageUrl'][0])
     {
-        return $this->oBPv121AddCounterpartyImageUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, $contentType)
+        return $this->addCounterpartyImageUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -738,7 +738,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyImageUrlAsyncWithHttpInfo
+     * Operation addCounterpartyImageUrlAsyncWithHttpInfo
      *
      * Add image url to other bank account
      *
@@ -746,16 +746,16 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyImageUrlRequest $obpv121_update_counterparty_image_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyImageUrl'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyImageUrlRequest $update_counterparty_image_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyImageUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121AddCounterpartyImageUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyImageUrl'][0])
+    public function addCounterpartyImageUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, string $contentType = self::contentTypes['addCounterpartyImageUrl'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv121AddCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->addCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -794,53 +794,53 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121AddCounterpartyImageUrl'
+     * Create request for operation 'addCounterpartyImageUrl'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyImageUrlRequest $obpv121_update_counterparty_image_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyImageUrl'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyImageUrlRequest $update_counterparty_image_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyImageUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121AddCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyImageUrl'][0])
+    public function addCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, string $contentType = self::contentTypes['addCounterpartyImageUrl'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121AddCounterpartyImageUrl'
+                'Missing the required parameter $bankid when calling addCounterpartyImageUrl'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121AddCounterpartyImageUrl'
+                'Missing the required parameter $accountid when calling addCounterpartyImageUrl'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121AddCounterpartyImageUrl'
+                'Missing the required parameter $viewid when calling addCounterpartyImageUrl'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121AddCounterpartyImageUrl'
+                'Missing the required parameter $otheraccountid when calling addCounterpartyImageUrl'
             );
         }
 
-        // verify the required parameter 'obpv121_update_counterparty_image_url_request' is set
-        if ($obpv121_update_counterparty_image_url_request === null || (is_array($obpv121_update_counterparty_image_url_request) && count($obpv121_update_counterparty_image_url_request) === 0)) {
+        // verify the required parameter 'update_counterparty_image_url_request' is set
+        if ($update_counterparty_image_url_request === null || (is_array($update_counterparty_image_url_request) && count($update_counterparty_image_url_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv121_update_counterparty_image_url_request when calling oBPv121AddCounterpartyImageUrl'
+                'Missing the required parameter $update_counterparty_image_url_request when calling addCounterpartyImageUrl'
             );
         }
 
@@ -895,12 +895,12 @@ class CounterpartyApi
         );
 
         // for model (json/xml)
-        if (isset($obpv121_update_counterparty_image_url_request)) {
+        if (isset($update_counterparty_image_url_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv121_update_counterparty_image_url_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_counterparty_image_url_request));
             } else {
-                $httpBody = $obpv121_update_counterparty_image_url_request;
+                $httpBody = $update_counterparty_image_url_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -936,9 +936,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -963,7 +963,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyMoreInfo
+     * Operation addCounterpartyMoreInfo
      *
      * Add Counterparty More Info
      *
@@ -971,21 +971,21 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyMoreInfoRequest $obpv121_update_counterparty_more_info_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyMoreInfo'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyMoreInfoRequest $update_counterparty_more_info_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyMoreInfo'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
      */
-    public function oBPv121AddCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyMoreInfo'][0])
+    public function addCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, string $contentType = self::contentTypes['addCounterpartyMoreInfo'][0])
     {
-        list($response) = $this->oBPv121AddCounterpartyMoreInfoWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, $contentType);
+        list($response) = $this->addCounterpartyMoreInfoWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv121AddCounterpartyMoreInfoWithHttpInfo
+     * Operation addCounterpartyMoreInfoWithHttpInfo
      *
      * Add Counterparty More Info
      *
@@ -993,16 +993,16 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyMoreInfoRequest $obpv121_update_counterparty_more_info_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyMoreInfo'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyMoreInfoRequest $update_counterparty_more_info_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyMoreInfo'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121AddCounterpartyMoreInfoWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyMoreInfo'][0])
+    public function addCounterpartyMoreInfoWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, string $contentType = self::contentTypes['addCounterpartyMoreInfo'][0])
     {
-        $request = $this->oBPv121AddCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, $contentType);
+        $request = $this->addCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1030,7 +1030,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $request,
                         $response,
                     );
@@ -1052,7 +1052,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                 $request,
                 $response,
             );
@@ -1061,7 +1061,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1074,7 +1074,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyMoreInfoAsync
+     * Operation addCounterpartyMoreInfoAsync
      *
      * Add Counterparty More Info
      *
@@ -1082,15 +1082,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyMoreInfoRequest $obpv121_update_counterparty_more_info_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyMoreInfo'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyMoreInfoRequest $update_counterparty_more_info_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyMoreInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121AddCounterpartyMoreInfoAsync($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyMoreInfo'][0])
+    public function addCounterpartyMoreInfoAsync($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, string $contentType = self::contentTypes['addCounterpartyMoreInfo'][0])
     {
-        return $this->oBPv121AddCounterpartyMoreInfoAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, $contentType)
+        return $this->addCounterpartyMoreInfoAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1099,7 +1099,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyMoreInfoAsyncWithHttpInfo
+     * Operation addCounterpartyMoreInfoAsyncWithHttpInfo
      *
      * Add Counterparty More Info
      *
@@ -1107,16 +1107,16 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyMoreInfoRequest $obpv121_update_counterparty_more_info_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyMoreInfo'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyMoreInfoRequest $update_counterparty_more_info_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyMoreInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121AddCounterpartyMoreInfoAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyMoreInfo'][0])
+    public function addCounterpartyMoreInfoAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, string $contentType = self::contentTypes['addCounterpartyMoreInfo'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv121AddCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->addCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1155,53 +1155,53 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121AddCounterpartyMoreInfo'
+     * Create request for operation 'addCounterpartyMoreInfo'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyMoreInfoRequest $obpv121_update_counterparty_more_info_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyMoreInfo'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyMoreInfoRequest $update_counterparty_more_info_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyMoreInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121AddCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyMoreInfo'][0])
+    public function addCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, string $contentType = self::contentTypes['addCounterpartyMoreInfo'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121AddCounterpartyMoreInfo'
+                'Missing the required parameter $bankid when calling addCounterpartyMoreInfo'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121AddCounterpartyMoreInfo'
+                'Missing the required parameter $accountid when calling addCounterpartyMoreInfo'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121AddCounterpartyMoreInfo'
+                'Missing the required parameter $viewid when calling addCounterpartyMoreInfo'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121AddCounterpartyMoreInfo'
+                'Missing the required parameter $otheraccountid when calling addCounterpartyMoreInfo'
             );
         }
 
-        // verify the required parameter 'obpv121_update_counterparty_more_info_request' is set
-        if ($obpv121_update_counterparty_more_info_request === null || (is_array($obpv121_update_counterparty_more_info_request) && count($obpv121_update_counterparty_more_info_request) === 0)) {
+        // verify the required parameter 'update_counterparty_more_info_request' is set
+        if ($update_counterparty_more_info_request === null || (is_array($update_counterparty_more_info_request) && count($update_counterparty_more_info_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv121_update_counterparty_more_info_request when calling oBPv121AddCounterpartyMoreInfo'
+                'Missing the required parameter $update_counterparty_more_info_request when calling addCounterpartyMoreInfo'
             );
         }
 
@@ -1256,12 +1256,12 @@ class CounterpartyApi
         );
 
         // for model (json/xml)
-        if (isset($obpv121_update_counterparty_more_info_request)) {
+        if (isset($update_counterparty_more_info_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv121_update_counterparty_more_info_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_counterparty_more_info_request));
             } else {
-                $httpBody = $obpv121_update_counterparty_more_info_request;
+                $httpBody = $update_counterparty_more_info_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1297,9 +1297,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1324,7 +1324,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyOpenCorporatesUrl
+     * Operation addCounterpartyOpenCorporatesUrl
      *
      * Add Open Corporates URL to Counterparty
      *
@@ -1332,21 +1332,21 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyOpenCorporatesUrlRequest $obpv121_update_counterparty_open_corporates_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyOpenCorporatesUrlRequest $update_counterparty_open_corporates_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
      */
-    public function oBPv121AddCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyOpenCorporatesUrl'][0])
+    public function addCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['addCounterpartyOpenCorporatesUrl'][0])
     {
-        list($response) = $this->oBPv121AddCounterpartyOpenCorporatesUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, $contentType);
+        list($response) = $this->addCounterpartyOpenCorporatesUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv121AddCounterpartyOpenCorporatesUrlWithHttpInfo
+     * Operation addCounterpartyOpenCorporatesUrlWithHttpInfo
      *
      * Add Open Corporates URL to Counterparty
      *
@@ -1354,16 +1354,16 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyOpenCorporatesUrlRequest $obpv121_update_counterparty_open_corporates_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyOpenCorporatesUrlRequest $update_counterparty_open_corporates_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121AddCounterpartyOpenCorporatesUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyOpenCorporatesUrl'][0])
+    public function addCounterpartyOpenCorporatesUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['addCounterpartyOpenCorporatesUrl'][0])
     {
-        $request = $this->oBPv121AddCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, $contentType);
+        $request = $this->addCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1391,7 +1391,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $request,
                         $response,
                     );
@@ -1413,7 +1413,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                 $request,
                 $response,
             );
@@ -1422,7 +1422,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1435,7 +1435,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyOpenCorporatesUrlAsync
+     * Operation addCounterpartyOpenCorporatesUrlAsync
      *
      * Add Open Corporates URL to Counterparty
      *
@@ -1443,15 +1443,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyOpenCorporatesUrlRequest $obpv121_update_counterparty_open_corporates_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyOpenCorporatesUrlRequest $update_counterparty_open_corporates_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121AddCounterpartyOpenCorporatesUrlAsync($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyOpenCorporatesUrl'][0])
+    public function addCounterpartyOpenCorporatesUrlAsync($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['addCounterpartyOpenCorporatesUrl'][0])
     {
-        return $this->oBPv121AddCounterpartyOpenCorporatesUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, $contentType)
+        return $this->addCounterpartyOpenCorporatesUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1460,7 +1460,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyOpenCorporatesUrlAsyncWithHttpInfo
+     * Operation addCounterpartyOpenCorporatesUrlAsyncWithHttpInfo
      *
      * Add Open Corporates URL to Counterparty
      *
@@ -1468,16 +1468,16 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyOpenCorporatesUrlRequest $obpv121_update_counterparty_open_corporates_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyOpenCorporatesUrlRequest $update_counterparty_open_corporates_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121AddCounterpartyOpenCorporatesUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyOpenCorporatesUrl'][0])
+    public function addCounterpartyOpenCorporatesUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['addCounterpartyOpenCorporatesUrl'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv121AddCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->addCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1516,53 +1516,53 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121AddCounterpartyOpenCorporatesUrl'
+     * Create request for operation 'addCounterpartyOpenCorporatesUrl'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyOpenCorporatesUrlRequest $obpv121_update_counterparty_open_corporates_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyOpenCorporatesUrlRequest $update_counterparty_open_corporates_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121AddCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyOpenCorporatesUrl'][0])
+    public function addCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['addCounterpartyOpenCorporatesUrl'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121AddCounterpartyOpenCorporatesUrl'
+                'Missing the required parameter $bankid when calling addCounterpartyOpenCorporatesUrl'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121AddCounterpartyOpenCorporatesUrl'
+                'Missing the required parameter $accountid when calling addCounterpartyOpenCorporatesUrl'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121AddCounterpartyOpenCorporatesUrl'
+                'Missing the required parameter $viewid when calling addCounterpartyOpenCorporatesUrl'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121AddCounterpartyOpenCorporatesUrl'
+                'Missing the required parameter $otheraccountid when calling addCounterpartyOpenCorporatesUrl'
             );
         }
 
-        // verify the required parameter 'obpv121_update_counterparty_open_corporates_url_request' is set
-        if ($obpv121_update_counterparty_open_corporates_url_request === null || (is_array($obpv121_update_counterparty_open_corporates_url_request) && count($obpv121_update_counterparty_open_corporates_url_request) === 0)) {
+        // verify the required parameter 'update_counterparty_open_corporates_url_request' is set
+        if ($update_counterparty_open_corporates_url_request === null || (is_array($update_counterparty_open_corporates_url_request) && count($update_counterparty_open_corporates_url_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv121_update_counterparty_open_corporates_url_request when calling oBPv121AddCounterpartyOpenCorporatesUrl'
+                'Missing the required parameter $update_counterparty_open_corporates_url_request when calling addCounterpartyOpenCorporatesUrl'
             );
         }
 
@@ -1617,12 +1617,12 @@ class CounterpartyApi
         );
 
         // for model (json/xml)
-        if (isset($obpv121_update_counterparty_open_corporates_url_request)) {
+        if (isset($update_counterparty_open_corporates_url_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv121_update_counterparty_open_corporates_url_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_counterparty_open_corporates_url_request));
             } else {
-                $httpBody = $obpv121_update_counterparty_open_corporates_url_request;
+                $httpBody = $update_counterparty_open_corporates_url_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1671,7 +1671,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyPhysicalLocation
+     * Operation addCounterpartyPhysicalLocation
      *
      * Add physical location to other bank account
      *
@@ -1679,21 +1679,21 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyPhysicalLocationRequest $obpv121_update_counterparty_physical_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyPhysicalLocation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyPhysicalLocationRequest $update_counterparty_physical_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyPhysicalLocation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
      */
-    public function oBPv121AddCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyPhysicalLocation'][0])
+    public function addCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, string $contentType = self::contentTypes['addCounterpartyPhysicalLocation'][0])
     {
-        list($response) = $this->oBPv121AddCounterpartyPhysicalLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, $contentType);
+        list($response) = $this->addCounterpartyPhysicalLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv121AddCounterpartyPhysicalLocationWithHttpInfo
+     * Operation addCounterpartyPhysicalLocationWithHttpInfo
      *
      * Add physical location to other bank account
      *
@@ -1701,16 +1701,16 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyPhysicalLocationRequest $obpv121_update_counterparty_physical_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyPhysicalLocation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyPhysicalLocationRequest $update_counterparty_physical_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyPhysicalLocation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121AddCounterpartyPhysicalLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyPhysicalLocation'][0])
+    public function addCounterpartyPhysicalLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, string $contentType = self::contentTypes['addCounterpartyPhysicalLocation'][0])
     {
-        $request = $this->oBPv121AddCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, $contentType);
+        $request = $this->addCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1738,7 +1738,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $request,
                         $response,
                     );
@@ -1760,7 +1760,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                 $request,
                 $response,
             );
@@ -1769,7 +1769,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1782,7 +1782,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyPhysicalLocationAsync
+     * Operation addCounterpartyPhysicalLocationAsync
      *
      * Add physical location to other bank account
      *
@@ -1790,15 +1790,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyPhysicalLocationRequest $obpv121_update_counterparty_physical_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyPhysicalLocation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyPhysicalLocationRequest $update_counterparty_physical_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyPhysicalLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121AddCounterpartyPhysicalLocationAsync($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyPhysicalLocation'][0])
+    public function addCounterpartyPhysicalLocationAsync($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, string $contentType = self::contentTypes['addCounterpartyPhysicalLocation'][0])
     {
-        return $this->oBPv121AddCounterpartyPhysicalLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, $contentType)
+        return $this->addCounterpartyPhysicalLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1807,7 +1807,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyPhysicalLocationAsyncWithHttpInfo
+     * Operation addCounterpartyPhysicalLocationAsyncWithHttpInfo
      *
      * Add physical location to other bank account
      *
@@ -1815,16 +1815,16 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyPhysicalLocationRequest $obpv121_update_counterparty_physical_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyPhysicalLocation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyPhysicalLocationRequest $update_counterparty_physical_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyPhysicalLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121AddCounterpartyPhysicalLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyPhysicalLocation'][0])
+    public function addCounterpartyPhysicalLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, string $contentType = self::contentTypes['addCounterpartyPhysicalLocation'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv121AddCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->addCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1863,53 +1863,53 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121AddCounterpartyPhysicalLocation'
+     * Create request for operation 'addCounterpartyPhysicalLocation'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyPhysicalLocationRequest $obpv121_update_counterparty_physical_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyPhysicalLocation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyPhysicalLocationRequest $update_counterparty_physical_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyPhysicalLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121AddCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyPhysicalLocation'][0])
+    public function addCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, string $contentType = self::contentTypes['addCounterpartyPhysicalLocation'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121AddCounterpartyPhysicalLocation'
+                'Missing the required parameter $bankid when calling addCounterpartyPhysicalLocation'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121AddCounterpartyPhysicalLocation'
+                'Missing the required parameter $accountid when calling addCounterpartyPhysicalLocation'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121AddCounterpartyPhysicalLocation'
+                'Missing the required parameter $viewid when calling addCounterpartyPhysicalLocation'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121AddCounterpartyPhysicalLocation'
+                'Missing the required parameter $otheraccountid when calling addCounterpartyPhysicalLocation'
             );
         }
 
-        // verify the required parameter 'obpv121_update_counterparty_physical_location_request' is set
-        if ($obpv121_update_counterparty_physical_location_request === null || (is_array($obpv121_update_counterparty_physical_location_request) && count($obpv121_update_counterparty_physical_location_request) === 0)) {
+        // verify the required parameter 'update_counterparty_physical_location_request' is set
+        if ($update_counterparty_physical_location_request === null || (is_array($update_counterparty_physical_location_request) && count($update_counterparty_physical_location_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv121_update_counterparty_physical_location_request when calling oBPv121AddCounterpartyPhysicalLocation'
+                'Missing the required parameter $update_counterparty_physical_location_request when calling addCounterpartyPhysicalLocation'
             );
         }
 
@@ -1964,12 +1964,12 @@ class CounterpartyApi
         );
 
         // for model (json/xml)
-        if (isset($obpv121_update_counterparty_physical_location_request)) {
+        if (isset($update_counterparty_physical_location_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv121_update_counterparty_physical_location_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_counterparty_physical_location_request));
             } else {
-                $httpBody = $obpv121_update_counterparty_physical_location_request;
+                $httpBody = $update_counterparty_physical_location_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2005,9 +2005,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2032,7 +2032,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyPublicAlias
+     * Operation addCounterpartyPublicAlias
      *
      * Add public alias to other bank account
      *
@@ -2040,21 +2040,21 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyPublicAlias'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyPublicAlias'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
      */
-    public function oBPv121AddCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121AddCounterpartyPublicAlias'][0])
+    public function addCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['addCounterpartyPublicAlias'][0])
     {
-        list($response) = $this->oBPv121AddCounterpartyPublicAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, $contentType);
+        list($response) = $this->addCounterpartyPublicAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv121AddCounterpartyPublicAliasWithHttpInfo
+     * Operation addCounterpartyPublicAliasWithHttpInfo
      *
      * Add public alias to other bank account
      *
@@ -2062,16 +2062,16 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyPublicAlias'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyPublicAlias'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121AddCounterpartyPublicAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121AddCounterpartyPublicAlias'][0])
+    public function addCounterpartyPublicAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['addCounterpartyPublicAlias'][0])
     {
-        $request = $this->oBPv121AddCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, $contentType);
+        $request = $this->addCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2099,7 +2099,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $request,
                         $response,
                     );
@@ -2121,7 +2121,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                 $request,
                 $response,
             );
@@ -2130,7 +2130,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2143,7 +2143,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyPublicAliasAsync
+     * Operation addCounterpartyPublicAliasAsync
      *
      * Add public alias to other bank account
      *
@@ -2151,15 +2151,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyPublicAlias'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyPublicAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121AddCounterpartyPublicAliasAsync($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121AddCounterpartyPublicAlias'][0])
+    public function addCounterpartyPublicAliasAsync($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['addCounterpartyPublicAlias'][0])
     {
-        return $this->oBPv121AddCounterpartyPublicAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, $contentType)
+        return $this->addCounterpartyPublicAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2168,7 +2168,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyPublicAliasAsyncWithHttpInfo
+     * Operation addCounterpartyPublicAliasAsyncWithHttpInfo
      *
      * Add public alias to other bank account
      *
@@ -2176,16 +2176,16 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyPublicAlias'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyPublicAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121AddCounterpartyPublicAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121AddCounterpartyPublicAlias'][0])
+    public function addCounterpartyPublicAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['addCounterpartyPublicAlias'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv121AddCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->addCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2224,53 +2224,53 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121AddCounterpartyPublicAlias'
+     * Create request for operation 'addCounterpartyPublicAlias'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyPublicAlias'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyPublicAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121AddCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121AddCounterpartyPublicAlias'][0])
+    public function addCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['addCounterpartyPublicAlias'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121AddCounterpartyPublicAlias'
+                'Missing the required parameter $bankid when calling addCounterpartyPublicAlias'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121AddCounterpartyPublicAlias'
+                'Missing the required parameter $accountid when calling addCounterpartyPublicAlias'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121AddCounterpartyPublicAlias'
+                'Missing the required parameter $viewid when calling addCounterpartyPublicAlias'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121AddCounterpartyPublicAlias'
+                'Missing the required parameter $otheraccountid when calling addCounterpartyPublicAlias'
             );
         }
 
-        // verify the required parameter 'obpv121_get_counterparty_public_alias200_response' is set
-        if ($obpv121_get_counterparty_public_alias200_response === null || (is_array($obpv121_get_counterparty_public_alias200_response) && count($obpv121_get_counterparty_public_alias200_response) === 0)) {
+        // verify the required parameter 'get_counterparty_public_alias200_response' is set
+        if ($get_counterparty_public_alias200_response === null || (is_array($get_counterparty_public_alias200_response) && count($get_counterparty_public_alias200_response) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv121_get_counterparty_public_alias200_response when calling oBPv121AddCounterpartyPublicAlias'
+                'Missing the required parameter $get_counterparty_public_alias200_response when calling addCounterpartyPublicAlias'
             );
         }
 
@@ -2325,12 +2325,12 @@ class CounterpartyApi
         );
 
         // for model (json/xml)
-        if (isset($obpv121_get_counterparty_public_alias200_response)) {
+        if (isset($get_counterparty_public_alias200_response)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv121_get_counterparty_public_alias200_response));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($get_counterparty_public_alias200_response));
             } else {
-                $httpBody = $obpv121_get_counterparty_public_alias200_response;
+                $httpBody = $get_counterparty_public_alias200_response;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2366,9 +2366,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2393,7 +2393,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyUrl
+     * Operation addCounterpartyUrl
      *
      * Add url to other bank account
      *
@@ -2401,21 +2401,21 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyUrlRequest $obpv121_update_counterparty_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyUrl'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyUrlRequest $update_counterparty_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyUrl'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
      */
-    public function oBPv121AddCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyUrl'][0])
+    public function addCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, string $contentType = self::contentTypes['addCounterpartyUrl'][0])
     {
-        list($response) = $this->oBPv121AddCounterpartyUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, $contentType);
+        list($response) = $this->addCounterpartyUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv121AddCounterpartyUrlWithHttpInfo
+     * Operation addCounterpartyUrlWithHttpInfo
      *
      * Add url to other bank account
      *
@@ -2423,16 +2423,16 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyUrlRequest $obpv121_update_counterparty_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyUrl'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyUrlRequest $update_counterparty_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyUrl'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121AddCounterpartyUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyUrl'][0])
+    public function addCounterpartyUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, string $contentType = self::contentTypes['addCounterpartyUrl'][0])
     {
-        $request = $this->oBPv121AddCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, $contentType);
+        $request = $this->addCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2460,7 +2460,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $request,
                         $response,
                     );
@@ -2482,7 +2482,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                 $request,
                 $response,
             );
@@ -2491,7 +2491,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2504,7 +2504,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyUrlAsync
+     * Operation addCounterpartyUrlAsync
      *
      * Add url to other bank account
      *
@@ -2512,15 +2512,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyUrlRequest $obpv121_update_counterparty_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyUrl'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyUrlRequest $update_counterparty_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121AddCounterpartyUrlAsync($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyUrl'][0])
+    public function addCounterpartyUrlAsync($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, string $contentType = self::contentTypes['addCounterpartyUrl'][0])
     {
-        return $this->oBPv121AddCounterpartyUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, $contentType)
+        return $this->addCounterpartyUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2529,7 +2529,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddCounterpartyUrlAsyncWithHttpInfo
+     * Operation addCounterpartyUrlAsyncWithHttpInfo
      *
      * Add url to other bank account
      *
@@ -2537,16 +2537,16 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyUrlRequest $obpv121_update_counterparty_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyUrl'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyUrlRequest $update_counterparty_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121AddCounterpartyUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyUrl'][0])
+    public function addCounterpartyUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, string $contentType = self::contentTypes['addCounterpartyUrl'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv121AddCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->addCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2585,53 +2585,53 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121AddCounterpartyUrl'
+     * Create request for operation 'addCounterpartyUrl'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyUrlRequest $obpv121_update_counterparty_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddCounterpartyUrl'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateCounterpartyUrlRequest $update_counterparty_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCounterpartyUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121AddCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, string $contentType = self::contentTypes['oBPv121AddCounterpartyUrl'][0])
+    public function addCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, string $contentType = self::contentTypes['addCounterpartyUrl'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121AddCounterpartyUrl'
+                'Missing the required parameter $bankid when calling addCounterpartyUrl'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121AddCounterpartyUrl'
+                'Missing the required parameter $accountid when calling addCounterpartyUrl'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121AddCounterpartyUrl'
+                'Missing the required parameter $viewid when calling addCounterpartyUrl'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121AddCounterpartyUrl'
+                'Missing the required parameter $otheraccountid when calling addCounterpartyUrl'
             );
         }
 
-        // verify the required parameter 'obpv121_update_counterparty_url_request' is set
-        if ($obpv121_update_counterparty_url_request === null || (is_array($obpv121_update_counterparty_url_request) && count($obpv121_update_counterparty_url_request) === 0)) {
+        // verify the required parameter 'update_counterparty_url_request' is set
+        if ($update_counterparty_url_request === null || (is_array($update_counterparty_url_request) && count($update_counterparty_url_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv121_update_counterparty_url_request when calling oBPv121AddCounterpartyUrl'
+                'Missing the required parameter $update_counterparty_url_request when calling addCounterpartyUrl'
             );
         }
 
@@ -2686,12 +2686,12 @@ class CounterpartyApi
         );
 
         // for model (json/xml)
-        if (isset($obpv121_update_counterparty_url_request)) {
+        if (isset($update_counterparty_url_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv121_update_counterparty_url_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_counterparty_url_request));
             } else {
-                $httpBody = $obpv121_update_counterparty_url_request;
+                $httpBody = $update_counterparty_url_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2727,9 +2727,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2754,7 +2754,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddOtherAccountPrivateAlias
+     * Operation addOtherAccountPrivateAlias
      *
      * Create Other Account Private Alias
      *
@@ -2762,21 +2762,21 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddOtherAccountPrivateAlias'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOtherAccountPrivateAlias'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
      */
-    public function oBPv121AddOtherAccountPrivateAlias($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121AddOtherAccountPrivateAlias'][0])
+    public function addOtherAccountPrivateAlias($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['addOtherAccountPrivateAlias'][0])
     {
-        list($response) = $this->oBPv121AddOtherAccountPrivateAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, $contentType);
+        list($response) = $this->addOtherAccountPrivateAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv121AddOtherAccountPrivateAliasWithHttpInfo
+     * Operation addOtherAccountPrivateAliasWithHttpInfo
      *
      * Create Other Account Private Alias
      *
@@ -2784,16 +2784,16 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddOtherAccountPrivateAlias'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOtherAccountPrivateAlias'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121AddOtherAccountPrivateAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121AddOtherAccountPrivateAlias'][0])
+    public function addOtherAccountPrivateAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['addOtherAccountPrivateAlias'][0])
     {
-        $request = $this->oBPv121AddOtherAccountPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, $contentType);
+        $request = $this->addOtherAccountPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2821,7 +2821,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $request,
                         $response,
                     );
@@ -2843,7 +2843,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                 $request,
                 $response,
             );
@@ -2852,7 +2852,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2865,7 +2865,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddOtherAccountPrivateAliasAsync
+     * Operation addOtherAccountPrivateAliasAsync
      *
      * Create Other Account Private Alias
      *
@@ -2873,15 +2873,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddOtherAccountPrivateAlias'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOtherAccountPrivateAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121AddOtherAccountPrivateAliasAsync($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121AddOtherAccountPrivateAlias'][0])
+    public function addOtherAccountPrivateAliasAsync($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['addOtherAccountPrivateAlias'][0])
     {
-        return $this->oBPv121AddOtherAccountPrivateAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, $contentType)
+        return $this->addOtherAccountPrivateAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2890,7 +2890,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121AddOtherAccountPrivateAliasAsyncWithHttpInfo
+     * Operation addOtherAccountPrivateAliasAsyncWithHttpInfo
      *
      * Create Other Account Private Alias
      *
@@ -2898,16 +2898,16 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddOtherAccountPrivateAlias'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOtherAccountPrivateAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121AddOtherAccountPrivateAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121AddOtherAccountPrivateAlias'][0])
+    public function addOtherAccountPrivateAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['addOtherAccountPrivateAlias'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv121AddOtherAccountPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->addOtherAccountPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2946,53 +2946,53 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121AddOtherAccountPrivateAlias'
+     * Create request for operation 'addOtherAccountPrivateAlias'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121AddOtherAccountPrivateAlias'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOtherAccountPrivateAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121AddOtherAccountPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121AddOtherAccountPrivateAlias'][0])
+    public function addOtherAccountPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['addOtherAccountPrivateAlias'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121AddOtherAccountPrivateAlias'
+                'Missing the required parameter $bankid when calling addOtherAccountPrivateAlias'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121AddOtherAccountPrivateAlias'
+                'Missing the required parameter $accountid when calling addOtherAccountPrivateAlias'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121AddOtherAccountPrivateAlias'
+                'Missing the required parameter $viewid when calling addOtherAccountPrivateAlias'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121AddOtherAccountPrivateAlias'
+                'Missing the required parameter $otheraccountid when calling addOtherAccountPrivateAlias'
             );
         }
 
-        // verify the required parameter 'obpv121_get_counterparty_public_alias200_response' is set
-        if ($obpv121_get_counterparty_public_alias200_response === null || (is_array($obpv121_get_counterparty_public_alias200_response) && count($obpv121_get_counterparty_public_alias200_response) === 0)) {
+        // verify the required parameter 'get_counterparty_public_alias200_response' is set
+        if ($get_counterparty_public_alias200_response === null || (is_array($get_counterparty_public_alias200_response) && count($get_counterparty_public_alias200_response) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv121_get_counterparty_public_alias200_response when calling oBPv121AddOtherAccountPrivateAlias'
+                'Missing the required parameter $get_counterparty_public_alias200_response when calling addOtherAccountPrivateAlias'
             );
         }
 
@@ -3047,12 +3047,12 @@ class CounterpartyApi
         );
 
         // for model (json/xml)
-        if (isset($obpv121_get_counterparty_public_alias200_response)) {
+        if (isset($get_counterparty_public_alias200_response)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv121_get_counterparty_public_alias200_response));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($get_counterparty_public_alias200_response));
             } else {
-                $httpBody = $obpv121_get_counterparty_public_alias200_response;
+                $httpBody = $get_counterparty_public_alias200_response;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3088,9 +3088,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3115,7 +3115,689 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyCorporateLocation
+     * Operation createCounterparty
+     *
+     * Create Counterparty (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCounterpartyForAnyAccountRequest $create_counterparty_for_any_account_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCounterparty'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetExplicitCounterpartyById200Response
+     */
+    public function createCounterparty($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, string $contentType = self::contentTypes['createCounterparty'][0])
+    {
+        list($response) = $this->createCounterpartyWithHttpInfo($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createCounterpartyWithHttpInfo
+     *
+     * Create Counterparty (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCounterpartyForAnyAccountRequest $create_counterparty_for_any_account_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCounterparty'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetExplicitCounterpartyById200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createCounterpartyWithHttpInfo($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, string $contentType = self::contentTypes['createCounterparty'][0])
+    {
+        $request = $this->createCounterpartyRequest($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetExplicitCounterpartyById200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetExplicitCounterpartyById200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetExplicitCounterpartyById200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createCounterpartyAsync
+     *
+     * Create Counterparty (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCounterpartyForAnyAccountRequest $create_counterparty_for_any_account_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCounterparty'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createCounterpartyAsync($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, string $contentType = self::contentTypes['createCounterparty'][0])
+    {
+        return $this->createCounterpartyAsyncWithHttpInfo($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createCounterpartyAsyncWithHttpInfo
+     *
+     * Create Counterparty (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCounterpartyForAnyAccountRequest $create_counterparty_for_any_account_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCounterparty'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createCounterpartyAsyncWithHttpInfo($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, string $contentType = self::contentTypes['createCounterparty'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetExplicitCounterpartyById200Response';
+        $request = $this->createCounterpartyRequest($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createCounterparty'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCounterpartyForAnyAccountRequest $create_counterparty_for_any_account_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCounterparty'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createCounterpartyRequest($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, string $contentType = self::contentTypes['createCounterparty'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling createCounterparty'
+            );
+        }
+
+        // verify the required parameter 'accountid' is set
+        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $accountid when calling createCounterparty'
+            );
+        }
+
+        // verify the required parameter 'viewid' is set
+        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $viewid when calling createCounterparty'
+            );
+        }
+
+        // verify the required parameter 'create_counterparty_for_any_account_request' is set
+        if ($create_counterparty_for_any_account_request === null || (is_array($create_counterparty_for_any_account_request) && count($create_counterparty_for_any_account_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_counterparty_for_any_account_request when calling createCounterparty'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($accountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountid' . '}',
+                ObjectSerializer::toPathValue($accountid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($viewid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'viewid' . '}',
+                ObjectSerializer::toPathValue($viewid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_counterparty_for_any_account_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_counterparty_for_any_account_request));
+            } else {
+                $httpBody = $create_counterparty_for_any_account_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createCounterpartyForAnyAccount
+     *
+     * Create Counterparty for any account (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCounterpartyForAnyAccountRequest $create_counterparty_for_any_account_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCounterpartyForAnyAccount'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetExplicitCounterpartyById200Response
+     */
+    public function createCounterpartyForAnyAccount($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, string $contentType = self::contentTypes['createCounterpartyForAnyAccount'][0])
+    {
+        list($response) = $this->createCounterpartyForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createCounterpartyForAnyAccountWithHttpInfo
+     *
+     * Create Counterparty for any account (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCounterpartyForAnyAccountRequest $create_counterparty_for_any_account_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCounterpartyForAnyAccount'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetExplicitCounterpartyById200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createCounterpartyForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, string $contentType = self::contentTypes['createCounterpartyForAnyAccount'][0])
+    {
+        $request = $this->createCounterpartyForAnyAccountRequest($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetExplicitCounterpartyById200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetExplicitCounterpartyById200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetExplicitCounterpartyById200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createCounterpartyForAnyAccountAsync
+     *
+     * Create Counterparty for any account (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCounterpartyForAnyAccountRequest $create_counterparty_for_any_account_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCounterpartyForAnyAccount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createCounterpartyForAnyAccountAsync($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, string $contentType = self::contentTypes['createCounterpartyForAnyAccount'][0])
+    {
+        return $this->createCounterpartyForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createCounterpartyForAnyAccountAsyncWithHttpInfo
+     *
+     * Create Counterparty for any account (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCounterpartyForAnyAccountRequest $create_counterparty_for_any_account_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCounterpartyForAnyAccount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createCounterpartyForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, string $contentType = self::contentTypes['createCounterpartyForAnyAccount'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetExplicitCounterpartyById200Response';
+        $request = $this->createCounterpartyForAnyAccountRequest($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createCounterpartyForAnyAccount'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCounterpartyForAnyAccountRequest $create_counterparty_for_any_account_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCounterpartyForAnyAccount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createCounterpartyForAnyAccountRequest($bankid, $accountid, $viewid, $create_counterparty_for_any_account_request, string $contentType = self::contentTypes['createCounterpartyForAnyAccount'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling createCounterpartyForAnyAccount'
+            );
+        }
+
+        // verify the required parameter 'accountid' is set
+        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $accountid when calling createCounterpartyForAnyAccount'
+            );
+        }
+
+        // verify the required parameter 'viewid' is set
+        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $viewid when calling createCounterpartyForAnyAccount'
+            );
+        }
+
+        // verify the required parameter 'create_counterparty_for_any_account_request' is set
+        if ($create_counterparty_for_any_account_request === null || (is_array($create_counterparty_for_any_account_request) && count($create_counterparty_for_any_account_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_counterparty_for_any_account_request when calling createCounterpartyForAnyAccount'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($accountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountid' . '}',
+                ObjectSerializer::toPathValue($accountid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($viewid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'viewid' . '}',
+                ObjectSerializer::toPathValue($viewid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_counterparty_for_any_account_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_counterparty_for_any_account_request));
+            } else {
+                $httpBody = $create_counterparty_for_any_account_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteCounterpartyCorporateLocation
      *
      * Delete Counterparty Corporate Location
      *
@@ -3123,19 +3805,19 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyCorporateLocation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyCorporateLocation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv121DeleteCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyCorporateLocation'][0])
+    public function deleteCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyCorporateLocation'][0])
     {
-        $this->oBPv121DeleteCounterpartyCorporateLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $this->deleteCounterpartyCorporateLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyCorporateLocationWithHttpInfo
+     * Operation deleteCounterpartyCorporateLocationWithHttpInfo
      *
      * Delete Counterparty Corporate Location
      *
@@ -3143,15 +3825,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyCorporateLocation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyCorporateLocation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121DeleteCounterpartyCorporateLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyCorporateLocation'][0])
+    public function deleteCounterpartyCorporateLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyCorporateLocation'][0])
     {
-        $request = $this->oBPv121DeleteCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->deleteCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3187,7 +3869,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyCorporateLocationAsync
+     * Operation deleteCounterpartyCorporateLocationAsync
      *
      * Delete Counterparty Corporate Location
      *
@@ -3195,14 +3877,14 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyCorporateLocation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyCorporateLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121DeleteCounterpartyCorporateLocationAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyCorporateLocation'][0])
+    public function deleteCounterpartyCorporateLocationAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyCorporateLocation'][0])
     {
-        return $this->oBPv121DeleteCounterpartyCorporateLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
+        return $this->deleteCounterpartyCorporateLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3211,7 +3893,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyCorporateLocationAsyncWithHttpInfo
+     * Operation deleteCounterpartyCorporateLocationAsyncWithHttpInfo
      *
      * Delete Counterparty Corporate Location
      *
@@ -3219,15 +3901,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyCorporateLocation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyCorporateLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121DeleteCounterpartyCorporateLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyCorporateLocation'][0])
+    public function deleteCounterpartyCorporateLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyCorporateLocation'][0])
     {
         $returnType = '';
-        $request = $this->oBPv121DeleteCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->deleteCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3253,45 +3935,45 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121DeleteCounterpartyCorporateLocation'
+     * Create request for operation 'deleteCounterpartyCorporateLocation'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyCorporateLocation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyCorporateLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121DeleteCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyCorporateLocation'][0])
+    public function deleteCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyCorporateLocation'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121DeleteCounterpartyCorporateLocation'
+                'Missing the required parameter $bankid when calling deleteCounterpartyCorporateLocation'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121DeleteCounterpartyCorporateLocation'
+                'Missing the required parameter $accountid when calling deleteCounterpartyCorporateLocation'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121DeleteCounterpartyCorporateLocation'
+                'Missing the required parameter $viewid when calling deleteCounterpartyCorporateLocation'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121DeleteCounterpartyCorporateLocation'
+                'Missing the required parameter $otheraccountid when calling deleteCounterpartyCorporateLocation'
             );
         }
 
@@ -3380,9 +4062,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3407,43 +4089,43 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyImageUrl
+     * Operation deleteCounterpartyForAnyAccount
      *
-     * Delete Counterparty Image URL
+     * Delete Counterparty for any account (Explicit)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyImageUrl'] to see the possible values for this operation
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyForAnyAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv121DeleteCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyImageUrl'][0])
+    public function deleteCounterpartyForAnyAccount($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['deleteCounterpartyForAnyAccount'][0])
     {
-        $this->oBPv121DeleteCounterpartyImageUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $this->deleteCounterpartyForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType);
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyImageUrlWithHttpInfo
+     * Operation deleteCounterpartyForAnyAccountWithHttpInfo
      *
-     * Delete Counterparty Image URL
+     * Delete Counterparty for any account (Explicit)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyImageUrl'] to see the possible values for this operation
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyForAnyAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121DeleteCounterpartyImageUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyImageUrl'][0])
+    public function deleteCounterpartyForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['deleteCounterpartyForAnyAccount'][0])
     {
-        $request = $this->oBPv121DeleteCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->deleteCounterpartyForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3479,22 +4161,22 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyImageUrlAsync
+     * Operation deleteCounterpartyForAnyAccountAsync
      *
-     * Delete Counterparty Image URL
+     * Delete Counterparty for any account (Explicit)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyImageUrl'] to see the possible values for this operation
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyForAnyAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121DeleteCounterpartyImageUrlAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyImageUrl'][0])
+    public function deleteCounterpartyForAnyAccountAsync($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['deleteCounterpartyForAnyAccount'][0])
     {
-        return $this->oBPv121DeleteCounterpartyImageUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
+        return $this->deleteCounterpartyForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3503,23 +4185,23 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyImageUrlAsyncWithHttpInfo
+     * Operation deleteCounterpartyForAnyAccountAsyncWithHttpInfo
      *
-     * Delete Counterparty Image URL
+     * Delete Counterparty for any account (Explicit)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyImageUrl'] to see the possible values for this operation
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyForAnyAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121DeleteCounterpartyImageUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyImageUrl'][0])
+    public function deleteCounterpartyForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['deleteCounterpartyForAnyAccount'][0])
     {
         $returnType = '';
-        $request = $this->oBPv121DeleteCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->deleteCounterpartyForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3545,45 +4227,337 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121DeleteCounterpartyImageUrl'
+     * Create request for operation 'deleteCounterpartyForAnyAccount'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyImageUrl'] to see the possible values for this operation
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyForAnyAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121DeleteCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyImageUrl'][0])
+    public function deleteCounterpartyForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['deleteCounterpartyForAnyAccount'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121DeleteCounterpartyImageUrl'
+                'Missing the required parameter $bankid when calling deleteCounterpartyForAnyAccount'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121DeleteCounterpartyImageUrl'
+                'Missing the required parameter $accountid when calling deleteCounterpartyForAnyAccount'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121DeleteCounterpartyImageUrl'
+                'Missing the required parameter $viewid when calling deleteCounterpartyForAnyAccount'
+            );
+        }
+
+        // verify the required parameter 'counterpartyid' is set
+        if ($counterpartyid === null || (is_array($counterpartyid) && count($counterpartyid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $counterpartyid when calling deleteCounterpartyForAnyAccount'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($accountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountid' . '}',
+                ObjectSerializer::toPathValue($accountid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($viewid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'viewid' . '}',
+                ObjectSerializer::toPathValue($viewid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($counterpartyid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'counterpartyid' . '}',
+                ObjectSerializer::toPathValue($counterpartyid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'DELETE',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteCounterpartyImageUrl
+     *
+     * Delete Counterparty Image URL
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyImageUrl'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyImageUrl'][0])
+    {
+        $this->deleteCounterpartyImageUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+    }
+
+    /**
+     * Operation deleteCounterpartyImageUrlWithHttpInfo
+     *
+     * Delete Counterparty Image URL
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyImageUrl'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteCounterpartyImageUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyImageUrl'][0])
+    {
+        $request = $this->deleteCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteCounterpartyImageUrlAsync
+     *
+     * Delete Counterparty Image URL
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyImageUrl'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteCounterpartyImageUrlAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyImageUrl'][0])
+    {
+        return $this->deleteCounterpartyImageUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteCounterpartyImageUrlAsyncWithHttpInfo
+     *
+     * Delete Counterparty Image URL
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyImageUrl'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteCounterpartyImageUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyImageUrl'][0])
+    {
+        $returnType = '';
+        $request = $this->deleteCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteCounterpartyImageUrl'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyImageUrl'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyImageUrl'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling deleteCounterpartyImageUrl'
+            );
+        }
+
+        // verify the required parameter 'accountid' is set
+        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $accountid when calling deleteCounterpartyImageUrl'
+            );
+        }
+
+        // verify the required parameter 'viewid' is set
+        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $viewid when calling deleteCounterpartyImageUrl'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121DeleteCounterpartyImageUrl'
+                'Missing the required parameter $otheraccountid when calling deleteCounterpartyImageUrl'
             );
         }
 
@@ -3685,7 +4659,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyMoreInfo
+     * Operation deleteCounterpartyMoreInfo
      *
      * Delete more info of other bank account
      *
@@ -3693,19 +4667,19 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyMoreInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyMoreInfo'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv121DeleteCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyMoreInfo'][0])
+    public function deleteCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyMoreInfo'][0])
     {
-        $this->oBPv121DeleteCounterpartyMoreInfoWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $this->deleteCounterpartyMoreInfoWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyMoreInfoWithHttpInfo
+     * Operation deleteCounterpartyMoreInfoWithHttpInfo
      *
      * Delete more info of other bank account
      *
@@ -3713,15 +4687,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyMoreInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyMoreInfo'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121DeleteCounterpartyMoreInfoWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyMoreInfo'][0])
+    public function deleteCounterpartyMoreInfoWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyMoreInfo'][0])
     {
-        $request = $this->oBPv121DeleteCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->deleteCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3757,7 +4731,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyMoreInfoAsync
+     * Operation deleteCounterpartyMoreInfoAsync
      *
      * Delete more info of other bank account
      *
@@ -3765,14 +4739,14 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyMoreInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyMoreInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121DeleteCounterpartyMoreInfoAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyMoreInfo'][0])
+    public function deleteCounterpartyMoreInfoAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyMoreInfo'][0])
     {
-        return $this->oBPv121DeleteCounterpartyMoreInfoAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
+        return $this->deleteCounterpartyMoreInfoAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3781,7 +4755,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyMoreInfoAsyncWithHttpInfo
+     * Operation deleteCounterpartyMoreInfoAsyncWithHttpInfo
      *
      * Delete more info of other bank account
      *
@@ -3789,15 +4763,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyMoreInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyMoreInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121DeleteCounterpartyMoreInfoAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyMoreInfo'][0])
+    public function deleteCounterpartyMoreInfoAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyMoreInfo'][0])
     {
         $returnType = '';
-        $request = $this->oBPv121DeleteCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->deleteCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3823,45 +4797,45 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121DeleteCounterpartyMoreInfo'
+     * Create request for operation 'deleteCounterpartyMoreInfo'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyMoreInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyMoreInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121DeleteCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyMoreInfo'][0])
+    public function deleteCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyMoreInfo'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121DeleteCounterpartyMoreInfo'
+                'Missing the required parameter $bankid when calling deleteCounterpartyMoreInfo'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121DeleteCounterpartyMoreInfo'
+                'Missing the required parameter $accountid when calling deleteCounterpartyMoreInfo'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121DeleteCounterpartyMoreInfo'
+                'Missing the required parameter $viewid when calling deleteCounterpartyMoreInfo'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121DeleteCounterpartyMoreInfo'
+                'Missing the required parameter $otheraccountid when calling deleteCounterpartyMoreInfo'
             );
         }
 
@@ -3950,9 +4924,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3977,7 +4951,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyOpenCorporatesUrl
+     * Operation deleteCounterpartyOpenCorporatesUrl
      *
      * Delete Counterparty Open Corporates URL
      *
@@ -3985,19 +4959,19 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv121DeleteCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyOpenCorporatesUrl'][0])
+    public function deleteCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyOpenCorporatesUrl'][0])
     {
-        $this->oBPv121DeleteCounterpartyOpenCorporatesUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $this->deleteCounterpartyOpenCorporatesUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyOpenCorporatesUrlWithHttpInfo
+     * Operation deleteCounterpartyOpenCorporatesUrlWithHttpInfo
      *
      * Delete Counterparty Open Corporates URL
      *
@@ -4005,15 +4979,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121DeleteCounterpartyOpenCorporatesUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyOpenCorporatesUrl'][0])
+    public function deleteCounterpartyOpenCorporatesUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyOpenCorporatesUrl'][0])
     {
-        $request = $this->oBPv121DeleteCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->deleteCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4049,7 +5023,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyOpenCorporatesUrlAsync
+     * Operation deleteCounterpartyOpenCorporatesUrlAsync
      *
      * Delete Counterparty Open Corporates URL
      *
@@ -4057,14 +5031,14 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121DeleteCounterpartyOpenCorporatesUrlAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyOpenCorporatesUrl'][0])
+    public function deleteCounterpartyOpenCorporatesUrlAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyOpenCorporatesUrl'][0])
     {
-        return $this->oBPv121DeleteCounterpartyOpenCorporatesUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
+        return $this->deleteCounterpartyOpenCorporatesUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4073,7 +5047,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyOpenCorporatesUrlAsyncWithHttpInfo
+     * Operation deleteCounterpartyOpenCorporatesUrlAsyncWithHttpInfo
      *
      * Delete Counterparty Open Corporates URL
      *
@@ -4081,15 +5055,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121DeleteCounterpartyOpenCorporatesUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyOpenCorporatesUrl'][0])
+    public function deleteCounterpartyOpenCorporatesUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyOpenCorporatesUrl'][0])
     {
         $returnType = '';
-        $request = $this->oBPv121DeleteCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->deleteCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4115,45 +5089,45 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121DeleteCounterpartyOpenCorporatesUrl'
+     * Create request for operation 'deleteCounterpartyOpenCorporatesUrl'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121DeleteCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyOpenCorporatesUrl'][0])
+    public function deleteCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyOpenCorporatesUrl'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121DeleteCounterpartyOpenCorporatesUrl'
+                'Missing the required parameter $bankid when calling deleteCounterpartyOpenCorporatesUrl'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121DeleteCounterpartyOpenCorporatesUrl'
+                'Missing the required parameter $accountid when calling deleteCounterpartyOpenCorporatesUrl'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121DeleteCounterpartyOpenCorporatesUrl'
+                'Missing the required parameter $viewid when calling deleteCounterpartyOpenCorporatesUrl'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121DeleteCounterpartyOpenCorporatesUrl'
+                'Missing the required parameter $otheraccountid when calling deleteCounterpartyOpenCorporatesUrl'
             );
         }
 
@@ -4242,9 +5216,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -4269,7 +5243,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyPhysicalLocation
+     * Operation deleteCounterpartyPhysicalLocation
      *
      * Delete Counterparty Physical Location
      *
@@ -4277,19 +5251,19 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyPhysicalLocation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyPhysicalLocation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv121DeleteCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyPhysicalLocation'][0])
+    public function deleteCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyPhysicalLocation'][0])
     {
-        $this->oBPv121DeleteCounterpartyPhysicalLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $this->deleteCounterpartyPhysicalLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyPhysicalLocationWithHttpInfo
+     * Operation deleteCounterpartyPhysicalLocationWithHttpInfo
      *
      * Delete Counterparty Physical Location
      *
@@ -4297,15 +5271,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyPhysicalLocation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyPhysicalLocation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121DeleteCounterpartyPhysicalLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyPhysicalLocation'][0])
+    public function deleteCounterpartyPhysicalLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyPhysicalLocation'][0])
     {
-        $request = $this->oBPv121DeleteCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->deleteCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4341,7 +5315,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyPhysicalLocationAsync
+     * Operation deleteCounterpartyPhysicalLocationAsync
      *
      * Delete Counterparty Physical Location
      *
@@ -4349,14 +5323,14 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyPhysicalLocation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyPhysicalLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121DeleteCounterpartyPhysicalLocationAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyPhysicalLocation'][0])
+    public function deleteCounterpartyPhysicalLocationAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyPhysicalLocation'][0])
     {
-        return $this->oBPv121DeleteCounterpartyPhysicalLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
+        return $this->deleteCounterpartyPhysicalLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4365,7 +5339,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyPhysicalLocationAsyncWithHttpInfo
+     * Operation deleteCounterpartyPhysicalLocationAsyncWithHttpInfo
      *
      * Delete Counterparty Physical Location
      *
@@ -4373,15 +5347,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyPhysicalLocation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyPhysicalLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121DeleteCounterpartyPhysicalLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyPhysicalLocation'][0])
+    public function deleteCounterpartyPhysicalLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyPhysicalLocation'][0])
     {
         $returnType = '';
-        $request = $this->oBPv121DeleteCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->deleteCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4407,45 +5381,45 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121DeleteCounterpartyPhysicalLocation'
+     * Create request for operation 'deleteCounterpartyPhysicalLocation'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyPhysicalLocation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyPhysicalLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121DeleteCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyPhysicalLocation'][0])
+    public function deleteCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyPhysicalLocation'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121DeleteCounterpartyPhysicalLocation'
+                'Missing the required parameter $bankid when calling deleteCounterpartyPhysicalLocation'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121DeleteCounterpartyPhysicalLocation'
+                'Missing the required parameter $accountid when calling deleteCounterpartyPhysicalLocation'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121DeleteCounterpartyPhysicalLocation'
+                'Missing the required parameter $viewid when calling deleteCounterpartyPhysicalLocation'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121DeleteCounterpartyPhysicalLocation'
+                'Missing the required parameter $otheraccountid when calling deleteCounterpartyPhysicalLocation'
             );
         }
 
@@ -4534,9 +5508,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -4561,7 +5535,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyPrivateAlias
+     * Operation deleteCounterpartyPrivateAlias
      *
      * Delete Counterparty Private Alias
      *
@@ -4569,19 +5543,19 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyPrivateAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyPrivateAlias'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv121DeleteCounterpartyPrivateAlias($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyPrivateAlias'][0])
+    public function deleteCounterpartyPrivateAlias($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyPrivateAlias'][0])
     {
-        $this->oBPv121DeleteCounterpartyPrivateAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $this->deleteCounterpartyPrivateAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyPrivateAliasWithHttpInfo
+     * Operation deleteCounterpartyPrivateAliasWithHttpInfo
      *
      * Delete Counterparty Private Alias
      *
@@ -4589,15 +5563,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyPrivateAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyPrivateAlias'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121DeleteCounterpartyPrivateAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyPrivateAlias'][0])
+    public function deleteCounterpartyPrivateAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyPrivateAlias'][0])
     {
-        $request = $this->oBPv121DeleteCounterpartyPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->deleteCounterpartyPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4633,7 +5607,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyPrivateAliasAsync
+     * Operation deleteCounterpartyPrivateAliasAsync
      *
      * Delete Counterparty Private Alias
      *
@@ -4641,14 +5615,14 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyPrivateAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyPrivateAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121DeleteCounterpartyPrivateAliasAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyPrivateAlias'][0])
+    public function deleteCounterpartyPrivateAliasAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyPrivateAlias'][0])
     {
-        return $this->oBPv121DeleteCounterpartyPrivateAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
+        return $this->deleteCounterpartyPrivateAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4657,7 +5631,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyPrivateAliasAsyncWithHttpInfo
+     * Operation deleteCounterpartyPrivateAliasAsyncWithHttpInfo
      *
      * Delete Counterparty Private Alias
      *
@@ -4665,15 +5639,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyPrivateAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyPrivateAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121DeleteCounterpartyPrivateAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyPrivateAlias'][0])
+    public function deleteCounterpartyPrivateAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyPrivateAlias'][0])
     {
         $returnType = '';
-        $request = $this->oBPv121DeleteCounterpartyPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->deleteCounterpartyPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4699,45 +5673,45 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121DeleteCounterpartyPrivateAlias'
+     * Create request for operation 'deleteCounterpartyPrivateAlias'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyPrivateAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyPrivateAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121DeleteCounterpartyPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyPrivateAlias'][0])
+    public function deleteCounterpartyPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyPrivateAlias'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121DeleteCounterpartyPrivateAlias'
+                'Missing the required parameter $bankid when calling deleteCounterpartyPrivateAlias'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121DeleteCounterpartyPrivateAlias'
+                'Missing the required parameter $accountid when calling deleteCounterpartyPrivateAlias'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121DeleteCounterpartyPrivateAlias'
+                'Missing the required parameter $viewid when calling deleteCounterpartyPrivateAlias'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121DeleteCounterpartyPrivateAlias'
+                'Missing the required parameter $otheraccountid when calling deleteCounterpartyPrivateAlias'
             );
         }
 
@@ -4826,9 +5800,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -4853,7 +5827,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyPublicAlias
+     * Operation deleteCounterpartyPublicAlias
      *
      * Delete Counterparty Public Alias
      *
@@ -4861,19 +5835,19 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyPublicAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyPublicAlias'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv121DeleteCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyPublicAlias'][0])
+    public function deleteCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyPublicAlias'][0])
     {
-        $this->oBPv121DeleteCounterpartyPublicAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $this->deleteCounterpartyPublicAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyPublicAliasWithHttpInfo
+     * Operation deleteCounterpartyPublicAliasWithHttpInfo
      *
      * Delete Counterparty Public Alias
      *
@@ -4881,15 +5855,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyPublicAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyPublicAlias'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121DeleteCounterpartyPublicAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyPublicAlias'][0])
+    public function deleteCounterpartyPublicAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyPublicAlias'][0])
     {
-        $request = $this->oBPv121DeleteCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->deleteCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4925,7 +5899,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyPublicAliasAsync
+     * Operation deleteCounterpartyPublicAliasAsync
      *
      * Delete Counterparty Public Alias
      *
@@ -4933,14 +5907,14 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyPublicAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyPublicAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121DeleteCounterpartyPublicAliasAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyPublicAlias'][0])
+    public function deleteCounterpartyPublicAliasAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyPublicAlias'][0])
     {
-        return $this->oBPv121DeleteCounterpartyPublicAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
+        return $this->deleteCounterpartyPublicAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4949,7 +5923,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyPublicAliasAsyncWithHttpInfo
+     * Operation deleteCounterpartyPublicAliasAsyncWithHttpInfo
      *
      * Delete Counterparty Public Alias
      *
@@ -4957,15 +5931,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyPublicAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyPublicAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121DeleteCounterpartyPublicAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyPublicAlias'][0])
+    public function deleteCounterpartyPublicAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyPublicAlias'][0])
     {
         $returnType = '';
-        $request = $this->oBPv121DeleteCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->deleteCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4991,45 +5965,45 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121DeleteCounterpartyPublicAlias'
+     * Create request for operation 'deleteCounterpartyPublicAlias'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyPublicAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyPublicAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121DeleteCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyPublicAlias'][0])
+    public function deleteCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyPublicAlias'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121DeleteCounterpartyPublicAlias'
+                'Missing the required parameter $bankid when calling deleteCounterpartyPublicAlias'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121DeleteCounterpartyPublicAlias'
+                'Missing the required parameter $accountid when calling deleteCounterpartyPublicAlias'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121DeleteCounterpartyPublicAlias'
+                'Missing the required parameter $viewid when calling deleteCounterpartyPublicAlias'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121DeleteCounterpartyPublicAlias'
+                'Missing the required parameter $otheraccountid when calling deleteCounterpartyPublicAlias'
             );
         }
 
@@ -5118,9 +6092,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -5145,7 +6119,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyUrl
+     * Operation deleteCounterpartyUrl
      *
      * Delete url of other bank account
      *
@@ -5153,19 +6127,19 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyUrl'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyUrl'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv121DeleteCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyUrl'][0])
+    public function deleteCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyUrl'][0])
     {
-        $this->oBPv121DeleteCounterpartyUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $this->deleteCounterpartyUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyUrlWithHttpInfo
+     * Operation deleteCounterpartyUrlWithHttpInfo
      *
      * Delete url of other bank account
      *
@@ -5173,15 +6147,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyUrl'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyUrl'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121DeleteCounterpartyUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyUrl'][0])
+    public function deleteCounterpartyUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyUrl'][0])
     {
-        $request = $this->oBPv121DeleteCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->deleteCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5217,7 +6191,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyUrlAsync
+     * Operation deleteCounterpartyUrlAsync
      *
      * Delete url of other bank account
      *
@@ -5225,14 +6199,14 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyUrl'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121DeleteCounterpartyUrlAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyUrl'][0])
+    public function deleteCounterpartyUrlAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyUrl'][0])
     {
-        return $this->oBPv121DeleteCounterpartyUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
+        return $this->deleteCounterpartyUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5241,7 +6215,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121DeleteCounterpartyUrlAsyncWithHttpInfo
+     * Operation deleteCounterpartyUrlAsyncWithHttpInfo
      *
      * Delete url of other bank account
      *
@@ -5249,15 +6223,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyUrl'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121DeleteCounterpartyUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyUrl'][0])
+    public function deleteCounterpartyUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyUrl'][0])
     {
         $returnType = '';
-        $request = $this->oBPv121DeleteCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->deleteCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5283,45 +6257,45 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121DeleteCounterpartyUrl'
+     * Create request for operation 'deleteCounterpartyUrl'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121DeleteCounterpartyUrl'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121DeleteCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121DeleteCounterpartyUrl'][0])
+    public function deleteCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['deleteCounterpartyUrl'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121DeleteCounterpartyUrl'
+                'Missing the required parameter $bankid when calling deleteCounterpartyUrl'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121DeleteCounterpartyUrl'
+                'Missing the required parameter $accountid when calling deleteCounterpartyUrl'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121DeleteCounterpartyUrl'
+                'Missing the required parameter $viewid when calling deleteCounterpartyUrl'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121DeleteCounterpartyUrl'
+                'Missing the required parameter $otheraccountid when calling deleteCounterpartyUrl'
             );
         }
 
@@ -5410,9 +6384,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -5437,44 +6411,334 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121GetCounterpartyPublicAlias
+     * Operation deleteExplicitCounterparty
      *
-     * Get public alias of other bank account
+     * Delete Counterparty (Explicit)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetCounterpartyPublicAlias'] to see the possible values for this operation
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteExplicitCounterparty'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response
+     * @return void
      */
-    public function oBPv121GetCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121GetCounterpartyPublicAlias'][0])
+    public function deleteExplicitCounterparty($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['deleteExplicitCounterparty'][0])
     {
-        list($response) = $this->oBPv121GetCounterpartyPublicAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $this->deleteExplicitCounterpartyWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+    }
+
+    /**
+     * Operation deleteExplicitCounterpartyWithHttpInfo
+     *
+     * Delete Counterparty (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteExplicitCounterparty'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteExplicitCounterpartyWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['deleteExplicitCounterparty'][0])
+    {
+        $request = $this->deleteExplicitCounterpartyRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteExplicitCounterpartyAsync
+     *
+     * Delete Counterparty (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteExplicitCounterparty'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteExplicitCounterpartyAsync($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['deleteExplicitCounterparty'][0])
+    {
+        return $this->deleteExplicitCounterpartyAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteExplicitCounterpartyAsyncWithHttpInfo
+     *
+     * Delete Counterparty (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteExplicitCounterparty'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteExplicitCounterpartyAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['deleteExplicitCounterparty'][0])
+    {
+        $returnType = '';
+        $request = $this->deleteExplicitCounterpartyRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteExplicitCounterparty'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteExplicitCounterparty'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteExplicitCounterpartyRequest($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['deleteExplicitCounterparty'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling deleteExplicitCounterparty'
+            );
+        }
+
+        // verify the required parameter 'accountid' is set
+        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $accountid when calling deleteExplicitCounterparty'
+            );
+        }
+
+        // verify the required parameter 'viewid' is set
+        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $viewid when calling deleteExplicitCounterparty'
+            );
+        }
+
+        // verify the required parameter 'counterpartyid' is set
+        if ($counterpartyid === null || (is_array($counterpartyid) && count($counterpartyid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $counterpartyid when calling deleteExplicitCounterparty'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($accountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountid' . '}',
+                ObjectSerializer::toPathValue($accountid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($viewid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'viewid' . '}',
+                ObjectSerializer::toPathValue($viewid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($counterpartyid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'counterpartyid' . '}',
+                ObjectSerializer::toPathValue($counterpartyid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getCounterpartiesForAnyAccount
+     *
+     * Get Counterparties for any account (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartiesForAnyAccount'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetCounterpartiesForAnyAccount200Response
+     */
+    public function getCounterpartiesForAnyAccount($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getCounterpartiesForAnyAccount'][0])
+    {
+        list($response) = $this->getCounterpartiesForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv121GetCounterpartyPublicAliasWithHttpInfo
+     * Operation getCounterpartiesForAnyAccountWithHttpInfo
      *
-     * Get public alias of other bank account
+     * Get Counterparties for any account (Explicit)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetCounterpartyPublicAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartiesForAnyAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCounterpartiesForAnyAccount200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121GetCounterpartyPublicAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121GetCounterpartyPublicAlias'][0])
+    public function getCounterpartiesForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getCounterpartiesForAnyAccount'][0])
     {
-        $request = $this->oBPv121GetCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->getCounterpartiesForAnyAccountRequest($bankid, $accountid, $viewid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5502,7 +6766,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response',
+                        '\OpenBankProject\Model\GetCounterpartiesForAnyAccount200Response',
                         $request,
                         $response,
                     );
@@ -5524,7 +6788,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response',
+                '\OpenBankProject\Model\GetCounterpartiesForAnyAccount200Response',
                 $request,
                 $response,
             );
@@ -5533,7 +6797,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response',
+                        '\OpenBankProject\Model\GetCounterpartiesForAnyAccount200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5546,22 +6810,21 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121GetCounterpartyPublicAliasAsync
+     * Operation getCounterpartiesForAnyAccountAsync
      *
-     * Get public alias of other bank account
+     * Get Counterparties for any account (Explicit)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetCounterpartyPublicAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartiesForAnyAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121GetCounterpartyPublicAliasAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121GetCounterpartyPublicAlias'][0])
+    public function getCounterpartiesForAnyAccountAsync($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getCounterpartiesForAnyAccount'][0])
     {
-        return $this->oBPv121GetCounterpartyPublicAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
+        return $this->getCounterpartiesForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5570,23 +6833,22 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121GetCounterpartyPublicAliasAsyncWithHttpInfo
+     * Operation getCounterpartiesForAnyAccountAsyncWithHttpInfo
      *
-     * Get public alias of other bank account
+     * Get Counterparties for any account (Explicit)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetCounterpartyPublicAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartiesForAnyAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121GetCounterpartyPublicAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121GetCounterpartyPublicAlias'][0])
+    public function getCounterpartiesForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getCounterpartiesForAnyAccount'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response';
-        $request = $this->oBPv121GetCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetCounterpartiesForAnyAccount200Response';
+        $request = $this->getCounterpartiesForAnyAccountRequest($bankid, $accountid, $viewid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5625,50 +6887,42 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121GetCounterpartyPublicAlias'
+     * Create request for operation 'getCounterpartiesForAnyAccount'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetCounterpartyPublicAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartiesForAnyAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121GetCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121GetCounterpartyPublicAlias'][0])
+    public function getCounterpartiesForAnyAccountRequest($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getCounterpartiesForAnyAccount'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121GetCounterpartyPublicAlias'
+                'Missing the required parameter $bankid when calling getCounterpartiesForAnyAccount'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121GetCounterpartyPublicAlias'
+                'Missing the required parameter $accountid when calling getCounterpartiesForAnyAccount'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121GetCounterpartyPublicAlias'
-            );
-        }
-
-        // verify the required parameter 'otheraccountid' is set
-        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121GetCounterpartyPublicAlias'
+                'Missing the required parameter $viewid when calling getCounterpartiesForAnyAccount'
             );
         }
 
 
-        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias';
+        $resourcePath = '/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -5698,14 +6952,6 @@ class CounterpartyApi
             $resourcePath = str_replace(
                 '{' . 'viewid' . '}',
                 ObjectSerializer::toPathValue($viewid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($otheraccountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'otheraccountid' . '}',
-                ObjectSerializer::toPathValue($otheraccountid),
                 $resourcePath
             );
         }
@@ -5752,9 +6998,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -5779,44 +7025,44 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121GetOtherAccountForTransaction
+     * Operation getCounterpartyByIdForAnyAccount
      *
-     * Get Other Account of Transaction
+     * Get Counterparty by Id for any account (Explicit)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $transactionid The TRANSACTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetOtherAccountForTransaction'] to see the possible values for this operation
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyByIdForAnyAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121GetOtherAccountForTransaction200Response
+     * @return \OpenBankProject\Model\GetExplicitCounterpartyById200Response
      */
-    public function oBPv121GetOtherAccountForTransaction($bankid, $accountid, $viewid, $transactionid, string $contentType = self::contentTypes['oBPv121GetOtherAccountForTransaction'][0])
+    public function getCounterpartyByIdForAnyAccount($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getCounterpartyByIdForAnyAccount'][0])
     {
-        list($response) = $this->oBPv121GetOtherAccountForTransactionWithHttpInfo($bankid, $accountid, $viewid, $transactionid, $contentType);
+        list($response) = $this->getCounterpartyByIdForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv121GetOtherAccountForTransactionWithHttpInfo
+     * Operation getCounterpartyByIdForAnyAccountWithHttpInfo
      *
-     * Get Other Account of Transaction
+     * Get Counterparty by Id for any account (Explicit)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $transactionid The TRANSACTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetOtherAccountForTransaction'] to see the possible values for this operation
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyByIdForAnyAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121GetOtherAccountForTransaction200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetExplicitCounterpartyById200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121GetOtherAccountForTransactionWithHttpInfo($bankid, $accountid, $viewid, $transactionid, string $contentType = self::contentTypes['oBPv121GetOtherAccountForTransaction'][0])
+    public function getCounterpartyByIdForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getCounterpartyByIdForAnyAccount'][0])
     {
-        $request = $this->oBPv121GetOtherAccountForTransactionRequest($bankid, $accountid, $viewid, $transactionid, $contentType);
+        $request = $this->getCounterpartyByIdForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5844,7 +7090,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121GetOtherAccountForTransaction200Response',
+                        '\OpenBankProject\Model\GetExplicitCounterpartyById200Response',
                         $request,
                         $response,
                     );
@@ -5866,7 +7112,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121GetOtherAccountForTransaction200Response',
+                '\OpenBankProject\Model\GetExplicitCounterpartyById200Response',
                 $request,
                 $response,
             );
@@ -5875,7 +7121,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121GetOtherAccountForTransaction200Response',
+                        '\OpenBankProject\Model\GetExplicitCounterpartyById200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5888,22 +7134,22 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121GetOtherAccountForTransactionAsync
+     * Operation getCounterpartyByIdForAnyAccountAsync
      *
-     * Get Other Account of Transaction
+     * Get Counterparty by Id for any account (Explicit)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $transactionid The TRANSACTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetOtherAccountForTransaction'] to see the possible values for this operation
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyByIdForAnyAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121GetOtherAccountForTransactionAsync($bankid, $accountid, $viewid, $transactionid, string $contentType = self::contentTypes['oBPv121GetOtherAccountForTransaction'][0])
+    public function getCounterpartyByIdForAnyAccountAsync($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getCounterpartyByIdForAnyAccount'][0])
     {
-        return $this->oBPv121GetOtherAccountForTransactionAsyncWithHttpInfo($bankid, $accountid, $viewid, $transactionid, $contentType)
+        return $this->getCounterpartyByIdForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5912,23 +7158,23 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121GetOtherAccountForTransactionAsyncWithHttpInfo
+     * Operation getCounterpartyByIdForAnyAccountAsyncWithHttpInfo
      *
-     * Get Other Account of Transaction
+     * Get Counterparty by Id for any account (Explicit)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $transactionid The TRANSACTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetOtherAccountForTransaction'] to see the possible values for this operation
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyByIdForAnyAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121GetOtherAccountForTransactionAsyncWithHttpInfo($bankid, $accountid, $viewid, $transactionid, string $contentType = self::contentTypes['oBPv121GetOtherAccountForTransaction'][0])
+    public function getCounterpartyByIdForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getCounterpartyByIdForAnyAccount'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121GetOtherAccountForTransaction200Response';
-        $request = $this->oBPv121GetOtherAccountForTransactionRequest($bankid, $accountid, $viewid, $transactionid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetExplicitCounterpartyById200Response';
+        $request = $this->getCounterpartyByIdForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5967,45 +7213,2077 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121GetOtherAccountForTransaction'
+     * Create request for operation 'getCounterpartyByIdForAnyAccount'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $transactionid The TRANSACTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetOtherAccountForTransaction'] to see the possible values for this operation
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyByIdForAnyAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121GetOtherAccountForTransactionRequest($bankid, $accountid, $viewid, $transactionid, string $contentType = self::contentTypes['oBPv121GetOtherAccountForTransaction'][0])
+    public function getCounterpartyByIdForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getCounterpartyByIdForAnyAccount'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121GetOtherAccountForTransaction'
+                'Missing the required parameter $bankid when calling getCounterpartyByIdForAnyAccount'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121GetOtherAccountForTransaction'
+                'Missing the required parameter $accountid when calling getCounterpartyByIdForAnyAccount'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121GetOtherAccountForTransaction'
+                'Missing the required parameter $viewid when calling getCounterpartyByIdForAnyAccount'
+            );
+        }
+
+        // verify the required parameter 'counterpartyid' is set
+        if ($counterpartyid === null || (is_array($counterpartyid) && count($counterpartyid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $counterpartyid when calling getCounterpartyByIdForAnyAccount'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($accountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountid' . '}',
+                ObjectSerializer::toPathValue($accountid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($viewid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'viewid' . '}',
+                ObjectSerializer::toPathValue($viewid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($counterpartyid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'counterpartyid' . '}',
+                ObjectSerializer::toPathValue($counterpartyid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getCounterpartyByNameForAnyAccount
+     *
+     * Get Counterparty by name for any account (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $counterpartyname The COUNTERPARTYNAME identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyByNameForAnyAccount'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetExplicitCounterpartyById200Response
+     */
+    public function getCounterpartyByNameForAnyAccount($bankid, $accountid, $viewid, $counterpartyname, string $contentType = self::contentTypes['getCounterpartyByNameForAnyAccount'][0])
+    {
+        list($response) = $this->getCounterpartyByNameForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $counterpartyname, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getCounterpartyByNameForAnyAccountWithHttpInfo
+     *
+     * Get Counterparty by name for any account (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $counterpartyname The COUNTERPARTYNAME identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyByNameForAnyAccount'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetExplicitCounterpartyById200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCounterpartyByNameForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $counterpartyname, string $contentType = self::contentTypes['getCounterpartyByNameForAnyAccount'][0])
+    {
+        $request = $this->getCounterpartyByNameForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyname, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetExplicitCounterpartyById200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetExplicitCounterpartyById200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetExplicitCounterpartyById200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCounterpartyByNameForAnyAccountAsync
+     *
+     * Get Counterparty by name for any account (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $counterpartyname The COUNTERPARTYNAME identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyByNameForAnyAccount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCounterpartyByNameForAnyAccountAsync($bankid, $accountid, $viewid, $counterpartyname, string $contentType = self::contentTypes['getCounterpartyByNameForAnyAccount'][0])
+    {
+        return $this->getCounterpartyByNameForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyname, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCounterpartyByNameForAnyAccountAsyncWithHttpInfo
+     *
+     * Get Counterparty by name for any account (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $counterpartyname The COUNTERPARTYNAME identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyByNameForAnyAccount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCounterpartyByNameForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyname, string $contentType = self::contentTypes['getCounterpartyByNameForAnyAccount'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetExplicitCounterpartyById200Response';
+        $request = $this->getCounterpartyByNameForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyname, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCounterpartyByNameForAnyAccount'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $counterpartyname The COUNTERPARTYNAME identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyByNameForAnyAccount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getCounterpartyByNameForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyname, string $contentType = self::contentTypes['getCounterpartyByNameForAnyAccount'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling getCounterpartyByNameForAnyAccount'
+            );
+        }
+
+        // verify the required parameter 'accountid' is set
+        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $accountid when calling getCounterpartyByNameForAnyAccount'
+            );
+        }
+
+        // verify the required parameter 'viewid' is set
+        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $viewid when calling getCounterpartyByNameForAnyAccount'
+            );
+        }
+
+        // verify the required parameter 'counterpartyname' is set
+        if ($counterpartyname === null || (is_array($counterpartyname) && count($counterpartyname) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $counterpartyname when calling getCounterpartyByNameForAnyAccount'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($accountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountid' . '}',
+                ObjectSerializer::toPathValue($accountid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($viewid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'viewid' . '}',
+                ObjectSerializer::toPathValue($viewid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($counterpartyname !== null) {
+            $resourcePath = str_replace(
+                '{' . 'counterpartyname' . '}',
+                ObjectSerializer::toPathValue($counterpartyname),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getCounterpartyPublicAlias
+     *
+     * Get public alias of other bank account
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyPublicAlias'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetCounterpartyPublicAlias200Response
+     */
+    public function getCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getCounterpartyPublicAlias'][0])
+    {
+        list($response) = $this->getCounterpartyPublicAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getCounterpartyPublicAliasWithHttpInfo
+     *
+     * Get public alias of other bank account
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyPublicAlias'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetCounterpartyPublicAlias200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCounterpartyPublicAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getCounterpartyPublicAlias'][0])
+    {
+        $request = $this->getCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetCounterpartyPublicAlias200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetCounterpartyPublicAlias200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetCounterpartyPublicAlias200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCounterpartyPublicAliasAsync
+     *
+     * Get public alias of other bank account
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyPublicAlias'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCounterpartyPublicAliasAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getCounterpartyPublicAlias'][0])
+    {
+        return $this->getCounterpartyPublicAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCounterpartyPublicAliasAsyncWithHttpInfo
+     *
+     * Get public alias of other bank account
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyPublicAlias'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCounterpartyPublicAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getCounterpartyPublicAlias'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetCounterpartyPublicAlias200Response';
+        $request = $this->getCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCounterpartyPublicAlias'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyPublicAlias'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getCounterpartyPublicAlias'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling getCounterpartyPublicAlias'
+            );
+        }
+
+        // verify the required parameter 'accountid' is set
+        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $accountid when calling getCounterpartyPublicAlias'
+            );
+        }
+
+        // verify the required parameter 'viewid' is set
+        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $viewid when calling getCounterpartyPublicAlias'
+            );
+        }
+
+        // verify the required parameter 'otheraccountid' is set
+        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $otheraccountid when calling getCounterpartyPublicAlias'
+            );
+        }
+
+
+        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($accountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountid' . '}',
+                ObjectSerializer::toPathValue($accountid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($viewid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'viewid' . '}',
+                ObjectSerializer::toPathValue($viewid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($otheraccountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'otheraccountid' . '}',
+                ObjectSerializer::toPathValue($otheraccountid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getExplicitCounterpartiesForAccount
+     *
+     * Get Counterparties (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExplicitCounterpartiesForAccount'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetCounterpartiesForAnyAccount200Response
+     */
+    public function getExplicitCounterpartiesForAccount($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getExplicitCounterpartiesForAccount'][0])
+    {
+        list($response) = $this->getExplicitCounterpartiesForAccountWithHttpInfo($bankid, $accountid, $viewid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getExplicitCounterpartiesForAccountWithHttpInfo
+     *
+     * Get Counterparties (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExplicitCounterpartiesForAccount'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetCounterpartiesForAnyAccount200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getExplicitCounterpartiesForAccountWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getExplicitCounterpartiesForAccount'][0])
+    {
+        $request = $this->getExplicitCounterpartiesForAccountRequest($bankid, $accountid, $viewid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetCounterpartiesForAnyAccount200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetCounterpartiesForAnyAccount200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetCounterpartiesForAnyAccount200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getExplicitCounterpartiesForAccountAsync
+     *
+     * Get Counterparties (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExplicitCounterpartiesForAccount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getExplicitCounterpartiesForAccountAsync($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getExplicitCounterpartiesForAccount'][0])
+    {
+        return $this->getExplicitCounterpartiesForAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getExplicitCounterpartiesForAccountAsyncWithHttpInfo
+     *
+     * Get Counterparties (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExplicitCounterpartiesForAccount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getExplicitCounterpartiesForAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getExplicitCounterpartiesForAccount'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetCounterpartiesForAnyAccount200Response';
+        $request = $this->getExplicitCounterpartiesForAccountRequest($bankid, $accountid, $viewid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getExplicitCounterpartiesForAccount'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExplicitCounterpartiesForAccount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getExplicitCounterpartiesForAccountRequest($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getExplicitCounterpartiesForAccount'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling getExplicitCounterpartiesForAccount'
+            );
+        }
+
+        // verify the required parameter 'accountid' is set
+        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $accountid when calling getExplicitCounterpartiesForAccount'
+            );
+        }
+
+        // verify the required parameter 'viewid' is set
+        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $viewid when calling getExplicitCounterpartiesForAccount'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($accountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountid' . '}',
+                ObjectSerializer::toPathValue($accountid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($viewid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'viewid' . '}',
+                ObjectSerializer::toPathValue($viewid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getExplicitCounterpartyById
+     *
+     * Get Counterparty by Id (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExplicitCounterpartyById'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetExplicitCounterpartyById200Response
+     */
+    public function getExplicitCounterpartyById($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getExplicitCounterpartyById'][0])
+    {
+        list($response) = $this->getExplicitCounterpartyByIdWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getExplicitCounterpartyByIdWithHttpInfo
+     *
+     * Get Counterparty by Id (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExplicitCounterpartyById'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetExplicitCounterpartyById200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getExplicitCounterpartyByIdWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getExplicitCounterpartyById'][0])
+    {
+        $request = $this->getExplicitCounterpartyByIdRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetExplicitCounterpartyById200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetExplicitCounterpartyById200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetExplicitCounterpartyById200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getExplicitCounterpartyByIdAsync
+     *
+     * Get Counterparty by Id (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExplicitCounterpartyById'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getExplicitCounterpartyByIdAsync($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getExplicitCounterpartyById'][0])
+    {
+        return $this->getExplicitCounterpartyByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getExplicitCounterpartyByIdAsyncWithHttpInfo
+     *
+     * Get Counterparty by Id (Explicit)
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExplicitCounterpartyById'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getExplicitCounterpartyByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getExplicitCounterpartyById'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetExplicitCounterpartyById200Response';
+        $request = $this->getExplicitCounterpartyByIdRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getExplicitCounterpartyById'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExplicitCounterpartyById'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getExplicitCounterpartyByIdRequest($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getExplicitCounterpartyById'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling getExplicitCounterpartyById'
+            );
+        }
+
+        // verify the required parameter 'accountid' is set
+        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $accountid when calling getExplicitCounterpartyById'
+            );
+        }
+
+        // verify the required parameter 'viewid' is set
+        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $viewid when calling getExplicitCounterpartyById'
+            );
+        }
+
+        // verify the required parameter 'counterpartyid' is set
+        if ($counterpartyid === null || (is_array($counterpartyid) && count($counterpartyid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $counterpartyid when calling getExplicitCounterpartyById'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($accountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountid' . '}',
+                ObjectSerializer::toPathValue($accountid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($viewid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'viewid' . '}',
+                ObjectSerializer::toPathValue($viewid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($counterpartyid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'counterpartyid' . '}',
+                ObjectSerializer::toPathValue($counterpartyid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getOtherAccountByIdForBankAccount
+     *
+     * Get Other Account by Id
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountByIdForBankAccount'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetTransactionByIdForBankAccount200ResponseOtherAccount
+     */
+    public function getOtherAccountByIdForBankAccount($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getOtherAccountByIdForBankAccount'][0])
+    {
+        list($response) = $this->getOtherAccountByIdForBankAccountWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getOtherAccountByIdForBankAccountWithHttpInfo
+     *
+     * Get Other Account by Id
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountByIdForBankAccount'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetTransactionByIdForBankAccount200ResponseOtherAccount, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getOtherAccountByIdForBankAccountWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getOtherAccountByIdForBankAccount'][0])
+    {
+        $request = $this->getOtherAccountByIdForBankAccountRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetTransactionByIdForBankAccount200ResponseOtherAccount',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetTransactionByIdForBankAccount200ResponseOtherAccount',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetTransactionByIdForBankAccount200ResponseOtherAccount',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getOtherAccountByIdForBankAccountAsync
+     *
+     * Get Other Account by Id
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountByIdForBankAccount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getOtherAccountByIdForBankAccountAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getOtherAccountByIdForBankAccount'][0])
+    {
+        return $this->getOtherAccountByIdForBankAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getOtherAccountByIdForBankAccountAsyncWithHttpInfo
+     *
+     * Get Other Account by Id
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountByIdForBankAccount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getOtherAccountByIdForBankAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getOtherAccountByIdForBankAccount'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetTransactionByIdForBankAccount200ResponseOtherAccount';
+        $request = $this->getOtherAccountByIdForBankAccountRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getOtherAccountByIdForBankAccount'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountByIdForBankAccount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getOtherAccountByIdForBankAccountRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getOtherAccountByIdForBankAccount'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling getOtherAccountByIdForBankAccount'
+            );
+        }
+
+        // verify the required parameter 'accountid' is set
+        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $accountid when calling getOtherAccountByIdForBankAccount'
+            );
+        }
+
+        // verify the required parameter 'viewid' is set
+        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $viewid when calling getOtherAccountByIdForBankAccount'
+            );
+        }
+
+        // verify the required parameter 'otheraccountid' is set
+        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $otheraccountid when calling getOtherAccountByIdForBankAccount'
+            );
+        }
+
+
+        $resourcePath = '/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($accountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountid' . '}',
+                ObjectSerializer::toPathValue($accountid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($viewid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'viewid' . '}',
+                ObjectSerializer::toPathValue($viewid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($otheraccountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'otheraccountid' . '}',
+                ObjectSerializer::toPathValue($otheraccountid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getOtherAccountForTransaction
+     *
+     * Get Other Account of Transaction
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $transactionid The TRANSACTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountForTransaction'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetOtherAccountForTransaction200Response
+     */
+    public function getOtherAccountForTransaction($bankid, $accountid, $viewid, $transactionid, string $contentType = self::contentTypes['getOtherAccountForTransaction'][0])
+    {
+        list($response) = $this->getOtherAccountForTransactionWithHttpInfo($bankid, $accountid, $viewid, $transactionid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getOtherAccountForTransactionWithHttpInfo
+     *
+     * Get Other Account of Transaction
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $transactionid The TRANSACTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountForTransaction'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetOtherAccountForTransaction200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getOtherAccountForTransactionWithHttpInfo($bankid, $accountid, $viewid, $transactionid, string $contentType = self::contentTypes['getOtherAccountForTransaction'][0])
+    {
+        $request = $this->getOtherAccountForTransactionRequest($bankid, $accountid, $viewid, $transactionid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetOtherAccountForTransaction200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetOtherAccountForTransaction200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetOtherAccountForTransaction200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getOtherAccountForTransactionAsync
+     *
+     * Get Other Account of Transaction
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $transactionid The TRANSACTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountForTransaction'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getOtherAccountForTransactionAsync($bankid, $accountid, $viewid, $transactionid, string $contentType = self::contentTypes['getOtherAccountForTransaction'][0])
+    {
+        return $this->getOtherAccountForTransactionAsyncWithHttpInfo($bankid, $accountid, $viewid, $transactionid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getOtherAccountForTransactionAsyncWithHttpInfo
+     *
+     * Get Other Account of Transaction
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $transactionid The TRANSACTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountForTransaction'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getOtherAccountForTransactionAsyncWithHttpInfo($bankid, $accountid, $viewid, $transactionid, string $contentType = self::contentTypes['getOtherAccountForTransaction'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetOtherAccountForTransaction200Response';
+        $request = $this->getOtherAccountForTransactionRequest($bankid, $accountid, $viewid, $transactionid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getOtherAccountForTransaction'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $transactionid The TRANSACTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountForTransaction'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getOtherAccountForTransactionRequest($bankid, $accountid, $viewid, $transactionid, string $contentType = self::contentTypes['getOtherAccountForTransaction'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling getOtherAccountForTransaction'
+            );
+        }
+
+        // verify the required parameter 'accountid' is set
+        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $accountid when calling getOtherAccountForTransaction'
+            );
+        }
+
+        // verify the required parameter 'viewid' is set
+        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $viewid when calling getOtherAccountForTransaction'
             );
         }
 
         // verify the required parameter 'transactionid' is set
         if ($transactionid === null || (is_array($transactionid) && count($transactionid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $transactionid when calling oBPv121GetOtherAccountForTransaction'
+                'Missing the required parameter $transactionid when calling getOtherAccountForTransaction'
             );
         }
 
@@ -6107,7 +9385,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121GetOtherAccountMetadata
+     * Operation getOtherAccountMetadata
      *
      * Get Other Account Metadata
      *
@@ -6115,20 +9393,20 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetOtherAccountMetadata'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountMetadata'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121GetOtherAccountMetadata200Response
+     * @return \OpenBankProject\Model\GetOtherAccountMetadata200Response
      */
-    public function oBPv121GetOtherAccountMetadata($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121GetOtherAccountMetadata'][0])
+    public function getOtherAccountMetadata($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getOtherAccountMetadata'][0])
     {
-        list($response) = $this->oBPv121GetOtherAccountMetadataWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        list($response) = $this->getOtherAccountMetadataWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv121GetOtherAccountMetadataWithHttpInfo
+     * Operation getOtherAccountMetadataWithHttpInfo
      *
      * Get Other Account Metadata
      *
@@ -6136,15 +9414,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetOtherAccountMetadata'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountMetadata'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121GetOtherAccountMetadata200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetOtherAccountMetadata200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121GetOtherAccountMetadataWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121GetOtherAccountMetadata'][0])
+    public function getOtherAccountMetadataWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getOtherAccountMetadata'][0])
     {
-        $request = $this->oBPv121GetOtherAccountMetadataRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->getOtherAccountMetadataRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6172,7 +9450,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121GetOtherAccountMetadata200Response',
+                        '\OpenBankProject\Model\GetOtherAccountMetadata200Response',
                         $request,
                         $response,
                     );
@@ -6194,7 +9472,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121GetOtherAccountMetadata200Response',
+                '\OpenBankProject\Model\GetOtherAccountMetadata200Response',
                 $request,
                 $response,
             );
@@ -6203,7 +9481,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121GetOtherAccountMetadata200Response',
+                        '\OpenBankProject\Model\GetOtherAccountMetadata200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6216,7 +9494,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121GetOtherAccountMetadataAsync
+     * Operation getOtherAccountMetadataAsync
      *
      * Get Other Account Metadata
      *
@@ -6224,14 +9502,14 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetOtherAccountMetadata'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountMetadata'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121GetOtherAccountMetadataAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121GetOtherAccountMetadata'][0])
+    public function getOtherAccountMetadataAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getOtherAccountMetadata'][0])
     {
-        return $this->oBPv121GetOtherAccountMetadataAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
+        return $this->getOtherAccountMetadataAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6240,7 +9518,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121GetOtherAccountMetadataAsyncWithHttpInfo
+     * Operation getOtherAccountMetadataAsyncWithHttpInfo
      *
      * Get Other Account Metadata
      *
@@ -6248,15 +9526,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetOtherAccountMetadata'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountMetadata'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121GetOtherAccountMetadataAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121GetOtherAccountMetadata'][0])
+    public function getOtherAccountMetadataAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getOtherAccountMetadata'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121GetOtherAccountMetadata200Response';
-        $request = $this->oBPv121GetOtherAccountMetadataRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetOtherAccountMetadata200Response';
+        $request = $this->getOtherAccountMetadataRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6295,45 +9573,45 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121GetOtherAccountMetadata'
+     * Create request for operation 'getOtherAccountMetadata'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetOtherAccountMetadata'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountMetadata'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121GetOtherAccountMetadataRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121GetOtherAccountMetadata'][0])
+    public function getOtherAccountMetadataRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getOtherAccountMetadata'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121GetOtherAccountMetadata'
+                'Missing the required parameter $bankid when calling getOtherAccountMetadata'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121GetOtherAccountMetadata'
+                'Missing the required parameter $accountid when calling getOtherAccountMetadata'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121GetOtherAccountMetadata'
+                'Missing the required parameter $viewid when calling getOtherAccountMetadata'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121GetOtherAccountMetadata'
+                'Missing the required parameter $otheraccountid when calling getOtherAccountMetadata'
             );
         }
 
@@ -6422,9 +9700,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -6449,7 +9727,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121GetOtherAccountPrivateAlias
+     * Operation getOtherAccountPrivateAlias
      *
      * Get Other Account Private Alias
      *
@@ -6457,20 +9735,20 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetOtherAccountPrivateAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountPrivateAlias'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response
+     * @return \OpenBankProject\Model\GetCounterpartyPublicAlias200Response
      */
-    public function oBPv121GetOtherAccountPrivateAlias($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121GetOtherAccountPrivateAlias'][0])
+    public function getOtherAccountPrivateAlias($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getOtherAccountPrivateAlias'][0])
     {
-        list($response) = $this->oBPv121GetOtherAccountPrivateAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        list($response) = $this->getOtherAccountPrivateAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv121GetOtherAccountPrivateAliasWithHttpInfo
+     * Operation getOtherAccountPrivateAliasWithHttpInfo
      *
      * Get Other Account Private Alias
      *
@@ -6478,15 +9756,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetOtherAccountPrivateAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountPrivateAlias'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCounterpartyPublicAlias200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv121GetOtherAccountPrivateAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121GetOtherAccountPrivateAlias'][0])
+    public function getOtherAccountPrivateAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getOtherAccountPrivateAlias'][0])
     {
-        $request = $this->oBPv121GetOtherAccountPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $request = $this->getOtherAccountPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6514,7 +9792,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response',
+                        '\OpenBankProject\Model\GetCounterpartyPublicAlias200Response',
                         $request,
                         $response,
                     );
@@ -6536,7 +9814,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response',
+                '\OpenBankProject\Model\GetCounterpartyPublicAlias200Response',
                 $request,
                 $response,
             );
@@ -6545,7 +9823,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response',
+                        '\OpenBankProject\Model\GetCounterpartyPublicAlias200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6558,7 +9836,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121GetOtherAccountPrivateAliasAsync
+     * Operation getOtherAccountPrivateAliasAsync
      *
      * Get Other Account Private Alias
      *
@@ -6566,14 +9844,14 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetOtherAccountPrivateAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountPrivateAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121GetOtherAccountPrivateAliasAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121GetOtherAccountPrivateAlias'][0])
+    public function getOtherAccountPrivateAliasAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getOtherAccountPrivateAlias'][0])
     {
-        return $this->oBPv121GetOtherAccountPrivateAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
+        return $this->getOtherAccountPrivateAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6582,7 +9860,7 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121GetOtherAccountPrivateAliasAsyncWithHttpInfo
+     * Operation getOtherAccountPrivateAliasAsyncWithHttpInfo
      *
      * Get Other Account Private Alias
      *
@@ -6590,15 +9868,15 @@ class CounterpartyApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetOtherAccountPrivateAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountPrivateAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv121GetOtherAccountPrivateAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121GetOtherAccountPrivateAlias'][0])
+    public function getOtherAccountPrivateAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getOtherAccountPrivateAlias'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response';
-        $request = $this->oBPv121GetOtherAccountPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetCounterpartyPublicAlias200Response';
+        $request = $this->getOtherAccountPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6637,45 +9915,45 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv121GetOtherAccountPrivateAlias'
+     * Create request for operation 'getOtherAccountPrivateAlias'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121GetOtherAccountPrivateAlias'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountPrivateAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv121GetOtherAccountPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv121GetOtherAccountPrivateAlias'][0])
+    public function getOtherAccountPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['getOtherAccountPrivateAlias'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121GetOtherAccountPrivateAlias'
+                'Missing the required parameter $bankid when calling getOtherAccountPrivateAlias'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121GetOtherAccountPrivateAlias'
+                'Missing the required parameter $accountid when calling getOtherAccountPrivateAlias'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121GetOtherAccountPrivateAlias'
+                'Missing the required parameter $viewid when calling getOtherAccountPrivateAlias'
             );
         }
 
         // verify the required parameter 'otheraccountid' is set
         if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121GetOtherAccountPrivateAlias'
+                'Missing the required parameter $otheraccountid when calling getOtherAccountPrivateAlias'
             );
         }
 
@@ -6764,9 +10042,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -6791,3258 +10069,42 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv121UpdateCounterpartyCorporateLocation
-     *
-     * Update Counterparty Corporate Location
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyCorporateLocationRequest $obpv121_update_counterparty_corporate_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyCorporateLocation'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
-     */
-    public function oBPv121UpdateCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyCorporateLocation'][0])
-    {
-        list($response) = $this->oBPv121UpdateCounterpartyCorporateLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyCorporateLocationWithHttpInfo
-     *
-     * Update Counterparty Corporate Location
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyCorporateLocationRequest $obpv121_update_counterparty_corporate_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyCorporateLocation'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv121UpdateCounterpartyCorporateLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyCorporateLocation'][0])
-    {
-        $request = $this->oBPv121UpdateCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyCorporateLocationAsync
-     *
-     * Update Counterparty Corporate Location
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyCorporateLocationRequest $obpv121_update_counterparty_corporate_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyCorporateLocation'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv121UpdateCounterpartyCorporateLocationAsync($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyCorporateLocation'][0])
-    {
-        return $this->oBPv121UpdateCounterpartyCorporateLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyCorporateLocationAsyncWithHttpInfo
-     *
-     * Update Counterparty Corporate Location
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyCorporateLocationRequest $obpv121_update_counterparty_corporate_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyCorporateLocation'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv121UpdateCounterpartyCorporateLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyCorporateLocation'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv121UpdateCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv121UpdateCounterpartyCorporateLocation'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyCorporateLocationRequest $obpv121_update_counterparty_corporate_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyCorporateLocation'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv121UpdateCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyCorporateLocation'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121UpdateCounterpartyCorporateLocation'
-            );
-        }
-
-        // verify the required parameter 'accountid' is set
-        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121UpdateCounterpartyCorporateLocation'
-            );
-        }
-
-        // verify the required parameter 'viewid' is set
-        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121UpdateCounterpartyCorporateLocation'
-            );
-        }
-
-        // verify the required parameter 'otheraccountid' is set
-        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121UpdateCounterpartyCorporateLocation'
-            );
-        }
-
-        // verify the required parameter 'obpv121_update_counterparty_corporate_location_request' is set
-        if ($obpv121_update_counterparty_corporate_location_request === null || (is_array($obpv121_update_counterparty_corporate_location_request) && count($obpv121_update_counterparty_corporate_location_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv121_update_counterparty_corporate_location_request when calling oBPv121UpdateCounterpartyCorporateLocation'
-            );
-        }
-
-
-        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($accountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountid' . '}',
-                ObjectSerializer::toPathValue($accountid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($viewid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'viewid' . '}',
-                ObjectSerializer::toPathValue($viewid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($otheraccountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'otheraccountid' . '}',
-                ObjectSerializer::toPathValue($otheraccountid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv121_update_counterparty_corporate_location_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv121_update_counterparty_corporate_location_request));
-            } else {
-                $httpBody = $obpv121_update_counterparty_corporate_location_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyImageUrl
-     *
-     * Update Counterparty Image Url
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyImageUrlRequest $obpv121_update_counterparty_image_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyImageUrl'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
-     */
-    public function oBPv121UpdateCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyImageUrl'][0])
-    {
-        list($response) = $this->oBPv121UpdateCounterpartyImageUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyImageUrlWithHttpInfo
-     *
-     * Update Counterparty Image Url
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyImageUrlRequest $obpv121_update_counterparty_image_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyImageUrl'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv121UpdateCounterpartyImageUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyImageUrl'][0])
-    {
-        $request = $this->oBPv121UpdateCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyImageUrlAsync
-     *
-     * Update Counterparty Image Url
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyImageUrlRequest $obpv121_update_counterparty_image_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyImageUrl'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv121UpdateCounterpartyImageUrlAsync($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyImageUrl'][0])
-    {
-        return $this->oBPv121UpdateCounterpartyImageUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyImageUrlAsyncWithHttpInfo
-     *
-     * Update Counterparty Image Url
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyImageUrlRequest $obpv121_update_counterparty_image_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyImageUrl'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv121UpdateCounterpartyImageUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyImageUrl'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv121UpdateCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv121UpdateCounterpartyImageUrl'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyImageUrlRequest $obpv121_update_counterparty_image_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyImageUrl'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv121UpdateCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyImageUrl'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121UpdateCounterpartyImageUrl'
-            );
-        }
-
-        // verify the required parameter 'accountid' is set
-        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121UpdateCounterpartyImageUrl'
-            );
-        }
-
-        // verify the required parameter 'viewid' is set
-        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121UpdateCounterpartyImageUrl'
-            );
-        }
-
-        // verify the required parameter 'otheraccountid' is set
-        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121UpdateCounterpartyImageUrl'
-            );
-        }
-
-        // verify the required parameter 'obpv121_update_counterparty_image_url_request' is set
-        if ($obpv121_update_counterparty_image_url_request === null || (is_array($obpv121_update_counterparty_image_url_request) && count($obpv121_update_counterparty_image_url_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv121_update_counterparty_image_url_request when calling oBPv121UpdateCounterpartyImageUrl'
-            );
-        }
-
-
-        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($accountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountid' . '}',
-                ObjectSerializer::toPathValue($accountid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($viewid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'viewid' . '}',
-                ObjectSerializer::toPathValue($viewid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($otheraccountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'otheraccountid' . '}',
-                ObjectSerializer::toPathValue($otheraccountid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv121_update_counterparty_image_url_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv121_update_counterparty_image_url_request));
-            } else {
-                $httpBody = $obpv121_update_counterparty_image_url_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyMoreInfo
-     *
-     * Update Counterparty More Info
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyMoreInfoRequest $obpv121_update_counterparty_more_info_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyMoreInfo'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
-     */
-    public function oBPv121UpdateCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyMoreInfo'][0])
-    {
-        list($response) = $this->oBPv121UpdateCounterpartyMoreInfoWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyMoreInfoWithHttpInfo
-     *
-     * Update Counterparty More Info
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyMoreInfoRequest $obpv121_update_counterparty_more_info_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyMoreInfo'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv121UpdateCounterpartyMoreInfoWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyMoreInfo'][0])
-    {
-        $request = $this->oBPv121UpdateCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyMoreInfoAsync
-     *
-     * Update Counterparty More Info
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyMoreInfoRequest $obpv121_update_counterparty_more_info_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyMoreInfo'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv121UpdateCounterpartyMoreInfoAsync($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyMoreInfo'][0])
-    {
-        return $this->oBPv121UpdateCounterpartyMoreInfoAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyMoreInfoAsyncWithHttpInfo
-     *
-     * Update Counterparty More Info
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyMoreInfoRequest $obpv121_update_counterparty_more_info_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyMoreInfo'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv121UpdateCounterpartyMoreInfoAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyMoreInfo'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv121UpdateCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv121UpdateCounterpartyMoreInfo'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyMoreInfoRequest $obpv121_update_counterparty_more_info_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyMoreInfo'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv121UpdateCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyMoreInfo'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121UpdateCounterpartyMoreInfo'
-            );
-        }
-
-        // verify the required parameter 'accountid' is set
-        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121UpdateCounterpartyMoreInfo'
-            );
-        }
-
-        // verify the required parameter 'viewid' is set
-        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121UpdateCounterpartyMoreInfo'
-            );
-        }
-
-        // verify the required parameter 'otheraccountid' is set
-        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121UpdateCounterpartyMoreInfo'
-            );
-        }
-
-        // verify the required parameter 'obpv121_update_counterparty_more_info_request' is set
-        if ($obpv121_update_counterparty_more_info_request === null || (is_array($obpv121_update_counterparty_more_info_request) && count($obpv121_update_counterparty_more_info_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv121_update_counterparty_more_info_request when calling oBPv121UpdateCounterpartyMoreInfo'
-            );
-        }
-
-
-        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($accountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountid' . '}',
-                ObjectSerializer::toPathValue($accountid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($viewid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'viewid' . '}',
-                ObjectSerializer::toPathValue($viewid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($otheraccountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'otheraccountid' . '}',
-                ObjectSerializer::toPathValue($otheraccountid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv121_update_counterparty_more_info_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv121_update_counterparty_more_info_request));
-            } else {
-                $httpBody = $obpv121_update_counterparty_more_info_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyOpenCorporatesUrl
-     *
-     * Update Open Corporates Url of Counterparty
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyOpenCorporatesUrlRequest $obpv121_update_counterparty_open_corporates_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
-     */
-    public function oBPv121UpdateCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyOpenCorporatesUrl'][0])
-    {
-        list($response) = $this->oBPv121UpdateCounterpartyOpenCorporatesUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyOpenCorporatesUrlWithHttpInfo
-     *
-     * Update Open Corporates Url of Counterparty
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyOpenCorporatesUrlRequest $obpv121_update_counterparty_open_corporates_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv121UpdateCounterpartyOpenCorporatesUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyOpenCorporatesUrl'][0])
-    {
-        $request = $this->oBPv121UpdateCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyOpenCorporatesUrlAsync
-     *
-     * Update Open Corporates Url of Counterparty
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyOpenCorporatesUrlRequest $obpv121_update_counterparty_open_corporates_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv121UpdateCounterpartyOpenCorporatesUrlAsync($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyOpenCorporatesUrl'][0])
-    {
-        return $this->oBPv121UpdateCounterpartyOpenCorporatesUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyOpenCorporatesUrlAsyncWithHttpInfo
-     *
-     * Update Open Corporates Url of Counterparty
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyOpenCorporatesUrlRequest $obpv121_update_counterparty_open_corporates_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv121UpdateCounterpartyOpenCorporatesUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyOpenCorporatesUrl'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv121UpdateCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv121UpdateCounterpartyOpenCorporatesUrl'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyOpenCorporatesUrlRequest $obpv121_update_counterparty_open_corporates_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv121UpdateCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyOpenCorporatesUrl'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121UpdateCounterpartyOpenCorporatesUrl'
-            );
-        }
-
-        // verify the required parameter 'accountid' is set
-        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121UpdateCounterpartyOpenCorporatesUrl'
-            );
-        }
-
-        // verify the required parameter 'viewid' is set
-        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121UpdateCounterpartyOpenCorporatesUrl'
-            );
-        }
-
-        // verify the required parameter 'otheraccountid' is set
-        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121UpdateCounterpartyOpenCorporatesUrl'
-            );
-        }
-
-        // verify the required parameter 'obpv121_update_counterparty_open_corporates_url_request' is set
-        if ($obpv121_update_counterparty_open_corporates_url_request === null || (is_array($obpv121_update_counterparty_open_corporates_url_request) && count($obpv121_update_counterparty_open_corporates_url_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv121_update_counterparty_open_corporates_url_request when calling oBPv121UpdateCounterpartyOpenCorporatesUrl'
-            );
-        }
-
-
-        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($accountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountid' . '}',
-                ObjectSerializer::toPathValue($accountid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($viewid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'viewid' . '}',
-                ObjectSerializer::toPathValue($viewid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($otheraccountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'otheraccountid' . '}',
-                ObjectSerializer::toPathValue($otheraccountid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv121_update_counterparty_open_corporates_url_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv121_update_counterparty_open_corporates_url_request));
-            } else {
-                $httpBody = $obpv121_update_counterparty_open_corporates_url_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyPhysicalLocation
-     *
-     * Update Counterparty Physical Location
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyPhysicalLocationRequest $obpv121_update_counterparty_physical_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyPhysicalLocation'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
-     */
-    public function oBPv121UpdateCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyPhysicalLocation'][0])
-    {
-        list($response) = $this->oBPv121UpdateCounterpartyPhysicalLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyPhysicalLocationWithHttpInfo
-     *
-     * Update Counterparty Physical Location
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyPhysicalLocationRequest $obpv121_update_counterparty_physical_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyPhysicalLocation'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv121UpdateCounterpartyPhysicalLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyPhysicalLocation'][0])
-    {
-        $request = $this->oBPv121UpdateCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyPhysicalLocationAsync
-     *
-     * Update Counterparty Physical Location
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyPhysicalLocationRequest $obpv121_update_counterparty_physical_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyPhysicalLocation'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv121UpdateCounterpartyPhysicalLocationAsync($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyPhysicalLocation'][0])
-    {
-        return $this->oBPv121UpdateCounterpartyPhysicalLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyPhysicalLocationAsyncWithHttpInfo
-     *
-     * Update Counterparty Physical Location
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyPhysicalLocationRequest $obpv121_update_counterparty_physical_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyPhysicalLocation'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv121UpdateCounterpartyPhysicalLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyPhysicalLocation'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv121UpdateCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv121UpdateCounterpartyPhysicalLocation'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyPhysicalLocationRequest $obpv121_update_counterparty_physical_location_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyPhysicalLocation'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv121UpdateCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyPhysicalLocation'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121UpdateCounterpartyPhysicalLocation'
-            );
-        }
-
-        // verify the required parameter 'accountid' is set
-        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121UpdateCounterpartyPhysicalLocation'
-            );
-        }
-
-        // verify the required parameter 'viewid' is set
-        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121UpdateCounterpartyPhysicalLocation'
-            );
-        }
-
-        // verify the required parameter 'otheraccountid' is set
-        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121UpdateCounterpartyPhysicalLocation'
-            );
-        }
-
-        // verify the required parameter 'obpv121_update_counterparty_physical_location_request' is set
-        if ($obpv121_update_counterparty_physical_location_request === null || (is_array($obpv121_update_counterparty_physical_location_request) && count($obpv121_update_counterparty_physical_location_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv121_update_counterparty_physical_location_request when calling oBPv121UpdateCounterpartyPhysicalLocation'
-            );
-        }
-
-
-        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($accountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountid' . '}',
-                ObjectSerializer::toPathValue($accountid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($viewid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'viewid' . '}',
-                ObjectSerializer::toPathValue($viewid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($otheraccountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'otheraccountid' . '}',
-                ObjectSerializer::toPathValue($otheraccountid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv121_update_counterparty_physical_location_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv121_update_counterparty_physical_location_request));
-            } else {
-                $httpBody = $obpv121_update_counterparty_physical_location_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyPrivateAlias
-     *
-     * Update Counterparty Private Alias
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyPrivateAlias'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
-     */
-    public function oBPv121UpdateCounterpartyPrivateAlias($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyPrivateAlias'][0])
-    {
-        list($response) = $this->oBPv121UpdateCounterpartyPrivateAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyPrivateAliasWithHttpInfo
-     *
-     * Update Counterparty Private Alias
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyPrivateAlias'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv121UpdateCounterpartyPrivateAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyPrivateAlias'][0])
-    {
-        $request = $this->oBPv121UpdateCounterpartyPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyPrivateAliasAsync
-     *
-     * Update Counterparty Private Alias
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyPrivateAlias'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv121UpdateCounterpartyPrivateAliasAsync($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyPrivateAlias'][0])
-    {
-        return $this->oBPv121UpdateCounterpartyPrivateAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyPrivateAliasAsyncWithHttpInfo
-     *
-     * Update Counterparty Private Alias
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyPrivateAlias'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv121UpdateCounterpartyPrivateAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyPrivateAlias'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv121UpdateCounterpartyPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv121UpdateCounterpartyPrivateAlias'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyPrivateAlias'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv121UpdateCounterpartyPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyPrivateAlias'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121UpdateCounterpartyPrivateAlias'
-            );
-        }
-
-        // verify the required parameter 'accountid' is set
-        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121UpdateCounterpartyPrivateAlias'
-            );
-        }
-
-        // verify the required parameter 'viewid' is set
-        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121UpdateCounterpartyPrivateAlias'
-            );
-        }
-
-        // verify the required parameter 'otheraccountid' is set
-        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121UpdateCounterpartyPrivateAlias'
-            );
-        }
-
-        // verify the required parameter 'obpv121_get_counterparty_public_alias200_response' is set
-        if ($obpv121_get_counterparty_public_alias200_response === null || (is_array($obpv121_get_counterparty_public_alias200_response) && count($obpv121_get_counterparty_public_alias200_response) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv121_get_counterparty_public_alias200_response when calling oBPv121UpdateCounterpartyPrivateAlias'
-            );
-        }
-
-
-        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($accountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountid' . '}',
-                ObjectSerializer::toPathValue($accountid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($viewid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'viewid' . '}',
-                ObjectSerializer::toPathValue($viewid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($otheraccountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'otheraccountid' . '}',
-                ObjectSerializer::toPathValue($otheraccountid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv121_get_counterparty_public_alias200_response)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv121_get_counterparty_public_alias200_response));
-            } else {
-                $httpBody = $obpv121_get_counterparty_public_alias200_response;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyPublicAlias
-     *
-     * Update public alias of other bank account
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyPublicAlias'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
-     */
-    public function oBPv121UpdateCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyPublicAlias'][0])
-    {
-        list($response) = $this->oBPv121UpdateCounterpartyPublicAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyPublicAliasWithHttpInfo
-     *
-     * Update public alias of other bank account
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyPublicAlias'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv121UpdateCounterpartyPublicAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyPublicAlias'][0])
-    {
-        $request = $this->oBPv121UpdateCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyPublicAliasAsync
-     *
-     * Update public alias of other bank account
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyPublicAlias'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv121UpdateCounterpartyPublicAliasAsync($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyPublicAlias'][0])
-    {
-        return $this->oBPv121UpdateCounterpartyPublicAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyPublicAliasAsyncWithHttpInfo
-     *
-     * Update public alias of other bank account
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyPublicAlias'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv121UpdateCounterpartyPublicAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyPublicAlias'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv121UpdateCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv121UpdateCounterpartyPublicAlias'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response $obpv121_get_counterparty_public_alias200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyPublicAlias'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv121UpdateCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyPublicAlias'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121UpdateCounterpartyPublicAlias'
-            );
-        }
-
-        // verify the required parameter 'accountid' is set
-        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121UpdateCounterpartyPublicAlias'
-            );
-        }
-
-        // verify the required parameter 'viewid' is set
-        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121UpdateCounterpartyPublicAlias'
-            );
-        }
-
-        // verify the required parameter 'otheraccountid' is set
-        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121UpdateCounterpartyPublicAlias'
-            );
-        }
-
-        // verify the required parameter 'obpv121_get_counterparty_public_alias200_response' is set
-        if ($obpv121_get_counterparty_public_alias200_response === null || (is_array($obpv121_get_counterparty_public_alias200_response) && count($obpv121_get_counterparty_public_alias200_response) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv121_get_counterparty_public_alias200_response when calling oBPv121UpdateCounterpartyPublicAlias'
-            );
-        }
-
-
-        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($accountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountid' . '}',
-                ObjectSerializer::toPathValue($accountid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($viewid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'viewid' . '}',
-                ObjectSerializer::toPathValue($viewid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($otheraccountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'otheraccountid' . '}',
-                ObjectSerializer::toPathValue($otheraccountid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv121_get_counterparty_public_alias200_response)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv121_get_counterparty_public_alias200_response));
-            } else {
-                $httpBody = $obpv121_get_counterparty_public_alias200_response;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyUrl
-     *
-     * Update url of other bank account
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyUrlRequest $obpv121_update_counterparty_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyUrl'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
-     */
-    public function oBPv121UpdateCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyUrl'][0])
-    {
-        list($response) = $this->oBPv121UpdateCounterpartyUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyUrlWithHttpInfo
-     *
-     * Update url of other bank account
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyUrlRequest $obpv121_update_counterparty_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyUrl'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv121UpdateCounterpartyUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyUrl'][0])
-    {
-        $request = $this->oBPv121UpdateCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyUrlAsync
-     *
-     * Update url of other bank account
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyUrlRequest $obpv121_update_counterparty_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyUrl'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv121UpdateCounterpartyUrlAsync($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyUrl'][0])
-    {
-        return $this->oBPv121UpdateCounterpartyUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv121UpdateCounterpartyUrlAsyncWithHttpInfo
-     *
-     * Update url of other bank account
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyUrlRequest $obpv121_update_counterparty_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyUrl'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv121UpdateCounterpartyUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyUrl'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv121UpdateCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv121UpdateCounterpartyUrl'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv121UpdateCounterpartyUrlRequest $obpv121_update_counterparty_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv121UpdateCounterpartyUrl'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv121UpdateCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request, string $contentType = self::contentTypes['oBPv121UpdateCounterpartyUrl'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv121UpdateCounterpartyUrl'
-            );
-        }
-
-        // verify the required parameter 'accountid' is set
-        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv121UpdateCounterpartyUrl'
-            );
-        }
-
-        // verify the required parameter 'viewid' is set
-        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv121UpdateCounterpartyUrl'
-            );
-        }
-
-        // verify the required parameter 'otheraccountid' is set
-        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv121UpdateCounterpartyUrl'
-            );
-        }
-
-        // verify the required parameter 'obpv121_update_counterparty_url_request' is set
-        if ($obpv121_update_counterparty_url_request === null || (is_array($obpv121_update_counterparty_url_request) && count($obpv121_update_counterparty_url_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv121_update_counterparty_url_request when calling oBPv121UpdateCounterpartyUrl'
-            );
-        }
-
-
-        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($accountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountid' . '}',
-                ObjectSerializer::toPathValue($accountid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($viewid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'viewid' . '}',
-                ObjectSerializer::toPathValue($viewid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($otheraccountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'otheraccountid' . '}',
-                ObjectSerializer::toPathValue($otheraccountid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv121_update_counterparty_url_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv121_update_counterparty_url_request));
-            } else {
-                $httpBody = $obpv121_update_counterparty_url_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv300GetOtherAccountByIdForBankAccount
-     *
-     * Get Other Account by Id
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetOtherAccountByIdForBankAccount'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount
-     */
-    public function oBPv300GetOtherAccountByIdForBankAccount($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv300GetOtherAccountByIdForBankAccount'][0])
-    {
-        list($response) = $this->oBPv300GetOtherAccountByIdForBankAccountWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv300GetOtherAccountByIdForBankAccountWithHttpInfo
-     *
-     * Get Other Account by Id
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetOtherAccountByIdForBankAccount'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv300GetOtherAccountByIdForBankAccountWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv300GetOtherAccountByIdForBankAccount'][0])
-    {
-        $request = $this->oBPv300GetOtherAccountByIdForBankAccountRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv300GetOtherAccountByIdForBankAccountAsync
-     *
-     * Get Other Account by Id
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetOtherAccountByIdForBankAccount'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv300GetOtherAccountByIdForBankAccountAsync($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv300GetOtherAccountByIdForBankAccount'][0])
-    {
-        return $this->oBPv300GetOtherAccountByIdForBankAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv300GetOtherAccountByIdForBankAccountAsyncWithHttpInfo
-     *
-     * Get Other Account by Id
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetOtherAccountByIdForBankAccount'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv300GetOtherAccountByIdForBankAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv300GetOtherAccountByIdForBankAccount'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount';
-        $request = $this->oBPv300GetOtherAccountByIdForBankAccountRequest($bankid, $accountid, $viewid, $otheraccountid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv300GetOtherAccountByIdForBankAccount'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetOtherAccountByIdForBankAccount'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv300GetOtherAccountByIdForBankAccountRequest($bankid, $accountid, $viewid, $otheraccountid, string $contentType = self::contentTypes['oBPv300GetOtherAccountByIdForBankAccount'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv300GetOtherAccountByIdForBankAccount'
-            );
-        }
-
-        // verify the required parameter 'accountid' is set
-        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv300GetOtherAccountByIdForBankAccount'
-            );
-        }
-
-        // verify the required parameter 'viewid' is set
-        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv300GetOtherAccountByIdForBankAccount'
-            );
-        }
-
-        // verify the required parameter 'otheraccountid' is set
-        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $otheraccountid when calling oBPv300GetOtherAccountByIdForBankAccount'
-            );
-        }
-
-
-        $resourcePath = '/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($accountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountid' . '}',
-                ObjectSerializer::toPathValue($accountid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($viewid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'viewid' . '}',
-                ObjectSerializer::toPathValue($viewid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($otheraccountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'otheraccountid' . '}',
-                ObjectSerializer::toPathValue($otheraccountid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv300GetOtherAccountsForBankAccount
+     * Operation getOtherAccountsForBankAccount
      *
      * Get Other Accounts of one Account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetOtherAccountsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountsForBankAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv300GetOtherAccountsForBankAccount200Response
+     * @return \OpenBankProject\Model\GetOtherAccountsForBankAccount200Response
      */
-    public function oBPv300GetOtherAccountsForBankAccount($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv300GetOtherAccountsForBankAccount'][0])
+    public function getOtherAccountsForBankAccount($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getOtherAccountsForBankAccount'][0])
     {
-        list($response) = $this->oBPv300GetOtherAccountsForBankAccountWithHttpInfo($bankid, $accountid, $viewid, $contentType);
+        list($response) = $this->getOtherAccountsForBankAccountWithHttpInfo($bankid, $accountid, $viewid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv300GetOtherAccountsForBankAccountWithHttpInfo
+     * Operation getOtherAccountsForBankAccountWithHttpInfo
      *
      * Get Other Accounts of one Account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetOtherAccountsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountsForBankAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv300GetOtherAccountsForBankAccount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetOtherAccountsForBankAccount200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv300GetOtherAccountsForBankAccountWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv300GetOtherAccountsForBankAccount'][0])
+    public function getOtherAccountsForBankAccountWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getOtherAccountsForBankAccount'][0])
     {
-        $request = $this->oBPv300GetOtherAccountsForBankAccountRequest($bankid, $accountid, $viewid, $contentType);
+        $request = $this->getOtherAccountsForBankAccountRequest($bankid, $accountid, $viewid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10070,7 +10132,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv300GetOtherAccountsForBankAccount200Response',
+                        '\OpenBankProject\Model\GetOtherAccountsForBankAccount200Response',
                         $request,
                         $response,
                     );
@@ -10092,7 +10154,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv300GetOtherAccountsForBankAccount200Response',
+                '\OpenBankProject\Model\GetOtherAccountsForBankAccount200Response',
                 $request,
                 $response,
             );
@@ -10101,7 +10163,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv300GetOtherAccountsForBankAccount200Response',
+                        '\OpenBankProject\Model\GetOtherAccountsForBankAccount200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10114,21 +10176,21 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv300GetOtherAccountsForBankAccountAsync
+     * Operation getOtherAccountsForBankAccountAsync
      *
      * Get Other Accounts of one Account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetOtherAccountsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountsForBankAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300GetOtherAccountsForBankAccountAsync($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv300GetOtherAccountsForBankAccount'][0])
+    public function getOtherAccountsForBankAccountAsync($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getOtherAccountsForBankAccount'][0])
     {
-        return $this->oBPv300GetOtherAccountsForBankAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $contentType)
+        return $this->getOtherAccountsForBankAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10137,22 +10199,22 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv300GetOtherAccountsForBankAccountAsyncWithHttpInfo
+     * Operation getOtherAccountsForBankAccountAsyncWithHttpInfo
      *
      * Get Other Accounts of one Account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetOtherAccountsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountsForBankAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300GetOtherAccountsForBankAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv300GetOtherAccountsForBankAccount'][0])
+    public function getOtherAccountsForBankAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getOtherAccountsForBankAccount'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv300GetOtherAccountsForBankAccount200Response';
-        $request = $this->oBPv300GetOtherAccountsForBankAccountRequest($bankid, $accountid, $viewid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetOtherAccountsForBankAccount200Response';
+        $request = $this->getOtherAccountsForBankAccountRequest($bankid, $accountid, $viewid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10191,37 +10253,37 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv300GetOtherAccountsForBankAccount'
+     * Create request for operation 'getOtherAccountsForBankAccount'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetOtherAccountsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOtherAccountsForBankAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv300GetOtherAccountsForBankAccountRequest($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv300GetOtherAccountsForBankAccount'][0])
+    public function getOtherAccountsForBankAccountRequest($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getOtherAccountsForBankAccount'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv300GetOtherAccountsForBankAccount'
+                'Missing the required parameter $bankid when calling getOtherAccountsForBankAccount'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv300GetOtherAccountsForBankAccount'
+                'Missing the required parameter $accountid when calling getOtherAccountsForBankAccount'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv300GetOtherAccountsForBankAccount'
+                'Missing the required parameter $viewid when calling getOtherAccountsForBankAccount'
             );
         }
 
@@ -10302,9 +10364,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -10329,44 +10391,46 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400CreateCounterparty
+     * Operation updateCounterpartyCorporateLocation
      *
-     * Create Counterparty (Explicit)
+     * Update Counterparty Corporate Location
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateCounterpartyForAnyAccountRequest $obpv400_create_counterparty_for_any_account_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateCounterparty'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyCorporateLocationRequest $update_counterparty_corporate_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyCorporateLocation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
      */
-    public function oBPv400CreateCounterparty($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, string $contentType = self::contentTypes['oBPv400CreateCounterparty'][0])
+    public function updateCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, string $contentType = self::contentTypes['updateCounterpartyCorporateLocation'][0])
     {
-        list($response) = $this->oBPv400CreateCounterpartyWithHttpInfo($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, $contentType);
+        list($response) = $this->updateCounterpartyCorporateLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateCounterpartyWithHttpInfo
+     * Operation updateCounterpartyCorporateLocationWithHttpInfo
      *
-     * Create Counterparty (Explicit)
+     * Update Counterparty Corporate Location
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateCounterpartyForAnyAccountRequest $obpv400_create_counterparty_for_any_account_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateCounterparty'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyCorporateLocationRequest $update_counterparty_corporate_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyCorporateLocation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateCounterpartyWithHttpInfo($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, string $contentType = self::contentTypes['oBPv400CreateCounterparty'][0])
+    public function updateCounterpartyCorporateLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, string $contentType = self::contentTypes['updateCounterpartyCorporateLocation'][0])
     {
-        $request = $this->oBPv400CreateCounterpartyRequest($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, $contentType);
+        $request = $this->updateCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10394,7 +10458,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $request,
                         $response,
                     );
@@ -10416,7 +10480,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response',
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                 $request,
                 $response,
             );
@@ -10425,7 +10489,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10438,22 +10502,23 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400CreateCounterpartyAsync
+     * Operation updateCounterpartyCorporateLocationAsync
      *
-     * Create Counterparty (Explicit)
+     * Update Counterparty Corporate Location
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateCounterpartyForAnyAccountRequest $obpv400_create_counterparty_for_any_account_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateCounterparty'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyCorporateLocationRequest $update_counterparty_corporate_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyCorporateLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateCounterpartyAsync($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, string $contentType = self::contentTypes['oBPv400CreateCounterparty'][0])
+    public function updateCounterpartyCorporateLocationAsync($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, string $contentType = self::contentTypes['updateCounterpartyCorporateLocation'][0])
     {
-        return $this->oBPv400CreateCounterpartyAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, $contentType)
+        return $this->updateCounterpartyCorporateLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10462,23 +10527,24 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400CreateCounterpartyAsyncWithHttpInfo
+     * Operation updateCounterpartyCorporateLocationAsyncWithHttpInfo
      *
-     * Create Counterparty (Explicit)
+     * Update Counterparty Corporate Location
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateCounterpartyForAnyAccountRequest $obpv400_create_counterparty_for_any_account_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateCounterparty'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyCorporateLocationRequest $update_counterparty_corporate_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyCorporateLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateCounterpartyAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, string $contentType = self::contentTypes['oBPv400CreateCounterparty'][0])
+    public function updateCounterpartyCorporateLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, string $contentType = self::contentTypes['updateCounterpartyCorporateLocation'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response';
-        $request = $this->oBPv400CreateCounterpartyRequest($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->updateCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10517,50 +10583,58 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateCounterparty'
+     * Create request for operation 'updateCounterpartyCorporateLocation'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateCounterpartyForAnyAccountRequest $obpv400_create_counterparty_for_any_account_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateCounterparty'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyCorporateLocationRequest $update_counterparty_corporate_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyCorporateLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateCounterpartyRequest($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, string $contentType = self::contentTypes['oBPv400CreateCounterparty'][0])
+    public function updateCounterpartyCorporateLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request, string $contentType = self::contentTypes['updateCounterpartyCorporateLocation'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400CreateCounterparty'
+                'Missing the required parameter $bankid when calling updateCounterpartyCorporateLocation'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400CreateCounterparty'
+                'Missing the required parameter $accountid when calling updateCounterpartyCorporateLocation'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv400CreateCounterparty'
+                'Missing the required parameter $viewid when calling updateCounterpartyCorporateLocation'
             );
         }
 
-        // verify the required parameter 'obpv400_create_counterparty_for_any_account_request' is set
-        if ($obpv400_create_counterparty_for_any_account_request === null || (is_array($obpv400_create_counterparty_for_any_account_request) && count($obpv400_create_counterparty_for_any_account_request) === 0)) {
+        // verify the required parameter 'otheraccountid' is set
+        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_counterparty_for_any_account_request when calling oBPv400CreateCounterparty'
+                'Missing the required parameter $otheraccountid when calling updateCounterpartyCorporateLocation'
+            );
+        }
+
+        // verify the required parameter 'update_counterparty_corporate_location_request' is set
+        if ($update_counterparty_corporate_location_request === null || (is_array($update_counterparty_corporate_location_request) && count($update_counterparty_corporate_location_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_counterparty_corporate_location_request when calling updateCounterpartyCorporateLocation'
             );
         }
 
 
-        $resourcePath = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties';
+        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -10593,6 +10667,14 @@ class CounterpartyApi
                 $resourcePath
             );
         }
+        // path params
+        if ($otheraccountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'otheraccountid' . '}',
+                ObjectSerializer::toPathValue($otheraccountid),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -10602,12 +10684,12 @@ class CounterpartyApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_counterparty_for_any_account_request)) {
+        if (isset($update_counterparty_corporate_location_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_counterparty_for_any_account_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_counterparty_corporate_location_request));
             } else {
-                $httpBody = $obpv400_create_counterparty_for_any_account_request;
+                $httpBody = $update_counterparty_corporate_location_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -10643,9 +10725,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -10662,7 +10744,7 @@ class CounterpartyApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'POST',
+            'PUT',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -10670,44 +10752,46 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400CreateCounterpartyForAnyAccount
+     * Operation updateCounterpartyImageUrl
      *
-     * Create Counterparty for any account (Explicit)
+     * Update Counterparty Image Url
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateCounterpartyForAnyAccountRequest $obpv400_create_counterparty_for_any_account_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateCounterpartyForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyImageUrlRequest $update_counterparty_image_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyImageUrl'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
      */
-    public function oBPv400CreateCounterpartyForAnyAccount($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, string $contentType = self::contentTypes['oBPv400CreateCounterpartyForAnyAccount'][0])
+    public function updateCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, string $contentType = self::contentTypes['updateCounterpartyImageUrl'][0])
     {
-        list($response) = $this->oBPv400CreateCounterpartyForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, $contentType);
+        list($response) = $this->updateCounterpartyImageUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateCounterpartyForAnyAccountWithHttpInfo
+     * Operation updateCounterpartyImageUrlWithHttpInfo
      *
-     * Create Counterparty for any account (Explicit)
+     * Update Counterparty Image Url
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateCounterpartyForAnyAccountRequest $obpv400_create_counterparty_for_any_account_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateCounterpartyForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyImageUrlRequest $update_counterparty_image_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyImageUrl'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateCounterpartyForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, string $contentType = self::contentTypes['oBPv400CreateCounterpartyForAnyAccount'][0])
+    public function updateCounterpartyImageUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, string $contentType = self::contentTypes['updateCounterpartyImageUrl'][0])
     {
-        $request = $this->oBPv400CreateCounterpartyForAnyAccountRequest($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, $contentType);
+        $request = $this->updateCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10735,7 +10819,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $request,
                         $response,
                     );
@@ -10757,7 +10841,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response',
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                 $request,
                 $response,
             );
@@ -10766,7 +10850,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10779,22 +10863,23 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400CreateCounterpartyForAnyAccountAsync
+     * Operation updateCounterpartyImageUrlAsync
      *
-     * Create Counterparty for any account (Explicit)
+     * Update Counterparty Image Url
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateCounterpartyForAnyAccountRequest $obpv400_create_counterparty_for_any_account_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateCounterpartyForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyImageUrlRequest $update_counterparty_image_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyImageUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateCounterpartyForAnyAccountAsync($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, string $contentType = self::contentTypes['oBPv400CreateCounterpartyForAnyAccount'][0])
+    public function updateCounterpartyImageUrlAsync($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, string $contentType = self::contentTypes['updateCounterpartyImageUrl'][0])
     {
-        return $this->oBPv400CreateCounterpartyForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, $contentType)
+        return $this->updateCounterpartyImageUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10803,23 +10888,24 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400CreateCounterpartyForAnyAccountAsyncWithHttpInfo
+     * Operation updateCounterpartyImageUrlAsyncWithHttpInfo
      *
-     * Create Counterparty for any account (Explicit)
+     * Update Counterparty Image Url
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateCounterpartyForAnyAccountRequest $obpv400_create_counterparty_for_any_account_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateCounterpartyForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyImageUrlRequest $update_counterparty_image_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyImageUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateCounterpartyForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, string $contentType = self::contentTypes['oBPv400CreateCounterpartyForAnyAccount'][0])
+    public function updateCounterpartyImageUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, string $contentType = self::contentTypes['updateCounterpartyImageUrl'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response';
-        $request = $this->oBPv400CreateCounterpartyForAnyAccountRequest($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->updateCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10858,50 +10944,58 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateCounterpartyForAnyAccount'
+     * Create request for operation 'updateCounterpartyImageUrl'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateCounterpartyForAnyAccountRequest $obpv400_create_counterparty_for_any_account_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateCounterpartyForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyImageUrlRequest $update_counterparty_image_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyImageUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateCounterpartyForAnyAccountRequest($bankid, $accountid, $viewid, $obpv400_create_counterparty_for_any_account_request, string $contentType = self::contentTypes['oBPv400CreateCounterpartyForAnyAccount'][0])
+    public function updateCounterpartyImageUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request, string $contentType = self::contentTypes['updateCounterpartyImageUrl'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400CreateCounterpartyForAnyAccount'
+                'Missing the required parameter $bankid when calling updateCounterpartyImageUrl'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400CreateCounterpartyForAnyAccount'
+                'Missing the required parameter $accountid when calling updateCounterpartyImageUrl'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv400CreateCounterpartyForAnyAccount'
+                'Missing the required parameter $viewid when calling updateCounterpartyImageUrl'
             );
         }
 
-        // verify the required parameter 'obpv400_create_counterparty_for_any_account_request' is set
-        if ($obpv400_create_counterparty_for_any_account_request === null || (is_array($obpv400_create_counterparty_for_any_account_request) && count($obpv400_create_counterparty_for_any_account_request) === 0)) {
+        // verify the required parameter 'otheraccountid' is set
+        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_counterparty_for_any_account_request when calling oBPv400CreateCounterpartyForAnyAccount'
+                'Missing the required parameter $otheraccountid when calling updateCounterpartyImageUrl'
+            );
+        }
+
+        // verify the required parameter 'update_counterparty_image_url_request' is set
+        if ($update_counterparty_image_url_request === null || (is_array($update_counterparty_image_url_request) && count($update_counterparty_image_url_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_counterparty_image_url_request when calling updateCounterpartyImageUrl'
             );
         }
 
 
-        $resourcePath = '/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties';
+        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -10934,6 +11028,14 @@ class CounterpartyApi
                 $resourcePath
             );
         }
+        // path params
+        if ($otheraccountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'otheraccountid' . '}',
+                ObjectSerializer::toPathValue($otheraccountid),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -10943,12 +11045,359 @@ class CounterpartyApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_counterparty_for_any_account_request)) {
+        if (isset($update_counterparty_image_url_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_counterparty_for_any_account_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_counterparty_image_url_request));
             } else {
-                $httpBody = $obpv400_create_counterparty_for_any_account_request;
+                $httpBody = $update_counterparty_image_url_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateCounterpartyMoreInfo
+     *
+     * Update Counterparty More Info
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyMoreInfoRequest $update_counterparty_more_info_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyMoreInfo'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
+     */
+    public function updateCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, string $contentType = self::contentTypes['updateCounterpartyMoreInfo'][0])
+    {
+        list($response) = $this->updateCounterpartyMoreInfoWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateCounterpartyMoreInfoWithHttpInfo
+     *
+     * Update Counterparty More Info
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyMoreInfoRequest $update_counterparty_more_info_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyMoreInfo'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateCounterpartyMoreInfoWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, string $contentType = self::contentTypes['updateCounterpartyMoreInfo'][0])
+    {
+        $request = $this->updateCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateCounterpartyMoreInfoAsync
+     *
+     * Update Counterparty More Info
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyMoreInfoRequest $update_counterparty_more_info_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyMoreInfo'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateCounterpartyMoreInfoAsync($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, string $contentType = self::contentTypes['updateCounterpartyMoreInfo'][0])
+    {
+        return $this->updateCounterpartyMoreInfoAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateCounterpartyMoreInfoAsyncWithHttpInfo
+     *
+     * Update Counterparty More Info
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyMoreInfoRequest $update_counterparty_more_info_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyMoreInfo'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateCounterpartyMoreInfoAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, string $contentType = self::contentTypes['updateCounterpartyMoreInfo'][0])
+    {
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->updateCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateCounterpartyMoreInfo'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyMoreInfoRequest $update_counterparty_more_info_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyMoreInfo'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateCounterpartyMoreInfoRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request, string $contentType = self::contentTypes['updateCounterpartyMoreInfo'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling updateCounterpartyMoreInfo'
+            );
+        }
+
+        // verify the required parameter 'accountid' is set
+        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $accountid when calling updateCounterpartyMoreInfo'
+            );
+        }
+
+        // verify the required parameter 'viewid' is set
+        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $viewid when calling updateCounterpartyMoreInfo'
+            );
+        }
+
+        // verify the required parameter 'otheraccountid' is set
+        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $otheraccountid when calling updateCounterpartyMoreInfo'
+            );
+        }
+
+        // verify the required parameter 'update_counterparty_more_info_request' is set
+        if ($update_counterparty_more_info_request === null || (is_array($update_counterparty_more_info_request) && count($update_counterparty_more_info_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_counterparty_more_info_request when calling updateCounterpartyMoreInfo'
+            );
+        }
+
+
+        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($accountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountid' . '}',
+                ObjectSerializer::toPathValue($accountid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($viewid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'viewid' . '}',
+                ObjectSerializer::toPathValue($viewid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($otheraccountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'otheraccountid' . '}',
+                ObjectSerializer::toPathValue($otheraccountid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($update_counterparty_more_info_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_counterparty_more_info_request));
+            } else {
+                $httpBody = $update_counterparty_more_info_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -10984,9 +11433,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -11003,7 +11452,7 @@ class CounterpartyApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'POST',
+            'PUT',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -11011,626 +11460,46 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400DeleteCounterpartyForAnyAccount
+     * Operation updateCounterpartyOpenCorporatesUrl
      *
-     * Delete Counterparty for any account (Explicit)
+     * Update Open Corporates Url of Counterparty
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteCounterpartyForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyOpenCorporatesUrlRequest $update_counterparty_open_corporates_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
      */
-    public function oBPv400DeleteCounterpartyForAnyAccount($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400DeleteCounterpartyForAnyAccount'][0])
+    public function updateCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['updateCounterpartyOpenCorporatesUrl'][0])
     {
-        $this->oBPv400DeleteCounterpartyForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType);
-    }
-
-    /**
-     * Operation oBPv400DeleteCounterpartyForAnyAccountWithHttpInfo
-     *
-     * Delete Counterparty for any account (Explicit)
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteCounterpartyForAnyAccount'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv400DeleteCounterpartyForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400DeleteCounterpartyForAnyAccount'][0])
-    {
-        $request = $this->oBPv400DeleteCounterpartyForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv400DeleteCounterpartyForAnyAccountAsync
-     *
-     * Delete Counterparty for any account (Explicit)
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteCounterpartyForAnyAccount'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400DeleteCounterpartyForAnyAccountAsync($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400DeleteCounterpartyForAnyAccount'][0])
-    {
-        return $this->oBPv400DeleteCounterpartyForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv400DeleteCounterpartyForAnyAccountAsyncWithHttpInfo
-     *
-     * Delete Counterparty for any account (Explicit)
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteCounterpartyForAnyAccount'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400DeleteCounterpartyForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400DeleteCounterpartyForAnyAccount'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv400DeleteCounterpartyForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv400DeleteCounterpartyForAnyAccount'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteCounterpartyForAnyAccount'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv400DeleteCounterpartyForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400DeleteCounterpartyForAnyAccount'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400DeleteCounterpartyForAnyAccount'
-            );
-        }
-
-        // verify the required parameter 'accountid' is set
-        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400DeleteCounterpartyForAnyAccount'
-            );
-        }
-
-        // verify the required parameter 'viewid' is set
-        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv400DeleteCounterpartyForAnyAccount'
-            );
-        }
-
-        // verify the required parameter 'counterpartyid' is set
-        if ($counterpartyid === null || (is_array($counterpartyid) && count($counterpartyid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $counterpartyid when calling oBPv400DeleteCounterpartyForAnyAccount'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($accountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountid' . '}',
-                ObjectSerializer::toPathValue($accountid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($viewid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'viewid' . '}',
-                ObjectSerializer::toPathValue($viewid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($counterpartyid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'counterpartyid' . '}',
-                ObjectSerializer::toPathValue($counterpartyid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv400DeleteExplicitCounterparty
-     *
-     * Delete Counterparty (Explicit)
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteExplicitCounterparty'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv400DeleteExplicitCounterparty($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400DeleteExplicitCounterparty'][0])
-    {
-        $this->oBPv400DeleteExplicitCounterpartyWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType);
-    }
-
-    /**
-     * Operation oBPv400DeleteExplicitCounterpartyWithHttpInfo
-     *
-     * Delete Counterparty (Explicit)
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteExplicitCounterparty'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv400DeleteExplicitCounterpartyWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400DeleteExplicitCounterparty'][0])
-    {
-        $request = $this->oBPv400DeleteExplicitCounterpartyRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv400DeleteExplicitCounterpartyAsync
-     *
-     * Delete Counterparty (Explicit)
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteExplicitCounterparty'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400DeleteExplicitCounterpartyAsync($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400DeleteExplicitCounterparty'][0])
-    {
-        return $this->oBPv400DeleteExplicitCounterpartyAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv400DeleteExplicitCounterpartyAsyncWithHttpInfo
-     *
-     * Delete Counterparty (Explicit)
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteExplicitCounterparty'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400DeleteExplicitCounterpartyAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400DeleteExplicitCounterparty'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv400DeleteExplicitCounterpartyRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv400DeleteExplicitCounterparty'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteExplicitCounterparty'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv400DeleteExplicitCounterpartyRequest($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400DeleteExplicitCounterparty'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400DeleteExplicitCounterparty'
-            );
-        }
-
-        // verify the required parameter 'accountid' is set
-        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400DeleteExplicitCounterparty'
-            );
-        }
-
-        // verify the required parameter 'viewid' is set
-        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv400DeleteExplicitCounterparty'
-            );
-        }
-
-        // verify the required parameter 'counterpartyid' is set
-        if ($counterpartyid === null || (is_array($counterpartyid) && count($counterpartyid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $counterpartyid when calling oBPv400DeleteExplicitCounterparty'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($accountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountid' . '}',
-                ObjectSerializer::toPathValue($accountid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($viewid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'viewid' . '}',
-                ObjectSerializer::toPathValue($viewid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($counterpartyid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'counterpartyid' . '}',
-                ObjectSerializer::toPathValue($counterpartyid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv400GetCounterpartiesForAnyAccount
-     *
-     * Get Counterparties for any account (Explicit)
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCounterpartiesForAnyAccount'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetCounterpartiesForAnyAccount200Response
-     */
-    public function oBPv400GetCounterpartiesForAnyAccount($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv400GetCounterpartiesForAnyAccount'][0])
-    {
-        list($response) = $this->oBPv400GetCounterpartiesForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $contentType);
+        list($response) = $this->updateCounterpartyOpenCorporatesUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetCounterpartiesForAnyAccountWithHttpInfo
+     * Operation updateCounterpartyOpenCorporatesUrlWithHttpInfo
      *
-     * Get Counterparties for any account (Explicit)
+     * Update Open Corporates Url of Counterparty
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCounterpartiesForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyOpenCorporatesUrlRequest $update_counterparty_open_corporates_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetCounterpartiesForAnyAccount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetCounterpartiesForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv400GetCounterpartiesForAnyAccount'][0])
+    public function updateCounterpartyOpenCorporatesUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['updateCounterpartyOpenCorporatesUrl'][0])
     {
-        $request = $this->oBPv400GetCounterpartiesForAnyAccountRequest($bankid, $accountid, $viewid, $contentType);
+        $request = $this->updateCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11658,7 +11527,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetCounterpartiesForAnyAccount200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $request,
                         $response,
                     );
@@ -11680,7 +11549,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetCounterpartiesForAnyAccount200Response',
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                 $request,
                 $response,
             );
@@ -11689,7 +11558,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetCounterpartiesForAnyAccount200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11702,21 +11571,23 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400GetCounterpartiesForAnyAccountAsync
+     * Operation updateCounterpartyOpenCorporatesUrlAsync
      *
-     * Get Counterparties for any account (Explicit)
+     * Update Open Corporates Url of Counterparty
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCounterpartiesForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyOpenCorporatesUrlRequest $update_counterparty_open_corporates_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetCounterpartiesForAnyAccountAsync($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv400GetCounterpartiesForAnyAccount'][0])
+    public function updateCounterpartyOpenCorporatesUrlAsync($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['updateCounterpartyOpenCorporatesUrl'][0])
     {
-        return $this->oBPv400GetCounterpartiesForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $contentType)
+        return $this->updateCounterpartyOpenCorporatesUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11725,22 +11596,24 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400GetCounterpartiesForAnyAccountAsyncWithHttpInfo
+     * Operation updateCounterpartyOpenCorporatesUrlAsyncWithHttpInfo
      *
-     * Get Counterparties for any account (Explicit)
+     * Update Open Corporates Url of Counterparty
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCounterpartiesForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyOpenCorporatesUrlRequest $update_counterparty_open_corporates_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetCounterpartiesForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv400GetCounterpartiesForAnyAccount'][0])
+    public function updateCounterpartyOpenCorporatesUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['updateCounterpartyOpenCorporatesUrl'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetCounterpartiesForAnyAccount200Response';
-        $request = $this->oBPv400GetCounterpartiesForAnyAccountRequest($bankid, $accountid, $viewid, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->updateCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11779,42 +11652,58 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetCounterpartiesForAnyAccount'
+     * Create request for operation 'updateCounterpartyOpenCorporatesUrl'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCounterpartiesForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyOpenCorporatesUrlRequest $update_counterparty_open_corporates_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyOpenCorporatesUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetCounterpartiesForAnyAccountRequest($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv400GetCounterpartiesForAnyAccount'][0])
+    public function updateCounterpartyOpenCorporatesUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request, string $contentType = self::contentTypes['updateCounterpartyOpenCorporatesUrl'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetCounterpartiesForAnyAccount'
+                'Missing the required parameter $bankid when calling updateCounterpartyOpenCorporatesUrl'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400GetCounterpartiesForAnyAccount'
+                'Missing the required parameter $accountid when calling updateCounterpartyOpenCorporatesUrl'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv400GetCounterpartiesForAnyAccount'
+                'Missing the required parameter $viewid when calling updateCounterpartyOpenCorporatesUrl'
+            );
+        }
+
+        // verify the required parameter 'otheraccountid' is set
+        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $otheraccountid when calling updateCounterpartyOpenCorporatesUrl'
+            );
+        }
+
+        // verify the required parameter 'update_counterparty_open_corporates_url_request' is set
+        if ($update_counterparty_open_corporates_url_request === null || (is_array($update_counterparty_open_corporates_url_request) && count($update_counterparty_open_corporates_url_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_counterparty_open_corporates_url_request when calling updateCounterpartyOpenCorporatesUrl'
             );
         }
 
 
-        $resourcePath = '/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties';
+        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -11847,6 +11736,14 @@ class CounterpartyApi
                 $resourcePath
             );
         }
+        // path params
+        if ($otheraccountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'otheraccountid' . '}',
+                ObjectSerializer::toPathValue($otheraccountid),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -11856,7 +11753,14 @@ class CounterpartyApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($update_counterparty_open_corporates_url_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_counterparty_open_corporates_url_request));
+            } else {
+                $httpBody = $update_counterparty_open_corporates_url_request;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -11890,9 +11794,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -11909,7 +11813,7 @@ class CounterpartyApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            'PUT',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -11917,44 +11821,46 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400GetCounterpartyByIdForAnyAccount
+     * Operation updateCounterpartyPhysicalLocation
      *
-     * Get Counterparty by Id for any account (Explicit)
+     * Update Counterparty Physical Location
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCounterpartyByIdForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyPhysicalLocationRequest $update_counterparty_physical_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyPhysicalLocation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
      */
-    public function oBPv400GetCounterpartyByIdForAnyAccount($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400GetCounterpartyByIdForAnyAccount'][0])
+    public function updateCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, string $contentType = self::contentTypes['updateCounterpartyPhysicalLocation'][0])
     {
-        list($response) = $this->oBPv400GetCounterpartyByIdForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+        list($response) = $this->updateCounterpartyPhysicalLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetCounterpartyByIdForAnyAccountWithHttpInfo
+     * Operation updateCounterpartyPhysicalLocationWithHttpInfo
      *
-     * Get Counterparty by Id for any account (Explicit)
+     * Update Counterparty Physical Location
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCounterpartyByIdForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyPhysicalLocationRequest $update_counterparty_physical_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyPhysicalLocation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetCounterpartyByIdForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400GetCounterpartyByIdForAnyAccount'][0])
+    public function updateCounterpartyPhysicalLocationWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, string $contentType = self::contentTypes['updateCounterpartyPhysicalLocation'][0])
     {
-        $request = $this->oBPv400GetCounterpartyByIdForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+        $request = $this->updateCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11982,7 +11888,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $request,
                         $response,
                     );
@@ -12004,7 +11910,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response',
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                 $request,
                 $response,
             );
@@ -12013,7 +11919,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12026,22 +11932,23 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400GetCounterpartyByIdForAnyAccountAsync
+     * Operation updateCounterpartyPhysicalLocationAsync
      *
-     * Get Counterparty by Id for any account (Explicit)
+     * Update Counterparty Physical Location
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCounterpartyByIdForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyPhysicalLocationRequest $update_counterparty_physical_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyPhysicalLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetCounterpartyByIdForAnyAccountAsync($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400GetCounterpartyByIdForAnyAccount'][0])
+    public function updateCounterpartyPhysicalLocationAsync($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, string $contentType = self::contentTypes['updateCounterpartyPhysicalLocation'][0])
     {
-        return $this->oBPv400GetCounterpartyByIdForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType)
+        return $this->updateCounterpartyPhysicalLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12050,23 +11957,24 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400GetCounterpartyByIdForAnyAccountAsyncWithHttpInfo
+     * Operation updateCounterpartyPhysicalLocationAsyncWithHttpInfo
      *
-     * Get Counterparty by Id for any account (Explicit)
+     * Update Counterparty Physical Location
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCounterpartyByIdForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyPhysicalLocationRequest $update_counterparty_physical_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyPhysicalLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetCounterpartyByIdForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400GetCounterpartyByIdForAnyAccount'][0])
+    public function updateCounterpartyPhysicalLocationAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, string $contentType = self::contentTypes['updateCounterpartyPhysicalLocation'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response';
-        $request = $this->oBPv400GetCounterpartyByIdForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->updateCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12105,50 +12013,58 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetCounterpartyByIdForAnyAccount'
+     * Create request for operation 'updateCounterpartyPhysicalLocation'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCounterpartyByIdForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyPhysicalLocationRequest $update_counterparty_physical_location_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyPhysicalLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetCounterpartyByIdForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400GetCounterpartyByIdForAnyAccount'][0])
+    public function updateCounterpartyPhysicalLocationRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request, string $contentType = self::contentTypes['updateCounterpartyPhysicalLocation'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetCounterpartyByIdForAnyAccount'
+                'Missing the required parameter $bankid when calling updateCounterpartyPhysicalLocation'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400GetCounterpartyByIdForAnyAccount'
+                'Missing the required parameter $accountid when calling updateCounterpartyPhysicalLocation'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv400GetCounterpartyByIdForAnyAccount'
+                'Missing the required parameter $viewid when calling updateCounterpartyPhysicalLocation'
             );
         }
 
-        // verify the required parameter 'counterpartyid' is set
-        if ($counterpartyid === null || (is_array($counterpartyid) && count($counterpartyid) === 0)) {
+        // verify the required parameter 'otheraccountid' is set
+        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $counterpartyid when calling oBPv400GetCounterpartyByIdForAnyAccount'
+                'Missing the required parameter $otheraccountid when calling updateCounterpartyPhysicalLocation'
+            );
+        }
+
+        // verify the required parameter 'update_counterparty_physical_location_request' is set
+        if ($update_counterparty_physical_location_request === null || (is_array($update_counterparty_physical_location_request) && count($update_counterparty_physical_location_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_counterparty_physical_location_request when calling updateCounterpartyPhysicalLocation'
             );
         }
 
 
-        $resourcePath = '/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}';
+        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -12182,10 +12098,10 @@ class CounterpartyApi
             );
         }
         // path params
-        if ($counterpartyid !== null) {
+        if ($otheraccountid !== null) {
             $resourcePath = str_replace(
-                '{' . 'counterpartyid' . '}',
-                ObjectSerializer::toPathValue($counterpartyid),
+                '{' . 'otheraccountid' . '}',
+                ObjectSerializer::toPathValue($otheraccountid),
                 $resourcePath
             );
         }
@@ -12198,7 +12114,14 @@ class CounterpartyApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($update_counterparty_physical_location_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_counterparty_physical_location_request));
+            } else {
+                $httpBody = $update_counterparty_physical_location_request;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -12232,9 +12155,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -12251,7 +12174,7 @@ class CounterpartyApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            'PUT',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -12259,44 +12182,46 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400GetCounterpartyByNameForAnyAccount
+     * Operation updateCounterpartyPrivateAlias
      *
-     * Get Counterparty by name for any account (Explicit)
+     * Update Counterparty Private Alias
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyname The COUNTERPARTYNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCounterpartyByNameForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyPrivateAlias'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
      */
-    public function oBPv400GetCounterpartyByNameForAnyAccount($bankid, $accountid, $viewid, $counterpartyname, string $contentType = self::contentTypes['oBPv400GetCounterpartyByNameForAnyAccount'][0])
+    public function updateCounterpartyPrivateAlias($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['updateCounterpartyPrivateAlias'][0])
     {
-        list($response) = $this->oBPv400GetCounterpartyByNameForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $counterpartyname, $contentType);
+        list($response) = $this->updateCounterpartyPrivateAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetCounterpartyByNameForAnyAccountWithHttpInfo
+     * Operation updateCounterpartyPrivateAliasWithHttpInfo
      *
-     * Get Counterparty by name for any account (Explicit)
+     * Update Counterparty Private Alias
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyname The COUNTERPARTYNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCounterpartyByNameForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyPrivateAlias'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetCounterpartyByNameForAnyAccountWithHttpInfo($bankid, $accountid, $viewid, $counterpartyname, string $contentType = self::contentTypes['oBPv400GetCounterpartyByNameForAnyAccount'][0])
+    public function updateCounterpartyPrivateAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['updateCounterpartyPrivateAlias'][0])
     {
-        $request = $this->oBPv400GetCounterpartyByNameForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyname, $contentType);
+        $request = $this->updateCounterpartyPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12324,7 +12249,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $request,
                         $response,
                     );
@@ -12346,7 +12271,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response',
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                 $request,
                 $response,
             );
@@ -12355,7 +12280,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12368,22 +12293,23 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400GetCounterpartyByNameForAnyAccountAsync
+     * Operation updateCounterpartyPrivateAliasAsync
      *
-     * Get Counterparty by name for any account (Explicit)
+     * Update Counterparty Private Alias
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyname The COUNTERPARTYNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCounterpartyByNameForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyPrivateAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetCounterpartyByNameForAnyAccountAsync($bankid, $accountid, $viewid, $counterpartyname, string $contentType = self::contentTypes['oBPv400GetCounterpartyByNameForAnyAccount'][0])
+    public function updateCounterpartyPrivateAliasAsync($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['updateCounterpartyPrivateAlias'][0])
     {
-        return $this->oBPv400GetCounterpartyByNameForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyname, $contentType)
+        return $this->updateCounterpartyPrivateAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12392,23 +12318,24 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400GetCounterpartyByNameForAnyAccountAsyncWithHttpInfo
+     * Operation updateCounterpartyPrivateAliasAsyncWithHttpInfo
      *
-     * Get Counterparty by name for any account (Explicit)
+     * Update Counterparty Private Alias
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyname The COUNTERPARTYNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCounterpartyByNameForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyPrivateAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetCounterpartyByNameForAnyAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyname, string $contentType = self::contentTypes['oBPv400GetCounterpartyByNameForAnyAccount'][0])
+    public function updateCounterpartyPrivateAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['updateCounterpartyPrivateAlias'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response';
-        $request = $this->oBPv400GetCounterpartyByNameForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyname, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->updateCounterpartyPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12447,50 +12374,58 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetCounterpartyByNameForAnyAccount'
+     * Create request for operation 'updateCounterpartyPrivateAlias'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyname The COUNTERPARTYNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCounterpartyByNameForAnyAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyPrivateAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetCounterpartyByNameForAnyAccountRequest($bankid, $accountid, $viewid, $counterpartyname, string $contentType = self::contentTypes['oBPv400GetCounterpartyByNameForAnyAccount'][0])
+    public function updateCounterpartyPrivateAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['updateCounterpartyPrivateAlias'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetCounterpartyByNameForAnyAccount'
+                'Missing the required parameter $bankid when calling updateCounterpartyPrivateAlias'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400GetCounterpartyByNameForAnyAccount'
+                'Missing the required parameter $accountid when calling updateCounterpartyPrivateAlias'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv400GetCounterpartyByNameForAnyAccount'
+                'Missing the required parameter $viewid when calling updateCounterpartyPrivateAlias'
             );
         }
 
-        // verify the required parameter 'counterpartyname' is set
-        if ($counterpartyname === null || (is_array($counterpartyname) && count($counterpartyname) === 0)) {
+        // verify the required parameter 'otheraccountid' is set
+        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $counterpartyname when calling oBPv400GetCounterpartyByNameForAnyAccount'
+                'Missing the required parameter $otheraccountid when calling updateCounterpartyPrivateAlias'
+            );
+        }
+
+        // verify the required parameter 'get_counterparty_public_alias200_response' is set
+        if ($get_counterparty_public_alias200_response === null || (is_array($get_counterparty_public_alias200_response) && count($get_counterparty_public_alias200_response) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $get_counterparty_public_alias200_response when calling updateCounterpartyPrivateAlias'
             );
         }
 
 
-        $resourcePath = '/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname}';
+        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -12524,10 +12459,10 @@ class CounterpartyApi
             );
         }
         // path params
-        if ($counterpartyname !== null) {
+        if ($otheraccountid !== null) {
             $resourcePath = str_replace(
-                '{' . 'counterpartyname' . '}',
-                ObjectSerializer::toPathValue($counterpartyname),
+                '{' . 'otheraccountid' . '}',
+                ObjectSerializer::toPathValue($otheraccountid),
                 $resourcePath
             );
         }
@@ -12540,7 +12475,14 @@ class CounterpartyApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($get_counterparty_public_alias200_response)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($get_counterparty_public_alias200_response));
+            } else {
+                $httpBody = $get_counterparty_public_alias200_response;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -12574,9 +12516,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -12593,7 +12535,7 @@ class CounterpartyApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            'PUT',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -12601,42 +12543,46 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400GetExplicitCounterpartiesForAccount
+     * Operation updateCounterpartyPublicAlias
      *
-     * Get Counterparties (Explicit)
+     * Update public alias of other bank account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetExplicitCounterpartiesForAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyPublicAlias'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetCounterpartiesForAnyAccount200Response
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
      */
-    public function oBPv400GetExplicitCounterpartiesForAccount($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv400GetExplicitCounterpartiesForAccount'][0])
+    public function updateCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['updateCounterpartyPublicAlias'][0])
     {
-        list($response) = $this->oBPv400GetExplicitCounterpartiesForAccountWithHttpInfo($bankid, $accountid, $viewid, $contentType);
+        list($response) = $this->updateCounterpartyPublicAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetExplicitCounterpartiesForAccountWithHttpInfo
+     * Operation updateCounterpartyPublicAliasWithHttpInfo
      *
-     * Get Counterparties (Explicit)
+     * Update public alias of other bank account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetExplicitCounterpartiesForAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyPublicAlias'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetCounterpartiesForAnyAccount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetExplicitCounterpartiesForAccountWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv400GetExplicitCounterpartiesForAccount'][0])
+    public function updateCounterpartyPublicAliasWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['updateCounterpartyPublicAlias'][0])
     {
-        $request = $this->oBPv400GetExplicitCounterpartiesForAccountRequest($bankid, $accountid, $viewid, $contentType);
+        $request = $this->updateCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12664,7 +12610,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetCounterpartiesForAnyAccount200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $request,
                         $response,
                     );
@@ -12686,7 +12632,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetCounterpartiesForAnyAccount200Response',
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                 $request,
                 $response,
             );
@@ -12695,7 +12641,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetCounterpartiesForAnyAccount200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12708,21 +12654,23 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400GetExplicitCounterpartiesForAccountAsync
+     * Operation updateCounterpartyPublicAliasAsync
      *
-     * Get Counterparties (Explicit)
+     * Update public alias of other bank account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetExplicitCounterpartiesForAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyPublicAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetExplicitCounterpartiesForAccountAsync($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv400GetExplicitCounterpartiesForAccount'][0])
+    public function updateCounterpartyPublicAliasAsync($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['updateCounterpartyPublicAlias'][0])
     {
-        return $this->oBPv400GetExplicitCounterpartiesForAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $contentType)
+        return $this->updateCounterpartyPublicAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12731,22 +12679,24 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400GetExplicitCounterpartiesForAccountAsyncWithHttpInfo
+     * Operation updateCounterpartyPublicAliasAsyncWithHttpInfo
      *
-     * Get Counterparties (Explicit)
+     * Update public alias of other bank account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetExplicitCounterpartiesForAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyPublicAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetExplicitCounterpartiesForAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv400GetExplicitCounterpartiesForAccount'][0])
+    public function updateCounterpartyPublicAliasAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['updateCounterpartyPublicAlias'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetCounterpartiesForAnyAccount200Response';
-        $request = $this->oBPv400GetExplicitCounterpartiesForAccountRequest($bankid, $accountid, $viewid, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->updateCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12785,42 +12735,58 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetExplicitCounterpartiesForAccount'
+     * Create request for operation 'updateCounterpartyPublicAlias'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetExplicitCounterpartiesForAccount'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\GetCounterpartyPublicAlias200Response $get_counterparty_public_alias200_response Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyPublicAlias'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetExplicitCounterpartiesForAccountRequest($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv400GetExplicitCounterpartiesForAccount'][0])
+    public function updateCounterpartyPublicAliasRequest($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response, string $contentType = self::contentTypes['updateCounterpartyPublicAlias'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetExplicitCounterpartiesForAccount'
+                'Missing the required parameter $bankid when calling updateCounterpartyPublicAlias'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400GetExplicitCounterpartiesForAccount'
+                'Missing the required parameter $accountid when calling updateCounterpartyPublicAlias'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv400GetExplicitCounterpartiesForAccount'
+                'Missing the required parameter $viewid when calling updateCounterpartyPublicAlias'
+            );
+        }
+
+        // verify the required parameter 'otheraccountid' is set
+        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $otheraccountid when calling updateCounterpartyPublicAlias'
+            );
+        }
+
+        // verify the required parameter 'get_counterparty_public_alias200_response' is set
+        if ($get_counterparty_public_alias200_response === null || (is_array($get_counterparty_public_alias200_response) && count($get_counterparty_public_alias200_response) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $get_counterparty_public_alias200_response when calling updateCounterpartyPublicAlias'
             );
         }
 
 
-        $resourcePath = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties';
+        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -12853,6 +12819,14 @@ class CounterpartyApi
                 $resourcePath
             );
         }
+        // path params
+        if ($otheraccountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'otheraccountid' . '}',
+                ObjectSerializer::toPathValue($otheraccountid),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -12862,7 +12836,14 @@ class CounterpartyApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($get_counterparty_public_alias200_response)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($get_counterparty_public_alias200_response));
+            } else {
+                $httpBody = $get_counterparty_public_alias200_response;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -12896,9 +12877,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -12915,7 +12896,7 @@ class CounterpartyApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            'PUT',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -12923,44 +12904,46 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400GetExplicitCounterpartyById
+     * Operation updateCounterpartyUrl
      *
-     * Get Counterparty by Id (Explicit)
+     * Update url of other bank account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetExplicitCounterpartyById'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyUrlRequest $update_counterparty_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyUrl'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
      */
-    public function oBPv400GetExplicitCounterpartyById($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400GetExplicitCounterpartyById'][0])
+    public function updateCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, string $contentType = self::contentTypes['updateCounterpartyUrl'][0])
     {
-        list($response) = $this->oBPv400GetExplicitCounterpartyByIdWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+        list($response) = $this->updateCounterpartyUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetExplicitCounterpartyByIdWithHttpInfo
+     * Operation updateCounterpartyUrlWithHttpInfo
      *
-     * Get Counterparty by Id (Explicit)
+     * Update url of other bank account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetExplicitCounterpartyById'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyUrlRequest $update_counterparty_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyUrl'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetExplicitCounterpartyByIdWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400GetExplicitCounterpartyById'][0])
+    public function updateCounterpartyUrlWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, string $contentType = self::contentTypes['updateCounterpartyUrl'][0])
     {
-        $request = $this->oBPv400GetExplicitCounterpartyByIdRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+        $request = $this->updateCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12988,7 +12971,7 @@ class CounterpartyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $request,
                         $response,
                     );
@@ -13010,7 +12993,7 @@ class CounterpartyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response',
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                 $request,
                 $response,
             );
@@ -13019,7 +13002,7 @@ class CounterpartyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -13032,22 +13015,23 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400GetExplicitCounterpartyByIdAsync
+     * Operation updateCounterpartyUrlAsync
      *
-     * Get Counterparty by Id (Explicit)
+     * Update url of other bank account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetExplicitCounterpartyById'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyUrlRequest $update_counterparty_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetExplicitCounterpartyByIdAsync($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400GetExplicitCounterpartyById'][0])
+    public function updateCounterpartyUrlAsync($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, string $contentType = self::contentTypes['updateCounterpartyUrl'][0])
     {
-        return $this->oBPv400GetExplicitCounterpartyByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType)
+        return $this->updateCounterpartyUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13056,23 +13040,24 @@ class CounterpartyApi
     }
 
     /**
-     * Operation oBPv400GetExplicitCounterpartyByIdAsyncWithHttpInfo
+     * Operation updateCounterpartyUrlAsyncWithHttpInfo
      *
-     * Get Counterparty by Id (Explicit)
+     * Update url of other bank account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetExplicitCounterpartyById'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyUrlRequest $update_counterparty_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetExplicitCounterpartyByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400GetExplicitCounterpartyById'][0])
+    public function updateCounterpartyUrlAsyncWithHttpInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, string $contentType = self::contentTypes['updateCounterpartyUrl'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response';
-        $request = $this->oBPv400GetExplicitCounterpartyByIdRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->updateCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13111,50 +13096,58 @@ class CounterpartyApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetExplicitCounterpartyById'
+     * Create request for operation 'updateCounterpartyUrl'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetExplicitCounterpartyById'] to see the possible values for this operation
+     * @param  string $otheraccountid The OTHERACCOUNTID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateCounterpartyUrlRequest $update_counterparty_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyUrl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetExplicitCounterpartyByIdRequest($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv400GetExplicitCounterpartyById'][0])
+    public function updateCounterpartyUrlRequest($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request, string $contentType = self::contentTypes['updateCounterpartyUrl'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetExplicitCounterpartyById'
+                'Missing the required parameter $bankid when calling updateCounterpartyUrl'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400GetExplicitCounterpartyById'
+                'Missing the required parameter $accountid when calling updateCounterpartyUrl'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv400GetExplicitCounterpartyById'
+                'Missing the required parameter $viewid when calling updateCounterpartyUrl'
             );
         }
 
-        // verify the required parameter 'counterpartyid' is set
-        if ($counterpartyid === null || (is_array($counterpartyid) && count($counterpartyid) === 0)) {
+        // verify the required parameter 'otheraccountid' is set
+        if ($otheraccountid === null || (is_array($otheraccountid) && count($otheraccountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $counterpartyid when calling oBPv400GetExplicitCounterpartyById'
+                'Missing the required parameter $otheraccountid when calling updateCounterpartyUrl'
+            );
+        }
+
+        // verify the required parameter 'update_counterparty_url_request' is set
+        if ($update_counterparty_url_request === null || (is_array($update_counterparty_url_request) && count($update_counterparty_url_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_counterparty_url_request when calling updateCounterpartyUrl'
             );
         }
 
 
-        $resourcePath = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}';
+        $resourcePath = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -13188,10 +13181,10 @@ class CounterpartyApi
             );
         }
         // path params
-        if ($counterpartyid !== null) {
+        if ($otheraccountid !== null) {
             $resourcePath = str_replace(
-                '{' . 'counterpartyid' . '}',
-                ObjectSerializer::toPathValue($counterpartyid),
+                '{' . 'otheraccountid' . '}',
+                ObjectSerializer::toPathValue($otheraccountid),
                 $resourcePath
             );
         }
@@ -13204,7 +13197,14 @@ class CounterpartyApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($update_counterparty_url_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_counterparty_url_request));
+            } else {
+                $httpBody = $update_counterparty_url_request;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -13238,9 +13238,9 @@ class CounterpartyApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -13257,7 +13257,7 @@ class CounterpartyApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            'PUT',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

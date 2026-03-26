@@ -1,16 +1,16 @@
 # DirectDebitAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateDirectDebit**](DirectDebitAPI.md#obpv400createdirectdebit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
-[**oBPv400CreateDirectDebitManagement**](DirectDebitAPI.md#obpv400createdirectdebitmanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
+[**createDirectDebit**](DirectDebitAPI.md#createdirectdebit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
+[**createDirectDebitManagement**](DirectDebitAPI.md#createdirectdebitmanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
 
 
-# **oBPv400CreateDirectDebit**
+# **createDirectDebit**
 ```swift
-    open class func oBPv400CreateDirectDebit(bankid: String, accountid: String, viewid: String, oBPv400CreateDirectDebitRequest: OBPv400CreateDirectDebitRequest, completion: @escaping (_ data: OBPv400CreateDirectDebit200Response?, _ error: Error?) -> Void)
+    open class func createDirectDebit(bankid: String, accountid: String, viewid: String, createDirectDebitRequest: CreateDirectDebitRequest, completion: @escaping (_ data: CreateDirectDebit200Response?, _ error: Error?) -> Void)
 ```
 
 Create Direct Debit
@@ -25,10 +25,10 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let viewid = "viewid_example" // String | The VIEWID identifier
-let oBPv400CreateDirectDebitRequest = OBPv4_0_0_createDirectDebit_request(type: "type_example", properties: OBPv4_0_0_createDirectDebit_request_properties(dateStarts: OBPv6_0_0_updateRateLimits_request_properties_from_date(type: "type_example", format: "format_example"), customerId: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), dateSigned: nil, userId: nil, dateExpires: nil, counterpartyId: nil)) // OBPv400CreateDirectDebitRequest | Request body
+let createDirectDebitRequest = createDirectDebit_request(dateStarts: Date(), customerId: "customerId_example", dateSigned: Date(), userId: "userId_example", dateExpires: Date(), counterpartyId: "counterpartyId_example") // CreateDirectDebitRequest | Request body
 
 // Create Direct Debit
-DirectDebitAPI.oBPv400CreateDirectDebit(bankid: bankid, accountid: accountid, viewid: viewid, oBPv400CreateDirectDebitRequest: oBPv400CreateDirectDebitRequest) { (response, error) in
+DirectDebitAPI.createDirectDebit(bankid: bankid, accountid: accountid, viewid: viewid, createDirectDebitRequest: createDirectDebitRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -47,11 +47,11 @@ Name | Type | Description  | Notes
  **bankid** | **String** | The BANKID identifier | 
  **accountid** | **String** | The ACCOUNTID identifier | 
  **viewid** | **String** | The VIEWID identifier | 
- **oBPv400CreateDirectDebitRequest** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md) | Request body | 
+ **createDirectDebitRequest** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 
@@ -64,9 +64,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateDirectDebitManagement**
+# **createDirectDebitManagement**
 ```swift
-    open class func oBPv400CreateDirectDebitManagement(bankid: String, accountid: String, oBPv400CreateDirectDebitRequest: OBPv400CreateDirectDebitRequest, completion: @escaping (_ data: OBPv400CreateDirectDebit200Response?, _ error: Error?) -> Void)
+    open class func createDirectDebitManagement(bankid: String, accountid: String, createDirectDebitRequest: CreateDirectDebitRequest, completion: @escaping (_ data: CreateDirectDebit200Response?, _ error: Error?) -> Void)
 ```
 
 Create Direct Debit (management)
@@ -80,10 +80,10 @@ import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
-let oBPv400CreateDirectDebitRequest = OBPv4_0_0_createDirectDebit_request(type: "type_example", properties: OBPv4_0_0_createDirectDebit_request_properties(dateStarts: OBPv6_0_0_updateRateLimits_request_properties_from_date(type: "type_example", format: "format_example"), customerId: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), dateSigned: nil, userId: nil, dateExpires: nil, counterpartyId: nil)) // OBPv400CreateDirectDebitRequest | Request body
+let createDirectDebitRequest = createDirectDebit_request(dateStarts: Date(), customerId: "customerId_example", dateSigned: Date(), userId: "userId_example", dateExpires: Date(), counterpartyId: "counterpartyId_example") // CreateDirectDebitRequest | Request body
 
 // Create Direct Debit (management)
-DirectDebitAPI.oBPv400CreateDirectDebitManagement(bankid: bankid, accountid: accountid, oBPv400CreateDirectDebitRequest: oBPv400CreateDirectDebitRequest) { (response, error) in
+DirectDebitAPI.createDirectDebitManagement(bankid: bankid, accountid: accountid, createDirectDebitRequest: createDirectDebitRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -101,11 +101,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
  **accountid** | **String** | The ACCOUNTID identifier | 
- **oBPv400CreateDirectDebitRequest** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md) | Request body | 
+ **createDirectDebitRequest** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 

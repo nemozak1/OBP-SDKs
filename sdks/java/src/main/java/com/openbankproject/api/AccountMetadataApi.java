@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv400DeleteSystemLevelEndpointTag200Response;
-import com.openbankproject.model.OBPv400GetTagsForViewOnAccount200Response;
-import com.openbankproject.model.OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems;
+import com.openbankproject.model.GetTagsForViewOnAccount200Response;
+import com.openbankproject.model.GetTagsForViewOnAccount200ResponseTagsInner;
+import com.openbankproject.model.GetTransactionTypes200ResponseTransactionTypesInnerId;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -47,7 +47,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class AccountMetadataApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -170,12 +170,12 @@ public class AccountMetadataApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
-   * @param obPv400DeleteSystemLevelEndpointTag200Response Request body (required)
-   * @return OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+   * @param getTransactionTypes200ResponseTransactionTypesInnerId Request body (required)
+   * @return GetTagsForViewOnAccount200ResponseTagsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems oBPv400AddTagForViewOnAccount(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull OBPv400DeleteSystemLevelEndpointTag200Response obPv400DeleteSystemLevelEndpointTag200Response) throws ApiException {
-    return oBPv400AddTagForViewOnAccount(bankid, accountid, viewid, obPv400DeleteSystemLevelEndpointTag200Response, null);
+  public GetTagsForViewOnAccount200ResponseTagsInner addTagForViewOnAccount(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId) throws ApiException {
+    return addTagForViewOnAccount(bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId, null);
   }
 
   /**
@@ -184,13 +184,13 @@ public class AccountMetadataApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
-   * @param obPv400DeleteSystemLevelEndpointTag200Response Request body (required)
+   * @param getTransactionTypes200ResponseTransactionTypesInnerId Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+   * @return GetTagsForViewOnAccount200ResponseTagsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems oBPv400AddTagForViewOnAccount(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull OBPv400DeleteSystemLevelEndpointTag200Response obPv400DeleteSystemLevelEndpointTag200Response, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> localVarResponse = oBPv400AddTagForViewOnAccountWithHttpInfo(bankid, accountid, viewid, obPv400DeleteSystemLevelEndpointTag200Response, headers);
+  public GetTagsForViewOnAccount200ResponseTagsInner addTagForViewOnAccount(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner> localVarResponse = addTagForViewOnAccountWithHttpInfo(bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId, headers);
     return localVarResponse.getData();
   }
 
@@ -200,12 +200,12 @@ public class AccountMetadataApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
-   * @param obPv400DeleteSystemLevelEndpointTag200Response Request body (required)
-   * @return ApiResponse&lt;OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems&gt;
+   * @param getTransactionTypes200ResponseTransactionTypesInnerId Request body (required)
+   * @return ApiResponse&lt;GetTagsForViewOnAccount200ResponseTagsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> oBPv400AddTagForViewOnAccountWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull OBPv400DeleteSystemLevelEndpointTag200Response obPv400DeleteSystemLevelEndpointTag200Response) throws ApiException {
-    return oBPv400AddTagForViewOnAccountWithHttpInfo(bankid, accountid, viewid, obPv400DeleteSystemLevelEndpointTag200Response, null);
+  public ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner> addTagForViewOnAccountWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId) throws ApiException {
+    return addTagForViewOnAccountWithHttpInfo(bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId, null);
   }
 
   /**
@@ -214,13 +214,13 @@ public class AccountMetadataApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
-   * @param obPv400DeleteSystemLevelEndpointTag200Response Request body (required)
+   * @param getTransactionTypes200ResponseTransactionTypesInnerId Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems&gt;
+   * @return ApiResponse&lt;GetTagsForViewOnAccount200ResponseTagsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> oBPv400AddTagForViewOnAccountWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull OBPv400DeleteSystemLevelEndpointTag200Response obPv400DeleteSystemLevelEndpointTag200Response, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400AddTagForViewOnAccountRequestBuilder(bankid, accountid, viewid, obPv400DeleteSystemLevelEndpointTag200Response, headers);
+  public ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner> addTagForViewOnAccountWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = addTagForViewOnAccountRequestBuilder(bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -231,11 +231,11 @@ public class AccountMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400AddTagForViewOnAccount", localVarResponse);
+          throw getApiException("addTagForViewOnAccount", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>(
+          return new ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -245,10 +245,10 @@ public class AccountMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>() {});
+        GetTagsForViewOnAccount200ResponseTagsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetTagsForViewOnAccount200ResponseTagsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>(
+        return new ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -267,22 +267,22 @@ public class AccountMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400AddTagForViewOnAccountRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull OBPv400DeleteSystemLevelEndpointTag200Response obPv400DeleteSystemLevelEndpointTag200Response, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder addTagForViewOnAccountRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400AddTagForViewOnAccount");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling addTagForViewOnAccount");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv400AddTagForViewOnAccount");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling addTagForViewOnAccount");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv400AddTagForViewOnAccount");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling addTagForViewOnAccount");
     }
-    // verify the required parameter 'obPv400DeleteSystemLevelEndpointTag200Response' is set
-    if (obPv400DeleteSystemLevelEndpointTag200Response == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400DeleteSystemLevelEndpointTag200Response' when calling oBPv400AddTagForViewOnAccount");
+    // verify the required parameter 'getTransactionTypes200ResponseTransactionTypesInnerId' is set
+    if (getTransactionTypes200ResponseTransactionTypesInnerId == null) {
+      throw new ApiException(400, "Missing the required parameter 'getTransactionTypes200ResponseTransactionTypesInnerId' when calling addTagForViewOnAccount");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -298,7 +298,7 @@ public class AccountMetadataApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400DeleteSystemLevelEndpointTag200Response);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(getTransactionTypes200ResponseTransactionTypesInnerId);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -323,8 +323,8 @@ public class AccountMetadataApi {
    * @param tagid The TAGID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteTagForViewOnAccount(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String tagid) throws ApiException {
-    oBPv400DeleteTagForViewOnAccount(bankid, accountid, viewid, tagid, null);
+  public void deleteTagForViewOnAccount(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String tagid) throws ApiException {
+    deleteTagForViewOnAccount(bankid, accountid, viewid, tagid, null);
   }
 
   /**
@@ -337,8 +337,8 @@ public class AccountMetadataApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteTagForViewOnAccount(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String tagid, Map<String, String> headers) throws ApiException {
-    oBPv400DeleteTagForViewOnAccountWithHttpInfo(bankid, accountid, viewid, tagid, headers);
+  public void deleteTagForViewOnAccount(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String tagid, Map<String, String> headers) throws ApiException {
+    deleteTagForViewOnAccountWithHttpInfo(bankid, accountid, viewid, tagid, headers);
   }
 
   /**
@@ -351,8 +351,8 @@ public class AccountMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteTagForViewOnAccountWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String tagid) throws ApiException {
-    return oBPv400DeleteTagForViewOnAccountWithHttpInfo(bankid, accountid, viewid, tagid, null);
+  public ApiResponse<Void> deleteTagForViewOnAccountWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String tagid) throws ApiException {
+    return deleteTagForViewOnAccountWithHttpInfo(bankid, accountid, viewid, tagid, null);
   }
 
   /**
@@ -366,8 +366,8 @@ public class AccountMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteTagForViewOnAccountWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String tagid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteTagForViewOnAccountRequestBuilder(bankid, accountid, viewid, tagid, headers);
+  public ApiResponse<Void> deleteTagForViewOnAccountWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String tagid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteTagForViewOnAccountRequestBuilder(bankid, accountid, viewid, tagid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -378,7 +378,7 @@ public class AccountMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteTagForViewOnAccount", localVarResponse);
+          throw getApiException("deleteTagForViewOnAccount", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -403,22 +403,22 @@ public class AccountMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteTagForViewOnAccountRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String tagid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteTagForViewOnAccountRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String tagid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400DeleteTagForViewOnAccount");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteTagForViewOnAccount");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv400DeleteTagForViewOnAccount");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling deleteTagForViewOnAccount");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv400DeleteTagForViewOnAccount");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling deleteTagForViewOnAccount");
     }
     // verify the required parameter 'tagid' is set
     if (tagid == null) {
-      throw new ApiException(400, "Missing the required parameter 'tagid' when calling oBPv400DeleteTagForViewOnAccount");
+      throw new ApiException(400, "Missing the required parameter 'tagid' when calling deleteTagForViewOnAccount");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -451,11 +451,11 @@ public class AccountMetadataApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
-   * @return OBPv400GetTagsForViewOnAccount200Response
+   * @return GetTagsForViewOnAccount200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetTagsForViewOnAccount200Response oBPv400GetTagsForViewOnAccount(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid) throws ApiException {
-    return oBPv400GetTagsForViewOnAccount(bankid, accountid, viewid, null);
+  public GetTagsForViewOnAccount200Response getTagsForViewOnAccount(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid) throws ApiException {
+    return getTagsForViewOnAccount(bankid, accountid, viewid, null);
   }
 
   /**
@@ -465,11 +465,11 @@ public class AccountMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetTagsForViewOnAccount200Response
+   * @return GetTagsForViewOnAccount200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetTagsForViewOnAccount200Response oBPv400GetTagsForViewOnAccount(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetTagsForViewOnAccount200Response> localVarResponse = oBPv400GetTagsForViewOnAccountWithHttpInfo(bankid, accountid, viewid, headers);
+  public GetTagsForViewOnAccount200Response getTagsForViewOnAccount(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetTagsForViewOnAccount200Response> localVarResponse = getTagsForViewOnAccountWithHttpInfo(bankid, accountid, viewid, headers);
     return localVarResponse.getData();
   }
 
@@ -479,11 +479,11 @@ public class AccountMetadataApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetTagsForViewOnAccount200Response&gt;
+   * @return ApiResponse&lt;GetTagsForViewOnAccount200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetTagsForViewOnAccount200Response> oBPv400GetTagsForViewOnAccountWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid) throws ApiException {
-    return oBPv400GetTagsForViewOnAccountWithHttpInfo(bankid, accountid, viewid, null);
+  public ApiResponse<GetTagsForViewOnAccount200Response> getTagsForViewOnAccountWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid) throws ApiException {
+    return getTagsForViewOnAccountWithHttpInfo(bankid, accountid, viewid, null);
   }
 
   /**
@@ -493,11 +493,11 @@ public class AccountMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetTagsForViewOnAccount200Response&gt;
+   * @return ApiResponse&lt;GetTagsForViewOnAccount200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetTagsForViewOnAccount200Response> oBPv400GetTagsForViewOnAccountWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetTagsForViewOnAccountRequestBuilder(bankid, accountid, viewid, headers);
+  public ApiResponse<GetTagsForViewOnAccount200Response> getTagsForViewOnAccountWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getTagsForViewOnAccountRequestBuilder(bankid, accountid, viewid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -508,11 +508,11 @@ public class AccountMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetTagsForViewOnAccount", localVarResponse);
+          throw getApiException("getTagsForViewOnAccount", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetTagsForViewOnAccount200Response>(
+          return new ApiResponse<GetTagsForViewOnAccount200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -522,10 +522,10 @@ public class AccountMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetTagsForViewOnAccount200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetTagsForViewOnAccount200Response>() {});
+        GetTagsForViewOnAccount200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetTagsForViewOnAccount200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetTagsForViewOnAccount200Response>(
+        return new ApiResponse<GetTagsForViewOnAccount200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -544,18 +544,18 @@ public class AccountMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetTagsForViewOnAccountRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getTagsForViewOnAccountRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400GetTagsForViewOnAccount");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getTagsForViewOnAccount");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv400GetTagsForViewOnAccount");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling getTagsForViewOnAccount");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv400GetTagsForViewOnAccount");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling getTagsForViewOnAccount");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();

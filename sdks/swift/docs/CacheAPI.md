@@ -1,18 +1,18 @@
 # CacheAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600GetCacheConfig**](CacheAPI.md#obpv600getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
-[**oBPv600GetCacheInfo**](CacheAPI.md#obpv600getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
-[**oBPv600GetCacheNamespaces**](CacheAPI.md#obpv600getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
-[**oBPv600InvalidateCacheNamespace**](CacheAPI.md#obpv600invalidatecachenamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
+[**getCacheConfig**](CacheAPI.md#getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
+[**getCacheInfo**](CacheAPI.md#getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
+[**getCacheNamespaces**](CacheAPI.md#getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
+[**invalidateCacheNamespace**](CacheAPI.md#invalidatecachenamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
 
 
-# **oBPv600GetCacheConfig**
+# **getCacheConfig**
 ```swift
-    open class func oBPv600GetCacheConfig(completion: @escaping (_ data: OBPv600GetCacheConfig200Response?, _ error: Error?) -> Void)
+    open class func getCacheConfig(completion: @escaping (_ data: GetCacheConfig200Response?, _ error: Error?) -> Void)
 ```
 
 Get Cache Configuration
@@ -26,7 +26,7 @@ import OBPSwift
 
 
 // Get Cache Configuration
-CacheAPI.oBPv600GetCacheConfig() { (response, error) in
+CacheAPI.getCacheConfig() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -43,7 +43,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Response.md)
+[**GetCacheConfig200Response**](GetCacheConfig200Response.md)
 
 ### Authorization
 
@@ -56,9 +56,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetCacheInfo**
+# **getCacheInfo**
 ```swift
-    open class func oBPv600GetCacheInfo(completion: @escaping (_ data: OBPv600GetCacheInfo200Response?, _ error: Error?) -> Void)
+    open class func getCacheInfo(completion: @escaping (_ data: GetCacheInfo200Response?, _ error: Error?) -> Void)
 ```
 
 Get Cache Information
@@ -72,7 +72,7 @@ import OBPSwift
 
 
 // Get Cache Information
-CacheAPI.oBPv600GetCacheInfo() { (response, error) in
+CacheAPI.getCacheInfo() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -89,7 +89,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.md)
+[**GetCacheInfo200Response**](GetCacheInfo200Response.md)
 
 ### Authorization
 
@@ -102,9 +102,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetCacheNamespaces**
+# **getCacheNamespaces**
 ```swift
-    open class func oBPv600GetCacheNamespaces(completion: @escaping (_ data: OBPv600GetCacheNamespaces200Response?, _ error: Error?) -> Void)
+    open class func getCacheNamespaces(completion: @escaping (_ data: GetCacheNamespaces200Response?, _ error: Error?) -> Void)
 ```
 
 Get Cache Namespaces
@@ -118,7 +118,7 @@ import OBPSwift
 
 
 // Get Cache Namespaces
-CacheAPI.oBPv600GetCacheNamespaces() { (response, error) in
+CacheAPI.getCacheNamespaces() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -135,7 +135,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces200Response.md)
+[**GetCacheNamespaces200Response**](GetCacheNamespaces200Response.md)
 
 ### Authorization
 
@@ -148,9 +148,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600InvalidateCacheNamespace**
+# **invalidateCacheNamespace**
 ```swift
-    open class func oBPv600InvalidateCacheNamespace(oBPv600InvalidateCacheNamespaceRequest: OBPv600InvalidateCacheNamespaceRequest, completion: @escaping (_ data: OBPv600InvalidateCacheNamespace200Response?, _ error: Error?) -> Void)
+    open class func invalidateCacheNamespace(invalidateCacheNamespaceRequest: InvalidateCacheNamespaceRequest, completion: @escaping (_ data: InvalidateCacheNamespace200Response?, _ error: Error?) -> Void)
 ```
 
 Invalidate Cache Namespace
@@ -162,10 +162,10 @@ Invalidate Cache Namespace
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OBPSwift
 
-let oBPv600InvalidateCacheNamespaceRequest = OBPv6_0_0_invalidateCacheNamespace_request(type: "type_example", properties: OBPv6_0_0_invalidateCacheNamespace_request_properties(namespaceId: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv600InvalidateCacheNamespaceRequest | Request body
+let invalidateCacheNamespaceRequest = invalidateCacheNamespace_request(namespaceId: "namespaceId_example") // InvalidateCacheNamespaceRequest | Request body
 
 // Invalidate Cache Namespace
-CacheAPI.oBPv600InvalidateCacheNamespace(oBPv600InvalidateCacheNamespaceRequest: oBPv600InvalidateCacheNamespaceRequest) { (response, error) in
+CacheAPI.invalidateCacheNamespace(invalidateCacheNamespaceRequest: invalidateCacheNamespaceRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -181,11 +181,11 @@ CacheAPI.oBPv600InvalidateCacheNamespace(oBPv600InvalidateCacheNamespaceRequest:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600InvalidateCacheNamespaceRequest** | [**OBPv600InvalidateCacheNamespaceRequest**](OBPv600InvalidateCacheNamespaceRequest.md) | Request body | 
+ **invalidateCacheNamespaceRequest** | [**InvalidateCacheNamespaceRequest**](InvalidateCacheNamespaceRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600InvalidateCacheNamespace200Response**](OBPv600InvalidateCacheNamespace200Response.md)
+[**InvalidateCacheNamespace200Response**](InvalidateCacheNamespace200Response.md)
 
 ### Authorization
 

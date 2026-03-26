@@ -19,17 +19,17 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv600BackupBankLevelDynamicEntity200Response
-import com.openbankproject.models.OBPv600BackupSystemDynamicEntity200Response
-import com.openbankproject.models.OBPv600CreateBankLevelDynamicEntity200Response
-import com.openbankproject.models.OBPv600CreateSystemDynamicEntity200Response
-import com.openbankproject.models.OBPv600CreateSystemDynamicEntityRequest
-import com.openbankproject.models.OBPv600GetAvailablePersonalDynamicEntities200Response
-import com.openbankproject.models.OBPv600GetBankLevelDynamicEntities200Response
-import com.openbankproject.models.OBPv600GetSystemDynamicEntities200Response
-import com.openbankproject.models.OBPv600UpdateBankLevelDynamicEntity200Response
-import com.openbankproject.models.OBPv600UpdateSystemDynamicEntity200Response
-import com.openbankproject.models.OBPv600UpdateSystemDynamicEntityRequest
+import com.openbankproject.models.BackupBankLevelDynamicEntity200Response
+import com.openbankproject.models.BackupSystemDynamicEntity200Response
+import com.openbankproject.models.CreateBankLevelDynamicEntity200Response
+import com.openbankproject.models.CreateSystemDynamicEntity200Response
+import com.openbankproject.models.CreateSystemDynamicEntityRequest
+import com.openbankproject.models.GetAvailablePersonalDynamicEntities200Response
+import com.openbankproject.models.GetBankLevelDynamicEntities200Response
+import com.openbankproject.models.GetSystemDynamicEntities200Response
+import com.openbankproject.models.UpdateBankLevelDynamicEntity200Response
+import com.openbankproject.models.UpdateSystemDynamicEntity200Response
+import com.openbankproject.models.UpdateSystemDynamicEntityRequest
 
 import com.squareup.moshi.Json
 
@@ -51,8 +51,308 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
+    }
+
+    /**
+     * POST /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup
+     * Backup Bank Level Dynamic Entity
+     * &lt;p&gt;Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+     * @param bankid The BANKID identifier
+     * @param dynamicentityid The DYNAMICENTITYID identifier
+     * @return BackupBankLevelDynamicEntity200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun backupBankLevelDynamicEntity(bankid: kotlin.String, dynamicentityid: kotlin.String) : BackupBankLevelDynamicEntity200Response {
+        val localVarResponse = backupBankLevelDynamicEntityWithHttpInfo(bankid = bankid, dynamicentityid = dynamicentityid)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as BackupBankLevelDynamicEntity200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup
+     * Backup Bank Level Dynamic Entity
+     * &lt;p&gt;Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+     * @param bankid The BANKID identifier
+     * @param dynamicentityid The DYNAMICENTITYID identifier
+     * @return ApiResponse<BackupBankLevelDynamicEntity200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun backupBankLevelDynamicEntityWithHttpInfo(bankid: kotlin.String, dynamicentityid: kotlin.String) : ApiResponse<BackupBankLevelDynamicEntity200Response?> {
+        val localVariableConfig = backupBankLevelDynamicEntityRequestConfig(bankid = bankid, dynamicentityid = dynamicentityid)
+
+        return request<Unit, BackupBankLevelDynamicEntity200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation backupBankLevelDynamicEntity
+     *
+     * @param bankid The BANKID identifier
+     * @param dynamicentityid The DYNAMICENTITYID identifier
+     * @return RequestConfig
+     */
+    fun backupBankLevelDynamicEntityRequestConfig(bankid: kotlin.String, dynamicentityid: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup".replace("{"+"bankid"+"}", encodeURIComponent(bankid.toString())).replace("{"+"dynamicentityid"+"}", encodeURIComponent(dynamicentityid.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * POST /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup
+     * Backup System Level Dynamic Entity
+     * &lt;p&gt;Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+     * @param dynamicentityid The DYNAMICENTITYID identifier
+     * @return BackupSystemDynamicEntity200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun backupSystemDynamicEntity(dynamicentityid: kotlin.String) : BackupSystemDynamicEntity200Response {
+        val localVarResponse = backupSystemDynamicEntityWithHttpInfo(dynamicentityid = dynamicentityid)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as BackupSystemDynamicEntity200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup
+     * Backup System Level Dynamic Entity
+     * &lt;p&gt;Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+     * @param dynamicentityid The DYNAMICENTITYID identifier
+     * @return ApiResponse<BackupSystemDynamicEntity200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun backupSystemDynamicEntityWithHttpInfo(dynamicentityid: kotlin.String) : ApiResponse<BackupSystemDynamicEntity200Response?> {
+        val localVariableConfig = backupSystemDynamicEntityRequestConfig(dynamicentityid = dynamicentityid)
+
+        return request<Unit, BackupSystemDynamicEntity200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation backupSystemDynamicEntity
+     *
+     * @param dynamicentityid The DYNAMICENTITYID identifier
+     * @return RequestConfig
+     */
+    fun backupSystemDynamicEntityRequestConfig(dynamicentityid: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup".replace("{"+"dynamicentityid"+"}", encodeURIComponent(dynamicentityid.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * POST /obp/v6.0.0/management/banks/{bankid}/dynamic-entities
+     * Create Bank Level Dynamic Entity
+     * &lt;p&gt;Create a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+     * @param bankid The BANKID identifier
+     * @param createSystemDynamicEntityRequest Request body
+     * @return CreateBankLevelDynamicEntity200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun createBankLevelDynamicEntity(bankid: kotlin.String, createSystemDynamicEntityRequest: CreateSystemDynamicEntityRequest) : CreateBankLevelDynamicEntity200Response {
+        val localVarResponse = createBankLevelDynamicEntityWithHttpInfo(bankid = bankid, createSystemDynamicEntityRequest = createSystemDynamicEntityRequest)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CreateBankLevelDynamicEntity200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /obp/v6.0.0/management/banks/{bankid}/dynamic-entities
+     * Create Bank Level Dynamic Entity
+     * &lt;p&gt;Create a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+     * @param bankid The BANKID identifier
+     * @param createSystemDynamicEntityRequest Request body
+     * @return ApiResponse<CreateBankLevelDynamicEntity200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun createBankLevelDynamicEntityWithHttpInfo(bankid: kotlin.String, createSystemDynamicEntityRequest: CreateSystemDynamicEntityRequest) : ApiResponse<CreateBankLevelDynamicEntity200Response?> {
+        val localVariableConfig = createBankLevelDynamicEntityRequestConfig(bankid = bankid, createSystemDynamicEntityRequest = createSystemDynamicEntityRequest)
+
+        return request<CreateSystemDynamicEntityRequest, CreateBankLevelDynamicEntity200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation createBankLevelDynamicEntity
+     *
+     * @param bankid The BANKID identifier
+     * @param createSystemDynamicEntityRequest Request body
+     * @return RequestConfig
+     */
+    fun createBankLevelDynamicEntityRequestConfig(bankid: kotlin.String, createSystemDynamicEntityRequest: CreateSystemDynamicEntityRequest) : RequestConfig<CreateSystemDynamicEntityRequest> {
+        val localVariableBody = createSystemDynamicEntityRequest
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/obp/v6.0.0/management/banks/{bankid}/dynamic-entities".replace("{"+"bankid"+"}", encodeURIComponent(bankid.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * POST /obp/v6.0.0/management/system-dynamic-entities
+     * Create System Level Dynamic Entity
+     * &lt;p&gt;Create a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; 
+     * @param createSystemDynamicEntityRequest Request body
+     * @return CreateSystemDynamicEntity200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun createSystemDynamicEntity(createSystemDynamicEntityRequest: CreateSystemDynamicEntityRequest) : CreateSystemDynamicEntity200Response {
+        val localVarResponse = createSystemDynamicEntityWithHttpInfo(createSystemDynamicEntityRequest = createSystemDynamicEntityRequest)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CreateSystemDynamicEntity200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /obp/v6.0.0/management/system-dynamic-entities
+     * Create System Level Dynamic Entity
+     * &lt;p&gt;Create a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; 
+     * @param createSystemDynamicEntityRequest Request body
+     * @return ApiResponse<CreateSystemDynamicEntity200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun createSystemDynamicEntityWithHttpInfo(createSystemDynamicEntityRequest: CreateSystemDynamicEntityRequest) : ApiResponse<CreateSystemDynamicEntity200Response?> {
+        val localVariableConfig = createSystemDynamicEntityRequestConfig(createSystemDynamicEntityRequest = createSystemDynamicEntityRequest)
+
+        return request<CreateSystemDynamicEntityRequest, CreateSystemDynamicEntity200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation createSystemDynamicEntity
+     *
+     * @param createSystemDynamicEntityRequest Request body
+     * @return RequestConfig
+     */
+    fun createSystemDynamicEntityRequestConfig(createSystemDynamicEntityRequest: CreateSystemDynamicEntityRequest) : RequestConfig<CreateSystemDynamicEntityRequest> {
+        val localVariableBody = createSystemDynamicEntityRequest
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/obp/v6.0.0/management/system-dynamic-entities",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
     }
 
     /**
@@ -69,8 +369,8 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteBankLevelDynamicEntity(bankid: kotlin.String, dynamicentityid: kotlin.String) : Unit {
-        val localVarResponse = oBPv400DeleteBankLevelDynamicEntityWithHttpInfo(bankid = bankid, dynamicentityid = dynamicentityid)
+    fun deleteBankLevelDynamicEntity(bankid: kotlin.String, dynamicentityid: kotlin.String) : Unit {
+        val localVarResponse = deleteBankLevelDynamicEntityWithHttpInfo(bankid = bankid, dynamicentityid = dynamicentityid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -98,8 +398,8 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteBankLevelDynamicEntityWithHttpInfo(bankid: kotlin.String, dynamicentityid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv400DeleteBankLevelDynamicEntityRequestConfig(bankid = bankid, dynamicentityid = dynamicentityid)
+    fun deleteBankLevelDynamicEntityWithHttpInfo(bankid: kotlin.String, dynamicentityid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteBankLevelDynamicEntityRequestConfig(bankid = bankid, dynamicentityid = dynamicentityid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -107,13 +407,13 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
-     * To obtain the request config of the operation oBPv400DeleteBankLevelDynamicEntity
+     * To obtain the request config of the operation deleteBankLevelDynamicEntity
      *
      * @param bankid The BANKID identifier
      * @param dynamicentityid The DYNAMICENTITYID identifier
      * @return RequestConfig
      */
-    fun oBPv400DeleteBankLevelDynamicEntityRequestConfig(bankid: kotlin.String, dynamicentityid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteBankLevelDynamicEntityRequestConfig(bankid: kotlin.String, dynamicentityid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -141,8 +441,8 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteMyDynamicEntity(dynamicentityid: kotlin.String) : Unit {
-        val localVarResponse = oBPv400DeleteMyDynamicEntityWithHttpInfo(dynamicentityid = dynamicentityid)
+    fun deleteMyDynamicEntity(dynamicentityid: kotlin.String) : Unit {
+        val localVarResponse = deleteMyDynamicEntityWithHttpInfo(dynamicentityid = dynamicentityid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -169,8 +469,8 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteMyDynamicEntityWithHttpInfo(dynamicentityid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv400DeleteMyDynamicEntityRequestConfig(dynamicentityid = dynamicentityid)
+    fun deleteMyDynamicEntityWithHttpInfo(dynamicentityid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteMyDynamicEntityRequestConfig(dynamicentityid = dynamicentityid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -178,12 +478,12 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
-     * To obtain the request config of the operation oBPv400DeleteMyDynamicEntity
+     * To obtain the request config of the operation deleteMyDynamicEntity
      *
      * @param dynamicentityid The DYNAMICENTITYID identifier
      * @return RequestConfig
      */
-    fun oBPv400DeleteMyDynamicEntityRequestConfig(dynamicentityid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteMyDynamicEntityRequestConfig(dynamicentityid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -211,8 +511,8 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteSystemDynamicEntity(dynamicentityid: kotlin.String) : Unit {
-        val localVarResponse = oBPv400DeleteSystemDynamicEntityWithHttpInfo(dynamicentityid = dynamicentityid)
+    fun deleteSystemDynamicEntity(dynamicentityid: kotlin.String) : Unit {
+        val localVarResponse = deleteSystemDynamicEntityWithHttpInfo(dynamicentityid = dynamicentityid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -239,8 +539,8 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteSystemDynamicEntityWithHttpInfo(dynamicentityid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv400DeleteSystemDynamicEntityRequestConfig(dynamicentityid = dynamicentityid)
+    fun deleteSystemDynamicEntityWithHttpInfo(dynamicentityid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteSystemDynamicEntityRequestConfig(dynamicentityid = dynamicentityid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -248,12 +548,12 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
-     * To obtain the request config of the operation oBPv400DeleteSystemDynamicEntity
+     * To obtain the request config of the operation deleteSystemDynamicEntity
      *
      * @param dynamicentityid The DYNAMICENTITYID identifier
      * @return RequestConfig
      */
-    fun oBPv400DeleteSystemDynamicEntityRequestConfig(dynamicentityid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteSystemDynamicEntityRequestConfig(dynamicentityid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -261,306 +561,6 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
         return RequestConfig(
             method = RequestMethod.DELETE,
             path = "/obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid}".replace("{"+"dynamicentityid"+"}", encodeURIComponent(dynamicentityid.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup
-     * Backup Bank Level Dynamic Entity
-     * &lt;p&gt;Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @param bankid The BANKID identifier
-     * @param dynamicentityid The DYNAMICENTITYID identifier
-     * @return OBPv600BackupBankLevelDynamicEntity200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600BackupBankLevelDynamicEntity(bankid: kotlin.String, dynamicentityid: kotlin.String) : OBPv600BackupBankLevelDynamicEntity200Response {
-        val localVarResponse = oBPv600BackupBankLevelDynamicEntityWithHttpInfo(bankid = bankid, dynamicentityid = dynamicentityid)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600BackupBankLevelDynamicEntity200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup
-     * Backup Bank Level Dynamic Entity
-     * &lt;p&gt;Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @param bankid The BANKID identifier
-     * @param dynamicentityid The DYNAMICENTITYID identifier
-     * @return ApiResponse<OBPv600BackupBankLevelDynamicEntity200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600BackupBankLevelDynamicEntityWithHttpInfo(bankid: kotlin.String, dynamicentityid: kotlin.String) : ApiResponse<OBPv600BackupBankLevelDynamicEntity200Response?> {
-        val localVariableConfig = oBPv600BackupBankLevelDynamicEntityRequestConfig(bankid = bankid, dynamicentityid = dynamicentityid)
-
-        return request<Unit, OBPv600BackupBankLevelDynamicEntity200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv600BackupBankLevelDynamicEntity
-     *
-     * @param bankid The BANKID identifier
-     * @param dynamicentityid The DYNAMICENTITYID identifier
-     * @return RequestConfig
-     */
-    fun oBPv600BackupBankLevelDynamicEntityRequestConfig(bankid: kotlin.String, dynamicentityid: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup".replace("{"+"bankid"+"}", encodeURIComponent(bankid.toString())).replace("{"+"dynamicentityid"+"}", encodeURIComponent(dynamicentityid.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup
-     * Backup System Level Dynamic Entity
-     * &lt;p&gt;Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @param dynamicentityid The DYNAMICENTITYID identifier
-     * @return OBPv600BackupSystemDynamicEntity200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600BackupSystemDynamicEntity(dynamicentityid: kotlin.String) : OBPv600BackupSystemDynamicEntity200Response {
-        val localVarResponse = oBPv600BackupSystemDynamicEntityWithHttpInfo(dynamicentityid = dynamicentityid)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600BackupSystemDynamicEntity200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup
-     * Backup System Level Dynamic Entity
-     * &lt;p&gt;Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @param dynamicentityid The DYNAMICENTITYID identifier
-     * @return ApiResponse<OBPv600BackupSystemDynamicEntity200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600BackupSystemDynamicEntityWithHttpInfo(dynamicentityid: kotlin.String) : ApiResponse<OBPv600BackupSystemDynamicEntity200Response?> {
-        val localVariableConfig = oBPv600BackupSystemDynamicEntityRequestConfig(dynamicentityid = dynamicentityid)
-
-        return request<Unit, OBPv600BackupSystemDynamicEntity200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv600BackupSystemDynamicEntity
-     *
-     * @param dynamicentityid The DYNAMICENTITYID identifier
-     * @return RequestConfig
-     */
-    fun oBPv600BackupSystemDynamicEntityRequestConfig(dynamicentityid: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup".replace("{"+"dynamicentityid"+"}", encodeURIComponent(dynamicentityid.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /obp/v6.0.0/management/banks/{bankid}/dynamic-entities
-     * Create Bank Level Dynamic Entity
-     * &lt;p&gt;Create a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @param bankid The BANKID identifier
-     * @param obPv600CreateSystemDynamicEntityRequest Request body
-     * @return OBPv600CreateBankLevelDynamicEntity200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600CreateBankLevelDynamicEntity(bankid: kotlin.String, obPv600CreateSystemDynamicEntityRequest: OBPv600CreateSystemDynamicEntityRequest) : OBPv600CreateBankLevelDynamicEntity200Response {
-        val localVarResponse = oBPv600CreateBankLevelDynamicEntityWithHttpInfo(bankid = bankid, obPv600CreateSystemDynamicEntityRequest = obPv600CreateSystemDynamicEntityRequest)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600CreateBankLevelDynamicEntity200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /obp/v6.0.0/management/banks/{bankid}/dynamic-entities
-     * Create Bank Level Dynamic Entity
-     * &lt;p&gt;Create a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @param bankid The BANKID identifier
-     * @param obPv600CreateSystemDynamicEntityRequest Request body
-     * @return ApiResponse<OBPv600CreateBankLevelDynamicEntity200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600CreateBankLevelDynamicEntityWithHttpInfo(bankid: kotlin.String, obPv600CreateSystemDynamicEntityRequest: OBPv600CreateSystemDynamicEntityRequest) : ApiResponse<OBPv600CreateBankLevelDynamicEntity200Response?> {
-        val localVariableConfig = oBPv600CreateBankLevelDynamicEntityRequestConfig(bankid = bankid, obPv600CreateSystemDynamicEntityRequest = obPv600CreateSystemDynamicEntityRequest)
-
-        return request<OBPv600CreateSystemDynamicEntityRequest, OBPv600CreateBankLevelDynamicEntity200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv600CreateBankLevelDynamicEntity
-     *
-     * @param bankid The BANKID identifier
-     * @param obPv600CreateSystemDynamicEntityRequest Request body
-     * @return RequestConfig
-     */
-    fun oBPv600CreateBankLevelDynamicEntityRequestConfig(bankid: kotlin.String, obPv600CreateSystemDynamicEntityRequest: OBPv600CreateSystemDynamicEntityRequest) : RequestConfig<OBPv600CreateSystemDynamicEntityRequest> {
-        val localVariableBody = obPv600CreateSystemDynamicEntityRequest
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json"
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/obp/v6.0.0/management/banks/{bankid}/dynamic-entities".replace("{"+"bankid"+"}", encodeURIComponent(bankid.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /obp/v6.0.0/management/system-dynamic-entities
-     * Create System Level Dynamic Entity
-     * &lt;p&gt;Create a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @param obPv600CreateSystemDynamicEntityRequest Request body
-     * @return OBPv600CreateSystemDynamicEntity200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600CreateSystemDynamicEntity(obPv600CreateSystemDynamicEntityRequest: OBPv600CreateSystemDynamicEntityRequest) : OBPv600CreateSystemDynamicEntity200Response {
-        val localVarResponse = oBPv600CreateSystemDynamicEntityWithHttpInfo(obPv600CreateSystemDynamicEntityRequest = obPv600CreateSystemDynamicEntityRequest)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600CreateSystemDynamicEntity200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /obp/v6.0.0/management/system-dynamic-entities
-     * Create System Level Dynamic Entity
-     * &lt;p&gt;Create a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @param obPv600CreateSystemDynamicEntityRequest Request body
-     * @return ApiResponse<OBPv600CreateSystemDynamicEntity200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600CreateSystemDynamicEntityWithHttpInfo(obPv600CreateSystemDynamicEntityRequest: OBPv600CreateSystemDynamicEntityRequest) : ApiResponse<OBPv600CreateSystemDynamicEntity200Response?> {
-        val localVariableConfig = oBPv600CreateSystemDynamicEntityRequestConfig(obPv600CreateSystemDynamicEntityRequest = obPv600CreateSystemDynamicEntityRequest)
-
-        return request<OBPv600CreateSystemDynamicEntityRequest, OBPv600CreateSystemDynamicEntity200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv600CreateSystemDynamicEntity
-     *
-     * @param obPv600CreateSystemDynamicEntityRequest Request body
-     * @return RequestConfig
-     */
-    fun oBPv600CreateSystemDynamicEntityRequestConfig(obPv600CreateSystemDynamicEntityRequest: OBPv600CreateSystemDynamicEntityRequest) : RequestConfig<OBPv600CreateSystemDynamicEntityRequest> {
-        val localVariableBody = obPv600CreateSystemDynamicEntityRequest
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json"
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/obp/v6.0.0/management/system-dynamic-entities",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,
@@ -581,8 +581,8 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600DeleteSystemDynamicEntityCascade(dynamicentityid: kotlin.String) : Unit {
-        val localVarResponse = oBPv600DeleteSystemDynamicEntityCascadeWithHttpInfo(dynamicentityid = dynamicentityid)
+    fun deleteSystemDynamicEntityCascade(dynamicentityid: kotlin.String) : Unit {
+        val localVarResponse = deleteSystemDynamicEntityCascadeWithHttpInfo(dynamicentityid = dynamicentityid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -609,8 +609,8 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600DeleteSystemDynamicEntityCascadeWithHttpInfo(dynamicentityid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv600DeleteSystemDynamicEntityCascadeRequestConfig(dynamicentityid = dynamicentityid)
+    fun deleteSystemDynamicEntityCascadeWithHttpInfo(dynamicentityid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteSystemDynamicEntityCascadeRequestConfig(dynamicentityid = dynamicentityid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -618,12 +618,12 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
-     * To obtain the request config of the operation oBPv600DeleteSystemDynamicEntityCascade
+     * To obtain the request config of the operation deleteSystemDynamicEntityCascade
      *
      * @param dynamicentityid The DYNAMICENTITYID identifier
      * @return RequestConfig
      */
-    fun oBPv600DeleteSystemDynamicEntityCascadeRequestConfig(dynamicentityid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteSystemDynamicEntityCascadeRequestConfig(dynamicentityid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -643,7 +643,7 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * Get Bank Level Dynamic Entities
      * &lt;p&gt;Get all Bank Level Dynamic Entities for one bank with record counts.&lt;/p&gt; &lt;p&gt;Each dynamic entity in the response includes a &lt;code&gt;record_count&lt;/code&gt; field showing how many data records exist for that entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns snake_case field names and an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return OBPv600GetBankLevelDynamicEntities200Response
+     * @return GetBankLevelDynamicEntities200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -652,11 +652,11 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetBankLevelDynamicEntities(bankid: kotlin.String) : OBPv600GetBankLevelDynamicEntities200Response {
-        val localVarResponse = oBPv600GetBankLevelDynamicEntitiesWithHttpInfo(bankid = bankid)
+    fun getBankLevelDynamicEntities(bankid: kotlin.String) : GetBankLevelDynamicEntities200Response {
+        val localVarResponse = getBankLevelDynamicEntitiesWithHttpInfo(bankid = bankid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetBankLevelDynamicEntities200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetBankLevelDynamicEntities200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -675,27 +675,27 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * Get Bank Level Dynamic Entities
      * &lt;p&gt;Get all Bank Level Dynamic Entities for one bank with record counts.&lt;/p&gt; &lt;p&gt;Each dynamic entity in the response includes a &lt;code&gt;record_count&lt;/code&gt; field showing how many data records exist for that entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns snake_case field names and an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return ApiResponse<OBPv600GetBankLevelDynamicEntities200Response?>
+     * @return ApiResponse<GetBankLevelDynamicEntities200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetBankLevelDynamicEntitiesWithHttpInfo(bankid: kotlin.String) : ApiResponse<OBPv600GetBankLevelDynamicEntities200Response?> {
-        val localVariableConfig = oBPv600GetBankLevelDynamicEntitiesRequestConfig(bankid = bankid)
+    fun getBankLevelDynamicEntitiesWithHttpInfo(bankid: kotlin.String) : ApiResponse<GetBankLevelDynamicEntities200Response?> {
+        val localVariableConfig = getBankLevelDynamicEntitiesRequestConfig(bankid = bankid)
 
-        return request<Unit, OBPv600GetBankLevelDynamicEntities200Response>(
+        return request<Unit, GetBankLevelDynamicEntities200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetBankLevelDynamicEntities
+     * To obtain the request config of the operation getBankLevelDynamicEntities
      *
      * @param bankid The BANKID identifier
      * @return RequestConfig
      */
-    fun oBPv600GetBankLevelDynamicEntitiesRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
+    fun getBankLevelDynamicEntitiesRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -715,7 +715,7 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * GET /obp/v6.0.0/my/dynamic-entities
      * Get My Dynamic Entities
      * &lt;p&gt;Get all Dynamic Entity definitions I created.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns a cleaner response format with:&lt;br /&gt; * snake_case field names (dynamic_entity_id, user_id, bank_id, has_personal_entity)&lt;br /&gt; * An explicit entity_name field instead of using the entity name as a dynamic JSON key&lt;br /&gt; * The entity schema in a separate definition object&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @return OBPv600GetAvailablePersonalDynamicEntities200Response
+     * @return GetAvailablePersonalDynamicEntities200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -724,11 +724,11 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetMyDynamicEntities() : OBPv600GetAvailablePersonalDynamicEntities200Response {
-        val localVarResponse = oBPv600GetMyDynamicEntitiesWithHttpInfo()
+    fun getMyDynamicEntities() : GetAvailablePersonalDynamicEntities200Response {
+        val localVarResponse = getMyDynamicEntitiesWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetAvailablePersonalDynamicEntities200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAvailablePersonalDynamicEntities200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -746,26 +746,26 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * GET /obp/v6.0.0/my/dynamic-entities
      * Get My Dynamic Entities
      * &lt;p&gt;Get all Dynamic Entity definitions I created.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns a cleaner response format with:&lt;br /&gt; * snake_case field names (dynamic_entity_id, user_id, bank_id, has_personal_entity)&lt;br /&gt; * An explicit entity_name field instead of using the entity name as a dynamic JSON key&lt;br /&gt; * The entity schema in a separate definition object&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @return ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response?>
+     * @return ApiResponse<GetAvailablePersonalDynamicEntities200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetMyDynamicEntitiesWithHttpInfo() : ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response?> {
-        val localVariableConfig = oBPv600GetMyDynamicEntitiesRequestConfig()
+    fun getMyDynamicEntitiesWithHttpInfo() : ApiResponse<GetAvailablePersonalDynamicEntities200Response?> {
+        val localVariableConfig = getMyDynamicEntitiesRequestConfig()
 
-        return request<Unit, OBPv600GetAvailablePersonalDynamicEntities200Response>(
+        return request<Unit, GetAvailablePersonalDynamicEntities200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetMyDynamicEntities
+     * To obtain the request config of the operation getMyDynamicEntities
      *
      * @return RequestConfig
      */
-    fun oBPv600GetMyDynamicEntitiesRequestConfig() : RequestConfig<Unit> {
+    fun getMyDynamicEntitiesRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -785,7 +785,7 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * GET /obp/v6.0.0/management/system-dynamic-entities
      * Get System Dynamic Entities
      * &lt;p&gt;Get all System Dynamic Entities with record counts.&lt;/p&gt; &lt;p&gt;Each dynamic entity in the response includes a &lt;code&gt;record_count&lt;/code&gt; field showing how many data records exist for that entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns snake_case field names and an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @return OBPv600GetSystemDynamicEntities200Response
+     * @return GetSystemDynamicEntities200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -794,11 +794,11 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetSystemDynamicEntities() : OBPv600GetSystemDynamicEntities200Response {
-        val localVarResponse = oBPv600GetSystemDynamicEntitiesWithHttpInfo()
+    fun getSystemDynamicEntities() : GetSystemDynamicEntities200Response {
+        val localVarResponse = getSystemDynamicEntitiesWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetSystemDynamicEntities200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetSystemDynamicEntities200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -816,26 +816,26 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * GET /obp/v6.0.0/management/system-dynamic-entities
      * Get System Dynamic Entities
      * &lt;p&gt;Get all System Dynamic Entities with record counts.&lt;/p&gt; &lt;p&gt;Each dynamic entity in the response includes a &lt;code&gt;record_count&lt;/code&gt; field showing how many data records exist for that entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns snake_case field names and an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @return ApiResponse<OBPv600GetSystemDynamicEntities200Response?>
+     * @return ApiResponse<GetSystemDynamicEntities200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetSystemDynamicEntitiesWithHttpInfo() : ApiResponse<OBPv600GetSystemDynamicEntities200Response?> {
-        val localVariableConfig = oBPv600GetSystemDynamicEntitiesRequestConfig()
+    fun getSystemDynamicEntitiesWithHttpInfo() : ApiResponse<GetSystemDynamicEntities200Response?> {
+        val localVariableConfig = getSystemDynamicEntitiesRequestConfig()
 
-        return request<Unit, OBPv600GetSystemDynamicEntities200Response>(
+        return request<Unit, GetSystemDynamicEntities200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetSystemDynamicEntities
+     * To obtain the request config of the operation getSystemDynamicEntities
      *
      * @return RequestConfig
      */
-    fun oBPv600GetSystemDynamicEntitiesRequestConfig() : RequestConfig<Unit> {
+    fun getSystemDynamicEntitiesRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -857,8 +857,8 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * &lt;p&gt;Update a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param dynamicentityid The DYNAMICENTITYID identifier
-     * @param obPv600UpdateSystemDynamicEntityRequest Request body
-     * @return OBPv600UpdateBankLevelDynamicEntity200Response
+     * @param updateSystemDynamicEntityRequest Request body
+     * @return UpdateBankLevelDynamicEntity200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -867,11 +867,11 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600UpdateBankLevelDynamicEntity(bankid: kotlin.String, dynamicentityid: kotlin.String, obPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest) : OBPv600UpdateBankLevelDynamicEntity200Response {
-        val localVarResponse = oBPv600UpdateBankLevelDynamicEntityWithHttpInfo(bankid = bankid, dynamicentityid = dynamicentityid, obPv600UpdateSystemDynamicEntityRequest = obPv600UpdateSystemDynamicEntityRequest)
+    fun updateBankLevelDynamicEntity(bankid: kotlin.String, dynamicentityid: kotlin.String, updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest) : UpdateBankLevelDynamicEntity200Response {
+        val localVarResponse = updateBankLevelDynamicEntityWithHttpInfo(bankid = bankid, dynamicentityid = dynamicentityid, updateSystemDynamicEntityRequest = updateSystemDynamicEntityRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600UpdateBankLevelDynamicEntity200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as UpdateBankLevelDynamicEntity200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -891,31 +891,31 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * &lt;p&gt;Update a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param dynamicentityid The DYNAMICENTITYID identifier
-     * @param obPv600UpdateSystemDynamicEntityRequest Request body
-     * @return ApiResponse<OBPv600UpdateBankLevelDynamicEntity200Response?>
+     * @param updateSystemDynamicEntityRequest Request body
+     * @return ApiResponse<UpdateBankLevelDynamicEntity200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600UpdateBankLevelDynamicEntityWithHttpInfo(bankid: kotlin.String, dynamicentityid: kotlin.String, obPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest) : ApiResponse<OBPv600UpdateBankLevelDynamicEntity200Response?> {
-        val localVariableConfig = oBPv600UpdateBankLevelDynamicEntityRequestConfig(bankid = bankid, dynamicentityid = dynamicentityid, obPv600UpdateSystemDynamicEntityRequest = obPv600UpdateSystemDynamicEntityRequest)
+    fun updateBankLevelDynamicEntityWithHttpInfo(bankid: kotlin.String, dynamicentityid: kotlin.String, updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest) : ApiResponse<UpdateBankLevelDynamicEntity200Response?> {
+        val localVariableConfig = updateBankLevelDynamicEntityRequestConfig(bankid = bankid, dynamicentityid = dynamicentityid, updateSystemDynamicEntityRequest = updateSystemDynamicEntityRequest)
 
-        return request<OBPv600UpdateSystemDynamicEntityRequest, OBPv600UpdateBankLevelDynamicEntity200Response>(
+        return request<UpdateSystemDynamicEntityRequest, UpdateBankLevelDynamicEntity200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600UpdateBankLevelDynamicEntity
+     * To obtain the request config of the operation updateBankLevelDynamicEntity
      *
      * @param bankid The BANKID identifier
      * @param dynamicentityid The DYNAMICENTITYID identifier
-     * @param obPv600UpdateSystemDynamicEntityRequest Request body
+     * @param updateSystemDynamicEntityRequest Request body
      * @return RequestConfig
      */
-    fun oBPv600UpdateBankLevelDynamicEntityRequestConfig(bankid: kotlin.String, dynamicentityid: kotlin.String, obPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest) : RequestConfig<OBPv600UpdateSystemDynamicEntityRequest> {
-        val localVariableBody = obPv600UpdateSystemDynamicEntityRequest
+    fun updateBankLevelDynamicEntityRequestConfig(bankid: kotlin.String, dynamicentityid: kotlin.String, updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest) : RequestConfig<UpdateSystemDynamicEntityRequest> {
+        val localVariableBody = updateSystemDynamicEntityRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -936,8 +936,8 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * Update My Dynamic Entity
      * &lt;p&gt;Update a Dynamic Entity that I created.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param dynamicentityid The DYNAMICENTITYID identifier
-     * @param obPv600UpdateSystemDynamicEntityRequest Request body
-     * @return OBPv600UpdateSystemDynamicEntity200Response
+     * @param updateSystemDynamicEntityRequest Request body
+     * @return UpdateSystemDynamicEntity200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -946,11 +946,11 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600UpdateMyDynamicEntity(dynamicentityid: kotlin.String, obPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest) : OBPv600UpdateSystemDynamicEntity200Response {
-        val localVarResponse = oBPv600UpdateMyDynamicEntityWithHttpInfo(dynamicentityid = dynamicentityid, obPv600UpdateSystemDynamicEntityRequest = obPv600UpdateSystemDynamicEntityRequest)
+    fun updateMyDynamicEntity(dynamicentityid: kotlin.String, updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest) : UpdateSystemDynamicEntity200Response {
+        val localVarResponse = updateMyDynamicEntityWithHttpInfo(dynamicentityid = dynamicentityid, updateSystemDynamicEntityRequest = updateSystemDynamicEntityRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600UpdateSystemDynamicEntity200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as UpdateSystemDynamicEntity200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -969,30 +969,30 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * Update My Dynamic Entity
      * &lt;p&gt;Update a Dynamic Entity that I created.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param dynamicentityid The DYNAMICENTITYID identifier
-     * @param obPv600UpdateSystemDynamicEntityRequest Request body
-     * @return ApiResponse<OBPv600UpdateSystemDynamicEntity200Response?>
+     * @param updateSystemDynamicEntityRequest Request body
+     * @return ApiResponse<UpdateSystemDynamicEntity200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600UpdateMyDynamicEntityWithHttpInfo(dynamicentityid: kotlin.String, obPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest) : ApiResponse<OBPv600UpdateSystemDynamicEntity200Response?> {
-        val localVariableConfig = oBPv600UpdateMyDynamicEntityRequestConfig(dynamicentityid = dynamicentityid, obPv600UpdateSystemDynamicEntityRequest = obPv600UpdateSystemDynamicEntityRequest)
+    fun updateMyDynamicEntityWithHttpInfo(dynamicentityid: kotlin.String, updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest) : ApiResponse<UpdateSystemDynamicEntity200Response?> {
+        val localVariableConfig = updateMyDynamicEntityRequestConfig(dynamicentityid = dynamicentityid, updateSystemDynamicEntityRequest = updateSystemDynamicEntityRequest)
 
-        return request<OBPv600UpdateSystemDynamicEntityRequest, OBPv600UpdateSystemDynamicEntity200Response>(
+        return request<UpdateSystemDynamicEntityRequest, UpdateSystemDynamicEntity200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600UpdateMyDynamicEntity
+     * To obtain the request config of the operation updateMyDynamicEntity
      *
      * @param dynamicentityid The DYNAMICENTITYID identifier
-     * @param obPv600UpdateSystemDynamicEntityRequest Request body
+     * @param updateSystemDynamicEntityRequest Request body
      * @return RequestConfig
      */
-    fun oBPv600UpdateMyDynamicEntityRequestConfig(dynamicentityid: kotlin.String, obPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest) : RequestConfig<OBPv600UpdateSystemDynamicEntityRequest> {
-        val localVariableBody = obPv600UpdateSystemDynamicEntityRequest
+    fun updateMyDynamicEntityRequestConfig(dynamicentityid: kotlin.String, updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest) : RequestConfig<UpdateSystemDynamicEntityRequest> {
+        val localVariableBody = updateSystemDynamicEntityRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -1013,8 +1013,8 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * Update System Level Dynamic Entity
      * &lt;p&gt;Update a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param dynamicentityid The DYNAMICENTITYID identifier
-     * @param obPv600UpdateSystemDynamicEntityRequest Request body
-     * @return OBPv600UpdateSystemDynamicEntity200Response
+     * @param updateSystemDynamicEntityRequest Request body
+     * @return UpdateSystemDynamicEntity200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1023,11 +1023,11 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600UpdateSystemDynamicEntity(dynamicentityid: kotlin.String, obPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest) : OBPv600UpdateSystemDynamicEntity200Response {
-        val localVarResponse = oBPv600UpdateSystemDynamicEntityWithHttpInfo(dynamicentityid = dynamicentityid, obPv600UpdateSystemDynamicEntityRequest = obPv600UpdateSystemDynamicEntityRequest)
+    fun updateSystemDynamicEntity(dynamicentityid: kotlin.String, updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest) : UpdateSystemDynamicEntity200Response {
+        val localVarResponse = updateSystemDynamicEntityWithHttpInfo(dynamicentityid = dynamicentityid, updateSystemDynamicEntityRequest = updateSystemDynamicEntityRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600UpdateSystemDynamicEntity200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as UpdateSystemDynamicEntity200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1046,30 +1046,30 @@ open class DynamicEntityManageApi(basePath: kotlin.String = defaultBasePath, cli
      * Update System Level Dynamic Entity
      * &lt;p&gt;Update a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param dynamicentityid The DYNAMICENTITYID identifier
-     * @param obPv600UpdateSystemDynamicEntityRequest Request body
-     * @return ApiResponse<OBPv600UpdateSystemDynamicEntity200Response?>
+     * @param updateSystemDynamicEntityRequest Request body
+     * @return ApiResponse<UpdateSystemDynamicEntity200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600UpdateSystemDynamicEntityWithHttpInfo(dynamicentityid: kotlin.String, obPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest) : ApiResponse<OBPv600UpdateSystemDynamicEntity200Response?> {
-        val localVariableConfig = oBPv600UpdateSystemDynamicEntityRequestConfig(dynamicentityid = dynamicentityid, obPv600UpdateSystemDynamicEntityRequest = obPv600UpdateSystemDynamicEntityRequest)
+    fun updateSystemDynamicEntityWithHttpInfo(dynamicentityid: kotlin.String, updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest) : ApiResponse<UpdateSystemDynamicEntity200Response?> {
+        val localVariableConfig = updateSystemDynamicEntityRequestConfig(dynamicentityid = dynamicentityid, updateSystemDynamicEntityRequest = updateSystemDynamicEntityRequest)
 
-        return request<OBPv600UpdateSystemDynamicEntityRequest, OBPv600UpdateSystemDynamicEntity200Response>(
+        return request<UpdateSystemDynamicEntityRequest, UpdateSystemDynamicEntity200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600UpdateSystemDynamicEntity
+     * To obtain the request config of the operation updateSystemDynamicEntity
      *
      * @param dynamicentityid The DYNAMICENTITYID identifier
-     * @param obPv600UpdateSystemDynamicEntityRequest Request body
+     * @param updateSystemDynamicEntityRequest Request body
      * @return RequestConfig
      */
-    fun oBPv600UpdateSystemDynamicEntityRequestConfig(dynamicentityid: kotlin.String, obPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest) : RequestConfig<OBPv600UpdateSystemDynamicEntityRequest> {
-        val localVariableBody = obPv600UpdateSystemDynamicEntityRequest
+    fun updateSystemDynamicEntityRequestConfig(dynamicentityid: kotlin.String, updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest) : RequestConfig<UpdateSystemDynamicEntityRequest> {
+        val localVariableBody = updateSystemDynamicEntityRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

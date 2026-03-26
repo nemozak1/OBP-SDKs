@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -24,11 +24,11 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param accountaccessrequestid [String] The ACCOUNTACCESSREQUESTID identifier
-    # @param obpv600_reject_account_access_request_request [OBPv600RejectAccountAccessRequestRequest] Request body
+    # @param reject_account_access_request_request [RejectAccountAccessRequestRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600RejectAccountAccessRequest200Response]
-    def o_bpv6_0_0_approve_account_access_request(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_approve_account_access_request_with_http_info(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request, opts)
+    # @return [RejectAccountAccessRequest200Response]
+    def approve_account_access_request(bankid, accountid, accountaccessrequestid, reject_account_access_request_request, opts = {})
+      data, _status_code, _headers = approve_account_access_request_with_http_info(bankid, accountid, accountaccessrequestid, reject_account_access_request_request, opts)
       data
     end
 
@@ -37,28 +37,28 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param accountaccessrequestid [String] The ACCOUNTACCESSREQUESTID identifier
-    # @param obpv600_reject_account_access_request_request [OBPv600RejectAccountAccessRequestRequest] Request body
+    # @param reject_account_access_request_request [RejectAccountAccessRequestRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600RejectAccountAccessRequest200Response, Integer, Hash)>] OBPv600RejectAccountAccessRequest200Response data, response status code and response headers
-    def o_bpv6_0_0_approve_account_access_request_with_http_info(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request, opts = {})
+    # @return [Array<(RejectAccountAccessRequest200Response, Integer, Hash)>] RejectAccountAccessRequest200Response data, response status code and response headers
+    def approve_account_access_request_with_http_info(bankid, accountid, accountaccessrequestid, reject_account_access_request_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AccountAccessRequestApi.o_bpv6_0_0_approve_account_access_request ...'
+        @api_client.config.logger.debug 'Calling API: AccountAccessRequestApi.approve_account_access_request ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAccessRequestApi.o_bpv6_0_0_approve_account_access_request"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAccessRequestApi.approve_account_access_request"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountAccessRequestApi.o_bpv6_0_0_approve_account_access_request"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountAccessRequestApi.approve_account_access_request"
       end
       # verify the required parameter 'accountaccessrequestid' is set
       if @api_client.config.client_side_validation && accountaccessrequestid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountaccessrequestid' when calling AccountAccessRequestApi.o_bpv6_0_0_approve_account_access_request"
+        fail ArgumentError, "Missing the required parameter 'accountaccessrequestid' when calling AccountAccessRequestApi.approve_account_access_request"
       end
-      # verify the required parameter 'obpv600_reject_account_access_request_request' is set
-      if @api_client.config.client_side_validation && obpv600_reject_account_access_request_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_reject_account_access_request_request' when calling AccountAccessRequestApi.o_bpv6_0_0_approve_account_access_request"
+      # verify the required parameter 'reject_account_access_request_request' is set
+      if @api_client.config.client_side_validation && reject_account_access_request_request.nil?
+        fail ArgumentError, "Missing the required parameter 'reject_account_access_request_request' when calling AccountAccessRequestApi.approve_account_access_request"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'accountaccessrequestid' + '}', CGI.escape(accountaccessrequestid.to_s))
@@ -80,16 +80,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_reject_account_access_request_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(reject_account_access_request_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600RejectAccountAccessRequest200Response'
+      return_type = opts[:debug_return_type] || 'RejectAccountAccessRequest200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AccountAccessRequestApi.o_bpv6_0_0_approve_account_access_request",
+        :operation => :"AccountAccessRequestApi.approve_account_access_request",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -100,7 +100,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountAccessRequestApi#o_bpv6_0_0_approve_account_access_request\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AccountAccessRequestApi#approve_account_access_request\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -109,11 +109,11 @@ module OpenBankProject
     # <p>Create a new Account Access Request (maker step in maker/checker workflow).</p> <p>The requestor (maker) creates a request to grant a target user access to a specific view on an account.<br /> A business justification is required.</p> <p>The request is created with status INITIATED and must be approved or rejected by a different user (checker).</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
-    # @param obpv600_create_account_access_request_request [OBPv600CreateAccountAccessRequestRequest] Request body
+    # @param create_account_access_request_request [CreateAccountAccessRequestRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600RejectAccountAccessRequest200Response]
-    def o_bpv6_0_0_create_account_access_request(bankid, accountid, obpv600_create_account_access_request_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_create_account_access_request_with_http_info(bankid, accountid, obpv600_create_account_access_request_request, opts)
+    # @return [RejectAccountAccessRequest200Response]
+    def create_account_access_request(bankid, accountid, create_account_access_request_request, opts = {})
+      data, _status_code, _headers = create_account_access_request_with_http_info(bankid, accountid, create_account_access_request_request, opts)
       data
     end
 
@@ -121,24 +121,24 @@ module OpenBankProject
     # &lt;p&gt;Create a new Account Access Request (maker step in maker/checker workflow).&lt;/p&gt; &lt;p&gt;The requestor (maker) creates a request to grant a target user access to a specific view on an account.&lt;br /&gt; A business justification is required.&lt;/p&gt; &lt;p&gt;The request is created with status INITIATED and must be approved or rejected by a different user (checker).&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
-    # @param obpv600_create_account_access_request_request [OBPv600CreateAccountAccessRequestRequest] Request body
+    # @param create_account_access_request_request [CreateAccountAccessRequestRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600RejectAccountAccessRequest200Response, Integer, Hash)>] OBPv600RejectAccountAccessRequest200Response data, response status code and response headers
-    def o_bpv6_0_0_create_account_access_request_with_http_info(bankid, accountid, obpv600_create_account_access_request_request, opts = {})
+    # @return [Array<(RejectAccountAccessRequest200Response, Integer, Hash)>] RejectAccountAccessRequest200Response data, response status code and response headers
+    def create_account_access_request_with_http_info(bankid, accountid, create_account_access_request_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AccountAccessRequestApi.o_bpv6_0_0_create_account_access_request ...'
+        @api_client.config.logger.debug 'Calling API: AccountAccessRequestApi.create_account_access_request ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAccessRequestApi.o_bpv6_0_0_create_account_access_request"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAccessRequestApi.create_account_access_request"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountAccessRequestApi.o_bpv6_0_0_create_account_access_request"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountAccessRequestApi.create_account_access_request"
       end
-      # verify the required parameter 'obpv600_create_account_access_request_request' is set
-      if @api_client.config.client_side_validation && obpv600_create_account_access_request_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_create_account_access_request_request' when calling AccountAccessRequestApi.o_bpv6_0_0_create_account_access_request"
+      # verify the required parameter 'create_account_access_request_request' is set
+      if @api_client.config.client_side_validation && create_account_access_request_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_account_access_request_request' when calling AccountAccessRequestApi.create_account_access_request"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s))
@@ -160,16 +160,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_create_account_access_request_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_account_access_request_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600RejectAccountAccessRequest200Response'
+      return_type = opts[:debug_return_type] || 'RejectAccountAccessRequest200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AccountAccessRequestApi.o_bpv6_0_0_create_account_access_request",
+        :operation => :"AccountAccessRequestApi.create_account_access_request",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -180,7 +180,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountAccessRequestApi#o_bpv6_0_0_create_account_access_request\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AccountAccessRequestApi#create_account_access_request\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -191,9 +191,9 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param accountaccessrequestid [String] The ACCOUNTACCESSREQUESTID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600RejectAccountAccessRequest200Response]
-    def o_bpv6_0_0_get_account_access_request_by_id(bankid, accountid, accountaccessrequestid, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_account_access_request_by_id_with_http_info(bankid, accountid, accountaccessrequestid, opts)
+    # @return [RejectAccountAccessRequest200Response]
+    def get_account_access_request_by_id(bankid, accountid, accountaccessrequestid, opts = {})
+      data, _status_code, _headers = get_account_access_request_by_id_with_http_info(bankid, accountid, accountaccessrequestid, opts)
       data
     end
 
@@ -203,22 +203,22 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param accountaccessrequestid [String] The ACCOUNTACCESSREQUESTID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600RejectAccountAccessRequest200Response, Integer, Hash)>] OBPv600RejectAccountAccessRequest200Response data, response status code and response headers
-    def o_bpv6_0_0_get_account_access_request_by_id_with_http_info(bankid, accountid, accountaccessrequestid, opts = {})
+    # @return [Array<(RejectAccountAccessRequest200Response, Integer, Hash)>] RejectAccountAccessRequest200Response data, response status code and response headers
+    def get_account_access_request_by_id_with_http_info(bankid, accountid, accountaccessrequestid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AccountAccessRequestApi.o_bpv6_0_0_get_account_access_request_by_id ...'
+        @api_client.config.logger.debug 'Calling API: AccountAccessRequestApi.get_account_access_request_by_id ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAccessRequestApi.o_bpv6_0_0_get_account_access_request_by_id"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAccessRequestApi.get_account_access_request_by_id"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountAccessRequestApi.o_bpv6_0_0_get_account_access_request_by_id"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountAccessRequestApi.get_account_access_request_by_id"
       end
       # verify the required parameter 'accountaccessrequestid' is set
       if @api_client.config.client_side_validation && accountaccessrequestid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountaccessrequestid' when calling AccountAccessRequestApi.o_bpv6_0_0_get_account_access_request_by_id"
+        fail ArgumentError, "Missing the required parameter 'accountaccessrequestid' when calling AccountAccessRequestApi.get_account_access_request_by_id"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'accountaccessrequestid' + '}', CGI.escape(accountaccessrequestid.to_s))
@@ -238,13 +238,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600RejectAccountAccessRequest200Response'
+      return_type = opts[:debug_return_type] || 'RejectAccountAccessRequest200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AccountAccessRequestApi.o_bpv6_0_0_get_account_access_request_by_id",
+        :operation => :"AccountAccessRequestApi.get_account_access_request_by_id",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -255,7 +255,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountAccessRequestApi#o_bpv6_0_0_get_account_access_request_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AccountAccessRequestApi#get_account_access_request_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -265,9 +265,9 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetAccountAccessRequestsForAccount200Response]
-    def o_bpv6_0_0_get_account_access_requests_for_account(bankid, accountid, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_account_access_requests_for_account_with_http_info(bankid, accountid, opts)
+    # @return [GetAccountAccessRequestsForAccount200Response]
+    def get_account_access_requests_for_account(bankid, accountid, opts = {})
+      data, _status_code, _headers = get_account_access_requests_for_account_with_http_info(bankid, accountid, opts)
       data
     end
 
@@ -276,18 +276,18 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetAccountAccessRequestsForAccount200Response, Integer, Hash)>] OBPv600GetAccountAccessRequestsForAccount200Response data, response status code and response headers
-    def o_bpv6_0_0_get_account_access_requests_for_account_with_http_info(bankid, accountid, opts = {})
+    # @return [Array<(GetAccountAccessRequestsForAccount200Response, Integer, Hash)>] GetAccountAccessRequestsForAccount200Response data, response status code and response headers
+    def get_account_access_requests_for_account_with_http_info(bankid, accountid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AccountAccessRequestApi.o_bpv6_0_0_get_account_access_requests_for_account ...'
+        @api_client.config.logger.debug 'Calling API: AccountAccessRequestApi.get_account_access_requests_for_account ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAccessRequestApi.o_bpv6_0_0_get_account_access_requests_for_account"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAccessRequestApi.get_account_access_requests_for_account"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountAccessRequestApi.o_bpv6_0_0_get_account_access_requests_for_account"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountAccessRequestApi.get_account_access_requests_for_account"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s))
@@ -307,13 +307,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetAccountAccessRequestsForAccount200Response'
+      return_type = opts[:debug_return_type] || 'GetAccountAccessRequestsForAccount200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AccountAccessRequestApi.o_bpv6_0_0_get_account_access_requests_for_account",
+        :operation => :"AccountAccessRequestApi.get_account_access_requests_for_account",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -324,7 +324,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountAccessRequestApi#o_bpv6_0_0_get_account_access_requests_for_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AccountAccessRequestApi#get_account_access_requests_for_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -332,19 +332,19 @@ module OpenBankProject
     # Get My Account Access Requests
     # <p>Get Account Access Requests created by the current user (maker view).</p> <p>No special roles are required — a user can always see their own requests.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_access_requests</strong></a>: account_access_requests</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetAccountAccessRequestsForAccount200Response]
-    def o_bpv6_0_0_get_my_account_access_requests(opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_my_account_access_requests_with_http_info(opts)
+    # @return [GetAccountAccessRequestsForAccount200Response]
+    def get_my_account_access_requests(opts = {})
+      data, _status_code, _headers = get_my_account_access_requests_with_http_info(opts)
       data
     end
 
     # Get My Account Access Requests
     # &lt;p&gt;Get Account Access Requests created by the current user (maker view).&lt;/p&gt; &lt;p&gt;No special roles are required — a user can always see their own requests.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_requests&lt;/strong&gt;&lt;/a&gt;: account_access_requests&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetAccountAccessRequestsForAccount200Response, Integer, Hash)>] OBPv600GetAccountAccessRequestsForAccount200Response data, response status code and response headers
-    def o_bpv6_0_0_get_my_account_access_requests_with_http_info(opts = {})
+    # @return [Array<(GetAccountAccessRequestsForAccount200Response, Integer, Hash)>] GetAccountAccessRequestsForAccount200Response data, response status code and response headers
+    def get_my_account_access_requests_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AccountAccessRequestApi.o_bpv6_0_0_get_my_account_access_requests ...'
+        @api_client.config.logger.debug 'Calling API: AccountAccessRequestApi.get_my_account_access_requests ...'
       end
       # resource path
       local_var_path = '/obp/v6.0.0/my/account-access-requests'
@@ -364,13 +364,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetAccountAccessRequestsForAccount200Response'
+      return_type = opts[:debug_return_type] || 'GetAccountAccessRequestsForAccount200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AccountAccessRequestApi.o_bpv6_0_0_get_my_account_access_requests",
+        :operation => :"AccountAccessRequestApi.get_my_account_access_requests",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -381,7 +381,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountAccessRequestApi#o_bpv6_0_0_get_my_account_access_requests\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AccountAccessRequestApi#get_my_account_access_requests\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -391,11 +391,11 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param accountaccessrequestid [String] The ACCOUNTACCESSREQUESTID identifier
-    # @param obpv600_reject_account_access_request_request [OBPv600RejectAccountAccessRequestRequest] Request body
+    # @param reject_account_access_request_request [RejectAccountAccessRequestRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600RejectAccountAccessRequest200Response]
-    def o_bpv6_0_0_reject_account_access_request(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_reject_account_access_request_with_http_info(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request, opts)
+    # @return [RejectAccountAccessRequest200Response]
+    def reject_account_access_request(bankid, accountid, accountaccessrequestid, reject_account_access_request_request, opts = {})
+      data, _status_code, _headers = reject_account_access_request_with_http_info(bankid, accountid, accountaccessrequestid, reject_account_access_request_request, opts)
       data
     end
 
@@ -404,28 +404,28 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param accountaccessrequestid [String] The ACCOUNTACCESSREQUESTID identifier
-    # @param obpv600_reject_account_access_request_request [OBPv600RejectAccountAccessRequestRequest] Request body
+    # @param reject_account_access_request_request [RejectAccountAccessRequestRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600RejectAccountAccessRequest200Response, Integer, Hash)>] OBPv600RejectAccountAccessRequest200Response data, response status code and response headers
-    def o_bpv6_0_0_reject_account_access_request_with_http_info(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request, opts = {})
+    # @return [Array<(RejectAccountAccessRequest200Response, Integer, Hash)>] RejectAccountAccessRequest200Response data, response status code and response headers
+    def reject_account_access_request_with_http_info(bankid, accountid, accountaccessrequestid, reject_account_access_request_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AccountAccessRequestApi.o_bpv6_0_0_reject_account_access_request ...'
+        @api_client.config.logger.debug 'Calling API: AccountAccessRequestApi.reject_account_access_request ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAccessRequestApi.o_bpv6_0_0_reject_account_access_request"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAccessRequestApi.reject_account_access_request"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountAccessRequestApi.o_bpv6_0_0_reject_account_access_request"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountAccessRequestApi.reject_account_access_request"
       end
       # verify the required parameter 'accountaccessrequestid' is set
       if @api_client.config.client_side_validation && accountaccessrequestid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountaccessrequestid' when calling AccountAccessRequestApi.o_bpv6_0_0_reject_account_access_request"
+        fail ArgumentError, "Missing the required parameter 'accountaccessrequestid' when calling AccountAccessRequestApi.reject_account_access_request"
       end
-      # verify the required parameter 'obpv600_reject_account_access_request_request' is set
-      if @api_client.config.client_side_validation && obpv600_reject_account_access_request_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_reject_account_access_request_request' when calling AccountAccessRequestApi.o_bpv6_0_0_reject_account_access_request"
+      # verify the required parameter 'reject_account_access_request_request' is set
+      if @api_client.config.client_side_validation && reject_account_access_request_request.nil?
+        fail ArgumentError, "Missing the required parameter 'reject_account_access_request_request' when calling AccountAccessRequestApi.reject_account_access_request"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'accountaccessrequestid' + '}', CGI.escape(accountaccessrequestid.to_s))
@@ -447,16 +447,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_reject_account_access_request_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(reject_account_access_request_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600RejectAccountAccessRequest200Response'
+      return_type = opts[:debug_return_type] || 'RejectAccountAccessRequest200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AccountAccessRequestApi.o_bpv6_0_0_reject_account_access_request",
+        :operation => :"AccountAccessRequestApi.reject_account_access_request",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -467,7 +467,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountAccessRequestApi#o_bpv6_0_0_reject_account_access_request\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AccountAccessRequestApi#reject_account_access_request\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -19,15 +19,249 @@ module OpenBankProject
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # Create or Update Product Attribute Definition
+    # <p>Create or Update Product Attribute Definition</p> <p>The category field must be Product</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param create_or_update_transaction_request_attribute_definition_request [CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [GetTransactionRequestAttributeDefinition200ResponseAttributesInner]
+    def create_or_update_product_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request, opts = {})
+      data, _status_code, _headers = create_or_update_product_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request, opts)
+      data
+    end
+
+    # Create or Update Product Attribute Definition
+    # &lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param create_or_update_transaction_request_attribute_definition_request [CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetTransactionRequestAttributeDefinition200ResponseAttributesInner, Integer, Hash)>] GetTransactionRequestAttributeDefinition200ResponseAttributesInner data, response status code and response headers
+    def create_or_update_product_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ProductApi.create_or_update_product_attribute_definition ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.create_or_update_product_attribute_definition"
+      end
+      # verify the required parameter 'create_or_update_transaction_request_attribute_definition_request' is set
+      if @api_client.config.client_side_validation && create_or_update_transaction_request_attribute_definition_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_or_update_transaction_request_attribute_definition_request' when calling ProductApi.create_or_update_product_attribute_definition"
+      end
+      # resource path
+      local_var_path = '/obp/v4.0.0/banks/{bankid}/attribute-definitions/product'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_or_update_transaction_request_attribute_definition_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetTransactionRequestAttributeDefinition200ResponseAttributesInner'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"ProductApi.create_or_update_product_attribute_definition",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ProductApi#create_or_update_product_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Create Product
+    # <p>Create or Update Product for the Bank.</p> <p>The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.</p> <p>Typical Super Family values / Asset classes are:</p> <p>Debt<br /> Equity<br /> FX<br /> Commodity<br /> Derivative</p> <p>Product hiearchy vs Product Collections:</p> <ul> <li> <p>You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.</p> </li> <li> <p>You can define a collection (also known as baskets or buckets) of products using Product Collections.</p> </li> </ul> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#license\"><strong>license</strong></a>:</p> <p><a href=\"/glossary#meta\"><strong>meta</strong></a>:</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#parent_product_code\"><strong>parent_product_code</strong></a>: 787LOW</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#\"><strong>terms_and_conditions_url</strong></a>: <a href=\"http://www.example.com/xyz\">www.example.com/xyz</a></p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\">fees</a>: fees</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param productcode [String] The PRODUCTCODE identifier
+    # @param create_product_request [CreateProductRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [CreateProduct200Response]
+    def create_product(bankid, productcode, create_product_request, opts = {})
+      data, _status_code, _headers = create_product_with_http_info(bankid, productcode, create_product_request, opts)
+      data
+    end
+
+    # Create Product
+    # &lt;p&gt;Create or Update Product for the Bank.&lt;/p&gt; &lt;p&gt;The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.&lt;/p&gt; &lt;p&gt;Typical Super Family values / Asset classes are:&lt;/p&gt; &lt;p&gt;Debt&lt;br /&gt; Equity&lt;br /&gt; FX&lt;br /&gt; Commodity&lt;br /&gt; Derivative&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param productcode [String] The PRODUCTCODE identifier
+    # @param create_product_request [CreateProductRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateProduct200Response, Integer, Hash)>] CreateProduct200Response data, response status code and response headers
+    def create_product_with_http_info(bankid, productcode, create_product_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ProductApi.create_product ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.create_product"
+      end
+      # verify the required parameter 'productcode' is set
+      if @api_client.config.client_side_validation && productcode.nil?
+        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.create_product"
+      end
+      # verify the required parameter 'create_product_request' is set
+      if @api_client.config.client_side_validation && create_product_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_product_request' when calling ProductApi.create_product"
+      end
+      # resource path
+      local_var_path = '/obp/v5.0.0/banks/{bankid}/products/{productcode}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_product_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CreateProduct200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"ProductApi.create_product",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ProductApi#create_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Create Product Attribute
+    # <p>Create Product Attribute</p> <p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Product Attribute is linked to its Product by PRODUCT_CODE</p> <p>Typical product attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_attribute_id\"><strong>product_attribute_id</strong></a>:</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param productcode [String] The PRODUCTCODE identifier
+    # @param update_atm_attribute_request [UpdateAtmAttributeRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [CreateProductAttribute200Response]
+    def create_product_attribute(bankid, productcode, update_atm_attribute_request, opts = {})
+      data, _status_code, _headers = create_product_attribute_with_http_info(bankid, productcode, update_atm_attribute_request, opts)
+      data
+    end
+
+    # Create Product Attribute
+    # &lt;p&gt;Create Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param productcode [String] The PRODUCTCODE identifier
+    # @param update_atm_attribute_request [UpdateAtmAttributeRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateProductAttribute200Response, Integer, Hash)>] CreateProductAttribute200Response data, response status code and response headers
+    def create_product_attribute_with_http_info(bankid, productcode, update_atm_attribute_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ProductApi.create_product_attribute ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.create_product_attribute"
+      end
+      # verify the required parameter 'productcode' is set
+      if @api_client.config.client_side_validation && productcode.nil?
+        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.create_product_attribute"
+      end
+      # verify the required parameter 'update_atm_attribute_request' is set
+      if @api_client.config.client_side_validation && update_atm_attribute_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_atm_attribute_request' when calling ProductApi.create_product_attribute"
+      end
+      # resource path
+      local_var_path = '/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_atm_attribute_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CreateProductAttribute200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"ProductApi.create_product_attribute",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ProductApi#create_product_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Create Product Collection
     # <p>Create or Update a Product Collection at the Bank.</p> <p>Use Product Collections to create Product &quot;Baskets&quot;, &quot;Portfolios&quot;, &quot;Indices&quot;, &quot;Collections&quot;, &quot;Underlyings-lists&quot;, &quot;Buckets&quot; etc. etc.</p> <p>There is a many to many relationship between Products and Product Collections:</p> <ul> <li> <p>A Product can exist in many Collections</p> </li> <li> <p>A Collection can contain many Products.</p> </li> </ul> <p>A collection has collection code, one parent Product and one or more child Products.</p> <p>Product hiearchy vs Product Collections:</p> <ul> <li> <p>You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.</p> </li> <li> <p>You can define a collection (also known as baskets or buckets) of products using Product Collections.</p> </li> </ul> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#collection_code\">COLLECTION_CODE</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#collection_code\"><strong>collection_code</strong></a>:</p> <p><a href=\"/glossary#items\"><strong>items</strong></a>:</p> <p><a href=\"/glossary#member_product_code\"><strong>member_product_code</strong></a>:</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#product_collection\"><strong>product_collection</strong></a>:</p> 
     # @param bankid [String] The BANKID identifier
     # @param collectioncode [String] The COLLECTIONCODE identifier
-    # @param obpv310_create_product_collection_request [OBPv310CreateProductCollectionRequest] Request body
+    # @param create_product_collection_request [CreateProductCollectionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv310CreateProductCollection200Response]
-    def o_bpv3_1_0_create_product_collection(bankid, collectioncode, obpv310_create_product_collection_request, opts = {})
-      data, _status_code, _headers = o_bpv3_1_0_create_product_collection_with_http_info(bankid, collectioncode, obpv310_create_product_collection_request, opts)
+    # @return [CreateProductCollection200Response]
+    def create_product_collection(bankid, collectioncode, create_product_collection_request, opts = {})
+      data, _status_code, _headers = create_product_collection_with_http_info(bankid, collectioncode, create_product_collection_request, opts)
       data
     end
 
@@ -35,24 +269,24 @@ module OpenBankProject
     # &lt;p&gt;Create or Update a Product Collection at the Bank.&lt;/p&gt; &lt;p&gt;Use Product Collections to create Product &amp;quot;Baskets&amp;quot;, &amp;quot;Portfolios&amp;quot;, &amp;quot;Indices&amp;quot;, &amp;quot;Collections&amp;quot;, &amp;quot;Underlyings-lists&amp;quot;, &amp;quot;Buckets&amp;quot; etc. etc.&lt;/p&gt; &lt;p&gt;There is a many to many relationship between Products and Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A Product can exist in many Collections&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A Collection can contain many Products.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;A collection has collection code, one parent Product and one or more child Products.&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#items\&quot;&gt;&lt;strong&gt;items&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#member_product_code\&quot;&gt;&lt;strong&gt;member_product_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_collection\&quot;&gt;&lt;strong&gt;product_collection&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param collectioncode [String] The COLLECTIONCODE identifier
-    # @param obpv310_create_product_collection_request [OBPv310CreateProductCollectionRequest] Request body
+    # @param create_product_collection_request [CreateProductCollectionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv310CreateProductCollection200Response, Integer, Hash)>] OBPv310CreateProductCollection200Response data, response status code and response headers
-    def o_bpv3_1_0_create_product_collection_with_http_info(bankid, collectioncode, obpv310_create_product_collection_request, opts = {})
+    # @return [Array<(CreateProductCollection200Response, Integer, Hash)>] CreateProductCollection200Response data, response status code and response headers
+    def create_product_collection_with_http_info(bankid, collectioncode, create_product_collection_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv3_1_0_create_product_collection ...'
+        @api_client.config.logger.debug 'Calling API: ProductApi.create_product_collection ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv3_1_0_create_product_collection"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.create_product_collection"
       end
       # verify the required parameter 'collectioncode' is set
       if @api_client.config.client_side_validation && collectioncode.nil?
-        fail ArgumentError, "Missing the required parameter 'collectioncode' when calling ProductApi.o_bpv3_1_0_create_product_collection"
+        fail ArgumentError, "Missing the required parameter 'collectioncode' when calling ProductApi.create_product_collection"
       end
-      # verify the required parameter 'obpv310_create_product_collection_request' is set
-      if @api_client.config.client_side_validation && obpv310_create_product_collection_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv310_create_product_collection_request' when calling ProductApi.o_bpv3_1_0_create_product_collection"
+      # verify the required parameter 'create_product_collection_request' is set
+      if @api_client.config.client_side_validation && create_product_collection_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_product_collection_request' when calling ProductApi.create_product_collection"
       end
       # resource path
       local_var_path = '/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'collectioncode' + '}', CGI.escape(collectioncode.to_s))
@@ -74,16 +308,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv310_create_product_collection_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_product_collection_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv310CreateProductCollection200Response'
+      return_type = opts[:debug_return_type] || 'CreateProductCollection200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv3_1_0_create_product_collection",
+        :operation => :"ProductApi.create_product_collection",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -94,7 +328,87 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv3_1_0_create_product_collection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProductApi#create_product_collection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Create Product Fee
+    # <p>Create Product Fee</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#frequency\"><strong>frequency</strong></a>: DAILY</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#product_fee_id\">product_fee_id</a>: 696hlAHLFKUHE37469287634</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#frequency\"><strong>frequency</strong></a>: DAILY</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#product_fee_id\"><strong>product_fee_id</strong></a>: 696hlAHLFKUHE37469287634</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param productcode [String] The PRODUCTCODE identifier
+    # @param update_product_fee_request [UpdateProductFeeRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [GetProductFee200Response]
+    def create_product_fee(bankid, productcode, update_product_fee_request, opts = {})
+      data, _status_code, _headers = create_product_fee_with_http_info(bankid, productcode, update_product_fee_request, opts)
+      data
+    end
+
+    # Create Product Fee
+    # &lt;p&gt;Create Product Fee&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;product_fee_id&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param productcode [String] The PRODUCTCODE identifier
+    # @param update_product_fee_request [UpdateProductFeeRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetProductFee200Response, Integer, Hash)>] GetProductFee200Response data, response status code and response headers
+    def create_product_fee_with_http_info(bankid, productcode, update_product_fee_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ProductApi.create_product_fee ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.create_product_fee"
+      end
+      # verify the required parameter 'productcode' is set
+      if @api_client.config.client_side_validation && productcode.nil?
+        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.create_product_fee"
+      end
+      # verify the required parameter 'update_product_fee_request' is set
+      if @api_client.config.client_side_validation && update_product_fee_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_product_fee_request' when calling ProductApi.create_product_fee"
+      end
+      # resource path
+      local_var_path = '/obp/v4.0.0/banks/{bankid}/products/{productcode}/fee'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_product_fee_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetProductFee200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"ProductApi.create_product_fee",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ProductApi#create_product_fee\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -106,8 +420,8 @@ module OpenBankProject
     # @param productattributeid [String] The PRODUCTATTRIBUTEID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv3_1_0_delete_product_attribute(bankid, productcode, productattributeid, opts = {})
-      o_bpv3_1_0_delete_product_attribute_with_http_info(bankid, productcode, productattributeid, opts)
+    def delete_product_attribute(bankid, productcode, productattributeid, opts = {})
+      delete_product_attribute_with_http_info(bankid, productcode, productattributeid, opts)
       nil
     end
 
@@ -118,21 +432,21 @@ module OpenBankProject
     # @param productattributeid [String] The PRODUCTATTRIBUTEID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv3_1_0_delete_product_attribute_with_http_info(bankid, productcode, productattributeid, opts = {})
+    def delete_product_attribute_with_http_info(bankid, productcode, productattributeid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv3_1_0_delete_product_attribute ...'
+        @api_client.config.logger.debug 'Calling API: ProductApi.delete_product_attribute ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv3_1_0_delete_product_attribute"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.delete_product_attribute"
       end
       # verify the required parameter 'productcode' is set
       if @api_client.config.client_side_validation && productcode.nil?
-        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.o_bpv3_1_0_delete_product_attribute"
+        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.delete_product_attribute"
       end
       # verify the required parameter 'productattributeid' is set
       if @api_client.config.client_side_validation && productattributeid.nil?
-        fail ArgumentError, "Missing the required parameter 'productattributeid' when calling ProductApi.o_bpv3_1_0_delete_product_attribute"
+        fail ArgumentError, "Missing the required parameter 'productattributeid' when calling ProductApi.delete_product_attribute"
       end
       # resource path
       local_var_path = '/obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s)).sub('{' + 'productattributeid' + '}', CGI.escape(productattributeid.to_s))
@@ -156,7 +470,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv3_1_0_delete_product_attribute",
+        :operation => :"ProductApi.delete_product_attribute",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -167,379 +481,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv3_1_0_delete_product_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get Product Collection
-    # <p>Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#collection_code\">COLLECTION_CODE</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#code\"><strong>code</strong></a>: 125</p> <p><a href=\"/glossary#collection_code\"><strong>collection_code</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#family\"><strong>family</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#license\"><strong>license</strong></a>:</p> <p><a href=\"/glossary#meta\"><strong>meta</strong></a>:</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#parent_product_code\"><strong>parent_product_code</strong></a>: 787LOW</p> <p><a href=\"/glossary#product_attribute_id\"><strong>product_attribute_id</strong></a>:</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#products\"><strong>products</strong></a>:</p> <p><a href=\"/glossary#super_family\"><strong>super_family</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#product_attributes\">product_attributes</a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param collectioncode [String] The COLLECTIONCODE identifier
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv310GetProductCollection200Response]
-    def o_bpv3_1_0_get_product_collection(bankid, collectioncode, opts = {})
-      data, _status_code, _headers = o_bpv3_1_0_get_product_collection_with_http_info(bankid, collectioncode, opts)
-      data
-    end
-
-    # Get Product Collection
-    # &lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param collectioncode [String] The COLLECTIONCODE identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv310GetProductCollection200Response, Integer, Hash)>] OBPv310GetProductCollection200Response data, response status code and response headers
-    def o_bpv3_1_0_get_product_collection_with_http_info(bankid, collectioncode, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv3_1_0_get_product_collection ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv3_1_0_get_product_collection"
-      end
-      # verify the required parameter 'collectioncode' is set
-      if @api_client.config.client_side_validation && collectioncode.nil?
-        fail ArgumentError, "Missing the required parameter 'collectioncode' when calling ProductApi.o_bpv3_1_0_get_product_collection"
-      end
-      # resource path
-      local_var_path = '/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'collectioncode' + '}', CGI.escape(collectioncode.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv310GetProductCollection200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv3_1_0_get_product_collection",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv3_1_0_get_product_collection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get Product Tree
-    # <p>Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE<br /> and it's parent product(s) recursively as specified by parent_product_code.</p> <p>Each product includes the following information.</p> <ul> <li>Name</li> <li>Code</li> <li>Parent Product Code</li> <li>Category</li> <li>Family</li> <li>Super Family</li> <li>More info URL</li> <li>Description</li> <li>Terms and Conditions</li> <li>License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.</li> </ul> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#code\"><strong>code</strong></a>: 125</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#family\"><strong>family</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#license\"><strong>license</strong></a>:</p> <p><a href=\"/glossary#meta\"><strong>meta</strong></a>:</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#super_family\"><strong>super_family</strong></a>:</p> <p><a href=\"/glossary#parent_product\">parent_product</a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param productcode [String] The PRODUCTCODE identifier
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv310GetProductTree200Response]
-    def o_bpv3_1_0_get_product_tree(bankid, productcode, opts = {})
-      data, _status_code, _headers = o_bpv3_1_0_get_product_tree_with_http_info(bankid, productcode, opts)
-      data
-    end
-
-    # Get Product Tree
-    # &lt;p&gt;Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE&lt;br /&gt; and it&#39;s parent product(s) recursively as specified by parent_product_code.&lt;/p&gt; &lt;p&gt;Each product includes the following information.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;Category&lt;/li&gt; &lt;li&gt;Family&lt;/li&gt; &lt;li&gt;Super Family&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product\&quot;&gt;parent_product&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param productcode [String] The PRODUCTCODE identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv310GetProductTree200Response, Integer, Hash)>] OBPv310GetProductTree200Response data, response status code and response headers
-    def o_bpv3_1_0_get_product_tree_with_http_info(bankid, productcode, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv3_1_0_get_product_tree ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv3_1_0_get_product_tree"
-      end
-      # verify the required parameter 'productcode' is set
-      if @api_client.config.client_side_validation && productcode.nil?
-        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.o_bpv3_1_0_get_product_tree"
-      end
-      # resource path
-      local_var_path = '/obp/v3.1.0/banks/{bankid}/product-tree/{productcode}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv310GetProductTree200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv3_1_0_get_product_tree",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv3_1_0_get_product_tree\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Create or Update Product Attribute Definition
-    # <p>Create or Update Product Attribute Definition</p> <p>The category field must be Product</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param obpv400_create_or_update_transaction_request_attribute_definition_request [OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems]
-    def o_bpv4_0_0_create_or_update_product_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_or_update_product_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request, opts)
-      data
-    end
-
-    # Create or Update Product Attribute Definition
-    # &lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param obpv400_create_or_update_transaction_request_attribute_definition_request [OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, Integer, Hash)>] OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems data, response status code and response headers
-    def o_bpv4_0_0_create_or_update_product_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv4_0_0_create_or_update_product_attribute_definition ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv4_0_0_create_or_update_product_attribute_definition"
-      end
-      # verify the required parameter 'obpv400_create_or_update_transaction_request_attribute_definition_request' is set
-      if @api_client.config.client_side_validation && obpv400_create_or_update_transaction_request_attribute_definition_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_create_or_update_transaction_request_attribute_definition_request' when calling ProductApi.o_bpv4_0_0_create_or_update_product_attribute_definition"
-      end
-      # resource path
-      local_var_path = '/obp/v4.0.0/banks/{bankid}/attribute-definitions/product'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_create_or_update_transaction_request_attribute_definition_request)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv4_0_0_create_or_update_product_attribute_definition",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv4_0_0_create_or_update_product_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Create Product Attribute
-    # <p>Create Product Attribute</p> <p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Product Attribute is linked to its Product by PRODUCT_CODE</p> <p>Typical product attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_attribute_id\"><strong>product_attribute_id</strong></a>:</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param productcode [String] The PRODUCTCODE identifier
-    # @param obpv510_update_atm_attribute_request [OBPv510UpdateAtmAttributeRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv400CreateProductAttribute200Response]
-    def o_bpv4_0_0_create_product_attribute(bankid, productcode, obpv510_update_atm_attribute_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_product_attribute_with_http_info(bankid, productcode, obpv510_update_atm_attribute_request, opts)
-      data
-    end
-
-    # Create Product Attribute
-    # &lt;p&gt;Create Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param productcode [String] The PRODUCTCODE identifier
-    # @param obpv510_update_atm_attribute_request [OBPv510UpdateAtmAttributeRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400CreateProductAttribute200Response, Integer, Hash)>] OBPv400CreateProductAttribute200Response data, response status code and response headers
-    def o_bpv4_0_0_create_product_attribute_with_http_info(bankid, productcode, obpv510_update_atm_attribute_request, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv4_0_0_create_product_attribute ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv4_0_0_create_product_attribute"
-      end
-      # verify the required parameter 'productcode' is set
-      if @api_client.config.client_side_validation && productcode.nil?
-        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.o_bpv4_0_0_create_product_attribute"
-      end
-      # verify the required parameter 'obpv510_update_atm_attribute_request' is set
-      if @api_client.config.client_side_validation && obpv510_update_atm_attribute_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv510_update_atm_attribute_request' when calling ProductApi.o_bpv4_0_0_create_product_attribute"
-      end
-      # resource path
-      local_var_path = '/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv510_update_atm_attribute_request)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400CreateProductAttribute200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv4_0_0_create_product_attribute",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv4_0_0_create_product_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Create Product Fee
-    # <p>Create Product Fee</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#frequency\"><strong>frequency</strong></a>: DAILY</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#product_fee_id\">product_fee_id</a>: 696hlAHLFKUHE37469287634</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#frequency\"><strong>frequency</strong></a>: DAILY</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#product_fee_id\"><strong>product_fee_id</strong></a>: 696hlAHLFKUHE37469287634</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param productcode [String] The PRODUCTCODE identifier
-    # @param obpv400_update_product_fee_request [OBPv400UpdateProductFeeRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetProductFee200Response]
-    def o_bpv4_0_0_create_product_fee(bankid, productcode, obpv400_update_product_fee_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_product_fee_with_http_info(bankid, productcode, obpv400_update_product_fee_request, opts)
-      data
-    end
-
-    # Create Product Fee
-    # &lt;p&gt;Create Product Fee&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;product_fee_id&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param productcode [String] The PRODUCTCODE identifier
-    # @param obpv400_update_product_fee_request [OBPv400UpdateProductFeeRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetProductFee200Response, Integer, Hash)>] OBPv400GetProductFee200Response data, response status code and response headers
-    def o_bpv4_0_0_create_product_fee_with_http_info(bankid, productcode, obpv400_update_product_fee_request, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv4_0_0_create_product_fee ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv4_0_0_create_product_fee"
-      end
-      # verify the required parameter 'productcode' is set
-      if @api_client.config.client_side_validation && productcode.nil?
-        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.o_bpv4_0_0_create_product_fee"
-      end
-      # verify the required parameter 'obpv400_update_product_fee_request' is set
-      if @api_client.config.client_side_validation && obpv400_update_product_fee_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_update_product_fee_request' when calling ProductApi.o_bpv4_0_0_create_product_fee"
-      end
-      # resource path
-      local_var_path = '/obp/v4.0.0/banks/{bankid}/products/{productcode}/fee'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_update_product_fee_request)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetProductFee200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv4_0_0_create_product_fee",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv4_0_0_create_product_fee\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProductApi#delete_product_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -550,8 +492,8 @@ module OpenBankProject
     # @param attributedefinitionid [String] The ATTRIBUTEDEFINITIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_product_attribute_definition(bankid, attributedefinitionid, opts = {})
-      o_bpv4_0_0_delete_product_attribute_definition_with_http_info(bankid, attributedefinitionid, opts)
+    def delete_product_attribute_definition(bankid, attributedefinitionid, opts = {})
+      delete_product_attribute_definition_with_http_info(bankid, attributedefinitionid, opts)
       nil
     end
 
@@ -561,17 +503,17 @@ module OpenBankProject
     # @param attributedefinitionid [String] The ATTRIBUTEDEFINITIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_product_attribute_definition_with_http_info(bankid, attributedefinitionid, opts = {})
+    def delete_product_attribute_definition_with_http_info(bankid, attributedefinitionid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv4_0_0_delete_product_attribute_definition ...'
+        @api_client.config.logger.debug 'Calling API: ProductApi.delete_product_attribute_definition ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv4_0_0_delete_product_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.delete_product_attribute_definition"
       end
       # verify the required parameter 'attributedefinitionid' is set
       if @api_client.config.client_side_validation && attributedefinitionid.nil?
-        fail ArgumentError, "Missing the required parameter 'attributedefinitionid' when calling ProductApi.o_bpv4_0_0_delete_product_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'attributedefinitionid' when calling ProductApi.delete_product_attribute_definition"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'attributedefinitionid' + '}', CGI.escape(attributedefinitionid.to_s))
@@ -595,7 +537,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv4_0_0_delete_product_attribute_definition",
+        :operation => :"ProductApi.delete_product_attribute_definition",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -606,7 +548,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv4_0_0_delete_product_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProductApi#delete_product_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -617,8 +559,8 @@ module OpenBankProject
     # @param productcode [String] The PRODUCTCODE identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_product_cascade(bankid, productcode, opts = {})
-      o_bpv4_0_0_delete_product_cascade_with_http_info(bankid, productcode, opts)
+    def delete_product_cascade(bankid, productcode, opts = {})
+      delete_product_cascade_with_http_info(bankid, productcode, opts)
       nil
     end
 
@@ -628,17 +570,17 @@ module OpenBankProject
     # @param productcode [String] The PRODUCTCODE identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_product_cascade_with_http_info(bankid, productcode, opts = {})
+    def delete_product_cascade_with_http_info(bankid, productcode, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv4_0_0_delete_product_cascade ...'
+        @api_client.config.logger.debug 'Calling API: ProductApi.delete_product_cascade ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv4_0_0_delete_product_cascade"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.delete_product_cascade"
       end
       # verify the required parameter 'productcode' is set
       if @api_client.config.client_side_validation && productcode.nil?
-        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.o_bpv4_0_0_delete_product_cascade"
+        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.delete_product_cascade"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/cascading/banks/{bankid}/products/{productcode}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s))
@@ -662,7 +604,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv4_0_0_delete_product_cascade",
+        :operation => :"ProductApi.delete_product_cascade",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -673,7 +615,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv4_0_0_delete_product_cascade\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProductApi#delete_product_cascade\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -685,8 +627,8 @@ module OpenBankProject
     # @param productfeeid [String] The PRODUCTFEEID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_product_fee(bankid, productcode, productfeeid, opts = {})
-      o_bpv4_0_0_delete_product_fee_with_http_info(bankid, productcode, productfeeid, opts)
+    def delete_product_fee(bankid, productcode, productfeeid, opts = {})
+      delete_product_fee_with_http_info(bankid, productcode, productfeeid, opts)
       nil
     end
 
@@ -697,21 +639,21 @@ module OpenBankProject
     # @param productfeeid [String] The PRODUCTFEEID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_product_fee_with_http_info(bankid, productcode, productfeeid, opts = {})
+    def delete_product_fee_with_http_info(bankid, productcode, productfeeid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv4_0_0_delete_product_fee ...'
+        @api_client.config.logger.debug 'Calling API: ProductApi.delete_product_fee ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv4_0_0_delete_product_fee"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.delete_product_fee"
       end
       # verify the required parameter 'productcode' is set
       if @api_client.config.client_side_validation && productcode.nil?
-        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.o_bpv4_0_0_delete_product_fee"
+        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.delete_product_fee"
       end
       # verify the required parameter 'productfeeid' is set
       if @api_client.config.client_side_validation && productfeeid.nil?
-        fail ArgumentError, "Missing the required parameter 'productfeeid' when calling ProductApi.o_bpv4_0_0_delete_product_fee"
+        fail ArgumentError, "Missing the required parameter 'productfeeid' when calling ProductApi.delete_product_fee"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s)).sub('{' + 'productfeeid' + '}', CGI.escape(productfeeid.to_s))
@@ -735,7 +677,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv4_0_0_delete_product_fee",
+        :operation => :"ProductApi.delete_product_fee",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -746,7 +688,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv4_0_0_delete_product_fee\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProductApi#delete_product_fee\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -756,9 +698,9 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param productcode [String] The PRODUCTCODE identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetProduct200Response]
-    def o_bpv4_0_0_get_product(bankid, productcode, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_product_with_http_info(bankid, productcode, opts)
+    # @return [GetProduct200Response]
+    def get_product(bankid, productcode, opts = {})
+      data, _status_code, _headers = get_product_with_http_info(bankid, productcode, opts)
       data
     end
 
@@ -767,18 +709,18 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param productcode [String] The PRODUCTCODE identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetProduct200Response, Integer, Hash)>] OBPv400GetProduct200Response data, response status code and response headers
-    def o_bpv4_0_0_get_product_with_http_info(bankid, productcode, opts = {})
+    # @return [Array<(GetProduct200Response, Integer, Hash)>] GetProduct200Response data, response status code and response headers
+    def get_product_with_http_info(bankid, productcode, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv4_0_0_get_product ...'
+        @api_client.config.logger.debug 'Calling API: ProductApi.get_product ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv4_0_0_get_product"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.get_product"
       end
       # verify the required parameter 'productcode' is set
       if @api_client.config.client_side_validation && productcode.nil?
-        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.o_bpv4_0_0_get_product"
+        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.get_product"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/products/{productcode}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s))
@@ -798,13 +740,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetProduct200Response'
+      return_type = opts[:debug_return_type] || 'GetProduct200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv4_0_0_get_product",
+        :operation => :"ProductApi.get_product",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -815,7 +757,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv4_0_0_get_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProductApi#get_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -826,9 +768,9 @@ module OpenBankProject
     # @param productcode [String] The PRODUCTCODE identifier
     # @param productattributeid [String] The PRODUCTATTRIBUTEID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400CreateProductAttribute200Response]
-    def o_bpv4_0_0_get_product_attribute(bankid, productcode, productattributeid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_product_attribute_with_http_info(bankid, productcode, productattributeid, opts)
+    # @return [CreateProductAttribute200Response]
+    def get_product_attribute(bankid, productcode, productattributeid, opts = {})
+      data, _status_code, _headers = get_product_attribute_with_http_info(bankid, productcode, productattributeid, opts)
       data
     end
 
@@ -838,22 +780,22 @@ module OpenBankProject
     # @param productcode [String] The PRODUCTCODE identifier
     # @param productattributeid [String] The PRODUCTATTRIBUTEID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400CreateProductAttribute200Response, Integer, Hash)>] OBPv400CreateProductAttribute200Response data, response status code and response headers
-    def o_bpv4_0_0_get_product_attribute_with_http_info(bankid, productcode, productattributeid, opts = {})
+    # @return [Array<(CreateProductAttribute200Response, Integer, Hash)>] CreateProductAttribute200Response data, response status code and response headers
+    def get_product_attribute_with_http_info(bankid, productcode, productattributeid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv4_0_0_get_product_attribute ...'
+        @api_client.config.logger.debug 'Calling API: ProductApi.get_product_attribute ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv4_0_0_get_product_attribute"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.get_product_attribute"
       end
       # verify the required parameter 'productcode' is set
       if @api_client.config.client_side_validation && productcode.nil?
-        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.o_bpv4_0_0_get_product_attribute"
+        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.get_product_attribute"
       end
       # verify the required parameter 'productattributeid' is set
       if @api_client.config.client_side_validation && productattributeid.nil?
-        fail ArgumentError, "Missing the required parameter 'productattributeid' when calling ProductApi.o_bpv4_0_0_get_product_attribute"
+        fail ArgumentError, "Missing the required parameter 'productattributeid' when calling ProductApi.get_product_attribute"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s)).sub('{' + 'productattributeid' + '}', CGI.escape(productattributeid.to_s))
@@ -873,13 +815,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400CreateProductAttribute200Response'
+      return_type = opts[:debug_return_type] || 'CreateProductAttribute200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv4_0_0_get_product_attribute",
+        :operation => :"ProductApi.get_product_attribute",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -890,7 +832,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv4_0_0_get_product_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProductApi#get_product_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -899,9 +841,9 @@ module OpenBankProject
     # <p>Get Product Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTransactionRequestAttributeDefinition200Response]
-    def o_bpv4_0_0_get_product_attribute_definition(bankid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_product_attribute_definition_with_http_info(bankid, opts)
+    # @return [GetTransactionRequestAttributeDefinition200Response]
+    def get_product_attribute_definition(bankid, opts = {})
+      data, _status_code, _headers = get_product_attribute_definition_with_http_info(bankid, opts)
       data
     end
 
@@ -909,14 +851,14 @@ module OpenBankProject
     # &lt;p&gt;Get Product Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTransactionRequestAttributeDefinition200Response, Integer, Hash)>] OBPv400GetTransactionRequestAttributeDefinition200Response data, response status code and response headers
-    def o_bpv4_0_0_get_product_attribute_definition_with_http_info(bankid, opts = {})
+    # @return [Array<(GetTransactionRequestAttributeDefinition200Response, Integer, Hash)>] GetTransactionRequestAttributeDefinition200Response data, response status code and response headers
+    def get_product_attribute_definition_with_http_info(bankid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv4_0_0_get_product_attribute_definition ...'
+        @api_client.config.logger.debug 'Calling API: ProductApi.get_product_attribute_definition ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv4_0_0_get_product_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.get_product_attribute_definition"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/attribute-definitions/product'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -936,13 +878,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTransactionRequestAttributeDefinition200Response'
+      return_type = opts[:debug_return_type] || 'GetTransactionRequestAttributeDefinition200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv4_0_0_get_product_attribute_definition",
+        :operation => :"ProductApi.get_product_attribute_definition",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -953,7 +895,76 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv4_0_0_get_product_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProductApi#get_product_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Product Collection
+    # <p>Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#collection_code\">COLLECTION_CODE</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#code\"><strong>code</strong></a>: 125</p> <p><a href=\"/glossary#collection_code\"><strong>collection_code</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#family\"><strong>family</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#license\"><strong>license</strong></a>:</p> <p><a href=\"/glossary#meta\"><strong>meta</strong></a>:</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#parent_product_code\"><strong>parent_product_code</strong></a>: 787LOW</p> <p><a href=\"/glossary#product_attribute_id\"><strong>product_attribute_id</strong></a>:</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#products\"><strong>products</strong></a>:</p> <p><a href=\"/glossary#super_family\"><strong>super_family</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#product_attributes\">product_attributes</a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param collectioncode [String] The COLLECTIONCODE identifier
+    # @param [Hash] opts the optional parameters
+    # @return [GetProductCollection200Response]
+    def get_product_collection(bankid, collectioncode, opts = {})
+      data, _status_code, _headers = get_product_collection_with_http_info(bankid, collectioncode, opts)
+      data
+    end
+
+    # Get Product Collection
+    # &lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param collectioncode [String] The COLLECTIONCODE identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetProductCollection200Response, Integer, Hash)>] GetProductCollection200Response data, response status code and response headers
+    def get_product_collection_with_http_info(bankid, collectioncode, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ProductApi.get_product_collection ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.get_product_collection"
+      end
+      # verify the required parameter 'collectioncode' is set
+      if @api_client.config.client_side_validation && collectioncode.nil?
+        fail ArgumentError, "Missing the required parameter 'collectioncode' when calling ProductApi.get_product_collection"
+      end
+      # resource path
+      local_var_path = '/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'collectioncode' + '}', CGI.escape(collectioncode.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetProductCollection200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"ProductApi.get_product_collection",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ProductApi#get_product_collection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -964,9 +975,9 @@ module OpenBankProject
     # @param productcode [String] The PRODUCTCODE identifier
     # @param productfeeid [String] The PRODUCTFEEID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetProductFee200Response]
-    def o_bpv4_0_0_get_product_fee(bankid, productcode, productfeeid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_product_fee_with_http_info(bankid, productcode, productfeeid, opts)
+    # @return [GetProductFee200Response]
+    def get_product_fee(bankid, productcode, productfeeid, opts = {})
+      data, _status_code, _headers = get_product_fee_with_http_info(bankid, productcode, productfeeid, opts)
       data
     end
 
@@ -976,22 +987,22 @@ module OpenBankProject
     # @param productcode [String] The PRODUCTCODE identifier
     # @param productfeeid [String] The PRODUCTFEEID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetProductFee200Response, Integer, Hash)>] OBPv400GetProductFee200Response data, response status code and response headers
-    def o_bpv4_0_0_get_product_fee_with_http_info(bankid, productcode, productfeeid, opts = {})
+    # @return [Array<(GetProductFee200Response, Integer, Hash)>] GetProductFee200Response data, response status code and response headers
+    def get_product_fee_with_http_info(bankid, productcode, productfeeid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv4_0_0_get_product_fee ...'
+        @api_client.config.logger.debug 'Calling API: ProductApi.get_product_fee ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv4_0_0_get_product_fee"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.get_product_fee"
       end
       # verify the required parameter 'productcode' is set
       if @api_client.config.client_side_validation && productcode.nil?
-        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.o_bpv4_0_0_get_product_fee"
+        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.get_product_fee"
       end
       # verify the required parameter 'productfeeid' is set
       if @api_client.config.client_side_validation && productfeeid.nil?
-        fail ArgumentError, "Missing the required parameter 'productfeeid' when calling ProductApi.o_bpv4_0_0_get_product_fee"
+        fail ArgumentError, "Missing the required parameter 'productfeeid' when calling ProductApi.get_product_fee"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s)).sub('{' + 'productfeeid' + '}', CGI.escape(productfeeid.to_s))
@@ -1011,13 +1022,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetProductFee200Response'
+      return_type = opts[:debug_return_type] || 'GetProductFee200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv4_0_0_get_product_fee",
+        :operation => :"ProductApi.get_product_fee",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1028,7 +1039,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv4_0_0_get_product_fee\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProductApi#get_product_fee\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1038,9 +1049,9 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param productcode [String] The PRODUCTCODE identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetProductFees200Response]
-    def o_bpv4_0_0_get_product_fees(bankid, productcode, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_product_fees_with_http_info(bankid, productcode, opts)
+    # @return [GetProductFees200Response]
+    def get_product_fees(bankid, productcode, opts = {})
+      data, _status_code, _headers = get_product_fees_with_http_info(bankid, productcode, opts)
       data
     end
 
@@ -1049,18 +1060,18 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param productcode [String] The PRODUCTCODE identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetProductFees200Response, Integer, Hash)>] OBPv400GetProductFees200Response data, response status code and response headers
-    def o_bpv4_0_0_get_product_fees_with_http_info(bankid, productcode, opts = {})
+    # @return [Array<(GetProductFees200Response, Integer, Hash)>] GetProductFees200Response data, response status code and response headers
+    def get_product_fees_with_http_info(bankid, productcode, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv4_0_0_get_product_fees ...'
+        @api_client.config.logger.debug 'Calling API: ProductApi.get_product_fees ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv4_0_0_get_product_fees"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.get_product_fees"
       end
       # verify the required parameter 'productcode' is set
       if @api_client.config.client_side_validation && productcode.nil?
-        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.o_bpv4_0_0_get_product_fees"
+        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.get_product_fees"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/products/{productcode}/fees'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s))
@@ -1080,13 +1091,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetProductFees200Response'
+      return_type = opts[:debug_return_type] || 'GetProductFees200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv4_0_0_get_product_fees",
+        :operation => :"ProductApi.get_product_fees",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1097,7 +1108,76 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv4_0_0_get_product_fees\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProductApi#get_product_fees\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Product Tree
+    # <p>Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE<br /> and it's parent product(s) recursively as specified by parent_product_code.</p> <p>Each product includes the following information.</p> <ul> <li>Name</li> <li>Code</li> <li>Parent Product Code</li> <li>Category</li> <li>Family</li> <li>Super Family</li> <li>More info URL</li> <li>Description</li> <li>Terms and Conditions</li> <li>License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.</li> </ul> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#code\"><strong>code</strong></a>: 125</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#family\"><strong>family</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#license\"><strong>license</strong></a>:</p> <p><a href=\"/glossary#meta\"><strong>meta</strong></a>:</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#super_family\"><strong>super_family</strong></a>:</p> <p><a href=\"/glossary#parent_product\">parent_product</a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param productcode [String] The PRODUCTCODE identifier
+    # @param [Hash] opts the optional parameters
+    # @return [GetProductTree200Response]
+    def get_product_tree(bankid, productcode, opts = {})
+      data, _status_code, _headers = get_product_tree_with_http_info(bankid, productcode, opts)
+      data
+    end
+
+    # Get Product Tree
+    # &lt;p&gt;Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE&lt;br /&gt; and it&#39;s parent product(s) recursively as specified by parent_product_code.&lt;/p&gt; &lt;p&gt;Each product includes the following information.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;Category&lt;/li&gt; &lt;li&gt;Family&lt;/li&gt; &lt;li&gt;Super Family&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product\&quot;&gt;parent_product&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param productcode [String] The PRODUCTCODE identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetProductTree200Response, Integer, Hash)>] GetProductTree200Response data, response status code and response headers
+    def get_product_tree_with_http_info(bankid, productcode, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ProductApi.get_product_tree ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.get_product_tree"
+      end
+      # verify the required parameter 'productcode' is set
+      if @api_client.config.client_side_validation && productcode.nil?
+        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.get_product_tree"
+      end
+      # resource path
+      local_var_path = '/obp/v3.1.0/banks/{bankid}/product-tree/{productcode}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetProductTree200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ProductApi.get_product_tree",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ProductApi#get_product_tree\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1106,9 +1186,9 @@ module OpenBankProject
     # <p>Returns information about the financial products offered by a bank specified by BANK_ID including:</p> <ul> <li>Name</li> <li>Code</li> <li>Parent Product Code</li> <li>More info URL</li> <li>Terms And Conditions URL</li> <li>Description</li> <li>Terms and Conditions</li> <li>License the data under this endpoint is released under</li> </ul> <p>The combination of bank_id and product_code is unique.</p> <p>Can filter with attributes name and values.<br /> URL params example: /banks/some-bank-id/products?&amp;limit=50&amp;offset=1</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#license\"><strong>license</strong></a>:</p> <p><a href=\"/glossary#meta\"><strong>meta</strong></a>:</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#parent_product_code\"><strong>parent_product_code</strong></a>: 787LOW</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#products\"><strong>products</strong></a>:</p> <p><a href=\"/glossary#\"><strong>terms_and_conditions_url</strong></a>: <a href=\"http://www.example.com/xyz\">www.example.com/xyz</a></p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\">fees</a>: fees</p> 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetProducts200Response]
-    def o_bpv4_0_0_get_products(bankid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_products_with_http_info(bankid, opts)
+    # @return [GetProducts200Response]
+    def get_products(bankid, opts = {})
+      data, _status_code, _headers = get_products_with_http_info(bankid, opts)
       data
     end
 
@@ -1116,14 +1196,14 @@ module OpenBankProject
     # &lt;p&gt;Returns information about the financial products offered by a bank specified by BANK_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Terms And Conditions URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License the data under this endpoint is released under&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The combination of bank_id and product_code is unique.&lt;/p&gt; &lt;p&gt;Can filter with attributes name and values.&lt;br /&gt; URL params example: /banks/some-bank-id/products?&amp;amp;limit&#x3D;50&amp;amp;offset&#x3D;1&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetProducts200Response, Integer, Hash)>] OBPv400GetProducts200Response data, response status code and response headers
-    def o_bpv4_0_0_get_products_with_http_info(bankid, opts = {})
+    # @return [Array<(GetProducts200Response, Integer, Hash)>] GetProducts200Response data, response status code and response headers
+    def get_products_with_http_info(bankid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv4_0_0_get_products ...'
+        @api_client.config.logger.debug 'Calling API: ProductApi.get_products ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv4_0_0_get_products"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.get_products"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/products'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -1143,13 +1223,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetProducts200Response'
+      return_type = opts[:debug_return_type] || 'GetProducts200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv4_0_0_get_products",
+        :operation => :"ProductApi.get_products",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1160,7 +1240,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv4_0_0_get_products\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProductApi#get_products\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1170,11 +1250,11 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param productcode [String] The PRODUCTCODE identifier
     # @param productattributeid [String] The PRODUCTATTRIBUTEID identifier
-    # @param obpv510_update_atm_attribute_request [OBPv510UpdateAtmAttributeRequest] Request body
+    # @param update_atm_attribute_request [UpdateAtmAttributeRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400CreateProductAttribute200Response]
-    def o_bpv4_0_0_update_product_attribute(bankid, productcode, productattributeid, obpv510_update_atm_attribute_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_update_product_attribute_with_http_info(bankid, productcode, productattributeid, obpv510_update_atm_attribute_request, opts)
+    # @return [CreateProductAttribute200Response]
+    def update_product_attribute(bankid, productcode, productattributeid, update_atm_attribute_request, opts = {})
+      data, _status_code, _headers = update_product_attribute_with_http_info(bankid, productcode, productattributeid, update_atm_attribute_request, opts)
       data
     end
 
@@ -1183,28 +1263,28 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param productcode [String] The PRODUCTCODE identifier
     # @param productattributeid [String] The PRODUCTATTRIBUTEID identifier
-    # @param obpv510_update_atm_attribute_request [OBPv510UpdateAtmAttributeRequest] Request body
+    # @param update_atm_attribute_request [UpdateAtmAttributeRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400CreateProductAttribute200Response, Integer, Hash)>] OBPv400CreateProductAttribute200Response data, response status code and response headers
-    def o_bpv4_0_0_update_product_attribute_with_http_info(bankid, productcode, productattributeid, obpv510_update_atm_attribute_request, opts = {})
+    # @return [Array<(CreateProductAttribute200Response, Integer, Hash)>] CreateProductAttribute200Response data, response status code and response headers
+    def update_product_attribute_with_http_info(bankid, productcode, productattributeid, update_atm_attribute_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv4_0_0_update_product_attribute ...'
+        @api_client.config.logger.debug 'Calling API: ProductApi.update_product_attribute ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv4_0_0_update_product_attribute"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.update_product_attribute"
       end
       # verify the required parameter 'productcode' is set
       if @api_client.config.client_side_validation && productcode.nil?
-        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.o_bpv4_0_0_update_product_attribute"
+        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.update_product_attribute"
       end
       # verify the required parameter 'productattributeid' is set
       if @api_client.config.client_side_validation && productattributeid.nil?
-        fail ArgumentError, "Missing the required parameter 'productattributeid' when calling ProductApi.o_bpv4_0_0_update_product_attribute"
+        fail ArgumentError, "Missing the required parameter 'productattributeid' when calling ProductApi.update_product_attribute"
       end
-      # verify the required parameter 'obpv510_update_atm_attribute_request' is set
-      if @api_client.config.client_side_validation && obpv510_update_atm_attribute_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv510_update_atm_attribute_request' when calling ProductApi.o_bpv4_0_0_update_product_attribute"
+      # verify the required parameter 'update_atm_attribute_request' is set
+      if @api_client.config.client_side_validation && update_atm_attribute_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_atm_attribute_request' when calling ProductApi.update_product_attribute"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s)).sub('{' + 'productattributeid' + '}', CGI.escape(productattributeid.to_s))
@@ -1226,16 +1306,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv510_update_atm_attribute_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_atm_attribute_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400CreateProductAttribute200Response'
+      return_type = opts[:debug_return_type] || 'CreateProductAttribute200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv4_0_0_update_product_attribute",
+        :operation => :"ProductApi.update_product_attribute",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1246,7 +1326,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv4_0_0_update_product_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProductApi#update_product_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1256,11 +1336,11 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param productcode [String] The PRODUCTCODE identifier
     # @param productfeeid [String] The PRODUCTFEEID identifier
-    # @param obpv400_update_product_fee_request [OBPv400UpdateProductFeeRequest] Request body
+    # @param update_product_fee_request [UpdateProductFeeRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetProductFee200Response]
-    def o_bpv4_0_0_update_product_fee(bankid, productcode, productfeeid, obpv400_update_product_fee_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_update_product_fee_with_http_info(bankid, productcode, productfeeid, obpv400_update_product_fee_request, opts)
+    # @return [GetProductFee200Response]
+    def update_product_fee(bankid, productcode, productfeeid, update_product_fee_request, opts = {})
+      data, _status_code, _headers = update_product_fee_with_http_info(bankid, productcode, productfeeid, update_product_fee_request, opts)
       data
     end
 
@@ -1269,28 +1349,28 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param productcode [String] The PRODUCTCODE identifier
     # @param productfeeid [String] The PRODUCTFEEID identifier
-    # @param obpv400_update_product_fee_request [OBPv400UpdateProductFeeRequest] Request body
+    # @param update_product_fee_request [UpdateProductFeeRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetProductFee200Response, Integer, Hash)>] OBPv400GetProductFee200Response data, response status code and response headers
-    def o_bpv4_0_0_update_product_fee_with_http_info(bankid, productcode, productfeeid, obpv400_update_product_fee_request, opts = {})
+    # @return [Array<(GetProductFee200Response, Integer, Hash)>] GetProductFee200Response data, response status code and response headers
+    def update_product_fee_with_http_info(bankid, productcode, productfeeid, update_product_fee_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv4_0_0_update_product_fee ...'
+        @api_client.config.logger.debug 'Calling API: ProductApi.update_product_fee ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv4_0_0_update_product_fee"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.update_product_fee"
       end
       # verify the required parameter 'productcode' is set
       if @api_client.config.client_side_validation && productcode.nil?
-        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.o_bpv4_0_0_update_product_fee"
+        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.update_product_fee"
       end
       # verify the required parameter 'productfeeid' is set
       if @api_client.config.client_side_validation && productfeeid.nil?
-        fail ArgumentError, "Missing the required parameter 'productfeeid' when calling ProductApi.o_bpv4_0_0_update_product_fee"
+        fail ArgumentError, "Missing the required parameter 'productfeeid' when calling ProductApi.update_product_fee"
       end
-      # verify the required parameter 'obpv400_update_product_fee_request' is set
-      if @api_client.config.client_side_validation && obpv400_update_product_fee_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_update_product_fee_request' when calling ProductApi.o_bpv4_0_0_update_product_fee"
+      # verify the required parameter 'update_product_fee_request' is set
+      if @api_client.config.client_side_validation && update_product_fee_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_product_fee_request' when calling ProductApi.update_product_fee"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s)).sub('{' + 'productfeeid' + '}', CGI.escape(productfeeid.to_s))
@@ -1312,16 +1392,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_update_product_fee_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_product_fee_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetProductFee200Response'
+      return_type = opts[:debug_return_type] || 'GetProductFee200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv4_0_0_update_product_fee",
+        :operation => :"ProductApi.update_product_fee",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1332,87 +1412,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv4_0_0_update_product_fee\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Create Product
-    # <p>Create or Update Product for the Bank.</p> <p>The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.</p> <p>Typical Super Family values / Asset classes are:</p> <p>Debt<br /> Equity<br /> FX<br /> Commodity<br /> Derivative</p> <p>Product hiearchy vs Product Collections:</p> <ul> <li> <p>You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.</p> </li> <li> <p>You can define a collection (also known as baskets or buckets) of products using Product Collections.</p> </li> </ul> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#license\"><strong>license</strong></a>:</p> <p><a href=\"/glossary#meta\"><strong>meta</strong></a>:</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#parent_product_code\"><strong>parent_product_code</strong></a>: 787LOW</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#\"><strong>terms_and_conditions_url</strong></a>: <a href=\"http://www.example.com/xyz\">www.example.com/xyz</a></p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\">fees</a>: fees</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param productcode [String] The PRODUCTCODE identifier
-    # @param obpv500_create_product_request [OBPv500CreateProductRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv500CreateProduct200Response]
-    def o_bpv5_0_0_create_product(bankid, productcode, obpv500_create_product_request, opts = {})
-      data, _status_code, _headers = o_bpv5_0_0_create_product_with_http_info(bankid, productcode, obpv500_create_product_request, opts)
-      data
-    end
-
-    # Create Product
-    # &lt;p&gt;Create or Update Product for the Bank.&lt;/p&gt; &lt;p&gt;The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.&lt;/p&gt; &lt;p&gt;Typical Super Family values / Asset classes are:&lt;/p&gt; &lt;p&gt;Debt&lt;br /&gt; Equity&lt;br /&gt; FX&lt;br /&gt; Commodity&lt;br /&gt; Derivative&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param productcode [String] The PRODUCTCODE identifier
-    # @param obpv500_create_product_request [OBPv500CreateProductRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv500CreateProduct200Response, Integer, Hash)>] OBPv500CreateProduct200Response data, response status code and response headers
-    def o_bpv5_0_0_create_product_with_http_info(bankid, productcode, obpv500_create_product_request, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProductApi.o_bpv5_0_0_create_product ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ProductApi.o_bpv5_0_0_create_product"
-      end
-      # verify the required parameter 'productcode' is set
-      if @api_client.config.client_side_validation && productcode.nil?
-        fail ArgumentError, "Missing the required parameter 'productcode' when calling ProductApi.o_bpv5_0_0_create_product"
-      end
-      # verify the required parameter 'obpv500_create_product_request' is set
-      if @api_client.config.client_side_validation && obpv500_create_product_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv500_create_product_request' when calling ProductApi.o_bpv5_0_0_create_product"
-      end
-      # resource path
-      local_var_path = '/obp/v5.0.0/banks/{bankid}/products/{productcode}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv500_create_product_request)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv500CreateProduct200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"ProductApi.o_bpv5_0_0_create_product",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProductApi#o_bpv5_0_0_create_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProductApi#update_product_fee\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

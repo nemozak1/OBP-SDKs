@@ -4,12 +4,12 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv3_0_0_core_private_accounts_all_banks**](PrivateDataApi.md#o_bpv3_0_0_core_private_accounts_all_banks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
-[**o_bpv6_0_0_get_accounts_at_bank**](PrivateDataApi.md#o_bpv6_0_0_get_accounts_at_bank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
+[**core_private_accounts_all_banks**](PrivateDataApi.md#core_private_accounts_all_banks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
+[**get_accounts_at_bank**](PrivateDataApi.md#get_accounts_at_bank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
 
 
-# **o_bpv3_0_0_core_private_accounts_all_banks**
-> OBPv300PrivateAccountsAtOneBank200Response o_bpv3_0_0_core_private_accounts_all_banks()
+# **core_private_accounts_all_banks**
+> PrivateAccountsAtOneBank200Response core_private_accounts_all_banks()
 
 Get Accounts at all Banks (private)
 
@@ -46,7 +46,7 @@ Each account lists the views available to the user.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv300_private_accounts_at_one_bank200_response import OBPv300PrivateAccountsAtOneBank200Response
+from obp_python.models.private_accounts_at_one_bank200_response import PrivateAccountsAtOneBank200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -82,11 +82,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Accounts at all Banks (private)
-        api_response = api_instance.o_bpv3_0_0_core_private_accounts_all_banks()
-        print("The response of PrivateDataApi->o_bpv3_0_0_core_private_accounts_all_banks:\n")
+        api_response = api_instance.core_private_accounts_all_banks()
+        print("The response of PrivateDataApi->core_private_accounts_all_banks:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrivateDataApi->o_bpv3_0_0_core_private_accounts_all_banks: %s\n" % e)
+        print("Exception when calling PrivateDataApi->core_private_accounts_all_banks: %s\n" % e)
 ```
 
 
@@ -97,7 +97,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv300PrivateAccountsAtOneBank200Response**](OBPv300PrivateAccountsAtOneBank200Response.md)
+[**PrivateAccountsAtOneBank200Response**](PrivateAccountsAtOneBank200Response.md)
 
 ### Authorization
 
@@ -117,8 +117,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_accounts_at_bank**
-> OBPv600GetAccountsAtBank200Response o_bpv6_0_0_get_accounts_at_bank(bankid)
+# **get_accounts_at_bank**
+> GetAccountsAtBank200Response get_accounts_at_bank(bankid)
 
 Get Accounts at Bank
 
@@ -150,7 +150,7 @@ URL params example: /banks/some-bank-id/accounts?limit=50&amp;offset=1</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_accounts_at_bank200_response import OBPv600GetAccountsAtBank200Response
+from obp_python.models.get_accounts_at_bank200_response import GetAccountsAtBank200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -187,11 +187,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Accounts at Bank
-        api_response = api_instance.o_bpv6_0_0_get_accounts_at_bank(bankid)
-        print("The response of PrivateDataApi->o_bpv6_0_0_get_accounts_at_bank:\n")
+        api_response = api_instance.get_accounts_at_bank(bankid)
+        print("The response of PrivateDataApi->get_accounts_at_bank:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrivateDataApi->o_bpv6_0_0_get_accounts_at_bank: %s\n" % e)
+        print("Exception when calling PrivateDataApi->get_accounts_at_bank: %s\n" % e)
 ```
 
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAccountsAtBank200Response**](OBPv600GetAccountsAtBank200Response.md)
+[**GetAccountsAtBank200Response**](GetAccountsAtBank200Response.md)
 
 ### Authorization
 

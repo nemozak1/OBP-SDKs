@@ -1,16 +1,16 @@
 # OpenBankProject::PrivateDataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv3_0_0_core_private_accounts_all_banks**](PrivateDataApi.md#o_bpv3_0_0_core_private_accounts_all_banks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private) |
-| [**o_bpv6_0_0_get_accounts_at_bank**](PrivateDataApi.md#o_bpv6_0_0_get_accounts_at_bank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank |
+| [**core_private_accounts_all_banks**](PrivateDataApi.md#core_private_accounts_all_banks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private) |
+| [**get_accounts_at_bank**](PrivateDataApi.md#get_accounts_at_bank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank |
 
 
-## o_bpv3_0_0_core_private_accounts_all_banks
+## core_private_accounts_all_banks
 
-> <OBPv300PrivateAccountsAtOneBank200Response> o_bpv3_0_0_core_private_accounts_all_banks
+> <PrivateAccountsAtOneBank200Response> core_private_accounts_all_banks
 
 Get Accounts at all Banks (private)
 
@@ -32,37 +32,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::PrivateDataApi.new
 
 begin
   # Get Accounts at all Banks (private)
-  result = api_instance.o_bpv3_0_0_core_private_accounts_all_banks
+  result = api_instance.core_private_accounts_all_banks
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling PrivateDataApi->o_bpv3_0_0_core_private_accounts_all_banks: #{e}"
+  puts "Error when calling PrivateDataApi->core_private_accounts_all_banks: #{e}"
 end
 ```
 
-#### Using the o_bpv3_0_0_core_private_accounts_all_banks_with_http_info variant
+#### Using the core_private_accounts_all_banks_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv300PrivateAccountsAtOneBank200Response>, Integer, Hash)> o_bpv3_0_0_core_private_accounts_all_banks_with_http_info
+> <Array(<PrivateAccountsAtOneBank200Response>, Integer, Hash)> core_private_accounts_all_banks_with_http_info
 
 ```ruby
 begin
   # Get Accounts at all Banks (private)
-  data, status_code, headers = api_instance.o_bpv3_0_0_core_private_accounts_all_banks_with_http_info
+  data, status_code, headers = api_instance.core_private_accounts_all_banks_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv300PrivateAccountsAtOneBank200Response>
+  p data # => <PrivateAccountsAtOneBank200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling PrivateDataApi->o_bpv3_0_0_core_private_accounts_all_banks_with_http_info: #{e}"
+  puts "Error when calling PrivateDataApi->core_private_accounts_all_banks_with_http_info: #{e}"
 end
 ```
 
@@ -72,7 +72,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv300PrivateAccountsAtOneBank200Response**](OBPv300PrivateAccountsAtOneBank200Response.md)
+[**PrivateAccountsAtOneBank200Response**](PrivateAccountsAtOneBank200Response.md)
 
 ### Authorization
 
@@ -84,9 +84,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_accounts_at_bank
+## get_accounts_at_bank
 
-> <OBPv600GetAccountsAtBank200Response> o_bpv6_0_0_get_accounts_at_bank(bankid)
+> <GetAccountsAtBank200Response> get_accounts_at_bank(bankid)
 
 Get Accounts at Bank
 
@@ -108,9 +108,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::PrivateDataApi.new
@@ -118,28 +118,28 @@ bankid = 'bankid_example' # String | The BANKID identifier
 
 begin
   # Get Accounts at Bank
-  result = api_instance.o_bpv6_0_0_get_accounts_at_bank(bankid)
+  result = api_instance.get_accounts_at_bank(bankid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling PrivateDataApi->o_bpv6_0_0_get_accounts_at_bank: #{e}"
+  puts "Error when calling PrivateDataApi->get_accounts_at_bank: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_accounts_at_bank_with_http_info variant
+#### Using the get_accounts_at_bank_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetAccountsAtBank200Response>, Integer, Hash)> o_bpv6_0_0_get_accounts_at_bank_with_http_info(bankid)
+> <Array(<GetAccountsAtBank200Response>, Integer, Hash)> get_accounts_at_bank_with_http_info(bankid)
 
 ```ruby
 begin
   # Get Accounts at Bank
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_accounts_at_bank_with_http_info(bankid)
+  data, status_code, headers = api_instance.get_accounts_at_bank_with_http_info(bankid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetAccountsAtBank200Response>
+  p data # => <GetAccountsAtBank200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling PrivateDataApi->o_bpv6_0_0_get_accounts_at_bank_with_http_info: #{e}"
+  puts "Error when calling PrivateDataApi->get_accounts_at_bank_with_http_info: #{e}"
 end
 ```
 
@@ -151,7 +151,7 @@ end
 
 ### Return type
 
-[**OBPv600GetAccountsAtBank200Response**](OBPv600GetAccountsAtBank200Response.md)
+[**GetAccountsAtBank200Response**](GetAccountsAtBank200Response.md)
 
 ### Authorization
 

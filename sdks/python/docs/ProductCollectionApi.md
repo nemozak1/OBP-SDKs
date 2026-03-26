@@ -4,12 +4,12 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv3_1_0_create_product_collection**](ProductCollectionApi.md#o_bpv3_1_0_create_product_collection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection
-[**o_bpv3_1_0_get_product_collection**](ProductCollectionApi.md#o_bpv3_1_0_get_product_collection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection
+[**create_product_collection**](ProductCollectionApi.md#create_product_collection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection
+[**get_product_collection**](ProductCollectionApi.md#get_product_collection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection
 
 
-# **o_bpv3_1_0_create_product_collection**
-> OBPv310CreateProductCollection200Response o_bpv3_1_0_create_product_collection(bankid, collectioncode, obpv310_create_product_collection_request)
+# **create_product_collection**
+> CreateProductCollection200Response create_product_collection(bankid, collectioncode, create_product_collection_request)
 
 Create Product Collection
 
@@ -54,8 +54,8 @@ Create Product Collection
 
 ```python
 import obp_python
-from obp_python.models.obpv310_create_product_collection200_response import OBPv310CreateProductCollection200Response
-from obp_python.models.obpv310_create_product_collection_request import OBPv310CreateProductCollectionRequest
+from obp_python.models.create_product_collection200_response import CreateProductCollection200Response
+from obp_python.models.create_product_collection_request import CreateProductCollectionRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -90,15 +90,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.ProductCollectionApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     collectioncode = 'collectioncode_example' # str | The COLLECTIONCODE identifier
-    obpv310_create_product_collection_request = {"type":"object","properties":{"parent_product_code":{"type":"string"},"children_product_codes":{"type":"array","items":{"type":"string"}}}} # OBPv310CreateProductCollectionRequest | Request body
+    create_product_collection_request = {"type":"object","properties":{"parent_product_code":{"type":"string"},"children_product_codes":{"type":"array","items":{"type":"string"}}}} # CreateProductCollectionRequest | Request body
 
     try:
         # Create Product Collection
-        api_response = api_instance.o_bpv3_1_0_create_product_collection(bankid, collectioncode, obpv310_create_product_collection_request)
-        print("The response of ProductCollectionApi->o_bpv3_1_0_create_product_collection:\n")
+        api_response = api_instance.create_product_collection(bankid, collectioncode, create_product_collection_request)
+        print("The response of ProductCollectionApi->create_product_collection:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ProductCollectionApi->o_bpv3_1_0_create_product_collection: %s\n" % e)
+        print("Exception when calling ProductCollectionApi->create_product_collection: %s\n" % e)
 ```
 
 
@@ -110,11 +110,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **collectioncode** | **str**| The COLLECTIONCODE identifier | 
- **obpv310_create_product_collection_request** | [**OBPv310CreateProductCollectionRequest**](OBPv310CreateProductCollectionRequest.md)| Request body | 
+ **create_product_collection_request** | [**CreateProductCollectionRequest**](CreateProductCollectionRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv310CreateProductCollection200Response**](OBPv310CreateProductCollection200Response.md)
+[**CreateProductCollection200Response**](CreateProductCollection200Response.md)
 
 ### Authorization
 
@@ -135,8 +135,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_1_0_get_product_collection**
-> OBPv310GetProductCollection200Response o_bpv3_1_0_get_product_collection(bankid, collectioncode)
+# **get_product_collection**
+> GetProductCollection200Response get_product_collection(bankid, collectioncode)
 
 Get Product Collection
 
@@ -176,7 +176,7 @@ Get Product Collection
 
 ```python
 import obp_python
-from obp_python.models.obpv310_get_product_collection200_response import OBPv310GetProductCollection200Response
+from obp_python.models.get_product_collection200_response import GetProductCollection200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -214,11 +214,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Product Collection
-        api_response = api_instance.o_bpv3_1_0_get_product_collection(bankid, collectioncode)
-        print("The response of ProductCollectionApi->o_bpv3_1_0_get_product_collection:\n")
+        api_response = api_instance.get_product_collection(bankid, collectioncode)
+        print("The response of ProductCollectionApi->get_product_collection:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ProductCollectionApi->o_bpv3_1_0_get_product_collection: %s\n" % e)
+        print("Exception when calling ProductCollectionApi->get_product_collection: %s\n" % e)
 ```
 
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetProductCollection200Response**](OBPv310GetProductCollection200Response.md)
+[**GetProductCollection200Response**](GetProductCollection200Response.md)
 
 ### Authorization
 

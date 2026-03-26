@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,7 +24,7 @@ import (
 // TransactionFirehoseAPIService TransactionFirehoseAPI service
 type TransactionFirehoseAPIService service
 
-type ApiOBPv300GetFirehoseTransactionsForBankAccountRequest struct {
+type ApiGetFirehoseTransactionsForBankAccountRequest struct {
 	ctx context.Context
 	ApiService *TransactionFirehoseAPIService
 	bankid string
@@ -32,12 +32,12 @@ type ApiOBPv300GetFirehoseTransactionsForBankAccountRequest struct {
 	viewid string
 }
 
-func (r ApiOBPv300GetFirehoseTransactionsForBankAccountRequest) Execute() (*OBPv300GetFirehoseTransactionsForBankAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv300GetFirehoseTransactionsForBankAccountExecute(r)
+func (r ApiGetFirehoseTransactionsForBankAccountRequest) Execute() (*GetFirehoseTransactionsForBankAccount200Response, *http.Response, error) {
+	return r.ApiService.GetFirehoseTransactionsForBankAccountExecute(r)
 }
 
 /*
-OBPv300GetFirehoseTransactionsForBankAccount Get Firehose Transactions for Account
+GetFirehoseTransactionsForBankAccount Get Firehose Transactions for Account
 
 <p>Get Transactions for an Account that has a firehose View.</p>
 <p>Allows bulk access to an account's transactions.<br />
@@ -56,7 +56,7 @@ User must have the CanUseFirehoseAtAnyBank Role</p>
 <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
 <ul>
 <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
-<li>to_date=DATE =&gt; example value: 2026-03-16T19:25:56.865Z. NOTE! The default value is now (2026-03-16T19:25:56.865Z).</li>
+<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.487Z. NOTE! The default value is now (2026-03-25T12:16:24.487Z).</li>
 </ul>
 <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
 <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
@@ -116,10 +116,10 @@ User must have the CanUseFirehoseAtAnyBank Role</p>
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv300GetFirehoseTransactionsForBankAccountRequest
+ @return ApiGetFirehoseTransactionsForBankAccountRequest
 */
-func (a *TransactionFirehoseAPIService) OBPv300GetFirehoseTransactionsForBankAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv300GetFirehoseTransactionsForBankAccountRequest {
-	return ApiOBPv300GetFirehoseTransactionsForBankAccountRequest{
+func (a *TransactionFirehoseAPIService) GetFirehoseTransactionsForBankAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiGetFirehoseTransactionsForBankAccountRequest {
+	return ApiGetFirehoseTransactionsForBankAccountRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -129,16 +129,16 @@ func (a *TransactionFirehoseAPIService) OBPv300GetFirehoseTransactionsForBankAcc
 }
 
 // Execute executes the request
-//  @return OBPv300GetFirehoseTransactionsForBankAccount200Response
-func (a *TransactionFirehoseAPIService) OBPv300GetFirehoseTransactionsForBankAccountExecute(r ApiOBPv300GetFirehoseTransactionsForBankAccountRequest) (*OBPv300GetFirehoseTransactionsForBankAccount200Response, *http.Response, error) {
+//  @return GetFirehoseTransactionsForBankAccount200Response
+func (a *TransactionFirehoseAPIService) GetFirehoseTransactionsForBankAccountExecute(r ApiGetFirehoseTransactionsForBankAccountRequest) (*GetFirehoseTransactionsForBankAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv300GetFirehoseTransactionsForBankAccount200Response
+		localVarReturnValue  *GetFirehoseTransactionsForBankAccount200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionFirehoseAPIService.OBPv300GetFirehoseTransactionsForBankAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionFirehoseAPIService.GetFirehoseTransactionsForBankAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -193,7 +193,7 @@ func (a *TransactionFirehoseAPIService) OBPv300GetFirehoseTransactionsForBankAcc
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

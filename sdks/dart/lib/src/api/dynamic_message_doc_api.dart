@@ -9,9 +9,9 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv400_get_all_bank_level_dynamic_message_docs200_response.dart';
-import 'package:obp_dart/src/model/obpv400_get_dynamic_message_doc200_response.dart';
-import 'package:obp_dart/src/model/obpv400_update_dynamic_message_doc_request.dart';
+import 'package:obp_dart/src/model/get_all_bank_level_dynamic_message_docs200_response.dart';
+import 'package:obp_dart/src/model/get_dynamic_message_doc200_response.dart';
+import 'package:obp_dart/src/model/update_dynamic_message_doc_request.dart';
 
 class DynamicMessageDocApi {
 
@@ -26,7 +26,7 @@ class DynamicMessageDocApi {
   ///
   /// Parameters:
   /// * [bankid] - The BANKID identifier
-  /// * [oBPv400UpdateDynamicMessageDocRequest] - Request body
+  /// * [updateDynamicMessageDocRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -34,11 +34,11 @@ class DynamicMessageDocApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetDynamicMessageDoc200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetDynamicMessageDoc200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetDynamicMessageDoc200Response>> oBPv400CreateBankLevelDynamicMessageDoc({ 
+  Future<Response<GetDynamicMessageDoc200Response>> createBankLevelDynamicMessageDoc({ 
     required String bankid,
-    required OBPv400UpdateDynamicMessageDocRequest oBPv400UpdateDynamicMessageDocRequest,
+    required UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -65,7 +65,7 @@ class DynamicMessageDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -78,8 +78,8 @@ class DynamicMessageDocApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400UpdateDynamicMessageDocRequest);
-      _bodyData = _serializers.serialize(oBPv400UpdateDynamicMessageDocRequest, specifiedType: _type);
+      const _type = FullType(UpdateDynamicMessageDocRequest);
+      _bodyData = _serializers.serialize(updateDynamicMessageDocRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -102,14 +102,14 @@ class DynamicMessageDocApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetDynamicMessageDoc200Response? _responseData;
+    GetDynamicMessageDoc200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetDynamicMessageDoc200Response),
-      ) as OBPv400GetDynamicMessageDoc200Response;
+        specifiedType: const FullType(GetDynamicMessageDoc200Response),
+      ) as GetDynamicMessageDoc200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -121,7 +121,7 @@ class DynamicMessageDocApi {
       );
     }
 
-    return Response<OBPv400GetDynamicMessageDoc200Response>(
+    return Response<GetDynamicMessageDoc200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -137,7 +137,7 @@ class DynamicMessageDocApi {
   /// &lt;p&gt;Create a Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
   ///
   /// Parameters:
-  /// * [oBPv400UpdateDynamicMessageDocRequest] - Request body
+  /// * [updateDynamicMessageDocRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -145,10 +145,10 @@ class DynamicMessageDocApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetDynamicMessageDoc200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetDynamicMessageDoc200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetDynamicMessageDoc200Response>> oBPv400CreateDynamicMessageDoc({ 
-    required OBPv400UpdateDynamicMessageDocRequest oBPv400UpdateDynamicMessageDocRequest,
+  Future<Response<GetDynamicMessageDoc200Response>> createDynamicMessageDoc({ 
+    required UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -175,7 +175,7 @@ class DynamicMessageDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -188,8 +188,8 @@ class DynamicMessageDocApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400UpdateDynamicMessageDocRequest);
-      _bodyData = _serializers.serialize(oBPv400UpdateDynamicMessageDocRequest, specifiedType: _type);
+      const _type = FullType(UpdateDynamicMessageDocRequest);
+      _bodyData = _serializers.serialize(updateDynamicMessageDocRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -212,14 +212,14 @@ class DynamicMessageDocApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetDynamicMessageDoc200Response? _responseData;
+    GetDynamicMessageDoc200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetDynamicMessageDoc200Response),
-      ) as OBPv400GetDynamicMessageDoc200Response;
+        specifiedType: const FullType(GetDynamicMessageDoc200Response),
+      ) as GetDynamicMessageDoc200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -231,7 +231,7 @@ class DynamicMessageDocApi {
       );
     }
 
-    return Response<OBPv400GetDynamicMessageDoc200Response>(
+    return Response<GetDynamicMessageDoc200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -258,7 +258,7 @@ class DynamicMessageDocApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv400DeleteBankLevelDynamicMessageDoc({ 
+  Future<Response<void>> deleteBankLevelDynamicMessageDoc({ 
     required String bankid,
     required String dynamicmessagedocid,
     CancelToken? cancelToken,
@@ -287,7 +287,7 @@ class DynamicMessageDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -321,7 +321,7 @@ class DynamicMessageDocApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv400DeleteDynamicMessageDoc({ 
+  Future<Response<void>> deleteDynamicMessageDoc({ 
     required String dynamicmessagedocid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -349,7 +349,7 @@ class DynamicMessageDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -381,9 +381,9 @@ class DynamicMessageDocApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllBankLevelDynamicMessageDocs200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllBankLevelDynamicMessageDocs200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllBankLevelDynamicMessageDocs200Response>> oBPv400GetAllBankLevelDynamicMessageDocs({ 
+  Future<Response<GetAllBankLevelDynamicMessageDocs200Response>> getAllBankLevelDynamicMessageDocs({ 
     required String bankid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -411,7 +411,7 @@ class DynamicMessageDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -428,14 +428,14 @@ class DynamicMessageDocApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllBankLevelDynamicMessageDocs200Response? _responseData;
+    GetAllBankLevelDynamicMessageDocs200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllBankLevelDynamicMessageDocs200Response),
-      ) as OBPv400GetAllBankLevelDynamicMessageDocs200Response;
+        specifiedType: const FullType(GetAllBankLevelDynamicMessageDocs200Response),
+      ) as GetAllBankLevelDynamicMessageDocs200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -447,7 +447,7 @@ class DynamicMessageDocApi {
       );
     }
 
-    return Response<OBPv400GetAllBankLevelDynamicMessageDocs200Response>(
+    return Response<GetAllBankLevelDynamicMessageDocs200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -470,9 +470,9 @@ class DynamicMessageDocApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllBankLevelDynamicMessageDocs200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllBankLevelDynamicMessageDocs200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllBankLevelDynamicMessageDocs200Response>> oBPv400GetAllDynamicMessageDocs({ 
+  Future<Response<GetAllBankLevelDynamicMessageDocs200Response>> getAllDynamicMessageDocs({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -499,7 +499,7 @@ class DynamicMessageDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -516,14 +516,14 @@ class DynamicMessageDocApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllBankLevelDynamicMessageDocs200Response? _responseData;
+    GetAllBankLevelDynamicMessageDocs200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllBankLevelDynamicMessageDocs200Response),
-      ) as OBPv400GetAllBankLevelDynamicMessageDocs200Response;
+        specifiedType: const FullType(GetAllBankLevelDynamicMessageDocs200Response),
+      ) as GetAllBankLevelDynamicMessageDocs200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -535,7 +535,7 @@ class DynamicMessageDocApi {
       );
     }
 
-    return Response<OBPv400GetAllBankLevelDynamicMessageDocs200Response>(
+    return Response<GetAllBankLevelDynamicMessageDocs200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -560,9 +560,9 @@ class DynamicMessageDocApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetDynamicMessageDoc200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetDynamicMessageDoc200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetDynamicMessageDoc200Response>> oBPv400GetBankLevelDynamicMessageDoc({ 
+  Future<Response<GetDynamicMessageDoc200Response>> getBankLevelDynamicMessageDoc({ 
     required String bankid,
     required String dynamicmessagedocid,
     CancelToken? cancelToken,
@@ -591,7 +591,7 @@ class DynamicMessageDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -608,14 +608,14 @@ class DynamicMessageDocApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetDynamicMessageDoc200Response? _responseData;
+    GetDynamicMessageDoc200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetDynamicMessageDoc200Response),
-      ) as OBPv400GetDynamicMessageDoc200Response;
+        specifiedType: const FullType(GetDynamicMessageDoc200Response),
+      ) as GetDynamicMessageDoc200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -627,7 +627,7 @@ class DynamicMessageDocApi {
       );
     }
 
-    return Response<OBPv400GetDynamicMessageDoc200Response>(
+    return Response<GetDynamicMessageDoc200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -651,9 +651,9 @@ class DynamicMessageDocApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetDynamicMessageDoc200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetDynamicMessageDoc200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetDynamicMessageDoc200Response>> oBPv400GetDynamicMessageDoc({ 
+  Future<Response<GetDynamicMessageDoc200Response>> getDynamicMessageDoc({ 
     required String dynamicmessagedocid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -681,7 +681,7 @@ class DynamicMessageDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -698,14 +698,14 @@ class DynamicMessageDocApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetDynamicMessageDoc200Response? _responseData;
+    GetDynamicMessageDoc200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetDynamicMessageDoc200Response),
-      ) as OBPv400GetDynamicMessageDoc200Response;
+        specifiedType: const FullType(GetDynamicMessageDoc200Response),
+      ) as GetDynamicMessageDoc200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -717,7 +717,7 @@ class DynamicMessageDocApi {
       );
     }
 
-    return Response<OBPv400GetDynamicMessageDoc200Response>(
+    return Response<GetDynamicMessageDoc200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -735,7 +735,7 @@ class DynamicMessageDocApi {
   /// Parameters:
   /// * [bankid] - The BANKID identifier
   /// * [dynamicmessagedocid] - The DYNAMICMESSAGEDOCID identifier
-  /// * [oBPv400UpdateDynamicMessageDocRequest] - Request body
+  /// * [updateDynamicMessageDocRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -743,12 +743,12 @@ class DynamicMessageDocApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetDynamicMessageDoc200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetDynamicMessageDoc200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetDynamicMessageDoc200Response>> oBPv400UpdateBankLevelDynamicMessageDoc({ 
+  Future<Response<GetDynamicMessageDoc200Response>> updateBankLevelDynamicMessageDoc({ 
     required String bankid,
     required String dynamicmessagedocid,
-    required OBPv400UpdateDynamicMessageDocRequest oBPv400UpdateDynamicMessageDocRequest,
+    required UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -775,7 +775,7 @@ class DynamicMessageDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -788,8 +788,8 @@ class DynamicMessageDocApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400UpdateDynamicMessageDocRequest);
-      _bodyData = _serializers.serialize(oBPv400UpdateDynamicMessageDocRequest, specifiedType: _type);
+      const _type = FullType(UpdateDynamicMessageDocRequest);
+      _bodyData = _serializers.serialize(updateDynamicMessageDocRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -812,14 +812,14 @@ class DynamicMessageDocApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetDynamicMessageDoc200Response? _responseData;
+    GetDynamicMessageDoc200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetDynamicMessageDoc200Response),
-      ) as OBPv400GetDynamicMessageDoc200Response;
+        specifiedType: const FullType(GetDynamicMessageDoc200Response),
+      ) as GetDynamicMessageDoc200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -831,7 +831,7 @@ class DynamicMessageDocApi {
       );
     }
 
-    return Response<OBPv400GetDynamicMessageDoc200Response>(
+    return Response<GetDynamicMessageDoc200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -848,7 +848,7 @@ class DynamicMessageDocApi {
   ///
   /// Parameters:
   /// * [dynamicmessagedocid] - The DYNAMICMESSAGEDOCID identifier
-  /// * [oBPv400UpdateDynamicMessageDocRequest] - Request body
+  /// * [updateDynamicMessageDocRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -856,11 +856,11 @@ class DynamicMessageDocApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetDynamicMessageDoc200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetDynamicMessageDoc200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetDynamicMessageDoc200Response>> oBPv400UpdateDynamicMessageDoc({ 
+  Future<Response<GetDynamicMessageDoc200Response>> updateDynamicMessageDoc({ 
     required String dynamicmessagedocid,
-    required OBPv400UpdateDynamicMessageDocRequest oBPv400UpdateDynamicMessageDocRequest,
+    required UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -887,7 +887,7 @@ class DynamicMessageDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -900,8 +900,8 @@ class DynamicMessageDocApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400UpdateDynamicMessageDocRequest);
-      _bodyData = _serializers.serialize(oBPv400UpdateDynamicMessageDocRequest, specifiedType: _type);
+      const _type = FullType(UpdateDynamicMessageDocRequest);
+      _bodyData = _serializers.serialize(updateDynamicMessageDocRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -924,14 +924,14 @@ class DynamicMessageDocApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetDynamicMessageDoc200Response? _responseData;
+    GetDynamicMessageDoc200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetDynamicMessageDoc200Response),
-      ) as OBPv400GetDynamicMessageDoc200Response;
+        specifiedType: const FullType(GetDynamicMessageDoc200Response),
+      ) as GetDynamicMessageDoc200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -943,7 +943,7 @@ class DynamicMessageDocApi {
       );
     }
 
-    return Response<OBPv400GetDynamicMessageDoc200Response>(
+    return Response<GetDynamicMessageDoc200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

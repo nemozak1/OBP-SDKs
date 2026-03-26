@@ -1,17 +1,17 @@
 # \DirectDebitAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv400CreateDirectDebit**](DirectDebitAPI.md#OBPv400CreateDirectDebit) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
-[**OBPv400CreateDirectDebitManagement**](DirectDebitAPI.md#OBPv400CreateDirectDebitManagement) | **Post** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
+[**CreateDirectDebit**](DirectDebitAPI.md#CreateDirectDebit) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
+[**CreateDirectDebitManagement**](DirectDebitAPI.md#CreateDirectDebitManagement) | **Post** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
 
 
 
-## OBPv400CreateDirectDebit
+## CreateDirectDebit
 
-> OBPv400CreateDirectDebit200Response OBPv400CreateDirectDebit(ctx, bankid, accountid, viewid).OBPv400CreateDirectDebitRequest(oBPv400CreateDirectDebitRequest).Execute()
+> CreateDirectDebit200Response CreateDirectDebit(ctx, bankid, accountid, viewid).CreateDirectDebitRequest(createDirectDebitRequest).Execute()
 
 Create Direct Debit
 
@@ -33,17 +33,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
-	oBPv400CreateDirectDebitRequest := *openapiclient.NewOBPv400CreateDirectDebitRequest("Type_example", *openapiclient.NewOBPv400CreateDirectDebitRequestProperties(*openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400CreateDirectDebitRequest | Request body
+	createDirectDebitRequest := *openapiclient.NewCreateDirectDebitRequest() // CreateDirectDebitRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DirectDebitAPI.OBPv400CreateDirectDebit(context.Background(), bankid, accountid, viewid).OBPv400CreateDirectDebitRequest(oBPv400CreateDirectDebitRequest).Execute()
+	resp, r, err := apiClient.DirectDebitAPI.CreateDirectDebit(context.Background(), bankid, accountid, viewid).CreateDirectDebitRequest(createDirectDebitRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DirectDebitAPI.OBPv400CreateDirectDebit``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DirectDebitAPI.CreateDirectDebit``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateDirectDebit`: OBPv400CreateDirectDebit200Response
-	fmt.Fprintf(os.Stdout, "Response from `DirectDebitAPI.OBPv400CreateDirectDebit`: %v\n", resp)
+	// response from `CreateDirectDebit`: CreateDirectDebit200Response
+	fmt.Fprintf(os.Stdout, "Response from `DirectDebitAPI.CreateDirectDebit`: %v\n", resp)
 }
 ```
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateDirectDebitRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateDirectDebitRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -67,11 +67,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400CreateDirectDebitRequest** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md) | Request body | 
+ **createDirectDebitRequest** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 
@@ -87,9 +87,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateDirectDebitManagement
+## CreateDirectDebitManagement
 
-> OBPv400CreateDirectDebit200Response OBPv400CreateDirectDebitManagement(ctx, bankid, accountid).OBPv400CreateDirectDebitRequest(oBPv400CreateDirectDebitRequest).Execute()
+> CreateDirectDebit200Response CreateDirectDebitManagement(ctx, bankid, accountid).CreateDirectDebitRequest(createDirectDebitRequest).Execute()
 
 Create Direct Debit (management)
 
@@ -110,17 +110,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	oBPv400CreateDirectDebitRequest := *openapiclient.NewOBPv400CreateDirectDebitRequest("Type_example", *openapiclient.NewOBPv400CreateDirectDebitRequestProperties(*openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400CreateDirectDebitRequest | Request body
+	createDirectDebitRequest := *openapiclient.NewCreateDirectDebitRequest() // CreateDirectDebitRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DirectDebitAPI.OBPv400CreateDirectDebitManagement(context.Background(), bankid, accountid).OBPv400CreateDirectDebitRequest(oBPv400CreateDirectDebitRequest).Execute()
+	resp, r, err := apiClient.DirectDebitAPI.CreateDirectDebitManagement(context.Background(), bankid, accountid).CreateDirectDebitRequest(createDirectDebitRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DirectDebitAPI.OBPv400CreateDirectDebitManagement``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DirectDebitAPI.CreateDirectDebitManagement``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateDirectDebitManagement`: OBPv400CreateDirectDebit200Response
-	fmt.Fprintf(os.Stdout, "Response from `DirectDebitAPI.OBPv400CreateDirectDebitManagement`: %v\n", resp)
+	// response from `CreateDirectDebitManagement`: CreateDirectDebit200Response
+	fmt.Fprintf(os.Stdout, "Response from `DirectDebitAPI.CreateDirectDebitManagement`: %v\n", resp)
 }
 ```
 
@@ -135,18 +135,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateDirectDebitManagementRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateDirectDebitManagementRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv400CreateDirectDebitRequest** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md) | Request body | 
+ **createDirectDebitRequest** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 

@@ -1,27 +1,27 @@
 # SignallingApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600DeleteSignalChannel**](SignallingApi.md#oBPv600DeleteSignalChannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel |
-| [**oBPv600DeleteSignalChannelWithHttpInfo**](SignallingApi.md#oBPv600DeleteSignalChannelWithHttpInfo) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel |
-| [**oBPv600GetSignalChannelInfo**](SignallingApi.md#oBPv600GetSignalChannelInfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info |
-| [**oBPv600GetSignalChannelInfoWithHttpInfo**](SignallingApi.md#oBPv600GetSignalChannelInfoWithHttpInfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info |
-| [**oBPv600GetSignalChannels**](SignallingApi.md#oBPv600GetSignalChannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels |
-| [**oBPv600GetSignalChannelsWithHttpInfo**](SignallingApi.md#oBPv600GetSignalChannelsWithHttpInfo) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels |
-| [**oBPv600GetSignalMessages**](SignallingApi.md#oBPv600GetSignalMessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages |
-| [**oBPv600GetSignalMessagesWithHttpInfo**](SignallingApi.md#oBPv600GetSignalMessagesWithHttpInfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages |
-| [**oBPv600GetSignalStats**](SignallingApi.md#oBPv600GetSignalStats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats |
-| [**oBPv600GetSignalStatsWithHttpInfo**](SignallingApi.md#oBPv600GetSignalStatsWithHttpInfo) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats |
-| [**oBPv600PublishSignalMessage**](SignallingApi.md#oBPv600PublishSignalMessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message |
-| [**oBPv600PublishSignalMessageWithHttpInfo**](SignallingApi.md#oBPv600PublishSignalMessageWithHttpInfo) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message |
+| [**deleteSignalChannel**](SignallingApi.md#deleteSignalChannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel |
+| [**deleteSignalChannelWithHttpInfo**](SignallingApi.md#deleteSignalChannelWithHttpInfo) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel |
+| [**getSignalChannelInfo**](SignallingApi.md#getSignalChannelInfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info |
+| [**getSignalChannelInfoWithHttpInfo**](SignallingApi.md#getSignalChannelInfoWithHttpInfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info |
+| [**getSignalChannels**](SignallingApi.md#getSignalChannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels |
+| [**getSignalChannelsWithHttpInfo**](SignallingApi.md#getSignalChannelsWithHttpInfo) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels |
+| [**getSignalMessages**](SignallingApi.md#getSignalMessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages |
+| [**getSignalMessagesWithHttpInfo**](SignallingApi.md#getSignalMessagesWithHttpInfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages |
+| [**getSignalStats**](SignallingApi.md#getSignalStats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats |
+| [**getSignalStatsWithHttpInfo**](SignallingApi.md#getSignalStatsWithHttpInfo) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats |
+| [**publishSignalMessage**](SignallingApi.md#publishSignalMessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message |
+| [**publishSignalMessageWithHttpInfo**](SignallingApi.md#publishSignalMessageWithHttpInfo) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message |
 
 
 
-## oBPv600DeleteSignalChannel
+## deleteSignalChannel
 
-> OBPv600DeleteSignalChannel200Response oBPv600DeleteSignalChannel(channelname)
+> DeleteSignalChannel200Response deleteSignalChannel(channelname)
 
 Delete Signal Channel
 
@@ -41,7 +41,7 @@ import com.openbankproject.api.SignallingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -62,10 +62,10 @@ public class Example {
         SignallingApi apiInstance = new SignallingApi(defaultClient);
         String channelname = "channelname_example"; // String | The CHANNELNAME identifier
         try {
-            OBPv600DeleteSignalChannel200Response result = apiInstance.oBPv600DeleteSignalChannel(channelname);
+            DeleteSignalChannel200Response result = apiInstance.deleteSignalChannel(channelname);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling SignallingApi#oBPv600DeleteSignalChannel");
+            System.err.println("Exception when calling SignallingApi#deleteSignalChannel");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -84,7 +84,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv600DeleteSignalChannel200Response**](OBPv600DeleteSignalChannel200Response.md)
+[**DeleteSignalChannel200Response**](DeleteSignalChannel200Response.md)
 
 
 ### Authorization
@@ -102,9 +102,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600DeleteSignalChannelWithHttpInfo
+## deleteSignalChannelWithHttpInfo
 
-> ApiResponse<OBPv600DeleteSignalChannel200Response> oBPv600DeleteSignalChannel oBPv600DeleteSignalChannelWithHttpInfo(channelname)
+> ApiResponse<DeleteSignalChannel200Response> deleteSignalChannel deleteSignalChannelWithHttpInfo(channelname)
 
 Delete Signal Channel
 
@@ -125,7 +125,7 @@ import com.openbankproject.api.SignallingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -146,12 +146,12 @@ public class Example {
         SignallingApi apiInstance = new SignallingApi(defaultClient);
         String channelname = "channelname_example"; // String | The CHANNELNAME identifier
         try {
-            ApiResponse<OBPv600DeleteSignalChannel200Response> response = apiInstance.oBPv600DeleteSignalChannelWithHttpInfo(channelname);
+            ApiResponse<DeleteSignalChannel200Response> response = apiInstance.deleteSignalChannelWithHttpInfo(channelname);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling SignallingApi#oBPv600DeleteSignalChannel");
+            System.err.println("Exception when calling SignallingApi#deleteSignalChannel");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -170,7 +170,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv600DeleteSignalChannel200Response**](OBPv600DeleteSignalChannel200Response.md)>
+ApiResponse<[**DeleteSignalChannel200Response**](DeleteSignalChannel200Response.md)>
 
 
 ### Authorization
@@ -189,9 +189,9 @@ ApiResponse<[**OBPv600DeleteSignalChannel200Response**](OBPv600DeleteSignalChann
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetSignalChannelInfo
+## getSignalChannelInfo
 
-> OBPv600GetSignalChannelInfo200Response oBPv600GetSignalChannelInfo(channelname)
+> GetSignalChannelInfo200Response getSignalChannelInfo(channelname)
 
 Get Signal Channel Info
 
@@ -211,7 +211,7 @@ import com.openbankproject.api.SignallingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -232,10 +232,10 @@ public class Example {
         SignallingApi apiInstance = new SignallingApi(defaultClient);
         String channelname = "channelname_example"; // String | The CHANNELNAME identifier
         try {
-            OBPv600GetSignalChannelInfo200Response result = apiInstance.oBPv600GetSignalChannelInfo(channelname);
+            GetSignalChannelInfo200Response result = apiInstance.getSignalChannelInfo(channelname);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling SignallingApi#oBPv600GetSignalChannelInfo");
+            System.err.println("Exception when calling SignallingApi#getSignalChannelInfo");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -254,7 +254,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv600GetSignalChannelInfo200Response**](OBPv600GetSignalChannelInfo200Response.md)
+[**GetSignalChannelInfo200Response**](GetSignalChannelInfo200Response.md)
 
 
 ### Authorization
@@ -272,9 +272,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetSignalChannelInfoWithHttpInfo
+## getSignalChannelInfoWithHttpInfo
 
-> ApiResponse<OBPv600GetSignalChannelInfo200Response> oBPv600GetSignalChannelInfo oBPv600GetSignalChannelInfoWithHttpInfo(channelname)
+> ApiResponse<GetSignalChannelInfo200Response> getSignalChannelInfo getSignalChannelInfoWithHttpInfo(channelname)
 
 Get Signal Channel Info
 
@@ -295,7 +295,7 @@ import com.openbankproject.api.SignallingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -316,12 +316,12 @@ public class Example {
         SignallingApi apiInstance = new SignallingApi(defaultClient);
         String channelname = "channelname_example"; // String | The CHANNELNAME identifier
         try {
-            ApiResponse<OBPv600GetSignalChannelInfo200Response> response = apiInstance.oBPv600GetSignalChannelInfoWithHttpInfo(channelname);
+            ApiResponse<GetSignalChannelInfo200Response> response = apiInstance.getSignalChannelInfoWithHttpInfo(channelname);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling SignallingApi#oBPv600GetSignalChannelInfo");
+            System.err.println("Exception when calling SignallingApi#getSignalChannelInfo");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -340,7 +340,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv600GetSignalChannelInfo200Response**](OBPv600GetSignalChannelInfo200Response.md)>
+ApiResponse<[**GetSignalChannelInfo200Response**](GetSignalChannelInfo200Response.md)>
 
 
 ### Authorization
@@ -359,9 +359,9 @@ ApiResponse<[**OBPv600GetSignalChannelInfo200Response**](OBPv600GetSignalChannel
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetSignalChannels
+## getSignalChannels
 
-> OBPv600GetSignalChannels200Response oBPv600GetSignalChannels()
+> GetSignalChannels200Response getSignalChannels()
 
 List Signal Channels
 
@@ -381,7 +381,7 @@ import com.openbankproject.api.SignallingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -401,10 +401,10 @@ public class Example {
 
         SignallingApi apiInstance = new SignallingApi(defaultClient);
         try {
-            OBPv600GetSignalChannels200Response result = apiInstance.oBPv600GetSignalChannels();
+            GetSignalChannels200Response result = apiInstance.getSignalChannels();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling SignallingApi#oBPv600GetSignalChannels");
+            System.err.println("Exception when calling SignallingApi#getSignalChannels");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -420,7 +420,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetSignalChannels200Response**](OBPv600GetSignalChannels200Response.md)
+[**GetSignalChannels200Response**](GetSignalChannels200Response.md)
 
 
 ### Authorization
@@ -438,9 +438,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetSignalChannelsWithHttpInfo
+## getSignalChannelsWithHttpInfo
 
-> ApiResponse<OBPv600GetSignalChannels200Response> oBPv600GetSignalChannels oBPv600GetSignalChannelsWithHttpInfo()
+> ApiResponse<GetSignalChannels200Response> getSignalChannels getSignalChannelsWithHttpInfo()
 
 List Signal Channels
 
@@ -461,7 +461,7 @@ import com.openbankproject.api.SignallingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -481,12 +481,12 @@ public class Example {
 
         SignallingApi apiInstance = new SignallingApi(defaultClient);
         try {
-            ApiResponse<OBPv600GetSignalChannels200Response> response = apiInstance.oBPv600GetSignalChannelsWithHttpInfo();
+            ApiResponse<GetSignalChannels200Response> response = apiInstance.getSignalChannelsWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling SignallingApi#oBPv600GetSignalChannels");
+            System.err.println("Exception when calling SignallingApi#getSignalChannels");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -502,7 +502,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv600GetSignalChannels200Response**](OBPv600GetSignalChannels200Response.md)>
+ApiResponse<[**GetSignalChannels200Response**](GetSignalChannels200Response.md)>
 
 
 ### Authorization
@@ -521,9 +521,9 @@ ApiResponse<[**OBPv600GetSignalChannels200Response**](OBPv600GetSignalChannels20
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetSignalMessages
+## getSignalMessages
 
-> OBPv600GetSignalMessages200Response oBPv600GetSignalMessages(channelname)
+> GetSignalMessages200Response getSignalMessages(channelname)
 
 Get Signal Messages
 
@@ -543,7 +543,7 @@ import com.openbankproject.api.SignallingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -564,10 +564,10 @@ public class Example {
         SignallingApi apiInstance = new SignallingApi(defaultClient);
         String channelname = "channelname_example"; // String | The CHANNELNAME identifier
         try {
-            OBPv600GetSignalMessages200Response result = apiInstance.oBPv600GetSignalMessages(channelname);
+            GetSignalMessages200Response result = apiInstance.getSignalMessages(channelname);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling SignallingApi#oBPv600GetSignalMessages");
+            System.err.println("Exception when calling SignallingApi#getSignalMessages");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -586,7 +586,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv600GetSignalMessages200Response**](OBPv600GetSignalMessages200Response.md)
+[**GetSignalMessages200Response**](GetSignalMessages200Response.md)
 
 
 ### Authorization
@@ -604,9 +604,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetSignalMessagesWithHttpInfo
+## getSignalMessagesWithHttpInfo
 
-> ApiResponse<OBPv600GetSignalMessages200Response> oBPv600GetSignalMessages oBPv600GetSignalMessagesWithHttpInfo(channelname)
+> ApiResponse<GetSignalMessages200Response> getSignalMessages getSignalMessagesWithHttpInfo(channelname)
 
 Get Signal Messages
 
@@ -627,7 +627,7 @@ import com.openbankproject.api.SignallingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -648,12 +648,12 @@ public class Example {
         SignallingApi apiInstance = new SignallingApi(defaultClient);
         String channelname = "channelname_example"; // String | The CHANNELNAME identifier
         try {
-            ApiResponse<OBPv600GetSignalMessages200Response> response = apiInstance.oBPv600GetSignalMessagesWithHttpInfo(channelname);
+            ApiResponse<GetSignalMessages200Response> response = apiInstance.getSignalMessagesWithHttpInfo(channelname);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling SignallingApi#oBPv600GetSignalMessages");
+            System.err.println("Exception when calling SignallingApi#getSignalMessages");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -672,7 +672,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv600GetSignalMessages200Response**](OBPv600GetSignalMessages200Response.md)>
+ApiResponse<[**GetSignalMessages200Response**](GetSignalMessages200Response.md)>
 
 
 ### Authorization
@@ -691,9 +691,9 @@ ApiResponse<[**OBPv600GetSignalMessages200Response**](OBPv600GetSignalMessages20
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetSignalStats
+## getSignalStats
 
-> OBPv600GetSignalStats200Response oBPv600GetSignalStats()
+> GetSignalStats200Response getSignalStats()
 
 Get Signal Channel Stats
 
@@ -713,7 +713,7 @@ import com.openbankproject.api.SignallingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -733,10 +733,10 @@ public class Example {
 
         SignallingApi apiInstance = new SignallingApi(defaultClient);
         try {
-            OBPv600GetSignalStats200Response result = apiInstance.oBPv600GetSignalStats();
+            GetSignalStats200Response result = apiInstance.getSignalStats();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling SignallingApi#oBPv600GetSignalStats");
+            System.err.println("Exception when calling SignallingApi#getSignalStats");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -752,7 +752,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetSignalStats200Response**](OBPv600GetSignalStats200Response.md)
+[**GetSignalStats200Response**](GetSignalStats200Response.md)
 
 
 ### Authorization
@@ -770,9 +770,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetSignalStatsWithHttpInfo
+## getSignalStatsWithHttpInfo
 
-> ApiResponse<OBPv600GetSignalStats200Response> oBPv600GetSignalStats oBPv600GetSignalStatsWithHttpInfo()
+> ApiResponse<GetSignalStats200Response> getSignalStats getSignalStatsWithHttpInfo()
 
 Get Signal Channel Stats
 
@@ -793,7 +793,7 @@ import com.openbankproject.api.SignallingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -813,12 +813,12 @@ public class Example {
 
         SignallingApi apiInstance = new SignallingApi(defaultClient);
         try {
-            ApiResponse<OBPv600GetSignalStats200Response> response = apiInstance.oBPv600GetSignalStatsWithHttpInfo();
+            ApiResponse<GetSignalStats200Response> response = apiInstance.getSignalStatsWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling SignallingApi#oBPv600GetSignalStats");
+            System.err.println("Exception when calling SignallingApi#getSignalStats");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -834,7 +834,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv600GetSignalStats200Response**](OBPv600GetSignalStats200Response.md)>
+ApiResponse<[**GetSignalStats200Response**](GetSignalStats200Response.md)>
 
 
 ### Authorization
@@ -853,9 +853,9 @@ ApiResponse<[**OBPv600GetSignalStats200Response**](OBPv600GetSignalStats200Respo
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600PublishSignalMessage
+## publishSignalMessage
 
-> OBPv600PublishSignalMessage200Response oBPv600PublishSignalMessage(channelname, obPv600PublishSignalMessageRequest)
+> PublishSignalMessage200Response publishSignalMessage(channelname, publishSignalMessageRequest)
 
 Publish Signal Message
 
@@ -875,7 +875,7 @@ import com.openbankproject.api.SignallingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -895,12 +895,12 @@ public class Example {
 
         SignallingApi apiInstance = new SignallingApi(defaultClient);
         String channelname = "channelname_example"; // String | The CHANNELNAME identifier
-        OBPv600PublishSignalMessageRequest obPv600PublishSignalMessageRequest = new OBPv600PublishSignalMessageRequest(); // OBPv600PublishSignalMessageRequest | Request body
+        PublishSignalMessageRequest publishSignalMessageRequest = new PublishSignalMessageRequest(); // PublishSignalMessageRequest | Request body
         try {
-            OBPv600PublishSignalMessage200Response result = apiInstance.oBPv600PublishSignalMessage(channelname, obPv600PublishSignalMessageRequest);
+            PublishSignalMessage200Response result = apiInstance.publishSignalMessage(channelname, publishSignalMessageRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling SignallingApi#oBPv600PublishSignalMessage");
+            System.err.println("Exception when calling SignallingApi#publishSignalMessage");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -916,11 +916,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **channelname** | **String**| The CHANNELNAME identifier | |
-| **obPv600PublishSignalMessageRequest** | [**OBPv600PublishSignalMessageRequest**](OBPv600PublishSignalMessageRequest.md)| Request body | |
+| **publishSignalMessageRequest** | [**PublishSignalMessageRequest**](PublishSignalMessageRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600PublishSignalMessage200Response**](OBPv600PublishSignalMessage200Response.md)
+[**PublishSignalMessage200Response**](PublishSignalMessage200Response.md)
 
 
 ### Authorization
@@ -938,9 +938,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600PublishSignalMessageWithHttpInfo
+## publishSignalMessageWithHttpInfo
 
-> ApiResponse<OBPv600PublishSignalMessage200Response> oBPv600PublishSignalMessage oBPv600PublishSignalMessageWithHttpInfo(channelname, obPv600PublishSignalMessageRequest)
+> ApiResponse<PublishSignalMessage200Response> publishSignalMessage publishSignalMessageWithHttpInfo(channelname, publishSignalMessageRequest)
 
 Publish Signal Message
 
@@ -961,7 +961,7 @@ import com.openbankproject.api.SignallingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -981,14 +981,14 @@ public class Example {
 
         SignallingApi apiInstance = new SignallingApi(defaultClient);
         String channelname = "channelname_example"; // String | The CHANNELNAME identifier
-        OBPv600PublishSignalMessageRequest obPv600PublishSignalMessageRequest = new OBPv600PublishSignalMessageRequest(); // OBPv600PublishSignalMessageRequest | Request body
+        PublishSignalMessageRequest publishSignalMessageRequest = new PublishSignalMessageRequest(); // PublishSignalMessageRequest | Request body
         try {
-            ApiResponse<OBPv600PublishSignalMessage200Response> response = apiInstance.oBPv600PublishSignalMessageWithHttpInfo(channelname, obPv600PublishSignalMessageRequest);
+            ApiResponse<PublishSignalMessage200Response> response = apiInstance.publishSignalMessageWithHttpInfo(channelname, publishSignalMessageRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling SignallingApi#oBPv600PublishSignalMessage");
+            System.err.println("Exception when calling SignallingApi#publishSignalMessage");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1004,11 +1004,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **channelname** | **String**| The CHANNELNAME identifier | |
-| **obPv600PublishSignalMessageRequest** | [**OBPv600PublishSignalMessageRequest**](OBPv600PublishSignalMessageRequest.md)| Request body | |
+| **publishSignalMessageRequest** | [**PublishSignalMessageRequest**](PublishSignalMessageRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600PublishSignalMessage200Response**](OBPv600PublishSignalMessage200Response.md)>
+ApiResponse<[**PublishSignalMessage200Response**](PublishSignalMessage200Response.md)>
 
 
 ### Authorization

@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,11 +18,11 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv310CreateCardAttribute200Response;
-import com.openbankproject.model.OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest;
-import com.openbankproject.model.OBPv400GetTransactionRequestAttributeDefinition200Response;
-import com.openbankproject.model.OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems;
-import com.openbankproject.model.OBPv600CreatePersonalDataFieldRequest;
+import com.openbankproject.model.CreateCardAttribute200Response;
+import com.openbankproject.model.CreateOrUpdateTransactionRequestAttributeDefinitionRequest;
+import com.openbankproject.model.CreatePersonalDataFieldRequest;
+import com.openbankproject.model.GetTransactionRequestAttributeDefinition200Response;
+import com.openbankproject.model.GetTransactionRequestAttributeDefinition200ResponseAttributesInner;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -49,7 +49,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class CardAttributeApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -171,12 +171,12 @@ public class CardAttributeApi {
    * &lt;p&gt;Create Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param cardid The CARDID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return OBPv310CreateCardAttribute200Response
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return CreateCardAttribute200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv310CreateCardAttribute200Response oBPv310CreateCardAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv310CreateCardAttribute(bankid, cardid, obPv600CreatePersonalDataFieldRequest, null);
+  public CreateCardAttribute200Response createCardAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return createCardAttribute(bankid, cardid, createPersonalDataFieldRequest, null);
   }
 
   /**
@@ -184,13 +184,13 @@ public class CardAttributeApi {
    * &lt;p&gt;Create Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param cardid The CARDID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv310CreateCardAttribute200Response
+   * @return CreateCardAttribute200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv310CreateCardAttribute200Response oBPv310CreateCardAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv310CreateCardAttribute200Response> localVarResponse = oBPv310CreateCardAttributeWithHttpInfo(bankid, cardid, obPv600CreatePersonalDataFieldRequest, headers);
+  public CreateCardAttribute200Response createCardAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<CreateCardAttribute200Response> localVarResponse = createCardAttributeWithHttpInfo(bankid, cardid, createPersonalDataFieldRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -199,12 +199,12 @@ public class CardAttributeApi {
    * &lt;p&gt;Create Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param cardid The CARDID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return ApiResponse&lt;OBPv310CreateCardAttribute200Response&gt;
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return ApiResponse&lt;CreateCardAttribute200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310CreateCardAttribute200Response> oBPv310CreateCardAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv310CreateCardAttributeWithHttpInfo(bankid, cardid, obPv600CreatePersonalDataFieldRequest, null);
+  public ApiResponse<CreateCardAttribute200Response> createCardAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return createCardAttributeWithHttpInfo(bankid, cardid, createPersonalDataFieldRequest, null);
   }
 
   /**
@@ -212,13 +212,13 @@ public class CardAttributeApi {
    * &lt;p&gt;Create Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param cardid The CARDID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv310CreateCardAttribute200Response&gt;
+   * @return ApiResponse&lt;CreateCardAttribute200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310CreateCardAttribute200Response> oBPv310CreateCardAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv310CreateCardAttributeRequestBuilder(bankid, cardid, obPv600CreatePersonalDataFieldRequest, headers);
+  public ApiResponse<CreateCardAttribute200Response> createCardAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createCardAttributeRequestBuilder(bankid, cardid, createPersonalDataFieldRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -229,11 +229,11 @@ public class CardAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv310CreateCardAttribute", localVarResponse);
+          throw getApiException("createCardAttribute", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv310CreateCardAttribute200Response>(
+          return new ApiResponse<CreateCardAttribute200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -243,10 +243,10 @@ public class CardAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv310CreateCardAttribute200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv310CreateCardAttribute200Response>() {});
+        CreateCardAttribute200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateCardAttribute200Response>() {});
         
 
-        return new ApiResponse<OBPv310CreateCardAttribute200Response>(
+        return new ApiResponse<CreateCardAttribute200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -265,18 +265,18 @@ public class CardAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv310CreateCardAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createCardAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv310CreateCardAttribute");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createCardAttribute");
     }
     // verify the required parameter 'cardid' is set
     if (cardid == null) {
-      throw new ApiException(400, "Missing the required parameter 'cardid' when calling oBPv310CreateCardAttribute");
+      throw new ApiException(400, "Missing the required parameter 'cardid' when calling createCardAttribute");
     }
-    // verify the required parameter 'obPv600CreatePersonalDataFieldRequest' is set
-    if (obPv600CreatePersonalDataFieldRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600CreatePersonalDataFieldRequest' when calling oBPv310CreateCardAttribute");
+    // verify the required parameter 'createPersonalDataFieldRequest' is set
+    if (createPersonalDataFieldRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createPersonalDataFieldRequest' when calling createCardAttribute");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -291,7 +291,7 @@ public class CardAttributeApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600CreatePersonalDataFieldRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createPersonalDataFieldRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -308,62 +308,54 @@ public class CardAttributeApi {
   }
 
   /**
-   * Update Card Attribute
-   * &lt;p&gt;Update Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ATTRIBUTE_ID&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+   * Create or Update Card Attribute Definition
+   * &lt;p&gt;Create or Update Card Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Card&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param cardid The CARDID identifier (required)
-   * @param cardattributeid The CARDATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return OBPv310CreateCardAttribute200Response
+   * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
+   * @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv310CreateCardAttribute200Response oBPv310UpdateCardAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull String cardattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv310UpdateCardAttribute(bankid, cardid, cardattributeid, obPv600CreatePersonalDataFieldRequest, null);
+  public GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateCardAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest) throws ApiException {
+    return createOrUpdateCardAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, null);
   }
 
   /**
-   * Update Card Attribute
-   * &lt;p&gt;Update Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ATTRIBUTE_ID&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+   * Create or Update Card Attribute Definition
+   * &lt;p&gt;Create or Update Card Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Card&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param cardid The CARDID identifier (required)
-   * @param cardattributeid The CARDATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv310CreateCardAttribute200Response
+   * @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv310CreateCardAttribute200Response oBPv310UpdateCardAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull String cardattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv310CreateCardAttribute200Response> localVarResponse = oBPv310UpdateCardAttributeWithHttpInfo(bankid, cardid, cardattributeid, obPv600CreatePersonalDataFieldRequest, headers);
+  public GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateCardAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> localVarResponse = createOrUpdateCardAttributeDefinitionWithHttpInfo(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, headers);
     return localVarResponse.getData();
   }
 
   /**
-   * Update Card Attribute
-   * &lt;p&gt;Update Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ATTRIBUTE_ID&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+   * Create or Update Card Attribute Definition
+   * &lt;p&gt;Create or Update Card Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Card&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param cardid The CARDID identifier (required)
-   * @param cardattributeid The CARDATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return ApiResponse&lt;OBPv310CreateCardAttribute200Response&gt;
+   * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
+   * @return ApiResponse&lt;GetTransactionRequestAttributeDefinition200ResponseAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310CreateCardAttribute200Response> oBPv310UpdateCardAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull String cardattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv310UpdateCardAttributeWithHttpInfo(bankid, cardid, cardattributeid, obPv600CreatePersonalDataFieldRequest, null);
+  public ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> createOrUpdateCardAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest) throws ApiException {
+    return createOrUpdateCardAttributeDefinitionWithHttpInfo(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, null);
   }
 
   /**
-   * Update Card Attribute
-   * &lt;p&gt;Update Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ATTRIBUTE_ID&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+   * Create or Update Card Attribute Definition
+   * &lt;p&gt;Create or Update Card Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Card&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param cardid The CARDID identifier (required)
-   * @param cardattributeid The CARDATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv310CreateCardAttribute200Response&gt;
+   * @return ApiResponse&lt;GetTransactionRequestAttributeDefinition200ResponseAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310CreateCardAttribute200Response> oBPv310UpdateCardAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull String cardattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv310UpdateCardAttributeRequestBuilder(bankid, cardid, cardattributeid, obPv600CreatePersonalDataFieldRequest, headers);
+  public ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> createOrUpdateCardAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createOrUpdateCardAttributeDefinitionRequestBuilder(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -374,11 +366,11 @@ public class CardAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv310UpdateCardAttribute", localVarResponse);
+          throw getApiException("createOrUpdateCardAttributeDefinition", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv310CreateCardAttribute200Response>(
+          return new ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -388,10 +380,10 @@ public class CardAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv310CreateCardAttribute200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv310CreateCardAttribute200Response>() {});
+        GetTransactionRequestAttributeDefinition200ResponseAttributesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>() {});
         
 
-        return new ApiResponse<OBPv310CreateCardAttribute200Response>(
+        return new ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -410,156 +402,14 @@ public class CardAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv310UpdateCardAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull String cardattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createOrUpdateCardAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv310UpdateCardAttribute");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createOrUpdateCardAttributeDefinition");
     }
-    // verify the required parameter 'cardid' is set
-    if (cardid == null) {
-      throw new ApiException(400, "Missing the required parameter 'cardid' when calling oBPv310UpdateCardAttribute");
-    }
-    // verify the required parameter 'cardattributeid' is set
-    if (cardattributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'cardattributeid' when calling oBPv310UpdateCardAttribute");
-    }
-    // verify the required parameter 'obPv600CreatePersonalDataFieldRequest' is set
-    if (obPv600CreatePersonalDataFieldRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600CreatePersonalDataFieldRequest' when calling oBPv310UpdateCardAttribute");
-    }
-
-    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-
-    String localVarPath = "/obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid}"
-        .replace("{bankid}", ApiClient.urlEncode(bankid.toString()))
-        .replace("{cardid}", ApiClient.urlEncode(cardid.toString()))
-        .replace("{cardattributeid}", ApiClient.urlEncode(cardattributeid.toString()));
-
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
-
-    localVarRequestBuilder.header("Content-Type", "application/json");
-    localVarRequestBuilder.header("Accept", "application/json");
-
-    try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600CreatePersonalDataFieldRequest);
-      localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    if (memberVarReadTimeout != null) {
-      localVarRequestBuilder.timeout(memberVarReadTimeout);
-    }
-    // Add custom headers if provided
-    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
-    if (memberVarInterceptor != null) {
-      memberVarInterceptor.accept(localVarRequestBuilder);
-    }
-    return localVarRequestBuilder;
-  }
-
-  /**
-   * Create or Update Card Attribute Definition
-   * &lt;p&gt;Create or Update Card Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Card&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-   * @param bankid The BANKID identifier (required)
-   * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
-   * @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateCardAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) throws ApiException {
-    return oBPv400CreateOrUpdateCardAttributeDefinition(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, null);
-  }
-
-  /**
-   * Create or Update Card Attribute Definition
-   * &lt;p&gt;Create or Update Card Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Card&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-   * @param bankid The BANKID identifier (required)
-   * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
-   * @param headers Optional headers to include in the request
-   * @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateCardAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> localVarResponse = oBPv400CreateOrUpdateCardAttributeDefinitionWithHttpInfo(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, headers);
-    return localVarResponse.getData();
-  }
-
-  /**
-   * Create or Update Card Attribute Definition
-   * &lt;p&gt;Create or Update Card Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Card&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-   * @param bankid The BANKID identifier (required)
-   * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> oBPv400CreateOrUpdateCardAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) throws ApiException {
-    return oBPv400CreateOrUpdateCardAttributeDefinitionWithHttpInfo(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, null);
-  }
-
-  /**
-   * Create or Update Card Attribute Definition
-   * &lt;p&gt;Create or Update Card Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Card&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-   * @param bankid The BANKID identifier (required)
-   * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
-   * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> oBPv400CreateOrUpdateCardAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateOrUpdateCardAttributeDefinitionRequestBuilder(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, headers);
-    try {
-      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofInputStream());
-      if (memberVarResponseInterceptor != null) {
-        memberVarResponseInterceptor.accept(localVarResponse);
-      }
-      InputStream localVarResponseBody = null;
-      try {
-        if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateOrUpdateCardAttributeDefinition", localVarResponse);
-        }
-        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
-        if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>(
-              localVarResponse.statusCode(),
-              localVarResponse.headers().map(),
-              null
-          );
-        }
-
-        
-        
-        String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>() {});
-        
-
-        return new ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>(
-            localVarResponse.statusCode(),
-            localVarResponse.headers().map(),
-            responseValue
-        );
-      } finally {
-        if (localVarResponseBody != null) {
-          localVarResponseBody.close();
-        }
-      }
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      throw new ApiException(e);
-    }
-  }
-
-  private HttpRequest.Builder oBPv400CreateOrUpdateCardAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'bankid' is set
-    if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400CreateOrUpdateCardAttributeDefinition");
-    }
-    // verify the required parameter 'obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest' is set
-    if (obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest' when calling oBPv400CreateOrUpdateCardAttributeDefinition");
+    // verify the required parameter 'createOrUpdateTransactionRequestAttributeDefinitionRequest' is set
+    if (createOrUpdateTransactionRequestAttributeDefinitionRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createOrUpdateTransactionRequestAttributeDefinitionRequest' when calling createOrUpdateCardAttributeDefinition");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -573,7 +423,7 @@ public class CardAttributeApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createOrUpdateTransactionRequestAttributeDefinitionRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -596,8 +446,8 @@ public class CardAttributeApi {
    * @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteCardAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid) throws ApiException {
-    oBPv400DeleteCardAttributeDefinition(bankid, attributedefinitionid, null);
+  public void deleteCardAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid) throws ApiException {
+    deleteCardAttributeDefinition(bankid, attributedefinitionid, null);
   }
 
   /**
@@ -608,8 +458,8 @@ public class CardAttributeApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteCardAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
-    oBPv400DeleteCardAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid, headers);
+  public void deleteCardAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
+    deleteCardAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid, headers);
   }
 
   /**
@@ -620,8 +470,8 @@ public class CardAttributeApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteCardAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid) throws ApiException {
-    return oBPv400DeleteCardAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid, null);
+  public ApiResponse<Void> deleteCardAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid) throws ApiException {
+    return deleteCardAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid, null);
   }
 
   /**
@@ -633,8 +483,8 @@ public class CardAttributeApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteCardAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteCardAttributeDefinitionRequestBuilder(bankid, attributedefinitionid, headers);
+  public ApiResponse<Void> deleteCardAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteCardAttributeDefinitionRequestBuilder(bankid, attributedefinitionid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -645,7 +495,7 @@ public class CardAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteCardAttributeDefinition", localVarResponse);
+          throw getApiException("deleteCardAttributeDefinition", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -670,14 +520,14 @@ public class CardAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteCardAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteCardAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400DeleteCardAttributeDefinition");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteCardAttributeDefinition");
     }
     // verify the required parameter 'attributedefinitionid' is set
     if (attributedefinitionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'attributedefinitionid' when calling oBPv400DeleteCardAttributeDefinition");
+      throw new ApiException(400, "Missing the required parameter 'attributedefinitionid' when calling deleteCardAttributeDefinition");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -706,11 +556,11 @@ public class CardAttributeApi {
    * Get Card Attribute Definition
    * &lt;p&gt;Get Card Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return OBPv400GetTransactionRequestAttributeDefinition200Response
+   * @return GetTransactionRequestAttributeDefinition200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetTransactionRequestAttributeDefinition200Response oBPv400GetCardAttributeDefinition(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv400GetCardAttributeDefinition(bankid, null);
+  public GetTransactionRequestAttributeDefinition200Response getCardAttributeDefinition(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getCardAttributeDefinition(bankid, null);
   }
 
   /**
@@ -718,11 +568,11 @@ public class CardAttributeApi {
    * &lt;p&gt;Get Card Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetTransactionRequestAttributeDefinition200Response
+   * @return GetTransactionRequestAttributeDefinition200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetTransactionRequestAttributeDefinition200Response oBPv400GetCardAttributeDefinition(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response> localVarResponse = oBPv400GetCardAttributeDefinitionWithHttpInfo(bankid, headers);
+  public GetTransactionRequestAttributeDefinition200Response getCardAttributeDefinition(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetTransactionRequestAttributeDefinition200Response> localVarResponse = getCardAttributeDefinitionWithHttpInfo(bankid, headers);
     return localVarResponse.getData();
   }
 
@@ -730,11 +580,11 @@ public class CardAttributeApi {
    * Get Card Attribute Definition
    * &lt;p&gt;Get Card Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetTransactionRequestAttributeDefinition200Response&gt;
+   * @return ApiResponse&lt;GetTransactionRequestAttributeDefinition200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response> oBPv400GetCardAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv400GetCardAttributeDefinitionWithHttpInfo(bankid, null);
+  public ApiResponse<GetTransactionRequestAttributeDefinition200Response> getCardAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getCardAttributeDefinitionWithHttpInfo(bankid, null);
   }
 
   /**
@@ -742,11 +592,11 @@ public class CardAttributeApi {
    * &lt;p&gt;Get Card Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetTransactionRequestAttributeDefinition200Response&gt;
+   * @return ApiResponse&lt;GetTransactionRequestAttributeDefinition200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response> oBPv400GetCardAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetCardAttributeDefinitionRequestBuilder(bankid, headers);
+  public ApiResponse<GetTransactionRequestAttributeDefinition200Response> getCardAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getCardAttributeDefinitionRequestBuilder(bankid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -757,11 +607,11 @@ public class CardAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetCardAttributeDefinition", localVarResponse);
+          throw getApiException("getCardAttributeDefinition", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response>(
+          return new ApiResponse<GetTransactionRequestAttributeDefinition200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -771,10 +621,10 @@ public class CardAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetTransactionRequestAttributeDefinition200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetTransactionRequestAttributeDefinition200Response>() {});
+        GetTransactionRequestAttributeDefinition200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetTransactionRequestAttributeDefinition200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response>(
+        return new ApiResponse<GetTransactionRequestAttributeDefinition200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -793,10 +643,10 @@ public class CardAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetCardAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getCardAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400GetCardAttributeDefinition");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getCardAttributeDefinition");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -809,6 +659,156 @@ public class CardAttributeApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Update Card Attribute
+   * &lt;p&gt;Update Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ATTRIBUTE_ID&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+   * @param bankid The BANKID identifier (required)
+   * @param cardid The CARDID identifier (required)
+   * @param cardattributeid The CARDATTRIBUTEID identifier (required)
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return CreateCardAttribute200Response
+   * @throws ApiException if fails to make API call
+   */
+  public CreateCardAttribute200Response updateCardAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull String cardattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return updateCardAttribute(bankid, cardid, cardattributeid, createPersonalDataFieldRequest, null);
+  }
+
+  /**
+   * Update Card Attribute
+   * &lt;p&gt;Update Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ATTRIBUTE_ID&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+   * @param bankid The BANKID identifier (required)
+   * @param cardid The CARDID identifier (required)
+   * @param cardattributeid The CARDATTRIBUTEID identifier (required)
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @param headers Optional headers to include in the request
+   * @return CreateCardAttribute200Response
+   * @throws ApiException if fails to make API call
+   */
+  public CreateCardAttribute200Response updateCardAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull String cardattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<CreateCardAttribute200Response> localVarResponse = updateCardAttributeWithHttpInfo(bankid, cardid, cardattributeid, createPersonalDataFieldRequest, headers);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * Update Card Attribute
+   * &lt;p&gt;Update Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ATTRIBUTE_ID&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+   * @param bankid The BANKID identifier (required)
+   * @param cardid The CARDID identifier (required)
+   * @param cardattributeid The CARDATTRIBUTEID identifier (required)
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return ApiResponse&lt;CreateCardAttribute200Response&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<CreateCardAttribute200Response> updateCardAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull String cardattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return updateCardAttributeWithHttpInfo(bankid, cardid, cardattributeid, createPersonalDataFieldRequest, null);
+  }
+
+  /**
+   * Update Card Attribute
+   * &lt;p&gt;Update Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ATTRIBUTE_ID&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+   * @param bankid The BANKID identifier (required)
+   * @param cardid The CARDID identifier (required)
+   * @param cardattributeid The CARDATTRIBUTEID identifier (required)
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;CreateCardAttribute200Response&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<CreateCardAttribute200Response> updateCardAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull String cardattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateCardAttributeRequestBuilder(bankid, cardid, cardattributeid, createPersonalDataFieldRequest, headers);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      InputStream localVarResponseBody = null;
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("updateCardAttribute", localVarResponse);
+        }
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
+          return new ApiResponse<CreateCardAttribute200Response>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        CreateCardAttribute200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateCardAttribute200Response>() {});
+        
+
+        return new ApiResponse<CreateCardAttribute200Response>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseValue
+        );
+      } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder updateCardAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String cardid, @javax.annotation.Nonnull String cardattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'bankid' is set
+    if (bankid == null) {
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateCardAttribute");
+    }
+    // verify the required parameter 'cardid' is set
+    if (cardid == null) {
+      throw new ApiException(400, "Missing the required parameter 'cardid' when calling updateCardAttribute");
+    }
+    // verify the required parameter 'cardattributeid' is set
+    if (cardattributeid == null) {
+      throw new ApiException(400, "Missing the required parameter 'cardattributeid' when calling updateCardAttribute");
+    }
+    // verify the required parameter 'createPersonalDataFieldRequest' is set
+    if (createPersonalDataFieldRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createPersonalDataFieldRequest' when calling updateCardAttribute");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid}"
+        .replace("{bankid}", ApiClient.urlEncode(bankid.toString()))
+        .replace("{cardid}", ApiClient.urlEncode(cardid.toString()))
+        .replace("{cardattributeid}", ApiClient.urlEncode(cardattributeid.toString()));
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Content-Type", "application/json");
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createPersonalDataFieldRequest);
+      localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }

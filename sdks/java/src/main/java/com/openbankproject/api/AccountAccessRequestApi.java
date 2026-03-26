@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,10 +18,10 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv600CreateAccountAccessRequestRequest;
-import com.openbankproject.model.OBPv600GetAccountAccessRequestsForAccount200Response;
-import com.openbankproject.model.OBPv600RejectAccountAccessRequest200Response;
-import com.openbankproject.model.OBPv600RejectAccountAccessRequestRequest;
+import com.openbankproject.model.CreateAccountAccessRequestRequest;
+import com.openbankproject.model.GetAccountAccessRequestsForAccount200Response;
+import com.openbankproject.model.RejectAccountAccessRequest200Response;
+import com.openbankproject.model.RejectAccountAccessRequestRequest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -48,7 +48,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class AccountAccessRequestApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -171,12 +171,12 @@ public class AccountAccessRequestApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-   * @param obPv600RejectAccountAccessRequestRequest Request body (required)
-   * @return OBPv600RejectAccountAccessRequest200Response
+   * @param rejectAccountAccessRequestRequest Request body (required)
+   * @return RejectAccountAccessRequest200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600RejectAccountAccessRequest200Response oBPv600ApproveAccountAccessRequest(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull OBPv600RejectAccountAccessRequestRequest obPv600RejectAccountAccessRequestRequest) throws ApiException {
-    return oBPv600ApproveAccountAccessRequest(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest, null);
+  public RejectAccountAccessRequest200Response approveAccountAccessRequest(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest) throws ApiException {
+    return approveAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest, null);
   }
 
   /**
@@ -185,13 +185,13 @@ public class AccountAccessRequestApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-   * @param obPv600RejectAccountAccessRequestRequest Request body (required)
+   * @param rejectAccountAccessRequestRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600RejectAccountAccessRequest200Response
+   * @return RejectAccountAccessRequest200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600RejectAccountAccessRequest200Response oBPv600ApproveAccountAccessRequest(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull OBPv600RejectAccountAccessRequestRequest obPv600RejectAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600RejectAccountAccessRequest200Response> localVarResponse = oBPv600ApproveAccountAccessRequestWithHttpInfo(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest, headers);
+  public RejectAccountAccessRequest200Response approveAccountAccessRequest(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<RejectAccountAccessRequest200Response> localVarResponse = approveAccountAccessRequestWithHttpInfo(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -201,12 +201,12 @@ public class AccountAccessRequestApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-   * @param obPv600RejectAccountAccessRequestRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600RejectAccountAccessRequest200Response&gt;
+   * @param rejectAccountAccessRequestRequest Request body (required)
+   * @return ApiResponse&lt;RejectAccountAccessRequest200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600RejectAccountAccessRequest200Response> oBPv600ApproveAccountAccessRequestWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull OBPv600RejectAccountAccessRequestRequest obPv600RejectAccountAccessRequestRequest) throws ApiException {
-    return oBPv600ApproveAccountAccessRequestWithHttpInfo(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest, null);
+  public ApiResponse<RejectAccountAccessRequest200Response> approveAccountAccessRequestWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest) throws ApiException {
+    return approveAccountAccessRequestWithHttpInfo(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest, null);
   }
 
   /**
@@ -215,13 +215,13 @@ public class AccountAccessRequestApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-   * @param obPv600RejectAccountAccessRequestRequest Request body (required)
+   * @param rejectAccountAccessRequestRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600RejectAccountAccessRequest200Response&gt;
+   * @return ApiResponse&lt;RejectAccountAccessRequest200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600RejectAccountAccessRequest200Response> oBPv600ApproveAccountAccessRequestWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull OBPv600RejectAccountAccessRequestRequest obPv600RejectAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600ApproveAccountAccessRequestRequestBuilder(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest, headers);
+  public ApiResponse<RejectAccountAccessRequest200Response> approveAccountAccessRequestWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = approveAccountAccessRequestRequestBuilder(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -232,11 +232,11 @@ public class AccountAccessRequestApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600ApproveAccountAccessRequest", localVarResponse);
+          throw getApiException("approveAccountAccessRequest", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600RejectAccountAccessRequest200Response>(
+          return new ApiResponse<RejectAccountAccessRequest200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -246,10 +246,10 @@ public class AccountAccessRequestApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600RejectAccountAccessRequest200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600RejectAccountAccessRequest200Response>() {});
+        RejectAccountAccessRequest200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<RejectAccountAccessRequest200Response>() {});
         
 
-        return new ApiResponse<OBPv600RejectAccountAccessRequest200Response>(
+        return new ApiResponse<RejectAccountAccessRequest200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -268,22 +268,22 @@ public class AccountAccessRequestApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600ApproveAccountAccessRequestRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull OBPv600RejectAccountAccessRequestRequest obPv600RejectAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder approveAccountAccessRequestRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv600ApproveAccountAccessRequest");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling approveAccountAccessRequest");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv600ApproveAccountAccessRequest");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling approveAccountAccessRequest");
     }
     // verify the required parameter 'accountaccessrequestid' is set
     if (accountaccessrequestid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountaccessrequestid' when calling oBPv600ApproveAccountAccessRequest");
+      throw new ApiException(400, "Missing the required parameter 'accountaccessrequestid' when calling approveAccountAccessRequest");
     }
-    // verify the required parameter 'obPv600RejectAccountAccessRequestRequest' is set
-    if (obPv600RejectAccountAccessRequestRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600RejectAccountAccessRequestRequest' when calling oBPv600ApproveAccountAccessRequest");
+    // verify the required parameter 'rejectAccountAccessRequestRequest' is set
+    if (rejectAccountAccessRequestRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'rejectAccountAccessRequestRequest' when calling approveAccountAccessRequest");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -299,7 +299,7 @@ public class AccountAccessRequestApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600RejectAccountAccessRequestRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(rejectAccountAccessRequestRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -320,12 +320,12 @@ public class AccountAccessRequestApi {
    * &lt;p&gt;Create a new Account Access Request (maker step in maker/checker workflow).&lt;/p&gt; &lt;p&gt;The requestor (maker) creates a request to grant a target user access to a specific view on an account.&lt;br /&gt; A business justification is required.&lt;/p&gt; &lt;p&gt;The request is created with status INITIATED and must be approved or rejected by a different user (checker).&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
-   * @param obPv600CreateAccountAccessRequestRequest Request body (required)
-   * @return OBPv600RejectAccountAccessRequest200Response
+   * @param createAccountAccessRequestRequest Request body (required)
+   * @return RejectAccountAccessRequest200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600RejectAccountAccessRequest200Response oBPv600CreateAccountAccessRequest(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull OBPv600CreateAccountAccessRequestRequest obPv600CreateAccountAccessRequestRequest) throws ApiException {
-    return oBPv600CreateAccountAccessRequest(bankid, accountid, obPv600CreateAccountAccessRequestRequest, null);
+  public RejectAccountAccessRequest200Response createAccountAccessRequest(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull CreateAccountAccessRequestRequest createAccountAccessRequestRequest) throws ApiException {
+    return createAccountAccessRequest(bankid, accountid, createAccountAccessRequestRequest, null);
   }
 
   /**
@@ -333,13 +333,13 @@ public class AccountAccessRequestApi {
    * &lt;p&gt;Create a new Account Access Request (maker step in maker/checker workflow).&lt;/p&gt; &lt;p&gt;The requestor (maker) creates a request to grant a target user access to a specific view on an account.&lt;br /&gt; A business justification is required.&lt;/p&gt; &lt;p&gt;The request is created with status INITIATED and must be approved or rejected by a different user (checker).&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
-   * @param obPv600CreateAccountAccessRequestRequest Request body (required)
+   * @param createAccountAccessRequestRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600RejectAccountAccessRequest200Response
+   * @return RejectAccountAccessRequest200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600RejectAccountAccessRequest200Response oBPv600CreateAccountAccessRequest(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull OBPv600CreateAccountAccessRequestRequest obPv600CreateAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600RejectAccountAccessRequest200Response> localVarResponse = oBPv600CreateAccountAccessRequestWithHttpInfo(bankid, accountid, obPv600CreateAccountAccessRequestRequest, headers);
+  public RejectAccountAccessRequest200Response createAccountAccessRequest(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull CreateAccountAccessRequestRequest createAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<RejectAccountAccessRequest200Response> localVarResponse = createAccountAccessRequestWithHttpInfo(bankid, accountid, createAccountAccessRequestRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -348,12 +348,12 @@ public class AccountAccessRequestApi {
    * &lt;p&gt;Create a new Account Access Request (maker step in maker/checker workflow).&lt;/p&gt; &lt;p&gt;The requestor (maker) creates a request to grant a target user access to a specific view on an account.&lt;br /&gt; A business justification is required.&lt;/p&gt; &lt;p&gt;The request is created with status INITIATED and must be approved or rejected by a different user (checker).&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
-   * @param obPv600CreateAccountAccessRequestRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600RejectAccountAccessRequest200Response&gt;
+   * @param createAccountAccessRequestRequest Request body (required)
+   * @return ApiResponse&lt;RejectAccountAccessRequest200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600RejectAccountAccessRequest200Response> oBPv600CreateAccountAccessRequestWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull OBPv600CreateAccountAccessRequestRequest obPv600CreateAccountAccessRequestRequest) throws ApiException {
-    return oBPv600CreateAccountAccessRequestWithHttpInfo(bankid, accountid, obPv600CreateAccountAccessRequestRequest, null);
+  public ApiResponse<RejectAccountAccessRequest200Response> createAccountAccessRequestWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull CreateAccountAccessRequestRequest createAccountAccessRequestRequest) throws ApiException {
+    return createAccountAccessRequestWithHttpInfo(bankid, accountid, createAccountAccessRequestRequest, null);
   }
 
   /**
@@ -361,13 +361,13 @@ public class AccountAccessRequestApi {
    * &lt;p&gt;Create a new Account Access Request (maker step in maker/checker workflow).&lt;/p&gt; &lt;p&gt;The requestor (maker) creates a request to grant a target user access to a specific view on an account.&lt;br /&gt; A business justification is required.&lt;/p&gt; &lt;p&gt;The request is created with status INITIATED and must be approved or rejected by a different user (checker).&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
-   * @param obPv600CreateAccountAccessRequestRequest Request body (required)
+   * @param createAccountAccessRequestRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600RejectAccountAccessRequest200Response&gt;
+   * @return ApiResponse&lt;RejectAccountAccessRequest200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600RejectAccountAccessRequest200Response> oBPv600CreateAccountAccessRequestWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull OBPv600CreateAccountAccessRequestRequest obPv600CreateAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600CreateAccountAccessRequestRequestBuilder(bankid, accountid, obPv600CreateAccountAccessRequestRequest, headers);
+  public ApiResponse<RejectAccountAccessRequest200Response> createAccountAccessRequestWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull CreateAccountAccessRequestRequest createAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createAccountAccessRequestRequestBuilder(bankid, accountid, createAccountAccessRequestRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -378,11 +378,11 @@ public class AccountAccessRequestApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600CreateAccountAccessRequest", localVarResponse);
+          throw getApiException("createAccountAccessRequest", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600RejectAccountAccessRequest200Response>(
+          return new ApiResponse<RejectAccountAccessRequest200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -392,10 +392,10 @@ public class AccountAccessRequestApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600RejectAccountAccessRequest200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600RejectAccountAccessRequest200Response>() {});
+        RejectAccountAccessRequest200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<RejectAccountAccessRequest200Response>() {});
         
 
-        return new ApiResponse<OBPv600RejectAccountAccessRequest200Response>(
+        return new ApiResponse<RejectAccountAccessRequest200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -414,18 +414,18 @@ public class AccountAccessRequestApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600CreateAccountAccessRequestRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull OBPv600CreateAccountAccessRequestRequest obPv600CreateAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createAccountAccessRequestRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull CreateAccountAccessRequestRequest createAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv600CreateAccountAccessRequest");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createAccountAccessRequest");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv600CreateAccountAccessRequest");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling createAccountAccessRequest");
     }
-    // verify the required parameter 'obPv600CreateAccountAccessRequestRequest' is set
-    if (obPv600CreateAccountAccessRequestRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600CreateAccountAccessRequestRequest' when calling oBPv600CreateAccountAccessRequest");
+    // verify the required parameter 'createAccountAccessRequestRequest' is set
+    if (createAccountAccessRequestRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createAccountAccessRequestRequest' when calling createAccountAccessRequest");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -440,7 +440,7 @@ public class AccountAccessRequestApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600CreateAccountAccessRequestRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createAccountAccessRequestRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -462,11 +462,11 @@ public class AccountAccessRequestApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-   * @return OBPv600RejectAccountAccessRequest200Response
+   * @return RejectAccountAccessRequest200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600RejectAccountAccessRequest200Response oBPv600GetAccountAccessRequestById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid) throws ApiException {
-    return oBPv600GetAccountAccessRequestById(bankid, accountid, accountaccessrequestid, null);
+  public RejectAccountAccessRequest200Response getAccountAccessRequestById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid) throws ApiException {
+    return getAccountAccessRequestById(bankid, accountid, accountaccessrequestid, null);
   }
 
   /**
@@ -476,11 +476,11 @@ public class AccountAccessRequestApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600RejectAccountAccessRequest200Response
+   * @return RejectAccountAccessRequest200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600RejectAccountAccessRequest200Response oBPv600GetAccountAccessRequestById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600RejectAccountAccessRequest200Response> localVarResponse = oBPv600GetAccountAccessRequestByIdWithHttpInfo(bankid, accountid, accountaccessrequestid, headers);
+  public RejectAccountAccessRequest200Response getAccountAccessRequestById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, Map<String, String> headers) throws ApiException {
+    ApiResponse<RejectAccountAccessRequest200Response> localVarResponse = getAccountAccessRequestByIdWithHttpInfo(bankid, accountid, accountaccessrequestid, headers);
     return localVarResponse.getData();
   }
 
@@ -490,11 +490,11 @@ public class AccountAccessRequestApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-   * @return ApiResponse&lt;OBPv600RejectAccountAccessRequest200Response&gt;
+   * @return ApiResponse&lt;RejectAccountAccessRequest200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600RejectAccountAccessRequest200Response> oBPv600GetAccountAccessRequestByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid) throws ApiException {
-    return oBPv600GetAccountAccessRequestByIdWithHttpInfo(bankid, accountid, accountaccessrequestid, null);
+  public ApiResponse<RejectAccountAccessRequest200Response> getAccountAccessRequestByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid) throws ApiException {
+    return getAccountAccessRequestByIdWithHttpInfo(bankid, accountid, accountaccessrequestid, null);
   }
 
   /**
@@ -504,11 +504,11 @@ public class AccountAccessRequestApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600RejectAccountAccessRequest200Response&gt;
+   * @return ApiResponse&lt;RejectAccountAccessRequest200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600RejectAccountAccessRequest200Response> oBPv600GetAccountAccessRequestByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetAccountAccessRequestByIdRequestBuilder(bankid, accountid, accountaccessrequestid, headers);
+  public ApiResponse<RejectAccountAccessRequest200Response> getAccountAccessRequestByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAccountAccessRequestByIdRequestBuilder(bankid, accountid, accountaccessrequestid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -519,11 +519,11 @@ public class AccountAccessRequestApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetAccountAccessRequestById", localVarResponse);
+          throw getApiException("getAccountAccessRequestById", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600RejectAccountAccessRequest200Response>(
+          return new ApiResponse<RejectAccountAccessRequest200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -533,10 +533,10 @@ public class AccountAccessRequestApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600RejectAccountAccessRequest200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600RejectAccountAccessRequest200Response>() {});
+        RejectAccountAccessRequest200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<RejectAccountAccessRequest200Response>() {});
         
 
-        return new ApiResponse<OBPv600RejectAccountAccessRequest200Response>(
+        return new ApiResponse<RejectAccountAccessRequest200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -555,18 +555,18 @@ public class AccountAccessRequestApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetAccountAccessRequestByIdRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAccountAccessRequestByIdRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv600GetAccountAccessRequestById");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getAccountAccessRequestById");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv600GetAccountAccessRequestById");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling getAccountAccessRequestById");
     }
     // verify the required parameter 'accountaccessrequestid' is set
     if (accountaccessrequestid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountaccessrequestid' when calling oBPv600GetAccountAccessRequestById");
+      throw new ApiException(400, "Missing the required parameter 'accountaccessrequestid' when calling getAccountAccessRequestById");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -597,11 +597,11 @@ public class AccountAccessRequestApi {
    * &lt;p&gt;Get Account Access Requests for a specific account (checker view).&lt;/p&gt; &lt;p&gt;Optionally filter by status using the query parameter: ?status&#x3D;INITIATED&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_requests&lt;/strong&gt;&lt;/a&gt;: account_access_requests&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
-   * @return OBPv600GetAccountAccessRequestsForAccount200Response
+   * @return GetAccountAccessRequestsForAccount200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetAccountAccessRequestsForAccount200Response oBPv600GetAccountAccessRequestsForAccount(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid) throws ApiException {
-    return oBPv600GetAccountAccessRequestsForAccount(bankid, accountid, null);
+  public GetAccountAccessRequestsForAccount200Response getAccountAccessRequestsForAccount(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid) throws ApiException {
+    return getAccountAccessRequestsForAccount(bankid, accountid, null);
   }
 
   /**
@@ -610,11 +610,11 @@ public class AccountAccessRequestApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetAccountAccessRequestsForAccount200Response
+   * @return GetAccountAccessRequestsForAccount200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetAccountAccessRequestsForAccount200Response oBPv600GetAccountAccessRequestsForAccount(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response> localVarResponse = oBPv600GetAccountAccessRequestsForAccountWithHttpInfo(bankid, accountid, headers);
+  public GetAccountAccessRequestsForAccount200Response getAccountAccessRequestsForAccount(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAccountAccessRequestsForAccount200Response> localVarResponse = getAccountAccessRequestsForAccountWithHttpInfo(bankid, accountid, headers);
     return localVarResponse.getData();
   }
 
@@ -623,11 +623,11 @@ public class AccountAccessRequestApi {
    * &lt;p&gt;Get Account Access Requests for a specific account (checker view).&lt;/p&gt; &lt;p&gt;Optionally filter by status using the query parameter: ?status&#x3D;INITIATED&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_requests&lt;/strong&gt;&lt;/a&gt;: account_access_requests&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
-   * @return ApiResponse&lt;OBPv600GetAccountAccessRequestsForAccount200Response&gt;
+   * @return ApiResponse&lt;GetAccountAccessRequestsForAccount200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response> oBPv600GetAccountAccessRequestsForAccountWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid) throws ApiException {
-    return oBPv600GetAccountAccessRequestsForAccountWithHttpInfo(bankid, accountid, null);
+  public ApiResponse<GetAccountAccessRequestsForAccount200Response> getAccountAccessRequestsForAccountWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid) throws ApiException {
+    return getAccountAccessRequestsForAccountWithHttpInfo(bankid, accountid, null);
   }
 
   /**
@@ -636,11 +636,11 @@ public class AccountAccessRequestApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetAccountAccessRequestsForAccount200Response&gt;
+   * @return ApiResponse&lt;GetAccountAccessRequestsForAccount200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response> oBPv600GetAccountAccessRequestsForAccountWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetAccountAccessRequestsForAccountRequestBuilder(bankid, accountid, headers);
+  public ApiResponse<GetAccountAccessRequestsForAccount200Response> getAccountAccessRequestsForAccountWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAccountAccessRequestsForAccountRequestBuilder(bankid, accountid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -651,11 +651,11 @@ public class AccountAccessRequestApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetAccountAccessRequestsForAccount", localVarResponse);
+          throw getApiException("getAccountAccessRequestsForAccount", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response>(
+          return new ApiResponse<GetAccountAccessRequestsForAccount200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -665,10 +665,10 @@ public class AccountAccessRequestApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetAccountAccessRequestsForAccount200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetAccountAccessRequestsForAccount200Response>() {});
+        GetAccountAccessRequestsForAccount200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAccountAccessRequestsForAccount200Response>() {});
         
 
-        return new ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response>(
+        return new ApiResponse<GetAccountAccessRequestsForAccount200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -687,14 +687,14 @@ public class AccountAccessRequestApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetAccountAccessRequestsForAccountRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAccountAccessRequestsForAccountRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv600GetAccountAccessRequestsForAccount");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getAccountAccessRequestsForAccount");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv600GetAccountAccessRequestsForAccount");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling getAccountAccessRequestsForAccount");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -722,44 +722,44 @@ public class AccountAccessRequestApi {
   /**
    * Get My Account Access Requests
    * &lt;p&gt;Get Account Access Requests created by the current user (maker view).&lt;/p&gt; &lt;p&gt;No special roles are required — a user can always see their own requests.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_requests&lt;/strong&gt;&lt;/a&gt;: account_access_requests&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
-   * @return OBPv600GetAccountAccessRequestsForAccount200Response
+   * @return GetAccountAccessRequestsForAccount200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetAccountAccessRequestsForAccount200Response oBPv600GetMyAccountAccessRequests() throws ApiException {
-    return oBPv600GetMyAccountAccessRequests(null);
+  public GetAccountAccessRequestsForAccount200Response getMyAccountAccessRequests() throws ApiException {
+    return getMyAccountAccessRequests(null);
   }
 
   /**
    * Get My Account Access Requests
    * &lt;p&gt;Get Account Access Requests created by the current user (maker view).&lt;/p&gt; &lt;p&gt;No special roles are required — a user can always see their own requests.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_requests&lt;/strong&gt;&lt;/a&gt;: account_access_requests&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetAccountAccessRequestsForAccount200Response
+   * @return GetAccountAccessRequestsForAccount200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetAccountAccessRequestsForAccount200Response oBPv600GetMyAccountAccessRequests(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response> localVarResponse = oBPv600GetMyAccountAccessRequestsWithHttpInfo(headers);
+  public GetAccountAccessRequestsForAccount200Response getMyAccountAccessRequests(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAccountAccessRequestsForAccount200Response> localVarResponse = getMyAccountAccessRequestsWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get My Account Access Requests
    * &lt;p&gt;Get Account Access Requests created by the current user (maker view).&lt;/p&gt; &lt;p&gt;No special roles are required — a user can always see their own requests.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_requests&lt;/strong&gt;&lt;/a&gt;: account_access_requests&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv600GetAccountAccessRequestsForAccount200Response&gt;
+   * @return ApiResponse&lt;GetAccountAccessRequestsForAccount200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response> oBPv600GetMyAccountAccessRequestsWithHttpInfo() throws ApiException {
-    return oBPv600GetMyAccountAccessRequestsWithHttpInfo(null);
+  public ApiResponse<GetAccountAccessRequestsForAccount200Response> getMyAccountAccessRequestsWithHttpInfo() throws ApiException {
+    return getMyAccountAccessRequestsWithHttpInfo(null);
   }
 
   /**
    * Get My Account Access Requests
    * &lt;p&gt;Get Account Access Requests created by the current user (maker view).&lt;/p&gt; &lt;p&gt;No special roles are required — a user can always see their own requests.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_requests&lt;/strong&gt;&lt;/a&gt;: account_access_requests&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetAccountAccessRequestsForAccount200Response&gt;
+   * @return ApiResponse&lt;GetAccountAccessRequestsForAccount200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response> oBPv600GetMyAccountAccessRequestsWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetMyAccountAccessRequestsRequestBuilder(headers);
+  public ApiResponse<GetAccountAccessRequestsForAccount200Response> getMyAccountAccessRequestsWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getMyAccountAccessRequestsRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -770,11 +770,11 @@ public class AccountAccessRequestApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetMyAccountAccessRequests", localVarResponse);
+          throw getApiException("getMyAccountAccessRequests", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response>(
+          return new ApiResponse<GetAccountAccessRequestsForAccount200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -784,10 +784,10 @@ public class AccountAccessRequestApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetAccountAccessRequestsForAccount200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetAccountAccessRequestsForAccount200Response>() {});
+        GetAccountAccessRequestsForAccount200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAccountAccessRequestsForAccount200Response>() {});
         
 
-        return new ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response>(
+        return new ApiResponse<GetAccountAccessRequestsForAccount200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -806,7 +806,7 @@ public class AccountAccessRequestApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetMyAccountAccessRequestsRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getMyAccountAccessRequestsRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -834,12 +834,12 @@ public class AccountAccessRequestApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-   * @param obPv600RejectAccountAccessRequestRequest Request body (required)
-   * @return OBPv600RejectAccountAccessRequest200Response
+   * @param rejectAccountAccessRequestRequest Request body (required)
+   * @return RejectAccountAccessRequest200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600RejectAccountAccessRequest200Response oBPv600RejectAccountAccessRequest(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull OBPv600RejectAccountAccessRequestRequest obPv600RejectAccountAccessRequestRequest) throws ApiException {
-    return oBPv600RejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest, null);
+  public RejectAccountAccessRequest200Response rejectAccountAccessRequest(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest) throws ApiException {
+    return rejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest, null);
   }
 
   /**
@@ -848,13 +848,13 @@ public class AccountAccessRequestApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-   * @param obPv600RejectAccountAccessRequestRequest Request body (required)
+   * @param rejectAccountAccessRequestRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600RejectAccountAccessRequest200Response
+   * @return RejectAccountAccessRequest200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600RejectAccountAccessRequest200Response oBPv600RejectAccountAccessRequest(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull OBPv600RejectAccountAccessRequestRequest obPv600RejectAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600RejectAccountAccessRequest200Response> localVarResponse = oBPv600RejectAccountAccessRequestWithHttpInfo(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest, headers);
+  public RejectAccountAccessRequest200Response rejectAccountAccessRequest(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<RejectAccountAccessRequest200Response> localVarResponse = rejectAccountAccessRequestWithHttpInfo(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -864,12 +864,12 @@ public class AccountAccessRequestApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-   * @param obPv600RejectAccountAccessRequestRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600RejectAccountAccessRequest200Response&gt;
+   * @param rejectAccountAccessRequestRequest Request body (required)
+   * @return ApiResponse&lt;RejectAccountAccessRequest200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600RejectAccountAccessRequest200Response> oBPv600RejectAccountAccessRequestWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull OBPv600RejectAccountAccessRequestRequest obPv600RejectAccountAccessRequestRequest) throws ApiException {
-    return oBPv600RejectAccountAccessRequestWithHttpInfo(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest, null);
+  public ApiResponse<RejectAccountAccessRequest200Response> rejectAccountAccessRequestWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest) throws ApiException {
+    return rejectAccountAccessRequestWithHttpInfo(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest, null);
   }
 
   /**
@@ -878,13 +878,13 @@ public class AccountAccessRequestApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-   * @param obPv600RejectAccountAccessRequestRequest Request body (required)
+   * @param rejectAccountAccessRequestRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600RejectAccountAccessRequest200Response&gt;
+   * @return ApiResponse&lt;RejectAccountAccessRequest200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600RejectAccountAccessRequest200Response> oBPv600RejectAccountAccessRequestWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull OBPv600RejectAccountAccessRequestRequest obPv600RejectAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600RejectAccountAccessRequestRequestBuilder(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest, headers);
+  public ApiResponse<RejectAccountAccessRequest200Response> rejectAccountAccessRequestWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = rejectAccountAccessRequestRequestBuilder(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -895,11 +895,11 @@ public class AccountAccessRequestApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600RejectAccountAccessRequest", localVarResponse);
+          throw getApiException("rejectAccountAccessRequest", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600RejectAccountAccessRequest200Response>(
+          return new ApiResponse<RejectAccountAccessRequest200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -909,10 +909,10 @@ public class AccountAccessRequestApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600RejectAccountAccessRequest200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600RejectAccountAccessRequest200Response>() {});
+        RejectAccountAccessRequest200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<RejectAccountAccessRequest200Response>() {});
         
 
-        return new ApiResponse<OBPv600RejectAccountAccessRequest200Response>(
+        return new ApiResponse<RejectAccountAccessRequest200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -931,22 +931,22 @@ public class AccountAccessRequestApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600RejectAccountAccessRequestRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull OBPv600RejectAccountAccessRequestRequest obPv600RejectAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder rejectAccountAccessRequestRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String accountaccessrequestid, @javax.annotation.Nonnull RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv600RejectAccountAccessRequest");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling rejectAccountAccessRequest");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv600RejectAccountAccessRequest");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling rejectAccountAccessRequest");
     }
     // verify the required parameter 'accountaccessrequestid' is set
     if (accountaccessrequestid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountaccessrequestid' when calling oBPv600RejectAccountAccessRequest");
+      throw new ApiException(400, "Missing the required parameter 'accountaccessrequestid' when calling rejectAccountAccessRequest");
     }
-    // verify the required parameter 'obPv600RejectAccountAccessRequestRequest' is set
-    if (obPv600RejectAccountAccessRequestRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600RejectAccountAccessRequestRequest' when calling oBPv600RejectAccountAccessRequest");
+    // verify the required parameter 'rejectAccountAccessRequestRequest' is set
+    if (rejectAccountAccessRequestRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'rejectAccountAccessRequestRequest' when calling rejectAccountAccessRequest");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -962,7 +962,7 @@ public class AccountAccessRequestApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600RejectAccountAccessRequestRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(rejectAccountAccessRequestRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

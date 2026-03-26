@@ -18,11 +18,11 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv400_create_connector_method_request import OBPv400CreateConnectorMethodRequest
-from obp_python.models.obpv400_get_all_connector_methods200_response import OBPv400GetAllConnectorMethods200Response
-from obp_python.models.obpv400_get_all_connector_methods200_response_connectors_methods_inner import OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner
-from obp_python.models.obpv400_update_connector_method_request import OBPv400UpdateConnectorMethodRequest
-from obp_python.models.obpv600_get_connector_method_names200_response import OBPv600GetConnectorMethodNames200Response
+from obp_python.models.create_connector_method_request import CreateConnectorMethodRequest
+from obp_python.models.get_all_connector_methods200_response import GetAllConnectorMethods200Response
+from obp_python.models.get_all_connector_methods200_response_connectors_methods_inner import GetAllConnectorMethods200ResponseConnectorsMethodsInner
+from obp_python.models.get_connector_method_names200_response import GetConnectorMethodNames200Response
+from obp_python.models.update_connector_method_request import UpdateConnectorMethodRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -43,9 +43,9 @@ class ConnectorMethodApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_connector_method(
+    def create_connector_method(
         self,
-        obpv400_create_connector_method_request: Annotated[OBPv400CreateConnectorMethodRequest, Field(description="Request body")],
+        create_connector_method_request: Annotated[CreateConnectorMethodRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -58,13 +58,13 @@ class ConnectorMethodApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner:
+    ) -> GetAllConnectorMethods200ResponseConnectorsMethodsInner:
         """Create Connector Method
 
         <p>Create an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
 
-        :param obpv400_create_connector_method_request: Request body (required)
-        :type obpv400_create_connector_method_request: OBPv400CreateConnectorMethodRequest
+        :param create_connector_method_request: Request body (required)
+        :type create_connector_method_request: CreateConnectorMethodRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -87,8 +87,8 @@ class ConnectorMethodApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_connector_method_serialize(
-            obpv400_create_connector_method_request=obpv400_create_connector_method_request,
+        _param = self._create_connector_method_serialize(
+            create_connector_method_request=create_connector_method_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -96,7 +96,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
+            '200': "GetAllConnectorMethods200ResponseConnectorsMethodsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -111,9 +111,9 @@ class ConnectorMethodApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_connector_method_with_http_info(
+    def create_connector_method_with_http_info(
         self,
-        obpv400_create_connector_method_request: Annotated[OBPv400CreateConnectorMethodRequest, Field(description="Request body")],
+        create_connector_method_request: Annotated[CreateConnectorMethodRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -126,13 +126,13 @@ class ConnectorMethodApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner]:
+    ) -> ApiResponse[GetAllConnectorMethods200ResponseConnectorsMethodsInner]:
         """Create Connector Method
 
         <p>Create an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
 
-        :param obpv400_create_connector_method_request: Request body (required)
-        :type obpv400_create_connector_method_request: OBPv400CreateConnectorMethodRequest
+        :param create_connector_method_request: Request body (required)
+        :type create_connector_method_request: CreateConnectorMethodRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -155,8 +155,8 @@ class ConnectorMethodApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_connector_method_serialize(
-            obpv400_create_connector_method_request=obpv400_create_connector_method_request,
+        _param = self._create_connector_method_serialize(
+            create_connector_method_request=create_connector_method_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -164,7 +164,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
+            '200': "GetAllConnectorMethods200ResponseConnectorsMethodsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -179,9 +179,9 @@ class ConnectorMethodApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_connector_method_without_preload_content(
+    def create_connector_method_without_preload_content(
         self,
-        obpv400_create_connector_method_request: Annotated[OBPv400CreateConnectorMethodRequest, Field(description="Request body")],
+        create_connector_method_request: Annotated[CreateConnectorMethodRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -199,8 +199,8 @@ class ConnectorMethodApi:
 
         <p>Create an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
 
-        :param obpv400_create_connector_method_request: Request body (required)
-        :type obpv400_create_connector_method_request: OBPv400CreateConnectorMethodRequest
+        :param create_connector_method_request: Request body (required)
+        :type create_connector_method_request: CreateConnectorMethodRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -223,8 +223,8 @@ class ConnectorMethodApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_connector_method_serialize(
-            obpv400_create_connector_method_request=obpv400_create_connector_method_request,
+        _param = self._create_connector_method_serialize(
+            create_connector_method_request=create_connector_method_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -232,7 +232,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
+            '200': "GetAllConnectorMethods200ResponseConnectorsMethodsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -242,9 +242,9 @@ class ConnectorMethodApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_connector_method_serialize(
+    def _create_connector_method_serialize(
         self,
-        obpv400_create_connector_method_request,
+        create_connector_method_request,
         _request_auth,
         _content_type,
         _headers,
@@ -270,8 +270,8 @@ class ConnectorMethodApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_connector_method_request is not None:
-            _body_params = obpv400_create_connector_method_request
+        if create_connector_method_request is not None:
+            _body_params = create_connector_method_request
 
 
         # set the HTTP header `Accept`
@@ -322,7 +322,7 @@ class ConnectorMethodApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_connector_methods(
+    def get_all_connector_methods(
         self,
         _request_timeout: Union[
             None,
@@ -336,7 +336,7 @@ class ConnectorMethodApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllConnectorMethods200Response:
+    ) -> GetAllConnectorMethods200Response:
         """Get all Connector Methods
 
         <p>Get all Connector Methods.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
@@ -363,7 +363,7 @@ class ConnectorMethodApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_connector_methods_serialize(
+        _param = self._get_all_connector_methods_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -371,7 +371,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200Response",
+            '200': "GetAllConnectorMethods200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -386,7 +386,7 @@ class ConnectorMethodApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_connector_methods_with_http_info(
+    def get_all_connector_methods_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -400,7 +400,7 @@ class ConnectorMethodApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllConnectorMethods200Response]:
+    ) -> ApiResponse[GetAllConnectorMethods200Response]:
         """Get all Connector Methods
 
         <p>Get all Connector Methods.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
@@ -427,7 +427,7 @@ class ConnectorMethodApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_connector_methods_serialize(
+        _param = self._get_all_connector_methods_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -435,7 +435,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200Response",
+            '200': "GetAllConnectorMethods200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -450,7 +450,7 @@ class ConnectorMethodApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_connector_methods_without_preload_content(
+    def get_all_connector_methods_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -491,7 +491,7 @@ class ConnectorMethodApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_connector_methods_serialize(
+        _param = self._get_all_connector_methods_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -499,7 +499,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200Response",
+            '200': "GetAllConnectorMethods200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -509,7 +509,7 @@ class ConnectorMethodApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_all_connector_methods_serialize(
+    def _get_all_connector_methods_serialize(
         self,
         _request_auth,
         _content_type,
@@ -573,7 +573,7 @@ class ConnectorMethodApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_connector_method(
+    def get_connector_method(
         self,
         connectormethodid: Annotated[StrictStr, Field(description="The CONNECTORMETHODID identifier")],
         _request_timeout: Union[
@@ -588,7 +588,7 @@ class ConnectorMethodApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner:
+    ) -> GetAllConnectorMethods200ResponseConnectorsMethodsInner:
         """Get Connector Method by Id
 
         <p>Get an internal connector by CONNECTOR_METHOD_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
@@ -617,7 +617,7 @@ class ConnectorMethodApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_connector_method_serialize(
+        _param = self._get_connector_method_serialize(
             connectormethodid=connectormethodid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -626,7 +626,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
+            '200': "GetAllConnectorMethods200ResponseConnectorsMethodsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -641,7 +641,7 @@ class ConnectorMethodApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_connector_method_with_http_info(
+    def get_connector_method_with_http_info(
         self,
         connectormethodid: Annotated[StrictStr, Field(description="The CONNECTORMETHODID identifier")],
         _request_timeout: Union[
@@ -656,7 +656,7 @@ class ConnectorMethodApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner]:
+    ) -> ApiResponse[GetAllConnectorMethods200ResponseConnectorsMethodsInner]:
         """Get Connector Method by Id
 
         <p>Get an internal connector by CONNECTOR_METHOD_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
@@ -685,7 +685,7 @@ class ConnectorMethodApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_connector_method_serialize(
+        _param = self._get_connector_method_serialize(
             connectormethodid=connectormethodid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -694,7 +694,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
+            '200': "GetAllConnectorMethods200ResponseConnectorsMethodsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -709,7 +709,7 @@ class ConnectorMethodApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_connector_method_without_preload_content(
+    def get_connector_method_without_preload_content(
         self,
         connectormethodid: Annotated[StrictStr, Field(description="The CONNECTORMETHODID identifier")],
         _request_timeout: Union[
@@ -753,7 +753,7 @@ class ConnectorMethodApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_connector_method_serialize(
+        _param = self._get_connector_method_serialize(
             connectormethodid=connectormethodid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -762,7 +762,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
+            '200': "GetAllConnectorMethods200ResponseConnectorsMethodsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -772,7 +772,7 @@ class ConnectorMethodApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_connector_method_serialize(
+    def _get_connector_method_serialize(
         self,
         connectormethodid,
         _request_auth,
@@ -839,301 +839,7 @@ class ConnectorMethodApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_connector_method(
-        self,
-        connectormethodid: Annotated[StrictStr, Field(description="The CONNECTORMETHODID identifier")],
-        obpv400_update_connector_method_request: Annotated[OBPv400UpdateConnectorMethodRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner:
-        """Update Connector Method
-
-        <p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param connectormethodid: The CONNECTORMETHODID identifier (required)
-        :type connectormethodid: str
-        :param obpv400_update_connector_method_request: Request body (required)
-        :type obpv400_update_connector_method_request: OBPv400UpdateConnectorMethodRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv4_0_0_update_connector_method_serialize(
-            connectormethodid=connectormethodid,
-            obpv400_update_connector_method_request=obpv400_update_connector_method_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv4_0_0_update_connector_method_with_http_info(
-        self,
-        connectormethodid: Annotated[StrictStr, Field(description="The CONNECTORMETHODID identifier")],
-        obpv400_update_connector_method_request: Annotated[OBPv400UpdateConnectorMethodRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner]:
-        """Update Connector Method
-
-        <p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param connectormethodid: The CONNECTORMETHODID identifier (required)
-        :type connectormethodid: str
-        :param obpv400_update_connector_method_request: Request body (required)
-        :type obpv400_update_connector_method_request: OBPv400UpdateConnectorMethodRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv4_0_0_update_connector_method_serialize(
-            connectormethodid=connectormethodid,
-            obpv400_update_connector_method_request=obpv400_update_connector_method_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv4_0_0_update_connector_method_without_preload_content(
-        self,
-        connectormethodid: Annotated[StrictStr, Field(description="The CONNECTORMETHODID identifier")],
-        obpv400_update_connector_method_request: Annotated[OBPv400UpdateConnectorMethodRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Update Connector Method
-
-        <p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param connectormethodid: The CONNECTORMETHODID identifier (required)
-        :type connectormethodid: str
-        :param obpv400_update_connector_method_request: Request body (required)
-        :type obpv400_update_connector_method_request: OBPv400UpdateConnectorMethodRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv4_0_0_update_connector_method_serialize(
-            connectormethodid=connectormethodid,
-            obpv400_update_connector_method_request=obpv400_update_connector_method_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv4_0_0_update_connector_method_serialize(
-        self,
-        connectormethodid,
-        obpv400_update_connector_method_request,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if connectormethodid is not None:
-            _path_params['connectormethodid'] = connectormethodid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if obpv400_update_connector_method_request is not None:
-            _body_params = obpv400_update_connector_method_request
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='PUT',
-            resource_path='/obp/v4.0.0/management/connector-methods/{connectormethodid}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv6_0_0_get_connector_method_names(
+    def get_connector_method_names(
         self,
         _request_timeout: Union[
             None,
@@ -1147,7 +853,7 @@ class ConnectorMethodApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetConnectorMethodNames200Response:
+    ) -> GetConnectorMethodNames200Response:
         """Get Connector Method Names
 
         <p>Get the list of all available connector method names.</p> <p>These are the method names that can be used in Method Routing configuration.</p> <h2><a href=\"#data-source\" id=\"data-source\">Data Source</a></h2> <p>The data comes from <strong>scanning the actual Scala connector code at runtime</strong> using reflection, NOT from a database or configuration file.</p> <p>The endpoint:<br /> 1. Reads the connector name from props (e.g., <code>connector=mapped</code>)<br /> 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)<br /> 3. Uses Scala reflection to scan all public methods that override the base Connector trait<br /> 4. Filters for valid connector methods (public, has parameters, overrides base trait)<br /> 5. Returns the method names as a sorted list</p> <h2><a href=\"#which-connector\" id=\"which-connector\">Which Connector?</a></h2> <p>Depends on your <code>connector</code> property:<br /> * <code>connector=mapped</code> → Returns methods from LocalMappedConnector<br /> * <code>connector=kafka_vSept2018</code> → Returns methods from KafkaConnector<br /> * <code>connector=star</code> → Returns methods from StarConnector<br /> * <code>connector=rest_vMar2019</code> → Returns methods from RestConnector</p> <h2><a href=\"#when-does-it-change\" id=\"when-does-it-change\">When Does It Change?</a></h2> <p>The list only changes when:<br /> * Code is deployed with new/modified connector methods<br /> * The <code>connector</code> property is changed to point to a different connector</p> <h2><a href=\"#performance\" id=\"performance\">Performance</a></h2> <p>This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.<br /> Configure via: <code>getConnectorMethodNames.cache.ttl.seconds=3600</code></p> <h2><a href=\"#use-case\" id=\"use-case\">Use Case</a></h2> <p>Use this endpoint to discover which connector methods are available when configuring Method Routing.<br /> These method names are different from API endpoint operation IDs (which you get from /resource-docs).</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>CanGetSystemConnectorMethodNames entitlement is required.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>connector_method_names</strong></a>: connector_method_names</p> 
@@ -1174,7 +880,7 @@ class ConnectorMethodApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_connector_method_names_serialize(
+        _param = self._get_connector_method_names_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1182,7 +888,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetConnectorMethodNames200Response",
+            '200': "GetConnectorMethodNames200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1197,7 +903,7 @@ class ConnectorMethodApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_connector_method_names_with_http_info(
+    def get_connector_method_names_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1211,7 +917,7 @@ class ConnectorMethodApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetConnectorMethodNames200Response]:
+    ) -> ApiResponse[GetConnectorMethodNames200Response]:
         """Get Connector Method Names
 
         <p>Get the list of all available connector method names.</p> <p>These are the method names that can be used in Method Routing configuration.</p> <h2><a href=\"#data-source\" id=\"data-source\">Data Source</a></h2> <p>The data comes from <strong>scanning the actual Scala connector code at runtime</strong> using reflection, NOT from a database or configuration file.</p> <p>The endpoint:<br /> 1. Reads the connector name from props (e.g., <code>connector=mapped</code>)<br /> 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)<br /> 3. Uses Scala reflection to scan all public methods that override the base Connector trait<br /> 4. Filters for valid connector methods (public, has parameters, overrides base trait)<br /> 5. Returns the method names as a sorted list</p> <h2><a href=\"#which-connector\" id=\"which-connector\">Which Connector?</a></h2> <p>Depends on your <code>connector</code> property:<br /> * <code>connector=mapped</code> → Returns methods from LocalMappedConnector<br /> * <code>connector=kafka_vSept2018</code> → Returns methods from KafkaConnector<br /> * <code>connector=star</code> → Returns methods from StarConnector<br /> * <code>connector=rest_vMar2019</code> → Returns methods from RestConnector</p> <h2><a href=\"#when-does-it-change\" id=\"when-does-it-change\">When Does It Change?</a></h2> <p>The list only changes when:<br /> * Code is deployed with new/modified connector methods<br /> * The <code>connector</code> property is changed to point to a different connector</p> <h2><a href=\"#performance\" id=\"performance\">Performance</a></h2> <p>This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.<br /> Configure via: <code>getConnectorMethodNames.cache.ttl.seconds=3600</code></p> <h2><a href=\"#use-case\" id=\"use-case\">Use Case</a></h2> <p>Use this endpoint to discover which connector methods are available when configuring Method Routing.<br /> These method names are different from API endpoint operation IDs (which you get from /resource-docs).</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>CanGetSystemConnectorMethodNames entitlement is required.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>connector_method_names</strong></a>: connector_method_names</p> 
@@ -1238,7 +944,7 @@ class ConnectorMethodApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_connector_method_names_serialize(
+        _param = self._get_connector_method_names_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1246,7 +952,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetConnectorMethodNames200Response",
+            '200': "GetConnectorMethodNames200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1261,7 +967,7 @@ class ConnectorMethodApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_connector_method_names_without_preload_content(
+    def get_connector_method_names_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1302,7 +1008,7 @@ class ConnectorMethodApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_connector_method_names_serialize(
+        _param = self._get_connector_method_names_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1310,7 +1016,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetConnectorMethodNames200Response",
+            '200': "GetConnectorMethodNames200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1320,7 +1026,7 @@ class ConnectorMethodApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_connector_method_names_serialize(
+    def _get_connector_method_names_serialize(
         self,
         _request_auth,
         _content_type,
@@ -1368,6 +1074,300 @@ class ConnectorMethodApi:
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/obp/v6.0.0/system/connector-method-names',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def update_connector_method(
+        self,
+        connectormethodid: Annotated[StrictStr, Field(description="The CONNECTORMETHODID identifier")],
+        update_connector_method_request: Annotated[UpdateConnectorMethodRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> GetAllConnectorMethods200ResponseConnectorsMethodsInner:
+        """Update Connector Method
+
+        <p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param connectormethodid: The CONNECTORMETHODID identifier (required)
+        :type connectormethodid: str
+        :param update_connector_method_request: Request body (required)
+        :type update_connector_method_request: UpdateConnectorMethodRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_connector_method_serialize(
+            connectormethodid=connectormethodid,
+            update_connector_method_request=update_connector_method_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetAllConnectorMethods200ResponseConnectorsMethodsInner",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def update_connector_method_with_http_info(
+        self,
+        connectormethodid: Annotated[StrictStr, Field(description="The CONNECTORMETHODID identifier")],
+        update_connector_method_request: Annotated[UpdateConnectorMethodRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[GetAllConnectorMethods200ResponseConnectorsMethodsInner]:
+        """Update Connector Method
+
+        <p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param connectormethodid: The CONNECTORMETHODID identifier (required)
+        :type connectormethodid: str
+        :param update_connector_method_request: Request body (required)
+        :type update_connector_method_request: UpdateConnectorMethodRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_connector_method_serialize(
+            connectormethodid=connectormethodid,
+            update_connector_method_request=update_connector_method_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetAllConnectorMethods200ResponseConnectorsMethodsInner",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def update_connector_method_without_preload_content(
+        self,
+        connectormethodid: Annotated[StrictStr, Field(description="The CONNECTORMETHODID identifier")],
+        update_connector_method_request: Annotated[UpdateConnectorMethodRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Update Connector Method
+
+        <p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param connectormethodid: The CONNECTORMETHODID identifier (required)
+        :type connectormethodid: str
+        :param update_connector_method_request: Request body (required)
+        :type update_connector_method_request: UpdateConnectorMethodRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_connector_method_serialize(
+            connectormethodid=connectormethodid,
+            update_connector_method_request=update_connector_method_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetAllConnectorMethods200ResponseConnectorsMethodsInner",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _update_connector_method_serialize(
+        self,
+        connectormethodid,
+        update_connector_method_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if connectormethodid is not None:
+            _path_params['connectormethodid'] = connectormethodid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if update_connector_method_request is not None:
+            _body_params = update_connector_method_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='PUT',
+            resource_path='/obp/v4.0.0/management/connector-methods/{connectormethodid}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,60 +15,60 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv4_0_0_create_json_schema_validation`]
+/// struct for typed errors of method [`create_json_schema_validation`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400CreateJsonSchemaValidationError {
+pub enum CreateJsonSchemaValidationError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_delete_json_schema_validation`]
+/// struct for typed errors of method [`delete_json_schema_validation`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400DeleteJsonSchemaValidationError {
+pub enum DeleteJsonSchemaValidationError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_all_json_schema_validations`]
+/// struct for typed errors of method [`get_all_json_schema_validations`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetAllJsonSchemaValidationsError {
+pub enum GetAllJsonSchemaValidationsError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_all_json_schema_validations_public`]
+/// struct for typed errors of method [`get_all_json_schema_validations_public`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetAllJsonSchemaValidationsPublicError {
+pub enum GetAllJsonSchemaValidationsPublicError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_json_schema_validation`]
+/// struct for typed errors of method [`get_json_schema_validation`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetJsonSchemaValidationError {
+pub enum GetJsonSchemaValidationError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_update_json_schema_validation`]
+/// struct for typed errors of method [`update_json_schema_validation`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400UpdateJsonSchemaValidationError {
+pub enum UpdateJsonSchemaValidationError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
 
 /// <p>Create a JSON Schema Validation.</p> <p>Introduction:</p>   <p>JSON Schema is &quot;a vocabulary that allows you to annotate and validate JSON documents&quot;.</p> <p>By applying JSON Schema Validation to your OBP endpoints you can constrain POST and PUT request bodies. For example, you can set minimum / maximum lengths of fields and constrain values to certain lists or regular expressions.</p> <p>See <a href=\"https://json-schema.org/\">JSONSchema.org</a> for more information about the JSON Schema standard.</p> <p>To create a JSON Schema from an any JSON Request body you can use <a href=\"https://jsonschema.net/app/schemas/0\">JSON Schema Net</a></p> <p>(The video link below shows how to use that)</p> <p>Note: OBP Dynamic Entities also use JSON Schema Validation so you don't need to additionally wrap the resulting endpoints with extra JSON Schema Validation but you could do.</p> <p>You can apply JSON schema validations to any OBP endpoint's request body using the POST and PUT endpoints listed in the link below.</p> <p>PLEASE SEE the following video explanation: <a href=\"https://vimeo.com/485287014\">JSON schema validation of request for Static and Dynamic Endpoints and Entities</a></p> <p>To use this endpoint, please supply a valid json-schema in the request body.</p> <p>Note: It might take a few minutes for the newly created JSON Schema to take effect!</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>json_schema</strong></a>: json_schema</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> 
-pub async fn o_bpv4_0_0_create_json_schema_validation(configuration: &configuration::Configuration, operationid: &str, obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema: models::Obpv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema) -> Result<models::Obpv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems, Error<OBpv400CreateJsonSchemaValidationError>> {
+pub async fn create_json_schema_validation(configuration: &configuration::Configuration, operationid: &str, get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema: models::GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema) -> Result<models::GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner, Error<CreateJsonSchemaValidationError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_operationid = operationid;
-    let p_body_obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema = obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema;
+    let p_body_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema = get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema;
 
     let uri_str = format!("{}/obp/v4.0.0/management/json-schema-validations/{operationid}", configuration.base_path, operationid=crate::apis::urlencode(p_path_operationid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -93,9 +93,9 @@ pub async fn o_bpv4_0_0_create_json_schema_validation(configuration: &configurat
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema);
+    req_builder = req_builder.json(&p_body_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -112,18 +112,18 @@ pub async fn o_bpv4_0_0_create_json_schema_validation(configuration: &configurat
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400CreateJsonSchemaValidationError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateJsonSchemaValidationError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete a JSON Schema Validation by operation_id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_delete_json_schema_validation(configuration: &configuration::Configuration, operationid: &str) -> Result<(), Error<OBpv400DeleteJsonSchemaValidationError>> {
+pub async fn delete_json_schema_validation(configuration: &configuration::Configuration, operationid: &str) -> Result<(), Error<DeleteJsonSchemaValidationError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_operationid = operationid;
 
@@ -150,7 +150,7 @@ pub async fn o_bpv4_0_0_delete_json_schema_validation(configuration: &configurat
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -162,13 +162,13 @@ pub async fn o_bpv4_0_0_delete_json_schema_validation(configuration: &configurat
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteJsonSchemaValidationError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteJsonSchemaValidationError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get all JSON Schema Validations.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>json_schema</strong></a>: json_schema</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> 
-pub async fn o_bpv4_0_0_get_all_json_schema_validations(configuration: &configuration::Configuration, ) -> Result<models::Obpv400GetAllJsonSchemaValidationsPublic200Response, Error<OBpv400GetAllJsonSchemaValidationsError>> {
+pub async fn get_all_json_schema_validations(configuration: &configuration::Configuration, ) -> Result<models::GetAllJsonSchemaValidationsPublic200Response, Error<GetAllJsonSchemaValidationsError>> {
 
     let uri_str = format!("{}/obp/v4.0.0/management/json-schema-validations", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -193,7 +193,7 @@ pub async fn o_bpv4_0_0_get_all_json_schema_validations(configuration: &configur
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -211,18 +211,18 @@ pub async fn o_bpv4_0_0_get_all_json_schema_validations(configuration: &configur
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllJsonSchemaValidationsPublic200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllJsonSchemaValidationsPublic200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllJsonSchemaValidationsPublic200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllJsonSchemaValidationsPublic200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetAllJsonSchemaValidationsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetAllJsonSchemaValidationsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get all JSON Schema Validations - public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>json_schema</strong></a>: json_schema</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> 
-pub async fn o_bpv4_0_0_get_all_json_schema_validations_public(configuration: &configuration::Configuration, ) -> Result<models::Obpv400GetAllJsonSchemaValidationsPublic200Response, Error<OBpv400GetAllJsonSchemaValidationsPublicError>> {
+pub async fn get_all_json_schema_validations_public(configuration: &configuration::Configuration, ) -> Result<models::GetAllJsonSchemaValidationsPublic200Response, Error<GetAllJsonSchemaValidationsPublicError>> {
 
     let uri_str = format!("{}/obp/v4.0.0/endpoints/json-schema-validations", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -246,18 +246,18 @@ pub async fn o_bpv4_0_0_get_all_json_schema_validations_public(configuration: &c
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllJsonSchemaValidationsPublic200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllJsonSchemaValidationsPublic200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllJsonSchemaValidationsPublic200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllJsonSchemaValidationsPublic200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetAllJsonSchemaValidationsPublicError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetAllJsonSchemaValidationsPublicError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get a JSON Schema Validation by operation_id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>json_schema</strong></a>: json_schema</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> 
-pub async fn o_bpv4_0_0_get_json_schema_validation(configuration: &configuration::Configuration, operationid: &str) -> Result<models::Obpv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems, Error<OBpv400GetJsonSchemaValidationError>> {
+pub async fn get_json_schema_validation(configuration: &configuration::Configuration, operationid: &str) -> Result<models::GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner, Error<GetJsonSchemaValidationError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_operationid = operationid;
 
@@ -284,7 +284,7 @@ pub async fn o_bpv4_0_0_get_json_schema_validation(configuration: &configuration
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -302,21 +302,21 @@ pub async fn o_bpv4_0_0_get_json_schema_validation(configuration: &configuration
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetJsonSchemaValidationError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetJsonSchemaValidationError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update a JSON Schema Validation.</p> <p>Introduction:</p>   <p>JSON Schema is &quot;a vocabulary that allows you to annotate and validate JSON documents&quot;.</p> <p>By applying JSON Schema Validation to your OBP endpoints you can constrain POST and PUT request bodies. For example, you can set minimum / maximum lengths of fields and constrain values to certain lists or regular expressions.</p> <p>See <a href=\"https://json-schema.org/\">JSONSchema.org</a> for more information about the JSON Schema standard.</p> <p>To create a JSON Schema from an any JSON Request body you can use <a href=\"https://jsonschema.net/app/schemas/0\">JSON Schema Net</a></p> <p>(The video link below shows how to use that)</p> <p>Note: OBP Dynamic Entities also use JSON Schema Validation so you don't need to additionally wrap the resulting endpoints with extra JSON Schema Validation but you could do.</p> <p>You can apply JSON schema validations to any OBP endpoint's request body using the POST and PUT endpoints listed in the link below.</p> <p>PLEASE SEE the following video explanation: <a href=\"https://vimeo.com/485287014\">JSON schema validation of request for Static and Dynamic Endpoints and Entities</a></p> <p>To use this endpoint, please supply a valid json-schema in the request body.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>json_schema</strong></a>: json_schema</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> 
-pub async fn o_bpv4_0_0_update_json_schema_validation(configuration: &configuration::Configuration, operationid: &str, obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema: models::Obpv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema) -> Result<models::Obpv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems, Error<OBpv400UpdateJsonSchemaValidationError>> {
+pub async fn update_json_schema_validation(configuration: &configuration::Configuration, operationid: &str, get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema: models::GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema) -> Result<models::GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner, Error<UpdateJsonSchemaValidationError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_operationid = operationid;
-    let p_body_obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema = obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema;
+    let p_body_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema = get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema;
 
     let uri_str = format!("{}/obp/v4.0.0/management/json-schema-validations/{operationid}", configuration.base_path, operationid=crate::apis::urlencode(p_path_operationid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -341,9 +341,9 @@ pub async fn o_bpv4_0_0_update_json_schema_validation(configuration: &configurat
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema);
+    req_builder = req_builder.json(&p_body_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -360,12 +360,12 @@ pub async fn o_bpv4_0_0_update_json_schema_validation(configuration: &configurat
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400UpdateJsonSchemaValidationError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateJsonSchemaValidationError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

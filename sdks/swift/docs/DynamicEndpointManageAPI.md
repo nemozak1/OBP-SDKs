@@ -1,26 +1,26 @@
 # DynamicEndpointManageAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateBankLevelDynamicEndpoint**](DynamicEndpointManageAPI.md#obpv400createbankleveldynamicendpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint
-[**oBPv400CreateDynamicEndpoint**](DynamicEndpointManageAPI.md#obpv400createdynamicendpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint
-[**oBPv400DeleteBankLevelDynamicEndpoint**](DynamicEndpointManageAPI.md#obpv400deletebankleveldynamicendpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint
-[**oBPv400DeleteDynamicEndpoint**](DynamicEndpointManageAPI.md#obpv400deletedynamicendpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint
-[**oBPv400DeleteMyDynamicEndpoint**](DynamicEndpointManageAPI.md#obpv400deletemydynamicendpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint
-[**oBPv400GetBankLevelDynamicEndpoint**](DynamicEndpointManageAPI.md#obpv400getbankleveldynamicendpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint
-[**oBPv400GetBankLevelDynamicEndpoints**](DynamicEndpointManageAPI.md#obpv400getbankleveldynamicendpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints
-[**oBPv400GetDynamicEndpoint**](DynamicEndpointManageAPI.md#obpv400getdynamicendpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint
-[**oBPv400GetDynamicEndpoints**](DynamicEndpointManageAPI.md#obpv400getdynamicendpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints
-[**oBPv400GetMyDynamicEndpoints**](DynamicEndpointManageAPI.md#obpv400getmydynamicendpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints
-[**oBPv400UpdateBankLevelDynamicEndpointHost**](DynamicEndpointManageAPI.md#obpv400updatebankleveldynamicendpointhost) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host
-[**oBPv400UpdateDynamicEndpointHost**](DynamicEndpointManageAPI.md#obpv400updatedynamicendpointhost) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host
+[**createBankLevelDynamicEndpoint**](DynamicEndpointManageAPI.md#createbankleveldynamicendpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint
+[**createDynamicEndpoint**](DynamicEndpointManageAPI.md#createdynamicendpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint
+[**deleteBankLevelDynamicEndpoint**](DynamicEndpointManageAPI.md#deletebankleveldynamicendpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint
+[**deleteDynamicEndpoint**](DynamicEndpointManageAPI.md#deletedynamicendpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint
+[**deleteMyDynamicEndpoint**](DynamicEndpointManageAPI.md#deletemydynamicendpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint
+[**getBankLevelDynamicEndpoint**](DynamicEndpointManageAPI.md#getbankleveldynamicendpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint
+[**getBankLevelDynamicEndpoints**](DynamicEndpointManageAPI.md#getbankleveldynamicendpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints
+[**getDynamicEndpoint**](DynamicEndpointManageAPI.md#getdynamicendpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint
+[**getDynamicEndpoints**](DynamicEndpointManageAPI.md#getdynamicendpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints
+[**getMyDynamicEndpoints**](DynamicEndpointManageAPI.md#getmydynamicendpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints
+[**updateBankLevelDynamicEndpointHost**](DynamicEndpointManageAPI.md#updatebankleveldynamicendpointhost) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host
+[**updateDynamicEndpointHost**](DynamicEndpointManageAPI.md#updatedynamicendpointhost) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host
 
 
-# **oBPv400CreateBankLevelDynamicEndpoint**
+# **createBankLevelDynamicEndpoint**
 ```swift
-    open class func oBPv400CreateBankLevelDynamicEndpoint(bankid: String, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, completion: @escaping (_ data: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems?, _ error: Error?) -> Void)
+    open class func createBankLevelDynamicEndpoint(bankid: String, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, completion: @escaping (_ data: GetDynamicEndpoints200ResponseDynamicEndpointsInner?, _ error: Error?) -> Void)
 ```
 
 Create Bank Level Dynamic Endpoint
@@ -33,10 +33,10 @@ Create Bank Level Dynamic Endpoint
 import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
-let oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString = OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties(host: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), paths: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties(accounts: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties(post: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties_post(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties_post_properties(description: nil, operationId: nil, produces: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields_(type: "type_example", items: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items_properties(s: nil))), consumes: nil, summary: nil, responses: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties_post_properties_responses(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties_post_properties_responses_properties(_201: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties_post_properties_responses_properties_201(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties_post_properties_responses_properties_201_properties(description: nil, schema: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties_post_properties_responses_properties_201_properties_schema(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties_post_properties_responses_properties_201_properties_schema_properties(ref: nil)))))))))), accountsAccountId: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts__account_id_(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts__account_id__properties(_get: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts__account_id__properties_get(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts__account_id__properties_get_properties(description: nil, operationId: nil, produces: nil, consumes: nil, summary: nil, responses: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts__account_id__properties_get_properties_responses(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts__account_id__properties_get_properties_responses_properties(_200: nil)))))))), info: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_info(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_info_properties(title: nil, version: nil)), schemes: nil, definitions: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties(accountName: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties_AccountName(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties_AccountName_properties(type: nil, properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties_AccountName_properties_properties(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties_AccountName_properties_properties_properties(name: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties_AccountName_properties_properties_properties_name(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties_AccountName_properties_properties_properties_name_properties(type: nil, example: nil)), balance: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties_AccountName_properties_properties_properties_balance(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties_AccountName_properties_properties_properties_balance_properties(type: nil, format: nil, example: nil)))))))), swagger: nil)) // OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
+let getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString = getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string(host: "host_example", paths: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths(accounts: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths__accounts(post: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths__accounts_post(description: "description_example", operationId: "operationId_example", produces: [getBankLevelDynamicResourceDoc_200_response_success_response_body__optional_fields__inner(s: "s_example")], consumes: [nil], summary: "summary_example", responses: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths__accounts_post_responses(_201: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths__accounts_post_responses_201(description: "description_example", schema: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths__accounts_post_responses_201_schema(ref: "ref_example"))))), accountsAccountId: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths__accounts__account_id_(_get: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths__accounts__account_id__get(description: "description_example", operationId: "operationId_example", produces: [nil], consumes: [nil], summary: "summary_example", responses: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths__accounts__account_id__get_responses(_200: nil)))), info: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_info(title: "title_example", version: "version_example"), schemes: [nil], definitions: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_definitions(accountName: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_definitions_AccountName(type: "type_example", properties: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_definitions_AccountName_properties(name: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_definitions_AccountName_properties_name(type: "type_example", example: "example_example"), balance: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_definitions_AccountName_properties_balance(type: "type_example", format: "format_example", example: 123)))), swagger: "swagger_example") // GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
 
 // Create Bank Level Dynamic Endpoint
-DynamicEndpointManageAPI.oBPv400CreateBankLevelDynamicEndpoint(bankid: bankid, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) { (response, error) in
+DynamicEndpointManageAPI.createBankLevelDynamicEndpoint(bankid: bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -53,11 +53,11 @@ DynamicEndpointManageAPI.oBPv400CreateBankLevelDynamicEndpoint(bankid: bankid, o
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
- **oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md) | Request body | 
+ **getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString** | [**GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -70,9 +70,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateDynamicEndpoint**
+# **createDynamicEndpoint**
 ```swift
-    open class func oBPv400CreateDynamicEndpoint(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, completion: @escaping (_ data: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems?, _ error: Error?) -> Void)
+    open class func createDynamicEndpoint(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, completion: @escaping (_ data: GetDynamicEndpoints200ResponseDynamicEndpointsInner?, _ error: Error?) -> Void)
 ```
 
 Create Dynamic Endpoint
@@ -84,10 +84,10 @@ Create Dynamic Endpoint
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OBPSwift
 
-let oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString = OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties(host: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), paths: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties(accounts: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties(post: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties_post(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties_post_properties(description: nil, operationId: nil, produces: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields_(type: "type_example", items: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items_properties(s: nil))), consumes: nil, summary: nil, responses: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties_post_properties_responses(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties_post_properties_responses_properties(_201: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties_post_properties_responses_properties_201(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties_post_properties_responses_properties_201_properties(description: nil, schema: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties_post_properties_responses_properties_201_properties_schema(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts_properties_post_properties_responses_properties_201_properties_schema_properties(ref: nil)))))))))), accountsAccountId: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts__account_id_(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts__account_id__properties(_get: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts__account_id__properties_get(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts__account_id__properties_get_properties(description: nil, operationId: nil, produces: nil, consumes: nil, summary: nil, responses: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts__account_id__properties_get_properties_responses(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_paths_properties__accounts__account_id__properties_get_properties_responses_properties(_200: nil)))))))), info: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_info(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_info_properties(title: nil, version: nil)), schemes: nil, definitions: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties(accountName: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties_AccountName(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties_AccountName_properties(type: nil, properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties_AccountName_properties_properties(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties_AccountName_properties_properties_properties(name: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties_AccountName_properties_properties_properties_name(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties_AccountName_properties_properties_properties_name_properties(type: nil, example: nil)), balance: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties_AccountName_properties_properties_properties_balance(type: "type_example", properties: OBPv4_0_0_getDynamicEndpoints_200_response_properties_dynamic_endpoints_items_properties_swagger_string_properties_definitions_properties_AccountName_properties_properties_properties_balance_properties(type: nil, format: nil, example: nil)))))))), swagger: nil)) // OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
+let getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString = getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string(host: "host_example", paths: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths(accounts: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths__accounts(post: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths__accounts_post(description: "description_example", operationId: "operationId_example", produces: [getBankLevelDynamicResourceDoc_200_response_success_response_body__optional_fields__inner(s: "s_example")], consumes: [nil], summary: "summary_example", responses: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths__accounts_post_responses(_201: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths__accounts_post_responses_201(description: "description_example", schema: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths__accounts_post_responses_201_schema(ref: "ref_example"))))), accountsAccountId: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths__accounts__account_id_(_get: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths__accounts__account_id__get(description: "description_example", operationId: "operationId_example", produces: [nil], consumes: [nil], summary: "summary_example", responses: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_paths__accounts__account_id__get_responses(_200: nil)))), info: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_info(title: "title_example", version: "version_example"), schemes: [nil], definitions: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_definitions(accountName: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_definitions_AccountName(type: "type_example", properties: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_definitions_AccountName_properties(name: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_definitions_AccountName_properties_name(type: "type_example", example: "example_example"), balance: getDynamicEndpoints_200_response_dynamic_endpoints_inner_swagger_string_definitions_AccountName_properties_balance(type: "type_example", format: "format_example", example: 123)))), swagger: "swagger_example") // GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
 
 // Create Dynamic Endpoint
-DynamicEndpointManageAPI.oBPv400CreateDynamicEndpoint(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) { (response, error) in
+DynamicEndpointManageAPI.createDynamicEndpoint(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -103,11 +103,11 @@ DynamicEndpointManageAPI.oBPv400CreateDynamicEndpoint(oBPv400GetDynamicEndpoints
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md) | Request body | 
+ **getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString** | [**GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -120,9 +120,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteBankLevelDynamicEndpoint**
+# **deleteBankLevelDynamicEndpoint**
 ```swift
-    open class func oBPv400DeleteBankLevelDynamicEndpoint(bankid: String, dynamicendpointid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteBankLevelDynamicEndpoint(bankid: String, dynamicendpointid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
  Delete Bank Level Dynamic Endpoint
@@ -138,7 +138,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let dynamicendpointid = "dynamicendpointid_example" // String | The DYNAMICENDPOINTID identifier
 
 //  Delete Bank Level Dynamic Endpoint
-DynamicEndpointManageAPI.oBPv400DeleteBankLevelDynamicEndpoint(bankid: bankid, dynamicendpointid: dynamicendpointid) { (response, error) in
+DynamicEndpointManageAPI.deleteBankLevelDynamicEndpoint(bankid: bankid, dynamicendpointid: dynamicendpointid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -172,9 +172,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteDynamicEndpoint**
+# **deleteDynamicEndpoint**
 ```swift
-    open class func oBPv400DeleteDynamicEndpoint(dynamicendpointid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteDynamicEndpoint(dynamicendpointid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
  Delete Dynamic Endpoint
@@ -189,7 +189,7 @@ import OBPSwift
 let dynamicendpointid = "dynamicendpointid_example" // String | The DYNAMICENDPOINTID identifier
 
 //  Delete Dynamic Endpoint
-DynamicEndpointManageAPI.oBPv400DeleteDynamicEndpoint(dynamicendpointid: dynamicendpointid) { (response, error) in
+DynamicEndpointManageAPI.deleteDynamicEndpoint(dynamicendpointid: dynamicendpointid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -222,9 +222,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteMyDynamicEndpoint**
+# **deleteMyDynamicEndpoint**
 ```swift
-    open class func oBPv400DeleteMyDynamicEndpoint(dynamicendpointid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteMyDynamicEndpoint(dynamicendpointid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete My Dynamic Endpoint
@@ -239,7 +239,7 @@ import OBPSwift
 let dynamicendpointid = "dynamicendpointid_example" // String | The DYNAMICENDPOINTID identifier
 
 // Delete My Dynamic Endpoint
-DynamicEndpointManageAPI.oBPv400DeleteMyDynamicEndpoint(dynamicendpointid: dynamicendpointid) { (response, error) in
+DynamicEndpointManageAPI.deleteMyDynamicEndpoint(dynamicendpointid: dynamicendpointid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -272,9 +272,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetBankLevelDynamicEndpoint**
+# **getBankLevelDynamicEndpoint**
 ```swift
-    open class func oBPv400GetBankLevelDynamicEndpoint(bankid: String, dynamicendpointid: String, completion: @escaping (_ data: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems?, _ error: Error?) -> Void)
+    open class func getBankLevelDynamicEndpoint(bankid: String, dynamicendpointid: String, completion: @escaping (_ data: GetDynamicEndpoints200ResponseDynamicEndpointsInner?, _ error: Error?) -> Void)
 ```
 
  Get Bank Level Dynamic Endpoint
@@ -290,7 +290,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let dynamicendpointid = "dynamicendpointid_example" // String | The DYNAMICENDPOINTID identifier
 
 //  Get Bank Level Dynamic Endpoint
-DynamicEndpointManageAPI.oBPv400GetBankLevelDynamicEndpoint(bankid: bankid, dynamicendpointid: dynamicendpointid) { (response, error) in
+DynamicEndpointManageAPI.getBankLevelDynamicEndpoint(bankid: bankid, dynamicendpointid: dynamicendpointid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -324,9 +324,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetBankLevelDynamicEndpoints**
+# **getBankLevelDynamicEndpoints**
 ```swift
-    open class func oBPv400GetBankLevelDynamicEndpoints(bankid: String, completion: @escaping (_ data: OBPv400GetDynamicEndpoints200Response?, _ error: Error?) -> Void)
+    open class func getBankLevelDynamicEndpoints(bankid: String, completion: @escaping (_ data: GetDynamicEndpoints200Response?, _ error: Error?) -> Void)
 ```
 
 Get Bank Level Dynamic Endpoints
@@ -341,7 +341,7 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 
 // Get Bank Level Dynamic Endpoints
-DynamicEndpointManageAPI.oBPv400GetBankLevelDynamicEndpoints(bankid: bankid) { (response, error) in
+DynamicEndpointManageAPI.getBankLevelDynamicEndpoints(bankid: bankid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -374,9 +374,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetDynamicEndpoint**
+# **getDynamicEndpoint**
 ```swift
-    open class func oBPv400GetDynamicEndpoint(dynamicendpointid: String, completion: @escaping (_ data: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems?, _ error: Error?) -> Void)
+    open class func getDynamicEndpoint(dynamicendpointid: String, completion: @escaping (_ data: GetDynamicEndpoints200ResponseDynamicEndpointsInner?, _ error: Error?) -> Void)
 ```
 
 Get Dynamic Endpoint
@@ -391,7 +391,7 @@ import OBPSwift
 let dynamicendpointid = "dynamicendpointid_example" // String | The DYNAMICENDPOINTID identifier
 
 // Get Dynamic Endpoint
-DynamicEndpointManageAPI.oBPv400GetDynamicEndpoint(dynamicendpointid: dynamicendpointid) { (response, error) in
+DynamicEndpointManageAPI.getDynamicEndpoint(dynamicendpointid: dynamicendpointid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -424,9 +424,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetDynamicEndpoints**
+# **getDynamicEndpoints**
 ```swift
-    open class func oBPv400GetDynamicEndpoints(completion: @escaping (_ data: OBPv400GetDynamicEndpoints200Response?, _ error: Error?) -> Void)
+    open class func getDynamicEndpoints(completion: @escaping (_ data: GetDynamicEndpoints200Response?, _ error: Error?) -> Void)
 ```
 
  Get Dynamic Endpoints
@@ -440,7 +440,7 @@ import OBPSwift
 
 
 //  Get Dynamic Endpoints
-DynamicEndpointManageAPI.oBPv400GetDynamicEndpoints() { (response, error) in
+DynamicEndpointManageAPI.getDynamicEndpoints() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -457,7 +457,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -470,9 +470,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetMyDynamicEndpoints**
+# **getMyDynamicEndpoints**
 ```swift
-    open class func oBPv400GetMyDynamicEndpoints(completion: @escaping (_ data: OBPv400GetDynamicEndpoints200Response?, _ error: Error?) -> Void)
+    open class func getMyDynamicEndpoints(completion: @escaping (_ data: GetDynamicEndpoints200Response?, _ error: Error?) -> Void)
 ```
 
 Get My Dynamic Endpoints
@@ -486,7 +486,7 @@ import OBPSwift
 
 
 // Get My Dynamic Endpoints
-DynamicEndpointManageAPI.oBPv400GetMyDynamicEndpoints() { (response, error) in
+DynamicEndpointManageAPI.getMyDynamicEndpoints() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -503,7 +503,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -516,9 +516,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateBankLevelDynamicEndpointHost**
+# **updateBankLevelDynamicEndpointHost**
 ```swift
-    open class func oBPv400UpdateBankLevelDynamicEndpointHost(bankid: String, dynamicendpointid: String, oBPv400UpdateBankLevelDynamicEndpointHostRequest: OBPv400UpdateBankLevelDynamicEndpointHostRequest, completion: @escaping (_ data: OBPv400UpdateBankLevelDynamicEndpointHostRequest?, _ error: Error?) -> Void)
+    open class func updateBankLevelDynamicEndpointHost(bankid: String, dynamicendpointid: String, updateBankLevelDynamicEndpointHostRequest: UpdateBankLevelDynamicEndpointHostRequest, completion: @escaping (_ data: UpdateBankLevelDynamicEndpointHostRequest?, _ error: Error?) -> Void)
 ```
 
  Update Bank Level Dynamic Endpoint Host
@@ -532,10 +532,10 @@ import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
 let dynamicendpointid = "dynamicendpointid_example" // String | The DYNAMICENDPOINTID identifier
-let oBPv400UpdateBankLevelDynamicEndpointHostRequest = OBPv4_0_0_updateBankLevelDynamicEndpointHost_request(type: "type_example", properties: OBPv4_0_0_updateBankLevelDynamicEndpointHost_request_properties(host: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv400UpdateBankLevelDynamicEndpointHostRequest | Request body
+let updateBankLevelDynamicEndpointHostRequest = updateBankLevelDynamicEndpointHost_request(host: "host_example") // UpdateBankLevelDynamicEndpointHostRequest | Request body
 
 //  Update Bank Level Dynamic Endpoint Host
-DynamicEndpointManageAPI.oBPv400UpdateBankLevelDynamicEndpointHost(bankid: bankid, dynamicendpointid: dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest: oBPv400UpdateBankLevelDynamicEndpointHostRequest) { (response, error) in
+DynamicEndpointManageAPI.updateBankLevelDynamicEndpointHost(bankid: bankid, dynamicendpointid: dynamicendpointid, updateBankLevelDynamicEndpointHostRequest: updateBankLevelDynamicEndpointHostRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -553,11 +553,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
  **dynamicendpointid** | **String** | The DYNAMICENDPOINTID identifier | 
- **oBPv400UpdateBankLevelDynamicEndpointHostRequest** | [**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md) | Request body | 
+ **updateBankLevelDynamicEndpointHostRequest** | [**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
+[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)
 
 ### Authorization
 
@@ -570,9 +570,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateDynamicEndpointHost**
+# **updateDynamicEndpointHost**
 ```swift
-    open class func oBPv400UpdateDynamicEndpointHost(dynamicendpointid: String, oBPv400UpdateBankLevelDynamicEndpointHostRequest: OBPv400UpdateBankLevelDynamicEndpointHostRequest, completion: @escaping (_ data: OBPv400UpdateBankLevelDynamicEndpointHostRequest?, _ error: Error?) -> Void)
+    open class func updateDynamicEndpointHost(dynamicendpointid: String, updateBankLevelDynamicEndpointHostRequest: UpdateBankLevelDynamicEndpointHostRequest, completion: @escaping (_ data: UpdateBankLevelDynamicEndpointHostRequest?, _ error: Error?) -> Void)
 ```
 
  Update Dynamic Endpoint Host
@@ -585,10 +585,10 @@ Name | Type | Description  | Notes
 import OBPSwift
 
 let dynamicendpointid = "dynamicendpointid_example" // String | The DYNAMICENDPOINTID identifier
-let oBPv400UpdateBankLevelDynamicEndpointHostRequest = OBPv4_0_0_updateBankLevelDynamicEndpointHost_request(type: "type_example", properties: OBPv4_0_0_updateBankLevelDynamicEndpointHost_request_properties(host: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv400UpdateBankLevelDynamicEndpointHostRequest | Request body
+let updateBankLevelDynamicEndpointHostRequest = updateBankLevelDynamicEndpointHost_request(host: "host_example") // UpdateBankLevelDynamicEndpointHostRequest | Request body
 
 //  Update Dynamic Endpoint Host
-DynamicEndpointManageAPI.oBPv400UpdateDynamicEndpointHost(dynamicendpointid: dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest: oBPv400UpdateBankLevelDynamicEndpointHostRequest) { (response, error) in
+DynamicEndpointManageAPI.updateDynamicEndpointHost(dynamicendpointid: dynamicendpointid, updateBankLevelDynamicEndpointHostRequest: updateBankLevelDynamicEndpointHostRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -605,11 +605,11 @@ DynamicEndpointManageAPI.oBPv400UpdateDynamicEndpointHost(dynamicendpointid: dyn
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dynamicendpointid** | **String** | The DYNAMICENDPOINTID identifier | 
- **oBPv400UpdateBankLevelDynamicEndpointHostRequest** | [**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md) | Request body | 
+ **updateBankLevelDynamicEndpointHostRequest** | [**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
+[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)
 
 ### Authorization
 

@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,17 +15,17 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv6_0_0_get_available_personal_dynamic_entities`]
+/// struct for typed errors of method [`get_available_personal_dynamic_entities`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600GetAvailablePersonalDynamicEntitiesError {
+pub enum GetAvailablePersonalDynamicEntitiesError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
 
 /// <p>Get all Dynamic Entities that support personal data storage (hasPersonalEntity == true).</p> <p>This endpoint allows regular users (without admin roles) to discover which dynamic entities<br /> they can interact with for storing personal data via the /my/ENTITY_NAME endpoints.</p> <p>Authentication: User must be logged in (no special roles required).</p> <p>Use case: Portals and apps can show users what personal data types are available<br /> without needing admin access to view all dynamic entity definitions.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-pub async fn o_bpv6_0_0_get_available_personal_dynamic_entities(configuration: &configuration::Configuration, ) -> Result<models::Obpv600GetAvailablePersonalDynamicEntities200Response, Error<OBpv600GetAvailablePersonalDynamicEntitiesError>> {
+pub async fn get_available_personal_dynamic_entities(configuration: &configuration::Configuration, ) -> Result<models::GetAvailablePersonalDynamicEntities200Response, Error<GetAvailablePersonalDynamicEntitiesError>> {
 
     let uri_str = format!("{}/obp/v6.0.0/personal-dynamic-entities/available", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -50,7 +50,7 @@ pub async fn o_bpv6_0_0_get_available_personal_dynamic_entities(configuration: &
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -68,12 +68,12 @@ pub async fn o_bpv6_0_0_get_available_personal_dynamic_entities(configuration: &
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetAvailablePersonalDynamicEntities200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetAvailablePersonalDynamicEntities200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAvailablePersonalDynamicEntities200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAvailablePersonalDynamicEntities200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600GetAvailablePersonalDynamicEntitiesError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetAvailablePersonalDynamicEntitiesError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

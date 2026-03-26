@@ -1,30 +1,30 @@
 # OpenBankProject.Api.TransactionMetadataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv121AddCommentForViewOnTransaction**](TransactionMetadataApi.md#obpv121addcommentforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment |
-| [**OBPv121AddImageForViewOnTransaction**](TransactionMetadataApi.md#obpv121addimageforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image |
-| [**OBPv121AddTagForViewOnTransaction**](TransactionMetadataApi.md#obpv121addtagforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag |
-| [**OBPv121AddTransactionNarrative**](TransactionMetadataApi.md#obpv121addtransactionnarrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative |
-| [**OBPv121AddWhereTagForViewOnTransaction**](TransactionMetadataApi.md#obpv121addwheretagforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag |
-| [**OBPv121DeleteCommentForViewOnTransaction**](TransactionMetadataApi.md#obpv121deletecommentforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment |
-| [**OBPv121DeleteImageForViewOnTransaction**](TransactionMetadataApi.md#obpv121deleteimageforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image |
-| [**OBPv121DeleteTagForViewOnTransaction**](TransactionMetadataApi.md#obpv121deletetagforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag |
-| [**OBPv121DeleteTransactionNarrative**](TransactionMetadataApi.md#obpv121deletetransactionnarrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative |
-| [**OBPv121DeleteWhereTagForViewOnTransaction**](TransactionMetadataApi.md#obpv121deletewheretagforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag |
-| [**OBPv121GetCommentsForViewOnTransaction**](TransactionMetadataApi.md#obpv121getcommentsforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments |
-| [**OBPv121GetImagesForViewOnTransaction**](TransactionMetadataApi.md#obpv121getimagesforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images |
-| [**OBPv121GetTagsForViewOnTransaction**](TransactionMetadataApi.md#obpv121gettagsforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags |
-| [**OBPv121GetTransactionNarrative**](TransactionMetadataApi.md#obpv121gettransactionnarrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative |
-| [**OBPv121GetWhereTagForViewOnTransaction**](TransactionMetadataApi.md#obpv121getwheretagforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag |
-| [**OBPv121UpdateTransactionNarrative**](TransactionMetadataApi.md#obpv121updatetransactionnarrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative |
-| [**OBPv121UpdateWhereTagForViewOnTransaction**](TransactionMetadataApi.md#obpv121updatewheretagforviewontransaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag |
+| [**AddCommentForViewOnTransaction**](TransactionMetadataApi.md#addcommentforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment |
+| [**AddImageForViewOnTransaction**](TransactionMetadataApi.md#addimageforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image |
+| [**AddTagForViewOnTransaction**](TransactionMetadataApi.md#addtagforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag |
+| [**AddTransactionNarrative**](TransactionMetadataApi.md#addtransactionnarrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative |
+| [**AddWhereTagForViewOnTransaction**](TransactionMetadataApi.md#addwheretagforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag |
+| [**DeleteCommentForViewOnTransaction**](TransactionMetadataApi.md#deletecommentforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment |
+| [**DeleteImageForViewOnTransaction**](TransactionMetadataApi.md#deleteimageforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image |
+| [**DeleteTagForViewOnTransaction**](TransactionMetadataApi.md#deletetagforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag |
+| [**DeleteTransactionNarrative**](TransactionMetadataApi.md#deletetransactionnarrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative |
+| [**DeleteWhereTagForViewOnTransaction**](TransactionMetadataApi.md#deletewheretagforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag |
+| [**GetCommentsForViewOnTransaction**](TransactionMetadataApi.md#getcommentsforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments |
+| [**GetImagesForViewOnTransaction**](TransactionMetadataApi.md#getimagesforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images |
+| [**GetTagsForViewOnTransaction**](TransactionMetadataApi.md#gettagsforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags |
+| [**GetTransactionNarrative**](TransactionMetadataApi.md#gettransactionnarrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative |
+| [**GetWhereTagForViewOnTransaction**](TransactionMetadataApi.md#getwheretagforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag |
+| [**UpdateTransactionNarrative**](TransactionMetadataApi.md#updatetransactionnarrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative |
+| [**UpdateWhereTagForViewOnTransaction**](TransactionMetadataApi.md#updatewheretagforviewontransaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag |
 
-<a id="obpv121addcommentforviewontransaction"></a>
-# **OBPv121AddCommentForViewOnTransaction**
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems OBPv121AddCommentForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response)
+<a id="addcommentforviewontransaction"></a>
+# **AddCommentForViewOnTransaction**
+> GetTagsForViewOnAccount200ResponseTagsInner AddCommentForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId)
 
 Add a Transaction Comment
 
@@ -39,11 +39,11 @@ Add a Transaction Comment
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **transactionid** | **string** | The TRANSACTIONID identifier |  |
-| **oBPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md) | Request body |  |
+| **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -64,9 +64,9 @@ Add a Transaction Comment
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121addimageforviewontransaction"></a>
-# **OBPv121AddImageForViewOnTransaction**
-> OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems OBPv121AddImageForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid, OBPv121AddImageForViewOnTransactionRequest oBPv121AddImageForViewOnTransactionRequest)
+<a id="addimageforviewontransaction"></a>
+# **AddImageForViewOnTransaction**
+> GetTransactionByIdForBankAccount200ResponseMetadataImagesInner AddImageForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid, AddImageForViewOnTransactionRequest addImageForViewOnTransactionRequest)
 
 Add a Transaction Image
 
@@ -81,11 +81,11 @@ Add a Transaction Image
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **transactionid** | **string** | The TRANSACTIONID identifier |  |
-| **oBPv121AddImageForViewOnTransactionRequest** | [**OBPv121AddImageForViewOnTransactionRequest**](OBPv121AddImageForViewOnTransactionRequest.md) | Request body |  |
+| **addImageForViewOnTransactionRequest** | [**AddImageForViewOnTransactionRequest**](AddImageForViewOnTransactionRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems**](OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems.md)
+[**GetTransactionByIdForBankAccount200ResponseMetadataImagesInner**](GetTransactionByIdForBankAccount200ResponseMetadataImagesInner.md)
 
 ### Authorization
 
@@ -106,9 +106,9 @@ Add a Transaction Image
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121addtagforviewontransaction"></a>
-# **OBPv121AddTagForViewOnTransaction**
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems OBPv121AddTagForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response)
+<a id="addtagforviewontransaction"></a>
+# **AddTagForViewOnTransaction**
+> GetTagsForViewOnAccount200ResponseTagsInner AddTagForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId)
 
 Add a Transaction Tag
 
@@ -123,11 +123,11 @@ Add a Transaction Tag
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **transactionid** | **string** | The TRANSACTIONID identifier |  |
-| **oBPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md) | Request body |  |
+| **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -148,9 +148,9 @@ Add a Transaction Tag
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121addtransactionnarrative"></a>
-# **OBPv121AddTransactionNarrative**
-> OBPv121UpdateTransactionNarrative200Response OBPv121AddTransactionNarrative (string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response)
+<a id="addtransactionnarrative"></a>
+# **AddTransactionNarrative**
+> UpdateTransactionNarrative200Response AddTransactionNarrative (string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response)
 
 Add a Transaction Narrative
 
@@ -165,11 +165,11 @@ Add a Transaction Narrative
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **transactionid** | **string** | The TRANSACTIONID identifier |  |
-| **oBPv121GetTransactionNarrative200Response** | [**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md) | Request body |  |
+| **getTransactionNarrative200Response** | [**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -190,9 +190,9 @@ Add a Transaction Narrative
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121addwheretagforviewontransaction"></a>
-# **OBPv121AddWhereTagForViewOnTransaction**
-> OBPv121UpdateTransactionNarrative200Response OBPv121AddWhereTagForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest)
+<a id="addwheretagforviewontransaction"></a>
+# **AddWhereTagForViewOnTransaction**
+> UpdateTransactionNarrative200Response AddWhereTagForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest)
 
 Add a Transaction where Tag
 
@@ -207,11 +207,11 @@ Add a Transaction where Tag
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **transactionid** | **string** | The TRANSACTIONID identifier |  |
-| **oBPv121UpdateWhereTagForViewOnTransactionRequest** | [**OBPv121UpdateWhereTagForViewOnTransactionRequest**](OBPv121UpdateWhereTagForViewOnTransactionRequest.md) | Request body |  |
+| **updateWhereTagForViewOnTransactionRequest** | [**UpdateWhereTagForViewOnTransactionRequest**](UpdateWhereTagForViewOnTransactionRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -232,9 +232,9 @@ Add a Transaction where Tag
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121deletecommentforviewontransaction"></a>
-# **OBPv121DeleteCommentForViewOnTransaction**
-> void OBPv121DeleteCommentForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid, string commentid)
+<a id="deletecommentforviewontransaction"></a>
+# **DeleteCommentForViewOnTransaction**
+> void DeleteCommentForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid, string commentid)
 
 Delete a Transaction Comment
 
@@ -274,9 +274,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121deleteimageforviewontransaction"></a>
-# **OBPv121DeleteImageForViewOnTransaction**
-> void OBPv121DeleteImageForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid, string imageid)
+<a id="deleteimageforviewontransaction"></a>
+# **DeleteImageForViewOnTransaction**
+> void DeleteImageForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid, string imageid)
 
 Delete a Transaction Image
 
@@ -316,9 +316,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121deletetagforviewontransaction"></a>
-# **OBPv121DeleteTagForViewOnTransaction**
-> void OBPv121DeleteTagForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid, string tagid)
+<a id="deletetagforviewontransaction"></a>
+# **DeleteTagForViewOnTransaction**
+> void DeleteTagForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid, string tagid)
 
 Delete a Transaction Tag
 
@@ -358,9 +358,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121deletetransactionnarrative"></a>
-# **OBPv121DeleteTransactionNarrative**
-> void OBPv121DeleteTransactionNarrative (string bankid, string accountid, string viewid, string transactionid)
+<a id="deletetransactionnarrative"></a>
+# **DeleteTransactionNarrative**
+> void DeleteTransactionNarrative (string bankid, string accountid, string viewid, string transactionid)
 
 Delete a Transaction Narrative
 
@@ -399,9 +399,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121deletewheretagforviewontransaction"></a>
-# **OBPv121DeleteWhereTagForViewOnTransaction**
-> void OBPv121DeleteWhereTagForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid)
+<a id="deletewheretagforviewontransaction"></a>
+# **DeleteWhereTagForViewOnTransaction**
+> void DeleteWhereTagForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid)
 
 Delete a Transaction Tag
 
@@ -440,9 +440,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121getcommentsforviewontransaction"></a>
-# **OBPv121GetCommentsForViewOnTransaction**
-> OBPv121GetCommentsForViewOnTransaction200Response OBPv121GetCommentsForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid)
+<a id="getcommentsforviewontransaction"></a>
+# **GetCommentsForViewOnTransaction**
+> GetCommentsForViewOnTransaction200Response GetCommentsForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid)
 
 Get Transaction Comments
 
@@ -460,7 +460,7 @@ Get Transaction Comments
 
 ### Return type
 
-[**OBPv121GetCommentsForViewOnTransaction200Response**](OBPv121GetCommentsForViewOnTransaction200Response.md)
+[**GetCommentsForViewOnTransaction200Response**](GetCommentsForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -481,9 +481,9 @@ Get Transaction Comments
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121getimagesforviewontransaction"></a>
-# **OBPv121GetImagesForViewOnTransaction**
-> OBPv121GetImagesForViewOnTransaction200Response OBPv121GetImagesForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid)
+<a id="getimagesforviewontransaction"></a>
+# **GetImagesForViewOnTransaction**
+> GetImagesForViewOnTransaction200Response GetImagesForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid)
 
 Get Transaction Images
 
@@ -501,7 +501,7 @@ Get Transaction Images
 
 ### Return type
 
-[**OBPv121GetImagesForViewOnTransaction200Response**](OBPv121GetImagesForViewOnTransaction200Response.md)
+[**GetImagesForViewOnTransaction200Response**](GetImagesForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -522,9 +522,9 @@ Get Transaction Images
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121gettagsforviewontransaction"></a>
-# **OBPv121GetTagsForViewOnTransaction**
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems OBPv121GetTagsForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid)
+<a id="gettagsforviewontransaction"></a>
+# **GetTagsForViewOnTransaction**
+> GetTagsForViewOnAccount200ResponseTagsInner GetTagsForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid)
 
 Get Transaction Tags
 
@@ -542,7 +542,7 @@ Get Transaction Tags
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -563,9 +563,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121gettransactionnarrative"></a>
-# **OBPv121GetTransactionNarrative**
-> OBPv121GetTransactionNarrative200Response OBPv121GetTransactionNarrative (string bankid, string accountid, string viewid, string transactionid)
+<a id="gettransactionnarrative"></a>
+# **GetTransactionNarrative**
+> GetTransactionNarrative200Response GetTransactionNarrative (string bankid, string accountid, string viewid, string transactionid)
 
 Get a Transaction Narrative
 
@@ -583,7 +583,7 @@ Get a Transaction Narrative
 
 ### Return type
 
-[**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)
+[**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -604,9 +604,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121getwheretagforviewontransaction"></a>
-# **OBPv121GetWhereTagForViewOnTransaction**
-> OBPv121GetWhereTagForViewOnTransaction200Response OBPv121GetWhereTagForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid)
+<a id="getwheretagforviewontransaction"></a>
+# **GetWhereTagForViewOnTransaction**
+> GetWhereTagForViewOnTransaction200Response GetWhereTagForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid)
 
 Get a Transaction where Tag
 
@@ -624,7 +624,7 @@ Get a Transaction where Tag
 
 ### Return type
 
-[**OBPv121GetWhereTagForViewOnTransaction200Response**](OBPv121GetWhereTagForViewOnTransaction200Response.md)
+[**GetWhereTagForViewOnTransaction200Response**](GetWhereTagForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -645,9 +645,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121updatetransactionnarrative"></a>
-# **OBPv121UpdateTransactionNarrative**
-> OBPv121UpdateTransactionNarrative200Response OBPv121UpdateTransactionNarrative (string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response)
+<a id="updatetransactionnarrative"></a>
+# **UpdateTransactionNarrative**
+> UpdateTransactionNarrative200Response UpdateTransactionNarrative (string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response)
 
 Update a Transaction Narrative
 
@@ -662,11 +662,11 @@ Update a Transaction Narrative
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **transactionid** | **string** | The TRANSACTIONID identifier |  |
-| **oBPv121GetTransactionNarrative200Response** | [**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md) | Request body |  |
+| **getTransactionNarrative200Response** | [**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -687,9 +687,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121updatewheretagforviewontransaction"></a>
-# **OBPv121UpdateWhereTagForViewOnTransaction**
-> OBPv121UpdateTransactionNarrative200Response OBPv121UpdateWhereTagForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest)
+<a id="updatewheretagforviewontransaction"></a>
+# **UpdateWhereTagForViewOnTransaction**
+> UpdateTransactionNarrative200Response UpdateWhereTagForViewOnTransaction (string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest)
 
 Update a Transaction where Tag
 
@@ -704,11 +704,11 @@ Update a Transaction where Tag
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **transactionid** | **string** | The TRANSACTIONID identifier |  |
-| **oBPv121UpdateWhereTagForViewOnTransactionRequest** | [**OBPv121UpdateWhereTagForViewOnTransactionRequest**](OBPv121UpdateWhereTagForViewOnTransactionRequest.md) | Request body |  |
+| **updateWhereTagForViewOnTransactionRequest** | [**UpdateWhereTagForViewOnTransactionRequest**](UpdateWhereTagForViewOnTransactionRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 

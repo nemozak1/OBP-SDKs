@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -39,73 +39,6 @@ namespace OpenBankProject.Api
         WebUiPropsApiEvents Events { get; }
 
         /// <summary>
-        /// Create WebUiProps
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Explaination of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name is required String value&lt;/li&gt; &lt;li&gt;value is required String value&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should do escape, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should do escape like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateWebUiPropsApiResponse"/>&gt;</returns>
-        Task<IOBPv310CreateWebUiPropsApiResponse> OBPv310CreateWebUiPropsAsync(OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create WebUiProps
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Explaination of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name is required String value&lt;/li&gt; &lt;li&gt;value is required String value&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should do escape, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should do escape like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateWebUiPropsApiResponse"/>?&gt;</returns>
-        Task<IOBPv310CreateWebUiPropsApiResponse?> OBPv310CreateWebUiPropsOrDefaultAsync(OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Delete WebUiProps
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Delete a WebUiProps specified by WEB_UI_PROPS_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#web_ui_props_id\&quot;&gt;WEB_UI_PROPS_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webuipropsid">The WEBUIPROPSID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310DeleteWebUiPropsApiResponse"/>&gt;</returns>
-        Task<IOBPv310DeleteWebUiPropsApiResponse> OBPv310DeleteWebUiPropsAsync(string webuipropsid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Delete WebUiProps
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Delete a WebUiProps specified by WEB_UI_PROPS_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#web_ui_props_id\&quot;&gt;WEB_UI_PROPS_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="webuipropsid">The WEBUIPROPSID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310DeleteWebUiPropsApiResponse"/>?&gt;</returns>
-        Task<IOBPv310DeleteWebUiPropsApiResponse?> OBPv310DeleteWebUiPropsOrDefaultAsync(string webuipropsid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get WebUiProps
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit props from the database&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit props + implicit (default) props from configuration file &lt;ul&gt; &lt;li&gt;When both sources have the same property name, the database value takes precedence&lt;/li&gt; &lt;li&gt;Implicit props are marked with &lt;code&gt;webUiPropsId &#x3D; &amp;quot;default&amp;quot;&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database props combined with defaults:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active&#x3D;true\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetWebUiPropsApiResponse"/>&gt;</returns>
-        Task<IOBPv310GetWebUiPropsApiResponse> OBPv310GetWebUiPropsAsync(System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get WebUiProps
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit props from the database&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit props + implicit (default) props from configuration file &lt;ul&gt; &lt;li&gt;When both sources have the same property name, the database value takes precedence&lt;/li&gt; &lt;li&gt;Implicit props are marked with &lt;code&gt;webUiPropsId &#x3D; &amp;quot;default&amp;quot;&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database props combined with defaults:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active&#x3D;true\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetWebUiPropsApiResponse"/>?&gt;</returns>
-        Task<IOBPv310GetWebUiPropsApiResponse?> OBPv310GetWebUiPropsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
         /// Create or Update WebUiProps
         /// </summary>
         /// <remarks>
@@ -113,10 +46,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="webuipropname">The WEBUIPROPNAME identifier</param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response">Request body</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateOrUpdateWebUiPropsApiResponse"/>&gt;</returns>
-        Task<IOBPv600CreateOrUpdateWebUiPropsApiResponse> OBPv600CreateOrUpdateWebUiPropsAsync(string webuipropname, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateWebUiPropsApiResponse"/>&gt;</returns>
+        Task<ICreateOrUpdateWebUiPropsApiResponse> CreateOrUpdateWebUiPropsAsync(string webuipropname, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create or Update WebUiProps
@@ -125,10 +58,33 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create or Update a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - it will create the property if it doesn&#39;t exist, or update it if it does.&lt;br /&gt; The property is identified by WEBUI_PROP_NAME in the URL path.&lt;/p&gt; &lt;p&gt;Explanation of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;WEBUI_PROP_NAME in URL path (must start with &lt;code&gt;webui_&lt;/code&gt;, contain only alphanumeric characters, underscore, and dot, not exceed 255 characters, and will be converted to lowercase)&lt;/li&gt; &lt;li&gt;value is required String value in request body&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should be escaped, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should be escaped like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
         /// </remarks>
         /// <param name="webuipropname">The WEBUIPROPNAME identifier</param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response">Request body</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateOrUpdateWebUiPropsApiResponse"/>?&gt;</returns>
-        Task<IOBPv600CreateOrUpdateWebUiPropsApiResponse?> OBPv600CreateOrUpdateWebUiPropsOrDefaultAsync(string webuipropname, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateWebUiPropsApiResponse"/>?&gt;</returns>
+        Task<ICreateOrUpdateWebUiPropsApiResponse?> CreateOrUpdateWebUiPropsOrDefaultAsync(string webuipropname, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create WebUiProps
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Create a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Explaination of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name is required String value&lt;/li&gt; &lt;li&gt;value is required String value&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should do escape, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should do escape like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTransactionRequestCounterparty200ResponseAttributesInner">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateWebUiPropsApiResponse"/>&gt;</returns>
+        Task<ICreateWebUiPropsApiResponse> CreateWebUiPropsAsync(CreateTransactionRequestCounterparty200ResponseAttributesInner createTransactionRequestCounterparty200ResponseAttributesInner, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create WebUiProps
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Create a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Explaination of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name is required String value&lt;/li&gt; &lt;li&gt;value is required String value&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should do escape, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should do escape like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="createTransactionRequestCounterparty200ResponseAttributesInner">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateWebUiPropsApiResponse"/>?&gt;</returns>
+        Task<ICreateWebUiPropsApiResponse?> CreateWebUiPropsOrDefaultAsync(CreateTransactionRequestCounterparty200ResponseAttributesInner createTransactionRequestCounterparty200ResponseAttributesInner, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete WebUiProps
@@ -139,8 +95,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="webuipropname">The WEBUIPROPNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteWebUiPropsApiResponse"/>&gt;</returns>
-        Task<IOBPv600DeleteWebUiPropsApiResponse> OBPv600DeleteWebUiPropsAsync(string webuipropname, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteWebUiPropsApiResponse"/>&gt;</returns>
+        Task<IDeleteWebUiPropsApiResponse> DeleteWebUiPropsAsync(string webuipropname, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete WebUiProps
@@ -150,58 +106,58 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="webuipropname">The WEBUIPROPNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteWebUiPropsApiResponse"/>?&gt;</returns>
-        Task<IOBPv600DeleteWebUiPropsApiResponse?> OBPv600DeleteWebUiPropsOrDefaultAsync(string webuipropname, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteWebUiPropsApiResponse"/>?&gt;</returns>
+        Task<IDeleteWebUiPropsApiResponse?> DeleteWebUiPropsOrDefaultAsync(string webuipropname, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get WebUiProp by Name
         /// </summary>
         /// <remarks>
-        /// &lt;p&gt;Get a single WebUiProp by name.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit prop from the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit prop from database, or if not found, returns implicit (default) prop from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get database-stored prop only:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database prop or fallback to default:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+        /// &lt;p&gt;Get a single WebUiProp by name.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit prop from the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit prop from database, or if not found, returns implicit (default) prop from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get database-stored prop only:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database prop or fallback to default:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="webuipropname">The WEBUIPROPNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetWebUiPropApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetWebUiPropApiResponse> OBPv600GetWebUiPropAsync(string webuipropname, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetWebUiPropApiResponse"/>&gt;</returns>
+        Task<IGetWebUiPropApiResponse> GetWebUiPropAsync(string webuipropname, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get WebUiProp by Name
         /// </summary>
         /// <remarks>
-        /// &lt;p&gt;Get a single WebUiProp by name.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit prop from the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit prop from database, or if not found, returns implicit (default) prop from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get database-stored prop only:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database prop or fallback to default:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+        /// &lt;p&gt;Get a single WebUiProp by name.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit prop from the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit prop from database, or if not found, returns implicit (default) prop from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get database-stored prop only:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database prop or fallback to default:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
         /// </remarks>
         /// <param name="webuipropname">The WEBUIPROPNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetWebUiPropApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetWebUiPropApiResponse?> OBPv600GetWebUiPropOrDefaultAsync(string webuipropname, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetWebUiPropApiResponse"/>?&gt;</returns>
+        Task<IGetWebUiPropApiResponse?> GetWebUiPropOrDefaultAsync(string webuipropname, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get WebUiProps
         /// </summary>
         /// <remarks>
-        /// &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;what&lt;/code&gt; (optional, string, default: &amp;quot;active&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt;: Returns one value per property name &lt;ul&gt; &lt;li&gt;If property exists in database: returns database value (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If property only in config file: returns config default value (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;code&gt;database&lt;/code&gt;: Returns ONLY properties explicitly stored in the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;config&lt;/code&gt;: Returns ONLY default properties from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get active props (database overrides config, one value per prop):&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;active\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;active&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;database\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;database&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only default props from configuration:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;config\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;config&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+        /// &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;what&lt;/code&gt; (optional, string, default: &amp;quot;active&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt;: Returns one value per property name &lt;ul&gt; &lt;li&gt;If property exists in database: returns database value (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If property only in config file: returns config default value (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;code&gt;database&lt;/code&gt;: Returns ONLY properties explicitly stored in the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;config&lt;/code&gt;: Returns ONLY default properties from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get active props (database overrides config, one value per prop):&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;active\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;active&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;database\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;database&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only default props from configuration:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;config\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;config&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetWebUiPropsApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetWebUiPropsApiResponse> OBPv600GetWebUiPropsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetWebUiPropsApiResponse"/>&gt;</returns>
+        Task<IGetWebUiPropsApiResponse> GetWebUiPropsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get WebUiProps
         /// </summary>
         /// <remarks>
-        /// &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;what&lt;/code&gt; (optional, string, default: &amp;quot;active&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt;: Returns one value per property name &lt;ul&gt; &lt;li&gt;If property exists in database: returns database value (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If property only in config file: returns config default value (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;code&gt;database&lt;/code&gt;: Returns ONLY properties explicitly stored in the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;config&lt;/code&gt;: Returns ONLY default properties from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get active props (database overrides config, one value per prop):&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;active\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;active&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;database\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;database&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only default props from configuration:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;config\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;config&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+        /// &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;what&lt;/code&gt; (optional, string, default: &amp;quot;active&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt;: Returns one value per property name &lt;ul&gt; &lt;li&gt;If property exists in database: returns database value (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If property only in config file: returns config default value (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;code&gt;database&lt;/code&gt;: Returns ONLY properties explicitly stored in the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;config&lt;/code&gt;: Returns ONLY default properties from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get active props (database overrides config, one value per prop):&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;active\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;active&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;database\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;database&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only default props from configuration:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;config\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;config&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetWebUiPropsApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetWebUiPropsApiResponse?> OBPv600GetWebUiPropsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetWebUiPropsApiResponse"/>?&gt;</returns>
+        Task<IGetWebUiPropsApiResponse?> GetWebUiPropsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IOBPv310CreateWebUiPropsApiResponse"/>
+    /// The <see cref="ICreateOrUpdateWebUiPropsApiResponse"/>
     /// </summary>
-    public interface IOBPv310CreateWebUiPropsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems?>
+    public interface ICreateOrUpdateWebUiPropsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.CreateWebUiProps200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -217,9 +173,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv310DeleteWebUiPropsApiResponse"/>
+    /// The <see cref="ICreateWebUiPropsApiResponse"/>
     /// </summary>
-    public interface IOBPv310DeleteWebUiPropsApiResponse : OpenBankProject.Client.IApiResponse
+    public interface ICreateWebUiPropsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.CreateWebUiProps200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -235,9 +191,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv310GetWebUiPropsApiResponse"/>
+    /// The <see cref="IDeleteWebUiPropsApiResponse"/>
     /// </summary>
-    public interface IOBPv310GetWebUiPropsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv310GetWebUiProps200Response?>
+    public interface IDeleteWebUiPropsApiResponse : OpenBankProject.Client.IApiResponse
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -253,45 +209,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600CreateOrUpdateWebUiPropsApiResponse"/>
+    /// The <see cref="IGetWebUiPropApiResponse"/>
     /// </summary>
-    public interface IOBPv600CreateOrUpdateWebUiPropsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv600DeleteWebUiPropsApiResponse"/>
-    /// </summary>
-    public interface IOBPv600DeleteWebUiPropsApiResponse : OpenBankProject.Client.IApiResponse
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv600GetWebUiPropApiResponse"/>
-    /// </summary>
-    public interface IOBPv600GetWebUiPropApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems?>
+    public interface IGetWebUiPropApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetWebUiProps200ResponseWebuiPropsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -313,9 +233,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600GetWebUiPropsApiResponse"/>
+    /// The <see cref="IGetWebUiPropsApiResponse"/>
     /// </summary>
-    public interface IOBPv600GetWebUiPropsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetWebUiProps200Response?>
+    public interface IGetWebUiPropsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetWebUiProps200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -338,141 +258,101 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310CreateWebUiProps;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateOrUpdateWebUiProps;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310CreateWebUiProps;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateOrUpdateWebUiProps;
 
-        internal void ExecuteOnOBPv310CreateWebUiProps(WebUiPropsApi.OBPv310CreateWebUiPropsApiResponse apiResponse)
+        internal void ExecuteOnCreateOrUpdateWebUiProps(WebUiPropsApi.CreateOrUpdateWebUiPropsApiResponse apiResponse)
         {
-            OnOBPv310CreateWebUiProps?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateOrUpdateWebUiProps?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310CreateWebUiProps(Exception exception)
+        internal void ExecuteOnErrorCreateOrUpdateWebUiProps(Exception exception)
         {
-            OnErrorOBPv310CreateWebUiProps?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateOrUpdateWebUiProps?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310DeleteWebUiProps;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateWebUiProps;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310DeleteWebUiProps;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateWebUiProps;
 
-        internal void ExecuteOnOBPv310DeleteWebUiProps(WebUiPropsApi.OBPv310DeleteWebUiPropsApiResponse apiResponse)
+        internal void ExecuteOnCreateWebUiProps(WebUiPropsApi.CreateWebUiPropsApiResponse apiResponse)
         {
-            OnOBPv310DeleteWebUiProps?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateWebUiProps?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310DeleteWebUiProps(Exception exception)
+        internal void ExecuteOnErrorCreateWebUiProps(Exception exception)
         {
-            OnErrorOBPv310DeleteWebUiProps?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateWebUiProps?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310GetWebUiProps;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteWebUiProps;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310GetWebUiProps;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteWebUiProps;
 
-        internal void ExecuteOnOBPv310GetWebUiProps(WebUiPropsApi.OBPv310GetWebUiPropsApiResponse apiResponse)
+        internal void ExecuteOnDeleteWebUiProps(WebUiPropsApi.DeleteWebUiPropsApiResponse apiResponse)
         {
-            OnOBPv310GetWebUiProps?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteWebUiProps?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310GetWebUiProps(Exception exception)
+        internal void ExecuteOnErrorDeleteWebUiProps(Exception exception)
         {
-            OnErrorOBPv310GetWebUiProps?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteWebUiProps?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600CreateOrUpdateWebUiProps;
+        public event EventHandler<ApiResponseEventArgs>? OnGetWebUiProp;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600CreateOrUpdateWebUiProps;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetWebUiProp;
 
-        internal void ExecuteOnOBPv600CreateOrUpdateWebUiProps(WebUiPropsApi.OBPv600CreateOrUpdateWebUiPropsApiResponse apiResponse)
+        internal void ExecuteOnGetWebUiProp(WebUiPropsApi.GetWebUiPropApiResponse apiResponse)
         {
-            OnOBPv600CreateOrUpdateWebUiProps?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetWebUiProp?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600CreateOrUpdateWebUiProps(Exception exception)
+        internal void ExecuteOnErrorGetWebUiProp(Exception exception)
         {
-            OnErrorOBPv600CreateOrUpdateWebUiProps?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetWebUiProp?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600DeleteWebUiProps;
+        public event EventHandler<ApiResponseEventArgs>? OnGetWebUiProps;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600DeleteWebUiProps;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetWebUiProps;
 
-        internal void ExecuteOnOBPv600DeleteWebUiProps(WebUiPropsApi.OBPv600DeleteWebUiPropsApiResponse apiResponse)
+        internal void ExecuteOnGetWebUiProps(WebUiPropsApi.GetWebUiPropsApiResponse apiResponse)
         {
-            OnOBPv600DeleteWebUiProps?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetWebUiProps?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600DeleteWebUiProps(Exception exception)
+        internal void ExecuteOnErrorGetWebUiProps(Exception exception)
         {
-            OnErrorOBPv600DeleteWebUiProps?.Invoke(this, new ExceptionEventArgs(exception));
-        }
-
-        /// <summary>
-        /// The event raised after the server response
-        /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetWebUiProp;
-
-        /// <summary>
-        /// The event raised after an error querying the server
-        /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetWebUiProp;
-
-        internal void ExecuteOnOBPv600GetWebUiProp(WebUiPropsApi.OBPv600GetWebUiPropApiResponse apiResponse)
-        {
-            OnOBPv600GetWebUiProp?.Invoke(this, new ApiResponseEventArgs(apiResponse));
-        }
-
-        internal void ExecuteOnErrorOBPv600GetWebUiProp(Exception exception)
-        {
-            OnErrorOBPv600GetWebUiProp?.Invoke(this, new ExceptionEventArgs(exception));
-        }
-
-        /// <summary>
-        /// The event raised after the server response
-        /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetWebUiProps;
-
-        /// <summary>
-        /// The event raised after an error querying the server
-        /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetWebUiProps;
-
-        internal void ExecuteOnOBPv600GetWebUiProps(WebUiPropsApi.OBPv600GetWebUiPropsApiResponse apiResponse)
-        {
-            OnOBPv600GetWebUiProps?.Invoke(this, new ApiResponseEventArgs(apiResponse));
-        }
-
-        internal void ExecuteOnErrorOBPv600GetWebUiProps(Exception exception)
-        {
-            OnErrorOBPv600GetWebUiProps?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetWebUiProps?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -530,769 +410,21 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv310CreateWebUiProps(OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems"></param>
-        /// <returns></returns>
-        private void ValidateOBPv310CreateWebUiProps(OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems)
-        {
-            if (oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems"></param>
-        private void AfterOBPv310CreateWebUiPropsDefaultImplementation(IOBPv310CreateWebUiPropsApiResponse apiResponseLocalVar, OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv310CreateWebUiProps(ref suppressDefaultLog, apiResponseLocalVar, oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems"></param>
-        partial void AfterOBPv310CreateWebUiProps(ref bool suppressDefaultLog, IOBPv310CreateWebUiPropsApiResponse apiResponseLocalVar, OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems"></param>
-        private void OnErrorOBPv310CreateWebUiPropsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310CreateWebUiProps(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems"></param>
-        partial void OnErrorOBPv310CreateWebUiProps(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems);
-
-        /// <summary>
-        /// Create WebUiProps &lt;p&gt;Create a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Explaination of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name is required String value&lt;/li&gt; &lt;li&gt;value is required String value&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should do escape, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should do escape like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateWebUiPropsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310CreateWebUiPropsApiResponse?> OBPv310CreateWebUiPropsOrDefaultAsync(OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv310CreateWebUiPropsAsync(oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Create WebUiProps &lt;p&gt;Create a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Explaination of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name is required String value&lt;/li&gt; &lt;li&gt;value is required String value&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should do escape, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should do escape like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateWebUiPropsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310CreateWebUiPropsApiResponse> OBPv310CreateWebUiPropsAsync(OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv310CreateWebUiProps(oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems);
-
-                FormatOBPv310CreateWebUiProps(oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v3.1.0/management/webui_props"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/management/webui_props");
-
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<OBPv310CreateWebUiPropsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv310CreateWebUiPropsApiResponse>();
-                        OBPv310CreateWebUiPropsApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/management/webui_props", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv310CreateWebUiPropsDefaultImplementation(apiResponseLocalVar, oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems);
-
-                        Events.ExecuteOnOBPv310CreateWebUiProps(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv310CreateWebUiPropsDefaultImplementation(e, "/obp/v3.1.0/management/webui_props", uriBuilderLocalVar.Path, oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems);
-                Events.ExecuteOnErrorOBPv310CreateWebUiProps(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OBPv310CreateWebUiPropsApiResponse"/>
-        /// </summary>
-        public partial class OBPv310CreateWebUiPropsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv310CreateWebUiPropsApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<OBPv310CreateWebUiPropsApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="OBPv310CreateWebUiPropsApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv310CreateWebUiPropsApiResponse(ILogger<OBPv310CreateWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            /// <summary>
-            /// The <see cref="OBPv310CreateWebUiPropsApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="contentStream"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv310CreateWebUiPropsApiResponse(ILogger<OBPv310CreateWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Deserializes the response if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public OpenBankProject.Model.OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems? Ok()
-            {
-                // This logic may be modified with the AsModel.mustache template
-                return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems>(RawContent, _jsonSerializerOptions)
-                    : null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok and the deserialized response is not null
-            /// </summary>
-            /// <param name="result"></param>
-            /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems? result)
-            {
-                result = null;
-
-                try
-                {
-                    result = Ok();
-                } catch (Exception e)
-                {
-                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
-                }
-
-                return result != null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 500 InternalServerError
-            /// </summary>
-            /// <returns></returns>
-            public bool IsInternalServerError => 500 == (int)StatusCode;
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatOBPv310DeleteWebUiProps(ref string webuipropsid);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="webuipropsid"></param>
-        /// <returns></returns>
-        private void ValidateOBPv310DeleteWebUiProps(string webuipropsid)
-        {
-            if (webuipropsid == null)
-                throw new ArgumentNullException(nameof(webuipropsid));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="webuipropsid"></param>
-        private void AfterOBPv310DeleteWebUiPropsDefaultImplementation(IOBPv310DeleteWebUiPropsApiResponse apiResponseLocalVar, string webuipropsid)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv310DeleteWebUiProps(ref suppressDefaultLog, apiResponseLocalVar, webuipropsid);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="webuipropsid"></param>
-        partial void AfterOBPv310DeleteWebUiProps(ref bool suppressDefaultLog, IOBPv310DeleteWebUiPropsApiResponse apiResponseLocalVar, string webuipropsid);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="webuipropsid"></param>
-        private void OnErrorOBPv310DeleteWebUiPropsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string webuipropsid)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310DeleteWebUiProps(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, webuipropsid);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="webuipropsid"></param>
-        partial void OnErrorOBPv310DeleteWebUiProps(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string webuipropsid);
-
-        /// <summary>
-        /// Delete WebUiProps &lt;p&gt;Delete a WebUiProps specified by WEB_UI_PROPS_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#web_ui_props_id\&quot;&gt;WEB_UI_PROPS_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <param name="webuipropsid">The WEBUIPROPSID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310DeleteWebUiPropsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310DeleteWebUiPropsApiResponse?> OBPv310DeleteWebUiPropsOrDefaultAsync(string webuipropsid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv310DeleteWebUiPropsAsync(webuipropsid, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Delete WebUiProps &lt;p&gt;Delete a WebUiProps specified by WEB_UI_PROPS_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#web_ui_props_id\&quot;&gt;WEB_UI_PROPS_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webuipropsid">The WEBUIPROPSID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310DeleteWebUiPropsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310DeleteWebUiPropsApiResponse> OBPv310DeleteWebUiPropsAsync(string webuipropsid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv310DeleteWebUiProps(webuipropsid);
-
-                FormatOBPv310DeleteWebUiProps(ref webuipropsid);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v3.1.0/management/webui_props/{webuipropsid}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/management/webui_props/{webuipropsid}");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bwebuipropsid%7D", Uri.EscapeDataString(webuipropsid.ToString()));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Delete;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<OBPv310DeleteWebUiPropsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv310DeleteWebUiPropsApiResponse>();
-                        OBPv310DeleteWebUiPropsApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/management/webui_props/{webuipropsid}", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv310DeleteWebUiPropsDefaultImplementation(apiResponseLocalVar, webuipropsid);
-
-                        Events.ExecuteOnOBPv310DeleteWebUiProps(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv310DeleteWebUiPropsDefaultImplementation(e, "/obp/v3.1.0/management/webui_props/{webuipropsid}", uriBuilderLocalVar.Path, webuipropsid);
-                Events.ExecuteOnErrorOBPv310DeleteWebUiProps(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OBPv310DeleteWebUiPropsApiResponse"/>
-        /// </summary>
-        public partial class OBPv310DeleteWebUiPropsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv310DeleteWebUiPropsApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<OBPv310DeleteWebUiPropsApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="OBPv310DeleteWebUiPropsApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv310DeleteWebUiPropsApiResponse(ILogger<OBPv310DeleteWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            /// <summary>
-            /// The <see cref="OBPv310DeleteWebUiPropsApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="contentStream"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv310DeleteWebUiPropsApiResponse(ILogger<OBPv310DeleteWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Returns true if the response is 500 InternalServerError
-            /// </summary>
-            /// <returns></returns>
-            public bool IsInternalServerError => 500 == (int)StatusCode;
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv310GetWebUiPropsDefaultImplementation(IOBPv310GetWebUiPropsApiResponse apiResponseLocalVar)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv310GetWebUiProps(ref suppressDefaultLog, apiResponseLocalVar);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv310GetWebUiProps(ref bool suppressDefaultLog, IOBPv310GetWebUiPropsApiResponse apiResponseLocalVar);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv310GetWebUiPropsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310GetWebUiProps(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv310GetWebUiProps(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
-
-        /// <summary>
-        /// Get WebUiProps &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit props from the database&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit props + implicit (default) props from configuration file &lt;ul&gt; &lt;li&gt;When both sources have the same property name, the database value takes precedence&lt;/li&gt; &lt;li&gt;Implicit props are marked with &lt;code&gt;webUiPropsId &#x3D; &amp;quot;default&amp;quot;&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database props combined with defaults:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active&#x3D;true\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetWebUiPropsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310GetWebUiPropsApiResponse?> OBPv310GetWebUiPropsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv310GetWebUiPropsAsync(cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Get WebUiProps &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit props from the database&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit props + implicit (default) props from configuration file &lt;ul&gt; &lt;li&gt;When both sources have the same property name, the database value takes precedence&lt;/li&gt; &lt;li&gt;Implicit props are marked with &lt;code&gt;webUiPropsId &#x3D; &amp;quot;default&amp;quot;&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database props combined with defaults:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active&#x3D;true\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetWebUiPropsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310GetWebUiPropsApiResponse> OBPv310GetWebUiPropsAsync(System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v3.1.0/management/webui_props"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/management/webui_props");
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<OBPv310GetWebUiPropsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv310GetWebUiPropsApiResponse>();
-                        OBPv310GetWebUiPropsApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/management/webui_props", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv310GetWebUiPropsDefaultImplementation(apiResponseLocalVar);
-
-                        Events.ExecuteOnOBPv310GetWebUiProps(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv310GetWebUiPropsDefaultImplementation(e, "/obp/v3.1.0/management/webui_props", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv310GetWebUiProps(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OBPv310GetWebUiPropsApiResponse"/>
-        /// </summary>
-        public partial class OBPv310GetWebUiPropsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv310GetWebUiPropsApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<OBPv310GetWebUiPropsApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="OBPv310GetWebUiPropsApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv310GetWebUiPropsApiResponse(ILogger<OBPv310GetWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            /// <summary>
-            /// The <see cref="OBPv310GetWebUiPropsApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="contentStream"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv310GetWebUiPropsApiResponse(ILogger<OBPv310GetWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Deserializes the response if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public OpenBankProject.Model.OBPv310GetWebUiProps200Response? Ok()
-            {
-                // This logic may be modified with the AsModel.mustache template
-                return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv310GetWebUiProps200Response>(RawContent, _jsonSerializerOptions)
-                    : null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok and the deserialized response is not null
-            /// </summary>
-            /// <param name="result"></param>
-            /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv310GetWebUiProps200Response? result)
-            {
-                result = null;
-
-                try
-                {
-                    result = Ok();
-                } catch (Exception e)
-                {
-                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
-                }
-
-                return result != null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 500 InternalServerError
-            /// </summary>
-            /// <returns></returns>
-            public bool IsInternalServerError => 500 == (int)StatusCode;
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatOBPv600CreateOrUpdateWebUiProps(ref string webuipropname, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response);
+        partial void FormatCreateOrUpdateWebUiProps(ref string webuipropname, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="webuipropname"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
         /// <returns></returns>
-        private void ValidateOBPv600CreateOrUpdateWebUiProps(string webuipropname, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response)
+        private void ValidateCreateOrUpdateWebUiProps(string webuipropname, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId)
         {
             if (webuipropname == null)
                 throw new ArgumentNullException(nameof(webuipropname));
 
-            if (oBPv400DeleteSystemLevelEndpointTag200Response == null)
-                throw new ArgumentNullException(nameof(oBPv400DeleteSystemLevelEndpointTag200Response));
+            if (getTransactionTypes200ResponseTransactionTypesInnerId == null)
+                throw new ArgumentNullException(nameof(getTransactionTypes200ResponseTransactionTypesInnerId));
         }
 
         /// <summary>
@@ -1300,11 +432,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="webuipropname"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
-        private void AfterOBPv600CreateOrUpdateWebUiPropsDefaultImplementation(IOBPv600CreateOrUpdateWebUiPropsApiResponse apiResponseLocalVar, string webuipropname, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response)
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
+        private void AfterCreateOrUpdateWebUiPropsDefaultImplementation(ICreateOrUpdateWebUiPropsApiResponse apiResponseLocalVar, string webuipropname, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600CreateOrUpdateWebUiProps(ref suppressDefaultLog, apiResponseLocalVar, webuipropname, oBPv400DeleteSystemLevelEndpointTag200Response);
+            AfterCreateOrUpdateWebUiProps(ref suppressDefaultLog, apiResponseLocalVar, webuipropname, getTransactionTypes200ResponseTransactionTypesInnerId);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1315,8 +447,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="webuipropname"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
-        partial void AfterOBPv600CreateOrUpdateWebUiProps(ref bool suppressDefaultLog, IOBPv600CreateOrUpdateWebUiPropsApiResponse apiResponseLocalVar, string webuipropname, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response);
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
+        partial void AfterCreateOrUpdateWebUiProps(ref bool suppressDefaultLog, ICreateOrUpdateWebUiPropsApiResponse apiResponseLocalVar, string webuipropname, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1325,11 +457,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="webuipropname"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
-        private void OnErrorOBPv600CreateOrUpdateWebUiPropsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string webuipropname, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response)
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
+        private void OnErrorCreateOrUpdateWebUiPropsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string webuipropname, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600CreateOrUpdateWebUiProps(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, webuipropname, oBPv400DeleteSystemLevelEndpointTag200Response);
+            OnErrorCreateOrUpdateWebUiProps(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, webuipropname, getTransactionTypes200ResponseTransactionTypesInnerId);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1342,21 +474,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="webuipropname"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
-        partial void OnErrorOBPv600CreateOrUpdateWebUiProps(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string webuipropname, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response);
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
+        partial void OnErrorCreateOrUpdateWebUiProps(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string webuipropname, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId);
 
         /// <summary>
         /// Create or Update WebUiProps &lt;p&gt;Create or Update a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - it will create the property if it doesn&#39;t exist, or update it if it does.&lt;br /&gt; The property is identified by WEBUI_PROP_NAME in the URL path.&lt;/p&gt; &lt;p&gt;Explanation of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;WEBUI_PROP_NAME in URL path (must start with &lt;code&gt;webui_&lt;/code&gt;, contain only alphanumeric characters, underscore, and dot, not exceed 255 characters, and will be converted to lowercase)&lt;/li&gt; &lt;li&gt;value is required String value in request body&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should be escaped, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should be escaped like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="webuipropname">The WEBUIPROPNAME identifier</param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response">Request body</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateOrUpdateWebUiPropsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateOrUpdateWebUiPropsApiResponse?> OBPv600CreateOrUpdateWebUiPropsOrDefaultAsync(string webuipropname, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateWebUiPropsApiResponse"/>&gt;</returns>
+        public async Task<ICreateOrUpdateWebUiPropsApiResponse?> CreateOrUpdateWebUiPropsOrDefaultAsync(string webuipropname, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600CreateOrUpdateWebUiPropsAsync(webuipropname, oBPv400DeleteSystemLevelEndpointTag200Response, cancellationToken).ConfigureAwait(false);
+                return await CreateOrUpdateWebUiPropsAsync(webuipropname, getTransactionTypes200ResponseTransactionTypesInnerId, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1369,18 +501,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="webuipropname">The WEBUIPROPNAME identifier</param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response">Request body</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateOrUpdateWebUiPropsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateOrUpdateWebUiPropsApiResponse> OBPv600CreateOrUpdateWebUiPropsAsync(string webuipropname, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateWebUiPropsApiResponse"/>&gt;</returns>
+        public async Task<ICreateOrUpdateWebUiPropsApiResponse> CreateOrUpdateWebUiPropsAsync(string webuipropname, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600CreateOrUpdateWebUiProps(webuipropname, oBPv400DeleteSystemLevelEndpointTag200Response);
+                ValidateCreateOrUpdateWebUiProps(webuipropname, getTransactionTypes200ResponseTransactionTypesInnerId);
 
-                FormatOBPv600CreateOrUpdateWebUiProps(ref webuipropname, oBPv400DeleteSystemLevelEndpointTag200Response);
+                FormatCreateOrUpdateWebUiProps(ref webuipropname, getTransactionTypes200ResponseTransactionTypesInnerId);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1392,16 +524,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/management/webui_props/{webuipropname}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bwebuipropname%7D", Uri.EscapeDataString(webuipropname.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400DeleteSystemLevelEndpointTag200Response as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (getTransactionTypes200ResponseTransactionTypesInnerId as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400DeleteSystemLevelEndpointTag200Response, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(getTransactionTypes200ResponseTransactionTypesInnerId, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1437,8 +569,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600CreateOrUpdateWebUiPropsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600CreateOrUpdateWebUiPropsApiResponse>();
-                        OBPv600CreateOrUpdateWebUiPropsApiResponse apiResponseLocalVar;
+                        ILogger<CreateOrUpdateWebUiPropsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateOrUpdateWebUiPropsApiResponse>();
+                        CreateOrUpdateWebUiPropsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1449,9 +581,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600CreateOrUpdateWebUiPropsDefaultImplementation(apiResponseLocalVar, webuipropname, oBPv400DeleteSystemLevelEndpointTag200Response);
+                        AfterCreateOrUpdateWebUiPropsDefaultImplementation(apiResponseLocalVar, webuipropname, getTransactionTypes200ResponseTransactionTypesInnerId);
 
-                        Events.ExecuteOnOBPv600CreateOrUpdateWebUiProps(apiResponseLocalVar);
+                        Events.ExecuteOnCreateOrUpdateWebUiProps(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1463,24 +595,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600CreateOrUpdateWebUiPropsDefaultImplementation(e, "/obp/v6.0.0/management/webui_props/{webuipropname}", uriBuilderLocalVar.Path, webuipropname, oBPv400DeleteSystemLevelEndpointTag200Response);
-                Events.ExecuteOnErrorOBPv600CreateOrUpdateWebUiProps(e);
+                OnErrorCreateOrUpdateWebUiPropsDefaultImplementation(e, "/obp/v6.0.0/management/webui_props/{webuipropname}", uriBuilderLocalVar.Path, webuipropname, getTransactionTypes200ResponseTransactionTypesInnerId);
+                Events.ExecuteOnErrorCreateOrUpdateWebUiProps(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600CreateOrUpdateWebUiPropsApiResponse"/>
+        /// The <see cref="CreateOrUpdateWebUiPropsApiResponse"/>
         /// </summary>
-        public partial class OBPv600CreateOrUpdateWebUiPropsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600CreateOrUpdateWebUiPropsApiResponse
+        public partial class CreateOrUpdateWebUiPropsApiResponse : OpenBankProject.Client.ApiResponse, ICreateOrUpdateWebUiPropsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600CreateOrUpdateWebUiPropsApiResponse> Logger { get; }
+            public ILogger<CreateOrUpdateWebUiPropsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600CreateOrUpdateWebUiPropsApiResponse"/>
+            /// The <see cref="CreateOrUpdateWebUiPropsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1489,14 +621,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600CreateOrUpdateWebUiPropsApiResponse(ILogger<OBPv600CreateOrUpdateWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateOrUpdateWebUiPropsApiResponse(ILogger<CreateOrUpdateWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600CreateOrUpdateWebUiPropsApiResponse"/>
+            /// The <see cref="CreateOrUpdateWebUiPropsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1505,7 +637,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600CreateOrUpdateWebUiPropsApiResponse(ILogger<OBPv600CreateOrUpdateWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateOrUpdateWebUiPropsApiResponse(ILogger<CreateOrUpdateWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1523,11 +655,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems? Ok()
+            public OpenBankProject.Model.CreateWebUiProps200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.CreateWebUiProps200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1536,7 +668,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.CreateWebUiProps200Response? result)
             {
                 result = null;
 
@@ -1568,14 +700,293 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600DeleteWebUiProps(ref string webuipropname);
+        partial void FormatCreateWebUiProps(CreateTransactionRequestCounterparty200ResponseAttributesInner createTransactionRequestCounterparty200ResponseAttributesInner);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="createTransactionRequestCounterparty200ResponseAttributesInner"></param>
+        /// <returns></returns>
+        private void ValidateCreateWebUiProps(CreateTransactionRequestCounterparty200ResponseAttributesInner createTransactionRequestCounterparty200ResponseAttributesInner)
+        {
+            if (createTransactionRequestCounterparty200ResponseAttributesInner == null)
+                throw new ArgumentNullException(nameof(createTransactionRequestCounterparty200ResponseAttributesInner));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="createTransactionRequestCounterparty200ResponseAttributesInner"></param>
+        private void AfterCreateWebUiPropsDefaultImplementation(ICreateWebUiPropsApiResponse apiResponseLocalVar, CreateTransactionRequestCounterparty200ResponseAttributesInner createTransactionRequestCounterparty200ResponseAttributesInner)
+        {
+            bool suppressDefaultLog = false;
+            AfterCreateWebUiProps(ref suppressDefaultLog, apiResponseLocalVar, createTransactionRequestCounterparty200ResponseAttributesInner);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="createTransactionRequestCounterparty200ResponseAttributesInner"></param>
+        partial void AfterCreateWebUiProps(ref bool suppressDefaultLog, ICreateWebUiPropsApiResponse apiResponseLocalVar, CreateTransactionRequestCounterparty200ResponseAttributesInner createTransactionRequestCounterparty200ResponseAttributesInner);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="createTransactionRequestCounterparty200ResponseAttributesInner"></param>
+        private void OnErrorCreateWebUiPropsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreateTransactionRequestCounterparty200ResponseAttributesInner createTransactionRequestCounterparty200ResponseAttributesInner)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorCreateWebUiProps(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, createTransactionRequestCounterparty200ResponseAttributesInner);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="createTransactionRequestCounterparty200ResponseAttributesInner"></param>
+        partial void OnErrorCreateWebUiProps(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreateTransactionRequestCounterparty200ResponseAttributesInner createTransactionRequestCounterparty200ResponseAttributesInner);
+
+        /// <summary>
+        /// Create WebUiProps &lt;p&gt;Create a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Explaination of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name is required String value&lt;/li&gt; &lt;li&gt;value is required String value&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should do escape, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should do escape like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <param name="createTransactionRequestCounterparty200ResponseAttributesInner">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateWebUiPropsApiResponse"/>&gt;</returns>
+        public async Task<ICreateWebUiPropsApiResponse?> CreateWebUiPropsOrDefaultAsync(CreateTransactionRequestCounterparty200ResponseAttributesInner createTransactionRequestCounterparty200ResponseAttributesInner, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await CreateWebUiPropsAsync(createTransactionRequestCounterparty200ResponseAttributesInner, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Create WebUiProps &lt;p&gt;Create a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Explaination of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name is required String value&lt;/li&gt; &lt;li&gt;value is required String value&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should do escape, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should do escape like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTransactionRequestCounterparty200ResponseAttributesInner">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateWebUiPropsApiResponse"/>&gt;</returns>
+        public async Task<ICreateWebUiPropsApiResponse> CreateWebUiPropsAsync(CreateTransactionRequestCounterparty200ResponseAttributesInner createTransactionRequestCounterparty200ResponseAttributesInner, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateCreateWebUiProps(createTransactionRequestCounterparty200ResponseAttributesInner);
+
+                FormatCreateWebUiProps(createTransactionRequestCounterparty200ResponseAttributesInner);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v3.1.0/management/webui_props"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/management/webui_props");
+
+                    httpRequestMessageLocalVar.Content = (createTransactionRequestCounterparty200ResponseAttributesInner as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createTransactionRequestCounterparty200ResponseAttributesInner, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CreateWebUiPropsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateWebUiPropsApiResponse>();
+                        CreateWebUiPropsApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/management/webui_props", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterCreateWebUiPropsDefaultImplementation(apiResponseLocalVar, createTransactionRequestCounterparty200ResponseAttributesInner);
+
+                        Events.ExecuteOnCreateWebUiProps(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorCreateWebUiPropsDefaultImplementation(e, "/obp/v3.1.0/management/webui_props", uriBuilderLocalVar.Path, createTransactionRequestCounterparty200ResponseAttributesInner);
+                Events.ExecuteOnErrorCreateWebUiProps(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// The <see cref="CreateWebUiPropsApiResponse"/>
+        /// </summary>
+        public partial class CreateWebUiPropsApiResponse : OpenBankProject.Client.ApiResponse, ICreateWebUiPropsApiResponse
+        {
+            /// <summary>
+            /// The logger
+            /// </summary>
+            public ILogger<CreateWebUiPropsApiResponse> Logger { get; }
+
+            /// <summary>
+            /// The <see cref="CreateWebUiPropsApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="rawContent"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public CreateWebUiPropsApiResponse(ILogger<CreateWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="CreateWebUiPropsApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public CreateWebUiPropsApiResponse(ILogger<CreateWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public bool IsOk => 200 == (int)StatusCode;
+
+            /// <summary>
+            /// Deserializes the response if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public OpenBankProject.Model.CreateWebUiProps200Response? Ok()
+            {
+                // This logic may be modified with the AsModel.mustache template
+                return IsOk
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.CreateWebUiProps200Response>(RawContent, _jsonSerializerOptions)
+                    : null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok and the deserialized response is not null
+            /// </summary>
+            /// <param name="result"></param>
+            /// <returns></returns>
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.CreateWebUiProps200Response? result)
+            {
+                result = null;
+
+                try
+                {
+                    result = Ok();
+                } catch (Exception e)
+                {
+                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
+                }
+
+                return result != null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 500 InternalServerError
+            /// </summary>
+            /// <returns></returns>
+            public bool IsInternalServerError => 500 == (int)StatusCode;
+
+            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
+            {
+                bool suppressDefaultLog = false;
+                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
+                if (!suppressDefaultLog)
+                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+            }
+
+            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
+        }
+
+        partial void FormatDeleteWebUiProps(ref string webuipropname);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="webuipropname"></param>
         /// <returns></returns>
-        private void ValidateOBPv600DeleteWebUiProps(string webuipropname)
+        private void ValidateDeleteWebUiProps(string webuipropname)
         {
             if (webuipropname == null)
                 throw new ArgumentNullException(nameof(webuipropname));
@@ -1586,10 +997,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="webuipropname"></param>
-        private void AfterOBPv600DeleteWebUiPropsDefaultImplementation(IOBPv600DeleteWebUiPropsApiResponse apiResponseLocalVar, string webuipropname)
+        private void AfterDeleteWebUiPropsDefaultImplementation(IDeleteWebUiPropsApiResponse apiResponseLocalVar, string webuipropname)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600DeleteWebUiProps(ref suppressDefaultLog, apiResponseLocalVar, webuipropname);
+            AfterDeleteWebUiProps(ref suppressDefaultLog, apiResponseLocalVar, webuipropname);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1600,7 +1011,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="webuipropname"></param>
-        partial void AfterOBPv600DeleteWebUiProps(ref bool suppressDefaultLog, IOBPv600DeleteWebUiPropsApiResponse apiResponseLocalVar, string webuipropname);
+        partial void AfterDeleteWebUiProps(ref bool suppressDefaultLog, IDeleteWebUiPropsApiResponse apiResponseLocalVar, string webuipropname);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1609,10 +1020,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="webuipropname"></param>
-        private void OnErrorOBPv600DeleteWebUiPropsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string webuipropname)
+        private void OnErrorDeleteWebUiPropsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string webuipropname)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600DeleteWebUiProps(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, webuipropname);
+            OnErrorDeleteWebUiProps(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, webuipropname);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1625,19 +1036,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="webuipropname"></param>
-        partial void OnErrorOBPv600DeleteWebUiProps(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string webuipropname);
+        partial void OnErrorDeleteWebUiProps(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string webuipropname);
 
         /// <summary>
         /// Delete WebUiProps &lt;p&gt;Delete a WebUiProps specified by WEBUI_PROP_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;The property name will be converted to lowercase before deletion.&lt;/p&gt; &lt;p&gt;Returns 204 No Content on successful deletion.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - if the property does not exist, it still returns 204 No Content.&lt;/p&gt; &lt;p&gt;Requires the CanDeleteWebUiProps role.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="webuipropname">The WEBUIPROPNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteWebUiPropsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600DeleteWebUiPropsApiResponse?> OBPv600DeleteWebUiPropsOrDefaultAsync(string webuipropname, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteWebUiPropsApiResponse"/>&gt;</returns>
+        public async Task<IDeleteWebUiPropsApiResponse?> DeleteWebUiPropsOrDefaultAsync(string webuipropname, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600DeleteWebUiPropsAsync(webuipropname, cancellationToken).ConfigureAwait(false);
+                return await DeleteWebUiPropsAsync(webuipropname, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1651,16 +1062,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="webuipropname">The WEBUIPROPNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteWebUiPropsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600DeleteWebUiPropsApiResponse> OBPv600DeleteWebUiPropsAsync(string webuipropname, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteWebUiPropsApiResponse"/>&gt;</returns>
+        public async Task<IDeleteWebUiPropsApiResponse> DeleteWebUiPropsAsync(string webuipropname, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600DeleteWebUiProps(webuipropname);
+                ValidateDeleteWebUiProps(webuipropname);
 
-                FormatOBPv600DeleteWebUiProps(ref webuipropname);
+                FormatDeleteWebUiProps(ref webuipropname);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1677,7 +1088,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1695,8 +1106,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600DeleteWebUiPropsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600DeleteWebUiPropsApiResponse>();
-                        OBPv600DeleteWebUiPropsApiResponse apiResponseLocalVar;
+                        ILogger<DeleteWebUiPropsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteWebUiPropsApiResponse>();
+                        DeleteWebUiPropsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1707,9 +1118,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600DeleteWebUiPropsDefaultImplementation(apiResponseLocalVar, webuipropname);
+                        AfterDeleteWebUiPropsDefaultImplementation(apiResponseLocalVar, webuipropname);
 
-                        Events.ExecuteOnOBPv600DeleteWebUiProps(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteWebUiProps(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1721,24 +1132,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600DeleteWebUiPropsDefaultImplementation(e, "/obp/v6.0.0/management/webui_props/{webuipropname}", uriBuilderLocalVar.Path, webuipropname);
-                Events.ExecuteOnErrorOBPv600DeleteWebUiProps(e);
+                OnErrorDeleteWebUiPropsDefaultImplementation(e, "/obp/v6.0.0/management/webui_props/{webuipropname}", uriBuilderLocalVar.Path, webuipropname);
+                Events.ExecuteOnErrorDeleteWebUiProps(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600DeleteWebUiPropsApiResponse"/>
+        /// The <see cref="DeleteWebUiPropsApiResponse"/>
         /// </summary>
-        public partial class OBPv600DeleteWebUiPropsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600DeleteWebUiPropsApiResponse
+        public partial class DeleteWebUiPropsApiResponse : OpenBankProject.Client.ApiResponse, IDeleteWebUiPropsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600DeleteWebUiPropsApiResponse> Logger { get; }
+            public ILogger<DeleteWebUiPropsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600DeleteWebUiPropsApiResponse"/>
+            /// The <see cref="DeleteWebUiPropsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1747,14 +1158,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600DeleteWebUiPropsApiResponse(ILogger<OBPv600DeleteWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DeleteWebUiPropsApiResponse(ILogger<DeleteWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600DeleteWebUiPropsApiResponse"/>
+            /// The <see cref="DeleteWebUiPropsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1763,7 +1174,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600DeleteWebUiPropsApiResponse(ILogger<OBPv600DeleteWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DeleteWebUiPropsApiResponse(ILogger<DeleteWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1794,14 +1205,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600GetWebUiProp(ref string webuipropname);
+        partial void FormatGetWebUiProp(ref string webuipropname);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="webuipropname"></param>
         /// <returns></returns>
-        private void ValidateOBPv600GetWebUiProp(string webuipropname)
+        private void ValidateGetWebUiProp(string webuipropname)
         {
             if (webuipropname == null)
                 throw new ArgumentNullException(nameof(webuipropname));
@@ -1812,10 +1223,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="webuipropname"></param>
-        private void AfterOBPv600GetWebUiPropDefaultImplementation(IOBPv600GetWebUiPropApiResponse apiResponseLocalVar, string webuipropname)
+        private void AfterGetWebUiPropDefaultImplementation(IGetWebUiPropApiResponse apiResponseLocalVar, string webuipropname)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetWebUiProp(ref suppressDefaultLog, apiResponseLocalVar, webuipropname);
+            AfterGetWebUiProp(ref suppressDefaultLog, apiResponseLocalVar, webuipropname);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1826,7 +1237,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="webuipropname"></param>
-        partial void AfterOBPv600GetWebUiProp(ref bool suppressDefaultLog, IOBPv600GetWebUiPropApiResponse apiResponseLocalVar, string webuipropname);
+        partial void AfterGetWebUiProp(ref bool suppressDefaultLog, IGetWebUiPropApiResponse apiResponseLocalVar, string webuipropname);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1835,10 +1246,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="webuipropname"></param>
-        private void OnErrorOBPv600GetWebUiPropDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string webuipropname)
+        private void OnErrorGetWebUiPropDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string webuipropname)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetWebUiProp(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, webuipropname);
+            OnErrorGetWebUiProp(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, webuipropname);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1851,19 +1262,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="webuipropname"></param>
-        partial void OnErrorOBPv600GetWebUiProp(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string webuipropname);
+        partial void OnErrorGetWebUiProp(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string webuipropname);
 
         /// <summary>
-        /// Get WebUiProp by Name &lt;p&gt;Get a single WebUiProp by name.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit prop from the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit prop from database, or if not found, returns implicit (default) prop from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get database-stored prop only:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database prop or fallback to default:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+        /// Get WebUiProp by Name &lt;p&gt;Get a single WebUiProp by name.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit prop from the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit prop from database, or if not found, returns implicit (default) prop from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get database-stored prop only:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database prop or fallback to default:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="webuipropname">The WEBUIPROPNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetWebUiPropApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetWebUiPropApiResponse?> OBPv600GetWebUiPropOrDefaultAsync(string webuipropname, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetWebUiPropApiResponse"/>&gt;</returns>
+        public async Task<IGetWebUiPropApiResponse?> GetWebUiPropOrDefaultAsync(string webuipropname, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetWebUiPropAsync(webuipropname, cancellationToken).ConfigureAwait(false);
+                return await GetWebUiPropAsync(webuipropname, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1872,21 +1283,21 @@ namespace OpenBankProject.Api
         }
 
         /// <summary>
-        /// Get WebUiProp by Name &lt;p&gt;Get a single WebUiProp by name.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit prop from the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit prop from database, or if not found, returns implicit (default) prop from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get database-stored prop only:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database prop or fallback to default:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+        /// Get WebUiProp by Name &lt;p&gt;Get a single WebUiProp by name.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit prop from the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit prop from database, or if not found, returns implicit (default) prop from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get database-stored prop only:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database prop or fallback to default:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="webuipropname">The WEBUIPROPNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetWebUiPropApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetWebUiPropApiResponse> OBPv600GetWebUiPropAsync(string webuipropname, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetWebUiPropApiResponse"/>&gt;</returns>
+        public async Task<IGetWebUiPropApiResponse> GetWebUiPropAsync(string webuipropname, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600GetWebUiProp(webuipropname);
+                ValidateGetWebUiProp(webuipropname);
 
-                FormatOBPv600GetWebUiProp(ref webuipropname);
+                FormatGetWebUiProp(ref webuipropname);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1915,8 +1326,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600GetWebUiPropApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600GetWebUiPropApiResponse>();
-                        OBPv600GetWebUiPropApiResponse apiResponseLocalVar;
+                        ILogger<GetWebUiPropApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetWebUiPropApiResponse>();
+                        GetWebUiPropApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1927,9 +1338,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetWebUiPropDefaultImplementation(apiResponseLocalVar, webuipropname);
+                        AfterGetWebUiPropDefaultImplementation(apiResponseLocalVar, webuipropname);
 
-                        Events.ExecuteOnOBPv600GetWebUiProp(apiResponseLocalVar);
+                        Events.ExecuteOnGetWebUiProp(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -1937,24 +1348,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetWebUiPropDefaultImplementation(e, "/obp/v6.0.0/webui-props/{webuipropname}", uriBuilderLocalVar.Path, webuipropname);
-                Events.ExecuteOnErrorOBPv600GetWebUiProp(e);
+                OnErrorGetWebUiPropDefaultImplementation(e, "/obp/v6.0.0/webui-props/{webuipropname}", uriBuilderLocalVar.Path, webuipropname);
+                Events.ExecuteOnErrorGetWebUiProp(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600GetWebUiPropApiResponse"/>
+        /// The <see cref="GetWebUiPropApiResponse"/>
         /// </summary>
-        public partial class OBPv600GetWebUiPropApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600GetWebUiPropApiResponse
+        public partial class GetWebUiPropApiResponse : OpenBankProject.Client.ApiResponse, IGetWebUiPropApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600GetWebUiPropApiResponse> Logger { get; }
+            public ILogger<GetWebUiPropApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600GetWebUiPropApiResponse"/>
+            /// The <see cref="GetWebUiPropApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1963,14 +1374,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetWebUiPropApiResponse(ILogger<OBPv600GetWebUiPropApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetWebUiPropApiResponse(ILogger<GetWebUiPropApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600GetWebUiPropApiResponse"/>
+            /// The <see cref="GetWebUiPropApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1979,7 +1390,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetWebUiPropApiResponse(ILogger<OBPv600GetWebUiPropApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetWebUiPropApiResponse(ILogger<GetWebUiPropApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1997,11 +1408,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems? Ok()
+            public OpenBankProject.Model.GetWebUiProps200ResponseWebuiPropsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetWebUiProps200ResponseWebuiPropsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2010,7 +1421,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetWebUiProps200ResponseWebuiPropsInner? result)
             {
                 result = null;
 
@@ -2052,10 +1463,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetWebUiPropsDefaultImplementation(IOBPv600GetWebUiPropsApiResponse apiResponseLocalVar)
+        private void AfterGetWebUiPropsDefaultImplementation(IGetWebUiPropsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetWebUiProps(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetWebUiProps(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2065,7 +1476,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetWebUiProps(ref bool suppressDefaultLog, IOBPv600GetWebUiPropsApiResponse apiResponseLocalVar);
+        partial void AfterGetWebUiProps(ref bool suppressDefaultLog, IGetWebUiPropsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2073,10 +1484,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetWebUiPropsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetWebUiPropsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetWebUiProps(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetWebUiProps(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2088,18 +1499,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetWebUiProps(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetWebUiProps(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
-        /// Get WebUiProps &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;what&lt;/code&gt; (optional, string, default: &amp;quot;active&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt;: Returns one value per property name &lt;ul&gt; &lt;li&gt;If property exists in database: returns database value (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If property only in config file: returns config default value (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;code&gt;database&lt;/code&gt;: Returns ONLY properties explicitly stored in the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;config&lt;/code&gt;: Returns ONLY default properties from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get active props (database overrides config, one value per prop):&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;active\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;active&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;database\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;database&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only default props from configuration:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;config\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;config&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+        /// Get WebUiProps &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;what&lt;/code&gt; (optional, string, default: &amp;quot;active&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt;: Returns one value per property name &lt;ul&gt; &lt;li&gt;If property exists in database: returns database value (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If property only in config file: returns config default value (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;code&gt;database&lt;/code&gt;: Returns ONLY properties explicitly stored in the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;config&lt;/code&gt;: Returns ONLY default properties from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get active props (database overrides config, one value per prop):&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;active\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;active&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;database\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;database&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only default props from configuration:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;config\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;config&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetWebUiPropsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetWebUiPropsApiResponse?> OBPv600GetWebUiPropsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetWebUiPropsApiResponse"/>&gt;</returns>
+        public async Task<IGetWebUiPropsApiResponse?> GetWebUiPropsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetWebUiPropsAsync(cancellationToken).ConfigureAwait(false);
+                return await GetWebUiPropsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2108,12 +1519,12 @@ namespace OpenBankProject.Api
         }
 
         /// <summary>
-        /// Get WebUiProps &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;what&lt;/code&gt; (optional, string, default: &amp;quot;active&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt;: Returns one value per property name &lt;ul&gt; &lt;li&gt;If property exists in database: returns database value (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If property only in config file: returns config default value (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;code&gt;database&lt;/code&gt;: Returns ONLY properties explicitly stored in the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;config&lt;/code&gt;: Returns ONLY default properties from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get active props (database overrides config, one value per prop):&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;active\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;active&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;database\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;database&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only default props from configuration:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;config\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;config&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+        /// Get WebUiProps &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;what&lt;/code&gt; (optional, string, default: &amp;quot;active&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt;: Returns one value per property name &lt;ul&gt; &lt;li&gt;If property exists in database: returns database value (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If property only in config file: returns config default value (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;code&gt;database&lt;/code&gt;: Returns ONLY properties explicitly stored in the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;config&lt;/code&gt;: Returns ONLY default properties from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get active props (database overrides config, one value per prop):&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;active\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;active&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;database\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;database&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only default props from configuration:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;config\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;config&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetWebUiPropsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetWebUiPropsApiResponse> OBPv600GetWebUiPropsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetWebUiPropsApiResponse"/>&gt;</returns>
+        public async Task<IGetWebUiPropsApiResponse> GetWebUiPropsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -2145,8 +1556,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600GetWebUiPropsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600GetWebUiPropsApiResponse>();
-                        OBPv600GetWebUiPropsApiResponse apiResponseLocalVar;
+                        ILogger<GetWebUiPropsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetWebUiPropsApiResponse>();
+                        GetWebUiPropsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2157,9 +1568,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetWebUiPropsDefaultImplementation(apiResponseLocalVar);
+                        AfterGetWebUiPropsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv600GetWebUiProps(apiResponseLocalVar);
+                        Events.ExecuteOnGetWebUiProps(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -2167,24 +1578,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetWebUiPropsDefaultImplementation(e, "/obp/v6.0.0/webui-props", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetWebUiProps(e);
+                OnErrorGetWebUiPropsDefaultImplementation(e, "/obp/v6.0.0/webui-props", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetWebUiProps(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600GetWebUiPropsApiResponse"/>
+        /// The <see cref="GetWebUiPropsApiResponse"/>
         /// </summary>
-        public partial class OBPv600GetWebUiPropsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600GetWebUiPropsApiResponse
+        public partial class GetWebUiPropsApiResponse : OpenBankProject.Client.ApiResponse, IGetWebUiPropsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600GetWebUiPropsApiResponse> Logger { get; }
+            public ILogger<GetWebUiPropsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600GetWebUiPropsApiResponse"/>
+            /// The <see cref="GetWebUiPropsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2193,14 +1604,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetWebUiPropsApiResponse(ILogger<OBPv600GetWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetWebUiPropsApiResponse(ILogger<GetWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600GetWebUiPropsApiResponse"/>
+            /// The <see cref="GetWebUiPropsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2209,7 +1620,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetWebUiPropsApiResponse(ILogger<OBPv600GetWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetWebUiPropsApiResponse(ILogger<GetWebUiPropsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2227,11 +1638,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetWebUiProps200Response? Ok()
+            public OpenBankProject.Model.GetWebUiProps200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetWebUiProps200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetWebUiProps200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2240,7 +1651,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetWebUiProps200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetWebUiProps200Response? result)
             {
                 result = null;
 

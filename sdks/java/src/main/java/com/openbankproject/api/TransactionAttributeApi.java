@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,12 +18,12 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems;
-import com.openbankproject.model.OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest;
-import com.openbankproject.model.OBPv400GetTransactionAttributes200Response;
-import com.openbankproject.model.OBPv400GetTransactionRequestAttributeDefinition200Response;
-import com.openbankproject.model.OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems;
-import com.openbankproject.model.OBPv600CreatePersonalDataFieldRequest;
+import com.openbankproject.model.CreateOrUpdateTransactionRequestAttributeDefinitionRequest;
+import com.openbankproject.model.CreatePersonalDataFieldRequest;
+import com.openbankproject.model.GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner;
+import com.openbankproject.model.GetTransactionAttributes200Response;
+import com.openbankproject.model.GetTransactionRequestAttributeDefinition200Response;
+import com.openbankproject.model.GetTransactionRequestAttributeDefinition200ResponseAttributesInner;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -50,7 +50,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class TransactionAttributeApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -171,25 +171,25 @@ public class TransactionAttributeApi {
    * Create or Update Transaction Attribute Definition
    * &lt;p&gt;Create or Update Transaction Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Transaction&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
-   * @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+   * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
+   * @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateTransactionAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) throws ApiException {
-    return oBPv400CreateOrUpdateTransactionAttributeDefinition(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, null);
+  public GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateTransactionAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest) throws ApiException {
+    return createOrUpdateTransactionAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, null);
   }
 
   /**
    * Create or Update Transaction Attribute Definition
    * &lt;p&gt;Create or Update Transaction Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Transaction&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
+   * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+   * @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateTransactionAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> localVarResponse = oBPv400CreateOrUpdateTransactionAttributeDefinitionWithHttpInfo(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, headers);
+  public GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateTransactionAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> localVarResponse = createOrUpdateTransactionAttributeDefinitionWithHttpInfo(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -197,25 +197,25 @@ public class TransactionAttributeApi {
    * Create or Update Transaction Attribute Definition
    * &lt;p&gt;Create or Update Transaction Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Transaction&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems&gt;
+   * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
+   * @return ApiResponse&lt;GetTransactionRequestAttributeDefinition200ResponseAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> oBPv400CreateOrUpdateTransactionAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) throws ApiException {
-    return oBPv400CreateOrUpdateTransactionAttributeDefinitionWithHttpInfo(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, null);
+  public ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> createOrUpdateTransactionAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest) throws ApiException {
+    return createOrUpdateTransactionAttributeDefinitionWithHttpInfo(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, null);
   }
 
   /**
    * Create or Update Transaction Attribute Definition
    * &lt;p&gt;Create or Update Transaction Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Transaction&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
+   * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems&gt;
+   * @return ApiResponse&lt;GetTransactionRequestAttributeDefinition200ResponseAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> oBPv400CreateOrUpdateTransactionAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateOrUpdateTransactionAttributeDefinitionRequestBuilder(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, headers);
+  public ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> createOrUpdateTransactionAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createOrUpdateTransactionAttributeDefinitionRequestBuilder(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -226,11 +226,11 @@ public class TransactionAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateOrUpdateTransactionAttributeDefinition", localVarResponse);
+          throw getApiException("createOrUpdateTransactionAttributeDefinition", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>(
+          return new ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -240,10 +240,10 @@ public class TransactionAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>() {});
+        GetTransactionRequestAttributeDefinition200ResponseAttributesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>() {});
         
 
-        return new ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>(
+        return new ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -262,14 +262,14 @@ public class TransactionAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateOrUpdateTransactionAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createOrUpdateTransactionAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400CreateOrUpdateTransactionAttributeDefinition");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createOrUpdateTransactionAttributeDefinition");
     }
-    // verify the required parameter 'obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest' is set
-    if (obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest' when calling oBPv400CreateOrUpdateTransactionAttributeDefinition");
+    // verify the required parameter 'createOrUpdateTransactionRequestAttributeDefinitionRequest' is set
+    if (createOrUpdateTransactionRequestAttributeDefinitionRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createOrUpdateTransactionRequestAttributeDefinitionRequest' when calling createOrUpdateTransactionAttributeDefinition");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -283,7 +283,7 @@ public class TransactionAttributeApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createOrUpdateTransactionRequestAttributeDefinitionRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -305,12 +305,12 @@ public class TransactionAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param transactionid The TRANSACTIONID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems oBPv400CreateTransactionAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv400CreateTransactionAttribute(bankid, accountid, transactionid, obPv600CreatePersonalDataFieldRequest, null);
+  public GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner createTransactionAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return createTransactionAttribute(bankid, accountid, transactionid, createPersonalDataFieldRequest, null);
   }
 
   /**
@@ -319,13 +319,13 @@ public class TransactionAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param transactionid The TRANSACTIONID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
+   * @return GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems oBPv400CreateTransactionAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> localVarResponse = oBPv400CreateTransactionAttributeWithHttpInfo(bankid, accountid, transactionid, obPv600CreatePersonalDataFieldRequest, headers);
+  public GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner createTransactionAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> localVarResponse = createTransactionAttributeWithHttpInfo(bankid, accountid, transactionid, createPersonalDataFieldRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -335,12 +335,12 @@ public class TransactionAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param transactionid The TRANSACTIONID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return ApiResponse&lt;OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems&gt;
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return ApiResponse&lt;GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> oBPv400CreateTransactionAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv400CreateTransactionAttributeWithHttpInfo(bankid, accountid, transactionid, obPv600CreatePersonalDataFieldRequest, null);
+  public ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> createTransactionAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return createTransactionAttributeWithHttpInfo(bankid, accountid, transactionid, createPersonalDataFieldRequest, null);
   }
 
   /**
@@ -349,13 +349,13 @@ public class TransactionAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param transactionid The TRANSACTIONID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems&gt;
+   * @return ApiResponse&lt;GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> oBPv400CreateTransactionAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateTransactionAttributeRequestBuilder(bankid, accountid, transactionid, obPv600CreatePersonalDataFieldRequest, headers);
+  public ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> createTransactionAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createTransactionAttributeRequestBuilder(bankid, accountid, transactionid, createPersonalDataFieldRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -366,11 +366,11 @@ public class TransactionAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateTransactionAttribute", localVarResponse);
+          throw getApiException("createTransactionAttribute", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>(
+          return new ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -380,10 +380,10 @@ public class TransactionAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>() {});
+        GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>() {});
         
 
-        return new ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>(
+        return new ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -402,22 +402,22 @@ public class TransactionAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateTransactionAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createTransactionAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400CreateTransactionAttribute");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createTransactionAttribute");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv400CreateTransactionAttribute");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling createTransactionAttribute");
     }
     // verify the required parameter 'transactionid' is set
     if (transactionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'transactionid' when calling oBPv400CreateTransactionAttribute");
+      throw new ApiException(400, "Missing the required parameter 'transactionid' when calling createTransactionAttribute");
     }
-    // verify the required parameter 'obPv600CreatePersonalDataFieldRequest' is set
-    if (obPv600CreatePersonalDataFieldRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600CreatePersonalDataFieldRequest' when calling oBPv400CreateTransactionAttribute");
+    // verify the required parameter 'createPersonalDataFieldRequest' is set
+    if (createPersonalDataFieldRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createPersonalDataFieldRequest' when calling createTransactionAttribute");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -433,7 +433,7 @@ public class TransactionAttributeApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600CreatePersonalDataFieldRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createPersonalDataFieldRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -456,8 +456,8 @@ public class TransactionAttributeApi {
    * @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteTransactionAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid) throws ApiException {
-    oBPv400DeleteTransactionAttributeDefinition(bankid, attributedefinitionid, null);
+  public void deleteTransactionAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid) throws ApiException {
+    deleteTransactionAttributeDefinition(bankid, attributedefinitionid, null);
   }
 
   /**
@@ -468,8 +468,8 @@ public class TransactionAttributeApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteTransactionAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
-    oBPv400DeleteTransactionAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid, headers);
+  public void deleteTransactionAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
+    deleteTransactionAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid, headers);
   }
 
   /**
@@ -480,8 +480,8 @@ public class TransactionAttributeApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteTransactionAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid) throws ApiException {
-    return oBPv400DeleteTransactionAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid, null);
+  public ApiResponse<Void> deleteTransactionAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid) throws ApiException {
+    return deleteTransactionAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid, null);
   }
 
   /**
@@ -493,8 +493,8 @@ public class TransactionAttributeApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteTransactionAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteTransactionAttributeDefinitionRequestBuilder(bankid, attributedefinitionid, headers);
+  public ApiResponse<Void> deleteTransactionAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteTransactionAttributeDefinitionRequestBuilder(bankid, attributedefinitionid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -505,7 +505,7 @@ public class TransactionAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteTransactionAttributeDefinition", localVarResponse);
+          throw getApiException("deleteTransactionAttributeDefinition", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -530,14 +530,14 @@ public class TransactionAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteTransactionAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteTransactionAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400DeleteTransactionAttributeDefinition");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteTransactionAttributeDefinition");
     }
     // verify the required parameter 'attributedefinitionid' is set
     if (attributedefinitionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'attributedefinitionid' when calling oBPv400DeleteTransactionAttributeDefinition");
+      throw new ApiException(400, "Missing the required parameter 'attributedefinitionid' when calling deleteTransactionAttributeDefinition");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -569,11 +569,11 @@ public class TransactionAttributeApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param transactionid The TRANSACTIONID identifier (required)
    * @param attributeid The ATTRIBUTEID identifier (required)
-   * @return OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
+   * @return GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems oBPv400GetTransactionAttributeById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String attributeid) throws ApiException {
-    return oBPv400GetTransactionAttributeById(bankid, accountid, transactionid, attributeid, null);
+  public GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner getTransactionAttributeById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String attributeid) throws ApiException {
+    return getTransactionAttributeById(bankid, accountid, transactionid, attributeid, null);
   }
 
   /**
@@ -584,11 +584,11 @@ public class TransactionAttributeApi {
    * @param transactionid The TRANSACTIONID identifier (required)
    * @param attributeid The ATTRIBUTEID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
+   * @return GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems oBPv400GetTransactionAttributeById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String attributeid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> localVarResponse = oBPv400GetTransactionAttributeByIdWithHttpInfo(bankid, accountid, transactionid, attributeid, headers);
+  public GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner getTransactionAttributeById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String attributeid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> localVarResponse = getTransactionAttributeByIdWithHttpInfo(bankid, accountid, transactionid, attributeid, headers);
     return localVarResponse.getData();
   }
 
@@ -599,11 +599,11 @@ public class TransactionAttributeApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param transactionid The TRANSACTIONID identifier (required)
    * @param attributeid The ATTRIBUTEID identifier (required)
-   * @return ApiResponse&lt;OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems&gt;
+   * @return ApiResponse&lt;GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> oBPv400GetTransactionAttributeByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String attributeid) throws ApiException {
-    return oBPv400GetTransactionAttributeByIdWithHttpInfo(bankid, accountid, transactionid, attributeid, null);
+  public ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> getTransactionAttributeByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String attributeid) throws ApiException {
+    return getTransactionAttributeByIdWithHttpInfo(bankid, accountid, transactionid, attributeid, null);
   }
 
   /**
@@ -614,11 +614,11 @@ public class TransactionAttributeApi {
    * @param transactionid The TRANSACTIONID identifier (required)
    * @param attributeid The ATTRIBUTEID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems&gt;
+   * @return ApiResponse&lt;GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> oBPv400GetTransactionAttributeByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String attributeid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetTransactionAttributeByIdRequestBuilder(bankid, accountid, transactionid, attributeid, headers);
+  public ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> getTransactionAttributeByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String attributeid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getTransactionAttributeByIdRequestBuilder(bankid, accountid, transactionid, attributeid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -629,11 +629,11 @@ public class TransactionAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetTransactionAttributeById", localVarResponse);
+          throw getApiException("getTransactionAttributeById", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>(
+          return new ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -643,10 +643,10 @@ public class TransactionAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>() {});
+        GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>() {});
         
 
-        return new ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>(
+        return new ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -665,22 +665,22 @@ public class TransactionAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetTransactionAttributeByIdRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String attributeid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getTransactionAttributeByIdRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String attributeid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400GetTransactionAttributeById");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getTransactionAttributeById");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv400GetTransactionAttributeById");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling getTransactionAttributeById");
     }
     // verify the required parameter 'transactionid' is set
     if (transactionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'transactionid' when calling oBPv400GetTransactionAttributeById");
+      throw new ApiException(400, "Missing the required parameter 'transactionid' when calling getTransactionAttributeById");
     }
     // verify the required parameter 'attributeid' is set
     if (attributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'attributeid' when calling oBPv400GetTransactionAttributeById");
+      throw new ApiException(400, "Missing the required parameter 'attributeid' when calling getTransactionAttributeById");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -711,11 +711,11 @@ public class TransactionAttributeApi {
    * Get Transaction Attribute Definition
    * &lt;p&gt;Get Transaction Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return OBPv400GetTransactionRequestAttributeDefinition200Response
+   * @return GetTransactionRequestAttributeDefinition200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetTransactionRequestAttributeDefinition200Response oBPv400GetTransactionAttributeDefinition(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv400GetTransactionAttributeDefinition(bankid, null);
+  public GetTransactionRequestAttributeDefinition200Response getTransactionAttributeDefinition(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getTransactionAttributeDefinition(bankid, null);
   }
 
   /**
@@ -723,11 +723,11 @@ public class TransactionAttributeApi {
    * &lt;p&gt;Get Transaction Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetTransactionRequestAttributeDefinition200Response
+   * @return GetTransactionRequestAttributeDefinition200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetTransactionRequestAttributeDefinition200Response oBPv400GetTransactionAttributeDefinition(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response> localVarResponse = oBPv400GetTransactionAttributeDefinitionWithHttpInfo(bankid, headers);
+  public GetTransactionRequestAttributeDefinition200Response getTransactionAttributeDefinition(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetTransactionRequestAttributeDefinition200Response> localVarResponse = getTransactionAttributeDefinitionWithHttpInfo(bankid, headers);
     return localVarResponse.getData();
   }
 
@@ -735,11 +735,11 @@ public class TransactionAttributeApi {
    * Get Transaction Attribute Definition
    * &lt;p&gt;Get Transaction Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetTransactionRequestAttributeDefinition200Response&gt;
+   * @return ApiResponse&lt;GetTransactionRequestAttributeDefinition200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response> oBPv400GetTransactionAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv400GetTransactionAttributeDefinitionWithHttpInfo(bankid, null);
+  public ApiResponse<GetTransactionRequestAttributeDefinition200Response> getTransactionAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getTransactionAttributeDefinitionWithHttpInfo(bankid, null);
   }
 
   /**
@@ -747,11 +747,11 @@ public class TransactionAttributeApi {
    * &lt;p&gt;Get Transaction Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetTransactionRequestAttributeDefinition200Response&gt;
+   * @return ApiResponse&lt;GetTransactionRequestAttributeDefinition200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response> oBPv400GetTransactionAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetTransactionAttributeDefinitionRequestBuilder(bankid, headers);
+  public ApiResponse<GetTransactionRequestAttributeDefinition200Response> getTransactionAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getTransactionAttributeDefinitionRequestBuilder(bankid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -762,11 +762,11 @@ public class TransactionAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetTransactionAttributeDefinition", localVarResponse);
+          throw getApiException("getTransactionAttributeDefinition", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response>(
+          return new ApiResponse<GetTransactionRequestAttributeDefinition200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -776,10 +776,10 @@ public class TransactionAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetTransactionRequestAttributeDefinition200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetTransactionRequestAttributeDefinition200Response>() {});
+        GetTransactionRequestAttributeDefinition200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetTransactionRequestAttributeDefinition200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response>(
+        return new ApiResponse<GetTransactionRequestAttributeDefinition200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -798,10 +798,10 @@ public class TransactionAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetTransactionAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getTransactionAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400GetTransactionAttributeDefinition");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getTransactionAttributeDefinition");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -831,11 +831,11 @@ public class TransactionAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param transactionid The TRANSACTIONID identifier (required)
-   * @return OBPv400GetTransactionAttributes200Response
+   * @return GetTransactionAttributes200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetTransactionAttributes200Response oBPv400GetTransactionAttributes(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid) throws ApiException {
-    return oBPv400GetTransactionAttributes(bankid, accountid, transactionid, null);
+  public GetTransactionAttributes200Response getTransactionAttributes(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid) throws ApiException {
+    return getTransactionAttributes(bankid, accountid, transactionid, null);
   }
 
   /**
@@ -845,11 +845,11 @@ public class TransactionAttributeApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param transactionid The TRANSACTIONID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetTransactionAttributes200Response
+   * @return GetTransactionAttributes200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetTransactionAttributes200Response oBPv400GetTransactionAttributes(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetTransactionAttributes200Response> localVarResponse = oBPv400GetTransactionAttributesWithHttpInfo(bankid, accountid, transactionid, headers);
+  public GetTransactionAttributes200Response getTransactionAttributes(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetTransactionAttributes200Response> localVarResponse = getTransactionAttributesWithHttpInfo(bankid, accountid, transactionid, headers);
     return localVarResponse.getData();
   }
 
@@ -859,11 +859,11 @@ public class TransactionAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param transactionid The TRANSACTIONID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetTransactionAttributes200Response&gt;
+   * @return ApiResponse&lt;GetTransactionAttributes200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetTransactionAttributes200Response> oBPv400GetTransactionAttributesWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid) throws ApiException {
-    return oBPv400GetTransactionAttributesWithHttpInfo(bankid, accountid, transactionid, null);
+  public ApiResponse<GetTransactionAttributes200Response> getTransactionAttributesWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid) throws ApiException {
+    return getTransactionAttributesWithHttpInfo(bankid, accountid, transactionid, null);
   }
 
   /**
@@ -873,11 +873,11 @@ public class TransactionAttributeApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param transactionid The TRANSACTIONID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetTransactionAttributes200Response&gt;
+   * @return ApiResponse&lt;GetTransactionAttributes200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetTransactionAttributes200Response> oBPv400GetTransactionAttributesWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetTransactionAttributesRequestBuilder(bankid, accountid, transactionid, headers);
+  public ApiResponse<GetTransactionAttributes200Response> getTransactionAttributesWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getTransactionAttributesRequestBuilder(bankid, accountid, transactionid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -888,11 +888,11 @@ public class TransactionAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetTransactionAttributes", localVarResponse);
+          throw getApiException("getTransactionAttributes", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetTransactionAttributes200Response>(
+          return new ApiResponse<GetTransactionAttributes200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -902,10 +902,10 @@ public class TransactionAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetTransactionAttributes200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetTransactionAttributes200Response>() {});
+        GetTransactionAttributes200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetTransactionAttributes200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetTransactionAttributes200Response>(
+        return new ApiResponse<GetTransactionAttributes200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -924,18 +924,18 @@ public class TransactionAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetTransactionAttributesRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getTransactionAttributesRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400GetTransactionAttributes");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getTransactionAttributes");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv400GetTransactionAttributes");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling getTransactionAttributes");
     }
     // verify the required parameter 'transactionid' is set
     if (transactionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'transactionid' when calling oBPv400GetTransactionAttributes");
+      throw new ApiException(400, "Missing the required parameter 'transactionid' when calling getTransactionAttributes");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -968,12 +968,12 @@ public class TransactionAttributeApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param transactionid The TRANSACTIONID identifier (required)
    * @param accountattributeid The ACCOUNTATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems oBPv400UpdateTransactionAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String accountattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv400UpdateTransactionAttribute(bankid, accountid, transactionid, accountattributeid, obPv600CreatePersonalDataFieldRequest, null);
+  public GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner updateTransactionAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String accountattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return updateTransactionAttribute(bankid, accountid, transactionid, accountattributeid, createPersonalDataFieldRequest, null);
   }
 
   /**
@@ -983,13 +983,13 @@ public class TransactionAttributeApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param transactionid The TRANSACTIONID identifier (required)
    * @param accountattributeid The ACCOUNTATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
+   * @return GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems oBPv400UpdateTransactionAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String accountattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> localVarResponse = oBPv400UpdateTransactionAttributeWithHttpInfo(bankid, accountid, transactionid, accountattributeid, obPv600CreatePersonalDataFieldRequest, headers);
+  public GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner updateTransactionAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String accountattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> localVarResponse = updateTransactionAttributeWithHttpInfo(bankid, accountid, transactionid, accountattributeid, createPersonalDataFieldRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1000,12 +1000,12 @@ public class TransactionAttributeApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param transactionid The TRANSACTIONID identifier (required)
    * @param accountattributeid The ACCOUNTATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return ApiResponse&lt;OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems&gt;
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return ApiResponse&lt;GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> oBPv400UpdateTransactionAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String accountattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv400UpdateTransactionAttributeWithHttpInfo(bankid, accountid, transactionid, accountattributeid, obPv600CreatePersonalDataFieldRequest, null);
+  public ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> updateTransactionAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String accountattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return updateTransactionAttributeWithHttpInfo(bankid, accountid, transactionid, accountattributeid, createPersonalDataFieldRequest, null);
   }
 
   /**
@@ -1015,13 +1015,13 @@ public class TransactionAttributeApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param transactionid The TRANSACTIONID identifier (required)
    * @param accountattributeid The ACCOUNTATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems&gt;
+   * @return ApiResponse&lt;GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> oBPv400UpdateTransactionAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String accountattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400UpdateTransactionAttributeRequestBuilder(bankid, accountid, transactionid, accountattributeid, obPv600CreatePersonalDataFieldRequest, headers);
+  public ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> updateTransactionAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String accountattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateTransactionAttributeRequestBuilder(bankid, accountid, transactionid, accountattributeid, createPersonalDataFieldRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1032,11 +1032,11 @@ public class TransactionAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400UpdateTransactionAttribute", localVarResponse);
+          throw getApiException("updateTransactionAttribute", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>(
+          return new ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1046,10 +1046,10 @@ public class TransactionAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>() {});
+        GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>() {});
         
 
-        return new ApiResponse<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>(
+        return new ApiResponse<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1068,26 +1068,26 @@ public class TransactionAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400UpdateTransactionAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String accountattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateTransactionAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String transactionid, @javax.annotation.Nonnull String accountattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400UpdateTransactionAttribute");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateTransactionAttribute");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv400UpdateTransactionAttribute");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling updateTransactionAttribute");
     }
     // verify the required parameter 'transactionid' is set
     if (transactionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'transactionid' when calling oBPv400UpdateTransactionAttribute");
+      throw new ApiException(400, "Missing the required parameter 'transactionid' when calling updateTransactionAttribute");
     }
     // verify the required parameter 'accountattributeid' is set
     if (accountattributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountattributeid' when calling oBPv400UpdateTransactionAttribute");
+      throw new ApiException(400, "Missing the required parameter 'accountattributeid' when calling updateTransactionAttribute");
     }
-    // verify the required parameter 'obPv600CreatePersonalDataFieldRequest' is set
-    if (obPv600CreatePersonalDataFieldRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600CreatePersonalDataFieldRequest' when calling oBPv400UpdateTransactionAttribute");
+    // verify the required parameter 'createPersonalDataFieldRequest' is set
+    if (createPersonalDataFieldRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createPersonalDataFieldRequest' when calling updateTransactionAttribute");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1104,7 +1104,7 @@ public class TransactionAttributeApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600CreatePersonalDataFieldRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createPersonalDataFieldRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

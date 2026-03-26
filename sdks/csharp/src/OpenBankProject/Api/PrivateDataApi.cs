@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -46,8 +46,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300CorePrivateAccountsAllBanksApiResponse"/>&gt;</returns>
-        Task<IOBPv300CorePrivateAccountsAllBanksApiResponse> OBPv300CorePrivateAccountsAllBanksAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICorePrivateAccountsAllBanksApiResponse"/>&gt;</returns>
+        Task<ICorePrivateAccountsAllBanksApiResponse> CorePrivateAccountsAllBanksAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Accounts at all Banks (private)
@@ -56,8 +56,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Returns the list of accounts containing private views for the user.&lt;br /&gt; Each account lists the views available to the user.&lt;/p&gt; &lt;p&gt;optional request parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;account_type_filter: one or many accountType value, split by comma&lt;/li&gt; &lt;li&gt;account_type_filter_operation: the filter type of account_type_filter, value must be INCLUDE or EXCLUDE&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;whole url example:&lt;br /&gt; /my/accounts?account_type_filter&#x3D;330,CURRENT+PLUS&amp;amp;account_type_filter_operation&#x3D;INCLUDE&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_type&lt;/strong&gt;&lt;/a&gt;: AC&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accounts\&quot;&gt;&lt;strong&gt;accounts&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_public\&quot;&gt;&lt;strong&gt;is_public&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_name\&quot;&gt;&lt;strong&gt;short_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#views\&quot;&gt;&lt;strong&gt;views&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300CorePrivateAccountsAllBanksApiResponse"/>?&gt;</returns>
-        Task<IOBPv300CorePrivateAccountsAllBanksApiResponse?> OBPv300CorePrivateAccountsAllBanksOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICorePrivateAccountsAllBanksApiResponse"/>?&gt;</returns>
+        Task<ICorePrivateAccountsAllBanksApiResponse?> CorePrivateAccountsAllBanksOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Accounts at Bank
@@ -68,8 +68,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAccountsAtBankApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetAccountsAtBankApiResponse> OBPv600GetAccountsAtBankAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountsAtBankApiResponse"/>&gt;</returns>
+        Task<IGetAccountsAtBankApiResponse> GetAccountsAtBankAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Accounts at Bank
@@ -79,8 +79,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAccountsAtBankApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetAccountsAtBankApiResponse?> OBPv600GetAccountsAtBankOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountsAtBankApiResponse"/>?&gt;</returns>
+        Task<IGetAccountsAtBankApiResponse?> GetAccountsAtBankOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -91,41 +91,41 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv300CorePrivateAccountsAllBanks;
+        public event EventHandler<ApiResponseEventArgs>? OnCorePrivateAccountsAllBanks;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv300CorePrivateAccountsAllBanks;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCorePrivateAccountsAllBanks;
 
-        internal void ExecuteOnOBPv300CorePrivateAccountsAllBanks(AccountApi.OBPv300CorePrivateAccountsAllBanksApiResponse apiResponse)
+        internal void ExecuteOnCorePrivateAccountsAllBanks(AccountApi.CorePrivateAccountsAllBanksApiResponse apiResponse)
         {
-            OnOBPv300CorePrivateAccountsAllBanks?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCorePrivateAccountsAllBanks?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv300CorePrivateAccountsAllBanks(Exception exception)
+        internal void ExecuteOnErrorCorePrivateAccountsAllBanks(Exception exception)
         {
-            OnErrorOBPv300CorePrivateAccountsAllBanks?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCorePrivateAccountsAllBanks?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetAccountsAtBank;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAccountsAtBank;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetAccountsAtBank;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAccountsAtBank;
 
-        internal void ExecuteOnOBPv600GetAccountsAtBank(AccountApi.OBPv600GetAccountsAtBankApiResponse apiResponse)
+        internal void ExecuteOnGetAccountsAtBank(AccountApi.GetAccountsAtBankApiResponse apiResponse)
         {
-            OnOBPv600GetAccountsAtBank?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAccountsAtBank?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetAccountsAtBank(Exception exception)
+        internal void ExecuteOnErrorGetAccountsAtBank(Exception exception)
         {
-            OnErrorOBPv600GetAccountsAtBank?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAccountsAtBank?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -187,10 +187,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv300CorePrivateAccountsAllBanksDefaultImplementation(IOBPv300CorePrivateAccountsAllBanksApiResponse apiResponseLocalVar)
+        private void AfterCorePrivateAccountsAllBanksDefaultImplementation(ICorePrivateAccountsAllBanksApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv300CorePrivateAccountsAllBanks(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterCorePrivateAccountsAllBanks(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -200,7 +200,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv300CorePrivateAccountsAllBanks(ref bool suppressDefaultLog, IOBPv300CorePrivateAccountsAllBanksApiResponse apiResponseLocalVar);
+        partial void AfterCorePrivateAccountsAllBanks(ref bool suppressDefaultLog, ICorePrivateAccountsAllBanksApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -208,10 +208,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv300CorePrivateAccountsAllBanksDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorCorePrivateAccountsAllBanksDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv300CorePrivateAccountsAllBanks(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorCorePrivateAccountsAllBanks(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -223,18 +223,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv300CorePrivateAccountsAllBanks(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorCorePrivateAccountsAllBanks(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Accounts at all Banks (private) &lt;p&gt;Returns the list of accounts containing private views for the user.&lt;br /&gt; Each account lists the views available to the user.&lt;/p&gt; &lt;p&gt;optional request parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;account_type_filter: one or many accountType value, split by comma&lt;/li&gt; &lt;li&gt;account_type_filter_operation: the filter type of account_type_filter, value must be INCLUDE or EXCLUDE&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;whole url example:&lt;br /&gt; /my/accounts?account_type_filter&#x3D;330,CURRENT+PLUS&amp;amp;account_type_filter_operation&#x3D;INCLUDE&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_type&lt;/strong&gt;&lt;/a&gt;: AC&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accounts\&quot;&gt;&lt;strong&gt;accounts&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_public\&quot;&gt;&lt;strong&gt;is_public&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_name\&quot;&gt;&lt;strong&gt;short_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#views\&quot;&gt;&lt;strong&gt;views&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300CorePrivateAccountsAllBanksApiResponse"/>&gt;</returns>
-        public async Task<IOBPv300CorePrivateAccountsAllBanksApiResponse?> OBPv300CorePrivateAccountsAllBanksOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICorePrivateAccountsAllBanksApiResponse"/>&gt;</returns>
+        public async Task<ICorePrivateAccountsAllBanksApiResponse?> CorePrivateAccountsAllBanksOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv300CorePrivateAccountsAllBanksAsync(cancellationToken).ConfigureAwait(false);
+                return await CorePrivateAccountsAllBanksAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -247,8 +247,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300CorePrivateAccountsAllBanksApiResponse"/>&gt;</returns>
-        public async Task<IOBPv300CorePrivateAccountsAllBanksApiResponse> OBPv300CorePrivateAccountsAllBanksAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICorePrivateAccountsAllBanksApiResponse"/>&gt;</returns>
+        public async Task<ICorePrivateAccountsAllBanksApiResponse> CorePrivateAccountsAllBanksAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -268,7 +268,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -295,8 +295,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv300CorePrivateAccountsAllBanksApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv300CorePrivateAccountsAllBanksApiResponse>();
-                        AccountApi.OBPv300CorePrivateAccountsAllBanksApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.CorePrivateAccountsAllBanksApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.CorePrivateAccountsAllBanksApiResponse>();
+                        AccountApi.CorePrivateAccountsAllBanksApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -307,9 +307,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv300CorePrivateAccountsAllBanksDefaultImplementation(apiResponseLocalVar);
+                        AfterCorePrivateAccountsAllBanksDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv300CorePrivateAccountsAllBanks(apiResponseLocalVar);
+                        Events.ExecuteOnCorePrivateAccountsAllBanks(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -321,20 +321,20 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv300CorePrivateAccountsAllBanksDefaultImplementation(e, "/obp/v3.0.0/my/accounts", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv300CorePrivateAccountsAllBanks(e);
+                OnErrorCorePrivateAccountsAllBanksDefaultImplementation(e, "/obp/v3.0.0/my/accounts", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorCorePrivateAccountsAllBanks(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600GetAccountsAtBank(ref string bankid);
+        partial void FormatGetAccountsAtBank(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv600GetAccountsAtBank(string bankid)
+        private void ValidateGetAccountsAtBank(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -345,10 +345,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv600GetAccountsAtBankDefaultImplementation(IOBPv600GetAccountsAtBankApiResponse apiResponseLocalVar, string bankid)
+        private void AfterGetAccountsAtBankDefaultImplementation(IGetAccountsAtBankApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetAccountsAtBank(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterGetAccountsAtBank(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -359,7 +359,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv600GetAccountsAtBank(ref bool suppressDefaultLog, IOBPv600GetAccountsAtBankApiResponse apiResponseLocalVar, string bankid);
+        partial void AfterGetAccountsAtBank(ref bool suppressDefaultLog, IGetAccountsAtBankApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -368,10 +368,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv600GetAccountsAtBankDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        private void OnErrorGetAccountsAtBankDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetAccountsAtBank(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorGetAccountsAtBank(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -384,19 +384,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv600GetAccountsAtBank(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        partial void OnErrorGetAccountsAtBank(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Get Accounts at Bank &lt;p&gt;Returns the list of accounts at BANK_ID that the user has access to.&lt;br /&gt; For each account the API returns the account ID and the views available to the user.&lt;br /&gt; Each account must have at least one private View.&lt;/p&gt; &lt;p&gt;This v6.0.0 version returns &lt;code&gt;account_id&lt;/code&gt; instead of &lt;code&gt;id&lt;/code&gt; for consistency with other v6.0.0 endpoints.&lt;/p&gt; &lt;p&gt;Optional request parameters for filtering with attributes:&lt;br /&gt; URL params example: /banks/some-bank-id/accounts?limit&#x3D;50&amp;amp;offset&#x3D;1&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accounts\&quot;&gt;&lt;strong&gt;accounts&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_public\&quot;&gt;&lt;strong&gt;is_public&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_name\&quot;&gt;&lt;strong&gt;short_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#views_available\&quot;&gt;&lt;strong&gt;views_available&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAccountsAtBankApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAccountsAtBankApiResponse?> OBPv600GetAccountsAtBankOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountsAtBankApiResponse"/>&gt;</returns>
+        public async Task<IGetAccountsAtBankApiResponse?> GetAccountsAtBankOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetAccountsAtBankAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await GetAccountsAtBankAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -410,16 +410,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAccountsAtBankApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAccountsAtBankApiResponse> OBPv600GetAccountsAtBankAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountsAtBankApiResponse"/>&gt;</returns>
+        public async Task<IGetAccountsAtBankApiResponse> GetAccountsAtBankAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600GetAccountsAtBank(bankid);
+                ValidateGetAccountsAtBank(bankid);
 
-                FormatOBPv600GetAccountsAtBank(ref bankid);
+                FormatGetAccountsAtBank(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -436,7 +436,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -463,8 +463,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv600GetAccountsAtBankApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv600GetAccountsAtBankApiResponse>();
-                        AccountApi.OBPv600GetAccountsAtBankApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.GetAccountsAtBankApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.GetAccountsAtBankApiResponse>();
+                        AccountApi.GetAccountsAtBankApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -475,9 +475,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetAccountsAtBankDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterGetAccountsAtBankDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv600GetAccountsAtBank(apiResponseLocalVar);
+                        Events.ExecuteOnGetAccountsAtBank(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -489,8 +489,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetAccountsAtBankDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/accounts", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv600GetAccountsAtBank(e);
+                OnErrorGetAccountsAtBankDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/accounts", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetAccountsAtBank(e);
                 throw;
             }
         }

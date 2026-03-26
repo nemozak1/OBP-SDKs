@@ -1,17 +1,17 @@
 # FXAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv220CreateFx**](FXAPI.md#obpv220createfx) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx
-[**oBPv220GetCurrentFxRate**](FXAPI.md#obpv220getcurrentfxrate) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate
-[**oBPv510GetCurrenciesAtBank**](FXAPI.md#obpv510getcurrenciesatbank) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank
+[**createFx**](FXAPI.md#createfx) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx
+[**getCurrenciesAtBank**](FXAPI.md#getcurrenciesatbank) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank
+[**getCurrentFxRate**](FXAPI.md#getcurrentfxrate) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate
 
 
-# **oBPv220CreateFx**
+# **createFx**
 ```swift
-    open class func oBPv220CreateFx(bankid: String, oBPv220CreateFxRequest: OBPv220CreateFxRequest, completion: @escaping (_ data: OBPv220CreateFxRequest?, _ error: Error?) -> Void)
+    open class func createFx(bankid: String, createFxRequest: CreateFxRequest, completion: @escaping (_ data: CreateFxRequest?, _ error: Error?) -> Void)
 ```
 
 Create Fx
@@ -24,10 +24,10 @@ Create Fx
 import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
-let oBPv220CreateFxRequest = OBPv2_2_0_createFx_request(type: "type_example", properties: OBPv2_2_0_createFx_request_properties(inverseConversionValue: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), toCurrencyCode: nil, effectiveDate: OBPv6_0_0_updateRateLimits_request_properties_from_date(type: "type_example", format: "format_example"), conversionValue: nil, bankId: nil, fromCurrencyCode: nil)) // OBPv220CreateFxRequest | Request body
+let createFxRequest = createFx_request(inverseConversionValue: 123, toCurrencyCode: "toCurrencyCode_example", effectiveDate: Date(), conversionValue: 123, bankId: "bankId_example", fromCurrencyCode: "fromCurrencyCode_example") // CreateFxRequest | Request body
 
 // Create Fx
-FXAPI.oBPv220CreateFx(bankid: bankid, oBPv220CreateFxRequest: oBPv220CreateFxRequest) { (response, error) in
+FXAPI.createFx(bankid: bankid, createFxRequest: createFxRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -44,11 +44,11 @@ FXAPI.oBPv220CreateFx(bankid: bankid, oBPv220CreateFxRequest: oBPv220CreateFxReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
- **oBPv220CreateFxRequest** | [**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md) | Request body | 
+ **createFxRequest** | [**CreateFxRequest**](CreateFxRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)
+[**CreateFxRequest**](CreateFxRequest.md)
 
 ### Authorization
 
@@ -61,9 +61,59 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv220GetCurrentFxRate**
+# **getCurrenciesAtBank**
 ```swift
-    open class func oBPv220GetCurrentFxRate(bankid: String, fromcurrencycode: String, tocurrencycode: String, completion: @escaping (_ data: OBPv220CreateFxRequest?, _ error: Error?) -> Void)
+    open class func getCurrenciesAtBank(bankid: String, completion: @escaping (_ data: GetCurrenciesAtBank200Response?, _ error: Error?) -> Void)
+```
+
+Get Currencies at a Bank
+
+<p>Get Currencies specified by BANK_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>alphanumeric_code</strong></a>: alphanumeric_code</p> <p><a href=\"/glossary#\"><strong>currencies</strong></a>: currencies</p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+let bankid = "bankid_example" // String | The BANKID identifier
+
+// Get Currencies at a Bank
+FXAPI.getCurrenciesAtBank(bankid: bankid) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String** | The BANKID identifier | 
+
+### Return type
+
+[**GetCurrenciesAtBank200Response**](GetCurrenciesAtBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getCurrentFxRate**
+```swift
+    open class func getCurrentFxRate(bankid: String, fromcurrencycode: String, tocurrencycode: String, completion: @escaping (_ data: CreateFxRequest?, _ error: Error?) -> Void)
 ```
 
 Get Current FxRate
@@ -80,7 +130,7 @@ let fromcurrencycode = "fromcurrencycode_example" // String | The FROMCURRENCYCO
 let tocurrencycode = "tocurrencycode_example" // String | The TOCURRENCYCODE identifier
 
 // Get Current FxRate
-FXAPI.oBPv220GetCurrentFxRate(bankid: bankid, fromcurrencycode: fromcurrencycode, tocurrencycode: tocurrencycode) { (response, error) in
+FXAPI.getCurrentFxRate(bankid: bankid, fromcurrencycode: fromcurrencycode, tocurrencycode: tocurrencycode) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -102,57 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv510GetCurrenciesAtBank**
-```swift
-    open class func oBPv510GetCurrenciesAtBank(bankid: String, completion: @escaping (_ data: OBPv510GetCurrenciesAtBank200Response?, _ error: Error?) -> Void)
-```
-
-Get Currencies at a Bank
-
-<p>Get Currencies specified by BANK_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>alphanumeric_code</strong></a>: alphanumeric_code</p> <p><a href=\"/glossary#\"><strong>currencies</strong></a>: currencies</p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-let bankid = "bankid_example" // String | The BANKID identifier
-
-// Get Currencies at a Bank
-FXAPI.oBPv510GetCurrenciesAtBank(bankid: bankid) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String** | The BANKID identifier | 
-
-### Return type
-
-[**OBPv510GetCurrenciesAtBank200Response**](OBPv510GetCurrenciesAtBank200Response.md)
+[**CreateFxRequest**](CreateFxRequest.md)
 
 ### Authorization
 

@@ -16,10 +16,10 @@ open class ConfirmationOfFundsServicePIISAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv310CheckFundsAvailable200Response
+     - returns: CheckFundsAvailable200Response
      */
-    open class func oBPv310CheckFundsAvailable(bankid: String, accountid: String, viewid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv310CheckFundsAvailable200Response {
-        return try await oBPv310CheckFundsAvailableWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, apiConfiguration: apiConfiguration).execute().body
+    open class func checkFundsAvailable(bankid: String, accountid: String, viewid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> CheckFundsAvailable200Response {
+        return try await checkFundsAvailableWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -33,15 +33,15 @@ open class ConfirmationOfFundsServicePIISAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv310CheckFundsAvailable200Response> 
+     - returns: RequestBuilder<CheckFundsAvailable200Response> 
      */
-    open class func oBPv310CheckFundsAvailableWithRequestBuilder(bankid: String, accountid: String, viewid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv310CheckFundsAvailable200Response> {
+    open class func checkFundsAvailableWithRequestBuilder(bankid: String, accountid: String, viewid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<CheckFundsAvailable200Response> {
         var localVariablePath = "/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -63,7 +63,7 @@ open class ConfirmationOfFundsServicePIISAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv310CheckFundsAvailable200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<CheckFundsAvailable200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

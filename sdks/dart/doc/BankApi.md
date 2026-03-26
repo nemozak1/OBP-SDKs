@@ -5,266 +5,37 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv200GetTransactionTypes**](BankApi.md#obpv200gettransactiontypes) | **GET** /obp/v2.0.0/banks/{bankid}/transaction-types | Get Transaction Types at Bank
-[**oBPv210CreateTransactionType**](BankApi.md#obpv210createtransactiontype) | **PUT** /obp/v2.1.0/banks/{bankid}/transaction-types | Create Transaction Type at bank
-[**oBPv210GetTransactionRequestTypesSupportedByBank**](BankApi.md#obpv210gettransactionrequesttypessupportedbybank) | **GET** /obp/v2.1.0/banks/{bankid}/transaction-request-types | Get Transaction Request Types at Bank
-[**oBPv300GetBranch**](BankApi.md#obpv300getbranch) | **GET** /obp/v3.0.0/banks/{bankid}/branches/{branchid} | Get Branch
-[**oBPv300GetBranches**](BankApi.md#obpv300getbranches) | **GET** /obp/v3.0.0/banks/{bankid}/branches | Get Branches for a Bank
-[**oBPv310CreateAccountWebhook**](BankApi.md#obpv310createaccountwebhook) | **POST** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Create an Account Webhook
-[**oBPv310EnableDisableAccountWebhook**](BankApi.md#obpv310enabledisableaccountwebhook) | **PUT** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Enable/Disable an Account Webhook
-[**oBPv310GetAccountWebhooks**](BankApi.md#obpv310getaccountwebhooks) | **GET** /obp/v3.1.0/management/banks/{bankid}/account-web-hooks | Get Account Webhooks
-[**oBPv400CreateBankAccountNotificationWebhook**](BankApi.md#obpv400createbankaccountnotificationwebhook) | **POST** /obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction | Create bank level Account Notification Webhook
-[**oBPv400CreateBankAttribute**](BankApi.md#obpv400createbankattribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
-[**oBPv400CreateOrUpdateBankAttributeDefinition**](BankApi.md#obpv400createorupdatebankattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
-[**oBPv400CreateSettlementAccount**](BankApi.md#obpv400createsettlementaccount) | **POST** /obp/v4.0.0/banks/{bankid}/settlement-accounts | Create Settlement Account
-[**oBPv400CreateSystemAccountNotificationWebhook**](BankApi.md#obpv400createsystemaccountnotificationwebhook) | **POST** /obp/v4.0.0/web-hooks/account/notifications/on-create-transaction | Create system level Account Notification Webhook
-[**oBPv400DeleteBankAttribute**](BankApi.md#obpv400deletebankattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
-[**oBPv400DeleteBankCascade**](BankApi.md#obpv400deletebankcascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid} | Delete Bank Cascade
-[**oBPv400GetBankAttribute**](BankApi.md#obpv400getbankattribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
-[**oBPv400GetBankAttributes**](BankApi.md#obpv400getbankattributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
-[**oBPv400GetSettlementAccounts**](BankApi.md#obpv400getsettlementaccounts) | **GET** /obp/v4.0.0/banks/{bankid}/settlement-accounts | Get Settlement accounts at Bank
-[**oBPv400UpdateBankAttribute**](BankApi.md#obpv400updatebankattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
-[**oBPv500UpdateBank**](BankApi.md#obpv500updatebank) | **PUT** /obp/v5.0.0/banks | Update Bank
-[**oBPv600CreateBank**](BankApi.md#obpv600createbank) | **POST** /obp/v6.0.0/banks | Create Bank
-[**oBPv600GetBank**](BankApi.md#obpv600getbank) | **GET** /obp/v6.0.0/banks/{bankid} | Get Bank
-[**oBPv600GetBanks**](BankApi.md#obpv600getbanks) | **GET** /obp/v6.0.0/banks | Get Banks
-
-
-# **oBPv200GetTransactionTypes**
-> OBPv200GetTransactionTypes200Response oBPv200GetTransactionTypes(bankid)
-
-Get Transaction Types at Bank
-
-<p>Get Transaction Types for the bank specified by BANK_ID:</p> <p>Lists the possible Transaction Types available at the bank (as opposed to Transaction Request Types which are the possible ways Transactions can be created by this API Server).</p> <ul> <li>id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.</li> <li>bank_id : The bank that supports this TransactionType</li> <li>short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here</li> <li>summary : A succinct summary</li> <li>description : A longer description</li> <li>charge : The charge to the customer for each one of these</li> </ul> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#charge\"><strong>charge</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#short_code\"><strong>short_code</strong></a>:</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#transaction_types\"><strong>transaction_types</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-
-final api = ObpDart().getBankApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-
-try {
-    final response = api.oBPv200GetTransactionTypes(bankid);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv200GetTransactionTypes: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
-
-### Return type
-
-[**OBPv200GetTransactionTypes200Response**](OBPv200GetTransactionTypes200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv210CreateTransactionType**
-> OBPv210CreateTransactionType200Response oBPv210CreateTransactionType(bankid, oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems)
-
-Create Transaction Type at bank
-
-<p>Create Transaction Types for the bank specified by BANK_ID:</p> <ul> <li>id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.</li> <li>bank_id : The bank that supports this TransactionType</li> <li>short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here</li> <li>summary : A succinct summary</li> <li>description : A longer description</li> <li>charge : The charge to the customer for each one of these</li> </ul> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bankid\"><strong>bankId</strong></a>:</p> <p><a href=\"/glossary#charge\"><strong>charge</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#shortcode\"><strong>shortCode</strong></a>:</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getBankApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems = {"type":"object","properties":{"description":{"type":"string"},"short_code":{"type":"string"},"bank_id":{"type":"string"},"summary":{"type":"string"},"charge":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"id":{"type":"object","properties":{"value":{"type":"string"}}}}}; // OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems | Request body
-
-try {
-    final response = api.oBPv210CreateTransactionType(bankid, oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv210CreateTransactionType: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems** | [**OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems**](OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems.md)| Request body | 
-
-### Return type
-
-[**OBPv210CreateTransactionType200Response**](OBPv210CreateTransactionType200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv210GetTransactionRequestTypesSupportedByBank**
-> OBPv210GetTransactionRequestTypesSupportedByBank200Response oBPv210GetTransactionRequestTypesSupportedByBank(bankid)
-
-Get Transaction Request Types at Bank
-
-<p>Get the list of the Transaction Request Types supported by the bank.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>transaction_request_type</strong></a>: SEPA</p> <p><a href=\"/glossary#transaction_request_types\"><strong>transaction_request_types</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-
-final api = ObpDart().getBankApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-
-try {
-    final response = api.oBPv210GetTransactionRequestTypesSupportedByBank(bankid);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv210GetTransactionRequestTypesSupportedByBank: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
-
-### Return type
-
-[**OBPv210GetTransactionRequestTypesSupportedByBank200Response**](OBPv210GetTransactionRequestTypesSupportedByBank200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv300GetBranch**
-> OBPv300GetBranches200ResponsePropertiesBranchesItems oBPv300GetBranch(bankid, branchid)
-
-Get Branch
-
-<p>Returns information about a single Branch specified by BANK_ID and BRANCH_ID including:</p> <ul> <li>Name</li> <li>Address</li> <li>Geo Location</li> <li>License the data under this endpoint is released under.</li> </ul> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">BRANCH_ID</a>: DERBY6</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accessiblefeatures\"><strong>accessibleFeatures</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#branch_routing\"><strong>branch_routing</strong></a>:</p> <p><a href=\"/glossary#branch_type\"><strong>branch_type</strong></a>:</p> <p><a href=\"/glossary#city\"><strong>city</strong></a>:</p> <p><a href=\"/glossary#closing_time\"><strong>closing_time</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#country_code\"><strong>country_code</strong></a>: 1254</p> <p><a href=\"/glossary#county\"><strong>county</strong></a>:</p> <p><a href=\"/glossary#drive_up\"><strong>drive_up</strong></a>:</p> <p><a href=\"/glossary#friday\"><strong>friday</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>is_accessible</strong></a>: false</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#license\"><strong>license</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_1</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_2</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_3</strong></a>:</p> <p><a href=\"/glossary#lobby\"><strong>lobby</strong></a>:</p> <p><a href=\"/glossary#location\"><strong>location</strong></a>:</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#meta\"><strong>meta</strong></a>:</p> <p><a href=\"/glossary#monday\"><strong>monday</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#opening_time\"><strong>opening_time</strong></a>:</p> <p><a href=\"/glossary#phone_number\"><strong>phone_number</strong></a>:</p> <p><a href=\"/glossary#postcode\"><strong>postcode</strong></a>:</p> <p><a href=\"/glossary#saturday\"><strong>saturday</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#state\"><strong>state</strong></a>:</p> <p><a href=\"/glossary#sunday\"><strong>sunday</strong></a>:</p> <p><a href=\"/glossary#thursday\"><strong>thursday</strong></a>:</p> <p><a href=\"/glossary#tuesday\"><strong>tuesday</strong></a>:</p> <p><a href=\"/glossary#wednesday\"><strong>wednesday</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-
-final api = ObpDart().getBankApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final String branchid = branchid_example; // String | The BRANCHID identifier
-
-try {
-    final response = api.oBPv300GetBranch(bankid, branchid);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv300GetBranch: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **branchid** | **String**| The BRANCHID identifier | 
-
-### Return type
-
-[**OBPv300GetBranches200ResponsePropertiesBranchesItems**](OBPv300GetBranches200ResponsePropertiesBranchesItems.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv300GetBranches**
-> OBPv300GetBranches200Response oBPv300GetBranches(bankid)
-
-Get Branches for a Bank
-
-<p>Returns information about branches for a single bank specified by BANK_ID including:</p> <ul> <li>Name</li> <li>Address</li> <li>Geo Location</li> <li>License the data under this endpoint is released under</li> <li>Structured opening hours</li> <li>Accessible flag</li> <li>Branch Type</li> <li>More Info</li> </ul> <p>Pagination:</p> <p>By default, 50 records are returned.</p> <p>You can use the url query parameters <em>limit</em> and <em>offset</em> for pagination<br /> You can also use the follow url query parameters:</p> <ul> <li> <p>city - string, find Branches those in this city, optional</p> </li> <li> <p>withinMetersOf - number, find Branches within given meters distance, optional</p> </li> <li>nearLatitude - number, a position of latitude value, cooperate with withMetersOf do query filter, optional</li> <li>nearLongitude - number, a position of longitude value, cooperate with withMetersOf do query filter, optional</li> </ul> <p>note: withinMetersOf, nearLatitude and nearLongitude either all empty or all have value.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accessiblefeatures\"><strong>accessibleFeatures</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#branch_routing\"><strong>branch_routing</strong></a>:</p> <p><a href=\"/glossary#branch_type\"><strong>branch_type</strong></a>:</p> <p><a href=\"/glossary#branches\"><strong>branches</strong></a>:</p> <p><a href=\"/glossary#city\"><strong>city</strong></a>:</p> <p><a href=\"/glossary#closing_time\"><strong>closing_time</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#country_code\"><strong>country_code</strong></a>: 1254</p> <p><a href=\"/glossary#county\"><strong>county</strong></a>:</p> <p><a href=\"/glossary#drive_up\"><strong>drive_up</strong></a>:</p> <p><a href=\"/glossary#friday\"><strong>friday</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>is_accessible</strong></a>: false</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#license\"><strong>license</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_1</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_2</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_3</strong></a>:</p> <p><a href=\"/glossary#lobby\"><strong>lobby</strong></a>:</p> <p><a href=\"/glossary#location\"><strong>location</strong></a>:</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#meta\"><strong>meta</strong></a>:</p> <p><a href=\"/glossary#monday\"><strong>monday</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#opening_time\"><strong>opening_time</strong></a>:</p> <p><a href=\"/glossary#phone_number\"><strong>phone_number</strong></a>:</p> <p><a href=\"/glossary#postcode\"><strong>postcode</strong></a>:</p> <p><a href=\"/glossary#saturday\"><strong>saturday</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#state\"><strong>state</strong></a>:</p> <p><a href=\"/glossary#sunday\"><strong>sunday</strong></a>:</p> <p><a href=\"/glossary#thursday\"><strong>thursday</strong></a>:</p> <p><a href=\"/glossary#tuesday\"><strong>tuesday</strong></a>:</p> <p><a href=\"/glossary#wednesday\"><strong>wednesday</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-
-final api = ObpDart().getBankApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-
-try {
-    final response = api.oBPv300GetBranches(bankid);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv300GetBranches: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
-
-### Return type
-
-[**OBPv300GetBranches200Response**](OBPv300GetBranches200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv310CreateAccountWebhook**
-> OBPv310EnableDisableAccountWebhook200Response oBPv310CreateAccountWebhook(bankid, oBPv310CreateAccountWebhookRequest)
+[**createAccountWebhook**](BankApi.md#createaccountwebhook) | **POST** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Create an Account Webhook
+[**createBank**](BankApi.md#createbank) | **POST** /obp/v6.0.0/banks | Create Bank
+[**createBankAccountNotificationWebhook**](BankApi.md#createbankaccountnotificationwebhook) | **POST** /obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction | Create bank level Account Notification Webhook
+[**createBankAttribute**](BankApi.md#createbankattribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
+[**createOrUpdateBankAttributeDefinition**](BankApi.md#createorupdatebankattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
+[**createSettlementAccount**](BankApi.md#createsettlementaccount) | **POST** /obp/v4.0.0/banks/{bankid}/settlement-accounts | Create Settlement Account
+[**createSystemAccountNotificationWebhook**](BankApi.md#createsystemaccountnotificationwebhook) | **POST** /obp/v4.0.0/web-hooks/account/notifications/on-create-transaction | Create system level Account Notification Webhook
+[**createTransactionType**](BankApi.md#createtransactiontype) | **PUT** /obp/v2.1.0/banks/{bankid}/transaction-types | Create Transaction Type at bank
+[**deleteBankAttribute**](BankApi.md#deletebankattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
+[**deleteBankCascade**](BankApi.md#deletebankcascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid} | Delete Bank Cascade
+[**enableDisableAccountWebhook**](BankApi.md#enabledisableaccountwebhook) | **PUT** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Enable/Disable an Account Webhook
+[**getAccountWebhooks**](BankApi.md#getaccountwebhooks) | **GET** /obp/v3.1.0/management/banks/{bankid}/account-web-hooks | Get Account Webhooks
+[**getBank**](BankApi.md#getbank) | **GET** /obp/v6.0.0/banks/{bankid} | Get Bank
+[**getBankAttribute**](BankApi.md#getbankattribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
+[**getBankAttributes**](BankApi.md#getbankattributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
+[**getBanks**](BankApi.md#getbanks) | **GET** /obp/v6.0.0/banks | Get Banks
+[**getBranch**](BankApi.md#getbranch) | **GET** /obp/v3.0.0/banks/{bankid}/branches/{branchid} | Get Branch
+[**getBranches**](BankApi.md#getbranches) | **GET** /obp/v3.0.0/banks/{bankid}/branches | Get Branches for a Bank
+[**getSettlementAccounts**](BankApi.md#getsettlementaccounts) | **GET** /obp/v4.0.0/banks/{bankid}/settlement-accounts | Get Settlement accounts at Bank
+[**getTransactionRequestTypesSupportedByBank**](BankApi.md#gettransactionrequesttypessupportedbybank) | **GET** /obp/v2.1.0/banks/{bankid}/transaction-request-types | Get Transaction Request Types at Bank
+[**getTransactionTypes**](BankApi.md#gettransactiontypes) | **GET** /obp/v2.0.0/banks/{bankid}/transaction-types | Get Transaction Types at Bank
+[**updateBank**](BankApi.md#updatebank) | **PUT** /obp/v5.0.0/banks | Update Bank
+[**updateBankAttribute**](BankApi.md#updatebankattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
+
+
+# **createAccountWebhook**
+> EnableDisableAccountWebhook200Response createAccountWebhook(bankid, createAccountWebhookRequest)
 
 Create an Account Webhook
 
@@ -286,13 +57,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getBankApi();
 final String bankid = bankid_example; // String | The BANKID identifier
-final OBPv310CreateAccountWebhookRequest oBPv310CreateAccountWebhookRequest = {"type":"object","properties":{"http_method":{"type":"string"},"is_active":{"type":"string"},"http_protocol":{"type":"string"},"trigger_name":{"type":"string"},"account_id":{"type":"string"},"url":{"type":"string"}}}; // OBPv310CreateAccountWebhookRequest | Request body
+final CreateAccountWebhookRequest createAccountWebhookRequest = {"type":"object","properties":{"http_method":{"type":"string"},"is_active":{"type":"string"},"http_protocol":{"type":"string"},"trigger_name":{"type":"string"},"account_id":{"type":"string"},"url":{"type":"string"}}}; // CreateAccountWebhookRequest | Request body
 
 try {
-    final response = api.oBPv310CreateAccountWebhook(bankid, oBPv310CreateAccountWebhookRequest);
+    final response = api.createAccountWebhook(bankid, createAccountWebhookRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv310CreateAccountWebhook: $e\n');
+    print('Exception when calling BankApi->createAccountWebhook: $e\n');
 }
 ```
 
@@ -301,11 +72,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
- **oBPv310CreateAccountWebhookRequest** | [**OBPv310CreateAccountWebhookRequest**](OBPv310CreateAccountWebhookRequest.md)| Request body | 
+ **createAccountWebhookRequest** | [**CreateAccountWebhookRequest**](CreateAccountWebhookRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv310EnableDisableAccountWebhook200Response**](OBPv310EnableDisableAccountWebhook200Response.md)
+[**EnableDisableAccountWebhook200Response**](EnableDisableAccountWebhook200Response.md)
 
 ### Authorization
 
@@ -318,12 +89,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv310EnableDisableAccountWebhook**
-> OBPv310EnableDisableAccountWebhook200Response oBPv310EnableDisableAccountWebhook(bankid, oBPv310EnableDisableAccountWebhookRequest)
+# **createBank**
+> GetBank200Response createBank(createBankRequest)
 
-Enable/Disable an Account Webhook
+Create Bank
 
-<p>Enable/Disable an Account Webhook</p> <p>Webhooks are used to call external URLs when certain events happen.</p> <p>Account Webhooks focus on events around accounts.</p> <p>For instance, a webhook could be used to notify an external service if a balance changes on an account.</p> <p>This functionality is work in progress! Please note that only implemented trigger is: OnBalanceChange</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_webhook_id\"><strong>account_webhook_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#http_method\"><strong>http_method</strong></a>: GET</p> <p><a href=\"/glossary#http_protocol\"><strong>http_protocol</strong></a>:</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#trigger_name\"><strong>trigger_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> 
+<p>Create a new bank (Authenticated access).</p> <p>The user creating this will be automatically assigned the Role CanCreateEntitlementAtOneBank.<br /> Thus the User can manage the bank they create and assign Roles to other Users.</p> <pre><code>     Only SANDBOX mode (i.e. when connector=mapped in properties file) </code></pre> <p>The settlement accounts are automatically created by the system when the bank is created.<br /> Name and account id are created in accordance to the next rules:<br /> - Incoming account (name: Default incoming settlement account, Account ID: OBP_DEFAULT_INCOMING_ACCOUNT_ID, currency: EUR)<br /> - Outgoing account (name: Default outgoing settlement account, Account ID: OBP_DEFAULT_OUTGOING_ACCOUNT_ID, currency: EUR)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_code\"><strong>bank_code</strong></a>: CGHZ</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#bank_routings\">bank_routings</a>: bank routing in form of (scheme, address)</p> <p><a href=\"/glossary#full_name\">full_name</a>: full name string</p> <p><a href=\"/glossary#logo\">logo</a>: logo url</p> <p><a href=\"/glossary#website\">website</a>: <a href=\"http://www.openbankproject.com\">www.openbankproject.com</a></p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_code\"><strong>bank_code</strong></a>: CGHZ</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#bank_routings\"><strong>bank_routings</strong></a>: bank routing in form of (scheme, address)</p> <p><a href=\"/glossary#full_name\"><strong>full_name</strong></a>: full name string</p> <p><a href=\"/glossary#logo\"><strong>logo</strong></a>: logo url</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#website\"><strong>website</strong></a>: <a href=\"http://www.openbankproject.com\">www.openbankproject.com</a></p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> 
 
 ### Example
 ```dart
@@ -340,14 +111,13 @@ import 'package:obp_dart/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
 
 final api = ObpDart().getBankApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-final OBPv310EnableDisableAccountWebhookRequest oBPv310EnableDisableAccountWebhookRequest = {"type":"object","properties":{"account_webhook_id":{"type":"string"},"is_active":{"type":"string"}}}; // OBPv310EnableDisableAccountWebhookRequest | Request body
+final CreateBankRequest createBankRequest = {"type":"object","properties":{"bank_id":{"type":"string"},"full_name":{"type":"string"},"logo":{"type":"string"},"bank_code":{"type":"string"},"website":{"type":"string"},"bank_routings":{"type":"array","items":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}}}; // CreateBankRequest | Request body
 
 try {
-    final response = api.oBPv310EnableDisableAccountWebhook(bankid, oBPv310EnableDisableAccountWebhookRequest);
+    final response = api.createBank(createBankRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv310EnableDisableAccountWebhook: $e\n');
+    print('Exception when calling BankApi->createBank: $e\n');
 }
 ```
 
@@ -355,12 +125,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
- **oBPv310EnableDisableAccountWebhookRequest** | [**OBPv310EnableDisableAccountWebhookRequest**](OBPv310EnableDisableAccountWebhookRequest.md)| Request body | 
+ **createBankRequest** | [**CreateBankRequest**](CreateBankRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv310EnableDisableAccountWebhook200Response**](OBPv310EnableDisableAccountWebhook200Response.md)
+[**GetBank200Response**](GetBank200Response.md)
 
 ### Authorization
 
@@ -373,61 +142,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv310GetAccountWebhooks**
-> OBPv310GetAccountWebhooks200Response oBPv310GetAccountWebhooks(bankid)
-
-Get Account Webhooks
-
-<p>Get Account Webhooks.</p> <p>Possible custom URL parameters for pagination:</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>account_id=STRING (if null ignore)</li> <li>user_id=STRING (if null ignore)</li> </ul> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_webhook_id\"><strong>account_webhook_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#http_method\"><strong>http_method</strong></a>: GET</p> <p><a href=\"/glossary#http_protocol\"><strong>http_protocol</strong></a>:</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#trigger_name\"><strong>trigger_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#web_hooks\"><strong>web_hooks</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getBankApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-
-try {
-    final response = api.oBPv310GetAccountWebhooks(bankid);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv310GetAccountWebhooks: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
-
-### Return type
-
-[**OBPv310GetAccountWebhooks200Response**](OBPv310GetAccountWebhooks200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv400CreateBankAccountNotificationWebhook**
-> OBPv400CreateBankAccountNotificationWebhook200Response oBPv400CreateBankAccountNotificationWebhook(bankid, oBPv400CreateSystemAccountNotificationWebhookRequest)
+# **createBankAccountNotificationWebhook**
+> CreateBankAccountNotificationWebhook200Response createBankAccountNotificationWebhook(bankid, createSystemAccountNotificationWebhookRequest)
 
 Create bank level Account Notification Webhook
 
@@ -449,13 +165,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getBankApi();
 final String bankid = bankid_example; // String | The BANKID identifier
-final OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest = {type=object, properties={http_method={type=string}, http_protocol={type=string}, url={type=string}}}; // OBPv400CreateSystemAccountNotificationWebhookRequest | Request body
+final CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest = {type=object, properties={http_method={type=string}, http_protocol={type=string}, url={type=string}}}; // CreateSystemAccountNotificationWebhookRequest | Request body
 
 try {
-    final response = api.oBPv400CreateBankAccountNotificationWebhook(bankid, oBPv400CreateSystemAccountNotificationWebhookRequest);
+    final response = api.createBankAccountNotificationWebhook(bankid, createSystemAccountNotificationWebhookRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv400CreateBankAccountNotificationWebhook: $e\n');
+    print('Exception when calling BankApi->createBankAccountNotificationWebhook: $e\n');
 }
 ```
 
@@ -464,11 +180,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
- **oBPv400CreateSystemAccountNotificationWebhookRequest** | [**OBPv400CreateSystemAccountNotificationWebhookRequest**](OBPv400CreateSystemAccountNotificationWebhookRequest.md)| Request body | 
+ **createSystemAccountNotificationWebhookRequest** | [**CreateSystemAccountNotificationWebhookRequest**](CreateSystemAccountNotificationWebhookRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400CreateBankAccountNotificationWebhook200Response**](OBPv400CreateBankAccountNotificationWebhook200Response.md)
+[**CreateBankAccountNotificationWebhook200Response**](CreateBankAccountNotificationWebhook200Response.md)
 
 ### Authorization
 
@@ -481,8 +197,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateBankAttribute**
-> OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems oBPv400CreateBankAttribute(bankid, oBPv510UpdateAtmAttributeRequest)
+# **createBankAttribute**
+> GetBankAttributes200ResponseBankAttributesInner createBankAttribute(bankid, updateAtmAttributeRequest)
 
 Create Bank Attribute
 
@@ -504,13 +220,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getBankApi();
 final String bankid = bankid_example; // String | The BANKID identifier
-final OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // OBPv510UpdateAtmAttributeRequest | Request body
+final UpdateAtmAttributeRequest updateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // UpdateAtmAttributeRequest | Request body
 
 try {
-    final response = api.oBPv400CreateBankAttribute(bankid, oBPv510UpdateAtmAttributeRequest);
+    final response = api.createBankAttribute(bankid, updateAtmAttributeRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv400CreateBankAttribute: $e\n');
+    print('Exception when calling BankApi->createBankAttribute: $e\n');
 }
 ```
 
@@ -519,11 +235,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems**](OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems.md)
+[**GetBankAttributes200ResponseBankAttributesInner**](GetBankAttributes200ResponseBankAttributesInner.md)
 
 ### Authorization
 
@@ -536,8 +252,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateOrUpdateBankAttributeDefinition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateBankAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+# **createOrUpdateBankAttributeDefinition**
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateBankAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Bank Attribute Definition
 
@@ -559,13 +275,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getBankApi();
 final String bankid = bankid_example; // String | The BANKID identifier
-final OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}}; // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+final CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}}; // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 try {
-    final response = api.oBPv400CreateOrUpdateBankAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+    final response = api.createOrUpdateBankAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv400CreateOrUpdateBankAttributeDefinition: $e\n');
+    print('Exception when calling BankApi->createOrUpdateBankAttributeDefinition: $e\n');
 }
 ```
 
@@ -574,11 +290,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
- **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
+ **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -591,8 +307,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateSettlementAccount**
-> OBPv400CreateSettlementAccount200Response oBPv400CreateSettlementAccount(bankid, oBPv400CreateSettlementAccountRequest)
+# **createSettlementAccount**
+> CreateSettlementAccount200Response createSettlementAccount(bankid, createSettlementAccountRequest)
 
 Create Settlement Account
 
@@ -614,13 +330,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getBankApi();
 final String bankid = bankid_example; // String | The BANKID identifier
-final OBPv400CreateSettlementAccountRequest oBPv400CreateSettlementAccountRequest = {"type":"object","properties":{"account_routings":{"type":"array","items":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}},"payment_system":{"type":"string"},"label":{"type":"string"},"balance":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"branch_id":{"type":"string"},"user_id":{"type":"string"}}}; // OBPv400CreateSettlementAccountRequest | Request body
+final CreateSettlementAccountRequest createSettlementAccountRequest = {"type":"object","properties":{"account_routings":{"type":"array","items":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}},"payment_system":{"type":"string"},"label":{"type":"string"},"balance":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"branch_id":{"type":"string"},"user_id":{"type":"string"}}}; // CreateSettlementAccountRequest | Request body
 
 try {
-    final response = api.oBPv400CreateSettlementAccount(bankid, oBPv400CreateSettlementAccountRequest);
+    final response = api.createSettlementAccount(bankid, createSettlementAccountRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv400CreateSettlementAccount: $e\n');
+    print('Exception when calling BankApi->createSettlementAccount: $e\n');
 }
 ```
 
@@ -629,11 +345,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
- **oBPv400CreateSettlementAccountRequest** | [**OBPv400CreateSettlementAccountRequest**](OBPv400CreateSettlementAccountRequest.md)| Request body | 
+ **createSettlementAccountRequest** | [**CreateSettlementAccountRequest**](CreateSettlementAccountRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400CreateSettlementAccount200Response**](OBPv400CreateSettlementAccount200Response.md)
+[**CreateSettlementAccount200Response**](CreateSettlementAccount200Response.md)
 
 ### Authorization
 
@@ -646,8 +362,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateSystemAccountNotificationWebhook**
-> OBPv400CreateSystemAccountNotificationWebhook200Response oBPv400CreateSystemAccountNotificationWebhook(oBPv400CreateSystemAccountNotificationWebhookRequest)
+# **createSystemAccountNotificationWebhook**
+> CreateSystemAccountNotificationWebhook200Response createSystemAccountNotificationWebhook(createSystemAccountNotificationWebhookRequest)
 
 Create system level Account Notification Webhook
 
@@ -668,13 +384,13 @@ import 'package:obp_dart/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
 
 final api = ObpDart().getBankApi();
-final OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest = {"type":"object","properties":{"http_method":{"type":"string"},"http_protocol":{"type":"string"},"url":{"type":"string"}}}; // OBPv400CreateSystemAccountNotificationWebhookRequest | Request body
+final CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest = {"type":"object","properties":{"http_method":{"type":"string"},"http_protocol":{"type":"string"},"url":{"type":"string"}}}; // CreateSystemAccountNotificationWebhookRequest | Request body
 
 try {
-    final response = api.oBPv400CreateSystemAccountNotificationWebhook(oBPv400CreateSystemAccountNotificationWebhookRequest);
+    final response = api.createSystemAccountNotificationWebhook(createSystemAccountNotificationWebhookRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv400CreateSystemAccountNotificationWebhook: $e\n');
+    print('Exception when calling BankApi->createSystemAccountNotificationWebhook: $e\n');
 }
 ```
 
@@ -682,11 +398,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv400CreateSystemAccountNotificationWebhookRequest** | [**OBPv400CreateSystemAccountNotificationWebhookRequest**](OBPv400CreateSystemAccountNotificationWebhookRequest.md)| Request body | 
+ **createSystemAccountNotificationWebhookRequest** | [**CreateSystemAccountNotificationWebhookRequest**](CreateSystemAccountNotificationWebhookRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400CreateSystemAccountNotificationWebhook200Response**](OBPv400CreateSystemAccountNotificationWebhook200Response.md)
+[**CreateSystemAccountNotificationWebhook200Response**](CreateSystemAccountNotificationWebhook200Response.md)
 
 ### Authorization
 
@@ -699,8 +415,63 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteBankAttribute**
-> oBPv400DeleteBankAttribute(bankid, bankattributeid)
+# **createTransactionType**
+> CreateTransactionType200Response createTransactionType(bankid, getTransactionTypes200ResponseTransactionTypesInner)
+
+Create Transaction Type at bank
+
+<p>Create Transaction Types for the bank specified by BANK_ID:</p> <ul> <li>id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.</li> <li>bank_id : The bank that supports this TransactionType</li> <li>short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here</li> <li>summary : A succinct summary</li> <li>description : A longer description</li> <li>charge : The charge to the customer for each one of these</li> </ul> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bankid\"><strong>bankId</strong></a>:</p> <p><a href=\"/glossary#charge\"><strong>charge</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#shortcode\"><strong>shortCode</strong></a>:</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getBankApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final GetTransactionTypes200ResponseTransactionTypesInner getTransactionTypes200ResponseTransactionTypesInner = {"type":"object","properties":{"description":{"type":"string"},"short_code":{"type":"string"},"bank_id":{"type":"string"},"summary":{"type":"string"},"charge":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"id":{"type":"object","properties":{"value":{"type":"string"}}}}}; // GetTransactionTypes200ResponseTransactionTypesInner | Request body
+
+try {
+    final response = api.createTransactionType(bankid, getTransactionTypes200ResponseTransactionTypesInner);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling BankApi->createTransactionType: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **getTransactionTypes200ResponseTransactionTypesInner** | [**GetTransactionTypes200ResponseTransactionTypesInner**](GetTransactionTypes200ResponseTransactionTypesInner.md)| Request body | 
+
+### Return type
+
+[**CreateTransactionType200Response**](CreateTransactionType200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteBankAttribute**
+> deleteBankAttribute(bankid, bankattributeid)
 
 Delete Bank Attribute
 
@@ -725,9 +496,9 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String bankattributeid = bankattributeid_example; // String | The BANKATTRIBUTEID identifier
 
 try {
-    api.oBPv400DeleteBankAttribute(bankid, bankattributeid);
+    api.deleteBankAttribute(bankid, bankattributeid);
 } on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv400DeleteBankAttribute: $e\n');
+    print('Exception when calling BankApi->deleteBankAttribute: $e\n');
 }
 ```
 
@@ -753,8 +524,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteBankCascade**
-> oBPv400DeleteBankCascade(bankid)
+# **deleteBankCascade**
+> deleteBankCascade(bankid)
 
 Delete Bank Cascade
 
@@ -778,9 +549,9 @@ final api = ObpDart().getBankApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 
 try {
-    api.oBPv400DeleteBankCascade(bankid);
+    api.deleteBankCascade(bankid);
 } on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv400DeleteBankCascade: $e\n');
+    print('Exception when calling BankApi->deleteBankCascade: $e\n');
 }
 ```
 
@@ -805,8 +576,159 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetBankAttribute**
-> OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems oBPv400GetBankAttribute(bankid, bankattributeid)
+# **enableDisableAccountWebhook**
+> EnableDisableAccountWebhook200Response enableDisableAccountWebhook(bankid, enableDisableAccountWebhookRequest)
+
+Enable/Disable an Account Webhook
+
+<p>Enable/Disable an Account Webhook</p> <p>Webhooks are used to call external URLs when certain events happen.</p> <p>Account Webhooks focus on events around accounts.</p> <p>For instance, a webhook could be used to notify an external service if a balance changes on an account.</p> <p>This functionality is work in progress! Please note that only implemented trigger is: OnBalanceChange</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_webhook_id\"><strong>account_webhook_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#http_method\"><strong>http_method</strong></a>: GET</p> <p><a href=\"/glossary#http_protocol\"><strong>http_protocol</strong></a>:</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#trigger_name\"><strong>trigger_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getBankApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final EnableDisableAccountWebhookRequest enableDisableAccountWebhookRequest = {"type":"object","properties":{"account_webhook_id":{"type":"string"},"is_active":{"type":"string"}}}; // EnableDisableAccountWebhookRequest | Request body
+
+try {
+    final response = api.enableDisableAccountWebhook(bankid, enableDisableAccountWebhookRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling BankApi->enableDisableAccountWebhook: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **enableDisableAccountWebhookRequest** | [**EnableDisableAccountWebhookRequest**](EnableDisableAccountWebhookRequest.md)| Request body | 
+
+### Return type
+
+[**EnableDisableAccountWebhook200Response**](EnableDisableAccountWebhook200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccountWebhooks**
+> GetAccountWebhooks200Response getAccountWebhooks(bankid)
+
+Get Account Webhooks
+
+<p>Get Account Webhooks.</p> <p>Possible custom URL parameters for pagination:</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>account_id=STRING (if null ignore)</li> <li>user_id=STRING (if null ignore)</li> </ul> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_webhook_id\"><strong>account_webhook_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#http_method\"><strong>http_method</strong></a>: GET</p> <p><a href=\"/glossary#http_protocol\"><strong>http_protocol</strong></a>:</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#trigger_name\"><strong>trigger_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#web_hooks\"><strong>web_hooks</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getBankApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+
+try {
+    final response = api.getAccountWebhooks(bankid);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling BankApi->getAccountWebhooks: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+
+### Return type
+
+[**GetAccountWebhooks200Response**](GetAccountWebhooks200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getBank**
+> GetBank200Response getBank(bankid)
+
+Get Bank
+
+<p>Get the bank specified by BANK_ID<br /> Returns information about a single bank specified by BANK_ID including:</p> <ul> <li>bank_id: The unique identifier of this bank</li> <li>Short and full name of bank</li> <li>Logo URL</li> <li>Website</li> </ul> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_code\"><strong>bank_code</strong></a>: CGHZ</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#bank_routings\"><strong>bank_routings</strong></a>: bank routing in form of (scheme, address)</p> <p><a href=\"/glossary#full_name\"><strong>full_name</strong></a>: full name string</p> <p><a href=\"/glossary#logo\"><strong>logo</strong></a>: logo url</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#website\"><strong>website</strong></a>: <a href=\"http://www.openbankproject.com\">www.openbankproject.com</a></p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+
+final api = ObpDart().getBankApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+
+try {
+    final response = api.getBank(bankid);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling BankApi->getBank: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+
+### Return type
+
+[**GetBank200Response**](GetBank200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getBankAttribute**
+> GetBankAttributes200ResponseBankAttributesInner getBankAttribute(bankid, bankattributeid)
 
 Get Bank Attribute By BANK_ATTRIBUTE_ID
 
@@ -831,10 +753,10 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String bankattributeid = bankattributeid_example; // String | The BANKATTRIBUTEID identifier
 
 try {
-    final response = api.oBPv400GetBankAttribute(bankid, bankattributeid);
+    final response = api.getBankAttribute(bankid, bankattributeid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv400GetBankAttribute: $e\n');
+    print('Exception when calling BankApi->getBankAttribute: $e\n');
 }
 ```
 
@@ -847,7 +769,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems**](OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems.md)
+[**GetBankAttributes200ResponseBankAttributesInner**](GetBankAttributes200ResponseBankAttributesInner.md)
 
 ### Authorization
 
@@ -860,8 +782,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetBankAttributes**
-> OBPv400GetBankAttributes200Response oBPv400GetBankAttributes(bankid)
+# **getBankAttributes**
+> GetBankAttributes200Response getBankAttributes(bankid)
 
 Get Bank Attributes
 
@@ -885,10 +807,10 @@ final api = ObpDart().getBankApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 
 try {
-    final response = api.oBPv400GetBankAttributes(bankid);
+    final response = api.getBankAttributes(bankid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv400GetBankAttributes: $e\n');
+    print('Exception when calling BankApi->getBankAttributes: $e\n');
 }
 ```
 
@@ -900,7 +822,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetBankAttributes200Response**](OBPv400GetBankAttributes200Response.md)
+[**GetBankAttributes200Response**](GetBankAttributes200Response.md)
 
 ### Authorization
 
@@ -913,8 +835,135 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetSettlementAccounts**
-> OBPv400GetSettlementAccounts200Response oBPv400GetSettlementAccounts(bankid)
+# **getBanks**
+> GetBanks200Response getBanks()
+
+Get Banks
+
+<p>Get banks on this API instance<br /> Returns a list of banks supported on this server:</p> <ul> <li>bank_id used as parameter in URLs</li> <li>Short and full name of bank</li> <li>Logo URL</li> <li>Website</li> </ul> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_code\"><strong>bank_code</strong></a>: CGHZ</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#bank_routings\"><strong>bank_routings</strong></a>: bank routing in form of (scheme, address)</p> <p><a href=\"/glossary#banks\"><strong>banks</strong></a>:</p> <p><a href=\"/glossary#full_name\"><strong>full_name</strong></a>: full name string</p> <p><a href=\"/glossary#logo\"><strong>logo</strong></a>: logo url</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#website\"><strong>website</strong></a>: <a href=\"http://www.openbankproject.com\">www.openbankproject.com</a></p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+
+final api = ObpDart().getBankApi();
+
+try {
+    final response = api.getBanks();
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling BankApi->getBanks: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetBanks200Response**](GetBanks200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getBranch**
+> GetBranches200ResponseBranchesInner getBranch(bankid, branchid)
+
+Get Branch
+
+<p>Returns information about a single Branch specified by BANK_ID and BRANCH_ID including:</p> <ul> <li>Name</li> <li>Address</li> <li>Geo Location</li> <li>License the data under this endpoint is released under.</li> </ul> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">BRANCH_ID</a>: DERBY6</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accessiblefeatures\"><strong>accessibleFeatures</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#branch_routing\"><strong>branch_routing</strong></a>:</p> <p><a href=\"/glossary#branch_type\"><strong>branch_type</strong></a>:</p> <p><a href=\"/glossary#city\"><strong>city</strong></a>:</p> <p><a href=\"/glossary#closing_time\"><strong>closing_time</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#country_code\"><strong>country_code</strong></a>: 1254</p> <p><a href=\"/glossary#county\"><strong>county</strong></a>:</p> <p><a href=\"/glossary#drive_up\"><strong>drive_up</strong></a>:</p> <p><a href=\"/glossary#friday\"><strong>friday</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>is_accessible</strong></a>: false</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#license\"><strong>license</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_1</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_2</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_3</strong></a>:</p> <p><a href=\"/glossary#lobby\"><strong>lobby</strong></a>:</p> <p><a href=\"/glossary#location\"><strong>location</strong></a>:</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#meta\"><strong>meta</strong></a>:</p> <p><a href=\"/glossary#monday\"><strong>monday</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#opening_time\"><strong>opening_time</strong></a>:</p> <p><a href=\"/glossary#phone_number\"><strong>phone_number</strong></a>:</p> <p><a href=\"/glossary#postcode\"><strong>postcode</strong></a>:</p> <p><a href=\"/glossary#saturday\"><strong>saturday</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#state\"><strong>state</strong></a>:</p> <p><a href=\"/glossary#sunday\"><strong>sunday</strong></a>:</p> <p><a href=\"/glossary#thursday\"><strong>thursday</strong></a>:</p> <p><a href=\"/glossary#tuesday\"><strong>tuesday</strong></a>:</p> <p><a href=\"/glossary#wednesday\"><strong>wednesday</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+
+final api = ObpDart().getBankApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+final String branchid = branchid_example; // String | The BRANCHID identifier
+
+try {
+    final response = api.getBranch(bankid, branchid);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling BankApi->getBranch: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+ **branchid** | **String**| The BRANCHID identifier | 
+
+### Return type
+
+[**GetBranches200ResponseBranchesInner**](GetBranches200ResponseBranchesInner.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getBranches**
+> GetBranches200Response getBranches(bankid)
+
+Get Branches for a Bank
+
+<p>Returns information about branches for a single bank specified by BANK_ID including:</p> <ul> <li>Name</li> <li>Address</li> <li>Geo Location</li> <li>License the data under this endpoint is released under</li> <li>Structured opening hours</li> <li>Accessible flag</li> <li>Branch Type</li> <li>More Info</li> </ul> <p>Pagination:</p> <p>By default, 50 records are returned.</p> <p>You can use the url query parameters <em>limit</em> and <em>offset</em> for pagination<br /> You can also use the follow url query parameters:</p> <ul> <li> <p>city - string, find Branches those in this city, optional</p> </li> <li> <p>withinMetersOf - number, find Branches within given meters distance, optional</p> </li> <li>nearLatitude - number, a position of latitude value, cooperate with withMetersOf do query filter, optional</li> <li>nearLongitude - number, a position of longitude value, cooperate with withMetersOf do query filter, optional</li> </ul> <p>note: withinMetersOf, nearLatitude and nearLongitude either all empty or all have value.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accessiblefeatures\"><strong>accessibleFeatures</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#branch_routing\"><strong>branch_routing</strong></a>:</p> <p><a href=\"/glossary#branch_type\"><strong>branch_type</strong></a>:</p> <p><a href=\"/glossary#branches\"><strong>branches</strong></a>:</p> <p><a href=\"/glossary#city\"><strong>city</strong></a>:</p> <p><a href=\"/glossary#closing_time\"><strong>closing_time</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#country_code\"><strong>country_code</strong></a>: 1254</p> <p><a href=\"/glossary#county\"><strong>county</strong></a>:</p> <p><a href=\"/glossary#drive_up\"><strong>drive_up</strong></a>:</p> <p><a href=\"/glossary#friday\"><strong>friday</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>is_accessible</strong></a>: false</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#license\"><strong>license</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_1</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_2</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_3</strong></a>:</p> <p><a href=\"/glossary#lobby\"><strong>lobby</strong></a>:</p> <p><a href=\"/glossary#location\"><strong>location</strong></a>:</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#meta\"><strong>meta</strong></a>:</p> <p><a href=\"/glossary#monday\"><strong>monday</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#opening_time\"><strong>opening_time</strong></a>:</p> <p><a href=\"/glossary#phone_number\"><strong>phone_number</strong></a>:</p> <p><a href=\"/glossary#postcode\"><strong>postcode</strong></a>:</p> <p><a href=\"/glossary#saturday\"><strong>saturday</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#state\"><strong>state</strong></a>:</p> <p><a href=\"/glossary#sunday\"><strong>sunday</strong></a>:</p> <p><a href=\"/glossary#thursday\"><strong>thursday</strong></a>:</p> <p><a href=\"/glossary#tuesday\"><strong>tuesday</strong></a>:</p> <p><a href=\"/glossary#wednesday\"><strong>wednesday</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+
+final api = ObpDart().getBankApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+
+try {
+    final response = api.getBranches(bankid);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling BankApi->getBranches: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+
+### Return type
+
+[**GetBranches200Response**](GetBranches200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getSettlementAccounts**
+> GetSettlementAccounts200Response getSettlementAccounts(bankid)
 
 Get Settlement accounts at Bank
 
@@ -938,10 +987,10 @@ final api = ObpDart().getBankApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 
 try {
-    final response = api.oBPv400GetSettlementAccounts(bankid);
+    final response = api.getSettlementAccounts(bankid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv400GetSettlementAccounts: $e\n');
+    print('Exception when calling BankApi->getSettlementAccounts: $e\n');
 }
 ```
 
@@ -953,7 +1002,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetSettlementAccounts200Response**](OBPv400GetSettlementAccounts200Response.md)
+[**GetSettlementAccounts200Response**](GetSettlementAccounts200Response.md)
 
 ### Authorization
 
@@ -966,8 +1015,147 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateBankAttribute**
-> OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400UpdateBankAttribute(bankid, bankattributeid, oBPv510UpdateAtmAttributeRequest)
+# **getTransactionRequestTypesSupportedByBank**
+> GetTransactionRequestTypesSupportedByBank200Response getTransactionRequestTypesSupportedByBank(bankid)
+
+Get Transaction Request Types at Bank
+
+<p>Get the list of the Transaction Request Types supported by the bank.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>transaction_request_type</strong></a>: SEPA</p> <p><a href=\"/glossary#transaction_request_types\"><strong>transaction_request_types</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+
+final api = ObpDart().getBankApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+
+try {
+    final response = api.getTransactionRequestTypesSupportedByBank(bankid);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling BankApi->getTransactionRequestTypesSupportedByBank: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+
+### Return type
+
+[**GetTransactionRequestTypesSupportedByBank200Response**](GetTransactionRequestTypesSupportedByBank200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getTransactionTypes**
+> GetTransactionTypes200Response getTransactionTypes(bankid)
+
+Get Transaction Types at Bank
+
+<p>Get Transaction Types for the bank specified by BANK_ID:</p> <p>Lists the possible Transaction Types available at the bank (as opposed to Transaction Request Types which are the possible ways Transactions can be created by this API Server).</p> <ul> <li>id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.</li> <li>bank_id : The bank that supports this TransactionType</li> <li>short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here</li> <li>summary : A succinct summary</li> <li>description : A longer description</li> <li>charge : The charge to the customer for each one of these</li> </ul> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#charge\"><strong>charge</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#short_code\"><strong>short_code</strong></a>:</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#transaction_types\"><strong>transaction_types</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+
+final api = ObpDart().getBankApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+
+try {
+    final response = api.getTransactionTypes(bankid);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling BankApi->getTransactionTypes: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+
+### Return type
+
+[**GetTransactionTypes200Response**](GetTransactionTypes200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateBank**
+> UpdateBank200Response updateBank(updateBankRequest)
+
+Update Bank
+
+<p>Update an existing bank (Authenticated access).</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_code\"><strong>bank_code</strong></a>: CGHZ</p> <p><a href=\"/glossary#bank_routings\"><strong>bank_routings</strong></a>: bank routing in form of (scheme, address)</p> <p><a href=\"/glossary#full_name\"><strong>full_name</strong></a>: full name string</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#logo\"><strong>logo</strong></a>: logo url</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#website\"><strong>website</strong></a>: <a href=\"http://www.openbankproject.com\">www.openbankproject.com</a></p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getBankApi();
+final UpdateBankRequest updateBankRequest = {"type":"object","properties":{"full_name":{"type":"string"},"logo":{"type":"string"},"id":{"type":"string"},"bank_code":{"type":"string"},"website":{"type":"string"},"bank_routings":{"type":"array","items":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}}}; // UpdateBankRequest | Request body
+
+try {
+    final response = api.updateBank(updateBankRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling BankApi->updateBank: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **updateBankRequest** | [**UpdateBankRequest**](UpdateBankRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateBank200Response**](UpdateBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateBankAttribute**
+> CreateOrUpdateTransactionRequestAttributeDefinitionRequest updateBankAttribute(bankid, bankattributeid, updateAtmAttributeRequest)
 
 Update Bank Attribute
 
@@ -990,13 +1178,13 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getBankApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String bankattributeid = bankattributeid_example; // String | The BANKATTRIBUTEID identifier
-final OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // OBPv510UpdateAtmAttributeRequest | Request body
+final UpdateAtmAttributeRequest updateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // UpdateAtmAttributeRequest | Request body
 
 try {
-    final response = api.oBPv400UpdateBankAttribute(bankid, bankattributeid, oBPv510UpdateAtmAttributeRequest);
+    final response = api.updateBankAttribute(bankid, bankattributeid, updateAtmAttributeRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv400UpdateBankAttribute: $e\n');
+    print('Exception when calling BankApi->updateBankAttribute: $e\n');
 }
 ```
 
@@ -1006,11 +1194,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
  **bankattributeid** | **String**| The BANKATTRIBUTEID identifier | 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
+[**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
 
 ### Authorization
 
@@ -1019,194 +1207,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv500UpdateBank**
-> OBPv500UpdateBank200Response oBPv500UpdateBank(oBPv500UpdateBankRequest)
-
-Update Bank
-
-<p>Update an existing bank (Authenticated access).</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_code\"><strong>bank_code</strong></a>: CGHZ</p> <p><a href=\"/glossary#bank_routings\"><strong>bank_routings</strong></a>: bank routing in form of (scheme, address)</p> <p><a href=\"/glossary#full_name\"><strong>full_name</strong></a>: full name string</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#logo\"><strong>logo</strong></a>: logo url</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#website\"><strong>website</strong></a>: <a href=\"http://www.openbankproject.com\">www.openbankproject.com</a></p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getBankApi();
-final OBPv500UpdateBankRequest oBPv500UpdateBankRequest = {"type":"object","properties":{"full_name":{"type":"string"},"logo":{"type":"string"},"id":{"type":"string"},"bank_code":{"type":"string"},"website":{"type":"string"},"bank_routings":{"type":"array","items":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}}}; // OBPv500UpdateBankRequest | Request body
-
-try {
-    final response = api.oBPv500UpdateBank(oBPv500UpdateBankRequest);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv500UpdateBank: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **oBPv500UpdateBankRequest** | [**OBPv500UpdateBankRequest**](OBPv500UpdateBankRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv500UpdateBank200Response**](OBPv500UpdateBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv600CreateBank**
-> OBPv600GetBank200Response oBPv600CreateBank(oBPv600CreateBankRequest)
-
-Create Bank
-
-<p>Create a new bank (Authenticated access).</p> <p>The user creating this will be automatically assigned the Role CanCreateEntitlementAtOneBank.<br /> Thus the User can manage the bank they create and assign Roles to other Users.</p> <pre><code>     Only SANDBOX mode (i.e. when connector=mapped in properties file) </code></pre> <p>The settlement accounts are automatically created by the system when the bank is created.<br /> Name and account id are created in accordance to the next rules:<br /> - Incoming account (name: Default incoming settlement account, Account ID: OBP_DEFAULT_INCOMING_ACCOUNT_ID, currency: EUR)<br /> - Outgoing account (name: Default outgoing settlement account, Account ID: OBP_DEFAULT_OUTGOING_ACCOUNT_ID, currency: EUR)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_code\"><strong>bank_code</strong></a>: CGHZ</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#bank_routings\">bank_routings</a>: bank routing in form of (scheme, address)</p> <p><a href=\"/glossary#full_name\">full_name</a>: full name string</p> <p><a href=\"/glossary#logo\">logo</a>: logo url</p> <p><a href=\"/glossary#website\">website</a>: <a href=\"http://www.openbankproject.com\">www.openbankproject.com</a></p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_code\"><strong>bank_code</strong></a>: CGHZ</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#bank_routings\"><strong>bank_routings</strong></a>: bank routing in form of (scheme, address)</p> <p><a href=\"/glossary#full_name\"><strong>full_name</strong></a>: full name string</p> <p><a href=\"/glossary#logo\"><strong>logo</strong></a>: logo url</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#website\"><strong>website</strong></a>: <a href=\"http://www.openbankproject.com\">www.openbankproject.com</a></p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getBankApi();
-final OBPv600CreateBankRequest oBPv600CreateBankRequest = {"type":"object","properties":{"bank_id":{"type":"string"},"full_name":{"type":"string"},"logo":{"type":"string"},"bank_code":{"type":"string"},"website":{"type":"string"},"bank_routings":{"type":"array","items":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}}}; // OBPv600CreateBankRequest | Request body
-
-try {
-    final response = api.oBPv600CreateBank(oBPv600CreateBankRequest);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv600CreateBank: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **oBPv600CreateBankRequest** | [**OBPv600CreateBankRequest**](OBPv600CreateBankRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv600GetBank200Response**](OBPv600GetBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv600GetBank**
-> OBPv600GetBank200Response oBPv600GetBank(bankid)
-
-Get Bank
-
-<p>Get the bank specified by BANK_ID<br /> Returns information about a single bank specified by BANK_ID including:</p> <ul> <li>bank_id: The unique identifier of this bank</li> <li>Short and full name of bank</li> <li>Logo URL</li> <li>Website</li> </ul> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_code\"><strong>bank_code</strong></a>: CGHZ</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#bank_routings\"><strong>bank_routings</strong></a>: bank routing in form of (scheme, address)</p> <p><a href=\"/glossary#full_name\"><strong>full_name</strong></a>: full name string</p> <p><a href=\"/glossary#logo\"><strong>logo</strong></a>: logo url</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#website\"><strong>website</strong></a>: <a href=\"http://www.openbankproject.com\">www.openbankproject.com</a></p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-
-final api = ObpDart().getBankApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-
-try {
-    final response = api.oBPv600GetBank(bankid);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv600GetBank: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
-
-### Return type
-
-[**OBPv600GetBank200Response**](OBPv600GetBank200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv600GetBanks**
-> OBPv600GetBanks200Response oBPv600GetBanks()
-
-Get Banks
-
-<p>Get banks on this API instance<br /> Returns a list of banks supported on this server:</p> <ul> <li>bank_id used as parameter in URLs</li> <li>Short and full name of bank</li> <li>Logo URL</li> <li>Website</li> </ul> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_code\"><strong>bank_code</strong></a>: CGHZ</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#bank_routings\"><strong>bank_routings</strong></a>: bank routing in form of (scheme, address)</p> <p><a href=\"/glossary#banks\"><strong>banks</strong></a>:</p> <p><a href=\"/glossary#full_name\"><strong>full_name</strong></a>: full name string</p> <p><a href=\"/glossary#logo\"><strong>logo</strong></a>: logo url</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#website\"><strong>website</strong></a>: <a href=\"http://www.openbankproject.com\">www.openbankproject.com</a></p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-
-final api = ObpDart().getBankApi();
-
-try {
-    final response = api.oBPv600GetBanks();
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling BankApi->oBPv600GetBanks: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv600GetBanks200Response**](OBPv600GetBanks200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

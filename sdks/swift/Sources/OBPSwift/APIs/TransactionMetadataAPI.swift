@@ -16,12 +16,12 @@ open class TransactionMetadataAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
-     - parameter oBPv400DeleteSystemLevelEndpointTag200Response: (body) Request body 
+     - parameter getTransactionTypes200ResponseTransactionTypesInnerId: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+     - returns: GetTagsForViewOnAccount200ResponseTagsInner
      */
-    open class func oBPv121AddCommentForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv400DeleteSystemLevelEndpointTag200Response: OBPv400DeleteSystemLevelEndpointTag200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems {
-        return try await oBPv121AddCommentForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, oBPv400DeleteSystemLevelEndpointTag200Response: oBPv400DeleteSystemLevelEndpointTag200Response, apiConfiguration: apiConfiguration).execute().body
+    open class func addCommentForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, getTransactionTypes200ResponseTransactionTypesInnerId: GetTransactionTypes200ResponseTransactionTypesInnerId, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetTagsForViewOnAccount200ResponseTagsInner {
+        return try await addCommentForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, getTransactionTypes200ResponseTransactionTypesInnerId: getTransactionTypes200ResponseTransactionTypesInnerId, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -35,17 +35,17 @@ open class TransactionMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
-     - parameter oBPv400DeleteSystemLevelEndpointTag200Response: (body) Request body 
+     - parameter getTransactionTypes200ResponseTransactionTypesInnerId: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> 
+     - returns: RequestBuilder<GetTagsForViewOnAccount200ResponseTagsInner> 
      */
-    open class func oBPv121AddCommentForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv400DeleteSystemLevelEndpointTag200Response: OBPv400DeleteSystemLevelEndpointTag200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> {
+    open class func addCommentForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, getTransactionTypes200ResponseTransactionTypesInnerId: GetTransactionTypes200ResponseTransactionTypesInnerId, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetTagsForViewOnAccount200ResponseTagsInner> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -60,7 +60,7 @@ open class TransactionMetadataAPI {
         let transactionidPostEscape = transactionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{transactionid}", with: transactionidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400DeleteSystemLevelEndpointTag200Response, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: getTransactionTypes200ResponseTransactionTypesInnerId, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -70,7 +70,7 @@ open class TransactionMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetTagsForViewOnAccount200ResponseTagsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -82,12 +82,12 @@ open class TransactionMetadataAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
-     - parameter oBPv121AddImageForViewOnTransactionRequest: (body) Request body 
+     - parameter addImageForViewOnTransactionRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems
+     - returns: GetTransactionByIdForBankAccount200ResponseMetadataImagesInner
      */
-    open class func oBPv121AddImageForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv121AddImageForViewOnTransactionRequest: OBPv121AddImageForViewOnTransactionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems {
-        return try await oBPv121AddImageForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, oBPv121AddImageForViewOnTransactionRequest: oBPv121AddImageForViewOnTransactionRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func addImageForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, addImageForViewOnTransactionRequest: AddImageForViewOnTransactionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetTransactionByIdForBankAccount200ResponseMetadataImagesInner {
+        return try await addImageForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, addImageForViewOnTransactionRequest: addImageForViewOnTransactionRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -101,17 +101,17 @@ open class TransactionMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
-     - parameter oBPv121AddImageForViewOnTransactionRequest: (body) Request body 
+     - parameter addImageForViewOnTransactionRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems> 
+     - returns: RequestBuilder<GetTransactionByIdForBankAccount200ResponseMetadataImagesInner> 
      */
-    open class func oBPv121AddImageForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv121AddImageForViewOnTransactionRequest: OBPv121AddImageForViewOnTransactionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems> {
+    open class func addImageForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, addImageForViewOnTransactionRequest: AddImageForViewOnTransactionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetTransactionByIdForBankAccount200ResponseMetadataImagesInner> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -126,7 +126,7 @@ open class TransactionMetadataAPI {
         let transactionidPostEscape = transactionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{transactionid}", with: transactionidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121AddImageForViewOnTransactionRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: addImageForViewOnTransactionRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -136,7 +136,7 @@ open class TransactionMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetTransactionByIdForBankAccount200ResponseMetadataImagesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -148,12 +148,12 @@ open class TransactionMetadataAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
-     - parameter oBPv400DeleteSystemLevelEndpointTag200Response: (body) Request body 
+     - parameter getTransactionTypes200ResponseTransactionTypesInnerId: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+     - returns: GetTagsForViewOnAccount200ResponseTagsInner
      */
-    open class func oBPv121AddTagForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv400DeleteSystemLevelEndpointTag200Response: OBPv400DeleteSystemLevelEndpointTag200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems {
-        return try await oBPv121AddTagForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, oBPv400DeleteSystemLevelEndpointTag200Response: oBPv400DeleteSystemLevelEndpointTag200Response, apiConfiguration: apiConfiguration).execute().body
+    open class func addTagForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, getTransactionTypes200ResponseTransactionTypesInnerId: GetTransactionTypes200ResponseTransactionTypesInnerId, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetTagsForViewOnAccount200ResponseTagsInner {
+        return try await addTagForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, getTransactionTypes200ResponseTransactionTypesInnerId: getTransactionTypes200ResponseTransactionTypesInnerId, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -167,17 +167,17 @@ open class TransactionMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
-     - parameter oBPv400DeleteSystemLevelEndpointTag200Response: (body) Request body 
+     - parameter getTransactionTypes200ResponseTransactionTypesInnerId: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> 
+     - returns: RequestBuilder<GetTagsForViewOnAccount200ResponseTagsInner> 
      */
-    open class func oBPv121AddTagForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv400DeleteSystemLevelEndpointTag200Response: OBPv400DeleteSystemLevelEndpointTag200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> {
+    open class func addTagForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, getTransactionTypes200ResponseTransactionTypesInnerId: GetTransactionTypes200ResponseTransactionTypesInnerId, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetTagsForViewOnAccount200ResponseTagsInner> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -192,7 +192,7 @@ open class TransactionMetadataAPI {
         let transactionidPostEscape = transactionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{transactionid}", with: transactionidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400DeleteSystemLevelEndpointTag200Response, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: getTransactionTypes200ResponseTransactionTypesInnerId, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -202,7 +202,7 @@ open class TransactionMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetTagsForViewOnAccount200ResponseTagsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -214,12 +214,12 @@ open class TransactionMetadataAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
-     - parameter oBPv121GetTransactionNarrative200Response: (body) Request body 
+     - parameter getTransactionNarrative200Response: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
+     - returns: UpdateTransactionNarrative200Response
      */
-    open class func oBPv121AddTransactionNarrative(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv121GetTransactionNarrative200Response: OBPv121GetTransactionNarrative200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121AddTransactionNarrativeWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, oBPv121GetTransactionNarrative200Response: oBPv121GetTransactionNarrative200Response, apiConfiguration: apiConfiguration).execute().body
+    open class func addTransactionNarrative(bankid: String, accountid: String, viewid: String, transactionid: String, getTransactionNarrative200Response: GetTransactionNarrative200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await addTransactionNarrativeWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, getTransactionNarrative200Response: getTransactionNarrative200Response, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -233,17 +233,17 @@ open class TransactionMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
-     - parameter oBPv121GetTransactionNarrative200Response: (body) Request body 
+     - parameter getTransactionNarrative200Response: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
      */
-    open class func oBPv121AddTransactionNarrativeWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv121GetTransactionNarrative200Response: OBPv121GetTransactionNarrative200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
+    open class func addTransactionNarrativeWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, getTransactionNarrative200Response: GetTransactionNarrative200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -258,7 +258,7 @@ open class TransactionMetadataAPI {
         let transactionidPostEscape = transactionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{transactionid}", with: transactionidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121GetTransactionNarrative200Response, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: getTransactionNarrative200Response, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -268,7 +268,7 @@ open class TransactionMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -280,12 +280,12 @@ open class TransactionMetadataAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
-     - parameter oBPv121UpdateWhereTagForViewOnTransactionRequest: (body) Request body 
+     - parameter updateWhereTagForViewOnTransactionRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
+     - returns: UpdateTransactionNarrative200Response
      */
-    open class func oBPv121AddWhereTagForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv121UpdateWhereTagForViewOnTransactionRequest: OBPv121UpdateWhereTagForViewOnTransactionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121AddWhereTagForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest: oBPv121UpdateWhereTagForViewOnTransactionRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func addWhereTagForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, updateWhereTagForViewOnTransactionRequest: UpdateWhereTagForViewOnTransactionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await addWhereTagForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, updateWhereTagForViewOnTransactionRequest: updateWhereTagForViewOnTransactionRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -299,17 +299,17 @@ open class TransactionMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
-     - parameter oBPv121UpdateWhereTagForViewOnTransactionRequest: (body) Request body 
+     - parameter updateWhereTagForViewOnTransactionRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
      */
-    open class func oBPv121AddWhereTagForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv121UpdateWhereTagForViewOnTransactionRequest: OBPv121UpdateWhereTagForViewOnTransactionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
+    open class func addWhereTagForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, updateWhereTagForViewOnTransactionRequest: UpdateWhereTagForViewOnTransactionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -324,7 +324,7 @@ open class TransactionMetadataAPI {
         let transactionidPostEscape = transactionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{transactionid}", with: transactionidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121UpdateWhereTagForViewOnTransactionRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateWhereTagForViewOnTransactionRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -334,7 +334,7 @@ open class TransactionMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -350,8 +350,8 @@ open class TransactionMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv121DeleteCommentForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, commentid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv121DeleteCommentForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, commentid: commentid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteCommentForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, commentid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteCommentForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, commentid: commentid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -365,7 +365,7 @@ open class TransactionMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
@@ -375,7 +375,7 @@ open class TransactionMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv121DeleteCommentForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, commentid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteCommentForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, commentid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -419,8 +419,8 @@ open class TransactionMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv121DeleteImageForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, imageid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv121DeleteImageForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, imageid: imageid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteImageForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, imageid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteImageForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, imageid: imageid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -434,7 +434,7 @@ open class TransactionMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
@@ -444,7 +444,7 @@ open class TransactionMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv121DeleteImageForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, imageid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteImageForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, imageid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -488,8 +488,8 @@ open class TransactionMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv121DeleteTagForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, tagid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv121DeleteTagForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, tagid: tagid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteTagForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, tagid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteTagForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, tagid: tagid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -504,7 +504,7 @@ open class TransactionMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv121DeleteTagForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, tagid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteTagForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, tagid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -547,8 +547,8 @@ open class TransactionMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv121DeleteTransactionNarrative(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv121DeleteTransactionNarrativeWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteTransactionNarrative(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteTransactionNarrativeWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -562,7 +562,7 @@ open class TransactionMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
@@ -571,7 +571,7 @@ open class TransactionMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv121DeleteTransactionNarrativeWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteTransactionNarrativeWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -611,8 +611,8 @@ open class TransactionMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv121DeleteWhereTagForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv121DeleteWhereTagForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteWhereTagForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteWhereTagForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -626,7 +626,7 @@ open class TransactionMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
@@ -635,7 +635,7 @@ open class TransactionMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv121DeleteWhereTagForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteWhereTagForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -673,10 +673,10 @@ open class TransactionMetadataAPI {
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121GetCommentsForViewOnTransaction200Response
+     - returns: GetCommentsForViewOnTransaction200Response
      */
-    open class func oBPv121GetCommentsForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121GetCommentsForViewOnTransaction200Response {
-        return try await oBPv121GetCommentsForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, apiConfiguration: apiConfiguration).execute().body
+    open class func getCommentsForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCommentsForViewOnTransaction200Response {
+        return try await getCommentsForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -690,16 +690,16 @@ open class TransactionMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121GetCommentsForViewOnTransaction200Response> 
+     - returns: RequestBuilder<GetCommentsForViewOnTransaction200Response> 
      */
-    open class func oBPv121GetCommentsForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121GetCommentsForViewOnTransaction200Response> {
+    open class func getCommentsForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCommentsForViewOnTransaction200Response> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -724,7 +724,7 @@ open class TransactionMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv121GetCommentsForViewOnTransaction200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetCommentsForViewOnTransaction200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -737,10 +737,10 @@ open class TransactionMetadataAPI {
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121GetImagesForViewOnTransaction200Response
+     - returns: GetImagesForViewOnTransaction200Response
      */
-    open class func oBPv121GetImagesForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121GetImagesForViewOnTransaction200Response {
-        return try await oBPv121GetImagesForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, apiConfiguration: apiConfiguration).execute().body
+    open class func getImagesForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetImagesForViewOnTransaction200Response {
+        return try await getImagesForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -754,16 +754,16 @@ open class TransactionMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121GetImagesForViewOnTransaction200Response> 
+     - returns: RequestBuilder<GetImagesForViewOnTransaction200Response> 
      */
-    open class func oBPv121GetImagesForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121GetImagesForViewOnTransaction200Response> {
+    open class func getImagesForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetImagesForViewOnTransaction200Response> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -788,7 +788,7 @@ open class TransactionMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv121GetImagesForViewOnTransaction200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetImagesForViewOnTransaction200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -801,10 +801,10 @@ open class TransactionMetadataAPI {
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+     - returns: GetTagsForViewOnAccount200ResponseTagsInner
      */
-    open class func oBPv121GetTagsForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems {
-        return try await oBPv121GetTagsForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, apiConfiguration: apiConfiguration).execute().body
+    open class func getTagsForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetTagsForViewOnAccount200ResponseTagsInner {
+        return try await getTagsForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -816,9 +816,9 @@ open class TransactionMetadataAPI {
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> 
+     - returns: RequestBuilder<GetTagsForViewOnAccount200ResponseTagsInner> 
      */
-    open class func oBPv121GetTagsForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> {
+    open class func getTagsForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetTagsForViewOnAccount200ResponseTagsInner> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -843,7 +843,7 @@ open class TransactionMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetTagsForViewOnAccount200ResponseTagsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
     }
@@ -856,10 +856,10 @@ open class TransactionMetadataAPI {
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121GetTransactionNarrative200Response
+     - returns: GetTransactionNarrative200Response
      */
-    open class func oBPv121GetTransactionNarrative(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121GetTransactionNarrative200Response {
-        return try await oBPv121GetTransactionNarrativeWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, apiConfiguration: apiConfiguration).execute().body
+    open class func getTransactionNarrative(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetTransactionNarrative200Response {
+        return try await getTransactionNarrativeWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -871,9 +871,9 @@ open class TransactionMetadataAPI {
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121GetTransactionNarrative200Response> 
+     - returns: RequestBuilder<GetTransactionNarrative200Response> 
      */
-    open class func oBPv121GetTransactionNarrativeWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121GetTransactionNarrative200Response> {
+    open class func getTransactionNarrativeWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetTransactionNarrative200Response> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -898,7 +898,7 @@ open class TransactionMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv121GetTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
     }
@@ -911,10 +911,10 @@ open class TransactionMetadataAPI {
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121GetWhereTagForViewOnTransaction200Response
+     - returns: GetWhereTagForViewOnTransaction200Response
      */
-    open class func oBPv121GetWhereTagForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121GetWhereTagForViewOnTransaction200Response {
-        return try await oBPv121GetWhereTagForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, apiConfiguration: apiConfiguration).execute().body
+    open class func getWhereTagForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetWhereTagForViewOnTransaction200Response {
+        return try await getWhereTagForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -926,9 +926,9 @@ open class TransactionMetadataAPI {
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121GetWhereTagForViewOnTransaction200Response> 
+     - returns: RequestBuilder<GetWhereTagForViewOnTransaction200Response> 
      */
-    open class func oBPv121GetWhereTagForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121GetWhereTagForViewOnTransaction200Response> {
+    open class func getWhereTagForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetWhereTagForViewOnTransaction200Response> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -953,7 +953,7 @@ open class TransactionMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv121GetWhereTagForViewOnTransaction200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetWhereTagForViewOnTransaction200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
     }
@@ -965,12 +965,12 @@ open class TransactionMetadataAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
-     - parameter oBPv121GetTransactionNarrative200Response: (body) Request body 
+     - parameter getTransactionNarrative200Response: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
+     - returns: UpdateTransactionNarrative200Response
      */
-    open class func oBPv121UpdateTransactionNarrative(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv121GetTransactionNarrative200Response: OBPv121GetTransactionNarrative200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121UpdateTransactionNarrativeWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, oBPv121GetTransactionNarrative200Response: oBPv121GetTransactionNarrative200Response, apiConfiguration: apiConfiguration).execute().body
+    open class func updateTransactionNarrative(bankid: String, accountid: String, viewid: String, transactionid: String, getTransactionNarrative200Response: GetTransactionNarrative200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await updateTransactionNarrativeWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, getTransactionNarrative200Response: getTransactionNarrative200Response, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -981,11 +981,11 @@ open class TransactionMetadataAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
-     - parameter oBPv121GetTransactionNarrative200Response: (body) Request body 
+     - parameter getTransactionNarrative200Response: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
      */
-    open class func oBPv121UpdateTransactionNarrativeWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv121GetTransactionNarrative200Response: OBPv121GetTransactionNarrative200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
+    open class func updateTransactionNarrativeWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, getTransactionNarrative200Response: GetTransactionNarrative200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1000,7 +1000,7 @@ open class TransactionMetadataAPI {
         let transactionidPostEscape = transactionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{transactionid}", with: transactionidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121GetTransactionNarrative200Response, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: getTransactionNarrative200Response, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -1010,7 +1010,7 @@ open class TransactionMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
     }
@@ -1022,12 +1022,12 @@ open class TransactionMetadataAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
-     - parameter oBPv121UpdateWhereTagForViewOnTransactionRequest: (body) Request body 
+     - parameter updateWhereTagForViewOnTransactionRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
+     - returns: UpdateTransactionNarrative200Response
      */
-    open class func oBPv121UpdateWhereTagForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv121UpdateWhereTagForViewOnTransactionRequest: OBPv121UpdateWhereTagForViewOnTransactionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121UpdateWhereTagForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest: oBPv121UpdateWhereTagForViewOnTransactionRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateWhereTagForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, updateWhereTagForViewOnTransactionRequest: UpdateWhereTagForViewOnTransactionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await updateWhereTagForViewOnTransactionWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, transactionid: transactionid, updateWhereTagForViewOnTransactionRequest: updateWhereTagForViewOnTransactionRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -1041,17 +1041,17 @@ open class TransactionMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
-     - parameter oBPv121UpdateWhereTagForViewOnTransactionRequest: (body) Request body 
+     - parameter updateWhereTagForViewOnTransactionRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
      */
-    open class func oBPv121UpdateWhereTagForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv121UpdateWhereTagForViewOnTransactionRequest: OBPv121UpdateWhereTagForViewOnTransactionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
+    open class func updateWhereTagForViewOnTransactionWithRequestBuilder(bankid: String, accountid: String, viewid: String, transactionid: String, updateWhereTagForViewOnTransactionRequest: UpdateWhereTagForViewOnTransactionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1066,7 +1066,7 @@ open class TransactionMetadataAPI {
         let transactionidPostEscape = transactionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{transactionid}", with: transactionidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121UpdateWhereTagForViewOnTransactionRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateWhereTagForViewOnTransactionRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -1076,7 +1076,7 @@ open class TransactionMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

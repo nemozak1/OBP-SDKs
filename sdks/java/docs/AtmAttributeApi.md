@@ -1,25 +1,25 @@
 # AtmAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv510CreateAtmAttribute**](AtmAttributeApi.md#oBPv510CreateAtmAttribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute |
-| [**oBPv510CreateAtmAttributeWithHttpInfo**](AtmAttributeApi.md#oBPv510CreateAtmAttributeWithHttpInfo) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute |
-| [**oBPv510DeleteAtmAttribute**](AtmAttributeApi.md#oBPv510DeleteAtmAttribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute |
-| [**oBPv510DeleteAtmAttributeWithHttpInfo**](AtmAttributeApi.md#oBPv510DeleteAtmAttributeWithHttpInfo) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute |
-| [**oBPv510GetAtmAttribute**](AtmAttributeApi.md#oBPv510GetAtmAttribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID |
-| [**oBPv510GetAtmAttributeWithHttpInfo**](AtmAttributeApi.md#oBPv510GetAtmAttributeWithHttpInfo) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID |
-| [**oBPv510GetAtmAttributes**](AtmAttributeApi.md#oBPv510GetAtmAttributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes |
-| [**oBPv510GetAtmAttributesWithHttpInfo**](AtmAttributeApi.md#oBPv510GetAtmAttributesWithHttpInfo) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes |
-| [**oBPv510UpdateAtmAttribute**](AtmAttributeApi.md#oBPv510UpdateAtmAttribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute |
-| [**oBPv510UpdateAtmAttributeWithHttpInfo**](AtmAttributeApi.md#oBPv510UpdateAtmAttributeWithHttpInfo) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute |
+| [**createAtmAttribute**](AtmAttributeApi.md#createAtmAttribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute |
+| [**createAtmAttributeWithHttpInfo**](AtmAttributeApi.md#createAtmAttributeWithHttpInfo) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute |
+| [**deleteAtmAttribute**](AtmAttributeApi.md#deleteAtmAttribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute |
+| [**deleteAtmAttributeWithHttpInfo**](AtmAttributeApi.md#deleteAtmAttributeWithHttpInfo) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute |
+| [**getAtmAttribute**](AtmAttributeApi.md#getAtmAttribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID |
+| [**getAtmAttributeWithHttpInfo**](AtmAttributeApi.md#getAtmAttributeWithHttpInfo) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID |
+| [**getAtmAttributes**](AtmAttributeApi.md#getAtmAttributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes |
+| [**getAtmAttributesWithHttpInfo**](AtmAttributeApi.md#getAtmAttributesWithHttpInfo) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes |
+| [**updateAtmAttribute**](AtmAttributeApi.md#updateAtmAttribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute |
+| [**updateAtmAttributeWithHttpInfo**](AtmAttributeApi.md#updateAtmAttributeWithHttpInfo) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute |
 
 
 
-## oBPv510CreateAtmAttribute
+## createAtmAttribute
 
-> OBPv510GetAtmAttribute200Response oBPv510CreateAtmAttribute(bankid, atmid, obPv510UpdateAtmAttributeRequest)
+> GetAtmAttribute200Response createAtmAttribute(bankid, atmid, updateAtmAttributeRequest)
 
 Create ATM Attribute
 
@@ -39,7 +39,7 @@ import com.openbankproject.api.AtmAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -60,12 +60,12 @@ public class Example {
         AtmAttributeApi apiInstance = new AtmAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String atmid = "atmid_example"; // String | The ATMID identifier
-        OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest = new OBPv510UpdateAtmAttributeRequest(); // OBPv510UpdateAtmAttributeRequest | Request body
+        UpdateAtmAttributeRequest updateAtmAttributeRequest = new UpdateAtmAttributeRequest(); // UpdateAtmAttributeRequest | Request body
         try {
-            OBPv510GetAtmAttribute200Response result = apiInstance.oBPv510CreateAtmAttribute(bankid, atmid, obPv510UpdateAtmAttributeRequest);
+            GetAtmAttribute200Response result = apiInstance.createAtmAttribute(bankid, atmid, updateAtmAttributeRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AtmAttributeApi#oBPv510CreateAtmAttribute");
+            System.err.println("Exception when calling AtmAttributeApi#createAtmAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -82,11 +82,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **atmid** | **String**| The ATMID identifier | |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 
 ### Authorization
@@ -105,9 +105,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510CreateAtmAttributeWithHttpInfo
+## createAtmAttributeWithHttpInfo
 
-> ApiResponse<OBPv510GetAtmAttribute200Response> oBPv510CreateAtmAttribute oBPv510CreateAtmAttributeWithHttpInfo(bankid, atmid, obPv510UpdateAtmAttributeRequest)
+> ApiResponse<GetAtmAttribute200Response> createAtmAttribute createAtmAttributeWithHttpInfo(bankid, atmid, updateAtmAttributeRequest)
 
 Create ATM Attribute
 
@@ -128,7 +128,7 @@ import com.openbankproject.api.AtmAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -149,14 +149,14 @@ public class Example {
         AtmAttributeApi apiInstance = new AtmAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String atmid = "atmid_example"; // String | The ATMID identifier
-        OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest = new OBPv510UpdateAtmAttributeRequest(); // OBPv510UpdateAtmAttributeRequest | Request body
+        UpdateAtmAttributeRequest updateAtmAttributeRequest = new UpdateAtmAttributeRequest(); // UpdateAtmAttributeRequest | Request body
         try {
-            ApiResponse<OBPv510GetAtmAttribute200Response> response = apiInstance.oBPv510CreateAtmAttributeWithHttpInfo(bankid, atmid, obPv510UpdateAtmAttributeRequest);
+            ApiResponse<GetAtmAttribute200Response> response = apiInstance.createAtmAttributeWithHttpInfo(bankid, atmid, updateAtmAttributeRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AtmAttributeApi#oBPv510CreateAtmAttribute");
+            System.err.println("Exception when calling AtmAttributeApi#createAtmAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -173,11 +173,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **atmid** | **String**| The ATMID identifier | |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)>
+ApiResponse<[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)>
 
 
 ### Authorization
@@ -197,9 +197,9 @@ ApiResponse<[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Res
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510DeleteAtmAttribute
+## deleteAtmAttribute
 
-> void oBPv510DeleteAtmAttribute(bankid, atmid, atmattributeid)
+> void deleteAtmAttribute(bankid, atmid, atmattributeid)
 
 Delete ATM Attribute
 
@@ -219,7 +219,7 @@ import com.openbankproject.api.AtmAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -242,9 +242,9 @@ public class Example {
         String atmid = "atmid_example"; // String | The ATMID identifier
         String atmattributeid = "atmattributeid_example"; // String | The ATMATTRIBUTEID identifier
         try {
-            apiInstance.oBPv510DeleteAtmAttribute(bankid, atmid, atmattributeid);
+            apiInstance.deleteAtmAttribute(bankid, atmid, atmattributeid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AtmAttributeApi#oBPv510DeleteAtmAttribute");
+            System.err.println("Exception when calling AtmAttributeApi#deleteAtmAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -284,9 +284,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510DeleteAtmAttributeWithHttpInfo
+## deleteAtmAttributeWithHttpInfo
 
-> ApiResponse<Void> oBPv510DeleteAtmAttribute oBPv510DeleteAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid)
+> ApiResponse<Void> deleteAtmAttribute deleteAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid)
 
 Delete ATM Attribute
 
@@ -307,7 +307,7 @@ import com.openbankproject.api.AtmAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -330,11 +330,11 @@ public class Example {
         String atmid = "atmid_example"; // String | The ATMID identifier
         String atmattributeid = "atmattributeid_example"; // String | The ATMATTRIBUTEID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv510DeleteAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid);
+            ApiResponse<Void> response = apiInstance.deleteAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AtmAttributeApi#oBPv510DeleteAtmAttribute");
+            System.err.println("Exception when calling AtmAttributeApi#deleteAtmAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -375,9 +375,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510GetAtmAttribute
+## getAtmAttribute
 
-> OBPv510GetAtmAttribute200Response oBPv510GetAtmAttribute(bankid, atmid, atmattributeid)
+> GetAtmAttribute200Response getAtmAttribute(bankid, atmid, atmattributeid)
 
 Get ATM Attribute By ATM_ATTRIBUTE_ID
 
@@ -397,7 +397,7 @@ import com.openbankproject.api.AtmAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -420,10 +420,10 @@ public class Example {
         String atmid = "atmid_example"; // String | The ATMID identifier
         String atmattributeid = "atmattributeid_example"; // String | The ATMATTRIBUTEID identifier
         try {
-            OBPv510GetAtmAttribute200Response result = apiInstance.oBPv510GetAtmAttribute(bankid, atmid, atmattributeid);
+            GetAtmAttribute200Response result = apiInstance.getAtmAttribute(bankid, atmid, atmattributeid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AtmAttributeApi#oBPv510GetAtmAttribute");
+            System.err.println("Exception when calling AtmAttributeApi#getAtmAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -444,7 +444,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 
 ### Authorization
@@ -463,9 +463,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510GetAtmAttributeWithHttpInfo
+## getAtmAttributeWithHttpInfo
 
-> ApiResponse<OBPv510GetAtmAttribute200Response> oBPv510GetAtmAttribute oBPv510GetAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid)
+> ApiResponse<GetAtmAttribute200Response> getAtmAttribute getAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid)
 
 Get ATM Attribute By ATM_ATTRIBUTE_ID
 
@@ -486,7 +486,7 @@ import com.openbankproject.api.AtmAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -509,12 +509,12 @@ public class Example {
         String atmid = "atmid_example"; // String | The ATMID identifier
         String atmattributeid = "atmattributeid_example"; // String | The ATMATTRIBUTEID identifier
         try {
-            ApiResponse<OBPv510GetAtmAttribute200Response> response = apiInstance.oBPv510GetAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid);
+            ApiResponse<GetAtmAttribute200Response> response = apiInstance.getAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AtmAttributeApi#oBPv510GetAtmAttribute");
+            System.err.println("Exception when calling AtmAttributeApi#getAtmAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -535,7 +535,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)>
+ApiResponse<[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)>
 
 
 ### Authorization
@@ -555,9 +555,9 @@ ApiResponse<[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Res
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510GetAtmAttributes
+## getAtmAttributes
 
-> OBPv510GetAtmAttributes200Response oBPv510GetAtmAttributes(bankid, atmid)
+> GetAtmAttributes200Response getAtmAttributes(bankid, atmid)
 
 Get ATM Attributes
 
@@ -577,7 +577,7 @@ import com.openbankproject.api.AtmAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -599,10 +599,10 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String atmid = "atmid_example"; // String | The ATMID identifier
         try {
-            OBPv510GetAtmAttributes200Response result = apiInstance.oBPv510GetAtmAttributes(bankid, atmid);
+            GetAtmAttributes200Response result = apiInstance.getAtmAttributes(bankid, atmid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AtmAttributeApi#oBPv510GetAtmAttributes");
+            System.err.println("Exception when calling AtmAttributeApi#getAtmAttributes");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -622,7 +622,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv510GetAtmAttributes200Response**](OBPv510GetAtmAttributes200Response.md)
+[**GetAtmAttributes200Response**](GetAtmAttributes200Response.md)
 
 
 ### Authorization
@@ -641,9 +641,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510GetAtmAttributesWithHttpInfo
+## getAtmAttributesWithHttpInfo
 
-> ApiResponse<OBPv510GetAtmAttributes200Response> oBPv510GetAtmAttributes oBPv510GetAtmAttributesWithHttpInfo(bankid, atmid)
+> ApiResponse<GetAtmAttributes200Response> getAtmAttributes getAtmAttributesWithHttpInfo(bankid, atmid)
 
 Get ATM Attributes
 
@@ -664,7 +664,7 @@ import com.openbankproject.api.AtmAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -686,12 +686,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String atmid = "atmid_example"; // String | The ATMID identifier
         try {
-            ApiResponse<OBPv510GetAtmAttributes200Response> response = apiInstance.oBPv510GetAtmAttributesWithHttpInfo(bankid, atmid);
+            ApiResponse<GetAtmAttributes200Response> response = apiInstance.getAtmAttributesWithHttpInfo(bankid, atmid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AtmAttributeApi#oBPv510GetAtmAttributes");
+            System.err.println("Exception when calling AtmAttributeApi#getAtmAttributes");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -711,7 +711,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv510GetAtmAttributes200Response**](OBPv510GetAtmAttributes200Response.md)>
+ApiResponse<[**GetAtmAttributes200Response**](GetAtmAttributes200Response.md)>
 
 
 ### Authorization
@@ -731,9 +731,9 @@ ApiResponse<[**OBPv510GetAtmAttributes200Response**](OBPv510GetAtmAttributes200R
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510UpdateAtmAttribute
+## updateAtmAttribute
 
-> OBPv510GetAtmAttribute200Response oBPv510UpdateAtmAttribute(bankid, atmid, atmattributeid, obPv510UpdateAtmAttributeRequest)
+> GetAtmAttribute200Response updateAtmAttribute(bankid, atmid, atmattributeid, updateAtmAttributeRequest)
 
 Update ATM Attribute
 
@@ -753,7 +753,7 @@ import com.openbankproject.api.AtmAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -775,12 +775,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String atmid = "atmid_example"; // String | The ATMID identifier
         String atmattributeid = "atmattributeid_example"; // String | The ATMATTRIBUTEID identifier
-        OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest = new OBPv510UpdateAtmAttributeRequest(); // OBPv510UpdateAtmAttributeRequest | Request body
+        UpdateAtmAttributeRequest updateAtmAttributeRequest = new UpdateAtmAttributeRequest(); // UpdateAtmAttributeRequest | Request body
         try {
-            OBPv510GetAtmAttribute200Response result = apiInstance.oBPv510UpdateAtmAttribute(bankid, atmid, atmattributeid, obPv510UpdateAtmAttributeRequest);
+            GetAtmAttribute200Response result = apiInstance.updateAtmAttribute(bankid, atmid, atmattributeid, updateAtmAttributeRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AtmAttributeApi#oBPv510UpdateAtmAttribute");
+            System.err.println("Exception when calling AtmAttributeApi#updateAtmAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -798,11 +798,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **atmid** | **String**| The ATMID identifier | |
 | **atmattributeid** | **String**| The ATMATTRIBUTEID identifier | |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 
 ### Authorization
@@ -821,9 +821,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510UpdateAtmAttributeWithHttpInfo
+## updateAtmAttributeWithHttpInfo
 
-> ApiResponse<OBPv510GetAtmAttribute200Response> oBPv510UpdateAtmAttribute oBPv510UpdateAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid, obPv510UpdateAtmAttributeRequest)
+> ApiResponse<GetAtmAttribute200Response> updateAtmAttribute updateAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid, updateAtmAttributeRequest)
 
 Update ATM Attribute
 
@@ -844,7 +844,7 @@ import com.openbankproject.api.AtmAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -866,14 +866,14 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String atmid = "atmid_example"; // String | The ATMID identifier
         String atmattributeid = "atmattributeid_example"; // String | The ATMATTRIBUTEID identifier
-        OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest = new OBPv510UpdateAtmAttributeRequest(); // OBPv510UpdateAtmAttributeRequest | Request body
+        UpdateAtmAttributeRequest updateAtmAttributeRequest = new UpdateAtmAttributeRequest(); // UpdateAtmAttributeRequest | Request body
         try {
-            ApiResponse<OBPv510GetAtmAttribute200Response> response = apiInstance.oBPv510UpdateAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid, obPv510UpdateAtmAttributeRequest);
+            ApiResponse<GetAtmAttribute200Response> response = apiInstance.updateAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid, updateAtmAttributeRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AtmAttributeApi#oBPv510UpdateAtmAttribute");
+            System.err.println("Exception when calling AtmAttributeApi#updateAtmAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -891,11 +891,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **atmid** | **String**| The ATMID identifier | |
 | **atmattributeid** | **String**| The ATMATTRIBUTEID identifier | |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)>
+ApiResponse<[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)>
 
 
 ### Authorization

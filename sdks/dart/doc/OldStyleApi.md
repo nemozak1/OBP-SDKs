@@ -5,15 +5,15 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv200ElasticSearchMetrics**](OldStyleApi.md#obpv200elasticsearchmetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
+[**elasticSearchMetrics**](OldStyleApi.md#elasticsearchmetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
 
 
-# **oBPv200ElasticSearchMetrics**
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage oBPv200ElasticSearchMetrics()
+# **elasticSearchMetrics**
+> JsonObject elasticSearchMetrics()
 
 Search API Metrics via Elasticsearch
 
@@ -36,10 +36,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getOldStyleApi();
 
 try {
-    final response = api.oBPv200ElasticSearchMetrics();
+    final response = api.elasticSearchMetrics();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling OldStyleApi->oBPv200ElasticSearchMetrics: $e\n');
+    print('Exception when calling OldStyleApi->elasticSearchMetrics: $e\n');
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+[**JsonObject**](JsonObject.md)
 
 ### Authorization
 

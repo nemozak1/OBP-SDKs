@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,14 +15,14 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv310CheckFundsAvailable200Response,
+  CheckFundsAvailable200Response,
 } from '../models/index';
 import {
-    OBPv310CheckFundsAvailable200ResponseFromJSON,
-    OBPv310CheckFundsAvailable200ResponseToJSON,
+    CheckFundsAvailable200ResponseFromJSON,
+    CheckFundsAvailable200ResponseToJSON,
 } from '../models/index';
 
-export interface OBPv310CheckFundsAvailableRequest {
+export interface CheckFundsAvailableRequest {
     bankid: string;
     accountid: string;
     viewid: string;
@@ -34,27 +34,27 @@ export interface OBPv310CheckFundsAvailableRequest {
 export class ConfirmationOfFundsServicePIISApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv310CheckFundsAvailable without sending the request
+     * Creates request options for checkFundsAvailable without sending the request
      */
-    async oBPv310CheckFundsAvailableRequestOpts(requestParameters: OBPv310CheckFundsAvailableRequest): Promise<runtime.RequestOpts> {
+    async checkFundsAvailableRequestOpts(requestParameters: CheckFundsAvailableRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv310CheckFundsAvailable().'
+                'Required parameter "bankid" was null or undefined when calling checkFundsAvailable().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv310CheckFundsAvailable().'
+                'Required parameter "accountid" was null or undefined when calling checkFundsAvailable().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv310CheckFundsAvailable().'
+                'Required parameter "viewid" was null or undefined when calling checkFundsAvailable().'
             );
         }
 
@@ -72,7 +72,7 @@ export class ConfirmationOfFundsServicePIISApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -93,19 +93,19 @@ export class ConfirmationOfFundsServicePIISApi extends runtime.BaseAPI {
      * <p>Check Available Funds<br /> Mandatory URL parameters:</p> <ul> <li>amount=NUMBER</li> <li>currency=STRING</li> </ul> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#answer\"><strong>answer</strong></a>:</p> <p><a href=\"/glossary#available_funds_request_id\"><strong>available_funds_request_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> 
      * Check Available Funds
      */
-    async oBPv310CheckFundsAvailableRaw(requestParameters: OBPv310CheckFundsAvailableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv310CheckFundsAvailable200Response>> {
-        const requestOptions = await this.oBPv310CheckFundsAvailableRequestOpts(requestParameters);
+    async checkFundsAvailableRaw(requestParameters: CheckFundsAvailableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CheckFundsAvailable200Response>> {
+        const requestOptions = await this.checkFundsAvailableRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv310CheckFundsAvailable200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => CheckFundsAvailable200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Check Available Funds<br /> Mandatory URL parameters:</p> <ul> <li>amount=NUMBER</li> <li>currency=STRING</li> </ul> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#answer\"><strong>answer</strong></a>:</p> <p><a href=\"/glossary#available_funds_request_id\"><strong>available_funds_request_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> 
      * Check Available Funds
      */
-    async oBPv310CheckFundsAvailable(requestParameters: OBPv310CheckFundsAvailableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv310CheckFundsAvailable200Response> {
-        const response = await this.oBPv310CheckFundsAvailableRaw(requestParameters, initOverrides);
+    async checkFundsAvailable(requestParameters: CheckFundsAvailableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CheckFundsAvailable200Response> {
+        const response = await this.checkFundsAvailableRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

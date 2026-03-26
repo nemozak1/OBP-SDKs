@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -23,11 +23,11 @@ module OpenBankProject
     # <p>Create ATM Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
     # @param bankid [String] The BANKID identifier
     # @param atmid [String] The ATMID identifier
-    # @param obpv510_update_atm_attribute_request [OBPv510UpdateAtmAttributeRequest] Request body
+    # @param update_atm_attribute_request [UpdateAtmAttributeRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv510GetAtmAttribute200Response]
-    def o_bpv5_1_0_create_atm_attribute(bankid, atmid, obpv510_update_atm_attribute_request, opts = {})
-      data, _status_code, _headers = o_bpv5_1_0_create_atm_attribute_with_http_info(bankid, atmid, obpv510_update_atm_attribute_request, opts)
+    # @return [GetAtmAttribute200Response]
+    def create_atm_attribute(bankid, atmid, update_atm_attribute_request, opts = {})
+      data, _status_code, _headers = create_atm_attribute_with_http_info(bankid, atmid, update_atm_attribute_request, opts)
       data
     end
 
@@ -35,24 +35,24 @@ module OpenBankProject
     # &lt;p&gt;Create ATM Attribute&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attribute_id&lt;/strong&gt;&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param atmid [String] The ATMID identifier
-    # @param obpv510_update_atm_attribute_request [OBPv510UpdateAtmAttributeRequest] Request body
+    # @param update_atm_attribute_request [UpdateAtmAttributeRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv510GetAtmAttribute200Response, Integer, Hash)>] OBPv510GetAtmAttribute200Response data, response status code and response headers
-    def o_bpv5_1_0_create_atm_attribute_with_http_info(bankid, atmid, obpv510_update_atm_attribute_request, opts = {})
+    # @return [Array<(GetAtmAttribute200Response, Integer, Hash)>] GetAtmAttribute200Response data, response status code and response headers
+    def create_atm_attribute_with_http_info(bankid, atmid, update_atm_attribute_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ATMAttributeApi.o_bpv5_1_0_create_atm_attribute ...'
+        @api_client.config.logger.debug 'Calling API: ATMAttributeApi.create_atm_attribute ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ATMAttributeApi.o_bpv5_1_0_create_atm_attribute"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ATMAttributeApi.create_atm_attribute"
       end
       # verify the required parameter 'atmid' is set
       if @api_client.config.client_side_validation && atmid.nil?
-        fail ArgumentError, "Missing the required parameter 'atmid' when calling ATMAttributeApi.o_bpv5_1_0_create_atm_attribute"
+        fail ArgumentError, "Missing the required parameter 'atmid' when calling ATMAttributeApi.create_atm_attribute"
       end
-      # verify the required parameter 'obpv510_update_atm_attribute_request' is set
-      if @api_client.config.client_side_validation && obpv510_update_atm_attribute_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv510_update_atm_attribute_request' when calling ATMAttributeApi.o_bpv5_1_0_create_atm_attribute"
+      # verify the required parameter 'update_atm_attribute_request' is set
+      if @api_client.config.client_side_validation && update_atm_attribute_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_atm_attribute_request' when calling ATMAttributeApi.create_atm_attribute"
       end
       # resource path
       local_var_path = '/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'atmid' + '}', CGI.escape(atmid.to_s))
@@ -74,16 +74,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv510_update_atm_attribute_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_atm_attribute_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv510GetAtmAttribute200Response'
+      return_type = opts[:debug_return_type] || 'GetAtmAttribute200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ATMAttributeApi.o_bpv5_1_0_create_atm_attribute",
+        :operation => :"ATMAttributeApi.create_atm_attribute",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -94,7 +94,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ATMAttributeApi#o_bpv5_1_0_create_atm_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ATMAttributeApi#create_atm_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -106,8 +106,8 @@ module OpenBankProject
     # @param atmattributeid [String] The ATMATTRIBUTEID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv5_1_0_delete_atm_attribute(bankid, atmid, atmattributeid, opts = {})
-      o_bpv5_1_0_delete_atm_attribute_with_http_info(bankid, atmid, atmattributeid, opts)
+    def delete_atm_attribute(bankid, atmid, atmattributeid, opts = {})
+      delete_atm_attribute_with_http_info(bankid, atmid, atmattributeid, opts)
       nil
     end
 
@@ -118,21 +118,21 @@ module OpenBankProject
     # @param atmattributeid [String] The ATMATTRIBUTEID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv5_1_0_delete_atm_attribute_with_http_info(bankid, atmid, atmattributeid, opts = {})
+    def delete_atm_attribute_with_http_info(bankid, atmid, atmattributeid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ATMAttributeApi.o_bpv5_1_0_delete_atm_attribute ...'
+        @api_client.config.logger.debug 'Calling API: ATMAttributeApi.delete_atm_attribute ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ATMAttributeApi.o_bpv5_1_0_delete_atm_attribute"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ATMAttributeApi.delete_atm_attribute"
       end
       # verify the required parameter 'atmid' is set
       if @api_client.config.client_side_validation && atmid.nil?
-        fail ArgumentError, "Missing the required parameter 'atmid' when calling ATMAttributeApi.o_bpv5_1_0_delete_atm_attribute"
+        fail ArgumentError, "Missing the required parameter 'atmid' when calling ATMAttributeApi.delete_atm_attribute"
       end
       # verify the required parameter 'atmattributeid' is set
       if @api_client.config.client_side_validation && atmattributeid.nil?
-        fail ArgumentError, "Missing the required parameter 'atmattributeid' when calling ATMAttributeApi.o_bpv5_1_0_delete_atm_attribute"
+        fail ArgumentError, "Missing the required parameter 'atmattributeid' when calling ATMAttributeApi.delete_atm_attribute"
       end
       # resource path
       local_var_path = '/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'atmid' + '}', CGI.escape(atmid.to_s)).sub('{' + 'atmattributeid' + '}', CGI.escape(atmattributeid.to_s))
@@ -156,7 +156,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ATMAttributeApi.o_bpv5_1_0_delete_atm_attribute",
+        :operation => :"ATMAttributeApi.delete_atm_attribute",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -167,7 +167,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ATMAttributeApi#o_bpv5_1_0_delete_atm_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ATMAttributeApi#delete_atm_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -178,9 +178,9 @@ module OpenBankProject
     # @param atmid [String] The ATMID identifier
     # @param atmattributeid [String] The ATMATTRIBUTEID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv510GetAtmAttribute200Response]
-    def o_bpv5_1_0_get_atm_attribute(bankid, atmid, atmattributeid, opts = {})
-      data, _status_code, _headers = o_bpv5_1_0_get_atm_attribute_with_http_info(bankid, atmid, atmattributeid, opts)
+    # @return [GetAtmAttribute200Response]
+    def get_atm_attribute(bankid, atmid, atmattributeid, opts = {})
+      data, _status_code, _headers = get_atm_attribute_with_http_info(bankid, atmid, atmattributeid, opts)
       data
     end
 
@@ -190,22 +190,22 @@ module OpenBankProject
     # @param atmid [String] The ATMID identifier
     # @param atmattributeid [String] The ATMATTRIBUTEID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv510GetAtmAttribute200Response, Integer, Hash)>] OBPv510GetAtmAttribute200Response data, response status code and response headers
-    def o_bpv5_1_0_get_atm_attribute_with_http_info(bankid, atmid, atmattributeid, opts = {})
+    # @return [Array<(GetAtmAttribute200Response, Integer, Hash)>] GetAtmAttribute200Response data, response status code and response headers
+    def get_atm_attribute_with_http_info(bankid, atmid, atmattributeid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ATMAttributeApi.o_bpv5_1_0_get_atm_attribute ...'
+        @api_client.config.logger.debug 'Calling API: ATMAttributeApi.get_atm_attribute ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ATMAttributeApi.o_bpv5_1_0_get_atm_attribute"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ATMAttributeApi.get_atm_attribute"
       end
       # verify the required parameter 'atmid' is set
       if @api_client.config.client_side_validation && atmid.nil?
-        fail ArgumentError, "Missing the required parameter 'atmid' when calling ATMAttributeApi.o_bpv5_1_0_get_atm_attribute"
+        fail ArgumentError, "Missing the required parameter 'atmid' when calling ATMAttributeApi.get_atm_attribute"
       end
       # verify the required parameter 'atmattributeid' is set
       if @api_client.config.client_side_validation && atmattributeid.nil?
-        fail ArgumentError, "Missing the required parameter 'atmattributeid' when calling ATMAttributeApi.o_bpv5_1_0_get_atm_attribute"
+        fail ArgumentError, "Missing the required parameter 'atmattributeid' when calling ATMAttributeApi.get_atm_attribute"
       end
       # resource path
       local_var_path = '/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'atmid' + '}', CGI.escape(atmid.to_s)).sub('{' + 'atmattributeid' + '}', CGI.escape(atmattributeid.to_s))
@@ -225,13 +225,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv510GetAtmAttribute200Response'
+      return_type = opts[:debug_return_type] || 'GetAtmAttribute200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ATMAttributeApi.o_bpv5_1_0_get_atm_attribute",
+        :operation => :"ATMAttributeApi.get_atm_attribute",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -242,7 +242,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ATMAttributeApi#o_bpv5_1_0_get_atm_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ATMAttributeApi#get_atm_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -252,9 +252,9 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param atmid [String] The ATMID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv510GetAtmAttributes200Response]
-    def o_bpv5_1_0_get_atm_attributes(bankid, atmid, opts = {})
-      data, _status_code, _headers = o_bpv5_1_0_get_atm_attributes_with_http_info(bankid, atmid, opts)
+    # @return [GetAtmAttributes200Response]
+    def get_atm_attributes(bankid, atmid, opts = {})
+      data, _status_code, _headers = get_atm_attributes_with_http_info(bankid, atmid, opts)
       data
     end
 
@@ -263,18 +263,18 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param atmid [String] The ATMID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv510GetAtmAttributes200Response, Integer, Hash)>] OBPv510GetAtmAttributes200Response data, response status code and response headers
-    def o_bpv5_1_0_get_atm_attributes_with_http_info(bankid, atmid, opts = {})
+    # @return [Array<(GetAtmAttributes200Response, Integer, Hash)>] GetAtmAttributes200Response data, response status code and response headers
+    def get_atm_attributes_with_http_info(bankid, atmid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ATMAttributeApi.o_bpv5_1_0_get_atm_attributes ...'
+        @api_client.config.logger.debug 'Calling API: ATMAttributeApi.get_atm_attributes ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ATMAttributeApi.o_bpv5_1_0_get_atm_attributes"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ATMAttributeApi.get_atm_attributes"
       end
       # verify the required parameter 'atmid' is set
       if @api_client.config.client_side_validation && atmid.nil?
-        fail ArgumentError, "Missing the required parameter 'atmid' when calling ATMAttributeApi.o_bpv5_1_0_get_atm_attributes"
+        fail ArgumentError, "Missing the required parameter 'atmid' when calling ATMAttributeApi.get_atm_attributes"
       end
       # resource path
       local_var_path = '/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'atmid' + '}', CGI.escape(atmid.to_s))
@@ -294,13 +294,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv510GetAtmAttributes200Response'
+      return_type = opts[:debug_return_type] || 'GetAtmAttributes200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ATMAttributeApi.o_bpv5_1_0_get_atm_attributes",
+        :operation => :"ATMAttributeApi.get_atm_attributes",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -311,7 +311,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ATMAttributeApi#o_bpv5_1_0_get_atm_attributes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ATMAttributeApi#get_atm_attributes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -321,11 +321,11 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param atmid [String] The ATMID identifier
     # @param atmattributeid [String] The ATMATTRIBUTEID identifier
-    # @param obpv510_update_atm_attribute_request [OBPv510UpdateAtmAttributeRequest] Request body
+    # @param update_atm_attribute_request [UpdateAtmAttributeRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv510GetAtmAttribute200Response]
-    def o_bpv5_1_0_update_atm_attribute(bankid, atmid, atmattributeid, obpv510_update_atm_attribute_request, opts = {})
-      data, _status_code, _headers = o_bpv5_1_0_update_atm_attribute_with_http_info(bankid, atmid, atmattributeid, obpv510_update_atm_attribute_request, opts)
+    # @return [GetAtmAttribute200Response]
+    def update_atm_attribute(bankid, atmid, atmattributeid, update_atm_attribute_request, opts = {})
+      data, _status_code, _headers = update_atm_attribute_with_http_info(bankid, atmid, atmattributeid, update_atm_attribute_request, opts)
       data
     end
 
@@ -334,28 +334,28 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param atmid [String] The ATMID identifier
     # @param atmattributeid [String] The ATMATTRIBUTEID identifier
-    # @param obpv510_update_atm_attribute_request [OBPv510UpdateAtmAttributeRequest] Request body
+    # @param update_atm_attribute_request [UpdateAtmAttributeRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv510GetAtmAttribute200Response, Integer, Hash)>] OBPv510GetAtmAttribute200Response data, response status code and response headers
-    def o_bpv5_1_0_update_atm_attribute_with_http_info(bankid, atmid, atmattributeid, obpv510_update_atm_attribute_request, opts = {})
+    # @return [Array<(GetAtmAttribute200Response, Integer, Hash)>] GetAtmAttribute200Response data, response status code and response headers
+    def update_atm_attribute_with_http_info(bankid, atmid, atmattributeid, update_atm_attribute_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ATMAttributeApi.o_bpv5_1_0_update_atm_attribute ...'
+        @api_client.config.logger.debug 'Calling API: ATMAttributeApi.update_atm_attribute ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ATMAttributeApi.o_bpv5_1_0_update_atm_attribute"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ATMAttributeApi.update_atm_attribute"
       end
       # verify the required parameter 'atmid' is set
       if @api_client.config.client_side_validation && atmid.nil?
-        fail ArgumentError, "Missing the required parameter 'atmid' when calling ATMAttributeApi.o_bpv5_1_0_update_atm_attribute"
+        fail ArgumentError, "Missing the required parameter 'atmid' when calling ATMAttributeApi.update_atm_attribute"
       end
       # verify the required parameter 'atmattributeid' is set
       if @api_client.config.client_side_validation && atmattributeid.nil?
-        fail ArgumentError, "Missing the required parameter 'atmattributeid' when calling ATMAttributeApi.o_bpv5_1_0_update_atm_attribute"
+        fail ArgumentError, "Missing the required parameter 'atmattributeid' when calling ATMAttributeApi.update_atm_attribute"
       end
-      # verify the required parameter 'obpv510_update_atm_attribute_request' is set
-      if @api_client.config.client_side_validation && obpv510_update_atm_attribute_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv510_update_atm_attribute_request' when calling ATMAttributeApi.o_bpv5_1_0_update_atm_attribute"
+      # verify the required parameter 'update_atm_attribute_request' is set
+      if @api_client.config.client_side_validation && update_atm_attribute_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_atm_attribute_request' when calling ATMAttributeApi.update_atm_attribute"
       end
       # resource path
       local_var_path = '/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'atmid' + '}', CGI.escape(atmid.to_s)).sub('{' + 'atmattributeid' + '}', CGI.escape(atmattributeid.to_s))
@@ -377,16 +377,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv510_update_atm_attribute_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_atm_attribute_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv510GetAtmAttribute200Response'
+      return_type = opts[:debug_return_type] || 'GetAtmAttribute200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ATMAttributeApi.o_bpv5_1_0_update_atm_attribute",
+        :operation => :"ATMAttributeApi.update_atm_attribute",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -397,7 +397,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ATMAttributeApi#o_bpv5_1_0_update_atm_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ATMAttributeApi#update_atm_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

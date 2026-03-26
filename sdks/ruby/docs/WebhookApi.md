@@ -1,19 +1,19 @@
 # OpenBankProject::WebhookApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv3_1_0_create_account_webhook**](WebhookApi.md#o_bpv3_1_0_create_account_webhook) | **POST** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Create an Account Webhook |
-| [**o_bpv3_1_0_enable_disable_account_webhook**](WebhookApi.md#o_bpv3_1_0_enable_disable_account_webhook) | **PUT** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Enable/Disable an Account Webhook |
-| [**o_bpv3_1_0_get_account_webhooks**](WebhookApi.md#o_bpv3_1_0_get_account_webhooks) | **GET** /obp/v3.1.0/management/banks/{bankid}/account-web-hooks | Get Account Webhooks |
-| [**o_bpv4_0_0_create_bank_account_notification_webhook**](WebhookApi.md#o_bpv4_0_0_create_bank_account_notification_webhook) | **POST** /obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction | Create bank level Account Notification Webhook |
-| [**o_bpv4_0_0_create_system_account_notification_webhook**](WebhookApi.md#o_bpv4_0_0_create_system_account_notification_webhook) | **POST** /obp/v4.0.0/web-hooks/account/notifications/on-create-transaction | Create system level Account Notification Webhook |
+| [**create_account_webhook**](WebhookApi.md#create_account_webhook) | **POST** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Create an Account Webhook |
+| [**create_bank_account_notification_webhook**](WebhookApi.md#create_bank_account_notification_webhook) | **POST** /obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction | Create bank level Account Notification Webhook |
+| [**create_system_account_notification_webhook**](WebhookApi.md#create_system_account_notification_webhook) | **POST** /obp/v4.0.0/web-hooks/account/notifications/on-create-transaction | Create system level Account Notification Webhook |
+| [**enable_disable_account_webhook**](WebhookApi.md#enable_disable_account_webhook) | **PUT** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Enable/Disable an Account Webhook |
+| [**get_account_webhooks**](WebhookApi.md#get_account_webhooks) | **GET** /obp/v3.1.0/management/banks/{bankid}/account-web-hooks | Get Account Webhooks |
 
 
-## o_bpv3_1_0_create_account_webhook
+## create_account_webhook
 
-> <OBPv310EnableDisableAccountWebhook200Response> o_bpv3_1_0_create_account_webhook(bankid, obpv310_create_account_webhook_request)
+> <EnableDisableAccountWebhook200Response> create_account_webhook(bankid, create_account_webhook_request)
 
 Create an Account Webhook
 
@@ -35,39 +35,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::WebhookApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
-obpv310_create_account_webhook_request = OpenBankProject::OBPv310CreateAccountWebhookRequest.new({type: 'type_example', properties: OpenBankProject::OBPv310CreateAccountWebhookRequestProperties.new({is_active: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), url: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), trigger_name: , http_protocol: , http_method: , account_id: })}) # OBPv310CreateAccountWebhookRequest | Request body
+create_account_webhook_request = OpenBankProject::CreateAccountWebhookRequest.new # CreateAccountWebhookRequest | Request body
 
 begin
   # Create an Account Webhook
-  result = api_instance.o_bpv3_1_0_create_account_webhook(bankid, obpv310_create_account_webhook_request)
+  result = api_instance.create_account_webhook(bankid, create_account_webhook_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling WebhookApi->o_bpv3_1_0_create_account_webhook: #{e}"
+  puts "Error when calling WebhookApi->create_account_webhook: #{e}"
 end
 ```
 
-#### Using the o_bpv3_1_0_create_account_webhook_with_http_info variant
+#### Using the create_account_webhook_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv310EnableDisableAccountWebhook200Response>, Integer, Hash)> o_bpv3_1_0_create_account_webhook_with_http_info(bankid, obpv310_create_account_webhook_request)
+> <Array(<EnableDisableAccountWebhook200Response>, Integer, Hash)> create_account_webhook_with_http_info(bankid, create_account_webhook_request)
 
 ```ruby
 begin
   # Create an Account Webhook
-  data, status_code, headers = api_instance.o_bpv3_1_0_create_account_webhook_with_http_info(bankid, obpv310_create_account_webhook_request)
+  data, status_code, headers = api_instance.create_account_webhook_with_http_info(bankid, create_account_webhook_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv310EnableDisableAccountWebhook200Response>
+  p data # => <EnableDisableAccountWebhook200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling WebhookApi->o_bpv3_1_0_create_account_webhook_with_http_info: #{e}"
+  puts "Error when calling WebhookApi->create_account_webhook_with_http_info: #{e}"
 end
 ```
 
@@ -76,11 +76,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
-| **obpv310_create_account_webhook_request** | [**OBPv310CreateAccountWebhookRequest**](OBPv310CreateAccountWebhookRequest.md) | Request body |  |
+| **create_account_webhook_request** | [**CreateAccountWebhookRequest**](CreateAccountWebhookRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv310EnableDisableAccountWebhook200Response**](OBPv310EnableDisableAccountWebhook200Response.md)
+[**EnableDisableAccountWebhook200Response**](EnableDisableAccountWebhook200Response.md)
 
 ### Authorization
 
@@ -92,169 +92,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv3_1_0_enable_disable_account_webhook
+## create_bank_account_notification_webhook
 
-> <OBPv310EnableDisableAccountWebhook200Response> o_bpv3_1_0_enable_disable_account_webhook(bankid, obpv310_enable_disable_account_webhook_request)
-
-Enable/Disable an Account Webhook
-
-<p>Enable/Disable an Account Webhook</p> <p>Webhooks are used to call external URLs when certain events happen.</p> <p>Account Webhooks focus on events around accounts.</p> <p>For instance, a webhook could be used to notify an external service if a balance changes on an account.</p> <p>This functionality is work in progress! Please note that only implemented trigger is: OnBalanceChange</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_webhook_id\"><strong>account_webhook_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#http_method\"><strong>http_method</strong></a>: GET</p> <p><a href=\"/glossary#http_protocol\"><strong>http_protocol</strong></a>:</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#trigger_name\"><strong>trigger_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::WebhookApi.new
-bankid = 'bankid_example' # String | The BANKID identifier
-obpv310_enable_disable_account_webhook_request = OpenBankProject::OBPv310EnableDisableAccountWebhookRequest.new({type: 'type_example', properties: OpenBankProject::OBPv310EnableDisableAccountWebhookRequestProperties.new({account_webhook_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), is_active: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})}) # OBPv310EnableDisableAccountWebhookRequest | Request body
-
-begin
-  # Enable/Disable an Account Webhook
-  result = api_instance.o_bpv3_1_0_enable_disable_account_webhook(bankid, obpv310_enable_disable_account_webhook_request)
-  p result
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling WebhookApi->o_bpv3_1_0_enable_disable_account_webhook: #{e}"
-end
-```
-
-#### Using the o_bpv3_1_0_enable_disable_account_webhook_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OBPv310EnableDisableAccountWebhook200Response>, Integer, Hash)> o_bpv3_1_0_enable_disable_account_webhook_with_http_info(bankid, obpv310_enable_disable_account_webhook_request)
-
-```ruby
-begin
-  # Enable/Disable an Account Webhook
-  data, status_code, headers = api_instance.o_bpv3_1_0_enable_disable_account_webhook_with_http_info(bankid, obpv310_enable_disable_account_webhook_request)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OBPv310EnableDisableAccountWebhook200Response>
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling WebhookApi->o_bpv3_1_0_enable_disable_account_webhook_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **bankid** | **String** | The BANKID identifier |  |
-| **obpv310_enable_disable_account_webhook_request** | [**OBPv310EnableDisableAccountWebhookRequest**](OBPv310EnableDisableAccountWebhookRequest.md) | Request body |  |
-
-### Return type
-
-[**OBPv310EnableDisableAccountWebhook200Response**](OBPv310EnableDisableAccountWebhook200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## o_bpv3_1_0_get_account_webhooks
-
-> <OBPv310GetAccountWebhooks200Response> o_bpv3_1_0_get_account_webhooks(bankid)
-
-Get Account Webhooks
-
-<p>Get Account Webhooks.</p> <p>Possible custom URL parameters for pagination:</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>account_id=STRING (if null ignore)</li> <li>user_id=STRING (if null ignore)</li> </ul> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_webhook_id\"><strong>account_webhook_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#http_method\"><strong>http_method</strong></a>: GET</p> <p><a href=\"/glossary#http_protocol\"><strong>http_protocol</strong></a>:</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#trigger_name\"><strong>trigger_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#web_hooks\"><strong>web_hooks</strong></a>:</p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::WebhookApi.new
-bankid = 'bankid_example' # String | The BANKID identifier
-
-begin
-  # Get Account Webhooks
-  result = api_instance.o_bpv3_1_0_get_account_webhooks(bankid)
-  p result
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling WebhookApi->o_bpv3_1_0_get_account_webhooks: #{e}"
-end
-```
-
-#### Using the o_bpv3_1_0_get_account_webhooks_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OBPv310GetAccountWebhooks200Response>, Integer, Hash)> o_bpv3_1_0_get_account_webhooks_with_http_info(bankid)
-
-```ruby
-begin
-  # Get Account Webhooks
-  data, status_code, headers = api_instance.o_bpv3_1_0_get_account_webhooks_with_http_info(bankid)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OBPv310GetAccountWebhooks200Response>
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling WebhookApi->o_bpv3_1_0_get_account_webhooks_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **bankid** | **String** | The BANKID identifier |  |
-
-### Return type
-
-[**OBPv310GetAccountWebhooks200Response**](OBPv310GetAccountWebhooks200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## o_bpv4_0_0_create_bank_account_notification_webhook
-
-> <OBPv400CreateBankAccountNotificationWebhook200Response> o_bpv4_0_0_create_bank_account_notification_webhook(bankid, obpv400_create_system_account_notification_webhook_request)
+> <CreateBankAccountNotificationWebhook200Response> create_bank_account_notification_webhook(bankid, create_system_account_notification_webhook_request)
 
 Create bank level Account Notification Webhook
 
@@ -276,39 +116,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::WebhookApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
-obpv400_create_system_account_notification_webhook_request = OpenBankProject::OBPv400CreateSystemAccountNotificationWebhookRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400CreateSystemAccountNotificationWebhookRequestProperties.new({http_method: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), http_protocol: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), url: })}) # OBPv400CreateSystemAccountNotificationWebhookRequest | Request body
+create_system_account_notification_webhook_request = OpenBankProject::CreateSystemAccountNotificationWebhookRequest.new # CreateSystemAccountNotificationWebhookRequest | Request body
 
 begin
   # Create bank level Account Notification Webhook
-  result = api_instance.o_bpv4_0_0_create_bank_account_notification_webhook(bankid, obpv400_create_system_account_notification_webhook_request)
+  result = api_instance.create_bank_account_notification_webhook(bankid, create_system_account_notification_webhook_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling WebhookApi->o_bpv4_0_0_create_bank_account_notification_webhook: #{e}"
+  puts "Error when calling WebhookApi->create_bank_account_notification_webhook: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_bank_account_notification_webhook_with_http_info variant
+#### Using the create_bank_account_notification_webhook_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400CreateBankAccountNotificationWebhook200Response>, Integer, Hash)> o_bpv4_0_0_create_bank_account_notification_webhook_with_http_info(bankid, obpv400_create_system_account_notification_webhook_request)
+> <Array(<CreateBankAccountNotificationWebhook200Response>, Integer, Hash)> create_bank_account_notification_webhook_with_http_info(bankid, create_system_account_notification_webhook_request)
 
 ```ruby
 begin
   # Create bank level Account Notification Webhook
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_bank_account_notification_webhook_with_http_info(bankid, obpv400_create_system_account_notification_webhook_request)
+  data, status_code, headers = api_instance.create_bank_account_notification_webhook_with_http_info(bankid, create_system_account_notification_webhook_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400CreateBankAccountNotificationWebhook200Response>
+  p data # => <CreateBankAccountNotificationWebhook200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling WebhookApi->o_bpv4_0_0_create_bank_account_notification_webhook_with_http_info: #{e}"
+  puts "Error when calling WebhookApi->create_bank_account_notification_webhook_with_http_info: #{e}"
 end
 ```
 
@@ -317,11 +157,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
-| **obpv400_create_system_account_notification_webhook_request** | [**OBPv400CreateSystemAccountNotificationWebhookRequest**](OBPv400CreateSystemAccountNotificationWebhookRequest.md) | Request body |  |
+| **create_system_account_notification_webhook_request** | [**CreateSystemAccountNotificationWebhookRequest**](CreateSystemAccountNotificationWebhookRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400CreateBankAccountNotificationWebhook200Response**](OBPv400CreateBankAccountNotificationWebhook200Response.md)
+[**CreateBankAccountNotificationWebhook200Response**](CreateBankAccountNotificationWebhook200Response.md)
 
 ### Authorization
 
@@ -333,9 +173,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_create_system_account_notification_webhook
+## create_system_account_notification_webhook
 
-> <OBPv400CreateSystemAccountNotificationWebhook200Response> o_bpv4_0_0_create_system_account_notification_webhook(obpv400_create_system_account_notification_webhook_request)
+> <CreateSystemAccountNotificationWebhook200Response> create_system_account_notification_webhook(create_system_account_notification_webhook_request)
 
 Create system level Account Notification Webhook
 
@@ -357,38 +197,38 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::WebhookApi.new
-obpv400_create_system_account_notification_webhook_request = OpenBankProject::OBPv400CreateSystemAccountNotificationWebhookRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400CreateSystemAccountNotificationWebhookRequestProperties.new({http_method: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), http_protocol: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), url: })}) # OBPv400CreateSystemAccountNotificationWebhookRequest | Request body
+create_system_account_notification_webhook_request = OpenBankProject::CreateSystemAccountNotificationWebhookRequest.new # CreateSystemAccountNotificationWebhookRequest | Request body
 
 begin
   # Create system level Account Notification Webhook
-  result = api_instance.o_bpv4_0_0_create_system_account_notification_webhook(obpv400_create_system_account_notification_webhook_request)
+  result = api_instance.create_system_account_notification_webhook(create_system_account_notification_webhook_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling WebhookApi->o_bpv4_0_0_create_system_account_notification_webhook: #{e}"
+  puts "Error when calling WebhookApi->create_system_account_notification_webhook: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_system_account_notification_webhook_with_http_info variant
+#### Using the create_system_account_notification_webhook_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400CreateSystemAccountNotificationWebhook200Response>, Integer, Hash)> o_bpv4_0_0_create_system_account_notification_webhook_with_http_info(obpv400_create_system_account_notification_webhook_request)
+> <Array(<CreateSystemAccountNotificationWebhook200Response>, Integer, Hash)> create_system_account_notification_webhook_with_http_info(create_system_account_notification_webhook_request)
 
 ```ruby
 begin
   # Create system level Account Notification Webhook
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_system_account_notification_webhook_with_http_info(obpv400_create_system_account_notification_webhook_request)
+  data, status_code, headers = api_instance.create_system_account_notification_webhook_with_http_info(create_system_account_notification_webhook_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400CreateSystemAccountNotificationWebhook200Response>
+  p data # => <CreateSystemAccountNotificationWebhook200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling WebhookApi->o_bpv4_0_0_create_system_account_notification_webhook_with_http_info: #{e}"
+  puts "Error when calling WebhookApi->create_system_account_notification_webhook_with_http_info: #{e}"
 end
 ```
 
@@ -396,11 +236,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obpv400_create_system_account_notification_webhook_request** | [**OBPv400CreateSystemAccountNotificationWebhookRequest**](OBPv400CreateSystemAccountNotificationWebhookRequest.md) | Request body |  |
+| **create_system_account_notification_webhook_request** | [**CreateSystemAccountNotificationWebhookRequest**](CreateSystemAccountNotificationWebhookRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400CreateSystemAccountNotificationWebhook200Response**](OBPv400CreateSystemAccountNotificationWebhook200Response.md)
+[**CreateSystemAccountNotificationWebhook200Response**](CreateSystemAccountNotificationWebhook200Response.md)
 
 ### Authorization
 
@@ -409,5 +249,165 @@ end
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## enable_disable_account_webhook
+
+> <EnableDisableAccountWebhook200Response> enable_disable_account_webhook(bankid, enable_disable_account_webhook_request)
+
+Enable/Disable an Account Webhook
+
+<p>Enable/Disable an Account Webhook</p> <p>Webhooks are used to call external URLs when certain events happen.</p> <p>Account Webhooks focus on events around accounts.</p> <p>For instance, a webhook could be used to notify an external service if a balance changes on an account.</p> <p>This functionality is work in progress! Please note that only implemented trigger is: OnBalanceChange</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_webhook_id\"><strong>account_webhook_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#http_method\"><strong>http_method</strong></a>: GET</p> <p><a href=\"/glossary#http_protocol\"><strong>http_protocol</strong></a>:</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#trigger_name\"><strong>trigger_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::WebhookApi.new
+bankid = 'bankid_example' # String | The BANKID identifier
+enable_disable_account_webhook_request = OpenBankProject::EnableDisableAccountWebhookRequest.new # EnableDisableAccountWebhookRequest | Request body
+
+begin
+  # Enable/Disable an Account Webhook
+  result = api_instance.enable_disable_account_webhook(bankid, enable_disable_account_webhook_request)
+  p result
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling WebhookApi->enable_disable_account_webhook: #{e}"
+end
+```
+
+#### Using the enable_disable_account_webhook_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EnableDisableAccountWebhook200Response>, Integer, Hash)> enable_disable_account_webhook_with_http_info(bankid, enable_disable_account_webhook_request)
+
+```ruby
+begin
+  # Enable/Disable an Account Webhook
+  data, status_code, headers = api_instance.enable_disable_account_webhook_with_http_info(bankid, enable_disable_account_webhook_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EnableDisableAccountWebhook200Response>
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling WebhookApi->enable_disable_account_webhook_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bankid** | **String** | The BANKID identifier |  |
+| **enable_disable_account_webhook_request** | [**EnableDisableAccountWebhookRequest**](EnableDisableAccountWebhookRequest.md) | Request body |  |
+
+### Return type
+
+[**EnableDisableAccountWebhook200Response**](EnableDisableAccountWebhook200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## get_account_webhooks
+
+> <GetAccountWebhooks200Response> get_account_webhooks(bankid)
+
+Get Account Webhooks
+
+<p>Get Account Webhooks.</p> <p>Possible custom URL parameters for pagination:</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>account_id=STRING (if null ignore)</li> <li>user_id=STRING (if null ignore)</li> </ul> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_webhook_id\"><strong>account_webhook_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#http_method\"><strong>http_method</strong></a>: GET</p> <p><a href=\"/glossary#http_protocol\"><strong>http_protocol</strong></a>:</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#trigger_name\"><strong>trigger_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#web_hooks\"><strong>web_hooks</strong></a>:</p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::WebhookApi.new
+bankid = 'bankid_example' # String | The BANKID identifier
+
+begin
+  # Get Account Webhooks
+  result = api_instance.get_account_webhooks(bankid)
+  p result
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling WebhookApi->get_account_webhooks: #{e}"
+end
+```
+
+#### Using the get_account_webhooks_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetAccountWebhooks200Response>, Integer, Hash)> get_account_webhooks_with_http_info(bankid)
+
+```ruby
+begin
+  # Get Account Webhooks
+  data, status_code, headers = api_instance.get_account_webhooks_with_http_info(bankid)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetAccountWebhooks200Response>
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling WebhookApi->get_account_webhooks_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bankid** | **String** | The BANKID identifier |  |
+
+### Return type
+
+[**GetAccountWebhooks200Response**](GetAccountWebhooks200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 

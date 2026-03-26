@@ -1,23 +1,23 @@
 # GroupApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600AddUserToGroup**](GroupApi.md#oBPv600AddUserToGroup) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements |
-| [**oBPv600CreateGroup**](GroupApi.md#oBPv600CreateGroup) | **POST** /obp/v6.0.0/management/groups | Create Group |
-| [**oBPv600DeleteGroup**](GroupApi.md#oBPv600DeleteGroup) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group |
-| [**oBPv600GetGroup**](GroupApi.md#oBPv600GetGroup) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group |
-| [**oBPv600GetGroupEntitlements**](GroupApi.md#oBPv600GetGroupEntitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements |
-| [**oBPv600GetGroups**](GroupApi.md#oBPv600GetGroups) | **GET** /obp/v6.0.0/management/groups | Get Groups |
-| [**oBPv600GetUserGroupMemberships**](GroupApi.md#oBPv600GetUserGroupMemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships |
-| [**oBPv600RemoveUserFromGroup**](GroupApi.md#oBPv600RemoveUserFromGroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group |
-| [**oBPv600UpdateGroup**](GroupApi.md#oBPv600UpdateGroup) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group |
+| [**addUserToGroup**](GroupApi.md#addUserToGroup) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements |
+| [**createGroup**](GroupApi.md#createGroup) | **POST** /obp/v6.0.0/management/groups | Create Group |
+| [**deleteGroup**](GroupApi.md#deleteGroup) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group |
+| [**getGroup**](GroupApi.md#getGroup) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group |
+| [**getGroupEntitlements**](GroupApi.md#getGroupEntitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements |
+| [**getGroups**](GroupApi.md#getGroups) | **GET** /obp/v6.0.0/management/groups | Get Groups |
+| [**getUserGroupMemberships**](GroupApi.md#getUserGroupMemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships |
+| [**removeUserFromGroup**](GroupApi.md#removeUserFromGroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group |
+| [**updateGroup**](GroupApi.md#updateGroup) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group |
 
 
-<a id="oBPv600AddUserToGroup"></a>
-# **oBPv600AddUserToGroup**
-> OBPv600AddUserToGroup200Response oBPv600AddUserToGroup(userid, obPv600AddUserToGroupRequest)
+<a id="addUserToGroup"></a>
+# **addUserToGroup**
+> AddUserToGroup200Response addUserToGroup(userid, addUserToGroupRequest)
 
 Grant User Membership to Group Entitlements
 
@@ -31,15 +31,15 @@ Grant User Membership to Group Entitlements
 
 val apiInstance = GroupApi()
 val userid : kotlin.String = userid_example // kotlin.String | The USERID identifier
-val obPv600AddUserToGroupRequest : OBPv600AddUserToGroupRequest = {"type":"object","properties":{"group_id":{"type":"string"}}} // OBPv600AddUserToGroupRequest | Request body
+val addUserToGroupRequest : AddUserToGroupRequest = {"type":"object","properties":{"group_id":{"type":"string"}}} // AddUserToGroupRequest | Request body
 try {
-    val result : OBPv600AddUserToGroup200Response = apiInstance.oBPv600AddUserToGroup(userid, obPv600AddUserToGroupRequest)
+    val result : AddUserToGroup200Response = apiInstance.addUserToGroup(userid, addUserToGroupRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling GroupApi#oBPv600AddUserToGroup")
+    println("4xx response calling GroupApi#addUserToGroup")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupApi#oBPv600AddUserToGroup")
+    println("5xx response calling GroupApi#addUserToGroup")
     e.printStackTrace()
 }
 ```
@@ -48,11 +48,11 @@ try {
 | **userid** | **kotlin.String**| The USERID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600AddUserToGroupRequest** | [**OBPv600AddUserToGroupRequest**](OBPv600AddUserToGroupRequest.md)| Request body | |
+| **addUserToGroupRequest** | [**AddUserToGroupRequest**](AddUserToGroupRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600AddUserToGroup200Response**](OBPv600AddUserToGroup200Response.md)
+[**AddUserToGroup200Response**](AddUserToGroup200Response.md)
 
 ### Authorization
 
@@ -63,17 +63,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600CreateGroup"></a>
-# **oBPv600CreateGroup**
-> OBPv600GetGroups200ResponsePropertiesGroupsItems oBPv600CreateGroup(obPv600CreateGroupRequest)
+<a id="createGroup"></a>
+# **createGroup**
+> GetGroups200ResponseGroupsInner createGroup(createGroupRequest)
 
 Create Group
 
@@ -86,15 +86,15 @@ Create Group
 //import com.openbankproject.models.*
 
 val apiInstance = GroupApi()
-val obPv600CreateGroupRequest : OBPv600CreateGroupRequest = {"type":"object","properties":{"group_name":{"type":"string"},"group_description":{"type":"string"},"bank_id":{"type":"string"},"is_enabled":{"type":"boolean"},"list_of_roles":{"type":"array","items":{"type":"string"}}}} // OBPv600CreateGroupRequest | Request body
+val createGroupRequest : CreateGroupRequest = {"type":"object","properties":{"group_name":{"type":"string"},"group_description":{"type":"string"},"bank_id":{"type":"string"},"is_enabled":{"type":"boolean"},"list_of_roles":{"type":"array","items":{"type":"string"}}}} // CreateGroupRequest | Request body
 try {
-    val result : OBPv600GetGroups200ResponsePropertiesGroupsItems = apiInstance.oBPv600CreateGroup(obPv600CreateGroupRequest)
+    val result : GetGroups200ResponseGroupsInner = apiInstance.createGroup(createGroupRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling GroupApi#oBPv600CreateGroup")
+    println("4xx response calling GroupApi#createGroup")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupApi#oBPv600CreateGroup")
+    println("5xx response calling GroupApi#createGroup")
     e.printStackTrace()
 }
 ```
@@ -102,11 +102,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600CreateGroupRequest** | [**OBPv600CreateGroupRequest**](OBPv600CreateGroupRequest.md)| Request body | |
+| **createGroupRequest** | [**CreateGroupRequest**](CreateGroupRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -117,17 +117,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600DeleteGroup"></a>
-# **oBPv600DeleteGroup**
-> oBPv600DeleteGroup(groupid)
+<a id="deleteGroup"></a>
+# **deleteGroup**
+> deleteGroup(groupid)
 
 Delete Group
 
@@ -142,12 +142,12 @@ Delete Group
 val apiInstance = GroupApi()
 val groupid : kotlin.String = groupid_example // kotlin.String | The GROUPID identifier
 try {
-    apiInstance.oBPv600DeleteGroup(groupid)
+    apiInstance.deleteGroup(groupid)
 } catch (e: ClientException) {
-    println("4xx response calling GroupApi#oBPv600DeleteGroup")
+    println("4xx response calling GroupApi#deleteGroup")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupApi#oBPv600DeleteGroup")
+    println("5xx response calling GroupApi#deleteGroup")
     e.printStackTrace()
 }
 ```
@@ -170,17 +170,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv600GetGroup"></a>
-# **oBPv600GetGroup**
-> OBPv600GetGroups200ResponsePropertiesGroupsItems oBPv600GetGroup(groupid)
+<a id="getGroup"></a>
+# **getGroup**
+> GetGroups200ResponseGroupsInner getGroup(groupid)
 
 Get Group
 
@@ -195,13 +195,13 @@ Get Group
 val apiInstance = GroupApi()
 val groupid : kotlin.String = groupid_example // kotlin.String | The GROUPID identifier
 try {
-    val result : OBPv600GetGroups200ResponsePropertiesGroupsItems = apiInstance.oBPv600GetGroup(groupid)
+    val result : GetGroups200ResponseGroupsInner = apiInstance.getGroup(groupid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling GroupApi#oBPv600GetGroup")
+    println("4xx response calling GroupApi#getGroup")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupApi#oBPv600GetGroup")
+    println("5xx response calling GroupApi#getGroup")
     e.printStackTrace()
 }
 ```
@@ -213,7 +213,7 @@ try {
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -224,17 +224,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetGroupEntitlements"></a>
-# **oBPv600GetGroupEntitlements**
-> OBPv600GetGroupEntitlements200Response oBPv600GetGroupEntitlements(groupid)
+<a id="getGroupEntitlements"></a>
+# **getGroupEntitlements**
+> GetGroupEntitlements200Response getGroupEntitlements(groupid)
 
 Get Group Entitlements
 
@@ -249,13 +249,13 @@ Get Group Entitlements
 val apiInstance = GroupApi()
 val groupid : kotlin.String = groupid_example // kotlin.String | The GROUPID identifier
 try {
-    val result : OBPv600GetGroupEntitlements200Response = apiInstance.oBPv600GetGroupEntitlements(groupid)
+    val result : GetGroupEntitlements200Response = apiInstance.getGroupEntitlements(groupid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling GroupApi#oBPv600GetGroupEntitlements")
+    println("4xx response calling GroupApi#getGroupEntitlements")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupApi#oBPv600GetGroupEntitlements")
+    println("5xx response calling GroupApi#getGroupEntitlements")
     e.printStackTrace()
 }
 ```
@@ -267,7 +267,7 @@ try {
 
 ### Return type
 
-[**OBPv600GetGroupEntitlements200Response**](OBPv600GetGroupEntitlements200Response.md)
+[**GetGroupEntitlements200Response**](GetGroupEntitlements200Response.md)
 
 ### Authorization
 
@@ -278,17 +278,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetGroups"></a>
-# **oBPv600GetGroups**
-> OBPv600GetGroups200Response oBPv600GetGroups()
+<a id="getGroups"></a>
+# **getGroups**
+> GetGroups200Response getGroups()
 
 Get Groups
 
@@ -302,13 +302,13 @@ Get Groups
 
 val apiInstance = GroupApi()
 try {
-    val result : OBPv600GetGroups200Response = apiInstance.oBPv600GetGroups()
+    val result : GetGroups200Response = apiInstance.getGroups()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling GroupApi#oBPv600GetGroups")
+    println("4xx response calling GroupApi#getGroups")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupApi#oBPv600GetGroups")
+    println("5xx response calling GroupApi#getGroups")
     e.printStackTrace()
 }
 ```
@@ -318,7 +318,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetGroups200Response**](OBPv600GetGroups200Response.md)
+[**GetGroups200Response**](GetGroups200Response.md)
 
 ### Authorization
 
@@ -329,17 +329,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetUserGroupMemberships"></a>
-# **oBPv600GetUserGroupMemberships**
-> OBPv600GetUserGroupMemberships200Response oBPv600GetUserGroupMemberships(userid)
+<a id="getUserGroupMemberships"></a>
+# **getUserGroupMemberships**
+> GetUserGroupMemberships200Response getUserGroupMemberships(userid)
 
 Get User&#39;s Group Memberships
 
@@ -354,13 +354,13 @@ Get User&#39;s Group Memberships
 val apiInstance = GroupApi()
 val userid : kotlin.String = userid_example // kotlin.String | The USERID identifier
 try {
-    val result : OBPv600GetUserGroupMemberships200Response = apiInstance.oBPv600GetUserGroupMemberships(userid)
+    val result : GetUserGroupMemberships200Response = apiInstance.getUserGroupMemberships(userid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling GroupApi#oBPv600GetUserGroupMemberships")
+    println("4xx response calling GroupApi#getUserGroupMemberships")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupApi#oBPv600GetUserGroupMemberships")
+    println("5xx response calling GroupApi#getUserGroupMemberships")
     e.printStackTrace()
 }
 ```
@@ -372,7 +372,7 @@ try {
 
 ### Return type
 
-[**OBPv600GetUserGroupMemberships200Response**](OBPv600GetUserGroupMemberships200Response.md)
+[**GetUserGroupMemberships200Response**](GetUserGroupMemberships200Response.md)
 
 ### Authorization
 
@@ -383,17 +383,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600RemoveUserFromGroup"></a>
-# **oBPv600RemoveUserFromGroup**
-> oBPv600RemoveUserFromGroup(userid, groupid)
+<a id="removeUserFromGroup"></a>
+# **removeUserFromGroup**
+> removeUserFromGroup(userid, groupid)
 
 Remove User from Group
 
@@ -409,12 +409,12 @@ val apiInstance = GroupApi()
 val userid : kotlin.String = userid_example // kotlin.String | The USERID identifier
 val groupid : kotlin.String = groupid_example // kotlin.String | The GROUPID identifier
 try {
-    apiInstance.oBPv600RemoveUserFromGroup(userid, groupid)
+    apiInstance.removeUserFromGroup(userid, groupid)
 } catch (e: ClientException) {
-    println("4xx response calling GroupApi#oBPv600RemoveUserFromGroup")
+    println("4xx response calling GroupApi#removeUserFromGroup")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupApi#oBPv600RemoveUserFromGroup")
+    println("5xx response calling GroupApi#removeUserFromGroup")
     e.printStackTrace()
 }
 ```
@@ -438,17 +438,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv600UpdateGroup"></a>
-# **oBPv600UpdateGroup**
-> OBPv600GetGroups200ResponsePropertiesGroupsItems oBPv600UpdateGroup(groupid, obPv600UpdateGroupRequest)
+<a id="updateGroup"></a>
+# **updateGroup**
+> GetGroups200ResponseGroupsInner updateGroup(groupid, updateGroupRequest)
 
 Update Group
 
@@ -462,15 +462,15 @@ Update Group
 
 val apiInstance = GroupApi()
 val groupid : kotlin.String = groupid_example // kotlin.String | The GROUPID identifier
-val obPv600UpdateGroupRequest : OBPv600UpdateGroupRequest = {"type":"object","properties":{"group_name":{"type":"string"},"group_description":{"type":"string"},"list_of_roles":{"type":"array","items":{"type":"string"}},"is_enabled":{"type":"boolean"}}} // OBPv600UpdateGroupRequest | Request body
+val updateGroupRequest : UpdateGroupRequest = {"type":"object","properties":{"group_name":{"type":"string"},"group_description":{"type":"string"},"list_of_roles":{"type":"array","items":{"type":"string"}},"is_enabled":{"type":"boolean"}}} // UpdateGroupRequest | Request body
 try {
-    val result : OBPv600GetGroups200ResponsePropertiesGroupsItems = apiInstance.oBPv600UpdateGroup(groupid, obPv600UpdateGroupRequest)
+    val result : GetGroups200ResponseGroupsInner = apiInstance.updateGroup(groupid, updateGroupRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling GroupApi#oBPv600UpdateGroup")
+    println("4xx response calling GroupApi#updateGroup")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupApi#oBPv600UpdateGroup")
+    println("5xx response calling GroupApi#updateGroup")
     e.printStackTrace()
 }
 ```
@@ -479,11 +479,11 @@ try {
 | **groupid** | **kotlin.String**| The GROUPID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600UpdateGroupRequest** | [**OBPv600UpdateGroupRequest**](OBPv600UpdateGroupRequest.md)| Request body | |
+| **updateGroupRequest** | [**UpdateGroupRequest**](UpdateGroupRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -494,8 +494,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

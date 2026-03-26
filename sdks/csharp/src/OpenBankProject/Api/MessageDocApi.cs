@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -47,8 +47,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="connector">The CONNECTOR identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv220GetMessageDocsApiResponse"/>&gt;</returns>
-        Task<IOBPv220GetMessageDocsApiResponse> OBPv220GetMessageDocsAsync(string connector, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMessageDocsApiResponse"/>&gt;</returns>
+        Task<IGetMessageDocsApiResponse> GetMessageDocsAsync(string connector, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Message Docs
@@ -58,31 +58,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="connector">The CONNECTOR identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv220GetMessageDocsApiResponse"/>?&gt;</returns>
-        Task<IOBPv220GetMessageDocsApiResponse?> OBPv220GetMessageDocsOrDefaultAsync(string connector, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Message Docs Swagger
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;This endpoint provides example message docs in swagger format.&lt;br /&gt; It is only relavent for REST Connectors.&lt;/p&gt; &lt;p&gt;This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).&lt;br /&gt; That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.&lt;/p&gt; &lt;p&gt;i.e.:&lt;/p&gt; &lt;p&gt;OBP API (Core OBP API code) -&amp;gt; OBP REST Connector (OBP REST Connector code) -&amp;gt; OBP REST Adapter (Adapter developer code) -&amp;gt; CBS (Main Frame)&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Connector\&quot;&gt;CONNECTOR&lt;/a&gt;: CONNECTOR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="connector">The CONNECTOR identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetMessageDocsSwaggerApiResponse"/>&gt;</returns>
-        Task<IOBPv310GetMessageDocsSwaggerApiResponse> OBPv310GetMessageDocsSwaggerAsync(string connector, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Message Docs Swagger
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;This endpoint provides example message docs in swagger format.&lt;br /&gt; It is only relavent for REST Connectors.&lt;/p&gt; &lt;p&gt;This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).&lt;br /&gt; That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.&lt;/p&gt; &lt;p&gt;i.e.:&lt;/p&gt; &lt;p&gt;OBP API (Core OBP API code) -&amp;gt; OBP REST Connector (OBP REST Connector code) -&amp;gt; OBP REST Adapter (Adapter developer code) -&amp;gt; CBS (Main Frame)&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Connector\&quot;&gt;CONNECTOR&lt;/a&gt;: CONNECTOR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="connector">The CONNECTOR identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetMessageDocsSwaggerApiResponse"/>?&gt;</returns>
-        Task<IOBPv310GetMessageDocsSwaggerApiResponse?> OBPv310GetMessageDocsSwaggerOrDefaultAsync(string connector, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMessageDocsApiResponse"/>?&gt;</returns>
+        Task<IGetMessageDocsApiResponse?> GetMessageDocsOrDefaultAsync(string connector, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Message Docs as JSON Schema
@@ -93,8 +70,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="connector">The CONNECTOR identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetMessageDocsJsonSchemaApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetMessageDocsJsonSchemaApiResponse> OBPv600GetMessageDocsJsonSchemaAsync(string connector, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMessageDocsJsonSchemaApiResponse"/>&gt;</returns>
+        Task<IGetMessageDocsJsonSchemaApiResponse> GetMessageDocsJsonSchemaAsync(string connector, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Message Docs as JSON Schema
@@ -104,8 +81,31 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="connector">The CONNECTOR identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetMessageDocsJsonSchemaApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetMessageDocsJsonSchemaApiResponse?> OBPv600GetMessageDocsJsonSchemaOrDefaultAsync(string connector, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMessageDocsJsonSchemaApiResponse"/>?&gt;</returns>
+        Task<IGetMessageDocsJsonSchemaApiResponse?> GetMessageDocsJsonSchemaOrDefaultAsync(string connector, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Message Docs Swagger
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;This endpoint provides example message docs in swagger format.&lt;br /&gt; It is only relavent for REST Connectors.&lt;/p&gt; &lt;p&gt;This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).&lt;br /&gt; That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.&lt;/p&gt; &lt;p&gt;i.e.:&lt;/p&gt; &lt;p&gt;OBP API (Core OBP API code) -&amp;gt; OBP REST Connector (OBP REST Connector code) -&amp;gt; OBP REST Adapter (Adapter developer code) -&amp;gt; CBS (Main Frame)&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Connector\&quot;&gt;CONNECTOR&lt;/a&gt;: CONNECTOR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connector">The CONNECTOR identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMessageDocsSwaggerApiResponse"/>&gt;</returns>
+        Task<IGetMessageDocsSwaggerApiResponse> GetMessageDocsSwaggerAsync(string connector, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Message Docs Swagger
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;This endpoint provides example message docs in swagger format.&lt;br /&gt; It is only relavent for REST Connectors.&lt;/p&gt; &lt;p&gt;This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).&lt;br /&gt; That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.&lt;/p&gt; &lt;p&gt;i.e.:&lt;/p&gt; &lt;p&gt;OBP API (Core OBP API code) -&amp;gt; OBP REST Connector (OBP REST Connector code) -&amp;gt; OBP REST Adapter (Adapter developer code) -&amp;gt; CBS (Main Frame)&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Connector\&quot;&gt;CONNECTOR&lt;/a&gt;: CONNECTOR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="connector">The CONNECTOR identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMessageDocsSwaggerApiResponse"/>?&gt;</returns>
+        Task<IGetMessageDocsSwaggerApiResponse?> GetMessageDocsSwaggerOrDefaultAsync(string connector, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -116,61 +116,61 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv220GetMessageDocs;
+        public event EventHandler<ApiResponseEventArgs>? OnGetMessageDocs;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv220GetMessageDocs;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetMessageDocs;
 
-        internal void ExecuteOnOBPv220GetMessageDocs(APIApi.OBPv220GetMessageDocsApiResponse apiResponse)
+        internal void ExecuteOnGetMessageDocs(APIApi.GetMessageDocsApiResponse apiResponse)
         {
-            OnOBPv220GetMessageDocs?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetMessageDocs?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv220GetMessageDocs(Exception exception)
+        internal void ExecuteOnErrorGetMessageDocs(Exception exception)
         {
-            OnErrorOBPv220GetMessageDocs?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetMessageDocs?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310GetMessageDocsSwagger;
+        public event EventHandler<ApiResponseEventArgs>? OnGetMessageDocsJsonSchema;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310GetMessageDocsSwagger;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetMessageDocsJsonSchema;
 
-        internal void ExecuteOnOBPv310GetMessageDocsSwagger(APIApi.OBPv310GetMessageDocsSwaggerApiResponse apiResponse)
+        internal void ExecuteOnGetMessageDocsJsonSchema(APIApi.GetMessageDocsJsonSchemaApiResponse apiResponse)
         {
-            OnOBPv310GetMessageDocsSwagger?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetMessageDocsJsonSchema?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310GetMessageDocsSwagger(Exception exception)
+        internal void ExecuteOnErrorGetMessageDocsJsonSchema(Exception exception)
         {
-            OnErrorOBPv310GetMessageDocsSwagger?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetMessageDocsJsonSchema?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetMessageDocsJsonSchema;
+        public event EventHandler<ApiResponseEventArgs>? OnGetMessageDocsSwagger;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetMessageDocsJsonSchema;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetMessageDocsSwagger;
 
-        internal void ExecuteOnOBPv600GetMessageDocsJsonSchema(APIApi.OBPv600GetMessageDocsJsonSchemaApiResponse apiResponse)
+        internal void ExecuteOnGetMessageDocsSwagger(APIApi.GetMessageDocsSwaggerApiResponse apiResponse)
         {
-            OnOBPv600GetMessageDocsJsonSchema?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetMessageDocsSwagger?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetMessageDocsJsonSchema(Exception exception)
+        internal void ExecuteOnErrorGetMessageDocsSwagger(Exception exception)
         {
-            OnErrorOBPv600GetMessageDocsJsonSchema?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetMessageDocsSwagger?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -228,14 +228,14 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv220GetMessageDocs(ref string connector);
+        partial void FormatGetMessageDocs(ref string connector);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="connector"></param>
         /// <returns></returns>
-        private void ValidateOBPv220GetMessageDocs(string connector)
+        private void ValidateGetMessageDocs(string connector)
         {
             if (connector == null)
                 throw new ArgumentNullException(nameof(connector));
@@ -246,10 +246,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="connector"></param>
-        private void AfterOBPv220GetMessageDocsDefaultImplementation(IOBPv220GetMessageDocsApiResponse apiResponseLocalVar, string connector)
+        private void AfterGetMessageDocsDefaultImplementation(IGetMessageDocsApiResponse apiResponseLocalVar, string connector)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv220GetMessageDocs(ref suppressDefaultLog, apiResponseLocalVar, connector);
+            AfterGetMessageDocs(ref suppressDefaultLog, apiResponseLocalVar, connector);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -260,7 +260,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="connector"></param>
-        partial void AfterOBPv220GetMessageDocs(ref bool suppressDefaultLog, IOBPv220GetMessageDocsApiResponse apiResponseLocalVar, string connector);
+        partial void AfterGetMessageDocs(ref bool suppressDefaultLog, IGetMessageDocsApiResponse apiResponseLocalVar, string connector);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -269,10 +269,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="connector"></param>
-        private void OnErrorOBPv220GetMessageDocsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connector)
+        private void OnErrorGetMessageDocsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connector)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv220GetMessageDocs(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, connector);
+            OnErrorGetMessageDocs(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, connector);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -285,19 +285,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="connector"></param>
-        partial void OnErrorOBPv220GetMessageDocs(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connector);
+        partial void OnErrorGetMessageDocs(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connector);
 
         /// <summary>
         /// Get Message Docs &lt;p&gt;These message docs provide example messages sent by OBP to the (RabbitMq) message queue for processing by the Core Banking / Payment system Adapter - together with an example expected response and possible error codes.&lt;br /&gt; Integrators can use these messages to build Adapters that provide core banking services to OBP.&lt;/p&gt; &lt;p&gt;Note: API Explorer provides a Message Docs page where these messages are displayed.&lt;/p&gt; &lt;p&gt;&lt;code&gt;CONNECTOR&lt;/code&gt;: rest_vMar2019, stored_procedure_vDec2019 ...&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Connector\&quot;&gt;CONNECTOR&lt;/a&gt;: CONNECTOR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#adapter_implementation\&quot;&gt;&lt;strong&gt;adapter_implementation&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#dependent_endpoints\&quot;&gt;&lt;strong&gt;dependent_endpoints&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#example_inbound_message\&quot;&gt;&lt;strong&gt;example_inbound_message&lt;/strong&gt;&lt;/a&gt;: {}&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#example_outbound_message\&quot;&gt;&lt;strong&gt;example_outbound_message&lt;/strong&gt;&lt;/a&gt;: {}&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#group\&quot;&gt;&lt;strong&gt;group&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message_docs\&quot;&gt;&lt;strong&gt;message_docs&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message_format\&quot;&gt;&lt;strong&gt;message_format&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#suggested_order\&quot;&gt;&lt;strong&gt;suggested_order&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#version\&quot;&gt;&lt;strong&gt;version&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#inboundavroschema\&quot;&gt;inboundAvroSchema&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#inbound_topic\&quot;&gt;inbound_topic&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#outboundavroschema\&quot;&gt;outboundAvroSchema&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#outbound_topic\&quot;&gt;outbound_topic&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#requiredfieldinfo\&quot;&gt;requiredFieldInfo&lt;/a&gt;: false&lt;/p&gt; 
         /// </summary>
         /// <param name="connector">The CONNECTOR identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv220GetMessageDocsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv220GetMessageDocsApiResponse?> OBPv220GetMessageDocsOrDefaultAsync(string connector, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMessageDocsApiResponse"/>&gt;</returns>
+        public async Task<IGetMessageDocsApiResponse?> GetMessageDocsOrDefaultAsync(string connector, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv220GetMessageDocsAsync(connector, cancellationToken).ConfigureAwait(false);
+                return await GetMessageDocsAsync(connector, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -311,16 +311,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="connector">The CONNECTOR identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv220GetMessageDocsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv220GetMessageDocsApiResponse> OBPv220GetMessageDocsAsync(string connector, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMessageDocsApiResponse"/>&gt;</returns>
+        public async Task<IGetMessageDocsApiResponse> GetMessageDocsAsync(string connector, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv220GetMessageDocs(connector);
+                ValidateGetMessageDocs(connector);
 
-                FormatOBPv220GetMessageDocs(ref connector);
+                FormatGetMessageDocs(ref connector);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -349,8 +349,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv220GetMessageDocsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv220GetMessageDocsApiResponse>();
-                        APIApi.OBPv220GetMessageDocsApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.GetMessageDocsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetMessageDocsApiResponse>();
+                        APIApi.GetMessageDocsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -361,9 +361,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv220GetMessageDocsDefaultImplementation(apiResponseLocalVar, connector);
+                        AfterGetMessageDocsDefaultImplementation(apiResponseLocalVar, connector);
 
-                        Events.ExecuteOnOBPv220GetMessageDocs(apiResponseLocalVar);
+                        Events.ExecuteOnGetMessageDocs(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -371,20 +371,20 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv220GetMessageDocsDefaultImplementation(e, "/obp/v2.2.0/message-docs/{connector}", uriBuilderLocalVar.Path, connector);
-                Events.ExecuteOnErrorOBPv220GetMessageDocs(e);
+                OnErrorGetMessageDocsDefaultImplementation(e, "/obp/v2.2.0/message-docs/{connector}", uriBuilderLocalVar.Path, connector);
+                Events.ExecuteOnErrorGetMessageDocs(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv310GetMessageDocsSwagger(ref string connector);
+        partial void FormatGetMessageDocsJsonSchema(ref string connector);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="connector"></param>
         /// <returns></returns>
-        private void ValidateOBPv310GetMessageDocsSwagger(string connector)
+        private void ValidateGetMessageDocsJsonSchema(string connector)
         {
             if (connector == null)
                 throw new ArgumentNullException(nameof(connector));
@@ -395,10 +395,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="connector"></param>
-        private void AfterOBPv310GetMessageDocsSwaggerDefaultImplementation(IOBPv310GetMessageDocsSwaggerApiResponse apiResponseLocalVar, string connector)
+        private void AfterGetMessageDocsJsonSchemaDefaultImplementation(IGetMessageDocsJsonSchemaApiResponse apiResponseLocalVar, string connector)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv310GetMessageDocsSwagger(ref suppressDefaultLog, apiResponseLocalVar, connector);
+            AfterGetMessageDocsJsonSchema(ref suppressDefaultLog, apiResponseLocalVar, connector);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -409,7 +409,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="connector"></param>
-        partial void AfterOBPv310GetMessageDocsSwagger(ref bool suppressDefaultLog, IOBPv310GetMessageDocsSwaggerApiResponse apiResponseLocalVar, string connector);
+        partial void AfterGetMessageDocsJsonSchema(ref bool suppressDefaultLog, IGetMessageDocsJsonSchemaApiResponse apiResponseLocalVar, string connector);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -418,10 +418,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="connector"></param>
-        private void OnErrorOBPv310GetMessageDocsSwaggerDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connector)
+        private void OnErrorGetMessageDocsJsonSchemaDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connector)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310GetMessageDocsSwagger(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, connector);
+            OnErrorGetMessageDocsJsonSchema(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, connector);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -434,159 +434,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="connector"></param>
-        partial void OnErrorOBPv310GetMessageDocsSwagger(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connector);
-
-        /// <summary>
-        /// Get Message Docs Swagger &lt;p&gt;This endpoint provides example message docs in swagger format.&lt;br /&gt; It is only relavent for REST Connectors.&lt;/p&gt; &lt;p&gt;This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).&lt;br /&gt; That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.&lt;/p&gt; &lt;p&gt;i.e.:&lt;/p&gt; &lt;p&gt;OBP API (Core OBP API code) -&amp;gt; OBP REST Connector (OBP REST Connector code) -&amp;gt; OBP REST Adapter (Adapter developer code) -&amp;gt; CBS (Main Frame)&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Connector\&quot;&gt;CONNECTOR&lt;/a&gt;: CONNECTOR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <param name="connector">The CONNECTOR identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetMessageDocsSwaggerApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310GetMessageDocsSwaggerApiResponse?> OBPv310GetMessageDocsSwaggerOrDefaultAsync(string connector, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv310GetMessageDocsSwaggerAsync(connector, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Get Message Docs Swagger &lt;p&gt;This endpoint provides example message docs in swagger format.&lt;br /&gt; It is only relavent for REST Connectors.&lt;/p&gt; &lt;p&gt;This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).&lt;br /&gt; That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.&lt;/p&gt; &lt;p&gt;i.e.:&lt;/p&gt; &lt;p&gt;OBP API (Core OBP API code) -&amp;gt; OBP REST Connector (OBP REST Connector code) -&amp;gt; OBP REST Adapter (Adapter developer code) -&amp;gt; CBS (Main Frame)&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Connector\&quot;&gt;CONNECTOR&lt;/a&gt;: CONNECTOR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="connector">The CONNECTOR identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetMessageDocsSwaggerApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310GetMessageDocsSwaggerApiResponse> OBPv310GetMessageDocsSwaggerAsync(string connector, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv310GetMessageDocsSwagger(connector);
-
-                FormatOBPv310GetMessageDocsSwagger(ref connector);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v3.1.0/message-docs/{connector}/swagger2.0"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/message-docs/{connector}/swagger2.0");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bconnector%7D", Uri.EscapeDataString(connector.ToString()));
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<APIApi.OBPv310GetMessageDocsSwaggerApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv310GetMessageDocsSwaggerApiResponse>();
-                        APIApi.OBPv310GetMessageDocsSwaggerApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/message-docs/{connector}/swagger2.0", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv310GetMessageDocsSwaggerDefaultImplementation(apiResponseLocalVar, connector);
-
-                        Events.ExecuteOnOBPv310GetMessageDocsSwagger(apiResponseLocalVar);
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv310GetMessageDocsSwaggerDefaultImplementation(e, "/obp/v3.1.0/message-docs/{connector}/swagger2.0", uriBuilderLocalVar.Path, connector);
-                Events.ExecuteOnErrorOBPv310GetMessageDocsSwagger(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv600GetMessageDocsJsonSchema(ref string connector);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="connector"></param>
-        /// <returns></returns>
-        private void ValidateOBPv600GetMessageDocsJsonSchema(string connector)
-        {
-            if (connector == null)
-                throw new ArgumentNullException(nameof(connector));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="connector"></param>
-        private void AfterOBPv600GetMessageDocsJsonSchemaDefaultImplementation(IOBPv600GetMessageDocsJsonSchemaApiResponse apiResponseLocalVar, string connector)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv600GetMessageDocsJsonSchema(ref suppressDefaultLog, apiResponseLocalVar, connector);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="connector"></param>
-        partial void AfterOBPv600GetMessageDocsJsonSchema(ref bool suppressDefaultLog, IOBPv600GetMessageDocsJsonSchemaApiResponse apiResponseLocalVar, string connector);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="connector"></param>
-        private void OnErrorOBPv600GetMessageDocsJsonSchemaDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connector)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetMessageDocsJsonSchema(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, connector);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="connector"></param>
-        partial void OnErrorOBPv600GetMessageDocsJsonSchema(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connector);
+        partial void OnErrorGetMessageDocsJsonSchema(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connector);
 
         /// <summary>
         /// Get Message Docs as JSON Schema &lt;p&gt;Returns message documentation as JSON Schema format for code generation in any language.&lt;/p&gt; &lt;p&gt;This endpoint provides machine-readable schemas instead of just examples, making it ideal for:&lt;br /&gt; - AI-powered code generation&lt;br /&gt; - Automatic adapter creation in multiple languages&lt;br /&gt; - Type-safe client generation with tools like quicktype&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Supported Connectors:&lt;/strong&gt;&lt;br /&gt; - rabbitmq_vOct2024 - RabbitMQ connector message schemas&lt;br /&gt; - rest_vMar2019 - REST connector message schemas&lt;br /&gt; - akka_vDec2018 - Akka connector message schemas&lt;br /&gt; - kafka_vMay2019 - Kafka connector message schemas (if available)&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Code Generation Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Generate Scala code with Circe:&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-bash\&quot;&gt;curl https://api.../message-docs/rabbitmq_vOct2024/json-schema &amp;gt; schemas.json quicktype -s schema schemas.json -o Messages.scala - -framework circe &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Generate Python code:&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-bash\&quot;&gt;quicktype -s schema schemas.json -o messages.py - -lang python &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Generate TypeScript code:&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-bash\&quot;&gt;quicktype -s schema schemas.json -o messages.ts - -lang typescript &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Schema Structure:&lt;/strong&gt;&lt;br /&gt; Each message includes:&lt;br /&gt; - &lt;code&gt;process&lt;/code&gt; - The connector method name (e.g., &amp;quot;obp.getAdapterInfo&amp;quot;)&lt;br /&gt; - &lt;code&gt;description&lt;/code&gt; - Human-readable description of what the message does&lt;br /&gt; - &lt;code&gt;outbound_schema&lt;/code&gt; - JSON Schema for request messages (OBP-API -&amp;gt; Adapter)&lt;br /&gt; - &lt;code&gt;inbound_schema&lt;/code&gt; - JSON Schema for response messages (Adapter -&amp;gt; OBP-API)&lt;/p&gt; &lt;p&gt;All nested type definitions are included in the &lt;code&gt;definitions&lt;/code&gt; section for reuse.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Authentication:&lt;/strong&gt;&lt;br /&gt; This endpoint is publicly accessible (no authentication required) to facilitate adapter development.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Connector\&quot;&gt;CONNECTOR&lt;/a&gt;: CONNECTOR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="connector">The CONNECTOR identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetMessageDocsJsonSchemaApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetMessageDocsJsonSchemaApiResponse?> OBPv600GetMessageDocsJsonSchemaOrDefaultAsync(string connector, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMessageDocsJsonSchemaApiResponse"/>&gt;</returns>
+        public async Task<IGetMessageDocsJsonSchemaApiResponse?> GetMessageDocsJsonSchemaOrDefaultAsync(string connector, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetMessageDocsJsonSchemaAsync(connector, cancellationToken).ConfigureAwait(false);
+                return await GetMessageDocsJsonSchemaAsync(connector, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -600,16 +460,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="connector">The CONNECTOR identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetMessageDocsJsonSchemaApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetMessageDocsJsonSchemaApiResponse> OBPv600GetMessageDocsJsonSchemaAsync(string connector, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMessageDocsJsonSchemaApiResponse"/>&gt;</returns>
+        public async Task<IGetMessageDocsJsonSchemaApiResponse> GetMessageDocsJsonSchemaAsync(string connector, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600GetMessageDocsJsonSchema(connector);
+                ValidateGetMessageDocsJsonSchema(connector);
 
-                FormatOBPv600GetMessageDocsJsonSchema(ref connector);
+                FormatGetMessageDocsJsonSchema(ref connector);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -629,8 +489,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv600GetMessageDocsJsonSchemaApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600GetMessageDocsJsonSchemaApiResponse>();
-                        APIApi.OBPv600GetMessageDocsJsonSchemaApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.GetMessageDocsJsonSchemaApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetMessageDocsJsonSchemaApiResponse>();
+                        APIApi.GetMessageDocsJsonSchemaApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -641,9 +501,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetMessageDocsJsonSchemaDefaultImplementation(apiResponseLocalVar, connector);
+                        AfterGetMessageDocsJsonSchemaDefaultImplementation(apiResponseLocalVar, connector);
 
-                        Events.ExecuteOnOBPv600GetMessageDocsJsonSchema(apiResponseLocalVar);
+                        Events.ExecuteOnGetMessageDocsJsonSchema(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -651,8 +511,148 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetMessageDocsJsonSchemaDefaultImplementation(e, "/obp/v6.0.0/message-docs/{connector}/json-schema", uriBuilderLocalVar.Path, connector);
-                Events.ExecuteOnErrorOBPv600GetMessageDocsJsonSchema(e);
+                OnErrorGetMessageDocsJsonSchemaDefaultImplementation(e, "/obp/v6.0.0/message-docs/{connector}/json-schema", uriBuilderLocalVar.Path, connector);
+                Events.ExecuteOnErrorGetMessageDocsJsonSchema(e);
+                throw;
+            }
+        }
+
+        partial void FormatGetMessageDocsSwagger(ref string connector);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="connector"></param>
+        /// <returns></returns>
+        private void ValidateGetMessageDocsSwagger(string connector)
+        {
+            if (connector == null)
+                throw new ArgumentNullException(nameof(connector));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="connector"></param>
+        private void AfterGetMessageDocsSwaggerDefaultImplementation(IGetMessageDocsSwaggerApiResponse apiResponseLocalVar, string connector)
+        {
+            bool suppressDefaultLog = false;
+            AfterGetMessageDocsSwagger(ref suppressDefaultLog, apiResponseLocalVar, connector);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="connector"></param>
+        partial void AfterGetMessageDocsSwagger(ref bool suppressDefaultLog, IGetMessageDocsSwaggerApiResponse apiResponseLocalVar, string connector);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="connector"></param>
+        private void OnErrorGetMessageDocsSwaggerDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connector)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorGetMessageDocsSwagger(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, connector);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="connector"></param>
+        partial void OnErrorGetMessageDocsSwagger(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connector);
+
+        /// <summary>
+        /// Get Message Docs Swagger &lt;p&gt;This endpoint provides example message docs in swagger format.&lt;br /&gt; It is only relavent for REST Connectors.&lt;/p&gt; &lt;p&gt;This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).&lt;br /&gt; That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.&lt;/p&gt; &lt;p&gt;i.e.:&lt;/p&gt; &lt;p&gt;OBP API (Core OBP API code) -&amp;gt; OBP REST Connector (OBP REST Connector code) -&amp;gt; OBP REST Adapter (Adapter developer code) -&amp;gt; CBS (Main Frame)&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Connector\&quot;&gt;CONNECTOR&lt;/a&gt;: CONNECTOR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </summary>
+        /// <param name="connector">The CONNECTOR identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMessageDocsSwaggerApiResponse"/>&gt;</returns>
+        public async Task<IGetMessageDocsSwaggerApiResponse?> GetMessageDocsSwaggerOrDefaultAsync(string connector, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await GetMessageDocsSwaggerAsync(connector, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Get Message Docs Swagger &lt;p&gt;This endpoint provides example message docs in swagger format.&lt;br /&gt; It is only relavent for REST Connectors.&lt;/p&gt; &lt;p&gt;This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).&lt;br /&gt; That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.&lt;/p&gt; &lt;p&gt;i.e.:&lt;/p&gt; &lt;p&gt;OBP API (Core OBP API code) -&amp;gt; OBP REST Connector (OBP REST Connector code) -&amp;gt; OBP REST Adapter (Adapter developer code) -&amp;gt; CBS (Main Frame)&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Connector\&quot;&gt;CONNECTOR&lt;/a&gt;: CONNECTOR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connector">The CONNECTOR identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMessageDocsSwaggerApiResponse"/>&gt;</returns>
+        public async Task<IGetMessageDocsSwaggerApiResponse> GetMessageDocsSwaggerAsync(string connector, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateGetMessageDocsSwagger(connector);
+
+                FormatGetMessageDocsSwagger(ref connector);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v3.1.0/message-docs/{connector}/swagger2.0"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/message-docs/{connector}/swagger2.0");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bconnector%7D", Uri.EscapeDataString(connector.ToString()));
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<APIApi.GetMessageDocsSwaggerApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetMessageDocsSwaggerApiResponse>();
+                        APIApi.GetMessageDocsSwaggerApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/message-docs/{connector}/swagger2.0", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterGetMessageDocsSwaggerDefaultImplementation(apiResponseLocalVar, connector);
+
+                        Events.ExecuteOnGetMessageDocsSwagger(apiResponseLocalVar);
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorGetMessageDocsSwaggerDefaultImplementation(e, "/obp/v3.1.0/message-docs/{connector}/swagger2.0", uriBuilderLocalVar.Path, connector);
+                Events.ExecuteOnErrorGetMessageDocsSwagger(e);
                 throw;
             }
         }

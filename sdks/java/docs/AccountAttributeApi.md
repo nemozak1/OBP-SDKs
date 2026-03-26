@@ -1,25 +1,25 @@
 # AccountAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv310CreateAccountAttribute**](AccountAttributeApi.md#oBPv310CreateAccountAttribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute |
-| [**oBPv310CreateAccountAttributeWithHttpInfo**](AccountAttributeApi.md#oBPv310CreateAccountAttributeWithHttpInfo) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute |
-| [**oBPv310UpdateAccountAttribute**](AccountAttributeApi.md#oBPv310UpdateAccountAttribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute |
-| [**oBPv310UpdateAccountAttributeWithHttpInfo**](AccountAttributeApi.md#oBPv310UpdateAccountAttributeWithHttpInfo) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute |
-| [**oBPv400CreateOrUpdateAccountAttributeDefinition**](AccountAttributeApi.md#oBPv400CreateOrUpdateAccountAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition |
-| [**oBPv400CreateOrUpdateAccountAttributeDefinitionWithHttpInfo**](AccountAttributeApi.md#oBPv400CreateOrUpdateAccountAttributeDefinitionWithHttpInfo) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition |
-| [**oBPv400DeleteAccountAttributeDefinition**](AccountAttributeApi.md#oBPv400DeleteAccountAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition |
-| [**oBPv400DeleteAccountAttributeDefinitionWithHttpInfo**](AccountAttributeApi.md#oBPv400DeleteAccountAttributeDefinitionWithHttpInfo) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition |
-| [**oBPv400GetAccountAttributeDefinition**](AccountAttributeApi.md#oBPv400GetAccountAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition |
-| [**oBPv400GetAccountAttributeDefinitionWithHttpInfo**](AccountAttributeApi.md#oBPv400GetAccountAttributeDefinitionWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition |
+| [**createAccountAttribute**](AccountAttributeApi.md#createAccountAttribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute |
+| [**createAccountAttributeWithHttpInfo**](AccountAttributeApi.md#createAccountAttributeWithHttpInfo) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute |
+| [**createOrUpdateAccountAttributeDefinition**](AccountAttributeApi.md#createOrUpdateAccountAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition |
+| [**createOrUpdateAccountAttributeDefinitionWithHttpInfo**](AccountAttributeApi.md#createOrUpdateAccountAttributeDefinitionWithHttpInfo) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition |
+| [**deleteAccountAttributeDefinition**](AccountAttributeApi.md#deleteAccountAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition |
+| [**deleteAccountAttributeDefinitionWithHttpInfo**](AccountAttributeApi.md#deleteAccountAttributeDefinitionWithHttpInfo) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition |
+| [**getAccountAttributeDefinition**](AccountAttributeApi.md#getAccountAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition |
+| [**getAccountAttributeDefinitionWithHttpInfo**](AccountAttributeApi.md#getAccountAttributeDefinitionWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition |
+| [**updateAccountAttribute**](AccountAttributeApi.md#updateAccountAttribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute |
+| [**updateAccountAttributeWithHttpInfo**](AccountAttributeApi.md#updateAccountAttributeWithHttpInfo) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute |
 
 
 
-## oBPv310CreateAccountAttribute
+## createAccountAttribute
 
-> OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems oBPv310CreateAccountAttribute(bankid, accountid, productcode, obPv310UpdateAccountAttributeRequest)
+> GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner createAccountAttribute(bankid, accountid, productcode, updateAccountAttributeRequest)
 
 Create Account Attribute
 
@@ -39,7 +39,7 @@ import com.openbankproject.api.AccountAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -61,12 +61,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
-        OBPv310UpdateAccountAttributeRequest obPv310UpdateAccountAttributeRequest = new OBPv310UpdateAccountAttributeRequest(); // OBPv310UpdateAccountAttributeRequest | Request body
+        UpdateAccountAttributeRequest updateAccountAttributeRequest = new UpdateAccountAttributeRequest(); // UpdateAccountAttributeRequest | Request body
         try {
-            OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems result = apiInstance.oBPv310CreateAccountAttribute(bankid, accountid, productcode, obPv310UpdateAccountAttributeRequest);
+            GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner result = apiInstance.createAccountAttribute(bankid, accountid, productcode, updateAccountAttributeRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAttributeApi#oBPv310CreateAccountAttribute");
+            System.err.println("Exception when calling AccountAttributeApi#createAccountAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -84,11 +84,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **productcode** | **String**| The PRODUCTCODE identifier | |
-| **obPv310UpdateAccountAttributeRequest** | [**OBPv310UpdateAccountAttributeRequest**](OBPv310UpdateAccountAttributeRequest.md)| Request body | |
+| **updateAccountAttributeRequest** | [**UpdateAccountAttributeRequest**](UpdateAccountAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems**](OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems.md)
+[**GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner**](GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner.md)
 
 
 ### Authorization
@@ -106,9 +106,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv310CreateAccountAttributeWithHttpInfo
+## createAccountAttributeWithHttpInfo
 
-> ApiResponse<OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems> oBPv310CreateAccountAttribute oBPv310CreateAccountAttributeWithHttpInfo(bankid, accountid, productcode, obPv310UpdateAccountAttributeRequest)
+> ApiResponse<GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner> createAccountAttribute createAccountAttributeWithHttpInfo(bankid, accountid, productcode, updateAccountAttributeRequest)
 
 Create Account Attribute
 
@@ -129,7 +129,7 @@ import com.openbankproject.api.AccountAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -151,14 +151,14 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
-        OBPv310UpdateAccountAttributeRequest obPv310UpdateAccountAttributeRequest = new OBPv310UpdateAccountAttributeRequest(); // OBPv310UpdateAccountAttributeRequest | Request body
+        UpdateAccountAttributeRequest updateAccountAttributeRequest = new UpdateAccountAttributeRequest(); // UpdateAccountAttributeRequest | Request body
         try {
-            ApiResponse<OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems> response = apiInstance.oBPv310CreateAccountAttributeWithHttpInfo(bankid, accountid, productcode, obPv310UpdateAccountAttributeRequest);
+            ApiResponse<GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner> response = apiInstance.createAccountAttributeWithHttpInfo(bankid, accountid, productcode, updateAccountAttributeRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAttributeApi#oBPv310CreateAccountAttribute");
+            System.err.println("Exception when calling AccountAttributeApi#createAccountAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -176,11 +176,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **productcode** | **String**| The PRODUCTCODE identifier | |
-| **obPv310UpdateAccountAttributeRequest** | [**OBPv310UpdateAccountAttributeRequest**](OBPv310UpdateAccountAttributeRequest.md)| Request body | |
+| **updateAccountAttributeRequest** | [**UpdateAccountAttributeRequest**](UpdateAccountAttributeRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems**](OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems.md)>
+ApiResponse<[**GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner**](GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner.md)>
 
 
 ### Authorization
@@ -199,195 +199,9 @@ ApiResponse<[**OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttri
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv310UpdateAccountAttribute
+## createOrUpdateAccountAttributeDefinition
 
-> OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems oBPv310UpdateAccountAttribute(bankid, accountid, productcode, accountattributeid, obPv310UpdateAccountAttributeRequest)
-
-Update Account Attribute
-
-&lt;p&gt;Update Account Attribute&lt;/p&gt; &lt;p&gt;Account Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Account Attribute is linked to its Account by ACCOUNT_ID&lt;/p&gt; &lt;p&gt;Typical account attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;ACCOUNT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.AccountAttributeApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        AccountAttributeApi apiInstance = new AccountAttributeApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
-        String accountattributeid = "accountattributeid_example"; // String | The ACCOUNTATTRIBUTEID identifier
-        OBPv310UpdateAccountAttributeRequest obPv310UpdateAccountAttributeRequest = new OBPv310UpdateAccountAttributeRequest(); // OBPv310UpdateAccountAttributeRequest | Request body
-        try {
-            OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems result = apiInstance.oBPv310UpdateAccountAttribute(bankid, accountid, productcode, accountattributeid, obPv310UpdateAccountAttributeRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAttributeApi#oBPv310UpdateAccountAttribute");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **accountid** | **String**| The ACCOUNTID identifier | |
-| **productcode** | **String**| The PRODUCTCODE identifier | |
-| **accountattributeid** | **String**| The ACCOUNTATTRIBUTEID identifier | |
-| **obPv310UpdateAccountAttributeRequest** | [**OBPv310UpdateAccountAttributeRequest**](OBPv310UpdateAccountAttributeRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems**](OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems.md)
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-## oBPv310UpdateAccountAttributeWithHttpInfo
-
-> ApiResponse<OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems> oBPv310UpdateAccountAttribute oBPv310UpdateAccountAttributeWithHttpInfo(bankid, accountid, productcode, accountattributeid, obPv310UpdateAccountAttributeRequest)
-
-Update Account Attribute
-
-&lt;p&gt;Update Account Attribute&lt;/p&gt; &lt;p&gt;Account Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Account Attribute is linked to its Account by ACCOUNT_ID&lt;/p&gt; &lt;p&gt;Typical account attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;ACCOUNT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.ApiResponse;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.AccountAttributeApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        AccountAttributeApi apiInstance = new AccountAttributeApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
-        String accountattributeid = "accountattributeid_example"; // String | The ACCOUNTATTRIBUTEID identifier
-        OBPv310UpdateAccountAttributeRequest obPv310UpdateAccountAttributeRequest = new OBPv310UpdateAccountAttributeRequest(); // OBPv310UpdateAccountAttributeRequest | Request body
-        try {
-            ApiResponse<OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems> response = apiInstance.oBPv310UpdateAccountAttributeWithHttpInfo(bankid, accountid, productcode, accountattributeid, obPv310UpdateAccountAttributeRequest);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders());
-            System.out.println("Response body: " + response.getData());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAttributeApi#oBPv310UpdateAccountAttribute");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **accountid** | **String**| The ACCOUNTID identifier | |
-| **productcode** | **String**| The PRODUCTCODE identifier | |
-| **accountattributeid** | **String**| The ACCOUNTATTRIBUTEID identifier | |
-| **obPv310UpdateAccountAttributeRequest** | [**OBPv310UpdateAccountAttributeRequest**](OBPv310UpdateAccountAttributeRequest.md)| Request body | |
-
-### Return type
-
-ApiResponse<[**OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems**](OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems.md)>
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-
-## oBPv400CreateOrUpdateAccountAttributeDefinition
-
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateAccountAttributeDefinition(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateAccountAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Account Attribute Definition
 
@@ -407,7 +221,7 @@ import com.openbankproject.api.AccountAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -427,12 +241,12 @@ public class Example {
 
         AccountAttributeApi apiInstance = new AccountAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = new OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(); // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+        CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest = new CreateOrUpdateTransactionRequestAttributeDefinitionRequest(); // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
         try {
-            OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems result = apiInstance.oBPv400CreateOrUpdateAccountAttributeDefinition(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+            GetTransactionRequestAttributeDefinition200ResponseAttributesInner result = apiInstance.createOrUpdateAccountAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAttributeApi#oBPv400CreateOrUpdateAccountAttributeDefinition");
+            System.err.println("Exception when calling AccountAttributeApi#createOrUpdateAccountAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -448,11 +262,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
+| **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 
 ### Authorization
@@ -471,9 +285,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateOrUpdateAccountAttributeDefinitionWithHttpInfo
+## createOrUpdateAccountAttributeDefinitionWithHttpInfo
 
-> ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> oBPv400CreateOrUpdateAccountAttributeDefinition oBPv400CreateOrUpdateAccountAttributeDefinitionWithHttpInfo(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+> ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> createOrUpdateAccountAttributeDefinition createOrUpdateAccountAttributeDefinitionWithHttpInfo(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Account Attribute Definition
 
@@ -494,7 +308,7 @@ import com.openbankproject.api.AccountAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -514,14 +328,14 @@ public class Example {
 
         AccountAttributeApi apiInstance = new AccountAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = new OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(); // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+        CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest = new CreateOrUpdateTransactionRequestAttributeDefinitionRequest(); // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
         try {
-            ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> response = apiInstance.oBPv400CreateOrUpdateAccountAttributeDefinitionWithHttpInfo(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+            ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> response = apiInstance.createOrUpdateAccountAttributeDefinitionWithHttpInfo(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAttributeApi#oBPv400CreateOrUpdateAccountAttributeDefinition");
+            System.err.println("Exception when calling AccountAttributeApi#createOrUpdateAccountAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -537,11 +351,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
+| **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)>
+ApiResponse<[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)>
 
 
 ### Authorization
@@ -561,9 +375,9 @@ ApiResponse<[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropert
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteAccountAttributeDefinition
+## deleteAccountAttributeDefinition
 
-> void oBPv400DeleteAccountAttributeDefinition(bankid, attributedefinitionid)
+> void deleteAccountAttributeDefinition(bankid, attributedefinitionid)
 
 Delete Account Attribute Definition
 
@@ -583,7 +397,7 @@ import com.openbankproject.api.AccountAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -605,9 +419,9 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String attributedefinitionid = "attributedefinitionid_example"; // String | The ATTRIBUTEDEFINITIONID identifier
         try {
-            apiInstance.oBPv400DeleteAccountAttributeDefinition(bankid, attributedefinitionid);
+            apiInstance.deleteAccountAttributeDefinition(bankid, attributedefinitionid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAttributeApi#oBPv400DeleteAccountAttributeDefinition");
+            System.err.println("Exception when calling AccountAttributeApi#deleteAccountAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -646,9 +460,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteAccountAttributeDefinitionWithHttpInfo
+## deleteAccountAttributeDefinitionWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteAccountAttributeDefinition oBPv400DeleteAccountAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid)
+> ApiResponse<Void> deleteAccountAttributeDefinition deleteAccountAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid)
 
 Delete Account Attribute Definition
 
@@ -669,7 +483,7 @@ import com.openbankproject.api.AccountAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -691,11 +505,11 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String attributedefinitionid = "attributedefinitionid_example"; // String | The ATTRIBUTEDEFINITIONID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteAccountAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid);
+            ApiResponse<Void> response = apiInstance.deleteAccountAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAttributeApi#oBPv400DeleteAccountAttributeDefinition");
+            System.err.println("Exception when calling AccountAttributeApi#deleteAccountAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -735,9 +549,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetAccountAttributeDefinition
+## getAccountAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200Response oBPv400GetAccountAttributeDefinition(bankid)
+> GetTransactionRequestAttributeDefinition200Response getAccountAttributeDefinition(bankid)
 
 Get Account Attribute Definition
 
@@ -757,7 +571,7 @@ import com.openbankproject.api.AccountAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -778,10 +592,10 @@ public class Example {
         AccountAttributeApi apiInstance = new AccountAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            OBPv400GetTransactionRequestAttributeDefinition200Response result = apiInstance.oBPv400GetAccountAttributeDefinition(bankid);
+            GetTransactionRequestAttributeDefinition200Response result = apiInstance.getAccountAttributeDefinition(bankid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAttributeApi#oBPv400GetAccountAttributeDefinition");
+            System.err.println("Exception when calling AccountAttributeApi#getAccountAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -800,7 +614,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 
 ### Authorization
@@ -819,9 +633,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetAccountAttributeDefinitionWithHttpInfo
+## getAccountAttributeDefinitionWithHttpInfo
 
-> ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response> oBPv400GetAccountAttributeDefinition oBPv400GetAccountAttributeDefinitionWithHttpInfo(bankid)
+> ApiResponse<GetTransactionRequestAttributeDefinition200Response> getAccountAttributeDefinition getAccountAttributeDefinitionWithHttpInfo(bankid)
 
 Get Account Attribute Definition
 
@@ -842,7 +656,7 @@ import com.openbankproject.api.AccountAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -863,12 +677,12 @@ public class Example {
         AccountAttributeApi apiInstance = new AccountAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response> response = apiInstance.oBPv400GetAccountAttributeDefinitionWithHttpInfo(bankid);
+            ApiResponse<GetTransactionRequestAttributeDefinition200Response> response = apiInstance.getAccountAttributeDefinitionWithHttpInfo(bankid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAttributeApi#oBPv400GetAccountAttributeDefinition");
+            System.err.println("Exception when calling AccountAttributeApi#getAccountAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -887,7 +701,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)>
+ApiResponse<[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)>
 
 
 ### Authorization
@@ -904,5 +718,191 @@ ApiResponse<[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBP
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 | **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+
+## updateAccountAttribute
+
+> GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner updateAccountAttribute(bankid, accountid, productcode, accountattributeid, updateAccountAttributeRequest)
+
+Update Account Attribute
+
+&lt;p&gt;Update Account Attribute&lt;/p&gt; &lt;p&gt;Account Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Account Attribute is linked to its Account by ACCOUNT_ID&lt;/p&gt; &lt;p&gt;Typical account attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;ACCOUNT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.AccountAttributeApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        AccountAttributeApi apiInstance = new AccountAttributeApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
+        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
+        String accountattributeid = "accountattributeid_example"; // String | The ACCOUNTATTRIBUTEID identifier
+        UpdateAccountAttributeRequest updateAccountAttributeRequest = new UpdateAccountAttributeRequest(); // UpdateAccountAttributeRequest | Request body
+        try {
+            GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner result = apiInstance.updateAccountAttribute(bankid, accountid, productcode, accountattributeid, updateAccountAttributeRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AccountAttributeApi#updateAccountAttribute");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **accountid** | **String**| The ACCOUNTID identifier | |
+| **productcode** | **String**| The PRODUCTCODE identifier | |
+| **accountattributeid** | **String**| The ACCOUNTATTRIBUTEID identifier | |
+| **updateAccountAttributeRequest** | [**UpdateAccountAttributeRequest**](UpdateAccountAttributeRequest.md)| Request body | |
+
+### Return type
+
+[**GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner**](GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner.md)
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+## updateAccountAttributeWithHttpInfo
+
+> ApiResponse<GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner> updateAccountAttribute updateAccountAttributeWithHttpInfo(bankid, accountid, productcode, accountattributeid, updateAccountAttributeRequest)
+
+Update Account Attribute
+
+&lt;p&gt;Update Account Attribute&lt;/p&gt; &lt;p&gt;Account Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Account Attribute is linked to its Account by ACCOUNT_ID&lt;/p&gt; &lt;p&gt;Typical account attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;ACCOUNT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.ApiResponse;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.AccountAttributeApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        AccountAttributeApi apiInstance = new AccountAttributeApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
+        String productcode = "productcode_example"; // String | The PRODUCTCODE identifier
+        String accountattributeid = "accountattributeid_example"; // String | The ACCOUNTATTRIBUTEID identifier
+        UpdateAccountAttributeRequest updateAccountAttributeRequest = new UpdateAccountAttributeRequest(); // UpdateAccountAttributeRequest | Request body
+        try {
+            ApiResponse<GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner> response = apiInstance.updateAccountAttributeWithHttpInfo(bankid, accountid, productcode, accountattributeid, updateAccountAttributeRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AccountAttributeApi#updateAccountAttribute");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **accountid** | **String**| The ACCOUNTID identifier | |
+| **productcode** | **String**| The PRODUCTCODE identifier | |
+| **accountattributeid** | **String**| The ACCOUNTATTRIBUTEID identifier | |
+| **updateAccountAttributeRequest** | [**UpdateAccountAttributeRequest**](UpdateAccountAttributeRequest.md)| Request body | |
+
+### Return type
+
+ApiResponse<[**GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner**](GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner.md)>
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 

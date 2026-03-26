@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,88 +24,177 @@ import (
 // PaymentInitiationServicePISAPIService PaymentInitiationServicePISAPI service
 type PaymentInitiationServicePISAPIService service
 
-type ApiOBPv140GetTransactionRequestTypesRequest struct {
+type ApiAnswerTransactionRequestChallengeRequest struct {
 	ctx context.Context
 	ApiService *PaymentInitiationServicePISAPIService
 	bankid string
 	accountid string
 	viewid string
+	transactionrequesttype string
+	transactionrequestid string
+	answerTransactionRequestChallengeRequest *AnswerTransactionRequestChallengeRequest
 }
 
-func (r ApiOBPv140GetTransactionRequestTypesRequest) Execute() (*OBPv140GetTransactionRequestTypes200Response, *http.Response, error) {
-	return r.ApiService.OBPv140GetTransactionRequestTypesExecute(r)
+// Request body
+func (r ApiAnswerTransactionRequestChallengeRequest) AnswerTransactionRequestChallengeRequest(answerTransactionRequestChallengeRequest AnswerTransactionRequestChallengeRequest) ApiAnswerTransactionRequestChallengeRequest {
+	r.answerTransactionRequestChallengeRequest = &answerTransactionRequestChallengeRequest
+	return r
+}
+
+func (r ApiAnswerTransactionRequestChallengeRequest) Execute() (*GetTransactionRequestById200Response, *http.Response, error) {
+	return r.ApiService.AnswerTransactionRequestChallengeExecute(r)
 }
 
 /*
-OBPv140GetTransactionRequestTypes Get Transaction Request Types for Account
+AnswerTransactionRequestChallenge Answer Transaction Request Challenge
 
-<p>Returns the Transaction Request Types that the account specified by ACCOUNT_ID and view specified by VIEW_ID has access to.</p>
-<p>These are the ways this API Server can create a Transaction via a Transaction Request<br />
-(as opposed to Transaction Types which include external types too e.g. for Transactions created by core banking etc.)</p>
-<p>A Transaction Request Type internally determines:</p>
-<ul>
-<li>the required Transaction Request 'body' i.e. fields that define the 'what' and 'to' of a Transaction Request,</li>
-<li>the type of security challenge that may be be raised before the Transaction Request proceeds, and</li>
-<li>the threshold of that challenge.</li>
-</ul>
-<p>For instance in a 'SANDBOX_TAN' Transaction Request, for amounts over 1000 currency units, the user must supply a positive integer to complete the Transaction Request and create a Transaction.</p>
-<p>This approach aims to provide only one endpoint for initiating transactions, and one that handles challenges, whilst still allowing flexibility with the payload and internal logic.</p>
+<p>In Sandbox mode, any string that can be converted to a positive integer will be accepted as an answer.</p>
+<p>This endpoint totally depends on createTransactionRequest, it need get the following data from createTransactionRequest response body.</p>
+<p>1)<code>TRANSACTION_REQUEST_TYPE</code> : is the same as createTransactionRequest request URL .</p>
+<p>2)<code>TRANSACTION_REQUEST_ID</code> : is the <code>id</code> field in createTransactionRequest response body.</p>
+<p>3) <code>id</code> :  is <code>challenge.id</code> field in createTransactionRequest response body.</p>
+<p>4) <code>answer</code> : must be <code>123</code> in case that Strong Customer Authentication method for OTP challenge is dummy.<br />
+For instance: SANDBOX_TAN_OTP_INSTRUCTION_TRANSPORT=dummy<br />
+Possible values are dummy,email and sms<br />
+In CBS mode, the answer can be got by phone message or other SCA methods.</p>
+<p>Note that each Transaction Request Type can have its own OTP_INSTRUCTION_TRANSPORT method.<br />
+OTP_INSTRUCTION_TRANSPORT methods are set in Props. See sample.props.template for instructions.</p>
+<p>Single or Multiple authorisations</p>
+<p>OBP allows single or multi party authorisations.</p>
+<p>Single party authorisation:</p>
+<p>In the case that only one person needs to authorise i.e. answer a security challenge we have the following change of state of a <code>transaction request</code>:<br />
+INITIATED =&gt; COMPLETED</p>
+<p>Multiparty authorisation:</p>
+<p>In the case that multiple parties (n persons) need to authorise a transaction request i.e. answer security challenges, we have the followings state flow for a <code>transaction request</code>:<br />
+INITIATED =&gt; NEXT_CHALLENGE_PENDING =&gt; ... =&gt; NEXT_CHALLENGE_PENDING =&gt; COMPLETED</p>
+<p>The security challenge is bound to a user i.e. in the case of a correct answer but the user is different than expected the challenge will fail.</p>
+<p>Rule for calculating number of security challenges:<br />
+If Product Account attribute REQUIRED_CHALLENGE_ANSWERS=N then create N challenges<br />
+(one for every user that has a View where permission can_add_transaction_request_to_any_account=true)<br />
+In the case REQUIRED_CHALLENGE_ANSWERS is not defined as an account attribute, the default number of security challenges created is one.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
+<p><a href="/glossary#">TRANSACTION_REQUEST_TYPE</a>: SEPA</p>
 <p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#answer"><strong>answer</strong></a>:</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#">additional_information</a>: additional_information</p>
+<p><a href="/glossary#">reason_code</a>: reason_code</p>
 <p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
 <p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge"><strong>challenge</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
 <p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
 <p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
 <p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#transaction_request_types"><strong>transaction_request_types</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
 <p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv140GetTransactionRequestTypesRequest
+ @param transactionrequesttype The TRANSACTIONREQUESTTYPE identifier
+ @param transactionrequestid The TRANSACTIONREQUESTID identifier
+ @return ApiAnswerTransactionRequestChallengeRequest
 */
-func (a *PaymentInitiationServicePISAPIService) OBPv140GetTransactionRequestTypes(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv140GetTransactionRequestTypesRequest {
-	return ApiOBPv140GetTransactionRequestTypesRequest{
+func (a *PaymentInitiationServicePISAPIService) AnswerTransactionRequestChallenge(ctx context.Context, bankid string, accountid string, viewid string, transactionrequesttype string, transactionrequestid string) ApiAnswerTransactionRequestChallengeRequest {
+	return ApiAnswerTransactionRequestChallengeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
 		accountid: accountid,
 		viewid: viewid,
+		transactionrequesttype: transactionrequesttype,
+		transactionrequestid: transactionrequestid,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv140GetTransactionRequestTypes200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv140GetTransactionRequestTypesExecute(r ApiOBPv140GetTransactionRequestTypesRequest) (*OBPv140GetTransactionRequestTypes200Response, *http.Response, error) {
+//  @return GetTransactionRequestById200Response
+func (a *PaymentInitiationServicePISAPIService) AnswerTransactionRequestChallengeExecute(r ApiAnswerTransactionRequestChallengeRequest) (*GetTransactionRequestById200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
+		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv140GetTransactionRequestTypes200Response
+		localVarReturnValue  *GetTransactionRequestById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv140GetTransactionRequestTypes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.AnswerTransactionRequestChallenge")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types"
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge"
 	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionrequesttype"+"}", url.PathEscape(parameterValueToString(r.transactionrequesttype, "transactionrequesttype")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionrequestid"+"}", url.PathEscape(parameterValueToString(r.transactionrequestid, "transactionrequestid")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.answerTransactionRequestChallengeRequest == nil {
+		return localVarReturnValue, nil, reportError("answerTransactionRequestChallengeRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -121,6 +210,8 @@ func (a *PaymentInitiationServicePISAPIService) OBPv140GetTransactionRequestType
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.answerTransactionRequestChallengeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -145,7 +236,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv140GetTransactionRequestType
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -186,28 +277,2579 @@ func (a *PaymentInitiationServicePISAPIService) OBPv140GetTransactionRequestType
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv210CreateTransactionRequestSandboxTanRequest struct {
+type ApiCreateTransactionRequestAccountRequest struct {
+	ctx context.Context
+	ApiService *PaymentInitiationServicePISAPIService
+	bankid string
+	accountid string
+	viewid string
+	account string
+	createTransactionRequestAccountRequest *CreateTransactionRequestAccountRequest
+}
+
+// Request body
+func (r ApiCreateTransactionRequestAccountRequest) CreateTransactionRequestAccountRequest(createTransactionRequestAccountRequest CreateTransactionRequestAccountRequest) ApiCreateTransactionRequestAccountRequest {
+	r.createTransactionRequestAccountRequest = &createTransactionRequestAccountRequest
+	return r
+}
+
+func (r ApiCreateTransactionRequestAccountRequest) Execute() (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	return r.ApiService.CreateTransactionRequestAccountExecute(r)
+}
+
+/*
+CreateTransactionRequestAccount Create Transaction Request (ACCOUNT)
+
+<p>When using ACCOUNT, the payee is set in the request body.</p>
+<p>Money goes into the BANK_ID and ACCOUNT_ID specified in the request body.</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account">ACCOUNT</a>:</p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @param account The ACCOUNT identifier
+ @return ApiCreateTransactionRequestAccountRequest
+*/
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestAccount(ctx context.Context, bankid string, accountid string, viewid string, account string) ApiCreateTransactionRequestAccountRequest {
+	return ApiCreateTransactionRequestAccountRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+		account: account,
+	}
+}
+
+// Execute executes the request
+//  @return CreateTransactionRequestCounterparty200Response
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestAccountExecute(r ApiCreateTransactionRequestAccountRequest) (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateTransactionRequestCounterparty200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.CreateTransactionRequestAccount")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"account"+"}", url.PathEscape(parameterValueToString(r.account, "account")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createTransactionRequestAccountRequest == nil {
+		return localVarReturnValue, nil, reportError("createTransactionRequestAccountRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createTransactionRequestAccountRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateTransactionRequestAccountOtpRequest struct {
+	ctx context.Context
+	ApiService *PaymentInitiationServicePISAPIService
+	bankid string
+	accountid string
+	viewid string
+	accountotp string
+	createTransactionRequestAccountRequest *CreateTransactionRequestAccountRequest
+}
+
+// Request body
+func (r ApiCreateTransactionRequestAccountOtpRequest) CreateTransactionRequestAccountRequest(createTransactionRequestAccountRequest CreateTransactionRequestAccountRequest) ApiCreateTransactionRequestAccountOtpRequest {
+	r.createTransactionRequestAccountRequest = &createTransactionRequestAccountRequest
+	return r
+}
+
+func (r ApiCreateTransactionRequestAccountOtpRequest) Execute() (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	return r.ApiService.CreateTransactionRequestAccountOtpExecute(r)
+}
+
+/*
+CreateTransactionRequestAccountOtp Create Transaction Request (ACCOUNT_OTP)
+
+<p>When using ACCOUNT, the payee is set in the request body.</p>
+<p>Money goes into the BANK_ID and ACCOUNT_ID specified in the request body.</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#account_otp">ACCOUNT_OTP</a>:</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @param accountotp The ACCOUNTOTP identifier
+ @return ApiCreateTransactionRequestAccountOtpRequest
+*/
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestAccountOtp(ctx context.Context, bankid string, accountid string, viewid string, accountotp string) ApiCreateTransactionRequestAccountOtpRequest {
+	return ApiCreateTransactionRequestAccountOtpRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+		accountotp: accountotp,
+	}
+}
+
+// Execute executes the request
+//  @return CreateTransactionRequestCounterparty200Response
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestAccountOtpExecute(r ApiCreateTransactionRequestAccountOtpRequest) (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateTransactionRequestCounterparty200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.CreateTransactionRequestAccountOtp")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountotp"+"}", url.PathEscape(parameterValueToString(r.accountotp, "accountotp")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createTransactionRequestAccountRequest == nil {
+		return localVarReturnValue, nil, reportError("createTransactionRequestAccountRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createTransactionRequestAccountRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateTransactionRequestAgentCashWithDrawalRequest struct {
+	ctx context.Context
+	ApiService *PaymentInitiationServicePISAPIService
+	bankid string
+	accountid string
+	viewid string
+	agentcashwithdrawal string
+	createTransactionRequestAgentCashWithDrawalRequest *CreateTransactionRequestAgentCashWithDrawalRequest
+}
+
+// Request body
+func (r ApiCreateTransactionRequestAgentCashWithDrawalRequest) CreateTransactionRequestAgentCashWithDrawalRequest(createTransactionRequestAgentCashWithDrawalRequest CreateTransactionRequestAgentCashWithDrawalRequest) ApiCreateTransactionRequestAgentCashWithDrawalRequest {
+	r.createTransactionRequestAgentCashWithDrawalRequest = &createTransactionRequestAgentCashWithDrawalRequest
+	return r
+}
+
+func (r ApiCreateTransactionRequestAgentCashWithDrawalRequest) Execute() (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	return r.ApiService.CreateTransactionRequestAgentCashWithDrawalExecute(r)
+}
+
+/*
+CreateTransactionRequestAgentCashWithDrawal Create Transaction Request (AGENT_CASH_WITHDRAWAL)
+
+<p>Either the <code>from</code> or the <code>to</code> field must be filled. Those fields refers to the information about the party that will be refunded.</p>
+<p>In case the <code>from</code> object is used, it means that the refund comes from the part that sent you a transaction.<br />
+In the <code>from</code> object, you have two choices :<br />
+- Use <code>bank_id</code> and <code>account_id</code> fields if the other account is registered on the OBP-API<br />
+- Use the <code>counterparty_id</code> field in case the counterparty account is out of the OBP-API</p>
+<p>In case the <code>to</code> object is used, it means you send a request to a counterparty to ask for a refund on a previous transaction you sent.<br />
+(This case is not managed by the OBP-API and require an external adapter)</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#">AGENT_CASH_WITHDRAWAL</a>: AGENT_CASH_WITHDRAWAL</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>charge_policy</strong></a>: SHARED</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#future_date">future_date</a>: 20200127</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @param agentcashwithdrawal The AGENTCASHWITHDRAWAL identifier
+ @return ApiCreateTransactionRequestAgentCashWithDrawalRequest
+*/
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestAgentCashWithDrawal(ctx context.Context, bankid string, accountid string, viewid string, agentcashwithdrawal string) ApiCreateTransactionRequestAgentCashWithDrawalRequest {
+	return ApiCreateTransactionRequestAgentCashWithDrawalRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+		agentcashwithdrawal: agentcashwithdrawal,
+	}
+}
+
+// Execute executes the request
+//  @return CreateTransactionRequestCounterparty200Response
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestAgentCashWithDrawalExecute(r ApiCreateTransactionRequestAgentCashWithDrawalRequest) (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateTransactionRequestCounterparty200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.CreateTransactionRequestAgentCashWithDrawal")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"agentcashwithdrawal"+"}", url.PathEscape(parameterValueToString(r.agentcashwithdrawal, "agentcashwithdrawal")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createTransactionRequestAgentCashWithDrawalRequest == nil {
+		return localVarReturnValue, nil, reportError("createTransactionRequestAgentCashWithDrawalRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createTransactionRequestAgentCashWithDrawalRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateTransactionRequestCardRequest struct {
+	ctx context.Context
+	ApiService *PaymentInitiationServicePISAPIService
+	card string
+	createTransactionRequestCardRequest *CreateTransactionRequestCardRequest
+}
+
+// Request body
+func (r ApiCreateTransactionRequestCardRequest) CreateTransactionRequestCardRequest(createTransactionRequestCardRequest CreateTransactionRequestCardRequest) ApiCreateTransactionRequestCardRequest {
+	r.createTransactionRequestCardRequest = &createTransactionRequestCardRequest
+	return r
+}
+
+func (r ApiCreateTransactionRequestCardRequest) Execute() (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	return r.ApiService.CreateTransactionRequestCardExecute(r)
+}
+
+/*
+CreateTransactionRequestCard Create Transaction Request (CARD)
+
+<p>When using CARD, the payee is set in the request body .</p>
+<p>Money goes into the Counterparty in the request body.</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">CARD</a>: CARD</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>brand</strong></a>: Visa</p>
+<p><a href="/glossary#"><strong>card</strong></a>: card</p>
+<p><a href="/glossary#"><strong>card_number</strong></a>: 364435172576215</p>
+<p><a href="/glossary#"><strong>card_type</strong></a>: Credit</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>cvv</strong></a>: 123</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>expiry_month</strong></a>: 01</p>
+<p><a href="/glossary#"><strong>expiry_year</strong></a>: 2023</p>
+<p><a href="/glossary#"><strong>name_on_card</strong></a>: SusanSmith</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param card The CARD identifier
+ @return ApiCreateTransactionRequestCardRequest
+*/
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestCard(ctx context.Context, card string) ApiCreateTransactionRequestCardRequest {
+	return ApiCreateTransactionRequestCardRequest{
+		ApiService: a,
+		ctx: ctx,
+		card: card,
+	}
+}
+
+// Execute executes the request
+//  @return CreateTransactionRequestCounterparty200Response
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestCardExecute(r ApiCreateTransactionRequestCardRequest) (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateTransactionRequestCounterparty200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.CreateTransactionRequestCard")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/transaction-request-types/{card}/transaction-requests"
+	localVarPath = strings.Replace(localVarPath, "{"+"card"+"}", url.PathEscape(parameterValueToString(r.card, "card")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createTransactionRequestCardRequest == nil {
+		return localVarReturnValue, nil, reportError("createTransactionRequestCardRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createTransactionRequestCardRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateTransactionRequestCardanoRequest struct {
+	ctx context.Context
+	ApiService *PaymentInitiationServicePISAPIService
+	bankid string
+	accountid string
+	cardano string
+	createTransactionRequestCardanoRequest *CreateTransactionRequestCardanoRequest
+}
+
+// Request body
+func (r ApiCreateTransactionRequestCardanoRequest) CreateTransactionRequestCardanoRequest(createTransactionRequestCardanoRequest CreateTransactionRequestCardanoRequest) ApiCreateTransactionRequestCardanoRequest {
+	r.createTransactionRequestCardanoRequest = &createTransactionRequestCardanoRequest
+	return r
+}
+
+func (r ApiCreateTransactionRequestCardanoRequest) Execute() (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	return r.ApiService.CreateTransactionRequestCardanoExecute(r)
+}
+
+/*
+CreateTransactionRequestCardano Create Transaction Request (CARDANO)
+
+<p>For sandbox mode, it will use the Cardano Preprod Network.<br />
+The accountId can be the wallet_id for now, as it uses cardano-wallet in the backend.</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">CARDANO</a>: CARDANO</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#address"><strong>address</strong></a>:</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>asset_name</strong></a>: asset_name</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>passphrase</strong></a>: passphrase</p>
+<p><a href="/glossary#"><strong>policy_id</strong></a>: policy_id</p>
+<p><a href="/glossary#"><strong>quantity</strong></a>: quantity</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#"><strong>unit</strong></a>: unit</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#">assets</a>: assets</p>
+<p><a href="/glossary#metadata">metadata</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param cardano The CARDANO identifier
+ @return ApiCreateTransactionRequestCardanoRequest
+*/
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestCardano(ctx context.Context, bankid string, accountid string, cardano string) ApiCreateTransactionRequestCardanoRequest {
+	return ApiCreateTransactionRequestCardanoRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		cardano: cardano,
+	}
+}
+
+// Execute executes the request
+//  @return CreateTransactionRequestCounterparty200Response
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestCardanoExecute(r ApiCreateTransactionRequestCardanoRequest) (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateTransactionRequestCounterparty200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.CreateTransactionRequestCardano")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cardano"+"}", url.PathEscape(parameterValueToString(r.cardano, "cardano")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createTransactionRequestCardanoRequest == nil {
+		return localVarReturnValue, nil, reportError("createTransactionRequestCardanoRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createTransactionRequestCardanoRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateTransactionRequestCounterpartyRequest struct {
+	ctx context.Context
+	ApiService *PaymentInitiationServicePISAPIService
+	bankid string
+	accountid string
+	viewid string
+	counterparty string
+	createTransactionRequestCounterpartyRequest *CreateTransactionRequestCounterpartyRequest
+}
+
+// Request body
+func (r ApiCreateTransactionRequestCounterpartyRequest) CreateTransactionRequestCounterpartyRequest(createTransactionRequestCounterpartyRequest CreateTransactionRequestCounterpartyRequest) ApiCreateTransactionRequestCounterpartyRequest {
+	r.createTransactionRequestCounterpartyRequest = &createTransactionRequestCounterpartyRequest
+	return r
+}
+
+func (r ApiCreateTransactionRequestCounterpartyRequest) Execute() (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	return r.ApiService.CreateTransactionRequestCounterpartyExecute(r)
+}
+
+/*
+CreateTransactionRequestCounterparty Create Transaction Request (COUNTERPARTY)
+
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>When using a COUNTERPARTY to create a Transaction Request, specify the counterparty_id in the body of the request.<br />
+The routing details of the counterparty will be forwarded to the Core Banking System (CBS) for the transfer.</p>
+<p>COUNTERPARTY Transaction Requests are used for Variable Recurring Payments (VRP). Use the following <a href="http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest">endpoint</a> to create a consent for VRPs.</p>
+<p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#counterparty">COUNTERPARTY</a>:</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#"><strong>charge_policy</strong></a>: SHARED</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#future_date">future_date</a>: 20200127</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @param counterparty The COUNTERPARTY identifier
+ @return ApiCreateTransactionRequestCounterpartyRequest
+*/
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestCounterparty(ctx context.Context, bankid string, accountid string, viewid string, counterparty string) ApiCreateTransactionRequestCounterpartyRequest {
+	return ApiCreateTransactionRequestCounterpartyRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+		counterparty: counterparty,
+	}
+}
+
+// Execute executes the request
+//  @return CreateTransactionRequestCounterparty200Response
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestCounterpartyExecute(r ApiCreateTransactionRequestCounterpartyRequest) (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateTransactionRequestCounterparty200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.CreateTransactionRequestCounterparty")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"counterparty"+"}", url.PathEscape(parameterValueToString(r.counterparty, "counterparty")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createTransactionRequestCounterpartyRequest == nil {
+		return localVarReturnValue, nil, reportError("createTransactionRequestCounterpartyRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createTransactionRequestCounterpartyRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateTransactionRequestEthSendRawTransactionRequest struct {
+	ctx context.Context
+	ApiService *PaymentInitiationServicePISAPIService
+	bankid string
+	accountid string
+	ethsendrawtransaction string
+	createTransactionRequestEthSendRawTransactionRequest *CreateTransactionRequestEthSendRawTransactionRequest
+}
+
+// Request body
+func (r ApiCreateTransactionRequestEthSendRawTransactionRequest) CreateTransactionRequestEthSendRawTransactionRequest(createTransactionRequestEthSendRawTransactionRequest CreateTransactionRequestEthSendRawTransactionRequest) ApiCreateTransactionRequestEthSendRawTransactionRequest {
+	r.createTransactionRequestEthSendRawTransactionRequest = &createTransactionRequestEthSendRawTransactionRequest
+	return r
+}
+
+func (r ApiCreateTransactionRequestEthSendRawTransactionRequest) Execute() (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	return r.ApiService.CreateTransactionRequestEthSendRawTransactionExecute(r)
+}
+
+/*
+CreateTransactionRequestEthSendRawTransaction CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
+
+<p>Send ETH via Ethereum JSON-RPC.<br />
+AccountId should hold the 0x address for now.</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">ETH_SEND_RAW_TRANSACTION</a>: ETH_SEND_RAW_TRANSACTION</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>params</strong></a>: params</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param ethsendrawtransaction The ETHSENDRAWTRANSACTION identifier
+ @return ApiCreateTransactionRequestEthSendRawTransactionRequest
+*/
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestEthSendRawTransaction(ctx context.Context, bankid string, accountid string, ethsendrawtransaction string) ApiCreateTransactionRequestEthSendRawTransactionRequest {
+	return ApiCreateTransactionRequestEthSendRawTransactionRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		ethsendrawtransaction: ethsendrawtransaction,
+	}
+}
+
+// Execute executes the request
+//  @return CreateTransactionRequestCounterparty200Response
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestEthSendRawTransactionExecute(r ApiCreateTransactionRequestEthSendRawTransactionRequest) (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateTransactionRequestCounterparty200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.CreateTransactionRequestEthSendRawTransaction")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ethsendrawtransaction"+"}", url.PathEscape(parameterValueToString(r.ethsendrawtransaction, "ethsendrawtransaction")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createTransactionRequestEthSendRawTransactionRequest == nil {
+		return localVarReturnValue, nil, reportError("createTransactionRequestEthSendRawTransactionRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createTransactionRequestEthSendRawTransactionRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateTransactionRequestEthereumeSendTransactionRequest struct {
+	ctx context.Context
+	ApiService *PaymentInitiationServicePISAPIService
+	bankid string
+	accountid string
+	ethsendtransaction string
+	createTransactionRequestEthereumeSendTransactionRequest *CreateTransactionRequestEthereumeSendTransactionRequest
+}
+
+// Request body
+func (r ApiCreateTransactionRequestEthereumeSendTransactionRequest) CreateTransactionRequestEthereumeSendTransactionRequest(createTransactionRequestEthereumeSendTransactionRequest CreateTransactionRequestEthereumeSendTransactionRequest) ApiCreateTransactionRequestEthereumeSendTransactionRequest {
+	r.createTransactionRequestEthereumeSendTransactionRequest = &createTransactionRequestEthereumeSendTransactionRequest
+	return r
+}
+
+func (r ApiCreateTransactionRequestEthereumeSendTransactionRequest) Execute() (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	return r.ApiService.CreateTransactionRequestEthereumeSendTransactionExecute(r)
+}
+
+/*
+CreateTransactionRequestEthereumeSendTransaction Create Transaction Request (ETH_SEND_TRANSACTION)
+
+<p>Send ETH via Ethereum JSON-RPC.<br />
+AccountId should hold the 0x address for now.</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">ETH_SEND_TRANSACTION</a>: ETH_SEND_TRANSACTION</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#">params</a>: params</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param ethsendtransaction The ETHSENDTRANSACTION identifier
+ @return ApiCreateTransactionRequestEthereumeSendTransactionRequest
+*/
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestEthereumeSendTransaction(ctx context.Context, bankid string, accountid string, ethsendtransaction string) ApiCreateTransactionRequestEthereumeSendTransactionRequest {
+	return ApiCreateTransactionRequestEthereumeSendTransactionRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		ethsendtransaction: ethsendtransaction,
+	}
+}
+
+// Execute executes the request
+//  @return CreateTransactionRequestCounterparty200Response
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestEthereumeSendTransactionExecute(r ApiCreateTransactionRequestEthereumeSendTransactionRequest) (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateTransactionRequestCounterparty200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.CreateTransactionRequestEthereumeSendTransaction")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ethsendtransaction"+"}", url.PathEscape(parameterValueToString(r.ethsendtransaction, "ethsendtransaction")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createTransactionRequestEthereumeSendTransactionRequest == nil {
+		return localVarReturnValue, nil, reportError("createTransactionRequestEthereumeSendTransactionRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createTransactionRequestEthereumeSendTransactionRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateTransactionRequestFreeFormRequest struct {
+	ctx context.Context
+	ApiService *PaymentInitiationServicePISAPIService
+	bankid string
+	accountid string
+	viewid string
+	freeform string
+	createTransactionRequestFreeFormRequest *CreateTransactionRequestFreeFormRequest
+}
+
+// Request body
+func (r ApiCreateTransactionRequestFreeFormRequest) CreateTransactionRequestFreeFormRequest(createTransactionRequestFreeFormRequest CreateTransactionRequestFreeFormRequest) ApiCreateTransactionRequestFreeFormRequest {
+	r.createTransactionRequestFreeFormRequest = &createTransactionRequestFreeFormRequest
+	return r
+}
+
+func (r ApiCreateTransactionRequestFreeFormRequest) Execute() (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	return r.ApiService.CreateTransactionRequestFreeFormExecute(r)
+}
+
+/*
+CreateTransactionRequestFreeForm Create Transaction Request (FREE_FORM)
+
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#free_form">FREE_FORM</a>:</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @param freeform The FREEFORM identifier
+ @return ApiCreateTransactionRequestFreeFormRequest
+*/
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestFreeForm(ctx context.Context, bankid string, accountid string, viewid string, freeform string) ApiCreateTransactionRequestFreeFormRequest {
+	return ApiCreateTransactionRequestFreeFormRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+		freeform: freeform,
+	}
+}
+
+// Execute executes the request
+//  @return CreateTransactionRequestCounterparty200Response
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestFreeFormExecute(r ApiCreateTransactionRequestFreeFormRequest) (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateTransactionRequestCounterparty200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.CreateTransactionRequestFreeForm")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeform"+"}", url.PathEscape(parameterValueToString(r.freeform, "freeform")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createTransactionRequestFreeFormRequest == nil {
+		return localVarReturnValue, nil, reportError("createTransactionRequestFreeFormRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createTransactionRequestFreeFormRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateTransactionRequestHoldRequest struct {
+	ctx context.Context
+	ApiService *PaymentInitiationServicePISAPIService
+	bankid string
+	accountid string
+	hold string
+	createTransactionRequestFreeFormRequest *CreateTransactionRequestFreeFormRequest
+}
+
+// Request body
+func (r ApiCreateTransactionRequestHoldRequest) CreateTransactionRequestFreeFormRequest(createTransactionRequestFreeFormRequest CreateTransactionRequestFreeFormRequest) ApiCreateTransactionRequestHoldRequest {
+	r.createTransactionRequestFreeFormRequest = &createTransactionRequestFreeFormRequest
+	return r
+}
+
+func (r ApiCreateTransactionRequestHoldRequest) Execute() (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	return r.ApiService.CreateTransactionRequestHoldExecute(r)
+}
+
+/*
+CreateTransactionRequestHold Create Transaction Request (HOLD)
+
+<p>Create a transaction request to move funds from the account to its Holding Account.<br />
+If the Holding Account does not exist, it will be created automatically.</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">HOLD</a>: HOLD</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param hold The HOLD identifier
+ @return ApiCreateTransactionRequestHoldRequest
+*/
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestHold(ctx context.Context, bankid string, accountid string, hold string) ApiCreateTransactionRequestHoldRequest {
+	return ApiCreateTransactionRequestHoldRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		hold: hold,
+	}
+}
+
+// Execute executes the request
+//  @return CreateTransactionRequestCounterparty200Response
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestHoldExecute(r ApiCreateTransactionRequestHoldRequest) (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateTransactionRequestCounterparty200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.CreateTransactionRequestHold")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"hold"+"}", url.PathEscape(parameterValueToString(r.hold, "hold")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createTransactionRequestFreeFormRequest == nil {
+		return localVarReturnValue, nil, reportError("createTransactionRequestFreeFormRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createTransactionRequestFreeFormRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateTransactionRequestRefundRequest struct {
+	ctx context.Context
+	ApiService *PaymentInitiationServicePISAPIService
+	bankid string
+	accountid string
+	viewid string
+	refund string
+	createTransactionRequestRefundRequest *CreateTransactionRequestRefundRequest
+}
+
+// Request body
+func (r ApiCreateTransactionRequestRefundRequest) CreateTransactionRequestRefundRequest(createTransactionRequestRefundRequest CreateTransactionRequestRefundRequest) ApiCreateTransactionRequestRefundRequest {
+	r.createTransactionRequestRefundRequest = &createTransactionRequestRefundRequest
+	return r
+}
+
+func (r ApiCreateTransactionRequestRefundRequest) Execute() (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	return r.ApiService.CreateTransactionRequestRefundExecute(r)
+}
+
+/*
+CreateTransactionRequestRefund Create Transaction Request (REFUND)
+
+<p>Either the <code>from</code> or the <code>to</code> field must be filled. Those fields refers to the information about the party that will be refunded.</p>
+<p>In case the <code>from</code> object is used, it means that the refund comes from the part that sent you a transaction.<br />
+In the <code>from</code> object, you have two choices :<br />
+- Use <code>bank_id</code> and <code>account_id</code> fields if the other account is registered on the OBP-API<br />
+- Use the <code>counterparty_id</code> field in case the counterparty account is out of the OBP-API</p>
+<p>In case the <code>to</code> object is used, it means you send a request to a counterparty to ask for a refund on a previous transaction you sent.<br />
+(This case is not managed by the OBP-API and require an external adapter)</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">REFUND</a>: REFUND</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>reason_code</strong></a>: reason_code</p>
+<p><a href="/glossary#"><strong>refund</strong></a>: refund</p>
+<p><a href="/glossary#"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#">account_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#">bank_id</a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#from">from</a>:</p>
+<p><a href="/glossary#to">to</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @param refund The REFUND identifier
+ @return ApiCreateTransactionRequestRefundRequest
+*/
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestRefund(ctx context.Context, bankid string, accountid string, viewid string, refund string) ApiCreateTransactionRequestRefundRequest {
+	return ApiCreateTransactionRequestRefundRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+		refund: refund,
+	}
+}
+
+// Execute executes the request
+//  @return CreateTransactionRequestCounterparty200Response
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestRefundExecute(r ApiCreateTransactionRequestRefundRequest) (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateTransactionRequestCounterparty200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.CreateTransactionRequestRefund")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"refund"+"}", url.PathEscape(parameterValueToString(r.refund, "refund")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createTransactionRequestRefundRequest == nil {
+		return localVarReturnValue, nil, reportError("createTransactionRequestRefundRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createTransactionRequestRefundRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateTransactionRequestSandboxTanRequest struct {
 	ctx context.Context
 	ApiService *PaymentInitiationServicePISAPIService
 	bankid string
 	accountid string
 	viewid string
 	sandboxtan string
-	oBPv400CreateTransactionRequestAccountRequest *OBPv400CreateTransactionRequestAccountRequest
+	createTransactionRequestAccountRequest *CreateTransactionRequestAccountRequest
 }
 
 // Request body
-func (r ApiOBPv210CreateTransactionRequestSandboxTanRequest) OBPv400CreateTransactionRequestAccountRequest(oBPv400CreateTransactionRequestAccountRequest OBPv400CreateTransactionRequestAccountRequest) ApiOBPv210CreateTransactionRequestSandboxTanRequest {
-	r.oBPv400CreateTransactionRequestAccountRequest = &oBPv400CreateTransactionRequestAccountRequest
+func (r ApiCreateTransactionRequestSandboxTanRequest) CreateTransactionRequestAccountRequest(createTransactionRequestAccountRequest CreateTransactionRequestAccountRequest) ApiCreateTransactionRequestSandboxTanRequest {
+	r.createTransactionRequestAccountRequest = &createTransactionRequestAccountRequest
 	return r
 }
 
-func (r ApiOBPv210CreateTransactionRequestSandboxTanRequest) Execute() (*OBPv510GetTransactionRequestById200Response, *http.Response, error) {
-	return r.ApiService.OBPv210CreateTransactionRequestSandboxTanExecute(r)
+func (r ApiCreateTransactionRequestSandboxTanRequest) Execute() (*GetTransactionRequestById200Response, *http.Response, error) {
+	return r.ApiService.CreateTransactionRequestSandboxTanExecute(r)
 }
 
 /*
-OBPv210CreateTransactionRequestSandboxTan Create Transaction Request (SANDBOX_TAN)
+CreateTransactionRequestSandboxTan Create Transaction Request (SANDBOX_TAN)
 
 <p>When using SANDBOX_TAN, the payee is set in the request body.</p>
 <p>Money goes into the BANK_ID and ACCOUNT_ID specified in the request body.</p>
@@ -537,10 +3179,10 @@ This provides some commonality and one URL for many different payment or transfe
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param sandboxtan The SANDBOXTAN identifier
- @return ApiOBPv210CreateTransactionRequestSandboxTanRequest
+ @return ApiCreateTransactionRequestSandboxTanRequest
 */
-func (a *PaymentInitiationServicePISAPIService) OBPv210CreateTransactionRequestSandboxTan(ctx context.Context, bankid string, accountid string, viewid string, sandboxtan string) ApiOBPv210CreateTransactionRequestSandboxTanRequest {
-	return ApiOBPv210CreateTransactionRequestSandboxTanRequest{
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestSandboxTan(ctx context.Context, bankid string, accountid string, viewid string, sandboxtan string) ApiCreateTransactionRequestSandboxTanRequest {
+	return ApiCreateTransactionRequestSandboxTanRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -551,16 +3193,16 @@ func (a *PaymentInitiationServicePISAPIService) OBPv210CreateTransactionRequestS
 }
 
 // Execute executes the request
-//  @return OBPv510GetTransactionRequestById200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv210CreateTransactionRequestSandboxTanExecute(r ApiOBPv210CreateTransactionRequestSandboxTanRequest) (*OBPv510GetTransactionRequestById200Response, *http.Response, error) {
+//  @return GetTransactionRequestById200Response
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestSandboxTanExecute(r ApiCreateTransactionRequestSandboxTanRequest) (*GetTransactionRequestById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetTransactionRequestById200Response
+		localVarReturnValue  *GetTransactionRequestById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv210CreateTransactionRequestSandboxTan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.CreateTransactionRequestSandboxTan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -574,8 +3216,8 @@ func (a *PaymentInitiationServicePISAPIService) OBPv210CreateTransactionRequestS
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateTransactionRequestAccountRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateTransactionRequestAccountRequest is required and must be specified")
+	if r.createTransactionRequestAccountRequest == nil {
+		return localVarReturnValue, nil, reportError("createTransactionRequestAccountRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -596,7 +3238,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv210CreateTransactionRequestS
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateTransactionRequestAccountRequest
+	localVarPostBody = r.createTransactionRequestAccountRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -621,7 +3263,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv210CreateTransactionRequestS
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -662,1923 +3304,28 @@ func (a *PaymentInitiationServicePISAPIService) OBPv210CreateTransactionRequestS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400AnswerTransactionRequestChallengeRequest struct {
-	ctx context.Context
-	ApiService *PaymentInitiationServicePISAPIService
-	bankid string
-	accountid string
-	viewid string
-	transactionrequesttype string
-	transactionrequestid string
-	oBPv400AnswerTransactionRequestChallengeRequest *OBPv400AnswerTransactionRequestChallengeRequest
-}
-
-// Request body
-func (r ApiOBPv400AnswerTransactionRequestChallengeRequest) OBPv400AnswerTransactionRequestChallengeRequest(oBPv400AnswerTransactionRequestChallengeRequest OBPv400AnswerTransactionRequestChallengeRequest) ApiOBPv400AnswerTransactionRequestChallengeRequest {
-	r.oBPv400AnswerTransactionRequestChallengeRequest = &oBPv400AnswerTransactionRequestChallengeRequest
-	return r
-}
-
-func (r ApiOBPv400AnswerTransactionRequestChallengeRequest) Execute() (*OBPv510GetTransactionRequestById200Response, *http.Response, error) {
-	return r.ApiService.OBPv400AnswerTransactionRequestChallengeExecute(r)
-}
-
-/*
-OBPv400AnswerTransactionRequestChallenge Answer Transaction Request Challenge
-
-<p>In Sandbox mode, any string that can be converted to a positive integer will be accepted as an answer.</p>
-<p>This endpoint totally depends on createTransactionRequest, it need get the following data from createTransactionRequest response body.</p>
-<p>1)<code>TRANSACTION_REQUEST_TYPE</code> : is the same as createTransactionRequest request URL .</p>
-<p>2)<code>TRANSACTION_REQUEST_ID</code> : is the <code>id</code> field in createTransactionRequest response body.</p>
-<p>3) <code>id</code> :  is <code>challenge.id</code> field in createTransactionRequest response body.</p>
-<p>4) <code>answer</code> : must be <code>123</code> in case that Strong Customer Authentication method for OTP challenge is dummy.<br />
-For instance: SANDBOX_TAN_OTP_INSTRUCTION_TRANSPORT=dummy<br />
-Possible values are dummy,email and sms<br />
-In CBS mode, the answer can be got by phone message or other SCA methods.</p>
-<p>Note that each Transaction Request Type can have its own OTP_INSTRUCTION_TRANSPORT method.<br />
-OTP_INSTRUCTION_TRANSPORT methods are set in Props. See sample.props.template for instructions.</p>
-<p>Single or Multiple authorisations</p>
-<p>OBP allows single or multi party authorisations.</p>
-<p>Single party authorisation:</p>
-<p>In the case that only one person needs to authorise i.e. answer a security challenge we have the following change of state of a <code>transaction request</code>:<br />
-INITIATED =&gt; COMPLETED</p>
-<p>Multiparty authorisation:</p>
-<p>In the case that multiple parties (n persons) need to authorise a transaction request i.e. answer security challenges, we have the followings state flow for a <code>transaction request</code>:<br />
-INITIATED =&gt; NEXT_CHALLENGE_PENDING =&gt; ... =&gt; NEXT_CHALLENGE_PENDING =&gt; COMPLETED</p>
-<p>The security challenge is bound to a user i.e. in the case of a correct answer but the user is different than expected the challenge will fail.</p>
-<p>Rule for calculating number of security challenges:<br />
-If Product Account attribute REQUIRED_CHALLENGE_ANSWERS=N then create N challenges<br />
-(one for every user that has a View where permission can_add_transaction_request_to_any_account=true)<br />
-In the case REQUIRED_CHALLENGE_ANSWERS is not defined as an account attribute, the default number of security challenges created is one.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
-<p><a href="/glossary#">TRANSACTION_REQUEST_TYPE</a>: SEPA</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#answer"><strong>answer</strong></a>:</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#">additional_information</a>: additional_information</p>
-<p><a href="/glossary#">reason_code</a>: reason_code</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge"><strong>challenge</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param transactionrequesttype The TRANSACTIONREQUESTTYPE identifier
- @param transactionrequestid The TRANSACTIONREQUESTID identifier
- @return ApiOBPv400AnswerTransactionRequestChallengeRequest
-*/
-func (a *PaymentInitiationServicePISAPIService) OBPv400AnswerTransactionRequestChallenge(ctx context.Context, bankid string, accountid string, viewid string, transactionrequesttype string, transactionrequestid string) ApiOBPv400AnswerTransactionRequestChallengeRequest {
-	return ApiOBPv400AnswerTransactionRequestChallengeRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		transactionrequesttype: transactionrequesttype,
-		transactionrequestid: transactionrequestid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510GetTransactionRequestById200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv400AnswerTransactionRequestChallengeExecute(r ApiOBPv400AnswerTransactionRequestChallengeRequest) (*OBPv510GetTransactionRequestById200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetTransactionRequestById200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv400AnswerTransactionRequestChallenge")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"transactionrequesttype"+"}", url.PathEscape(parameterValueToString(r.transactionrequesttype, "transactionrequesttype")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"transactionrequestid"+"}", url.PathEscape(parameterValueToString(r.transactionrequestid, "transactionrequestid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400AnswerTransactionRequestChallengeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400AnswerTransactionRequestChallengeRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400AnswerTransactionRequestChallengeRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateTransactionRequestAccountRequest struct {
-	ctx context.Context
-	ApiService *PaymentInitiationServicePISAPIService
-	bankid string
-	accountid string
-	viewid string
-	account string
-	oBPv400CreateTransactionRequestAccountRequest *OBPv400CreateTransactionRequestAccountRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateTransactionRequestAccountRequest) OBPv400CreateTransactionRequestAccountRequest(oBPv400CreateTransactionRequestAccountRequest OBPv400CreateTransactionRequestAccountRequest) ApiOBPv400CreateTransactionRequestAccountRequest {
-	r.oBPv400CreateTransactionRequestAccountRequest = &oBPv400CreateTransactionRequestAccountRequest
-	return r
-}
-
-func (r ApiOBPv400CreateTransactionRequestAccountRequest) Execute() (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateTransactionRequestAccountExecute(r)
-}
-
-/*
-OBPv400CreateTransactionRequestAccount Create Transaction Request (ACCOUNT)
-
-<p>When using ACCOUNT, the payee is set in the request body.</p>
-<p>Money goes into the BANK_ID and ACCOUNT_ID specified in the request body.</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account">ACCOUNT</a>:</p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param account The ACCOUNT identifier
- @return ApiOBPv400CreateTransactionRequestAccountRequest
-*/
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestAccount(ctx context.Context, bankid string, accountid string, viewid string, account string) ApiOBPv400CreateTransactionRequestAccountRequest {
-	return ApiOBPv400CreateTransactionRequestAccountRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		account: account,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400CreateTransactionRequestCounterparty200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestAccountExecute(r ApiOBPv400CreateTransactionRequestAccountRequest) (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateTransactionRequestCounterparty200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv400CreateTransactionRequestAccount")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"account"+"}", url.PathEscape(parameterValueToString(r.account, "account")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400CreateTransactionRequestAccountRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateTransactionRequestAccountRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400CreateTransactionRequestAccountRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateTransactionRequestAccountOtpRequest struct {
-	ctx context.Context
-	ApiService *PaymentInitiationServicePISAPIService
-	bankid string
-	accountid string
-	viewid string
-	accountotp string
-	oBPv400CreateTransactionRequestAccountRequest *OBPv400CreateTransactionRequestAccountRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateTransactionRequestAccountOtpRequest) OBPv400CreateTransactionRequestAccountRequest(oBPv400CreateTransactionRequestAccountRequest OBPv400CreateTransactionRequestAccountRequest) ApiOBPv400CreateTransactionRequestAccountOtpRequest {
-	r.oBPv400CreateTransactionRequestAccountRequest = &oBPv400CreateTransactionRequestAccountRequest
-	return r
-}
-
-func (r ApiOBPv400CreateTransactionRequestAccountOtpRequest) Execute() (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateTransactionRequestAccountOtpExecute(r)
-}
-
-/*
-OBPv400CreateTransactionRequestAccountOtp Create Transaction Request (ACCOUNT_OTP)
-
-<p>When using ACCOUNT, the payee is set in the request body.</p>
-<p>Money goes into the BANK_ID and ACCOUNT_ID specified in the request body.</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#account_otp">ACCOUNT_OTP</a>:</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param accountotp The ACCOUNTOTP identifier
- @return ApiOBPv400CreateTransactionRequestAccountOtpRequest
-*/
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestAccountOtp(ctx context.Context, bankid string, accountid string, viewid string, accountotp string) ApiOBPv400CreateTransactionRequestAccountOtpRequest {
-	return ApiOBPv400CreateTransactionRequestAccountOtpRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		accountotp: accountotp,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400CreateTransactionRequestCounterparty200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestAccountOtpExecute(r ApiOBPv400CreateTransactionRequestAccountOtpRequest) (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateTransactionRequestCounterparty200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv400CreateTransactionRequestAccountOtp")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountotp"+"}", url.PathEscape(parameterValueToString(r.accountotp, "accountotp")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400CreateTransactionRequestAccountRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateTransactionRequestAccountRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400CreateTransactionRequestAccountRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateTransactionRequestAgentCashWithDrawalRequest struct {
-	ctx context.Context
-	ApiService *PaymentInitiationServicePISAPIService
-	bankid string
-	accountid string
-	viewid string
-	agentcashwithdrawal string
-	oBPv400CreateTransactionRequestAgentCashWithDrawalRequest *OBPv400CreateTransactionRequestAgentCashWithDrawalRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateTransactionRequestAgentCashWithDrawalRequest) OBPv400CreateTransactionRequestAgentCashWithDrawalRequest(oBPv400CreateTransactionRequestAgentCashWithDrawalRequest OBPv400CreateTransactionRequestAgentCashWithDrawalRequest) ApiOBPv400CreateTransactionRequestAgentCashWithDrawalRequest {
-	r.oBPv400CreateTransactionRequestAgentCashWithDrawalRequest = &oBPv400CreateTransactionRequestAgentCashWithDrawalRequest
-	return r
-}
-
-func (r ApiOBPv400CreateTransactionRequestAgentCashWithDrawalRequest) Execute() (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateTransactionRequestAgentCashWithDrawalExecute(r)
-}
-
-/*
-OBPv400CreateTransactionRequestAgentCashWithDrawal Create Transaction Request (AGENT_CASH_WITHDRAWAL)
-
-<p>Either the <code>from</code> or the <code>to</code> field must be filled. Those fields refers to the information about the party that will be refunded.</p>
-<p>In case the <code>from</code> object is used, it means that the refund comes from the part that sent you a transaction.<br />
-In the <code>from</code> object, you have two choices :<br />
-- Use <code>bank_id</code> and <code>account_id</code> fields if the other account is registered on the OBP-API<br />
-- Use the <code>counterparty_id</code> field in case the counterparty account is out of the OBP-API</p>
-<p>In case the <code>to</code> object is used, it means you send a request to a counterparty to ask for a refund on a previous transaction you sent.<br />
-(This case is not managed by the OBP-API and require an external adapter)</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#">AGENT_CASH_WITHDRAWAL</a>: AGENT_CASH_WITHDRAWAL</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>charge_policy</strong></a>: SHARED</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#future_date">future_date</a>: 20200127</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param agentcashwithdrawal The AGENTCASHWITHDRAWAL identifier
- @return ApiOBPv400CreateTransactionRequestAgentCashWithDrawalRequest
-*/
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestAgentCashWithDrawal(ctx context.Context, bankid string, accountid string, viewid string, agentcashwithdrawal string) ApiOBPv400CreateTransactionRequestAgentCashWithDrawalRequest {
-	return ApiOBPv400CreateTransactionRequestAgentCashWithDrawalRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		agentcashwithdrawal: agentcashwithdrawal,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400CreateTransactionRequestCounterparty200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestAgentCashWithDrawalExecute(r ApiOBPv400CreateTransactionRequestAgentCashWithDrawalRequest) (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateTransactionRequestCounterparty200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv400CreateTransactionRequestAgentCashWithDrawal")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"agentcashwithdrawal"+"}", url.PathEscape(parameterValueToString(r.agentcashwithdrawal, "agentcashwithdrawal")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400CreateTransactionRequestAgentCashWithDrawalRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateTransactionRequestAgentCashWithDrawalRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400CreateTransactionRequestAgentCashWithDrawalRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateTransactionRequestCardRequest struct {
-	ctx context.Context
-	ApiService *PaymentInitiationServicePISAPIService
-	card string
-	oBPv400CreateTransactionRequestCardRequest *OBPv400CreateTransactionRequestCardRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateTransactionRequestCardRequest) OBPv400CreateTransactionRequestCardRequest(oBPv400CreateTransactionRequestCardRequest OBPv400CreateTransactionRequestCardRequest) ApiOBPv400CreateTransactionRequestCardRequest {
-	r.oBPv400CreateTransactionRequestCardRequest = &oBPv400CreateTransactionRequestCardRequest
-	return r
-}
-
-func (r ApiOBPv400CreateTransactionRequestCardRequest) Execute() (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateTransactionRequestCardExecute(r)
-}
-
-/*
-OBPv400CreateTransactionRequestCard Create Transaction Request (CARD)
-
-<p>When using CARD, the payee is set in the request body .</p>
-<p>Money goes into the Counterparty in the request body.</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">CARD</a>: CARD</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>brand</strong></a>: Visa</p>
-<p><a href="/glossary#"><strong>card</strong></a>: card</p>
-<p><a href="/glossary#"><strong>card_number</strong></a>: 364435172576215</p>
-<p><a href="/glossary#"><strong>card_type</strong></a>: Credit</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>cvv</strong></a>: 123</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>expiry_month</strong></a>: 01</p>
-<p><a href="/glossary#"><strong>expiry_year</strong></a>: 2023</p>
-<p><a href="/glossary#"><strong>name_on_card</strong></a>: SusanSmith</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param card The CARD identifier
- @return ApiOBPv400CreateTransactionRequestCardRequest
-*/
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestCard(ctx context.Context, card string) ApiOBPv400CreateTransactionRequestCardRequest {
-	return ApiOBPv400CreateTransactionRequestCardRequest{
-		ApiService: a,
-		ctx: ctx,
-		card: card,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400CreateTransactionRequestCounterparty200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestCardExecute(r ApiOBPv400CreateTransactionRequestCardRequest) (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateTransactionRequestCounterparty200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv400CreateTransactionRequestCard")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/transaction-request-types/{card}/transaction-requests"
-	localVarPath = strings.Replace(localVarPath, "{"+"card"+"}", url.PathEscape(parameterValueToString(r.card, "card")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400CreateTransactionRequestCardRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateTransactionRequestCardRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400CreateTransactionRequestCardRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateTransactionRequestCounterpartyRequest struct {
-	ctx context.Context
-	ApiService *PaymentInitiationServicePISAPIService
-	bankid string
-	accountid string
-	viewid string
-	counterparty string
-	oBPv400CreateTransactionRequestCounterpartyRequest *OBPv400CreateTransactionRequestCounterpartyRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateTransactionRequestCounterpartyRequest) OBPv400CreateTransactionRequestCounterpartyRequest(oBPv400CreateTransactionRequestCounterpartyRequest OBPv400CreateTransactionRequestCounterpartyRequest) ApiOBPv400CreateTransactionRequestCounterpartyRequest {
-	r.oBPv400CreateTransactionRequestCounterpartyRequest = &oBPv400CreateTransactionRequestCounterpartyRequest
-	return r
-}
-
-func (r ApiOBPv400CreateTransactionRequestCounterpartyRequest) Execute() (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateTransactionRequestCounterpartyExecute(r)
-}
-
-/*
-OBPv400CreateTransactionRequestCounterparty Create Transaction Request (COUNTERPARTY)
-
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>When using a COUNTERPARTY to create a Transaction Request, specify the counterparty_id in the body of the request.<br />
-The routing details of the counterparty will be forwarded to the Core Banking System (CBS) for the transfer.</p>
-<p>COUNTERPARTY Transaction Requests are used for Variable Recurring Payments (VRP). Use the following <a href="https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest">endpoint</a> to create a consent for VRPs.</p>
-<p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#counterparty">COUNTERPARTY</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
-<p><a href="/glossary#"><strong>charge_policy</strong></a>: SHARED</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#future_date">future_date</a>: 20200127</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param counterparty The COUNTERPARTY identifier
- @return ApiOBPv400CreateTransactionRequestCounterpartyRequest
-*/
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestCounterparty(ctx context.Context, bankid string, accountid string, viewid string, counterparty string) ApiOBPv400CreateTransactionRequestCounterpartyRequest {
-	return ApiOBPv400CreateTransactionRequestCounterpartyRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		counterparty: counterparty,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400CreateTransactionRequestCounterparty200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestCounterpartyExecute(r ApiOBPv400CreateTransactionRequestCounterpartyRequest) (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateTransactionRequestCounterparty200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv400CreateTransactionRequestCounterparty")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"counterparty"+"}", url.PathEscape(parameterValueToString(r.counterparty, "counterparty")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400CreateTransactionRequestCounterpartyRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateTransactionRequestCounterpartyRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400CreateTransactionRequestCounterpartyRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateTransactionRequestFreeFormRequest struct {
-	ctx context.Context
-	ApiService *PaymentInitiationServicePISAPIService
-	bankid string
-	accountid string
-	viewid string
-	freeform string
-	oBPv400CreateTransactionRequestFreeFormRequest *OBPv400CreateTransactionRequestFreeFormRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateTransactionRequestFreeFormRequest) OBPv400CreateTransactionRequestFreeFormRequest(oBPv400CreateTransactionRequestFreeFormRequest OBPv400CreateTransactionRequestFreeFormRequest) ApiOBPv400CreateTransactionRequestFreeFormRequest {
-	r.oBPv400CreateTransactionRequestFreeFormRequest = &oBPv400CreateTransactionRequestFreeFormRequest
-	return r
-}
-
-func (r ApiOBPv400CreateTransactionRequestFreeFormRequest) Execute() (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateTransactionRequestFreeFormExecute(r)
-}
-
-/*
-OBPv400CreateTransactionRequestFreeForm Create Transaction Request (FREE_FORM)
-
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#free_form">FREE_FORM</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param freeform The FREEFORM identifier
- @return ApiOBPv400CreateTransactionRequestFreeFormRequest
-*/
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestFreeForm(ctx context.Context, bankid string, accountid string, viewid string, freeform string) ApiOBPv400CreateTransactionRequestFreeFormRequest {
-	return ApiOBPv400CreateTransactionRequestFreeFormRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		freeform: freeform,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400CreateTransactionRequestCounterparty200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestFreeFormExecute(r ApiOBPv400CreateTransactionRequestFreeFormRequest) (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateTransactionRequestCounterparty200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv400CreateTransactionRequestFreeForm")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"freeform"+"}", url.PathEscape(parameterValueToString(r.freeform, "freeform")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400CreateTransactionRequestFreeFormRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateTransactionRequestFreeFormRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400CreateTransactionRequestFreeFormRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateTransactionRequestRefundRequest struct {
-	ctx context.Context
-	ApiService *PaymentInitiationServicePISAPIService
-	bankid string
-	accountid string
-	viewid string
-	refund string
-	oBPv400CreateTransactionRequestRefundRequest *OBPv400CreateTransactionRequestRefundRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateTransactionRequestRefundRequest) OBPv400CreateTransactionRequestRefundRequest(oBPv400CreateTransactionRequestRefundRequest OBPv400CreateTransactionRequestRefundRequest) ApiOBPv400CreateTransactionRequestRefundRequest {
-	r.oBPv400CreateTransactionRequestRefundRequest = &oBPv400CreateTransactionRequestRefundRequest
-	return r
-}
-
-func (r ApiOBPv400CreateTransactionRequestRefundRequest) Execute() (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateTransactionRequestRefundExecute(r)
-}
-
-/*
-OBPv400CreateTransactionRequestRefund Create Transaction Request (REFUND)
-
-<p>Either the <code>from</code> or the <code>to</code> field must be filled. Those fields refers to the information about the party that will be refunded.</p>
-<p>In case the <code>from</code> object is used, it means that the refund comes from the part that sent you a transaction.<br />
-In the <code>from</code> object, you have two choices :<br />
-- Use <code>bank_id</code> and <code>account_id</code> fields if the other account is registered on the OBP-API<br />
-- Use the <code>counterparty_id</code> field in case the counterparty account is out of the OBP-API</p>
-<p>In case the <code>to</code> object is used, it means you send a request to a counterparty to ask for a refund on a previous transaction you sent.<br />
-(This case is not managed by the OBP-API and require an external adapter)</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">REFUND</a>: REFUND</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>reason_code</strong></a>: reason_code</p>
-<p><a href="/glossary#"><strong>refund</strong></a>: refund</p>
-<p><a href="/glossary#"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#">account_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#">bank_id</a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#from">from</a>:</p>
-<p><a href="/glossary#to">to</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param refund The REFUND identifier
- @return ApiOBPv400CreateTransactionRequestRefundRequest
-*/
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestRefund(ctx context.Context, bankid string, accountid string, viewid string, refund string) ApiOBPv400CreateTransactionRequestRefundRequest {
-	return ApiOBPv400CreateTransactionRequestRefundRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		refund: refund,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400CreateTransactionRequestCounterparty200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestRefundExecute(r ApiOBPv400CreateTransactionRequestRefundRequest) (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateTransactionRequestCounterparty200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv400CreateTransactionRequestRefund")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"refund"+"}", url.PathEscape(parameterValueToString(r.refund, "refund")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400CreateTransactionRequestRefundRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateTransactionRequestRefundRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400CreateTransactionRequestRefundRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateTransactionRequestSepaRequest struct {
+type ApiCreateTransactionRequestSepaRequest struct {
 	ctx context.Context
 	ApiService *PaymentInitiationServicePISAPIService
 	bankid string
 	accountid string
 	viewid string
 	sepa string
-	oBPv400CreateTransactionRequestSepaRequest *OBPv400CreateTransactionRequestSepaRequest
+	createTransactionRequestSepaRequest *CreateTransactionRequestSepaRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateTransactionRequestSepaRequest) OBPv400CreateTransactionRequestSepaRequest(oBPv400CreateTransactionRequestSepaRequest OBPv400CreateTransactionRequestSepaRequest) ApiOBPv400CreateTransactionRequestSepaRequest {
-	r.oBPv400CreateTransactionRequestSepaRequest = &oBPv400CreateTransactionRequestSepaRequest
+func (r ApiCreateTransactionRequestSepaRequest) CreateTransactionRequestSepaRequest(createTransactionRequestSepaRequest CreateTransactionRequestSepaRequest) ApiCreateTransactionRequestSepaRequest {
+	r.createTransactionRequestSepaRequest = &createTransactionRequestSepaRequest
 	return r
 }
 
-func (r ApiOBPv400CreateTransactionRequestSepaRequest) Execute() (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateTransactionRequestSepaExecute(r)
+func (r ApiCreateTransactionRequestSepaRequest) Execute() (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	return r.ApiService.CreateTransactionRequestSepaExecute(r)
 }
 
 /*
-OBPv400CreateTransactionRequestSepa Create Transaction Request (SEPA)
+CreateTransactionRequestSepa Create Transaction Request (SEPA)
 
 <p>Special instructions for SEPA:</p>
 <p>When using a SEPA Transaction Request, you specify the IBAN of a Counterparty in the body of the request.<br />
@@ -2673,10 +3420,10 @@ The routing details (IBAN) of the counterparty will be forwarded to the core ban
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param sepa The SEPA identifier
- @return ApiOBPv400CreateTransactionRequestSepaRequest
+ @return ApiCreateTransactionRequestSepaRequest
 */
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestSepa(ctx context.Context, bankid string, accountid string, viewid string, sepa string) ApiOBPv400CreateTransactionRequestSepaRequest {
-	return ApiOBPv400CreateTransactionRequestSepaRequest{
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestSepa(ctx context.Context, bankid string, accountid string, viewid string, sepa string) ApiCreateTransactionRequestSepaRequest {
+	return ApiCreateTransactionRequestSepaRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2687,16 +3434,16 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestS
 }
 
 // Execute executes the request
-//  @return OBPv400CreateTransactionRequestCounterparty200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestSepaExecute(r ApiOBPv400CreateTransactionRequestSepaRequest) (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+//  @return CreateTransactionRequestCounterparty200Response
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestSepaExecute(r ApiCreateTransactionRequestSepaRequest) (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateTransactionRequestCounterparty200Response
+		localVarReturnValue  *CreateTransactionRequestCounterparty200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv400CreateTransactionRequestSepa")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.CreateTransactionRequestSepa")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2710,8 +3457,8 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestS
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateTransactionRequestSepaRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateTransactionRequestSepaRequest is required and must be specified")
+	if r.createTransactionRequestSepaRequest == nil {
+		return localVarReturnValue, nil, reportError("createTransactionRequestSepaRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2732,7 +3479,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestS
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateTransactionRequestSepaRequest
+	localVarPostBody = r.createTransactionRequestSepaRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2757,7 +3504,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestS
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2798,28 +3545,28 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateTransactionRequestSimpleRequest struct {
+type ApiCreateTransactionRequestSimpleRequest struct {
 	ctx context.Context
 	ApiService *PaymentInitiationServicePISAPIService
 	bankid string
 	accountid string
 	viewid string
 	simple string
-	oBPv400CreateTransactionRequestSimpleRequest *OBPv400CreateTransactionRequestSimpleRequest
+	createTransactionRequestSimpleRequest *CreateTransactionRequestSimpleRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateTransactionRequestSimpleRequest) OBPv400CreateTransactionRequestSimpleRequest(oBPv400CreateTransactionRequestSimpleRequest OBPv400CreateTransactionRequestSimpleRequest) ApiOBPv400CreateTransactionRequestSimpleRequest {
-	r.oBPv400CreateTransactionRequestSimpleRequest = &oBPv400CreateTransactionRequestSimpleRequest
+func (r ApiCreateTransactionRequestSimpleRequest) CreateTransactionRequestSimpleRequest(createTransactionRequestSimpleRequest CreateTransactionRequestSimpleRequest) ApiCreateTransactionRequestSimpleRequest {
+	r.createTransactionRequestSimpleRequest = &createTransactionRequestSimpleRequest
 	return r
 }
 
-func (r ApiOBPv400CreateTransactionRequestSimpleRequest) Execute() (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateTransactionRequestSimpleExecute(r)
+func (r ApiCreateTransactionRequestSimpleRequest) Execute() (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+	return r.ApiService.CreateTransactionRequestSimpleExecute(r)
 }
 
 /*
-OBPv400CreateTransactionRequestSimple Create Transaction Request (SIMPLE)
+CreateTransactionRequestSimple Create Transaction Request (SIMPLE)
 
 <p>Special instructions for SIMPLE:</p>
 <p>You can transfer money to the Bank Account Number or IBAN directly.</p>
@@ -2915,10 +3662,10 @@ OBPv400CreateTransactionRequestSimple Create Transaction Request (SIMPLE)
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param simple The SIMPLE identifier
- @return ApiOBPv400CreateTransactionRequestSimpleRequest
+ @return ApiCreateTransactionRequestSimpleRequest
 */
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestSimple(ctx context.Context, bankid string, accountid string, viewid string, simple string) ApiOBPv400CreateTransactionRequestSimpleRequest {
-	return ApiOBPv400CreateTransactionRequestSimpleRequest{
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestSimple(ctx context.Context, bankid string, accountid string, viewid string, simple string) ApiCreateTransactionRequestSimpleRequest {
+	return ApiCreateTransactionRequestSimpleRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2929,16 +3676,16 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestS
 }
 
 // Execute executes the request
-//  @return OBPv400CreateTransactionRequestCounterparty200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestSimpleExecute(r ApiOBPv400CreateTransactionRequestSimpleRequest) (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
+//  @return CreateTransactionRequestCounterparty200Response
+func (a *PaymentInitiationServicePISAPIService) CreateTransactionRequestSimpleExecute(r ApiCreateTransactionRequestSimpleRequest) (*CreateTransactionRequestCounterparty200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateTransactionRequestCounterparty200Response
+		localVarReturnValue  *CreateTransactionRequestCounterparty200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv400CreateTransactionRequestSimple")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.CreateTransactionRequestSimple")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2952,8 +3699,8 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestS
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateTransactionRequestSimpleRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateTransactionRequestSimpleRequest is required and must be specified")
+	if r.createTransactionRequestSimpleRequest == nil {
+		return localVarReturnValue, nil, reportError("createTransactionRequestSimpleRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2974,7 +3721,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestS
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateTransactionRequestSimpleRequest
+	localVarPostBody = r.createTransactionRequestSimpleRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2999,7 +3746,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestS
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3040,7 +3787,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400CreateTransactionRequestS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetCounterpartiesForAnyAccountRequest struct {
+type ApiGetCounterpartiesForAnyAccountRequest struct {
 	ctx context.Context
 	ApiService *PaymentInitiationServicePISAPIService
 	bankid string
@@ -3048,12 +3795,12 @@ type ApiOBPv400GetCounterpartiesForAnyAccountRequest struct {
 	viewid string
 }
 
-func (r ApiOBPv400GetCounterpartiesForAnyAccountRequest) Execute() (*OBPv400GetCounterpartiesForAnyAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetCounterpartiesForAnyAccountExecute(r)
+func (r ApiGetCounterpartiesForAnyAccountRequest) Execute() (*GetCounterpartiesForAnyAccount200Response, *http.Response, error) {
+	return r.ApiService.GetCounterpartiesForAnyAccountExecute(r)
 }
 
 /*
-OBPv400GetCounterpartiesForAnyAccount Get Counterparties for any account (Explicit)
+GetCounterpartiesForAnyAccount Get Counterparties for any account (Explicit)
 
 <p>This is a management endpoint that gets the Counterparties that have been explicitly created for an Account / View.</p>
 <p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
@@ -3090,10 +3837,10 @@ OBPv400GetCounterpartiesForAnyAccount Get Counterparties for any account (Explic
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv400GetCounterpartiesForAnyAccountRequest
+ @return ApiGetCounterpartiesForAnyAccountRequest
 */
-func (a *PaymentInitiationServicePISAPIService) OBPv400GetCounterpartiesForAnyAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv400GetCounterpartiesForAnyAccountRequest {
-	return ApiOBPv400GetCounterpartiesForAnyAccountRequest{
+func (a *PaymentInitiationServicePISAPIService) GetCounterpartiesForAnyAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiGetCounterpartiesForAnyAccountRequest {
+	return ApiGetCounterpartiesForAnyAccountRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -3103,16 +3850,16 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400GetCounterpartiesForAnyAc
 }
 
 // Execute executes the request
-//  @return OBPv400GetCounterpartiesForAnyAccount200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv400GetCounterpartiesForAnyAccountExecute(r ApiOBPv400GetCounterpartiesForAnyAccountRequest) (*OBPv400GetCounterpartiesForAnyAccount200Response, *http.Response, error) {
+//  @return GetCounterpartiesForAnyAccount200Response
+func (a *PaymentInitiationServicePISAPIService) GetCounterpartiesForAnyAccountExecute(r ApiGetCounterpartiesForAnyAccountRequest) (*GetCounterpartiesForAnyAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetCounterpartiesForAnyAccount200Response
+		localVarReturnValue  *GetCounterpartiesForAnyAccount200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv400GetCounterpartiesForAnyAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.GetCounterpartiesForAnyAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3167,7 +3914,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400GetCounterpartiesForAnyAc
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3208,7 +3955,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400GetCounterpartiesForAnyAc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetExplicitCounterpartiesForAccountRequest struct {
+type ApiGetExplicitCounterpartiesForAccountRequest struct {
 	ctx context.Context
 	ApiService *PaymentInitiationServicePISAPIService
 	bankid string
@@ -3216,12 +3963,12 @@ type ApiOBPv400GetExplicitCounterpartiesForAccountRequest struct {
 	viewid string
 }
 
-func (r ApiOBPv400GetExplicitCounterpartiesForAccountRequest) Execute() (*OBPv400GetCounterpartiesForAnyAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetExplicitCounterpartiesForAccountExecute(r)
+func (r ApiGetExplicitCounterpartiesForAccountRequest) Execute() (*GetCounterpartiesForAnyAccount200Response, *http.Response, error) {
+	return r.ApiService.GetExplicitCounterpartiesForAccountExecute(r)
 }
 
 /*
-OBPv400GetExplicitCounterpartiesForAccount Get Counterparties (Explicit)
+GetExplicitCounterpartiesForAccount Get Counterparties (Explicit)
 
 <p>Get the Counterparties that have been explicitly created on the specified Account / View.</p>
 <p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
@@ -3258,10 +4005,10 @@ OBPv400GetExplicitCounterpartiesForAccount Get Counterparties (Explicit)
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv400GetExplicitCounterpartiesForAccountRequest
+ @return ApiGetExplicitCounterpartiesForAccountRequest
 */
-func (a *PaymentInitiationServicePISAPIService) OBPv400GetExplicitCounterpartiesForAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv400GetExplicitCounterpartiesForAccountRequest {
-	return ApiOBPv400GetExplicitCounterpartiesForAccountRequest{
+func (a *PaymentInitiationServicePISAPIService) GetExplicitCounterpartiesForAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiGetExplicitCounterpartiesForAccountRequest {
+	return ApiGetExplicitCounterpartiesForAccountRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -3271,16 +4018,16 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400GetExplicitCounterparties
 }
 
 // Execute executes the request
-//  @return OBPv400GetCounterpartiesForAnyAccount200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv400GetExplicitCounterpartiesForAccountExecute(r ApiOBPv400GetExplicitCounterpartiesForAccountRequest) (*OBPv400GetCounterpartiesForAnyAccount200Response, *http.Response, error) {
+//  @return GetCounterpartiesForAnyAccount200Response
+func (a *PaymentInitiationServicePISAPIService) GetExplicitCounterpartiesForAccountExecute(r ApiGetExplicitCounterpartiesForAccountRequest) (*GetCounterpartiesForAnyAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetCounterpartiesForAnyAccount200Response
+		localVarReturnValue  *GetCounterpartiesForAnyAccount200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv400GetExplicitCounterpartiesForAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.GetExplicitCounterpartiesForAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3335,7 +4082,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400GetExplicitCounterparties
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3376,7 +4123,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400GetExplicitCounterparties
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetExplicitCounterpartyByIdRequest struct {
+type ApiGetExplicitCounterpartyByIdRequest struct {
 	ctx context.Context
 	ApiService *PaymentInitiationServicePISAPIService
 	bankid string
@@ -3385,12 +4132,12 @@ type ApiOBPv400GetExplicitCounterpartyByIdRequest struct {
 	counterpartyid string
 }
 
-func (r ApiOBPv400GetExplicitCounterpartyByIdRequest) Execute() (*OBPv400GetExplicitCounterpartyById200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetExplicitCounterpartyByIdExecute(r)
+func (r ApiGetExplicitCounterpartyByIdRequest) Execute() (*GetExplicitCounterpartyById200Response, *http.Response, error) {
+	return r.ApiService.GetExplicitCounterpartyByIdExecute(r)
 }
 
 /*
-OBPv400GetExplicitCounterpartyById Get Counterparty by Id (Explicit)
+GetExplicitCounterpartyById Get Counterparty by Id (Explicit)
 
 <p>This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:</p>
 <p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
@@ -3444,10 +4191,10 @@ OBPv400GetExplicitCounterpartyById Get Counterparty by Id (Explicit)
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param counterpartyid The COUNTERPARTYID identifier
- @return ApiOBPv400GetExplicitCounterpartyByIdRequest
+ @return ApiGetExplicitCounterpartyByIdRequest
 */
-func (a *PaymentInitiationServicePISAPIService) OBPv400GetExplicitCounterpartyById(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiOBPv400GetExplicitCounterpartyByIdRequest {
-	return ApiOBPv400GetExplicitCounterpartyByIdRequest{
+func (a *PaymentInitiationServicePISAPIService) GetExplicitCounterpartyById(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiGetExplicitCounterpartyByIdRequest {
+	return ApiGetExplicitCounterpartyByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -3458,16 +4205,16 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400GetExplicitCounterpartyBy
 }
 
 // Execute executes the request
-//  @return OBPv400GetExplicitCounterpartyById200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv400GetExplicitCounterpartyByIdExecute(r ApiOBPv400GetExplicitCounterpartyByIdRequest) (*OBPv400GetExplicitCounterpartyById200Response, *http.Response, error) {
+//  @return GetExplicitCounterpartyById200Response
+func (a *PaymentInitiationServicePISAPIService) GetExplicitCounterpartyByIdExecute(r ApiGetExplicitCounterpartyByIdRequest) (*GetExplicitCounterpartyById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetExplicitCounterpartyById200Response
+		localVarReturnValue  *GetExplicitCounterpartyById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv400GetExplicitCounterpartyById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.GetExplicitCounterpartyById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3523,7 +4270,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400GetExplicitCounterpartyBy
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3564,7 +4311,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400GetExplicitCounterpartyBy
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetTransactionRequestRequest struct {
+type ApiGetTransactionRequestRequest struct {
 	ctx context.Context
 	ApiService *PaymentInitiationServicePISAPIService
 	bankid string
@@ -3573,12 +4320,12 @@ type ApiOBPv400GetTransactionRequestRequest struct {
 	transactionrequestid string
 }
 
-func (r ApiOBPv400GetTransactionRequestRequest) Execute() (*OBPv510GetTransactionRequestById200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetTransactionRequestExecute(r)
+func (r ApiGetTransactionRequestRequest) Execute() (*GetTransactionRequestById200Response, *http.Response, error) {
+	return r.ApiService.GetTransactionRequestExecute(r)
 }
 
 /*
-OBPv400GetTransactionRequest Get Transaction Request
+GetTransactionRequest Get Transaction Request
 
 <p>Returns transaction request for transaction specified by TRANSACTION_REQUEST_ID and for account specified by ACCOUNT_ID at bank specified by BANK_ID.</p>
 <p>The VIEW_ID specified must be 'owner' and the user must have access to this view.</p>
@@ -3667,10 +4414,10 @@ The customer can proceed with the Transaction by answering the security challeng
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionrequestid The TRANSACTIONREQUESTID identifier
- @return ApiOBPv400GetTransactionRequestRequest
+ @return ApiGetTransactionRequestRequest
 */
-func (a *PaymentInitiationServicePISAPIService) OBPv400GetTransactionRequest(ctx context.Context, bankid string, accountid string, viewid string, transactionrequestid string) ApiOBPv400GetTransactionRequestRequest {
-	return ApiOBPv400GetTransactionRequestRequest{
+func (a *PaymentInitiationServicePISAPIService) GetTransactionRequest(ctx context.Context, bankid string, accountid string, viewid string, transactionrequestid string) ApiGetTransactionRequestRequest {
+	return ApiGetTransactionRequestRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -3681,16 +4428,16 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400GetTransactionRequest(ctx
 }
 
 // Execute executes the request
-//  @return OBPv510GetTransactionRequestById200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv400GetTransactionRequestExecute(r ApiOBPv400GetTransactionRequestRequest) (*OBPv510GetTransactionRequestById200Response, *http.Response, error) {
+//  @return GetTransactionRequestById200Response
+func (a *PaymentInitiationServicePISAPIService) GetTransactionRequestExecute(r ApiGetTransactionRequestRequest) (*GetTransactionRequestById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetTransactionRequestById200Response
+		localVarReturnValue  *GetTransactionRequestById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv400GetTransactionRequest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.GetTransactionRequest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3746,7 +4493,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400GetTransactionRequestExec
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3787,18 +4534,18 @@ func (a *PaymentInitiationServicePISAPIService) OBPv400GetTransactionRequestExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetTransactionRequestByIdRequest struct {
+type ApiGetTransactionRequestByIdRequest struct {
 	ctx context.Context
 	ApiService *PaymentInitiationServicePISAPIService
 	transactionrequestid string
 }
 
-func (r ApiOBPv510GetTransactionRequestByIdRequest) Execute() (*OBPv510GetTransactionRequestById200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetTransactionRequestByIdExecute(r)
+func (r ApiGetTransactionRequestByIdRequest) Execute() (*GetTransactionRequestById200Response, *http.Response, error) {
+	return r.ApiService.GetTransactionRequestByIdExecute(r)
 }
 
 /*
-OBPv510GetTransactionRequestById Get Transaction Request by ID
+GetTransactionRequestById Get Transaction Request by ID
 
 <p>Returns transaction request for transaction specified by TRANSACTION_REQUEST_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -3866,10 +4613,10 @@ OBPv510GetTransactionRequestById Get Transaction Request by ID
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param transactionrequestid The TRANSACTIONREQUESTID identifier
- @return ApiOBPv510GetTransactionRequestByIdRequest
+ @return ApiGetTransactionRequestByIdRequest
 */
-func (a *PaymentInitiationServicePISAPIService) OBPv510GetTransactionRequestById(ctx context.Context, transactionrequestid string) ApiOBPv510GetTransactionRequestByIdRequest {
-	return ApiOBPv510GetTransactionRequestByIdRequest{
+func (a *PaymentInitiationServicePISAPIService) GetTransactionRequestById(ctx context.Context, transactionrequestid string) ApiGetTransactionRequestByIdRequest {
+	return ApiGetTransactionRequestByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		transactionrequestid: transactionrequestid,
@@ -3877,16 +4624,16 @@ func (a *PaymentInitiationServicePISAPIService) OBPv510GetTransactionRequestById
 }
 
 // Execute executes the request
-//  @return OBPv510GetTransactionRequestById200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv510GetTransactionRequestByIdExecute(r ApiOBPv510GetTransactionRequestByIdRequest) (*OBPv510GetTransactionRequestById200Response, *http.Response, error) {
+//  @return GetTransactionRequestById200Response
+func (a *PaymentInitiationServicePISAPIService) GetTransactionRequestByIdExecute(r ApiGetTransactionRequestByIdRequest) (*GetTransactionRequestById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetTransactionRequestById200Response
+		localVarReturnValue  *GetTransactionRequestById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv510GetTransactionRequestById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.GetTransactionRequestById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3939,7 +4686,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv510GetTransactionRequestById
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3980,7 +4727,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv510GetTransactionRequestById
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetTransactionRequestsRequest struct {
+type ApiGetTransactionRequestTypesRequest struct {
 	ctx context.Context
 	ApiService *PaymentInitiationServicePISAPIService
 	bankid string
@@ -3988,12 +4735,174 @@ type ApiOBPv510GetTransactionRequestsRequest struct {
 	viewid string
 }
 
-func (r ApiOBPv510GetTransactionRequestsRequest) Execute() (*OBPv510GetTransactionRequests200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetTransactionRequestsExecute(r)
+func (r ApiGetTransactionRequestTypesRequest) Execute() (*GetTransactionRequestTypes200Response, *http.Response, error) {
+	return r.ApiService.GetTransactionRequestTypesExecute(r)
 }
 
 /*
-OBPv510GetTransactionRequests Get Transaction Requests
+GetTransactionRequestTypes Get Transaction Request Types for Account
+
+<p>Returns the Transaction Request Types that the account specified by ACCOUNT_ID and view specified by VIEW_ID has access to.</p>
+<p>These are the ways this API Server can create a Transaction via a Transaction Request<br />
+(as opposed to Transaction Types which include external types too e.g. for Transactions created by core banking etc.)</p>
+<p>A Transaction Request Type internally determines:</p>
+<ul>
+<li>the required Transaction Request 'body' i.e. fields that define the 'what' and 'to' of a Transaction Request,</li>
+<li>the type of security challenge that may be be raised before the Transaction Request proceeds, and</li>
+<li>the threshold of that challenge.</li>
+</ul>
+<p>For instance in a 'SANDBOX_TAN' Transaction Request, for amounts over 1000 currency units, the user must supply a positive integer to complete the Transaction Request and create a Transaction.</p>
+<p>This approach aims to provide only one endpoint for initiating transactions, and one that handles challenges, whilst still allowing flexibility with the payload and internal logic.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#transaction_request_types"><strong>transaction_request_types</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @return ApiGetTransactionRequestTypesRequest
+*/
+func (a *PaymentInitiationServicePISAPIService) GetTransactionRequestTypes(ctx context.Context, bankid string, accountid string, viewid string) ApiGetTransactionRequestTypesRequest {
+	return ApiGetTransactionRequestTypesRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+	}
+}
+
+// Execute executes the request
+//  @return GetTransactionRequestTypes200Response
+func (a *PaymentInitiationServicePISAPIService) GetTransactionRequestTypesExecute(r ApiGetTransactionRequestTypesRequest) (*GetTransactionRequestTypes200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetTransactionRequestTypes200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.GetTransactionRequestTypes")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetTransactionRequestsRequest struct {
+	ctx context.Context
+	ApiService *PaymentInitiationServicePISAPIService
+	bankid string
+	accountid string
+	viewid string
+}
+
+func (r ApiGetTransactionRequestsRequest) Execute() (*GetTransactionRequests200Response, *http.Response, error) {
+	return r.ApiService.GetTransactionRequestsExecute(r)
+}
+
+/*
+GetTransactionRequests Get Transaction Requests
 
 <p>Returns transaction requests for account specified by ACCOUNT_ID at bank specified by BANK_ID.</p>
 <p>The VIEW_ID specified must be 'owner' and the user must have access to this view.</p>
@@ -4083,10 +4992,10 @@ URL params example:/banks/BANK_ID/accounts/ACCOUNT_ID/VIEW_ID/transaction-reques
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv510GetTransactionRequestsRequest
+ @return ApiGetTransactionRequestsRequest
 */
-func (a *PaymentInitiationServicePISAPIService) OBPv510GetTransactionRequests(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv510GetTransactionRequestsRequest {
-	return ApiOBPv510GetTransactionRequestsRequest{
+func (a *PaymentInitiationServicePISAPIService) GetTransactionRequests(ctx context.Context, bankid string, accountid string, viewid string) ApiGetTransactionRequestsRequest {
+	return ApiGetTransactionRequestsRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -4096,16 +5005,16 @@ func (a *PaymentInitiationServicePISAPIService) OBPv510GetTransactionRequests(ct
 }
 
 // Execute executes the request
-//  @return OBPv510GetTransactionRequests200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv510GetTransactionRequestsExecute(r ApiOBPv510GetTransactionRequestsRequest) (*OBPv510GetTransactionRequests200Response, *http.Response, error) {
+//  @return GetTransactionRequests200Response
+func (a *PaymentInitiationServicePISAPIService) GetTransactionRequestsExecute(r ApiGetTransactionRequestsRequest) (*GetTransactionRequests200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetTransactionRequests200Response
+		localVarReturnValue  *GetTransactionRequests200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv510GetTransactionRequests")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.GetTransactionRequests")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4160,916 +5069,7 @@ func (a *PaymentInitiationServicePISAPIService) OBPv510GetTransactionRequestsExe
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600CreateTransactionRequestCardanoRequest struct {
-	ctx context.Context
-	ApiService *PaymentInitiationServicePISAPIService
-	bankid string
-	accountid string
-	cardano string
-	oBPv600CreateTransactionRequestCardanoRequest *OBPv600CreateTransactionRequestCardanoRequest
-}
-
-// Request body
-func (r ApiOBPv600CreateTransactionRequestCardanoRequest) OBPv600CreateTransactionRequestCardanoRequest(oBPv600CreateTransactionRequestCardanoRequest OBPv600CreateTransactionRequestCardanoRequest) ApiOBPv600CreateTransactionRequestCardanoRequest {
-	r.oBPv600CreateTransactionRequestCardanoRequest = &oBPv600CreateTransactionRequestCardanoRequest
-	return r
-}
-
-func (r ApiOBPv600CreateTransactionRequestCardanoRequest) Execute() (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	return r.ApiService.OBPv600CreateTransactionRequestCardanoExecute(r)
-}
-
-/*
-OBPv600CreateTransactionRequestCardano Create Transaction Request (CARDANO)
-
-<p>For sandbox mode, it will use the Cardano Preprod Network.<br />
-The accountId can be the wallet_id for now, as it uses cardano-wallet in the backend.</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">CARDANO</a>: CARDANO</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#address"><strong>address</strong></a>:</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>asset_name</strong></a>: asset_name</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>passphrase</strong></a>: passphrase</p>
-<p><a href="/glossary#"><strong>policy_id</strong></a>: policy_id</p>
-<p><a href="/glossary#"><strong>quantity</strong></a>: quantity</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#"><strong>unit</strong></a>: unit</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#">assets</a>: assets</p>
-<p><a href="/glossary#metadata">metadata</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param cardano The CARDANO identifier
- @return ApiOBPv600CreateTransactionRequestCardanoRequest
-*/
-func (a *PaymentInitiationServicePISAPIService) OBPv600CreateTransactionRequestCardano(ctx context.Context, bankid string, accountid string, cardano string) ApiOBPv600CreateTransactionRequestCardanoRequest {
-	return ApiOBPv600CreateTransactionRequestCardanoRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		cardano: cardano,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400CreateTransactionRequestCounterparty200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv600CreateTransactionRequestCardanoExecute(r ApiOBPv600CreateTransactionRequestCardanoRequest) (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateTransactionRequestCounterparty200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv600CreateTransactionRequestCardano")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"cardano"+"}", url.PathEscape(parameterValueToString(r.cardano, "cardano")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv600CreateTransactionRequestCardanoRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateTransactionRequestCardanoRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv600CreateTransactionRequestCardanoRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600CreateTransactionRequestEthSendRawTransactionRequest struct {
-	ctx context.Context
-	ApiService *PaymentInitiationServicePISAPIService
-	bankid string
-	accountid string
-	ethsendrawtransaction string
-	oBPv600CreateTransactionRequestEthSendRawTransactionRequest *OBPv600CreateTransactionRequestEthSendRawTransactionRequest
-}
-
-// Request body
-func (r ApiOBPv600CreateTransactionRequestEthSendRawTransactionRequest) OBPv600CreateTransactionRequestEthSendRawTransactionRequest(oBPv600CreateTransactionRequestEthSendRawTransactionRequest OBPv600CreateTransactionRequestEthSendRawTransactionRequest) ApiOBPv600CreateTransactionRequestEthSendRawTransactionRequest {
-	r.oBPv600CreateTransactionRequestEthSendRawTransactionRequest = &oBPv600CreateTransactionRequestEthSendRawTransactionRequest
-	return r
-}
-
-func (r ApiOBPv600CreateTransactionRequestEthSendRawTransactionRequest) Execute() (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	return r.ApiService.OBPv600CreateTransactionRequestEthSendRawTransactionExecute(r)
-}
-
-/*
-OBPv600CreateTransactionRequestEthSendRawTransaction CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
-
-<p>Send ETH via Ethereum JSON-RPC.<br />
-AccountId should hold the 0x address for now.</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">ETH_SEND_RAW_TRANSACTION</a>: ETH_SEND_RAW_TRANSACTION</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>params</strong></a>: params</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param ethsendrawtransaction The ETHSENDRAWTRANSACTION identifier
- @return ApiOBPv600CreateTransactionRequestEthSendRawTransactionRequest
-*/
-func (a *PaymentInitiationServicePISAPIService) OBPv600CreateTransactionRequestEthSendRawTransaction(ctx context.Context, bankid string, accountid string, ethsendrawtransaction string) ApiOBPv600CreateTransactionRequestEthSendRawTransactionRequest {
-	return ApiOBPv600CreateTransactionRequestEthSendRawTransactionRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		ethsendrawtransaction: ethsendrawtransaction,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400CreateTransactionRequestCounterparty200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv600CreateTransactionRequestEthSendRawTransactionExecute(r ApiOBPv600CreateTransactionRequestEthSendRawTransactionRequest) (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateTransactionRequestCounterparty200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv600CreateTransactionRequestEthSendRawTransaction")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"ethsendrawtransaction"+"}", url.PathEscape(parameterValueToString(r.ethsendrawtransaction, "ethsendrawtransaction")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv600CreateTransactionRequestEthSendRawTransactionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateTransactionRequestEthSendRawTransactionRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv600CreateTransactionRequestEthSendRawTransactionRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600CreateTransactionRequestEthereumeSendTransactionRequest struct {
-	ctx context.Context
-	ApiService *PaymentInitiationServicePISAPIService
-	bankid string
-	accountid string
-	ethsendtransaction string
-	oBPv600CreateTransactionRequestEthereumeSendTransactionRequest *OBPv600CreateTransactionRequestEthereumeSendTransactionRequest
-}
-
-// Request body
-func (r ApiOBPv600CreateTransactionRequestEthereumeSendTransactionRequest) OBPv600CreateTransactionRequestEthereumeSendTransactionRequest(oBPv600CreateTransactionRequestEthereumeSendTransactionRequest OBPv600CreateTransactionRequestEthereumeSendTransactionRequest) ApiOBPv600CreateTransactionRequestEthereumeSendTransactionRequest {
-	r.oBPv600CreateTransactionRequestEthereumeSendTransactionRequest = &oBPv600CreateTransactionRequestEthereumeSendTransactionRequest
-	return r
-}
-
-func (r ApiOBPv600CreateTransactionRequestEthereumeSendTransactionRequest) Execute() (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	return r.ApiService.OBPv600CreateTransactionRequestEthereumeSendTransactionExecute(r)
-}
-
-/*
-OBPv600CreateTransactionRequestEthereumeSendTransaction Create Transaction Request (ETH_SEND_TRANSACTION)
-
-<p>Send ETH via Ethereum JSON-RPC.<br />
-AccountId should hold the 0x address for now.</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">ETH_SEND_TRANSACTION</a>: ETH_SEND_TRANSACTION</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#">params</a>: params</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param ethsendtransaction The ETHSENDTRANSACTION identifier
- @return ApiOBPv600CreateTransactionRequestEthereumeSendTransactionRequest
-*/
-func (a *PaymentInitiationServicePISAPIService) OBPv600CreateTransactionRequestEthereumeSendTransaction(ctx context.Context, bankid string, accountid string, ethsendtransaction string) ApiOBPv600CreateTransactionRequestEthereumeSendTransactionRequest {
-	return ApiOBPv600CreateTransactionRequestEthereumeSendTransactionRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		ethsendtransaction: ethsendtransaction,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400CreateTransactionRequestCounterparty200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv600CreateTransactionRequestEthereumeSendTransactionExecute(r ApiOBPv600CreateTransactionRequestEthereumeSendTransactionRequest) (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateTransactionRequestCounterparty200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv600CreateTransactionRequestEthereumeSendTransaction")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"ethsendtransaction"+"}", url.PathEscape(parameterValueToString(r.ethsendtransaction, "ethsendtransaction")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv600CreateTransactionRequestEthereumeSendTransactionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateTransactionRequestEthereumeSendTransactionRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv600CreateTransactionRequestEthereumeSendTransactionRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600CreateTransactionRequestHoldRequest struct {
-	ctx context.Context
-	ApiService *PaymentInitiationServicePISAPIService
-	bankid string
-	accountid string
-	hold string
-	oBPv400CreateTransactionRequestFreeFormRequest *OBPv400CreateTransactionRequestFreeFormRequest
-}
-
-// Request body
-func (r ApiOBPv600CreateTransactionRequestHoldRequest) OBPv400CreateTransactionRequestFreeFormRequest(oBPv400CreateTransactionRequestFreeFormRequest OBPv400CreateTransactionRequestFreeFormRequest) ApiOBPv600CreateTransactionRequestHoldRequest {
-	r.oBPv400CreateTransactionRequestFreeFormRequest = &oBPv400CreateTransactionRequestFreeFormRequest
-	return r
-}
-
-func (r ApiOBPv600CreateTransactionRequestHoldRequest) Execute() (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	return r.ApiService.OBPv600CreateTransactionRequestHoldExecute(r)
-}
-
-/*
-OBPv600CreateTransactionRequestHold Create Transaction Request (HOLD)
-
-<p>Create a transaction request to move funds from the account to its Holding Account.<br />
-If the Holding Account does not exist, it will be created automatically.</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">HOLD</a>: HOLD</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param hold The HOLD identifier
- @return ApiOBPv600CreateTransactionRequestHoldRequest
-*/
-func (a *PaymentInitiationServicePISAPIService) OBPv600CreateTransactionRequestHold(ctx context.Context, bankid string, accountid string, hold string) ApiOBPv600CreateTransactionRequestHoldRequest {
-	return ApiOBPv600CreateTransactionRequestHoldRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		hold: hold,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400CreateTransactionRequestCounterparty200Response
-func (a *PaymentInitiationServicePISAPIService) OBPv600CreateTransactionRequestHoldExecute(r ApiOBPv600CreateTransactionRequestHoldRequest) (*OBPv400CreateTransactionRequestCounterparty200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateTransactionRequestCounterparty200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentInitiationServicePISAPIService.OBPv600CreateTransactionRequestHold")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"hold"+"}", url.PathEscape(parameterValueToString(r.hold, "hold")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400CreateTransactionRequestFreeFormRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateTransactionRequestFreeFormRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400CreateTransactionRequestFreeFormRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

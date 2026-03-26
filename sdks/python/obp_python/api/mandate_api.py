@@ -18,16 +18,16 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv600_create_mandate_request import OBPv600CreateMandateRequest
-from obp_python.models.obpv600_get_mandate200_response import OBPv600GetMandate200Response
-from obp_python.models.obpv600_get_mandate_provision200_response import OBPv600GetMandateProvision200Response
-from obp_python.models.obpv600_get_mandate_provisions200_response import OBPv600GetMandateProvisions200Response
-from obp_python.models.obpv600_get_mandates200_response import OBPv600GetMandates200Response
-from obp_python.models.obpv600_get_signatory_panel200_response import OBPv600GetSignatoryPanel200Response
-from obp_python.models.obpv600_get_signatory_panels200_response import OBPv600GetSignatoryPanels200Response
-from obp_python.models.obpv600_update_mandate_provision_request import OBPv600UpdateMandateProvisionRequest
-from obp_python.models.obpv600_update_mandate_request import OBPv600UpdateMandateRequest
-from obp_python.models.obpv600_update_signatory_panel_request import OBPv600UpdateSignatoryPanelRequest
+from obp_python.models.create_mandate_request import CreateMandateRequest
+from obp_python.models.get_mandate200_response import GetMandate200Response
+from obp_python.models.get_mandate_provision200_response import GetMandateProvision200Response
+from obp_python.models.get_mandate_provisions200_response import GetMandateProvisions200Response
+from obp_python.models.get_mandates200_response import GetMandates200Response
+from obp_python.models.get_signatory_panel200_response import GetSignatoryPanel200Response
+from obp_python.models.get_signatory_panels200_response import GetSignatoryPanels200Response
+from obp_python.models.update_mandate_provision_request import UpdateMandateProvisionRequest
+from obp_python.models.update_mandate_request import UpdateMandateRequest
+from obp_python.models.update_signatory_panel_request import UpdateSignatoryPanelRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -48,11 +48,11 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_mandate(
+    def create_mandate(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        obpv600_create_mandate_request: Annotated[OBPv600CreateMandateRequest, Field(description="Request body")],
+        create_mandate_request: Annotated[CreateMandateRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -65,7 +65,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetMandate200Response:
+    ) -> GetMandate200Response:
         """Create Mandate
 
         <p>Create a new mandate for a bank account.</p> <p>A mandate is a legal document that defines who can operate an account, what they can do,<br /> and under what conditions (e.g., signatory requirements, amount thresholds).</p> <p>Mandates tie together OBP constructs such as Views, ABAC Rules, Signatory Panels,<br /> and Challenges into a coherent authorization policy.</p> <p><strong>Status values:</strong> ACTIVE, SUSPENDED, EXPIRED, DRAFT</p> <p><strong>Date format:</strong> yyyy-MM-dd'T'HH:mm:ss'Z' (UTC)</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>legal_text</strong></a>: legal_text</p> <p><a href=\"/glossary#\"><strong>mandate_name</strong></a>: mandate_name</p> <p><a href=\"/glossary#\"><strong>mandate_reference</strong></a>: mandate_reference</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#valid_from\"><strong>valid_from</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>valid_to</strong></a>: valid_to</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>legal_text</strong></a>: legal_text</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>mandate_name</strong></a>: mandate_name</p> <p><a href=\"/glossary#\"><strong>mandate_reference</strong></a>: mandate_reference</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>updated_by_user_id</strong></a>: updated_by_user_id</p> <p><a href=\"/glossary#valid_from\"><strong>valid_from</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>valid_to</strong></a>: valid_to</p> 
@@ -74,8 +74,8 @@ class MandateApi:
         :type bankid: str
         :param accountid: The ACCOUNTID identifier (required)
         :type accountid: str
-        :param obpv600_create_mandate_request: Request body (required)
-        :type obpv600_create_mandate_request: OBPv600CreateMandateRequest
+        :param create_mandate_request: Request body (required)
+        :type create_mandate_request: CreateMandateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -98,10 +98,10 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_mandate_serialize(
+        _param = self._create_mandate_serialize(
             bankid=bankid,
             accountid=accountid,
-            obpv600_create_mandate_request=obpv600_create_mandate_request,
+            create_mandate_request=create_mandate_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -109,7 +109,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandate200Response",
+            '200': "GetMandate200Response",
             '404': None,
             '500': None,
         }
@@ -125,11 +125,11 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_mandate_with_http_info(
+    def create_mandate_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        obpv600_create_mandate_request: Annotated[OBPv600CreateMandateRequest, Field(description="Request body")],
+        create_mandate_request: Annotated[CreateMandateRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -142,7 +142,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetMandate200Response]:
+    ) -> ApiResponse[GetMandate200Response]:
         """Create Mandate
 
         <p>Create a new mandate for a bank account.</p> <p>A mandate is a legal document that defines who can operate an account, what they can do,<br /> and under what conditions (e.g., signatory requirements, amount thresholds).</p> <p>Mandates tie together OBP constructs such as Views, ABAC Rules, Signatory Panels,<br /> and Challenges into a coherent authorization policy.</p> <p><strong>Status values:</strong> ACTIVE, SUSPENDED, EXPIRED, DRAFT</p> <p><strong>Date format:</strong> yyyy-MM-dd'T'HH:mm:ss'Z' (UTC)</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>legal_text</strong></a>: legal_text</p> <p><a href=\"/glossary#\"><strong>mandate_name</strong></a>: mandate_name</p> <p><a href=\"/glossary#\"><strong>mandate_reference</strong></a>: mandate_reference</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#valid_from\"><strong>valid_from</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>valid_to</strong></a>: valid_to</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>legal_text</strong></a>: legal_text</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>mandate_name</strong></a>: mandate_name</p> <p><a href=\"/glossary#\"><strong>mandate_reference</strong></a>: mandate_reference</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>updated_by_user_id</strong></a>: updated_by_user_id</p> <p><a href=\"/glossary#valid_from\"><strong>valid_from</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>valid_to</strong></a>: valid_to</p> 
@@ -151,8 +151,8 @@ class MandateApi:
         :type bankid: str
         :param accountid: The ACCOUNTID identifier (required)
         :type accountid: str
-        :param obpv600_create_mandate_request: Request body (required)
-        :type obpv600_create_mandate_request: OBPv600CreateMandateRequest
+        :param create_mandate_request: Request body (required)
+        :type create_mandate_request: CreateMandateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -175,10 +175,10 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_mandate_serialize(
+        _param = self._create_mandate_serialize(
             bankid=bankid,
             accountid=accountid,
-            obpv600_create_mandate_request=obpv600_create_mandate_request,
+            create_mandate_request=create_mandate_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -186,7 +186,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandate200Response",
+            '200': "GetMandate200Response",
             '404': None,
             '500': None,
         }
@@ -202,11 +202,11 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_mandate_without_preload_content(
+    def create_mandate_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        obpv600_create_mandate_request: Annotated[OBPv600CreateMandateRequest, Field(description="Request body")],
+        create_mandate_request: Annotated[CreateMandateRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -228,8 +228,8 @@ class MandateApi:
         :type bankid: str
         :param accountid: The ACCOUNTID identifier (required)
         :type accountid: str
-        :param obpv600_create_mandate_request: Request body (required)
-        :type obpv600_create_mandate_request: OBPv600CreateMandateRequest
+        :param create_mandate_request: Request body (required)
+        :type create_mandate_request: CreateMandateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -252,10 +252,10 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_mandate_serialize(
+        _param = self._create_mandate_serialize(
             bankid=bankid,
             accountid=accountid,
-            obpv600_create_mandate_request=obpv600_create_mandate_request,
+            create_mandate_request=create_mandate_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -263,7 +263,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandate200Response",
+            '200': "GetMandate200Response",
             '404': None,
             '500': None,
         }
@@ -274,11 +274,11 @@ class MandateApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_create_mandate_serialize(
+    def _create_mandate_serialize(
         self,
         bankid,
         accountid,
-        obpv600_create_mandate_request,
+        create_mandate_request,
         _request_auth,
         _content_type,
         _headers,
@@ -308,8 +308,8 @@ class MandateApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_create_mandate_request is not None:
-            _body_params = obpv600_create_mandate_request
+        if create_mandate_request is not None:
+            _body_params = create_mandate_request
 
 
         # set the HTTP header `Accept`
@@ -360,11 +360,11 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_mandate_provision(
+    def create_mandate_provision(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
-        obpv600_update_mandate_provision_request: Annotated[OBPv600UpdateMandateProvisionRequest, Field(description="Request body")],
+        update_mandate_provision_request: Annotated[UpdateMandateProvisionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -377,7 +377,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetMandateProvision200Response:
+    ) -> GetMandateProvision200Response:
         """Create Mandate Provision
 
         <p>Create a new provision for a mandate.</p> <p>A provision links the mandate's legal clauses to OBP enforcement mechanisms<br /> (Views, ABAC Rules, Challenges).</p> <p><strong>Provision types:</strong><br /> - SIGNATORY_RULE — Who can sign and in what combination<br /> - VIEW_ASSIGNMENT — Which view a signatory panel gets on the account<br /> - ABAC_CONDITION — Links to an ABAC rule for attribute-based conditions<br /> - RESTRICTION — Negative rule (e.g., no international payments)<br /> - NOTIFICATION — Triggers notification rather than blocking</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>conditions</strong></a>: conditions</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>legal_reference</strong></a>: legal_reference</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>provision_description</strong></a>: provision_description</p> <p><a href=\"/glossary#\"><strong>provision_name</strong></a>: provision_name</p> <p><a href=\"/glossary#\"><strong>provision_type</strong></a>: provision_type</p> <p><a href=\"/glossary#\"><strong>required_count</strong></a>: required_count</p> <p><a href=\"/glossary#\"><strong>signatory_requirements</strong></a>: signatory_requirements</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> <p><a href=\"/glossary#\">linked_abac_rule_id</a>: linked_abac_rule_id</p> <p><a href=\"/glossary#\">linked_challenge_type</a>: linked_challenge_type</p> <p><a href=\"/glossary#\">linked_view_id</a>: linked_view_id</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>conditions</strong></a>: conditions</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>legal_reference</strong></a>: legal_reference</p> <p><a href=\"/glossary#\"><strong>linked_abac_rule_id</strong></a>: linked_abac_rule_id</p> <p><a href=\"/glossary#\"><strong>linked_challenge_type</strong></a>: linked_challenge_type</p> <p><a href=\"/glossary#\"><strong>linked_view_id</strong></a>: linked_view_id</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>provision_description</strong></a>: provision_description</p> <p><a href=\"/glossary#\"><strong>provision_id</strong></a>: provision_id</p> <p><a href=\"/glossary#\"><strong>provision_name</strong></a>: provision_name</p> <p><a href=\"/glossary#\"><strong>provision_type</strong></a>: provision_type</p> <p><a href=\"/glossary#\"><strong>required_count</strong></a>: required_count</p> <p><a href=\"/glossary#\"><strong>signatory_requirements</strong></a>: signatory_requirements</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
@@ -386,8 +386,8 @@ class MandateApi:
         :type bankid: str
         :param mandateid: The MANDATEID identifier (required)
         :type mandateid: str
-        :param obpv600_update_mandate_provision_request: Request body (required)
-        :type obpv600_update_mandate_provision_request: OBPv600UpdateMandateProvisionRequest
+        :param update_mandate_provision_request: Request body (required)
+        :type update_mandate_provision_request: UpdateMandateProvisionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -410,10 +410,10 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_mandate_provision_serialize(
+        _param = self._create_mandate_provision_serialize(
             bankid=bankid,
             mandateid=mandateid,
-            obpv600_update_mandate_provision_request=obpv600_update_mandate_provision_request,
+            update_mandate_provision_request=update_mandate_provision_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -421,7 +421,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandateProvision200Response",
+            '200': "GetMandateProvision200Response",
             '404': None,
             '500': None,
         }
@@ -437,11 +437,11 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_mandate_provision_with_http_info(
+    def create_mandate_provision_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
-        obpv600_update_mandate_provision_request: Annotated[OBPv600UpdateMandateProvisionRequest, Field(description="Request body")],
+        update_mandate_provision_request: Annotated[UpdateMandateProvisionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -454,7 +454,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetMandateProvision200Response]:
+    ) -> ApiResponse[GetMandateProvision200Response]:
         """Create Mandate Provision
 
         <p>Create a new provision for a mandate.</p> <p>A provision links the mandate's legal clauses to OBP enforcement mechanisms<br /> (Views, ABAC Rules, Challenges).</p> <p><strong>Provision types:</strong><br /> - SIGNATORY_RULE — Who can sign and in what combination<br /> - VIEW_ASSIGNMENT — Which view a signatory panel gets on the account<br /> - ABAC_CONDITION — Links to an ABAC rule for attribute-based conditions<br /> - RESTRICTION — Negative rule (e.g., no international payments)<br /> - NOTIFICATION — Triggers notification rather than blocking</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>conditions</strong></a>: conditions</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>legal_reference</strong></a>: legal_reference</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>provision_description</strong></a>: provision_description</p> <p><a href=\"/glossary#\"><strong>provision_name</strong></a>: provision_name</p> <p><a href=\"/glossary#\"><strong>provision_type</strong></a>: provision_type</p> <p><a href=\"/glossary#\"><strong>required_count</strong></a>: required_count</p> <p><a href=\"/glossary#\"><strong>signatory_requirements</strong></a>: signatory_requirements</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> <p><a href=\"/glossary#\">linked_abac_rule_id</a>: linked_abac_rule_id</p> <p><a href=\"/glossary#\">linked_challenge_type</a>: linked_challenge_type</p> <p><a href=\"/glossary#\">linked_view_id</a>: linked_view_id</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>conditions</strong></a>: conditions</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>legal_reference</strong></a>: legal_reference</p> <p><a href=\"/glossary#\"><strong>linked_abac_rule_id</strong></a>: linked_abac_rule_id</p> <p><a href=\"/glossary#\"><strong>linked_challenge_type</strong></a>: linked_challenge_type</p> <p><a href=\"/glossary#\"><strong>linked_view_id</strong></a>: linked_view_id</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>provision_description</strong></a>: provision_description</p> <p><a href=\"/glossary#\"><strong>provision_id</strong></a>: provision_id</p> <p><a href=\"/glossary#\"><strong>provision_name</strong></a>: provision_name</p> <p><a href=\"/glossary#\"><strong>provision_type</strong></a>: provision_type</p> <p><a href=\"/glossary#\"><strong>required_count</strong></a>: required_count</p> <p><a href=\"/glossary#\"><strong>signatory_requirements</strong></a>: signatory_requirements</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
@@ -463,8 +463,8 @@ class MandateApi:
         :type bankid: str
         :param mandateid: The MANDATEID identifier (required)
         :type mandateid: str
-        :param obpv600_update_mandate_provision_request: Request body (required)
-        :type obpv600_update_mandate_provision_request: OBPv600UpdateMandateProvisionRequest
+        :param update_mandate_provision_request: Request body (required)
+        :type update_mandate_provision_request: UpdateMandateProvisionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -487,10 +487,10 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_mandate_provision_serialize(
+        _param = self._create_mandate_provision_serialize(
             bankid=bankid,
             mandateid=mandateid,
-            obpv600_update_mandate_provision_request=obpv600_update_mandate_provision_request,
+            update_mandate_provision_request=update_mandate_provision_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -498,7 +498,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandateProvision200Response",
+            '200': "GetMandateProvision200Response",
             '404': None,
             '500': None,
         }
@@ -514,11 +514,11 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_mandate_provision_without_preload_content(
+    def create_mandate_provision_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
-        obpv600_update_mandate_provision_request: Annotated[OBPv600UpdateMandateProvisionRequest, Field(description="Request body")],
+        update_mandate_provision_request: Annotated[UpdateMandateProvisionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -540,8 +540,8 @@ class MandateApi:
         :type bankid: str
         :param mandateid: The MANDATEID identifier (required)
         :type mandateid: str
-        :param obpv600_update_mandate_provision_request: Request body (required)
-        :type obpv600_update_mandate_provision_request: OBPv600UpdateMandateProvisionRequest
+        :param update_mandate_provision_request: Request body (required)
+        :type update_mandate_provision_request: UpdateMandateProvisionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -564,10 +564,10 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_mandate_provision_serialize(
+        _param = self._create_mandate_provision_serialize(
             bankid=bankid,
             mandateid=mandateid,
-            obpv600_update_mandate_provision_request=obpv600_update_mandate_provision_request,
+            update_mandate_provision_request=update_mandate_provision_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -575,7 +575,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandateProvision200Response",
+            '200': "GetMandateProvision200Response",
             '404': None,
             '500': None,
         }
@@ -586,11 +586,11 @@ class MandateApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_create_mandate_provision_serialize(
+    def _create_mandate_provision_serialize(
         self,
         bankid,
         mandateid,
-        obpv600_update_mandate_provision_request,
+        update_mandate_provision_request,
         _request_auth,
         _content_type,
         _headers,
@@ -620,8 +620,8 @@ class MandateApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_update_mandate_provision_request is not None:
-            _body_params = obpv600_update_mandate_provision_request
+        if update_mandate_provision_request is not None:
+            _body_params = update_mandate_provision_request
 
 
         # set the HTTP header `Accept`
@@ -672,11 +672,11 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_signatory_panel(
+    def create_signatory_panel(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
-        obpv600_update_signatory_panel_request: Annotated[OBPv600UpdateSignatoryPanelRequest, Field(description="Request body")],
+        update_signatory_panel_request: Annotated[UpdateSignatoryPanelRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -689,7 +689,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetSignatoryPanel200Response:
+    ) -> GetSignatoryPanel200Response:
         """Create Signatory Panel
 
         <p>Create a new signatory panel for a mandate.</p> <p>A signatory panel is a named set of authorised signatories (users) that can be<br /> referenced by mandate provisions. For example, &quot;Panel A - Directors&quot; and &quot;Panel B - Finance&quot;.</p> <p>Provision rules then reference panels, e.g., &quot;1 from Panel A and 1 from Panel B&quot;.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>panel_name</strong></a>: panel_name</p> <p><a href=\"/glossary#\"><strong>user_ids</strong></a>: user_ids</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>panel_name</strong></a>: panel_name</p> <p><a href=\"/glossary#\"><strong>user_ids</strong></a>: user_ids</p> 
@@ -698,8 +698,8 @@ class MandateApi:
         :type bankid: str
         :param mandateid: The MANDATEID identifier (required)
         :type mandateid: str
-        :param obpv600_update_signatory_panel_request: Request body (required)
-        :type obpv600_update_signatory_panel_request: OBPv600UpdateSignatoryPanelRequest
+        :param update_signatory_panel_request: Request body (required)
+        :type update_signatory_panel_request: UpdateSignatoryPanelRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -722,10 +722,10 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_signatory_panel_serialize(
+        _param = self._create_signatory_panel_serialize(
             bankid=bankid,
             mandateid=mandateid,
-            obpv600_update_signatory_panel_request=obpv600_update_signatory_panel_request,
+            update_signatory_panel_request=update_signatory_panel_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -733,7 +733,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetSignatoryPanel200Response",
+            '200': "GetSignatoryPanel200Response",
             '404': None,
             '500': None,
         }
@@ -749,11 +749,11 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_signatory_panel_with_http_info(
+    def create_signatory_panel_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
-        obpv600_update_signatory_panel_request: Annotated[OBPv600UpdateSignatoryPanelRequest, Field(description="Request body")],
+        update_signatory_panel_request: Annotated[UpdateSignatoryPanelRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -766,7 +766,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetSignatoryPanel200Response]:
+    ) -> ApiResponse[GetSignatoryPanel200Response]:
         """Create Signatory Panel
 
         <p>Create a new signatory panel for a mandate.</p> <p>A signatory panel is a named set of authorised signatories (users) that can be<br /> referenced by mandate provisions. For example, &quot;Panel A - Directors&quot; and &quot;Panel B - Finance&quot;.</p> <p>Provision rules then reference panels, e.g., &quot;1 from Panel A and 1 from Panel B&quot;.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>panel_name</strong></a>: panel_name</p> <p><a href=\"/glossary#\"><strong>user_ids</strong></a>: user_ids</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>panel_name</strong></a>: panel_name</p> <p><a href=\"/glossary#\"><strong>user_ids</strong></a>: user_ids</p> 
@@ -775,8 +775,8 @@ class MandateApi:
         :type bankid: str
         :param mandateid: The MANDATEID identifier (required)
         :type mandateid: str
-        :param obpv600_update_signatory_panel_request: Request body (required)
-        :type obpv600_update_signatory_panel_request: OBPv600UpdateSignatoryPanelRequest
+        :param update_signatory_panel_request: Request body (required)
+        :type update_signatory_panel_request: UpdateSignatoryPanelRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -799,10 +799,10 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_signatory_panel_serialize(
+        _param = self._create_signatory_panel_serialize(
             bankid=bankid,
             mandateid=mandateid,
-            obpv600_update_signatory_panel_request=obpv600_update_signatory_panel_request,
+            update_signatory_panel_request=update_signatory_panel_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -810,7 +810,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetSignatoryPanel200Response",
+            '200': "GetSignatoryPanel200Response",
             '404': None,
             '500': None,
         }
@@ -826,11 +826,11 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_signatory_panel_without_preload_content(
+    def create_signatory_panel_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
-        obpv600_update_signatory_panel_request: Annotated[OBPv600UpdateSignatoryPanelRequest, Field(description="Request body")],
+        update_signatory_panel_request: Annotated[UpdateSignatoryPanelRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -852,8 +852,8 @@ class MandateApi:
         :type bankid: str
         :param mandateid: The MANDATEID identifier (required)
         :type mandateid: str
-        :param obpv600_update_signatory_panel_request: Request body (required)
-        :type obpv600_update_signatory_panel_request: OBPv600UpdateSignatoryPanelRequest
+        :param update_signatory_panel_request: Request body (required)
+        :type update_signatory_panel_request: UpdateSignatoryPanelRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -876,10 +876,10 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_signatory_panel_serialize(
+        _param = self._create_signatory_panel_serialize(
             bankid=bankid,
             mandateid=mandateid,
-            obpv600_update_signatory_panel_request=obpv600_update_signatory_panel_request,
+            update_signatory_panel_request=update_signatory_panel_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -887,7 +887,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetSignatoryPanel200Response",
+            '200': "GetSignatoryPanel200Response",
             '404': None,
             '500': None,
         }
@@ -898,11 +898,11 @@ class MandateApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_create_signatory_panel_serialize(
+    def _create_signatory_panel_serialize(
         self,
         bankid,
         mandateid,
-        obpv600_update_signatory_panel_request,
+        update_signatory_panel_request,
         _request_auth,
         _content_type,
         _headers,
@@ -932,8 +932,8 @@ class MandateApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_update_signatory_panel_request is not None:
-            _body_params = obpv600_update_signatory_panel_request
+        if update_signatory_panel_request is not None:
+            _body_params = update_signatory_panel_request
 
 
         # set the HTTP header `Accept`
@@ -984,7 +984,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_mandate(
+    def delete_mandate(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1034,7 +1034,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_mandate_serialize(
+        _param = self._delete_mandate_serialize(
             bankid=bankid,
             accountid=accountid,
             mandateid=mandateid,
@@ -1061,7 +1061,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_mandate_with_http_info(
+    def delete_mandate_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1111,7 +1111,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_mandate_serialize(
+        _param = self._delete_mandate_serialize(
             bankid=bankid,
             accountid=accountid,
             mandateid=mandateid,
@@ -1138,7 +1138,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_mandate_without_preload_content(
+    def delete_mandate_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1188,7 +1188,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_mandate_serialize(
+        _param = self._delete_mandate_serialize(
             bankid=bankid,
             accountid=accountid,
             mandateid=mandateid,
@@ -1210,7 +1210,7 @@ class MandateApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_delete_mandate_serialize(
+    def _delete_mandate_serialize(
         self,
         bankid,
         accountid,
@@ -1276,7 +1276,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_mandate_provision(
+    def delete_mandate_provision(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -1326,7 +1326,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_mandate_provision_serialize(
+        _param = self._delete_mandate_provision_serialize(
             bankid=bankid,
             mandateid=mandateid,
             provisionid=provisionid,
@@ -1353,7 +1353,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_mandate_provision_with_http_info(
+    def delete_mandate_provision_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -1403,7 +1403,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_mandate_provision_serialize(
+        _param = self._delete_mandate_provision_serialize(
             bankid=bankid,
             mandateid=mandateid,
             provisionid=provisionid,
@@ -1430,7 +1430,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_mandate_provision_without_preload_content(
+    def delete_mandate_provision_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -1480,7 +1480,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_mandate_provision_serialize(
+        _param = self._delete_mandate_provision_serialize(
             bankid=bankid,
             mandateid=mandateid,
             provisionid=provisionid,
@@ -1502,7 +1502,7 @@ class MandateApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_delete_mandate_provision_serialize(
+    def _delete_mandate_provision_serialize(
         self,
         bankid,
         mandateid,
@@ -1568,7 +1568,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_signatory_panel(
+    def delete_signatory_panel(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -1618,7 +1618,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_signatory_panel_serialize(
+        _param = self._delete_signatory_panel_serialize(
             bankid=bankid,
             mandateid=mandateid,
             panelid=panelid,
@@ -1645,7 +1645,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_signatory_panel_with_http_info(
+    def delete_signatory_panel_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -1695,7 +1695,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_signatory_panel_serialize(
+        _param = self._delete_signatory_panel_serialize(
             bankid=bankid,
             mandateid=mandateid,
             panelid=panelid,
@@ -1722,7 +1722,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_signatory_panel_without_preload_content(
+    def delete_signatory_panel_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -1772,7 +1772,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_signatory_panel_serialize(
+        _param = self._delete_signatory_panel_serialize(
             bankid=bankid,
             mandateid=mandateid,
             panelid=panelid,
@@ -1794,7 +1794,7 @@ class MandateApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_delete_signatory_panel_serialize(
+    def _delete_signatory_panel_serialize(
         self,
         bankid,
         mandateid,
@@ -1860,7 +1860,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_mandate(
+    def get_mandate(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1877,7 +1877,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetMandate200Response:
+    ) -> GetMandate200Response:
         """Get Mandate
 
         <p>Get a mandate by its ID.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>legal_text</strong></a>: legal_text</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>mandate_name</strong></a>: mandate_name</p> <p><a href=\"/glossary#\"><strong>mandate_reference</strong></a>: mandate_reference</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>updated_by_user_id</strong></a>: updated_by_user_id</p> <p><a href=\"/glossary#valid_from\"><strong>valid_from</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>valid_to</strong></a>: valid_to</p> 
@@ -1910,7 +1910,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_mandate_serialize(
+        _param = self._get_mandate_serialize(
             bankid=bankid,
             accountid=accountid,
             mandateid=mandateid,
@@ -1921,7 +1921,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandate200Response",
+            '200': "GetMandate200Response",
             '404': None,
             '500': None,
         }
@@ -1937,7 +1937,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_mandate_with_http_info(
+    def get_mandate_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1954,7 +1954,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetMandate200Response]:
+    ) -> ApiResponse[GetMandate200Response]:
         """Get Mandate
 
         <p>Get a mandate by its ID.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>legal_text</strong></a>: legal_text</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>mandate_name</strong></a>: mandate_name</p> <p><a href=\"/glossary#\"><strong>mandate_reference</strong></a>: mandate_reference</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>updated_by_user_id</strong></a>: updated_by_user_id</p> <p><a href=\"/glossary#valid_from\"><strong>valid_from</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>valid_to</strong></a>: valid_to</p> 
@@ -1987,7 +1987,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_mandate_serialize(
+        _param = self._get_mandate_serialize(
             bankid=bankid,
             accountid=accountid,
             mandateid=mandateid,
@@ -1998,7 +1998,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandate200Response",
+            '200': "GetMandate200Response",
             '404': None,
             '500': None,
         }
@@ -2014,7 +2014,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_mandate_without_preload_content(
+    def get_mandate_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -2064,7 +2064,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_mandate_serialize(
+        _param = self._get_mandate_serialize(
             bankid=bankid,
             accountid=accountid,
             mandateid=mandateid,
@@ -2075,7 +2075,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandate200Response",
+            '200': "GetMandate200Response",
             '404': None,
             '500': None,
         }
@@ -2086,7 +2086,7 @@ class MandateApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_mandate_serialize(
+    def _get_mandate_serialize(
         self,
         bankid,
         accountid,
@@ -2159,7 +2159,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_mandate_provision(
+    def get_mandate_provision(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -2176,7 +2176,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetMandateProvision200Response:
+    ) -> GetMandateProvision200Response:
         """Get Mandate Provision
 
         <p>Get a specific provision by its ID.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><a href=\"/glossary#\">PROVISION_ID</a>: PROVISION_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>conditions</strong></a>: conditions</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>legal_reference</strong></a>: legal_reference</p> <p><a href=\"/glossary#\"><strong>linked_abac_rule_id</strong></a>: linked_abac_rule_id</p> <p><a href=\"/glossary#\"><strong>linked_challenge_type</strong></a>: linked_challenge_type</p> <p><a href=\"/glossary#\"><strong>linked_view_id</strong></a>: linked_view_id</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>provision_description</strong></a>: provision_description</p> <p><a href=\"/glossary#\"><strong>provision_id</strong></a>: provision_id</p> <p><a href=\"/glossary#\"><strong>provision_name</strong></a>: provision_name</p> <p><a href=\"/glossary#\"><strong>provision_type</strong></a>: provision_type</p> <p><a href=\"/glossary#\"><strong>required_count</strong></a>: required_count</p> <p><a href=\"/glossary#\"><strong>signatory_requirements</strong></a>: signatory_requirements</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
@@ -2209,7 +2209,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_mandate_provision_serialize(
+        _param = self._get_mandate_provision_serialize(
             bankid=bankid,
             mandateid=mandateid,
             provisionid=provisionid,
@@ -2220,7 +2220,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandateProvision200Response",
+            '200': "GetMandateProvision200Response",
             '404': None,
             '500': None,
         }
@@ -2236,7 +2236,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_mandate_provision_with_http_info(
+    def get_mandate_provision_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -2253,7 +2253,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetMandateProvision200Response]:
+    ) -> ApiResponse[GetMandateProvision200Response]:
         """Get Mandate Provision
 
         <p>Get a specific provision by its ID.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><a href=\"/glossary#\">PROVISION_ID</a>: PROVISION_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>conditions</strong></a>: conditions</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>legal_reference</strong></a>: legal_reference</p> <p><a href=\"/glossary#\"><strong>linked_abac_rule_id</strong></a>: linked_abac_rule_id</p> <p><a href=\"/glossary#\"><strong>linked_challenge_type</strong></a>: linked_challenge_type</p> <p><a href=\"/glossary#\"><strong>linked_view_id</strong></a>: linked_view_id</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>provision_description</strong></a>: provision_description</p> <p><a href=\"/glossary#\"><strong>provision_id</strong></a>: provision_id</p> <p><a href=\"/glossary#\"><strong>provision_name</strong></a>: provision_name</p> <p><a href=\"/glossary#\"><strong>provision_type</strong></a>: provision_type</p> <p><a href=\"/glossary#\"><strong>required_count</strong></a>: required_count</p> <p><a href=\"/glossary#\"><strong>signatory_requirements</strong></a>: signatory_requirements</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
@@ -2286,7 +2286,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_mandate_provision_serialize(
+        _param = self._get_mandate_provision_serialize(
             bankid=bankid,
             mandateid=mandateid,
             provisionid=provisionid,
@@ -2297,7 +2297,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandateProvision200Response",
+            '200': "GetMandateProvision200Response",
             '404': None,
             '500': None,
         }
@@ -2313,7 +2313,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_mandate_provision_without_preload_content(
+    def get_mandate_provision_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -2363,7 +2363,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_mandate_provision_serialize(
+        _param = self._get_mandate_provision_serialize(
             bankid=bankid,
             mandateid=mandateid,
             provisionid=provisionid,
@@ -2374,7 +2374,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandateProvision200Response",
+            '200': "GetMandateProvision200Response",
             '404': None,
             '500': None,
         }
@@ -2385,7 +2385,7 @@ class MandateApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_mandate_provision_serialize(
+    def _get_mandate_provision_serialize(
         self,
         bankid,
         mandateid,
@@ -2458,7 +2458,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_mandate_provisions(
+    def get_mandate_provisions(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -2474,7 +2474,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetMandateProvisions200Response:
+    ) -> GetMandateProvisions200Response:
         """Get Mandate Provisions
 
         <p>Get all provisions for a mandate.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>conditions</strong></a>: conditions</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>legal_reference</strong></a>: legal_reference</p> <p><a href=\"/glossary#\"><strong>linked_abac_rule_id</strong></a>: linked_abac_rule_id</p> <p><a href=\"/glossary#\"><strong>linked_challenge_type</strong></a>: linked_challenge_type</p> <p><a href=\"/glossary#\"><strong>linked_view_id</strong></a>: linked_view_id</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>provision_description</strong></a>: provision_description</p> <p><a href=\"/glossary#\"><strong>provision_id</strong></a>: provision_id</p> <p><a href=\"/glossary#\"><strong>provision_name</strong></a>: provision_name</p> <p><a href=\"/glossary#\"><strong>provision_type</strong></a>: provision_type</p> <p><a href=\"/glossary#\"><strong>provisions</strong></a>: provisions</p> <p><a href=\"/glossary#\"><strong>required_count</strong></a>: required_count</p> <p><a href=\"/glossary#\"><strong>signatory_requirements</strong></a>: signatory_requirements</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
@@ -2505,7 +2505,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_mandate_provisions_serialize(
+        _param = self._get_mandate_provisions_serialize(
             bankid=bankid,
             mandateid=mandateid,
             _request_auth=_request_auth,
@@ -2515,7 +2515,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandateProvisions200Response",
+            '200': "GetMandateProvisions200Response",
             '404': None,
             '500': None,
         }
@@ -2531,7 +2531,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_mandate_provisions_with_http_info(
+    def get_mandate_provisions_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -2547,7 +2547,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetMandateProvisions200Response]:
+    ) -> ApiResponse[GetMandateProvisions200Response]:
         """Get Mandate Provisions
 
         <p>Get all provisions for a mandate.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>conditions</strong></a>: conditions</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>legal_reference</strong></a>: legal_reference</p> <p><a href=\"/glossary#\"><strong>linked_abac_rule_id</strong></a>: linked_abac_rule_id</p> <p><a href=\"/glossary#\"><strong>linked_challenge_type</strong></a>: linked_challenge_type</p> <p><a href=\"/glossary#\"><strong>linked_view_id</strong></a>: linked_view_id</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>provision_description</strong></a>: provision_description</p> <p><a href=\"/glossary#\"><strong>provision_id</strong></a>: provision_id</p> <p><a href=\"/glossary#\"><strong>provision_name</strong></a>: provision_name</p> <p><a href=\"/glossary#\"><strong>provision_type</strong></a>: provision_type</p> <p><a href=\"/glossary#\"><strong>provisions</strong></a>: provisions</p> <p><a href=\"/glossary#\"><strong>required_count</strong></a>: required_count</p> <p><a href=\"/glossary#\"><strong>signatory_requirements</strong></a>: signatory_requirements</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
@@ -2578,7 +2578,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_mandate_provisions_serialize(
+        _param = self._get_mandate_provisions_serialize(
             bankid=bankid,
             mandateid=mandateid,
             _request_auth=_request_auth,
@@ -2588,7 +2588,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandateProvisions200Response",
+            '200': "GetMandateProvisions200Response",
             '404': None,
             '500': None,
         }
@@ -2604,7 +2604,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_mandate_provisions_without_preload_content(
+    def get_mandate_provisions_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -2651,7 +2651,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_mandate_provisions_serialize(
+        _param = self._get_mandate_provisions_serialize(
             bankid=bankid,
             mandateid=mandateid,
             _request_auth=_request_auth,
@@ -2661,7 +2661,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandateProvisions200Response",
+            '200': "GetMandateProvisions200Response",
             '404': None,
             '500': None,
         }
@@ -2672,7 +2672,7 @@ class MandateApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_mandate_provisions_serialize(
+    def _get_mandate_provisions_serialize(
         self,
         bankid,
         mandateid,
@@ -2742,7 +2742,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_mandates(
+    def get_mandates(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -2758,7 +2758,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetMandates200Response:
+    ) -> GetMandates200Response:
         """Get Mandates for Account
 
         <p>Get all mandates for a bank account.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>legal_text</strong></a>: legal_text</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>mandate_name</strong></a>: mandate_name</p> <p><a href=\"/glossary#\"><strong>mandate_reference</strong></a>: mandate_reference</p> <p><a href=\"/glossary#Mandates\"><strong>mandates</strong></a>: mandates</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>updated_by_user_id</strong></a>: updated_by_user_id</p> <p><a href=\"/glossary#valid_from\"><strong>valid_from</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>valid_to</strong></a>: valid_to</p> 
@@ -2789,7 +2789,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_mandates_serialize(
+        _param = self._get_mandates_serialize(
             bankid=bankid,
             accountid=accountid,
             _request_auth=_request_auth,
@@ -2799,7 +2799,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandates200Response",
+            '200': "GetMandates200Response",
             '404': None,
             '500': None,
         }
@@ -2815,7 +2815,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_mandates_with_http_info(
+    def get_mandates_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -2831,7 +2831,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetMandates200Response]:
+    ) -> ApiResponse[GetMandates200Response]:
         """Get Mandates for Account
 
         <p>Get all mandates for a bank account.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>legal_text</strong></a>: legal_text</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>mandate_name</strong></a>: mandate_name</p> <p><a href=\"/glossary#\"><strong>mandate_reference</strong></a>: mandate_reference</p> <p><a href=\"/glossary#Mandates\"><strong>mandates</strong></a>: mandates</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>updated_by_user_id</strong></a>: updated_by_user_id</p> <p><a href=\"/glossary#valid_from\"><strong>valid_from</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>valid_to</strong></a>: valid_to</p> 
@@ -2862,7 +2862,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_mandates_serialize(
+        _param = self._get_mandates_serialize(
             bankid=bankid,
             accountid=accountid,
             _request_auth=_request_auth,
@@ -2872,7 +2872,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandates200Response",
+            '200': "GetMandates200Response",
             '404': None,
             '500': None,
         }
@@ -2888,7 +2888,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_mandates_without_preload_content(
+    def get_mandates_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -2935,7 +2935,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_mandates_serialize(
+        _param = self._get_mandates_serialize(
             bankid=bankid,
             accountid=accountid,
             _request_auth=_request_auth,
@@ -2945,7 +2945,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandates200Response",
+            '200': "GetMandates200Response",
             '404': None,
             '500': None,
         }
@@ -2956,7 +2956,7 @@ class MandateApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_mandates_serialize(
+    def _get_mandates_serialize(
         self,
         bankid,
         accountid,
@@ -3026,7 +3026,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_signatory_panel(
+    def get_signatory_panel(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -3043,7 +3043,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetSignatoryPanel200Response:
+    ) -> GetSignatoryPanel200Response:
         """Get Signatory Panel
 
         <p>Get a specific signatory panel by its ID.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><a href=\"/glossary#\">PANEL_ID</a>: PANEL_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>panel_name</strong></a>: panel_name</p> <p><a href=\"/glossary#\"><strong>user_ids</strong></a>: user_ids</p> 
@@ -3076,7 +3076,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_signatory_panel_serialize(
+        _param = self._get_signatory_panel_serialize(
             bankid=bankid,
             mandateid=mandateid,
             panelid=panelid,
@@ -3087,7 +3087,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetSignatoryPanel200Response",
+            '200': "GetSignatoryPanel200Response",
             '404': None,
             '500': None,
         }
@@ -3103,7 +3103,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_signatory_panel_with_http_info(
+    def get_signatory_panel_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -3120,7 +3120,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetSignatoryPanel200Response]:
+    ) -> ApiResponse[GetSignatoryPanel200Response]:
         """Get Signatory Panel
 
         <p>Get a specific signatory panel by its ID.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><a href=\"/glossary#\">PANEL_ID</a>: PANEL_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>panel_name</strong></a>: panel_name</p> <p><a href=\"/glossary#\"><strong>user_ids</strong></a>: user_ids</p> 
@@ -3153,7 +3153,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_signatory_panel_serialize(
+        _param = self._get_signatory_panel_serialize(
             bankid=bankid,
             mandateid=mandateid,
             panelid=panelid,
@@ -3164,7 +3164,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetSignatoryPanel200Response",
+            '200': "GetSignatoryPanel200Response",
             '404': None,
             '500': None,
         }
@@ -3180,7 +3180,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_signatory_panel_without_preload_content(
+    def get_signatory_panel_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -3230,7 +3230,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_signatory_panel_serialize(
+        _param = self._get_signatory_panel_serialize(
             bankid=bankid,
             mandateid=mandateid,
             panelid=panelid,
@@ -3241,7 +3241,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetSignatoryPanel200Response",
+            '200': "GetSignatoryPanel200Response",
             '404': None,
             '500': None,
         }
@@ -3252,7 +3252,7 @@ class MandateApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_signatory_panel_serialize(
+    def _get_signatory_panel_serialize(
         self,
         bankid,
         mandateid,
@@ -3325,7 +3325,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_signatory_panels(
+    def get_signatory_panels(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -3341,7 +3341,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetSignatoryPanels200Response:
+    ) -> GetSignatoryPanels200Response:
         """Get Signatory Panels
 
         <p>Get all signatory panels for a mandate.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>panel_name</strong></a>: panel_name</p> <p><a href=\"/glossary#\"><strong>signatory_panels</strong></a>: signatory_panels</p> <p><a href=\"/glossary#\"><strong>user_ids</strong></a>: user_ids</p> 
@@ -3372,7 +3372,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_signatory_panels_serialize(
+        _param = self._get_signatory_panels_serialize(
             bankid=bankid,
             mandateid=mandateid,
             _request_auth=_request_auth,
@@ -3382,7 +3382,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetSignatoryPanels200Response",
+            '200': "GetSignatoryPanels200Response",
             '404': None,
             '500': None,
         }
@@ -3398,7 +3398,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_signatory_panels_with_http_info(
+    def get_signatory_panels_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -3414,7 +3414,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetSignatoryPanels200Response]:
+    ) -> ApiResponse[GetSignatoryPanels200Response]:
         """Get Signatory Panels
 
         <p>Get all signatory panels for a mandate.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>panel_name</strong></a>: panel_name</p> <p><a href=\"/glossary#\"><strong>signatory_panels</strong></a>: signatory_panels</p> <p><a href=\"/glossary#\"><strong>user_ids</strong></a>: user_ids</p> 
@@ -3445,7 +3445,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_signatory_panels_serialize(
+        _param = self._get_signatory_panels_serialize(
             bankid=bankid,
             mandateid=mandateid,
             _request_auth=_request_auth,
@@ -3455,7 +3455,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetSignatoryPanels200Response",
+            '200': "GetSignatoryPanels200Response",
             '404': None,
             '500': None,
         }
@@ -3471,7 +3471,7 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_signatory_panels_without_preload_content(
+    def get_signatory_panels_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
@@ -3518,7 +3518,7 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_signatory_panels_serialize(
+        _param = self._get_signatory_panels_serialize(
             bankid=bankid,
             mandateid=mandateid,
             _request_auth=_request_auth,
@@ -3528,7 +3528,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetSignatoryPanels200Response",
+            '200': "GetSignatoryPanels200Response",
             '404': None,
             '500': None,
         }
@@ -3539,7 +3539,7 @@ class MandateApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_signatory_panels_serialize(
+    def _get_signatory_panels_serialize(
         self,
         bankid,
         mandateid,
@@ -3609,12 +3609,12 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_mandate(
+    def update_mandate(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
-        obpv600_update_mandate_request: Annotated[OBPv600UpdateMandateRequest, Field(description="Request body")],
+        update_mandate_request: Annotated[UpdateMandateRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3627,7 +3627,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetMandate200Response:
+    ) -> GetMandate200Response:
         """Update Mandate
 
         <p>Update a mandate.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>legal_text</strong></a>: legal_text</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>mandate_name</strong></a>: mandate_name</p> <p><a href=\"/glossary#\"><strong>mandate_reference</strong></a>: mandate_reference</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>updated_by_user_id</strong></a>: updated_by_user_id</p> <p><a href=\"/glossary#valid_from\"><strong>valid_from</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>valid_to</strong></a>: valid_to</p> 
@@ -3638,8 +3638,8 @@ class MandateApi:
         :type accountid: str
         :param mandateid: The MANDATEID identifier (required)
         :type mandateid: str
-        :param obpv600_update_mandate_request: Request body (required)
-        :type obpv600_update_mandate_request: OBPv600UpdateMandateRequest
+        :param update_mandate_request: Request body (required)
+        :type update_mandate_request: UpdateMandateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3662,11 +3662,11 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_mandate_serialize(
+        _param = self._update_mandate_serialize(
             bankid=bankid,
             accountid=accountid,
             mandateid=mandateid,
-            obpv600_update_mandate_request=obpv600_update_mandate_request,
+            update_mandate_request=update_mandate_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3674,7 +3674,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandate200Response",
+            '200': "GetMandate200Response",
             '404': None,
             '500': None,
         }
@@ -3690,12 +3690,12 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_mandate_with_http_info(
+    def update_mandate_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
-        obpv600_update_mandate_request: Annotated[OBPv600UpdateMandateRequest, Field(description="Request body")],
+        update_mandate_request: Annotated[UpdateMandateRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3708,7 +3708,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetMandate200Response]:
+    ) -> ApiResponse[GetMandate200Response]:
         """Update Mandate
 
         <p>Update a mandate.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>legal_text</strong></a>: legal_text</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>mandate_name</strong></a>: mandate_name</p> <p><a href=\"/glossary#\"><strong>mandate_reference</strong></a>: mandate_reference</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>updated_by_user_id</strong></a>: updated_by_user_id</p> <p><a href=\"/glossary#valid_from\"><strong>valid_from</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>valid_to</strong></a>: valid_to</p> 
@@ -3719,8 +3719,8 @@ class MandateApi:
         :type accountid: str
         :param mandateid: The MANDATEID identifier (required)
         :type mandateid: str
-        :param obpv600_update_mandate_request: Request body (required)
-        :type obpv600_update_mandate_request: OBPv600UpdateMandateRequest
+        :param update_mandate_request: Request body (required)
+        :type update_mandate_request: UpdateMandateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3743,11 +3743,11 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_mandate_serialize(
+        _param = self._update_mandate_serialize(
             bankid=bankid,
             accountid=accountid,
             mandateid=mandateid,
-            obpv600_update_mandate_request=obpv600_update_mandate_request,
+            update_mandate_request=update_mandate_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3755,7 +3755,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandate200Response",
+            '200': "GetMandate200Response",
             '404': None,
             '500': None,
         }
@@ -3771,12 +3771,12 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_mandate_without_preload_content(
+    def update_mandate_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
-        obpv600_update_mandate_request: Annotated[OBPv600UpdateMandateRequest, Field(description="Request body")],
+        update_mandate_request: Annotated[UpdateMandateRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3800,8 +3800,8 @@ class MandateApi:
         :type accountid: str
         :param mandateid: The MANDATEID identifier (required)
         :type mandateid: str
-        :param obpv600_update_mandate_request: Request body (required)
-        :type obpv600_update_mandate_request: OBPv600UpdateMandateRequest
+        :param update_mandate_request: Request body (required)
+        :type update_mandate_request: UpdateMandateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3824,11 +3824,11 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_mandate_serialize(
+        _param = self._update_mandate_serialize(
             bankid=bankid,
             accountid=accountid,
             mandateid=mandateid,
-            obpv600_update_mandate_request=obpv600_update_mandate_request,
+            update_mandate_request=update_mandate_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3836,7 +3836,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandate200Response",
+            '200': "GetMandate200Response",
             '404': None,
             '500': None,
         }
@@ -3847,12 +3847,12 @@ class MandateApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_update_mandate_serialize(
+    def _update_mandate_serialize(
         self,
         bankid,
         accountid,
         mandateid,
-        obpv600_update_mandate_request,
+        update_mandate_request,
         _request_auth,
         _content_type,
         _headers,
@@ -3884,8 +3884,8 @@ class MandateApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_update_mandate_request is not None:
-            _body_params = obpv600_update_mandate_request
+        if update_mandate_request is not None:
+            _body_params = update_mandate_request
 
 
         # set the HTTP header `Accept`
@@ -3936,12 +3936,12 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_mandate_provision(
+    def update_mandate_provision(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
         provisionid: Annotated[StrictStr, Field(description="The PROVISIONID identifier")],
-        obpv600_update_mandate_provision_request: Annotated[OBPv600UpdateMandateProvisionRequest, Field(description="Request body")],
+        update_mandate_provision_request: Annotated[UpdateMandateProvisionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3954,7 +3954,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetMandateProvision200Response:
+    ) -> GetMandateProvision200Response:
         """Update Mandate Provision
 
         <p>Update a mandate provision.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><a href=\"/glossary#\">PROVISION_ID</a>: PROVISION_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>conditions</strong></a>: conditions</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>legal_reference</strong></a>: legal_reference</p> <p><a href=\"/glossary#\"><strong>linked_abac_rule_id</strong></a>: linked_abac_rule_id</p> <p><a href=\"/glossary#\"><strong>linked_challenge_type</strong></a>: linked_challenge_type</p> <p><a href=\"/glossary#\"><strong>linked_view_id</strong></a>: linked_view_id</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>provision_description</strong></a>: provision_description</p> <p><a href=\"/glossary#\"><strong>provision_id</strong></a>: provision_id</p> <p><a href=\"/glossary#\"><strong>provision_name</strong></a>: provision_name</p> <p><a href=\"/glossary#\"><strong>provision_type</strong></a>: provision_type</p> <p><a href=\"/glossary#\"><strong>required_count</strong></a>: required_count</p> <p><a href=\"/glossary#\"><strong>signatory_requirements</strong></a>: signatory_requirements</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
@@ -3965,8 +3965,8 @@ class MandateApi:
         :type mandateid: str
         :param provisionid: The PROVISIONID identifier (required)
         :type provisionid: str
-        :param obpv600_update_mandate_provision_request: Request body (required)
-        :type obpv600_update_mandate_provision_request: OBPv600UpdateMandateProvisionRequest
+        :param update_mandate_provision_request: Request body (required)
+        :type update_mandate_provision_request: UpdateMandateProvisionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3989,11 +3989,11 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_mandate_provision_serialize(
+        _param = self._update_mandate_provision_serialize(
             bankid=bankid,
             mandateid=mandateid,
             provisionid=provisionid,
-            obpv600_update_mandate_provision_request=obpv600_update_mandate_provision_request,
+            update_mandate_provision_request=update_mandate_provision_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4001,7 +4001,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandateProvision200Response",
+            '200': "GetMandateProvision200Response",
             '404': None,
             '500': None,
         }
@@ -4017,12 +4017,12 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_mandate_provision_with_http_info(
+    def update_mandate_provision_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
         provisionid: Annotated[StrictStr, Field(description="The PROVISIONID identifier")],
-        obpv600_update_mandate_provision_request: Annotated[OBPv600UpdateMandateProvisionRequest, Field(description="Request body")],
+        update_mandate_provision_request: Annotated[UpdateMandateProvisionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4035,7 +4035,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetMandateProvision200Response]:
+    ) -> ApiResponse[GetMandateProvision200Response]:
         """Update Mandate Provision
 
         <p>Update a mandate provision.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><a href=\"/glossary#\">PROVISION_ID</a>: PROVISION_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>conditions</strong></a>: conditions</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>legal_reference</strong></a>: legal_reference</p> <p><a href=\"/glossary#\"><strong>linked_abac_rule_id</strong></a>: linked_abac_rule_id</p> <p><a href=\"/glossary#\"><strong>linked_challenge_type</strong></a>: linked_challenge_type</p> <p><a href=\"/glossary#\"><strong>linked_view_id</strong></a>: linked_view_id</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>provision_description</strong></a>: provision_description</p> <p><a href=\"/glossary#\"><strong>provision_id</strong></a>: provision_id</p> <p><a href=\"/glossary#\"><strong>provision_name</strong></a>: provision_name</p> <p><a href=\"/glossary#\"><strong>provision_type</strong></a>: provision_type</p> <p><a href=\"/glossary#\"><strong>required_count</strong></a>: required_count</p> <p><a href=\"/glossary#\"><strong>signatory_requirements</strong></a>: signatory_requirements</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
@@ -4046,8 +4046,8 @@ class MandateApi:
         :type mandateid: str
         :param provisionid: The PROVISIONID identifier (required)
         :type provisionid: str
-        :param obpv600_update_mandate_provision_request: Request body (required)
-        :type obpv600_update_mandate_provision_request: OBPv600UpdateMandateProvisionRequest
+        :param update_mandate_provision_request: Request body (required)
+        :type update_mandate_provision_request: UpdateMandateProvisionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4070,11 +4070,11 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_mandate_provision_serialize(
+        _param = self._update_mandate_provision_serialize(
             bankid=bankid,
             mandateid=mandateid,
             provisionid=provisionid,
-            obpv600_update_mandate_provision_request=obpv600_update_mandate_provision_request,
+            update_mandate_provision_request=update_mandate_provision_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4082,7 +4082,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandateProvision200Response",
+            '200': "GetMandateProvision200Response",
             '404': None,
             '500': None,
         }
@@ -4098,12 +4098,12 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_mandate_provision_without_preload_content(
+    def update_mandate_provision_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
         provisionid: Annotated[StrictStr, Field(description="The PROVISIONID identifier")],
-        obpv600_update_mandate_provision_request: Annotated[OBPv600UpdateMandateProvisionRequest, Field(description="Request body")],
+        update_mandate_provision_request: Annotated[UpdateMandateProvisionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4127,8 +4127,8 @@ class MandateApi:
         :type mandateid: str
         :param provisionid: The PROVISIONID identifier (required)
         :type provisionid: str
-        :param obpv600_update_mandate_provision_request: Request body (required)
-        :type obpv600_update_mandate_provision_request: OBPv600UpdateMandateProvisionRequest
+        :param update_mandate_provision_request: Request body (required)
+        :type update_mandate_provision_request: UpdateMandateProvisionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4151,11 +4151,11 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_mandate_provision_serialize(
+        _param = self._update_mandate_provision_serialize(
             bankid=bankid,
             mandateid=mandateid,
             provisionid=provisionid,
-            obpv600_update_mandate_provision_request=obpv600_update_mandate_provision_request,
+            update_mandate_provision_request=update_mandate_provision_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4163,7 +4163,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetMandateProvision200Response",
+            '200': "GetMandateProvision200Response",
             '404': None,
             '500': None,
         }
@@ -4174,12 +4174,12 @@ class MandateApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_update_mandate_provision_serialize(
+    def _update_mandate_provision_serialize(
         self,
         bankid,
         mandateid,
         provisionid,
-        obpv600_update_mandate_provision_request,
+        update_mandate_provision_request,
         _request_auth,
         _content_type,
         _headers,
@@ -4211,8 +4211,8 @@ class MandateApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_update_mandate_provision_request is not None:
-            _body_params = obpv600_update_mandate_provision_request
+        if update_mandate_provision_request is not None:
+            _body_params = update_mandate_provision_request
 
 
         # set the HTTP header `Accept`
@@ -4263,12 +4263,12 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_signatory_panel(
+    def update_signatory_panel(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
         panelid: Annotated[StrictStr, Field(description="The PANELID identifier")],
-        obpv600_update_signatory_panel_request: Annotated[OBPv600UpdateSignatoryPanelRequest, Field(description="Request body")],
+        update_signatory_panel_request: Annotated[UpdateSignatoryPanelRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4281,7 +4281,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetSignatoryPanel200Response:
+    ) -> GetSignatoryPanel200Response:
         """Update Signatory Panel
 
         <p>Update a signatory panel.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><a href=\"/glossary#\">PANEL_ID</a>: PANEL_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>panel_name</strong></a>: panel_name</p> <p><a href=\"/glossary#\"><strong>user_ids</strong></a>: user_ids</p> 
@@ -4292,8 +4292,8 @@ class MandateApi:
         :type mandateid: str
         :param panelid: The PANELID identifier (required)
         :type panelid: str
-        :param obpv600_update_signatory_panel_request: Request body (required)
-        :type obpv600_update_signatory_panel_request: OBPv600UpdateSignatoryPanelRequest
+        :param update_signatory_panel_request: Request body (required)
+        :type update_signatory_panel_request: UpdateSignatoryPanelRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4316,11 +4316,11 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_signatory_panel_serialize(
+        _param = self._update_signatory_panel_serialize(
             bankid=bankid,
             mandateid=mandateid,
             panelid=panelid,
-            obpv600_update_signatory_panel_request=obpv600_update_signatory_panel_request,
+            update_signatory_panel_request=update_signatory_panel_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4328,7 +4328,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetSignatoryPanel200Response",
+            '200': "GetSignatoryPanel200Response",
             '404': None,
             '500': None,
         }
@@ -4344,12 +4344,12 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_signatory_panel_with_http_info(
+    def update_signatory_panel_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
         panelid: Annotated[StrictStr, Field(description="The PANELID identifier")],
-        obpv600_update_signatory_panel_request: Annotated[OBPv600UpdateSignatoryPanelRequest, Field(description="Request body")],
+        update_signatory_panel_request: Annotated[UpdateSignatoryPanelRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4362,7 +4362,7 @@ class MandateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetSignatoryPanel200Response]:
+    ) -> ApiResponse[GetSignatoryPanel200Response]:
         """Update Signatory Panel
 
         <p>Update a signatory panel.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">MANDATE_ID</a>: MANDATE_ID</p> <p><a href=\"/glossary#\">PANEL_ID</a>: PANEL_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>mandate_id</strong></a>: mandate_id</p> <p><a href=\"/glossary#\"><strong>panel_id</strong></a>: panel_id</p> <p><a href=\"/glossary#\"><strong>panel_name</strong></a>: panel_name</p> <p><a href=\"/glossary#\"><strong>user_ids</strong></a>: user_ids</p> 
@@ -4373,8 +4373,8 @@ class MandateApi:
         :type mandateid: str
         :param panelid: The PANELID identifier (required)
         :type panelid: str
-        :param obpv600_update_signatory_panel_request: Request body (required)
-        :type obpv600_update_signatory_panel_request: OBPv600UpdateSignatoryPanelRequest
+        :param update_signatory_panel_request: Request body (required)
+        :type update_signatory_panel_request: UpdateSignatoryPanelRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4397,11 +4397,11 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_signatory_panel_serialize(
+        _param = self._update_signatory_panel_serialize(
             bankid=bankid,
             mandateid=mandateid,
             panelid=panelid,
-            obpv600_update_signatory_panel_request=obpv600_update_signatory_panel_request,
+            update_signatory_panel_request=update_signatory_panel_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4409,7 +4409,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetSignatoryPanel200Response",
+            '200': "GetSignatoryPanel200Response",
             '404': None,
             '500': None,
         }
@@ -4425,12 +4425,12 @@ class MandateApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_signatory_panel_without_preload_content(
+    def update_signatory_panel_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         mandateid: Annotated[StrictStr, Field(description="The MANDATEID identifier")],
         panelid: Annotated[StrictStr, Field(description="The PANELID identifier")],
-        obpv600_update_signatory_panel_request: Annotated[OBPv600UpdateSignatoryPanelRequest, Field(description="Request body")],
+        update_signatory_panel_request: Annotated[UpdateSignatoryPanelRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4454,8 +4454,8 @@ class MandateApi:
         :type mandateid: str
         :param panelid: The PANELID identifier (required)
         :type panelid: str
-        :param obpv600_update_signatory_panel_request: Request body (required)
-        :type obpv600_update_signatory_panel_request: OBPv600UpdateSignatoryPanelRequest
+        :param update_signatory_panel_request: Request body (required)
+        :type update_signatory_panel_request: UpdateSignatoryPanelRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4478,11 +4478,11 @@ class MandateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_signatory_panel_serialize(
+        _param = self._update_signatory_panel_serialize(
             bankid=bankid,
             mandateid=mandateid,
             panelid=panelid,
-            obpv600_update_signatory_panel_request=obpv600_update_signatory_panel_request,
+            update_signatory_panel_request=update_signatory_panel_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4490,7 +4490,7 @@ class MandateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetSignatoryPanel200Response",
+            '200': "GetSignatoryPanel200Response",
             '404': None,
             '500': None,
         }
@@ -4501,12 +4501,12 @@ class MandateApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_update_signatory_panel_serialize(
+    def _update_signatory_panel_serialize(
         self,
         bankid,
         mandateid,
         panelid,
-        obpv600_update_signatory_panel_request,
+        update_signatory_panel_request,
         _request_auth,
         _content_type,
         _headers,
@@ -4538,8 +4538,8 @@ class MandateApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_update_signatory_panel_request is not None:
-            _body_params = obpv600_update_signatory_panel_request
+        if update_signatory_panel_request is not None:
+            _body_params = update_signatory_panel_request
 
 
         # set the HTTP header `Accept`

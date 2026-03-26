@@ -18,12 +18,12 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv400_create_or_update_transaction_request_attribute_definition_request import OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-from obp_python.models.obpv400_get_customer_attributes200_response import OBPv400GetCustomerAttributes200Response
-from obp_python.models.obpv400_get_customer_attributes200_response_customer_attributes_inner import OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response import OBPv400GetTransactionRequestAttributeDefinition200Response
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_attributes_inner import OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner
-from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
+from obp_python.models.create_or_update_transaction_request_attribute_definition_request import CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+from obp_python.models.create_personal_data_field_request import CreatePersonalDataFieldRequest
+from obp_python.models.get_customer_attributes200_response import GetCustomerAttributes200Response
+from obp_python.models.get_customer_attributes200_response_customer_attributes_inner import GetCustomerAttributes200ResponseCustomerAttributesInner
+from obp_python.models.get_transaction_request_attribute_definition200_response import GetTransactionRequestAttributeDefinition200Response
+from obp_python.models.get_transaction_request_attribute_definition200_response_attributes_inner import GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -44,11 +44,11 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_customer_attribute(
+    def create_customer_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -61,7 +61,7 @@ class CustomerAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner:
+    ) -> GetCustomerAttributes200ResponseCustomerAttributesInner:
         """Create Customer Attribute
 
         <p>Create Customer Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -70,8 +70,8 @@ class CustomerAttributeApi:
         :type bankid: str
         :param customerid: The CUSTOMERID identifier (required)
         :type customerid: str
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -94,10 +94,10 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_customer_attribute_serialize(
+        _param = self._create_customer_attribute_serialize(
             bankid=bankid,
             customerid=customerid,
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -105,7 +105,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
+            '200': "GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -121,11 +121,11 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_customer_attribute_with_http_info(
+    def create_customer_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -138,7 +138,7 @@ class CustomerAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner]:
+    ) -> ApiResponse[GetCustomerAttributes200ResponseCustomerAttributesInner]:
         """Create Customer Attribute
 
         <p>Create Customer Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -147,8 +147,8 @@ class CustomerAttributeApi:
         :type bankid: str
         :param customerid: The CUSTOMERID identifier (required)
         :type customerid: str
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -171,10 +171,10 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_customer_attribute_serialize(
+        _param = self._create_customer_attribute_serialize(
             bankid=bankid,
             customerid=customerid,
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -182,7 +182,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
+            '200': "GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -198,11 +198,11 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_customer_attribute_without_preload_content(
+    def create_customer_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -224,8 +224,8 @@ class CustomerAttributeApi:
         :type bankid: str
         :param customerid: The CUSTOMERID identifier (required)
         :type customerid: str
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -248,10 +248,10 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_customer_attribute_serialize(
+        _param = self._create_customer_attribute_serialize(
             bankid=bankid,
             customerid=customerid,
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -259,7 +259,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
+            '200': "GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -270,11 +270,11 @@ class CustomerAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_customer_attribute_serialize(
+    def _create_customer_attribute_serialize(
         self,
         bankid,
         customerid,
-        obpv600_create_personal_data_field_request,
+        create_personal_data_field_request,
         _request_auth,
         _content_type,
         _headers,
@@ -304,8 +304,8 @@ class CustomerAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_create_personal_data_field_request is not None:
-            _body_params = obpv600_create_personal_data_field_request
+        if create_personal_data_field_request is not None:
+            _body_params = create_personal_data_field_request
 
 
         # set the HTTP header `Accept`
@@ -356,10 +356,10 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition(
+    def create_or_update_customer_attribute_attribute_definition(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_create_or_update_transaction_request_attribute_definition_request: Annotated[OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
+        create_or_update_transaction_request_attribute_definition_request: Annotated[CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -372,15 +372,15 @@ class CustomerAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner:
+    ) -> GetTransactionRequestAttributeDefinition200ResponseAttributesInner:
         """Create or Update Customer Attribute Definition
 
         <p>Create or Update Customer Attribute Definition</p> <p>The category field must be one of: Customer</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_create_or_update_transaction_request_attribute_definition_request: Request body (required)
-        :type obpv400_create_or_update_transaction_request_attribute_definition_request: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+        :param create_or_update_transaction_request_attribute_definition_request: Request body (required)
+        :type create_or_update_transaction_request_attribute_definition_request: CreateOrUpdateTransactionRequestAttributeDefinitionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -403,9 +403,9 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition_serialize(
+        _param = self._create_or_update_customer_attribute_attribute_definition_serialize(
             bankid=bankid,
-            obpv400_create_or_update_transaction_request_attribute_definition_request=obpv400_create_or_update_transaction_request_attribute_definition_request,
+            create_or_update_transaction_request_attribute_definition_request=create_or_update_transaction_request_attribute_definition_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -413,7 +413,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
+            '200': "GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -429,10 +429,10 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition_with_http_info(
+    def create_or_update_customer_attribute_attribute_definition_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_create_or_update_transaction_request_attribute_definition_request: Annotated[OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
+        create_or_update_transaction_request_attribute_definition_request: Annotated[CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -445,15 +445,15 @@ class CustomerAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner]:
+    ) -> ApiResponse[GetTransactionRequestAttributeDefinition200ResponseAttributesInner]:
         """Create or Update Customer Attribute Definition
 
         <p>Create or Update Customer Attribute Definition</p> <p>The category field must be one of: Customer</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_create_or_update_transaction_request_attribute_definition_request: Request body (required)
-        :type obpv400_create_or_update_transaction_request_attribute_definition_request: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+        :param create_or_update_transaction_request_attribute_definition_request: Request body (required)
+        :type create_or_update_transaction_request_attribute_definition_request: CreateOrUpdateTransactionRequestAttributeDefinitionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -476,9 +476,9 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition_serialize(
+        _param = self._create_or_update_customer_attribute_attribute_definition_serialize(
             bankid=bankid,
-            obpv400_create_or_update_transaction_request_attribute_definition_request=obpv400_create_or_update_transaction_request_attribute_definition_request,
+            create_or_update_transaction_request_attribute_definition_request=create_or_update_transaction_request_attribute_definition_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -486,7 +486,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
+            '200': "GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -502,10 +502,10 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition_without_preload_content(
+    def create_or_update_customer_attribute_attribute_definition_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_create_or_update_transaction_request_attribute_definition_request: Annotated[OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
+        create_or_update_transaction_request_attribute_definition_request: Annotated[CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -525,8 +525,8 @@ class CustomerAttributeApi:
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_create_or_update_transaction_request_attribute_definition_request: Request body (required)
-        :type obpv400_create_or_update_transaction_request_attribute_definition_request: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+        :param create_or_update_transaction_request_attribute_definition_request: Request body (required)
+        :type create_or_update_transaction_request_attribute_definition_request: CreateOrUpdateTransactionRequestAttributeDefinitionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -549,9 +549,9 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition_serialize(
+        _param = self._create_or_update_customer_attribute_attribute_definition_serialize(
             bankid=bankid,
-            obpv400_create_or_update_transaction_request_attribute_definition_request=obpv400_create_or_update_transaction_request_attribute_definition_request,
+            create_or_update_transaction_request_attribute_definition_request=create_or_update_transaction_request_attribute_definition_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -559,7 +559,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
+            '200': "GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -570,10 +570,10 @@ class CustomerAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition_serialize(
+    def _create_or_update_customer_attribute_attribute_definition_serialize(
         self,
         bankid,
-        obpv400_create_or_update_transaction_request_attribute_definition_request,
+        create_or_update_transaction_request_attribute_definition_request,
         _request_auth,
         _content_type,
         _headers,
@@ -601,8 +601,8 @@ class CustomerAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_or_update_transaction_request_attribute_definition_request is not None:
-            _body_params = obpv400_create_or_update_transaction_request_attribute_definition_request
+        if create_or_update_transaction_request_attribute_definition_request is not None:
+            _body_params = create_or_update_transaction_request_attribute_definition_request
 
 
         # set the HTTP header `Accept`
@@ -653,7 +653,7 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_customer_attribute(
+    def delete_customer_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
@@ -703,7 +703,7 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_customer_attribute_serialize(
+        _param = self._delete_customer_attribute_serialize(
             bankid=bankid,
             customerid=customerid,
             customerattributeid=customerattributeid,
@@ -730,7 +730,7 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_customer_attribute_with_http_info(
+    def delete_customer_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
@@ -780,7 +780,7 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_customer_attribute_serialize(
+        _param = self._delete_customer_attribute_serialize(
             bankid=bankid,
             customerid=customerid,
             customerattributeid=customerattributeid,
@@ -807,7 +807,7 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_customer_attribute_without_preload_content(
+    def delete_customer_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
@@ -857,7 +857,7 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_customer_attribute_serialize(
+        _param = self._delete_customer_attribute_serialize(
             bankid=bankid,
             customerid=customerid,
             customerattributeid=customerattributeid,
@@ -879,7 +879,7 @@ class CustomerAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_delete_customer_attribute_serialize(
+    def _delete_customer_attribute_serialize(
         self,
         bankid,
         customerid,
@@ -945,7 +945,7 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_customer_attribute_definition(
+    def delete_customer_attribute_definition(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         attributedefinitionid: Annotated[StrictStr, Field(description="The ATTRIBUTEDEFINITIONID identifier")],
@@ -992,7 +992,7 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_customer_attribute_definition_serialize(
+        _param = self._delete_customer_attribute_definition_serialize(
             bankid=bankid,
             attributedefinitionid=attributedefinitionid,
             _request_auth=_request_auth,
@@ -1018,7 +1018,7 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_customer_attribute_definition_with_http_info(
+    def delete_customer_attribute_definition_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         attributedefinitionid: Annotated[StrictStr, Field(description="The ATTRIBUTEDEFINITIONID identifier")],
@@ -1065,7 +1065,7 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_customer_attribute_definition_serialize(
+        _param = self._delete_customer_attribute_definition_serialize(
             bankid=bankid,
             attributedefinitionid=attributedefinitionid,
             _request_auth=_request_auth,
@@ -1091,7 +1091,7 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_customer_attribute_definition_without_preload_content(
+    def delete_customer_attribute_definition_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         attributedefinitionid: Annotated[StrictStr, Field(description="The ATTRIBUTEDEFINITIONID identifier")],
@@ -1138,7 +1138,7 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_customer_attribute_definition_serialize(
+        _param = self._delete_customer_attribute_definition_serialize(
             bankid=bankid,
             attributedefinitionid=attributedefinitionid,
             _request_auth=_request_auth,
@@ -1159,7 +1159,7 @@ class CustomerAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_delete_customer_attribute_definition_serialize(
+    def _delete_customer_attribute_definition_serialize(
         self,
         bankid,
         attributedefinitionid,
@@ -1222,7 +1222,7 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_customer_attribute_by_id(
+    def get_customer_attribute_by_id(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
@@ -1239,7 +1239,7 @@ class CustomerAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner:
+    ) -> GetCustomerAttributes200ResponseCustomerAttributesInner:
         """Get Customer Attribute By Id
 
         <p>Get Customer Attribute By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1272,7 +1272,7 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_customer_attribute_by_id_serialize(
+        _param = self._get_customer_attribute_by_id_serialize(
             bankid=bankid,
             customerid=customerid,
             attributeid=attributeid,
@@ -1283,7 +1283,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
+            '200': "GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -1299,7 +1299,7 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_customer_attribute_by_id_with_http_info(
+    def get_customer_attribute_by_id_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
@@ -1316,7 +1316,7 @@ class CustomerAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner]:
+    ) -> ApiResponse[GetCustomerAttributes200ResponseCustomerAttributesInner]:
         """Get Customer Attribute By Id
 
         <p>Get Customer Attribute By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1349,7 +1349,7 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_customer_attribute_by_id_serialize(
+        _param = self._get_customer_attribute_by_id_serialize(
             bankid=bankid,
             customerid=customerid,
             attributeid=attributeid,
@@ -1360,7 +1360,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
+            '200': "GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -1376,7 +1376,7 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_customer_attribute_by_id_without_preload_content(
+    def get_customer_attribute_by_id_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
@@ -1426,7 +1426,7 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_customer_attribute_by_id_serialize(
+        _param = self._get_customer_attribute_by_id_serialize(
             bankid=bankid,
             customerid=customerid,
             attributeid=attributeid,
@@ -1437,7 +1437,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
+            '200': "GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -1448,7 +1448,7 @@ class CustomerAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_customer_attribute_by_id_serialize(
+    def _get_customer_attribute_by_id_serialize(
         self,
         bankid,
         customerid,
@@ -1521,7 +1521,7 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_customer_attribute_definition(
+    def get_customer_attribute_definition(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1536,7 +1536,7 @@ class CustomerAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributeDefinition200Response:
+    ) -> GetTransactionRequestAttributeDefinition200Response:
         """Get Customer Attribute Definition
 
         <p>Get Customer Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -1565,7 +1565,7 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_customer_attribute_definition_serialize(
+        _param = self._get_customer_attribute_definition_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1574,7 +1574,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200Response",
+            '200': "GetTransactionRequestAttributeDefinition200Response",
             '404': None,
             '500': None,
         }
@@ -1590,7 +1590,7 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_customer_attribute_definition_with_http_info(
+    def get_customer_attribute_definition_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1605,7 +1605,7 @@ class CustomerAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200Response]:
+    ) -> ApiResponse[GetTransactionRequestAttributeDefinition200Response]:
         """Get Customer Attribute Definition
 
         <p>Get Customer Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -1634,7 +1634,7 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_customer_attribute_definition_serialize(
+        _param = self._get_customer_attribute_definition_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1643,7 +1643,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200Response",
+            '200': "GetTransactionRequestAttributeDefinition200Response",
             '404': None,
             '500': None,
         }
@@ -1659,7 +1659,7 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_customer_attribute_definition_without_preload_content(
+    def get_customer_attribute_definition_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1703,7 +1703,7 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_customer_attribute_definition_serialize(
+        _param = self._get_customer_attribute_definition_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1712,7 +1712,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200Response",
+            '200': "GetTransactionRequestAttributeDefinition200Response",
             '404': None,
             '500': None,
         }
@@ -1723,7 +1723,7 @@ class CustomerAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_customer_attribute_definition_serialize(
+    def _get_customer_attribute_definition_serialize(
         self,
         bankid,
         _request_auth,
@@ -1790,7 +1790,7 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_customer_attributes(
+    def get_customer_attributes(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
@@ -1806,7 +1806,7 @@ class CustomerAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetCustomerAttributes200Response:
+    ) -> GetCustomerAttributes200Response:
         """Get Customer Attributes
 
         <p>Get Customer Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1837,7 +1837,7 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_customer_attributes_serialize(
+        _param = self._get_customer_attributes_serialize(
             bankid=bankid,
             customerid=customerid,
             _request_auth=_request_auth,
@@ -1847,7 +1847,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200Response",
+            '200': "GetCustomerAttributes200Response",
             '404': None,
             '500': None,
         }
@@ -1863,7 +1863,7 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_customer_attributes_with_http_info(
+    def get_customer_attributes_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
@@ -1879,7 +1879,7 @@ class CustomerAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetCustomerAttributes200Response]:
+    ) -> ApiResponse[GetCustomerAttributes200Response]:
         """Get Customer Attributes
 
         <p>Get Customer Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1910,7 +1910,7 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_customer_attributes_serialize(
+        _param = self._get_customer_attributes_serialize(
             bankid=bankid,
             customerid=customerid,
             _request_auth=_request_auth,
@@ -1920,7 +1920,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200Response",
+            '200': "GetCustomerAttributes200Response",
             '404': None,
             '500': None,
         }
@@ -1936,7 +1936,7 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_customer_attributes_without_preload_content(
+    def get_customer_attributes_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
@@ -1983,7 +1983,7 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_customer_attributes_serialize(
+        _param = self._get_customer_attributes_serialize(
             bankid=bankid,
             customerid=customerid,
             _request_auth=_request_auth,
@@ -1993,7 +1993,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200Response",
+            '200': "GetCustomerAttributes200Response",
             '404': None,
             '500': None,
         }
@@ -2004,7 +2004,7 @@ class CustomerAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_customer_attributes_serialize(
+    def _get_customer_attributes_serialize(
         self,
         bankid,
         customerid,
@@ -2074,12 +2074,12 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_customer_attribute(
+    def update_customer_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
         customerattributeid: Annotated[StrictStr, Field(description="The CUSTOMERATTRIBUTEID identifier")],
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2092,7 +2092,7 @@ class CustomerAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner:
+    ) -> GetCustomerAttributes200ResponseCustomerAttributesInner:
         """Update Customer Attribute
 
         <p>Update Customer Attribute</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">CUSTOMER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -2103,8 +2103,8 @@ class CustomerAttributeApi:
         :type customerid: str
         :param customerattributeid: The CUSTOMERATTRIBUTEID identifier (required)
         :type customerattributeid: str
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2127,11 +2127,11 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_customer_attribute_serialize(
+        _param = self._update_customer_attribute_serialize(
             bankid=bankid,
             customerid=customerid,
             customerattributeid=customerattributeid,
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2139,7 +2139,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
+            '200': "GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2155,12 +2155,12 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_customer_attribute_with_http_info(
+    def update_customer_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
         customerattributeid: Annotated[StrictStr, Field(description="The CUSTOMERATTRIBUTEID identifier")],
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2173,7 +2173,7 @@ class CustomerAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner]:
+    ) -> ApiResponse[GetCustomerAttributes200ResponseCustomerAttributesInner]:
         """Update Customer Attribute
 
         <p>Update Customer Attribute</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">CUSTOMER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -2184,8 +2184,8 @@ class CustomerAttributeApi:
         :type customerid: str
         :param customerattributeid: The CUSTOMERATTRIBUTEID identifier (required)
         :type customerattributeid: str
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2208,11 +2208,11 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_customer_attribute_serialize(
+        _param = self._update_customer_attribute_serialize(
             bankid=bankid,
             customerid=customerid,
             customerattributeid=customerattributeid,
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2220,7 +2220,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
+            '200': "GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2236,12 +2236,12 @@ class CustomerAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_customer_attribute_without_preload_content(
+    def update_customer_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
         customerattributeid: Annotated[StrictStr, Field(description="The CUSTOMERATTRIBUTEID identifier")],
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2265,8 +2265,8 @@ class CustomerAttributeApi:
         :type customerid: str
         :param customerattributeid: The CUSTOMERATTRIBUTEID identifier (required)
         :type customerattributeid: str
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2289,11 +2289,11 @@ class CustomerAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_customer_attribute_serialize(
+        _param = self._update_customer_attribute_serialize(
             bankid=bankid,
             customerid=customerid,
             customerattributeid=customerattributeid,
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2301,7 +2301,7 @@ class CustomerAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
+            '200': "GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2312,12 +2312,12 @@ class CustomerAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_update_customer_attribute_serialize(
+    def _update_customer_attribute_serialize(
         self,
         bankid,
         customerid,
         customerattributeid,
-        obpv600_create_personal_data_field_request,
+        create_personal_data_field_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2349,8 +2349,8 @@ class CustomerAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_create_personal_data_field_request is not None:
-            _body_params = obpv600_create_personal_data_field_request
+        if create_personal_data_field_request is not None:
+            _body_params = create_personal_data_field_request
 
 
         # set the HTTP header `Accept`

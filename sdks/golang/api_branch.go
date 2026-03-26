@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,25 +24,25 @@ import (
 // BranchAPIService BranchAPI service
 type BranchAPIService service
 
-type ApiOBPv300CreateBranchRequest struct {
+type ApiCreateBranchRequest struct {
 	ctx context.Context
 	ApiService *BranchAPIService
 	bankid string
-	oBPv300GetBranches200ResponsePropertiesBranchesItems *OBPv300GetBranches200ResponsePropertiesBranchesItems
+	getBranches200ResponseBranchesInner *GetBranches200ResponseBranchesInner
 }
 
 // Request body
-func (r ApiOBPv300CreateBranchRequest) OBPv300GetBranches200ResponsePropertiesBranchesItems(oBPv300GetBranches200ResponsePropertiesBranchesItems OBPv300GetBranches200ResponsePropertiesBranchesItems) ApiOBPv300CreateBranchRequest {
-	r.oBPv300GetBranches200ResponsePropertiesBranchesItems = &oBPv300GetBranches200ResponsePropertiesBranchesItems
+func (r ApiCreateBranchRequest) GetBranches200ResponseBranchesInner(getBranches200ResponseBranchesInner GetBranches200ResponseBranchesInner) ApiCreateBranchRequest {
+	r.getBranches200ResponseBranchesInner = &getBranches200ResponseBranchesInner
 	return r
 }
 
-func (r ApiOBPv300CreateBranchRequest) Execute() (*OBPv300GetBranches200ResponsePropertiesBranchesItems, *http.Response, error) {
-	return r.ApiService.OBPv300CreateBranchExecute(r)
+func (r ApiCreateBranchRequest) Execute() (*GetBranches200ResponseBranchesInner, *http.Response, error) {
+	return r.ApiService.CreateBranchExecute(r)
 }
 
 /*
-OBPv300CreateBranch Create Branch
+CreateBranch Create Branch
 
 <p>Create Branch for the Bank.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -124,10 +124,10 @@ OBPv300CreateBranch Create Branch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv300CreateBranchRequest
+ @return ApiCreateBranchRequest
 */
-func (a *BranchAPIService) OBPv300CreateBranch(ctx context.Context, bankid string) ApiOBPv300CreateBranchRequest {
-	return ApiOBPv300CreateBranchRequest{
+func (a *BranchAPIService) CreateBranch(ctx context.Context, bankid string) ApiCreateBranchRequest {
+	return ApiCreateBranchRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -135,16 +135,16 @@ func (a *BranchAPIService) OBPv300CreateBranch(ctx context.Context, bankid strin
 }
 
 // Execute executes the request
-//  @return OBPv300GetBranches200ResponsePropertiesBranchesItems
-func (a *BranchAPIService) OBPv300CreateBranchExecute(r ApiOBPv300CreateBranchRequest) (*OBPv300GetBranches200ResponsePropertiesBranchesItems, *http.Response, error) {
+//  @return GetBranches200ResponseBranchesInner
+func (a *BranchAPIService) CreateBranchExecute(r ApiCreateBranchRequest) (*GetBranches200ResponseBranchesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv300GetBranches200ResponsePropertiesBranchesItems
+		localVarReturnValue  *GetBranches200ResponseBranchesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BranchAPIService.OBPv300CreateBranch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BranchAPIService.CreateBranch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -155,8 +155,8 @@ func (a *BranchAPIService) OBPv300CreateBranchExecute(r ApiOBPv300CreateBranchRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv300GetBranches200ResponsePropertiesBranchesItems == nil {
-		return localVarReturnValue, nil, reportError("oBPv300GetBranches200ResponsePropertiesBranchesItems is required and must be specified")
+	if r.getBranches200ResponseBranchesInner == nil {
+		return localVarReturnValue, nil, reportError("getBranches200ResponseBranchesInner is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -177,7 +177,7 @@ func (a *BranchAPIService) OBPv300CreateBranchExecute(r ApiOBPv300CreateBranchRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv300GetBranches200ResponsePropertiesBranchesItems
+	localVarPostBody = r.getBranches200ResponseBranchesInner
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -202,7 +202,7 @@ func (a *BranchAPIService) OBPv300CreateBranchExecute(r ApiOBPv300CreateBranchRe
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -243,19 +243,149 @@ func (a *BranchAPIService) OBPv300CreateBranchExecute(r ApiOBPv300CreateBranchRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv300GetBranchRequest struct {
+type ApiDeleteBranchRequest struct {
 	ctx context.Context
 	ApiService *BranchAPIService
 	bankid string
 	branchid string
 }
 
-func (r ApiOBPv300GetBranchRequest) Execute() (*OBPv300GetBranches200ResponsePropertiesBranchesItems, *http.Response, error) {
-	return r.ApiService.OBPv300GetBranchExecute(r)
+func (r ApiDeleteBranchRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteBranchExecute(r)
 }
 
 /*
-OBPv300GetBranch Get Branch
+DeleteBranch Delete Branch
+
+<p>Delete Branch from given Bank.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">BRANCH_ID</a>: DERBY6</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param branchid The BRANCHID identifier
+ @return ApiDeleteBranchRequest
+*/
+func (a *BranchAPIService) DeleteBranch(ctx context.Context, bankid string, branchid string) ApiDeleteBranchRequest {
+	return ApiDeleteBranchRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		branchid: branchid,
+	}
+}
+
+// Execute executes the request
+func (a *BranchAPIService) DeleteBranchExecute(r ApiDeleteBranchRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BranchAPIService.DeleteBranch")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/banks/{bankid}/branches/{branchid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"branchid"+"}", url.PathEscape(parameterValueToString(r.branchid, "branchid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiGetBranchRequest struct {
+	ctx context.Context
+	ApiService *BranchAPIService
+	bankid string
+	branchid string
+}
+
+func (r ApiGetBranchRequest) Execute() (*GetBranches200ResponseBranchesInner, *http.Response, error) {
+	return r.ApiService.GetBranchExecute(r)
+}
+
+/*
+GetBranch Get Branch
 
 <p>Returns information about a single Branch specified by BANK_ID and BRANCH_ID including:</p>
 <ul>
@@ -309,10 +439,10 @@ OBPv300GetBranch Get Branch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param branchid The BRANCHID identifier
- @return ApiOBPv300GetBranchRequest
+ @return ApiGetBranchRequest
 */
-func (a *BranchAPIService) OBPv300GetBranch(ctx context.Context, bankid string, branchid string) ApiOBPv300GetBranchRequest {
-	return ApiOBPv300GetBranchRequest{
+func (a *BranchAPIService) GetBranch(ctx context.Context, bankid string, branchid string) ApiGetBranchRequest {
+	return ApiGetBranchRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -321,16 +451,16 @@ func (a *BranchAPIService) OBPv300GetBranch(ctx context.Context, bankid string, 
 }
 
 // Execute executes the request
-//  @return OBPv300GetBranches200ResponsePropertiesBranchesItems
-func (a *BranchAPIService) OBPv300GetBranchExecute(r ApiOBPv300GetBranchRequest) (*OBPv300GetBranches200ResponsePropertiesBranchesItems, *http.Response, error) {
+//  @return GetBranches200ResponseBranchesInner
+func (a *BranchAPIService) GetBranchExecute(r ApiGetBranchRequest) (*GetBranches200ResponseBranchesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv300GetBranches200ResponsePropertiesBranchesItems
+		localVarReturnValue  *GetBranches200ResponseBranchesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BranchAPIService.OBPv300GetBranch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BranchAPIService.GetBranch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -397,18 +527,18 @@ func (a *BranchAPIService) OBPv300GetBranchExecute(r ApiOBPv300GetBranchRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv300GetBranchesRequest struct {
+type ApiGetBranchesRequest struct {
 	ctx context.Context
 	ApiService *BranchAPIService
 	bankid string
 }
 
-func (r ApiOBPv300GetBranchesRequest) Execute() (*OBPv300GetBranches200Response, *http.Response, error) {
-	return r.ApiService.OBPv300GetBranchesExecute(r)
+func (r ApiGetBranchesRequest) Execute() (*GetBranches200Response, *http.Response, error) {
+	return r.ApiService.GetBranchesExecute(r)
 }
 
 /*
-OBPv300GetBranches Get Branches for a Bank
+GetBranches Get Branches for a Bank
 
 <p>Returns information about branches for a single bank specified by BANK_ID including:</p>
 <ul>
@@ -480,10 +610,10 @@ You can also use the follow url query parameters:</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv300GetBranchesRequest
+ @return ApiGetBranchesRequest
 */
-func (a *BranchAPIService) OBPv300GetBranches(ctx context.Context, bankid string) ApiOBPv300GetBranchesRequest {
-	return ApiOBPv300GetBranchesRequest{
+func (a *BranchAPIService) GetBranches(ctx context.Context, bankid string) ApiGetBranchesRequest {
+	return ApiGetBranchesRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -491,16 +621,16 @@ func (a *BranchAPIService) OBPv300GetBranches(ctx context.Context, bankid string
 }
 
 // Execute executes the request
-//  @return OBPv300GetBranches200Response
-func (a *BranchAPIService) OBPv300GetBranchesExecute(r ApiOBPv300GetBranchesRequest) (*OBPv300GetBranches200Response, *http.Response, error) {
+//  @return GetBranches200Response
+func (a *BranchAPIService) GetBranchesExecute(r ApiGetBranchesRequest) (*GetBranches200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv300GetBranches200Response
+		localVarReturnValue  *GetBranches200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BranchAPIService.OBPv300GetBranches")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BranchAPIService.GetBranches")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -564,134 +694,4 @@ func (a *BranchAPIService) OBPv300GetBranchesExecute(r ApiOBPv300GetBranchesRequ
 	}
 
 	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv310DeleteBranchRequest struct {
-	ctx context.Context
-	ApiService *BranchAPIService
-	bankid string
-	branchid string
-}
-
-func (r ApiOBPv310DeleteBranchRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv310DeleteBranchExecute(r)
-}
-
-/*
-OBPv310DeleteBranch Delete Branch
-
-<p>Delete Branch from given Bank.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">BRANCH_ID</a>: DERBY6</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param branchid The BRANCHID identifier
- @return ApiOBPv310DeleteBranchRequest
-*/
-func (a *BranchAPIService) OBPv310DeleteBranch(ctx context.Context, bankid string, branchid string) ApiOBPv310DeleteBranchRequest {
-	return ApiOBPv310DeleteBranchRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		branchid: branchid,
-	}
-}
-
-// Execute executes the request
-func (a *BranchAPIService) OBPv310DeleteBranchExecute(r ApiOBPv310DeleteBranchRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BranchAPIService.OBPv310DeleteBranch")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/banks/{bankid}/branches/{branchid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"branchid"+"}", url.PathEscape(parameterValueToString(r.branchid, "branchid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
 }

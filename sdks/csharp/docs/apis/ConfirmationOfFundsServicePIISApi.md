@@ -1,14 +1,14 @@
 # OpenBankProject.Api.ConfirmationOfFundsServicePIISApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv310CheckFundsAvailable**](ConfirmationOfFundsServicePIISApi.md#obpv310checkfundsavailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds |
+| [**CheckFundsAvailable**](ConfirmationOfFundsServicePIISApi.md#checkfundsavailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds |
 
-<a id="obpv310checkfundsavailable"></a>
-# **OBPv310CheckFundsAvailable**
-> OBPv310CheckFundsAvailable200Response OBPv310CheckFundsAvailable (string bankid, string accountid, string viewid)
+<a id="checkfundsavailable"></a>
+# **CheckFundsAvailable**
+> CheckFundsAvailable200Response CheckFundsAvailable (string bankid, string accountid, string viewid)
 
 Check Available Funds
 
@@ -25,7 +25,7 @@ Check Available Funds
 
 ### Return type
 
-[**OBPv310CheckFundsAvailable200Response**](OBPv310CheckFundsAvailable200Response.md)
+[**CheckFundsAvailable200Response**](CheckFundsAvailable200Response.md)
 
 ### Authorization
 

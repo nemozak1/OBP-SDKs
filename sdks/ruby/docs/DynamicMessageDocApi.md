@@ -1,24 +1,24 @@
 # OpenBankProject::DynamicMessageDocApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv4_0_0_create_bank_level_dynamic_message_doc**](DynamicMessageDocApi.md#o_bpv4_0_0_create_bank_level_dynamic_message_doc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc |
-| [**o_bpv4_0_0_create_dynamic_message_doc**](DynamicMessageDocApi.md#o_bpv4_0_0_create_dynamic_message_doc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc |
-| [**o_bpv4_0_0_delete_bank_level_dynamic_message_doc**](DynamicMessageDocApi.md#o_bpv4_0_0_delete_bank_level_dynamic_message_doc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc |
-| [**o_bpv4_0_0_delete_dynamic_message_doc**](DynamicMessageDocApi.md#o_bpv4_0_0_delete_dynamic_message_doc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc |
-| [**o_bpv4_0_0_get_all_bank_level_dynamic_message_docs**](DynamicMessageDocApi.md#o_bpv4_0_0_get_all_bank_level_dynamic_message_docs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs |
-| [**o_bpv4_0_0_get_all_dynamic_message_docs**](DynamicMessageDocApi.md#o_bpv4_0_0_get_all_dynamic_message_docs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs |
-| [**o_bpv4_0_0_get_bank_level_dynamic_message_doc**](DynamicMessageDocApi.md#o_bpv4_0_0_get_bank_level_dynamic_message_doc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc |
-| [**o_bpv4_0_0_get_dynamic_message_doc**](DynamicMessageDocApi.md#o_bpv4_0_0_get_dynamic_message_doc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc |
-| [**o_bpv4_0_0_update_bank_level_dynamic_message_doc**](DynamicMessageDocApi.md#o_bpv4_0_0_update_bank_level_dynamic_message_doc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc |
-| [**o_bpv4_0_0_update_dynamic_message_doc**](DynamicMessageDocApi.md#o_bpv4_0_0_update_dynamic_message_doc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc |
+| [**create_bank_level_dynamic_message_doc**](DynamicMessageDocApi.md#create_bank_level_dynamic_message_doc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc |
+| [**create_dynamic_message_doc**](DynamicMessageDocApi.md#create_dynamic_message_doc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc |
+| [**delete_bank_level_dynamic_message_doc**](DynamicMessageDocApi.md#delete_bank_level_dynamic_message_doc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc |
+| [**delete_dynamic_message_doc**](DynamicMessageDocApi.md#delete_dynamic_message_doc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc |
+| [**get_all_bank_level_dynamic_message_docs**](DynamicMessageDocApi.md#get_all_bank_level_dynamic_message_docs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs |
+| [**get_all_dynamic_message_docs**](DynamicMessageDocApi.md#get_all_dynamic_message_docs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs |
+| [**get_bank_level_dynamic_message_doc**](DynamicMessageDocApi.md#get_bank_level_dynamic_message_doc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc |
+| [**get_dynamic_message_doc**](DynamicMessageDocApi.md#get_dynamic_message_doc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc |
+| [**update_bank_level_dynamic_message_doc**](DynamicMessageDocApi.md#update_bank_level_dynamic_message_doc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc |
+| [**update_dynamic_message_doc**](DynamicMessageDocApi.md#update_dynamic_message_doc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc |
 
 
-## o_bpv4_0_0_create_bank_level_dynamic_message_doc
+## create_bank_level_dynamic_message_doc
 
-> <OBPv400GetDynamicMessageDoc200Response> o_bpv4_0_0_create_bank_level_dynamic_message_doc(bankid, obpv400_update_dynamic_message_doc_request)
+> <GetDynamicMessageDoc200Response> create_bank_level_dynamic_message_doc(bankid, update_dynamic_message_doc_request)
 
 Create Bank Level Dynamic Message Doc
 
@@ -40,39 +40,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicMessageDocApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
-obpv400_update_dynamic_message_doc_request = OpenBankProject::OBPv400UpdateDynamicMessageDocRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400UpdateDynamicMessageDocRequestProperties.new({adapter_implementation: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), example_inbound_message: OpenBankProject::OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.new({type: 'type_example', properties: 3.56}), description: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), process: , outbound_avro_schema: , message_format: , programming_lang: , example_outbound_message: OpenBankProject::OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.new({type: 'type_example', properties: 3.56}), bank_id: , inbound_avro_schema: , method_body: , outbound_topic: , inbound_topic: })}) # OBPv400UpdateDynamicMessageDocRequest | Request body
+update_dynamic_message_doc_request = OpenBankProject::UpdateDynamicMessageDocRequest.new # UpdateDynamicMessageDocRequest | Request body
 
 begin
   # Create Bank Level Dynamic Message Doc
-  result = api_instance.o_bpv4_0_0_create_bank_level_dynamic_message_doc(bankid, obpv400_update_dynamic_message_doc_request)
+  result = api_instance.create_bank_level_dynamic_message_doc(bankid, update_dynamic_message_doc_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_create_bank_level_dynamic_message_doc: #{e}"
+  puts "Error when calling DynamicMessageDocApi->create_bank_level_dynamic_message_doc: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_bank_level_dynamic_message_doc_with_http_info variant
+#### Using the create_bank_level_dynamic_message_doc_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetDynamicMessageDoc200Response>, Integer, Hash)> o_bpv4_0_0_create_bank_level_dynamic_message_doc_with_http_info(bankid, obpv400_update_dynamic_message_doc_request)
+> <Array(<GetDynamicMessageDoc200Response>, Integer, Hash)> create_bank_level_dynamic_message_doc_with_http_info(bankid, update_dynamic_message_doc_request)
 
 ```ruby
 begin
   # Create Bank Level Dynamic Message Doc
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_bank_level_dynamic_message_doc_with_http_info(bankid, obpv400_update_dynamic_message_doc_request)
+  data, status_code, headers = api_instance.create_bank_level_dynamic_message_doc_with_http_info(bankid, update_dynamic_message_doc_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetDynamicMessageDoc200Response>
+  p data # => <GetDynamicMessageDoc200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_create_bank_level_dynamic_message_doc_with_http_info: #{e}"
+  puts "Error when calling DynamicMessageDocApi->create_bank_level_dynamic_message_doc_with_http_info: #{e}"
 end
 ```
 
@@ -81,11 +81,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
-| **obpv400_update_dynamic_message_doc_request** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md) | Request body |  |
+| **update_dynamic_message_doc_request** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -97,9 +97,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_create_dynamic_message_doc
+## create_dynamic_message_doc
 
-> <OBPv400GetDynamicMessageDoc200Response> o_bpv4_0_0_create_dynamic_message_doc(obpv400_update_dynamic_message_doc_request)
+> <GetDynamicMessageDoc200Response> create_dynamic_message_doc(update_dynamic_message_doc_request)
 
 Create Dynamic Message Doc
 
@@ -121,38 +121,38 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicMessageDocApi.new
-obpv400_update_dynamic_message_doc_request = OpenBankProject::OBPv400UpdateDynamicMessageDocRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400UpdateDynamicMessageDocRequestProperties.new({adapter_implementation: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), example_inbound_message: OpenBankProject::OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.new({type: 'type_example', properties: 3.56}), description: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), process: , outbound_avro_schema: , message_format: , programming_lang: , example_outbound_message: OpenBankProject::OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.new({type: 'type_example', properties: 3.56}), bank_id: , inbound_avro_schema: , method_body: , outbound_topic: , inbound_topic: })}) # OBPv400UpdateDynamicMessageDocRequest | Request body
+update_dynamic_message_doc_request = OpenBankProject::UpdateDynamicMessageDocRequest.new # UpdateDynamicMessageDocRequest | Request body
 
 begin
   # Create Dynamic Message Doc
-  result = api_instance.o_bpv4_0_0_create_dynamic_message_doc(obpv400_update_dynamic_message_doc_request)
+  result = api_instance.create_dynamic_message_doc(update_dynamic_message_doc_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_create_dynamic_message_doc: #{e}"
+  puts "Error when calling DynamicMessageDocApi->create_dynamic_message_doc: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_dynamic_message_doc_with_http_info variant
+#### Using the create_dynamic_message_doc_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetDynamicMessageDoc200Response>, Integer, Hash)> o_bpv4_0_0_create_dynamic_message_doc_with_http_info(obpv400_update_dynamic_message_doc_request)
+> <Array(<GetDynamicMessageDoc200Response>, Integer, Hash)> create_dynamic_message_doc_with_http_info(update_dynamic_message_doc_request)
 
 ```ruby
 begin
   # Create Dynamic Message Doc
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_dynamic_message_doc_with_http_info(obpv400_update_dynamic_message_doc_request)
+  data, status_code, headers = api_instance.create_dynamic_message_doc_with_http_info(update_dynamic_message_doc_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetDynamicMessageDoc200Response>
+  p data # => <GetDynamicMessageDoc200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_create_dynamic_message_doc_with_http_info: #{e}"
+  puts "Error when calling DynamicMessageDocApi->create_dynamic_message_doc_with_http_info: #{e}"
 end
 ```
 
@@ -160,11 +160,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obpv400_update_dynamic_message_doc_request** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md) | Request body |  |
+| **update_dynamic_message_doc_request** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -176,9 +176,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_delete_bank_level_dynamic_message_doc
+## delete_bank_level_dynamic_message_doc
 
-> o_bpv4_0_0_delete_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid)
+> delete_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid)
 
 Delete Bank Level Dynamic Message Doc
 
@@ -200,9 +200,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicMessageDocApi.new
@@ -211,27 +211,27 @@ dynamicmessagedocid = 'dynamicmessagedocid_example' # String | The DYNAMICMESSAG
 
 begin
   # Delete Bank Level Dynamic Message Doc
-  api_instance.o_bpv4_0_0_delete_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid)
+  api_instance.delete_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_delete_bank_level_dynamic_message_doc: #{e}"
+  puts "Error when calling DynamicMessageDocApi->delete_bank_level_dynamic_message_doc: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_delete_bank_level_dynamic_message_doc_with_http_info variant
+#### Using the delete_bank_level_dynamic_message_doc_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv4_0_0_delete_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid)
+> <Array(nil, Integer, Hash)> delete_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid)
 
 ```ruby
 begin
   # Delete Bank Level Dynamic Message Doc
-  data, status_code, headers = api_instance.o_bpv4_0_0_delete_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid)
+  data, status_code, headers = api_instance.delete_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_delete_bank_level_dynamic_message_doc_with_http_info: #{e}"
+  puts "Error when calling DynamicMessageDocApi->delete_bank_level_dynamic_message_doc_with_http_info: #{e}"
 end
 ```
 
@@ -256,9 +256,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv4_0_0_delete_dynamic_message_doc
+## delete_dynamic_message_doc
 
-> o_bpv4_0_0_delete_dynamic_message_doc(dynamicmessagedocid)
+> delete_dynamic_message_doc(dynamicmessagedocid)
 
 Delete Dynamic Message Doc
 
@@ -280,9 +280,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicMessageDocApi.new
@@ -290,27 +290,27 @@ dynamicmessagedocid = 'dynamicmessagedocid_example' # String | The DYNAMICMESSAG
 
 begin
   # Delete Dynamic Message Doc
-  api_instance.o_bpv4_0_0_delete_dynamic_message_doc(dynamicmessagedocid)
+  api_instance.delete_dynamic_message_doc(dynamicmessagedocid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_delete_dynamic_message_doc: #{e}"
+  puts "Error when calling DynamicMessageDocApi->delete_dynamic_message_doc: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_delete_dynamic_message_doc_with_http_info variant
+#### Using the delete_dynamic_message_doc_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv4_0_0_delete_dynamic_message_doc_with_http_info(dynamicmessagedocid)
+> <Array(nil, Integer, Hash)> delete_dynamic_message_doc_with_http_info(dynamicmessagedocid)
 
 ```ruby
 begin
   # Delete Dynamic Message Doc
-  data, status_code, headers = api_instance.o_bpv4_0_0_delete_dynamic_message_doc_with_http_info(dynamicmessagedocid)
+  data, status_code, headers = api_instance.delete_dynamic_message_doc_with_http_info(dynamicmessagedocid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_delete_dynamic_message_doc_with_http_info: #{e}"
+  puts "Error when calling DynamicMessageDocApi->delete_dynamic_message_doc_with_http_info: #{e}"
 end
 ```
 
@@ -334,9 +334,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv4_0_0_get_all_bank_level_dynamic_message_docs
+## get_all_bank_level_dynamic_message_docs
 
-> <OBPv400GetAllBankLevelDynamicMessageDocs200Response> o_bpv4_0_0_get_all_bank_level_dynamic_message_docs(bankid)
+> <GetAllBankLevelDynamicMessageDocs200Response> get_all_bank_level_dynamic_message_docs(bankid)
 
 Get all Bank Level Dynamic Message Docs
 
@@ -358,9 +358,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicMessageDocApi.new
@@ -368,28 +368,28 @@ bankid = 'bankid_example' # String | The BANKID identifier
 
 begin
   # Get all Bank Level Dynamic Message Docs
-  result = api_instance.o_bpv4_0_0_get_all_bank_level_dynamic_message_docs(bankid)
+  result = api_instance.get_all_bank_level_dynamic_message_docs(bankid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_get_all_bank_level_dynamic_message_docs: #{e}"
+  puts "Error when calling DynamicMessageDocApi->get_all_bank_level_dynamic_message_docs: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_all_bank_level_dynamic_message_docs_with_http_info variant
+#### Using the get_all_bank_level_dynamic_message_docs_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllBankLevelDynamicMessageDocs200Response>, Integer, Hash)> o_bpv4_0_0_get_all_bank_level_dynamic_message_docs_with_http_info(bankid)
+> <Array(<GetAllBankLevelDynamicMessageDocs200Response>, Integer, Hash)> get_all_bank_level_dynamic_message_docs_with_http_info(bankid)
 
 ```ruby
 begin
   # Get all Bank Level Dynamic Message Docs
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_all_bank_level_dynamic_message_docs_with_http_info(bankid)
+  data, status_code, headers = api_instance.get_all_bank_level_dynamic_message_docs_with_http_info(bankid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllBankLevelDynamicMessageDocs200Response>
+  p data # => <GetAllBankLevelDynamicMessageDocs200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_get_all_bank_level_dynamic_message_docs_with_http_info: #{e}"
+  puts "Error when calling DynamicMessageDocApi->get_all_bank_level_dynamic_message_docs_with_http_info: #{e}"
 end
 ```
 
@@ -401,7 +401,7 @@ end
 
 ### Return type
 
-[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)
 
 ### Authorization
 
@@ -413,9 +413,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_all_dynamic_message_docs
+## get_all_dynamic_message_docs
 
-> <OBPv400GetAllBankLevelDynamicMessageDocs200Response> o_bpv4_0_0_get_all_dynamic_message_docs
+> <GetAllBankLevelDynamicMessageDocs200Response> get_all_dynamic_message_docs
 
 Get all Dynamic Message Docs
 
@@ -437,37 +437,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicMessageDocApi.new
 
 begin
   # Get all Dynamic Message Docs
-  result = api_instance.o_bpv4_0_0_get_all_dynamic_message_docs
+  result = api_instance.get_all_dynamic_message_docs
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_get_all_dynamic_message_docs: #{e}"
+  puts "Error when calling DynamicMessageDocApi->get_all_dynamic_message_docs: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_all_dynamic_message_docs_with_http_info variant
+#### Using the get_all_dynamic_message_docs_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllBankLevelDynamicMessageDocs200Response>, Integer, Hash)> o_bpv4_0_0_get_all_dynamic_message_docs_with_http_info
+> <Array(<GetAllBankLevelDynamicMessageDocs200Response>, Integer, Hash)> get_all_dynamic_message_docs_with_http_info
 
 ```ruby
 begin
   # Get all Dynamic Message Docs
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_all_dynamic_message_docs_with_http_info
+  data, status_code, headers = api_instance.get_all_dynamic_message_docs_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllBankLevelDynamicMessageDocs200Response>
+  p data # => <GetAllBankLevelDynamicMessageDocs200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_get_all_dynamic_message_docs_with_http_info: #{e}"
+  puts "Error when calling DynamicMessageDocApi->get_all_dynamic_message_docs_with_http_info: #{e}"
 end
 ```
 
@@ -477,7 +477,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)
 
 ### Authorization
 
@@ -489,9 +489,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_bank_level_dynamic_message_doc
+## get_bank_level_dynamic_message_doc
 
-> <OBPv400GetDynamicMessageDoc200Response> o_bpv4_0_0_get_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid)
+> <GetDynamicMessageDoc200Response> get_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid)
 
 Get Bank Level Dynamic Message Doc
 
@@ -513,9 +513,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicMessageDocApi.new
@@ -524,28 +524,28 @@ dynamicmessagedocid = 'dynamicmessagedocid_example' # String | The DYNAMICMESSAG
 
 begin
   # Get Bank Level Dynamic Message Doc
-  result = api_instance.o_bpv4_0_0_get_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid)
+  result = api_instance.get_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_get_bank_level_dynamic_message_doc: #{e}"
+  puts "Error when calling DynamicMessageDocApi->get_bank_level_dynamic_message_doc: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_bank_level_dynamic_message_doc_with_http_info variant
+#### Using the get_bank_level_dynamic_message_doc_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetDynamicMessageDoc200Response>, Integer, Hash)> o_bpv4_0_0_get_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid)
+> <Array(<GetDynamicMessageDoc200Response>, Integer, Hash)> get_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid)
 
 ```ruby
 begin
   # Get Bank Level Dynamic Message Doc
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid)
+  data, status_code, headers = api_instance.get_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetDynamicMessageDoc200Response>
+  p data # => <GetDynamicMessageDoc200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_get_bank_level_dynamic_message_doc_with_http_info: #{e}"
+  puts "Error when calling DynamicMessageDocApi->get_bank_level_dynamic_message_doc_with_http_info: #{e}"
 end
 ```
 
@@ -558,7 +558,7 @@ end
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -570,9 +570,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_dynamic_message_doc
+## get_dynamic_message_doc
 
-> <OBPv400GetDynamicMessageDoc200Response> o_bpv4_0_0_get_dynamic_message_doc(dynamicmessagedocid)
+> <GetDynamicMessageDoc200Response> get_dynamic_message_doc(dynamicmessagedocid)
 
 Get Dynamic Message Doc
 
@@ -594,9 +594,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicMessageDocApi.new
@@ -604,28 +604,28 @@ dynamicmessagedocid = 'dynamicmessagedocid_example' # String | The DYNAMICMESSAG
 
 begin
   # Get Dynamic Message Doc
-  result = api_instance.o_bpv4_0_0_get_dynamic_message_doc(dynamicmessagedocid)
+  result = api_instance.get_dynamic_message_doc(dynamicmessagedocid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_get_dynamic_message_doc: #{e}"
+  puts "Error when calling DynamicMessageDocApi->get_dynamic_message_doc: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_dynamic_message_doc_with_http_info variant
+#### Using the get_dynamic_message_doc_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetDynamicMessageDoc200Response>, Integer, Hash)> o_bpv4_0_0_get_dynamic_message_doc_with_http_info(dynamicmessagedocid)
+> <Array(<GetDynamicMessageDoc200Response>, Integer, Hash)> get_dynamic_message_doc_with_http_info(dynamicmessagedocid)
 
 ```ruby
 begin
   # Get Dynamic Message Doc
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_dynamic_message_doc_with_http_info(dynamicmessagedocid)
+  data, status_code, headers = api_instance.get_dynamic_message_doc_with_http_info(dynamicmessagedocid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetDynamicMessageDoc200Response>
+  p data # => <GetDynamicMessageDoc200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_get_dynamic_message_doc_with_http_info: #{e}"
+  puts "Error when calling DynamicMessageDocApi->get_dynamic_message_doc_with_http_info: #{e}"
 end
 ```
 
@@ -637,7 +637,7 @@ end
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -649,9 +649,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_update_bank_level_dynamic_message_doc
+## update_bank_level_dynamic_message_doc
 
-> <OBPv400GetDynamicMessageDoc200Response> o_bpv4_0_0_update_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid, obpv400_update_dynamic_message_doc_request)
+> <GetDynamicMessageDoc200Response> update_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid, update_dynamic_message_doc_request)
 
 Update Bank Level Dynamic Message Doc
 
@@ -673,40 +673,40 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicMessageDocApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 dynamicmessagedocid = 'dynamicmessagedocid_example' # String | The DYNAMICMESSAGEDOCID identifier
-obpv400_update_dynamic_message_doc_request = OpenBankProject::OBPv400UpdateDynamicMessageDocRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400UpdateDynamicMessageDocRequestProperties.new({adapter_implementation: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), example_inbound_message: OpenBankProject::OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.new({type: 'type_example', properties: 3.56}), description: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), process: , outbound_avro_schema: , message_format: , programming_lang: , example_outbound_message: OpenBankProject::OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.new({type: 'type_example', properties: 3.56}), bank_id: , inbound_avro_schema: , method_body: , outbound_topic: , inbound_topic: })}) # OBPv400UpdateDynamicMessageDocRequest | Request body
+update_dynamic_message_doc_request = OpenBankProject::UpdateDynamicMessageDocRequest.new # UpdateDynamicMessageDocRequest | Request body
 
 begin
   # Update Bank Level Dynamic Message Doc
-  result = api_instance.o_bpv4_0_0_update_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid, obpv400_update_dynamic_message_doc_request)
+  result = api_instance.update_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid, update_dynamic_message_doc_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_update_bank_level_dynamic_message_doc: #{e}"
+  puts "Error when calling DynamicMessageDocApi->update_bank_level_dynamic_message_doc: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_update_bank_level_dynamic_message_doc_with_http_info variant
+#### Using the update_bank_level_dynamic_message_doc_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetDynamicMessageDoc200Response>, Integer, Hash)> o_bpv4_0_0_update_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid, obpv400_update_dynamic_message_doc_request)
+> <Array(<GetDynamicMessageDoc200Response>, Integer, Hash)> update_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid, update_dynamic_message_doc_request)
 
 ```ruby
 begin
   # Update Bank Level Dynamic Message Doc
-  data, status_code, headers = api_instance.o_bpv4_0_0_update_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid, obpv400_update_dynamic_message_doc_request)
+  data, status_code, headers = api_instance.update_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid, update_dynamic_message_doc_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetDynamicMessageDoc200Response>
+  p data # => <GetDynamicMessageDoc200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_update_bank_level_dynamic_message_doc_with_http_info: #{e}"
+  puts "Error when calling DynamicMessageDocApi->update_bank_level_dynamic_message_doc_with_http_info: #{e}"
 end
 ```
 
@@ -716,11 +716,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
 | **dynamicmessagedocid** | **String** | The DYNAMICMESSAGEDOCID identifier |  |
-| **obpv400_update_dynamic_message_doc_request** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md) | Request body |  |
+| **update_dynamic_message_doc_request** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -732,9 +732,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_update_dynamic_message_doc
+## update_dynamic_message_doc
 
-> <OBPv400GetDynamicMessageDoc200Response> o_bpv4_0_0_update_dynamic_message_doc(dynamicmessagedocid, obpv400_update_dynamic_message_doc_request)
+> <GetDynamicMessageDoc200Response> update_dynamic_message_doc(dynamicmessagedocid, update_dynamic_message_doc_request)
 
 Update Dynamic Message Doc
 
@@ -756,39 +756,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicMessageDocApi.new
 dynamicmessagedocid = 'dynamicmessagedocid_example' # String | The DYNAMICMESSAGEDOCID identifier
-obpv400_update_dynamic_message_doc_request = OpenBankProject::OBPv400UpdateDynamicMessageDocRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400UpdateDynamicMessageDocRequestProperties.new({adapter_implementation: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), example_inbound_message: OpenBankProject::OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.new({type: 'type_example', properties: 3.56}), description: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), process: , outbound_avro_schema: , message_format: , programming_lang: , example_outbound_message: OpenBankProject::OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.new({type: 'type_example', properties: 3.56}), bank_id: , inbound_avro_schema: , method_body: , outbound_topic: , inbound_topic: })}) # OBPv400UpdateDynamicMessageDocRequest | Request body
+update_dynamic_message_doc_request = OpenBankProject::UpdateDynamicMessageDocRequest.new # UpdateDynamicMessageDocRequest | Request body
 
 begin
   # Update Dynamic Message Doc
-  result = api_instance.o_bpv4_0_0_update_dynamic_message_doc(dynamicmessagedocid, obpv400_update_dynamic_message_doc_request)
+  result = api_instance.update_dynamic_message_doc(dynamicmessagedocid, update_dynamic_message_doc_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_update_dynamic_message_doc: #{e}"
+  puts "Error when calling DynamicMessageDocApi->update_dynamic_message_doc: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_update_dynamic_message_doc_with_http_info variant
+#### Using the update_dynamic_message_doc_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetDynamicMessageDoc200Response>, Integer, Hash)> o_bpv4_0_0_update_dynamic_message_doc_with_http_info(dynamicmessagedocid, obpv400_update_dynamic_message_doc_request)
+> <Array(<GetDynamicMessageDoc200Response>, Integer, Hash)> update_dynamic_message_doc_with_http_info(dynamicmessagedocid, update_dynamic_message_doc_request)
 
 ```ruby
 begin
   # Update Dynamic Message Doc
-  data, status_code, headers = api_instance.o_bpv4_0_0_update_dynamic_message_doc_with_http_info(dynamicmessagedocid, obpv400_update_dynamic_message_doc_request)
+  data, status_code, headers = api_instance.update_dynamic_message_doc_with_http_info(dynamicmessagedocid, update_dynamic_message_doc_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetDynamicMessageDoc200Response>
+  p data # => <GetDynamicMessageDoc200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicMessageDocApi->o_bpv4_0_0_update_dynamic_message_doc_with_http_info: #{e}"
+  puts "Error when calling DynamicMessageDocApi->update_dynamic_message_doc_with_http_info: #{e}"
 end
 ```
 
@@ -797,11 +797,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **dynamicmessagedocid** | **String** | The DYNAMICMESSAGEDOCID identifier |  |
-| **obpv400_update_dynamic_message_doc_request** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md) | Request body |  |
+| **update_dynamic_message_doc_request** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 

@@ -4,12 +4,12 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv6_0_0_get_connectors**](ConnectorApi.md#o_bpv6_0_0_get_connectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
-[**o_bpv6_0_0_get_stored_procedure_connector_health**](ConnectorApi.md#o_bpv6_0_0_get_stored_procedure_connector_health) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
+[**get_connectors**](ConnectorApi.md#get_connectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
+[**get_stored_procedure_connector_health**](ConnectorApi.md#get_stored_procedure_connector_health) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
 
 
-# **o_bpv6_0_0_get_connectors**
-> OBPv600GetConnectors200Response o_bpv6_0_0_get_connectors()
+# **get_connectors**
+> GetConnectors200Response get_connectors()
 
 Get Connectors
 
@@ -52,7 +52,7 @@ or if <code>connector=star</code> and the connector is listed in <code>starConne
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_connectors200_response import OBPv600GetConnectors200Response
+from obp_python.models.get_connectors200_response import GetConnectors200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -70,11 +70,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Connectors
-        api_response = api_instance.o_bpv6_0_0_get_connectors()
-        print("The response of ConnectorApi->o_bpv6_0_0_get_connectors:\n")
+        api_response = api_instance.get_connectors()
+        print("The response of ConnectorApi->get_connectors:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConnectorApi->o_bpv6_0_0_get_connectors: %s\n" % e)
+        print("Exception when calling ConnectorApi->get_connectors: %s\n" % e)
 ```
 
 
@@ -85,7 +85,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectors200Response**](OBPv600GetConnectors200Response.md)
+[**GetConnectors200Response**](GetConnectors200Response.md)
 
 ### Authorization
 
@@ -105,8 +105,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_stored_procedure_connector_health**
-> OBPv600GetStoredProcedureConnectorHealth200Response o_bpv6_0_0_get_stored_procedure_connector_health()
+# **get_stored_procedure_connector_health**
+> GetStoredProcedureConnectorHealth200Response get_stored_procedure_connector_health()
 
 Get Stored Procedure Connector Health
 
@@ -143,7 +143,7 @@ The response time depends on the connection pool timeout and JDBC driver setting
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_stored_procedure_connector_health200_response import OBPv600GetStoredProcedureConnectorHealth200Response
+from obp_python.models.get_stored_procedure_connector_health200_response import GetStoredProcedureConnectorHealth200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -179,11 +179,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Stored Procedure Connector Health
-        api_response = api_instance.o_bpv6_0_0_get_stored_procedure_connector_health()
-        print("The response of ConnectorApi->o_bpv6_0_0_get_stored_procedure_connector_health:\n")
+        api_response = api_instance.get_stored_procedure_connector_health()
+        print("The response of ConnectorApi->get_stored_procedure_connector_health:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConnectorApi->o_bpv6_0_0_get_stored_procedure_connector_health: %s\n" % e)
+        print("Exception when calling ConnectorApi->get_stored_procedure_connector_health: %s\n" % e)
 ```
 
 
@@ -194,7 +194,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetStoredProcedureConnectorHealth200Response**](OBPv600GetStoredProcedureConnectorHealth200Response.md)
+[**GetStoredProcedureConnectorHealth200Response**](GetStoredProcedureConnectorHealth200Response.md)
 
 ### Authorization
 

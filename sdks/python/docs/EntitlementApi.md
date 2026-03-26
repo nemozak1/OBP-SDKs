@@ -4,31 +4,30 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv2_0_0_add_entitlement**](EntitlementApi.md#o_bpv2_0_0_add_entitlement) | **POST** /obp/v2.0.0/users/{userid}/entitlements | Add Entitlement for a User
-[**o_bpv2_0_0_delete_entitlement**](EntitlementApi.md#o_bpv2_0_0_delete_entitlement) | **DELETE** /obp/v2.0.0/users/{userid}/entitlement/{entitlementid} | Delete Entitlement
-[**o_bpv2_0_0_get_permissions_for_bank_account**](EntitlementApi.md#o_bpv2_0_0_get_permissions_for_bank_account) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
-[**o_bpv2_1_0_get_entitlements_by_bank_and_user**](EntitlementApi.md#o_bpv2_1_0_get_entitlements_by_bank_and_user) | **GET** /obp/v2.1.0/banks/{bankid}/users/{userid}/entitlements | Get Entitlements for User at Bank
-[**o_bpv3_0_0_add_entitlement_request**](EntitlementApi.md#o_bpv3_0_0_add_entitlement_request) | **POST** /obp/v3.0.0/entitlement-requests | Create Entitlement Request for current User
-[**o_bpv3_0_0_delete_entitlement_request**](EntitlementApi.md#o_bpv3_0_0_delete_entitlement_request) | **DELETE** /obp/v3.0.0/entitlement-requests/{entitlementrequestid} | Delete Entitlement Request
-[**o_bpv3_0_0_get_all_entitlement_requests**](EntitlementApi.md#o_bpv3_0_0_get_all_entitlement_requests) | **GET** /obp/v3.0.0/entitlement-requests | Get all Entitlement Requests
-[**o_bpv3_0_0_get_entitlement_requests**](EntitlementApi.md#o_bpv3_0_0_get_entitlement_requests) | **GET** /obp/v3.0.0/users/{userid}/entitlement-requests | Get Entitlement Requests for a User
-[**o_bpv3_0_0_get_entitlement_requests_for_current_user**](EntitlementApi.md#o_bpv3_0_0_get_entitlement_requests_for_current_user) | **GET** /obp/v3.0.0/my/entitlement-requests | Get Entitlement Requests for the current User
-[**o_bpv3_0_0_get_entitlements_for_current_user**](EntitlementApi.md#o_bpv3_0_0_get_entitlements_for_current_user) | **GET** /obp/v3.0.0/my/entitlements | Get Entitlements for the current User
-[**o_bpv3_1_0_get_all_entitlements**](EntitlementApi.md#o_bpv3_1_0_get_all_entitlements) | **GET** /obp/v3.1.0/entitlements | Get all Entitlements
-[**o_bpv4_0_0_create_user_with_roles**](EntitlementApi.md#o_bpv4_0_0_create_user_with_roles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
-[**o_bpv4_0_0_get_entitlements**](EntitlementApi.md#o_bpv4_0_0_get_entitlements) | **GET** /obp/v4.0.0/users/{userid}/entitlements | Get Entitlements for User
-[**o_bpv4_0_0_get_entitlements_for_bank**](EntitlementApi.md#o_bpv4_0_0_get_entitlements_for_bank) | **GET** /obp/v4.0.0/banks/{bankid}/entitlements | Get Entitlements for One Bank
-[**o_bpv5_1_0_get_entitlements_and_permissions**](EntitlementApi.md#o_bpv5_1_0_get_entitlements_and_permissions) | **GET** /obp/v5.1.0/users/{userid}/entitlements-and-permissions | Get Entitlements and Permissions for a User
-[**o_bpv6_0_0_add_user_to_group**](EntitlementApi.md#o_bpv6_0_0_add_user_to_group) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
-[**o_bpv6_0_0_delete_entitlement**](EntitlementApi.md#o_bpv6_0_0_delete_entitlement) | **DELETE** /obp/v6.0.0/entitlements/{entitlementid} | Delete Entitlement
-[**o_bpv6_0_0_get_group_entitlements**](EntitlementApi.md#o_bpv6_0_0_get_group_entitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements
-[**o_bpv6_0_0_get_roles_with_entitlement_counts_at_all_banks**](EntitlementApi.md#o_bpv6_0_0_get_roles_with_entitlement_counts_at_all_banks) | **GET** /obp/v6.0.0/management/roles-with-entitlement-counts | Get Roles with Entitlement Counts
-[**o_bpv6_0_0_get_user_group_memberships**](EntitlementApi.md#o_bpv6_0_0_get_user_group_memberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships
-[**o_bpv6_0_0_remove_user_from_group**](EntitlementApi.md#o_bpv6_0_0_remove_user_from_group) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
+[**add_entitlement**](EntitlementApi.md#add_entitlement) | **POST** /obp/v2.0.0/users/{userid}/entitlements | Add Entitlement for a User
+[**add_entitlement_request**](EntitlementApi.md#add_entitlement_request) | **POST** /obp/v3.0.0/entitlement-requests | Create Entitlement Request for current User
+[**add_user_to_group**](EntitlementApi.md#add_user_to_group) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
+[**create_user_with_roles**](EntitlementApi.md#create_user_with_roles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
+[**delete_entitlement**](EntitlementApi.md#delete_entitlement) | **DELETE** /obp/v6.0.0/entitlements/{entitlementid} | Delete Entitlement
+[**delete_entitlement_request**](EntitlementApi.md#delete_entitlement_request) | **DELETE** /obp/v3.0.0/entitlement-requests/{entitlementrequestid} | Delete Entitlement Request
+[**get_all_entitlement_requests**](EntitlementApi.md#get_all_entitlement_requests) | **GET** /obp/v3.0.0/entitlement-requests | Get all Entitlement Requests
+[**get_all_entitlements**](EntitlementApi.md#get_all_entitlements) | **GET** /obp/v3.1.0/entitlements | Get all Entitlements
+[**get_entitlement_requests**](EntitlementApi.md#get_entitlement_requests) | **GET** /obp/v3.0.0/users/{userid}/entitlement-requests | Get Entitlement Requests for a User
+[**get_entitlement_requests_for_current_user**](EntitlementApi.md#get_entitlement_requests_for_current_user) | **GET** /obp/v3.0.0/my/entitlement-requests | Get Entitlement Requests for the current User
+[**get_entitlements**](EntitlementApi.md#get_entitlements) | **GET** /obp/v4.0.0/users/{userid}/entitlements | Get Entitlements for User
+[**get_entitlements_and_permissions**](EntitlementApi.md#get_entitlements_and_permissions) | **GET** /obp/v5.1.0/users/{userid}/entitlements-and-permissions | Get Entitlements and Permissions for a User
+[**get_entitlements_by_bank_and_user**](EntitlementApi.md#get_entitlements_by_bank_and_user) | **GET** /obp/v2.1.0/banks/{bankid}/users/{userid}/entitlements | Get Entitlements for User at Bank
+[**get_entitlements_for_bank**](EntitlementApi.md#get_entitlements_for_bank) | **GET** /obp/v4.0.0/banks/{bankid}/entitlements | Get Entitlements for One Bank
+[**get_entitlements_for_current_user**](EntitlementApi.md#get_entitlements_for_current_user) | **GET** /obp/v3.0.0/my/entitlements | Get Entitlements for the current User
+[**get_group_entitlements**](EntitlementApi.md#get_group_entitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements
+[**get_permissions_for_bank_account**](EntitlementApi.md#get_permissions_for_bank_account) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
+[**get_roles_with_entitlement_counts_at_all_banks**](EntitlementApi.md#get_roles_with_entitlement_counts_at_all_banks) | **GET** /obp/v6.0.0/management/roles-with-entitlement-counts | Get Roles with Entitlement Counts
+[**get_user_group_memberships**](EntitlementApi.md#get_user_group_memberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships
+[**remove_user_from_group**](EntitlementApi.md#remove_user_from_group) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
 
 
-# **o_bpv2_0_0_add_entitlement**
-> OBPv510AddSystemViewPermission200Response o_bpv2_0_0_add_entitlement(userid, obpv510_create_consent_implicit_request_entitlements_inner)
+# **add_entitlement**
+> AddSystemViewPermission200Response add_entitlement(userid, create_consent_implicit_request_entitlements_inner)
 
 Add Entitlement for a User
 
@@ -57,8 +56,8 @@ Add Entitlement for a User
 
 ```python
 import obp_python
-from obp_python.models.obpv510_add_system_view_permission200_response import OBPv510AddSystemViewPermission200Response
-from obp_python.models.obpv510_create_consent_implicit_request_entitlements_inner import OBPv510CreateConsentImplicitRequestEntitlementsInner
+from obp_python.models.add_system_view_permission200_response import AddSystemViewPermission200Response
+from obp_python.models.create_consent_implicit_request_entitlements_inner import CreateConsentImplicitRequestEntitlementsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -92,15 +91,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.EntitlementApi(api_client)
     userid = 'userid_example' # str | The USERID identifier
-    obpv510_create_consent_implicit_request_entitlements_inner = {"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}} # OBPv510CreateConsentImplicitRequestEntitlementsInner | Request body
+    create_consent_implicit_request_entitlements_inner = {"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}} # CreateConsentImplicitRequestEntitlementsInner | Request body
 
     try:
         # Add Entitlement for a User
-        api_response = api_instance.o_bpv2_0_0_add_entitlement(userid, obpv510_create_consent_implicit_request_entitlements_inner)
-        print("The response of EntitlementApi->o_bpv2_0_0_add_entitlement:\n")
+        api_response = api_instance.add_entitlement(userid, create_consent_implicit_request_entitlements_inner)
+        print("The response of EntitlementApi->add_entitlement:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv2_0_0_add_entitlement: %s\n" % e)
+        print("Exception when calling EntitlementApi->add_entitlement: %s\n" % e)
 ```
 
 
@@ -111,11 +110,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userid** | **str**| The USERID identifier | 
- **obpv510_create_consent_implicit_request_entitlements_inner** | [**OBPv510CreateConsentImplicitRequestEntitlementsInner**](OBPv510CreateConsentImplicitRequestEntitlementsInner.md)| Request body | 
+ **create_consent_implicit_request_entitlements_inner** | [**CreateConsentImplicitRequestEntitlementsInner**](CreateConsentImplicitRequestEntitlementsInner.md)| Request body | 
 
 ### Return type
 
-[**OBPv510AddSystemViewPermission200Response**](OBPv510AddSystemViewPermission200Response.md)
+[**AddSystemViewPermission200Response**](AddSystemViewPermission200Response.md)
 
 ### Authorization
 
@@ -136,378 +135,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv2_0_0_delete_entitlement**
-> o_bpv2_0_0_delete_entitlement(userid, entitlementid)
-
-Delete Entitlement
-
-<p>Delete Entitlement specified by ENTITLEMENT_ID for an user specified by USER_ID</p>
-<p>Authentication is required and the user needs to be a Super Admin.<br />
-Super Admins are listed in the Props file.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#entitlement_id">ENTITLEMENT_ID</a>:</p>
-<p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.EntitlementApi(api_client)
-    userid = 'userid_example' # str | The USERID identifier
-    entitlementid = 'entitlementid_example' # str | The ENTITLEMENTID identifier
-
-    try:
-        # Delete Entitlement
-        api_instance.o_bpv2_0_0_delete_entitlement(userid, entitlementid)
-    except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv2_0_0_delete_entitlement: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userid** | **str**| The USERID identifier | 
- **entitlementid** | **str**| The ENTITLEMENTID identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv2_0_0_get_permissions_for_bank_account**
-> OBPv200GetPermissionsForBankAccount200Response o_bpv2_0_0_get_permissions_for_bank_account(bankid, accountid)
-
-Get access
-
-<p>Returns the list of the permissions at BANK_ID for account ACCOUNT_ID, with each time a pair composed of the user and the views that he has access to.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.<br />
-and the user needs to have access to the owner view.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
-<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
-<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
-<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
-<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
-<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
-<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
-<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
-<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
-<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
-<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
-<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
-<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
-<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
-<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
-<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
-<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
-<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
-<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#permissions"><strong>permissions</strong></a>:</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv200_get_permissions_for_bank_account200_response import OBPv200GetPermissionsForBankAccount200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.EntitlementApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-
-    try:
-        # Get access
-        api_response = api_instance.o_bpv2_0_0_get_permissions_for_bank_account(bankid, accountid)
-        print("The response of EntitlementApi->o_bpv2_0_0_get_permissions_for_bank_account:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv2_0_0_get_permissions_for_bank_account: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
-
-### Return type
-
-[**OBPv200GetPermissionsForBankAccount200Response**](OBPv200GetPermissionsForBankAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv2_1_0_get_entitlements_by_bank_and_user**
-> OBPv510GetUserByProviderAndUsername200ResponseEntitlements o_bpv2_1_0_get_entitlements_by_bank_and_user(bankid, userid)
-
-Get Entitlements for User at Bank
-
-<p>Get Entitlements specified by BANK_ID and USER_ID</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
-<p><a href="/glossary#list"><strong>list</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_get_user_by_provider_and_username200_response_entitlements import OBPv510GetUserByProviderAndUsername200ResponseEntitlements
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.EntitlementApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    userid = 'userid_example' # str | The USERID identifier
-
-    try:
-        # Get Entitlements for User at Bank
-        api_response = api_instance.o_bpv2_1_0_get_entitlements_by_bank_and_user(bankid, userid)
-        print("The response of EntitlementApi->o_bpv2_1_0_get_entitlements_by_bank_and_user:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv2_1_0_get_entitlements_by_bank_and_user: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **userid** | **str**| The USERID identifier | 
-
-### Return type
-
-[**OBPv510GetUserByProviderAndUsername200ResponseEntitlements**](OBPv510GetUserByProviderAndUsername200ResponseEntitlements.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_0_0_add_entitlement_request**
-> OBPv300GetAllEntitlementRequests200ResponseEntitlementRequestsInner o_bpv3_0_0_add_entitlement_request(obpv510_create_consent_implicit_request_entitlements_inner)
+# **add_entitlement_request**
+> GetAllEntitlementRequests200ResponseEntitlementRequestsInner add_entitlement_request(create_consent_implicit_request_entitlements_inner)
 
 Create Entitlement Request for current User
 
@@ -544,8 +173,8 @@ Create Entitlement Request for current User
 
 ```python
 import obp_python
-from obp_python.models.obpv300_get_all_entitlement_requests200_response_entitlement_requests_inner import OBPv300GetAllEntitlementRequests200ResponseEntitlementRequestsInner
-from obp_python.models.obpv510_create_consent_implicit_request_entitlements_inner import OBPv510CreateConsentImplicitRequestEntitlementsInner
+from obp_python.models.create_consent_implicit_request_entitlements_inner import CreateConsentImplicitRequestEntitlementsInner
+from obp_python.models.get_all_entitlement_requests200_response_entitlement_requests_inner import GetAllEntitlementRequests200ResponseEntitlementRequestsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -578,15 +207,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.EntitlementApi(api_client)
-    obpv510_create_consent_implicit_request_entitlements_inner = {type=object, properties={bank_id={type=string}, role_name={type=string}}} # OBPv510CreateConsentImplicitRequestEntitlementsInner | Request body
+    create_consent_implicit_request_entitlements_inner = {type=object, properties={bank_id={type=string}, role_name={type=string}}} # CreateConsentImplicitRequestEntitlementsInner | Request body
 
     try:
         # Create Entitlement Request for current User
-        api_response = api_instance.o_bpv3_0_0_add_entitlement_request(obpv510_create_consent_implicit_request_entitlements_inner)
-        print("The response of EntitlementApi->o_bpv3_0_0_add_entitlement_request:\n")
+        api_response = api_instance.add_entitlement_request(create_consent_implicit_request_entitlements_inner)
+        print("The response of EntitlementApi->add_entitlement_request:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv3_0_0_add_entitlement_request: %s\n" % e)
+        print("Exception when calling EntitlementApi->add_entitlement_request: %s\n" % e)
 ```
 
 
@@ -596,11 +225,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv510_create_consent_implicit_request_entitlements_inner** | [**OBPv510CreateConsentImplicitRequestEntitlementsInner**](OBPv510CreateConsentImplicitRequestEntitlementsInner.md)| Request body | 
+ **create_consent_implicit_request_entitlements_inner** | [**CreateConsentImplicitRequestEntitlementsInner**](CreateConsentImplicitRequestEntitlementsInner.md)| Request body | 
 
 ### Return type
 
-[**OBPv300GetAllEntitlementRequests200ResponseEntitlementRequestsInner**](OBPv300GetAllEntitlementRequests200ResponseEntitlementRequestsInner.md)
+[**GetAllEntitlementRequests200ResponseEntitlementRequestsInner**](GetAllEntitlementRequests200ResponseEntitlementRequestsInner.md)
 
 ### Authorization
 
@@ -621,257 +250,38 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_0_0_delete_entitlement_request**
-> o_bpv3_0_0_delete_entitlement_request(entitlementrequestid)
+# **add_user_to_group**
+> AddUserToGroup200Response add_user_to_group(userid, add_user_to_group_request)
 
-Delete Entitlement Request
+Grant User Membership to Group Entitlements
 
-<p>Delete the Entitlement Request specified by ENTITLEMENT_REQUEST_ID for a user specified by USER_ID</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#entitlement_request_id">ENTITLEMENT_REQUEST_ID</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.EntitlementApi(api_client)
-    entitlementrequestid = 'entitlementrequestid_example' # str | The ENTITLEMENTREQUESTID identifier
-
-    try:
-        # Delete Entitlement Request
-        api_instance.o_bpv3_0_0_delete_entitlement_request(entitlementrequestid)
-    except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv3_0_0_delete_entitlement_request: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **entitlementrequestid** | **str**| The ENTITLEMENTREQUESTID identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_0_0_get_all_entitlement_requests**
-> OBPv300GetAllEntitlementRequests200Response o_bpv3_0_0_get_all_entitlement_requests()
-
-Get all Entitlement Requests
-
-<p>Get all Entitlement Requests</p>
-<p>Possible custom url parameters for pagination:</p>
-<ul>
-<li>limit=NUMBER ==&gt; default value: 50</li>
-<li>offset=NUMBER ==&gt; default value: 0</li>
-</ul>
-<p>eg1:?limit=100&amp;offset=0</p>
-<ul>
-<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
-</ul>
-<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
-<ul>
-<li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
-<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.488Z. NOTE! The default value is now (2026-03-25T12:16:24.488Z).</li>
-</ul>
-<p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
-<p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#created"><strong>created</strong></a>:</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;a&#105;l&#x74;&#111;&#58;fe&#x6c;&#105;&#120;&#x73;&#x6d;&#x69;&#x74;&#x68;&#x40;e&#120;am&#x70;&#x6c;e.&#x63;o&#109;">&#x66;&#x65;&#x6c;&#105;&#x78;&#x73;&#x6d;&#105;&#116;&#104;&#64;e&#x78;am&#x70;&#108;e&#46;c&#111;&#x6d;</a></p>
-<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
-<p><a href="/glossary#entitlement_request_id"><strong>entitlement_request_id</strong></a>:</p>
-<p><a href="/glossary#entitlement_requests"><strong>entitlement_requests</strong></a>:</p>
-<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
-<p><a href="/glossary#list"><strong>list</strong></a>:</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv300_get_all_entitlement_requests200_response import OBPv300GetAllEntitlementRequests200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.EntitlementApi(api_client)
-
-    try:
-        # Get all Entitlement Requests
-        api_response = api_instance.o_bpv3_0_0_get_all_entitlement_requests()
-        print("The response of EntitlementApi->o_bpv3_0_0_get_all_entitlement_requests:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv3_0_0_get_all_entitlement_requests: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv300GetAllEntitlementRequests200Response**](OBPv300GetAllEntitlementRequests200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_0_0_get_entitlement_requests**
-> OBPv300GetAllEntitlementRequests200Response o_bpv3_0_0_get_entitlement_requests(userid)
-
-Get Entitlement Requests for a User
-
-<p>Get Entitlement Requests for a User.</p>
-<p>Possible custom url parameters for pagination:</p>
-<ul>
-<li>limit=NUMBER ==&gt; default value: 50</li>
-<li>offset=NUMBER ==&gt; default value: 0</li>
-</ul>
-<p>eg1:?limit=100&amp;offset=0</p>
-<ul>
-<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
-</ul>
-<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
-<ul>
-<li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
-<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.488Z. NOTE! The default value is now (2026-03-25T12:16:24.488Z).</li>
-</ul>
-<p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
-<p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
+<p>Grant the User Group Entitlements.</p>
+<p>This endpoint creates entitlements for every Role in the Group. If the user<br />
+already has a particular role at the same bank, that entitlement is skipped (not duplicated).</p>
+<p>Each entitlement created will have:<br />
+- group_id set to the group ID<br />
+- process set to &quot;GROUP_MEMBERSHIP&quot;</p>
+<p><strong>Response Fields:</strong><br />
+- target_entitlements: All roles defined in the group (the complete list of entitlements that this group aims to grant)<br />
+- entitlements_created: Roles that were newly created as entitlements during this operation<br />
+- entitlements_skipped: Roles that the user already possessed, so no new entitlement was created</p>
+<p>Note: target_entitlements = entitlements_created + entitlements_skipped</p>
+<p>Requires either:<br />
+- CanAddUserToGroupAtAllBanks (for any group)<br />
+- CanAddUserToGroupAtOneBank (for groups at specific bank)</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>group_id</strong></a>: group_id</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#created"><strong>created</strong></a>:</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#97;&#105;&#108;&#116;o&#58;&#102;&#x65;&#108;&#x69;&#x78;&#x73;&#x6d;&#105;th&#x40;&#101;&#x78;&#x61;&#x6d;p&#108;&#101;&#46;&#99;&#111;&#x6d;">&#x66;&#x65;&#108;i&#120;&#115;&#109;&#x69;&#116;&#x68;&#64;&#x65;&#120;a&#x6d;&#x70;&#108;&#101;&#x2e;co&#109;</a></p>
-<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
-<p><a href="/glossary#entitlement_request_id"><strong>entitlement_request_id</strong></a>:</p>
-<p><a href="/glossary#entitlement_requests"><strong>entitlement_requests</strong></a>:</p>
-<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
-<p><a href="/glossary#list"><strong>list</strong></a>:</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+<p><a href="/glossary#"><strong>entitlements_created</strong></a>: entitlements_created</p>
+<p><a href="/glossary#"><strong>entitlements_skipped</strong></a>: entitlements_skipped</p>
+<p><a href="/glossary#"><strong>group_id</strong></a>: group_id</p>
+<p><a href="/glossary#"><strong>group_name</strong></a>: group_name</p>
+<p><a href="/glossary#"><strong>target_entitlements</strong></a>: target_entitlements</p>
 <p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+<p><a href="/glossary#">bank_id</a>: gh.29.uk</p>
 
 
 ### Example
@@ -882,7 +292,8 @@ Get Entitlement Requests for a User
 
 ```python
 import obp_python
-from obp_python.models.obpv300_get_all_entitlement_requests200_response import OBPv300GetAllEntitlementRequests200Response
+from obp_python.models.add_user_to_group200_response import AddUserToGroup200Response
+from obp_python.models.add_user_to_group_request import AddUserToGroupRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -916,14 +327,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.EntitlementApi(api_client)
     userid = 'userid_example' # str | The USERID identifier
+    add_user_to_group_request = {"type":"object","properties":{"group_id":{"type":"string"}}} # AddUserToGroupRequest | Request body
 
     try:
-        # Get Entitlement Requests for a User
-        api_response = api_instance.o_bpv3_0_0_get_entitlement_requests(userid)
-        print("The response of EntitlementApi->o_bpv3_0_0_get_entitlement_requests:\n")
+        # Grant User Membership to Group Entitlements
+        api_response = api_instance.add_user_to_group(userid, add_user_to_group_request)
+        print("The response of EntitlementApi->add_user_to_group:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv3_0_0_get_entitlement_requests: %s\n" % e)
+        print("Exception when calling EntitlementApi->add_user_to_group: %s\n" % e)
 ```
 
 
@@ -934,10 +346,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userid** | **str**| The USERID identifier | 
+ **add_user_to_group_request** | [**AddUserToGroupRequest**](AddUserToGroupRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv300GetAllEntitlementRequests200Response**](OBPv300GetAllEntitlementRequests200Response.md)
+[**AddUserToGroup200Response**](AddUserToGroup200Response.md)
 
 ### Authorization
 
@@ -945,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -957,317 +370,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_0_0_get_entitlement_requests_for_current_user**
-> OBPv300GetAllEntitlementRequests200Response o_bpv3_0_0_get_entitlement_requests_for_current_user()
-
-Get Entitlement Requests for the current User
-
-<p>Get Entitlement Requests for the current User.</p>
-<p>Possible custom url parameters for pagination:</p>
-<ul>
-<li>limit=NUMBER ==&gt; default value: 50</li>
-<li>offset=NUMBER ==&gt; default value: 0</li>
-</ul>
-<p>eg1:?limit=100&amp;offset=0</p>
-<ul>
-<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
-</ul>
-<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
-<ul>
-<li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
-<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.488Z. NOTE! The default value is now (2026-03-25T12:16:24.488Z).</li>
-</ul>
-<p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
-<p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#created"><strong>created</strong></a>:</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#102;&#101;l&#x69;&#120;&#x73;m&#105;&#x74;&#x68;&#x40;&#101;&#120;&#97;&#109;&#x70;&#108;&#101;&#46;c&#x6f;&#109;">fe&#108;i&#x78;&#115;&#x6d;&#x69;&#x74;&#104;&#x40;&#101;&#x78;&#97;m&#112;&#x6c;&#101;.&#x63;&#x6f;&#109;</a></p>
-<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
-<p><a href="/glossary#entitlement_request_id"><strong>entitlement_request_id</strong></a>:</p>
-<p><a href="/glossary#entitlement_requests"><strong>entitlement_requests</strong></a>:</p>
-<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
-<p><a href="/glossary#list"><strong>list</strong></a>:</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv300_get_all_entitlement_requests200_response import OBPv300GetAllEntitlementRequests200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.EntitlementApi(api_client)
-
-    try:
-        # Get Entitlement Requests for the current User
-        api_response = api_instance.o_bpv3_0_0_get_entitlement_requests_for_current_user()
-        print("The response of EntitlementApi->o_bpv3_0_0_get_entitlement_requests_for_current_user:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv3_0_0_get_entitlement_requests_for_current_user: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv300GetAllEntitlementRequests200Response**](OBPv300GetAllEntitlementRequests200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_0_0_get_entitlements_for_current_user**
-> OBPv510GetUserByProviderAndUsername200ResponseEntitlements o_bpv3_0_0_get_entitlements_for_current_user()
-
-Get Entitlements for the current User
-
-<p>Get Entitlements for the current User.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
-<p><a href="/glossary#list"><strong>list</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_get_user_by_provider_and_username200_response_entitlements import OBPv510GetUserByProviderAndUsername200ResponseEntitlements
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.EntitlementApi(api_client)
-
-    try:
-        # Get Entitlements for the current User
-        api_response = api_instance.o_bpv3_0_0_get_entitlements_for_current_user()
-        print("The response of EntitlementApi->o_bpv3_0_0_get_entitlements_for_current_user:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv3_0_0_get_entitlements_for_current_user: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv510GetUserByProviderAndUsername200ResponseEntitlements**](OBPv510GetUserByProviderAndUsername200ResponseEntitlements.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_1_0_get_all_entitlements**
-> OBPv310GetAllEntitlements200Response o_bpv3_1_0_get_all_entitlements()
-
-Get all Entitlements
-
-<p>Login is required.</p>
-<p>Possible filter on the role field:</p>
-<p>eg: /entitlements?role=CanGetCustomersAtOneBank</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
-<p><a href="/glossary#list"><strong>list</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv310_get_all_entitlements200_response import OBPv310GetAllEntitlements200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.EntitlementApi(api_client)
-
-    try:
-        # Get all Entitlements
-        api_response = api_instance.o_bpv3_1_0_get_all_entitlements()
-        print("The response of EntitlementApi->o_bpv3_1_0_get_all_entitlements:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv3_1_0_get_all_entitlements: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv310GetAllEntitlements200Response**](OBPv310GetAllEntitlements200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_create_user_with_roles**
-> OBPv400GetEntitlements200Response o_bpv4_0_0_create_user_with_roles(obpv400_create_user_with_roles_request)
+# **create_user_with_roles**
+> GetEntitlements200Response create_user_with_roles(create_user_with_roles_request)
 
 Create (DAuth) User with Roles
 
@@ -1406,8 +510,8 @@ Each parameter MUST NOT appear more than once per request.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_user_with_roles_request import OBPv400CreateUserWithRolesRequest
-from obp_python.models.obpv400_get_entitlements200_response import OBPv400GetEntitlements200Response
+from obp_python.models.create_user_with_roles_request import CreateUserWithRolesRequest
+from obp_python.models.get_entitlements200_response import GetEntitlements200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1440,15 +544,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.EntitlementApi(api_client)
-    obpv400_create_user_with_roles_request = {"type":"object","properties":{"roles":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}}},"provider":{"type":"string"},"username":{"type":"string"}}} # OBPv400CreateUserWithRolesRequest | Request body
+    create_user_with_roles_request = {"type":"object","properties":{"roles":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}}},"provider":{"type":"string"},"username":{"type":"string"}}} # CreateUserWithRolesRequest | Request body
 
     try:
         # Create (DAuth) User with Roles
-        api_response = api_instance.o_bpv4_0_0_create_user_with_roles(obpv400_create_user_with_roles_request)
-        print("The response of EntitlementApi->o_bpv4_0_0_create_user_with_roles:\n")
+        api_response = api_instance.create_user_with_roles(create_user_with_roles_request)
+        print("The response of EntitlementApi->create_user_with_roles:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv4_0_0_create_user_with_roles: %s\n" % e)
+        print("Exception when calling EntitlementApi->create_user_with_roles: %s\n" % e)
 ```
 
 
@@ -1458,11 +562,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv400_create_user_with_roles_request** | [**OBPv400CreateUserWithRolesRequest**](OBPv400CreateUserWithRolesRequest.md)| Request body | 
+ **create_user_with_roles_request** | [**CreateUserWithRolesRequest**](CreateUserWithRolesRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetEntitlements200Response**](OBPv400GetEntitlements200Response.md)
+[**GetEntitlements200Response**](GetEntitlements200Response.md)
 
 ### Authorization
 
@@ -1482,434 +586,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_entitlements**
-> OBPv400GetEntitlements200Response o_bpv4_0_0_get_entitlements(userid)
-
-Get Entitlements for User
-
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
-<p><a href="/glossary#list"><strong>list</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_get_entitlements200_response import OBPv400GetEntitlements200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.EntitlementApi(api_client)
-    userid = 'userid_example' # str | The USERID identifier
-
-    try:
-        # Get Entitlements for User
-        api_response = api_instance.o_bpv4_0_0_get_entitlements(userid)
-        print("The response of EntitlementApi->o_bpv4_0_0_get_entitlements:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv4_0_0_get_entitlements: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userid** | **str**| The USERID identifier | 
-
-### Return type
-
-[**OBPv400GetEntitlements200Response**](OBPv400GetEntitlements200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_get_entitlements_for_bank**
-> OBPv400GetEntitlements200Response o_bpv4_0_0_get_entitlements_for_bank(bankid)
-
-Get Entitlements for One Bank
-
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
-<p><a href="/glossary#list"><strong>list</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_get_entitlements200_response import OBPv400GetEntitlements200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.EntitlementApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-
-    try:
-        # Get Entitlements for One Bank
-        api_response = api_instance.o_bpv4_0_0_get_entitlements_for_bank(bankid)
-        print("The response of EntitlementApi->o_bpv4_0_0_get_entitlements_for_bank:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv4_0_0_get_entitlements_for_bank: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
-
-### Return type
-
-[**OBPv400GetEntitlements200Response**](OBPv400GetEntitlements200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_get_entitlements_and_permissions**
-> OBPv510GetEntitlementsAndPermissions200Response o_bpv5_1_0_get_entitlements_and_permissions(userid)
-
-Get Entitlements and Permissions for a User
-
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;ai&#x6c;t&#111;&#58;&#x66;&#101;l&#x69;x&#115;&#109;i&#116;h&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#46;&#99;&#111;&#109;">&#102;&#x65;&#x6c;&#105;x&#x73;&#109;&#x69;&#x74;h&#x40;&#101;&#x78;a&#x6d;&#112;&#108;&#101;.&#x63;&#111;&#109;</a></p>
-<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
-<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
-<p><a href="/glossary#list"><strong>list</strong></a>:</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#views">views</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_get_entitlements_and_permissions200_response import OBPv510GetEntitlementsAndPermissions200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.EntitlementApi(api_client)
-    userid = 'userid_example' # str | The USERID identifier
-
-    try:
-        # Get Entitlements and Permissions for a User
-        api_response = api_instance.o_bpv5_1_0_get_entitlements_and_permissions(userid)
-        print("The response of EntitlementApi->o_bpv5_1_0_get_entitlements_and_permissions:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv5_1_0_get_entitlements_and_permissions: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userid** | **str**| The USERID identifier | 
-
-### Return type
-
-[**OBPv510GetEntitlementsAndPermissions200Response**](OBPv510GetEntitlementsAndPermissions200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_add_user_to_group**
-> OBPv600AddUserToGroup200Response o_bpv6_0_0_add_user_to_group(userid, obpv600_add_user_to_group_request)
-
-Grant User Membership to Group Entitlements
-
-<p>Grant the User Group Entitlements.</p>
-<p>This endpoint creates entitlements for every Role in the Group. If the user<br />
-already has a particular role at the same bank, that entitlement is skipped (not duplicated).</p>
-<p>Each entitlement created will have:<br />
-- group_id set to the group ID<br />
-- process set to &quot;GROUP_MEMBERSHIP&quot;</p>
-<p><strong>Response Fields:</strong><br />
-- target_entitlements: All roles defined in the group (the complete list of entitlements that this group aims to grant)<br />
-- entitlements_created: Roles that were newly created as entitlements during this operation<br />
-- entitlements_skipped: Roles that the user already possessed, so no new entitlement was created</p>
-<p>Note: target_entitlements = entitlements_created + entitlements_skipped</p>
-<p>Requires either:<br />
-- CanAddUserToGroupAtAllBanks (for any group)<br />
-- CanAddUserToGroupAtOneBank (for groups at specific bank)</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>group_id</strong></a>: group_id</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>entitlements_created</strong></a>: entitlements_created</p>
-<p><a href="/glossary#"><strong>entitlements_skipped</strong></a>: entitlements_skipped</p>
-<p><a href="/glossary#"><strong>group_id</strong></a>: group_id</p>
-<p><a href="/glossary#"><strong>group_name</strong></a>: group_name</p>
-<p><a href="/glossary#"><strong>target_entitlements</strong></a>: target_entitlements</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#">bank_id</a>: gh.29.uk</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv600_add_user_to_group200_response import OBPv600AddUserToGroup200Response
-from obp_python.models.obpv600_add_user_to_group_request import OBPv600AddUserToGroupRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.EntitlementApi(api_client)
-    userid = 'userid_example' # str | The USERID identifier
-    obpv600_add_user_to_group_request = {"type":"object","properties":{"group_id":{"type":"string"}}} # OBPv600AddUserToGroupRequest | Request body
-
-    try:
-        # Grant User Membership to Group Entitlements
-        api_response = api_instance.o_bpv6_0_0_add_user_to_group(userid, obpv600_add_user_to_group_request)
-        print("The response of EntitlementApi->o_bpv6_0_0_add_user_to_group:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv6_0_0_add_user_to_group: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userid** | **str**| The USERID identifier | 
- **obpv600_add_user_to_group_request** | [**OBPv600AddUserToGroupRequest**](OBPv600AddUserToGroupRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv600AddUserToGroup200Response**](OBPv600AddUserToGroup200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_delete_entitlement**
-> o_bpv6_0_0_delete_entitlement(entitlementid)
+# **delete_entitlement**
+> delete_entitlement(entitlementid)
 
 Delete Entitlement
 
@@ -1966,9 +644,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Entitlement
-        api_instance.o_bpv6_0_0_delete_entitlement(entitlementid)
+        api_instance.delete_entitlement(entitlementid)
     except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv6_0_0_delete_entitlement: %s\n" % e)
+        print("Exception when calling EntitlementApi->delete_entitlement: %s\n" % e)
 ```
 
 
@@ -2002,8 +680,1061 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_group_entitlements**
-> OBPv600GetGroupEntitlements200Response o_bpv6_0_0_get_group_entitlements(groupid)
+# **delete_entitlement_request**
+> delete_entitlement_request(entitlementrequestid)
+
+Delete Entitlement Request
+
+<p>Delete the Entitlement Request specified by ENTITLEMENT_REQUEST_ID for a user specified by USER_ID</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#entitlement_request_id">ENTITLEMENT_REQUEST_ID</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.EntitlementApi(api_client)
+    entitlementrequestid = 'entitlementrequestid_example' # str | The ENTITLEMENTREQUESTID identifier
+
+    try:
+        # Delete Entitlement Request
+        api_instance.delete_entitlement_request(entitlementrequestid)
+    except Exception as e:
+        print("Exception when calling EntitlementApi->delete_entitlement_request: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entitlementrequestid** | **str**| The ENTITLEMENTREQUESTID identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_all_entitlement_requests**
+> GetAllEntitlementRequests200Response get_all_entitlement_requests()
+
+Get all Entitlement Requests
+
+<p>Get all Entitlement Requests</p>
+<p>Possible custom url parameters for pagination:</p>
+<ul>
+<li>limit=NUMBER ==&gt; default value: 50</li>
+<li>offset=NUMBER ==&gt; default value: 0</li>
+</ul>
+<p>eg1:?limit=100&amp;offset=0</p>
+<ul>
+<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
+</ul>
+<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
+<ul>
+<li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
+<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.488Z. NOTE! The default value is now (2026-03-25T12:16:24.488Z).</li>
+</ul>
+<p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
+<p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#created"><strong>created</strong></a>:</p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;a&#105;l&#x74;&#111;&#58;fe&#x6c;&#105;&#120;&#x73;&#x6d;&#x69;&#x74;&#x68;&#x40;e&#120;am&#x70;&#x6c;e.&#x63;o&#109;">&#x66;&#x65;&#x6c;&#105;&#x78;&#x73;&#x6d;&#105;&#116;&#104;&#64;e&#x78;am&#x70;&#108;e&#46;c&#111;&#x6d;</a></p>
+<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
+<p><a href="/glossary#entitlement_request_id"><strong>entitlement_request_id</strong></a>:</p>
+<p><a href="/glossary#entitlement_requests"><strong>entitlement_requests</strong></a>:</p>
+<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
+<p><a href="/glossary#list"><strong>list</strong></a>:</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_all_entitlement_requests200_response import GetAllEntitlementRequests200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.EntitlementApi(api_client)
+
+    try:
+        # Get all Entitlement Requests
+        api_response = api_instance.get_all_entitlement_requests()
+        print("The response of EntitlementApi->get_all_entitlement_requests:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EntitlementApi->get_all_entitlement_requests: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetAllEntitlementRequests200Response**](GetAllEntitlementRequests200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_all_entitlements**
+> GetAllEntitlements200Response get_all_entitlements()
+
+Get all Entitlements
+
+<p>Login is required.</p>
+<p>Possible filter on the role field:</p>
+<p>eg: /entitlements?role=CanGetCustomersAtOneBank</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
+<p><a href="/glossary#list"><strong>list</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_all_entitlements200_response import GetAllEntitlements200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.EntitlementApi(api_client)
+
+    try:
+        # Get all Entitlements
+        api_response = api_instance.get_all_entitlements()
+        print("The response of EntitlementApi->get_all_entitlements:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EntitlementApi->get_all_entitlements: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetAllEntitlements200Response**](GetAllEntitlements200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_entitlement_requests**
+> GetAllEntitlementRequests200Response get_entitlement_requests(userid)
+
+Get Entitlement Requests for a User
+
+<p>Get Entitlement Requests for a User.</p>
+<p>Possible custom url parameters for pagination:</p>
+<ul>
+<li>limit=NUMBER ==&gt; default value: 50</li>
+<li>offset=NUMBER ==&gt; default value: 0</li>
+</ul>
+<p>eg1:?limit=100&amp;offset=0</p>
+<ul>
+<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
+</ul>
+<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
+<ul>
+<li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
+<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.488Z. NOTE! The default value is now (2026-03-25T12:16:24.488Z).</li>
+</ul>
+<p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
+<p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#created"><strong>created</strong></a>:</p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#97;&#105;&#108;&#116;o&#58;&#102;&#x65;&#108;&#x69;&#x78;&#x73;&#x6d;&#105;th&#x40;&#101;&#x78;&#x61;&#x6d;p&#108;&#101;&#46;&#99;&#111;&#x6d;">&#x66;&#x65;&#108;i&#120;&#115;&#109;&#x69;&#116;&#x68;&#64;&#x65;&#120;a&#x6d;&#x70;&#108;&#101;&#x2e;co&#109;</a></p>
+<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
+<p><a href="/glossary#entitlement_request_id"><strong>entitlement_request_id</strong></a>:</p>
+<p><a href="/glossary#entitlement_requests"><strong>entitlement_requests</strong></a>:</p>
+<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
+<p><a href="/glossary#list"><strong>list</strong></a>:</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_all_entitlement_requests200_response import GetAllEntitlementRequests200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.EntitlementApi(api_client)
+    userid = 'userid_example' # str | The USERID identifier
+
+    try:
+        # Get Entitlement Requests for a User
+        api_response = api_instance.get_entitlement_requests(userid)
+        print("The response of EntitlementApi->get_entitlement_requests:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EntitlementApi->get_entitlement_requests: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userid** | **str**| The USERID identifier | 
+
+### Return type
+
+[**GetAllEntitlementRequests200Response**](GetAllEntitlementRequests200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_entitlement_requests_for_current_user**
+> GetAllEntitlementRequests200Response get_entitlement_requests_for_current_user()
+
+Get Entitlement Requests for the current User
+
+<p>Get Entitlement Requests for the current User.</p>
+<p>Possible custom url parameters for pagination:</p>
+<ul>
+<li>limit=NUMBER ==&gt; default value: 50</li>
+<li>offset=NUMBER ==&gt; default value: 0</li>
+</ul>
+<p>eg1:?limit=100&amp;offset=0</p>
+<ul>
+<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
+</ul>
+<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
+<ul>
+<li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
+<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.488Z. NOTE! The default value is now (2026-03-25T12:16:24.488Z).</li>
+</ul>
+<p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
+<p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#created"><strong>created</strong></a>:</p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#102;&#101;l&#x69;&#120;&#x73;m&#105;&#x74;&#x68;&#x40;&#101;&#120;&#97;&#109;&#x70;&#108;&#101;&#46;c&#x6f;&#109;">fe&#108;i&#x78;&#115;&#x6d;&#x69;&#x74;&#104;&#x40;&#101;&#x78;&#97;m&#112;&#x6c;&#101;.&#x63;&#x6f;&#109;</a></p>
+<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
+<p><a href="/glossary#entitlement_request_id"><strong>entitlement_request_id</strong></a>:</p>
+<p><a href="/glossary#entitlement_requests"><strong>entitlement_requests</strong></a>:</p>
+<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
+<p><a href="/glossary#list"><strong>list</strong></a>:</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_all_entitlement_requests200_response import GetAllEntitlementRequests200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.EntitlementApi(api_client)
+
+    try:
+        # Get Entitlement Requests for the current User
+        api_response = api_instance.get_entitlement_requests_for_current_user()
+        print("The response of EntitlementApi->get_entitlement_requests_for_current_user:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EntitlementApi->get_entitlement_requests_for_current_user: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetAllEntitlementRequests200Response**](GetAllEntitlementRequests200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_entitlements**
+> GetEntitlements200Response get_entitlements(userid)
+
+Get Entitlements for User
+
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
+<p><a href="/glossary#list"><strong>list</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_entitlements200_response import GetEntitlements200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.EntitlementApi(api_client)
+    userid = 'userid_example' # str | The USERID identifier
+
+    try:
+        # Get Entitlements for User
+        api_response = api_instance.get_entitlements(userid)
+        print("The response of EntitlementApi->get_entitlements:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EntitlementApi->get_entitlements: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userid** | **str**| The USERID identifier | 
+
+### Return type
+
+[**GetEntitlements200Response**](GetEntitlements200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_entitlements_and_permissions**
+> GetEntitlementsAndPermissions200Response get_entitlements_and_permissions(userid)
+
+Get Entitlements and Permissions for a User
+
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;ai&#x6c;t&#111;&#58;&#x66;&#101;l&#x69;x&#115;&#109;i&#116;h&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#46;&#99;&#111;&#109;">&#102;&#x65;&#x6c;&#105;x&#x73;&#109;&#x69;&#x74;h&#x40;&#101;&#x78;a&#x6d;&#112;&#108;&#101;.&#x63;&#111;&#109;</a></p>
+<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
+<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
+<p><a href="/glossary#list"><strong>list</strong></a>:</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#views">views</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_entitlements_and_permissions200_response import GetEntitlementsAndPermissions200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.EntitlementApi(api_client)
+    userid = 'userid_example' # str | The USERID identifier
+
+    try:
+        # Get Entitlements and Permissions for a User
+        api_response = api_instance.get_entitlements_and_permissions(userid)
+        print("The response of EntitlementApi->get_entitlements_and_permissions:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EntitlementApi->get_entitlements_and_permissions: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userid** | **str**| The USERID identifier | 
+
+### Return type
+
+[**GetEntitlementsAndPermissions200Response**](GetEntitlementsAndPermissions200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_entitlements_by_bank_and_user**
+> GetUserByProviderAndUsername200ResponseEntitlements get_entitlements_by_bank_and_user(bankid, userid)
+
+Get Entitlements for User at Bank
+
+<p>Get Entitlements specified by BANK_ID and USER_ID</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#User.user_id">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
+<p><a href="/glossary#list"><strong>list</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_user_by_provider_and_username200_response_entitlements import GetUserByProviderAndUsername200ResponseEntitlements
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.EntitlementApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    userid = 'userid_example' # str | The USERID identifier
+
+    try:
+        # Get Entitlements for User at Bank
+        api_response = api_instance.get_entitlements_by_bank_and_user(bankid, userid)
+        print("The response of EntitlementApi->get_entitlements_by_bank_and_user:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EntitlementApi->get_entitlements_by_bank_and_user: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **userid** | **str**| The USERID identifier | 
+
+### Return type
+
+[**GetUserByProviderAndUsername200ResponseEntitlements**](GetUserByProviderAndUsername200ResponseEntitlements.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_entitlements_for_bank**
+> GetEntitlements200Response get_entitlements_for_bank(bankid)
+
+Get Entitlements for One Bank
+
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
+<p><a href="/glossary#list"><strong>list</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_entitlements200_response import GetEntitlements200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.EntitlementApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+
+    try:
+        # Get Entitlements for One Bank
+        api_response = api_instance.get_entitlements_for_bank(bankid)
+        print("The response of EntitlementApi->get_entitlements_for_bank:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EntitlementApi->get_entitlements_for_bank: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+
+### Return type
+
+[**GetEntitlements200Response**](GetEntitlements200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_entitlements_for_current_user**
+> GetUserByProviderAndUsername200ResponseEntitlements get_entitlements_for_current_user()
+
+Get Entitlements for the current User
+
+<p>Get Entitlements for the current User.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
+<p><a href="/glossary#list"><strong>list</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_user_by_provider_and_username200_response_entitlements import GetUserByProviderAndUsername200ResponseEntitlements
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.EntitlementApi(api_client)
+
+    try:
+        # Get Entitlements for the current User
+        api_response = api_instance.get_entitlements_for_current_user()
+        print("The response of EntitlementApi->get_entitlements_for_current_user:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EntitlementApi->get_entitlements_for_current_user: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetUserByProviderAndUsername200ResponseEntitlements**](GetUserByProviderAndUsername200ResponseEntitlements.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_group_entitlements**
+> GetGroupEntitlements200Response get_group_entitlements(groupid)
 
 Get Group Entitlements
 
@@ -2033,7 +1764,7 @@ Get Group Entitlements
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_group_entitlements200_response import OBPv600GetGroupEntitlements200Response
+from obp_python.models.get_group_entitlements200_response import GetGroupEntitlements200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2070,11 +1801,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Group Entitlements
-        api_response = api_instance.o_bpv6_0_0_get_group_entitlements(groupid)
-        print("The response of EntitlementApi->o_bpv6_0_0_get_group_entitlements:\n")
+        api_response = api_instance.get_group_entitlements(groupid)
+        print("The response of EntitlementApi->get_group_entitlements:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv6_0_0_get_group_entitlements: %s\n" % e)
+        print("Exception when calling EntitlementApi->get_group_entitlements: %s\n" % e)
 ```
 
 
@@ -2088,7 +1819,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetGroupEntitlements200Response**](OBPv600GetGroupEntitlements200Response.md)
+[**GetGroupEntitlements200Response**](GetGroupEntitlements200Response.md)
 
 ### Authorization
 
@@ -2108,8 +1839,178 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_roles_with_entitlement_counts_at_all_banks**
-> OBPv600GetRolesWithEntitlementCountsAtAllBanks200Response o_bpv6_0_0_get_roles_with_entitlement_counts_at_all_banks()
+# **get_permissions_for_bank_account**
+> GetPermissionsForBankAccount200Response get_permissions_for_bank_account(bankid, accountid)
+
+Get access
+
+<p>Returns the list of the permissions at BANK_ID for account ACCOUNT_ID, with each time a pair composed of the user and the views that he has access to.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.<br />
+and the user needs to have access to the owner view.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
+<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
+<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
+<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
+<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
+<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
+<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
+<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
+<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
+<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
+<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
+<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
+<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
+<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
+<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
+<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
+<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
+<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
+<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#permissions"><strong>permissions</strong></a>:</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_permissions_for_bank_account200_response import GetPermissionsForBankAccount200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.EntitlementApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+
+    try:
+        # Get access
+        api_response = api_instance.get_permissions_for_bank_account(bankid, accountid)
+        print("The response of EntitlementApi->get_permissions_for_bank_account:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EntitlementApi->get_permissions_for_bank_account: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+
+### Return type
+
+[**GetPermissionsForBankAccount200Response**](GetPermissionsForBankAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_roles_with_entitlement_counts_at_all_banks**
+> GetRolesWithEntitlementCountsAtAllBanks200Response get_roles_with_entitlement_counts_at_all_banks()
 
 Get Roles with Entitlement Counts
 
@@ -2133,7 +2034,7 @@ how many entitlements have been granted for each role.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_roles_with_entitlement_counts_at_all_banks200_response import OBPv600GetRolesWithEntitlementCountsAtAllBanks200Response
+from obp_python.models.get_roles_with_entitlement_counts_at_all_banks200_response import GetRolesWithEntitlementCountsAtAllBanks200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2169,11 +2070,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Roles with Entitlement Counts
-        api_response = api_instance.o_bpv6_0_0_get_roles_with_entitlement_counts_at_all_banks()
-        print("The response of EntitlementApi->o_bpv6_0_0_get_roles_with_entitlement_counts_at_all_banks:\n")
+        api_response = api_instance.get_roles_with_entitlement_counts_at_all_banks()
+        print("The response of EntitlementApi->get_roles_with_entitlement_counts_at_all_banks:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv6_0_0_get_roles_with_entitlement_counts_at_all_banks: %s\n" % e)
+        print("Exception when calling EntitlementApi->get_roles_with_entitlement_counts_at_all_banks: %s\n" % e)
 ```
 
 
@@ -2184,7 +2085,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetRolesWithEntitlementCountsAtAllBanks200Response**](OBPv600GetRolesWithEntitlementCountsAtAllBanks200Response.md)
+[**GetRolesWithEntitlementCountsAtAllBanks200Response**](GetRolesWithEntitlementCountsAtAllBanks200Response.md)
 
 ### Authorization
 
@@ -2204,8 +2105,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_user_group_memberships**
-> OBPv600GetUserGroupMemberships200Response o_bpv6_0_0_get_user_group_memberships(userid)
+# **get_user_group_memberships**
+> GetUserGroupMemberships200Response get_user_group_memberships(userid)
 
 Get User's Group Memberships
 
@@ -2236,7 +2137,7 @@ Get User's Group Memberships
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_user_group_memberships200_response import OBPv600GetUserGroupMemberships200Response
+from obp_python.models.get_user_group_memberships200_response import GetUserGroupMemberships200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2273,11 +2174,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get User's Group Memberships
-        api_response = api_instance.o_bpv6_0_0_get_user_group_memberships(userid)
-        print("The response of EntitlementApi->o_bpv6_0_0_get_user_group_memberships:\n")
+        api_response = api_instance.get_user_group_memberships(userid)
+        print("The response of EntitlementApi->get_user_group_memberships:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv6_0_0_get_user_group_memberships: %s\n" % e)
+        print("Exception when calling EntitlementApi->get_user_group_memberships: %s\n" % e)
 ```
 
 
@@ -2291,7 +2192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetUserGroupMemberships200Response**](OBPv600GetUserGroupMemberships200Response.md)
+[**GetUserGroupMemberships200Response**](GetUserGroupMemberships200Response.md)
 
 ### Authorization
 
@@ -2311,8 +2212,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_remove_user_from_group**
-> o_bpv6_0_0_remove_user_from_group(userid, groupid)
+# **remove_user_from_group**
+> remove_user_from_group(userid, groupid)
 
 Remove User from Group
 
@@ -2375,9 +2276,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Remove User from Group
-        api_instance.o_bpv6_0_0_remove_user_from_group(userid, groupid)
+        api_instance.remove_user_from_group(userid, groupid)
     except Exception as e:
-        print("Exception when calling EntitlementApi->o_bpv6_0_0_remove_user_from_group: %s\n" % e)
+        print("Exception when calling EntitlementApi->remove_user_from_group: %s\n" % e)
 ```
 
 

@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,89 +15,89 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv6_0_0_create_personal_data_field`]
+/// struct for typed errors of method [`create_personal_data_field`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600CreatePersonalDataFieldError {
+pub enum CreatePersonalDataFieldError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_create_user_attribute`]
+/// struct for typed errors of method [`create_user_attribute`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600CreateUserAttributeError {
+pub enum CreateUserAttributeError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_delete_personal_data_field`]
+/// struct for typed errors of method [`delete_personal_data_field`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600DeletePersonalDataFieldError {
+pub enum DeletePersonalDataFieldError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_delete_user_attribute`]
+/// struct for typed errors of method [`delete_user_attribute`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600DeleteUserAttributeError {
+pub enum DeleteUserAttributeError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_get_personal_data_field_by_id`]
+/// struct for typed errors of method [`get_personal_data_field_by_id`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600GetPersonalDataFieldByIdError {
+pub enum GetPersonalDataFieldByIdError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_get_personal_data_fields`]
+/// struct for typed errors of method [`get_personal_data_fields`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600GetPersonalDataFieldsError {
+pub enum GetPersonalDataFieldsError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_get_user_attribute_by_id`]
+/// struct for typed errors of method [`get_user_attribute_by_id`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600GetUserAttributeByIdError {
+pub enum GetUserAttributeByIdError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_get_user_attributes`]
+/// struct for typed errors of method [`get_user_attributes`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600GetUserAttributesError {
+pub enum GetUserAttributesError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_update_personal_data_field`]
+/// struct for typed errors of method [`update_personal_data_field`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600UpdatePersonalDataFieldError {
+pub enum UpdatePersonalDataFieldError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_update_user_attribute`]
+/// struct for typed errors of method [`update_user_attribute`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600UpdateUserAttributeError {
+pub enum UpdateUserAttributeError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
@@ -105,9 +105,9 @@ pub enum OBpv600UpdateUserAttributeError {
 
 
 /// <p>Create a Personal Data Field for the currently authenticated user.</p> <p>Personal Data Fields (IsPersonal=true) are managed by the user themselves and do not require special roles.<br /> This data is not available in ABAC rules for privacy reasons.</p> <p>For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv6_0_0_create_personal_data_field(configuration: &configuration::Configuration, obpv600_create_personal_data_field_request: models::Obpv600CreatePersonalDataFieldRequest) -> Result<models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, Error<OBpv600CreatePersonalDataFieldError>> {
+pub async fn create_personal_data_field(configuration: &configuration::Configuration, create_personal_data_field_request: models::CreatePersonalDataFieldRequest) -> Result<models::GetPersonalDataFields200ResponseUserAttributesInner, Error<CreatePersonalDataFieldError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_body_obpv600_create_personal_data_field_request = obpv600_create_personal_data_field_request;
+    let p_body_create_personal_data_field_request = create_personal_data_field_request;
 
     let uri_str = format!("{}/obp/v6.0.0/my/personal-data-fields", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -132,9 +132,9 @@ pub async fn o_bpv6_0_0_create_personal_data_field(configuration: &configuration
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv600_create_personal_data_field_request);
+    req_builder = req_builder.json(&p_body_create_personal_data_field_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -151,21 +151,21 @@ pub async fn o_bpv6_0_0_create_personal_data_field(configuration: &configuration
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetPersonalDataFields200ResponseUserAttributesInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetPersonalDataFields200ResponseUserAttributesInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600CreatePersonalDataFieldError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreatePersonalDataFieldError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Create a User Attribute for the user specified by USER_ID.</p> <p>User Attributes are non-personal attributes (IsPersonal=false) that can be used in ABAC rules.<br /> They require a role to set, similar to Customer Attributes, Account Attributes, etc.</p> <p>For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv6_0_0_create_user_attribute(configuration: &configuration::Configuration, userid: &str, obpv600_create_personal_data_field_request: models::Obpv600CreatePersonalDataFieldRequest) -> Result<models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, Error<OBpv600CreateUserAttributeError>> {
+pub async fn create_user_attribute(configuration: &configuration::Configuration, userid: &str, create_personal_data_field_request: models::CreatePersonalDataFieldRequest) -> Result<models::GetPersonalDataFields200ResponseUserAttributesInner, Error<CreateUserAttributeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_userid = userid;
-    let p_body_obpv600_create_personal_data_field_request = obpv600_create_personal_data_field_request;
+    let p_body_create_personal_data_field_request = create_personal_data_field_request;
 
     let uri_str = format!("{}/obp/v6.0.0/users/{userid}/attributes", configuration.base_path, userid=crate::apis::urlencode(p_path_userid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -190,9 +190,9 @@ pub async fn o_bpv6_0_0_create_user_attribute(configuration: &configuration::Con
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv600_create_personal_data_field_request);
+    req_builder = req_builder.json(&p_body_create_personal_data_field_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -209,18 +209,18 @@ pub async fn o_bpv6_0_0_create_user_attribute(configuration: &configuration::Con
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetPersonalDataFields200ResponseUserAttributesInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetPersonalDataFields200ResponseUserAttributesInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600CreateUserAttributeError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateUserAttributeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv6_0_0_delete_personal_data_field(configuration: &configuration::Configuration, userattributeid: &str) -> Result<(), Error<OBpv600DeletePersonalDataFieldError>> {
+pub async fn delete_personal_data_field(configuration: &configuration::Configuration, userattributeid: &str) -> Result<(), Error<DeletePersonalDataFieldError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_userattributeid = userattributeid;
 
@@ -247,7 +247,7 @@ pub async fn o_bpv6_0_0_delete_personal_data_field(configuration: &configuration
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -259,13 +259,13 @@ pub async fn o_bpv6_0_0_delete_personal_data_field(configuration: &configuration
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600DeletePersonalDataFieldError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeletePersonalDataFieldError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv6_0_0_delete_user_attribute(configuration: &configuration::Configuration, userid: &str, userattributeid: &str) -> Result<(), Error<OBpv600DeleteUserAttributeError>> {
+pub async fn delete_user_attribute(configuration: &configuration::Configuration, userid: &str, userattributeid: &str) -> Result<(), Error<DeleteUserAttributeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_userid = userid;
     let p_path_userattributeid = userattributeid;
@@ -293,7 +293,7 @@ pub async fn o_bpv6_0_0_delete_user_attribute(configuration: &configuration::Con
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -305,13 +305,13 @@ pub async fn o_bpv6_0_0_delete_user_attribute(configuration: &configuration::Con
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600DeleteUserAttributeError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteUserAttributeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv6_0_0_get_personal_data_field_by_id(configuration: &configuration::Configuration, userattributeid: &str) -> Result<models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, Error<OBpv600GetPersonalDataFieldByIdError>> {
+pub async fn get_personal_data_field_by_id(configuration: &configuration::Configuration, userattributeid: &str) -> Result<models::GetPersonalDataFields200ResponseUserAttributesInner, Error<GetPersonalDataFieldByIdError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_userattributeid = userattributeid;
 
@@ -338,7 +338,7 @@ pub async fn o_bpv6_0_0_get_personal_data_field_by_id(configuration: &configurat
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -356,18 +356,18 @@ pub async fn o_bpv6_0_0_get_personal_data_field_by_id(configuration: &configurat
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetPersonalDataFields200ResponseUserAttributesInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetPersonalDataFields200ResponseUserAttributesInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600GetPersonalDataFieldByIdError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetPersonalDataFieldByIdError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get Personal Data Fields for the currently authenticated user.</p> <p>Returns Personal Data Fields (IsPersonal=true) that are managed by the user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_attributes</strong></a>: user_attributes</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv6_0_0_get_personal_data_fields(configuration: &configuration::Configuration, ) -> Result<models::Obpv600GetPersonalDataFields200Response, Error<OBpv600GetPersonalDataFieldsError>> {
+pub async fn get_personal_data_fields(configuration: &configuration::Configuration, ) -> Result<models::GetPersonalDataFields200Response, Error<GetPersonalDataFieldsError>> {
 
     let uri_str = format!("{}/obp/v6.0.0/my/personal-data-fields", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -392,7 +392,7 @@ pub async fn o_bpv6_0_0_get_personal_data_fields(configuration: &configuration::
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -410,18 +410,18 @@ pub async fn o_bpv6_0_0_get_personal_data_fields(configuration: &configuration::
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetPersonalDataFields200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetPersonalDataFields200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetPersonalDataFields200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetPersonalDataFields200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600GetPersonalDataFieldsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetPersonalDataFieldsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv6_0_0_get_user_attribute_by_id(configuration: &configuration::Configuration, userid: &str, userattributeid: &str) -> Result<models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, Error<OBpv600GetUserAttributeByIdError>> {
+pub async fn get_user_attribute_by_id(configuration: &configuration::Configuration, userid: &str, userattributeid: &str) -> Result<models::GetPersonalDataFields200ResponseUserAttributesInner, Error<GetUserAttributeByIdError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_userid = userid;
     let p_path_userattributeid = userattributeid;
@@ -449,7 +449,7 @@ pub async fn o_bpv6_0_0_get_user_attribute_by_id(configuration: &configuration::
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -467,18 +467,18 @@ pub async fn o_bpv6_0_0_get_user_attribute_by_id(configuration: &configuration::
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetPersonalDataFields200ResponseUserAttributesInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetPersonalDataFields200ResponseUserAttributesInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600GetUserAttributeByIdError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetUserAttributeByIdError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get User Attributes for the user specified by USER_ID.</p> <p>Returns non-personal user attributes (IsPersonal=false) that can be used in ABAC rules.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_attributes</strong></a>: user_attributes</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv6_0_0_get_user_attributes(configuration: &configuration::Configuration, userid: &str) -> Result<models::Obpv600GetPersonalDataFields200Response, Error<OBpv600GetUserAttributesError>> {
+pub async fn get_user_attributes(configuration: &configuration::Configuration, userid: &str) -> Result<models::GetPersonalDataFields200Response, Error<GetUserAttributesError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_userid = userid;
 
@@ -505,7 +505,7 @@ pub async fn o_bpv6_0_0_get_user_attributes(configuration: &configuration::Confi
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -523,21 +523,21 @@ pub async fn o_bpv6_0_0_get_user_attributes(configuration: &configuration::Confi
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetPersonalDataFields200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetPersonalDataFields200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetPersonalDataFields200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetPersonalDataFields200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600GetUserAttributesError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetUserAttributesError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv6_0_0_update_personal_data_field(configuration: &configuration::Configuration, userattributeid: &str, obpv600_create_personal_data_field_request: models::Obpv600CreatePersonalDataFieldRequest) -> Result<models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, Error<OBpv600UpdatePersonalDataFieldError>> {
+pub async fn update_personal_data_field(configuration: &configuration::Configuration, userattributeid: &str, create_personal_data_field_request: models::CreatePersonalDataFieldRequest) -> Result<models::GetPersonalDataFields200ResponseUserAttributesInner, Error<UpdatePersonalDataFieldError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_userattributeid = userattributeid;
-    let p_body_obpv600_create_personal_data_field_request = obpv600_create_personal_data_field_request;
+    let p_body_create_personal_data_field_request = create_personal_data_field_request;
 
     let uri_str = format!("{}/obp/v6.0.0/my/personal-data-fields/{userattributeid}", configuration.base_path, userattributeid=crate::apis::urlencode(p_path_userattributeid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -562,9 +562,9 @@ pub async fn o_bpv6_0_0_update_personal_data_field(configuration: &configuration
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv600_create_personal_data_field_request);
+    req_builder = req_builder.json(&p_body_create_personal_data_field_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -581,22 +581,22 @@ pub async fn o_bpv6_0_0_update_personal_data_field(configuration: &configuration
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetPersonalDataFields200ResponseUserAttributesInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetPersonalDataFields200ResponseUserAttributesInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600UpdatePersonalDataFieldError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdatePersonalDataFieldError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv6_0_0_update_user_attribute(configuration: &configuration::Configuration, userid: &str, userattributeid: &str, obpv600_create_personal_data_field_request: models::Obpv600CreatePersonalDataFieldRequest) -> Result<models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, Error<OBpv600UpdateUserAttributeError>> {
+pub async fn update_user_attribute(configuration: &configuration::Configuration, userid: &str, userattributeid: &str, create_personal_data_field_request: models::CreatePersonalDataFieldRequest) -> Result<models::GetPersonalDataFields200ResponseUserAttributesInner, Error<UpdateUserAttributeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_userid = userid;
     let p_path_userattributeid = userattributeid;
-    let p_body_obpv600_create_personal_data_field_request = obpv600_create_personal_data_field_request;
+    let p_body_create_personal_data_field_request = create_personal_data_field_request;
 
     let uri_str = format!("{}/obp/v6.0.0/users/{userid}/attributes/{userattributeid}", configuration.base_path, userid=crate::apis::urlencode(p_path_userid), userattributeid=crate::apis::urlencode(p_path_userattributeid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -621,9 +621,9 @@ pub async fn o_bpv6_0_0_update_user_attribute(configuration: &configuration::Con
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv600_create_personal_data_field_request);
+    req_builder = req_builder.json(&p_body_create_personal_data_field_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -640,12 +640,12 @@ pub async fn o_bpv6_0_0_update_user_attribute(configuration: &configuration::Con
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetPersonalDataFields200ResponseUserAttributesInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetPersonalDataFields200ResponseUserAttributesInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600UpdateUserAttributeError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateUserAttributeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

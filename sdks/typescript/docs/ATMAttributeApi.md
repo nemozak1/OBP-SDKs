@@ -1,20 +1,20 @@
 # ATMAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv510CreateAtmAttribute**](ATMAttributeApi.md#obpv510createatmattribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute |
-| [**oBPv510DeleteAtmAttribute**](ATMAttributeApi.md#obpv510deleteatmattribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute |
-| [**oBPv510GetAtmAttribute**](ATMAttributeApi.md#obpv510getatmattribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID |
-| [**oBPv510GetAtmAttributes**](ATMAttributeApi.md#obpv510getatmattributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes |
-| [**oBPv510UpdateAtmAttribute**](ATMAttributeApi.md#obpv510updateatmattributeoperation) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute |
+| [**createAtmAttribute**](ATMAttributeApi.md#createatmattribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute |
+| [**deleteAtmAttribute**](ATMAttributeApi.md#deleteatmattribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute |
+| [**getAtmAttribute**](ATMAttributeApi.md#getatmattribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID |
+| [**getAtmAttributes**](ATMAttributeApi.md#getatmattributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes |
+| [**updateAtmAttribute**](ATMAttributeApi.md#updateatmattributeoperation) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute |
 
 
 
-## oBPv510CreateAtmAttribute
+## createAtmAttribute
 
-> OBPv510GetAtmAttribute200Response oBPv510CreateAtmAttribute(bankid, atmid, oBPv510UpdateAtmAttributeRequest)
+> GetAtmAttribute200Response createAtmAttribute(bankid, atmid, updateAtmAttributeRequest)
 
 Create ATM Attribute
 
@@ -27,7 +27,7 @@ import {
   Configuration,
   ATMAttributeApi,
 } from 'obp-typescript';
-import type { OBPv510CreateAtmAttributeRequest } from 'obp-typescript';
+import type { CreateAtmAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -46,12 +46,12 @@ async function example() {
     bankid: bankid_example,
     // string | The ATMID identifier
     atmid: atmid_example,
-    // OBPv510UpdateAtmAttributeRequest | Request body
-    oBPv510UpdateAtmAttributeRequest: {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}},
-  } satisfies OBPv510CreateAtmAttributeRequest;
+    // UpdateAtmAttributeRequest | Request body
+    updateAtmAttributeRequest: {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}},
+  } satisfies CreateAtmAttributeRequest;
 
   try {
-    const data = await api.oBPv510CreateAtmAttribute(body);
+    const data = await api.createAtmAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -69,11 +69,11 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **atmid** | `string` | The ATMID identifier | [Defaults to `undefined`] |
-| **oBPv510UpdateAtmAttributeRequest** | [OBPv510UpdateAtmAttributeRequest](OBPv510UpdateAtmAttributeRequest.md) | Request body | |
+| **updateAtmAttributeRequest** | [UpdateAtmAttributeRequest](UpdateAtmAttributeRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -95,9 +95,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv510DeleteAtmAttribute
+## deleteAtmAttribute
 
-> oBPv510DeleteAtmAttribute(bankid, atmid, atmattributeid)
+> deleteAtmAttribute(bankid, atmid, atmattributeid)
 
 Delete ATM Attribute
 
@@ -110,7 +110,7 @@ import {
   Configuration,
   ATMAttributeApi,
 } from 'obp-typescript';
-import type { OBPv510DeleteAtmAttributeRequest } from 'obp-typescript';
+import type { DeleteAtmAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -131,10 +131,10 @@ async function example() {
     atmid: atmid_example,
     // string | The ATMATTRIBUTEID identifier
     atmattributeid: atmattributeid_example,
-  } satisfies OBPv510DeleteAtmAttributeRequest;
+  } satisfies DeleteAtmAttributeRequest;
 
   try {
-    const data = await api.oBPv510DeleteAtmAttribute(body);
+    const data = await api.deleteAtmAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -178,9 +178,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv510GetAtmAttribute
+## getAtmAttribute
 
-> OBPv510GetAtmAttribute200Response oBPv510GetAtmAttribute(bankid, atmid, atmattributeid)
+> GetAtmAttribute200Response getAtmAttribute(bankid, atmid, atmattributeid)
 
 Get ATM Attribute By ATM_ATTRIBUTE_ID
 
@@ -193,7 +193,7 @@ import {
   Configuration,
   ATMAttributeApi,
 } from 'obp-typescript';
-import type { OBPv510GetAtmAttributeRequest } from 'obp-typescript';
+import type { GetAtmAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -214,10 +214,10 @@ async function example() {
     atmid: atmid_example,
     // string | The ATMATTRIBUTEID identifier
     atmattributeid: atmattributeid_example,
-  } satisfies OBPv510GetAtmAttributeRequest;
+  } satisfies GetAtmAttributeRequest;
 
   try {
-    const data = await api.oBPv510GetAtmAttribute(body);
+    const data = await api.getAtmAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -239,7 +239,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -261,9 +261,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv510GetAtmAttributes
+## getAtmAttributes
 
-> OBPv510GetAtmAttributes200Response oBPv510GetAtmAttributes(bankid, atmid)
+> GetAtmAttributes200Response getAtmAttributes(bankid, atmid)
 
 Get ATM Attributes
 
@@ -276,7 +276,7 @@ import {
   Configuration,
   ATMAttributeApi,
 } from 'obp-typescript';
-import type { OBPv510GetAtmAttributesRequest } from 'obp-typescript';
+import type { GetAtmAttributesRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -295,10 +295,10 @@ async function example() {
     bankid: bankid_example,
     // string | The ATMID identifier
     atmid: atmid_example,
-  } satisfies OBPv510GetAtmAttributesRequest;
+  } satisfies GetAtmAttributesRequest;
 
   try {
-    const data = await api.oBPv510GetAtmAttributes(body);
+    const data = await api.getAtmAttributes(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -319,7 +319,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv510GetAtmAttributes200Response**](OBPv510GetAtmAttributes200Response.md)
+[**GetAtmAttributes200Response**](GetAtmAttributes200Response.md)
 
 ### Authorization
 
@@ -341,9 +341,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv510UpdateAtmAttribute
+## updateAtmAttribute
 
-> OBPv510GetAtmAttribute200Response oBPv510UpdateAtmAttribute(bankid, atmid, atmattributeid, oBPv510UpdateAtmAttributeRequest)
+> GetAtmAttribute200Response updateAtmAttribute(bankid, atmid, atmattributeid, updateAtmAttributeRequest)
 
 Update ATM Attribute
 
@@ -356,7 +356,7 @@ import {
   Configuration,
   ATMAttributeApi,
 } from 'obp-typescript';
-import type { OBPv510UpdateAtmAttributeOperationRequest } from 'obp-typescript';
+import type { UpdateAtmAttributeOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -377,12 +377,12 @@ async function example() {
     atmid: atmid_example,
     // string | The ATMATTRIBUTEID identifier
     atmattributeid: atmattributeid_example,
-    // OBPv510UpdateAtmAttributeRequest | Request body
-    oBPv510UpdateAtmAttributeRequest: {"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"},"is_active":{"type":"boolean"},"type":{"type":"string"}}},
-  } satisfies OBPv510UpdateAtmAttributeOperationRequest;
+    // UpdateAtmAttributeRequest | Request body
+    updateAtmAttributeRequest: {"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"},"is_active":{"type":"boolean"},"type":{"type":"string"}}},
+  } satisfies UpdateAtmAttributeOperationRequest;
 
   try {
-    const data = await api.oBPv510UpdateAtmAttribute(body);
+    const data = await api.updateAtmAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -401,11 +401,11 @@ example().catch(console.error);
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **atmid** | `string` | The ATMID identifier | [Defaults to `undefined`] |
 | **atmattributeid** | `string` | The ATMATTRIBUTEID identifier | [Defaults to `undefined`] |
-| **oBPv510UpdateAtmAttributeRequest** | [OBPv510UpdateAtmAttributeRequest](OBPv510UpdateAtmAttributeRequest.md) | Request body | |
+| **updateAtmAttributeRequest** | [UpdateAtmAttributeRequest](UpdateAtmAttributeRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 

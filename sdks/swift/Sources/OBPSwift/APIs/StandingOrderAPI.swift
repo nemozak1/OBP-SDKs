@@ -15,12 +15,12 @@ open class StandingOrderAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
-     - parameter oBPv400CreateStandingOrderRequest: (body) Request body 
+     - parameter createStandingOrderRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400CreateStandingOrder200Response
+     - returns: CreateStandingOrder200Response
      */
-    open class func oBPv400CreateStandingOrder(bankid: String, accountid: String, viewid: String, oBPv400CreateStandingOrderRequest: OBPv400CreateStandingOrderRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400CreateStandingOrder200Response {
-        return try await oBPv400CreateStandingOrderWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, oBPv400CreateStandingOrderRequest: oBPv400CreateStandingOrderRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createStandingOrder(bankid: String, accountid: String, viewid: String, createStandingOrderRequest: CreateStandingOrderRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> CreateStandingOrder200Response {
+        return try await createStandingOrderWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, createStandingOrderRequest: createStandingOrderRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -34,16 +34,16 @@ open class StandingOrderAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
-     - parameter oBPv400CreateStandingOrderRequest: (body) Request body 
+     - parameter createStandingOrderRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400CreateStandingOrder200Response> 
+     - returns: RequestBuilder<CreateStandingOrder200Response> 
      */
-    open class func oBPv400CreateStandingOrderWithRequestBuilder(bankid: String, accountid: String, viewid: String, oBPv400CreateStandingOrderRequest: OBPv400CreateStandingOrderRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400CreateStandingOrder200Response> {
+    open class func createStandingOrderWithRequestBuilder(bankid: String, accountid: String, viewid: String, createStandingOrderRequest: CreateStandingOrderRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<CreateStandingOrder200Response> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -55,7 +55,7 @@ open class StandingOrderAPI {
         let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateStandingOrderRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createStandingOrderRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -65,7 +65,7 @@ open class StandingOrderAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400CreateStandingOrder200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<CreateStandingOrder200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -75,12 +75,12 @@ open class StandingOrderAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter oBPv400CreateStandingOrderRequest: (body) Request body 
+     - parameter createStandingOrderRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400CreateStandingOrder200Response
+     - returns: CreateStandingOrder200Response
      */
-    open class func oBPv400CreateStandingOrderManagement(bankid: String, accountid: String, oBPv400CreateStandingOrderRequest: OBPv400CreateStandingOrderRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400CreateStandingOrder200Response {
-        return try await oBPv400CreateStandingOrderManagementWithRequestBuilder(bankid: bankid, accountid: accountid, oBPv400CreateStandingOrderRequest: oBPv400CreateStandingOrderRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createStandingOrderManagement(bankid: String, accountid: String, createStandingOrderRequest: CreateStandingOrderRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> CreateStandingOrder200Response {
+        return try await createStandingOrderManagementWithRequestBuilder(bankid: bankid, accountid: accountid, createStandingOrderRequest: createStandingOrderRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -94,15 +94,15 @@ open class StandingOrderAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter oBPv400CreateStandingOrderRequest: (body) Request body 
+     - parameter createStandingOrderRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400CreateStandingOrder200Response> 
+     - returns: RequestBuilder<CreateStandingOrder200Response> 
      */
-    open class func oBPv400CreateStandingOrderManagementWithRequestBuilder(bankid: String, accountid: String, oBPv400CreateStandingOrderRequest: OBPv400CreateStandingOrderRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400CreateStandingOrder200Response> {
+    open class func createStandingOrderManagementWithRequestBuilder(bankid: String, accountid: String, createStandingOrderRequest: CreateStandingOrderRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<CreateStandingOrder200Response> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -111,7 +111,7 @@ open class StandingOrderAPI {
         let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateStandingOrderRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createStandingOrderRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -121,7 +121,7 @@ open class StandingOrderAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400CreateStandingOrder200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<CreateStandingOrder200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

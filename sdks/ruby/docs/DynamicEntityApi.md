@@ -1,18 +1,18 @@
 # OpenBankProject::DynamicEntityApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records**](DynamicEntityApi.md#o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records |
-| [**o_bpv6_0_0_get_available_personal_dynamic_entities**](DynamicEntityApi.md#o_bpv6_0_0_get_available_personal_dynamic_entities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
-| [**o_bpv6_0_0_get_dynamic_entity_diagnostics**](DynamicEntityApi.md#o_bpv6_0_0_get_dynamic_entity_diagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics |
-| [**o_bpv6_0_0_get_reference_types**](DynamicEntityApi.md#o_bpv6_0_0_get_reference_types) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities |
+| [**cleanup_orphaned_dynamic_entity_records**](DynamicEntityApi.md#cleanup_orphaned_dynamic_entity_records) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records |
+| [**get_available_personal_dynamic_entities**](DynamicEntityApi.md#get_available_personal_dynamic_entities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
+| [**get_dynamic_entity_diagnostics**](DynamicEntityApi.md#get_dynamic_entity_diagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics |
+| [**get_reference_types**](DynamicEntityApi.md#get_reference_types) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities |
 
 
-## o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records
+## cleanup_orphaned_dynamic_entity_records
 
-> <OBPv600CleanupOrphanedDynamicEntityRecords200Response> o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records
+> <CleanupOrphanedDynamicEntityRecords200Response> cleanup_orphaned_dynamic_entity_records
 
 Cleanup Orphaned Dynamic Entity Records
 
@@ -34,37 +34,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicEntityApi.new
 
 begin
   # Cleanup Orphaned Dynamic Entity Records
-  result = api_instance.o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records
+  result = api_instance.cleanup_orphaned_dynamic_entity_records
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicEntityApi->o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records: #{e}"
+  puts "Error when calling DynamicEntityApi->cleanup_orphaned_dynamic_entity_records: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records_with_http_info variant
+#### Using the cleanup_orphaned_dynamic_entity_records_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600CleanupOrphanedDynamicEntityRecords200Response>, Integer, Hash)> o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records_with_http_info
+> <Array(<CleanupOrphanedDynamicEntityRecords200Response>, Integer, Hash)> cleanup_orphaned_dynamic_entity_records_with_http_info
 
 ```ruby
 begin
   # Cleanup Orphaned Dynamic Entity Records
-  data, status_code, headers = api_instance.o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records_with_http_info
+  data, status_code, headers = api_instance.cleanup_orphaned_dynamic_entity_records_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600CleanupOrphanedDynamicEntityRecords200Response>
+  p data # => <CleanupOrphanedDynamicEntityRecords200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicEntityApi->o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records_with_http_info: #{e}"
+  puts "Error when calling DynamicEntityApi->cleanup_orphaned_dynamic_entity_records_with_http_info: #{e}"
 end
 ```
 
@@ -74,7 +74,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600CleanupOrphanedDynamicEntityRecords200Response**](OBPv600CleanupOrphanedDynamicEntityRecords200Response.md)
+[**CleanupOrphanedDynamicEntityRecords200Response**](CleanupOrphanedDynamicEntityRecords200Response.md)
 
 ### Authorization
 
@@ -86,9 +86,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_available_personal_dynamic_entities
+## get_available_personal_dynamic_entities
 
-> <OBPv600GetAvailablePersonalDynamicEntities200Response> o_bpv6_0_0_get_available_personal_dynamic_entities
+> <GetAvailablePersonalDynamicEntities200Response> get_available_personal_dynamic_entities
 
 Get Available Personal Dynamic Entities
 
@@ -110,37 +110,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicEntityApi.new
 
 begin
   # Get Available Personal Dynamic Entities
-  result = api_instance.o_bpv6_0_0_get_available_personal_dynamic_entities
+  result = api_instance.get_available_personal_dynamic_entities
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicEntityApi->o_bpv6_0_0_get_available_personal_dynamic_entities: #{e}"
+  puts "Error when calling DynamicEntityApi->get_available_personal_dynamic_entities: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_available_personal_dynamic_entities_with_http_info variant
+#### Using the get_available_personal_dynamic_entities_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetAvailablePersonalDynamicEntities200Response>, Integer, Hash)> o_bpv6_0_0_get_available_personal_dynamic_entities_with_http_info
+> <Array(<GetAvailablePersonalDynamicEntities200Response>, Integer, Hash)> get_available_personal_dynamic_entities_with_http_info
 
 ```ruby
 begin
   # Get Available Personal Dynamic Entities
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_available_personal_dynamic_entities_with_http_info
+  data, status_code, headers = api_instance.get_available_personal_dynamic_entities_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetAvailablePersonalDynamicEntities200Response>
+  p data # => <GetAvailablePersonalDynamicEntities200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicEntityApi->o_bpv6_0_0_get_available_personal_dynamic_entities_with_http_info: #{e}"
+  puts "Error when calling DynamicEntityApi->get_available_personal_dynamic_entities_with_http_info: #{e}"
 end
 ```
 
@@ -150,7 +150,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -162,9 +162,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_dynamic_entity_diagnostics
+## get_dynamic_entity_diagnostics
 
-> <OBPv600GetDynamicEntityDiagnostics200Response> o_bpv6_0_0_get_dynamic_entity_diagnostics
+> <GetDynamicEntityDiagnostics200Response> get_dynamic_entity_diagnostics
 
 Get Dynamic Entity Diagnostics
 
@@ -186,37 +186,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicEntityApi.new
 
 begin
   # Get Dynamic Entity Diagnostics
-  result = api_instance.o_bpv6_0_0_get_dynamic_entity_diagnostics
+  result = api_instance.get_dynamic_entity_diagnostics
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicEntityApi->o_bpv6_0_0_get_dynamic_entity_diagnostics: #{e}"
+  puts "Error when calling DynamicEntityApi->get_dynamic_entity_diagnostics: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_dynamic_entity_diagnostics_with_http_info variant
+#### Using the get_dynamic_entity_diagnostics_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetDynamicEntityDiagnostics200Response>, Integer, Hash)> o_bpv6_0_0_get_dynamic_entity_diagnostics_with_http_info
+> <Array(<GetDynamicEntityDiagnostics200Response>, Integer, Hash)> get_dynamic_entity_diagnostics_with_http_info
 
 ```ruby
 begin
   # Get Dynamic Entity Diagnostics
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_dynamic_entity_diagnostics_with_http_info
+  data, status_code, headers = api_instance.get_dynamic_entity_diagnostics_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetDynamicEntityDiagnostics200Response>
+  p data # => <GetDynamicEntityDiagnostics200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicEntityApi->o_bpv6_0_0_get_dynamic_entity_diagnostics_with_http_info: #{e}"
+  puts "Error when calling DynamicEntityApi->get_dynamic_entity_diagnostics_with_http_info: #{e}"
 end
 ```
 
@@ -226,7 +226,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetDynamicEntityDiagnostics200Response**](OBPv600GetDynamicEntityDiagnostics200Response.md)
+[**GetDynamicEntityDiagnostics200Response**](GetDynamicEntityDiagnostics200Response.md)
 
 ### Authorization
 
@@ -238,9 +238,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_reference_types
+## get_reference_types
 
-> <OBPv600GetReferenceTypes200Response> o_bpv6_0_0_get_reference_types
+> <GetReferenceTypes200Response> get_reference_types
 
 Get Reference Types for Dynamic Entities
 
@@ -262,37 +262,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicEntityApi.new
 
 begin
   # Get Reference Types for Dynamic Entities
-  result = api_instance.o_bpv6_0_0_get_reference_types
+  result = api_instance.get_reference_types
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicEntityApi->o_bpv6_0_0_get_reference_types: #{e}"
+  puts "Error when calling DynamicEntityApi->get_reference_types: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_reference_types_with_http_info variant
+#### Using the get_reference_types_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetReferenceTypes200Response>, Integer, Hash)> o_bpv6_0_0_get_reference_types_with_http_info
+> <Array(<GetReferenceTypes200Response>, Integer, Hash)> get_reference_types_with_http_info
 
 ```ruby
 begin
   # Get Reference Types for Dynamic Entities
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_reference_types_with_http_info
+  data, status_code, headers = api_instance.get_reference_types_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetReferenceTypes200Response>
+  p data # => <GetReferenceTypes200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicEntityApi->o_bpv6_0_0_get_reference_types_with_http_info: #{e}"
+  puts "Error when calling DynamicEntityApi->get_reference_types_with_http_info: #{e}"
 end
 ```
 
@@ -302,7 +302,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetReferenceTypes200Response**](OBPv600GetReferenceTypes200Response.md)
+[**GetReferenceTypes200Response**](GetReferenceTypes200Response.md)
 
 ### Authorization
 

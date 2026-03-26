@@ -1,15 +1,15 @@
 # OpenBankProject::AggregateMetricsApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv6_0_0_get_aggregate_metrics**](AggregateMetricsApi.md#o_bpv6_0_0_get_aggregate_metrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics |
+| [**get_aggregate_metrics**](AggregateMetricsApi.md#get_aggregate_metrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics |
 
 
-## o_bpv6_0_0_get_aggregate_metrics
+## get_aggregate_metrics
 
-> <OBPv600GetAggregateMetrics200Response> o_bpv6_0_0_get_aggregate_metrics
+> <GetAggregateMetrics200Response> get_aggregate_metrics
 
 Get Aggregate Metrics
 
@@ -31,37 +31,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::AggregateMetricsApi.new
 
 begin
   # Get Aggregate Metrics
-  result = api_instance.o_bpv6_0_0_get_aggregate_metrics
+  result = api_instance.get_aggregate_metrics
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AggregateMetricsApi->o_bpv6_0_0_get_aggregate_metrics: #{e}"
+  puts "Error when calling AggregateMetricsApi->get_aggregate_metrics: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_aggregate_metrics_with_http_info variant
+#### Using the get_aggregate_metrics_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetAggregateMetrics200Response>, Integer, Hash)> o_bpv6_0_0_get_aggregate_metrics_with_http_info
+> <Array(<GetAggregateMetrics200Response>, Integer, Hash)> get_aggregate_metrics_with_http_info
 
 ```ruby
 begin
   # Get Aggregate Metrics
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_aggregate_metrics_with_http_info
+  data, status_code, headers = api_instance.get_aggregate_metrics_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetAggregateMetrics200Response>
+  p data # => <GetAggregateMetrics200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AggregateMetricsApi->o_bpv6_0_0_get_aggregate_metrics_with_http_info: #{e}"
+  puts "Error when calling AggregateMetricsApi->get_aggregate_metrics_with_http_info: #{e}"
 end
 ```
 
@@ -71,7 +71,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAggregateMetrics200Response**](OBPv600GetAggregateMetrics200Response.md)
+[**GetAggregateMetrics200Response**](GetAggregateMetrics200Response.md)
 
 ### Authorization
 

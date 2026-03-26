@@ -19,11 +19,11 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv310CreateCardAttribute200Response
-import com.openbankproject.models.OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-import com.openbankproject.models.OBPv400GetTransactionRequestAttributeDefinition200Response
-import com.openbankproject.models.OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-import com.openbankproject.models.OBPv600CreatePersonalDataFieldRequest
+import com.openbankproject.models.CreateCardAttribute200Response
+import com.openbankproject.models.CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+import com.openbankproject.models.CreatePersonalDataFieldRequest
+import com.openbankproject.models.GetTransactionRequestAttributeDefinition200Response
+import com.openbankproject.models.GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 
 import com.squareup.moshi.Json
 
@@ -45,7 +45,7 @@ open class CardAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -55,8 +55,8 @@ open class CardAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * &lt;p&gt;Create Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param cardid The CARDID identifier
-     * @param obPv600CreatePersonalDataFieldRequest Request body
-     * @return OBPv310CreateCardAttribute200Response
+     * @param createPersonalDataFieldRequest Request body
+     * @return CreateCardAttribute200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -65,11 +65,11 @@ open class CardAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv310CreateCardAttribute(bankid: kotlin.String, cardid: kotlin.String, obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : OBPv310CreateCardAttribute200Response {
-        val localVarResponse = oBPv310CreateCardAttributeWithHttpInfo(bankid = bankid, cardid = cardid, obPv600CreatePersonalDataFieldRequest = obPv600CreatePersonalDataFieldRequest)
+    fun createCardAttribute(bankid: kotlin.String, cardid: kotlin.String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : CreateCardAttribute200Response {
+        val localVarResponse = createCardAttributeWithHttpInfo(bankid = bankid, cardid = cardid, createPersonalDataFieldRequest = createPersonalDataFieldRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv310CreateCardAttribute200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CreateCardAttribute200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -89,31 +89,31 @@ open class CardAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * &lt;p&gt;Create Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param cardid The CARDID identifier
-     * @param obPv600CreatePersonalDataFieldRequest Request body
-     * @return ApiResponse<OBPv310CreateCardAttribute200Response?>
+     * @param createPersonalDataFieldRequest Request body
+     * @return ApiResponse<CreateCardAttribute200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv310CreateCardAttributeWithHttpInfo(bankid: kotlin.String, cardid: kotlin.String, obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : ApiResponse<OBPv310CreateCardAttribute200Response?> {
-        val localVariableConfig = oBPv310CreateCardAttributeRequestConfig(bankid = bankid, cardid = cardid, obPv600CreatePersonalDataFieldRequest = obPv600CreatePersonalDataFieldRequest)
+    fun createCardAttributeWithHttpInfo(bankid: kotlin.String, cardid: kotlin.String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : ApiResponse<CreateCardAttribute200Response?> {
+        val localVariableConfig = createCardAttributeRequestConfig(bankid = bankid, cardid = cardid, createPersonalDataFieldRequest = createPersonalDataFieldRequest)
 
-        return request<OBPv600CreatePersonalDataFieldRequest, OBPv310CreateCardAttribute200Response>(
+        return request<CreatePersonalDataFieldRequest, CreateCardAttribute200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv310CreateCardAttribute
+     * To obtain the request config of the operation createCardAttribute
      *
      * @param bankid The BANKID identifier
      * @param cardid The CARDID identifier
-     * @param obPv600CreatePersonalDataFieldRequest Request body
+     * @param createPersonalDataFieldRequest Request body
      * @return RequestConfig
      */
-    fun oBPv310CreateCardAttributeRequestConfig(bankid: kotlin.String, cardid: kotlin.String, obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : RequestConfig<OBPv600CreatePersonalDataFieldRequest> {
-        val localVariableBody = obPv600CreatePersonalDataFieldRequest
+    fun createCardAttributeRequestConfig(bankid: kotlin.String, cardid: kotlin.String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : RequestConfig<CreatePersonalDataFieldRequest> {
+        val localVariableBody = createPersonalDataFieldRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -130,95 +130,12 @@ open class CardAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
     }
 
     /**
-     * PUT /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid}
-     * Update Card Attribute
-     * &lt;p&gt;Update Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ATTRIBUTE_ID&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-     * @param bankid The BANKID identifier
-     * @param cardid The CARDID identifier
-     * @param cardattributeid The CARDATTRIBUTEID identifier
-     * @param obPv600CreatePersonalDataFieldRequest Request body
-     * @return OBPv310CreateCardAttribute200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv310UpdateCardAttribute(bankid: kotlin.String, cardid: kotlin.String, cardattributeid: kotlin.String, obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : OBPv310CreateCardAttribute200Response {
-        val localVarResponse = oBPv310UpdateCardAttributeWithHttpInfo(bankid = bankid, cardid = cardid, cardattributeid = cardattributeid, obPv600CreatePersonalDataFieldRequest = obPv600CreatePersonalDataFieldRequest)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv310CreateCardAttribute200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * PUT /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid}
-     * Update Card Attribute
-     * &lt;p&gt;Update Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ATTRIBUTE_ID&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-     * @param bankid The BANKID identifier
-     * @param cardid The CARDID identifier
-     * @param cardattributeid The CARDATTRIBUTEID identifier
-     * @param obPv600CreatePersonalDataFieldRequest Request body
-     * @return ApiResponse<OBPv310CreateCardAttribute200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv310UpdateCardAttributeWithHttpInfo(bankid: kotlin.String, cardid: kotlin.String, cardattributeid: kotlin.String, obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : ApiResponse<OBPv310CreateCardAttribute200Response?> {
-        val localVariableConfig = oBPv310UpdateCardAttributeRequestConfig(bankid = bankid, cardid = cardid, cardattributeid = cardattributeid, obPv600CreatePersonalDataFieldRequest = obPv600CreatePersonalDataFieldRequest)
-
-        return request<OBPv600CreatePersonalDataFieldRequest, OBPv310CreateCardAttribute200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation oBPv310UpdateCardAttribute
-     *
-     * @param bankid The BANKID identifier
-     * @param cardid The CARDID identifier
-     * @param cardattributeid The CARDATTRIBUTEID identifier
-     * @param obPv600CreatePersonalDataFieldRequest Request body
-     * @return RequestConfig
-     */
-    fun oBPv310UpdateCardAttributeRequestConfig(bankid: kotlin.String, cardid: kotlin.String, cardattributeid: kotlin.String, obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : RequestConfig<OBPv600CreatePersonalDataFieldRequest> {
-        val localVariableBody = obPv600CreatePersonalDataFieldRequest
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json"
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.PUT,
-            path = "/obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid}".replace("{"+"bankid"+"}", encodeURIComponent(bankid.toString())).replace("{"+"cardid"+"}", encodeURIComponent(cardid.toString())).replace("{"+"cardattributeid"+"}", encodeURIComponent(cardattributeid.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
      * PUT /obp/v4.0.0/banks/{bankid}/attribute-definitions/card
      * Create or Update Card Attribute Definition
      * &lt;p&gt;Create or Update Card Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Card&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body
-     * @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+     * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body
+     * @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -227,11 +144,11 @@ open class CardAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateOrUpdateCardAttributeDefinition(bankid: kotlin.String, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) : OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems {
-        val localVarResponse = oBPv400CreateOrUpdateCardAttributeDefinitionWithHttpInfo(bankid = bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+    fun createOrUpdateCardAttributeDefinition(bankid: kotlin.String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest) : GetTransactionRequestAttributeDefinition200ResponseAttributesInner {
+        val localVarResponse = createOrUpdateCardAttributeDefinitionWithHttpInfo(bankid = bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest = createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetTransactionRequestAttributeDefinition200ResponseAttributesInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -250,30 +167,30 @@ open class CardAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * Create or Update Card Attribute Definition
      * &lt;p&gt;Create or Update Card Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Card&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body
-     * @return ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems?>
+     * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body
+     * @return ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateOrUpdateCardAttributeDefinitionWithHttpInfo(bankid: kotlin.String, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) : ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems?> {
-        val localVariableConfig = oBPv400CreateOrUpdateCardAttributeDefinitionRequestConfig(bankid = bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+    fun createOrUpdateCardAttributeDefinitionWithHttpInfo(bankid: kotlin.String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest) : ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner?> {
+        val localVariableConfig = createOrUpdateCardAttributeDefinitionRequestConfig(bankid = bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest = createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
-        return request<OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>(
+        return request<CreateOrUpdateTransactionRequestAttributeDefinitionRequest, GetTransactionRequestAttributeDefinition200ResponseAttributesInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400CreateOrUpdateCardAttributeDefinition
+     * To obtain the request config of the operation createOrUpdateCardAttributeDefinition
      *
      * @param bankid The BANKID identifier
-     * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body
+     * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400CreateOrUpdateCardAttributeDefinitionRequestConfig(bankid: kotlin.String, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) : RequestConfig<OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest> {
-        val localVariableBody = obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+    fun createOrUpdateCardAttributeDefinitionRequestConfig(bankid: kotlin.String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest) : RequestConfig<CreateOrUpdateTransactionRequestAttributeDefinitionRequest> {
+        val localVariableBody = createOrUpdateTransactionRequestAttributeDefinitionRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -303,8 +220,8 @@ open class CardAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteCardAttributeDefinition(bankid: kotlin.String, attributedefinitionid: kotlin.String) : Unit {
-        val localVarResponse = oBPv400DeleteCardAttributeDefinitionWithHttpInfo(bankid = bankid, attributedefinitionid = attributedefinitionid)
+    fun deleteCardAttributeDefinition(bankid: kotlin.String, attributedefinitionid: kotlin.String) : Unit {
+        val localVarResponse = deleteCardAttributeDefinitionWithHttpInfo(bankid = bankid, attributedefinitionid = attributedefinitionid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -332,8 +249,8 @@ open class CardAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteCardAttributeDefinitionWithHttpInfo(bankid: kotlin.String, attributedefinitionid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv400DeleteCardAttributeDefinitionRequestConfig(bankid = bankid, attributedefinitionid = attributedefinitionid)
+    fun deleteCardAttributeDefinitionWithHttpInfo(bankid: kotlin.String, attributedefinitionid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteCardAttributeDefinitionRequestConfig(bankid = bankid, attributedefinitionid = attributedefinitionid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -341,13 +258,13 @@ open class CardAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
     }
 
     /**
-     * To obtain the request config of the operation oBPv400DeleteCardAttributeDefinition
+     * To obtain the request config of the operation deleteCardAttributeDefinition
      *
      * @param bankid The BANKID identifier
      * @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier
      * @return RequestConfig
      */
-    fun oBPv400DeleteCardAttributeDefinitionRequestConfig(bankid: kotlin.String, attributedefinitionid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteCardAttributeDefinitionRequestConfig(bankid: kotlin.String, attributedefinitionid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -367,7 +284,7 @@ open class CardAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * Get Card Attribute Definition
      * &lt;p&gt;Get Card Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return OBPv400GetTransactionRequestAttributeDefinition200Response
+     * @return GetTransactionRequestAttributeDefinition200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -376,11 +293,11 @@ open class CardAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetCardAttributeDefinition(bankid: kotlin.String) : OBPv400GetTransactionRequestAttributeDefinition200Response {
-        val localVarResponse = oBPv400GetCardAttributeDefinitionWithHttpInfo(bankid = bankid)
+    fun getCardAttributeDefinition(bankid: kotlin.String) : GetTransactionRequestAttributeDefinition200Response {
+        val localVarResponse = getCardAttributeDefinitionWithHttpInfo(bankid = bankid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetTransactionRequestAttributeDefinition200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetTransactionRequestAttributeDefinition200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -399,27 +316,27 @@ open class CardAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * Get Card Attribute Definition
      * &lt;p&gt;Get Card Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response?>
+     * @return ApiResponse<GetTransactionRequestAttributeDefinition200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetCardAttributeDefinitionWithHttpInfo(bankid: kotlin.String) : ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response?> {
-        val localVariableConfig = oBPv400GetCardAttributeDefinitionRequestConfig(bankid = bankid)
+    fun getCardAttributeDefinitionWithHttpInfo(bankid: kotlin.String) : ApiResponse<GetTransactionRequestAttributeDefinition200Response?> {
+        val localVariableConfig = getCardAttributeDefinitionRequestConfig(bankid = bankid)
 
-        return request<Unit, OBPv400GetTransactionRequestAttributeDefinition200Response>(
+        return request<Unit, GetTransactionRequestAttributeDefinition200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetCardAttributeDefinition
+     * To obtain the request config of the operation getCardAttributeDefinition
      *
      * @param bankid The BANKID identifier
      * @return RequestConfig
      */
-    fun oBPv400GetCardAttributeDefinitionRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
+    fun getCardAttributeDefinitionRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -428,6 +345,89 @@ open class CardAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
         return RequestConfig(
             method = RequestMethod.GET,
             path = "/obp/v4.0.0/banks/{bankid}/attribute-definitions/card".replace("{"+"bankid"+"}", encodeURIComponent(bankid.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * PUT /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid}
+     * Update Card Attribute
+     * &lt;p&gt;Update Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ATTRIBUTE_ID&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+     * @param bankid The BANKID identifier
+     * @param cardid The CARDID identifier
+     * @param cardattributeid The CARDATTRIBUTEID identifier
+     * @param createPersonalDataFieldRequest Request body
+     * @return CreateCardAttribute200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun updateCardAttribute(bankid: kotlin.String, cardid: kotlin.String, cardattributeid: kotlin.String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : CreateCardAttribute200Response {
+        val localVarResponse = updateCardAttributeWithHttpInfo(bankid = bankid, cardid = cardid, cardattributeid = cardattributeid, createPersonalDataFieldRequest = createPersonalDataFieldRequest)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CreateCardAttribute200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * PUT /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid}
+     * Update Card Attribute
+     * &lt;p&gt;Update Card Attribute&lt;/p&gt; &lt;p&gt;Card Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Card Attribute is linked to its Card by CARD_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ATTRIBUTE_ID&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARD_ID&lt;/a&gt;: 36f8a9e6-c2b1-407a-8bd0-421b7119307e&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+     * @param bankid The BANKID identifier
+     * @param cardid The CARDID identifier
+     * @param cardattributeid The CARDATTRIBUTEID identifier
+     * @param createPersonalDataFieldRequest Request body
+     * @return ApiResponse<CreateCardAttribute200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun updateCardAttributeWithHttpInfo(bankid: kotlin.String, cardid: kotlin.String, cardattributeid: kotlin.String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : ApiResponse<CreateCardAttribute200Response?> {
+        val localVariableConfig = updateCardAttributeRequestConfig(bankid = bankid, cardid = cardid, cardattributeid = cardattributeid, createPersonalDataFieldRequest = createPersonalDataFieldRequest)
+
+        return request<CreatePersonalDataFieldRequest, CreateCardAttribute200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation updateCardAttribute
+     *
+     * @param bankid The BANKID identifier
+     * @param cardid The CARDID identifier
+     * @param cardattributeid The CARDATTRIBUTEID identifier
+     * @param createPersonalDataFieldRequest Request body
+     * @return RequestConfig
+     */
+    fun updateCardAttributeRequestConfig(bankid: kotlin.String, cardid: kotlin.String, cardattributeid: kotlin.String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : RequestConfig<CreatePersonalDataFieldRequest> {
+        val localVariableBody = createPersonalDataFieldRequest
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.PUT,
+            path = "/obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid}".replace("{"+"bankid"+"}", encodeURIComponent(bankid.toString())).replace("{"+"cardid"+"}", encodeURIComponent(cardid.toString())).replace("{"+"cardattributeid"+"}", encodeURIComponent(cardattributeid.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

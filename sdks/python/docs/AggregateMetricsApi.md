@@ -4,11 +4,11 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv6_0_0_get_aggregate_metrics**](AggregateMetricsApi.md#o_bpv6_0_0_get_aggregate_metrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
+[**get_aggregate_metrics**](AggregateMetricsApi.md#get_aggregate_metrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
 
 
-# **o_bpv6_0_0_get_aggregate_metrics**
-> OBPv600GetAggregateMetrics200Response o_bpv6_0_0_get_aggregate_metrics()
+# **get_aggregate_metrics**
+> GetAggregateMetrics200Response get_aggregate_metrics()
 
 Get Aggregate Metrics
 
@@ -79,7 +79,7 @@ For historical/reporting queries, always explicitly specify your desired <code>f
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_aggregate_metrics200_response import OBPv600GetAggregateMetrics200Response
+from obp_python.models.get_aggregate_metrics200_response import GetAggregateMetrics200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -115,11 +115,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Aggregate Metrics
-        api_response = api_instance.o_bpv6_0_0_get_aggregate_metrics()
-        print("The response of AggregateMetricsApi->o_bpv6_0_0_get_aggregate_metrics:\n")
+        api_response = api_instance.get_aggregate_metrics()
+        print("The response of AggregateMetricsApi->get_aggregate_metrics:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AggregateMetricsApi->o_bpv6_0_0_get_aggregate_metrics: %s\n" % e)
+        print("Exception when calling AggregateMetricsApi->get_aggregate_metrics: %s\n" % e)
 ```
 
 
@@ -130,7 +130,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAggregateMetrics200Response**](OBPv600GetAggregateMetrics200Response.md)
+[**GetAggregateMetrics200Response**](GetAggregateMetrics200Response.md)
 
 ### Authorization
 

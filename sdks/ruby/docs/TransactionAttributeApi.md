@@ -1,21 +1,21 @@
 # OpenBankProject::TransactionAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv4_0_0_create_or_update_transaction_attribute_definition**](TransactionAttributeApi.md#o_bpv4_0_0_create_or_update_transaction_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition |
-| [**o_bpv4_0_0_create_transaction_attribute**](TransactionAttributeApi.md#o_bpv4_0_0_create_transaction_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute |
-| [**o_bpv4_0_0_delete_transaction_attribute_definition**](TransactionAttributeApi.md#o_bpv4_0_0_delete_transaction_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition |
-| [**o_bpv4_0_0_get_transaction_attribute_by_id**](TransactionAttributeApi.md#o_bpv4_0_0_get_transaction_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id |
-| [**o_bpv4_0_0_get_transaction_attribute_definition**](TransactionAttributeApi.md#o_bpv4_0_0_get_transaction_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition |
-| [**o_bpv4_0_0_get_transaction_attributes**](TransactionAttributeApi.md#o_bpv4_0_0_get_transaction_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes |
-| [**o_bpv4_0_0_update_transaction_attribute**](TransactionAttributeApi.md#o_bpv4_0_0_update_transaction_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute |
+| [**create_or_update_transaction_attribute_definition**](TransactionAttributeApi.md#create_or_update_transaction_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition |
+| [**create_transaction_attribute**](TransactionAttributeApi.md#create_transaction_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute |
+| [**delete_transaction_attribute_definition**](TransactionAttributeApi.md#delete_transaction_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition |
+| [**get_transaction_attribute_by_id**](TransactionAttributeApi.md#get_transaction_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id |
+| [**get_transaction_attribute_definition**](TransactionAttributeApi.md#get_transaction_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition |
+| [**get_transaction_attributes**](TransactionAttributeApi.md#get_transaction_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes |
+| [**update_transaction_attribute**](TransactionAttributeApi.md#update_transaction_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute |
 
 
-## o_bpv4_0_0_create_or_update_transaction_attribute_definition
+## create_or_update_transaction_attribute_definition
 
-> <OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> o_bpv4_0_0_create_or_update_transaction_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+> <GetTransactionRequestAttributeDefinition200ResponseAttributesInner> create_or_update_transaction_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
 
 Create or Update Transaction Attribute Definition
 
@@ -37,39 +37,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionAttributeApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
-obpv400_create_or_update_transaction_request_attribute_definition_request = OpenBankProject::OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), is_active: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), description: , _alias: , can_be_seen_on_views: OpenBankProject::OBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds.new({type: 'type_example', items: }), category: , type: })}) # OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+create_or_update_transaction_request_attribute_definition_request = OpenBankProject::CreateOrUpdateTransactionRequestAttributeDefinitionRequest.new # CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 begin
   # Create or Update Transaction Attribute Definition
-  result = api_instance.o_bpv4_0_0_create_or_update_transaction_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+  result = api_instance.create_or_update_transaction_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionAttributeApi->o_bpv4_0_0_create_or_update_transaction_attribute_definition: #{e}"
+  puts "Error when calling TransactionAttributeApi->create_or_update_transaction_attribute_definition: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_or_update_transaction_attribute_definition_with_http_info variant
+#### Using the create_or_update_transaction_attribute_definition_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>, Integer, Hash)> o_bpv4_0_0_create_or_update_transaction_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+> <Array(<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>, Integer, Hash)> create_or_update_transaction_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request)
 
 ```ruby
 begin
   # Create or Update Transaction Attribute Definition
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_or_update_transaction_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+  data, status_code, headers = api_instance.create_or_update_transaction_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>
+  p data # => <GetTransactionRequestAttributeDefinition200ResponseAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionAttributeApi->o_bpv4_0_0_create_or_update_transaction_attribute_definition_with_http_info: #{e}"
+  puts "Error when calling TransactionAttributeApi->create_or_update_transaction_attribute_definition_with_http_info: #{e}"
 end
 ```
 
@@ -78,11 +78,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
-| **obpv400_create_or_update_transaction_request_attribute_definition_request** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body |  |
+| **create_or_update_transaction_request_attribute_definition_request** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -94,9 +94,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_create_transaction_attribute
+## create_transaction_attribute
 
-> <OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> o_bpv4_0_0_create_transaction_attribute(bankid, accountid, transactionid, obpv600_create_personal_data_field_request)
+> <GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> create_transaction_attribute(bankid, accountid, transactionid, create_personal_data_field_request)
 
 Create Transaction Attribute
 
@@ -118,41 +118,41 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionAttributeApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
 transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-obpv600_create_personal_data_field_request = OpenBankProject::OBPv600CreatePersonalDataFieldRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600CreatePersonalDataFieldRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), type: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), value: })}) # OBPv600CreatePersonalDataFieldRequest | Request body
+create_personal_data_field_request = OpenBankProject::CreatePersonalDataFieldRequest.new # CreatePersonalDataFieldRequest | Request body
 
 begin
   # Create Transaction Attribute
-  result = api_instance.o_bpv4_0_0_create_transaction_attribute(bankid, accountid, transactionid, obpv600_create_personal_data_field_request)
+  result = api_instance.create_transaction_attribute(bankid, accountid, transactionid, create_personal_data_field_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionAttributeApi->o_bpv4_0_0_create_transaction_attribute: #{e}"
+  puts "Error when calling TransactionAttributeApi->create_transaction_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_transaction_attribute_with_http_info variant
+#### Using the create_transaction_attribute_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>, Integer, Hash)> o_bpv4_0_0_create_transaction_attribute_with_http_info(bankid, accountid, transactionid, obpv600_create_personal_data_field_request)
+> <Array(<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>, Integer, Hash)> create_transaction_attribute_with_http_info(bankid, accountid, transactionid, create_personal_data_field_request)
 
 ```ruby
 begin
   # Create Transaction Attribute
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_transaction_attribute_with_http_info(bankid, accountid, transactionid, obpv600_create_personal_data_field_request)
+  data, status_code, headers = api_instance.create_transaction_attribute_with_http_info(bankid, accountid, transactionid, create_personal_data_field_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>
+  p data # => <GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionAttributeApi->o_bpv4_0_0_create_transaction_attribute_with_http_info: #{e}"
+  puts "Error when calling TransactionAttributeApi->create_transaction_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -163,11 +163,11 @@ end
 | **bankid** | **String** | The BANKID identifier |  |
 | **accountid** | **String** | The ACCOUNTID identifier |  |
 | **transactionid** | **String** | The TRANSACTIONID identifier |  |
-| **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
+| **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
 
 ### Authorization
 
@@ -179,9 +179,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_delete_transaction_attribute_definition
+## delete_transaction_attribute_definition
 
-> o_bpv4_0_0_delete_transaction_attribute_definition(bankid, attributedefinitionid)
+> delete_transaction_attribute_definition(bankid, attributedefinitionid)
 
 Delete Transaction Attribute Definition
 
@@ -203,9 +203,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionAttributeApi.new
@@ -214,27 +214,27 @@ attributedefinitionid = 'attributedefinitionid_example' # String | The ATTRIBUTE
 
 begin
   # Delete Transaction Attribute Definition
-  api_instance.o_bpv4_0_0_delete_transaction_attribute_definition(bankid, attributedefinitionid)
+  api_instance.delete_transaction_attribute_definition(bankid, attributedefinitionid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionAttributeApi->o_bpv4_0_0_delete_transaction_attribute_definition: #{e}"
+  puts "Error when calling TransactionAttributeApi->delete_transaction_attribute_definition: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_delete_transaction_attribute_definition_with_http_info variant
+#### Using the delete_transaction_attribute_definition_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv4_0_0_delete_transaction_attribute_definition_with_http_info(bankid, attributedefinitionid)
+> <Array(nil, Integer, Hash)> delete_transaction_attribute_definition_with_http_info(bankid, attributedefinitionid)
 
 ```ruby
 begin
   # Delete Transaction Attribute Definition
-  data, status_code, headers = api_instance.o_bpv4_0_0_delete_transaction_attribute_definition_with_http_info(bankid, attributedefinitionid)
+  data, status_code, headers = api_instance.delete_transaction_attribute_definition_with_http_info(bankid, attributedefinitionid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionAttributeApi->o_bpv4_0_0_delete_transaction_attribute_definition_with_http_info: #{e}"
+  puts "Error when calling TransactionAttributeApi->delete_transaction_attribute_definition_with_http_info: #{e}"
 end
 ```
 
@@ -259,9 +259,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv4_0_0_get_transaction_attribute_by_id
+## get_transaction_attribute_by_id
 
-> <OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> o_bpv4_0_0_get_transaction_attribute_by_id(bankid, accountid, transactionid, attributeid)
+> <GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> get_transaction_attribute_by_id(bankid, accountid, transactionid, attributeid)
 
 Get Transaction Attribute By Id
 
@@ -283,9 +283,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionAttributeApi.new
@@ -296,28 +296,28 @@ attributeid = 'attributeid_example' # String | The ATTRIBUTEID identifier
 
 begin
   # Get Transaction Attribute By Id
-  result = api_instance.o_bpv4_0_0_get_transaction_attribute_by_id(bankid, accountid, transactionid, attributeid)
+  result = api_instance.get_transaction_attribute_by_id(bankid, accountid, transactionid, attributeid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionAttributeApi->o_bpv4_0_0_get_transaction_attribute_by_id: #{e}"
+  puts "Error when calling TransactionAttributeApi->get_transaction_attribute_by_id: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_transaction_attribute_by_id_with_http_info variant
+#### Using the get_transaction_attribute_by_id_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>, Integer, Hash)> o_bpv4_0_0_get_transaction_attribute_by_id_with_http_info(bankid, accountid, transactionid, attributeid)
+> <Array(<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>, Integer, Hash)> get_transaction_attribute_by_id_with_http_info(bankid, accountid, transactionid, attributeid)
 
 ```ruby
 begin
   # Get Transaction Attribute By Id
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_transaction_attribute_by_id_with_http_info(bankid, accountid, transactionid, attributeid)
+  data, status_code, headers = api_instance.get_transaction_attribute_by_id_with_http_info(bankid, accountid, transactionid, attributeid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>
+  p data # => <GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionAttributeApi->o_bpv4_0_0_get_transaction_attribute_by_id_with_http_info: #{e}"
+  puts "Error when calling TransactionAttributeApi->get_transaction_attribute_by_id_with_http_info: #{e}"
 end
 ```
 
@@ -332,7 +332,7 @@ end
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
 
 ### Authorization
 
@@ -344,9 +344,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_transaction_attribute_definition
+## get_transaction_attribute_definition
 
-> <OBPv400GetTransactionRequestAttributeDefinition200Response> o_bpv4_0_0_get_transaction_attribute_definition(bankid)
+> <GetTransactionRequestAttributeDefinition200Response> get_transaction_attribute_definition(bankid)
 
 Get Transaction Attribute Definition
 
@@ -368,9 +368,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionAttributeApi.new
@@ -378,28 +378,28 @@ bankid = 'bankid_example' # String | The BANKID identifier
 
 begin
   # Get Transaction Attribute Definition
-  result = api_instance.o_bpv4_0_0_get_transaction_attribute_definition(bankid)
+  result = api_instance.get_transaction_attribute_definition(bankid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionAttributeApi->o_bpv4_0_0_get_transaction_attribute_definition: #{e}"
+  puts "Error when calling TransactionAttributeApi->get_transaction_attribute_definition: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_transaction_attribute_definition_with_http_info variant
+#### Using the get_transaction_attribute_definition_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetTransactionRequestAttributeDefinition200Response>, Integer, Hash)> o_bpv4_0_0_get_transaction_attribute_definition_with_http_info(bankid)
+> <Array(<GetTransactionRequestAttributeDefinition200Response>, Integer, Hash)> get_transaction_attribute_definition_with_http_info(bankid)
 
 ```ruby
 begin
   # Get Transaction Attribute Definition
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_transaction_attribute_definition_with_http_info(bankid)
+  data, status_code, headers = api_instance.get_transaction_attribute_definition_with_http_info(bankid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetTransactionRequestAttributeDefinition200Response>
+  p data # => <GetTransactionRequestAttributeDefinition200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionAttributeApi->o_bpv4_0_0_get_transaction_attribute_definition_with_http_info: #{e}"
+  puts "Error when calling TransactionAttributeApi->get_transaction_attribute_definition_with_http_info: #{e}"
 end
 ```
 
@@ -411,7 +411,7 @@ end
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -423,9 +423,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_transaction_attributes
+## get_transaction_attributes
 
-> <OBPv400GetTransactionAttributes200Response> o_bpv4_0_0_get_transaction_attributes(bankid, accountid, transactionid)
+> <GetTransactionAttributes200Response> get_transaction_attributes(bankid, accountid, transactionid)
 
 Get Transaction Attributes
 
@@ -447,9 +447,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionAttributeApi.new
@@ -459,28 +459,28 @@ transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
 
 begin
   # Get Transaction Attributes
-  result = api_instance.o_bpv4_0_0_get_transaction_attributes(bankid, accountid, transactionid)
+  result = api_instance.get_transaction_attributes(bankid, accountid, transactionid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionAttributeApi->o_bpv4_0_0_get_transaction_attributes: #{e}"
+  puts "Error when calling TransactionAttributeApi->get_transaction_attributes: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_transaction_attributes_with_http_info variant
+#### Using the get_transaction_attributes_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetTransactionAttributes200Response>, Integer, Hash)> o_bpv4_0_0_get_transaction_attributes_with_http_info(bankid, accountid, transactionid)
+> <Array(<GetTransactionAttributes200Response>, Integer, Hash)> get_transaction_attributes_with_http_info(bankid, accountid, transactionid)
 
 ```ruby
 begin
   # Get Transaction Attributes
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_transaction_attributes_with_http_info(bankid, accountid, transactionid)
+  data, status_code, headers = api_instance.get_transaction_attributes_with_http_info(bankid, accountid, transactionid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetTransactionAttributes200Response>
+  p data # => <GetTransactionAttributes200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionAttributeApi->o_bpv4_0_0_get_transaction_attributes_with_http_info: #{e}"
+  puts "Error when calling TransactionAttributeApi->get_transaction_attributes_with_http_info: #{e}"
 end
 ```
 
@@ -494,7 +494,7 @@ end
 
 ### Return type
 
-[**OBPv400GetTransactionAttributes200Response**](OBPv400GetTransactionAttributes200Response.md)
+[**GetTransactionAttributes200Response**](GetTransactionAttributes200Response.md)
 
 ### Authorization
 
@@ -506,9 +506,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_update_transaction_attribute
+## update_transaction_attribute
 
-> <OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> o_bpv4_0_0_update_transaction_attribute(bankid, accountid, transactionid, accountattributeid, obpv600_create_personal_data_field_request)
+> <GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> update_transaction_attribute(bankid, accountid, transactionid, accountattributeid, create_personal_data_field_request)
 
 Update Transaction Attribute
 
@@ -530,9 +530,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionAttributeApi.new
@@ -540,32 +540,32 @@ bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
 transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
 accountattributeid = 'accountattributeid_example' # String | The ACCOUNTATTRIBUTEID identifier
-obpv600_create_personal_data_field_request = OpenBankProject::OBPv600CreatePersonalDataFieldRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600CreatePersonalDataFieldRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), type: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), value: })}) # OBPv600CreatePersonalDataFieldRequest | Request body
+create_personal_data_field_request = OpenBankProject::CreatePersonalDataFieldRequest.new # CreatePersonalDataFieldRequest | Request body
 
 begin
   # Update Transaction Attribute
-  result = api_instance.o_bpv4_0_0_update_transaction_attribute(bankid, accountid, transactionid, accountattributeid, obpv600_create_personal_data_field_request)
+  result = api_instance.update_transaction_attribute(bankid, accountid, transactionid, accountattributeid, create_personal_data_field_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionAttributeApi->o_bpv4_0_0_update_transaction_attribute: #{e}"
+  puts "Error when calling TransactionAttributeApi->update_transaction_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_update_transaction_attribute_with_http_info variant
+#### Using the update_transaction_attribute_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>, Integer, Hash)> o_bpv4_0_0_update_transaction_attribute_with_http_info(bankid, accountid, transactionid, accountattributeid, obpv600_create_personal_data_field_request)
+> <Array(<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>, Integer, Hash)> update_transaction_attribute_with_http_info(bankid, accountid, transactionid, accountattributeid, create_personal_data_field_request)
 
 ```ruby
 begin
   # Update Transaction Attribute
-  data, status_code, headers = api_instance.o_bpv4_0_0_update_transaction_attribute_with_http_info(bankid, accountid, transactionid, accountattributeid, obpv600_create_personal_data_field_request)
+  data, status_code, headers = api_instance.update_transaction_attribute_with_http_info(bankid, accountid, transactionid, accountattributeid, create_personal_data_field_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>
+  p data # => <GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionAttributeApi->o_bpv4_0_0_update_transaction_attribute_with_http_info: #{e}"
+  puts "Error when calling TransactionAttributeApi->update_transaction_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -577,11 +577,11 @@ end
 | **accountid** | **String** | The ACCOUNTID identifier |  |
 | **transactionid** | **String** | The TRANSACTIONID identifier |  |
 | **accountattributeid** | **String** | The ACCOUNTATTRIBUTEID identifier |  |
-| **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
+| **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
 
 ### Authorization
 

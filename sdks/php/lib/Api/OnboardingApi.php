@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,10 +75,10 @@ class OnboardingApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv500CreateAccount' => [
+        'createAccount' => [
             'application/json',
         ],
-        'oBPv600CreateUser' => [
+        'createUser' => [
             'application/json',
         ],
     ];
@@ -130,42 +130,42 @@ class OnboardingApi
     }
 
     /**
-     * Operation oBPv500CreateAccount
+     * Operation createAccount
      *
      * Create Account (PUT)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400AddAccountRequest $obpv400_add_account_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500CreateAccount'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\AddAccountRequest $add_account_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400AddAccount200Response
+     * @return \OpenBankProject\Model\AddAccount200Response
      */
-    public function oBPv500CreateAccount($bankid, $accountid, $obpv400_add_account_request, string $contentType = self::contentTypes['oBPv500CreateAccount'][0])
+    public function createAccount($bankid, $accountid, $add_account_request, string $contentType = self::contentTypes['createAccount'][0])
     {
-        list($response) = $this->oBPv500CreateAccountWithHttpInfo($bankid, $accountid, $obpv400_add_account_request, $contentType);
+        list($response) = $this->createAccountWithHttpInfo($bankid, $accountid, $add_account_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv500CreateAccountWithHttpInfo
+     * Operation createAccountWithHttpInfo
      *
      * Create Account (PUT)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400AddAccountRequest $obpv400_add_account_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500CreateAccount'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\AddAccountRequest $add_account_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400AddAccount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\AddAccount200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv500CreateAccountWithHttpInfo($bankid, $accountid, $obpv400_add_account_request, string $contentType = self::contentTypes['oBPv500CreateAccount'][0])
+    public function createAccountWithHttpInfo($bankid, $accountid, $add_account_request, string $contentType = self::contentTypes['createAccount'][0])
     {
-        $request = $this->oBPv500CreateAccountRequest($bankid, $accountid, $obpv400_add_account_request, $contentType);
+        $request = $this->createAccountRequest($bankid, $accountid, $add_account_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -193,7 +193,7 @@ class OnboardingApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400AddAccount200Response',
+                        '\OpenBankProject\Model\AddAccount200Response',
                         $request,
                         $response,
                     );
@@ -215,7 +215,7 @@ class OnboardingApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400AddAccount200Response',
+                '\OpenBankProject\Model\AddAccount200Response',
                 $request,
                 $response,
             );
@@ -224,7 +224,7 @@ class OnboardingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400AddAccount200Response',
+                        '\OpenBankProject\Model\AddAccount200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -237,21 +237,21 @@ class OnboardingApi
     }
 
     /**
-     * Operation oBPv500CreateAccountAsync
+     * Operation createAccountAsync
      *
      * Create Account (PUT)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400AddAccountRequest $obpv400_add_account_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500CreateAccount'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\AddAccountRequest $add_account_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv500CreateAccountAsync($bankid, $accountid, $obpv400_add_account_request, string $contentType = self::contentTypes['oBPv500CreateAccount'][0])
+    public function createAccountAsync($bankid, $accountid, $add_account_request, string $contentType = self::contentTypes['createAccount'][0])
     {
-        return $this->oBPv500CreateAccountAsyncWithHttpInfo($bankid, $accountid, $obpv400_add_account_request, $contentType)
+        return $this->createAccountAsyncWithHttpInfo($bankid, $accountid, $add_account_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -260,22 +260,22 @@ class OnboardingApi
     }
 
     /**
-     * Operation oBPv500CreateAccountAsyncWithHttpInfo
+     * Operation createAccountAsyncWithHttpInfo
      *
      * Create Account (PUT)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400AddAccountRequest $obpv400_add_account_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500CreateAccount'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\AddAccountRequest $add_account_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv500CreateAccountAsyncWithHttpInfo($bankid, $accountid, $obpv400_add_account_request, string $contentType = self::contentTypes['oBPv500CreateAccount'][0])
+    public function createAccountAsyncWithHttpInfo($bankid, $accountid, $add_account_request, string $contentType = self::contentTypes['createAccount'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400AddAccount200Response';
-        $request = $this->oBPv500CreateAccountRequest($bankid, $accountid, $obpv400_add_account_request, $contentType);
+        $returnType = '\OpenBankProject\Model\AddAccount200Response';
+        $request = $this->createAccountRequest($bankid, $accountid, $add_account_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -314,37 +314,37 @@ class OnboardingApi
     }
 
     /**
-     * Create request for operation 'oBPv500CreateAccount'
+     * Create request for operation 'createAccount'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400AddAccountRequest $obpv400_add_account_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500CreateAccount'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\AddAccountRequest $add_account_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv500CreateAccountRequest($bankid, $accountid, $obpv400_add_account_request, string $contentType = self::contentTypes['oBPv500CreateAccount'][0])
+    public function createAccountRequest($bankid, $accountid, $add_account_request, string $contentType = self::contentTypes['createAccount'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv500CreateAccount'
+                'Missing the required parameter $bankid when calling createAccount'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv500CreateAccount'
+                'Missing the required parameter $accountid when calling createAccount'
             );
         }
 
-        // verify the required parameter 'obpv400_add_account_request' is set
-        if ($obpv400_add_account_request === null || (is_array($obpv400_add_account_request) && count($obpv400_add_account_request) === 0)) {
+        // verify the required parameter 'add_account_request' is set
+        if ($add_account_request === null || (is_array($add_account_request) && count($add_account_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_add_account_request when calling oBPv500CreateAccount'
+                'Missing the required parameter $add_account_request when calling createAccount'
             );
         }
 
@@ -383,12 +383,12 @@ class OnboardingApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_add_account_request)) {
+        if (isset($add_account_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_add_account_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($add_account_request));
             } else {
-                $httpBody = $obpv400_add_account_request;
+                $httpBody = $add_account_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -424,9 +424,9 @@ class OnboardingApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -451,38 +451,38 @@ class OnboardingApi
     }
 
     /**
-     * Operation oBPv600CreateUser
+     * Operation createUser
      *
      * Create User (v6.0.0)
      *
-     * @param  \OpenBankProject\Model\OBPv600CreateUserRequest $obpv600_create_user_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateUser'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateUserRequest $create_user_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUser'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600VerifyUserCredentials200Response
+     * @return \OpenBankProject\Model\VerifyUserCredentials200Response
      */
-    public function oBPv600CreateUser($obpv600_create_user_request, string $contentType = self::contentTypes['oBPv600CreateUser'][0])
+    public function createUser($create_user_request, string $contentType = self::contentTypes['createUser'][0])
     {
-        list($response) = $this->oBPv600CreateUserWithHttpInfo($obpv600_create_user_request, $contentType);
+        list($response) = $this->createUserWithHttpInfo($create_user_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600CreateUserWithHttpInfo
+     * Operation createUserWithHttpInfo
      *
      * Create User (v6.0.0)
      *
-     * @param  \OpenBankProject\Model\OBPv600CreateUserRequest $obpv600_create_user_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateUser'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateUserRequest $create_user_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUser'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600VerifyUserCredentials200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\VerifyUserCredentials200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600CreateUserWithHttpInfo($obpv600_create_user_request, string $contentType = self::contentTypes['oBPv600CreateUser'][0])
+    public function createUserWithHttpInfo($create_user_request, string $contentType = self::contentTypes['createUser'][0])
     {
-        $request = $this->oBPv600CreateUserRequest($obpv600_create_user_request, $contentType);
+        $request = $this->createUserRequest($create_user_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -510,7 +510,7 @@ class OnboardingApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600VerifyUserCredentials200Response',
+                        '\OpenBankProject\Model\VerifyUserCredentials200Response',
                         $request,
                         $response,
                     );
@@ -532,7 +532,7 @@ class OnboardingApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600VerifyUserCredentials200Response',
+                '\OpenBankProject\Model\VerifyUserCredentials200Response',
                 $request,
                 $response,
             );
@@ -541,7 +541,7 @@ class OnboardingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600VerifyUserCredentials200Response',
+                        '\OpenBankProject\Model\VerifyUserCredentials200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -554,19 +554,19 @@ class OnboardingApi
     }
 
     /**
-     * Operation oBPv600CreateUserAsync
+     * Operation createUserAsync
      *
      * Create User (v6.0.0)
      *
-     * @param  \OpenBankProject\Model\OBPv600CreateUserRequest $obpv600_create_user_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateUser'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateUserRequest $create_user_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUser'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateUserAsync($obpv600_create_user_request, string $contentType = self::contentTypes['oBPv600CreateUser'][0])
+    public function createUserAsync($create_user_request, string $contentType = self::contentTypes['createUser'][0])
     {
-        return $this->oBPv600CreateUserAsyncWithHttpInfo($obpv600_create_user_request, $contentType)
+        return $this->createUserAsyncWithHttpInfo($create_user_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -575,20 +575,20 @@ class OnboardingApi
     }
 
     /**
-     * Operation oBPv600CreateUserAsyncWithHttpInfo
+     * Operation createUserAsyncWithHttpInfo
      *
      * Create User (v6.0.0)
      *
-     * @param  \OpenBankProject\Model\OBPv600CreateUserRequest $obpv600_create_user_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateUser'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateUserRequest $create_user_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUser'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateUserAsyncWithHttpInfo($obpv600_create_user_request, string $contentType = self::contentTypes['oBPv600CreateUser'][0])
+    public function createUserAsyncWithHttpInfo($create_user_request, string $contentType = self::contentTypes['createUser'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600VerifyUserCredentials200Response';
-        $request = $this->oBPv600CreateUserRequest($obpv600_create_user_request, $contentType);
+        $returnType = '\OpenBankProject\Model\VerifyUserCredentials200Response';
+        $request = $this->createUserRequest($create_user_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -627,21 +627,21 @@ class OnboardingApi
     }
 
     /**
-     * Create request for operation 'oBPv600CreateUser'
+     * Create request for operation 'createUser'
      *
-     * @param  \OpenBankProject\Model\OBPv600CreateUserRequest $obpv600_create_user_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateUser'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateUserRequest $create_user_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUser'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600CreateUserRequest($obpv600_create_user_request, string $contentType = self::contentTypes['oBPv600CreateUser'][0])
+    public function createUserRequest($create_user_request, string $contentType = self::contentTypes['createUser'][0])
     {
 
-        // verify the required parameter 'obpv600_create_user_request' is set
-        if ($obpv600_create_user_request === null || (is_array($obpv600_create_user_request) && count($obpv600_create_user_request) === 0)) {
+        // verify the required parameter 'create_user_request' is set
+        if ($create_user_request === null || (is_array($create_user_request) && count($create_user_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_create_user_request when calling oBPv600CreateUser'
+                'Missing the required parameter $create_user_request when calling createUser'
             );
         }
 
@@ -664,12 +664,12 @@ class OnboardingApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_create_user_request)) {
+        if (isset($create_user_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_create_user_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_user_request));
             } else {
-                $httpBody = $obpv600_create_user_request;
+                $httpBody = $create_user_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

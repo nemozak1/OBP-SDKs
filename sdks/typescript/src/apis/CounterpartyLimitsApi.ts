@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,54 +15,54 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit,
-  OBPv510GetCounterpartyLimit200Response,
-  OBPv510GetCounterpartyLimitStatus200Response,
+  CreateVRPConsentRequestRequestToAccountLimit,
+  GetCounterpartyLimit200Response,
+  GetCounterpartyLimitStatus200Response,
 } from '../models/index';
 import {
-    OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimitFromJSON,
-    OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimitToJSON,
-    OBPv510GetCounterpartyLimit200ResponseFromJSON,
-    OBPv510GetCounterpartyLimit200ResponseToJSON,
-    OBPv510GetCounterpartyLimitStatus200ResponseFromJSON,
-    OBPv510GetCounterpartyLimitStatus200ResponseToJSON,
+    CreateVRPConsentRequestRequestToAccountLimitFromJSON,
+    CreateVRPConsentRequestRequestToAccountLimitToJSON,
+    GetCounterpartyLimit200ResponseFromJSON,
+    GetCounterpartyLimit200ResponseToJSON,
+    GetCounterpartyLimitStatus200ResponseFromJSON,
+    GetCounterpartyLimitStatus200ResponseToJSON,
 } from '../models/index';
 
-export interface OBPv510CreateCounterpartyLimitRequest {
+export interface CreateCounterpartyLimitRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     counterpartyid: string;
-    oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit;
+    createVRPConsentRequestRequestToAccountLimit: CreateVRPConsentRequestRequestToAccountLimit;
 }
 
-export interface OBPv510DeleteCounterpartyLimitRequest {
-    bankid: string;
-    accountid: string;
-    viewid: string;
-    counterpartyid: string;
-}
-
-export interface OBPv510GetCounterpartyLimitRequest {
+export interface DeleteCounterpartyLimitRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     counterpartyid: string;
 }
 
-export interface OBPv510GetCounterpartyLimitStatusRequest {
+export interface GetCounterpartyLimitRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     counterpartyid: string;
 }
 
-export interface OBPv510UpdateCounterpartyLimitRequest {
+export interface GetCounterpartyLimitStatusRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     counterpartyid: string;
-    oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit;
+}
+
+export interface UpdateCounterpartyLimitRequest {
+    bankid: string;
+    accountid: string;
+    viewid: string;
+    counterpartyid: string;
+    createVRPConsentRequestRequestToAccountLimit: CreateVRPConsentRequestRequestToAccountLimit;
 }
 
 /**
@@ -71,41 +71,41 @@ export interface OBPv510UpdateCounterpartyLimitRequest {
 export class CounterpartyLimitsApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv510CreateCounterpartyLimit without sending the request
+     * Creates request options for createCounterpartyLimit without sending the request
      */
-    async oBPv510CreateCounterpartyLimitRequestOpts(requestParameters: OBPv510CreateCounterpartyLimitRequest): Promise<runtime.RequestOpts> {
+    async createCounterpartyLimitRequestOpts(requestParameters: CreateCounterpartyLimitRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510CreateCounterpartyLimit().'
+                'Required parameter "bankid" was null or undefined when calling createCounterpartyLimit().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv510CreateCounterpartyLimit().'
+                'Required parameter "accountid" was null or undefined when calling createCounterpartyLimit().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv510CreateCounterpartyLimit().'
+                'Required parameter "viewid" was null or undefined when calling createCounterpartyLimit().'
             );
         }
 
         if (requestParameters['counterpartyid'] == null) {
             throw new runtime.RequiredError(
                 'counterpartyid',
-                'Required parameter "counterpartyid" was null or undefined when calling oBPv510CreateCounterpartyLimit().'
+                'Required parameter "counterpartyid" was null or undefined when calling createCounterpartyLimit().'
             );
         }
 
-        if (requestParameters['oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit'] == null) {
+        if (requestParameters['createVRPConsentRequestRequestToAccountLimit'] == null) {
             throw new runtime.RequiredError(
-                'oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit',
-                'Required parameter "oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit" was null or undefined when calling oBPv510CreateCounterpartyLimit().'
+                'createVRPConsentRequestRequestToAccountLimit',
+                'Required parameter "createVRPConsentRequestRequestToAccountLimit" was null or undefined when calling createCounterpartyLimit().'
             );
         }
 
@@ -125,7 +125,7 @@ export class CounterpartyLimitsApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -140,59 +140,59 @@ export class CounterpartyLimitsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimitToJSON(requestParameters['oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit']),
+            body: CreateVRPConsentRequestRequestToAccountLimitToJSON(requestParameters['createVRPConsentRequestRequestToAccountLimit']),
         };
     }
 
     /**
-     * <p>Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.</p> <p>Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).</p> <p>For more information on Counterparty Limits, see <a href=\"/glossary#Counterparty-Limits\">here</a></p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>You can automate the process of creating counterparty limits and consents for VRP with this <a href=\"https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\">endpoint</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
+     * <p>Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.</p> <p>Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).</p> <p>For more information on Counterparty Limits, see <a href=\"/glossary#Counterparty-Limits\">here</a></p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>You can automate the process of creating counterparty limits and consents for VRP with this <a href=\"http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\">endpoint</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Create Counterparty Limit
      */
-    async oBPv510CreateCounterpartyLimitRaw(requestParameters: OBPv510CreateCounterpartyLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv510GetCounterpartyLimit200Response>> {
-        const requestOptions = await this.oBPv510CreateCounterpartyLimitRequestOpts(requestParameters);
+    async createCounterpartyLimitRaw(requestParameters: CreateCounterpartyLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCounterpartyLimit200Response>> {
+        const requestOptions = await this.createCounterpartyLimitRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv510GetCounterpartyLimit200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCounterpartyLimit200ResponseFromJSON(jsonValue));
     }
 
     /**
-     * <p>Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.</p> <p>Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).</p> <p>For more information on Counterparty Limits, see <a href=\"/glossary#Counterparty-Limits\">here</a></p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>You can automate the process of creating counterparty limits and consents for VRP with this <a href=\"https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\">endpoint</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
+     * <p>Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.</p> <p>Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).</p> <p>For more information on Counterparty Limits, see <a href=\"/glossary#Counterparty-Limits\">here</a></p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>You can automate the process of creating counterparty limits and consents for VRP with this <a href=\"http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\">endpoint</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Create Counterparty Limit
      */
-    async oBPv510CreateCounterpartyLimit(requestParameters: OBPv510CreateCounterpartyLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv510GetCounterpartyLimit200Response> {
-        const response = await this.oBPv510CreateCounterpartyLimitRaw(requestParameters, initOverrides);
+    async createCounterpartyLimit(requestParameters: CreateCounterpartyLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCounterpartyLimit200Response> {
+        const response = await this.createCounterpartyLimitRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv510DeleteCounterpartyLimit without sending the request
+     * Creates request options for deleteCounterpartyLimit without sending the request
      */
-    async oBPv510DeleteCounterpartyLimitRequestOpts(requestParameters: OBPv510DeleteCounterpartyLimitRequest): Promise<runtime.RequestOpts> {
+    async deleteCounterpartyLimitRequestOpts(requestParameters: DeleteCounterpartyLimitRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510DeleteCounterpartyLimit().'
+                'Required parameter "bankid" was null or undefined when calling deleteCounterpartyLimit().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv510DeleteCounterpartyLimit().'
+                'Required parameter "accountid" was null or undefined when calling deleteCounterpartyLimit().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv510DeleteCounterpartyLimit().'
+                'Required parameter "viewid" was null or undefined when calling deleteCounterpartyLimit().'
             );
         }
 
         if (requestParameters['counterpartyid'] == null) {
             throw new runtime.RequiredError(
                 'counterpartyid',
-                'Required parameter "counterpartyid" was null or undefined when calling oBPv510DeleteCounterpartyLimit().'
+                'Required parameter "counterpartyid" was null or undefined when calling deleteCounterpartyLimit().'
             );
         }
 
@@ -210,7 +210,7 @@ export class CounterpartyLimitsApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -232,8 +232,8 @@ export class CounterpartyLimitsApi extends runtime.BaseAPI {
      * <p>Delete Counterparty Limit.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Counterparty Limit
      */
-    async oBPv510DeleteCounterpartyLimitRaw(requestParameters: OBPv510DeleteCounterpartyLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv510DeleteCounterpartyLimitRequestOpts(requestParameters);
+    async deleteCounterpartyLimitRaw(requestParameters: DeleteCounterpartyLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteCounterpartyLimitRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -243,39 +243,39 @@ export class CounterpartyLimitsApi extends runtime.BaseAPI {
      * <p>Delete Counterparty Limit.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Counterparty Limit
      */
-    async oBPv510DeleteCounterpartyLimit(requestParameters: OBPv510DeleteCounterpartyLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv510DeleteCounterpartyLimitRaw(requestParameters, initOverrides);
+    async deleteCounterpartyLimit(requestParameters: DeleteCounterpartyLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCounterpartyLimitRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv510GetCounterpartyLimit without sending the request
+     * Creates request options for getCounterpartyLimit without sending the request
      */
-    async oBPv510GetCounterpartyLimitRequestOpts(requestParameters: OBPv510GetCounterpartyLimitRequest): Promise<runtime.RequestOpts> {
+    async getCounterpartyLimitRequestOpts(requestParameters: GetCounterpartyLimitRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510GetCounterpartyLimit().'
+                'Required parameter "bankid" was null or undefined when calling getCounterpartyLimit().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv510GetCounterpartyLimit().'
+                'Required parameter "accountid" was null or undefined when calling getCounterpartyLimit().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv510GetCounterpartyLimit().'
+                'Required parameter "viewid" was null or undefined when calling getCounterpartyLimit().'
             );
         }
 
         if (requestParameters['counterpartyid'] == null) {
             throw new runtime.RequiredError(
                 'counterpartyid',
-                'Required parameter "counterpartyid" was null or undefined when calling oBPv510GetCounterpartyLimit().'
+                'Required parameter "counterpartyid" was null or undefined when calling getCounterpartyLimit().'
             );
         }
 
@@ -293,7 +293,7 @@ export class CounterpartyLimitsApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -315,51 +315,51 @@ export class CounterpartyLimitsApi extends runtime.BaseAPI {
      * <p>Get Counterparty Limit.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Get Counterparty Limit
      */
-    async oBPv510GetCounterpartyLimitRaw(requestParameters: OBPv510GetCounterpartyLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv510GetCounterpartyLimit200Response>> {
-        const requestOptions = await this.oBPv510GetCounterpartyLimitRequestOpts(requestParameters);
+    async getCounterpartyLimitRaw(requestParameters: GetCounterpartyLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCounterpartyLimit200Response>> {
+        const requestOptions = await this.getCounterpartyLimitRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv510GetCounterpartyLimit200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCounterpartyLimit200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Counterparty Limit.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Get Counterparty Limit
      */
-    async oBPv510GetCounterpartyLimit(requestParameters: OBPv510GetCounterpartyLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv510GetCounterpartyLimit200Response> {
-        const response = await this.oBPv510GetCounterpartyLimitRaw(requestParameters, initOverrides);
+    async getCounterpartyLimit(requestParameters: GetCounterpartyLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCounterpartyLimit200Response> {
+        const response = await this.getCounterpartyLimitRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv510GetCounterpartyLimitStatus without sending the request
+     * Creates request options for getCounterpartyLimitStatus without sending the request
      */
-    async oBPv510GetCounterpartyLimitStatusRequestOpts(requestParameters: OBPv510GetCounterpartyLimitStatusRequest): Promise<runtime.RequestOpts> {
+    async getCounterpartyLimitStatusRequestOpts(requestParameters: GetCounterpartyLimitStatusRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510GetCounterpartyLimitStatus().'
+                'Required parameter "bankid" was null or undefined when calling getCounterpartyLimitStatus().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv510GetCounterpartyLimitStatus().'
+                'Required parameter "accountid" was null or undefined when calling getCounterpartyLimitStatus().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv510GetCounterpartyLimitStatus().'
+                'Required parameter "viewid" was null or undefined when calling getCounterpartyLimitStatus().'
             );
         }
 
         if (requestParameters['counterpartyid'] == null) {
             throw new runtime.RequiredError(
                 'counterpartyid',
-                'Required parameter "counterpartyid" was null or undefined when calling oBPv510GetCounterpartyLimitStatus().'
+                'Required parameter "counterpartyid" was null or undefined when calling getCounterpartyLimitStatus().'
             );
         }
 
@@ -377,7 +377,7 @@ export class CounterpartyLimitsApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -399,58 +399,58 @@ export class CounterpartyLimitsApi extends runtime.BaseAPI {
      * <p>Get Counterparty Limit Status.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>currency_status</strong></a>: currency_status</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#\"><strong>max_monthly_amount_status</strong></a>: max_monthly_amount_status</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>max_number_of_monthly_transactions_status</strong></a>: max_number_of_monthly_transactions_status</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#\"><strong>max_number_of_transactions_status</strong></a>: max_number_of_transactions_status</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#\"><strong>max_number_of_yearly_transactions_status</strong></a>: max_number_of_yearly_transactions_status</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#\"><strong>max_total_amount_status</strong></a>: max_total_amount_status</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>max_yearly_amount_status</strong></a>: max_yearly_amount_status</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Get Counterparty Limit Status
      */
-    async oBPv510GetCounterpartyLimitStatusRaw(requestParameters: OBPv510GetCounterpartyLimitStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv510GetCounterpartyLimitStatus200Response>> {
-        const requestOptions = await this.oBPv510GetCounterpartyLimitStatusRequestOpts(requestParameters);
+    async getCounterpartyLimitStatusRaw(requestParameters: GetCounterpartyLimitStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCounterpartyLimitStatus200Response>> {
+        const requestOptions = await this.getCounterpartyLimitStatusRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv510GetCounterpartyLimitStatus200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCounterpartyLimitStatus200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Counterparty Limit Status.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>currency_status</strong></a>: currency_status</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#\"><strong>max_monthly_amount_status</strong></a>: max_monthly_amount_status</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>max_number_of_monthly_transactions_status</strong></a>: max_number_of_monthly_transactions_status</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#\"><strong>max_number_of_transactions_status</strong></a>: max_number_of_transactions_status</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#\"><strong>max_number_of_yearly_transactions_status</strong></a>: max_number_of_yearly_transactions_status</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#\"><strong>max_total_amount_status</strong></a>: max_total_amount_status</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>max_yearly_amount_status</strong></a>: max_yearly_amount_status</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Get Counterparty Limit Status
      */
-    async oBPv510GetCounterpartyLimitStatus(requestParameters: OBPv510GetCounterpartyLimitStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv510GetCounterpartyLimitStatus200Response> {
-        const response = await this.oBPv510GetCounterpartyLimitStatusRaw(requestParameters, initOverrides);
+    async getCounterpartyLimitStatus(requestParameters: GetCounterpartyLimitStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCounterpartyLimitStatus200Response> {
+        const response = await this.getCounterpartyLimitStatusRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv510UpdateCounterpartyLimit without sending the request
+     * Creates request options for updateCounterpartyLimit without sending the request
      */
-    async oBPv510UpdateCounterpartyLimitRequestOpts(requestParameters: OBPv510UpdateCounterpartyLimitRequest): Promise<runtime.RequestOpts> {
+    async updateCounterpartyLimitRequestOpts(requestParameters: UpdateCounterpartyLimitRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510UpdateCounterpartyLimit().'
+                'Required parameter "bankid" was null or undefined when calling updateCounterpartyLimit().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv510UpdateCounterpartyLimit().'
+                'Required parameter "accountid" was null or undefined when calling updateCounterpartyLimit().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv510UpdateCounterpartyLimit().'
+                'Required parameter "viewid" was null or undefined when calling updateCounterpartyLimit().'
             );
         }
 
         if (requestParameters['counterpartyid'] == null) {
             throw new runtime.RequiredError(
                 'counterpartyid',
-                'Required parameter "counterpartyid" was null or undefined when calling oBPv510UpdateCounterpartyLimit().'
+                'Required parameter "counterpartyid" was null or undefined when calling updateCounterpartyLimit().'
             );
         }
 
-        if (requestParameters['oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit'] == null) {
+        if (requestParameters['createVRPConsentRequestRequestToAccountLimit'] == null) {
             throw new runtime.RequiredError(
-                'oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit',
-                'Required parameter "oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit" was null or undefined when calling oBPv510UpdateCounterpartyLimit().'
+                'createVRPConsentRequestRequestToAccountLimit',
+                'Required parameter "createVRPConsentRequestRequestToAccountLimit" was null or undefined when calling updateCounterpartyLimit().'
             );
         }
 
@@ -470,7 +470,7 @@ export class CounterpartyLimitsApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -485,7 +485,7 @@ export class CounterpartyLimitsApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimitToJSON(requestParameters['oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit']),
+            body: CreateVRPConsentRequestRequestToAccountLimitToJSON(requestParameters['createVRPConsentRequestRequestToAccountLimit']),
         };
     }
 
@@ -493,19 +493,19 @@ export class CounterpartyLimitsApi extends runtime.BaseAPI {
      * <p>Update Counterparty Limit.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Update Counterparty Limit
      */
-    async oBPv510UpdateCounterpartyLimitRaw(requestParameters: OBPv510UpdateCounterpartyLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv510GetCounterpartyLimit200Response>> {
-        const requestOptions = await this.oBPv510UpdateCounterpartyLimitRequestOpts(requestParameters);
+    async updateCounterpartyLimitRaw(requestParameters: UpdateCounterpartyLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCounterpartyLimit200Response>> {
+        const requestOptions = await this.updateCounterpartyLimitRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv510GetCounterpartyLimit200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCounterpartyLimit200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Update Counterparty Limit.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Update Counterparty Limit
      */
-    async oBPv510UpdateCounterpartyLimit(requestParameters: OBPv510UpdateCounterpartyLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv510GetCounterpartyLimit200Response> {
-        const response = await this.oBPv510UpdateCounterpartyLimitRaw(requestParameters, initOverrides);
+    async updateCounterpartyLimit(requestParameters: UpdateCounterpartyLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCounterpartyLimit200Response> {
+        const response = await this.updateCounterpartyLimitRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

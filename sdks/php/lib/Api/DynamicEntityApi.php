@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,16 +75,16 @@ class DynamicEntityApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv600CleanupOrphanedDynamicEntityRecords' => [
+        'cleanupOrphanedDynamicEntityRecords' => [
             'application/json',
         ],
-        'oBPv600GetAvailablePersonalDynamicEntities' => [
+        'getAvailablePersonalDynamicEntities' => [
             'application/json',
         ],
-        'oBPv600GetDynamicEntityDiagnostics' => [
+        'getDynamicEntityDiagnostics' => [
             'application/json',
         ],
-        'oBPv600GetReferenceTypes' => [
+        'getReferenceTypes' => [
             'application/json',
         ],
     ];
@@ -136,36 +136,36 @@ class DynamicEntityApi
     }
 
     /**
-     * Operation oBPv600CleanupOrphanedDynamicEntityRecords
+     * Operation cleanupOrphanedDynamicEntityRecords
      *
      * Cleanup Orphaned Dynamic Entity Records
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CleanupOrphanedDynamicEntityRecords'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cleanupOrphanedDynamicEntityRecords'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600CleanupOrphanedDynamicEntityRecords200Response
+     * @return \OpenBankProject\Model\CleanupOrphanedDynamicEntityRecords200Response
      */
-    public function oBPv600CleanupOrphanedDynamicEntityRecords(string $contentType = self::contentTypes['oBPv600CleanupOrphanedDynamicEntityRecords'][0])
+    public function cleanupOrphanedDynamicEntityRecords(string $contentType = self::contentTypes['cleanupOrphanedDynamicEntityRecords'][0])
     {
-        list($response) = $this->oBPv600CleanupOrphanedDynamicEntityRecordsWithHttpInfo($contentType);
+        list($response) = $this->cleanupOrphanedDynamicEntityRecordsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600CleanupOrphanedDynamicEntityRecordsWithHttpInfo
+     * Operation cleanupOrphanedDynamicEntityRecordsWithHttpInfo
      *
      * Cleanup Orphaned Dynamic Entity Records
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CleanupOrphanedDynamicEntityRecords'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cleanupOrphanedDynamicEntityRecords'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600CleanupOrphanedDynamicEntityRecords200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CleanupOrphanedDynamicEntityRecords200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600CleanupOrphanedDynamicEntityRecordsWithHttpInfo(string $contentType = self::contentTypes['oBPv600CleanupOrphanedDynamicEntityRecords'][0])
+    public function cleanupOrphanedDynamicEntityRecordsWithHttpInfo(string $contentType = self::contentTypes['cleanupOrphanedDynamicEntityRecords'][0])
     {
-        $request = $this->oBPv600CleanupOrphanedDynamicEntityRecordsRequest($contentType);
+        $request = $this->cleanupOrphanedDynamicEntityRecordsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -193,7 +193,7 @@ class DynamicEntityApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600CleanupOrphanedDynamicEntityRecords200Response',
+                        '\OpenBankProject\Model\CleanupOrphanedDynamicEntityRecords200Response',
                         $request,
                         $response,
                     );
@@ -215,7 +215,7 @@ class DynamicEntityApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600CleanupOrphanedDynamicEntityRecords200Response',
+                '\OpenBankProject\Model\CleanupOrphanedDynamicEntityRecords200Response',
                 $request,
                 $response,
             );
@@ -224,7 +224,7 @@ class DynamicEntityApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600CleanupOrphanedDynamicEntityRecords200Response',
+                        '\OpenBankProject\Model\CleanupOrphanedDynamicEntityRecords200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -237,18 +237,18 @@ class DynamicEntityApi
     }
 
     /**
-     * Operation oBPv600CleanupOrphanedDynamicEntityRecordsAsync
+     * Operation cleanupOrphanedDynamicEntityRecordsAsync
      *
      * Cleanup Orphaned Dynamic Entity Records
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CleanupOrphanedDynamicEntityRecords'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cleanupOrphanedDynamicEntityRecords'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CleanupOrphanedDynamicEntityRecordsAsync(string $contentType = self::contentTypes['oBPv600CleanupOrphanedDynamicEntityRecords'][0])
+    public function cleanupOrphanedDynamicEntityRecordsAsync(string $contentType = self::contentTypes['cleanupOrphanedDynamicEntityRecords'][0])
     {
-        return $this->oBPv600CleanupOrphanedDynamicEntityRecordsAsyncWithHttpInfo($contentType)
+        return $this->cleanupOrphanedDynamicEntityRecordsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -257,19 +257,19 @@ class DynamicEntityApi
     }
 
     /**
-     * Operation oBPv600CleanupOrphanedDynamicEntityRecordsAsyncWithHttpInfo
+     * Operation cleanupOrphanedDynamicEntityRecordsAsyncWithHttpInfo
      *
      * Cleanup Orphaned Dynamic Entity Records
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CleanupOrphanedDynamicEntityRecords'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cleanupOrphanedDynamicEntityRecords'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CleanupOrphanedDynamicEntityRecordsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600CleanupOrphanedDynamicEntityRecords'][0])
+    public function cleanupOrphanedDynamicEntityRecordsAsyncWithHttpInfo(string $contentType = self::contentTypes['cleanupOrphanedDynamicEntityRecords'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600CleanupOrphanedDynamicEntityRecords200Response';
-        $request = $this->oBPv600CleanupOrphanedDynamicEntityRecordsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\CleanupOrphanedDynamicEntityRecords200Response';
+        $request = $this->cleanupOrphanedDynamicEntityRecordsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -308,14 +308,14 @@ class DynamicEntityApi
     }
 
     /**
-     * Create request for operation 'oBPv600CleanupOrphanedDynamicEntityRecords'
+     * Create request for operation 'cleanupOrphanedDynamicEntityRecords'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CleanupOrphanedDynamicEntityRecords'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cleanupOrphanedDynamicEntityRecords'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600CleanupOrphanedDynamicEntityRecordsRequest(string $contentType = self::contentTypes['oBPv600CleanupOrphanedDynamicEntityRecords'][0])
+    public function cleanupOrphanedDynamicEntityRecordsRequest(string $contentType = self::contentTypes['cleanupOrphanedDynamicEntityRecords'][0])
     {
 
 
@@ -371,9 +371,9 @@ class DynamicEntityApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -398,36 +398,36 @@ class DynamicEntityApi
     }
 
     /**
-     * Operation oBPv600GetAvailablePersonalDynamicEntities
+     * Operation getAvailablePersonalDynamicEntities
      *
      * Get Available Personal Dynamic Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAvailablePersonalDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAvailablePersonalDynamicEntities'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetAvailablePersonalDynamicEntities200Response
+     * @return \OpenBankProject\Model\GetAvailablePersonalDynamicEntities200Response
      */
-    public function oBPv600GetAvailablePersonalDynamicEntities(string $contentType = self::contentTypes['oBPv600GetAvailablePersonalDynamicEntities'][0])
+    public function getAvailablePersonalDynamicEntities(string $contentType = self::contentTypes['getAvailablePersonalDynamicEntities'][0])
     {
-        list($response) = $this->oBPv600GetAvailablePersonalDynamicEntitiesWithHttpInfo($contentType);
+        list($response) = $this->getAvailablePersonalDynamicEntitiesWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetAvailablePersonalDynamicEntitiesWithHttpInfo
+     * Operation getAvailablePersonalDynamicEntitiesWithHttpInfo
      *
      * Get Available Personal Dynamic Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAvailablePersonalDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAvailablePersonalDynamicEntities'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetAvailablePersonalDynamicEntities200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAvailablePersonalDynamicEntities200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetAvailablePersonalDynamicEntitiesWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetAvailablePersonalDynamicEntities'][0])
+    public function getAvailablePersonalDynamicEntitiesWithHttpInfo(string $contentType = self::contentTypes['getAvailablePersonalDynamicEntities'][0])
     {
-        $request = $this->oBPv600GetAvailablePersonalDynamicEntitiesRequest($contentType);
+        $request = $this->getAvailablePersonalDynamicEntitiesRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -455,7 +455,7 @@ class DynamicEntityApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetAvailablePersonalDynamicEntities200Response',
+                        '\OpenBankProject\Model\GetAvailablePersonalDynamicEntities200Response',
                         $request,
                         $response,
                     );
@@ -477,7 +477,7 @@ class DynamicEntityApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetAvailablePersonalDynamicEntities200Response',
+                '\OpenBankProject\Model\GetAvailablePersonalDynamicEntities200Response',
                 $request,
                 $response,
             );
@@ -486,7 +486,7 @@ class DynamicEntityApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetAvailablePersonalDynamicEntities200Response',
+                        '\OpenBankProject\Model\GetAvailablePersonalDynamicEntities200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -499,18 +499,18 @@ class DynamicEntityApi
     }
 
     /**
-     * Operation oBPv600GetAvailablePersonalDynamicEntitiesAsync
+     * Operation getAvailablePersonalDynamicEntitiesAsync
      *
      * Get Available Personal Dynamic Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAvailablePersonalDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAvailablePersonalDynamicEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAvailablePersonalDynamicEntitiesAsync(string $contentType = self::contentTypes['oBPv600GetAvailablePersonalDynamicEntities'][0])
+    public function getAvailablePersonalDynamicEntitiesAsync(string $contentType = self::contentTypes['getAvailablePersonalDynamicEntities'][0])
     {
-        return $this->oBPv600GetAvailablePersonalDynamicEntitiesAsyncWithHttpInfo($contentType)
+        return $this->getAvailablePersonalDynamicEntitiesAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -519,19 +519,19 @@ class DynamicEntityApi
     }
 
     /**
-     * Operation oBPv600GetAvailablePersonalDynamicEntitiesAsyncWithHttpInfo
+     * Operation getAvailablePersonalDynamicEntitiesAsyncWithHttpInfo
      *
      * Get Available Personal Dynamic Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAvailablePersonalDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAvailablePersonalDynamicEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAvailablePersonalDynamicEntitiesAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetAvailablePersonalDynamicEntities'][0])
+    public function getAvailablePersonalDynamicEntitiesAsyncWithHttpInfo(string $contentType = self::contentTypes['getAvailablePersonalDynamicEntities'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetAvailablePersonalDynamicEntities200Response';
-        $request = $this->oBPv600GetAvailablePersonalDynamicEntitiesRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetAvailablePersonalDynamicEntities200Response';
+        $request = $this->getAvailablePersonalDynamicEntitiesRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -570,14 +570,14 @@ class DynamicEntityApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetAvailablePersonalDynamicEntities'
+     * Create request for operation 'getAvailablePersonalDynamicEntities'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAvailablePersonalDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAvailablePersonalDynamicEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetAvailablePersonalDynamicEntitiesRequest(string $contentType = self::contentTypes['oBPv600GetAvailablePersonalDynamicEntities'][0])
+    public function getAvailablePersonalDynamicEntitiesRequest(string $contentType = self::contentTypes['getAvailablePersonalDynamicEntities'][0])
     {
 
 
@@ -633,9 +633,9 @@ class DynamicEntityApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -660,36 +660,36 @@ class DynamicEntityApi
     }
 
     /**
-     * Operation oBPv600GetDynamicEntityDiagnostics
+     * Operation getDynamicEntityDiagnostics
      *
      * Get Dynamic Entity Diagnostics
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetDynamicEntityDiagnostics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicEntityDiagnostics'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetDynamicEntityDiagnostics200Response
+     * @return \OpenBankProject\Model\GetDynamicEntityDiagnostics200Response
      */
-    public function oBPv600GetDynamicEntityDiagnostics(string $contentType = self::contentTypes['oBPv600GetDynamicEntityDiagnostics'][0])
+    public function getDynamicEntityDiagnostics(string $contentType = self::contentTypes['getDynamicEntityDiagnostics'][0])
     {
-        list($response) = $this->oBPv600GetDynamicEntityDiagnosticsWithHttpInfo($contentType);
+        list($response) = $this->getDynamicEntityDiagnosticsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetDynamicEntityDiagnosticsWithHttpInfo
+     * Operation getDynamicEntityDiagnosticsWithHttpInfo
      *
      * Get Dynamic Entity Diagnostics
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetDynamicEntityDiagnostics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicEntityDiagnostics'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetDynamicEntityDiagnostics200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetDynamicEntityDiagnostics200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetDynamicEntityDiagnosticsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetDynamicEntityDiagnostics'][0])
+    public function getDynamicEntityDiagnosticsWithHttpInfo(string $contentType = self::contentTypes['getDynamicEntityDiagnostics'][0])
     {
-        $request = $this->oBPv600GetDynamicEntityDiagnosticsRequest($contentType);
+        $request = $this->getDynamicEntityDiagnosticsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -717,7 +717,7 @@ class DynamicEntityApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetDynamicEntityDiagnostics200Response',
+                        '\OpenBankProject\Model\GetDynamicEntityDiagnostics200Response',
                         $request,
                         $response,
                     );
@@ -739,7 +739,7 @@ class DynamicEntityApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetDynamicEntityDiagnostics200Response',
+                '\OpenBankProject\Model\GetDynamicEntityDiagnostics200Response',
                 $request,
                 $response,
             );
@@ -748,7 +748,7 @@ class DynamicEntityApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetDynamicEntityDiagnostics200Response',
+                        '\OpenBankProject\Model\GetDynamicEntityDiagnostics200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -761,18 +761,18 @@ class DynamicEntityApi
     }
 
     /**
-     * Operation oBPv600GetDynamicEntityDiagnosticsAsync
+     * Operation getDynamicEntityDiagnosticsAsync
      *
      * Get Dynamic Entity Diagnostics
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetDynamicEntityDiagnostics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicEntityDiagnostics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetDynamicEntityDiagnosticsAsync(string $contentType = self::contentTypes['oBPv600GetDynamicEntityDiagnostics'][0])
+    public function getDynamicEntityDiagnosticsAsync(string $contentType = self::contentTypes['getDynamicEntityDiagnostics'][0])
     {
-        return $this->oBPv600GetDynamicEntityDiagnosticsAsyncWithHttpInfo($contentType)
+        return $this->getDynamicEntityDiagnosticsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -781,19 +781,19 @@ class DynamicEntityApi
     }
 
     /**
-     * Operation oBPv600GetDynamicEntityDiagnosticsAsyncWithHttpInfo
+     * Operation getDynamicEntityDiagnosticsAsyncWithHttpInfo
      *
      * Get Dynamic Entity Diagnostics
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetDynamicEntityDiagnostics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicEntityDiagnostics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetDynamicEntityDiagnosticsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetDynamicEntityDiagnostics'][0])
+    public function getDynamicEntityDiagnosticsAsyncWithHttpInfo(string $contentType = self::contentTypes['getDynamicEntityDiagnostics'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetDynamicEntityDiagnostics200Response';
-        $request = $this->oBPv600GetDynamicEntityDiagnosticsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetDynamicEntityDiagnostics200Response';
+        $request = $this->getDynamicEntityDiagnosticsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -832,14 +832,14 @@ class DynamicEntityApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetDynamicEntityDiagnostics'
+     * Create request for operation 'getDynamicEntityDiagnostics'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetDynamicEntityDiagnostics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicEntityDiagnostics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetDynamicEntityDiagnosticsRequest(string $contentType = self::contentTypes['oBPv600GetDynamicEntityDiagnostics'][0])
+    public function getDynamicEntityDiagnosticsRequest(string $contentType = self::contentTypes['getDynamicEntityDiagnostics'][0])
     {
 
 
@@ -895,9 +895,9 @@ class DynamicEntityApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -922,36 +922,36 @@ class DynamicEntityApi
     }
 
     /**
-     * Operation oBPv600GetReferenceTypes
+     * Operation getReferenceTypes
      *
      * Get Reference Types for Dynamic Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetReferenceTypes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReferenceTypes'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetReferenceTypes200Response
+     * @return \OpenBankProject\Model\GetReferenceTypes200Response
      */
-    public function oBPv600GetReferenceTypes(string $contentType = self::contentTypes['oBPv600GetReferenceTypes'][0])
+    public function getReferenceTypes(string $contentType = self::contentTypes['getReferenceTypes'][0])
     {
-        list($response) = $this->oBPv600GetReferenceTypesWithHttpInfo($contentType);
+        list($response) = $this->getReferenceTypesWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetReferenceTypesWithHttpInfo
+     * Operation getReferenceTypesWithHttpInfo
      *
      * Get Reference Types for Dynamic Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetReferenceTypes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReferenceTypes'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetReferenceTypes200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetReferenceTypes200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetReferenceTypesWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetReferenceTypes'][0])
+    public function getReferenceTypesWithHttpInfo(string $contentType = self::contentTypes['getReferenceTypes'][0])
     {
-        $request = $this->oBPv600GetReferenceTypesRequest($contentType);
+        $request = $this->getReferenceTypesRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -979,7 +979,7 @@ class DynamicEntityApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetReferenceTypes200Response',
+                        '\OpenBankProject\Model\GetReferenceTypes200Response',
                         $request,
                         $response,
                     );
@@ -1001,7 +1001,7 @@ class DynamicEntityApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetReferenceTypes200Response',
+                '\OpenBankProject\Model\GetReferenceTypes200Response',
                 $request,
                 $response,
             );
@@ -1010,7 +1010,7 @@ class DynamicEntityApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetReferenceTypes200Response',
+                        '\OpenBankProject\Model\GetReferenceTypes200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1023,18 +1023,18 @@ class DynamicEntityApi
     }
 
     /**
-     * Operation oBPv600GetReferenceTypesAsync
+     * Operation getReferenceTypesAsync
      *
      * Get Reference Types for Dynamic Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetReferenceTypes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReferenceTypes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetReferenceTypesAsync(string $contentType = self::contentTypes['oBPv600GetReferenceTypes'][0])
+    public function getReferenceTypesAsync(string $contentType = self::contentTypes['getReferenceTypes'][0])
     {
-        return $this->oBPv600GetReferenceTypesAsyncWithHttpInfo($contentType)
+        return $this->getReferenceTypesAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1043,19 +1043,19 @@ class DynamicEntityApi
     }
 
     /**
-     * Operation oBPv600GetReferenceTypesAsyncWithHttpInfo
+     * Operation getReferenceTypesAsyncWithHttpInfo
      *
      * Get Reference Types for Dynamic Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetReferenceTypes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReferenceTypes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetReferenceTypesAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetReferenceTypes'][0])
+    public function getReferenceTypesAsyncWithHttpInfo(string $contentType = self::contentTypes['getReferenceTypes'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetReferenceTypes200Response';
-        $request = $this->oBPv600GetReferenceTypesRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetReferenceTypes200Response';
+        $request = $this->getReferenceTypesRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1094,14 +1094,14 @@ class DynamicEntityApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetReferenceTypes'
+     * Create request for operation 'getReferenceTypes'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetReferenceTypes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReferenceTypes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetReferenceTypesRequest(string $contentType = self::contentTypes['oBPv600GetReferenceTypes'][0])
+    public function getReferenceTypesRequest(string $contentType = self::contentTypes['getReferenceTypes'][0])
     {
 
 
@@ -1157,9 +1157,9 @@ class DynamicEntityApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

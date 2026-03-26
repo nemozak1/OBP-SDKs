@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -47,8 +47,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelname">The CHANNELNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteSignalChannelApiResponse"/>&gt;</returns>
-        Task<IOBPv600DeleteSignalChannelApiResponse> OBPv600DeleteSignalChannelAsync(string channelname, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteSignalChannelApiResponse"/>&gt;</returns>
+        Task<IDeleteSignalChannelApiResponse> DeleteSignalChannelAsync(string channelname, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Signal Channel
@@ -58,8 +58,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="channelname">The CHANNELNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteSignalChannelApiResponse"/>?&gt;</returns>
-        Task<IOBPv600DeleteSignalChannelApiResponse?> OBPv600DeleteSignalChannelOrDefaultAsync(string channelname, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteSignalChannelApiResponse"/>?&gt;</returns>
+        Task<IDeleteSignalChannelApiResponse?> DeleteSignalChannelOrDefaultAsync(string channelname, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Signal Channel Info
@@ -70,8 +70,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelname">The CHANNELNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetSignalChannelInfoApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetSignalChannelInfoApiResponse> OBPv600GetSignalChannelInfoAsync(string channelname, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSignalChannelInfoApiResponse"/>&gt;</returns>
+        Task<IGetSignalChannelInfoApiResponse> GetSignalChannelInfoAsync(string channelname, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Signal Channel Info
@@ -81,8 +81,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="channelname">The CHANNELNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetSignalChannelInfoApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetSignalChannelInfoApiResponse?> OBPv600GetSignalChannelInfoOrDefaultAsync(string channelname, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSignalChannelInfoApiResponse"/>?&gt;</returns>
+        Task<IGetSignalChannelInfoApiResponse?> GetSignalChannelInfoOrDefaultAsync(string channelname, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List Signal Channels
@@ -92,8 +92,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetSignalChannelsApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetSignalChannelsApiResponse> OBPv600GetSignalChannelsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSignalChannelsApiResponse"/>&gt;</returns>
+        Task<IGetSignalChannelsApiResponse> GetSignalChannelsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List Signal Channels
@@ -102,8 +102,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint lists active signal channels.&lt;br /&gt; Only channels that contain at least one broadcast message (no to_user_id) are listed.&lt;br /&gt; Private-only channels are not shown.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channels&lt;/strong&gt;&lt;/a&gt;: channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetSignalChannelsApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetSignalChannelsApiResponse?> OBPv600GetSignalChannelsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSignalChannelsApiResponse"/>?&gt;</returns>
+        Task<IGetSignalChannelsApiResponse?> GetSignalChannelsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Signal Messages
@@ -114,8 +114,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelname">The CHANNELNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetSignalMessagesApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetSignalMessagesApiResponse> OBPv600GetSignalMessagesAsync(string channelname, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSignalMessagesApiResponse"/>&gt;</returns>
+        Task<IGetSignalMessagesApiResponse> GetSignalMessagesAsync(string channelname, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Signal Messages
@@ -125,8 +125,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="channelname">The CHANNELNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetSignalMessagesApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetSignalMessagesApiResponse?> OBPv600GetSignalMessagesOrDefaultAsync(string channelname, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSignalMessagesApiResponse"/>?&gt;</returns>
+        Task<IGetSignalMessagesApiResponse?> GetSignalMessagesOrDefaultAsync(string channelname, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Signal Channel Stats
@@ -136,8 +136,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetSignalStatsApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetSignalStatsApiResponse> OBPv600GetSignalStatsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSignalStatsApiResponse"/>&gt;</returns>
+        Task<IGetSignalStatsApiResponse> GetSignalStatsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Signal Channel Stats
@@ -146,8 +146,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Returns statistics for all signal channels, including private-only channels.&lt;/p&gt; &lt;p&gt;Unlike the List Signal Channels endpoint, this does not filter out private-only channels.&lt;br /&gt; It provides a complete view of all active channels with message counts and TTL info.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channels&lt;/strong&gt;&lt;/a&gt;: channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_channels&lt;/strong&gt;&lt;/a&gt;: total_channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_messages&lt;/strong&gt;&lt;/a&gt;: total_messages&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetSignalStatsApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetSignalStatsApiResponse?> OBPv600GetSignalStatsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSignalStatsApiResponse"/>?&gt;</returns>
+        Task<IGetSignalStatsApiResponse?> GetSignalStatsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Publish Signal Message
@@ -157,10 +157,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelname">The CHANNELNAME identifier</param>
-        /// <param name="oBPv600PublishSignalMessageRequest">Request body</param>
+        /// <param name="publishSignalMessageRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600PublishSignalMessageApiResponse"/>&gt;</returns>
-        Task<IOBPv600PublishSignalMessageApiResponse> OBPv600PublishSignalMessageAsync(string channelname, OBPv600PublishSignalMessageRequest oBPv600PublishSignalMessageRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IPublishSignalMessageApiResponse"/>&gt;</returns>
+        Task<IPublishSignalMessageApiResponse> PublishSignalMessageAsync(string channelname, PublishSignalMessageRequest publishSignalMessageRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Publish Signal Message
@@ -169,16 +169,16 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Publish a message to a signal channel.&lt;/p&gt; &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging for lightweight coordination between&lt;br /&gt; AI agents and other OBP consumers. Messages are not persisted to a database.&lt;/p&gt; &lt;p&gt;Channels are auto-created on first publish and expire after a configurable TTL (default 1 hour).&lt;br /&gt; Messages are capped at a configurable maximum per channel (default 1000).&lt;/p&gt; &lt;p&gt;The payload field accepts any valid JSON content.&lt;/p&gt; &lt;p&gt;Set to_user_id to send a private message visible only to the sender and recipient.&lt;br /&gt; Leave to_user_id empty for a broadcast message visible to all channel readers.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#payload\&quot;&gt;&lt;strong&gt;payload&lt;/strong&gt;&lt;/a&gt;: payload&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;message_type&lt;/a&gt;: message_type&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_user_id&lt;/a&gt;: to_user_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_message_count&lt;/strong&gt;&lt;/a&gt;: channel_message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_id&lt;/strong&gt;&lt;/a&gt;: message_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;timestamp&lt;/strong&gt;&lt;/a&gt;: timestamp&lt;/p&gt; 
         /// </remarks>
         /// <param name="channelname">The CHANNELNAME identifier</param>
-        /// <param name="oBPv600PublishSignalMessageRequest">Request body</param>
+        /// <param name="publishSignalMessageRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600PublishSignalMessageApiResponse"/>?&gt;</returns>
-        Task<IOBPv600PublishSignalMessageApiResponse?> OBPv600PublishSignalMessageOrDefaultAsync(string channelname, OBPv600PublishSignalMessageRequest oBPv600PublishSignalMessageRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IPublishSignalMessageApiResponse"/>?&gt;</returns>
+        Task<IPublishSignalMessageApiResponse?> PublishSignalMessageOrDefaultAsync(string channelname, PublishSignalMessageRequest publishSignalMessageRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600DeleteSignalChannelApiResponse"/>
+    /// The <see cref="IDeleteSignalChannelApiResponse"/>
     /// </summary>
-    public interface IOBPv600DeleteSignalChannelApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600DeleteSignalChannel200Response?>
+    public interface IDeleteSignalChannelApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.DeleteSignalChannel200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -194,9 +194,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600GetSignalChannelInfoApiResponse"/>
+    /// The <see cref="IGetSignalChannelInfoApiResponse"/>
     /// </summary>
-    public interface IOBPv600GetSignalChannelInfoApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetSignalChannelInfo200Response?>
+    public interface IGetSignalChannelInfoApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetSignalChannelInfo200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -212,9 +212,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600GetSignalChannelsApiResponse"/>
+    /// The <see cref="IGetSignalChannelsApiResponse"/>
     /// </summary>
-    public interface IOBPv600GetSignalChannelsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetSignalChannels200Response?>
+    public interface IGetSignalChannelsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetSignalChannels200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -230,9 +230,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600GetSignalMessagesApiResponse"/>
+    /// The <see cref="IGetSignalMessagesApiResponse"/>
     /// </summary>
-    public interface IOBPv600GetSignalMessagesApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetSignalMessages200Response?>
+    public interface IGetSignalMessagesApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetSignalMessages200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -248,9 +248,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600GetSignalStatsApiResponse"/>
+    /// The <see cref="IGetSignalStatsApiResponse"/>
     /// </summary>
-    public interface IOBPv600GetSignalStatsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetSignalStats200Response?>
+    public interface IGetSignalStatsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetSignalStats200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -266,9 +266,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600PublishSignalMessageApiResponse"/>
+    /// The <see cref="IPublishSignalMessageApiResponse"/>
     /// </summary>
-    public interface IOBPv600PublishSignalMessageApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600PublishSignalMessage200Response?>
+    public interface IPublishSignalMessageApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.PublishSignalMessage200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -291,121 +291,121 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600DeleteSignalChannel;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteSignalChannel;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600DeleteSignalChannel;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteSignalChannel;
 
-        internal void ExecuteOnOBPv600DeleteSignalChannel(AIAgentApi.OBPv600DeleteSignalChannelApiResponse apiResponse)
+        internal void ExecuteOnDeleteSignalChannel(AIAgentApi.DeleteSignalChannelApiResponse apiResponse)
         {
-            OnOBPv600DeleteSignalChannel?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteSignalChannel?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600DeleteSignalChannel(Exception exception)
+        internal void ExecuteOnErrorDeleteSignalChannel(Exception exception)
         {
-            OnErrorOBPv600DeleteSignalChannel?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteSignalChannel?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetSignalChannelInfo;
+        public event EventHandler<ApiResponseEventArgs>? OnGetSignalChannelInfo;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetSignalChannelInfo;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetSignalChannelInfo;
 
-        internal void ExecuteOnOBPv600GetSignalChannelInfo(AIAgentApi.OBPv600GetSignalChannelInfoApiResponse apiResponse)
+        internal void ExecuteOnGetSignalChannelInfo(AIAgentApi.GetSignalChannelInfoApiResponse apiResponse)
         {
-            OnOBPv600GetSignalChannelInfo?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetSignalChannelInfo?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetSignalChannelInfo(Exception exception)
+        internal void ExecuteOnErrorGetSignalChannelInfo(Exception exception)
         {
-            OnErrorOBPv600GetSignalChannelInfo?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetSignalChannelInfo?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetSignalChannels;
+        public event EventHandler<ApiResponseEventArgs>? OnGetSignalChannels;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetSignalChannels;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetSignalChannels;
 
-        internal void ExecuteOnOBPv600GetSignalChannels(AIAgentApi.OBPv600GetSignalChannelsApiResponse apiResponse)
+        internal void ExecuteOnGetSignalChannels(AIAgentApi.GetSignalChannelsApiResponse apiResponse)
         {
-            OnOBPv600GetSignalChannels?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetSignalChannels?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetSignalChannels(Exception exception)
+        internal void ExecuteOnErrorGetSignalChannels(Exception exception)
         {
-            OnErrorOBPv600GetSignalChannels?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetSignalChannels?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetSignalMessages;
+        public event EventHandler<ApiResponseEventArgs>? OnGetSignalMessages;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetSignalMessages;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetSignalMessages;
 
-        internal void ExecuteOnOBPv600GetSignalMessages(AIAgentApi.OBPv600GetSignalMessagesApiResponse apiResponse)
+        internal void ExecuteOnGetSignalMessages(AIAgentApi.GetSignalMessagesApiResponse apiResponse)
         {
-            OnOBPv600GetSignalMessages?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetSignalMessages?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetSignalMessages(Exception exception)
+        internal void ExecuteOnErrorGetSignalMessages(Exception exception)
         {
-            OnErrorOBPv600GetSignalMessages?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetSignalMessages?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetSignalStats;
+        public event EventHandler<ApiResponseEventArgs>? OnGetSignalStats;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetSignalStats;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetSignalStats;
 
-        internal void ExecuteOnOBPv600GetSignalStats(AIAgentApi.OBPv600GetSignalStatsApiResponse apiResponse)
+        internal void ExecuteOnGetSignalStats(AIAgentApi.GetSignalStatsApiResponse apiResponse)
         {
-            OnOBPv600GetSignalStats?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetSignalStats?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetSignalStats(Exception exception)
+        internal void ExecuteOnErrorGetSignalStats(Exception exception)
         {
-            OnErrorOBPv600GetSignalStats?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetSignalStats?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600PublishSignalMessage;
+        public event EventHandler<ApiResponseEventArgs>? OnPublishSignalMessage;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600PublishSignalMessage;
+        public event EventHandler<ExceptionEventArgs>? OnErrorPublishSignalMessage;
 
-        internal void ExecuteOnOBPv600PublishSignalMessage(AIAgentApi.OBPv600PublishSignalMessageApiResponse apiResponse)
+        internal void ExecuteOnPublishSignalMessage(AIAgentApi.PublishSignalMessageApiResponse apiResponse)
         {
-            OnOBPv600PublishSignalMessage?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnPublishSignalMessage?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600PublishSignalMessage(Exception exception)
+        internal void ExecuteOnErrorPublishSignalMessage(Exception exception)
         {
-            OnErrorOBPv600PublishSignalMessage?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorPublishSignalMessage?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -463,14 +463,14 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv600DeleteSignalChannel(ref string channelname);
+        partial void FormatDeleteSignalChannel(ref string channelname);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="channelname"></param>
         /// <returns></returns>
-        private void ValidateOBPv600DeleteSignalChannel(string channelname)
+        private void ValidateDeleteSignalChannel(string channelname)
         {
             if (channelname == null)
                 throw new ArgumentNullException(nameof(channelname));
@@ -481,10 +481,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="channelname"></param>
-        private void AfterOBPv600DeleteSignalChannelDefaultImplementation(IOBPv600DeleteSignalChannelApiResponse apiResponseLocalVar, string channelname)
+        private void AfterDeleteSignalChannelDefaultImplementation(IDeleteSignalChannelApiResponse apiResponseLocalVar, string channelname)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600DeleteSignalChannel(ref suppressDefaultLog, apiResponseLocalVar, channelname);
+            AfterDeleteSignalChannel(ref suppressDefaultLog, apiResponseLocalVar, channelname);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -495,7 +495,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="channelname"></param>
-        partial void AfterOBPv600DeleteSignalChannel(ref bool suppressDefaultLog, IOBPv600DeleteSignalChannelApiResponse apiResponseLocalVar, string channelname);
+        partial void AfterDeleteSignalChannel(ref bool suppressDefaultLog, IDeleteSignalChannelApiResponse apiResponseLocalVar, string channelname);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -504,10 +504,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="channelname"></param>
-        private void OnErrorOBPv600DeleteSignalChannelDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string channelname)
+        private void OnErrorDeleteSignalChannelDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string channelname)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600DeleteSignalChannel(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, channelname);
+            OnErrorDeleteSignalChannel(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, channelname);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -520,19 +520,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="channelname"></param>
-        partial void OnErrorOBPv600DeleteSignalChannel(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string channelname);
+        partial void OnErrorDeleteSignalChannel(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string channelname);
 
         /// <summary>
         /// Delete Signal Channel &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint deletes a signal channel and all its messages immediately.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;deleted&lt;/strong&gt;&lt;/a&gt;: deleted&lt;/p&gt; 
         /// </summary>
         /// <param name="channelname">The CHANNELNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteSignalChannelApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600DeleteSignalChannelApiResponse?> OBPv600DeleteSignalChannelOrDefaultAsync(string channelname, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteSignalChannelApiResponse"/>&gt;</returns>
+        public async Task<IDeleteSignalChannelApiResponse?> DeleteSignalChannelOrDefaultAsync(string channelname, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600DeleteSignalChannelAsync(channelname, cancellationToken).ConfigureAwait(false);
+                return await DeleteSignalChannelAsync(channelname, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -546,16 +546,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelname">The CHANNELNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteSignalChannelApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600DeleteSignalChannelApiResponse> OBPv600DeleteSignalChannelAsync(string channelname, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteSignalChannelApiResponse"/>&gt;</returns>
+        public async Task<IDeleteSignalChannelApiResponse> DeleteSignalChannelAsync(string channelname, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600DeleteSignalChannel(channelname);
+                ValidateDeleteSignalChannel(channelname);
 
-                FormatOBPv600DeleteSignalChannel(ref channelname);
+                FormatDeleteSignalChannel(ref channelname);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -572,7 +572,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -599,8 +599,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600DeleteSignalChannelApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600DeleteSignalChannelApiResponse>();
-                        OBPv600DeleteSignalChannelApiResponse apiResponseLocalVar;
+                        ILogger<DeleteSignalChannelApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteSignalChannelApiResponse>();
+                        DeleteSignalChannelApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -611,9 +611,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600DeleteSignalChannelDefaultImplementation(apiResponseLocalVar, channelname);
+                        AfterDeleteSignalChannelDefaultImplementation(apiResponseLocalVar, channelname);
 
-                        Events.ExecuteOnOBPv600DeleteSignalChannel(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteSignalChannel(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -625,24 +625,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600DeleteSignalChannelDefaultImplementation(e, "/obp/v6.0.0/signal/channels/{channelname}", uriBuilderLocalVar.Path, channelname);
-                Events.ExecuteOnErrorOBPv600DeleteSignalChannel(e);
+                OnErrorDeleteSignalChannelDefaultImplementation(e, "/obp/v6.0.0/signal/channels/{channelname}", uriBuilderLocalVar.Path, channelname);
+                Events.ExecuteOnErrorDeleteSignalChannel(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600DeleteSignalChannelApiResponse"/>
+        /// The <see cref="DeleteSignalChannelApiResponse"/>
         /// </summary>
-        public partial class OBPv600DeleteSignalChannelApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600DeleteSignalChannelApiResponse
+        public partial class DeleteSignalChannelApiResponse : OpenBankProject.Client.ApiResponse, IDeleteSignalChannelApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600DeleteSignalChannelApiResponse> Logger { get; }
+            public ILogger<DeleteSignalChannelApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600DeleteSignalChannelApiResponse"/>
+            /// The <see cref="DeleteSignalChannelApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -651,14 +651,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600DeleteSignalChannelApiResponse(ILogger<OBPv600DeleteSignalChannelApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DeleteSignalChannelApiResponse(ILogger<DeleteSignalChannelApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600DeleteSignalChannelApiResponse"/>
+            /// The <see cref="DeleteSignalChannelApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -667,7 +667,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600DeleteSignalChannelApiResponse(ILogger<OBPv600DeleteSignalChannelApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DeleteSignalChannelApiResponse(ILogger<DeleteSignalChannelApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -685,11 +685,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600DeleteSignalChannel200Response? Ok()
+            public OpenBankProject.Model.DeleteSignalChannel200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600DeleteSignalChannel200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.DeleteSignalChannel200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -698,7 +698,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600DeleteSignalChannel200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.DeleteSignalChannel200Response? result)
             {
                 result = null;
 
@@ -730,14 +730,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600GetSignalChannelInfo(ref string channelname);
+        partial void FormatGetSignalChannelInfo(ref string channelname);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="channelname"></param>
         /// <returns></returns>
-        private void ValidateOBPv600GetSignalChannelInfo(string channelname)
+        private void ValidateGetSignalChannelInfo(string channelname)
         {
             if (channelname == null)
                 throw new ArgumentNullException(nameof(channelname));
@@ -748,10 +748,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="channelname"></param>
-        private void AfterOBPv600GetSignalChannelInfoDefaultImplementation(IOBPv600GetSignalChannelInfoApiResponse apiResponseLocalVar, string channelname)
+        private void AfterGetSignalChannelInfoDefaultImplementation(IGetSignalChannelInfoApiResponse apiResponseLocalVar, string channelname)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetSignalChannelInfo(ref suppressDefaultLog, apiResponseLocalVar, channelname);
+            AfterGetSignalChannelInfo(ref suppressDefaultLog, apiResponseLocalVar, channelname);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -762,7 +762,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="channelname"></param>
-        partial void AfterOBPv600GetSignalChannelInfo(ref bool suppressDefaultLog, IOBPv600GetSignalChannelInfoApiResponse apiResponseLocalVar, string channelname);
+        partial void AfterGetSignalChannelInfo(ref bool suppressDefaultLog, IGetSignalChannelInfoApiResponse apiResponseLocalVar, string channelname);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -771,10 +771,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="channelname"></param>
-        private void OnErrorOBPv600GetSignalChannelInfoDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string channelname)
+        private void OnErrorGetSignalChannelInfoDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string channelname)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetSignalChannelInfo(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, channelname);
+            OnErrorGetSignalChannelInfo(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, channelname);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -787,19 +787,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="channelname"></param>
-        partial void OnErrorOBPv600GetSignalChannelInfo(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string channelname);
+        partial void OnErrorGetSignalChannelInfo(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string channelname);
 
         /// <summary>
         /// Get Signal Channel Info &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint returns metadata about a signal channel including the current message count and remaining TTL in seconds.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
         /// </summary>
         /// <param name="channelname">The CHANNELNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetSignalChannelInfoApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetSignalChannelInfoApiResponse?> OBPv600GetSignalChannelInfoOrDefaultAsync(string channelname, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSignalChannelInfoApiResponse"/>&gt;</returns>
+        public async Task<IGetSignalChannelInfoApiResponse?> GetSignalChannelInfoOrDefaultAsync(string channelname, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetSignalChannelInfoAsync(channelname, cancellationToken).ConfigureAwait(false);
+                return await GetSignalChannelInfoAsync(channelname, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -813,16 +813,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelname">The CHANNELNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetSignalChannelInfoApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetSignalChannelInfoApiResponse> OBPv600GetSignalChannelInfoAsync(string channelname, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSignalChannelInfoApiResponse"/>&gt;</returns>
+        public async Task<IGetSignalChannelInfoApiResponse> GetSignalChannelInfoAsync(string channelname, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600GetSignalChannelInfo(channelname);
+                ValidateGetSignalChannelInfo(channelname);
 
-                FormatOBPv600GetSignalChannelInfo(ref channelname);
+                FormatGetSignalChannelInfo(ref channelname);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -839,7 +839,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -866,8 +866,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600GetSignalChannelInfoApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600GetSignalChannelInfoApiResponse>();
-                        OBPv600GetSignalChannelInfoApiResponse apiResponseLocalVar;
+                        ILogger<GetSignalChannelInfoApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetSignalChannelInfoApiResponse>();
+                        GetSignalChannelInfoApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -878,9 +878,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetSignalChannelInfoDefaultImplementation(apiResponseLocalVar, channelname);
+                        AfterGetSignalChannelInfoDefaultImplementation(apiResponseLocalVar, channelname);
 
-                        Events.ExecuteOnOBPv600GetSignalChannelInfo(apiResponseLocalVar);
+                        Events.ExecuteOnGetSignalChannelInfo(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -892,24 +892,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetSignalChannelInfoDefaultImplementation(e, "/obp/v6.0.0/signal/channels/{channelname}/info", uriBuilderLocalVar.Path, channelname);
-                Events.ExecuteOnErrorOBPv600GetSignalChannelInfo(e);
+                OnErrorGetSignalChannelInfoDefaultImplementation(e, "/obp/v6.0.0/signal/channels/{channelname}/info", uriBuilderLocalVar.Path, channelname);
+                Events.ExecuteOnErrorGetSignalChannelInfo(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600GetSignalChannelInfoApiResponse"/>
+        /// The <see cref="GetSignalChannelInfoApiResponse"/>
         /// </summary>
-        public partial class OBPv600GetSignalChannelInfoApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600GetSignalChannelInfoApiResponse
+        public partial class GetSignalChannelInfoApiResponse : OpenBankProject.Client.ApiResponse, IGetSignalChannelInfoApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600GetSignalChannelInfoApiResponse> Logger { get; }
+            public ILogger<GetSignalChannelInfoApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600GetSignalChannelInfoApiResponse"/>
+            /// The <see cref="GetSignalChannelInfoApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -918,14 +918,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetSignalChannelInfoApiResponse(ILogger<OBPv600GetSignalChannelInfoApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetSignalChannelInfoApiResponse(ILogger<GetSignalChannelInfoApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600GetSignalChannelInfoApiResponse"/>
+            /// The <see cref="GetSignalChannelInfoApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -934,7 +934,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetSignalChannelInfoApiResponse(ILogger<OBPv600GetSignalChannelInfoApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetSignalChannelInfoApiResponse(ILogger<GetSignalChannelInfoApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -952,11 +952,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetSignalChannelInfo200Response? Ok()
+            public OpenBankProject.Model.GetSignalChannelInfo200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetSignalChannelInfo200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetSignalChannelInfo200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -965,7 +965,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetSignalChannelInfo200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetSignalChannelInfo200Response? result)
             {
                 result = null;
 
@@ -1001,10 +1001,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetSignalChannelsDefaultImplementation(IOBPv600GetSignalChannelsApiResponse apiResponseLocalVar)
+        private void AfterGetSignalChannelsDefaultImplementation(IGetSignalChannelsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetSignalChannels(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetSignalChannels(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1014,7 +1014,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetSignalChannels(ref bool suppressDefaultLog, IOBPv600GetSignalChannelsApiResponse apiResponseLocalVar);
+        partial void AfterGetSignalChannels(ref bool suppressDefaultLog, IGetSignalChannelsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1022,10 +1022,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetSignalChannelsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetSignalChannelsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetSignalChannels(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetSignalChannels(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1037,18 +1037,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetSignalChannels(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetSignalChannels(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// List Signal Channels &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint lists active signal channels.&lt;br /&gt; Only channels that contain at least one broadcast message (no to_user_id) are listed.&lt;br /&gt; Private-only channels are not shown.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channels&lt;/strong&gt;&lt;/a&gt;: channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetSignalChannelsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetSignalChannelsApiResponse?> OBPv600GetSignalChannelsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSignalChannelsApiResponse"/>&gt;</returns>
+        public async Task<IGetSignalChannelsApiResponse?> GetSignalChannelsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetSignalChannelsAsync(cancellationToken).ConfigureAwait(false);
+                return await GetSignalChannelsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1061,8 +1061,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetSignalChannelsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetSignalChannelsApiResponse> OBPv600GetSignalChannelsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSignalChannelsApiResponse"/>&gt;</returns>
+        public async Task<IGetSignalChannelsApiResponse> GetSignalChannelsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -1082,7 +1082,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1109,8 +1109,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600GetSignalChannelsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600GetSignalChannelsApiResponse>();
-                        OBPv600GetSignalChannelsApiResponse apiResponseLocalVar;
+                        ILogger<GetSignalChannelsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetSignalChannelsApiResponse>();
+                        GetSignalChannelsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1121,9 +1121,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetSignalChannelsDefaultImplementation(apiResponseLocalVar);
+                        AfterGetSignalChannelsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv600GetSignalChannels(apiResponseLocalVar);
+                        Events.ExecuteOnGetSignalChannels(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1135,24 +1135,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetSignalChannelsDefaultImplementation(e, "/obp/v6.0.0/signal/channels", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetSignalChannels(e);
+                OnErrorGetSignalChannelsDefaultImplementation(e, "/obp/v6.0.0/signal/channels", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetSignalChannels(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600GetSignalChannelsApiResponse"/>
+        /// The <see cref="GetSignalChannelsApiResponse"/>
         /// </summary>
-        public partial class OBPv600GetSignalChannelsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600GetSignalChannelsApiResponse
+        public partial class GetSignalChannelsApiResponse : OpenBankProject.Client.ApiResponse, IGetSignalChannelsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600GetSignalChannelsApiResponse> Logger { get; }
+            public ILogger<GetSignalChannelsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600GetSignalChannelsApiResponse"/>
+            /// The <see cref="GetSignalChannelsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1161,14 +1161,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetSignalChannelsApiResponse(ILogger<OBPv600GetSignalChannelsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetSignalChannelsApiResponse(ILogger<GetSignalChannelsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600GetSignalChannelsApiResponse"/>
+            /// The <see cref="GetSignalChannelsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1177,7 +1177,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetSignalChannelsApiResponse(ILogger<OBPv600GetSignalChannelsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetSignalChannelsApiResponse(ILogger<GetSignalChannelsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1195,11 +1195,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetSignalChannels200Response? Ok()
+            public OpenBankProject.Model.GetSignalChannels200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetSignalChannels200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetSignalChannels200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1208,7 +1208,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetSignalChannels200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetSignalChannels200Response? result)
             {
                 result = null;
 
@@ -1240,14 +1240,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600GetSignalMessages(ref string channelname);
+        partial void FormatGetSignalMessages(ref string channelname);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="channelname"></param>
         /// <returns></returns>
-        private void ValidateOBPv600GetSignalMessages(string channelname)
+        private void ValidateGetSignalMessages(string channelname)
         {
             if (channelname == null)
                 throw new ArgumentNullException(nameof(channelname));
@@ -1258,10 +1258,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="channelname"></param>
-        private void AfterOBPv600GetSignalMessagesDefaultImplementation(IOBPv600GetSignalMessagesApiResponse apiResponseLocalVar, string channelname)
+        private void AfterGetSignalMessagesDefaultImplementation(IGetSignalMessagesApiResponse apiResponseLocalVar, string channelname)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetSignalMessages(ref suppressDefaultLog, apiResponseLocalVar, channelname);
+            AfterGetSignalMessages(ref suppressDefaultLog, apiResponseLocalVar, channelname);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1272,7 +1272,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="channelname"></param>
-        partial void AfterOBPv600GetSignalMessages(ref bool suppressDefaultLog, IOBPv600GetSignalMessagesApiResponse apiResponseLocalVar, string channelname);
+        partial void AfterGetSignalMessages(ref bool suppressDefaultLog, IGetSignalMessagesApiResponse apiResponseLocalVar, string channelname);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1281,10 +1281,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="channelname"></param>
-        private void OnErrorOBPv600GetSignalMessagesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string channelname)
+        private void OnErrorGetSignalMessagesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string channelname)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetSignalMessages(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, channelname);
+            OnErrorGetSignalMessages(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, channelname);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1297,19 +1297,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="channelname"></param>
-        partial void OnErrorOBPv600GetSignalMessages(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string channelname);
+        partial void OnErrorGetSignalMessages(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string channelname);
 
         /// <summary>
         /// Get Signal Messages &lt;p&gt;Fetch messages from a signal channel with offset/limit pagination.&lt;/p&gt; &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery&lt;br /&gt; and coordination, but usable by any authenticated OBP consumer.&lt;/p&gt; &lt;p&gt;Messages are returned oldest-first.&lt;/p&gt; &lt;p&gt;Privacy filtering is applied server-side: you will only see broadcast messages (no to_user_id)&lt;br /&gt; and private messages addressed to you (to_user_id matches your user ID) or sent by you.&lt;/p&gt; &lt;p&gt;Use the offset parameter to poll for new messages by tracking your position.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;has_more&lt;/strong&gt;&lt;/a&gt;: has_more&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_id&lt;/strong&gt;&lt;/a&gt;: message_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_type&lt;/strong&gt;&lt;/a&gt;: message_type&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#messages\&quot;&gt;&lt;strong&gt;messages&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#payload\&quot;&gt;&lt;strong&gt;payload&lt;/strong&gt;&lt;/a&gt;: payload&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sender_consumer_id&lt;/strong&gt;&lt;/a&gt;: sender_consumer_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sender_user_id&lt;/strong&gt;&lt;/a&gt;: sender_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;timestamp&lt;/strong&gt;&lt;/a&gt;: timestamp&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_count&lt;/strong&gt;&lt;/a&gt;: total_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_user_id&lt;/a&gt;: to_user_id&lt;/p&gt; 
         /// </summary>
         /// <param name="channelname">The CHANNELNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetSignalMessagesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetSignalMessagesApiResponse?> OBPv600GetSignalMessagesOrDefaultAsync(string channelname, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSignalMessagesApiResponse"/>&gt;</returns>
+        public async Task<IGetSignalMessagesApiResponse?> GetSignalMessagesOrDefaultAsync(string channelname, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetSignalMessagesAsync(channelname, cancellationToken).ConfigureAwait(false);
+                return await GetSignalMessagesAsync(channelname, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1323,16 +1323,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelname">The CHANNELNAME identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetSignalMessagesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetSignalMessagesApiResponse> OBPv600GetSignalMessagesAsync(string channelname, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSignalMessagesApiResponse"/>&gt;</returns>
+        public async Task<IGetSignalMessagesApiResponse> GetSignalMessagesAsync(string channelname, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600GetSignalMessages(channelname);
+                ValidateGetSignalMessages(channelname);
 
-                FormatOBPv600GetSignalMessages(ref channelname);
+                FormatGetSignalMessages(ref channelname);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1349,7 +1349,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1376,8 +1376,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600GetSignalMessagesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600GetSignalMessagesApiResponse>();
-                        OBPv600GetSignalMessagesApiResponse apiResponseLocalVar;
+                        ILogger<GetSignalMessagesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetSignalMessagesApiResponse>();
+                        GetSignalMessagesApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1388,9 +1388,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetSignalMessagesDefaultImplementation(apiResponseLocalVar, channelname);
+                        AfterGetSignalMessagesDefaultImplementation(apiResponseLocalVar, channelname);
 
-                        Events.ExecuteOnOBPv600GetSignalMessages(apiResponseLocalVar);
+                        Events.ExecuteOnGetSignalMessages(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1402,24 +1402,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetSignalMessagesDefaultImplementation(e, "/obp/v6.0.0/signal/channels/{channelname}/messages", uriBuilderLocalVar.Path, channelname);
-                Events.ExecuteOnErrorOBPv600GetSignalMessages(e);
+                OnErrorGetSignalMessagesDefaultImplementation(e, "/obp/v6.0.0/signal/channels/{channelname}/messages", uriBuilderLocalVar.Path, channelname);
+                Events.ExecuteOnErrorGetSignalMessages(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600GetSignalMessagesApiResponse"/>
+        /// The <see cref="GetSignalMessagesApiResponse"/>
         /// </summary>
-        public partial class OBPv600GetSignalMessagesApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600GetSignalMessagesApiResponse
+        public partial class GetSignalMessagesApiResponse : OpenBankProject.Client.ApiResponse, IGetSignalMessagesApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600GetSignalMessagesApiResponse> Logger { get; }
+            public ILogger<GetSignalMessagesApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600GetSignalMessagesApiResponse"/>
+            /// The <see cref="GetSignalMessagesApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1428,14 +1428,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetSignalMessagesApiResponse(ILogger<OBPv600GetSignalMessagesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetSignalMessagesApiResponse(ILogger<GetSignalMessagesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600GetSignalMessagesApiResponse"/>
+            /// The <see cref="GetSignalMessagesApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1444,7 +1444,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetSignalMessagesApiResponse(ILogger<OBPv600GetSignalMessagesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetSignalMessagesApiResponse(ILogger<GetSignalMessagesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1462,11 +1462,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetSignalMessages200Response? Ok()
+            public OpenBankProject.Model.GetSignalMessages200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetSignalMessages200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetSignalMessages200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1475,7 +1475,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetSignalMessages200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetSignalMessages200Response? result)
             {
                 result = null;
 
@@ -1511,10 +1511,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetSignalStatsDefaultImplementation(IOBPv600GetSignalStatsApiResponse apiResponseLocalVar)
+        private void AfterGetSignalStatsDefaultImplementation(IGetSignalStatsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetSignalStats(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetSignalStats(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1524,7 +1524,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetSignalStats(ref bool suppressDefaultLog, IOBPv600GetSignalStatsApiResponse apiResponseLocalVar);
+        partial void AfterGetSignalStats(ref bool suppressDefaultLog, IGetSignalStatsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1532,10 +1532,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetSignalStatsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetSignalStatsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetSignalStats(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetSignalStats(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1547,18 +1547,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetSignalStats(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetSignalStats(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Signal Channel Stats &lt;p&gt;Returns statistics for all signal channels, including private-only channels.&lt;/p&gt; &lt;p&gt;Unlike the List Signal Channels endpoint, this does not filter out private-only channels.&lt;br /&gt; It provides a complete view of all active channels with message counts and TTL info.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channels&lt;/strong&gt;&lt;/a&gt;: channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_channels&lt;/strong&gt;&lt;/a&gt;: total_channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_messages&lt;/strong&gt;&lt;/a&gt;: total_messages&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetSignalStatsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetSignalStatsApiResponse?> OBPv600GetSignalStatsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSignalStatsApiResponse"/>&gt;</returns>
+        public async Task<IGetSignalStatsApiResponse?> GetSignalStatsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetSignalStatsAsync(cancellationToken).ConfigureAwait(false);
+                return await GetSignalStatsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1571,8 +1571,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetSignalStatsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetSignalStatsApiResponse> OBPv600GetSignalStatsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSignalStatsApiResponse"/>&gt;</returns>
+        public async Task<IGetSignalStatsApiResponse> GetSignalStatsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -1592,7 +1592,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1619,8 +1619,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600GetSignalStatsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600GetSignalStatsApiResponse>();
-                        OBPv600GetSignalStatsApiResponse apiResponseLocalVar;
+                        ILogger<GetSignalStatsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetSignalStatsApiResponse>();
+                        GetSignalStatsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1631,9 +1631,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetSignalStatsDefaultImplementation(apiResponseLocalVar);
+                        AfterGetSignalStatsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv600GetSignalStats(apiResponseLocalVar);
+                        Events.ExecuteOnGetSignalStats(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1645,24 +1645,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetSignalStatsDefaultImplementation(e, "/obp/v6.0.0/signal/channels/stats", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetSignalStats(e);
+                OnErrorGetSignalStatsDefaultImplementation(e, "/obp/v6.0.0/signal/channels/stats", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetSignalStats(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600GetSignalStatsApiResponse"/>
+        /// The <see cref="GetSignalStatsApiResponse"/>
         /// </summary>
-        public partial class OBPv600GetSignalStatsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600GetSignalStatsApiResponse
+        public partial class GetSignalStatsApiResponse : OpenBankProject.Client.ApiResponse, IGetSignalStatsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600GetSignalStatsApiResponse> Logger { get; }
+            public ILogger<GetSignalStatsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600GetSignalStatsApiResponse"/>
+            /// The <see cref="GetSignalStatsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1671,14 +1671,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetSignalStatsApiResponse(ILogger<OBPv600GetSignalStatsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetSignalStatsApiResponse(ILogger<GetSignalStatsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600GetSignalStatsApiResponse"/>
+            /// The <see cref="GetSignalStatsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1687,7 +1687,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetSignalStatsApiResponse(ILogger<OBPv600GetSignalStatsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetSignalStatsApiResponse(ILogger<GetSignalStatsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1705,11 +1705,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetSignalStats200Response? Ok()
+            public OpenBankProject.Model.GetSignalStats200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetSignalStats200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetSignalStats200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1718,7 +1718,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetSignalStats200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetSignalStats200Response? result)
             {
                 result = null;
 
@@ -1750,21 +1750,21 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600PublishSignalMessage(ref string channelname, OBPv600PublishSignalMessageRequest oBPv600PublishSignalMessageRequest);
+        partial void FormatPublishSignalMessage(ref string channelname, PublishSignalMessageRequest publishSignalMessageRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="channelname"></param>
-        /// <param name="oBPv600PublishSignalMessageRequest"></param>
+        /// <param name="publishSignalMessageRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600PublishSignalMessage(string channelname, OBPv600PublishSignalMessageRequest oBPv600PublishSignalMessageRequest)
+        private void ValidatePublishSignalMessage(string channelname, PublishSignalMessageRequest publishSignalMessageRequest)
         {
             if (channelname == null)
                 throw new ArgumentNullException(nameof(channelname));
 
-            if (oBPv600PublishSignalMessageRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600PublishSignalMessageRequest));
+            if (publishSignalMessageRequest == null)
+                throw new ArgumentNullException(nameof(publishSignalMessageRequest));
         }
 
         /// <summary>
@@ -1772,11 +1772,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="channelname"></param>
-        /// <param name="oBPv600PublishSignalMessageRequest"></param>
-        private void AfterOBPv600PublishSignalMessageDefaultImplementation(IOBPv600PublishSignalMessageApiResponse apiResponseLocalVar, string channelname, OBPv600PublishSignalMessageRequest oBPv600PublishSignalMessageRequest)
+        /// <param name="publishSignalMessageRequest"></param>
+        private void AfterPublishSignalMessageDefaultImplementation(IPublishSignalMessageApiResponse apiResponseLocalVar, string channelname, PublishSignalMessageRequest publishSignalMessageRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600PublishSignalMessage(ref suppressDefaultLog, apiResponseLocalVar, channelname, oBPv600PublishSignalMessageRequest);
+            AfterPublishSignalMessage(ref suppressDefaultLog, apiResponseLocalVar, channelname, publishSignalMessageRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1787,8 +1787,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="channelname"></param>
-        /// <param name="oBPv600PublishSignalMessageRequest"></param>
-        partial void AfterOBPv600PublishSignalMessage(ref bool suppressDefaultLog, IOBPv600PublishSignalMessageApiResponse apiResponseLocalVar, string channelname, OBPv600PublishSignalMessageRequest oBPv600PublishSignalMessageRequest);
+        /// <param name="publishSignalMessageRequest"></param>
+        partial void AfterPublishSignalMessage(ref bool suppressDefaultLog, IPublishSignalMessageApiResponse apiResponseLocalVar, string channelname, PublishSignalMessageRequest publishSignalMessageRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1797,11 +1797,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="channelname"></param>
-        /// <param name="oBPv600PublishSignalMessageRequest"></param>
-        private void OnErrorOBPv600PublishSignalMessageDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string channelname, OBPv600PublishSignalMessageRequest oBPv600PublishSignalMessageRequest)
+        /// <param name="publishSignalMessageRequest"></param>
+        private void OnErrorPublishSignalMessageDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string channelname, PublishSignalMessageRequest publishSignalMessageRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600PublishSignalMessage(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, channelname, oBPv600PublishSignalMessageRequest);
+            OnErrorPublishSignalMessage(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, channelname, publishSignalMessageRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1814,21 +1814,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="channelname"></param>
-        /// <param name="oBPv600PublishSignalMessageRequest"></param>
-        partial void OnErrorOBPv600PublishSignalMessage(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string channelname, OBPv600PublishSignalMessageRequest oBPv600PublishSignalMessageRequest);
+        /// <param name="publishSignalMessageRequest"></param>
+        partial void OnErrorPublishSignalMessage(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string channelname, PublishSignalMessageRequest publishSignalMessageRequest);
 
         /// <summary>
         /// Publish Signal Message &lt;p&gt;Publish a message to a signal channel.&lt;/p&gt; &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging for lightweight coordination between&lt;br /&gt; AI agents and other OBP consumers. Messages are not persisted to a database.&lt;/p&gt; &lt;p&gt;Channels are auto-created on first publish and expire after a configurable TTL (default 1 hour).&lt;br /&gt; Messages are capped at a configurable maximum per channel (default 1000).&lt;/p&gt; &lt;p&gt;The payload field accepts any valid JSON content.&lt;/p&gt; &lt;p&gt;Set to_user_id to send a private message visible only to the sender and recipient.&lt;br /&gt; Leave to_user_id empty for a broadcast message visible to all channel readers.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#payload\&quot;&gt;&lt;strong&gt;payload&lt;/strong&gt;&lt;/a&gt;: payload&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;message_type&lt;/a&gt;: message_type&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_user_id&lt;/a&gt;: to_user_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_message_count&lt;/strong&gt;&lt;/a&gt;: channel_message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_id&lt;/strong&gt;&lt;/a&gt;: message_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;timestamp&lt;/strong&gt;&lt;/a&gt;: timestamp&lt;/p&gt; 
         /// </summary>
         /// <param name="channelname">The CHANNELNAME identifier</param>
-        /// <param name="oBPv600PublishSignalMessageRequest">Request body</param>
+        /// <param name="publishSignalMessageRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600PublishSignalMessageApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600PublishSignalMessageApiResponse?> OBPv600PublishSignalMessageOrDefaultAsync(string channelname, OBPv600PublishSignalMessageRequest oBPv600PublishSignalMessageRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IPublishSignalMessageApiResponse"/>&gt;</returns>
+        public async Task<IPublishSignalMessageApiResponse?> PublishSignalMessageOrDefaultAsync(string channelname, PublishSignalMessageRequest publishSignalMessageRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600PublishSignalMessageAsync(channelname, oBPv600PublishSignalMessageRequest, cancellationToken).ConfigureAwait(false);
+                return await PublishSignalMessageAsync(channelname, publishSignalMessageRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1841,18 +1841,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelname">The CHANNELNAME identifier</param>
-        /// <param name="oBPv600PublishSignalMessageRequest">Request body</param>
+        /// <param name="publishSignalMessageRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600PublishSignalMessageApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600PublishSignalMessageApiResponse> OBPv600PublishSignalMessageAsync(string channelname, OBPv600PublishSignalMessageRequest oBPv600PublishSignalMessageRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IPublishSignalMessageApiResponse"/>&gt;</returns>
+        public async Task<IPublishSignalMessageApiResponse> PublishSignalMessageAsync(string channelname, PublishSignalMessageRequest publishSignalMessageRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600PublishSignalMessage(channelname, oBPv600PublishSignalMessageRequest);
+                ValidatePublishSignalMessage(channelname, publishSignalMessageRequest);
 
-                FormatOBPv600PublishSignalMessage(ref channelname, oBPv600PublishSignalMessageRequest);
+                FormatPublishSignalMessage(ref channelname, publishSignalMessageRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1864,16 +1864,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/signal/channels/{channelname}/messages");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bchannelname%7D", Uri.EscapeDataString(channelname.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600PublishSignalMessageRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (publishSignalMessageRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600PublishSignalMessageRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(publishSignalMessageRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1909,8 +1909,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600PublishSignalMessageApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600PublishSignalMessageApiResponse>();
-                        OBPv600PublishSignalMessageApiResponse apiResponseLocalVar;
+                        ILogger<PublishSignalMessageApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<PublishSignalMessageApiResponse>();
+                        PublishSignalMessageApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1921,9 +1921,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600PublishSignalMessageDefaultImplementation(apiResponseLocalVar, channelname, oBPv600PublishSignalMessageRequest);
+                        AfterPublishSignalMessageDefaultImplementation(apiResponseLocalVar, channelname, publishSignalMessageRequest);
 
-                        Events.ExecuteOnOBPv600PublishSignalMessage(apiResponseLocalVar);
+                        Events.ExecuteOnPublishSignalMessage(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1935,24 +1935,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600PublishSignalMessageDefaultImplementation(e, "/obp/v6.0.0/signal/channels/{channelname}/messages", uriBuilderLocalVar.Path, channelname, oBPv600PublishSignalMessageRequest);
-                Events.ExecuteOnErrorOBPv600PublishSignalMessage(e);
+                OnErrorPublishSignalMessageDefaultImplementation(e, "/obp/v6.0.0/signal/channels/{channelname}/messages", uriBuilderLocalVar.Path, channelname, publishSignalMessageRequest);
+                Events.ExecuteOnErrorPublishSignalMessage(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600PublishSignalMessageApiResponse"/>
+        /// The <see cref="PublishSignalMessageApiResponse"/>
         /// </summary>
-        public partial class OBPv600PublishSignalMessageApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600PublishSignalMessageApiResponse
+        public partial class PublishSignalMessageApiResponse : OpenBankProject.Client.ApiResponse, IPublishSignalMessageApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600PublishSignalMessageApiResponse> Logger { get; }
+            public ILogger<PublishSignalMessageApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600PublishSignalMessageApiResponse"/>
+            /// The <see cref="PublishSignalMessageApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1961,14 +1961,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600PublishSignalMessageApiResponse(ILogger<OBPv600PublishSignalMessageApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public PublishSignalMessageApiResponse(ILogger<PublishSignalMessageApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600PublishSignalMessageApiResponse"/>
+            /// The <see cref="PublishSignalMessageApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1977,7 +1977,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600PublishSignalMessageApiResponse(ILogger<OBPv600PublishSignalMessageApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public PublishSignalMessageApiResponse(ILogger<PublishSignalMessageApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1995,11 +1995,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600PublishSignalMessage200Response? Ok()
+            public OpenBankProject.Model.PublishSignalMessage200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600PublishSignalMessage200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.PublishSignalMessage200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2008,7 +2008,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600PublishSignalMessage200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.PublishSignalMessage200Response? result)
             {
                 result = null;
 

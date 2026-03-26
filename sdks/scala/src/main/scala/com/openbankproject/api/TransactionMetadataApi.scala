@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,22 +11,22 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv121AddImageForViewOnTransactionRequest
-import com.openbankproject.model.OBPv121GetCommentsForViewOnTransaction200Response
-import com.openbankproject.model.OBPv121GetImagesForViewOnTransaction200Response
-import com.openbankproject.model.OBPv121GetTransactionNarrative200Response
-import com.openbankproject.model.OBPv121GetWhereTagForViewOnTransaction200Response
-import com.openbankproject.model.OBPv121UpdateTransactionNarrative200Response
-import com.openbankproject.model.OBPv121UpdateWhereTagForViewOnTransactionRequest
-import com.openbankproject.model.OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems
-import com.openbankproject.model.OBPv400DeleteSystemLevelEndpointTag200Response
-import com.openbankproject.model.OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+import com.openbankproject.model.AddImageForViewOnTransactionRequest
+import com.openbankproject.model.GetCommentsForViewOnTransaction200Response
+import com.openbankproject.model.GetImagesForViewOnTransaction200Response
+import com.openbankproject.model.GetTagsForViewOnAccount200ResponseTagsInner
+import com.openbankproject.model.GetTransactionByIdForBankAccount200ResponseMetadataImagesInner
+import com.openbankproject.model.GetTransactionNarrative200Response
+import com.openbankproject.model.GetTransactionTypes200ResponseTransactionTypesInnerId
+import com.openbankproject.model.GetWhereTagForViewOnTransaction200Response
+import com.openbankproject.model.UpdateTransactionNarrative200Response
+import com.openbankproject.model.UpdateWhereTagForViewOnTransactionRequest
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object TransactionMetadataApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new TransactionMetadataApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new TransactionMetadataApi(baseUrl)
 }
 
 class TransactionMetadataApi(baseUrl: String) {
@@ -35,7 +35,7 @@ class TransactionMetadataApi(baseUrl: String) {
    * <p>Posts a comment about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>${authenticationRequiredMessage(false)}</p> <p>Authentication is required since the comment is linked with the user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems (Successful operation)
+   *   code 200 : GetTagsForViewOnAccount200ResponseTagsInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -47,22 +47,22 @@ class TransactionMetadataApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    * @param transactionid The TRANSACTIONID identifier
-   * @param oBPv400DeleteSystemLevelEndpointTag200Response Request body
+   * @param getTransactionTypes200ResponseTransactionTypesInnerId Request body
    */
-  def oBPv121AddCommentForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv400DeleteSystemLevelEndpointTag200Response: OBPv400DeleteSystemLevelEndpointTag200Response): Request[Either[ResponseException[String, Exception], OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems]] =
+  def addCommentForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String, getTransactionTypes200ResponseTransactionTypesInnerId: GetTransactionTypes200ResponseTransactionTypesInnerId): Request[Either[ResponseException[String, Exception], GetTagsForViewOnAccount200ResponseTagsInner]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/metadata/comments")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400DeleteSystemLevelEndpointTag200Response)
-      .response(asJson[OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(getTransactionTypes200ResponseTransactionTypesInnerId)
+      .response(asJson[GetTagsForViewOnAccount200ResponseTagsInner])
 
   /**
    * <p>Posts an image about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The image is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems (Successful operation)
+   *   code 200 : GetTransactionByIdForBankAccount200ResponseMetadataImagesInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -74,22 +74,22 @@ class TransactionMetadataApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    * @param transactionid The TRANSACTIONID identifier
-   * @param oBPv121AddImageForViewOnTransactionRequest Request body
+   * @param addImageForViewOnTransactionRequest Request body
    */
-  def oBPv121AddImageForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv121AddImageForViewOnTransactionRequest: OBPv121AddImageForViewOnTransactionRequest): Request[Either[ResponseException[String, Exception], OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems]] =
+  def addImageForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String, addImageForViewOnTransactionRequest: AddImageForViewOnTransactionRequest): Request[Either[ResponseException[String, Exception], GetTransactionByIdForBankAccount200ResponseMetadataImagesInner]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/metadata/images")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv121AddImageForViewOnTransactionRequest)
-      .response(asJson[OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(addImageForViewOnTransactionRequest)
+      .response(asJson[GetTransactionByIdForBankAccount200ResponseMetadataImagesInner])
 
   /**
    * <p>Posts a tag about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems (Successful operation)
+   *   code 200 : GetTagsForViewOnAccount200ResponseTagsInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -101,22 +101,22 @@ class TransactionMetadataApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    * @param transactionid The TRANSACTIONID identifier
-   * @param oBPv400DeleteSystemLevelEndpointTag200Response Request body
+   * @param getTransactionTypes200ResponseTransactionTypesInnerId Request body
    */
-  def oBPv121AddTagForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv400DeleteSystemLevelEndpointTag200Response: OBPv400DeleteSystemLevelEndpointTag200Response): Request[Either[ResponseException[String, Exception], OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems]] =
+  def addTagForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String, getTransactionTypes200ResponseTransactionTypesInnerId: GetTransactionTypes200ResponseTransactionTypesInnerId): Request[Either[ResponseException[String, Exception], GetTagsForViewOnAccount200ResponseTagsInner]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/metadata/tags")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400DeleteSystemLevelEndpointTag200Response)
-      .response(asJson[OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(getTransactionTypes200ResponseTransactionTypesInnerId)
+      .response(asJson[GetTagsForViewOnAccount200ResponseTagsInner])
 
   /**
    * <p>Creates a description of the transaction TRANSACTION_ID.</p> <p>Note: Unlike other items of metadata, there is only one &quot;narrative&quot; per transaction accross all views.<br /> If you set narrative via a view e.g. view-x it will be seen via view-y (as long as view-y has permission to see the narrative).</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -128,22 +128,22 @@ class TransactionMetadataApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    * @param transactionid The TRANSACTIONID identifier
-   * @param oBPv121GetTransactionNarrative200Response Request body
+   * @param getTransactionNarrative200Response Request body
    */
-  def oBPv121AddTransactionNarrative(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv121GetTransactionNarrative200Response: OBPv121GetTransactionNarrative200Response): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def addTransactionNarrative(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String, getTransactionNarrative200Response: GetTransactionNarrative200Response): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/metadata/narrative")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv121GetTransactionNarrative200Response)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(getTransactionNarrative200Response)
+      .response(asJson[UpdateTransactionNarrative200Response])
 
   /**
    * <p>Creates a &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -155,16 +155,16 @@ class TransactionMetadataApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    * @param transactionid The TRANSACTIONID identifier
-   * @param oBPv121UpdateWhereTagForViewOnTransactionRequest Request body
+   * @param updateWhereTagForViewOnTransactionRequest Request body
    */
-  def oBPv121AddWhereTagForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv121UpdateWhereTagForViewOnTransactionRequest: OBPv121UpdateWhereTagForViewOnTransactionRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def addWhereTagForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String, updateWhereTagForViewOnTransactionRequest: UpdateWhereTagForViewOnTransactionRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/metadata/where")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv121UpdateWhereTagForViewOnTransactionRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateWhereTagForViewOnTransactionRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
 
   /**
    * <p>Delete the comment COMMENT_ID about the transaction TRANSACTION_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>Authentication via OAuth is required. The user must either have owner privileges for this account, or must be the user that posted the comment.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#comment_id\">COMMENT_ID</a>:</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
@@ -184,12 +184,12 @@ class TransactionMetadataApi(baseUrl: String) {
    * @param transactionid The TRANSACTIONID identifier
    * @param commentid The COMMENTID identifier
    */
-  def oBPv121DeleteCommentForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String, commentid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteCommentForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String, commentid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/metadata/comments/${commentid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -210,12 +210,12 @@ class TransactionMetadataApi(baseUrl: String) {
    * @param transactionid The TRANSACTIONID identifier
    * @param imageid The IMAGEID identifier
    */
-  def oBPv121DeleteImageForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String, imageid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteImageForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String, imageid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/metadata/images/${imageid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -232,7 +232,7 @@ class TransactionMetadataApi(baseUrl: String) {
    * @param transactionid The TRANSACTIONID identifier
    * @param tagid The TAGID identifier
    */
-  def oBPv121DeleteTagForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, tagid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteTagForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String, tagid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/metadata/tags/${tagid}")
       .contentType("application/json")
@@ -255,12 +255,12 @@ class TransactionMetadataApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param transactionid The TRANSACTIONID identifier
    */
-  def oBPv121DeleteTransactionNarrative(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteTransactionNarrative(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/metadata/narrative")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -280,19 +280,19 @@ class TransactionMetadataApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param transactionid The TRANSACTIONID identifier
    */
-  def oBPv121DeleteWhereTagForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteWhereTagForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/metadata/where")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
    * <p>Returns the transaction TRANSACTION_ID comments made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121GetCommentsForViewOnTransaction200Response (Successful operation)
+   *   code 200 : GetCommentsForViewOnTransaction200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -305,19 +305,19 @@ class TransactionMetadataApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param transactionid The TRANSACTIONID identifier
    */
-  def oBPv121GetCommentsForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String): Request[Either[ResponseException[String, Exception], OBPv121GetCommentsForViewOnTransaction200Response]] =
+  def getCommentsForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String): Request[Either[ResponseException[String, Exception], GetCommentsForViewOnTransaction200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/metadata/comments")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv121GetCommentsForViewOnTransaction200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCommentsForViewOnTransaction200Response])
 
   /**
    * <p>Returns the transaction TRANSACTION_ID images made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121GetImagesForViewOnTransaction200Response (Successful operation)
+   *   code 200 : GetImagesForViewOnTransaction200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -330,19 +330,19 @@ class TransactionMetadataApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param transactionid The TRANSACTIONID identifier
    */
-  def oBPv121GetImagesForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String): Request[Either[ResponseException[String, Exception], OBPv121GetImagesForViewOnTransaction200Response]] =
+  def getImagesForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String): Request[Either[ResponseException[String, Exception], GetImagesForViewOnTransaction200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/metadata/images")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv121GetImagesForViewOnTransaction200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetImagesForViewOnTransaction200Response])
 
   /**
    * <p>Returns the transaction TRANSACTION_ID tags made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems (Successful operation)
+   *   code 200 : GetTagsForViewOnAccount200ResponseTagsInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -351,17 +351,17 @@ class TransactionMetadataApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param transactionid The TRANSACTIONID identifier
    */
-  def oBPv121GetTagsForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String): Request[Either[ResponseException[String, Exception], OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems]] =
+  def getTagsForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String): Request[Either[ResponseException[String, Exception], GetTagsForViewOnAccount200ResponseTagsInner]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/metadata/tags")
       .contentType("application/json")
-      .response(asJson[OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems])
+      .response(asJson[GetTagsForViewOnAccount200ResponseTagsInner])
 
   /**
    * <p>Returns the account owner description of the transaction <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121GetTransactionNarrative200Response (Successful operation)
+   *   code 200 : GetTransactionNarrative200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -370,17 +370,17 @@ class TransactionMetadataApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param transactionid The TRANSACTIONID identifier
    */
-  def oBPv121GetTransactionNarrative(bankid: String, accountid: String, viewid: String, transactionid: String): Request[Either[ResponseException[String, Exception], OBPv121GetTransactionNarrative200Response]] =
+  def getTransactionNarrative(bankid: String, accountid: String, viewid: String, transactionid: String): Request[Either[ResponseException[String, Exception], GetTransactionNarrative200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/metadata/narrative")
       .contentType("application/json")
-      .response(asJson[OBPv121GetTransactionNarrative200Response])
+      .response(asJson[GetTransactionNarrative200Response])
 
   /**
    * <p>Returns the &quot;where&quot; Geo tag added to the transaction TRANSACTION_ID made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> It represents the location where the transaction has been initiated.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121GetWhereTagForViewOnTransaction200Response (Successful operation)
+   *   code 200 : GetWhereTagForViewOnTransaction200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -389,17 +389,17 @@ class TransactionMetadataApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param transactionid The TRANSACTIONID identifier
    */
-  def oBPv121GetWhereTagForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String): Request[Either[ResponseException[String, Exception], OBPv121GetWhereTagForViewOnTransaction200Response]] =
+  def getWhereTagForViewOnTransaction(bankid: String, accountid: String, viewid: String, transactionid: String): Request[Either[ResponseException[String, Exception], GetWhereTagForViewOnTransaction200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/metadata/where")
       .contentType("application/json")
-      .response(asJson[OBPv121GetWhereTagForViewOnTransaction200Response])
+      .response(asJson[GetWhereTagForViewOnTransaction200Response])
 
   /**
    * <p>Updates the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -407,20 +407,20 @@ class TransactionMetadataApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    * @param transactionid The TRANSACTIONID identifier
-   * @param oBPv121GetTransactionNarrative200Response Request body
+   * @param getTransactionNarrative200Response Request body
    */
-  def oBPv121UpdateTransactionNarrative(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv121GetTransactionNarrative200Response: OBPv121GetTransactionNarrative200Response): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def updateTransactionNarrative(bankid: String, accountid: String, viewid: String, transactionid: String, getTransactionNarrative200Response: GetTransactionNarrative200Response): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/metadata/narrative")
       .contentType("application/json")
-      .body(oBPv121GetTransactionNarrative200Response)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .body(getTransactionNarrative200Response)
+      .response(asJson[UpdateTransactionNarrative200Response])
 
   /**
    * <p>Updates the &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -432,15 +432,15 @@ class TransactionMetadataApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    * @param transactionid The TRANSACTIONID identifier
-   * @param oBPv121UpdateWhereTagForViewOnTransactionRequest Request body
+   * @param updateWhereTagForViewOnTransactionRequest Request body
    */
-  def oBPv121UpdateWhereTagForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String, oBPv121UpdateWhereTagForViewOnTransactionRequest: OBPv121UpdateWhereTagForViewOnTransactionRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def updateWhereTagForViewOnTransaction(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, transactionid: String, updateWhereTagForViewOnTransactionRequest: UpdateWhereTagForViewOnTransactionRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/metadata/where")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv121UpdateWhereTagForViewOnTransactionRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateWhereTagForViewOnTransactionRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
 
 }

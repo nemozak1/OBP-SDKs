@@ -18,7 +18,7 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv510_account_access_unique_index_check200_response import OBPv510AccountAccessUniqueIndexCheck200Response
+from obp_python.models.account_access_unique_index_check200_response import AccountAccessUniqueIndexCheck200Response
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -39,7 +39,7 @@ class SystemIntegrityApi:
 
 
     @validate_call
-    def o_bpv5_1_0_account_access_unique_index_check(
+    def account_access_unique_index_check(
         self,
         _request_timeout: Union[
             None,
@@ -53,7 +53,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510AccountAccessUniqueIndexCheck200Response:
+    ) -> AccountAccessUniqueIndexCheck200Response:
         """Check Unique Index at Account Access
 
         <p>Check unique index at account access table.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -80,7 +80,7 @@ class SystemIntegrityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_account_access_unique_index_check_serialize(
+        _param = self._account_access_unique_index_check_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -88,7 +88,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
+            '200': "AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -103,7 +103,7 @@ class SystemIntegrityApi:
 
 
     @validate_call
-    def o_bpv5_1_0_account_access_unique_index_check_with_http_info(
+    def account_access_unique_index_check_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -117,7 +117,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510AccountAccessUniqueIndexCheck200Response]:
+    ) -> ApiResponse[AccountAccessUniqueIndexCheck200Response]:
         """Check Unique Index at Account Access
 
         <p>Check unique index at account access table.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -144,7 +144,7 @@ class SystemIntegrityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_account_access_unique_index_check_serialize(
+        _param = self._account_access_unique_index_check_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -152,7 +152,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
+            '200': "AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -167,7 +167,7 @@ class SystemIntegrityApi:
 
 
     @validate_call
-    def o_bpv5_1_0_account_access_unique_index_check_without_preload_content(
+    def account_access_unique_index_check_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -208,7 +208,7 @@ class SystemIntegrityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_account_access_unique_index_check_serialize(
+        _param = self._account_access_unique_index_check_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -216,7 +216,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
+            '200': "AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -226,7 +226,7 @@ class SystemIntegrityApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_account_access_unique_index_check_serialize(
+    def _account_access_unique_index_check_serialize(
         self,
         _request_auth,
         _content_type,
@@ -290,7 +290,7 @@ class SystemIntegrityApi:
 
 
     @validate_call
-    def o_bpv5_1_0_account_currency_check(
+    def account_currency_check(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -305,7 +305,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510AccountAccessUniqueIndexCheck200Response:
+    ) -> AccountAccessUniqueIndexCheck200Response:
         """Check for Sensible Currencies
 
         <p>Check for sensible currencies at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -334,7 +334,7 @@ class SystemIntegrityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_account_currency_check_serialize(
+        _param = self._account_currency_check_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -343,7 +343,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
+            '200': "AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -358,7 +358,7 @@ class SystemIntegrityApi:
 
 
     @validate_call
-    def o_bpv5_1_0_account_currency_check_with_http_info(
+    def account_currency_check_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -373,7 +373,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510AccountAccessUniqueIndexCheck200Response]:
+    ) -> ApiResponse[AccountAccessUniqueIndexCheck200Response]:
         """Check for Sensible Currencies
 
         <p>Check for sensible currencies at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -402,7 +402,7 @@ class SystemIntegrityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_account_currency_check_serialize(
+        _param = self._account_currency_check_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -411,7 +411,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
+            '200': "AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -426,7 +426,7 @@ class SystemIntegrityApi:
 
 
     @validate_call
-    def o_bpv5_1_0_account_currency_check_without_preload_content(
+    def account_currency_check_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -470,7 +470,7 @@ class SystemIntegrityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_account_currency_check_serialize(
+        _param = self._account_currency_check_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -479,7 +479,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
+            '200': "AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -489,7 +489,7 @@ class SystemIntegrityApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_account_currency_check_serialize(
+    def _account_currency_check_serialize(
         self,
         bankid,
         _request_auth,
@@ -556,7 +556,7 @@ class SystemIntegrityApi:
 
 
     @validate_call
-    def o_bpv5_1_0_custom_view_names_check(
+    def custom_view_names_check(
         self,
         _request_timeout: Union[
             None,
@@ -570,7 +570,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510AccountAccessUniqueIndexCheck200Response:
+    ) -> AccountAccessUniqueIndexCheck200Response:
         """Check Custom View Names
 
         <p>Check custom view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -597,7 +597,7 @@ class SystemIntegrityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_custom_view_names_check_serialize(
+        _param = self._custom_view_names_check_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -605,7 +605,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
+            '200': "AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -620,7 +620,7 @@ class SystemIntegrityApi:
 
 
     @validate_call
-    def o_bpv5_1_0_custom_view_names_check_with_http_info(
+    def custom_view_names_check_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -634,7 +634,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510AccountAccessUniqueIndexCheck200Response]:
+    ) -> ApiResponse[AccountAccessUniqueIndexCheck200Response]:
         """Check Custom View Names
 
         <p>Check custom view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -661,7 +661,7 @@ class SystemIntegrityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_custom_view_names_check_serialize(
+        _param = self._custom_view_names_check_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -669,7 +669,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
+            '200': "AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -684,7 +684,7 @@ class SystemIntegrityApi:
 
 
     @validate_call
-    def o_bpv5_1_0_custom_view_names_check_without_preload_content(
+    def custom_view_names_check_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -725,7 +725,7 @@ class SystemIntegrityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_custom_view_names_check_serialize(
+        _param = self._custom_view_names_check_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -733,7 +733,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
+            '200': "AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -743,7 +743,7 @@ class SystemIntegrityApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_custom_view_names_check_serialize(
+    def _custom_view_names_check_serialize(
         self,
         _request_auth,
         _content_type,
@@ -807,7 +807,7 @@ class SystemIntegrityApi:
 
 
     @validate_call
-    def o_bpv5_1_0_orphaned_account_check(
+    def orphaned_account_check(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -822,7 +822,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510AccountAccessUniqueIndexCheck200Response:
+    ) -> AccountAccessUniqueIndexCheck200Response:
         """Check for Orphaned Accounts
 
         <p>Check for orphaned accounts at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -851,7 +851,7 @@ class SystemIntegrityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_orphaned_account_check_serialize(
+        _param = self._orphaned_account_check_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -860,7 +860,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
+            '200': "AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -875,7 +875,7 @@ class SystemIntegrityApi:
 
 
     @validate_call
-    def o_bpv5_1_0_orphaned_account_check_with_http_info(
+    def orphaned_account_check_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -890,7 +890,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510AccountAccessUniqueIndexCheck200Response]:
+    ) -> ApiResponse[AccountAccessUniqueIndexCheck200Response]:
         """Check for Orphaned Accounts
 
         <p>Check for orphaned accounts at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -919,7 +919,7 @@ class SystemIntegrityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_orphaned_account_check_serialize(
+        _param = self._orphaned_account_check_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -928,7 +928,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
+            '200': "AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -943,7 +943,7 @@ class SystemIntegrityApi:
 
 
     @validate_call
-    def o_bpv5_1_0_orphaned_account_check_without_preload_content(
+    def orphaned_account_check_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -987,7 +987,7 @@ class SystemIntegrityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_orphaned_account_check_serialize(
+        _param = self._orphaned_account_check_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -996,7 +996,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
+            '200': "AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1006,7 +1006,7 @@ class SystemIntegrityApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_orphaned_account_check_serialize(
+    def _orphaned_account_check_serialize(
         self,
         bankid,
         _request_auth,
@@ -1073,7 +1073,7 @@ class SystemIntegrityApi:
 
 
     @validate_call
-    def o_bpv5_1_0_system_view_names_check(
+    def system_view_names_check(
         self,
         _request_timeout: Union[
             None,
@@ -1087,7 +1087,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510AccountAccessUniqueIndexCheck200Response:
+    ) -> AccountAccessUniqueIndexCheck200Response:
         """Check System View Names
 
         <p>Check system view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -1114,7 +1114,7 @@ class SystemIntegrityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_system_view_names_check_serialize(
+        _param = self._system_view_names_check_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1122,7 +1122,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
+            '200': "AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1137,7 +1137,7 @@ class SystemIntegrityApi:
 
 
     @validate_call
-    def o_bpv5_1_0_system_view_names_check_with_http_info(
+    def system_view_names_check_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1151,7 +1151,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510AccountAccessUniqueIndexCheck200Response]:
+    ) -> ApiResponse[AccountAccessUniqueIndexCheck200Response]:
         """Check System View Names
 
         <p>Check system view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -1178,7 +1178,7 @@ class SystemIntegrityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_system_view_names_check_serialize(
+        _param = self._system_view_names_check_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1186,7 +1186,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
+            '200': "AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1201,7 +1201,7 @@ class SystemIntegrityApi:
 
 
     @validate_call
-    def o_bpv5_1_0_system_view_names_check_without_preload_content(
+    def system_view_names_check_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1242,7 +1242,7 @@ class SystemIntegrityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_system_view_names_check_serialize(
+        _param = self._system_view_names_check_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1250,7 +1250,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
+            '200': "AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1260,7 +1260,7 @@ class SystemIntegrityApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_system_view_names_check_serialize(
+    def _system_view_names_check_serialize(
         self,
         _request_auth,
         _content_type,

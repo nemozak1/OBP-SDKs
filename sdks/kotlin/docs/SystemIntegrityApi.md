@@ -1,19 +1,19 @@
 # SystemIntegrityApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv510AccountAccessUniqueIndexCheck**](SystemIntegrityApi.md#oBPv510AccountAccessUniqueIndexCheck) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access |
-| [**oBPv510AccountCurrencyCheck**](SystemIntegrityApi.md#oBPv510AccountCurrencyCheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies |
-| [**oBPv510CustomViewNamesCheck**](SystemIntegrityApi.md#oBPv510CustomViewNamesCheck) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names |
-| [**oBPv510OrphanedAccountCheck**](SystemIntegrityApi.md#oBPv510OrphanedAccountCheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts |
-| [**oBPv510SystemViewNamesCheck**](SystemIntegrityApi.md#oBPv510SystemViewNamesCheck) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names |
+| [**accountAccessUniqueIndexCheck**](SystemIntegrityApi.md#accountAccessUniqueIndexCheck) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access |
+| [**accountCurrencyCheck**](SystemIntegrityApi.md#accountCurrencyCheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies |
+| [**customViewNamesCheck**](SystemIntegrityApi.md#customViewNamesCheck) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names |
+| [**orphanedAccountCheck**](SystemIntegrityApi.md#orphanedAccountCheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts |
+| [**systemViewNamesCheck**](SystemIntegrityApi.md#systemViewNamesCheck) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names |
 
 
-<a id="oBPv510AccountAccessUniqueIndexCheck"></a>
-# **oBPv510AccountAccessUniqueIndexCheck**
-> OBPv121UpdateTransactionNarrative200Response oBPv510AccountAccessUniqueIndexCheck()
+<a id="accountAccessUniqueIndexCheck"></a>
+# **accountAccessUniqueIndexCheck**
+> AccountAccessUniqueIndexCheck200Response accountAccessUniqueIndexCheck()
 
 Check Unique Index at Account Access
 
@@ -27,13 +27,13 @@ Check Unique Index at Account Access
 
 val apiInstance = SystemIntegrityApi()
 try {
-    val result : OBPv121UpdateTransactionNarrative200Response = apiInstance.oBPv510AccountAccessUniqueIndexCheck()
+    val result : AccountAccessUniqueIndexCheck200Response = apiInstance.accountAccessUniqueIndexCheck()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SystemIntegrityApi#oBPv510AccountAccessUniqueIndexCheck")
+    println("4xx response calling SystemIntegrityApi#accountAccessUniqueIndexCheck")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SystemIntegrityApi#oBPv510AccountAccessUniqueIndexCheck")
+    println("5xx response calling SystemIntegrityApi#accountAccessUniqueIndexCheck")
     e.printStackTrace()
 }
 ```
@@ -43,7 +43,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -54,17 +54,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv510AccountCurrencyCheck"></a>
-# **oBPv510AccountCurrencyCheck**
-> OBPv121UpdateTransactionNarrative200Response oBPv510AccountCurrencyCheck(bankid)
+<a id="accountCurrencyCheck"></a>
+# **accountCurrencyCheck**
+> AccountAccessUniqueIndexCheck200Response accountCurrencyCheck(bankid)
 
 Check for Sensible Currencies
 
@@ -79,13 +79,13 @@ Check for Sensible Currencies
 val apiInstance = SystemIntegrityApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 try {
-    val result : OBPv121UpdateTransactionNarrative200Response = apiInstance.oBPv510AccountCurrencyCheck(bankid)
+    val result : AccountAccessUniqueIndexCheck200Response = apiInstance.accountCurrencyCheck(bankid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SystemIntegrityApi#oBPv510AccountCurrencyCheck")
+    println("4xx response calling SystemIntegrityApi#accountCurrencyCheck")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SystemIntegrityApi#oBPv510AccountCurrencyCheck")
+    println("5xx response calling SystemIntegrityApi#accountCurrencyCheck")
     e.printStackTrace()
 }
 ```
@@ -97,7 +97,7 @@ try {
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -108,17 +108,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv510CustomViewNamesCheck"></a>
-# **oBPv510CustomViewNamesCheck**
-> OBPv121UpdateTransactionNarrative200Response oBPv510CustomViewNamesCheck()
+<a id="customViewNamesCheck"></a>
+# **customViewNamesCheck**
+> AccountAccessUniqueIndexCheck200Response customViewNamesCheck()
 
 Check Custom View Names
 
@@ -132,13 +132,13 @@ Check Custom View Names
 
 val apiInstance = SystemIntegrityApi()
 try {
-    val result : OBPv121UpdateTransactionNarrative200Response = apiInstance.oBPv510CustomViewNamesCheck()
+    val result : AccountAccessUniqueIndexCheck200Response = apiInstance.customViewNamesCheck()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SystemIntegrityApi#oBPv510CustomViewNamesCheck")
+    println("4xx response calling SystemIntegrityApi#customViewNamesCheck")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SystemIntegrityApi#oBPv510CustomViewNamesCheck")
+    println("5xx response calling SystemIntegrityApi#customViewNamesCheck")
     e.printStackTrace()
 }
 ```
@@ -148,7 +148,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -159,17 +159,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv510OrphanedAccountCheck"></a>
-# **oBPv510OrphanedAccountCheck**
-> OBPv121UpdateTransactionNarrative200Response oBPv510OrphanedAccountCheck(bankid)
+<a id="orphanedAccountCheck"></a>
+# **orphanedAccountCheck**
+> AccountAccessUniqueIndexCheck200Response orphanedAccountCheck(bankid)
 
 Check for Orphaned Accounts
 
@@ -184,13 +184,13 @@ Check for Orphaned Accounts
 val apiInstance = SystemIntegrityApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 try {
-    val result : OBPv121UpdateTransactionNarrative200Response = apiInstance.oBPv510OrphanedAccountCheck(bankid)
+    val result : AccountAccessUniqueIndexCheck200Response = apiInstance.orphanedAccountCheck(bankid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SystemIntegrityApi#oBPv510OrphanedAccountCheck")
+    println("4xx response calling SystemIntegrityApi#orphanedAccountCheck")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SystemIntegrityApi#oBPv510OrphanedAccountCheck")
+    println("5xx response calling SystemIntegrityApi#orphanedAccountCheck")
     e.printStackTrace()
 }
 ```
@@ -202,7 +202,7 @@ try {
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -213,17 +213,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv510SystemViewNamesCheck"></a>
-# **oBPv510SystemViewNamesCheck**
-> OBPv121UpdateTransactionNarrative200Response oBPv510SystemViewNamesCheck()
+<a id="systemViewNamesCheck"></a>
+# **systemViewNamesCheck**
+> AccountAccessUniqueIndexCheck200Response systemViewNamesCheck()
 
 Check System View Names
 
@@ -237,13 +237,13 @@ Check System View Names
 
 val apiInstance = SystemIntegrityApi()
 try {
-    val result : OBPv121UpdateTransactionNarrative200Response = apiInstance.oBPv510SystemViewNamesCheck()
+    val result : AccountAccessUniqueIndexCheck200Response = apiInstance.systemViewNamesCheck()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SystemIntegrityApi#oBPv510SystemViewNamesCheck")
+    println("4xx response calling SystemIntegrityApi#systemViewNamesCheck")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SystemIntegrityApi#oBPv510SystemViewNamesCheck")
+    println("5xx response calling SystemIntegrityApi#systemViewNamesCheck")
     e.printStackTrace()
 }
 ```
@@ -253,7 +253,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -264,8 +264,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

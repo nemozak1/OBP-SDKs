@@ -1,17 +1,17 @@
 # OpenBankProject::CustomerMeetingApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv3_1_0_create_meeting**](CustomerMeetingApi.md#o_bpv3_1_0_create_meeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call) |
-| [**o_bpv3_1_0_get_meeting**](CustomerMeetingApi.md#o_bpv3_1_0_get_meeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting |
-| [**o_bpv3_1_0_get_meetings**](CustomerMeetingApi.md#o_bpv3_1_0_get_meetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings |
+| [**create_meeting**](CustomerMeetingApi.md#create_meeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call) |
+| [**get_meeting**](CustomerMeetingApi.md#get_meeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting |
+| [**get_meetings**](CustomerMeetingApi.md#get_meetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings |
 
 
-## o_bpv3_1_0_create_meeting
+## create_meeting
 
-> <OBPv310GetMeeting200Response> o_bpv3_1_0_create_meeting(bankid, obpv310_create_meeting_request)
+> <GetMeeting200Response> create_meeting(bankid, create_meeting_request)
 
 Create Meeting (video conference/call)
 
@@ -33,39 +33,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CustomerMeetingApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
-obpv310_create_meeting_request = OpenBankProject::OBPv310CreateMeetingRequest.new({type: 'type_example', properties: OpenBankProject::OBPv310CreateMeetingRequestProperties.new({provider_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), creator: OpenBankProject::OBPv310GetMeeting200ResponsePropertiesCreator.new({type: 'type_example', properties: OpenBankProject::OBPv310GetMeeting200ResponsePropertiesCreatorProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), mobile_phone: , email_address: })}), invitees: OpenBankProject::OBPv310GetMeeting200ResponsePropertiesInvitees.new({type: 'type_example', items: OpenBankProject::OBPv310GetMeeting200ResponsePropertiesInviteesItems.new({type: 'type_example', properties: OpenBankProject::OBPv310GetMeeting200ResponsePropertiesInviteesItemsProperties.new({status: , contact_details: OpenBankProject::OBPv310GetMeeting200ResponsePropertiesCreator.new({type: 'type_example', properties: OpenBankProject::OBPv310GetMeeting200ResponsePropertiesCreatorProperties.new({name: , mobile_phone: , email_address: })})})})}), date: OpenBankProject::OBPv600UpdateRateLimitsRequestPropertiesFromDate.new({type: 'type_example', format: 'format_example'}), purpose_id: })}) # OBPv310CreateMeetingRequest | Request body
+create_meeting_request = OpenBankProject::CreateMeetingRequest.new # CreateMeetingRequest | Request body
 
 begin
   # Create Meeting (video conference/call)
-  result = api_instance.o_bpv3_1_0_create_meeting(bankid, obpv310_create_meeting_request)
+  result = api_instance.create_meeting(bankid, create_meeting_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerMeetingApi->o_bpv3_1_0_create_meeting: #{e}"
+  puts "Error when calling CustomerMeetingApi->create_meeting: #{e}"
 end
 ```
 
-#### Using the o_bpv3_1_0_create_meeting_with_http_info variant
+#### Using the create_meeting_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv310GetMeeting200Response>, Integer, Hash)> o_bpv3_1_0_create_meeting_with_http_info(bankid, obpv310_create_meeting_request)
+> <Array(<GetMeeting200Response>, Integer, Hash)> create_meeting_with_http_info(bankid, create_meeting_request)
 
 ```ruby
 begin
   # Create Meeting (video conference/call)
-  data, status_code, headers = api_instance.o_bpv3_1_0_create_meeting_with_http_info(bankid, obpv310_create_meeting_request)
+  data, status_code, headers = api_instance.create_meeting_with_http_info(bankid, create_meeting_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv310GetMeeting200Response>
+  p data # => <GetMeeting200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerMeetingApi->o_bpv3_1_0_create_meeting_with_http_info: #{e}"
+  puts "Error when calling CustomerMeetingApi->create_meeting_with_http_info: #{e}"
 end
 ```
 
@@ -74,11 +74,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
-| **obpv310_create_meeting_request** | [**OBPv310CreateMeetingRequest**](OBPv310CreateMeetingRequest.md) | Request body |  |
+| **create_meeting_request** | [**CreateMeetingRequest**](CreateMeetingRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 ### Authorization
 
@@ -90,9 +90,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv3_1_0_get_meeting
+## get_meeting
 
-> <OBPv310GetMeeting200Response> o_bpv3_1_0_get_meeting(bankid, meetingid)
+> <GetMeeting200Response> get_meeting(bankid, meetingid)
 
 Get Meeting
 
@@ -114,9 +114,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CustomerMeetingApi.new
@@ -125,28 +125,28 @@ meetingid = 'meetingid_example' # String | The MEETINGID identifier
 
 begin
   # Get Meeting
-  result = api_instance.o_bpv3_1_0_get_meeting(bankid, meetingid)
+  result = api_instance.get_meeting(bankid, meetingid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerMeetingApi->o_bpv3_1_0_get_meeting: #{e}"
+  puts "Error when calling CustomerMeetingApi->get_meeting: #{e}"
 end
 ```
 
-#### Using the o_bpv3_1_0_get_meeting_with_http_info variant
+#### Using the get_meeting_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv310GetMeeting200Response>, Integer, Hash)> o_bpv3_1_0_get_meeting_with_http_info(bankid, meetingid)
+> <Array(<GetMeeting200Response>, Integer, Hash)> get_meeting_with_http_info(bankid, meetingid)
 
 ```ruby
 begin
   # Get Meeting
-  data, status_code, headers = api_instance.o_bpv3_1_0_get_meeting_with_http_info(bankid, meetingid)
+  data, status_code, headers = api_instance.get_meeting_with_http_info(bankid, meetingid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv310GetMeeting200Response>
+  p data # => <GetMeeting200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerMeetingApi->o_bpv3_1_0_get_meeting_with_http_info: #{e}"
+  puts "Error when calling CustomerMeetingApi->get_meeting_with_http_info: #{e}"
 end
 ```
 
@@ -159,7 +159,7 @@ end
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 ### Authorization
 
@@ -171,9 +171,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv3_1_0_get_meetings
+## get_meetings
 
-> <OBPv310GetMeetings200Response> o_bpv3_1_0_get_meetings(bankid)
+> <GetMeetings200Response> get_meetings(bankid)
 
 Get Meetings
 
@@ -195,9 +195,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CustomerMeetingApi.new
@@ -205,28 +205,28 @@ bankid = 'bankid_example' # String | The BANKID identifier
 
 begin
   # Get Meetings
-  result = api_instance.o_bpv3_1_0_get_meetings(bankid)
+  result = api_instance.get_meetings(bankid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerMeetingApi->o_bpv3_1_0_get_meetings: #{e}"
+  puts "Error when calling CustomerMeetingApi->get_meetings: #{e}"
 end
 ```
 
-#### Using the o_bpv3_1_0_get_meetings_with_http_info variant
+#### Using the get_meetings_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv310GetMeetings200Response>, Integer, Hash)> o_bpv3_1_0_get_meetings_with_http_info(bankid)
+> <Array(<GetMeetings200Response>, Integer, Hash)> get_meetings_with_http_info(bankid)
 
 ```ruby
 begin
   # Get Meetings
-  data, status_code, headers = api_instance.o_bpv3_1_0_get_meetings_with_http_info(bankid)
+  data, status_code, headers = api_instance.get_meetings_with_http_info(bankid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv310GetMeetings200Response>
+  p data # => <GetMeetings200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerMeetingApi->o_bpv3_1_0_get_meetings_with_http_info: #{e}"
+  puts "Error when calling CustomerMeetingApi->get_meetings_with_http_info: #{e}"
 end
 ```
 
@@ -238,7 +238,7 @@ end
 
 ### Return type
 
-[**OBPv310GetMeetings200Response**](OBPv310GetMeetings200Response.md)
+[**GetMeetings200Response**](GetMeetings200Response.md)
 
 ### Authorization
 

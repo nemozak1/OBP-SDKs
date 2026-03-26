@@ -18,17 +18,17 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv400_create_my_api_collection_endpoint_request import OBPv400CreateMyApiCollectionEndpointRequest
-from obp_python.models.obpv400_create_my_api_collection_request import OBPv400CreateMyApiCollectionRequest
-from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response import OBPv400DeleteSystemLevelEndpointTag200Response
-from obp_python.models.obpv400_get_api_collections_for_user200_response import OBPv400GetApiCollectionsForUser200Response
-from obp_python.models.obpv400_get_api_collections_for_user200_response_api_collections_inner import OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner
-from obp_python.models.obpv400_get_my_api_collection_endpoints200_response import OBPv400GetMyApiCollectionEndpoints200Response
-from obp_python.models.obpv400_get_my_api_collection_endpoints200_response_api_collection_endpoints_inner import OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
-from obp_python.models.obpv600_create_featured_api_collection_request import OBPv600CreateFeaturedApiCollectionRequest
-from obp_python.models.obpv600_get_featured_api_collections_admin200_response import OBPv600GetFeaturedApiCollectionsAdmin200Response
-from obp_python.models.obpv600_get_featured_api_collections_admin200_response_featured_api_collections_inner import OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
-from obp_python.models.obpv600_update_featured_api_collection_request import OBPv600UpdateFeaturedApiCollectionRequest
+from obp_python.models.create_featured_api_collection_request import CreateFeaturedApiCollectionRequest
+from obp_python.models.create_my_api_collection_endpoint_request import CreateMyApiCollectionEndpointRequest
+from obp_python.models.create_my_api_collection_request import CreateMyApiCollectionRequest
+from obp_python.models.delete_system_level_endpoint_tag200_response import DeleteSystemLevelEndpointTag200Response
+from obp_python.models.get_api_collections_for_user200_response import GetApiCollectionsForUser200Response
+from obp_python.models.get_api_collections_for_user200_response_api_collections_inner import GetApiCollectionsForUser200ResponseApiCollectionsInner
+from obp_python.models.get_featured_api_collections_admin200_response import GetFeaturedApiCollectionsAdmin200Response
+from obp_python.models.get_featured_api_collections_admin200_response_featured_api_collections_inner import GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
+from obp_python.models.get_my_api_collection_endpoints200_response import GetMyApiCollectionEndpoints200Response
+from obp_python.models.get_my_api_collection_endpoints200_response_api_collection_endpoints_inner import GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
+from obp_python.models.update_featured_api_collection_request import UpdateFeaturedApiCollectionRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -49,9 +49,9 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_my_api_collection(
+    def create_featured_api_collection(
         self,
-        obpv400_create_my_api_collection_request: Annotated[OBPv400CreateMyApiCollectionRequest, Field(description="Request body")],
+        create_featured_api_collection_request: Annotated[CreateFeaturedApiCollectionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -64,13 +64,13 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner:
-        """Create My Api Collection
+    ) -> GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner:
+        """Create Featured Api Collection
 
-        <p>Create Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#description\">description</a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+        <p>Add an API Collection to the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
 
-        :param obpv400_create_my_api_collection_request: Request body (required)
-        :type obpv400_create_my_api_collection_request: OBPv400CreateMyApiCollectionRequest
+        :param create_featured_api_collection_request: Request body (required)
+        :type create_featured_api_collection_request: CreateFeaturedApiCollectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -93,8 +93,8 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_my_api_collection_serialize(
-            obpv400_create_my_api_collection_request=obpv400_create_my_api_collection_request,
+        _param = self._create_featured_api_collection_serialize(
+            create_featured_api_collection_request=create_featured_api_collection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -102,9 +102,10 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '200': "GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
             '404': None,
             '500': None,
+            '401': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -118,9 +119,9 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_my_api_collection_with_http_info(
+    def create_featured_api_collection_with_http_info(
         self,
-        obpv400_create_my_api_collection_request: Annotated[OBPv400CreateMyApiCollectionRequest, Field(description="Request body")],
+        create_featured_api_collection_request: Annotated[CreateFeaturedApiCollectionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -133,13 +134,13 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner]:
-        """Create My Api Collection
+    ) -> ApiResponse[GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner]:
+        """Create Featured Api Collection
 
-        <p>Create Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#description\">description</a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+        <p>Add an API Collection to the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
 
-        :param obpv400_create_my_api_collection_request: Request body (required)
-        :type obpv400_create_my_api_collection_request: OBPv400CreateMyApiCollectionRequest
+        :param create_featured_api_collection_request: Request body (required)
+        :type create_featured_api_collection_request: CreateFeaturedApiCollectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -162,8 +163,8 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_my_api_collection_serialize(
-            obpv400_create_my_api_collection_request=obpv400_create_my_api_collection_request,
+        _param = self._create_featured_api_collection_serialize(
+            create_featured_api_collection_request=create_featured_api_collection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -171,9 +172,10 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '200': "GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
             '404': None,
             '500': None,
+            '401': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -187,9 +189,9 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_my_api_collection_without_preload_content(
+    def create_featured_api_collection_without_preload_content(
         self,
-        obpv400_create_my_api_collection_request: Annotated[OBPv400CreateMyApiCollectionRequest, Field(description="Request body")],
+        create_featured_api_collection_request: Annotated[CreateFeaturedApiCollectionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -203,12 +205,12 @@ class ApiCollectionApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create My Api Collection
+        """Create Featured Api Collection
 
-        <p>Create Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#description\">description</a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+        <p>Add an API Collection to the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
 
-        :param obpv400_create_my_api_collection_request: Request body (required)
-        :type obpv400_create_my_api_collection_request: OBPv400CreateMyApiCollectionRequest
+        :param create_featured_api_collection_request: Request body (required)
+        :type create_featured_api_collection_request: CreateFeaturedApiCollectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -231,8 +233,8 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_my_api_collection_serialize(
-            obpv400_create_my_api_collection_request=obpv400_create_my_api_collection_request,
+        _param = self._create_featured_api_collection_serialize(
+            create_featured_api_collection_request=create_featured_api_collection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -240,9 +242,10 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '200': "GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
             '404': None,
             '500': None,
+            '401': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -251,9 +254,9 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_my_api_collection_serialize(
+    def _create_featured_api_collection_serialize(
         self,
-        obpv400_create_my_api_collection_request,
+        create_featured_api_collection_request,
         _request_auth,
         _content_type,
         _headers,
@@ -279,8 +282,290 @@ class ApiCollectionApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_my_api_collection_request is not None:
-            _body_params = obpv400_create_my_api_collection_request
+        if create_featured_api_collection_request is not None:
+            _body_params = create_featured_api_collection_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/obp/v6.0.0/management/api-collections/featured',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def create_my_api_collection(
+        self,
+        create_my_api_collection_request: Annotated[CreateMyApiCollectionRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> GetApiCollectionsForUser200ResponseApiCollectionsInner:
+        """Create My Api Collection
+
+        <p>Create Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#description\">description</a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+
+        :param create_my_api_collection_request: Request body (required)
+        :type create_my_api_collection_request: CreateMyApiCollectionRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._create_my_api_collection_serialize(
+            create_my_api_collection_request=create_my_api_collection_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def create_my_api_collection_with_http_info(
+        self,
+        create_my_api_collection_request: Annotated[CreateMyApiCollectionRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[GetApiCollectionsForUser200ResponseApiCollectionsInner]:
+        """Create My Api Collection
+
+        <p>Create Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#description\">description</a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+
+        :param create_my_api_collection_request: Request body (required)
+        :type create_my_api_collection_request: CreateMyApiCollectionRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._create_my_api_collection_serialize(
+            create_my_api_collection_request=create_my_api_collection_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def create_my_api_collection_without_preload_content(
+        self,
+        create_my_api_collection_request: Annotated[CreateMyApiCollectionRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Create My Api Collection
+
+        <p>Create Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#description\">description</a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+
+        :param create_my_api_collection_request: Request body (required)
+        :type create_my_api_collection_request: CreateMyApiCollectionRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._create_my_api_collection_serialize(
+            create_my_api_collection_request=create_my_api_collection_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _create_my_api_collection_serialize(
+        self,
+        create_my_api_collection_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if create_my_api_collection_request is not None:
+            _body_params = create_my_api_collection_request
 
 
         # set the HTTP header `Accept`
@@ -331,10 +616,10 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_my_api_collection_endpoint(
+    def create_my_api_collection_endpoint(
         self,
         apicollectionname: Annotated[StrictStr, Field(description="The APICOLLECTIONNAME identifier")],
-        obpv400_create_my_api_collection_endpoint_request: Annotated[OBPv400CreateMyApiCollectionEndpointRequest, Field(description="Request body")],
+        create_my_api_collection_endpoint_request: Annotated[CreateMyApiCollectionEndpointRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -347,15 +632,15 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner:
+    ) -> GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner:
         """Create My Api Collection Endpoint
 
         <p>Create Api Collection Endpoint.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
 
         :param apicollectionname: The APICOLLECTIONNAME identifier (required)
         :type apicollectionname: str
-        :param obpv400_create_my_api_collection_endpoint_request: Request body (required)
-        :type obpv400_create_my_api_collection_endpoint_request: OBPv400CreateMyApiCollectionEndpointRequest
+        :param create_my_api_collection_endpoint_request: Request body (required)
+        :type create_my_api_collection_endpoint_request: CreateMyApiCollectionEndpointRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -378,9 +663,9 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_my_api_collection_endpoint_serialize(
+        _param = self._create_my_api_collection_endpoint_serialize(
             apicollectionname=apicollectionname,
-            obpv400_create_my_api_collection_endpoint_request=obpv400_create_my_api_collection_endpoint_request,
+            create_my_api_collection_endpoint_request=create_my_api_collection_endpoint_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -388,7 +673,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
+            '200': "GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -403,10 +688,10 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_my_api_collection_endpoint_with_http_info(
+    def create_my_api_collection_endpoint_with_http_info(
         self,
         apicollectionname: Annotated[StrictStr, Field(description="The APICOLLECTIONNAME identifier")],
-        obpv400_create_my_api_collection_endpoint_request: Annotated[OBPv400CreateMyApiCollectionEndpointRequest, Field(description="Request body")],
+        create_my_api_collection_endpoint_request: Annotated[CreateMyApiCollectionEndpointRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -419,15 +704,15 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner]:
+    ) -> ApiResponse[GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner]:
         """Create My Api Collection Endpoint
 
         <p>Create Api Collection Endpoint.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
 
         :param apicollectionname: The APICOLLECTIONNAME identifier (required)
         :type apicollectionname: str
-        :param obpv400_create_my_api_collection_endpoint_request: Request body (required)
-        :type obpv400_create_my_api_collection_endpoint_request: OBPv400CreateMyApiCollectionEndpointRequest
+        :param create_my_api_collection_endpoint_request: Request body (required)
+        :type create_my_api_collection_endpoint_request: CreateMyApiCollectionEndpointRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -450,9 +735,9 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_my_api_collection_endpoint_serialize(
+        _param = self._create_my_api_collection_endpoint_serialize(
             apicollectionname=apicollectionname,
-            obpv400_create_my_api_collection_endpoint_request=obpv400_create_my_api_collection_endpoint_request,
+            create_my_api_collection_endpoint_request=create_my_api_collection_endpoint_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -460,7 +745,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
+            '200': "GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -475,10 +760,10 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_my_api_collection_endpoint_without_preload_content(
+    def create_my_api_collection_endpoint_without_preload_content(
         self,
         apicollectionname: Annotated[StrictStr, Field(description="The APICOLLECTIONNAME identifier")],
-        obpv400_create_my_api_collection_endpoint_request: Annotated[OBPv400CreateMyApiCollectionEndpointRequest, Field(description="Request body")],
+        create_my_api_collection_endpoint_request: Annotated[CreateMyApiCollectionEndpointRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -498,8 +783,8 @@ class ApiCollectionApi:
 
         :param apicollectionname: The APICOLLECTIONNAME identifier (required)
         :type apicollectionname: str
-        :param obpv400_create_my_api_collection_endpoint_request: Request body (required)
-        :type obpv400_create_my_api_collection_endpoint_request: OBPv400CreateMyApiCollectionEndpointRequest
+        :param create_my_api_collection_endpoint_request: Request body (required)
+        :type create_my_api_collection_endpoint_request: CreateMyApiCollectionEndpointRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -522,9 +807,9 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_my_api_collection_endpoint_serialize(
+        _param = self._create_my_api_collection_endpoint_serialize(
             apicollectionname=apicollectionname,
-            obpv400_create_my_api_collection_endpoint_request=obpv400_create_my_api_collection_endpoint_request,
+            create_my_api_collection_endpoint_request=create_my_api_collection_endpoint_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -532,7 +817,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
+            '200': "GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -542,10 +827,10 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_my_api_collection_endpoint_serialize(
+    def _create_my_api_collection_endpoint_serialize(
         self,
         apicollectionname,
-        obpv400_create_my_api_collection_endpoint_request,
+        create_my_api_collection_endpoint_request,
         _request_auth,
         _content_type,
         _headers,
@@ -573,8 +858,8 @@ class ApiCollectionApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_my_api_collection_endpoint_request is not None:
-            _body_params = obpv400_create_my_api_collection_endpoint_request
+        if create_my_api_collection_endpoint_request is not None:
+            _body_params = create_my_api_collection_endpoint_request
 
 
         # set the HTTP header `Accept`
@@ -625,10 +910,10 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_my_api_collection_endpoint_by_id(
+    def create_my_api_collection_endpoint_by_id(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
-        obpv400_create_my_api_collection_endpoint_request: Annotated[OBPv400CreateMyApiCollectionEndpointRequest, Field(description="Request body")],
+        create_my_api_collection_endpoint_request: Annotated[CreateMyApiCollectionEndpointRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -641,15 +926,15 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner:
+    ) -> GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner:
         """Create My Api Collection Endpoint By Id
 
         <p>Create Api Collection Endpoint By Id.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
 
         :param apicollectionid: The APICOLLECTIONID identifier (required)
         :type apicollectionid: str
-        :param obpv400_create_my_api_collection_endpoint_request: Request body (required)
-        :type obpv400_create_my_api_collection_endpoint_request: OBPv400CreateMyApiCollectionEndpointRequest
+        :param create_my_api_collection_endpoint_request: Request body (required)
+        :type create_my_api_collection_endpoint_request: CreateMyApiCollectionEndpointRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -672,9 +957,9 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_my_api_collection_endpoint_by_id_serialize(
+        _param = self._create_my_api_collection_endpoint_by_id_serialize(
             apicollectionid=apicollectionid,
-            obpv400_create_my_api_collection_endpoint_request=obpv400_create_my_api_collection_endpoint_request,
+            create_my_api_collection_endpoint_request=create_my_api_collection_endpoint_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -682,7 +967,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
+            '200': "GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -697,10 +982,10 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_my_api_collection_endpoint_by_id_with_http_info(
+    def create_my_api_collection_endpoint_by_id_with_http_info(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
-        obpv400_create_my_api_collection_endpoint_request: Annotated[OBPv400CreateMyApiCollectionEndpointRequest, Field(description="Request body")],
+        create_my_api_collection_endpoint_request: Annotated[CreateMyApiCollectionEndpointRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -713,15 +998,15 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner]:
+    ) -> ApiResponse[GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner]:
         """Create My Api Collection Endpoint By Id
 
         <p>Create Api Collection Endpoint By Id.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
 
         :param apicollectionid: The APICOLLECTIONID identifier (required)
         :type apicollectionid: str
-        :param obpv400_create_my_api_collection_endpoint_request: Request body (required)
-        :type obpv400_create_my_api_collection_endpoint_request: OBPv400CreateMyApiCollectionEndpointRequest
+        :param create_my_api_collection_endpoint_request: Request body (required)
+        :type create_my_api_collection_endpoint_request: CreateMyApiCollectionEndpointRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -744,9 +1029,9 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_my_api_collection_endpoint_by_id_serialize(
+        _param = self._create_my_api_collection_endpoint_by_id_serialize(
             apicollectionid=apicollectionid,
-            obpv400_create_my_api_collection_endpoint_request=obpv400_create_my_api_collection_endpoint_request,
+            create_my_api_collection_endpoint_request=create_my_api_collection_endpoint_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -754,7 +1039,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
+            '200': "GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -769,10 +1054,10 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_my_api_collection_endpoint_by_id_without_preload_content(
+    def create_my_api_collection_endpoint_by_id_without_preload_content(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
-        obpv400_create_my_api_collection_endpoint_request: Annotated[OBPv400CreateMyApiCollectionEndpointRequest, Field(description="Request body")],
+        create_my_api_collection_endpoint_request: Annotated[CreateMyApiCollectionEndpointRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -792,8 +1077,8 @@ class ApiCollectionApi:
 
         :param apicollectionid: The APICOLLECTIONID identifier (required)
         :type apicollectionid: str
-        :param obpv400_create_my_api_collection_endpoint_request: Request body (required)
-        :type obpv400_create_my_api_collection_endpoint_request: OBPv400CreateMyApiCollectionEndpointRequest
+        :param create_my_api_collection_endpoint_request: Request body (required)
+        :type create_my_api_collection_endpoint_request: CreateMyApiCollectionEndpointRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -816,9 +1101,9 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_my_api_collection_endpoint_by_id_serialize(
+        _param = self._create_my_api_collection_endpoint_by_id_serialize(
             apicollectionid=apicollectionid,
-            obpv400_create_my_api_collection_endpoint_request=obpv400_create_my_api_collection_endpoint_request,
+            create_my_api_collection_endpoint_request=create_my_api_collection_endpoint_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -826,7 +1111,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
+            '200': "GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -836,10 +1121,10 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_my_api_collection_endpoint_by_id_serialize(
+    def _create_my_api_collection_endpoint_by_id_serialize(
         self,
         apicollectionid,
-        obpv400_create_my_api_collection_endpoint_request,
+        create_my_api_collection_endpoint_request,
         _request_auth,
         _content_type,
         _headers,
@@ -867,8 +1152,8 @@ class ApiCollectionApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_my_api_collection_endpoint_request is not None:
-            _body_params = obpv400_create_my_api_collection_endpoint_request
+        if create_my_api_collection_endpoint_request is not None:
+            _body_params = create_my_api_collection_endpoint_request
 
 
         # set the HTTP header `Accept`
@@ -919,7 +1204,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_my_api_collection(
+    def delete_featured_api_collection(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         _request_timeout: Union[
@@ -934,7 +1219,275 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400DeleteSystemLevelEndpointTag200Response:
+    ) -> None:
+        """Delete Featured Api Collection
+
+        <p>Remove an API Collection from the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param apicollectionid: The APICOLLECTIONID identifier (required)
+        :type apicollectionid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_featured_api_collection_serialize(
+            apicollectionid=apicollectionid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '400': None,
+            '404': None,
+            '500': None,
+            '403': None,
+            '200': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def delete_featured_api_collection_with_http_info(
+        self,
+        apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[None]:
+        """Delete Featured Api Collection
+
+        <p>Remove an API Collection from the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param apicollectionid: The APICOLLECTIONID identifier (required)
+        :type apicollectionid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_featured_api_collection_serialize(
+            apicollectionid=apicollectionid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '400': None,
+            '404': None,
+            '500': None,
+            '403': None,
+            '200': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def delete_featured_api_collection_without_preload_content(
+        self,
+        apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Delete Featured Api Collection
+
+        <p>Remove an API Collection from the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param apicollectionid: The APICOLLECTIONID identifier (required)
+        :type apicollectionid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_featured_api_collection_serialize(
+            apicollectionid=apicollectionid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '400': None,
+            '404': None,
+            '500': None,
+            '403': None,
+            '200': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _delete_featured_api_collection_serialize(
+        self,
+        apicollectionid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if apicollectionid is not None:
+            _path_params['apicollectionid'] = apicollectionid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='DELETE',
+            resource_path='/obp/v6.0.0/management/api-collections/featured/{apicollectionid}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def delete_my_api_collection(
+        self,
+        apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> DeleteSystemLevelEndpointTag200Response:
         """Delete My Api Collection
 
         <p>Delete Api Collection By API_COLLECTION_ID</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
@@ -963,7 +1516,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_my_api_collection_serialize(
+        _param = self._delete_my_api_collection_serialize(
             apicollectionid=apicollectionid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -972,7 +1525,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400DeleteSystemLevelEndpointTag200Response",
+            '200': "DeleteSystemLevelEndpointTag200Response",
             '404': None,
             '500': None,
         }
@@ -988,7 +1541,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_my_api_collection_with_http_info(
+    def delete_my_api_collection_with_http_info(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         _request_timeout: Union[
@@ -1003,7 +1556,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400DeleteSystemLevelEndpointTag200Response]:
+    ) -> ApiResponse[DeleteSystemLevelEndpointTag200Response]:
         """Delete My Api Collection
 
         <p>Delete Api Collection By API_COLLECTION_ID</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
@@ -1032,7 +1585,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_my_api_collection_serialize(
+        _param = self._delete_my_api_collection_serialize(
             apicollectionid=apicollectionid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1041,7 +1594,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400DeleteSystemLevelEndpointTag200Response",
+            '200': "DeleteSystemLevelEndpointTag200Response",
             '404': None,
             '500': None,
         }
@@ -1057,7 +1610,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_my_api_collection_without_preload_content(
+    def delete_my_api_collection_without_preload_content(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         _request_timeout: Union[
@@ -1101,7 +1654,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_my_api_collection_serialize(
+        _param = self._delete_my_api_collection_serialize(
             apicollectionid=apicollectionid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1110,7 +1663,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400DeleteSystemLevelEndpointTag200Response",
+            '200': "DeleteSystemLevelEndpointTag200Response",
             '404': None,
             '500': None,
         }
@@ -1121,7 +1674,7 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_delete_my_api_collection_serialize(
+    def _delete_my_api_collection_serialize(
         self,
         apicollectionid,
         _request_auth,
@@ -1188,7 +1741,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_my_api_collection_endpoint(
+    def delete_my_api_collection_endpoint(
         self,
         apicollectionname: Annotated[StrictStr, Field(description="The APICOLLECTIONNAME identifier")],
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
@@ -1204,7 +1757,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400DeleteSystemLevelEndpointTag200Response:
+    ) -> DeleteSystemLevelEndpointTag200Response:
         """Delete My Api Collection Endpoint
 
         <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
@@ -1235,7 +1788,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_my_api_collection_endpoint_serialize(
+        _param = self._delete_my_api_collection_endpoint_serialize(
             apicollectionname=apicollectionname,
             operationid=operationid,
             _request_auth=_request_auth,
@@ -1245,7 +1798,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400DeleteSystemLevelEndpointTag200Response",
+            '200': "DeleteSystemLevelEndpointTag200Response",
             '404': None,
             '500': None,
         }
@@ -1261,7 +1814,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_my_api_collection_endpoint_with_http_info(
+    def delete_my_api_collection_endpoint_with_http_info(
         self,
         apicollectionname: Annotated[StrictStr, Field(description="The APICOLLECTIONNAME identifier")],
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
@@ -1277,7 +1830,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400DeleteSystemLevelEndpointTag200Response]:
+    ) -> ApiResponse[DeleteSystemLevelEndpointTag200Response]:
         """Delete My Api Collection Endpoint
 
         <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
@@ -1308,7 +1861,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_my_api_collection_endpoint_serialize(
+        _param = self._delete_my_api_collection_endpoint_serialize(
             apicollectionname=apicollectionname,
             operationid=operationid,
             _request_auth=_request_auth,
@@ -1318,7 +1871,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400DeleteSystemLevelEndpointTag200Response",
+            '200': "DeleteSystemLevelEndpointTag200Response",
             '404': None,
             '500': None,
         }
@@ -1334,7 +1887,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_my_api_collection_endpoint_without_preload_content(
+    def delete_my_api_collection_endpoint_without_preload_content(
         self,
         apicollectionname: Annotated[StrictStr, Field(description="The APICOLLECTIONNAME identifier")],
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
@@ -1381,7 +1934,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_my_api_collection_endpoint_serialize(
+        _param = self._delete_my_api_collection_endpoint_serialize(
             apicollectionname=apicollectionname,
             operationid=operationid,
             _request_auth=_request_auth,
@@ -1391,7 +1944,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400DeleteSystemLevelEndpointTag200Response",
+            '200': "DeleteSystemLevelEndpointTag200Response",
             '404': None,
             '500': None,
         }
@@ -1402,7 +1955,7 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_delete_my_api_collection_endpoint_serialize(
+    def _delete_my_api_collection_endpoint_serialize(
         self,
         apicollectionname,
         operationid,
@@ -1472,7 +2025,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_my_api_collection_endpoint_by_id(
+    def delete_my_api_collection_endpoint_by_id(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         apicollectionendpointid: Annotated[StrictStr, Field(description="The APICOLLECTIONENDPOINTID identifier")],
@@ -1488,7 +2041,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400DeleteSystemLevelEndpointTag200Response:
+    ) -> DeleteSystemLevelEndpointTag200Response:
         """Delete My Api Collection Endpoint By Id
 
         <p>glossary-item-not-found<br /> Delete Api Collection Endpoint<br /> Delete Api Collection Endpoint By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ENDPOINT_ID</a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
@@ -1519,7 +2072,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_my_api_collection_endpoint_by_id_serialize(
+        _param = self._delete_my_api_collection_endpoint_by_id_serialize(
             apicollectionid=apicollectionid,
             apicollectionendpointid=apicollectionendpointid,
             _request_auth=_request_auth,
@@ -1529,7 +2082,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400DeleteSystemLevelEndpointTag200Response",
+            '200': "DeleteSystemLevelEndpointTag200Response",
             '404': None,
             '500': None,
         }
@@ -1545,7 +2098,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_my_api_collection_endpoint_by_id_with_http_info(
+    def delete_my_api_collection_endpoint_by_id_with_http_info(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         apicollectionendpointid: Annotated[StrictStr, Field(description="The APICOLLECTIONENDPOINTID identifier")],
@@ -1561,7 +2114,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400DeleteSystemLevelEndpointTag200Response]:
+    ) -> ApiResponse[DeleteSystemLevelEndpointTag200Response]:
         """Delete My Api Collection Endpoint By Id
 
         <p>glossary-item-not-found<br /> Delete Api Collection Endpoint<br /> Delete Api Collection Endpoint By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ENDPOINT_ID</a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
@@ -1592,7 +2145,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_my_api_collection_endpoint_by_id_serialize(
+        _param = self._delete_my_api_collection_endpoint_by_id_serialize(
             apicollectionid=apicollectionid,
             apicollectionendpointid=apicollectionendpointid,
             _request_auth=_request_auth,
@@ -1602,7 +2155,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400DeleteSystemLevelEndpointTag200Response",
+            '200': "DeleteSystemLevelEndpointTag200Response",
             '404': None,
             '500': None,
         }
@@ -1618,7 +2171,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_my_api_collection_endpoint_by_id_without_preload_content(
+    def delete_my_api_collection_endpoint_by_id_without_preload_content(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         apicollectionendpointid: Annotated[StrictStr, Field(description="The APICOLLECTIONENDPOINTID identifier")],
@@ -1665,7 +2218,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_my_api_collection_endpoint_by_id_serialize(
+        _param = self._delete_my_api_collection_endpoint_by_id_serialize(
             apicollectionid=apicollectionid,
             apicollectionendpointid=apicollectionendpointid,
             _request_auth=_request_auth,
@@ -1675,7 +2228,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400DeleteSystemLevelEndpointTag200Response",
+            '200': "DeleteSystemLevelEndpointTag200Response",
             '404': None,
             '500': None,
         }
@@ -1686,7 +2239,7 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_delete_my_api_collection_endpoint_by_id_serialize(
+    def _delete_my_api_collection_endpoint_by_id_serialize(
         self,
         apicollectionid,
         apicollectionendpointid,
@@ -1756,7 +2309,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_my_api_collection_endpoint_by_operation_id(
+    def delete_my_api_collection_endpoint_by_operation_id(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
@@ -1772,7 +2325,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400DeleteSystemLevelEndpointTag200Response:
+    ) -> DeleteSystemLevelEndpointTag200Response:
         """Delete My Api Collection Endpoint By Id
 
         <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
@@ -1803,7 +2356,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_my_api_collection_endpoint_by_operation_id_serialize(
+        _param = self._delete_my_api_collection_endpoint_by_operation_id_serialize(
             apicollectionid=apicollectionid,
             operationid=operationid,
             _request_auth=_request_auth,
@@ -1813,7 +2366,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400DeleteSystemLevelEndpointTag200Response",
+            '200': "DeleteSystemLevelEndpointTag200Response",
             '404': None,
             '500': None,
         }
@@ -1829,7 +2382,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_my_api_collection_endpoint_by_operation_id_with_http_info(
+    def delete_my_api_collection_endpoint_by_operation_id_with_http_info(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
@@ -1845,7 +2398,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400DeleteSystemLevelEndpointTag200Response]:
+    ) -> ApiResponse[DeleteSystemLevelEndpointTag200Response]:
         """Delete My Api Collection Endpoint By Id
 
         <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
@@ -1876,7 +2429,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_my_api_collection_endpoint_by_operation_id_serialize(
+        _param = self._delete_my_api_collection_endpoint_by_operation_id_serialize(
             apicollectionid=apicollectionid,
             operationid=operationid,
             _request_auth=_request_auth,
@@ -1886,7 +2439,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400DeleteSystemLevelEndpointTag200Response",
+            '200': "DeleteSystemLevelEndpointTag200Response",
             '404': None,
             '500': None,
         }
@@ -1902,7 +2455,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_my_api_collection_endpoint_by_operation_id_without_preload_content(
+    def delete_my_api_collection_endpoint_by_operation_id_without_preload_content(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
@@ -1949,7 +2502,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_my_api_collection_endpoint_by_operation_id_serialize(
+        _param = self._delete_my_api_collection_endpoint_by_operation_id_serialize(
             apicollectionid=apicollectionid,
             operationid=operationid,
             _request_auth=_request_auth,
@@ -1959,7 +2512,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400DeleteSystemLevelEndpointTag200Response",
+            '200': "DeleteSystemLevelEndpointTag200Response",
             '404': None,
             '500': None,
         }
@@ -1970,7 +2523,7 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_delete_my_api_collection_endpoint_by_operation_id_serialize(
+    def _delete_my_api_collection_endpoint_by_operation_id_serialize(
         self,
         apicollectionid,
         operationid,
@@ -2040,9 +2593,8 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_api_collection_endpoints(
+    def get_all_api_collections(
         self,
-        apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2055,13 +2607,11 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetMyApiCollectionEndpoints200Response:
-        """Get Api Collection Endpoints
+    ) -> GetApiCollectionsForUser200Response:
+        """Get All API Collections
 
-        <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
+        <p>Get All API Collections.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
 
-        :param apicollectionid: The APICOLLECTIONID identifier (required)
-        :type apicollectionid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2084,8 +2634,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_api_collection_endpoints_serialize(
-            apicollectionid=apicollectionid,
+        _param = self._get_all_api_collections_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2093,7 +2642,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200Response",
+            '200': "GetApiCollectionsForUser200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2108,7 +2657,194 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_api_collection_endpoints_with_http_info(
+    def get_all_api_collections_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[GetApiCollectionsForUser200Response]:
+        """Get All API Collections
+
+        <p>Get All API Collections.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_all_api_collections_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetApiCollectionsForUser200Response",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_all_api_collections_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get All API Collections
+
+        <p>Get All API Collections.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_all_api_collections_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetApiCollectionsForUser200Response",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_all_api_collections_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/obp/v5.1.0/management/api-collections',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_api_collection_endpoints(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         _request_timeout: Union[
@@ -2123,7 +2859,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetMyApiCollectionEndpoints200Response]:
+    ) -> GetMyApiCollectionEndpoints200Response:
         """Get Api Collection Endpoints
 
         <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
@@ -2152,7 +2888,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_api_collection_endpoints_serialize(
+        _param = self._get_api_collection_endpoints_serialize(
             apicollectionid=apicollectionid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2161,7 +2897,75 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200Response",
+            '200': "GetMyApiCollectionEndpoints200Response",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_api_collection_endpoints_with_http_info(
+        self,
+        apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[GetMyApiCollectionEndpoints200Response]:
+        """Get Api Collection Endpoints
+
+        <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
+
+        :param apicollectionid: The APICOLLECTIONID identifier (required)
+        :type apicollectionid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_api_collection_endpoints_serialize(
+            apicollectionid=apicollectionid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetMyApiCollectionEndpoints200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2176,7 +2980,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_api_collection_endpoints_without_preload_content(
+    def get_api_collection_endpoints_without_preload_content(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         _request_timeout: Union[
@@ -2220,7 +3024,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_api_collection_endpoints_serialize(
+        _param = self._get_api_collection_endpoints_serialize(
             apicollectionid=apicollectionid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2229,7 +3033,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200Response",
+            '200': "GetMyApiCollectionEndpoints200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2239,7 +3043,7 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_api_collection_endpoints_serialize(
+    def _get_api_collection_endpoints_serialize(
         self,
         apicollectionid,
         _request_auth,
@@ -2303,7 +3107,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_api_collections_for_user(
+    def get_api_collections_for_user(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         _request_timeout: Union[
@@ -2318,7 +3122,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetApiCollectionsForUser200Response:
+    ) -> GetApiCollectionsForUser200Response:
         """Get Api Collections for User
 
         <p>Get Api Collections for User.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -2347,7 +3151,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_api_collections_for_user_serialize(
+        _param = self._get_api_collections_for_user_serialize(
             userid=userid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2356,7 +3160,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200Response",
+            '200': "GetApiCollectionsForUser200Response",
             '404': None,
             '500': None,
         }
@@ -2372,7 +3176,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_api_collections_for_user_with_http_info(
+    def get_api_collections_for_user_with_http_info(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         _request_timeout: Union[
@@ -2387,7 +3191,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200Response]:
+    ) -> ApiResponse[GetApiCollectionsForUser200Response]:
         """Get Api Collections for User
 
         <p>Get Api Collections for User.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -2416,7 +3220,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_api_collections_for_user_serialize(
+        _param = self._get_api_collections_for_user_serialize(
             userid=userid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2425,7 +3229,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200Response",
+            '200': "GetApiCollectionsForUser200Response",
             '404': None,
             '500': None,
         }
@@ -2441,7 +3245,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_api_collections_for_user_without_preload_content(
+    def get_api_collections_for_user_without_preload_content(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         _request_timeout: Union[
@@ -2485,7 +3289,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_api_collections_for_user_serialize(
+        _param = self._get_api_collections_for_user_serialize(
             userid=userid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2494,7 +3298,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200Response",
+            '200': "GetApiCollectionsForUser200Response",
             '404': None,
             '500': None,
         }
@@ -2505,7 +3309,7 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_api_collections_for_user_serialize(
+    def _get_api_collections_for_user_serialize(
         self,
         userid,
         _request_auth,
@@ -2572,7 +3376,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_featured_api_collections(
+    def get_featured_api_collections(
         self,
         _request_timeout: Union[
             None,
@@ -2586,7 +3390,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetApiCollectionsForUser200Response:
+    ) -> GetApiCollectionsForUser200Response:
         """Get Featured Api Collections
 
         <p>Get Featured Api Collections.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -2613,7 +3417,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_featured_api_collections_serialize(
+        _param = self._get_featured_api_collections_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2621,7 +3425,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200Response",
+            '200': "GetApiCollectionsForUser200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2636,7 +3440,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_featured_api_collections_with_http_info(
+    def get_featured_api_collections_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -2650,7 +3454,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200Response]:
+    ) -> ApiResponse[GetApiCollectionsForUser200Response]:
         """Get Featured Api Collections
 
         <p>Get Featured Api Collections.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -2677,7 +3481,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_featured_api_collections_serialize(
+        _param = self._get_featured_api_collections_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2685,7 +3489,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200Response",
+            '200': "GetApiCollectionsForUser200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2700,7 +3504,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_featured_api_collections_without_preload_content(
+    def get_featured_api_collections_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -2741,7 +3545,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_featured_api_collections_serialize(
+        _param = self._get_featured_api_collections_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2749,7 +3553,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200Response",
+            '200': "GetApiCollectionsForUser200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2759,7 +3563,7 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_featured_api_collections_serialize(
+    def _get_featured_api_collections_serialize(
         self,
         _request_auth,
         _content_type,
@@ -2820,7 +3624,258 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collection_by_id(
+    def get_featured_api_collections_admin(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> GetFeaturedApiCollectionsAdmin200Response:
+        """Get Featured Api Collections (Admin)
+
+        <p>Get all featured API collections with their sort order (admin view).</p> <p>This endpoint returns the featured collections stored in the database with their sort order.<br /> It is intended for administrators to manage the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collections</strong></a>: featured_api_collections</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_featured_api_collections_admin_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetFeaturedApiCollectionsAdmin200Response",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_featured_api_collections_admin_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[GetFeaturedApiCollectionsAdmin200Response]:
+        """Get Featured Api Collections (Admin)
+
+        <p>Get all featured API collections with their sort order (admin view).</p> <p>This endpoint returns the featured collections stored in the database with their sort order.<br /> It is intended for administrators to manage the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collections</strong></a>: featured_api_collections</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_featured_api_collections_admin_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetFeaturedApiCollectionsAdmin200Response",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_featured_api_collections_admin_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get Featured Api Collections (Admin)
+
+        <p>Get all featured API collections with their sort order (admin view).</p> <p>This endpoint returns the featured collections stored in the database with their sort order.<br /> It is intended for administrators to manage the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collections</strong></a>: featured_api_collections</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_featured_api_collections_admin_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetFeaturedApiCollectionsAdmin200Response",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_featured_api_collections_admin_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/obp/v6.0.0/management/api-collections/featured',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_my_api_collection_by_id(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         _request_timeout: Union[
@@ -2835,7 +3890,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner:
+    ) -> GetApiCollectionsForUser200ResponseApiCollectionsInner:
         """Get My Api Collection By Id
 
         <p>Get Api Collection By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -2864,7 +3919,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collection_by_id_serialize(
+        _param = self._get_my_api_collection_by_id_serialize(
             apicollectionid=apicollectionid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2873,7 +3928,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '200': "GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -2889,7 +3944,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collection_by_id_with_http_info(
+    def get_my_api_collection_by_id_with_http_info(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         _request_timeout: Union[
@@ -2904,7 +3959,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner]:
+    ) -> ApiResponse[GetApiCollectionsForUser200ResponseApiCollectionsInner]:
         """Get My Api Collection By Id
 
         <p>Get Api Collection By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -2933,7 +3988,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collection_by_id_serialize(
+        _param = self._get_my_api_collection_by_id_serialize(
             apicollectionid=apicollectionid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2942,7 +3997,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '200': "GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -2958,7 +4013,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collection_by_id_without_preload_content(
+    def get_my_api_collection_by_id_without_preload_content(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         _request_timeout: Union[
@@ -3002,7 +4057,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collection_by_id_serialize(
+        _param = self._get_my_api_collection_by_id_serialize(
             apicollectionid=apicollectionid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3011,7 +4066,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '200': "GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -3022,7 +4077,7 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_my_api_collection_by_id_serialize(
+    def _get_my_api_collection_by_id_serialize(
         self,
         apicollectionid,
         _request_auth,
@@ -3089,7 +4144,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collection_by_name(
+    def get_my_api_collection_by_name(
         self,
         apicollectionname: Annotated[StrictStr, Field(description="The APICOLLECTIONNAME identifier")],
         _request_timeout: Union[
@@ -3104,7 +4159,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner:
+    ) -> GetApiCollectionsForUser200ResponseApiCollectionsInner:
         """Get My Api Collection By Name
 
         <p>Get Api Collection By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -3133,7 +4188,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collection_by_name_serialize(
+        _param = self._get_my_api_collection_by_name_serialize(
             apicollectionname=apicollectionname,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3142,7 +4197,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '200': "GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -3158,7 +4213,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collection_by_name_with_http_info(
+    def get_my_api_collection_by_name_with_http_info(
         self,
         apicollectionname: Annotated[StrictStr, Field(description="The APICOLLECTIONNAME identifier")],
         _request_timeout: Union[
@@ -3173,7 +4228,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner]:
+    ) -> ApiResponse[GetApiCollectionsForUser200ResponseApiCollectionsInner]:
         """Get My Api Collection By Name
 
         <p>Get Api Collection By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -3202,7 +4257,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collection_by_name_serialize(
+        _param = self._get_my_api_collection_by_name_serialize(
             apicollectionname=apicollectionname,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3211,7 +4266,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '200': "GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -3227,7 +4282,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collection_by_name_without_preload_content(
+    def get_my_api_collection_by_name_without_preload_content(
         self,
         apicollectionname: Annotated[StrictStr, Field(description="The APICOLLECTIONNAME identifier")],
         _request_timeout: Union[
@@ -3271,7 +4326,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collection_by_name_serialize(
+        _param = self._get_my_api_collection_by_name_serialize(
             apicollectionname=apicollectionname,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3280,7 +4335,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '200': "GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -3291,7 +4346,7 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_my_api_collection_by_name_serialize(
+    def _get_my_api_collection_by_name_serialize(
         self,
         apicollectionname,
         _request_auth,
@@ -3358,7 +4413,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collection_endpoint(
+    def get_my_api_collection_endpoint(
         self,
         apicollectionname: Annotated[StrictStr, Field(description="The APICOLLECTIONNAME identifier")],
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
@@ -3374,7 +4429,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner:
+    ) -> GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner:
         """Get My Api Collection Endpoint
 
         <p>Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
@@ -3405,7 +4460,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collection_endpoint_serialize(
+        _param = self._get_my_api_collection_endpoint_serialize(
             apicollectionname=apicollectionname,
             operationid=operationid,
             _request_auth=_request_auth,
@@ -3415,7 +4470,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
+            '200': "GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '404': None,
             '500': None,
         }
@@ -3431,7 +4486,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collection_endpoint_with_http_info(
+    def get_my_api_collection_endpoint_with_http_info(
         self,
         apicollectionname: Annotated[StrictStr, Field(description="The APICOLLECTIONNAME identifier")],
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
@@ -3447,7 +4502,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner]:
+    ) -> ApiResponse[GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner]:
         """Get My Api Collection Endpoint
 
         <p>Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
@@ -3478,7 +4533,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collection_endpoint_serialize(
+        _param = self._get_my_api_collection_endpoint_serialize(
             apicollectionname=apicollectionname,
             operationid=operationid,
             _request_auth=_request_auth,
@@ -3488,7 +4543,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
+            '200': "GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '404': None,
             '500': None,
         }
@@ -3504,7 +4559,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collection_endpoint_without_preload_content(
+    def get_my_api_collection_endpoint_without_preload_content(
         self,
         apicollectionname: Annotated[StrictStr, Field(description="The APICOLLECTIONNAME identifier")],
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
@@ -3551,7 +4606,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collection_endpoint_serialize(
+        _param = self._get_my_api_collection_endpoint_serialize(
             apicollectionname=apicollectionname,
             operationid=operationid,
             _request_auth=_request_auth,
@@ -3561,7 +4616,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
+            '200': "GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '404': None,
             '500': None,
         }
@@ -3572,7 +4627,7 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_my_api_collection_endpoint_serialize(
+    def _get_my_api_collection_endpoint_serialize(
         self,
         apicollectionname,
         operationid,
@@ -3639,7 +4694,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collection_endpoints(
+    def get_my_api_collection_endpoints(
         self,
         apicollectionname: Annotated[StrictStr, Field(description="The APICOLLECTIONNAME identifier")],
         _request_timeout: Union[
@@ -3654,7 +4709,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetMyApiCollectionEndpoints200Response:
+    ) -> GetMyApiCollectionEndpoints200Response:
         """Get My Api Collection Endpoints
 
         <p>Get Api Collection Endpoints By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
@@ -3683,7 +4738,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collection_endpoints_serialize(
+        _param = self._get_my_api_collection_endpoints_serialize(
             apicollectionname=apicollectionname,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3692,7 +4747,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200Response",
+            '200': "GetMyApiCollectionEndpoints200Response",
             '404': None,
             '500': None,
         }
@@ -3708,7 +4763,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collection_endpoints_with_http_info(
+    def get_my_api_collection_endpoints_with_http_info(
         self,
         apicollectionname: Annotated[StrictStr, Field(description="The APICOLLECTIONNAME identifier")],
         _request_timeout: Union[
@@ -3723,7 +4778,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetMyApiCollectionEndpoints200Response]:
+    ) -> ApiResponse[GetMyApiCollectionEndpoints200Response]:
         """Get My Api Collection Endpoints
 
         <p>Get Api Collection Endpoints By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
@@ -3752,7 +4807,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collection_endpoints_serialize(
+        _param = self._get_my_api_collection_endpoints_serialize(
             apicollectionname=apicollectionname,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3761,7 +4816,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200Response",
+            '200': "GetMyApiCollectionEndpoints200Response",
             '404': None,
             '500': None,
         }
@@ -3777,7 +4832,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collection_endpoints_without_preload_content(
+    def get_my_api_collection_endpoints_without_preload_content(
         self,
         apicollectionname: Annotated[StrictStr, Field(description="The APICOLLECTIONNAME identifier")],
         _request_timeout: Union[
@@ -3821,7 +4876,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collection_endpoints_serialize(
+        _param = self._get_my_api_collection_endpoints_serialize(
             apicollectionname=apicollectionname,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3830,7 +4885,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200Response",
+            '200': "GetMyApiCollectionEndpoints200Response",
             '404': None,
             '500': None,
         }
@@ -3841,7 +4896,7 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_my_api_collection_endpoints_serialize(
+    def _get_my_api_collection_endpoints_serialize(
         self,
         apicollectionname,
         _request_auth,
@@ -3908,7 +4963,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collection_endpoints_by_id(
+    def get_my_api_collection_endpoints_by_id(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         _request_timeout: Union[
@@ -3923,7 +4978,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetMyApiCollectionEndpoints200Response:
+    ) -> GetMyApiCollectionEndpoints200Response:
         """Get My Api Collection Endpoints By Id
 
         <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
@@ -3952,7 +5007,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collection_endpoints_by_id_serialize(
+        _param = self._get_my_api_collection_endpoints_by_id_serialize(
             apicollectionid=apicollectionid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3961,7 +5016,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200Response",
+            '200': "GetMyApiCollectionEndpoints200Response",
             '404': None,
             '500': None,
         }
@@ -3977,7 +5032,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collection_endpoints_by_id_with_http_info(
+    def get_my_api_collection_endpoints_by_id_with_http_info(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         _request_timeout: Union[
@@ -3992,7 +5047,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetMyApiCollectionEndpoints200Response]:
+    ) -> ApiResponse[GetMyApiCollectionEndpoints200Response]:
         """Get My Api Collection Endpoints By Id
 
         <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
@@ -4021,7 +5076,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collection_endpoints_by_id_serialize(
+        _param = self._get_my_api_collection_endpoints_by_id_serialize(
             apicollectionid=apicollectionid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4030,7 +5085,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200Response",
+            '200': "GetMyApiCollectionEndpoints200Response",
             '404': None,
             '500': None,
         }
@@ -4046,7 +5101,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collection_endpoints_by_id_without_preload_content(
+    def get_my_api_collection_endpoints_by_id_without_preload_content(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         _request_timeout: Union[
@@ -4090,7 +5145,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collection_endpoints_by_id_serialize(
+        _param = self._get_my_api_collection_endpoints_by_id_serialize(
             apicollectionid=apicollectionid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4099,7 +5154,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200Response",
+            '200': "GetMyApiCollectionEndpoints200Response",
             '404': None,
             '500': None,
         }
@@ -4110,7 +5165,7 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_my_api_collection_endpoints_by_id_serialize(
+    def _get_my_api_collection_endpoints_by_id_serialize(
         self,
         apicollectionid,
         _request_auth,
@@ -4177,7 +5232,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collections(
+    def get_my_api_collections(
         self,
         _request_timeout: Union[
             None,
@@ -4191,7 +5246,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetApiCollectionsForUser200Response:
+    ) -> GetApiCollectionsForUser200Response:
         """Get My Api Collections
 
         <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>1 limit (for pagination: defaults to 50)  eg:limit=200</p> <p>2 offset (for pagination: zero index, defaults to 0) eg: offset=10</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -4218,7 +5273,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collections_serialize(
+        _param = self._get_my_api_collections_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4226,7 +5281,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200Response",
+            '200': "GetApiCollectionsForUser200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -4241,7 +5296,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collections_with_http_info(
+    def get_my_api_collections_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -4255,7 +5310,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200Response]:
+    ) -> ApiResponse[GetApiCollectionsForUser200Response]:
         """Get My Api Collections
 
         <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>1 limit (for pagination: defaults to 50)  eg:limit=200</p> <p>2 offset (for pagination: zero index, defaults to 0) eg: offset=10</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -4282,7 +5337,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collections_serialize(
+        _param = self._get_my_api_collections_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4290,7 +5345,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200Response",
+            '200': "GetApiCollectionsForUser200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -4305,7 +5360,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_my_api_collections_without_preload_content(
+    def get_my_api_collections_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -4346,7 +5401,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_my_api_collections_serialize(
+        _param = self._get_my_api_collections_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4354,7 +5409,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200Response",
+            '200': "GetApiCollectionsForUser200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -4364,7 +5419,7 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_my_api_collections_serialize(
+    def _get_my_api_collections_serialize(
         self,
         _request_auth,
         _content_type,
@@ -4428,7 +5483,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_sharable_api_collection_by_id(
+    def get_sharable_api_collection_by_id(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         _request_timeout: Union[
@@ -4443,7 +5498,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner:
+    ) -> GetApiCollectionsForUser200ResponseApiCollectionsInner:
         """Get Sharable Api Collection By Id
 
         <p>Get Sharable Api Collection By Id.<br /> User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -4472,7 +5527,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_sharable_api_collection_by_id_serialize(
+        _param = self._get_sharable_api_collection_by_id_serialize(
             apicollectionid=apicollectionid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4481,7 +5536,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '200': "GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -4496,7 +5551,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_sharable_api_collection_by_id_with_http_info(
+    def get_sharable_api_collection_by_id_with_http_info(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         _request_timeout: Union[
@@ -4511,7 +5566,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner]:
+    ) -> ApiResponse[GetApiCollectionsForUser200ResponseApiCollectionsInner]:
         """Get Sharable Api Collection By Id
 
         <p>Get Sharable Api Collection By Id.<br /> User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -4540,7 +5595,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_sharable_api_collection_by_id_serialize(
+        _param = self._get_sharable_api_collection_by_id_serialize(
             apicollectionid=apicollectionid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4549,7 +5604,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '200': "GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -4564,7 +5619,7 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_sharable_api_collection_by_id_without_preload_content(
+    def get_sharable_api_collection_by_id_without_preload_content(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
         _request_timeout: Union[
@@ -4608,7 +5663,7 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_sharable_api_collection_by_id_serialize(
+        _param = self._get_sharable_api_collection_by_id_serialize(
             apicollectionid=apicollectionid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4617,7 +5672,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '200': "GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -4627,7 +5682,7 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_sharable_api_collection_by_id_serialize(
+    def _get_sharable_api_collection_by_id_serialize(
         self,
         apicollectionid,
         _request_auth,
@@ -4691,261 +5746,10 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_all_api_collections(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetApiCollectionsForUser200Response:
-        """Get All API Collections
-
-        <p>Get All API Collections.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv5_1_0_get_all_api_collections_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200Response",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv5_1_0_get_all_api_collections_with_http_info(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200Response]:
-        """Get All API Collections
-
-        <p>Get All API Collections.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv5_1_0_get_all_api_collections_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200Response",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv5_1_0_get_all_api_collections_without_preload_content(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Get All API Collections
-
-        <p>Get All API Collections.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv5_1_0_get_all_api_collections_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200Response",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv5_1_0_get_all_api_collections_serialize(
-        self,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/obp/v5.1.0/management/api-collections',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv5_1_0_update_my_api_collection(
+    def update_featured_api_collection(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
-        obpv400_create_my_api_collection_request: Annotated[OBPv400CreateMyApiCollectionRequest, Field(description="Request body")],
+        update_featured_api_collection_request: Annotated[UpdateFeaturedApiCollectionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4958,15 +5762,15 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner:
-        """Update My Api Collection By API_COLLECTION_ID
+    ) -> GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner:
+        """Update Featured Api Collection
 
-        <p>Update Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+        <p>Update the sort order of a featured API collection.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
 
         :param apicollectionid: The APICOLLECTIONID identifier (required)
         :type apicollectionid: str
-        :param obpv400_create_my_api_collection_request: Request body (required)
-        :type obpv400_create_my_api_collection_request: OBPv400CreateMyApiCollectionRequest
+        :param update_featured_api_collection_request: Request body (required)
+        :type update_featured_api_collection_request: UpdateFeaturedApiCollectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4989,9 +5793,9 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_update_my_api_collection_serialize(
+        _param = self._update_featured_api_collection_serialize(
             apicollectionid=apicollectionid,
-            obpv400_create_my_api_collection_request=obpv400_create_my_api_collection_request,
+            update_featured_api_collection_request=update_featured_api_collection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4999,7 +5803,8 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '200': "GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
+            '400': None,
             '404': None,
             '500': None,
         }
@@ -5015,10 +5820,10 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv5_1_0_update_my_api_collection_with_http_info(
+    def update_featured_api_collection_with_http_info(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
-        obpv400_create_my_api_collection_request: Annotated[OBPv400CreateMyApiCollectionRequest, Field(description="Request body")],
+        update_featured_api_collection_request: Annotated[UpdateFeaturedApiCollectionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5031,15 +5836,15 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner]:
-        """Update My Api Collection By API_COLLECTION_ID
+    ) -> ApiResponse[GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner]:
+        """Update Featured Api Collection
 
-        <p>Update Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+        <p>Update the sort order of a featured API collection.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
 
         :param apicollectionid: The APICOLLECTIONID identifier (required)
         :type apicollectionid: str
-        :param obpv400_create_my_api_collection_request: Request body (required)
-        :type obpv400_create_my_api_collection_request: OBPv400CreateMyApiCollectionRequest
+        :param update_featured_api_collection_request: Request body (required)
+        :type update_featured_api_collection_request: UpdateFeaturedApiCollectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5062,9 +5867,9 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_update_my_api_collection_serialize(
+        _param = self._update_featured_api_collection_serialize(
             apicollectionid=apicollectionid,
-            obpv400_create_my_api_collection_request=obpv400_create_my_api_collection_request,
+            update_featured_api_collection_request=update_featured_api_collection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5072,7 +5877,8 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '200': "GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
+            '400': None,
             '404': None,
             '500': None,
         }
@@ -5088,10 +5894,10 @@ class ApiCollectionApi:
 
 
     @validate_call
-    def o_bpv5_1_0_update_my_api_collection_without_preload_content(
+    def update_featured_api_collection_without_preload_content(
         self,
         apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
-        obpv400_create_my_api_collection_request: Annotated[OBPv400CreateMyApiCollectionRequest, Field(description="Request body")],
+        update_featured_api_collection_request: Annotated[UpdateFeaturedApiCollectionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5105,14 +5911,14 @@ class ApiCollectionApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update My Api Collection By API_COLLECTION_ID
+        """Update Featured Api Collection
 
-        <p>Update Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+        <p>Update the sort order of a featured API collection.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
 
         :param apicollectionid: The APICOLLECTIONID identifier (required)
         :type apicollectionid: str
-        :param obpv400_create_my_api_collection_request: Request body (required)
-        :type obpv400_create_my_api_collection_request: OBPv400CreateMyApiCollectionRequest
+        :param update_featured_api_collection_request: Request body (required)
+        :type update_featured_api_collection_request: UpdateFeaturedApiCollectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5135,9 +5941,9 @@ class ApiCollectionApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_update_my_api_collection_serialize(
+        _param = self._update_featured_api_collection_serialize(
             apicollectionid=apicollectionid,
-            obpv400_create_my_api_collection_request=obpv400_create_my_api_collection_request,
+            update_featured_api_collection_request=update_featured_api_collection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5145,7 +5951,8 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '200': "GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
+            '400': None,
             '404': None,
             '500': None,
         }
@@ -5156,10 +5963,10 @@ class ApiCollectionApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_update_my_api_collection_serialize(
+    def _update_featured_api_collection_serialize(
         self,
         apicollectionid,
-        obpv400_create_my_api_collection_request,
+        update_featured_api_collection_request,
         _request_auth,
         _content_type,
         _headers,
@@ -5187,8 +5994,305 @@ class ApiCollectionApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_my_api_collection_request is not None:
-            _body_params = obpv400_create_my_api_collection_request
+        if update_featured_api_collection_request is not None:
+            _body_params = update_featured_api_collection_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='PUT',
+            resource_path='/obp/v6.0.0/management/api-collections/featured/{apicollectionid}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def update_my_api_collection(
+        self,
+        apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
+        create_my_api_collection_request: Annotated[CreateMyApiCollectionRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> GetApiCollectionsForUser200ResponseApiCollectionsInner:
+        """Update My Api Collection By API_COLLECTION_ID
+
+        <p>Update Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+
+        :param apicollectionid: The APICOLLECTIONID identifier (required)
+        :type apicollectionid: str
+        :param create_my_api_collection_request: Request body (required)
+        :type create_my_api_collection_request: CreateMyApiCollectionRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_my_api_collection_serialize(
+            apicollectionid=apicollectionid,
+            create_my_api_collection_request=create_my_api_collection_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def update_my_api_collection_with_http_info(
+        self,
+        apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
+        create_my_api_collection_request: Annotated[CreateMyApiCollectionRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[GetApiCollectionsForUser200ResponseApiCollectionsInner]:
+        """Update My Api Collection By API_COLLECTION_ID
+
+        <p>Update Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+
+        :param apicollectionid: The APICOLLECTIONID identifier (required)
+        :type apicollectionid: str
+        :param create_my_api_collection_request: Request body (required)
+        :type create_my_api_collection_request: CreateMyApiCollectionRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_my_api_collection_serialize(
+            apicollectionid=apicollectionid,
+            create_my_api_collection_request=create_my_api_collection_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def update_my_api_collection_without_preload_content(
+        self,
+        apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
+        create_my_api_collection_request: Annotated[CreateMyApiCollectionRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Update My Api Collection By API_COLLECTION_ID
+
+        <p>Update Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+
+        :param apicollectionid: The APICOLLECTIONID identifier (required)
+        :type apicollectionid: str
+        :param create_my_api_collection_request: Request body (required)
+        :type create_my_api_collection_request: CreateMyApiCollectionRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_my_api_collection_serialize(
+            apicollectionid=apicollectionid,
+            create_my_api_collection_request=create_my_api_collection_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetApiCollectionsForUser200ResponseApiCollectionsInner",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _update_my_api_collection_serialize(
+        self,
+        apicollectionid,
+        create_my_api_collection_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if apicollectionid is not None:
+            _path_params['apicollectionid'] = apicollectionid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if create_my_api_collection_request is not None:
+            _body_params = create_my_api_collection_request
 
 
         # set the HTTP header `Accept`
@@ -5223,1110 +6327,6 @@ class ApiCollectionApi:
         return self.api_client.param_serialize(
             method='PUT',
             resource_path='/obp/v5.1.0/my/api-collections/{apicollectionid}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv6_0_0_create_featured_api_collection(
-        self,
-        obpv600_create_featured_api_collection_request: Annotated[OBPv600CreateFeaturedApiCollectionRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner:
-        """Create Featured Api Collection
-
-        <p>Add an API Collection to the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-
-        :param obpv600_create_featured_api_collection_request: Request body (required)
-        :type obpv600_create_featured_api_collection_request: OBPv600CreateFeaturedApiCollectionRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv6_0_0_create_featured_api_collection_serialize(
-            obpv600_create_featured_api_collection_request=obpv600_create_featured_api_collection_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
-            '404': None,
-            '500': None,
-            '401': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv6_0_0_create_featured_api_collection_with_http_info(
-        self,
-        obpv600_create_featured_api_collection_request: Annotated[OBPv600CreateFeaturedApiCollectionRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner]:
-        """Create Featured Api Collection
-
-        <p>Add an API Collection to the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-
-        :param obpv600_create_featured_api_collection_request: Request body (required)
-        :type obpv600_create_featured_api_collection_request: OBPv600CreateFeaturedApiCollectionRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv6_0_0_create_featured_api_collection_serialize(
-            obpv600_create_featured_api_collection_request=obpv600_create_featured_api_collection_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
-            '404': None,
-            '500': None,
-            '401': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv6_0_0_create_featured_api_collection_without_preload_content(
-        self,
-        obpv600_create_featured_api_collection_request: Annotated[OBPv600CreateFeaturedApiCollectionRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Create Featured Api Collection
-
-        <p>Add an API Collection to the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-
-        :param obpv600_create_featured_api_collection_request: Request body (required)
-        :type obpv600_create_featured_api_collection_request: OBPv600CreateFeaturedApiCollectionRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv6_0_0_create_featured_api_collection_serialize(
-            obpv600_create_featured_api_collection_request=obpv600_create_featured_api_collection_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
-            '404': None,
-            '500': None,
-            '401': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv6_0_0_create_featured_api_collection_serialize(
-        self,
-        obpv600_create_featured_api_collection_request,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if obpv600_create_featured_api_collection_request is not None:
-            _body_params = obpv600_create_featured_api_collection_request
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/obp/v6.0.0/management/api-collections/featured',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv6_0_0_delete_featured_api_collection(
-        self,
-        apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
-        """Delete Featured Api Collection
-
-        <p>Remove an API Collection from the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param apicollectionid: The APICOLLECTIONID identifier (required)
-        :type apicollectionid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv6_0_0_delete_featured_api_collection_serialize(
-            apicollectionid=apicollectionid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '400': None,
-            '404': None,
-            '500': None,
-            '403': None,
-            '200': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv6_0_0_delete_featured_api_collection_with_http_info(
-        self,
-        apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
-        """Delete Featured Api Collection
-
-        <p>Remove an API Collection from the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param apicollectionid: The APICOLLECTIONID identifier (required)
-        :type apicollectionid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv6_0_0_delete_featured_api_collection_serialize(
-            apicollectionid=apicollectionid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '400': None,
-            '404': None,
-            '500': None,
-            '403': None,
-            '200': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv6_0_0_delete_featured_api_collection_without_preload_content(
-        self,
-        apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Delete Featured Api Collection
-
-        <p>Remove an API Collection from the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param apicollectionid: The APICOLLECTIONID identifier (required)
-        :type apicollectionid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv6_0_0_delete_featured_api_collection_serialize(
-            apicollectionid=apicollectionid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '400': None,
-            '404': None,
-            '500': None,
-            '403': None,
-            '200': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv6_0_0_delete_featured_api_collection_serialize(
-        self,
-        apicollectionid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if apicollectionid is not None:
-            _path_params['apicollectionid'] = apicollectionid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='DELETE',
-            resource_path='/obp/v6.0.0/management/api-collections/featured/{apicollectionid}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv6_0_0_get_featured_api_collections_admin(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetFeaturedApiCollectionsAdmin200Response:
-        """Get Featured Api Collections (Admin)
-
-        <p>Get all featured API collections with their sort order (admin view).</p> <p>This endpoint returns the featured collections stored in the database with their sort order.<br /> It is intended for administrators to manage the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collections</strong></a>: featured_api_collections</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv6_0_0_get_featured_api_collections_admin_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetFeaturedApiCollectionsAdmin200Response",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv6_0_0_get_featured_api_collections_admin_with_http_info(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetFeaturedApiCollectionsAdmin200Response]:
-        """Get Featured Api Collections (Admin)
-
-        <p>Get all featured API collections with their sort order (admin view).</p> <p>This endpoint returns the featured collections stored in the database with their sort order.<br /> It is intended for administrators to manage the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collections</strong></a>: featured_api_collections</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv6_0_0_get_featured_api_collections_admin_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetFeaturedApiCollectionsAdmin200Response",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv6_0_0_get_featured_api_collections_admin_without_preload_content(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Get Featured Api Collections (Admin)
-
-        <p>Get all featured API collections with their sort order (admin view).</p> <p>This endpoint returns the featured collections stored in the database with their sort order.<br /> It is intended for administrators to manage the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collections</strong></a>: featured_api_collections</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv6_0_0_get_featured_api_collections_admin_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetFeaturedApiCollectionsAdmin200Response",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv6_0_0_get_featured_api_collections_admin_serialize(
-        self,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/obp/v6.0.0/management/api-collections/featured',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv6_0_0_update_featured_api_collection(
-        self,
-        apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
-        obpv600_update_featured_api_collection_request: Annotated[OBPv600UpdateFeaturedApiCollectionRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner:
-        """Update Featured Api Collection
-
-        <p>Update the sort order of a featured API collection.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-
-        :param apicollectionid: The APICOLLECTIONID identifier (required)
-        :type apicollectionid: str
-        :param obpv600_update_featured_api_collection_request: Request body (required)
-        :type obpv600_update_featured_api_collection_request: OBPv600UpdateFeaturedApiCollectionRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv6_0_0_update_featured_api_collection_serialize(
-            apicollectionid=apicollectionid,
-            obpv600_update_featured_api_collection_request=obpv600_update_featured_api_collection_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
-            '400': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv6_0_0_update_featured_api_collection_with_http_info(
-        self,
-        apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
-        obpv600_update_featured_api_collection_request: Annotated[OBPv600UpdateFeaturedApiCollectionRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner]:
-        """Update Featured Api Collection
-
-        <p>Update the sort order of a featured API collection.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-
-        :param apicollectionid: The APICOLLECTIONID identifier (required)
-        :type apicollectionid: str
-        :param obpv600_update_featured_api_collection_request: Request body (required)
-        :type obpv600_update_featured_api_collection_request: OBPv600UpdateFeaturedApiCollectionRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv6_0_0_update_featured_api_collection_serialize(
-            apicollectionid=apicollectionid,
-            obpv600_update_featured_api_collection_request=obpv600_update_featured_api_collection_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
-            '400': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv6_0_0_update_featured_api_collection_without_preload_content(
-        self,
-        apicollectionid: Annotated[StrictStr, Field(description="The APICOLLECTIONID identifier")],
-        obpv600_update_featured_api_collection_request: Annotated[OBPv600UpdateFeaturedApiCollectionRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Update Featured Api Collection
-
-        <p>Update the sort order of a featured API collection.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-
-        :param apicollectionid: The APICOLLECTIONID identifier (required)
-        :type apicollectionid: str
-        :param obpv600_update_featured_api_collection_request: Request body (required)
-        :type obpv600_update_featured_api_collection_request: OBPv600UpdateFeaturedApiCollectionRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv6_0_0_update_featured_api_collection_serialize(
-            apicollectionid=apicollectionid,
-            obpv600_update_featured_api_collection_request=obpv600_update_featured_api_collection_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
-            '400': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv6_0_0_update_featured_api_collection_serialize(
-        self,
-        apicollectionid,
-        obpv600_update_featured_api_collection_request,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if apicollectionid is not None:
-            _path_params['apicollectionid'] = apicollectionid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if obpv600_update_featured_api_collection_request is not None:
-            _body_params = obpv600_update_featured_api_collection_request
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='PUT',
-            resource_path='/obp/v6.0.0/management/api-collections/featured/{apicollectionid}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

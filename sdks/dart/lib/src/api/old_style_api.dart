@@ -8,7 +8,7 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:obp_dart/src/model/obpv400_get_dynamic_message_doc200_response_properties_example_inbound_message.dart';
+import 'package:built_value/json_object.dart';
 
 class OldStyleApi {
 
@@ -29,9 +29,9 @@ class OldStyleApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage] as data
+  /// Returns a [Future] containing a [Response] with a [JsonObject] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>> oBPv200ElasticSearchMetrics({ 
+  Future<Response<JsonObject>> elasticSearchMetrics({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -58,7 +58,7 @@ class OldStyleApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -75,14 +75,14 @@ class OldStyleApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage? _responseData;
+    JsonObject? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage),
-      ) as OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage;
+        specifiedType: const FullType(JsonObject),
+      ) as JsonObject;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -94,7 +94,7 @@ class OldStyleApi {
       );
     }
 
-    return Response<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>(
+    return Response<JsonObject>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

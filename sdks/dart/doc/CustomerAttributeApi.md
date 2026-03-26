@@ -5,22 +5,22 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateCustomerAttribute**](CustomerAttributeApi.md#obpv400createcustomerattribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
-[**oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition**](CustomerAttributeApi.md#obpv400createorupdatecustomerattributeattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
-[**oBPv400DeleteCustomerAttribute**](CustomerAttributeApi.md#obpv400deletecustomerattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
-[**oBPv400DeleteCustomerAttributeDefinition**](CustomerAttributeApi.md#obpv400deletecustomerattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
-[**oBPv400GetCustomerAttributeById**](CustomerAttributeApi.md#obpv400getcustomerattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
-[**oBPv400GetCustomerAttributeDefinition**](CustomerAttributeApi.md#obpv400getcustomerattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
-[**oBPv400GetCustomerAttributes**](CustomerAttributeApi.md#obpv400getcustomerattributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
-[**oBPv400UpdateCustomerAttribute**](CustomerAttributeApi.md#obpv400updatecustomerattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
+[**createCustomerAttribute**](CustomerAttributeApi.md#createcustomerattribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
+[**createOrUpdateCustomerAttributeAttributeDefinition**](CustomerAttributeApi.md#createorupdatecustomerattributeattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
+[**deleteCustomerAttribute**](CustomerAttributeApi.md#deletecustomerattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
+[**deleteCustomerAttributeDefinition**](CustomerAttributeApi.md#deletecustomerattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
+[**getCustomerAttributeById**](CustomerAttributeApi.md#getcustomerattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
+[**getCustomerAttributeDefinition**](CustomerAttributeApi.md#getcustomerattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
+[**getCustomerAttributes**](CustomerAttributeApi.md#getcustomerattributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
+[**updateCustomerAttribute**](CustomerAttributeApi.md#updatecustomerattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
 
 
-# **oBPv400CreateCustomerAttribute**
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems oBPv400CreateCustomerAttribute(bankid, customerid, oBPv600CreatePersonalDataFieldRequest)
+# **createCustomerAttribute**
+> GetCustomerAttributes200ResponseCustomerAttributesInner createCustomerAttribute(bankid, customerid, createPersonalDataFieldRequest)
 
 Create Customer Attribute
 
@@ -43,13 +43,13 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getCustomerAttributeApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String customerid = customerid_example; // String | The CUSTOMERID identifier
-final OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // OBPv600CreatePersonalDataFieldRequest | Request body
+final CreatePersonalDataFieldRequest createPersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // CreatePersonalDataFieldRequest | Request body
 
 try {
-    final response = api.oBPv400CreateCustomerAttribute(bankid, customerid, oBPv600CreatePersonalDataFieldRequest);
+    final response = api.createCustomerAttribute(bankid, customerid, createPersonalDataFieldRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CustomerAttributeApi->oBPv400CreateCustomerAttribute: $e\n');
+    print('Exception when calling CustomerAttributeApi->createCustomerAttribute: $e\n');
 }
 ```
 
@@ -59,11 +59,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
  **customerid** | **String**| The CUSTOMERID identifier | 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -76,8 +76,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+# **createOrUpdateCustomerAttributeAttributeDefinition**
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateCustomerAttributeAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Customer Attribute Definition
 
@@ -99,13 +99,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getCustomerAttributeApi();
 final String bankid = bankid_example; // String | The BANKID identifier
-final OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}}; // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+final CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}}; // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 try {
-    final response = api.oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+    final response = api.createOrUpdateCustomerAttributeAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CustomerAttributeApi->oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition: $e\n');
+    print('Exception when calling CustomerAttributeApi->createOrUpdateCustomerAttributeAttributeDefinition: $e\n');
 }
 ```
 
@@ -114,11 +114,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
- **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
+ **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -131,8 +131,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteCustomerAttribute**
-> oBPv400DeleteCustomerAttribute(bankid, customerid, customerattributeid)
+# **deleteCustomerAttribute**
+> deleteCustomerAttribute(bankid, customerid, customerattributeid)
 
 Delete Customer Attribute
 
@@ -158,9 +158,9 @@ final String customerid = customerid_example; // String | The CUSTOMERID identif
 final String customerattributeid = customerattributeid_example; // String | The CUSTOMERATTRIBUTEID identifier
 
 try {
-    api.oBPv400DeleteCustomerAttribute(bankid, customerid, customerattributeid);
+    api.deleteCustomerAttribute(bankid, customerid, customerattributeid);
 } on DioException catch (e) {
-    print('Exception when calling CustomerAttributeApi->oBPv400DeleteCustomerAttribute: $e\n');
+    print('Exception when calling CustomerAttributeApi->deleteCustomerAttribute: $e\n');
 }
 ```
 
@@ -187,8 +187,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteCustomerAttributeDefinition**
-> oBPv400DeleteCustomerAttributeDefinition(bankid, attributedefinitionid)
+# **deleteCustomerAttributeDefinition**
+> deleteCustomerAttributeDefinition(bankid, attributedefinitionid)
 
 Delete Customer Attribute Definition
 
@@ -213,9 +213,9 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String attributedefinitionid = attributedefinitionid_example; // String | The ATTRIBUTEDEFINITIONID identifier
 
 try {
-    api.oBPv400DeleteCustomerAttributeDefinition(bankid, attributedefinitionid);
+    api.deleteCustomerAttributeDefinition(bankid, attributedefinitionid);
 } on DioException catch (e) {
-    print('Exception when calling CustomerAttributeApi->oBPv400DeleteCustomerAttributeDefinition: $e\n');
+    print('Exception when calling CustomerAttributeApi->deleteCustomerAttributeDefinition: $e\n');
 }
 ```
 
@@ -241,8 +241,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetCustomerAttributeById**
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems oBPv400GetCustomerAttributeById(bankid, customerid, attributeid)
+# **getCustomerAttributeById**
+> GetCustomerAttributes200ResponseCustomerAttributesInner getCustomerAttributeById(bankid, customerid, attributeid)
 
 Get Customer Attribute By Id
 
@@ -268,10 +268,10 @@ final String customerid = customerid_example; // String | The CUSTOMERID identif
 final String attributeid = attributeid_example; // String | The ATTRIBUTEID identifier
 
 try {
-    final response = api.oBPv400GetCustomerAttributeById(bankid, customerid, attributeid);
+    final response = api.getCustomerAttributeById(bankid, customerid, attributeid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CustomerAttributeApi->oBPv400GetCustomerAttributeById: $e\n');
+    print('Exception when calling CustomerAttributeApi->getCustomerAttributeById: $e\n');
 }
 ```
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -298,8 +298,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetCustomerAttributeDefinition**
-> OBPv400GetTransactionRequestAttributeDefinition200Response oBPv400GetCustomerAttributeDefinition(bankid)
+# **getCustomerAttributeDefinition**
+> GetTransactionRequestAttributeDefinition200Response getCustomerAttributeDefinition(bankid)
 
 Get Customer Attribute Definition
 
@@ -323,10 +323,10 @@ final api = ObpDart().getCustomerAttributeApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 
 try {
-    final response = api.oBPv400GetCustomerAttributeDefinition(bankid);
+    final response = api.getCustomerAttributeDefinition(bankid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CustomerAttributeApi->oBPv400GetCustomerAttributeDefinition: $e\n');
+    print('Exception when calling CustomerAttributeApi->getCustomerAttributeDefinition: $e\n');
 }
 ```
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -351,8 +351,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetCustomerAttributes**
-> OBPv400GetCustomerAttributes200Response oBPv400GetCustomerAttributes(bankid, customerid)
+# **getCustomerAttributes**
+> GetCustomerAttributes200Response getCustomerAttributes(bankid, customerid)
 
 Get Customer Attributes
 
@@ -377,10 +377,10 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String customerid = customerid_example; // String | The CUSTOMERID identifier
 
 try {
-    final response = api.oBPv400GetCustomerAttributes(bankid, customerid);
+    final response = api.getCustomerAttributes(bankid, customerid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CustomerAttributeApi->oBPv400GetCustomerAttributes: $e\n');
+    print('Exception when calling CustomerAttributeApi->getCustomerAttributes: $e\n');
 }
 ```
 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200Response**](OBPv400GetCustomerAttributes200Response.md)
+[**GetCustomerAttributes200Response**](GetCustomerAttributes200Response.md)
 
 ### Authorization
 
@@ -406,8 +406,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateCustomerAttribute**
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems oBPv400UpdateCustomerAttribute(bankid, customerid, customerattributeid, oBPv600CreatePersonalDataFieldRequest)
+# **updateCustomerAttribute**
+> GetCustomerAttributes200ResponseCustomerAttributesInner updateCustomerAttribute(bankid, customerid, customerattributeid, createPersonalDataFieldRequest)
 
 Update Customer Attribute
 
@@ -431,13 +431,13 @@ final api = ObpDart().getCustomerAttributeApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String customerid = customerid_example; // String | The CUSTOMERID identifier
 final String customerattributeid = customerattributeid_example; // String | The CUSTOMERATTRIBUTEID identifier
-final OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // OBPv600CreatePersonalDataFieldRequest | Request body
+final CreatePersonalDataFieldRequest createPersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // CreatePersonalDataFieldRequest | Request body
 
 try {
-    final response = api.oBPv400UpdateCustomerAttribute(bankid, customerid, customerattributeid, oBPv600CreatePersonalDataFieldRequest);
+    final response = api.updateCustomerAttribute(bankid, customerid, customerattributeid, createPersonalDataFieldRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CustomerAttributeApi->oBPv400UpdateCustomerAttribute: $e\n');
+    print('Exception when calling CustomerAttributeApi->updateCustomerAttribute: $e\n');
 }
 ```
 
@@ -448,11 +448,11 @@ Name | Type | Description  | Notes
  **bankid** | **String**| The BANKID identifier | 
  **customerid** | **String**| The CUSTOMERID identifier | 
  **customerattributeid** | **String**| The CUSTOMERATTRIBUTEID identifier | 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 

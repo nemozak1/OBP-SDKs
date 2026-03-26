@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,25 +24,25 @@ import (
 // EndpointMappingAPIService EndpointMappingAPI service
 type EndpointMappingAPIService service
 
-type ApiOBPv400CreateBankLevelEndpointMappingRequest struct {
+type ApiCreateBankLevelEndpointMappingRequest struct {
 	ctx context.Context
 	ApiService *EndpointMappingAPIService
 	bankid string
-	oBPv400CreateEndpointMappingRequest *OBPv400CreateEndpointMappingRequest
+	createEndpointMappingRequest *CreateEndpointMappingRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateBankLevelEndpointMappingRequest) OBPv400CreateEndpointMappingRequest(oBPv400CreateEndpointMappingRequest OBPv400CreateEndpointMappingRequest) ApiOBPv400CreateBankLevelEndpointMappingRequest {
-	r.oBPv400CreateEndpointMappingRequest = &oBPv400CreateEndpointMappingRequest
+func (r ApiCreateBankLevelEndpointMappingRequest) CreateEndpointMappingRequest(createEndpointMappingRequest CreateEndpointMappingRequest) ApiCreateBankLevelEndpointMappingRequest {
+	r.createEndpointMappingRequest = &createEndpointMappingRequest
 	return r
 }
 
-func (r ApiOBPv400CreateBankLevelEndpointMappingRequest) Execute() (*OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateBankLevelEndpointMappingExecute(r)
+func (r ApiCreateBankLevelEndpointMappingRequest) Execute() (*GetAllEndpointMappings200ResponseEndpointMappingsInner, *http.Response, error) {
+	return r.ApiService.CreateBankLevelEndpointMappingExecute(r)
 }
 
 /*
-OBPv400CreateBankLevelEndpointMapping Create Bank Level Endpoint Mapping
+CreateBankLevelEndpointMapping Create Bank Level Endpoint Mapping
 
 <p>Create an Bank Level Endpoint Mapping.</p>
 <p>Note: at moment only support the dynamic endpoints</p>
@@ -57,10 +57,10 @@ OBPv400CreateBankLevelEndpointMapping Create Bank Level Endpoint Mapping
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400CreateBankLevelEndpointMappingRequest
+ @return ApiCreateBankLevelEndpointMappingRequest
 */
-func (a *EndpointMappingAPIService) OBPv400CreateBankLevelEndpointMapping(ctx context.Context, bankid string) ApiOBPv400CreateBankLevelEndpointMappingRequest {
-	return ApiOBPv400CreateBankLevelEndpointMappingRequest{
+func (a *EndpointMappingAPIService) CreateBankLevelEndpointMapping(ctx context.Context, bankid string) ApiCreateBankLevelEndpointMappingRequest {
+	return ApiCreateBankLevelEndpointMappingRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -68,16 +68,16 @@ func (a *EndpointMappingAPIService) OBPv400CreateBankLevelEndpointMapping(ctx co
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
-func (a *EndpointMappingAPIService) OBPv400CreateBankLevelEndpointMappingExecute(r ApiOBPv400CreateBankLevelEndpointMappingRequest) (*OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, *http.Response, error) {
+//  @return GetAllEndpointMappings200ResponseEndpointMappingsInner
+func (a *EndpointMappingAPIService) CreateBankLevelEndpointMappingExecute(r ApiCreateBankLevelEndpointMappingRequest) (*GetAllEndpointMappings200ResponseEndpointMappingsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+		localVarReturnValue  *GetAllEndpointMappings200ResponseEndpointMappingsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.OBPv400CreateBankLevelEndpointMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.CreateBankLevelEndpointMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -88,8 +88,8 @@ func (a *EndpointMappingAPIService) OBPv400CreateBankLevelEndpointMappingExecute
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateEndpointMappingRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateEndpointMappingRequest is required and must be specified")
+	if r.createEndpointMappingRequest == nil {
+		return localVarReturnValue, nil, reportError("createEndpointMappingRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -110,7 +110,7 @@ func (a *EndpointMappingAPIService) OBPv400CreateBankLevelEndpointMappingExecute
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateEndpointMappingRequest
+	localVarPostBody = r.createEndpointMappingRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -135,7 +135,7 @@ func (a *EndpointMappingAPIService) OBPv400CreateBankLevelEndpointMappingExecute
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -176,24 +176,24 @@ func (a *EndpointMappingAPIService) OBPv400CreateBankLevelEndpointMappingExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateEndpointMappingRequest struct {
+type ApiCreateEndpointMappingRequest struct {
 	ctx context.Context
 	ApiService *EndpointMappingAPIService
-	oBPv400CreateEndpointMappingRequest *OBPv400CreateEndpointMappingRequest
+	createEndpointMappingRequest *CreateEndpointMappingRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateEndpointMappingRequest) OBPv400CreateEndpointMappingRequest(oBPv400CreateEndpointMappingRequest OBPv400CreateEndpointMappingRequest) ApiOBPv400CreateEndpointMappingRequest {
-	r.oBPv400CreateEndpointMappingRequest = &oBPv400CreateEndpointMappingRequest
+func (r ApiCreateEndpointMappingRequest) CreateEndpointMappingRequest(createEndpointMappingRequest CreateEndpointMappingRequest) ApiCreateEndpointMappingRequest {
+	r.createEndpointMappingRequest = &createEndpointMappingRequest
 	return r
 }
 
-func (r ApiOBPv400CreateEndpointMappingRequest) Execute() (*OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateEndpointMappingExecute(r)
+func (r ApiCreateEndpointMappingRequest) Execute() (*GetAllEndpointMappings200ResponseEndpointMappingsInner, *http.Response, error) {
+	return r.ApiService.CreateEndpointMappingExecute(r)
 }
 
 /*
-OBPv400CreateEndpointMapping Create Endpoint Mapping
+CreateEndpointMapping Create Endpoint Mapping
 
 <p>Create an Endpoint Mapping.</p>
 <p>Note: at moment only support the dynamic endpoints</p>
@@ -205,26 +205,26 @@ OBPv400CreateEndpointMapping Create Endpoint Mapping
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400CreateEndpointMappingRequest
+ @return ApiCreateEndpointMappingRequest
 */
-func (a *EndpointMappingAPIService) OBPv400CreateEndpointMapping(ctx context.Context) ApiOBPv400CreateEndpointMappingRequest {
-	return ApiOBPv400CreateEndpointMappingRequest{
+func (a *EndpointMappingAPIService) CreateEndpointMapping(ctx context.Context) ApiCreateEndpointMappingRequest {
+	return ApiCreateEndpointMappingRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
-func (a *EndpointMappingAPIService) OBPv400CreateEndpointMappingExecute(r ApiOBPv400CreateEndpointMappingRequest) (*OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, *http.Response, error) {
+//  @return GetAllEndpointMappings200ResponseEndpointMappingsInner
+func (a *EndpointMappingAPIService) CreateEndpointMappingExecute(r ApiCreateEndpointMappingRequest) (*GetAllEndpointMappings200ResponseEndpointMappingsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+		localVarReturnValue  *GetAllEndpointMappings200ResponseEndpointMappingsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.OBPv400CreateEndpointMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.CreateEndpointMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -234,8 +234,8 @@ func (a *EndpointMappingAPIService) OBPv400CreateEndpointMappingExecute(r ApiOBP
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateEndpointMappingRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateEndpointMappingRequest is required and must be specified")
+	if r.createEndpointMappingRequest == nil {
+		return localVarReturnValue, nil, reportError("createEndpointMappingRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -256,7 +256,7 @@ func (a *EndpointMappingAPIService) OBPv400CreateEndpointMappingExecute(r ApiOBP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateEndpointMappingRequest
+	localVarPostBody = r.createEndpointMappingRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -281,7 +281,7 @@ func (a *EndpointMappingAPIService) OBPv400CreateEndpointMappingExecute(r ApiOBP
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -322,19 +322,19 @@ func (a *EndpointMappingAPIService) OBPv400CreateEndpointMappingExecute(r ApiOBP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteBankLevelEndpointMappingRequest struct {
+type ApiDeleteBankLevelEndpointMappingRequest struct {
 	ctx context.Context
 	ApiService *EndpointMappingAPIService
 	bankid string
 	endpointmappingid string
 }
 
-func (r ApiOBPv400DeleteBankLevelEndpointMappingRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteBankLevelEndpointMappingExecute(r)
+func (r ApiDeleteBankLevelEndpointMappingRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteBankLevelEndpointMappingExecute(r)
 }
 
 /*
-OBPv400DeleteBankLevelEndpointMapping Delete Bank Level Endpoint Mapping
+DeleteBankLevelEndpointMapping Delete Bank Level Endpoint Mapping
 
 <p>Delete a Bank Level Endpoint Mapping.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -347,10 +347,10 @@ OBPv400DeleteBankLevelEndpointMapping Delete Bank Level Endpoint Mapping
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param endpointmappingid The ENDPOINTMAPPINGID identifier
- @return ApiOBPv400DeleteBankLevelEndpointMappingRequest
+ @return ApiDeleteBankLevelEndpointMappingRequest
 */
-func (a *EndpointMappingAPIService) OBPv400DeleteBankLevelEndpointMapping(ctx context.Context, bankid string, endpointmappingid string) ApiOBPv400DeleteBankLevelEndpointMappingRequest {
-	return ApiOBPv400DeleteBankLevelEndpointMappingRequest{
+func (a *EndpointMappingAPIService) DeleteBankLevelEndpointMapping(ctx context.Context, bankid string, endpointmappingid string) ApiDeleteBankLevelEndpointMappingRequest {
+	return ApiDeleteBankLevelEndpointMappingRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -359,14 +359,14 @@ func (a *EndpointMappingAPIService) OBPv400DeleteBankLevelEndpointMapping(ctx co
 }
 
 // Execute executes the request
-func (a *EndpointMappingAPIService) OBPv400DeleteBankLevelEndpointMappingExecute(r ApiOBPv400DeleteBankLevelEndpointMappingRequest) (*http.Response, error) {
+func (a *EndpointMappingAPIService) DeleteBankLevelEndpointMappingExecute(r ApiDeleteBankLevelEndpointMappingRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.OBPv400DeleteBankLevelEndpointMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.DeleteBankLevelEndpointMapping")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -420,7 +420,7 @@ func (a *EndpointMappingAPIService) OBPv400DeleteBankLevelEndpointMappingExecute
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -452,18 +452,18 @@ func (a *EndpointMappingAPIService) OBPv400DeleteBankLevelEndpointMappingExecute
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteEndpointMappingRequest struct {
+type ApiDeleteEndpointMappingRequest struct {
 	ctx context.Context
 	ApiService *EndpointMappingAPIService
 	endpointmappingid string
 }
 
-func (r ApiOBPv400DeleteEndpointMappingRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteEndpointMappingExecute(r)
+func (r ApiDeleteEndpointMappingRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteEndpointMappingExecute(r)
 }
 
 /*
-OBPv400DeleteEndpointMapping Delete Endpoint Mapping
+DeleteEndpointMapping Delete Endpoint Mapping
 
 <p>Delete a Endpoint Mapping.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -474,10 +474,10 @@ OBPv400DeleteEndpointMapping Delete Endpoint Mapping
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param endpointmappingid The ENDPOINTMAPPINGID identifier
- @return ApiOBPv400DeleteEndpointMappingRequest
+ @return ApiDeleteEndpointMappingRequest
 */
-func (a *EndpointMappingAPIService) OBPv400DeleteEndpointMapping(ctx context.Context, endpointmappingid string) ApiOBPv400DeleteEndpointMappingRequest {
-	return ApiOBPv400DeleteEndpointMappingRequest{
+func (a *EndpointMappingAPIService) DeleteEndpointMapping(ctx context.Context, endpointmappingid string) ApiDeleteEndpointMappingRequest {
+	return ApiDeleteEndpointMappingRequest{
 		ApiService: a,
 		ctx: ctx,
 		endpointmappingid: endpointmappingid,
@@ -485,14 +485,14 @@ func (a *EndpointMappingAPIService) OBPv400DeleteEndpointMapping(ctx context.Con
 }
 
 // Execute executes the request
-func (a *EndpointMappingAPIService) OBPv400DeleteEndpointMappingExecute(r ApiOBPv400DeleteEndpointMappingRequest) (*http.Response, error) {
+func (a *EndpointMappingAPIService) DeleteEndpointMappingExecute(r ApiDeleteEndpointMappingRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.OBPv400DeleteEndpointMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.DeleteEndpointMapping")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -545,7 +545,7 @@ func (a *EndpointMappingAPIService) OBPv400DeleteEndpointMappingExecute(r ApiOBP
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -577,18 +577,18 @@ func (a *EndpointMappingAPIService) OBPv400DeleteEndpointMappingExecute(r ApiOBP
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetAllBankLevelEndpointMappingsRequest struct {
+type ApiGetAllBankLevelEndpointMappingsRequest struct {
 	ctx context.Context
 	ApiService *EndpointMappingAPIService
 	bankid string
 }
 
-func (r ApiOBPv400GetAllBankLevelEndpointMappingsRequest) Execute() (*OBPv400GetAllEndpointMappings200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetAllBankLevelEndpointMappingsExecute(r)
+func (r ApiGetAllBankLevelEndpointMappingsRequest) Execute() (*GetAllEndpointMappings200Response, *http.Response, error) {
+	return r.ApiService.GetAllBankLevelEndpointMappingsExecute(r)
 }
 
 /*
-OBPv400GetAllBankLevelEndpointMappings Get all Bank Level Endpoint Mappings
+GetAllBankLevelEndpointMappings Get all Bank Level Endpoint Mappings
 
 <p>Get all Bank Level Endpoint Mappings.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -600,10 +600,10 @@ OBPv400GetAllBankLevelEndpointMappings Get all Bank Level Endpoint Mappings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400GetAllBankLevelEndpointMappingsRequest
+ @return ApiGetAllBankLevelEndpointMappingsRequest
 */
-func (a *EndpointMappingAPIService) OBPv400GetAllBankLevelEndpointMappings(ctx context.Context, bankid string) ApiOBPv400GetAllBankLevelEndpointMappingsRequest {
-	return ApiOBPv400GetAllBankLevelEndpointMappingsRequest{
+func (a *EndpointMappingAPIService) GetAllBankLevelEndpointMappings(ctx context.Context, bankid string) ApiGetAllBankLevelEndpointMappingsRequest {
+	return ApiGetAllBankLevelEndpointMappingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -611,16 +611,16 @@ func (a *EndpointMappingAPIService) OBPv400GetAllBankLevelEndpointMappings(ctx c
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllEndpointMappings200Response
-func (a *EndpointMappingAPIService) OBPv400GetAllBankLevelEndpointMappingsExecute(r ApiOBPv400GetAllBankLevelEndpointMappingsRequest) (*OBPv400GetAllEndpointMappings200Response, *http.Response, error) {
+//  @return GetAllEndpointMappings200Response
+func (a *EndpointMappingAPIService) GetAllBankLevelEndpointMappingsExecute(r ApiGetAllBankLevelEndpointMappingsRequest) (*GetAllEndpointMappings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllEndpointMappings200Response
+		localVarReturnValue  *GetAllEndpointMappings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.OBPv400GetAllBankLevelEndpointMappings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.GetAllBankLevelEndpointMappings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -673,7 +673,7 @@ func (a *EndpointMappingAPIService) OBPv400GetAllBankLevelEndpointMappingsExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -714,17 +714,17 @@ func (a *EndpointMappingAPIService) OBPv400GetAllBankLevelEndpointMappingsExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetAllEndpointMappingsRequest struct {
+type ApiGetAllEndpointMappingsRequest struct {
 	ctx context.Context
 	ApiService *EndpointMappingAPIService
 }
 
-func (r ApiOBPv400GetAllEndpointMappingsRequest) Execute() (*OBPv400GetAllEndpointMappings200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetAllEndpointMappingsExecute(r)
+func (r ApiGetAllEndpointMappingsRequest) Execute() (*GetAllEndpointMappings200Response, *http.Response, error) {
+	return r.ApiService.GetAllEndpointMappingsExecute(r)
 }
 
 /*
-OBPv400GetAllEndpointMappings Get all Endpoint Mappings
+GetAllEndpointMappings Get all Endpoint Mappings
 
 <p>Get all Endpoint Mappings.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -733,26 +733,26 @@ OBPv400GetAllEndpointMappings Get all Endpoint Mappings
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetAllEndpointMappingsRequest
+ @return ApiGetAllEndpointMappingsRequest
 */
-func (a *EndpointMappingAPIService) OBPv400GetAllEndpointMappings(ctx context.Context) ApiOBPv400GetAllEndpointMappingsRequest {
-	return ApiOBPv400GetAllEndpointMappingsRequest{
+func (a *EndpointMappingAPIService) GetAllEndpointMappings(ctx context.Context) ApiGetAllEndpointMappingsRequest {
+	return ApiGetAllEndpointMappingsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllEndpointMappings200Response
-func (a *EndpointMappingAPIService) OBPv400GetAllEndpointMappingsExecute(r ApiOBPv400GetAllEndpointMappingsRequest) (*OBPv400GetAllEndpointMappings200Response, *http.Response, error) {
+//  @return GetAllEndpointMappings200Response
+func (a *EndpointMappingAPIService) GetAllEndpointMappingsExecute(r ApiGetAllEndpointMappingsRequest) (*GetAllEndpointMappings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllEndpointMappings200Response
+		localVarReturnValue  *GetAllEndpointMappings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.OBPv400GetAllEndpointMappings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.GetAllEndpointMappings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -804,7 +804,7 @@ func (a *EndpointMappingAPIService) OBPv400GetAllEndpointMappingsExecute(r ApiOB
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -845,19 +845,19 @@ func (a *EndpointMappingAPIService) OBPv400GetAllEndpointMappingsExecute(r ApiOB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetBankLevelEndpointMappingRequest struct {
+type ApiGetBankLevelEndpointMappingRequest struct {
 	ctx context.Context
 	ApiService *EndpointMappingAPIService
 	bankid string
 	endpointmappingid string
 }
 
-func (r ApiOBPv400GetBankLevelEndpointMappingRequest) Execute() (*OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetBankLevelEndpointMappingExecute(r)
+func (r ApiGetBankLevelEndpointMappingRequest) Execute() (*GetAllEndpointMappings200ResponseEndpointMappingsInner, *http.Response, error) {
+	return r.ApiService.GetBankLevelEndpointMappingExecute(r)
 }
 
 /*
-OBPv400GetBankLevelEndpointMapping Get Bank Level Endpoint Mapping
+GetBankLevelEndpointMapping Get Bank Level Endpoint Mapping
 
 <p>Get an Bank Level Endpoint Mapping by ENDPOINT_MAPPING_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -871,10 +871,10 @@ OBPv400GetBankLevelEndpointMapping Get Bank Level Endpoint Mapping
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param endpointmappingid The ENDPOINTMAPPINGID identifier
- @return ApiOBPv400GetBankLevelEndpointMappingRequest
+ @return ApiGetBankLevelEndpointMappingRequest
 */
-func (a *EndpointMappingAPIService) OBPv400GetBankLevelEndpointMapping(ctx context.Context, bankid string, endpointmappingid string) ApiOBPv400GetBankLevelEndpointMappingRequest {
-	return ApiOBPv400GetBankLevelEndpointMappingRequest{
+func (a *EndpointMappingAPIService) GetBankLevelEndpointMapping(ctx context.Context, bankid string, endpointmappingid string) ApiGetBankLevelEndpointMappingRequest {
+	return ApiGetBankLevelEndpointMappingRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -883,16 +883,16 @@ func (a *EndpointMappingAPIService) OBPv400GetBankLevelEndpointMapping(ctx conte
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
-func (a *EndpointMappingAPIService) OBPv400GetBankLevelEndpointMappingExecute(r ApiOBPv400GetBankLevelEndpointMappingRequest) (*OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, *http.Response, error) {
+//  @return GetAllEndpointMappings200ResponseEndpointMappingsInner
+func (a *EndpointMappingAPIService) GetBankLevelEndpointMappingExecute(r ApiGetBankLevelEndpointMappingRequest) (*GetAllEndpointMappings200ResponseEndpointMappingsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+		localVarReturnValue  *GetAllEndpointMappings200ResponseEndpointMappingsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.OBPv400GetBankLevelEndpointMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.GetBankLevelEndpointMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -946,7 +946,7 @@ func (a *EndpointMappingAPIService) OBPv400GetBankLevelEndpointMappingExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -987,18 +987,18 @@ func (a *EndpointMappingAPIService) OBPv400GetBankLevelEndpointMappingExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetEndpointMappingRequest struct {
+type ApiGetEndpointMappingRequest struct {
 	ctx context.Context
 	ApiService *EndpointMappingAPIService
 	endpointmappingid string
 }
 
-func (r ApiOBPv400GetEndpointMappingRequest) Execute() (*OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetEndpointMappingExecute(r)
+func (r ApiGetEndpointMappingRequest) Execute() (*GetAllEndpointMappings200ResponseEndpointMappingsInner, *http.Response, error) {
+	return r.ApiService.GetEndpointMappingExecute(r)
 }
 
 /*
-OBPv400GetEndpointMapping Get Endpoint Mapping by Id
+GetEndpointMapping Get Endpoint Mapping by Id
 
 <p>Get an Endpoint Mapping by ENDPOINT_MAPPING_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1010,10 +1010,10 @@ OBPv400GetEndpointMapping Get Endpoint Mapping by Id
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param endpointmappingid The ENDPOINTMAPPINGID identifier
- @return ApiOBPv400GetEndpointMappingRequest
+ @return ApiGetEndpointMappingRequest
 */
-func (a *EndpointMappingAPIService) OBPv400GetEndpointMapping(ctx context.Context, endpointmappingid string) ApiOBPv400GetEndpointMappingRequest {
-	return ApiOBPv400GetEndpointMappingRequest{
+func (a *EndpointMappingAPIService) GetEndpointMapping(ctx context.Context, endpointmappingid string) ApiGetEndpointMappingRequest {
+	return ApiGetEndpointMappingRequest{
 		ApiService: a,
 		ctx: ctx,
 		endpointmappingid: endpointmappingid,
@@ -1021,16 +1021,16 @@ func (a *EndpointMappingAPIService) OBPv400GetEndpointMapping(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
-func (a *EndpointMappingAPIService) OBPv400GetEndpointMappingExecute(r ApiOBPv400GetEndpointMappingRequest) (*OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, *http.Response, error) {
+//  @return GetAllEndpointMappings200ResponseEndpointMappingsInner
+func (a *EndpointMappingAPIService) GetEndpointMappingExecute(r ApiGetEndpointMappingRequest) (*GetAllEndpointMappings200ResponseEndpointMappingsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+		localVarReturnValue  *GetAllEndpointMappings200ResponseEndpointMappingsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.OBPv400GetEndpointMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.GetEndpointMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1083,7 +1083,7 @@ func (a *EndpointMappingAPIService) OBPv400GetEndpointMappingExecute(r ApiOBPv40
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1124,26 +1124,26 @@ func (a *EndpointMappingAPIService) OBPv400GetEndpointMappingExecute(r ApiOBPv40
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateBankLevelEndpointMappingRequest struct {
+type ApiUpdateBankLevelEndpointMappingRequest struct {
 	ctx context.Context
 	ApiService *EndpointMappingAPIService
 	bankid string
 	endpointmappingid string
-	oBPv400CreateEndpointMappingRequest *OBPv400CreateEndpointMappingRequest
+	createEndpointMappingRequest *CreateEndpointMappingRequest
 }
 
 // Request body
-func (r ApiOBPv400UpdateBankLevelEndpointMappingRequest) OBPv400CreateEndpointMappingRequest(oBPv400CreateEndpointMappingRequest OBPv400CreateEndpointMappingRequest) ApiOBPv400UpdateBankLevelEndpointMappingRequest {
-	r.oBPv400CreateEndpointMappingRequest = &oBPv400CreateEndpointMappingRequest
+func (r ApiUpdateBankLevelEndpointMappingRequest) CreateEndpointMappingRequest(createEndpointMappingRequest CreateEndpointMappingRequest) ApiUpdateBankLevelEndpointMappingRequest {
+	r.createEndpointMappingRequest = &createEndpointMappingRequest
 	return r
 }
 
-func (r ApiOBPv400UpdateBankLevelEndpointMappingRequest) Execute() (*OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateBankLevelEndpointMappingExecute(r)
+func (r ApiUpdateBankLevelEndpointMappingRequest) Execute() (*GetAllEndpointMappings200ResponseEndpointMappingsInner, *http.Response, error) {
+	return r.ApiService.UpdateBankLevelEndpointMappingExecute(r)
 }
 
 /*
-OBPv400UpdateBankLevelEndpointMapping Update Bank Level Endpoint Mapping
+UpdateBankLevelEndpointMapping Update Bank Level Endpoint Mapping
 
 <p>Update an Bank Level Endpoint Mapping.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1157,10 +1157,10 @@ OBPv400UpdateBankLevelEndpointMapping Update Bank Level Endpoint Mapping
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param endpointmappingid The ENDPOINTMAPPINGID identifier
- @return ApiOBPv400UpdateBankLevelEndpointMappingRequest
+ @return ApiUpdateBankLevelEndpointMappingRequest
 */
-func (a *EndpointMappingAPIService) OBPv400UpdateBankLevelEndpointMapping(ctx context.Context, bankid string, endpointmappingid string) ApiOBPv400UpdateBankLevelEndpointMappingRequest {
-	return ApiOBPv400UpdateBankLevelEndpointMappingRequest{
+func (a *EndpointMappingAPIService) UpdateBankLevelEndpointMapping(ctx context.Context, bankid string, endpointmappingid string) ApiUpdateBankLevelEndpointMappingRequest {
+	return ApiUpdateBankLevelEndpointMappingRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1169,16 +1169,16 @@ func (a *EndpointMappingAPIService) OBPv400UpdateBankLevelEndpointMapping(ctx co
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
-func (a *EndpointMappingAPIService) OBPv400UpdateBankLevelEndpointMappingExecute(r ApiOBPv400UpdateBankLevelEndpointMappingRequest) (*OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, *http.Response, error) {
+//  @return GetAllEndpointMappings200ResponseEndpointMappingsInner
+func (a *EndpointMappingAPIService) UpdateBankLevelEndpointMappingExecute(r ApiUpdateBankLevelEndpointMappingRequest) (*GetAllEndpointMappings200ResponseEndpointMappingsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+		localVarReturnValue  *GetAllEndpointMappings200ResponseEndpointMappingsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.OBPv400UpdateBankLevelEndpointMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.UpdateBankLevelEndpointMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1190,8 +1190,8 @@ func (a *EndpointMappingAPIService) OBPv400UpdateBankLevelEndpointMappingExecute
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateEndpointMappingRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateEndpointMappingRequest is required and must be specified")
+	if r.createEndpointMappingRequest == nil {
+		return localVarReturnValue, nil, reportError("createEndpointMappingRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1212,7 +1212,7 @@ func (a *EndpointMappingAPIService) OBPv400UpdateBankLevelEndpointMappingExecute
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateEndpointMappingRequest
+	localVarPostBody = r.createEndpointMappingRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1237,7 +1237,7 @@ func (a *EndpointMappingAPIService) OBPv400UpdateBankLevelEndpointMappingExecute
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1278,25 +1278,25 @@ func (a *EndpointMappingAPIService) OBPv400UpdateBankLevelEndpointMappingExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateEndpointMappingRequest struct {
+type ApiUpdateEndpointMappingRequest struct {
 	ctx context.Context
 	ApiService *EndpointMappingAPIService
 	endpointmappingid string
-	oBPv400CreateEndpointMappingRequest *OBPv400CreateEndpointMappingRequest
+	createEndpointMappingRequest *CreateEndpointMappingRequest
 }
 
 // Request body
-func (r ApiOBPv400UpdateEndpointMappingRequest) OBPv400CreateEndpointMappingRequest(oBPv400CreateEndpointMappingRequest OBPv400CreateEndpointMappingRequest) ApiOBPv400UpdateEndpointMappingRequest {
-	r.oBPv400CreateEndpointMappingRequest = &oBPv400CreateEndpointMappingRequest
+func (r ApiUpdateEndpointMappingRequest) CreateEndpointMappingRequest(createEndpointMappingRequest CreateEndpointMappingRequest) ApiUpdateEndpointMappingRequest {
+	r.createEndpointMappingRequest = &createEndpointMappingRequest
 	return r
 }
 
-func (r ApiOBPv400UpdateEndpointMappingRequest) Execute() (*OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateEndpointMappingExecute(r)
+func (r ApiUpdateEndpointMappingRequest) Execute() (*GetAllEndpointMappings200ResponseEndpointMappingsInner, *http.Response, error) {
+	return r.ApiService.UpdateEndpointMappingExecute(r)
 }
 
 /*
-OBPv400UpdateEndpointMapping Update Endpoint Mapping
+UpdateEndpointMapping Update Endpoint Mapping
 
 <p>Update an Endpoint Mapping.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1308,10 +1308,10 @@ OBPv400UpdateEndpointMapping Update Endpoint Mapping
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param endpointmappingid The ENDPOINTMAPPINGID identifier
- @return ApiOBPv400UpdateEndpointMappingRequest
+ @return ApiUpdateEndpointMappingRequest
 */
-func (a *EndpointMappingAPIService) OBPv400UpdateEndpointMapping(ctx context.Context, endpointmappingid string) ApiOBPv400UpdateEndpointMappingRequest {
-	return ApiOBPv400UpdateEndpointMappingRequest{
+func (a *EndpointMappingAPIService) UpdateEndpointMapping(ctx context.Context, endpointmappingid string) ApiUpdateEndpointMappingRequest {
+	return ApiUpdateEndpointMappingRequest{
 		ApiService: a,
 		ctx: ctx,
 		endpointmappingid: endpointmappingid,
@@ -1319,16 +1319,16 @@ func (a *EndpointMappingAPIService) OBPv400UpdateEndpointMapping(ctx context.Con
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
-func (a *EndpointMappingAPIService) OBPv400UpdateEndpointMappingExecute(r ApiOBPv400UpdateEndpointMappingRequest) (*OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, *http.Response, error) {
+//  @return GetAllEndpointMappings200ResponseEndpointMappingsInner
+func (a *EndpointMappingAPIService) UpdateEndpointMappingExecute(r ApiUpdateEndpointMappingRequest) (*GetAllEndpointMappings200ResponseEndpointMappingsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+		localVarReturnValue  *GetAllEndpointMappings200ResponseEndpointMappingsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.OBPv400UpdateEndpointMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EndpointMappingAPIService.UpdateEndpointMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1339,8 +1339,8 @@ func (a *EndpointMappingAPIService) OBPv400UpdateEndpointMappingExecute(r ApiOBP
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateEndpointMappingRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateEndpointMappingRequest is required and must be specified")
+	if r.createEndpointMappingRequest == nil {
+		return localVarReturnValue, nil, reportError("createEndpointMappingRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1361,7 +1361,7 @@ func (a *EndpointMappingAPIService) OBPv400UpdateEndpointMappingExecute(r ApiOBP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateEndpointMappingRequest
+	localVarPostBody = r.createEndpointMappingRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1386,7 +1386,7 @@ func (a *EndpointMappingAPIService) OBPv400UpdateEndpointMappingExecute(r ApiOBP
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

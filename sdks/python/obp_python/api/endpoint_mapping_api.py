@@ -18,9 +18,9 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv400_create_endpoint_mapping_request import OBPv400CreateEndpointMappingRequest
-from obp_python.models.obpv400_get_all_endpoint_mappings200_response import OBPv400GetAllEndpointMappings200Response
-from obp_python.models.obpv400_get_all_endpoint_mappings200_response_endpoint_mappings_inner import OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner
+from obp_python.models.create_endpoint_mapping_request import CreateEndpointMappingRequest
+from obp_python.models.get_all_endpoint_mappings200_response import GetAllEndpointMappings200Response
+from obp_python.models.get_all_endpoint_mappings200_response_endpoint_mappings_inner import GetAllEndpointMappings200ResponseEndpointMappingsInner
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -41,10 +41,10 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_bank_level_endpoint_mapping(
+    def create_bank_level_endpoint_mapping(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_create_endpoint_mapping_request: Annotated[OBPv400CreateEndpointMappingRequest, Field(description="Request body")],
+        create_endpoint_mapping_request: Annotated[CreateEndpointMappingRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -57,15 +57,15 @@ class EndpointMappingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner:
+    ) -> GetAllEndpointMappings200ResponseEndpointMappingsInner:
         """Create Bank Level Endpoint Mapping
 
         <p>Create an Bank Level Endpoint Mapping.</p> <p>Note: at moment only support the dynamic endpoints</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_create_endpoint_mapping_request: Request body (required)
-        :type obpv400_create_endpoint_mapping_request: OBPv400CreateEndpointMappingRequest
+        :param create_endpoint_mapping_request: Request body (required)
+        :type create_endpoint_mapping_request: CreateEndpointMappingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -88,9 +88,9 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_bank_level_endpoint_mapping_serialize(
+        _param = self._create_bank_level_endpoint_mapping_serialize(
             bankid=bankid,
-            obpv400_create_endpoint_mapping_request=obpv400_create_endpoint_mapping_request,
+            create_endpoint_mapping_request=create_endpoint_mapping_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -98,7 +98,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '404': None,
             '500': None,
         }
@@ -114,10 +114,10 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_bank_level_endpoint_mapping_with_http_info(
+    def create_bank_level_endpoint_mapping_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_create_endpoint_mapping_request: Annotated[OBPv400CreateEndpointMappingRequest, Field(description="Request body")],
+        create_endpoint_mapping_request: Annotated[CreateEndpointMappingRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -130,15 +130,15 @@ class EndpointMappingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner]:
+    ) -> ApiResponse[GetAllEndpointMappings200ResponseEndpointMappingsInner]:
         """Create Bank Level Endpoint Mapping
 
         <p>Create an Bank Level Endpoint Mapping.</p> <p>Note: at moment only support the dynamic endpoints</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_create_endpoint_mapping_request: Request body (required)
-        :type obpv400_create_endpoint_mapping_request: OBPv400CreateEndpointMappingRequest
+        :param create_endpoint_mapping_request: Request body (required)
+        :type create_endpoint_mapping_request: CreateEndpointMappingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -161,9 +161,9 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_bank_level_endpoint_mapping_serialize(
+        _param = self._create_bank_level_endpoint_mapping_serialize(
             bankid=bankid,
-            obpv400_create_endpoint_mapping_request=obpv400_create_endpoint_mapping_request,
+            create_endpoint_mapping_request=create_endpoint_mapping_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -171,7 +171,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '404': None,
             '500': None,
         }
@@ -187,10 +187,10 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_bank_level_endpoint_mapping_without_preload_content(
+    def create_bank_level_endpoint_mapping_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_create_endpoint_mapping_request: Annotated[OBPv400CreateEndpointMappingRequest, Field(description="Request body")],
+        create_endpoint_mapping_request: Annotated[CreateEndpointMappingRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -210,8 +210,8 @@ class EndpointMappingApi:
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_create_endpoint_mapping_request: Request body (required)
-        :type obpv400_create_endpoint_mapping_request: OBPv400CreateEndpointMappingRequest
+        :param create_endpoint_mapping_request: Request body (required)
+        :type create_endpoint_mapping_request: CreateEndpointMappingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -234,9 +234,9 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_bank_level_endpoint_mapping_serialize(
+        _param = self._create_bank_level_endpoint_mapping_serialize(
             bankid=bankid,
-            obpv400_create_endpoint_mapping_request=obpv400_create_endpoint_mapping_request,
+            create_endpoint_mapping_request=create_endpoint_mapping_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -244,7 +244,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '404': None,
             '500': None,
         }
@@ -255,10 +255,10 @@ class EndpointMappingApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_bank_level_endpoint_mapping_serialize(
+    def _create_bank_level_endpoint_mapping_serialize(
         self,
         bankid,
-        obpv400_create_endpoint_mapping_request,
+        create_endpoint_mapping_request,
         _request_auth,
         _content_type,
         _headers,
@@ -286,8 +286,8 @@ class EndpointMappingApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_endpoint_mapping_request is not None:
-            _body_params = obpv400_create_endpoint_mapping_request
+        if create_endpoint_mapping_request is not None:
+            _body_params = create_endpoint_mapping_request
 
 
         # set the HTTP header `Accept`
@@ -338,9 +338,9 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_endpoint_mapping(
+    def create_endpoint_mapping(
         self,
-        obpv400_create_endpoint_mapping_request: Annotated[OBPv400CreateEndpointMappingRequest, Field(description="Request body")],
+        create_endpoint_mapping_request: Annotated[CreateEndpointMappingRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -353,13 +353,13 @@ class EndpointMappingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner:
+    ) -> GetAllEndpointMappings200ResponseEndpointMappingsInner:
         """Create Endpoint Mapping
 
         <p>Create an Endpoint Mapping.</p> <p>Note: at moment only support the dynamic endpoints</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
 
-        :param obpv400_create_endpoint_mapping_request: Request body (required)
-        :type obpv400_create_endpoint_mapping_request: OBPv400CreateEndpointMappingRequest
+        :param create_endpoint_mapping_request: Request body (required)
+        :type create_endpoint_mapping_request: CreateEndpointMappingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -382,8 +382,8 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_endpoint_mapping_serialize(
-            obpv400_create_endpoint_mapping_request=obpv400_create_endpoint_mapping_request,
+        _param = self._create_endpoint_mapping_serialize(
+            create_endpoint_mapping_request=create_endpoint_mapping_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -391,7 +391,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -406,9 +406,9 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_endpoint_mapping_with_http_info(
+    def create_endpoint_mapping_with_http_info(
         self,
-        obpv400_create_endpoint_mapping_request: Annotated[OBPv400CreateEndpointMappingRequest, Field(description="Request body")],
+        create_endpoint_mapping_request: Annotated[CreateEndpointMappingRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -421,13 +421,13 @@ class EndpointMappingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner]:
+    ) -> ApiResponse[GetAllEndpointMappings200ResponseEndpointMappingsInner]:
         """Create Endpoint Mapping
 
         <p>Create an Endpoint Mapping.</p> <p>Note: at moment only support the dynamic endpoints</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
 
-        :param obpv400_create_endpoint_mapping_request: Request body (required)
-        :type obpv400_create_endpoint_mapping_request: OBPv400CreateEndpointMappingRequest
+        :param create_endpoint_mapping_request: Request body (required)
+        :type create_endpoint_mapping_request: CreateEndpointMappingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -450,8 +450,8 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_endpoint_mapping_serialize(
-            obpv400_create_endpoint_mapping_request=obpv400_create_endpoint_mapping_request,
+        _param = self._create_endpoint_mapping_serialize(
+            create_endpoint_mapping_request=create_endpoint_mapping_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -459,7 +459,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -474,9 +474,9 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_endpoint_mapping_without_preload_content(
+    def create_endpoint_mapping_without_preload_content(
         self,
-        obpv400_create_endpoint_mapping_request: Annotated[OBPv400CreateEndpointMappingRequest, Field(description="Request body")],
+        create_endpoint_mapping_request: Annotated[CreateEndpointMappingRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -494,8 +494,8 @@ class EndpointMappingApi:
 
         <p>Create an Endpoint Mapping.</p> <p>Note: at moment only support the dynamic endpoints</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
 
-        :param obpv400_create_endpoint_mapping_request: Request body (required)
-        :type obpv400_create_endpoint_mapping_request: OBPv400CreateEndpointMappingRequest
+        :param create_endpoint_mapping_request: Request body (required)
+        :type create_endpoint_mapping_request: CreateEndpointMappingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -518,8 +518,8 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_endpoint_mapping_serialize(
-            obpv400_create_endpoint_mapping_request=obpv400_create_endpoint_mapping_request,
+        _param = self._create_endpoint_mapping_serialize(
+            create_endpoint_mapping_request=create_endpoint_mapping_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -527,7 +527,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -537,9 +537,9 @@ class EndpointMappingApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_endpoint_mapping_serialize(
+    def _create_endpoint_mapping_serialize(
         self,
-        obpv400_create_endpoint_mapping_request,
+        create_endpoint_mapping_request,
         _request_auth,
         _content_type,
         _headers,
@@ -565,8 +565,8 @@ class EndpointMappingApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_endpoint_mapping_request is not None:
-            _body_params = obpv400_create_endpoint_mapping_request
+        if create_endpoint_mapping_request is not None:
+            _body_params = create_endpoint_mapping_request
 
 
         # set the HTTP header `Accept`
@@ -617,7 +617,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_bank_level_endpoint_mapping(
+    def delete_bank_level_endpoint_mapping(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
@@ -664,7 +664,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_bank_level_endpoint_mapping_serialize(
+        _param = self._delete_bank_level_endpoint_mapping_serialize(
             bankid=bankid,
             endpointmappingid=endpointmappingid,
             _request_auth=_request_auth,
@@ -690,7 +690,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_bank_level_endpoint_mapping_with_http_info(
+    def delete_bank_level_endpoint_mapping_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
@@ -737,7 +737,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_bank_level_endpoint_mapping_serialize(
+        _param = self._delete_bank_level_endpoint_mapping_serialize(
             bankid=bankid,
             endpointmappingid=endpointmappingid,
             _request_auth=_request_auth,
@@ -763,7 +763,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_bank_level_endpoint_mapping_without_preload_content(
+    def delete_bank_level_endpoint_mapping_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
@@ -810,7 +810,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_bank_level_endpoint_mapping_serialize(
+        _param = self._delete_bank_level_endpoint_mapping_serialize(
             bankid=bankid,
             endpointmappingid=endpointmappingid,
             _request_auth=_request_auth,
@@ -831,7 +831,7 @@ class EndpointMappingApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_delete_bank_level_endpoint_mapping_serialize(
+    def _delete_bank_level_endpoint_mapping_serialize(
         self,
         bankid,
         endpointmappingid,
@@ -894,7 +894,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_endpoint_mapping(
+    def delete_endpoint_mapping(
         self,
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
         _request_timeout: Union[
@@ -938,7 +938,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_endpoint_mapping_serialize(
+        _param = self._delete_endpoint_mapping_serialize(
             endpointmappingid=endpointmappingid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -962,7 +962,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_endpoint_mapping_with_http_info(
+    def delete_endpoint_mapping_with_http_info(
         self,
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
         _request_timeout: Union[
@@ -1006,7 +1006,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_endpoint_mapping_serialize(
+        _param = self._delete_endpoint_mapping_serialize(
             endpointmappingid=endpointmappingid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1030,7 +1030,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_endpoint_mapping_without_preload_content(
+    def delete_endpoint_mapping_without_preload_content(
         self,
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
         _request_timeout: Union[
@@ -1074,7 +1074,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_endpoint_mapping_serialize(
+        _param = self._delete_endpoint_mapping_serialize(
             endpointmappingid=endpointmappingid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1093,7 +1093,7 @@ class EndpointMappingApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_delete_endpoint_mapping_serialize(
+    def _delete_endpoint_mapping_serialize(
         self,
         endpointmappingid,
         _request_auth,
@@ -1153,7 +1153,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_bank_level_endpoint_mappings(
+    def get_all_bank_level_endpoint_mappings(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1168,7 +1168,7 @@ class EndpointMappingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllEndpointMappings200Response:
+    ) -> GetAllEndpointMappings200Response:
         """Get all Bank Level Endpoint Mappings
 
         <p>Get all Bank Level Endpoint Mappings.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
@@ -1197,7 +1197,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_bank_level_endpoint_mappings_serialize(
+        _param = self._get_all_bank_level_endpoint_mappings_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1206,7 +1206,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200Response",
+            '200': "GetAllEndpointMappings200Response",
             '404': None,
             '500': None,
         }
@@ -1222,7 +1222,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_bank_level_endpoint_mappings_with_http_info(
+    def get_all_bank_level_endpoint_mappings_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1237,7 +1237,7 @@ class EndpointMappingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllEndpointMappings200Response]:
+    ) -> ApiResponse[GetAllEndpointMappings200Response]:
         """Get all Bank Level Endpoint Mappings
 
         <p>Get all Bank Level Endpoint Mappings.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
@@ -1266,7 +1266,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_bank_level_endpoint_mappings_serialize(
+        _param = self._get_all_bank_level_endpoint_mappings_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1275,7 +1275,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200Response",
+            '200': "GetAllEndpointMappings200Response",
             '404': None,
             '500': None,
         }
@@ -1291,7 +1291,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_bank_level_endpoint_mappings_without_preload_content(
+    def get_all_bank_level_endpoint_mappings_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1335,7 +1335,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_bank_level_endpoint_mappings_serialize(
+        _param = self._get_all_bank_level_endpoint_mappings_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1344,7 +1344,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200Response",
+            '200': "GetAllEndpointMappings200Response",
             '404': None,
             '500': None,
         }
@@ -1355,7 +1355,7 @@ class EndpointMappingApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_all_bank_level_endpoint_mappings_serialize(
+    def _get_all_bank_level_endpoint_mappings_serialize(
         self,
         bankid,
         _request_auth,
@@ -1422,7 +1422,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_endpoint_mappings(
+    def get_all_endpoint_mappings(
         self,
         _request_timeout: Union[
             None,
@@ -1436,7 +1436,7 @@ class EndpointMappingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllEndpointMappings200Response:
+    ) -> GetAllEndpointMappings200Response:
         """Get all Endpoint Mappings
 
         <p>Get all Endpoint Mappings.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
@@ -1463,7 +1463,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_endpoint_mappings_serialize(
+        _param = self._get_all_endpoint_mappings_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1471,7 +1471,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200Response",
+            '200': "GetAllEndpointMappings200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1486,7 +1486,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_endpoint_mappings_with_http_info(
+    def get_all_endpoint_mappings_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1500,7 +1500,7 @@ class EndpointMappingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllEndpointMappings200Response]:
+    ) -> ApiResponse[GetAllEndpointMappings200Response]:
         """Get all Endpoint Mappings
 
         <p>Get all Endpoint Mappings.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
@@ -1527,7 +1527,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_endpoint_mappings_serialize(
+        _param = self._get_all_endpoint_mappings_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1535,7 +1535,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200Response",
+            '200': "GetAllEndpointMappings200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1550,7 +1550,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_endpoint_mappings_without_preload_content(
+    def get_all_endpoint_mappings_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1591,7 +1591,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_endpoint_mappings_serialize(
+        _param = self._get_all_endpoint_mappings_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1599,7 +1599,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200Response",
+            '200': "GetAllEndpointMappings200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1609,7 +1609,7 @@ class EndpointMappingApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_all_endpoint_mappings_serialize(
+    def _get_all_endpoint_mappings_serialize(
         self,
         _request_auth,
         _content_type,
@@ -1673,7 +1673,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_bank_level_endpoint_mapping(
+    def get_bank_level_endpoint_mapping(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
@@ -1689,7 +1689,7 @@ class EndpointMappingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner:
+    ) -> GetAllEndpointMappings200ResponseEndpointMappingsInner:
         """Get Bank Level Endpoint Mapping
 
         <p>Get an Bank Level Endpoint Mapping by ENDPOINT_MAPPING_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
@@ -1720,7 +1720,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_bank_level_endpoint_mapping_serialize(
+        _param = self._get_bank_level_endpoint_mapping_serialize(
             bankid=bankid,
             endpointmappingid=endpointmappingid,
             _request_auth=_request_auth,
@@ -1730,7 +1730,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '404': None,
             '500': None,
         }
@@ -1746,7 +1746,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_bank_level_endpoint_mapping_with_http_info(
+    def get_bank_level_endpoint_mapping_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
@@ -1762,7 +1762,7 @@ class EndpointMappingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner]:
+    ) -> ApiResponse[GetAllEndpointMappings200ResponseEndpointMappingsInner]:
         """Get Bank Level Endpoint Mapping
 
         <p>Get an Bank Level Endpoint Mapping by ENDPOINT_MAPPING_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
@@ -1793,7 +1793,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_bank_level_endpoint_mapping_serialize(
+        _param = self._get_bank_level_endpoint_mapping_serialize(
             bankid=bankid,
             endpointmappingid=endpointmappingid,
             _request_auth=_request_auth,
@@ -1803,7 +1803,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '404': None,
             '500': None,
         }
@@ -1819,7 +1819,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_bank_level_endpoint_mapping_without_preload_content(
+    def get_bank_level_endpoint_mapping_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
@@ -1866,7 +1866,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_bank_level_endpoint_mapping_serialize(
+        _param = self._get_bank_level_endpoint_mapping_serialize(
             bankid=bankid,
             endpointmappingid=endpointmappingid,
             _request_auth=_request_auth,
@@ -1876,7 +1876,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '404': None,
             '500': None,
         }
@@ -1887,7 +1887,7 @@ class EndpointMappingApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_bank_level_endpoint_mapping_serialize(
+    def _get_bank_level_endpoint_mapping_serialize(
         self,
         bankid,
         endpointmappingid,
@@ -1957,7 +1957,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_endpoint_mapping(
+    def get_endpoint_mapping(
         self,
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
         _request_timeout: Union[
@@ -1972,7 +1972,7 @@ class EndpointMappingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner:
+    ) -> GetAllEndpointMappings200ResponseEndpointMappingsInner:
         """Get Endpoint Mapping by Id
 
         <p>Get an Endpoint Mapping by ENDPOINT_MAPPING_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
@@ -2001,7 +2001,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_endpoint_mapping_serialize(
+        _param = self._get_endpoint_mapping_serialize(
             endpointmappingid=endpointmappingid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2010,7 +2010,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2025,7 +2025,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_endpoint_mapping_with_http_info(
+    def get_endpoint_mapping_with_http_info(
         self,
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
         _request_timeout: Union[
@@ -2040,7 +2040,7 @@ class EndpointMappingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner]:
+    ) -> ApiResponse[GetAllEndpointMappings200ResponseEndpointMappingsInner]:
         """Get Endpoint Mapping by Id
 
         <p>Get an Endpoint Mapping by ENDPOINT_MAPPING_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
@@ -2069,7 +2069,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_endpoint_mapping_serialize(
+        _param = self._get_endpoint_mapping_serialize(
             endpointmappingid=endpointmappingid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2078,7 +2078,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2093,7 +2093,7 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_endpoint_mapping_without_preload_content(
+    def get_endpoint_mapping_without_preload_content(
         self,
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
         _request_timeout: Union[
@@ -2137,7 +2137,7 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_endpoint_mapping_serialize(
+        _param = self._get_endpoint_mapping_serialize(
             endpointmappingid=endpointmappingid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2146,7 +2146,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2156,7 +2156,7 @@ class EndpointMappingApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_endpoint_mapping_serialize(
+    def _get_endpoint_mapping_serialize(
         self,
         endpointmappingid,
         _request_auth,
@@ -2223,11 +2223,11 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_bank_level_endpoint_mapping(
+    def update_bank_level_endpoint_mapping(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
-        obpv400_create_endpoint_mapping_request: Annotated[OBPv400CreateEndpointMappingRequest, Field(description="Request body")],
+        create_endpoint_mapping_request: Annotated[CreateEndpointMappingRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2240,7 +2240,7 @@ class EndpointMappingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner:
+    ) -> GetAllEndpointMappings200ResponseEndpointMappingsInner:
         """Update Bank Level Endpoint Mapping
 
         <p>Update an Bank Level Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
@@ -2249,8 +2249,8 @@ class EndpointMappingApi:
         :type bankid: str
         :param endpointmappingid: The ENDPOINTMAPPINGID identifier (required)
         :type endpointmappingid: str
-        :param obpv400_create_endpoint_mapping_request: Request body (required)
-        :type obpv400_create_endpoint_mapping_request: OBPv400CreateEndpointMappingRequest
+        :param create_endpoint_mapping_request: Request body (required)
+        :type create_endpoint_mapping_request: CreateEndpointMappingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2273,10 +2273,10 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_bank_level_endpoint_mapping_serialize(
+        _param = self._update_bank_level_endpoint_mapping_serialize(
             bankid=bankid,
             endpointmappingid=endpointmappingid,
-            obpv400_create_endpoint_mapping_request=obpv400_create_endpoint_mapping_request,
+            create_endpoint_mapping_request=create_endpoint_mapping_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2284,7 +2284,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '404': None,
             '500': None,
         }
@@ -2300,11 +2300,11 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_bank_level_endpoint_mapping_with_http_info(
+    def update_bank_level_endpoint_mapping_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
-        obpv400_create_endpoint_mapping_request: Annotated[OBPv400CreateEndpointMappingRequest, Field(description="Request body")],
+        create_endpoint_mapping_request: Annotated[CreateEndpointMappingRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2317,7 +2317,7 @@ class EndpointMappingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner]:
+    ) -> ApiResponse[GetAllEndpointMappings200ResponseEndpointMappingsInner]:
         """Update Bank Level Endpoint Mapping
 
         <p>Update an Bank Level Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
@@ -2326,8 +2326,8 @@ class EndpointMappingApi:
         :type bankid: str
         :param endpointmappingid: The ENDPOINTMAPPINGID identifier (required)
         :type endpointmappingid: str
-        :param obpv400_create_endpoint_mapping_request: Request body (required)
-        :type obpv400_create_endpoint_mapping_request: OBPv400CreateEndpointMappingRequest
+        :param create_endpoint_mapping_request: Request body (required)
+        :type create_endpoint_mapping_request: CreateEndpointMappingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2350,10 +2350,10 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_bank_level_endpoint_mapping_serialize(
+        _param = self._update_bank_level_endpoint_mapping_serialize(
             bankid=bankid,
             endpointmappingid=endpointmappingid,
-            obpv400_create_endpoint_mapping_request=obpv400_create_endpoint_mapping_request,
+            create_endpoint_mapping_request=create_endpoint_mapping_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2361,7 +2361,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '404': None,
             '500': None,
         }
@@ -2377,11 +2377,11 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_bank_level_endpoint_mapping_without_preload_content(
+    def update_bank_level_endpoint_mapping_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
-        obpv400_create_endpoint_mapping_request: Annotated[OBPv400CreateEndpointMappingRequest, Field(description="Request body")],
+        create_endpoint_mapping_request: Annotated[CreateEndpointMappingRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2403,8 +2403,8 @@ class EndpointMappingApi:
         :type bankid: str
         :param endpointmappingid: The ENDPOINTMAPPINGID identifier (required)
         :type endpointmappingid: str
-        :param obpv400_create_endpoint_mapping_request: Request body (required)
-        :type obpv400_create_endpoint_mapping_request: OBPv400CreateEndpointMappingRequest
+        :param create_endpoint_mapping_request: Request body (required)
+        :type create_endpoint_mapping_request: CreateEndpointMappingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2427,10 +2427,10 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_bank_level_endpoint_mapping_serialize(
+        _param = self._update_bank_level_endpoint_mapping_serialize(
             bankid=bankid,
             endpointmappingid=endpointmappingid,
-            obpv400_create_endpoint_mapping_request=obpv400_create_endpoint_mapping_request,
+            create_endpoint_mapping_request=create_endpoint_mapping_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2438,7 +2438,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '404': None,
             '500': None,
         }
@@ -2449,11 +2449,11 @@ class EndpointMappingApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_update_bank_level_endpoint_mapping_serialize(
+    def _update_bank_level_endpoint_mapping_serialize(
         self,
         bankid,
         endpointmappingid,
-        obpv400_create_endpoint_mapping_request,
+        create_endpoint_mapping_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2483,8 +2483,8 @@ class EndpointMappingApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_endpoint_mapping_request is not None:
-            _body_params = obpv400_create_endpoint_mapping_request
+        if create_endpoint_mapping_request is not None:
+            _body_params = create_endpoint_mapping_request
 
 
         # set the HTTP header `Accept`
@@ -2535,10 +2535,10 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_endpoint_mapping(
+    def update_endpoint_mapping(
         self,
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
-        obpv400_create_endpoint_mapping_request: Annotated[OBPv400CreateEndpointMappingRequest, Field(description="Request body")],
+        create_endpoint_mapping_request: Annotated[CreateEndpointMappingRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2551,15 +2551,15 @@ class EndpointMappingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner:
+    ) -> GetAllEndpointMappings200ResponseEndpointMappingsInner:
         """Update Endpoint Mapping
 
         <p>Update an Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
 
         :param endpointmappingid: The ENDPOINTMAPPINGID identifier (required)
         :type endpointmappingid: str
-        :param obpv400_create_endpoint_mapping_request: Request body (required)
-        :type obpv400_create_endpoint_mapping_request: OBPv400CreateEndpointMappingRequest
+        :param create_endpoint_mapping_request: Request body (required)
+        :type create_endpoint_mapping_request: CreateEndpointMappingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2582,9 +2582,9 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_endpoint_mapping_serialize(
+        _param = self._update_endpoint_mapping_serialize(
             endpointmappingid=endpointmappingid,
-            obpv400_create_endpoint_mapping_request=obpv400_create_endpoint_mapping_request,
+            create_endpoint_mapping_request=create_endpoint_mapping_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2592,7 +2592,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2607,10 +2607,10 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_endpoint_mapping_with_http_info(
+    def update_endpoint_mapping_with_http_info(
         self,
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
-        obpv400_create_endpoint_mapping_request: Annotated[OBPv400CreateEndpointMappingRequest, Field(description="Request body")],
+        create_endpoint_mapping_request: Annotated[CreateEndpointMappingRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2623,15 +2623,15 @@ class EndpointMappingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner]:
+    ) -> ApiResponse[GetAllEndpointMappings200ResponseEndpointMappingsInner]:
         """Update Endpoint Mapping
 
         <p>Update an Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
 
         :param endpointmappingid: The ENDPOINTMAPPINGID identifier (required)
         :type endpointmappingid: str
-        :param obpv400_create_endpoint_mapping_request: Request body (required)
-        :type obpv400_create_endpoint_mapping_request: OBPv400CreateEndpointMappingRequest
+        :param create_endpoint_mapping_request: Request body (required)
+        :type create_endpoint_mapping_request: CreateEndpointMappingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2654,9 +2654,9 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_endpoint_mapping_serialize(
+        _param = self._update_endpoint_mapping_serialize(
             endpointmappingid=endpointmappingid,
-            obpv400_create_endpoint_mapping_request=obpv400_create_endpoint_mapping_request,
+            create_endpoint_mapping_request=create_endpoint_mapping_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2664,7 +2664,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2679,10 +2679,10 @@ class EndpointMappingApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_endpoint_mapping_without_preload_content(
+    def update_endpoint_mapping_without_preload_content(
         self,
         endpointmappingid: Annotated[StrictStr, Field(description="The ENDPOINTMAPPINGID identifier")],
-        obpv400_create_endpoint_mapping_request: Annotated[OBPv400CreateEndpointMappingRequest, Field(description="Request body")],
+        create_endpoint_mapping_request: Annotated[CreateEndpointMappingRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2702,8 +2702,8 @@ class EndpointMappingApi:
 
         :param endpointmappingid: The ENDPOINTMAPPINGID identifier (required)
         :type endpointmappingid: str
-        :param obpv400_create_endpoint_mapping_request: Request body (required)
-        :type obpv400_create_endpoint_mapping_request: OBPv400CreateEndpointMappingRequest
+        :param create_endpoint_mapping_request: Request body (required)
+        :type create_endpoint_mapping_request: CreateEndpointMappingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2726,9 +2726,9 @@ class EndpointMappingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_endpoint_mapping_serialize(
+        _param = self._update_endpoint_mapping_serialize(
             endpointmappingid=endpointmappingid,
-            obpv400_create_endpoint_mapping_request=obpv400_create_endpoint_mapping_request,
+            create_endpoint_mapping_request=create_endpoint_mapping_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2736,7 +2736,7 @@ class EndpointMappingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner",
+            '200': "GetAllEndpointMappings200ResponseEndpointMappingsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2746,10 +2746,10 @@ class EndpointMappingApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_update_endpoint_mapping_serialize(
+    def _update_endpoint_mapping_serialize(
         self,
         endpointmappingid,
-        obpv400_create_endpoint_mapping_request,
+        create_endpoint_mapping_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2777,8 +2777,8 @@ class EndpointMappingApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_endpoint_mapping_request is not None:
-            _body_params = obpv400_create_endpoint_mapping_request
+        if create_endpoint_mapping_request is not None:
+            _body_params = create_endpoint_mapping_request
 
 
         # set the HTTP header `Accept`

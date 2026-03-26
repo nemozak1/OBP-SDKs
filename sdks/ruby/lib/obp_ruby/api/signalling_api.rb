@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -23,9 +23,9 @@ module OpenBankProject
     # <p>Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.<br /> Messages are ephemeral and will expire after the configured TTL (default 1 hour).</p> <p>This endpoint deletes a signal channel and all its messages immediately.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CHANNEL_NAME</a>: CHANNEL_NAME</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>deleted</strong></a>: deleted</p> 
     # @param channelname [String] The CHANNELNAME identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600DeleteSignalChannel200Response]
-    def o_bpv6_0_0_delete_signal_channel(channelname, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_delete_signal_channel_with_http_info(channelname, opts)
+    # @return [DeleteSignalChannel200Response]
+    def delete_signal_channel(channelname, opts = {})
+      data, _status_code, _headers = delete_signal_channel_with_http_info(channelname, opts)
       data
     end
 
@@ -33,14 +33,14 @@ module OpenBankProject
     # &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint deletes a signal channel and all its messages immediately.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;deleted&lt;/strong&gt;&lt;/a&gt;: deleted&lt;/p&gt; 
     # @param channelname [String] The CHANNELNAME identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600DeleteSignalChannel200Response, Integer, Hash)>] OBPv600DeleteSignalChannel200Response data, response status code and response headers
-    def o_bpv6_0_0_delete_signal_channel_with_http_info(channelname, opts = {})
+    # @return [Array<(DeleteSignalChannel200Response, Integer, Hash)>] DeleteSignalChannel200Response data, response status code and response headers
+    def delete_signal_channel_with_http_info(channelname, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SignallingApi.o_bpv6_0_0_delete_signal_channel ...'
+        @api_client.config.logger.debug 'Calling API: SignallingApi.delete_signal_channel ...'
       end
       # verify the required parameter 'channelname' is set
       if @api_client.config.client_side_validation && channelname.nil?
-        fail ArgumentError, "Missing the required parameter 'channelname' when calling SignallingApi.o_bpv6_0_0_delete_signal_channel"
+        fail ArgumentError, "Missing the required parameter 'channelname' when calling SignallingApi.delete_signal_channel"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/signal/channels/{channelname}'.sub('{' + 'channelname' + '}', CGI.escape(channelname.to_s))
@@ -60,13 +60,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600DeleteSignalChannel200Response'
+      return_type = opts[:debug_return_type] || 'DeleteSignalChannel200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"SignallingApi.o_bpv6_0_0_delete_signal_channel",
+        :operation => :"SignallingApi.delete_signal_channel",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -77,7 +77,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SignallingApi#o_bpv6_0_0_delete_signal_channel\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SignallingApi#delete_signal_channel\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -86,9 +86,9 @@ module OpenBankProject
     # <p>Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.<br /> Messages are ephemeral and will expire after the configured TTL (default 1 hour).</p> <p>This endpoint returns metadata about a signal channel including the current message count and remaining TTL in seconds.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CHANNEL_NAME</a>: CHANNEL_NAME</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>message_count</strong></a>: message_count</p> <p><a href=\"/glossary#\"><strong>ttl_seconds</strong></a>: ttl_seconds</p> 
     # @param channelname [String] The CHANNELNAME identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetSignalChannelInfo200Response]
-    def o_bpv6_0_0_get_signal_channel_info(channelname, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_signal_channel_info_with_http_info(channelname, opts)
+    # @return [GetSignalChannelInfo200Response]
+    def get_signal_channel_info(channelname, opts = {})
+      data, _status_code, _headers = get_signal_channel_info_with_http_info(channelname, opts)
       data
     end
 
@@ -96,14 +96,14 @@ module OpenBankProject
     # &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint returns metadata about a signal channel including the current message count and remaining TTL in seconds.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
     # @param channelname [String] The CHANNELNAME identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetSignalChannelInfo200Response, Integer, Hash)>] OBPv600GetSignalChannelInfo200Response data, response status code and response headers
-    def o_bpv6_0_0_get_signal_channel_info_with_http_info(channelname, opts = {})
+    # @return [Array<(GetSignalChannelInfo200Response, Integer, Hash)>] GetSignalChannelInfo200Response data, response status code and response headers
+    def get_signal_channel_info_with_http_info(channelname, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SignallingApi.o_bpv6_0_0_get_signal_channel_info ...'
+        @api_client.config.logger.debug 'Calling API: SignallingApi.get_signal_channel_info ...'
       end
       # verify the required parameter 'channelname' is set
       if @api_client.config.client_side_validation && channelname.nil?
-        fail ArgumentError, "Missing the required parameter 'channelname' when calling SignallingApi.o_bpv6_0_0_get_signal_channel_info"
+        fail ArgumentError, "Missing the required parameter 'channelname' when calling SignallingApi.get_signal_channel_info"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/signal/channels/{channelname}/info'.sub('{' + 'channelname' + '}', CGI.escape(channelname.to_s))
@@ -123,13 +123,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetSignalChannelInfo200Response'
+      return_type = opts[:debug_return_type] || 'GetSignalChannelInfo200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"SignallingApi.o_bpv6_0_0_get_signal_channel_info",
+        :operation => :"SignallingApi.get_signal_channel_info",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -140,7 +140,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SignallingApi#o_bpv6_0_0_get_signal_channel_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SignallingApi#get_signal_channel_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -148,19 +148,19 @@ module OpenBankProject
     # List Signal Channels
     # <p>Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.<br /> Messages are ephemeral and will expire after the configured TTL (default 1 hour).</p> <p>This endpoint lists active signal channels.<br /> Only channels that contain at least one broadcast message (no to_user_id) are listed.<br /> Private-only channels are not shown.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>channels</strong></a>: channels</p> <p><a href=\"/glossary#\"><strong>message_count</strong></a>: message_count</p> <p><a href=\"/glossary#\"><strong>ttl_seconds</strong></a>: ttl_seconds</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetSignalChannels200Response]
-    def o_bpv6_0_0_get_signal_channels(opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_signal_channels_with_http_info(opts)
+    # @return [GetSignalChannels200Response]
+    def get_signal_channels(opts = {})
+      data, _status_code, _headers = get_signal_channels_with_http_info(opts)
       data
     end
 
     # List Signal Channels
     # &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint lists active signal channels.&lt;br /&gt; Only channels that contain at least one broadcast message (no to_user_id) are listed.&lt;br /&gt; Private-only channels are not shown.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channels&lt;/strong&gt;&lt;/a&gt;: channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetSignalChannels200Response, Integer, Hash)>] OBPv600GetSignalChannels200Response data, response status code and response headers
-    def o_bpv6_0_0_get_signal_channels_with_http_info(opts = {})
+    # @return [Array<(GetSignalChannels200Response, Integer, Hash)>] GetSignalChannels200Response data, response status code and response headers
+    def get_signal_channels_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SignallingApi.o_bpv6_0_0_get_signal_channels ...'
+        @api_client.config.logger.debug 'Calling API: SignallingApi.get_signal_channels ...'
       end
       # resource path
       local_var_path = '/obp/v6.0.0/signal/channels'
@@ -180,13 +180,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetSignalChannels200Response'
+      return_type = opts[:debug_return_type] || 'GetSignalChannels200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"SignallingApi.o_bpv6_0_0_get_signal_channels",
+        :operation => :"SignallingApi.get_signal_channels",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -197,7 +197,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SignallingApi#o_bpv6_0_0_get_signal_channels\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SignallingApi#get_signal_channels\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -206,9 +206,9 @@ module OpenBankProject
     # <p>Fetch messages from a signal channel with offset/limit pagination.</p> <p>Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery<br /> and coordination, but usable by any authenticated OBP consumer.</p> <p>Messages are returned oldest-first.</p> <p>Privacy filtering is applied server-side: you will only see broadcast messages (no to_user_id)<br /> and private messages addressed to you (to_user_id matches your user ID) or sent by you.</p> <p>Use the offset parameter to poll for new messages by tracking your position.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CHANNEL_NAME</a>: CHANNEL_NAME</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>has_more</strong></a>: has_more</p> <p><a href=\"/glossary#\"><strong>message_id</strong></a>: message_id</p> <p><a href=\"/glossary#\"><strong>message_type</strong></a>: message_type</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> <p><a href=\"/glossary#payload\"><strong>payload</strong></a>: payload</p> <p><a href=\"/glossary#\"><strong>sender_consumer_id</strong></a>: sender_consumer_id</p> <p><a href=\"/glossary#\"><strong>sender_user_id</strong></a>: sender_user_id</p> <p><a href=\"/glossary#\"><strong>timestamp</strong></a>: timestamp</p> <p><a href=\"/glossary#\"><strong>total_count</strong></a>: total_count</p> <p><a href=\"/glossary#\">to_user_id</a>: to_user_id</p> 
     # @param channelname [String] The CHANNELNAME identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetSignalMessages200Response]
-    def o_bpv6_0_0_get_signal_messages(channelname, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_signal_messages_with_http_info(channelname, opts)
+    # @return [GetSignalMessages200Response]
+    def get_signal_messages(channelname, opts = {})
+      data, _status_code, _headers = get_signal_messages_with_http_info(channelname, opts)
       data
     end
 
@@ -216,14 +216,14 @@ module OpenBankProject
     # &lt;p&gt;Fetch messages from a signal channel with offset/limit pagination.&lt;/p&gt; &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery&lt;br /&gt; and coordination, but usable by any authenticated OBP consumer.&lt;/p&gt; &lt;p&gt;Messages are returned oldest-first.&lt;/p&gt; &lt;p&gt;Privacy filtering is applied server-side: you will only see broadcast messages (no to_user_id)&lt;br /&gt; and private messages addressed to you (to_user_id matches your user ID) or sent by you.&lt;/p&gt; &lt;p&gt;Use the offset parameter to poll for new messages by tracking your position.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;has_more&lt;/strong&gt;&lt;/a&gt;: has_more&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_id&lt;/strong&gt;&lt;/a&gt;: message_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_type&lt;/strong&gt;&lt;/a&gt;: message_type&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#messages\&quot;&gt;&lt;strong&gt;messages&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#payload\&quot;&gt;&lt;strong&gt;payload&lt;/strong&gt;&lt;/a&gt;: payload&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sender_consumer_id&lt;/strong&gt;&lt;/a&gt;: sender_consumer_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sender_user_id&lt;/strong&gt;&lt;/a&gt;: sender_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;timestamp&lt;/strong&gt;&lt;/a&gt;: timestamp&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_count&lt;/strong&gt;&lt;/a&gt;: total_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_user_id&lt;/a&gt;: to_user_id&lt;/p&gt; 
     # @param channelname [String] The CHANNELNAME identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetSignalMessages200Response, Integer, Hash)>] OBPv600GetSignalMessages200Response data, response status code and response headers
-    def o_bpv6_0_0_get_signal_messages_with_http_info(channelname, opts = {})
+    # @return [Array<(GetSignalMessages200Response, Integer, Hash)>] GetSignalMessages200Response data, response status code and response headers
+    def get_signal_messages_with_http_info(channelname, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SignallingApi.o_bpv6_0_0_get_signal_messages ...'
+        @api_client.config.logger.debug 'Calling API: SignallingApi.get_signal_messages ...'
       end
       # verify the required parameter 'channelname' is set
       if @api_client.config.client_side_validation && channelname.nil?
-        fail ArgumentError, "Missing the required parameter 'channelname' when calling SignallingApi.o_bpv6_0_0_get_signal_messages"
+        fail ArgumentError, "Missing the required parameter 'channelname' when calling SignallingApi.get_signal_messages"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/signal/channels/{channelname}/messages'.sub('{' + 'channelname' + '}', CGI.escape(channelname.to_s))
@@ -243,13 +243,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetSignalMessages200Response'
+      return_type = opts[:debug_return_type] || 'GetSignalMessages200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"SignallingApi.o_bpv6_0_0_get_signal_messages",
+        :operation => :"SignallingApi.get_signal_messages",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -260,7 +260,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SignallingApi#o_bpv6_0_0_get_signal_messages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SignallingApi#get_signal_messages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -268,19 +268,19 @@ module OpenBankProject
     # Get Signal Channel Stats
     # <p>Returns statistics for all signal channels, including private-only channels.</p> <p>Unlike the List Signal Channels endpoint, this does not filter out private-only channels.<br /> It provides a complete view of all active channels with message counts and TTL info.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>channels</strong></a>: channels</p> <p><a href=\"/glossary#\"><strong>message_count</strong></a>: message_count</p> <p><a href=\"/glossary#\"><strong>total_channels</strong></a>: total_channels</p> <p><a href=\"/glossary#\"><strong>total_messages</strong></a>: total_messages</p> <p><a href=\"/glossary#\"><strong>ttl_seconds</strong></a>: ttl_seconds</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetSignalStats200Response]
-    def o_bpv6_0_0_get_signal_stats(opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_signal_stats_with_http_info(opts)
+    # @return [GetSignalStats200Response]
+    def get_signal_stats(opts = {})
+      data, _status_code, _headers = get_signal_stats_with_http_info(opts)
       data
     end
 
     # Get Signal Channel Stats
     # &lt;p&gt;Returns statistics for all signal channels, including private-only channels.&lt;/p&gt; &lt;p&gt;Unlike the List Signal Channels endpoint, this does not filter out private-only channels.&lt;br /&gt; It provides a complete view of all active channels with message counts and TTL info.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channels&lt;/strong&gt;&lt;/a&gt;: channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_channels&lt;/strong&gt;&lt;/a&gt;: total_channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_messages&lt;/strong&gt;&lt;/a&gt;: total_messages&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetSignalStats200Response, Integer, Hash)>] OBPv600GetSignalStats200Response data, response status code and response headers
-    def o_bpv6_0_0_get_signal_stats_with_http_info(opts = {})
+    # @return [Array<(GetSignalStats200Response, Integer, Hash)>] GetSignalStats200Response data, response status code and response headers
+    def get_signal_stats_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SignallingApi.o_bpv6_0_0_get_signal_stats ...'
+        @api_client.config.logger.debug 'Calling API: SignallingApi.get_signal_stats ...'
       end
       # resource path
       local_var_path = '/obp/v6.0.0/signal/channels/stats'
@@ -300,13 +300,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetSignalStats200Response'
+      return_type = opts[:debug_return_type] || 'GetSignalStats200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"SignallingApi.o_bpv6_0_0_get_signal_stats",
+        :operation => :"SignallingApi.get_signal_stats",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -317,7 +317,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SignallingApi#o_bpv6_0_0_get_signal_stats\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SignallingApi#get_signal_stats\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -325,31 +325,31 @@ module OpenBankProject
     # Publish Signal Message
     # <p>Publish a message to a signal channel.</p> <p>Signal channels provide short-lived, Redis-backed messaging for lightweight coordination between<br /> AI agents and other OBP consumers. Messages are not persisted to a database.</p> <p>Channels are auto-created on first publish and expire after a configurable TTL (default 1 hour).<br /> Messages are capped at a configurable maximum per channel (default 1000).</p> <p>The payload field accepts any valid JSON content.</p> <p>Set to_user_id to send a private message visible only to the sender and recipient.<br /> Leave to_user_id empty for a broadcast message visible to all channel readers.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CHANNEL_NAME</a>: CHANNEL_NAME</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#payload\"><strong>payload</strong></a>: payload</p> <p><a href=\"/glossary#\">message_type</a>: message_type</p> <p><a href=\"/glossary#\">to_user_id</a>: to_user_id</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_message_count</strong></a>: channel_message_count</p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>message_id</strong></a>: message_id</p> <p><a href=\"/glossary#\"><strong>timestamp</strong></a>: timestamp</p> 
     # @param channelname [String] The CHANNELNAME identifier
-    # @param obpv600_publish_signal_message_request [OBPv600PublishSignalMessageRequest] Request body
+    # @param publish_signal_message_request [PublishSignalMessageRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600PublishSignalMessage200Response]
-    def o_bpv6_0_0_publish_signal_message(channelname, obpv600_publish_signal_message_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_publish_signal_message_with_http_info(channelname, obpv600_publish_signal_message_request, opts)
+    # @return [PublishSignalMessage200Response]
+    def publish_signal_message(channelname, publish_signal_message_request, opts = {})
+      data, _status_code, _headers = publish_signal_message_with_http_info(channelname, publish_signal_message_request, opts)
       data
     end
 
     # Publish Signal Message
     # &lt;p&gt;Publish a message to a signal channel.&lt;/p&gt; &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging for lightweight coordination between&lt;br /&gt; AI agents and other OBP consumers. Messages are not persisted to a database.&lt;/p&gt; &lt;p&gt;Channels are auto-created on first publish and expire after a configurable TTL (default 1 hour).&lt;br /&gt; Messages are capped at a configurable maximum per channel (default 1000).&lt;/p&gt; &lt;p&gt;The payload field accepts any valid JSON content.&lt;/p&gt; &lt;p&gt;Set to_user_id to send a private message visible only to the sender and recipient.&lt;br /&gt; Leave to_user_id empty for a broadcast message visible to all channel readers.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#payload\&quot;&gt;&lt;strong&gt;payload&lt;/strong&gt;&lt;/a&gt;: payload&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;message_type&lt;/a&gt;: message_type&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_user_id&lt;/a&gt;: to_user_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_message_count&lt;/strong&gt;&lt;/a&gt;: channel_message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_id&lt;/strong&gt;&lt;/a&gt;: message_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;timestamp&lt;/strong&gt;&lt;/a&gt;: timestamp&lt;/p&gt; 
     # @param channelname [String] The CHANNELNAME identifier
-    # @param obpv600_publish_signal_message_request [OBPv600PublishSignalMessageRequest] Request body
+    # @param publish_signal_message_request [PublishSignalMessageRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600PublishSignalMessage200Response, Integer, Hash)>] OBPv600PublishSignalMessage200Response data, response status code and response headers
-    def o_bpv6_0_0_publish_signal_message_with_http_info(channelname, obpv600_publish_signal_message_request, opts = {})
+    # @return [Array<(PublishSignalMessage200Response, Integer, Hash)>] PublishSignalMessage200Response data, response status code and response headers
+    def publish_signal_message_with_http_info(channelname, publish_signal_message_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SignallingApi.o_bpv6_0_0_publish_signal_message ...'
+        @api_client.config.logger.debug 'Calling API: SignallingApi.publish_signal_message ...'
       end
       # verify the required parameter 'channelname' is set
       if @api_client.config.client_side_validation && channelname.nil?
-        fail ArgumentError, "Missing the required parameter 'channelname' when calling SignallingApi.o_bpv6_0_0_publish_signal_message"
+        fail ArgumentError, "Missing the required parameter 'channelname' when calling SignallingApi.publish_signal_message"
       end
-      # verify the required parameter 'obpv600_publish_signal_message_request' is set
-      if @api_client.config.client_side_validation && obpv600_publish_signal_message_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_publish_signal_message_request' when calling SignallingApi.o_bpv6_0_0_publish_signal_message"
+      # verify the required parameter 'publish_signal_message_request' is set
+      if @api_client.config.client_side_validation && publish_signal_message_request.nil?
+        fail ArgumentError, "Missing the required parameter 'publish_signal_message_request' when calling SignallingApi.publish_signal_message"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/signal/channels/{channelname}/messages'.sub('{' + 'channelname' + '}', CGI.escape(channelname.to_s))
@@ -371,16 +371,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_publish_signal_message_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(publish_signal_message_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600PublishSignalMessage200Response'
+      return_type = opts[:debug_return_type] || 'PublishSignalMessage200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"SignallingApi.o_bpv6_0_0_publish_signal_message",
+        :operation => :"SignallingApi.publish_signal_message",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -391,7 +391,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SignallingApi#o_bpv6_0_0_publish_signal_message\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SignallingApi#publish_signal_message\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

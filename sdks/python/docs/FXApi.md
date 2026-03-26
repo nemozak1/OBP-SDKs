@@ -4,13 +4,13 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv2_2_0_create_fx**](FXApi.md#o_bpv2_2_0_create_fx) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx
-[**o_bpv2_2_0_get_current_fx_rate**](FXApi.md#o_bpv2_2_0_get_current_fx_rate) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate
-[**o_bpv5_1_0_get_currencies_at_bank**](FXApi.md#o_bpv5_1_0_get_currencies_at_bank) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank
+[**create_fx**](FXApi.md#create_fx) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx
+[**get_currencies_at_bank**](FXApi.md#get_currencies_at_bank) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank
+[**get_current_fx_rate**](FXApi.md#get_current_fx_rate) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate
 
 
-# **o_bpv2_2_0_create_fx**
-> OBPv220CreateFxRequest o_bpv2_2_0_create_fx(bankid, obpv220_create_fx_request)
+# **create_fx**
+> CreateFxRequest create_fx(bankid, create_fx_request)
 
 Create Fx
 
@@ -43,7 +43,7 @@ and<br />
 
 ```python
 import obp_python
-from obp_python.models.obpv220_create_fx_request import OBPv220CreateFxRequest
+from obp_python.models.create_fx_request import CreateFxRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -77,15 +77,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.FXApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv220_create_fx_request = {"type":"object","properties":{"conversion_value":{"type":"number"},"from_currency_code":{"type":"string"},"bank_id":{"type":"string"},"inverse_conversion_value":{"type":"number"},"to_currency_code":{"type":"string"},"effective_date":{"type":"string","format":"date-time"}}} # OBPv220CreateFxRequest | Request body
+    create_fx_request = {"type":"object","properties":{"conversion_value":{"type":"number"},"from_currency_code":{"type":"string"},"bank_id":{"type":"string"},"inverse_conversion_value":{"type":"number"},"to_currency_code":{"type":"string"},"effective_date":{"type":"string","format":"date-time"}}} # CreateFxRequest | Request body
 
     try:
         # Create Fx
-        api_response = api_instance.o_bpv2_2_0_create_fx(bankid, obpv220_create_fx_request)
-        print("The response of FXApi->o_bpv2_2_0_create_fx:\n")
+        api_response = api_instance.create_fx(bankid, create_fx_request)
+        print("The response of FXApi->create_fx:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FXApi->o_bpv2_2_0_create_fx: %s\n" % e)
+        print("Exception when calling FXApi->create_fx: %s\n" % e)
 ```
 
 
@@ -96,11 +96,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv220_create_fx_request** | [**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)| Request body | 
+ **create_fx_request** | [**CreateFxRequest**](CreateFxRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)
+[**CreateFxRequest**](CreateFxRequest.md)
 
 ### Authorization
 
@@ -121,8 +121,105 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv2_2_0_get_current_fx_rate**
-> OBPv220CreateFxRequest o_bpv2_2_0_get_current_fx_rate(bankid, fromcurrencycode, tocurrencycode)
+# **get_currencies_at_bank**
+> GetCurrenciesAtBank200Response get_currencies_at_bank(bankid)
+
+Get Currencies at a Bank
+
+<p>Get Currencies specified by BANK_ID</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>alphanumeric_code</strong></a>: alphanumeric_code</p>
+<p><a href="/glossary#"><strong>currencies</strong></a>: currencies</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_currencies_at_bank200_response import GetCurrenciesAtBank200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.FXApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+
+    try:
+        # Get Currencies at a Bank
+        api_response = api_instance.get_currencies_at_bank(bankid)
+        print("The response of FXApi->get_currencies_at_bank:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling FXApi->get_currencies_at_bank: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+
+### Return type
+
+[**GetCurrenciesAtBank200Response**](GetCurrenciesAtBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_current_fx_rate**
+> CreateFxRequest get_current_fx_rate(bankid, fromcurrencycode, tocurrencycode)
 
 Get Current FxRate
 
@@ -158,7 +255,7 @@ Get Current FxRate
 
 ```python
 import obp_python
-from obp_python.models.obpv220_create_fx_request import OBPv220CreateFxRequest
+from obp_python.models.create_fx_request import CreateFxRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -197,11 +294,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Current FxRate
-        api_response = api_instance.o_bpv2_2_0_get_current_fx_rate(bankid, fromcurrencycode, tocurrencycode)
-        print("The response of FXApi->o_bpv2_2_0_get_current_fx_rate:\n")
+        api_response = api_instance.get_current_fx_rate(bankid, fromcurrencycode, tocurrencycode)
+        print("The response of FXApi->get_current_fx_rate:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FXApi->o_bpv2_2_0_get_current_fx_rate: %s\n" % e)
+        print("Exception when calling FXApi->get_current_fx_rate: %s\n" % e)
 ```
 
 
@@ -217,104 +314,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_get_currencies_at_bank**
-> OBPv510GetCurrenciesAtBank200Response o_bpv5_1_0_get_currencies_at_bank(bankid)
-
-Get Currencies at a Bank
-
-<p>Get Currencies specified by BANK_ID</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>alphanumeric_code</strong></a>: alphanumeric_code</p>
-<p><a href="/glossary#"><strong>currencies</strong></a>: currencies</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_get_currencies_at_bank200_response import OBPv510GetCurrenciesAtBank200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.FXApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-
-    try:
-        # Get Currencies at a Bank
-        api_response = api_instance.o_bpv5_1_0_get_currencies_at_bank(bankid)
-        print("The response of FXApi->o_bpv5_1_0_get_currencies_at_bank:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling FXApi->o_bpv5_1_0_get_currencies_at_bank: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
-
-### Return type
-
-[**OBPv510GetCurrenciesAtBank200Response**](OBPv510GetCurrenciesAtBank200Response.md)
+[**CreateFxRequest**](CreateFxRequest.md)
 
 ### Authorization
 

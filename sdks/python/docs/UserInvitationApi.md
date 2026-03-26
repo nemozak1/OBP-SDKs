@@ -4,14 +4,14 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv4_0_0_create_user_invitation**](UserInvitationApi.md#o_bpv4_0_0_create_user_invitation) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitation | Create User Invitation
-[**o_bpv4_0_0_get_user_invitation**](UserInvitationApi.md#o_bpv4_0_0_get_user_invitation) | **GET** /obp/v4.0.0/banks/{bankid}/user-invitations/{secretlink} | Get User Invitation
-[**o_bpv4_0_0_get_user_invitation_anonymous**](UserInvitationApi.md#o_bpv4_0_0_get_user_invitation_anonymous) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitation Information
-[**o_bpv4_0_0_get_user_invitations**](UserInvitationApi.md#o_bpv4_0_0_get_user_invitations) | **GET** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitations
+[**create_user_invitation**](UserInvitationApi.md#create_user_invitation) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitation | Create User Invitation
+[**get_user_invitation**](UserInvitationApi.md#get_user_invitation) | **GET** /obp/v4.0.0/banks/{bankid}/user-invitations/{secretlink} | Get User Invitation
+[**get_user_invitation_anonymous**](UserInvitationApi.md#get_user_invitation_anonymous) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitation Information
+[**get_user_invitations**](UserInvitationApi.md#get_user_invitations) | **GET** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitations
 
 
-# **o_bpv4_0_0_create_user_invitation**
-> OBPv400GetUserInvitations200Response o_bpv4_0_0_create_user_invitation(bankid, obpv400_create_user_invitation_request)
+# **create_user_invitation**
+> GetUserInvitations200Response create_user_invitation(bankid, create_user_invitation_request)
 
 Create User Invitation
 
@@ -57,8 +57,8 @@ webui_customer_user_invitation_email_html_text</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_user_invitation_request import OBPv400CreateUserInvitationRequest
-from obp_python.models.obpv400_get_user_invitations200_response import OBPv400GetUserInvitations200Response
+from obp_python.models.create_user_invitation_request import CreateUserInvitationRequest
+from obp_python.models.get_user_invitations200_response import GetUserInvitations200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -92,15 +92,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.UserInvitationApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv400_create_user_invitation_request = {"type":"object","properties":{"email":{"type":"string"},"purpose":{"type":"string"},"first_name":{"type":"string"},"country":{"type":"string"},"company":{"type":"string"},"last_name":{"type":"string"}}} # OBPv400CreateUserInvitationRequest | Request body
+    create_user_invitation_request = {"type":"object","properties":{"email":{"type":"string"},"purpose":{"type":"string"},"first_name":{"type":"string"},"country":{"type":"string"},"company":{"type":"string"},"last_name":{"type":"string"}}} # CreateUserInvitationRequest | Request body
 
     try:
         # Create User Invitation
-        api_response = api_instance.o_bpv4_0_0_create_user_invitation(bankid, obpv400_create_user_invitation_request)
-        print("The response of UserInvitationApi->o_bpv4_0_0_create_user_invitation:\n")
+        api_response = api_instance.create_user_invitation(bankid, create_user_invitation_request)
+        print("The response of UserInvitationApi->create_user_invitation:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserInvitationApi->o_bpv4_0_0_create_user_invitation: %s\n" % e)
+        print("Exception when calling UserInvitationApi->create_user_invitation: %s\n" % e)
 ```
 
 
@@ -111,11 +111,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv400_create_user_invitation_request** | [**OBPv400CreateUserInvitationRequest**](OBPv400CreateUserInvitationRequest.md)| Request body | 
+ **create_user_invitation_request** | [**CreateUserInvitationRequest**](CreateUserInvitationRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetUserInvitations200Response**](OBPv400GetUserInvitations200Response.md)
+[**GetUserInvitations200Response**](GetUserInvitations200Response.md)
 
 ### Authorization
 
@@ -136,8 +136,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_user_invitation**
-> OBPv400GetUserInvitations200Response o_bpv4_0_0_get_user_invitation(bankid, secretlink)
+# **get_user_invitation**
+> GetUserInvitations200Response get_user_invitation(bankid, secretlink)
 
 Get User Invitation
 
@@ -164,7 +164,7 @@ Get User Invitation
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_user_invitations200_response import OBPv400GetUserInvitations200Response
+from obp_python.models.get_user_invitations200_response import GetUserInvitations200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -202,11 +202,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get User Invitation
-        api_response = api_instance.o_bpv4_0_0_get_user_invitation(bankid, secretlink)
-        print("The response of UserInvitationApi->o_bpv4_0_0_get_user_invitation:\n")
+        api_response = api_instance.get_user_invitation(bankid, secretlink)
+        print("The response of UserInvitationApi->get_user_invitation:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserInvitationApi->o_bpv4_0_0_get_user_invitation: %s\n" % e)
+        print("Exception when calling UserInvitationApi->get_user_invitation: %s\n" % e)
 ```
 
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetUserInvitations200Response**](OBPv400GetUserInvitations200Response.md)
+[**GetUserInvitations200Response**](GetUserInvitations200Response.md)
 
 ### Authorization
 
@@ -242,8 +242,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_user_invitation_anonymous**
-> OBPv400GetUserInvitations200Response o_bpv4_0_0_get_user_invitation_anonymous(bankid, obpv400_get_user_invitation_anonymous_request)
+# **get_user_invitation_anonymous**
+> GetUserInvitations200Response get_user_invitation_anonymous(bankid, get_user_invitation_anonymous_request)
 
 Get User Invitation Information
 
@@ -268,8 +268,8 @@ Get User Invitation Information
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_user_invitation_anonymous_request import OBPv400GetUserInvitationAnonymousRequest
-from obp_python.models.obpv400_get_user_invitations200_response import OBPv400GetUserInvitations200Response
+from obp_python.models.get_user_invitation_anonymous_request import GetUserInvitationAnonymousRequest
+from obp_python.models.get_user_invitations200_response import GetUserInvitations200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -285,15 +285,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.UserInvitationApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv400_get_user_invitation_anonymous_request = {"type":"object","properties":{"secret_key":{"type":"integer"}}} # OBPv400GetUserInvitationAnonymousRequest | Request body
+    get_user_invitation_anonymous_request = {"type":"object","properties":{"secret_key":{"type":"integer"}}} # GetUserInvitationAnonymousRequest | Request body
 
     try:
         # Get User Invitation Information
-        api_response = api_instance.o_bpv4_0_0_get_user_invitation_anonymous(bankid, obpv400_get_user_invitation_anonymous_request)
-        print("The response of UserInvitationApi->o_bpv4_0_0_get_user_invitation_anonymous:\n")
+        api_response = api_instance.get_user_invitation_anonymous(bankid, get_user_invitation_anonymous_request)
+        print("The response of UserInvitationApi->get_user_invitation_anonymous:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserInvitationApi->o_bpv4_0_0_get_user_invitation_anonymous: %s\n" % e)
+        print("Exception when calling UserInvitationApi->get_user_invitation_anonymous: %s\n" % e)
 ```
 
 
@@ -304,11 +304,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv400_get_user_invitation_anonymous_request** | [**OBPv400GetUserInvitationAnonymousRequest**](OBPv400GetUserInvitationAnonymousRequest.md)| Request body | 
+ **get_user_invitation_anonymous_request** | [**GetUserInvitationAnonymousRequest**](GetUserInvitationAnonymousRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetUserInvitations200Response**](OBPv400GetUserInvitations200Response.md)
+[**GetUserInvitations200Response**](GetUserInvitations200Response.md)
 
 ### Authorization
 
@@ -329,8 +329,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_user_invitations**
-> OBPv400GetUserInvitations200Response o_bpv4_0_0_get_user_invitations(bankid)
+# **get_user_invitations**
+> GetUserInvitations200Response get_user_invitations(bankid)
 
 Get User Invitations
 
@@ -356,7 +356,7 @@ Get User Invitations
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_user_invitations200_response import OBPv400GetUserInvitations200Response
+from obp_python.models.get_user_invitations200_response import GetUserInvitations200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -393,11 +393,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get User Invitations
-        api_response = api_instance.o_bpv4_0_0_get_user_invitations(bankid)
-        print("The response of UserInvitationApi->o_bpv4_0_0_get_user_invitations:\n")
+        api_response = api_instance.get_user_invitations(bankid)
+        print("The response of UserInvitationApi->get_user_invitations:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserInvitationApi->o_bpv4_0_0_get_user_invitations: %s\n" % e)
+        print("Exception when calling UserInvitationApi->get_user_invitations: %s\n" % e)
 ```
 
 
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetUserInvitations200Response**](OBPv400GetUserInvitations200Response.md)
+[**GetUserInvitations200Response**](GetUserInvitations200Response.md)
 
 ### Authorization
 

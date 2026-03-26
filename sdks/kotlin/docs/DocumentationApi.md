@@ -1,27 +1,70 @@
 # DocumentationApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv140GetBankLevelDynamicResourceDocsObp**](DocumentationApi.md#oBPv140GetBankLevelDynamicResourceDocsObp) | **GET** /obp/v1.4.0/banks/{bankid}/resource-docs/{apiversion}/obp | Get Bank Level Dynamic Resource Docs |
-| [**oBPv140GetResourceDocsObp**](DocumentationApi.md#oBPv140GetResourceDocsObp) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/obp | Get Resource Docs |
-| [**oBPv140GetResourceDocsOpenAPI31**](DocumentationApi.md#oBPv140GetResourceDocsOpenAPI31) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/openapi | Get OpenAPI 3.1 documentation |
-| [**oBPv140GetResourceDocsSwagger**](DocumentationApi.md#oBPv140GetResourceDocsSwagger) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/swagger | Get Swagger documentation |
-| [**oBPv220GetMessageDocs**](DocumentationApi.md#oBPv220GetMessageDocs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs |
-| [**oBPv300GetApiGlossary**](DocumentationApi.md#oBPv300GetApiGlossary) | **GET** /obp/v3.0.0/api/glossary | Get Glossary of the API |
-| [**oBPv310GetMessageDocsSwagger**](DocumentationApi.md#oBPv310GetMessageDocsSwagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger |
-| [**oBPv600GetMessageDocsJsonSchema**](DocumentationApi.md#oBPv600GetMessageDocsJsonSchema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema |
-| [**oBPv600GetScannedApiVersions**](DocumentationApi.md#oBPv600GetScannedApiVersions) | **GET** /obp/v6.0.0/api/versions | Get Scanned API Versions |
+| [**getApiGlossary**](DocumentationApi.md#getApiGlossary) | **GET** /obp/v3.0.0/api/glossary | Get Glossary of the API |
+| [**getBankLevelDynamicResourceDocsObp**](DocumentationApi.md#getBankLevelDynamicResourceDocsObp) | **GET** /obp/v1.4.0/banks/{bankid}/resource-docs/{apiversion}/obp | Get Bank Level Dynamic Resource Docs |
+| [**getMessageDocs**](DocumentationApi.md#getMessageDocs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs |
+| [**getMessageDocsJsonSchema**](DocumentationApi.md#getMessageDocsJsonSchema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema |
+| [**getMessageDocsSwagger**](DocumentationApi.md#getMessageDocsSwagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger |
+| [**getResourceDocsObp**](DocumentationApi.md#getResourceDocsObp) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/obp | Get Resource Docs |
+| [**getResourceDocsOpenAPI31**](DocumentationApi.md#getResourceDocsOpenAPI31) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/openapi | Get OpenAPI 3.1 documentation |
+| [**getResourceDocsSwagger**](DocumentationApi.md#getResourceDocsSwagger) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/swagger | Get Swagger documentation |
+| [**getScannedApiVersions**](DocumentationApi.md#getScannedApiVersions) | **GET** /obp/v6.0.0/api/versions | Get Scanned API Versions |
 
 
-<a id="oBPv140GetBankLevelDynamicResourceDocsObp"></a>
-# **oBPv140GetBankLevelDynamicResourceDocsObp**
-> oBPv140GetBankLevelDynamicResourceDocsObp(bankid, apiversion)
+<a id="getApiGlossary"></a>
+# **getApiGlossary**
+> GetApiGlossary200Response getApiGlossary()
+
+Get Glossary of the API
+
+&lt;p&gt;Get API Glossary&lt;/p&gt; &lt;p&gt;Returns the glossary of the API.&lt;/p&gt; &lt;p&gt;The glossary content is static and only changes when the API is redeployed.&lt;br /&gt; This endpoint supports HTTP caching:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;The response includes a &lt;strong&gt;Cache-Control&lt;/strong&gt; header (max-age&#x3D;3600) indicating clients should cache for 1 hour.&lt;/li&gt; &lt;li&gt;The response includes an &lt;strong&gt;ETag&lt;/strong&gt; header. Clients can send &lt;strong&gt;If-None-Match&lt;/strong&gt; with the ETag value on subsequent requests to receive a &lt;strong&gt;304 Not Modified&lt;/strong&gt; if the content has not changed.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Clients and agents are encouraged to cache the glossary response locally.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#glossary_items\&quot;&gt;&lt;strong&gt;glossary_items&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#html\&quot;&gt;&lt;strong&gt;html&lt;/strong&gt;&lt;/a&gt;: html format content&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#markdown\&quot;&gt;&lt;strong&gt;markdown&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;title&lt;/strong&gt;&lt;/a&gt;: Dr.&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = DocumentationApi()
+try {
+    val result : GetApiGlossary200Response = apiInstance.getApiGlossary()
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling DocumentationApi#getApiGlossary")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling DocumentationApi#getApiGlossary")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetApiGlossary200Response**](GetApiGlossary200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="getBankLevelDynamicResourceDocsObp"></a>
+# **getBankLevelDynamicResourceDocsObp**
+> getBankLevelDynamicResourceDocsObp(bankid, apiversion)
 
 Get Bank Level Dynamic Resource Docs
 
-&lt;p&gt;Get documentation about the RESTful resources on this server including example bodies for POST and PUT requests.&lt;/p&gt; &lt;p&gt;This is the native data format used to document OBP endpoints. Each endpoint has a Resource Doc (a Scala case class) defined in the source code.&lt;/p&gt; &lt;p&gt;This endpoint is used by OBP API Explorer to display and work with the API documentation.&lt;/p&gt; &lt;p&gt;Most (but not all) fields are also available in swagger format. (The Swagger endpoint is built from Resource Docs.)&lt;/p&gt; &lt;p&gt;API_VERSION is the version you want documentation about e.g. v3.0.0&lt;/p&gt; &lt;p&gt;You may filter this endpoint with tags parameter e.g. ?tags&#x3D;Account,Bank&lt;/p&gt; &lt;p&gt;You may filter this endpoint with functions parameter e.g. ?functions&#x3D;enableDisableConsumers,getConnectorMetrics&lt;/p&gt; &lt;p&gt;For possible function values, see implemented_by.function in the JSON returned by this endpoint or the OBP source code or the footer of the API Explorer which produces a comma separated list of functions that reflect the server or filtering by API Explorer based on tags etc.&lt;/p&gt; &lt;p&gt;You may filter this endpoint using the &#39;content&#39; url parameter, e.g. ?content&#x3D;dynamic&lt;br /&gt; if set content&#x3D;dynamic, only show dynamic endpoints, if content&#x3D;static, only show the static endpoints. if omit this parameter, we will show all the endpoints.&lt;/p&gt; &lt;p&gt;You may need some other language resource docs, now we support en_GB and es_ES at the moment.&lt;/p&gt; &lt;p&gt;You can filter with api-collection-id, but api-collection-id can not be used with others together. If api-collection-id is used in URL, it will ignore all other parameters.&lt;/p&gt; &lt;p&gt;See the Resource Doc endpoint for more information.&lt;/p&gt; &lt;p&gt;Note: Dynamic Resource Docs are cached, TTL is 3600 seconds&lt;br /&gt; Static Resource Docs are cached, TTL is 3600 seconds&lt;/p&gt; &lt;p&gt;Following are more examples:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp\&quot;&gt;https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags&#x3D;Account,Bank\&quot;&gt;https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags&#x3D;Account,Bank&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions&#x3D;getBanks,bankById\&quot;&gt;https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions&#x3D;getBanks,bankById&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale&#x3D;es_ES\&quot;&gt;https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale&#x3D;es_ES&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content&#x3D;static,dynamic,all\&quot;&gt;https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content&#x3D;static,dynamic,all&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id&#x3D;4e866c86-60c3-4268-a221-cb0bbf1ad221\&quot;&gt;https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id&#x3D;4e866c86-60c3-4268-a221-cb0bbf1ad221&lt;/a&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt; operation_id is concatenation of \&quot;v\&quot;, version and function and should be unique (used for DOM element IDs etc. maybe used to link to source code) &lt;/li&gt; &lt;li&gt; version references the version that the API call is defined in.&lt;/li&gt; &lt;li&gt; function is the (scala) partial function that implements this endpoint. It is unique per version of the API.&lt;/li&gt; &lt;li&gt; request_url is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the implemented version (the version where this endpoint was defined) e.g. /obp/v1.2.0/resource&lt;/li&gt; &lt;li&gt; specified_url (recommended to use) is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the version specified in the call e.g. /obp/v3.1.0/resource. In OBP, endpoints are first made available at the request_url, but the same resource (function call) is often made available under later versions (specified_url). To access the latest version of all endpoints use the latest version available on your OBP instance e.g. /obp/v3.1.0 - To get the original version use the request_url. We recommend to use the specified_url since non semantic improvements are more likely to be applied to later implementations of the call.&lt;/li&gt; &lt;li&gt; summary is a short description inline with the swagger terminology. &lt;/li&gt; &lt;li&gt; description may contain html markup (generated from markdown on the server).&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#api_version\&quot;&gt;API_VERSION&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Get documentation about the RESTful resources on this server including example bodies for POST and PUT requests.&lt;/p&gt; &lt;p&gt;This is the native data format used to document OBP endpoints. Each endpoint has a Resource Doc (a Scala case class) defined in the source code.&lt;/p&gt; &lt;p&gt;This endpoint is used by OBP API Explorer to display and work with the API documentation.&lt;/p&gt; &lt;p&gt;Most (but not all) fields are also available in swagger format. (The Swagger endpoint is built from Resource Docs.)&lt;/p&gt; &lt;p&gt;API_VERSION is the version you want documentation about e.g. v3.0.0&lt;/p&gt; &lt;p&gt;You may filter this endpoint with tags parameter e.g. ?tags&#x3D;Account,Bank&lt;/p&gt; &lt;p&gt;You may filter this endpoint with functions parameter e.g. ?functions&#x3D;enableDisableConsumers,getConnectorMetrics&lt;/p&gt; &lt;p&gt;For possible function values, see implemented_by.function in the JSON returned by this endpoint or the OBP source code or the footer of the API Explorer which produces a comma separated list of functions that reflect the server or filtering by API Explorer based on tags etc.&lt;/p&gt; &lt;p&gt;You may filter this endpoint using the &#39;content&#39; url parameter, e.g. ?content&#x3D;dynamic&lt;br /&gt; if set content&#x3D;dynamic, only show dynamic endpoints, if content&#x3D;static, only show the static endpoints. if omit this parameter, we will show all the endpoints.&lt;/p&gt; &lt;p&gt;You may need some other language resource docs, now we support en_GB and es_ES at the moment.&lt;/p&gt; &lt;p&gt;You can filter with api-collection-id, but api-collection-id can not be used with others together. If api-collection-id is used in URL, it will ignore all other parameters.&lt;/p&gt; &lt;p&gt;See the Resource Doc endpoint for more information.&lt;/p&gt; &lt;p&gt;Note: Dynamic Resource Docs are cached, TTL is 3600 seconds&lt;br /&gt; Static Resource Docs are cached, TTL is 3600 seconds&lt;/p&gt; &lt;p&gt;Following are more examples:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp\&quot;&gt;http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags&#x3D;Account,Bank\&quot;&gt;http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags&#x3D;Account,Bank&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions&#x3D;getBanks,bankById\&quot;&gt;http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions&#x3D;getBanks,bankById&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale&#x3D;es_ES\&quot;&gt;http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale&#x3D;es_ES&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content&#x3D;static,dynamic,all\&quot;&gt;http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content&#x3D;static,dynamic,all&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id&#x3D;4e866c86-60c3-4268-a221-cb0bbf1ad221\&quot;&gt;http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id&#x3D;4e866c86-60c3-4268-a221-cb0bbf1ad221&lt;/a&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt; operation_id is concatenation of \&quot;v\&quot;, version and function and should be unique (used for DOM element IDs etc. maybe used to link to source code) &lt;/li&gt; &lt;li&gt; version references the version that the API call is defined in.&lt;/li&gt; &lt;li&gt; function is the (scala) partial function that implements this endpoint. It is unique per version of the API.&lt;/li&gt; &lt;li&gt; request_url is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the implemented version (the version where this endpoint was defined) e.g. /obp/v1.2.0/resource&lt;/li&gt; &lt;li&gt; specified_url (recommended to use) is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the version specified in the call e.g. /obp/v3.1.0/resource. In OBP, endpoints are first made available at the request_url, but the same resource (function call) is often made available under later versions (specified_url). To access the latest version of all endpoints use the latest version available on your OBP instance e.g. /obp/v3.1.0 - To get the original version use the request_url. We recommend to use the specified_url since non semantic improvements are more likely to be applied to later implementations of the call.&lt;/li&gt; &lt;li&gt; summary is a short description inline with the swagger terminology. &lt;/li&gt; &lt;li&gt; description may contain html markup (generated from markdown on the server).&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#api_version\&quot;&gt;API_VERSION&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
 
 ### Example
 ```kotlin
@@ -33,12 +76,12 @@ val apiInstance = DocumentationApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val apiversion : kotlin.String = apiversion_example // kotlin.String | The APIVERSION identifier
 try {
-    apiInstance.oBPv140GetBankLevelDynamicResourceDocsObp(bankid, apiversion)
+    apiInstance.getBankLevelDynamicResourceDocsObp(bankid, apiversion)
 } catch (e: ClientException) {
-    println("4xx response calling DocumentationApi#oBPv140GetBankLevelDynamicResourceDocsObp")
+    println("4xx response calling DocumentationApi#getBankLevelDynamicResourceDocsObp")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DocumentationApi#oBPv140GetBankLevelDynamicResourceDocsObp")
+    println("5xx response calling DocumentationApi#getBankLevelDynamicResourceDocsObp")
     e.printStackTrace()
 }
 ```
@@ -62,160 +105,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv140GetResourceDocsObp"></a>
-# **oBPv140GetResourceDocsObp**
-> oBPv140GetResourceDocsObp(apiversion)
-
-Get Resource Docs
-
-&lt;p&gt;Get documentation about the RESTful resources on this server including example bodies for POST and PUT requests.&lt;/p&gt; &lt;p&gt;This is the native data format used to document OBP endpoints. Each endpoint has a Resource Doc (a Scala case class) defined in the source code.&lt;/p&gt; &lt;p&gt;This endpoint is used by OBP API Explorer to display and work with the API documentation.&lt;/p&gt; &lt;p&gt;Most (but not all) fields are also available in swagger format. (The Swagger endpoint is built from Resource Docs.)&lt;/p&gt; &lt;p&gt;API_VERSION is the version you want documentation about e.g. v3.0.0&lt;/p&gt; &lt;p&gt;You may filter this endpoint with tags parameter e.g. ?tags&#x3D;Account,Bank&lt;/p&gt; &lt;p&gt;You may filter this endpoint with functions parameter e.g. ?functions&#x3D;enableDisableConsumers,getConnectorMetrics&lt;/p&gt; &lt;p&gt;For possible function values, see implemented_by.function in the JSON returned by this endpoint or the OBP source code or the footer of the API Explorer which produces a comma separated list of functions that reflect the server or filtering by API Explorer based on tags etc.&lt;/p&gt; &lt;p&gt;You may filter this endpoint using the &#39;content&#39; url parameter, e.g. ?content&#x3D;dynamic&lt;br /&gt; if set content&#x3D;dynamic, only show dynamic endpoints, if content&#x3D;static, only show the static endpoints. if omit this parameter, we will show all the endpoints.&lt;/p&gt; &lt;p&gt;You may need some other language resource docs, now we support en_GB and es_ES at the moment.&lt;/p&gt; &lt;p&gt;You can filter with api-collection-id, but api-collection-id can not be used with others together. If api-collection-id is used in URL, it will ignore all other parameters.&lt;/p&gt; &lt;p&gt;See the Resource Doc endpoint for more information.&lt;/p&gt; &lt;p&gt;Note: Dynamic Resource Docs are cached, TTL is 3600 seconds&lt;br /&gt; Static Resource Docs are cached, TTL is 3600 seconds&lt;/p&gt; &lt;p&gt;Following are more examples:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp\&quot;&gt;https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?tags&#x3D;Account,Bank\&quot;&gt;https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?tags&#x3D;Account,Bank&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?functions&#x3D;getBanks,bankById\&quot;&gt;https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?functions&#x3D;getBanks,bankById&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?locale&#x3D;es_ES\&quot;&gt;https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?locale&#x3D;es_ES&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?content&#x3D;static,dynamic,all\&quot;&gt;https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?content&#x3D;static,dynamic,all&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id&#x3D;4e866c86-60c3-4268-a221-cb0bbf1ad221\&quot;&gt;https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id&#x3D;4e866c86-60c3-4268-a221-cb0bbf1ad221&lt;/a&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt; operation_id is concatenation of \&quot;v\&quot;, version and function and should be unique (used for DOM element IDs etc. maybe used to link to source code) &lt;/li&gt; &lt;li&gt; version references the version that the API call is defined in.&lt;/li&gt; &lt;li&gt; function is the (scala) partial function that implements this endpoint. It is unique per version of the API.&lt;/li&gt; &lt;li&gt; request_url is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the implemented version (the version where this endpoint was defined) e.g. /obp/v1.2.0/resource&lt;/li&gt; &lt;li&gt; specified_url (recommended to use) is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the version specified in the call e.g. /obp/v3.1.0/resource. In OBP, endpoints are first made available at the request_url, but the same resource (function call) is often made available under later versions (specified_url). To access the latest version of all endpoints use the latest version available on your OBP instance e.g. /obp/v3.1.0 - To get the original version use the request_url. We recommend to use the specified_url since non semantic improvements are more likely to be applied to later implementations of the call.&lt;/li&gt; &lt;li&gt; summary is a short description inline with the swagger terminology. &lt;/li&gt; &lt;li&gt; description may contain html markup (generated from markdown on the server).&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#api_version\&quot;&gt;API_VERSION&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = DocumentationApi()
-val apiversion : kotlin.String = apiversion_example // kotlin.String | The APIVERSION identifier
-try {
-    apiInstance.oBPv140GetResourceDocsObp(apiversion)
-} catch (e: ClientException) {
-    println("4xx response calling DocumentationApi#oBPv140GetResourceDocsObp")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling DocumentationApi#oBPv140GetResourceDocsObp")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **apiversion** | **kotlin.String**| The APIVERSION identifier | |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a id="oBPv140GetResourceDocsOpenAPI31"></a>
-# **oBPv140GetResourceDocsOpenAPI31**
-> oBPv140GetResourceDocsOpenAPI31(apiversion)
-
-Get OpenAPI 3.1 documentation
-
-&lt;p&gt;Returns documentation about the RESTful resources on this server in OpenAPI 3.1 format.&lt;/p&gt; &lt;p&gt;API_VERSION is the version you want documentation about e.g. v6.0.0&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#query-parameters\&quot; id&#x3D;\&quot;query-parameters\&quot;&gt;Query Parameters&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;You may filter this endpoint using the following optional query parameters:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;tags&lt;/strong&gt; - Filter by endpoint tags (comma-separated list)&lt;br /&gt; • Example: ?tags&#x3D;Account,Bank or ?tags&#x3D;Account-Firehose&lt;br /&gt; • All endpoints are given one or more tags which are used for grouping&lt;br /&gt; • Empty values will return error OBP-10053&lt;/p&gt; &lt;p&gt;&lt;strong&gt;functions&lt;/strong&gt; - Filter by function names (comma-separated list)&lt;br /&gt; • Example: ?functions&#x3D;getBanks,bankById&lt;br /&gt; • Each endpoint is implemented in the OBP Scala code by a &#39;function&#39;&lt;br /&gt; • Empty values will return error OBP-10054&lt;/p&gt; &lt;p&gt;&lt;strong&gt;content&lt;/strong&gt; - Filter by endpoint type&lt;br /&gt; • Values: static, dynamic, all (case-insensitive)&lt;br /&gt; • static: Only show static/core API endpoints&lt;br /&gt; • dynamic: Only show dynamic/custom endpoints&lt;br /&gt; • all: Show both static and dynamic endpoints (default)&lt;br /&gt; • Invalid values will return error OBP-10052&lt;/p&gt; &lt;p&gt;&lt;strong&gt;locale&lt;/strong&gt; - Language for localized documentation&lt;br /&gt; • Example: ?locale&#x3D;en_GB or ?locale&#x3D;es_ES&lt;br /&gt; • Supported locales: en_GB, es_ES, ro_RO&lt;br /&gt; • Invalid locales will return error OBP-10041&lt;/p&gt; &lt;p&gt;&lt;strong&gt;api-collection-id&lt;/strong&gt; - Filter by API collection UUID&lt;br /&gt; • Example: ?api-collection-id&#x3D;4e866c86-60c3-4268-a221-cb0bbf1ad221&lt;br /&gt; • Returns only endpoints belonging to the specified collection&lt;br /&gt; • Empty values will return error OBP-10055&lt;/p&gt; &lt;p&gt;This endpoint generates OpenAPI 3.1 compliant documentation with modern JSON Schema support.&lt;/p&gt; &lt;p&gt;For YAML format, use the corresponding endpoint: /resource-docs/API_VERSION/openapi.yaml&lt;/p&gt; &lt;p&gt;See the Resource Doc endpoint for more information.&lt;/p&gt; &lt;p&gt;Note: Resource Docs are cached, TTL is 3600 seconds&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#examples\&quot; id&#x3D;\&quot;examples\&quot;&gt;Examples&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Basic usage:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Filter by tags:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags&#x3D;Account,Bank\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags&#x3D;Account,Bank&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags&#x3D;Account-Firehose\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags&#x3D;Account-Firehose&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Filter by content type:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content&#x3D;static\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content&#x3D;static&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content&#x3D;dynamic\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content&#x3D;dynamic&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Filter by functions:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions&#x3D;getBanks,bankById\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions&#x3D;getBanks,bankById&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Combine multiple parameters:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content&#x3D;static&amp;amp;tags&#x3D;Account-Firehose\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content&#x3D;static&amp;amp;tags&#x3D;Account-Firehose&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags&#x3D;Account,Bank,PSD2&amp;amp;functions&#x3D;getBanks,bankById\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags&#x3D;Account,Bank,PSD2&amp;amp;functions&#x3D;getBanks,bankById&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content&#x3D;static&amp;amp;locale&#x3D;en_GB&amp;amp;tags&#x3D;Account\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content&#x3D;static&amp;amp;locale&#x3D;en_GB&amp;amp;tags&#x3D;Account&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Filter by API collection:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id&#x3D;4e866c86-60c3-4268-a221-cb0bbf1ad221\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id&#x3D;4e866c86-60c3-4268-a221-cb0bbf1ad221&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#api_version\&quot;&gt;API_VERSION&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = DocumentationApi()
-val apiversion : kotlin.String = apiversion_example // kotlin.String | The APIVERSION identifier
-try {
-    apiInstance.oBPv140GetResourceDocsOpenAPI31(apiversion)
-} catch (e: ClientException) {
-    println("4xx response calling DocumentationApi#oBPv140GetResourceDocsOpenAPI31")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling DocumentationApi#oBPv140GetResourceDocsOpenAPI31")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **apiversion** | **kotlin.String**| The APIVERSION identifier | |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a id="oBPv140GetResourceDocsSwagger"></a>
-# **oBPv140GetResourceDocsSwagger**
-> oBPv140GetResourceDocsSwagger(apiversion)
-
-Get Swagger documentation
-
-&lt;p&gt;Returns documentation about the RESTful resources on this server in Swagger format.&lt;/p&gt; &lt;p&gt;API_VERSION is the version you want documentation about e.g. v3.0.0&lt;/p&gt; &lt;p&gt;You may filter this endpoint using the &#39;tags&#39; url parameter e.g. ?tags&#x3D;Account,Bank&lt;/p&gt; &lt;p&gt;(All endpoints are given one or more tags which for used in grouping)&lt;/p&gt; &lt;p&gt;You may filter this endpoint using the &#39;functions&#39; url parameter e.g. ?functions&#x3D;getBanks,bankById&lt;/p&gt; &lt;p&gt;(Each endpoint is implemented in the OBP Scala code by a &#39;function&#39;)&lt;/p&gt; &lt;p&gt;See the Resource Doc endpoint for more information.&lt;/p&gt; &lt;p&gt;Note: Resource Docs are cached, TTL is 3600 seconds&lt;/p&gt; &lt;p&gt;Following are more examples:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags&#x3D;Account,Bank\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags&#x3D;Account,Bank&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions&#x3D;getBanks,bankById\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions&#x3D;getBanks,bankById&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags&#x3D;Account,Bank,PSD2&amp;amp;functions&#x3D;getBanks,bankById\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags&#x3D;Account,Bank,PSD2&amp;amp;functions&#x3D;getBanks,bankById&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#api_version\&quot;&gt;API_VERSION&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = DocumentationApi()
-val apiversion : kotlin.String = apiversion_example // kotlin.String | The APIVERSION identifier
-try {
-    apiInstance.oBPv140GetResourceDocsSwagger(apiversion)
-} catch (e: ClientException) {
-    println("4xx response calling DocumentationApi#oBPv140GetResourceDocsSwagger")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling DocumentationApi#oBPv140GetResourceDocsSwagger")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **apiversion** | **kotlin.String**| The APIVERSION identifier | |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a id="oBPv220GetMessageDocs"></a>
-# **oBPv220GetMessageDocs**
-> OBPv220GetMessageDocs200Response oBPv220GetMessageDocs(connector)
+<a id="getMessageDocs"></a>
+# **getMessageDocs**
+> GetMessageDocs200Response getMessageDocs(connector)
 
 Get Message Docs
 
@@ -230,13 +130,13 @@ Get Message Docs
 val apiInstance = DocumentationApi()
 val connector : kotlin.String = connector_example // kotlin.String | The CONNECTOR identifier
 try {
-    val result : OBPv220GetMessageDocs200Response = apiInstance.oBPv220GetMessageDocs(connector)
+    val result : GetMessageDocs200Response = apiInstance.getMessageDocs(connector)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DocumentationApi#oBPv220GetMessageDocs")
+    println("4xx response calling DocumentationApi#getMessageDocs")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DocumentationApi#oBPv220GetMessageDocs")
+    println("5xx response calling DocumentationApi#getMessageDocs")
     e.printStackTrace()
 }
 ```
@@ -248,7 +148,7 @@ try {
 
 ### Return type
 
-[**OBPv220GetMessageDocs200Response**](OBPv220GetMessageDocs200Response.md)
+[**GetMessageDocs200Response**](GetMessageDocs200Response.md)
 
 ### Authorization
 
@@ -259,97 +159,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv300GetApiGlossary"></a>
-# **oBPv300GetApiGlossary**
-> OBPv300GetApiGlossary200Response oBPv300GetApiGlossary()
-
-Get Glossary of the API
-
-&lt;p&gt;Get API Glossary&lt;/p&gt; &lt;p&gt;Returns the glossary of the API&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#glossary_items\&quot;&gt;&lt;strong&gt;glossary_items&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#html\&quot;&gt;&lt;strong&gt;html&lt;/strong&gt;&lt;/a&gt;: html format content&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#markdown\&quot;&gt;&lt;strong&gt;markdown&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;title&lt;/strong&gt;&lt;/a&gt;: Dr.&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = DocumentationApi()
-try {
-    val result : OBPv300GetApiGlossary200Response = apiInstance.oBPv300GetApiGlossary()
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling DocumentationApi#oBPv300GetApiGlossary")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling DocumentationApi#oBPv300GetApiGlossary")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv300GetApiGlossary200Response**](OBPv300GetApiGlossary200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a id="oBPv310GetMessageDocsSwagger"></a>
-# **oBPv310GetMessageDocsSwagger**
-> oBPv310GetMessageDocsSwagger(connector)
-
-Get Message Docs Swagger
-
-&lt;p&gt;This endpoint provides example message docs in swagger format.&lt;br /&gt; It is only relavent for REST Connectors.&lt;/p&gt; &lt;p&gt;This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).&lt;br /&gt; That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.&lt;/p&gt; &lt;p&gt;i.e.:&lt;/p&gt; &lt;p&gt;OBP API (Core OBP API code) -&amp;gt; OBP REST Connector (OBP REST Connector code) -&amp;gt; OBP REST Adapter (Adapter developer code) -&amp;gt; CBS (Main Frame)&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Connector\&quot;&gt;CONNECTOR&lt;/a&gt;: CONNECTOR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = DocumentationApi()
-val connector : kotlin.String = connector_example // kotlin.String | The CONNECTOR identifier
-try {
-    apiInstance.oBPv310GetMessageDocsSwagger(connector)
-} catch (e: ClientException) {
-    println("4xx response calling DocumentationApi#oBPv310GetMessageDocsSwagger")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling DocumentationApi#oBPv310GetMessageDocsSwagger")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **connector** | **kotlin.String**| The CONNECTOR identifier | |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a id="oBPv600GetMessageDocsJsonSchema"></a>
-# **oBPv600GetMessageDocsJsonSchema**
-> oBPv600GetMessageDocsJsonSchema(connector)
+<a id="getMessageDocsJsonSchema"></a>
+# **getMessageDocsJsonSchema**
+> getMessageDocsJsonSchema(connector)
 
 Get Message Docs as JSON Schema
 
@@ -364,12 +176,12 @@ Get Message Docs as JSON Schema
 val apiInstance = DocumentationApi()
 val connector : kotlin.String = connector_example // kotlin.String | The CONNECTOR identifier
 try {
-    apiInstance.oBPv600GetMessageDocsJsonSchema(connector)
+    apiInstance.getMessageDocsJsonSchema(connector)
 } catch (e: ClientException) {
-    println("4xx response calling DocumentationApi#oBPv600GetMessageDocsJsonSchema")
+    println("4xx response calling DocumentationApi#getMessageDocsJsonSchema")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DocumentationApi#oBPv600GetMessageDocsJsonSchema")
+    println("5xx response calling DocumentationApi#getMessageDocsJsonSchema")
     e.printStackTrace()
 }
 ```
@@ -392,9 +204,197 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv600GetScannedApiVersions"></a>
-# **oBPv600GetScannedApiVersions**
-> OBPv600GetScannedApiVersions200Response oBPv600GetScannedApiVersions()
+<a id="getMessageDocsSwagger"></a>
+# **getMessageDocsSwagger**
+> getMessageDocsSwagger(connector)
+
+Get Message Docs Swagger
+
+&lt;p&gt;This endpoint provides example message docs in swagger format.&lt;br /&gt; It is only relavent for REST Connectors.&lt;/p&gt; &lt;p&gt;This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).&lt;br /&gt; That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.&lt;/p&gt; &lt;p&gt;i.e.:&lt;/p&gt; &lt;p&gt;OBP API (Core OBP API code) -&amp;gt; OBP REST Connector (OBP REST Connector code) -&amp;gt; OBP REST Adapter (Adapter developer code) -&amp;gt; CBS (Main Frame)&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Connector\&quot;&gt;CONNECTOR&lt;/a&gt;: CONNECTOR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = DocumentationApi()
+val connector : kotlin.String = connector_example // kotlin.String | The CONNECTOR identifier
+try {
+    apiInstance.getMessageDocsSwagger(connector)
+} catch (e: ClientException) {
+    println("4xx response calling DocumentationApi#getMessageDocsSwagger")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling DocumentationApi#getMessageDocsSwagger")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **connector** | **kotlin.String**| The CONNECTOR identifier | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a id="getResourceDocsObp"></a>
+# **getResourceDocsObp**
+> getResourceDocsObp(apiversion)
+
+Get Resource Docs
+
+&lt;p&gt;Get documentation about the RESTful resources on this server including example bodies for POST and PUT requests.&lt;/p&gt; &lt;p&gt;This is the native data format used to document OBP endpoints. Each endpoint has a Resource Doc (a Scala case class) defined in the source code.&lt;/p&gt; &lt;p&gt;This endpoint is used by OBP API Explorer to display and work with the API documentation.&lt;/p&gt; &lt;p&gt;Most (but not all) fields are also available in swagger format. (The Swagger endpoint is built from Resource Docs.)&lt;/p&gt; &lt;p&gt;API_VERSION is the version you want documentation about e.g. v3.0.0&lt;/p&gt; &lt;p&gt;You may filter this endpoint with tags parameter e.g. ?tags&#x3D;Account,Bank&lt;/p&gt; &lt;p&gt;You may filter this endpoint with functions parameter e.g. ?functions&#x3D;enableDisableConsumers,getConnectorMetrics&lt;/p&gt; &lt;p&gt;For possible function values, see implemented_by.function in the JSON returned by this endpoint or the OBP source code or the footer of the API Explorer which produces a comma separated list of functions that reflect the server or filtering by API Explorer based on tags etc.&lt;/p&gt; &lt;p&gt;You may filter this endpoint using the &#39;content&#39; url parameter, e.g. ?content&#x3D;dynamic&lt;br /&gt; if set content&#x3D;dynamic, only show dynamic endpoints, if content&#x3D;static, only show the static endpoints. if omit this parameter, we will show all the endpoints.&lt;/p&gt; &lt;p&gt;You may need some other language resource docs, now we support en_GB and es_ES at the moment.&lt;/p&gt; &lt;p&gt;You can filter with api-collection-id, but api-collection-id can not be used with others together. If api-collection-id is used in URL, it will ignore all other parameters.&lt;/p&gt; &lt;p&gt;See the Resource Doc endpoint for more information.&lt;/p&gt; &lt;p&gt;Note: Dynamic Resource Docs are cached, TTL is 3600 seconds&lt;br /&gt; Static Resource Docs are cached, TTL is 3600 seconds&lt;/p&gt; &lt;p&gt;Following are more examples:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp\&quot;&gt;http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?tags&#x3D;Account,Bank\&quot;&gt;http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?tags&#x3D;Account,Bank&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?functions&#x3D;getBanks,bankById\&quot;&gt;http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?functions&#x3D;getBanks,bankById&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?locale&#x3D;es_ES\&quot;&gt;http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?locale&#x3D;es_ES&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?content&#x3D;static,dynamic,all\&quot;&gt;http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?content&#x3D;static,dynamic,all&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id&#x3D;4e866c86-60c3-4268-a221-cb0bbf1ad221\&quot;&gt;http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id&#x3D;4e866c86-60c3-4268-a221-cb0bbf1ad221&lt;/a&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt; operation_id is concatenation of \&quot;v\&quot;, version and function and should be unique (used for DOM element IDs etc. maybe used to link to source code) &lt;/li&gt; &lt;li&gt; version references the version that the API call is defined in.&lt;/li&gt; &lt;li&gt; function is the (scala) partial function that implements this endpoint. It is unique per version of the API.&lt;/li&gt; &lt;li&gt; request_url is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the implemented version (the version where this endpoint was defined) e.g. /obp/v1.2.0/resource&lt;/li&gt; &lt;li&gt; specified_url (recommended to use) is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the version specified in the call e.g. /obp/v3.1.0/resource. In OBP, endpoints are first made available at the request_url, but the same resource (function call) is often made available under later versions (specified_url). To access the latest version of all endpoints use the latest version available on your OBP instance e.g. /obp/v3.1.0 - To get the original version use the request_url. We recommend to use the specified_url since non semantic improvements are more likely to be applied to later implementations of the call.&lt;/li&gt; &lt;li&gt; summary is a short description inline with the swagger terminology. &lt;/li&gt; &lt;li&gt; description may contain html markup (generated from markdown on the server).&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#api_version\&quot;&gt;API_VERSION&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = DocumentationApi()
+val apiversion : kotlin.String = apiversion_example // kotlin.String | The APIVERSION identifier
+try {
+    apiInstance.getResourceDocsObp(apiversion)
+} catch (e: ClientException) {
+    println("4xx response calling DocumentationApi#getResourceDocsObp")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling DocumentationApi#getResourceDocsObp")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **apiversion** | **kotlin.String**| The APIVERSION identifier | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a id="getResourceDocsOpenAPI31"></a>
+# **getResourceDocsOpenAPI31**
+> getResourceDocsOpenAPI31(apiversion)
+
+Get OpenAPI 3.1 documentation
+
+&lt;p&gt;Returns documentation about the RESTful resources on this server in OpenAPI 3.1 format.&lt;/p&gt; &lt;p&gt;API_VERSION is the version you want documentation about e.g. v6.0.0&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#query-parameters\&quot; id&#x3D;\&quot;query-parameters\&quot;&gt;Query Parameters&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;You may filter this endpoint using the following optional query parameters:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;tags&lt;/strong&gt; - Filter by endpoint tags (comma-separated list)&lt;br /&gt; • Example: ?tags&#x3D;Account,Bank or ?tags&#x3D;Account-Firehose&lt;br /&gt; • All endpoints are given one or more tags which are used for grouping&lt;br /&gt; • Empty values will return error OBP-10053&lt;/p&gt; &lt;p&gt;&lt;strong&gt;functions&lt;/strong&gt; - Filter by function names (comma-separated list)&lt;br /&gt; • Example: ?functions&#x3D;getBanks,bankById&lt;br /&gt; • Each endpoint is implemented in the OBP Scala code by a &#39;function&#39;&lt;br /&gt; • Empty values will return error OBP-10054&lt;/p&gt; &lt;p&gt;&lt;strong&gt;content&lt;/strong&gt; - Filter by endpoint type&lt;br /&gt; • Values: static, dynamic, all (case-insensitive)&lt;br /&gt; • static: Only show static/core API endpoints&lt;br /&gt; • dynamic: Only show dynamic/custom endpoints&lt;br /&gt; • all: Show both static and dynamic endpoints (default)&lt;br /&gt; • Invalid values will return error OBP-10052&lt;/p&gt; &lt;p&gt;&lt;strong&gt;locale&lt;/strong&gt; - Language for localized documentation&lt;br /&gt; • Example: ?locale&#x3D;en_GB or ?locale&#x3D;es_ES&lt;br /&gt; • Supported locales: en_GB, es_ES, ro_RO&lt;br /&gt; • Invalid locales will return error OBP-10041&lt;/p&gt; &lt;p&gt;&lt;strong&gt;api-collection-id&lt;/strong&gt; - Filter by API collection UUID&lt;br /&gt; • Example: ?api-collection-id&#x3D;4e866c86-60c3-4268-a221-cb0bbf1ad221&lt;br /&gt; • Returns only endpoints belonging to the specified collection&lt;br /&gt; • Empty values will return error OBP-10055&lt;/p&gt; &lt;p&gt;This endpoint generates OpenAPI 3.1 compliant documentation with modern JSON Schema support.&lt;/p&gt; &lt;p&gt;For YAML format, use the corresponding endpoint: /resource-docs/API_VERSION/openapi.yaml&lt;/p&gt; &lt;p&gt;See the Resource Doc endpoint for more information.&lt;/p&gt; &lt;p&gt;Note: Resource Docs are cached, TTL is 3600 seconds&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#examples\&quot; id&#x3D;\&quot;examples\&quot;&gt;Examples&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Basic usage:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Filter by tags:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags&#x3D;Account,Bank\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags&#x3D;Account,Bank&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags&#x3D;Account-Firehose\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags&#x3D;Account-Firehose&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Filter by content type:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content&#x3D;static\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content&#x3D;static&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content&#x3D;dynamic\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content&#x3D;dynamic&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Filter by functions:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions&#x3D;getBanks,bankById\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions&#x3D;getBanks,bankById&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Combine multiple parameters:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content&#x3D;static&amp;amp;tags&#x3D;Account-Firehose\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content&#x3D;static&amp;amp;tags&#x3D;Account-Firehose&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags&#x3D;Account,Bank,PSD2&amp;amp;functions&#x3D;getBanks,bankById\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags&#x3D;Account,Bank,PSD2&amp;amp;functions&#x3D;getBanks,bankById&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content&#x3D;static&amp;amp;locale&#x3D;en_GB&amp;amp;tags&#x3D;Account\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content&#x3D;static&amp;amp;locale&#x3D;en_GB&amp;amp;tags&#x3D;Account&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Filter by API collection:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id&#x3D;4e866c86-60c3-4268-a221-cb0bbf1ad221\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id&#x3D;4e866c86-60c3-4268-a221-cb0bbf1ad221&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#api_version\&quot;&gt;API_VERSION&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = DocumentationApi()
+val apiversion : kotlin.String = apiversion_example // kotlin.String | The APIVERSION identifier
+try {
+    apiInstance.getResourceDocsOpenAPI31(apiversion)
+} catch (e: ClientException) {
+    println("4xx response calling DocumentationApi#getResourceDocsOpenAPI31")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling DocumentationApi#getResourceDocsOpenAPI31")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **apiversion** | **kotlin.String**| The APIVERSION identifier | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a id="getResourceDocsSwagger"></a>
+# **getResourceDocsSwagger**
+> getResourceDocsSwagger(apiversion)
+
+Get Swagger documentation
+
+&lt;p&gt;Returns documentation about the RESTful resources on this server in Swagger format.&lt;/p&gt; &lt;p&gt;API_VERSION is the version you want documentation about e.g. v3.0.0&lt;/p&gt; &lt;p&gt;You may filter this endpoint using the &#39;tags&#39; url parameter e.g. ?tags&#x3D;Account,Bank&lt;/p&gt; &lt;p&gt;(All endpoints are given one or more tags which for used in grouping)&lt;/p&gt; &lt;p&gt;You may filter this endpoint using the &#39;functions&#39; url parameter e.g. ?functions&#x3D;getBanks,bankById&lt;/p&gt; &lt;p&gt;(Each endpoint is implemented in the OBP Scala code by a &#39;function&#39;)&lt;/p&gt; &lt;p&gt;See the Resource Doc endpoint for more information.&lt;/p&gt; &lt;p&gt;Note: Resource Docs are cached, TTL is 3600 seconds&lt;/p&gt; &lt;p&gt;Following are more examples:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger\&quot;&gt;http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags&#x3D;Account,Bank\&quot;&gt;http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags&#x3D;Account,Bank&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions&#x3D;getBanks,bankById\&quot;&gt;http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions&#x3D;getBanks,bankById&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags&#x3D;Account,Bank,PSD2&amp;amp;functions&#x3D;getBanks,bankById\&quot;&gt;http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags&#x3D;Account,Bank,PSD2&amp;amp;functions&#x3D;getBanks,bankById&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#api_version\&quot;&gt;API_VERSION&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = DocumentationApi()
+val apiversion : kotlin.String = apiversion_example // kotlin.String | The APIVERSION identifier
+try {
+    apiInstance.getResourceDocsSwagger(apiversion)
+} catch (e: ClientException) {
+    println("4xx response calling DocumentationApi#getResourceDocsSwagger")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling DocumentationApi#getResourceDocsSwagger")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **apiversion** | **kotlin.String**| The APIVERSION identifier | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a id="getScannedApiVersions"></a>
+# **getScannedApiVersions**
+> GetScannedApiVersions200Response getScannedApiVersions()
 
 Get Scanned API Versions
 
@@ -408,13 +408,13 @@ Get Scanned API Versions
 
 val apiInstance = DocumentationApi()
 try {
-    val result : OBPv600GetScannedApiVersions200Response = apiInstance.oBPv600GetScannedApiVersions()
+    val result : GetScannedApiVersions200Response = apiInstance.getScannedApiVersions()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DocumentationApi#oBPv600GetScannedApiVersions")
+    println("4xx response calling DocumentationApi#getScannedApiVersions")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DocumentationApi#oBPv600GetScannedApiVersions")
+    println("5xx response calling DocumentationApi#getScannedApiVersions")
     e.printStackTrace()
 }
 ```
@@ -424,7 +424,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetScannedApiVersions200Response**](OBPv600GetScannedApiVersions200Response.md)
+[**GetScannedApiVersions200Response**](GetScannedApiVersions200Response.md)
 
 ### Authorization
 
@@ -435,8 +435,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

@@ -1,18 +1,18 @@
 # OpenBankProject.Api.ApiProductApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv600CreateApiProduct**](ApiProductApi.md#obpv600createapiproduct) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product |
-| [**OBPv600CreateOrUpdateApiProduct**](ApiProductApi.md#obpv600createorupdateapiproduct) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product |
-| [**OBPv600DeleteApiProduct**](ApiProductApi.md#obpv600deleteapiproduct) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product |
-| [**OBPv600GetApiProduct**](ApiProductApi.md#obpv600getapiproduct) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product |
-| [**OBPv600GetApiProducts**](ApiProductApi.md#obpv600getapiproducts) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products |
+| [**CreateApiProduct**](ApiProductApi.md#createapiproduct) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product |
+| [**CreateOrUpdateApiProduct**](ApiProductApi.md#createorupdateapiproduct) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product |
+| [**DeleteApiProduct**](ApiProductApi.md#deleteapiproduct) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product |
+| [**GetApiProduct**](ApiProductApi.md#getapiproduct) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product |
+| [**GetApiProducts**](ApiProductApi.md#getapiproducts) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products |
 
-<a id="obpv600createapiproduct"></a>
-# **OBPv600CreateApiProduct**
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems OBPv600CreateApiProduct (string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest)
+<a id="createapiproduct"></a>
+# **CreateApiProduct**
+> GetApiProducts200ResponseApiProductsInner CreateApiProduct (string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest)
 
 Create Api Product
 
@@ -25,11 +25,11 @@ Create Api Product
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
 | **apiproductcode** | **string** | The APIPRODUCTCODE identifier |  |
-| **oBPv600CreateOrUpdateApiProductRequest** | [**OBPv600CreateOrUpdateApiProductRequest**](OBPv600CreateOrUpdateApiProductRequest.md) | Request body |  |
+| **createOrUpdateApiProductRequest** | [**CreateOrUpdateApiProductRequest**](CreateOrUpdateApiProductRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -49,9 +49,9 @@ Create Api Product
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600createorupdateapiproduct"></a>
-# **OBPv600CreateOrUpdateApiProduct**
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems OBPv600CreateOrUpdateApiProduct (string bankid, string apiproductcode, OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest)
+<a id="createorupdateapiproduct"></a>
+# **CreateOrUpdateApiProduct**
+> GetApiProducts200ResponseApiProductsInner CreateOrUpdateApiProduct (string bankid, string apiproductcode, CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest)
 
 Create or Update Api Product
 
@@ -64,11 +64,11 @@ Create or Update Api Product
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
 | **apiproductcode** | **string** | The APIPRODUCTCODE identifier |  |
-| **oBPv600CreateOrUpdateApiProductRequest** | [**OBPv600CreateOrUpdateApiProductRequest**](OBPv600CreateOrUpdateApiProductRequest.md) | Request body |  |
+| **createOrUpdateApiProductRequest** | [**CreateOrUpdateApiProductRequest**](CreateOrUpdateApiProductRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -88,9 +88,9 @@ Create or Update Api Product
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600deleteapiproduct"></a>
-# **OBPv600DeleteApiProduct**
-> void OBPv600DeleteApiProduct (string bankid, string apiproductcode)
+<a id="deleteapiproduct"></a>
+# **DeleteApiProduct**
+> void DeleteApiProduct (string bankid, string apiproductcode)
 
 Delete Api Product
 
@@ -127,9 +127,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getapiproduct"></a>
-# **OBPv600GetApiProduct**
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems OBPv600GetApiProduct (string bankid, string apiproductcode)
+<a id="getapiproduct"></a>
+# **GetApiProduct**
+> GetApiProducts200ResponseApiProductsInner GetApiProduct (string bankid, string apiproductcode)
 
 Get Api Product
 
@@ -145,7 +145,7 @@ Get Api Product
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -166,9 +166,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getapiproducts"></a>
-# **OBPv600GetApiProducts**
-> OBPv600GetApiProducts200Response OBPv600GetApiProducts (string bankid)
+<a id="getapiproducts"></a>
+# **GetApiProducts**
+> GetApiProducts200Response GetApiProducts (string bankid)
 
 Get Api Products
 
@@ -183,7 +183,7 @@ Get Api Products
 
 ### Return type
 
-[**OBPv600GetApiProducts200Response**](OBPv600GetApiProducts200Response.md)
+[**GetApiProducts200Response**](GetApiProducts200Response.md)
 
 ### Authorization
 

@@ -2,86 +2,19 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv310GetRateLimitingInfo()**](RateLimitsApi.md#oBPv310GetRateLimitingInfo) | **GET** /obp/v3.1.0/rate-limiting | Get Rate Limiting Info |
-| [**oBPv400CallsLimit()**](RateLimitsApi.md#oBPv400CallsLimit) | **PUT** /obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits | Set Rate Limits / Call Limits per Consumer |
-| [**oBPv600UpdateRateLimits()**](RateLimitsApi.md#oBPv600UpdateRateLimits) | **PUT** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Set Rate Limits / Call Limits per Consumer |
+| [**callsLimit()**](RateLimitsApi.md#callsLimit) | **PUT** /obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits | Set Rate Limits / Call Limits per Consumer |
+| [**getRateLimitingInfo()**](RateLimitsApi.md#getRateLimitingInfo) | **GET** /obp/v3.1.0/rate-limiting | Get Rate Limiting Info |
+| [**updateRateLimits()**](RateLimitsApi.md#updateRateLimits) | **PUT** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Set Rate Limits / Call Limits per Consumer |
 
 
-## `oBPv310GetRateLimitingInfo()`
-
-```php
-oBPv310GetRateLimitingInfo(): \OpenBankProject\Model\OBPv310GetRateLimitingInfo200Response
-```
-
-Get Rate Limiting Info
-
-<p>Get information about the Rate Limiting setup on this OBP Instance such as:</p> <p>Is rate limiting enabled and active?<br /> What backend is used to keep track of the API calls (e.g. REDIS).</p> <p>Note: Rate limiting can be set at the Consumer level and also for anonymous calls.</p> <p>See the consumer rate limits / call limits endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#service_available\"><strong>service_available</strong></a>:</p> <p><a href=\"/glossary#technology\"><strong>technology</strong></a>: technology1</p>
-
-### Example
+## `callsLimit()`
 
 ```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure OAuth2 access token for authorization: OAuth2
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-// Configure API key authorization: GatewayLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-// Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new OpenBankProject\Api\RateLimitsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-
-try {
-    $result = $apiInstance->oBPv310GetRateLimitingInfo();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RateLimitsApi->oBPv310GetRateLimitingInfo: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\OpenBankProject\Model\OBPv310GetRateLimitingInfo200Response**](../Model/OBPv310GetRateLimitingInfo200Response.md)
-
-### Authorization
-
-[OAuth2](../../README.md#OAuth2), [GatewayLogin](../../README.md#GatewayLogin), [DirectLogin](../../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `oBPv400CallsLimit()`
-
-```php
-oBPv400CallsLimit($consumerid, $obpv600_update_rate_limits_request): \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest
+callsLimit($consumerid, $update_rate_limits_request): \OpenBankProject\Model\UpdateRateLimitsRequest
 ```
 
 Set Rate Limits / Call Limits per Consumer
@@ -104,9 +37,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\RateLimitsApi(
@@ -116,13 +49,13 @@ $apiInstance = new OpenBankProject\Api\RateLimitsApi(
     $config
 );
 $consumerid = 'consumerid_example'; // string | The CONSUMERID identifier
-$obpv600_update_rate_limits_request = {type=object, properties={to_date={type=string, format=date-time}, per_week_call_limit={type=string}, per_day_call_limit={type=string}, per_second_call_limit={type=string}, per_month_call_limit={type=string}, per_hour_call_limit={type=string}, per_minute_call_limit={type=string}, from_date={type=string, format=date-time}}}; // \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest | Request body
+$update_rate_limits_request = {type=object, properties={per_week_call_limit={type=string}, per_day_call_limit={type=string}, per_second_call_limit={type=string}, per_month_call_limit={type=string}, from_date={type=string, format=date-time}, to_date={type=string, format=date-time}, per_hour_call_limit={type=string}, per_minute_call_limit={type=string}}}; // \OpenBankProject\Model\UpdateRateLimitsRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400CallsLimit($consumerid, $obpv600_update_rate_limits_request);
+    $result = $apiInstance->callsLimit($consumerid, $update_rate_limits_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RateLimitsApi->oBPv400CallsLimit: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RateLimitsApi->callsLimit: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -131,11 +64,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **consumerid** | **string**| The CONSUMERID identifier | |
-| **obpv600_update_rate_limits_request** | [**\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest**](../Model/OBPv600UpdateRateLimitsRequest.md)| Request body | |
+| **update_rate_limits_request** | [**\OpenBankProject\Model\UpdateRateLimitsRequest**](../Model/UpdateRateLimitsRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest**](../Model/OBPv600UpdateRateLimitsRequest.md)
+[**\OpenBankProject\Model\UpdateRateLimitsRequest**](../Model/UpdateRateLimitsRequest.md)
 
 ### Authorization
 
@@ -150,10 +83,77 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600UpdateRateLimits()`
+## `getRateLimitingInfo()`
 
 ```php
-oBPv600UpdateRateLimits($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request): \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest
+getRateLimitingInfo(): \OpenBankProject\Model\GetRateLimitingInfo200Response
+```
+
+Get Rate Limiting Info
+
+<p>Get information about the Rate Limiting setup on this OBP Instance such as:</p> <p>Is rate limiting enabled and active?<br /> What backend is used to keep track of the API calls (e.g. REDIS).</p> <p>Note: Rate limiting can be set at the Consumer level and also for anonymous calls.</p> <p>See the consumer rate limits / call limits endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#service_available\"><strong>service_available</strong></a>:</p> <p><a href=\"/glossary#technology\"><strong>technology</strong></a>: technology1</p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+// Configure API key authorization: GatewayLogin
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure API key authorization: DirectLogin
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
+
+
+$apiInstance = new OpenBankProject\Api\RateLimitsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getRateLimitingInfo();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RateLimitsApi->getRateLimitingInfo: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\OpenBankProject\Model\GetRateLimitingInfo200Response**](../Model/GetRateLimitingInfo200Response.md)
+
+### Authorization
+
+[OAuth2](../../README.md#OAuth2), [GatewayLogin](../../README.md#GatewayLogin), [DirectLogin](../../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateRateLimits()`
+
+```php
+updateRateLimits($consumerid, $ratelimitingid, $update_rate_limits_request): \OpenBankProject\Model\UpdateRateLimitsRequest
 ```
 
 Set Rate Limits / Call Limits per Consumer
@@ -176,9 +176,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\RateLimitsApi(
@@ -189,13 +189,13 @@ $apiInstance = new OpenBankProject\Api\RateLimitsApi(
 );
 $consumerid = 'consumerid_example'; // string | The CONSUMERID identifier
 $ratelimitingid = 'ratelimitingid_example'; // string | The RATELIMITINGID identifier
-$obpv600_update_rate_limits_request = {"type":"object","properties":{"to_date":{"type":"string","format":"date-time"},"per_week_call_limit":{"type":"string"},"per_day_call_limit":{"type":"string"},"per_second_call_limit":{"type":"string"},"per_month_call_limit":{"type":"string"},"per_hour_call_limit":{"type":"string"},"per_minute_call_limit":{"type":"string"},"from_date":{"type":"string","format":"date-time"}}}; // \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest | Request body
+$update_rate_limits_request = {"type":"object","properties":{"per_week_call_limit":{"type":"string"},"per_day_call_limit":{"type":"string"},"per_second_call_limit":{"type":"string"},"per_month_call_limit":{"type":"string"},"from_date":{"type":"string","format":"date-time"},"to_date":{"type":"string","format":"date-time"},"per_hour_call_limit":{"type":"string"},"per_minute_call_limit":{"type":"string"}}}; // \OpenBankProject\Model\UpdateRateLimitsRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600UpdateRateLimits($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request);
+    $result = $apiInstance->updateRateLimits($consumerid, $ratelimitingid, $update_rate_limits_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RateLimitsApi->oBPv600UpdateRateLimits: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RateLimitsApi->updateRateLimits: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -205,11 +205,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **consumerid** | **string**| The CONSUMERID identifier | |
 | **ratelimitingid** | **string**| The RATELIMITINGID identifier | |
-| **obpv600_update_rate_limits_request** | [**\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest**](../Model/OBPv600UpdateRateLimitsRequest.md)| Request body | |
+| **update_rate_limits_request** | [**\OpenBankProject\Model\UpdateRateLimitsRequest**](../Model/UpdateRateLimitsRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest**](../Model/OBPv600UpdateRateLimitsRequest.md)
+[**\OpenBankProject\Model\UpdateRateLimitsRequest**](../Model/UpdateRateLimitsRequest.md)
 
 ### Authorization
 

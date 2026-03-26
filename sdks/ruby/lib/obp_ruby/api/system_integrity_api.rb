@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -22,19 +22,19 @@ module OpenBankProject
     # Check Unique Index at Account Access
     # <p>Check unique index at account access table.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv5_1_0_account_access_unique_index_check(opts = {})
-      data, _status_code, _headers = o_bpv5_1_0_account_access_unique_index_check_with_http_info(opts)
+    # @return [AccountAccessUniqueIndexCheck200Response]
+    def account_access_unique_index_check(opts = {})
+      data, _status_code, _headers = account_access_unique_index_check_with_http_info(opts)
       data
     end
 
     # Check Unique Index at Account Access
     # &lt;p&gt;Check unique index at account access table.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv5_1_0_account_access_unique_index_check_with_http_info(opts = {})
+    # @return [Array<(AccountAccessUniqueIndexCheck200Response, Integer, Hash)>] AccountAccessUniqueIndexCheck200Response data, response status code and response headers
+    def account_access_unique_index_check_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SystemIntegrityApi.o_bpv5_1_0_account_access_unique_index_check ...'
+        @api_client.config.logger.debug 'Calling API: SystemIntegrityApi.account_access_unique_index_check ...'
       end
       # resource path
       local_var_path = '/obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check'
@@ -54,13 +54,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'AccountAccessUniqueIndexCheck200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"SystemIntegrityApi.o_bpv5_1_0_account_access_unique_index_check",
+        :operation => :"SystemIntegrityApi.account_access_unique_index_check",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -71,7 +71,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SystemIntegrityApi#o_bpv5_1_0_account_access_unique_index_check\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SystemIntegrityApi#account_access_unique_index_check\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -80,9 +80,9 @@ module OpenBankProject
     # <p>Check for sensible currencies at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv5_1_0_account_currency_check(bankid, opts = {})
-      data, _status_code, _headers = o_bpv5_1_0_account_currency_check_with_http_info(bankid, opts)
+    # @return [AccountAccessUniqueIndexCheck200Response]
+    def account_currency_check(bankid, opts = {})
+      data, _status_code, _headers = account_currency_check_with_http_info(bankid, opts)
       data
     end
 
@@ -90,14 +90,14 @@ module OpenBankProject
     # &lt;p&gt;Check for sensible currencies at Bank Account model&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv5_1_0_account_currency_check_with_http_info(bankid, opts = {})
+    # @return [Array<(AccountAccessUniqueIndexCheck200Response, Integer, Hash)>] AccountAccessUniqueIndexCheck200Response data, response status code and response headers
+    def account_currency_check_with_http_info(bankid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SystemIntegrityApi.o_bpv5_1_0_account_currency_check ...'
+        @api_client.config.logger.debug 'Calling API: SystemIntegrityApi.account_currency_check ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling SystemIntegrityApi.o_bpv5_1_0_account_currency_check"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling SystemIntegrityApi.account_currency_check"
       end
       # resource path
       local_var_path = '/obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -117,13 +117,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'AccountAccessUniqueIndexCheck200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"SystemIntegrityApi.o_bpv5_1_0_account_currency_check",
+        :operation => :"SystemIntegrityApi.account_currency_check",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -134,7 +134,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SystemIntegrityApi#o_bpv5_1_0_account_currency_check\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SystemIntegrityApi#account_currency_check\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -142,19 +142,19 @@ module OpenBankProject
     # Check Custom View Names
     # <p>Check custom view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv5_1_0_custom_view_names_check(opts = {})
-      data, _status_code, _headers = o_bpv5_1_0_custom_view_names_check_with_http_info(opts)
+    # @return [AccountAccessUniqueIndexCheck200Response]
+    def custom_view_names_check(opts = {})
+      data, _status_code, _headers = custom_view_names_check_with_http_info(opts)
       data
     end
 
     # Check Custom View Names
     # &lt;p&gt;Check custom view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv5_1_0_custom_view_names_check_with_http_info(opts = {})
+    # @return [Array<(AccountAccessUniqueIndexCheck200Response, Integer, Hash)>] AccountAccessUniqueIndexCheck200Response data, response status code and response headers
+    def custom_view_names_check_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SystemIntegrityApi.o_bpv5_1_0_custom_view_names_check ...'
+        @api_client.config.logger.debug 'Calling API: SystemIntegrityApi.custom_view_names_check ...'
       end
       # resource path
       local_var_path = '/obp/v5.1.0/management/system/integrity/custom-view-names-check'
@@ -174,13 +174,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'AccountAccessUniqueIndexCheck200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"SystemIntegrityApi.o_bpv5_1_0_custom_view_names_check",
+        :operation => :"SystemIntegrityApi.custom_view_names_check",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -191,7 +191,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SystemIntegrityApi#o_bpv5_1_0_custom_view_names_check\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SystemIntegrityApi#custom_view_names_check\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -200,9 +200,9 @@ module OpenBankProject
     # <p>Check for orphaned accounts at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv5_1_0_orphaned_account_check(bankid, opts = {})
-      data, _status_code, _headers = o_bpv5_1_0_orphaned_account_check_with_http_info(bankid, opts)
+    # @return [AccountAccessUniqueIndexCheck200Response]
+    def orphaned_account_check(bankid, opts = {})
+      data, _status_code, _headers = orphaned_account_check_with_http_info(bankid, opts)
       data
     end
 
@@ -210,14 +210,14 @@ module OpenBankProject
     # &lt;p&gt;Check for orphaned accounts at Bank Account model&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv5_1_0_orphaned_account_check_with_http_info(bankid, opts = {})
+    # @return [Array<(AccountAccessUniqueIndexCheck200Response, Integer, Hash)>] AccountAccessUniqueIndexCheck200Response data, response status code and response headers
+    def orphaned_account_check_with_http_info(bankid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SystemIntegrityApi.o_bpv5_1_0_orphaned_account_check ...'
+        @api_client.config.logger.debug 'Calling API: SystemIntegrityApi.orphaned_account_check ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling SystemIntegrityApi.o_bpv5_1_0_orphaned_account_check"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling SystemIntegrityApi.orphaned_account_check"
       end
       # resource path
       local_var_path = '/obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -237,13 +237,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'AccountAccessUniqueIndexCheck200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"SystemIntegrityApi.o_bpv5_1_0_orphaned_account_check",
+        :operation => :"SystemIntegrityApi.orphaned_account_check",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -254,7 +254,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SystemIntegrityApi#o_bpv5_1_0_orphaned_account_check\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SystemIntegrityApi#orphaned_account_check\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -262,19 +262,19 @@ module OpenBankProject
     # Check System View Names
     # <p>Check system view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv5_1_0_system_view_names_check(opts = {})
-      data, _status_code, _headers = o_bpv5_1_0_system_view_names_check_with_http_info(opts)
+    # @return [AccountAccessUniqueIndexCheck200Response]
+    def system_view_names_check(opts = {})
+      data, _status_code, _headers = system_view_names_check_with_http_info(opts)
       data
     end
 
     # Check System View Names
     # &lt;p&gt;Check system view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv5_1_0_system_view_names_check_with_http_info(opts = {})
+    # @return [Array<(AccountAccessUniqueIndexCheck200Response, Integer, Hash)>] AccountAccessUniqueIndexCheck200Response data, response status code and response headers
+    def system_view_names_check_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SystemIntegrityApi.o_bpv5_1_0_system_view_names_check ...'
+        @api_client.config.logger.debug 'Calling API: SystemIntegrityApi.system_view_names_check ...'
       end
       # resource path
       local_var_path = '/obp/v5.1.0/management/system/integrity/system-view-names-check'
@@ -294,13 +294,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'AccountAccessUniqueIndexCheck200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"SystemIntegrityApi.o_bpv5_1_0_system_view_names_check",
+        :operation => :"SystemIntegrityApi.system_view_names_check",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -311,7 +311,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SystemIntegrityApi#o_bpv5_1_0_system_view_names_check\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SystemIntegrityApi#system_view_names_check\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

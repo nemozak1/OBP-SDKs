@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -22,19 +22,19 @@ module OpenBankProject
     # Get JSON Web Key (JWK) URIs
     # <p>Get the OAuth2 server's public JSON Web Key (JWK) URIs.<br /> It is required by client applications to validate ID tokens, self-contained access tokens and other issued objects.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#jwks_uri\"><strong>jwks_uri</strong></a>:</p> <p><a href=\"/glossary#jwks_uris\"><strong>jwks_uris</strong></a>:</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv310GetOAuth2ServerJWKsURIs200Response]
-    def o_bpv3_1_0_get_o_auth2_server_jwks_uris(opts = {})
-      data, _status_code, _headers = o_bpv3_1_0_get_o_auth2_server_jwks_uris_with_http_info(opts)
+    # @return [GetOAuth2ServerJWKsURIs200Response]
+    def get_o_auth2_server_jwks_uris(opts = {})
+      data, _status_code, _headers = get_o_auth2_server_jwks_uris_with_http_info(opts)
       data
     end
 
     # Get JSON Web Key (JWK) URIs
     # &lt;p&gt;Get the OAuth2 server&#39;s public JSON Web Key (JWK) URIs.&lt;br /&gt; It is required by client applications to validate ID tokens, self-contained access tokens and other issued objects.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#jwks_uri\&quot;&gt;&lt;strong&gt;jwks_uri&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#jwks_uris\&quot;&gt;&lt;strong&gt;jwks_uris&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv310GetOAuth2ServerJWKsURIs200Response, Integer, Hash)>] OBPv310GetOAuth2ServerJWKsURIs200Response data, response status code and response headers
-    def o_bpv3_1_0_get_o_auth2_server_jwks_uris_with_http_info(opts = {})
+    # @return [Array<(GetOAuth2ServerJWKsURIs200Response, Integer, Hash)>] GetOAuth2ServerJWKsURIs200Response data, response status code and response headers
+    def get_o_auth2_server_jwks_uris_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: OAuthApi.o_bpv3_1_0_get_o_auth2_server_jwks_uris ...'
+        @api_client.config.logger.debug 'Calling API: OAuthApi.get_o_auth2_server_jwks_uris ...'
       end
       # resource path
       local_var_path = '/obp/v3.1.0/jwks-uris'
@@ -54,13 +54,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv310GetOAuth2ServerJWKsURIs200Response'
+      return_type = opts[:debug_return_type] || 'GetOAuth2ServerJWKsURIs200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"OAuthApi.o_bpv3_1_0_get_o_auth2_server_jwks_uris",
+        :operation => :"OAuthApi.get_o_auth2_server_jwks_uris",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -71,7 +71,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: OAuthApi#o_bpv3_1_0_get_o_auth2_server_jwks_uris\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: OAuthApi#get_o_auth2_server_jwks_uris\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -79,19 +79,19 @@ module OpenBankProject
     # Get Connector Status (Loopback)
     # <p>This endpoint makes a call to the Connector to check the backend transport is reachable. (Deprecated)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#connector_version\"><strong>connector_version</strong></a>:</p> <p><a href=\"/glossary#duration_time\"><strong>duration_time</strong></a>: 60</p> <p><a href=\"/glossary#\"><strong>git_commit</strong></a>: 59623811dd8a41f6ffe67be46954eee11913dc28</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv310GetObpConnectorLoopback200Response]
-    def o_bpv3_1_0_get_obp_connector_loopback(opts = {})
-      data, _status_code, _headers = o_bpv3_1_0_get_obp_connector_loopback_with_http_info(opts)
+    # @return [GetObpConnectorLoopback200Response]
+    def get_obp_connector_loopback(opts = {})
+      data, _status_code, _headers = get_obp_connector_loopback_with_http_info(opts)
       data
     end
 
     # Get Connector Status (Loopback)
     # &lt;p&gt;This endpoint makes a call to the Connector to check the backend transport is reachable. (Deprecated)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#connector_version\&quot;&gt;&lt;strong&gt;connector_version&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#duration_time\&quot;&gt;&lt;strong&gt;duration_time&lt;/strong&gt;&lt;/a&gt;: 60&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;git_commit&lt;/strong&gt;&lt;/a&gt;: 59623811dd8a41f6ffe67be46954eee11913dc28&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv310GetObpConnectorLoopback200Response, Integer, Hash)>] OBPv310GetObpConnectorLoopback200Response data, response status code and response headers
-    def o_bpv3_1_0_get_obp_connector_loopback_with_http_info(opts = {})
+    # @return [Array<(GetObpConnectorLoopback200Response, Integer, Hash)>] GetObpConnectorLoopback200Response data, response status code and response headers
+    def get_obp_connector_loopback_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: OAuthApi.o_bpv3_1_0_get_obp_connector_loopback ...'
+        @api_client.config.logger.debug 'Calling API: OAuthApi.get_obp_connector_loopback ...'
       end
       # resource path
       local_var_path = '/obp/v3.1.0/connector/loopback'
@@ -111,13 +111,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv310GetObpConnectorLoopback200Response'
+      return_type = opts[:debug_return_type] || 'GetObpConnectorLoopback200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"OAuthApi.o_bpv3_1_0_get_obp_connector_loopback",
+        :operation => :"OAuthApi.get_obp_connector_loopback",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -128,33 +128,33 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: OAuthApi#o_bpv3_1_0_get_obp_connector_loopback\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: OAuthApi#get_obp_connector_loopback\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
     # Get OIDC Client
-    # <p>Gets an OIDC/OAuth2 client's metadata by client_id.</p> <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br /> This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CLIENT_ID</a>: CLIENT_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_name</strong></a>: client_name</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>redirect_uris</strong></a>: redirect_uris</p> 
+    # <p>Gets an OIDC/OAuth2 client's metadata by client_id.</p> <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br /> This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CLIENT_ID</a>: CLIENT_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_name</strong></a>: client_name</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>redirect_uris</strong></a>: redirect_uris</p> 
     # @param clientid [String] The CLIENTID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetOidcClient200Response]
-    def o_bpv6_0_0_get_oidc_client(clientid, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_oidc_client_with_http_info(clientid, opts)
+    # @return [GetOidcClient200Response]
+    def get_oidc_client(clientid, opts = {})
+      data, _status_code, _headers = get_oidc_client_with_http_info(clientid, opts)
       data
     end
 
     # Get OIDC Client
-    # &lt;p&gt;Gets an OIDC/OAuth2 client&#39;s metadata by client_id.&lt;/p&gt; &lt;p&gt;Returns client information including name, consumer_id, redirect_uris, and enabled status.&lt;br /&gt; This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CLIENT_ID&lt;/a&gt;: CLIENT_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_name&lt;/strong&gt;&lt;/a&gt;: client_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;consumer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;redirect_uris&lt;/strong&gt;&lt;/a&gt;: redirect_uris&lt;/p&gt; 
+    # &lt;p&gt;Gets an OIDC/OAuth2 client&#39;s metadata by client_id.&lt;/p&gt; &lt;p&gt;Returns client information including name, consumer_id, redirect_uris, and enabled status.&lt;br /&gt; This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CLIENT_ID&lt;/a&gt;: CLIENT_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_name&lt;/strong&gt;&lt;/a&gt;: client_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;consumer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;redirect_uris&lt;/strong&gt;&lt;/a&gt;: redirect_uris&lt;/p&gt; 
     # @param clientid [String] The CLIENTID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetOidcClient200Response, Integer, Hash)>] OBPv600GetOidcClient200Response data, response status code and response headers
-    def o_bpv6_0_0_get_oidc_client_with_http_info(clientid, opts = {})
+    # @return [Array<(GetOidcClient200Response, Integer, Hash)>] GetOidcClient200Response data, response status code and response headers
+    def get_oidc_client_with_http_info(clientid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: OAuthApi.o_bpv6_0_0_get_oidc_client ...'
+        @api_client.config.logger.debug 'Calling API: OAuthApi.get_oidc_client ...'
       end
       # verify the required parameter 'clientid' is set
       if @api_client.config.client_side_validation && clientid.nil?
-        fail ArgumentError, "Missing the required parameter 'clientid' when calling OAuthApi.o_bpv6_0_0_get_oidc_client"
+        fail ArgumentError, "Missing the required parameter 'clientid' when calling OAuthApi.get_oidc_client"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/oidc/clients/{clientid}'.sub('{' + 'clientid' + '}', CGI.escape(clientid.to_s))
@@ -174,13 +174,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetOidcClient200Response'
+      return_type = opts[:debug_return_type] || 'GetOidcClient200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"OAuthApi.o_bpv6_0_0_get_oidc_client",
+        :operation => :"OAuthApi.get_oidc_client",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -191,33 +191,33 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: OAuthApi#o_bpv6_0_0_get_oidc_client\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: OAuthApi#get_oidc_client\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
     # Verify OIDC Client
-    # <p>Verifies an OIDC/OAuth2 client's credentials.</p> <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br /> Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_secret</strong></a>: client_secret</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> <p><a href=\"/glossary#\">client_id</a>: client_id</p> <p><a href=\"/glossary#\">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">redirect_uris</a>: redirect_uris</p> 
-    # @param obpv600_verify_oidc_client_request [OBPv600VerifyOidcClientRequest] Request body
+    # <p>Verifies an OIDC/OAuth2 client's credentials.</p> <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br /> Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_secret</strong></a>: client_secret</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> <p><a href=\"/glossary#\">client_id</a>: client_id</p> <p><a href=\"/glossary#\">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">redirect_uris</a>: redirect_uris</p> 
+    # @param verify_oidc_client_request [VerifyOidcClientRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600VerifyOidcClient200Response]
-    def o_bpv6_0_0_verify_oidc_client(obpv600_verify_oidc_client_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_verify_oidc_client_with_http_info(obpv600_verify_oidc_client_request, opts)
+    # @return [VerifyOidcClient200Response]
+    def verify_oidc_client(verify_oidc_client_request, opts = {})
+      data, _status_code, _headers = verify_oidc_client_with_http_info(verify_oidc_client_request, opts)
       data
     end
 
     # Verify OIDC Client
-    # &lt;p&gt;Verifies an OIDC/OAuth2 client&#39;s credentials.&lt;/p&gt; &lt;p&gt;Returns &lt;code&gt;valid: true&lt;/code&gt; if the client_id and client_secret match an active consumer.&lt;br /&gt; Also returns the consumer_id and redirect_uris for use by the OIDC provider.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_secret&lt;/strong&gt;&lt;/a&gt;: client_secret&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;valid&lt;/strong&gt;&lt;/a&gt;: valid&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;client_id&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;consumer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;redirect_uris&lt;/a&gt;: redirect_uris&lt;/p&gt; 
-    # @param obpv600_verify_oidc_client_request [OBPv600VerifyOidcClientRequest] Request body
+    # &lt;p&gt;Verifies an OIDC/OAuth2 client&#39;s credentials.&lt;/p&gt; &lt;p&gt;Returns &lt;code&gt;valid: true&lt;/code&gt; if the client_id and client_secret match an active consumer.&lt;br /&gt; Also returns the consumer_id and redirect_uris for use by the OIDC provider.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_secret&lt;/strong&gt;&lt;/a&gt;: client_secret&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;valid&lt;/strong&gt;&lt;/a&gt;: valid&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;client_id&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;consumer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;redirect_uris&lt;/a&gt;: redirect_uris&lt;/p&gt; 
+    # @param verify_oidc_client_request [VerifyOidcClientRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600VerifyOidcClient200Response, Integer, Hash)>] OBPv600VerifyOidcClient200Response data, response status code and response headers
-    def o_bpv6_0_0_verify_oidc_client_with_http_info(obpv600_verify_oidc_client_request, opts = {})
+    # @return [Array<(VerifyOidcClient200Response, Integer, Hash)>] VerifyOidcClient200Response data, response status code and response headers
+    def verify_oidc_client_with_http_info(verify_oidc_client_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: OAuthApi.o_bpv6_0_0_verify_oidc_client ...'
+        @api_client.config.logger.debug 'Calling API: OAuthApi.verify_oidc_client ...'
       end
-      # verify the required parameter 'obpv600_verify_oidc_client_request' is set
-      if @api_client.config.client_side_validation && obpv600_verify_oidc_client_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_verify_oidc_client_request' when calling OAuthApi.o_bpv6_0_0_verify_oidc_client"
+      # verify the required parameter 'verify_oidc_client_request' is set
+      if @api_client.config.client_side_validation && verify_oidc_client_request.nil?
+        fail ArgumentError, "Missing the required parameter 'verify_oidc_client_request' when calling OAuthApi.verify_oidc_client"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/oidc/clients/verify'
@@ -239,16 +239,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_verify_oidc_client_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(verify_oidc_client_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600VerifyOidcClient200Response'
+      return_type = opts[:debug_return_type] || 'VerifyOidcClient200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"OAuthApi.o_bpv6_0_0_verify_oidc_client",
+        :operation => :"OAuthApi.verify_oidc_client",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -259,7 +259,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: OAuthApi#o_bpv6_0_0_verify_oidc_client\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: OAuthApi#verify_oidc_client\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

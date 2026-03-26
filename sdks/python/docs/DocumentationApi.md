@@ -4,19 +4,100 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv1_4_0_get_bank_level_dynamic_resource_docs_obp**](DocumentationApi.md#o_bpv1_4_0_get_bank_level_dynamic_resource_docs_obp) | **GET** /obp/v1.4.0/banks/{bankid}/resource-docs/{apiversion}/obp | Get Bank Level Dynamic Resource Docs
-[**o_bpv1_4_0_get_resource_docs_obp**](DocumentationApi.md#o_bpv1_4_0_get_resource_docs_obp) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/obp | Get Resource Docs
-[**o_bpv1_4_0_get_resource_docs_open_api31**](DocumentationApi.md#o_bpv1_4_0_get_resource_docs_open_api31) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/openapi | Get OpenAPI 3.1 documentation
-[**o_bpv1_4_0_get_resource_docs_swagger**](DocumentationApi.md#o_bpv1_4_0_get_resource_docs_swagger) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/swagger | Get Swagger documentation
-[**o_bpv2_2_0_get_message_docs**](DocumentationApi.md#o_bpv2_2_0_get_message_docs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
-[**o_bpv3_0_0_get_api_glossary**](DocumentationApi.md#o_bpv3_0_0_get_api_glossary) | **GET** /obp/v3.0.0/api/glossary | Get Glossary of the API
-[**o_bpv3_1_0_get_message_docs_swagger**](DocumentationApi.md#o_bpv3_1_0_get_message_docs_swagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
-[**o_bpv6_0_0_get_message_docs_json_schema**](DocumentationApi.md#o_bpv6_0_0_get_message_docs_json_schema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
-[**o_bpv6_0_0_get_scanned_api_versions**](DocumentationApi.md#o_bpv6_0_0_get_scanned_api_versions) | **GET** /obp/v6.0.0/api/versions | Get Scanned API Versions
+[**get_api_glossary**](DocumentationApi.md#get_api_glossary) | **GET** /obp/v3.0.0/api/glossary | Get Glossary of the API
+[**get_bank_level_dynamic_resource_docs_obp**](DocumentationApi.md#get_bank_level_dynamic_resource_docs_obp) | **GET** /obp/v1.4.0/banks/{bankid}/resource-docs/{apiversion}/obp | Get Bank Level Dynamic Resource Docs
+[**get_message_docs**](DocumentationApi.md#get_message_docs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
+[**get_message_docs_json_schema**](DocumentationApi.md#get_message_docs_json_schema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
+[**get_message_docs_swagger**](DocumentationApi.md#get_message_docs_swagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
+[**get_resource_docs_obp**](DocumentationApi.md#get_resource_docs_obp) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/obp | Get Resource Docs
+[**get_resource_docs_open_api31**](DocumentationApi.md#get_resource_docs_open_api31) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/openapi | Get OpenAPI 3.1 documentation
+[**get_resource_docs_swagger**](DocumentationApi.md#get_resource_docs_swagger) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/swagger | Get Swagger documentation
+[**get_scanned_api_versions**](DocumentationApi.md#get_scanned_api_versions) | **GET** /obp/v6.0.0/api/versions | Get Scanned API Versions
 
 
-# **o_bpv1_4_0_get_bank_level_dynamic_resource_docs_obp**
-> o_bpv1_4_0_get_bank_level_dynamic_resource_docs_obp(bankid, apiversion)
+# **get_api_glossary**
+> GetApiGlossary200Response get_api_glossary()
+
+Get Glossary of the API
+
+<p>Get API Glossary</p>
+<p>Returns the glossary of the API.</p>
+<p>The glossary content is static and only changes when the API is redeployed.<br />
+This endpoint supports HTTP caching:</p>
+<ul>
+<li>The response includes a <strong>Cache-Control</strong> header (max-age=3600) indicating clients should cache for 1 hour.</li>
+<li>The response includes an <strong>ETag</strong> header. Clients can send <strong>If-None-Match</strong> with the ETag value on subsequent requests to receive a <strong>304 Not Modified</strong> if the content has not changed.</li>
+</ul>
+<p>Clients and agents are encouraged to cache the glossary response locally.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#glossary_items"><strong>glossary_items</strong></a>:</p>
+<p><a href="/glossary#html"><strong>html</strong></a>: html format content</p>
+<p><a href="/glossary#markdown"><strong>markdown</strong></a>:</p>
+<p><a href="/glossary#"><strong>title</strong></a>: Dr.</p>
+
+
+### Example
+
+
+```python
+import obp_python
+from obp_python.models.get_api_glossary200_response import GetApiGlossary200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.DocumentationApi(api_client)
+
+    try:
+        # Get Glossary of the API
+        api_response = api_instance.get_api_glossary()
+        print("The response of DocumentationApi->get_api_glossary:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DocumentationApi->get_api_glossary: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetApiGlossary200Response**](GetApiGlossary200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_bank_level_dynamic_resource_docs_obp**
+> get_bank_level_dynamic_resource_docs_obp(bankid, apiversion)
 
 Get Bank Level Dynamic Resource Docs
 
@@ -103,9 +184,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Bank Level Dynamic Resource Docs
-        api_instance.o_bpv1_4_0_get_bank_level_dynamic_resource_docs_obp(bankid, apiversion)
+        api_instance.get_bank_level_dynamic_resource_docs_obp(bankid, apiversion)
     except Exception as e:
-        print("Exception when calling DocumentationApi->o_bpv1_4_0_get_bank_level_dynamic_resource_docs_obp: %s\n" % e)
+        print("Exception when calling DocumentationApi->get_bank_level_dynamic_resource_docs_obp: %s\n" % e)
 ```
 
 
@@ -140,8 +221,278 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_4_0_get_resource_docs_obp**
-> o_bpv1_4_0_get_resource_docs_obp(apiversion)
+# **get_message_docs**
+> GetMessageDocs200Response get_message_docs(connector)
+
+Get Message Docs
+
+<p>These message docs provide example messages sent by OBP to the (RabbitMq) message queue for processing by the Core Banking / Payment system Adapter - together with an example expected response and possible error codes.<br />
+Integrators can use these messages to build Adapters that provide core banking services to OBP.</p>
+<p>Note: API Explorer provides a Message Docs page where these messages are displayed.</p>
+<p><code>CONNECTOR</code>: rest_vMar2019, stored_procedure_vDec2019 ...</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Connector">CONNECTOR</a>: CONNECTOR</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#adapter_implementation"><strong>adapter_implementation</strong></a>:</p>
+<p><a href="/glossary#dependent_endpoints"><strong>dependent_endpoints</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#example_inbound_message"><strong>example_inbound_message</strong></a>: {}</p>
+<p><a href="/glossary#example_outbound_message"><strong>example_outbound_message</strong></a>: {}</p>
+<p><a href="/glossary#group"><strong>group</strong></a>:</p>
+<p><a href="/glossary#message_docs"><strong>message_docs</strong></a>:</p>
+<p><a href="/glossary#message_format"><strong>message_format</strong></a>:</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#process"><strong>process</strong></a>: obp.getBank</p>
+<p><a href="/glossary#suggested_order"><strong>suggested_order</strong></a>:</p>
+<p><a href="/glossary#version"><strong>version</strong></a>:</p>
+<p><a href="/glossary#inboundavroschema">inboundAvroSchema</a>:</p>
+<p><a href="/glossary#inbound_topic">inbound_topic</a>:</p>
+<p><a href="/glossary#outboundavroschema">outboundAvroSchema</a>:</p>
+<p><a href="/glossary#outbound_topic">outbound_topic</a>:</p>
+<p><a href="/glossary#requiredfieldinfo">requiredFieldInfo</a>: false</p>
+
+
+### Example
+
+
+```python
+import obp_python
+from obp_python.models.get_message_docs200_response import GetMessageDocs200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.DocumentationApi(api_client)
+    connector = 'connector_example' # str | The CONNECTOR identifier
+
+    try:
+        # Get Message Docs
+        api_response = api_instance.get_message_docs(connector)
+        print("The response of DocumentationApi->get_message_docs:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DocumentationApi->get_message_docs: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connector** | **str**| The CONNECTOR identifier | 
+
+### Return type
+
+[**GetMessageDocs200Response**](GetMessageDocs200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_message_docs_json_schema**
+> get_message_docs_json_schema(connector)
+
+Get Message Docs as JSON Schema
+
+<p>Returns message documentation as JSON Schema format for code generation in any language.</p>
+<p>This endpoint provides machine-readable schemas instead of just examples, making it ideal for:<br />
+- AI-powered code generation<br />
+- Automatic adapter creation in multiple languages<br />
+- Type-safe client generation with tools like quicktype</p>
+<p><strong>Supported Connectors:</strong><br />
+- rabbitmq_vOct2024 - RabbitMQ connector message schemas<br />
+- rest_vMar2019 - REST connector message schemas<br />
+- akka_vDec2018 - Akka connector message schemas<br />
+- kafka_vMay2019 - Kafka connector message schemas (if available)</p>
+<p><strong>Code Generation Examples:</strong></p>
+<p>Generate Scala code with Circe:</p>
+<pre><code class="language-bash">curl https://api.../message-docs/rabbitmq_vOct2024/json-schema &gt; schemas.json
+quicktype -s schema schemas.json -o Messages.scala --framework circe
+</code></pre>
+<p>Generate Python code:</p>
+<pre><code class="language-bash">quicktype -s schema schemas.json -o messages.py --lang python
+</code></pre>
+<p>Generate TypeScript code:</p>
+<pre><code class="language-bash">quicktype -s schema schemas.json -o messages.ts --lang typescript
+</code></pre>
+<p><strong>Schema Structure:</strong><br />
+Each message includes:<br />
+- <code>process</code> - The connector method name (e.g., &quot;obp.getAdapterInfo&quot;)<br />
+- <code>description</code> - Human-readable description of what the message does<br />
+- <code>outbound_schema</code> - JSON Schema for request messages (OBP-API -&gt; Adapter)<br />
+- <code>inbound_schema</code> - JSON Schema for response messages (Adapter -&gt; OBP-API)</p>
+<p>All nested type definitions are included in the <code>definitions</code> section for reuse.</p>
+<p><strong>Authentication:</strong><br />
+This endpoint is publicly accessible (no authentication required) to facilitate adapter development.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Connector">CONNECTOR</a>: CONNECTOR</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+### Example
+
+
+```python
+import obp_python
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.DocumentationApi(api_client)
+    connector = 'connector_example' # str | The CONNECTOR identifier
+
+    try:
+        # Get Message Docs as JSON Schema
+        api_instance.get_message_docs_json_schema(connector)
+    except Exception as e:
+        print("Exception when calling DocumentationApi->get_message_docs_json_schema: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connector** | **str**| The CONNECTOR identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_message_docs_swagger**
+> get_message_docs_swagger(connector)
+
+Get Message Docs Swagger
+
+<p>This endpoint provides example message docs in swagger format.<br />
+It is only relavent for REST Connectors.</p>
+<p>This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).<br />
+That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.</p>
+<p>i.e.:</p>
+<p>OBP API (Core OBP API code) -&gt; OBP REST Connector (OBP REST Connector code) -&gt; OBP REST Adapter (Adapter developer code) -&gt; CBS (Main Frame)</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Connector">CONNECTOR</a>: CONNECTOR</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+### Example
+
+
+```python
+import obp_python
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.DocumentationApi(api_client)
+    connector = 'connector_example' # str | The CONNECTOR identifier
+
+    try:
+        # Get Message Docs Swagger
+        api_instance.get_message_docs_swagger(connector)
+    except Exception as e:
+        print("Exception when calling DocumentationApi->get_message_docs_swagger: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connector** | **str**| The CONNECTOR identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_resource_docs_obp**
+> get_resource_docs_obp(apiversion)
 
 Get Resource Docs
 
@@ -226,9 +577,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Resource Docs
-        api_instance.o_bpv1_4_0_get_resource_docs_obp(apiversion)
+        api_instance.get_resource_docs_obp(apiversion)
     except Exception as e:
-        print("Exception when calling DocumentationApi->o_bpv1_4_0_get_resource_docs_obp: %s\n" % e)
+        print("Exception when calling DocumentationApi->get_resource_docs_obp: %s\n" % e)
 ```
 
 
@@ -262,8 +613,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_4_0_get_resource_docs_open_api31**
-> o_bpv1_4_0_get_resource_docs_open_api31(apiversion)
+# **get_resource_docs_open_api31**
+> get_resource_docs_open_api31(apiversion)
 
 Get OpenAPI 3.1 documentation
 
@@ -343,9 +694,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get OpenAPI 3.1 documentation
-        api_instance.o_bpv1_4_0_get_resource_docs_open_api31(apiversion)
+        api_instance.get_resource_docs_open_api31(apiversion)
     except Exception as e:
-        print("Exception when calling DocumentationApi->o_bpv1_4_0_get_resource_docs_open_api31: %s\n" % e)
+        print("Exception when calling DocumentationApi->get_resource_docs_open_api31: %s\n" % e)
 ```
 
 
@@ -379,8 +730,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_4_0_get_resource_docs_swagger**
-> o_bpv1_4_0_get_resource_docs_swagger(apiversion)
+# **get_resource_docs_swagger**
+> get_resource_docs_swagger(apiversion)
 
 Get Swagger documentation
 
@@ -426,9 +777,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Swagger documentation
-        api_instance.o_bpv1_4_0_get_resource_docs_swagger(apiversion)
+        api_instance.get_resource_docs_swagger(apiversion)
     except Exception as e:
-        print("Exception when calling DocumentationApi->o_bpv1_4_0_get_resource_docs_swagger: %s\n" % e)
+        print("Exception when calling DocumentationApi->get_resource_docs_swagger: %s\n" % e)
 ```
 
 
@@ -462,359 +813,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv2_2_0_get_message_docs**
-> OBPv220GetMessageDocs200Response o_bpv2_2_0_get_message_docs(connector)
-
-Get Message Docs
-
-<p>These message docs provide example messages sent by OBP to the (RabbitMq) message queue for processing by the Core Banking / Payment system Adapter - together with an example expected response and possible error codes.<br />
-Integrators can use these messages to build Adapters that provide core banking services to OBP.</p>
-<p>Note: API Explorer provides a Message Docs page where these messages are displayed.</p>
-<p><code>CONNECTOR</code>: rest_vMar2019, stored_procedure_vDec2019 ...</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Connector">CONNECTOR</a>: CONNECTOR</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#adapter_implementation"><strong>adapter_implementation</strong></a>:</p>
-<p><a href="/glossary#dependent_endpoints"><strong>dependent_endpoints</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#example_inbound_message"><strong>example_inbound_message</strong></a>: {}</p>
-<p><a href="/glossary#example_outbound_message"><strong>example_outbound_message</strong></a>: {}</p>
-<p><a href="/glossary#group"><strong>group</strong></a>:</p>
-<p><a href="/glossary#message_docs"><strong>message_docs</strong></a>:</p>
-<p><a href="/glossary#message_format"><strong>message_format</strong></a>:</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#process"><strong>process</strong></a>: obp.getBank</p>
-<p><a href="/glossary#suggested_order"><strong>suggested_order</strong></a>:</p>
-<p><a href="/glossary#version"><strong>version</strong></a>:</p>
-<p><a href="/glossary#inboundavroschema">inboundAvroSchema</a>:</p>
-<p><a href="/glossary#inbound_topic">inbound_topic</a>:</p>
-<p><a href="/glossary#outboundavroschema">outboundAvroSchema</a>:</p>
-<p><a href="/glossary#outbound_topic">outbound_topic</a>:</p>
-<p><a href="/glossary#requiredfieldinfo">requiredFieldInfo</a>: false</p>
-
-
-### Example
-
-
-```python
-import obp_python
-from obp_python.models.obpv220_get_message_docs200_response import OBPv220GetMessageDocs200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.DocumentationApi(api_client)
-    connector = 'connector_example' # str | The CONNECTOR identifier
-
-    try:
-        # Get Message Docs
-        api_response = api_instance.o_bpv2_2_0_get_message_docs(connector)
-        print("The response of DocumentationApi->o_bpv2_2_0_get_message_docs:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling DocumentationApi->o_bpv2_2_0_get_message_docs: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **connector** | **str**| The CONNECTOR identifier | 
-
-### Return type
-
-[**OBPv220GetMessageDocs200Response**](OBPv220GetMessageDocs200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_0_0_get_api_glossary**
-> OBPv300GetApiGlossary200Response o_bpv3_0_0_get_api_glossary()
-
-Get Glossary of the API
-
-<p>Get API Glossary</p>
-<p>Returns the glossary of the API.</p>
-<p>The glossary content is static and only changes when the API is redeployed.<br />
-This endpoint supports HTTP caching:</p>
-<ul>
-<li>The response includes a <strong>Cache-Control</strong> header (max-age=3600) indicating clients should cache for 1 hour.</li>
-<li>The response includes an <strong>ETag</strong> header. Clients can send <strong>If-None-Match</strong> with the ETag value on subsequent requests to receive a <strong>304 Not Modified</strong> if the content has not changed.</li>
-</ul>
-<p>Clients and agents are encouraged to cache the glossary response locally.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#glossary_items"><strong>glossary_items</strong></a>:</p>
-<p><a href="/glossary#html"><strong>html</strong></a>: html format content</p>
-<p><a href="/glossary#markdown"><strong>markdown</strong></a>:</p>
-<p><a href="/glossary#"><strong>title</strong></a>: Dr.</p>
-
-
-### Example
-
-
-```python
-import obp_python
-from obp_python.models.obpv300_get_api_glossary200_response import OBPv300GetApiGlossary200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.DocumentationApi(api_client)
-
-    try:
-        # Get Glossary of the API
-        api_response = api_instance.o_bpv3_0_0_get_api_glossary()
-        print("The response of DocumentationApi->o_bpv3_0_0_get_api_glossary:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling DocumentationApi->o_bpv3_0_0_get_api_glossary: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv300GetApiGlossary200Response**](OBPv300GetApiGlossary200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_1_0_get_message_docs_swagger**
-> o_bpv3_1_0_get_message_docs_swagger(connector)
-
-Get Message Docs Swagger
-
-<p>This endpoint provides example message docs in swagger format.<br />
-It is only relavent for REST Connectors.</p>
-<p>This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).<br />
-That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.</p>
-<p>i.e.:</p>
-<p>OBP API (Core OBP API code) -&gt; OBP REST Connector (OBP REST Connector code) -&gt; OBP REST Adapter (Adapter developer code) -&gt; CBS (Main Frame)</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Connector">CONNECTOR</a>: CONNECTOR</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
-### Example
-
-
-```python
-import obp_python
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.DocumentationApi(api_client)
-    connector = 'connector_example' # str | The CONNECTOR identifier
-
-    try:
-        # Get Message Docs Swagger
-        api_instance.o_bpv3_1_0_get_message_docs_swagger(connector)
-    except Exception as e:
-        print("Exception when calling DocumentationApi->o_bpv3_1_0_get_message_docs_swagger: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **connector** | **str**| The CONNECTOR identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_get_message_docs_json_schema**
-> o_bpv6_0_0_get_message_docs_json_schema(connector)
-
-Get Message Docs as JSON Schema
-
-<p>Returns message documentation as JSON Schema format for code generation in any language.</p>
-<p>This endpoint provides machine-readable schemas instead of just examples, making it ideal for:<br />
-- AI-powered code generation<br />
-- Automatic adapter creation in multiple languages<br />
-- Type-safe client generation with tools like quicktype</p>
-<p><strong>Supported Connectors:</strong><br />
-- rabbitmq_vOct2024 - RabbitMQ connector message schemas<br />
-- rest_vMar2019 - REST connector message schemas<br />
-- akka_vDec2018 - Akka connector message schemas<br />
-- kafka_vMay2019 - Kafka connector message schemas (if available)</p>
-<p><strong>Code Generation Examples:</strong></p>
-<p>Generate Scala code with Circe:</p>
-<pre><code class="language-bash">curl https://api.../message-docs/rabbitmq_vOct2024/json-schema &gt; schemas.json
-quicktype -s schema schemas.json -o Messages.scala --framework circe
-</code></pre>
-<p>Generate Python code:</p>
-<pre><code class="language-bash">quicktype -s schema schemas.json -o messages.py --lang python
-</code></pre>
-<p>Generate TypeScript code:</p>
-<pre><code class="language-bash">quicktype -s schema schemas.json -o messages.ts --lang typescript
-</code></pre>
-<p><strong>Schema Structure:</strong><br />
-Each message includes:<br />
-- <code>process</code> - The connector method name (e.g., &quot;obp.getAdapterInfo&quot;)<br />
-- <code>description</code> - Human-readable description of what the message does<br />
-- <code>outbound_schema</code> - JSON Schema for request messages (OBP-API -&gt; Adapter)<br />
-- <code>inbound_schema</code> - JSON Schema for response messages (Adapter -&gt; OBP-API)</p>
-<p>All nested type definitions are included in the <code>definitions</code> section for reuse.</p>
-<p><strong>Authentication:</strong><br />
-This endpoint is publicly accessible (no authentication required) to facilitate adapter development.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Connector">CONNECTOR</a>: CONNECTOR</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
-### Example
-
-
-```python
-import obp_python
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.DocumentationApi(api_client)
-    connector = 'connector_example' # str | The CONNECTOR identifier
-
-    try:
-        # Get Message Docs as JSON Schema
-        api_instance.o_bpv6_0_0_get_message_docs_json_schema(connector)
-    except Exception as e:
-        print("Exception when calling DocumentationApi->o_bpv6_0_0_get_message_docs_json_schema: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **connector** | **str**| The CONNECTOR identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_get_scanned_api_versions**
-> OBPv600GetScannedApiVersions200Response o_bpv6_0_0_get_scanned_api_versions()
+# **get_scanned_api_versions**
+> GetScannedApiVersions200Response get_scanned_api_versions()
 
 Get Scanned API Versions
 
@@ -858,7 +858,7 @@ Get Scanned API Versions
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_scanned_api_versions200_response import OBPv600GetScannedApiVersions200Response
+from obp_python.models.get_scanned_api_versions200_response import GetScannedApiVersions200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -894,11 +894,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Scanned API Versions
-        api_response = api_instance.o_bpv6_0_0_get_scanned_api_versions()
-        print("The response of DocumentationApi->o_bpv6_0_0_get_scanned_api_versions:\n")
+        api_response = api_instance.get_scanned_api_versions()
+        print("The response of DocumentationApi->get_scanned_api_versions:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentationApi->o_bpv6_0_0_get_scanned_api_versions: %s\n" % e)
+        print("Exception when calling DocumentationApi->get_scanned_api_versions: %s\n" % e)
 ```
 
 
@@ -909,7 +909,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetScannedApiVersions200Response**](OBPv600GetScannedApiVersions200Response.md)
+[**GetScannedApiVersions200Response**](GetScannedApiVersions200Response.md)
 
 ### Authorization
 

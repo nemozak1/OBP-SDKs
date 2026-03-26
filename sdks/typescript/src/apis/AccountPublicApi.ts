@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,24 +15,24 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv200PublicAccountsAllBanks200Response,
-  OBPv300GetPublicAccountById200Response,
+  GetPublicAccountById200Response,
+  PublicAccountsAllBanks200Response,
 } from '../models/index';
 import {
-    OBPv200PublicAccountsAllBanks200ResponseFromJSON,
-    OBPv200PublicAccountsAllBanks200ResponseToJSON,
-    OBPv300GetPublicAccountById200ResponseFromJSON,
-    OBPv300GetPublicAccountById200ResponseToJSON,
+    GetPublicAccountById200ResponseFromJSON,
+    GetPublicAccountById200ResponseToJSON,
+    PublicAccountsAllBanks200ResponseFromJSON,
+    PublicAccountsAllBanks200ResponseToJSON,
 } from '../models/index';
 
-export interface OBPv200PublicAccountsAtOneBankRequest {
-    bankid: string;
-}
-
-export interface OBPv300GetPublicAccountByIdRequest {
+export interface GetPublicAccountByIdRequest {
     bankid: string;
     accountid: string;
     viewid: string;
+}
+
+export interface PublicAccountsAtOneBankRequest {
+    bankid: string;
 }
 
 /**
@@ -41,113 +41,27 @@ export interface OBPv300GetPublicAccountByIdRequest {
 export class AccountPublicApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv200PublicAccountsAllBanks without sending the request
+     * Creates request options for getPublicAccountById without sending the request
      */
-    async oBPv200PublicAccountsAllBanksRequestOpts(): Promise<runtime.RequestOpts> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-
-        let urlPath = `/obp/v2.0.0/accounts/public`;
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Get public accounts at all banks (Anonymous access).<br /> Returns accounts that contain at least one public view (a view where is_public is true)<br /> For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
-     * Get Public Accounts at all Banks
-     */
-    async oBPv200PublicAccountsAllBanksRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv200PublicAccountsAllBanks200Response>> {
-        const requestOptions = await this.oBPv200PublicAccountsAllBanksRequestOpts();
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv200PublicAccountsAllBanks200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Get public accounts at all banks (Anonymous access).<br /> Returns accounts that contain at least one public view (a view where is_public is true)<br /> For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
-     * Get Public Accounts at all Banks
-     */
-    async oBPv200PublicAccountsAllBanks(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv200PublicAccountsAllBanks200Response> {
-        const response = await this.oBPv200PublicAccountsAllBanksRaw(initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv200PublicAccountsAtOneBank without sending the request
-     */
-    async oBPv200PublicAccountsAtOneBankRequestOpts(requestParameters: OBPv200PublicAccountsAtOneBankRequest): Promise<runtime.RequestOpts> {
+    async getPublicAccountByIdRequestOpts(requestParameters: GetPublicAccountByIdRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv200PublicAccountsAtOneBank().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-
-        let urlPath = `/obp/v2.0.0/banks/{bankid}/accounts/public`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Returns a list of the public accounts (Anonymous access) at BANK_ID. For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
-     * Get Public Accounts at Bank
-     */
-    async oBPv200PublicAccountsAtOneBankRaw(requestParameters: OBPv200PublicAccountsAtOneBankRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv200PublicAccountsAllBanks200Response>> {
-        const requestOptions = await this.oBPv200PublicAccountsAtOneBankRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv200PublicAccountsAllBanks200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Returns a list of the public accounts (Anonymous access) at BANK_ID. For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
-     * Get Public Accounts at Bank
-     */
-    async oBPv200PublicAccountsAtOneBank(requestParameters: OBPv200PublicAccountsAtOneBankRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv200PublicAccountsAllBanks200Response> {
-        const response = await this.oBPv200PublicAccountsAtOneBankRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv300GetPublicAccountById without sending the request
-     */
-    async oBPv300GetPublicAccountByIdRequestOpts(requestParameters: OBPv300GetPublicAccountByIdRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv300GetPublicAccountById().'
+                'Required parameter "bankid" was null or undefined when calling getPublicAccountById().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv300GetPublicAccountById().'
+                'Required parameter "accountid" was null or undefined when calling getPublicAccountById().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv300GetPublicAccountById().'
+                'Required parameter "viewid" was null or undefined when calling getPublicAccountById().'
             );
         }
 
@@ -173,19 +87,105 @@ export class AccountPublicApi extends runtime.BaseAPI {
      * <p>Returns information about an account that has a public view.</p> <p>The account is specified by ACCOUNT_ID. The information is moderated by the view specified by VIEW_ID.</p> <ul> <li>Number</li> <li>Owners</li> <li>Type</li> <li>Balance</li> <li>Routing</li> </ul> <p>PSD2 Context: PSD2 requires customers to have access to their account information via third party applications.<br /> This call provides balance and other account information via delegated authentication using OAuth.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#account_rules\"><strong>account_rules</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#balance\"><strong>balance</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#owners\"><strong>owners</strong></a>:</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#account_attributes\">account_attributes</a>:</p> <p><a href=\"/glossary#\">product_instance_code</a>: product_instance_code</p> 
      * Get Public Account by Id
      */
-    async oBPv300GetPublicAccountByIdRaw(requestParameters: OBPv300GetPublicAccountByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv300GetPublicAccountById200Response>> {
-        const requestOptions = await this.oBPv300GetPublicAccountByIdRequestOpts(requestParameters);
+    async getPublicAccountByIdRaw(requestParameters: GetPublicAccountByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetPublicAccountById200Response>> {
+        const requestOptions = await this.getPublicAccountByIdRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv300GetPublicAccountById200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetPublicAccountById200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Returns information about an account that has a public view.</p> <p>The account is specified by ACCOUNT_ID. The information is moderated by the view specified by VIEW_ID.</p> <ul> <li>Number</li> <li>Owners</li> <li>Type</li> <li>Balance</li> <li>Routing</li> </ul> <p>PSD2 Context: PSD2 requires customers to have access to their account information via third party applications.<br /> This call provides balance and other account information via delegated authentication using OAuth.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#account_rules\"><strong>account_rules</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#balance\"><strong>balance</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#owners\"><strong>owners</strong></a>:</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#account_attributes\">account_attributes</a>:</p> <p><a href=\"/glossary#\">product_instance_code</a>: product_instance_code</p> 
      * Get Public Account by Id
      */
-    async oBPv300GetPublicAccountById(requestParameters: OBPv300GetPublicAccountByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv300GetPublicAccountById200Response> {
-        const response = await this.oBPv300GetPublicAccountByIdRaw(requestParameters, initOverrides);
+    async getPublicAccountById(requestParameters: GetPublicAccountByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetPublicAccountById200Response> {
+        const response = await this.getPublicAccountByIdRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for publicAccountsAllBanks without sending the request
+     */
+    async publicAccountsAllBanksRequestOpts(): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+
+        let urlPath = `/obp/v2.0.0/accounts/public`;
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Get public accounts at all banks (Anonymous access).<br /> Returns accounts that contain at least one public view (a view where is_public is true)<br /> For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
+     * Get Public Accounts at all Banks
+     */
+    async publicAccountsAllBanksRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PublicAccountsAllBanks200Response>> {
+        const requestOptions = await this.publicAccountsAllBanksRequestOpts();
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PublicAccountsAllBanks200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Get public accounts at all banks (Anonymous access).<br /> Returns accounts that contain at least one public view (a view where is_public is true)<br /> For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
+     * Get Public Accounts at all Banks
+     */
+    async publicAccountsAllBanks(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PublicAccountsAllBanks200Response> {
+        const response = await this.publicAccountsAllBanksRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for publicAccountsAtOneBank without sending the request
+     */
+    async publicAccountsAtOneBankRequestOpts(requestParameters: PublicAccountsAtOneBankRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling publicAccountsAtOneBank().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+
+        let urlPath = `/obp/v2.0.0/banks/{bankid}/accounts/public`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Returns a list of the public accounts (Anonymous access) at BANK_ID. For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
+     * Get Public Accounts at Bank
+     */
+    async publicAccountsAtOneBankRaw(requestParameters: PublicAccountsAtOneBankRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PublicAccountsAllBanks200Response>> {
+        const requestOptions = await this.publicAccountsAtOneBankRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PublicAccountsAllBanks200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Returns a list of the public accounts (Anonymous access) at BANK_ID. For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
+     * Get Public Accounts at Bank
+     */
+    async publicAccountsAtOneBank(requestParameters: PublicAccountsAtOneBankRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PublicAccountsAllBanks200Response> {
+        const response = await this.publicAccountsAtOneBankRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

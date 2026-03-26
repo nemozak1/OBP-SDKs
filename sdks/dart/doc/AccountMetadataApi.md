@@ -5,17 +5,17 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400AddTagForViewOnAccount**](AccountMetadataApi.md#obpv400addtagforviewonaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
-[**oBPv400DeleteTagForViewOnAccount**](AccountMetadataApi.md#obpv400deletetagforviewonaccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
-[**oBPv400GetTagsForViewOnAccount**](AccountMetadataApi.md#obpv400gettagsforviewonaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
+[**addTagForViewOnAccount**](AccountMetadataApi.md#addtagforviewonaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
+[**deleteTagForViewOnAccount**](AccountMetadataApi.md#deletetagforviewonaccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
+[**getTagsForViewOnAccount**](AccountMetadataApi.md#gettagsforviewonaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
 
 
-# **oBPv400AddTagForViewOnAccount**
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems oBPv400AddTagForViewOnAccount(bankid, accountid, viewid, oBPv400DeleteSystemLevelEndpointTag200Response)
+# **addTagForViewOnAccount**
+> GetTagsForViewOnAccount200ResponseTagsInner addTagForViewOnAccount(bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId)
 
 Create a tag on account
 
@@ -39,13 +39,13 @@ final api = ObpDart().getAccountMetadataApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
-final OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response = {"type":"object","properties":{"value":{"type":"string"}}}; // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+final GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId = {"type":"object","properties":{"value":{"type":"string"}}}; // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
 try {
-    final response = api.oBPv400AddTagForViewOnAccount(bankid, accountid, viewid, oBPv400DeleteSystemLevelEndpointTag200Response);
+    final response = api.addTagForViewOnAccount(bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling AccountMetadataApi->oBPv400AddTagForViewOnAccount: $e\n');
+    print('Exception when calling AccountMetadataApi->addTagForViewOnAccount: $e\n');
 }
 ```
 
@@ -56,11 +56,11 @@ Name | Type | Description  | Notes
  **bankid** | **String**| The BANKID identifier | 
  **accountid** | **String**| The ACCOUNTID identifier | 
  **viewid** | **String**| The VIEWID identifier | 
- **oBPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)| Request body | 
+ **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -73,8 +73,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteTagForViewOnAccount**
-> oBPv400DeleteTagForViewOnAccount(bankid, accountid, viewid, tagid)
+# **deleteTagForViewOnAccount**
+> deleteTagForViewOnAccount(bankid, accountid, viewid, tagid)
 
 Delete a tag on account
 
@@ -101,9 +101,9 @@ final String viewid = viewid_example; // String | The VIEWID identifier
 final String tagid = tagid_example; // String | The TAGID identifier
 
 try {
-    api.oBPv400DeleteTagForViewOnAccount(bankid, accountid, viewid, tagid);
+    api.deleteTagForViewOnAccount(bankid, accountid, viewid, tagid);
 } on DioException catch (e) {
-    print('Exception when calling AccountMetadataApi->oBPv400DeleteTagForViewOnAccount: $e\n');
+    print('Exception when calling AccountMetadataApi->deleteTagForViewOnAccount: $e\n');
 }
 ```
 
@@ -131,8 +131,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetTagsForViewOnAccount**
-> OBPv400GetTagsForViewOnAccount200Response oBPv400GetTagsForViewOnAccount(bankid, accountid, viewid)
+# **getTagsForViewOnAccount**
+> GetTagsForViewOnAccount200Response getTagsForViewOnAccount(bankid, accountid, viewid)
 
 Get tags on account
 
@@ -158,10 +158,10 @@ final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
 
 try {
-    final response = api.oBPv400GetTagsForViewOnAccount(bankid, accountid, viewid);
+    final response = api.getTagsForViewOnAccount(bankid, accountid, viewid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling AccountMetadataApi->oBPv400GetTagsForViewOnAccount: $e\n');
+    print('Exception when calling AccountMetadataApi->getTagsForViewOnAccount: $e\n');
 }
 ```
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200Response**](OBPv400GetTagsForViewOnAccount200Response.md)
+[**GetTagsForViewOnAccount200Response**](GetTagsForViewOnAccount200Response.md)
 
 ### Authorization
 

@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -45,10 +45,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create a Dynamic Resource Doc endpoint code.&lt;/p&gt; &lt;p&gt;copy the response and past to PractiseEndpoint, So you can have the benefits of&lt;br /&gt; auto compilation and debug&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400BuildDynamicEndpointTemplateRequest">Request body</param>
+        /// <param name="buildDynamicEndpointTemplateRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400BuildDynamicEndpointTemplateApiResponse"/>&gt;</returns>
-        Task<IOBPv400BuildDynamicEndpointTemplateApiResponse> OBPv400BuildDynamicEndpointTemplateAsync(OBPv400BuildDynamicEndpointTemplateRequest oBPv400BuildDynamicEndpointTemplateRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IBuildDynamicEndpointTemplateApiResponse"/>&gt;</returns>
+        Task<IBuildDynamicEndpointTemplateApiResponse> BuildDynamicEndpointTemplateAsync(BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Dynamic Resource Doc endpoint code
@@ -56,10 +56,10 @@ namespace OpenBankProject.Api
         /// <remarks>
         /// &lt;p&gt;Create a Dynamic Resource Doc endpoint code.&lt;/p&gt; &lt;p&gt;copy the response and past to PractiseEndpoint, So you can have the benefits of&lt;br /&gt; auto compilation and debug&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; 
         /// </remarks>
-        /// <param name="oBPv400BuildDynamicEndpointTemplateRequest">Request body</param>
+        /// <param name="buildDynamicEndpointTemplateRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400BuildDynamicEndpointTemplateApiResponse"/>?&gt;</returns>
-        Task<IOBPv400BuildDynamicEndpointTemplateApiResponse?> OBPv400BuildDynamicEndpointTemplateOrDefaultAsync(OBPv400BuildDynamicEndpointTemplateRequest oBPv400BuildDynamicEndpointTemplateRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IBuildDynamicEndpointTemplateApiResponse"/>?&gt;</returns>
+        Task<IBuildDynamicEndpointTemplateApiResponse?> BuildDynamicEndpointTemplateOrDefaultAsync(BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Bank Level Dynamic Resource Doc
@@ -69,10 +69,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateBankLevelDynamicResourceDocApiResponse> OBPv400CreateBankLevelDynamicResourceDocAsync(string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
+        Task<ICreateBankLevelDynamicResourceDocApiResponse> CreateBankLevelDynamicResourceDocAsync(string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Bank Level Dynamic Resource Doc
@@ -81,10 +81,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankLevelDynamicResourceDocApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateBankLevelDynamicResourceDocApiResponse?> OBPv400CreateBankLevelDynamicResourceDocOrDefaultAsync(string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankLevelDynamicResourceDocApiResponse"/>?&gt;</returns>
+        Task<ICreateBankLevelDynamicResourceDocApiResponse?> CreateBankLevelDynamicResourceDocOrDefaultAsync(string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Dynamic Resource Doc
@@ -93,10 +93,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateDynamicResourceDocApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateDynamicResourceDocApiResponse> OBPv400CreateDynamicResourceDocAsync(OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateDynamicResourceDocApiResponse"/>&gt;</returns>
+        Task<ICreateDynamicResourceDocApiResponse> CreateDynamicResourceDocAsync(UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Dynamic Resource Doc
@@ -104,10 +104,10 @@ namespace OpenBankProject.Api
         /// <remarks>
         /// &lt;p&gt;Create a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </remarks>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateDynamicResourceDocApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateDynamicResourceDocApiResponse?> OBPv400CreateDynamicResourceDocOrDefaultAsync(OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateDynamicResourceDocApiResponse"/>?&gt;</returns>
+        Task<ICreateDynamicResourceDocApiResponse?> CreateDynamicResourceDocOrDefaultAsync(UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Bank Level Dynamic Resource Doc
@@ -118,8 +118,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteBankLevelDynamicResourceDocApiResponse> OBPv400DeleteBankLevelDynamicResourceDocAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
+        Task<IDeleteBankLevelDynamicResourceDocApiResponse> DeleteBankLevelDynamicResourceDocAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Bank Level Dynamic Resource Doc
@@ -129,8 +129,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankLevelDynamicResourceDocApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteBankLevelDynamicResourceDocApiResponse?> OBPv400DeleteBankLevelDynamicResourceDocOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankLevelDynamicResourceDocApiResponse"/>?&gt;</returns>
+        Task<IDeleteBankLevelDynamicResourceDocApiResponse?> DeleteBankLevelDynamicResourceDocOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Dynamic Resource Doc
@@ -140,8 +140,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteDynamicResourceDocApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteDynamicResourceDocApiResponse> OBPv400DeleteDynamicResourceDocAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteDynamicResourceDocApiResponse"/>&gt;</returns>
+        Task<IDeleteDynamicResourceDocApiResponse> DeleteDynamicResourceDocAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Dynamic Resource Doc
@@ -150,8 +150,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Delete a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteDynamicResourceDocApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteDynamicResourceDocApiResponse?> OBPv400DeleteDynamicResourceDocOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteDynamicResourceDocApiResponse"/>?&gt;</returns>
+        Task<IDeleteDynamicResourceDocApiResponse?> DeleteDynamicResourceDocOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all Bank Level Dynamic Resource Docs
@@ -162,8 +162,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllBankLevelDynamicResourceDocsApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetAllBankLevelDynamicResourceDocsApiResponse> OBPv400GetAllBankLevelDynamicResourceDocsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllBankLevelDynamicResourceDocsApiResponse"/>&gt;</returns>
+        Task<IGetAllBankLevelDynamicResourceDocsApiResponse> GetAllBankLevelDynamicResourceDocsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all Bank Level Dynamic Resource Docs
@@ -173,8 +173,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllBankLevelDynamicResourceDocsApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetAllBankLevelDynamicResourceDocsApiResponse?> OBPv400GetAllBankLevelDynamicResourceDocsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllBankLevelDynamicResourceDocsApiResponse"/>?&gt;</returns>
+        Task<IGetAllBankLevelDynamicResourceDocsApiResponse?> GetAllBankLevelDynamicResourceDocsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all Dynamic Resource Docs
@@ -184,8 +184,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllDynamicResourceDocsApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetAllDynamicResourceDocsApiResponse> OBPv400GetAllDynamicResourceDocsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllDynamicResourceDocsApiResponse"/>&gt;</returns>
+        Task<IGetAllDynamicResourceDocsApiResponse> GetAllDynamicResourceDocsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all Dynamic Resource Docs
@@ -194,8 +194,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get all Dynamic Resource Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllDynamicResourceDocsApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetAllDynamicResourceDocsApiResponse?> OBPv400GetAllDynamicResourceDocsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllDynamicResourceDocsApiResponse"/>?&gt;</returns>
+        Task<IGetAllDynamicResourceDocsApiResponse?> GetAllDynamicResourceDocsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Bank Level Dynamic Resource Doc by Id
@@ -206,8 +206,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetBankLevelDynamicResourceDocApiResponse> OBPv400GetBankLevelDynamicResourceDocAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
+        Task<IGetBankLevelDynamicResourceDocApiResponse> GetBankLevelDynamicResourceDocAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Bank Level Dynamic Resource Doc by Id
@@ -217,8 +217,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankLevelDynamicResourceDocApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetBankLevelDynamicResourceDocApiResponse?> OBPv400GetBankLevelDynamicResourceDocOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankLevelDynamicResourceDocApiResponse"/>?&gt;</returns>
+        Task<IGetBankLevelDynamicResourceDocApiResponse?> GetBankLevelDynamicResourceDocOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Dynamic Resource Doc by Id
@@ -228,8 +228,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetDynamicResourceDocApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetDynamicResourceDocApiResponse> OBPv400GetDynamicResourceDocAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetDynamicResourceDocApiResponse"/>&gt;</returns>
+        Task<IGetDynamicResourceDocApiResponse> GetDynamicResourceDocAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Dynamic Resource Doc by Id
@@ -238,8 +238,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get a Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetDynamicResourceDocApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetDynamicResourceDocApiResponse?> OBPv400GetDynamicResourceDocOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetDynamicResourceDocApiResponse"/>?&gt;</returns>
+        Task<IGetDynamicResourceDocApiResponse?> GetDynamicResourceDocOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Bank Level Dynamic Resource Doc
@@ -249,10 +249,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
-        Task<IOBPv400UpdateBankLevelDynamicResourceDocApiResponse> OBPv400UpdateBankLevelDynamicResourceDocAsync(string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
+        Task<IUpdateBankLevelDynamicResourceDocApiResponse> UpdateBankLevelDynamicResourceDocAsync(string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Bank Level Dynamic Resource Doc
@@ -261,10 +261,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Update a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateBankLevelDynamicResourceDocApiResponse"/>?&gt;</returns>
-        Task<IOBPv400UpdateBankLevelDynamicResourceDocApiResponse?> OBPv400UpdateBankLevelDynamicResourceDocOrDefaultAsync(string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankLevelDynamicResourceDocApiResponse"/>?&gt;</returns>
+        Task<IUpdateBankLevelDynamicResourceDocApiResponse?> UpdateBankLevelDynamicResourceDocOrDefaultAsync(string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Dynamic Resource Doc
@@ -273,10 +273,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Update a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateDynamicResourceDocApiResponse"/>&gt;</returns>
-        Task<IOBPv400UpdateDynamicResourceDocApiResponse> OBPv400UpdateDynamicResourceDocAsync(OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateDynamicResourceDocApiResponse"/>&gt;</returns>
+        Task<IUpdateDynamicResourceDocApiResponse> UpdateDynamicResourceDocAsync(UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Dynamic Resource Doc
@@ -284,16 +284,16 @@ namespace OpenBankProject.Api
         /// <remarks>
         /// &lt;p&gt;Update a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </remarks>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateDynamicResourceDocApiResponse"/>?&gt;</returns>
-        Task<IOBPv400UpdateDynamicResourceDocApiResponse?> OBPv400UpdateDynamicResourceDocOrDefaultAsync(OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateDynamicResourceDocApiResponse"/>?&gt;</returns>
+        Task<IUpdateDynamicResourceDocApiResponse?> UpdateDynamicResourceDocOrDefaultAsync(UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400BuildDynamicEndpointTemplateApiResponse"/>
+    /// The <see cref="IBuildDynamicEndpointTemplateApiResponse"/>
     /// </summary>
-    public interface IOBPv400BuildDynamicEndpointTemplateApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400BuildDynamicEndpointTemplate200Response?>
+    public interface IBuildDynamicEndpointTemplateApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.BuildDynamicEndpointTemplate200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -309,51 +309,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400CreateBankLevelDynamicResourceDocApiResponse"/>
+    /// The <see cref="ICreateBankLevelDynamicResourceDocApiResponse"/>
     /// </summary>
-    public interface IOBPv400CreateBankLevelDynamicResourceDocApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 404 NotFound
-        /// </summary>
-        /// <returns></returns>
-        bool IsNotFound { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv400CreateDynamicResourceDocApiResponse"/>
-    /// </summary>
-    public interface IOBPv400CreateDynamicResourceDocApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv400DeleteBankLevelDynamicResourceDocApiResponse"/>
-    /// </summary>
-    public interface IOBPv400DeleteBankLevelDynamicResourceDocApiResponse : OpenBankProject.Client.IApiResponse
+    public interface ICreateBankLevelDynamicResourceDocApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -375,9 +333,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400DeleteDynamicResourceDocApiResponse"/>
+    /// The <see cref="ICreateDynamicResourceDocApiResponse"/>
     /// </summary>
-    public interface IOBPv400DeleteDynamicResourceDocApiResponse : OpenBankProject.Client.IApiResponse
+    public interface ICreateDynamicResourceDocApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -393,51 +351,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetAllBankLevelDynamicResourceDocsApiResponse"/>
+    /// The <see cref="IDeleteBankLevelDynamicResourceDocApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetAllBankLevelDynamicResourceDocsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllDynamicResourceDocs200Response?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 404 NotFound
-        /// </summary>
-        /// <returns></returns>
-        bool IsNotFound { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv400GetAllDynamicResourceDocsApiResponse"/>
-    /// </summary>
-    public interface IOBPv400GetAllDynamicResourceDocsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllDynamicResourceDocs200Response?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv400GetBankLevelDynamicResourceDocApiResponse"/>
-    /// </summary>
-    public interface IOBPv400GetBankLevelDynamicResourceDocApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response?>
+    public interface IDeleteBankLevelDynamicResourceDocApiResponse : OpenBankProject.Client.IApiResponse
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -459,9 +375,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetDynamicResourceDocApiResponse"/>
+    /// The <see cref="IDeleteDynamicResourceDocApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetDynamicResourceDocApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response?>
+    public interface IDeleteDynamicResourceDocApiResponse : OpenBankProject.Client.IApiResponse
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -477,9 +393,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400UpdateBankLevelDynamicResourceDocApiResponse"/>
+    /// The <see cref="IGetAllBankLevelDynamicResourceDocsApiResponse"/>
     /// </summary>
-    public interface IOBPv400UpdateBankLevelDynamicResourceDocApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response?>
+    public interface IGetAllBankLevelDynamicResourceDocsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllDynamicResourceDocs200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -501,9 +417,93 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400UpdateDynamicResourceDocApiResponse"/>
+    /// The <see cref="IGetAllDynamicResourceDocsApiResponse"/>
     /// </summary>
-    public interface IOBPv400UpdateDynamicResourceDocApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response?>
+    public interface IGetAllDynamicResourceDocsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllDynamicResourceDocs200Response?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="IGetBankLevelDynamicResourceDocApiResponse"/>
+    /// </summary>
+    public interface IGetBankLevelDynamicResourceDocApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 404 NotFound
+        /// </summary>
+        /// <returns></returns>
+        bool IsNotFound { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="IGetDynamicResourceDocApiResponse"/>
+    /// </summary>
+    public interface IGetDynamicResourceDocApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="IUpdateBankLevelDynamicResourceDocApiResponse"/>
+    /// </summary>
+    public interface IUpdateBankLevelDynamicResourceDocApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 404 NotFound
+        /// </summary>
+        /// <returns></returns>
+        bool IsNotFound { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="IUpdateDynamicResourceDocApiResponse"/>
+    /// </summary>
+    public interface IUpdateDynamicResourceDocApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -526,221 +526,221 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400BuildDynamicEndpointTemplate;
+        public event EventHandler<ApiResponseEventArgs>? OnBuildDynamicEndpointTemplate;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400BuildDynamicEndpointTemplate;
+        public event EventHandler<ExceptionEventArgs>? OnErrorBuildDynamicEndpointTemplate;
 
-        internal void ExecuteOnOBPv400BuildDynamicEndpointTemplate(DynamicResourceDocApi.OBPv400BuildDynamicEndpointTemplateApiResponse apiResponse)
+        internal void ExecuteOnBuildDynamicEndpointTemplate(DynamicResourceDocApi.BuildDynamicEndpointTemplateApiResponse apiResponse)
         {
-            OnOBPv400BuildDynamicEndpointTemplate?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnBuildDynamicEndpointTemplate?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400BuildDynamicEndpointTemplate(Exception exception)
+        internal void ExecuteOnErrorBuildDynamicEndpointTemplate(Exception exception)
         {
-            OnErrorOBPv400BuildDynamicEndpointTemplate?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorBuildDynamicEndpointTemplate?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateBankLevelDynamicResourceDoc;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateBankLevelDynamicResourceDoc;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateBankLevelDynamicResourceDoc;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateBankLevelDynamicResourceDoc;
 
-        internal void ExecuteOnOBPv400CreateBankLevelDynamicResourceDoc(DynamicResourceDocApi.OBPv400CreateBankLevelDynamicResourceDocApiResponse apiResponse)
+        internal void ExecuteOnCreateBankLevelDynamicResourceDoc(DynamicResourceDocApi.CreateBankLevelDynamicResourceDocApiResponse apiResponse)
         {
-            OnOBPv400CreateBankLevelDynamicResourceDoc?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateBankLevelDynamicResourceDoc?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateBankLevelDynamicResourceDoc(Exception exception)
+        internal void ExecuteOnErrorCreateBankLevelDynamicResourceDoc(Exception exception)
         {
-            OnErrorOBPv400CreateBankLevelDynamicResourceDoc?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateBankLevelDynamicResourceDoc?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateDynamicResourceDoc;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateDynamicResourceDoc;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateDynamicResourceDoc;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateDynamicResourceDoc;
 
-        internal void ExecuteOnOBPv400CreateDynamicResourceDoc(DynamicResourceDocApi.OBPv400CreateDynamicResourceDocApiResponse apiResponse)
+        internal void ExecuteOnCreateDynamicResourceDoc(DynamicResourceDocApi.CreateDynamicResourceDocApiResponse apiResponse)
         {
-            OnOBPv400CreateDynamicResourceDoc?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateDynamicResourceDoc?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateDynamicResourceDoc(Exception exception)
+        internal void ExecuteOnErrorCreateDynamicResourceDoc(Exception exception)
         {
-            OnErrorOBPv400CreateDynamicResourceDoc?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateDynamicResourceDoc?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteBankLevelDynamicResourceDoc;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteBankLevelDynamicResourceDoc;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteBankLevelDynamicResourceDoc;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteBankLevelDynamicResourceDoc;
 
-        internal void ExecuteOnOBPv400DeleteBankLevelDynamicResourceDoc(DynamicResourceDocApi.OBPv400DeleteBankLevelDynamicResourceDocApiResponse apiResponse)
+        internal void ExecuteOnDeleteBankLevelDynamicResourceDoc(DynamicResourceDocApi.DeleteBankLevelDynamicResourceDocApiResponse apiResponse)
         {
-            OnOBPv400DeleteBankLevelDynamicResourceDoc?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteBankLevelDynamicResourceDoc?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteBankLevelDynamicResourceDoc(Exception exception)
+        internal void ExecuteOnErrorDeleteBankLevelDynamicResourceDoc(Exception exception)
         {
-            OnErrorOBPv400DeleteBankLevelDynamicResourceDoc?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteBankLevelDynamicResourceDoc?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteDynamicResourceDoc;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteDynamicResourceDoc;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteDynamicResourceDoc;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteDynamicResourceDoc;
 
-        internal void ExecuteOnOBPv400DeleteDynamicResourceDoc(DynamicResourceDocApi.OBPv400DeleteDynamicResourceDocApiResponse apiResponse)
+        internal void ExecuteOnDeleteDynamicResourceDoc(DynamicResourceDocApi.DeleteDynamicResourceDocApiResponse apiResponse)
         {
-            OnOBPv400DeleteDynamicResourceDoc?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteDynamicResourceDoc?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteDynamicResourceDoc(Exception exception)
+        internal void ExecuteOnErrorDeleteDynamicResourceDoc(Exception exception)
         {
-            OnErrorOBPv400DeleteDynamicResourceDoc?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteDynamicResourceDoc?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetAllBankLevelDynamicResourceDocs;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAllBankLevelDynamicResourceDocs;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetAllBankLevelDynamicResourceDocs;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAllBankLevelDynamicResourceDocs;
 
-        internal void ExecuteOnOBPv400GetAllBankLevelDynamicResourceDocs(DynamicResourceDocApi.OBPv400GetAllBankLevelDynamicResourceDocsApiResponse apiResponse)
+        internal void ExecuteOnGetAllBankLevelDynamicResourceDocs(DynamicResourceDocApi.GetAllBankLevelDynamicResourceDocsApiResponse apiResponse)
         {
-            OnOBPv400GetAllBankLevelDynamicResourceDocs?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAllBankLevelDynamicResourceDocs?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetAllBankLevelDynamicResourceDocs(Exception exception)
+        internal void ExecuteOnErrorGetAllBankLevelDynamicResourceDocs(Exception exception)
         {
-            OnErrorOBPv400GetAllBankLevelDynamicResourceDocs?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAllBankLevelDynamicResourceDocs?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetAllDynamicResourceDocs;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAllDynamicResourceDocs;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetAllDynamicResourceDocs;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAllDynamicResourceDocs;
 
-        internal void ExecuteOnOBPv400GetAllDynamicResourceDocs(DynamicResourceDocApi.OBPv400GetAllDynamicResourceDocsApiResponse apiResponse)
+        internal void ExecuteOnGetAllDynamicResourceDocs(DynamicResourceDocApi.GetAllDynamicResourceDocsApiResponse apiResponse)
         {
-            OnOBPv400GetAllDynamicResourceDocs?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAllDynamicResourceDocs?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetAllDynamicResourceDocs(Exception exception)
+        internal void ExecuteOnErrorGetAllDynamicResourceDocs(Exception exception)
         {
-            OnErrorOBPv400GetAllDynamicResourceDocs?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAllDynamicResourceDocs?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetBankLevelDynamicResourceDoc;
+        public event EventHandler<ApiResponseEventArgs>? OnGetBankLevelDynamicResourceDoc;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetBankLevelDynamicResourceDoc;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetBankLevelDynamicResourceDoc;
 
-        internal void ExecuteOnOBPv400GetBankLevelDynamicResourceDoc(DynamicResourceDocApi.OBPv400GetBankLevelDynamicResourceDocApiResponse apiResponse)
+        internal void ExecuteOnGetBankLevelDynamicResourceDoc(DynamicResourceDocApi.GetBankLevelDynamicResourceDocApiResponse apiResponse)
         {
-            OnOBPv400GetBankLevelDynamicResourceDoc?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetBankLevelDynamicResourceDoc?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetBankLevelDynamicResourceDoc(Exception exception)
+        internal void ExecuteOnErrorGetBankLevelDynamicResourceDoc(Exception exception)
         {
-            OnErrorOBPv400GetBankLevelDynamicResourceDoc?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetBankLevelDynamicResourceDoc?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetDynamicResourceDoc;
+        public event EventHandler<ApiResponseEventArgs>? OnGetDynamicResourceDoc;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetDynamicResourceDoc;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetDynamicResourceDoc;
 
-        internal void ExecuteOnOBPv400GetDynamicResourceDoc(DynamicResourceDocApi.OBPv400GetDynamicResourceDocApiResponse apiResponse)
+        internal void ExecuteOnGetDynamicResourceDoc(DynamicResourceDocApi.GetDynamicResourceDocApiResponse apiResponse)
         {
-            OnOBPv400GetDynamicResourceDoc?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetDynamicResourceDoc?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetDynamicResourceDoc(Exception exception)
+        internal void ExecuteOnErrorGetDynamicResourceDoc(Exception exception)
         {
-            OnErrorOBPv400GetDynamicResourceDoc?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetDynamicResourceDoc?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400UpdateBankLevelDynamicResourceDoc;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateBankLevelDynamicResourceDoc;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400UpdateBankLevelDynamicResourceDoc;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateBankLevelDynamicResourceDoc;
 
-        internal void ExecuteOnOBPv400UpdateBankLevelDynamicResourceDoc(DynamicResourceDocApi.OBPv400UpdateBankLevelDynamicResourceDocApiResponse apiResponse)
+        internal void ExecuteOnUpdateBankLevelDynamicResourceDoc(DynamicResourceDocApi.UpdateBankLevelDynamicResourceDocApiResponse apiResponse)
         {
-            OnOBPv400UpdateBankLevelDynamicResourceDoc?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateBankLevelDynamicResourceDoc?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400UpdateBankLevelDynamicResourceDoc(Exception exception)
+        internal void ExecuteOnErrorUpdateBankLevelDynamicResourceDoc(Exception exception)
         {
-            OnErrorOBPv400UpdateBankLevelDynamicResourceDoc?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateBankLevelDynamicResourceDoc?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400UpdateDynamicResourceDoc;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateDynamicResourceDoc;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400UpdateDynamicResourceDoc;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateDynamicResourceDoc;
 
-        internal void ExecuteOnOBPv400UpdateDynamicResourceDoc(DynamicResourceDocApi.OBPv400UpdateDynamicResourceDocApiResponse apiResponse)
+        internal void ExecuteOnUpdateDynamicResourceDoc(DynamicResourceDocApi.UpdateDynamicResourceDocApiResponse apiResponse)
         {
-            OnOBPv400UpdateDynamicResourceDoc?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateDynamicResourceDoc?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400UpdateDynamicResourceDoc(Exception exception)
+        internal void ExecuteOnErrorUpdateDynamicResourceDoc(Exception exception)
         {
-            OnErrorOBPv400UpdateDynamicResourceDoc?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateDynamicResourceDoc?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -798,28 +798,28 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv400BuildDynamicEndpointTemplate(OBPv400BuildDynamicEndpointTemplateRequest oBPv400BuildDynamicEndpointTemplateRequest);
+        partial void FormatBuildDynamicEndpointTemplate(BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
-        /// <param name="oBPv400BuildDynamicEndpointTemplateRequest"></param>
+        /// <param name="buildDynamicEndpointTemplateRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400BuildDynamicEndpointTemplate(OBPv400BuildDynamicEndpointTemplateRequest oBPv400BuildDynamicEndpointTemplateRequest)
+        private void ValidateBuildDynamicEndpointTemplate(BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest)
         {
-            if (oBPv400BuildDynamicEndpointTemplateRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400BuildDynamicEndpointTemplateRequest));
+            if (buildDynamicEndpointTemplateRequest == null)
+                throw new ArgumentNullException(nameof(buildDynamicEndpointTemplateRequest));
         }
 
         /// <summary>
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400BuildDynamicEndpointTemplateRequest"></param>
-        private void AfterOBPv400BuildDynamicEndpointTemplateDefaultImplementation(IOBPv400BuildDynamicEndpointTemplateApiResponse apiResponseLocalVar, OBPv400BuildDynamicEndpointTemplateRequest oBPv400BuildDynamicEndpointTemplateRequest)
+        /// <param name="buildDynamicEndpointTemplateRequest"></param>
+        private void AfterBuildDynamicEndpointTemplateDefaultImplementation(IBuildDynamicEndpointTemplateApiResponse apiResponseLocalVar, BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400BuildDynamicEndpointTemplate(ref suppressDefaultLog, apiResponseLocalVar, oBPv400BuildDynamicEndpointTemplateRequest);
+            AfterBuildDynamicEndpointTemplate(ref suppressDefaultLog, apiResponseLocalVar, buildDynamicEndpointTemplateRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -829,8 +829,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400BuildDynamicEndpointTemplateRequest"></param>
-        partial void AfterOBPv400BuildDynamicEndpointTemplate(ref bool suppressDefaultLog, IOBPv400BuildDynamicEndpointTemplateApiResponse apiResponseLocalVar, OBPv400BuildDynamicEndpointTemplateRequest oBPv400BuildDynamicEndpointTemplateRequest);
+        /// <param name="buildDynamicEndpointTemplateRequest"></param>
+        partial void AfterBuildDynamicEndpointTemplate(ref bool suppressDefaultLog, IBuildDynamicEndpointTemplateApiResponse apiResponseLocalVar, BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -838,11 +838,11 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400BuildDynamicEndpointTemplateRequest"></param>
-        private void OnErrorOBPv400BuildDynamicEndpointTemplateDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400BuildDynamicEndpointTemplateRequest oBPv400BuildDynamicEndpointTemplateRequest)
+        /// <param name="buildDynamicEndpointTemplateRequest"></param>
+        private void OnErrorBuildDynamicEndpointTemplateDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400BuildDynamicEndpointTemplate(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, oBPv400BuildDynamicEndpointTemplateRequest);
+            OnErrorBuildDynamicEndpointTemplate(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, buildDynamicEndpointTemplateRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -854,20 +854,20 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400BuildDynamicEndpointTemplateRequest"></param>
-        partial void OnErrorOBPv400BuildDynamicEndpointTemplate(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400BuildDynamicEndpointTemplateRequest oBPv400BuildDynamicEndpointTemplateRequest);
+        /// <param name="buildDynamicEndpointTemplateRequest"></param>
+        partial void OnErrorBuildDynamicEndpointTemplate(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest);
 
         /// <summary>
         /// Create Dynamic Resource Doc endpoint code &lt;p&gt;Create a Dynamic Resource Doc endpoint code.&lt;/p&gt; &lt;p&gt;copy the response and past to PractiseEndpoint, So you can have the benefits of&lt;br /&gt; auto compilation and debug&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; 
         /// </summary>
-        /// <param name="oBPv400BuildDynamicEndpointTemplateRequest">Request body</param>
+        /// <param name="buildDynamicEndpointTemplateRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400BuildDynamicEndpointTemplateApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400BuildDynamicEndpointTemplateApiResponse?> OBPv400BuildDynamicEndpointTemplateOrDefaultAsync(OBPv400BuildDynamicEndpointTemplateRequest oBPv400BuildDynamicEndpointTemplateRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IBuildDynamicEndpointTemplateApiResponse"/>&gt;</returns>
+        public async Task<IBuildDynamicEndpointTemplateApiResponse?> BuildDynamicEndpointTemplateOrDefaultAsync(BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400BuildDynamicEndpointTemplateAsync(oBPv400BuildDynamicEndpointTemplateRequest, cancellationToken).ConfigureAwait(false);
+                return await BuildDynamicEndpointTemplateAsync(buildDynamicEndpointTemplateRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -879,18 +879,18 @@ namespace OpenBankProject.Api
         /// Create Dynamic Resource Doc endpoint code &lt;p&gt;Create a Dynamic Resource Doc endpoint code.&lt;/p&gt; &lt;p&gt;copy the response and past to PractiseEndpoint, So you can have the benefits of&lt;br /&gt; auto compilation and debug&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400BuildDynamicEndpointTemplateRequest">Request body</param>
+        /// <param name="buildDynamicEndpointTemplateRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400BuildDynamicEndpointTemplateApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400BuildDynamicEndpointTemplateApiResponse> OBPv400BuildDynamicEndpointTemplateAsync(OBPv400BuildDynamicEndpointTemplateRequest oBPv400BuildDynamicEndpointTemplateRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IBuildDynamicEndpointTemplateApiResponse"/>&gt;</returns>
+        public async Task<IBuildDynamicEndpointTemplateApiResponse> BuildDynamicEndpointTemplateAsync(BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400BuildDynamicEndpointTemplate(oBPv400BuildDynamicEndpointTemplateRequest);
+                ValidateBuildDynamicEndpointTemplate(buildDynamicEndpointTemplateRequest);
 
-                FormatOBPv400BuildDynamicEndpointTemplate(oBPv400BuildDynamicEndpointTemplateRequest);
+                FormatBuildDynamicEndpointTemplate(buildDynamicEndpointTemplateRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -901,16 +901,16 @@ namespace OpenBankProject.Api
                         ? "/obp/v4.0.0/management/dynamic-resource-docs/endpoint-code"
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/dynamic-resource-docs/endpoint-code");
 
-                    httpRequestMessageLocalVar.Content = (oBPv400BuildDynamicEndpointTemplateRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (buildDynamicEndpointTemplateRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400BuildDynamicEndpointTemplateRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(buildDynamicEndpointTemplateRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -946,8 +946,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400BuildDynamicEndpointTemplateApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400BuildDynamicEndpointTemplateApiResponse>();
-                        OBPv400BuildDynamicEndpointTemplateApiResponse apiResponseLocalVar;
+                        ILogger<BuildDynamicEndpointTemplateApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<BuildDynamicEndpointTemplateApiResponse>();
+                        BuildDynamicEndpointTemplateApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -958,9 +958,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400BuildDynamicEndpointTemplateDefaultImplementation(apiResponseLocalVar, oBPv400BuildDynamicEndpointTemplateRequest);
+                        AfterBuildDynamicEndpointTemplateDefaultImplementation(apiResponseLocalVar, buildDynamicEndpointTemplateRequest);
 
-                        Events.ExecuteOnOBPv400BuildDynamicEndpointTemplate(apiResponseLocalVar);
+                        Events.ExecuteOnBuildDynamicEndpointTemplate(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -972,24 +972,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400BuildDynamicEndpointTemplateDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-resource-docs/endpoint-code", uriBuilderLocalVar.Path, oBPv400BuildDynamicEndpointTemplateRequest);
-                Events.ExecuteOnErrorOBPv400BuildDynamicEndpointTemplate(e);
+                OnErrorBuildDynamicEndpointTemplateDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-resource-docs/endpoint-code", uriBuilderLocalVar.Path, buildDynamicEndpointTemplateRequest);
+                Events.ExecuteOnErrorBuildDynamicEndpointTemplate(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400BuildDynamicEndpointTemplateApiResponse"/>
+        /// The <see cref="BuildDynamicEndpointTemplateApiResponse"/>
         /// </summary>
-        public partial class OBPv400BuildDynamicEndpointTemplateApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400BuildDynamicEndpointTemplateApiResponse
+        public partial class BuildDynamicEndpointTemplateApiResponse : OpenBankProject.Client.ApiResponse, IBuildDynamicEndpointTemplateApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400BuildDynamicEndpointTemplateApiResponse> Logger { get; }
+            public ILogger<BuildDynamicEndpointTemplateApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400BuildDynamicEndpointTemplateApiResponse"/>
+            /// The <see cref="BuildDynamicEndpointTemplateApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -998,14 +998,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400BuildDynamicEndpointTemplateApiResponse(ILogger<OBPv400BuildDynamicEndpointTemplateApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public BuildDynamicEndpointTemplateApiResponse(ILogger<BuildDynamicEndpointTemplateApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400BuildDynamicEndpointTemplateApiResponse"/>
+            /// The <see cref="BuildDynamicEndpointTemplateApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1014,7 +1014,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400BuildDynamicEndpointTemplateApiResponse(ILogger<OBPv400BuildDynamicEndpointTemplateApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public BuildDynamicEndpointTemplateApiResponse(ILogger<BuildDynamicEndpointTemplateApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1032,11 +1032,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400BuildDynamicEndpointTemplate200Response? Ok()
+            public OpenBankProject.Model.BuildDynamicEndpointTemplate200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400BuildDynamicEndpointTemplate200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.BuildDynamicEndpointTemplate200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1045,7 +1045,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400BuildDynamicEndpointTemplate200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.BuildDynamicEndpointTemplate200Response? result)
             {
                 result = null;
 
@@ -1077,21 +1077,21 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400CreateBankLevelDynamicResourceDoc(ref string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest);
+        partial void FormatCreateBankLevelDynamicResourceDoc(ref string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateBankLevelDynamicResourceDoc(string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest)
+        private void ValidateCreateBankLevelDynamicResourceDoc(string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
 
-            if (oBPv400UpdateBankLevelDynamicResourceDocRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400UpdateBankLevelDynamicResourceDocRequest));
+            if (updateBankLevelDynamicResourceDocRequest == null)
+                throw new ArgumentNullException(nameof(updateBankLevelDynamicResourceDocRequest));
         }
 
         /// <summary>
@@ -1099,11 +1099,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
-        private void AfterOBPv400CreateBankLevelDynamicResourceDocDefaultImplementation(IOBPv400CreateBankLevelDynamicResourceDocApiResponse apiResponseLocalVar, string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest)
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
+        private void AfterCreateBankLevelDynamicResourceDocDefaultImplementation(ICreateBankLevelDynamicResourceDocApiResponse apiResponseLocalVar, string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateBankLevelDynamicResourceDoc(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+            AfterCreateBankLevelDynamicResourceDoc(ref suppressDefaultLog, apiResponseLocalVar, bankid, updateBankLevelDynamicResourceDocRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1114,8 +1114,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
-        partial void AfterOBPv400CreateBankLevelDynamicResourceDoc(ref bool suppressDefaultLog, IOBPv400CreateBankLevelDynamicResourceDocApiResponse apiResponseLocalVar, string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest);
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
+        partial void AfterCreateBankLevelDynamicResourceDoc(ref bool suppressDefaultLog, ICreateBankLevelDynamicResourceDocApiResponse apiResponseLocalVar, string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1124,11 +1124,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
-        private void OnErrorOBPv400CreateBankLevelDynamicResourceDocDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest)
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
+        private void OnErrorCreateBankLevelDynamicResourceDocDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateBankLevelDynamicResourceDoc(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+            OnErrorCreateBankLevelDynamicResourceDoc(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, updateBankLevelDynamicResourceDocRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1141,21 +1141,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
-        partial void OnErrorOBPv400CreateBankLevelDynamicResourceDoc(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest);
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
+        partial void OnErrorCreateBankLevelDynamicResourceDoc(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest);
 
         /// <summary>
         /// Create Bank Level Dynamic Resource Doc &lt;p&gt;Create a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateBankLevelDynamicResourceDocApiResponse?> OBPv400CreateBankLevelDynamicResourceDocOrDefaultAsync(string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
+        public async Task<ICreateBankLevelDynamicResourceDocApiResponse?> CreateBankLevelDynamicResourceDocOrDefaultAsync(string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateBankLevelDynamicResourceDocAsync(bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateBankLevelDynamicResourceDocAsync(bankid, updateBankLevelDynamicResourceDocRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1168,18 +1168,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateBankLevelDynamicResourceDocApiResponse> OBPv400CreateBankLevelDynamicResourceDocAsync(string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
+        public async Task<ICreateBankLevelDynamicResourceDocApiResponse> CreateBankLevelDynamicResourceDocAsync(string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateBankLevelDynamicResourceDoc(bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+                ValidateCreateBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest);
 
-                FormatOBPv400CreateBankLevelDynamicResourceDoc(ref bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+                FormatCreateBankLevelDynamicResourceDoc(ref bankid, updateBankLevelDynamicResourceDocRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1191,16 +1191,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400UpdateBankLevelDynamicResourceDocRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateBankLevelDynamicResourceDocRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400UpdateBankLevelDynamicResourceDocRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateBankLevelDynamicResourceDocRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1236,8 +1236,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400CreateBankLevelDynamicResourceDocApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400CreateBankLevelDynamicResourceDocApiResponse>();
-                        OBPv400CreateBankLevelDynamicResourceDocApiResponse apiResponseLocalVar;
+                        ILogger<CreateBankLevelDynamicResourceDocApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateBankLevelDynamicResourceDocApiResponse>();
+                        CreateBankLevelDynamicResourceDocApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1248,9 +1248,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateBankLevelDynamicResourceDocDefaultImplementation(apiResponseLocalVar, bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+                        AfterCreateBankLevelDynamicResourceDocDefaultImplementation(apiResponseLocalVar, bankid, updateBankLevelDynamicResourceDocRequest);
 
-                        Events.ExecuteOnOBPv400CreateBankLevelDynamicResourceDoc(apiResponseLocalVar);
+                        Events.ExecuteOnCreateBankLevelDynamicResourceDoc(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1262,24 +1262,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateBankLevelDynamicResourceDocDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs", uriBuilderLocalVar.Path, bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest);
-                Events.ExecuteOnErrorOBPv400CreateBankLevelDynamicResourceDoc(e);
+                OnErrorCreateBankLevelDynamicResourceDocDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs", uriBuilderLocalVar.Path, bankid, updateBankLevelDynamicResourceDocRequest);
+                Events.ExecuteOnErrorCreateBankLevelDynamicResourceDoc(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400CreateBankLevelDynamicResourceDocApiResponse"/>
+        /// The <see cref="CreateBankLevelDynamicResourceDocApiResponse"/>
         /// </summary>
-        public partial class OBPv400CreateBankLevelDynamicResourceDocApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400CreateBankLevelDynamicResourceDocApiResponse
+        public partial class CreateBankLevelDynamicResourceDocApiResponse : OpenBankProject.Client.ApiResponse, ICreateBankLevelDynamicResourceDocApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400CreateBankLevelDynamicResourceDocApiResponse> Logger { get; }
+            public ILogger<CreateBankLevelDynamicResourceDocApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateBankLevelDynamicResourceDocApiResponse"/>
+            /// The <see cref="CreateBankLevelDynamicResourceDocApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1288,14 +1288,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateBankLevelDynamicResourceDocApiResponse(ILogger<OBPv400CreateBankLevelDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateBankLevelDynamicResourceDocApiResponse(ILogger<CreateBankLevelDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateBankLevelDynamicResourceDocApiResponse"/>
+            /// The <see cref="CreateBankLevelDynamicResourceDocApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1304,7 +1304,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateBankLevelDynamicResourceDocApiResponse(ILogger<OBPv400CreateBankLevelDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateBankLevelDynamicResourceDocApiResponse(ILogger<CreateBankLevelDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1322,11 +1322,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response? Ok()
+            public OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1335,7 +1335,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response? result)
             {
                 result = null;
 
@@ -1373,28 +1373,28 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400CreateDynamicResourceDoc(OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest);
+        partial void FormatCreateDynamicResourceDoc(UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateDynamicResourceDoc(OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest)
+        private void ValidateCreateDynamicResourceDoc(UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest)
         {
-            if (oBPv400UpdateBankLevelDynamicResourceDocRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400UpdateBankLevelDynamicResourceDocRequest));
+            if (updateBankLevelDynamicResourceDocRequest == null)
+                throw new ArgumentNullException(nameof(updateBankLevelDynamicResourceDocRequest));
         }
 
         /// <summary>
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
-        private void AfterOBPv400CreateDynamicResourceDocDefaultImplementation(IOBPv400CreateDynamicResourceDocApiResponse apiResponseLocalVar, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest)
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
+        private void AfterCreateDynamicResourceDocDefaultImplementation(ICreateDynamicResourceDocApiResponse apiResponseLocalVar, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateDynamicResourceDoc(ref suppressDefaultLog, apiResponseLocalVar, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+            AfterCreateDynamicResourceDoc(ref suppressDefaultLog, apiResponseLocalVar, updateBankLevelDynamicResourceDocRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1404,8 +1404,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
-        partial void AfterOBPv400CreateDynamicResourceDoc(ref bool suppressDefaultLog, IOBPv400CreateDynamicResourceDocApiResponse apiResponseLocalVar, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest);
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
+        partial void AfterCreateDynamicResourceDoc(ref bool suppressDefaultLog, ICreateDynamicResourceDocApiResponse apiResponseLocalVar, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1413,11 +1413,11 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
-        private void OnErrorOBPv400CreateDynamicResourceDocDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest)
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
+        private void OnErrorCreateDynamicResourceDocDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateDynamicResourceDoc(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+            OnErrorCreateDynamicResourceDoc(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, updateBankLevelDynamicResourceDocRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1429,20 +1429,20 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
-        partial void OnErrorOBPv400CreateDynamicResourceDoc(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest);
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
+        partial void OnErrorCreateDynamicResourceDoc(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest);
 
         /// <summary>
         /// Create Dynamic Resource Doc &lt;p&gt;Create a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </summary>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateDynamicResourceDocApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateDynamicResourceDocApiResponse?> OBPv400CreateDynamicResourceDocOrDefaultAsync(OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateDynamicResourceDocApiResponse"/>&gt;</returns>
+        public async Task<ICreateDynamicResourceDocApiResponse?> CreateDynamicResourceDocOrDefaultAsync(UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateDynamicResourceDocAsync(oBPv400UpdateBankLevelDynamicResourceDocRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateDynamicResourceDocAsync(updateBankLevelDynamicResourceDocRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1454,18 +1454,18 @@ namespace OpenBankProject.Api
         /// Create Dynamic Resource Doc &lt;p&gt;Create a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateDynamicResourceDocApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateDynamicResourceDocApiResponse> OBPv400CreateDynamicResourceDocAsync(OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateDynamicResourceDocApiResponse"/>&gt;</returns>
+        public async Task<ICreateDynamicResourceDocApiResponse> CreateDynamicResourceDocAsync(UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateDynamicResourceDoc(oBPv400UpdateBankLevelDynamicResourceDocRequest);
+                ValidateCreateDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest);
 
-                FormatOBPv400CreateDynamicResourceDoc(oBPv400UpdateBankLevelDynamicResourceDocRequest);
+                FormatCreateDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1476,16 +1476,16 @@ namespace OpenBankProject.Api
                         ? "/obp/v4.0.0/management/dynamic-resource-docs"
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/dynamic-resource-docs");
 
-                    httpRequestMessageLocalVar.Content = (oBPv400UpdateBankLevelDynamicResourceDocRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateBankLevelDynamicResourceDocRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400UpdateBankLevelDynamicResourceDocRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateBankLevelDynamicResourceDocRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1521,8 +1521,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400CreateDynamicResourceDocApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400CreateDynamicResourceDocApiResponse>();
-                        OBPv400CreateDynamicResourceDocApiResponse apiResponseLocalVar;
+                        ILogger<CreateDynamicResourceDocApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateDynamicResourceDocApiResponse>();
+                        CreateDynamicResourceDocApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1533,9 +1533,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateDynamicResourceDocDefaultImplementation(apiResponseLocalVar, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+                        AfterCreateDynamicResourceDocDefaultImplementation(apiResponseLocalVar, updateBankLevelDynamicResourceDocRequest);
 
-                        Events.ExecuteOnOBPv400CreateDynamicResourceDoc(apiResponseLocalVar);
+                        Events.ExecuteOnCreateDynamicResourceDoc(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1547,24 +1547,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateDynamicResourceDocDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-resource-docs", uriBuilderLocalVar.Path, oBPv400UpdateBankLevelDynamicResourceDocRequest);
-                Events.ExecuteOnErrorOBPv400CreateDynamicResourceDoc(e);
+                OnErrorCreateDynamicResourceDocDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-resource-docs", uriBuilderLocalVar.Path, updateBankLevelDynamicResourceDocRequest);
+                Events.ExecuteOnErrorCreateDynamicResourceDoc(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400CreateDynamicResourceDocApiResponse"/>
+        /// The <see cref="CreateDynamicResourceDocApiResponse"/>
         /// </summary>
-        public partial class OBPv400CreateDynamicResourceDocApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400CreateDynamicResourceDocApiResponse
+        public partial class CreateDynamicResourceDocApiResponse : OpenBankProject.Client.ApiResponse, ICreateDynamicResourceDocApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400CreateDynamicResourceDocApiResponse> Logger { get; }
+            public ILogger<CreateDynamicResourceDocApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateDynamicResourceDocApiResponse"/>
+            /// The <see cref="CreateDynamicResourceDocApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1573,14 +1573,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateDynamicResourceDocApiResponse(ILogger<OBPv400CreateDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateDynamicResourceDocApiResponse(ILogger<CreateDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateDynamicResourceDocApiResponse"/>
+            /// The <see cref="CreateDynamicResourceDocApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1589,7 +1589,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateDynamicResourceDocApiResponse(ILogger<OBPv400CreateDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateDynamicResourceDocApiResponse(ILogger<CreateDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1607,11 +1607,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response? Ok()
+            public OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1620,7 +1620,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response? result)
             {
                 result = null;
 
@@ -1652,14 +1652,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400DeleteBankLevelDynamicResourceDoc(ref string bankid);
+        partial void FormatDeleteBankLevelDynamicResourceDoc(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteBankLevelDynamicResourceDoc(string bankid)
+        private void ValidateDeleteBankLevelDynamicResourceDoc(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1670,10 +1670,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv400DeleteBankLevelDynamicResourceDocDefaultImplementation(IOBPv400DeleteBankLevelDynamicResourceDocApiResponse apiResponseLocalVar, string bankid)
+        private void AfterDeleteBankLevelDynamicResourceDocDefaultImplementation(IDeleteBankLevelDynamicResourceDocApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteBankLevelDynamicResourceDoc(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterDeleteBankLevelDynamicResourceDoc(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1684,7 +1684,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv400DeleteBankLevelDynamicResourceDoc(ref bool suppressDefaultLog, IOBPv400DeleteBankLevelDynamicResourceDocApiResponse apiResponseLocalVar, string bankid);
+        partial void AfterDeleteBankLevelDynamicResourceDoc(ref bool suppressDefaultLog, IDeleteBankLevelDynamicResourceDocApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1693,10 +1693,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv400DeleteBankLevelDynamicResourceDocDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        private void OnErrorDeleteBankLevelDynamicResourceDocDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteBankLevelDynamicResourceDoc(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorDeleteBankLevelDynamicResourceDoc(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1709,19 +1709,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv400DeleteBankLevelDynamicResourceDoc(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        partial void OnErrorDeleteBankLevelDynamicResourceDoc(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Delete Bank Level Dynamic Resource Doc &lt;p&gt;Delete a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteBankLevelDynamicResourceDocApiResponse?> OBPv400DeleteBankLevelDynamicResourceDocOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
+        public async Task<IDeleteBankLevelDynamicResourceDocApiResponse?> DeleteBankLevelDynamicResourceDocOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteBankLevelDynamicResourceDocAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await DeleteBankLevelDynamicResourceDocAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1735,16 +1735,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteBankLevelDynamicResourceDocApiResponse> OBPv400DeleteBankLevelDynamicResourceDocAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
+        public async Task<IDeleteBankLevelDynamicResourceDocApiResponse> DeleteBankLevelDynamicResourceDocAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteBankLevelDynamicResourceDoc(bankid);
+                ValidateDeleteBankLevelDynamicResourceDoc(bankid);
 
-                FormatOBPv400DeleteBankLevelDynamicResourceDoc(ref bankid);
+                FormatDeleteBankLevelDynamicResourceDoc(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1761,7 +1761,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1779,8 +1779,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400DeleteBankLevelDynamicResourceDocApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400DeleteBankLevelDynamicResourceDocApiResponse>();
-                        OBPv400DeleteBankLevelDynamicResourceDocApiResponse apiResponseLocalVar;
+                        ILogger<DeleteBankLevelDynamicResourceDocApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteBankLevelDynamicResourceDocApiResponse>();
+                        DeleteBankLevelDynamicResourceDocApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1791,9 +1791,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteBankLevelDynamicResourceDocDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterDeleteBankLevelDynamicResourceDocDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv400DeleteBankLevelDynamicResourceDoc(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteBankLevelDynamicResourceDoc(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1805,24 +1805,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteBankLevelDynamicResourceDocDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv400DeleteBankLevelDynamicResourceDoc(e);
+                OnErrorDeleteBankLevelDynamicResourceDocDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorDeleteBankLevelDynamicResourceDoc(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400DeleteBankLevelDynamicResourceDocApiResponse"/>
+        /// The <see cref="DeleteBankLevelDynamicResourceDocApiResponse"/>
         /// </summary>
-        public partial class OBPv400DeleteBankLevelDynamicResourceDocApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400DeleteBankLevelDynamicResourceDocApiResponse
+        public partial class DeleteBankLevelDynamicResourceDocApiResponse : OpenBankProject.Client.ApiResponse, IDeleteBankLevelDynamicResourceDocApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400DeleteBankLevelDynamicResourceDocApiResponse> Logger { get; }
+            public ILogger<DeleteBankLevelDynamicResourceDocApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteBankLevelDynamicResourceDocApiResponse"/>
+            /// The <see cref="DeleteBankLevelDynamicResourceDocApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1831,14 +1831,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteBankLevelDynamicResourceDocApiResponse(ILogger<OBPv400DeleteBankLevelDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DeleteBankLevelDynamicResourceDocApiResponse(ILogger<DeleteBankLevelDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteBankLevelDynamicResourceDocApiResponse"/>
+            /// The <see cref="DeleteBankLevelDynamicResourceDocApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1847,7 +1847,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteBankLevelDynamicResourceDocApiResponse(ILogger<OBPv400DeleteBankLevelDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DeleteBankLevelDynamicResourceDocApiResponse(ILogger<DeleteBankLevelDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1888,10 +1888,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv400DeleteDynamicResourceDocDefaultImplementation(IOBPv400DeleteDynamicResourceDocApiResponse apiResponseLocalVar)
+        private void AfterDeleteDynamicResourceDocDefaultImplementation(IDeleteDynamicResourceDocApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteDynamicResourceDoc(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterDeleteDynamicResourceDoc(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1901,7 +1901,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv400DeleteDynamicResourceDoc(ref bool suppressDefaultLog, IOBPv400DeleteDynamicResourceDocApiResponse apiResponseLocalVar);
+        partial void AfterDeleteDynamicResourceDoc(ref bool suppressDefaultLog, IDeleteDynamicResourceDocApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1909,10 +1909,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv400DeleteDynamicResourceDocDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorDeleteDynamicResourceDocDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteDynamicResourceDoc(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorDeleteDynamicResourceDoc(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1924,18 +1924,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv400DeleteDynamicResourceDoc(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorDeleteDynamicResourceDoc(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Delete Dynamic Resource Doc &lt;p&gt;Delete a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteDynamicResourceDocApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteDynamicResourceDocApiResponse?> OBPv400DeleteDynamicResourceDocOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteDynamicResourceDocApiResponse"/>&gt;</returns>
+        public async Task<IDeleteDynamicResourceDocApiResponse?> DeleteDynamicResourceDocOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteDynamicResourceDocAsync(cancellationToken).ConfigureAwait(false);
+                return await DeleteDynamicResourceDocAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1948,8 +1948,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteDynamicResourceDocApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteDynamicResourceDocApiResponse> OBPv400DeleteDynamicResourceDocAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteDynamicResourceDocApiResponse"/>&gt;</returns>
+        public async Task<IDeleteDynamicResourceDocApiResponse> DeleteDynamicResourceDocAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -1969,7 +1969,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1987,8 +1987,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400DeleteDynamicResourceDocApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400DeleteDynamicResourceDocApiResponse>();
-                        OBPv400DeleteDynamicResourceDocApiResponse apiResponseLocalVar;
+                        ILogger<DeleteDynamicResourceDocApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteDynamicResourceDocApiResponse>();
+                        DeleteDynamicResourceDocApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1999,9 +1999,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteDynamicResourceDocDefaultImplementation(apiResponseLocalVar);
+                        AfterDeleteDynamicResourceDocDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv400DeleteDynamicResourceDoc(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteDynamicResourceDoc(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2013,24 +2013,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteDynamicResourceDocDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv400DeleteDynamicResourceDoc(e);
+                OnErrorDeleteDynamicResourceDocDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorDeleteDynamicResourceDoc(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400DeleteDynamicResourceDocApiResponse"/>
+        /// The <see cref="DeleteDynamicResourceDocApiResponse"/>
         /// </summary>
-        public partial class OBPv400DeleteDynamicResourceDocApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400DeleteDynamicResourceDocApiResponse
+        public partial class DeleteDynamicResourceDocApiResponse : OpenBankProject.Client.ApiResponse, IDeleteDynamicResourceDocApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400DeleteDynamicResourceDocApiResponse> Logger { get; }
+            public ILogger<DeleteDynamicResourceDocApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteDynamicResourceDocApiResponse"/>
+            /// The <see cref="DeleteDynamicResourceDocApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2039,14 +2039,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteDynamicResourceDocApiResponse(ILogger<OBPv400DeleteDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DeleteDynamicResourceDocApiResponse(ILogger<DeleteDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteDynamicResourceDocApiResponse"/>
+            /// The <see cref="DeleteDynamicResourceDocApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2055,7 +2055,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteDynamicResourceDocApiResponse(ILogger<OBPv400DeleteDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DeleteDynamicResourceDocApiResponse(ILogger<DeleteDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2086,14 +2086,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetAllBankLevelDynamicResourceDocs(ref string bankid);
+        partial void FormatGetAllBankLevelDynamicResourceDocs(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetAllBankLevelDynamicResourceDocs(string bankid)
+        private void ValidateGetAllBankLevelDynamicResourceDocs(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -2104,10 +2104,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv400GetAllBankLevelDynamicResourceDocsDefaultImplementation(IOBPv400GetAllBankLevelDynamicResourceDocsApiResponse apiResponseLocalVar, string bankid)
+        private void AfterGetAllBankLevelDynamicResourceDocsDefaultImplementation(IGetAllBankLevelDynamicResourceDocsApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetAllBankLevelDynamicResourceDocs(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterGetAllBankLevelDynamicResourceDocs(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2118,7 +2118,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv400GetAllBankLevelDynamicResourceDocs(ref bool suppressDefaultLog, IOBPv400GetAllBankLevelDynamicResourceDocsApiResponse apiResponseLocalVar, string bankid);
+        partial void AfterGetAllBankLevelDynamicResourceDocs(ref bool suppressDefaultLog, IGetAllBankLevelDynamicResourceDocsApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2127,10 +2127,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv400GetAllBankLevelDynamicResourceDocsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        private void OnErrorGetAllBankLevelDynamicResourceDocsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetAllBankLevelDynamicResourceDocs(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorGetAllBankLevelDynamicResourceDocs(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2143,19 +2143,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv400GetAllBankLevelDynamicResourceDocs(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        partial void OnErrorGetAllBankLevelDynamicResourceDocs(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Get all Bank Level Dynamic Resource Docs &lt;p&gt;Get all Bank Level Dynamic Resource Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllBankLevelDynamicResourceDocsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllBankLevelDynamicResourceDocsApiResponse?> OBPv400GetAllBankLevelDynamicResourceDocsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllBankLevelDynamicResourceDocsApiResponse"/>&gt;</returns>
+        public async Task<IGetAllBankLevelDynamicResourceDocsApiResponse?> GetAllBankLevelDynamicResourceDocsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetAllBankLevelDynamicResourceDocsAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await GetAllBankLevelDynamicResourceDocsAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2169,16 +2169,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllBankLevelDynamicResourceDocsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllBankLevelDynamicResourceDocsApiResponse> OBPv400GetAllBankLevelDynamicResourceDocsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllBankLevelDynamicResourceDocsApiResponse"/>&gt;</returns>
+        public async Task<IGetAllBankLevelDynamicResourceDocsApiResponse> GetAllBankLevelDynamicResourceDocsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetAllBankLevelDynamicResourceDocs(bankid);
+                ValidateGetAllBankLevelDynamicResourceDocs(bankid);
 
-                FormatOBPv400GetAllBankLevelDynamicResourceDocs(ref bankid);
+                FormatGetAllBankLevelDynamicResourceDocs(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2195,7 +2195,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2222,8 +2222,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetAllBankLevelDynamicResourceDocsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetAllBankLevelDynamicResourceDocsApiResponse>();
-                        OBPv400GetAllBankLevelDynamicResourceDocsApiResponse apiResponseLocalVar;
+                        ILogger<GetAllBankLevelDynamicResourceDocsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAllBankLevelDynamicResourceDocsApiResponse>();
+                        GetAllBankLevelDynamicResourceDocsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2234,9 +2234,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetAllBankLevelDynamicResourceDocsDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterGetAllBankLevelDynamicResourceDocsDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv400GetAllBankLevelDynamicResourceDocs(apiResponseLocalVar);
+                        Events.ExecuteOnGetAllBankLevelDynamicResourceDocs(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2248,24 +2248,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetAllBankLevelDynamicResourceDocsDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv400GetAllBankLevelDynamicResourceDocs(e);
+                OnErrorGetAllBankLevelDynamicResourceDocsDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetAllBankLevelDynamicResourceDocs(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetAllBankLevelDynamicResourceDocsApiResponse"/>
+        /// The <see cref="GetAllBankLevelDynamicResourceDocsApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetAllBankLevelDynamicResourceDocsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetAllBankLevelDynamicResourceDocsApiResponse
+        public partial class GetAllBankLevelDynamicResourceDocsApiResponse : OpenBankProject.Client.ApiResponse, IGetAllBankLevelDynamicResourceDocsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetAllBankLevelDynamicResourceDocsApiResponse> Logger { get; }
+            public ILogger<GetAllBankLevelDynamicResourceDocsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllBankLevelDynamicResourceDocsApiResponse"/>
+            /// The <see cref="GetAllBankLevelDynamicResourceDocsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2274,14 +2274,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllBankLevelDynamicResourceDocsApiResponse(ILogger<OBPv400GetAllBankLevelDynamicResourceDocsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetAllBankLevelDynamicResourceDocsApiResponse(ILogger<GetAllBankLevelDynamicResourceDocsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllBankLevelDynamicResourceDocsApiResponse"/>
+            /// The <see cref="GetAllBankLevelDynamicResourceDocsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2290,7 +2290,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllBankLevelDynamicResourceDocsApiResponse(ILogger<OBPv400GetAllBankLevelDynamicResourceDocsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetAllBankLevelDynamicResourceDocsApiResponse(ILogger<GetAllBankLevelDynamicResourceDocsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2308,11 +2308,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllDynamicResourceDocs200Response? Ok()
+            public OpenBankProject.Model.GetAllDynamicResourceDocs200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllDynamicResourceDocs200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllDynamicResourceDocs200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2321,7 +2321,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllDynamicResourceDocs200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllDynamicResourceDocs200Response? result)
             {
                 result = null;
 
@@ -2363,10 +2363,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv400GetAllDynamicResourceDocsDefaultImplementation(IOBPv400GetAllDynamicResourceDocsApiResponse apiResponseLocalVar)
+        private void AfterGetAllDynamicResourceDocsDefaultImplementation(IGetAllDynamicResourceDocsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetAllDynamicResourceDocs(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetAllDynamicResourceDocs(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2376,7 +2376,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv400GetAllDynamicResourceDocs(ref bool suppressDefaultLog, IOBPv400GetAllDynamicResourceDocsApiResponse apiResponseLocalVar);
+        partial void AfterGetAllDynamicResourceDocs(ref bool suppressDefaultLog, IGetAllDynamicResourceDocsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2384,10 +2384,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv400GetAllDynamicResourceDocsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetAllDynamicResourceDocsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetAllDynamicResourceDocs(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetAllDynamicResourceDocs(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2399,18 +2399,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv400GetAllDynamicResourceDocs(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetAllDynamicResourceDocs(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get all Dynamic Resource Docs &lt;p&gt;Get all Dynamic Resource Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllDynamicResourceDocsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllDynamicResourceDocsApiResponse?> OBPv400GetAllDynamicResourceDocsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllDynamicResourceDocsApiResponse"/>&gt;</returns>
+        public async Task<IGetAllDynamicResourceDocsApiResponse?> GetAllDynamicResourceDocsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetAllDynamicResourceDocsAsync(cancellationToken).ConfigureAwait(false);
+                return await GetAllDynamicResourceDocsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2423,8 +2423,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllDynamicResourceDocsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllDynamicResourceDocsApiResponse> OBPv400GetAllDynamicResourceDocsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllDynamicResourceDocsApiResponse"/>&gt;</returns>
+        public async Task<IGetAllDynamicResourceDocsApiResponse> GetAllDynamicResourceDocsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -2444,7 +2444,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2471,8 +2471,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetAllDynamicResourceDocsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetAllDynamicResourceDocsApiResponse>();
-                        OBPv400GetAllDynamicResourceDocsApiResponse apiResponseLocalVar;
+                        ILogger<GetAllDynamicResourceDocsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAllDynamicResourceDocsApiResponse>();
+                        GetAllDynamicResourceDocsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2483,9 +2483,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetAllDynamicResourceDocsDefaultImplementation(apiResponseLocalVar);
+                        AfterGetAllDynamicResourceDocsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv400GetAllDynamicResourceDocs(apiResponseLocalVar);
+                        Events.ExecuteOnGetAllDynamicResourceDocs(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2497,24 +2497,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetAllDynamicResourceDocsDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-resource-docs", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv400GetAllDynamicResourceDocs(e);
+                OnErrorGetAllDynamicResourceDocsDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-resource-docs", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetAllDynamicResourceDocs(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetAllDynamicResourceDocsApiResponse"/>
+        /// The <see cref="GetAllDynamicResourceDocsApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetAllDynamicResourceDocsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetAllDynamicResourceDocsApiResponse
+        public partial class GetAllDynamicResourceDocsApiResponse : OpenBankProject.Client.ApiResponse, IGetAllDynamicResourceDocsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetAllDynamicResourceDocsApiResponse> Logger { get; }
+            public ILogger<GetAllDynamicResourceDocsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllDynamicResourceDocsApiResponse"/>
+            /// The <see cref="GetAllDynamicResourceDocsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2523,14 +2523,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllDynamicResourceDocsApiResponse(ILogger<OBPv400GetAllDynamicResourceDocsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetAllDynamicResourceDocsApiResponse(ILogger<GetAllDynamicResourceDocsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllDynamicResourceDocsApiResponse"/>
+            /// The <see cref="GetAllDynamicResourceDocsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2539,7 +2539,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllDynamicResourceDocsApiResponse(ILogger<OBPv400GetAllDynamicResourceDocsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetAllDynamicResourceDocsApiResponse(ILogger<GetAllDynamicResourceDocsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2557,11 +2557,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllDynamicResourceDocs200Response? Ok()
+            public OpenBankProject.Model.GetAllDynamicResourceDocs200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllDynamicResourceDocs200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllDynamicResourceDocs200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2570,7 +2570,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllDynamicResourceDocs200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllDynamicResourceDocs200Response? result)
             {
                 result = null;
 
@@ -2602,14 +2602,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetBankLevelDynamicResourceDoc(ref string bankid);
+        partial void FormatGetBankLevelDynamicResourceDoc(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetBankLevelDynamicResourceDoc(string bankid)
+        private void ValidateGetBankLevelDynamicResourceDoc(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -2620,10 +2620,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv400GetBankLevelDynamicResourceDocDefaultImplementation(IOBPv400GetBankLevelDynamicResourceDocApiResponse apiResponseLocalVar, string bankid)
+        private void AfterGetBankLevelDynamicResourceDocDefaultImplementation(IGetBankLevelDynamicResourceDocApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetBankLevelDynamicResourceDoc(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterGetBankLevelDynamicResourceDoc(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2634,7 +2634,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv400GetBankLevelDynamicResourceDoc(ref bool suppressDefaultLog, IOBPv400GetBankLevelDynamicResourceDocApiResponse apiResponseLocalVar, string bankid);
+        partial void AfterGetBankLevelDynamicResourceDoc(ref bool suppressDefaultLog, IGetBankLevelDynamicResourceDocApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2643,10 +2643,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv400GetBankLevelDynamicResourceDocDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        private void OnErrorGetBankLevelDynamicResourceDocDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetBankLevelDynamicResourceDoc(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorGetBankLevelDynamicResourceDoc(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2659,19 +2659,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv400GetBankLevelDynamicResourceDoc(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        partial void OnErrorGetBankLevelDynamicResourceDoc(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Get Bank Level Dynamic Resource Doc by Id &lt;p&gt;Get a Bank Level Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetBankLevelDynamicResourceDocApiResponse?> OBPv400GetBankLevelDynamicResourceDocOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
+        public async Task<IGetBankLevelDynamicResourceDocApiResponse?> GetBankLevelDynamicResourceDocOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetBankLevelDynamicResourceDocAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await GetBankLevelDynamicResourceDocAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2685,16 +2685,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetBankLevelDynamicResourceDocApiResponse> OBPv400GetBankLevelDynamicResourceDocAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
+        public async Task<IGetBankLevelDynamicResourceDocApiResponse> GetBankLevelDynamicResourceDocAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetBankLevelDynamicResourceDoc(bankid);
+                ValidateGetBankLevelDynamicResourceDoc(bankid);
 
-                FormatOBPv400GetBankLevelDynamicResourceDoc(ref bankid);
+                FormatGetBankLevelDynamicResourceDoc(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2711,7 +2711,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2738,8 +2738,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetBankLevelDynamicResourceDocApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetBankLevelDynamicResourceDocApiResponse>();
-                        OBPv400GetBankLevelDynamicResourceDocApiResponse apiResponseLocalVar;
+                        ILogger<GetBankLevelDynamicResourceDocApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetBankLevelDynamicResourceDocApiResponse>();
+                        GetBankLevelDynamicResourceDocApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2750,9 +2750,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetBankLevelDynamicResourceDocDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterGetBankLevelDynamicResourceDocDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv400GetBankLevelDynamicResourceDoc(apiResponseLocalVar);
+                        Events.ExecuteOnGetBankLevelDynamicResourceDoc(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2764,24 +2764,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetBankLevelDynamicResourceDocDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv400GetBankLevelDynamicResourceDoc(e);
+                OnErrorGetBankLevelDynamicResourceDocDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetBankLevelDynamicResourceDoc(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetBankLevelDynamicResourceDocApiResponse"/>
+        /// The <see cref="GetBankLevelDynamicResourceDocApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetBankLevelDynamicResourceDocApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetBankLevelDynamicResourceDocApiResponse
+        public partial class GetBankLevelDynamicResourceDocApiResponse : OpenBankProject.Client.ApiResponse, IGetBankLevelDynamicResourceDocApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetBankLevelDynamicResourceDocApiResponse> Logger { get; }
+            public ILogger<GetBankLevelDynamicResourceDocApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetBankLevelDynamicResourceDocApiResponse"/>
+            /// The <see cref="GetBankLevelDynamicResourceDocApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2790,14 +2790,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetBankLevelDynamicResourceDocApiResponse(ILogger<OBPv400GetBankLevelDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetBankLevelDynamicResourceDocApiResponse(ILogger<GetBankLevelDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetBankLevelDynamicResourceDocApiResponse"/>
+            /// The <see cref="GetBankLevelDynamicResourceDocApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2806,7 +2806,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetBankLevelDynamicResourceDocApiResponse(ILogger<OBPv400GetBankLevelDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetBankLevelDynamicResourceDocApiResponse(ILogger<GetBankLevelDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2824,11 +2824,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response? Ok()
+            public OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2837,7 +2837,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response? result)
             {
                 result = null;
 
@@ -2879,10 +2879,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv400GetDynamicResourceDocDefaultImplementation(IOBPv400GetDynamicResourceDocApiResponse apiResponseLocalVar)
+        private void AfterGetDynamicResourceDocDefaultImplementation(IGetDynamicResourceDocApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetDynamicResourceDoc(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetDynamicResourceDoc(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2892,7 +2892,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv400GetDynamicResourceDoc(ref bool suppressDefaultLog, IOBPv400GetDynamicResourceDocApiResponse apiResponseLocalVar);
+        partial void AfterGetDynamicResourceDoc(ref bool suppressDefaultLog, IGetDynamicResourceDocApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2900,10 +2900,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv400GetDynamicResourceDocDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetDynamicResourceDocDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetDynamicResourceDoc(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetDynamicResourceDoc(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2915,18 +2915,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv400GetDynamicResourceDoc(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetDynamicResourceDoc(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Dynamic Resource Doc by Id &lt;p&gt;Get a Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetDynamicResourceDocApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetDynamicResourceDocApiResponse?> OBPv400GetDynamicResourceDocOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetDynamicResourceDocApiResponse"/>&gt;</returns>
+        public async Task<IGetDynamicResourceDocApiResponse?> GetDynamicResourceDocOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetDynamicResourceDocAsync(cancellationToken).ConfigureAwait(false);
+                return await GetDynamicResourceDocAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2939,8 +2939,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetDynamicResourceDocApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetDynamicResourceDocApiResponse> OBPv400GetDynamicResourceDocAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetDynamicResourceDocApiResponse"/>&gt;</returns>
+        public async Task<IGetDynamicResourceDocApiResponse> GetDynamicResourceDocAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -2960,7 +2960,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2987,8 +2987,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetDynamicResourceDocApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetDynamicResourceDocApiResponse>();
-                        OBPv400GetDynamicResourceDocApiResponse apiResponseLocalVar;
+                        ILogger<GetDynamicResourceDocApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetDynamicResourceDocApiResponse>();
+                        GetDynamicResourceDocApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2999,9 +2999,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetDynamicResourceDocDefaultImplementation(apiResponseLocalVar);
+                        AfterGetDynamicResourceDocDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv400GetDynamicResourceDoc(apiResponseLocalVar);
+                        Events.ExecuteOnGetDynamicResourceDoc(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3013,24 +3013,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetDynamicResourceDocDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv400GetDynamicResourceDoc(e);
+                OnErrorGetDynamicResourceDocDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetDynamicResourceDoc(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetDynamicResourceDocApiResponse"/>
+        /// The <see cref="GetDynamicResourceDocApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetDynamicResourceDocApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetDynamicResourceDocApiResponse
+        public partial class GetDynamicResourceDocApiResponse : OpenBankProject.Client.ApiResponse, IGetDynamicResourceDocApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetDynamicResourceDocApiResponse> Logger { get; }
+            public ILogger<GetDynamicResourceDocApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetDynamicResourceDocApiResponse"/>
+            /// The <see cref="GetDynamicResourceDocApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3039,14 +3039,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetDynamicResourceDocApiResponse(ILogger<OBPv400GetDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetDynamicResourceDocApiResponse(ILogger<GetDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetDynamicResourceDocApiResponse"/>
+            /// The <see cref="GetDynamicResourceDocApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3055,7 +3055,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetDynamicResourceDocApiResponse(ILogger<OBPv400GetDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetDynamicResourceDocApiResponse(ILogger<GetDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -3073,11 +3073,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response? Ok()
+            public OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -3086,7 +3086,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response? result)
             {
                 result = null;
 
@@ -3118,21 +3118,21 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400UpdateBankLevelDynamicResourceDoc(ref string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest);
+        partial void FormatUpdateBankLevelDynamicResourceDoc(ref string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400UpdateBankLevelDynamicResourceDoc(string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest)
+        private void ValidateUpdateBankLevelDynamicResourceDoc(string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
 
-            if (oBPv400UpdateBankLevelDynamicResourceDocRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400UpdateBankLevelDynamicResourceDocRequest));
+            if (updateBankLevelDynamicResourceDocRequest == null)
+                throw new ArgumentNullException(nameof(updateBankLevelDynamicResourceDocRequest));
         }
 
         /// <summary>
@@ -3140,11 +3140,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
-        private void AfterOBPv400UpdateBankLevelDynamicResourceDocDefaultImplementation(IOBPv400UpdateBankLevelDynamicResourceDocApiResponse apiResponseLocalVar, string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest)
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
+        private void AfterUpdateBankLevelDynamicResourceDocDefaultImplementation(IUpdateBankLevelDynamicResourceDocApiResponse apiResponseLocalVar, string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400UpdateBankLevelDynamicResourceDoc(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+            AfterUpdateBankLevelDynamicResourceDoc(ref suppressDefaultLog, apiResponseLocalVar, bankid, updateBankLevelDynamicResourceDocRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3155,8 +3155,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
-        partial void AfterOBPv400UpdateBankLevelDynamicResourceDoc(ref bool suppressDefaultLog, IOBPv400UpdateBankLevelDynamicResourceDocApiResponse apiResponseLocalVar, string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest);
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
+        partial void AfterUpdateBankLevelDynamicResourceDoc(ref bool suppressDefaultLog, IUpdateBankLevelDynamicResourceDocApiResponse apiResponseLocalVar, string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3165,11 +3165,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
-        private void OnErrorOBPv400UpdateBankLevelDynamicResourceDocDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest)
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
+        private void OnErrorUpdateBankLevelDynamicResourceDocDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400UpdateBankLevelDynamicResourceDoc(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+            OnErrorUpdateBankLevelDynamicResourceDoc(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, updateBankLevelDynamicResourceDocRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3182,21 +3182,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
-        partial void OnErrorOBPv400UpdateBankLevelDynamicResourceDoc(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest);
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
+        partial void OnErrorUpdateBankLevelDynamicResourceDoc(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest);
 
         /// <summary>
         /// Update Bank Level Dynamic Resource Doc &lt;p&gt;Update a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateBankLevelDynamicResourceDocApiResponse?> OBPv400UpdateBankLevelDynamicResourceDocOrDefaultAsync(string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
+        public async Task<IUpdateBankLevelDynamicResourceDocApiResponse?> UpdateBankLevelDynamicResourceDocOrDefaultAsync(string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400UpdateBankLevelDynamicResourceDocAsync(bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateBankLevelDynamicResourceDocAsync(bankid, updateBankLevelDynamicResourceDocRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3209,18 +3209,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateBankLevelDynamicResourceDocApiResponse> OBPv400UpdateBankLevelDynamicResourceDocAsync(string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankLevelDynamicResourceDocApiResponse"/>&gt;</returns>
+        public async Task<IUpdateBankLevelDynamicResourceDocApiResponse> UpdateBankLevelDynamicResourceDocAsync(string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400UpdateBankLevelDynamicResourceDoc(bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+                ValidateUpdateBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest);
 
-                FormatOBPv400UpdateBankLevelDynamicResourceDoc(ref bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+                FormatUpdateBankLevelDynamicResourceDoc(ref bankid, updateBankLevelDynamicResourceDocRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3232,16 +3232,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400UpdateBankLevelDynamicResourceDocRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateBankLevelDynamicResourceDocRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400UpdateBankLevelDynamicResourceDocRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateBankLevelDynamicResourceDocRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3277,8 +3277,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400UpdateBankLevelDynamicResourceDocApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400UpdateBankLevelDynamicResourceDocApiResponse>();
-                        OBPv400UpdateBankLevelDynamicResourceDocApiResponse apiResponseLocalVar;
+                        ILogger<UpdateBankLevelDynamicResourceDocApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<UpdateBankLevelDynamicResourceDocApiResponse>();
+                        UpdateBankLevelDynamicResourceDocApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3289,9 +3289,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400UpdateBankLevelDynamicResourceDocDefaultImplementation(apiResponseLocalVar, bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+                        AfterUpdateBankLevelDynamicResourceDocDefaultImplementation(apiResponseLocalVar, bankid, updateBankLevelDynamicResourceDocRequest);
 
-                        Events.ExecuteOnOBPv400UpdateBankLevelDynamicResourceDoc(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateBankLevelDynamicResourceDoc(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3303,24 +3303,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400UpdateBankLevelDynamicResourceDocDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID", uriBuilderLocalVar.Path, bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest);
-                Events.ExecuteOnErrorOBPv400UpdateBankLevelDynamicResourceDoc(e);
+                OnErrorUpdateBankLevelDynamicResourceDocDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID", uriBuilderLocalVar.Path, bankid, updateBankLevelDynamicResourceDocRequest);
+                Events.ExecuteOnErrorUpdateBankLevelDynamicResourceDoc(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400UpdateBankLevelDynamicResourceDocApiResponse"/>
+        /// The <see cref="UpdateBankLevelDynamicResourceDocApiResponse"/>
         /// </summary>
-        public partial class OBPv400UpdateBankLevelDynamicResourceDocApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400UpdateBankLevelDynamicResourceDocApiResponse
+        public partial class UpdateBankLevelDynamicResourceDocApiResponse : OpenBankProject.Client.ApiResponse, IUpdateBankLevelDynamicResourceDocApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400UpdateBankLevelDynamicResourceDocApiResponse> Logger { get; }
+            public ILogger<UpdateBankLevelDynamicResourceDocApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400UpdateBankLevelDynamicResourceDocApiResponse"/>
+            /// The <see cref="UpdateBankLevelDynamicResourceDocApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3329,14 +3329,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400UpdateBankLevelDynamicResourceDocApiResponse(ILogger<OBPv400UpdateBankLevelDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public UpdateBankLevelDynamicResourceDocApiResponse(ILogger<UpdateBankLevelDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400UpdateBankLevelDynamicResourceDocApiResponse"/>
+            /// The <see cref="UpdateBankLevelDynamicResourceDocApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3345,7 +3345,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400UpdateBankLevelDynamicResourceDocApiResponse(ILogger<OBPv400UpdateBankLevelDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public UpdateBankLevelDynamicResourceDocApiResponse(ILogger<UpdateBankLevelDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -3363,11 +3363,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response? Ok()
+            public OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -3376,7 +3376,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response? result)
             {
                 result = null;
 
@@ -3414,28 +3414,28 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400UpdateDynamicResourceDoc(OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest);
+        partial void FormatUpdateDynamicResourceDoc(UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400UpdateDynamicResourceDoc(OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest)
+        private void ValidateUpdateDynamicResourceDoc(UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest)
         {
-            if (oBPv400UpdateBankLevelDynamicResourceDocRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400UpdateBankLevelDynamicResourceDocRequest));
+            if (updateBankLevelDynamicResourceDocRequest == null)
+                throw new ArgumentNullException(nameof(updateBankLevelDynamicResourceDocRequest));
         }
 
         /// <summary>
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
-        private void AfterOBPv400UpdateDynamicResourceDocDefaultImplementation(IOBPv400UpdateDynamicResourceDocApiResponse apiResponseLocalVar, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest)
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
+        private void AfterUpdateDynamicResourceDocDefaultImplementation(IUpdateDynamicResourceDocApiResponse apiResponseLocalVar, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400UpdateDynamicResourceDoc(ref suppressDefaultLog, apiResponseLocalVar, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+            AfterUpdateDynamicResourceDoc(ref suppressDefaultLog, apiResponseLocalVar, updateBankLevelDynamicResourceDocRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3445,8 +3445,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
-        partial void AfterOBPv400UpdateDynamicResourceDoc(ref bool suppressDefaultLog, IOBPv400UpdateDynamicResourceDocApiResponse apiResponseLocalVar, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest);
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
+        partial void AfterUpdateDynamicResourceDoc(ref bool suppressDefaultLog, IUpdateDynamicResourceDocApiResponse apiResponseLocalVar, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3454,11 +3454,11 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
-        private void OnErrorOBPv400UpdateDynamicResourceDocDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest)
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
+        private void OnErrorUpdateDynamicResourceDocDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400UpdateDynamicResourceDoc(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+            OnErrorUpdateDynamicResourceDoc(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, updateBankLevelDynamicResourceDocRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3470,20 +3470,20 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest"></param>
-        partial void OnErrorOBPv400UpdateDynamicResourceDoc(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest);
+        /// <param name="updateBankLevelDynamicResourceDocRequest"></param>
+        partial void OnErrorUpdateDynamicResourceDoc(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest);
 
         /// <summary>
         /// Update Dynamic Resource Doc &lt;p&gt;Update a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </summary>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateDynamicResourceDocApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateDynamicResourceDocApiResponse?> OBPv400UpdateDynamicResourceDocOrDefaultAsync(OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateDynamicResourceDocApiResponse"/>&gt;</returns>
+        public async Task<IUpdateDynamicResourceDocApiResponse?> UpdateDynamicResourceDocOrDefaultAsync(UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400UpdateDynamicResourceDocAsync(oBPv400UpdateBankLevelDynamicResourceDocRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateDynamicResourceDocAsync(updateBankLevelDynamicResourceDocRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3495,18 +3495,18 @@ namespace OpenBankProject.Api
         /// Update Dynamic Resource Doc &lt;p&gt;Update a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400UpdateBankLevelDynamicResourceDocRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicResourceDocRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateDynamicResourceDocApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateDynamicResourceDocApiResponse> OBPv400UpdateDynamicResourceDocAsync(OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateDynamicResourceDocApiResponse"/>&gt;</returns>
+        public async Task<IUpdateDynamicResourceDocApiResponse> UpdateDynamicResourceDocAsync(UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400UpdateDynamicResourceDoc(oBPv400UpdateBankLevelDynamicResourceDocRequest);
+                ValidateUpdateDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest);
 
-                FormatOBPv400UpdateDynamicResourceDoc(oBPv400UpdateBankLevelDynamicResourceDocRequest);
+                FormatUpdateDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3517,16 +3517,16 @@ namespace OpenBankProject.Api
                         ? "/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID"
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID");
 
-                    httpRequestMessageLocalVar.Content = (oBPv400UpdateBankLevelDynamicResourceDocRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateBankLevelDynamicResourceDocRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400UpdateBankLevelDynamicResourceDocRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateBankLevelDynamicResourceDocRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3562,8 +3562,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400UpdateDynamicResourceDocApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400UpdateDynamicResourceDocApiResponse>();
-                        OBPv400UpdateDynamicResourceDocApiResponse apiResponseLocalVar;
+                        ILogger<UpdateDynamicResourceDocApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<UpdateDynamicResourceDocApiResponse>();
+                        UpdateDynamicResourceDocApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3574,9 +3574,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400UpdateDynamicResourceDocDefaultImplementation(apiResponseLocalVar, oBPv400UpdateBankLevelDynamicResourceDocRequest);
+                        AfterUpdateDynamicResourceDocDefaultImplementation(apiResponseLocalVar, updateBankLevelDynamicResourceDocRequest);
 
-                        Events.ExecuteOnOBPv400UpdateDynamicResourceDoc(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateDynamicResourceDoc(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3588,24 +3588,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400UpdateDynamicResourceDocDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID", uriBuilderLocalVar.Path, oBPv400UpdateBankLevelDynamicResourceDocRequest);
-                Events.ExecuteOnErrorOBPv400UpdateDynamicResourceDoc(e);
+                OnErrorUpdateDynamicResourceDocDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID", uriBuilderLocalVar.Path, updateBankLevelDynamicResourceDocRequest);
+                Events.ExecuteOnErrorUpdateDynamicResourceDoc(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400UpdateDynamicResourceDocApiResponse"/>
+        /// The <see cref="UpdateDynamicResourceDocApiResponse"/>
         /// </summary>
-        public partial class OBPv400UpdateDynamicResourceDocApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400UpdateDynamicResourceDocApiResponse
+        public partial class UpdateDynamicResourceDocApiResponse : OpenBankProject.Client.ApiResponse, IUpdateDynamicResourceDocApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400UpdateDynamicResourceDocApiResponse> Logger { get; }
+            public ILogger<UpdateDynamicResourceDocApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400UpdateDynamicResourceDocApiResponse"/>
+            /// The <see cref="UpdateDynamicResourceDocApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3614,14 +3614,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400UpdateDynamicResourceDocApiResponse(ILogger<OBPv400UpdateDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public UpdateDynamicResourceDocApiResponse(ILogger<UpdateDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400UpdateDynamicResourceDocApiResponse"/>
+            /// The <see cref="UpdateDynamicResourceDocApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3630,7 +3630,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400UpdateDynamicResourceDocApiResponse(ILogger<OBPv400UpdateDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public UpdateDynamicResourceDocApiResponse(ILogger<UpdateDynamicResourceDocApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -3648,11 +3648,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response? Ok()
+            public OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -3661,7 +3661,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetBankLevelDynamicResourceDoc200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetBankLevelDynamicResourceDoc200Response? result)
             {
                 result = null;
 

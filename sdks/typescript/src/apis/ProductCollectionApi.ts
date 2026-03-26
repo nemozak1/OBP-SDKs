@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,26 +15,26 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv310CreateProductCollection200Response,
-  OBPv310CreateProductCollectionRequest,
-  OBPv310GetProductCollection200Response,
+  CreateProductCollection200Response,
+  CreateProductCollectionRequest,
+  GetProductCollection200Response,
 } from '../models/index';
 import {
-    OBPv310CreateProductCollection200ResponseFromJSON,
-    OBPv310CreateProductCollection200ResponseToJSON,
-    OBPv310CreateProductCollectionRequestFromJSON,
-    OBPv310CreateProductCollectionRequestToJSON,
-    OBPv310GetProductCollection200ResponseFromJSON,
-    OBPv310GetProductCollection200ResponseToJSON,
+    CreateProductCollection200ResponseFromJSON,
+    CreateProductCollection200ResponseToJSON,
+    CreateProductCollectionRequestFromJSON,
+    CreateProductCollectionRequestToJSON,
+    GetProductCollection200ResponseFromJSON,
+    GetProductCollection200ResponseToJSON,
 } from '../models/index';
 
-export interface OBPv310CreateProductCollectionOperationRequest {
+export interface CreateProductCollectionOperationRequest {
     bankid: string;
     collectioncode: string;
-    oBPv310CreateProductCollectionRequest: OBPv310CreateProductCollectionRequest;
+    createProductCollectionRequest: CreateProductCollectionRequest;
 }
 
-export interface OBPv310GetProductCollectionRequest {
+export interface GetProductCollectionRequest {
     bankid: string;
     collectioncode: string;
 }
@@ -45,27 +45,27 @@ export interface OBPv310GetProductCollectionRequest {
 export class ProductCollectionApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv310CreateProductCollection without sending the request
+     * Creates request options for createProductCollection without sending the request
      */
-    async oBPv310CreateProductCollectionRequestOpts(requestParameters: OBPv310CreateProductCollectionOperationRequest): Promise<runtime.RequestOpts> {
+    async createProductCollectionRequestOpts(requestParameters: CreateProductCollectionOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv310CreateProductCollection().'
+                'Required parameter "bankid" was null or undefined when calling createProductCollection().'
             );
         }
 
         if (requestParameters['collectioncode'] == null) {
             throw new runtime.RequiredError(
                 'collectioncode',
-                'Required parameter "collectioncode" was null or undefined when calling oBPv310CreateProductCollection().'
+                'Required parameter "collectioncode" was null or undefined when calling createProductCollection().'
             );
         }
 
-        if (requestParameters['oBPv310CreateProductCollectionRequest'] == null) {
+        if (requestParameters['createProductCollectionRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv310CreateProductCollectionRequest',
-                'Required parameter "oBPv310CreateProductCollectionRequest" was null or undefined when calling oBPv310CreateProductCollection().'
+                'createProductCollectionRequest',
+                'Required parameter "createProductCollectionRequest" was null or undefined when calling createProductCollection().'
             );
         }
 
@@ -85,7 +85,7 @@ export class ProductCollectionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -98,7 +98,7 @@ export class ProductCollectionApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv310CreateProductCollectionRequestToJSON(requestParameters['oBPv310CreateProductCollectionRequest']),
+            body: CreateProductCollectionRequestToJSON(requestParameters['createProductCollectionRequest']),
         };
     }
 
@@ -106,37 +106,37 @@ export class ProductCollectionApi extends runtime.BaseAPI {
      * <p>Create or Update a Product Collection at the Bank.</p> <p>Use Product Collections to create Product &quot;Baskets&quot;, &quot;Portfolios&quot;, &quot;Indices&quot;, &quot;Collections&quot;, &quot;Underlyings-lists&quot;, &quot;Buckets&quot; etc. etc.</p> <p>There is a many to many relationship between Products and Product Collections:</p> <ul> <li> <p>A Product can exist in many Collections</p> </li> <li> <p>A Collection can contain many Products.</p> </li> </ul> <p>A collection has collection code, one parent Product and one or more child Products.</p> <p>Product hiearchy vs Product Collections:</p> <ul> <li> <p>You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.</p> </li> <li> <p>You can define a collection (also known as baskets or buckets) of products using Product Collections.</p> </li> </ul> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#collection_code\">COLLECTION_CODE</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#collection_code\"><strong>collection_code</strong></a>:</p> <p><a href=\"/glossary#items\"><strong>items</strong></a>:</p> <p><a href=\"/glossary#member_product_code\"><strong>member_product_code</strong></a>:</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#product_collection\"><strong>product_collection</strong></a>:</p> 
      * Create Product Collection
      */
-    async oBPv310CreateProductCollectionRaw(requestParameters: OBPv310CreateProductCollectionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv310CreateProductCollection200Response>> {
-        const requestOptions = await this.oBPv310CreateProductCollectionRequestOpts(requestParameters);
+    async createProductCollectionRaw(requestParameters: CreateProductCollectionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CreateProductCollection200Response>> {
+        const requestOptions = await this.createProductCollectionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv310CreateProductCollection200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateProductCollection200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Create or Update a Product Collection at the Bank.</p> <p>Use Product Collections to create Product &quot;Baskets&quot;, &quot;Portfolios&quot;, &quot;Indices&quot;, &quot;Collections&quot;, &quot;Underlyings-lists&quot;, &quot;Buckets&quot; etc. etc.</p> <p>There is a many to many relationship between Products and Product Collections:</p> <ul> <li> <p>A Product can exist in many Collections</p> </li> <li> <p>A Collection can contain many Products.</p> </li> </ul> <p>A collection has collection code, one parent Product and one or more child Products.</p> <p>Product hiearchy vs Product Collections:</p> <ul> <li> <p>You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.</p> </li> <li> <p>You can define a collection (also known as baskets or buckets) of products using Product Collections.</p> </li> </ul> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#collection_code\">COLLECTION_CODE</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#collection_code\"><strong>collection_code</strong></a>:</p> <p><a href=\"/glossary#items\"><strong>items</strong></a>:</p> <p><a href=\"/glossary#member_product_code\"><strong>member_product_code</strong></a>:</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#product_collection\"><strong>product_collection</strong></a>:</p> 
      * Create Product Collection
      */
-    async oBPv310CreateProductCollection(requestParameters: OBPv310CreateProductCollectionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv310CreateProductCollection200Response> {
-        const response = await this.oBPv310CreateProductCollectionRaw(requestParameters, initOverrides);
+    async createProductCollection(requestParameters: CreateProductCollectionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CreateProductCollection200Response> {
+        const response = await this.createProductCollectionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv310GetProductCollection without sending the request
+     * Creates request options for getProductCollection without sending the request
      */
-    async oBPv310GetProductCollectionRequestOpts(requestParameters: OBPv310GetProductCollectionRequest): Promise<runtime.RequestOpts> {
+    async getProductCollectionRequestOpts(requestParameters: GetProductCollectionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv310GetProductCollection().'
+                'Required parameter "bankid" was null or undefined when calling getProductCollection().'
             );
         }
 
         if (requestParameters['collectioncode'] == null) {
             throw new runtime.RequiredError(
                 'collectioncode',
-                'Required parameter "collectioncode" was null or undefined when calling oBPv310GetProductCollection().'
+                'Required parameter "collectioncode" was null or undefined when calling getProductCollection().'
             );
         }
 
@@ -154,7 +154,7 @@ export class ProductCollectionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -174,19 +174,19 @@ export class ProductCollectionApi extends runtime.BaseAPI {
      * <p>Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#collection_code\">COLLECTION_CODE</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#code\"><strong>code</strong></a>: 125</p> <p><a href=\"/glossary#collection_code\"><strong>collection_code</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#family\"><strong>family</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#license\"><strong>license</strong></a>:</p> <p><a href=\"/glossary#meta\"><strong>meta</strong></a>:</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#parent_product_code\"><strong>parent_product_code</strong></a>: 787LOW</p> <p><a href=\"/glossary#product_attribute_id\"><strong>product_attribute_id</strong></a>:</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#products\"><strong>products</strong></a>:</p> <p><a href=\"/glossary#super_family\"><strong>super_family</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#product_attributes\">product_attributes</a>:</p> 
      * Get Product Collection
      */
-    async oBPv310GetProductCollectionRaw(requestParameters: OBPv310GetProductCollectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv310GetProductCollection200Response>> {
-        const requestOptions = await this.oBPv310GetProductCollectionRequestOpts(requestParameters);
+    async getProductCollectionRaw(requestParameters: GetProductCollectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetProductCollection200Response>> {
+        const requestOptions = await this.getProductCollectionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv310GetProductCollection200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetProductCollection200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#collection_code\">COLLECTION_CODE</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#code\"><strong>code</strong></a>: 125</p> <p><a href=\"/glossary#collection_code\"><strong>collection_code</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#family\"><strong>family</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#license\"><strong>license</strong></a>:</p> <p><a href=\"/glossary#meta\"><strong>meta</strong></a>:</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#parent_product_code\"><strong>parent_product_code</strong></a>: 787LOW</p> <p><a href=\"/glossary#product_attribute_id\"><strong>product_attribute_id</strong></a>:</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#products\"><strong>products</strong></a>:</p> <p><a href=\"/glossary#super_family\"><strong>super_family</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#product_attributes\">product_attributes</a>:</p> 
      * Get Product Collection
      */
-    async oBPv310GetProductCollection(requestParameters: OBPv310GetProductCollectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv310GetProductCollection200Response> {
-        const response = await this.oBPv310GetProductCollectionRaw(requestParameters, initOverrides);
+    async getProductCollection(requestParameters: GetProductCollectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetProductCollection200Response> {
+        const response = await this.getProductCollectionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

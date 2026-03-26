@@ -18,9 +18,9 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
-from obp_python.models.obpv600_get_personal_data_fields200_response import OBPv600GetPersonalDataFields200Response
-from obp_python.models.obpv600_get_personal_data_fields200_response_user_attributes_inner import OBPv600GetPersonalDataFields200ResponseUserAttributesInner
+from obp_python.models.create_personal_data_field_request import CreatePersonalDataFieldRequest
+from obp_python.models.get_personal_data_fields200_response import GetPersonalDataFields200Response
+from obp_python.models.get_personal_data_fields200_response_user_attributes_inner import GetPersonalDataFields200ResponseUserAttributesInner
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -41,9 +41,9 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_personal_data_field(
+    def create_personal_data_field(
         self,
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -56,13 +56,13 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
+    ) -> GetPersonalDataFields200ResponseUserAttributesInner:
         """Create Personal Data Field
 
         <p>Create a Personal Data Field for the currently authenticated user.</p> <p>Personal Data Fields (IsPersonal=true) are managed by the user themselves and do not require special roles.<br /> This data is not available in ABAC rules for privacy reasons.</p> <p>For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
 
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -85,8 +85,8 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_personal_data_field_serialize(
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+        _param = self._create_personal_data_field_serialize(
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -94,7 +94,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -109,9 +109,9 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_personal_data_field_with_http_info(
+    def create_personal_data_field_with_http_info(
         self,
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -124,13 +124,13 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
+    ) -> ApiResponse[GetPersonalDataFields200ResponseUserAttributesInner]:
         """Create Personal Data Field
 
         <p>Create a Personal Data Field for the currently authenticated user.</p> <p>Personal Data Fields (IsPersonal=true) are managed by the user themselves and do not require special roles.<br /> This data is not available in ABAC rules for privacy reasons.</p> <p>For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
 
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -153,8 +153,8 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_personal_data_field_serialize(
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+        _param = self._create_personal_data_field_serialize(
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -162,7 +162,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -177,9 +177,9 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_personal_data_field_without_preload_content(
+    def create_personal_data_field_without_preload_content(
         self,
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -197,8 +197,8 @@ class UserAttributeApi:
 
         <p>Create a Personal Data Field for the currently authenticated user.</p> <p>Personal Data Fields (IsPersonal=true) are managed by the user themselves and do not require special roles.<br /> This data is not available in ABAC rules for privacy reasons.</p> <p>For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
 
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -221,8 +221,8 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_personal_data_field_serialize(
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+        _param = self._create_personal_data_field_serialize(
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -230,7 +230,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -240,9 +240,9 @@ class UserAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_create_personal_data_field_serialize(
+    def _create_personal_data_field_serialize(
         self,
-        obpv600_create_personal_data_field_request,
+        create_personal_data_field_request,
         _request_auth,
         _content_type,
         _headers,
@@ -268,8 +268,8 @@ class UserAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_create_personal_data_field_request is not None:
-            _body_params = obpv600_create_personal_data_field_request
+        if create_personal_data_field_request is not None:
+            _body_params = create_personal_data_field_request
 
 
         # set the HTTP header `Accept`
@@ -320,10 +320,10 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_user_attribute(
+    def create_user_attribute(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -336,15 +336,15 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
+    ) -> GetPersonalDataFields200ResponseUserAttributesInner:
         """Create User Attribute
 
         <p>Create a User Attribute for the user specified by USER_ID.</p> <p>User Attributes are non-personal attributes (IsPersonal=false) that can be used in ABAC rules.<br /> They require a role to set, similar to Customer Attributes, Account Attributes, etc.</p> <p>For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
 
         :param userid: The USERID identifier (required)
         :type userid: str
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -367,9 +367,9 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_user_attribute_serialize(
+        _param = self._create_user_attribute_serialize(
             userid=userid,
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -377,7 +377,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -393,10 +393,10 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_user_attribute_with_http_info(
+    def create_user_attribute_with_http_info(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -409,15 +409,15 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
+    ) -> ApiResponse[GetPersonalDataFields200ResponseUserAttributesInner]:
         """Create User Attribute
 
         <p>Create a User Attribute for the user specified by USER_ID.</p> <p>User Attributes are non-personal attributes (IsPersonal=false) that can be used in ABAC rules.<br /> They require a role to set, similar to Customer Attributes, Account Attributes, etc.</p> <p>For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
 
         :param userid: The USERID identifier (required)
         :type userid: str
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -440,9 +440,9 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_user_attribute_serialize(
+        _param = self._create_user_attribute_serialize(
             userid=userid,
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -450,7 +450,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -466,10 +466,10 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_user_attribute_without_preload_content(
+    def create_user_attribute_without_preload_content(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -489,8 +489,8 @@ class UserAttributeApi:
 
         :param userid: The USERID identifier (required)
         :type userid: str
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -513,9 +513,9 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_user_attribute_serialize(
+        _param = self._create_user_attribute_serialize(
             userid=userid,
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -523,7 +523,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -534,10 +534,10 @@ class UserAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_create_user_attribute_serialize(
+    def _create_user_attribute_serialize(
         self,
         userid,
-        obpv600_create_personal_data_field_request,
+        create_personal_data_field_request,
         _request_auth,
         _content_type,
         _headers,
@@ -565,8 +565,8 @@ class UserAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_create_personal_data_field_request is not None:
-            _body_params = obpv600_create_personal_data_field_request
+        if create_personal_data_field_request is not None:
+            _body_params = create_personal_data_field_request
 
 
         # set the HTTP header `Accept`
@@ -617,7 +617,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_personal_data_field(
+    def delete_personal_data_field(
         self,
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
         _request_timeout: Union[
@@ -661,7 +661,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_personal_data_field_serialize(
+        _param = self._delete_personal_data_field_serialize(
             userattributeid=userattributeid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -686,7 +686,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_personal_data_field_with_http_info(
+    def delete_personal_data_field_with_http_info(
         self,
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
         _request_timeout: Union[
@@ -730,7 +730,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_personal_data_field_serialize(
+        _param = self._delete_personal_data_field_serialize(
             userattributeid=userattributeid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -755,7 +755,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_personal_data_field_without_preload_content(
+    def delete_personal_data_field_without_preload_content(
         self,
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
         _request_timeout: Union[
@@ -799,7 +799,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_personal_data_field_serialize(
+        _param = self._delete_personal_data_field_serialize(
             userattributeid=userattributeid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -819,7 +819,7 @@ class UserAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_delete_personal_data_field_serialize(
+    def _delete_personal_data_field_serialize(
         self,
         userattributeid,
         _request_auth,
@@ -879,7 +879,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_user_attribute(
+    def delete_user_attribute(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
@@ -926,7 +926,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_user_attribute_serialize(
+        _param = self._delete_user_attribute_serialize(
             userid=userid,
             userattributeid=userattributeid,
             _request_auth=_request_auth,
@@ -952,7 +952,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_user_attribute_with_http_info(
+    def delete_user_attribute_with_http_info(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
@@ -999,7 +999,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_user_attribute_serialize(
+        _param = self._delete_user_attribute_serialize(
             userid=userid,
             userattributeid=userattributeid,
             _request_auth=_request_auth,
@@ -1025,7 +1025,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_user_attribute_without_preload_content(
+    def delete_user_attribute_without_preload_content(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
@@ -1072,7 +1072,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_user_attribute_serialize(
+        _param = self._delete_user_attribute_serialize(
             userid=userid,
             userattributeid=userattributeid,
             _request_auth=_request_auth,
@@ -1093,7 +1093,7 @@ class UserAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_delete_user_attribute_serialize(
+    def _delete_user_attribute_serialize(
         self,
         userid,
         userattributeid,
@@ -1156,7 +1156,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_personal_data_field_by_id(
+    def get_personal_data_field_by_id(
         self,
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
         _request_timeout: Union[
@@ -1171,7 +1171,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
+    ) -> GetPersonalDataFields200ResponseUserAttributesInner:
         """Get Personal Data Field By Id
 
         <p>Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1200,7 +1200,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_personal_data_field_by_id_serialize(
+        _param = self._get_personal_data_field_by_id_serialize(
             userattributeid=userattributeid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1209,7 +1209,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -1225,7 +1225,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_personal_data_field_by_id_with_http_info(
+    def get_personal_data_field_by_id_with_http_info(
         self,
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
         _request_timeout: Union[
@@ -1240,7 +1240,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
+    ) -> ApiResponse[GetPersonalDataFields200ResponseUserAttributesInner]:
         """Get Personal Data Field By Id
 
         <p>Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1269,7 +1269,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_personal_data_field_by_id_serialize(
+        _param = self._get_personal_data_field_by_id_serialize(
             userattributeid=userattributeid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1278,7 +1278,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -1294,7 +1294,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_personal_data_field_by_id_without_preload_content(
+    def get_personal_data_field_by_id_without_preload_content(
         self,
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
         _request_timeout: Union[
@@ -1338,7 +1338,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_personal_data_field_by_id_serialize(
+        _param = self._get_personal_data_field_by_id_serialize(
             userattributeid=userattributeid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1347,7 +1347,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -1358,7 +1358,7 @@ class UserAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_personal_data_field_by_id_serialize(
+    def _get_personal_data_field_by_id_serialize(
         self,
         userattributeid,
         _request_auth,
@@ -1425,7 +1425,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_personal_data_fields(
+    def get_personal_data_fields(
         self,
         _request_timeout: Union[
             None,
@@ -1439,7 +1439,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200Response:
+    ) -> GetPersonalDataFields200Response:
         """Get Personal Data Fields
 
         <p>Get Personal Data Fields for the currently authenticated user.</p> <p>Returns Personal Data Fields (IsPersonal=true) that are managed by the user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_attributes</strong></a>: user_attributes</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1466,7 +1466,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_personal_data_fields_serialize(
+        _param = self._get_personal_data_fields_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1474,7 +1474,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200Response",
+            '200': "GetPersonalDataFields200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1489,7 +1489,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_personal_data_fields_with_http_info(
+    def get_personal_data_fields_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1503,7 +1503,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200Response]:
+    ) -> ApiResponse[GetPersonalDataFields200Response]:
         """Get Personal Data Fields
 
         <p>Get Personal Data Fields for the currently authenticated user.</p> <p>Returns Personal Data Fields (IsPersonal=true) that are managed by the user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_attributes</strong></a>: user_attributes</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1530,7 +1530,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_personal_data_fields_serialize(
+        _param = self._get_personal_data_fields_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1538,7 +1538,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200Response",
+            '200': "GetPersonalDataFields200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1553,7 +1553,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_personal_data_fields_without_preload_content(
+    def get_personal_data_fields_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1594,7 +1594,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_personal_data_fields_serialize(
+        _param = self._get_personal_data_fields_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1602,7 +1602,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200Response",
+            '200': "GetPersonalDataFields200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1612,7 +1612,7 @@ class UserAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_personal_data_fields_serialize(
+    def _get_personal_data_fields_serialize(
         self,
         _request_auth,
         _content_type,
@@ -1676,7 +1676,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_user_attribute_by_id(
+    def get_user_attribute_by_id(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
@@ -1692,7 +1692,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
+    ) -> GetPersonalDataFields200ResponseUserAttributesInner:
         """Get User Attribute By Id
 
         <p>Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1723,7 +1723,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_user_attribute_by_id_serialize(
+        _param = self._get_user_attribute_by_id_serialize(
             userid=userid,
             userattributeid=userattributeid,
             _request_auth=_request_auth,
@@ -1733,7 +1733,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -1749,7 +1749,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_user_attribute_by_id_with_http_info(
+    def get_user_attribute_by_id_with_http_info(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
@@ -1765,7 +1765,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
+    ) -> ApiResponse[GetPersonalDataFields200ResponseUserAttributesInner]:
         """Get User Attribute By Id
 
         <p>Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1796,7 +1796,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_user_attribute_by_id_serialize(
+        _param = self._get_user_attribute_by_id_serialize(
             userid=userid,
             userattributeid=userattributeid,
             _request_auth=_request_auth,
@@ -1806,7 +1806,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -1822,7 +1822,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_user_attribute_by_id_without_preload_content(
+    def get_user_attribute_by_id_without_preload_content(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
@@ -1869,7 +1869,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_user_attribute_by_id_serialize(
+        _param = self._get_user_attribute_by_id_serialize(
             userid=userid,
             userattributeid=userattributeid,
             _request_auth=_request_auth,
@@ -1879,7 +1879,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -1890,7 +1890,7 @@ class UserAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_user_attribute_by_id_serialize(
+    def _get_user_attribute_by_id_serialize(
         self,
         userid,
         userattributeid,
@@ -1960,7 +1960,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_user_attributes(
+    def get_user_attributes(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         _request_timeout: Union[
@@ -1975,7 +1975,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200Response:
+    ) -> GetPersonalDataFields200Response:
         """Get User Attributes
 
         <p>Get User Attributes for the user specified by USER_ID.</p> <p>Returns non-personal user attributes (IsPersonal=false) that can be used in ABAC rules.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_attributes</strong></a>: user_attributes</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -2004,7 +2004,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_user_attributes_serialize(
+        _param = self._get_user_attributes_serialize(
             userid=userid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2013,7 +2013,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200Response",
+            '200': "GetPersonalDataFields200Response",
             '404': None,
             '500': None,
         }
@@ -2029,7 +2029,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_user_attributes_with_http_info(
+    def get_user_attributes_with_http_info(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         _request_timeout: Union[
@@ -2044,7 +2044,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200Response]:
+    ) -> ApiResponse[GetPersonalDataFields200Response]:
         """Get User Attributes
 
         <p>Get User Attributes for the user specified by USER_ID.</p> <p>Returns non-personal user attributes (IsPersonal=false) that can be used in ABAC rules.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_attributes</strong></a>: user_attributes</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -2073,7 +2073,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_user_attributes_serialize(
+        _param = self._get_user_attributes_serialize(
             userid=userid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2082,7 +2082,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200Response",
+            '200': "GetPersonalDataFields200Response",
             '404': None,
             '500': None,
         }
@@ -2098,7 +2098,7 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_user_attributes_without_preload_content(
+    def get_user_attributes_without_preload_content(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         _request_timeout: Union[
@@ -2142,7 +2142,7 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_user_attributes_serialize(
+        _param = self._get_user_attributes_serialize(
             userid=userid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2151,7 +2151,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200Response",
+            '200': "GetPersonalDataFields200Response",
             '404': None,
             '500': None,
         }
@@ -2162,7 +2162,7 @@ class UserAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_user_attributes_serialize(
+    def _get_user_attributes_serialize(
         self,
         userid,
         _request_auth,
@@ -2229,10 +2229,10 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_personal_data_field(
+    def update_personal_data_field(
         self,
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2245,15 +2245,15 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
+    ) -> GetPersonalDataFields200ResponseUserAttributesInner:
         """Update Personal Data Field
 
         <p>Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
 
         :param userattributeid: The USERATTRIBUTEID identifier (required)
         :type userattributeid: str
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2276,9 +2276,9 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_personal_data_field_serialize(
+        _param = self._update_personal_data_field_serialize(
             userattributeid=userattributeid,
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2286,7 +2286,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2302,10 +2302,10 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_personal_data_field_with_http_info(
+    def update_personal_data_field_with_http_info(
         self,
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2318,15 +2318,15 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
+    ) -> ApiResponse[GetPersonalDataFields200ResponseUserAttributesInner]:
         """Update Personal Data Field
 
         <p>Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
 
         :param userattributeid: The USERATTRIBUTEID identifier (required)
         :type userattributeid: str
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2349,9 +2349,9 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_personal_data_field_serialize(
+        _param = self._update_personal_data_field_serialize(
             userattributeid=userattributeid,
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2359,7 +2359,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2375,10 +2375,10 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_personal_data_field_without_preload_content(
+    def update_personal_data_field_without_preload_content(
         self,
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2398,8 +2398,8 @@ class UserAttributeApi:
 
         :param userattributeid: The USERATTRIBUTEID identifier (required)
         :type userattributeid: str
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2422,9 +2422,9 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_personal_data_field_serialize(
+        _param = self._update_personal_data_field_serialize(
             userattributeid=userattributeid,
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2432,7 +2432,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2443,10 +2443,10 @@ class UserAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_update_personal_data_field_serialize(
+    def _update_personal_data_field_serialize(
         self,
         userattributeid,
-        obpv600_create_personal_data_field_request,
+        create_personal_data_field_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2474,8 +2474,8 @@ class UserAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_create_personal_data_field_request is not None:
-            _body_params = obpv600_create_personal_data_field_request
+        if create_personal_data_field_request is not None:
+            _body_params = create_personal_data_field_request
 
 
         # set the HTTP header `Accept`
@@ -2526,11 +2526,11 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_user_attribute(
+    def update_user_attribute(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2543,7 +2543,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
+    ) -> GetPersonalDataFields200ResponseUserAttributesInner:
         """Update User Attribute
 
         <p>Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -2552,8 +2552,8 @@ class UserAttributeApi:
         :type userid: str
         :param userattributeid: The USERATTRIBUTEID identifier (required)
         :type userattributeid: str
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2576,10 +2576,10 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_user_attribute_serialize(
+        _param = self._update_user_attribute_serialize(
             userid=userid,
             userattributeid=userattributeid,
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2587,7 +2587,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2603,11 +2603,11 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_user_attribute_with_http_info(
+    def update_user_attribute_with_http_info(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2620,7 +2620,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
+    ) -> ApiResponse[GetPersonalDataFields200ResponseUserAttributesInner]:
         """Update User Attribute
 
         <p>Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -2629,8 +2629,8 @@ class UserAttributeApi:
         :type userid: str
         :param userattributeid: The USERATTRIBUTEID identifier (required)
         :type userattributeid: str
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2653,10 +2653,10 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_user_attribute_serialize(
+        _param = self._update_user_attribute_serialize(
             userid=userid,
             userattributeid=userattributeid,
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2664,7 +2664,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2680,11 +2680,11 @@ class UserAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_user_attribute_without_preload_content(
+    def update_user_attribute_without_preload_content(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         userattributeid: Annotated[StrictStr, Field(description="The USERATTRIBUTEID identifier")],
-        obpv600_create_personal_data_field_request: Annotated[OBPv600CreatePersonalDataFieldRequest, Field(description="Request body")],
+        create_personal_data_field_request: Annotated[CreatePersonalDataFieldRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2706,8 +2706,8 @@ class UserAttributeApi:
         :type userid: str
         :param userattributeid: The USERATTRIBUTEID identifier (required)
         :type userattributeid: str
-        :param obpv600_create_personal_data_field_request: Request body (required)
-        :type obpv600_create_personal_data_field_request: OBPv600CreatePersonalDataFieldRequest
+        :param create_personal_data_field_request: Request body (required)
+        :type create_personal_data_field_request: CreatePersonalDataFieldRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2730,10 +2730,10 @@ class UserAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_user_attribute_serialize(
+        _param = self._update_user_attribute_serialize(
             userid=userid,
             userattributeid=userattributeid,
-            obpv600_create_personal_data_field_request=obpv600_create_personal_data_field_request,
+            create_personal_data_field_request=create_personal_data_field_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2741,7 +2741,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
+            '200': "GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2752,11 +2752,11 @@ class UserAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_update_user_attribute_serialize(
+    def _update_user_attribute_serialize(
         self,
         userid,
         userattributeid,
-        obpv600_create_personal_data_field_request,
+        create_personal_data_field_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2786,8 +2786,8 @@ class UserAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_create_personal_data_field_request is not None:
-            _body_params = obpv600_create_personal_data_field_request
+        if create_personal_data_field_request is not None:
+            _body_params = create_personal_data_field_request
 
 
         # set the HTTP header `Accept`

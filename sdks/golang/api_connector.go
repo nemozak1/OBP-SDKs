@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -23,17 +23,17 @@ import (
 // ConnectorAPIService ConnectorAPI service
 type ConnectorAPIService service
 
-type ApiOBPv600GetConnectorsRequest struct {
+type ApiGetConnectorsRequest struct {
 	ctx context.Context
 	ApiService *ConnectorAPIService
 }
 
-func (r ApiOBPv600GetConnectorsRequest) Execute() (*OBPv600GetConnectors200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetConnectorsExecute(r)
+func (r ApiGetConnectorsRequest) Execute() (*GetConnectors200Response, *http.Response, error) {
+	return r.ApiService.GetConnectorsExecute(r)
 }
 
 /*
-OBPv600GetConnectors Get Connectors
+GetConnectors Get Connectors
 
 <p>Get the list of connectors and their availability for method routing.</p>
 <p>Returns a sorted list of all connectors with their availability status for use in Method Routing.</p>
@@ -61,8 +61,8 @@ This depends on the <code>connector</code> and <code>starConnector_supported_typ
 <p>Use this endpoint to discover which connectors are available when configuring Method Routing.<br />
 A connector is available for method routing if it matches the <code>connector</code> prop setting,<br />
 or if <code>connector=star</code> and the connector is listed in <code>starConnector_supported_types</code>.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>CanGetConnectorNames entitlement is required.</p>
+<p>Authentication is Optional.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#connector_name"><strong>connector_name</strong></a>:</p>
 <p><a href="/glossary#"><strong>connectors</strong></a>: connectors</p>
@@ -70,26 +70,26 @@ or if <code>connector=star</code> and the connector is listed in <code>starConne
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetConnectorsRequest
+ @return ApiGetConnectorsRequest
 */
-func (a *ConnectorAPIService) OBPv600GetConnectors(ctx context.Context) ApiOBPv600GetConnectorsRequest {
-	return ApiOBPv600GetConnectorsRequest{
+func (a *ConnectorAPIService) GetConnectors(ctx context.Context) ApiGetConnectorsRequest {
+	return ApiGetConnectorsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetConnectors200Response
-func (a *ConnectorAPIService) OBPv600GetConnectorsExecute(r ApiOBPv600GetConnectorsRequest) (*OBPv600GetConnectors200Response, *http.Response, error) {
+//  @return GetConnectors200Response
+func (a *ConnectorAPIService) GetConnectorsExecute(r ApiGetConnectorsRequest) (*GetConnectors200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetConnectors200Response
+		localVarReturnValue  *GetConnectors200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectorAPIService.OBPv600GetConnectors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectorAPIService.GetConnectors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -116,34 +116,6 @@ func (a *ConnectorAPIService) OBPv600GetConnectorsExecute(r ApiOBPv600GetConnect
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -182,17 +154,17 @@ func (a *ConnectorAPIService) OBPv600GetConnectorsExecute(r ApiOBPv600GetConnect
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetStoredProcedureConnectorHealthRequest struct {
+type ApiGetStoredProcedureConnectorHealthRequest struct {
 	ctx context.Context
 	ApiService *ConnectorAPIService
 }
 
-func (r ApiOBPv600GetStoredProcedureConnectorHealthRequest) Execute() (*OBPv600GetStoredProcedureConnectorHealth200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetStoredProcedureConnectorHealthExecute(r)
+func (r ApiGetStoredProcedureConnectorHealthRequest) Execute() (*GetStoredProcedureConnectorHealth200Response, *http.Response, error) {
+	return r.ApiService.GetStoredProcedureConnectorHealthExecute(r)
 }
 
 /*
-OBPv600GetStoredProcedureConnectorHealth Get Stored Procedure Connector Health
+GetStoredProcedureConnectorHealth Get Stored Procedure Connector Health
 
 <p>Returns health status of the stored procedure connector including:</p>
 <ul>
@@ -220,26 +192,26 @@ The response time depends on the connection pool timeout and JDBC driver setting
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetStoredProcedureConnectorHealthRequest
+ @return ApiGetStoredProcedureConnectorHealthRequest
 */
-func (a *ConnectorAPIService) OBPv600GetStoredProcedureConnectorHealth(ctx context.Context) ApiOBPv600GetStoredProcedureConnectorHealthRequest {
-	return ApiOBPv600GetStoredProcedureConnectorHealthRequest{
+func (a *ConnectorAPIService) GetStoredProcedureConnectorHealth(ctx context.Context) ApiGetStoredProcedureConnectorHealthRequest {
+	return ApiGetStoredProcedureConnectorHealthRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetStoredProcedureConnectorHealth200Response
-func (a *ConnectorAPIService) OBPv600GetStoredProcedureConnectorHealthExecute(r ApiOBPv600GetStoredProcedureConnectorHealthRequest) (*OBPv600GetStoredProcedureConnectorHealth200Response, *http.Response, error) {
+//  @return GetStoredProcedureConnectorHealth200Response
+func (a *ConnectorAPIService) GetStoredProcedureConnectorHealthExecute(r ApiGetStoredProcedureConnectorHealthRequest) (*GetStoredProcedureConnectorHealth200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetStoredProcedureConnectorHealth200Response
+		localVarReturnValue  *GetStoredProcedureConnectorHealth200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectorAPIService.OBPv600GetStoredProcedureConnectorHealth")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectorAPIService.GetStoredProcedureConnectorHealth")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -291,7 +263,7 @@ func (a *ConnectorAPIService) OBPv600GetStoredProcedureConnectorHealthExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

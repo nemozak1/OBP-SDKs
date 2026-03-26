@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -42,32 +42,32 @@ namespace OpenBankProject.Api
         /// Create Counterparty Limit
         /// </summary>
         /// <remarks>
-        /// &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
+        /// &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit">Request body</param>
+        /// <param name="createVRPConsentRequestRequestToAccountLimit">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510CreateCounterpartyLimitApiResponse"/>&gt;</returns>
-        Task<IOBPv510CreateCounterpartyLimitApiResponse> OBPv510CreateCounterpartyLimitAsync(string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateCounterpartyLimitApiResponse"/>&gt;</returns>
+        Task<ICreateCounterpartyLimitApiResponse> CreateCounterpartyLimitAsync(string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Counterparty Limit
         /// </summary>
         /// <remarks>
-        /// &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
+        /// &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit">Request body</param>
+        /// <param name="createVRPConsentRequestRequestToAccountLimit">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510CreateCounterpartyLimitApiResponse"/>?&gt;</returns>
-        Task<IOBPv510CreateCounterpartyLimitApiResponse?> OBPv510CreateCounterpartyLimitOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateCounterpartyLimitApiResponse"/>?&gt;</returns>
+        Task<ICreateCounterpartyLimitApiResponse?> CreateCounterpartyLimitOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Counterparty Limit
@@ -81,8 +81,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510DeleteCounterpartyLimitApiResponse"/>&gt;</returns>
-        Task<IOBPv510DeleteCounterpartyLimitApiResponse> OBPv510DeleteCounterpartyLimitAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyLimitApiResponse"/>&gt;</returns>
+        Task<IDeleteCounterpartyLimitApiResponse> DeleteCounterpartyLimitAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Counterparty Limit
@@ -95,8 +95,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510DeleteCounterpartyLimitApiResponse"/>?&gt;</returns>
-        Task<IOBPv510DeleteCounterpartyLimitApiResponse?> OBPv510DeleteCounterpartyLimitOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyLimitApiResponse"/>?&gt;</returns>
+        Task<IDeleteCounterpartyLimitApiResponse?> DeleteCounterpartyLimitOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Counterparty Limit
@@ -110,8 +110,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetCounterpartyLimitApiResponse"/>&gt;</returns>
-        Task<IOBPv510GetCounterpartyLimitApiResponse> OBPv510GetCounterpartyLimitAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCounterpartyLimitApiResponse"/>&gt;</returns>
+        Task<IGetCounterpartyLimitApiResponse> GetCounterpartyLimitAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Counterparty Limit
@@ -124,8 +124,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetCounterpartyLimitApiResponse"/>?&gt;</returns>
-        Task<IOBPv510GetCounterpartyLimitApiResponse?> OBPv510GetCounterpartyLimitOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCounterpartyLimitApiResponse"/>?&gt;</returns>
+        Task<IGetCounterpartyLimitApiResponse?> GetCounterpartyLimitOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Counterparty Limit Status
@@ -139,8 +139,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetCounterpartyLimitStatusApiResponse"/>&gt;</returns>
-        Task<IOBPv510GetCounterpartyLimitStatusApiResponse> OBPv510GetCounterpartyLimitStatusAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCounterpartyLimitStatusApiResponse"/>&gt;</returns>
+        Task<IGetCounterpartyLimitStatusApiResponse> GetCounterpartyLimitStatusAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Counterparty Limit Status
@@ -153,8 +153,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetCounterpartyLimitStatusApiResponse"/>?&gt;</returns>
-        Task<IOBPv510GetCounterpartyLimitStatusApiResponse?> OBPv510GetCounterpartyLimitStatusOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCounterpartyLimitStatusApiResponse"/>?&gt;</returns>
+        Task<IGetCounterpartyLimitStatusApiResponse?> GetCounterpartyLimitStatusOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Counterparty Limit
@@ -167,10 +167,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit">Request body</param>
+        /// <param name="createVRPConsentRequestRequestToAccountLimit">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510UpdateCounterpartyLimitApiResponse"/>&gt;</returns>
-        Task<IOBPv510UpdateCounterpartyLimitApiResponse> OBPv510UpdateCounterpartyLimitAsync(string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyLimitApiResponse"/>&gt;</returns>
+        Task<IUpdateCounterpartyLimitApiResponse> UpdateCounterpartyLimitAsync(string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Counterparty Limit
@@ -182,16 +182,16 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit">Request body</param>
+        /// <param name="createVRPConsentRequestRequestToAccountLimit">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510UpdateCounterpartyLimitApiResponse"/>?&gt;</returns>
-        Task<IOBPv510UpdateCounterpartyLimitApiResponse?> OBPv510UpdateCounterpartyLimitOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyLimitApiResponse"/>?&gt;</returns>
+        Task<IUpdateCounterpartyLimitApiResponse?> UpdateCounterpartyLimitOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IOBPv510CreateCounterpartyLimitApiResponse"/>
+    /// The <see cref="ICreateCounterpartyLimitApiResponse"/>
     /// </summary>
-    public interface IOBPv510CreateCounterpartyLimitApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv510GetCounterpartyLimit200Response?>
+    public interface ICreateCounterpartyLimitApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetCounterpartyLimit200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -213,9 +213,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv510DeleteCounterpartyLimitApiResponse"/>
+    /// The <see cref="IDeleteCounterpartyLimitApiResponse"/>
     /// </summary>
-    public interface IOBPv510DeleteCounterpartyLimitApiResponse : OpenBankProject.Client.IApiResponse
+    public interface IDeleteCounterpartyLimitApiResponse : OpenBankProject.Client.IApiResponse
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -237,9 +237,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv510GetCounterpartyLimitApiResponse"/>
+    /// The <see cref="IGetCounterpartyLimitApiResponse"/>
     /// </summary>
-    public interface IOBPv510GetCounterpartyLimitApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv510GetCounterpartyLimit200Response?>
+    public interface IGetCounterpartyLimitApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetCounterpartyLimit200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -261,9 +261,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv510GetCounterpartyLimitStatusApiResponse"/>
+    /// The <see cref="IGetCounterpartyLimitStatusApiResponse"/>
     /// </summary>
-    public interface IOBPv510GetCounterpartyLimitStatusApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv510GetCounterpartyLimitStatus200Response?>
+    public interface IGetCounterpartyLimitStatusApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetCounterpartyLimitStatus200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -285,9 +285,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv510UpdateCounterpartyLimitApiResponse"/>
+    /// The <see cref="IUpdateCounterpartyLimitApiResponse"/>
     /// </summary>
-    public interface IOBPv510UpdateCounterpartyLimitApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv510GetCounterpartyLimit200Response?>
+    public interface IUpdateCounterpartyLimitApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetCounterpartyLimit200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -316,101 +316,101 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510CreateCounterpartyLimit;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateCounterpartyLimit;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510CreateCounterpartyLimit;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateCounterpartyLimit;
 
-        internal void ExecuteOnOBPv510CreateCounterpartyLimit(CounterpartyLimitsApi.OBPv510CreateCounterpartyLimitApiResponse apiResponse)
+        internal void ExecuteOnCreateCounterpartyLimit(CounterpartyLimitsApi.CreateCounterpartyLimitApiResponse apiResponse)
         {
-            OnOBPv510CreateCounterpartyLimit?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateCounterpartyLimit?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510CreateCounterpartyLimit(Exception exception)
+        internal void ExecuteOnErrorCreateCounterpartyLimit(Exception exception)
         {
-            OnErrorOBPv510CreateCounterpartyLimit?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateCounterpartyLimit?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510DeleteCounterpartyLimit;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteCounterpartyLimit;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510DeleteCounterpartyLimit;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteCounterpartyLimit;
 
-        internal void ExecuteOnOBPv510DeleteCounterpartyLimit(CounterpartyLimitsApi.OBPv510DeleteCounterpartyLimitApiResponse apiResponse)
+        internal void ExecuteOnDeleteCounterpartyLimit(CounterpartyLimitsApi.DeleteCounterpartyLimitApiResponse apiResponse)
         {
-            OnOBPv510DeleteCounterpartyLimit?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteCounterpartyLimit?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510DeleteCounterpartyLimit(Exception exception)
+        internal void ExecuteOnErrorDeleteCounterpartyLimit(Exception exception)
         {
-            OnErrorOBPv510DeleteCounterpartyLimit?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteCounterpartyLimit?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510GetCounterpartyLimit;
+        public event EventHandler<ApiResponseEventArgs>? OnGetCounterpartyLimit;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510GetCounterpartyLimit;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetCounterpartyLimit;
 
-        internal void ExecuteOnOBPv510GetCounterpartyLimit(CounterpartyLimitsApi.OBPv510GetCounterpartyLimitApiResponse apiResponse)
+        internal void ExecuteOnGetCounterpartyLimit(CounterpartyLimitsApi.GetCounterpartyLimitApiResponse apiResponse)
         {
-            OnOBPv510GetCounterpartyLimit?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetCounterpartyLimit?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510GetCounterpartyLimit(Exception exception)
+        internal void ExecuteOnErrorGetCounterpartyLimit(Exception exception)
         {
-            OnErrorOBPv510GetCounterpartyLimit?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetCounterpartyLimit?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510GetCounterpartyLimitStatus;
+        public event EventHandler<ApiResponseEventArgs>? OnGetCounterpartyLimitStatus;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510GetCounterpartyLimitStatus;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetCounterpartyLimitStatus;
 
-        internal void ExecuteOnOBPv510GetCounterpartyLimitStatus(CounterpartyLimitsApi.OBPv510GetCounterpartyLimitStatusApiResponse apiResponse)
+        internal void ExecuteOnGetCounterpartyLimitStatus(CounterpartyLimitsApi.GetCounterpartyLimitStatusApiResponse apiResponse)
         {
-            OnOBPv510GetCounterpartyLimitStatus?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetCounterpartyLimitStatus?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510GetCounterpartyLimitStatus(Exception exception)
+        internal void ExecuteOnErrorGetCounterpartyLimitStatus(Exception exception)
         {
-            OnErrorOBPv510GetCounterpartyLimitStatus?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetCounterpartyLimitStatus?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510UpdateCounterpartyLimit;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateCounterpartyLimit;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510UpdateCounterpartyLimit;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateCounterpartyLimit;
 
-        internal void ExecuteOnOBPv510UpdateCounterpartyLimit(CounterpartyLimitsApi.OBPv510UpdateCounterpartyLimitApiResponse apiResponse)
+        internal void ExecuteOnUpdateCounterpartyLimit(CounterpartyLimitsApi.UpdateCounterpartyLimitApiResponse apiResponse)
         {
-            OnOBPv510UpdateCounterpartyLimit?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateCounterpartyLimit?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510UpdateCounterpartyLimit(Exception exception)
+        internal void ExecuteOnErrorUpdateCounterpartyLimit(Exception exception)
         {
-            OnErrorOBPv510UpdateCounterpartyLimit?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateCounterpartyLimit?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -468,7 +468,7 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv510CreateCounterpartyLimit(ref string bankid, ref string accountid, ref string viewid, ref string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+        partial void FormatCreateCounterpartyLimit(ref string bankid, ref string accountid, ref string viewid, ref string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit);
 
         /// <summary>
         /// Validates the request parameters
@@ -477,9 +477,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit"></param>
+        /// <param name="createVRPConsentRequestRequestToAccountLimit"></param>
         /// <returns></returns>
-        private void ValidateOBPv510CreateCounterpartyLimit(string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit)
+        private void ValidateCreateCounterpartyLimit(string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -493,8 +493,8 @@ namespace OpenBankProject.Api
             if (counterpartyid == null)
                 throw new ArgumentNullException(nameof(counterpartyid));
 
-            if (oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit == null)
-                throw new ArgumentNullException(nameof(oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit));
+            if (createVRPConsentRequestRequestToAccountLimit == null)
+                throw new ArgumentNullException(nameof(createVRPConsentRequestRequestToAccountLimit));
         }
 
         /// <summary>
@@ -505,11 +505,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit"></param>
-        private void AfterOBPv510CreateCounterpartyLimitDefaultImplementation(IOBPv510CreateCounterpartyLimitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit)
+        /// <param name="createVRPConsentRequestRequestToAccountLimit"></param>
+        private void AfterCreateCounterpartyLimitDefaultImplementation(ICreateCounterpartyLimitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510CreateCounterpartyLimit(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+            AfterCreateCounterpartyLimit(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -523,8 +523,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit"></param>
-        partial void AfterOBPv510CreateCounterpartyLimit(ref bool suppressDefaultLog, IOBPv510CreateCounterpartyLimitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+        /// <param name="createVRPConsentRequestRequestToAccountLimit"></param>
+        partial void AfterCreateCounterpartyLimit(ref bool suppressDefaultLog, ICreateCounterpartyLimitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -536,11 +536,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit"></param>
-        private void OnErrorOBPv510CreateCounterpartyLimitDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit)
+        /// <param name="createVRPConsentRequestRequestToAccountLimit"></param>
+        private void OnErrorCreateCounterpartyLimitDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510CreateCounterpartyLimit(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+            OnErrorCreateCounterpartyLimit(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -556,24 +556,24 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit"></param>
-        partial void OnErrorOBPv510CreateCounterpartyLimit(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+        /// <param name="createVRPConsentRequestRequestToAccountLimit"></param>
+        partial void OnErrorCreateCounterpartyLimit(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit);
 
         /// <summary>
-        /// Create Counterparty Limit &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
+        /// Create Counterparty Limit &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit">Request body</param>
+        /// <param name="createVRPConsentRequestRequestToAccountLimit">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510CreateCounterpartyLimitApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510CreateCounterpartyLimitApiResponse?> OBPv510CreateCounterpartyLimitOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateCounterpartyLimitApiResponse"/>&gt;</returns>
+        public async Task<ICreateCounterpartyLimitApiResponse?> CreateCounterpartyLimitOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510CreateCounterpartyLimitAsync(bankid, accountid, viewid, counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, cancellationToken).ConfigureAwait(false);
+                return await CreateCounterpartyLimitAsync(bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -582,25 +582,25 @@ namespace OpenBankProject.Api
         }
 
         /// <summary>
-        /// Create Counterparty Limit &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
+        /// Create Counterparty Limit &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit">Request body</param>
+        /// <param name="createVRPConsentRequestRequestToAccountLimit">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510CreateCounterpartyLimitApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510CreateCounterpartyLimitApiResponse> OBPv510CreateCounterpartyLimitAsync(string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateCounterpartyLimitApiResponse"/>&gt;</returns>
+        public async Task<ICreateCounterpartyLimitApiResponse> CreateCounterpartyLimitAsync(string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510CreateCounterpartyLimit(bankid, accountid, viewid, counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+                ValidateCreateCounterpartyLimit(bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit);
 
-                FormatOBPv510CreateCounterpartyLimit(ref bankid, ref accountid, ref viewid, ref counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+                FormatCreateCounterpartyLimit(ref bankid, ref accountid, ref viewid, ref counterpartyid, createVRPConsentRequestRequestToAccountLimit);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -615,16 +615,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bcounterpartyid%7D", Uri.EscapeDataString(counterpartyid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createVRPConsentRequestRequestToAccountLimit as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createVRPConsentRequestRequestToAccountLimit, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -660,8 +660,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv510CreateCounterpartyLimitApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv510CreateCounterpartyLimitApiResponse>();
-                        OBPv510CreateCounterpartyLimitApiResponse apiResponseLocalVar;
+                        ILogger<CreateCounterpartyLimitApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateCounterpartyLimitApiResponse>();
+                        CreateCounterpartyLimitApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -672,9 +672,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510CreateCounterpartyLimitDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+                        AfterCreateCounterpartyLimitDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit);
 
-                        Events.ExecuteOnOBPv510CreateCounterpartyLimit(apiResponseLocalVar);
+                        Events.ExecuteOnCreateCounterpartyLimit(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -686,24 +686,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510CreateCounterpartyLimitDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits", uriBuilderLocalVar.Path, bankid, accountid, viewid, counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
-                Events.ExecuteOnErrorOBPv510CreateCounterpartyLimit(e);
+                OnErrorCreateCounterpartyLimitDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits", uriBuilderLocalVar.Path, bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit);
+                Events.ExecuteOnErrorCreateCounterpartyLimit(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv510CreateCounterpartyLimitApiResponse"/>
+        /// The <see cref="CreateCounterpartyLimitApiResponse"/>
         /// </summary>
-        public partial class OBPv510CreateCounterpartyLimitApiResponse : OpenBankProject.Client.ApiResponse, IOBPv510CreateCounterpartyLimitApiResponse
+        public partial class CreateCounterpartyLimitApiResponse : OpenBankProject.Client.ApiResponse, ICreateCounterpartyLimitApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv510CreateCounterpartyLimitApiResponse> Logger { get; }
+            public ILogger<CreateCounterpartyLimitApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv510CreateCounterpartyLimitApiResponse"/>
+            /// The <see cref="CreateCounterpartyLimitApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -712,14 +712,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510CreateCounterpartyLimitApiResponse(ILogger<OBPv510CreateCounterpartyLimitApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateCounterpartyLimitApiResponse(ILogger<CreateCounterpartyLimitApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv510CreateCounterpartyLimitApiResponse"/>
+            /// The <see cref="CreateCounterpartyLimitApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -728,7 +728,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510CreateCounterpartyLimitApiResponse(ILogger<OBPv510CreateCounterpartyLimitApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateCounterpartyLimitApiResponse(ILogger<CreateCounterpartyLimitApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -746,11 +746,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv510GetCounterpartyLimit200Response? Ok()
+            public OpenBankProject.Model.GetCounterpartyLimit200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv510GetCounterpartyLimit200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetCounterpartyLimit200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -759,7 +759,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv510GetCounterpartyLimit200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetCounterpartyLimit200Response? result)
             {
                 result = null;
 
@@ -797,7 +797,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv510DeleteCounterpartyLimit(ref string bankid, ref string accountid, ref string viewid, ref string counterpartyid);
+        partial void FormatDeleteCounterpartyLimit(ref string bankid, ref string accountid, ref string viewid, ref string counterpartyid);
 
         /// <summary>
         /// Validates the request parameters
@@ -807,7 +807,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
         /// <returns></returns>
-        private void ValidateOBPv510DeleteCounterpartyLimit(string bankid, string accountid, string viewid, string counterpartyid)
+        private void ValidateDeleteCounterpartyLimit(string bankid, string accountid, string viewid, string counterpartyid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -830,10 +830,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        private void AfterOBPv510DeleteCounterpartyLimitDefaultImplementation(IOBPv510DeleteCounterpartyLimitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid)
+        private void AfterDeleteCounterpartyLimitDefaultImplementation(IDeleteCounterpartyLimitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510DeleteCounterpartyLimit(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, counterpartyid);
+            AfterDeleteCounterpartyLimit(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, counterpartyid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -847,7 +847,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        partial void AfterOBPv510DeleteCounterpartyLimit(ref bool suppressDefaultLog, IOBPv510DeleteCounterpartyLimitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid);
+        partial void AfterDeleteCounterpartyLimit(ref bool suppressDefaultLog, IDeleteCounterpartyLimitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -859,10 +859,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        private void OnErrorOBPv510DeleteCounterpartyLimitDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid)
+        private void OnErrorDeleteCounterpartyLimitDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510DeleteCounterpartyLimit(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, counterpartyid);
+            OnErrorDeleteCounterpartyLimit(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, counterpartyid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -878,7 +878,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        partial void OnErrorOBPv510DeleteCounterpartyLimit(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid);
+        partial void OnErrorDeleteCounterpartyLimit(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid);
 
         /// <summary>
         /// Delete Counterparty Limit &lt;p&gt;Delete Counterparty Limit.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -888,12 +888,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510DeleteCounterpartyLimitApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510DeleteCounterpartyLimitApiResponse?> OBPv510DeleteCounterpartyLimitOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyLimitApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyLimitApiResponse?> DeleteCounterpartyLimitOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510DeleteCounterpartyLimitAsync(bankid, accountid, viewid, counterpartyid, cancellationToken).ConfigureAwait(false);
+                return await DeleteCounterpartyLimitAsync(bankid, accountid, viewid, counterpartyid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -910,16 +910,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510DeleteCounterpartyLimitApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510DeleteCounterpartyLimitApiResponse> OBPv510DeleteCounterpartyLimitAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyLimitApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyLimitApiResponse> DeleteCounterpartyLimitAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510DeleteCounterpartyLimit(bankid, accountid, viewid, counterpartyid);
+                ValidateDeleteCounterpartyLimit(bankid, accountid, viewid, counterpartyid);
 
-                FormatOBPv510DeleteCounterpartyLimit(ref bankid, ref accountid, ref viewid, ref counterpartyid);
+                FormatDeleteCounterpartyLimit(ref bankid, ref accountid, ref viewid, ref counterpartyid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -939,7 +939,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -957,8 +957,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv510DeleteCounterpartyLimitApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv510DeleteCounterpartyLimitApiResponse>();
-                        OBPv510DeleteCounterpartyLimitApiResponse apiResponseLocalVar;
+                        ILogger<DeleteCounterpartyLimitApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteCounterpartyLimitApiResponse>();
+                        DeleteCounterpartyLimitApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -969,9 +969,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510DeleteCounterpartyLimitDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, counterpartyid);
+                        AfterDeleteCounterpartyLimitDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, counterpartyid);
 
-                        Events.ExecuteOnOBPv510DeleteCounterpartyLimit(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteCounterpartyLimit(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -983,24 +983,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510DeleteCounterpartyLimitDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits", uriBuilderLocalVar.Path, bankid, accountid, viewid, counterpartyid);
-                Events.ExecuteOnErrorOBPv510DeleteCounterpartyLimit(e);
+                OnErrorDeleteCounterpartyLimitDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits", uriBuilderLocalVar.Path, bankid, accountid, viewid, counterpartyid);
+                Events.ExecuteOnErrorDeleteCounterpartyLimit(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv510DeleteCounterpartyLimitApiResponse"/>
+        /// The <see cref="DeleteCounterpartyLimitApiResponse"/>
         /// </summary>
-        public partial class OBPv510DeleteCounterpartyLimitApiResponse : OpenBankProject.Client.ApiResponse, IOBPv510DeleteCounterpartyLimitApiResponse
+        public partial class DeleteCounterpartyLimitApiResponse : OpenBankProject.Client.ApiResponse, IDeleteCounterpartyLimitApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv510DeleteCounterpartyLimitApiResponse> Logger { get; }
+            public ILogger<DeleteCounterpartyLimitApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv510DeleteCounterpartyLimitApiResponse"/>
+            /// The <see cref="DeleteCounterpartyLimitApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1009,14 +1009,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510DeleteCounterpartyLimitApiResponse(ILogger<OBPv510DeleteCounterpartyLimitApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DeleteCounterpartyLimitApiResponse(ILogger<DeleteCounterpartyLimitApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv510DeleteCounterpartyLimitApiResponse"/>
+            /// The <see cref="DeleteCounterpartyLimitApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1025,7 +1025,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510DeleteCounterpartyLimitApiResponse(ILogger<OBPv510DeleteCounterpartyLimitApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DeleteCounterpartyLimitApiResponse(ILogger<DeleteCounterpartyLimitApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1062,7 +1062,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv510GetCounterpartyLimit(ref string bankid, ref string accountid, ref string viewid, ref string counterpartyid);
+        partial void FormatGetCounterpartyLimit(ref string bankid, ref string accountid, ref string viewid, ref string counterpartyid);
 
         /// <summary>
         /// Validates the request parameters
@@ -1072,7 +1072,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
         /// <returns></returns>
-        private void ValidateOBPv510GetCounterpartyLimit(string bankid, string accountid, string viewid, string counterpartyid)
+        private void ValidateGetCounterpartyLimit(string bankid, string accountid, string viewid, string counterpartyid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1095,10 +1095,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        private void AfterOBPv510GetCounterpartyLimitDefaultImplementation(IOBPv510GetCounterpartyLimitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid)
+        private void AfterGetCounterpartyLimitDefaultImplementation(IGetCounterpartyLimitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510GetCounterpartyLimit(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, counterpartyid);
+            AfterGetCounterpartyLimit(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, counterpartyid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1112,7 +1112,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        partial void AfterOBPv510GetCounterpartyLimit(ref bool suppressDefaultLog, IOBPv510GetCounterpartyLimitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid);
+        partial void AfterGetCounterpartyLimit(ref bool suppressDefaultLog, IGetCounterpartyLimitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1124,10 +1124,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        private void OnErrorOBPv510GetCounterpartyLimitDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid)
+        private void OnErrorGetCounterpartyLimitDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510GetCounterpartyLimit(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, counterpartyid);
+            OnErrorGetCounterpartyLimit(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, counterpartyid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1143,7 +1143,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        partial void OnErrorOBPv510GetCounterpartyLimit(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid);
+        partial void OnErrorGetCounterpartyLimit(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid);
 
         /// <summary>
         /// Get Counterparty Limit &lt;p&gt;Get Counterparty Limit.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
@@ -1153,12 +1153,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetCounterpartyLimitApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510GetCounterpartyLimitApiResponse?> OBPv510GetCounterpartyLimitOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCounterpartyLimitApiResponse"/>&gt;</returns>
+        public async Task<IGetCounterpartyLimitApiResponse?> GetCounterpartyLimitOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510GetCounterpartyLimitAsync(bankid, accountid, viewid, counterpartyid, cancellationToken).ConfigureAwait(false);
+                return await GetCounterpartyLimitAsync(bankid, accountid, viewid, counterpartyid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1175,16 +1175,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetCounterpartyLimitApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510GetCounterpartyLimitApiResponse> OBPv510GetCounterpartyLimitAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCounterpartyLimitApiResponse"/>&gt;</returns>
+        public async Task<IGetCounterpartyLimitApiResponse> GetCounterpartyLimitAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510GetCounterpartyLimit(bankid, accountid, viewid, counterpartyid);
+                ValidateGetCounterpartyLimit(bankid, accountid, viewid, counterpartyid);
 
-                FormatOBPv510GetCounterpartyLimit(ref bankid, ref accountid, ref viewid, ref counterpartyid);
+                FormatGetCounterpartyLimit(ref bankid, ref accountid, ref viewid, ref counterpartyid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1204,7 +1204,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1231,8 +1231,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv510GetCounterpartyLimitApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv510GetCounterpartyLimitApiResponse>();
-                        OBPv510GetCounterpartyLimitApiResponse apiResponseLocalVar;
+                        ILogger<GetCounterpartyLimitApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetCounterpartyLimitApiResponse>();
+                        GetCounterpartyLimitApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1243,9 +1243,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510GetCounterpartyLimitDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, counterpartyid);
+                        AfterGetCounterpartyLimitDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, counterpartyid);
 
-                        Events.ExecuteOnOBPv510GetCounterpartyLimit(apiResponseLocalVar);
+                        Events.ExecuteOnGetCounterpartyLimit(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1257,24 +1257,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510GetCounterpartyLimitDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits", uriBuilderLocalVar.Path, bankid, accountid, viewid, counterpartyid);
-                Events.ExecuteOnErrorOBPv510GetCounterpartyLimit(e);
+                OnErrorGetCounterpartyLimitDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits", uriBuilderLocalVar.Path, bankid, accountid, viewid, counterpartyid);
+                Events.ExecuteOnErrorGetCounterpartyLimit(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv510GetCounterpartyLimitApiResponse"/>
+        /// The <see cref="GetCounterpartyLimitApiResponse"/>
         /// </summary>
-        public partial class OBPv510GetCounterpartyLimitApiResponse : OpenBankProject.Client.ApiResponse, IOBPv510GetCounterpartyLimitApiResponse
+        public partial class GetCounterpartyLimitApiResponse : OpenBankProject.Client.ApiResponse, IGetCounterpartyLimitApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv510GetCounterpartyLimitApiResponse> Logger { get; }
+            public ILogger<GetCounterpartyLimitApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv510GetCounterpartyLimitApiResponse"/>
+            /// The <see cref="GetCounterpartyLimitApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1283,14 +1283,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510GetCounterpartyLimitApiResponse(ILogger<OBPv510GetCounterpartyLimitApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetCounterpartyLimitApiResponse(ILogger<GetCounterpartyLimitApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv510GetCounterpartyLimitApiResponse"/>
+            /// The <see cref="GetCounterpartyLimitApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1299,7 +1299,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510GetCounterpartyLimitApiResponse(ILogger<OBPv510GetCounterpartyLimitApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetCounterpartyLimitApiResponse(ILogger<GetCounterpartyLimitApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1317,11 +1317,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv510GetCounterpartyLimit200Response? Ok()
+            public OpenBankProject.Model.GetCounterpartyLimit200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv510GetCounterpartyLimit200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetCounterpartyLimit200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1330,7 +1330,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv510GetCounterpartyLimit200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetCounterpartyLimit200Response? result)
             {
                 result = null;
 
@@ -1368,7 +1368,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv510GetCounterpartyLimitStatus(ref string bankid, ref string accountid, ref string viewid, ref string counterpartyid);
+        partial void FormatGetCounterpartyLimitStatus(ref string bankid, ref string accountid, ref string viewid, ref string counterpartyid);
 
         /// <summary>
         /// Validates the request parameters
@@ -1378,7 +1378,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
         /// <returns></returns>
-        private void ValidateOBPv510GetCounterpartyLimitStatus(string bankid, string accountid, string viewid, string counterpartyid)
+        private void ValidateGetCounterpartyLimitStatus(string bankid, string accountid, string viewid, string counterpartyid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1401,10 +1401,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        private void AfterOBPv510GetCounterpartyLimitStatusDefaultImplementation(IOBPv510GetCounterpartyLimitStatusApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid)
+        private void AfterGetCounterpartyLimitStatusDefaultImplementation(IGetCounterpartyLimitStatusApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510GetCounterpartyLimitStatus(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, counterpartyid);
+            AfterGetCounterpartyLimitStatus(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, counterpartyid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1418,7 +1418,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        partial void AfterOBPv510GetCounterpartyLimitStatus(ref bool suppressDefaultLog, IOBPv510GetCounterpartyLimitStatusApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid);
+        partial void AfterGetCounterpartyLimitStatus(ref bool suppressDefaultLog, IGetCounterpartyLimitStatusApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1430,10 +1430,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        private void OnErrorOBPv510GetCounterpartyLimitStatusDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid)
+        private void OnErrorGetCounterpartyLimitStatusDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510GetCounterpartyLimitStatus(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, counterpartyid);
+            OnErrorGetCounterpartyLimitStatus(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, counterpartyid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1449,7 +1449,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        partial void OnErrorOBPv510GetCounterpartyLimitStatus(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid);
+        partial void OnErrorGetCounterpartyLimitStatus(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid);
 
         /// <summary>
         /// Get Counterparty Limit Status &lt;p&gt;Get Counterparty Limit Status.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency_status&lt;/strong&gt;&lt;/a&gt;: currency_status&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;max_monthly_amount_status&lt;/strong&gt;&lt;/a&gt;: max_monthly_amount_status&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions_status&lt;/strong&gt;&lt;/a&gt;: max_number_of_monthly_transactions_status&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;max_number_of_transactions_status&lt;/strong&gt;&lt;/a&gt;: max_number_of_transactions_status&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions_status&lt;/strong&gt;&lt;/a&gt;: max_number_of_yearly_transactions_status&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;max_total_amount_status&lt;/strong&gt;&lt;/a&gt;: max_total_amount_status&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;max_yearly_amount_status&lt;/strong&gt;&lt;/a&gt;: max_yearly_amount_status&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
@@ -1459,12 +1459,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetCounterpartyLimitStatusApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510GetCounterpartyLimitStatusApiResponse?> OBPv510GetCounterpartyLimitStatusOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCounterpartyLimitStatusApiResponse"/>&gt;</returns>
+        public async Task<IGetCounterpartyLimitStatusApiResponse?> GetCounterpartyLimitStatusOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510GetCounterpartyLimitStatusAsync(bankid, accountid, viewid, counterpartyid, cancellationToken).ConfigureAwait(false);
+                return await GetCounterpartyLimitStatusAsync(bankid, accountid, viewid, counterpartyid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1481,16 +1481,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetCounterpartyLimitStatusApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510GetCounterpartyLimitStatusApiResponse> OBPv510GetCounterpartyLimitStatusAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCounterpartyLimitStatusApiResponse"/>&gt;</returns>
+        public async Task<IGetCounterpartyLimitStatusApiResponse> GetCounterpartyLimitStatusAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510GetCounterpartyLimitStatus(bankid, accountid, viewid, counterpartyid);
+                ValidateGetCounterpartyLimitStatus(bankid, accountid, viewid, counterpartyid);
 
-                FormatOBPv510GetCounterpartyLimitStatus(ref bankid, ref accountid, ref viewid, ref counterpartyid);
+                FormatGetCounterpartyLimitStatus(ref bankid, ref accountid, ref viewid, ref counterpartyid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1510,7 +1510,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1537,8 +1537,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv510GetCounterpartyLimitStatusApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv510GetCounterpartyLimitStatusApiResponse>();
-                        OBPv510GetCounterpartyLimitStatusApiResponse apiResponseLocalVar;
+                        ILogger<GetCounterpartyLimitStatusApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetCounterpartyLimitStatusApiResponse>();
+                        GetCounterpartyLimitStatusApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1549,9 +1549,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510GetCounterpartyLimitStatusDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, counterpartyid);
+                        AfterGetCounterpartyLimitStatusDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, counterpartyid);
 
-                        Events.ExecuteOnOBPv510GetCounterpartyLimitStatus(apiResponseLocalVar);
+                        Events.ExecuteOnGetCounterpartyLimitStatus(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1563,24 +1563,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510GetCounterpartyLimitStatusDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limit-status", uriBuilderLocalVar.Path, bankid, accountid, viewid, counterpartyid);
-                Events.ExecuteOnErrorOBPv510GetCounterpartyLimitStatus(e);
+                OnErrorGetCounterpartyLimitStatusDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limit-status", uriBuilderLocalVar.Path, bankid, accountid, viewid, counterpartyid);
+                Events.ExecuteOnErrorGetCounterpartyLimitStatus(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv510GetCounterpartyLimitStatusApiResponse"/>
+        /// The <see cref="GetCounterpartyLimitStatusApiResponse"/>
         /// </summary>
-        public partial class OBPv510GetCounterpartyLimitStatusApiResponse : OpenBankProject.Client.ApiResponse, IOBPv510GetCounterpartyLimitStatusApiResponse
+        public partial class GetCounterpartyLimitStatusApiResponse : OpenBankProject.Client.ApiResponse, IGetCounterpartyLimitStatusApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv510GetCounterpartyLimitStatusApiResponse> Logger { get; }
+            public ILogger<GetCounterpartyLimitStatusApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv510GetCounterpartyLimitStatusApiResponse"/>
+            /// The <see cref="GetCounterpartyLimitStatusApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1589,14 +1589,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510GetCounterpartyLimitStatusApiResponse(ILogger<OBPv510GetCounterpartyLimitStatusApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetCounterpartyLimitStatusApiResponse(ILogger<GetCounterpartyLimitStatusApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv510GetCounterpartyLimitStatusApiResponse"/>
+            /// The <see cref="GetCounterpartyLimitStatusApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1605,7 +1605,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510GetCounterpartyLimitStatusApiResponse(ILogger<OBPv510GetCounterpartyLimitStatusApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetCounterpartyLimitStatusApiResponse(ILogger<GetCounterpartyLimitStatusApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1623,11 +1623,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv510GetCounterpartyLimitStatus200Response? Ok()
+            public OpenBankProject.Model.GetCounterpartyLimitStatus200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv510GetCounterpartyLimitStatus200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetCounterpartyLimitStatus200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1636,7 +1636,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv510GetCounterpartyLimitStatus200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetCounterpartyLimitStatus200Response? result)
             {
                 result = null;
 
@@ -1674,7 +1674,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv510UpdateCounterpartyLimit(ref string bankid, ref string accountid, ref string viewid, ref string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+        partial void FormatUpdateCounterpartyLimit(ref string bankid, ref string accountid, ref string viewid, ref string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit);
 
         /// <summary>
         /// Validates the request parameters
@@ -1683,9 +1683,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit"></param>
+        /// <param name="createVRPConsentRequestRequestToAccountLimit"></param>
         /// <returns></returns>
-        private void ValidateOBPv510UpdateCounterpartyLimit(string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit)
+        private void ValidateUpdateCounterpartyLimit(string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1699,8 +1699,8 @@ namespace OpenBankProject.Api
             if (counterpartyid == null)
                 throw new ArgumentNullException(nameof(counterpartyid));
 
-            if (oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit == null)
-                throw new ArgumentNullException(nameof(oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit));
+            if (createVRPConsentRequestRequestToAccountLimit == null)
+                throw new ArgumentNullException(nameof(createVRPConsentRequestRequestToAccountLimit));
         }
 
         /// <summary>
@@ -1711,11 +1711,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit"></param>
-        private void AfterOBPv510UpdateCounterpartyLimitDefaultImplementation(IOBPv510UpdateCounterpartyLimitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit)
+        /// <param name="createVRPConsentRequestRequestToAccountLimit"></param>
+        private void AfterUpdateCounterpartyLimitDefaultImplementation(IUpdateCounterpartyLimitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510UpdateCounterpartyLimit(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+            AfterUpdateCounterpartyLimit(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1729,8 +1729,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit"></param>
-        partial void AfterOBPv510UpdateCounterpartyLimit(ref bool suppressDefaultLog, IOBPv510UpdateCounterpartyLimitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+        /// <param name="createVRPConsentRequestRequestToAccountLimit"></param>
+        partial void AfterUpdateCounterpartyLimit(ref bool suppressDefaultLog, IUpdateCounterpartyLimitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1742,11 +1742,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit"></param>
-        private void OnErrorOBPv510UpdateCounterpartyLimitDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit)
+        /// <param name="createVRPConsentRequestRequestToAccountLimit"></param>
+        private void OnErrorUpdateCounterpartyLimitDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510UpdateCounterpartyLimit(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+            OnErrorUpdateCounterpartyLimit(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1762,8 +1762,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit"></param>
-        partial void OnErrorOBPv510UpdateCounterpartyLimit(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+        /// <param name="createVRPConsentRequestRequestToAccountLimit"></param>
+        partial void OnErrorUpdateCounterpartyLimit(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit);
 
         /// <summary>
         /// Update Counterparty Limit &lt;p&gt;Update Counterparty Limit.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
@@ -1772,14 +1772,14 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit">Request body</param>
+        /// <param name="createVRPConsentRequestRequestToAccountLimit">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510UpdateCounterpartyLimitApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510UpdateCounterpartyLimitApiResponse?> OBPv510UpdateCounterpartyLimitOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyLimitApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyLimitApiResponse?> UpdateCounterpartyLimitOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510UpdateCounterpartyLimitAsync(bankid, accountid, viewid, counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, cancellationToken).ConfigureAwait(false);
+                return await UpdateCounterpartyLimitAsync(bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1795,18 +1795,18 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
-        /// <param name="oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit">Request body</param>
+        /// <param name="createVRPConsentRequestRequestToAccountLimit">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510UpdateCounterpartyLimitApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510UpdateCounterpartyLimitApiResponse> OBPv510UpdateCounterpartyLimitAsync(string bankid, string accountid, string viewid, string counterpartyid, OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyLimitApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyLimitApiResponse> UpdateCounterpartyLimitAsync(string bankid, string accountid, string viewid, string counterpartyid, CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510UpdateCounterpartyLimit(bankid, accountid, viewid, counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+                ValidateUpdateCounterpartyLimit(bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit);
 
-                FormatOBPv510UpdateCounterpartyLimit(ref bankid, ref accountid, ref viewid, ref counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+                FormatUpdateCounterpartyLimit(ref bankid, ref accountid, ref viewid, ref counterpartyid, createVRPConsentRequestRequestToAccountLimit);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1821,16 +1821,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bcounterpartyid%7D", Uri.EscapeDataString(counterpartyid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createVRPConsentRequestRequestToAccountLimit as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createVRPConsentRequestRequestToAccountLimit, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1866,8 +1866,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv510UpdateCounterpartyLimitApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv510UpdateCounterpartyLimitApiResponse>();
-                        OBPv510UpdateCounterpartyLimitApiResponse apiResponseLocalVar;
+                        ILogger<UpdateCounterpartyLimitApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<UpdateCounterpartyLimitApiResponse>();
+                        UpdateCounterpartyLimitApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1878,9 +1878,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510UpdateCounterpartyLimitDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+                        AfterUpdateCounterpartyLimitDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit);
 
-                        Events.ExecuteOnOBPv510UpdateCounterpartyLimit(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateCounterpartyLimit(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1892,24 +1892,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510UpdateCounterpartyLimitDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits", uriBuilderLocalVar.Path, bankid, accountid, viewid, counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
-                Events.ExecuteOnErrorOBPv510UpdateCounterpartyLimit(e);
+                OnErrorUpdateCounterpartyLimitDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits", uriBuilderLocalVar.Path, bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit);
+                Events.ExecuteOnErrorUpdateCounterpartyLimit(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv510UpdateCounterpartyLimitApiResponse"/>
+        /// The <see cref="UpdateCounterpartyLimitApiResponse"/>
         /// </summary>
-        public partial class OBPv510UpdateCounterpartyLimitApiResponse : OpenBankProject.Client.ApiResponse, IOBPv510UpdateCounterpartyLimitApiResponse
+        public partial class UpdateCounterpartyLimitApiResponse : OpenBankProject.Client.ApiResponse, IUpdateCounterpartyLimitApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv510UpdateCounterpartyLimitApiResponse> Logger { get; }
+            public ILogger<UpdateCounterpartyLimitApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv510UpdateCounterpartyLimitApiResponse"/>
+            /// The <see cref="UpdateCounterpartyLimitApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1918,14 +1918,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510UpdateCounterpartyLimitApiResponse(ILogger<OBPv510UpdateCounterpartyLimitApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public UpdateCounterpartyLimitApiResponse(ILogger<UpdateCounterpartyLimitApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv510UpdateCounterpartyLimitApiResponse"/>
+            /// The <see cref="UpdateCounterpartyLimitApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1934,7 +1934,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510UpdateCounterpartyLimitApiResponse(ILogger<OBPv510UpdateCounterpartyLimitApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public UpdateCounterpartyLimitApiResponse(ILogger<UpdateCounterpartyLimitApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1952,11 +1952,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv510GetCounterpartyLimit200Response? Ok()
+            public OpenBankProject.Model.GetCounterpartyLimit200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv510GetCounterpartyLimit200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetCounterpartyLimit200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1965,7 +1965,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv510GetCounterpartyLimit200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetCounterpartyLimit200Response? result)
             {
                 result = null;
 

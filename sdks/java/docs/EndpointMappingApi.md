@@ -1,35 +1,35 @@
 # EndpointMappingApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateBankLevelEndpointMapping**](EndpointMappingApi.md#oBPv400CreateBankLevelEndpointMapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping |
-| [**oBPv400CreateBankLevelEndpointMappingWithHttpInfo**](EndpointMappingApi.md#oBPv400CreateBankLevelEndpointMappingWithHttpInfo) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping |
-| [**oBPv400CreateEndpointMapping**](EndpointMappingApi.md#oBPv400CreateEndpointMapping) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping |
-| [**oBPv400CreateEndpointMappingWithHttpInfo**](EndpointMappingApi.md#oBPv400CreateEndpointMappingWithHttpInfo) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping |
-| [**oBPv400DeleteBankLevelEndpointMapping**](EndpointMappingApi.md#oBPv400DeleteBankLevelEndpointMapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping |
-| [**oBPv400DeleteBankLevelEndpointMappingWithHttpInfo**](EndpointMappingApi.md#oBPv400DeleteBankLevelEndpointMappingWithHttpInfo) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping |
-| [**oBPv400DeleteEndpointMapping**](EndpointMappingApi.md#oBPv400DeleteEndpointMapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping |
-| [**oBPv400DeleteEndpointMappingWithHttpInfo**](EndpointMappingApi.md#oBPv400DeleteEndpointMappingWithHttpInfo) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping |
-| [**oBPv400GetAllBankLevelEndpointMappings**](EndpointMappingApi.md#oBPv400GetAllBankLevelEndpointMappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings |
-| [**oBPv400GetAllBankLevelEndpointMappingsWithHttpInfo**](EndpointMappingApi.md#oBPv400GetAllBankLevelEndpointMappingsWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings |
-| [**oBPv400GetAllEndpointMappings**](EndpointMappingApi.md#oBPv400GetAllEndpointMappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings |
-| [**oBPv400GetAllEndpointMappingsWithHttpInfo**](EndpointMappingApi.md#oBPv400GetAllEndpointMappingsWithHttpInfo) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings |
-| [**oBPv400GetBankLevelEndpointMapping**](EndpointMappingApi.md#oBPv400GetBankLevelEndpointMapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping |
-| [**oBPv400GetBankLevelEndpointMappingWithHttpInfo**](EndpointMappingApi.md#oBPv400GetBankLevelEndpointMappingWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping |
-| [**oBPv400GetEndpointMapping**](EndpointMappingApi.md#oBPv400GetEndpointMapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id |
-| [**oBPv400GetEndpointMappingWithHttpInfo**](EndpointMappingApi.md#oBPv400GetEndpointMappingWithHttpInfo) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id |
-| [**oBPv400UpdateBankLevelEndpointMapping**](EndpointMappingApi.md#oBPv400UpdateBankLevelEndpointMapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping |
-| [**oBPv400UpdateBankLevelEndpointMappingWithHttpInfo**](EndpointMappingApi.md#oBPv400UpdateBankLevelEndpointMappingWithHttpInfo) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping |
-| [**oBPv400UpdateEndpointMapping**](EndpointMappingApi.md#oBPv400UpdateEndpointMapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping |
-| [**oBPv400UpdateEndpointMappingWithHttpInfo**](EndpointMappingApi.md#oBPv400UpdateEndpointMappingWithHttpInfo) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping |
+| [**createBankLevelEndpointMapping**](EndpointMappingApi.md#createBankLevelEndpointMapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping |
+| [**createBankLevelEndpointMappingWithHttpInfo**](EndpointMappingApi.md#createBankLevelEndpointMappingWithHttpInfo) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping |
+| [**createEndpointMapping**](EndpointMappingApi.md#createEndpointMapping) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping |
+| [**createEndpointMappingWithHttpInfo**](EndpointMappingApi.md#createEndpointMappingWithHttpInfo) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping |
+| [**deleteBankLevelEndpointMapping**](EndpointMappingApi.md#deleteBankLevelEndpointMapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping |
+| [**deleteBankLevelEndpointMappingWithHttpInfo**](EndpointMappingApi.md#deleteBankLevelEndpointMappingWithHttpInfo) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping |
+| [**deleteEndpointMapping**](EndpointMappingApi.md#deleteEndpointMapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping |
+| [**deleteEndpointMappingWithHttpInfo**](EndpointMappingApi.md#deleteEndpointMappingWithHttpInfo) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping |
+| [**getAllBankLevelEndpointMappings**](EndpointMappingApi.md#getAllBankLevelEndpointMappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings |
+| [**getAllBankLevelEndpointMappingsWithHttpInfo**](EndpointMappingApi.md#getAllBankLevelEndpointMappingsWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings |
+| [**getAllEndpointMappings**](EndpointMappingApi.md#getAllEndpointMappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings |
+| [**getAllEndpointMappingsWithHttpInfo**](EndpointMappingApi.md#getAllEndpointMappingsWithHttpInfo) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings |
+| [**getBankLevelEndpointMapping**](EndpointMappingApi.md#getBankLevelEndpointMapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping |
+| [**getBankLevelEndpointMappingWithHttpInfo**](EndpointMappingApi.md#getBankLevelEndpointMappingWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping |
+| [**getEndpointMapping**](EndpointMappingApi.md#getEndpointMapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id |
+| [**getEndpointMappingWithHttpInfo**](EndpointMappingApi.md#getEndpointMappingWithHttpInfo) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id |
+| [**updateBankLevelEndpointMapping**](EndpointMappingApi.md#updateBankLevelEndpointMapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping |
+| [**updateBankLevelEndpointMappingWithHttpInfo**](EndpointMappingApi.md#updateBankLevelEndpointMappingWithHttpInfo) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping |
+| [**updateEndpointMapping**](EndpointMappingApi.md#updateEndpointMapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping |
+| [**updateEndpointMappingWithHttpInfo**](EndpointMappingApi.md#updateEndpointMappingWithHttpInfo) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping |
 
 
 
-## oBPv400CreateBankLevelEndpointMapping
+## createBankLevelEndpointMapping
 
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400CreateBankLevelEndpointMapping(bankid, obPv400CreateEndpointMappingRequest)
+> GetAllEndpointMappings200ResponseEndpointMappingsInner createBankLevelEndpointMapping(bankid, createEndpointMappingRequest)
 
 Create Bank Level Endpoint Mapping
 
@@ -49,7 +49,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -69,12 +69,12 @@ public class Example {
 
         EndpointMappingApi apiInstance = new EndpointMappingApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest = new OBPv400CreateEndpointMappingRequest(); // OBPv400CreateEndpointMappingRequest | Request body
+        CreateEndpointMappingRequest createEndpointMappingRequest = new CreateEndpointMappingRequest(); // CreateEndpointMappingRequest | Request body
         try {
-            OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems result = apiInstance.oBPv400CreateBankLevelEndpointMapping(bankid, obPv400CreateEndpointMappingRequest);
+            GetAllEndpointMappings200ResponseEndpointMappingsInner result = apiInstance.createBankLevelEndpointMapping(bankid, createEndpointMappingRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400CreateBankLevelEndpointMapping");
+            System.err.println("Exception when calling EndpointMappingApi#createBankLevelEndpointMapping");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -90,11 +90,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md)| Request body | |
+| **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 
 ### Authorization
@@ -113,9 +113,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateBankLevelEndpointMappingWithHttpInfo
+## createBankLevelEndpointMappingWithHttpInfo
 
-> ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400CreateBankLevelEndpointMapping oBPv400CreateBankLevelEndpointMappingWithHttpInfo(bankid, obPv400CreateEndpointMappingRequest)
+> ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> createBankLevelEndpointMapping createBankLevelEndpointMappingWithHttpInfo(bankid, createEndpointMappingRequest)
 
 Create Bank Level Endpoint Mapping
 
@@ -136,7 +136,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -156,14 +156,14 @@ public class Example {
 
         EndpointMappingApi apiInstance = new EndpointMappingApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest = new OBPv400CreateEndpointMappingRequest(); // OBPv400CreateEndpointMappingRequest | Request body
+        CreateEndpointMappingRequest createEndpointMappingRequest = new CreateEndpointMappingRequest(); // CreateEndpointMappingRequest | Request body
         try {
-            ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> response = apiInstance.oBPv400CreateBankLevelEndpointMappingWithHttpInfo(bankid, obPv400CreateEndpointMappingRequest);
+            ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> response = apiInstance.createBankLevelEndpointMappingWithHttpInfo(bankid, createEndpointMappingRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400CreateBankLevelEndpointMapping");
+            System.err.println("Exception when calling EndpointMappingApi#createBankLevelEndpointMapping");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -179,11 +179,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md)| Request body | |
+| **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)>
+ApiResponse<[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)>
 
 
 ### Authorization
@@ -203,9 +203,9 @@ ApiResponse<[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMapping
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateEndpointMapping
+## createEndpointMapping
 
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400CreateEndpointMapping(obPv400CreateEndpointMappingRequest)
+> GetAllEndpointMappings200ResponseEndpointMappingsInner createEndpointMapping(createEndpointMappingRequest)
 
 Create Endpoint Mapping
 
@@ -225,7 +225,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -244,12 +244,12 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         EndpointMappingApi apiInstance = new EndpointMappingApi(defaultClient);
-        OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest = new OBPv400CreateEndpointMappingRequest(); // OBPv400CreateEndpointMappingRequest | Request body
+        CreateEndpointMappingRequest createEndpointMappingRequest = new CreateEndpointMappingRequest(); // CreateEndpointMappingRequest | Request body
         try {
-            OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems result = apiInstance.oBPv400CreateEndpointMapping(obPv400CreateEndpointMappingRequest);
+            GetAllEndpointMappings200ResponseEndpointMappingsInner result = apiInstance.createEndpointMapping(createEndpointMappingRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400CreateEndpointMapping");
+            System.err.println("Exception when calling EndpointMappingApi#createEndpointMapping");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -264,11 +264,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md)| Request body | |
+| **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 
 ### Authorization
@@ -286,9 +286,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateEndpointMappingWithHttpInfo
+## createEndpointMappingWithHttpInfo
 
-> ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400CreateEndpointMapping oBPv400CreateEndpointMappingWithHttpInfo(obPv400CreateEndpointMappingRequest)
+> ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> createEndpointMapping createEndpointMappingWithHttpInfo(createEndpointMappingRequest)
 
 Create Endpoint Mapping
 
@@ -309,7 +309,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -328,14 +328,14 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         EndpointMappingApi apiInstance = new EndpointMappingApi(defaultClient);
-        OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest = new OBPv400CreateEndpointMappingRequest(); // OBPv400CreateEndpointMappingRequest | Request body
+        CreateEndpointMappingRequest createEndpointMappingRequest = new CreateEndpointMappingRequest(); // CreateEndpointMappingRequest | Request body
         try {
-            ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> response = apiInstance.oBPv400CreateEndpointMappingWithHttpInfo(obPv400CreateEndpointMappingRequest);
+            ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> response = apiInstance.createEndpointMappingWithHttpInfo(createEndpointMappingRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400CreateEndpointMapping");
+            System.err.println("Exception when calling EndpointMappingApi#createEndpointMapping");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -350,11 +350,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md)| Request body | |
+| **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)>
+ApiResponse<[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)>
 
 
 ### Authorization
@@ -373,9 +373,9 @@ ApiResponse<[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMapping
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteBankLevelEndpointMapping
+## deleteBankLevelEndpointMapping
 
-> void oBPv400DeleteBankLevelEndpointMapping(bankid, endpointmappingid)
+> void deleteBankLevelEndpointMapping(bankid, endpointmappingid)
 
 Delete Bank Level Endpoint Mapping
 
@@ -395,7 +395,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -417,9 +417,9 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String endpointmappingid = "endpointmappingid_example"; // String | The ENDPOINTMAPPINGID identifier
         try {
-            apiInstance.oBPv400DeleteBankLevelEndpointMapping(bankid, endpointmappingid);
+            apiInstance.deleteBankLevelEndpointMapping(bankid, endpointmappingid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400DeleteBankLevelEndpointMapping");
+            System.err.println("Exception when calling EndpointMappingApi#deleteBankLevelEndpointMapping");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -458,9 +458,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteBankLevelEndpointMappingWithHttpInfo
+## deleteBankLevelEndpointMappingWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteBankLevelEndpointMapping oBPv400DeleteBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid)
+> ApiResponse<Void> deleteBankLevelEndpointMapping deleteBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid)
 
 Delete Bank Level Endpoint Mapping
 
@@ -481,7 +481,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -503,11 +503,11 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String endpointmappingid = "endpointmappingid_example"; // String | The ENDPOINTMAPPINGID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid);
+            ApiResponse<Void> response = apiInstance.deleteBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400DeleteBankLevelEndpointMapping");
+            System.err.println("Exception when calling EndpointMappingApi#deleteBankLevelEndpointMapping");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -547,9 +547,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteEndpointMapping
+## deleteEndpointMapping
 
-> void oBPv400DeleteEndpointMapping(endpointmappingid)
+> void deleteEndpointMapping(endpointmappingid)
 
 Delete Endpoint Mapping
 
@@ -569,7 +569,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -590,9 +590,9 @@ public class Example {
         EndpointMappingApi apiInstance = new EndpointMappingApi(defaultClient);
         String endpointmappingid = "endpointmappingid_example"; // String | The ENDPOINTMAPPINGID identifier
         try {
-            apiInstance.oBPv400DeleteEndpointMapping(endpointmappingid);
+            apiInstance.deleteEndpointMapping(endpointmappingid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400DeleteEndpointMapping");
+            System.err.println("Exception when calling EndpointMappingApi#deleteEndpointMapping");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -629,9 +629,9 @@ null (empty response body)
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteEndpointMappingWithHttpInfo
+## deleteEndpointMappingWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteEndpointMapping oBPv400DeleteEndpointMappingWithHttpInfo(endpointmappingid)
+> ApiResponse<Void> deleteEndpointMapping deleteEndpointMappingWithHttpInfo(endpointmappingid)
 
 Delete Endpoint Mapping
 
@@ -652,7 +652,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -673,11 +673,11 @@ public class Example {
         EndpointMappingApi apiInstance = new EndpointMappingApi(defaultClient);
         String endpointmappingid = "endpointmappingid_example"; // String | The ENDPOINTMAPPINGID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteEndpointMappingWithHttpInfo(endpointmappingid);
+            ApiResponse<Void> response = apiInstance.deleteEndpointMappingWithHttpInfo(endpointmappingid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400DeleteEndpointMapping");
+            System.err.println("Exception when calling EndpointMappingApi#deleteEndpointMapping");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -715,9 +715,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetAllBankLevelEndpointMappings
+## getAllBankLevelEndpointMappings
 
-> OBPv400GetAllEndpointMappings200Response oBPv400GetAllBankLevelEndpointMappings(bankid)
+> GetAllEndpointMappings200Response getAllBankLevelEndpointMappings(bankid)
 
 Get all Bank Level Endpoint Mappings
 
@@ -737,7 +737,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -758,10 +758,10 @@ public class Example {
         EndpointMappingApi apiInstance = new EndpointMappingApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            OBPv400GetAllEndpointMappings200Response result = apiInstance.oBPv400GetAllBankLevelEndpointMappings(bankid);
+            GetAllEndpointMappings200Response result = apiInstance.getAllBankLevelEndpointMappings(bankid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400GetAllBankLevelEndpointMappings");
+            System.err.println("Exception when calling EndpointMappingApi#getAllBankLevelEndpointMappings");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -780,7 +780,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpointMappings200Response.md)
+[**GetAllEndpointMappings200Response**](GetAllEndpointMappings200Response.md)
 
 
 ### Authorization
@@ -799,9 +799,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetAllBankLevelEndpointMappingsWithHttpInfo
+## getAllBankLevelEndpointMappingsWithHttpInfo
 
-> ApiResponse<OBPv400GetAllEndpointMappings200Response> oBPv400GetAllBankLevelEndpointMappings oBPv400GetAllBankLevelEndpointMappingsWithHttpInfo(bankid)
+> ApiResponse<GetAllEndpointMappings200Response> getAllBankLevelEndpointMappings getAllBankLevelEndpointMappingsWithHttpInfo(bankid)
 
 Get all Bank Level Endpoint Mappings
 
@@ -822,7 +822,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -843,12 +843,12 @@ public class Example {
         EndpointMappingApi apiInstance = new EndpointMappingApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            ApiResponse<OBPv400GetAllEndpointMappings200Response> response = apiInstance.oBPv400GetAllBankLevelEndpointMappingsWithHttpInfo(bankid);
+            ApiResponse<GetAllEndpointMappings200Response> response = apiInstance.getAllBankLevelEndpointMappingsWithHttpInfo(bankid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400GetAllBankLevelEndpointMappings");
+            System.err.println("Exception when calling EndpointMappingApi#getAllBankLevelEndpointMappings");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -867,7 +867,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpointMappings200Response.md)>
+ApiResponse<[**GetAllEndpointMappings200Response**](GetAllEndpointMappings200Response.md)>
 
 
 ### Authorization
@@ -887,9 +887,9 @@ ApiResponse<[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpoint
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetAllEndpointMappings
+## getAllEndpointMappings
 
-> OBPv400GetAllEndpointMappings200Response oBPv400GetAllEndpointMappings()
+> GetAllEndpointMappings200Response getAllEndpointMappings()
 
 Get all Endpoint Mappings
 
@@ -909,7 +909,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -929,10 +929,10 @@ public class Example {
 
         EndpointMappingApi apiInstance = new EndpointMappingApi(defaultClient);
         try {
-            OBPv400GetAllEndpointMappings200Response result = apiInstance.oBPv400GetAllEndpointMappings();
+            GetAllEndpointMappings200Response result = apiInstance.getAllEndpointMappings();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400GetAllEndpointMappings");
+            System.err.println("Exception when calling EndpointMappingApi#getAllEndpointMappings");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -948,7 +948,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpointMappings200Response.md)
+[**GetAllEndpointMappings200Response**](GetAllEndpointMappings200Response.md)
 
 
 ### Authorization
@@ -966,9 +966,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetAllEndpointMappingsWithHttpInfo
+## getAllEndpointMappingsWithHttpInfo
 
-> ApiResponse<OBPv400GetAllEndpointMappings200Response> oBPv400GetAllEndpointMappings oBPv400GetAllEndpointMappingsWithHttpInfo()
+> ApiResponse<GetAllEndpointMappings200Response> getAllEndpointMappings getAllEndpointMappingsWithHttpInfo()
 
 Get all Endpoint Mappings
 
@@ -989,7 +989,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1009,12 +1009,12 @@ public class Example {
 
         EndpointMappingApi apiInstance = new EndpointMappingApi(defaultClient);
         try {
-            ApiResponse<OBPv400GetAllEndpointMappings200Response> response = apiInstance.oBPv400GetAllEndpointMappingsWithHttpInfo();
+            ApiResponse<GetAllEndpointMappings200Response> response = apiInstance.getAllEndpointMappingsWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400GetAllEndpointMappings");
+            System.err.println("Exception when calling EndpointMappingApi#getAllEndpointMappings");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1030,7 +1030,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpointMappings200Response.md)>
+ApiResponse<[**GetAllEndpointMappings200Response**](GetAllEndpointMappings200Response.md)>
 
 
 ### Authorization
@@ -1049,9 +1049,9 @@ ApiResponse<[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpoint
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetBankLevelEndpointMapping
+## getBankLevelEndpointMapping
 
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400GetBankLevelEndpointMapping(bankid, endpointmappingid)
+> GetAllEndpointMappings200ResponseEndpointMappingsInner getBankLevelEndpointMapping(bankid, endpointmappingid)
 
 Get Bank Level Endpoint Mapping
 
@@ -1071,7 +1071,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1093,10 +1093,10 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String endpointmappingid = "endpointmappingid_example"; // String | The ENDPOINTMAPPINGID identifier
         try {
-            OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems result = apiInstance.oBPv400GetBankLevelEndpointMapping(bankid, endpointmappingid);
+            GetAllEndpointMappings200ResponseEndpointMappingsInner result = apiInstance.getBankLevelEndpointMapping(bankid, endpointmappingid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400GetBankLevelEndpointMapping");
+            System.err.println("Exception when calling EndpointMappingApi#getBankLevelEndpointMapping");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1116,7 +1116,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 
 ### Authorization
@@ -1135,9 +1135,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetBankLevelEndpointMappingWithHttpInfo
+## getBankLevelEndpointMappingWithHttpInfo
 
-> ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400GetBankLevelEndpointMapping oBPv400GetBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid)
+> ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> getBankLevelEndpointMapping getBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid)
 
 Get Bank Level Endpoint Mapping
 
@@ -1158,7 +1158,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1180,12 +1180,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String endpointmappingid = "endpointmappingid_example"; // String | The ENDPOINTMAPPINGID identifier
         try {
-            ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> response = apiInstance.oBPv400GetBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid);
+            ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> response = apiInstance.getBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400GetBankLevelEndpointMapping");
+            System.err.println("Exception when calling EndpointMappingApi#getBankLevelEndpointMapping");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1205,7 +1205,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)>
+ApiResponse<[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)>
 
 
 ### Authorization
@@ -1225,9 +1225,9 @@ ApiResponse<[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMapping
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetEndpointMapping
+## getEndpointMapping
 
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400GetEndpointMapping(endpointmappingid)
+> GetAllEndpointMappings200ResponseEndpointMappingsInner getEndpointMapping(endpointmappingid)
 
 Get Endpoint Mapping by Id
 
@@ -1247,7 +1247,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1268,10 +1268,10 @@ public class Example {
         EndpointMappingApi apiInstance = new EndpointMappingApi(defaultClient);
         String endpointmappingid = "endpointmappingid_example"; // String | The ENDPOINTMAPPINGID identifier
         try {
-            OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems result = apiInstance.oBPv400GetEndpointMapping(endpointmappingid);
+            GetAllEndpointMappings200ResponseEndpointMappingsInner result = apiInstance.getEndpointMapping(endpointmappingid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400GetEndpointMapping");
+            System.err.println("Exception when calling EndpointMappingApi#getEndpointMapping");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1290,7 +1290,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 
 ### Authorization
@@ -1308,9 +1308,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetEndpointMappingWithHttpInfo
+## getEndpointMappingWithHttpInfo
 
-> ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400GetEndpointMapping oBPv400GetEndpointMappingWithHttpInfo(endpointmappingid)
+> ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> getEndpointMapping getEndpointMappingWithHttpInfo(endpointmappingid)
 
 Get Endpoint Mapping by Id
 
@@ -1331,7 +1331,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1352,12 +1352,12 @@ public class Example {
         EndpointMappingApi apiInstance = new EndpointMappingApi(defaultClient);
         String endpointmappingid = "endpointmappingid_example"; // String | The ENDPOINTMAPPINGID identifier
         try {
-            ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> response = apiInstance.oBPv400GetEndpointMappingWithHttpInfo(endpointmappingid);
+            ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> response = apiInstance.getEndpointMappingWithHttpInfo(endpointmappingid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400GetEndpointMapping");
+            System.err.println("Exception when calling EndpointMappingApi#getEndpointMapping");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1376,7 +1376,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)>
+ApiResponse<[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)>
 
 
 ### Authorization
@@ -1395,9 +1395,9 @@ ApiResponse<[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMapping
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400UpdateBankLevelEndpointMapping
+## updateBankLevelEndpointMapping
 
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400UpdateBankLevelEndpointMapping(bankid, endpointmappingid, obPv400CreateEndpointMappingRequest)
+> GetAllEndpointMappings200ResponseEndpointMappingsInner updateBankLevelEndpointMapping(bankid, endpointmappingid, createEndpointMappingRequest)
 
 Update Bank Level Endpoint Mapping
 
@@ -1417,7 +1417,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1438,12 +1438,12 @@ public class Example {
         EndpointMappingApi apiInstance = new EndpointMappingApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String endpointmappingid = "endpointmappingid_example"; // String | The ENDPOINTMAPPINGID identifier
-        OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest = new OBPv400CreateEndpointMappingRequest(); // OBPv400CreateEndpointMappingRequest | Request body
+        CreateEndpointMappingRequest createEndpointMappingRequest = new CreateEndpointMappingRequest(); // CreateEndpointMappingRequest | Request body
         try {
-            OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems result = apiInstance.oBPv400UpdateBankLevelEndpointMapping(bankid, endpointmappingid, obPv400CreateEndpointMappingRequest);
+            GetAllEndpointMappings200ResponseEndpointMappingsInner result = apiInstance.updateBankLevelEndpointMapping(bankid, endpointmappingid, createEndpointMappingRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400UpdateBankLevelEndpointMapping");
+            System.err.println("Exception when calling EndpointMappingApi#updateBankLevelEndpointMapping");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1460,11 +1460,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **endpointmappingid** | **String**| The ENDPOINTMAPPINGID identifier | |
-| **obPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md)| Request body | |
+| **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 
 ### Authorization
@@ -1483,9 +1483,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400UpdateBankLevelEndpointMappingWithHttpInfo
+## updateBankLevelEndpointMappingWithHttpInfo
 
-> ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400UpdateBankLevelEndpointMapping oBPv400UpdateBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid, obPv400CreateEndpointMappingRequest)
+> ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> updateBankLevelEndpointMapping updateBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid, createEndpointMappingRequest)
 
 Update Bank Level Endpoint Mapping
 
@@ -1506,7 +1506,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1527,14 +1527,14 @@ public class Example {
         EndpointMappingApi apiInstance = new EndpointMappingApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String endpointmappingid = "endpointmappingid_example"; // String | The ENDPOINTMAPPINGID identifier
-        OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest = new OBPv400CreateEndpointMappingRequest(); // OBPv400CreateEndpointMappingRequest | Request body
+        CreateEndpointMappingRequest createEndpointMappingRequest = new CreateEndpointMappingRequest(); // CreateEndpointMappingRequest | Request body
         try {
-            ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> response = apiInstance.oBPv400UpdateBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid, obPv400CreateEndpointMappingRequest);
+            ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> response = apiInstance.updateBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid, createEndpointMappingRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400UpdateBankLevelEndpointMapping");
+            System.err.println("Exception when calling EndpointMappingApi#updateBankLevelEndpointMapping");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1551,11 +1551,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **endpointmappingid** | **String**| The ENDPOINTMAPPINGID identifier | |
-| **obPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md)| Request body | |
+| **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)>
+ApiResponse<[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)>
 
 
 ### Authorization
@@ -1575,9 +1575,9 @@ ApiResponse<[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMapping
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400UpdateEndpointMapping
+## updateEndpointMapping
 
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400UpdateEndpointMapping(endpointmappingid, obPv400CreateEndpointMappingRequest)
+> GetAllEndpointMappings200ResponseEndpointMappingsInner updateEndpointMapping(endpointmappingid, createEndpointMappingRequest)
 
 Update Endpoint Mapping
 
@@ -1597,7 +1597,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1617,12 +1617,12 @@ public class Example {
 
         EndpointMappingApi apiInstance = new EndpointMappingApi(defaultClient);
         String endpointmappingid = "endpointmappingid_example"; // String | The ENDPOINTMAPPINGID identifier
-        OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest = new OBPv400CreateEndpointMappingRequest(); // OBPv400CreateEndpointMappingRequest | Request body
+        CreateEndpointMappingRequest createEndpointMappingRequest = new CreateEndpointMappingRequest(); // CreateEndpointMappingRequest | Request body
         try {
-            OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems result = apiInstance.oBPv400UpdateEndpointMapping(endpointmappingid, obPv400CreateEndpointMappingRequest);
+            GetAllEndpointMappings200ResponseEndpointMappingsInner result = apiInstance.updateEndpointMapping(endpointmappingid, createEndpointMappingRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400UpdateEndpointMapping");
+            System.err.println("Exception when calling EndpointMappingApi#updateEndpointMapping");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1638,11 +1638,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **endpointmappingid** | **String**| The ENDPOINTMAPPINGID identifier | |
-| **obPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md)| Request body | |
+| **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 
 ### Authorization
@@ -1660,9 +1660,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400UpdateEndpointMappingWithHttpInfo
+## updateEndpointMappingWithHttpInfo
 
-> ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400UpdateEndpointMapping oBPv400UpdateEndpointMappingWithHttpInfo(endpointmappingid, obPv400CreateEndpointMappingRequest)
+> ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> updateEndpointMapping updateEndpointMappingWithHttpInfo(endpointmappingid, createEndpointMappingRequest)
 
 Update Endpoint Mapping
 
@@ -1683,7 +1683,7 @@ import com.openbankproject.api.EndpointMappingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1703,14 +1703,14 @@ public class Example {
 
         EndpointMappingApi apiInstance = new EndpointMappingApi(defaultClient);
         String endpointmappingid = "endpointmappingid_example"; // String | The ENDPOINTMAPPINGID identifier
-        OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest = new OBPv400CreateEndpointMappingRequest(); // OBPv400CreateEndpointMappingRequest | Request body
+        CreateEndpointMappingRequest createEndpointMappingRequest = new CreateEndpointMappingRequest(); // CreateEndpointMappingRequest | Request body
         try {
-            ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> response = apiInstance.oBPv400UpdateEndpointMappingWithHttpInfo(endpointmappingid, obPv400CreateEndpointMappingRequest);
+            ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> response = apiInstance.updateEndpointMappingWithHttpInfo(endpointmappingid, createEndpointMappingRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling EndpointMappingApi#oBPv400UpdateEndpointMapping");
+            System.err.println("Exception when calling EndpointMappingApi#updateEndpointMapping");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1726,11 +1726,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **endpointmappingid** | **String**| The ENDPOINTMAPPINGID identifier | |
-| **obPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md)| Request body | |
+| **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)>
+ApiResponse<[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)>
 
 
 ### Authorization

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,51 +15,51 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv600CreateAccountAccessRequestRequest,
-  OBPv600GetAccountAccessRequestsForAccount200Response,
-  OBPv600RejectAccountAccessRequest200Response,
-  OBPv600RejectAccountAccessRequestRequest,
+  CreateAccountAccessRequestRequest,
+  GetAccountAccessRequestsForAccount200Response,
+  RejectAccountAccessRequest200Response,
+  RejectAccountAccessRequestRequest,
 } from '../models/index';
 import {
-    OBPv600CreateAccountAccessRequestRequestFromJSON,
-    OBPv600CreateAccountAccessRequestRequestToJSON,
-    OBPv600GetAccountAccessRequestsForAccount200ResponseFromJSON,
-    OBPv600GetAccountAccessRequestsForAccount200ResponseToJSON,
-    OBPv600RejectAccountAccessRequest200ResponseFromJSON,
-    OBPv600RejectAccountAccessRequest200ResponseToJSON,
-    OBPv600RejectAccountAccessRequestRequestFromJSON,
-    OBPv600RejectAccountAccessRequestRequestToJSON,
+    CreateAccountAccessRequestRequestFromJSON,
+    CreateAccountAccessRequestRequestToJSON,
+    GetAccountAccessRequestsForAccount200ResponseFromJSON,
+    GetAccountAccessRequestsForAccount200ResponseToJSON,
+    RejectAccountAccessRequest200ResponseFromJSON,
+    RejectAccountAccessRequest200ResponseToJSON,
+    RejectAccountAccessRequestRequestFromJSON,
+    RejectAccountAccessRequestRequestToJSON,
 } from '../models/index';
 
-export interface OBPv600ApproveAccountAccessRequestRequest {
+export interface ApproveAccountAccessRequestRequest {
     bankid: string;
     accountid: string;
     accountaccessrequestid: string;
-    oBPv600RejectAccountAccessRequestRequest: OBPv600RejectAccountAccessRequestRequest;
+    rejectAccountAccessRequestRequest: RejectAccountAccessRequestRequest;
 }
 
-export interface OBPv600CreateAccountAccessRequestOperationRequest {
+export interface CreateAccountAccessRequestOperationRequest {
     bankid: string;
     accountid: string;
-    oBPv600CreateAccountAccessRequestRequest: OBPv600CreateAccountAccessRequestRequest;
+    createAccountAccessRequestRequest: CreateAccountAccessRequestRequest;
 }
 
-export interface OBPv600GetAccountAccessRequestByIdRequest {
-    bankid: string;
-    accountid: string;
-    accountaccessrequestid: string;
-}
-
-export interface OBPv600GetAccountAccessRequestsForAccountRequest {
-    bankid: string;
-    accountid: string;
-}
-
-export interface OBPv600RejectAccountAccessRequestOperationRequest {
+export interface GetAccountAccessRequestByIdRequest {
     bankid: string;
     accountid: string;
     accountaccessrequestid: string;
-    oBPv600RejectAccountAccessRequestRequest: OBPv600RejectAccountAccessRequestRequest;
+}
+
+export interface GetAccountAccessRequestsForAccountRequest {
+    bankid: string;
+    accountid: string;
+}
+
+export interface RejectAccountAccessRequestOperationRequest {
+    bankid: string;
+    accountid: string;
+    accountaccessrequestid: string;
+    rejectAccountAccessRequestRequest: RejectAccountAccessRequestRequest;
 }
 
 /**
@@ -68,34 +68,34 @@ export interface OBPv600RejectAccountAccessRequestOperationRequest {
 export class AccountAccessRequestApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv600ApproveAccountAccessRequest without sending the request
+     * Creates request options for approveAccountAccessRequest without sending the request
      */
-    async oBPv600ApproveAccountAccessRequestRequestOpts(requestParameters: OBPv600ApproveAccountAccessRequestRequest): Promise<runtime.RequestOpts> {
+    async approveAccountAccessRequestRequestOpts(requestParameters: ApproveAccountAccessRequestRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv600ApproveAccountAccessRequest().'
+                'Required parameter "bankid" was null or undefined when calling approveAccountAccessRequest().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv600ApproveAccountAccessRequest().'
+                'Required parameter "accountid" was null or undefined when calling approveAccountAccessRequest().'
             );
         }
 
         if (requestParameters['accountaccessrequestid'] == null) {
             throw new runtime.RequiredError(
                 'accountaccessrequestid',
-                'Required parameter "accountaccessrequestid" was null or undefined when calling oBPv600ApproveAccountAccessRequest().'
+                'Required parameter "accountaccessrequestid" was null or undefined when calling approveAccountAccessRequest().'
             );
         }
 
-        if (requestParameters['oBPv600RejectAccountAccessRequestRequest'] == null) {
+        if (requestParameters['rejectAccountAccessRequestRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600RejectAccountAccessRequestRequest',
-                'Required parameter "oBPv600RejectAccountAccessRequestRequest" was null or undefined when calling oBPv600ApproveAccountAccessRequest().'
+                'rejectAccountAccessRequestRequest',
+                'Required parameter "rejectAccountAccessRequestRequest" was null or undefined when calling approveAccountAccessRequest().'
             );
         }
 
@@ -115,7 +115,7 @@ export class AccountAccessRequestApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -129,7 +129,7 @@ export class AccountAccessRequestApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600RejectAccountAccessRequestRequestToJSON(requestParameters['oBPv600RejectAccountAccessRequestRequest']),
+            body: RejectAccountAccessRequestRequestToJSON(requestParameters['rejectAccountAccessRequestRequest']),
         };
     }
 
@@ -137,44 +137,44 @@ export class AccountAccessRequestApi extends runtime.BaseAPI {
      * <p>Approve an Account Access Request (checker step in maker/checker workflow).</p> <p>The checker must be a different user than the maker (requestor). This enforces dual control / maker-checker separation.</p> <p>Only requests with status INITIATED can be approved.</p> <p>On approval, the system automatically grants the target user access to the specified view.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ACCOUNT_ACCESS_REQUEST_ID</a>: ACCOUNT_ACCESS_REQUEST_ID</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\">comment</a>: comment</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Approve Account Access Request
      */
-    async oBPv600ApproveAccountAccessRequestRaw(requestParameters: OBPv600ApproveAccountAccessRequestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600RejectAccountAccessRequest200Response>> {
-        const requestOptions = await this.oBPv600ApproveAccountAccessRequestRequestOpts(requestParameters);
+    async approveAccountAccessRequestRaw(requestParameters: ApproveAccountAccessRequestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RejectAccountAccessRequest200Response>> {
+        const requestOptions = await this.approveAccountAccessRequestRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600RejectAccountAccessRequest200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => RejectAccountAccessRequest200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Approve an Account Access Request (checker step in maker/checker workflow).</p> <p>The checker must be a different user than the maker (requestor). This enforces dual control / maker-checker separation.</p> <p>Only requests with status INITIATED can be approved.</p> <p>On approval, the system automatically grants the target user access to the specified view.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ACCOUNT_ACCESS_REQUEST_ID</a>: ACCOUNT_ACCESS_REQUEST_ID</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\">comment</a>: comment</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Approve Account Access Request
      */
-    async oBPv600ApproveAccountAccessRequest(requestParameters: OBPv600ApproveAccountAccessRequestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600RejectAccountAccessRequest200Response> {
-        const response = await this.oBPv600ApproveAccountAccessRequestRaw(requestParameters, initOverrides);
+    async approveAccountAccessRequest(requestParameters: ApproveAccountAccessRequestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RejectAccountAccessRequest200Response> {
+        const response = await this.approveAccountAccessRequestRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600CreateAccountAccessRequest without sending the request
+     * Creates request options for createAccountAccessRequest without sending the request
      */
-    async oBPv600CreateAccountAccessRequestRequestOpts(requestParameters: OBPv600CreateAccountAccessRequestOperationRequest): Promise<runtime.RequestOpts> {
+    async createAccountAccessRequestRequestOpts(requestParameters: CreateAccountAccessRequestOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv600CreateAccountAccessRequest().'
+                'Required parameter "bankid" was null or undefined when calling createAccountAccessRequest().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv600CreateAccountAccessRequest().'
+                'Required parameter "accountid" was null or undefined when calling createAccountAccessRequest().'
             );
         }
 
-        if (requestParameters['oBPv600CreateAccountAccessRequestRequest'] == null) {
+        if (requestParameters['createAccountAccessRequestRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600CreateAccountAccessRequestRequest',
-                'Required parameter "oBPv600CreateAccountAccessRequestRequest" was null or undefined when calling oBPv600CreateAccountAccessRequest().'
+                'createAccountAccessRequestRequest',
+                'Required parameter "createAccountAccessRequestRequest" was null or undefined when calling createAccountAccessRequest().'
             );
         }
 
@@ -194,7 +194,7 @@ export class AccountAccessRequestApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -207,7 +207,7 @@ export class AccountAccessRequestApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600CreateAccountAccessRequestRequestToJSON(requestParameters['oBPv600CreateAccountAccessRequestRequest']),
+            body: CreateAccountAccessRequestRequestToJSON(requestParameters['createAccountAccessRequestRequest']),
         };
     }
 
@@ -215,44 +215,44 @@ export class AccountAccessRequestApi extends runtime.BaseAPI {
      * <p>Create a new Account Access Request (maker step in maker/checker workflow).</p> <p>The requestor (maker) creates a request to grant a target user access to a specific view on an account.<br /> A business justification is required.</p> <p>The request is created with status INITIATED and must be approved or rejected by a different user (checker).</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Create Account Access Request
      */
-    async oBPv600CreateAccountAccessRequestRaw(requestParameters: OBPv600CreateAccountAccessRequestOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600RejectAccountAccessRequest200Response>> {
-        const requestOptions = await this.oBPv600CreateAccountAccessRequestRequestOpts(requestParameters);
+    async createAccountAccessRequestRaw(requestParameters: CreateAccountAccessRequestOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RejectAccountAccessRequest200Response>> {
+        const requestOptions = await this.createAccountAccessRequestRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600RejectAccountAccessRequest200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => RejectAccountAccessRequest200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Create a new Account Access Request (maker step in maker/checker workflow).</p> <p>The requestor (maker) creates a request to grant a target user access to a specific view on an account.<br /> A business justification is required.</p> <p>The request is created with status INITIATED and must be approved or rejected by a different user (checker).</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Create Account Access Request
      */
-    async oBPv600CreateAccountAccessRequest(requestParameters: OBPv600CreateAccountAccessRequestOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600RejectAccountAccessRequest200Response> {
-        const response = await this.oBPv600CreateAccountAccessRequestRaw(requestParameters, initOverrides);
+    async createAccountAccessRequest(requestParameters: CreateAccountAccessRequestOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RejectAccountAccessRequest200Response> {
+        const response = await this.createAccountAccessRequestRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetAccountAccessRequestById without sending the request
+     * Creates request options for getAccountAccessRequestById without sending the request
      */
-    async oBPv600GetAccountAccessRequestByIdRequestOpts(requestParameters: OBPv600GetAccountAccessRequestByIdRequest): Promise<runtime.RequestOpts> {
+    async getAccountAccessRequestByIdRequestOpts(requestParameters: GetAccountAccessRequestByIdRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv600GetAccountAccessRequestById().'
+                'Required parameter "bankid" was null or undefined when calling getAccountAccessRequestById().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv600GetAccountAccessRequestById().'
+                'Required parameter "accountid" was null or undefined when calling getAccountAccessRequestById().'
             );
         }
 
         if (requestParameters['accountaccessrequestid'] == null) {
             throw new runtime.RequiredError(
                 'accountaccessrequestid',
-                'Required parameter "accountaccessrequestid" was null or undefined when calling oBPv600GetAccountAccessRequestById().'
+                'Required parameter "accountaccessrequestid" was null or undefined when calling getAccountAccessRequestById().'
             );
         }
 
@@ -270,7 +270,7 @@ export class AccountAccessRequestApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -291,37 +291,37 @@ export class AccountAccessRequestApi extends runtime.BaseAPI {
      * <p>Get a single Account Access Request by its ID.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ACCOUNT_ACCESS_REQUEST_ID</a>: ACCOUNT_ACCESS_REQUEST_ID</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Get Account Access Request by Id
      */
-    async oBPv600GetAccountAccessRequestByIdRaw(requestParameters: OBPv600GetAccountAccessRequestByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600RejectAccountAccessRequest200Response>> {
-        const requestOptions = await this.oBPv600GetAccountAccessRequestByIdRequestOpts(requestParameters);
+    async getAccountAccessRequestByIdRaw(requestParameters: GetAccountAccessRequestByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RejectAccountAccessRequest200Response>> {
+        const requestOptions = await this.getAccountAccessRequestByIdRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600RejectAccountAccessRequest200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => RejectAccountAccessRequest200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get a single Account Access Request by its ID.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ACCOUNT_ACCESS_REQUEST_ID</a>: ACCOUNT_ACCESS_REQUEST_ID</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Get Account Access Request by Id
      */
-    async oBPv600GetAccountAccessRequestById(requestParameters: OBPv600GetAccountAccessRequestByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600RejectAccountAccessRequest200Response> {
-        const response = await this.oBPv600GetAccountAccessRequestByIdRaw(requestParameters, initOverrides);
+    async getAccountAccessRequestById(requestParameters: GetAccountAccessRequestByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RejectAccountAccessRequest200Response> {
+        const response = await this.getAccountAccessRequestByIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetAccountAccessRequestsForAccount without sending the request
+     * Creates request options for getAccountAccessRequestsForAccount without sending the request
      */
-    async oBPv600GetAccountAccessRequestsForAccountRequestOpts(requestParameters: OBPv600GetAccountAccessRequestsForAccountRequest): Promise<runtime.RequestOpts> {
+    async getAccountAccessRequestsForAccountRequestOpts(requestParameters: GetAccountAccessRequestsForAccountRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv600GetAccountAccessRequestsForAccount().'
+                'Required parameter "bankid" was null or undefined when calling getAccountAccessRequestsForAccount().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv600GetAccountAccessRequestsForAccount().'
+                'Required parameter "accountid" was null or undefined when calling getAccountAccessRequestsForAccount().'
             );
         }
 
@@ -339,7 +339,7 @@ export class AccountAccessRequestApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -359,26 +359,26 @@ export class AccountAccessRequestApi extends runtime.BaseAPI {
      * <p>Get Account Access Requests for a specific account (checker view).</p> <p>Optionally filter by status using the query parameter: ?status=INITIATED</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_access_requests</strong></a>: account_access_requests</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Get Account Access Requests for Account
      */
-    async oBPv600GetAccountAccessRequestsForAccountRaw(requestParameters: OBPv600GetAccountAccessRequestsForAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response>> {
-        const requestOptions = await this.oBPv600GetAccountAccessRequestsForAccountRequestOpts(requestParameters);
+    async getAccountAccessRequestsForAccountRaw(requestParameters: GetAccountAccessRequestsForAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAccountAccessRequestsForAccount200Response>> {
+        const requestOptions = await this.getAccountAccessRequestsForAccountRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetAccountAccessRequestsForAccount200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAccountAccessRequestsForAccount200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Account Access Requests for a specific account (checker view).</p> <p>Optionally filter by status using the query parameter: ?status=INITIATED</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_access_requests</strong></a>: account_access_requests</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Get Account Access Requests for Account
      */
-    async oBPv600GetAccountAccessRequestsForAccount(requestParameters: OBPv600GetAccountAccessRequestsForAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetAccountAccessRequestsForAccount200Response> {
-        const response = await this.oBPv600GetAccountAccessRequestsForAccountRaw(requestParameters, initOverrides);
+    async getAccountAccessRequestsForAccount(requestParameters: GetAccountAccessRequestsForAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAccountAccessRequestsForAccount200Response> {
+        const response = await this.getAccountAccessRequestsForAccountRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetMyAccountAccessRequests without sending the request
+     * Creates request options for getMyAccountAccessRequests without sending the request
      */
-    async oBPv600GetMyAccountAccessRequestsRequestOpts(): Promise<runtime.RequestOpts> {
+    async getMyAccountAccessRequestsRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -393,7 +393,7 @@ export class AccountAccessRequestApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -411,51 +411,51 @@ export class AccountAccessRequestApi extends runtime.BaseAPI {
      * <p>Get Account Access Requests created by the current user (maker view).</p> <p>No special roles are required — a user can always see their own requests.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_access_requests</strong></a>: account_access_requests</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Get My Account Access Requests
      */
-    async oBPv600GetMyAccountAccessRequestsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response>> {
-        const requestOptions = await this.oBPv600GetMyAccountAccessRequestsRequestOpts();
+    async getMyAccountAccessRequestsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAccountAccessRequestsForAccount200Response>> {
+        const requestOptions = await this.getMyAccountAccessRequestsRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetAccountAccessRequestsForAccount200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAccountAccessRequestsForAccount200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Account Access Requests created by the current user (maker view).</p> <p>No special roles are required — a user can always see their own requests.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_access_requests</strong></a>: account_access_requests</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Get My Account Access Requests
      */
-    async oBPv600GetMyAccountAccessRequests(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetAccountAccessRequestsForAccount200Response> {
-        const response = await this.oBPv600GetMyAccountAccessRequestsRaw(initOverrides);
+    async getMyAccountAccessRequests(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAccountAccessRequestsForAccount200Response> {
+        const response = await this.getMyAccountAccessRequestsRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600RejectAccountAccessRequest without sending the request
+     * Creates request options for rejectAccountAccessRequest without sending the request
      */
-    async oBPv600RejectAccountAccessRequestRequestOpts(requestParameters: OBPv600RejectAccountAccessRequestOperationRequest): Promise<runtime.RequestOpts> {
+    async rejectAccountAccessRequestRequestOpts(requestParameters: RejectAccountAccessRequestOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv600RejectAccountAccessRequest().'
+                'Required parameter "bankid" was null or undefined when calling rejectAccountAccessRequest().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv600RejectAccountAccessRequest().'
+                'Required parameter "accountid" was null or undefined when calling rejectAccountAccessRequest().'
             );
         }
 
         if (requestParameters['accountaccessrequestid'] == null) {
             throw new runtime.RequiredError(
                 'accountaccessrequestid',
-                'Required parameter "accountaccessrequestid" was null or undefined when calling oBPv600RejectAccountAccessRequest().'
+                'Required parameter "accountaccessrequestid" was null or undefined when calling rejectAccountAccessRequest().'
             );
         }
 
-        if (requestParameters['oBPv600RejectAccountAccessRequestRequest'] == null) {
+        if (requestParameters['rejectAccountAccessRequestRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600RejectAccountAccessRequestRequest',
-                'Required parameter "oBPv600RejectAccountAccessRequestRequest" was null or undefined when calling oBPv600RejectAccountAccessRequest().'
+                'rejectAccountAccessRequestRequest',
+                'Required parameter "rejectAccountAccessRequestRequest" was null or undefined when calling rejectAccountAccessRequest().'
             );
         }
 
@@ -475,7 +475,7 @@ export class AccountAccessRequestApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -489,7 +489,7 @@ export class AccountAccessRequestApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600RejectAccountAccessRequestRequestToJSON(requestParameters['oBPv600RejectAccountAccessRequestRequest']),
+            body: RejectAccountAccessRequestRequestToJSON(requestParameters['rejectAccountAccessRequestRequest']),
         };
     }
 
@@ -497,19 +497,19 @@ export class AccountAccessRequestApi extends runtime.BaseAPI {
      * <p>Reject an Account Access Request (checker step in maker/checker workflow).</p> <p>The checker must be a different user than the maker (requestor). This enforces dual control / maker-checker separation.</p> <p>Only requests with status INITIATED can be rejected.</p> <p>A comment is required when rejecting a request.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ACCOUNT_ACCESS_REQUEST_ID</a>: ACCOUNT_ACCESS_REQUEST_ID</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>comment</strong></a>: comment</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Reject Account Access Request
      */
-    async oBPv600RejectAccountAccessRequestRaw(requestParameters: OBPv600RejectAccountAccessRequestOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600RejectAccountAccessRequest200Response>> {
-        const requestOptions = await this.oBPv600RejectAccountAccessRequestRequestOpts(requestParameters);
+    async rejectAccountAccessRequestRaw(requestParameters: RejectAccountAccessRequestOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RejectAccountAccessRequest200Response>> {
+        const requestOptions = await this.rejectAccountAccessRequestRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600RejectAccountAccessRequest200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => RejectAccountAccessRequest200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Reject an Account Access Request (checker step in maker/checker workflow).</p> <p>The checker must be a different user than the maker (requestor). This enforces dual control / maker-checker separation.</p> <p>Only requests with status INITIATED can be rejected.</p> <p>A comment is required when rejecting a request.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ACCOUNT_ACCESS_REQUEST_ID</a>: ACCOUNT_ACCESS_REQUEST_ID</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>comment</strong></a>: comment</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      * Reject Account Access Request
      */
-    async oBPv600RejectAccountAccessRequest(requestParameters: OBPv600RejectAccountAccessRequestOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600RejectAccountAccessRequest200Response> {
-        const response = await this.oBPv600RejectAccountAccessRequestRaw(requestParameters, initOverrides);
+    async rejectAccountAccessRequest(requestParameters: RejectAccountAccessRequestOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RejectAccountAccessRequest200Response> {
+        const response = await this.rejectAccountAccessRequestRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

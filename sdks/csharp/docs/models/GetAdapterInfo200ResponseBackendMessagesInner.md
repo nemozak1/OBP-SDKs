@@ -1,0 +1,14 @@
+# OpenBankProject.Model.GetAdapterInfo200ResponseBackendMessagesInner
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Duration** | **decimal** |  | [optional] 
+**Source** | **string** |  | [optional] 
+**Text** | **string** |  | [optional] 
+**ErrorCode** | **string** |  | [optional] 
+**Status** | **string** |  | [optional] 
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+

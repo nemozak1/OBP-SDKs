@@ -1,31 +1,31 @@
 # CustomerAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateCustomerAttribute**](CustomerAttributeApi.md#oBPv400CreateCustomerAttribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute |
-| [**oBPv400CreateCustomerAttributeWithHttpInfo**](CustomerAttributeApi.md#oBPv400CreateCustomerAttributeWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute |
-| [**oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition**](CustomerAttributeApi.md#oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition |
-| [**oBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo**](CustomerAttributeApi.md#oBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition |
-| [**oBPv400DeleteCustomerAttribute**](CustomerAttributeApi.md#oBPv400DeleteCustomerAttribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute |
-| [**oBPv400DeleteCustomerAttributeWithHttpInfo**](CustomerAttributeApi.md#oBPv400DeleteCustomerAttributeWithHttpInfo) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute |
-| [**oBPv400DeleteCustomerAttributeDefinition**](CustomerAttributeApi.md#oBPv400DeleteCustomerAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition |
-| [**oBPv400DeleteCustomerAttributeDefinitionWithHttpInfo**](CustomerAttributeApi.md#oBPv400DeleteCustomerAttributeDefinitionWithHttpInfo) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition |
-| [**oBPv400GetCustomerAttributeById**](CustomerAttributeApi.md#oBPv400GetCustomerAttributeById) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id |
-| [**oBPv400GetCustomerAttributeByIdWithHttpInfo**](CustomerAttributeApi.md#oBPv400GetCustomerAttributeByIdWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id |
-| [**oBPv400GetCustomerAttributeDefinition**](CustomerAttributeApi.md#oBPv400GetCustomerAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition |
-| [**oBPv400GetCustomerAttributeDefinitionWithHttpInfo**](CustomerAttributeApi.md#oBPv400GetCustomerAttributeDefinitionWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition |
-| [**oBPv400GetCustomerAttributes**](CustomerAttributeApi.md#oBPv400GetCustomerAttributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes |
-| [**oBPv400GetCustomerAttributesWithHttpInfo**](CustomerAttributeApi.md#oBPv400GetCustomerAttributesWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes |
-| [**oBPv400UpdateCustomerAttribute**](CustomerAttributeApi.md#oBPv400UpdateCustomerAttribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute |
-| [**oBPv400UpdateCustomerAttributeWithHttpInfo**](CustomerAttributeApi.md#oBPv400UpdateCustomerAttributeWithHttpInfo) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute |
+| [**createCustomerAttribute**](CustomerAttributeApi.md#createCustomerAttribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute |
+| [**createCustomerAttributeWithHttpInfo**](CustomerAttributeApi.md#createCustomerAttributeWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute |
+| [**createOrUpdateCustomerAttributeAttributeDefinition**](CustomerAttributeApi.md#createOrUpdateCustomerAttributeAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition |
+| [**createOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo**](CustomerAttributeApi.md#createOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition |
+| [**deleteCustomerAttribute**](CustomerAttributeApi.md#deleteCustomerAttribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute |
+| [**deleteCustomerAttributeWithHttpInfo**](CustomerAttributeApi.md#deleteCustomerAttributeWithHttpInfo) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute |
+| [**deleteCustomerAttributeDefinition**](CustomerAttributeApi.md#deleteCustomerAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition |
+| [**deleteCustomerAttributeDefinitionWithHttpInfo**](CustomerAttributeApi.md#deleteCustomerAttributeDefinitionWithHttpInfo) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition |
+| [**getCustomerAttributeById**](CustomerAttributeApi.md#getCustomerAttributeById) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id |
+| [**getCustomerAttributeByIdWithHttpInfo**](CustomerAttributeApi.md#getCustomerAttributeByIdWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id |
+| [**getCustomerAttributeDefinition**](CustomerAttributeApi.md#getCustomerAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition |
+| [**getCustomerAttributeDefinitionWithHttpInfo**](CustomerAttributeApi.md#getCustomerAttributeDefinitionWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition |
+| [**getCustomerAttributes**](CustomerAttributeApi.md#getCustomerAttributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes |
+| [**getCustomerAttributesWithHttpInfo**](CustomerAttributeApi.md#getCustomerAttributesWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes |
+| [**updateCustomerAttribute**](CustomerAttributeApi.md#updateCustomerAttribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute |
+| [**updateCustomerAttributeWithHttpInfo**](CustomerAttributeApi.md#updateCustomerAttributeWithHttpInfo) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute |
 
 
 
-## oBPv400CreateCustomerAttribute
+## createCustomerAttribute
 
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems oBPv400CreateCustomerAttribute(bankid, customerid, obPv600CreatePersonalDataFieldRequest)
+> GetCustomerAttributes200ResponseCustomerAttributesInner createCustomerAttribute(bankid, customerid, createPersonalDataFieldRequest)
 
 Create Customer Attribute
 
@@ -45,7 +45,7 @@ import com.openbankproject.api.CustomerAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -66,12 +66,12 @@ public class Example {
         CustomerAttributeApi apiInstance = new CustomerAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String customerid = "customerid_example"; // String | The CUSTOMERID identifier
-        OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest = new OBPv600CreatePersonalDataFieldRequest(); // OBPv600CreatePersonalDataFieldRequest | Request body
+        CreatePersonalDataFieldRequest createPersonalDataFieldRequest = new CreatePersonalDataFieldRequest(); // CreatePersonalDataFieldRequest | Request body
         try {
-            OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems result = apiInstance.oBPv400CreateCustomerAttribute(bankid, customerid, obPv600CreatePersonalDataFieldRequest);
+            GetCustomerAttributes200ResponseCustomerAttributesInner result = apiInstance.createCustomerAttribute(bankid, customerid, createPersonalDataFieldRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerAttributeApi#oBPv400CreateCustomerAttribute");
+            System.err.println("Exception when calling CustomerAttributeApi#createCustomerAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -88,11 +88,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **customerid** | **String**| The CUSTOMERID identifier | |
-| **obPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 
 ### Authorization
@@ -111,9 +111,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateCustomerAttributeWithHttpInfo
+## createCustomerAttributeWithHttpInfo
 
-> ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> oBPv400CreateCustomerAttribute oBPv400CreateCustomerAttributeWithHttpInfo(bankid, customerid, obPv600CreatePersonalDataFieldRequest)
+> ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner> createCustomerAttribute createCustomerAttributeWithHttpInfo(bankid, customerid, createPersonalDataFieldRequest)
 
 Create Customer Attribute
 
@@ -134,7 +134,7 @@ import com.openbankproject.api.CustomerAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -155,14 +155,14 @@ public class Example {
         CustomerAttributeApi apiInstance = new CustomerAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String customerid = "customerid_example"; // String | The CUSTOMERID identifier
-        OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest = new OBPv600CreatePersonalDataFieldRequest(); // OBPv600CreatePersonalDataFieldRequest | Request body
+        CreatePersonalDataFieldRequest createPersonalDataFieldRequest = new CreatePersonalDataFieldRequest(); // CreatePersonalDataFieldRequest | Request body
         try {
-            ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> response = apiInstance.oBPv400CreateCustomerAttributeWithHttpInfo(bankid, customerid, obPv600CreatePersonalDataFieldRequest);
+            ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner> response = apiInstance.createCustomerAttributeWithHttpInfo(bankid, customerid, createPersonalDataFieldRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerAttributeApi#oBPv400CreateCustomerAttribute");
+            System.err.println("Exception when calling CustomerAttributeApi#createCustomerAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -179,11 +179,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **customerid** | **String**| The CUSTOMERID identifier | |
-| **obPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)>
+ApiResponse<[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)>
 
 
 ### Authorization
@@ -203,9 +203,9 @@ ApiResponse<[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttribut
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition
+## createOrUpdateCustomerAttributeAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateCustomerAttributeAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Customer Attribute Definition
 
@@ -225,7 +225,7 @@ import com.openbankproject.api.CustomerAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -245,12 +245,12 @@ public class Example {
 
         CustomerAttributeApi apiInstance = new CustomerAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = new OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(); // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+        CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest = new CreateOrUpdateTransactionRequestAttributeDefinitionRequest(); // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
         try {
-            OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems result = apiInstance.oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+            GetTransactionRequestAttributeDefinition200ResponseAttributesInner result = apiInstance.createOrUpdateCustomerAttributeAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerAttributeApi#oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition");
+            System.err.println("Exception when calling CustomerAttributeApi#createOrUpdateCustomerAttributeAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -266,11 +266,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
+| **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 
 ### Authorization
@@ -289,9 +289,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo
+## createOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo
 
-> ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition oBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+> ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> createOrUpdateCustomerAttributeAttributeDefinition createOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Customer Attribute Definition
 
@@ -312,7 +312,7 @@ import com.openbankproject.api.CustomerAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -332,14 +332,14 @@ public class Example {
 
         CustomerAttributeApi apiInstance = new CustomerAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = new OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(); // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+        CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest = new CreateOrUpdateTransactionRequestAttributeDefinitionRequest(); // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
         try {
-            ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> response = apiInstance.oBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+            ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> response = apiInstance.createOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerAttributeApi#oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition");
+            System.err.println("Exception when calling CustomerAttributeApi#createOrUpdateCustomerAttributeAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -355,11 +355,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
+| **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)>
+ApiResponse<[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)>
 
 
 ### Authorization
@@ -379,9 +379,9 @@ ApiResponse<[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropert
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteCustomerAttribute
+## deleteCustomerAttribute
 
-> void oBPv400DeleteCustomerAttribute(bankid, customerid, customerattributeid)
+> void deleteCustomerAttribute(bankid, customerid, customerattributeid)
 
 Delete Customer Attribute
 
@@ -401,7 +401,7 @@ import com.openbankproject.api.CustomerAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -424,9 +424,9 @@ public class Example {
         String customerid = "customerid_example"; // String | The CUSTOMERID identifier
         String customerattributeid = "customerattributeid_example"; // String | The CUSTOMERATTRIBUTEID identifier
         try {
-            apiInstance.oBPv400DeleteCustomerAttribute(bankid, customerid, customerattributeid);
+            apiInstance.deleteCustomerAttribute(bankid, customerid, customerattributeid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerAttributeApi#oBPv400DeleteCustomerAttribute");
+            System.err.println("Exception when calling CustomerAttributeApi#deleteCustomerAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -466,9 +466,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteCustomerAttributeWithHttpInfo
+## deleteCustomerAttributeWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteCustomerAttribute oBPv400DeleteCustomerAttributeWithHttpInfo(bankid, customerid, customerattributeid)
+> ApiResponse<Void> deleteCustomerAttribute deleteCustomerAttributeWithHttpInfo(bankid, customerid, customerattributeid)
 
 Delete Customer Attribute
 
@@ -489,7 +489,7 @@ import com.openbankproject.api.CustomerAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -512,11 +512,11 @@ public class Example {
         String customerid = "customerid_example"; // String | The CUSTOMERID identifier
         String customerattributeid = "customerattributeid_example"; // String | The CUSTOMERATTRIBUTEID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteCustomerAttributeWithHttpInfo(bankid, customerid, customerattributeid);
+            ApiResponse<Void> response = apiInstance.deleteCustomerAttributeWithHttpInfo(bankid, customerid, customerattributeid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerAttributeApi#oBPv400DeleteCustomerAttribute");
+            System.err.println("Exception when calling CustomerAttributeApi#deleteCustomerAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -557,9 +557,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteCustomerAttributeDefinition
+## deleteCustomerAttributeDefinition
 
-> void oBPv400DeleteCustomerAttributeDefinition(bankid, attributedefinitionid)
+> void deleteCustomerAttributeDefinition(bankid, attributedefinitionid)
 
 Delete Customer Attribute Definition
 
@@ -579,7 +579,7 @@ import com.openbankproject.api.CustomerAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -601,9 +601,9 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String attributedefinitionid = "attributedefinitionid_example"; // String | The ATTRIBUTEDEFINITIONID identifier
         try {
-            apiInstance.oBPv400DeleteCustomerAttributeDefinition(bankid, attributedefinitionid);
+            apiInstance.deleteCustomerAttributeDefinition(bankid, attributedefinitionid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerAttributeApi#oBPv400DeleteCustomerAttributeDefinition");
+            System.err.println("Exception when calling CustomerAttributeApi#deleteCustomerAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -642,9 +642,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteCustomerAttributeDefinitionWithHttpInfo
+## deleteCustomerAttributeDefinitionWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteCustomerAttributeDefinition oBPv400DeleteCustomerAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid)
+> ApiResponse<Void> deleteCustomerAttributeDefinition deleteCustomerAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid)
 
 Delete Customer Attribute Definition
 
@@ -665,7 +665,7 @@ import com.openbankproject.api.CustomerAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -687,11 +687,11 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String attributedefinitionid = "attributedefinitionid_example"; // String | The ATTRIBUTEDEFINITIONID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteCustomerAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid);
+            ApiResponse<Void> response = apiInstance.deleteCustomerAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerAttributeApi#oBPv400DeleteCustomerAttributeDefinition");
+            System.err.println("Exception when calling CustomerAttributeApi#deleteCustomerAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -731,9 +731,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetCustomerAttributeById
+## getCustomerAttributeById
 
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems oBPv400GetCustomerAttributeById(bankid, customerid, attributeid)
+> GetCustomerAttributes200ResponseCustomerAttributesInner getCustomerAttributeById(bankid, customerid, attributeid)
 
 Get Customer Attribute By Id
 
@@ -753,7 +753,7 @@ import com.openbankproject.api.CustomerAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -776,10 +776,10 @@ public class Example {
         String customerid = "customerid_example"; // String | The CUSTOMERID identifier
         String attributeid = "attributeid_example"; // String | The ATTRIBUTEID identifier
         try {
-            OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems result = apiInstance.oBPv400GetCustomerAttributeById(bankid, customerid, attributeid);
+            GetCustomerAttributes200ResponseCustomerAttributesInner result = apiInstance.getCustomerAttributeById(bankid, customerid, attributeid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerAttributeApi#oBPv400GetCustomerAttributeById");
+            System.err.println("Exception when calling CustomerAttributeApi#getCustomerAttributeById");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -800,7 +800,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 
 ### Authorization
@@ -819,9 +819,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetCustomerAttributeByIdWithHttpInfo
+## getCustomerAttributeByIdWithHttpInfo
 
-> ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> oBPv400GetCustomerAttributeById oBPv400GetCustomerAttributeByIdWithHttpInfo(bankid, customerid, attributeid)
+> ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner> getCustomerAttributeById getCustomerAttributeByIdWithHttpInfo(bankid, customerid, attributeid)
 
 Get Customer Attribute By Id
 
@@ -842,7 +842,7 @@ import com.openbankproject.api.CustomerAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -865,12 +865,12 @@ public class Example {
         String customerid = "customerid_example"; // String | The CUSTOMERID identifier
         String attributeid = "attributeid_example"; // String | The ATTRIBUTEID identifier
         try {
-            ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> response = apiInstance.oBPv400GetCustomerAttributeByIdWithHttpInfo(bankid, customerid, attributeid);
+            ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner> response = apiInstance.getCustomerAttributeByIdWithHttpInfo(bankid, customerid, attributeid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerAttributeApi#oBPv400GetCustomerAttributeById");
+            System.err.println("Exception when calling CustomerAttributeApi#getCustomerAttributeById");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -891,7 +891,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)>
+ApiResponse<[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)>
 
 
 ### Authorization
@@ -911,9 +911,9 @@ ApiResponse<[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttribut
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetCustomerAttributeDefinition
+## getCustomerAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200Response oBPv400GetCustomerAttributeDefinition(bankid)
+> GetTransactionRequestAttributeDefinition200Response getCustomerAttributeDefinition(bankid)
 
 Get Customer Attribute Definition
 
@@ -933,7 +933,7 @@ import com.openbankproject.api.CustomerAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -954,10 +954,10 @@ public class Example {
         CustomerAttributeApi apiInstance = new CustomerAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            OBPv400GetTransactionRequestAttributeDefinition200Response result = apiInstance.oBPv400GetCustomerAttributeDefinition(bankid);
+            GetTransactionRequestAttributeDefinition200Response result = apiInstance.getCustomerAttributeDefinition(bankid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerAttributeApi#oBPv400GetCustomerAttributeDefinition");
+            System.err.println("Exception when calling CustomerAttributeApi#getCustomerAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -976,7 +976,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 
 ### Authorization
@@ -995,9 +995,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetCustomerAttributeDefinitionWithHttpInfo
+## getCustomerAttributeDefinitionWithHttpInfo
 
-> ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response> oBPv400GetCustomerAttributeDefinition oBPv400GetCustomerAttributeDefinitionWithHttpInfo(bankid)
+> ApiResponse<GetTransactionRequestAttributeDefinition200Response> getCustomerAttributeDefinition getCustomerAttributeDefinitionWithHttpInfo(bankid)
 
 Get Customer Attribute Definition
 
@@ -1018,7 +1018,7 @@ import com.openbankproject.api.CustomerAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1039,12 +1039,12 @@ public class Example {
         CustomerAttributeApi apiInstance = new CustomerAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response> response = apiInstance.oBPv400GetCustomerAttributeDefinitionWithHttpInfo(bankid);
+            ApiResponse<GetTransactionRequestAttributeDefinition200Response> response = apiInstance.getCustomerAttributeDefinitionWithHttpInfo(bankid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerAttributeApi#oBPv400GetCustomerAttributeDefinition");
+            System.err.println("Exception when calling CustomerAttributeApi#getCustomerAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1063,7 +1063,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)>
+ApiResponse<[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)>
 
 
 ### Authorization
@@ -1083,9 +1083,9 @@ ApiResponse<[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBP
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetCustomerAttributes
+## getCustomerAttributes
 
-> OBPv400GetCustomerAttributes200Response oBPv400GetCustomerAttributes(bankid, customerid)
+> GetCustomerAttributes200Response getCustomerAttributes(bankid, customerid)
 
 Get Customer Attributes
 
@@ -1105,7 +1105,7 @@ import com.openbankproject.api.CustomerAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1127,10 +1127,10 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String customerid = "customerid_example"; // String | The CUSTOMERID identifier
         try {
-            OBPv400GetCustomerAttributes200Response result = apiInstance.oBPv400GetCustomerAttributes(bankid, customerid);
+            GetCustomerAttributes200Response result = apiInstance.getCustomerAttributes(bankid, customerid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerAttributeApi#oBPv400GetCustomerAttributes");
+            System.err.println("Exception when calling CustomerAttributeApi#getCustomerAttributes");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1150,7 +1150,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200Response**](OBPv400GetCustomerAttributes200Response.md)
+[**GetCustomerAttributes200Response**](GetCustomerAttributes200Response.md)
 
 
 ### Authorization
@@ -1169,9 +1169,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetCustomerAttributesWithHttpInfo
+## getCustomerAttributesWithHttpInfo
 
-> ApiResponse<OBPv400GetCustomerAttributes200Response> oBPv400GetCustomerAttributes oBPv400GetCustomerAttributesWithHttpInfo(bankid, customerid)
+> ApiResponse<GetCustomerAttributes200Response> getCustomerAttributes getCustomerAttributesWithHttpInfo(bankid, customerid)
 
 Get Customer Attributes
 
@@ -1192,7 +1192,7 @@ import com.openbankproject.api.CustomerAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1214,12 +1214,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String customerid = "customerid_example"; // String | The CUSTOMERID identifier
         try {
-            ApiResponse<OBPv400GetCustomerAttributes200Response> response = apiInstance.oBPv400GetCustomerAttributesWithHttpInfo(bankid, customerid);
+            ApiResponse<GetCustomerAttributes200Response> response = apiInstance.getCustomerAttributesWithHttpInfo(bankid, customerid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerAttributeApi#oBPv400GetCustomerAttributes");
+            System.err.println("Exception when calling CustomerAttributeApi#getCustomerAttributes");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1239,7 +1239,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetCustomerAttributes200Response**](OBPv400GetCustomerAttributes200Response.md)>
+ApiResponse<[**GetCustomerAttributes200Response**](GetCustomerAttributes200Response.md)>
 
 
 ### Authorization
@@ -1259,9 +1259,9 @@ ApiResponse<[**OBPv400GetCustomerAttributes200Response**](OBPv400GetCustomerAttr
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400UpdateCustomerAttribute
+## updateCustomerAttribute
 
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems oBPv400UpdateCustomerAttribute(bankid, customerid, customerattributeid, obPv600CreatePersonalDataFieldRequest)
+> GetCustomerAttributes200ResponseCustomerAttributesInner updateCustomerAttribute(bankid, customerid, customerattributeid, createPersonalDataFieldRequest)
 
 Update Customer Attribute
 
@@ -1281,7 +1281,7 @@ import com.openbankproject.api.CustomerAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1303,12 +1303,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String customerid = "customerid_example"; // String | The CUSTOMERID identifier
         String customerattributeid = "customerattributeid_example"; // String | The CUSTOMERATTRIBUTEID identifier
-        OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest = new OBPv600CreatePersonalDataFieldRequest(); // OBPv600CreatePersonalDataFieldRequest | Request body
+        CreatePersonalDataFieldRequest createPersonalDataFieldRequest = new CreatePersonalDataFieldRequest(); // CreatePersonalDataFieldRequest | Request body
         try {
-            OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems result = apiInstance.oBPv400UpdateCustomerAttribute(bankid, customerid, customerattributeid, obPv600CreatePersonalDataFieldRequest);
+            GetCustomerAttributes200ResponseCustomerAttributesInner result = apiInstance.updateCustomerAttribute(bankid, customerid, customerattributeid, createPersonalDataFieldRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerAttributeApi#oBPv400UpdateCustomerAttribute");
+            System.err.println("Exception when calling CustomerAttributeApi#updateCustomerAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1326,11 +1326,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **customerid** | **String**| The CUSTOMERID identifier | |
 | **customerattributeid** | **String**| The CUSTOMERATTRIBUTEID identifier | |
-| **obPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 
 ### Authorization
@@ -1349,9 +1349,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400UpdateCustomerAttributeWithHttpInfo
+## updateCustomerAttributeWithHttpInfo
 
-> ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> oBPv400UpdateCustomerAttribute oBPv400UpdateCustomerAttributeWithHttpInfo(bankid, customerid, customerattributeid, obPv600CreatePersonalDataFieldRequest)
+> ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner> updateCustomerAttribute updateCustomerAttributeWithHttpInfo(bankid, customerid, customerattributeid, createPersonalDataFieldRequest)
 
 Update Customer Attribute
 
@@ -1372,7 +1372,7 @@ import com.openbankproject.api.CustomerAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1394,14 +1394,14 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String customerid = "customerid_example"; // String | The CUSTOMERID identifier
         String customerattributeid = "customerattributeid_example"; // String | The CUSTOMERATTRIBUTEID identifier
-        OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest = new OBPv600CreatePersonalDataFieldRequest(); // OBPv600CreatePersonalDataFieldRequest | Request body
+        CreatePersonalDataFieldRequest createPersonalDataFieldRequest = new CreatePersonalDataFieldRequest(); // CreatePersonalDataFieldRequest | Request body
         try {
-            ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> response = apiInstance.oBPv400UpdateCustomerAttributeWithHttpInfo(bankid, customerid, customerattributeid, obPv600CreatePersonalDataFieldRequest);
+            ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner> response = apiInstance.updateCustomerAttributeWithHttpInfo(bankid, customerid, customerattributeid, createPersonalDataFieldRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerAttributeApi#oBPv400UpdateCustomerAttribute");
+            System.err.println("Exception when calling CustomerAttributeApi#updateCustomerAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1419,11 +1419,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **customerid** | **String**| The CUSTOMERID identifier | |
 | **customerattributeid** | **String**| The CUSTOMERATTRIBUTEID identifier | |
-| **obPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)>
+ApiResponse<[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)>
 
 
 ### Authorization

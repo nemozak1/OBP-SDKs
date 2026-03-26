@@ -1,24 +1,24 @@
 # OpenBankProject.Api.ABACApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv600CreateAbacRule**](ABACApi.md#obpv600createabacrule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule |
-| [**OBPv600DeleteAbacRule**](ABACApi.md#obpv600deleteabacrule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule |
-| [**OBPv600ExecuteAbacPolicy**](ABACApi.md#obpv600executeabacpolicy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy |
-| [**OBPv600ExecuteAbacRule**](ABACApi.md#obpv600executeabacrule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule |
-| [**OBPv600GetAbacPolicies**](ABACApi.md#obpv600getabacpolicies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies |
-| [**OBPv600GetAbacRule**](ABACApi.md#obpv600getabacrule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule |
-| [**OBPv600GetAbacRuleSchema**](ABACApi.md#obpv600getabacruleschema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema |
-| [**OBPv600GetAbacRules**](ABACApi.md#obpv600getabacrules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules |
-| [**OBPv600GetAbacRulesByPolicy**](ABACApi.md#obpv600getabacrulesbypolicy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy |
-| [**OBPv600UpdateAbacRule**](ABACApi.md#obpv600updateabacrule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule |
-| [**OBPv600ValidateAbacRule**](ABACApi.md#obpv600validateabacrule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule |
+| [**CreateAbacRule**](ABACApi.md#createabacrule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule |
+| [**DeleteAbacRule**](ABACApi.md#deleteabacrule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule |
+| [**ExecuteAbacPolicy**](ABACApi.md#executeabacpolicy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy |
+| [**ExecuteAbacRule**](ABACApi.md#executeabacrule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule |
+| [**GetAbacPolicies**](ABACApi.md#getabacpolicies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies |
+| [**GetAbacRule**](ABACApi.md#getabacrule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule |
+| [**GetAbacRuleSchema**](ABACApi.md#getabacruleschema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema |
+| [**GetAbacRules**](ABACApi.md#getabacrules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules |
+| [**GetAbacRulesByPolicy**](ABACApi.md#getabacrulesbypolicy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy |
+| [**UpdateAbacRule**](ABACApi.md#updateabacrule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule |
+| [**ValidateAbacRule**](ABACApi.md#validateabacrule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule |
 
-<a id="obpv600createabacrule"></a>
-# **OBPv600CreateAbacRule**
-> OBPv600GetAbacRule200Response OBPv600CreateAbacRule (OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest)
+<a id="createabacrule"></a>
+# **CreateAbacRule**
+> GetAbacRule200Response CreateAbacRule (UpdateAbacRuleRequest updateAbacRuleRequest)
 
 Create ABAC Rule
 
@@ -29,11 +29,11 @@ Create ABAC Rule
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **oBPv600UpdateAbacRuleRequest** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md) | Request body |  |
+| **updateAbacRuleRequest** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -53,9 +53,9 @@ Create ABAC Rule
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600deleteabacrule"></a>
-# **OBPv600DeleteAbacRule**
-> void OBPv600DeleteAbacRule (string abacruleid)
+<a id="deleteabacrule"></a>
+# **DeleteAbacRule**
+> void DeleteAbacRule (string abacruleid)
 
 Delete ABAC Rule
 
@@ -90,9 +90,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600executeabacpolicy"></a>
-# **OBPv600ExecuteAbacPolicy**
-> OBPv600ExecuteAbacPolicy200Response OBPv600ExecuteAbacPolicy (string policy, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest)
+<a id="executeabacpolicy"></a>
+# **ExecuteAbacPolicy**
+> ExecuteAbacPolicy200Response ExecuteAbacPolicy (string policy, ExecuteAbacPolicyRequest executeAbacPolicyRequest)
 
 Execute ABAC Policy
 
@@ -104,11 +104,11 @@ Execute ABAC Policy
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **policy** | **string** | The POLICY identifier |  |
-| **oBPv600ExecuteAbacPolicyRequest** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md) | Request body |  |
+| **executeAbacPolicyRequest** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -128,9 +128,9 @@ Execute ABAC Policy
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600executeabacrule"></a>
-# **OBPv600ExecuteAbacRule**
-> OBPv600ExecuteAbacPolicy200Response OBPv600ExecuteAbacRule (string abacruleid, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest)
+<a id="executeabacrule"></a>
+# **ExecuteAbacRule**
+> ExecuteAbacPolicy200Response ExecuteAbacRule (string abacruleid, ExecuteAbacPolicyRequest executeAbacPolicyRequest)
 
 Execute ABAC Rule
 
@@ -142,11 +142,11 @@ Execute ABAC Rule
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **abacruleid** | **string** | The ABACRULEID identifier |  |
-| **oBPv600ExecuteAbacPolicyRequest** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md) | Request body |  |
+| **executeAbacPolicyRequest** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -166,9 +166,9 @@ Execute ABAC Rule
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getabacpolicies"></a>
-# **OBPv600GetAbacPolicies**
-> OBPv600GetAbacPolicies200Response OBPv600GetAbacPolicies ()
+<a id="getabacpolicies"></a>
+# **GetAbacPolicies**
+> GetAbacPolicies200Response GetAbacPolicies ()
 
 Get ABAC Policies
 
@@ -179,7 +179,7 @@ Get ABAC Policies
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv600GetAbacPolicies200Response**](OBPv600GetAbacPolicies200Response.md)
+[**GetAbacPolicies200Response**](GetAbacPolicies200Response.md)
 
 ### Authorization
 
@@ -199,9 +199,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getabacrule"></a>
-# **OBPv600GetAbacRule**
-> OBPv600GetAbacRule200Response OBPv600GetAbacRule (string abacruleid)
+<a id="getabacrule"></a>
+# **GetAbacRule**
+> GetAbacRule200Response GetAbacRule (string abacruleid)
 
 Get ABAC Rule
 
@@ -216,7 +216,7 @@ Get ABAC Rule
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -236,9 +236,9 @@ Get ABAC Rule
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getabacruleschema"></a>
-# **OBPv600GetAbacRuleSchema**
-> OBPv600GetAbacRuleSchema200Response OBPv600GetAbacRuleSchema ()
+<a id="getabacruleschema"></a>
+# **GetAbacRuleSchema**
+> GetAbacRuleSchema200Response GetAbacRuleSchema ()
 
 Get ABAC Rule Schema
 
@@ -249,7 +249,7 @@ Get ABAC Rule Schema
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv600GetAbacRuleSchema200Response**](OBPv600GetAbacRuleSchema200Response.md)
+[**GetAbacRuleSchema200Response**](GetAbacRuleSchema200Response.md)
 
 ### Authorization
 
@@ -269,9 +269,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getabacrules"></a>
-# **OBPv600GetAbacRules**
-> OBPv600GetAbacRulesByPolicy200Response OBPv600GetAbacRules ()
+<a id="getabacrules"></a>
+# **GetAbacRules**
+> GetAbacRulesByPolicy200Response GetAbacRules ()
 
 Get ABAC Rules
 
@@ -282,7 +282,7 @@ Get ABAC Rules
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -302,9 +302,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getabacrulesbypolicy"></a>
-# **OBPv600GetAbacRulesByPolicy**
-> OBPv600GetAbacRulesByPolicy200Response OBPv600GetAbacRulesByPolicy (string policy)
+<a id="getabacrulesbypolicy"></a>
+# **GetAbacRulesByPolicy**
+> GetAbacRulesByPolicy200Response GetAbacRulesByPolicy (string policy)
 
 Get ABAC Rules by Policy
 
@@ -319,7 +319,7 @@ Get ABAC Rules by Policy
 
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -339,9 +339,9 @@ Get ABAC Rules by Policy
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600updateabacrule"></a>
-# **OBPv600UpdateAbacRule**
-> OBPv600GetAbacRule200Response OBPv600UpdateAbacRule (string abacruleid, OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest)
+<a id="updateabacrule"></a>
+# **UpdateAbacRule**
+> GetAbacRule200Response UpdateAbacRule (string abacruleid, UpdateAbacRuleRequest updateAbacRuleRequest)
 
 Update ABAC Rule
 
@@ -353,11 +353,11 @@ Update ABAC Rule
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **abacruleid** | **string** | The ABACRULEID identifier |  |
-| **oBPv600UpdateAbacRuleRequest** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md) | Request body |  |
+| **updateAbacRuleRequest** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -377,9 +377,9 @@ Update ABAC Rule
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600validateabacrule"></a>
-# **OBPv600ValidateAbacRule**
-> OBPv600ValidateAbacRule200Response OBPv600ValidateAbacRule (OBPv600ValidateAbacRuleRequest oBPv600ValidateAbacRuleRequest)
+<a id="validateabacrule"></a>
+# **ValidateAbacRule**
+> ValidateAbacRule200Response ValidateAbacRule (ValidateAbacRuleRequest validateAbacRuleRequest)
 
 Validate ABAC Rule
 
@@ -390,11 +390,11 @@ Validate ABAC Rule
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **oBPv600ValidateAbacRuleRequest** | [**OBPv600ValidateAbacRuleRequest**](OBPv600ValidateAbacRuleRequest.md) | Request body |  |
+| **validateAbacRuleRequest** | [**ValidateAbacRuleRequest**](ValidateAbacRuleRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600ValidateAbacRule200Response**](OBPv600ValidateAbacRule200Response.md)
+[**ValidateAbacRule200Response**](ValidateAbacRule200Response.md)
 
 ### Authorization
 

@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,25 +24,25 @@ import (
 // ExperimentalAPIService ExperimentalAPI service
 type ExperimentalAPIService service
 
-type ApiOBPv310CreateMeetingRequest struct {
+type ApiCreateMeetingRequest struct {
 	ctx context.Context
 	ApiService *ExperimentalAPIService
 	bankid string
-	oBPv310CreateMeetingRequest *OBPv310CreateMeetingRequest
+	createMeetingRequest *CreateMeetingRequest
 }
 
 // Request body
-func (r ApiOBPv310CreateMeetingRequest) OBPv310CreateMeetingRequest(oBPv310CreateMeetingRequest OBPv310CreateMeetingRequest) ApiOBPv310CreateMeetingRequest {
-	r.oBPv310CreateMeetingRequest = &oBPv310CreateMeetingRequest
+func (r ApiCreateMeetingRequest) CreateMeetingRequest(createMeetingRequest CreateMeetingRequest) ApiCreateMeetingRequest {
+	r.createMeetingRequest = &createMeetingRequest
 	return r
 }
 
-func (r ApiOBPv310CreateMeetingRequest) Execute() (*OBPv310GetMeeting200Response, *http.Response, error) {
-	return r.ApiService.OBPv310CreateMeetingExecute(r)
+func (r ApiCreateMeetingRequest) Execute() (*GetMeeting200Response, *http.Response, error) {
+	return r.ApiService.CreateMeetingExecute(r)
 }
 
 /*
-OBPv310CreateMeeting Create Meeting (video conference/call)
+CreateMeeting Create Meeting (video conference/call)
 
 <p>Create Meeting: Initiate a video conference/call with the bank.</p>
 <p>The Meetings resource contains meta data about video/other conference sessions</p>
@@ -88,10 +88,10 @@ OBPv310CreateMeeting Create Meeting (video conference/call)
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv310CreateMeetingRequest
+ @return ApiCreateMeetingRequest
 */
-func (a *ExperimentalAPIService) OBPv310CreateMeeting(ctx context.Context, bankid string) ApiOBPv310CreateMeetingRequest {
-	return ApiOBPv310CreateMeetingRequest{
+func (a *ExperimentalAPIService) CreateMeeting(ctx context.Context, bankid string) ApiCreateMeetingRequest {
+	return ApiCreateMeetingRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -99,16 +99,16 @@ func (a *ExperimentalAPIService) OBPv310CreateMeeting(ctx context.Context, banki
 }
 
 // Execute executes the request
-//  @return OBPv310GetMeeting200Response
-func (a *ExperimentalAPIService) OBPv310CreateMeetingExecute(r ApiOBPv310CreateMeetingRequest) (*OBPv310GetMeeting200Response, *http.Response, error) {
+//  @return GetMeeting200Response
+func (a *ExperimentalAPIService) CreateMeetingExecute(r ApiCreateMeetingRequest) (*GetMeeting200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetMeeting200Response
+		localVarReturnValue  *GetMeeting200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExperimentalAPIService.OBPv310CreateMeeting")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExperimentalAPIService.CreateMeeting")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -119,8 +119,8 @@ func (a *ExperimentalAPIService) OBPv310CreateMeetingExecute(r ApiOBPv310CreateM
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv310CreateMeetingRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv310CreateMeetingRequest is required and must be specified")
+	if r.createMeetingRequest == nil {
+		return localVarReturnValue, nil, reportError("createMeetingRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -141,7 +141,7 @@ func (a *ExperimentalAPIService) OBPv310CreateMeetingExecute(r ApiOBPv310CreateM
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv310CreateMeetingRequest
+	localVarPostBody = r.createMeetingRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -166,7 +166,7 @@ func (a *ExperimentalAPIService) OBPv310CreateMeetingExecute(r ApiOBPv310CreateM
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -207,19 +207,19 @@ func (a *ExperimentalAPIService) OBPv310CreateMeetingExecute(r ApiOBPv310CreateM
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv310GetMeetingRequest struct {
+type ApiGetMeetingRequest struct {
 	ctx context.Context
 	ApiService *ExperimentalAPIService
 	bankid string
 	meetingid string
 }
 
-func (r ApiOBPv310GetMeetingRequest) Execute() (*OBPv310GetMeeting200Response, *http.Response, error) {
-	return r.ApiService.OBPv310GetMeetingExecute(r)
+func (r ApiGetMeetingRequest) Execute() (*GetMeeting200Response, *http.Response, error) {
+	return r.ApiService.GetMeetingExecute(r)
 }
 
 /*
-OBPv310GetMeeting Get Meeting
+GetMeeting Get Meeting
 
 <p>Get Meeting specified by BANK_ID / MEETING_ID<br />
 Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.</p>
@@ -255,10 +255,10 @@ Meetings contain meta data about, and are used to facilitate, video conferences 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param meetingid The MEETINGID identifier
- @return ApiOBPv310GetMeetingRequest
+ @return ApiGetMeetingRequest
 */
-func (a *ExperimentalAPIService) OBPv310GetMeeting(ctx context.Context, bankid string, meetingid string) ApiOBPv310GetMeetingRequest {
-	return ApiOBPv310GetMeetingRequest{
+func (a *ExperimentalAPIService) GetMeeting(ctx context.Context, bankid string, meetingid string) ApiGetMeetingRequest {
+	return ApiGetMeetingRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -267,16 +267,16 @@ func (a *ExperimentalAPIService) OBPv310GetMeeting(ctx context.Context, bankid s
 }
 
 // Execute executes the request
-//  @return OBPv310GetMeeting200Response
-func (a *ExperimentalAPIService) OBPv310GetMeetingExecute(r ApiOBPv310GetMeetingRequest) (*OBPv310GetMeeting200Response, *http.Response, error) {
+//  @return GetMeeting200Response
+func (a *ExperimentalAPIService) GetMeetingExecute(r ApiGetMeetingRequest) (*GetMeeting200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetMeeting200Response
+		localVarReturnValue  *GetMeeting200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExperimentalAPIService.OBPv310GetMeeting")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExperimentalAPIService.GetMeeting")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -330,7 +330,7 @@ func (a *ExperimentalAPIService) OBPv310GetMeetingExecute(r ApiOBPv310GetMeeting
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -371,18 +371,18 @@ func (a *ExperimentalAPIService) OBPv310GetMeetingExecute(r ApiOBPv310GetMeeting
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv310GetMeetingsRequest struct {
+type ApiGetMeetingsRequest struct {
 	ctx context.Context
 	ApiService *ExperimentalAPIService
 	bankid string
 }
 
-func (r ApiOBPv310GetMeetingsRequest) Execute() (*OBPv310GetMeetings200Response, *http.Response, error) {
-	return r.ApiService.OBPv310GetMeetingsExecute(r)
+func (r ApiGetMeetingsRequest) Execute() (*GetMeetings200Response, *http.Response, error) {
+	return r.ApiService.GetMeetingsExecute(r)
 }
 
 /*
-OBPv310GetMeetings Get Meetings
+GetMeetings Get Meetings
 
 <p>Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.</p>
 <p>The actual conference/chats are handled by external services.</p>
@@ -416,10 +416,10 @@ OBPv310GetMeetings Get Meetings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv310GetMeetingsRequest
+ @return ApiGetMeetingsRequest
 */
-func (a *ExperimentalAPIService) OBPv310GetMeetings(ctx context.Context, bankid string) ApiOBPv310GetMeetingsRequest {
-	return ApiOBPv310GetMeetingsRequest{
+func (a *ExperimentalAPIService) GetMeetings(ctx context.Context, bankid string) ApiGetMeetingsRequest {
+	return ApiGetMeetingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -427,16 +427,16 @@ func (a *ExperimentalAPIService) OBPv310GetMeetings(ctx context.Context, bankid 
 }
 
 // Execute executes the request
-//  @return OBPv310GetMeetings200Response
-func (a *ExperimentalAPIService) OBPv310GetMeetingsExecute(r ApiOBPv310GetMeetingsRequest) (*OBPv310GetMeetings200Response, *http.Response, error) {
+//  @return GetMeetings200Response
+func (a *ExperimentalAPIService) GetMeetingsExecute(r ApiGetMeetingsRequest) (*GetMeetings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetMeetings200Response
+		localVarReturnValue  *GetMeetings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExperimentalAPIService.OBPv310GetMeetings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExperimentalAPIService.GetMeetings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -489,7 +489,7 @@ func (a *ExperimentalAPIService) OBPv310GetMeetingsExecute(r ApiOBPv310GetMeetin
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,26 +24,26 @@ import (
 // ApiProductAPIService ApiProductAPI service
 type ApiProductAPIService service
 
-type ApiOBPv600CreateApiProductRequest struct {
+type ApiCreateApiProductRequest struct {
 	ctx context.Context
 	ApiService *ApiProductAPIService
 	bankid string
 	apiproductcode string
-	oBPv600CreateOrUpdateApiProductRequest *OBPv600CreateOrUpdateApiProductRequest
+	createOrUpdateApiProductRequest *CreateOrUpdateApiProductRequest
 }
 
 // Request body
-func (r ApiOBPv600CreateApiProductRequest) OBPv600CreateOrUpdateApiProductRequest(oBPv600CreateOrUpdateApiProductRequest OBPv600CreateOrUpdateApiProductRequest) ApiOBPv600CreateApiProductRequest {
-	r.oBPv600CreateOrUpdateApiProductRequest = &oBPv600CreateOrUpdateApiProductRequest
+func (r ApiCreateApiProductRequest) CreateOrUpdateApiProductRequest(createOrUpdateApiProductRequest CreateOrUpdateApiProductRequest) ApiCreateApiProductRequest {
+	r.createOrUpdateApiProductRequest = &createOrUpdateApiProductRequest
 	return r
 }
 
-func (r ApiOBPv600CreateApiProductRequest) Execute() (*OBPv600GetApiProducts200ResponsePropertiesApiProductsItems, *http.Response, error) {
-	return r.ApiService.OBPv600CreateApiProductExecute(r)
+func (r ApiCreateApiProductRequest) Execute() (*GetApiProducts200ResponseApiProductsInner, *http.Response, error) {
+	return r.ApiService.CreateApiProductExecute(r)
 }
 
 /*
-OBPv600CreateApiProduct Create Api Product
+CreateApiProduct Create Api Product
 
 <p>Create an Api Product for the Bank.</p>
 <p>Authentication is Required.</p>
@@ -96,10 +96,10 @@ OBPv600CreateApiProduct Create Api Product
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param apiproductcode The APIPRODUCTCODE identifier
- @return ApiOBPv600CreateApiProductRequest
+ @return ApiCreateApiProductRequest
 */
-func (a *ApiProductAPIService) OBPv600CreateApiProduct(ctx context.Context, bankid string, apiproductcode string) ApiOBPv600CreateApiProductRequest {
-	return ApiOBPv600CreateApiProductRequest{
+func (a *ApiProductAPIService) CreateApiProduct(ctx context.Context, bankid string, apiproductcode string) ApiCreateApiProductRequest {
+	return ApiCreateApiProductRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -108,16 +108,16 @@ func (a *ApiProductAPIService) OBPv600CreateApiProduct(ctx context.Context, bank
 }
 
 // Execute executes the request
-//  @return OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
-func (a *ApiProductAPIService) OBPv600CreateApiProductExecute(r ApiOBPv600CreateApiProductRequest) (*OBPv600GetApiProducts200ResponsePropertiesApiProductsItems, *http.Response, error) {
+//  @return GetApiProducts200ResponseApiProductsInner
+func (a *ApiProductAPIService) CreateApiProductExecute(r ApiCreateApiProductRequest) (*GetApiProducts200ResponseApiProductsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+		localVarReturnValue  *GetApiProducts200ResponseApiProductsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiProductAPIService.OBPv600CreateApiProduct")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiProductAPIService.CreateApiProduct")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -129,8 +129,8 @@ func (a *ApiProductAPIService) OBPv600CreateApiProductExecute(r ApiOBPv600Create
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreateOrUpdateApiProductRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateOrUpdateApiProductRequest is required and must be specified")
+	if r.createOrUpdateApiProductRequest == nil {
+		return localVarReturnValue, nil, reportError("createOrUpdateApiProductRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -151,7 +151,7 @@ func (a *ApiProductAPIService) OBPv600CreateApiProductExecute(r ApiOBPv600Create
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreateOrUpdateApiProductRequest
+	localVarPostBody = r.createOrUpdateApiProductRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -176,7 +176,7 @@ func (a *ApiProductAPIService) OBPv600CreateApiProductExecute(r ApiOBPv600Create
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -217,26 +217,26 @@ func (a *ApiProductAPIService) OBPv600CreateApiProductExecute(r ApiOBPv600Create
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600CreateOrUpdateApiProductRequest struct {
+type ApiCreateOrUpdateApiProductRequest struct {
 	ctx context.Context
 	ApiService *ApiProductAPIService
 	bankid string
 	apiproductcode string
-	oBPv600CreateOrUpdateApiProductRequest *OBPv600CreateOrUpdateApiProductRequest
+	createOrUpdateApiProductRequest *CreateOrUpdateApiProductRequest
 }
 
 // Request body
-func (r ApiOBPv600CreateOrUpdateApiProductRequest) OBPv600CreateOrUpdateApiProductRequest(oBPv600CreateOrUpdateApiProductRequest OBPv600CreateOrUpdateApiProductRequest) ApiOBPv600CreateOrUpdateApiProductRequest {
-	r.oBPv600CreateOrUpdateApiProductRequest = &oBPv600CreateOrUpdateApiProductRequest
+func (r ApiCreateOrUpdateApiProductRequest) CreateOrUpdateApiProductRequest(createOrUpdateApiProductRequest CreateOrUpdateApiProductRequest) ApiCreateOrUpdateApiProductRequest {
+	r.createOrUpdateApiProductRequest = &createOrUpdateApiProductRequest
 	return r
 }
 
-func (r ApiOBPv600CreateOrUpdateApiProductRequest) Execute() (*OBPv600GetApiProducts200ResponsePropertiesApiProductsItems, *http.Response, error) {
-	return r.ApiService.OBPv600CreateOrUpdateApiProductExecute(r)
+func (r ApiCreateOrUpdateApiProductRequest) Execute() (*GetApiProducts200ResponseApiProductsInner, *http.Response, error) {
+	return r.ApiService.CreateOrUpdateApiProductExecute(r)
 }
 
 /*
-OBPv600CreateOrUpdateApiProduct Create or Update Api Product
+CreateOrUpdateApiProduct Create or Update Api Product
 
 <p>Create or Update an Api Product for the Bank.</p>
 <p>Authentication is Required.</p>
@@ -273,10 +273,10 @@ OBPv600CreateOrUpdateApiProduct Create or Update Api Product
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param apiproductcode The APIPRODUCTCODE identifier
- @return ApiOBPv600CreateOrUpdateApiProductRequest
+ @return ApiCreateOrUpdateApiProductRequest
 */
-func (a *ApiProductAPIService) OBPv600CreateOrUpdateApiProduct(ctx context.Context, bankid string, apiproductcode string) ApiOBPv600CreateOrUpdateApiProductRequest {
-	return ApiOBPv600CreateOrUpdateApiProductRequest{
+func (a *ApiProductAPIService) CreateOrUpdateApiProduct(ctx context.Context, bankid string, apiproductcode string) ApiCreateOrUpdateApiProductRequest {
+	return ApiCreateOrUpdateApiProductRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -285,16 +285,16 @@ func (a *ApiProductAPIService) OBPv600CreateOrUpdateApiProduct(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
-func (a *ApiProductAPIService) OBPv600CreateOrUpdateApiProductExecute(r ApiOBPv600CreateOrUpdateApiProductRequest) (*OBPv600GetApiProducts200ResponsePropertiesApiProductsItems, *http.Response, error) {
+//  @return GetApiProducts200ResponseApiProductsInner
+func (a *ApiProductAPIService) CreateOrUpdateApiProductExecute(r ApiCreateOrUpdateApiProductRequest) (*GetApiProducts200ResponseApiProductsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+		localVarReturnValue  *GetApiProducts200ResponseApiProductsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiProductAPIService.OBPv600CreateOrUpdateApiProduct")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiProductAPIService.CreateOrUpdateApiProduct")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -306,8 +306,8 @@ func (a *ApiProductAPIService) OBPv600CreateOrUpdateApiProductExecute(r ApiOBPv6
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreateOrUpdateApiProductRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateOrUpdateApiProductRequest is required and must be specified")
+	if r.createOrUpdateApiProductRequest == nil {
+		return localVarReturnValue, nil, reportError("createOrUpdateApiProductRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -328,7 +328,7 @@ func (a *ApiProductAPIService) OBPv600CreateOrUpdateApiProductExecute(r ApiOBPv6
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreateOrUpdateApiProductRequest
+	localVarPostBody = r.createOrUpdateApiProductRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -353,7 +353,7 @@ func (a *ApiProductAPIService) OBPv600CreateOrUpdateApiProductExecute(r ApiOBPv6
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -394,19 +394,19 @@ func (a *ApiProductAPIService) OBPv600CreateOrUpdateApiProductExecute(r ApiOBPv6
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600DeleteApiProductRequest struct {
+type ApiDeleteApiProductRequest struct {
 	ctx context.Context
 	ApiService *ApiProductAPIService
 	bankid string
 	apiproductcode string
 }
 
-func (r ApiOBPv600DeleteApiProductRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv600DeleteApiProductExecute(r)
+func (r ApiDeleteApiProductRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteApiProductExecute(r)
 }
 
 /*
-OBPv600DeleteApiProduct Delete Api Product
+DeleteApiProduct Delete Api Product
 
 <p>Delete an Api Product by BANK_ID and API_PRODUCT_CODE.</p>
 <p>Authentication is Required.</p>
@@ -420,10 +420,10 @@ OBPv600DeleteApiProduct Delete Api Product
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param apiproductcode The APIPRODUCTCODE identifier
- @return ApiOBPv600DeleteApiProductRequest
+ @return ApiDeleteApiProductRequest
 */
-func (a *ApiProductAPIService) OBPv600DeleteApiProduct(ctx context.Context, bankid string, apiproductcode string) ApiOBPv600DeleteApiProductRequest {
-	return ApiOBPv600DeleteApiProductRequest{
+func (a *ApiProductAPIService) DeleteApiProduct(ctx context.Context, bankid string, apiproductcode string) ApiDeleteApiProductRequest {
+	return ApiDeleteApiProductRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -432,14 +432,14 @@ func (a *ApiProductAPIService) OBPv600DeleteApiProduct(ctx context.Context, bank
 }
 
 // Execute executes the request
-func (a *ApiProductAPIService) OBPv600DeleteApiProductExecute(r ApiOBPv600DeleteApiProductRequest) (*http.Response, error) {
+func (a *ApiProductAPIService) DeleteApiProductExecute(r ApiDeleteApiProductRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiProductAPIService.OBPv600DeleteApiProduct")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiProductAPIService.DeleteApiProduct")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -493,7 +493,7 @@ func (a *ApiProductAPIService) OBPv600DeleteApiProductExecute(r ApiOBPv600Delete
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -525,19 +525,19 @@ func (a *ApiProductAPIService) OBPv600DeleteApiProductExecute(r ApiOBPv600Delete
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetApiProductRequest struct {
+type ApiGetApiProductRequest struct {
 	ctx context.Context
 	ApiService *ApiProductAPIService
 	bankid string
 	apiproductcode string
 }
 
-func (r ApiOBPv600GetApiProductRequest) Execute() (*OBPv600GetApiProducts200ResponsePropertiesApiProductsItems, *http.Response, error) {
-	return r.ApiService.OBPv600GetApiProductExecute(r)
+func (r ApiGetApiProductRequest) Execute() (*GetApiProducts200ResponseApiProductsInner, *http.Response, error) {
+	return r.ApiService.GetApiProductExecute(r)
 }
 
 /*
-OBPv600GetApiProduct Get Api Product
+GetApiProduct Get Api Product
 
 <p>Get an Api Product by BANK_ID and API_PRODUCT_CODE.</p>
 <p>Returns the Api Product with its attributes.</p>
@@ -574,10 +574,10 @@ OBPv600GetApiProduct Get Api Product
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param apiproductcode The APIPRODUCTCODE identifier
- @return ApiOBPv600GetApiProductRequest
+ @return ApiGetApiProductRequest
 */
-func (a *ApiProductAPIService) OBPv600GetApiProduct(ctx context.Context, bankid string, apiproductcode string) ApiOBPv600GetApiProductRequest {
-	return ApiOBPv600GetApiProductRequest{
+func (a *ApiProductAPIService) GetApiProduct(ctx context.Context, bankid string, apiproductcode string) ApiGetApiProductRequest {
+	return ApiGetApiProductRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -586,16 +586,16 @@ func (a *ApiProductAPIService) OBPv600GetApiProduct(ctx context.Context, bankid 
 }
 
 // Execute executes the request
-//  @return OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
-func (a *ApiProductAPIService) OBPv600GetApiProductExecute(r ApiOBPv600GetApiProductRequest) (*OBPv600GetApiProducts200ResponsePropertiesApiProductsItems, *http.Response, error) {
+//  @return GetApiProducts200ResponseApiProductsInner
+func (a *ApiProductAPIService) GetApiProductExecute(r ApiGetApiProductRequest) (*GetApiProducts200ResponseApiProductsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+		localVarReturnValue  *GetApiProducts200ResponseApiProductsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiProductAPIService.OBPv600GetApiProduct")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiProductAPIService.GetApiProduct")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -662,18 +662,18 @@ func (a *ApiProductAPIService) OBPv600GetApiProductExecute(r ApiOBPv600GetApiPro
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetApiProductsRequest struct {
+type ApiGetApiProductsRequest struct {
 	ctx context.Context
 	ApiService *ApiProductAPIService
 	bankid string
 }
 
-func (r ApiOBPv600GetApiProductsRequest) Execute() (*OBPv600GetApiProducts200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetApiProductsExecute(r)
+func (r ApiGetApiProductsRequest) Execute() (*GetApiProducts200Response, *http.Response, error) {
+	return r.ApiService.GetApiProductsExecute(r)
 }
 
 /*
-OBPv600GetApiProducts Get Api Products
+GetApiProducts Get Api Products
 
 <p>Get Api Products for the Bank.</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
@@ -708,10 +708,10 @@ OBPv600GetApiProducts Get Api Products
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv600GetApiProductsRequest
+ @return ApiGetApiProductsRequest
 */
-func (a *ApiProductAPIService) OBPv600GetApiProducts(ctx context.Context, bankid string) ApiOBPv600GetApiProductsRequest {
-	return ApiOBPv600GetApiProductsRequest{
+func (a *ApiProductAPIService) GetApiProducts(ctx context.Context, bankid string) ApiGetApiProductsRequest {
+	return ApiGetApiProductsRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -719,16 +719,16 @@ func (a *ApiProductAPIService) OBPv600GetApiProducts(ctx context.Context, bankid
 }
 
 // Execute executes the request
-//  @return OBPv600GetApiProducts200Response
-func (a *ApiProductAPIService) OBPv600GetApiProductsExecute(r ApiOBPv600GetApiProductsRequest) (*OBPv600GetApiProducts200Response, *http.Response, error) {
+//  @return GetApiProducts200Response
+func (a *ApiProductAPIService) GetApiProductsExecute(r ApiGetApiProductsRequest) (*GetApiProducts200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetApiProducts200Response
+		localVarReturnValue  *GetApiProducts200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiProductAPIService.OBPv600GetApiProducts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiProductAPIService.GetApiProducts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,19 +1,19 @@
 # OAuthApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv310GetOAuth2ServerJWKsURIs**](OAuthApi.md#obpv310getoauth2serverjwksuris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs |
-| [**oBPv310GetObpConnectorLoopback**](OAuthApi.md#obpv310getobpconnectorloopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback) |
-| [**oBPv600GetOidcClient**](OAuthApi.md#obpv600getoidcclient) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client |
-| [**oBPv600VerifyOidcClient**](OAuthApi.md#obpv600verifyoidcclientoperation) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client |
+| [**getOAuth2ServerJWKsURIs**](OAuthApi.md#getoauth2serverjwksuris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs |
+| [**getObpConnectorLoopback**](OAuthApi.md#getobpconnectorloopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback) |
+| [**getOidcClient**](OAuthApi.md#getoidcclient) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client |
+| [**verifyOidcClient**](OAuthApi.md#verifyoidcclientoperation) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client |
 
 
 
-## oBPv310GetOAuth2ServerJWKsURIs
+## getOAuth2ServerJWKsURIs
 
-> OBPv310GetOAuth2ServerJWKsURIs200Response oBPv310GetOAuth2ServerJWKsURIs()
+> GetOAuth2ServerJWKsURIs200Response getOAuth2ServerJWKsURIs()
 
 Get JSON Web Key (JWK) URIs
 
@@ -26,14 +26,14 @@ import {
   Configuration,
   OAuthApi,
 } from 'obp-typescript';
-import type { OBPv310GetOAuth2ServerJWKsURIsRequest } from 'obp-typescript';
+import type { GetOAuth2ServerJWKsURIsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
   const api = new OAuthApi();
 
   try {
-    const data = await api.oBPv310GetOAuth2ServerJWKsURIs();
+    const data = await api.getOAuth2ServerJWKsURIs();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -50,7 +50,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv310GetOAuth2ServerJWKsURIs200Response**](OBPv310GetOAuth2ServerJWKsURIs200Response.md)
+[**GetOAuth2ServerJWKsURIs200Response**](GetOAuth2ServerJWKsURIs200Response.md)
 
 ### Authorization
 
@@ -71,9 +71,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv310GetObpConnectorLoopback
+## getObpConnectorLoopback
 
-> OBPv310GetObpConnectorLoopback200Response oBPv310GetObpConnectorLoopback()
+> GetObpConnectorLoopback200Response getObpConnectorLoopback()
 
 Get Connector Status (Loopback)
 
@@ -86,7 +86,7 @@ import {
   Configuration,
   OAuthApi,
 } from 'obp-typescript';
-import type { OBPv310GetObpConnectorLoopbackRequest } from 'obp-typescript';
+import type { GetObpConnectorLoopbackRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -101,7 +101,7 @@ async function example() {
   const api = new OAuthApi(config);
 
   try {
-    const data = await api.oBPv310GetObpConnectorLoopback();
+    const data = await api.getObpConnectorLoopback();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -118,7 +118,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv310GetObpConnectorLoopback200Response**](OBPv310GetObpConnectorLoopback200Response.md)
+[**GetObpConnectorLoopback200Response**](GetObpConnectorLoopback200Response.md)
 
 ### Authorization
 
@@ -139,13 +139,13 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetOidcClient
+## getOidcClient
 
-> OBPv600GetOidcClient200Response oBPv600GetOidcClient(clientid)
+> GetOidcClient200Response getOidcClient(clientid)
 
 Get OIDC Client
 
-&lt;p&gt;Gets an OIDC/OAuth2 client\&#39;s metadata by client_id.&lt;/p&gt; &lt;p&gt;Returns client information including name, consumer_id, redirect_uris, and enabled status.&lt;br /&gt; This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CLIENT_ID&lt;/a&gt;: CLIENT_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_name&lt;/strong&gt;&lt;/a&gt;: client_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;consumer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;redirect_uris&lt;/strong&gt;&lt;/a&gt;: redirect_uris&lt;/p&gt; 
+&lt;p&gt;Gets an OIDC/OAuth2 client\&#39;s metadata by client_id.&lt;/p&gt; &lt;p&gt;Returns client information including name, consumer_id, redirect_uris, and enabled status.&lt;br /&gt; This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CLIENT_ID&lt;/a&gt;: CLIENT_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_name&lt;/strong&gt;&lt;/a&gt;: client_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;consumer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;redirect_uris&lt;/strong&gt;&lt;/a&gt;: redirect_uris&lt;/p&gt; 
 
 ### Example
 
@@ -154,7 +154,7 @@ import {
   Configuration,
   OAuthApi,
 } from 'obp-typescript';
-import type { OBPv600GetOidcClientRequest } from 'obp-typescript';
+import type { GetOidcClientRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -171,10 +171,10 @@ async function example() {
   const body = {
     // string | The CLIENTID identifier
     clientid: clientid_example,
-  } satisfies OBPv600GetOidcClientRequest;
+  } satisfies GetOidcClientRequest;
 
   try {
-    const data = await api.oBPv600GetOidcClient(body);
+    const data = await api.getOidcClient(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -194,7 +194,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600GetOidcClient200Response**](OBPv600GetOidcClient200Response.md)
+[**GetOidcClient200Response**](GetOidcClient200Response.md)
 
 ### Authorization
 
@@ -215,13 +215,13 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600VerifyOidcClient
+## verifyOidcClient
 
-> OBPv600VerifyOidcClient200Response oBPv600VerifyOidcClient(oBPv600VerifyOidcClientRequest)
+> VerifyOidcClient200Response verifyOidcClient(verifyOidcClientRequest)
 
 Verify OIDC Client
 
-&lt;p&gt;Verifies an OIDC/OAuth2 client\&#39;s credentials.&lt;/p&gt; &lt;p&gt;Returns &lt;code&gt;valid: true&lt;/code&gt; if the client_id and client_secret match an active consumer.&lt;br /&gt; Also returns the consumer_id and redirect_uris for use by the OIDC provider.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_secret&lt;/strong&gt;&lt;/a&gt;: client_secret&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;valid&lt;/strong&gt;&lt;/a&gt;: valid&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;client_id&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;consumer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;redirect_uris&lt;/a&gt;: redirect_uris&lt;/p&gt; 
+&lt;p&gt;Verifies an OIDC/OAuth2 client\&#39;s credentials.&lt;/p&gt; &lt;p&gt;Returns &lt;code&gt;valid: true&lt;/code&gt; if the client_id and client_secret match an active consumer.&lt;br /&gt; Also returns the consumer_id and redirect_uris for use by the OIDC provider.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_secret&lt;/strong&gt;&lt;/a&gt;: client_secret&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;valid&lt;/strong&gt;&lt;/a&gt;: valid&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;client_id&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;consumer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;redirect_uris&lt;/a&gt;: redirect_uris&lt;/p&gt; 
 
 ### Example
 
@@ -230,7 +230,7 @@ import {
   Configuration,
   OAuthApi,
 } from 'obp-typescript';
-import type { OBPv600VerifyOidcClientOperationRequest } from 'obp-typescript';
+import type { VerifyOidcClientOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -245,12 +245,12 @@ async function example() {
   const api = new OAuthApi(config);
 
   const body = {
-    // OBPv600VerifyOidcClientRequest | Request body
-    oBPv600VerifyOidcClientRequest: {"type":"object","properties":{"client_id":{"type":"string"},"client_secret":{"type":"string"}}},
-  } satisfies OBPv600VerifyOidcClientOperationRequest;
+    // VerifyOidcClientRequest | Request body
+    verifyOidcClientRequest: {"type":"object","properties":{"client_id":{"type":"string"},"client_secret":{"type":"string"}}},
+  } satisfies VerifyOidcClientOperationRequest;
 
   try {
-    const data = await api.oBPv600VerifyOidcClient(body);
+    const data = await api.verifyOidcClient(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -266,11 +266,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **oBPv600VerifyOidcClientRequest** | [OBPv600VerifyOidcClientRequest](OBPv600VerifyOidcClientRequest.md) | Request body | |
+| **verifyOidcClientRequest** | [VerifyOidcClientRequest](VerifyOidcClientRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600VerifyOidcClient200Response**](OBPv600VerifyOidcClient200Response.md)
+[**VerifyOidcClient200Response**](VerifyOidcClient200Response.md)
 
 ### Authorization
 

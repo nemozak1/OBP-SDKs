@@ -1,22 +1,22 @@
 # CustomerAttributeAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateCustomerAttribute**](CustomerAttributeAPI.md#obpv400createcustomerattribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
-[**oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition**](CustomerAttributeAPI.md#obpv400createorupdatecustomerattributeattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
-[**oBPv400DeleteCustomerAttribute**](CustomerAttributeAPI.md#obpv400deletecustomerattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
-[**oBPv400DeleteCustomerAttributeDefinition**](CustomerAttributeAPI.md#obpv400deletecustomerattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
-[**oBPv400GetCustomerAttributeById**](CustomerAttributeAPI.md#obpv400getcustomerattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
-[**oBPv400GetCustomerAttributeDefinition**](CustomerAttributeAPI.md#obpv400getcustomerattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
-[**oBPv400GetCustomerAttributes**](CustomerAttributeAPI.md#obpv400getcustomerattributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
-[**oBPv400UpdateCustomerAttribute**](CustomerAttributeAPI.md#obpv400updatecustomerattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
+[**createCustomerAttribute**](CustomerAttributeAPI.md#createcustomerattribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
+[**createOrUpdateCustomerAttributeAttributeDefinition**](CustomerAttributeAPI.md#createorupdatecustomerattributeattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
+[**deleteCustomerAttribute**](CustomerAttributeAPI.md#deletecustomerattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
+[**deleteCustomerAttributeDefinition**](CustomerAttributeAPI.md#deletecustomerattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
+[**getCustomerAttributeById**](CustomerAttributeAPI.md#getcustomerattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
+[**getCustomerAttributeDefinition**](CustomerAttributeAPI.md#getcustomerattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
+[**getCustomerAttributes**](CustomerAttributeAPI.md#getcustomerattributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
+[**updateCustomerAttribute**](CustomerAttributeAPI.md#updatecustomerattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
 
 
-# **oBPv400CreateCustomerAttribute**
+# **createCustomerAttribute**
 ```swift
-    open class func oBPv400CreateCustomerAttribute(bankid: String, customerid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, completion: @escaping (_ data: OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems?, _ error: Error?) -> Void)
+    open class func createCustomerAttribute(bankid: String, customerid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, completion: @escaping (_ data: GetCustomerAttributes200ResponseCustomerAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Create Customer Attribute
@@ -30,10 +30,10 @@ import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
 let customerid = "customerid_example" // String | The CUSTOMERID identifier
-let oBPv600CreatePersonalDataFieldRequest = OBPv6_0_0_createPersonalDataField_request(type: "type_example", properties: OBPv6_0_0_createPersonalDataField_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), type: nil, value: nil)) // OBPv600CreatePersonalDataFieldRequest | Request body
+let createPersonalDataFieldRequest = createPersonalDataField_request(name: "name_example", type: "type_example", value: "value_example") // CreatePersonalDataFieldRequest | Request body
 
 // Create Customer Attribute
-CustomerAttributeAPI.oBPv400CreateCustomerAttribute(bankid: bankid, customerid: customerid, oBPv600CreatePersonalDataFieldRequest: oBPv600CreatePersonalDataFieldRequest) { (response, error) in
+CustomerAttributeAPI.createCustomerAttribute(bankid: bankid, customerid: customerid, createPersonalDataFieldRequest: createPersonalDataFieldRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -51,11 +51,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
  **customerid** | **String** | The CUSTOMERID identifier | 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -68,9 +68,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition**
+# **createOrUpdateCustomerAttributeAttributeDefinition**
 ```swift
-    open class func oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(bankid: String, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, completion: @escaping (_ data: OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems?, _ error: Error?) -> Void)
+    open class func createOrUpdateCustomerAttributeAttributeDefinition(bankid: String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest, completion: @escaping (_ data: GetTransactionRequestAttributeDefinition200ResponseAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Create or Update Customer Attribute Definition
@@ -83,10 +83,10 @@ Create or Update Customer Attribute Definition
 import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
-let oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = OBPv4_0_0_createOrUpdateTransactionRequestAttributeDefinition_request(type: "type_example", properties: OBPv4_0_0_createOrUpdateTransactionRequestAttributeDefinition_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), isActive: nil, description: nil, alias: nil, canBeSeenOnViews: OBPv6_0_0_getActiveRateLimitsAtDate_200_response_properties_considered_rate_limit_ids(type: "type_example", items: nil), category: nil, type: nil)) // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+let createOrUpdateTransactionRequestAttributeDefinitionRequest = createOrUpdateTransactionRequestAttributeDefinition_request(name: "name_example", isActive: false, description: "description_example", alias: "alias_example", canBeSeenOnViews: ["canBeSeenOnViews_example"], category: "category_example", type: "type_example") // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 // Create or Update Customer Attribute Definition
-CustomerAttributeAPI.oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(bankid: bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) { (response, error) in
+CustomerAttributeAPI.createOrUpdateCustomerAttributeAttributeDefinition(bankid: bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest: createOrUpdateTransactionRequestAttributeDefinitionRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -103,11 +103,11 @@ CustomerAttributeAPI.oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(b
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
- **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
+ **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -120,9 +120,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteCustomerAttribute**
+# **deleteCustomerAttribute**
 ```swift
-    open class func oBPv400DeleteCustomerAttribute(bankid: String, customerid: String, customerattributeid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteCustomerAttribute(bankid: String, customerid: String, customerattributeid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Customer Attribute
@@ -139,7 +139,7 @@ let customerid = "customerid_example" // String | The CUSTOMERID identifier
 let customerattributeid = "customerattributeid_example" // String | The CUSTOMERATTRIBUTEID identifier
 
 // Delete Customer Attribute
-CustomerAttributeAPI.oBPv400DeleteCustomerAttribute(bankid: bankid, customerid: customerid, customerattributeid: customerattributeid) { (response, error) in
+CustomerAttributeAPI.deleteCustomerAttribute(bankid: bankid, customerid: customerid, customerattributeid: customerattributeid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -174,9 +174,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteCustomerAttributeDefinition**
+# **deleteCustomerAttributeDefinition**
 ```swift
-    open class func oBPv400DeleteCustomerAttributeDefinition(bankid: String, attributedefinitionid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteCustomerAttributeDefinition(bankid: String, attributedefinitionid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Customer Attribute Definition
@@ -192,7 +192,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let attributedefinitionid = "attributedefinitionid_example" // String | The ATTRIBUTEDEFINITIONID identifier
 
 // Delete Customer Attribute Definition
-CustomerAttributeAPI.oBPv400DeleteCustomerAttributeDefinition(bankid: bankid, attributedefinitionid: attributedefinitionid) { (response, error) in
+CustomerAttributeAPI.deleteCustomerAttributeDefinition(bankid: bankid, attributedefinitionid: attributedefinitionid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -226,9 +226,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetCustomerAttributeById**
+# **getCustomerAttributeById**
 ```swift
-    open class func oBPv400GetCustomerAttributeById(bankid: String, customerid: String, attributeid: String, completion: @escaping (_ data: OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems?, _ error: Error?) -> Void)
+    open class func getCustomerAttributeById(bankid: String, customerid: String, attributeid: String, completion: @escaping (_ data: GetCustomerAttributes200ResponseCustomerAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Get Customer Attribute By Id
@@ -245,7 +245,7 @@ let customerid = "customerid_example" // String | The CUSTOMERID identifier
 let attributeid = "attributeid_example" // String | The ATTRIBUTEID identifier
 
 // Get Customer Attribute By Id
-CustomerAttributeAPI.oBPv400GetCustomerAttributeById(bankid: bankid, customerid: customerid, attributeid: attributeid) { (response, error) in
+CustomerAttributeAPI.getCustomerAttributeById(bankid: bankid, customerid: customerid, attributeid: attributeid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -280,9 +280,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetCustomerAttributeDefinition**
+# **getCustomerAttributeDefinition**
 ```swift
-    open class func oBPv400GetCustomerAttributeDefinition(bankid: String, completion: @escaping (_ data: OBPv400GetTransactionRequestAttributeDefinition200Response?, _ error: Error?) -> Void)
+    open class func getCustomerAttributeDefinition(bankid: String, completion: @escaping (_ data: GetTransactionRequestAttributeDefinition200Response?, _ error: Error?) -> Void)
 ```
 
 Get Customer Attribute Definition
@@ -297,7 +297,7 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 
 // Get Customer Attribute Definition
-CustomerAttributeAPI.oBPv400GetCustomerAttributeDefinition(bankid: bankid) { (response, error) in
+CustomerAttributeAPI.getCustomerAttributeDefinition(bankid: bankid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -330,9 +330,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetCustomerAttributes**
+# **getCustomerAttributes**
 ```swift
-    open class func oBPv400GetCustomerAttributes(bankid: String, customerid: String, completion: @escaping (_ data: OBPv400GetCustomerAttributes200Response?, _ error: Error?) -> Void)
+    open class func getCustomerAttributes(bankid: String, customerid: String, completion: @escaping (_ data: GetCustomerAttributes200Response?, _ error: Error?) -> Void)
 ```
 
 Get Customer Attributes
@@ -348,7 +348,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let customerid = "customerid_example" // String | The CUSTOMERID identifier
 
 // Get Customer Attributes
-CustomerAttributeAPI.oBPv400GetCustomerAttributes(bankid: bankid, customerid: customerid) { (response, error) in
+CustomerAttributeAPI.getCustomerAttributes(bankid: bankid, customerid: customerid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200Response**](OBPv400GetCustomerAttributes200Response.md)
+[**GetCustomerAttributes200Response**](GetCustomerAttributes200Response.md)
 
 ### Authorization
 
@@ -382,9 +382,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateCustomerAttribute**
+# **updateCustomerAttribute**
 ```swift
-    open class func oBPv400UpdateCustomerAttribute(bankid: String, customerid: String, customerattributeid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, completion: @escaping (_ data: OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems?, _ error: Error?) -> Void)
+    open class func updateCustomerAttribute(bankid: String, customerid: String, customerattributeid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, completion: @escaping (_ data: GetCustomerAttributes200ResponseCustomerAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Update Customer Attribute
@@ -399,10 +399,10 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 let customerid = "customerid_example" // String | The CUSTOMERID identifier
 let customerattributeid = "customerattributeid_example" // String | The CUSTOMERATTRIBUTEID identifier
-let oBPv600CreatePersonalDataFieldRequest = OBPv6_0_0_createPersonalDataField_request(type: "type_example", properties: OBPv6_0_0_createPersonalDataField_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), type: nil, value: nil)) // OBPv600CreatePersonalDataFieldRequest | Request body
+let createPersonalDataFieldRequest = createPersonalDataField_request(name: "name_example", type: "type_example", value: "value_example") // CreatePersonalDataFieldRequest | Request body
 
 // Update Customer Attribute
-CustomerAttributeAPI.oBPv400UpdateCustomerAttribute(bankid: bankid, customerid: customerid, customerattributeid: customerattributeid, oBPv600CreatePersonalDataFieldRequest: oBPv600CreatePersonalDataFieldRequest) { (response, error) in
+CustomerAttributeAPI.updateCustomerAttribute(bankid: bankid, customerid: customerid, customerattributeid: customerattributeid, createPersonalDataFieldRequest: createPersonalDataFieldRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -421,11 +421,11 @@ Name | Type | Description  | Notes
  **bankid** | **String** | The BANKID identifier | 
  **customerid** | **String** | The CUSTOMERID identifier | 
  **customerattributeid** | **String** | The CUSTOMERATTRIBUTEID identifier | 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 

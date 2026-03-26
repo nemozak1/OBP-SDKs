@@ -1,18 +1,18 @@
 # \AccountMetadataAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv400AddTagForViewOnAccount**](AccountMetadataAPI.md#OBPv400AddTagForViewOnAccount) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
-[**OBPv400DeleteTagForViewOnAccount**](AccountMetadataAPI.md#OBPv400DeleteTagForViewOnAccount) | **Delete** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
-[**OBPv400GetTagsForViewOnAccount**](AccountMetadataAPI.md#OBPv400GetTagsForViewOnAccount) | **Get** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
+[**AddTagForViewOnAccount**](AccountMetadataAPI.md#AddTagForViewOnAccount) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
+[**DeleteTagForViewOnAccount**](AccountMetadataAPI.md#DeleteTagForViewOnAccount) | **Delete** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
+[**GetTagsForViewOnAccount**](AccountMetadataAPI.md#GetTagsForViewOnAccount) | **Get** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
 
 
 
-## OBPv400AddTagForViewOnAccount
+## AddTagForViewOnAccount
 
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems OBPv400AddTagForViewOnAccount(ctx, bankid, accountid, viewid).OBPv400DeleteSystemLevelEndpointTag200Response(oBPv400DeleteSystemLevelEndpointTag200Response).Execute()
+> GetTagsForViewOnAccount200ResponseTagsInner AddTagForViewOnAccount(ctx, bankid, accountid, viewid).GetTransactionTypes200ResponseTransactionTypesInnerId(getTransactionTypes200ResponseTransactionTypesInnerId).Execute()
 
 Create a tag on account
 
@@ -34,17 +34,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
-	oBPv400DeleteSystemLevelEndpointTag200Response := *openapiclient.NewOBPv400DeleteSystemLevelEndpointTag200Response("Type_example", *openapiclient.NewOBPv400DeleteSystemLevelEndpointTag200ResponseProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+	getTransactionTypes200ResponseTransactionTypesInnerId := *openapiclient.NewGetTransactionTypes200ResponseTransactionTypesInnerId() // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountMetadataAPI.OBPv400AddTagForViewOnAccount(context.Background(), bankid, accountid, viewid).OBPv400DeleteSystemLevelEndpointTag200Response(oBPv400DeleteSystemLevelEndpointTag200Response).Execute()
+	resp, r, err := apiClient.AccountMetadataAPI.AddTagForViewOnAccount(context.Background(), bankid, accountid, viewid).GetTransactionTypes200ResponseTransactionTypesInnerId(getTransactionTypes200ResponseTransactionTypesInnerId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountMetadataAPI.OBPv400AddTagForViewOnAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountMetadataAPI.AddTagForViewOnAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400AddTagForViewOnAccount`: OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
-	fmt.Fprintf(os.Stdout, "Response from `AccountMetadataAPI.OBPv400AddTagForViewOnAccount`: %v\n", resp)
+	// response from `AddTagForViewOnAccount`: GetTagsForViewOnAccount200ResponseTagsInner
+	fmt.Fprintf(os.Stdout, "Response from `AccountMetadataAPI.AddTagForViewOnAccount`: %v\n", resp)
 }
 ```
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400AddTagForViewOnAccountRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddTagForViewOnAccountRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -68,11 +68,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md) | Request body | 
+ **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -88,9 +88,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400DeleteTagForViewOnAccount
+## DeleteTagForViewOnAccount
 
-> OBPv400DeleteTagForViewOnAccount(ctx, bankid, accountid, viewid, tagid).Execute()
+> DeleteTagForViewOnAccount(ctx, bankid, accountid, viewid, tagid).Execute()
 
 Delete a tag on account
 
@@ -116,9 +116,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AccountMetadataAPI.OBPv400DeleteTagForViewOnAccount(context.Background(), bankid, accountid, viewid, tagid).Execute()
+	r, err := apiClient.AccountMetadataAPI.DeleteTagForViewOnAccount(context.Background(), bankid, accountid, viewid, tagid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountMetadataAPI.OBPv400DeleteTagForViewOnAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountMetadataAPI.DeleteTagForViewOnAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400DeleteTagForViewOnAccountRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteTagForViewOnAccountRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -165,9 +165,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetTagsForViewOnAccount
+## GetTagsForViewOnAccount
 
-> OBPv400GetTagsForViewOnAccount200Response OBPv400GetTagsForViewOnAccount(ctx, bankid, accountid, viewid).Execute()
+> GetTagsForViewOnAccount200Response GetTagsForViewOnAccount(ctx, bankid, accountid, viewid).Execute()
 
 Get tags on account
 
@@ -192,13 +192,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountMetadataAPI.OBPv400GetTagsForViewOnAccount(context.Background(), bankid, accountid, viewid).Execute()
+	resp, r, err := apiClient.AccountMetadataAPI.GetTagsForViewOnAccount(context.Background(), bankid, accountid, viewid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountMetadataAPI.OBPv400GetTagsForViewOnAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountMetadataAPI.GetTagsForViewOnAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetTagsForViewOnAccount`: OBPv400GetTagsForViewOnAccount200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountMetadataAPI.OBPv400GetTagsForViewOnAccount`: %v\n", resp)
+	// response from `GetTagsForViewOnAccount`: GetTagsForViewOnAccount200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountMetadataAPI.GetTagsForViewOnAccount`: %v\n", resp)
 }
 ```
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetTagsForViewOnAccountRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTagsForViewOnAccountRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200Response**](OBPv400GetTagsForViewOnAccount200Response.md)
+[**GetTagsForViewOnAccount200Response**](GetTagsForViewOnAccount200Response.md)
 
 ### Authorization
 

@@ -1,32 +1,32 @@
 # \TransactionMetadataAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv121AddCommentForViewOnTransaction**](TransactionMetadataAPI.md#OBPv121AddCommentForViewOnTransaction) | **Post** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment
-[**OBPv121AddImageForViewOnTransaction**](TransactionMetadataAPI.md#OBPv121AddImageForViewOnTransaction) | **Post** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image
-[**OBPv121AddTagForViewOnTransaction**](TransactionMetadataAPI.md#OBPv121AddTagForViewOnTransaction) | **Post** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag
-[**OBPv121AddTransactionNarrative**](TransactionMetadataAPI.md#OBPv121AddTransactionNarrative) | **Post** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative
-[**OBPv121AddWhereTagForViewOnTransaction**](TransactionMetadataAPI.md#OBPv121AddWhereTagForViewOnTransaction) | **Post** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag
-[**OBPv121DeleteCommentForViewOnTransaction**](TransactionMetadataAPI.md#OBPv121DeleteCommentForViewOnTransaction) | **Delete** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment
-[**OBPv121DeleteImageForViewOnTransaction**](TransactionMetadataAPI.md#OBPv121DeleteImageForViewOnTransaction) | **Delete** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image
-[**OBPv121DeleteTagForViewOnTransaction**](TransactionMetadataAPI.md#OBPv121DeleteTagForViewOnTransaction) | **Delete** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag
-[**OBPv121DeleteTransactionNarrative**](TransactionMetadataAPI.md#OBPv121DeleteTransactionNarrative) | **Delete** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative
-[**OBPv121DeleteWhereTagForViewOnTransaction**](TransactionMetadataAPI.md#OBPv121DeleteWhereTagForViewOnTransaction) | **Delete** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag
-[**OBPv121GetCommentsForViewOnTransaction**](TransactionMetadataAPI.md#OBPv121GetCommentsForViewOnTransaction) | **Get** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments
-[**OBPv121GetImagesForViewOnTransaction**](TransactionMetadataAPI.md#OBPv121GetImagesForViewOnTransaction) | **Get** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images
-[**OBPv121GetTagsForViewOnTransaction**](TransactionMetadataAPI.md#OBPv121GetTagsForViewOnTransaction) | **Get** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags
-[**OBPv121GetTransactionNarrative**](TransactionMetadataAPI.md#OBPv121GetTransactionNarrative) | **Get** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative
-[**OBPv121GetWhereTagForViewOnTransaction**](TransactionMetadataAPI.md#OBPv121GetWhereTagForViewOnTransaction) | **Get** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag
-[**OBPv121UpdateTransactionNarrative**](TransactionMetadataAPI.md#OBPv121UpdateTransactionNarrative) | **Put** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative
-[**OBPv121UpdateWhereTagForViewOnTransaction**](TransactionMetadataAPI.md#OBPv121UpdateWhereTagForViewOnTransaction) | **Put** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag
+[**AddCommentForViewOnTransaction**](TransactionMetadataAPI.md#AddCommentForViewOnTransaction) | **Post** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment
+[**AddImageForViewOnTransaction**](TransactionMetadataAPI.md#AddImageForViewOnTransaction) | **Post** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image
+[**AddTagForViewOnTransaction**](TransactionMetadataAPI.md#AddTagForViewOnTransaction) | **Post** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag
+[**AddTransactionNarrative**](TransactionMetadataAPI.md#AddTransactionNarrative) | **Post** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative
+[**AddWhereTagForViewOnTransaction**](TransactionMetadataAPI.md#AddWhereTagForViewOnTransaction) | **Post** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag
+[**DeleteCommentForViewOnTransaction**](TransactionMetadataAPI.md#DeleteCommentForViewOnTransaction) | **Delete** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment
+[**DeleteImageForViewOnTransaction**](TransactionMetadataAPI.md#DeleteImageForViewOnTransaction) | **Delete** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image
+[**DeleteTagForViewOnTransaction**](TransactionMetadataAPI.md#DeleteTagForViewOnTransaction) | **Delete** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag
+[**DeleteTransactionNarrative**](TransactionMetadataAPI.md#DeleteTransactionNarrative) | **Delete** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative
+[**DeleteWhereTagForViewOnTransaction**](TransactionMetadataAPI.md#DeleteWhereTagForViewOnTransaction) | **Delete** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag
+[**GetCommentsForViewOnTransaction**](TransactionMetadataAPI.md#GetCommentsForViewOnTransaction) | **Get** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments
+[**GetImagesForViewOnTransaction**](TransactionMetadataAPI.md#GetImagesForViewOnTransaction) | **Get** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images
+[**GetTagsForViewOnTransaction**](TransactionMetadataAPI.md#GetTagsForViewOnTransaction) | **Get** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags
+[**GetTransactionNarrative**](TransactionMetadataAPI.md#GetTransactionNarrative) | **Get** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative
+[**GetWhereTagForViewOnTransaction**](TransactionMetadataAPI.md#GetWhereTagForViewOnTransaction) | **Get** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag
+[**UpdateTransactionNarrative**](TransactionMetadataAPI.md#UpdateTransactionNarrative) | **Put** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative
+[**UpdateWhereTagForViewOnTransaction**](TransactionMetadataAPI.md#UpdateWhereTagForViewOnTransaction) | **Put** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag
 
 
 
-## OBPv121AddCommentForViewOnTransaction
+## AddCommentForViewOnTransaction
 
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems OBPv121AddCommentForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).OBPv400DeleteSystemLevelEndpointTag200Response(oBPv400DeleteSystemLevelEndpointTag200Response).Execute()
+> GetTagsForViewOnAccount200ResponseTagsInner AddCommentForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).GetTransactionTypes200ResponseTransactionTypesInnerId(getTransactionTypes200ResponseTransactionTypesInnerId).Execute()
 
 Add a Transaction Comment
 
@@ -49,17 +49,17 @@ func main() {
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
 	transactionid := "transactionid_example" // string | The TRANSACTIONID identifier
-	oBPv400DeleteSystemLevelEndpointTag200Response := *openapiclient.NewOBPv400DeleteSystemLevelEndpointTag200Response("Type_example", *openapiclient.NewOBPv400DeleteSystemLevelEndpointTag200ResponseProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+	getTransactionTypes200ResponseTransactionTypesInnerId := *openapiclient.NewGetTransactionTypes200ResponseTransactionTypesInnerId() // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionMetadataAPI.OBPv121AddCommentForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).OBPv400DeleteSystemLevelEndpointTag200Response(oBPv400DeleteSystemLevelEndpointTag200Response).Execute()
+	resp, r, err := apiClient.TransactionMetadataAPI.AddCommentForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).GetTransactionTypes200ResponseTransactionTypesInnerId(getTransactionTypes200ResponseTransactionTypesInnerId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.OBPv121AddCommentForViewOnTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.AddCommentForViewOnTransaction``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv121AddCommentForViewOnTransaction`: OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
-	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.OBPv121AddCommentForViewOnTransaction`: %v\n", resp)
+	// response from `AddCommentForViewOnTransaction`: GetTagsForViewOnAccount200ResponseTagsInner
+	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.AddCommentForViewOnTransaction`: %v\n", resp)
 }
 ```
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv121AddCommentForViewOnTransactionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddCommentForViewOnTransactionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -85,11 +85,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md) | Request body | 
+ **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -105,9 +105,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv121AddImageForViewOnTransaction
+## AddImageForViewOnTransaction
 
-> OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems OBPv121AddImageForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).OBPv121AddImageForViewOnTransactionRequest(oBPv121AddImageForViewOnTransactionRequest).Execute()
+> GetTransactionByIdForBankAccount200ResponseMetadataImagesInner AddImageForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).AddImageForViewOnTransactionRequest(addImageForViewOnTransactionRequest).Execute()
 
 Add a Transaction Image
 
@@ -130,17 +130,17 @@ func main() {
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
 	transactionid := "transactionid_example" // string | The TRANSACTIONID identifier
-	oBPv121AddImageForViewOnTransactionRequest := *openapiclient.NewOBPv121AddImageForViewOnTransactionRequest("Type_example", *openapiclient.NewOBPv121AddImageForViewOnTransactionRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv121AddImageForViewOnTransactionRequest | Request body
+	addImageForViewOnTransactionRequest := *openapiclient.NewAddImageForViewOnTransactionRequest() // AddImageForViewOnTransactionRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionMetadataAPI.OBPv121AddImageForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).OBPv121AddImageForViewOnTransactionRequest(oBPv121AddImageForViewOnTransactionRequest).Execute()
+	resp, r, err := apiClient.TransactionMetadataAPI.AddImageForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).AddImageForViewOnTransactionRequest(addImageForViewOnTransactionRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.OBPv121AddImageForViewOnTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.AddImageForViewOnTransaction``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv121AddImageForViewOnTransaction`: OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems
-	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.OBPv121AddImageForViewOnTransaction`: %v\n", resp)
+	// response from `AddImageForViewOnTransaction`: GetTransactionByIdForBankAccount200ResponseMetadataImagesInner
+	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.AddImageForViewOnTransaction`: %v\n", resp)
 }
 ```
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv121AddImageForViewOnTransactionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddImageForViewOnTransactionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -166,11 +166,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv121AddImageForViewOnTransactionRequest** | [**OBPv121AddImageForViewOnTransactionRequest**](OBPv121AddImageForViewOnTransactionRequest.md) | Request body | 
+ **addImageForViewOnTransactionRequest** | [**AddImageForViewOnTransactionRequest**](AddImageForViewOnTransactionRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems**](OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems.md)
+[**GetTransactionByIdForBankAccount200ResponseMetadataImagesInner**](GetTransactionByIdForBankAccount200ResponseMetadataImagesInner.md)
 
 ### Authorization
 
@@ -186,9 +186,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv121AddTagForViewOnTransaction
+## AddTagForViewOnTransaction
 
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems OBPv121AddTagForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).OBPv400DeleteSystemLevelEndpointTag200Response(oBPv400DeleteSystemLevelEndpointTag200Response).Execute()
+> GetTagsForViewOnAccount200ResponseTagsInner AddTagForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).GetTransactionTypes200ResponseTransactionTypesInnerId(getTransactionTypes200ResponseTransactionTypesInnerId).Execute()
 
 Add a Transaction Tag
 
@@ -211,17 +211,17 @@ func main() {
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
 	transactionid := "transactionid_example" // string | The TRANSACTIONID identifier
-	oBPv400DeleteSystemLevelEndpointTag200Response := *openapiclient.NewOBPv400DeleteSystemLevelEndpointTag200Response("Type_example", *openapiclient.NewOBPv400DeleteSystemLevelEndpointTag200ResponseProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+	getTransactionTypes200ResponseTransactionTypesInnerId := *openapiclient.NewGetTransactionTypes200ResponseTransactionTypesInnerId() // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionMetadataAPI.OBPv121AddTagForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).OBPv400DeleteSystemLevelEndpointTag200Response(oBPv400DeleteSystemLevelEndpointTag200Response).Execute()
+	resp, r, err := apiClient.TransactionMetadataAPI.AddTagForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).GetTransactionTypes200ResponseTransactionTypesInnerId(getTransactionTypes200ResponseTransactionTypesInnerId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.OBPv121AddTagForViewOnTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.AddTagForViewOnTransaction``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv121AddTagForViewOnTransaction`: OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
-	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.OBPv121AddTagForViewOnTransaction`: %v\n", resp)
+	// response from `AddTagForViewOnTransaction`: GetTagsForViewOnAccount200ResponseTagsInner
+	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.AddTagForViewOnTransaction`: %v\n", resp)
 }
 ```
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv121AddTagForViewOnTransactionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddTagForViewOnTransactionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -247,11 +247,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md) | Request body | 
+ **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -267,9 +267,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv121AddTransactionNarrative
+## AddTransactionNarrative
 
-> OBPv121UpdateTransactionNarrative200Response OBPv121AddTransactionNarrative(ctx, bankid, accountid, viewid, transactionid).OBPv121GetTransactionNarrative200Response(oBPv121GetTransactionNarrative200Response).Execute()
+> UpdateTransactionNarrative200Response AddTransactionNarrative(ctx, bankid, accountid, viewid, transactionid).GetTransactionNarrative200Response(getTransactionNarrative200Response).Execute()
 
 Add a Transaction Narrative
 
@@ -292,17 +292,17 @@ func main() {
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
 	transactionid := "transactionid_example" // string | The TRANSACTIONID identifier
-	oBPv121GetTransactionNarrative200Response := *openapiclient.NewOBPv121GetTransactionNarrative200Response("Type_example", *openapiclient.NewOBPv121GetTransactionNarrative200ResponseProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv121GetTransactionNarrative200Response | Request body
+	getTransactionNarrative200Response := *openapiclient.NewGetTransactionNarrative200Response() // GetTransactionNarrative200Response | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionMetadataAPI.OBPv121AddTransactionNarrative(context.Background(), bankid, accountid, viewid, transactionid).OBPv121GetTransactionNarrative200Response(oBPv121GetTransactionNarrative200Response).Execute()
+	resp, r, err := apiClient.TransactionMetadataAPI.AddTransactionNarrative(context.Background(), bankid, accountid, viewid, transactionid).GetTransactionNarrative200Response(getTransactionNarrative200Response).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.OBPv121AddTransactionNarrative``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.AddTransactionNarrative``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv121AddTransactionNarrative`: OBPv121UpdateTransactionNarrative200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.OBPv121AddTransactionNarrative`: %v\n", resp)
+	// response from `AddTransactionNarrative`: UpdateTransactionNarrative200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.AddTransactionNarrative`: %v\n", resp)
 }
 ```
 
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv121AddTransactionNarrativeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddTransactionNarrativeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -328,11 +328,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv121GetTransactionNarrative200Response** | [**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md) | Request body | 
+ **getTransactionNarrative200Response** | [**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md) | Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -348,9 +348,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv121AddWhereTagForViewOnTransaction
+## AddWhereTagForViewOnTransaction
 
-> OBPv121UpdateTransactionNarrative200Response OBPv121AddWhereTagForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).OBPv121UpdateWhereTagForViewOnTransactionRequest(oBPv121UpdateWhereTagForViewOnTransactionRequest).Execute()
+> UpdateTransactionNarrative200Response AddWhereTagForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).UpdateWhereTagForViewOnTransactionRequest(updateWhereTagForViewOnTransactionRequest).Execute()
 
 Add a Transaction where Tag
 
@@ -373,17 +373,17 @@ func main() {
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
 	transactionid := "transactionid_example" // string | The TRANSACTIONID identifier
-	oBPv121UpdateWhereTagForViewOnTransactionRequest := *openapiclient.NewOBPv121UpdateWhereTagForViewOnTransactionRequest("Type_example", *openapiclient.NewOBPv121UpdateWhereTagForViewOnTransactionRequestProperties(*openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocation("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocationProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))))) // OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
+	updateWhereTagForViewOnTransactionRequest := *openapiclient.NewUpdateWhereTagForViewOnTransactionRequest() // UpdateWhereTagForViewOnTransactionRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionMetadataAPI.OBPv121AddWhereTagForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).OBPv121UpdateWhereTagForViewOnTransactionRequest(oBPv121UpdateWhereTagForViewOnTransactionRequest).Execute()
+	resp, r, err := apiClient.TransactionMetadataAPI.AddWhereTagForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).UpdateWhereTagForViewOnTransactionRequest(updateWhereTagForViewOnTransactionRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.OBPv121AddWhereTagForViewOnTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.AddWhereTagForViewOnTransaction``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv121AddWhereTagForViewOnTransaction`: OBPv121UpdateTransactionNarrative200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.OBPv121AddWhereTagForViewOnTransaction`: %v\n", resp)
+	// response from `AddWhereTagForViewOnTransaction`: UpdateTransactionNarrative200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.AddWhereTagForViewOnTransaction`: %v\n", resp)
 }
 ```
 
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv121AddWhereTagForViewOnTransactionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddWhereTagForViewOnTransactionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -409,11 +409,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv121UpdateWhereTagForViewOnTransactionRequest** | [**OBPv121UpdateWhereTagForViewOnTransactionRequest**](OBPv121UpdateWhereTagForViewOnTransactionRequest.md) | Request body | 
+ **updateWhereTagForViewOnTransactionRequest** | [**UpdateWhereTagForViewOnTransactionRequest**](UpdateWhereTagForViewOnTransactionRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -429,9 +429,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv121DeleteCommentForViewOnTransaction
+## DeleteCommentForViewOnTransaction
 
-> OBPv121DeleteCommentForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid, commentid).Execute()
+> DeleteCommentForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid, commentid).Execute()
 
 Delete a Transaction Comment
 
@@ -458,9 +458,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.TransactionMetadataAPI.OBPv121DeleteCommentForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid, commentid).Execute()
+	r, err := apiClient.TransactionMetadataAPI.DeleteCommentForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid, commentid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.OBPv121DeleteCommentForViewOnTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.DeleteCommentForViewOnTransaction``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -480,7 +480,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv121DeleteCommentForViewOnTransactionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteCommentForViewOnTransactionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -509,9 +509,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv121DeleteImageForViewOnTransaction
+## DeleteImageForViewOnTransaction
 
-> OBPv121DeleteImageForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid, imageid).Execute()
+> DeleteImageForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid, imageid).Execute()
 
 Delete a Transaction Image
 
@@ -538,9 +538,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.TransactionMetadataAPI.OBPv121DeleteImageForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid, imageid).Execute()
+	r, err := apiClient.TransactionMetadataAPI.DeleteImageForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid, imageid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.OBPv121DeleteImageForViewOnTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.DeleteImageForViewOnTransaction``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -560,7 +560,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv121DeleteImageForViewOnTransactionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteImageForViewOnTransactionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -589,9 +589,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv121DeleteTagForViewOnTransaction
+## DeleteTagForViewOnTransaction
 
-> OBPv121DeleteTagForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid, tagid).Execute()
+> DeleteTagForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid, tagid).Execute()
 
 Delete a Transaction Tag
 
@@ -618,9 +618,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.TransactionMetadataAPI.OBPv121DeleteTagForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid, tagid).Execute()
+	r, err := apiClient.TransactionMetadataAPI.DeleteTagForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid, tagid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.OBPv121DeleteTagForViewOnTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.DeleteTagForViewOnTransaction``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -640,7 +640,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv121DeleteTagForViewOnTransactionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteTagForViewOnTransactionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -669,9 +669,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv121DeleteTransactionNarrative
+## DeleteTransactionNarrative
 
-> OBPv121DeleteTransactionNarrative(ctx, bankid, accountid, viewid, transactionid).Execute()
+> DeleteTransactionNarrative(ctx, bankid, accountid, viewid, transactionid).Execute()
 
 Delete a Transaction Narrative
 
@@ -697,9 +697,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.TransactionMetadataAPI.OBPv121DeleteTransactionNarrative(context.Background(), bankid, accountid, viewid, transactionid).Execute()
+	r, err := apiClient.TransactionMetadataAPI.DeleteTransactionNarrative(context.Background(), bankid, accountid, viewid, transactionid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.OBPv121DeleteTransactionNarrative``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.DeleteTransactionNarrative``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -718,7 +718,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv121DeleteTransactionNarrativeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteTransactionNarrativeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -746,9 +746,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv121DeleteWhereTagForViewOnTransaction
+## DeleteWhereTagForViewOnTransaction
 
-> OBPv121DeleteWhereTagForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).Execute()
+> DeleteWhereTagForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).Execute()
 
 Delete a Transaction Tag
 
@@ -774,9 +774,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.TransactionMetadataAPI.OBPv121DeleteWhereTagForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).Execute()
+	r, err := apiClient.TransactionMetadataAPI.DeleteWhereTagForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.OBPv121DeleteWhereTagForViewOnTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.DeleteWhereTagForViewOnTransaction``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -795,7 +795,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv121DeleteWhereTagForViewOnTransactionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteWhereTagForViewOnTransactionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -823,9 +823,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv121GetCommentsForViewOnTransaction
+## GetCommentsForViewOnTransaction
 
-> OBPv121GetCommentsForViewOnTransaction200Response OBPv121GetCommentsForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).Execute()
+> GetCommentsForViewOnTransaction200Response GetCommentsForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).Execute()
 
 Get Transaction Comments
 
@@ -851,13 +851,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionMetadataAPI.OBPv121GetCommentsForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).Execute()
+	resp, r, err := apiClient.TransactionMetadataAPI.GetCommentsForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.OBPv121GetCommentsForViewOnTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.GetCommentsForViewOnTransaction``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv121GetCommentsForViewOnTransaction`: OBPv121GetCommentsForViewOnTransaction200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.OBPv121GetCommentsForViewOnTransaction`: %v\n", resp)
+	// response from `GetCommentsForViewOnTransaction`: GetCommentsForViewOnTransaction200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.GetCommentsForViewOnTransaction`: %v\n", resp)
 }
 ```
 
@@ -874,7 +874,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv121GetCommentsForViewOnTransactionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCommentsForViewOnTransactionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -886,7 +886,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv121GetCommentsForViewOnTransaction200Response**](OBPv121GetCommentsForViewOnTransaction200Response.md)
+[**GetCommentsForViewOnTransaction200Response**](GetCommentsForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -902,9 +902,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv121GetImagesForViewOnTransaction
+## GetImagesForViewOnTransaction
 
-> OBPv121GetImagesForViewOnTransaction200Response OBPv121GetImagesForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).Execute()
+> GetImagesForViewOnTransaction200Response GetImagesForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).Execute()
 
 Get Transaction Images
 
@@ -930,13 +930,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionMetadataAPI.OBPv121GetImagesForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).Execute()
+	resp, r, err := apiClient.TransactionMetadataAPI.GetImagesForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.OBPv121GetImagesForViewOnTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.GetImagesForViewOnTransaction``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv121GetImagesForViewOnTransaction`: OBPv121GetImagesForViewOnTransaction200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.OBPv121GetImagesForViewOnTransaction`: %v\n", resp)
+	// response from `GetImagesForViewOnTransaction`: GetImagesForViewOnTransaction200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.GetImagesForViewOnTransaction`: %v\n", resp)
 }
 ```
 
@@ -953,7 +953,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv121GetImagesForViewOnTransactionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetImagesForViewOnTransactionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -965,7 +965,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv121GetImagesForViewOnTransaction200Response**](OBPv121GetImagesForViewOnTransaction200Response.md)
+[**GetImagesForViewOnTransaction200Response**](GetImagesForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -981,9 +981,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv121GetTagsForViewOnTransaction
+## GetTagsForViewOnTransaction
 
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems OBPv121GetTagsForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).Execute()
+> GetTagsForViewOnAccount200ResponseTagsInner GetTagsForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).Execute()
 
 Get Transaction Tags
 
@@ -1009,13 +1009,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionMetadataAPI.OBPv121GetTagsForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).Execute()
+	resp, r, err := apiClient.TransactionMetadataAPI.GetTagsForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.OBPv121GetTagsForViewOnTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.GetTagsForViewOnTransaction``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv121GetTagsForViewOnTransaction`: OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
-	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.OBPv121GetTagsForViewOnTransaction`: %v\n", resp)
+	// response from `GetTagsForViewOnTransaction`: GetTagsForViewOnAccount200ResponseTagsInner
+	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.GetTagsForViewOnTransaction`: %v\n", resp)
 }
 ```
 
@@ -1032,7 +1032,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv121GetTagsForViewOnTransactionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTagsForViewOnTransactionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1044,7 +1044,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -1060,9 +1060,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv121GetTransactionNarrative
+## GetTransactionNarrative
 
-> OBPv121GetTransactionNarrative200Response OBPv121GetTransactionNarrative(ctx, bankid, accountid, viewid, transactionid).Execute()
+> GetTransactionNarrative200Response GetTransactionNarrative(ctx, bankid, accountid, viewid, transactionid).Execute()
 
 Get a Transaction Narrative
 
@@ -1088,13 +1088,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionMetadataAPI.OBPv121GetTransactionNarrative(context.Background(), bankid, accountid, viewid, transactionid).Execute()
+	resp, r, err := apiClient.TransactionMetadataAPI.GetTransactionNarrative(context.Background(), bankid, accountid, viewid, transactionid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.OBPv121GetTransactionNarrative``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.GetTransactionNarrative``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv121GetTransactionNarrative`: OBPv121GetTransactionNarrative200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.OBPv121GetTransactionNarrative`: %v\n", resp)
+	// response from `GetTransactionNarrative`: GetTransactionNarrative200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.GetTransactionNarrative`: %v\n", resp)
 }
 ```
 
@@ -1111,7 +1111,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv121GetTransactionNarrativeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTransactionNarrativeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1123,7 +1123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)
+[**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1139,9 +1139,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv121GetWhereTagForViewOnTransaction
+## GetWhereTagForViewOnTransaction
 
-> OBPv121GetWhereTagForViewOnTransaction200Response OBPv121GetWhereTagForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).Execute()
+> GetWhereTagForViewOnTransaction200Response GetWhereTagForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).Execute()
 
 Get a Transaction where Tag
 
@@ -1167,13 +1167,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionMetadataAPI.OBPv121GetWhereTagForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).Execute()
+	resp, r, err := apiClient.TransactionMetadataAPI.GetWhereTagForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.OBPv121GetWhereTagForViewOnTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.GetWhereTagForViewOnTransaction``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv121GetWhereTagForViewOnTransaction`: OBPv121GetWhereTagForViewOnTransaction200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.OBPv121GetWhereTagForViewOnTransaction`: %v\n", resp)
+	// response from `GetWhereTagForViewOnTransaction`: GetWhereTagForViewOnTransaction200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.GetWhereTagForViewOnTransaction`: %v\n", resp)
 }
 ```
 
@@ -1190,7 +1190,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv121GetWhereTagForViewOnTransactionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetWhereTagForViewOnTransactionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1202,7 +1202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv121GetWhereTagForViewOnTransaction200Response**](OBPv121GetWhereTagForViewOnTransaction200Response.md)
+[**GetWhereTagForViewOnTransaction200Response**](GetWhereTagForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -1218,9 +1218,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv121UpdateTransactionNarrative
+## UpdateTransactionNarrative
 
-> OBPv121UpdateTransactionNarrative200Response OBPv121UpdateTransactionNarrative(ctx, bankid, accountid, viewid, transactionid).OBPv121GetTransactionNarrative200Response(oBPv121GetTransactionNarrative200Response).Execute()
+> UpdateTransactionNarrative200Response UpdateTransactionNarrative(ctx, bankid, accountid, viewid, transactionid).GetTransactionNarrative200Response(getTransactionNarrative200Response).Execute()
 
 Update a Transaction Narrative
 
@@ -1243,17 +1243,17 @@ func main() {
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
 	transactionid := "transactionid_example" // string | The TRANSACTIONID identifier
-	oBPv121GetTransactionNarrative200Response := *openapiclient.NewOBPv121GetTransactionNarrative200Response("Type_example", *openapiclient.NewOBPv121GetTransactionNarrative200ResponseProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv121GetTransactionNarrative200Response | Request body
+	getTransactionNarrative200Response := *openapiclient.NewGetTransactionNarrative200Response() // GetTransactionNarrative200Response | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionMetadataAPI.OBPv121UpdateTransactionNarrative(context.Background(), bankid, accountid, viewid, transactionid).OBPv121GetTransactionNarrative200Response(oBPv121GetTransactionNarrative200Response).Execute()
+	resp, r, err := apiClient.TransactionMetadataAPI.UpdateTransactionNarrative(context.Background(), bankid, accountid, viewid, transactionid).GetTransactionNarrative200Response(getTransactionNarrative200Response).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.OBPv121UpdateTransactionNarrative``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.UpdateTransactionNarrative``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv121UpdateTransactionNarrative`: OBPv121UpdateTransactionNarrative200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.OBPv121UpdateTransactionNarrative`: %v\n", resp)
+	// response from `UpdateTransactionNarrative`: UpdateTransactionNarrative200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.UpdateTransactionNarrative`: %v\n", resp)
 }
 ```
 
@@ -1270,7 +1270,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv121UpdateTransactionNarrativeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateTransactionNarrativeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1279,11 +1279,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv121GetTransactionNarrative200Response** | [**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md) | Request body | 
+ **getTransactionNarrative200Response** | [**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md) | Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1299,9 +1299,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv121UpdateWhereTagForViewOnTransaction
+## UpdateWhereTagForViewOnTransaction
 
-> OBPv121UpdateTransactionNarrative200Response OBPv121UpdateWhereTagForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).OBPv121UpdateWhereTagForViewOnTransactionRequest(oBPv121UpdateWhereTagForViewOnTransactionRequest).Execute()
+> UpdateTransactionNarrative200Response UpdateWhereTagForViewOnTransaction(ctx, bankid, accountid, viewid, transactionid).UpdateWhereTagForViewOnTransactionRequest(updateWhereTagForViewOnTransactionRequest).Execute()
 
 Update a Transaction where Tag
 
@@ -1324,17 +1324,17 @@ func main() {
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
 	transactionid := "transactionid_example" // string | The TRANSACTIONID identifier
-	oBPv121UpdateWhereTagForViewOnTransactionRequest := *openapiclient.NewOBPv121UpdateWhereTagForViewOnTransactionRequest("Type_example", *openapiclient.NewOBPv121UpdateWhereTagForViewOnTransactionRequestProperties(*openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocation("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocationProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))))) // OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
+	updateWhereTagForViewOnTransactionRequest := *openapiclient.NewUpdateWhereTagForViewOnTransactionRequest() // UpdateWhereTagForViewOnTransactionRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionMetadataAPI.OBPv121UpdateWhereTagForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).OBPv121UpdateWhereTagForViewOnTransactionRequest(oBPv121UpdateWhereTagForViewOnTransactionRequest).Execute()
+	resp, r, err := apiClient.TransactionMetadataAPI.UpdateWhereTagForViewOnTransaction(context.Background(), bankid, accountid, viewid, transactionid).UpdateWhereTagForViewOnTransactionRequest(updateWhereTagForViewOnTransactionRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.OBPv121UpdateWhereTagForViewOnTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionMetadataAPI.UpdateWhereTagForViewOnTransaction``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv121UpdateWhereTagForViewOnTransaction`: OBPv121UpdateTransactionNarrative200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.OBPv121UpdateWhereTagForViewOnTransaction`: %v\n", resp)
+	// response from `UpdateWhereTagForViewOnTransaction`: UpdateTransactionNarrative200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionMetadataAPI.UpdateWhereTagForViewOnTransaction`: %v\n", resp)
 }
 ```
 
@@ -1351,7 +1351,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv121UpdateWhereTagForViewOnTransactionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateWhereTagForViewOnTransactionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1360,11 +1360,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv121UpdateWhereTagForViewOnTransactionRequest** | [**OBPv121UpdateWhereTagForViewOnTransactionRequest**](OBPv121UpdateWhereTagForViewOnTransactionRequest.md) | Request body | 
+ **updateWhereTagForViewOnTransactionRequest** | [**UpdateWhereTagForViewOnTransactionRequest**](UpdateWhereTagForViewOnTransactionRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 

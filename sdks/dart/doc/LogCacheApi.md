@@ -5,20 +5,20 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv510LogCacheAllEndpoint**](LogCacheApi.md#obpv510logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
-[**oBPv510LogCacheDebugEndpoint**](LogCacheApi.md#obpv510logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
-[**oBPv510LogCacheErrorEndpoint**](LogCacheApi.md#obpv510logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
-[**oBPv510LogCacheInfoEndpoint**](LogCacheApi.md#obpv510logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
-[**oBPv510LogCacheTraceEndpoint**](LogCacheApi.md#obpv510logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
-[**oBPv510LogCacheWarningEndpoint**](LogCacheApi.md#obpv510logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
+[**logCacheAllEndpoint**](LogCacheApi.md#logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
+[**logCacheDebugEndpoint**](LogCacheApi.md#logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
+[**logCacheErrorEndpoint**](LogCacheApi.md#logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
+[**logCacheInfoEndpoint**](LogCacheApi.md#logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
+[**logCacheTraceEndpoint**](LogCacheApi.md#logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
+[**logCacheWarningEndpoint**](LogCacheApi.md#logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
 
 
-# **oBPv510LogCacheAllEndpoint**
-> oBPv510LogCacheAllEndpoint()
+# **logCacheAllEndpoint**
+> logCacheAllEndpoint()
 
 Get All Level Log Cache
 
@@ -41,9 +41,9 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getLogCacheApi();
 
 try {
-    api.oBPv510LogCacheAllEndpoint();
+    api.logCacheAllEndpoint();
 } on DioException catch (e) {
-    print('Exception when calling LogCacheApi->oBPv510LogCacheAllEndpoint: $e\n');
+    print('Exception when calling LogCacheApi->logCacheAllEndpoint: $e\n');
 }
 ```
 
@@ -65,8 +65,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510LogCacheDebugEndpoint**
-> oBPv510LogCacheDebugEndpoint()
+# **logCacheDebugEndpoint**
+> logCacheDebugEndpoint()
 
 Get Debug Level Log Cache
 
@@ -89,9 +89,9 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getLogCacheApi();
 
 try {
-    api.oBPv510LogCacheDebugEndpoint();
+    api.logCacheDebugEndpoint();
 } on DioException catch (e) {
-    print('Exception when calling LogCacheApi->oBPv510LogCacheDebugEndpoint: $e\n');
+    print('Exception when calling LogCacheApi->logCacheDebugEndpoint: $e\n');
 }
 ```
 
@@ -113,8 +113,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510LogCacheErrorEndpoint**
-> oBPv510LogCacheErrorEndpoint()
+# **logCacheErrorEndpoint**
+> logCacheErrorEndpoint()
 
 Get Error Level Log Cache
 
@@ -137,9 +137,9 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getLogCacheApi();
 
 try {
-    api.oBPv510LogCacheErrorEndpoint();
+    api.logCacheErrorEndpoint();
 } on DioException catch (e) {
-    print('Exception when calling LogCacheApi->oBPv510LogCacheErrorEndpoint: $e\n');
+    print('Exception when calling LogCacheApi->logCacheErrorEndpoint: $e\n');
 }
 ```
 
@@ -161,8 +161,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510LogCacheInfoEndpoint**
-> oBPv510LogCacheInfoEndpoint()
+# **logCacheInfoEndpoint**
+> logCacheInfoEndpoint()
 
 Get Info Level Log Cache
 
@@ -185,9 +185,9 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getLogCacheApi();
 
 try {
-    api.oBPv510LogCacheInfoEndpoint();
+    api.logCacheInfoEndpoint();
 } on DioException catch (e) {
-    print('Exception when calling LogCacheApi->oBPv510LogCacheInfoEndpoint: $e\n');
+    print('Exception when calling LogCacheApi->logCacheInfoEndpoint: $e\n');
 }
 ```
 
@@ -209,8 +209,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510LogCacheTraceEndpoint**
-> oBPv510LogCacheTraceEndpoint()
+# **logCacheTraceEndpoint**
+> logCacheTraceEndpoint()
 
 Get Trace Level Log Cache
 
@@ -233,9 +233,9 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getLogCacheApi();
 
 try {
-    api.oBPv510LogCacheTraceEndpoint();
+    api.logCacheTraceEndpoint();
 } on DioException catch (e) {
-    print('Exception when calling LogCacheApi->oBPv510LogCacheTraceEndpoint: $e\n');
+    print('Exception when calling LogCacheApi->logCacheTraceEndpoint: $e\n');
 }
 ```
 
@@ -257,8 +257,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510LogCacheWarningEndpoint**
-> oBPv510LogCacheWarningEndpoint()
+# **logCacheWarningEndpoint**
+> logCacheWarningEndpoint()
 
 Get Warning Level Log Cache
 
@@ -281,9 +281,9 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getLogCacheApi();
 
 try {
-    api.oBPv510LogCacheWarningEndpoint();
+    api.logCacheWarningEndpoint();
 } on DioException catch (e) {
-    print('Exception when calling LogCacheApi->oBPv510LogCacheWarningEndpoint: $e\n');
+    print('Exception when calling LogCacheApi->logCacheWarningEndpoint: $e\n');
 }
 ```
 

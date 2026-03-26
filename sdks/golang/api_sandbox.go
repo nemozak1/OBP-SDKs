@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -23,24 +23,24 @@ import (
 // SandboxAPIService SandboxAPI service
 type SandboxAPIService service
 
-type ApiOBPv210SandboxDataImportRequest struct {
+type ApiSandboxDataImportRequest struct {
 	ctx context.Context
 	ApiService *SandboxAPIService
-	oBPv210SandboxDataImportRequest *OBPv210SandboxDataImportRequest
+	sandboxDataImportRequest *SandboxDataImportRequest
 }
 
 // Request body
-func (r ApiOBPv210SandboxDataImportRequest) OBPv210SandboxDataImportRequest(oBPv210SandboxDataImportRequest OBPv210SandboxDataImportRequest) ApiOBPv210SandboxDataImportRequest {
-	r.oBPv210SandboxDataImportRequest = &oBPv210SandboxDataImportRequest
+func (r ApiSandboxDataImportRequest) SandboxDataImportRequest(sandboxDataImportRequest SandboxDataImportRequest) ApiSandboxDataImportRequest {
+	r.sandboxDataImportRequest = &sandboxDataImportRequest
 	return r
 }
 
-func (r ApiOBPv210SandboxDataImportRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv210SandboxDataImportExecute(r)
+func (r ApiSandboxDataImportRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.SandboxDataImportExecute(r)
 }
 
 /*
-OBPv210SandboxDataImport Create sandbox
+SandboxDataImport Create sandbox
 
 <p>Import bulk data into the sandbox (Authenticated access).</p>
 <p>This call can be used to create banks, users, accounts and transactions which are stored in the local RDBMS.</p>
@@ -73,7 +73,7 @@ User Authentication is Required. The User must be logged in. The Application mus
 <p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
 <p><a href="/glossary#detail"><strong>detail</strong></a>:</p>
 <p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#x61;&#105;&#x6c;&#116;&#x6f;:fe&#108;i&#x78;s&#109;&#105;t&#x68;@&#x65;&#120;&#x61;&#x6d;&#112;&#x6c;&#101;&#x2e;&#99;o&#x6d;">&#102;&#x65;&#108;&#105;&#x78;s&#109;&#x69;t&#x68;&#x40;e&#x78;&#97;&#x6d;p&#108;&#101;&#x2e;co&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;&#x69;&#108;&#x74;o:&#102;&#101;l&#105;&#120;&#115;&#x6d;&#105;&#116;&#104;&#x40;&#x65;&#120;&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;o&#x6d;">&#102;el&#x69;x&#x73;&#x6d;&#105;&#116;&#104;&#x40;e&#120;&#x61;m&#112;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#family"><strong>family</strong></a>:</p>
 <p><a href="/glossary#full_name"><strong>full_name</strong></a>: full name string</p>
 <p><a href="/glossary#generate_accountants_view"><strong>generate_accountants_view</strong></a>:</p>
@@ -96,7 +96,7 @@ User Authentication is Required. The User must be logged in. The Application mus
 <p><a href="/glossary#new_balance"><strong>new_balance</strong></a>: 20</p>
 <p><a href="/glossary#number"><strong>number</strong></a>:</p>
 <p><a href="/glossary#owners"><strong>owners</strong></a>:</p>
-<p><a href="/glossary#"><strong>password</strong></a>: password</p>
+<p><a href="/glossary#"><strong>password</strong></a>: passwordpasswordpassword</p>
 <p><a href="/glossary#post_code"><strong>post_code</strong></a>: 789</p>
 <p><a href="/glossary#posted"><strong>posted</strong></a>: 2020-01-27</p>
 <p><a href="/glossary#products"><strong>products</strong></a>:</p>
@@ -120,26 +120,26 @@ User Authentication is Required. The User must be logged in. The Application mus
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv210SandboxDataImportRequest
+ @return ApiSandboxDataImportRequest
 */
-func (a *SandboxAPIService) OBPv210SandboxDataImport(ctx context.Context) ApiOBPv210SandboxDataImportRequest {
-	return ApiOBPv210SandboxDataImportRequest{
+func (a *SandboxAPIService) SandboxDataImport(ctx context.Context) ApiSandboxDataImportRequest {
+	return ApiSandboxDataImportRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *SandboxAPIService) OBPv210SandboxDataImportExecute(r ApiOBPv210SandboxDataImportRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *SandboxAPIService) SandboxDataImportExecute(r ApiSandboxDataImportRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SandboxAPIService.OBPv210SandboxDataImport")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SandboxAPIService.SandboxDataImport")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -149,8 +149,8 @@ func (a *SandboxAPIService) OBPv210SandboxDataImportExecute(r ApiOBPv210SandboxD
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv210SandboxDataImportRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv210SandboxDataImportRequest is required and must be specified")
+	if r.sandboxDataImportRequest == nil {
+		return localVarReturnValue, nil, reportError("sandboxDataImportRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -171,7 +171,7 @@ func (a *SandboxAPIService) OBPv210SandboxDataImportExecute(r ApiOBPv210SandboxD
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv210SandboxDataImportRequest
+	localVarPostBody = r.sandboxDataImportRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -196,7 +196,7 @@ func (a *SandboxAPIService) OBPv210SandboxDataImportExecute(r ApiOBPv210SandboxD
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

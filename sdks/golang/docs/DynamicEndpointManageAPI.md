@@ -1,27 +1,27 @@
 # \DynamicEndpointManageAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv400CreateBankLevelDynamicEndpoint**](DynamicEndpointManageAPI.md#OBPv400CreateBankLevelDynamicEndpoint) | **Post** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint
-[**OBPv400CreateDynamicEndpoint**](DynamicEndpointManageAPI.md#OBPv400CreateDynamicEndpoint) | **Post** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint
-[**OBPv400DeleteBankLevelDynamicEndpoint**](DynamicEndpointManageAPI.md#OBPv400DeleteBankLevelDynamicEndpoint) | **Delete** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint
-[**OBPv400DeleteDynamicEndpoint**](DynamicEndpointManageAPI.md#OBPv400DeleteDynamicEndpoint) | **Delete** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint
-[**OBPv400DeleteMyDynamicEndpoint**](DynamicEndpointManageAPI.md#OBPv400DeleteMyDynamicEndpoint) | **Delete** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint
-[**OBPv400GetBankLevelDynamicEndpoint**](DynamicEndpointManageAPI.md#OBPv400GetBankLevelDynamicEndpoint) | **Get** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint
-[**OBPv400GetBankLevelDynamicEndpoints**](DynamicEndpointManageAPI.md#OBPv400GetBankLevelDynamicEndpoints) | **Get** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints
-[**OBPv400GetDynamicEndpoint**](DynamicEndpointManageAPI.md#OBPv400GetDynamicEndpoint) | **Get** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint
-[**OBPv400GetDynamicEndpoints**](DynamicEndpointManageAPI.md#OBPv400GetDynamicEndpoints) | **Get** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints
-[**OBPv400GetMyDynamicEndpoints**](DynamicEndpointManageAPI.md#OBPv400GetMyDynamicEndpoints) | **Get** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints
-[**OBPv400UpdateBankLevelDynamicEndpointHost**](DynamicEndpointManageAPI.md#OBPv400UpdateBankLevelDynamicEndpointHost) | **Put** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host
-[**OBPv400UpdateDynamicEndpointHost**](DynamicEndpointManageAPI.md#OBPv400UpdateDynamicEndpointHost) | **Put** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host
+[**CreateBankLevelDynamicEndpoint**](DynamicEndpointManageAPI.md#CreateBankLevelDynamicEndpoint) | **Post** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint
+[**CreateDynamicEndpoint**](DynamicEndpointManageAPI.md#CreateDynamicEndpoint) | **Post** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint
+[**DeleteBankLevelDynamicEndpoint**](DynamicEndpointManageAPI.md#DeleteBankLevelDynamicEndpoint) | **Delete** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint
+[**DeleteDynamicEndpoint**](DynamicEndpointManageAPI.md#DeleteDynamicEndpoint) | **Delete** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint
+[**DeleteMyDynamicEndpoint**](DynamicEndpointManageAPI.md#DeleteMyDynamicEndpoint) | **Delete** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint
+[**GetBankLevelDynamicEndpoint**](DynamicEndpointManageAPI.md#GetBankLevelDynamicEndpoint) | **Get** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint
+[**GetBankLevelDynamicEndpoints**](DynamicEndpointManageAPI.md#GetBankLevelDynamicEndpoints) | **Get** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints
+[**GetDynamicEndpoint**](DynamicEndpointManageAPI.md#GetDynamicEndpoint) | **Get** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint
+[**GetDynamicEndpoints**](DynamicEndpointManageAPI.md#GetDynamicEndpoints) | **Get** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints
+[**GetMyDynamicEndpoints**](DynamicEndpointManageAPI.md#GetMyDynamicEndpoints) | **Get** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints
+[**UpdateBankLevelDynamicEndpointHost**](DynamicEndpointManageAPI.md#UpdateBankLevelDynamicEndpointHost) | **Put** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host
+[**UpdateDynamicEndpointHost**](DynamicEndpointManageAPI.md#UpdateDynamicEndpointHost) | **Put** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host
 
 
 
-## OBPv400CreateBankLevelDynamicEndpoint
+## CreateBankLevelDynamicEndpoint
 
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems OBPv400CreateBankLevelDynamicEndpoint(ctx, bankid).OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString).Execute()
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner CreateBankLevelDynamicEndpoint(ctx, bankid).GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString).Execute()
 
 Create Bank Level Dynamic Endpoint
 
@@ -41,17 +41,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString := *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPaths("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccounts("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPost("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), , *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), , *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponses("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201Properties(, *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchema("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchemaProperties()))))))))), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountId("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGet("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetProperties(, , *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), , *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetPropertiesResponses("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetPropertiesResponsesProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201Properties(, *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchema("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchemaProperties()))))))))))), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesInfo("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesInfoProperties(, )), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitions("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountName("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNameProperties(, *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesProperties("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesName("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesNameProperties(, )), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesBalance("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesBalanceProperties(, , )))))))), )) // OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
+	getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString := *openapiclient.NewGetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString() // GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicEndpointManageAPI.OBPv400CreateBankLevelDynamicEndpoint(context.Background(), bankid).OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString).Execute()
+	resp, r, err := apiClient.DynamicEndpointManageAPI.CreateBankLevelDynamicEndpoint(context.Background(), bankid).GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.OBPv400CreateBankLevelDynamicEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.CreateBankLevelDynamicEndpoint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateBankLevelDynamicEndpoint`: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.OBPv400CreateBankLevelDynamicEndpoint`: %v\n", resp)
+	// response from `CreateBankLevelDynamicEndpoint`: GetDynamicEndpoints200ResponseDynamicEndpointsInner
+	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.CreateBankLevelDynamicEndpoint`: %v\n", resp)
 }
 ```
 
@@ -65,17 +65,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateBankLevelDynamicEndpointRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateBankLevelDynamicEndpointRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md) | Request body | 
+ **getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString** | [**GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -91,9 +91,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateDynamicEndpoint
+## CreateDynamicEndpoint
 
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems OBPv400CreateDynamicEndpoint(ctx).OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString).Execute()
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner CreateDynamicEndpoint(ctx).GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString).Execute()
 
 Create Dynamic Endpoint
 
@@ -112,17 +112,17 @@ import (
 )
 
 func main() {
-	oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString := *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPaths("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccounts("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPost("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), , *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), , *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponses("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201Properties(, *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchema("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchemaProperties()))))))))), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountId("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGet("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetProperties(, , *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), , *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetPropertiesResponses("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetPropertiesResponsesProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201Properties(, *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchema("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchemaProperties()))))))))))), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesInfo("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesInfoProperties(, )), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitions("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountName("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNameProperties(, *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesProperties("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesProperties(*openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesName("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesNameProperties(, )), *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesBalance("Type_example", *openapiclient.NewOBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesBalanceProperties(, , )))))))), )) // OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
+	getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString := *openapiclient.NewGetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString() // GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicEndpointManageAPI.OBPv400CreateDynamicEndpoint(context.Background()).OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString).Execute()
+	resp, r, err := apiClient.DynamicEndpointManageAPI.CreateDynamicEndpoint(context.Background()).GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.OBPv400CreateDynamicEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.CreateDynamicEndpoint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateDynamicEndpoint`: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.OBPv400CreateDynamicEndpoint`: %v\n", resp)
+	// response from `CreateDynamicEndpoint`: GetDynamicEndpoints200ResponseDynamicEndpointsInner
+	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.CreateDynamicEndpoint`: %v\n", resp)
 }
 ```
 
@@ -132,16 +132,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateDynamicEndpointRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateDynamicEndpointRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md) | Request body | 
+ **getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString** | [**GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -157,9 +157,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400DeleteBankLevelDynamicEndpoint
+## DeleteBankLevelDynamicEndpoint
 
-> OBPv400DeleteBankLevelDynamicEndpoint(ctx, bankid, dynamicendpointid).Execute()
+> DeleteBankLevelDynamicEndpoint(ctx, bankid, dynamicendpointid).Execute()
 
  Delete Bank Level Dynamic Endpoint
 
@@ -183,9 +183,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DynamicEndpointManageAPI.OBPv400DeleteBankLevelDynamicEndpoint(context.Background(), bankid, dynamicendpointid).Execute()
+	r, err := apiClient.DynamicEndpointManageAPI.DeleteBankLevelDynamicEndpoint(context.Background(), bankid, dynamicendpointid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.OBPv400DeleteBankLevelDynamicEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.DeleteBankLevelDynamicEndpoint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400DeleteBankLevelDynamicEndpointRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteBankLevelDynamicEndpointRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -228,9 +228,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400DeleteDynamicEndpoint
+## DeleteDynamicEndpoint
 
-> OBPv400DeleteDynamicEndpoint(ctx, dynamicendpointid).Execute()
+> DeleteDynamicEndpoint(ctx, dynamicendpointid).Execute()
 
  Delete Dynamic Endpoint
 
@@ -253,9 +253,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DynamicEndpointManageAPI.OBPv400DeleteDynamicEndpoint(context.Background(), dynamicendpointid).Execute()
+	r, err := apiClient.DynamicEndpointManageAPI.DeleteDynamicEndpoint(context.Background(), dynamicendpointid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.OBPv400DeleteDynamicEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.DeleteDynamicEndpoint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400DeleteDynamicEndpointRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteDynamicEndpointRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -296,9 +296,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400DeleteMyDynamicEndpoint
+## DeleteMyDynamicEndpoint
 
-> OBPv400DeleteMyDynamicEndpoint(ctx, dynamicendpointid).Execute()
+> DeleteMyDynamicEndpoint(ctx, dynamicendpointid).Execute()
 
 Delete My Dynamic Endpoint
 
@@ -321,9 +321,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DynamicEndpointManageAPI.OBPv400DeleteMyDynamicEndpoint(context.Background(), dynamicendpointid).Execute()
+	r, err := apiClient.DynamicEndpointManageAPI.DeleteMyDynamicEndpoint(context.Background(), dynamicendpointid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.OBPv400DeleteMyDynamicEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.DeleteMyDynamicEndpoint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400DeleteMyDynamicEndpointRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteMyDynamicEndpointRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -364,9 +364,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetBankLevelDynamicEndpoint
+## GetBankLevelDynamicEndpoint
 
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems OBPv400GetBankLevelDynamicEndpoint(ctx, bankid, dynamicendpointid).Execute()
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner GetBankLevelDynamicEndpoint(ctx, bankid, dynamicendpointid).Execute()
 
  Get Bank Level Dynamic Endpoint
 
@@ -390,13 +390,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicEndpointManageAPI.OBPv400GetBankLevelDynamicEndpoint(context.Background(), bankid, dynamicendpointid).Execute()
+	resp, r, err := apiClient.DynamicEndpointManageAPI.GetBankLevelDynamicEndpoint(context.Background(), bankid, dynamicendpointid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.OBPv400GetBankLevelDynamicEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.GetBankLevelDynamicEndpoint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetBankLevelDynamicEndpoint`: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.OBPv400GetBankLevelDynamicEndpoint`: %v\n", resp)
+	// response from `GetBankLevelDynamicEndpoint`: GetDynamicEndpoints200ResponseDynamicEndpointsInner
+	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.GetBankLevelDynamicEndpoint`: %v\n", resp)
 }
 ```
 
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetBankLevelDynamicEndpointRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetBankLevelDynamicEndpointRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -421,7 +421,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -437,9 +437,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetBankLevelDynamicEndpoints
+## GetBankLevelDynamicEndpoints
 
-> OBPv400GetDynamicEndpoints200Response OBPv400GetBankLevelDynamicEndpoints(ctx, bankid).Execute()
+> GetDynamicEndpoints200Response GetBankLevelDynamicEndpoints(ctx, bankid).Execute()
 
 Get Bank Level Dynamic Endpoints
 
@@ -462,13 +462,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicEndpointManageAPI.OBPv400GetBankLevelDynamicEndpoints(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.DynamicEndpointManageAPI.GetBankLevelDynamicEndpoints(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.OBPv400GetBankLevelDynamicEndpoints``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.GetBankLevelDynamicEndpoints``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetBankLevelDynamicEndpoints`: OBPv400GetDynamicEndpoints200Response
-	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.OBPv400GetBankLevelDynamicEndpoints`: %v\n", resp)
+	// response from `GetBankLevelDynamicEndpoints`: GetDynamicEndpoints200Response
+	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.GetBankLevelDynamicEndpoints`: %v\n", resp)
 }
 ```
 
@@ -482,7 +482,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetBankLevelDynamicEndpointsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetBankLevelDynamicEndpointsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -491,7 +491,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -507,9 +507,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetDynamicEndpoint
+## GetDynamicEndpoint
 
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems OBPv400GetDynamicEndpoint(ctx, dynamicendpointid).Execute()
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner GetDynamicEndpoint(ctx, dynamicendpointid).Execute()
 
 Get Dynamic Endpoint
 
@@ -532,13 +532,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicEndpointManageAPI.OBPv400GetDynamicEndpoint(context.Background(), dynamicendpointid).Execute()
+	resp, r, err := apiClient.DynamicEndpointManageAPI.GetDynamicEndpoint(context.Background(), dynamicendpointid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.OBPv400GetDynamicEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.GetDynamicEndpoint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetDynamicEndpoint`: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.OBPv400GetDynamicEndpoint`: %v\n", resp)
+	// response from `GetDynamicEndpoint`: GetDynamicEndpoints200ResponseDynamicEndpointsInner
+	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.GetDynamicEndpoint`: %v\n", resp)
 }
 ```
 
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetDynamicEndpointRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetDynamicEndpointRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -561,7 +561,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -577,9 +577,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetDynamicEndpoints
+## GetDynamicEndpoints
 
-> OBPv400GetDynamicEndpoints200Response OBPv400GetDynamicEndpoints(ctx).Execute()
+> GetDynamicEndpoints200Response GetDynamicEndpoints(ctx).Execute()
 
  Get Dynamic Endpoints
 
@@ -601,13 +601,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicEndpointManageAPI.OBPv400GetDynamicEndpoints(context.Background()).Execute()
+	resp, r, err := apiClient.DynamicEndpointManageAPI.GetDynamicEndpoints(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.OBPv400GetDynamicEndpoints``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.GetDynamicEndpoints``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetDynamicEndpoints`: OBPv400GetDynamicEndpoints200Response
-	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.OBPv400GetDynamicEndpoints`: %v\n", resp)
+	// response from `GetDynamicEndpoints`: GetDynamicEndpoints200Response
+	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.GetDynamicEndpoints`: %v\n", resp)
 }
 ```
 
@@ -617,12 +617,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetDynamicEndpointsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetDynamicEndpointsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -638,9 +638,9 @@ Other parameters are passed through a pointer to a apiOBPv400GetDynamicEndpoints
 [[Back to README]](../README.md)
 
 
-## OBPv400GetMyDynamicEndpoints
+## GetMyDynamicEndpoints
 
-> OBPv400GetDynamicEndpoints200Response OBPv400GetMyDynamicEndpoints(ctx).Execute()
+> GetDynamicEndpoints200Response GetMyDynamicEndpoints(ctx).Execute()
 
 Get My Dynamic Endpoints
 
@@ -662,13 +662,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicEndpointManageAPI.OBPv400GetMyDynamicEndpoints(context.Background()).Execute()
+	resp, r, err := apiClient.DynamicEndpointManageAPI.GetMyDynamicEndpoints(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.OBPv400GetMyDynamicEndpoints``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.GetMyDynamicEndpoints``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetMyDynamicEndpoints`: OBPv400GetDynamicEndpoints200Response
-	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.OBPv400GetMyDynamicEndpoints`: %v\n", resp)
+	// response from `GetMyDynamicEndpoints`: GetDynamicEndpoints200Response
+	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.GetMyDynamicEndpoints`: %v\n", resp)
 }
 ```
 
@@ -678,12 +678,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetMyDynamicEndpointsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMyDynamicEndpointsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -699,9 +699,9 @@ Other parameters are passed through a pointer to a apiOBPv400GetMyDynamicEndpoin
 [[Back to README]](../README.md)
 
 
-## OBPv400UpdateBankLevelDynamicEndpointHost
+## UpdateBankLevelDynamicEndpointHost
 
-> OBPv400UpdateBankLevelDynamicEndpointHostRequest OBPv400UpdateBankLevelDynamicEndpointHost(ctx, bankid, dynamicendpointid).OBPv400UpdateBankLevelDynamicEndpointHostRequest(oBPv400UpdateBankLevelDynamicEndpointHostRequest).Execute()
+> UpdateBankLevelDynamicEndpointHostRequest UpdateBankLevelDynamicEndpointHost(ctx, bankid, dynamicendpointid).UpdateBankLevelDynamicEndpointHostRequest(updateBankLevelDynamicEndpointHostRequest).Execute()
 
  Update Bank Level Dynamic Endpoint Host
 
@@ -722,17 +722,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	dynamicendpointid := "dynamicendpointid_example" // string | The DYNAMICENDPOINTID identifier
-	oBPv400UpdateBankLevelDynamicEndpointHostRequest := *openapiclient.NewOBPv400UpdateBankLevelDynamicEndpointHostRequest("Type_example", *openapiclient.NewOBPv400UpdateBankLevelDynamicEndpointHostRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400UpdateBankLevelDynamicEndpointHostRequest | Request body
+	updateBankLevelDynamicEndpointHostRequest := *openapiclient.NewUpdateBankLevelDynamicEndpointHostRequest() // UpdateBankLevelDynamicEndpointHostRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicEndpointManageAPI.OBPv400UpdateBankLevelDynamicEndpointHost(context.Background(), bankid, dynamicendpointid).OBPv400UpdateBankLevelDynamicEndpointHostRequest(oBPv400UpdateBankLevelDynamicEndpointHostRequest).Execute()
+	resp, r, err := apiClient.DynamicEndpointManageAPI.UpdateBankLevelDynamicEndpointHost(context.Background(), bankid, dynamicendpointid).UpdateBankLevelDynamicEndpointHostRequest(updateBankLevelDynamicEndpointHostRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.OBPv400UpdateBankLevelDynamicEndpointHost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.UpdateBankLevelDynamicEndpointHost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400UpdateBankLevelDynamicEndpointHost`: OBPv400UpdateBankLevelDynamicEndpointHostRequest
-	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.OBPv400UpdateBankLevelDynamicEndpointHost`: %v\n", resp)
+	// response from `UpdateBankLevelDynamicEndpointHost`: UpdateBankLevelDynamicEndpointHostRequest
+	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.UpdateBankLevelDynamicEndpointHost`: %v\n", resp)
 }
 ```
 
@@ -747,18 +747,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400UpdateBankLevelDynamicEndpointHostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateBankLevelDynamicEndpointHostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv400UpdateBankLevelDynamicEndpointHostRequest** | [**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md) | Request body | 
+ **updateBankLevelDynamicEndpointHostRequest** | [**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
+[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)
 
 ### Authorization
 
@@ -774,9 +774,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400UpdateDynamicEndpointHost
+## UpdateDynamicEndpointHost
 
-> OBPv400UpdateBankLevelDynamicEndpointHostRequest OBPv400UpdateDynamicEndpointHost(ctx, dynamicendpointid).OBPv400UpdateBankLevelDynamicEndpointHostRequest(oBPv400UpdateBankLevelDynamicEndpointHostRequest).Execute()
+> UpdateBankLevelDynamicEndpointHostRequest UpdateDynamicEndpointHost(ctx, dynamicendpointid).UpdateBankLevelDynamicEndpointHostRequest(updateBankLevelDynamicEndpointHostRequest).Execute()
 
  Update Dynamic Endpoint Host
 
@@ -796,17 +796,17 @@ import (
 
 func main() {
 	dynamicendpointid := "dynamicendpointid_example" // string | The DYNAMICENDPOINTID identifier
-	oBPv400UpdateBankLevelDynamicEndpointHostRequest := *openapiclient.NewOBPv400UpdateBankLevelDynamicEndpointHostRequest("Type_example", *openapiclient.NewOBPv400UpdateBankLevelDynamicEndpointHostRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400UpdateBankLevelDynamicEndpointHostRequest | Request body
+	updateBankLevelDynamicEndpointHostRequest := *openapiclient.NewUpdateBankLevelDynamicEndpointHostRequest() // UpdateBankLevelDynamicEndpointHostRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicEndpointManageAPI.OBPv400UpdateDynamicEndpointHost(context.Background(), dynamicendpointid).OBPv400UpdateBankLevelDynamicEndpointHostRequest(oBPv400UpdateBankLevelDynamicEndpointHostRequest).Execute()
+	resp, r, err := apiClient.DynamicEndpointManageAPI.UpdateDynamicEndpointHost(context.Background(), dynamicendpointid).UpdateBankLevelDynamicEndpointHostRequest(updateBankLevelDynamicEndpointHostRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.OBPv400UpdateDynamicEndpointHost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicEndpointManageAPI.UpdateDynamicEndpointHost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400UpdateDynamicEndpointHost`: OBPv400UpdateBankLevelDynamicEndpointHostRequest
-	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.OBPv400UpdateDynamicEndpointHost`: %v\n", resp)
+	// response from `UpdateDynamicEndpointHost`: UpdateBankLevelDynamicEndpointHostRequest
+	fmt.Fprintf(os.Stdout, "Response from `DynamicEndpointManageAPI.UpdateDynamicEndpointHost`: %v\n", resp)
 }
 ```
 
@@ -820,17 +820,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400UpdateDynamicEndpointHostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateDynamicEndpointHostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv400UpdateBankLevelDynamicEndpointHostRequest** | [**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md) | Request body | 
+ **updateBankLevelDynamicEndpointHostRequest** | [**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
+[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)
 
 ### Authorization
 

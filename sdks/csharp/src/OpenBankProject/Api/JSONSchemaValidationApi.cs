@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -46,10 +46,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationid">The OPERATIONID identifier</param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema">Request body</param>
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateJsonSchemaValidationApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateJsonSchemaValidationApiResponse> OBPv400CreateJsonSchemaValidationAsync(string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateJsonSchemaValidationApiResponse"/>&gt;</returns>
+        Task<ICreateJsonSchemaValidationApiResponse> CreateJsonSchemaValidationAsync(string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create a JSON Schema Validation
@@ -58,10 +58,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create a JSON Schema Validation.&lt;/p&gt; &lt;p&gt;Introduction:&lt;/p&gt;   &lt;p&gt;JSON Schema is &amp;quot;a vocabulary that allows you to annotate and validate JSON documents&amp;quot;.&lt;/p&gt; &lt;p&gt;By applying JSON Schema Validation to your OBP endpoints you can constrain POST and PUT request bodies. For example, you can set minimum / maximum lengths of fields and constrain values to certain lists or regular expressions.&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;https://json-schema.org/\&quot;&gt;JSONSchema.org&lt;/a&gt; for more information about the JSON Schema standard.&lt;/p&gt; &lt;p&gt;To create a JSON Schema from an any JSON Request body you can use &lt;a href&#x3D;\&quot;https://jsonschema.net/app/schemas/0\&quot;&gt;JSON Schema Net&lt;/a&gt;&lt;/p&gt; &lt;p&gt;(The video link below shows how to use that)&lt;/p&gt; &lt;p&gt;Note: OBP Dynamic Entities also use JSON Schema Validation so you don&#39;t need to additionally wrap the resulting endpoints with extra JSON Schema Validation but you could do.&lt;/p&gt; &lt;p&gt;You can apply JSON schema validations to any OBP endpoint&#39;s request body using the POST and PUT endpoints listed in the link below.&lt;/p&gt; &lt;p&gt;PLEASE SEE the following video explanation: &lt;a href&#x3D;\&quot;https://vimeo.com/485287014\&quot;&gt;JSON schema validation of request for Static and Dynamic Endpoints and Entities&lt;/a&gt;&lt;/p&gt; &lt;p&gt;To use this endpoint, please supply a valid json-schema in the request body.&lt;/p&gt; &lt;p&gt;Note: It might take a few minutes for the newly created JSON Schema to take effect!&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;$schema&lt;/strong&gt;&lt;/a&gt;: $schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;additionalProperties&lt;/strong&gt;&lt;/a&gt;: additionalProperties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;examples&lt;/strong&gt;&lt;/a&gt;: examples&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;maxLength&lt;/strong&gt;&lt;/a&gt;: maxLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;minLength&lt;/strong&gt;&lt;/a&gt;: minLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;properties&lt;/strong&gt;&lt;/a&gt;: properties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;required&lt;/strong&gt;&lt;/a&gt;: required&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;title&lt;/strong&gt;&lt;/a&gt;: Dr.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;xxx_id&lt;/strong&gt;&lt;/a&gt;: xxx_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;$schema&lt;/strong&gt;&lt;/a&gt;: $schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;additionalProperties&lt;/strong&gt;&lt;/a&gt;: additionalProperties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;examples&lt;/strong&gt;&lt;/a&gt;: examples&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;json_schema&lt;/strong&gt;&lt;/a&gt;: json_schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;maxLength&lt;/strong&gt;&lt;/a&gt;: maxLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;minLength&lt;/strong&gt;&lt;/a&gt;: minLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;properties&lt;/strong&gt;&lt;/a&gt;: properties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;required&lt;/strong&gt;&lt;/a&gt;: required&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;title&lt;/strong&gt;&lt;/a&gt;: Dr.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;xxx_id&lt;/strong&gt;&lt;/a&gt;: xxx_id&lt;/p&gt; 
         /// </remarks>
         /// <param name="operationid">The OPERATIONID identifier</param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema">Request body</param>
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateJsonSchemaValidationApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateJsonSchemaValidationApiResponse?> OBPv400CreateJsonSchemaValidationOrDefaultAsync(string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateJsonSchemaValidationApiResponse"/>?&gt;</returns>
+        Task<ICreateJsonSchemaValidationApiResponse?> CreateJsonSchemaValidationOrDefaultAsync(string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a JSON Schema Validation
@@ -72,8 +72,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteJsonSchemaValidationApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteJsonSchemaValidationApiResponse> OBPv400DeleteJsonSchemaValidationAsync(string operationid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteJsonSchemaValidationApiResponse"/>&gt;</returns>
+        Task<IDeleteJsonSchemaValidationApiResponse> DeleteJsonSchemaValidationAsync(string operationid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a JSON Schema Validation
@@ -83,8 +83,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteJsonSchemaValidationApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteJsonSchemaValidationApiResponse?> OBPv400DeleteJsonSchemaValidationOrDefaultAsync(string operationid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteJsonSchemaValidationApiResponse"/>?&gt;</returns>
+        Task<IDeleteJsonSchemaValidationApiResponse?> DeleteJsonSchemaValidationOrDefaultAsync(string operationid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all JSON Schema Validations
@@ -94,8 +94,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllJsonSchemaValidationsApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetAllJsonSchemaValidationsApiResponse> OBPv400GetAllJsonSchemaValidationsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllJsonSchemaValidationsApiResponse"/>&gt;</returns>
+        Task<IGetAllJsonSchemaValidationsApiResponse> GetAllJsonSchemaValidationsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all JSON Schema Validations
@@ -104,8 +104,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get all JSON Schema Validations.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;$schema&lt;/strong&gt;&lt;/a&gt;: $schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;additionalProperties&lt;/strong&gt;&lt;/a&gt;: additionalProperties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;examples&lt;/strong&gt;&lt;/a&gt;: examples&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;json_schema&lt;/strong&gt;&lt;/a&gt;: json_schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;maxLength&lt;/strong&gt;&lt;/a&gt;: maxLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;minLength&lt;/strong&gt;&lt;/a&gt;: minLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;properties&lt;/strong&gt;&lt;/a&gt;: properties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;required&lt;/strong&gt;&lt;/a&gt;: required&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;title&lt;/strong&gt;&lt;/a&gt;: Dr.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;xxx_id&lt;/strong&gt;&lt;/a&gt;: xxx_id&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllJsonSchemaValidationsApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetAllJsonSchemaValidationsApiResponse?> OBPv400GetAllJsonSchemaValidationsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllJsonSchemaValidationsApiResponse"/>?&gt;</returns>
+        Task<IGetAllJsonSchemaValidationsApiResponse?> GetAllJsonSchemaValidationsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all JSON Schema Validations - public
@@ -115,8 +115,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllJsonSchemaValidationsPublicApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetAllJsonSchemaValidationsPublicApiResponse> OBPv400GetAllJsonSchemaValidationsPublicAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllJsonSchemaValidationsPublicApiResponse"/>&gt;</returns>
+        Task<IGetAllJsonSchemaValidationsPublicApiResponse> GetAllJsonSchemaValidationsPublicAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all JSON Schema Validations - public
@@ -125,8 +125,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get all JSON Schema Validations - public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;$schema&lt;/strong&gt;&lt;/a&gt;: $schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;additionalProperties&lt;/strong&gt;&lt;/a&gt;: additionalProperties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;examples&lt;/strong&gt;&lt;/a&gt;: examples&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;json_schema&lt;/strong&gt;&lt;/a&gt;: json_schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;maxLength&lt;/strong&gt;&lt;/a&gt;: maxLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;minLength&lt;/strong&gt;&lt;/a&gt;: minLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;properties&lt;/strong&gt;&lt;/a&gt;: properties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;required&lt;/strong&gt;&lt;/a&gt;: required&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;title&lt;/strong&gt;&lt;/a&gt;: Dr.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;xxx_id&lt;/strong&gt;&lt;/a&gt;: xxx_id&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllJsonSchemaValidationsPublicApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetAllJsonSchemaValidationsPublicApiResponse?> OBPv400GetAllJsonSchemaValidationsPublicOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllJsonSchemaValidationsPublicApiResponse"/>?&gt;</returns>
+        Task<IGetAllJsonSchemaValidationsPublicApiResponse?> GetAllJsonSchemaValidationsPublicOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get a JSON Schema Validation
@@ -137,8 +137,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetJsonSchemaValidationApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetJsonSchemaValidationApiResponse> OBPv400GetJsonSchemaValidationAsync(string operationid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetJsonSchemaValidationApiResponse"/>&gt;</returns>
+        Task<IGetJsonSchemaValidationApiResponse> GetJsonSchemaValidationAsync(string operationid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get a JSON Schema Validation
@@ -148,8 +148,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetJsonSchemaValidationApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetJsonSchemaValidationApiResponse?> OBPv400GetJsonSchemaValidationOrDefaultAsync(string operationid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetJsonSchemaValidationApiResponse"/>?&gt;</returns>
+        Task<IGetJsonSchemaValidationApiResponse?> GetJsonSchemaValidationOrDefaultAsync(string operationid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update a JSON Schema Validation
@@ -159,10 +159,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationid">The OPERATIONID identifier</param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema">Request body</param>
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateJsonSchemaValidationApiResponse"/>&gt;</returns>
-        Task<IOBPv400UpdateJsonSchemaValidationApiResponse> OBPv400UpdateJsonSchemaValidationAsync(string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateJsonSchemaValidationApiResponse"/>&gt;</returns>
+        Task<IUpdateJsonSchemaValidationApiResponse> UpdateJsonSchemaValidationAsync(string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update a JSON Schema Validation
@@ -171,16 +171,16 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Update a JSON Schema Validation.&lt;/p&gt; &lt;p&gt;Introduction:&lt;/p&gt;   &lt;p&gt;JSON Schema is &amp;quot;a vocabulary that allows you to annotate and validate JSON documents&amp;quot;.&lt;/p&gt; &lt;p&gt;By applying JSON Schema Validation to your OBP endpoints you can constrain POST and PUT request bodies. For example, you can set minimum / maximum lengths of fields and constrain values to certain lists or regular expressions.&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;https://json-schema.org/\&quot;&gt;JSONSchema.org&lt;/a&gt; for more information about the JSON Schema standard.&lt;/p&gt; &lt;p&gt;To create a JSON Schema from an any JSON Request body you can use &lt;a href&#x3D;\&quot;https://jsonschema.net/app/schemas/0\&quot;&gt;JSON Schema Net&lt;/a&gt;&lt;/p&gt; &lt;p&gt;(The video link below shows how to use that)&lt;/p&gt; &lt;p&gt;Note: OBP Dynamic Entities also use JSON Schema Validation so you don&#39;t need to additionally wrap the resulting endpoints with extra JSON Schema Validation but you could do.&lt;/p&gt; &lt;p&gt;You can apply JSON schema validations to any OBP endpoint&#39;s request body using the POST and PUT endpoints listed in the link below.&lt;/p&gt; &lt;p&gt;PLEASE SEE the following video explanation: &lt;a href&#x3D;\&quot;https://vimeo.com/485287014\&quot;&gt;JSON schema validation of request for Static and Dynamic Endpoints and Entities&lt;/a&gt;&lt;/p&gt; &lt;p&gt;To use this endpoint, please supply a valid json-schema in the request body.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;$schema&lt;/strong&gt;&lt;/a&gt;: $schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;additionalProperties&lt;/strong&gt;&lt;/a&gt;: additionalProperties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;examples&lt;/strong&gt;&lt;/a&gt;: examples&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;json_schema&lt;/strong&gt;&lt;/a&gt;: json_schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;maxLength&lt;/strong&gt;&lt;/a&gt;: maxLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;minLength&lt;/strong&gt;&lt;/a&gt;: minLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;properties&lt;/strong&gt;&lt;/a&gt;: properties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;required&lt;/strong&gt;&lt;/a&gt;: required&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;title&lt;/strong&gt;&lt;/a&gt;: Dr.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;xxx_id&lt;/strong&gt;&lt;/a&gt;: xxx_id&lt;/p&gt; 
         /// </remarks>
         /// <param name="operationid">The OPERATIONID identifier</param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema">Request body</param>
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateJsonSchemaValidationApiResponse"/>?&gt;</returns>
-        Task<IOBPv400UpdateJsonSchemaValidationApiResponse?> OBPv400UpdateJsonSchemaValidationOrDefaultAsync(string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateJsonSchemaValidationApiResponse"/>?&gt;</returns>
+        Task<IUpdateJsonSchemaValidationApiResponse?> UpdateJsonSchemaValidationOrDefaultAsync(string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400CreateJsonSchemaValidationApiResponse"/>
+    /// The <see cref="ICreateJsonSchemaValidationApiResponse"/>
     /// </summary>
-    public interface IOBPv400CreateJsonSchemaValidationApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems?>
+    public interface ICreateJsonSchemaValidationApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -196,9 +196,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400DeleteJsonSchemaValidationApiResponse"/>
+    /// The <see cref="IDeleteJsonSchemaValidationApiResponse"/>
     /// </summary>
-    public interface IOBPv400DeleteJsonSchemaValidationApiResponse : OpenBankProject.Client.IApiResponse
+    public interface IDeleteJsonSchemaValidationApiResponse : OpenBankProject.Client.IApiResponse
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -214,9 +214,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetAllJsonSchemaValidationsApiResponse"/>
+    /// The <see cref="IGetAllJsonSchemaValidationsApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetAllJsonSchemaValidationsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200Response?>
+    public interface IGetAllJsonSchemaValidationsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -232,9 +232,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetAllJsonSchemaValidationsPublicApiResponse"/>
+    /// The <see cref="IGetAllJsonSchemaValidationsPublicApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetAllJsonSchemaValidationsPublicApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200Response?>
+    public interface IGetAllJsonSchemaValidationsPublicApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -250,9 +250,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetJsonSchemaValidationApiResponse"/>
+    /// The <see cref="IGetJsonSchemaValidationApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetJsonSchemaValidationApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems?>
+    public interface IGetJsonSchemaValidationApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -268,9 +268,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400UpdateJsonSchemaValidationApiResponse"/>
+    /// The <see cref="IUpdateJsonSchemaValidationApiResponse"/>
     /// </summary>
-    public interface IOBPv400UpdateJsonSchemaValidationApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems?>
+    public interface IUpdateJsonSchemaValidationApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -293,121 +293,121 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateJsonSchemaValidation;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateJsonSchemaValidation;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateJsonSchemaValidation;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateJsonSchemaValidation;
 
-        internal void ExecuteOnOBPv400CreateJsonSchemaValidation(JSONSchemaValidationApi.OBPv400CreateJsonSchemaValidationApiResponse apiResponse)
+        internal void ExecuteOnCreateJsonSchemaValidation(JSONSchemaValidationApi.CreateJsonSchemaValidationApiResponse apiResponse)
         {
-            OnOBPv400CreateJsonSchemaValidation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateJsonSchemaValidation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateJsonSchemaValidation(Exception exception)
+        internal void ExecuteOnErrorCreateJsonSchemaValidation(Exception exception)
         {
-            OnErrorOBPv400CreateJsonSchemaValidation?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateJsonSchemaValidation?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteJsonSchemaValidation;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteJsonSchemaValidation;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteJsonSchemaValidation;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteJsonSchemaValidation;
 
-        internal void ExecuteOnOBPv400DeleteJsonSchemaValidation(JSONSchemaValidationApi.OBPv400DeleteJsonSchemaValidationApiResponse apiResponse)
+        internal void ExecuteOnDeleteJsonSchemaValidation(JSONSchemaValidationApi.DeleteJsonSchemaValidationApiResponse apiResponse)
         {
-            OnOBPv400DeleteJsonSchemaValidation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteJsonSchemaValidation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteJsonSchemaValidation(Exception exception)
+        internal void ExecuteOnErrorDeleteJsonSchemaValidation(Exception exception)
         {
-            OnErrorOBPv400DeleteJsonSchemaValidation?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteJsonSchemaValidation?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetAllJsonSchemaValidations;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAllJsonSchemaValidations;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetAllJsonSchemaValidations;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAllJsonSchemaValidations;
 
-        internal void ExecuteOnOBPv400GetAllJsonSchemaValidations(JSONSchemaValidationApi.OBPv400GetAllJsonSchemaValidationsApiResponse apiResponse)
+        internal void ExecuteOnGetAllJsonSchemaValidations(JSONSchemaValidationApi.GetAllJsonSchemaValidationsApiResponse apiResponse)
         {
-            OnOBPv400GetAllJsonSchemaValidations?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAllJsonSchemaValidations?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetAllJsonSchemaValidations(Exception exception)
+        internal void ExecuteOnErrorGetAllJsonSchemaValidations(Exception exception)
         {
-            OnErrorOBPv400GetAllJsonSchemaValidations?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAllJsonSchemaValidations?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetAllJsonSchemaValidationsPublic;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAllJsonSchemaValidationsPublic;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetAllJsonSchemaValidationsPublic;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAllJsonSchemaValidationsPublic;
 
-        internal void ExecuteOnOBPv400GetAllJsonSchemaValidationsPublic(JSONSchemaValidationApi.OBPv400GetAllJsonSchemaValidationsPublicApiResponse apiResponse)
+        internal void ExecuteOnGetAllJsonSchemaValidationsPublic(JSONSchemaValidationApi.GetAllJsonSchemaValidationsPublicApiResponse apiResponse)
         {
-            OnOBPv400GetAllJsonSchemaValidationsPublic?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAllJsonSchemaValidationsPublic?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetAllJsonSchemaValidationsPublic(Exception exception)
+        internal void ExecuteOnErrorGetAllJsonSchemaValidationsPublic(Exception exception)
         {
-            OnErrorOBPv400GetAllJsonSchemaValidationsPublic?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAllJsonSchemaValidationsPublic?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetJsonSchemaValidation;
+        public event EventHandler<ApiResponseEventArgs>? OnGetJsonSchemaValidation;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetJsonSchemaValidation;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetJsonSchemaValidation;
 
-        internal void ExecuteOnOBPv400GetJsonSchemaValidation(JSONSchemaValidationApi.OBPv400GetJsonSchemaValidationApiResponse apiResponse)
+        internal void ExecuteOnGetJsonSchemaValidation(JSONSchemaValidationApi.GetJsonSchemaValidationApiResponse apiResponse)
         {
-            OnOBPv400GetJsonSchemaValidation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetJsonSchemaValidation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetJsonSchemaValidation(Exception exception)
+        internal void ExecuteOnErrorGetJsonSchemaValidation(Exception exception)
         {
-            OnErrorOBPv400GetJsonSchemaValidation?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetJsonSchemaValidation?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400UpdateJsonSchemaValidation;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateJsonSchemaValidation;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400UpdateJsonSchemaValidation;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateJsonSchemaValidation;
 
-        internal void ExecuteOnOBPv400UpdateJsonSchemaValidation(JSONSchemaValidationApi.OBPv400UpdateJsonSchemaValidationApiResponse apiResponse)
+        internal void ExecuteOnUpdateJsonSchemaValidation(JSONSchemaValidationApi.UpdateJsonSchemaValidationApiResponse apiResponse)
         {
-            OnOBPv400UpdateJsonSchemaValidation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateJsonSchemaValidation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400UpdateJsonSchemaValidation(Exception exception)
+        internal void ExecuteOnErrorUpdateJsonSchemaValidation(Exception exception)
         {
-            OnErrorOBPv400UpdateJsonSchemaValidation?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateJsonSchemaValidation?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -465,21 +465,21 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv400CreateJsonSchemaValidation(ref string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+        partial void FormatCreateJsonSchemaValidation(ref string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema"></param>
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateJsonSchemaValidation(string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+        private void ValidateCreateJsonSchemaValidation(string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
         {
             if (operationid == null)
                 throw new ArgumentNullException(nameof(operationid));
 
-            if (oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema == null)
-                throw new ArgumentNullException(nameof(oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema));
+            if (getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema == null)
+                throw new ArgumentNullException(nameof(getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema));
         }
 
         /// <summary>
@@ -487,11 +487,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema"></param>
-        private void AfterOBPv400CreateJsonSchemaValidationDefaultImplementation(IOBPv400CreateJsonSchemaValidationApiResponse apiResponseLocalVar, string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema"></param>
+        private void AfterCreateJsonSchemaValidationDefaultImplementation(ICreateJsonSchemaValidationApiResponse apiResponseLocalVar, string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateJsonSchemaValidation(ref suppressDefaultLog, apiResponseLocalVar, operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+            AfterCreateJsonSchemaValidation(ref suppressDefaultLog, apiResponseLocalVar, operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -502,8 +502,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema"></param>
-        partial void AfterOBPv400CreateJsonSchemaValidation(ref bool suppressDefaultLog, IOBPv400CreateJsonSchemaValidationApiResponse apiResponseLocalVar, string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema"></param>
+        partial void AfterCreateJsonSchemaValidation(ref bool suppressDefaultLog, ICreateJsonSchemaValidationApiResponse apiResponseLocalVar, string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -512,11 +512,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema"></param>
-        private void OnErrorOBPv400CreateJsonSchemaValidationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema"></param>
+        private void OnErrorCreateJsonSchemaValidationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateJsonSchemaValidation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+            OnErrorCreateJsonSchemaValidation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -529,21 +529,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema"></param>
-        partial void OnErrorOBPv400CreateJsonSchemaValidation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema"></param>
+        partial void OnErrorCreateJsonSchemaValidation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
 
         /// <summary>
         /// Create a JSON Schema Validation &lt;p&gt;Create a JSON Schema Validation.&lt;/p&gt; &lt;p&gt;Introduction:&lt;/p&gt;   &lt;p&gt;JSON Schema is &amp;quot;a vocabulary that allows you to annotate and validate JSON documents&amp;quot;.&lt;/p&gt; &lt;p&gt;By applying JSON Schema Validation to your OBP endpoints you can constrain POST and PUT request bodies. For example, you can set minimum / maximum lengths of fields and constrain values to certain lists or regular expressions.&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;https://json-schema.org/\&quot;&gt;JSONSchema.org&lt;/a&gt; for more information about the JSON Schema standard.&lt;/p&gt; &lt;p&gt;To create a JSON Schema from an any JSON Request body you can use &lt;a href&#x3D;\&quot;https://jsonschema.net/app/schemas/0\&quot;&gt;JSON Schema Net&lt;/a&gt;&lt;/p&gt; &lt;p&gt;(The video link below shows how to use that)&lt;/p&gt; &lt;p&gt;Note: OBP Dynamic Entities also use JSON Schema Validation so you don&#39;t need to additionally wrap the resulting endpoints with extra JSON Schema Validation but you could do.&lt;/p&gt; &lt;p&gt;You can apply JSON schema validations to any OBP endpoint&#39;s request body using the POST and PUT endpoints listed in the link below.&lt;/p&gt; &lt;p&gt;PLEASE SEE the following video explanation: &lt;a href&#x3D;\&quot;https://vimeo.com/485287014\&quot;&gt;JSON schema validation of request for Static and Dynamic Endpoints and Entities&lt;/a&gt;&lt;/p&gt; &lt;p&gt;To use this endpoint, please supply a valid json-schema in the request body.&lt;/p&gt; &lt;p&gt;Note: It might take a few minutes for the newly created JSON Schema to take effect!&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;$schema&lt;/strong&gt;&lt;/a&gt;: $schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;additionalProperties&lt;/strong&gt;&lt;/a&gt;: additionalProperties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;examples&lt;/strong&gt;&lt;/a&gt;: examples&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;maxLength&lt;/strong&gt;&lt;/a&gt;: maxLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;minLength&lt;/strong&gt;&lt;/a&gt;: minLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;properties&lt;/strong&gt;&lt;/a&gt;: properties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;required&lt;/strong&gt;&lt;/a&gt;: required&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;title&lt;/strong&gt;&lt;/a&gt;: Dr.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;xxx_id&lt;/strong&gt;&lt;/a&gt;: xxx_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;$schema&lt;/strong&gt;&lt;/a&gt;: $schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;additionalProperties&lt;/strong&gt;&lt;/a&gt;: additionalProperties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;examples&lt;/strong&gt;&lt;/a&gt;: examples&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;json_schema&lt;/strong&gt;&lt;/a&gt;: json_schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;maxLength&lt;/strong&gt;&lt;/a&gt;: maxLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;minLength&lt;/strong&gt;&lt;/a&gt;: minLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;properties&lt;/strong&gt;&lt;/a&gt;: properties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;required&lt;/strong&gt;&lt;/a&gt;: required&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;title&lt;/strong&gt;&lt;/a&gt;: Dr.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;xxx_id&lt;/strong&gt;&lt;/a&gt;: xxx_id&lt;/p&gt; 
         /// </summary>
         /// <param name="operationid">The OPERATIONID identifier</param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema">Request body</param>
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateJsonSchemaValidationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateJsonSchemaValidationApiResponse?> OBPv400CreateJsonSchemaValidationOrDefaultAsync(string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateJsonSchemaValidationApiResponse"/>&gt;</returns>
+        public async Task<ICreateJsonSchemaValidationApiResponse?> CreateJsonSchemaValidationOrDefaultAsync(string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateJsonSchemaValidationAsync(operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, cancellationToken).ConfigureAwait(false);
+                return await CreateJsonSchemaValidationAsync(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -556,18 +556,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationid">The OPERATIONID identifier</param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema">Request body</param>
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateJsonSchemaValidationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateJsonSchemaValidationApiResponse> OBPv400CreateJsonSchemaValidationAsync(string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateJsonSchemaValidationApiResponse"/>&gt;</returns>
+        public async Task<ICreateJsonSchemaValidationApiResponse> CreateJsonSchemaValidationAsync(string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateJsonSchemaValidation(operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+                ValidateCreateJsonSchemaValidation(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
 
-                FormatOBPv400CreateJsonSchemaValidation(ref operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+                FormatCreateJsonSchemaValidation(ref operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -579,16 +579,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/json-schema-validations/{operationid}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Boperationid%7D", Uri.EscapeDataString(operationid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -624,8 +624,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400CreateJsonSchemaValidationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400CreateJsonSchemaValidationApiResponse>();
-                        OBPv400CreateJsonSchemaValidationApiResponse apiResponseLocalVar;
+                        ILogger<CreateJsonSchemaValidationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateJsonSchemaValidationApiResponse>();
+                        CreateJsonSchemaValidationApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -636,9 +636,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateJsonSchemaValidationDefaultImplementation(apiResponseLocalVar, operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+                        AfterCreateJsonSchemaValidationDefaultImplementation(apiResponseLocalVar, operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
 
-                        Events.ExecuteOnOBPv400CreateJsonSchemaValidation(apiResponseLocalVar);
+                        Events.ExecuteOnCreateJsonSchemaValidation(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -650,24 +650,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateJsonSchemaValidationDefaultImplementation(e, "/obp/v4.0.0/management/json-schema-validations/{operationid}", uriBuilderLocalVar.Path, operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
-                Events.ExecuteOnErrorOBPv400CreateJsonSchemaValidation(e);
+                OnErrorCreateJsonSchemaValidationDefaultImplementation(e, "/obp/v4.0.0/management/json-schema-validations/{operationid}", uriBuilderLocalVar.Path, operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
+                Events.ExecuteOnErrorCreateJsonSchemaValidation(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400CreateJsonSchemaValidationApiResponse"/>
+        /// The <see cref="CreateJsonSchemaValidationApiResponse"/>
         /// </summary>
-        public partial class OBPv400CreateJsonSchemaValidationApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400CreateJsonSchemaValidationApiResponse
+        public partial class CreateJsonSchemaValidationApiResponse : OpenBankProject.Client.ApiResponse, ICreateJsonSchemaValidationApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400CreateJsonSchemaValidationApiResponse> Logger { get; }
+            public ILogger<CreateJsonSchemaValidationApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateJsonSchemaValidationApiResponse"/>
+            /// The <see cref="CreateJsonSchemaValidationApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -676,14 +676,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateJsonSchemaValidationApiResponse(ILogger<OBPv400CreateJsonSchemaValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateJsonSchemaValidationApiResponse(ILogger<CreateJsonSchemaValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateJsonSchemaValidationApiResponse"/>
+            /// The <see cref="CreateJsonSchemaValidationApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -692,7 +692,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateJsonSchemaValidationApiResponse(ILogger<OBPv400CreateJsonSchemaValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateJsonSchemaValidationApiResponse(ILogger<CreateJsonSchemaValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -710,11 +710,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems? Ok()
+            public OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -723,7 +723,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner? result)
             {
                 result = null;
 
@@ -755,14 +755,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400DeleteJsonSchemaValidation(ref string operationid);
+        partial void FormatDeleteJsonSchemaValidation(ref string operationid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="operationid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteJsonSchemaValidation(string operationid)
+        private void ValidateDeleteJsonSchemaValidation(string operationid)
         {
             if (operationid == null)
                 throw new ArgumentNullException(nameof(operationid));
@@ -773,10 +773,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="operationid"></param>
-        private void AfterOBPv400DeleteJsonSchemaValidationDefaultImplementation(IOBPv400DeleteJsonSchemaValidationApiResponse apiResponseLocalVar, string operationid)
+        private void AfterDeleteJsonSchemaValidationDefaultImplementation(IDeleteJsonSchemaValidationApiResponse apiResponseLocalVar, string operationid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteJsonSchemaValidation(ref suppressDefaultLog, apiResponseLocalVar, operationid);
+            AfterDeleteJsonSchemaValidation(ref suppressDefaultLog, apiResponseLocalVar, operationid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -787,7 +787,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="operationid"></param>
-        partial void AfterOBPv400DeleteJsonSchemaValidation(ref bool suppressDefaultLog, IOBPv400DeleteJsonSchemaValidationApiResponse apiResponseLocalVar, string operationid);
+        partial void AfterDeleteJsonSchemaValidation(ref bool suppressDefaultLog, IDeleteJsonSchemaValidationApiResponse apiResponseLocalVar, string operationid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -796,10 +796,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="operationid"></param>
-        private void OnErrorOBPv400DeleteJsonSchemaValidationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid)
+        private void OnErrorDeleteJsonSchemaValidationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteJsonSchemaValidation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, operationid);
+            OnErrorDeleteJsonSchemaValidation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, operationid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -812,19 +812,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="operationid"></param>
-        partial void OnErrorOBPv400DeleteJsonSchemaValidation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid);
+        partial void OnErrorDeleteJsonSchemaValidation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid);
 
         /// <summary>
         /// Delete a JSON Schema Validation &lt;p&gt;Delete a JSON Schema Validation by operation_id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteJsonSchemaValidationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteJsonSchemaValidationApiResponse?> OBPv400DeleteJsonSchemaValidationOrDefaultAsync(string operationid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteJsonSchemaValidationApiResponse"/>&gt;</returns>
+        public async Task<IDeleteJsonSchemaValidationApiResponse?> DeleteJsonSchemaValidationOrDefaultAsync(string operationid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteJsonSchemaValidationAsync(operationid, cancellationToken).ConfigureAwait(false);
+                return await DeleteJsonSchemaValidationAsync(operationid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -838,16 +838,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteJsonSchemaValidationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteJsonSchemaValidationApiResponse> OBPv400DeleteJsonSchemaValidationAsync(string operationid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteJsonSchemaValidationApiResponse"/>&gt;</returns>
+        public async Task<IDeleteJsonSchemaValidationApiResponse> DeleteJsonSchemaValidationAsync(string operationid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteJsonSchemaValidation(operationid);
+                ValidateDeleteJsonSchemaValidation(operationid);
 
-                FormatOBPv400DeleteJsonSchemaValidation(ref operationid);
+                FormatDeleteJsonSchemaValidation(ref operationid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -864,7 +864,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -882,8 +882,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400DeleteJsonSchemaValidationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400DeleteJsonSchemaValidationApiResponse>();
-                        OBPv400DeleteJsonSchemaValidationApiResponse apiResponseLocalVar;
+                        ILogger<DeleteJsonSchemaValidationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteJsonSchemaValidationApiResponse>();
+                        DeleteJsonSchemaValidationApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -894,9 +894,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteJsonSchemaValidationDefaultImplementation(apiResponseLocalVar, operationid);
+                        AfterDeleteJsonSchemaValidationDefaultImplementation(apiResponseLocalVar, operationid);
 
-                        Events.ExecuteOnOBPv400DeleteJsonSchemaValidation(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteJsonSchemaValidation(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -908,24 +908,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteJsonSchemaValidationDefaultImplementation(e, "/obp/v4.0.0/management/json-schema-validations/{operationid}", uriBuilderLocalVar.Path, operationid);
-                Events.ExecuteOnErrorOBPv400DeleteJsonSchemaValidation(e);
+                OnErrorDeleteJsonSchemaValidationDefaultImplementation(e, "/obp/v4.0.0/management/json-schema-validations/{operationid}", uriBuilderLocalVar.Path, operationid);
+                Events.ExecuteOnErrorDeleteJsonSchemaValidation(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400DeleteJsonSchemaValidationApiResponse"/>
+        /// The <see cref="DeleteJsonSchemaValidationApiResponse"/>
         /// </summary>
-        public partial class OBPv400DeleteJsonSchemaValidationApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400DeleteJsonSchemaValidationApiResponse
+        public partial class DeleteJsonSchemaValidationApiResponse : OpenBankProject.Client.ApiResponse, IDeleteJsonSchemaValidationApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400DeleteJsonSchemaValidationApiResponse> Logger { get; }
+            public ILogger<DeleteJsonSchemaValidationApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteJsonSchemaValidationApiResponse"/>
+            /// The <see cref="DeleteJsonSchemaValidationApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -934,14 +934,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteJsonSchemaValidationApiResponse(ILogger<OBPv400DeleteJsonSchemaValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DeleteJsonSchemaValidationApiResponse(ILogger<DeleteJsonSchemaValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteJsonSchemaValidationApiResponse"/>
+            /// The <see cref="DeleteJsonSchemaValidationApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -950,7 +950,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteJsonSchemaValidationApiResponse(ILogger<OBPv400DeleteJsonSchemaValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DeleteJsonSchemaValidationApiResponse(ILogger<DeleteJsonSchemaValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -985,10 +985,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv400GetAllJsonSchemaValidationsDefaultImplementation(IOBPv400GetAllJsonSchemaValidationsApiResponse apiResponseLocalVar)
+        private void AfterGetAllJsonSchemaValidationsDefaultImplementation(IGetAllJsonSchemaValidationsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetAllJsonSchemaValidations(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetAllJsonSchemaValidations(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -998,7 +998,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv400GetAllJsonSchemaValidations(ref bool suppressDefaultLog, IOBPv400GetAllJsonSchemaValidationsApiResponse apiResponseLocalVar);
+        partial void AfterGetAllJsonSchemaValidations(ref bool suppressDefaultLog, IGetAllJsonSchemaValidationsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1006,10 +1006,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv400GetAllJsonSchemaValidationsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetAllJsonSchemaValidationsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetAllJsonSchemaValidations(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetAllJsonSchemaValidations(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1021,18 +1021,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv400GetAllJsonSchemaValidations(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetAllJsonSchemaValidations(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get all JSON Schema Validations &lt;p&gt;Get all JSON Schema Validations.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;$schema&lt;/strong&gt;&lt;/a&gt;: $schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;additionalProperties&lt;/strong&gt;&lt;/a&gt;: additionalProperties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;examples&lt;/strong&gt;&lt;/a&gt;: examples&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;json_schema&lt;/strong&gt;&lt;/a&gt;: json_schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;maxLength&lt;/strong&gt;&lt;/a&gt;: maxLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;minLength&lt;/strong&gt;&lt;/a&gt;: minLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;properties&lt;/strong&gt;&lt;/a&gt;: properties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;required&lt;/strong&gt;&lt;/a&gt;: required&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;title&lt;/strong&gt;&lt;/a&gt;: Dr.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;xxx_id&lt;/strong&gt;&lt;/a&gt;: xxx_id&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllJsonSchemaValidationsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllJsonSchemaValidationsApiResponse?> OBPv400GetAllJsonSchemaValidationsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllJsonSchemaValidationsApiResponse"/>&gt;</returns>
+        public async Task<IGetAllJsonSchemaValidationsApiResponse?> GetAllJsonSchemaValidationsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetAllJsonSchemaValidationsAsync(cancellationToken).ConfigureAwait(false);
+                return await GetAllJsonSchemaValidationsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1045,8 +1045,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllJsonSchemaValidationsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllJsonSchemaValidationsApiResponse> OBPv400GetAllJsonSchemaValidationsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllJsonSchemaValidationsApiResponse"/>&gt;</returns>
+        public async Task<IGetAllJsonSchemaValidationsApiResponse> GetAllJsonSchemaValidationsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -1066,7 +1066,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1093,8 +1093,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetAllJsonSchemaValidationsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetAllJsonSchemaValidationsApiResponse>();
-                        OBPv400GetAllJsonSchemaValidationsApiResponse apiResponseLocalVar;
+                        ILogger<GetAllJsonSchemaValidationsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAllJsonSchemaValidationsApiResponse>();
+                        GetAllJsonSchemaValidationsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1105,9 +1105,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetAllJsonSchemaValidationsDefaultImplementation(apiResponseLocalVar);
+                        AfterGetAllJsonSchemaValidationsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv400GetAllJsonSchemaValidations(apiResponseLocalVar);
+                        Events.ExecuteOnGetAllJsonSchemaValidations(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1119,24 +1119,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetAllJsonSchemaValidationsDefaultImplementation(e, "/obp/v4.0.0/management/json-schema-validations", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv400GetAllJsonSchemaValidations(e);
+                OnErrorGetAllJsonSchemaValidationsDefaultImplementation(e, "/obp/v4.0.0/management/json-schema-validations", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetAllJsonSchemaValidations(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetAllJsonSchemaValidationsApiResponse"/>
+        /// The <see cref="GetAllJsonSchemaValidationsApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetAllJsonSchemaValidationsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetAllJsonSchemaValidationsApiResponse
+        public partial class GetAllJsonSchemaValidationsApiResponse : OpenBankProject.Client.ApiResponse, IGetAllJsonSchemaValidationsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetAllJsonSchemaValidationsApiResponse> Logger { get; }
+            public ILogger<GetAllJsonSchemaValidationsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllJsonSchemaValidationsApiResponse"/>
+            /// The <see cref="GetAllJsonSchemaValidationsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1145,14 +1145,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllJsonSchemaValidationsApiResponse(ILogger<OBPv400GetAllJsonSchemaValidationsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetAllJsonSchemaValidationsApiResponse(ILogger<GetAllJsonSchemaValidationsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllJsonSchemaValidationsApiResponse"/>
+            /// The <see cref="GetAllJsonSchemaValidationsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1161,7 +1161,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllJsonSchemaValidationsApiResponse(ILogger<OBPv400GetAllJsonSchemaValidationsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetAllJsonSchemaValidationsApiResponse(ILogger<GetAllJsonSchemaValidationsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1179,11 +1179,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200Response? Ok()
+            public OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1192,7 +1192,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200Response? result)
             {
                 result = null;
 
@@ -1228,10 +1228,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv400GetAllJsonSchemaValidationsPublicDefaultImplementation(IOBPv400GetAllJsonSchemaValidationsPublicApiResponse apiResponseLocalVar)
+        private void AfterGetAllJsonSchemaValidationsPublicDefaultImplementation(IGetAllJsonSchemaValidationsPublicApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetAllJsonSchemaValidationsPublic(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetAllJsonSchemaValidationsPublic(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1241,7 +1241,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv400GetAllJsonSchemaValidationsPublic(ref bool suppressDefaultLog, IOBPv400GetAllJsonSchemaValidationsPublicApiResponse apiResponseLocalVar);
+        partial void AfterGetAllJsonSchemaValidationsPublic(ref bool suppressDefaultLog, IGetAllJsonSchemaValidationsPublicApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1249,10 +1249,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv400GetAllJsonSchemaValidationsPublicDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetAllJsonSchemaValidationsPublicDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetAllJsonSchemaValidationsPublic(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetAllJsonSchemaValidationsPublic(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1264,18 +1264,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv400GetAllJsonSchemaValidationsPublic(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetAllJsonSchemaValidationsPublic(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get all JSON Schema Validations - public &lt;p&gt;Get all JSON Schema Validations - public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;$schema&lt;/strong&gt;&lt;/a&gt;: $schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;additionalProperties&lt;/strong&gt;&lt;/a&gt;: additionalProperties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;examples&lt;/strong&gt;&lt;/a&gt;: examples&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;json_schema&lt;/strong&gt;&lt;/a&gt;: json_schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;maxLength&lt;/strong&gt;&lt;/a&gt;: maxLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;minLength&lt;/strong&gt;&lt;/a&gt;: minLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;properties&lt;/strong&gt;&lt;/a&gt;: properties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;required&lt;/strong&gt;&lt;/a&gt;: required&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;title&lt;/strong&gt;&lt;/a&gt;: Dr.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;xxx_id&lt;/strong&gt;&lt;/a&gt;: xxx_id&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllJsonSchemaValidationsPublicApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllJsonSchemaValidationsPublicApiResponse?> OBPv400GetAllJsonSchemaValidationsPublicOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllJsonSchemaValidationsPublicApiResponse"/>&gt;</returns>
+        public async Task<IGetAllJsonSchemaValidationsPublicApiResponse?> GetAllJsonSchemaValidationsPublicOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetAllJsonSchemaValidationsPublicAsync(cancellationToken).ConfigureAwait(false);
+                return await GetAllJsonSchemaValidationsPublicAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1288,8 +1288,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllJsonSchemaValidationsPublicApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllJsonSchemaValidationsPublicApiResponse> OBPv400GetAllJsonSchemaValidationsPublicAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllJsonSchemaValidationsPublicApiResponse"/>&gt;</returns>
+        public async Task<IGetAllJsonSchemaValidationsPublicApiResponse> GetAllJsonSchemaValidationsPublicAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -1321,8 +1321,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetAllJsonSchemaValidationsPublicApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetAllJsonSchemaValidationsPublicApiResponse>();
-                        OBPv400GetAllJsonSchemaValidationsPublicApiResponse apiResponseLocalVar;
+                        ILogger<GetAllJsonSchemaValidationsPublicApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAllJsonSchemaValidationsPublicApiResponse>();
+                        GetAllJsonSchemaValidationsPublicApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1333,9 +1333,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetAllJsonSchemaValidationsPublicDefaultImplementation(apiResponseLocalVar);
+                        AfterGetAllJsonSchemaValidationsPublicDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv400GetAllJsonSchemaValidationsPublic(apiResponseLocalVar);
+                        Events.ExecuteOnGetAllJsonSchemaValidationsPublic(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -1343,24 +1343,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetAllJsonSchemaValidationsPublicDefaultImplementation(e, "/obp/v4.0.0/endpoints/json-schema-validations", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv400GetAllJsonSchemaValidationsPublic(e);
+                OnErrorGetAllJsonSchemaValidationsPublicDefaultImplementation(e, "/obp/v4.0.0/endpoints/json-schema-validations", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetAllJsonSchemaValidationsPublic(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetAllJsonSchemaValidationsPublicApiResponse"/>
+        /// The <see cref="GetAllJsonSchemaValidationsPublicApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetAllJsonSchemaValidationsPublicApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetAllJsonSchemaValidationsPublicApiResponse
+        public partial class GetAllJsonSchemaValidationsPublicApiResponse : OpenBankProject.Client.ApiResponse, IGetAllJsonSchemaValidationsPublicApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetAllJsonSchemaValidationsPublicApiResponse> Logger { get; }
+            public ILogger<GetAllJsonSchemaValidationsPublicApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllJsonSchemaValidationsPublicApiResponse"/>
+            /// The <see cref="GetAllJsonSchemaValidationsPublicApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1369,14 +1369,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllJsonSchemaValidationsPublicApiResponse(ILogger<OBPv400GetAllJsonSchemaValidationsPublicApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetAllJsonSchemaValidationsPublicApiResponse(ILogger<GetAllJsonSchemaValidationsPublicApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllJsonSchemaValidationsPublicApiResponse"/>
+            /// The <see cref="GetAllJsonSchemaValidationsPublicApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1385,7 +1385,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllJsonSchemaValidationsPublicApiResponse(ILogger<OBPv400GetAllJsonSchemaValidationsPublicApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetAllJsonSchemaValidationsPublicApiResponse(ILogger<GetAllJsonSchemaValidationsPublicApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1403,11 +1403,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200Response? Ok()
+            public OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1416,7 +1416,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200Response? result)
             {
                 result = null;
 
@@ -1448,14 +1448,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetJsonSchemaValidation(ref string operationid);
+        partial void FormatGetJsonSchemaValidation(ref string operationid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="operationid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetJsonSchemaValidation(string operationid)
+        private void ValidateGetJsonSchemaValidation(string operationid)
         {
             if (operationid == null)
                 throw new ArgumentNullException(nameof(operationid));
@@ -1466,10 +1466,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="operationid"></param>
-        private void AfterOBPv400GetJsonSchemaValidationDefaultImplementation(IOBPv400GetJsonSchemaValidationApiResponse apiResponseLocalVar, string operationid)
+        private void AfterGetJsonSchemaValidationDefaultImplementation(IGetJsonSchemaValidationApiResponse apiResponseLocalVar, string operationid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetJsonSchemaValidation(ref suppressDefaultLog, apiResponseLocalVar, operationid);
+            AfterGetJsonSchemaValidation(ref suppressDefaultLog, apiResponseLocalVar, operationid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1480,7 +1480,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="operationid"></param>
-        partial void AfterOBPv400GetJsonSchemaValidation(ref bool suppressDefaultLog, IOBPv400GetJsonSchemaValidationApiResponse apiResponseLocalVar, string operationid);
+        partial void AfterGetJsonSchemaValidation(ref bool suppressDefaultLog, IGetJsonSchemaValidationApiResponse apiResponseLocalVar, string operationid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1489,10 +1489,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="operationid"></param>
-        private void OnErrorOBPv400GetJsonSchemaValidationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid)
+        private void OnErrorGetJsonSchemaValidationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetJsonSchemaValidation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, operationid);
+            OnErrorGetJsonSchemaValidation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, operationid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1505,19 +1505,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="operationid"></param>
-        partial void OnErrorOBPv400GetJsonSchemaValidation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid);
+        partial void OnErrorGetJsonSchemaValidation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid);
 
         /// <summary>
         /// Get a JSON Schema Validation &lt;p&gt;Get a JSON Schema Validation by operation_id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;$schema&lt;/strong&gt;&lt;/a&gt;: $schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;additionalProperties&lt;/strong&gt;&lt;/a&gt;: additionalProperties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;examples&lt;/strong&gt;&lt;/a&gt;: examples&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;json_schema&lt;/strong&gt;&lt;/a&gt;: json_schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;maxLength&lt;/strong&gt;&lt;/a&gt;: maxLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;minLength&lt;/strong&gt;&lt;/a&gt;: minLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;properties&lt;/strong&gt;&lt;/a&gt;: properties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;required&lt;/strong&gt;&lt;/a&gt;: required&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;title&lt;/strong&gt;&lt;/a&gt;: Dr.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;xxx_id&lt;/strong&gt;&lt;/a&gt;: xxx_id&lt;/p&gt; 
         /// </summary>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetJsonSchemaValidationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetJsonSchemaValidationApiResponse?> OBPv400GetJsonSchemaValidationOrDefaultAsync(string operationid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetJsonSchemaValidationApiResponse"/>&gt;</returns>
+        public async Task<IGetJsonSchemaValidationApiResponse?> GetJsonSchemaValidationOrDefaultAsync(string operationid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetJsonSchemaValidationAsync(operationid, cancellationToken).ConfigureAwait(false);
+                return await GetJsonSchemaValidationAsync(operationid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1531,16 +1531,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationid">The OPERATIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetJsonSchemaValidationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetJsonSchemaValidationApiResponse> OBPv400GetJsonSchemaValidationAsync(string operationid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetJsonSchemaValidationApiResponse"/>&gt;</returns>
+        public async Task<IGetJsonSchemaValidationApiResponse> GetJsonSchemaValidationAsync(string operationid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetJsonSchemaValidation(operationid);
+                ValidateGetJsonSchemaValidation(operationid);
 
-                FormatOBPv400GetJsonSchemaValidation(ref operationid);
+                FormatGetJsonSchemaValidation(ref operationid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1557,7 +1557,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1584,8 +1584,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetJsonSchemaValidationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetJsonSchemaValidationApiResponse>();
-                        OBPv400GetJsonSchemaValidationApiResponse apiResponseLocalVar;
+                        ILogger<GetJsonSchemaValidationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetJsonSchemaValidationApiResponse>();
+                        GetJsonSchemaValidationApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1596,9 +1596,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetJsonSchemaValidationDefaultImplementation(apiResponseLocalVar, operationid);
+                        AfterGetJsonSchemaValidationDefaultImplementation(apiResponseLocalVar, operationid);
 
-                        Events.ExecuteOnOBPv400GetJsonSchemaValidation(apiResponseLocalVar);
+                        Events.ExecuteOnGetJsonSchemaValidation(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1610,24 +1610,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetJsonSchemaValidationDefaultImplementation(e, "/obp/v4.0.0/management/json-schema-validations/{operationid}", uriBuilderLocalVar.Path, operationid);
-                Events.ExecuteOnErrorOBPv400GetJsonSchemaValidation(e);
+                OnErrorGetJsonSchemaValidationDefaultImplementation(e, "/obp/v4.0.0/management/json-schema-validations/{operationid}", uriBuilderLocalVar.Path, operationid);
+                Events.ExecuteOnErrorGetJsonSchemaValidation(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetJsonSchemaValidationApiResponse"/>
+        /// The <see cref="GetJsonSchemaValidationApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetJsonSchemaValidationApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetJsonSchemaValidationApiResponse
+        public partial class GetJsonSchemaValidationApiResponse : OpenBankProject.Client.ApiResponse, IGetJsonSchemaValidationApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetJsonSchemaValidationApiResponse> Logger { get; }
+            public ILogger<GetJsonSchemaValidationApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetJsonSchemaValidationApiResponse"/>
+            /// The <see cref="GetJsonSchemaValidationApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1636,14 +1636,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetJsonSchemaValidationApiResponse(ILogger<OBPv400GetJsonSchemaValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetJsonSchemaValidationApiResponse(ILogger<GetJsonSchemaValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetJsonSchemaValidationApiResponse"/>
+            /// The <see cref="GetJsonSchemaValidationApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1652,7 +1652,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetJsonSchemaValidationApiResponse(ILogger<OBPv400GetJsonSchemaValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetJsonSchemaValidationApiResponse(ILogger<GetJsonSchemaValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1670,11 +1670,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems? Ok()
+            public OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1683,7 +1683,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner? result)
             {
                 result = null;
 
@@ -1715,21 +1715,21 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400UpdateJsonSchemaValidation(ref string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+        partial void FormatUpdateJsonSchemaValidation(ref string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema"></param>
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema"></param>
         /// <returns></returns>
-        private void ValidateOBPv400UpdateJsonSchemaValidation(string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+        private void ValidateUpdateJsonSchemaValidation(string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
         {
             if (operationid == null)
                 throw new ArgumentNullException(nameof(operationid));
 
-            if (oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema == null)
-                throw new ArgumentNullException(nameof(oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema));
+            if (getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema == null)
+                throw new ArgumentNullException(nameof(getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema));
         }
 
         /// <summary>
@@ -1737,11 +1737,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema"></param>
-        private void AfterOBPv400UpdateJsonSchemaValidationDefaultImplementation(IOBPv400UpdateJsonSchemaValidationApiResponse apiResponseLocalVar, string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema"></param>
+        private void AfterUpdateJsonSchemaValidationDefaultImplementation(IUpdateJsonSchemaValidationApiResponse apiResponseLocalVar, string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400UpdateJsonSchemaValidation(ref suppressDefaultLog, apiResponseLocalVar, operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+            AfterUpdateJsonSchemaValidation(ref suppressDefaultLog, apiResponseLocalVar, operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1752,8 +1752,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema"></param>
-        partial void AfterOBPv400UpdateJsonSchemaValidation(ref bool suppressDefaultLog, IOBPv400UpdateJsonSchemaValidationApiResponse apiResponseLocalVar, string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema"></param>
+        partial void AfterUpdateJsonSchemaValidation(ref bool suppressDefaultLog, IUpdateJsonSchemaValidationApiResponse apiResponseLocalVar, string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1762,11 +1762,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema"></param>
-        private void OnErrorOBPv400UpdateJsonSchemaValidationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema"></param>
+        private void OnErrorUpdateJsonSchemaValidationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400UpdateJsonSchemaValidation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+            OnErrorUpdateJsonSchemaValidation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1779,21 +1779,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="operationid"></param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema"></param>
-        partial void OnErrorOBPv400UpdateJsonSchemaValidation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema"></param>
+        partial void OnErrorUpdateJsonSchemaValidation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
 
         /// <summary>
         /// Update a JSON Schema Validation &lt;p&gt;Update a JSON Schema Validation.&lt;/p&gt; &lt;p&gt;Introduction:&lt;/p&gt;   &lt;p&gt;JSON Schema is &amp;quot;a vocabulary that allows you to annotate and validate JSON documents&amp;quot;.&lt;/p&gt; &lt;p&gt;By applying JSON Schema Validation to your OBP endpoints you can constrain POST and PUT request bodies. For example, you can set minimum / maximum lengths of fields and constrain values to certain lists or regular expressions.&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;https://json-schema.org/\&quot;&gt;JSONSchema.org&lt;/a&gt; for more information about the JSON Schema standard.&lt;/p&gt; &lt;p&gt;To create a JSON Schema from an any JSON Request body you can use &lt;a href&#x3D;\&quot;https://jsonschema.net/app/schemas/0\&quot;&gt;JSON Schema Net&lt;/a&gt;&lt;/p&gt; &lt;p&gt;(The video link below shows how to use that)&lt;/p&gt; &lt;p&gt;Note: OBP Dynamic Entities also use JSON Schema Validation so you don&#39;t need to additionally wrap the resulting endpoints with extra JSON Schema Validation but you could do.&lt;/p&gt; &lt;p&gt;You can apply JSON schema validations to any OBP endpoint&#39;s request body using the POST and PUT endpoints listed in the link below.&lt;/p&gt; &lt;p&gt;PLEASE SEE the following video explanation: &lt;a href&#x3D;\&quot;https://vimeo.com/485287014\&quot;&gt;JSON schema validation of request for Static and Dynamic Endpoints and Entities&lt;/a&gt;&lt;/p&gt; &lt;p&gt;To use this endpoint, please supply a valid json-schema in the request body.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;$schema&lt;/strong&gt;&lt;/a&gt;: $schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;additionalProperties&lt;/strong&gt;&lt;/a&gt;: additionalProperties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;examples&lt;/strong&gt;&lt;/a&gt;: examples&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;json_schema&lt;/strong&gt;&lt;/a&gt;: json_schema&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;maxLength&lt;/strong&gt;&lt;/a&gt;: maxLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;minLength&lt;/strong&gt;&lt;/a&gt;: minLength&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;properties&lt;/strong&gt;&lt;/a&gt;: properties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;required&lt;/strong&gt;&lt;/a&gt;: required&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;title&lt;/strong&gt;&lt;/a&gt;: Dr.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;xxx_id&lt;/strong&gt;&lt;/a&gt;: xxx_id&lt;/p&gt; 
         /// </summary>
         /// <param name="operationid">The OPERATIONID identifier</param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema">Request body</param>
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateJsonSchemaValidationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateJsonSchemaValidationApiResponse?> OBPv400UpdateJsonSchemaValidationOrDefaultAsync(string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateJsonSchemaValidationApiResponse"/>&gt;</returns>
+        public async Task<IUpdateJsonSchemaValidationApiResponse?> UpdateJsonSchemaValidationOrDefaultAsync(string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400UpdateJsonSchemaValidationAsync(operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, cancellationToken).ConfigureAwait(false);
+                return await UpdateJsonSchemaValidationAsync(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1806,18 +1806,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationid">The OPERATIONID identifier</param>
-        /// <param name="oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema">Request body</param>
+        /// <param name="getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateJsonSchemaValidationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateJsonSchemaValidationApiResponse> OBPv400UpdateJsonSchemaValidationAsync(string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateJsonSchemaValidationApiResponse"/>&gt;</returns>
+        public async Task<IUpdateJsonSchemaValidationApiResponse> UpdateJsonSchemaValidationAsync(string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400UpdateJsonSchemaValidation(operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+                ValidateUpdateJsonSchemaValidation(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
 
-                FormatOBPv400UpdateJsonSchemaValidation(ref operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+                FormatUpdateJsonSchemaValidation(ref operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1829,16 +1829,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/json-schema-validations/{operationid}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Boperationid%7D", Uri.EscapeDataString(operationid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1874,8 +1874,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400UpdateJsonSchemaValidationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400UpdateJsonSchemaValidationApiResponse>();
-                        OBPv400UpdateJsonSchemaValidationApiResponse apiResponseLocalVar;
+                        ILogger<UpdateJsonSchemaValidationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<UpdateJsonSchemaValidationApiResponse>();
+                        UpdateJsonSchemaValidationApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1886,9 +1886,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400UpdateJsonSchemaValidationDefaultImplementation(apiResponseLocalVar, operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+                        AfterUpdateJsonSchemaValidationDefaultImplementation(apiResponseLocalVar, operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
 
-                        Events.ExecuteOnOBPv400UpdateJsonSchemaValidation(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateJsonSchemaValidation(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1900,24 +1900,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400UpdateJsonSchemaValidationDefaultImplementation(e, "/obp/v4.0.0/management/json-schema-validations/{operationid}", uriBuilderLocalVar.Path, operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
-                Events.ExecuteOnErrorOBPv400UpdateJsonSchemaValidation(e);
+                OnErrorUpdateJsonSchemaValidationDefaultImplementation(e, "/obp/v4.0.0/management/json-schema-validations/{operationid}", uriBuilderLocalVar.Path, operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
+                Events.ExecuteOnErrorUpdateJsonSchemaValidation(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400UpdateJsonSchemaValidationApiResponse"/>
+        /// The <see cref="UpdateJsonSchemaValidationApiResponse"/>
         /// </summary>
-        public partial class OBPv400UpdateJsonSchemaValidationApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400UpdateJsonSchemaValidationApiResponse
+        public partial class UpdateJsonSchemaValidationApiResponse : OpenBankProject.Client.ApiResponse, IUpdateJsonSchemaValidationApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400UpdateJsonSchemaValidationApiResponse> Logger { get; }
+            public ILogger<UpdateJsonSchemaValidationApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400UpdateJsonSchemaValidationApiResponse"/>
+            /// The <see cref="UpdateJsonSchemaValidationApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1926,14 +1926,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400UpdateJsonSchemaValidationApiResponse(ILogger<OBPv400UpdateJsonSchemaValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public UpdateJsonSchemaValidationApiResponse(ILogger<UpdateJsonSchemaValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400UpdateJsonSchemaValidationApiResponse"/>
+            /// The <see cref="UpdateJsonSchemaValidationApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1942,7 +1942,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400UpdateJsonSchemaValidationApiResponse(ILogger<OBPv400UpdateJsonSchemaValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public UpdateJsonSchemaValidationApiResponse(ILogger<UpdateJsonSchemaValidationApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1960,11 +1960,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems? Ok()
+            public OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1973,7 +1973,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner? result)
             {
                 result = null;
 

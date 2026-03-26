@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,19 +75,19 @@ class ConnectorMethodApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv400CreateConnectorMethod' => [
+        'createConnectorMethod' => [
             'application/json',
         ],
-        'oBPv400GetAllConnectorMethods' => [
+        'getAllConnectorMethods' => [
             'application/json',
         ],
-        'oBPv400GetConnectorMethod' => [
+        'getConnectorMethod' => [
             'application/json',
         ],
-        'oBPv400UpdateConnectorMethod' => [
+        'getConnectorMethodNames' => [
             'application/json',
         ],
-        'oBPv600GetConnectorMethodNames' => [
+        'updateConnectorMethod' => [
             'application/json',
         ],
     ];
@@ -139,38 +139,38 @@ class ConnectorMethodApi
     }
 
     /**
-     * Operation oBPv400CreateConnectorMethod
+     * Operation createConnectorMethod
      *
      * Create Connector Method
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateConnectorMethodRequest $obpv400_create_connector_method_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateConnectorMethod'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateConnectorMethodRequest $create_connector_method_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConnectorMethod'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+     * @return \OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner
      */
-    public function oBPv400CreateConnectorMethod($obpv400_create_connector_method_request, string $contentType = self::contentTypes['oBPv400CreateConnectorMethod'][0])
+    public function createConnectorMethod($create_connector_method_request, string $contentType = self::contentTypes['createConnectorMethod'][0])
     {
-        list($response) = $this->oBPv400CreateConnectorMethodWithHttpInfo($obpv400_create_connector_method_request, $contentType);
+        list($response) = $this->createConnectorMethodWithHttpInfo($create_connector_method_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateConnectorMethodWithHttpInfo
+     * Operation createConnectorMethodWithHttpInfo
      *
      * Create Connector Method
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateConnectorMethodRequest $obpv400_create_connector_method_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateConnectorMethod'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateConnectorMethodRequest $create_connector_method_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConnectorMethod'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateConnectorMethodWithHttpInfo($obpv400_create_connector_method_request, string $contentType = self::contentTypes['oBPv400CreateConnectorMethod'][0])
+    public function createConnectorMethodWithHttpInfo($create_connector_method_request, string $contentType = self::contentTypes['createConnectorMethod'][0])
     {
-        $request = $this->oBPv400CreateConnectorMethodRequest($obpv400_create_connector_method_request, $contentType);
+        $request = $this->createConnectorMethodRequest($create_connector_method_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -198,7 +198,7 @@ class ConnectorMethodApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems',
+                        '\OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner',
                         $request,
                         $response,
                     );
@@ -220,7 +220,7 @@ class ConnectorMethodApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems',
+                '\OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner',
                 $request,
                 $response,
             );
@@ -229,7 +229,7 @@ class ConnectorMethodApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems',
+                        '\OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -242,19 +242,19 @@ class ConnectorMethodApi
     }
 
     /**
-     * Operation oBPv400CreateConnectorMethodAsync
+     * Operation createConnectorMethodAsync
      *
      * Create Connector Method
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateConnectorMethodRequest $obpv400_create_connector_method_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateConnectorMethod'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateConnectorMethodRequest $create_connector_method_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConnectorMethod'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateConnectorMethodAsync($obpv400_create_connector_method_request, string $contentType = self::contentTypes['oBPv400CreateConnectorMethod'][0])
+    public function createConnectorMethodAsync($create_connector_method_request, string $contentType = self::contentTypes['createConnectorMethod'][0])
     {
-        return $this->oBPv400CreateConnectorMethodAsyncWithHttpInfo($obpv400_create_connector_method_request, $contentType)
+        return $this->createConnectorMethodAsyncWithHttpInfo($create_connector_method_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -263,20 +263,20 @@ class ConnectorMethodApi
     }
 
     /**
-     * Operation oBPv400CreateConnectorMethodAsyncWithHttpInfo
+     * Operation createConnectorMethodAsyncWithHttpInfo
      *
      * Create Connector Method
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateConnectorMethodRequest $obpv400_create_connector_method_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateConnectorMethod'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateConnectorMethodRequest $create_connector_method_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConnectorMethod'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateConnectorMethodAsyncWithHttpInfo($obpv400_create_connector_method_request, string $contentType = self::contentTypes['oBPv400CreateConnectorMethod'][0])
+    public function createConnectorMethodAsyncWithHttpInfo($create_connector_method_request, string $contentType = self::contentTypes['createConnectorMethod'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems';
-        $request = $this->oBPv400CreateConnectorMethodRequest($obpv400_create_connector_method_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner';
+        $request = $this->createConnectorMethodRequest($create_connector_method_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -315,21 +315,21 @@ class ConnectorMethodApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateConnectorMethod'
+     * Create request for operation 'createConnectorMethod'
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateConnectorMethodRequest $obpv400_create_connector_method_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateConnectorMethod'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateConnectorMethodRequest $create_connector_method_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConnectorMethod'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateConnectorMethodRequest($obpv400_create_connector_method_request, string $contentType = self::contentTypes['oBPv400CreateConnectorMethod'][0])
+    public function createConnectorMethodRequest($create_connector_method_request, string $contentType = self::contentTypes['createConnectorMethod'][0])
     {
 
-        // verify the required parameter 'obpv400_create_connector_method_request' is set
-        if ($obpv400_create_connector_method_request === null || (is_array($obpv400_create_connector_method_request) && count($obpv400_create_connector_method_request) === 0)) {
+        // verify the required parameter 'create_connector_method_request' is set
+        if ($create_connector_method_request === null || (is_array($create_connector_method_request) && count($create_connector_method_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_connector_method_request when calling oBPv400CreateConnectorMethod'
+                'Missing the required parameter $create_connector_method_request when calling createConnectorMethod'
             );
         }
 
@@ -352,12 +352,12 @@ class ConnectorMethodApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_connector_method_request)) {
+        if (isset($create_connector_method_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_connector_method_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_connector_method_request));
             } else {
-                $httpBody = $obpv400_create_connector_method_request;
+                $httpBody = $create_connector_method_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -393,9 +393,9 @@ class ConnectorMethodApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -420,36 +420,36 @@ class ConnectorMethodApi
     }
 
     /**
-     * Operation oBPv400GetAllConnectorMethods
+     * Operation getAllConnectorMethods
      *
      * Get all Connector Methods
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllConnectorMethods'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllConnectorMethods'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllConnectorMethods200Response
+     * @return \OpenBankProject\Model\GetAllConnectorMethods200Response
      */
-    public function oBPv400GetAllConnectorMethods(string $contentType = self::contentTypes['oBPv400GetAllConnectorMethods'][0])
+    public function getAllConnectorMethods(string $contentType = self::contentTypes['getAllConnectorMethods'][0])
     {
-        list($response) = $this->oBPv400GetAllConnectorMethodsWithHttpInfo($contentType);
+        list($response) = $this->getAllConnectorMethodsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetAllConnectorMethodsWithHttpInfo
+     * Operation getAllConnectorMethodsWithHttpInfo
      *
      * Get all Connector Methods
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllConnectorMethods'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllConnectorMethods'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllConnectorMethods200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllConnectorMethods200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetAllConnectorMethodsWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetAllConnectorMethods'][0])
+    public function getAllConnectorMethodsWithHttpInfo(string $contentType = self::contentTypes['getAllConnectorMethods'][0])
     {
-        $request = $this->oBPv400GetAllConnectorMethodsRequest($contentType);
+        $request = $this->getAllConnectorMethodsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -477,7 +477,7 @@ class ConnectorMethodApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllConnectorMethods200Response',
+                        '\OpenBankProject\Model\GetAllConnectorMethods200Response',
                         $request,
                         $response,
                     );
@@ -499,7 +499,7 @@ class ConnectorMethodApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllConnectorMethods200Response',
+                '\OpenBankProject\Model\GetAllConnectorMethods200Response',
                 $request,
                 $response,
             );
@@ -508,7 +508,7 @@ class ConnectorMethodApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllConnectorMethods200Response',
+                        '\OpenBankProject\Model\GetAllConnectorMethods200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -521,18 +521,18 @@ class ConnectorMethodApi
     }
 
     /**
-     * Operation oBPv400GetAllConnectorMethodsAsync
+     * Operation getAllConnectorMethodsAsync
      *
      * Get all Connector Methods
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllConnectorMethods'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllConnectorMethods'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllConnectorMethodsAsync(string $contentType = self::contentTypes['oBPv400GetAllConnectorMethods'][0])
+    public function getAllConnectorMethodsAsync(string $contentType = self::contentTypes['getAllConnectorMethods'][0])
     {
-        return $this->oBPv400GetAllConnectorMethodsAsyncWithHttpInfo($contentType)
+        return $this->getAllConnectorMethodsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -541,19 +541,19 @@ class ConnectorMethodApi
     }
 
     /**
-     * Operation oBPv400GetAllConnectorMethodsAsyncWithHttpInfo
+     * Operation getAllConnectorMethodsAsyncWithHttpInfo
      *
      * Get all Connector Methods
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllConnectorMethods'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllConnectorMethods'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllConnectorMethodsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetAllConnectorMethods'][0])
+    public function getAllConnectorMethodsAsyncWithHttpInfo(string $contentType = self::contentTypes['getAllConnectorMethods'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllConnectorMethods200Response';
-        $request = $this->oBPv400GetAllConnectorMethodsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetAllConnectorMethods200Response';
+        $request = $this->getAllConnectorMethodsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -592,14 +592,14 @@ class ConnectorMethodApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetAllConnectorMethods'
+     * Create request for operation 'getAllConnectorMethods'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllConnectorMethods'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllConnectorMethods'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetAllConnectorMethodsRequest(string $contentType = self::contentTypes['oBPv400GetAllConnectorMethods'][0])
+    public function getAllConnectorMethodsRequest(string $contentType = self::contentTypes['getAllConnectorMethods'][0])
     {
 
 
@@ -655,9 +655,9 @@ class ConnectorMethodApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -682,38 +682,38 @@ class ConnectorMethodApi
     }
 
     /**
-     * Operation oBPv400GetConnectorMethod
+     * Operation getConnectorMethod
      *
      * Get Connector Method by Id
      *
      * @param  string $connectormethodid The CONNECTORMETHODID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetConnectorMethod'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethod'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+     * @return \OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner
      */
-    public function oBPv400GetConnectorMethod($connectormethodid, string $contentType = self::contentTypes['oBPv400GetConnectorMethod'][0])
+    public function getConnectorMethod($connectormethodid, string $contentType = self::contentTypes['getConnectorMethod'][0])
     {
-        list($response) = $this->oBPv400GetConnectorMethodWithHttpInfo($connectormethodid, $contentType);
+        list($response) = $this->getConnectorMethodWithHttpInfo($connectormethodid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetConnectorMethodWithHttpInfo
+     * Operation getConnectorMethodWithHttpInfo
      *
      * Get Connector Method by Id
      *
      * @param  string $connectormethodid The CONNECTORMETHODID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetConnectorMethod'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethod'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetConnectorMethodWithHttpInfo($connectormethodid, string $contentType = self::contentTypes['oBPv400GetConnectorMethod'][0])
+    public function getConnectorMethodWithHttpInfo($connectormethodid, string $contentType = self::contentTypes['getConnectorMethod'][0])
     {
-        $request = $this->oBPv400GetConnectorMethodRequest($connectormethodid, $contentType);
+        $request = $this->getConnectorMethodRequest($connectormethodid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -741,7 +741,7 @@ class ConnectorMethodApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems',
+                        '\OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner',
                         $request,
                         $response,
                     );
@@ -763,7 +763,7 @@ class ConnectorMethodApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems',
+                '\OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner',
                 $request,
                 $response,
             );
@@ -772,7 +772,7 @@ class ConnectorMethodApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems',
+                        '\OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -785,19 +785,19 @@ class ConnectorMethodApi
     }
 
     /**
-     * Operation oBPv400GetConnectorMethodAsync
+     * Operation getConnectorMethodAsync
      *
      * Get Connector Method by Id
      *
      * @param  string $connectormethodid The CONNECTORMETHODID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetConnectorMethod'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethod'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetConnectorMethodAsync($connectormethodid, string $contentType = self::contentTypes['oBPv400GetConnectorMethod'][0])
+    public function getConnectorMethodAsync($connectormethodid, string $contentType = self::contentTypes['getConnectorMethod'][0])
     {
-        return $this->oBPv400GetConnectorMethodAsyncWithHttpInfo($connectormethodid, $contentType)
+        return $this->getConnectorMethodAsyncWithHttpInfo($connectormethodid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -806,20 +806,20 @@ class ConnectorMethodApi
     }
 
     /**
-     * Operation oBPv400GetConnectorMethodAsyncWithHttpInfo
+     * Operation getConnectorMethodAsyncWithHttpInfo
      *
      * Get Connector Method by Id
      *
      * @param  string $connectormethodid The CONNECTORMETHODID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetConnectorMethod'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethod'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetConnectorMethodAsyncWithHttpInfo($connectormethodid, string $contentType = self::contentTypes['oBPv400GetConnectorMethod'][0])
+    public function getConnectorMethodAsyncWithHttpInfo($connectormethodid, string $contentType = self::contentTypes['getConnectorMethod'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems';
-        $request = $this->oBPv400GetConnectorMethodRequest($connectormethodid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner';
+        $request = $this->getConnectorMethodRequest($connectormethodid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -858,21 +858,21 @@ class ConnectorMethodApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetConnectorMethod'
+     * Create request for operation 'getConnectorMethod'
      *
      * @param  string $connectormethodid The CONNECTORMETHODID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetConnectorMethod'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethod'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetConnectorMethodRequest($connectormethodid, string $contentType = self::contentTypes['oBPv400GetConnectorMethod'][0])
+    public function getConnectorMethodRequest($connectormethodid, string $contentType = self::contentTypes['getConnectorMethod'][0])
     {
 
         // verify the required parameter 'connectormethodid' is set
         if ($connectormethodid === null || (is_array($connectormethodid) && count($connectormethodid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $connectormethodid when calling oBPv400GetConnectorMethod'
+                'Missing the required parameter $connectormethodid when calling getConnectorMethod'
             );
         }
 
@@ -937,9 +937,9 @@ class ConnectorMethodApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -964,40 +964,36 @@ class ConnectorMethodApi
     }
 
     /**
-     * Operation oBPv400UpdateConnectorMethod
+     * Operation getConnectorMethodNames
      *
-     * Update Connector Method
+     * Get Connector Method Names
      *
-     * @param  string $connectormethodid The CONNECTORMETHODID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateConnectorMethodRequest $obpv400_update_connector_method_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateConnectorMethod'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethodNames'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+     * @return \OpenBankProject\Model\GetConnectorMethodNames200Response
      */
-    public function oBPv400UpdateConnectorMethod($connectormethodid, $obpv400_update_connector_method_request, string $contentType = self::contentTypes['oBPv400UpdateConnectorMethod'][0])
+    public function getConnectorMethodNames(string $contentType = self::contentTypes['getConnectorMethodNames'][0])
     {
-        list($response) = $this->oBPv400UpdateConnectorMethodWithHttpInfo($connectormethodid, $obpv400_update_connector_method_request, $contentType);
+        list($response) = $this->getConnectorMethodNamesWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateConnectorMethodWithHttpInfo
+     * Operation getConnectorMethodNamesWithHttpInfo
      *
-     * Update Connector Method
+     * Get Connector Method Names
      *
-     * @param  string $connectormethodid The CONNECTORMETHODID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateConnectorMethodRequest $obpv400_update_connector_method_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateConnectorMethod'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethodNames'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetConnectorMethodNames200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateConnectorMethodWithHttpInfo($connectormethodid, $obpv400_update_connector_method_request, string $contentType = self::contentTypes['oBPv400UpdateConnectorMethod'][0])
+    public function getConnectorMethodNamesWithHttpInfo(string $contentType = self::contentTypes['getConnectorMethodNames'][0])
     {
-        $request = $this->oBPv400UpdateConnectorMethodRequest($connectormethodid, $obpv400_update_connector_method_request, $contentType);
+        $request = $this->getConnectorMethodNamesRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1025,7 +1021,7 @@ class ConnectorMethodApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems',
+                        '\OpenBankProject\Model\GetConnectorMethodNames200Response',
                         $request,
                         $response,
                     );
@@ -1047,7 +1043,7 @@ class ConnectorMethodApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems',
+                '\OpenBankProject\Model\GetConnectorMethodNames200Response',
                 $request,
                 $response,
             );
@@ -1056,7 +1052,7 @@ class ConnectorMethodApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems',
+                        '\OpenBankProject\Model\GetConnectorMethodNames200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1069,20 +1065,18 @@ class ConnectorMethodApi
     }
 
     /**
-     * Operation oBPv400UpdateConnectorMethodAsync
+     * Operation getConnectorMethodNamesAsync
      *
-     * Update Connector Method
+     * Get Connector Method Names
      *
-     * @param  string $connectormethodid The CONNECTORMETHODID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateConnectorMethodRequest $obpv400_update_connector_method_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateConnectorMethod'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethodNames'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateConnectorMethodAsync($connectormethodid, $obpv400_update_connector_method_request, string $contentType = self::contentTypes['oBPv400UpdateConnectorMethod'][0])
+    public function getConnectorMethodNamesAsync(string $contentType = self::contentTypes['getConnectorMethodNames'][0])
     {
-        return $this->oBPv400UpdateConnectorMethodAsyncWithHttpInfo($connectormethodid, $obpv400_update_connector_method_request, $contentType)
+        return $this->getConnectorMethodNamesAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1091,21 +1085,19 @@ class ConnectorMethodApi
     }
 
     /**
-     * Operation oBPv400UpdateConnectorMethodAsyncWithHttpInfo
+     * Operation getConnectorMethodNamesAsyncWithHttpInfo
      *
-     * Update Connector Method
+     * Get Connector Method Names
      *
-     * @param  string $connectormethodid The CONNECTORMETHODID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateConnectorMethodRequest $obpv400_update_connector_method_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateConnectorMethod'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethodNames'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateConnectorMethodAsyncWithHttpInfo($connectormethodid, $obpv400_update_connector_method_request, string $contentType = self::contentTypes['oBPv400UpdateConnectorMethod'][0])
+    public function getConnectorMethodNamesAsyncWithHttpInfo(string $contentType = self::contentTypes['getConnectorMethodNames'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems';
-        $request = $this->oBPv400UpdateConnectorMethodRequest($connectormethodid, $obpv400_update_connector_method_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetConnectorMethodNames200Response';
+        $request = $this->getConnectorMethodNamesRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1144,307 +1136,14 @@ class ConnectorMethodApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateConnectorMethod'
+     * Create request for operation 'getConnectorMethodNames'
      *
-     * @param  string $connectormethodid The CONNECTORMETHODID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateConnectorMethodRequest $obpv400_update_connector_method_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateConnectorMethod'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethodNames'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateConnectorMethodRequest($connectormethodid, $obpv400_update_connector_method_request, string $contentType = self::contentTypes['oBPv400UpdateConnectorMethod'][0])
-    {
-
-        // verify the required parameter 'connectormethodid' is set
-        if ($connectormethodid === null || (is_array($connectormethodid) && count($connectormethodid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $connectormethodid when calling oBPv400UpdateConnectorMethod'
-            );
-        }
-
-        // verify the required parameter 'obpv400_update_connector_method_request' is set
-        if ($obpv400_update_connector_method_request === null || (is_array($obpv400_update_connector_method_request) && count($obpv400_update_connector_method_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_connector_method_request when calling oBPv400UpdateConnectorMethod'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/management/connector-methods/{connectormethodid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($connectormethodid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'connectormethodid' . '}',
-                ObjectSerializer::toPathValue($connectormethodid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv400_update_connector_method_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_connector_method_request));
-            } else {
-                $httpBody = $obpv400_update_connector_method_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600GetConnectorMethodNames
-     *
-     * Get Connector Method Names
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorMethodNames'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response
-     */
-    public function oBPv600GetConnectorMethodNames(string $contentType = self::contentTypes['oBPv600GetConnectorMethodNames'][0])
-    {
-        list($response) = $this->oBPv600GetConnectorMethodNamesWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv600GetConnectorMethodNamesWithHttpInfo
-     *
-     * Get Connector Method Names
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorMethodNames'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600GetConnectorMethodNamesWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetConnectorMethodNames'][0])
-    {
-        $request = $this->oBPv600GetConnectorMethodNamesRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600GetConnectorMethodNamesAsync
-     *
-     * Get Connector Method Names
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorMethodNames'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetConnectorMethodNamesAsync(string $contentType = self::contentTypes['oBPv600GetConnectorMethodNames'][0])
-    {
-        return $this->oBPv600GetConnectorMethodNamesAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600GetConnectorMethodNamesAsyncWithHttpInfo
-     *
-     * Get Connector Method Names
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorMethodNames'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetConnectorMethodNamesAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetConnectorMethodNames'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response';
-        $request = $this->oBPv600GetConnectorMethodNamesRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600GetConnectorMethodNames'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorMethodNames'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600GetConnectorMethodNamesRequest(string $contentType = self::contentTypes['oBPv600GetConnectorMethodNames'][0])
+    public function getConnectorMethodNamesRequest(string $contentType = self::contentTypes['getConnectorMethodNames'][0])
     {
 
 
@@ -1500,9 +1199,9 @@ class ConnectorMethodApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1520,6 +1219,307 @@ class ConnectorMethodApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateConnectorMethod
+     *
+     * Update Connector Method
+     *
+     * @param  string $connectormethodid The CONNECTORMETHODID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConnectorMethodRequest $update_connector_method_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConnectorMethod'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner
+     */
+    public function updateConnectorMethod($connectormethodid, $update_connector_method_request, string $contentType = self::contentTypes['updateConnectorMethod'][0])
+    {
+        list($response) = $this->updateConnectorMethodWithHttpInfo($connectormethodid, $update_connector_method_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateConnectorMethodWithHttpInfo
+     *
+     * Update Connector Method
+     *
+     * @param  string $connectormethodid The CONNECTORMETHODID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConnectorMethodRequest $update_connector_method_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConnectorMethod'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateConnectorMethodWithHttpInfo($connectormethodid, $update_connector_method_request, string $contentType = self::contentTypes['updateConnectorMethod'][0])
+    {
+        $request = $this->updateConnectorMethodRequest($connectormethodid, $update_connector_method_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateConnectorMethodAsync
+     *
+     * Update Connector Method
+     *
+     * @param  string $connectormethodid The CONNECTORMETHODID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConnectorMethodRequest $update_connector_method_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConnectorMethod'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateConnectorMethodAsync($connectormethodid, $update_connector_method_request, string $contentType = self::contentTypes['updateConnectorMethod'][0])
+    {
+        return $this->updateConnectorMethodAsyncWithHttpInfo($connectormethodid, $update_connector_method_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateConnectorMethodAsyncWithHttpInfo
+     *
+     * Update Connector Method
+     *
+     * @param  string $connectormethodid The CONNECTORMETHODID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConnectorMethodRequest $update_connector_method_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConnectorMethod'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateConnectorMethodAsyncWithHttpInfo($connectormethodid, $update_connector_method_request, string $contentType = self::contentTypes['updateConnectorMethod'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner';
+        $request = $this->updateConnectorMethodRequest($connectormethodid, $update_connector_method_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateConnectorMethod'
+     *
+     * @param  string $connectormethodid The CONNECTORMETHODID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConnectorMethodRequest $update_connector_method_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConnectorMethod'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateConnectorMethodRequest($connectormethodid, $update_connector_method_request, string $contentType = self::contentTypes['updateConnectorMethod'][0])
+    {
+
+        // verify the required parameter 'connectormethodid' is set
+        if ($connectormethodid === null || (is_array($connectormethodid) && count($connectormethodid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $connectormethodid when calling updateConnectorMethod'
+            );
+        }
+
+        // verify the required parameter 'update_connector_method_request' is set
+        if ($update_connector_method_request === null || (is_array($update_connector_method_request) && count($update_connector_method_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_connector_method_request when calling updateConnectorMethod'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/management/connector-methods/{connectormethodid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($connectormethodid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'connectormethodid' . '}',
+                ObjectSerializer::toPathValue($connectormethodid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($update_connector_method_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_connector_method_request));
+            } else {
+                $httpBody = $update_connector_method_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

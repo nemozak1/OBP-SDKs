@@ -1,16 +1,16 @@
 # OpenBankProject.Api.AccountMetadataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv400AddTagForViewOnAccount**](AccountMetadataApi.md#obpv400addtagforviewonaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account |
-| [**OBPv400DeleteTagForViewOnAccount**](AccountMetadataApi.md#obpv400deletetagforviewonaccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account |
-| [**OBPv400GetTagsForViewOnAccount**](AccountMetadataApi.md#obpv400gettagsforviewonaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account |
+| [**AddTagForViewOnAccount**](AccountMetadataApi.md#addtagforviewonaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account |
+| [**DeleteTagForViewOnAccount**](AccountMetadataApi.md#deletetagforviewonaccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account |
+| [**GetTagsForViewOnAccount**](AccountMetadataApi.md#gettagsforviewonaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account |
 
-<a id="obpv400addtagforviewonaccount"></a>
-# **OBPv400AddTagForViewOnAccount**
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems OBPv400AddTagForViewOnAccount (string bankid, string accountid, string viewid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response)
+<a id="addtagforviewonaccount"></a>
+# **AddTagForViewOnAccount**
+> GetTagsForViewOnAccount200ResponseTagsInner AddTagForViewOnAccount (string bankid, string accountid, string viewid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId)
 
 Create a tag on account
 
@@ -24,11 +24,11 @@ Create a tag on account
 | **bankid** | **string** | The BANKID identifier |  |
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
-| **oBPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md) | Request body |  |
+| **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -49,9 +49,9 @@ Create a tag on account
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deletetagforviewonaccount"></a>
-# **OBPv400DeleteTagForViewOnAccount**
-> void OBPv400DeleteTagForViewOnAccount (string bankid, string accountid, string viewid, string tagid)
+<a id="deletetagforviewonaccount"></a>
+# **DeleteTagForViewOnAccount**
+> void DeleteTagForViewOnAccount (string bankid, string accountid, string viewid, string tagid)
 
 Delete a tag on account
 
@@ -90,9 +90,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400gettagsforviewonaccount"></a>
-# **OBPv400GetTagsForViewOnAccount**
-> OBPv400GetTagsForViewOnAccount200Response OBPv400GetTagsForViewOnAccount (string bankid, string accountid, string viewid)
+<a id="gettagsforviewonaccount"></a>
+# **GetTagsForViewOnAccount**
+> GetTagsForViewOnAccount200Response GetTagsForViewOnAccount (string bankid, string accountid, string viewid)
 
 Get tags on account
 
@@ -109,7 +109,7 @@ Get tags on account
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200Response**](OBPv400GetTagsForViewOnAccount200Response.md)
+[**GetTagsForViewOnAccount200Response**](GetTagsForViewOnAccount200Response.md)
 
 ### Authorization
 

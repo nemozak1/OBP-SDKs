@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,27 +24,27 @@ import (
 // AccountMetadataAPIService AccountMetadataAPI service
 type AccountMetadataAPIService service
 
-type ApiOBPv400AddTagForViewOnAccountRequest struct {
+type ApiAddTagForViewOnAccountRequest struct {
 	ctx context.Context
 	ApiService *AccountMetadataAPIService
 	bankid string
 	accountid string
 	viewid string
-	oBPv400DeleteSystemLevelEndpointTag200Response *OBPv400DeleteSystemLevelEndpointTag200Response
+	getTransactionTypes200ResponseTransactionTypesInnerId *GetTransactionTypes200ResponseTransactionTypesInnerId
 }
 
 // Request body
-func (r ApiOBPv400AddTagForViewOnAccountRequest) OBPv400DeleteSystemLevelEndpointTag200Response(oBPv400DeleteSystemLevelEndpointTag200Response OBPv400DeleteSystemLevelEndpointTag200Response) ApiOBPv400AddTagForViewOnAccountRequest {
-	r.oBPv400DeleteSystemLevelEndpointTag200Response = &oBPv400DeleteSystemLevelEndpointTag200Response
+func (r ApiAddTagForViewOnAccountRequest) GetTransactionTypes200ResponseTransactionTypesInnerId(getTransactionTypes200ResponseTransactionTypesInnerId GetTransactionTypes200ResponseTransactionTypesInnerId) ApiAddTagForViewOnAccountRequest {
+	r.getTransactionTypes200ResponseTransactionTypesInnerId = &getTransactionTypes200ResponseTransactionTypesInnerId
 	return r
 }
 
-func (r ApiOBPv400AddTagForViewOnAccountRequest) Execute() (*OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, *http.Response, error) {
-	return r.ApiService.OBPv400AddTagForViewOnAccountExecute(r)
+func (r ApiAddTagForViewOnAccountRequest) Execute() (*GetTagsForViewOnAccount200ResponseTagsInner, *http.Response, error) {
+	return r.ApiService.AddTagForViewOnAccountExecute(r)
 }
 
 /*
-OBPv400AddTagForViewOnAccount Create a tag on account
+AddTagForViewOnAccount Create a tag on account
 
 <p>Posts a tag about an account ACCOUNT_ID on a <a href="#1_2_1-getViewsForBankAccount">view</a> VIEW_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -68,10 +68,10 @@ OBPv400AddTagForViewOnAccount Create a tag on account
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv400AddTagForViewOnAccountRequest
+ @return ApiAddTagForViewOnAccountRequest
 */
-func (a *AccountMetadataAPIService) OBPv400AddTagForViewOnAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv400AddTagForViewOnAccountRequest {
-	return ApiOBPv400AddTagForViewOnAccountRequest{
+func (a *AccountMetadataAPIService) AddTagForViewOnAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiAddTagForViewOnAccountRequest {
+	return ApiAddTagForViewOnAccountRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -81,16 +81,16 @@ func (a *AccountMetadataAPIService) OBPv400AddTagForViewOnAccount(ctx context.Co
 }
 
 // Execute executes the request
-//  @return OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
-func (a *AccountMetadataAPIService) OBPv400AddTagForViewOnAccountExecute(r ApiOBPv400AddTagForViewOnAccountRequest) (*OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, *http.Response, error) {
+//  @return GetTagsForViewOnAccount200ResponseTagsInner
+func (a *AccountMetadataAPIService) AddTagForViewOnAccountExecute(r ApiAddTagForViewOnAccountRequest) (*GetTagsForViewOnAccount200ResponseTagsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+		localVarReturnValue  *GetTagsForViewOnAccount200ResponseTagsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountMetadataAPIService.OBPv400AddTagForViewOnAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountMetadataAPIService.AddTagForViewOnAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -103,8 +103,8 @@ func (a *AccountMetadataAPIService) OBPv400AddTagForViewOnAccountExecute(r ApiOB
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400DeleteSystemLevelEndpointTag200Response == nil {
-		return localVarReturnValue, nil, reportError("oBPv400DeleteSystemLevelEndpointTag200Response is required and must be specified")
+	if r.getTransactionTypes200ResponseTransactionTypesInnerId == nil {
+		return localVarReturnValue, nil, reportError("getTransactionTypes200ResponseTransactionTypesInnerId is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -125,7 +125,7 @@ func (a *AccountMetadataAPIService) OBPv400AddTagForViewOnAccountExecute(r ApiOB
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400DeleteSystemLevelEndpointTag200Response
+	localVarPostBody = r.getTransactionTypes200ResponseTransactionTypesInnerId
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -150,7 +150,7 @@ func (a *AccountMetadataAPIService) OBPv400AddTagForViewOnAccountExecute(r ApiOB
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -191,7 +191,7 @@ func (a *AccountMetadataAPIService) OBPv400AddTagForViewOnAccountExecute(r ApiOB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteTagForViewOnAccountRequest struct {
+type ApiDeleteTagForViewOnAccountRequest struct {
 	ctx context.Context
 	ApiService *AccountMetadataAPIService
 	bankid string
@@ -200,12 +200,12 @@ type ApiOBPv400DeleteTagForViewOnAccountRequest struct {
 	tagid string
 }
 
-func (r ApiOBPv400DeleteTagForViewOnAccountRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteTagForViewOnAccountExecute(r)
+func (r ApiDeleteTagForViewOnAccountRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteTagForViewOnAccountExecute(r)
 }
 
 /*
-OBPv400DeleteTagForViewOnAccount Delete a tag on account
+DeleteTagForViewOnAccount Delete a tag on account
 
 <p>Deletes the tag TAG_ID about the account ACCOUNT_ID made on <a href="#1_2_1-getViewsForBankAccount">view</a>.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -223,10 +223,10 @@ OBPv400DeleteTagForViewOnAccount Delete a tag on account
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param tagid The TAGID identifier
- @return ApiOBPv400DeleteTagForViewOnAccountRequest
+ @return ApiDeleteTagForViewOnAccountRequest
 */
-func (a *AccountMetadataAPIService) OBPv400DeleteTagForViewOnAccount(ctx context.Context, bankid string, accountid string, viewid string, tagid string) ApiOBPv400DeleteTagForViewOnAccountRequest {
-	return ApiOBPv400DeleteTagForViewOnAccountRequest{
+func (a *AccountMetadataAPIService) DeleteTagForViewOnAccount(ctx context.Context, bankid string, accountid string, viewid string, tagid string) ApiDeleteTagForViewOnAccountRequest {
+	return ApiDeleteTagForViewOnAccountRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -237,14 +237,14 @@ func (a *AccountMetadataAPIService) OBPv400DeleteTagForViewOnAccount(ctx context
 }
 
 // Execute executes the request
-func (a *AccountMetadataAPIService) OBPv400DeleteTagForViewOnAccountExecute(r ApiOBPv400DeleteTagForViewOnAccountRequest) (*http.Response, error) {
+func (a *AccountMetadataAPIService) DeleteTagForViewOnAccountExecute(r ApiDeleteTagForViewOnAccountRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountMetadataAPIService.OBPv400DeleteTagForViewOnAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountMetadataAPIService.DeleteTagForViewOnAccount")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -300,7 +300,7 @@ func (a *AccountMetadataAPIService) OBPv400DeleteTagForViewOnAccountExecute(r Ap
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -332,7 +332,7 @@ func (a *AccountMetadataAPIService) OBPv400DeleteTagForViewOnAccountExecute(r Ap
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetTagsForViewOnAccountRequest struct {
+type ApiGetTagsForViewOnAccountRequest struct {
 	ctx context.Context
 	ApiService *AccountMetadataAPIService
 	bankid string
@@ -340,12 +340,12 @@ type ApiOBPv400GetTagsForViewOnAccountRequest struct {
 	viewid string
 }
 
-func (r ApiOBPv400GetTagsForViewOnAccountRequest) Execute() (*OBPv400GetTagsForViewOnAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetTagsForViewOnAccountExecute(r)
+func (r ApiGetTagsForViewOnAccountRequest) Execute() (*GetTagsForViewOnAccount200Response, *http.Response, error) {
+	return r.ApiService.GetTagsForViewOnAccountExecute(r)
 }
 
 /*
-OBPv400GetTagsForViewOnAccount Get tags on account
+GetTagsForViewOnAccount Get tags on account
 
 <p>Returns the account ACCOUNT_ID tags made on a <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
 User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -368,10 +368,10 @@ User Authentication is Required. The User must be logged in. The Application mus
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv400GetTagsForViewOnAccountRequest
+ @return ApiGetTagsForViewOnAccountRequest
 */
-func (a *AccountMetadataAPIService) OBPv400GetTagsForViewOnAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv400GetTagsForViewOnAccountRequest {
-	return ApiOBPv400GetTagsForViewOnAccountRequest{
+func (a *AccountMetadataAPIService) GetTagsForViewOnAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiGetTagsForViewOnAccountRequest {
+	return ApiGetTagsForViewOnAccountRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -381,16 +381,16 @@ func (a *AccountMetadataAPIService) OBPv400GetTagsForViewOnAccount(ctx context.C
 }
 
 // Execute executes the request
-//  @return OBPv400GetTagsForViewOnAccount200Response
-func (a *AccountMetadataAPIService) OBPv400GetTagsForViewOnAccountExecute(r ApiOBPv400GetTagsForViewOnAccountRequest) (*OBPv400GetTagsForViewOnAccount200Response, *http.Response, error) {
+//  @return GetTagsForViewOnAccount200Response
+func (a *AccountMetadataAPIService) GetTagsForViewOnAccountExecute(r ApiGetTagsForViewOnAccountRequest) (*GetTagsForViewOnAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetTagsForViewOnAccount200Response
+		localVarReturnValue  *GetTagsForViewOnAccount200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountMetadataAPIService.OBPv400GetTagsForViewOnAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountMetadataAPIService.GetTagsForViewOnAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -445,7 +445,7 @@ func (a *AccountMetadataAPIService) OBPv400GetTagsForViewOnAccountExecute(r ApiO
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

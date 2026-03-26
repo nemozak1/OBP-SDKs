@@ -2,17 +2,17 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600GetAggregateMetrics()**](AggregateMetricsApi.md#oBPv600GetAggregateMetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics |
+| [**getAggregateMetrics()**](AggregateMetricsApi.md#getAggregateMetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics |
 
 
-## `oBPv600GetAggregateMetrics()`
+## `getAggregateMetrics()`
 
 ```php
-oBPv600GetAggregateMetrics(): \OpenBankProject\Model\OBPv600GetAggregateMetrics200Response
+getAggregateMetrics(): \OpenBankProject\Model\GetAggregateMetrics200Response
 ```
 
 Get Aggregate Metrics
@@ -35,9 +35,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AggregateMetricsApi(
@@ -48,10 +48,10 @@ $apiInstance = new OpenBankProject\Api\AggregateMetricsApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600GetAggregateMetrics();
+    $result = $apiInstance->getAggregateMetrics();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AggregateMetricsApi->oBPv600GetAggregateMetrics: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AggregateMetricsApi->getAggregateMetrics: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -61,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetAggregateMetrics200Response**](../Model/OBPv600GetAggregateMetrics200Response.md)
+[**\OpenBankProject\Model\GetAggregateMetrics200Response**](../Model/GetAggregateMetrics200Response.md)
 
 ### Authorization
 

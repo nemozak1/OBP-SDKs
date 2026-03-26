@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,10 +75,10 @@ class DataWarehouseApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv300DataWarehouseSearch' => [
+        'dataWarehouseSearch' => [
             'application/json',
         ],
-        'oBPv300DataWarehouseStatistics' => [
+        'dataWarehouseStatistics' => [
             'application/json',
         ],
     ];
@@ -130,40 +130,40 @@ class DataWarehouseApi
     }
 
     /**
-     * Operation oBPv300DataWarehouseSearch
+     * Operation dataWarehouseSearch
      *
      * Data Warehouse Search
      *
      * @param  string $index The INDEX identifier (required)
-     * @param  \OpenBankProject\Model\OBPv300DataWarehouseSearchRequest $obpv300_data_warehouse_search_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DataWarehouseSearch'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\DataWarehouseSearchRequest $data_warehouse_search_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dataWarehouseSearch'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+     * @return object
      */
-    public function oBPv300DataWarehouseSearch($index, $obpv300_data_warehouse_search_request, string $contentType = self::contentTypes['oBPv300DataWarehouseSearch'][0])
+    public function dataWarehouseSearch($index, $data_warehouse_search_request, string $contentType = self::contentTypes['dataWarehouseSearch'][0])
     {
-        list($response) = $this->oBPv300DataWarehouseSearchWithHttpInfo($index, $obpv300_data_warehouse_search_request, $contentType);
+        list($response) = $this->dataWarehouseSearchWithHttpInfo($index, $data_warehouse_search_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv300DataWarehouseSearchWithHttpInfo
+     * Operation dataWarehouseSearchWithHttpInfo
      *
      * Data Warehouse Search
      *
      * @param  string $index The INDEX identifier (required)
-     * @param  \OpenBankProject\Model\OBPv300DataWarehouseSearchRequest $obpv300_data_warehouse_search_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DataWarehouseSearch'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\DataWarehouseSearchRequest $data_warehouse_search_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dataWarehouseSearch'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv300DataWarehouseSearchWithHttpInfo($index, $obpv300_data_warehouse_search_request, string $contentType = self::contentTypes['oBPv300DataWarehouseSearch'][0])
+    public function dataWarehouseSearchWithHttpInfo($index, $data_warehouse_search_request, string $contentType = self::contentTypes['dataWarehouseSearch'][0])
     {
-        $request = $this->oBPv300DataWarehouseSearchRequest($index, $obpv300_data_warehouse_search_request, $contentType);
+        $request = $this->dataWarehouseSearchRequest($index, $data_warehouse_search_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -191,7 +191,7 @@ class DataWarehouseApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage',
+                        'object',
                         $request,
                         $response,
                     );
@@ -213,7 +213,7 @@ class DataWarehouseApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage',
+                'object',
                 $request,
                 $response,
             );
@@ -222,7 +222,7 @@ class DataWarehouseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage',
+                        'object',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -235,20 +235,20 @@ class DataWarehouseApi
     }
 
     /**
-     * Operation oBPv300DataWarehouseSearchAsync
+     * Operation dataWarehouseSearchAsync
      *
      * Data Warehouse Search
      *
      * @param  string $index The INDEX identifier (required)
-     * @param  \OpenBankProject\Model\OBPv300DataWarehouseSearchRequest $obpv300_data_warehouse_search_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DataWarehouseSearch'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\DataWarehouseSearchRequest $data_warehouse_search_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dataWarehouseSearch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300DataWarehouseSearchAsync($index, $obpv300_data_warehouse_search_request, string $contentType = self::contentTypes['oBPv300DataWarehouseSearch'][0])
+    public function dataWarehouseSearchAsync($index, $data_warehouse_search_request, string $contentType = self::contentTypes['dataWarehouseSearch'][0])
     {
-        return $this->oBPv300DataWarehouseSearchAsyncWithHttpInfo($index, $obpv300_data_warehouse_search_request, $contentType)
+        return $this->dataWarehouseSearchAsyncWithHttpInfo($index, $data_warehouse_search_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -257,21 +257,21 @@ class DataWarehouseApi
     }
 
     /**
-     * Operation oBPv300DataWarehouseSearchAsyncWithHttpInfo
+     * Operation dataWarehouseSearchAsyncWithHttpInfo
      *
      * Data Warehouse Search
      *
      * @param  string $index The INDEX identifier (required)
-     * @param  \OpenBankProject\Model\OBPv300DataWarehouseSearchRequest $obpv300_data_warehouse_search_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DataWarehouseSearch'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\DataWarehouseSearchRequest $data_warehouse_search_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dataWarehouseSearch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300DataWarehouseSearchAsyncWithHttpInfo($index, $obpv300_data_warehouse_search_request, string $contentType = self::contentTypes['oBPv300DataWarehouseSearch'][0])
+    public function dataWarehouseSearchAsyncWithHttpInfo($index, $data_warehouse_search_request, string $contentType = self::contentTypes['dataWarehouseSearch'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage';
-        $request = $this->oBPv300DataWarehouseSearchRequest($index, $obpv300_data_warehouse_search_request, $contentType);
+        $returnType = 'object';
+        $request = $this->dataWarehouseSearchRequest($index, $data_warehouse_search_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -310,29 +310,29 @@ class DataWarehouseApi
     }
 
     /**
-     * Create request for operation 'oBPv300DataWarehouseSearch'
+     * Create request for operation 'dataWarehouseSearch'
      *
      * @param  string $index The INDEX identifier (required)
-     * @param  \OpenBankProject\Model\OBPv300DataWarehouseSearchRequest $obpv300_data_warehouse_search_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DataWarehouseSearch'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\DataWarehouseSearchRequest $data_warehouse_search_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dataWarehouseSearch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv300DataWarehouseSearchRequest($index, $obpv300_data_warehouse_search_request, string $contentType = self::contentTypes['oBPv300DataWarehouseSearch'][0])
+    public function dataWarehouseSearchRequest($index, $data_warehouse_search_request, string $contentType = self::contentTypes['dataWarehouseSearch'][0])
     {
 
         // verify the required parameter 'index' is set
         if ($index === null || (is_array($index) && count($index) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $index when calling oBPv300DataWarehouseSearch'
+                'Missing the required parameter $index when calling dataWarehouseSearch'
             );
         }
 
-        // verify the required parameter 'obpv300_data_warehouse_search_request' is set
-        if ($obpv300_data_warehouse_search_request === null || (is_array($obpv300_data_warehouse_search_request) && count($obpv300_data_warehouse_search_request) === 0)) {
+        // verify the required parameter 'data_warehouse_search_request' is set
+        if ($data_warehouse_search_request === null || (is_array($data_warehouse_search_request) && count($data_warehouse_search_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv300_data_warehouse_search_request when calling oBPv300DataWarehouseSearch'
+                'Missing the required parameter $data_warehouse_search_request when calling dataWarehouseSearch'
             );
         }
 
@@ -363,12 +363,12 @@ class DataWarehouseApi
         );
 
         // for model (json/xml)
-        if (isset($obpv300_data_warehouse_search_request)) {
+        if (isset($data_warehouse_search_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv300_data_warehouse_search_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($data_warehouse_search_request));
             } else {
-                $httpBody = $obpv300_data_warehouse_search_request;
+                $httpBody = $data_warehouse_search_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -404,9 +404,9 @@ class DataWarehouseApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -431,42 +431,42 @@ class DataWarehouseApi
     }
 
     /**
-     * Operation oBPv300DataWarehouseStatistics
+     * Operation dataWarehouseStatistics
      *
      * Data Warehouse Statistics
      *
      * @param  string $index The INDEX identifier (required)
      * @param  string $field The FIELD identifier (required)
-     * @param  \OpenBankProject\Model\OBPv300DataWarehouseSearchRequest $obpv300_data_warehouse_search_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DataWarehouseStatistics'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\DataWarehouseSearchRequest $data_warehouse_search_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dataWarehouseStatistics'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+     * @return object
      */
-    public function oBPv300DataWarehouseStatistics($index, $field, $obpv300_data_warehouse_search_request, string $contentType = self::contentTypes['oBPv300DataWarehouseStatistics'][0])
+    public function dataWarehouseStatistics($index, $field, $data_warehouse_search_request, string $contentType = self::contentTypes['dataWarehouseStatistics'][0])
     {
-        list($response) = $this->oBPv300DataWarehouseStatisticsWithHttpInfo($index, $field, $obpv300_data_warehouse_search_request, $contentType);
+        list($response) = $this->dataWarehouseStatisticsWithHttpInfo($index, $field, $data_warehouse_search_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv300DataWarehouseStatisticsWithHttpInfo
+     * Operation dataWarehouseStatisticsWithHttpInfo
      *
      * Data Warehouse Statistics
      *
      * @param  string $index The INDEX identifier (required)
      * @param  string $field The FIELD identifier (required)
-     * @param  \OpenBankProject\Model\OBPv300DataWarehouseSearchRequest $obpv300_data_warehouse_search_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DataWarehouseStatistics'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\DataWarehouseSearchRequest $data_warehouse_search_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dataWarehouseStatistics'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv300DataWarehouseStatisticsWithHttpInfo($index, $field, $obpv300_data_warehouse_search_request, string $contentType = self::contentTypes['oBPv300DataWarehouseStatistics'][0])
+    public function dataWarehouseStatisticsWithHttpInfo($index, $field, $data_warehouse_search_request, string $contentType = self::contentTypes['dataWarehouseStatistics'][0])
     {
-        $request = $this->oBPv300DataWarehouseStatisticsRequest($index, $field, $obpv300_data_warehouse_search_request, $contentType);
+        $request = $this->dataWarehouseStatisticsRequest($index, $field, $data_warehouse_search_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -494,7 +494,7 @@ class DataWarehouseApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage',
+                        'object',
                         $request,
                         $response,
                     );
@@ -516,7 +516,7 @@ class DataWarehouseApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage',
+                'object',
                 $request,
                 $response,
             );
@@ -525,7 +525,7 @@ class DataWarehouseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage',
+                        'object',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -538,21 +538,21 @@ class DataWarehouseApi
     }
 
     /**
-     * Operation oBPv300DataWarehouseStatisticsAsync
+     * Operation dataWarehouseStatisticsAsync
      *
      * Data Warehouse Statistics
      *
      * @param  string $index The INDEX identifier (required)
      * @param  string $field The FIELD identifier (required)
-     * @param  \OpenBankProject\Model\OBPv300DataWarehouseSearchRequest $obpv300_data_warehouse_search_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DataWarehouseStatistics'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\DataWarehouseSearchRequest $data_warehouse_search_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dataWarehouseStatistics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300DataWarehouseStatisticsAsync($index, $field, $obpv300_data_warehouse_search_request, string $contentType = self::contentTypes['oBPv300DataWarehouseStatistics'][0])
+    public function dataWarehouseStatisticsAsync($index, $field, $data_warehouse_search_request, string $contentType = self::contentTypes['dataWarehouseStatistics'][0])
     {
-        return $this->oBPv300DataWarehouseStatisticsAsyncWithHttpInfo($index, $field, $obpv300_data_warehouse_search_request, $contentType)
+        return $this->dataWarehouseStatisticsAsyncWithHttpInfo($index, $field, $data_warehouse_search_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -561,22 +561,22 @@ class DataWarehouseApi
     }
 
     /**
-     * Operation oBPv300DataWarehouseStatisticsAsyncWithHttpInfo
+     * Operation dataWarehouseStatisticsAsyncWithHttpInfo
      *
      * Data Warehouse Statistics
      *
      * @param  string $index The INDEX identifier (required)
      * @param  string $field The FIELD identifier (required)
-     * @param  \OpenBankProject\Model\OBPv300DataWarehouseSearchRequest $obpv300_data_warehouse_search_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DataWarehouseStatistics'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\DataWarehouseSearchRequest $data_warehouse_search_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dataWarehouseStatistics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300DataWarehouseStatisticsAsyncWithHttpInfo($index, $field, $obpv300_data_warehouse_search_request, string $contentType = self::contentTypes['oBPv300DataWarehouseStatistics'][0])
+    public function dataWarehouseStatisticsAsyncWithHttpInfo($index, $field, $data_warehouse_search_request, string $contentType = self::contentTypes['dataWarehouseStatistics'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage';
-        $request = $this->oBPv300DataWarehouseStatisticsRequest($index, $field, $obpv300_data_warehouse_search_request, $contentType);
+        $returnType = 'object';
+        $request = $this->dataWarehouseStatisticsRequest($index, $field, $data_warehouse_search_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -615,37 +615,37 @@ class DataWarehouseApi
     }
 
     /**
-     * Create request for operation 'oBPv300DataWarehouseStatistics'
+     * Create request for operation 'dataWarehouseStatistics'
      *
      * @param  string $index The INDEX identifier (required)
      * @param  string $field The FIELD identifier (required)
-     * @param  \OpenBankProject\Model\OBPv300DataWarehouseSearchRequest $obpv300_data_warehouse_search_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DataWarehouseStatistics'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\DataWarehouseSearchRequest $data_warehouse_search_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dataWarehouseStatistics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv300DataWarehouseStatisticsRequest($index, $field, $obpv300_data_warehouse_search_request, string $contentType = self::contentTypes['oBPv300DataWarehouseStatistics'][0])
+    public function dataWarehouseStatisticsRequest($index, $field, $data_warehouse_search_request, string $contentType = self::contentTypes['dataWarehouseStatistics'][0])
     {
 
         // verify the required parameter 'index' is set
         if ($index === null || (is_array($index) && count($index) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $index when calling oBPv300DataWarehouseStatistics'
+                'Missing the required parameter $index when calling dataWarehouseStatistics'
             );
         }
 
         // verify the required parameter 'field' is set
         if ($field === null || (is_array($field) && count($field) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $field when calling oBPv300DataWarehouseStatistics'
+                'Missing the required parameter $field when calling dataWarehouseStatistics'
             );
         }
 
-        // verify the required parameter 'obpv300_data_warehouse_search_request' is set
-        if ($obpv300_data_warehouse_search_request === null || (is_array($obpv300_data_warehouse_search_request) && count($obpv300_data_warehouse_search_request) === 0)) {
+        // verify the required parameter 'data_warehouse_search_request' is set
+        if ($data_warehouse_search_request === null || (is_array($data_warehouse_search_request) && count($data_warehouse_search_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv300_data_warehouse_search_request when calling oBPv300DataWarehouseStatistics'
+                'Missing the required parameter $data_warehouse_search_request when calling dataWarehouseStatistics'
             );
         }
 
@@ -684,12 +684,12 @@ class DataWarehouseApi
         );
 
         // for model (json/xml)
-        if (isset($obpv300_data_warehouse_search_request)) {
+        if (isset($data_warehouse_search_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv300_data_warehouse_search_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($data_warehouse_search_request));
             } else {
-                $httpBody = $obpv300_data_warehouse_search_request;
+                $httpBody = $data_warehouse_search_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -725,9 +725,9 @@ class DataWarehouseApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

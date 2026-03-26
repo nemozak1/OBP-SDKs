@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -48,10 +48,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="accountaccessrequestid">The ACCOUNTACCESSREQUESTID identifier</param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest">Request body</param>
+        /// <param name="rejectAccountAccessRequestRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600ApproveAccountAccessRequestApiResponse"/>&gt;</returns>
-        Task<IOBPv600ApproveAccountAccessRequestApiResponse> OBPv600ApproveAccountAccessRequestAsync(string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IApproveAccountAccessRequestApiResponse"/>&gt;</returns>
+        Task<IApproveAccountAccessRequestApiResponse> ApproveAccountAccessRequestAsync(string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Approve Account Access Request
@@ -62,10 +62,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="accountaccessrequestid">The ACCOUNTACCESSREQUESTID identifier</param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest">Request body</param>
+        /// <param name="rejectAccountAccessRequestRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600ApproveAccountAccessRequestApiResponse"/>?&gt;</returns>
-        Task<IOBPv600ApproveAccountAccessRequestApiResponse?> OBPv600ApproveAccountAccessRequestOrDefaultAsync(string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IApproveAccountAccessRequestApiResponse"/>?&gt;</returns>
+        Task<IApproveAccountAccessRequestApiResponse?> ApproveAccountAccessRequestOrDefaultAsync(string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Account Access Request
@@ -76,10 +76,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="oBPv600CreateAccountAccessRequestRequest">Request body</param>
+        /// <param name="createAccountAccessRequestRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateAccountAccessRequestApiResponse"/>&gt;</returns>
-        Task<IOBPv600CreateAccountAccessRequestApiResponse> OBPv600CreateAccountAccessRequestAsync(string bankid, string accountid, OBPv600CreateAccountAccessRequestRequest oBPv600CreateAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAccountAccessRequestApiResponse"/>&gt;</returns>
+        Task<ICreateAccountAccessRequestApiResponse> CreateAccountAccessRequestAsync(string bankid, string accountid, CreateAccountAccessRequestRequest createAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Account Access Request
@@ -89,10 +89,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="oBPv600CreateAccountAccessRequestRequest">Request body</param>
+        /// <param name="createAccountAccessRequestRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateAccountAccessRequestApiResponse"/>?&gt;</returns>
-        Task<IOBPv600CreateAccountAccessRequestApiResponse?> OBPv600CreateAccountAccessRequestOrDefaultAsync(string bankid, string accountid, OBPv600CreateAccountAccessRequestRequest oBPv600CreateAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAccountAccessRequestApiResponse"/>?&gt;</returns>
+        Task<ICreateAccountAccessRequestApiResponse?> CreateAccountAccessRequestOrDefaultAsync(string bankid, string accountid, CreateAccountAccessRequestRequest createAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Account Access Request by Id
@@ -105,8 +105,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="accountaccessrequestid">The ACCOUNTACCESSREQUESTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAccountAccessRequestByIdApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetAccountAccessRequestByIdApiResponse> OBPv600GetAccountAccessRequestByIdAsync(string bankid, string accountid, string accountaccessrequestid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountAccessRequestByIdApiResponse"/>&gt;</returns>
+        Task<IGetAccountAccessRequestByIdApiResponse> GetAccountAccessRequestByIdAsync(string bankid, string accountid, string accountaccessrequestid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Account Access Request by Id
@@ -118,8 +118,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="accountaccessrequestid">The ACCOUNTACCESSREQUESTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAccountAccessRequestByIdApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetAccountAccessRequestByIdApiResponse?> OBPv600GetAccountAccessRequestByIdOrDefaultAsync(string bankid, string accountid, string accountaccessrequestid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountAccessRequestByIdApiResponse"/>?&gt;</returns>
+        Task<IGetAccountAccessRequestByIdApiResponse?> GetAccountAccessRequestByIdOrDefaultAsync(string bankid, string accountid, string accountaccessrequestid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Account Access Requests for Account
@@ -131,8 +131,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAccountAccessRequestsForAccountApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetAccountAccessRequestsForAccountApiResponse> OBPv600GetAccountAccessRequestsForAccountAsync(string bankid, string accountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountAccessRequestsForAccountApiResponse"/>&gt;</returns>
+        Task<IGetAccountAccessRequestsForAccountApiResponse> GetAccountAccessRequestsForAccountAsync(string bankid, string accountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Account Access Requests for Account
@@ -143,8 +143,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAccountAccessRequestsForAccountApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetAccountAccessRequestsForAccountApiResponse?> OBPv600GetAccountAccessRequestsForAccountOrDefaultAsync(string bankid, string accountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountAccessRequestsForAccountApiResponse"/>?&gt;</returns>
+        Task<IGetAccountAccessRequestsForAccountApiResponse?> GetAccountAccessRequestsForAccountOrDefaultAsync(string bankid, string accountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get My Account Access Requests
@@ -154,8 +154,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetMyAccountAccessRequestsApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetMyAccountAccessRequestsApiResponse> OBPv600GetMyAccountAccessRequestsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyAccountAccessRequestsApiResponse"/>&gt;</returns>
+        Task<IGetMyAccountAccessRequestsApiResponse> GetMyAccountAccessRequestsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get My Account Access Requests
@@ -164,8 +164,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get Account Access Requests created by the current user (maker view).&lt;/p&gt; &lt;p&gt;No special roles are required — a user can always see their own requests.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_requests&lt;/strong&gt;&lt;/a&gt;: account_access_requests&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetMyAccountAccessRequestsApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetMyAccountAccessRequestsApiResponse?> OBPv600GetMyAccountAccessRequestsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyAccountAccessRequestsApiResponse"/>?&gt;</returns>
+        Task<IGetMyAccountAccessRequestsApiResponse?> GetMyAccountAccessRequestsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Reject Account Access Request
@@ -177,10 +177,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="accountaccessrequestid">The ACCOUNTACCESSREQUESTID identifier</param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest">Request body</param>
+        /// <param name="rejectAccountAccessRequestRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600RejectAccountAccessRequestApiResponse"/>&gt;</returns>
-        Task<IOBPv600RejectAccountAccessRequestApiResponse> OBPv600RejectAccountAccessRequestAsync(string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IRejectAccountAccessRequestApiResponse"/>&gt;</returns>
+        Task<IRejectAccountAccessRequestApiResponse> RejectAccountAccessRequestAsync(string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Reject Account Access Request
@@ -191,16 +191,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="accountaccessrequestid">The ACCOUNTACCESSREQUESTID identifier</param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest">Request body</param>
+        /// <param name="rejectAccountAccessRequestRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600RejectAccountAccessRequestApiResponse"/>?&gt;</returns>
-        Task<IOBPv600RejectAccountAccessRequestApiResponse?> OBPv600RejectAccountAccessRequestOrDefaultAsync(string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IRejectAccountAccessRequestApiResponse"/>?&gt;</returns>
+        Task<IRejectAccountAccessRequestApiResponse?> RejectAccountAccessRequestOrDefaultAsync(string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600ApproveAccountAccessRequestApiResponse"/>
+    /// The <see cref="IApproveAccountAccessRequestApiResponse"/>
     /// </summary>
-    public interface IOBPv600ApproveAccountAccessRequestApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600RejectAccountAccessRequest200Response?>
+    public interface IApproveAccountAccessRequestApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.RejectAccountAccessRequest200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -222,9 +222,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600CreateAccountAccessRequestApiResponse"/>
+    /// The <see cref="ICreateAccountAccessRequestApiResponse"/>
     /// </summary>
-    public interface IOBPv600CreateAccountAccessRequestApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600RejectAccountAccessRequest200Response?>
+    public interface ICreateAccountAccessRequestApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.RejectAccountAccessRequest200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -246,9 +246,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600GetAccountAccessRequestByIdApiResponse"/>
+    /// The <see cref="IGetAccountAccessRequestByIdApiResponse"/>
     /// </summary>
-    public interface IOBPv600GetAccountAccessRequestByIdApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600RejectAccountAccessRequest200Response?>
+    public interface IGetAccountAccessRequestByIdApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.RejectAccountAccessRequest200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -270,9 +270,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600GetAccountAccessRequestsForAccountApiResponse"/>
+    /// The <see cref="IGetAccountAccessRequestsForAccountApiResponse"/>
     /// </summary>
-    public interface IOBPv600GetAccountAccessRequestsForAccountApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetAccountAccessRequestsForAccount200Response?>
+    public interface IGetAccountAccessRequestsForAccountApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAccountAccessRequestsForAccount200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -294,9 +294,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600GetMyAccountAccessRequestsApiResponse"/>
+    /// The <see cref="IGetMyAccountAccessRequestsApiResponse"/>
     /// </summary>
-    public interface IOBPv600GetMyAccountAccessRequestsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetAccountAccessRequestsForAccount200Response?>
+    public interface IGetMyAccountAccessRequestsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAccountAccessRequestsForAccount200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -312,9 +312,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600RejectAccountAccessRequestApiResponse"/>
+    /// The <see cref="IRejectAccountAccessRequestApiResponse"/>
     /// </summary>
-    public interface IOBPv600RejectAccountAccessRequestApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600RejectAccountAccessRequest200Response?>
+    public interface IRejectAccountAccessRequestApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.RejectAccountAccessRequest200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -343,121 +343,121 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600ApproveAccountAccessRequest;
+        public event EventHandler<ApiResponseEventArgs>? OnApproveAccountAccessRequest;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600ApproveAccountAccessRequest;
+        public event EventHandler<ExceptionEventArgs>? OnErrorApproveAccountAccessRequest;
 
-        internal void ExecuteOnOBPv600ApproveAccountAccessRequest(AccountAccessRequestApi.OBPv600ApproveAccountAccessRequestApiResponse apiResponse)
+        internal void ExecuteOnApproveAccountAccessRequest(AccountAccessRequestApi.ApproveAccountAccessRequestApiResponse apiResponse)
         {
-            OnOBPv600ApproveAccountAccessRequest?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnApproveAccountAccessRequest?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600ApproveAccountAccessRequest(Exception exception)
+        internal void ExecuteOnErrorApproveAccountAccessRequest(Exception exception)
         {
-            OnErrorOBPv600ApproveAccountAccessRequest?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorApproveAccountAccessRequest?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600CreateAccountAccessRequest;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateAccountAccessRequest;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600CreateAccountAccessRequest;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateAccountAccessRequest;
 
-        internal void ExecuteOnOBPv600CreateAccountAccessRequest(AccountAccessRequestApi.OBPv600CreateAccountAccessRequestApiResponse apiResponse)
+        internal void ExecuteOnCreateAccountAccessRequest(AccountAccessRequestApi.CreateAccountAccessRequestApiResponse apiResponse)
         {
-            OnOBPv600CreateAccountAccessRequest?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateAccountAccessRequest?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600CreateAccountAccessRequest(Exception exception)
+        internal void ExecuteOnErrorCreateAccountAccessRequest(Exception exception)
         {
-            OnErrorOBPv600CreateAccountAccessRequest?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateAccountAccessRequest?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetAccountAccessRequestById;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAccountAccessRequestById;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetAccountAccessRequestById;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAccountAccessRequestById;
 
-        internal void ExecuteOnOBPv600GetAccountAccessRequestById(AccountAccessRequestApi.OBPv600GetAccountAccessRequestByIdApiResponse apiResponse)
+        internal void ExecuteOnGetAccountAccessRequestById(AccountAccessRequestApi.GetAccountAccessRequestByIdApiResponse apiResponse)
         {
-            OnOBPv600GetAccountAccessRequestById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAccountAccessRequestById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetAccountAccessRequestById(Exception exception)
+        internal void ExecuteOnErrorGetAccountAccessRequestById(Exception exception)
         {
-            OnErrorOBPv600GetAccountAccessRequestById?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAccountAccessRequestById?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetAccountAccessRequestsForAccount;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAccountAccessRequestsForAccount;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetAccountAccessRequestsForAccount;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAccountAccessRequestsForAccount;
 
-        internal void ExecuteOnOBPv600GetAccountAccessRequestsForAccount(AccountAccessRequestApi.OBPv600GetAccountAccessRequestsForAccountApiResponse apiResponse)
+        internal void ExecuteOnGetAccountAccessRequestsForAccount(AccountAccessRequestApi.GetAccountAccessRequestsForAccountApiResponse apiResponse)
         {
-            OnOBPv600GetAccountAccessRequestsForAccount?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAccountAccessRequestsForAccount?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetAccountAccessRequestsForAccount(Exception exception)
+        internal void ExecuteOnErrorGetAccountAccessRequestsForAccount(Exception exception)
         {
-            OnErrorOBPv600GetAccountAccessRequestsForAccount?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAccountAccessRequestsForAccount?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetMyAccountAccessRequests;
+        public event EventHandler<ApiResponseEventArgs>? OnGetMyAccountAccessRequests;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetMyAccountAccessRequests;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetMyAccountAccessRequests;
 
-        internal void ExecuteOnOBPv600GetMyAccountAccessRequests(AccountAccessRequestApi.OBPv600GetMyAccountAccessRequestsApiResponse apiResponse)
+        internal void ExecuteOnGetMyAccountAccessRequests(AccountAccessRequestApi.GetMyAccountAccessRequestsApiResponse apiResponse)
         {
-            OnOBPv600GetMyAccountAccessRequests?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetMyAccountAccessRequests?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetMyAccountAccessRequests(Exception exception)
+        internal void ExecuteOnErrorGetMyAccountAccessRequests(Exception exception)
         {
-            OnErrorOBPv600GetMyAccountAccessRequests?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetMyAccountAccessRequests?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600RejectAccountAccessRequest;
+        public event EventHandler<ApiResponseEventArgs>? OnRejectAccountAccessRequest;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600RejectAccountAccessRequest;
+        public event EventHandler<ExceptionEventArgs>? OnErrorRejectAccountAccessRequest;
 
-        internal void ExecuteOnOBPv600RejectAccountAccessRequest(AccountAccessRequestApi.OBPv600RejectAccountAccessRequestApiResponse apiResponse)
+        internal void ExecuteOnRejectAccountAccessRequest(AccountAccessRequestApi.RejectAccountAccessRequestApiResponse apiResponse)
         {
-            OnOBPv600RejectAccountAccessRequest?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnRejectAccountAccessRequest?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600RejectAccountAccessRequest(Exception exception)
+        internal void ExecuteOnErrorRejectAccountAccessRequest(Exception exception)
         {
-            OnErrorOBPv600RejectAccountAccessRequest?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorRejectAccountAccessRequest?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -515,7 +515,7 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv600ApproveAccountAccessRequest(ref string bankid, ref string accountid, ref string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest);
+        partial void FormatApproveAccountAccessRequest(ref string bankid, ref string accountid, ref string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -523,9 +523,9 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="accountaccessrequestid"></param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest"></param>
+        /// <param name="rejectAccountAccessRequestRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600ApproveAccountAccessRequest(string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest)
+        private void ValidateApproveAccountAccessRequest(string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -536,8 +536,8 @@ namespace OpenBankProject.Api
             if (accountaccessrequestid == null)
                 throw new ArgumentNullException(nameof(accountaccessrequestid));
 
-            if (oBPv600RejectAccountAccessRequestRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600RejectAccountAccessRequestRequest));
+            if (rejectAccountAccessRequestRequest == null)
+                throw new ArgumentNullException(nameof(rejectAccountAccessRequestRequest));
         }
 
         /// <summary>
@@ -547,11 +547,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="accountaccessrequestid"></param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest"></param>
-        private void AfterOBPv600ApproveAccountAccessRequestDefaultImplementation(IOBPv600ApproveAccountAccessRequestApiResponse apiResponseLocalVar, string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest)
+        /// <param name="rejectAccountAccessRequestRequest"></param>
+        private void AfterApproveAccountAccessRequestDefaultImplementation(IApproveAccountAccessRequestApiResponse apiResponseLocalVar, string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600ApproveAccountAccessRequest(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest);
+            AfterApproveAccountAccessRequest(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -564,8 +564,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="accountaccessrequestid"></param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest"></param>
-        partial void AfterOBPv600ApproveAccountAccessRequest(ref bool suppressDefaultLog, IOBPv600ApproveAccountAccessRequestApiResponse apiResponseLocalVar, string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest);
+        /// <param name="rejectAccountAccessRequestRequest"></param>
+        partial void AfterApproveAccountAccessRequest(ref bool suppressDefaultLog, IApproveAccountAccessRequestApiResponse apiResponseLocalVar, string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -576,11 +576,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="accountaccessrequestid"></param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest"></param>
-        private void OnErrorOBPv600ApproveAccountAccessRequestDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest)
+        /// <param name="rejectAccountAccessRequestRequest"></param>
+        private void OnErrorApproveAccountAccessRequestDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600ApproveAccountAccessRequest(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest);
+            OnErrorApproveAccountAccessRequest(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -595,8 +595,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="accountaccessrequestid"></param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest"></param>
-        partial void OnErrorOBPv600ApproveAccountAccessRequest(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest);
+        /// <param name="rejectAccountAccessRequestRequest"></param>
+        partial void OnErrorApproveAccountAccessRequest(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest);
 
         /// <summary>
         /// Approve Account Access Request &lt;p&gt;Approve an Account Access Request (checker step in maker/checker workflow).&lt;/p&gt; &lt;p&gt;The checker must be a different user than the maker (requestor). This enforces dual control / maker-checker separation.&lt;/p&gt; &lt;p&gt;Only requests with status INITIATED can be approved.&lt;/p&gt; &lt;p&gt;On approval, the system automatically grants the target user access to the specified view.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ACCOUNT_ACCESS_REQUEST_ID&lt;/a&gt;: ACCOUNT_ACCESS_REQUEST_ID&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;comment&lt;/a&gt;: comment&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
@@ -604,14 +604,14 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="accountaccessrequestid">The ACCOUNTACCESSREQUESTID identifier</param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest">Request body</param>
+        /// <param name="rejectAccountAccessRequestRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600ApproveAccountAccessRequestApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600ApproveAccountAccessRequestApiResponse?> OBPv600ApproveAccountAccessRequestOrDefaultAsync(string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IApproveAccountAccessRequestApiResponse"/>&gt;</returns>
+        public async Task<IApproveAccountAccessRequestApiResponse?> ApproveAccountAccessRequestOrDefaultAsync(string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600ApproveAccountAccessRequestAsync(bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest, cancellationToken).ConfigureAwait(false);
+                return await ApproveAccountAccessRequestAsync(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -626,18 +626,18 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="accountaccessrequestid">The ACCOUNTACCESSREQUESTID identifier</param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest">Request body</param>
+        /// <param name="rejectAccountAccessRequestRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600ApproveAccountAccessRequestApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600ApproveAccountAccessRequestApiResponse> OBPv600ApproveAccountAccessRequestAsync(string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IApproveAccountAccessRequestApiResponse"/>&gt;</returns>
+        public async Task<IApproveAccountAccessRequestApiResponse> ApproveAccountAccessRequestAsync(string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600ApproveAccountAccessRequest(bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest);
+                ValidateApproveAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest);
 
-                FormatOBPv600ApproveAccountAccessRequest(ref bankid, ref accountid, ref accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest);
+                FormatApproveAccountAccessRequest(ref bankid, ref accountid, ref accountaccessrequestid, rejectAccountAccessRequestRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -651,16 +651,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountaccessrequestid%7D", Uri.EscapeDataString(accountaccessrequestid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600RejectAccountAccessRequestRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (rejectAccountAccessRequestRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600RejectAccountAccessRequestRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(rejectAccountAccessRequestRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -696,8 +696,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600ApproveAccountAccessRequestApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600ApproveAccountAccessRequestApiResponse>();
-                        OBPv600ApproveAccountAccessRequestApiResponse apiResponseLocalVar;
+                        ILogger<ApproveAccountAccessRequestApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ApproveAccountAccessRequestApiResponse>();
+                        ApproveAccountAccessRequestApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -708,9 +708,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600ApproveAccountAccessRequestDefaultImplementation(apiResponseLocalVar, bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest);
+                        AfterApproveAccountAccessRequestDefaultImplementation(apiResponseLocalVar, bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest);
 
-                        Events.ExecuteOnOBPv600ApproveAccountAccessRequest(apiResponseLocalVar);
+                        Events.ExecuteOnApproveAccountAccessRequest(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -722,24 +722,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600ApproveAccountAccessRequestDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval", uriBuilderLocalVar.Path, bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest);
-                Events.ExecuteOnErrorOBPv600ApproveAccountAccessRequest(e);
+                OnErrorApproveAccountAccessRequestDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval", uriBuilderLocalVar.Path, bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest);
+                Events.ExecuteOnErrorApproveAccountAccessRequest(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600ApproveAccountAccessRequestApiResponse"/>
+        /// The <see cref="ApproveAccountAccessRequestApiResponse"/>
         /// </summary>
-        public partial class OBPv600ApproveAccountAccessRequestApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600ApproveAccountAccessRequestApiResponse
+        public partial class ApproveAccountAccessRequestApiResponse : OpenBankProject.Client.ApiResponse, IApproveAccountAccessRequestApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600ApproveAccountAccessRequestApiResponse> Logger { get; }
+            public ILogger<ApproveAccountAccessRequestApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600ApproveAccountAccessRequestApiResponse"/>
+            /// The <see cref="ApproveAccountAccessRequestApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -748,14 +748,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600ApproveAccountAccessRequestApiResponse(ILogger<OBPv600ApproveAccountAccessRequestApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public ApproveAccountAccessRequestApiResponse(ILogger<ApproveAccountAccessRequestApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600ApproveAccountAccessRequestApiResponse"/>
+            /// The <see cref="ApproveAccountAccessRequestApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -764,7 +764,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600ApproveAccountAccessRequestApiResponse(ILogger<OBPv600ApproveAccountAccessRequestApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public ApproveAccountAccessRequestApiResponse(ILogger<ApproveAccountAccessRequestApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -782,11 +782,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600RejectAccountAccessRequest200Response? Ok()
+            public OpenBankProject.Model.RejectAccountAccessRequest200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600RejectAccountAccessRequest200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.RejectAccountAccessRequest200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -795,7 +795,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600RejectAccountAccessRequest200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.RejectAccountAccessRequest200Response? result)
             {
                 result = null;
 
@@ -833,16 +833,16 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600CreateAccountAccessRequest(ref string bankid, ref string accountid, OBPv600CreateAccountAccessRequestRequest oBPv600CreateAccountAccessRequestRequest);
+        partial void FormatCreateAccountAccessRequest(ref string bankid, ref string accountid, CreateAccountAccessRequestRequest createAccountAccessRequestRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv600CreateAccountAccessRequestRequest"></param>
+        /// <param name="createAccountAccessRequestRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600CreateAccountAccessRequest(string bankid, string accountid, OBPv600CreateAccountAccessRequestRequest oBPv600CreateAccountAccessRequestRequest)
+        private void ValidateCreateAccountAccessRequest(string bankid, string accountid, CreateAccountAccessRequestRequest createAccountAccessRequestRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -850,8 +850,8 @@ namespace OpenBankProject.Api
             if (accountid == null)
                 throw new ArgumentNullException(nameof(accountid));
 
-            if (oBPv600CreateAccountAccessRequestRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600CreateAccountAccessRequestRequest));
+            if (createAccountAccessRequestRequest == null)
+                throw new ArgumentNullException(nameof(createAccountAccessRequestRequest));
         }
 
         /// <summary>
@@ -860,11 +860,11 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv600CreateAccountAccessRequestRequest"></param>
-        private void AfterOBPv600CreateAccountAccessRequestDefaultImplementation(IOBPv600CreateAccountAccessRequestApiResponse apiResponseLocalVar, string bankid, string accountid, OBPv600CreateAccountAccessRequestRequest oBPv600CreateAccountAccessRequestRequest)
+        /// <param name="createAccountAccessRequestRequest"></param>
+        private void AfterCreateAccountAccessRequestDefaultImplementation(ICreateAccountAccessRequestApiResponse apiResponseLocalVar, string bankid, string accountid, CreateAccountAccessRequestRequest createAccountAccessRequestRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600CreateAccountAccessRequest(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, oBPv600CreateAccountAccessRequestRequest);
+            AfterCreateAccountAccessRequest(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, createAccountAccessRequestRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -876,8 +876,8 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv600CreateAccountAccessRequestRequest"></param>
-        partial void AfterOBPv600CreateAccountAccessRequest(ref bool suppressDefaultLog, IOBPv600CreateAccountAccessRequestApiResponse apiResponseLocalVar, string bankid, string accountid, OBPv600CreateAccountAccessRequestRequest oBPv600CreateAccountAccessRequestRequest);
+        /// <param name="createAccountAccessRequestRequest"></param>
+        partial void AfterCreateAccountAccessRequest(ref bool suppressDefaultLog, ICreateAccountAccessRequestApiResponse apiResponseLocalVar, string bankid, string accountid, CreateAccountAccessRequestRequest createAccountAccessRequestRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -887,11 +887,11 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv600CreateAccountAccessRequestRequest"></param>
-        private void OnErrorOBPv600CreateAccountAccessRequestDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, OBPv600CreateAccountAccessRequestRequest oBPv600CreateAccountAccessRequestRequest)
+        /// <param name="createAccountAccessRequestRequest"></param>
+        private void OnErrorCreateAccountAccessRequestDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, CreateAccountAccessRequestRequest createAccountAccessRequestRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600CreateAccountAccessRequest(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, oBPv600CreateAccountAccessRequestRequest);
+            OnErrorCreateAccountAccessRequest(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, createAccountAccessRequestRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -905,22 +905,22 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv600CreateAccountAccessRequestRequest"></param>
-        partial void OnErrorOBPv600CreateAccountAccessRequest(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, OBPv600CreateAccountAccessRequestRequest oBPv600CreateAccountAccessRequestRequest);
+        /// <param name="createAccountAccessRequestRequest"></param>
+        partial void OnErrorCreateAccountAccessRequest(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, CreateAccountAccessRequestRequest createAccountAccessRequestRequest);
 
         /// <summary>
         /// Create Account Access Request &lt;p&gt;Create a new Account Access Request (maker step in maker/checker workflow).&lt;/p&gt; &lt;p&gt;The requestor (maker) creates a request to grant a target user access to a specific view on an account.&lt;br /&gt; A business justification is required.&lt;/p&gt; &lt;p&gt;The request is created with status INITIATED and must be approved or rejected by a different user (checker).&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="oBPv600CreateAccountAccessRequestRequest">Request body</param>
+        /// <param name="createAccountAccessRequestRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateAccountAccessRequestApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateAccountAccessRequestApiResponse?> OBPv600CreateAccountAccessRequestOrDefaultAsync(string bankid, string accountid, OBPv600CreateAccountAccessRequestRequest oBPv600CreateAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAccountAccessRequestApiResponse"/>&gt;</returns>
+        public async Task<ICreateAccountAccessRequestApiResponse?> CreateAccountAccessRequestOrDefaultAsync(string bankid, string accountid, CreateAccountAccessRequestRequest createAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600CreateAccountAccessRequestAsync(bankid, accountid, oBPv600CreateAccountAccessRequestRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateAccountAccessRequestAsync(bankid, accountid, createAccountAccessRequestRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -934,18 +934,18 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="oBPv600CreateAccountAccessRequestRequest">Request body</param>
+        /// <param name="createAccountAccessRequestRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateAccountAccessRequestApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateAccountAccessRequestApiResponse> OBPv600CreateAccountAccessRequestAsync(string bankid, string accountid, OBPv600CreateAccountAccessRequestRequest oBPv600CreateAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAccountAccessRequestApiResponse"/>&gt;</returns>
+        public async Task<ICreateAccountAccessRequestApiResponse> CreateAccountAccessRequestAsync(string bankid, string accountid, CreateAccountAccessRequestRequest createAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600CreateAccountAccessRequest(bankid, accountid, oBPv600CreateAccountAccessRequestRequest);
+                ValidateCreateAccountAccessRequest(bankid, accountid, createAccountAccessRequestRequest);
 
-                FormatOBPv600CreateAccountAccessRequest(ref bankid, ref accountid, oBPv600CreateAccountAccessRequestRequest);
+                FormatCreateAccountAccessRequest(ref bankid, ref accountid, createAccountAccessRequestRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -958,16 +958,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600CreateAccountAccessRequestRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createAccountAccessRequestRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600CreateAccountAccessRequestRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createAccountAccessRequestRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1003,8 +1003,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600CreateAccountAccessRequestApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600CreateAccountAccessRequestApiResponse>();
-                        OBPv600CreateAccountAccessRequestApiResponse apiResponseLocalVar;
+                        ILogger<CreateAccountAccessRequestApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateAccountAccessRequestApiResponse>();
+                        CreateAccountAccessRequestApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1015,9 +1015,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600CreateAccountAccessRequestDefaultImplementation(apiResponseLocalVar, bankid, accountid, oBPv600CreateAccountAccessRequestRequest);
+                        AfterCreateAccountAccessRequestDefaultImplementation(apiResponseLocalVar, bankid, accountid, createAccountAccessRequestRequest);
 
-                        Events.ExecuteOnOBPv600CreateAccountAccessRequest(apiResponseLocalVar);
+                        Events.ExecuteOnCreateAccountAccessRequest(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1029,24 +1029,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600CreateAccountAccessRequestDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests", uriBuilderLocalVar.Path, bankid, accountid, oBPv600CreateAccountAccessRequestRequest);
-                Events.ExecuteOnErrorOBPv600CreateAccountAccessRequest(e);
+                OnErrorCreateAccountAccessRequestDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests", uriBuilderLocalVar.Path, bankid, accountid, createAccountAccessRequestRequest);
+                Events.ExecuteOnErrorCreateAccountAccessRequest(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600CreateAccountAccessRequestApiResponse"/>
+        /// The <see cref="CreateAccountAccessRequestApiResponse"/>
         /// </summary>
-        public partial class OBPv600CreateAccountAccessRequestApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600CreateAccountAccessRequestApiResponse
+        public partial class CreateAccountAccessRequestApiResponse : OpenBankProject.Client.ApiResponse, ICreateAccountAccessRequestApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600CreateAccountAccessRequestApiResponse> Logger { get; }
+            public ILogger<CreateAccountAccessRequestApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600CreateAccountAccessRequestApiResponse"/>
+            /// The <see cref="CreateAccountAccessRequestApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1055,14 +1055,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600CreateAccountAccessRequestApiResponse(ILogger<OBPv600CreateAccountAccessRequestApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateAccountAccessRequestApiResponse(ILogger<CreateAccountAccessRequestApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600CreateAccountAccessRequestApiResponse"/>
+            /// The <see cref="CreateAccountAccessRequestApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1071,7 +1071,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600CreateAccountAccessRequestApiResponse(ILogger<OBPv600CreateAccountAccessRequestApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateAccountAccessRequestApiResponse(ILogger<CreateAccountAccessRequestApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1089,11 +1089,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600RejectAccountAccessRequest200Response? Ok()
+            public OpenBankProject.Model.RejectAccountAccessRequest200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600RejectAccountAccessRequest200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.RejectAccountAccessRequest200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1102,7 +1102,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600RejectAccountAccessRequest200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.RejectAccountAccessRequest200Response? result)
             {
                 result = null;
 
@@ -1140,7 +1140,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600GetAccountAccessRequestById(ref string bankid, ref string accountid, ref string accountaccessrequestid);
+        partial void FormatGetAccountAccessRequestById(ref string bankid, ref string accountid, ref string accountaccessrequestid);
 
         /// <summary>
         /// Validates the request parameters
@@ -1149,7 +1149,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="accountaccessrequestid"></param>
         /// <returns></returns>
-        private void ValidateOBPv600GetAccountAccessRequestById(string bankid, string accountid, string accountaccessrequestid)
+        private void ValidateGetAccountAccessRequestById(string bankid, string accountid, string accountaccessrequestid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1168,10 +1168,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="accountaccessrequestid"></param>
-        private void AfterOBPv600GetAccountAccessRequestByIdDefaultImplementation(IOBPv600GetAccountAccessRequestByIdApiResponse apiResponseLocalVar, string bankid, string accountid, string accountaccessrequestid)
+        private void AfterGetAccountAccessRequestByIdDefaultImplementation(IGetAccountAccessRequestByIdApiResponse apiResponseLocalVar, string bankid, string accountid, string accountaccessrequestid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetAccountAccessRequestById(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, accountaccessrequestid);
+            AfterGetAccountAccessRequestById(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, accountaccessrequestid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1184,7 +1184,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="accountaccessrequestid"></param>
-        partial void AfterOBPv600GetAccountAccessRequestById(ref bool suppressDefaultLog, IOBPv600GetAccountAccessRequestByIdApiResponse apiResponseLocalVar, string bankid, string accountid, string accountaccessrequestid);
+        partial void AfterGetAccountAccessRequestById(ref bool suppressDefaultLog, IGetAccountAccessRequestByIdApiResponse apiResponseLocalVar, string bankid, string accountid, string accountaccessrequestid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1195,10 +1195,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="accountaccessrequestid"></param>
-        private void OnErrorOBPv600GetAccountAccessRequestByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string accountaccessrequestid)
+        private void OnErrorGetAccountAccessRequestByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string accountaccessrequestid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetAccountAccessRequestById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, accountaccessrequestid);
+            OnErrorGetAccountAccessRequestById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, accountaccessrequestid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1213,7 +1213,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="accountaccessrequestid"></param>
-        partial void OnErrorOBPv600GetAccountAccessRequestById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string accountaccessrequestid);
+        partial void OnErrorGetAccountAccessRequestById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string accountaccessrequestid);
 
         /// <summary>
         /// Get Account Access Request by Id &lt;p&gt;Get a single Account Access Request by its ID.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ACCOUNT_ACCESS_REQUEST_ID&lt;/a&gt;: ACCOUNT_ACCESS_REQUEST_ID&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
@@ -1222,12 +1222,12 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="accountaccessrequestid">The ACCOUNTACCESSREQUESTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAccountAccessRequestByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAccountAccessRequestByIdApiResponse?> OBPv600GetAccountAccessRequestByIdOrDefaultAsync(string bankid, string accountid, string accountaccessrequestid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountAccessRequestByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetAccountAccessRequestByIdApiResponse?> GetAccountAccessRequestByIdOrDefaultAsync(string bankid, string accountid, string accountaccessrequestid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetAccountAccessRequestByIdAsync(bankid, accountid, accountaccessrequestid, cancellationToken).ConfigureAwait(false);
+                return await GetAccountAccessRequestByIdAsync(bankid, accountid, accountaccessrequestid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1243,16 +1243,16 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="accountaccessrequestid">The ACCOUNTACCESSREQUESTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAccountAccessRequestByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAccountAccessRequestByIdApiResponse> OBPv600GetAccountAccessRequestByIdAsync(string bankid, string accountid, string accountaccessrequestid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountAccessRequestByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetAccountAccessRequestByIdApiResponse> GetAccountAccessRequestByIdAsync(string bankid, string accountid, string accountaccessrequestid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600GetAccountAccessRequestById(bankid, accountid, accountaccessrequestid);
+                ValidateGetAccountAccessRequestById(bankid, accountid, accountaccessrequestid);
 
-                FormatOBPv600GetAccountAccessRequestById(ref bankid, ref accountid, ref accountaccessrequestid);
+                FormatGetAccountAccessRequestById(ref bankid, ref accountid, ref accountaccessrequestid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1271,7 +1271,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1298,8 +1298,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600GetAccountAccessRequestByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600GetAccountAccessRequestByIdApiResponse>();
-                        OBPv600GetAccountAccessRequestByIdApiResponse apiResponseLocalVar;
+                        ILogger<GetAccountAccessRequestByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAccountAccessRequestByIdApiResponse>();
+                        GetAccountAccessRequestByIdApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1310,9 +1310,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetAccountAccessRequestByIdDefaultImplementation(apiResponseLocalVar, bankid, accountid, accountaccessrequestid);
+                        AfterGetAccountAccessRequestByIdDefaultImplementation(apiResponseLocalVar, bankid, accountid, accountaccessrequestid);
 
-                        Events.ExecuteOnOBPv600GetAccountAccessRequestById(apiResponseLocalVar);
+                        Events.ExecuteOnGetAccountAccessRequestById(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1324,24 +1324,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetAccountAccessRequestByIdDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}", uriBuilderLocalVar.Path, bankid, accountid, accountaccessrequestid);
-                Events.ExecuteOnErrorOBPv600GetAccountAccessRequestById(e);
+                OnErrorGetAccountAccessRequestByIdDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}", uriBuilderLocalVar.Path, bankid, accountid, accountaccessrequestid);
+                Events.ExecuteOnErrorGetAccountAccessRequestById(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600GetAccountAccessRequestByIdApiResponse"/>
+        /// The <see cref="GetAccountAccessRequestByIdApiResponse"/>
         /// </summary>
-        public partial class OBPv600GetAccountAccessRequestByIdApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600GetAccountAccessRequestByIdApiResponse
+        public partial class GetAccountAccessRequestByIdApiResponse : OpenBankProject.Client.ApiResponse, IGetAccountAccessRequestByIdApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600GetAccountAccessRequestByIdApiResponse> Logger { get; }
+            public ILogger<GetAccountAccessRequestByIdApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600GetAccountAccessRequestByIdApiResponse"/>
+            /// The <see cref="GetAccountAccessRequestByIdApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1350,14 +1350,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetAccountAccessRequestByIdApiResponse(ILogger<OBPv600GetAccountAccessRequestByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetAccountAccessRequestByIdApiResponse(ILogger<GetAccountAccessRequestByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600GetAccountAccessRequestByIdApiResponse"/>
+            /// The <see cref="GetAccountAccessRequestByIdApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1366,7 +1366,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetAccountAccessRequestByIdApiResponse(ILogger<OBPv600GetAccountAccessRequestByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetAccountAccessRequestByIdApiResponse(ILogger<GetAccountAccessRequestByIdApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1384,11 +1384,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600RejectAccountAccessRequest200Response? Ok()
+            public OpenBankProject.Model.RejectAccountAccessRequest200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600RejectAccountAccessRequest200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.RejectAccountAccessRequest200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1397,7 +1397,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600RejectAccountAccessRequest200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.RejectAccountAccessRequest200Response? result)
             {
                 result = null;
 
@@ -1435,7 +1435,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600GetAccountAccessRequestsForAccount(ref string bankid, ref string accountid);
+        partial void FormatGetAccountAccessRequestsForAccount(ref string bankid, ref string accountid);
 
         /// <summary>
         /// Validates the request parameters
@@ -1443,7 +1443,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <returns></returns>
-        private void ValidateOBPv600GetAccountAccessRequestsForAccount(string bankid, string accountid)
+        private void ValidateGetAccountAccessRequestsForAccount(string bankid, string accountid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1458,10 +1458,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        private void AfterOBPv600GetAccountAccessRequestsForAccountDefaultImplementation(IOBPv600GetAccountAccessRequestsForAccountApiResponse apiResponseLocalVar, string bankid, string accountid)
+        private void AfterGetAccountAccessRequestsForAccountDefaultImplementation(IGetAccountAccessRequestsForAccountApiResponse apiResponseLocalVar, string bankid, string accountid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetAccountAccessRequestsForAccount(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid);
+            AfterGetAccountAccessRequestsForAccount(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1473,7 +1473,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        partial void AfterOBPv600GetAccountAccessRequestsForAccount(ref bool suppressDefaultLog, IOBPv600GetAccountAccessRequestsForAccountApiResponse apiResponseLocalVar, string bankid, string accountid);
+        partial void AfterGetAccountAccessRequestsForAccount(ref bool suppressDefaultLog, IGetAccountAccessRequestsForAccountApiResponse apiResponseLocalVar, string bankid, string accountid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1483,10 +1483,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        private void OnErrorOBPv600GetAccountAccessRequestsForAccountDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid)
+        private void OnErrorGetAccountAccessRequestsForAccountDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetAccountAccessRequestsForAccount(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid);
+            OnErrorGetAccountAccessRequestsForAccount(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1500,7 +1500,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        partial void OnErrorOBPv600GetAccountAccessRequestsForAccount(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid);
+        partial void OnErrorGetAccountAccessRequestsForAccount(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid);
 
         /// <summary>
         /// Get Account Access Requests for Account &lt;p&gt;Get Account Access Requests for a specific account (checker view).&lt;/p&gt; &lt;p&gt;Optionally filter by status using the query parameter: ?status&#x3D;INITIATED&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_requests&lt;/strong&gt;&lt;/a&gt;: account_access_requests&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
@@ -1508,12 +1508,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAccountAccessRequestsForAccountApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAccountAccessRequestsForAccountApiResponse?> OBPv600GetAccountAccessRequestsForAccountOrDefaultAsync(string bankid, string accountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountAccessRequestsForAccountApiResponse"/>&gt;</returns>
+        public async Task<IGetAccountAccessRequestsForAccountApiResponse?> GetAccountAccessRequestsForAccountOrDefaultAsync(string bankid, string accountid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetAccountAccessRequestsForAccountAsync(bankid, accountid, cancellationToken).ConfigureAwait(false);
+                return await GetAccountAccessRequestsForAccountAsync(bankid, accountid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1528,16 +1528,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAccountAccessRequestsForAccountApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAccountAccessRequestsForAccountApiResponse> OBPv600GetAccountAccessRequestsForAccountAsync(string bankid, string accountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountAccessRequestsForAccountApiResponse"/>&gt;</returns>
+        public async Task<IGetAccountAccessRequestsForAccountApiResponse> GetAccountAccessRequestsForAccountAsync(string bankid, string accountid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600GetAccountAccessRequestsForAccount(bankid, accountid);
+                ValidateGetAccountAccessRequestsForAccount(bankid, accountid);
 
-                FormatOBPv600GetAccountAccessRequestsForAccount(ref bankid, ref accountid);
+                FormatGetAccountAccessRequestsForAccount(ref bankid, ref accountid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1555,7 +1555,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1582,8 +1582,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600GetAccountAccessRequestsForAccountApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600GetAccountAccessRequestsForAccountApiResponse>();
-                        OBPv600GetAccountAccessRequestsForAccountApiResponse apiResponseLocalVar;
+                        ILogger<GetAccountAccessRequestsForAccountApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAccountAccessRequestsForAccountApiResponse>();
+                        GetAccountAccessRequestsForAccountApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1594,9 +1594,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetAccountAccessRequestsForAccountDefaultImplementation(apiResponseLocalVar, bankid, accountid);
+                        AfterGetAccountAccessRequestsForAccountDefaultImplementation(apiResponseLocalVar, bankid, accountid);
 
-                        Events.ExecuteOnOBPv600GetAccountAccessRequestsForAccount(apiResponseLocalVar);
+                        Events.ExecuteOnGetAccountAccessRequestsForAccount(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1608,24 +1608,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetAccountAccessRequestsForAccountDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests", uriBuilderLocalVar.Path, bankid, accountid);
-                Events.ExecuteOnErrorOBPv600GetAccountAccessRequestsForAccount(e);
+                OnErrorGetAccountAccessRequestsForAccountDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests", uriBuilderLocalVar.Path, bankid, accountid);
+                Events.ExecuteOnErrorGetAccountAccessRequestsForAccount(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600GetAccountAccessRequestsForAccountApiResponse"/>
+        /// The <see cref="GetAccountAccessRequestsForAccountApiResponse"/>
         /// </summary>
-        public partial class OBPv600GetAccountAccessRequestsForAccountApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600GetAccountAccessRequestsForAccountApiResponse
+        public partial class GetAccountAccessRequestsForAccountApiResponse : OpenBankProject.Client.ApiResponse, IGetAccountAccessRequestsForAccountApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600GetAccountAccessRequestsForAccountApiResponse> Logger { get; }
+            public ILogger<GetAccountAccessRequestsForAccountApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600GetAccountAccessRequestsForAccountApiResponse"/>
+            /// The <see cref="GetAccountAccessRequestsForAccountApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1634,14 +1634,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetAccountAccessRequestsForAccountApiResponse(ILogger<OBPv600GetAccountAccessRequestsForAccountApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetAccountAccessRequestsForAccountApiResponse(ILogger<GetAccountAccessRequestsForAccountApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600GetAccountAccessRequestsForAccountApiResponse"/>
+            /// The <see cref="GetAccountAccessRequestsForAccountApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1650,7 +1650,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetAccountAccessRequestsForAccountApiResponse(ILogger<OBPv600GetAccountAccessRequestsForAccountApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetAccountAccessRequestsForAccountApiResponse(ILogger<GetAccountAccessRequestsForAccountApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1668,11 +1668,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetAccountAccessRequestsForAccount200Response? Ok()
+            public OpenBankProject.Model.GetAccountAccessRequestsForAccount200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetAccountAccessRequestsForAccount200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAccountAccessRequestsForAccount200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1681,7 +1681,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetAccountAccessRequestsForAccount200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAccountAccessRequestsForAccount200Response? result)
             {
                 result = null;
 
@@ -1723,10 +1723,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetMyAccountAccessRequestsDefaultImplementation(IOBPv600GetMyAccountAccessRequestsApiResponse apiResponseLocalVar)
+        private void AfterGetMyAccountAccessRequestsDefaultImplementation(IGetMyAccountAccessRequestsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetMyAccountAccessRequests(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetMyAccountAccessRequests(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1736,7 +1736,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetMyAccountAccessRequests(ref bool suppressDefaultLog, IOBPv600GetMyAccountAccessRequestsApiResponse apiResponseLocalVar);
+        partial void AfterGetMyAccountAccessRequests(ref bool suppressDefaultLog, IGetMyAccountAccessRequestsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1744,10 +1744,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetMyAccountAccessRequestsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetMyAccountAccessRequestsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetMyAccountAccessRequests(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetMyAccountAccessRequests(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1759,18 +1759,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetMyAccountAccessRequests(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetMyAccountAccessRequests(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get My Account Access Requests &lt;p&gt;Get Account Access Requests created by the current user (maker view).&lt;/p&gt; &lt;p&gt;No special roles are required — a user can always see their own requests.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_requests&lt;/strong&gt;&lt;/a&gt;: account_access_requests&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetMyAccountAccessRequestsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetMyAccountAccessRequestsApiResponse?> OBPv600GetMyAccountAccessRequestsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyAccountAccessRequestsApiResponse"/>&gt;</returns>
+        public async Task<IGetMyAccountAccessRequestsApiResponse?> GetMyAccountAccessRequestsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetMyAccountAccessRequestsAsync(cancellationToken).ConfigureAwait(false);
+                return await GetMyAccountAccessRequestsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1783,8 +1783,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetMyAccountAccessRequestsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetMyAccountAccessRequestsApiResponse> OBPv600GetMyAccountAccessRequestsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyAccountAccessRequestsApiResponse"/>&gt;</returns>
+        public async Task<IGetMyAccountAccessRequestsApiResponse> GetMyAccountAccessRequestsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -1804,7 +1804,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1831,8 +1831,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600GetMyAccountAccessRequestsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600GetMyAccountAccessRequestsApiResponse>();
-                        OBPv600GetMyAccountAccessRequestsApiResponse apiResponseLocalVar;
+                        ILogger<GetMyAccountAccessRequestsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetMyAccountAccessRequestsApiResponse>();
+                        GetMyAccountAccessRequestsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1843,9 +1843,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetMyAccountAccessRequestsDefaultImplementation(apiResponseLocalVar);
+                        AfterGetMyAccountAccessRequestsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv600GetMyAccountAccessRequests(apiResponseLocalVar);
+                        Events.ExecuteOnGetMyAccountAccessRequests(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1857,24 +1857,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetMyAccountAccessRequestsDefaultImplementation(e, "/obp/v6.0.0/my/account-access-requests", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetMyAccountAccessRequests(e);
+                OnErrorGetMyAccountAccessRequestsDefaultImplementation(e, "/obp/v6.0.0/my/account-access-requests", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetMyAccountAccessRequests(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600GetMyAccountAccessRequestsApiResponse"/>
+        /// The <see cref="GetMyAccountAccessRequestsApiResponse"/>
         /// </summary>
-        public partial class OBPv600GetMyAccountAccessRequestsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600GetMyAccountAccessRequestsApiResponse
+        public partial class GetMyAccountAccessRequestsApiResponse : OpenBankProject.Client.ApiResponse, IGetMyAccountAccessRequestsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600GetMyAccountAccessRequestsApiResponse> Logger { get; }
+            public ILogger<GetMyAccountAccessRequestsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600GetMyAccountAccessRequestsApiResponse"/>
+            /// The <see cref="GetMyAccountAccessRequestsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1883,14 +1883,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetMyAccountAccessRequestsApiResponse(ILogger<OBPv600GetMyAccountAccessRequestsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetMyAccountAccessRequestsApiResponse(ILogger<GetMyAccountAccessRequestsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600GetMyAccountAccessRequestsApiResponse"/>
+            /// The <see cref="GetMyAccountAccessRequestsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1899,7 +1899,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetMyAccountAccessRequestsApiResponse(ILogger<OBPv600GetMyAccountAccessRequestsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetMyAccountAccessRequestsApiResponse(ILogger<GetMyAccountAccessRequestsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1917,11 +1917,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetAccountAccessRequestsForAccount200Response? Ok()
+            public OpenBankProject.Model.GetAccountAccessRequestsForAccount200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetAccountAccessRequestsForAccount200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAccountAccessRequestsForAccount200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1930,7 +1930,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetAccountAccessRequestsForAccount200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAccountAccessRequestsForAccount200Response? result)
             {
                 result = null;
 
@@ -1962,7 +1962,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600RejectAccountAccessRequest(ref string bankid, ref string accountid, ref string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest);
+        partial void FormatRejectAccountAccessRequest(ref string bankid, ref string accountid, ref string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -1970,9 +1970,9 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="accountaccessrequestid"></param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest"></param>
+        /// <param name="rejectAccountAccessRequestRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600RejectAccountAccessRequest(string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest)
+        private void ValidateRejectAccountAccessRequest(string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1983,8 +1983,8 @@ namespace OpenBankProject.Api
             if (accountaccessrequestid == null)
                 throw new ArgumentNullException(nameof(accountaccessrequestid));
 
-            if (oBPv600RejectAccountAccessRequestRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600RejectAccountAccessRequestRequest));
+            if (rejectAccountAccessRequestRequest == null)
+                throw new ArgumentNullException(nameof(rejectAccountAccessRequestRequest));
         }
 
         /// <summary>
@@ -1994,11 +1994,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="accountaccessrequestid"></param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest"></param>
-        private void AfterOBPv600RejectAccountAccessRequestDefaultImplementation(IOBPv600RejectAccountAccessRequestApiResponse apiResponseLocalVar, string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest)
+        /// <param name="rejectAccountAccessRequestRequest"></param>
+        private void AfterRejectAccountAccessRequestDefaultImplementation(IRejectAccountAccessRequestApiResponse apiResponseLocalVar, string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600RejectAccountAccessRequest(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest);
+            AfterRejectAccountAccessRequest(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2011,8 +2011,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="accountaccessrequestid"></param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest"></param>
-        partial void AfterOBPv600RejectAccountAccessRequest(ref bool suppressDefaultLog, IOBPv600RejectAccountAccessRequestApiResponse apiResponseLocalVar, string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest);
+        /// <param name="rejectAccountAccessRequestRequest"></param>
+        partial void AfterRejectAccountAccessRequest(ref bool suppressDefaultLog, IRejectAccountAccessRequestApiResponse apiResponseLocalVar, string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2023,11 +2023,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="accountaccessrequestid"></param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest"></param>
-        private void OnErrorOBPv600RejectAccountAccessRequestDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest)
+        /// <param name="rejectAccountAccessRequestRequest"></param>
+        private void OnErrorRejectAccountAccessRequestDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600RejectAccountAccessRequest(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest);
+            OnErrorRejectAccountAccessRequest(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2042,8 +2042,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="accountaccessrequestid"></param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest"></param>
-        partial void OnErrorOBPv600RejectAccountAccessRequest(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest);
+        /// <param name="rejectAccountAccessRequestRequest"></param>
+        partial void OnErrorRejectAccountAccessRequest(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest);
 
         /// <summary>
         /// Reject Account Access Request &lt;p&gt;Reject an Account Access Request (checker step in maker/checker workflow).&lt;/p&gt; &lt;p&gt;The checker must be a different user than the maker (requestor). This enforces dual control / maker-checker separation.&lt;/p&gt; &lt;p&gt;Only requests with status INITIATED can be rejected.&lt;/p&gt; &lt;p&gt;A comment is required when rejecting a request.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ACCOUNT_ACCESS_REQUEST_ID&lt;/a&gt;: ACCOUNT_ACCESS_REQUEST_ID&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;comment&lt;/strong&gt;&lt;/a&gt;: comment&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
@@ -2051,14 +2051,14 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="accountaccessrequestid">The ACCOUNTACCESSREQUESTID identifier</param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest">Request body</param>
+        /// <param name="rejectAccountAccessRequestRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600RejectAccountAccessRequestApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600RejectAccountAccessRequestApiResponse?> OBPv600RejectAccountAccessRequestOrDefaultAsync(string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IRejectAccountAccessRequestApiResponse"/>&gt;</returns>
+        public async Task<IRejectAccountAccessRequestApiResponse?> RejectAccountAccessRequestOrDefaultAsync(string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600RejectAccountAccessRequestAsync(bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest, cancellationToken).ConfigureAwait(false);
+                return await RejectAccountAccessRequestAsync(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2073,18 +2073,18 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="accountaccessrequestid">The ACCOUNTACCESSREQUESTID identifier</param>
-        /// <param name="oBPv600RejectAccountAccessRequestRequest">Request body</param>
+        /// <param name="rejectAccountAccessRequestRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600RejectAccountAccessRequestApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600RejectAccountAccessRequestApiResponse> OBPv600RejectAccountAccessRequestAsync(string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IRejectAccountAccessRequestApiResponse"/>&gt;</returns>
+        public async Task<IRejectAccountAccessRequestApiResponse> RejectAccountAccessRequestAsync(string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600RejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest);
+                ValidateRejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest);
 
-                FormatOBPv600RejectAccountAccessRequest(ref bankid, ref accountid, ref accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest);
+                FormatRejectAccountAccessRequest(ref bankid, ref accountid, ref accountaccessrequestid, rejectAccountAccessRequestRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2098,16 +2098,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountaccessrequestid%7D", Uri.EscapeDataString(accountaccessrequestid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600RejectAccountAccessRequestRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (rejectAccountAccessRequestRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600RejectAccountAccessRequestRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(rejectAccountAccessRequestRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2143,8 +2143,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600RejectAccountAccessRequestApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600RejectAccountAccessRequestApiResponse>();
-                        OBPv600RejectAccountAccessRequestApiResponse apiResponseLocalVar;
+                        ILogger<RejectAccountAccessRequestApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<RejectAccountAccessRequestApiResponse>();
+                        RejectAccountAccessRequestApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2155,9 +2155,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600RejectAccountAccessRequestDefaultImplementation(apiResponseLocalVar, bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest);
+                        AfterRejectAccountAccessRequestDefaultImplementation(apiResponseLocalVar, bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest);
 
-                        Events.ExecuteOnOBPv600RejectAccountAccessRequest(apiResponseLocalVar);
+                        Events.ExecuteOnRejectAccountAccessRequest(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2169,24 +2169,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600RejectAccountAccessRequestDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection", uriBuilderLocalVar.Path, bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest);
-                Events.ExecuteOnErrorOBPv600RejectAccountAccessRequest(e);
+                OnErrorRejectAccountAccessRequestDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection", uriBuilderLocalVar.Path, bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest);
+                Events.ExecuteOnErrorRejectAccountAccessRequest(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600RejectAccountAccessRequestApiResponse"/>
+        /// The <see cref="RejectAccountAccessRequestApiResponse"/>
         /// </summary>
-        public partial class OBPv600RejectAccountAccessRequestApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600RejectAccountAccessRequestApiResponse
+        public partial class RejectAccountAccessRequestApiResponse : OpenBankProject.Client.ApiResponse, IRejectAccountAccessRequestApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600RejectAccountAccessRequestApiResponse> Logger { get; }
+            public ILogger<RejectAccountAccessRequestApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600RejectAccountAccessRequestApiResponse"/>
+            /// The <see cref="RejectAccountAccessRequestApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2195,14 +2195,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600RejectAccountAccessRequestApiResponse(ILogger<OBPv600RejectAccountAccessRequestApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public RejectAccountAccessRequestApiResponse(ILogger<RejectAccountAccessRequestApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600RejectAccountAccessRequestApiResponse"/>
+            /// The <see cref="RejectAccountAccessRequestApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2211,7 +2211,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600RejectAccountAccessRequestApiResponse(ILogger<OBPv600RejectAccountAccessRequestApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public RejectAccountAccessRequestApiResponse(ILogger<RejectAccountAccessRequestApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2229,11 +2229,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600RejectAccountAccessRequest200Response? Ok()
+            public OpenBankProject.Model.RejectAccountAccessRequest200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600RejectAccountAccessRequest200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.RejectAccountAccessRequest200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2242,7 +2242,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600RejectAccountAccessRequest200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.RejectAccountAccessRequest200Response? result)
             {
                 result = null;
 

@@ -1,174 +1,101 @@
 # \AccountAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv121DeleteViewForBankAccount**](AccountAPI.md#OBPv121DeleteViewForBankAccount) | **Delete** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/views/{viewid} | Delete Custom View
-[**OBPv200GetPermissionsForBankAccount**](AccountAPI.md#OBPv200GetPermissionsForBankAccount) | **Get** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
-[**OBPv200PublicAccountsAllBanks**](AccountAPI.md#OBPv200PublicAccountsAllBanks) | **Get** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks
-[**OBPv200PublicAccountsAtOneBank**](AccountAPI.md#OBPv200PublicAccountsAtOneBank) | **Get** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank
-[**OBPv300CorePrivateAccountsAllBanks**](AccountAPI.md#OBPv300CorePrivateAccountsAllBanks) | **Get** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
-[**OBPv300CreateViewForBankAccount**](AccountAPI.md#OBPv300CreateViewForBankAccount) | **Post** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views | Create Custom View
-[**OBPv300GetAccountsHeld**](AccountAPI.md#OBPv300GetAccountsHeld) | **Get** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
-[**OBPv300GetCoreTransactionsForBankAccount**](AccountAPI.md#OBPv300GetCoreTransactionsForBankAccount) | **Get** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
-[**OBPv300GetOtherAccountByIdForBankAccount**](AccountAPI.md#OBPv300GetOtherAccountByIdForBankAccount) | **Get** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid} | Get Other Account by Id
-[**OBPv300GetOtherAccountsForBankAccount**](AccountAPI.md#OBPv300GetOtherAccountsForBankAccount) | **Get** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts | Get Other Accounts of one Account
-[**OBPv300GetPermissionForUserForBankAccount**](AccountAPI.md#OBPv300GetPermissionForUserForBankAccount) | **Get** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid} | Get Account access for User
-[**OBPv300GetPrivateAccountIdsbyBankId**](AccountAPI.md#OBPv300GetPrivateAccountIdsbyBankId) | **Get** /obp/v3.0.0/banks/{bankid}/accounts/account_ids/private | Get Accounts at Bank (IDs only)
-[**OBPv300GetPublicAccountById**](AccountAPI.md#OBPv300GetPublicAccountById) | **Get** /obp/v3.0.0/banks/{bankid}/public/accounts/{accountid}/{viewid}/account | Get Public Account by Id
-[**OBPv300PrivateAccountsAtOneBank**](AccountAPI.md#OBPv300PrivateAccountsAtOneBank) | **Get** /obp/v3.0.0/banks/{bankid}/accounts/private | Get Accounts at Bank (Minimal)
-[**OBPv300UpdateViewForBankAccount**](AccountAPI.md#OBPv300UpdateViewForBankAccount) | **Put** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Update Custom View
-[**OBPv310CheckFundsAvailable**](AccountAPI.md#OBPv310CheckFundsAvailable) | **Get** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
-[**OBPv310CreateAccountApplication**](AccountAPI.md#OBPv310CreateAccountApplication) | **Post** /obp/v3.1.0/banks/{bankid}/account-applications | Create Account Application
-[**OBPv310CreateAccountAttribute**](AccountAPI.md#OBPv310CreateAccountAttribute) | **Post** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute
-[**OBPv310GetAccountApplication**](AccountAPI.md#OBPv310GetAccountApplication) | **Get** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Get Account Application by Id
-[**OBPv310GetAccountApplications**](AccountAPI.md#OBPv310GetAccountApplications) | **Get** /obp/v3.1.0/banks/{bankid}/account-applications | Get Account Applications
-[**OBPv310GetCheckbookOrders**](AccountAPI.md#OBPv310GetCheckbookOrders) | **Get** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/checkbook/orders | Get Checkbook orders
-[**OBPv310UpdateAccount**](AccountAPI.md#OBPv310UpdateAccount) | **Put** /obp/v3.1.0/management/banks/{bankid}/accounts/{accountid} | Update Account
-[**OBPv310UpdateAccountApplicationStatus**](AccountAPI.md#OBPv310UpdateAccountApplicationStatus) | **Put** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Update Account Application Status
-[**OBPv310UpdateAccountAttribute**](AccountAPI.md#OBPv310UpdateAccountAttribute) | **Put** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute
-[**OBPv400AddAccount**](AccountAPI.md#OBPv400AddAccount) | **Post** /obp/v4.0.0/banks/{bankid}/accounts | Create Account (POST)
-[**OBPv400AddTagForViewOnAccount**](AccountAPI.md#OBPv400AddTagForViewOnAccount) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
-[**OBPv400CreateCounterparty**](AccountAPI.md#OBPv400CreateCounterparty) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty (Explicit)
-[**OBPv400CreateCounterpartyForAnyAccount**](AccountAPI.md#OBPv400CreateCounterpartyForAnyAccount) | **Post** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty for any account (Explicit)
-[**OBPv400CreateDirectDebit**](AccountAPI.md#OBPv400CreateDirectDebit) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
-[**OBPv400CreateDirectDebitManagement**](AccountAPI.md#OBPv400CreateDirectDebitManagement) | **Post** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
-[**OBPv400CreateOrUpdateAccountAttributeDefinition**](AccountAPI.md#OBPv400CreateOrUpdateAccountAttributeDefinition) | **Put** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition
-[**OBPv400CreateStandingOrder**](AccountAPI.md#OBPv400CreateStandingOrder) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
-[**OBPv400CreateStandingOrderManagement**](AccountAPI.md#OBPv400CreateStandingOrderManagement) | **Post** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
-[**OBPv400DeleteAccountAttributeDefinition**](AccountAPI.md#OBPv400DeleteAccountAttributeDefinition) | **Delete** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition
-[**OBPv400DeleteAccountCascade**](AccountAPI.md#OBPv400DeleteAccountCascade) | **Delete** /obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid} | Delete Account Cascade
-[**OBPv400DeleteCounterpartyForAnyAccount**](AccountAPI.md#OBPv400DeleteCounterpartyForAnyAccount) | **Delete** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty for any account (Explicit)
-[**OBPv400DeleteExplicitCounterparty**](AccountAPI.md#OBPv400DeleteExplicitCounterparty) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty (Explicit)
-[**OBPv400DeleteTagForViewOnAccount**](AccountAPI.md#OBPv400DeleteTagForViewOnAccount) | **Delete** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
-[**OBPv400GetAccountAttributeDefinition**](AccountAPI.md#OBPv400GetAccountAttributeDefinition) | **Get** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition
-[**OBPv400GetAccountByAccountRouting**](AccountAPI.md#OBPv400GetAccountByAccountRouting) | **Post** /obp/v4.0.0/management/accounts/account-routing-query | Get Account by Account Routing
-[**OBPv400GetAccountsByAccountRoutingRegex**](AccountAPI.md#OBPv400GetAccountsByAccountRoutingRegex) | **Post** /obp/v4.0.0/management/accounts/account-routing-regex-query | Get Accounts by Account Routing Regex
-[**OBPv400GetAccountsMinimalByCustomerId**](AccountAPI.md#OBPv400GetAccountsMinimalByCustomerId) | **Get** /obp/v4.0.0/customers/{customerid}/accounts-minimal | Get Accounts Minimal for a Customer
-[**OBPv400GetCounterpartiesForAnyAccount**](AccountAPI.md#OBPv400GetCounterpartiesForAnyAccount) | **Get** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
-[**OBPv400GetCounterpartyByIdForAnyAccount**](AccountAPI.md#OBPv400GetCounterpartyByIdForAnyAccount) | **Get** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id for any account (Explicit)
-[**OBPv400GetCounterpartyByNameForAnyAccount**](AccountAPI.md#OBPv400GetCounterpartyByNameForAnyAccount) | **Get** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname} | Get Counterparty by name for any account (Explicit) 
-[**OBPv400GetExplicitCounterpartiesForAccount**](AccountAPI.md#OBPv400GetExplicitCounterpartiesForAccount) | **Get** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
-[**OBPv400GetFastFirehoseAccountsAtOneBank**](AccountAPI.md#OBPv400GetFastFirehoseAccountsAtOneBank) | **Get** /obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts | Get Fast Firehose Accounts at Bank
-[**OBPv400GetFirehoseAccountsAtOneBank**](AccountAPI.md#OBPv400GetFirehoseAccountsAtOneBank) | **Get** /obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid} | Get Firehose Accounts at Bank
-[**OBPv400GetPrivateAccountByIdFull**](AccountAPI.md#OBPv400GetPrivateAccountByIdFull) | **Get** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/account | Get Account by Id (Full)
-[**OBPv400GetTagsForViewOnAccount**](AccountAPI.md#OBPv400GetTagsForViewOnAccount) | **Get** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
-[**OBPv400IbanChecker**](AccountAPI.md#OBPv400IbanChecker) | **Post** /obp/v4.0.0/account/check/scheme/iban | Validate and check IBAN
-[**OBPv400UpdateAccountLabel**](AccountAPI.md#OBPv400UpdateAccountLabel) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid} | Update Account Label
-[**OBPv500CreateAccount**](AccountAPI.md#OBPv500CreateAccount) | **Put** /obp/v5.0.0/banks/{bankid}/accounts/{accountid} | Create Account (PUT)
-[**OBPv500CreateCustomerAccountLink**](AccountAPI.md#OBPv500CreateCustomerAccountLink) | **Post** /obp/v5.0.0/banks/{bankid}/customer-account-links | Create Customer Account Link
-[**OBPv500GetViewsForBankAccount**](AccountAPI.md#OBPv500GetViewsForBankAccount) | **Get** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/views | Get Views for Account
-[**OBPv510CreateBankAccountBalance**](AccountAPI.md#OBPv510CreateBankAccountBalance) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
-[**OBPv510CreateCustomView**](AccountAPI.md#OBPv510CreateCustomView) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views | Create Custom View
-[**OBPv510CreateUserWithAccountAccessById**](AccountAPI.md#OBPv510CreateUserWithAccountAccessById) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
-[**OBPv510DeleteBankAccountBalance**](AccountAPI.md#OBPv510DeleteBankAccountBalance) | **Delete** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
-[**OBPv510DeleteCustomView**](AccountAPI.md#OBPv510DeleteCustomView) | **Delete** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Delete Custom View
-[**OBPv510GetAccountAccessByUserId**](AccountAPI.md#OBPv510GetAccountAccessByUserId) | **Get** /obp/v5.1.0/users/{userid}/account-access | Get Account Access by USER_ID
-[**OBPv510GetAccountsHeldByUser**](AccountAPI.md#OBPv510GetAccountsHeldByUser) | **Get** /obp/v5.1.0/users/{userid}/accounts-held | Get Accounts Held By User
-[**OBPv510GetAccountsHeldByUserAtBank**](AccountAPI.md#OBPv510GetAccountsHeldByUserAtBank) | **Get** /obp/v5.1.0/users/{userid}/banks/{bankid}/accounts-held | Get Accounts Held By User
-[**OBPv510GetAgent**](AccountAPI.md#OBPv510GetAgent) | **Get** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Get Agent
-[**OBPv510GetAgents**](AccountAPI.md#OBPv510GetAgents) | **Get** /obp/v5.1.0/banks/{bankid}/agents | Get Agents at Bank
-[**OBPv510GetAllBankAccountBalances**](AccountAPI.md#OBPv510GetAllBankAccountBalances) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
-[**OBPv510GetBankAccountBalanceById**](AccountAPI.md#OBPv510GetBankAccountBalanceById) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
-[**OBPv510GetBankAccountBalances**](AccountAPI.md#OBPv510GetBankAccountBalances) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/balances | Get Account Balances by BANK_ID and ACCOUNT_ID through the VIEW_ID
-[**OBPv510GetBankAccountsBalances**](AccountAPI.md#OBPv510GetBankAccountsBalances) | **Get** /obp/v5.1.0/banks/{bankid}/balances | Get Account Balances by BANK_ID
-[**OBPv510GetBankAccountsBalancesThroughView**](AccountAPI.md#OBPv510GetBankAccountsBalancesThroughView) | **Get** /obp/v5.1.0/banks/{bankid}/views/{viewid}/balances | Get Account Balances by BANK_ID through the VIEW_ID
-[**OBPv510GetCoreAccountByIdThroughView**](AccountAPI.md#OBPv510GetCoreAccountByIdThroughView) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Account by Id (Core) through the VIEW_ID
-[**OBPv510GetCustomView**](AccountAPI.md#OBPv510GetCustomView) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Get Custom View
-[**OBPv510GrantUserAccessToViewById**](AccountAPI.md#OBPv510GrantUserAccessToViewById) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
-[**OBPv510RevokeUserAccessToViewById**](AccountAPI.md#OBPv510RevokeUserAccessToViewById) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
-[**OBPv510UpdateBankAccountBalance**](AccountAPI.md#OBPv510UpdateBankAccountBalance) | **Put** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
-[**OBPv510UpdateCustomView**](AccountAPI.md#OBPv510UpdateCustomView) | **Put** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Update Custom View
-[**OBPv600CreateCustomViewManagement**](AccountAPI.md#OBPv600CreateCustomViewManagement) | **Post** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views | Create Custom View (Management)
-[**OBPv600GetAccountDirectory**](AccountAPI.md#OBPv600GetAccountDirectory) | **Get** /obp/v6.0.0/banks/{bankid}/account-directory | Get Account Directory at Bank
-[**OBPv600GetAccountsAtBank**](AccountAPI.md#OBPv600GetAccountsAtBank) | **Get** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
-[**OBPv600GetCoreAccountByIdV600**](AccountAPI.md#OBPv600GetCoreAccountByIdV600) | **Get** /obp/v6.0.0/my/banks/{bankid}/accounts/{accountid}/account | Get Account by Id (Core)
-[**OBPv600GetHoldingAccountByReleaser**](AccountAPI.md#OBPv600GetHoldingAccountByReleaser) | **Get** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/holding-accounts | Get Holding Accounts By Releaser
-[**OBPv600GetTransactionsForBankAccount**](AccountAPI.md#OBPv600GetTransactionsForBankAccount) | **Get** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions | Get Transactions for Account (Full)
-[**OBPv600HasAccountAccess**](AccountAPI.md#OBPv600HasAccountAccess) | **Get** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/has-account-access | Has Account Access
+[**AddAccount**](AccountAPI.md#AddAccount) | **Post** /obp/v4.0.0/banks/{bankid}/accounts | Create Account (POST)
+[**AddTagForViewOnAccount**](AccountAPI.md#AddTagForViewOnAccount) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
+[**CheckFundsAvailable**](AccountAPI.md#CheckFundsAvailable) | **Get** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
+[**CorePrivateAccountsAllBanks**](AccountAPI.md#CorePrivateAccountsAllBanks) | **Get** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
+[**CreateAccount**](AccountAPI.md#CreateAccount) | **Put** /obp/v5.0.0/banks/{bankid}/accounts/{accountid} | Create Account (PUT)
+[**CreateAccountApplication**](AccountAPI.md#CreateAccountApplication) | **Post** /obp/v3.1.0/banks/{bankid}/account-applications | Create Account Application
+[**CreateAccountAttribute**](AccountAPI.md#CreateAccountAttribute) | **Post** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute
+[**CreateBankAccountBalance**](AccountAPI.md#CreateBankAccountBalance) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
+[**CreateCounterparty**](AccountAPI.md#CreateCounterparty) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty (Explicit)
+[**CreateCounterpartyForAnyAccount**](AccountAPI.md#CreateCounterpartyForAnyAccount) | **Post** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty for any account (Explicit)
+[**CreateCustomView**](AccountAPI.md#CreateCustomView) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views | Create Custom View
+[**CreateCustomViewManagement**](AccountAPI.md#CreateCustomViewManagement) | **Post** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views | Create Custom View (Management)
+[**CreateCustomerAccountLink**](AccountAPI.md#CreateCustomerAccountLink) | **Post** /obp/v5.0.0/banks/{bankid}/customer-account-links | Create Customer Account Link
+[**CreateDirectDebit**](AccountAPI.md#CreateDirectDebit) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
+[**CreateDirectDebitManagement**](AccountAPI.md#CreateDirectDebitManagement) | **Post** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
+[**CreateOrUpdateAccountAttributeDefinition**](AccountAPI.md#CreateOrUpdateAccountAttributeDefinition) | **Put** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition
+[**CreateStandingOrder**](AccountAPI.md#CreateStandingOrder) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
+[**CreateStandingOrderManagement**](AccountAPI.md#CreateStandingOrderManagement) | **Post** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
+[**CreateUserWithAccountAccessById**](AccountAPI.md#CreateUserWithAccountAccessById) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+[**CreateViewForBankAccount**](AccountAPI.md#CreateViewForBankAccount) | **Post** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views | Create Custom View
+[**DeleteAccountAttributeDefinition**](AccountAPI.md#DeleteAccountAttributeDefinition) | **Delete** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition
+[**DeleteAccountCascade**](AccountAPI.md#DeleteAccountCascade) | **Delete** /obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid} | Delete Account Cascade
+[**DeleteBankAccountBalance**](AccountAPI.md#DeleteBankAccountBalance) | **Delete** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
+[**DeleteCounterpartyForAnyAccount**](AccountAPI.md#DeleteCounterpartyForAnyAccount) | **Delete** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty for any account (Explicit)
+[**DeleteCustomView**](AccountAPI.md#DeleteCustomView) | **Delete** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Delete Custom View
+[**DeleteExplicitCounterparty**](AccountAPI.md#DeleteExplicitCounterparty) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty (Explicit)
+[**DeleteTagForViewOnAccount**](AccountAPI.md#DeleteTagForViewOnAccount) | **Delete** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
+[**DeleteViewForBankAccount**](AccountAPI.md#DeleteViewForBankAccount) | **Delete** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/views/{viewid} | Delete Custom View
+[**GetAccountAccessByUserId**](AccountAPI.md#GetAccountAccessByUserId) | **Get** /obp/v5.1.0/users/{userid}/account-access | Get Account Access by USER_ID
+[**GetAccountApplication**](AccountAPI.md#GetAccountApplication) | **Get** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Get Account Application by Id
+[**GetAccountApplications**](AccountAPI.md#GetAccountApplications) | **Get** /obp/v3.1.0/banks/{bankid}/account-applications | Get Account Applications
+[**GetAccountAttributeDefinition**](AccountAPI.md#GetAccountAttributeDefinition) | **Get** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition
+[**GetAccountByAccountRouting**](AccountAPI.md#GetAccountByAccountRouting) | **Post** /obp/v4.0.0/management/accounts/account-routing-query | Get Account by Account Routing
+[**GetAccountDirectory**](AccountAPI.md#GetAccountDirectory) | **Get** /obp/v6.0.0/banks/{bankid}/account-directory | Get Account Directory at Bank
+[**GetAccountsAtBank**](AccountAPI.md#GetAccountsAtBank) | **Get** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
+[**GetAccountsByAccountRoutingRegex**](AccountAPI.md#GetAccountsByAccountRoutingRegex) | **Post** /obp/v4.0.0/management/accounts/account-routing-regex-query | Get Accounts by Account Routing Regex
+[**GetAccountsHeld**](AccountAPI.md#GetAccountsHeld) | **Get** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
+[**GetAccountsHeldByUser**](AccountAPI.md#GetAccountsHeldByUser) | **Get** /obp/v5.1.0/users/{userid}/accounts-held | Get Accounts Held By User
+[**GetAccountsHeldByUserAtBank**](AccountAPI.md#GetAccountsHeldByUserAtBank) | **Get** /obp/v5.1.0/users/{userid}/banks/{bankid}/accounts-held | Get Accounts Held By User
+[**GetAccountsMinimalByCustomerId**](AccountAPI.md#GetAccountsMinimalByCustomerId) | **Get** /obp/v4.0.0/customers/{customerid}/accounts-minimal | Get Accounts Minimal for a Customer
+[**GetAgent**](AccountAPI.md#GetAgent) | **Get** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Get Agent
+[**GetAgents**](AccountAPI.md#GetAgents) | **Get** /obp/v5.1.0/banks/{bankid}/agents | Get Agents at Bank
+[**GetAllBankAccountBalances**](AccountAPI.md#GetAllBankAccountBalances) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
+[**GetBankAccountBalanceById**](AccountAPI.md#GetBankAccountBalanceById) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
+[**GetBankAccountBalances**](AccountAPI.md#GetBankAccountBalances) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/balances | Get Account Balances by BANK_ID and ACCOUNT_ID through the VIEW_ID
+[**GetBankAccountsBalances**](AccountAPI.md#GetBankAccountsBalances) | **Get** /obp/v5.1.0/banks/{bankid}/balances | Get Account Balances by BANK_ID
+[**GetBankAccountsBalancesThroughView**](AccountAPI.md#GetBankAccountsBalancesThroughView) | **Get** /obp/v5.1.0/banks/{bankid}/views/{viewid}/balances | Get Account Balances by BANK_ID through the VIEW_ID
+[**GetCheckbookOrders**](AccountAPI.md#GetCheckbookOrders) | **Get** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/checkbook/orders | Get Checkbook orders
+[**GetCoreAccountByIdThroughView**](AccountAPI.md#GetCoreAccountByIdThroughView) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Account by Id (Core) through the VIEW_ID
+[**GetCoreAccountByIdV600**](AccountAPI.md#GetCoreAccountByIdV600) | **Get** /obp/v6.0.0/my/banks/{bankid}/accounts/{accountid}/account | Get Account by Id (Core)
+[**GetCoreTransactionsForBankAccount**](AccountAPI.md#GetCoreTransactionsForBankAccount) | **Get** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
+[**GetCounterpartiesForAnyAccount**](AccountAPI.md#GetCounterpartiesForAnyAccount) | **Get** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
+[**GetCounterpartyByIdForAnyAccount**](AccountAPI.md#GetCounterpartyByIdForAnyAccount) | **Get** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id for any account (Explicit)
+[**GetCounterpartyByNameForAnyAccount**](AccountAPI.md#GetCounterpartyByNameForAnyAccount) | **Get** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname} | Get Counterparty by name for any account (Explicit) 
+[**GetCustomView**](AccountAPI.md#GetCustomView) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Get Custom View
+[**GetExplicitCounterpartiesForAccount**](AccountAPI.md#GetExplicitCounterpartiesForAccount) | **Get** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
+[**GetFastFirehoseAccountsAtOneBank**](AccountAPI.md#GetFastFirehoseAccountsAtOneBank) | **Get** /obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts | Get Fast Firehose Accounts at Bank
+[**GetFirehoseAccountsAtOneBank**](AccountAPI.md#GetFirehoseAccountsAtOneBank) | **Get** /obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid} | Get Firehose Accounts at Bank
+[**GetHoldingAccountByReleaser**](AccountAPI.md#GetHoldingAccountByReleaser) | **Get** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/holding-accounts | Get Holding Accounts By Releaser
+[**GetOtherAccountByIdForBankAccount**](AccountAPI.md#GetOtherAccountByIdForBankAccount) | **Get** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid} | Get Other Account by Id
+[**GetOtherAccountsForBankAccount**](AccountAPI.md#GetOtherAccountsForBankAccount) | **Get** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts | Get Other Accounts of one Account
+[**GetPermissionForUserForBankAccount**](AccountAPI.md#GetPermissionForUserForBankAccount) | **Get** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid} | Get Account access for User
+[**GetPermissionsForBankAccount**](AccountAPI.md#GetPermissionsForBankAccount) | **Get** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
+[**GetPrivateAccountByIdFull**](AccountAPI.md#GetPrivateAccountByIdFull) | **Get** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/account | Get Account by Id (Full)
+[**GetPrivateAccountIdsbyBankId**](AccountAPI.md#GetPrivateAccountIdsbyBankId) | **Get** /obp/v3.0.0/banks/{bankid}/accounts/account_ids/private | Get Accounts at Bank (IDs only)
+[**GetPublicAccountById**](AccountAPI.md#GetPublicAccountById) | **Get** /obp/v3.0.0/banks/{bankid}/public/accounts/{accountid}/{viewid}/account | Get Public Account by Id
+[**GetTagsForViewOnAccount**](AccountAPI.md#GetTagsForViewOnAccount) | **Get** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
+[**GetTransactionsForBankAccount**](AccountAPI.md#GetTransactionsForBankAccount) | **Get** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions | Get Transactions for Account (Full)
+[**GetUsersWithAccountAccess**](AccountAPI.md#GetUsersWithAccountAccess) | **Get** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/users-with-access | Get Users With Account Access
+[**GetViewsForBankAccount**](AccountAPI.md#GetViewsForBankAccount) | **Get** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/views | Get Views for Account
+[**GrantUserAccessToViewById**](AccountAPI.md#GrantUserAccessToViewById) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
+[**HasAccountAccess**](AccountAPI.md#HasAccountAccess) | **Get** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/has-account-access | Has Account Access
+[**IbanChecker**](AccountAPI.md#IbanChecker) | **Post** /obp/v4.0.0/account/check/scheme/iban | Validate and check IBAN
+[**PrivateAccountsAtOneBank**](AccountAPI.md#PrivateAccountsAtOneBank) | **Get** /obp/v3.0.0/banks/{bankid}/accounts/private | Get Accounts at Bank (Minimal)
+[**PublicAccountsAllBanks**](AccountAPI.md#PublicAccountsAllBanks) | **Get** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks
+[**PublicAccountsAtOneBank**](AccountAPI.md#PublicAccountsAtOneBank) | **Get** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank
+[**RevokeUserAccessToViewById**](AccountAPI.md#RevokeUserAccessToViewById) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
+[**UpdateAccount**](AccountAPI.md#UpdateAccount) | **Put** /obp/v3.1.0/management/banks/{bankid}/accounts/{accountid} | Update Account
+[**UpdateAccountApplicationStatus**](AccountAPI.md#UpdateAccountApplicationStatus) | **Put** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Update Account Application Status
+[**UpdateAccountAttribute**](AccountAPI.md#UpdateAccountAttribute) | **Put** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute
+[**UpdateAccountLabel**](AccountAPI.md#UpdateAccountLabel) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid} | Update Account Label
+[**UpdateBankAccountBalance**](AccountAPI.md#UpdateBankAccountBalance) | **Put** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
+[**UpdateCustomView**](AccountAPI.md#UpdateCustomView) | **Put** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Update Custom View
+[**UpdateViewForBankAccount**](AccountAPI.md#UpdateViewForBankAccount) | **Put** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Update Custom View
 
 
 
-## OBPv121DeleteViewForBankAccount
+## AddAccount
 
-> OBPv121DeleteViewForBankAccount(ctx, bankid, accountid, viewid).Execute()
+> AddAccount200Response AddAccount(ctx, bankid).AddAccountRequest(addAccountRequest).Execute()
 
-Delete Custom View
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AccountAPI.OBPv121DeleteViewForBankAccount(context.Background(), bankid, accountid, viewid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv121DeleteViewForBankAccount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv121DeleteViewForBankAccountRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv200GetPermissionsForBankAccount
-
-> OBPv200GetPermissionsForBankAccount200Response OBPv200GetPermissionsForBankAccount(ctx, bankid, accountid).Execute()
-
-Get access
+Create Account (POST)
 
 
 
@@ -186,150 +113,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	addAccountRequest := *openapiclient.NewAddAccountRequest() // AddAccountRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv200GetPermissionsForBankAccount(context.Background(), bankid, accountid).Execute()
+	resp, r, err := apiClient.AccountAPI.AddAccount(context.Background(), bankid).AddAccountRequest(addAccountRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv200GetPermissionsForBankAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.AddAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv200GetPermissionsForBankAccount`: OBPv200GetPermissionsForBankAccount200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv200GetPermissionsForBankAccount`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv200GetPermissionsForBankAccountRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv200GetPermissionsForBankAccount200Response**](OBPv200GetPermissionsForBankAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv200PublicAccountsAllBanks
-
-> OBPv200PublicAccountsAllBanks200Response OBPv200PublicAccountsAllBanks(ctx).Execute()
-
-Get Public Accounts at all Banks
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv200PublicAccountsAllBanks(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv200PublicAccountsAllBanks``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv200PublicAccountsAllBanks`: OBPv200PublicAccountsAllBanks200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv200PublicAccountsAllBanks`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv200PublicAccountsAllBanksRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv200PublicAccountsAllBanks200Response**](OBPv200PublicAccountsAllBanks200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv200PublicAccountsAtOneBank
-
-> OBPv200PublicAccountsAllBanks200Response OBPv200PublicAccountsAtOneBank(ctx, bankid).Execute()
-
-Get Public Accounts at Bank
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv200PublicAccountsAtOneBank(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv200PublicAccountsAtOneBank``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv200PublicAccountsAtOneBank`: OBPv200PublicAccountsAllBanks200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv200PublicAccountsAtOneBank`: %v\n", resp)
+	// response from `AddAccount`: AddAccount200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.AddAccount`: %v\n", resp)
 }
 ```
 
@@ -343,152 +137,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv200PublicAccountsAtOneBankRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddAccountRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **addAccountRequest** | [**AddAccountRequest**](AddAccountRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv200PublicAccountsAllBanks200Response**](OBPv200PublicAccountsAllBanks200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv300CorePrivateAccountsAllBanks
-
-> OBPv300PrivateAccountsAtOneBank200Response OBPv300CorePrivateAccountsAllBanks(ctx).Execute()
-
-Get Accounts at all Banks (private)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv300CorePrivateAccountsAllBanks(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv300CorePrivateAccountsAllBanks``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv300CorePrivateAccountsAllBanks`: OBPv300PrivateAccountsAtOneBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv300CorePrivateAccountsAllBanks`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv300CorePrivateAccountsAllBanksRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv300PrivateAccountsAtOneBank200Response**](OBPv300PrivateAccountsAtOneBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv300CreateViewForBankAccount
-
-> OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead OBPv300CreateViewForBankAccount(ctx, bankid, accountid).OBPv600CreateCustomViewManagementRequest(oBPv600CreateCustomViewManagementRequest).Execute()
-
-Create Custom View
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	oBPv600CreateCustomViewManagementRequest := *openapiclient.NewOBPv600CreateCustomViewManagementRequest("Type_example", *openapiclient.NewOBPv600CreateCustomViewManagementRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")))) // OBPv600CreateCustomViewManagementRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv300CreateViewForBankAccount(context.Background(), bankid, accountid).OBPv600CreateCustomViewManagementRequest(oBPv600CreateCustomViewManagementRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv300CreateViewForBankAccount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv300CreateViewForBankAccount`: OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv300CreateViewForBankAccount`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv300CreateViewForBankAccountRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv600CreateCustomViewManagementRequest** | [**OBPv600CreateCustomViewManagementRequest**](OBPv600CreateCustomViewManagementRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead**](OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead.md)
+[**AddAccount200Response**](AddAccount200Response.md)
 
 ### Authorization
 
@@ -504,154 +163,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv300GetAccountsHeld
+## AddTagForViewOnAccount
 
-> OBPv510GetAccountsHeldByUserAtBank200Response OBPv300GetAccountsHeld(ctx, bankid).Execute()
+> GetTagsForViewOnAccount200ResponseTagsInner AddTagForViewOnAccount(ctx, bankid, accountid, viewid).GetTransactionTypes200ResponseTransactionTypesInnerId(getTransactionTypes200ResponseTransactionTypesInnerId).Execute()
 
-Get Accounts Held
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv300GetAccountsHeld(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv300GetAccountsHeld``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv300GetAccountsHeld`: OBPv510GetAccountsHeldByUserAtBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv300GetAccountsHeld`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv300GetAccountsHeldRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv510GetAccountsHeldByUserAtBank200Response**](OBPv510GetAccountsHeldByUserAtBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv300GetCoreTransactionsForBankAccount
-
-> OBPv300GetCoreTransactionsForBankAccount200Response OBPv300GetCoreTransactionsForBankAccount(ctx, bankid, accountid).Execute()
-
-Get Transactions for Account (Core)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv300GetCoreTransactionsForBankAccount(context.Background(), bankid, accountid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv300GetCoreTransactionsForBankAccount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv300GetCoreTransactionsForBankAccount`: OBPv300GetCoreTransactionsForBankAccount200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv300GetCoreTransactionsForBankAccount`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv300GetCoreTransactionsForBankAccountRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv300GetCoreTransactionsForBankAccount200Response**](OBPv300GetCoreTransactionsForBankAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv300GetOtherAccountByIdForBankAccount
-
-> OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount OBPv300GetOtherAccountByIdForBankAccount(ctx, bankid, accountid, viewid, otheraccountid).Execute()
-
-Get Other Account by Id
+Create a tag on account
 
 
 
@@ -671,95 +187,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
-	otheraccountid := "otheraccountid_example" // string | The OTHERACCOUNTID identifier
+	getTransactionTypes200ResponseTransactionTypesInnerId := *openapiclient.NewGetTransactionTypes200ResponseTransactionTypesInnerId() // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv300GetOtherAccountByIdForBankAccount(context.Background(), bankid, accountid, viewid, otheraccountid).Execute()
+	resp, r, err := apiClient.AccountAPI.AddTagForViewOnAccount(context.Background(), bankid, accountid, viewid).GetTransactionTypes200ResponseTransactionTypesInnerId(getTransactionTypes200ResponseTransactionTypesInnerId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv300GetOtherAccountByIdForBankAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.AddTagForViewOnAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv300GetOtherAccountByIdForBankAccount`: OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv300GetOtherAccountByIdForBankAccount`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-**otheraccountid** | **string** | The OTHERACCOUNTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv300GetOtherAccountByIdForBankAccountRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-
-### Return type
-
-[**OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount**](OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv300GetOtherAccountsForBankAccount
-
-> OBPv300GetOtherAccountsForBankAccount200Response OBPv300GetOtherAccountsForBankAccount(ctx, bankid, accountid, viewid).Execute()
-
-Get Other Accounts of one Account
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv300GetOtherAccountsForBankAccount(context.Background(), bankid, accountid, viewid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv300GetOtherAccountsForBankAccount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv300GetOtherAccountsForBankAccount`: OBPv300GetOtherAccountsForBankAccount200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv300GetOtherAccountsForBankAccount`: %v\n", resp)
+	// response from `AddTagForViewOnAccount`: GetTagsForViewOnAccount200ResponseTagsInner
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.AddTagForViewOnAccount`: %v\n", resp)
 }
 ```
 
@@ -775,7 +213,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv300GetOtherAccountsForBankAccountRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddTagForViewOnAccountRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -783,383 +221,11 @@ Name | Type | Description  | Notes
 
 
 
+ **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md) | Request body | 
 
 ### Return type
 
-[**OBPv300GetOtherAccountsForBankAccount200Response**](OBPv300GetOtherAccountsForBankAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv300GetPermissionForUserForBankAccount
-
-> OBPv300GetPermissionForUserForBankAccount200Response OBPv300GetPermissionForUserForBankAccount(ctx, bankid, accountid, provider, providerid).Execute()
-
-Get Account access for User
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	provider := "provider_example" // string | The PROVIDER identifier
-	providerid := "providerid_example" // string | The PROVIDERID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv300GetPermissionForUserForBankAccount(context.Background(), bankid, accountid, provider, providerid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv300GetPermissionForUserForBankAccount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv300GetPermissionForUserForBankAccount`: OBPv300GetPermissionForUserForBankAccount200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv300GetPermissionForUserForBankAccount`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**provider** | **string** | The PROVIDER identifier | 
-**providerid** | **string** | The PROVIDERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv300GetPermissionForUserForBankAccountRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-
-### Return type
-
-[**OBPv300GetPermissionForUserForBankAccount200Response**](OBPv300GetPermissionForUserForBankAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv300GetPrivateAccountIdsbyBankId
-
-> OBPv300GetPrivateAccountIdsbyBankId200Response OBPv300GetPrivateAccountIdsbyBankId(ctx, bankid).Execute()
-
-Get Accounts at Bank (IDs only)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv300GetPrivateAccountIdsbyBankId(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv300GetPrivateAccountIdsbyBankId``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv300GetPrivateAccountIdsbyBankId`: OBPv300GetPrivateAccountIdsbyBankId200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv300GetPrivateAccountIdsbyBankId`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv300GetPrivateAccountIdsbyBankIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv300GetPrivateAccountIdsbyBankId200Response**](OBPv300GetPrivateAccountIdsbyBankId200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv300GetPublicAccountById
-
-> OBPv300GetPublicAccountById200Response OBPv300GetPublicAccountById(ctx, bankid, accountid, viewid).Execute()
-
-Get Public Account by Id
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv300GetPublicAccountById(context.Background(), bankid, accountid, viewid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv300GetPublicAccountById``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv300GetPublicAccountById`: OBPv300GetPublicAccountById200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv300GetPublicAccountById`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv300GetPublicAccountByIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-### Return type
-
-[**OBPv300GetPublicAccountById200Response**](OBPv300GetPublicAccountById200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv300PrivateAccountsAtOneBank
-
-> OBPv300PrivateAccountsAtOneBank200Response OBPv300PrivateAccountsAtOneBank(ctx, bankid).Execute()
-
-Get Accounts at Bank (Minimal)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv300PrivateAccountsAtOneBank(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv300PrivateAccountsAtOneBank``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv300PrivateAccountsAtOneBank`: OBPv300PrivateAccountsAtOneBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv300PrivateAccountsAtOneBank`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv300PrivateAccountsAtOneBankRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv300PrivateAccountsAtOneBank200Response**](OBPv300PrivateAccountsAtOneBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv300UpdateViewForBankAccount
-
-> OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead OBPv300UpdateViewForBankAccount(ctx, bankid, accountid, viewid).OBPv300UpdateViewForBankAccountRequest(oBPv300UpdateViewForBankAccountRequest).Execute()
-
-Update Custom View
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-	oBPv300UpdateViewForBankAccountRequest := *openapiclient.NewOBPv300UpdateViewForBankAccountRequest("Type_example", *openapiclient.NewOBPv300UpdateViewForBankAccountRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")))) // OBPv300UpdateViewForBankAccountRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv300UpdateViewForBankAccount(context.Background(), bankid, accountid, viewid).OBPv300UpdateViewForBankAccountRequest(oBPv300UpdateViewForBankAccountRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv300UpdateViewForBankAccount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv300UpdateViewForBankAccount`: OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv300UpdateViewForBankAccount`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv300UpdateViewForBankAccountRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **oBPv300UpdateViewForBankAccountRequest** | [**OBPv300UpdateViewForBankAccountRequest**](OBPv300UpdateViewForBankAccountRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead**](OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -1175,9 +241,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv310CheckFundsAvailable
+## CheckFundsAvailable
 
-> OBPv310CheckFundsAvailable200Response OBPv310CheckFundsAvailable(ctx, bankid, accountid, viewid).Execute()
+> CheckFundsAvailable200Response CheckFundsAvailable(ctx, bankid, accountid, viewid).Execute()
 
 Check Available Funds
 
@@ -1202,13 +268,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv310CheckFundsAvailable(context.Background(), bankid, accountid, viewid).Execute()
+	resp, r, err := apiClient.AccountAPI.CheckFundsAvailable(context.Background(), bankid, accountid, viewid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv310CheckFundsAvailable``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CheckFundsAvailable``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310CheckFundsAvailable`: OBPv310CheckFundsAvailable200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv310CheckFundsAvailable`: %v\n", resp)
+	// response from `CheckFundsAvailable`: CheckFundsAvailable200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CheckFundsAvailable`: %v\n", resp)
 }
 ```
 
@@ -1224,7 +290,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310CheckFundsAvailableRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCheckFundsAvailableRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1235,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310CheckFundsAvailable200Response**](OBPv310CheckFundsAvailable200Response.md)
+[**CheckFundsAvailable200Response**](CheckFundsAvailable200Response.md)
 
 ### Authorization
 
@@ -1251,9 +317,145 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv310CreateAccountApplication
+## CorePrivateAccountsAllBanks
 
-> OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems OBPv310CreateAccountApplication(ctx, bankid).OBPv310CreateAccountApplicationRequest(oBPv310CreateAccountApplicationRequest).Execute()
+> PrivateAccountsAtOneBank200Response CorePrivateAccountsAllBanks(ctx).Execute()
+
+Get Accounts at all Banks (private)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.CorePrivateAccountsAllBanks(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CorePrivateAccountsAllBanks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CorePrivateAccountsAllBanks`: PrivateAccountsAtOneBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CorePrivateAccountsAllBanks`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCorePrivateAccountsAllBanksRequest struct via the builder pattern
+
+
+### Return type
+
+[**PrivateAccountsAtOneBank200Response**](PrivateAccountsAtOneBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateAccount
+
+> AddAccount200Response CreateAccount(ctx, bankid, accountid).AddAccountRequest(addAccountRequest).Execute()
+
+Create Account (PUT)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	addAccountRequest := *openapiclient.NewAddAccountRequest() // AddAccountRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.CreateAccount(context.Background(), bankid, accountid).AddAccountRequest(addAccountRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CreateAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateAccount`: AddAccount200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CreateAccount`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateAccountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **addAccountRequest** | [**AddAccountRequest**](AddAccountRequest.md) | Request body | 
+
+### Return type
+
+[**AddAccount200Response**](AddAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateAccountApplication
+
+> GetAccountApplications200ResponseAccountApplicationsInner CreateAccountApplication(ctx, bankid).CreateAccountApplicationRequest(createAccountApplicationRequest).Execute()
 
 Create Account Application
 
@@ -1273,17 +475,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv310CreateAccountApplicationRequest := *openapiclient.NewOBPv310CreateAccountApplicationRequest("Type_example", *openapiclient.NewOBPv310CreateAccountApplicationRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv310CreateAccountApplicationRequest | Request body
+	createAccountApplicationRequest := *openapiclient.NewCreateAccountApplicationRequest() // CreateAccountApplicationRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv310CreateAccountApplication(context.Background(), bankid).OBPv310CreateAccountApplicationRequest(oBPv310CreateAccountApplicationRequest).Execute()
+	resp, r, err := apiClient.AccountAPI.CreateAccountApplication(context.Background(), bankid).CreateAccountApplicationRequest(createAccountApplicationRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv310CreateAccountApplication``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CreateAccountApplication``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310CreateAccountApplication`: OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv310CreateAccountApplication`: %v\n", resp)
+	// response from `CreateAccountApplication`: GetAccountApplications200ResponseAccountApplicationsInner
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CreateAccountApplication`: %v\n", resp)
 }
 ```
 
@@ -1297,17 +499,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310CreateAccountApplicationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateAccountApplicationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv310CreateAccountApplicationRequest** | [**OBPv310CreateAccountApplicationRequest**](OBPv310CreateAccountApplicationRequest.md) | Request body | 
+ **createAccountApplicationRequest** | [**CreateAccountApplicationRequest**](CreateAccountApplicationRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems**](OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems.md)
+[**GetAccountApplications200ResponseAccountApplicationsInner**](GetAccountApplications200ResponseAccountApplicationsInner.md)
 
 ### Authorization
 
@@ -1323,9 +525,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv310CreateAccountAttribute
+## CreateAccountAttribute
 
-> OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems OBPv310CreateAccountAttribute(ctx, bankid, accountid, productcode).OBPv310UpdateAccountAttributeRequest(oBPv310UpdateAccountAttributeRequest).Execute()
+> GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner CreateAccountAttribute(ctx, bankid, accountid, productcode).UpdateAccountAttributeRequest(updateAccountAttributeRequest).Execute()
 
 Create Account Attribute
 
@@ -1347,17 +549,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	productcode := "productcode_example" // string | The PRODUCTCODE identifier
-	oBPv310UpdateAccountAttributeRequest := *openapiclient.NewOBPv310UpdateAccountAttributeRequest("Type_example", *openapiclient.NewOBPv310UpdateAccountAttributeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv310UpdateAccountAttributeRequest | Request body
+	updateAccountAttributeRequest := *openapiclient.NewUpdateAccountAttributeRequest() // UpdateAccountAttributeRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv310CreateAccountAttribute(context.Background(), bankid, accountid, productcode).OBPv310UpdateAccountAttributeRequest(oBPv310UpdateAccountAttributeRequest).Execute()
+	resp, r, err := apiClient.AccountAPI.CreateAccountAttribute(context.Background(), bankid, accountid, productcode).UpdateAccountAttributeRequest(updateAccountAttributeRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv310CreateAccountAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CreateAccountAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310CreateAccountAttribute`: OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv310CreateAccountAttribute`: %v\n", resp)
+	// response from `CreateAccountAttribute`: GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CreateAccountAttribute`: %v\n", resp)
 }
 ```
 
@@ -1373,7 +575,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310CreateAccountAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateAccountAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1381,11 +583,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv310UpdateAccountAttributeRequest** | [**OBPv310UpdateAccountAttributeRequest**](OBPv310UpdateAccountAttributeRequest.md) | Request body | 
+ **updateAccountAttributeRequest** | [**UpdateAccountAttributeRequest**](UpdateAccountAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems**](OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems.md)
+[**GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner**](GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner.md)
 
 ### Authorization
 
@@ -1401,154 +603,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv310GetAccountApplication
+## CreateBankAccountBalance
 
-> OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems OBPv310GetAccountApplication(ctx, bankid, accountapplicationid).Execute()
+> GetAllBankAccountBalances200ResponseBalancesInner CreateBankAccountBalance(ctx, bankid, accountid).CreateBankAccountBalanceRequest(createBankAccountBalanceRequest).Execute()
 
-Get Account Application by Id
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountapplicationid := "accountapplicationid_example" // string | The ACCOUNTAPPLICATIONID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv310GetAccountApplication(context.Background(), bankid, accountapplicationid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv310GetAccountApplication``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310GetAccountApplication`: OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv310GetAccountApplication`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountapplicationid** | **string** | The ACCOUNTAPPLICATIONID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310GetAccountApplicationRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems**](OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310GetAccountApplications
-
-> OBPv310GetAccountApplications200Response OBPv310GetAccountApplications(ctx, bankid).Execute()
-
-Get Account Applications
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv310GetAccountApplications(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv310GetAccountApplications``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310GetAccountApplications`: OBPv310GetAccountApplications200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv310GetAccountApplications`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310GetAccountApplicationsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv310GetAccountApplications200Response**](OBPv310GetAccountApplications200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310GetCheckbookOrders
-
-> OBPv310GetCheckbookOrders200Response OBPv310GetCheckbookOrders(ctx, bankid, accountid, viewid).Execute()
-
-Get Checkbook orders
+Create Bank Account Balance
 
 
 
@@ -1567,93 +626,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
+	createBankAccountBalanceRequest := *openapiclient.NewCreateBankAccountBalanceRequest() // CreateBankAccountBalanceRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv310GetCheckbookOrders(context.Background(), bankid, accountid, viewid).Execute()
+	resp, r, err := apiClient.AccountAPI.CreateBankAccountBalance(context.Background(), bankid, accountid).CreateBankAccountBalanceRequest(createBankAccountBalanceRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv310GetCheckbookOrders``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CreateBankAccountBalance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310GetCheckbookOrders`: OBPv310GetCheckbookOrders200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv310GetCheckbookOrders`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310GetCheckbookOrdersRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-### Return type
-
-[**OBPv310GetCheckbookOrders200Response**](OBPv310GetCheckbookOrders200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310UpdateAccount
-
-> OBPv310UpdateAccount200Response OBPv310UpdateAccount(ctx, bankid, accountid).OBPv310UpdateAccountRequest(oBPv310UpdateAccountRequest).Execute()
-
-Update Account
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	oBPv310UpdateAccountRequest := *openapiclient.NewOBPv310UpdateAccountRequest("Type_example", *openapiclient.NewOBPv310UpdateAccountRequestProperties(*openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutings("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")))), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), , )) // OBPv310UpdateAccountRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv310UpdateAccount(context.Background(), bankid, accountid).OBPv310UpdateAccountRequest(oBPv310UpdateAccountRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv310UpdateAccount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310UpdateAccount`: OBPv310UpdateAccount200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv310UpdateAccount`: %v\n", resp)
+	// response from `CreateBankAccountBalance`: GetAllBankAccountBalances200ResponseBalancesInner
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CreateBankAccountBalance`: %v\n", resp)
 }
 ```
 
@@ -1668,18 +651,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310UpdateAccountRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateBankAccountBalanceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv310UpdateAccountRequest** | [**OBPv310UpdateAccountRequest**](OBPv310UpdateAccountRequest.md) | Request body | 
+ **createBankAccountBalanceRequest** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv310UpdateAccount200Response**](OBPv310UpdateAccount200Response.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -1695,315 +678,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv310UpdateAccountApplicationStatus
+## CreateCounterparty
 
-> OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems OBPv310UpdateAccountApplicationStatus(ctx, bankid, accountapplicationid).OBPv510UpdateTransactionRequestStatusRequest(oBPv510UpdateTransactionRequestStatusRequest).Execute()
-
-Update Account Application Status
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountapplicationid := "accountapplicationid_example" // string | The ACCOUNTAPPLICATIONID identifier
-	oBPv510UpdateTransactionRequestStatusRequest := *openapiclient.NewOBPv510UpdateTransactionRequestStatusRequest("Type_example", *openapiclient.NewOBPv510UpdateTransactionRequestStatusRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateTransactionRequestStatusRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv310UpdateAccountApplicationStatus(context.Background(), bankid, accountapplicationid).OBPv510UpdateTransactionRequestStatusRequest(oBPv510UpdateTransactionRequestStatusRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv310UpdateAccountApplicationStatus``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310UpdateAccountApplicationStatus`: OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv310UpdateAccountApplicationStatus`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountapplicationid** | **string** | The ACCOUNTAPPLICATIONID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310UpdateAccountApplicationStatusRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv510UpdateTransactionRequestStatusRequest** | [**OBPv510UpdateTransactionRequestStatusRequest**](OBPv510UpdateTransactionRequestStatusRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems**](OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310UpdateAccountAttribute
-
-> OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems OBPv310UpdateAccountAttribute(ctx, bankid, accountid, productcode, accountattributeid).OBPv310UpdateAccountAttributeRequest(oBPv310UpdateAccountAttributeRequest).Execute()
-
-Update Account Attribute
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	productcode := "productcode_example" // string | The PRODUCTCODE identifier
-	accountattributeid := "accountattributeid_example" // string | The ACCOUNTATTRIBUTEID identifier
-	oBPv310UpdateAccountAttributeRequest := *openapiclient.NewOBPv310UpdateAccountAttributeRequest("Type_example", *openapiclient.NewOBPv310UpdateAccountAttributeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv310UpdateAccountAttributeRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv310UpdateAccountAttribute(context.Background(), bankid, accountid, productcode, accountattributeid).OBPv310UpdateAccountAttributeRequest(oBPv310UpdateAccountAttributeRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv310UpdateAccountAttribute``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310UpdateAccountAttribute`: OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv310UpdateAccountAttribute`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**productcode** | **string** | The PRODUCTCODE identifier | 
-**accountattributeid** | **string** | The ACCOUNTATTRIBUTEID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310UpdateAccountAttributeRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
- **oBPv310UpdateAccountAttributeRequest** | [**OBPv310UpdateAccountAttributeRequest**](OBPv310UpdateAccountAttributeRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems**](OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400AddAccount
-
-> OBPv400AddAccount200Response OBPv400AddAccount(ctx, bankid).OBPv400AddAccountRequest(oBPv400AddAccountRequest).Execute()
-
-Create Account (POST)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv400AddAccountRequest := *openapiclient.NewOBPv400AddAccountRequest("Type_example", *openapiclient.NewOBPv400AddAccountRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutings("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), ))), , *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(, )), , )) // OBPv400AddAccountRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400AddAccount(context.Background(), bankid).OBPv400AddAccountRequest(oBPv400AddAccountRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400AddAccount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400AddAccount`: OBPv400AddAccount200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400AddAccount`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400AddAccountRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv400AddAccountRequest** | [**OBPv400AddAccountRequest**](OBPv400AddAccountRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400AddAccount200Response**](OBPv400AddAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400AddTagForViewOnAccount
-
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems OBPv400AddTagForViewOnAccount(ctx, bankid, accountid, viewid).OBPv400DeleteSystemLevelEndpointTag200Response(oBPv400DeleteSystemLevelEndpointTag200Response).Execute()
-
-Create a tag on account
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-	oBPv400DeleteSystemLevelEndpointTag200Response := *openapiclient.NewOBPv400DeleteSystemLevelEndpointTag200Response("Type_example", *openapiclient.NewOBPv400DeleteSystemLevelEndpointTag200ResponseProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400AddTagForViewOnAccount(context.Background(), bankid, accountid, viewid).OBPv400DeleteSystemLevelEndpointTag200Response(oBPv400DeleteSystemLevelEndpointTag200Response).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400AddTagForViewOnAccount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400AddTagForViewOnAccount`: OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400AddTagForViewOnAccount`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400AddTagForViewOnAccountRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **oBPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md) | Request body | 
-
-### Return type
-
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400CreateCounterparty
-
-> OBPv400GetExplicitCounterpartyById200Response OBPv400CreateCounterparty(ctx, bankid, accountid, viewid).OBPv400CreateCounterpartyForAnyAccountRequest(oBPv400CreateCounterpartyForAnyAccountRequest).Execute()
+> GetExplicitCounterpartyById200Response CreateCounterparty(ctx, bankid, accountid, viewid).CreateCounterpartyForAnyAccountRequest(createCounterpartyForAnyAccountRequest).Execute()
 
 Create Counterparty (Explicit)
 
@@ -2025,17 +702,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
-	oBPv400CreateCounterpartyForAnyAccountRequest := *openapiclient.NewOBPv400CreateCounterpartyForAnyAccountRequest("Type_example", *openapiclient.NewOBPv400CreateCounterpartyForAnyAccountRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetExplicitCounterpartyById200ResponsePropertiesBespoke("Type_example", *openapiclient.NewOBPv400GetExplicitCounterpartyById200ResponsePropertiesBespokeItems("Type_example", *openapiclient.NewOBPv400GetExplicitCounterpartyById200ResponsePropertiesBespokeItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), ))), , , , , )) // OBPv400CreateCounterpartyForAnyAccountRequest | Request body
+	createCounterpartyForAnyAccountRequest := *openapiclient.NewCreateCounterpartyForAnyAccountRequest() // CreateCounterpartyForAnyAccountRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400CreateCounterparty(context.Background(), bankid, accountid, viewid).OBPv400CreateCounterpartyForAnyAccountRequest(oBPv400CreateCounterpartyForAnyAccountRequest).Execute()
+	resp, r, err := apiClient.AccountAPI.CreateCounterparty(context.Background(), bankid, accountid, viewid).CreateCounterpartyForAnyAccountRequest(createCounterpartyForAnyAccountRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400CreateCounterparty``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CreateCounterparty``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateCounterparty`: OBPv400GetExplicitCounterpartyById200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400CreateCounterparty`: %v\n", resp)
+	// response from `CreateCounterparty`: GetExplicitCounterpartyById200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CreateCounterparty`: %v\n", resp)
 }
 ```
 
@@ -2051,7 +728,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateCounterpartyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateCounterpartyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2059,11 +736,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400CreateCounterpartyForAnyAccountRequest** | [**OBPv400CreateCounterpartyForAnyAccountRequest**](OBPv400CreateCounterpartyForAnyAccountRequest.md) | Request body | 
+ **createCounterpartyForAnyAccountRequest** | [**CreateCounterpartyForAnyAccountRequest**](CreateCounterpartyForAnyAccountRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetExplicitCounterpartyById200Response**](OBPv400GetExplicitCounterpartyById200Response.md)
+[**GetExplicitCounterpartyById200Response**](GetExplicitCounterpartyById200Response.md)
 
 ### Authorization
 
@@ -2079,9 +756,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateCounterpartyForAnyAccount
+## CreateCounterpartyForAnyAccount
 
-> OBPv400GetExplicitCounterpartyById200Response OBPv400CreateCounterpartyForAnyAccount(ctx, bankid, accountid, viewid).OBPv400CreateCounterpartyForAnyAccountRequest(oBPv400CreateCounterpartyForAnyAccountRequest).Execute()
+> GetExplicitCounterpartyById200Response CreateCounterpartyForAnyAccount(ctx, bankid, accountid, viewid).CreateCounterpartyForAnyAccountRequest(createCounterpartyForAnyAccountRequest).Execute()
 
 Create Counterparty for any account (Explicit)
 
@@ -2103,17 +780,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
-	oBPv400CreateCounterpartyForAnyAccountRequest := *openapiclient.NewOBPv400CreateCounterpartyForAnyAccountRequest("Type_example", *openapiclient.NewOBPv400CreateCounterpartyForAnyAccountRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetExplicitCounterpartyById200ResponsePropertiesBespoke("Type_example", *openapiclient.NewOBPv400GetExplicitCounterpartyById200ResponsePropertiesBespokeItems("Type_example", *openapiclient.NewOBPv400GetExplicitCounterpartyById200ResponsePropertiesBespokeItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), ))), , , , , )) // OBPv400CreateCounterpartyForAnyAccountRequest | Request body
+	createCounterpartyForAnyAccountRequest := *openapiclient.NewCreateCounterpartyForAnyAccountRequest() // CreateCounterpartyForAnyAccountRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400CreateCounterpartyForAnyAccount(context.Background(), bankid, accountid, viewid).OBPv400CreateCounterpartyForAnyAccountRequest(oBPv400CreateCounterpartyForAnyAccountRequest).Execute()
+	resp, r, err := apiClient.AccountAPI.CreateCounterpartyForAnyAccount(context.Background(), bankid, accountid, viewid).CreateCounterpartyForAnyAccountRequest(createCounterpartyForAnyAccountRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400CreateCounterpartyForAnyAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CreateCounterpartyForAnyAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateCounterpartyForAnyAccount`: OBPv400GetExplicitCounterpartyById200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400CreateCounterpartyForAnyAccount`: %v\n", resp)
+	// response from `CreateCounterpartyForAnyAccount`: GetExplicitCounterpartyById200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CreateCounterpartyForAnyAccount`: %v\n", resp)
 }
 ```
 
@@ -2129,7 +806,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateCounterpartyForAnyAccountRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateCounterpartyForAnyAccountRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2137,11 +814,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400CreateCounterpartyForAnyAccountRequest** | [**OBPv400CreateCounterpartyForAnyAccountRequest**](OBPv400CreateCounterpartyForAnyAccountRequest.md) | Request body | 
+ **createCounterpartyForAnyAccountRequest** | [**CreateCounterpartyForAnyAccountRequest**](CreateCounterpartyForAnyAccountRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetExplicitCounterpartyById200Response**](OBPv400GetExplicitCounterpartyById200Response.md)
+[**GetExplicitCounterpartyById200Response**](GetExplicitCounterpartyById200Response.md)
 
 ### Authorization
 
@@ -2157,9 +834,234 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateDirectDebit
+## CreateCustomView
 
-> OBPv400CreateDirectDebit200Response OBPv400CreateDirectDebit(ctx, bankid, accountid, viewid).OBPv400CreateDirectDebitRequest(oBPv400CreateDirectDebitRequest).Execute()
+> CreateCustomView200Response CreateCustomView(ctx, bankid, accountid, viewid).CreateCustomViewRequest(createCustomViewRequest).Execute()
+
+Create Custom View
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+	createCustomViewRequest := *openapiclient.NewCreateCustomViewRequest() // CreateCustomViewRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.CreateCustomView(context.Background(), bankid, accountid, viewid).CreateCustomViewRequest(createCustomViewRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CreateCustomView``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCustomView`: CreateCustomView200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CreateCustomView`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateCustomViewRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **createCustomViewRequest** | [**CreateCustomViewRequest**](CreateCustomViewRequest.md) | Request body | 
+
+### Return type
+
+[**CreateCustomView200Response**](CreateCustomView200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateCustomViewManagement
+
+> CreateUserWithAccountAccessById200ResponseHead CreateCustomViewManagement(ctx, bankid, accountid).CreateCustomViewManagementRequest(createCustomViewManagementRequest).Execute()
+
+Create Custom View (Management)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	createCustomViewManagementRequest := *openapiclient.NewCreateCustomViewManagementRequest() // CreateCustomViewManagementRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.CreateCustomViewManagement(context.Background(), bankid, accountid).CreateCustomViewManagementRequest(createCustomViewManagementRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CreateCustomViewManagement``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCustomViewManagement`: CreateUserWithAccountAccessById200ResponseHead
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CreateCustomViewManagement`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateCustomViewManagementRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **createCustomViewManagementRequest** | [**CreateCustomViewManagementRequest**](CreateCustomViewManagementRequest.md) | Request body | 
+
+### Return type
+
+[**CreateUserWithAccountAccessById200ResponseHead**](CreateUserWithAccountAccessById200ResponseHead.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateCustomerAccountLink
+
+> GetCustomerAccountLinksByCustomerId200ResponseLinksInner CreateCustomerAccountLink(ctx, bankid).CreateCustomerAccountLinkRequest(createCustomerAccountLinkRequest).Execute()
+
+Create Customer Account Link
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	createCustomerAccountLinkRequest := *openapiclient.NewCreateCustomerAccountLinkRequest() // CreateCustomerAccountLinkRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.CreateCustomerAccountLink(context.Background(), bankid).CreateCustomerAccountLinkRequest(createCustomerAccountLinkRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CreateCustomerAccountLink``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCustomerAccountLink`: GetCustomerAccountLinksByCustomerId200ResponseLinksInner
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CreateCustomerAccountLink`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateCustomerAccountLinkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **createCustomerAccountLinkRequest** | [**CreateCustomerAccountLinkRequest**](CreateCustomerAccountLinkRequest.md) | Request body | 
+
+### Return type
+
+[**GetCustomerAccountLinksByCustomerId200ResponseLinksInner**](GetCustomerAccountLinksByCustomerId200ResponseLinksInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateDirectDebit
+
+> CreateDirectDebit200Response CreateDirectDebit(ctx, bankid, accountid, viewid).CreateDirectDebitRequest(createDirectDebitRequest).Execute()
 
 Create Direct Debit
 
@@ -2181,17 +1083,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
-	oBPv400CreateDirectDebitRequest := *openapiclient.NewOBPv400CreateDirectDebitRequest("Type_example", *openapiclient.NewOBPv400CreateDirectDebitRequestProperties(*openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400CreateDirectDebitRequest | Request body
+	createDirectDebitRequest := *openapiclient.NewCreateDirectDebitRequest() // CreateDirectDebitRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400CreateDirectDebit(context.Background(), bankid, accountid, viewid).OBPv400CreateDirectDebitRequest(oBPv400CreateDirectDebitRequest).Execute()
+	resp, r, err := apiClient.AccountAPI.CreateDirectDebit(context.Background(), bankid, accountid, viewid).CreateDirectDebitRequest(createDirectDebitRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400CreateDirectDebit``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CreateDirectDebit``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateDirectDebit`: OBPv400CreateDirectDebit200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400CreateDirectDebit`: %v\n", resp)
+	// response from `CreateDirectDebit`: CreateDirectDebit200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CreateDirectDebit`: %v\n", resp)
 }
 ```
 
@@ -2207,7 +1109,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateDirectDebitRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateDirectDebitRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2215,11 +1117,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400CreateDirectDebitRequest** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md) | Request body | 
+ **createDirectDebitRequest** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 
@@ -2235,9 +1137,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateDirectDebitManagement
+## CreateDirectDebitManagement
 
-> OBPv400CreateDirectDebit200Response OBPv400CreateDirectDebitManagement(ctx, bankid, accountid).OBPv400CreateDirectDebitRequest(oBPv400CreateDirectDebitRequest).Execute()
+> CreateDirectDebit200Response CreateDirectDebitManagement(ctx, bankid, accountid).CreateDirectDebitRequest(createDirectDebitRequest).Execute()
 
 Create Direct Debit (management)
 
@@ -2258,17 +1160,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	oBPv400CreateDirectDebitRequest := *openapiclient.NewOBPv400CreateDirectDebitRequest("Type_example", *openapiclient.NewOBPv400CreateDirectDebitRequestProperties(*openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400CreateDirectDebitRequest | Request body
+	createDirectDebitRequest := *openapiclient.NewCreateDirectDebitRequest() // CreateDirectDebitRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400CreateDirectDebitManagement(context.Background(), bankid, accountid).OBPv400CreateDirectDebitRequest(oBPv400CreateDirectDebitRequest).Execute()
+	resp, r, err := apiClient.AccountAPI.CreateDirectDebitManagement(context.Background(), bankid, accountid).CreateDirectDebitRequest(createDirectDebitRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400CreateDirectDebitManagement``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CreateDirectDebitManagement``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateDirectDebitManagement`: OBPv400CreateDirectDebit200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400CreateDirectDebitManagement`: %v\n", resp)
+	// response from `CreateDirectDebitManagement`: CreateDirectDebit200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CreateDirectDebitManagement`: %v\n", resp)
 }
 ```
 
@@ -2283,18 +1185,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateDirectDebitManagementRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateDirectDebitManagementRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv400CreateDirectDebitRequest** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md) | Request body | 
+ **createDirectDebitRequest** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 
@@ -2310,9 +1212,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateOrUpdateAccountAttributeDefinition
+## CreateOrUpdateAccountAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems OBPv400CreateOrUpdateAccountAttributeDefinition(ctx, bankid).OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner CreateOrUpdateAccountAttributeDefinition(ctx, bankid).CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
 
 Create or Update Account Attribute Definition
 
@@ -2332,17 +1234,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest := *openapiclient.NewOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest("Type_example", *openapiclient.NewOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")), , )) // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+	createOrUpdateTransactionRequestAttributeDefinitionRequest := *openapiclient.NewCreateOrUpdateTransactionRequestAttributeDefinitionRequest() // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400CreateOrUpdateAccountAttributeDefinition(context.Background(), bankid).OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
+	resp, r, err := apiClient.AccountAPI.CreateOrUpdateAccountAttributeDefinition(context.Background(), bankid).CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400CreateOrUpdateAccountAttributeDefinition``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CreateOrUpdateAccountAttributeDefinition``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateOrUpdateAccountAttributeDefinition`: OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400CreateOrUpdateAccountAttributeDefinition`: %v\n", resp)
+	// response from `CreateOrUpdateAccountAttributeDefinition`: GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CreateOrUpdateAccountAttributeDefinition`: %v\n", resp)
 }
 ```
 
@@ -2356,17 +1258,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateOrUpdateAccountAttributeDefinitionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateOrUpdateAccountAttributeDefinitionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
+ **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -2382,9 +1284,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateStandingOrder
+## CreateStandingOrder
 
-> OBPv400CreateStandingOrder200Response OBPv400CreateStandingOrder(ctx, bankid, accountid, viewid).OBPv400CreateStandingOrderRequest(oBPv400CreateStandingOrderRequest).Execute()
+> CreateStandingOrder200Response CreateStandingOrder(ctx, bankid, accountid, viewid).CreateStandingOrderRequest(createStandingOrderRequest).Execute()
 
 Create Standing Order
 
@@ -2406,17 +1308,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
-	oBPv400CreateStandingOrderRequest := *openapiclient.NewOBPv400CreateStandingOrderRequest("Type_example", *openapiclient.NewOBPv400CreateStandingOrderRequestProperties(*openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), , *openapiclient.NewOBPv400CreateStandingOrderRequestPropertiesWhen("Type_example", *openapiclient.NewOBPv400CreateStandingOrderRequestPropertiesWhenProperties(, )))) // OBPv400CreateStandingOrderRequest | Request body
+	createStandingOrderRequest := *openapiclient.NewCreateStandingOrderRequest() // CreateStandingOrderRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400CreateStandingOrder(context.Background(), bankid, accountid, viewid).OBPv400CreateStandingOrderRequest(oBPv400CreateStandingOrderRequest).Execute()
+	resp, r, err := apiClient.AccountAPI.CreateStandingOrder(context.Background(), bankid, accountid, viewid).CreateStandingOrderRequest(createStandingOrderRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400CreateStandingOrder``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CreateStandingOrder``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateStandingOrder`: OBPv400CreateStandingOrder200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400CreateStandingOrder`: %v\n", resp)
+	// response from `CreateStandingOrder`: CreateStandingOrder200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CreateStandingOrder`: %v\n", resp)
 }
 ```
 
@@ -2432,7 +1334,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateStandingOrderRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateStandingOrderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2440,11 +1342,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400CreateStandingOrderRequest** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md) | Request body | 
+ **createStandingOrderRequest** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 
@@ -2460,9 +1362,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateStandingOrderManagement
+## CreateStandingOrderManagement
 
-> OBPv400CreateStandingOrder200Response OBPv400CreateStandingOrderManagement(ctx, bankid, accountid).OBPv400CreateStandingOrderRequest(oBPv400CreateStandingOrderRequest).Execute()
+> CreateStandingOrder200Response CreateStandingOrderManagement(ctx, bankid, accountid).CreateStandingOrderRequest(createStandingOrderRequest).Execute()
 
 Create Standing Order (management)
 
@@ -2483,17 +1385,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	oBPv400CreateStandingOrderRequest := *openapiclient.NewOBPv400CreateStandingOrderRequest("Type_example", *openapiclient.NewOBPv400CreateStandingOrderRequestProperties(*openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), , *openapiclient.NewOBPv400CreateStandingOrderRequestPropertiesWhen("Type_example", *openapiclient.NewOBPv400CreateStandingOrderRequestPropertiesWhenProperties(, )))) // OBPv400CreateStandingOrderRequest | Request body
+	createStandingOrderRequest := *openapiclient.NewCreateStandingOrderRequest() // CreateStandingOrderRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400CreateStandingOrderManagement(context.Background(), bankid, accountid).OBPv400CreateStandingOrderRequest(oBPv400CreateStandingOrderRequest).Execute()
+	resp, r, err := apiClient.AccountAPI.CreateStandingOrderManagement(context.Background(), bankid, accountid).CreateStandingOrderRequest(createStandingOrderRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400CreateStandingOrderManagement``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CreateStandingOrderManagement``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateStandingOrderManagement`: OBPv400CreateStandingOrder200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400CreateStandingOrderManagement`: %v\n", resp)
+	// response from `CreateStandingOrderManagement`: CreateStandingOrder200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CreateStandingOrderManagement`: %v\n", resp)
 }
 ```
 
@@ -2508,18 +1410,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateStandingOrderManagementRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateStandingOrderManagementRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv400CreateStandingOrderRequest** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md) | Request body | 
+ **createStandingOrderRequest** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 
@@ -2535,9 +1437,162 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400DeleteAccountAttributeDefinition
+## CreateUserWithAccountAccessById
 
-> OBPv400DeleteAccountAttributeDefinition(ctx, bankid, attributedefinitionid).Execute()
+> CreateUserWithAccountAccessById200Response CreateUserWithAccountAccessById(ctx, bankid, accountid, viewid).CreateUserWithAccountAccessByIdRequest(createUserWithAccountAccessByIdRequest).Execute()
+
+Create (DAuth) User with Account Access
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+	createUserWithAccountAccessByIdRequest := *openapiclient.NewCreateUserWithAccountAccessByIdRequest() // CreateUserWithAccountAccessByIdRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.CreateUserWithAccountAccessById(context.Background(), bankid, accountid, viewid).CreateUserWithAccountAccessByIdRequest(createUserWithAccountAccessByIdRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CreateUserWithAccountAccessById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateUserWithAccountAccessById`: CreateUserWithAccountAccessById200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CreateUserWithAccountAccessById`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateUserWithAccountAccessByIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **createUserWithAccountAccessByIdRequest** | [**CreateUserWithAccountAccessByIdRequest**](CreateUserWithAccountAccessByIdRequest.md) | Request body | 
+
+### Return type
+
+[**CreateUserWithAccountAccessById200Response**](CreateUserWithAccountAccessById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateViewForBankAccount
+
+> CreateUserWithAccountAccessById200ResponseHead CreateViewForBankAccount(ctx, bankid, accountid).CreateCustomViewManagementRequest(createCustomViewManagementRequest).Execute()
+
+Create Custom View
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	createCustomViewManagementRequest := *openapiclient.NewCreateCustomViewManagementRequest() // CreateCustomViewManagementRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.CreateViewForBankAccount(context.Background(), bankid, accountid).CreateCustomViewManagementRequest(createCustomViewManagementRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.CreateViewForBankAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateViewForBankAccount`: CreateUserWithAccountAccessById200ResponseHead
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.CreateViewForBankAccount`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateViewForBankAccountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **createCustomViewManagementRequest** | [**CreateCustomViewManagementRequest**](CreateCustomViewManagementRequest.md) | Request body | 
+
+### Return type
+
+[**CreateUserWithAccountAccessById200ResponseHead**](CreateUserWithAccountAccessById200ResponseHead.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteAccountAttributeDefinition
+
+> DeleteAccountAttributeDefinition(ctx, bankid, attributedefinitionid).Execute()
 
 Delete Account Attribute Definition
 
@@ -2561,9 +1616,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AccountAPI.OBPv400DeleteAccountAttributeDefinition(context.Background(), bankid, attributedefinitionid).Execute()
+	r, err := apiClient.AccountAPI.DeleteAccountAttributeDefinition(context.Background(), bankid, attributedefinitionid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400DeleteAccountAttributeDefinition``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.DeleteAccountAttributeDefinition``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -2580,7 +1635,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400DeleteAccountAttributeDefinitionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteAccountAttributeDefinitionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2606,9 +1661,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400DeleteAccountCascade
+## DeleteAccountCascade
 
-> OBPv400DeleteAccountCascade(ctx, bankid, accountid).Execute()
+> DeleteAccountCascade(ctx, bankid, accountid).Execute()
 
 Delete Account Cascade
 
@@ -2632,9 +1687,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AccountAPI.OBPv400DeleteAccountCascade(context.Background(), bankid, accountid).Execute()
+	r, err := apiClient.AccountAPI.DeleteAccountCascade(context.Background(), bankid, accountid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400DeleteAccountCascade``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.DeleteAccountCascade``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -2651,7 +1706,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400DeleteAccountCascadeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteAccountCascadeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2677,9 +1732,83 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400DeleteCounterpartyForAnyAccount
+## DeleteBankAccountBalance
 
-> OBPv400DeleteCounterpartyForAnyAccount(ctx, bankid, accountid, viewid, counterpartyid).Execute()
+> DeleteBankAccountBalance(ctx, bankid, accountid, balanceid).Execute()
+
+Delete Bank Account Balance
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	balanceid := "balanceid_example" // string | The BALANCEID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.AccountAPI.DeleteBankAccountBalance(context.Background(), bankid, accountid, balanceid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.DeleteBankAccountBalance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**balanceid** | **string** | The BALANCEID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteBankAccountBalanceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteCounterpartyForAnyAccount
+
+> DeleteCounterpartyForAnyAccount(ctx, bankid, accountid, viewid, counterpartyid).Execute()
 
 Delete Counterparty for any account (Explicit)
 
@@ -2705,9 +1834,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AccountAPI.OBPv400DeleteCounterpartyForAnyAccount(context.Background(), bankid, accountid, viewid, counterpartyid).Execute()
+	r, err := apiClient.AccountAPI.DeleteCounterpartyForAnyAccount(context.Background(), bankid, accountid, viewid, counterpartyid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400DeleteCounterpartyForAnyAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.DeleteCounterpartyForAnyAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -2726,7 +1855,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400DeleteCounterpartyForAnyAccountRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteCounterpartyForAnyAccountRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2754,1706 +1883,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400DeleteExplicitCounterparty
+## DeleteCustomView
 
-> OBPv400DeleteExplicitCounterparty(ctx, bankid, accountid, viewid, counterpartyid).Execute()
-
-Delete Counterparty (Explicit)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-	counterpartyid := "counterpartyid_example" // string | The COUNTERPARTYID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AccountAPI.OBPv400DeleteExplicitCounterparty(context.Background(), bankid, accountid, viewid, counterpartyid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400DeleteExplicitCounterparty``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-**counterpartyid** | **string** | The COUNTERPARTYID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400DeleteExplicitCounterpartyRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400DeleteTagForViewOnAccount
-
-> OBPv400DeleteTagForViewOnAccount(ctx, bankid, accountid, viewid, tagid).Execute()
-
-Delete a tag on account
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-	tagid := "tagid_example" // string | The TAGID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AccountAPI.OBPv400DeleteTagForViewOnAccount(context.Background(), bankid, accountid, viewid, tagid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400DeleteTagForViewOnAccount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-**tagid** | **string** | The TAGID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400DeleteTagForViewOnAccountRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetAccountAttributeDefinition
-
-> OBPv400GetTransactionRequestAttributeDefinition200Response OBPv400GetAccountAttributeDefinition(ctx, bankid).Execute()
-
-Get Account Attribute Definition
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400GetAccountAttributeDefinition(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400GetAccountAttributeDefinition``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetAccountAttributeDefinition`: OBPv400GetTransactionRequestAttributeDefinition200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400GetAccountAttributeDefinition`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetAccountAttributeDefinitionRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetAccountByAccountRouting
-
-> OBPv400GetPrivateAccountByIdFull200Response OBPv400GetAccountByAccountRouting(ctx).OBPv400GetAccountsByAccountRoutingRegexRequest(oBPv400GetAccountsByAccountRoutingRegexRequest).Execute()
-
-Get Account by Account Routing
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	oBPv400GetAccountsByAccountRoutingRegexRequest := *openapiclient.NewOBPv400GetAccountsByAccountRoutingRegexRequest("Type_example", *openapiclient.NewOBPv400GetAccountsByAccountRoutingRegexRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )))) // OBPv400GetAccountsByAccountRoutingRegexRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400GetAccountByAccountRouting(context.Background()).OBPv400GetAccountsByAccountRoutingRegexRequest(oBPv400GetAccountsByAccountRoutingRegexRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400GetAccountByAccountRouting``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetAccountByAccountRouting`: OBPv400GetPrivateAccountByIdFull200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400GetAccountByAccountRouting`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetAccountByAccountRoutingRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **oBPv400GetAccountsByAccountRoutingRegexRequest** | [**OBPv400GetAccountsByAccountRoutingRegexRequest**](OBPv400GetAccountsByAccountRoutingRegexRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400GetPrivateAccountByIdFull200Response**](OBPv400GetPrivateAccountByIdFull200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetAccountsByAccountRoutingRegex
-
-> OBPv400GetAccountsByAccountRoutingRegex200Response OBPv400GetAccountsByAccountRoutingRegex(ctx).OBPv400GetAccountsByAccountRoutingRegexRequest(oBPv400GetAccountsByAccountRoutingRegexRequest).Execute()
-
-Get Accounts by Account Routing Regex
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	oBPv400GetAccountsByAccountRoutingRegexRequest := *openapiclient.NewOBPv400GetAccountsByAccountRoutingRegexRequest("Type_example", *openapiclient.NewOBPv400GetAccountsByAccountRoutingRegexRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )))) // OBPv400GetAccountsByAccountRoutingRegexRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400GetAccountsByAccountRoutingRegex(context.Background()).OBPv400GetAccountsByAccountRoutingRegexRequest(oBPv400GetAccountsByAccountRoutingRegexRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400GetAccountsByAccountRoutingRegex``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetAccountsByAccountRoutingRegex`: OBPv400GetAccountsByAccountRoutingRegex200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400GetAccountsByAccountRoutingRegex`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetAccountsByAccountRoutingRegexRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **oBPv400GetAccountsByAccountRoutingRegexRequest** | [**OBPv400GetAccountsByAccountRoutingRegexRequest**](OBPv400GetAccountsByAccountRoutingRegexRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400GetAccountsByAccountRoutingRegex200Response**](OBPv400GetAccountsByAccountRoutingRegex200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetAccountsMinimalByCustomerId
-
-> OBPv510GetApiTags200Response OBPv400GetAccountsMinimalByCustomerId(ctx, customerid).Execute()
-
-Get Accounts Minimal for a Customer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400GetAccountsMinimalByCustomerId(context.Background(), customerid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400GetAccountsMinimalByCustomerId``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetAccountsMinimalByCustomerId`: OBPv510GetApiTags200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400GetAccountsMinimalByCustomerId`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetAccountsMinimalByCustomerIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv510GetApiTags200Response**](OBPv510GetApiTags200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetCounterpartiesForAnyAccount
-
-> OBPv400GetCounterpartiesForAnyAccount200Response OBPv400GetCounterpartiesForAnyAccount(ctx, bankid, accountid, viewid).Execute()
-
-Get Counterparties for any account (Explicit)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400GetCounterpartiesForAnyAccount(context.Background(), bankid, accountid, viewid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400GetCounterpartiesForAnyAccount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetCounterpartiesForAnyAccount`: OBPv400GetCounterpartiesForAnyAccount200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400GetCounterpartiesForAnyAccount`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetCounterpartiesForAnyAccountRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-### Return type
-
-[**OBPv400GetCounterpartiesForAnyAccount200Response**](OBPv400GetCounterpartiesForAnyAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetCounterpartyByIdForAnyAccount
-
-> OBPv400GetExplicitCounterpartyById200Response OBPv400GetCounterpartyByIdForAnyAccount(ctx, bankid, accountid, viewid, counterpartyid).Execute()
-
-Get Counterparty by Id for any account (Explicit)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-	counterpartyid := "counterpartyid_example" // string | The COUNTERPARTYID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400GetCounterpartyByIdForAnyAccount(context.Background(), bankid, accountid, viewid, counterpartyid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400GetCounterpartyByIdForAnyAccount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetCounterpartyByIdForAnyAccount`: OBPv400GetExplicitCounterpartyById200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400GetCounterpartyByIdForAnyAccount`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-**counterpartyid** | **string** | The COUNTERPARTYID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetCounterpartyByIdForAnyAccountRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-
-### Return type
-
-[**OBPv400GetExplicitCounterpartyById200Response**](OBPv400GetExplicitCounterpartyById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetCounterpartyByNameForAnyAccount
-
-> OBPv400GetExplicitCounterpartyById200Response OBPv400GetCounterpartyByNameForAnyAccount(ctx, bankid, accountid, viewid, counterpartyname).Execute()
-
-Get Counterparty by name for any account (Explicit) 
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-	counterpartyname := "counterpartyname_example" // string | The COUNTERPARTYNAME identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400GetCounterpartyByNameForAnyAccount(context.Background(), bankid, accountid, viewid, counterpartyname).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400GetCounterpartyByNameForAnyAccount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetCounterpartyByNameForAnyAccount`: OBPv400GetExplicitCounterpartyById200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400GetCounterpartyByNameForAnyAccount`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-**counterpartyname** | **string** | The COUNTERPARTYNAME identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetCounterpartyByNameForAnyAccountRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-
-### Return type
-
-[**OBPv400GetExplicitCounterpartyById200Response**](OBPv400GetExplicitCounterpartyById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetExplicitCounterpartiesForAccount
-
-> OBPv400GetCounterpartiesForAnyAccount200Response OBPv400GetExplicitCounterpartiesForAccount(ctx, bankid, accountid, viewid).Execute()
-
-Get Counterparties (Explicit)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400GetExplicitCounterpartiesForAccount(context.Background(), bankid, accountid, viewid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400GetExplicitCounterpartiesForAccount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetExplicitCounterpartiesForAccount`: OBPv400GetCounterpartiesForAnyAccount200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400GetExplicitCounterpartiesForAccount`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetExplicitCounterpartiesForAccountRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-### Return type
-
-[**OBPv400GetCounterpartiesForAnyAccount200Response**](OBPv400GetCounterpartiesForAnyAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetFastFirehoseAccountsAtOneBank
-
-> OBPv400GetFastFirehoseAccountsAtOneBank200Response OBPv400GetFastFirehoseAccountsAtOneBank(ctx, bankid).Execute()
-
-Get Fast Firehose Accounts at Bank
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400GetFastFirehoseAccountsAtOneBank(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400GetFastFirehoseAccountsAtOneBank``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetFastFirehoseAccountsAtOneBank`: OBPv400GetFastFirehoseAccountsAtOneBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400GetFastFirehoseAccountsAtOneBank`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetFastFirehoseAccountsAtOneBankRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv400GetFastFirehoseAccountsAtOneBank200Response**](OBPv400GetFastFirehoseAccountsAtOneBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetFirehoseAccountsAtOneBank
-
-> OBPv400GetFirehoseAccountsAtOneBank200Response OBPv400GetFirehoseAccountsAtOneBank(ctx, bankid, viewid).Execute()
-
-Get Firehose Accounts at Bank
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400GetFirehoseAccountsAtOneBank(context.Background(), bankid, viewid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400GetFirehoseAccountsAtOneBank``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetFirehoseAccountsAtOneBank`: OBPv400GetFirehoseAccountsAtOneBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400GetFirehoseAccountsAtOneBank`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetFirehoseAccountsAtOneBankRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv400GetFirehoseAccountsAtOneBank200Response**](OBPv400GetFirehoseAccountsAtOneBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetPrivateAccountByIdFull
-
-> OBPv400GetPrivateAccountByIdFull200Response OBPv400GetPrivateAccountByIdFull(ctx, bankid, accountid, viewid).Execute()
-
-Get Account by Id (Full)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400GetPrivateAccountByIdFull(context.Background(), bankid, accountid, viewid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400GetPrivateAccountByIdFull``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetPrivateAccountByIdFull`: OBPv400GetPrivateAccountByIdFull200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400GetPrivateAccountByIdFull`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetPrivateAccountByIdFullRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-### Return type
-
-[**OBPv400GetPrivateAccountByIdFull200Response**](OBPv400GetPrivateAccountByIdFull200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetTagsForViewOnAccount
-
-> OBPv400GetTagsForViewOnAccount200Response OBPv400GetTagsForViewOnAccount(ctx, bankid, accountid, viewid).Execute()
-
-Get tags on account
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400GetTagsForViewOnAccount(context.Background(), bankid, accountid, viewid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400GetTagsForViewOnAccount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetTagsForViewOnAccount`: OBPv400GetTagsForViewOnAccount200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400GetTagsForViewOnAccount`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetTagsForViewOnAccountRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-### Return type
-
-[**OBPv400GetTagsForViewOnAccount200Response**](OBPv400GetTagsForViewOnAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400IbanChecker
-
-> OBPv400IbanChecker200Response OBPv400IbanChecker(ctx).OBPv400IbanCheckerRequest(oBPv400IbanCheckerRequest).Execute()
-
-Validate and check IBAN
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	oBPv400IbanCheckerRequest := *openapiclient.NewOBPv400IbanCheckerRequest("Type_example", *openapiclient.NewOBPv400IbanCheckerRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400IbanCheckerRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400IbanChecker(context.Background()).OBPv400IbanCheckerRequest(oBPv400IbanCheckerRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400IbanChecker``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400IbanChecker`: OBPv400IbanChecker200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400IbanChecker`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400IbanCheckerRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **oBPv400IbanCheckerRequest** | [**OBPv400IbanCheckerRequest**](OBPv400IbanCheckerRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400IbanChecker200Response**](OBPv400IbanChecker200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400UpdateAccountLabel
-
-> OBPv121UpdateTransactionNarrative200Response OBPv400UpdateAccountLabel(ctx, bankid, accountid).OBPv400UpdateAccountLabelRequest(oBPv400UpdateAccountLabelRequest).Execute()
-
-Update Account Label
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	oBPv400UpdateAccountLabelRequest := *openapiclient.NewOBPv400UpdateAccountLabelRequest("Type_example", *openapiclient.NewOBPv400UpdateAccountLabelRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400UpdateAccountLabelRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv400UpdateAccountLabel(context.Background(), bankid, accountid).OBPv400UpdateAccountLabelRequest(oBPv400UpdateAccountLabelRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv400UpdateAccountLabel``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400UpdateAccountLabel`: OBPv121UpdateTransactionNarrative200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv400UpdateAccountLabel`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400UpdateAccountLabelRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv400UpdateAccountLabelRequest** | [**OBPv400UpdateAccountLabelRequest**](OBPv400UpdateAccountLabelRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500CreateAccount
-
-> OBPv400AddAccount200Response OBPv500CreateAccount(ctx, bankid, accountid).OBPv400AddAccountRequest(oBPv400AddAccountRequest).Execute()
-
-Create Account (PUT)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	oBPv400AddAccountRequest := *openapiclient.NewOBPv400AddAccountRequest("Type_example", *openapiclient.NewOBPv400AddAccountRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutings("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), ))), , *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(, )), , )) // OBPv400AddAccountRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv500CreateAccount(context.Background(), bankid, accountid).OBPv400AddAccountRequest(oBPv400AddAccountRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv500CreateAccount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500CreateAccount`: OBPv400AddAccount200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv500CreateAccount`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500CreateAccountRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv400AddAccountRequest** | [**OBPv400AddAccountRequest**](OBPv400AddAccountRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400AddAccount200Response**](OBPv400AddAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500CreateCustomerAccountLink
-
-> OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems OBPv500CreateCustomerAccountLink(ctx, bankid).OBPv500CreateCustomerAccountLinkRequest(oBPv500CreateCustomerAccountLinkRequest).Execute()
-
-Create Customer Account Link
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv500CreateCustomerAccountLinkRequest := *openapiclient.NewOBPv500CreateCustomerAccountLinkRequest("Type_example", *openapiclient.NewOBPv500CreateCustomerAccountLinkRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv500CreateCustomerAccountLinkRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv500CreateCustomerAccountLink(context.Background(), bankid).OBPv500CreateCustomerAccountLinkRequest(oBPv500CreateCustomerAccountLinkRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv500CreateCustomerAccountLink``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500CreateCustomerAccountLink`: OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv500CreateCustomerAccountLink`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500CreateCustomerAccountLinkRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv500CreateCustomerAccountLinkRequest** | [**OBPv500CreateCustomerAccountLinkRequest**](OBPv500CreateCustomerAccountLinkRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems**](OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500GetViewsForBankAccount
-
-> OBPv500GetViewsForBankAccount200Response OBPv500GetViewsForBankAccount(ctx, bankid, accountid).Execute()
-
-Get Views for Account
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv500GetViewsForBankAccount(context.Background(), bankid, accountid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv500GetViewsForBankAccount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500GetViewsForBankAccount`: OBPv500GetViewsForBankAccount200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv500GetViewsForBankAccount`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500GetViewsForBankAccountRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv500GetViewsForBankAccount200Response**](OBPv500GetViewsForBankAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510CreateBankAccountBalance
-
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems OBPv510CreateBankAccountBalance(ctx, bankid, accountid).OBPv510CreateBankAccountBalanceRequest(oBPv510CreateBankAccountBalanceRequest).Execute()
-
-Create Bank Account Balance
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	oBPv510CreateBankAccountBalanceRequest := *openapiclient.NewOBPv510CreateBankAccountBalanceRequest("Type_example", *openapiclient.NewOBPv510CreateBankAccountBalanceRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510CreateBankAccountBalanceRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510CreateBankAccountBalance(context.Background(), bankid, accountid).OBPv510CreateBankAccountBalanceRequest(oBPv510CreateBankAccountBalanceRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510CreateBankAccountBalance``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510CreateBankAccountBalance`: OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510CreateBankAccountBalance`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510CreateBankAccountBalanceRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv510CreateBankAccountBalanceRequest** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510CreateCustomView
-
-> OBPv510CreateCustomView200Response OBPv510CreateCustomView(ctx, bankid, accountid, viewid).OBPv510CreateCustomViewRequest(oBPv510CreateCustomViewRequest).Execute()
-
-Create Custom View
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-	oBPv510CreateCustomViewRequest := *openapiclient.NewOBPv510CreateCustomViewRequest("Type_example", *openapiclient.NewOBPv510CreateCustomViewRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")), , , , )) // OBPv510CreateCustomViewRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510CreateCustomView(context.Background(), bankid, accountid, viewid).OBPv510CreateCustomViewRequest(oBPv510CreateCustomViewRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510CreateCustomView``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510CreateCustomView`: OBPv510CreateCustomView200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510CreateCustomView`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510CreateCustomViewRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **oBPv510CreateCustomViewRequest** | [**OBPv510CreateCustomViewRequest**](OBPv510CreateCustomViewRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510CreateCustomView200Response**](OBPv510CreateCustomView200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510CreateUserWithAccountAccessById
-
-> OBPv510CreateUserWithAccountAccessById200Response OBPv510CreateUserWithAccountAccessById(ctx, bankid, accountid, viewid).OBPv510CreateUserWithAccountAccessByIdRequest(oBPv510CreateUserWithAccountAccessByIdRequest).Execute()
-
-Create (DAuth) User with Account Access
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-	oBPv510CreateUserWithAccountAccessByIdRequest := *openapiclient.NewOBPv510CreateUserWithAccountAccessByIdRequest("Type_example", *openapiclient.NewOBPv510CreateUserWithAccountAccessByIdRequestProperties(*openapiclient.NewOBPv510CreateUserWithAccountAccessByIdRequestPropertiesViews("Type_example", *openapiclient.NewOBPv510CreateUserWithAccountAccessByIdRequestPropertiesViewsItems("Type_example", *openapiclient.NewOBPv510CreateUserWithAccountAccessByIdRequestPropertiesViewsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")))), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )) // OBPv510CreateUserWithAccountAccessByIdRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510CreateUserWithAccountAccessById(context.Background(), bankid, accountid, viewid).OBPv510CreateUserWithAccountAccessByIdRequest(oBPv510CreateUserWithAccountAccessByIdRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510CreateUserWithAccountAccessById``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510CreateUserWithAccountAccessById`: OBPv510CreateUserWithAccountAccessById200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510CreateUserWithAccountAccessById`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510CreateUserWithAccountAccessByIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **oBPv510CreateUserWithAccountAccessByIdRequest** | [**OBPv510CreateUserWithAccountAccessByIdRequest**](OBPv510CreateUserWithAccountAccessByIdRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510CreateUserWithAccountAccessById200Response**](OBPv510CreateUserWithAccountAccessById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510DeleteBankAccountBalance
-
-> OBPv510DeleteBankAccountBalance(ctx, bankid, accountid, balanceid).Execute()
-
-Delete Bank Account Balance
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	balanceid := "balanceid_example" // string | The BALANCEID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AccountAPI.OBPv510DeleteBankAccountBalance(context.Background(), bankid, accountid, balanceid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510DeleteBankAccountBalance``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**balanceid** | **string** | The BALANCEID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510DeleteBankAccountBalanceRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510DeleteCustomView
-
-> OBPv510DeleteCustomView(ctx, bankid, accountid, viewid, targetviewid).Execute()
+> DeleteCustomView(ctx, bankid, accountid, viewid, targetviewid).Execute()
 
 Delete Custom View
 
@@ -4479,9 +1911,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AccountAPI.OBPv510DeleteCustomView(context.Background(), bankid, accountid, viewid, targetviewid).Execute()
+	r, err := apiClient.AccountAPI.DeleteCustomView(context.Background(), bankid, accountid, viewid, targetviewid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510DeleteCustomView``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.DeleteCustomView``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -4500,7 +1932,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510DeleteCustomViewRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteCustomViewRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4528,9 +1960,237 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetAccountAccessByUserId
+## DeleteExplicitCounterparty
 
-> OBPv510GetApiTags200Response OBPv510GetAccountAccessByUserId(ctx, userid).Execute()
+> DeleteExplicitCounterparty(ctx, bankid, accountid, viewid, counterpartyid).Execute()
+
+Delete Counterparty (Explicit)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+	counterpartyid := "counterpartyid_example" // string | The COUNTERPARTYID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.AccountAPI.DeleteExplicitCounterparty(context.Background(), bankid, accountid, viewid, counterpartyid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.DeleteExplicitCounterparty``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+**counterpartyid** | **string** | The COUNTERPARTYID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteExplicitCounterpartyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteTagForViewOnAccount
+
+> DeleteTagForViewOnAccount(ctx, bankid, accountid, viewid, tagid).Execute()
+
+Delete a tag on account
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+	tagid := "tagid_example" // string | The TAGID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.AccountAPI.DeleteTagForViewOnAccount(context.Background(), bankid, accountid, viewid, tagid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.DeleteTagForViewOnAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+**tagid** | **string** | The TAGID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteTagForViewOnAccountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteViewForBankAccount
+
+> DeleteViewForBankAccount(ctx, bankid, accountid, viewid).Execute()
+
+Delete Custom View
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.AccountAPI.DeleteViewForBankAccount(context.Background(), bankid, accountid, viewid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.DeleteViewForBankAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteViewForBankAccountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAccountAccessByUserId
+
+> GetApiTags200Response GetAccountAccessByUserId(ctx, userid).Execute()
 
 Get Account Access by USER_ID
 
@@ -4553,13 +2213,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510GetAccountAccessByUserId(context.Background(), userid).Execute()
+	resp, r, err := apiClient.AccountAPI.GetAccountAccessByUserId(context.Background(), userid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510GetAccountAccessByUserId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetAccountAccessByUserId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetAccountAccessByUserId`: OBPv510GetApiTags200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510GetAccountAccessByUserId`: %v\n", resp)
+	// response from `GetAccountAccessByUserId`: GetApiTags200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetAccountAccessByUserId`: %v\n", resp)
 }
 ```
 
@@ -4573,7 +2233,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetAccountAccessByUserIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAccountAccessByUserIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4582,7 +2242,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetApiTags200Response**](OBPv510GetApiTags200Response.md)
+[**GetApiTags200Response**](GetApiTags200Response.md)
 
 ### Authorization
 
@@ -4598,9 +2258,564 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetAccountsHeldByUser
+## GetAccountApplication
 
-> OBPv510GetAccountsHeldByUserAtBank200Response OBPv510GetAccountsHeldByUser(ctx, userid).Execute()
+> GetAccountApplications200ResponseAccountApplicationsInner GetAccountApplication(ctx, bankid, accountapplicationid).Execute()
+
+Get Account Application by Id
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountapplicationid := "accountapplicationid_example" // string | The ACCOUNTAPPLICATIONID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetAccountApplication(context.Background(), bankid, accountapplicationid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetAccountApplication``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAccountApplication`: GetAccountApplications200ResponseAccountApplicationsInner
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetAccountApplication`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountapplicationid** | **string** | The ACCOUNTAPPLICATIONID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAccountApplicationRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetAccountApplications200ResponseAccountApplicationsInner**](GetAccountApplications200ResponseAccountApplicationsInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAccountApplications
+
+> GetAccountApplications200Response GetAccountApplications(ctx, bankid).Execute()
+
+Get Account Applications
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetAccountApplications(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetAccountApplications``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAccountApplications`: GetAccountApplications200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetAccountApplications`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAccountApplicationsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetAccountApplications200Response**](GetAccountApplications200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAccountAttributeDefinition
+
+> GetTransactionRequestAttributeDefinition200Response GetAccountAttributeDefinition(ctx, bankid).Execute()
+
+Get Account Attribute Definition
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetAccountAttributeDefinition(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetAccountAttributeDefinition``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAccountAttributeDefinition`: GetTransactionRequestAttributeDefinition200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetAccountAttributeDefinition`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAccountAttributeDefinitionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAccountByAccountRouting
+
+> GetAccountsByAccountRoutingRegex200ResponseAccountsInner GetAccountByAccountRouting(ctx).GetAccountsByAccountRoutingRegexRequest(getAccountsByAccountRoutingRegexRequest).Execute()
+
+Get Account by Account Routing
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	getAccountsByAccountRoutingRegexRequest := *openapiclient.NewGetAccountsByAccountRoutingRegexRequest() // GetAccountsByAccountRoutingRegexRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetAccountByAccountRouting(context.Background()).GetAccountsByAccountRoutingRegexRequest(getAccountsByAccountRoutingRegexRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetAccountByAccountRouting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAccountByAccountRouting`: GetAccountsByAccountRoutingRegex200ResponseAccountsInner
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetAccountByAccountRouting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAccountByAccountRoutingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **getAccountsByAccountRoutingRegexRequest** | [**GetAccountsByAccountRoutingRegexRequest**](GetAccountsByAccountRoutingRegexRequest.md) | Request body | 
+
+### Return type
+
+[**GetAccountsByAccountRoutingRegex200ResponseAccountsInner**](GetAccountsByAccountRoutingRegex200ResponseAccountsInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAccountDirectory
+
+> GetAccountDirectory200Response GetAccountDirectory(ctx, bankid).Execute()
+
+Get Account Directory at Bank
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetAccountDirectory(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetAccountDirectory``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAccountDirectory`: GetAccountDirectory200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetAccountDirectory`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAccountDirectoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetAccountDirectory200Response**](GetAccountDirectory200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAccountsAtBank
+
+> GetAccountsAtBank200Response GetAccountsAtBank(ctx, bankid).Execute()
+
+Get Accounts at Bank
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetAccountsAtBank(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetAccountsAtBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAccountsAtBank`: GetAccountsAtBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetAccountsAtBank`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAccountsAtBankRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetAccountsAtBank200Response**](GetAccountsAtBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAccountsByAccountRoutingRegex
+
+> GetAccountsByAccountRoutingRegex200Response GetAccountsByAccountRoutingRegex(ctx).GetAccountsByAccountRoutingRegexRequest(getAccountsByAccountRoutingRegexRequest).Execute()
+
+Get Accounts by Account Routing Regex
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	getAccountsByAccountRoutingRegexRequest := *openapiclient.NewGetAccountsByAccountRoutingRegexRequest() // GetAccountsByAccountRoutingRegexRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetAccountsByAccountRoutingRegex(context.Background()).GetAccountsByAccountRoutingRegexRequest(getAccountsByAccountRoutingRegexRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetAccountsByAccountRoutingRegex``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAccountsByAccountRoutingRegex`: GetAccountsByAccountRoutingRegex200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetAccountsByAccountRoutingRegex`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAccountsByAccountRoutingRegexRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **getAccountsByAccountRoutingRegexRequest** | [**GetAccountsByAccountRoutingRegexRequest**](GetAccountsByAccountRoutingRegexRequest.md) | Request body | 
+
+### Return type
+
+[**GetAccountsByAccountRoutingRegex200Response**](GetAccountsByAccountRoutingRegex200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAccountsHeld
+
+> GetAccountsHeldByUserAtBank200Response GetAccountsHeld(ctx, bankid).Execute()
+
+Get Accounts Held
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetAccountsHeld(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetAccountsHeld``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAccountsHeld`: GetAccountsHeldByUserAtBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetAccountsHeld`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAccountsHeldRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetAccountsHeldByUserAtBank200Response**](GetAccountsHeldByUserAtBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAccountsHeldByUser
+
+> GetAccountsHeldByUserAtBank200Response GetAccountsHeldByUser(ctx, userid).Execute()
 
 Get Accounts Held By User
 
@@ -4623,13 +2838,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510GetAccountsHeldByUser(context.Background(), userid).Execute()
+	resp, r, err := apiClient.AccountAPI.GetAccountsHeldByUser(context.Background(), userid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510GetAccountsHeldByUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetAccountsHeldByUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetAccountsHeldByUser`: OBPv510GetAccountsHeldByUserAtBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510GetAccountsHeldByUser`: %v\n", resp)
+	// response from `GetAccountsHeldByUser`: GetAccountsHeldByUserAtBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetAccountsHeldByUser`: %v\n", resp)
 }
 ```
 
@@ -4643,7 +2858,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetAccountsHeldByUserRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAccountsHeldByUserRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4652,7 +2867,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAccountsHeldByUserAtBank200Response**](OBPv510GetAccountsHeldByUserAtBank200Response.md)
+[**GetAccountsHeldByUserAtBank200Response**](GetAccountsHeldByUserAtBank200Response.md)
 
 ### Authorization
 
@@ -4668,9 +2883,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetAccountsHeldByUserAtBank
+## GetAccountsHeldByUserAtBank
 
-> OBPv510GetAccountsHeldByUserAtBank200Response OBPv510GetAccountsHeldByUserAtBank(ctx, userid, bankid).Execute()
+> GetAccountsHeldByUserAtBank200Response GetAccountsHeldByUserAtBank(ctx, userid, bankid).Execute()
 
 Get Accounts Held By User
 
@@ -4694,13 +2909,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510GetAccountsHeldByUserAtBank(context.Background(), userid, bankid).Execute()
+	resp, r, err := apiClient.AccountAPI.GetAccountsHeldByUserAtBank(context.Background(), userid, bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510GetAccountsHeldByUserAtBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetAccountsHeldByUserAtBank``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetAccountsHeldByUserAtBank`: OBPv510GetAccountsHeldByUserAtBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510GetAccountsHeldByUserAtBank`: %v\n", resp)
+	// response from `GetAccountsHeldByUserAtBank`: GetAccountsHeldByUserAtBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetAccountsHeldByUserAtBank`: %v\n", resp)
 }
 ```
 
@@ -4715,7 +2930,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetAccountsHeldByUserAtBankRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAccountsHeldByUserAtBankRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4725,7 +2940,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAccountsHeldByUserAtBank200Response**](OBPv510GetAccountsHeldByUserAtBank200Response.md)
+[**GetAccountsHeldByUserAtBank200Response**](GetAccountsHeldByUserAtBank200Response.md)
 
 ### Authorization
 
@@ -4741,9 +2956,79 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetAgent
+## GetAccountsMinimalByCustomerId
 
-> OBPv510GetAgent200Response OBPv510GetAgent(ctx, bankid, agentid).Execute()
+> GetApiTags200Response GetAccountsMinimalByCustomerId(ctx, customerid).Execute()
+
+Get Accounts Minimal for a Customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetAccountsMinimalByCustomerId(context.Background(), customerid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetAccountsMinimalByCustomerId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAccountsMinimalByCustomerId`: GetApiTags200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetAccountsMinimalByCustomerId`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAccountsMinimalByCustomerIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetApiTags200Response**](GetApiTags200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAgent
+
+> GetAgent200Response GetAgent(ctx, bankid, agentid).Execute()
 
 Get Agent
 
@@ -4767,13 +3052,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510GetAgent(context.Background(), bankid, agentid).Execute()
+	resp, r, err := apiClient.AccountAPI.GetAgent(context.Background(), bankid, agentid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510GetAgent``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetAgent``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetAgent`: OBPv510GetAgent200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510GetAgent`: %v\n", resp)
+	// response from `GetAgent`: GetAgent200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetAgent`: %v\n", resp)
 }
 ```
 
@@ -4788,7 +3073,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetAgentRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAgentRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4798,7 +3083,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAgent200Response**](OBPv510GetAgent200Response.md)
+[**GetAgent200Response**](GetAgent200Response.md)
 
 ### Authorization
 
@@ -4814,9 +3099,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetAgents
+## GetAgents
 
-> OBPv510GetAgents200Response OBPv510GetAgents(ctx, bankid).Execute()
+> GetAgents200Response GetAgents(ctx, bankid).Execute()
 
 Get Agents at Bank
 
@@ -4839,13 +3124,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510GetAgents(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.AccountAPI.GetAgents(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510GetAgents``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetAgents``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetAgents`: OBPv510GetAgents200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510GetAgents`: %v\n", resp)
+	// response from `GetAgents`: GetAgents200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetAgents`: %v\n", resp)
 }
 ```
 
@@ -4859,7 +3144,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetAgentsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAgentsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4868,7 +3153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAgents200Response**](OBPv510GetAgents200Response.md)
+[**GetAgents200Response**](GetAgents200Response.md)
 
 ### Authorization
 
@@ -4884,9 +3169,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv510GetAllBankAccountBalances
+## GetAllBankAccountBalances
 
-> OBPv510GetAllBankAccountBalances200Response OBPv510GetAllBankAccountBalances(ctx, bankid, accountid).Execute()
+> GetAllBankAccountBalances200Response GetAllBankAccountBalances(ctx, bankid, accountid).Execute()
 
 Get All Bank Account Balances
 
@@ -4910,13 +3195,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510GetAllBankAccountBalances(context.Background(), bankid, accountid).Execute()
+	resp, r, err := apiClient.AccountAPI.GetAllBankAccountBalances(context.Background(), bankid, accountid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510GetAllBankAccountBalances``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetAllBankAccountBalances``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetAllBankAccountBalances`: OBPv510GetAllBankAccountBalances200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510GetAllBankAccountBalances`: %v\n", resp)
+	// response from `GetAllBankAccountBalances`: GetAllBankAccountBalances200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetAllBankAccountBalances`: %v\n", resp)
 }
 ```
 
@@ -4931,7 +3216,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetAllBankAccountBalancesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAllBankAccountBalancesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4941,7 +3226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200Response**](OBPv510GetAllBankAccountBalances200Response.md)
+[**GetAllBankAccountBalances200Response**](GetAllBankAccountBalances200Response.md)
 
 ### Authorization
 
@@ -4957,9 +3242,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetBankAccountBalanceById
+## GetBankAccountBalanceById
 
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems OBPv510GetBankAccountBalanceById(ctx, bankid, accountid, balanceid).Execute()
+> GetAllBankAccountBalances200ResponseBalancesInner GetBankAccountBalanceById(ctx, bankid, accountid, balanceid).Execute()
 
 Get Bank Account Balance By ID
 
@@ -4984,13 +3269,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510GetBankAccountBalanceById(context.Background(), bankid, accountid, balanceid).Execute()
+	resp, r, err := apiClient.AccountAPI.GetBankAccountBalanceById(context.Background(), bankid, accountid, balanceid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510GetBankAccountBalanceById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetBankAccountBalanceById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetBankAccountBalanceById`: OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510GetBankAccountBalanceById`: %v\n", resp)
+	// response from `GetBankAccountBalanceById`: GetAllBankAccountBalances200ResponseBalancesInner
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetBankAccountBalanceById`: %v\n", resp)
 }
 ```
 
@@ -5006,7 +3291,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetBankAccountBalanceByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetBankAccountBalanceByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5017,7 +3302,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -5033,9 +3318,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetBankAccountBalances
+## GetBankAccountBalances
 
-> OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItems OBPv510GetBankAccountBalances(ctx, bankid, accountid, viewid).Execute()
+> GetBankAccountsBalances200ResponseAccountsInner GetBankAccountBalances(ctx, bankid, accountid, viewid).Execute()
 
 Get Account Balances by BANK_ID and ACCOUNT_ID through the VIEW_ID
 
@@ -5060,13 +3345,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510GetBankAccountBalances(context.Background(), bankid, accountid, viewid).Execute()
+	resp, r, err := apiClient.AccountAPI.GetBankAccountBalances(context.Background(), bankid, accountid, viewid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510GetBankAccountBalances``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetBankAccountBalances``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetBankAccountBalances`: OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItems
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510GetBankAccountBalances`: %v\n", resp)
+	// response from `GetBankAccountBalances`: GetBankAccountsBalances200ResponseAccountsInner
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetBankAccountBalances`: %v\n", resp)
 }
 ```
 
@@ -5082,7 +3367,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetBankAccountBalancesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetBankAccountBalancesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5093,7 +3378,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItems**](OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItems.md)
+[**GetBankAccountsBalances200ResponseAccountsInner**](GetBankAccountsBalances200ResponseAccountsInner.md)
 
 ### Authorization
 
@@ -5109,9 +3394,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetBankAccountsBalances
+## GetBankAccountsBalances
 
-> OBPv510GetBankAccountsBalances200Response OBPv510GetBankAccountsBalances(ctx, bankid).Execute()
+> GetBankAccountsBalances200Response GetBankAccountsBalances(ctx, bankid).Execute()
 
 Get Account Balances by BANK_ID
 
@@ -5134,13 +3419,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510GetBankAccountsBalances(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.AccountAPI.GetBankAccountsBalances(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510GetBankAccountsBalances``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetBankAccountsBalances``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetBankAccountsBalances`: OBPv510GetBankAccountsBalances200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510GetBankAccountsBalances`: %v\n", resp)
+	// response from `GetBankAccountsBalances`: GetBankAccountsBalances200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetBankAccountsBalances`: %v\n", resp)
 }
 ```
 
@@ -5154,7 +3439,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetBankAccountsBalancesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetBankAccountsBalancesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5163,7 +3448,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetBankAccountsBalances200Response**](OBPv510GetBankAccountsBalances200Response.md)
+[**GetBankAccountsBalances200Response**](GetBankAccountsBalances200Response.md)
 
 ### Authorization
 
@@ -5179,9 +3464,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetBankAccountsBalancesThroughView
+## GetBankAccountsBalancesThroughView
 
-> OBPv510GetBankAccountsBalances200Response OBPv510GetBankAccountsBalancesThroughView(ctx, bankid, viewid).Execute()
+> GetBankAccountsBalances200Response GetBankAccountsBalancesThroughView(ctx, bankid, viewid).Execute()
 
 Get Account Balances by BANK_ID through the VIEW_ID
 
@@ -5205,13 +3490,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510GetBankAccountsBalancesThroughView(context.Background(), bankid, viewid).Execute()
+	resp, r, err := apiClient.AccountAPI.GetBankAccountsBalancesThroughView(context.Background(), bankid, viewid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510GetBankAccountsBalancesThroughView``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetBankAccountsBalancesThroughView``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetBankAccountsBalancesThroughView`: OBPv510GetBankAccountsBalances200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510GetBankAccountsBalancesThroughView`: %v\n", resp)
+	// response from `GetBankAccountsBalancesThroughView`: GetBankAccountsBalances200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetBankAccountsBalancesThroughView`: %v\n", resp)
 }
 ```
 
@@ -5226,7 +3511,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetBankAccountsBalancesThroughViewRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetBankAccountsBalancesThroughViewRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5236,7 +3521,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetBankAccountsBalances200Response**](OBPv510GetBankAccountsBalances200Response.md)
+[**GetBankAccountsBalances200Response**](GetBankAccountsBalances200Response.md)
 
 ### Authorization
 
@@ -5252,9 +3537,85 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetCoreAccountByIdThroughView
+## GetCheckbookOrders
 
-> OBPv510GetCoreAccountByIdThroughView200Response OBPv510GetCoreAccountByIdThroughView(ctx, bankid, accountid, viewid).Execute()
+> GetCheckbookOrders200Response GetCheckbookOrders(ctx, bankid, accountid, viewid).Execute()
+
+Get Checkbook orders
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetCheckbookOrders(context.Background(), bankid, accountid, viewid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetCheckbookOrders``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCheckbookOrders`: GetCheckbookOrders200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetCheckbookOrders`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCheckbookOrdersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**GetCheckbookOrders200Response**](GetCheckbookOrders200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCoreAccountByIdThroughView
+
+> GetCoreAccountByIdThroughView200Response GetCoreAccountByIdThroughView(ctx, bankid, accountid, viewid).Execute()
 
 Get Account by Id (Core) through the VIEW_ID
 
@@ -5279,13 +3640,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510GetCoreAccountByIdThroughView(context.Background(), bankid, accountid, viewid).Execute()
+	resp, r, err := apiClient.AccountAPI.GetCoreAccountByIdThroughView(context.Background(), bankid, accountid, viewid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510GetCoreAccountByIdThroughView``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetCoreAccountByIdThroughView``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetCoreAccountByIdThroughView`: OBPv510GetCoreAccountByIdThroughView200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510GetCoreAccountByIdThroughView`: %v\n", resp)
+	// response from `GetCoreAccountByIdThroughView`: GetCoreAccountByIdThroughView200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetCoreAccountByIdThroughView`: %v\n", resp)
 }
 ```
 
@@ -5301,7 +3662,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetCoreAccountByIdThroughViewRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCoreAccountByIdThroughViewRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5312,7 +3673,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetCoreAccountByIdThroughView200Response**](OBPv510GetCoreAccountByIdThroughView200Response.md)
+[**GetCoreAccountByIdThroughView200Response**](GetCoreAccountByIdThroughView200Response.md)
 
 ### Authorization
 
@@ -5328,9 +3689,389 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetCustomView
+## GetCoreAccountByIdV600
 
-> OBPv510CreateCustomView200Response OBPv510GetCustomView(ctx, bankid, accountid, viewid, targetviewid).Execute()
+> GetCoreAccountByIdV600200Response GetCoreAccountByIdV600(ctx, bankid, accountid).Execute()
+
+Get Account by Id (Core)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetCoreAccountByIdV600(context.Background(), bankid, accountid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetCoreAccountByIdV600``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCoreAccountByIdV600`: GetCoreAccountByIdV600200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetCoreAccountByIdV600`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCoreAccountByIdV600Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetCoreAccountByIdV600200Response**](GetCoreAccountByIdV600200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCoreTransactionsForBankAccount
+
+> GetCoreTransactionsForBankAccount200Response GetCoreTransactionsForBankAccount(ctx, bankid, accountid).Execute()
+
+Get Transactions for Account (Core)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetCoreTransactionsForBankAccount(context.Background(), bankid, accountid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetCoreTransactionsForBankAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCoreTransactionsForBankAccount`: GetCoreTransactionsForBankAccount200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetCoreTransactionsForBankAccount`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCoreTransactionsForBankAccountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetCoreTransactionsForBankAccount200Response**](GetCoreTransactionsForBankAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCounterpartiesForAnyAccount
+
+> GetCounterpartiesForAnyAccount200Response GetCounterpartiesForAnyAccount(ctx, bankid, accountid, viewid).Execute()
+
+Get Counterparties for any account (Explicit)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetCounterpartiesForAnyAccount(context.Background(), bankid, accountid, viewid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetCounterpartiesForAnyAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCounterpartiesForAnyAccount`: GetCounterpartiesForAnyAccount200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetCounterpartiesForAnyAccount`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCounterpartiesForAnyAccountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**GetCounterpartiesForAnyAccount200Response**](GetCounterpartiesForAnyAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCounterpartyByIdForAnyAccount
+
+> GetExplicitCounterpartyById200Response GetCounterpartyByIdForAnyAccount(ctx, bankid, accountid, viewid, counterpartyid).Execute()
+
+Get Counterparty by Id for any account (Explicit)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+	counterpartyid := "counterpartyid_example" // string | The COUNTERPARTYID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetCounterpartyByIdForAnyAccount(context.Background(), bankid, accountid, viewid, counterpartyid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetCounterpartyByIdForAnyAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCounterpartyByIdForAnyAccount`: GetExplicitCounterpartyById200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetCounterpartyByIdForAnyAccount`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+**counterpartyid** | **string** | The COUNTERPARTYID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCounterpartyByIdForAnyAccountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+[**GetExplicitCounterpartyById200Response**](GetExplicitCounterpartyById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCounterpartyByNameForAnyAccount
+
+> GetExplicitCounterpartyById200Response GetCounterpartyByNameForAnyAccount(ctx, bankid, accountid, viewid, counterpartyname).Execute()
+
+Get Counterparty by name for any account (Explicit) 
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+	counterpartyname := "counterpartyname_example" // string | The COUNTERPARTYNAME identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetCounterpartyByNameForAnyAccount(context.Background(), bankid, accountid, viewid, counterpartyname).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetCounterpartyByNameForAnyAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCounterpartyByNameForAnyAccount`: GetExplicitCounterpartyById200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetCounterpartyByNameForAnyAccount`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+**counterpartyname** | **string** | The COUNTERPARTYNAME identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCounterpartyByNameForAnyAccountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+[**GetExplicitCounterpartyById200Response**](GetExplicitCounterpartyById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCustomView
+
+> CreateCustomView200Response GetCustomView(ctx, bankid, accountid, viewid, targetviewid).Execute()
 
 Get Custom View
 
@@ -5356,13 +4097,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510GetCustomView(context.Background(), bankid, accountid, viewid, targetviewid).Execute()
+	resp, r, err := apiClient.AccountAPI.GetCustomView(context.Background(), bankid, accountid, viewid, targetviewid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510GetCustomView``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetCustomView``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetCustomView`: OBPv510CreateCustomView200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510GetCustomView`: %v\n", resp)
+	// response from `GetCustomView`: CreateCustomView200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetCustomView`: %v\n", resp)
 }
 ```
 
@@ -5379,7 +4120,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetCustomViewRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCustomViewRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5391,7 +4132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510CreateCustomView200Response**](OBPv510CreateCustomView200Response.md)
+[**CreateCustomView200Response**](CreateCustomView200Response.md)
 
 ### Authorization
 
@@ -5407,11 +4148,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GrantUserAccessToViewById
+## GetExplicitCounterpartiesForAccount
 
-> OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead OBPv510GrantUserAccessToViewById(ctx, bankid, accountid, viewid).OBPv510RevokeUserAccessToViewByIdRequest(oBPv510RevokeUserAccessToViewByIdRequest).Execute()
+> GetCounterpartiesForAnyAccount200Response GetExplicitCounterpartiesForAccount(ctx, bankid, accountid, viewid).Execute()
 
-Grant User access to View
+Get Counterparties (Explicit)
 
 
 
@@ -5431,17 +4172,16 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
-	oBPv510RevokeUserAccessToViewByIdRequest := *openapiclient.NewOBPv510RevokeUserAccessToViewByIdRequest("Type_example", *openapiclient.NewOBPv510RevokeUserAccessToViewByIdRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510RevokeUserAccessToViewByIdRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510GrantUserAccessToViewById(context.Background(), bankid, accountid, viewid).OBPv510RevokeUserAccessToViewByIdRequest(oBPv510RevokeUserAccessToViewByIdRequest).Execute()
+	resp, r, err := apiClient.AccountAPI.GetExplicitCounterpartiesForAccount(context.Background(), bankid, accountid, viewid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510GrantUserAccessToViewById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetExplicitCounterpartiesForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GrantUserAccessToViewById`: OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510GrantUserAccessToViewById`: %v\n", resp)
+	// response from `GetExplicitCounterpartiesForAccount`: GetCounterpartiesForAnyAccount200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetExplicitCounterpartiesForAccount`: %v\n", resp)
 }
 ```
 
@@ -5457,7 +4197,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GrantUserAccessToViewByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetExplicitCounterpartiesForAccountRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5465,11 +4205,10 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv510RevokeUserAccessToViewByIdRequest** | [**OBPv510RevokeUserAccessToViewByIdRequest**](OBPv510RevokeUserAccessToViewByIdRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead**](OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead.md)
+[**GetCounterpartiesForAnyAccount200Response**](GetCounterpartiesForAnyAccount200Response.md)
 
 ### Authorization
 
@@ -5477,7 +4216,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -5485,11 +4224,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510RevokeUserAccessToViewById
+## GetFastFirehoseAccountsAtOneBank
 
-> OBPv510RevokeUserAccessToViewById200Response OBPv510RevokeUserAccessToViewById(ctx, bankid, accountid, viewid).OBPv510RevokeUserAccessToViewByIdRequest(oBPv510RevokeUserAccessToViewByIdRequest).Execute()
+> GetFastFirehoseAccountsAtOneBank200Response GetFastFirehoseAccountsAtOneBank(ctx, bankid).Execute()
 
-Revoke User access to View
+Get Fast Firehose Accounts at Bank
 
 
 
@@ -5507,19 +4246,87 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetFastFirehoseAccountsAtOneBank(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetFastFirehoseAccountsAtOneBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetFastFirehoseAccountsAtOneBank`: GetFastFirehoseAccountsAtOneBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetFastFirehoseAccountsAtOneBank`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetFastFirehoseAccountsAtOneBankRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetFastFirehoseAccountsAtOneBank200Response**](GetFastFirehoseAccountsAtOneBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetFirehoseAccountsAtOneBank
+
+> GetFirehoseAccountsAtOneBank200Response GetFirehoseAccountsAtOneBank(ctx, bankid, viewid).Execute()
+
+Get Firehose Accounts at Bank
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
-	oBPv510RevokeUserAccessToViewByIdRequest := *openapiclient.NewOBPv510RevokeUserAccessToViewByIdRequest("Type_example", *openapiclient.NewOBPv510RevokeUserAccessToViewByIdRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510RevokeUserAccessToViewByIdRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510RevokeUserAccessToViewById(context.Background(), bankid, accountid, viewid).OBPv510RevokeUserAccessToViewByIdRequest(oBPv510RevokeUserAccessToViewByIdRequest).Execute()
+	resp, r, err := apiClient.AccountAPI.GetFirehoseAccountsAtOneBank(context.Background(), bankid, viewid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510RevokeUserAccessToViewById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetFirehoseAccountsAtOneBank``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510RevokeUserAccessToViewById`: OBPv510RevokeUserAccessToViewById200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510RevokeUserAccessToViewById`: %v\n", resp)
+	// response from `GetFirehoseAccountsAtOneBank`: GetFirehoseAccountsAtOneBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetFirehoseAccountsAtOneBank`: %v\n", resp)
 }
 ```
 
@@ -5530,328 +4337,21 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
 **viewid** | **string** | The VIEWID identifier | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510RevokeUserAccessToViewByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetFirehoseAccountsAtOneBankRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
-
-
- **oBPv510RevokeUserAccessToViewByIdRequest** | [**OBPv510RevokeUserAccessToViewByIdRequest**](OBPv510RevokeUserAccessToViewByIdRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510RevokeUserAccessToViewById200Response**](OBPv510RevokeUserAccessToViewById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510UpdateBankAccountBalance
-
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems OBPv510UpdateBankAccountBalance(ctx, bankid, accountid, balanceid).OBPv510CreateBankAccountBalanceRequest(oBPv510CreateBankAccountBalanceRequest).Execute()
-
-Update Bank Account Balance
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	balanceid := "balanceid_example" // string | The BALANCEID identifier
-	oBPv510CreateBankAccountBalanceRequest := *openapiclient.NewOBPv510CreateBankAccountBalanceRequest("Type_example", *openapiclient.NewOBPv510CreateBankAccountBalanceRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510CreateBankAccountBalanceRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510UpdateBankAccountBalance(context.Background(), bankid, accountid, balanceid).OBPv510CreateBankAccountBalanceRequest(oBPv510CreateBankAccountBalanceRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510UpdateBankAccountBalance``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510UpdateBankAccountBalance`: OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510UpdateBankAccountBalance`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**balanceid** | **string** | The BALANCEID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510UpdateBankAccountBalanceRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **oBPv510CreateBankAccountBalanceRequest** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510UpdateCustomView
-
-> OBPv510CreateCustomView200Response OBPv510UpdateCustomView(ctx, bankid, accountid, viewid, targetviewid).OBPv510UpdateCustomViewRequest(oBPv510UpdateCustomViewRequest).Execute()
-
-Update Custom View
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-	targetviewid := "targetviewid_example" // string | The TARGETVIEWID identifier
-	oBPv510UpdateCustomViewRequest := *openapiclient.NewOBPv510UpdateCustomViewRequest("Type_example", *openapiclient.NewOBPv510UpdateCustomViewRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")), , , , )) // OBPv510UpdateCustomViewRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv510UpdateCustomView(context.Background(), bankid, accountid, viewid, targetviewid).OBPv510UpdateCustomViewRequest(oBPv510UpdateCustomViewRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv510UpdateCustomView``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510UpdateCustomView`: OBPv510CreateCustomView200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv510UpdateCustomView`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-**targetviewid** | **string** | The TARGETVIEWID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510UpdateCustomViewRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
- **oBPv510UpdateCustomViewRequest** | [**OBPv510UpdateCustomViewRequest**](OBPv510UpdateCustomViewRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510CreateCustomView200Response**](OBPv510CreateCustomView200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600CreateCustomViewManagement
-
-> OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead OBPv600CreateCustomViewManagement(ctx, bankid, accountid).OBPv600CreateCustomViewManagementRequest(oBPv600CreateCustomViewManagementRequest).Execute()
-
-Create Custom View (Management)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	oBPv600CreateCustomViewManagementRequest := *openapiclient.NewOBPv600CreateCustomViewManagementRequest("Type_example", *openapiclient.NewOBPv600CreateCustomViewManagementRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")))) // OBPv600CreateCustomViewManagementRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv600CreateCustomViewManagement(context.Background(), bankid, accountid).OBPv600CreateCustomViewManagementRequest(oBPv600CreateCustomViewManagementRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv600CreateCustomViewManagement``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv600CreateCustomViewManagement`: OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv600CreateCustomViewManagement`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv600CreateCustomViewManagementRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv600CreateCustomViewManagementRequest** | [**OBPv600CreateCustomViewManagementRequest**](OBPv600CreateCustomViewManagementRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead**](OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600GetAccountDirectory
-
-> OBPv600GetAccountDirectory200Response OBPv600GetAccountDirectory(ctx, bankid).Execute()
-
-Get Account Directory at Bank
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv600GetAccountDirectory(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv600GetAccountDirectory``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv600GetAccountDirectory`: OBPv600GetAccountDirectory200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv600GetAccountDirectory`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv600GetAccountDirectoryRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
 
 
 ### Return type
 
-[**OBPv600GetAccountDirectory200Response**](OBPv600GetAccountDirectory200Response.md)
+[**GetFirehoseAccountsAtOneBank200Response**](GetFirehoseAccountsAtOneBank200Response.md)
 
 ### Authorization
 
@@ -5867,152 +4367,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetAccountsAtBank
+## GetHoldingAccountByReleaser
 
-> OBPv600GetAccountsAtBank200Response OBPv600GetAccountsAtBank(ctx, bankid).Execute()
-
-Get Accounts at Bank
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv600GetAccountsAtBank(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv600GetAccountsAtBank``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv600GetAccountsAtBank`: OBPv600GetAccountsAtBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv600GetAccountsAtBank`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv600GetAccountsAtBankRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv600GetAccountsAtBank200Response**](OBPv600GetAccountsAtBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600GetCoreAccountByIdV600
-
-> OBPv600GetCoreAccountByIdV600200Response OBPv600GetCoreAccountByIdV600(ctx, bankid, accountid).Execute()
-
-Get Account by Id (Core)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv600GetCoreAccountByIdV600(context.Background(), bankid, accountid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv600GetCoreAccountByIdV600``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv600GetCoreAccountByIdV600`: OBPv600GetCoreAccountByIdV600200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv600GetCoreAccountByIdV600`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv600GetCoreAccountByIdV600Request struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv600GetCoreAccountByIdV600200Response**](OBPv600GetCoreAccountByIdV600200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600GetHoldingAccountByReleaser
-
-> OBPv600GetHoldingAccountByReleaser200Response OBPv600GetHoldingAccountByReleaser(ctx, bankid, accountid, viewid).Execute()
+> GetHoldingAccountByReleaser200Response GetHoldingAccountByReleaser(ctx, bankid, accountid, viewid).Execute()
 
 Get Holding Accounts By Releaser
 
@@ -6037,13 +4394,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv600GetHoldingAccountByReleaser(context.Background(), bankid, accountid, viewid).Execute()
+	resp, r, err := apiClient.AccountAPI.GetHoldingAccountByReleaser(context.Background(), bankid, accountid, viewid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv600GetHoldingAccountByReleaser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetHoldingAccountByReleaser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetHoldingAccountByReleaser`: OBPv600GetHoldingAccountByReleaser200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv600GetHoldingAccountByReleaser`: %v\n", resp)
+	// response from `GetHoldingAccountByReleaser`: GetHoldingAccountByReleaser200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetHoldingAccountByReleaser`: %v\n", resp)
 }
 ```
 
@@ -6059,7 +4416,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetHoldingAccountByReleaserRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetHoldingAccountByReleaserRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6070,7 +4427,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetHoldingAccountByReleaser200Response**](OBPv600GetHoldingAccountByReleaser200Response.md)
+[**GetHoldingAccountByReleaser200Response**](GetHoldingAccountByReleaser200Response.md)
 
 ### Authorization
 
@@ -6086,9 +4443,614 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetTransactionsForBankAccount
+## GetOtherAccountByIdForBankAccount
 
-> OBPv600GetTransactionsForBankAccount200Response OBPv600GetTransactionsForBankAccount(ctx, bankid, accountid, viewid).Execute()
+> GetTransactionByIdForBankAccount200ResponseOtherAccount GetOtherAccountByIdForBankAccount(ctx, bankid, accountid, viewid, otheraccountid).Execute()
+
+Get Other Account by Id
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+	otheraccountid := "otheraccountid_example" // string | The OTHERACCOUNTID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetOtherAccountByIdForBankAccount(context.Background(), bankid, accountid, viewid, otheraccountid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetOtherAccountByIdForBankAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOtherAccountByIdForBankAccount`: GetTransactionByIdForBankAccount200ResponseOtherAccount
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetOtherAccountByIdForBankAccount`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+**otheraccountid** | **string** | The OTHERACCOUNTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetOtherAccountByIdForBankAccountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+[**GetTransactionByIdForBankAccount200ResponseOtherAccount**](GetTransactionByIdForBankAccount200ResponseOtherAccount.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetOtherAccountsForBankAccount
+
+> GetOtherAccountsForBankAccount200Response GetOtherAccountsForBankAccount(ctx, bankid, accountid, viewid).Execute()
+
+Get Other Accounts of one Account
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetOtherAccountsForBankAccount(context.Background(), bankid, accountid, viewid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetOtherAccountsForBankAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOtherAccountsForBankAccount`: GetOtherAccountsForBankAccount200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetOtherAccountsForBankAccount`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetOtherAccountsForBankAccountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**GetOtherAccountsForBankAccount200Response**](GetOtherAccountsForBankAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPermissionForUserForBankAccount
+
+> GetPermissionForUserForBankAccount200Response GetPermissionForUserForBankAccount(ctx, bankid, accountid, provider, providerid).Execute()
+
+Get Account access for User
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	provider := "provider_example" // string | The PROVIDER identifier
+	providerid := "providerid_example" // string | The PROVIDERID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetPermissionForUserForBankAccount(context.Background(), bankid, accountid, provider, providerid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetPermissionForUserForBankAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPermissionForUserForBankAccount`: GetPermissionForUserForBankAccount200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetPermissionForUserForBankAccount`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**provider** | **string** | The PROVIDER identifier | 
+**providerid** | **string** | The PROVIDERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPermissionForUserForBankAccountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+[**GetPermissionForUserForBankAccount200Response**](GetPermissionForUserForBankAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPermissionsForBankAccount
+
+> GetPermissionsForBankAccount200Response GetPermissionsForBankAccount(ctx, bankid, accountid).Execute()
+
+Get access
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetPermissionsForBankAccount(context.Background(), bankid, accountid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetPermissionsForBankAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPermissionsForBankAccount`: GetPermissionsForBankAccount200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetPermissionsForBankAccount`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPermissionsForBankAccountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetPermissionsForBankAccount200Response**](GetPermissionsForBankAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPrivateAccountByIdFull
+
+> GetPrivateAccountByIdFull200Response GetPrivateAccountByIdFull(ctx, bankid, accountid, viewid).Execute()
+
+Get Account by Id (Full)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetPrivateAccountByIdFull(context.Background(), bankid, accountid, viewid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetPrivateAccountByIdFull``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPrivateAccountByIdFull`: GetPrivateAccountByIdFull200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetPrivateAccountByIdFull`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPrivateAccountByIdFullRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**GetPrivateAccountByIdFull200Response**](GetPrivateAccountByIdFull200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPrivateAccountIdsbyBankId
+
+> GetPrivateAccountIdsbyBankId200Response GetPrivateAccountIdsbyBankId(ctx, bankid).Execute()
+
+Get Accounts at Bank (IDs only)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetPrivateAccountIdsbyBankId(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetPrivateAccountIdsbyBankId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPrivateAccountIdsbyBankId`: GetPrivateAccountIdsbyBankId200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetPrivateAccountIdsbyBankId`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPrivateAccountIdsbyBankIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetPrivateAccountIdsbyBankId200Response**](GetPrivateAccountIdsbyBankId200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPublicAccountById
+
+> GetPublicAccountById200Response GetPublicAccountById(ctx, bankid, accountid, viewid).Execute()
+
+Get Public Account by Id
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetPublicAccountById(context.Background(), bankid, accountid, viewid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetPublicAccountById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPublicAccountById`: GetPublicAccountById200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetPublicAccountById`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPublicAccountByIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**GetPublicAccountById200Response**](GetPublicAccountById200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetTagsForViewOnAccount
+
+> GetTagsForViewOnAccount200Response GetTagsForViewOnAccount(ctx, bankid, accountid, viewid).Execute()
+
+Get tags on account
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetTagsForViewOnAccount(context.Background(), bankid, accountid, viewid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetTagsForViewOnAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTagsForViewOnAccount`: GetTagsForViewOnAccount200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetTagsForViewOnAccount`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTagsForViewOnAccountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**GetTagsForViewOnAccount200Response**](GetTagsForViewOnAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetTransactionsForBankAccount
+
+> GetTransactionsForBankAccount200Response GetTransactionsForBankAccount(ctx, bankid, accountid, viewid).Execute()
 
 Get Transactions for Account (Full)
 
@@ -6113,13 +5075,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv600GetTransactionsForBankAccount(context.Background(), bankid, accountid, viewid).Execute()
+	resp, r, err := apiClient.AccountAPI.GetTransactionsForBankAccount(context.Background(), bankid, accountid, viewid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv600GetTransactionsForBankAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetTransactionsForBankAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetTransactionsForBankAccount`: OBPv600GetTransactionsForBankAccount200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv600GetTransactionsForBankAccount`: %v\n", resp)
+	// response from `GetTransactionsForBankAccount`: GetTransactionsForBankAccount200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetTransactionsForBankAccount`: %v\n", resp)
 }
 ```
 
@@ -6135,7 +5097,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetTransactionsForBankAccountRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTransactionsForBankAccountRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6146,7 +5108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetTransactionsForBankAccount200Response**](OBPv600GetTransactionsForBankAccount200Response.md)
+[**GetTransactionsForBankAccount200Response**](GetTransactionsForBankAccount200Response.md)
 
 ### Authorization
 
@@ -6162,9 +5124,236 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600HasAccountAccess
+## GetUsersWithAccountAccess
 
-> OBPv600HasAccountAccess200Response OBPv600HasAccountAccess(ctx, bankid, accountid, viewid).Execute()
+> GetUsersWithAccountAccess200Response GetUsersWithAccountAccess(ctx, bankid, accountid, viewid).Execute()
+
+Get Users With Account Access
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetUsersWithAccountAccess(context.Background(), bankid, accountid, viewid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetUsersWithAccountAccess``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetUsersWithAccountAccess`: GetUsersWithAccountAccess200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetUsersWithAccountAccess`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetUsersWithAccountAccessRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**GetUsersWithAccountAccess200Response**](GetUsersWithAccountAccess200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetViewsForBankAccount
+
+> GetViewsForBankAccount200Response GetViewsForBankAccount(ctx, bankid, accountid).Execute()
+
+Get Views for Account
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GetViewsForBankAccount(context.Background(), bankid, accountid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GetViewsForBankAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetViewsForBankAccount`: GetViewsForBankAccount200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GetViewsForBankAccount`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetViewsForBankAccountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetViewsForBankAccount200Response**](GetViewsForBankAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GrantUserAccessToViewById
+
+> CreateUserWithAccountAccessById200ResponseHead GrantUserAccessToViewById(ctx, bankid, accountid, viewid).RevokeUserAccessToViewByIdRequest(revokeUserAccessToViewByIdRequest).Execute()
+
+Grant User access to View
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+	revokeUserAccessToViewByIdRequest := *openapiclient.NewRevokeUserAccessToViewByIdRequest() // RevokeUserAccessToViewByIdRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.GrantUserAccessToViewById(context.Background(), bankid, accountid, viewid).RevokeUserAccessToViewByIdRequest(revokeUserAccessToViewByIdRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.GrantUserAccessToViewById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GrantUserAccessToViewById`: CreateUserWithAccountAccessById200ResponseHead
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.GrantUserAccessToViewById`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGrantUserAccessToViewByIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **revokeUserAccessToViewByIdRequest** | [**RevokeUserAccessToViewByIdRequest**](RevokeUserAccessToViewByIdRequest.md) | Request body | 
+
+### Return type
+
+[**CreateUserWithAccountAccessById200ResponseHead**](CreateUserWithAccountAccessById200ResponseHead.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## HasAccountAccess
+
+> HasAccountAccess200Response HasAccountAccess(ctx, bankid, accountid, viewid).Execute()
 
 Has Account Access
 
@@ -6189,13 +5378,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountAPI.OBPv600HasAccountAccess(context.Background(), bankid, accountid, viewid).Execute()
+	resp, r, err := apiClient.AccountAPI.HasAccountAccess(context.Background(), bankid, accountid, viewid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.OBPv600HasAccountAccess``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.HasAccountAccess``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600HasAccountAccess`: OBPv600HasAccountAccess200Response
-	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.OBPv600HasAccountAccess`: %v\n", resp)
+	// response from `HasAccountAccess`: HasAccountAccess200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.HasAccountAccess`: %v\n", resp)
 }
 ```
 
@@ -6211,7 +5400,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600HasAccountAccessRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiHasAccountAccessRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6222,7 +5411,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600HasAccountAccess200Response**](OBPv600HasAccountAccess200Response.md)
+[**HasAccountAccess200Response**](HasAccountAccess200Response.md)
 
 ### Authorization
 
@@ -6231,6 +5420,894 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IbanChecker
+
+> IbanChecker200Response IbanChecker(ctx).IbanCheckerRequest(ibanCheckerRequest).Execute()
+
+Validate and check IBAN
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	ibanCheckerRequest := *openapiclient.NewIbanCheckerRequest() // IbanCheckerRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.IbanChecker(context.Background()).IbanCheckerRequest(ibanCheckerRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.IbanChecker``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `IbanChecker`: IbanChecker200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.IbanChecker`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIbanCheckerRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ibanCheckerRequest** | [**IbanCheckerRequest**](IbanCheckerRequest.md) | Request body | 
+
+### Return type
+
+[**IbanChecker200Response**](IbanChecker200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PrivateAccountsAtOneBank
+
+> PrivateAccountsAtOneBank200Response PrivateAccountsAtOneBank(ctx, bankid).Execute()
+
+Get Accounts at Bank (Minimal)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.PrivateAccountsAtOneBank(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.PrivateAccountsAtOneBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PrivateAccountsAtOneBank`: PrivateAccountsAtOneBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.PrivateAccountsAtOneBank`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPrivateAccountsAtOneBankRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**PrivateAccountsAtOneBank200Response**](PrivateAccountsAtOneBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PublicAccountsAllBanks
+
+> PublicAccountsAllBanks200Response PublicAccountsAllBanks(ctx).Execute()
+
+Get Public Accounts at all Banks
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.PublicAccountsAllBanks(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.PublicAccountsAllBanks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PublicAccountsAllBanks`: PublicAccountsAllBanks200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.PublicAccountsAllBanks`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPublicAccountsAllBanksRequest struct via the builder pattern
+
+
+### Return type
+
+[**PublicAccountsAllBanks200Response**](PublicAccountsAllBanks200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PublicAccountsAtOneBank
+
+> PublicAccountsAllBanks200Response PublicAccountsAtOneBank(ctx, bankid).Execute()
+
+Get Public Accounts at Bank
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.PublicAccountsAtOneBank(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.PublicAccountsAtOneBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PublicAccountsAtOneBank`: PublicAccountsAllBanks200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.PublicAccountsAtOneBank`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPublicAccountsAtOneBankRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**PublicAccountsAllBanks200Response**](PublicAccountsAllBanks200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## RevokeUserAccessToViewById
+
+> RevokeUserAccessToViewById200Response RevokeUserAccessToViewById(ctx, bankid, accountid, viewid).RevokeUserAccessToViewByIdRequest(revokeUserAccessToViewByIdRequest).Execute()
+
+Revoke User access to View
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+	revokeUserAccessToViewByIdRequest := *openapiclient.NewRevokeUserAccessToViewByIdRequest() // RevokeUserAccessToViewByIdRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.RevokeUserAccessToViewById(context.Background(), bankid, accountid, viewid).RevokeUserAccessToViewByIdRequest(revokeUserAccessToViewByIdRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.RevokeUserAccessToViewById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RevokeUserAccessToViewById`: RevokeUserAccessToViewById200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.RevokeUserAccessToViewById`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiRevokeUserAccessToViewByIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **revokeUserAccessToViewByIdRequest** | [**RevokeUserAccessToViewByIdRequest**](RevokeUserAccessToViewByIdRequest.md) | Request body | 
+
+### Return type
+
+[**RevokeUserAccessToViewById200Response**](RevokeUserAccessToViewById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAccount
+
+> UpdateAccount200Response UpdateAccount(ctx, bankid, accountid).UpdateAccountRequest(updateAccountRequest).Execute()
+
+Update Account
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	updateAccountRequest := *openapiclient.NewUpdateAccountRequest() // UpdateAccountRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.UpdateAccount(context.Background(), bankid, accountid).UpdateAccountRequest(updateAccountRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.UpdateAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAccount`: UpdateAccount200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.UpdateAccount`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAccountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateAccountRequest** | [**UpdateAccountRequest**](UpdateAccountRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateAccount200Response**](UpdateAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAccountApplicationStatus
+
+> GetAccountApplications200ResponseAccountApplicationsInner UpdateAccountApplicationStatus(ctx, bankid, accountapplicationid).UpdateTransactionRequestStatusRequest(updateTransactionRequestStatusRequest).Execute()
+
+Update Account Application Status
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountapplicationid := "accountapplicationid_example" // string | The ACCOUNTAPPLICATIONID identifier
+	updateTransactionRequestStatusRequest := *openapiclient.NewUpdateTransactionRequestStatusRequest() // UpdateTransactionRequestStatusRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.UpdateAccountApplicationStatus(context.Background(), bankid, accountapplicationid).UpdateTransactionRequestStatusRequest(updateTransactionRequestStatusRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.UpdateAccountApplicationStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAccountApplicationStatus`: GetAccountApplications200ResponseAccountApplicationsInner
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.UpdateAccountApplicationStatus`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountapplicationid** | **string** | The ACCOUNTAPPLICATIONID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAccountApplicationStatusRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateTransactionRequestStatusRequest** | [**UpdateTransactionRequestStatusRequest**](UpdateTransactionRequestStatusRequest.md) | Request body | 
+
+### Return type
+
+[**GetAccountApplications200ResponseAccountApplicationsInner**](GetAccountApplications200ResponseAccountApplicationsInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAccountAttribute
+
+> GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner UpdateAccountAttribute(ctx, bankid, accountid, productcode, accountattributeid).UpdateAccountAttributeRequest(updateAccountAttributeRequest).Execute()
+
+Update Account Attribute
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	productcode := "productcode_example" // string | The PRODUCTCODE identifier
+	accountattributeid := "accountattributeid_example" // string | The ACCOUNTATTRIBUTEID identifier
+	updateAccountAttributeRequest := *openapiclient.NewUpdateAccountAttributeRequest() // UpdateAccountAttributeRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.UpdateAccountAttribute(context.Background(), bankid, accountid, productcode, accountattributeid).UpdateAccountAttributeRequest(updateAccountAttributeRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.UpdateAccountAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAccountAttribute`: GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.UpdateAccountAttribute`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**productcode** | **string** | The PRODUCTCODE identifier | 
+**accountattributeid** | **string** | The ACCOUNTATTRIBUTEID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAccountAttributeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **updateAccountAttributeRequest** | [**UpdateAccountAttributeRequest**](UpdateAccountAttributeRequest.md) | Request body | 
+
+### Return type
+
+[**GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner**](GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAccountLabel
+
+> UpdateTransactionNarrative200Response UpdateAccountLabel(ctx, bankid, accountid).UpdateAccountLabelRequest(updateAccountLabelRequest).Execute()
+
+Update Account Label
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	updateAccountLabelRequest := *openapiclient.NewUpdateAccountLabelRequest() // UpdateAccountLabelRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.UpdateAccountLabel(context.Background(), bankid, accountid).UpdateAccountLabelRequest(updateAccountLabelRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.UpdateAccountLabel``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAccountLabel`: UpdateTransactionNarrative200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.UpdateAccountLabel`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAccountLabelRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateAccountLabelRequest** | [**UpdateAccountLabelRequest**](UpdateAccountLabelRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateBankAccountBalance
+
+> GetAllBankAccountBalances200ResponseBalancesInner UpdateBankAccountBalance(ctx, bankid, accountid, balanceid).CreateBankAccountBalanceRequest(createBankAccountBalanceRequest).Execute()
+
+Update Bank Account Balance
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	balanceid := "balanceid_example" // string | The BALANCEID identifier
+	createBankAccountBalanceRequest := *openapiclient.NewCreateBankAccountBalanceRequest() // CreateBankAccountBalanceRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.UpdateBankAccountBalance(context.Background(), bankid, accountid, balanceid).CreateBankAccountBalanceRequest(createBankAccountBalanceRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.UpdateBankAccountBalance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateBankAccountBalance`: GetAllBankAccountBalances200ResponseBalancesInner
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.UpdateBankAccountBalance`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**balanceid** | **string** | The BALANCEID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateBankAccountBalanceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **createBankAccountBalanceRequest** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md) | Request body | 
+
+### Return type
+
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCustomView
+
+> CreateCustomView200Response UpdateCustomView(ctx, bankid, accountid, viewid, targetviewid).UpdateCustomViewRequest(updateCustomViewRequest).Execute()
+
+Update Custom View
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+	targetviewid := "targetviewid_example" // string | The TARGETVIEWID identifier
+	updateCustomViewRequest := *openapiclient.NewUpdateCustomViewRequest() // UpdateCustomViewRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.UpdateCustomView(context.Background(), bankid, accountid, viewid, targetviewid).UpdateCustomViewRequest(updateCustomViewRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.UpdateCustomView``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCustomView`: CreateCustomView200Response
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.UpdateCustomView`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+**targetviewid** | **string** | The TARGETVIEWID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCustomViewRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **updateCustomViewRequest** | [**UpdateCustomViewRequest**](UpdateCustomViewRequest.md) | Request body | 
+
+### Return type
+
+[**CreateCustomView200Response**](CreateCustomView200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateViewForBankAccount
+
+> CreateUserWithAccountAccessById200ResponseHead UpdateViewForBankAccount(ctx, bankid, accountid, viewid).UpdateViewForBankAccountRequest(updateViewForBankAccountRequest).Execute()
+
+Update Custom View
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+	updateViewForBankAccountRequest := *openapiclient.NewUpdateViewForBankAccountRequest() // UpdateViewForBankAccountRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.UpdateViewForBankAccount(context.Background(), bankid, accountid, viewid).UpdateViewForBankAccountRequest(updateViewForBankAccountRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.UpdateViewForBankAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateViewForBankAccount`: CreateUserWithAccountAccessById200ResponseHead
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.UpdateViewForBankAccount`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateViewForBankAccountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **updateViewForBankAccountRequest** | [**UpdateViewForBankAccountRequest**](UpdateViewForBankAccountRequest.md) | Request body | 
+
+### Return type
+
+[**CreateUserWithAccountAccessById200ResponseHead**](CreateUserWithAccountAccessById200ResponseHead.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

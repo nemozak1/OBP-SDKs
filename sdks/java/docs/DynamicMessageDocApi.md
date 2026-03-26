@@ -1,35 +1,35 @@
 # DynamicMessageDocApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#oBPv400CreateBankLevelDynamicMessageDoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc |
-| [**oBPv400CreateBankLevelDynamicMessageDocWithHttpInfo**](DynamicMessageDocApi.md#oBPv400CreateBankLevelDynamicMessageDocWithHttpInfo) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc |
-| [**oBPv400CreateDynamicMessageDoc**](DynamicMessageDocApi.md#oBPv400CreateDynamicMessageDoc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc |
-| [**oBPv400CreateDynamicMessageDocWithHttpInfo**](DynamicMessageDocApi.md#oBPv400CreateDynamicMessageDocWithHttpInfo) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc |
-| [**oBPv400DeleteBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#oBPv400DeleteBankLevelDynamicMessageDoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc |
-| [**oBPv400DeleteBankLevelDynamicMessageDocWithHttpInfo**](DynamicMessageDocApi.md#oBPv400DeleteBankLevelDynamicMessageDocWithHttpInfo) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc |
-| [**oBPv400DeleteDynamicMessageDoc**](DynamicMessageDocApi.md#oBPv400DeleteDynamicMessageDoc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc |
-| [**oBPv400DeleteDynamicMessageDocWithHttpInfo**](DynamicMessageDocApi.md#oBPv400DeleteDynamicMessageDocWithHttpInfo) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc |
-| [**oBPv400GetAllBankLevelDynamicMessageDocs**](DynamicMessageDocApi.md#oBPv400GetAllBankLevelDynamicMessageDocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs |
-| [**oBPv400GetAllBankLevelDynamicMessageDocsWithHttpInfo**](DynamicMessageDocApi.md#oBPv400GetAllBankLevelDynamicMessageDocsWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs |
-| [**oBPv400GetAllDynamicMessageDocs**](DynamicMessageDocApi.md#oBPv400GetAllDynamicMessageDocs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs |
-| [**oBPv400GetAllDynamicMessageDocsWithHttpInfo**](DynamicMessageDocApi.md#oBPv400GetAllDynamicMessageDocsWithHttpInfo) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs |
-| [**oBPv400GetBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#oBPv400GetBankLevelDynamicMessageDoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc |
-| [**oBPv400GetBankLevelDynamicMessageDocWithHttpInfo**](DynamicMessageDocApi.md#oBPv400GetBankLevelDynamicMessageDocWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc |
-| [**oBPv400GetDynamicMessageDoc**](DynamicMessageDocApi.md#oBPv400GetDynamicMessageDoc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc |
-| [**oBPv400GetDynamicMessageDocWithHttpInfo**](DynamicMessageDocApi.md#oBPv400GetDynamicMessageDocWithHttpInfo) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc |
-| [**oBPv400UpdateBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#oBPv400UpdateBankLevelDynamicMessageDoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc |
-| [**oBPv400UpdateBankLevelDynamicMessageDocWithHttpInfo**](DynamicMessageDocApi.md#oBPv400UpdateBankLevelDynamicMessageDocWithHttpInfo) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc |
-| [**oBPv400UpdateDynamicMessageDoc**](DynamicMessageDocApi.md#oBPv400UpdateDynamicMessageDoc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc |
-| [**oBPv400UpdateDynamicMessageDocWithHttpInfo**](DynamicMessageDocApi.md#oBPv400UpdateDynamicMessageDocWithHttpInfo) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc |
+| [**createBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#createBankLevelDynamicMessageDoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc |
+| [**createBankLevelDynamicMessageDocWithHttpInfo**](DynamicMessageDocApi.md#createBankLevelDynamicMessageDocWithHttpInfo) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc |
+| [**createDynamicMessageDoc**](DynamicMessageDocApi.md#createDynamicMessageDoc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc |
+| [**createDynamicMessageDocWithHttpInfo**](DynamicMessageDocApi.md#createDynamicMessageDocWithHttpInfo) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc |
+| [**deleteBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#deleteBankLevelDynamicMessageDoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc |
+| [**deleteBankLevelDynamicMessageDocWithHttpInfo**](DynamicMessageDocApi.md#deleteBankLevelDynamicMessageDocWithHttpInfo) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc |
+| [**deleteDynamicMessageDoc**](DynamicMessageDocApi.md#deleteDynamicMessageDoc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc |
+| [**deleteDynamicMessageDocWithHttpInfo**](DynamicMessageDocApi.md#deleteDynamicMessageDocWithHttpInfo) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc |
+| [**getAllBankLevelDynamicMessageDocs**](DynamicMessageDocApi.md#getAllBankLevelDynamicMessageDocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs |
+| [**getAllBankLevelDynamicMessageDocsWithHttpInfo**](DynamicMessageDocApi.md#getAllBankLevelDynamicMessageDocsWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs |
+| [**getAllDynamicMessageDocs**](DynamicMessageDocApi.md#getAllDynamicMessageDocs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs |
+| [**getAllDynamicMessageDocsWithHttpInfo**](DynamicMessageDocApi.md#getAllDynamicMessageDocsWithHttpInfo) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs |
+| [**getBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#getBankLevelDynamicMessageDoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc |
+| [**getBankLevelDynamicMessageDocWithHttpInfo**](DynamicMessageDocApi.md#getBankLevelDynamicMessageDocWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc |
+| [**getDynamicMessageDoc**](DynamicMessageDocApi.md#getDynamicMessageDoc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc |
+| [**getDynamicMessageDocWithHttpInfo**](DynamicMessageDocApi.md#getDynamicMessageDocWithHttpInfo) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc |
+| [**updateBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#updateBankLevelDynamicMessageDoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc |
+| [**updateBankLevelDynamicMessageDocWithHttpInfo**](DynamicMessageDocApi.md#updateBankLevelDynamicMessageDocWithHttpInfo) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc |
+| [**updateDynamicMessageDoc**](DynamicMessageDocApi.md#updateDynamicMessageDoc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc |
+| [**updateDynamicMessageDocWithHttpInfo**](DynamicMessageDocApi.md#updateDynamicMessageDocWithHttpInfo) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc |
 
 
 
-## oBPv400CreateBankLevelDynamicMessageDoc
+## createBankLevelDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response oBPv400CreateBankLevelDynamicMessageDoc(bankid, obPv400UpdateDynamicMessageDocRequest)
+> GetDynamicMessageDoc200Response createBankLevelDynamicMessageDoc(bankid, updateDynamicMessageDocRequest)
 
 Create Bank Level Dynamic Message Doc
 
@@ -49,7 +49,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -69,12 +69,12 @@ public class Example {
 
         DynamicMessageDocApi apiInstance = new DynamicMessageDocApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest = new OBPv400UpdateDynamicMessageDocRequest(); // OBPv400UpdateDynamicMessageDocRequest | Request body
+        UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest = new UpdateDynamicMessageDocRequest(); // UpdateDynamicMessageDocRequest | Request body
         try {
-            OBPv400GetDynamicMessageDoc200Response result = apiInstance.oBPv400CreateBankLevelDynamicMessageDoc(bankid, obPv400UpdateDynamicMessageDocRequest);
+            GetDynamicMessageDoc200Response result = apiInstance.createBankLevelDynamicMessageDoc(bankid, updateDynamicMessageDocRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400CreateBankLevelDynamicMessageDoc");
+            System.err.println("Exception when calling DynamicMessageDocApi#createBankLevelDynamicMessageDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -90,11 +90,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | |
+| **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 
 ### Authorization
@@ -113,9 +113,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateBankLevelDynamicMessageDocWithHttpInfo
+## createBankLevelDynamicMessageDocWithHttpInfo
 
-> ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400CreateBankLevelDynamicMessageDoc oBPv400CreateBankLevelDynamicMessageDocWithHttpInfo(bankid, obPv400UpdateDynamicMessageDocRequest)
+> ApiResponse<GetDynamicMessageDoc200Response> createBankLevelDynamicMessageDoc createBankLevelDynamicMessageDocWithHttpInfo(bankid, updateDynamicMessageDocRequest)
 
 Create Bank Level Dynamic Message Doc
 
@@ -136,7 +136,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -156,14 +156,14 @@ public class Example {
 
         DynamicMessageDocApi apiInstance = new DynamicMessageDocApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest = new OBPv400UpdateDynamicMessageDocRequest(); // OBPv400UpdateDynamicMessageDocRequest | Request body
+        UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest = new UpdateDynamicMessageDocRequest(); // UpdateDynamicMessageDocRequest | Request body
         try {
-            ApiResponse<OBPv400GetDynamicMessageDoc200Response> response = apiInstance.oBPv400CreateBankLevelDynamicMessageDocWithHttpInfo(bankid, obPv400UpdateDynamicMessageDocRequest);
+            ApiResponse<GetDynamicMessageDoc200Response> response = apiInstance.createBankLevelDynamicMessageDocWithHttpInfo(bankid, updateDynamicMessageDocRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400CreateBankLevelDynamicMessageDoc");
+            System.err.println("Exception when calling DynamicMessageDocApi#createBankLevelDynamicMessageDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -179,11 +179,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | |
+| **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)>
+ApiResponse<[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)>
 
 
 ### Authorization
@@ -203,9 +203,9 @@ ApiResponse<[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessag
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateDynamicMessageDoc
+## createDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response oBPv400CreateDynamicMessageDoc(obPv400UpdateDynamicMessageDocRequest)
+> GetDynamicMessageDoc200Response createDynamicMessageDoc(updateDynamicMessageDocRequest)
 
 Create Dynamic Message Doc
 
@@ -225,7 +225,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -244,12 +244,12 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         DynamicMessageDocApi apiInstance = new DynamicMessageDocApi(defaultClient);
-        OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest = new OBPv400UpdateDynamicMessageDocRequest(); // OBPv400UpdateDynamicMessageDocRequest | Request body
+        UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest = new UpdateDynamicMessageDocRequest(); // UpdateDynamicMessageDocRequest | Request body
         try {
-            OBPv400GetDynamicMessageDoc200Response result = apiInstance.oBPv400CreateDynamicMessageDoc(obPv400UpdateDynamicMessageDocRequest);
+            GetDynamicMessageDoc200Response result = apiInstance.createDynamicMessageDoc(updateDynamicMessageDocRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400CreateDynamicMessageDoc");
+            System.err.println("Exception when calling DynamicMessageDocApi#createDynamicMessageDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -264,11 +264,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | |
+| **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 
 ### Authorization
@@ -286,9 +286,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateDynamicMessageDocWithHttpInfo
+## createDynamicMessageDocWithHttpInfo
 
-> ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400CreateDynamicMessageDoc oBPv400CreateDynamicMessageDocWithHttpInfo(obPv400UpdateDynamicMessageDocRequest)
+> ApiResponse<GetDynamicMessageDoc200Response> createDynamicMessageDoc createDynamicMessageDocWithHttpInfo(updateDynamicMessageDocRequest)
 
 Create Dynamic Message Doc
 
@@ -309,7 +309,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -328,14 +328,14 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         DynamicMessageDocApi apiInstance = new DynamicMessageDocApi(defaultClient);
-        OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest = new OBPv400UpdateDynamicMessageDocRequest(); // OBPv400UpdateDynamicMessageDocRequest | Request body
+        UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest = new UpdateDynamicMessageDocRequest(); // UpdateDynamicMessageDocRequest | Request body
         try {
-            ApiResponse<OBPv400GetDynamicMessageDoc200Response> response = apiInstance.oBPv400CreateDynamicMessageDocWithHttpInfo(obPv400UpdateDynamicMessageDocRequest);
+            ApiResponse<GetDynamicMessageDoc200Response> response = apiInstance.createDynamicMessageDocWithHttpInfo(updateDynamicMessageDocRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400CreateDynamicMessageDoc");
+            System.err.println("Exception when calling DynamicMessageDocApi#createDynamicMessageDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -350,11 +350,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | |
+| **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)>
+ApiResponse<[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)>
 
 
 ### Authorization
@@ -373,9 +373,9 @@ ApiResponse<[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessag
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteBankLevelDynamicMessageDoc
+## deleteBankLevelDynamicMessageDoc
 
-> void oBPv400DeleteBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
+> void deleteBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
 
 Delete Bank Level Dynamic Message Doc
 
@@ -395,7 +395,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -417,9 +417,9 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String dynamicmessagedocid = "dynamicmessagedocid_example"; // String | The DYNAMICMESSAGEDOCID identifier
         try {
-            apiInstance.oBPv400DeleteBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid);
+            apiInstance.deleteBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400DeleteBankLevelDynamicMessageDoc");
+            System.err.println("Exception when calling DynamicMessageDocApi#deleteBankLevelDynamicMessageDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -458,9 +458,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteBankLevelDynamicMessageDocWithHttpInfo
+## deleteBankLevelDynamicMessageDocWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteBankLevelDynamicMessageDoc oBPv400DeleteBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid)
+> ApiResponse<Void> deleteBankLevelDynamicMessageDoc deleteBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid)
 
 Delete Bank Level Dynamic Message Doc
 
@@ -481,7 +481,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -503,11 +503,11 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String dynamicmessagedocid = "dynamicmessagedocid_example"; // String | The DYNAMICMESSAGEDOCID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid);
+            ApiResponse<Void> response = apiInstance.deleteBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400DeleteBankLevelDynamicMessageDoc");
+            System.err.println("Exception when calling DynamicMessageDocApi#deleteBankLevelDynamicMessageDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -547,9 +547,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteDynamicMessageDoc
+## deleteDynamicMessageDoc
 
-> void oBPv400DeleteDynamicMessageDoc(dynamicmessagedocid)
+> void deleteDynamicMessageDoc(dynamicmessagedocid)
 
 Delete Dynamic Message Doc
 
@@ -569,7 +569,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -590,9 +590,9 @@ public class Example {
         DynamicMessageDocApi apiInstance = new DynamicMessageDocApi(defaultClient);
         String dynamicmessagedocid = "dynamicmessagedocid_example"; // String | The DYNAMICMESSAGEDOCID identifier
         try {
-            apiInstance.oBPv400DeleteDynamicMessageDoc(dynamicmessagedocid);
+            apiInstance.deleteDynamicMessageDoc(dynamicmessagedocid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400DeleteDynamicMessageDoc");
+            System.err.println("Exception when calling DynamicMessageDocApi#deleteDynamicMessageDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -629,9 +629,9 @@ null (empty response body)
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteDynamicMessageDocWithHttpInfo
+## deleteDynamicMessageDocWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteDynamicMessageDoc oBPv400DeleteDynamicMessageDocWithHttpInfo(dynamicmessagedocid)
+> ApiResponse<Void> deleteDynamicMessageDoc deleteDynamicMessageDocWithHttpInfo(dynamicmessagedocid)
 
 Delete Dynamic Message Doc
 
@@ -652,7 +652,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -673,11 +673,11 @@ public class Example {
         DynamicMessageDocApi apiInstance = new DynamicMessageDocApi(defaultClient);
         String dynamicmessagedocid = "dynamicmessagedocid_example"; // String | The DYNAMICMESSAGEDOCID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteDynamicMessageDocWithHttpInfo(dynamicmessagedocid);
+            ApiResponse<Void> response = apiInstance.deleteDynamicMessageDocWithHttpInfo(dynamicmessagedocid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400DeleteDynamicMessageDoc");
+            System.err.println("Exception when calling DynamicMessageDocApi#deleteDynamicMessageDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -715,9 +715,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetAllBankLevelDynamicMessageDocs
+## getAllBankLevelDynamicMessageDocs
 
-> OBPv400GetAllBankLevelDynamicMessageDocs200Response oBPv400GetAllBankLevelDynamicMessageDocs(bankid)
+> GetAllBankLevelDynamicMessageDocs200Response getAllBankLevelDynamicMessageDocs(bankid)
 
 Get all Bank Level Dynamic Message Docs
 
@@ -737,7 +737,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -758,10 +758,10 @@ public class Example {
         DynamicMessageDocApi apiInstance = new DynamicMessageDocApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            OBPv400GetAllBankLevelDynamicMessageDocs200Response result = apiInstance.oBPv400GetAllBankLevelDynamicMessageDocs(bankid);
+            GetAllBankLevelDynamicMessageDocs200Response result = apiInstance.getAllBankLevelDynamicMessageDocs(bankid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400GetAllBankLevelDynamicMessageDocs");
+            System.err.println("Exception when calling DynamicMessageDocApi#getAllBankLevelDynamicMessageDocs");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -780,7 +780,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)
 
 
 ### Authorization
@@ -799,9 +799,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetAllBankLevelDynamicMessageDocsWithHttpInfo
+## getAllBankLevelDynamicMessageDocsWithHttpInfo
 
-> ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response> oBPv400GetAllBankLevelDynamicMessageDocs oBPv400GetAllBankLevelDynamicMessageDocsWithHttpInfo(bankid)
+> ApiResponse<GetAllBankLevelDynamicMessageDocs200Response> getAllBankLevelDynamicMessageDocs getAllBankLevelDynamicMessageDocsWithHttpInfo(bankid)
 
 Get all Bank Level Dynamic Message Docs
 
@@ -822,7 +822,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -843,12 +843,12 @@ public class Example {
         DynamicMessageDocApi apiInstance = new DynamicMessageDocApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response> response = apiInstance.oBPv400GetAllBankLevelDynamicMessageDocsWithHttpInfo(bankid);
+            ApiResponse<GetAllBankLevelDynamicMessageDocs200Response> response = apiInstance.getAllBankLevelDynamicMessageDocsWithHttpInfo(bankid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400GetAllBankLevelDynamicMessageDocs");
+            System.err.println("Exception when calling DynamicMessageDocApi#getAllBankLevelDynamicMessageDocs");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -867,7 +867,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)>
+ApiResponse<[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)>
 
 
 ### Authorization
@@ -887,9 +887,9 @@ ApiResponse<[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400Get
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetAllDynamicMessageDocs
+## getAllDynamicMessageDocs
 
-> OBPv400GetAllBankLevelDynamicMessageDocs200Response oBPv400GetAllDynamicMessageDocs()
+> GetAllBankLevelDynamicMessageDocs200Response getAllDynamicMessageDocs()
 
 Get all Dynamic Message Docs
 
@@ -909,7 +909,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -929,10 +929,10 @@ public class Example {
 
         DynamicMessageDocApi apiInstance = new DynamicMessageDocApi(defaultClient);
         try {
-            OBPv400GetAllBankLevelDynamicMessageDocs200Response result = apiInstance.oBPv400GetAllDynamicMessageDocs();
+            GetAllBankLevelDynamicMessageDocs200Response result = apiInstance.getAllDynamicMessageDocs();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400GetAllDynamicMessageDocs");
+            System.err.println("Exception when calling DynamicMessageDocApi#getAllDynamicMessageDocs");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -948,7 +948,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)
 
 
 ### Authorization
@@ -966,9 +966,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetAllDynamicMessageDocsWithHttpInfo
+## getAllDynamicMessageDocsWithHttpInfo
 
-> ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response> oBPv400GetAllDynamicMessageDocs oBPv400GetAllDynamicMessageDocsWithHttpInfo()
+> ApiResponse<GetAllBankLevelDynamicMessageDocs200Response> getAllDynamicMessageDocs getAllDynamicMessageDocsWithHttpInfo()
 
 Get all Dynamic Message Docs
 
@@ -989,7 +989,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1009,12 +1009,12 @@ public class Example {
 
         DynamicMessageDocApi apiInstance = new DynamicMessageDocApi(defaultClient);
         try {
-            ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response> response = apiInstance.oBPv400GetAllDynamicMessageDocsWithHttpInfo();
+            ApiResponse<GetAllBankLevelDynamicMessageDocs200Response> response = apiInstance.getAllDynamicMessageDocsWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400GetAllDynamicMessageDocs");
+            System.err.println("Exception when calling DynamicMessageDocApi#getAllDynamicMessageDocs");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1030,7 +1030,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)>
+ApiResponse<[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)>
 
 
 ### Authorization
@@ -1049,9 +1049,9 @@ ApiResponse<[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400Get
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetBankLevelDynamicMessageDoc
+## getBankLevelDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response oBPv400GetBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
+> GetDynamicMessageDoc200Response getBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
 
 Get Bank Level Dynamic Message Doc
 
@@ -1071,7 +1071,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1093,10 +1093,10 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String dynamicmessagedocid = "dynamicmessagedocid_example"; // String | The DYNAMICMESSAGEDOCID identifier
         try {
-            OBPv400GetDynamicMessageDoc200Response result = apiInstance.oBPv400GetBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid);
+            GetDynamicMessageDoc200Response result = apiInstance.getBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400GetBankLevelDynamicMessageDoc");
+            System.err.println("Exception when calling DynamicMessageDocApi#getBankLevelDynamicMessageDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1116,7 +1116,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 
 ### Authorization
@@ -1135,9 +1135,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetBankLevelDynamicMessageDocWithHttpInfo
+## getBankLevelDynamicMessageDocWithHttpInfo
 
-> ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400GetBankLevelDynamicMessageDoc oBPv400GetBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid)
+> ApiResponse<GetDynamicMessageDoc200Response> getBankLevelDynamicMessageDoc getBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid)
 
 Get Bank Level Dynamic Message Doc
 
@@ -1158,7 +1158,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1180,12 +1180,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String dynamicmessagedocid = "dynamicmessagedocid_example"; // String | The DYNAMICMESSAGEDOCID identifier
         try {
-            ApiResponse<OBPv400GetDynamicMessageDoc200Response> response = apiInstance.oBPv400GetBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid);
+            ApiResponse<GetDynamicMessageDoc200Response> response = apiInstance.getBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400GetBankLevelDynamicMessageDoc");
+            System.err.println("Exception when calling DynamicMessageDocApi#getBankLevelDynamicMessageDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1205,7 +1205,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)>
+ApiResponse<[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)>
 
 
 ### Authorization
@@ -1225,9 +1225,9 @@ ApiResponse<[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessag
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetDynamicMessageDoc
+## getDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response oBPv400GetDynamicMessageDoc(dynamicmessagedocid)
+> GetDynamicMessageDoc200Response getDynamicMessageDoc(dynamicmessagedocid)
 
 Get Dynamic Message Doc
 
@@ -1247,7 +1247,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1268,10 +1268,10 @@ public class Example {
         DynamicMessageDocApi apiInstance = new DynamicMessageDocApi(defaultClient);
         String dynamicmessagedocid = "dynamicmessagedocid_example"; // String | The DYNAMICMESSAGEDOCID identifier
         try {
-            OBPv400GetDynamicMessageDoc200Response result = apiInstance.oBPv400GetDynamicMessageDoc(dynamicmessagedocid);
+            GetDynamicMessageDoc200Response result = apiInstance.getDynamicMessageDoc(dynamicmessagedocid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400GetDynamicMessageDoc");
+            System.err.println("Exception when calling DynamicMessageDocApi#getDynamicMessageDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1290,7 +1290,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 
 ### Authorization
@@ -1308,9 +1308,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetDynamicMessageDocWithHttpInfo
+## getDynamicMessageDocWithHttpInfo
 
-> ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400GetDynamicMessageDoc oBPv400GetDynamicMessageDocWithHttpInfo(dynamicmessagedocid)
+> ApiResponse<GetDynamicMessageDoc200Response> getDynamicMessageDoc getDynamicMessageDocWithHttpInfo(dynamicmessagedocid)
 
 Get Dynamic Message Doc
 
@@ -1331,7 +1331,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1352,12 +1352,12 @@ public class Example {
         DynamicMessageDocApi apiInstance = new DynamicMessageDocApi(defaultClient);
         String dynamicmessagedocid = "dynamicmessagedocid_example"; // String | The DYNAMICMESSAGEDOCID identifier
         try {
-            ApiResponse<OBPv400GetDynamicMessageDoc200Response> response = apiInstance.oBPv400GetDynamicMessageDocWithHttpInfo(dynamicmessagedocid);
+            ApiResponse<GetDynamicMessageDoc200Response> response = apiInstance.getDynamicMessageDocWithHttpInfo(dynamicmessagedocid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400GetDynamicMessageDoc");
+            System.err.println("Exception when calling DynamicMessageDocApi#getDynamicMessageDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1376,7 +1376,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)>
+ApiResponse<[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)>
 
 
 ### Authorization
@@ -1395,9 +1395,9 @@ ApiResponse<[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessag
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400UpdateBankLevelDynamicMessageDoc
+## updateBankLevelDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response oBPv400UpdateBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest)
+> GetDynamicMessageDoc200Response updateBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, updateDynamicMessageDocRequest)
 
 Update Bank Level Dynamic Message Doc
 
@@ -1417,7 +1417,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1438,12 +1438,12 @@ public class Example {
         DynamicMessageDocApi apiInstance = new DynamicMessageDocApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String dynamicmessagedocid = "dynamicmessagedocid_example"; // String | The DYNAMICMESSAGEDOCID identifier
-        OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest = new OBPv400UpdateDynamicMessageDocRequest(); // OBPv400UpdateDynamicMessageDocRequest | Request body
+        UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest = new UpdateDynamicMessageDocRequest(); // UpdateDynamicMessageDocRequest | Request body
         try {
-            OBPv400GetDynamicMessageDoc200Response result = apiInstance.oBPv400UpdateBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest);
+            GetDynamicMessageDoc200Response result = apiInstance.updateBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, updateDynamicMessageDocRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400UpdateBankLevelDynamicMessageDoc");
+            System.err.println("Exception when calling DynamicMessageDocApi#updateBankLevelDynamicMessageDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1460,11 +1460,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **dynamicmessagedocid** | **String**| The DYNAMICMESSAGEDOCID identifier | |
-| **obPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | |
+| **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 
 ### Authorization
@@ -1483,9 +1483,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400UpdateBankLevelDynamicMessageDocWithHttpInfo
+## updateBankLevelDynamicMessageDocWithHttpInfo
 
-> ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400UpdateBankLevelDynamicMessageDoc oBPv400UpdateBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest)
+> ApiResponse<GetDynamicMessageDoc200Response> updateBankLevelDynamicMessageDoc updateBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid, updateDynamicMessageDocRequest)
 
 Update Bank Level Dynamic Message Doc
 
@@ -1506,7 +1506,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1527,14 +1527,14 @@ public class Example {
         DynamicMessageDocApi apiInstance = new DynamicMessageDocApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String dynamicmessagedocid = "dynamicmessagedocid_example"; // String | The DYNAMICMESSAGEDOCID identifier
-        OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest = new OBPv400UpdateDynamicMessageDocRequest(); // OBPv400UpdateDynamicMessageDocRequest | Request body
+        UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest = new UpdateDynamicMessageDocRequest(); // UpdateDynamicMessageDocRequest | Request body
         try {
-            ApiResponse<OBPv400GetDynamicMessageDoc200Response> response = apiInstance.oBPv400UpdateBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest);
+            ApiResponse<GetDynamicMessageDoc200Response> response = apiInstance.updateBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid, updateDynamicMessageDocRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400UpdateBankLevelDynamicMessageDoc");
+            System.err.println("Exception when calling DynamicMessageDocApi#updateBankLevelDynamicMessageDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1551,11 +1551,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **dynamicmessagedocid** | **String**| The DYNAMICMESSAGEDOCID identifier | |
-| **obPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | |
+| **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)>
+ApiResponse<[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)>
 
 
 ### Authorization
@@ -1575,9 +1575,9 @@ ApiResponse<[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessag
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400UpdateDynamicMessageDoc
+## updateDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response oBPv400UpdateDynamicMessageDoc(dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest)
+> GetDynamicMessageDoc200Response updateDynamicMessageDoc(dynamicmessagedocid, updateDynamicMessageDocRequest)
 
 Update Dynamic Message Doc
 
@@ -1597,7 +1597,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1617,12 +1617,12 @@ public class Example {
 
         DynamicMessageDocApi apiInstance = new DynamicMessageDocApi(defaultClient);
         String dynamicmessagedocid = "dynamicmessagedocid_example"; // String | The DYNAMICMESSAGEDOCID identifier
-        OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest = new OBPv400UpdateDynamicMessageDocRequest(); // OBPv400UpdateDynamicMessageDocRequest | Request body
+        UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest = new UpdateDynamicMessageDocRequest(); // UpdateDynamicMessageDocRequest | Request body
         try {
-            OBPv400GetDynamicMessageDoc200Response result = apiInstance.oBPv400UpdateDynamicMessageDoc(dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest);
+            GetDynamicMessageDoc200Response result = apiInstance.updateDynamicMessageDoc(dynamicmessagedocid, updateDynamicMessageDocRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400UpdateDynamicMessageDoc");
+            System.err.println("Exception when calling DynamicMessageDocApi#updateDynamicMessageDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1638,11 +1638,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **dynamicmessagedocid** | **String**| The DYNAMICMESSAGEDOCID identifier | |
-| **obPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | |
+| **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 
 ### Authorization
@@ -1660,9 +1660,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400UpdateDynamicMessageDocWithHttpInfo
+## updateDynamicMessageDocWithHttpInfo
 
-> ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400UpdateDynamicMessageDoc oBPv400UpdateDynamicMessageDocWithHttpInfo(dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest)
+> ApiResponse<GetDynamicMessageDoc200Response> updateDynamicMessageDoc updateDynamicMessageDocWithHttpInfo(dynamicmessagedocid, updateDynamicMessageDocRequest)
 
 Update Dynamic Message Doc
 
@@ -1683,7 +1683,7 @@ import com.openbankproject.api.DynamicMessageDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1703,14 +1703,14 @@ public class Example {
 
         DynamicMessageDocApi apiInstance = new DynamicMessageDocApi(defaultClient);
         String dynamicmessagedocid = "dynamicmessagedocid_example"; // String | The DYNAMICMESSAGEDOCID identifier
-        OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest = new OBPv400UpdateDynamicMessageDocRequest(); // OBPv400UpdateDynamicMessageDocRequest | Request body
+        UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest = new UpdateDynamicMessageDocRequest(); // UpdateDynamicMessageDocRequest | Request body
         try {
-            ApiResponse<OBPv400GetDynamicMessageDoc200Response> response = apiInstance.oBPv400UpdateDynamicMessageDocWithHttpInfo(dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest);
+            ApiResponse<GetDynamicMessageDoc200Response> response = apiInstance.updateDynamicMessageDocWithHttpInfo(dynamicmessagedocid, updateDynamicMessageDocRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicMessageDocApi#oBPv400UpdateDynamicMessageDoc");
+            System.err.println("Exception when calling DynamicMessageDocApi#updateDynamicMessageDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1726,11 +1726,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **dynamicmessagedocid** | **String**| The DYNAMICMESSAGEDOCID identifier | |
-| **obPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | |
+| **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)>
+ApiResponse<[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)>
 
 
 ### Authorization

@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,14 +18,14 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv600AddUserToGroup200Response;
-import com.openbankproject.model.OBPv600AddUserToGroupRequest;
-import com.openbankproject.model.OBPv600CreateGroupRequest;
-import com.openbankproject.model.OBPv600GetGroupEntitlements200Response;
-import com.openbankproject.model.OBPv600GetGroups200Response;
-import com.openbankproject.model.OBPv600GetGroups200ResponsePropertiesGroupsItems;
-import com.openbankproject.model.OBPv600GetUserGroupMemberships200Response;
-import com.openbankproject.model.OBPv600UpdateGroupRequest;
+import com.openbankproject.model.AddUserToGroup200Response;
+import com.openbankproject.model.AddUserToGroupRequest;
+import com.openbankproject.model.CreateGroupRequest;
+import com.openbankproject.model.GetGroupEntitlements200Response;
+import com.openbankproject.model.GetGroups200Response;
+import com.openbankproject.model.GetGroups200ResponseGroupsInner;
+import com.openbankproject.model.GetUserGroupMemberships200Response;
+import com.openbankproject.model.UpdateGroupRequest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -52,7 +52,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GroupApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -173,25 +173,25 @@ public class GroupApi {
    * Grant User Membership to Group Entitlements
    * &lt;p&gt;Grant the User Group Entitlements.&lt;/p&gt; &lt;p&gt;This endpoint creates entitlements for every Role in the Group. If the user&lt;br /&gt; already has a particular role at the same bank, that entitlement is skipped (not duplicated).&lt;/p&gt; &lt;p&gt;Each entitlement created will have:&lt;br /&gt; - group_id set to the group ID&lt;br /&gt; - process set to &amp;quot;GROUP_MEMBERSHIP&amp;quot;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;br /&gt; - target_entitlements: All roles defined in the group (the complete list of entitlements that this group aims to grant)&lt;br /&gt; - entitlements_created: Roles that were newly created as entitlements during this operation&lt;br /&gt; - entitlements_skipped: Roles that the user already possessed, so no new entitlement was created&lt;/p&gt; &lt;p&gt;Note: target_entitlements &#x3D; entitlements_created + entitlements_skipped&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanAddUserToGroupAtAllBanks (for any group)&lt;br /&gt; - CanAddUserToGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_created&lt;/strong&gt;&lt;/a&gt;: entitlements_created&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_skipped&lt;/strong&gt;&lt;/a&gt;: entitlements_skipped&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_entitlements&lt;/strong&gt;&lt;/a&gt;: target_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param userid The USERID identifier (required)
-   * @param obPv600AddUserToGroupRequest Request body (required)
-   * @return OBPv600AddUserToGroup200Response
+   * @param addUserToGroupRequest Request body (required)
+   * @return AddUserToGroup200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600AddUserToGroup200Response oBPv600AddUserToGroup(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull OBPv600AddUserToGroupRequest obPv600AddUserToGroupRequest) throws ApiException {
-    return oBPv600AddUserToGroup(userid, obPv600AddUserToGroupRequest, null);
+  public AddUserToGroup200Response addUserToGroup(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull AddUserToGroupRequest addUserToGroupRequest) throws ApiException {
+    return addUserToGroup(userid, addUserToGroupRequest, null);
   }
 
   /**
    * Grant User Membership to Group Entitlements
    * &lt;p&gt;Grant the User Group Entitlements.&lt;/p&gt; &lt;p&gt;This endpoint creates entitlements for every Role in the Group. If the user&lt;br /&gt; already has a particular role at the same bank, that entitlement is skipped (not duplicated).&lt;/p&gt; &lt;p&gt;Each entitlement created will have:&lt;br /&gt; - group_id set to the group ID&lt;br /&gt; - process set to &amp;quot;GROUP_MEMBERSHIP&amp;quot;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;br /&gt; - target_entitlements: All roles defined in the group (the complete list of entitlements that this group aims to grant)&lt;br /&gt; - entitlements_created: Roles that were newly created as entitlements during this operation&lt;br /&gt; - entitlements_skipped: Roles that the user already possessed, so no new entitlement was created&lt;/p&gt; &lt;p&gt;Note: target_entitlements &#x3D; entitlements_created + entitlements_skipped&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanAddUserToGroupAtAllBanks (for any group)&lt;br /&gt; - CanAddUserToGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_created&lt;/strong&gt;&lt;/a&gt;: entitlements_created&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_skipped&lt;/strong&gt;&lt;/a&gt;: entitlements_skipped&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_entitlements&lt;/strong&gt;&lt;/a&gt;: target_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param userid The USERID identifier (required)
-   * @param obPv600AddUserToGroupRequest Request body (required)
+   * @param addUserToGroupRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600AddUserToGroup200Response
+   * @return AddUserToGroup200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600AddUserToGroup200Response oBPv600AddUserToGroup(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull OBPv600AddUserToGroupRequest obPv600AddUserToGroupRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600AddUserToGroup200Response> localVarResponse = oBPv600AddUserToGroupWithHttpInfo(userid, obPv600AddUserToGroupRequest, headers);
+  public AddUserToGroup200Response addUserToGroup(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull AddUserToGroupRequest addUserToGroupRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<AddUserToGroup200Response> localVarResponse = addUserToGroupWithHttpInfo(userid, addUserToGroupRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -199,25 +199,25 @@ public class GroupApi {
    * Grant User Membership to Group Entitlements
    * &lt;p&gt;Grant the User Group Entitlements.&lt;/p&gt; &lt;p&gt;This endpoint creates entitlements for every Role in the Group. If the user&lt;br /&gt; already has a particular role at the same bank, that entitlement is skipped (not duplicated).&lt;/p&gt; &lt;p&gt;Each entitlement created will have:&lt;br /&gt; - group_id set to the group ID&lt;br /&gt; - process set to &amp;quot;GROUP_MEMBERSHIP&amp;quot;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;br /&gt; - target_entitlements: All roles defined in the group (the complete list of entitlements that this group aims to grant)&lt;br /&gt; - entitlements_created: Roles that were newly created as entitlements during this operation&lt;br /&gt; - entitlements_skipped: Roles that the user already possessed, so no new entitlement was created&lt;/p&gt; &lt;p&gt;Note: target_entitlements &#x3D; entitlements_created + entitlements_skipped&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanAddUserToGroupAtAllBanks (for any group)&lt;br /&gt; - CanAddUserToGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_created&lt;/strong&gt;&lt;/a&gt;: entitlements_created&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_skipped&lt;/strong&gt;&lt;/a&gt;: entitlements_skipped&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_entitlements&lt;/strong&gt;&lt;/a&gt;: target_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param userid The USERID identifier (required)
-   * @param obPv600AddUserToGroupRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600AddUserToGroup200Response&gt;
+   * @param addUserToGroupRequest Request body (required)
+   * @return ApiResponse&lt;AddUserToGroup200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600AddUserToGroup200Response> oBPv600AddUserToGroupWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull OBPv600AddUserToGroupRequest obPv600AddUserToGroupRequest) throws ApiException {
-    return oBPv600AddUserToGroupWithHttpInfo(userid, obPv600AddUserToGroupRequest, null);
+  public ApiResponse<AddUserToGroup200Response> addUserToGroupWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull AddUserToGroupRequest addUserToGroupRequest) throws ApiException {
+    return addUserToGroupWithHttpInfo(userid, addUserToGroupRequest, null);
   }
 
   /**
    * Grant User Membership to Group Entitlements
    * &lt;p&gt;Grant the User Group Entitlements.&lt;/p&gt; &lt;p&gt;This endpoint creates entitlements for every Role in the Group. If the user&lt;br /&gt; already has a particular role at the same bank, that entitlement is skipped (not duplicated).&lt;/p&gt; &lt;p&gt;Each entitlement created will have:&lt;br /&gt; - group_id set to the group ID&lt;br /&gt; - process set to &amp;quot;GROUP_MEMBERSHIP&amp;quot;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;br /&gt; - target_entitlements: All roles defined in the group (the complete list of entitlements that this group aims to grant)&lt;br /&gt; - entitlements_created: Roles that were newly created as entitlements during this operation&lt;br /&gt; - entitlements_skipped: Roles that the user already possessed, so no new entitlement was created&lt;/p&gt; &lt;p&gt;Note: target_entitlements &#x3D; entitlements_created + entitlements_skipped&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanAddUserToGroupAtAllBanks (for any group)&lt;br /&gt; - CanAddUserToGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_created&lt;/strong&gt;&lt;/a&gt;: entitlements_created&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_skipped&lt;/strong&gt;&lt;/a&gt;: entitlements_skipped&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_entitlements&lt;/strong&gt;&lt;/a&gt;: target_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param userid The USERID identifier (required)
-   * @param obPv600AddUserToGroupRequest Request body (required)
+   * @param addUserToGroupRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600AddUserToGroup200Response&gt;
+   * @return ApiResponse&lt;AddUserToGroup200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600AddUserToGroup200Response> oBPv600AddUserToGroupWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull OBPv600AddUserToGroupRequest obPv600AddUserToGroupRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600AddUserToGroupRequestBuilder(userid, obPv600AddUserToGroupRequest, headers);
+  public ApiResponse<AddUserToGroup200Response> addUserToGroupWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull AddUserToGroupRequest addUserToGroupRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = addUserToGroupRequestBuilder(userid, addUserToGroupRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -228,11 +228,11 @@ public class GroupApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600AddUserToGroup", localVarResponse);
+          throw getApiException("addUserToGroup", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600AddUserToGroup200Response>(
+          return new ApiResponse<AddUserToGroup200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -242,10 +242,10 @@ public class GroupApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600AddUserToGroup200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600AddUserToGroup200Response>() {});
+        AddUserToGroup200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<AddUserToGroup200Response>() {});
         
 
-        return new ApiResponse<OBPv600AddUserToGroup200Response>(
+        return new ApiResponse<AddUserToGroup200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -264,14 +264,14 @@ public class GroupApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600AddUserToGroupRequestBuilder(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull OBPv600AddUserToGroupRequest obPv600AddUserToGroupRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder addUserToGroupRequestBuilder(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull AddUserToGroupRequest addUserToGroupRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'userid' is set
     if (userid == null) {
-      throw new ApiException(400, "Missing the required parameter 'userid' when calling oBPv600AddUserToGroup");
+      throw new ApiException(400, "Missing the required parameter 'userid' when calling addUserToGroup");
     }
-    // verify the required parameter 'obPv600AddUserToGroupRequest' is set
-    if (obPv600AddUserToGroupRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600AddUserToGroupRequest' when calling oBPv600AddUserToGroup");
+    // verify the required parameter 'addUserToGroupRequest' is set
+    if (addUserToGroupRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'addUserToGroupRequest' when calling addUserToGroup");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -285,7 +285,7 @@ public class GroupApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600AddUserToGroupRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(addUserToGroupRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -304,48 +304,48 @@ public class GroupApi {
   /**
    * Create Group
    * &lt;p&gt;Create a new group of roles.&lt;/p&gt; &lt;p&gt;Groups can be either:&lt;br /&gt; - System-level (bank_id &#x3D; null) - requires CanCreateGroupAtAllBanks role&lt;br /&gt; - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role&lt;/p&gt; &lt;p&gt;A group contains a list of role names that can be assigned together.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
-   * @param obPv600CreateGroupRequest Request body (required)
-   * @return OBPv600GetGroups200ResponsePropertiesGroupsItems
+   * @param createGroupRequest Request body (required)
+   * @return GetGroups200ResponseGroupsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetGroups200ResponsePropertiesGroupsItems oBPv600CreateGroup(@javax.annotation.Nonnull OBPv600CreateGroupRequest obPv600CreateGroupRequest) throws ApiException {
-    return oBPv600CreateGroup(obPv600CreateGroupRequest, null);
+  public GetGroups200ResponseGroupsInner createGroup(@javax.annotation.Nonnull CreateGroupRequest createGroupRequest) throws ApiException {
+    return createGroup(createGroupRequest, null);
   }
 
   /**
    * Create Group
    * &lt;p&gt;Create a new group of roles.&lt;/p&gt; &lt;p&gt;Groups can be either:&lt;br /&gt; - System-level (bank_id &#x3D; null) - requires CanCreateGroupAtAllBanks role&lt;br /&gt; - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role&lt;/p&gt; &lt;p&gt;A group contains a list of role names that can be assigned together.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
-   * @param obPv600CreateGroupRequest Request body (required)
+   * @param createGroupRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetGroups200ResponsePropertiesGroupsItems
+   * @return GetGroups200ResponseGroupsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetGroups200ResponsePropertiesGroupsItems oBPv600CreateGroup(@javax.annotation.Nonnull OBPv600CreateGroupRequest obPv600CreateGroupRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems> localVarResponse = oBPv600CreateGroupWithHttpInfo(obPv600CreateGroupRequest, headers);
+  public GetGroups200ResponseGroupsInner createGroup(@javax.annotation.Nonnull CreateGroupRequest createGroupRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetGroups200ResponseGroupsInner> localVarResponse = createGroupWithHttpInfo(createGroupRequest, headers);
     return localVarResponse.getData();
   }
 
   /**
    * Create Group
    * &lt;p&gt;Create a new group of roles.&lt;/p&gt; &lt;p&gt;Groups can be either:&lt;br /&gt; - System-level (bank_id &#x3D; null) - requires CanCreateGroupAtAllBanks role&lt;br /&gt; - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role&lt;/p&gt; &lt;p&gt;A group contains a list of role names that can be assigned together.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
-   * @param obPv600CreateGroupRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600GetGroups200ResponsePropertiesGroupsItems&gt;
+   * @param createGroupRequest Request body (required)
+   * @return ApiResponse&lt;GetGroups200ResponseGroupsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems> oBPv600CreateGroupWithHttpInfo(@javax.annotation.Nonnull OBPv600CreateGroupRequest obPv600CreateGroupRequest) throws ApiException {
-    return oBPv600CreateGroupWithHttpInfo(obPv600CreateGroupRequest, null);
+  public ApiResponse<GetGroups200ResponseGroupsInner> createGroupWithHttpInfo(@javax.annotation.Nonnull CreateGroupRequest createGroupRequest) throws ApiException {
+    return createGroupWithHttpInfo(createGroupRequest, null);
   }
 
   /**
    * Create Group
    * &lt;p&gt;Create a new group of roles.&lt;/p&gt; &lt;p&gt;Groups can be either:&lt;br /&gt; - System-level (bank_id &#x3D; null) - requires CanCreateGroupAtAllBanks role&lt;br /&gt; - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role&lt;/p&gt; &lt;p&gt;A group contains a list of role names that can be assigned together.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
-   * @param obPv600CreateGroupRequest Request body (required)
+   * @param createGroupRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetGroups200ResponsePropertiesGroupsItems&gt;
+   * @return ApiResponse&lt;GetGroups200ResponseGroupsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems> oBPv600CreateGroupWithHttpInfo(@javax.annotation.Nonnull OBPv600CreateGroupRequest obPv600CreateGroupRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600CreateGroupRequestBuilder(obPv600CreateGroupRequest, headers);
+  public ApiResponse<GetGroups200ResponseGroupsInner> createGroupWithHttpInfo(@javax.annotation.Nonnull CreateGroupRequest createGroupRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createGroupRequestBuilder(createGroupRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -356,11 +356,11 @@ public class GroupApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600CreateGroup", localVarResponse);
+          throw getApiException("createGroup", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems>(
+          return new ApiResponse<GetGroups200ResponseGroupsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -370,10 +370,10 @@ public class GroupApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetGroups200ResponsePropertiesGroupsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetGroups200ResponsePropertiesGroupsItems>() {});
+        GetGroups200ResponseGroupsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetGroups200ResponseGroupsInner>() {});
         
 
-        return new ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems>(
+        return new ApiResponse<GetGroups200ResponseGroupsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -392,10 +392,10 @@ public class GroupApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600CreateGroupRequestBuilder(@javax.annotation.Nonnull OBPv600CreateGroupRequest obPv600CreateGroupRequest, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'obPv600CreateGroupRequest' is set
-    if (obPv600CreateGroupRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600CreateGroupRequest' when calling oBPv600CreateGroup");
+  private HttpRequest.Builder createGroupRequestBuilder(@javax.annotation.Nonnull CreateGroupRequest createGroupRequest, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'createGroupRequest' is set
+    if (createGroupRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createGroupRequest' when calling createGroup");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -408,7 +408,7 @@ public class GroupApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600CreateGroupRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createGroupRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -430,8 +430,8 @@ public class GroupApi {
    * @param groupid The GROUPID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv600DeleteGroup(@javax.annotation.Nonnull String groupid) throws ApiException {
-    oBPv600DeleteGroup(groupid, null);
+  public void deleteGroup(@javax.annotation.Nonnull String groupid) throws ApiException {
+    deleteGroup(groupid, null);
   }
 
   /**
@@ -441,8 +441,8 @@ public class GroupApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv600DeleteGroup(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
-    oBPv600DeleteGroupWithHttpInfo(groupid, headers);
+  public void deleteGroup(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
+    deleteGroupWithHttpInfo(groupid, headers);
   }
 
   /**
@@ -452,8 +452,8 @@ public class GroupApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv600DeleteGroupWithHttpInfo(@javax.annotation.Nonnull String groupid) throws ApiException {
-    return oBPv600DeleteGroupWithHttpInfo(groupid, null);
+  public ApiResponse<Void> deleteGroupWithHttpInfo(@javax.annotation.Nonnull String groupid) throws ApiException {
+    return deleteGroupWithHttpInfo(groupid, null);
   }
 
   /**
@@ -464,8 +464,8 @@ public class GroupApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv600DeleteGroupWithHttpInfo(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600DeleteGroupRequestBuilder(groupid, headers);
+  public ApiResponse<Void> deleteGroupWithHttpInfo(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteGroupRequestBuilder(groupid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -476,7 +476,7 @@ public class GroupApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600DeleteGroup", localVarResponse);
+          throw getApiException("deleteGroup", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -501,10 +501,10 @@ public class GroupApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600DeleteGroupRequestBuilder(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteGroupRequestBuilder(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'groupid' is set
     if (groupid == null) {
-      throw new ApiException(400, "Missing the required parameter 'groupid' when calling oBPv600DeleteGroup");
+      throw new ApiException(400, "Missing the required parameter 'groupid' when calling deleteGroup");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -532,11 +532,11 @@ public class GroupApi {
    * Get Group
    * &lt;p&gt;Get a group by its ID.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetGroupsAtAllBanks (for any group)&lt;br /&gt; - CanGetGroupsAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param groupid The GROUPID identifier (required)
-   * @return OBPv600GetGroups200ResponsePropertiesGroupsItems
+   * @return GetGroups200ResponseGroupsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetGroups200ResponsePropertiesGroupsItems oBPv600GetGroup(@javax.annotation.Nonnull String groupid) throws ApiException {
-    return oBPv600GetGroup(groupid, null);
+  public GetGroups200ResponseGroupsInner getGroup(@javax.annotation.Nonnull String groupid) throws ApiException {
+    return getGroup(groupid, null);
   }
 
   /**
@@ -544,11 +544,11 @@ public class GroupApi {
    * &lt;p&gt;Get a group by its ID.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetGroupsAtAllBanks (for any group)&lt;br /&gt; - CanGetGroupsAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param groupid The GROUPID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetGroups200ResponsePropertiesGroupsItems
+   * @return GetGroups200ResponseGroupsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetGroups200ResponsePropertiesGroupsItems oBPv600GetGroup(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems> localVarResponse = oBPv600GetGroupWithHttpInfo(groupid, headers);
+  public GetGroups200ResponseGroupsInner getGroup(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetGroups200ResponseGroupsInner> localVarResponse = getGroupWithHttpInfo(groupid, headers);
     return localVarResponse.getData();
   }
 
@@ -556,11 +556,11 @@ public class GroupApi {
    * Get Group
    * &lt;p&gt;Get a group by its ID.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetGroupsAtAllBanks (for any group)&lt;br /&gt; - CanGetGroupsAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param groupid The GROUPID identifier (required)
-   * @return ApiResponse&lt;OBPv600GetGroups200ResponsePropertiesGroupsItems&gt;
+   * @return ApiResponse&lt;GetGroups200ResponseGroupsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems> oBPv600GetGroupWithHttpInfo(@javax.annotation.Nonnull String groupid) throws ApiException {
-    return oBPv600GetGroupWithHttpInfo(groupid, null);
+  public ApiResponse<GetGroups200ResponseGroupsInner> getGroupWithHttpInfo(@javax.annotation.Nonnull String groupid) throws ApiException {
+    return getGroupWithHttpInfo(groupid, null);
   }
 
   /**
@@ -568,11 +568,11 @@ public class GroupApi {
    * &lt;p&gt;Get a group by its ID.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetGroupsAtAllBanks (for any group)&lt;br /&gt; - CanGetGroupsAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param groupid The GROUPID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetGroups200ResponsePropertiesGroupsItems&gt;
+   * @return ApiResponse&lt;GetGroups200ResponseGroupsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems> oBPv600GetGroupWithHttpInfo(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetGroupRequestBuilder(groupid, headers);
+  public ApiResponse<GetGroups200ResponseGroupsInner> getGroupWithHttpInfo(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getGroupRequestBuilder(groupid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -583,11 +583,11 @@ public class GroupApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetGroup", localVarResponse);
+          throw getApiException("getGroup", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems>(
+          return new ApiResponse<GetGroups200ResponseGroupsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -597,10 +597,10 @@ public class GroupApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetGroups200ResponsePropertiesGroupsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetGroups200ResponsePropertiesGroupsItems>() {});
+        GetGroups200ResponseGroupsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetGroups200ResponseGroupsInner>() {});
         
 
-        return new ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems>(
+        return new ApiResponse<GetGroups200ResponseGroupsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -619,10 +619,10 @@ public class GroupApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetGroupRequestBuilder(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getGroupRequestBuilder(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'groupid' is set
     if (groupid == null) {
-      throw new ApiException(400, "Missing the required parameter 'groupid' when calling oBPv600GetGroup");
+      throw new ApiException(400, "Missing the required parameter 'groupid' when calling getGroup");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -650,11 +650,11 @@ public class GroupApi {
    * Get Group Entitlements
    * &lt;p&gt;Get all entitlements that have been granted from a specific group.&lt;/p&gt; &lt;p&gt;This returns all entitlements where the group_id matches the specified GROUP_ID.&lt;/p&gt; &lt;p&gt;Requires:&lt;br /&gt; - CanGetEntitlementsForAnyBank&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlement_id\&quot;&gt;&lt;strong&gt;entitlement_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlements\&quot;&gt;&lt;strong&gt;entitlements&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;group_id&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;process&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param groupid The GROUPID identifier (required)
-   * @return OBPv600GetGroupEntitlements200Response
+   * @return GetGroupEntitlements200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetGroupEntitlements200Response oBPv600GetGroupEntitlements(@javax.annotation.Nonnull String groupid) throws ApiException {
-    return oBPv600GetGroupEntitlements(groupid, null);
+  public GetGroupEntitlements200Response getGroupEntitlements(@javax.annotation.Nonnull String groupid) throws ApiException {
+    return getGroupEntitlements(groupid, null);
   }
 
   /**
@@ -662,11 +662,11 @@ public class GroupApi {
    * &lt;p&gt;Get all entitlements that have been granted from a specific group.&lt;/p&gt; &lt;p&gt;This returns all entitlements where the group_id matches the specified GROUP_ID.&lt;/p&gt; &lt;p&gt;Requires:&lt;br /&gt; - CanGetEntitlementsForAnyBank&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlement_id\&quot;&gt;&lt;strong&gt;entitlement_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlements\&quot;&gt;&lt;strong&gt;entitlements&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;group_id&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;process&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param groupid The GROUPID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetGroupEntitlements200Response
+   * @return GetGroupEntitlements200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetGroupEntitlements200Response oBPv600GetGroupEntitlements(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetGroupEntitlements200Response> localVarResponse = oBPv600GetGroupEntitlementsWithHttpInfo(groupid, headers);
+  public GetGroupEntitlements200Response getGroupEntitlements(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetGroupEntitlements200Response> localVarResponse = getGroupEntitlementsWithHttpInfo(groupid, headers);
     return localVarResponse.getData();
   }
 
@@ -674,11 +674,11 @@ public class GroupApi {
    * Get Group Entitlements
    * &lt;p&gt;Get all entitlements that have been granted from a specific group.&lt;/p&gt; &lt;p&gt;This returns all entitlements where the group_id matches the specified GROUP_ID.&lt;/p&gt; &lt;p&gt;Requires:&lt;br /&gt; - CanGetEntitlementsForAnyBank&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlement_id\&quot;&gt;&lt;strong&gt;entitlement_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlements\&quot;&gt;&lt;strong&gt;entitlements&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;group_id&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;process&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param groupid The GROUPID identifier (required)
-   * @return ApiResponse&lt;OBPv600GetGroupEntitlements200Response&gt;
+   * @return ApiResponse&lt;GetGroupEntitlements200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetGroupEntitlements200Response> oBPv600GetGroupEntitlementsWithHttpInfo(@javax.annotation.Nonnull String groupid) throws ApiException {
-    return oBPv600GetGroupEntitlementsWithHttpInfo(groupid, null);
+  public ApiResponse<GetGroupEntitlements200Response> getGroupEntitlementsWithHttpInfo(@javax.annotation.Nonnull String groupid) throws ApiException {
+    return getGroupEntitlementsWithHttpInfo(groupid, null);
   }
 
   /**
@@ -686,11 +686,11 @@ public class GroupApi {
    * &lt;p&gt;Get all entitlements that have been granted from a specific group.&lt;/p&gt; &lt;p&gt;This returns all entitlements where the group_id matches the specified GROUP_ID.&lt;/p&gt; &lt;p&gt;Requires:&lt;br /&gt; - CanGetEntitlementsForAnyBank&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlement_id\&quot;&gt;&lt;strong&gt;entitlement_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlements\&quot;&gt;&lt;strong&gt;entitlements&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;group_id&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;process&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param groupid The GROUPID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetGroupEntitlements200Response&gt;
+   * @return ApiResponse&lt;GetGroupEntitlements200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetGroupEntitlements200Response> oBPv600GetGroupEntitlementsWithHttpInfo(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetGroupEntitlementsRequestBuilder(groupid, headers);
+  public ApiResponse<GetGroupEntitlements200Response> getGroupEntitlementsWithHttpInfo(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getGroupEntitlementsRequestBuilder(groupid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -701,11 +701,11 @@ public class GroupApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetGroupEntitlements", localVarResponse);
+          throw getApiException("getGroupEntitlements", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetGroupEntitlements200Response>(
+          return new ApiResponse<GetGroupEntitlements200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -715,10 +715,10 @@ public class GroupApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetGroupEntitlements200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetGroupEntitlements200Response>() {});
+        GetGroupEntitlements200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetGroupEntitlements200Response>() {});
         
 
-        return new ApiResponse<OBPv600GetGroupEntitlements200Response>(
+        return new ApiResponse<GetGroupEntitlements200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -737,10 +737,10 @@ public class GroupApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetGroupEntitlementsRequestBuilder(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getGroupEntitlementsRequestBuilder(@javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'groupid' is set
     if (groupid == null) {
-      throw new ApiException(400, "Missing the required parameter 'groupid' when calling oBPv600GetGroupEntitlements");
+      throw new ApiException(400, "Missing the required parameter 'groupid' when calling getGroupEntitlements");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -767,44 +767,44 @@ public class GroupApi {
   /**
    * Get Groups
    * &lt;p&gt;Get all groups. Optionally filter by bank_id.&lt;/p&gt; &lt;p&gt;Query parameters:&lt;br /&gt; - bank_id (optional): Filter groups by bank. Use &amp;quot;null&amp;quot; or omit for system-level groups.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetGroupsAtAllBanks (for any/all groups)&lt;br /&gt; - CanGetGroupsAtOneBank (for groups at specific bank with bank_id parameter)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;groups&lt;/strong&gt;&lt;/a&gt;: groups&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
-   * @return OBPv600GetGroups200Response
+   * @return GetGroups200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetGroups200Response oBPv600GetGroups() throws ApiException {
-    return oBPv600GetGroups(null);
+  public GetGroups200Response getGroups() throws ApiException {
+    return getGroups(null);
   }
 
   /**
    * Get Groups
    * &lt;p&gt;Get all groups. Optionally filter by bank_id.&lt;/p&gt; &lt;p&gt;Query parameters:&lt;br /&gt; - bank_id (optional): Filter groups by bank. Use &amp;quot;null&amp;quot; or omit for system-level groups.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetGroupsAtAllBanks (for any/all groups)&lt;br /&gt; - CanGetGroupsAtOneBank (for groups at specific bank with bank_id parameter)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;groups&lt;/strong&gt;&lt;/a&gt;: groups&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetGroups200Response
+   * @return GetGroups200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetGroups200Response oBPv600GetGroups(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetGroups200Response> localVarResponse = oBPv600GetGroupsWithHttpInfo(headers);
+  public GetGroups200Response getGroups(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetGroups200Response> localVarResponse = getGroupsWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get Groups
    * &lt;p&gt;Get all groups. Optionally filter by bank_id.&lt;/p&gt; &lt;p&gt;Query parameters:&lt;br /&gt; - bank_id (optional): Filter groups by bank. Use &amp;quot;null&amp;quot; or omit for system-level groups.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetGroupsAtAllBanks (for any/all groups)&lt;br /&gt; - CanGetGroupsAtOneBank (for groups at specific bank with bank_id parameter)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;groups&lt;/strong&gt;&lt;/a&gt;: groups&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv600GetGroups200Response&gt;
+   * @return ApiResponse&lt;GetGroups200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetGroups200Response> oBPv600GetGroupsWithHttpInfo() throws ApiException {
-    return oBPv600GetGroupsWithHttpInfo(null);
+  public ApiResponse<GetGroups200Response> getGroupsWithHttpInfo() throws ApiException {
+    return getGroupsWithHttpInfo(null);
   }
 
   /**
    * Get Groups
    * &lt;p&gt;Get all groups. Optionally filter by bank_id.&lt;/p&gt; &lt;p&gt;Query parameters:&lt;br /&gt; - bank_id (optional): Filter groups by bank. Use &amp;quot;null&amp;quot; or omit for system-level groups.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetGroupsAtAllBanks (for any/all groups)&lt;br /&gt; - CanGetGroupsAtOneBank (for groups at specific bank with bank_id parameter)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;groups&lt;/strong&gt;&lt;/a&gt;: groups&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetGroups200Response&gt;
+   * @return ApiResponse&lt;GetGroups200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetGroups200Response> oBPv600GetGroupsWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetGroupsRequestBuilder(headers);
+  public ApiResponse<GetGroups200Response> getGroupsWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getGroupsRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -815,11 +815,11 @@ public class GroupApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetGroups", localVarResponse);
+          throw getApiException("getGroups", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetGroups200Response>(
+          return new ApiResponse<GetGroups200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -829,10 +829,10 @@ public class GroupApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetGroups200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetGroups200Response>() {});
+        GetGroups200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetGroups200Response>() {});
         
 
-        return new ApiResponse<OBPv600GetGroups200Response>(
+        return new ApiResponse<GetGroups200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -851,7 +851,7 @@ public class GroupApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetGroupsRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getGroupsRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -877,11 +877,11 @@ public class GroupApi {
    * Get User&#39;s Group Memberships
    * &lt;p&gt;Get all groups a user is a member of.&lt;/p&gt; &lt;p&gt;Returns groups where the user has entitlements with process &#x3D; &amp;quot;GROUP_MEMBERSHIP&amp;quot;.&lt;/p&gt; &lt;p&gt;The response includes:&lt;br /&gt; - list_of_entitlements: entitlements the user currently has from this group membership&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetUserGroupMembershipsAtAllBanks (for any user)&lt;br /&gt; - CanGetUserGroupMembershipsAtOneBank (for users at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_entitlements&lt;/strong&gt;&lt;/a&gt;: group_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_entitlements&lt;/strong&gt;&lt;/a&gt;: list_of_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param userid The USERID identifier (required)
-   * @return OBPv600GetUserGroupMemberships200Response
+   * @return GetUserGroupMemberships200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetUserGroupMemberships200Response oBPv600GetUserGroupMemberships(@javax.annotation.Nonnull String userid) throws ApiException {
-    return oBPv600GetUserGroupMemberships(userid, null);
+  public GetUserGroupMemberships200Response getUserGroupMemberships(@javax.annotation.Nonnull String userid) throws ApiException {
+    return getUserGroupMemberships(userid, null);
   }
 
   /**
@@ -889,11 +889,11 @@ public class GroupApi {
    * &lt;p&gt;Get all groups a user is a member of.&lt;/p&gt; &lt;p&gt;Returns groups where the user has entitlements with process &#x3D; &amp;quot;GROUP_MEMBERSHIP&amp;quot;.&lt;/p&gt; &lt;p&gt;The response includes:&lt;br /&gt; - list_of_entitlements: entitlements the user currently has from this group membership&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetUserGroupMembershipsAtAllBanks (for any user)&lt;br /&gt; - CanGetUserGroupMembershipsAtOneBank (for users at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_entitlements&lt;/strong&gt;&lt;/a&gt;: group_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_entitlements&lt;/strong&gt;&lt;/a&gt;: list_of_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param userid The USERID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetUserGroupMemberships200Response
+   * @return GetUserGroupMemberships200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetUserGroupMemberships200Response oBPv600GetUserGroupMemberships(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetUserGroupMemberships200Response> localVarResponse = oBPv600GetUserGroupMembershipsWithHttpInfo(userid, headers);
+  public GetUserGroupMemberships200Response getUserGroupMemberships(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetUserGroupMemberships200Response> localVarResponse = getUserGroupMembershipsWithHttpInfo(userid, headers);
     return localVarResponse.getData();
   }
 
@@ -901,11 +901,11 @@ public class GroupApi {
    * Get User&#39;s Group Memberships
    * &lt;p&gt;Get all groups a user is a member of.&lt;/p&gt; &lt;p&gt;Returns groups where the user has entitlements with process &#x3D; &amp;quot;GROUP_MEMBERSHIP&amp;quot;.&lt;/p&gt; &lt;p&gt;The response includes:&lt;br /&gt; - list_of_entitlements: entitlements the user currently has from this group membership&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetUserGroupMembershipsAtAllBanks (for any user)&lt;br /&gt; - CanGetUserGroupMembershipsAtOneBank (for users at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_entitlements&lt;/strong&gt;&lt;/a&gt;: group_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_entitlements&lt;/strong&gt;&lt;/a&gt;: list_of_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param userid The USERID identifier (required)
-   * @return ApiResponse&lt;OBPv600GetUserGroupMemberships200Response&gt;
+   * @return ApiResponse&lt;GetUserGroupMemberships200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetUserGroupMemberships200Response> oBPv600GetUserGroupMembershipsWithHttpInfo(@javax.annotation.Nonnull String userid) throws ApiException {
-    return oBPv600GetUserGroupMembershipsWithHttpInfo(userid, null);
+  public ApiResponse<GetUserGroupMemberships200Response> getUserGroupMembershipsWithHttpInfo(@javax.annotation.Nonnull String userid) throws ApiException {
+    return getUserGroupMembershipsWithHttpInfo(userid, null);
   }
 
   /**
@@ -913,11 +913,11 @@ public class GroupApi {
    * &lt;p&gt;Get all groups a user is a member of.&lt;/p&gt; &lt;p&gt;Returns groups where the user has entitlements with process &#x3D; &amp;quot;GROUP_MEMBERSHIP&amp;quot;.&lt;/p&gt; &lt;p&gt;The response includes:&lt;br /&gt; - list_of_entitlements: entitlements the user currently has from this group membership&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetUserGroupMembershipsAtAllBanks (for any user)&lt;br /&gt; - CanGetUserGroupMembershipsAtOneBank (for users at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_entitlements&lt;/strong&gt;&lt;/a&gt;: group_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_entitlements&lt;/strong&gt;&lt;/a&gt;: list_of_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param userid The USERID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetUserGroupMemberships200Response&gt;
+   * @return ApiResponse&lt;GetUserGroupMemberships200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetUserGroupMemberships200Response> oBPv600GetUserGroupMembershipsWithHttpInfo(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetUserGroupMembershipsRequestBuilder(userid, headers);
+  public ApiResponse<GetUserGroupMemberships200Response> getUserGroupMembershipsWithHttpInfo(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getUserGroupMembershipsRequestBuilder(userid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -928,11 +928,11 @@ public class GroupApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetUserGroupMemberships", localVarResponse);
+          throw getApiException("getUserGroupMemberships", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetUserGroupMemberships200Response>(
+          return new ApiResponse<GetUserGroupMemberships200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -942,10 +942,10 @@ public class GroupApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetUserGroupMemberships200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetUserGroupMemberships200Response>() {});
+        GetUserGroupMemberships200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetUserGroupMemberships200Response>() {});
         
 
-        return new ApiResponse<OBPv600GetUserGroupMemberships200Response>(
+        return new ApiResponse<GetUserGroupMemberships200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -964,10 +964,10 @@ public class GroupApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetUserGroupMembershipsRequestBuilder(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getUserGroupMembershipsRequestBuilder(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'userid' is set
     if (userid == null) {
-      throw new ApiException(400, "Missing the required parameter 'userid' when calling oBPv600GetUserGroupMemberships");
+      throw new ApiException(400, "Missing the required parameter 'userid' when calling getUserGroupMemberships");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -998,8 +998,8 @@ public class GroupApi {
    * @param groupid The GROUPID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv600RemoveUserFromGroup(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String groupid) throws ApiException {
-    oBPv600RemoveUserFromGroup(userid, groupid, null);
+  public void removeUserFromGroup(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String groupid) throws ApiException {
+    removeUserFromGroup(userid, groupid, null);
   }
 
   /**
@@ -1010,8 +1010,8 @@ public class GroupApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv600RemoveUserFromGroup(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
-    oBPv600RemoveUserFromGroupWithHttpInfo(userid, groupid, headers);
+  public void removeUserFromGroup(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
+    removeUserFromGroupWithHttpInfo(userid, groupid, headers);
   }
 
   /**
@@ -1022,8 +1022,8 @@ public class GroupApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv600RemoveUserFromGroupWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String groupid) throws ApiException {
-    return oBPv600RemoveUserFromGroupWithHttpInfo(userid, groupid, null);
+  public ApiResponse<Void> removeUserFromGroupWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String groupid) throws ApiException {
+    return removeUserFromGroupWithHttpInfo(userid, groupid, null);
   }
 
   /**
@@ -1035,8 +1035,8 @@ public class GroupApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv600RemoveUserFromGroupWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600RemoveUserFromGroupRequestBuilder(userid, groupid, headers);
+  public ApiResponse<Void> removeUserFromGroupWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = removeUserFromGroupRequestBuilder(userid, groupid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1047,7 +1047,7 @@ public class GroupApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600RemoveUserFromGroup", localVarResponse);
+          throw getApiException("removeUserFromGroup", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -1072,14 +1072,14 @@ public class GroupApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600RemoveUserFromGroupRequestBuilder(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder removeUserFromGroupRequestBuilder(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String groupid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'userid' is set
     if (userid == null) {
-      throw new ApiException(400, "Missing the required parameter 'userid' when calling oBPv600RemoveUserFromGroup");
+      throw new ApiException(400, "Missing the required parameter 'userid' when calling removeUserFromGroup");
     }
     // verify the required parameter 'groupid' is set
     if (groupid == null) {
-      throw new ApiException(400, "Missing the required parameter 'groupid' when calling oBPv600RemoveUserFromGroup");
+      throw new ApiException(400, "Missing the required parameter 'groupid' when calling removeUserFromGroup");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1108,25 +1108,25 @@ public class GroupApi {
    * Update Group
    * &lt;p&gt;Update a group. All fields are optional.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanUpdateGroupAtAllBanks (for any group)&lt;br /&gt; - CanUpdateGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param groupid The GROUPID identifier (required)
-   * @param obPv600UpdateGroupRequest Request body (required)
-   * @return OBPv600GetGroups200ResponsePropertiesGroupsItems
+   * @param updateGroupRequest Request body (required)
+   * @return GetGroups200ResponseGroupsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetGroups200ResponsePropertiesGroupsItems oBPv600UpdateGroup(@javax.annotation.Nonnull String groupid, @javax.annotation.Nonnull OBPv600UpdateGroupRequest obPv600UpdateGroupRequest) throws ApiException {
-    return oBPv600UpdateGroup(groupid, obPv600UpdateGroupRequest, null);
+  public GetGroups200ResponseGroupsInner updateGroup(@javax.annotation.Nonnull String groupid, @javax.annotation.Nonnull UpdateGroupRequest updateGroupRequest) throws ApiException {
+    return updateGroup(groupid, updateGroupRequest, null);
   }
 
   /**
    * Update Group
    * &lt;p&gt;Update a group. All fields are optional.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanUpdateGroupAtAllBanks (for any group)&lt;br /&gt; - CanUpdateGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param groupid The GROUPID identifier (required)
-   * @param obPv600UpdateGroupRequest Request body (required)
+   * @param updateGroupRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetGroups200ResponsePropertiesGroupsItems
+   * @return GetGroups200ResponseGroupsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetGroups200ResponsePropertiesGroupsItems oBPv600UpdateGroup(@javax.annotation.Nonnull String groupid, @javax.annotation.Nonnull OBPv600UpdateGroupRequest obPv600UpdateGroupRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems> localVarResponse = oBPv600UpdateGroupWithHttpInfo(groupid, obPv600UpdateGroupRequest, headers);
+  public GetGroups200ResponseGroupsInner updateGroup(@javax.annotation.Nonnull String groupid, @javax.annotation.Nonnull UpdateGroupRequest updateGroupRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetGroups200ResponseGroupsInner> localVarResponse = updateGroupWithHttpInfo(groupid, updateGroupRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1134,25 +1134,25 @@ public class GroupApi {
    * Update Group
    * &lt;p&gt;Update a group. All fields are optional.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanUpdateGroupAtAllBanks (for any group)&lt;br /&gt; - CanUpdateGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param groupid The GROUPID identifier (required)
-   * @param obPv600UpdateGroupRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600GetGroups200ResponsePropertiesGroupsItems&gt;
+   * @param updateGroupRequest Request body (required)
+   * @return ApiResponse&lt;GetGroups200ResponseGroupsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems> oBPv600UpdateGroupWithHttpInfo(@javax.annotation.Nonnull String groupid, @javax.annotation.Nonnull OBPv600UpdateGroupRequest obPv600UpdateGroupRequest) throws ApiException {
-    return oBPv600UpdateGroupWithHttpInfo(groupid, obPv600UpdateGroupRequest, null);
+  public ApiResponse<GetGroups200ResponseGroupsInner> updateGroupWithHttpInfo(@javax.annotation.Nonnull String groupid, @javax.annotation.Nonnull UpdateGroupRequest updateGroupRequest) throws ApiException {
+    return updateGroupWithHttpInfo(groupid, updateGroupRequest, null);
   }
 
   /**
    * Update Group
    * &lt;p&gt;Update a group. All fields are optional.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanUpdateGroupAtAllBanks (for any group)&lt;br /&gt; - CanUpdateGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param groupid The GROUPID identifier (required)
-   * @param obPv600UpdateGroupRequest Request body (required)
+   * @param updateGroupRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetGroups200ResponsePropertiesGroupsItems&gt;
+   * @return ApiResponse&lt;GetGroups200ResponseGroupsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems> oBPv600UpdateGroupWithHttpInfo(@javax.annotation.Nonnull String groupid, @javax.annotation.Nonnull OBPv600UpdateGroupRequest obPv600UpdateGroupRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600UpdateGroupRequestBuilder(groupid, obPv600UpdateGroupRequest, headers);
+  public ApiResponse<GetGroups200ResponseGroupsInner> updateGroupWithHttpInfo(@javax.annotation.Nonnull String groupid, @javax.annotation.Nonnull UpdateGroupRequest updateGroupRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateGroupRequestBuilder(groupid, updateGroupRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1163,11 +1163,11 @@ public class GroupApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600UpdateGroup", localVarResponse);
+          throw getApiException("updateGroup", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems>(
+          return new ApiResponse<GetGroups200ResponseGroupsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1177,10 +1177,10 @@ public class GroupApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetGroups200ResponsePropertiesGroupsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetGroups200ResponsePropertiesGroupsItems>() {});
+        GetGroups200ResponseGroupsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetGroups200ResponseGroupsInner>() {});
         
 
-        return new ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems>(
+        return new ApiResponse<GetGroups200ResponseGroupsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1199,14 +1199,14 @@ public class GroupApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600UpdateGroupRequestBuilder(@javax.annotation.Nonnull String groupid, @javax.annotation.Nonnull OBPv600UpdateGroupRequest obPv600UpdateGroupRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateGroupRequestBuilder(@javax.annotation.Nonnull String groupid, @javax.annotation.Nonnull UpdateGroupRequest updateGroupRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'groupid' is set
     if (groupid == null) {
-      throw new ApiException(400, "Missing the required parameter 'groupid' when calling oBPv600UpdateGroup");
+      throw new ApiException(400, "Missing the required parameter 'groupid' when calling updateGroup");
     }
-    // verify the required parameter 'obPv600UpdateGroupRequest' is set
-    if (obPv600UpdateGroupRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600UpdateGroupRequest' when calling oBPv600UpdateGroup");
+    // verify the required parameter 'updateGroupRequest' is set
+    if (updateGroupRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateGroupRequest' when calling updateGroup");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1220,7 +1220,7 @@ public class GroupApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600UpdateGroupRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateGroupRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

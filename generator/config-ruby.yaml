@@ -1,6 +1,6 @@
 generatorName: ruby
 outputDir: ../sdks/ruby
-inputSpec: ../openapi-spec/obp-openapi.json
+inputSpec: ../openapi-spec/obp-openapi-simplified.json
 additionalProperties:
   gemName: obp_ruby
   gemVersion: "1.0.0"

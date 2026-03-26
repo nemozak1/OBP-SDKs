@@ -1,20 +1,20 @@
 # OpenBankProject::JSONSchemaValidationApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv4_0_0_create_json_schema_validation**](JSONSchemaValidationApi.md#o_bpv4_0_0_create_json_schema_validation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation |
-| [**o_bpv4_0_0_delete_json_schema_validation**](JSONSchemaValidationApi.md#o_bpv4_0_0_delete_json_schema_validation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation |
-| [**o_bpv4_0_0_get_all_json_schema_validations**](JSONSchemaValidationApi.md#o_bpv4_0_0_get_all_json_schema_validations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations |
-| [**o_bpv4_0_0_get_all_json_schema_validations_public**](JSONSchemaValidationApi.md#o_bpv4_0_0_get_all_json_schema_validations_public) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public |
-| [**o_bpv4_0_0_get_json_schema_validation**](JSONSchemaValidationApi.md#o_bpv4_0_0_get_json_schema_validation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation |
-| [**o_bpv4_0_0_update_json_schema_validation**](JSONSchemaValidationApi.md#o_bpv4_0_0_update_json_schema_validation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation |
+| [**create_json_schema_validation**](JSONSchemaValidationApi.md#create_json_schema_validation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation |
+| [**delete_json_schema_validation**](JSONSchemaValidationApi.md#delete_json_schema_validation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation |
+| [**get_all_json_schema_validations**](JSONSchemaValidationApi.md#get_all_json_schema_validations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations |
+| [**get_all_json_schema_validations_public**](JSONSchemaValidationApi.md#get_all_json_schema_validations_public) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public |
+| [**get_json_schema_validation**](JSONSchemaValidationApi.md#get_json_schema_validation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation |
+| [**update_json_schema_validation**](JSONSchemaValidationApi.md#update_json_schema_validation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation |
 
 
-## o_bpv4_0_0_create_json_schema_validation
+## create_json_schema_validation
 
-> <OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> o_bpv4_0_0_create_json_schema_validation(operationid, obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema)
+> <GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> create_json_schema_validation(operationid, get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
 
 Create a JSON Schema Validation
 
@@ -36,39 +36,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::JSONSchemaValidationApi.new
 operationid = 'operationid_example' # String | The OPERATIONID identifier
-obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema = OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaProperties.new({description: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), properties: OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesProperties.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesProperties.new({xxx_id: OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesPropertiesXxxId.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesPropertiesXxxIdProperties.new({min_length: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), max_length: , type: , examples: OpenBankProject::OBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds.new({type: 'type_example', items: })})})})}), additional_properties: , title: , type: , required: OpenBankProject::OBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds.new({type: 'type_example', items: }), schema: })}) # OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
+get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema = OpenBankProject::GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.new # GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
 
 begin
   # Create a JSON Schema Validation
-  result = api_instance.o_bpv4_0_0_create_json_schema_validation(operationid, obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema)
+  result = api_instance.create_json_schema_validation(operationid, get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling JSONSchemaValidationApi->o_bpv4_0_0_create_json_schema_validation: #{e}"
+  puts "Error when calling JSONSchemaValidationApi->create_json_schema_validation: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_json_schema_validation_with_http_info variant
+#### Using the create_json_schema_validation_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>, Integer, Hash)> o_bpv4_0_0_create_json_schema_validation_with_http_info(operationid, obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema)
+> <Array(<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>, Integer, Hash)> create_json_schema_validation_with_http_info(operationid, get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
 
 ```ruby
 begin
   # Create a JSON Schema Validation
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_json_schema_validation_with_http_info(operationid, obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema)
+  data, status_code, headers = api_instance.create_json_schema_validation_with_http_info(operationid, get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>
+  p data # => <GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling JSONSchemaValidationApi->o_bpv4_0_0_create_json_schema_validation_with_http_info: #{e}"
+  puts "Error when calling JSONSchemaValidationApi->create_json_schema_validation_with_http_info: #{e}"
 end
 ```
 
@@ -77,11 +77,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **operationid** | **String** | The OPERATIONID identifier |  |
-| **obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md) | Request body |  |
+| **get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema** | [**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -93,9 +93,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_delete_json_schema_validation
+## delete_json_schema_validation
 
-> o_bpv4_0_0_delete_json_schema_validation(operationid)
+> delete_json_schema_validation(operationid)
 
 Delete a JSON Schema Validation
 
@@ -117,9 +117,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::JSONSchemaValidationApi.new
@@ -127,27 +127,27 @@ operationid = 'operationid_example' # String | The OPERATIONID identifier
 
 begin
   # Delete a JSON Schema Validation
-  api_instance.o_bpv4_0_0_delete_json_schema_validation(operationid)
+  api_instance.delete_json_schema_validation(operationid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling JSONSchemaValidationApi->o_bpv4_0_0_delete_json_schema_validation: #{e}"
+  puts "Error when calling JSONSchemaValidationApi->delete_json_schema_validation: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_delete_json_schema_validation_with_http_info variant
+#### Using the delete_json_schema_validation_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv4_0_0_delete_json_schema_validation_with_http_info(operationid)
+> <Array(nil, Integer, Hash)> delete_json_schema_validation_with_http_info(operationid)
 
 ```ruby
 begin
   # Delete a JSON Schema Validation
-  data, status_code, headers = api_instance.o_bpv4_0_0_delete_json_schema_validation_with_http_info(operationid)
+  data, status_code, headers = api_instance.delete_json_schema_validation_with_http_info(operationid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling JSONSchemaValidationApi->o_bpv4_0_0_delete_json_schema_validation_with_http_info: #{e}"
+  puts "Error when calling JSONSchemaValidationApi->delete_json_schema_validation_with_http_info: #{e}"
 end
 ```
 
@@ -171,9 +171,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv4_0_0_get_all_json_schema_validations
+## get_all_json_schema_validations
 
-> <OBPv400GetAllJsonSchemaValidationsPublic200Response> o_bpv4_0_0_get_all_json_schema_validations
+> <GetAllJsonSchemaValidationsPublic200Response> get_all_json_schema_validations
 
 Get all JSON Schema Validations
 
@@ -195,37 +195,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::JSONSchemaValidationApi.new
 
 begin
   # Get all JSON Schema Validations
-  result = api_instance.o_bpv4_0_0_get_all_json_schema_validations
+  result = api_instance.get_all_json_schema_validations
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling JSONSchemaValidationApi->o_bpv4_0_0_get_all_json_schema_validations: #{e}"
+  puts "Error when calling JSONSchemaValidationApi->get_all_json_schema_validations: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_all_json_schema_validations_with_http_info variant
+#### Using the get_all_json_schema_validations_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllJsonSchemaValidationsPublic200Response>, Integer, Hash)> o_bpv4_0_0_get_all_json_schema_validations_with_http_info
+> <Array(<GetAllJsonSchemaValidationsPublic200Response>, Integer, Hash)> get_all_json_schema_validations_with_http_info
 
 ```ruby
 begin
   # Get all JSON Schema Validations
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_all_json_schema_validations_with_http_info
+  data, status_code, headers = api_instance.get_all_json_schema_validations_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllJsonSchemaValidationsPublic200Response>
+  p data # => <GetAllJsonSchemaValidationsPublic200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling JSONSchemaValidationApi->o_bpv4_0_0_get_all_json_schema_validations_with_http_info: #{e}"
+  puts "Error when calling JSONSchemaValidationApi->get_all_json_schema_validations_with_http_info: #{e}"
 end
 ```
 
@@ -235,7 +235,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -247,9 +247,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_all_json_schema_validations_public
+## get_all_json_schema_validations_public
 
-> <OBPv400GetAllJsonSchemaValidationsPublic200Response> o_bpv4_0_0_get_all_json_schema_validations_public
+> <GetAllJsonSchemaValidationsPublic200Response> get_all_json_schema_validations_public
 
 Get all JSON Schema Validations - public
 
@@ -265,28 +265,28 @@ api_instance = OpenBankProject::JSONSchemaValidationApi.new
 
 begin
   # Get all JSON Schema Validations - public
-  result = api_instance.o_bpv4_0_0_get_all_json_schema_validations_public
+  result = api_instance.get_all_json_schema_validations_public
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling JSONSchemaValidationApi->o_bpv4_0_0_get_all_json_schema_validations_public: #{e}"
+  puts "Error when calling JSONSchemaValidationApi->get_all_json_schema_validations_public: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_all_json_schema_validations_public_with_http_info variant
+#### Using the get_all_json_schema_validations_public_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllJsonSchemaValidationsPublic200Response>, Integer, Hash)> o_bpv4_0_0_get_all_json_schema_validations_public_with_http_info
+> <Array(<GetAllJsonSchemaValidationsPublic200Response>, Integer, Hash)> get_all_json_schema_validations_public_with_http_info
 
 ```ruby
 begin
   # Get all JSON Schema Validations - public
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_all_json_schema_validations_public_with_http_info
+  data, status_code, headers = api_instance.get_all_json_schema_validations_public_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllJsonSchemaValidationsPublic200Response>
+  p data # => <GetAllJsonSchemaValidationsPublic200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling JSONSchemaValidationApi->o_bpv4_0_0_get_all_json_schema_validations_public_with_http_info: #{e}"
+  puts "Error when calling JSONSchemaValidationApi->get_all_json_schema_validations_public_with_http_info: #{e}"
 end
 ```
 
@@ -296,7 +296,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -308,9 +308,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_json_schema_validation
+## get_json_schema_validation
 
-> <OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> o_bpv4_0_0_get_json_schema_validation(operationid)
+> <GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> get_json_schema_validation(operationid)
 
 Get a JSON Schema Validation
 
@@ -332,9 +332,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::JSONSchemaValidationApi.new
@@ -342,28 +342,28 @@ operationid = 'operationid_example' # String | The OPERATIONID identifier
 
 begin
   # Get a JSON Schema Validation
-  result = api_instance.o_bpv4_0_0_get_json_schema_validation(operationid)
+  result = api_instance.get_json_schema_validation(operationid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling JSONSchemaValidationApi->o_bpv4_0_0_get_json_schema_validation: #{e}"
+  puts "Error when calling JSONSchemaValidationApi->get_json_schema_validation: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_json_schema_validation_with_http_info variant
+#### Using the get_json_schema_validation_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>, Integer, Hash)> o_bpv4_0_0_get_json_schema_validation_with_http_info(operationid)
+> <Array(<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>, Integer, Hash)> get_json_schema_validation_with_http_info(operationid)
 
 ```ruby
 begin
   # Get a JSON Schema Validation
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_json_schema_validation_with_http_info(operationid)
+  data, status_code, headers = api_instance.get_json_schema_validation_with_http_info(operationid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>
+  p data # => <GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling JSONSchemaValidationApi->o_bpv4_0_0_get_json_schema_validation_with_http_info: #{e}"
+  puts "Error when calling JSONSchemaValidationApi->get_json_schema_validation_with_http_info: #{e}"
 end
 ```
 
@@ -375,7 +375,7 @@ end
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -387,9 +387,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_update_json_schema_validation
+## update_json_schema_validation
 
-> <OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> o_bpv4_0_0_update_json_schema_validation(operationid, obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema)
+> <GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> update_json_schema_validation(operationid, get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
 
 Update a JSON Schema Validation
 
@@ -411,39 +411,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::JSONSchemaValidationApi.new
 operationid = 'operationid_example' # String | The OPERATIONID identifier
-obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema = OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaProperties.new({description: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), properties: OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesProperties.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesProperties.new({xxx_id: OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesPropertiesXxxId.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesPropertiesXxxIdProperties.new({min_length: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), max_length: , type: , examples: OpenBankProject::OBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds.new({type: 'type_example', items: })})})})}), additional_properties: , title: , type: , required: OpenBankProject::OBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds.new({type: 'type_example', items: }), schema: })}) # OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
+get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema = OpenBankProject::GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.new # GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
 
 begin
   # Update a JSON Schema Validation
-  result = api_instance.o_bpv4_0_0_update_json_schema_validation(operationid, obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema)
+  result = api_instance.update_json_schema_validation(operationid, get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling JSONSchemaValidationApi->o_bpv4_0_0_update_json_schema_validation: #{e}"
+  puts "Error when calling JSONSchemaValidationApi->update_json_schema_validation: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_update_json_schema_validation_with_http_info variant
+#### Using the update_json_schema_validation_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>, Integer, Hash)> o_bpv4_0_0_update_json_schema_validation_with_http_info(operationid, obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema)
+> <Array(<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>, Integer, Hash)> update_json_schema_validation_with_http_info(operationid, get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
 
 ```ruby
 begin
   # Update a JSON Schema Validation
-  data, status_code, headers = api_instance.o_bpv4_0_0_update_json_schema_validation_with_http_info(operationid, obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema)
+  data, status_code, headers = api_instance.update_json_schema_validation_with_http_info(operationid, get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>
+  p data # => <GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling JSONSchemaValidationApi->o_bpv4_0_0_update_json_schema_validation_with_http_info: #{e}"
+  puts "Error when calling JSONSchemaValidationApi->update_json_schema_validation_with_http_info: #{e}"
 end
 ```
 
@@ -452,11 +452,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **operationid** | **String** | The OPERATIONID identifier |  |
-| **obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md) | Request body |  |
+| **get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema** | [**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 

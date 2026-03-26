@@ -1,16 +1,16 @@
 # DataWarehouseApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv300DataWarehouseSearch**](DataWarehouseApi.md#oBPv300DataWarehouseSearch) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search |
-| [**oBPv300DataWarehouseStatistics**](DataWarehouseApi.md#oBPv300DataWarehouseStatistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics |
+| [**dataWarehouseSearch**](DataWarehouseApi.md#dataWarehouseSearch) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search |
+| [**dataWarehouseStatistics**](DataWarehouseApi.md#dataWarehouseStatistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics |
 
 
-<a id="oBPv300DataWarehouseSearch"></a>
-# **oBPv300DataWarehouseSearch**
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage oBPv300DataWarehouseSearch(index, obPv300DataWarehouseSearchRequest)
+<a id="dataWarehouseSearch"></a>
+# **dataWarehouseSearch**
+> kotlin.Any dataWarehouseSearch(index, dataWarehouseSearchRequest)
 
 Data Warehouse Search
 
@@ -24,15 +24,15 @@ Data Warehouse Search
 
 val apiInstance = DataWarehouseApi()
 val index : kotlin.String = index_example // kotlin.String | The INDEX identifier
-val obPv300DataWarehouseSearchRequest : OBPv300DataWarehouseSearchRequest = {"type":"object","properties":{"query":{"type":"object","properties":{"match_all":{"type":"object","properties":{}}}}}} // OBPv300DataWarehouseSearchRequest | Request body
+val dataWarehouseSearchRequest : DataWarehouseSearchRequest = {"type":"object","properties":{"query":{"type":"object","properties":{"match_all":{"type":"object","properties":{}}}}}} // DataWarehouseSearchRequest | Request body
 try {
-    val result : OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage = apiInstance.oBPv300DataWarehouseSearch(index, obPv300DataWarehouseSearchRequest)
+    val result : kotlin.Any = apiInstance.dataWarehouseSearch(index, dataWarehouseSearchRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DataWarehouseApi#oBPv300DataWarehouseSearch")
+    println("4xx response calling DataWarehouseApi#dataWarehouseSearch")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DataWarehouseApi#oBPv300DataWarehouseSearch")
+    println("5xx response calling DataWarehouseApi#dataWarehouseSearch")
     e.printStackTrace()
 }
 ```
@@ -41,11 +41,11 @@ try {
 | **index** | **kotlin.String**| The INDEX identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv300DataWarehouseSearchRequest** | [**OBPv300DataWarehouseSearchRequest**](OBPv300DataWarehouseSearchRequest.md)| Request body | |
+| **dataWarehouseSearchRequest** | [**DataWarehouseSearchRequest**](DataWarehouseSearchRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+[**kotlin.Any**](kotlin.Any.md)
 
 ### Authorization
 
@@ -56,17 +56,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv300DataWarehouseStatistics"></a>
-# **oBPv300DataWarehouseStatistics**
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage oBPv300DataWarehouseStatistics(index, `field`, obPv300DataWarehouseSearchRequest)
+<a id="dataWarehouseStatistics"></a>
+# **dataWarehouseStatistics**
+> kotlin.Any dataWarehouseStatistics(index, `field`, dataWarehouseSearchRequest)
 
 Data Warehouse Statistics
 
@@ -81,15 +81,15 @@ Data Warehouse Statistics
 val apiInstance = DataWarehouseApi()
 val index : kotlin.String = index_example // kotlin.String | The INDEX identifier
 val `field` : kotlin.String = `field`_example // kotlin.String | The FIELD identifier
-val obPv300DataWarehouseSearchRequest : OBPv300DataWarehouseSearchRequest = {type=object, properties={query={type=object, properties={match_all={type=object, properties={}}}}}} // OBPv300DataWarehouseSearchRequest | Request body
+val dataWarehouseSearchRequest : DataWarehouseSearchRequest = {type=object, properties={query={type=object, properties={match_all={type=object, properties={}}}}}} // DataWarehouseSearchRequest | Request body
 try {
-    val result : OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage = apiInstance.oBPv300DataWarehouseStatistics(index, `field`, obPv300DataWarehouseSearchRequest)
+    val result : kotlin.Any = apiInstance.dataWarehouseStatistics(index, `field`, dataWarehouseSearchRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DataWarehouseApi#oBPv300DataWarehouseStatistics")
+    println("4xx response calling DataWarehouseApi#dataWarehouseStatistics")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DataWarehouseApi#oBPv300DataWarehouseStatistics")
+    println("5xx response calling DataWarehouseApi#dataWarehouseStatistics")
     e.printStackTrace()
 }
 ```
@@ -99,11 +99,11 @@ try {
 | **&#x60;field&#x60;** | **kotlin.String**| The FIELD identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv300DataWarehouseSearchRequest** | [**OBPv300DataWarehouseSearchRequest**](OBPv300DataWarehouseSearchRequest.md)| Request body | |
+| **dataWarehouseSearchRequest** | [**DataWarehouseSearchRequest**](DataWarehouseSearchRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+[**kotlin.Any**](kotlin.Any.md)
 
 ### Authorization
 
@@ -114,8 +114,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

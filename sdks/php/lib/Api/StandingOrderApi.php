@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,10 +75,10 @@ class StandingOrderApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv400CreateStandingOrder' => [
+        'createStandingOrder' => [
             'application/json',
         ],
-        'oBPv400CreateStandingOrderManagement' => [
+        'createStandingOrderManagement' => [
             'application/json',
         ],
     ];
@@ -130,44 +130,44 @@ class StandingOrderApi
     }
 
     /**
-     * Operation oBPv400CreateStandingOrder
+     * Operation createStandingOrder
      *
      * Create Standing Order
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateStandingOrderRequest $obpv400_create_standing_order_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateStandingOrder'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateStandingOrderRequest $create_standing_order_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createStandingOrder'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400CreateStandingOrder200Response
+     * @return \OpenBankProject\Model\CreateStandingOrder200Response
      */
-    public function oBPv400CreateStandingOrder($bankid, $accountid, $viewid, $obpv400_create_standing_order_request, string $contentType = self::contentTypes['oBPv400CreateStandingOrder'][0])
+    public function createStandingOrder($bankid, $accountid, $viewid, $create_standing_order_request, string $contentType = self::contentTypes['createStandingOrder'][0])
     {
-        list($response) = $this->oBPv400CreateStandingOrderWithHttpInfo($bankid, $accountid, $viewid, $obpv400_create_standing_order_request, $contentType);
+        list($response) = $this->createStandingOrderWithHttpInfo($bankid, $accountid, $viewid, $create_standing_order_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateStandingOrderWithHttpInfo
+     * Operation createStandingOrderWithHttpInfo
      *
      * Create Standing Order
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateStandingOrderRequest $obpv400_create_standing_order_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateStandingOrder'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateStandingOrderRequest $create_standing_order_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createStandingOrder'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400CreateStandingOrder200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateStandingOrder200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateStandingOrderWithHttpInfo($bankid, $accountid, $viewid, $obpv400_create_standing_order_request, string $contentType = self::contentTypes['oBPv400CreateStandingOrder'][0])
+    public function createStandingOrderWithHttpInfo($bankid, $accountid, $viewid, $create_standing_order_request, string $contentType = self::contentTypes['createStandingOrder'][0])
     {
-        $request = $this->oBPv400CreateStandingOrderRequest($bankid, $accountid, $viewid, $obpv400_create_standing_order_request, $contentType);
+        $request = $this->createStandingOrderRequest($bankid, $accountid, $viewid, $create_standing_order_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -195,7 +195,7 @@ class StandingOrderApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400CreateStandingOrder200Response',
+                        '\OpenBankProject\Model\CreateStandingOrder200Response',
                         $request,
                         $response,
                     );
@@ -217,7 +217,7 @@ class StandingOrderApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400CreateStandingOrder200Response',
+                '\OpenBankProject\Model\CreateStandingOrder200Response',
                 $request,
                 $response,
             );
@@ -226,7 +226,7 @@ class StandingOrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400CreateStandingOrder200Response',
+                        '\OpenBankProject\Model\CreateStandingOrder200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -239,22 +239,22 @@ class StandingOrderApi
     }
 
     /**
-     * Operation oBPv400CreateStandingOrderAsync
+     * Operation createStandingOrderAsync
      *
      * Create Standing Order
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateStandingOrderRequest $obpv400_create_standing_order_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateStandingOrder'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateStandingOrderRequest $create_standing_order_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createStandingOrder'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateStandingOrderAsync($bankid, $accountid, $viewid, $obpv400_create_standing_order_request, string $contentType = self::contentTypes['oBPv400CreateStandingOrder'][0])
+    public function createStandingOrderAsync($bankid, $accountid, $viewid, $create_standing_order_request, string $contentType = self::contentTypes['createStandingOrder'][0])
     {
-        return $this->oBPv400CreateStandingOrderAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv400_create_standing_order_request, $contentType)
+        return $this->createStandingOrderAsyncWithHttpInfo($bankid, $accountid, $viewid, $create_standing_order_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -263,23 +263,23 @@ class StandingOrderApi
     }
 
     /**
-     * Operation oBPv400CreateStandingOrderAsyncWithHttpInfo
+     * Operation createStandingOrderAsyncWithHttpInfo
      *
      * Create Standing Order
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateStandingOrderRequest $obpv400_create_standing_order_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateStandingOrder'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateStandingOrderRequest $create_standing_order_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createStandingOrder'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateStandingOrderAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv400_create_standing_order_request, string $contentType = self::contentTypes['oBPv400CreateStandingOrder'][0])
+    public function createStandingOrderAsyncWithHttpInfo($bankid, $accountid, $viewid, $create_standing_order_request, string $contentType = self::contentTypes['createStandingOrder'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400CreateStandingOrder200Response';
-        $request = $this->oBPv400CreateStandingOrderRequest($bankid, $accountid, $viewid, $obpv400_create_standing_order_request, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateStandingOrder200Response';
+        $request = $this->createStandingOrderRequest($bankid, $accountid, $viewid, $create_standing_order_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -318,45 +318,45 @@ class StandingOrderApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateStandingOrder'
+     * Create request for operation 'createStandingOrder'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateStandingOrderRequest $obpv400_create_standing_order_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateStandingOrder'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateStandingOrderRequest $create_standing_order_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createStandingOrder'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateStandingOrderRequest($bankid, $accountid, $viewid, $obpv400_create_standing_order_request, string $contentType = self::contentTypes['oBPv400CreateStandingOrder'][0])
+    public function createStandingOrderRequest($bankid, $accountid, $viewid, $create_standing_order_request, string $contentType = self::contentTypes['createStandingOrder'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400CreateStandingOrder'
+                'Missing the required parameter $bankid when calling createStandingOrder'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400CreateStandingOrder'
+                'Missing the required parameter $accountid when calling createStandingOrder'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv400CreateStandingOrder'
+                'Missing the required parameter $viewid when calling createStandingOrder'
             );
         }
 
-        // verify the required parameter 'obpv400_create_standing_order_request' is set
-        if ($obpv400_create_standing_order_request === null || (is_array($obpv400_create_standing_order_request) && count($obpv400_create_standing_order_request) === 0)) {
+        // verify the required parameter 'create_standing_order_request' is set
+        if ($create_standing_order_request === null || (is_array($create_standing_order_request) && count($create_standing_order_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_standing_order_request when calling oBPv400CreateStandingOrder'
+                'Missing the required parameter $create_standing_order_request when calling createStandingOrder'
             );
         }
 
@@ -403,12 +403,12 @@ class StandingOrderApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_standing_order_request)) {
+        if (isset($create_standing_order_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_standing_order_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_standing_order_request));
             } else {
-                $httpBody = $obpv400_create_standing_order_request;
+                $httpBody = $create_standing_order_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -444,9 +444,9 @@ class StandingOrderApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -471,42 +471,42 @@ class StandingOrderApi
     }
 
     /**
-     * Operation oBPv400CreateStandingOrderManagement
+     * Operation createStandingOrderManagement
      *
      * Create Standing Order (management)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateStandingOrderRequest $obpv400_create_standing_order_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateStandingOrderManagement'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateStandingOrderRequest $create_standing_order_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createStandingOrderManagement'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400CreateStandingOrder200Response
+     * @return \OpenBankProject\Model\CreateStandingOrder200Response
      */
-    public function oBPv400CreateStandingOrderManagement($bankid, $accountid, $obpv400_create_standing_order_request, string $contentType = self::contentTypes['oBPv400CreateStandingOrderManagement'][0])
+    public function createStandingOrderManagement($bankid, $accountid, $create_standing_order_request, string $contentType = self::contentTypes['createStandingOrderManagement'][0])
     {
-        list($response) = $this->oBPv400CreateStandingOrderManagementWithHttpInfo($bankid, $accountid, $obpv400_create_standing_order_request, $contentType);
+        list($response) = $this->createStandingOrderManagementWithHttpInfo($bankid, $accountid, $create_standing_order_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateStandingOrderManagementWithHttpInfo
+     * Operation createStandingOrderManagementWithHttpInfo
      *
      * Create Standing Order (management)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateStandingOrderRequest $obpv400_create_standing_order_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateStandingOrderManagement'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateStandingOrderRequest $create_standing_order_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createStandingOrderManagement'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400CreateStandingOrder200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateStandingOrder200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateStandingOrderManagementWithHttpInfo($bankid, $accountid, $obpv400_create_standing_order_request, string $contentType = self::contentTypes['oBPv400CreateStandingOrderManagement'][0])
+    public function createStandingOrderManagementWithHttpInfo($bankid, $accountid, $create_standing_order_request, string $contentType = self::contentTypes['createStandingOrderManagement'][0])
     {
-        $request = $this->oBPv400CreateStandingOrderManagementRequest($bankid, $accountid, $obpv400_create_standing_order_request, $contentType);
+        $request = $this->createStandingOrderManagementRequest($bankid, $accountid, $create_standing_order_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -534,7 +534,7 @@ class StandingOrderApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400CreateStandingOrder200Response',
+                        '\OpenBankProject\Model\CreateStandingOrder200Response',
                         $request,
                         $response,
                     );
@@ -556,7 +556,7 @@ class StandingOrderApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400CreateStandingOrder200Response',
+                '\OpenBankProject\Model\CreateStandingOrder200Response',
                 $request,
                 $response,
             );
@@ -565,7 +565,7 @@ class StandingOrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400CreateStandingOrder200Response',
+                        '\OpenBankProject\Model\CreateStandingOrder200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -578,21 +578,21 @@ class StandingOrderApi
     }
 
     /**
-     * Operation oBPv400CreateStandingOrderManagementAsync
+     * Operation createStandingOrderManagementAsync
      *
      * Create Standing Order (management)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateStandingOrderRequest $obpv400_create_standing_order_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateStandingOrderManagement'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateStandingOrderRequest $create_standing_order_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createStandingOrderManagement'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateStandingOrderManagementAsync($bankid, $accountid, $obpv400_create_standing_order_request, string $contentType = self::contentTypes['oBPv400CreateStandingOrderManagement'][0])
+    public function createStandingOrderManagementAsync($bankid, $accountid, $create_standing_order_request, string $contentType = self::contentTypes['createStandingOrderManagement'][0])
     {
-        return $this->oBPv400CreateStandingOrderManagementAsyncWithHttpInfo($bankid, $accountid, $obpv400_create_standing_order_request, $contentType)
+        return $this->createStandingOrderManagementAsyncWithHttpInfo($bankid, $accountid, $create_standing_order_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -601,22 +601,22 @@ class StandingOrderApi
     }
 
     /**
-     * Operation oBPv400CreateStandingOrderManagementAsyncWithHttpInfo
+     * Operation createStandingOrderManagementAsyncWithHttpInfo
      *
      * Create Standing Order (management)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateStandingOrderRequest $obpv400_create_standing_order_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateStandingOrderManagement'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateStandingOrderRequest $create_standing_order_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createStandingOrderManagement'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateStandingOrderManagementAsyncWithHttpInfo($bankid, $accountid, $obpv400_create_standing_order_request, string $contentType = self::contentTypes['oBPv400CreateStandingOrderManagement'][0])
+    public function createStandingOrderManagementAsyncWithHttpInfo($bankid, $accountid, $create_standing_order_request, string $contentType = self::contentTypes['createStandingOrderManagement'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400CreateStandingOrder200Response';
-        $request = $this->oBPv400CreateStandingOrderManagementRequest($bankid, $accountid, $obpv400_create_standing_order_request, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateStandingOrder200Response';
+        $request = $this->createStandingOrderManagementRequest($bankid, $accountid, $create_standing_order_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -655,37 +655,37 @@ class StandingOrderApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateStandingOrderManagement'
+     * Create request for operation 'createStandingOrderManagement'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateStandingOrderRequest $obpv400_create_standing_order_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateStandingOrderManagement'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateStandingOrderRequest $create_standing_order_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createStandingOrderManagement'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateStandingOrderManagementRequest($bankid, $accountid, $obpv400_create_standing_order_request, string $contentType = self::contentTypes['oBPv400CreateStandingOrderManagement'][0])
+    public function createStandingOrderManagementRequest($bankid, $accountid, $create_standing_order_request, string $contentType = self::contentTypes['createStandingOrderManagement'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400CreateStandingOrderManagement'
+                'Missing the required parameter $bankid when calling createStandingOrderManagement'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400CreateStandingOrderManagement'
+                'Missing the required parameter $accountid when calling createStandingOrderManagement'
             );
         }
 
-        // verify the required parameter 'obpv400_create_standing_order_request' is set
-        if ($obpv400_create_standing_order_request === null || (is_array($obpv400_create_standing_order_request) && count($obpv400_create_standing_order_request) === 0)) {
+        // verify the required parameter 'create_standing_order_request' is set
+        if ($create_standing_order_request === null || (is_array($create_standing_order_request) && count($create_standing_order_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_standing_order_request when calling oBPv400CreateStandingOrderManagement'
+                'Missing the required parameter $create_standing_order_request when calling createStandingOrderManagement'
             );
         }
 
@@ -724,12 +724,12 @@ class StandingOrderApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_standing_order_request)) {
+        if (isset($create_standing_order_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_standing_order_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_standing_order_request));
             } else {
-                $httpBody = $obpv400_create_standing_order_request;
+                $httpBody = $create_standing_order_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -765,9 +765,9 @@ class StandingOrderApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

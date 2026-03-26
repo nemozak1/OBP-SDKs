@@ -4,21 +4,21 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv6_0_0_create_abac_rule**](ABACApi.md#o_bpv6_0_0_create_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule
-[**o_bpv6_0_0_delete_abac_rule**](ABACApi.md#o_bpv6_0_0_delete_abac_rule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule
-[**o_bpv6_0_0_execute_abac_policy**](ABACApi.md#o_bpv6_0_0_execute_abac_policy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy
-[**o_bpv6_0_0_execute_abac_rule**](ABACApi.md#o_bpv6_0_0_execute_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule
-[**o_bpv6_0_0_get_abac_policies**](ABACApi.md#o_bpv6_0_0_get_abac_policies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies
-[**o_bpv6_0_0_get_abac_rule**](ABACApi.md#o_bpv6_0_0_get_abac_rule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule
-[**o_bpv6_0_0_get_abac_rule_schema**](ABACApi.md#o_bpv6_0_0_get_abac_rule_schema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema
-[**o_bpv6_0_0_get_abac_rules**](ABACApi.md#o_bpv6_0_0_get_abac_rules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules
-[**o_bpv6_0_0_get_abac_rules_by_policy**](ABACApi.md#o_bpv6_0_0_get_abac_rules_by_policy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy
-[**o_bpv6_0_0_update_abac_rule**](ABACApi.md#o_bpv6_0_0_update_abac_rule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule
-[**o_bpv6_0_0_validate_abac_rule**](ABACApi.md#o_bpv6_0_0_validate_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule
+[**create_abac_rule**](ABACApi.md#create_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule
+[**delete_abac_rule**](ABACApi.md#delete_abac_rule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule
+[**execute_abac_policy**](ABACApi.md#execute_abac_policy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy
+[**execute_abac_rule**](ABACApi.md#execute_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule
+[**get_abac_policies**](ABACApi.md#get_abac_policies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies
+[**get_abac_rule**](ABACApi.md#get_abac_rule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule
+[**get_abac_rule_schema**](ABACApi.md#get_abac_rule_schema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema
+[**get_abac_rules**](ABACApi.md#get_abac_rules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules
+[**get_abac_rules_by_policy**](ABACApi.md#get_abac_rules_by_policy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy
+[**update_abac_rule**](ABACApi.md#update_abac_rule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule
+[**validate_abac_rule**](ABACApi.md#validate_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule
 
 
-# **o_bpv6_0_0_create_abac_rule**
-> OBPv600GetAbacRule200Response o_bpv6_0_0_create_abac_rule(obpv600_update_abac_rule_request)
+# **create_abac_rule**
+> GetAbacRule200Response create_abac_rule(update_abac_rule_request)
 
 Create ABAC Rule
 
@@ -63,8 +63,8 @@ accountOpt.exists(_.balance.toDouble &gt; 1000.0)
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_abac_rule200_response import OBPv600GetAbacRule200Response
-from obp_python.models.obpv600_update_abac_rule_request import OBPv600UpdateAbacRuleRequest
+from obp_python.models.get_abac_rule200_response import GetAbacRule200Response
+from obp_python.models.update_abac_rule_request import UpdateAbacRuleRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -97,15 +97,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ABACApi(api_client)
-    obpv600_update_abac_rule_request = {type=object, properties={rule_name={type=string}, is_active={type=boolean}, description={type=string}, rule_code={type=string}, policy={type=string}}} # OBPv600UpdateAbacRuleRequest | Request body
+    update_abac_rule_request = {type=object, properties={rule_name={type=string}, is_active={type=boolean}, description={type=string}, rule_code={type=string}, policy={type=string}}} # UpdateAbacRuleRequest | Request body
 
     try:
         # Create ABAC Rule
-        api_response = api_instance.o_bpv6_0_0_create_abac_rule(obpv600_update_abac_rule_request)
-        print("The response of ABACApi->o_bpv6_0_0_create_abac_rule:\n")
+        api_response = api_instance.create_abac_rule(update_abac_rule_request)
+        print("The response of ABACApi->create_abac_rule:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ABACApi->o_bpv6_0_0_create_abac_rule: %s\n" % e)
+        print("Exception when calling ABACApi->create_abac_rule: %s\n" % e)
 ```
 
 
@@ -115,11 +115,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv600_update_abac_rule_request** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md)| Request body | 
+ **update_abac_rule_request** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -139,8 +139,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_delete_abac_rule**
-> o_bpv6_0_0_delete_abac_rule(abacruleid)
+# **delete_abac_rule**
+> delete_abac_rule(abacruleid)
 
 Delete ABAC Rule
 
@@ -198,9 +198,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete ABAC Rule
-        api_instance.o_bpv6_0_0_delete_abac_rule(abacruleid)
+        api_instance.delete_abac_rule(abacruleid)
     except Exception as e:
-        print("Exception when calling ABACApi->o_bpv6_0_0_delete_abac_rule: %s\n" % e)
+        print("Exception when calling ABACApi->delete_abac_rule: %s\n" % e)
 ```
 
 
@@ -234,8 +234,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_execute_abac_policy**
-> OBPv600ExecuteAbacPolicy200Response o_bpv6_0_0_execute_abac_policy(policy, obpv600_execute_abac_policy_request)
+# **execute_abac_policy**
+> ExecuteAbacPolicy200Response execute_abac_policy(policy, execute_abac_policy_request)
 
 Execute ABAC Policy
 
@@ -274,8 +274,8 @@ The policy uses OR logic - access is granted if at least one rule passes.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_execute_abac_policy200_response import OBPv600ExecuteAbacPolicy200Response
-from obp_python.models.obpv600_execute_abac_policy_request import OBPv600ExecuteAbacPolicyRequest
+from obp_python.models.execute_abac_policy200_response import ExecuteAbacPolicy200Response
+from obp_python.models.execute_abac_policy_request import ExecuteAbacPolicyRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -309,15 +309,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ABACApi(api_client)
     policy = 'policy_example' # str | The POLICY identifier
-    obpv600_execute_abac_policy_request = {"type":"object","properties":{"customer_id":{"type":"string"},"bank_id":{"type":"string"},"authenticated_user_id":{"type":"string"},"transaction_id":{"type":"string"},"view_id":{"type":"string"},"on_behalf_of_user_id":{"type":"string"},"user_id":{"type":"string"},"account_id":{"type":"string"},"transaction_request_id":{"type":"string"}}} # OBPv600ExecuteAbacPolicyRequest | Request body
+    execute_abac_policy_request = {"type":"object","properties":{"customer_id":{"type":"string"},"bank_id":{"type":"string"},"authenticated_user_id":{"type":"string"},"transaction_id":{"type":"string"},"view_id":{"type":"string"},"on_behalf_of_user_id":{"type":"string"},"user_id":{"type":"string"},"account_id":{"type":"string"},"transaction_request_id":{"type":"string"}}} # ExecuteAbacPolicyRequest | Request body
 
     try:
         # Execute ABAC Policy
-        api_response = api_instance.o_bpv6_0_0_execute_abac_policy(policy, obpv600_execute_abac_policy_request)
-        print("The response of ABACApi->o_bpv6_0_0_execute_abac_policy:\n")
+        api_response = api_instance.execute_abac_policy(policy, execute_abac_policy_request)
+        print("The response of ABACApi->execute_abac_policy:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ABACApi->o_bpv6_0_0_execute_abac_policy: %s\n" % e)
+        print("Exception when calling ABACApi->execute_abac_policy: %s\n" % e)
 ```
 
 
@@ -328,11 +328,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy** | **str**| The POLICY identifier | 
- **obpv600_execute_abac_policy_request** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md)| Request body | 
+ **execute_abac_policy_request** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -352,8 +352,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_execute_abac_rule**
-> OBPv600ExecuteAbacPolicy200Response o_bpv6_0_0_execute_abac_rule(abacruleid, obpv600_execute_abac_policy_request)
+# **execute_abac_rule**
+> ExecuteAbacPolicy200Response execute_abac_rule(abacruleid, execute_abac_policy_request)
 
 Execute ABAC Rule
 
@@ -390,8 +390,8 @@ Execute ABAC Rule
 
 ```python
 import obp_python
-from obp_python.models.obpv600_execute_abac_policy200_response import OBPv600ExecuteAbacPolicy200Response
-from obp_python.models.obpv600_execute_abac_policy_request import OBPv600ExecuteAbacPolicyRequest
+from obp_python.models.execute_abac_policy200_response import ExecuteAbacPolicy200Response
+from obp_python.models.execute_abac_policy_request import ExecuteAbacPolicyRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -425,15 +425,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ABACApi(api_client)
     abacruleid = 'abacruleid_example' # str | The ABACRULEID identifier
-    obpv600_execute_abac_policy_request = {type=object, properties={customer_id={type=string}, bank_id={type=string}, authenticated_user_id={type=string}, transaction_id={type=string}, view_id={type=string}, on_behalf_of_user_id={type=string}, user_id={type=string}, account_id={type=string}, transaction_request_id={type=string}}} # OBPv600ExecuteAbacPolicyRequest | Request body
+    execute_abac_policy_request = {type=object, properties={customer_id={type=string}, bank_id={type=string}, authenticated_user_id={type=string}, transaction_id={type=string}, view_id={type=string}, on_behalf_of_user_id={type=string}, user_id={type=string}, account_id={type=string}, transaction_request_id={type=string}}} # ExecuteAbacPolicyRequest | Request body
 
     try:
         # Execute ABAC Rule
-        api_response = api_instance.o_bpv6_0_0_execute_abac_rule(abacruleid, obpv600_execute_abac_policy_request)
-        print("The response of ABACApi->o_bpv6_0_0_execute_abac_rule:\n")
+        api_response = api_instance.execute_abac_rule(abacruleid, execute_abac_policy_request)
+        print("The response of ABACApi->execute_abac_rule:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ABACApi->o_bpv6_0_0_execute_abac_rule: %s\n" % e)
+        print("Exception when calling ABACApi->execute_abac_rule: %s\n" % e)
 ```
 
 
@@ -444,11 +444,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **abacruleid** | **str**| The ABACRULEID identifier | 
- **obpv600_execute_abac_policy_request** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md)| Request body | 
+ **execute_abac_policy_request** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -468,8 +468,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_abac_policies**
-> OBPv600GetAbacPolicies200Response o_bpv6_0_0_get_abac_policies()
+# **get_abac_policies**
+> GetAbacPolicies200Response get_abac_policies()
 
 Get ABAC Policies
 
@@ -492,7 +492,7 @@ standardized policy names that should be used when creating or updating rules.</
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_abac_policies200_response import OBPv600GetAbacPolicies200Response
+from obp_python.models.get_abac_policies200_response import GetAbacPolicies200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -528,11 +528,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get ABAC Policies
-        api_response = api_instance.o_bpv6_0_0_get_abac_policies()
-        print("The response of ABACApi->o_bpv6_0_0_get_abac_policies:\n")
+        api_response = api_instance.get_abac_policies()
+        print("The response of ABACApi->get_abac_policies:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ABACApi->o_bpv6_0_0_get_abac_policies: %s\n" % e)
+        print("Exception when calling ABACApi->get_abac_policies: %s\n" % e)
 ```
 
 
@@ -543,7 +543,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacPolicies200Response**](OBPv600GetAbacPolicies200Response.md)
+[**GetAbacPolicies200Response**](GetAbacPolicies200Response.md)
 
 ### Authorization
 
@@ -563,8 +563,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_abac_rule**
-> OBPv600GetAbacRule200Response o_bpv6_0_0_get_abac_rule(abacruleid)
+# **get_abac_rule**
+> GetAbacRule200Response get_abac_rule(abacruleid)
 
 Get ABAC Rule
 
@@ -595,7 +595,7 @@ Get ABAC Rule
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_abac_rule200_response import OBPv600GetAbacRule200Response
+from obp_python.models.get_abac_rule200_response import GetAbacRule200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -632,11 +632,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get ABAC Rule
-        api_response = api_instance.o_bpv6_0_0_get_abac_rule(abacruleid)
-        print("The response of ABACApi->o_bpv6_0_0_get_abac_rule:\n")
+        api_response = api_instance.get_abac_rule(abacruleid)
+        print("The response of ABACApi->get_abac_rule:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ABACApi->o_bpv6_0_0_get_abac_rule: %s\n" % e)
+        print("Exception when calling ABACApi->get_abac_rule: %s\n" % e)
 ```
 
 
@@ -650,7 +650,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -670,8 +670,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_abac_rule_schema**
-> OBPv600GetAbacRuleSchema200Response o_bpv6_0_0_get_abac_rule_schema()
+# **get_abac_rule_schema**
+> GetAbacRuleSchema200Response get_abac_rule_schema()
 
 Get ABAC Rule Schema
 
@@ -713,7 +713,7 @@ Get ABAC Rule Schema
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_abac_rule_schema200_response import OBPv600GetAbacRuleSchema200Response
+from obp_python.models.get_abac_rule_schema200_response import GetAbacRuleSchema200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -749,11 +749,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get ABAC Rule Schema
-        api_response = api_instance.o_bpv6_0_0_get_abac_rule_schema()
-        print("The response of ABACApi->o_bpv6_0_0_get_abac_rule_schema:\n")
+        api_response = api_instance.get_abac_rule_schema()
+        print("The response of ABACApi->get_abac_rule_schema:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ABACApi->o_bpv6_0_0_get_abac_rule_schema: %s\n" % e)
+        print("Exception when calling ABACApi->get_abac_rule_schema: %s\n" % e)
 ```
 
 
@@ -764,7 +764,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacRuleSchema200Response**](OBPv600GetAbacRuleSchema200Response.md)
+[**GetAbacRuleSchema200Response**](GetAbacRuleSchema200Response.md)
 
 ### Authorization
 
@@ -784,8 +784,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_abac_rules**
-> OBPv600GetAbacRulesByPolicy200Response o_bpv6_0_0_get_abac_rules()
+# **get_abac_rules**
+> GetAbacRulesByPolicy200Response get_abac_rules()
 
 Get ABAC Rules
 
@@ -815,7 +815,7 @@ Get ABAC Rules
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_abac_rules_by_policy200_response import OBPv600GetAbacRulesByPolicy200Response
+from obp_python.models.get_abac_rules_by_policy200_response import GetAbacRulesByPolicy200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -851,11 +851,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get ABAC Rules
-        api_response = api_instance.o_bpv6_0_0_get_abac_rules()
-        print("The response of ABACApi->o_bpv6_0_0_get_abac_rules:\n")
+        api_response = api_instance.get_abac_rules()
+        print("The response of ABACApi->get_abac_rules:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ABACApi->o_bpv6_0_0_get_abac_rules: %s\n" % e)
+        print("Exception when calling ABACApi->get_abac_rules: %s\n" % e)
 ```
 
 
@@ -866,7 +866,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -886,8 +886,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_abac_rules_by_policy**
-> OBPv600GetAbacRulesByPolicy200Response o_bpv6_0_0_get_abac_rules_by_policy(policy)
+# **get_abac_rules_by_policy**
+> GetAbacRulesByPolicy200Response get_abac_rules_by_policy(policy)
 
 Get ABAC Rules by Policy
 
@@ -921,7 +921,7 @@ will be returned if any of their policies match the requested policy.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_abac_rules_by_policy200_response import OBPv600GetAbacRulesByPolicy200Response
+from obp_python.models.get_abac_rules_by_policy200_response import GetAbacRulesByPolicy200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -958,11 +958,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get ABAC Rules by Policy
-        api_response = api_instance.o_bpv6_0_0_get_abac_rules_by_policy(policy)
-        print("The response of ABACApi->o_bpv6_0_0_get_abac_rules_by_policy:\n")
+        api_response = api_instance.get_abac_rules_by_policy(policy)
+        print("The response of ABACApi->get_abac_rules_by_policy:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ABACApi->o_bpv6_0_0_get_abac_rules_by_policy: %s\n" % e)
+        print("Exception when calling ABACApi->get_abac_rules_by_policy: %s\n" % e)
 ```
 
 
@@ -976,7 +976,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -996,8 +996,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_update_abac_rule**
-> OBPv600GetAbacRule200Response o_bpv6_0_0_update_abac_rule(abacruleid, obpv600_update_abac_rule_request)
+# **update_abac_rule**
+> GetAbacRule200Response update_abac_rule(abacruleid, update_abac_rule_request)
 
 Update ABAC Rule
 
@@ -1028,8 +1028,8 @@ Update ABAC Rule
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_abac_rule200_response import OBPv600GetAbacRule200Response
-from obp_python.models.obpv600_update_abac_rule_request import OBPv600UpdateAbacRuleRequest
+from obp_python.models.get_abac_rule200_response import GetAbacRule200Response
+from obp_python.models.update_abac_rule_request import UpdateAbacRuleRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1063,15 +1063,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ABACApi(api_client)
     abacruleid = 'abacruleid_example' # str | The ABACRULEID identifier
-    obpv600_update_abac_rule_request = {"type":"object","properties":{"rule_name":{"type":"string"},"is_active":{"type":"boolean"},"description":{"type":"string"},"rule_code":{"type":"string"},"policy":{"type":"string"}}} # OBPv600UpdateAbacRuleRequest | Request body
+    update_abac_rule_request = {"type":"object","properties":{"rule_name":{"type":"string"},"is_active":{"type":"boolean"},"description":{"type":"string"},"rule_code":{"type":"string"},"policy":{"type":"string"}}} # UpdateAbacRuleRequest | Request body
 
     try:
         # Update ABAC Rule
-        api_response = api_instance.o_bpv6_0_0_update_abac_rule(abacruleid, obpv600_update_abac_rule_request)
-        print("The response of ABACApi->o_bpv6_0_0_update_abac_rule:\n")
+        api_response = api_instance.update_abac_rule(abacruleid, update_abac_rule_request)
+        print("The response of ABACApi->update_abac_rule:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ABACApi->o_bpv6_0_0_update_abac_rule: %s\n" % e)
+        print("Exception when calling ABACApi->update_abac_rule: %s\n" % e)
 ```
 
 
@@ -1082,11 +1082,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **abacruleid** | **str**| The ABACRULEID identifier | 
- **obpv600_update_abac_rule_request** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md)| Request body | 
+ **update_abac_rule_request** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -1106,8 +1106,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_validate_abac_rule**
-> OBPv600ValidateAbacRule200Response o_bpv6_0_0_validate_abac_rule(obpv600_validate_abac_rule_request)
+# **validate_abac_rule**
+> ValidateAbacRule200Response validate_abac_rule(validate_abac_rule_request)
 
 Validate ABAC Rule
 
@@ -1144,8 +1144,8 @@ Validate ABAC Rule
 
 ```python
 import obp_python
-from obp_python.models.obpv600_validate_abac_rule200_response import OBPv600ValidateAbacRule200Response
-from obp_python.models.obpv600_validate_abac_rule_request import OBPv600ValidateAbacRuleRequest
+from obp_python.models.validate_abac_rule200_response import ValidateAbacRule200Response
+from obp_python.models.validate_abac_rule_request import ValidateAbacRuleRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1178,15 +1178,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ABACApi(api_client)
-    obpv600_validate_abac_rule_request = {"type":"object","properties":{"rule_code":{"type":"string"}}} # OBPv600ValidateAbacRuleRequest | Request body
+    validate_abac_rule_request = {"type":"object","properties":{"rule_code":{"type":"string"}}} # ValidateAbacRuleRequest | Request body
 
     try:
         # Validate ABAC Rule
-        api_response = api_instance.o_bpv6_0_0_validate_abac_rule(obpv600_validate_abac_rule_request)
-        print("The response of ABACApi->o_bpv6_0_0_validate_abac_rule:\n")
+        api_response = api_instance.validate_abac_rule(validate_abac_rule_request)
+        print("The response of ABACApi->validate_abac_rule:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ABACApi->o_bpv6_0_0_validate_abac_rule: %s\n" % e)
+        print("Exception when calling ABACApi->validate_abac_rule: %s\n" % e)
 ```
 
 
@@ -1196,11 +1196,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv600_validate_abac_rule_request** | [**OBPv600ValidateAbacRuleRequest**](OBPv600ValidateAbacRuleRequest.md)| Request body | 
+ **validate_abac_rule_request** | [**ValidateAbacRuleRequest**](ValidateAbacRuleRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600ValidateAbacRule200Response**](OBPv600ValidateAbacRule200Response.md)
+[**ValidateAbacRule200Response**](ValidateAbacRule200Response.md)
 
 ### Authorization
 

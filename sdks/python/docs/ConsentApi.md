@@ -4,39 +4,144 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv3_1_0_answer_consent_challenge**](ConsentApi.md#o_bpv3_1_0_answer_consent_challenge) | **POST** /obp/v3.1.0/banks/{bankid}/consents/{consentid}/challenge | Answer Consent Challenge
-[**o_bpv3_1_0_create_consent_email**](ConsentApi.md#o_bpv3_1_0_create_consent_email) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{email} | Create Consent (EMAIL)
-[**o_bpv3_1_0_create_consent_implicit**](ConsentApi.md#o_bpv3_1_0_create_consent_implicit) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{implicit} | Create Consent (IMPLICIT)
-[**o_bpv3_1_0_create_consent_sms**](ConsentApi.md#o_bpv3_1_0_create_consent_sms) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{sms} | Create Consent (SMS)
-[**o_bpv4_0_0_add_consent_user**](ConsentApi.md#o_bpv4_0_0_add_consent_user) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid}/user-update-request | Add User to a Consent
-[**o_bpv4_0_0_get_consent_infos**](ConsentApi.md#o_bpv4_0_0_get_consent_infos) | **GET** /obp/v4.0.0/my/consent-infos | Get My Consents Info
-[**o_bpv4_0_0_get_consent_infos_by_bank**](ConsentApi.md#o_bpv4_0_0_get_consent_infos_by_bank) | **GET** /obp/v4.0.0/banks/{bankid}/my/consent-infos | Get My Consents Info At Bank
-[**o_bpv4_0_0_update_consent_status**](ConsentApi.md#o_bpv4_0_0_update_consent_status) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid} | Update Consent Status
-[**o_bpv5_0_0_create_consent_by_consent_request_id_email**](ConsentApi.md#o_bpv5_0_0_create_consent_by_consent_request_id_email) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
-[**o_bpv5_0_0_create_consent_by_consent_request_id_implicit**](ConsentApi.md#o_bpv5_0_0_create_consent_by_consent_request_id_implicit) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{implicit}/consents | Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
-[**o_bpv5_0_0_create_consent_by_consent_request_id_sms**](ConsentApi.md#o_bpv5_0_0_create_consent_by_consent_request_id_sms) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{sms}/consents | Create Consent By CONSENT_REQUEST_ID (SMS)
-[**o_bpv5_0_0_create_consent_request**](ConsentApi.md#o_bpv5_0_0_create_consent_request) | **POST** /obp/v5.0.0/consumer/consent-requests | Create Consent Request
-[**o_bpv5_0_0_get_consent_by_consent_request_id**](ConsentApi.md#o_bpv5_0_0_get_consent_by_consent_request_id) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/consents | Get Consent By Consent Request Id via Consumer
-[**o_bpv5_0_0_get_consent_request**](ConsentApi.md#o_bpv5_0_0_get_consent_request) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid} | Get Consent Request
-[**o_bpv5_1_0_create_consent_implicit**](ConsentApi.md#o_bpv5_1_0_create_consent_implicit) | **POST** /obp/v5.1.0/my/consents/{implicit} | Create Consent (IMPLICIT)
-[**o_bpv5_1_0_create_vrp_consent_request**](ConsentApi.md#o_bpv5_1_0_create_vrp_consent_request) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
-[**o_bpv5_1_0_get_consent_by_consent_id**](ConsentApi.md#o_bpv5_1_0_get_consent_by_consent_id) | **GET** /obp/v5.1.0/user/current/consents/{consentid} | Get Consent By Consent Id via User
-[**o_bpv5_1_0_get_consent_by_consent_id_via_consumer**](ConsentApi.md#o_bpv5_1_0_get_consent_by_consent_id_via_consumer) | **GET** /obp/v5.1.0/consumer/current/consents/{consentid} | Get Consent By Consent Id via Consumer
-[**o_bpv5_1_0_get_consents**](ConsentApi.md#o_bpv5_1_0_get_consents) | **GET** /obp/v5.1.0/management/consents | Get Consents
-[**o_bpv5_1_0_get_consents_at_bank**](ConsentApi.md#o_bpv5_1_0_get_consents_at_bank) | **GET** /obp/v5.1.0/management/consents/banks/{bankid} | Get Consents at Bank
-[**o_bpv5_1_0_get_my_consents**](ConsentApi.md#o_bpv5_1_0_get_my_consents) | **GET** /obp/v5.1.0/my/consents | Get My Consents
-[**o_bpv5_1_0_get_my_consents_by_bank**](ConsentApi.md#o_bpv5_1_0_get_my_consents_by_bank) | **GET** /obp/v5.1.0/banks/{bankid}/my/consents | Get My Consents at Bank
-[**o_bpv5_1_0_mtls_client_certificate_info**](ConsentApi.md#o_bpv5_1_0_mtls_client_certificate_info) | **GET** /obp/v5.1.0/my/mtls/certificate/current | Provide client&#39;s certificate info of a current call
-[**o_bpv5_1_0_revoke_consent_at_bank**](ConsentApi.md#o_bpv5_1_0_revoke_consent_at_bank) | **DELETE** /obp/v5.1.0/banks/{bankid}/consents/{consentid} | Revoke Consent at Bank
-[**o_bpv5_1_0_revoke_my_consent**](ConsentApi.md#o_bpv5_1_0_revoke_my_consent) | **DELETE** /obp/v5.1.0/my/consents/{consentid} | Revoke My Consent
-[**o_bpv5_1_0_self_revoke_consent**](ConsentApi.md#o_bpv5_1_0_self_revoke_consent) | **DELETE** /obp/v5.1.0/my/consent/current | Revoke Consent used in the Current Call
-[**o_bpv5_1_0_update_consent_account_access_by_consent_id**](ConsentApi.md#o_bpv5_1_0_update_consent_account_access_by_consent_id) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/account-access | Update Consent Account Access by CONSENT_ID
-[**o_bpv5_1_0_update_consent_status_by_consent**](ConsentApi.md#o_bpv5_1_0_update_consent_status_by_consent) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid} | Update Consent Status by CONSENT_ID
-[**o_bpv5_1_0_update_consent_user_id_by_consent_id**](ConsentApi.md#o_bpv5_1_0_update_consent_user_id_by_consent_id) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/created-by-user | Update Created by User of Consent by CONSENT_ID
+[**add_consent_user**](ConsentApi.md#add_consent_user) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid}/user-update-request | Add User to a Consent
+[**answer_consent_challenge**](ConsentApi.md#answer_consent_challenge) | **POST** /obp/v3.1.0/banks/{bankid}/consents/{consentid}/challenge | Answer Consent Challenge
+[**create_consent_by_consent_request_id_email**](ConsentApi.md#create_consent_by_consent_request_id_email) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
+[**create_consent_by_consent_request_id_implicit**](ConsentApi.md#create_consent_by_consent_request_id_implicit) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{implicit}/consents | Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
+[**create_consent_by_consent_request_id_sms**](ConsentApi.md#create_consent_by_consent_request_id_sms) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{sms}/consents | Create Consent By CONSENT_REQUEST_ID (SMS)
+[**create_consent_email**](ConsentApi.md#create_consent_email) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{email} | Create Consent (EMAIL)
+[**create_consent_implicit**](ConsentApi.md#create_consent_implicit) | **POST** /obp/v5.1.0/my/consents/{implicit} | Create Consent (IMPLICIT)
+[**create_consent_request**](ConsentApi.md#create_consent_request) | **POST** /obp/v5.0.0/consumer/consent-requests | Create Consent Request
+[**create_consent_sms**](ConsentApi.md#create_consent_sms) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{sms} | Create Consent (SMS)
+[**create_vrp_consent_request**](ConsentApi.md#create_vrp_consent_request) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
+[**get_consent_by_consent_id**](ConsentApi.md#get_consent_by_consent_id) | **GET** /obp/v5.1.0/user/current/consents/{consentid} | Get Consent By Consent Id via User
+[**get_consent_by_consent_id_via_consumer**](ConsentApi.md#get_consent_by_consent_id_via_consumer) | **GET** /obp/v5.1.0/consumer/current/consents/{consentid} | Get Consent By Consent Id via Consumer
+[**get_consent_by_consent_request_id**](ConsentApi.md#get_consent_by_consent_request_id) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/consents | Get Consent By Consent Request Id via Consumer
+[**get_consent_infos**](ConsentApi.md#get_consent_infos) | **GET** /obp/v4.0.0/my/consent-infos | Get My Consents Info
+[**get_consent_infos_by_bank**](ConsentApi.md#get_consent_infos_by_bank) | **GET** /obp/v4.0.0/banks/{bankid}/my/consent-infos | Get My Consents Info At Bank
+[**get_consent_request**](ConsentApi.md#get_consent_request) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid} | Get Consent Request
+[**get_consents**](ConsentApi.md#get_consents) | **GET** /obp/v5.1.0/management/consents | Get Consents
+[**get_consents_at_bank**](ConsentApi.md#get_consents_at_bank) | **GET** /obp/v5.1.0/management/consents/banks/{bankid} | Get Consents at Bank
+[**get_my_consents**](ConsentApi.md#get_my_consents) | **GET** /obp/v5.1.0/my/consents | Get My Consents
+[**get_my_consents_by_bank**](ConsentApi.md#get_my_consents_by_bank) | **GET** /obp/v5.1.0/banks/{bankid}/my/consents | Get My Consents at Bank
+[**mtls_client_certificate_info**](ConsentApi.md#mtls_client_certificate_info) | **GET** /obp/v5.1.0/my/mtls/certificate/current | Provide client&#39;s certificate info of a current call
+[**revoke_consent_at_bank**](ConsentApi.md#revoke_consent_at_bank) | **DELETE** /obp/v5.1.0/banks/{bankid}/consents/{consentid} | Revoke Consent at Bank
+[**revoke_my_consent**](ConsentApi.md#revoke_my_consent) | **DELETE** /obp/v5.1.0/my/consents/{consentid} | Revoke My Consent
+[**self_revoke_consent**](ConsentApi.md#self_revoke_consent) | **DELETE** /obp/v5.1.0/my/consent/current | Revoke Consent used in the Current Call
+[**update_consent_account_access_by_consent_id**](ConsentApi.md#update_consent_account_access_by_consent_id) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/account-access | Update Consent Account Access by CONSENT_ID
+[**update_consent_status**](ConsentApi.md#update_consent_status) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid} | Update Consent Status
+[**update_consent_status_by_consent**](ConsentApi.md#update_consent_status_by_consent) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid} | Update Consent Status by CONSENT_ID
+[**update_consent_user_id_by_consent_id**](ConsentApi.md#update_consent_user_id_by_consent_id) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/created-by-user | Update Created by User of Consent by CONSENT_ID
 
 
-# **o_bpv3_1_0_answer_consent_challenge**
-> OBPv510CreateConsentImplicit200Response o_bpv3_1_0_answer_consent_challenge(bankid, consentid, obpv310_answer_consent_challenge_request)
+# **add_consent_user**
+> CreateConsentImplicit200Response add_consent_user(bankid, consentid, add_consent_user_request)
+
+Add User to a Consent
+
+<p>This endpoint is used to add the User of Consent.</p>
+<p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#consent_id">CONSENT_ID</a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.add_consent_user_request import AddConsentUserRequest
+from obp_python.models.create_consent_implicit200_response import CreateConsentImplicit200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsentApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    consentid = 'consentid_example' # str | The CONSENTID identifier
+    add_consent_user_request = {"type":"object","properties":{"user_id":{"type":"string"}}} # AddConsentUserRequest | Request body
+
+    try:
+        # Add User to a Consent
+        api_response = api_instance.add_consent_user(bankid, consentid, add_consent_user_request)
+        print("The response of ConsentApi->add_consent_user:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsentApi->add_consent_user: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **consentid** | **str**| The CONSENTID identifier | 
+ **add_consent_user_request** | [**AddConsentUserRequest**](AddConsentUserRequest.md)| Request body | 
+
+### Return type
+
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **answer_consent_challenge**
+> CreateConsentImplicit200Response answer_consent_challenge(bankid, consentid, answer_consent_challenge_request)
 
 Answer Consent Challenge
 
@@ -104,8 +209,8 @@ time_to_live = consents.max_time_to_live</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv310_answer_consent_challenge_request import OBPv310AnswerConsentChallengeRequest
-from obp_python.models.obpv510_create_consent_implicit200_response import OBPv510CreateConsentImplicit200Response
+from obp_python.models.answer_consent_challenge_request import AnswerConsentChallengeRequest
+from obp_python.models.create_consent_implicit200_response import CreateConsentImplicit200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -140,15 +245,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.ConsentApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     consentid = 'consentid_example' # str | The CONSENTID identifier
-    obpv310_answer_consent_challenge_request = {"type":"object","properties":{"answer":{"type":"string"}}} # OBPv310AnswerConsentChallengeRequest | Request body
+    answer_consent_challenge_request = {"type":"object","properties":{"answer":{"type":"string"}}} # AnswerConsentChallengeRequest | Request body
 
     try:
         # Answer Consent Challenge
-        api_response = api_instance.o_bpv3_1_0_answer_consent_challenge(bankid, consentid, obpv310_answer_consent_challenge_request)
-        print("The response of ConsentApi->o_bpv3_1_0_answer_consent_challenge:\n")
+        api_response = api_instance.answer_consent_challenge(bankid, consentid, answer_consent_challenge_request)
+        print("The response of ConsentApi->answer_consent_challenge:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv3_1_0_answer_consent_challenge: %s\n" % e)
+        print("Exception when calling ConsentApi->answer_consent_challenge: %s\n" % e)
 ```
 
 
@@ -160,11 +265,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **consentid** | **str**| The CONSENTID identifier | 
- **obpv310_answer_consent_challenge_request** | [**OBPv310AnswerConsentChallengeRequest**](OBPv310AnswerConsentChallengeRequest.md)| Request body | 
+ **answer_consent_challenge_request** | [**AnswerConsentChallengeRequest**](AnswerConsentChallengeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
@@ -185,8 +290,342 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_1_0_create_consent_email**
-> OBPv510CreateConsentImplicit200Response o_bpv3_1_0_create_consent_email(bankid, email, obpv310_create_consent_email_request)
+# **create_consent_by_consent_request_id_email**
+> GetConsentByConsentRequestId200Response create_consent_by_consent_request_id_email(consentrequestid, email)
+
+Create Consent By CONSENT_REQUEST_ID (EMAIL)
+
+<p>This endpoint continues the process of creating a Consent.</p>
+<p>It starts the SCA flow which changes the status of the consent from INITIATED to ACCEPTED or REJECTED.</p>
+<p>Please note that the Consent cannot elevate the privileges of the logged in user.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#consent_request_id">CONSENT_REQUEST_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#">EMAIL</a>: <a href="ma&#105;&#108;&#x74;&#x6f;&#58;&#102;e&#x6c;&#105;&#120;&#115;&#x6d;&#105;&#x74;&#x68;@&#x65;x&#x61;&#x6d;&#x70;l&#x65;&#46;com">fe&#108;&#x69;&#x78;&#x73;&#109;&#x69;&#x74;&#104;@&#x65;xa&#109;&#112;&#x6c;&#x65;&#46;&#99;&#x6f;&#x6d;</a></p>
+<p><strong>JSON request body fields:</strong></p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><a href="/glossary#"><strong>counterparty_ids</strong></a>: counterparty_ids</p>
+<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#">account_access</a>: account_access</p>
+<p><a href="/glossary#consent_request_id">consent_request_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#">helper_info</a>: helper_info</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_consent_by_consent_request_id200_response import GetConsentByConsentRequestId200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsentApi(api_client)
+    consentrequestid = 'consentrequestid_example' # str | The CONSENTREQUESTID identifier
+    email = 'email_example' # str | The EMAIL identifier
+
+    try:
+        # Create Consent By CONSENT_REQUEST_ID (EMAIL)
+        api_response = api_instance.create_consent_by_consent_request_id_email(consentrequestid, email)
+        print("The response of ConsentApi->create_consent_by_consent_request_id_email:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsentApi->create_consent_by_consent_request_id_email: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consentrequestid** | **str**| The CONSENTREQUESTID identifier | 
+ **email** | **str**| The EMAIL identifier | 
+
+### Return type
+
+[**GetConsentByConsentRequestId200Response**](GetConsentByConsentRequestId200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_consent_by_consent_request_id_implicit**
+> GetConsentByConsentRequestId200Response create_consent_by_consent_request_id_implicit(consentrequestid, implicit)
+
+Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
+
+<p>This endpoint continues the process of creating a Consent. It starts the SCA flow which changes the status of the consent from INITIATED to ACCEPTED or REJECTED.<br />
+Please note that the Consent cannot elevate the privileges logged in user already have.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#consent_request_id">CONSENT_REQUEST_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#">IMPLICIT</a>: IMPLICIT</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><a href="/glossary#"><strong>counterparty_ids</strong></a>: counterparty_ids</p>
+<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#">account_access</a>: account_access</p>
+<p><a href="/glossary#consent_request_id">consent_request_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#">helper_info</a>: helper_info</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_consent_by_consent_request_id200_response import GetConsentByConsentRequestId200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsentApi(api_client)
+    consentrequestid = 'consentrequestid_example' # str | The CONSENTREQUESTID identifier
+    implicit = 'implicit_example' # str | The IMPLICIT identifier
+
+    try:
+        # Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
+        api_response = api_instance.create_consent_by_consent_request_id_implicit(consentrequestid, implicit)
+        print("The response of ConsentApi->create_consent_by_consent_request_id_implicit:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsentApi->create_consent_by_consent_request_id_implicit: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consentrequestid** | **str**| The CONSENTREQUESTID identifier | 
+ **implicit** | **str**| The IMPLICIT identifier | 
+
+### Return type
+
+[**GetConsentByConsentRequestId200Response**](GetConsentByConsentRequestId200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_consent_by_consent_request_id_sms**
+> GetConsentByConsentRequestId200Response create_consent_by_consent_request_id_sms(consentrequestid, sms)
+
+Create Consent By CONSENT_REQUEST_ID (SMS)
+
+<p>This endpoint continues the process of creating a Consent. It starts the SCA flow which changes the status of the consent from INITIATED to ACCEPTED or REJECTED.</p>
+<p>Please note that the Consent you are creating cannot exceed the entitlements that the User creating this consents already has.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#consent_request_id">CONSENT_REQUEST_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#sms">SMS</a>:</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><a href="/glossary#"><strong>counterparty_ids</strong></a>: counterparty_ids</p>
+<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#">account_access</a>: account_access</p>
+<p><a href="/glossary#consent_request_id">consent_request_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#">helper_info</a>: helper_info</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_consent_by_consent_request_id200_response import GetConsentByConsentRequestId200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsentApi(api_client)
+    consentrequestid = 'consentrequestid_example' # str | The CONSENTREQUESTID identifier
+    sms = 'sms_example' # str | The SMS identifier
+
+    try:
+        # Create Consent By CONSENT_REQUEST_ID (SMS)
+        api_response = api_instance.create_consent_by_consent_request_id_sms(consentrequestid, sms)
+        print("The response of ConsentApi->create_consent_by_consent_request_id_sms:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsentApi->create_consent_by_consent_request_id_sms: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consentrequestid** | **str**| The CONSENTREQUESTID identifier | 
+ **sms** | **str**| The SMS identifier | 
+
+### Return type
+
+[**GetConsentByConsentRequestId200Response**](GetConsentByConsentRequestId200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_consent_email**
+> CreateConsentImplicit200Response create_consent_email(bankid, email, create_consent_email_request)
 
 Create Consent (EMAIL)
 
@@ -304,8 +743,8 @@ Example 3:<br />
 
 ```python
 import obp_python
-from obp_python.models.obpv310_create_consent_email_request import OBPv310CreateConsentEmailRequest
-from obp_python.models.obpv510_create_consent_implicit200_response import OBPv510CreateConsentImplicit200Response
+from obp_python.models.create_consent_email_request import CreateConsentEmailRequest
+from obp_python.models.create_consent_implicit200_response import CreateConsentImplicit200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -340,15 +779,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.ConsentApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     email = 'email_example' # str | The EMAIL identifier
-    obpv310_create_consent_email_request = {"type":"object","properties":{"valid_from":{"type":"string","format":"date-time"},"email":{"type":"string"},"entitlements":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}}},"everything":{"type":"boolean"},"views":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"view_id":{"type":"string"},"account_id":{"type":"string"}}}},"consumer_id":{"type":"string"},"time_to_live":{"type":"integer"}}} # OBPv310CreateConsentEmailRequest | Request body
+    create_consent_email_request = {"type":"object","properties":{"valid_from":{"type":"string","format":"date-time"},"email":{"type":"string"},"entitlements":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}}},"everything":{"type":"boolean"},"views":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"view_id":{"type":"string"},"account_id":{"type":"string"}}}},"consumer_id":{"type":"string"},"time_to_live":{"type":"integer"}}} # CreateConsentEmailRequest | Request body
 
     try:
         # Create Consent (EMAIL)
-        api_response = api_instance.o_bpv3_1_0_create_consent_email(bankid, email, obpv310_create_consent_email_request)
-        print("The response of ConsentApi->o_bpv3_1_0_create_consent_email:\n")
+        api_response = api_instance.create_consent_email(bankid, email, create_consent_email_request)
+        print("The response of ConsentApi->create_consent_email:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv3_1_0_create_consent_email: %s\n" % e)
+        print("Exception when calling ConsentApi->create_consent_email: %s\n" % e)
 ```
 
 
@@ -360,11 +799,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **email** | **str**| The EMAIL identifier | 
- **obpv310_create_consent_email_request** | [**OBPv310CreateConsentEmailRequest**](OBPv310CreateConsentEmailRequest.md)| Request body | 
+ **create_consent_email_request** | [**CreateConsentEmailRequest**](CreateConsentEmailRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
@@ -385,8 +824,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_1_0_create_consent_implicit**
-> OBPv510CreateConsentImplicit200Response o_bpv3_1_0_create_consent_implicit(bankid, implicit, obpv510_create_consent_implicit_request)
+# **create_consent_implicit**
+> CreateConsentImplicit200Response create_consent_implicit(implicit, create_consent_implicit_request)
 
 Create Consent (IMPLICIT)
 
@@ -400,8 +839,9 @@ Other mode, bank can decide it in the connector method 'getConsentImplicitSCA'.<
 <p>Consents must be created and authorisied using SCA (Strong Customer Authentication).</p>
 <p>That is, Consents can be created by an authorised User via the OBP REST API but they must be confirmed via an out of band (OOB) mechanism such as a code sent to a mobile phone.</p>
 <p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
-<p>Each Consent is bound to a consumer i.e. you need to identify yourself over request header value Consumer-Key.<br />
-For example:<br />
+<p>Each Consent is bound to a consumer i.e. you need to identify yourself over request header value Consumer-Key.</p>
+<p>Examples:</p>
+<p>For example:<br />
 GET /obp/v4.0.0/users/current HTTP/1.1<br />
 Host: 127.0.0.1:8080<br />
 Consent-JWT: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOlt7InJvbGVfbmFtZSI6IkNhbkdldEFueVVzZXIiLCJiYW5rX2lkIjoiIn<br />
@@ -429,7 +869,7 @@ cache-control: no-cache</p>
 }<br />
 ],<br />
 &quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;email&quot;: &quot;<a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#58;&#x65;&#x76;e&#108;i&#110;&#x65;&#64;&#101;&#x78;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;&#109;">&#x65;&#118;e&#108;ine&#64;&#101;&#120;&#x61;&#x6d;&#x70;l&#x65;&#46;&#99;&#x6f;&#x6d;</a>&quot;,<br />
+&quot;email&quot;: &quot;<a href="&#109;a&#105;lto&#x3a;&#x65;&#x76;e&#108;i&#110;&#x65;&#x40;&#x65;&#x78;ampl&#x65;&#x2e;&#x63;o&#x6d;">&#101;&#118;e&#x6c;&#x69;&#110;&#x65;@&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#109;</a>&quot;,<br />
 &quot;valid_from&quot;: &quot;2020-02-07T08:43:34Z&quot;,<br />
 &quot;time_to_live&quot;: 3600<br />
 }<br />
@@ -473,7 +913,6 @@ Example 3:<br />
 &quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
 }</p>
 <p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
 <p><a href="/glossary#">IMPLICIT</a>: IMPLICIT</p>
 <p><strong>JSON request body fields:</strong></p>
 <p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
@@ -500,8 +939,8 @@ Example 3:<br />
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_consent_implicit200_response import OBPv510CreateConsentImplicit200Response
-from obp_python.models.obpv510_create_consent_implicit_request import OBPv510CreateConsentImplicitRequest
+from obp_python.models.create_consent_implicit200_response import CreateConsentImplicit200Response
+from obp_python.models.create_consent_implicit_request import CreateConsentImplicitRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -534,17 +973,16 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ConsentApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
     implicit = 'implicit_example' # str | The IMPLICIT identifier
-    obpv510_create_consent_implicit_request = {type=object, properties={valid_from={type=string, format=date-time}, entitlements={type=array, items={type=object, properties={bank_id={type=string}, role_name={type=string}}}}, everything={type=boolean}, views={type=array, items={type=object, properties={bank_id={type=string}, view_id={type=string}, account_id={type=string}}}}, consumer_id={type=string}, time_to_live={type=integer}}} # OBPv510CreateConsentImplicitRequest | Request body
+    create_consent_implicit_request = {"type":"object","properties":{"valid_from":{"type":"string","format":"date-time"},"entitlements":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}}},"everything":{"type":"boolean"},"views":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"view_id":{"type":"string"},"account_id":{"type":"string"}}}},"consumer_id":{"type":"string"},"time_to_live":{"type":"integer"}}} # CreateConsentImplicitRequest | Request body
 
     try:
         # Create Consent (IMPLICIT)
-        api_response = api_instance.o_bpv3_1_0_create_consent_implicit(bankid, implicit, obpv510_create_consent_implicit_request)
-        print("The response of ConsentApi->o_bpv3_1_0_create_consent_implicit:\n")
+        api_response = api_instance.create_consent_implicit(implicit, create_consent_implicit_request)
+        print("The response of ConsentApi->create_consent_implicit:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv3_1_0_create_consent_implicit: %s\n" % e)
+        print("Exception when calling ConsentApi->create_consent_implicit: %s\n" % e)
 ```
 
 
@@ -554,13 +992,12 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
  **implicit** | **str**| The IMPLICIT identifier | 
- **obpv510_create_consent_implicit_request** | [**OBPv510CreateConsentImplicitRequest**](OBPv510CreateConsentImplicitRequest.md)| Request body | 
+ **create_consent_implicit_request** | [**CreateConsentImplicitRequest**](CreateConsentImplicitRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
@@ -581,8 +1018,129 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_1_0_create_consent_sms**
-> OBPv510CreateConsentImplicit200Response o_bpv3_1_0_create_consent_sms(bankid, sms, obpv310_create_consent_sms_request)
+# **create_consent_request**
+> GetConsentRequest200Response create_consent_request(create_consent_request_request)
+
+Create Consent Request
+
+<p>Client Authentication (mandatory)</p>
+<p>It is used when applications request an access token to access their own resources, not on behalf of a user.</p>
+<p>The client needs to authenticate themselves for this request.<br />
+In case of public client we use client_id and private key to obtain access token, otherwise we use client_id and client_secret.<br />
+The obtained access token is used in the HTTP Bearer auth header of our request.</p>
+<p>Example:<br />
+Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqGTVR0YrIjvAolPIVg7GZ-jz83y6nA0</p>
+<p>After successfully creating the VRP consent request, you need to call the <code>Create Consent By CONSENT_REQUEST_ID</code> endpoint to finalize the consent.</p>
+<p>Application Access is Required. The Application must be authenticated.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_access</strong></a>: account_access</p>
+<p><a href="/glossary#account_routing"><strong>account_routing</strong></a>:</p>
+<p><a href="/glossary#address"><strong>address</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#everything"><strong>everything</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#">email</a>: <a href="ma&#x69;&#108;t&#x6f;&#x3a;&#x66;&#x65;l&#x69;x&#115;&#x6d;&#x69;&#116;&#104;&#x40;&#101;&#120;a&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#111;&#109;">&#x66;&#x65;&#108;&#105;&#120;&#x73;m&#x69;&#116;&#104;@&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;e&#46;c&#x6f;&#109;</a></p>
+<p><a href="/glossary#entitlements">entitlements</a>:</p>
+<p><a href="/glossary#phone_number">phone_number</a>:</p>
+<p><a href="/glossary#time_to_live">time_to_live</a>:</p>
+<p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#consent_request_id"><strong>consent_request_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#payload"><strong>payload</strong></a>: payload</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_consent_request_request import CreateConsentRequestRequest
+from obp_python.models.get_consent_request200_response import GetConsentRequest200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsentApi(api_client)
+    create_consent_request_request = {"type":"object","properties":{"entitlements":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}}},"valid_from":{"type":"string","format":"date-time"},"account_access":{"type":"array","items":{"type":"object","properties":{"view_id":{"type":"string"},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}}},"everything":{"type":"boolean"},"phone_number":{"type":"string"},"email":{"type":"string"},"consumer_id":{"type":"string"},"time_to_live":{"type":"integer"}}} # CreateConsentRequestRequest | Request body
+
+    try:
+        # Create Consent Request
+        api_response = api_instance.create_consent_request(create_consent_request_request)
+        print("The response of ConsentApi->create_consent_request:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsentApi->create_consent_request: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_consent_request_request** | [**CreateConsentRequestRequest**](CreateConsentRequestRequest.md)| Request body | 
+
+### Return type
+
+[**GetConsentRequest200Response**](GetConsentRequest200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_consent_sms**
+> CreateConsentImplicit200Response create_consent_sms(bankid, sms, create_consent_sms_request)
 
 Create Consent (SMS)
 
@@ -700,8 +1258,8 @@ Example 3:<br />
 
 ```python
 import obp_python
-from obp_python.models.obpv310_create_consent_sms_request import OBPv310CreateConsentSmsRequest
-from obp_python.models.obpv510_create_consent_implicit200_response import OBPv510CreateConsentImplicit200Response
+from obp_python.models.create_consent_implicit200_response import CreateConsentImplicit200Response
+from obp_python.models.create_consent_sms_request import CreateConsentSmsRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -736,15 +1294,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.ConsentApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     sms = 'sms_example' # str | The SMS identifier
-    obpv310_create_consent_sms_request = {"type":"object","properties":{"valid_from":{"type":"string","format":"date-time"},"entitlements":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}}},"phone_number":{"type":"string"},"everything":{"type":"boolean"},"views":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"view_id":{"type":"string"},"account_id":{"type":"string"}}}},"consumer_id":{"type":"string"},"time_to_live":{"type":"integer"}}} # OBPv310CreateConsentSmsRequest | Request body
+    create_consent_sms_request = {"type":"object","properties":{"valid_from":{"type":"string","format":"date-time"},"entitlements":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}}},"phone_number":{"type":"string"},"everything":{"type":"boolean"},"views":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"view_id":{"type":"string"},"account_id":{"type":"string"}}}},"consumer_id":{"type":"string"},"time_to_live":{"type":"integer"}}} # CreateConsentSmsRequest | Request body
 
     try:
         # Create Consent (SMS)
-        api_response = api_instance.o_bpv3_1_0_create_consent_sms(bankid, sms, obpv310_create_consent_sms_request)
-        print("The response of ConsentApi->o_bpv3_1_0_create_consent_sms:\n")
+        api_response = api_instance.create_consent_sms(bankid, sms, create_consent_sms_request)
+        print("The response of ConsentApi->create_consent_sms:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv3_1_0_create_consent_sms: %s\n" % e)
+        print("Exception when calling ConsentApi->create_consent_sms: %s\n" % e)
 ```
 
 
@@ -756,11 +1314,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **sms** | **str**| The SMS identifier | 
- **obpv310_create_consent_sms_request** | [**OBPv310CreateConsentSmsRequest**](OBPv310CreateConsentSmsRequest.md)| Request body | 
+ **create_consent_sms_request** | [**CreateConsentSmsRequest**](CreateConsentSmsRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
@@ -781,1254 +1339,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_add_consent_user**
-> OBPv510CreateConsentImplicit200Response o_bpv4_0_0_add_consent_user(bankid, consentid, obpv400_add_consent_user_request)
-
-Add User to a Consent
-
-<p>This endpoint is used to add the User of Consent.</p>
-<p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#consent_id">CONSENT_ID</a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_add_consent_user_request import OBPv400AddConsentUserRequest
-from obp_python.models.obpv510_create_consent_implicit200_response import OBPv510CreateConsentImplicit200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsentApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    consentid = 'consentid_example' # str | The CONSENTID identifier
-    obpv400_add_consent_user_request = {"type":"object","properties":{"user_id":{"type":"string"}}} # OBPv400AddConsentUserRequest | Request body
-
-    try:
-        # Add User to a Consent
-        api_response = api_instance.o_bpv4_0_0_add_consent_user(bankid, consentid, obpv400_add_consent_user_request)
-        print("The response of ConsentApi->o_bpv4_0_0_add_consent_user:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv4_0_0_add_consent_user: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **consentid** | **str**| The CONSENTID identifier | 
- **obpv400_add_consent_user_request** | [**OBPv400AddConsentUserRequest**](OBPv400AddConsentUserRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_get_consent_infos**
-> OBPv400GetConsentInfos200Response o_bpv4_0_0_get_consent_infos()
-
-Get My Consents Info
-
-<p>This endpoint gets the Consents that the current User created.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>api_standard</strong></a>: api_standard</p>
-<p><a href="/glossary#api_version"><strong>api_version</strong></a>:</p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#consents"><strong>consents</strong></a>:</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>last_action_date</strong></a>: last_action_date</p>
-<p><a href="/glossary#"><strong>last_usage_date</strong></a>: last_usage_date</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_get_consent_infos200_response import OBPv400GetConsentInfos200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsentApi(api_client)
-
-    try:
-        # Get My Consents Info
-        api_response = api_instance.o_bpv4_0_0_get_consent_infos()
-        print("The response of ConsentApi->o_bpv4_0_0_get_consent_infos:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv4_0_0_get_consent_infos: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv400GetConsentInfos200Response**](OBPv400GetConsentInfos200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_get_consent_infos_by_bank**
-> OBPv400GetConsentInfos200Response o_bpv4_0_0_get_consent_infos_by_bank(bankid)
-
-Get My Consents Info At Bank
-
-<p>This endpoint gets the Consents that the current User created at bank.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>api_standard</strong></a>: api_standard</p>
-<p><a href="/glossary#api_version"><strong>api_version</strong></a>:</p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#consents"><strong>consents</strong></a>:</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>last_action_date</strong></a>: last_action_date</p>
-<p><a href="/glossary#"><strong>last_usage_date</strong></a>: last_usage_date</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_get_consent_infos200_response import OBPv400GetConsentInfos200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsentApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-
-    try:
-        # Get My Consents Info At Bank
-        api_response = api_instance.o_bpv4_0_0_get_consent_infos_by_bank(bankid)
-        print("The response of ConsentApi->o_bpv4_0_0_get_consent_infos_by_bank:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv4_0_0_get_consent_infos_by_bank: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
-
-### Return type
-
-[**OBPv400GetConsentInfos200Response**](OBPv400GetConsentInfos200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_update_consent_status**
-> OBPv510CreateConsentImplicit200Response o_bpv4_0_0_update_consent_status(bankid, consentid, obpv510_update_transaction_request_status_request)
-
-Update Consent Status
-
-<p>This endpoint is used to update the Status of Consent.</p>
-<p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#consent_id">CONSENT_ID</a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_create_consent_implicit200_response import OBPv510CreateConsentImplicit200Response
-from obp_python.models.obpv510_update_transaction_request_status_request import OBPv510UpdateTransactionRequestStatusRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsentApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    consentid = 'consentid_example' # str | The CONSENTID identifier
-    obpv510_update_transaction_request_status_request = {type=object, properties={status={type=string}}} # OBPv510UpdateTransactionRequestStatusRequest | Request body
-
-    try:
-        # Update Consent Status
-        api_response = api_instance.o_bpv4_0_0_update_consent_status(bankid, consentid, obpv510_update_transaction_request_status_request)
-        print("The response of ConsentApi->o_bpv4_0_0_update_consent_status:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv4_0_0_update_consent_status: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **consentid** | **str**| The CONSENTID identifier | 
- **obpv510_update_transaction_request_status_request** | [**OBPv510UpdateTransactionRequestStatusRequest**](OBPv510UpdateTransactionRequestStatusRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_0_0_create_consent_by_consent_request_id_email**
-> OBPv500GetConsentByConsentRequestId200Response o_bpv5_0_0_create_consent_by_consent_request_id_email(consentrequestid, email)
-
-Create Consent By CONSENT_REQUEST_ID (EMAIL)
-
-<p>This endpoint continues the process of creating a Consent.</p>
-<p>It starts the SCA flow which changes the status of the consent from INITIATED to ACCEPTED or REJECTED.</p>
-<p>Please note that the Consent cannot elevate the privileges of the logged in user.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#consent_request_id">CONSENT_REQUEST_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#">EMAIL</a>: <a href="ma&#105;&#108;&#x74;&#x6f;&#58;&#102;e&#x6c;&#105;&#120;&#115;&#x6d;&#105;&#x74;&#x68;@&#x65;x&#x61;&#x6d;&#x70;l&#x65;&#46;com">fe&#108;&#x69;&#x78;&#x73;&#109;&#x69;&#x74;&#104;@&#x65;xa&#109;&#112;&#x6c;&#x65;&#46;&#99;&#x6f;&#x6d;</a></p>
-<p><strong>JSON request body fields:</strong></p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#"><strong>counterparty_ids</strong></a>: counterparty_ids</p>
-<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#">account_access</a>: account_access</p>
-<p><a href="/glossary#consent_request_id">consent_request_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#">helper_info</a>: helper_info</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv500_get_consent_by_consent_request_id200_response import OBPv500GetConsentByConsentRequestId200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsentApi(api_client)
-    consentrequestid = 'consentrequestid_example' # str | The CONSENTREQUESTID identifier
-    email = 'email_example' # str | The EMAIL identifier
-
-    try:
-        # Create Consent By CONSENT_REQUEST_ID (EMAIL)
-        api_response = api_instance.o_bpv5_0_0_create_consent_by_consent_request_id_email(consentrequestid, email)
-        print("The response of ConsentApi->o_bpv5_0_0_create_consent_by_consent_request_id_email:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_0_0_create_consent_by_consent_request_id_email: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consentrequestid** | **str**| The CONSENTREQUESTID identifier | 
- **email** | **str**| The EMAIL identifier | 
-
-### Return type
-
-[**OBPv500GetConsentByConsentRequestId200Response**](OBPv500GetConsentByConsentRequestId200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_0_0_create_consent_by_consent_request_id_implicit**
-> OBPv500GetConsentByConsentRequestId200Response o_bpv5_0_0_create_consent_by_consent_request_id_implicit(consentrequestid, implicit)
-
-Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
-
-<p>This endpoint continues the process of creating a Consent. It starts the SCA flow which changes the status of the consent from INITIATED to ACCEPTED or REJECTED.<br />
-Please note that the Consent cannot elevate the privileges logged in user already have.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#consent_request_id">CONSENT_REQUEST_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#">IMPLICIT</a>: IMPLICIT</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#"><strong>counterparty_ids</strong></a>: counterparty_ids</p>
-<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#">account_access</a>: account_access</p>
-<p><a href="/glossary#consent_request_id">consent_request_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#">helper_info</a>: helper_info</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv500_get_consent_by_consent_request_id200_response import OBPv500GetConsentByConsentRequestId200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsentApi(api_client)
-    consentrequestid = 'consentrequestid_example' # str | The CONSENTREQUESTID identifier
-    implicit = 'implicit_example' # str | The IMPLICIT identifier
-
-    try:
-        # Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
-        api_response = api_instance.o_bpv5_0_0_create_consent_by_consent_request_id_implicit(consentrequestid, implicit)
-        print("The response of ConsentApi->o_bpv5_0_0_create_consent_by_consent_request_id_implicit:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_0_0_create_consent_by_consent_request_id_implicit: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consentrequestid** | **str**| The CONSENTREQUESTID identifier | 
- **implicit** | **str**| The IMPLICIT identifier | 
-
-### Return type
-
-[**OBPv500GetConsentByConsentRequestId200Response**](OBPv500GetConsentByConsentRequestId200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_0_0_create_consent_by_consent_request_id_sms**
-> OBPv500GetConsentByConsentRequestId200Response o_bpv5_0_0_create_consent_by_consent_request_id_sms(consentrequestid, sms)
-
-Create Consent By CONSENT_REQUEST_ID (SMS)
-
-<p>This endpoint continues the process of creating a Consent. It starts the SCA flow which changes the status of the consent from INITIATED to ACCEPTED or REJECTED.</p>
-<p>Please note that the Consent you are creating cannot exceed the entitlements that the User creating this consents already has.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#consent_request_id">CONSENT_REQUEST_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#sms">SMS</a>:</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#"><strong>counterparty_ids</strong></a>: counterparty_ids</p>
-<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#">account_access</a>: account_access</p>
-<p><a href="/glossary#consent_request_id">consent_request_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#">helper_info</a>: helper_info</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv500_get_consent_by_consent_request_id200_response import OBPv500GetConsentByConsentRequestId200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsentApi(api_client)
-    consentrequestid = 'consentrequestid_example' # str | The CONSENTREQUESTID identifier
-    sms = 'sms_example' # str | The SMS identifier
-
-    try:
-        # Create Consent By CONSENT_REQUEST_ID (SMS)
-        api_response = api_instance.o_bpv5_0_0_create_consent_by_consent_request_id_sms(consentrequestid, sms)
-        print("The response of ConsentApi->o_bpv5_0_0_create_consent_by_consent_request_id_sms:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_0_0_create_consent_by_consent_request_id_sms: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consentrequestid** | **str**| The CONSENTREQUESTID identifier | 
- **sms** | **str**| The SMS identifier | 
-
-### Return type
-
-[**OBPv500GetConsentByConsentRequestId200Response**](OBPv500GetConsentByConsentRequestId200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_0_0_create_consent_request**
-> OBPv500GetConsentRequest200Response o_bpv5_0_0_create_consent_request(obpv500_create_consent_request_request)
-
-Create Consent Request
-
-<p>Client Authentication (mandatory)</p>
-<p>It is used when applications request an access token to access their own resources, not on behalf of a user.</p>
-<p>The client needs to authenticate themselves for this request.<br />
-In case of public client we use client_id and private key to obtain access token, otherwise we use client_id and client_secret.<br />
-The obtained access token is used in the HTTP Bearer auth header of our request.</p>
-<p>Example:<br />
-Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqGTVR0YrIjvAolPIVg7GZ-jz83y6nA0</p>
-<p>After successfully creating the VRP consent request, you need to call the <code>Create Consent By CONSENT_REQUEST_ID</code> endpoint to finalize the consent.</p>
-<p>Application Access is Required. The Application must be authenticated.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_access</strong></a>: account_access</p>
-<p><a href="/glossary#account_routing"><strong>account_routing</strong></a>:</p>
-<p><a href="/glossary#address"><strong>address</strong></a>:</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#everything"><strong>everything</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#">email</a>: <a href="ma&#x69;&#108;t&#x6f;&#x3a;&#x66;&#x65;l&#x69;x&#115;&#x6d;&#x69;&#116;&#104;&#x40;&#101;&#120;a&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#111;&#109;">&#x66;&#x65;&#108;&#105;&#120;&#x73;m&#x69;&#116;&#104;@&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;e&#46;c&#x6f;&#109;</a></p>
-<p><a href="/glossary#entitlements">entitlements</a>:</p>
-<p><a href="/glossary#phone_number">phone_number</a>:</p>
-<p><a href="/glossary#time_to_live">time_to_live</a>:</p>
-<p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#consent_request_id"><strong>consent_request_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#payload"><strong>payload</strong></a>: payload</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv500_create_consent_request_request import OBPv500CreateConsentRequestRequest
-from obp_python.models.obpv500_get_consent_request200_response import OBPv500GetConsentRequest200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsentApi(api_client)
-    obpv500_create_consent_request_request = {"type":"object","properties":{"entitlements":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}}},"valid_from":{"type":"string","format":"date-time"},"account_access":{"type":"array","items":{"type":"object","properties":{"view_id":{"type":"string"},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}}},"everything":{"type":"boolean"},"phone_number":{"type":"string"},"email":{"type":"string"},"consumer_id":{"type":"string"},"time_to_live":{"type":"integer"}}} # OBPv500CreateConsentRequestRequest | Request body
-
-    try:
-        # Create Consent Request
-        api_response = api_instance.o_bpv5_0_0_create_consent_request(obpv500_create_consent_request_request)
-        print("The response of ConsentApi->o_bpv5_0_0_create_consent_request:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_0_0_create_consent_request: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **obpv500_create_consent_request_request** | [**OBPv500CreateConsentRequestRequest**](OBPv500CreateConsentRequestRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv500GetConsentRequest200Response**](OBPv500GetConsentRequest200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_0_0_get_consent_by_consent_request_id**
-> OBPv500GetConsentByConsentRequestId200Response o_bpv5_0_0_get_consent_by_consent_request_id(consentrequestid)
-
-Get Consent By Consent Request Id via Consumer
-
-<p>This endpoint gets the Consent By consent request id.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#consent_request_id">CONSENT_REQUEST_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#"><strong>counterparty_ids</strong></a>: counterparty_ids</p>
-<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#">account_access</a>: account_access</p>
-<p><a href="/glossary#consent_request_id">consent_request_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#">helper_info</a>: helper_info</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv500_get_consent_by_consent_request_id200_response import OBPv500GetConsentByConsentRequestId200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsentApi(api_client)
-    consentrequestid = 'consentrequestid_example' # str | The CONSENTREQUESTID identifier
-
-    try:
-        # Get Consent By Consent Request Id via Consumer
-        api_response = api_instance.o_bpv5_0_0_get_consent_by_consent_request_id(consentrequestid)
-        print("The response of ConsentApi->o_bpv5_0_0_get_consent_by_consent_request_id:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_0_0_get_consent_by_consent_request_id: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consentrequestid** | **str**| The CONSENTREQUESTID identifier | 
-
-### Return type
-
-[**OBPv500GetConsentByConsentRequestId200Response**](OBPv500GetConsentByConsentRequestId200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_0_0_get_consent_request**
-> OBPv500GetConsentRequest200Response o_bpv5_0_0_get_consent_request(consentrequestid)
-
-Get Consent Request
-
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#consent_request_id">CONSENT_REQUEST_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#consent_request_id"><strong>consent_request_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#payload"><strong>payload</strong></a>: payload</p>
-
-
-### Example
-
-
-```python
-import obp_python
-from obp_python.models.obpv500_get_consent_request200_response import OBPv500GetConsentRequest200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsentApi(api_client)
-    consentrequestid = 'consentrequestid_example' # str | The CONSENTREQUESTID identifier
-
-    try:
-        # Get Consent Request
-        api_response = api_instance.o_bpv5_0_0_get_consent_request(consentrequestid)
-        print("The response of ConsentApi->o_bpv5_0_0_get_consent_request:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_0_0_get_consent_request: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consentrequestid** | **str**| The CONSENTREQUESTID identifier | 
-
-### Return type
-
-[**OBPv500GetConsentRequest200Response**](OBPv500GetConsentRequest200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_create_consent_implicit**
-> OBPv510CreateConsentImplicit200Response o_bpv5_1_0_create_consent_implicit(implicit, obpv510_create_consent_implicit_request)
-
-Create Consent (IMPLICIT)
-
-<p>This endpoint starts the process of creating a Consent.</p>
-<p>The Consent is created in an INITIATED state.</p>
-<p>A One Time Password (OTP) (AKA security challenge) is sent Out of Band (OOB) to the User via the transport defined in SCA_METHOD<br />
-SCA_METHOD is typically &quot;SMS&quot;,&quot;EMAIL&quot; or &quot;IMPLICIT&quot;. &quot;EMAIL&quot; is used for testing purposes. OBP mapped mode &quot;IMPLICIT&quot; is &quot;EMAIL&quot;.<br />
-Other mode, bank can decide it in the connector method 'getConsentImplicitSCA'.</p>
-<p>When the Consent is created, OBP (or a backend system) stores the challenge so it can be checked later against the value supplied by the User with the Answer Consent Challenge endpoint.</p>
-<p>An OBP Consent allows the holder of the Consent to call one or more endpoints.</p>
-<p>Consents must be created and authorisied using SCA (Strong Customer Authentication).</p>
-<p>That is, Consents can be created by an authorised User via the OBP REST API but they must be confirmed via an out of band (OOB) mechanism such as a code sent to a mobile phone.</p>
-<p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
-<p>Each Consent is bound to a consumer i.e. you need to identify yourself over request header value Consumer-Key.</p>
-<p>Examples:</p>
-<p>For example:<br />
-GET /obp/v4.0.0/users/current HTTP/1.1<br />
-Host: 127.0.0.1:8080<br />
-Consent-JWT: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOlt7InJvbGVfbmFtZSI6IkNhbkdldEFueVVzZXIiLCJiYW5rX2lkIjoiIn<br />
-1dLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIzNDc1MDEzZi03YmY5LTQyNj<br />
-EtOWUxYy0xZTdlNWZjZTJlN2UiLCJhdWQiOiI4MTVhMGVmMS00YjZhLTQyMDUtYjExMi1lNDVmZDZmNGQzYWQiLCJuYmYiOjE1ODA3NDE2NjcsIml<br />
-zcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDgwIiwiZXhwIjoxNTgwNzQ1MjY3LCJpYXQiOjE1ODA3NDE2NjcsImp0aSI6ImJkYzVjZTk5LTE2ZTY<br />
-tNDM4Yi1hNjllLTU3MTAzN2RhMTg3OCIsInZpZXdzIjpbXX0.L3fEEEhdCVr3qnmyRKBBUaIQ7dk1VjiFaEBW8hUNjfg</p>
-<p>Consumer-Key: ejznk505d132ryomnhbx1qmtohurbsbb0kijajsk<br />
-cache-control: no-cache</p>
-<p>Maximum time to live of the token is specified over props value consents.max_time_to_live. In case isn't defined default value is 3600 seconds.</p>
-<p>Example of POST JSON:<br />
-{<br />
-&quot;everything&quot;: false,<br />
-&quot;views&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;account_id&quot;: &quot;8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&quot;,<br />
-&quot;view_id&quot;: &quot;owner&quot;<br />
-}<br />
-],<br />
-&quot;entitlements&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;role_name&quot;: &quot;CanGetCustomersAtOneBank&quot;<br />
-}<br />
-],<br />
-&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;email&quot;: &quot;<a href="&#109;a&#105;lto&#x3a;&#x65;&#x76;e&#108;i&#110;&#x65;&#x40;&#x65;&#x78;ampl&#x65;&#x2e;&#x63;o&#x6d;">&#101;&#118;e&#x6c;&#x69;&#110;&#x65;@&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#109;</a>&quot;,<br />
-&quot;valid_from&quot;: &quot;2020-02-07T08:43:34Z&quot;,<br />
-&quot;time_to_live&quot;: 3600<br />
-}<br />
-Please note that only optional fields are: consumer_id, valid_from and time_to_live.<br />
-In case you omit they the default values are used:<br />
-consumer_id = consumer of current user<br />
-valid_from = current time<br />
-time_to_live = consents.max_time_to_live</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>Example 1:<br />
-{<br />
-&quot;everything&quot;: true,<br />
-&quot;views&quot;: [],<br />
-&quot;entitlements&quot;: [],<br />
-&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-}</p>
-<p>Please note that consumer_id is optional field<br />
-Example 2:<br />
-{<br />
-&quot;everything&quot;: true,<br />
-&quot;views&quot;: [],<br />
-&quot;entitlements&quot;: [],<br />
-}</p>
-<p>Please note if everything=false you need to explicitly specify views and entitlements<br />
-Example 3:<br />
-{<br />
-&quot;everything&quot;: false,<br />
-&quot;views&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;account_id&quot;: &quot;8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&quot;,<br />
-&quot;view_id&quot;: &quot;owner&quot;<br />
-}<br />
-],<br />
-&quot;entitlements&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;role_name&quot;: &quot;CanGetCustomersAtOneBank&quot;<br />
-}<br />
-],<br />
-&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-}</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">IMPLICIT</a>: IMPLICIT</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
-<p><a href="/glossary#everything"><strong>everything</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-<p><a href="/glossary#">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#time_to_live">time_to_live</a>:</p>
-<p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_create_consent_implicit200_response import OBPv510CreateConsentImplicit200Response
-from obp_python.models.obpv510_create_consent_implicit_request import OBPv510CreateConsentImplicitRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsentApi(api_client)
-    implicit = 'implicit_example' # str | The IMPLICIT identifier
-    obpv510_create_consent_implicit_request = {"type":"object","properties":{"valid_from":{"type":"string","format":"date-time"},"entitlements":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}}},"everything":{"type":"boolean"},"views":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"view_id":{"type":"string"},"account_id":{"type":"string"}}}},"consumer_id":{"type":"string"},"time_to_live":{"type":"integer"}}} # OBPv510CreateConsentImplicitRequest | Request body
-
-    try:
-        # Create Consent (IMPLICIT)
-        api_response = api_instance.o_bpv5_1_0_create_consent_implicit(implicit, obpv510_create_consent_implicit_request)
-        print("The response of ConsentApi->o_bpv5_1_0_create_consent_implicit:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_1_0_create_consent_implicit: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **implicit** | **str**| The IMPLICIT identifier | 
- **obpv510_create_consent_implicit_request** | [**OBPv510CreateConsentImplicitRequest**](OBPv510CreateConsentImplicitRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_create_vrp_consent_request**
-> OBPv510CreateVRPConsentRequest200Response o_bpv5_1_0_create_vrp_consent_request(obpv510_create_vrp_consent_request_request)
+# **create_vrp_consent_request**
+> CreateVRPConsentRequest200Response create_vrp_consent_request(create_vrp_consent_request_request)
 
 Create Consent Request VRP
 
@@ -2086,8 +1398,8 @@ Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqG
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_vrp_consent_request200_response import OBPv510CreateVRPConsentRequest200Response
-from obp_python.models.obpv510_create_vrp_consent_request_request import OBPv510CreateVRPConsentRequestRequest
+from obp_python.models.create_vrp_consent_request200_response import CreateVRPConsentRequest200Response
+from obp_python.models.create_vrp_consent_request_request import CreateVRPConsentRequestRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2120,15 +1432,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ConsentApi(api_client)
-    obpv510_create_vrp_consent_request_request = {"type":"object","properties":{"to_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"counterparty_name":{"type":"string"},"limit":{"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"phone_number":{"type":"string"},"email":{"type":"string"},"from_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"time_to_live":{"type":"integer"},"valid_from":{"type":"string","format":"date-time"}}} # OBPv510CreateVRPConsentRequestRequest | Request body
+    create_vrp_consent_request_request = {"type":"object","properties":{"to_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"counterparty_name":{"type":"string"},"limit":{"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"phone_number":{"type":"string"},"email":{"type":"string"},"from_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"time_to_live":{"type":"integer"},"valid_from":{"type":"string","format":"date-time"}}} # CreateVRPConsentRequestRequest | Request body
 
     try:
         # Create Consent Request VRP
-        api_response = api_instance.o_bpv5_1_0_create_vrp_consent_request(obpv510_create_vrp_consent_request_request)
-        print("The response of ConsentApi->o_bpv5_1_0_create_vrp_consent_request:\n")
+        api_response = api_instance.create_vrp_consent_request(create_vrp_consent_request_request)
+        print("The response of ConsentApi->create_vrp_consent_request:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_1_0_create_vrp_consent_request: %s\n" % e)
+        print("Exception when calling ConsentApi->create_vrp_consent_request: %s\n" % e)
 ```
 
 
@@ -2138,11 +1450,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv510_create_vrp_consent_request_request** | [**OBPv510CreateVRPConsentRequestRequest**](OBPv510CreateVRPConsentRequestRequest.md)| Request body | 
+ **create_vrp_consent_request_request** | [**CreateVRPConsentRequestRequest**](CreateVRPConsentRequestRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510CreateVRPConsentRequest200Response**](OBPv510CreateVRPConsentRequest200Response.md)
+[**CreateVRPConsentRequest200Response**](CreateVRPConsentRequest200Response.md)
 
 ### Authorization
 
@@ -2162,8 +1474,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_get_consent_by_consent_id**
-> OBPv510GetConsentByConsentId200Response o_bpv5_1_0_get_consent_by_consent_id(consentid)
+# **get_consent_by_consent_id**
+> GetConsentByConsentId200Response get_consent_by_consent_id(consentid)
 
 Get Consent By Consent Id via User
 
@@ -2190,7 +1502,7 @@ Get Consent By Consent Id via User
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_consent_by_consent_id200_response import OBPv510GetConsentByConsentId200Response
+from obp_python.models.get_consent_by_consent_id200_response import GetConsentByConsentId200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2227,11 +1539,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Consent By Consent Id via User
-        api_response = api_instance.o_bpv5_1_0_get_consent_by_consent_id(consentid)
-        print("The response of ConsentApi->o_bpv5_1_0_get_consent_by_consent_id:\n")
+        api_response = api_instance.get_consent_by_consent_id(consentid)
+        print("The response of ConsentApi->get_consent_by_consent_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_1_0_get_consent_by_consent_id: %s\n" % e)
+        print("Exception when calling ConsentApi->get_consent_by_consent_id: %s\n" % e)
 ```
 
 
@@ -2245,7 +1557,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetConsentByConsentId200Response**](OBPv510GetConsentByConsentId200Response.md)
+[**GetConsentByConsentId200Response**](GetConsentByConsentId200Response.md)
 
 ### Authorization
 
@@ -2265,8 +1577,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_get_consent_by_consent_id_via_consumer**
-> OBPv500GetConsentByConsentRequestId200Response o_bpv5_1_0_get_consent_by_consent_id_via_consumer(consentid)
+# **get_consent_by_consent_id_via_consumer**
+> GetConsentByConsentRequestId200Response get_consent_by_consent_id_via_consumer(consentid)
 
 Get Consent By Consent Id via Consumer
 
@@ -2295,7 +1607,7 @@ Get Consent By Consent Id via Consumer
 
 ```python
 import obp_python
-from obp_python.models.obpv500_get_consent_by_consent_request_id200_response import OBPv500GetConsentByConsentRequestId200Response
+from obp_python.models.get_consent_by_consent_request_id200_response import GetConsentByConsentRequestId200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2332,11 +1644,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Consent By Consent Id via Consumer
-        api_response = api_instance.o_bpv5_1_0_get_consent_by_consent_id_via_consumer(consentid)
-        print("The response of ConsentApi->o_bpv5_1_0_get_consent_by_consent_id_via_consumer:\n")
+        api_response = api_instance.get_consent_by_consent_id_via_consumer(consentid)
+        print("The response of ConsentApi->get_consent_by_consent_id_via_consumer:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_1_0_get_consent_by_consent_id_via_consumer: %s\n" % e)
+        print("Exception when calling ConsentApi->get_consent_by_consent_id_via_consumer: %s\n" % e)
 ```
 
 
@@ -2350,7 +1662,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv500GetConsentByConsentRequestId200Response**](OBPv500GetConsentByConsentRequestId200Response.md)
+[**GetConsentByConsentRequestId200Response**](GetConsentByConsentRequestId200Response.md)
 
 ### Authorization
 
@@ -2370,8 +1682,393 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_get_consents**
-> OBPv510GetConsents200Response o_bpv5_1_0_get_consents()
+# **get_consent_by_consent_request_id**
+> GetConsentByConsentRequestId200Response get_consent_by_consent_request_id(consentrequestid)
+
+Get Consent By Consent Request Id via Consumer
+
+<p>This endpoint gets the Consent By consent request id.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#consent_request_id">CONSENT_REQUEST_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><a href="/glossary#"><strong>counterparty_ids</strong></a>: counterparty_ids</p>
+<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#">account_access</a>: account_access</p>
+<p><a href="/glossary#consent_request_id">consent_request_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#">helper_info</a>: helper_info</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_consent_by_consent_request_id200_response import GetConsentByConsentRequestId200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsentApi(api_client)
+    consentrequestid = 'consentrequestid_example' # str | The CONSENTREQUESTID identifier
+
+    try:
+        # Get Consent By Consent Request Id via Consumer
+        api_response = api_instance.get_consent_by_consent_request_id(consentrequestid)
+        print("The response of ConsentApi->get_consent_by_consent_request_id:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsentApi->get_consent_by_consent_request_id: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consentrequestid** | **str**| The CONSENTREQUESTID identifier | 
+
+### Return type
+
+[**GetConsentByConsentRequestId200Response**](GetConsentByConsentRequestId200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_consent_infos**
+> GetConsentInfos200Response get_consent_infos()
+
+Get My Consents Info
+
+<p>This endpoint gets the Consents that the current User created.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>api_standard</strong></a>: api_standard</p>
+<p><a href="/glossary#api_version"><strong>api_version</strong></a>:</p>
+<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><a href="/glossary#consents"><strong>consents</strong></a>:</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>last_action_date</strong></a>: last_action_date</p>
+<p><a href="/glossary#"><strong>last_usage_date</strong></a>: last_usage_date</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_consent_infos200_response import GetConsentInfos200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsentApi(api_client)
+
+    try:
+        # Get My Consents Info
+        api_response = api_instance.get_consent_infos()
+        print("The response of ConsentApi->get_consent_infos:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsentApi->get_consent_infos: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetConsentInfos200Response**](GetConsentInfos200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_consent_infos_by_bank**
+> GetConsentInfos200Response get_consent_infos_by_bank(bankid)
+
+Get My Consents Info At Bank
+
+<p>This endpoint gets the Consents that the current User created at bank.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>api_standard</strong></a>: api_standard</p>
+<p><a href="/glossary#api_version"><strong>api_version</strong></a>:</p>
+<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><a href="/glossary#consents"><strong>consents</strong></a>:</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>last_action_date</strong></a>: last_action_date</p>
+<p><a href="/glossary#"><strong>last_usage_date</strong></a>: last_usage_date</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_consent_infos200_response import GetConsentInfos200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsentApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+
+    try:
+        # Get My Consents Info At Bank
+        api_response = api_instance.get_consent_infos_by_bank(bankid)
+        print("The response of ConsentApi->get_consent_infos_by_bank:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsentApi->get_consent_infos_by_bank: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+
+### Return type
+
+[**GetConsentInfos200Response**](GetConsentInfos200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_consent_request**
+> GetConsentRequest200Response get_consent_request(consentrequestid)
+
+Get Consent Request
+
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#consent_request_id">CONSENT_REQUEST_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#consent_request_id"><strong>consent_request_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#payload"><strong>payload</strong></a>: payload</p>
+
+
+### Example
+
+
+```python
+import obp_python
+from obp_python.models.get_consent_request200_response import GetConsentRequest200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsentApi(api_client)
+    consentrequestid = 'consentrequestid_example' # str | The CONSENTREQUESTID identifier
+
+    try:
+        # Get Consent Request
+        api_response = api_instance.get_consent_request(consentrequestid)
+        print("The response of ConsentApi->get_consent_request:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsentApi->get_consent_request: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consentrequestid** | **str**| The CONSENTREQUESTID identifier | 
+
+### Return type
+
+[**GetConsentRequest200Response**](GetConsentRequest200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_consents**
+> GetConsents200Response get_consents()
 
 Get Consents
 
@@ -2448,7 +2145,7 @@ eg: provider_provider_id=http%3A%2F%2Flocalhost%3A7070%2Frealms%2Fmaster|7837ee9
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_consents200_response import OBPv510GetConsents200Response
+from obp_python.models.get_consents200_response import GetConsents200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2484,11 +2181,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Consents
-        api_response = api_instance.o_bpv5_1_0_get_consents()
-        print("The response of ConsentApi->o_bpv5_1_0_get_consents:\n")
+        api_response = api_instance.get_consents()
+        print("The response of ConsentApi->get_consents:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_1_0_get_consents: %s\n" % e)
+        print("Exception when calling ConsentApi->get_consents: %s\n" % e)
 ```
 
 
@@ -2499,7 +2196,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv510GetConsents200Response**](OBPv510GetConsents200Response.md)
+[**GetConsents200Response**](GetConsents200Response.md)
 
 ### Authorization
 
@@ -2520,8 +2217,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_get_consents_at_bank**
-> OBPv510GetConsents200Response o_bpv5_1_0_get_consents_at_bank(bankid)
+# **get_consents_at_bank**
+> GetConsents200Response get_consents_at_bank(bankid)
 
 Get Consents at Bank
 
@@ -2595,7 +2292,7 @@ Get Consents at Bank
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_consents200_response import OBPv510GetConsents200Response
+from obp_python.models.get_consents200_response import GetConsents200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2632,11 +2329,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Consents at Bank
-        api_response = api_instance.o_bpv5_1_0_get_consents_at_bank(bankid)
-        print("The response of ConsentApi->o_bpv5_1_0_get_consents_at_bank:\n")
+        api_response = api_instance.get_consents_at_bank(bankid)
+        print("The response of ConsentApi->get_consents_at_bank:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_1_0_get_consents_at_bank: %s\n" % e)
+        print("Exception when calling ConsentApi->get_consents_at_bank: %s\n" % e)
 ```
 
 
@@ -2650,7 +2347,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetConsents200Response**](OBPv510GetConsents200Response.md)
+[**GetConsents200Response**](GetConsents200Response.md)
 
 ### Authorization
 
@@ -2671,8 +2368,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_get_my_consents**
-> OBPv510GetMyConsentsByBank200Response o_bpv5_1_0_get_my_consents()
+# **get_my_consents**
+> GetMyConsentsByBank200Response get_my_consents()
 
 Get My Consents
 
@@ -2707,7 +2404,7 @@ Get My Consents
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_my_consents_by_bank200_response import OBPv510GetMyConsentsByBank200Response
+from obp_python.models.get_my_consents_by_bank200_response import GetMyConsentsByBank200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2743,11 +2440,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get My Consents
-        api_response = api_instance.o_bpv5_1_0_get_my_consents()
-        print("The response of ConsentApi->o_bpv5_1_0_get_my_consents:\n")
+        api_response = api_instance.get_my_consents()
+        print("The response of ConsentApi->get_my_consents:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_1_0_get_my_consents: %s\n" % e)
+        print("Exception when calling ConsentApi->get_my_consents: %s\n" % e)
 ```
 
 
@@ -2758,7 +2455,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv510GetMyConsentsByBank200Response**](OBPv510GetMyConsentsByBank200Response.md)
+[**GetMyConsentsByBank200Response**](GetMyConsentsByBank200Response.md)
 
 ### Authorization
 
@@ -2778,8 +2475,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_get_my_consents_by_bank**
-> OBPv510GetMyConsentsByBank200Response o_bpv5_1_0_get_my_consents_by_bank(bankid)
+# **get_my_consents_by_bank**
+> GetMyConsentsByBank200Response get_my_consents_by_bank(bankid)
 
 Get My Consents at Bank
 
@@ -2818,7 +2515,7 @@ Consents created before the consent_item join table was introduced will not appe
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_my_consents_by_bank200_response import OBPv510GetMyConsentsByBank200Response
+from obp_python.models.get_my_consents_by_bank200_response import GetMyConsentsByBank200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2855,11 +2552,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get My Consents at Bank
-        api_response = api_instance.o_bpv5_1_0_get_my_consents_by_bank(bankid)
-        print("The response of ConsentApi->o_bpv5_1_0_get_my_consents_by_bank:\n")
+        api_response = api_instance.get_my_consents_by_bank(bankid)
+        print("The response of ConsentApi->get_my_consents_by_bank:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_1_0_get_my_consents_by_bank: %s\n" % e)
+        print("Exception when calling ConsentApi->get_my_consents_by_bank: %s\n" % e)
 ```
 
 
@@ -2873,7 +2570,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetMyConsentsByBank200Response**](OBPv510GetMyConsentsByBank200Response.md)
+[**GetMyConsentsByBank200Response**](GetMyConsentsByBank200Response.md)
 
 ### Authorization
 
@@ -2894,8 +2591,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_mtls_client_certificate_info**
-> OBPv510UpdateConsumerName200ResponseCertificateInfo o_bpv5_1_0_mtls_client_certificate_info()
+# **mtls_client_certificate_info**
+> UpdateConsumerName200ResponseCertificateInfo mtls_client_certificate_info()
 
 Provide client's certificate info of a current call
 
@@ -2918,7 +2615,7 @@ Provide client's certificate info of a current call
 
 ```python
 import obp_python
-from obp_python.models.obpv510_update_consumer_name200_response_certificate_info import OBPv510UpdateConsumerName200ResponseCertificateInfo
+from obp_python.models.update_consumer_name200_response_certificate_info import UpdateConsumerName200ResponseCertificateInfo
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2954,11 +2651,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Provide client's certificate info of a current call
-        api_response = api_instance.o_bpv5_1_0_mtls_client_certificate_info()
-        print("The response of ConsentApi->o_bpv5_1_0_mtls_client_certificate_info:\n")
+        api_response = api_instance.mtls_client_certificate_info()
+        print("The response of ConsentApi->mtls_client_certificate_info:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_1_0_mtls_client_certificate_info: %s\n" % e)
+        print("Exception when calling ConsentApi->mtls_client_certificate_info: %s\n" % e)
 ```
 
 
@@ -2969,7 +2666,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv510UpdateConsumerName200ResponseCertificateInfo**](OBPv510UpdateConsumerName200ResponseCertificateInfo.md)
+[**UpdateConsumerName200ResponseCertificateInfo**](UpdateConsumerName200ResponseCertificateInfo.md)
 
 ### Authorization
 
@@ -2990,8 +2687,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_revoke_consent_at_bank**
-> OBPv510CreateConsentImplicit200Response o_bpv5_1_0_revoke_consent_at_bank(bankid, consentid)
+# **revoke_consent_at_bank**
+> CreateConsentImplicit200Response revoke_consent_at_bank(bankid, consentid)
 
 Revoke Consent at Bank
 
@@ -3020,7 +2717,7 @@ The status of the token is changed to &quot;REVOKED&quot; so the next time the r
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_consent_implicit200_response import OBPv510CreateConsentImplicit200Response
+from obp_python.models.create_consent_implicit200_response import CreateConsentImplicit200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -3058,11 +2755,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Revoke Consent at Bank
-        api_response = api_instance.o_bpv5_1_0_revoke_consent_at_bank(bankid, consentid)
-        print("The response of ConsentApi->o_bpv5_1_0_revoke_consent_at_bank:\n")
+        api_response = api_instance.revoke_consent_at_bank(bankid, consentid)
+        print("The response of ConsentApi->revoke_consent_at_bank:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_1_0_revoke_consent_at_bank: %s\n" % e)
+        print("Exception when calling ConsentApi->revoke_consent_at_bank: %s\n" % e)
 ```
 
 
@@ -3077,7 +2774,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
@@ -3098,8 +2795,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_revoke_my_consent**
-> OBPv510CreateConsentImplicit200Response o_bpv5_1_0_revoke_my_consent(consentid)
+# **revoke_my_consent**
+> CreateConsentImplicit200Response revoke_my_consent(consentid)
 
 Revoke My Consent
 
@@ -3128,7 +2825,7 @@ The status of the token is changed to &quot;REVOKED&quot; so the next time the r
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_consent_implicit200_response import OBPv510CreateConsentImplicit200Response
+from obp_python.models.create_consent_implicit200_response import CreateConsentImplicit200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -3165,11 +2862,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Revoke My Consent
-        api_response = api_instance.o_bpv5_1_0_revoke_my_consent(consentid)
-        print("The response of ConsentApi->o_bpv5_1_0_revoke_my_consent:\n")
+        api_response = api_instance.revoke_my_consent(consentid)
+        print("The response of ConsentApi->revoke_my_consent:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_1_0_revoke_my_consent: %s\n" % e)
+        print("Exception when calling ConsentApi->revoke_my_consent: %s\n" % e)
 ```
 
 
@@ -3183,7 +2880,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
@@ -3203,8 +2900,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_self_revoke_consent**
-> OBPv510CreateConsentImplicit200Response o_bpv5_1_0_self_revoke_consent()
+# **self_revoke_consent**
+> CreateConsentImplicit200Response self_revoke_consent()
 
 Revoke Consent used in the Current Call
 
@@ -3230,7 +2927,7 @@ The status of the token is changed to &quot;REVOKED&quot; so the next time the r
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_consent_implicit200_response import OBPv510CreateConsentImplicit200Response
+from obp_python.models.create_consent_implicit200_response import CreateConsentImplicit200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -3266,11 +2963,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Revoke Consent used in the Current Call
-        api_response = api_instance.o_bpv5_1_0_self_revoke_consent()
-        print("The response of ConsentApi->o_bpv5_1_0_self_revoke_consent:\n")
+        api_response = api_instance.self_revoke_consent()
+        print("The response of ConsentApi->self_revoke_consent:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_1_0_self_revoke_consent: %s\n" % e)
+        print("Exception when calling ConsentApi->self_revoke_consent: %s\n" % e)
 ```
 
 
@@ -3281,7 +2978,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
@@ -3302,8 +2999,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_update_consent_account_access_by_consent_id**
-> OBPv510CreateConsentImplicit200Response o_bpv5_1_0_update_consent_account_access_by_consent_id(bankid, consentid, obpv510_update_consent_account_access_by_consent_id_request)
+# **update_consent_account_access_by_consent_id**
+> CreateConsentImplicit200Response update_consent_account_access_by_consent_id(bankid, consentid, update_consent_account_access_by_consent_id_request)
 
 Update Consent Account Access by CONSENT_ID
 
@@ -3326,8 +3023,8 @@ Update Consent Account Access by CONSENT_ID
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_consent_implicit200_response import OBPv510CreateConsentImplicit200Response
-from obp_python.models.obpv510_update_consent_account_access_by_consent_id_request import OBPv510UpdateConsentAccountAccessByConsentIdRequest
+from obp_python.models.create_consent_implicit200_response import CreateConsentImplicit200Response
+from obp_python.models.update_consent_account_access_by_consent_id_request import UpdateConsentAccountAccessByConsentIdRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -3362,15 +3059,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.ConsentApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     consentid = 'consentid_example' # str | The CONSENTID identifier
-    obpv510_update_consent_account_access_by_consent_id_request = {"type":"object","properties":{"access":{"type":"object","properties":{"accounts":{"type":"array","items":{"type":"object","properties":{"iban":{"type":"string"}}}}}}}} # OBPv510UpdateConsentAccountAccessByConsentIdRequest | Request body
+    update_consent_account_access_by_consent_id_request = {"type":"object","properties":{"access":{"type":"object","properties":{"accounts":{"type":"array","items":{"type":"object","properties":{"iban":{"type":"string"}}}}}}}} # UpdateConsentAccountAccessByConsentIdRequest | Request body
 
     try:
         # Update Consent Account Access by CONSENT_ID
-        api_response = api_instance.o_bpv5_1_0_update_consent_account_access_by_consent_id(bankid, consentid, obpv510_update_consent_account_access_by_consent_id_request)
-        print("The response of ConsentApi->o_bpv5_1_0_update_consent_account_access_by_consent_id:\n")
+        api_response = api_instance.update_consent_account_access_by_consent_id(bankid, consentid, update_consent_account_access_by_consent_id_request)
+        print("The response of ConsentApi->update_consent_account_access_by_consent_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_1_0_update_consent_account_access_by_consent_id: %s\n" % e)
+        print("Exception when calling ConsentApi->update_consent_account_access_by_consent_id: %s\n" % e)
 ```
 
 
@@ -3382,11 +3079,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **consentid** | **str**| The CONSENTID identifier | 
- **obpv510_update_consent_account_access_by_consent_id_request** | [**OBPv510UpdateConsentAccountAccessByConsentIdRequest**](OBPv510UpdateConsentAccountAccessByConsentIdRequest.md)| Request body | 
+ **update_consent_account_access_by_consent_id_request** | [**UpdateConsentAccountAccessByConsentIdRequest**](UpdateConsentAccountAccessByConsentIdRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
@@ -3407,8 +3104,114 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_update_consent_status_by_consent**
-> OBPv510CreateConsentImplicit200Response o_bpv5_1_0_update_consent_status_by_consent(bankid, consentid, obpv510_update_transaction_request_status_request)
+# **update_consent_status**
+> CreateConsentImplicit200Response update_consent_status(bankid, consentid, update_transaction_request_status_request)
+
+Update Consent Status
+
+<p>This endpoint is used to update the Status of Consent.</p>
+<p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#consent_id">CONSENT_ID</a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_consent_implicit200_response import CreateConsentImplicit200Response
+from obp_python.models.update_transaction_request_status_request import UpdateTransactionRequestStatusRequest
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsentApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    consentid = 'consentid_example' # str | The CONSENTID identifier
+    update_transaction_request_status_request = {type=object, properties={status={type=string}}} # UpdateTransactionRequestStatusRequest | Request body
+
+    try:
+        # Update Consent Status
+        api_response = api_instance.update_consent_status(bankid, consentid, update_transaction_request_status_request)
+        print("The response of ConsentApi->update_consent_status:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsentApi->update_consent_status: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **consentid** | **str**| The CONSENTID identifier | 
+ **update_transaction_request_status_request** | [**UpdateTransactionRequestStatusRequest**](UpdateTransactionRequestStatusRequest.md)| Request body | 
+
+### Return type
+
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_consent_status_by_consent**
+> CreateConsentImplicit200Response update_consent_status_by_consent(bankid, consentid, update_transaction_request_status_request)
 
 Update Consent Status by CONSENT_ID
 
@@ -3432,8 +3235,8 @@ Update Consent Status by CONSENT_ID
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_consent_implicit200_response import OBPv510CreateConsentImplicit200Response
-from obp_python.models.obpv510_update_transaction_request_status_request import OBPv510UpdateTransactionRequestStatusRequest
+from obp_python.models.create_consent_implicit200_response import CreateConsentImplicit200Response
+from obp_python.models.update_transaction_request_status_request import UpdateTransactionRequestStatusRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -3468,15 +3271,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.ConsentApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     consentid = 'consentid_example' # str | The CONSENTID identifier
-    obpv510_update_transaction_request_status_request = {type=object, properties={status={type=string}}} # OBPv510UpdateTransactionRequestStatusRequest | Request body
+    update_transaction_request_status_request = {type=object, properties={status={type=string}}} # UpdateTransactionRequestStatusRequest | Request body
 
     try:
         # Update Consent Status by CONSENT_ID
-        api_response = api_instance.o_bpv5_1_0_update_consent_status_by_consent(bankid, consentid, obpv510_update_transaction_request_status_request)
-        print("The response of ConsentApi->o_bpv5_1_0_update_consent_status_by_consent:\n")
+        api_response = api_instance.update_consent_status_by_consent(bankid, consentid, update_transaction_request_status_request)
+        print("The response of ConsentApi->update_consent_status_by_consent:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_1_0_update_consent_status_by_consent: %s\n" % e)
+        print("Exception when calling ConsentApi->update_consent_status_by_consent: %s\n" % e)
 ```
 
 
@@ -3488,11 +3291,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **consentid** | **str**| The CONSENTID identifier | 
- **obpv510_update_transaction_request_status_request** | [**OBPv510UpdateTransactionRequestStatusRequest**](OBPv510UpdateTransactionRequestStatusRequest.md)| Request body | 
+ **update_transaction_request_status_request** | [**UpdateTransactionRequestStatusRequest**](UpdateTransactionRequestStatusRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
@@ -3513,8 +3316,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_update_consent_user_id_by_consent_id**
-> OBPv510CreateConsentImplicit200Response o_bpv5_1_0_update_consent_user_id_by_consent_id(bankid, consentid, obpv400_add_consent_user_request)
+# **update_consent_user_id_by_consent_id**
+> CreateConsentImplicit200Response update_consent_user_id_by_consent_id(bankid, consentid, add_consent_user_request)
 
 Update Created by User of Consent by CONSENT_ID
 
@@ -3540,8 +3343,8 @@ some use cases where this workflow is useful.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_add_consent_user_request import OBPv400AddConsentUserRequest
-from obp_python.models.obpv510_create_consent_implicit200_response import OBPv510CreateConsentImplicit200Response
+from obp_python.models.add_consent_user_request import AddConsentUserRequest
+from obp_python.models.create_consent_implicit200_response import CreateConsentImplicit200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -3576,15 +3379,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.ConsentApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     consentid = 'consentid_example' # str | The CONSENTID identifier
-    obpv400_add_consent_user_request = {type=object, properties={user_id={type=string}}} # OBPv400AddConsentUserRequest | Request body
+    add_consent_user_request = {type=object, properties={user_id={type=string}}} # AddConsentUserRequest | Request body
 
     try:
         # Update Created by User of Consent by CONSENT_ID
-        api_response = api_instance.o_bpv5_1_0_update_consent_user_id_by_consent_id(bankid, consentid, obpv400_add_consent_user_request)
-        print("The response of ConsentApi->o_bpv5_1_0_update_consent_user_id_by_consent_id:\n")
+        api_response = api_instance.update_consent_user_id_by_consent_id(bankid, consentid, add_consent_user_request)
+        print("The response of ConsentApi->update_consent_user_id_by_consent_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsentApi->o_bpv5_1_0_update_consent_user_id_by_consent_id: %s\n" % e)
+        print("Exception when calling ConsentApi->update_consent_user_id_by_consent_id: %s\n" % e)
 ```
 
 
@@ -3596,11 +3399,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **consentid** | **str**| The CONSENTID identifier | 
- **obpv400_add_consent_user_request** | [**OBPv400AddConsentUserRequest**](OBPv400AddConsentUserRequest.md)| Request body | 
+ **add_consent_user_request** | [**AddConsentUserRequest**](AddConsentUserRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 

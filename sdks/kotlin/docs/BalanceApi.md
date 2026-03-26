@@ -1,19 +1,19 @@
 # BalanceApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv510CreateBankAccountBalance**](BalanceApi.md#oBPv510CreateBankAccountBalance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance |
-| [**oBPv510DeleteBankAccountBalance**](BalanceApi.md#oBPv510DeleteBankAccountBalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance |
-| [**oBPv510GetAllBankAccountBalances**](BalanceApi.md#oBPv510GetAllBankAccountBalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances |
-| [**oBPv510GetBankAccountBalanceById**](BalanceApi.md#oBPv510GetBankAccountBalanceById) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID |
-| [**oBPv510UpdateBankAccountBalance**](BalanceApi.md#oBPv510UpdateBankAccountBalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance |
+| [**createBankAccountBalance**](BalanceApi.md#createBankAccountBalance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance |
+| [**deleteBankAccountBalance**](BalanceApi.md#deleteBankAccountBalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance |
+| [**getAllBankAccountBalances**](BalanceApi.md#getAllBankAccountBalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances |
+| [**getBankAccountBalanceById**](BalanceApi.md#getBankAccountBalanceById) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID |
+| [**updateBankAccountBalance**](BalanceApi.md#updateBankAccountBalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance |
 
 
-<a id="oBPv510CreateBankAccountBalance"></a>
-# **oBPv510CreateBankAccountBalance**
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510CreateBankAccountBalance(bankid, accountid, obPv510CreateBankAccountBalanceRequest)
+<a id="createBankAccountBalance"></a>
+# **createBankAccountBalance**
+> GetAllBankAccountBalances200ResponseBalancesInner createBankAccountBalance(bankid, accountid, createBankAccountBalanceRequest)
 
 Create Bank Account Balance
 
@@ -28,15 +28,15 @@ Create Bank Account Balance
 val apiInstance = BalanceApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
-val obPv510CreateBankAccountBalanceRequest : OBPv510CreateBankAccountBalanceRequest = {"type":"object","properties":{"balance_amount":{"type":"string"},"balance_type":{"type":"string"}}} // OBPv510CreateBankAccountBalanceRequest | Request body
+val createBankAccountBalanceRequest : CreateBankAccountBalanceRequest = {"type":"object","properties":{"balance_amount":{"type":"string"},"balance_type":{"type":"string"}}} // CreateBankAccountBalanceRequest | Request body
 try {
-    val result : OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems = apiInstance.oBPv510CreateBankAccountBalance(bankid, accountid, obPv510CreateBankAccountBalanceRequest)
+    val result : GetAllBankAccountBalances200ResponseBalancesInner = apiInstance.createBankAccountBalance(bankid, accountid, createBankAccountBalanceRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling BalanceApi#oBPv510CreateBankAccountBalance")
+    println("4xx response calling BalanceApi#createBankAccountBalance")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling BalanceApi#oBPv510CreateBankAccountBalance")
+    println("5xx response calling BalanceApi#createBankAccountBalance")
     e.printStackTrace()
 }
 ```
@@ -46,11 +46,11 @@ try {
 | **accountid** | **kotlin.String**| The ACCOUNTID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv510CreateBankAccountBalanceRequest** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md)| Request body | |
+| **createBankAccountBalanceRequest** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -61,17 +61,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv510DeleteBankAccountBalance"></a>
-# **oBPv510DeleteBankAccountBalance**
-> oBPv510DeleteBankAccountBalance(bankid, accountid, balanceid)
+<a id="deleteBankAccountBalance"></a>
+# **deleteBankAccountBalance**
+> deleteBankAccountBalance(bankid, accountid, balanceid)
 
 Delete Bank Account Balance
 
@@ -88,12 +88,12 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val balanceid : kotlin.String = balanceid_example // kotlin.String | The BALANCEID identifier
 try {
-    apiInstance.oBPv510DeleteBankAccountBalance(bankid, accountid, balanceid)
+    apiInstance.deleteBankAccountBalance(bankid, accountid, balanceid)
 } catch (e: ClientException) {
-    println("4xx response calling BalanceApi#oBPv510DeleteBankAccountBalance")
+    println("4xx response calling BalanceApi#deleteBankAccountBalance")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling BalanceApi#oBPv510DeleteBankAccountBalance")
+    println("5xx response calling BalanceApi#deleteBankAccountBalance")
     e.printStackTrace()
 }
 ```
@@ -118,17 +118,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv510GetAllBankAccountBalances"></a>
-# **oBPv510GetAllBankAccountBalances**
-> OBPv510GetAllBankAccountBalances200Response oBPv510GetAllBankAccountBalances(bankid, accountid)
+<a id="getAllBankAccountBalances"></a>
+# **getAllBankAccountBalances**
+> GetAllBankAccountBalances200Response getAllBankAccountBalances(bankid, accountid)
 
 Get All Bank Account Balances
 
@@ -144,13 +144,13 @@ val apiInstance = BalanceApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 try {
-    val result : OBPv510GetAllBankAccountBalances200Response = apiInstance.oBPv510GetAllBankAccountBalances(bankid, accountid)
+    val result : GetAllBankAccountBalances200Response = apiInstance.getAllBankAccountBalances(bankid, accountid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling BalanceApi#oBPv510GetAllBankAccountBalances")
+    println("4xx response calling BalanceApi#getAllBankAccountBalances")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling BalanceApi#oBPv510GetAllBankAccountBalances")
+    println("5xx response calling BalanceApi#getAllBankAccountBalances")
     e.printStackTrace()
 }
 ```
@@ -163,7 +163,7 @@ try {
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200Response**](OBPv510GetAllBankAccountBalances200Response.md)
+[**GetAllBankAccountBalances200Response**](GetAllBankAccountBalances200Response.md)
 
 ### Authorization
 
@@ -174,17 +174,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv510GetBankAccountBalanceById"></a>
-# **oBPv510GetBankAccountBalanceById**
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510GetBankAccountBalanceById(bankid, accountid, balanceid)
+<a id="getBankAccountBalanceById"></a>
+# **getBankAccountBalanceById**
+> GetAllBankAccountBalances200ResponseBalancesInner getBankAccountBalanceById(bankid, accountid, balanceid)
 
 Get Bank Account Balance By ID
 
@@ -201,13 +201,13 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val balanceid : kotlin.String = balanceid_example // kotlin.String | The BALANCEID identifier
 try {
-    val result : OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems = apiInstance.oBPv510GetBankAccountBalanceById(bankid, accountid, balanceid)
+    val result : GetAllBankAccountBalances200ResponseBalancesInner = apiInstance.getBankAccountBalanceById(bankid, accountid, balanceid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling BalanceApi#oBPv510GetBankAccountBalanceById")
+    println("4xx response calling BalanceApi#getBankAccountBalanceById")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling BalanceApi#oBPv510GetBankAccountBalanceById")
+    println("5xx response calling BalanceApi#getBankAccountBalanceById")
     e.printStackTrace()
 }
 ```
@@ -221,7 +221,7 @@ try {
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -232,17 +232,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv510UpdateBankAccountBalance"></a>
-# **oBPv510UpdateBankAccountBalance**
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510UpdateBankAccountBalance(bankid, accountid, balanceid, obPv510CreateBankAccountBalanceRequest)
+<a id="updateBankAccountBalance"></a>
+# **updateBankAccountBalance**
+> GetAllBankAccountBalances200ResponseBalancesInner updateBankAccountBalance(bankid, accountid, balanceid, createBankAccountBalanceRequest)
 
 Update Bank Account Balance
 
@@ -258,15 +258,15 @@ val apiInstance = BalanceApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val balanceid : kotlin.String = balanceid_example // kotlin.String | The BALANCEID identifier
-val obPv510CreateBankAccountBalanceRequest : OBPv510CreateBankAccountBalanceRequest = {type=object, properties={balance_amount={type=string}, balance_type={type=string}}} // OBPv510CreateBankAccountBalanceRequest | Request body
+val createBankAccountBalanceRequest : CreateBankAccountBalanceRequest = {type=object, properties={balance_amount={type=string}, balance_type={type=string}}} // CreateBankAccountBalanceRequest | Request body
 try {
-    val result : OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems = apiInstance.oBPv510UpdateBankAccountBalance(bankid, accountid, balanceid, obPv510CreateBankAccountBalanceRequest)
+    val result : GetAllBankAccountBalances200ResponseBalancesInner = apiInstance.updateBankAccountBalance(bankid, accountid, balanceid, createBankAccountBalanceRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling BalanceApi#oBPv510UpdateBankAccountBalance")
+    println("4xx response calling BalanceApi#updateBankAccountBalance")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling BalanceApi#oBPv510UpdateBankAccountBalance")
+    println("5xx response calling BalanceApi#updateBankAccountBalance")
     e.printStackTrace()
 }
 ```
@@ -277,11 +277,11 @@ try {
 | **balanceid** | **kotlin.String**| The BALANCEID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv510CreateBankAccountBalanceRequest** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md)| Request body | |
+| **createBankAccountBalanceRequest** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -292,8 +292,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

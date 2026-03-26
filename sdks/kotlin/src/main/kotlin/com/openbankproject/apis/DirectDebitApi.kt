@@ -19,8 +19,8 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv400CreateDirectDebit200Response
-import com.openbankproject.models.OBPv400CreateDirectDebitRequest
+import com.openbankproject.models.CreateDirectDebit200Response
+import com.openbankproject.models.CreateDirectDebitRequest
 
 import com.squareup.moshi.Json
 
@@ -42,7 +42,7 @@ open class DirectDebitApi(basePath: kotlin.String = defaultBasePath, client: Cal
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -53,8 +53,8 @@ open class DirectDebitApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
-     * @param obPv400CreateDirectDebitRequest Request body
-     * @return OBPv400CreateDirectDebit200Response
+     * @param createDirectDebitRequest Request body
+     * @return CreateDirectDebit200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -63,11 +63,11 @@ open class DirectDebitApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateDirectDebit(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, obPv400CreateDirectDebitRequest: OBPv400CreateDirectDebitRequest) : OBPv400CreateDirectDebit200Response {
-        val localVarResponse = oBPv400CreateDirectDebitWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, obPv400CreateDirectDebitRequest = obPv400CreateDirectDebitRequest)
+    fun createDirectDebit(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, createDirectDebitRequest: CreateDirectDebitRequest) : CreateDirectDebit200Response {
+        val localVarResponse = createDirectDebitWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, createDirectDebitRequest = createDirectDebitRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400CreateDirectDebit200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CreateDirectDebit200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -88,32 +88,32 @@ open class DirectDebitApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
-     * @param obPv400CreateDirectDebitRequest Request body
-     * @return ApiResponse<OBPv400CreateDirectDebit200Response?>
+     * @param createDirectDebitRequest Request body
+     * @return ApiResponse<CreateDirectDebit200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateDirectDebitWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, obPv400CreateDirectDebitRequest: OBPv400CreateDirectDebitRequest) : ApiResponse<OBPv400CreateDirectDebit200Response?> {
-        val localVariableConfig = oBPv400CreateDirectDebitRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, obPv400CreateDirectDebitRequest = obPv400CreateDirectDebitRequest)
+    fun createDirectDebitWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, createDirectDebitRequest: CreateDirectDebitRequest) : ApiResponse<CreateDirectDebit200Response?> {
+        val localVariableConfig = createDirectDebitRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, createDirectDebitRequest = createDirectDebitRequest)
 
-        return request<OBPv400CreateDirectDebitRequest, OBPv400CreateDirectDebit200Response>(
+        return request<CreateDirectDebitRequest, CreateDirectDebit200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400CreateDirectDebit
+     * To obtain the request config of the operation createDirectDebit
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
-     * @param obPv400CreateDirectDebitRequest Request body
+     * @param createDirectDebitRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400CreateDirectDebitRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, obPv400CreateDirectDebitRequest: OBPv400CreateDirectDebitRequest) : RequestConfig<OBPv400CreateDirectDebitRequest> {
-        val localVariableBody = obPv400CreateDirectDebitRequest
+    fun createDirectDebitRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, createDirectDebitRequest: CreateDirectDebitRequest) : RequestConfig<CreateDirectDebitRequest> {
+        val localVariableBody = createDirectDebitRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -135,8 +135,8 @@ open class DirectDebitApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * &lt;p&gt;Create direct debit for an account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_expires&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_signed&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#active\&quot;&gt;&lt;strong&gt;active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_cancelled&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_expires&lt;/strong&gt;&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_signed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#direct_debit_id\&quot;&gt;&lt;strong&gt;direct_debit_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
-     * @param obPv400CreateDirectDebitRequest Request body
-     * @return OBPv400CreateDirectDebit200Response
+     * @param createDirectDebitRequest Request body
+     * @return CreateDirectDebit200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -145,11 +145,11 @@ open class DirectDebitApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateDirectDebitManagement(bankid: kotlin.String, accountid: kotlin.String, obPv400CreateDirectDebitRequest: OBPv400CreateDirectDebitRequest) : OBPv400CreateDirectDebit200Response {
-        val localVarResponse = oBPv400CreateDirectDebitManagementWithHttpInfo(bankid = bankid, accountid = accountid, obPv400CreateDirectDebitRequest = obPv400CreateDirectDebitRequest)
+    fun createDirectDebitManagement(bankid: kotlin.String, accountid: kotlin.String, createDirectDebitRequest: CreateDirectDebitRequest) : CreateDirectDebit200Response {
+        val localVarResponse = createDirectDebitManagementWithHttpInfo(bankid = bankid, accountid = accountid, createDirectDebitRequest = createDirectDebitRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400CreateDirectDebit200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CreateDirectDebit200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -169,31 +169,31 @@ open class DirectDebitApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * &lt;p&gt;Create direct debit for an account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_expires&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_signed&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#active\&quot;&gt;&lt;strong&gt;active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_cancelled&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_expires&lt;/strong&gt;&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_signed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#direct_debit_id\&quot;&gt;&lt;strong&gt;direct_debit_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
-     * @param obPv400CreateDirectDebitRequest Request body
-     * @return ApiResponse<OBPv400CreateDirectDebit200Response?>
+     * @param createDirectDebitRequest Request body
+     * @return ApiResponse<CreateDirectDebit200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateDirectDebitManagementWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, obPv400CreateDirectDebitRequest: OBPv400CreateDirectDebitRequest) : ApiResponse<OBPv400CreateDirectDebit200Response?> {
-        val localVariableConfig = oBPv400CreateDirectDebitManagementRequestConfig(bankid = bankid, accountid = accountid, obPv400CreateDirectDebitRequest = obPv400CreateDirectDebitRequest)
+    fun createDirectDebitManagementWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, createDirectDebitRequest: CreateDirectDebitRequest) : ApiResponse<CreateDirectDebit200Response?> {
+        val localVariableConfig = createDirectDebitManagementRequestConfig(bankid = bankid, accountid = accountid, createDirectDebitRequest = createDirectDebitRequest)
 
-        return request<OBPv400CreateDirectDebitRequest, OBPv400CreateDirectDebit200Response>(
+        return request<CreateDirectDebitRequest, CreateDirectDebit200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400CreateDirectDebitManagement
+     * To obtain the request config of the operation createDirectDebitManagement
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
-     * @param obPv400CreateDirectDebitRequest Request body
+     * @param createDirectDebitRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400CreateDirectDebitManagementRequestConfig(bankid: kotlin.String, accountid: kotlin.String, obPv400CreateDirectDebitRequest: OBPv400CreateDirectDebitRequest) : RequestConfig<OBPv400CreateDirectDebitRequest> {
-        val localVariableBody = obPv400CreateDirectDebitRequest
+    fun createDirectDebitManagementRequestConfig(bankid: kotlin.String, accountid: kotlin.String, createDirectDebitRequest: CreateDirectDebitRequest) : RequestConfig<CreateDirectDebitRequest> {
+        val localVariableBody = createDirectDebitRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

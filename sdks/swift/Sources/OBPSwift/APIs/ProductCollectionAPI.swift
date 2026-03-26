@@ -14,12 +14,12 @@ open class ProductCollectionAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter collectioncode: (path) The COLLECTIONCODE identifier 
-     - parameter oBPv310CreateProductCollectionRequest: (body) Request body 
+     - parameter createProductCollectionRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv310CreateProductCollection200Response
+     - returns: CreateProductCollection200Response
      */
-    open class func oBPv310CreateProductCollection(bankid: String, collectioncode: String, oBPv310CreateProductCollectionRequest: OBPv310CreateProductCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv310CreateProductCollection200Response {
-        return try await oBPv310CreateProductCollectionWithRequestBuilder(bankid: bankid, collectioncode: collectioncode, oBPv310CreateProductCollectionRequest: oBPv310CreateProductCollectionRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createProductCollection(bankid: String, collectioncode: String, createProductCollectionRequest: CreateProductCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> CreateProductCollection200Response {
+        return try await createProductCollectionWithRequestBuilder(bankid: bankid, collectioncode: collectioncode, createProductCollectionRequest: createProductCollectionRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -33,15 +33,15 @@ open class ProductCollectionAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter collectioncode: (path) The COLLECTIONCODE identifier 
-     - parameter oBPv310CreateProductCollectionRequest: (body) Request body 
+     - parameter createProductCollectionRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv310CreateProductCollection200Response> 
+     - returns: RequestBuilder<CreateProductCollection200Response> 
      */
-    open class func oBPv310CreateProductCollectionWithRequestBuilder(bankid: String, collectioncode: String, oBPv310CreateProductCollectionRequest: OBPv310CreateProductCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv310CreateProductCollection200Response> {
+    open class func createProductCollectionWithRequestBuilder(bankid: String, collectioncode: String, createProductCollectionRequest: CreateProductCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<CreateProductCollection200Response> {
         var localVariablePath = "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -50,7 +50,7 @@ open class ProductCollectionAPI {
         let collectioncodePostEscape = collectioncodePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{collectioncode}", with: collectioncodePostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv310CreateProductCollectionRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createProductCollectionRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -60,7 +60,7 @@ open class ProductCollectionAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv310CreateProductCollection200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<CreateProductCollection200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -71,10 +71,10 @@ open class ProductCollectionAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter collectioncode: (path) The COLLECTIONCODE identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv310GetProductCollection200Response
+     - returns: GetProductCollection200Response
      */
-    open class func oBPv310GetProductCollection(bankid: String, collectioncode: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv310GetProductCollection200Response {
-        return try await oBPv310GetProductCollectionWithRequestBuilder(bankid: bankid, collectioncode: collectioncode, apiConfiguration: apiConfiguration).execute().body
+    open class func getProductCollection(bankid: String, collectioncode: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetProductCollection200Response {
+        return try await getProductCollectionWithRequestBuilder(bankid: bankid, collectioncode: collectioncode, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -88,14 +88,14 @@ open class ProductCollectionAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter collectioncode: (path) The COLLECTIONCODE identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv310GetProductCollection200Response> 
+     - returns: RequestBuilder<GetProductCollection200Response> 
      */
-    open class func oBPv310GetProductCollectionWithRequestBuilder(bankid: String, collectioncode: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv310GetProductCollection200Response> {
+    open class func getProductCollectionWithRequestBuilder(bankid: String, collectioncode: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetProductCollection200Response> {
         var localVariablePath = "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -114,7 +114,7 @@ open class ProductCollectionAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv310GetProductCollection200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetProductCollection200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,13 +75,13 @@ class RateLimitsApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv310GetRateLimitingInfo' => [
+        'callsLimit' => [
             'application/json',
         ],
-        'oBPv400CallsLimit' => [
+        'getRateLimitingInfo' => [
             'application/json',
         ],
-        'oBPv600UpdateRateLimits' => [
+        'updateRateLimits' => [
             'application/json',
         ],
     ];
@@ -133,36 +133,40 @@ class RateLimitsApi
     }
 
     /**
-     * Operation oBPv310GetRateLimitingInfo
+     * Operation callsLimit
      *
-     * Get Rate Limiting Info
+     * Set Rate Limits / Call Limits per Consumer
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetRateLimitingInfo'] to see the possible values for this operation
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['callsLimit'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetRateLimitingInfo200Response
+     * @return \OpenBankProject\Model\UpdateRateLimitsRequest
      */
-    public function oBPv310GetRateLimitingInfo(string $contentType = self::contentTypes['oBPv310GetRateLimitingInfo'][0])
+    public function callsLimit($consumerid, $update_rate_limits_request, string $contentType = self::contentTypes['callsLimit'][0])
     {
-        list($response) = $this->oBPv310GetRateLimitingInfoWithHttpInfo($contentType);
+        list($response) = $this->callsLimitWithHttpInfo($consumerid, $update_rate_limits_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310GetRateLimitingInfoWithHttpInfo
+     * Operation callsLimitWithHttpInfo
      *
-     * Get Rate Limiting Info
+     * Set Rate Limits / Call Limits per Consumer
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetRateLimitingInfo'] to see the possible values for this operation
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['callsLimit'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetRateLimitingInfo200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateRateLimitsRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310GetRateLimitingInfoWithHttpInfo(string $contentType = self::contentTypes['oBPv310GetRateLimitingInfo'][0])
+    public function callsLimitWithHttpInfo($consumerid, $update_rate_limits_request, string $contentType = self::contentTypes['callsLimit'][0])
     {
-        $request = $this->oBPv310GetRateLimitingInfoRequest($contentType);
+        $request = $this->callsLimitRequest($consumerid, $update_rate_limits_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -190,7 +194,7 @@ class RateLimitsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetRateLimitingInfo200Response',
+                        '\OpenBankProject\Model\UpdateRateLimitsRequest',
                         $request,
                         $response,
                     );
@@ -212,7 +216,7 @@ class RateLimitsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetRateLimitingInfo200Response',
+                '\OpenBankProject\Model\UpdateRateLimitsRequest',
                 $request,
                 $response,
             );
@@ -221,7 +225,7 @@ class RateLimitsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetRateLimitingInfo200Response',
+                        '\OpenBankProject\Model\UpdateRateLimitsRequest',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -234,18 +238,20 @@ class RateLimitsApi
     }
 
     /**
-     * Operation oBPv310GetRateLimitingInfoAsync
+     * Operation callsLimitAsync
      *
-     * Get Rate Limiting Info
+     * Set Rate Limits / Call Limits per Consumer
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetRateLimitingInfo'] to see the possible values for this operation
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['callsLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetRateLimitingInfoAsync(string $contentType = self::contentTypes['oBPv310GetRateLimitingInfo'][0])
+    public function callsLimitAsync($consumerid, $update_rate_limits_request, string $contentType = self::contentTypes['callsLimit'][0])
     {
-        return $this->oBPv310GetRateLimitingInfoAsyncWithHttpInfo($contentType)
+        return $this->callsLimitAsyncWithHttpInfo($consumerid, $update_rate_limits_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -254,19 +260,21 @@ class RateLimitsApi
     }
 
     /**
-     * Operation oBPv310GetRateLimitingInfoAsyncWithHttpInfo
+     * Operation callsLimitAsyncWithHttpInfo
      *
-     * Get Rate Limiting Info
+     * Set Rate Limits / Call Limits per Consumer
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetRateLimitingInfo'] to see the possible values for this operation
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['callsLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetRateLimitingInfoAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv310GetRateLimitingInfo'][0])
+    public function callsLimitAsyncWithHttpInfo($consumerid, $update_rate_limits_request, string $contentType = self::contentTypes['callsLimit'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310GetRateLimitingInfo200Response';
-        $request = $this->oBPv310GetRateLimitingInfoRequest($contentType);
+        $returnType = '\OpenBankProject\Model\UpdateRateLimitsRequest';
+        $request = $this->callsLimitRequest($consumerid, $update_rate_limits_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -305,14 +313,307 @@ class RateLimitsApi
     }
 
     /**
-     * Create request for operation 'oBPv310GetRateLimitingInfo'
+     * Create request for operation 'callsLimit'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetRateLimitingInfo'] to see the possible values for this operation
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['callsLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310GetRateLimitingInfoRequest(string $contentType = self::contentTypes['oBPv310GetRateLimitingInfo'][0])
+    public function callsLimitRequest($consumerid, $update_rate_limits_request, string $contentType = self::contentTypes['callsLimit'][0])
+    {
+
+        // verify the required parameter 'consumerid' is set
+        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $consumerid when calling callsLimit'
+            );
+        }
+
+        // verify the required parameter 'update_rate_limits_request' is set
+        if ($update_rate_limits_request === null || (is_array($update_rate_limits_request) && count($update_rate_limits_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_rate_limits_request when calling callsLimit'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($consumerid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'consumerid' . '}',
+                ObjectSerializer::toPathValue($consumerid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($update_rate_limits_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_rate_limits_request));
+            } else {
+                $httpBody = $update_rate_limits_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getRateLimitingInfo
+     *
+     * Get Rate Limiting Info
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRateLimitingInfo'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetRateLimitingInfo200Response
+     */
+    public function getRateLimitingInfo(string $contentType = self::contentTypes['getRateLimitingInfo'][0])
+    {
+        list($response) = $this->getRateLimitingInfoWithHttpInfo($contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getRateLimitingInfoWithHttpInfo
+     *
+     * Get Rate Limiting Info
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRateLimitingInfo'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetRateLimitingInfo200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getRateLimitingInfoWithHttpInfo(string $contentType = self::contentTypes['getRateLimitingInfo'][0])
+    {
+        $request = $this->getRateLimitingInfoRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetRateLimitingInfo200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetRateLimitingInfo200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetRateLimitingInfo200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getRateLimitingInfoAsync
+     *
+     * Get Rate Limiting Info
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRateLimitingInfo'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getRateLimitingInfoAsync(string $contentType = self::contentTypes['getRateLimitingInfo'][0])
+    {
+        return $this->getRateLimitingInfoAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getRateLimitingInfoAsyncWithHttpInfo
+     *
+     * Get Rate Limiting Info
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRateLimitingInfo'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getRateLimitingInfoAsyncWithHttpInfo(string $contentType = self::contentTypes['getRateLimitingInfo'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetRateLimitingInfo200Response';
+        $request = $this->getRateLimitingInfoRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getRateLimitingInfo'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRateLimitingInfo'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getRateLimitingInfoRequest(string $contentType = self::contentTypes['getRateLimitingInfo'][0])
     {
 
 
@@ -368,9 +669,9 @@ class RateLimitsApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -395,40 +696,42 @@ class RateLimitsApi
     }
 
     /**
-     * Operation oBPv400CallsLimit
+     * Operation updateRateLimits
      *
      * Set Rate Limits / Call Limits per Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CallsLimit'] to see the possible values for this operation
+     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRateLimits'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest
+     * @return \OpenBankProject\Model\UpdateRateLimitsRequest
      */
-    public function oBPv400CallsLimit($consumerid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv400CallsLimit'][0])
+    public function updateRateLimits($consumerid, $ratelimitingid, $update_rate_limits_request, string $contentType = self::contentTypes['updateRateLimits'][0])
     {
-        list($response) = $this->oBPv400CallsLimitWithHttpInfo($consumerid, $obpv600_update_rate_limits_request, $contentType);
+        list($response) = $this->updateRateLimitsWithHttpInfo($consumerid, $ratelimitingid, $update_rate_limits_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CallsLimitWithHttpInfo
+     * Operation updateRateLimitsWithHttpInfo
      *
      * Set Rate Limits / Call Limits per Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CallsLimit'] to see the possible values for this operation
+     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRateLimits'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateRateLimitsRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CallsLimitWithHttpInfo($consumerid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv400CallsLimit'][0])
+    public function updateRateLimitsWithHttpInfo($consumerid, $ratelimitingid, $update_rate_limits_request, string $contentType = self::contentTypes['updateRateLimits'][0])
     {
-        $request = $this->oBPv400CallsLimitRequest($consumerid, $obpv600_update_rate_limits_request, $contentType);
+        $request = $this->updateRateLimitsRequest($consumerid, $ratelimitingid, $update_rate_limits_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -456,7 +759,7 @@ class RateLimitsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest',
+                        '\OpenBankProject\Model\UpdateRateLimitsRequest',
                         $request,
                         $response,
                     );
@@ -478,7 +781,7 @@ class RateLimitsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest',
+                '\OpenBankProject\Model\UpdateRateLimitsRequest',
                 $request,
                 $response,
             );
@@ -487,7 +790,7 @@ class RateLimitsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest',
+                        '\OpenBankProject\Model\UpdateRateLimitsRequest',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -500,20 +803,21 @@ class RateLimitsApi
     }
 
     /**
-     * Operation oBPv400CallsLimitAsync
+     * Operation updateRateLimitsAsync
      *
      * Set Rate Limits / Call Limits per Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CallsLimit'] to see the possible values for this operation
+     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRateLimits'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CallsLimitAsync($consumerid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv400CallsLimit'][0])
+    public function updateRateLimitsAsync($consumerid, $ratelimitingid, $update_rate_limits_request, string $contentType = self::contentTypes['updateRateLimits'][0])
     {
-        return $this->oBPv400CallsLimitAsyncWithHttpInfo($consumerid, $obpv600_update_rate_limits_request, $contentType)
+        return $this->updateRateLimitsAsyncWithHttpInfo($consumerid, $ratelimitingid, $update_rate_limits_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -522,21 +826,22 @@ class RateLimitsApi
     }
 
     /**
-     * Operation oBPv400CallsLimitAsyncWithHttpInfo
+     * Operation updateRateLimitsAsyncWithHttpInfo
      *
      * Set Rate Limits / Call Limits per Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CallsLimit'] to see the possible values for this operation
+     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRateLimits'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CallsLimitAsyncWithHttpInfo($consumerid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv400CallsLimit'][0])
+    public function updateRateLimitsAsyncWithHttpInfo($consumerid, $ratelimitingid, $update_rate_limits_request, string $contentType = self::contentTypes['updateRateLimits'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest';
-        $request = $this->oBPv400CallsLimitRequest($consumerid, $obpv600_update_rate_limits_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateRateLimitsRequest';
+        $request = $this->updateRateLimitsRequest($consumerid, $ratelimitingid, $update_rate_limits_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -575,342 +880,37 @@ class RateLimitsApi
     }
 
     /**
-     * Create request for operation 'oBPv400CallsLimit'
+     * Create request for operation 'updateRateLimits'
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CallsLimit'] to see the possible values for this operation
+     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRateLimits'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CallsLimitRequest($consumerid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv400CallsLimit'][0])
+    public function updateRateLimitsRequest($consumerid, $ratelimitingid, $update_rate_limits_request, string $contentType = self::contentTypes['updateRateLimits'][0])
     {
 
         // verify the required parameter 'consumerid' is set
         if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv400CallsLimit'
-            );
-        }
-
-        // verify the required parameter 'obpv600_update_rate_limits_request' is set
-        if ($obpv600_update_rate_limits_request === null || (is_array($obpv600_update_rate_limits_request) && count($obpv600_update_rate_limits_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_update_rate_limits_request when calling oBPv400CallsLimit'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($consumerid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'consumerid' . '}',
-                ObjectSerializer::toPathValue($consumerid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv600_update_rate_limits_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_update_rate_limits_request));
-            } else {
-                $httpBody = $obpv600_update_rate_limits_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600UpdateRateLimits
-     *
-     * Set Rate Limits / Call Limits per Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateRateLimits'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest
-     */
-    public function oBPv600UpdateRateLimits($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv600UpdateRateLimits'][0])
-    {
-        list($response) = $this->oBPv600UpdateRateLimitsWithHttpInfo($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv600UpdateRateLimitsWithHttpInfo
-     *
-     * Set Rate Limits / Call Limits per Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateRateLimits'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600UpdateRateLimitsWithHttpInfo($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv600UpdateRateLimits'][0])
-    {
-        $request = $this->oBPv600UpdateRateLimitsRequest($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600UpdateRateLimitsAsync
-     *
-     * Set Rate Limits / Call Limits per Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateRateLimits'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600UpdateRateLimitsAsync($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv600UpdateRateLimits'][0])
-    {
-        return $this->oBPv600UpdateRateLimitsAsyncWithHttpInfo($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600UpdateRateLimitsAsyncWithHttpInfo
-     *
-     * Set Rate Limits / Call Limits per Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateRateLimits'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600UpdateRateLimitsAsyncWithHttpInfo($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv600UpdateRateLimits'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest';
-        $request = $this->oBPv600UpdateRateLimitsRequest($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600UpdateRateLimits'
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateRateLimits'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600UpdateRateLimitsRequest($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv600UpdateRateLimits'][0])
-    {
-
-        // verify the required parameter 'consumerid' is set
-        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv600UpdateRateLimits'
+                'Missing the required parameter $consumerid when calling updateRateLimits'
             );
         }
 
         // verify the required parameter 'ratelimitingid' is set
         if ($ratelimitingid === null || (is_array($ratelimitingid) && count($ratelimitingid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $ratelimitingid when calling oBPv600UpdateRateLimits'
+                'Missing the required parameter $ratelimitingid when calling updateRateLimits'
             );
         }
 
-        // verify the required parameter 'obpv600_update_rate_limits_request' is set
-        if ($obpv600_update_rate_limits_request === null || (is_array($obpv600_update_rate_limits_request) && count($obpv600_update_rate_limits_request) === 0)) {
+        // verify the required parameter 'update_rate_limits_request' is set
+        if ($update_rate_limits_request === null || (is_array($update_rate_limits_request) && count($update_rate_limits_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_update_rate_limits_request when calling oBPv600UpdateRateLimits'
+                'Missing the required parameter $update_rate_limits_request when calling updateRateLimits'
             );
         }
 
@@ -949,12 +949,12 @@ class RateLimitsApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_update_rate_limits_request)) {
+        if (isset($update_rate_limits_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_update_rate_limits_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_rate_limits_request));
             } else {
-                $httpBody = $obpv600_update_rate_limits_request;
+                $httpBody = $update_rate_limits_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -990,9 +990,9 @@ class RateLimitsApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

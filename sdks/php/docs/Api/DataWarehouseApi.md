@@ -2,18 +2,18 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv300DataWarehouseSearch()**](DataWarehouseApi.md#oBPv300DataWarehouseSearch) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search |
-| [**oBPv300DataWarehouseStatistics()**](DataWarehouseApi.md#oBPv300DataWarehouseStatistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics |
+| [**dataWarehouseSearch()**](DataWarehouseApi.md#dataWarehouseSearch) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search |
+| [**dataWarehouseStatistics()**](DataWarehouseApi.md#dataWarehouseStatistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics |
 
 
-## `oBPv300DataWarehouseSearch()`
+## `dataWarehouseSearch()`
 
 ```php
-oBPv300DataWarehouseSearch($index, $obpv300_data_warehouse_search_request): \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+dataWarehouseSearch($index, $data_warehouse_search_request): object
 ```
 
 Data Warehouse Search
@@ -36,9 +36,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DataWarehouseApi(
@@ -48,13 +48,13 @@ $apiInstance = new OpenBankProject\Api\DataWarehouseApi(
     $config
 );
 $index = 'index_example'; // string | The INDEX identifier
-$obpv300_data_warehouse_search_request = {"type":"object","properties":{"query":{"type":"object","properties":{"match_all":{"type":"object","properties":{}}}}}}; // \OpenBankProject\Model\OBPv300DataWarehouseSearchRequest | Request body
+$data_warehouse_search_request = {"type":"object","properties":{"query":{"type":"object","properties":{"match_all":{"type":"object","properties":{}}}}}}; // \OpenBankProject\Model\DataWarehouseSearchRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv300DataWarehouseSearch($index, $obpv300_data_warehouse_search_request);
+    $result = $apiInstance->dataWarehouseSearch($index, $data_warehouse_search_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DataWarehouseApi->oBPv300DataWarehouseSearch: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DataWarehouseApi->dataWarehouseSearch: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -63,11 +63,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **index** | **string**| The INDEX identifier | |
-| **obpv300_data_warehouse_search_request** | [**\OpenBankProject\Model\OBPv300DataWarehouseSearchRequest**](../Model/OBPv300DataWarehouseSearchRequest.md)| Request body | |
+| **data_warehouse_search_request** | [**\OpenBankProject\Model\DataWarehouseSearchRequest**](../Model/DataWarehouseSearchRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](../Model/OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**object**
 
 ### Authorization
 
@@ -82,10 +82,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv300DataWarehouseStatistics()`
+## `dataWarehouseStatistics()`
 
 ```php
-oBPv300DataWarehouseStatistics($index, $field, $obpv300_data_warehouse_search_request): \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+dataWarehouseStatistics($index, $field, $data_warehouse_search_request): object
 ```
 
 Data Warehouse Statistics
@@ -108,9 +108,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DataWarehouseApi(
@@ -121,13 +121,13 @@ $apiInstance = new OpenBankProject\Api\DataWarehouseApi(
 );
 $index = 'index_example'; // string | The INDEX identifier
 $field = 'field_example'; // string | The FIELD identifier
-$obpv300_data_warehouse_search_request = {type=object, properties={query={type=object, properties={match_all={type=object, properties={}}}}}}; // \OpenBankProject\Model\OBPv300DataWarehouseSearchRequest | Request body
+$data_warehouse_search_request = {type=object, properties={query={type=object, properties={match_all={type=object, properties={}}}}}}; // \OpenBankProject\Model\DataWarehouseSearchRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv300DataWarehouseStatistics($index, $field, $obpv300_data_warehouse_search_request);
+    $result = $apiInstance->dataWarehouseStatistics($index, $field, $data_warehouse_search_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DataWarehouseApi->oBPv300DataWarehouseStatistics: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DataWarehouseApi->dataWarehouseStatistics: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -137,11 +137,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **index** | **string**| The INDEX identifier | |
 | **field** | **string**| The FIELD identifier | |
-| **obpv300_data_warehouse_search_request** | [**\OpenBankProject\Model\OBPv300DataWarehouseSearchRequest**](../Model/OBPv300DataWarehouseSearchRequest.md)| Request body | |
+| **data_warehouse_search_request** | [**\OpenBankProject\Model\DataWarehouseSearchRequest**](../Model/DataWarehouseSearchRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](../Model/OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**object**
 
 ### Authorization
 

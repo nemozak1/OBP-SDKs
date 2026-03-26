@@ -1,19 +1,19 @@
 # ConnectorMethodAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateConnectorMethod**](ConnectorMethodAPI.md#obpv400createconnectormethod) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method
-[**oBPv400GetAllConnectorMethods**](ConnectorMethodAPI.md#obpv400getallconnectormethods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods
-[**oBPv400GetConnectorMethod**](ConnectorMethodAPI.md#obpv400getconnectormethod) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id
-[**oBPv400UpdateConnectorMethod**](ConnectorMethodAPI.md#obpv400updateconnectormethod) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method
-[**oBPv600GetConnectorMethodNames**](ConnectorMethodAPI.md#obpv600getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+[**createConnectorMethod**](ConnectorMethodAPI.md#createconnectormethod) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method
+[**getAllConnectorMethods**](ConnectorMethodAPI.md#getallconnectormethods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods
+[**getConnectorMethod**](ConnectorMethodAPI.md#getconnectormethod) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id
+[**getConnectorMethodNames**](ConnectorMethodAPI.md#getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+[**updateConnectorMethod**](ConnectorMethodAPI.md#updateconnectormethod) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method
 
 
-# **oBPv400CreateConnectorMethod**
+# **createConnectorMethod**
 ```swift
-    open class func oBPv400CreateConnectorMethod(oBPv400CreateConnectorMethodRequest: OBPv400CreateConnectorMethodRequest, completion: @escaping (_ data: OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems?, _ error: Error?) -> Void)
+    open class func createConnectorMethod(createConnectorMethodRequest: CreateConnectorMethodRequest, completion: @escaping (_ data: GetAllConnectorMethods200ResponseConnectorsMethodsInner?, _ error: Error?) -> Void)
 ```
 
 Create Connector Method
@@ -25,10 +25,10 @@ Create Connector Method
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OBPSwift
 
-let oBPv400CreateConnectorMethodRequest = OBPv4_0_0_createConnectorMethod_request(type: "type_example", properties: OBPv4_0_0_createConnectorMethod_request_properties(methodName: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), programmingLang: nil, methodBody: nil)) // OBPv400CreateConnectorMethodRequest | Request body
+let createConnectorMethodRequest = createConnectorMethod_request(methodName: "methodName_example", programmingLang: "programmingLang_example", methodBody: "methodBody_example") // CreateConnectorMethodRequest | Request body
 
 // Create Connector Method
-ConnectorMethodAPI.oBPv400CreateConnectorMethod(oBPv400CreateConnectorMethodRequest: oBPv400CreateConnectorMethodRequest) { (response, error) in
+ConnectorMethodAPI.createConnectorMethod(createConnectorMethodRequest: createConnectorMethodRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -44,11 +44,11 @@ ConnectorMethodAPI.oBPv400CreateConnectorMethod(oBPv400CreateConnectorMethodRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv400CreateConnectorMethodRequest** | [**OBPv400CreateConnectorMethodRequest**](OBPv400CreateConnectorMethodRequest.md) | Request body | 
+ **createConnectorMethodRequest** | [**CreateConnectorMethodRequest**](CreateConnectorMethodRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 ### Authorization
 
@@ -61,9 +61,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllConnectorMethods**
+# **getAllConnectorMethods**
 ```swift
-    open class func oBPv400GetAllConnectorMethods(completion: @escaping (_ data: OBPv400GetAllConnectorMethods200Response?, _ error: Error?) -> Void)
+    open class func getAllConnectorMethods(completion: @escaping (_ data: GetAllConnectorMethods200Response?, _ error: Error?) -> Void)
 ```
 
 Get all Connector Methods
@@ -77,7 +77,7 @@ import OBPSwift
 
 
 // Get all Connector Methods
-ConnectorMethodAPI.oBPv400GetAllConnectorMethods() { (response, error) in
+ConnectorMethodAPI.getAllConnectorMethods() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -94,7 +94,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200Response**](OBPv400GetAllConnectorMethods200Response.md)
+[**GetAllConnectorMethods200Response**](GetAllConnectorMethods200Response.md)
 
 ### Authorization
 
@@ -107,9 +107,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetConnectorMethod**
+# **getConnectorMethod**
 ```swift
-    open class func oBPv400GetConnectorMethod(connectormethodid: String, completion: @escaping (_ data: OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems?, _ error: Error?) -> Void)
+    open class func getConnectorMethod(connectormethodid: String, completion: @escaping (_ data: GetAllConnectorMethods200ResponseConnectorsMethodsInner?, _ error: Error?) -> Void)
 ```
 
 Get Connector Method by Id
@@ -124,7 +124,7 @@ import OBPSwift
 let connectormethodid = "connectormethodid_example" // String | The CONNECTORMETHODID identifier
 
 // Get Connector Method by Id
-ConnectorMethodAPI.oBPv400GetConnectorMethod(connectormethodid: connectormethodid) { (response, error) in
+ConnectorMethodAPI.getConnectorMethod(connectormethodid: connectormethodid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 ### Authorization
 
@@ -157,61 +157,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateConnectorMethod**
+# **getConnectorMethodNames**
 ```swift
-    open class func oBPv400UpdateConnectorMethod(connectormethodid: String, oBPv400UpdateConnectorMethodRequest: OBPv400UpdateConnectorMethodRequest, completion: @escaping (_ data: OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems?, _ error: Error?) -> Void)
-```
-
-Update Connector Method
-
-<p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-let connectormethodid = "connectormethodid_example" // String | The CONNECTORMETHODID identifier
-let oBPv400UpdateConnectorMethodRequest = OBPv4_0_0_updateConnectorMethod_request(type: "type_example", properties: OBPv4_0_0_updateConnectorMethod_request_properties(programmingLang: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), methodBody: nil)) // OBPv400UpdateConnectorMethodRequest | Request body
-
-// Update Connector Method
-ConnectorMethodAPI.oBPv400UpdateConnectorMethod(connectormethodid: connectormethodid, oBPv400UpdateConnectorMethodRequest: oBPv400UpdateConnectorMethodRequest) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **connectormethodid** | **String** | The CONNECTORMETHODID identifier | 
- **oBPv400UpdateConnectorMethodRequest** | [**OBPv400UpdateConnectorMethodRequest**](OBPv400UpdateConnectorMethodRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv600GetConnectorMethodNames**
-```swift
-    open class func oBPv600GetConnectorMethodNames(completion: @escaping (_ data: OBPv600GetConnectorMethodNames200Response?, _ error: Error?) -> Void)
+    open class func getConnectorMethodNames(completion: @escaping (_ data: GetConnectorMethodNames200Response?, _ error: Error?) -> Void)
 ```
 
 Get Connector Method Names
@@ -225,7 +173,7 @@ import OBPSwift
 
 
 // Get Connector Method Names
-ConnectorMethodAPI.oBPv600GetConnectorMethodNames() { (response, error) in
+ConnectorMethodAPI.getConnectorMethodNames() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -242,7 +190,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectorMethodNames200Response**](OBPv600GetConnectorMethodNames200Response.md)
+[**GetConnectorMethodNames200Response**](GetConnectorMethodNames200Response.md)
 
 ### Authorization
 
@@ -251,6 +199,58 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateConnectorMethod**
+```swift
+    open class func updateConnectorMethod(connectormethodid: String, updateConnectorMethodRequest: UpdateConnectorMethodRequest, completion: @escaping (_ data: GetAllConnectorMethods200ResponseConnectorsMethodsInner?, _ error: Error?) -> Void)
+```
+
+Update Connector Method
+
+<p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+let connectormethodid = "connectormethodid_example" // String | The CONNECTORMETHODID identifier
+let updateConnectorMethodRequest = updateConnectorMethod_request(programmingLang: "programmingLang_example", methodBody: "methodBody_example") // UpdateConnectorMethodRequest | Request body
+
+// Update Connector Method
+ConnectorMethodAPI.updateConnectorMethod(connectormethodid: connectormethodid, updateConnectorMethodRequest: updateConnectorMethodRequest) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connectormethodid** | **String** | The CONNECTORMETHODID identifier | 
+ **updateConnectorMethodRequest** | [**UpdateConnectorMethodRequest**](UpdateConnectorMethodRequest.md) | Request body | 
+
+### Return type
+
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

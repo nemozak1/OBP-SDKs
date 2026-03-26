@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -23,17 +23,17 @@ import (
 // LogCacheAPIService LogCacheAPI service
 type LogCacheAPIService service
 
-type ApiOBPv510LogCacheAllEndpointRequest struct {
+type ApiLogCacheAllEndpointRequest struct {
 	ctx context.Context
 	ApiService *LogCacheAPIService
 }
 
-func (r ApiOBPv510LogCacheAllEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheAllEndpointExecute(r)
+func (r ApiLogCacheAllEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheAllEndpointExecute(r)
 }
 
 /*
-OBPv510LogCacheAllEndpoint Get All Level Log Cache
+LogCacheAllEndpoint Get All Level Log Cache
 
 <p>Returns logs of all levels from the system log cache.</p>
 <p>This endpoint supports pagination via the following optional query parameters:<br />
@@ -45,24 +45,24 @@ OBPv510LogCacheAllEndpoint Get All Level Log Cache
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheAllEndpointRequest
+ @return ApiLogCacheAllEndpointRequest
 */
-func (a *LogCacheAPIService) OBPv510LogCacheAllEndpoint(ctx context.Context) ApiOBPv510LogCacheAllEndpointRequest {
-	return ApiOBPv510LogCacheAllEndpointRequest{
+func (a *LogCacheAPIService) LogCacheAllEndpoint(ctx context.Context) ApiLogCacheAllEndpointRequest {
+	return ApiLogCacheAllEndpointRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LogCacheAPIService) OBPv510LogCacheAllEndpointExecute(r ApiOBPv510LogCacheAllEndpointRequest) (*http.Response, error) {
+func (a *LogCacheAPIService) LogCacheAllEndpointExecute(r ApiLogCacheAllEndpointRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogCacheAPIService.OBPv510LogCacheAllEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogCacheAPIService.LogCacheAllEndpoint")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -114,7 +114,7 @@ func (a *LogCacheAPIService) OBPv510LogCacheAllEndpointExecute(r ApiOBPv510LogCa
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -146,17 +146,17 @@ func (a *LogCacheAPIService) OBPv510LogCacheAllEndpointExecute(r ApiOBPv510LogCa
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv510LogCacheDebugEndpointRequest struct {
+type ApiLogCacheDebugEndpointRequest struct {
 	ctx context.Context
 	ApiService *LogCacheAPIService
 }
 
-func (r ApiOBPv510LogCacheDebugEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheDebugEndpointExecute(r)
+func (r ApiLogCacheDebugEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheDebugEndpointExecute(r)
 }
 
 /*
-OBPv510LogCacheDebugEndpoint Get Debug Level Log Cache
+LogCacheDebugEndpoint Get Debug Level Log Cache
 
 <p>Returns DEBUG level logs from the system log cache.</p>
 <p>This endpoint supports pagination via the following optional query parameters:<br />
@@ -168,24 +168,24 @@ OBPv510LogCacheDebugEndpoint Get Debug Level Log Cache
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheDebugEndpointRequest
+ @return ApiLogCacheDebugEndpointRequest
 */
-func (a *LogCacheAPIService) OBPv510LogCacheDebugEndpoint(ctx context.Context) ApiOBPv510LogCacheDebugEndpointRequest {
-	return ApiOBPv510LogCacheDebugEndpointRequest{
+func (a *LogCacheAPIService) LogCacheDebugEndpoint(ctx context.Context) ApiLogCacheDebugEndpointRequest {
+	return ApiLogCacheDebugEndpointRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LogCacheAPIService) OBPv510LogCacheDebugEndpointExecute(r ApiOBPv510LogCacheDebugEndpointRequest) (*http.Response, error) {
+func (a *LogCacheAPIService) LogCacheDebugEndpointExecute(r ApiLogCacheDebugEndpointRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogCacheAPIService.OBPv510LogCacheDebugEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogCacheAPIService.LogCacheDebugEndpoint")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -237,7 +237,7 @@ func (a *LogCacheAPIService) OBPv510LogCacheDebugEndpointExecute(r ApiOBPv510Log
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -269,17 +269,17 @@ func (a *LogCacheAPIService) OBPv510LogCacheDebugEndpointExecute(r ApiOBPv510Log
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv510LogCacheErrorEndpointRequest struct {
+type ApiLogCacheErrorEndpointRequest struct {
 	ctx context.Context
 	ApiService *LogCacheAPIService
 }
 
-func (r ApiOBPv510LogCacheErrorEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheErrorEndpointExecute(r)
+func (r ApiLogCacheErrorEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheErrorEndpointExecute(r)
 }
 
 /*
-OBPv510LogCacheErrorEndpoint Get Error Level Log Cache
+LogCacheErrorEndpoint Get Error Level Log Cache
 
 <p>Returns ERROR level logs from the system log cache.</p>
 <p>This endpoint supports pagination via the following optional query parameters:<br />
@@ -291,24 +291,24 @@ OBPv510LogCacheErrorEndpoint Get Error Level Log Cache
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheErrorEndpointRequest
+ @return ApiLogCacheErrorEndpointRequest
 */
-func (a *LogCacheAPIService) OBPv510LogCacheErrorEndpoint(ctx context.Context) ApiOBPv510LogCacheErrorEndpointRequest {
-	return ApiOBPv510LogCacheErrorEndpointRequest{
+func (a *LogCacheAPIService) LogCacheErrorEndpoint(ctx context.Context) ApiLogCacheErrorEndpointRequest {
+	return ApiLogCacheErrorEndpointRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LogCacheAPIService) OBPv510LogCacheErrorEndpointExecute(r ApiOBPv510LogCacheErrorEndpointRequest) (*http.Response, error) {
+func (a *LogCacheAPIService) LogCacheErrorEndpointExecute(r ApiLogCacheErrorEndpointRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogCacheAPIService.OBPv510LogCacheErrorEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogCacheAPIService.LogCacheErrorEndpoint")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -360,7 +360,7 @@ func (a *LogCacheAPIService) OBPv510LogCacheErrorEndpointExecute(r ApiOBPv510Log
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -392,17 +392,17 @@ func (a *LogCacheAPIService) OBPv510LogCacheErrorEndpointExecute(r ApiOBPv510Log
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv510LogCacheInfoEndpointRequest struct {
+type ApiLogCacheInfoEndpointRequest struct {
 	ctx context.Context
 	ApiService *LogCacheAPIService
 }
 
-func (r ApiOBPv510LogCacheInfoEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheInfoEndpointExecute(r)
+func (r ApiLogCacheInfoEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheInfoEndpointExecute(r)
 }
 
 /*
-OBPv510LogCacheInfoEndpoint Get Info Level Log Cache
+LogCacheInfoEndpoint Get Info Level Log Cache
 
 <p>Returns INFO level logs from the system log cache.</p>
 <p>This endpoint supports pagination via the following optional query parameters:<br />
@@ -414,24 +414,24 @@ OBPv510LogCacheInfoEndpoint Get Info Level Log Cache
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheInfoEndpointRequest
+ @return ApiLogCacheInfoEndpointRequest
 */
-func (a *LogCacheAPIService) OBPv510LogCacheInfoEndpoint(ctx context.Context) ApiOBPv510LogCacheInfoEndpointRequest {
-	return ApiOBPv510LogCacheInfoEndpointRequest{
+func (a *LogCacheAPIService) LogCacheInfoEndpoint(ctx context.Context) ApiLogCacheInfoEndpointRequest {
+	return ApiLogCacheInfoEndpointRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LogCacheAPIService) OBPv510LogCacheInfoEndpointExecute(r ApiOBPv510LogCacheInfoEndpointRequest) (*http.Response, error) {
+func (a *LogCacheAPIService) LogCacheInfoEndpointExecute(r ApiLogCacheInfoEndpointRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogCacheAPIService.OBPv510LogCacheInfoEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogCacheAPIService.LogCacheInfoEndpoint")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -483,7 +483,7 @@ func (a *LogCacheAPIService) OBPv510LogCacheInfoEndpointExecute(r ApiOBPv510LogC
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -515,17 +515,17 @@ func (a *LogCacheAPIService) OBPv510LogCacheInfoEndpointExecute(r ApiOBPv510LogC
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv510LogCacheTraceEndpointRequest struct {
+type ApiLogCacheTraceEndpointRequest struct {
 	ctx context.Context
 	ApiService *LogCacheAPIService
 }
 
-func (r ApiOBPv510LogCacheTraceEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheTraceEndpointExecute(r)
+func (r ApiLogCacheTraceEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheTraceEndpointExecute(r)
 }
 
 /*
-OBPv510LogCacheTraceEndpoint Get Trace Level Log Cache
+LogCacheTraceEndpoint Get Trace Level Log Cache
 
 <p>Returns TRACE level logs from the system log cache.</p>
 <p>This endpoint supports pagination via the following optional query parameters:<br />
@@ -537,24 +537,24 @@ OBPv510LogCacheTraceEndpoint Get Trace Level Log Cache
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheTraceEndpointRequest
+ @return ApiLogCacheTraceEndpointRequest
 */
-func (a *LogCacheAPIService) OBPv510LogCacheTraceEndpoint(ctx context.Context) ApiOBPv510LogCacheTraceEndpointRequest {
-	return ApiOBPv510LogCacheTraceEndpointRequest{
+func (a *LogCacheAPIService) LogCacheTraceEndpoint(ctx context.Context) ApiLogCacheTraceEndpointRequest {
+	return ApiLogCacheTraceEndpointRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LogCacheAPIService) OBPv510LogCacheTraceEndpointExecute(r ApiOBPv510LogCacheTraceEndpointRequest) (*http.Response, error) {
+func (a *LogCacheAPIService) LogCacheTraceEndpointExecute(r ApiLogCacheTraceEndpointRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogCacheAPIService.OBPv510LogCacheTraceEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogCacheAPIService.LogCacheTraceEndpoint")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -606,7 +606,7 @@ func (a *LogCacheAPIService) OBPv510LogCacheTraceEndpointExecute(r ApiOBPv510Log
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -638,17 +638,17 @@ func (a *LogCacheAPIService) OBPv510LogCacheTraceEndpointExecute(r ApiOBPv510Log
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv510LogCacheWarningEndpointRequest struct {
+type ApiLogCacheWarningEndpointRequest struct {
 	ctx context.Context
 	ApiService *LogCacheAPIService
 }
 
-func (r ApiOBPv510LogCacheWarningEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheWarningEndpointExecute(r)
+func (r ApiLogCacheWarningEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheWarningEndpointExecute(r)
 }
 
 /*
-OBPv510LogCacheWarningEndpoint Get Warning Level Log Cache
+LogCacheWarningEndpoint Get Warning Level Log Cache
 
 <p>Returns WARNING level logs from the system log cache.</p>
 <p>This endpoint supports pagination via the following optional query parameters:<br />
@@ -660,24 +660,24 @@ OBPv510LogCacheWarningEndpoint Get Warning Level Log Cache
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheWarningEndpointRequest
+ @return ApiLogCacheWarningEndpointRequest
 */
-func (a *LogCacheAPIService) OBPv510LogCacheWarningEndpoint(ctx context.Context) ApiOBPv510LogCacheWarningEndpointRequest {
-	return ApiOBPv510LogCacheWarningEndpointRequest{
+func (a *LogCacheAPIService) LogCacheWarningEndpoint(ctx context.Context) ApiLogCacheWarningEndpointRequest {
+	return ApiLogCacheWarningEndpointRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LogCacheAPIService) OBPv510LogCacheWarningEndpointExecute(r ApiOBPv510LogCacheWarningEndpointRequest) (*http.Response, error) {
+func (a *LogCacheAPIService) LogCacheWarningEndpointExecute(r ApiLogCacheWarningEndpointRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogCacheAPIService.OBPv510LogCacheWarningEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogCacheAPIService.LogCacheWarningEndpoint")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -729,7 +729,7 @@ func (a *LogCacheAPIService) OBPv510LogCacheWarningEndpointExecute(r ApiOBPv510L
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

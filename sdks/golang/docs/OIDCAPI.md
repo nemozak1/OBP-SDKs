@@ -1,19 +1,19 @@
 # \OIDCAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv310GetOAuth2ServerJWKsURIs**](OIDCAPI.md#OBPv310GetOAuth2ServerJWKsURIs) | **Get** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
-[**OBPv310GetObpConnectorLoopback**](OIDCAPI.md#OBPv310GetObpConnectorLoopback) | **Get** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
-[**OBPv600GetOidcClient**](OIDCAPI.md#OBPv600GetOidcClient) | **Get** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
-[**OBPv600VerifyOidcClient**](OIDCAPI.md#OBPv600VerifyOidcClient) | **Post** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
+[**GetOAuth2ServerJWKsURIs**](OIDCAPI.md#GetOAuth2ServerJWKsURIs) | **Get** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
+[**GetObpConnectorLoopback**](OIDCAPI.md#GetObpConnectorLoopback) | **Get** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
+[**GetOidcClient**](OIDCAPI.md#GetOidcClient) | **Get** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
+[**VerifyOidcClient**](OIDCAPI.md#VerifyOidcClient) | **Post** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
 
 
 
-## OBPv310GetOAuth2ServerJWKsURIs
+## GetOAuth2ServerJWKsURIs
 
-> OBPv310GetOAuth2ServerJWKsURIs200Response OBPv310GetOAuth2ServerJWKsURIs(ctx).Execute()
+> GetOAuth2ServerJWKsURIs200Response GetOAuth2ServerJWKsURIs(ctx).Execute()
 
 Get JSON Web Key (JWK) URIs
 
@@ -35,13 +35,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OIDCAPI.OBPv310GetOAuth2ServerJWKsURIs(context.Background()).Execute()
+	resp, r, err := apiClient.OIDCAPI.GetOAuth2ServerJWKsURIs(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `OIDCAPI.OBPv310GetOAuth2ServerJWKsURIs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `OIDCAPI.GetOAuth2ServerJWKsURIs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310GetOAuth2ServerJWKsURIs`: OBPv310GetOAuth2ServerJWKsURIs200Response
-	fmt.Fprintf(os.Stdout, "Response from `OIDCAPI.OBPv310GetOAuth2ServerJWKsURIs`: %v\n", resp)
+	// response from `GetOAuth2ServerJWKsURIs`: GetOAuth2ServerJWKsURIs200Response
+	fmt.Fprintf(os.Stdout, "Response from `OIDCAPI.GetOAuth2ServerJWKsURIs`: %v\n", resp)
 }
 ```
 
@@ -51,12 +51,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310GetOAuth2ServerJWKsURIsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetOAuth2ServerJWKsURIsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv310GetOAuth2ServerJWKsURIs200Response**](OBPv310GetOAuth2ServerJWKsURIs200Response.md)
+[**GetOAuth2ServerJWKsURIs200Response**](GetOAuth2ServerJWKsURIs200Response.md)
 
 ### Authorization
 
@@ -72,9 +72,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv310GetObpConnectorLoopback
+## GetObpConnectorLoopback
 
-> OBPv310GetObpConnectorLoopback200Response OBPv310GetObpConnectorLoopback(ctx).Execute()
+> GetObpConnectorLoopback200Response GetObpConnectorLoopback(ctx).Execute()
 
 Get Connector Status (Loopback)
 
@@ -96,13 +96,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OIDCAPI.OBPv310GetObpConnectorLoopback(context.Background()).Execute()
+	resp, r, err := apiClient.OIDCAPI.GetObpConnectorLoopback(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `OIDCAPI.OBPv310GetObpConnectorLoopback``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `OIDCAPI.GetObpConnectorLoopback``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310GetObpConnectorLoopback`: OBPv310GetObpConnectorLoopback200Response
-	fmt.Fprintf(os.Stdout, "Response from `OIDCAPI.OBPv310GetObpConnectorLoopback`: %v\n", resp)
+	// response from `GetObpConnectorLoopback`: GetObpConnectorLoopback200Response
+	fmt.Fprintf(os.Stdout, "Response from `OIDCAPI.GetObpConnectorLoopback`: %v\n", resp)
 }
 ```
 
@@ -112,12 +112,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310GetObpConnectorLoopbackRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetObpConnectorLoopbackRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv310GetObpConnectorLoopback200Response**](OBPv310GetObpConnectorLoopback200Response.md)
+[**GetObpConnectorLoopback200Response**](GetObpConnectorLoopback200Response.md)
 
 ### Authorization
 
@@ -133,9 +133,9 @@ Other parameters are passed through a pointer to a apiOBPv310GetObpConnectorLoop
 [[Back to README]](../README.md)
 
 
-## OBPv600GetOidcClient
+## GetOidcClient
 
-> OBPv600GetOidcClient200Response OBPv600GetOidcClient(ctx, clientid).Execute()
+> GetOidcClient200Response GetOidcClient(ctx, clientid).Execute()
 
 Get OIDC Client
 
@@ -158,13 +158,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OIDCAPI.OBPv600GetOidcClient(context.Background(), clientid).Execute()
+	resp, r, err := apiClient.OIDCAPI.GetOidcClient(context.Background(), clientid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `OIDCAPI.OBPv600GetOidcClient``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `OIDCAPI.GetOidcClient``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetOidcClient`: OBPv600GetOidcClient200Response
-	fmt.Fprintf(os.Stdout, "Response from `OIDCAPI.OBPv600GetOidcClient`: %v\n", resp)
+	// response from `GetOidcClient`: GetOidcClient200Response
+	fmt.Fprintf(os.Stdout, "Response from `OIDCAPI.GetOidcClient`: %v\n", resp)
 }
 ```
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetOidcClientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetOidcClientRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetOidcClient200Response**](OBPv600GetOidcClient200Response.md)
+[**GetOidcClient200Response**](GetOidcClient200Response.md)
 
 ### Authorization
 
@@ -203,9 +203,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600VerifyOidcClient
+## VerifyOidcClient
 
-> OBPv600VerifyOidcClient200Response OBPv600VerifyOidcClient(ctx).OBPv600VerifyOidcClientRequest(oBPv600VerifyOidcClientRequest).Execute()
+> VerifyOidcClient200Response VerifyOidcClient(ctx).VerifyOidcClientRequest(verifyOidcClientRequest).Execute()
 
 Verify OIDC Client
 
@@ -224,17 +224,17 @@ import (
 )
 
 func main() {
-	oBPv600VerifyOidcClientRequest := *openapiclient.NewOBPv600VerifyOidcClientRequest("Type_example", *openapiclient.NewOBPv600VerifyOidcClientRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600VerifyOidcClientRequest | Request body
+	verifyOidcClientRequest := *openapiclient.NewVerifyOidcClientRequest() // VerifyOidcClientRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OIDCAPI.OBPv600VerifyOidcClient(context.Background()).OBPv600VerifyOidcClientRequest(oBPv600VerifyOidcClientRequest).Execute()
+	resp, r, err := apiClient.OIDCAPI.VerifyOidcClient(context.Background()).VerifyOidcClientRequest(verifyOidcClientRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `OIDCAPI.OBPv600VerifyOidcClient``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `OIDCAPI.VerifyOidcClient``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600VerifyOidcClient`: OBPv600VerifyOidcClient200Response
-	fmt.Fprintf(os.Stdout, "Response from `OIDCAPI.OBPv600VerifyOidcClient`: %v\n", resp)
+	// response from `VerifyOidcClient`: VerifyOidcClient200Response
+	fmt.Fprintf(os.Stdout, "Response from `OIDCAPI.VerifyOidcClient`: %v\n", resp)
 }
 ```
 
@@ -244,16 +244,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600VerifyOidcClientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiVerifyOidcClientRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600VerifyOidcClientRequest** | [**OBPv600VerifyOidcClientRequest**](OBPv600VerifyOidcClientRequest.md) | Request body | 
+ **verifyOidcClientRequest** | [**VerifyOidcClientRequest**](VerifyOidcClientRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600VerifyOidcClient200Response**](OBPv600VerifyOidcClient200Response.md)
+[**VerifyOidcClient200Response**](VerifyOidcClient200Response.md)
 
 ### Authorization
 

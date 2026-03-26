@@ -4,15 +4,15 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv5_1_0_account_access_unique_index_check**](SystemIntegrityApi.md#o_bpv5_1_0_account_access_unique_index_check) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access
-[**o_bpv5_1_0_account_currency_check**](SystemIntegrityApi.md#o_bpv5_1_0_account_currency_check) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies
-[**o_bpv5_1_0_custom_view_names_check**](SystemIntegrityApi.md#o_bpv5_1_0_custom_view_names_check) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names
-[**o_bpv5_1_0_orphaned_account_check**](SystemIntegrityApi.md#o_bpv5_1_0_orphaned_account_check) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts
-[**o_bpv5_1_0_system_view_names_check**](SystemIntegrityApi.md#o_bpv5_1_0_system_view_names_check) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names
+[**account_access_unique_index_check**](SystemIntegrityApi.md#account_access_unique_index_check) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access
+[**account_currency_check**](SystemIntegrityApi.md#account_currency_check) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies
+[**custom_view_names_check**](SystemIntegrityApi.md#custom_view_names_check) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names
+[**orphaned_account_check**](SystemIntegrityApi.md#orphaned_account_check) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts
+[**system_view_names_check**](SystemIntegrityApi.md#system_view_names_check) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names
 
 
-# **o_bpv5_1_0_account_access_unique_index_check**
-> OBPv510AccountAccessUniqueIndexCheck200Response o_bpv5_1_0_account_access_unique_index_check()
+# **account_access_unique_index_check**
+> AccountAccessUniqueIndexCheck200Response account_access_unique_index_check()
 
 Check Unique Index at Account Access
 
@@ -31,7 +31,7 @@ Check Unique Index at Account Access
 
 ```python
 import obp_python
-from obp_python.models.obpv510_account_access_unique_index_check200_response import OBPv510AccountAccessUniqueIndexCheck200Response
+from obp_python.models.account_access_unique_index_check200_response import AccountAccessUniqueIndexCheck200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -67,11 +67,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Check Unique Index at Account Access
-        api_response = api_instance.o_bpv5_1_0_account_access_unique_index_check()
-        print("The response of SystemIntegrityApi->o_bpv5_1_0_account_access_unique_index_check:\n")
+        api_response = api_instance.account_access_unique_index_check()
+        print("The response of SystemIntegrityApi->account_access_unique_index_check:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SystemIntegrityApi->o_bpv5_1_0_account_access_unique_index_check: %s\n" % e)
+        print("Exception when calling SystemIntegrityApi->account_access_unique_index_check: %s\n" % e)
 ```
 
 
@@ -82,7 +82,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv510AccountAccessUniqueIndexCheck200Response**](OBPv510AccountAccessUniqueIndexCheck200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -102,8 +102,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_account_currency_check**
-> OBPv510AccountAccessUniqueIndexCheck200Response o_bpv5_1_0_account_currency_check(bankid)
+# **account_currency_check**
+> AccountAccessUniqueIndexCheck200Response account_currency_check(bankid)
 
 Check for Sensible Currencies
 
@@ -124,7 +124,7 @@ Check for Sensible Currencies
 
 ```python
 import obp_python
-from obp_python.models.obpv510_account_access_unique_index_check200_response import OBPv510AccountAccessUniqueIndexCheck200Response
+from obp_python.models.account_access_unique_index_check200_response import AccountAccessUniqueIndexCheck200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -161,11 +161,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Check for Sensible Currencies
-        api_response = api_instance.o_bpv5_1_0_account_currency_check(bankid)
-        print("The response of SystemIntegrityApi->o_bpv5_1_0_account_currency_check:\n")
+        api_response = api_instance.account_currency_check(bankid)
+        print("The response of SystemIntegrityApi->account_currency_check:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SystemIntegrityApi->o_bpv5_1_0_account_currency_check: %s\n" % e)
+        print("Exception when calling SystemIntegrityApi->account_currency_check: %s\n" % e)
 ```
 
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510AccountAccessUniqueIndexCheck200Response**](OBPv510AccountAccessUniqueIndexCheck200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -199,8 +199,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_custom_view_names_check**
-> OBPv510AccountAccessUniqueIndexCheck200Response o_bpv5_1_0_custom_view_names_check()
+# **custom_view_names_check**
+> AccountAccessUniqueIndexCheck200Response custom_view_names_check()
 
 Check Custom View Names
 
@@ -219,7 +219,7 @@ Check Custom View Names
 
 ```python
 import obp_python
-from obp_python.models.obpv510_account_access_unique_index_check200_response import OBPv510AccountAccessUniqueIndexCheck200Response
+from obp_python.models.account_access_unique_index_check200_response import AccountAccessUniqueIndexCheck200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -255,11 +255,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Check Custom View Names
-        api_response = api_instance.o_bpv5_1_0_custom_view_names_check()
-        print("The response of SystemIntegrityApi->o_bpv5_1_0_custom_view_names_check:\n")
+        api_response = api_instance.custom_view_names_check()
+        print("The response of SystemIntegrityApi->custom_view_names_check:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SystemIntegrityApi->o_bpv5_1_0_custom_view_names_check: %s\n" % e)
+        print("Exception when calling SystemIntegrityApi->custom_view_names_check: %s\n" % e)
 ```
 
 
@@ -270,7 +270,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv510AccountAccessUniqueIndexCheck200Response**](OBPv510AccountAccessUniqueIndexCheck200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -290,8 +290,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_orphaned_account_check**
-> OBPv510AccountAccessUniqueIndexCheck200Response o_bpv5_1_0_orphaned_account_check(bankid)
+# **orphaned_account_check**
+> AccountAccessUniqueIndexCheck200Response orphaned_account_check(bankid)
 
 Check for Orphaned Accounts
 
@@ -312,7 +312,7 @@ Check for Orphaned Accounts
 
 ```python
 import obp_python
-from obp_python.models.obpv510_account_access_unique_index_check200_response import OBPv510AccountAccessUniqueIndexCheck200Response
+from obp_python.models.account_access_unique_index_check200_response import AccountAccessUniqueIndexCheck200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -349,11 +349,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Check for Orphaned Accounts
-        api_response = api_instance.o_bpv5_1_0_orphaned_account_check(bankid)
-        print("The response of SystemIntegrityApi->o_bpv5_1_0_orphaned_account_check:\n")
+        api_response = api_instance.orphaned_account_check(bankid)
+        print("The response of SystemIntegrityApi->orphaned_account_check:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SystemIntegrityApi->o_bpv5_1_0_orphaned_account_check: %s\n" % e)
+        print("Exception when calling SystemIntegrityApi->orphaned_account_check: %s\n" % e)
 ```
 
 
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510AccountAccessUniqueIndexCheck200Response**](OBPv510AccountAccessUniqueIndexCheck200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -387,8 +387,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_system_view_names_check**
-> OBPv510AccountAccessUniqueIndexCheck200Response o_bpv5_1_0_system_view_names_check()
+# **system_view_names_check**
+> AccountAccessUniqueIndexCheck200Response system_view_names_check()
 
 Check System View Names
 
@@ -407,7 +407,7 @@ Check System View Names
 
 ```python
 import obp_python
-from obp_python.models.obpv510_account_access_unique_index_check200_response import OBPv510AccountAccessUniqueIndexCheck200Response
+from obp_python.models.account_access_unique_index_check200_response import AccountAccessUniqueIndexCheck200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -443,11 +443,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Check System View Names
-        api_response = api_instance.o_bpv5_1_0_system_view_names_check()
-        print("The response of SystemIntegrityApi->o_bpv5_1_0_system_view_names_check:\n")
+        api_response = api_instance.system_view_names_check()
+        print("The response of SystemIntegrityApi->system_view_names_check:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SystemIntegrityApi->o_bpv5_1_0_system_view_names_check: %s\n" % e)
+        print("Exception when calling SystemIntegrityApi->system_view_names_check: %s\n" % e)
 ```
 
 
@@ -458,7 +458,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv510AccountAccessUniqueIndexCheck200Response**](OBPv510AccountAccessUniqueIndexCheck200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 

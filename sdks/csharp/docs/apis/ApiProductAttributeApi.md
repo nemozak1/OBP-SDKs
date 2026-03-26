@@ -1,17 +1,17 @@
 # OpenBankProject.Api.ApiProductAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv600CreateApiProductAttribute**](ApiProductAttributeApi.md#obpv600createapiproductattribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute |
-| [**OBPv600DeleteApiProductAttribute**](ApiProductAttributeApi.md#obpv600deleteapiproductattribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute |
-| [**OBPv600GetApiProductAttribute**](ApiProductAttributeApi.md#obpv600getapiproductattribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute |
-| [**OBPv600UpdateApiProductAttribute**](ApiProductAttributeApi.md#obpv600updateapiproductattribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute |
+| [**CreateApiProductAttribute**](ApiProductAttributeApi.md#createapiproductattribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute |
+| [**DeleteApiProductAttribute**](ApiProductAttributeApi.md#deleteapiproductattribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute |
+| [**GetApiProductAttribute**](ApiProductAttributeApi.md#getapiproductattribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute |
+| [**UpdateApiProductAttribute**](ApiProductAttributeApi.md#updateapiproductattribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute |
 
-<a id="obpv600createapiproductattribute"></a>
-# **OBPv600CreateApiProductAttribute**
-> OBPv600CreateApiProductAttribute200Response OBPv600CreateApiProductAttribute (string bankid, string apiproductcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+<a id="createapiproductattribute"></a>
+# **CreateApiProductAttribute**
+> CreateApiProductAttribute200Response CreateApiProductAttribute (string bankid, string apiproductcode, UpdateAtmAttributeRequest updateAtmAttributeRequest)
 
 Create Api Product Attribute
 
@@ -24,11 +24,11 @@ Create Api Product Attribute
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
 | **apiproductcode** | **string** | The APIPRODUCTCODE identifier |  |
-| **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body |  |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -49,9 +49,9 @@ Create Api Product Attribute
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600deleteapiproductattribute"></a>
-# **OBPv600DeleteApiProductAttribute**
-> void OBPv600DeleteApiProductAttribute (string bankid, string apiproductcode, string apiproductattributeid)
+<a id="deleteapiproductattribute"></a>
+# **DeleteApiProductAttribute**
+> void DeleteApiProductAttribute (string bankid, string apiproductcode, string apiproductattributeid)
 
 Delete Api Product Attribute
 
@@ -89,9 +89,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getapiproductattribute"></a>
-# **OBPv600GetApiProductAttribute**
-> OBPv600CreateApiProductAttribute200Response OBPv600GetApiProductAttribute (string bankid, string apiproductcode, string apiproductattributeid)
+<a id="getapiproductattribute"></a>
+# **GetApiProductAttribute**
+> CreateApiProductAttribute200Response GetApiProductAttribute (string bankid, string apiproductcode, string apiproductattributeid)
 
 Get Api Product Attribute
 
@@ -108,7 +108,7 @@ Get Api Product Attribute
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -129,9 +129,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600updateapiproductattribute"></a>
-# **OBPv600UpdateApiProductAttribute**
-> OBPv600CreateApiProductAttribute200Response OBPv600UpdateApiProductAttribute (string bankid, string apiproductcode, string apiproductattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+<a id="updateapiproductattribute"></a>
+# **UpdateApiProductAttribute**
+> CreateApiProductAttribute200Response UpdateApiProductAttribute (string bankid, string apiproductcode, string apiproductattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
 
 Update Api Product Attribute
 
@@ -145,11 +145,11 @@ Update Api Product Attribute
 | **bankid** | **string** | The BANKID identifier |  |
 | **apiproductcode** | **string** | The APIPRODUCTCODE identifier |  |
 | **apiproductattributeid** | **string** | The APIPRODUCTATTRIBUTEID identifier |  |
-| **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body |  |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 

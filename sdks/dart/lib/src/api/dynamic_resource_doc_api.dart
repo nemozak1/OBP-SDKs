@@ -9,11 +9,11 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv400_build_dynamic_endpoint_template200_response.dart';
-import 'package:obp_dart/src/model/obpv400_build_dynamic_endpoint_template_request.dart';
-import 'package:obp_dart/src/model/obpv400_get_all_dynamic_resource_docs200_response.dart';
-import 'package:obp_dart/src/model/obpv400_get_bank_level_dynamic_resource_doc200_response.dart';
-import 'package:obp_dart/src/model/obpv400_update_bank_level_dynamic_resource_doc_request.dart';
+import 'package:obp_dart/src/model/build_dynamic_endpoint_template200_response.dart';
+import 'package:obp_dart/src/model/build_dynamic_endpoint_template_request.dart';
+import 'package:obp_dart/src/model/get_all_dynamic_resource_docs200_response.dart';
+import 'package:obp_dart/src/model/get_bank_level_dynamic_resource_doc200_response.dart';
+import 'package:obp_dart/src/model/update_bank_level_dynamic_resource_doc_request.dart';
 
 class DynamicResourceDocApi {
 
@@ -27,7 +27,7 @@ class DynamicResourceDocApi {
   /// &lt;p&gt;Create a Dynamic Resource Doc endpoint code.&lt;/p&gt; &lt;p&gt;copy the response and past to PractiseEndpoint, So you can have the benefits of&lt;br /&gt; auto compilation and debug&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; 
   ///
   /// Parameters:
-  /// * [oBPv400BuildDynamicEndpointTemplateRequest] - Request body
+  /// * [buildDynamicEndpointTemplateRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -35,10 +35,10 @@ class DynamicResourceDocApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400BuildDynamicEndpointTemplate200Response] as data
+  /// Returns a [Future] containing a [Response] with a [BuildDynamicEndpointTemplate200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400BuildDynamicEndpointTemplate200Response>> oBPv400BuildDynamicEndpointTemplate({ 
-    required OBPv400BuildDynamicEndpointTemplateRequest oBPv400BuildDynamicEndpointTemplateRequest,
+  Future<Response<BuildDynamicEndpointTemplate200Response>> buildDynamicEndpointTemplate({ 
+    required BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -65,7 +65,7 @@ class DynamicResourceDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -78,8 +78,8 @@ class DynamicResourceDocApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400BuildDynamicEndpointTemplateRequest);
-      _bodyData = _serializers.serialize(oBPv400BuildDynamicEndpointTemplateRequest, specifiedType: _type);
+      const _type = FullType(BuildDynamicEndpointTemplateRequest);
+      _bodyData = _serializers.serialize(buildDynamicEndpointTemplateRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -102,14 +102,14 @@ class DynamicResourceDocApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400BuildDynamicEndpointTemplate200Response? _responseData;
+    BuildDynamicEndpointTemplate200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400BuildDynamicEndpointTemplate200Response),
-      ) as OBPv400BuildDynamicEndpointTemplate200Response;
+        specifiedType: const FullType(BuildDynamicEndpointTemplate200Response),
+      ) as BuildDynamicEndpointTemplate200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -121,7 +121,7 @@ class DynamicResourceDocApi {
       );
     }
 
-    return Response<OBPv400BuildDynamicEndpointTemplate200Response>(
+    return Response<BuildDynamicEndpointTemplate200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -138,7 +138,7 @@ class DynamicResourceDocApi {
   ///
   /// Parameters:
   /// * [bankid] - The BANKID identifier
-  /// * [oBPv400UpdateBankLevelDynamicResourceDocRequest] - Request body
+  /// * [updateBankLevelDynamicResourceDocRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -146,11 +146,11 @@ class DynamicResourceDocApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetBankLevelDynamicResourceDoc200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetBankLevelDynamicResourceDoc200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetBankLevelDynamicResourceDoc200Response>> oBPv400CreateBankLevelDynamicResourceDoc({ 
+  Future<Response<GetBankLevelDynamicResourceDoc200Response>> createBankLevelDynamicResourceDoc({ 
     required String bankid,
-    required OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest,
+    required UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -177,7 +177,7 @@ class DynamicResourceDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -190,8 +190,8 @@ class DynamicResourceDocApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400UpdateBankLevelDynamicResourceDocRequest);
-      _bodyData = _serializers.serialize(oBPv400UpdateBankLevelDynamicResourceDocRequest, specifiedType: _type);
+      const _type = FullType(UpdateBankLevelDynamicResourceDocRequest);
+      _bodyData = _serializers.serialize(updateBankLevelDynamicResourceDocRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -214,14 +214,14 @@ class DynamicResourceDocApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetBankLevelDynamicResourceDoc200Response? _responseData;
+    GetBankLevelDynamicResourceDoc200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetBankLevelDynamicResourceDoc200Response),
-      ) as OBPv400GetBankLevelDynamicResourceDoc200Response;
+        specifiedType: const FullType(GetBankLevelDynamicResourceDoc200Response),
+      ) as GetBankLevelDynamicResourceDoc200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -233,7 +233,7 @@ class DynamicResourceDocApi {
       );
     }
 
-    return Response<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+    return Response<GetBankLevelDynamicResourceDoc200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -249,7 +249,7 @@ class DynamicResourceDocApi {
   /// &lt;p&gt;Create a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
   ///
   /// Parameters:
-  /// * [oBPv400UpdateBankLevelDynamicResourceDocRequest] - Request body
+  /// * [updateBankLevelDynamicResourceDocRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -257,10 +257,10 @@ class DynamicResourceDocApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetBankLevelDynamicResourceDoc200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetBankLevelDynamicResourceDoc200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetBankLevelDynamicResourceDoc200Response>> oBPv400CreateDynamicResourceDoc({ 
-    required OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest,
+  Future<Response<GetBankLevelDynamicResourceDoc200Response>> createDynamicResourceDoc({ 
+    required UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -287,7 +287,7 @@ class DynamicResourceDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -300,8 +300,8 @@ class DynamicResourceDocApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400UpdateBankLevelDynamicResourceDocRequest);
-      _bodyData = _serializers.serialize(oBPv400UpdateBankLevelDynamicResourceDocRequest, specifiedType: _type);
+      const _type = FullType(UpdateBankLevelDynamicResourceDocRequest);
+      _bodyData = _serializers.serialize(updateBankLevelDynamicResourceDocRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -324,14 +324,14 @@ class DynamicResourceDocApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetBankLevelDynamicResourceDoc200Response? _responseData;
+    GetBankLevelDynamicResourceDoc200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetBankLevelDynamicResourceDoc200Response),
-      ) as OBPv400GetBankLevelDynamicResourceDoc200Response;
+        specifiedType: const FullType(GetBankLevelDynamicResourceDoc200Response),
+      ) as GetBankLevelDynamicResourceDoc200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -343,7 +343,7 @@ class DynamicResourceDocApi {
       );
     }
 
-    return Response<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+    return Response<GetBankLevelDynamicResourceDoc200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -369,7 +369,7 @@ class DynamicResourceDocApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv400DeleteBankLevelDynamicResourceDoc({ 
+  Future<Response<void>> deleteBankLevelDynamicResourceDoc({ 
     required String bankid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -397,7 +397,7 @@ class DynamicResourceDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -430,7 +430,7 @@ class DynamicResourceDocApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv400DeleteDynamicResourceDoc({ 
+  Future<Response<void>> deleteDynamicResourceDoc({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -457,7 +457,7 @@ class DynamicResourceDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -489,9 +489,9 @@ class DynamicResourceDocApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllDynamicResourceDocs200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllDynamicResourceDocs200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllDynamicResourceDocs200Response>> oBPv400GetAllBankLevelDynamicResourceDocs({ 
+  Future<Response<GetAllDynamicResourceDocs200Response>> getAllBankLevelDynamicResourceDocs({ 
     required String bankid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -519,7 +519,7 @@ class DynamicResourceDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -536,14 +536,14 @@ class DynamicResourceDocApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllDynamicResourceDocs200Response? _responseData;
+    GetAllDynamicResourceDocs200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllDynamicResourceDocs200Response),
-      ) as OBPv400GetAllDynamicResourceDocs200Response;
+        specifiedType: const FullType(GetAllDynamicResourceDocs200Response),
+      ) as GetAllDynamicResourceDocs200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -555,7 +555,7 @@ class DynamicResourceDocApi {
       );
     }
 
-    return Response<OBPv400GetAllDynamicResourceDocs200Response>(
+    return Response<GetAllDynamicResourceDocs200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -578,9 +578,9 @@ class DynamicResourceDocApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllDynamicResourceDocs200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllDynamicResourceDocs200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllDynamicResourceDocs200Response>> oBPv400GetAllDynamicResourceDocs({ 
+  Future<Response<GetAllDynamicResourceDocs200Response>> getAllDynamicResourceDocs({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -607,7 +607,7 @@ class DynamicResourceDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -624,14 +624,14 @@ class DynamicResourceDocApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllDynamicResourceDocs200Response? _responseData;
+    GetAllDynamicResourceDocs200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllDynamicResourceDocs200Response),
-      ) as OBPv400GetAllDynamicResourceDocs200Response;
+        specifiedType: const FullType(GetAllDynamicResourceDocs200Response),
+      ) as GetAllDynamicResourceDocs200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -643,7 +643,7 @@ class DynamicResourceDocApi {
       );
     }
 
-    return Response<OBPv400GetAllDynamicResourceDocs200Response>(
+    return Response<GetAllDynamicResourceDocs200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -667,9 +667,9 @@ class DynamicResourceDocApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetBankLevelDynamicResourceDoc200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetBankLevelDynamicResourceDoc200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetBankLevelDynamicResourceDoc200Response>> oBPv400GetBankLevelDynamicResourceDoc({ 
+  Future<Response<GetBankLevelDynamicResourceDoc200Response>> getBankLevelDynamicResourceDoc({ 
     required String bankid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -697,7 +697,7 @@ class DynamicResourceDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -714,14 +714,14 @@ class DynamicResourceDocApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetBankLevelDynamicResourceDoc200Response? _responseData;
+    GetBankLevelDynamicResourceDoc200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetBankLevelDynamicResourceDoc200Response),
-      ) as OBPv400GetBankLevelDynamicResourceDoc200Response;
+        specifiedType: const FullType(GetBankLevelDynamicResourceDoc200Response),
+      ) as GetBankLevelDynamicResourceDoc200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -733,7 +733,7 @@ class DynamicResourceDocApi {
       );
     }
 
-    return Response<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+    return Response<GetBankLevelDynamicResourceDoc200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -756,9 +756,9 @@ class DynamicResourceDocApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetBankLevelDynamicResourceDoc200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetBankLevelDynamicResourceDoc200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetBankLevelDynamicResourceDoc200Response>> oBPv400GetDynamicResourceDoc({ 
+  Future<Response<GetBankLevelDynamicResourceDoc200Response>> getDynamicResourceDoc({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -785,7 +785,7 @@ class DynamicResourceDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -802,14 +802,14 @@ class DynamicResourceDocApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetBankLevelDynamicResourceDoc200Response? _responseData;
+    GetBankLevelDynamicResourceDoc200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetBankLevelDynamicResourceDoc200Response),
-      ) as OBPv400GetBankLevelDynamicResourceDoc200Response;
+        specifiedType: const FullType(GetBankLevelDynamicResourceDoc200Response),
+      ) as GetBankLevelDynamicResourceDoc200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -821,7 +821,7 @@ class DynamicResourceDocApi {
       );
     }
 
-    return Response<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+    return Response<GetBankLevelDynamicResourceDoc200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -838,7 +838,7 @@ class DynamicResourceDocApi {
   ///
   /// Parameters:
   /// * [bankid] - The BANKID identifier
-  /// * [oBPv400UpdateBankLevelDynamicResourceDocRequest] - Request body
+  /// * [updateBankLevelDynamicResourceDocRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -846,11 +846,11 @@ class DynamicResourceDocApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetBankLevelDynamicResourceDoc200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetBankLevelDynamicResourceDoc200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetBankLevelDynamicResourceDoc200Response>> oBPv400UpdateBankLevelDynamicResourceDoc({ 
+  Future<Response<GetBankLevelDynamicResourceDoc200Response>> updateBankLevelDynamicResourceDoc({ 
     required String bankid,
-    required OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest,
+    required UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -877,7 +877,7 @@ class DynamicResourceDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -890,8 +890,8 @@ class DynamicResourceDocApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400UpdateBankLevelDynamicResourceDocRequest);
-      _bodyData = _serializers.serialize(oBPv400UpdateBankLevelDynamicResourceDocRequest, specifiedType: _type);
+      const _type = FullType(UpdateBankLevelDynamicResourceDocRequest);
+      _bodyData = _serializers.serialize(updateBankLevelDynamicResourceDocRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -914,14 +914,14 @@ class DynamicResourceDocApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetBankLevelDynamicResourceDoc200Response? _responseData;
+    GetBankLevelDynamicResourceDoc200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetBankLevelDynamicResourceDoc200Response),
-      ) as OBPv400GetBankLevelDynamicResourceDoc200Response;
+        specifiedType: const FullType(GetBankLevelDynamicResourceDoc200Response),
+      ) as GetBankLevelDynamicResourceDoc200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -933,7 +933,7 @@ class DynamicResourceDocApi {
       );
     }
 
-    return Response<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+    return Response<GetBankLevelDynamicResourceDoc200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -949,7 +949,7 @@ class DynamicResourceDocApi {
   /// &lt;p&gt;Update a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
   ///
   /// Parameters:
-  /// * [oBPv400UpdateBankLevelDynamicResourceDocRequest] - Request body
+  /// * [updateBankLevelDynamicResourceDocRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -957,10 +957,10 @@ class DynamicResourceDocApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetBankLevelDynamicResourceDoc200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetBankLevelDynamicResourceDoc200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetBankLevelDynamicResourceDoc200Response>> oBPv400UpdateDynamicResourceDoc({ 
-    required OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest,
+  Future<Response<GetBankLevelDynamicResourceDoc200Response>> updateDynamicResourceDoc({ 
+    required UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -987,7 +987,7 @@ class DynamicResourceDocApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -1000,8 +1000,8 @@ class DynamicResourceDocApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400UpdateBankLevelDynamicResourceDocRequest);
-      _bodyData = _serializers.serialize(oBPv400UpdateBankLevelDynamicResourceDocRequest, specifiedType: _type);
+      const _type = FullType(UpdateBankLevelDynamicResourceDocRequest);
+      _bodyData = _serializers.serialize(updateBankLevelDynamicResourceDocRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -1024,14 +1024,14 @@ class DynamicResourceDocApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetBankLevelDynamicResourceDoc200Response? _responseData;
+    GetBankLevelDynamicResourceDoc200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetBankLevelDynamicResourceDoc200Response),
-      ) as OBPv400GetBankLevelDynamicResourceDoc200Response;
+        specifiedType: const FullType(GetBankLevelDynamicResourceDoc200Response),
+      ) as GetBankLevelDynamicResourceDoc200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -1043,7 +1043,7 @@ class DynamicResourceDocApi {
       );
     }
 
-    return Response<OBPv400GetBankLevelDynamicResourceDoc200Response>(
+    return Response<GetBankLevelDynamicResourceDoc200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

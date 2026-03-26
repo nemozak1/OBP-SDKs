@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,13 +11,13 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv121UpdateTransactionNarrative200Response
+import com.openbankproject.model.AccountAccessUniqueIndexCheck200Response
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object SystemIntegrityApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new SystemIntegrityApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new SystemIntegrityApi(baseUrl)
 }
 
 class SystemIntegrityApi(baseUrl: String) {
@@ -26,26 +26,26 @@ class SystemIntegrityApi(baseUrl: String) {
    * <p>Check unique index at account access table.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : AccountAccessUniqueIndexCheck200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv510AccountAccessUniqueIndexCheck(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def accountAccessUniqueIndexCheck(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], AccountAccessUniqueIndexCheck200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[AccountAccessUniqueIndexCheck200Response])
 
   /**
    * <p>Check for sensible currencies at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : AccountAccessUniqueIndexCheck200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -54,38 +54,38 @@ class SystemIntegrityApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    */
-  def oBPv510AccountCurrencyCheck(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def accountCurrencyCheck(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], AccountAccessUniqueIndexCheck200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v5.1.0/management/system/integrity/banks/${bankid}/account-currency-check")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[AccountAccessUniqueIndexCheck200Response])
 
   /**
    * <p>Check custom view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : AccountAccessUniqueIndexCheck200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv510CustomViewNamesCheck(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def customViewNamesCheck(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], AccountAccessUniqueIndexCheck200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v5.1.0/management/system/integrity/custom-view-names-check")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[AccountAccessUniqueIndexCheck200Response])
 
   /**
    * <p>Check for orphaned accounts at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : AccountAccessUniqueIndexCheck200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -94,31 +94,31 @@ class SystemIntegrityApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    */
-  def oBPv510OrphanedAccountCheck(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def orphanedAccountCheck(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], AccountAccessUniqueIndexCheck200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v5.1.0/management/system/integrity/banks/${bankid}/orphaned-account-check")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[AccountAccessUniqueIndexCheck200Response])
 
   /**
    * <p>Check system view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : AccountAccessUniqueIndexCheck200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv510SystemViewNamesCheck(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def systemViewNamesCheck(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], AccountAccessUniqueIndexCheck200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v5.1.0/management/system/integrity/system-view-names-check")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[AccountAccessUniqueIndexCheck200Response])
 
 }

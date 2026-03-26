@@ -1,0 +1,10 @@
+# OpenBankProject.Model.GetFastFirehoseAccountsAtOneBank200Response
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Accounts** | [**List&lt;GetFastFirehoseAccountsAtOneBank200ResponseAccountsInner&gt;**](GetFastFirehoseAccountsAtOneBank200ResponseAccountsInner.md) |  | [optional] 
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+

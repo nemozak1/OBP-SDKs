@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,67 +15,67 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv600AddUserToGroup200Response,
-  OBPv600AddUserToGroupRequest,
-  OBPv600CreateGroupRequest,
-  OBPv600GetGroupEntitlements200Response,
-  OBPv600GetGroups200Response,
-  OBPv600GetGroups200ResponsePropertiesGroupsItems,
-  OBPv600GetUserGroupMemberships200Response,
-  OBPv600UpdateGroupRequest,
+  AddUserToGroup200Response,
+  AddUserToGroupRequest,
+  CreateGroupRequest,
+  GetGroupEntitlements200Response,
+  GetGroups200Response,
+  GetGroups200ResponseGroupsInner,
+  GetUserGroupMemberships200Response,
+  UpdateGroupRequest,
 } from '../models/index';
 import {
-    OBPv600AddUserToGroup200ResponseFromJSON,
-    OBPv600AddUserToGroup200ResponseToJSON,
-    OBPv600AddUserToGroupRequestFromJSON,
-    OBPv600AddUserToGroupRequestToJSON,
-    OBPv600CreateGroupRequestFromJSON,
-    OBPv600CreateGroupRequestToJSON,
-    OBPv600GetGroupEntitlements200ResponseFromJSON,
-    OBPv600GetGroupEntitlements200ResponseToJSON,
-    OBPv600GetGroups200ResponseFromJSON,
-    OBPv600GetGroups200ResponseToJSON,
-    OBPv600GetGroups200ResponsePropertiesGroupsItemsFromJSON,
-    OBPv600GetGroups200ResponsePropertiesGroupsItemsToJSON,
-    OBPv600GetUserGroupMemberships200ResponseFromJSON,
-    OBPv600GetUserGroupMemberships200ResponseToJSON,
-    OBPv600UpdateGroupRequestFromJSON,
-    OBPv600UpdateGroupRequestToJSON,
+    AddUserToGroup200ResponseFromJSON,
+    AddUserToGroup200ResponseToJSON,
+    AddUserToGroupRequestFromJSON,
+    AddUserToGroupRequestToJSON,
+    CreateGroupRequestFromJSON,
+    CreateGroupRequestToJSON,
+    GetGroupEntitlements200ResponseFromJSON,
+    GetGroupEntitlements200ResponseToJSON,
+    GetGroups200ResponseFromJSON,
+    GetGroups200ResponseToJSON,
+    GetGroups200ResponseGroupsInnerFromJSON,
+    GetGroups200ResponseGroupsInnerToJSON,
+    GetUserGroupMemberships200ResponseFromJSON,
+    GetUserGroupMemberships200ResponseToJSON,
+    UpdateGroupRequestFromJSON,
+    UpdateGroupRequestToJSON,
 } from '../models/index';
 
-export interface OBPv600AddUserToGroupOperationRequest {
+export interface AddUserToGroupOperationRequest {
     userid: string;
-    oBPv600AddUserToGroupRequest: OBPv600AddUserToGroupRequest;
+    addUserToGroupRequest: AddUserToGroupRequest;
 }
 
-export interface OBPv600CreateGroupOperationRequest {
-    oBPv600CreateGroupRequest: OBPv600CreateGroupRequest;
+export interface CreateGroupOperationRequest {
+    createGroupRequest: CreateGroupRequest;
 }
 
-export interface OBPv600DeleteGroupRequest {
+export interface DeleteGroupRequest {
     groupid: string;
 }
 
-export interface OBPv600GetGroupRequest {
+export interface GetGroupRequest {
     groupid: string;
 }
 
-export interface OBPv600GetGroupEntitlementsRequest {
+export interface GetGroupEntitlementsRequest {
     groupid: string;
 }
 
-export interface OBPv600GetUserGroupMembershipsRequest {
+export interface GetUserGroupMembershipsRequest {
     userid: string;
 }
 
-export interface OBPv600RemoveUserFromGroupRequest {
+export interface RemoveUserFromGroupRequest {
     userid: string;
     groupid: string;
 }
 
-export interface OBPv600UpdateGroupOperationRequest {
+export interface UpdateGroupOperationRequest {
     groupid: string;
-    oBPv600UpdateGroupRequest: OBPv600UpdateGroupRequest;
+    updateGroupRequest: UpdateGroupRequest;
 }
 
 /**
@@ -84,20 +84,20 @@ export interface OBPv600UpdateGroupOperationRequest {
 export class GroupApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv600AddUserToGroup without sending the request
+     * Creates request options for addUserToGroup without sending the request
      */
-    async oBPv600AddUserToGroupRequestOpts(requestParameters: OBPv600AddUserToGroupOperationRequest): Promise<runtime.RequestOpts> {
+    async addUserToGroupRequestOpts(requestParameters: AddUserToGroupOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['userid'] == null) {
             throw new runtime.RequiredError(
                 'userid',
-                'Required parameter "userid" was null or undefined when calling oBPv600AddUserToGroup().'
+                'Required parameter "userid" was null or undefined when calling addUserToGroup().'
             );
         }
 
-        if (requestParameters['oBPv600AddUserToGroupRequest'] == null) {
+        if (requestParameters['addUserToGroupRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600AddUserToGroupRequest',
-                'Required parameter "oBPv600AddUserToGroupRequest" was null or undefined when calling oBPv600AddUserToGroup().'
+                'addUserToGroupRequest',
+                'Required parameter "addUserToGroupRequest" was null or undefined when calling addUserToGroup().'
             );
         }
 
@@ -117,7 +117,7 @@ export class GroupApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -129,7 +129,7 @@ export class GroupApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600AddUserToGroupRequestToJSON(requestParameters['oBPv600AddUserToGroupRequest']),
+            body: AddUserToGroupRequestToJSON(requestParameters['addUserToGroupRequest']),
         };
     }
 
@@ -137,30 +137,30 @@ export class GroupApi extends runtime.BaseAPI {
      * <p>Grant the User Group Entitlements.</p> <p>This endpoint creates entitlements for every Role in the Group. If the user<br /> already has a particular role at the same bank, that entitlement is skipped (not duplicated).</p> <p>Each entitlement created will have:<br /> - group_id set to the group ID<br /> - process set to &quot;GROUP_MEMBERSHIP&quot;</p> <p><strong>Response Fields:</strong><br /> - target_entitlements: All roles defined in the group (the complete list of entitlements that this group aims to grant)<br /> - entitlements_created: Roles that were newly created as entitlements during this operation<br /> - entitlements_skipped: Roles that the user already possessed, so no new entitlement was created</p> <p>Note: target_entitlements = entitlements_created + entitlements_skipped</p> <p>Requires either:<br /> - CanAddUserToGroupAtAllBanks (for any group)<br /> - CanAddUserToGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>entitlements_created</strong></a>: entitlements_created</p> <p><a href=\"/glossary#\"><strong>entitlements_skipped</strong></a>: entitlements_skipped</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>target_entitlements</strong></a>: target_entitlements</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
      * Grant User Membership to Group Entitlements
      */
-    async oBPv600AddUserToGroupRaw(requestParameters: OBPv600AddUserToGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600AddUserToGroup200Response>> {
-        const requestOptions = await this.oBPv600AddUserToGroupRequestOpts(requestParameters);
+    async addUserToGroupRaw(requestParameters: AddUserToGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AddUserToGroup200Response>> {
+        const requestOptions = await this.addUserToGroupRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600AddUserToGroup200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => AddUserToGroup200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Grant the User Group Entitlements.</p> <p>This endpoint creates entitlements for every Role in the Group. If the user<br /> already has a particular role at the same bank, that entitlement is skipped (not duplicated).</p> <p>Each entitlement created will have:<br /> - group_id set to the group ID<br /> - process set to &quot;GROUP_MEMBERSHIP&quot;</p> <p><strong>Response Fields:</strong><br /> - target_entitlements: All roles defined in the group (the complete list of entitlements that this group aims to grant)<br /> - entitlements_created: Roles that were newly created as entitlements during this operation<br /> - entitlements_skipped: Roles that the user already possessed, so no new entitlement was created</p> <p>Note: target_entitlements = entitlements_created + entitlements_skipped</p> <p>Requires either:<br /> - CanAddUserToGroupAtAllBanks (for any group)<br /> - CanAddUserToGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>entitlements_created</strong></a>: entitlements_created</p> <p><a href=\"/glossary#\"><strong>entitlements_skipped</strong></a>: entitlements_skipped</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>target_entitlements</strong></a>: target_entitlements</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
      * Grant User Membership to Group Entitlements
      */
-    async oBPv600AddUserToGroup(requestParameters: OBPv600AddUserToGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600AddUserToGroup200Response> {
-        const response = await this.oBPv600AddUserToGroupRaw(requestParameters, initOverrides);
+    async addUserToGroup(requestParameters: AddUserToGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AddUserToGroup200Response> {
+        const response = await this.addUserToGroupRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600CreateGroup without sending the request
+     * Creates request options for createGroup without sending the request
      */
-    async oBPv600CreateGroupRequestOpts(requestParameters: OBPv600CreateGroupOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['oBPv600CreateGroupRequest'] == null) {
+    async createGroupRequestOpts(requestParameters: CreateGroupOperationRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['createGroupRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600CreateGroupRequest',
-                'Required parameter "oBPv600CreateGroupRequest" was null or undefined when calling oBPv600CreateGroup().'
+                'createGroupRequest',
+                'Required parameter "createGroupRequest" was null or undefined when calling createGroup().'
             );
         }
 
@@ -180,7 +180,7 @@ export class GroupApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -191,7 +191,7 @@ export class GroupApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600CreateGroupRequestToJSON(requestParameters['oBPv600CreateGroupRequest']),
+            body: CreateGroupRequestToJSON(requestParameters['createGroupRequest']),
         };
     }
 
@@ -199,30 +199,30 @@ export class GroupApi extends runtime.BaseAPI {
      * <p>Create a new group of roles.</p> <p>Groups can be either:<br /> - System-level (bank_id = null) - requires CanCreateGroupAtAllBanks role<br /> - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role</p> <p>A group contains a list of role names that can be assigned together.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
      * Create Group
      */
-    async oBPv600CreateGroupRaw(requestParameters: OBPv600CreateGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems>> {
-        const requestOptions = await this.oBPv600CreateGroupRequestOpts(requestParameters);
+    async createGroupRaw(requestParameters: CreateGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetGroups200ResponseGroupsInner>> {
+        const requestOptions = await this.createGroupRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetGroups200ResponsePropertiesGroupsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetGroups200ResponseGroupsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create a new group of roles.</p> <p>Groups can be either:<br /> - System-level (bank_id = null) - requires CanCreateGroupAtAllBanks role<br /> - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role</p> <p>A group contains a list of role names that can be assigned together.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
      * Create Group
      */
-    async oBPv600CreateGroup(requestParameters: OBPv600CreateGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetGroups200ResponsePropertiesGroupsItems> {
-        const response = await this.oBPv600CreateGroupRaw(requestParameters, initOverrides);
+    async createGroup(requestParameters: CreateGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetGroups200ResponseGroupsInner> {
+        const response = await this.createGroupRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600DeleteGroup without sending the request
+     * Creates request options for deleteGroup without sending the request
      */
-    async oBPv600DeleteGroupRequestOpts(requestParameters: OBPv600DeleteGroupRequest): Promise<runtime.RequestOpts> {
+    async deleteGroupRequestOpts(requestParameters: DeleteGroupRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['groupid'] == null) {
             throw new runtime.RequiredError(
                 'groupid',
-                'Required parameter "groupid" was null or undefined when calling oBPv600DeleteGroup().'
+                'Required parameter "groupid" was null or undefined when calling deleteGroup().'
             );
         }
 
@@ -240,7 +240,7 @@ export class GroupApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -259,8 +259,8 @@ export class GroupApi extends runtime.BaseAPI {
      * <p>Delete a Group.</p> <p>Requires either:<br /> - CanDeleteGroupAtAllBanks (for any group)<br /> - CanDeleteGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Group
      */
-    async oBPv600DeleteGroupRaw(requestParameters: OBPv600DeleteGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv600DeleteGroupRequestOpts(requestParameters);
+    async deleteGroupRaw(requestParameters: DeleteGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteGroupRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -270,18 +270,18 @@ export class GroupApi extends runtime.BaseAPI {
      * <p>Delete a Group.</p> <p>Requires either:<br /> - CanDeleteGroupAtAllBanks (for any group)<br /> - CanDeleteGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Group
      */
-    async oBPv600DeleteGroup(requestParameters: OBPv600DeleteGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv600DeleteGroupRaw(requestParameters, initOverrides);
+    async deleteGroup(requestParameters: DeleteGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteGroupRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv600GetGroup without sending the request
+     * Creates request options for getGroup without sending the request
      */
-    async oBPv600GetGroupRequestOpts(requestParameters: OBPv600GetGroupRequest): Promise<runtime.RequestOpts> {
+    async getGroupRequestOpts(requestParameters: GetGroupRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['groupid'] == null) {
             throw new runtime.RequiredError(
                 'groupid',
-                'Required parameter "groupid" was null or undefined when calling oBPv600GetGroup().'
+                'Required parameter "groupid" was null or undefined when calling getGroup().'
             );
         }
 
@@ -299,7 +299,7 @@ export class GroupApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -318,30 +318,30 @@ export class GroupApi extends runtime.BaseAPI {
      * <p>Get a group by its ID.</p> <p>Requires either:<br /> - CanGetGroupsAtAllBanks (for any group)<br /> - CanGetGroupsAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
      * Get Group
      */
-    async oBPv600GetGroupRaw(requestParameters: OBPv600GetGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems>> {
-        const requestOptions = await this.oBPv600GetGroupRequestOpts(requestParameters);
+    async getGroupRaw(requestParameters: GetGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetGroups200ResponseGroupsInner>> {
+        const requestOptions = await this.getGroupRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetGroups200ResponsePropertiesGroupsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetGroups200ResponseGroupsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get a group by its ID.</p> <p>Requires either:<br /> - CanGetGroupsAtAllBanks (for any group)<br /> - CanGetGroupsAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
      * Get Group
      */
-    async oBPv600GetGroup(requestParameters: OBPv600GetGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetGroups200ResponsePropertiesGroupsItems> {
-        const response = await this.oBPv600GetGroupRaw(requestParameters, initOverrides);
+    async getGroup(requestParameters: GetGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetGroups200ResponseGroupsInner> {
+        const response = await this.getGroupRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetGroupEntitlements without sending the request
+     * Creates request options for getGroupEntitlements without sending the request
      */
-    async oBPv600GetGroupEntitlementsRequestOpts(requestParameters: OBPv600GetGroupEntitlementsRequest): Promise<runtime.RequestOpts> {
+    async getGroupEntitlementsRequestOpts(requestParameters: GetGroupEntitlementsRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['groupid'] == null) {
             throw new runtime.RequiredError(
                 'groupid',
-                'Required parameter "groupid" was null or undefined when calling oBPv600GetGroupEntitlements().'
+                'Required parameter "groupid" was null or undefined when calling getGroupEntitlements().'
             );
         }
 
@@ -359,7 +359,7 @@ export class GroupApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -378,26 +378,26 @@ export class GroupApi extends runtime.BaseAPI {
      * <p>Get all entitlements that have been granted from a specific group.</p> <p>This returns all entitlements where the group_id matches the specified GROUP_ID.</p> <p>Requires:<br /> - CanGetEntitlementsForAnyBank</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#entitlement_id\"><strong>entitlement_id</strong></a>:</p> <p><a href=\"/glossary#entitlements\"><strong>entitlements</strong></a>:</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\">group_id</a>: group_id</p> <p><a href=\"/glossary#process\">process</a>: obp.getBank</p> 
      * Get Group Entitlements
      */
-    async oBPv600GetGroupEntitlementsRaw(requestParameters: OBPv600GetGroupEntitlementsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetGroupEntitlements200Response>> {
-        const requestOptions = await this.oBPv600GetGroupEntitlementsRequestOpts(requestParameters);
+    async getGroupEntitlementsRaw(requestParameters: GetGroupEntitlementsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetGroupEntitlements200Response>> {
+        const requestOptions = await this.getGroupEntitlementsRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetGroupEntitlements200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetGroupEntitlements200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all entitlements that have been granted from a specific group.</p> <p>This returns all entitlements where the group_id matches the specified GROUP_ID.</p> <p>Requires:<br /> - CanGetEntitlementsForAnyBank</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#entitlement_id\"><strong>entitlement_id</strong></a>:</p> <p><a href=\"/glossary#entitlements\"><strong>entitlements</strong></a>:</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\">group_id</a>: group_id</p> <p><a href=\"/glossary#process\">process</a>: obp.getBank</p> 
      * Get Group Entitlements
      */
-    async oBPv600GetGroupEntitlements(requestParameters: OBPv600GetGroupEntitlementsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetGroupEntitlements200Response> {
-        const response = await this.oBPv600GetGroupEntitlementsRaw(requestParameters, initOverrides);
+    async getGroupEntitlements(requestParameters: GetGroupEntitlementsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetGroupEntitlements200Response> {
+        const response = await this.getGroupEntitlementsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetGroups without sending the request
+     * Creates request options for getGroups without sending the request
      */
-    async oBPv600GetGroupsRequestOpts(): Promise<runtime.RequestOpts> {
+    async getGroupsRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -412,7 +412,7 @@ export class GroupApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -430,30 +430,30 @@ export class GroupApi extends runtime.BaseAPI {
      * <p>Get all groups. Optionally filter by bank_id.</p> <p>Query parameters:<br /> - bank_id (optional): Filter groups by bank. Use &quot;null&quot; or omit for system-level groups.</p> <p>Requires either:<br /> - CanGetGroupsAtAllBanks (for any/all groups)<br /> - CanGetGroupsAtOneBank (for groups at specific bank with bank_id parameter)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>groups</strong></a>: groups</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
      * Get Groups
      */
-    async oBPv600GetGroupsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetGroups200Response>> {
-        const requestOptions = await this.oBPv600GetGroupsRequestOpts();
+    async getGroupsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetGroups200Response>> {
+        const requestOptions = await this.getGroupsRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetGroups200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetGroups200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all groups. Optionally filter by bank_id.</p> <p>Query parameters:<br /> - bank_id (optional): Filter groups by bank. Use &quot;null&quot; or omit for system-level groups.</p> <p>Requires either:<br /> - CanGetGroupsAtAllBanks (for any/all groups)<br /> - CanGetGroupsAtOneBank (for groups at specific bank with bank_id parameter)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>groups</strong></a>: groups</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
      * Get Groups
      */
-    async oBPv600GetGroups(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetGroups200Response> {
-        const response = await this.oBPv600GetGroupsRaw(initOverrides);
+    async getGroups(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetGroups200Response> {
+        const response = await this.getGroupsRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetUserGroupMemberships without sending the request
+     * Creates request options for getUserGroupMemberships without sending the request
      */
-    async oBPv600GetUserGroupMembershipsRequestOpts(requestParameters: OBPv600GetUserGroupMembershipsRequest): Promise<runtime.RequestOpts> {
+    async getUserGroupMembershipsRequestOpts(requestParameters: GetUserGroupMembershipsRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['userid'] == null) {
             throw new runtime.RequiredError(
                 'userid',
-                'Required parameter "userid" was null or undefined when calling oBPv600GetUserGroupMemberships().'
+                'Required parameter "userid" was null or undefined when calling getUserGroupMemberships().'
             );
         }
 
@@ -471,7 +471,7 @@ export class GroupApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -490,37 +490,37 @@ export class GroupApi extends runtime.BaseAPI {
      * <p>Get all groups a user is a member of.</p> <p>Returns groups where the user has entitlements with process = &quot;GROUP_MEMBERSHIP&quot;.</p> <p>The response includes:<br /> - list_of_entitlements: entitlements the user currently has from this group membership</p> <p>Requires either:<br /> - CanGetUserGroupMembershipsAtAllBanks (for any user)<br /> - CanGetUserGroupMembershipsAtOneBank (for users at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_entitlements</strong></a>: group_entitlements</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>list_of_entitlements</strong></a>: list_of_entitlements</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
      * Get User\'s Group Memberships
      */
-    async oBPv600GetUserGroupMembershipsRaw(requestParameters: OBPv600GetUserGroupMembershipsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetUserGroupMemberships200Response>> {
-        const requestOptions = await this.oBPv600GetUserGroupMembershipsRequestOpts(requestParameters);
+    async getUserGroupMembershipsRaw(requestParameters: GetUserGroupMembershipsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetUserGroupMemberships200Response>> {
+        const requestOptions = await this.getUserGroupMembershipsRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetUserGroupMemberships200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetUserGroupMemberships200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all groups a user is a member of.</p> <p>Returns groups where the user has entitlements with process = &quot;GROUP_MEMBERSHIP&quot;.</p> <p>The response includes:<br /> - list_of_entitlements: entitlements the user currently has from this group membership</p> <p>Requires either:<br /> - CanGetUserGroupMembershipsAtAllBanks (for any user)<br /> - CanGetUserGroupMembershipsAtOneBank (for users at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_entitlements</strong></a>: group_entitlements</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>list_of_entitlements</strong></a>: list_of_entitlements</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
      * Get User\'s Group Memberships
      */
-    async oBPv600GetUserGroupMemberships(requestParameters: OBPv600GetUserGroupMembershipsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetUserGroupMemberships200Response> {
-        const response = await this.oBPv600GetUserGroupMembershipsRaw(requestParameters, initOverrides);
+    async getUserGroupMemberships(requestParameters: GetUserGroupMembershipsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetUserGroupMemberships200Response> {
+        const response = await this.getUserGroupMembershipsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600RemoveUserFromGroup without sending the request
+     * Creates request options for removeUserFromGroup without sending the request
      */
-    async oBPv600RemoveUserFromGroupRequestOpts(requestParameters: OBPv600RemoveUserFromGroupRequest): Promise<runtime.RequestOpts> {
+    async removeUserFromGroupRequestOpts(requestParameters: RemoveUserFromGroupRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['userid'] == null) {
             throw new runtime.RequiredError(
                 'userid',
-                'Required parameter "userid" was null or undefined when calling oBPv600RemoveUserFromGroup().'
+                'Required parameter "userid" was null or undefined when calling removeUserFromGroup().'
             );
         }
 
         if (requestParameters['groupid'] == null) {
             throw new runtime.RequiredError(
                 'groupid',
-                'Required parameter "groupid" was null or undefined when calling oBPv600RemoveUserFromGroup().'
+                'Required parameter "groupid" was null or undefined when calling removeUserFromGroup().'
             );
         }
 
@@ -538,7 +538,7 @@ export class GroupApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -558,8 +558,8 @@ export class GroupApi extends runtime.BaseAPI {
      * <p>Remove a user from a group. This will delete all entitlements that were created by this group membership.</p> <p>Only removes entitlements with:<br /> - group_id matching GROUP_ID<br /> - process = &quot;GROUP_MEMBERSHIP&quot;</p> <p>Requires either:<br /> - CanRemoveUserFromGroupAtAllBanks (for any group)<br /> - CanRemoveUserFromGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> 
      * Remove User from Group
      */
-    async oBPv600RemoveUserFromGroupRaw(requestParameters: OBPv600RemoveUserFromGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv600RemoveUserFromGroupRequestOpts(requestParameters);
+    async removeUserFromGroupRaw(requestParameters: RemoveUserFromGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.removeUserFromGroupRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -569,25 +569,25 @@ export class GroupApi extends runtime.BaseAPI {
      * <p>Remove a user from a group. This will delete all entitlements that were created by this group membership.</p> <p>Only removes entitlements with:<br /> - group_id matching GROUP_ID<br /> - process = &quot;GROUP_MEMBERSHIP&quot;</p> <p>Requires either:<br /> - CanRemoveUserFromGroupAtAllBanks (for any group)<br /> - CanRemoveUserFromGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> 
      * Remove User from Group
      */
-    async oBPv600RemoveUserFromGroup(requestParameters: OBPv600RemoveUserFromGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv600RemoveUserFromGroupRaw(requestParameters, initOverrides);
+    async removeUserFromGroup(requestParameters: RemoveUserFromGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.removeUserFromGroupRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv600UpdateGroup without sending the request
+     * Creates request options for updateGroup without sending the request
      */
-    async oBPv600UpdateGroupRequestOpts(requestParameters: OBPv600UpdateGroupOperationRequest): Promise<runtime.RequestOpts> {
+    async updateGroupRequestOpts(requestParameters: UpdateGroupOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['groupid'] == null) {
             throw new runtime.RequiredError(
                 'groupid',
-                'Required parameter "groupid" was null or undefined when calling oBPv600UpdateGroup().'
+                'Required parameter "groupid" was null or undefined when calling updateGroup().'
             );
         }
 
-        if (requestParameters['oBPv600UpdateGroupRequest'] == null) {
+        if (requestParameters['updateGroupRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600UpdateGroupRequest',
-                'Required parameter "oBPv600UpdateGroupRequest" was null or undefined when calling oBPv600UpdateGroup().'
+                'updateGroupRequest',
+                'Required parameter "updateGroupRequest" was null or undefined when calling updateGroup().'
             );
         }
 
@@ -607,7 +607,7 @@ export class GroupApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -619,7 +619,7 @@ export class GroupApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600UpdateGroupRequestToJSON(requestParameters['oBPv600UpdateGroupRequest']),
+            body: UpdateGroupRequestToJSON(requestParameters['updateGroupRequest']),
         };
     }
 
@@ -627,19 +627,19 @@ export class GroupApi extends runtime.BaseAPI {
      * <p>Update a group. All fields are optional.</p> <p>Requires either:<br /> - CanUpdateGroupAtAllBanks (for any group)<br /> - CanUpdateGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
      * Update Group
      */
-    async oBPv600UpdateGroupRaw(requestParameters: OBPv600UpdateGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems>> {
-        const requestOptions = await this.oBPv600UpdateGroupRequestOpts(requestParameters);
+    async updateGroupRaw(requestParameters: UpdateGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetGroups200ResponseGroupsInner>> {
+        const requestOptions = await this.updateGroupRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetGroups200ResponsePropertiesGroupsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetGroups200ResponseGroupsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Update a group. All fields are optional.</p> <p>Requires either:<br /> - CanUpdateGroupAtAllBanks (for any group)<br /> - CanUpdateGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
      * Update Group
      */
-    async oBPv600UpdateGroup(requestParameters: OBPv600UpdateGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetGroups200ResponsePropertiesGroupsItems> {
-        const response = await this.oBPv600UpdateGroupRaw(requestParameters, initOverrides);
+    async updateGroup(requestParameters: UpdateGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetGroups200ResponseGroupsInner> {
+        const response = await this.updateGroupRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

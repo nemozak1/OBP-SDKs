@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv400GetAllAuthenticationTypeValidationsPublic200Response;
-import com.openbankproject.model.OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems;
-import com.openbankproject.model.OBPv400UpdateAuthenticationTypeValidationRequest;
+import com.openbankproject.model.GetAllAuthenticationTypeValidationsPublic200Response;
+import com.openbankproject.model.GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner;
+import com.openbankproject.model.UpdateAuthenticationTypeValidationRequest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -47,7 +47,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class AuthenticationTypeValidationApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -168,25 +168,25 @@ public class AuthenticationTypeValidationApi {
    * Create an Authentication Type Validation
    * &lt;p&gt;Create an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param operationid The OPERATIONID identifier (required)
-   * @param obPv400UpdateAuthenticationTypeValidationRequest Request body (required)
-   * @return OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+   * @param updateAuthenticationTypeValidationRequest Request body (required)
+   * @return GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400CreateAuthenticationTypeValidation(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull OBPv400UpdateAuthenticationTypeValidationRequest obPv400UpdateAuthenticationTypeValidationRequest) throws ApiException {
-    return oBPv400CreateAuthenticationTypeValidation(operationid, obPv400UpdateAuthenticationTypeValidationRequest, null);
+  public GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner createAuthenticationTypeValidation(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest) throws ApiException {
+    return createAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest, null);
   }
 
   /**
    * Create an Authentication Type Validation
    * &lt;p&gt;Create an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param operationid The OPERATIONID identifier (required)
-   * @param obPv400UpdateAuthenticationTypeValidationRequest Request body (required)
+   * @param updateAuthenticationTypeValidationRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+   * @return GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400CreateAuthenticationTypeValidation(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull OBPv400UpdateAuthenticationTypeValidationRequest obPv400UpdateAuthenticationTypeValidationRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> localVarResponse = oBPv400CreateAuthenticationTypeValidationWithHttpInfo(operationid, obPv400UpdateAuthenticationTypeValidationRequest, headers);
+  public GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner createAuthenticationTypeValidation(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> localVarResponse = createAuthenticationTypeValidationWithHttpInfo(operationid, updateAuthenticationTypeValidationRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -194,25 +194,25 @@ public class AuthenticationTypeValidationApi {
    * Create an Authentication Type Validation
    * &lt;p&gt;Create an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param operationid The OPERATIONID identifier (required)
-   * @param obPv400UpdateAuthenticationTypeValidationRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems&gt;
+   * @param updateAuthenticationTypeValidationRequest Request body (required)
+   * @return ApiResponse&lt;GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> oBPv400CreateAuthenticationTypeValidationWithHttpInfo(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull OBPv400UpdateAuthenticationTypeValidationRequest obPv400UpdateAuthenticationTypeValidationRequest) throws ApiException {
-    return oBPv400CreateAuthenticationTypeValidationWithHttpInfo(operationid, obPv400UpdateAuthenticationTypeValidationRequest, null);
+  public ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> createAuthenticationTypeValidationWithHttpInfo(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest) throws ApiException {
+    return createAuthenticationTypeValidationWithHttpInfo(operationid, updateAuthenticationTypeValidationRequest, null);
   }
 
   /**
    * Create an Authentication Type Validation
    * &lt;p&gt;Create an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param operationid The OPERATIONID identifier (required)
-   * @param obPv400UpdateAuthenticationTypeValidationRequest Request body (required)
+   * @param updateAuthenticationTypeValidationRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems&gt;
+   * @return ApiResponse&lt;GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> oBPv400CreateAuthenticationTypeValidationWithHttpInfo(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull OBPv400UpdateAuthenticationTypeValidationRequest obPv400UpdateAuthenticationTypeValidationRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateAuthenticationTypeValidationRequestBuilder(operationid, obPv400UpdateAuthenticationTypeValidationRequest, headers);
+  public ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> createAuthenticationTypeValidationWithHttpInfo(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createAuthenticationTypeValidationRequestBuilder(operationid, updateAuthenticationTypeValidationRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -223,11 +223,11 @@ public class AuthenticationTypeValidationApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateAuthenticationTypeValidation", localVarResponse);
+          throw getApiException("createAuthenticationTypeValidation", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>(
+          return new ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -237,10 +237,10 @@ public class AuthenticationTypeValidationApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>() {});
+        GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>(
+        return new ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -259,14 +259,14 @@ public class AuthenticationTypeValidationApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateAuthenticationTypeValidationRequestBuilder(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull OBPv400UpdateAuthenticationTypeValidationRequest obPv400UpdateAuthenticationTypeValidationRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createAuthenticationTypeValidationRequestBuilder(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'operationid' is set
     if (operationid == null) {
-      throw new ApiException(400, "Missing the required parameter 'operationid' when calling oBPv400CreateAuthenticationTypeValidation");
+      throw new ApiException(400, "Missing the required parameter 'operationid' when calling createAuthenticationTypeValidation");
     }
-    // verify the required parameter 'obPv400UpdateAuthenticationTypeValidationRequest' is set
-    if (obPv400UpdateAuthenticationTypeValidationRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400UpdateAuthenticationTypeValidationRequest' when calling oBPv400CreateAuthenticationTypeValidation");
+    // verify the required parameter 'updateAuthenticationTypeValidationRequest' is set
+    if (updateAuthenticationTypeValidationRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateAuthenticationTypeValidationRequest' when calling createAuthenticationTypeValidation");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -280,7 +280,7 @@ public class AuthenticationTypeValidationApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400UpdateAuthenticationTypeValidationRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateAuthenticationTypeValidationRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -302,8 +302,8 @@ public class AuthenticationTypeValidationApi {
    * @param operationid The OPERATIONID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteAuthenticationTypeValidation(@javax.annotation.Nonnull String operationid) throws ApiException {
-    oBPv400DeleteAuthenticationTypeValidation(operationid, null);
+  public void deleteAuthenticationTypeValidation(@javax.annotation.Nonnull String operationid) throws ApiException {
+    deleteAuthenticationTypeValidation(operationid, null);
   }
 
   /**
@@ -313,8 +313,8 @@ public class AuthenticationTypeValidationApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteAuthenticationTypeValidation(@javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
-    oBPv400DeleteAuthenticationTypeValidationWithHttpInfo(operationid, headers);
+  public void deleteAuthenticationTypeValidation(@javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
+    deleteAuthenticationTypeValidationWithHttpInfo(operationid, headers);
   }
 
   /**
@@ -324,8 +324,8 @@ public class AuthenticationTypeValidationApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteAuthenticationTypeValidationWithHttpInfo(@javax.annotation.Nonnull String operationid) throws ApiException {
-    return oBPv400DeleteAuthenticationTypeValidationWithHttpInfo(operationid, null);
+  public ApiResponse<Void> deleteAuthenticationTypeValidationWithHttpInfo(@javax.annotation.Nonnull String operationid) throws ApiException {
+    return deleteAuthenticationTypeValidationWithHttpInfo(operationid, null);
   }
 
   /**
@@ -336,8 +336,8 @@ public class AuthenticationTypeValidationApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteAuthenticationTypeValidationWithHttpInfo(@javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteAuthenticationTypeValidationRequestBuilder(operationid, headers);
+  public ApiResponse<Void> deleteAuthenticationTypeValidationWithHttpInfo(@javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteAuthenticationTypeValidationRequestBuilder(operationid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -348,7 +348,7 @@ public class AuthenticationTypeValidationApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteAuthenticationTypeValidation", localVarResponse);
+          throw getApiException("deleteAuthenticationTypeValidation", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -373,10 +373,10 @@ public class AuthenticationTypeValidationApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteAuthenticationTypeValidationRequestBuilder(@javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteAuthenticationTypeValidationRequestBuilder(@javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'operationid' is set
     if (operationid == null) {
-      throw new ApiException(400, "Missing the required parameter 'operationid' when calling oBPv400DeleteAuthenticationTypeValidation");
+      throw new ApiException(400, "Missing the required parameter 'operationid' when calling deleteAuthenticationTypeValidation");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -403,44 +403,44 @@ public class AuthenticationTypeValidationApi {
   /**
    * Get all Authentication Type Validations
    * &lt;p&gt;Get all Authentication Type Validations.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @return OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+   * @return GetAllAuthenticationTypeValidationsPublic200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllAuthenticationTypeValidationsPublic200Response oBPv400GetAllAuthenticationTypeValidations() throws ApiException {
-    return oBPv400GetAllAuthenticationTypeValidations(null);
+  public GetAllAuthenticationTypeValidationsPublic200Response getAllAuthenticationTypeValidations() throws ApiException {
+    return getAllAuthenticationTypeValidations(null);
   }
 
   /**
    * Get all Authentication Type Validations
    * &lt;p&gt;Get all Authentication Type Validations.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+   * @return GetAllAuthenticationTypeValidationsPublic200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllAuthenticationTypeValidationsPublic200Response oBPv400GetAllAuthenticationTypeValidations(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response> localVarResponse = oBPv400GetAllAuthenticationTypeValidationsWithHttpInfo(headers);
+  public GetAllAuthenticationTypeValidationsPublic200Response getAllAuthenticationTypeValidations(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response> localVarResponse = getAllAuthenticationTypeValidationsWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get all Authentication Type Validations
    * &lt;p&gt;Get all Authentication Type Validations.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv400GetAllAuthenticationTypeValidationsPublic200Response&gt;
+   * @return ApiResponse&lt;GetAllAuthenticationTypeValidationsPublic200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response> oBPv400GetAllAuthenticationTypeValidationsWithHttpInfo() throws ApiException {
-    return oBPv400GetAllAuthenticationTypeValidationsWithHttpInfo(null);
+  public ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response> getAllAuthenticationTypeValidationsWithHttpInfo() throws ApiException {
+    return getAllAuthenticationTypeValidationsWithHttpInfo(null);
   }
 
   /**
    * Get all Authentication Type Validations
    * &lt;p&gt;Get all Authentication Type Validations.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllAuthenticationTypeValidationsPublic200Response&gt;
+   * @return ApiResponse&lt;GetAllAuthenticationTypeValidationsPublic200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response> oBPv400GetAllAuthenticationTypeValidationsWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetAllAuthenticationTypeValidationsRequestBuilder(headers);
+  public ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response> getAllAuthenticationTypeValidationsWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAllAuthenticationTypeValidationsRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -451,11 +451,11 @@ public class AuthenticationTypeValidationApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetAllAuthenticationTypeValidations", localVarResponse);
+          throw getApiException("getAllAuthenticationTypeValidations", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response>(
+          return new ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -465,10 +465,10 @@ public class AuthenticationTypeValidationApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllAuthenticationTypeValidationsPublic200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllAuthenticationTypeValidationsPublic200Response>() {});
+        GetAllAuthenticationTypeValidationsPublic200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllAuthenticationTypeValidationsPublic200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response>(
+        return new ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -487,7 +487,7 @@ public class AuthenticationTypeValidationApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetAllAuthenticationTypeValidationsRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAllAuthenticationTypeValidationsRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -512,44 +512,44 @@ public class AuthenticationTypeValidationApi {
   /**
    * Get all Authentication Type Validations - public
    * &lt;p&gt;Get all Authentication Type Validations - public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @return OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+   * @return GetAllAuthenticationTypeValidationsPublic200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllAuthenticationTypeValidationsPublic200Response oBPv400GetAllAuthenticationTypeValidationsPublic() throws ApiException {
-    return oBPv400GetAllAuthenticationTypeValidationsPublic(null);
+  public GetAllAuthenticationTypeValidationsPublic200Response getAllAuthenticationTypeValidationsPublic() throws ApiException {
+    return getAllAuthenticationTypeValidationsPublic(null);
   }
 
   /**
    * Get all Authentication Type Validations - public
    * &lt;p&gt;Get all Authentication Type Validations - public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+   * @return GetAllAuthenticationTypeValidationsPublic200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllAuthenticationTypeValidationsPublic200Response oBPv400GetAllAuthenticationTypeValidationsPublic(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response> localVarResponse = oBPv400GetAllAuthenticationTypeValidationsPublicWithHttpInfo(headers);
+  public GetAllAuthenticationTypeValidationsPublic200Response getAllAuthenticationTypeValidationsPublic(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response> localVarResponse = getAllAuthenticationTypeValidationsPublicWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get all Authentication Type Validations - public
    * &lt;p&gt;Get all Authentication Type Validations - public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv400GetAllAuthenticationTypeValidationsPublic200Response&gt;
+   * @return ApiResponse&lt;GetAllAuthenticationTypeValidationsPublic200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response> oBPv400GetAllAuthenticationTypeValidationsPublicWithHttpInfo() throws ApiException {
-    return oBPv400GetAllAuthenticationTypeValidationsPublicWithHttpInfo(null);
+  public ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response> getAllAuthenticationTypeValidationsPublicWithHttpInfo() throws ApiException {
+    return getAllAuthenticationTypeValidationsPublicWithHttpInfo(null);
   }
 
   /**
    * Get all Authentication Type Validations - public
    * &lt;p&gt;Get all Authentication Type Validations - public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllAuthenticationTypeValidationsPublic200Response&gt;
+   * @return ApiResponse&lt;GetAllAuthenticationTypeValidationsPublic200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response> oBPv400GetAllAuthenticationTypeValidationsPublicWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetAllAuthenticationTypeValidationsPublicRequestBuilder(headers);
+  public ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response> getAllAuthenticationTypeValidationsPublicWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAllAuthenticationTypeValidationsPublicRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -560,11 +560,11 @@ public class AuthenticationTypeValidationApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetAllAuthenticationTypeValidationsPublic", localVarResponse);
+          throw getApiException("getAllAuthenticationTypeValidationsPublic", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response>(
+          return new ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -574,10 +574,10 @@ public class AuthenticationTypeValidationApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllAuthenticationTypeValidationsPublic200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllAuthenticationTypeValidationsPublic200Response>() {});
+        GetAllAuthenticationTypeValidationsPublic200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllAuthenticationTypeValidationsPublic200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response>(
+        return new ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -596,7 +596,7 @@ public class AuthenticationTypeValidationApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetAllAuthenticationTypeValidationsPublicRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAllAuthenticationTypeValidationsPublicRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -622,11 +622,11 @@ public class AuthenticationTypeValidationApi {
    * Get an Authentication Type Validation
    * &lt;p&gt;Get an Authentication Type Validation by operation_id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param operationid The OPERATIONID identifier (required)
-   * @return OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+   * @return GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400GetAuthenticationTypeValidation(@javax.annotation.Nonnull String operationid) throws ApiException {
-    return oBPv400GetAuthenticationTypeValidation(operationid, null);
+  public GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner getAuthenticationTypeValidation(@javax.annotation.Nonnull String operationid) throws ApiException {
+    return getAuthenticationTypeValidation(operationid, null);
   }
 
   /**
@@ -634,11 +634,11 @@ public class AuthenticationTypeValidationApi {
    * &lt;p&gt;Get an Authentication Type Validation by operation_id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param operationid The OPERATIONID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+   * @return GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400GetAuthenticationTypeValidation(@javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> localVarResponse = oBPv400GetAuthenticationTypeValidationWithHttpInfo(operationid, headers);
+  public GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner getAuthenticationTypeValidation(@javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> localVarResponse = getAuthenticationTypeValidationWithHttpInfo(operationid, headers);
     return localVarResponse.getData();
   }
 
@@ -646,11 +646,11 @@ public class AuthenticationTypeValidationApi {
    * Get an Authentication Type Validation
    * &lt;p&gt;Get an Authentication Type Validation by operation_id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param operationid The OPERATIONID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems&gt;
+   * @return ApiResponse&lt;GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> oBPv400GetAuthenticationTypeValidationWithHttpInfo(@javax.annotation.Nonnull String operationid) throws ApiException {
-    return oBPv400GetAuthenticationTypeValidationWithHttpInfo(operationid, null);
+  public ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> getAuthenticationTypeValidationWithHttpInfo(@javax.annotation.Nonnull String operationid) throws ApiException {
+    return getAuthenticationTypeValidationWithHttpInfo(operationid, null);
   }
 
   /**
@@ -658,11 +658,11 @@ public class AuthenticationTypeValidationApi {
    * &lt;p&gt;Get an Authentication Type Validation by operation_id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param operationid The OPERATIONID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems&gt;
+   * @return ApiResponse&lt;GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> oBPv400GetAuthenticationTypeValidationWithHttpInfo(@javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetAuthenticationTypeValidationRequestBuilder(operationid, headers);
+  public ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> getAuthenticationTypeValidationWithHttpInfo(@javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAuthenticationTypeValidationRequestBuilder(operationid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -673,11 +673,11 @@ public class AuthenticationTypeValidationApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetAuthenticationTypeValidation", localVarResponse);
+          throw getApiException("getAuthenticationTypeValidation", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>(
+          return new ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -687,10 +687,10 @@ public class AuthenticationTypeValidationApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>() {});
+        GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>(
+        return new ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -709,10 +709,10 @@ public class AuthenticationTypeValidationApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetAuthenticationTypeValidationRequestBuilder(@javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAuthenticationTypeValidationRequestBuilder(@javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'operationid' is set
     if (operationid == null) {
-      throw new ApiException(400, "Missing the required parameter 'operationid' when calling oBPv400GetAuthenticationTypeValidation");
+      throw new ApiException(400, "Missing the required parameter 'operationid' when calling getAuthenticationTypeValidation");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -740,25 +740,25 @@ public class AuthenticationTypeValidationApi {
    * Update an Authentication Type Validation
    * &lt;p&gt;Update an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param operationid The OPERATIONID identifier (required)
-   * @param obPv400UpdateAuthenticationTypeValidationRequest Request body (required)
-   * @return OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+   * @param updateAuthenticationTypeValidationRequest Request body (required)
+   * @return GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400UpdateAuthenticationTypeValidation(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull OBPv400UpdateAuthenticationTypeValidationRequest obPv400UpdateAuthenticationTypeValidationRequest) throws ApiException {
-    return oBPv400UpdateAuthenticationTypeValidation(operationid, obPv400UpdateAuthenticationTypeValidationRequest, null);
+  public GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner updateAuthenticationTypeValidation(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest) throws ApiException {
+    return updateAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest, null);
   }
 
   /**
    * Update an Authentication Type Validation
    * &lt;p&gt;Update an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param operationid The OPERATIONID identifier (required)
-   * @param obPv400UpdateAuthenticationTypeValidationRequest Request body (required)
+   * @param updateAuthenticationTypeValidationRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+   * @return GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400UpdateAuthenticationTypeValidation(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull OBPv400UpdateAuthenticationTypeValidationRequest obPv400UpdateAuthenticationTypeValidationRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> localVarResponse = oBPv400UpdateAuthenticationTypeValidationWithHttpInfo(operationid, obPv400UpdateAuthenticationTypeValidationRequest, headers);
+  public GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner updateAuthenticationTypeValidation(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> localVarResponse = updateAuthenticationTypeValidationWithHttpInfo(operationid, updateAuthenticationTypeValidationRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -766,25 +766,25 @@ public class AuthenticationTypeValidationApi {
    * Update an Authentication Type Validation
    * &lt;p&gt;Update an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param operationid The OPERATIONID identifier (required)
-   * @param obPv400UpdateAuthenticationTypeValidationRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems&gt;
+   * @param updateAuthenticationTypeValidationRequest Request body (required)
+   * @return ApiResponse&lt;GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> oBPv400UpdateAuthenticationTypeValidationWithHttpInfo(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull OBPv400UpdateAuthenticationTypeValidationRequest obPv400UpdateAuthenticationTypeValidationRequest) throws ApiException {
-    return oBPv400UpdateAuthenticationTypeValidationWithHttpInfo(operationid, obPv400UpdateAuthenticationTypeValidationRequest, null);
+  public ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> updateAuthenticationTypeValidationWithHttpInfo(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest) throws ApiException {
+    return updateAuthenticationTypeValidationWithHttpInfo(operationid, updateAuthenticationTypeValidationRequest, null);
   }
 
   /**
    * Update an Authentication Type Validation
    * &lt;p&gt;Update an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param operationid The OPERATIONID identifier (required)
-   * @param obPv400UpdateAuthenticationTypeValidationRequest Request body (required)
+   * @param updateAuthenticationTypeValidationRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems&gt;
+   * @return ApiResponse&lt;GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> oBPv400UpdateAuthenticationTypeValidationWithHttpInfo(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull OBPv400UpdateAuthenticationTypeValidationRequest obPv400UpdateAuthenticationTypeValidationRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400UpdateAuthenticationTypeValidationRequestBuilder(operationid, obPv400UpdateAuthenticationTypeValidationRequest, headers);
+  public ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> updateAuthenticationTypeValidationWithHttpInfo(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateAuthenticationTypeValidationRequestBuilder(operationid, updateAuthenticationTypeValidationRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -795,11 +795,11 @@ public class AuthenticationTypeValidationApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400UpdateAuthenticationTypeValidation", localVarResponse);
+          throw getApiException("updateAuthenticationTypeValidation", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>(
+          return new ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -809,10 +809,10 @@ public class AuthenticationTypeValidationApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>() {});
+        GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>(
+        return new ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -831,14 +831,14 @@ public class AuthenticationTypeValidationApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400UpdateAuthenticationTypeValidationRequestBuilder(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull OBPv400UpdateAuthenticationTypeValidationRequest obPv400UpdateAuthenticationTypeValidationRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateAuthenticationTypeValidationRequestBuilder(@javax.annotation.Nonnull String operationid, @javax.annotation.Nonnull UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'operationid' is set
     if (operationid == null) {
-      throw new ApiException(400, "Missing the required parameter 'operationid' when calling oBPv400UpdateAuthenticationTypeValidation");
+      throw new ApiException(400, "Missing the required parameter 'operationid' when calling updateAuthenticationTypeValidation");
     }
-    // verify the required parameter 'obPv400UpdateAuthenticationTypeValidationRequest' is set
-    if (obPv400UpdateAuthenticationTypeValidationRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400UpdateAuthenticationTypeValidationRequest' when calling oBPv400UpdateAuthenticationTypeValidation");
+    // verify the required parameter 'updateAuthenticationTypeValidationRequest' is set
+    if (updateAuthenticationTypeValidationRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateAuthenticationTypeValidationRequest' when calling updateAuthenticationTypeValidation");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -852,7 +852,7 @@ public class AuthenticationTypeValidationApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400UpdateAuthenticationTypeValidationRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateAuthenticationTypeValidationRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

@@ -5,20 +5,20 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#obpv400createauthenticationtypevalidation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation
-[**oBPv400DeleteAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#obpv400deleteauthenticationtypevalidation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation
-[**oBPv400GetAllAuthenticationTypeValidations**](AuthenticationTypeValidationApi.md#obpv400getallauthenticationtypevalidations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations
-[**oBPv400GetAllAuthenticationTypeValidationsPublic**](AuthenticationTypeValidationApi.md#obpv400getallauthenticationtypevalidationspublic) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public
-[**oBPv400GetAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#obpv400getauthenticationtypevalidation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation
-[**oBPv400UpdateAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#obpv400updateauthenticationtypevalidation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation
+[**createAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#createauthenticationtypevalidation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation
+[**deleteAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#deleteauthenticationtypevalidation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation
+[**getAllAuthenticationTypeValidations**](AuthenticationTypeValidationApi.md#getallauthenticationtypevalidations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations
+[**getAllAuthenticationTypeValidationsPublic**](AuthenticationTypeValidationApi.md#getallauthenticationtypevalidationspublic) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public
+[**getAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#getauthenticationtypevalidation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation
+[**updateAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#updateauthenticationtypevalidation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation
 
 
-# **oBPv400CreateAuthenticationTypeValidation**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400CreateAuthenticationTypeValidation(operationid, oBPv400UpdateAuthenticationTypeValidationRequest)
+# **createAuthenticationTypeValidation**
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner createAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest)
 
 Create an Authentication Type Validation
 
@@ -40,13 +40,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getAuthenticationTypeValidationApi();
 final String operationid = operationid_example; // String | The OPERATIONID identifier
-final OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest = {type=object, properties={tl={type=array, items={type=object, properties={}}}, head={type=string, enum=[DirectLogin, GatewayLogin, DAuth, OAuth2_OIDC, OAuth2_OIDC_FAPI, Anonymous]}}}; // OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+final UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest = {type=object, properties={head={type=string, enum=[DirectLogin, GatewayLogin, DAuth, OAuth2_OIDC, OAuth2_OIDC_FAPI, Anonymous]}, tl={type=array, items={type=object, properties={}}}}}; // UpdateAuthenticationTypeValidationRequest | Request body
 
 try {
-    final response = api.oBPv400CreateAuthenticationTypeValidation(operationid, oBPv400UpdateAuthenticationTypeValidationRequest);
+    final response = api.createAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling AuthenticationTypeValidationApi->oBPv400CreateAuthenticationTypeValidation: $e\n');
+    print('Exception when calling AuthenticationTypeValidationApi->createAuthenticationTypeValidation: $e\n');
 }
 ```
 
@@ -55,11 +55,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **operationid** | **String**| The OPERATIONID identifier | 
- **oBPv400UpdateAuthenticationTypeValidationRequest** | [**OBPv400UpdateAuthenticationTypeValidationRequest**](OBPv400UpdateAuthenticationTypeValidationRequest.md)| Request body | 
+ **updateAuthenticationTypeValidationRequest** | [**UpdateAuthenticationTypeValidationRequest**](UpdateAuthenticationTypeValidationRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -72,8 +72,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteAuthenticationTypeValidation**
-> oBPv400DeleteAuthenticationTypeValidation(operationid)
+# **deleteAuthenticationTypeValidation**
+> deleteAuthenticationTypeValidation(operationid)
 
 Delete an Authentication Type Validation
 
@@ -97,9 +97,9 @@ final api = ObpDart().getAuthenticationTypeValidationApi();
 final String operationid = operationid_example; // String | The OPERATIONID identifier
 
 try {
-    api.oBPv400DeleteAuthenticationTypeValidation(operationid);
+    api.deleteAuthenticationTypeValidation(operationid);
 } on DioException catch (e) {
-    print('Exception when calling AuthenticationTypeValidationApi->oBPv400DeleteAuthenticationTypeValidation: $e\n');
+    print('Exception when calling AuthenticationTypeValidationApi->deleteAuthenticationTypeValidation: $e\n');
 }
 ```
 
@@ -124,8 +124,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllAuthenticationTypeValidations**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200Response oBPv400GetAllAuthenticationTypeValidations()
+# **getAllAuthenticationTypeValidations**
+> GetAllAuthenticationTypeValidationsPublic200Response getAllAuthenticationTypeValidations()
 
 Get all Authentication Type Validations
 
@@ -148,10 +148,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getAuthenticationTypeValidationApi();
 
 try {
-    final response = api.oBPv400GetAllAuthenticationTypeValidations();
+    final response = api.getAllAuthenticationTypeValidations();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling AuthenticationTypeValidationApi->oBPv400GetAllAuthenticationTypeValidations: $e\n');
+    print('Exception when calling AuthenticationTypeValidationApi->getAllAuthenticationTypeValidations: $e\n');
 }
 ```
 
@@ -160,7 +160,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -173,8 +173,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllAuthenticationTypeValidationsPublic**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200Response oBPv400GetAllAuthenticationTypeValidationsPublic()
+# **getAllAuthenticationTypeValidationsPublic**
+> GetAllAuthenticationTypeValidationsPublic200Response getAllAuthenticationTypeValidationsPublic()
 
 Get all Authentication Type Validations - public
 
@@ -187,10 +187,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getAuthenticationTypeValidationApi();
 
 try {
-    final response = api.oBPv400GetAllAuthenticationTypeValidationsPublic();
+    final response = api.getAllAuthenticationTypeValidationsPublic();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling AuthenticationTypeValidationApi->oBPv400GetAllAuthenticationTypeValidationsPublic: $e\n');
+    print('Exception when calling AuthenticationTypeValidationApi->getAllAuthenticationTypeValidationsPublic: $e\n');
 }
 ```
 
@@ -199,7 +199,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -212,8 +212,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAuthenticationTypeValidation**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400GetAuthenticationTypeValidation(operationid)
+# **getAuthenticationTypeValidation**
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner getAuthenticationTypeValidation(operationid)
 
 Get an Authentication Type Validation
 
@@ -237,10 +237,10 @@ final api = ObpDart().getAuthenticationTypeValidationApi();
 final String operationid = operationid_example; // String | The OPERATIONID identifier
 
 try {
-    final response = api.oBPv400GetAuthenticationTypeValidation(operationid);
+    final response = api.getAuthenticationTypeValidation(operationid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling AuthenticationTypeValidationApi->oBPv400GetAuthenticationTypeValidation: $e\n');
+    print('Exception when calling AuthenticationTypeValidationApi->getAuthenticationTypeValidation: $e\n');
 }
 ```
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -265,8 +265,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateAuthenticationTypeValidation**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400UpdateAuthenticationTypeValidation(operationid, oBPv400UpdateAuthenticationTypeValidationRequest)
+# **updateAuthenticationTypeValidation**
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner updateAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest)
 
 Update an Authentication Type Validation
 
@@ -288,13 +288,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getAuthenticationTypeValidationApi();
 final String operationid = operationid_example; // String | The OPERATIONID identifier
-final OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest = {"type":"object","properties":{"tl":{"type":"array","items":{"type":"object","properties":{}}},"head":{"type":"string","enum":["DirectLogin","GatewayLogin","DAuth","OAuth2_OIDC","OAuth2_OIDC_FAPI","Anonymous"]}}}; // OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+final UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest = {"type":"object","properties":{"head":{"type":"string","enum":["DirectLogin","GatewayLogin","DAuth","OAuth2_OIDC","OAuth2_OIDC_FAPI","Anonymous"]},"tl":{"type":"array","items":{"type":"object","properties":{}}}}}; // UpdateAuthenticationTypeValidationRequest | Request body
 
 try {
-    final response = api.oBPv400UpdateAuthenticationTypeValidation(operationid, oBPv400UpdateAuthenticationTypeValidationRequest);
+    final response = api.updateAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling AuthenticationTypeValidationApi->oBPv400UpdateAuthenticationTypeValidation: $e\n');
+    print('Exception when calling AuthenticationTypeValidationApi->updateAuthenticationTypeValidation: $e\n');
 }
 ```
 
@@ -303,11 +303,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **operationid** | **String**| The OPERATIONID identifier | 
- **oBPv400UpdateAuthenticationTypeValidationRequest** | [**OBPv400UpdateAuthenticationTypeValidationRequest**](OBPv400UpdateAuthenticationTypeValidationRequest.md)| Request body | 
+ **updateAuthenticationTypeValidationRequest** | [**UpdateAuthenticationTypeValidationRequest**](UpdateAuthenticationTypeValidationRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 

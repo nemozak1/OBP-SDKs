@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,8 +18,8 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv400CreateDirectDebit200Response;
-import com.openbankproject.model.OBPv400CreateDirectDebitRequest;
+import com.openbankproject.model.CreateDirectDebit200Response;
+import com.openbankproject.model.CreateDirectDebitRequest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -46,7 +46,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class DirectDebitApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -169,12 +169,12 @@ public class DirectDebitApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
-   * @param obPv400CreateDirectDebitRequest Request body (required)
-   * @return OBPv400CreateDirectDebit200Response
+   * @param createDirectDebitRequest Request body (required)
+   * @return CreateDirectDebit200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400CreateDirectDebit200Response oBPv400CreateDirectDebit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull OBPv400CreateDirectDebitRequest obPv400CreateDirectDebitRequest) throws ApiException {
-    return oBPv400CreateDirectDebit(bankid, accountid, viewid, obPv400CreateDirectDebitRequest, null);
+  public CreateDirectDebit200Response createDirectDebit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull CreateDirectDebitRequest createDirectDebitRequest) throws ApiException {
+    return createDirectDebit(bankid, accountid, viewid, createDirectDebitRequest, null);
   }
 
   /**
@@ -183,13 +183,13 @@ public class DirectDebitApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
-   * @param obPv400CreateDirectDebitRequest Request body (required)
+   * @param createDirectDebitRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400CreateDirectDebit200Response
+   * @return CreateDirectDebit200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400CreateDirectDebit200Response oBPv400CreateDirectDebit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull OBPv400CreateDirectDebitRequest obPv400CreateDirectDebitRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400CreateDirectDebit200Response> localVarResponse = oBPv400CreateDirectDebitWithHttpInfo(bankid, accountid, viewid, obPv400CreateDirectDebitRequest, headers);
+  public CreateDirectDebit200Response createDirectDebit(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull CreateDirectDebitRequest createDirectDebitRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<CreateDirectDebit200Response> localVarResponse = createDirectDebitWithHttpInfo(bankid, accountid, viewid, createDirectDebitRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -199,12 +199,12 @@ public class DirectDebitApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
-   * @param obPv400CreateDirectDebitRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400CreateDirectDebit200Response&gt;
+   * @param createDirectDebitRequest Request body (required)
+   * @return ApiResponse&lt;CreateDirectDebit200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400CreateDirectDebit200Response> oBPv400CreateDirectDebitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull OBPv400CreateDirectDebitRequest obPv400CreateDirectDebitRequest) throws ApiException {
-    return oBPv400CreateDirectDebitWithHttpInfo(bankid, accountid, viewid, obPv400CreateDirectDebitRequest, null);
+  public ApiResponse<CreateDirectDebit200Response> createDirectDebitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull CreateDirectDebitRequest createDirectDebitRequest) throws ApiException {
+    return createDirectDebitWithHttpInfo(bankid, accountid, viewid, createDirectDebitRequest, null);
   }
 
   /**
@@ -213,13 +213,13 @@ public class DirectDebitApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
-   * @param obPv400CreateDirectDebitRequest Request body (required)
+   * @param createDirectDebitRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400CreateDirectDebit200Response&gt;
+   * @return ApiResponse&lt;CreateDirectDebit200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400CreateDirectDebit200Response> oBPv400CreateDirectDebitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull OBPv400CreateDirectDebitRequest obPv400CreateDirectDebitRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateDirectDebitRequestBuilder(bankid, accountid, viewid, obPv400CreateDirectDebitRequest, headers);
+  public ApiResponse<CreateDirectDebit200Response> createDirectDebitWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull CreateDirectDebitRequest createDirectDebitRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createDirectDebitRequestBuilder(bankid, accountid, viewid, createDirectDebitRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -230,11 +230,11 @@ public class DirectDebitApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateDirectDebit", localVarResponse);
+          throw getApiException("createDirectDebit", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400CreateDirectDebit200Response>(
+          return new ApiResponse<CreateDirectDebit200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -244,10 +244,10 @@ public class DirectDebitApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400CreateDirectDebit200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400CreateDirectDebit200Response>() {});
+        CreateDirectDebit200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateDirectDebit200Response>() {});
         
 
-        return new ApiResponse<OBPv400CreateDirectDebit200Response>(
+        return new ApiResponse<CreateDirectDebit200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -266,22 +266,22 @@ public class DirectDebitApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateDirectDebitRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull OBPv400CreateDirectDebitRequest obPv400CreateDirectDebitRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createDirectDebitRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull CreateDirectDebitRequest createDirectDebitRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400CreateDirectDebit");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createDirectDebit");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv400CreateDirectDebit");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling createDirectDebit");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv400CreateDirectDebit");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling createDirectDebit");
     }
-    // verify the required parameter 'obPv400CreateDirectDebitRequest' is set
-    if (obPv400CreateDirectDebitRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400CreateDirectDebitRequest' when calling oBPv400CreateDirectDebit");
+    // verify the required parameter 'createDirectDebitRequest' is set
+    if (createDirectDebitRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createDirectDebitRequest' when calling createDirectDebit");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -297,7 +297,7 @@ public class DirectDebitApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400CreateDirectDebitRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createDirectDebitRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -318,12 +318,12 @@ public class DirectDebitApi {
    * &lt;p&gt;Create direct debit for an account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_expires&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_signed&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#active\&quot;&gt;&lt;strong&gt;active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_cancelled&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_expires&lt;/strong&gt;&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_signed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#direct_debit_id\&quot;&gt;&lt;strong&gt;direct_debit_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
-   * @param obPv400CreateDirectDebitRequest Request body (required)
-   * @return OBPv400CreateDirectDebit200Response
+   * @param createDirectDebitRequest Request body (required)
+   * @return CreateDirectDebit200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400CreateDirectDebit200Response oBPv400CreateDirectDebitManagement(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull OBPv400CreateDirectDebitRequest obPv400CreateDirectDebitRequest) throws ApiException {
-    return oBPv400CreateDirectDebitManagement(bankid, accountid, obPv400CreateDirectDebitRequest, null);
+  public CreateDirectDebit200Response createDirectDebitManagement(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull CreateDirectDebitRequest createDirectDebitRequest) throws ApiException {
+    return createDirectDebitManagement(bankid, accountid, createDirectDebitRequest, null);
   }
 
   /**
@@ -331,13 +331,13 @@ public class DirectDebitApi {
    * &lt;p&gt;Create direct debit for an account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_expires&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_signed&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#active\&quot;&gt;&lt;strong&gt;active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_cancelled&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_expires&lt;/strong&gt;&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_signed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#direct_debit_id\&quot;&gt;&lt;strong&gt;direct_debit_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
-   * @param obPv400CreateDirectDebitRequest Request body (required)
+   * @param createDirectDebitRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400CreateDirectDebit200Response
+   * @return CreateDirectDebit200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400CreateDirectDebit200Response oBPv400CreateDirectDebitManagement(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull OBPv400CreateDirectDebitRequest obPv400CreateDirectDebitRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400CreateDirectDebit200Response> localVarResponse = oBPv400CreateDirectDebitManagementWithHttpInfo(bankid, accountid, obPv400CreateDirectDebitRequest, headers);
+  public CreateDirectDebit200Response createDirectDebitManagement(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull CreateDirectDebitRequest createDirectDebitRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<CreateDirectDebit200Response> localVarResponse = createDirectDebitManagementWithHttpInfo(bankid, accountid, createDirectDebitRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -346,12 +346,12 @@ public class DirectDebitApi {
    * &lt;p&gt;Create direct debit for an account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_expires&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_signed&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#active\&quot;&gt;&lt;strong&gt;active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_cancelled&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_expires&lt;/strong&gt;&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_signed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#direct_debit_id\&quot;&gt;&lt;strong&gt;direct_debit_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
-   * @param obPv400CreateDirectDebitRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400CreateDirectDebit200Response&gt;
+   * @param createDirectDebitRequest Request body (required)
+   * @return ApiResponse&lt;CreateDirectDebit200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400CreateDirectDebit200Response> oBPv400CreateDirectDebitManagementWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull OBPv400CreateDirectDebitRequest obPv400CreateDirectDebitRequest) throws ApiException {
-    return oBPv400CreateDirectDebitManagementWithHttpInfo(bankid, accountid, obPv400CreateDirectDebitRequest, null);
+  public ApiResponse<CreateDirectDebit200Response> createDirectDebitManagementWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull CreateDirectDebitRequest createDirectDebitRequest) throws ApiException {
+    return createDirectDebitManagementWithHttpInfo(bankid, accountid, createDirectDebitRequest, null);
   }
 
   /**
@@ -359,13 +359,13 @@ public class DirectDebitApi {
    * &lt;p&gt;Create direct debit for an account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_expires&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_signed&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#active\&quot;&gt;&lt;strong&gt;active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_cancelled&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_expires&lt;/strong&gt;&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_signed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#direct_debit_id\&quot;&gt;&lt;strong&gt;direct_debit_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
-   * @param obPv400CreateDirectDebitRequest Request body (required)
+   * @param createDirectDebitRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400CreateDirectDebit200Response&gt;
+   * @return ApiResponse&lt;CreateDirectDebit200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400CreateDirectDebit200Response> oBPv400CreateDirectDebitManagementWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull OBPv400CreateDirectDebitRequest obPv400CreateDirectDebitRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateDirectDebitManagementRequestBuilder(bankid, accountid, obPv400CreateDirectDebitRequest, headers);
+  public ApiResponse<CreateDirectDebit200Response> createDirectDebitManagementWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull CreateDirectDebitRequest createDirectDebitRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createDirectDebitManagementRequestBuilder(bankid, accountid, createDirectDebitRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -376,11 +376,11 @@ public class DirectDebitApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateDirectDebitManagement", localVarResponse);
+          throw getApiException("createDirectDebitManagement", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400CreateDirectDebit200Response>(
+          return new ApiResponse<CreateDirectDebit200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -390,10 +390,10 @@ public class DirectDebitApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400CreateDirectDebit200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400CreateDirectDebit200Response>() {});
+        CreateDirectDebit200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateDirectDebit200Response>() {});
         
 
-        return new ApiResponse<OBPv400CreateDirectDebit200Response>(
+        return new ApiResponse<CreateDirectDebit200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -412,18 +412,18 @@ public class DirectDebitApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateDirectDebitManagementRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull OBPv400CreateDirectDebitRequest obPv400CreateDirectDebitRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createDirectDebitManagementRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull CreateDirectDebitRequest createDirectDebitRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400CreateDirectDebitManagement");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createDirectDebitManagement");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv400CreateDirectDebitManagement");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling createDirectDebitManagement");
     }
-    // verify the required parameter 'obPv400CreateDirectDebitRequest' is set
-    if (obPv400CreateDirectDebitRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400CreateDirectDebitRequest' when calling oBPv400CreateDirectDebitManagement");
+    // verify the required parameter 'createDirectDebitRequest' is set
+    if (createDirectDebitRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createDirectDebitRequest' when calling createDirectDebitManagement");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -438,7 +438,7 @@ public class DirectDebitApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400CreateDirectDebitRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createDirectDebitRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

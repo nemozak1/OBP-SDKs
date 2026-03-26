@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,18 +11,42 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv400GetScopes200Response
-import com.openbankproject.model.OBPv400GetScopes200ResponsePropertiesListItems
-import com.openbankproject.model.OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems
+import com.openbankproject.model.CreateConsentImplicitRequestEntitlementsInner
+import com.openbankproject.model.GetScopes200Response
+import com.openbankproject.model.GetScopes200ResponseListInner
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object ScopeApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new ScopeApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new ScopeApi(baseUrl)
 }
 
 class ScopeApi(baseUrl: String) {
+
+  /**
+   * <p>Create Scope. Grant Role to Consumer.</p> <p>Scopes are used to grant System or Bank level roles to the Consumer (App). (For Account level privileges, see Views)</p> <p>For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &quot;bank_id&quot;:&quot;&quot;</p> <p>For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &quot;bank_id&quot;:&quot;my-bank-id&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#scope_id\"><strong>scope_id</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetScopes200ResponseListInner (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param consumerid The CONSUMERID identifier
+   * @param createConsentImplicitRequestEntitlementsInner Request body
+   */
+  def addScope(apiKeyHeader: String, apiKeyHeader: String)(consumerid: String, createConsentImplicitRequestEntitlementsInner: CreateConsentImplicitRequestEntitlementsInner): Request[Either[ResponseException[String, Exception], GetScopes200ResponseListInner]] =
+    basicRequest
+      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/consumers/${consumerid}/scopes")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(createConsentImplicitRequestEntitlementsInner)
+      .response(asJson[GetScopes200ResponseListInner])
 
   /**
    * <p>Delete Consumer Scope specified by SCOPE_ID for an consumer specified by CONSUMER_ID</p> <p>Authentication is required and the user needs to be a Super Admin.<br /> Super Admins are listed in the Props file.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#scope_id\">SCOPE_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> 
@@ -39,43 +63,19 @@ class ScopeApi(baseUrl: String) {
    * @param consumerid The CONSUMERID identifier
    * @param scopeid The SCOPEID identifier
    */
-  def oBPv300DeleteScope(apiKeyHeader: String, apiKeyHeader: String)(consumerid: String, scopeid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteScope(apiKeyHeader: String, apiKeyHeader: String)(consumerid: String, scopeid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v3.0.0/consumers/${consumerid}/scope/${scopeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
-
-  /**
-   * <p>Create Scope. Grant Role to Consumer.</p> <p>Scopes are used to grant System or Bank level roles to the Consumer (App). (For Account level privileges, see Views)</p> <p>For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &quot;bank_id&quot;:&quot;&quot;</p> <p>For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &quot;bank_id&quot;:&quot;my-bank-id&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#scope_id\"><strong>scope_id</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetScopes200ResponsePropertiesListItems (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param consumerid The CONSUMERID identifier
-   * @param oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems Request body
-   */
-  def oBPv400AddScope(apiKeyHeader: String, apiKeyHeader: String)(consumerid: String, oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems: OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems): Request[Either[ResponseException[String, Exception], OBPv400GetScopes200ResponsePropertiesListItems]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/consumers/${consumerid}/scopes")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems)
-      .response(asJson[OBPv400GetScopes200ResponsePropertiesListItems])
 
   /**
    * <p>Get all the scopes for an consumer specified by CONSUMER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#list\"><strong>list</strong></a>:</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#scope_id\"><strong>scope_id</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetScopes200Response (Successful operation)
+   *   code 200 : GetScopes200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -85,12 +85,12 @@ class ScopeApi(baseUrl: String) {
    * 
    * @param consumerid The CONSUMERID identifier
    */
-  def oBPv400GetScopes(apiKeyHeader: String, apiKeyHeader: String)(consumerid: String): Request[Either[ResponseException[String, Exception], OBPv400GetScopes200Response]] =
+  def getScopes(apiKeyHeader: String, apiKeyHeader: String)(consumerid: String): Request[Either[ResponseException[String, Exception], GetScopes200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/consumers/${consumerid}/scopes")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetScopes200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetScopes200Response])
 
 }

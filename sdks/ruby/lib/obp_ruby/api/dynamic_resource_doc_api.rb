@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -21,26 +21,26 @@ module OpenBankProject
     end
     # Create Dynamic Resource Doc endpoint code
     # <p>Create a Dynamic Resource Doc endpoint code.</p> <p>copy the response and past to PractiseEndpoint, So you can have the benefits of<br /> auto compilation and debug</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#code\"><strong>code</strong></a>: 125</p> 
-    # @param obpv400_build_dynamic_endpoint_template_request [OBPv400BuildDynamicEndpointTemplateRequest] Request body
+    # @param build_dynamic_endpoint_template_request [BuildDynamicEndpointTemplateRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400BuildDynamicEndpointTemplate200Response]
-    def o_bpv4_0_0_build_dynamic_endpoint_template(obpv400_build_dynamic_endpoint_template_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_build_dynamic_endpoint_template_with_http_info(obpv400_build_dynamic_endpoint_template_request, opts)
+    # @return [BuildDynamicEndpointTemplate200Response]
+    def build_dynamic_endpoint_template(build_dynamic_endpoint_template_request, opts = {})
+      data, _status_code, _headers = build_dynamic_endpoint_template_with_http_info(build_dynamic_endpoint_template_request, opts)
       data
     end
 
     # Create Dynamic Resource Doc endpoint code
     # &lt;p&gt;Create a Dynamic Resource Doc endpoint code.&lt;/p&gt; &lt;p&gt;copy the response and past to PractiseEndpoint, So you can have the benefits of&lt;br /&gt; auto compilation and debug&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; 
-    # @param obpv400_build_dynamic_endpoint_template_request [OBPv400BuildDynamicEndpointTemplateRequest] Request body
+    # @param build_dynamic_endpoint_template_request [BuildDynamicEndpointTemplateRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400BuildDynamicEndpointTemplate200Response, Integer, Hash)>] OBPv400BuildDynamicEndpointTemplate200Response data, response status code and response headers
-    def o_bpv4_0_0_build_dynamic_endpoint_template_with_http_info(obpv400_build_dynamic_endpoint_template_request, opts = {})
+    # @return [Array<(BuildDynamicEndpointTemplate200Response, Integer, Hash)>] BuildDynamicEndpointTemplate200Response data, response status code and response headers
+    def build_dynamic_endpoint_template_with_http_info(build_dynamic_endpoint_template_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.o_bpv4_0_0_build_dynamic_endpoint_template ...'
+        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.build_dynamic_endpoint_template ...'
       end
-      # verify the required parameter 'obpv400_build_dynamic_endpoint_template_request' is set
-      if @api_client.config.client_side_validation && obpv400_build_dynamic_endpoint_template_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_build_dynamic_endpoint_template_request' when calling DynamicResourceDocApi.o_bpv4_0_0_build_dynamic_endpoint_template"
+      # verify the required parameter 'build_dynamic_endpoint_template_request' is set
+      if @api_client.config.client_side_validation && build_dynamic_endpoint_template_request.nil?
+        fail ArgumentError, "Missing the required parameter 'build_dynamic_endpoint_template_request' when calling DynamicResourceDocApi.build_dynamic_endpoint_template"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/dynamic-resource-docs/endpoint-code'
@@ -62,16 +62,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_build_dynamic_endpoint_template_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(build_dynamic_endpoint_template_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400BuildDynamicEndpointTemplate200Response'
+      return_type = opts[:debug_return_type] || 'BuildDynamicEndpointTemplate200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicResourceDocApi.o_bpv4_0_0_build_dynamic_endpoint_template",
+        :operation => :"DynamicResourceDocApi.build_dynamic_endpoint_template",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -82,7 +82,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicResourceDocApi#o_bpv4_0_0_build_dynamic_endpoint_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicResourceDocApi#build_dynamic_endpoint_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -90,31 +90,31 @@ module OpenBankProject
     # Create Bank Level Dynamic Resource Doc
     # <p>Create a Bank Level Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
     # @param bankid [String] The BANKID identifier
-    # @param obpv400_update_bank_level_dynamic_resource_doc_request [OBPv400UpdateBankLevelDynamicResourceDocRequest] Request body
+    # @param update_bank_level_dynamic_resource_doc_request [UpdateBankLevelDynamicResourceDocRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetBankLevelDynamicResourceDoc200Response]
-    def o_bpv4_0_0_create_bank_level_dynamic_resource_doc(bankid, obpv400_update_bank_level_dynamic_resource_doc_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_bank_level_dynamic_resource_doc_with_http_info(bankid, obpv400_update_bank_level_dynamic_resource_doc_request, opts)
+    # @return [GetBankLevelDynamicResourceDoc200Response]
+    def create_bank_level_dynamic_resource_doc(bankid, update_bank_level_dynamic_resource_doc_request, opts = {})
+      data, _status_code, _headers = create_bank_level_dynamic_resource_doc_with_http_info(bankid, update_bank_level_dynamic_resource_doc_request, opts)
       data
     end
 
     # Create Bank Level Dynamic Resource Doc
     # &lt;p&gt;Create a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
-    # @param obpv400_update_bank_level_dynamic_resource_doc_request [OBPv400UpdateBankLevelDynamicResourceDocRequest] Request body
+    # @param update_bank_level_dynamic_resource_doc_request [UpdateBankLevelDynamicResourceDocRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetBankLevelDynamicResourceDoc200Response, Integer, Hash)>] OBPv400GetBankLevelDynamicResourceDoc200Response data, response status code and response headers
-    def o_bpv4_0_0_create_bank_level_dynamic_resource_doc_with_http_info(bankid, obpv400_update_bank_level_dynamic_resource_doc_request, opts = {})
+    # @return [Array<(GetBankLevelDynamicResourceDoc200Response, Integer, Hash)>] GetBankLevelDynamicResourceDoc200Response data, response status code and response headers
+    def create_bank_level_dynamic_resource_doc_with_http_info(bankid, update_bank_level_dynamic_resource_doc_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.o_bpv4_0_0_create_bank_level_dynamic_resource_doc ...'
+        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.create_bank_level_dynamic_resource_doc ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicResourceDocApi.o_bpv4_0_0_create_bank_level_dynamic_resource_doc"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicResourceDocApi.create_bank_level_dynamic_resource_doc"
       end
-      # verify the required parameter 'obpv400_update_bank_level_dynamic_resource_doc_request' is set
-      if @api_client.config.client_side_validation && obpv400_update_bank_level_dynamic_resource_doc_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_update_bank_level_dynamic_resource_doc_request' when calling DynamicResourceDocApi.o_bpv4_0_0_create_bank_level_dynamic_resource_doc"
+      # verify the required parameter 'update_bank_level_dynamic_resource_doc_request' is set
+      if @api_client.config.client_side_validation && update_bank_level_dynamic_resource_doc_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_bank_level_dynamic_resource_doc_request' when calling DynamicResourceDocApi.create_bank_level_dynamic_resource_doc"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -136,16 +136,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_update_bank_level_dynamic_resource_doc_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_bank_level_dynamic_resource_doc_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetBankLevelDynamicResourceDoc200Response'
+      return_type = opts[:debug_return_type] || 'GetBankLevelDynamicResourceDoc200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicResourceDocApi.o_bpv4_0_0_create_bank_level_dynamic_resource_doc",
+        :operation => :"DynamicResourceDocApi.create_bank_level_dynamic_resource_doc",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -156,33 +156,33 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicResourceDocApi#o_bpv4_0_0_create_bank_level_dynamic_resource_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicResourceDocApi#create_bank_level_dynamic_resource_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
     # Create Dynamic Resource Doc
     # <p>Create a Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
-    # @param obpv400_update_bank_level_dynamic_resource_doc_request [OBPv400UpdateBankLevelDynamicResourceDocRequest] Request body
+    # @param update_bank_level_dynamic_resource_doc_request [UpdateBankLevelDynamicResourceDocRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetBankLevelDynamicResourceDoc200Response]
-    def o_bpv4_0_0_create_dynamic_resource_doc(obpv400_update_bank_level_dynamic_resource_doc_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_dynamic_resource_doc_with_http_info(obpv400_update_bank_level_dynamic_resource_doc_request, opts)
+    # @return [GetBankLevelDynamicResourceDoc200Response]
+    def create_dynamic_resource_doc(update_bank_level_dynamic_resource_doc_request, opts = {})
+      data, _status_code, _headers = create_dynamic_resource_doc_with_http_info(update_bank_level_dynamic_resource_doc_request, opts)
       data
     end
 
     # Create Dynamic Resource Doc
     # &lt;p&gt;Create a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-    # @param obpv400_update_bank_level_dynamic_resource_doc_request [OBPv400UpdateBankLevelDynamicResourceDocRequest] Request body
+    # @param update_bank_level_dynamic_resource_doc_request [UpdateBankLevelDynamicResourceDocRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetBankLevelDynamicResourceDoc200Response, Integer, Hash)>] OBPv400GetBankLevelDynamicResourceDoc200Response data, response status code and response headers
-    def o_bpv4_0_0_create_dynamic_resource_doc_with_http_info(obpv400_update_bank_level_dynamic_resource_doc_request, opts = {})
+    # @return [Array<(GetBankLevelDynamicResourceDoc200Response, Integer, Hash)>] GetBankLevelDynamicResourceDoc200Response data, response status code and response headers
+    def create_dynamic_resource_doc_with_http_info(update_bank_level_dynamic_resource_doc_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.o_bpv4_0_0_create_dynamic_resource_doc ...'
+        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.create_dynamic_resource_doc ...'
       end
-      # verify the required parameter 'obpv400_update_bank_level_dynamic_resource_doc_request' is set
-      if @api_client.config.client_side_validation && obpv400_update_bank_level_dynamic_resource_doc_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_update_bank_level_dynamic_resource_doc_request' when calling DynamicResourceDocApi.o_bpv4_0_0_create_dynamic_resource_doc"
+      # verify the required parameter 'update_bank_level_dynamic_resource_doc_request' is set
+      if @api_client.config.client_side_validation && update_bank_level_dynamic_resource_doc_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_bank_level_dynamic_resource_doc_request' when calling DynamicResourceDocApi.create_dynamic_resource_doc"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/dynamic-resource-docs'
@@ -204,16 +204,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_update_bank_level_dynamic_resource_doc_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_bank_level_dynamic_resource_doc_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetBankLevelDynamicResourceDoc200Response'
+      return_type = opts[:debug_return_type] || 'GetBankLevelDynamicResourceDoc200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicResourceDocApi.o_bpv4_0_0_create_dynamic_resource_doc",
+        :operation => :"DynamicResourceDocApi.create_dynamic_resource_doc",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -224,7 +224,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicResourceDocApi#o_bpv4_0_0_create_dynamic_resource_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicResourceDocApi#create_dynamic_resource_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -234,8 +234,8 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_bank_level_dynamic_resource_doc(bankid, opts = {})
-      o_bpv4_0_0_delete_bank_level_dynamic_resource_doc_with_http_info(bankid, opts)
+    def delete_bank_level_dynamic_resource_doc(bankid, opts = {})
+      delete_bank_level_dynamic_resource_doc_with_http_info(bankid, opts)
       nil
     end
 
@@ -244,13 +244,13 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_bank_level_dynamic_resource_doc_with_http_info(bankid, opts = {})
+    def delete_bank_level_dynamic_resource_doc_with_http_info(bankid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.o_bpv4_0_0_delete_bank_level_dynamic_resource_doc ...'
+        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.delete_bank_level_dynamic_resource_doc ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicResourceDocApi.o_bpv4_0_0_delete_bank_level_dynamic_resource_doc"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicResourceDocApi.delete_bank_level_dynamic_resource_doc"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -274,7 +274,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicResourceDocApi.o_bpv4_0_0_delete_bank_level_dynamic_resource_doc",
+        :operation => :"DynamicResourceDocApi.delete_bank_level_dynamic_resource_doc",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -285,7 +285,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicResourceDocApi#o_bpv4_0_0_delete_bank_level_dynamic_resource_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicResourceDocApi#delete_bank_level_dynamic_resource_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -294,8 +294,8 @@ module OpenBankProject
     # <p>Delete a Dynamic Resource Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_dynamic_resource_doc(opts = {})
-      o_bpv4_0_0_delete_dynamic_resource_doc_with_http_info(opts)
+    def delete_dynamic_resource_doc(opts = {})
+      delete_dynamic_resource_doc_with_http_info(opts)
       nil
     end
 
@@ -303,9 +303,9 @@ module OpenBankProject
     # &lt;p&gt;Delete a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_dynamic_resource_doc_with_http_info(opts = {})
+    def delete_dynamic_resource_doc_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.o_bpv4_0_0_delete_dynamic_resource_doc ...'
+        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.delete_dynamic_resource_doc ...'
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID'
@@ -329,7 +329,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicResourceDocApi.o_bpv4_0_0_delete_dynamic_resource_doc",
+        :operation => :"DynamicResourceDocApi.delete_dynamic_resource_doc",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -340,7 +340,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicResourceDocApi#o_bpv4_0_0_delete_dynamic_resource_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicResourceDocApi#delete_dynamic_resource_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -349,9 +349,9 @@ module OpenBankProject
     # <p>Get all Bank Level Dynamic Resource Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetAllDynamicResourceDocs200Response]
-    def o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs(bankid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs_with_http_info(bankid, opts)
+    # @return [GetAllDynamicResourceDocs200Response]
+    def get_all_bank_level_dynamic_resource_docs(bankid, opts = {})
+      data, _status_code, _headers = get_all_bank_level_dynamic_resource_docs_with_http_info(bankid, opts)
       data
     end
 
@@ -359,14 +359,14 @@ module OpenBankProject
     # &lt;p&gt;Get all Bank Level Dynamic Resource Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetAllDynamicResourceDocs200Response, Integer, Hash)>] OBPv400GetAllDynamicResourceDocs200Response data, response status code and response headers
-    def o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs_with_http_info(bankid, opts = {})
+    # @return [Array<(GetAllDynamicResourceDocs200Response, Integer, Hash)>] GetAllDynamicResourceDocs200Response data, response status code and response headers
+    def get_all_bank_level_dynamic_resource_docs_with_http_info(bankid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs ...'
+        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.get_all_bank_level_dynamic_resource_docs ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicResourceDocApi.o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicResourceDocApi.get_all_bank_level_dynamic_resource_docs"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -386,13 +386,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetAllDynamicResourceDocs200Response'
+      return_type = opts[:debug_return_type] || 'GetAllDynamicResourceDocs200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicResourceDocApi.o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs",
+        :operation => :"DynamicResourceDocApi.get_all_bank_level_dynamic_resource_docs",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -403,7 +403,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicResourceDocApi#o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicResourceDocApi#get_all_bank_level_dynamic_resource_docs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -411,19 +411,19 @@ module OpenBankProject
     # Get all Dynamic Resource Docs
     # <p>Get all Dynamic Resource Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetAllDynamicResourceDocs200Response]
-    def o_bpv4_0_0_get_all_dynamic_resource_docs(opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_all_dynamic_resource_docs_with_http_info(opts)
+    # @return [GetAllDynamicResourceDocs200Response]
+    def get_all_dynamic_resource_docs(opts = {})
+      data, _status_code, _headers = get_all_dynamic_resource_docs_with_http_info(opts)
       data
     end
 
     # Get all Dynamic Resource Docs
     # &lt;p&gt;Get all Dynamic Resource Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetAllDynamicResourceDocs200Response, Integer, Hash)>] OBPv400GetAllDynamicResourceDocs200Response data, response status code and response headers
-    def o_bpv4_0_0_get_all_dynamic_resource_docs_with_http_info(opts = {})
+    # @return [Array<(GetAllDynamicResourceDocs200Response, Integer, Hash)>] GetAllDynamicResourceDocs200Response data, response status code and response headers
+    def get_all_dynamic_resource_docs_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.o_bpv4_0_0_get_all_dynamic_resource_docs ...'
+        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.get_all_dynamic_resource_docs ...'
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/dynamic-resource-docs'
@@ -443,13 +443,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetAllDynamicResourceDocs200Response'
+      return_type = opts[:debug_return_type] || 'GetAllDynamicResourceDocs200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicResourceDocApi.o_bpv4_0_0_get_all_dynamic_resource_docs",
+        :operation => :"DynamicResourceDocApi.get_all_dynamic_resource_docs",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -460,7 +460,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicResourceDocApi#o_bpv4_0_0_get_all_dynamic_resource_docs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicResourceDocApi#get_all_dynamic_resource_docs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -469,9 +469,9 @@ module OpenBankProject
     # <p>Get a Bank Level Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetBankLevelDynamicResourceDoc200Response]
-    def o_bpv4_0_0_get_bank_level_dynamic_resource_doc(bankid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_bank_level_dynamic_resource_doc_with_http_info(bankid, opts)
+    # @return [GetBankLevelDynamicResourceDoc200Response]
+    def get_bank_level_dynamic_resource_doc(bankid, opts = {})
+      data, _status_code, _headers = get_bank_level_dynamic_resource_doc_with_http_info(bankid, opts)
       data
     end
 
@@ -479,14 +479,14 @@ module OpenBankProject
     # &lt;p&gt;Get a Bank Level Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetBankLevelDynamicResourceDoc200Response, Integer, Hash)>] OBPv400GetBankLevelDynamicResourceDoc200Response data, response status code and response headers
-    def o_bpv4_0_0_get_bank_level_dynamic_resource_doc_with_http_info(bankid, opts = {})
+    # @return [Array<(GetBankLevelDynamicResourceDoc200Response, Integer, Hash)>] GetBankLevelDynamicResourceDoc200Response data, response status code and response headers
+    def get_bank_level_dynamic_resource_doc_with_http_info(bankid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.o_bpv4_0_0_get_bank_level_dynamic_resource_doc ...'
+        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.get_bank_level_dynamic_resource_doc ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicResourceDocApi.o_bpv4_0_0_get_bank_level_dynamic_resource_doc"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicResourceDocApi.get_bank_level_dynamic_resource_doc"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -506,13 +506,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetBankLevelDynamicResourceDoc200Response'
+      return_type = opts[:debug_return_type] || 'GetBankLevelDynamicResourceDoc200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicResourceDocApi.o_bpv4_0_0_get_bank_level_dynamic_resource_doc",
+        :operation => :"DynamicResourceDocApi.get_bank_level_dynamic_resource_doc",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -523,7 +523,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicResourceDocApi#o_bpv4_0_0_get_bank_level_dynamic_resource_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicResourceDocApi#get_bank_level_dynamic_resource_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -531,19 +531,19 @@ module OpenBankProject
     # Get Dynamic Resource Doc by Id
     # <p>Get a Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetBankLevelDynamicResourceDoc200Response]
-    def o_bpv4_0_0_get_dynamic_resource_doc(opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_dynamic_resource_doc_with_http_info(opts)
+    # @return [GetBankLevelDynamicResourceDoc200Response]
+    def get_dynamic_resource_doc(opts = {})
+      data, _status_code, _headers = get_dynamic_resource_doc_with_http_info(opts)
       data
     end
 
     # Get Dynamic Resource Doc by Id
     # &lt;p&gt;Get a Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetBankLevelDynamicResourceDoc200Response, Integer, Hash)>] OBPv400GetBankLevelDynamicResourceDoc200Response data, response status code and response headers
-    def o_bpv4_0_0_get_dynamic_resource_doc_with_http_info(opts = {})
+    # @return [Array<(GetBankLevelDynamicResourceDoc200Response, Integer, Hash)>] GetBankLevelDynamicResourceDoc200Response data, response status code and response headers
+    def get_dynamic_resource_doc_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.o_bpv4_0_0_get_dynamic_resource_doc ...'
+        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.get_dynamic_resource_doc ...'
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID'
@@ -563,13 +563,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetBankLevelDynamicResourceDoc200Response'
+      return_type = opts[:debug_return_type] || 'GetBankLevelDynamicResourceDoc200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicResourceDocApi.o_bpv4_0_0_get_dynamic_resource_doc",
+        :operation => :"DynamicResourceDocApi.get_dynamic_resource_doc",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -580,7 +580,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicResourceDocApi#o_bpv4_0_0_get_dynamic_resource_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicResourceDocApi#get_dynamic_resource_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -588,31 +588,31 @@ module OpenBankProject
     # Update Bank Level Dynamic Resource Doc
     # <p>Update a Bank Level Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
     # @param bankid [String] The BANKID identifier
-    # @param obpv400_update_bank_level_dynamic_resource_doc_request [OBPv400UpdateBankLevelDynamicResourceDocRequest] Request body
+    # @param update_bank_level_dynamic_resource_doc_request [UpdateBankLevelDynamicResourceDocRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetBankLevelDynamicResourceDoc200Response]
-    def o_bpv4_0_0_update_bank_level_dynamic_resource_doc(bankid, obpv400_update_bank_level_dynamic_resource_doc_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_update_bank_level_dynamic_resource_doc_with_http_info(bankid, obpv400_update_bank_level_dynamic_resource_doc_request, opts)
+    # @return [GetBankLevelDynamicResourceDoc200Response]
+    def update_bank_level_dynamic_resource_doc(bankid, update_bank_level_dynamic_resource_doc_request, opts = {})
+      data, _status_code, _headers = update_bank_level_dynamic_resource_doc_with_http_info(bankid, update_bank_level_dynamic_resource_doc_request, opts)
       data
     end
 
     # Update Bank Level Dynamic Resource Doc
     # &lt;p&gt;Update a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
-    # @param obpv400_update_bank_level_dynamic_resource_doc_request [OBPv400UpdateBankLevelDynamicResourceDocRequest] Request body
+    # @param update_bank_level_dynamic_resource_doc_request [UpdateBankLevelDynamicResourceDocRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetBankLevelDynamicResourceDoc200Response, Integer, Hash)>] OBPv400GetBankLevelDynamicResourceDoc200Response data, response status code and response headers
-    def o_bpv4_0_0_update_bank_level_dynamic_resource_doc_with_http_info(bankid, obpv400_update_bank_level_dynamic_resource_doc_request, opts = {})
+    # @return [Array<(GetBankLevelDynamicResourceDoc200Response, Integer, Hash)>] GetBankLevelDynamicResourceDoc200Response data, response status code and response headers
+    def update_bank_level_dynamic_resource_doc_with_http_info(bankid, update_bank_level_dynamic_resource_doc_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.o_bpv4_0_0_update_bank_level_dynamic_resource_doc ...'
+        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.update_bank_level_dynamic_resource_doc ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicResourceDocApi.o_bpv4_0_0_update_bank_level_dynamic_resource_doc"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicResourceDocApi.update_bank_level_dynamic_resource_doc"
       end
-      # verify the required parameter 'obpv400_update_bank_level_dynamic_resource_doc_request' is set
-      if @api_client.config.client_side_validation && obpv400_update_bank_level_dynamic_resource_doc_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_update_bank_level_dynamic_resource_doc_request' when calling DynamicResourceDocApi.o_bpv4_0_0_update_bank_level_dynamic_resource_doc"
+      # verify the required parameter 'update_bank_level_dynamic_resource_doc_request' is set
+      if @api_client.config.client_side_validation && update_bank_level_dynamic_resource_doc_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_bank_level_dynamic_resource_doc_request' when calling DynamicResourceDocApi.update_bank_level_dynamic_resource_doc"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -634,16 +634,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_update_bank_level_dynamic_resource_doc_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_bank_level_dynamic_resource_doc_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetBankLevelDynamicResourceDoc200Response'
+      return_type = opts[:debug_return_type] || 'GetBankLevelDynamicResourceDoc200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicResourceDocApi.o_bpv4_0_0_update_bank_level_dynamic_resource_doc",
+        :operation => :"DynamicResourceDocApi.update_bank_level_dynamic_resource_doc",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -654,33 +654,33 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicResourceDocApi#o_bpv4_0_0_update_bank_level_dynamic_resource_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicResourceDocApi#update_bank_level_dynamic_resource_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
     # Update Dynamic Resource Doc
     # <p>Update a Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
-    # @param obpv400_update_bank_level_dynamic_resource_doc_request [OBPv400UpdateBankLevelDynamicResourceDocRequest] Request body
+    # @param update_bank_level_dynamic_resource_doc_request [UpdateBankLevelDynamicResourceDocRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetBankLevelDynamicResourceDoc200Response]
-    def o_bpv4_0_0_update_dynamic_resource_doc(obpv400_update_bank_level_dynamic_resource_doc_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_update_dynamic_resource_doc_with_http_info(obpv400_update_bank_level_dynamic_resource_doc_request, opts)
+    # @return [GetBankLevelDynamicResourceDoc200Response]
+    def update_dynamic_resource_doc(update_bank_level_dynamic_resource_doc_request, opts = {})
+      data, _status_code, _headers = update_dynamic_resource_doc_with_http_info(update_bank_level_dynamic_resource_doc_request, opts)
       data
     end
 
     # Update Dynamic Resource Doc
     # &lt;p&gt;Update a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-    # @param obpv400_update_bank_level_dynamic_resource_doc_request [OBPv400UpdateBankLevelDynamicResourceDocRequest] Request body
+    # @param update_bank_level_dynamic_resource_doc_request [UpdateBankLevelDynamicResourceDocRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetBankLevelDynamicResourceDoc200Response, Integer, Hash)>] OBPv400GetBankLevelDynamicResourceDoc200Response data, response status code and response headers
-    def o_bpv4_0_0_update_dynamic_resource_doc_with_http_info(obpv400_update_bank_level_dynamic_resource_doc_request, opts = {})
+    # @return [Array<(GetBankLevelDynamicResourceDoc200Response, Integer, Hash)>] GetBankLevelDynamicResourceDoc200Response data, response status code and response headers
+    def update_dynamic_resource_doc_with_http_info(update_bank_level_dynamic_resource_doc_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.o_bpv4_0_0_update_dynamic_resource_doc ...'
+        @api_client.config.logger.debug 'Calling API: DynamicResourceDocApi.update_dynamic_resource_doc ...'
       end
-      # verify the required parameter 'obpv400_update_bank_level_dynamic_resource_doc_request' is set
-      if @api_client.config.client_side_validation && obpv400_update_bank_level_dynamic_resource_doc_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_update_bank_level_dynamic_resource_doc_request' when calling DynamicResourceDocApi.o_bpv4_0_0_update_dynamic_resource_doc"
+      # verify the required parameter 'update_bank_level_dynamic_resource_doc_request' is set
+      if @api_client.config.client_side_validation && update_bank_level_dynamic_resource_doc_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_bank_level_dynamic_resource_doc_request' when calling DynamicResourceDocApi.update_dynamic_resource_doc"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID'
@@ -702,16 +702,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_update_bank_level_dynamic_resource_doc_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_bank_level_dynamic_resource_doc_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetBankLevelDynamicResourceDoc200Response'
+      return_type = opts[:debug_return_type] || 'GetBankLevelDynamicResourceDoc200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicResourceDocApi.o_bpv4_0_0_update_dynamic_resource_doc",
+        :operation => :"DynamicResourceDocApi.update_dynamic_resource_doc",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -722,7 +722,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicResourceDocApi#o_bpv4_0_0_update_dynamic_resource_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicResourceDocApi#update_dynamic_resource_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

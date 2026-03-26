@@ -1,15 +1,15 @@
 # AggregateMetricsAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600GetAggregateMetrics**](AggregateMetricsAPI.md#obpv600getaggregatemetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
+[**getAggregateMetrics**](AggregateMetricsAPI.md#getaggregatemetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
 
 
-# **oBPv600GetAggregateMetrics**
+# **getAggregateMetrics**
 ```swift
-    open class func oBPv600GetAggregateMetrics(completion: @escaping (_ data: OBPv600GetAggregateMetrics200Response?, _ error: Error?) -> Void)
+    open class func getAggregateMetrics(completion: @escaping (_ data: GetAggregateMetrics200Response?, _ error: Error?) -> Void)
 ```
 
 Get Aggregate Metrics
@@ -23,7 +23,7 @@ import OBPSwift
 
 
 // Get Aggregate Metrics
-AggregateMetricsAPI.oBPv600GetAggregateMetrics() { (response, error) in
+AggregateMetricsAPI.getAggregateMetrics() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAggregateMetrics200Response**](OBPv600GetAggregateMetrics200Response.md)
+[**GetAggregateMetrics200Response**](GetAggregateMetrics200Response.md)
 
 ### Authorization
 

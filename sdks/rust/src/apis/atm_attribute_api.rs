@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,46 +15,46 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv5_1_0_create_atm_attribute`]
+/// struct for typed errors of method [`create_atm_attribute`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510CreateAtmAttributeError {
+pub enum CreateAtmAttributeError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv5_1_0_delete_atm_attribute`]
+/// struct for typed errors of method [`delete_atm_attribute`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510DeleteAtmAttributeError {
+pub enum DeleteAtmAttributeError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv5_1_0_get_atm_attribute`]
+/// struct for typed errors of method [`get_atm_attribute`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510GetAtmAttributeError {
+pub enum GetAtmAttributeError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv5_1_0_get_atm_attributes`]
+/// struct for typed errors of method [`get_atm_attributes`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510GetAtmAttributesError {
+pub enum GetAtmAttributesError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv5_1_0_update_atm_attribute`]
+/// struct for typed errors of method [`update_atm_attribute`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510UpdateAtmAttributeError {
+pub enum UpdateAtmAttributeError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
@@ -62,11 +62,11 @@ pub enum OBpv510UpdateAtmAttributeError {
 
 
 /// <p>Create ATM Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
-pub async fn o_bpv5_1_0_create_atm_attribute(configuration: &configuration::Configuration, bankid: &str, atmid: &str, obpv510_update_atm_attribute_request: models::Obpv510UpdateAtmAttributeRequest) -> Result<models::Obpv510GetAtmAttribute200Response, Error<OBpv510CreateAtmAttributeError>> {
+pub async fn create_atm_attribute(configuration: &configuration::Configuration, bankid: &str, atmid: &str, update_atm_attribute_request: models::UpdateAtmAttributeRequest) -> Result<models::GetAtmAttribute200Response, Error<CreateAtmAttributeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_atmid = atmid;
-    let p_body_obpv510_update_atm_attribute_request = obpv510_update_atm_attribute_request;
+    let p_body_update_atm_attribute_request = update_atm_attribute_request;
 
     let uri_str = format!("{}/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), atmid=crate::apis::urlencode(p_path_atmid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -91,9 +91,9 @@ pub async fn o_bpv5_1_0_create_atm_attribute(configuration: &configuration::Conf
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv510_update_atm_attribute_request);
+    req_builder = req_builder.json(&p_body_update_atm_attribute_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -110,18 +110,18 @@ pub async fn o_bpv5_1_0_create_atm_attribute(configuration: &configuration::Conf
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv510GetAtmAttribute200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv510GetAtmAttribute200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAtmAttribute200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAtmAttribute200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510CreateAtmAttributeError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateAtmAttributeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete ATM Attribute</p> <p>Delete a Atm Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv5_1_0_delete_atm_attribute(configuration: &configuration::Configuration, bankid: &str, atmid: &str, atmattributeid: &str) -> Result<(), Error<OBpv510DeleteAtmAttributeError>> {
+pub async fn delete_atm_attribute(configuration: &configuration::Configuration, bankid: &str, atmid: &str, atmattributeid: &str) -> Result<(), Error<DeleteAtmAttributeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_atmid = atmid;
@@ -150,7 +150,7 @@ pub async fn o_bpv5_1_0_delete_atm_attribute(configuration: &configuration::Conf
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -162,13 +162,13 @@ pub async fn o_bpv5_1_0_delete_atm_attribute(configuration: &configuration::Conf
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510DeleteAtmAttributeError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteAtmAttributeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get ATM Attribute By ATM_ATTRIBUTE_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
-pub async fn o_bpv5_1_0_get_atm_attribute(configuration: &configuration::Configuration, bankid: &str, atmid: &str, atmattributeid: &str) -> Result<models::Obpv510GetAtmAttribute200Response, Error<OBpv510GetAtmAttributeError>> {
+pub async fn get_atm_attribute(configuration: &configuration::Configuration, bankid: &str, atmid: &str, atmattributeid: &str) -> Result<models::GetAtmAttribute200Response, Error<GetAtmAttributeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_atmid = atmid;
@@ -197,7 +197,7 @@ pub async fn o_bpv5_1_0_get_atm_attribute(configuration: &configuration::Configu
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -215,18 +215,18 @@ pub async fn o_bpv5_1_0_get_atm_attribute(configuration: &configuration::Configu
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv510GetAtmAttribute200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv510GetAtmAttribute200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAtmAttribute200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAtmAttribute200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510GetAtmAttributeError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetAtmAttributeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get ATM Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>atm_attributes</strong></a>: atm_attributes</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
-pub async fn o_bpv5_1_0_get_atm_attributes(configuration: &configuration::Configuration, bankid: &str, atmid: &str) -> Result<models::Obpv510GetAtmAttributes200Response, Error<OBpv510GetAtmAttributesError>> {
+pub async fn get_atm_attributes(configuration: &configuration::Configuration, bankid: &str, atmid: &str) -> Result<models::GetAtmAttributes200Response, Error<GetAtmAttributesError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_atmid = atmid;
@@ -254,7 +254,7 @@ pub async fn o_bpv5_1_0_get_atm_attributes(configuration: &configuration::Config
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -272,23 +272,23 @@ pub async fn o_bpv5_1_0_get_atm_attributes(configuration: &configuration::Config
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv510GetAtmAttributes200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv510GetAtmAttributes200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAtmAttributes200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAtmAttributes200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510GetAtmAttributesError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetAtmAttributesError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update ATM Attribute.</p> <p>Update an ATM Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
-pub async fn o_bpv5_1_0_update_atm_attribute(configuration: &configuration::Configuration, bankid: &str, atmid: &str, atmattributeid: &str, obpv510_update_atm_attribute_request: models::Obpv510UpdateAtmAttributeRequest) -> Result<models::Obpv510GetAtmAttribute200Response, Error<OBpv510UpdateAtmAttributeError>> {
+pub async fn update_atm_attribute(configuration: &configuration::Configuration, bankid: &str, atmid: &str, atmattributeid: &str, update_atm_attribute_request: models::UpdateAtmAttributeRequest) -> Result<models::GetAtmAttribute200Response, Error<UpdateAtmAttributeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_atmid = atmid;
     let p_path_atmattributeid = atmattributeid;
-    let p_body_obpv510_update_atm_attribute_request = obpv510_update_atm_attribute_request;
+    let p_body_update_atm_attribute_request = update_atm_attribute_request;
 
     let uri_str = format!("{}/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), atmid=crate::apis::urlencode(p_path_atmid), atmattributeid=crate::apis::urlencode(p_path_atmattributeid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -313,9 +313,9 @@ pub async fn o_bpv5_1_0_update_atm_attribute(configuration: &configuration::Conf
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv510_update_atm_attribute_request);
+    req_builder = req_builder.json(&p_body_update_atm_attribute_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -332,12 +332,12 @@ pub async fn o_bpv5_1_0_update_atm_attribute(configuration: &configuration::Conf
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv510GetAtmAttribute200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv510GetAtmAttribute200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAtmAttribute200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAtmAttribute200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510UpdateAtmAttributeError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateAtmAttributeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

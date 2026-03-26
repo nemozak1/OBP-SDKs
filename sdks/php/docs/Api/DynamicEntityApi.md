@@ -2,20 +2,20 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600CleanupOrphanedDynamicEntityRecords()**](DynamicEntityApi.md#oBPv600CleanupOrphanedDynamicEntityRecords) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records |
-| [**oBPv600GetAvailablePersonalDynamicEntities()**](DynamicEntityApi.md#oBPv600GetAvailablePersonalDynamicEntities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
-| [**oBPv600GetDynamicEntityDiagnostics()**](DynamicEntityApi.md#oBPv600GetDynamicEntityDiagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics |
-| [**oBPv600GetReferenceTypes()**](DynamicEntityApi.md#oBPv600GetReferenceTypes) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities |
+| [**cleanupOrphanedDynamicEntityRecords()**](DynamicEntityApi.md#cleanupOrphanedDynamicEntityRecords) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records |
+| [**getAvailablePersonalDynamicEntities()**](DynamicEntityApi.md#getAvailablePersonalDynamicEntities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
+| [**getDynamicEntityDiagnostics()**](DynamicEntityApi.md#getDynamicEntityDiagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics |
+| [**getReferenceTypes()**](DynamicEntityApi.md#getReferenceTypes) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities |
 
 
-## `oBPv600CleanupOrphanedDynamicEntityRecords()`
+## `cleanupOrphanedDynamicEntityRecords()`
 
 ```php
-oBPv600CleanupOrphanedDynamicEntityRecords(): \OpenBankProject\Model\OBPv600CleanupOrphanedDynamicEntityRecords200Response
+cleanupOrphanedDynamicEntityRecords(): \OpenBankProject\Model\CleanupOrphanedDynamicEntityRecords200Response
 ```
 
 Cleanup Orphaned Dynamic Entity Records
@@ -38,9 +38,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicEntityApi(
@@ -51,10 +51,10 @@ $apiInstance = new OpenBankProject\Api\DynamicEntityApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600CleanupOrphanedDynamicEntityRecords();
+    $result = $apiInstance->cleanupOrphanedDynamicEntityRecords();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicEntityApi->oBPv600CleanupOrphanedDynamicEntityRecords: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicEntityApi->cleanupOrphanedDynamicEntityRecords: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -64,7 +64,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600CleanupOrphanedDynamicEntityRecords200Response**](../Model/OBPv600CleanupOrphanedDynamicEntityRecords200Response.md)
+[**\OpenBankProject\Model\CleanupOrphanedDynamicEntityRecords200Response**](../Model/CleanupOrphanedDynamicEntityRecords200Response.md)
 
 ### Authorization
 
@@ -79,10 +79,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetAvailablePersonalDynamicEntities()`
+## `getAvailablePersonalDynamicEntities()`
 
 ```php
-oBPv600GetAvailablePersonalDynamicEntities(): \OpenBankProject\Model\OBPv600GetAvailablePersonalDynamicEntities200Response
+getAvailablePersonalDynamicEntities(): \OpenBankProject\Model\GetAvailablePersonalDynamicEntities200Response
 ```
 
 Get Available Personal Dynamic Entities
@@ -105,9 +105,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicEntityApi(
@@ -118,10 +118,10 @@ $apiInstance = new OpenBankProject\Api\DynamicEntityApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600GetAvailablePersonalDynamicEntities();
+    $result = $apiInstance->getAvailablePersonalDynamicEntities();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicEntityApi->oBPv600GetAvailablePersonalDynamicEntities: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicEntityApi->getAvailablePersonalDynamicEntities: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -131,7 +131,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetAvailablePersonalDynamicEntities200Response**](../Model/OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**\OpenBankProject\Model\GetAvailablePersonalDynamicEntities200Response**](../Model/GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -146,10 +146,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetDynamicEntityDiagnostics()`
+## `getDynamicEntityDiagnostics()`
 
 ```php
-oBPv600GetDynamicEntityDiagnostics(): \OpenBankProject\Model\OBPv600GetDynamicEntityDiagnostics200Response
+getDynamicEntityDiagnostics(): \OpenBankProject\Model\GetDynamicEntityDiagnostics200Response
 ```
 
 Get Dynamic Entity Diagnostics
@@ -172,9 +172,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicEntityApi(
@@ -185,10 +185,10 @@ $apiInstance = new OpenBankProject\Api\DynamicEntityApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600GetDynamicEntityDiagnostics();
+    $result = $apiInstance->getDynamicEntityDiagnostics();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicEntityApi->oBPv600GetDynamicEntityDiagnostics: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicEntityApi->getDynamicEntityDiagnostics: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -198,7 +198,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetDynamicEntityDiagnostics200Response**](../Model/OBPv600GetDynamicEntityDiagnostics200Response.md)
+[**\OpenBankProject\Model\GetDynamicEntityDiagnostics200Response**](../Model/GetDynamicEntityDiagnostics200Response.md)
 
 ### Authorization
 
@@ -213,10 +213,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetReferenceTypes()`
+## `getReferenceTypes()`
 
 ```php
-oBPv600GetReferenceTypes(): \OpenBankProject\Model\OBPv600GetReferenceTypes200Response
+getReferenceTypes(): \OpenBankProject\Model\GetReferenceTypes200Response
 ```
 
 Get Reference Types for Dynamic Entities
@@ -239,9 +239,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicEntityApi(
@@ -252,10 +252,10 @@ $apiInstance = new OpenBankProject\Api\DynamicEntityApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600GetReferenceTypes();
+    $result = $apiInstance->getReferenceTypes();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicEntityApi->oBPv600GetReferenceTypes: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicEntityApi->getReferenceTypes: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -265,7 +265,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetReferenceTypes200Response**](../Model/OBPv600GetReferenceTypes200Response.md)
+[**\OpenBankProject\Model\GetReferenceTypes200Response**](../Model/GetReferenceTypes200Response.md)
 
 ### Authorization
 

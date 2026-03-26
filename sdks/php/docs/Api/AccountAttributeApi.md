@@ -2,21 +2,21 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv310CreateAccountAttribute()**](AccountAttributeApi.md#oBPv310CreateAccountAttribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute |
-| [**oBPv310UpdateAccountAttribute()**](AccountAttributeApi.md#oBPv310UpdateAccountAttribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute |
-| [**oBPv400CreateOrUpdateAccountAttributeDefinition()**](AccountAttributeApi.md#oBPv400CreateOrUpdateAccountAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition |
-| [**oBPv400DeleteAccountAttributeDefinition()**](AccountAttributeApi.md#oBPv400DeleteAccountAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition |
-| [**oBPv400GetAccountAttributeDefinition()**](AccountAttributeApi.md#oBPv400GetAccountAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition |
+| [**createAccountAttribute()**](AccountAttributeApi.md#createAccountAttribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute |
+| [**createOrUpdateAccountAttributeDefinition()**](AccountAttributeApi.md#createOrUpdateAccountAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition |
+| [**deleteAccountAttributeDefinition()**](AccountAttributeApi.md#deleteAccountAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition |
+| [**getAccountAttributeDefinition()**](AccountAttributeApi.md#getAccountAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition |
+| [**updateAccountAttribute()**](AccountAttributeApi.md#updateAccountAttribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute |
 
 
-## `oBPv310CreateAccountAttribute()`
+## `createAccountAttribute()`
 
 ```php
-oBPv310CreateAccountAttribute($bankid, $accountid, $productcode, $obpv310_update_account_attribute_request): \OpenBankProject\Model\OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems
+createAccountAttribute($bankid, $accountid, $productcode, $update_account_attribute_request): \OpenBankProject\Model\GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner
 ```
 
 Create Account Attribute
@@ -39,9 +39,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AccountAttributeApi(
@@ -53,13 +53,13 @@ $apiInstance = new OpenBankProject\Api\AccountAttributeApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $productcode = 'productcode_example'; // string | The PRODUCTCODE identifier
-$obpv310_update_account_attribute_request = {type=object, properties={value={type=string}, product_instance_code={type=string}, type={type=string}, name={type=string}}}; // \OpenBankProject\Model\OBPv310UpdateAccountAttributeRequest | Request body
+$update_account_attribute_request = {type=object, properties={value={type=string}, product_instance_code={type=string}, type={type=string}, name={type=string}}}; // \OpenBankProject\Model\UpdateAccountAttributeRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv310CreateAccountAttribute($bankid, $accountid, $productcode, $obpv310_update_account_attribute_request);
+    $result = $apiInstance->createAccountAttribute($bankid, $accountid, $productcode, $update_account_attribute_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountAttributeApi->oBPv310CreateAccountAttribute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountAttributeApi->createAccountAttribute: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -70,11 +70,11 @@ try {
 | **bankid** | **string**| The BANKID identifier | |
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **productcode** | **string**| The PRODUCTCODE identifier | |
-| **obpv310_update_account_attribute_request** | [**\OpenBankProject\Model\OBPv310UpdateAccountAttributeRequest**](../Model/OBPv310UpdateAccountAttributeRequest.md)| Request body | |
+| **update_account_attribute_request** | [**\OpenBankProject\Model\UpdateAccountAttributeRequest**](../Model/UpdateAccountAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems**](../Model/OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems.md)
+[**\OpenBankProject\Model\GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner**](../Model/GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner.md)
 
 ### Authorization
 
@@ -89,88 +89,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv310UpdateAccountAttribute()`
+## `createOrUpdateAccountAttributeDefinition()`
 
 ```php
-oBPv310UpdateAccountAttribute($bankid, $accountid, $productcode, $accountattributeid, $obpv310_update_account_attribute_request): \OpenBankProject\Model\OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems
-```
-
-Update Account Attribute
-
-<p>Update Account Attribute</p> <p>Account Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Account Attribute is linked to its Account by ACCOUNT_ID</p> <p>Typical account attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#account_attribute_id\">ACCOUNT_ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">product_instance_code</a>: product_instance_code</p>
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure OAuth2 access token for authorization: OAuth2
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-// Configure API key authorization: GatewayLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-// Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new OpenBankProject\Api\AccountAttributeApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$bankid = 'bankid_example'; // string | The BANKID identifier
-$accountid = 'accountid_example'; // string | The ACCOUNTID identifier
-$productcode = 'productcode_example'; // string | The PRODUCTCODE identifier
-$accountattributeid = 'accountattributeid_example'; // string | The ACCOUNTATTRIBUTEID identifier
-$obpv310_update_account_attribute_request = {"type":"object","properties":{"value":{"type":"string"},"product_instance_code":{"type":"string"},"type":{"type":"string"},"name":{"type":"string"}}}; // \OpenBankProject\Model\OBPv310UpdateAccountAttributeRequest | Request body
-
-try {
-    $result = $apiInstance->oBPv310UpdateAccountAttribute($bankid, $accountid, $productcode, $accountattributeid, $obpv310_update_account_attribute_request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AccountAttributeApi->oBPv310UpdateAccountAttribute: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **bankid** | **string**| The BANKID identifier | |
-| **accountid** | **string**| The ACCOUNTID identifier | |
-| **productcode** | **string**| The PRODUCTCODE identifier | |
-| **accountattributeid** | **string**| The ACCOUNTATTRIBUTEID identifier | |
-| **obpv310_update_account_attribute_request** | [**\OpenBankProject\Model\OBPv310UpdateAccountAttributeRequest**](../Model/OBPv310UpdateAccountAttributeRequest.md)| Request body | |
-
-### Return type
-
-[**\OpenBankProject\Model\OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems**](../Model/OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems.md)
-
-### Authorization
-
-[OAuth2](../../README.md#OAuth2), [GatewayLogin](../../README.md#GatewayLogin), [DirectLogin](../../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `oBPv400CreateOrUpdateAccountAttributeDefinition()`
-
-```php
-oBPv400CreateOrUpdateAccountAttributeDefinition($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request): \OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+createOrUpdateAccountAttributeDefinition($bankid, $create_or_update_transaction_request_attribute_definition_request): \OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 ```
 
 Create or Update Account Attribute Definition
@@ -193,9 +115,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AccountAttributeApi(
@@ -205,13 +127,13 @@ $apiInstance = new OpenBankProject\Api\AccountAttributeApi(
     $config
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
-$obpv400_create_or_update_transaction_request_attribute_definition_request = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}}; // \OpenBankProject\Model\OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+$create_or_update_transaction_request_attribute_definition_request = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}}; // \OpenBankProject\Model\CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400CreateOrUpdateAccountAttributeDefinition($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request);
+    $result = $apiInstance->createOrUpdateAccountAttributeDefinition($bankid, $create_or_update_transaction_request_attribute_definition_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountAttributeApi->oBPv400CreateOrUpdateAccountAttributeDefinition: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountAttributeApi->createOrUpdateAccountAttributeDefinition: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -220,11 +142,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
-| **obpv400_create_or_update_transaction_request_attribute_definition_request** | [**\OpenBankProject\Model\OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](../Model/OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
+| **create_or_update_transaction_request_attribute_definition_request** | [**\OpenBankProject\Model\CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](../Model/CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](../Model/OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](../Model/GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -239,10 +161,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400DeleteAccountAttributeDefinition()`
+## `deleteAccountAttributeDefinition()`
 
 ```php
-oBPv400DeleteAccountAttributeDefinition($bankid, $attributedefinitionid)
+deleteAccountAttributeDefinition($bankid, $attributedefinitionid)
 ```
 
 Delete Account Attribute Definition
@@ -265,9 +187,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AccountAttributeApi(
@@ -280,9 +202,9 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $attributedefinitionid = 'attributedefinitionid_example'; // string | The ATTRIBUTEDEFINITIONID identifier
 
 try {
-    $apiInstance->oBPv400DeleteAccountAttributeDefinition($bankid, $attributedefinitionid);
+    $apiInstance->deleteAccountAttributeDefinition($bankid, $attributedefinitionid);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountAttributeApi->oBPv400DeleteAccountAttributeDefinition: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountAttributeApi->deleteAccountAttributeDefinition: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -310,10 +232,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetAccountAttributeDefinition()`
+## `getAccountAttributeDefinition()`
 
 ```php
-oBPv400GetAccountAttributeDefinition($bankid): \OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response
+getAccountAttributeDefinition($bankid): \OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response
 ```
 
 Get Account Attribute Definition
@@ -336,9 +258,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AccountAttributeApi(
@@ -350,10 +272,10 @@ $apiInstance = new OpenBankProject\Api\AccountAttributeApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 
 try {
-    $result = $apiInstance->oBPv400GetAccountAttributeDefinition($bankid);
+    $result = $apiInstance->getAccountAttributeDefinition($bankid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountAttributeApi->oBPv400GetAccountAttributeDefinition: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountAttributeApi->getAccountAttributeDefinition: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -365,7 +287,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response**](../Model/OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response**](../Model/GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -374,6 +296,84 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateAccountAttribute()`
+
+```php
+updateAccountAttribute($bankid, $accountid, $productcode, $accountattributeid, $update_account_attribute_request): \OpenBankProject\Model\GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner
+```
+
+Update Account Attribute
+
+<p>Update Account Attribute</p> <p>Account Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Account Attribute is linked to its Account by ACCOUNT_ID</p> <p>Typical account attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#account_attribute_id\">ACCOUNT_ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">product_instance_code</a>: product_instance_code</p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+// Configure API key authorization: GatewayLogin
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure API key authorization: DirectLogin
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
+
+
+$apiInstance = new OpenBankProject\Api\AccountAttributeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$bankid = 'bankid_example'; // string | The BANKID identifier
+$accountid = 'accountid_example'; // string | The ACCOUNTID identifier
+$productcode = 'productcode_example'; // string | The PRODUCTCODE identifier
+$accountattributeid = 'accountattributeid_example'; // string | The ACCOUNTATTRIBUTEID identifier
+$update_account_attribute_request = {"type":"object","properties":{"value":{"type":"string"},"product_instance_code":{"type":"string"},"type":{"type":"string"},"name":{"type":"string"}}}; // \OpenBankProject\Model\UpdateAccountAttributeRequest | Request body
+
+try {
+    $result = $apiInstance->updateAccountAttribute($bankid, $accountid, $productcode, $accountattributeid, $update_account_attribute_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountAttributeApi->updateAccountAttribute: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bankid** | **string**| The BANKID identifier | |
+| **accountid** | **string**| The ACCOUNTID identifier | |
+| **productcode** | **string**| The PRODUCTCODE identifier | |
+| **accountattributeid** | **string**| The ACCOUNTATTRIBUTEID identifier | |
+| **update_account_attribute_request** | [**\OpenBankProject\Model\UpdateAccountAttributeRequest**](../Model/UpdateAccountAttributeRequest.md)| Request body | |
+
+### Return type
+
+[**\OpenBankProject\Model\GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner**](../Model/GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner.md)
+
+### Authorization
+
+[OAuth2](../../README.md#OAuth2), [GatewayLogin](../../README.md#GatewayLogin), [DirectLogin](../../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

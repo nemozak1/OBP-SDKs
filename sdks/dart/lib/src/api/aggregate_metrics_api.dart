@@ -8,7 +8,7 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:obp_dart/src/model/obpv600_get_aggregate_metrics200_response.dart';
+import 'package:obp_dart/src/model/get_aggregate_metrics200_response.dart';
 
 class AggregateMetricsApi {
 
@@ -29,9 +29,9 @@ class AggregateMetricsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetAggregateMetrics200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAggregateMetrics200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetAggregateMetrics200Response>> oBPv600GetAggregateMetrics({ 
+  Future<Response<GetAggregateMetrics200Response>> getAggregateMetrics({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -58,7 +58,7 @@ class AggregateMetricsApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -75,14 +75,14 @@ class AggregateMetricsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetAggregateMetrics200Response? _responseData;
+    GetAggregateMetrics200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetAggregateMetrics200Response),
-      ) as OBPv600GetAggregateMetrics200Response;
+        specifiedType: const FullType(GetAggregateMetrics200Response),
+      ) as GetAggregateMetrics200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -94,7 +94,7 @@ class AggregateMetricsApi {
       );
     }
 
-    return Response<OBPv600GetAggregateMetrics200Response>(
+    return Response<GetAggregateMetrics200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

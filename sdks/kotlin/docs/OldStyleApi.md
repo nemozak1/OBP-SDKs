@@ -1,15 +1,15 @@
 # OldStyleApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv200ElasticSearchMetrics**](OldStyleApi.md#oBPv200ElasticSearchMetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch |
+| [**elasticSearchMetrics**](OldStyleApi.md#elasticSearchMetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch |
 
 
-<a id="oBPv200ElasticSearchMetrics"></a>
-# **oBPv200ElasticSearchMetrics**
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage oBPv200ElasticSearchMetrics()
+<a id="elasticSearchMetrics"></a>
+# **elasticSearchMetrics**
+> kotlin.Any elasticSearchMetrics()
 
 Search API Metrics via Elasticsearch
 
@@ -23,13 +23,13 @@ Search API Metrics via Elasticsearch
 
 val apiInstance = OldStyleApi()
 try {
-    val result : OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage = apiInstance.oBPv200ElasticSearchMetrics()
+    val result : kotlin.Any = apiInstance.elasticSearchMetrics()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling OldStyleApi#oBPv200ElasticSearchMetrics")
+    println("4xx response calling OldStyleApi#elasticSearchMetrics")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling OldStyleApi#oBPv200ElasticSearchMetrics")
+    println("5xx response calling OldStyleApi#elasticSearchMetrics")
     e.printStackTrace()
 }
 ```
@@ -39,7 +39,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+[**kotlin.Any**](kotlin.Any.md)
 
 ### Authorization
 
@@ -50,8 +50,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

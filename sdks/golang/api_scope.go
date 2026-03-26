@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,19 +24,176 @@ import (
 // ScopeAPIService ScopeAPI service
 type ScopeAPIService service
 
-type ApiOBPv300DeleteScopeRequest struct {
+type ApiAddScopeRequest struct {
+	ctx context.Context
+	ApiService *ScopeAPIService
+	consumerid string
+	createConsentImplicitRequestEntitlementsInner *CreateConsentImplicitRequestEntitlementsInner
+}
+
+// Request body
+func (r ApiAddScopeRequest) CreateConsentImplicitRequestEntitlementsInner(createConsentImplicitRequestEntitlementsInner CreateConsentImplicitRequestEntitlementsInner) ApiAddScopeRequest {
+	r.createConsentImplicitRequestEntitlementsInner = &createConsentImplicitRequestEntitlementsInner
+	return r
+}
+
+func (r ApiAddScopeRequest) Execute() (*GetScopes200ResponseListInner, *http.Response, error) {
+	return r.ApiService.AddScopeExecute(r)
+}
+
+/*
+AddScope Create Scope for a Consumer
+
+<p>Create Scope. Grant Role to Consumer.</p>
+<p>Scopes are used to grant System or Bank level roles to the Consumer (App). (For Account level privileges, see Views)</p>
+<p>For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &quot;bank_id&quot;:&quot;&quot;</p>
+<p>For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &quot;bank_id&quot;:&quot;my-bank-id&quot;</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#scope_id"><strong>scope_id</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param consumerid The CONSUMERID identifier
+ @return ApiAddScopeRequest
+*/
+func (a *ScopeAPIService) AddScope(ctx context.Context, consumerid string) ApiAddScopeRequest {
+	return ApiAddScopeRequest{
+		ApiService: a,
+		ctx: ctx,
+		consumerid: consumerid,
+	}
+}
+
+// Execute executes the request
+//  @return GetScopes200ResponseListInner
+func (a *ScopeAPIService) AddScopeExecute(r ApiAddScopeRequest) (*GetScopes200ResponseListInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetScopes200ResponseListInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScopeAPIService.AddScope")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/consumers/{consumerid}/scopes"
+	localVarPath = strings.Replace(localVarPath, "{"+"consumerid"+"}", url.PathEscape(parameterValueToString(r.consumerid, "consumerid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createConsentImplicitRequestEntitlementsInner == nil {
+		return localVarReturnValue, nil, reportError("createConsentImplicitRequestEntitlementsInner is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createConsentImplicitRequestEntitlementsInner
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiDeleteScopeRequest struct {
 	ctx context.Context
 	ApiService *ScopeAPIService
 	consumerid string
 	scopeid string
 }
 
-func (r ApiOBPv300DeleteScopeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv300DeleteScopeExecute(r)
+func (r ApiDeleteScopeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteScopeExecute(r)
 }
 
 /*
-OBPv300DeleteScope Delete Consumer Scope
+DeleteScope Delete Consumer Scope
 
 <p>Delete Consumer Scope specified by SCOPE_ID for an consumer specified by CONSUMER_ID</p>
 <p>Authentication is required and the user needs to be a Super Admin.<br />
@@ -51,10 +208,10 @@ Super Admins are listed in the Props file.</p>
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param consumerid The CONSUMERID identifier
  @param scopeid The SCOPEID identifier
- @return ApiOBPv300DeleteScopeRequest
+ @return ApiDeleteScopeRequest
 */
-func (a *ScopeAPIService) OBPv300DeleteScope(ctx context.Context, consumerid string, scopeid string) ApiOBPv300DeleteScopeRequest {
-	return ApiOBPv300DeleteScopeRequest{
+func (a *ScopeAPIService) DeleteScope(ctx context.Context, consumerid string, scopeid string) ApiDeleteScopeRequest {
+	return ApiDeleteScopeRequest{
 		ApiService: a,
 		ctx: ctx,
 		consumerid: consumerid,
@@ -63,14 +220,14 @@ func (a *ScopeAPIService) OBPv300DeleteScope(ctx context.Context, consumerid str
 }
 
 // Execute executes the request
-func (a *ScopeAPIService) OBPv300DeleteScopeExecute(r ApiOBPv300DeleteScopeRequest) (*http.Response, error) {
+func (a *ScopeAPIService) DeleteScopeExecute(r ApiDeleteScopeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScopeAPIService.OBPv300DeleteScope")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScopeAPIService.DeleteScope")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -124,7 +281,7 @@ func (a *ScopeAPIService) OBPv300DeleteScopeExecute(r ApiOBPv300DeleteScopeReque
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -156,175 +313,18 @@ func (a *ScopeAPIService) OBPv300DeleteScopeExecute(r ApiOBPv300DeleteScopeReque
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400AddScopeRequest struct {
-	ctx context.Context
-	ApiService *ScopeAPIService
-	consumerid string
-	oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems *OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems
-}
-
-// Request body
-func (r ApiOBPv400AddScopeRequest) OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems(oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems) ApiOBPv400AddScopeRequest {
-	r.oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems = &oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems
-	return r
-}
-
-func (r ApiOBPv400AddScopeRequest) Execute() (*OBPv400GetScopes200ResponsePropertiesListItems, *http.Response, error) {
-	return r.ApiService.OBPv400AddScopeExecute(r)
-}
-
-/*
-OBPv400AddScope Create Scope for a Consumer
-
-<p>Create Scope. Grant Role to Consumer.</p>
-<p>Scopes are used to grant System or Bank level roles to the Consumer (App). (For Account level privileges, see Views)</p>
-<p>For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &quot;bank_id&quot;:&quot;&quot;</p>
-<p>For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &quot;bank_id&quot;:&quot;my-bank-id&quot;</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#scope_id"><strong>scope_id</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param consumerid The CONSUMERID identifier
- @return ApiOBPv400AddScopeRequest
-*/
-func (a *ScopeAPIService) OBPv400AddScope(ctx context.Context, consumerid string) ApiOBPv400AddScopeRequest {
-	return ApiOBPv400AddScopeRequest{
-		ApiService: a,
-		ctx: ctx,
-		consumerid: consumerid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetScopes200ResponsePropertiesListItems
-func (a *ScopeAPIService) OBPv400AddScopeExecute(r ApiOBPv400AddScopeRequest) (*OBPv400GetScopes200ResponsePropertiesListItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetScopes200ResponsePropertiesListItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScopeAPIService.OBPv400AddScope")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/consumers/{consumerid}/scopes"
-	localVarPath = strings.Replace(localVarPath, "{"+"consumerid"+"}", url.PathEscape(parameterValueToString(r.consumerid, "consumerid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems == nil {
-		return localVarReturnValue, nil, reportError("oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetScopesRequest struct {
+type ApiGetScopesRequest struct {
 	ctx context.Context
 	ApiService *ScopeAPIService
 	consumerid string
 }
 
-func (r ApiOBPv400GetScopesRequest) Execute() (*OBPv400GetScopes200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetScopesExecute(r)
+func (r ApiGetScopesRequest) Execute() (*GetScopes200Response, *http.Response, error) {
+	return r.ApiService.GetScopesExecute(r)
 }
 
 /*
-OBPv400GetScopes Get Scopes for Consumer
+GetScopes Get Scopes for Consumer
 
 <p>Get all the scopes for an consumer specified by CONSUMER_ID</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -339,10 +339,10 @@ OBPv400GetScopes Get Scopes for Consumer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param consumerid The CONSUMERID identifier
- @return ApiOBPv400GetScopesRequest
+ @return ApiGetScopesRequest
 */
-func (a *ScopeAPIService) OBPv400GetScopes(ctx context.Context, consumerid string) ApiOBPv400GetScopesRequest {
-	return ApiOBPv400GetScopesRequest{
+func (a *ScopeAPIService) GetScopes(ctx context.Context, consumerid string) ApiGetScopesRequest {
+	return ApiGetScopesRequest{
 		ApiService: a,
 		ctx: ctx,
 		consumerid: consumerid,
@@ -350,16 +350,16 @@ func (a *ScopeAPIService) OBPv400GetScopes(ctx context.Context, consumerid strin
 }
 
 // Execute executes the request
-//  @return OBPv400GetScopes200Response
-func (a *ScopeAPIService) OBPv400GetScopesExecute(r ApiOBPv400GetScopesRequest) (*OBPv400GetScopes200Response, *http.Response, error) {
+//  @return GetScopes200Response
+func (a *ScopeAPIService) GetScopesExecute(r ApiGetScopesRequest) (*GetScopes200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetScopes200Response
+		localVarReturnValue  *GetScopes200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScopeAPIService.OBPv400GetScopes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScopeAPIService.GetScopes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -412,7 +412,7 @@ func (a *ScopeAPIService) OBPv400GetScopesExecute(r ApiOBPv400GetScopesRequest) 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

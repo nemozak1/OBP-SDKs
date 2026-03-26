@@ -1,21 +1,21 @@
 # \LogCacheAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv510LogCacheAllEndpoint**](LogCacheAPI.md#OBPv510LogCacheAllEndpoint) | **Get** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
-[**OBPv510LogCacheDebugEndpoint**](LogCacheAPI.md#OBPv510LogCacheDebugEndpoint) | **Get** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
-[**OBPv510LogCacheErrorEndpoint**](LogCacheAPI.md#OBPv510LogCacheErrorEndpoint) | **Get** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
-[**OBPv510LogCacheInfoEndpoint**](LogCacheAPI.md#OBPv510LogCacheInfoEndpoint) | **Get** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
-[**OBPv510LogCacheTraceEndpoint**](LogCacheAPI.md#OBPv510LogCacheTraceEndpoint) | **Get** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
-[**OBPv510LogCacheWarningEndpoint**](LogCacheAPI.md#OBPv510LogCacheWarningEndpoint) | **Get** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
+[**LogCacheAllEndpoint**](LogCacheAPI.md#LogCacheAllEndpoint) | **Get** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
+[**LogCacheDebugEndpoint**](LogCacheAPI.md#LogCacheDebugEndpoint) | **Get** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
+[**LogCacheErrorEndpoint**](LogCacheAPI.md#LogCacheErrorEndpoint) | **Get** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
+[**LogCacheInfoEndpoint**](LogCacheAPI.md#LogCacheInfoEndpoint) | **Get** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
+[**LogCacheTraceEndpoint**](LogCacheAPI.md#LogCacheTraceEndpoint) | **Get** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
+[**LogCacheWarningEndpoint**](LogCacheAPI.md#LogCacheWarningEndpoint) | **Get** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
 
 
 
-## OBPv510LogCacheAllEndpoint
+## LogCacheAllEndpoint
 
-> OBPv510LogCacheAllEndpoint(ctx).Execute()
+> LogCacheAllEndpoint(ctx).Execute()
 
 Get All Level Log Cache
 
@@ -37,9 +37,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LogCacheAPI.OBPv510LogCacheAllEndpoint(context.Background()).Execute()
+	r, err := apiClient.LogCacheAPI.LogCacheAllEndpoint(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `LogCacheAPI.OBPv510LogCacheAllEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `LogCacheAPI.LogCacheAllEndpoint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510LogCacheAllEndpointRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiLogCacheAllEndpointRequest struct via the builder pattern
 
 
 ### Return type
@@ -72,9 +72,9 @@ Other parameters are passed through a pointer to a apiOBPv510LogCacheAllEndpoint
 [[Back to README]](../README.md)
 
 
-## OBPv510LogCacheDebugEndpoint
+## LogCacheDebugEndpoint
 
-> OBPv510LogCacheDebugEndpoint(ctx).Execute()
+> LogCacheDebugEndpoint(ctx).Execute()
 
 Get Debug Level Log Cache
 
@@ -96,9 +96,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LogCacheAPI.OBPv510LogCacheDebugEndpoint(context.Background()).Execute()
+	r, err := apiClient.LogCacheAPI.LogCacheDebugEndpoint(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `LogCacheAPI.OBPv510LogCacheDebugEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `LogCacheAPI.LogCacheDebugEndpoint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -110,7 +110,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510LogCacheDebugEndpointRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiLogCacheDebugEndpointRequest struct via the builder pattern
 
 
 ### Return type
@@ -131,9 +131,9 @@ Other parameters are passed through a pointer to a apiOBPv510LogCacheDebugEndpoi
 [[Back to README]](../README.md)
 
 
-## OBPv510LogCacheErrorEndpoint
+## LogCacheErrorEndpoint
 
-> OBPv510LogCacheErrorEndpoint(ctx).Execute()
+> LogCacheErrorEndpoint(ctx).Execute()
 
 Get Error Level Log Cache
 
@@ -155,9 +155,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LogCacheAPI.OBPv510LogCacheErrorEndpoint(context.Background()).Execute()
+	r, err := apiClient.LogCacheAPI.LogCacheErrorEndpoint(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `LogCacheAPI.OBPv510LogCacheErrorEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `LogCacheAPI.LogCacheErrorEndpoint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -169,7 +169,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510LogCacheErrorEndpointRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiLogCacheErrorEndpointRequest struct via the builder pattern
 
 
 ### Return type
@@ -190,9 +190,9 @@ Other parameters are passed through a pointer to a apiOBPv510LogCacheErrorEndpoi
 [[Back to README]](../README.md)
 
 
-## OBPv510LogCacheInfoEndpoint
+## LogCacheInfoEndpoint
 
-> OBPv510LogCacheInfoEndpoint(ctx).Execute()
+> LogCacheInfoEndpoint(ctx).Execute()
 
 Get Info Level Log Cache
 
@@ -214,9 +214,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LogCacheAPI.OBPv510LogCacheInfoEndpoint(context.Background()).Execute()
+	r, err := apiClient.LogCacheAPI.LogCacheInfoEndpoint(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `LogCacheAPI.OBPv510LogCacheInfoEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `LogCacheAPI.LogCacheInfoEndpoint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -228,7 +228,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510LogCacheInfoEndpointRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiLogCacheInfoEndpointRequest struct via the builder pattern
 
 
 ### Return type
@@ -249,9 +249,9 @@ Other parameters are passed through a pointer to a apiOBPv510LogCacheInfoEndpoin
 [[Back to README]](../README.md)
 
 
-## OBPv510LogCacheTraceEndpoint
+## LogCacheTraceEndpoint
 
-> OBPv510LogCacheTraceEndpoint(ctx).Execute()
+> LogCacheTraceEndpoint(ctx).Execute()
 
 Get Trace Level Log Cache
 
@@ -273,9 +273,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LogCacheAPI.OBPv510LogCacheTraceEndpoint(context.Background()).Execute()
+	r, err := apiClient.LogCacheAPI.LogCacheTraceEndpoint(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `LogCacheAPI.OBPv510LogCacheTraceEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `LogCacheAPI.LogCacheTraceEndpoint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -287,7 +287,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510LogCacheTraceEndpointRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiLogCacheTraceEndpointRequest struct via the builder pattern
 
 
 ### Return type
@@ -308,9 +308,9 @@ Other parameters are passed through a pointer to a apiOBPv510LogCacheTraceEndpoi
 [[Back to README]](../README.md)
 
 
-## OBPv510LogCacheWarningEndpoint
+## LogCacheWarningEndpoint
 
-> OBPv510LogCacheWarningEndpoint(ctx).Execute()
+> LogCacheWarningEndpoint(ctx).Execute()
 
 Get Warning Level Log Cache
 
@@ -332,9 +332,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LogCacheAPI.OBPv510LogCacheWarningEndpoint(context.Background()).Execute()
+	r, err := apiClient.LogCacheAPI.LogCacheWarningEndpoint(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `LogCacheAPI.OBPv510LogCacheWarningEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `LogCacheAPI.LogCacheWarningEndpoint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -346,7 +346,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510LogCacheWarningEndpointRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiLogCacheWarningEndpointRequest struct via the builder pattern
 
 
 ### Return type

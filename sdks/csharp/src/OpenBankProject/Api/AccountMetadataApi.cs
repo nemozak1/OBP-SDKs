@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -48,10 +48,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response">Request body</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400AddTagForViewOnAccountApiResponse"/>&gt;</returns>
-        Task<IOBPv400AddTagForViewOnAccountApiResponse> OBPv400AddTagForViewOnAccountAsync(string bankid, string accountid, string viewid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddTagForViewOnAccountApiResponse"/>&gt;</returns>
+        Task<IAddTagForViewOnAccountApiResponse> AddTagForViewOnAccountAsync(string bankid, string accountid, string viewid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create a tag on account
@@ -62,10 +62,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response">Request body</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400AddTagForViewOnAccountApiResponse"/>?&gt;</returns>
-        Task<IOBPv400AddTagForViewOnAccountApiResponse?> OBPv400AddTagForViewOnAccountOrDefaultAsync(string bankid, string accountid, string viewid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddTagForViewOnAccountApiResponse"/>?&gt;</returns>
+        Task<IAddTagForViewOnAccountApiResponse?> AddTagForViewOnAccountOrDefaultAsync(string bankid, string accountid, string viewid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a tag on account
@@ -79,8 +79,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="tagid">The TAGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteTagForViewOnAccountApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteTagForViewOnAccountApiResponse> OBPv400DeleteTagForViewOnAccountAsync(string bankid, string accountid, string viewid, string tagid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteTagForViewOnAccountApiResponse"/>&gt;</returns>
+        Task<IDeleteTagForViewOnAccountApiResponse> DeleteTagForViewOnAccountAsync(string bankid, string accountid, string viewid, string tagid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a tag on account
@@ -93,8 +93,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="tagid">The TAGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteTagForViewOnAccountApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteTagForViewOnAccountApiResponse?> OBPv400DeleteTagForViewOnAccountOrDefaultAsync(string bankid, string accountid, string viewid, string tagid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteTagForViewOnAccountApiResponse"/>?&gt;</returns>
+        Task<IDeleteTagForViewOnAccountApiResponse?> DeleteTagForViewOnAccountOrDefaultAsync(string bankid, string accountid, string viewid, string tagid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get tags on account
@@ -107,8 +107,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetTagsForViewOnAccountApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetTagsForViewOnAccountApiResponse> OBPv400GetTagsForViewOnAccountAsync(string bankid, string accountid, string viewid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTagsForViewOnAccountApiResponse"/>&gt;</returns>
+        Task<IGetTagsForViewOnAccountApiResponse> GetTagsForViewOnAccountAsync(string bankid, string accountid, string viewid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get tags on account
@@ -120,8 +120,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetTagsForViewOnAccountApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetTagsForViewOnAccountApiResponse?> OBPv400GetTagsForViewOnAccountOrDefaultAsync(string bankid, string accountid, string viewid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTagsForViewOnAccountApiResponse"/>?&gt;</returns>
+        Task<IGetTagsForViewOnAccountApiResponse?> GetTagsForViewOnAccountOrDefaultAsync(string bankid, string accountid, string viewid, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -132,61 +132,61 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400AddTagForViewOnAccount;
+        public event EventHandler<ApiResponseEventArgs>? OnAddTagForViewOnAccount;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400AddTagForViewOnAccount;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAddTagForViewOnAccount;
 
-        internal void ExecuteOnOBPv400AddTagForViewOnAccount(AccountApi.OBPv400AddTagForViewOnAccountApiResponse apiResponse)
+        internal void ExecuteOnAddTagForViewOnAccount(AccountApi.AddTagForViewOnAccountApiResponse apiResponse)
         {
-            OnOBPv400AddTagForViewOnAccount?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAddTagForViewOnAccount?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400AddTagForViewOnAccount(Exception exception)
+        internal void ExecuteOnErrorAddTagForViewOnAccount(Exception exception)
         {
-            OnErrorOBPv400AddTagForViewOnAccount?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAddTagForViewOnAccount?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteTagForViewOnAccount;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteTagForViewOnAccount;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteTagForViewOnAccount;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteTagForViewOnAccount;
 
-        internal void ExecuteOnOBPv400DeleteTagForViewOnAccount(AccountApi.OBPv400DeleteTagForViewOnAccountApiResponse apiResponse)
+        internal void ExecuteOnDeleteTagForViewOnAccount(AccountApi.DeleteTagForViewOnAccountApiResponse apiResponse)
         {
-            OnOBPv400DeleteTagForViewOnAccount?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteTagForViewOnAccount?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteTagForViewOnAccount(Exception exception)
+        internal void ExecuteOnErrorDeleteTagForViewOnAccount(Exception exception)
         {
-            OnErrorOBPv400DeleteTagForViewOnAccount?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteTagForViewOnAccount?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetTagsForViewOnAccount;
+        public event EventHandler<ApiResponseEventArgs>? OnGetTagsForViewOnAccount;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetTagsForViewOnAccount;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetTagsForViewOnAccount;
 
-        internal void ExecuteOnOBPv400GetTagsForViewOnAccount(AccountApi.OBPv400GetTagsForViewOnAccountApiResponse apiResponse)
+        internal void ExecuteOnGetTagsForViewOnAccount(AccountApi.GetTagsForViewOnAccountApiResponse apiResponse)
         {
-            OnOBPv400GetTagsForViewOnAccount?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetTagsForViewOnAccount?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetTagsForViewOnAccount(Exception exception)
+        internal void ExecuteOnErrorGetTagsForViewOnAccount(Exception exception)
         {
-            OnErrorOBPv400GetTagsForViewOnAccount?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetTagsForViewOnAccount?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -244,7 +244,7 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv400AddTagForViewOnAccount(ref string bankid, ref string accountid, ref string viewid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response);
+        partial void FormatAddTagForViewOnAccount(ref string bankid, ref string accountid, ref string viewid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId);
 
         /// <summary>
         /// Validates the request parameters
@@ -252,9 +252,9 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
         /// <returns></returns>
-        private void ValidateOBPv400AddTagForViewOnAccount(string bankid, string accountid, string viewid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response)
+        private void ValidateAddTagForViewOnAccount(string bankid, string accountid, string viewid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -265,8 +265,8 @@ namespace OpenBankProject.Api
             if (viewid == null)
                 throw new ArgumentNullException(nameof(viewid));
 
-            if (oBPv400DeleteSystemLevelEndpointTag200Response == null)
-                throw new ArgumentNullException(nameof(oBPv400DeleteSystemLevelEndpointTag200Response));
+            if (getTransactionTypes200ResponseTransactionTypesInnerId == null)
+                throw new ArgumentNullException(nameof(getTransactionTypes200ResponseTransactionTypesInnerId));
         }
 
         /// <summary>
@@ -276,11 +276,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
-        private void AfterOBPv400AddTagForViewOnAccountDefaultImplementation(IOBPv400AddTagForViewOnAccountApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response)
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
+        private void AfterAddTagForViewOnAccountDefaultImplementation(IAddTagForViewOnAccountApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400AddTagForViewOnAccount(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, oBPv400DeleteSystemLevelEndpointTag200Response);
+            AfterAddTagForViewOnAccount(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -293,8 +293,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
-        partial void AfterOBPv400AddTagForViewOnAccount(ref bool suppressDefaultLog, IOBPv400AddTagForViewOnAccountApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response);
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
+        partial void AfterAddTagForViewOnAccount(ref bool suppressDefaultLog, IAddTagForViewOnAccountApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -305,11 +305,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
-        private void OnErrorOBPv400AddTagForViewOnAccountDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response)
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
+        private void OnErrorAddTagForViewOnAccountDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400AddTagForViewOnAccount(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, oBPv400DeleteSystemLevelEndpointTag200Response);
+            OnErrorAddTagForViewOnAccount(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -324,8 +324,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
-        partial void OnErrorOBPv400AddTagForViewOnAccount(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response);
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
+        partial void OnErrorAddTagForViewOnAccount(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId);
 
         /// <summary>
         /// Create a tag on account &lt;p&gt;Posts a tag about an account ACCOUNT_ID on a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; VIEW_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Authentication is required as the tag is linked with the user.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -333,14 +333,14 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response">Request body</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400AddTagForViewOnAccountApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400AddTagForViewOnAccountApiResponse?> OBPv400AddTagForViewOnAccountOrDefaultAsync(string bankid, string accountid, string viewid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddTagForViewOnAccountApiResponse"/>&gt;</returns>
+        public async Task<IAddTagForViewOnAccountApiResponse?> AddTagForViewOnAccountOrDefaultAsync(string bankid, string accountid, string viewid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400AddTagForViewOnAccountAsync(bankid, accountid, viewid, oBPv400DeleteSystemLevelEndpointTag200Response, cancellationToken).ConfigureAwait(false);
+                return await AddTagForViewOnAccountAsync(bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -355,18 +355,18 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response">Request body</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400AddTagForViewOnAccountApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400AddTagForViewOnAccountApiResponse> OBPv400AddTagForViewOnAccountAsync(string bankid, string accountid, string viewid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddTagForViewOnAccountApiResponse"/>&gt;</returns>
+        public async Task<IAddTagForViewOnAccountApiResponse> AddTagForViewOnAccountAsync(string bankid, string accountid, string viewid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400AddTagForViewOnAccount(bankid, accountid, viewid, oBPv400DeleteSystemLevelEndpointTag200Response);
+                ValidateAddTagForViewOnAccount(bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId);
 
-                FormatOBPv400AddTagForViewOnAccount(ref bankid, ref accountid, ref viewid, oBPv400DeleteSystemLevelEndpointTag200Response);
+                FormatAddTagForViewOnAccount(ref bankid, ref accountid, ref viewid, getTransactionTypes200ResponseTransactionTypesInnerId);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -380,16 +380,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400DeleteSystemLevelEndpointTag200Response as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (getTransactionTypes200ResponseTransactionTypesInnerId as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400DeleteSystemLevelEndpointTag200Response, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(getTransactionTypes200ResponseTransactionTypesInnerId, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -425,8 +425,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv400AddTagForViewOnAccountApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv400AddTagForViewOnAccountApiResponse>();
-                        AccountApi.OBPv400AddTagForViewOnAccountApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.AddTagForViewOnAccountApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.AddTagForViewOnAccountApiResponse>();
+                        AccountApi.AddTagForViewOnAccountApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -437,9 +437,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400AddTagForViewOnAccountDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, oBPv400DeleteSystemLevelEndpointTag200Response);
+                        AfterAddTagForViewOnAccountDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId);
 
-                        Events.ExecuteOnOBPv400AddTagForViewOnAccount(apiResponseLocalVar);
+                        Events.ExecuteOnAddTagForViewOnAccount(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -451,13 +451,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400AddTagForViewOnAccountDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags", uriBuilderLocalVar.Path, bankid, accountid, viewid, oBPv400DeleteSystemLevelEndpointTag200Response);
-                Events.ExecuteOnErrorOBPv400AddTagForViewOnAccount(e);
+                OnErrorAddTagForViewOnAccountDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags", uriBuilderLocalVar.Path, bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId);
+                Events.ExecuteOnErrorAddTagForViewOnAccount(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400DeleteTagForViewOnAccount(ref string bankid, ref string accountid, ref string viewid, ref string tagid);
+        partial void FormatDeleteTagForViewOnAccount(ref string bankid, ref string accountid, ref string viewid, ref string tagid);
 
         /// <summary>
         /// Validates the request parameters
@@ -467,7 +467,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="tagid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteTagForViewOnAccount(string bankid, string accountid, string viewid, string tagid)
+        private void ValidateDeleteTagForViewOnAccount(string bankid, string accountid, string viewid, string tagid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -490,10 +490,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="tagid"></param>
-        private void AfterOBPv400DeleteTagForViewOnAccountDefaultImplementation(IOBPv400DeleteTagForViewOnAccountApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string tagid)
+        private void AfterDeleteTagForViewOnAccountDefaultImplementation(IDeleteTagForViewOnAccountApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string tagid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteTagForViewOnAccount(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, tagid);
+            AfterDeleteTagForViewOnAccount(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, tagid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -507,7 +507,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="tagid"></param>
-        partial void AfterOBPv400DeleteTagForViewOnAccount(ref bool suppressDefaultLog, IOBPv400DeleteTagForViewOnAccountApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string tagid);
+        partial void AfterDeleteTagForViewOnAccount(ref bool suppressDefaultLog, IDeleteTagForViewOnAccountApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string tagid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -519,10 +519,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="tagid"></param>
-        private void OnErrorOBPv400DeleteTagForViewOnAccountDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string tagid)
+        private void OnErrorDeleteTagForViewOnAccountDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string tagid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteTagForViewOnAccount(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, tagid);
+            OnErrorDeleteTagForViewOnAccount(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, tagid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -538,7 +538,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="tagid"></param>
-        partial void OnErrorOBPv400DeleteTagForViewOnAccount(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string tagid);
+        partial void OnErrorDeleteTagForViewOnAccount(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string tagid);
 
         /// <summary>
         /// Delete a tag on account &lt;p&gt;Deletes the tag TAG_ID about the account ACCOUNT_ID made on &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Authentication is required as the tag is linked with the user.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tag_id\&quot;&gt;TAG_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -548,12 +548,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="tagid">The TAGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteTagForViewOnAccountApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteTagForViewOnAccountApiResponse?> OBPv400DeleteTagForViewOnAccountOrDefaultAsync(string bankid, string accountid, string viewid, string tagid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteTagForViewOnAccountApiResponse"/>&gt;</returns>
+        public async Task<IDeleteTagForViewOnAccountApiResponse?> DeleteTagForViewOnAccountOrDefaultAsync(string bankid, string accountid, string viewid, string tagid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteTagForViewOnAccountAsync(bankid, accountid, viewid, tagid, cancellationToken).ConfigureAwait(false);
+                return await DeleteTagForViewOnAccountAsync(bankid, accountid, viewid, tagid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -570,16 +570,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="tagid">The TAGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteTagForViewOnAccountApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteTagForViewOnAccountApiResponse> OBPv400DeleteTagForViewOnAccountAsync(string bankid, string accountid, string viewid, string tagid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteTagForViewOnAccountApiResponse"/>&gt;</returns>
+        public async Task<IDeleteTagForViewOnAccountApiResponse> DeleteTagForViewOnAccountAsync(string bankid, string accountid, string viewid, string tagid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteTagForViewOnAccount(bankid, accountid, viewid, tagid);
+                ValidateDeleteTagForViewOnAccount(bankid, accountid, viewid, tagid);
 
-                FormatOBPv400DeleteTagForViewOnAccount(ref bankid, ref accountid, ref viewid, ref tagid);
+                FormatDeleteTagForViewOnAccount(ref bankid, ref accountid, ref viewid, ref tagid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -599,7 +599,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -617,8 +617,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv400DeleteTagForViewOnAccountApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv400DeleteTagForViewOnAccountApiResponse>();
-                        AccountApi.OBPv400DeleteTagForViewOnAccountApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.DeleteTagForViewOnAccountApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.DeleteTagForViewOnAccountApiResponse>();
+                        AccountApi.DeleteTagForViewOnAccountApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -629,9 +629,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteTagForViewOnAccountDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, tagid);
+                        AfterDeleteTagForViewOnAccountDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, tagid);
 
-                        Events.ExecuteOnOBPv400DeleteTagForViewOnAccount(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteTagForViewOnAccount(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -643,13 +643,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteTagForViewOnAccountDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid}", uriBuilderLocalVar.Path, bankid, accountid, viewid, tagid);
-                Events.ExecuteOnErrorOBPv400DeleteTagForViewOnAccount(e);
+                OnErrorDeleteTagForViewOnAccountDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid}", uriBuilderLocalVar.Path, bankid, accountid, viewid, tagid);
+                Events.ExecuteOnErrorDeleteTagForViewOnAccount(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400GetTagsForViewOnAccount(ref string bankid, ref string accountid, ref string viewid);
+        partial void FormatGetTagsForViewOnAccount(ref string bankid, ref string accountid, ref string viewid);
 
         /// <summary>
         /// Validates the request parameters
@@ -658,7 +658,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetTagsForViewOnAccount(string bankid, string accountid, string viewid)
+        private void ValidateGetTagsForViewOnAccount(string bankid, string accountid, string viewid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -677,10 +677,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        private void AfterOBPv400GetTagsForViewOnAccountDefaultImplementation(IOBPv400GetTagsForViewOnAccountApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid)
+        private void AfterGetTagsForViewOnAccountDefaultImplementation(IGetTagsForViewOnAccountApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetTagsForViewOnAccount(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid);
+            AfterGetTagsForViewOnAccount(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -693,7 +693,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        partial void AfterOBPv400GetTagsForViewOnAccount(ref bool suppressDefaultLog, IOBPv400GetTagsForViewOnAccountApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid);
+        partial void AfterGetTagsForViewOnAccount(ref bool suppressDefaultLog, IGetTagsForViewOnAccountApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -704,10 +704,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        private void OnErrorOBPv400GetTagsForViewOnAccountDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid)
+        private void OnErrorGetTagsForViewOnAccountDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetTagsForViewOnAccount(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid);
+            OnErrorGetTagsForViewOnAccount(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -722,7 +722,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        partial void OnErrorOBPv400GetTagsForViewOnAccount(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid);
+        partial void OnErrorGetTagsForViewOnAccount(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid);
 
         /// <summary>
         /// Get tags on account &lt;p&gt;Returns the account ACCOUNT_ID tags made on a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; (VIEW_ID).&lt;br /&gt; User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Authentication is required as the tag is linked with the user.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -731,12 +731,12 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetTagsForViewOnAccountApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetTagsForViewOnAccountApiResponse?> OBPv400GetTagsForViewOnAccountOrDefaultAsync(string bankid, string accountid, string viewid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTagsForViewOnAccountApiResponse"/>&gt;</returns>
+        public async Task<IGetTagsForViewOnAccountApiResponse?> GetTagsForViewOnAccountOrDefaultAsync(string bankid, string accountid, string viewid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetTagsForViewOnAccountAsync(bankid, accountid, viewid, cancellationToken).ConfigureAwait(false);
+                return await GetTagsForViewOnAccountAsync(bankid, accountid, viewid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -752,16 +752,16 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetTagsForViewOnAccountApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetTagsForViewOnAccountApiResponse> OBPv400GetTagsForViewOnAccountAsync(string bankid, string accountid, string viewid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTagsForViewOnAccountApiResponse"/>&gt;</returns>
+        public async Task<IGetTagsForViewOnAccountApiResponse> GetTagsForViewOnAccountAsync(string bankid, string accountid, string viewid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetTagsForViewOnAccount(bankid, accountid, viewid);
+                ValidateGetTagsForViewOnAccount(bankid, accountid, viewid);
 
-                FormatOBPv400GetTagsForViewOnAccount(ref bankid, ref accountid, ref viewid);
+                FormatGetTagsForViewOnAccount(ref bankid, ref accountid, ref viewid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -780,7 +780,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -807,8 +807,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv400GetTagsForViewOnAccountApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv400GetTagsForViewOnAccountApiResponse>();
-                        AccountApi.OBPv400GetTagsForViewOnAccountApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.GetTagsForViewOnAccountApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.GetTagsForViewOnAccountApiResponse>();
+                        AccountApi.GetTagsForViewOnAccountApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -819,9 +819,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetTagsForViewOnAccountDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid);
+                        AfterGetTagsForViewOnAccountDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid);
 
-                        Events.ExecuteOnOBPv400GetTagsForViewOnAccount(apiResponseLocalVar);
+                        Events.ExecuteOnGetTagsForViewOnAccount(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -833,8 +833,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetTagsForViewOnAccountDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags", uriBuilderLocalVar.Path, bankid, accountid, viewid);
-                Events.ExecuteOnErrorOBPv400GetTagsForViewOnAccount(e);
+                OnErrorGetTagsForViewOnAccountDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags", uriBuilderLocalVar.Path, bankid, accountid, viewid);
+                Events.ExecuteOnErrorGetTagsForViewOnAccount(e);
                 throw;
             }
         }

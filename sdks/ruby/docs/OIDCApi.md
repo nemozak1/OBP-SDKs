@@ -1,18 +1,18 @@
 # OpenBankProject::OIDCApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv3_1_0_get_o_auth2_server_jwks_uris**](OIDCApi.md#o_bpv3_1_0_get_o_auth2_server_jwks_uris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs |
-| [**o_bpv3_1_0_get_obp_connector_loopback**](OIDCApi.md#o_bpv3_1_0_get_obp_connector_loopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback) |
-| [**o_bpv6_0_0_get_oidc_client**](OIDCApi.md#o_bpv6_0_0_get_oidc_client) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client |
-| [**o_bpv6_0_0_verify_oidc_client**](OIDCApi.md#o_bpv6_0_0_verify_oidc_client) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client |
+| [**get_o_auth2_server_jwks_uris**](OIDCApi.md#get_o_auth2_server_jwks_uris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs |
+| [**get_obp_connector_loopback**](OIDCApi.md#get_obp_connector_loopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback) |
+| [**get_oidc_client**](OIDCApi.md#get_oidc_client) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client |
+| [**verify_oidc_client**](OIDCApi.md#verify_oidc_client) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client |
 
 
-## o_bpv3_1_0_get_o_auth2_server_jwks_uris
+## get_o_auth2_server_jwks_uris
 
-> <OBPv310GetOAuth2ServerJWKsURIs200Response> o_bpv3_1_0_get_o_auth2_server_jwks_uris
+> <GetOAuth2ServerJWKsURIs200Response> get_o_auth2_server_jwks_uris
 
 Get JSON Web Key (JWK) URIs
 
@@ -28,28 +28,28 @@ api_instance = OpenBankProject::OIDCApi.new
 
 begin
   # Get JSON Web Key (JWK) URIs
-  result = api_instance.o_bpv3_1_0_get_o_auth2_server_jwks_uris
+  result = api_instance.get_o_auth2_server_jwks_uris
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling OIDCApi->o_bpv3_1_0_get_o_auth2_server_jwks_uris: #{e}"
+  puts "Error when calling OIDCApi->get_o_auth2_server_jwks_uris: #{e}"
 end
 ```
 
-#### Using the o_bpv3_1_0_get_o_auth2_server_jwks_uris_with_http_info variant
+#### Using the get_o_auth2_server_jwks_uris_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv310GetOAuth2ServerJWKsURIs200Response>, Integer, Hash)> o_bpv3_1_0_get_o_auth2_server_jwks_uris_with_http_info
+> <Array(<GetOAuth2ServerJWKsURIs200Response>, Integer, Hash)> get_o_auth2_server_jwks_uris_with_http_info
 
 ```ruby
 begin
   # Get JSON Web Key (JWK) URIs
-  data, status_code, headers = api_instance.o_bpv3_1_0_get_o_auth2_server_jwks_uris_with_http_info
+  data, status_code, headers = api_instance.get_o_auth2_server_jwks_uris_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv310GetOAuth2ServerJWKsURIs200Response>
+  p data # => <GetOAuth2ServerJWKsURIs200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling OIDCApi->o_bpv3_1_0_get_o_auth2_server_jwks_uris_with_http_info: #{e}"
+  puts "Error when calling OIDCApi->get_o_auth2_server_jwks_uris_with_http_info: #{e}"
 end
 ```
 
@@ -59,7 +59,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv310GetOAuth2ServerJWKsURIs200Response**](OBPv310GetOAuth2ServerJWKsURIs200Response.md)
+[**GetOAuth2ServerJWKsURIs200Response**](GetOAuth2ServerJWKsURIs200Response.md)
 
 ### Authorization
 
@@ -71,9 +71,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## o_bpv3_1_0_get_obp_connector_loopback
+## get_obp_connector_loopback
 
-> <OBPv310GetObpConnectorLoopback200Response> o_bpv3_1_0_get_obp_connector_loopback
+> <GetObpConnectorLoopback200Response> get_obp_connector_loopback
 
 Get Connector Status (Loopback)
 
@@ -95,37 +95,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::OIDCApi.new
 
 begin
   # Get Connector Status (Loopback)
-  result = api_instance.o_bpv3_1_0_get_obp_connector_loopback
+  result = api_instance.get_obp_connector_loopback
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling OIDCApi->o_bpv3_1_0_get_obp_connector_loopback: #{e}"
+  puts "Error when calling OIDCApi->get_obp_connector_loopback: #{e}"
 end
 ```
 
-#### Using the o_bpv3_1_0_get_obp_connector_loopback_with_http_info variant
+#### Using the get_obp_connector_loopback_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv310GetObpConnectorLoopback200Response>, Integer, Hash)> o_bpv3_1_0_get_obp_connector_loopback_with_http_info
+> <Array(<GetObpConnectorLoopback200Response>, Integer, Hash)> get_obp_connector_loopback_with_http_info
 
 ```ruby
 begin
   # Get Connector Status (Loopback)
-  data, status_code, headers = api_instance.o_bpv3_1_0_get_obp_connector_loopback_with_http_info
+  data, status_code, headers = api_instance.get_obp_connector_loopback_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv310GetObpConnectorLoopback200Response>
+  p data # => <GetObpConnectorLoopback200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling OIDCApi->o_bpv3_1_0_get_obp_connector_loopback_with_http_info: #{e}"
+  puts "Error when calling OIDCApi->get_obp_connector_loopback_with_http_info: #{e}"
 end
 ```
 
@@ -135,7 +135,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv310GetObpConnectorLoopback200Response**](OBPv310GetObpConnectorLoopback200Response.md)
+[**GetObpConnectorLoopback200Response**](GetObpConnectorLoopback200Response.md)
 
 ### Authorization
 
@@ -147,13 +147,13 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_oidc_client
+## get_oidc_client
 
-> <OBPv600GetOidcClient200Response> o_bpv6_0_0_get_oidc_client(clientid)
+> <GetOidcClient200Response> get_oidc_client(clientid)
 
 Get OIDC Client
 
-<p>Gets an OIDC/OAuth2 client's metadata by client_id.</p> <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br /> This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CLIENT_ID</a>: CLIENT_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_name</strong></a>: client_name</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>redirect_uris</strong></a>: redirect_uris</p> 
+<p>Gets an OIDC/OAuth2 client's metadata by client_id.</p> <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br /> This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CLIENT_ID</a>: CLIENT_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_name</strong></a>: client_name</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>redirect_uris</strong></a>: redirect_uris</p> 
 
 ### Examples
 
@@ -171,9 +171,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::OIDCApi.new
@@ -181,28 +181,28 @@ clientid = 'clientid_example' # String | The CLIENTID identifier
 
 begin
   # Get OIDC Client
-  result = api_instance.o_bpv6_0_0_get_oidc_client(clientid)
+  result = api_instance.get_oidc_client(clientid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling OIDCApi->o_bpv6_0_0_get_oidc_client: #{e}"
+  puts "Error when calling OIDCApi->get_oidc_client: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_oidc_client_with_http_info variant
+#### Using the get_oidc_client_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetOidcClient200Response>, Integer, Hash)> o_bpv6_0_0_get_oidc_client_with_http_info(clientid)
+> <Array(<GetOidcClient200Response>, Integer, Hash)> get_oidc_client_with_http_info(clientid)
 
 ```ruby
 begin
   # Get OIDC Client
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_oidc_client_with_http_info(clientid)
+  data, status_code, headers = api_instance.get_oidc_client_with_http_info(clientid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetOidcClient200Response>
+  p data # => <GetOidcClient200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling OIDCApi->o_bpv6_0_0_get_oidc_client_with_http_info: #{e}"
+  puts "Error when calling OIDCApi->get_oidc_client_with_http_info: #{e}"
 end
 ```
 
@@ -214,7 +214,7 @@ end
 
 ### Return type
 
-[**OBPv600GetOidcClient200Response**](OBPv600GetOidcClient200Response.md)
+[**GetOidcClient200Response**](GetOidcClient200Response.md)
 
 ### Authorization
 
@@ -226,13 +226,13 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_verify_oidc_client
+## verify_oidc_client
 
-> <OBPv600VerifyOidcClient200Response> o_bpv6_0_0_verify_oidc_client(obpv600_verify_oidc_client_request)
+> <VerifyOidcClient200Response> verify_oidc_client(verify_oidc_client_request)
 
 Verify OIDC Client
 
-<p>Verifies an OIDC/OAuth2 client's credentials.</p> <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br /> Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_secret</strong></a>: client_secret</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> <p><a href=\"/glossary#\">client_id</a>: client_id</p> <p><a href=\"/glossary#\">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">redirect_uris</a>: redirect_uris</p> 
+<p>Verifies an OIDC/OAuth2 client's credentials.</p> <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br /> Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_secret</strong></a>: client_secret</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> <p><a href=\"/glossary#\">client_id</a>: client_id</p> <p><a href=\"/glossary#\">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">redirect_uris</a>: redirect_uris</p> 
 
 ### Examples
 
@@ -250,38 +250,38 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::OIDCApi.new
-obpv600_verify_oidc_client_request = OpenBankProject::OBPv600VerifyOidcClientRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600VerifyOidcClientRequestProperties.new({client_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), client_secret: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})}) # OBPv600VerifyOidcClientRequest | Request body
+verify_oidc_client_request = OpenBankProject::VerifyOidcClientRequest.new # VerifyOidcClientRequest | Request body
 
 begin
   # Verify OIDC Client
-  result = api_instance.o_bpv6_0_0_verify_oidc_client(obpv600_verify_oidc_client_request)
+  result = api_instance.verify_oidc_client(verify_oidc_client_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling OIDCApi->o_bpv6_0_0_verify_oidc_client: #{e}"
+  puts "Error when calling OIDCApi->verify_oidc_client: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_verify_oidc_client_with_http_info variant
+#### Using the verify_oidc_client_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600VerifyOidcClient200Response>, Integer, Hash)> o_bpv6_0_0_verify_oidc_client_with_http_info(obpv600_verify_oidc_client_request)
+> <Array(<VerifyOidcClient200Response>, Integer, Hash)> verify_oidc_client_with_http_info(verify_oidc_client_request)
 
 ```ruby
 begin
   # Verify OIDC Client
-  data, status_code, headers = api_instance.o_bpv6_0_0_verify_oidc_client_with_http_info(obpv600_verify_oidc_client_request)
+  data, status_code, headers = api_instance.verify_oidc_client_with_http_info(verify_oidc_client_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600VerifyOidcClient200Response>
+  p data # => <VerifyOidcClient200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling OIDCApi->o_bpv6_0_0_verify_oidc_client_with_http_info: #{e}"
+  puts "Error when calling OIDCApi->verify_oidc_client_with_http_info: #{e}"
 end
 ```
 
@@ -289,11 +289,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obpv600_verify_oidc_client_request** | [**OBPv600VerifyOidcClientRequest**](OBPv600VerifyOidcClientRequest.md) | Request body |  |
+| **verify_oidc_client_request** | [**VerifyOidcClientRequest**](VerifyOidcClientRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600VerifyOidcClient200Response**](OBPv600VerifyOidcClient200Response.md)
+[**VerifyOidcClient200Response**](VerifyOidcClient200Response.md)
 
 ### Authorization
 

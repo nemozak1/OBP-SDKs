@@ -2,17 +2,17 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv200ElasticSearchMetrics()**](OldStyleApi.md#oBPv200ElasticSearchMetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch |
+| [**elasticSearchMetrics()**](OldStyleApi.md#elasticSearchMetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch |
 
 
-## `oBPv200ElasticSearchMetrics()`
+## `elasticSearchMetrics()`
 
 ```php
-oBPv200ElasticSearchMetrics(): \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+elasticSearchMetrics(): object
 ```
 
 Search API Metrics via Elasticsearch
@@ -35,9 +35,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\OldStyleApi(
@@ -48,10 +48,10 @@ $apiInstance = new OpenBankProject\Api\OldStyleApi(
 );
 
 try {
-    $result = $apiInstance->oBPv200ElasticSearchMetrics();
+    $result = $apiInstance->elasticSearchMetrics();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OldStyleApi->oBPv200ElasticSearchMetrics: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OldStyleApi->elasticSearchMetrics: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -61,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](../Model/OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**object**
 
 ### Authorization
 

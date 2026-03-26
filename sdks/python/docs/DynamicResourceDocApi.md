@@ -4,21 +4,21 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv4_0_0_build_dynamic_endpoint_template**](DynamicResourceDocApi.md#o_bpv4_0_0_build_dynamic_endpoint_template) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code
-[**o_bpv4_0_0_create_bank_level_dynamic_resource_doc**](DynamicResourceDocApi.md#o_bpv4_0_0_create_bank_level_dynamic_resource_doc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc
-[**o_bpv4_0_0_create_dynamic_resource_doc**](DynamicResourceDocApi.md#o_bpv4_0_0_create_dynamic_resource_doc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc
-[**o_bpv4_0_0_delete_bank_level_dynamic_resource_doc**](DynamicResourceDocApi.md#o_bpv4_0_0_delete_bank_level_dynamic_resource_doc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc
-[**o_bpv4_0_0_delete_dynamic_resource_doc**](DynamicResourceDocApi.md#o_bpv4_0_0_delete_dynamic_resource_doc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc
-[**o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs**](DynamicResourceDocApi.md#o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs
-[**o_bpv4_0_0_get_all_dynamic_resource_docs**](DynamicResourceDocApi.md#o_bpv4_0_0_get_all_dynamic_resource_docs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs
-[**o_bpv4_0_0_get_bank_level_dynamic_resource_doc**](DynamicResourceDocApi.md#o_bpv4_0_0_get_bank_level_dynamic_resource_doc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id
-[**o_bpv4_0_0_get_dynamic_resource_doc**](DynamicResourceDocApi.md#o_bpv4_0_0_get_dynamic_resource_doc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id
-[**o_bpv4_0_0_update_bank_level_dynamic_resource_doc**](DynamicResourceDocApi.md#o_bpv4_0_0_update_bank_level_dynamic_resource_doc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc
-[**o_bpv4_0_0_update_dynamic_resource_doc**](DynamicResourceDocApi.md#o_bpv4_0_0_update_dynamic_resource_doc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc
+[**build_dynamic_endpoint_template**](DynamicResourceDocApi.md#build_dynamic_endpoint_template) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code
+[**create_bank_level_dynamic_resource_doc**](DynamicResourceDocApi.md#create_bank_level_dynamic_resource_doc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc
+[**create_dynamic_resource_doc**](DynamicResourceDocApi.md#create_dynamic_resource_doc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc
+[**delete_bank_level_dynamic_resource_doc**](DynamicResourceDocApi.md#delete_bank_level_dynamic_resource_doc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc
+[**delete_dynamic_resource_doc**](DynamicResourceDocApi.md#delete_dynamic_resource_doc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc
+[**get_all_bank_level_dynamic_resource_docs**](DynamicResourceDocApi.md#get_all_bank_level_dynamic_resource_docs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs
+[**get_all_dynamic_resource_docs**](DynamicResourceDocApi.md#get_all_dynamic_resource_docs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs
+[**get_bank_level_dynamic_resource_doc**](DynamicResourceDocApi.md#get_bank_level_dynamic_resource_doc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id
+[**get_dynamic_resource_doc**](DynamicResourceDocApi.md#get_dynamic_resource_doc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id
+[**update_bank_level_dynamic_resource_doc**](DynamicResourceDocApi.md#update_bank_level_dynamic_resource_doc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc
+[**update_dynamic_resource_doc**](DynamicResourceDocApi.md#update_dynamic_resource_doc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc
 
 
-# **o_bpv4_0_0_build_dynamic_endpoint_template**
-> OBPv400BuildDynamicEndpointTemplate200Response o_bpv4_0_0_build_dynamic_endpoint_template(obpv400_build_dynamic_endpoint_template_request)
+# **build_dynamic_endpoint_template**
+> BuildDynamicEndpointTemplate200Response build_dynamic_endpoint_template(build_dynamic_endpoint_template_request)
 
 Create Dynamic Resource Doc endpoint code
 
@@ -40,8 +40,8 @@ auto compilation and debug</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_build_dynamic_endpoint_template200_response import OBPv400BuildDynamicEndpointTemplate200Response
-from obp_python.models.obpv400_build_dynamic_endpoint_template_request import OBPv400BuildDynamicEndpointTemplateRequest
+from obp_python.models.build_dynamic_endpoint_template200_response import BuildDynamicEndpointTemplate200Response
+from obp_python.models.build_dynamic_endpoint_template_request import BuildDynamicEndpointTemplateRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -74,15 +74,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DynamicResourceDocApi(api_client)
-    obpv400_build_dynamic_endpoint_template_request = {"type":"object","properties":{"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"request_url":{"type":"string"}}} # OBPv400BuildDynamicEndpointTemplateRequest | Request body
+    build_dynamic_endpoint_template_request = {"type":"object","properties":{"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"request_url":{"type":"string"}}} # BuildDynamicEndpointTemplateRequest | Request body
 
     try:
         # Create Dynamic Resource Doc endpoint code
-        api_response = api_instance.o_bpv4_0_0_build_dynamic_endpoint_template(obpv400_build_dynamic_endpoint_template_request)
-        print("The response of DynamicResourceDocApi->o_bpv4_0_0_build_dynamic_endpoint_template:\n")
+        api_response = api_instance.build_dynamic_endpoint_template(build_dynamic_endpoint_template_request)
+        print("The response of DynamicResourceDocApi->build_dynamic_endpoint_template:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicResourceDocApi->o_bpv4_0_0_build_dynamic_endpoint_template: %s\n" % e)
+        print("Exception when calling DynamicResourceDocApi->build_dynamic_endpoint_template: %s\n" % e)
 ```
 
 
@@ -92,11 +92,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv400_build_dynamic_endpoint_template_request** | [**OBPv400BuildDynamicEndpointTemplateRequest**](OBPv400BuildDynamicEndpointTemplateRequest.md)| Request body | 
+ **build_dynamic_endpoint_template_request** | [**BuildDynamicEndpointTemplateRequest**](BuildDynamicEndpointTemplateRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400BuildDynamicEndpointTemplate200Response**](OBPv400BuildDynamicEndpointTemplate200Response.md)
+[**BuildDynamicEndpointTemplate200Response**](BuildDynamicEndpointTemplate200Response.md)
 
 ### Authorization
 
@@ -116,8 +116,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_create_bank_level_dynamic_resource_doc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response o_bpv4_0_0_create_bank_level_dynamic_resource_doc(bankid, obpv400_update_bank_level_dynamic_resource_doc_request)
+# **create_bank_level_dynamic_resource_doc**
+> GetBankLevelDynamicResourceDoc200Response create_bank_level_dynamic_resource_doc(bankid, update_bank_level_dynamic_resource_doc_request)
 
 Create Bank Level Dynamic Resource Doc
 
@@ -148,8 +148,8 @@ Create Bank Level Dynamic Resource Doc
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_bank_level_dynamic_resource_doc200_response import OBPv400GetBankLevelDynamicResourceDoc200Response
-from obp_python.models.obpv400_update_bank_level_dynamic_resource_doc_request import OBPv400UpdateBankLevelDynamicResourceDocRequest
+from obp_python.models.get_bank_level_dynamic_resource_doc200_response import GetBankLevelDynamicResourceDoc200Response
+from obp_python.models.update_bank_level_dynamic_resource_doc_request import UpdateBankLevelDynamicResourceDocRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -183,15 +183,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DynamicResourceDocApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv400_update_bank_level_dynamic_resource_doc_request = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}} # OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+    update_bank_level_dynamic_resource_doc_request = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}} # UpdateBankLevelDynamicResourceDocRequest | Request body
 
     try:
         # Create Bank Level Dynamic Resource Doc
-        api_response = api_instance.o_bpv4_0_0_create_bank_level_dynamic_resource_doc(bankid, obpv400_update_bank_level_dynamic_resource_doc_request)
-        print("The response of DynamicResourceDocApi->o_bpv4_0_0_create_bank_level_dynamic_resource_doc:\n")
+        api_response = api_instance.create_bank_level_dynamic_resource_doc(bankid, update_bank_level_dynamic_resource_doc_request)
+        print("The response of DynamicResourceDocApi->create_bank_level_dynamic_resource_doc:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicResourceDocApi->o_bpv4_0_0_create_bank_level_dynamic_resource_doc: %s\n" % e)
+        print("Exception when calling DynamicResourceDocApi->create_bank_level_dynamic_resource_doc: %s\n" % e)
 ```
 
 
@@ -202,11 +202,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv400_update_bank_level_dynamic_resource_doc_request** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | 
+ **update_bank_level_dynamic_resource_doc_request** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -227,8 +227,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_create_dynamic_resource_doc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response o_bpv4_0_0_create_dynamic_resource_doc(obpv400_update_bank_level_dynamic_resource_doc_request)
+# **create_dynamic_resource_doc**
+> GetBankLevelDynamicResourceDoc200Response create_dynamic_resource_doc(update_bank_level_dynamic_resource_doc_request)
 
 Create Dynamic Resource Doc
 
@@ -257,8 +257,8 @@ Create Dynamic Resource Doc
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_bank_level_dynamic_resource_doc200_response import OBPv400GetBankLevelDynamicResourceDoc200Response
-from obp_python.models.obpv400_update_bank_level_dynamic_resource_doc_request import OBPv400UpdateBankLevelDynamicResourceDocRequest
+from obp_python.models.get_bank_level_dynamic_resource_doc200_response import GetBankLevelDynamicResourceDoc200Response
+from obp_python.models.update_bank_level_dynamic_resource_doc_request import UpdateBankLevelDynamicResourceDocRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -291,15 +291,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DynamicResourceDocApi(api_client)
-    obpv400_update_bank_level_dynamic_resource_doc_request = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}} # OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+    update_bank_level_dynamic_resource_doc_request = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}} # UpdateBankLevelDynamicResourceDocRequest | Request body
 
     try:
         # Create Dynamic Resource Doc
-        api_response = api_instance.o_bpv4_0_0_create_dynamic_resource_doc(obpv400_update_bank_level_dynamic_resource_doc_request)
-        print("The response of DynamicResourceDocApi->o_bpv4_0_0_create_dynamic_resource_doc:\n")
+        api_response = api_instance.create_dynamic_resource_doc(update_bank_level_dynamic_resource_doc_request)
+        print("The response of DynamicResourceDocApi->create_dynamic_resource_doc:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicResourceDocApi->o_bpv4_0_0_create_dynamic_resource_doc: %s\n" % e)
+        print("Exception when calling DynamicResourceDocApi->create_dynamic_resource_doc: %s\n" % e)
 ```
 
 
@@ -309,11 +309,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv400_update_bank_level_dynamic_resource_doc_request** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | 
+ **update_bank_level_dynamic_resource_doc_request** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -333,8 +333,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_delete_bank_level_dynamic_resource_doc**
-> o_bpv4_0_0_delete_bank_level_dynamic_resource_doc(bankid)
+# **delete_bank_level_dynamic_resource_doc**
+> delete_bank_level_dynamic_resource_doc(bankid)
 
 Delete Bank Level Dynamic Resource Doc
 
@@ -389,9 +389,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Bank Level Dynamic Resource Doc
-        api_instance.o_bpv4_0_0_delete_bank_level_dynamic_resource_doc(bankid)
+        api_instance.delete_bank_level_dynamic_resource_doc(bankid)
     except Exception as e:
-        print("Exception when calling DynamicResourceDocApi->o_bpv4_0_0_delete_bank_level_dynamic_resource_doc: %s\n" % e)
+        print("Exception when calling DynamicResourceDocApi->delete_bank_level_dynamic_resource_doc: %s\n" % e)
 ```
 
 
@@ -426,8 +426,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_delete_dynamic_resource_doc**
-> o_bpv4_0_0_delete_dynamic_resource_doc()
+# **delete_dynamic_resource_doc**
+> delete_dynamic_resource_doc()
 
 Delete Dynamic Resource Doc
 
@@ -479,9 +479,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Dynamic Resource Doc
-        api_instance.o_bpv4_0_0_delete_dynamic_resource_doc()
+        api_instance.delete_dynamic_resource_doc()
     except Exception as e:
-        print("Exception when calling DynamicResourceDocApi->o_bpv4_0_0_delete_dynamic_resource_doc: %s\n" % e)
+        print("Exception when calling DynamicResourceDocApi->delete_dynamic_resource_doc: %s\n" % e)
 ```
 
 
@@ -512,8 +512,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs**
-> OBPv400GetAllDynamicResourceDocs200Response o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs(bankid)
+# **get_all_bank_level_dynamic_resource_docs**
+> GetAllDynamicResourceDocs200Response get_all_bank_level_dynamic_resource_docs(bankid)
 
 Get all Bank Level Dynamic Resource Docs
 
@@ -537,7 +537,7 @@ Get all Bank Level Dynamic Resource Docs
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_dynamic_resource_docs200_response import OBPv400GetAllDynamicResourceDocs200Response
+from obp_python.models.get_all_dynamic_resource_docs200_response import GetAllDynamicResourceDocs200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -574,11 +574,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get all Bank Level Dynamic Resource Docs
-        api_response = api_instance.o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs(bankid)
-        print("The response of DynamicResourceDocApi->o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs:\n")
+        api_response = api_instance.get_all_bank_level_dynamic_resource_docs(bankid)
+        print("The response of DynamicResourceDocApi->get_all_bank_level_dynamic_resource_docs:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicResourceDocApi->o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs: %s\n" % e)
+        print("Exception when calling DynamicResourceDocApi->get_all_bank_level_dynamic_resource_docs: %s\n" % e)
 ```
 
 
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)
+[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)
 
 ### Authorization
 
@@ -613,8 +613,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_all_dynamic_resource_docs**
-> OBPv400GetAllDynamicResourceDocs200Response o_bpv4_0_0_get_all_dynamic_resource_docs()
+# **get_all_dynamic_resource_docs**
+> GetAllDynamicResourceDocs200Response get_all_dynamic_resource_docs()
 
 Get all Dynamic Resource Docs
 
@@ -636,7 +636,7 @@ Get all Dynamic Resource Docs
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_dynamic_resource_docs200_response import OBPv400GetAllDynamicResourceDocs200Response
+from obp_python.models.get_all_dynamic_resource_docs200_response import GetAllDynamicResourceDocs200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -672,11 +672,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get all Dynamic Resource Docs
-        api_response = api_instance.o_bpv4_0_0_get_all_dynamic_resource_docs()
-        print("The response of DynamicResourceDocApi->o_bpv4_0_0_get_all_dynamic_resource_docs:\n")
+        api_response = api_instance.get_all_dynamic_resource_docs()
+        print("The response of DynamicResourceDocApi->get_all_dynamic_resource_docs:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicResourceDocApi->o_bpv4_0_0_get_all_dynamic_resource_docs: %s\n" % e)
+        print("Exception when calling DynamicResourceDocApi->get_all_dynamic_resource_docs: %s\n" % e)
 ```
 
 
@@ -687,7 +687,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)
+[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)
 
 ### Authorization
 
@@ -707,8 +707,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_bank_level_dynamic_resource_doc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response o_bpv4_0_0_get_bank_level_dynamic_resource_doc(bankid)
+# **get_bank_level_dynamic_resource_doc**
+> GetBankLevelDynamicResourceDoc200Response get_bank_level_dynamic_resource_doc(bankid)
 
 Get Bank Level Dynamic Resource Doc by Id
 
@@ -732,7 +732,7 @@ Get Bank Level Dynamic Resource Doc by Id
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_bank_level_dynamic_resource_doc200_response import OBPv400GetBankLevelDynamicResourceDoc200Response
+from obp_python.models.get_bank_level_dynamic_resource_doc200_response import GetBankLevelDynamicResourceDoc200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -769,11 +769,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Bank Level Dynamic Resource Doc by Id
-        api_response = api_instance.o_bpv4_0_0_get_bank_level_dynamic_resource_doc(bankid)
-        print("The response of DynamicResourceDocApi->o_bpv4_0_0_get_bank_level_dynamic_resource_doc:\n")
+        api_response = api_instance.get_bank_level_dynamic_resource_doc(bankid)
+        print("The response of DynamicResourceDocApi->get_bank_level_dynamic_resource_doc:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicResourceDocApi->o_bpv4_0_0_get_bank_level_dynamic_resource_doc: %s\n" % e)
+        print("Exception when calling DynamicResourceDocApi->get_bank_level_dynamic_resource_doc: %s\n" % e)
 ```
 
 
@@ -787,7 +787,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -808,8 +808,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_dynamic_resource_doc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response o_bpv4_0_0_get_dynamic_resource_doc()
+# **get_dynamic_resource_doc**
+> GetBankLevelDynamicResourceDoc200Response get_dynamic_resource_doc()
 
 Get Dynamic Resource Doc by Id
 
@@ -831,7 +831,7 @@ Get Dynamic Resource Doc by Id
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_bank_level_dynamic_resource_doc200_response import OBPv400GetBankLevelDynamicResourceDoc200Response
+from obp_python.models.get_bank_level_dynamic_resource_doc200_response import GetBankLevelDynamicResourceDoc200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -867,11 +867,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Dynamic Resource Doc by Id
-        api_response = api_instance.o_bpv4_0_0_get_dynamic_resource_doc()
-        print("The response of DynamicResourceDocApi->o_bpv4_0_0_get_dynamic_resource_doc:\n")
+        api_response = api_instance.get_dynamic_resource_doc()
+        print("The response of DynamicResourceDocApi->get_dynamic_resource_doc:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicResourceDocApi->o_bpv4_0_0_get_dynamic_resource_doc: %s\n" % e)
+        print("Exception when calling DynamicResourceDocApi->get_dynamic_resource_doc: %s\n" % e)
 ```
 
 
@@ -882,7 +882,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -902,8 +902,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_update_bank_level_dynamic_resource_doc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response o_bpv4_0_0_update_bank_level_dynamic_resource_doc(bankid, obpv400_update_bank_level_dynamic_resource_doc_request)
+# **update_bank_level_dynamic_resource_doc**
+> GetBankLevelDynamicResourceDoc200Response update_bank_level_dynamic_resource_doc(bankid, update_bank_level_dynamic_resource_doc_request)
 
 Update Bank Level Dynamic Resource Doc
 
@@ -928,8 +928,8 @@ Update Bank Level Dynamic Resource Doc
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_bank_level_dynamic_resource_doc200_response import OBPv400GetBankLevelDynamicResourceDoc200Response
-from obp_python.models.obpv400_update_bank_level_dynamic_resource_doc_request import OBPv400UpdateBankLevelDynamicResourceDocRequest
+from obp_python.models.get_bank_level_dynamic_resource_doc200_response import GetBankLevelDynamicResourceDoc200Response
+from obp_python.models.update_bank_level_dynamic_resource_doc_request import UpdateBankLevelDynamicResourceDocRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -963,15 +963,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DynamicResourceDocApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv400_update_bank_level_dynamic_resource_doc_request = {"type":"object","properties":{"tags":{"type":"string"},"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"bank_id":{"type":"string"},"partial_function_name":{"type":"string"},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"roles":{"type":"string"},"summary":{"type":"string"},"request_url":{"type":"string"},"description":{"type":"string"},"method_body":{"type":"string"},"error_response_bodies":{"type":"string"}}} # OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+    update_bank_level_dynamic_resource_doc_request = {"type":"object","properties":{"tags":{"type":"string"},"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"bank_id":{"type":"string"},"partial_function_name":{"type":"string"},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"roles":{"type":"string"},"summary":{"type":"string"},"request_url":{"type":"string"},"description":{"type":"string"},"method_body":{"type":"string"},"error_response_bodies":{"type":"string"}}} # UpdateBankLevelDynamicResourceDocRequest | Request body
 
     try:
         # Update Bank Level Dynamic Resource Doc
-        api_response = api_instance.o_bpv4_0_0_update_bank_level_dynamic_resource_doc(bankid, obpv400_update_bank_level_dynamic_resource_doc_request)
-        print("The response of DynamicResourceDocApi->o_bpv4_0_0_update_bank_level_dynamic_resource_doc:\n")
+        api_response = api_instance.update_bank_level_dynamic_resource_doc(bankid, update_bank_level_dynamic_resource_doc_request)
+        print("The response of DynamicResourceDocApi->update_bank_level_dynamic_resource_doc:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicResourceDocApi->o_bpv4_0_0_update_bank_level_dynamic_resource_doc: %s\n" % e)
+        print("Exception when calling DynamicResourceDocApi->update_bank_level_dynamic_resource_doc: %s\n" % e)
 ```
 
 
@@ -982,11 +982,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv400_update_bank_level_dynamic_resource_doc_request** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | 
+ **update_bank_level_dynamic_resource_doc_request** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -1007,8 +1007,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_update_dynamic_resource_doc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response o_bpv4_0_0_update_dynamic_resource_doc(obpv400_update_bank_level_dynamic_resource_doc_request)
+# **update_dynamic_resource_doc**
+> GetBankLevelDynamicResourceDoc200Response update_dynamic_resource_doc(update_bank_level_dynamic_resource_doc_request)
 
 Update Dynamic Resource Doc
 
@@ -1031,8 +1031,8 @@ Update Dynamic Resource Doc
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_bank_level_dynamic_resource_doc200_response import OBPv400GetBankLevelDynamicResourceDoc200Response
-from obp_python.models.obpv400_update_bank_level_dynamic_resource_doc_request import OBPv400UpdateBankLevelDynamicResourceDocRequest
+from obp_python.models.get_bank_level_dynamic_resource_doc200_response import GetBankLevelDynamicResourceDoc200Response
+from obp_python.models.update_bank_level_dynamic_resource_doc_request import UpdateBankLevelDynamicResourceDocRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1065,15 +1065,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DynamicResourceDocApi(api_client)
-    obpv400_update_bank_level_dynamic_resource_doc_request = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}} # OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+    update_bank_level_dynamic_resource_doc_request = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}} # UpdateBankLevelDynamicResourceDocRequest | Request body
 
     try:
         # Update Dynamic Resource Doc
-        api_response = api_instance.o_bpv4_0_0_update_dynamic_resource_doc(obpv400_update_bank_level_dynamic_resource_doc_request)
-        print("The response of DynamicResourceDocApi->o_bpv4_0_0_update_dynamic_resource_doc:\n")
+        api_response = api_instance.update_dynamic_resource_doc(update_bank_level_dynamic_resource_doc_request)
+        print("The response of DynamicResourceDocApi->update_dynamic_resource_doc:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicResourceDocApi->o_bpv4_0_0_update_dynamic_resource_doc: %s\n" % e)
+        print("Exception when calling DynamicResourceDocApi->update_dynamic_resource_doc: %s\n" % e)
 ```
 
 
@@ -1083,11 +1083,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv400_update_bank_level_dynamic_resource_doc_request** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | 
+ **update_bank_level_dynamic_resource_doc_request** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 

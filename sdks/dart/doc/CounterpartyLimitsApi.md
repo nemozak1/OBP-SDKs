@@ -5,23 +5,23 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv510CreateCounterpartyLimit**](CounterpartyLimitsApi.md#obpv510createcounterpartylimit) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Create Counterparty Limit
-[**oBPv510DeleteCounterpartyLimit**](CounterpartyLimitsApi.md#obpv510deletecounterpartylimit) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Delete Counterparty Limit
-[**oBPv510GetCounterpartyLimit**](CounterpartyLimitsApi.md#obpv510getcounterpartylimit) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Get Counterparty Limit
-[**oBPv510GetCounterpartyLimitStatus**](CounterpartyLimitsApi.md#obpv510getcounterpartylimitstatus) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limit-status | Get Counterparty Limit Status
-[**oBPv510UpdateCounterpartyLimit**](CounterpartyLimitsApi.md#obpv510updatecounterpartylimit) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Update Counterparty Limit
+[**createCounterpartyLimit**](CounterpartyLimitsApi.md#createcounterpartylimit) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Create Counterparty Limit
+[**deleteCounterpartyLimit**](CounterpartyLimitsApi.md#deletecounterpartylimit) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Delete Counterparty Limit
+[**getCounterpartyLimit**](CounterpartyLimitsApi.md#getcounterpartylimit) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Get Counterparty Limit
+[**getCounterpartyLimitStatus**](CounterpartyLimitsApi.md#getcounterpartylimitstatus) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limit-status | Get Counterparty Limit Status
+[**updateCounterpartyLimit**](CounterpartyLimitsApi.md#updatecounterpartylimit) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Update Counterparty Limit
 
 
-# **oBPv510CreateCounterpartyLimit**
-> OBPv510GetCounterpartyLimit200Response oBPv510CreateCounterpartyLimit(bankid, accountid, viewid, counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit)
+# **createCounterpartyLimit**
+> GetCounterpartyLimit200Response createCounterpartyLimit(bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit)
 
 Create Counterparty Limit
 
-<p>Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.</p> <p>Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).</p> <p>For more information on Counterparty Limits, see <a href=\"/glossary#Counterparty-Limits\">here</a></p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>You can automate the process of creating counterparty limits and consents for VRP with this <a href=\"https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\">endpoint</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
+<p>Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.</p> <p>Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).</p> <p>For more information on Counterparty Limits, see <a href=\"/glossary#Counterparty-Limits\">here</a></p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>You can automate the process of creating counterparty limits and consents for VRP with this <a href=\"http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\">endpoint</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
 
 ### Example
 ```dart
@@ -42,13 +42,13 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
 final String counterpartyid = counterpartyid_example; // String | The COUNTERPARTYID identifier
-final OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit = {type=object, properties={max_total_amount={type=string}, currency={type=string}, max_number_of_yearly_transactions={type=integer}, max_monthly_amount={type=string}, max_single_amount={type=string}, max_number_of_monthly_transactions={type=integer}, max_yearly_amount={type=string}, max_number_of_transactions={type=integer}}}; // OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit | Request body
+final CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit = {type=object, properties={max_total_amount={type=string}, currency={type=string}, max_number_of_yearly_transactions={type=integer}, max_monthly_amount={type=string}, max_single_amount={type=string}, max_number_of_monthly_transactions={type=integer}, max_yearly_amount={type=string}, max_number_of_transactions={type=integer}}}; // CreateVRPConsentRequestRequestToAccountLimit | Request body
 
 try {
-    final response = api.oBPv510CreateCounterpartyLimit(bankid, accountid, viewid, counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+    final response = api.createCounterpartyLimit(bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyLimitsApi->oBPv510CreateCounterpartyLimit: $e\n');
+    print('Exception when calling CounterpartyLimitsApi->createCounterpartyLimit: $e\n');
 }
 ```
 
@@ -60,11 +60,11 @@ Name | Type | Description  | Notes
  **accountid** | **String**| The ACCOUNTID identifier | 
  **viewid** | **String**| The VIEWID identifier | 
  **counterpartyid** | **String**| The COUNTERPARTYID identifier | 
- **oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit** | [**OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit**](OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit.md)| Request body | 
+ **createVRPConsentRequestRequestToAccountLimit** | [**CreateVRPConsentRequestRequestToAccountLimit**](CreateVRPConsentRequestRequestToAccountLimit.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetCounterpartyLimit200Response**](OBPv510GetCounterpartyLimit200Response.md)
+[**GetCounterpartyLimit200Response**](GetCounterpartyLimit200Response.md)
 
 ### Authorization
 
@@ -77,8 +77,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510DeleteCounterpartyLimit**
-> oBPv510DeleteCounterpartyLimit(bankid, accountid, viewid, counterpartyid)
+# **deleteCounterpartyLimit**
+> deleteCounterpartyLimit(bankid, accountid, viewid, counterpartyid)
 
 Delete Counterparty Limit
 
@@ -105,9 +105,9 @@ final String viewid = viewid_example; // String | The VIEWID identifier
 final String counterpartyid = counterpartyid_example; // String | The COUNTERPARTYID identifier
 
 try {
-    api.oBPv510DeleteCounterpartyLimit(bankid, accountid, viewid, counterpartyid);
+    api.deleteCounterpartyLimit(bankid, accountid, viewid, counterpartyid);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyLimitsApi->oBPv510DeleteCounterpartyLimit: $e\n');
+    print('Exception when calling CounterpartyLimitsApi->deleteCounterpartyLimit: $e\n');
 }
 ```
 
@@ -135,8 +135,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510GetCounterpartyLimit**
-> OBPv510GetCounterpartyLimit200Response oBPv510GetCounterpartyLimit(bankid, accountid, viewid, counterpartyid)
+# **getCounterpartyLimit**
+> GetCounterpartyLimit200Response getCounterpartyLimit(bankid, accountid, viewid, counterpartyid)
 
 Get Counterparty Limit
 
@@ -163,10 +163,10 @@ final String viewid = viewid_example; // String | The VIEWID identifier
 final String counterpartyid = counterpartyid_example; // String | The COUNTERPARTYID identifier
 
 try {
-    final response = api.oBPv510GetCounterpartyLimit(bankid, accountid, viewid, counterpartyid);
+    final response = api.getCounterpartyLimit(bankid, accountid, viewid, counterpartyid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyLimitsApi->oBPv510GetCounterpartyLimit: $e\n');
+    print('Exception when calling CounterpartyLimitsApi->getCounterpartyLimit: $e\n');
 }
 ```
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetCounterpartyLimit200Response**](OBPv510GetCounterpartyLimit200Response.md)
+[**GetCounterpartyLimit200Response**](GetCounterpartyLimit200Response.md)
 
 ### Authorization
 
@@ -194,8 +194,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510GetCounterpartyLimitStatus**
-> OBPv510GetCounterpartyLimitStatus200Response oBPv510GetCounterpartyLimitStatus(bankid, accountid, viewid, counterpartyid)
+# **getCounterpartyLimitStatus**
+> GetCounterpartyLimitStatus200Response getCounterpartyLimitStatus(bankid, accountid, viewid, counterpartyid)
 
 Get Counterparty Limit Status
 
@@ -222,10 +222,10 @@ final String viewid = viewid_example; // String | The VIEWID identifier
 final String counterpartyid = counterpartyid_example; // String | The COUNTERPARTYID identifier
 
 try {
-    final response = api.oBPv510GetCounterpartyLimitStatus(bankid, accountid, viewid, counterpartyid);
+    final response = api.getCounterpartyLimitStatus(bankid, accountid, viewid, counterpartyid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyLimitsApi->oBPv510GetCounterpartyLimitStatus: $e\n');
+    print('Exception when calling CounterpartyLimitsApi->getCounterpartyLimitStatus: $e\n');
 }
 ```
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetCounterpartyLimitStatus200Response**](OBPv510GetCounterpartyLimitStatus200Response.md)
+[**GetCounterpartyLimitStatus200Response**](GetCounterpartyLimitStatus200Response.md)
 
 ### Authorization
 
@@ -253,8 +253,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510UpdateCounterpartyLimit**
-> OBPv510GetCounterpartyLimit200Response oBPv510UpdateCounterpartyLimit(bankid, accountid, viewid, counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit)
+# **updateCounterpartyLimit**
+> GetCounterpartyLimit200Response updateCounterpartyLimit(bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit)
 
 Update Counterparty Limit
 
@@ -279,13 +279,13 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
 final String counterpartyid = counterpartyid_example; // String | The COUNTERPARTYID identifier
-final OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit = {"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}}; // OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit | Request body
+final CreateVRPConsentRequestRequestToAccountLimit createVRPConsentRequestRequestToAccountLimit = {"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}}; // CreateVRPConsentRequestRequestToAccountLimit | Request body
 
 try {
-    final response = api.oBPv510UpdateCounterpartyLimit(bankid, accountid, viewid, counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit);
+    final response = api.updateCounterpartyLimit(bankid, accountid, viewid, counterpartyid, createVRPConsentRequestRequestToAccountLimit);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CounterpartyLimitsApi->oBPv510UpdateCounterpartyLimit: $e\n');
+    print('Exception when calling CounterpartyLimitsApi->updateCounterpartyLimit: $e\n');
 }
 ```
 
@@ -297,11 +297,11 @@ Name | Type | Description  | Notes
  **accountid** | **String**| The ACCOUNTID identifier | 
  **viewid** | **String**| The VIEWID identifier | 
  **counterpartyid** | **String**| The COUNTERPARTYID identifier | 
- **oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit** | [**OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit**](OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit.md)| Request body | 
+ **createVRPConsentRequestRequestToAccountLimit** | [**CreateVRPConsentRequestRequestToAccountLimit**](CreateVRPConsentRequestRequestToAccountLimit.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetCounterpartyLimit200Response**](OBPv510GetCounterpartyLimit200Response.md)
+[**GetCounterpartyLimit200Response**](GetCounterpartyLimit200Response.md)
 
 ### Authorization
 

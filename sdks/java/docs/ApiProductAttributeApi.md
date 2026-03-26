@@ -1,23 +1,23 @@
 # ApiProductAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600CreateApiProductAttribute**](ApiProductAttributeApi.md#oBPv600CreateApiProductAttribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute |
-| [**oBPv600CreateApiProductAttributeWithHttpInfo**](ApiProductAttributeApi.md#oBPv600CreateApiProductAttributeWithHttpInfo) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute |
-| [**oBPv600DeleteApiProductAttribute**](ApiProductAttributeApi.md#oBPv600DeleteApiProductAttribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute |
-| [**oBPv600DeleteApiProductAttributeWithHttpInfo**](ApiProductAttributeApi.md#oBPv600DeleteApiProductAttributeWithHttpInfo) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute |
-| [**oBPv600GetApiProductAttribute**](ApiProductAttributeApi.md#oBPv600GetApiProductAttribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute |
-| [**oBPv600GetApiProductAttributeWithHttpInfo**](ApiProductAttributeApi.md#oBPv600GetApiProductAttributeWithHttpInfo) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute |
-| [**oBPv600UpdateApiProductAttribute**](ApiProductAttributeApi.md#oBPv600UpdateApiProductAttribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute |
-| [**oBPv600UpdateApiProductAttributeWithHttpInfo**](ApiProductAttributeApi.md#oBPv600UpdateApiProductAttributeWithHttpInfo) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute |
+| [**createApiProductAttribute**](ApiProductAttributeApi.md#createApiProductAttribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute |
+| [**createApiProductAttributeWithHttpInfo**](ApiProductAttributeApi.md#createApiProductAttributeWithHttpInfo) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute |
+| [**deleteApiProductAttribute**](ApiProductAttributeApi.md#deleteApiProductAttribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute |
+| [**deleteApiProductAttributeWithHttpInfo**](ApiProductAttributeApi.md#deleteApiProductAttributeWithHttpInfo) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute |
+| [**getApiProductAttribute**](ApiProductAttributeApi.md#getApiProductAttribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute |
+| [**getApiProductAttributeWithHttpInfo**](ApiProductAttributeApi.md#getApiProductAttributeWithHttpInfo) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute |
+| [**updateApiProductAttribute**](ApiProductAttributeApi.md#updateApiProductAttribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute |
+| [**updateApiProductAttributeWithHttpInfo**](ApiProductAttributeApi.md#updateApiProductAttributeWithHttpInfo) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute |
 
 
 
-## oBPv600CreateApiProductAttribute
+## createApiProductAttribute
 
-> OBPv600CreateApiProductAttribute200Response oBPv600CreateApiProductAttribute(bankid, apiproductcode, obPv510UpdateAtmAttributeRequest)
+> CreateApiProductAttribute200Response createApiProductAttribute(bankid, apiproductcode, updateAtmAttributeRequest)
 
 Create Api Product Attribute
 
@@ -37,7 +37,7 @@ import com.openbankproject.api.ApiProductAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -58,12 +58,12 @@ public class Example {
         ApiProductAttributeApi apiInstance = new ApiProductAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String apiproductcode = "apiproductcode_example"; // String | The APIPRODUCTCODE identifier
-        OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest = new OBPv510UpdateAtmAttributeRequest(); // OBPv510UpdateAtmAttributeRequest | Request body
+        UpdateAtmAttributeRequest updateAtmAttributeRequest = new UpdateAtmAttributeRequest(); // UpdateAtmAttributeRequest | Request body
         try {
-            OBPv600CreateApiProductAttribute200Response result = apiInstance.oBPv600CreateApiProductAttribute(bankid, apiproductcode, obPv510UpdateAtmAttributeRequest);
+            CreateApiProductAttribute200Response result = apiInstance.createApiProductAttribute(bankid, apiproductcode, updateAtmAttributeRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ApiProductAttributeApi#oBPv600CreateApiProductAttribute");
+            System.err.println("Exception when calling ApiProductAttributeApi#createApiProductAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -80,11 +80,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **apiproductcode** | **String**| The APIPRODUCTCODE identifier | |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 
 ### Authorization
@@ -103,9 +103,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600CreateApiProductAttributeWithHttpInfo
+## createApiProductAttributeWithHttpInfo
 
-> ApiResponse<OBPv600CreateApiProductAttribute200Response> oBPv600CreateApiProductAttribute oBPv600CreateApiProductAttributeWithHttpInfo(bankid, apiproductcode, obPv510UpdateAtmAttributeRequest)
+> ApiResponse<CreateApiProductAttribute200Response> createApiProductAttribute createApiProductAttributeWithHttpInfo(bankid, apiproductcode, updateAtmAttributeRequest)
 
 Create Api Product Attribute
 
@@ -126,7 +126,7 @@ import com.openbankproject.api.ApiProductAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -147,14 +147,14 @@ public class Example {
         ApiProductAttributeApi apiInstance = new ApiProductAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String apiproductcode = "apiproductcode_example"; // String | The APIPRODUCTCODE identifier
-        OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest = new OBPv510UpdateAtmAttributeRequest(); // OBPv510UpdateAtmAttributeRequest | Request body
+        UpdateAtmAttributeRequest updateAtmAttributeRequest = new UpdateAtmAttributeRequest(); // UpdateAtmAttributeRequest | Request body
         try {
-            ApiResponse<OBPv600CreateApiProductAttribute200Response> response = apiInstance.oBPv600CreateApiProductAttributeWithHttpInfo(bankid, apiproductcode, obPv510UpdateAtmAttributeRequest);
+            ApiResponse<CreateApiProductAttribute200Response> response = apiInstance.createApiProductAttributeWithHttpInfo(bankid, apiproductcode, updateAtmAttributeRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ApiProductAttributeApi#oBPv600CreateApiProductAttribute");
+            System.err.println("Exception when calling ApiProductAttributeApi#createApiProductAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -171,11 +171,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **apiproductcode** | **String**| The APIPRODUCTCODE identifier | |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)>
+ApiResponse<[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)>
 
 
 ### Authorization
@@ -195,9 +195,9 @@ ApiResponse<[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiPr
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600DeleteApiProductAttribute
+## deleteApiProductAttribute
 
-> void oBPv600DeleteApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
+> void deleteApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
 
 Delete Api Product Attribute
 
@@ -217,7 +217,7 @@ import com.openbankproject.api.ApiProductAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -240,9 +240,9 @@ public class Example {
         String apiproductcode = "apiproductcode_example"; // String | The APIPRODUCTCODE identifier
         String apiproductattributeid = "apiproductattributeid_example"; // String | The APIPRODUCTATTRIBUTEID identifier
         try {
-            apiInstance.oBPv600DeleteApiProductAttribute(bankid, apiproductcode, apiproductattributeid);
+            apiInstance.deleteApiProductAttribute(bankid, apiproductcode, apiproductattributeid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ApiProductAttributeApi#oBPv600DeleteApiProductAttribute");
+            System.err.println("Exception when calling ApiProductAttributeApi#deleteApiProductAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -282,9 +282,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600DeleteApiProductAttributeWithHttpInfo
+## deleteApiProductAttributeWithHttpInfo
 
-> ApiResponse<Void> oBPv600DeleteApiProductAttribute oBPv600DeleteApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid)
+> ApiResponse<Void> deleteApiProductAttribute deleteApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid)
 
 Delete Api Product Attribute
 
@@ -305,7 +305,7 @@ import com.openbankproject.api.ApiProductAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -328,11 +328,11 @@ public class Example {
         String apiproductcode = "apiproductcode_example"; // String | The APIPRODUCTCODE identifier
         String apiproductattributeid = "apiproductattributeid_example"; // String | The APIPRODUCTATTRIBUTEID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv600DeleteApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid);
+            ApiResponse<Void> response = apiInstance.deleteApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ApiProductAttributeApi#oBPv600DeleteApiProductAttribute");
+            System.err.println("Exception when calling ApiProductAttributeApi#deleteApiProductAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -373,9 +373,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetApiProductAttribute
+## getApiProductAttribute
 
-> OBPv600CreateApiProductAttribute200Response oBPv600GetApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
+> CreateApiProductAttribute200Response getApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
 
 Get Api Product Attribute
 
@@ -394,17 +394,17 @@ import com.openbankproject.api.ApiProductAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         ApiProductAttributeApi apiInstance = new ApiProductAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String apiproductcode = "apiproductcode_example"; // String | The APIPRODUCTCODE identifier
         String apiproductattributeid = "apiproductattributeid_example"; // String | The APIPRODUCTATTRIBUTEID identifier
         try {
-            OBPv600CreateApiProductAttribute200Response result = apiInstance.oBPv600GetApiProductAttribute(bankid, apiproductcode, apiproductattributeid);
+            CreateApiProductAttribute200Response result = apiInstance.getApiProductAttribute(bankid, apiproductcode, apiproductattributeid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ApiProductAttributeApi#oBPv600GetApiProductAttribute");
+            System.err.println("Exception when calling ApiProductAttributeApi#getApiProductAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -425,7 +425,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 
 ### Authorization
@@ -444,9 +444,9 @@ No authorization required
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetApiProductAttributeWithHttpInfo
+## getApiProductAttributeWithHttpInfo
 
-> ApiResponse<OBPv600CreateApiProductAttribute200Response> oBPv600GetApiProductAttribute oBPv600GetApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid)
+> ApiResponse<CreateApiProductAttribute200Response> getApiProductAttribute getApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid)
 
 Get Api Product Attribute
 
@@ -466,19 +466,19 @@ import com.openbankproject.api.ApiProductAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         ApiProductAttributeApi apiInstance = new ApiProductAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String apiproductcode = "apiproductcode_example"; // String | The APIPRODUCTCODE identifier
         String apiproductattributeid = "apiproductattributeid_example"; // String | The APIPRODUCTATTRIBUTEID identifier
         try {
-            ApiResponse<OBPv600CreateApiProductAttribute200Response> response = apiInstance.oBPv600GetApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid);
+            ApiResponse<CreateApiProductAttribute200Response> response = apiInstance.getApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ApiProductAttributeApi#oBPv600GetApiProductAttribute");
+            System.err.println("Exception when calling ApiProductAttributeApi#getApiProductAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -499,7 +499,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)>
+ApiResponse<[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)>
 
 
 ### Authorization
@@ -519,9 +519,9 @@ No authorization required
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600UpdateApiProductAttribute
+## updateApiProductAttribute
 
-> OBPv600CreateApiProductAttribute200Response oBPv600UpdateApiProductAttribute(bankid, apiproductcode, apiproductattributeid, obPv510UpdateAtmAttributeRequest)
+> CreateApiProductAttribute200Response updateApiProductAttribute(bankid, apiproductcode, apiproductattributeid, updateAtmAttributeRequest)
 
 Update Api Product Attribute
 
@@ -541,7 +541,7 @@ import com.openbankproject.api.ApiProductAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -563,12 +563,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String apiproductcode = "apiproductcode_example"; // String | The APIPRODUCTCODE identifier
         String apiproductattributeid = "apiproductattributeid_example"; // String | The APIPRODUCTATTRIBUTEID identifier
-        OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest = new OBPv510UpdateAtmAttributeRequest(); // OBPv510UpdateAtmAttributeRequest | Request body
+        UpdateAtmAttributeRequest updateAtmAttributeRequest = new UpdateAtmAttributeRequest(); // UpdateAtmAttributeRequest | Request body
         try {
-            OBPv600CreateApiProductAttribute200Response result = apiInstance.oBPv600UpdateApiProductAttribute(bankid, apiproductcode, apiproductattributeid, obPv510UpdateAtmAttributeRequest);
+            CreateApiProductAttribute200Response result = apiInstance.updateApiProductAttribute(bankid, apiproductcode, apiproductattributeid, updateAtmAttributeRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ApiProductAttributeApi#oBPv600UpdateApiProductAttribute");
+            System.err.println("Exception when calling ApiProductAttributeApi#updateApiProductAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -586,11 +586,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **apiproductcode** | **String**| The APIPRODUCTCODE identifier | |
 | **apiproductattributeid** | **String**| The APIPRODUCTATTRIBUTEID identifier | |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 
 ### Authorization
@@ -609,9 +609,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600UpdateApiProductAttributeWithHttpInfo
+## updateApiProductAttributeWithHttpInfo
 
-> ApiResponse<OBPv600CreateApiProductAttribute200Response> oBPv600UpdateApiProductAttribute oBPv600UpdateApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid, obPv510UpdateAtmAttributeRequest)
+> ApiResponse<CreateApiProductAttribute200Response> updateApiProductAttribute updateApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid, updateAtmAttributeRequest)
 
 Update Api Product Attribute
 
@@ -632,7 +632,7 @@ import com.openbankproject.api.ApiProductAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -654,14 +654,14 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String apiproductcode = "apiproductcode_example"; // String | The APIPRODUCTCODE identifier
         String apiproductattributeid = "apiproductattributeid_example"; // String | The APIPRODUCTATTRIBUTEID identifier
-        OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest = new OBPv510UpdateAtmAttributeRequest(); // OBPv510UpdateAtmAttributeRequest | Request body
+        UpdateAtmAttributeRequest updateAtmAttributeRequest = new UpdateAtmAttributeRequest(); // UpdateAtmAttributeRequest | Request body
         try {
-            ApiResponse<OBPv600CreateApiProductAttribute200Response> response = apiInstance.oBPv600UpdateApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid, obPv510UpdateAtmAttributeRequest);
+            ApiResponse<CreateApiProductAttribute200Response> response = apiInstance.updateApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid, updateAtmAttributeRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ApiProductAttributeApi#oBPv600UpdateApiProductAttribute");
+            System.err.println("Exception when calling ApiProductAttributeApi#updateApiProductAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -679,11 +679,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **apiproductcode** | **String**| The APIPRODUCTCODE identifier | |
 | **apiproductattributeid** | **String**| The APIPRODUCTATTRIBUTEID identifier | |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)>
+ApiResponse<[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)>
 
 
 ### Authorization

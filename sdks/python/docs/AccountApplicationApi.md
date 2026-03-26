@@ -4,14 +4,14 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv3_1_0_create_account_application**](AccountApplicationApi.md#o_bpv3_1_0_create_account_application) | **POST** /obp/v3.1.0/banks/{bankid}/account-applications | Create Account Application
-[**o_bpv3_1_0_get_account_application**](AccountApplicationApi.md#o_bpv3_1_0_get_account_application) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Get Account Application by Id
-[**o_bpv3_1_0_get_account_applications**](AccountApplicationApi.md#o_bpv3_1_0_get_account_applications) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications | Get Account Applications
-[**o_bpv3_1_0_update_account_application_status**](AccountApplicationApi.md#o_bpv3_1_0_update_account_application_status) | **PUT** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Update Account Application Status
+[**create_account_application**](AccountApplicationApi.md#create_account_application) | **POST** /obp/v3.1.0/banks/{bankid}/account-applications | Create Account Application
+[**get_account_application**](AccountApplicationApi.md#get_account_application) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Get Account Application by Id
+[**get_account_applications**](AccountApplicationApi.md#get_account_applications) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications | Get Account Applications
+[**update_account_application_status**](AccountApplicationApi.md#update_account_application_status) | **PUT** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Update Account Application Status
 
 
-# **o_bpv3_1_0_create_account_application**
-> OBPv310GetAccountApplications200ResponseAccountApplicationsInner o_bpv3_1_0_create_account_application(bankid, obpv310_create_account_application_request)
+# **create_account_application**
+> GetAccountApplications200ResponseAccountApplicationsInner create_account_application(bankid, create_account_application_request)
 
 Create Account Application
 
@@ -70,8 +70,8 @@ Create Account Application
 
 ```python
 import obp_python
-from obp_python.models.obpv310_create_account_application_request import OBPv310CreateAccountApplicationRequest
-from obp_python.models.obpv310_get_account_applications200_response_account_applications_inner import OBPv310GetAccountApplications200ResponseAccountApplicationsInner
+from obp_python.models.create_account_application_request import CreateAccountApplicationRequest
+from obp_python.models.get_account_applications200_response_account_applications_inner import GetAccountApplications200ResponseAccountApplicationsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -105,15 +105,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.AccountApplicationApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv310_create_account_application_request = {"type":"object","properties":{"user_id":{"type":"string"},"product_code":{"type":"string"},"customer_id":{"type":"string"}}} # OBPv310CreateAccountApplicationRequest | Request body
+    create_account_application_request = {"type":"object","properties":{"user_id":{"type":"string"},"product_code":{"type":"string"},"customer_id":{"type":"string"}}} # CreateAccountApplicationRequest | Request body
 
     try:
         # Create Account Application
-        api_response = api_instance.o_bpv3_1_0_create_account_application(bankid, obpv310_create_account_application_request)
-        print("The response of AccountApplicationApi->o_bpv3_1_0_create_account_application:\n")
+        api_response = api_instance.create_account_application(bankid, create_account_application_request)
+        print("The response of AccountApplicationApi->create_account_application:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccountApplicationApi->o_bpv3_1_0_create_account_application: %s\n" % e)
+        print("Exception when calling AccountApplicationApi->create_account_application: %s\n" % e)
 ```
 
 
@@ -124,11 +124,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv310_create_account_application_request** | [**OBPv310CreateAccountApplicationRequest**](OBPv310CreateAccountApplicationRequest.md)| Request body | 
+ **create_account_application_request** | [**CreateAccountApplicationRequest**](CreateAccountApplicationRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv310GetAccountApplications200ResponseAccountApplicationsInner**](OBPv310GetAccountApplications200ResponseAccountApplicationsInner.md)
+[**GetAccountApplications200ResponseAccountApplicationsInner**](GetAccountApplications200ResponseAccountApplicationsInner.md)
 
 ### Authorization
 
@@ -148,8 +148,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_1_0_get_account_application**
-> OBPv310GetAccountApplications200ResponseAccountApplicationsInner o_bpv3_1_0_get_account_application(bankid, accountapplicationid)
+# **get_account_application**
+> GetAccountApplications200ResponseAccountApplicationsInner get_account_application(bankid, accountapplicationid)
 
 Get Account Application by Id
 
@@ -205,7 +205,7 @@ Get Account Application by Id
 
 ```python
 import obp_python
-from obp_python.models.obpv310_get_account_applications200_response_account_applications_inner import OBPv310GetAccountApplications200ResponseAccountApplicationsInner
+from obp_python.models.get_account_applications200_response_account_applications_inner import GetAccountApplications200ResponseAccountApplicationsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -243,11 +243,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Account Application by Id
-        api_response = api_instance.o_bpv3_1_0_get_account_application(bankid, accountapplicationid)
-        print("The response of AccountApplicationApi->o_bpv3_1_0_get_account_application:\n")
+        api_response = api_instance.get_account_application(bankid, accountapplicationid)
+        print("The response of AccountApplicationApi->get_account_application:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccountApplicationApi->o_bpv3_1_0_get_account_application: %s\n" % e)
+        print("Exception when calling AccountApplicationApi->get_account_application: %s\n" % e)
 ```
 
 
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetAccountApplications200ResponseAccountApplicationsInner**](OBPv310GetAccountApplications200ResponseAccountApplicationsInner.md)
+[**GetAccountApplications200ResponseAccountApplicationsInner**](GetAccountApplications200ResponseAccountApplicationsInner.md)
 
 ### Authorization
 
@@ -282,8 +282,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_1_0_get_account_applications**
-> OBPv310GetAccountApplications200Response o_bpv3_1_0_get_account_applications(bankid)
+# **get_account_applications**
+> GetAccountApplications200Response get_account_applications(bankid)
 
 Get Account Applications
 
@@ -339,7 +339,7 @@ Get Account Applications
 
 ```python
 import obp_python
-from obp_python.models.obpv310_get_account_applications200_response import OBPv310GetAccountApplications200Response
+from obp_python.models.get_account_applications200_response import GetAccountApplications200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -376,11 +376,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Account Applications
-        api_response = api_instance.o_bpv3_1_0_get_account_applications(bankid)
-        print("The response of AccountApplicationApi->o_bpv3_1_0_get_account_applications:\n")
+        api_response = api_instance.get_account_applications(bankid)
+        print("The response of AccountApplicationApi->get_account_applications:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccountApplicationApi->o_bpv3_1_0_get_account_applications: %s\n" % e)
+        print("Exception when calling AccountApplicationApi->get_account_applications: %s\n" % e)
 ```
 
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetAccountApplications200Response**](OBPv310GetAccountApplications200Response.md)
+[**GetAccountApplications200Response**](GetAccountApplications200Response.md)
 
 ### Authorization
 
@@ -414,8 +414,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_1_0_update_account_application_status**
-> OBPv310GetAccountApplications200ResponseAccountApplicationsInner o_bpv3_1_0_update_account_application_status(bankid, accountapplicationid, obpv510_update_transaction_request_status_request)
+# **update_account_application_status**
+> GetAccountApplications200ResponseAccountApplicationsInner update_account_application_status(bankid, accountapplicationid, update_transaction_request_status_request)
 
 Update Account Application Status
 
@@ -471,8 +471,8 @@ Update Account Application Status
 
 ```python
 import obp_python
-from obp_python.models.obpv310_get_account_applications200_response_account_applications_inner import OBPv310GetAccountApplications200ResponseAccountApplicationsInner
-from obp_python.models.obpv510_update_transaction_request_status_request import OBPv510UpdateTransactionRequestStatusRequest
+from obp_python.models.get_account_applications200_response_account_applications_inner import GetAccountApplications200ResponseAccountApplicationsInner
+from obp_python.models.update_transaction_request_status_request import UpdateTransactionRequestStatusRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -507,15 +507,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.AccountApplicationApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     accountapplicationid = 'accountapplicationid_example' # str | The ACCOUNTAPPLICATIONID identifier
-    obpv510_update_transaction_request_status_request = {type=object, properties={status={type=string}}} # OBPv510UpdateTransactionRequestStatusRequest | Request body
+    update_transaction_request_status_request = {type=object, properties={status={type=string}}} # UpdateTransactionRequestStatusRequest | Request body
 
     try:
         # Update Account Application Status
-        api_response = api_instance.o_bpv3_1_0_update_account_application_status(bankid, accountapplicationid, obpv510_update_transaction_request_status_request)
-        print("The response of AccountApplicationApi->o_bpv3_1_0_update_account_application_status:\n")
+        api_response = api_instance.update_account_application_status(bankid, accountapplicationid, update_transaction_request_status_request)
+        print("The response of AccountApplicationApi->update_account_application_status:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccountApplicationApi->o_bpv3_1_0_update_account_application_status: %s\n" % e)
+        print("Exception when calling AccountApplicationApi->update_account_application_status: %s\n" % e)
 ```
 
 
@@ -527,11 +527,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **accountapplicationid** | **str**| The ACCOUNTAPPLICATIONID identifier | 
- **obpv510_update_transaction_request_status_request** | [**OBPv510UpdateTransactionRequestStatusRequest**](OBPv510UpdateTransactionRequestStatusRequest.md)| Request body | 
+ **update_transaction_request_status_request** | [**UpdateTransactionRequestStatusRequest**](UpdateTransactionRequestStatusRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv310GetAccountApplications200ResponseAccountApplicationsInner**](OBPv310GetAccountApplications200ResponseAccountApplicationsInner.md)
+[**GetAccountApplications200ResponseAccountApplicationsInner**](GetAccountApplications200ResponseAccountApplicationsInner.md)
 
 ### Authorization
 

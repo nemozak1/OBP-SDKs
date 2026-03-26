@@ -1,19 +1,19 @@
 # DirectDebitApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateDirectDebit**](DirectDebitApi.md#oBPv400CreateDirectDebit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit |
-| [**oBPv400CreateDirectDebitWithHttpInfo**](DirectDebitApi.md#oBPv400CreateDirectDebitWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit |
-| [**oBPv400CreateDirectDebitManagement**](DirectDebitApi.md#oBPv400CreateDirectDebitManagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management) |
-| [**oBPv400CreateDirectDebitManagementWithHttpInfo**](DirectDebitApi.md#oBPv400CreateDirectDebitManagementWithHttpInfo) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management) |
+| [**createDirectDebit**](DirectDebitApi.md#createDirectDebit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit |
+| [**createDirectDebitWithHttpInfo**](DirectDebitApi.md#createDirectDebitWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit |
+| [**createDirectDebitManagement**](DirectDebitApi.md#createDirectDebitManagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management) |
+| [**createDirectDebitManagementWithHttpInfo**](DirectDebitApi.md#createDirectDebitManagementWithHttpInfo) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management) |
 
 
 
-## oBPv400CreateDirectDebit
+## createDirectDebit
 
-> OBPv400CreateDirectDebit200Response oBPv400CreateDirectDebit(bankid, accountid, viewid, obPv400CreateDirectDebitRequest)
+> CreateDirectDebit200Response createDirectDebit(bankid, accountid, viewid, createDirectDebitRequest)
 
 Create Direct Debit
 
@@ -33,7 +33,7 @@ import com.openbankproject.api.DirectDebitApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -55,12 +55,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
-        OBPv400CreateDirectDebitRequest obPv400CreateDirectDebitRequest = new OBPv400CreateDirectDebitRequest(); // OBPv400CreateDirectDebitRequest | Request body
+        CreateDirectDebitRequest createDirectDebitRequest = new CreateDirectDebitRequest(); // CreateDirectDebitRequest | Request body
         try {
-            OBPv400CreateDirectDebit200Response result = apiInstance.oBPv400CreateDirectDebit(bankid, accountid, viewid, obPv400CreateDirectDebitRequest);
+            CreateDirectDebit200Response result = apiInstance.createDirectDebit(bankid, accountid, viewid, createDirectDebitRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DirectDebitApi#oBPv400CreateDirectDebit");
+            System.err.println("Exception when calling DirectDebitApi#createDirectDebit");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -78,11 +78,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
-| **obPv400CreateDirectDebitRequest** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md)| Request body | |
+| **createDirectDebitRequest** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 
 ### Authorization
@@ -101,9 +101,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateDirectDebitWithHttpInfo
+## createDirectDebitWithHttpInfo
 
-> ApiResponse<OBPv400CreateDirectDebit200Response> oBPv400CreateDirectDebit oBPv400CreateDirectDebitWithHttpInfo(bankid, accountid, viewid, obPv400CreateDirectDebitRequest)
+> ApiResponse<CreateDirectDebit200Response> createDirectDebit createDirectDebitWithHttpInfo(bankid, accountid, viewid, createDirectDebitRequest)
 
 Create Direct Debit
 
@@ -124,7 +124,7 @@ import com.openbankproject.api.DirectDebitApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -146,14 +146,14 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
-        OBPv400CreateDirectDebitRequest obPv400CreateDirectDebitRequest = new OBPv400CreateDirectDebitRequest(); // OBPv400CreateDirectDebitRequest | Request body
+        CreateDirectDebitRequest createDirectDebitRequest = new CreateDirectDebitRequest(); // CreateDirectDebitRequest | Request body
         try {
-            ApiResponse<OBPv400CreateDirectDebit200Response> response = apiInstance.oBPv400CreateDirectDebitWithHttpInfo(bankid, accountid, viewid, obPv400CreateDirectDebitRequest);
+            ApiResponse<CreateDirectDebit200Response> response = apiInstance.createDirectDebitWithHttpInfo(bankid, accountid, viewid, createDirectDebitRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DirectDebitApi#oBPv400CreateDirectDebit");
+            System.err.println("Exception when calling DirectDebitApi#createDirectDebit");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -171,11 +171,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
-| **obPv400CreateDirectDebitRequest** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md)| Request body | |
+| **createDirectDebitRequest** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)>
+ApiResponse<[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)>
 
 
 ### Authorization
@@ -195,9 +195,9 @@ ApiResponse<[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit20
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateDirectDebitManagement
+## createDirectDebitManagement
 
-> OBPv400CreateDirectDebit200Response oBPv400CreateDirectDebitManagement(bankid, accountid, obPv400CreateDirectDebitRequest)
+> CreateDirectDebit200Response createDirectDebitManagement(bankid, accountid, createDirectDebitRequest)
 
 Create Direct Debit (management)
 
@@ -217,7 +217,7 @@ import com.openbankproject.api.DirectDebitApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -238,12 +238,12 @@ public class Example {
         DirectDebitApi apiInstance = new DirectDebitApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        OBPv400CreateDirectDebitRequest obPv400CreateDirectDebitRequest = new OBPv400CreateDirectDebitRequest(); // OBPv400CreateDirectDebitRequest | Request body
+        CreateDirectDebitRequest createDirectDebitRequest = new CreateDirectDebitRequest(); // CreateDirectDebitRequest | Request body
         try {
-            OBPv400CreateDirectDebit200Response result = apiInstance.oBPv400CreateDirectDebitManagement(bankid, accountid, obPv400CreateDirectDebitRequest);
+            CreateDirectDebit200Response result = apiInstance.createDirectDebitManagement(bankid, accountid, createDirectDebitRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DirectDebitApi#oBPv400CreateDirectDebitManagement");
+            System.err.println("Exception when calling DirectDebitApi#createDirectDebitManagement");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -260,11 +260,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
-| **obPv400CreateDirectDebitRequest** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md)| Request body | |
+| **createDirectDebitRequest** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 
 ### Authorization
@@ -283,9 +283,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateDirectDebitManagementWithHttpInfo
+## createDirectDebitManagementWithHttpInfo
 
-> ApiResponse<OBPv400CreateDirectDebit200Response> oBPv400CreateDirectDebitManagement oBPv400CreateDirectDebitManagementWithHttpInfo(bankid, accountid, obPv400CreateDirectDebitRequest)
+> ApiResponse<CreateDirectDebit200Response> createDirectDebitManagement createDirectDebitManagementWithHttpInfo(bankid, accountid, createDirectDebitRequest)
 
 Create Direct Debit (management)
 
@@ -306,7 +306,7 @@ import com.openbankproject.api.DirectDebitApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -327,14 +327,14 @@ public class Example {
         DirectDebitApi apiInstance = new DirectDebitApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        OBPv400CreateDirectDebitRequest obPv400CreateDirectDebitRequest = new OBPv400CreateDirectDebitRequest(); // OBPv400CreateDirectDebitRequest | Request body
+        CreateDirectDebitRequest createDirectDebitRequest = new CreateDirectDebitRequest(); // CreateDirectDebitRequest | Request body
         try {
-            ApiResponse<OBPv400CreateDirectDebit200Response> response = apiInstance.oBPv400CreateDirectDebitManagementWithHttpInfo(bankid, accountid, obPv400CreateDirectDebitRequest);
+            ApiResponse<CreateDirectDebit200Response> response = apiInstance.createDirectDebitManagementWithHttpInfo(bankid, accountid, createDirectDebitRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DirectDebitApi#oBPv400CreateDirectDebitManagement");
+            System.err.println("Exception when calling DirectDebitApi#createDirectDebitManagement");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -351,11 +351,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
-| **obPv400CreateDirectDebitRequest** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md)| Request body | |
+| **createDirectDebitRequest** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)>
+ApiResponse<[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)>
 
 
 ### Authorization

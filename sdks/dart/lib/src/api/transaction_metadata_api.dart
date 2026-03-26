@@ -9,16 +9,16 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv121_add_image_for_view_on_transaction_request.dart';
-import 'package:obp_dart/src/model/obpv121_get_comments_for_view_on_transaction200_response.dart';
-import 'package:obp_dart/src/model/obpv121_get_images_for_view_on_transaction200_response.dart';
-import 'package:obp_dart/src/model/obpv121_get_transaction_narrative200_response.dart';
-import 'package:obp_dart/src/model/obpv121_get_where_tag_for_view_on_transaction200_response.dart';
-import 'package:obp_dart/src/model/obpv121_update_transaction_narrative200_response.dart';
-import 'package:obp_dart/src/model/obpv121_update_where_tag_for_view_on_transaction_request.dart';
-import 'package:obp_dart/src/model/obpv310_get_transaction_by_id_for_bank_account200_response_properties_metadata_properties_images_items.dart';
-import 'package:obp_dart/src/model/obpv400_delete_system_level_endpoint_tag200_response.dart';
-import 'package:obp_dart/src/model/obpv400_get_tags_for_view_on_account200_response_properties_tags_items.dart';
+import 'package:obp_dart/src/model/add_image_for_view_on_transaction_request.dart';
+import 'package:obp_dart/src/model/get_comments_for_view_on_transaction200_response.dart';
+import 'package:obp_dart/src/model/get_images_for_view_on_transaction200_response.dart';
+import 'package:obp_dart/src/model/get_tags_for_view_on_account200_response_tags_inner.dart';
+import 'package:obp_dart/src/model/get_transaction_by_id_for_bank_account200_response_metadata_images_inner.dart';
+import 'package:obp_dart/src/model/get_transaction_narrative200_response.dart';
+import 'package:obp_dart/src/model/get_transaction_types200_response_transaction_types_inner_id.dart';
+import 'package:obp_dart/src/model/get_where_tag_for_view_on_transaction200_response.dart';
+import 'package:obp_dart/src/model/update_transaction_narrative200_response.dart';
+import 'package:obp_dart/src/model/update_where_tag_for_view_on_transaction_request.dart';
 
 class TransactionMetadataApi {
 
@@ -36,7 +36,7 @@ class TransactionMetadataApi {
   /// * [accountid] - The ACCOUNTID identifier
   /// * [viewid] - The VIEWID identifier
   /// * [transactionid] - The TRANSACTIONID identifier
-  /// * [oBPv400DeleteSystemLevelEndpointTag200Response] - Request body
+  /// * [getTransactionTypes200ResponseTransactionTypesInnerId] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -44,14 +44,14 @@ class TransactionMetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetTagsForViewOnAccount200ResponseTagsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>> oBPv121AddCommentForViewOnTransaction({ 
+  Future<Response<GetTagsForViewOnAccount200ResponseTagsInner>> addCommentForViewOnTransaction({ 
     required String bankid,
     required String accountid,
     required String viewid,
     required String transactionid,
-    required OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response,
+    required GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -78,7 +78,7 @@ class TransactionMetadataApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -91,8 +91,8 @@ class TransactionMetadataApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400DeleteSystemLevelEndpointTag200Response);
-      _bodyData = _serializers.serialize(oBPv400DeleteSystemLevelEndpointTag200Response, specifiedType: _type);
+      const _type = FullType(GetTransactionTypes200ResponseTransactionTypesInnerId);
+      _bodyData = _serializers.serialize(getTransactionTypes200ResponseTransactionTypesInnerId, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -115,14 +115,14 @@ class TransactionMetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems? _responseData;
+    GetTagsForViewOnAccount200ResponseTagsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems),
-      ) as OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems;
+        specifiedType: const FullType(GetTagsForViewOnAccount200ResponseTagsInner),
+      ) as GetTagsForViewOnAccount200ResponseTagsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -134,7 +134,7 @@ class TransactionMetadataApi {
       );
     }
 
-    return Response<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>(
+    return Response<GetTagsForViewOnAccount200ResponseTagsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -154,7 +154,7 @@ class TransactionMetadataApi {
   /// * [accountid] - The ACCOUNTID identifier
   /// * [viewid] - The VIEWID identifier
   /// * [transactionid] - The TRANSACTIONID identifier
-  /// * [oBPv121AddImageForViewOnTransactionRequest] - Request body
+  /// * [addImageForViewOnTransactionRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -162,14 +162,14 @@ class TransactionMetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetTransactionByIdForBankAccount200ResponseMetadataImagesInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems>> oBPv121AddImageForViewOnTransaction({ 
+  Future<Response<GetTransactionByIdForBankAccount200ResponseMetadataImagesInner>> addImageForViewOnTransaction({ 
     required String bankid,
     required String accountid,
     required String viewid,
     required String transactionid,
-    required OBPv121AddImageForViewOnTransactionRequest oBPv121AddImageForViewOnTransactionRequest,
+    required AddImageForViewOnTransactionRequest addImageForViewOnTransactionRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -196,7 +196,7 @@ class TransactionMetadataApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -209,8 +209,8 @@ class TransactionMetadataApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv121AddImageForViewOnTransactionRequest);
-      _bodyData = _serializers.serialize(oBPv121AddImageForViewOnTransactionRequest, specifiedType: _type);
+      const _type = FullType(AddImageForViewOnTransactionRequest);
+      _bodyData = _serializers.serialize(addImageForViewOnTransactionRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -233,14 +233,14 @@ class TransactionMetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems? _responseData;
+    GetTransactionByIdForBankAccount200ResponseMetadataImagesInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems),
-      ) as OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems;
+        specifiedType: const FullType(GetTransactionByIdForBankAccount200ResponseMetadataImagesInner),
+      ) as GetTransactionByIdForBankAccount200ResponseMetadataImagesInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -252,7 +252,7 @@ class TransactionMetadataApi {
       );
     }
 
-    return Response<OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems>(
+    return Response<GetTransactionByIdForBankAccount200ResponseMetadataImagesInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -272,7 +272,7 @@ class TransactionMetadataApi {
   /// * [accountid] - The ACCOUNTID identifier
   /// * [viewid] - The VIEWID identifier
   /// * [transactionid] - The TRANSACTIONID identifier
-  /// * [oBPv400DeleteSystemLevelEndpointTag200Response] - Request body
+  /// * [getTransactionTypes200ResponseTransactionTypesInnerId] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -280,14 +280,14 @@ class TransactionMetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetTagsForViewOnAccount200ResponseTagsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>> oBPv121AddTagForViewOnTransaction({ 
+  Future<Response<GetTagsForViewOnAccount200ResponseTagsInner>> addTagForViewOnTransaction({ 
     required String bankid,
     required String accountid,
     required String viewid,
     required String transactionid,
-    required OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response,
+    required GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -314,7 +314,7 @@ class TransactionMetadataApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -327,8 +327,8 @@ class TransactionMetadataApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400DeleteSystemLevelEndpointTag200Response);
-      _bodyData = _serializers.serialize(oBPv400DeleteSystemLevelEndpointTag200Response, specifiedType: _type);
+      const _type = FullType(GetTransactionTypes200ResponseTransactionTypesInnerId);
+      _bodyData = _serializers.serialize(getTransactionTypes200ResponseTransactionTypesInnerId, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -351,14 +351,14 @@ class TransactionMetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems? _responseData;
+    GetTagsForViewOnAccount200ResponseTagsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems),
-      ) as OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems;
+        specifiedType: const FullType(GetTagsForViewOnAccount200ResponseTagsInner),
+      ) as GetTagsForViewOnAccount200ResponseTagsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -370,7 +370,7 @@ class TransactionMetadataApi {
       );
     }
 
-    return Response<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>(
+    return Response<GetTagsForViewOnAccount200ResponseTagsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -390,7 +390,7 @@ class TransactionMetadataApi {
   /// * [accountid] - The ACCOUNTID identifier
   /// * [viewid] - The VIEWID identifier
   /// * [transactionid] - The TRANSACTIONID identifier
-  /// * [oBPv121GetTransactionNarrative200Response] - Request body
+  /// * [getTransactionNarrative200Response] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -398,14 +398,14 @@ class TransactionMetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv121UpdateTransactionNarrative200Response] as data
+  /// Returns a [Future] containing a [Response] with a [UpdateTransactionNarrative200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv121UpdateTransactionNarrative200Response>> oBPv121AddTransactionNarrative({ 
+  Future<Response<UpdateTransactionNarrative200Response>> addTransactionNarrative({ 
     required String bankid,
     required String accountid,
     required String viewid,
     required String transactionid,
-    required OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response,
+    required GetTransactionNarrative200Response getTransactionNarrative200Response,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -432,7 +432,7 @@ class TransactionMetadataApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -445,8 +445,8 @@ class TransactionMetadataApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv121GetTransactionNarrative200Response);
-      _bodyData = _serializers.serialize(oBPv121GetTransactionNarrative200Response, specifiedType: _type);
+      const _type = FullType(GetTransactionNarrative200Response);
+      _bodyData = _serializers.serialize(getTransactionNarrative200Response, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -469,14 +469,14 @@ class TransactionMetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv121UpdateTransactionNarrative200Response? _responseData;
+    UpdateTransactionNarrative200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv121UpdateTransactionNarrative200Response),
-      ) as OBPv121UpdateTransactionNarrative200Response;
+        specifiedType: const FullType(UpdateTransactionNarrative200Response),
+      ) as UpdateTransactionNarrative200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -488,7 +488,7 @@ class TransactionMetadataApi {
       );
     }
 
-    return Response<OBPv121UpdateTransactionNarrative200Response>(
+    return Response<UpdateTransactionNarrative200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -508,7 +508,7 @@ class TransactionMetadataApi {
   /// * [accountid] - The ACCOUNTID identifier
   /// * [viewid] - The VIEWID identifier
   /// * [transactionid] - The TRANSACTIONID identifier
-  /// * [oBPv121UpdateWhereTagForViewOnTransactionRequest] - Request body
+  /// * [updateWhereTagForViewOnTransactionRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -516,14 +516,14 @@ class TransactionMetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv121UpdateTransactionNarrative200Response] as data
+  /// Returns a [Future] containing a [Response] with a [UpdateTransactionNarrative200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv121UpdateTransactionNarrative200Response>> oBPv121AddWhereTagForViewOnTransaction({ 
+  Future<Response<UpdateTransactionNarrative200Response>> addWhereTagForViewOnTransaction({ 
     required String bankid,
     required String accountid,
     required String viewid,
     required String transactionid,
-    required OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest,
+    required UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -550,7 +550,7 @@ class TransactionMetadataApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -563,8 +563,8 @@ class TransactionMetadataApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv121UpdateWhereTagForViewOnTransactionRequest);
-      _bodyData = _serializers.serialize(oBPv121UpdateWhereTagForViewOnTransactionRequest, specifiedType: _type);
+      const _type = FullType(UpdateWhereTagForViewOnTransactionRequest);
+      _bodyData = _serializers.serialize(updateWhereTagForViewOnTransactionRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -587,14 +587,14 @@ class TransactionMetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv121UpdateTransactionNarrative200Response? _responseData;
+    UpdateTransactionNarrative200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv121UpdateTransactionNarrative200Response),
-      ) as OBPv121UpdateTransactionNarrative200Response;
+        specifiedType: const FullType(UpdateTransactionNarrative200Response),
+      ) as UpdateTransactionNarrative200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -606,7 +606,7 @@ class TransactionMetadataApi {
       );
     }
 
-    return Response<OBPv121UpdateTransactionNarrative200Response>(
+    return Response<UpdateTransactionNarrative200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -636,7 +636,7 @@ class TransactionMetadataApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv121DeleteCommentForViewOnTransaction({ 
+  Future<Response<void>> deleteCommentForViewOnTransaction({ 
     required String bankid,
     required String accountid,
     required String viewid,
@@ -668,7 +668,7 @@ class TransactionMetadataApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -706,7 +706,7 @@ class TransactionMetadataApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv121DeleteImageForViewOnTransaction({ 
+  Future<Response<void>> deleteImageForViewOnTransaction({ 
     required String bankid,
     required String accountid,
     required String viewid,
@@ -738,7 +738,7 @@ class TransactionMetadataApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -776,7 +776,7 @@ class TransactionMetadataApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv121DeleteTagForViewOnTransaction({ 
+  Future<Response<void>> deleteTagForViewOnTransaction({ 
     required String bankid,
     required String accountid,
     required String viewid,
@@ -830,7 +830,7 @@ class TransactionMetadataApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv121DeleteTransactionNarrative({ 
+  Future<Response<void>> deleteTransactionNarrative({ 
     required String bankid,
     required String accountid,
     required String viewid,
@@ -861,7 +861,7 @@ class TransactionMetadataApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -898,7 +898,7 @@ class TransactionMetadataApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv121DeleteWhereTagForViewOnTransaction({ 
+  Future<Response<void>> deleteWhereTagForViewOnTransaction({ 
     required String bankid,
     required String accountid,
     required String viewid,
@@ -929,7 +929,7 @@ class TransactionMetadataApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -964,9 +964,9 @@ class TransactionMetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv121GetCommentsForViewOnTransaction200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetCommentsForViewOnTransaction200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv121GetCommentsForViewOnTransaction200Response>> oBPv121GetCommentsForViewOnTransaction({ 
+  Future<Response<GetCommentsForViewOnTransaction200Response>> getCommentsForViewOnTransaction({ 
     required String bankid,
     required String accountid,
     required String viewid,
@@ -997,7 +997,7 @@ class TransactionMetadataApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -1014,14 +1014,14 @@ class TransactionMetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv121GetCommentsForViewOnTransaction200Response? _responseData;
+    GetCommentsForViewOnTransaction200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv121GetCommentsForViewOnTransaction200Response),
-      ) as OBPv121GetCommentsForViewOnTransaction200Response;
+        specifiedType: const FullType(GetCommentsForViewOnTransaction200Response),
+      ) as GetCommentsForViewOnTransaction200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -1033,7 +1033,7 @@ class TransactionMetadataApi {
       );
     }
 
-    return Response<OBPv121GetCommentsForViewOnTransaction200Response>(
+    return Response<GetCommentsForViewOnTransaction200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1060,9 +1060,9 @@ class TransactionMetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv121GetImagesForViewOnTransaction200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetImagesForViewOnTransaction200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv121GetImagesForViewOnTransaction200Response>> oBPv121GetImagesForViewOnTransaction({ 
+  Future<Response<GetImagesForViewOnTransaction200Response>> getImagesForViewOnTransaction({ 
     required String bankid,
     required String accountid,
     required String viewid,
@@ -1093,7 +1093,7 @@ class TransactionMetadataApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -1110,14 +1110,14 @@ class TransactionMetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv121GetImagesForViewOnTransaction200Response? _responseData;
+    GetImagesForViewOnTransaction200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv121GetImagesForViewOnTransaction200Response),
-      ) as OBPv121GetImagesForViewOnTransaction200Response;
+        specifiedType: const FullType(GetImagesForViewOnTransaction200Response),
+      ) as GetImagesForViewOnTransaction200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -1129,7 +1129,7 @@ class TransactionMetadataApi {
       );
     }
 
-    return Response<OBPv121GetImagesForViewOnTransaction200Response>(
+    return Response<GetImagesForViewOnTransaction200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1156,9 +1156,9 @@ class TransactionMetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetTagsForViewOnAccount200ResponseTagsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>> oBPv121GetTagsForViewOnTransaction({ 
+  Future<Response<GetTagsForViewOnAccount200ResponseTagsInner>> getTagsForViewOnTransaction({ 
     required String bankid,
     required String accountid,
     required String viewid,
@@ -1191,14 +1191,14 @@ class TransactionMetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems? _responseData;
+    GetTagsForViewOnAccount200ResponseTagsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems),
-      ) as OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems;
+        specifiedType: const FullType(GetTagsForViewOnAccount200ResponseTagsInner),
+      ) as GetTagsForViewOnAccount200ResponseTagsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -1210,7 +1210,7 @@ class TransactionMetadataApi {
       );
     }
 
-    return Response<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>(
+    return Response<GetTagsForViewOnAccount200ResponseTagsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1237,9 +1237,9 @@ class TransactionMetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv121GetTransactionNarrative200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetTransactionNarrative200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv121GetTransactionNarrative200Response>> oBPv121GetTransactionNarrative({ 
+  Future<Response<GetTransactionNarrative200Response>> getTransactionNarrative({ 
     required String bankid,
     required String accountid,
     required String viewid,
@@ -1272,14 +1272,14 @@ class TransactionMetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv121GetTransactionNarrative200Response? _responseData;
+    GetTransactionNarrative200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv121GetTransactionNarrative200Response),
-      ) as OBPv121GetTransactionNarrative200Response;
+        specifiedType: const FullType(GetTransactionNarrative200Response),
+      ) as GetTransactionNarrative200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -1291,7 +1291,7 @@ class TransactionMetadataApi {
       );
     }
 
-    return Response<OBPv121GetTransactionNarrative200Response>(
+    return Response<GetTransactionNarrative200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1318,9 +1318,9 @@ class TransactionMetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv121GetWhereTagForViewOnTransaction200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetWhereTagForViewOnTransaction200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv121GetWhereTagForViewOnTransaction200Response>> oBPv121GetWhereTagForViewOnTransaction({ 
+  Future<Response<GetWhereTagForViewOnTransaction200Response>> getWhereTagForViewOnTransaction({ 
     required String bankid,
     required String accountid,
     required String viewid,
@@ -1353,14 +1353,14 @@ class TransactionMetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv121GetWhereTagForViewOnTransaction200Response? _responseData;
+    GetWhereTagForViewOnTransaction200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv121GetWhereTagForViewOnTransaction200Response),
-      ) as OBPv121GetWhereTagForViewOnTransaction200Response;
+        specifiedType: const FullType(GetWhereTagForViewOnTransaction200Response),
+      ) as GetWhereTagForViewOnTransaction200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -1372,7 +1372,7 @@ class TransactionMetadataApi {
       );
     }
 
-    return Response<OBPv121GetWhereTagForViewOnTransaction200Response>(
+    return Response<GetWhereTagForViewOnTransaction200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1392,7 +1392,7 @@ class TransactionMetadataApi {
   /// * [accountid] - The ACCOUNTID identifier
   /// * [viewid] - The VIEWID identifier
   /// * [transactionid] - The TRANSACTIONID identifier
-  /// * [oBPv121GetTransactionNarrative200Response] - Request body
+  /// * [getTransactionNarrative200Response] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1400,14 +1400,14 @@ class TransactionMetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv121UpdateTransactionNarrative200Response] as data
+  /// Returns a [Future] containing a [Response] with a [UpdateTransactionNarrative200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv121UpdateTransactionNarrative200Response>> oBPv121UpdateTransactionNarrative({ 
+  Future<Response<UpdateTransactionNarrative200Response>> updateTransactionNarrative({ 
     required String bankid,
     required String accountid,
     required String viewid,
     required String transactionid,
-    required OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response,
+    required GetTransactionNarrative200Response getTransactionNarrative200Response,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1432,8 +1432,8 @@ class TransactionMetadataApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv121GetTransactionNarrative200Response);
-      _bodyData = _serializers.serialize(oBPv121GetTransactionNarrative200Response, specifiedType: _type);
+      const _type = FullType(GetTransactionNarrative200Response);
+      _bodyData = _serializers.serialize(getTransactionNarrative200Response, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -1456,14 +1456,14 @@ class TransactionMetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv121UpdateTransactionNarrative200Response? _responseData;
+    UpdateTransactionNarrative200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv121UpdateTransactionNarrative200Response),
-      ) as OBPv121UpdateTransactionNarrative200Response;
+        specifiedType: const FullType(UpdateTransactionNarrative200Response),
+      ) as UpdateTransactionNarrative200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -1475,7 +1475,7 @@ class TransactionMetadataApi {
       );
     }
 
-    return Response<OBPv121UpdateTransactionNarrative200Response>(
+    return Response<UpdateTransactionNarrative200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1495,7 +1495,7 @@ class TransactionMetadataApi {
   /// * [accountid] - The ACCOUNTID identifier
   /// * [viewid] - The VIEWID identifier
   /// * [transactionid] - The TRANSACTIONID identifier
-  /// * [oBPv121UpdateWhereTagForViewOnTransactionRequest] - Request body
+  /// * [updateWhereTagForViewOnTransactionRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1503,14 +1503,14 @@ class TransactionMetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv121UpdateTransactionNarrative200Response] as data
+  /// Returns a [Future] containing a [Response] with a [UpdateTransactionNarrative200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv121UpdateTransactionNarrative200Response>> oBPv121UpdateWhereTagForViewOnTransaction({ 
+  Future<Response<UpdateTransactionNarrative200Response>> updateWhereTagForViewOnTransaction({ 
     required String bankid,
     required String accountid,
     required String viewid,
     required String transactionid,
-    required OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest,
+    required UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1537,7 +1537,7 @@ class TransactionMetadataApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -1550,8 +1550,8 @@ class TransactionMetadataApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv121UpdateWhereTagForViewOnTransactionRequest);
-      _bodyData = _serializers.serialize(oBPv121UpdateWhereTagForViewOnTransactionRequest, specifiedType: _type);
+      const _type = FullType(UpdateWhereTagForViewOnTransactionRequest);
+      _bodyData = _serializers.serialize(updateWhereTagForViewOnTransactionRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -1574,14 +1574,14 @@ class TransactionMetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv121UpdateTransactionNarrative200Response? _responseData;
+    UpdateTransactionNarrative200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv121UpdateTransactionNarrative200Response),
-      ) as OBPv121UpdateTransactionNarrative200Response;
+        specifiedType: const FullType(UpdateTransactionNarrative200Response),
+      ) as UpdateTransactionNarrative200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -1593,7 +1593,7 @@ class TransactionMetadataApi {
       );
     }
 
-    return Response<OBPv121UpdateTransactionNarrative200Response>(
+    return Response<UpdateTransactionNarrative200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

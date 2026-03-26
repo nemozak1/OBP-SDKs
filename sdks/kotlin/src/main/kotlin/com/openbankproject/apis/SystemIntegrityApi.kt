@@ -19,7 +19,7 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv121UpdateTransactionNarrative200Response
+import com.openbankproject.models.AccountAccessUniqueIndexCheck200Response
 
 import com.squareup.moshi.Json
 
@@ -41,7 +41,7 @@ open class SystemIntegrityApi(basePath: kotlin.String = defaultBasePath, client:
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -49,7 +49,7 @@ open class SystemIntegrityApi(basePath: kotlin.String = defaultBasePath, client:
      * GET /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check
      * Check Unique Index at Account Access
      * &lt;p&gt;Check unique index at account access table.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
-     * @return OBPv121UpdateTransactionNarrative200Response
+     * @return AccountAccessUniqueIndexCheck200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -58,11 +58,11 @@ open class SystemIntegrityApi(basePath: kotlin.String = defaultBasePath, client:
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510AccountAccessUniqueIndexCheck() : OBPv121UpdateTransactionNarrative200Response {
-        val localVarResponse = oBPv510AccountAccessUniqueIndexCheckWithHttpInfo()
+    fun accountAccessUniqueIndexCheck() : AccountAccessUniqueIndexCheck200Response {
+        val localVarResponse = accountAccessUniqueIndexCheckWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv121UpdateTransactionNarrative200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAccessUniqueIndexCheck200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -80,26 +80,26 @@ open class SystemIntegrityApi(basePath: kotlin.String = defaultBasePath, client:
      * GET /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check
      * Check Unique Index at Account Access
      * &lt;p&gt;Check unique index at account access table.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
-     * @return ApiResponse<OBPv121UpdateTransactionNarrative200Response?>
+     * @return ApiResponse<AccountAccessUniqueIndexCheck200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510AccountAccessUniqueIndexCheckWithHttpInfo() : ApiResponse<OBPv121UpdateTransactionNarrative200Response?> {
-        val localVariableConfig = oBPv510AccountAccessUniqueIndexCheckRequestConfig()
+    fun accountAccessUniqueIndexCheckWithHttpInfo() : ApiResponse<AccountAccessUniqueIndexCheck200Response?> {
+        val localVariableConfig = accountAccessUniqueIndexCheckRequestConfig()
 
-        return request<Unit, OBPv121UpdateTransactionNarrative200Response>(
+        return request<Unit, AccountAccessUniqueIndexCheck200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv510AccountAccessUniqueIndexCheck
+     * To obtain the request config of the operation accountAccessUniqueIndexCheck
      *
      * @return RequestConfig
      */
-    fun oBPv510AccountAccessUniqueIndexCheckRequestConfig() : RequestConfig<Unit> {
+    fun accountAccessUniqueIndexCheckRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -120,7 +120,7 @@ open class SystemIntegrityApi(basePath: kotlin.String = defaultBasePath, client:
      * Check for Sensible Currencies
      * &lt;p&gt;Check for sensible currencies at Bank Account model&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return OBPv121UpdateTransactionNarrative200Response
+     * @return AccountAccessUniqueIndexCheck200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -129,11 +129,11 @@ open class SystemIntegrityApi(basePath: kotlin.String = defaultBasePath, client:
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510AccountCurrencyCheck(bankid: kotlin.String) : OBPv121UpdateTransactionNarrative200Response {
-        val localVarResponse = oBPv510AccountCurrencyCheckWithHttpInfo(bankid = bankid)
+    fun accountCurrencyCheck(bankid: kotlin.String) : AccountAccessUniqueIndexCheck200Response {
+        val localVarResponse = accountCurrencyCheckWithHttpInfo(bankid = bankid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv121UpdateTransactionNarrative200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAccessUniqueIndexCheck200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -152,27 +152,27 @@ open class SystemIntegrityApi(basePath: kotlin.String = defaultBasePath, client:
      * Check for Sensible Currencies
      * &lt;p&gt;Check for sensible currencies at Bank Account model&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return ApiResponse<OBPv121UpdateTransactionNarrative200Response?>
+     * @return ApiResponse<AccountAccessUniqueIndexCheck200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510AccountCurrencyCheckWithHttpInfo(bankid: kotlin.String) : ApiResponse<OBPv121UpdateTransactionNarrative200Response?> {
-        val localVariableConfig = oBPv510AccountCurrencyCheckRequestConfig(bankid = bankid)
+    fun accountCurrencyCheckWithHttpInfo(bankid: kotlin.String) : ApiResponse<AccountAccessUniqueIndexCheck200Response?> {
+        val localVariableConfig = accountCurrencyCheckRequestConfig(bankid = bankid)
 
-        return request<Unit, OBPv121UpdateTransactionNarrative200Response>(
+        return request<Unit, AccountAccessUniqueIndexCheck200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv510AccountCurrencyCheck
+     * To obtain the request config of the operation accountCurrencyCheck
      *
      * @param bankid The BANKID identifier
      * @return RequestConfig
      */
-    fun oBPv510AccountCurrencyCheckRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
+    fun accountCurrencyCheckRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -192,7 +192,7 @@ open class SystemIntegrityApi(basePath: kotlin.String = defaultBasePath, client:
      * GET /obp/v5.1.0/management/system/integrity/custom-view-names-check
      * Check Custom View Names
      * &lt;p&gt;Check custom view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
-     * @return OBPv121UpdateTransactionNarrative200Response
+     * @return AccountAccessUniqueIndexCheck200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -201,11 +201,11 @@ open class SystemIntegrityApi(basePath: kotlin.String = defaultBasePath, client:
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510CustomViewNamesCheck() : OBPv121UpdateTransactionNarrative200Response {
-        val localVarResponse = oBPv510CustomViewNamesCheckWithHttpInfo()
+    fun customViewNamesCheck() : AccountAccessUniqueIndexCheck200Response {
+        val localVarResponse = customViewNamesCheckWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv121UpdateTransactionNarrative200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAccessUniqueIndexCheck200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -223,26 +223,26 @@ open class SystemIntegrityApi(basePath: kotlin.String = defaultBasePath, client:
      * GET /obp/v5.1.0/management/system/integrity/custom-view-names-check
      * Check Custom View Names
      * &lt;p&gt;Check custom view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
-     * @return ApiResponse<OBPv121UpdateTransactionNarrative200Response?>
+     * @return ApiResponse<AccountAccessUniqueIndexCheck200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510CustomViewNamesCheckWithHttpInfo() : ApiResponse<OBPv121UpdateTransactionNarrative200Response?> {
-        val localVariableConfig = oBPv510CustomViewNamesCheckRequestConfig()
+    fun customViewNamesCheckWithHttpInfo() : ApiResponse<AccountAccessUniqueIndexCheck200Response?> {
+        val localVariableConfig = customViewNamesCheckRequestConfig()
 
-        return request<Unit, OBPv121UpdateTransactionNarrative200Response>(
+        return request<Unit, AccountAccessUniqueIndexCheck200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv510CustomViewNamesCheck
+     * To obtain the request config of the operation customViewNamesCheck
      *
      * @return RequestConfig
      */
-    fun oBPv510CustomViewNamesCheckRequestConfig() : RequestConfig<Unit> {
+    fun customViewNamesCheckRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -263,7 +263,7 @@ open class SystemIntegrityApi(basePath: kotlin.String = defaultBasePath, client:
      * Check for Orphaned Accounts
      * &lt;p&gt;Check for orphaned accounts at Bank Account model&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return OBPv121UpdateTransactionNarrative200Response
+     * @return AccountAccessUniqueIndexCheck200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -272,11 +272,11 @@ open class SystemIntegrityApi(basePath: kotlin.String = defaultBasePath, client:
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510OrphanedAccountCheck(bankid: kotlin.String) : OBPv121UpdateTransactionNarrative200Response {
-        val localVarResponse = oBPv510OrphanedAccountCheckWithHttpInfo(bankid = bankid)
+    fun orphanedAccountCheck(bankid: kotlin.String) : AccountAccessUniqueIndexCheck200Response {
+        val localVarResponse = orphanedAccountCheckWithHttpInfo(bankid = bankid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv121UpdateTransactionNarrative200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAccessUniqueIndexCheck200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -295,27 +295,27 @@ open class SystemIntegrityApi(basePath: kotlin.String = defaultBasePath, client:
      * Check for Orphaned Accounts
      * &lt;p&gt;Check for orphaned accounts at Bank Account model&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return ApiResponse<OBPv121UpdateTransactionNarrative200Response?>
+     * @return ApiResponse<AccountAccessUniqueIndexCheck200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510OrphanedAccountCheckWithHttpInfo(bankid: kotlin.String) : ApiResponse<OBPv121UpdateTransactionNarrative200Response?> {
-        val localVariableConfig = oBPv510OrphanedAccountCheckRequestConfig(bankid = bankid)
+    fun orphanedAccountCheckWithHttpInfo(bankid: kotlin.String) : ApiResponse<AccountAccessUniqueIndexCheck200Response?> {
+        val localVariableConfig = orphanedAccountCheckRequestConfig(bankid = bankid)
 
-        return request<Unit, OBPv121UpdateTransactionNarrative200Response>(
+        return request<Unit, AccountAccessUniqueIndexCheck200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv510OrphanedAccountCheck
+     * To obtain the request config of the operation orphanedAccountCheck
      *
      * @param bankid The BANKID identifier
      * @return RequestConfig
      */
-    fun oBPv510OrphanedAccountCheckRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
+    fun orphanedAccountCheckRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -335,7 +335,7 @@ open class SystemIntegrityApi(basePath: kotlin.String = defaultBasePath, client:
      * GET /obp/v5.1.0/management/system/integrity/system-view-names-check
      * Check System View Names
      * &lt;p&gt;Check system view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
-     * @return OBPv121UpdateTransactionNarrative200Response
+     * @return AccountAccessUniqueIndexCheck200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -344,11 +344,11 @@ open class SystemIntegrityApi(basePath: kotlin.String = defaultBasePath, client:
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510SystemViewNamesCheck() : OBPv121UpdateTransactionNarrative200Response {
-        val localVarResponse = oBPv510SystemViewNamesCheckWithHttpInfo()
+    fun systemViewNamesCheck() : AccountAccessUniqueIndexCheck200Response {
+        val localVarResponse = systemViewNamesCheckWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv121UpdateTransactionNarrative200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAccessUniqueIndexCheck200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -366,26 +366,26 @@ open class SystemIntegrityApi(basePath: kotlin.String = defaultBasePath, client:
      * GET /obp/v5.1.0/management/system/integrity/system-view-names-check
      * Check System View Names
      * &lt;p&gt;Check system view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
-     * @return ApiResponse<OBPv121UpdateTransactionNarrative200Response?>
+     * @return ApiResponse<AccountAccessUniqueIndexCheck200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510SystemViewNamesCheckWithHttpInfo() : ApiResponse<OBPv121UpdateTransactionNarrative200Response?> {
-        val localVariableConfig = oBPv510SystemViewNamesCheckRequestConfig()
+    fun systemViewNamesCheckWithHttpInfo() : ApiResponse<AccountAccessUniqueIndexCheck200Response?> {
+        val localVariableConfig = systemViewNamesCheckRequestConfig()
 
-        return request<Unit, OBPv121UpdateTransactionNarrative200Response>(
+        return request<Unit, AccountAccessUniqueIndexCheck200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv510SystemViewNamesCheck
+     * To obtain the request config of the operation systemViewNamesCheck
      *
      * @return RequestConfig
      */
-    fun oBPv510SystemViewNamesCheckRequestConfig() : RequestConfig<Unit> {
+    fun systemViewNamesCheckRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

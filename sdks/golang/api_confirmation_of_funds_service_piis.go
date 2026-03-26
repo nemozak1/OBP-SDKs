@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,7 +24,7 @@ import (
 // ConfirmationOfFundsServicePIISAPIService ConfirmationOfFundsServicePIISAPI service
 type ConfirmationOfFundsServicePIISAPIService service
 
-type ApiOBPv310CheckFundsAvailableRequest struct {
+type ApiCheckFundsAvailableRequest struct {
 	ctx context.Context
 	ApiService *ConfirmationOfFundsServicePIISAPIService
 	bankid string
@@ -32,12 +32,12 @@ type ApiOBPv310CheckFundsAvailableRequest struct {
 	viewid string
 }
 
-func (r ApiOBPv310CheckFundsAvailableRequest) Execute() (*OBPv310CheckFundsAvailable200Response, *http.Response, error) {
-	return r.ApiService.OBPv310CheckFundsAvailableExecute(r)
+func (r ApiCheckFundsAvailableRequest) Execute() (*CheckFundsAvailable200Response, *http.Response, error) {
+	return r.ApiService.CheckFundsAvailableExecute(r)
 }
 
 /*
-OBPv310CheckFundsAvailable Check Available Funds
+CheckFundsAvailable Check Available Funds
 
 <p>Check Available Funds<br />
 Mandatory URL parameters:</p>
@@ -60,10 +60,10 @@ Mandatory URL parameters:</p>
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv310CheckFundsAvailableRequest
+ @return ApiCheckFundsAvailableRequest
 */
-func (a *ConfirmationOfFundsServicePIISAPIService) OBPv310CheckFundsAvailable(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv310CheckFundsAvailableRequest {
-	return ApiOBPv310CheckFundsAvailableRequest{
+func (a *ConfirmationOfFundsServicePIISAPIService) CheckFundsAvailable(ctx context.Context, bankid string, accountid string, viewid string) ApiCheckFundsAvailableRequest {
+	return ApiCheckFundsAvailableRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -73,16 +73,16 @@ func (a *ConfirmationOfFundsServicePIISAPIService) OBPv310CheckFundsAvailable(ct
 }
 
 // Execute executes the request
-//  @return OBPv310CheckFundsAvailable200Response
-func (a *ConfirmationOfFundsServicePIISAPIService) OBPv310CheckFundsAvailableExecute(r ApiOBPv310CheckFundsAvailableRequest) (*OBPv310CheckFundsAvailable200Response, *http.Response, error) {
+//  @return CheckFundsAvailable200Response
+func (a *ConfirmationOfFundsServicePIISAPIService) CheckFundsAvailableExecute(r ApiCheckFundsAvailableRequest) (*CheckFundsAvailable200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310CheckFundsAvailable200Response
+		localVarReturnValue  *CheckFundsAvailable200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfirmationOfFundsServicePIISAPIService.OBPv310CheckFundsAvailable")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfirmationOfFundsServicePIISAPIService.CheckFundsAvailable")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -137,7 +137,7 @@ func (a *ConfirmationOfFundsServicePIISAPIService) OBPv310CheckFundsAvailableExe
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

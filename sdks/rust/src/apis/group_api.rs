@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,84 +15,84 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv6_0_0_add_user_to_group`]
+/// struct for typed errors of method [`add_user_to_group`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600AddUserToGroupError {
+pub enum AddUserToGroupError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_create_group`]
+/// struct for typed errors of method [`create_group`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600CreateGroupError {
+pub enum CreateGroupError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_delete_group`]
+/// struct for typed errors of method [`delete_group`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600DeleteGroupError {
+pub enum DeleteGroupError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_get_group`]
+/// struct for typed errors of method [`get_group`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600GetGroupError {
+pub enum GetGroupError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_get_group_entitlements`]
+/// struct for typed errors of method [`get_group_entitlements`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600GetGroupEntitlementsError {
+pub enum GetGroupEntitlementsError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_get_groups`]
+/// struct for typed errors of method [`get_groups`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600GetGroupsError {
+pub enum GetGroupsError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_get_user_group_memberships`]
+/// struct for typed errors of method [`get_user_group_memberships`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600GetUserGroupMembershipsError {
+pub enum GetUserGroupMembershipsError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_remove_user_from_group`]
+/// struct for typed errors of method [`remove_user_from_group`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600RemoveUserFromGroupError {
+pub enum RemoveUserFromGroupError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_update_group`]
+/// struct for typed errors of method [`update_group`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600UpdateGroupError {
+pub enum UpdateGroupError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
 
 /// <p>Grant the User Group Entitlements.</p> <p>This endpoint creates entitlements for every Role in the Group. If the user<br /> already has a particular role at the same bank, that entitlement is skipped (not duplicated).</p> <p>Each entitlement created will have:<br /> - group_id set to the group ID<br /> - process set to &quot;GROUP_MEMBERSHIP&quot;</p> <p><strong>Response Fields:</strong><br /> - target_entitlements: All roles defined in the group (the complete list of entitlements that this group aims to grant)<br /> - entitlements_created: Roles that were newly created as entitlements during this operation<br /> - entitlements_skipped: Roles that the user already possessed, so no new entitlement was created</p> <p>Note: target_entitlements = entitlements_created + entitlements_skipped</p> <p>Requires either:<br /> - CanAddUserToGroupAtAllBanks (for any group)<br /> - CanAddUserToGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>entitlements_created</strong></a>: entitlements_created</p> <p><a href=\"/glossary#\"><strong>entitlements_skipped</strong></a>: entitlements_skipped</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>target_entitlements</strong></a>: target_entitlements</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
-pub async fn o_bpv6_0_0_add_user_to_group(configuration: &configuration::Configuration, userid: &str, obpv600_add_user_to_group_request: models::Obpv600AddUserToGroupRequest) -> Result<models::Obpv600AddUserToGroup200Response, Error<OBpv600AddUserToGroupError>> {
+pub async fn add_user_to_group(configuration: &configuration::Configuration, userid: &str, add_user_to_group_request: models::AddUserToGroupRequest) -> Result<models::AddUserToGroup200Response, Error<AddUserToGroupError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_userid = userid;
-    let p_body_obpv600_add_user_to_group_request = obpv600_add_user_to_group_request;
+    let p_body_add_user_to_group_request = add_user_to_group_request;
 
     let uri_str = format!("{}/obp/v6.0.0/users/{userid}/group-entitlements", configuration.base_path, userid=crate::apis::urlencode(p_path_userid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -117,9 +117,9 @@ pub async fn o_bpv6_0_0_add_user_to_group(configuration: &configuration::Configu
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv600_add_user_to_group_request);
+    req_builder = req_builder.json(&p_body_add_user_to_group_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -136,20 +136,20 @@ pub async fn o_bpv6_0_0_add_user_to_group(configuration: &configuration::Configu
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600AddUserToGroup200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600AddUserToGroup200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::AddUserToGroup200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::AddUserToGroup200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600AddUserToGroupError> = serde_json::from_str(&content).ok();
+        let entity: Option<AddUserToGroupError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Create a new group of roles.</p> <p>Groups can be either:<br /> - System-level (bank_id = null) - requires CanCreateGroupAtAllBanks role<br /> - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role</p> <p>A group contains a list of role names that can be assigned together.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
-pub async fn o_bpv6_0_0_create_group(configuration: &configuration::Configuration, obpv600_create_group_request: models::Obpv600CreateGroupRequest) -> Result<models::Obpv600GetGroups200ResponsePropertiesGroupsItems, Error<OBpv600CreateGroupError>> {
+pub async fn create_group(configuration: &configuration::Configuration, create_group_request: models::CreateGroupRequest) -> Result<models::GetGroups200ResponseGroupsInner, Error<CreateGroupError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_body_obpv600_create_group_request = obpv600_create_group_request;
+    let p_body_create_group_request = create_group_request;
 
     let uri_str = format!("{}/obp/v6.0.0/management/groups", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -174,9 +174,9 @@ pub async fn o_bpv6_0_0_create_group(configuration: &configuration::Configuratio
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv600_create_group_request);
+    req_builder = req_builder.json(&p_body_create_group_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -193,18 +193,18 @@ pub async fn o_bpv6_0_0_create_group(configuration: &configuration::Configuratio
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetGroups200ResponsePropertiesGroupsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetGroups200ResponsePropertiesGroupsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetGroups200ResponseGroupsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetGroups200ResponseGroupsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600CreateGroupError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateGroupError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete a Group.</p> <p>Requires either:<br /> - CanDeleteGroupAtAllBanks (for any group)<br /> - CanDeleteGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv6_0_0_delete_group(configuration: &configuration::Configuration, groupid: &str) -> Result<(), Error<OBpv600DeleteGroupError>> {
+pub async fn delete_group(configuration: &configuration::Configuration, groupid: &str) -> Result<(), Error<DeleteGroupError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_groupid = groupid;
 
@@ -231,7 +231,7 @@ pub async fn o_bpv6_0_0_delete_group(configuration: &configuration::Configuratio
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -243,13 +243,13 @@ pub async fn o_bpv6_0_0_delete_group(configuration: &configuration::Configuratio
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600DeleteGroupError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteGroupError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get a group by its ID.</p> <p>Requires either:<br /> - CanGetGroupsAtAllBanks (for any group)<br /> - CanGetGroupsAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
-pub async fn o_bpv6_0_0_get_group(configuration: &configuration::Configuration, groupid: &str) -> Result<models::Obpv600GetGroups200ResponsePropertiesGroupsItems, Error<OBpv600GetGroupError>> {
+pub async fn get_group(configuration: &configuration::Configuration, groupid: &str) -> Result<models::GetGroups200ResponseGroupsInner, Error<GetGroupError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_groupid = groupid;
 
@@ -276,7 +276,7 @@ pub async fn o_bpv6_0_0_get_group(configuration: &configuration::Configuration, 
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -294,18 +294,18 @@ pub async fn o_bpv6_0_0_get_group(configuration: &configuration::Configuration, 
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetGroups200ResponsePropertiesGroupsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetGroups200ResponsePropertiesGroupsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetGroups200ResponseGroupsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetGroups200ResponseGroupsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600GetGroupError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetGroupError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get all entitlements that have been granted from a specific group.</p> <p>This returns all entitlements where the group_id matches the specified GROUP_ID.</p> <p>Requires:<br /> - CanGetEntitlementsForAnyBank</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#entitlement_id\"><strong>entitlement_id</strong></a>:</p> <p><a href=\"/glossary#entitlements\"><strong>entitlements</strong></a>:</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\">group_id</a>: group_id</p> <p><a href=\"/glossary#process\">process</a>: obp.getBank</p> 
-pub async fn o_bpv6_0_0_get_group_entitlements(configuration: &configuration::Configuration, groupid: &str) -> Result<models::Obpv600GetGroupEntitlements200Response, Error<OBpv600GetGroupEntitlementsError>> {
+pub async fn get_group_entitlements(configuration: &configuration::Configuration, groupid: &str) -> Result<models::GetGroupEntitlements200Response, Error<GetGroupEntitlementsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_groupid = groupid;
 
@@ -332,7 +332,7 @@ pub async fn o_bpv6_0_0_get_group_entitlements(configuration: &configuration::Co
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -350,18 +350,18 @@ pub async fn o_bpv6_0_0_get_group_entitlements(configuration: &configuration::Co
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetGroupEntitlements200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetGroupEntitlements200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetGroupEntitlements200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetGroupEntitlements200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600GetGroupEntitlementsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetGroupEntitlementsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get all groups. Optionally filter by bank_id.</p> <p>Query parameters:<br /> - bank_id (optional): Filter groups by bank. Use &quot;null&quot; or omit for system-level groups.</p> <p>Requires either:<br /> - CanGetGroupsAtAllBanks (for any/all groups)<br /> - CanGetGroupsAtOneBank (for groups at specific bank with bank_id parameter)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>groups</strong></a>: groups</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
-pub async fn o_bpv6_0_0_get_groups(configuration: &configuration::Configuration, ) -> Result<models::Obpv600GetGroups200Response, Error<OBpv600GetGroupsError>> {
+pub async fn get_groups(configuration: &configuration::Configuration, ) -> Result<models::GetGroups200Response, Error<GetGroupsError>> {
 
     let uri_str = format!("{}/obp/v6.0.0/management/groups", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -386,7 +386,7 @@ pub async fn o_bpv6_0_0_get_groups(configuration: &configuration::Configuration,
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -404,18 +404,18 @@ pub async fn o_bpv6_0_0_get_groups(configuration: &configuration::Configuration,
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetGroups200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetGroups200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetGroups200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetGroups200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600GetGroupsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetGroupsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get all groups a user is a member of.</p> <p>Returns groups where the user has entitlements with process = &quot;GROUP_MEMBERSHIP&quot;.</p> <p>The response includes:<br /> - list_of_entitlements: entitlements the user currently has from this group membership</p> <p>Requires either:<br /> - CanGetUserGroupMembershipsAtAllBanks (for any user)<br /> - CanGetUserGroupMembershipsAtOneBank (for users at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_entitlements</strong></a>: group_entitlements</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>list_of_entitlements</strong></a>: list_of_entitlements</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
-pub async fn o_bpv6_0_0_get_user_group_memberships(configuration: &configuration::Configuration, userid: &str) -> Result<models::Obpv600GetUserGroupMemberships200Response, Error<OBpv600GetUserGroupMembershipsError>> {
+pub async fn get_user_group_memberships(configuration: &configuration::Configuration, userid: &str) -> Result<models::GetUserGroupMemberships200Response, Error<GetUserGroupMembershipsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_userid = userid;
 
@@ -442,7 +442,7 @@ pub async fn o_bpv6_0_0_get_user_group_memberships(configuration: &configuration
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -460,18 +460,18 @@ pub async fn o_bpv6_0_0_get_user_group_memberships(configuration: &configuration
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetUserGroupMemberships200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetUserGroupMemberships200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetUserGroupMemberships200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetUserGroupMemberships200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600GetUserGroupMembershipsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetUserGroupMembershipsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Remove a user from a group. This will delete all entitlements that were created by this group membership.</p> <p>Only removes entitlements with:<br /> - group_id matching GROUP_ID<br /> - process = &quot;GROUP_MEMBERSHIP&quot;</p> <p>Requires either:<br /> - CanRemoveUserFromGroupAtAllBanks (for any group)<br /> - CanRemoveUserFromGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv6_0_0_remove_user_from_group(configuration: &configuration::Configuration, userid: &str, groupid: &str) -> Result<(), Error<OBpv600RemoveUserFromGroupError>> {
+pub async fn remove_user_from_group(configuration: &configuration::Configuration, userid: &str, groupid: &str) -> Result<(), Error<RemoveUserFromGroupError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_userid = userid;
     let p_path_groupid = groupid;
@@ -499,7 +499,7 @@ pub async fn o_bpv6_0_0_remove_user_from_group(configuration: &configuration::Co
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -511,16 +511,16 @@ pub async fn o_bpv6_0_0_remove_user_from_group(configuration: &configuration::Co
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600RemoveUserFromGroupError> = serde_json::from_str(&content).ok();
+        let entity: Option<RemoveUserFromGroupError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update a group. All fields are optional.</p> <p>Requires either:<br /> - CanUpdateGroupAtAllBanks (for any group)<br /> - CanUpdateGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
-pub async fn o_bpv6_0_0_update_group(configuration: &configuration::Configuration, groupid: &str, obpv600_update_group_request: models::Obpv600UpdateGroupRequest) -> Result<models::Obpv600GetGroups200ResponsePropertiesGroupsItems, Error<OBpv600UpdateGroupError>> {
+pub async fn update_group(configuration: &configuration::Configuration, groupid: &str, update_group_request: models::UpdateGroupRequest) -> Result<models::GetGroups200ResponseGroupsInner, Error<UpdateGroupError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_groupid = groupid;
-    let p_body_obpv600_update_group_request = obpv600_update_group_request;
+    let p_body_update_group_request = update_group_request;
 
     let uri_str = format!("{}/obp/v6.0.0/management/groups/{groupid}", configuration.base_path, groupid=crate::apis::urlencode(p_path_groupid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -545,9 +545,9 @@ pub async fn o_bpv6_0_0_update_group(configuration: &configuration::Configuratio
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv600_update_group_request);
+    req_builder = req_builder.json(&p_body_update_group_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -564,12 +564,12 @@ pub async fn o_bpv6_0_0_update_group(configuration: &configuration::Configuratio
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetGroups200ResponsePropertiesGroupsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetGroups200ResponsePropertiesGroupsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetGroups200ResponseGroupsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetGroups200ResponseGroupsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv600UpdateGroupError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateGroupError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

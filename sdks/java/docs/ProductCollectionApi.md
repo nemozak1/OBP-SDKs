@@ -1,19 +1,19 @@
 # ProductCollectionApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv310CreateProductCollection**](ProductCollectionApi.md#oBPv310CreateProductCollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
-| [**oBPv310CreateProductCollectionWithHttpInfo**](ProductCollectionApi.md#oBPv310CreateProductCollectionWithHttpInfo) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
-| [**oBPv310GetProductCollection**](ProductCollectionApi.md#oBPv310GetProductCollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
-| [**oBPv310GetProductCollectionWithHttpInfo**](ProductCollectionApi.md#oBPv310GetProductCollectionWithHttpInfo) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
+| [**createProductCollection**](ProductCollectionApi.md#createProductCollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
+| [**createProductCollectionWithHttpInfo**](ProductCollectionApi.md#createProductCollectionWithHttpInfo) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
+| [**getProductCollection**](ProductCollectionApi.md#getProductCollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
+| [**getProductCollectionWithHttpInfo**](ProductCollectionApi.md#getProductCollectionWithHttpInfo) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
 
 
 
-## oBPv310CreateProductCollection
+## createProductCollection
 
-> OBPv310CreateProductCollection200Response oBPv310CreateProductCollection(bankid, collectioncode, obPv310CreateProductCollectionRequest)
+> CreateProductCollection200Response createProductCollection(bankid, collectioncode, createProductCollectionRequest)
 
 Create Product Collection
 
@@ -33,7 +33,7 @@ import com.openbankproject.api.ProductCollectionApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -54,12 +54,12 @@ public class Example {
         ProductCollectionApi apiInstance = new ProductCollectionApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String collectioncode = "collectioncode_example"; // String | The COLLECTIONCODE identifier
-        OBPv310CreateProductCollectionRequest obPv310CreateProductCollectionRequest = new OBPv310CreateProductCollectionRequest(); // OBPv310CreateProductCollectionRequest | Request body
+        CreateProductCollectionRequest createProductCollectionRequest = new CreateProductCollectionRequest(); // CreateProductCollectionRequest | Request body
         try {
-            OBPv310CreateProductCollection200Response result = apiInstance.oBPv310CreateProductCollection(bankid, collectioncode, obPv310CreateProductCollectionRequest);
+            CreateProductCollection200Response result = apiInstance.createProductCollection(bankid, collectioncode, createProductCollectionRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductCollectionApi#oBPv310CreateProductCollection");
+            System.err.println("Exception when calling ProductCollectionApi#createProductCollection");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -76,11 +76,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **collectioncode** | **String**| The COLLECTIONCODE identifier | |
-| **obPv310CreateProductCollectionRequest** | [**OBPv310CreateProductCollectionRequest**](OBPv310CreateProductCollectionRequest.md)| Request body | |
+| **createProductCollectionRequest** | [**CreateProductCollectionRequest**](CreateProductCollectionRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv310CreateProductCollection200Response**](OBPv310CreateProductCollection200Response.md)
+[**CreateProductCollection200Response**](CreateProductCollection200Response.md)
 
 
 ### Authorization
@@ -99,9 +99,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv310CreateProductCollectionWithHttpInfo
+## createProductCollectionWithHttpInfo
 
-> ApiResponse<OBPv310CreateProductCollection200Response> oBPv310CreateProductCollection oBPv310CreateProductCollectionWithHttpInfo(bankid, collectioncode, obPv310CreateProductCollectionRequest)
+> ApiResponse<CreateProductCollection200Response> createProductCollection createProductCollectionWithHttpInfo(bankid, collectioncode, createProductCollectionRequest)
 
 Create Product Collection
 
@@ -122,7 +122,7 @@ import com.openbankproject.api.ProductCollectionApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -143,14 +143,14 @@ public class Example {
         ProductCollectionApi apiInstance = new ProductCollectionApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String collectioncode = "collectioncode_example"; // String | The COLLECTIONCODE identifier
-        OBPv310CreateProductCollectionRequest obPv310CreateProductCollectionRequest = new OBPv310CreateProductCollectionRequest(); // OBPv310CreateProductCollectionRequest | Request body
+        CreateProductCollectionRequest createProductCollectionRequest = new CreateProductCollectionRequest(); // CreateProductCollectionRequest | Request body
         try {
-            ApiResponse<OBPv310CreateProductCollection200Response> response = apiInstance.oBPv310CreateProductCollectionWithHttpInfo(bankid, collectioncode, obPv310CreateProductCollectionRequest);
+            ApiResponse<CreateProductCollection200Response> response = apiInstance.createProductCollectionWithHttpInfo(bankid, collectioncode, createProductCollectionRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductCollectionApi#oBPv310CreateProductCollection");
+            System.err.println("Exception when calling ProductCollectionApi#createProductCollection");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -167,11 +167,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **collectioncode** | **String**| The COLLECTIONCODE identifier | |
-| **obPv310CreateProductCollectionRequest** | [**OBPv310CreateProductCollectionRequest**](OBPv310CreateProductCollectionRequest.md)| Request body | |
+| **createProductCollectionRequest** | [**CreateProductCollectionRequest**](CreateProductCollectionRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv310CreateProductCollection200Response**](OBPv310CreateProductCollection200Response.md)>
+ApiResponse<[**CreateProductCollection200Response**](CreateProductCollection200Response.md)>
 
 
 ### Authorization
@@ -191,9 +191,9 @@ ApiResponse<[**OBPv310CreateProductCollection200Response**](OBPv310CreateProduct
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv310GetProductCollection
+## getProductCollection
 
-> OBPv310GetProductCollection200Response oBPv310GetProductCollection(bankid, collectioncode)
+> GetProductCollection200Response getProductCollection(bankid, collectioncode)
 
 Get Product Collection
 
@@ -213,7 +213,7 @@ import com.openbankproject.api.ProductCollectionApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -235,10 +235,10 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String collectioncode = "collectioncode_example"; // String | The COLLECTIONCODE identifier
         try {
-            OBPv310GetProductCollection200Response result = apiInstance.oBPv310GetProductCollection(bankid, collectioncode);
+            GetProductCollection200Response result = apiInstance.getProductCollection(bankid, collectioncode);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductCollectionApi#oBPv310GetProductCollection");
+            System.err.println("Exception when calling ProductCollectionApi#getProductCollection");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -258,7 +258,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv310GetProductCollection200Response**](OBPv310GetProductCollection200Response.md)
+[**GetProductCollection200Response**](GetProductCollection200Response.md)
 
 
 ### Authorization
@@ -277,9 +277,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv310GetProductCollectionWithHttpInfo
+## getProductCollectionWithHttpInfo
 
-> ApiResponse<OBPv310GetProductCollection200Response> oBPv310GetProductCollection oBPv310GetProductCollectionWithHttpInfo(bankid, collectioncode)
+> ApiResponse<GetProductCollection200Response> getProductCollection getProductCollectionWithHttpInfo(bankid, collectioncode)
 
 Get Product Collection
 
@@ -300,7 +300,7 @@ import com.openbankproject.api.ProductCollectionApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -322,12 +322,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String collectioncode = "collectioncode_example"; // String | The COLLECTIONCODE identifier
         try {
-            ApiResponse<OBPv310GetProductCollection200Response> response = apiInstance.oBPv310GetProductCollectionWithHttpInfo(bankid, collectioncode);
+            ApiResponse<GetProductCollection200Response> response = apiInstance.getProductCollectionWithHttpInfo(bankid, collectioncode);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductCollectionApi#oBPv310GetProductCollection");
+            System.err.println("Exception when calling ProductCollectionApi#getProductCollection");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -347,7 +347,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv310GetProductCollection200Response**](OBPv310GetProductCollection200Response.md)>
+ApiResponse<[**GetProductCollection200Response**](GetProductCollection200Response.md)>
 
 
 ### Authorization

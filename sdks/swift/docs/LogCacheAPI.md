@@ -1,20 +1,20 @@
 # LogCacheAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv510LogCacheAllEndpoint**](LogCacheAPI.md#obpv510logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
-[**oBPv510LogCacheDebugEndpoint**](LogCacheAPI.md#obpv510logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
-[**oBPv510LogCacheErrorEndpoint**](LogCacheAPI.md#obpv510logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
-[**oBPv510LogCacheInfoEndpoint**](LogCacheAPI.md#obpv510logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
-[**oBPv510LogCacheTraceEndpoint**](LogCacheAPI.md#obpv510logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
-[**oBPv510LogCacheWarningEndpoint**](LogCacheAPI.md#obpv510logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
+[**logCacheAllEndpoint**](LogCacheAPI.md#logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
+[**logCacheDebugEndpoint**](LogCacheAPI.md#logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
+[**logCacheErrorEndpoint**](LogCacheAPI.md#logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
+[**logCacheInfoEndpoint**](LogCacheAPI.md#logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
+[**logCacheTraceEndpoint**](LogCacheAPI.md#logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
+[**logCacheWarningEndpoint**](LogCacheAPI.md#logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
 
 
-# **oBPv510LogCacheAllEndpoint**
+# **logCacheAllEndpoint**
 ```swift
-    open class func oBPv510LogCacheAllEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func logCacheAllEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Get All Level Log Cache
@@ -28,7 +28,7 @@ import OBPSwift
 
 
 // Get All Level Log Cache
-LogCacheAPI.oBPv510LogCacheAllEndpoint() { (response, error) in
+LogCacheAPI.logCacheAllEndpoint() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -58,9 +58,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510LogCacheDebugEndpoint**
+# **logCacheDebugEndpoint**
 ```swift
-    open class func oBPv510LogCacheDebugEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func logCacheDebugEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Get Debug Level Log Cache
@@ -74,7 +74,7 @@ import OBPSwift
 
 
 // Get Debug Level Log Cache
-LogCacheAPI.oBPv510LogCacheDebugEndpoint() { (response, error) in
+LogCacheAPI.logCacheDebugEndpoint() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -104,9 +104,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510LogCacheErrorEndpoint**
+# **logCacheErrorEndpoint**
 ```swift
-    open class func oBPv510LogCacheErrorEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func logCacheErrorEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Get Error Level Log Cache
@@ -120,7 +120,7 @@ import OBPSwift
 
 
 // Get Error Level Log Cache
-LogCacheAPI.oBPv510LogCacheErrorEndpoint() { (response, error) in
+LogCacheAPI.logCacheErrorEndpoint() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -150,9 +150,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510LogCacheInfoEndpoint**
+# **logCacheInfoEndpoint**
 ```swift
-    open class func oBPv510LogCacheInfoEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func logCacheInfoEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Get Info Level Log Cache
@@ -166,7 +166,7 @@ import OBPSwift
 
 
 // Get Info Level Log Cache
-LogCacheAPI.oBPv510LogCacheInfoEndpoint() { (response, error) in
+LogCacheAPI.logCacheInfoEndpoint() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -196,9 +196,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510LogCacheTraceEndpoint**
+# **logCacheTraceEndpoint**
 ```swift
-    open class func oBPv510LogCacheTraceEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func logCacheTraceEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Get Trace Level Log Cache
@@ -212,7 +212,7 @@ import OBPSwift
 
 
 // Get Trace Level Log Cache
-LogCacheAPI.oBPv510LogCacheTraceEndpoint() { (response, error) in
+LogCacheAPI.logCacheTraceEndpoint() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -242,9 +242,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510LogCacheWarningEndpoint**
+# **logCacheWarningEndpoint**
 ```swift
-    open class func oBPv510LogCacheWarningEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func logCacheWarningEndpoint(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Get Warning Level Log Cache
@@ -258,7 +258,7 @@ import OBPSwift
 
 
 // Get Warning Level Log Cache
-LogCacheAPI.oBPv510LogCacheWarningEndpoint() { (response, error) in
+LogCacheAPI.logCacheWarningEndpoint() { (response, error) in
     guard error == nil else {
         print(error)
         return

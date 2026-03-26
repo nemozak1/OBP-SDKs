@@ -2,33 +2,33 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv121AddCommentForViewOnTransaction()**](TransactionMetadataApi.md#oBPv121AddCommentForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment |
-| [**oBPv121AddImageForViewOnTransaction()**](TransactionMetadataApi.md#oBPv121AddImageForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image |
-| [**oBPv121AddTagForViewOnTransaction()**](TransactionMetadataApi.md#oBPv121AddTagForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag |
-| [**oBPv121AddTransactionNarrative()**](TransactionMetadataApi.md#oBPv121AddTransactionNarrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative |
-| [**oBPv121AddWhereTagForViewOnTransaction()**](TransactionMetadataApi.md#oBPv121AddWhereTagForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag |
-| [**oBPv121DeleteCommentForViewOnTransaction()**](TransactionMetadataApi.md#oBPv121DeleteCommentForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment |
-| [**oBPv121DeleteImageForViewOnTransaction()**](TransactionMetadataApi.md#oBPv121DeleteImageForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image |
-| [**oBPv121DeleteTagForViewOnTransaction()**](TransactionMetadataApi.md#oBPv121DeleteTagForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag |
-| [**oBPv121DeleteTransactionNarrative()**](TransactionMetadataApi.md#oBPv121DeleteTransactionNarrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative |
-| [**oBPv121DeleteWhereTagForViewOnTransaction()**](TransactionMetadataApi.md#oBPv121DeleteWhereTagForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag |
-| [**oBPv121GetCommentsForViewOnTransaction()**](TransactionMetadataApi.md#oBPv121GetCommentsForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments |
-| [**oBPv121GetImagesForViewOnTransaction()**](TransactionMetadataApi.md#oBPv121GetImagesForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images |
-| [**oBPv121GetTagsForViewOnTransaction()**](TransactionMetadataApi.md#oBPv121GetTagsForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags |
-| [**oBPv121GetTransactionNarrative()**](TransactionMetadataApi.md#oBPv121GetTransactionNarrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative |
-| [**oBPv121GetWhereTagForViewOnTransaction()**](TransactionMetadataApi.md#oBPv121GetWhereTagForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag |
-| [**oBPv121UpdateTransactionNarrative()**](TransactionMetadataApi.md#oBPv121UpdateTransactionNarrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative |
-| [**oBPv121UpdateWhereTagForViewOnTransaction()**](TransactionMetadataApi.md#oBPv121UpdateWhereTagForViewOnTransaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag |
+| [**addCommentForViewOnTransaction()**](TransactionMetadataApi.md#addCommentForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment |
+| [**addImageForViewOnTransaction()**](TransactionMetadataApi.md#addImageForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image |
+| [**addTagForViewOnTransaction()**](TransactionMetadataApi.md#addTagForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag |
+| [**addTransactionNarrative()**](TransactionMetadataApi.md#addTransactionNarrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative |
+| [**addWhereTagForViewOnTransaction()**](TransactionMetadataApi.md#addWhereTagForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag |
+| [**deleteCommentForViewOnTransaction()**](TransactionMetadataApi.md#deleteCommentForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment |
+| [**deleteImageForViewOnTransaction()**](TransactionMetadataApi.md#deleteImageForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image |
+| [**deleteTagForViewOnTransaction()**](TransactionMetadataApi.md#deleteTagForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag |
+| [**deleteTransactionNarrative()**](TransactionMetadataApi.md#deleteTransactionNarrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative |
+| [**deleteWhereTagForViewOnTransaction()**](TransactionMetadataApi.md#deleteWhereTagForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag |
+| [**getCommentsForViewOnTransaction()**](TransactionMetadataApi.md#getCommentsForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments |
+| [**getImagesForViewOnTransaction()**](TransactionMetadataApi.md#getImagesForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images |
+| [**getTagsForViewOnTransaction()**](TransactionMetadataApi.md#getTagsForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags |
+| [**getTransactionNarrative()**](TransactionMetadataApi.md#getTransactionNarrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative |
+| [**getWhereTagForViewOnTransaction()**](TransactionMetadataApi.md#getWhereTagForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag |
+| [**updateTransactionNarrative()**](TransactionMetadataApi.md#updateTransactionNarrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative |
+| [**updateWhereTagForViewOnTransaction()**](TransactionMetadataApi.md#updateWhereTagForViewOnTransaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag |
 
 
-## `oBPv121AddCommentForViewOnTransaction()`
+## `addCommentForViewOnTransaction()`
 
 ```php
-oBPv121AddCommentForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $obpv400_delete_system_level_endpoint_tag200_response): \OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+addCommentForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $get_transaction_types200_response_transaction_types_inner_id): \OpenBankProject\Model\GetTagsForViewOnAccount200ResponseTagsInner
 ```
 
 Add a Transaction Comment
@@ -51,9 +51,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionMetadataApi(
@@ -66,13 +66,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $transactionid = 'transactionid_example'; // string | The TRANSACTIONID identifier
-$obpv400_delete_system_level_endpoint_tag200_response = {type=object, properties={value={type=string}}}; // \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+$get_transaction_types200_response_transaction_types_inner_id = {type=object, properties={value={type=string}}}; // \OpenBankProject\Model\GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
 try {
-    $result = $apiInstance->oBPv121AddCommentForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $obpv400_delete_system_level_endpoint_tag200_response);
+    $result = $apiInstance->addCommentForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $get_transaction_types200_response_transaction_types_inner_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMetadataApi->oBPv121AddCommentForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMetadataApi->addCommentForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -84,11 +84,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **transactionid** | **string**| The TRANSACTIONID identifier | |
-| **obpv400_delete_system_level_endpoint_tag200_response** | [**\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response**](../Model/OBPv400DeleteSystemLevelEndpointTag200Response.md)| Request body | |
+| **get_transaction_types200_response_transaction_types_inner_id** | [**\OpenBankProject\Model\GetTransactionTypes200ResponseTransactionTypesInnerId**](../Model/GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](../Model/OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**\OpenBankProject\Model\GetTagsForViewOnAccount200ResponseTagsInner**](../Model/GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -103,10 +103,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121AddImageForViewOnTransaction()`
+## `addImageForViewOnTransaction()`
 
 ```php
-oBPv121AddImageForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $obpv121_add_image_for_view_on_transaction_request): \OpenBankProject\Model\OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems
+addImageForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $add_image_for_view_on_transaction_request): \OpenBankProject\Model\GetTransactionByIdForBankAccount200ResponseMetadataImagesInner
 ```
 
 Add a Transaction Image
@@ -129,9 +129,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionMetadataApi(
@@ -144,13 +144,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $transactionid = 'transactionid_example'; // string | The TRANSACTIONID identifier
-$obpv121_add_image_for_view_on_transaction_request = {"type":"object","properties":{"URL":{"type":"string"},"label":{"type":"string"}}}; // \OpenBankProject\Model\OBPv121AddImageForViewOnTransactionRequest | Request body
+$add_image_for_view_on_transaction_request = {"type":"object","properties":{"URL":{"type":"string"},"label":{"type":"string"}}}; // \OpenBankProject\Model\AddImageForViewOnTransactionRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv121AddImageForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $obpv121_add_image_for_view_on_transaction_request);
+    $result = $apiInstance->addImageForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $add_image_for_view_on_transaction_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMetadataApi->oBPv121AddImageForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMetadataApi->addImageForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -162,11 +162,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **transactionid** | **string**| The TRANSACTIONID identifier | |
-| **obpv121_add_image_for_view_on_transaction_request** | [**\OpenBankProject\Model\OBPv121AddImageForViewOnTransactionRequest**](../Model/OBPv121AddImageForViewOnTransactionRequest.md)| Request body | |
+| **add_image_for_view_on_transaction_request** | [**\OpenBankProject\Model\AddImageForViewOnTransactionRequest**](../Model/AddImageForViewOnTransactionRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems**](../Model/OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems.md)
+[**\OpenBankProject\Model\GetTransactionByIdForBankAccount200ResponseMetadataImagesInner**](../Model/GetTransactionByIdForBankAccount200ResponseMetadataImagesInner.md)
 
 ### Authorization
 
@@ -181,10 +181,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121AddTagForViewOnTransaction()`
+## `addTagForViewOnTransaction()`
 
 ```php
-oBPv121AddTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $obpv400_delete_system_level_endpoint_tag200_response): \OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+addTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $get_transaction_types200_response_transaction_types_inner_id): \OpenBankProject\Model\GetTagsForViewOnAccount200ResponseTagsInner
 ```
 
 Add a Transaction Tag
@@ -207,9 +207,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionMetadataApi(
@@ -222,13 +222,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $transactionid = 'transactionid_example'; // string | The TRANSACTIONID identifier
-$obpv400_delete_system_level_endpoint_tag200_response = {type=object, properties={value={type=string}}}; // \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+$get_transaction_types200_response_transaction_types_inner_id = {type=object, properties={value={type=string}}}; // \OpenBankProject\Model\GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
 try {
-    $result = $apiInstance->oBPv121AddTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $obpv400_delete_system_level_endpoint_tag200_response);
+    $result = $apiInstance->addTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $get_transaction_types200_response_transaction_types_inner_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMetadataApi->oBPv121AddTagForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMetadataApi->addTagForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -240,11 +240,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **transactionid** | **string**| The TRANSACTIONID identifier | |
-| **obpv400_delete_system_level_endpoint_tag200_response** | [**\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response**](../Model/OBPv400DeleteSystemLevelEndpointTag200Response.md)| Request body | |
+| **get_transaction_types200_response_transaction_types_inner_id** | [**\OpenBankProject\Model\GetTransactionTypes200ResponseTransactionTypesInnerId**](../Model/GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](../Model/OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**\OpenBankProject\Model\GetTagsForViewOnAccount200ResponseTagsInner**](../Model/GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -259,10 +259,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121AddTransactionNarrative()`
+## `addTransactionNarrative()`
 
 ```php
-oBPv121AddTransactionNarrative($bankid, $accountid, $viewid, $transactionid, $obpv121_get_transaction_narrative200_response): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+addTransactionNarrative($bankid, $accountid, $viewid, $transactionid, $get_transaction_narrative200_response): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Add a Transaction Narrative
@@ -285,9 +285,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionMetadataApi(
@@ -300,13 +300,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $transactionid = 'transactionid_example'; // string | The TRANSACTIONID identifier
-$obpv121_get_transaction_narrative200_response = {type=object, properties={narrative={type=string}}}; // \OpenBankProject\Model\OBPv121GetTransactionNarrative200Response | Request body
+$get_transaction_narrative200_response = {type=object, properties={narrative={type=string}}}; // \OpenBankProject\Model\GetTransactionNarrative200Response | Request body
 
 try {
-    $result = $apiInstance->oBPv121AddTransactionNarrative($bankid, $accountid, $viewid, $transactionid, $obpv121_get_transaction_narrative200_response);
+    $result = $apiInstance->addTransactionNarrative($bankid, $accountid, $viewid, $transactionid, $get_transaction_narrative200_response);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMetadataApi->oBPv121AddTransactionNarrative: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMetadataApi->addTransactionNarrative: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -318,11 +318,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **transactionid** | **string**| The TRANSACTIONID identifier | |
-| **obpv121_get_transaction_narrative200_response** | [**\OpenBankProject\Model\OBPv121GetTransactionNarrative200Response**](../Model/OBPv121GetTransactionNarrative200Response.md)| Request body | |
+| **get_transaction_narrative200_response** | [**\OpenBankProject\Model\GetTransactionNarrative200Response**](../Model/GetTransactionNarrative200Response.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -337,10 +337,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121AddWhereTagForViewOnTransaction()`
+## `addWhereTagForViewOnTransaction()`
 
 ```php
-oBPv121AddWhereTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $obpv121_update_where_tag_for_view_on_transaction_request): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+addWhereTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $update_where_tag_for_view_on_transaction_request): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Add a Transaction where Tag
@@ -363,9 +363,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionMetadataApi(
@@ -378,13 +378,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $transactionid = 'transactionid_example'; // string | The TRANSACTIONID identifier
-$obpv121_update_where_tag_for_view_on_transaction_request = {type=object, properties={where={type=object, properties={longitude={type=number}, latitude={type=number}}}}}; // \OpenBankProject\Model\OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
+$update_where_tag_for_view_on_transaction_request = {type=object, properties={where={type=object, properties={longitude={type=number}, latitude={type=number}}}}}; // \OpenBankProject\Model\UpdateWhereTagForViewOnTransactionRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv121AddWhereTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $obpv121_update_where_tag_for_view_on_transaction_request);
+    $result = $apiInstance->addWhereTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $update_where_tag_for_view_on_transaction_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMetadataApi->oBPv121AddWhereTagForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMetadataApi->addWhereTagForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -396,11 +396,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **transactionid** | **string**| The TRANSACTIONID identifier | |
-| **obpv121_update_where_tag_for_view_on_transaction_request** | [**\OpenBankProject\Model\OBPv121UpdateWhereTagForViewOnTransactionRequest**](../Model/OBPv121UpdateWhereTagForViewOnTransactionRequest.md)| Request body | |
+| **update_where_tag_for_view_on_transaction_request** | [**\OpenBankProject\Model\UpdateWhereTagForViewOnTransactionRequest**](../Model/UpdateWhereTagForViewOnTransactionRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -415,10 +415,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121DeleteCommentForViewOnTransaction()`
+## `deleteCommentForViewOnTransaction()`
 
 ```php
-oBPv121DeleteCommentForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $commentid)
+deleteCommentForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $commentid)
 ```
 
 Delete a Transaction Comment
@@ -441,9 +441,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionMetadataApi(
@@ -459,9 +459,9 @@ $transactionid = 'transactionid_example'; // string | The TRANSACTIONID identifi
 $commentid = 'commentid_example'; // string | The COMMENTID identifier
 
 try {
-    $apiInstance->oBPv121DeleteCommentForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $commentid);
+    $apiInstance->deleteCommentForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $commentid);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMetadataApi->oBPv121DeleteCommentForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMetadataApi->deleteCommentForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -492,10 +492,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121DeleteImageForViewOnTransaction()`
+## `deleteImageForViewOnTransaction()`
 
 ```php
-oBPv121DeleteImageForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $imageid)
+deleteImageForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $imageid)
 ```
 
 Delete a Transaction Image
@@ -518,9 +518,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionMetadataApi(
@@ -536,9 +536,9 @@ $transactionid = 'transactionid_example'; // string | The TRANSACTIONID identifi
 $imageid = 'imageid_example'; // string | The IMAGEID identifier
 
 try {
-    $apiInstance->oBPv121DeleteImageForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $imageid);
+    $apiInstance->deleteImageForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $imageid);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMetadataApi->oBPv121DeleteImageForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMetadataApi->deleteImageForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -569,10 +569,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121DeleteTagForViewOnTransaction()`
+## `deleteTagForViewOnTransaction()`
 
 ```php
-oBPv121DeleteTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $tagid)
+deleteTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $tagid)
 ```
 
 Delete a Transaction Tag
@@ -599,9 +599,9 @@ $transactionid = 'transactionid_example'; // string | The TRANSACTIONID identifi
 $tagid = 'tagid_example'; // string | The TAGID identifier
 
 try {
-    $apiInstance->oBPv121DeleteTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $tagid);
+    $apiInstance->deleteTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $tagid);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMetadataApi->oBPv121DeleteTagForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMetadataApi->deleteTagForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -632,10 +632,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121DeleteTransactionNarrative()`
+## `deleteTransactionNarrative()`
 
 ```php
-oBPv121DeleteTransactionNarrative($bankid, $accountid, $viewid, $transactionid)
+deleteTransactionNarrative($bankid, $accountid, $viewid, $transactionid)
 ```
 
 Delete a Transaction Narrative
@@ -658,9 +658,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionMetadataApi(
@@ -675,9 +675,9 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $transactionid = 'transactionid_example'; // string | The TRANSACTIONID identifier
 
 try {
-    $apiInstance->oBPv121DeleteTransactionNarrative($bankid, $accountid, $viewid, $transactionid);
+    $apiInstance->deleteTransactionNarrative($bankid, $accountid, $viewid, $transactionid);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMetadataApi->oBPv121DeleteTransactionNarrative: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMetadataApi->deleteTransactionNarrative: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -707,10 +707,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121DeleteWhereTagForViewOnTransaction()`
+## `deleteWhereTagForViewOnTransaction()`
 
 ```php
-oBPv121DeleteWhereTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid)
+deleteWhereTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid)
 ```
 
 Delete a Transaction Tag
@@ -733,9 +733,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionMetadataApi(
@@ -750,9 +750,9 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $transactionid = 'transactionid_example'; // string | The TRANSACTIONID identifier
 
 try {
-    $apiInstance->oBPv121DeleteWhereTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid);
+    $apiInstance->deleteWhereTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMetadataApi->oBPv121DeleteWhereTagForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMetadataApi->deleteWhereTagForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -782,10 +782,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121GetCommentsForViewOnTransaction()`
+## `getCommentsForViewOnTransaction()`
 
 ```php
-oBPv121GetCommentsForViewOnTransaction($bankid, $accountid, $viewid, $transactionid): \OpenBankProject\Model\OBPv121GetCommentsForViewOnTransaction200Response
+getCommentsForViewOnTransaction($bankid, $accountid, $viewid, $transactionid): \OpenBankProject\Model\GetCommentsForViewOnTransaction200Response
 ```
 
 Get Transaction Comments
@@ -808,9 +808,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionMetadataApi(
@@ -825,10 +825,10 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $transactionid = 'transactionid_example'; // string | The TRANSACTIONID identifier
 
 try {
-    $result = $apiInstance->oBPv121GetCommentsForViewOnTransaction($bankid, $accountid, $viewid, $transactionid);
+    $result = $apiInstance->getCommentsForViewOnTransaction($bankid, $accountid, $viewid, $transactionid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMetadataApi->oBPv121GetCommentsForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMetadataApi->getCommentsForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -843,7 +843,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121GetCommentsForViewOnTransaction200Response**](../Model/OBPv121GetCommentsForViewOnTransaction200Response.md)
+[**\OpenBankProject\Model\GetCommentsForViewOnTransaction200Response**](../Model/GetCommentsForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -858,10 +858,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121GetImagesForViewOnTransaction()`
+## `getImagesForViewOnTransaction()`
 
 ```php
-oBPv121GetImagesForViewOnTransaction($bankid, $accountid, $viewid, $transactionid): \OpenBankProject\Model\OBPv121GetImagesForViewOnTransaction200Response
+getImagesForViewOnTransaction($bankid, $accountid, $viewid, $transactionid): \OpenBankProject\Model\GetImagesForViewOnTransaction200Response
 ```
 
 Get Transaction Images
@@ -884,9 +884,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionMetadataApi(
@@ -901,10 +901,10 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $transactionid = 'transactionid_example'; // string | The TRANSACTIONID identifier
 
 try {
-    $result = $apiInstance->oBPv121GetImagesForViewOnTransaction($bankid, $accountid, $viewid, $transactionid);
+    $result = $apiInstance->getImagesForViewOnTransaction($bankid, $accountid, $viewid, $transactionid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMetadataApi->oBPv121GetImagesForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMetadataApi->getImagesForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -919,7 +919,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121GetImagesForViewOnTransaction200Response**](../Model/OBPv121GetImagesForViewOnTransaction200Response.md)
+[**\OpenBankProject\Model\GetImagesForViewOnTransaction200Response**](../Model/GetImagesForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -934,10 +934,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121GetTagsForViewOnTransaction()`
+## `getTagsForViewOnTransaction()`
 
 ```php
-oBPv121GetTagsForViewOnTransaction($bankid, $accountid, $viewid, $transactionid): \OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+getTagsForViewOnTransaction($bankid, $accountid, $viewid, $transactionid): \OpenBankProject\Model\GetTagsForViewOnAccount200ResponseTagsInner
 ```
 
 Get Transaction Tags
@@ -963,10 +963,10 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $transactionid = 'transactionid_example'; // string | The TRANSACTIONID identifier
 
 try {
-    $result = $apiInstance->oBPv121GetTagsForViewOnTransaction($bankid, $accountid, $viewid, $transactionid);
+    $result = $apiInstance->getTagsForViewOnTransaction($bankid, $accountid, $viewid, $transactionid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMetadataApi->oBPv121GetTagsForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMetadataApi->getTagsForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -981,7 +981,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](../Model/OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**\OpenBankProject\Model\GetTagsForViewOnAccount200ResponseTagsInner**](../Model/GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -996,10 +996,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121GetTransactionNarrative()`
+## `getTransactionNarrative()`
 
 ```php
-oBPv121GetTransactionNarrative($bankid, $accountid, $viewid, $transactionid): \OpenBankProject\Model\OBPv121GetTransactionNarrative200Response
+getTransactionNarrative($bankid, $accountid, $viewid, $transactionid): \OpenBankProject\Model\GetTransactionNarrative200Response
 ```
 
 Get a Transaction Narrative
@@ -1025,10 +1025,10 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $transactionid = 'transactionid_example'; // string | The TRANSACTIONID identifier
 
 try {
-    $result = $apiInstance->oBPv121GetTransactionNarrative($bankid, $accountid, $viewid, $transactionid);
+    $result = $apiInstance->getTransactionNarrative($bankid, $accountid, $viewid, $transactionid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMetadataApi->oBPv121GetTransactionNarrative: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMetadataApi->getTransactionNarrative: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1043,7 +1043,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121GetTransactionNarrative200Response**](../Model/OBPv121GetTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\GetTransactionNarrative200Response**](../Model/GetTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1058,10 +1058,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121GetWhereTagForViewOnTransaction()`
+## `getWhereTagForViewOnTransaction()`
 
 ```php
-oBPv121GetWhereTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid): \OpenBankProject\Model\OBPv121GetWhereTagForViewOnTransaction200Response
+getWhereTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid): \OpenBankProject\Model\GetWhereTagForViewOnTransaction200Response
 ```
 
 Get a Transaction where Tag
@@ -1087,10 +1087,10 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $transactionid = 'transactionid_example'; // string | The TRANSACTIONID identifier
 
 try {
-    $result = $apiInstance->oBPv121GetWhereTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid);
+    $result = $apiInstance->getWhereTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMetadataApi->oBPv121GetWhereTagForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMetadataApi->getWhereTagForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1105,7 +1105,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121GetWhereTagForViewOnTransaction200Response**](../Model/OBPv121GetWhereTagForViewOnTransaction200Response.md)
+[**\OpenBankProject\Model\GetWhereTagForViewOnTransaction200Response**](../Model/GetWhereTagForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -1120,10 +1120,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121UpdateTransactionNarrative()`
+## `updateTransactionNarrative()`
 
 ```php
-oBPv121UpdateTransactionNarrative($bankid, $accountid, $viewid, $transactionid, $obpv121_get_transaction_narrative200_response): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+updateTransactionNarrative($bankid, $accountid, $viewid, $transactionid, $get_transaction_narrative200_response): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Update a Transaction Narrative
@@ -1147,13 +1147,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $transactionid = 'transactionid_example'; // string | The TRANSACTIONID identifier
-$obpv121_get_transaction_narrative200_response = {"type":"object","properties":{"narrative":{"type":"string"}}}; // \OpenBankProject\Model\OBPv121GetTransactionNarrative200Response | Request body
+$get_transaction_narrative200_response = {"type":"object","properties":{"narrative":{"type":"string"}}}; // \OpenBankProject\Model\GetTransactionNarrative200Response | Request body
 
 try {
-    $result = $apiInstance->oBPv121UpdateTransactionNarrative($bankid, $accountid, $viewid, $transactionid, $obpv121_get_transaction_narrative200_response);
+    $result = $apiInstance->updateTransactionNarrative($bankid, $accountid, $viewid, $transactionid, $get_transaction_narrative200_response);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMetadataApi->oBPv121UpdateTransactionNarrative: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMetadataApi->updateTransactionNarrative: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1165,11 +1165,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **transactionid** | **string**| The TRANSACTIONID identifier | |
-| **obpv121_get_transaction_narrative200_response** | [**\OpenBankProject\Model\OBPv121GetTransactionNarrative200Response**](../Model/OBPv121GetTransactionNarrative200Response.md)| Request body | |
+| **get_transaction_narrative200_response** | [**\OpenBankProject\Model\GetTransactionNarrative200Response**](../Model/GetTransactionNarrative200Response.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1184,10 +1184,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121UpdateWhereTagForViewOnTransaction()`
+## `updateWhereTagForViewOnTransaction()`
 
 ```php
-oBPv121UpdateWhereTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $obpv121_update_where_tag_for_view_on_transaction_request): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+updateWhereTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $update_where_tag_for_view_on_transaction_request): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Update a Transaction where Tag
@@ -1210,9 +1210,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionMetadataApi(
@@ -1225,13 +1225,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $transactionid = 'transactionid_example'; // string | The TRANSACTIONID identifier
-$obpv121_update_where_tag_for_view_on_transaction_request = {"type":"object","properties":{"where":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}}; // \OpenBankProject\Model\OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
+$update_where_tag_for_view_on_transaction_request = {"type":"object","properties":{"where":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}}; // \OpenBankProject\Model\UpdateWhereTagForViewOnTransactionRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv121UpdateWhereTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $obpv121_update_where_tag_for_view_on_transaction_request);
+    $result = $apiInstance->updateWhereTagForViewOnTransaction($bankid, $accountid, $viewid, $transactionid, $update_where_tag_for_view_on_transaction_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMetadataApi->oBPv121UpdateWhereTagForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMetadataApi->updateWhereTagForViewOnTransaction: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1243,11 +1243,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **transactionid** | **string**| The TRANSACTIONID identifier | |
-| **obpv121_update_where_tag_for_view_on_transaction_request** | [**\OpenBankProject\Model\OBPv121UpdateWhereTagForViewOnTransactionRequest**](../Model/OBPv121UpdateWhereTagForViewOnTransactionRequest.md)| Request body | |
+| **update_where_tag_for_view_on_transaction_request** | [**\OpenBankProject\Model\UpdateWhereTagForViewOnTransactionRequest**](../Model/UpdateWhereTagForViewOnTransactionRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 

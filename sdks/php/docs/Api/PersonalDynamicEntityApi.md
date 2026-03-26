@@ -2,17 +2,17 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600GetAvailablePersonalDynamicEntities()**](PersonalDynamicEntityApi.md#oBPv600GetAvailablePersonalDynamicEntities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
+| [**getAvailablePersonalDynamicEntities()**](PersonalDynamicEntityApi.md#getAvailablePersonalDynamicEntities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
 
 
-## `oBPv600GetAvailablePersonalDynamicEntities()`
+## `getAvailablePersonalDynamicEntities()`
 
 ```php
-oBPv600GetAvailablePersonalDynamicEntities(): \OpenBankProject\Model\OBPv600GetAvailablePersonalDynamicEntities200Response
+getAvailablePersonalDynamicEntities(): \OpenBankProject\Model\GetAvailablePersonalDynamicEntities200Response
 ```
 
 Get Available Personal Dynamic Entities
@@ -35,9 +35,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\PersonalDynamicEntityApi(
@@ -48,10 +48,10 @@ $apiInstance = new OpenBankProject\Api\PersonalDynamicEntityApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600GetAvailablePersonalDynamicEntities();
+    $result = $apiInstance->getAvailablePersonalDynamicEntities();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PersonalDynamicEntityApi->oBPv600GetAvailablePersonalDynamicEntities: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PersonalDynamicEntityApi->getAvailablePersonalDynamicEntities: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -61,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetAvailablePersonalDynamicEntities200Response**](../Model/OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**\OpenBankProject\Model\GetAvailablePersonalDynamicEntities200Response**](../Model/GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 

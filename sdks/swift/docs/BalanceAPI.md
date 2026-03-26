@@ -1,19 +1,19 @@
 # BalanceAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv510CreateBankAccountBalance**](BalanceAPI.md#obpv510createbankaccountbalance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
-[**oBPv510DeleteBankAccountBalance**](BalanceAPI.md#obpv510deletebankaccountbalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
-[**oBPv510GetAllBankAccountBalances**](BalanceAPI.md#obpv510getallbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
-[**oBPv510GetBankAccountBalanceById**](BalanceAPI.md#obpv510getbankaccountbalancebyid) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
-[**oBPv510UpdateBankAccountBalance**](BalanceAPI.md#obpv510updatebankaccountbalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
+[**createBankAccountBalance**](BalanceAPI.md#createbankaccountbalance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
+[**deleteBankAccountBalance**](BalanceAPI.md#deletebankaccountbalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
+[**getAllBankAccountBalances**](BalanceAPI.md#getallbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
+[**getBankAccountBalanceById**](BalanceAPI.md#getbankaccountbalancebyid) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
+[**updateBankAccountBalance**](BalanceAPI.md#updatebankaccountbalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
 
 
-# **oBPv510CreateBankAccountBalance**
+# **createBankAccountBalance**
 ```swift
-    open class func oBPv510CreateBankAccountBalance(bankid: String, accountid: String, oBPv510CreateBankAccountBalanceRequest: OBPv510CreateBankAccountBalanceRequest, completion: @escaping (_ data: OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems?, _ error: Error?) -> Void)
+    open class func createBankAccountBalance(bankid: String, accountid: String, createBankAccountBalanceRequest: CreateBankAccountBalanceRequest, completion: @escaping (_ data: GetAllBankAccountBalances200ResponseBalancesInner?, _ error: Error?) -> Void)
 ```
 
 Create Bank Account Balance
@@ -27,10 +27,10 @@ import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
-let oBPv510CreateBankAccountBalanceRequest = OBPv5_1_0_createBankAccountBalance_request(type: "type_example", properties: OBPv5_1_0_createBankAccountBalance_request_properties(balanceAmount: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), balanceType: nil)) // OBPv510CreateBankAccountBalanceRequest | Request body
+let createBankAccountBalanceRequest = createBankAccountBalance_request(balanceAmount: "balanceAmount_example", balanceType: "balanceType_example") // CreateBankAccountBalanceRequest | Request body
 
 // Create Bank Account Balance
-BalanceAPI.oBPv510CreateBankAccountBalance(bankid: bankid, accountid: accountid, oBPv510CreateBankAccountBalanceRequest: oBPv510CreateBankAccountBalanceRequest) { (response, error) in
+BalanceAPI.createBankAccountBalance(bankid: bankid, accountid: accountid, createBankAccountBalanceRequest: createBankAccountBalanceRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -48,11 +48,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
  **accountid** | **String** | The ACCOUNTID identifier | 
- **oBPv510CreateBankAccountBalanceRequest** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md) | Request body | 
+ **createBankAccountBalanceRequest** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -65,9 +65,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510DeleteBankAccountBalance**
+# **deleteBankAccountBalance**
 ```swift
-    open class func oBPv510DeleteBankAccountBalance(bankid: String, accountid: String, balanceid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteBankAccountBalance(bankid: String, accountid: String, balanceid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Bank Account Balance
@@ -84,7 +84,7 @@ let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let balanceid = "balanceid_example" // String | The BALANCEID identifier
 
 // Delete Bank Account Balance
-BalanceAPI.oBPv510DeleteBankAccountBalance(bankid: bankid, accountid: accountid, balanceid: balanceid) { (response, error) in
+BalanceAPI.deleteBankAccountBalance(bankid: bankid, accountid: accountid, balanceid: balanceid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -119,9 +119,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510GetAllBankAccountBalances**
+# **getAllBankAccountBalances**
 ```swift
-    open class func oBPv510GetAllBankAccountBalances(bankid: String, accountid: String, completion: @escaping (_ data: OBPv510GetAllBankAccountBalances200Response?, _ error: Error?) -> Void)
+    open class func getAllBankAccountBalances(bankid: String, accountid: String, completion: @escaping (_ data: GetAllBankAccountBalances200Response?, _ error: Error?) -> Void)
 ```
 
 Get All Bank Account Balances
@@ -137,7 +137,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 
 // Get All Bank Account Balances
-BalanceAPI.oBPv510GetAllBankAccountBalances(bankid: bankid, accountid: accountid) { (response, error) in
+BalanceAPI.getAllBankAccountBalances(bankid: bankid, accountid: accountid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200Response**](OBPv510GetAllBankAccountBalances200Response.md)
+[**GetAllBankAccountBalances200Response**](GetAllBankAccountBalances200Response.md)
 
 ### Authorization
 
@@ -171,9 +171,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510GetBankAccountBalanceById**
+# **getBankAccountBalanceById**
 ```swift
-    open class func oBPv510GetBankAccountBalanceById(bankid: String, accountid: String, balanceid: String, completion: @escaping (_ data: OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems?, _ error: Error?) -> Void)
+    open class func getBankAccountBalanceById(bankid: String, accountid: String, balanceid: String, completion: @escaping (_ data: GetAllBankAccountBalances200ResponseBalancesInner?, _ error: Error?) -> Void)
 ```
 
 Get Bank Account Balance By ID
@@ -190,7 +190,7 @@ let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let balanceid = "balanceid_example" // String | The BALANCEID identifier
 
 // Get Bank Account Balance By ID
-BalanceAPI.oBPv510GetBankAccountBalanceById(bankid: bankid, accountid: accountid, balanceid: balanceid) { (response, error) in
+BalanceAPI.getBankAccountBalanceById(bankid: bankid, accountid: accountid, balanceid: balanceid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -225,9 +225,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510UpdateBankAccountBalance**
+# **updateBankAccountBalance**
 ```swift
-    open class func oBPv510UpdateBankAccountBalance(bankid: String, accountid: String, balanceid: String, oBPv510CreateBankAccountBalanceRequest: OBPv510CreateBankAccountBalanceRequest, completion: @escaping (_ data: OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems?, _ error: Error?) -> Void)
+    open class func updateBankAccountBalance(bankid: String, accountid: String, balanceid: String, createBankAccountBalanceRequest: CreateBankAccountBalanceRequest, completion: @escaping (_ data: GetAllBankAccountBalances200ResponseBalancesInner?, _ error: Error?) -> Void)
 ```
 
 Update Bank Account Balance
@@ -242,10 +242,10 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let balanceid = "balanceid_example" // String | The BALANCEID identifier
-let oBPv510CreateBankAccountBalanceRequest = OBPv5_1_0_createBankAccountBalance_request(type: "type_example", properties: OBPv5_1_0_createBankAccountBalance_request_properties(balanceAmount: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), balanceType: nil)) // OBPv510CreateBankAccountBalanceRequest | Request body
+let createBankAccountBalanceRequest = createBankAccountBalance_request(balanceAmount: "balanceAmount_example", balanceType: "balanceType_example") // CreateBankAccountBalanceRequest | Request body
 
 // Update Bank Account Balance
-BalanceAPI.oBPv510UpdateBankAccountBalance(bankid: bankid, accountid: accountid, balanceid: balanceid, oBPv510CreateBankAccountBalanceRequest: oBPv510CreateBankAccountBalanceRequest) { (response, error) in
+BalanceAPI.updateBankAccountBalance(bankid: bankid, accountid: accountid, balanceid: balanceid, createBankAccountBalanceRequest: createBankAccountBalanceRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -264,11 +264,11 @@ Name | Type | Description  | Notes
  **bankid** | **String** | The BANKID identifier | 
  **accountid** | **String** | The ACCOUNTID identifier | 
  **balanceid** | **String** | The BALANCEID identifier | 
- **oBPv510CreateBankAccountBalanceRequest** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md) | Request body | 
+ **createBankAccountBalanceRequest** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 

@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,14 +11,14 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv400CreateDirectDebit200Response
-import com.openbankproject.model.OBPv400CreateDirectDebitRequest
+import com.openbankproject.model.CreateDirectDebit200Response
+import com.openbankproject.model.CreateDirectDebitRequest
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object DirectDebitApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new DirectDebitApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new DirectDebitApi(baseUrl)
 }
 
 class DirectDebitApi(baseUrl: String) {
@@ -27,7 +27,7 @@ class DirectDebitApi(baseUrl: String) {
    * <p>Create direct debit for an account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">date_expires</a>: 2021-01-27</p> <p><a href=\"/glossary#\">date_signed</a>: 2020-01-27</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#active\"><strong>active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_cancelled</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_expires</strong></a>: 2021-01-27</p> <p><a href=\"/glossary#\"><strong>date_signed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#direct_debit_id\"><strong>direct_debit_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400CreateDirectDebit200Response (Successful operation)
+   *   code 200 : CreateDirectDebit200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -38,22 +38,22 @@ class DirectDebitApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
-   * @param oBPv400CreateDirectDebitRequest Request body
+   * @param createDirectDebitRequest Request body
    */
-  def oBPv400CreateDirectDebit(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, oBPv400CreateDirectDebitRequest: OBPv400CreateDirectDebitRequest): Request[Either[ResponseException[String, Exception], OBPv400CreateDirectDebit200Response]] =
+  def createDirectDebit(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, createDirectDebitRequest: CreateDirectDebitRequest): Request[Either[ResponseException[String, Exception], CreateDirectDebit200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/accounts/${accountid}/${viewid}/direct-debit")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateDirectDebitRequest)
-      .response(asJson[OBPv400CreateDirectDebit200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createDirectDebitRequest)
+      .response(asJson[CreateDirectDebit200Response])
 
   /**
    * <p>Create direct debit for an account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">date_expires</a>: 2021-01-27</p> <p><a href=\"/glossary#\">date_signed</a>: 2020-01-27</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#active\"><strong>active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_cancelled</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_expires</strong></a>: 2021-01-27</p> <p><a href=\"/glossary#\"><strong>date_signed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#direct_debit_id\"><strong>direct_debit_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400CreateDirectDebit200Response (Successful operation)
+   *   code 200 : CreateDirectDebit200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -63,15 +63,15 @@ class DirectDebitApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param accountid The ACCOUNTID identifier
-   * @param oBPv400CreateDirectDebitRequest Request body
+   * @param createDirectDebitRequest Request body
    */
-  def oBPv400CreateDirectDebitManagement(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, oBPv400CreateDirectDebitRequest: OBPv400CreateDirectDebitRequest): Request[Either[ResponseException[String, Exception], OBPv400CreateDirectDebit200Response]] =
+  def createDirectDebitManagement(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, createDirectDebitRequest: CreateDirectDebitRequest): Request[Either[ResponseException[String, Exception], CreateDirectDebit200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/accounts/${accountid}/direct-debit")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateDirectDebitRequest)
-      .response(asJson[OBPv400CreateDirectDebit200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createDirectDebitRequest)
+      .response(asJson[CreateDirectDebit200Response])
 
 }

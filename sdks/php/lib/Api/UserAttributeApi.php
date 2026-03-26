@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,34 +75,34 @@ class UserAttributeApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv600CreatePersonalDataField' => [
+        'createPersonalDataField' => [
             'application/json',
         ],
-        'oBPv600CreateUserAttribute' => [
+        'createUserAttribute' => [
             'application/json',
         ],
-        'oBPv600DeletePersonalDataField' => [
+        'deletePersonalDataField' => [
             'application/json',
         ],
-        'oBPv600DeleteUserAttribute' => [
+        'deleteUserAttribute' => [
             'application/json',
         ],
-        'oBPv600GetPersonalDataFieldById' => [
+        'getPersonalDataFieldById' => [
             'application/json',
         ],
-        'oBPv600GetPersonalDataFields' => [
+        'getPersonalDataFields' => [
             'application/json',
         ],
-        'oBPv600GetUserAttributeById' => [
+        'getUserAttributeById' => [
             'application/json',
         ],
-        'oBPv600GetUserAttributes' => [
+        'getUserAttributes' => [
             'application/json',
         ],
-        'oBPv600UpdatePersonalDataField' => [
+        'updatePersonalDataField' => [
             'application/json',
         ],
-        'oBPv600UpdateUserAttribute' => [
+        'updateUserAttribute' => [
             'application/json',
         ],
     ];
@@ -154,38 +154,38 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600CreatePersonalDataField
+     * Operation createPersonalDataField
      *
      * Create Personal Data Field
      *
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreatePersonalDataField'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPersonalDataField'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     * @return \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner
      */
-    public function oBPv600CreatePersonalDataField($obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600CreatePersonalDataField'][0])
+    public function createPersonalDataField($create_personal_data_field_request, string $contentType = self::contentTypes['createPersonalDataField'][0])
     {
-        list($response) = $this->oBPv600CreatePersonalDataFieldWithHttpInfo($obpv600_create_personal_data_field_request, $contentType);
+        list($response) = $this->createPersonalDataFieldWithHttpInfo($create_personal_data_field_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600CreatePersonalDataFieldWithHttpInfo
+     * Operation createPersonalDataFieldWithHttpInfo
      *
      * Create Personal Data Field
      *
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreatePersonalDataField'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPersonalDataField'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600CreatePersonalDataFieldWithHttpInfo($obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600CreatePersonalDataField'][0])
+    public function createPersonalDataFieldWithHttpInfo($create_personal_data_field_request, string $contentType = self::contentTypes['createPersonalDataField'][0])
     {
-        $request = $this->oBPv600CreatePersonalDataFieldRequest($obpv600_create_personal_data_field_request, $contentType);
+        $request = $this->createPersonalDataFieldRequest($create_personal_data_field_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -213,7 +213,7 @@ class UserAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                        '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                         $request,
                         $response,
                     );
@@ -235,7 +235,7 @@ class UserAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                 $request,
                 $response,
             );
@@ -244,7 +244,7 @@ class UserAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                        '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -257,19 +257,19 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600CreatePersonalDataFieldAsync
+     * Operation createPersonalDataFieldAsync
      *
      * Create Personal Data Field
      *
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreatePersonalDataField'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPersonalDataField'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreatePersonalDataFieldAsync($obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600CreatePersonalDataField'][0])
+    public function createPersonalDataFieldAsync($create_personal_data_field_request, string $contentType = self::contentTypes['createPersonalDataField'][0])
     {
-        return $this->oBPv600CreatePersonalDataFieldAsyncWithHttpInfo($obpv600_create_personal_data_field_request, $contentType)
+        return $this->createPersonalDataFieldAsyncWithHttpInfo($create_personal_data_field_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -278,20 +278,20 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600CreatePersonalDataFieldAsyncWithHttpInfo
+     * Operation createPersonalDataFieldAsyncWithHttpInfo
      *
      * Create Personal Data Field
      *
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreatePersonalDataField'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPersonalDataField'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreatePersonalDataFieldAsyncWithHttpInfo($obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600CreatePersonalDataField'][0])
+    public function createPersonalDataFieldAsyncWithHttpInfo($create_personal_data_field_request, string $contentType = self::contentTypes['createPersonalDataField'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems';
-        $request = $this->oBPv600CreatePersonalDataFieldRequest($obpv600_create_personal_data_field_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner';
+        $request = $this->createPersonalDataFieldRequest($create_personal_data_field_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -330,21 +330,21 @@ class UserAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv600CreatePersonalDataField'
+     * Create request for operation 'createPersonalDataField'
      *
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreatePersonalDataField'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPersonalDataField'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600CreatePersonalDataFieldRequest($obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600CreatePersonalDataField'][0])
+    public function createPersonalDataFieldRequest($create_personal_data_field_request, string $contentType = self::contentTypes['createPersonalDataField'][0])
     {
 
-        // verify the required parameter 'obpv600_create_personal_data_field_request' is set
-        if ($obpv600_create_personal_data_field_request === null || (is_array($obpv600_create_personal_data_field_request) && count($obpv600_create_personal_data_field_request) === 0)) {
+        // verify the required parameter 'create_personal_data_field_request' is set
+        if ($create_personal_data_field_request === null || (is_array($create_personal_data_field_request) && count($create_personal_data_field_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_create_personal_data_field_request when calling oBPv600CreatePersonalDataField'
+                'Missing the required parameter $create_personal_data_field_request when calling createPersonalDataField'
             );
         }
 
@@ -367,12 +367,12 @@ class UserAttributeApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_create_personal_data_field_request)) {
+        if (isset($create_personal_data_field_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_create_personal_data_field_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_personal_data_field_request));
             } else {
-                $httpBody = $obpv600_create_personal_data_field_request;
+                $httpBody = $create_personal_data_field_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -408,9 +408,9 @@ class UserAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -435,40 +435,40 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600CreateUserAttribute
+     * Operation createUserAttribute
      *
      * Create User Attribute
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateUserAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     * @return \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner
      */
-    public function oBPv600CreateUserAttribute($userid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600CreateUserAttribute'][0])
+    public function createUserAttribute($userid, $create_personal_data_field_request, string $contentType = self::contentTypes['createUserAttribute'][0])
     {
-        list($response) = $this->oBPv600CreateUserAttributeWithHttpInfo($userid, $obpv600_create_personal_data_field_request, $contentType);
+        list($response) = $this->createUserAttributeWithHttpInfo($userid, $create_personal_data_field_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600CreateUserAttributeWithHttpInfo
+     * Operation createUserAttributeWithHttpInfo
      *
      * Create User Attribute
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateUserAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600CreateUserAttributeWithHttpInfo($userid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600CreateUserAttribute'][0])
+    public function createUserAttributeWithHttpInfo($userid, $create_personal_data_field_request, string $contentType = self::contentTypes['createUserAttribute'][0])
     {
-        $request = $this->oBPv600CreateUserAttributeRequest($userid, $obpv600_create_personal_data_field_request, $contentType);
+        $request = $this->createUserAttributeRequest($userid, $create_personal_data_field_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -496,7 +496,7 @@ class UserAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                        '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                         $request,
                         $response,
                     );
@@ -518,7 +518,7 @@ class UserAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                 $request,
                 $response,
             );
@@ -527,7 +527,7 @@ class UserAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                        '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -540,20 +540,20 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600CreateUserAttributeAsync
+     * Operation createUserAttributeAsync
      *
      * Create User Attribute
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateUserAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateUserAttributeAsync($userid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600CreateUserAttribute'][0])
+    public function createUserAttributeAsync($userid, $create_personal_data_field_request, string $contentType = self::contentTypes['createUserAttribute'][0])
     {
-        return $this->oBPv600CreateUserAttributeAsyncWithHttpInfo($userid, $obpv600_create_personal_data_field_request, $contentType)
+        return $this->createUserAttributeAsyncWithHttpInfo($userid, $create_personal_data_field_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -562,21 +562,21 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600CreateUserAttributeAsyncWithHttpInfo
+     * Operation createUserAttributeAsyncWithHttpInfo
      *
      * Create User Attribute
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateUserAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateUserAttributeAsyncWithHttpInfo($userid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600CreateUserAttribute'][0])
+    public function createUserAttributeAsyncWithHttpInfo($userid, $create_personal_data_field_request, string $contentType = self::contentTypes['createUserAttribute'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems';
-        $request = $this->oBPv600CreateUserAttributeRequest($userid, $obpv600_create_personal_data_field_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner';
+        $request = $this->createUserAttributeRequest($userid, $create_personal_data_field_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -615,29 +615,29 @@ class UserAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv600CreateUserAttribute'
+     * Create request for operation 'createUserAttribute'
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateUserAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600CreateUserAttributeRequest($userid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600CreateUserAttribute'][0])
+    public function createUserAttributeRequest($userid, $create_personal_data_field_request, string $contentType = self::contentTypes['createUserAttribute'][0])
     {
 
         // verify the required parameter 'userid' is set
         if ($userid === null || (is_array($userid) && count($userid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv600CreateUserAttribute'
+                'Missing the required parameter $userid when calling createUserAttribute'
             );
         }
 
-        // verify the required parameter 'obpv600_create_personal_data_field_request' is set
-        if ($obpv600_create_personal_data_field_request === null || (is_array($obpv600_create_personal_data_field_request) && count($obpv600_create_personal_data_field_request) === 0)) {
+        // verify the required parameter 'create_personal_data_field_request' is set
+        if ($create_personal_data_field_request === null || (is_array($create_personal_data_field_request) && count($create_personal_data_field_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_create_personal_data_field_request when calling oBPv600CreateUserAttribute'
+                'Missing the required parameter $create_personal_data_field_request when calling createUserAttribute'
             );
         }
 
@@ -668,12 +668,12 @@ class UserAttributeApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_create_personal_data_field_request)) {
+        if (isset($create_personal_data_field_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_create_personal_data_field_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_personal_data_field_request));
             } else {
-                $httpBody = $obpv600_create_personal_data_field_request;
+                $httpBody = $create_personal_data_field_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -709,9 +709,9 @@ class UserAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -736,37 +736,37 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600DeletePersonalDataField
+     * Operation deletePersonalDataField
      *
      * Delete Personal Data Field
      *
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeletePersonalDataField'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePersonalDataField'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv600DeletePersonalDataField($userattributeid, string $contentType = self::contentTypes['oBPv600DeletePersonalDataField'][0])
+    public function deletePersonalDataField($userattributeid, string $contentType = self::contentTypes['deletePersonalDataField'][0])
     {
-        $this->oBPv600DeletePersonalDataFieldWithHttpInfo($userattributeid, $contentType);
+        $this->deletePersonalDataFieldWithHttpInfo($userattributeid, $contentType);
     }
 
     /**
-     * Operation oBPv600DeletePersonalDataFieldWithHttpInfo
+     * Operation deletePersonalDataFieldWithHttpInfo
      *
      * Delete Personal Data Field
      *
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeletePersonalDataField'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePersonalDataField'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600DeletePersonalDataFieldWithHttpInfo($userattributeid, string $contentType = self::contentTypes['oBPv600DeletePersonalDataField'][0])
+    public function deletePersonalDataFieldWithHttpInfo($userattributeid, string $contentType = self::contentTypes['deletePersonalDataField'][0])
     {
-        $request = $this->oBPv600DeletePersonalDataFieldRequest($userattributeid, $contentType);
+        $request = $this->deletePersonalDataFieldRequest($userattributeid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -802,19 +802,19 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600DeletePersonalDataFieldAsync
+     * Operation deletePersonalDataFieldAsync
      *
      * Delete Personal Data Field
      *
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeletePersonalDataField'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePersonalDataField'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600DeletePersonalDataFieldAsync($userattributeid, string $contentType = self::contentTypes['oBPv600DeletePersonalDataField'][0])
+    public function deletePersonalDataFieldAsync($userattributeid, string $contentType = self::contentTypes['deletePersonalDataField'][0])
     {
-        return $this->oBPv600DeletePersonalDataFieldAsyncWithHttpInfo($userattributeid, $contentType)
+        return $this->deletePersonalDataFieldAsyncWithHttpInfo($userattributeid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -823,20 +823,20 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600DeletePersonalDataFieldAsyncWithHttpInfo
+     * Operation deletePersonalDataFieldAsyncWithHttpInfo
      *
      * Delete Personal Data Field
      *
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeletePersonalDataField'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePersonalDataField'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600DeletePersonalDataFieldAsyncWithHttpInfo($userattributeid, string $contentType = self::contentTypes['oBPv600DeletePersonalDataField'][0])
+    public function deletePersonalDataFieldAsyncWithHttpInfo($userattributeid, string $contentType = self::contentTypes['deletePersonalDataField'][0])
     {
         $returnType = '';
-        $request = $this->oBPv600DeletePersonalDataFieldRequest($userattributeid, $contentType);
+        $request = $this->deletePersonalDataFieldRequest($userattributeid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -862,21 +862,21 @@ class UserAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv600DeletePersonalDataField'
+     * Create request for operation 'deletePersonalDataField'
      *
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeletePersonalDataField'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePersonalDataField'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600DeletePersonalDataFieldRequest($userattributeid, string $contentType = self::contentTypes['oBPv600DeletePersonalDataField'][0])
+    public function deletePersonalDataFieldRequest($userattributeid, string $contentType = self::contentTypes['deletePersonalDataField'][0])
     {
 
         // verify the required parameter 'userattributeid' is set
         if ($userattributeid === null || (is_array($userattributeid) && count($userattributeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userattributeid when calling oBPv600DeletePersonalDataField'
+                'Missing the required parameter $userattributeid when calling deletePersonalDataField'
             );
         }
 
@@ -941,9 +941,9 @@ class UserAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -968,39 +968,39 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600DeleteUserAttribute
+     * Operation deleteUserAttribute
      *
      * Delete User Attribute
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteUserAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteUserAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv600DeleteUserAttribute($userid, $userattributeid, string $contentType = self::contentTypes['oBPv600DeleteUserAttribute'][0])
+    public function deleteUserAttribute($userid, $userattributeid, string $contentType = self::contentTypes['deleteUserAttribute'][0])
     {
-        $this->oBPv600DeleteUserAttributeWithHttpInfo($userid, $userattributeid, $contentType);
+        $this->deleteUserAttributeWithHttpInfo($userid, $userattributeid, $contentType);
     }
 
     /**
-     * Operation oBPv600DeleteUserAttributeWithHttpInfo
+     * Operation deleteUserAttributeWithHttpInfo
      *
      * Delete User Attribute
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteUserAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteUserAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600DeleteUserAttributeWithHttpInfo($userid, $userattributeid, string $contentType = self::contentTypes['oBPv600DeleteUserAttribute'][0])
+    public function deleteUserAttributeWithHttpInfo($userid, $userattributeid, string $contentType = self::contentTypes['deleteUserAttribute'][0])
     {
-        $request = $this->oBPv600DeleteUserAttributeRequest($userid, $userattributeid, $contentType);
+        $request = $this->deleteUserAttributeRequest($userid, $userattributeid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1036,20 +1036,20 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600DeleteUserAttributeAsync
+     * Operation deleteUserAttributeAsync
      *
      * Delete User Attribute
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteUserAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteUserAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600DeleteUserAttributeAsync($userid, $userattributeid, string $contentType = self::contentTypes['oBPv600DeleteUserAttribute'][0])
+    public function deleteUserAttributeAsync($userid, $userattributeid, string $contentType = self::contentTypes['deleteUserAttribute'][0])
     {
-        return $this->oBPv600DeleteUserAttributeAsyncWithHttpInfo($userid, $userattributeid, $contentType)
+        return $this->deleteUserAttributeAsyncWithHttpInfo($userid, $userattributeid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1058,21 +1058,21 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600DeleteUserAttributeAsyncWithHttpInfo
+     * Operation deleteUserAttributeAsyncWithHttpInfo
      *
      * Delete User Attribute
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteUserAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteUserAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600DeleteUserAttributeAsyncWithHttpInfo($userid, $userattributeid, string $contentType = self::contentTypes['oBPv600DeleteUserAttribute'][0])
+    public function deleteUserAttributeAsyncWithHttpInfo($userid, $userattributeid, string $contentType = self::contentTypes['deleteUserAttribute'][0])
     {
         $returnType = '';
-        $request = $this->oBPv600DeleteUserAttributeRequest($userid, $userattributeid, $contentType);
+        $request = $this->deleteUserAttributeRequest($userid, $userattributeid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1098,29 +1098,29 @@ class UserAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv600DeleteUserAttribute'
+     * Create request for operation 'deleteUserAttribute'
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteUserAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteUserAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600DeleteUserAttributeRequest($userid, $userattributeid, string $contentType = self::contentTypes['oBPv600DeleteUserAttribute'][0])
+    public function deleteUserAttributeRequest($userid, $userattributeid, string $contentType = self::contentTypes['deleteUserAttribute'][0])
     {
 
         // verify the required parameter 'userid' is set
         if ($userid === null || (is_array($userid) && count($userid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv600DeleteUserAttribute'
+                'Missing the required parameter $userid when calling deleteUserAttribute'
             );
         }
 
         // verify the required parameter 'userattributeid' is set
         if ($userattributeid === null || (is_array($userattributeid) && count($userattributeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userattributeid when calling oBPv600DeleteUserAttribute'
+                'Missing the required parameter $userattributeid when calling deleteUserAttribute'
             );
         }
 
@@ -1193,9 +1193,9 @@ class UserAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1220,38 +1220,38 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600GetPersonalDataFieldById
+     * Operation getPersonalDataFieldById
      *
      * Get Personal Data Field By Id
      *
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetPersonalDataFieldById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPersonalDataFieldById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     * @return \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner
      */
-    public function oBPv600GetPersonalDataFieldById($userattributeid, string $contentType = self::contentTypes['oBPv600GetPersonalDataFieldById'][0])
+    public function getPersonalDataFieldById($userattributeid, string $contentType = self::contentTypes['getPersonalDataFieldById'][0])
     {
-        list($response) = $this->oBPv600GetPersonalDataFieldByIdWithHttpInfo($userattributeid, $contentType);
+        list($response) = $this->getPersonalDataFieldByIdWithHttpInfo($userattributeid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetPersonalDataFieldByIdWithHttpInfo
+     * Operation getPersonalDataFieldByIdWithHttpInfo
      *
      * Get Personal Data Field By Id
      *
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetPersonalDataFieldById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPersonalDataFieldById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetPersonalDataFieldByIdWithHttpInfo($userattributeid, string $contentType = self::contentTypes['oBPv600GetPersonalDataFieldById'][0])
+    public function getPersonalDataFieldByIdWithHttpInfo($userattributeid, string $contentType = self::contentTypes['getPersonalDataFieldById'][0])
     {
-        $request = $this->oBPv600GetPersonalDataFieldByIdRequest($userattributeid, $contentType);
+        $request = $this->getPersonalDataFieldByIdRequest($userattributeid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1279,7 +1279,7 @@ class UserAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                        '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                         $request,
                         $response,
                     );
@@ -1301,7 +1301,7 @@ class UserAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                 $request,
                 $response,
             );
@@ -1310,7 +1310,7 @@ class UserAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                        '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1323,19 +1323,19 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600GetPersonalDataFieldByIdAsync
+     * Operation getPersonalDataFieldByIdAsync
      *
      * Get Personal Data Field By Id
      *
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetPersonalDataFieldById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPersonalDataFieldById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetPersonalDataFieldByIdAsync($userattributeid, string $contentType = self::contentTypes['oBPv600GetPersonalDataFieldById'][0])
+    public function getPersonalDataFieldByIdAsync($userattributeid, string $contentType = self::contentTypes['getPersonalDataFieldById'][0])
     {
-        return $this->oBPv600GetPersonalDataFieldByIdAsyncWithHttpInfo($userattributeid, $contentType)
+        return $this->getPersonalDataFieldByIdAsyncWithHttpInfo($userattributeid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1344,20 +1344,20 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600GetPersonalDataFieldByIdAsyncWithHttpInfo
+     * Operation getPersonalDataFieldByIdAsyncWithHttpInfo
      *
      * Get Personal Data Field By Id
      *
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetPersonalDataFieldById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPersonalDataFieldById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetPersonalDataFieldByIdAsyncWithHttpInfo($userattributeid, string $contentType = self::contentTypes['oBPv600GetPersonalDataFieldById'][0])
+    public function getPersonalDataFieldByIdAsyncWithHttpInfo($userattributeid, string $contentType = self::contentTypes['getPersonalDataFieldById'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems';
-        $request = $this->oBPv600GetPersonalDataFieldByIdRequest($userattributeid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner';
+        $request = $this->getPersonalDataFieldByIdRequest($userattributeid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1396,21 +1396,21 @@ class UserAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetPersonalDataFieldById'
+     * Create request for operation 'getPersonalDataFieldById'
      *
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetPersonalDataFieldById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPersonalDataFieldById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetPersonalDataFieldByIdRequest($userattributeid, string $contentType = self::contentTypes['oBPv600GetPersonalDataFieldById'][0])
+    public function getPersonalDataFieldByIdRequest($userattributeid, string $contentType = self::contentTypes['getPersonalDataFieldById'][0])
     {
 
         // verify the required parameter 'userattributeid' is set
         if ($userattributeid === null || (is_array($userattributeid) && count($userattributeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userattributeid when calling oBPv600GetPersonalDataFieldById'
+                'Missing the required parameter $userattributeid when calling getPersonalDataFieldById'
             );
         }
 
@@ -1475,9 +1475,9 @@ class UserAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1502,36 +1502,36 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600GetPersonalDataFields
+     * Operation getPersonalDataFields
      *
      * Get Personal Data Fields
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetPersonalDataFields'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPersonalDataFields'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetPersonalDataFields200Response
+     * @return \OpenBankProject\Model\GetPersonalDataFields200Response
      */
-    public function oBPv600GetPersonalDataFields(string $contentType = self::contentTypes['oBPv600GetPersonalDataFields'][0])
+    public function getPersonalDataFields(string $contentType = self::contentTypes['getPersonalDataFields'][0])
     {
-        list($response) = $this->oBPv600GetPersonalDataFieldsWithHttpInfo($contentType);
+        list($response) = $this->getPersonalDataFieldsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetPersonalDataFieldsWithHttpInfo
+     * Operation getPersonalDataFieldsWithHttpInfo
      *
      * Get Personal Data Fields
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetPersonalDataFields'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPersonalDataFields'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetPersonalDataFields200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetPersonalDataFields200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetPersonalDataFieldsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetPersonalDataFields'][0])
+    public function getPersonalDataFieldsWithHttpInfo(string $contentType = self::contentTypes['getPersonalDataFields'][0])
     {
-        $request = $this->oBPv600GetPersonalDataFieldsRequest($contentType);
+        $request = $this->getPersonalDataFieldsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1559,7 +1559,7 @@ class UserAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetPersonalDataFields200Response',
+                        '\OpenBankProject\Model\GetPersonalDataFields200Response',
                         $request,
                         $response,
                     );
@@ -1581,7 +1581,7 @@ class UserAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetPersonalDataFields200Response',
+                '\OpenBankProject\Model\GetPersonalDataFields200Response',
                 $request,
                 $response,
             );
@@ -1590,7 +1590,7 @@ class UserAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetPersonalDataFields200Response',
+                        '\OpenBankProject\Model\GetPersonalDataFields200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1603,18 +1603,18 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600GetPersonalDataFieldsAsync
+     * Operation getPersonalDataFieldsAsync
      *
      * Get Personal Data Fields
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetPersonalDataFields'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPersonalDataFields'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetPersonalDataFieldsAsync(string $contentType = self::contentTypes['oBPv600GetPersonalDataFields'][0])
+    public function getPersonalDataFieldsAsync(string $contentType = self::contentTypes['getPersonalDataFields'][0])
     {
-        return $this->oBPv600GetPersonalDataFieldsAsyncWithHttpInfo($contentType)
+        return $this->getPersonalDataFieldsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1623,19 +1623,19 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600GetPersonalDataFieldsAsyncWithHttpInfo
+     * Operation getPersonalDataFieldsAsyncWithHttpInfo
      *
      * Get Personal Data Fields
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetPersonalDataFields'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPersonalDataFields'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetPersonalDataFieldsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetPersonalDataFields'][0])
+    public function getPersonalDataFieldsAsyncWithHttpInfo(string $contentType = self::contentTypes['getPersonalDataFields'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetPersonalDataFields200Response';
-        $request = $this->oBPv600GetPersonalDataFieldsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetPersonalDataFields200Response';
+        $request = $this->getPersonalDataFieldsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1674,14 +1674,14 @@ class UserAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetPersonalDataFields'
+     * Create request for operation 'getPersonalDataFields'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetPersonalDataFields'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPersonalDataFields'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetPersonalDataFieldsRequest(string $contentType = self::contentTypes['oBPv600GetPersonalDataFields'][0])
+    public function getPersonalDataFieldsRequest(string $contentType = self::contentTypes['getPersonalDataFields'][0])
     {
 
 
@@ -1737,9 +1737,9 @@ class UserAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1764,40 +1764,40 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600GetUserAttributeById
+     * Operation getUserAttributeById
      *
      * Get User Attribute By Id
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserAttributeById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserAttributeById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     * @return \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner
      */
-    public function oBPv600GetUserAttributeById($userid, $userattributeid, string $contentType = self::contentTypes['oBPv600GetUserAttributeById'][0])
+    public function getUserAttributeById($userid, $userattributeid, string $contentType = self::contentTypes['getUserAttributeById'][0])
     {
-        list($response) = $this->oBPv600GetUserAttributeByIdWithHttpInfo($userid, $userattributeid, $contentType);
+        list($response) = $this->getUserAttributeByIdWithHttpInfo($userid, $userattributeid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetUserAttributeByIdWithHttpInfo
+     * Operation getUserAttributeByIdWithHttpInfo
      *
      * Get User Attribute By Id
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserAttributeById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserAttributeById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetUserAttributeByIdWithHttpInfo($userid, $userattributeid, string $contentType = self::contentTypes['oBPv600GetUserAttributeById'][0])
+    public function getUserAttributeByIdWithHttpInfo($userid, $userattributeid, string $contentType = self::contentTypes['getUserAttributeById'][0])
     {
-        $request = $this->oBPv600GetUserAttributeByIdRequest($userid, $userattributeid, $contentType);
+        $request = $this->getUserAttributeByIdRequest($userid, $userattributeid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1825,7 +1825,7 @@ class UserAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                        '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                         $request,
                         $response,
                     );
@@ -1847,7 +1847,7 @@ class UserAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                 $request,
                 $response,
             );
@@ -1856,7 +1856,7 @@ class UserAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                        '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1869,20 +1869,20 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600GetUserAttributeByIdAsync
+     * Operation getUserAttributeByIdAsync
      *
      * Get User Attribute By Id
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserAttributeById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserAttributeById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetUserAttributeByIdAsync($userid, $userattributeid, string $contentType = self::contentTypes['oBPv600GetUserAttributeById'][0])
+    public function getUserAttributeByIdAsync($userid, $userattributeid, string $contentType = self::contentTypes['getUserAttributeById'][0])
     {
-        return $this->oBPv600GetUserAttributeByIdAsyncWithHttpInfo($userid, $userattributeid, $contentType)
+        return $this->getUserAttributeByIdAsyncWithHttpInfo($userid, $userattributeid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1891,21 +1891,21 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600GetUserAttributeByIdAsyncWithHttpInfo
+     * Operation getUserAttributeByIdAsyncWithHttpInfo
      *
      * Get User Attribute By Id
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserAttributeById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserAttributeById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetUserAttributeByIdAsyncWithHttpInfo($userid, $userattributeid, string $contentType = self::contentTypes['oBPv600GetUserAttributeById'][0])
+    public function getUserAttributeByIdAsyncWithHttpInfo($userid, $userattributeid, string $contentType = self::contentTypes['getUserAttributeById'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems';
-        $request = $this->oBPv600GetUserAttributeByIdRequest($userid, $userattributeid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner';
+        $request = $this->getUserAttributeByIdRequest($userid, $userattributeid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1944,29 +1944,29 @@ class UserAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetUserAttributeById'
+     * Create request for operation 'getUserAttributeById'
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserAttributeById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserAttributeById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetUserAttributeByIdRequest($userid, $userattributeid, string $contentType = self::contentTypes['oBPv600GetUserAttributeById'][0])
+    public function getUserAttributeByIdRequest($userid, $userattributeid, string $contentType = self::contentTypes['getUserAttributeById'][0])
     {
 
         // verify the required parameter 'userid' is set
         if ($userid === null || (is_array($userid) && count($userid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv600GetUserAttributeById'
+                'Missing the required parameter $userid when calling getUserAttributeById'
             );
         }
 
         // verify the required parameter 'userattributeid' is set
         if ($userattributeid === null || (is_array($userattributeid) && count($userattributeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userattributeid when calling oBPv600GetUserAttributeById'
+                'Missing the required parameter $userattributeid when calling getUserAttributeById'
             );
         }
 
@@ -2039,9 +2039,9 @@ class UserAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2066,38 +2066,38 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600GetUserAttributes
+     * Operation getUserAttributes
      *
      * Get User Attributes
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserAttributes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserAttributes'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetPersonalDataFields200Response
+     * @return \OpenBankProject\Model\GetPersonalDataFields200Response
      */
-    public function oBPv600GetUserAttributes($userid, string $contentType = self::contentTypes['oBPv600GetUserAttributes'][0])
+    public function getUserAttributes($userid, string $contentType = self::contentTypes['getUserAttributes'][0])
     {
-        list($response) = $this->oBPv600GetUserAttributesWithHttpInfo($userid, $contentType);
+        list($response) = $this->getUserAttributesWithHttpInfo($userid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetUserAttributesWithHttpInfo
+     * Operation getUserAttributesWithHttpInfo
      *
      * Get User Attributes
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserAttributes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserAttributes'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetPersonalDataFields200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetPersonalDataFields200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetUserAttributesWithHttpInfo($userid, string $contentType = self::contentTypes['oBPv600GetUserAttributes'][0])
+    public function getUserAttributesWithHttpInfo($userid, string $contentType = self::contentTypes['getUserAttributes'][0])
     {
-        $request = $this->oBPv600GetUserAttributesRequest($userid, $contentType);
+        $request = $this->getUserAttributesRequest($userid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2125,7 +2125,7 @@ class UserAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetPersonalDataFields200Response',
+                        '\OpenBankProject\Model\GetPersonalDataFields200Response',
                         $request,
                         $response,
                     );
@@ -2147,7 +2147,7 @@ class UserAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetPersonalDataFields200Response',
+                '\OpenBankProject\Model\GetPersonalDataFields200Response',
                 $request,
                 $response,
             );
@@ -2156,7 +2156,7 @@ class UserAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetPersonalDataFields200Response',
+                        '\OpenBankProject\Model\GetPersonalDataFields200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2169,19 +2169,19 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600GetUserAttributesAsync
+     * Operation getUserAttributesAsync
      *
      * Get User Attributes
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserAttributes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserAttributes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetUserAttributesAsync($userid, string $contentType = self::contentTypes['oBPv600GetUserAttributes'][0])
+    public function getUserAttributesAsync($userid, string $contentType = self::contentTypes['getUserAttributes'][0])
     {
-        return $this->oBPv600GetUserAttributesAsyncWithHttpInfo($userid, $contentType)
+        return $this->getUserAttributesAsyncWithHttpInfo($userid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2190,20 +2190,20 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600GetUserAttributesAsyncWithHttpInfo
+     * Operation getUserAttributesAsyncWithHttpInfo
      *
      * Get User Attributes
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserAttributes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserAttributes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetUserAttributesAsyncWithHttpInfo($userid, string $contentType = self::contentTypes['oBPv600GetUserAttributes'][0])
+    public function getUserAttributesAsyncWithHttpInfo($userid, string $contentType = self::contentTypes['getUserAttributes'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetPersonalDataFields200Response';
-        $request = $this->oBPv600GetUserAttributesRequest($userid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetPersonalDataFields200Response';
+        $request = $this->getUserAttributesRequest($userid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2242,21 +2242,21 @@ class UserAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetUserAttributes'
+     * Create request for operation 'getUserAttributes'
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserAttributes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserAttributes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetUserAttributesRequest($userid, string $contentType = self::contentTypes['oBPv600GetUserAttributes'][0])
+    public function getUserAttributesRequest($userid, string $contentType = self::contentTypes['getUserAttributes'][0])
     {
 
         // verify the required parameter 'userid' is set
         if ($userid === null || (is_array($userid) && count($userid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv600GetUserAttributes'
+                'Missing the required parameter $userid when calling getUserAttributes'
             );
         }
 
@@ -2321,9 +2321,9 @@ class UserAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2348,40 +2348,40 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600UpdatePersonalDataField
+     * Operation updatePersonalDataField
      *
      * Update Personal Data Field
      *
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdatePersonalDataField'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePersonalDataField'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     * @return \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner
      */
-    public function oBPv600UpdatePersonalDataField($userattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600UpdatePersonalDataField'][0])
+    public function updatePersonalDataField($userattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updatePersonalDataField'][0])
     {
-        list($response) = $this->oBPv600UpdatePersonalDataFieldWithHttpInfo($userattributeid, $obpv600_create_personal_data_field_request, $contentType);
+        list($response) = $this->updatePersonalDataFieldWithHttpInfo($userattributeid, $create_personal_data_field_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600UpdatePersonalDataFieldWithHttpInfo
+     * Operation updatePersonalDataFieldWithHttpInfo
      *
      * Update Personal Data Field
      *
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdatePersonalDataField'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePersonalDataField'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600UpdatePersonalDataFieldWithHttpInfo($userattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600UpdatePersonalDataField'][0])
+    public function updatePersonalDataFieldWithHttpInfo($userattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updatePersonalDataField'][0])
     {
-        $request = $this->oBPv600UpdatePersonalDataFieldRequest($userattributeid, $obpv600_create_personal_data_field_request, $contentType);
+        $request = $this->updatePersonalDataFieldRequest($userattributeid, $create_personal_data_field_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2409,7 +2409,7 @@ class UserAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                        '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                         $request,
                         $response,
                     );
@@ -2431,7 +2431,7 @@ class UserAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                 $request,
                 $response,
             );
@@ -2440,7 +2440,7 @@ class UserAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                        '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2453,20 +2453,20 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600UpdatePersonalDataFieldAsync
+     * Operation updatePersonalDataFieldAsync
      *
      * Update Personal Data Field
      *
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdatePersonalDataField'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePersonalDataField'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdatePersonalDataFieldAsync($userattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600UpdatePersonalDataField'][0])
+    public function updatePersonalDataFieldAsync($userattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updatePersonalDataField'][0])
     {
-        return $this->oBPv600UpdatePersonalDataFieldAsyncWithHttpInfo($userattributeid, $obpv600_create_personal_data_field_request, $contentType)
+        return $this->updatePersonalDataFieldAsyncWithHttpInfo($userattributeid, $create_personal_data_field_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2475,21 +2475,21 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600UpdatePersonalDataFieldAsyncWithHttpInfo
+     * Operation updatePersonalDataFieldAsyncWithHttpInfo
      *
      * Update Personal Data Field
      *
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdatePersonalDataField'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePersonalDataField'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdatePersonalDataFieldAsyncWithHttpInfo($userattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600UpdatePersonalDataField'][0])
+    public function updatePersonalDataFieldAsyncWithHttpInfo($userattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updatePersonalDataField'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems';
-        $request = $this->oBPv600UpdatePersonalDataFieldRequest($userattributeid, $obpv600_create_personal_data_field_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner';
+        $request = $this->updatePersonalDataFieldRequest($userattributeid, $create_personal_data_field_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2528,29 +2528,29 @@ class UserAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv600UpdatePersonalDataField'
+     * Create request for operation 'updatePersonalDataField'
      *
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdatePersonalDataField'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePersonalDataField'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600UpdatePersonalDataFieldRequest($userattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600UpdatePersonalDataField'][0])
+    public function updatePersonalDataFieldRequest($userattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updatePersonalDataField'][0])
     {
 
         // verify the required parameter 'userattributeid' is set
         if ($userattributeid === null || (is_array($userattributeid) && count($userattributeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userattributeid when calling oBPv600UpdatePersonalDataField'
+                'Missing the required parameter $userattributeid when calling updatePersonalDataField'
             );
         }
 
-        // verify the required parameter 'obpv600_create_personal_data_field_request' is set
-        if ($obpv600_create_personal_data_field_request === null || (is_array($obpv600_create_personal_data_field_request) && count($obpv600_create_personal_data_field_request) === 0)) {
+        // verify the required parameter 'create_personal_data_field_request' is set
+        if ($create_personal_data_field_request === null || (is_array($create_personal_data_field_request) && count($create_personal_data_field_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_create_personal_data_field_request when calling oBPv600UpdatePersonalDataField'
+                'Missing the required parameter $create_personal_data_field_request when calling updatePersonalDataField'
             );
         }
 
@@ -2581,12 +2581,12 @@ class UserAttributeApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_create_personal_data_field_request)) {
+        if (isset($create_personal_data_field_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_create_personal_data_field_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_personal_data_field_request));
             } else {
-                $httpBody = $obpv600_create_personal_data_field_request;
+                $httpBody = $create_personal_data_field_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2622,9 +2622,9 @@ class UserAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2649,42 +2649,42 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600UpdateUserAttribute
+     * Operation updateUserAttribute
      *
      * Update User Attribute
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateUserAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateUserAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     * @return \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner
      */
-    public function oBPv600UpdateUserAttribute($userid, $userattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600UpdateUserAttribute'][0])
+    public function updateUserAttribute($userid, $userattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updateUserAttribute'][0])
     {
-        list($response) = $this->oBPv600UpdateUserAttributeWithHttpInfo($userid, $userattributeid, $obpv600_create_personal_data_field_request, $contentType);
+        list($response) = $this->updateUserAttributeWithHttpInfo($userid, $userattributeid, $create_personal_data_field_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600UpdateUserAttributeWithHttpInfo
+     * Operation updateUserAttributeWithHttpInfo
      *
      * Update User Attribute
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateUserAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateUserAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600UpdateUserAttributeWithHttpInfo($userid, $userattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600UpdateUserAttribute'][0])
+    public function updateUserAttributeWithHttpInfo($userid, $userattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updateUserAttribute'][0])
     {
-        $request = $this->oBPv600UpdateUserAttributeRequest($userid, $userattributeid, $obpv600_create_personal_data_field_request, $contentType);
+        $request = $this->updateUserAttributeRequest($userid, $userattributeid, $create_personal_data_field_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2712,7 +2712,7 @@ class UserAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                        '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                         $request,
                         $response,
                     );
@@ -2734,7 +2734,7 @@ class UserAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                 $request,
                 $response,
             );
@@ -2743,7 +2743,7 @@ class UserAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems',
+                        '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2756,21 +2756,21 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600UpdateUserAttributeAsync
+     * Operation updateUserAttributeAsync
      *
      * Update User Attribute
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateUserAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateUserAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateUserAttributeAsync($userid, $userattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600UpdateUserAttribute'][0])
+    public function updateUserAttributeAsync($userid, $userattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updateUserAttribute'][0])
     {
-        return $this->oBPv600UpdateUserAttributeAsyncWithHttpInfo($userid, $userattributeid, $obpv600_create_personal_data_field_request, $contentType)
+        return $this->updateUserAttributeAsyncWithHttpInfo($userid, $userattributeid, $create_personal_data_field_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2779,22 +2779,22 @@ class UserAttributeApi
     }
 
     /**
-     * Operation oBPv600UpdateUserAttributeAsyncWithHttpInfo
+     * Operation updateUserAttributeAsyncWithHttpInfo
      *
      * Update User Attribute
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateUserAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateUserAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateUserAttributeAsyncWithHttpInfo($userid, $userattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600UpdateUserAttribute'][0])
+    public function updateUserAttributeAsyncWithHttpInfo($userid, $userattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updateUserAttribute'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems';
-        $request = $this->oBPv600UpdateUserAttributeRequest($userid, $userattributeid, $obpv600_create_personal_data_field_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner';
+        $request = $this->updateUserAttributeRequest($userid, $userattributeid, $create_personal_data_field_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2833,37 +2833,37 @@ class UserAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv600UpdateUserAttribute'
+     * Create request for operation 'updateUserAttribute'
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $userattributeid The USERATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateUserAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateUserAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600UpdateUserAttributeRequest($userid, $userattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv600UpdateUserAttribute'][0])
+    public function updateUserAttributeRequest($userid, $userattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updateUserAttribute'][0])
     {
 
         // verify the required parameter 'userid' is set
         if ($userid === null || (is_array($userid) && count($userid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv600UpdateUserAttribute'
+                'Missing the required parameter $userid when calling updateUserAttribute'
             );
         }
 
         // verify the required parameter 'userattributeid' is set
         if ($userattributeid === null || (is_array($userattributeid) && count($userattributeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userattributeid when calling oBPv600UpdateUserAttribute'
+                'Missing the required parameter $userattributeid when calling updateUserAttribute'
             );
         }
 
-        // verify the required parameter 'obpv600_create_personal_data_field_request' is set
-        if ($obpv600_create_personal_data_field_request === null || (is_array($obpv600_create_personal_data_field_request) && count($obpv600_create_personal_data_field_request) === 0)) {
+        // verify the required parameter 'create_personal_data_field_request' is set
+        if ($create_personal_data_field_request === null || (is_array($create_personal_data_field_request) && count($create_personal_data_field_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_create_personal_data_field_request when calling oBPv600UpdateUserAttribute'
+                'Missing the required parameter $create_personal_data_field_request when calling updateUserAttribute'
             );
         }
 
@@ -2902,12 +2902,12 @@ class UserAttributeApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_create_personal_data_field_request)) {
+        if (isset($create_personal_data_field_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_create_personal_data_field_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_personal_data_field_request));
             } else {
-                $httpBody = $obpv600_create_personal_data_field_request;
+                $httpBody = $create_personal_data_field_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2943,9 +2943,9 @@ class UserAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,26 +24,26 @@ import (
 // CustomerMessageAPIService CustomerMessageAPI service
 type CustomerMessageAPIService service
 
-type ApiOBPv140AddCustomerMessageRequest struct {
+type ApiAddCustomerMessageRequest struct {
 	ctx context.Context
 	ApiService *CustomerMessageAPIService
 	bankid string
 	customerid string
-	oBPv140AddCustomerMessageRequest *OBPv140AddCustomerMessageRequest
+	addCustomerMessageRequest *AddCustomerMessageRequest
 }
 
 // Request body
-func (r ApiOBPv140AddCustomerMessageRequest) OBPv140AddCustomerMessageRequest(oBPv140AddCustomerMessageRequest OBPv140AddCustomerMessageRequest) ApiOBPv140AddCustomerMessageRequest {
-	r.oBPv140AddCustomerMessageRequest = &oBPv140AddCustomerMessageRequest
+func (r ApiAddCustomerMessageRequest) AddCustomerMessageRequest(addCustomerMessageRequest AddCustomerMessageRequest) ApiAddCustomerMessageRequest {
+	r.addCustomerMessageRequest = &addCustomerMessageRequest
 	return r
 }
 
-func (r ApiOBPv140AddCustomerMessageRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv140AddCustomerMessageExecute(r)
+func (r ApiAddCustomerMessageRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.AddCustomerMessageExecute(r)
 }
 
 /*
-OBPv140AddCustomerMessage Create Customer Message
+AddCustomerMessage Create Customer Message
 
 <p>Create a message for the customer specified by CUSTOMER_ID</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -61,10 +61,10 @@ OBPv140AddCustomerMessage Create Customer Message
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param customerid The CUSTOMERID identifier
- @return ApiOBPv140AddCustomerMessageRequest
+ @return ApiAddCustomerMessageRequest
 */
-func (a *CustomerMessageAPIService) OBPv140AddCustomerMessage(ctx context.Context, bankid string, customerid string) ApiOBPv140AddCustomerMessageRequest {
-	return ApiOBPv140AddCustomerMessageRequest{
+func (a *CustomerMessageAPIService) AddCustomerMessage(ctx context.Context, bankid string, customerid string) ApiAddCustomerMessageRequest {
+	return ApiAddCustomerMessageRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -73,16 +73,16 @@ func (a *CustomerMessageAPIService) OBPv140AddCustomerMessage(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CustomerMessageAPIService) OBPv140AddCustomerMessageExecute(r ApiOBPv140AddCustomerMessageRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *CustomerMessageAPIService) AddCustomerMessageExecute(r ApiAddCustomerMessageRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerMessageAPIService.OBPv140AddCustomerMessage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerMessageAPIService.AddCustomerMessage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -94,8 +94,8 @@ func (a *CustomerMessageAPIService) OBPv140AddCustomerMessageExecute(r ApiOBPv14
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv140AddCustomerMessageRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv140AddCustomerMessageRequest is required and must be specified")
+	if r.addCustomerMessageRequest == nil {
+		return localVarReturnValue, nil, reportError("addCustomerMessageRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -116,7 +116,7 @@ func (a *CustomerMessageAPIService) OBPv140AddCustomerMessageExecute(r ApiOBPv14
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv140AddCustomerMessageRequest
+	localVarPostBody = r.addCustomerMessageRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -141,7 +141,7 @@ func (a *CustomerMessageAPIService) OBPv140AddCustomerMessageExecute(r ApiOBPv14
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -182,18 +182,325 @@ func (a *CustomerMessageAPIService) OBPv140AddCustomerMessageExecute(r ApiOBPv14
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv140GetCustomersMessagesRequest struct {
+type ApiCreateCustomerMessageRequest struct {
+	ctx context.Context
+	ApiService *CustomerMessageAPIService
+	bankid string
+	customerid string
+	createCustomerMessageRequest *CreateCustomerMessageRequest
+}
+
+// Request body
+func (r ApiCreateCustomerMessageRequest) CreateCustomerMessageRequest(createCustomerMessageRequest CreateCustomerMessageRequest) ApiCreateCustomerMessageRequest {
+	r.createCustomerMessageRequest = &createCustomerMessageRequest
+	return r
+}
+
+func (r ApiCreateCustomerMessageRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.CreateCustomerMessageExecute(r)
+}
+
+/*
+CreateCustomerMessage Create Customer Message
+
+<p>Create a message for the customer specified by CUSTOMER_ID<br />
+User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#Customer.customer_id">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#from_department"><strong>from_department</strong></a>: Open Bank</p>
+<p><a href="/glossary#from_person"><strong>from_person</strong></a>: Tom</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#transport"><strong>transport</strong></a>: SMS</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param customerid The CUSTOMERID identifier
+ @return ApiCreateCustomerMessageRequest
+*/
+func (a *CustomerMessageAPIService) CreateCustomerMessage(ctx context.Context, bankid string, customerid string) ApiCreateCustomerMessageRequest {
+	return ApiCreateCustomerMessageRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		customerid: customerid,
+	}
+}
+
+// Execute executes the request
+//  @return UpdateTransactionNarrative200Response
+func (a *CustomerMessageAPIService) CreateCustomerMessageExecute(r ApiCreateCustomerMessageRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UpdateTransactionNarrative200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerMessageAPIService.CreateCustomerMessage")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerid"+"}", url.PathEscape(parameterValueToString(r.customerid, "customerid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createCustomerMessageRequest == nil {
+		return localVarReturnValue, nil, reportError("createCustomerMessageRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createCustomerMessageRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetCustomerMessagesRequest struct {
+	ctx context.Context
+	ApiService *CustomerMessageAPIService
+	bankid string
+	customerid string
+}
+
+func (r ApiGetCustomerMessagesRequest) Execute() (*GetCustomerMessages200Response, *http.Response, error) {
+	return r.ApiService.GetCustomerMessagesExecute(r)
+}
+
+/*
+GetCustomerMessages Get Customer Messages for a Customer
+
+<p>Get messages for the customer specified by CUSTOMER_ID<br />
+User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#Customer.customer_id">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#from_department"><strong>from_department</strong></a>: Open Bank</p>
+<p><a href="/glossary#from_person"><strong>from_person</strong></a>: Tom</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#messages"><strong>messages</strong></a>:</p>
+<p><a href="/glossary#transport"><strong>transport</strong></a>: SMS</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param customerid The CUSTOMERID identifier
+ @return ApiGetCustomerMessagesRequest
+*/
+func (a *CustomerMessageAPIService) GetCustomerMessages(ctx context.Context, bankid string, customerid string) ApiGetCustomerMessagesRequest {
+	return ApiGetCustomerMessagesRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		customerid: customerid,
+	}
+}
+
+// Execute executes the request
+//  @return GetCustomerMessages200Response
+func (a *CustomerMessageAPIService) GetCustomerMessagesExecute(r ApiGetCustomerMessagesRequest) (*GetCustomerMessages200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetCustomerMessages200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerMessageAPIService.GetCustomerMessages")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerid"+"}", url.PathEscape(parameterValueToString(r.customerid, "customerid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetCustomersMessagesRequest struct {
 	ctx context.Context
 	ApiService *CustomerMessageAPIService
 	bankid string
 }
 
-func (r ApiOBPv140GetCustomersMessagesRequest) Execute() (*OBPv140GetCustomersMessages200Response, *http.Response, error) {
-	return r.ApiService.OBPv140GetCustomersMessagesExecute(r)
+func (r ApiGetCustomersMessagesRequest) Execute() (*GetCustomersMessages200Response, *http.Response, error) {
+	return r.ApiService.GetCustomersMessagesExecute(r)
 }
 
 /*
-OBPv140GetCustomersMessages Get Customer Messages for all Customers
+GetCustomersMessages Get Customer Messages for all Customers
 
 <p>Get messages for the logged in customer<br />
 Messages sent to the currently authenticated user.</p>
@@ -212,10 +519,10 @@ Messages sent to the currently authenticated user.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv140GetCustomersMessagesRequest
+ @return ApiGetCustomersMessagesRequest
 */
-func (a *CustomerMessageAPIService) OBPv140GetCustomersMessages(ctx context.Context, bankid string) ApiOBPv140GetCustomersMessagesRequest {
-	return ApiOBPv140GetCustomersMessagesRequest{
+func (a *CustomerMessageAPIService) GetCustomersMessages(ctx context.Context, bankid string) ApiGetCustomersMessagesRequest {
+	return ApiGetCustomersMessagesRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -223,16 +530,16 @@ func (a *CustomerMessageAPIService) OBPv140GetCustomersMessages(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return OBPv140GetCustomersMessages200Response
-func (a *CustomerMessageAPIService) OBPv140GetCustomersMessagesExecute(r ApiOBPv140GetCustomersMessagesRequest) (*OBPv140GetCustomersMessages200Response, *http.Response, error) {
+//  @return GetCustomersMessages200Response
+func (a *CustomerMessageAPIService) GetCustomersMessagesExecute(r ApiGetCustomersMessagesRequest) (*GetCustomersMessages200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv140GetCustomersMessages200Response
+		localVarReturnValue  *GetCustomersMessages200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerMessageAPIService.OBPv140GetCustomersMessages")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerMessageAPIService.GetCustomersMessages")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -285,314 +592,7 @@ func (a *CustomerMessageAPIService) OBPv140GetCustomersMessagesExecute(r ApiOBPv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateCustomerMessageRequest struct {
-	ctx context.Context
-	ApiService *CustomerMessageAPIService
-	bankid string
-	customerid string
-	oBPv400CreateCustomerMessageRequest *OBPv400CreateCustomerMessageRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateCustomerMessageRequest) OBPv400CreateCustomerMessageRequest(oBPv400CreateCustomerMessageRequest OBPv400CreateCustomerMessageRequest) ApiOBPv400CreateCustomerMessageRequest {
-	r.oBPv400CreateCustomerMessageRequest = &oBPv400CreateCustomerMessageRequest
-	return r
-}
-
-func (r ApiOBPv400CreateCustomerMessageRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateCustomerMessageExecute(r)
-}
-
-/*
-OBPv400CreateCustomerMessage Create Customer Message
-
-<p>Create a message for the customer specified by CUSTOMER_ID<br />
-User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#Customer.customer_id">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#from_department"><strong>from_department</strong></a>: Open Bank</p>
-<p><a href="/glossary#from_person"><strong>from_person</strong></a>: Tom</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#transport"><strong>transport</strong></a>: SMS</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param customerid The CUSTOMERID identifier
- @return ApiOBPv400CreateCustomerMessageRequest
-*/
-func (a *CustomerMessageAPIService) OBPv400CreateCustomerMessage(ctx context.Context, bankid string, customerid string) ApiOBPv400CreateCustomerMessageRequest {
-	return ApiOBPv400CreateCustomerMessageRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		customerid: customerid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CustomerMessageAPIService) OBPv400CreateCustomerMessageExecute(r ApiOBPv400CreateCustomerMessageRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerMessageAPIService.OBPv400CreateCustomerMessage")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"customerid"+"}", url.PathEscape(parameterValueToString(r.customerid, "customerid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400CreateCustomerMessageRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateCustomerMessageRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400CreateCustomerMessageRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetCustomerMessagesRequest struct {
-	ctx context.Context
-	ApiService *CustomerMessageAPIService
-	bankid string
-	customerid string
-}
-
-func (r ApiOBPv400GetCustomerMessagesRequest) Execute() (*OBPv400GetCustomerMessages200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetCustomerMessagesExecute(r)
-}
-
-/*
-OBPv400GetCustomerMessages Get Customer Messages for a Customer
-
-<p>Get messages for the customer specified by CUSTOMER_ID<br />
-User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#Customer.customer_id">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#from_department"><strong>from_department</strong></a>: Open Bank</p>
-<p><a href="/glossary#from_person"><strong>from_person</strong></a>: Tom</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#messages"><strong>messages</strong></a>:</p>
-<p><a href="/glossary#transport"><strong>transport</strong></a>: SMS</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param customerid The CUSTOMERID identifier
- @return ApiOBPv400GetCustomerMessagesRequest
-*/
-func (a *CustomerMessageAPIService) OBPv400GetCustomerMessages(ctx context.Context, bankid string, customerid string) ApiOBPv400GetCustomerMessagesRequest {
-	return ApiOBPv400GetCustomerMessagesRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		customerid: customerid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetCustomerMessages200Response
-func (a *CustomerMessageAPIService) OBPv400GetCustomerMessagesExecute(r ApiOBPv400GetCustomerMessagesRequest) (*OBPv400GetCustomerMessages200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetCustomerMessages200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerMessageAPIService.OBPv400GetCustomerMessages")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"customerid"+"}", url.PathEscape(parameterValueToString(r.customerid, "customerid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

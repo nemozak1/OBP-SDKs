@@ -9,13 +9,13 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv600_delete_signal_channel200_response.dart';
-import 'package:obp_dart/src/model/obpv600_get_signal_channel_info200_response.dart';
-import 'package:obp_dart/src/model/obpv600_get_signal_channels200_response.dart';
-import 'package:obp_dart/src/model/obpv600_get_signal_messages200_response.dart';
-import 'package:obp_dart/src/model/obpv600_get_signal_stats200_response.dart';
-import 'package:obp_dart/src/model/obpv600_publish_signal_message200_response.dart';
-import 'package:obp_dart/src/model/obpv600_publish_signal_message_request.dart';
+import 'package:obp_dart/src/model/delete_signal_channel200_response.dart';
+import 'package:obp_dart/src/model/get_signal_channel_info200_response.dart';
+import 'package:obp_dart/src/model/get_signal_channels200_response.dart';
+import 'package:obp_dart/src/model/get_signal_messages200_response.dart';
+import 'package:obp_dart/src/model/get_signal_stats200_response.dart';
+import 'package:obp_dart/src/model/publish_signal_message200_response.dart';
+import 'package:obp_dart/src/model/publish_signal_message_request.dart';
 
 class SignallingApi {
 
@@ -37,9 +37,9 @@ class SignallingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600DeleteSignalChannel200Response] as data
+  /// Returns a [Future] containing a [Response] with a [DeleteSignalChannel200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600DeleteSignalChannel200Response>> oBPv600DeleteSignalChannel({ 
+  Future<Response<DeleteSignalChannel200Response>> deleteSignalChannel({ 
     required String channelname,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -67,7 +67,7 @@ class SignallingApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -84,14 +84,14 @@ class SignallingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600DeleteSignalChannel200Response? _responseData;
+    DeleteSignalChannel200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600DeleteSignalChannel200Response),
-      ) as OBPv600DeleteSignalChannel200Response;
+        specifiedType: const FullType(DeleteSignalChannel200Response),
+      ) as DeleteSignalChannel200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -103,7 +103,7 @@ class SignallingApi {
       );
     }
 
-    return Response<OBPv600DeleteSignalChannel200Response>(
+    return Response<DeleteSignalChannel200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -127,9 +127,9 @@ class SignallingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetSignalChannelInfo200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetSignalChannelInfo200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetSignalChannelInfo200Response>> oBPv600GetSignalChannelInfo({ 
+  Future<Response<GetSignalChannelInfo200Response>> getSignalChannelInfo({ 
     required String channelname,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -157,7 +157,7 @@ class SignallingApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -174,14 +174,14 @@ class SignallingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetSignalChannelInfo200Response? _responseData;
+    GetSignalChannelInfo200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetSignalChannelInfo200Response),
-      ) as OBPv600GetSignalChannelInfo200Response;
+        specifiedType: const FullType(GetSignalChannelInfo200Response),
+      ) as GetSignalChannelInfo200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -193,7 +193,7 @@ class SignallingApi {
       );
     }
 
-    return Response<OBPv600GetSignalChannelInfo200Response>(
+    return Response<GetSignalChannelInfo200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -216,9 +216,9 @@ class SignallingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetSignalChannels200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetSignalChannels200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetSignalChannels200Response>> oBPv600GetSignalChannels({ 
+  Future<Response<GetSignalChannels200Response>> getSignalChannels({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -245,7 +245,7 @@ class SignallingApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -262,14 +262,14 @@ class SignallingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetSignalChannels200Response? _responseData;
+    GetSignalChannels200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetSignalChannels200Response),
-      ) as OBPv600GetSignalChannels200Response;
+        specifiedType: const FullType(GetSignalChannels200Response),
+      ) as GetSignalChannels200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -281,7 +281,7 @@ class SignallingApi {
       );
     }
 
-    return Response<OBPv600GetSignalChannels200Response>(
+    return Response<GetSignalChannels200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -305,9 +305,9 @@ class SignallingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetSignalMessages200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetSignalMessages200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetSignalMessages200Response>> oBPv600GetSignalMessages({ 
+  Future<Response<GetSignalMessages200Response>> getSignalMessages({ 
     required String channelname,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -335,7 +335,7 @@ class SignallingApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -352,14 +352,14 @@ class SignallingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetSignalMessages200Response? _responseData;
+    GetSignalMessages200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetSignalMessages200Response),
-      ) as OBPv600GetSignalMessages200Response;
+        specifiedType: const FullType(GetSignalMessages200Response),
+      ) as GetSignalMessages200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -371,7 +371,7 @@ class SignallingApi {
       );
     }
 
-    return Response<OBPv600GetSignalMessages200Response>(
+    return Response<GetSignalMessages200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -394,9 +394,9 @@ class SignallingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetSignalStats200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetSignalStats200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetSignalStats200Response>> oBPv600GetSignalStats({ 
+  Future<Response<GetSignalStats200Response>> getSignalStats({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -423,7 +423,7 @@ class SignallingApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -440,14 +440,14 @@ class SignallingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetSignalStats200Response? _responseData;
+    GetSignalStats200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetSignalStats200Response),
-      ) as OBPv600GetSignalStats200Response;
+        specifiedType: const FullType(GetSignalStats200Response),
+      ) as GetSignalStats200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -459,7 +459,7 @@ class SignallingApi {
       );
     }
 
-    return Response<OBPv600GetSignalStats200Response>(
+    return Response<GetSignalStats200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -476,7 +476,7 @@ class SignallingApi {
   ///
   /// Parameters:
   /// * [channelname] - The CHANNELNAME identifier
-  /// * [oBPv600PublishSignalMessageRequest] - Request body
+  /// * [publishSignalMessageRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -484,11 +484,11 @@ class SignallingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600PublishSignalMessage200Response] as data
+  /// Returns a [Future] containing a [Response] with a [PublishSignalMessage200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600PublishSignalMessage200Response>> oBPv600PublishSignalMessage({ 
+  Future<Response<PublishSignalMessage200Response>> publishSignalMessage({ 
     required String channelname,
-    required OBPv600PublishSignalMessageRequest oBPv600PublishSignalMessageRequest,
+    required PublishSignalMessageRequest publishSignalMessageRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -515,7 +515,7 @@ class SignallingApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -528,8 +528,8 @@ class SignallingApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv600PublishSignalMessageRequest);
-      _bodyData = _serializers.serialize(oBPv600PublishSignalMessageRequest, specifiedType: _type);
+      const _type = FullType(PublishSignalMessageRequest);
+      _bodyData = _serializers.serialize(publishSignalMessageRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -552,14 +552,14 @@ class SignallingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600PublishSignalMessage200Response? _responseData;
+    PublishSignalMessage200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600PublishSignalMessage200Response),
-      ) as OBPv600PublishSignalMessage200Response;
+        specifiedType: const FullType(PublishSignalMessage200Response),
+      ) as PublishSignalMessage200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -571,7 +571,7 @@ class SignallingApi {
       );
     }
 
-    return Response<OBPv600PublishSignalMessage200Response>(
+    return Response<PublishSignalMessage200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

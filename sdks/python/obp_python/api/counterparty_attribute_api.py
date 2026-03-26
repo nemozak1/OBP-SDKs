@@ -18,9 +18,9 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv600_create_counterparty_attribute_request import OBPv600CreateCounterpartyAttributeRequest
-from obp_python.models.obpv600_get_all_counterparty_attributes200_response import OBPv600GetAllCounterpartyAttributes200Response
-from obp_python.models.obpv600_get_all_counterparty_attributes200_response_attributes_inner import OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner
+from obp_python.models.create_counterparty_attribute_request import CreateCounterpartyAttributeRequest
+from obp_python.models.get_all_counterparty_attributes200_response import GetAllCounterpartyAttributes200Response
+from obp_python.models.get_all_counterparty_attributes200_response_attributes_inner import GetAllCounterpartyAttributes200ResponseAttributesInner
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -41,12 +41,12 @@ class CounterpartyAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_counterparty_attribute(
+    def create_counterparty_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         counterpartyid: Annotated[StrictStr, Field(description="The COUNTERPARTYID identifier")],
-        obpv600_create_counterparty_attribute_request: Annotated[OBPv600CreateCounterpartyAttributeRequest, Field(description="Request body")],
+        create_counterparty_attribute_request: Annotated[CreateCounterpartyAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -59,7 +59,7 @@ class CounterpartyAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner:
+    ) -> GetAllCounterpartyAttributes200ResponseAttributesInner:
         """Create Counterparty Attribute
 
         <p>Create a new Counterparty Attribute for a given COUNTERPARTY_ID.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;.<br /> Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>attribute_type</strong></a>: STRING</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>attribute_type</strong></a>: STRING</p> <p><a href=\"/glossary#\"><strong>counterparty_attribute_id</strong></a>: counterparty_attribute_id</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -70,8 +70,8 @@ class CounterpartyAttributeApi:
         :type accountid: str
         :param counterpartyid: The COUNTERPARTYID identifier (required)
         :type counterpartyid: str
-        :param obpv600_create_counterparty_attribute_request: Request body (required)
-        :type obpv600_create_counterparty_attribute_request: OBPv600CreateCounterpartyAttributeRequest
+        :param create_counterparty_attribute_request: Request body (required)
+        :type create_counterparty_attribute_request: CreateCounterpartyAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -94,11 +94,11 @@ class CounterpartyAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_counterparty_attribute_serialize(
+        _param = self._create_counterparty_attribute_serialize(
             bankid=bankid,
             accountid=accountid,
             counterpartyid=counterpartyid,
-            obpv600_create_counterparty_attribute_request=obpv600_create_counterparty_attribute_request,
+            create_counterparty_attribute_request=create_counterparty_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -106,7 +106,7 @@ class CounterpartyAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner",
+            '200': "GetAllCounterpartyAttributes200ResponseAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -121,12 +121,12 @@ class CounterpartyAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_counterparty_attribute_with_http_info(
+    def create_counterparty_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         counterpartyid: Annotated[StrictStr, Field(description="The COUNTERPARTYID identifier")],
-        obpv600_create_counterparty_attribute_request: Annotated[OBPv600CreateCounterpartyAttributeRequest, Field(description="Request body")],
+        create_counterparty_attribute_request: Annotated[CreateCounterpartyAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -139,7 +139,7 @@ class CounterpartyAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner]:
+    ) -> ApiResponse[GetAllCounterpartyAttributes200ResponseAttributesInner]:
         """Create Counterparty Attribute
 
         <p>Create a new Counterparty Attribute for a given COUNTERPARTY_ID.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;.<br /> Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>attribute_type</strong></a>: STRING</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>attribute_type</strong></a>: STRING</p> <p><a href=\"/glossary#\"><strong>counterparty_attribute_id</strong></a>: counterparty_attribute_id</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -150,8 +150,8 @@ class CounterpartyAttributeApi:
         :type accountid: str
         :param counterpartyid: The COUNTERPARTYID identifier (required)
         :type counterpartyid: str
-        :param obpv600_create_counterparty_attribute_request: Request body (required)
-        :type obpv600_create_counterparty_attribute_request: OBPv600CreateCounterpartyAttributeRequest
+        :param create_counterparty_attribute_request: Request body (required)
+        :type create_counterparty_attribute_request: CreateCounterpartyAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -174,11 +174,11 @@ class CounterpartyAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_counterparty_attribute_serialize(
+        _param = self._create_counterparty_attribute_serialize(
             bankid=bankid,
             accountid=accountid,
             counterpartyid=counterpartyid,
-            obpv600_create_counterparty_attribute_request=obpv600_create_counterparty_attribute_request,
+            create_counterparty_attribute_request=create_counterparty_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -186,7 +186,7 @@ class CounterpartyAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner",
+            '200': "GetAllCounterpartyAttributes200ResponseAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -201,12 +201,12 @@ class CounterpartyAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_counterparty_attribute_without_preload_content(
+    def create_counterparty_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         counterpartyid: Annotated[StrictStr, Field(description="The COUNTERPARTYID identifier")],
-        obpv600_create_counterparty_attribute_request: Annotated[OBPv600CreateCounterpartyAttributeRequest, Field(description="Request body")],
+        create_counterparty_attribute_request: Annotated[CreateCounterpartyAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -230,8 +230,8 @@ class CounterpartyAttributeApi:
         :type accountid: str
         :param counterpartyid: The COUNTERPARTYID identifier (required)
         :type counterpartyid: str
-        :param obpv600_create_counterparty_attribute_request: Request body (required)
-        :type obpv600_create_counterparty_attribute_request: OBPv600CreateCounterpartyAttributeRequest
+        :param create_counterparty_attribute_request: Request body (required)
+        :type create_counterparty_attribute_request: CreateCounterpartyAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -254,11 +254,11 @@ class CounterpartyAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_counterparty_attribute_serialize(
+        _param = self._create_counterparty_attribute_serialize(
             bankid=bankid,
             accountid=accountid,
             counterpartyid=counterpartyid,
-            obpv600_create_counterparty_attribute_request=obpv600_create_counterparty_attribute_request,
+            create_counterparty_attribute_request=create_counterparty_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -266,7 +266,7 @@ class CounterpartyAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner",
+            '200': "GetAllCounterpartyAttributes200ResponseAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -276,12 +276,12 @@ class CounterpartyAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_create_counterparty_attribute_serialize(
+    def _create_counterparty_attribute_serialize(
         self,
         bankid,
         accountid,
         counterpartyid,
-        obpv600_create_counterparty_attribute_request,
+        create_counterparty_attribute_request,
         _request_auth,
         _content_type,
         _headers,
@@ -313,8 +313,8 @@ class CounterpartyAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_create_counterparty_attribute_request is not None:
-            _body_params = obpv600_create_counterparty_attribute_request
+        if create_counterparty_attribute_request is not None:
+            _body_params = create_counterparty_attribute_request
 
 
         # set the HTTP header `Accept`
@@ -365,7 +365,7 @@ class CounterpartyAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_counterparty_attribute(
+    def delete_counterparty_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -418,7 +418,7 @@ class CounterpartyAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_counterparty_attribute_serialize(
+        _param = self._delete_counterparty_attribute_serialize(
             bankid=bankid,
             accountid=accountid,
             counterpartyid=counterpartyid,
@@ -445,7 +445,7 @@ class CounterpartyAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_counterparty_attribute_with_http_info(
+    def delete_counterparty_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -498,7 +498,7 @@ class CounterpartyAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_counterparty_attribute_serialize(
+        _param = self._delete_counterparty_attribute_serialize(
             bankid=bankid,
             accountid=accountid,
             counterpartyid=counterpartyid,
@@ -525,7 +525,7 @@ class CounterpartyAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_counterparty_attribute_without_preload_content(
+    def delete_counterparty_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -578,7 +578,7 @@ class CounterpartyAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_counterparty_attribute_serialize(
+        _param = self._delete_counterparty_attribute_serialize(
             bankid=bankid,
             accountid=accountid,
             counterpartyid=counterpartyid,
@@ -600,7 +600,7 @@ class CounterpartyAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_delete_counterparty_attribute_serialize(
+    def _delete_counterparty_attribute_serialize(
         self,
         bankid,
         accountid,
@@ -669,7 +669,7 @@ class CounterpartyAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_all_counterparty_attributes(
+    def get_all_counterparty_attributes(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -686,7 +686,7 @@ class CounterpartyAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetAllCounterpartyAttributes200Response:
+    ) -> GetAllCounterpartyAttributes200Response:
         """Get All Counterparty Attributes
 
         <p>Get all attributes for the specified Counterparty.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>attribute_type</strong></a>: STRING</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>counterparty_attribute_id</strong></a>: counterparty_attribute_id</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -719,7 +719,7 @@ class CounterpartyAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_all_counterparty_attributes_serialize(
+        _param = self._get_all_counterparty_attributes_serialize(
             bankid=bankid,
             accountid=accountid,
             counterpartyid=counterpartyid,
@@ -730,7 +730,7 @@ class CounterpartyAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAllCounterpartyAttributes200Response",
+            '200': "GetAllCounterpartyAttributes200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -745,7 +745,7 @@ class CounterpartyAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_all_counterparty_attributes_with_http_info(
+    def get_all_counterparty_attributes_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -762,7 +762,7 @@ class CounterpartyAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetAllCounterpartyAttributes200Response]:
+    ) -> ApiResponse[GetAllCounterpartyAttributes200Response]:
         """Get All Counterparty Attributes
 
         <p>Get all attributes for the specified Counterparty.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>attribute_type</strong></a>: STRING</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>counterparty_attribute_id</strong></a>: counterparty_attribute_id</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -795,7 +795,7 @@ class CounterpartyAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_all_counterparty_attributes_serialize(
+        _param = self._get_all_counterparty_attributes_serialize(
             bankid=bankid,
             accountid=accountid,
             counterpartyid=counterpartyid,
@@ -806,7 +806,7 @@ class CounterpartyAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAllCounterpartyAttributes200Response",
+            '200': "GetAllCounterpartyAttributes200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -821,7 +821,7 @@ class CounterpartyAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_all_counterparty_attributes_without_preload_content(
+    def get_all_counterparty_attributes_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -871,7 +871,7 @@ class CounterpartyAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_all_counterparty_attributes_serialize(
+        _param = self._get_all_counterparty_attributes_serialize(
             bankid=bankid,
             accountid=accountid,
             counterpartyid=counterpartyid,
@@ -882,7 +882,7 @@ class CounterpartyAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAllCounterpartyAttributes200Response",
+            '200': "GetAllCounterpartyAttributes200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -892,7 +892,7 @@ class CounterpartyAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_all_counterparty_attributes_serialize(
+    def _get_all_counterparty_attributes_serialize(
         self,
         bankid,
         accountid,
@@ -965,7 +965,7 @@ class CounterpartyAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_counterparty_attribute_by_id(
+    def get_counterparty_attribute_by_id(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -983,7 +983,7 @@ class CounterpartyAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner:
+    ) -> GetAllCounterpartyAttributes200ResponseAttributesInner:
         """Get Counterparty Attribute By ID
 
         <p>Get a specific Counterparty Attribute by its COUNTERPARTY_ATTRIBUTE_ID.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ATTRIBUTE_ID</a>: COUNTERPARTY_ATTRIBUTE_ID</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>attribute_type</strong></a>: STRING</p> <p><a href=\"/glossary#\"><strong>counterparty_attribute_id</strong></a>: counterparty_attribute_id</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -1018,7 +1018,7 @@ class CounterpartyAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_counterparty_attribute_by_id_serialize(
+        _param = self._get_counterparty_attribute_by_id_serialize(
             bankid=bankid,
             accountid=accountid,
             counterpartyid=counterpartyid,
@@ -1030,7 +1030,7 @@ class CounterpartyAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner",
+            '200': "GetAllCounterpartyAttributes200ResponseAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1045,7 +1045,7 @@ class CounterpartyAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_counterparty_attribute_by_id_with_http_info(
+    def get_counterparty_attribute_by_id_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1063,7 +1063,7 @@ class CounterpartyAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner]:
+    ) -> ApiResponse[GetAllCounterpartyAttributes200ResponseAttributesInner]:
         """Get Counterparty Attribute By ID
 
         <p>Get a specific Counterparty Attribute by its COUNTERPARTY_ATTRIBUTE_ID.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ATTRIBUTE_ID</a>: COUNTERPARTY_ATTRIBUTE_ID</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>attribute_type</strong></a>: STRING</p> <p><a href=\"/glossary#\"><strong>counterparty_attribute_id</strong></a>: counterparty_attribute_id</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -1098,7 +1098,7 @@ class CounterpartyAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_counterparty_attribute_by_id_serialize(
+        _param = self._get_counterparty_attribute_by_id_serialize(
             bankid=bankid,
             accountid=accountid,
             counterpartyid=counterpartyid,
@@ -1110,7 +1110,7 @@ class CounterpartyAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner",
+            '200': "GetAllCounterpartyAttributes200ResponseAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1125,7 +1125,7 @@ class CounterpartyAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_counterparty_attribute_by_id_without_preload_content(
+    def get_counterparty_attribute_by_id_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1178,7 +1178,7 @@ class CounterpartyAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_counterparty_attribute_by_id_serialize(
+        _param = self._get_counterparty_attribute_by_id_serialize(
             bankid=bankid,
             accountid=accountid,
             counterpartyid=counterpartyid,
@@ -1190,7 +1190,7 @@ class CounterpartyAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner",
+            '200': "GetAllCounterpartyAttributes200ResponseAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1200,7 +1200,7 @@ class CounterpartyAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_counterparty_attribute_by_id_serialize(
+    def _get_counterparty_attribute_by_id_serialize(
         self,
         bankid,
         accountid,
@@ -1276,13 +1276,13 @@ class CounterpartyAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_counterparty_attribute(
+    def update_counterparty_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         counterpartyid: Annotated[StrictStr, Field(description="The COUNTERPARTYID identifier")],
         counterpartyattributeid: Annotated[StrictStr, Field(description="The COUNTERPARTYATTRIBUTEID identifier")],
-        obpv600_create_counterparty_attribute_request: Annotated[OBPv600CreateCounterpartyAttributeRequest, Field(description="Request body")],
+        create_counterparty_attribute_request: Annotated[CreateCounterpartyAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1295,7 +1295,7 @@ class CounterpartyAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner:
+    ) -> GetAllCounterpartyAttributes200ResponseAttributesInner:
         """Update Counterparty Attribute
 
         <p>Update an existing Counterparty Attribute specified by COUNTERPARTY_ATTRIBUTE_ID.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ATTRIBUTE_ID</a>: COUNTERPARTY_ATTRIBUTE_ID</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>attribute_type</strong></a>: STRING</p> <p><a href=\"/glossary#\"><strong>counterparty_attribute_id</strong></a>: counterparty_attribute_id</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -1308,8 +1308,8 @@ class CounterpartyAttributeApi:
         :type counterpartyid: str
         :param counterpartyattributeid: The COUNTERPARTYATTRIBUTEID identifier (required)
         :type counterpartyattributeid: str
-        :param obpv600_create_counterparty_attribute_request: Request body (required)
-        :type obpv600_create_counterparty_attribute_request: OBPv600CreateCounterpartyAttributeRequest
+        :param create_counterparty_attribute_request: Request body (required)
+        :type create_counterparty_attribute_request: CreateCounterpartyAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1332,12 +1332,12 @@ class CounterpartyAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_counterparty_attribute_serialize(
+        _param = self._update_counterparty_attribute_serialize(
             bankid=bankid,
             accountid=accountid,
             counterpartyid=counterpartyid,
             counterpartyattributeid=counterpartyattributeid,
-            obpv600_create_counterparty_attribute_request=obpv600_create_counterparty_attribute_request,
+            create_counterparty_attribute_request=create_counterparty_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1345,7 +1345,7 @@ class CounterpartyAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner",
+            '200': "GetAllCounterpartyAttributes200ResponseAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1360,13 +1360,13 @@ class CounterpartyAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_counterparty_attribute_with_http_info(
+    def update_counterparty_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         counterpartyid: Annotated[StrictStr, Field(description="The COUNTERPARTYID identifier")],
         counterpartyattributeid: Annotated[StrictStr, Field(description="The COUNTERPARTYATTRIBUTEID identifier")],
-        obpv600_create_counterparty_attribute_request: Annotated[OBPv600CreateCounterpartyAttributeRequest, Field(description="Request body")],
+        create_counterparty_attribute_request: Annotated[CreateCounterpartyAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1379,7 +1379,7 @@ class CounterpartyAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner]:
+    ) -> ApiResponse[GetAllCounterpartyAttributes200ResponseAttributesInner]:
         """Update Counterparty Attribute
 
         <p>Update an existing Counterparty Attribute specified by COUNTERPARTY_ATTRIBUTE_ID.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ATTRIBUTE_ID</a>: COUNTERPARTY_ATTRIBUTE_ID</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>attribute_type</strong></a>: STRING</p> <p><a href=\"/glossary#\"><strong>counterparty_attribute_id</strong></a>: counterparty_attribute_id</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -1392,8 +1392,8 @@ class CounterpartyAttributeApi:
         :type counterpartyid: str
         :param counterpartyattributeid: The COUNTERPARTYATTRIBUTEID identifier (required)
         :type counterpartyattributeid: str
-        :param obpv600_create_counterparty_attribute_request: Request body (required)
-        :type obpv600_create_counterparty_attribute_request: OBPv600CreateCounterpartyAttributeRequest
+        :param create_counterparty_attribute_request: Request body (required)
+        :type create_counterparty_attribute_request: CreateCounterpartyAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1416,12 +1416,12 @@ class CounterpartyAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_counterparty_attribute_serialize(
+        _param = self._update_counterparty_attribute_serialize(
             bankid=bankid,
             accountid=accountid,
             counterpartyid=counterpartyid,
             counterpartyattributeid=counterpartyattributeid,
-            obpv600_create_counterparty_attribute_request=obpv600_create_counterparty_attribute_request,
+            create_counterparty_attribute_request=create_counterparty_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1429,7 +1429,7 @@ class CounterpartyAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner",
+            '200': "GetAllCounterpartyAttributes200ResponseAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1444,13 +1444,13 @@ class CounterpartyAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_counterparty_attribute_without_preload_content(
+    def update_counterparty_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         counterpartyid: Annotated[StrictStr, Field(description="The COUNTERPARTYID identifier")],
         counterpartyattributeid: Annotated[StrictStr, Field(description="The COUNTERPARTYATTRIBUTEID identifier")],
-        obpv600_create_counterparty_attribute_request: Annotated[OBPv600CreateCounterpartyAttributeRequest, Field(description="Request body")],
+        create_counterparty_attribute_request: Annotated[CreateCounterpartyAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1476,8 +1476,8 @@ class CounterpartyAttributeApi:
         :type counterpartyid: str
         :param counterpartyattributeid: The COUNTERPARTYATTRIBUTEID identifier (required)
         :type counterpartyattributeid: str
-        :param obpv600_create_counterparty_attribute_request: Request body (required)
-        :type obpv600_create_counterparty_attribute_request: OBPv600CreateCounterpartyAttributeRequest
+        :param create_counterparty_attribute_request: Request body (required)
+        :type create_counterparty_attribute_request: CreateCounterpartyAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1500,12 +1500,12 @@ class CounterpartyAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_counterparty_attribute_serialize(
+        _param = self._update_counterparty_attribute_serialize(
             bankid=bankid,
             accountid=accountid,
             counterpartyid=counterpartyid,
             counterpartyattributeid=counterpartyattributeid,
-            obpv600_create_counterparty_attribute_request=obpv600_create_counterparty_attribute_request,
+            create_counterparty_attribute_request=create_counterparty_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1513,7 +1513,7 @@ class CounterpartyAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner",
+            '200': "GetAllCounterpartyAttributes200ResponseAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1523,13 +1523,13 @@ class CounterpartyAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_update_counterparty_attribute_serialize(
+    def _update_counterparty_attribute_serialize(
         self,
         bankid,
         accountid,
         counterpartyid,
         counterpartyattributeid,
-        obpv600_create_counterparty_attribute_request,
+        create_counterparty_attribute_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1563,8 +1563,8 @@ class CounterpartyAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_create_counterparty_attribute_request is not None:
-            _body_params = obpv600_create_counterparty_attribute_request
+        if create_counterparty_attribute_request is not None:
+            _body_params = create_counterparty_attribute_request
 
 
         # set the HTTP header `Accept`

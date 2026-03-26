@@ -13,10 +13,10 @@ open class CacheAPI {
      Get Cache Configuration
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetCacheConfig200Response
+     - returns: GetCacheConfig200Response
      */
-    open class func oBPv600GetCacheConfig(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetCacheConfig200Response {
-        return try await oBPv600GetCacheConfigWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getCacheConfig(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCacheConfig200Response {
+        return try await getCacheConfigWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -30,12 +30,12 @@ open class CacheAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetCacheConfig200Response> 
+     - returns: RequestBuilder<GetCacheConfig200Response> 
      */
-    open class func oBPv600GetCacheConfigWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetCacheConfig200Response> {
+    open class func getCacheConfigWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCacheConfig200Response> {
         let localVariablePath = "/obp/v6.0.0/system/cache/config"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -48,7 +48,7 @@ open class CacheAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetCacheConfig200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetCacheConfig200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -57,10 +57,10 @@ open class CacheAPI {
      Get Cache Information
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetCacheInfo200Response
+     - returns: GetCacheInfo200Response
      */
-    open class func oBPv600GetCacheInfo(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetCacheInfo200Response {
-        return try await oBPv600GetCacheInfoWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getCacheInfo(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCacheInfo200Response {
+        return try await getCacheInfoWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -74,12 +74,12 @@ open class CacheAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetCacheInfo200Response> 
+     - returns: RequestBuilder<GetCacheInfo200Response> 
      */
-    open class func oBPv600GetCacheInfoWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetCacheInfo200Response> {
+    open class func getCacheInfoWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCacheInfo200Response> {
         let localVariablePath = "/obp/v6.0.0/system/cache/info"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -92,7 +92,7 @@ open class CacheAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetCacheInfo200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetCacheInfo200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -101,10 +101,10 @@ open class CacheAPI {
      Get Cache Namespaces
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetCacheNamespaces200Response
+     - returns: GetCacheNamespaces200Response
      */
-    open class func oBPv600GetCacheNamespaces(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetCacheNamespaces200Response {
-        return try await oBPv600GetCacheNamespacesWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getCacheNamespaces(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCacheNamespaces200Response {
+        return try await getCacheNamespacesWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -118,12 +118,12 @@ open class CacheAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetCacheNamespaces200Response> 
+     - returns: RequestBuilder<GetCacheNamespaces200Response> 
      */
-    open class func oBPv600GetCacheNamespacesWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetCacheNamespaces200Response> {
+    open class func getCacheNamespacesWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCacheNamespaces200Response> {
         let localVariablePath = "/obp/v6.0.0/system/cache/namespaces"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -136,7 +136,7 @@ open class CacheAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetCacheNamespaces200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetCacheNamespaces200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -144,12 +144,12 @@ open class CacheAPI {
     /**
      Invalidate Cache Namespace
      
-     - parameter oBPv600InvalidateCacheNamespaceRequest: (body) Request body 
+     - parameter invalidateCacheNamespaceRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600InvalidateCacheNamespace200Response
+     - returns: InvalidateCacheNamespace200Response
      */
-    open class func oBPv600InvalidateCacheNamespace(oBPv600InvalidateCacheNamespaceRequest: OBPv600InvalidateCacheNamespaceRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600InvalidateCacheNamespace200Response {
-        return try await oBPv600InvalidateCacheNamespaceWithRequestBuilder(oBPv600InvalidateCacheNamespaceRequest: oBPv600InvalidateCacheNamespaceRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func invalidateCacheNamespace(invalidateCacheNamespaceRequest: InvalidateCacheNamespaceRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> InvalidateCacheNamespace200Response {
+        return try await invalidateCacheNamespaceWithRequestBuilder(invalidateCacheNamespaceRequest: invalidateCacheNamespaceRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -163,16 +163,16 @@ open class CacheAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
-     - parameter oBPv600InvalidateCacheNamespaceRequest: (body) Request body 
+     - parameter invalidateCacheNamespaceRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600InvalidateCacheNamespace200Response> 
+     - returns: RequestBuilder<InvalidateCacheNamespace200Response> 
      */
-    open class func oBPv600InvalidateCacheNamespaceWithRequestBuilder(oBPv600InvalidateCacheNamespaceRequest: OBPv600InvalidateCacheNamespaceRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600InvalidateCacheNamespace200Response> {
+    open class func invalidateCacheNamespaceWithRequestBuilder(invalidateCacheNamespaceRequest: InvalidateCacheNamespaceRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<InvalidateCacheNamespace200Response> {
         let localVariablePath = "/obp/v6.0.0/management/cache/namespaces/invalidate"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600InvalidateCacheNamespaceRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: invalidateCacheNamespaceRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -182,7 +182,7 @@ open class CacheAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600InvalidateCacheNamespace200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<InvalidateCacheNamespace200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

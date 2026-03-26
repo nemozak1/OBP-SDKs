@@ -4,15 +4,15 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv1_4_0_add_customer_message**](PersonApi.md#o_bpv1_4_0_add_customer_message) | **POST** /obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages | Create Customer Message
-[**o_bpv4_0_0_create_customer_message**](PersonApi.md#o_bpv4_0_0_create_customer_message) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Create Customer Message
-[**o_bpv5_1_0_create_agent**](PersonApi.md#o_bpv5_1_0_create_agent) | **POST** /obp/v5.1.0/banks/{bankid}/agents | Create Agent
-[**o_bpv5_1_0_update_agent_status**](PersonApi.md#o_bpv5_1_0_update_agent_status) | **PUT** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Update Agent status
-[**o_bpv6_0_0_create_customer**](PersonApi.md#o_bpv6_0_0_create_customer) | **POST** /obp/v6.0.0/banks/{bankid}/customers | Create Customer
+[**add_customer_message**](PersonApi.md#add_customer_message) | **POST** /obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages | Create Customer Message
+[**create_agent**](PersonApi.md#create_agent) | **POST** /obp/v5.1.0/banks/{bankid}/agents | Create Agent
+[**create_customer**](PersonApi.md#create_customer) | **POST** /obp/v6.0.0/banks/{bankid}/customers | Create Customer
+[**create_customer_message**](PersonApi.md#create_customer_message) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Create Customer Message
+[**update_agent_status**](PersonApi.md#update_agent_status) | **PUT** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Update Agent status
 
 
-# **o_bpv1_4_0_add_customer_message**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_4_0_add_customer_message(bankid, customerid, obpv140_add_customer_message_request)
+# **add_customer_message**
+> UpdateTransactionNarrative200Response add_customer_message(bankid, customerid, add_customer_message_request)
 
 Create Customer Message
 
@@ -37,8 +37,8 @@ Create Customer Message
 
 ```python
 import obp_python
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.models.obpv140_add_customer_message_request import OBPv140AddCustomerMessageRequest
+from obp_python.models.add_customer_message_request import AddCustomerMessageRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -73,15 +73,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.PersonApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     customerid = 'customerid_example' # str | The CUSTOMERID identifier
-    obpv140_add_customer_message_request = {"type":"object","properties":{"message":{"type":"string"},"from_department":{"type":"string"},"from_person":{"type":"string"}}} # OBPv140AddCustomerMessageRequest | Request body
+    add_customer_message_request = {"type":"object","properties":{"message":{"type":"string"},"from_department":{"type":"string"},"from_person":{"type":"string"}}} # AddCustomerMessageRequest | Request body
 
     try:
         # Create Customer Message
-        api_response = api_instance.o_bpv1_4_0_add_customer_message(bankid, customerid, obpv140_add_customer_message_request)
-        print("The response of PersonApi->o_bpv1_4_0_add_customer_message:\n")
+        api_response = api_instance.add_customer_message(bankid, customerid, add_customer_message_request)
+        print("The response of PersonApi->add_customer_message:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PersonApi->o_bpv1_4_0_add_customer_message: %s\n" % e)
+        print("Exception when calling PersonApi->add_customer_message: %s\n" % e)
 ```
 
 
@@ -93,11 +93,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **customerid** | **str**| The CUSTOMERID identifier | 
- **obpv140_add_customer_message_request** | [**OBPv140AddCustomerMessageRequest**](OBPv140AddCustomerMessageRequest.md)| Request body | 
+ **add_customer_message_request** | [**AddCustomerMessageRequest**](AddCustomerMessageRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -117,116 +117,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_create_customer_message**
-> OBPv121UpdateTransactionNarrative200Response o_bpv4_0_0_create_customer_message(bankid, customerid, obpv400_create_customer_message_request)
-
-Create Customer Message
-
-<p>Create a message for the customer specified by CUSTOMER_ID<br />
-User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#Customer.customer_id">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#from_department"><strong>from_department</strong></a>: Open Bank</p>
-<p><a href="/glossary#from_person"><strong>from_person</strong></a>: Tom</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#transport"><strong>transport</strong></a>: SMS</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.models.obpv400_create_customer_message_request import OBPv400CreateCustomerMessageRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.PersonApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    customerid = 'customerid_example' # str | The CUSTOMERID identifier
-    obpv400_create_customer_message_request = {"type":"object","properties":{"message":{"type":"string"},"transport":{"type":"string"},"from_person":{"type":"string"},"from_department":{"type":"string"}}} # OBPv400CreateCustomerMessageRequest | Request body
-
-    try:
-        # Create Customer Message
-        api_response = api_instance.o_bpv4_0_0_create_customer_message(bankid, customerid, obpv400_create_customer_message_request)
-        print("The response of PersonApi->o_bpv4_0_0_create_customer_message:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling PersonApi->o_bpv4_0_0_create_customer_message: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **customerid** | **str**| The CUSTOMERID identifier | 
- **obpv400_create_customer_message_request** | [**OBPv400CreateCustomerMessageRequest**](OBPv400CreateCustomerMessageRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_create_agent**
-> OBPv510GetAgent200Response o_bpv5_1_0_create_agent(bankid, obpv510_create_agent_request)
+# **create_agent**
+> GetAgent200Response create_agent(bankid, create_agent_request)
 
 Create Agent
 
@@ -257,8 +149,8 @@ Create Agent
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_agent_request import OBPv510CreateAgentRequest
-from obp_python.models.obpv510_get_agent200_response import OBPv510GetAgent200Response
+from obp_python.models.create_agent_request import CreateAgentRequest
+from obp_python.models.get_agent200_response import GetAgent200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -292,15 +184,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.PersonApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv510_create_agent_request = {"type":"object","properties":{"currency":{"type":"string"},"legal_name":{"type":"string"},"agent_number":{"type":"string"},"mobile_phone_number":{"type":"string"}}} # OBPv510CreateAgentRequest | Request body
+    create_agent_request = {"type":"object","properties":{"currency":{"type":"string"},"legal_name":{"type":"string"},"agent_number":{"type":"string"},"mobile_phone_number":{"type":"string"}}} # CreateAgentRequest | Request body
 
     try:
         # Create Agent
-        api_response = api_instance.o_bpv5_1_0_create_agent(bankid, obpv510_create_agent_request)
-        print("The response of PersonApi->o_bpv5_1_0_create_agent:\n")
+        api_response = api_instance.create_agent(bankid, create_agent_request)
+        print("The response of PersonApi->create_agent:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PersonApi->o_bpv5_1_0_create_agent: %s\n" % e)
+        print("Exception when calling PersonApi->create_agent: %s\n" % e)
 ```
 
 
@@ -311,11 +203,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv510_create_agent_request** | [**OBPv510CreateAgentRequest**](OBPv510CreateAgentRequest.md)| Request body | 
+ **create_agent_request** | [**CreateAgentRequest**](CreateAgentRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetAgent200Response**](OBPv510GetAgent200Response.md)
+[**GetAgent200Response**](GetAgent200Response.md)
 
 ### Authorization
 
@@ -336,117 +228,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_update_agent_status**
-> OBPv510GetAgent200Response o_bpv5_1_0_update_agent_status(bankid, agentid, obpv510_update_agent_status_request)
-
-Update Agent status
-
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">AGENT_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>agent_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>is_confirmed_agent</strong></a>: is_confirmed_agent</p>
-<p><a href="/glossary#"><strong>is_pending_agent</strong></a>: is_pending_agent</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_get_agent200_response import OBPv510GetAgent200Response
-from obp_python.models.obpv510_update_agent_status_request import OBPv510UpdateAgentStatusRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.PersonApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    agentid = 'agentid_example' # str | The AGENTID identifier
-    obpv510_update_agent_status_request = {"type":"object","properties":{"is_pending_agent":{"type":"boolean"},"is_confirmed_agent":{"type":"boolean"}}} # OBPv510UpdateAgentStatusRequest | Request body
-
-    try:
-        # Update Agent status
-        api_response = api_instance.o_bpv5_1_0_update_agent_status(bankid, agentid, obpv510_update_agent_status_request)
-        print("The response of PersonApi->o_bpv5_1_0_update_agent_status:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling PersonApi->o_bpv5_1_0_update_agent_status: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **agentid** | **str**| The AGENTID identifier | 
- **obpv510_update_agent_status_request** | [**OBPv510UpdateAgentStatusRequest**](OBPv510UpdateAgentStatusRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv510GetAgent200Response**](OBPv510GetAgent200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_create_customer**
-> OBPv600GetCustomerChildren200ResponseCustomersInner o_bpv6_0_0_create_customer(bankid, obpv600_create_customer_request)
+# **create_customer**
+> GetCustomerChildren200ResponseCustomersInner create_customer(bankid, create_customer_request)
 
 Create Customer
 
@@ -554,8 +337,8 @@ Dates are stored with time set to midnight (00:00:00) UTC for consistency.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_create_customer_request import OBPv600CreateCustomerRequest
-from obp_python.models.obpv600_get_customer_children200_response_customers_inner import OBPv600GetCustomerChildren200ResponseCustomersInner
+from obp_python.models.create_customer_request import CreateCustomerRequest
+from obp_python.models.get_customer_children200_response_customers_inner import GetCustomerChildren200ResponseCustomersInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -589,15 +372,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.PersonApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv600_create_customer_request = {"type":"object","properties":{"relationship_status":{"type":"string"},"name_suffix":{"type":"string"},"highest_education_attained":{"type":"string"},"last_ok_date":{"type":"string","format":"date-time"},"credit_limit":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"date_of_birth":{"type":"string","format":"date-time"},"title":{"type":"string"},"face_image":{"type":"object","properties":{"url":{"type":"string"},"date":{"type":"string","format":"date-time"}}},"dob_of_dependants":{"type":"array","items":{"type":"string"}},"credit_rating":{"type":"object","properties":{"rating":{"type":"string"},"source":{"type":"string"}}},"email":{"type":"string"},"customer_number":{"type":"string"},"kyc_status":{"type":"boolean"},"customer_type":{"type":"string"},"legal_name":{"type":"string"},"branch_id":{"type":"string"},"employment_status":{"type":"string"},"mobile_phone_number":{"type":"string"},"dependants":{"type":"integer"}}} # OBPv600CreateCustomerRequest | Request body
+    create_customer_request = {"type":"object","properties":{"relationship_status":{"type":"string"},"name_suffix":{"type":"string"},"highest_education_attained":{"type":"string"},"last_ok_date":{"type":"string","format":"date-time"},"credit_limit":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"date_of_birth":{"type":"string","format":"date-time"},"title":{"type":"string"},"face_image":{"type":"object","properties":{"url":{"type":"string"},"date":{"type":"string","format":"date-time"}}},"dob_of_dependants":{"type":"array","items":{"type":"string"}},"credit_rating":{"type":"object","properties":{"rating":{"type":"string"},"source":{"type":"string"}}},"email":{"type":"string"},"customer_number":{"type":"string"},"kyc_status":{"type":"boolean"},"customer_type":{"type":"string"},"legal_name":{"type":"string"},"branch_id":{"type":"string"},"employment_status":{"type":"string"},"mobile_phone_number":{"type":"string"},"dependants":{"type":"integer"}}} # CreateCustomerRequest | Request body
 
     try:
         # Create Customer
-        api_response = api_instance.o_bpv6_0_0_create_customer(bankid, obpv600_create_customer_request)
-        print("The response of PersonApi->o_bpv6_0_0_create_customer:\n")
+        api_response = api_instance.create_customer(bankid, create_customer_request)
+        print("The response of PersonApi->create_customer:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PersonApi->o_bpv6_0_0_create_customer: %s\n" % e)
+        print("Exception when calling PersonApi->create_customer: %s\n" % e)
 ```
 
 
@@ -608,11 +391,228 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv600_create_customer_request** | [**OBPv600CreateCustomerRequest**](OBPv600CreateCustomerRequest.md)| Request body | 
+ **create_customer_request** | [**CreateCustomerRequest**](CreateCustomerRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200ResponseCustomersInner**](OBPv600GetCustomerChildren200ResponseCustomersInner.md)
+[**GetCustomerChildren200ResponseCustomersInner**](GetCustomerChildren200ResponseCustomersInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_customer_message**
+> UpdateTransactionNarrative200Response create_customer_message(bankid, customerid, create_customer_message_request)
+
+Create Customer Message
+
+<p>Create a message for the customer specified by CUSTOMER_ID<br />
+User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#Customer.customer_id">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#from_department"><strong>from_department</strong></a>: Open Bank</p>
+<p><a href="/glossary#from_person"><strong>from_person</strong></a>: Tom</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#transport"><strong>transport</strong></a>: SMS</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_customer_message_request import CreateCustomerMessageRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.PersonApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    customerid = 'customerid_example' # str | The CUSTOMERID identifier
+    create_customer_message_request = {"type":"object","properties":{"message":{"type":"string"},"transport":{"type":"string"},"from_person":{"type":"string"},"from_department":{"type":"string"}}} # CreateCustomerMessageRequest | Request body
+
+    try:
+        # Create Customer Message
+        api_response = api_instance.create_customer_message(bankid, customerid, create_customer_message_request)
+        print("The response of PersonApi->create_customer_message:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PersonApi->create_customer_message: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **customerid** | **str**| The CUSTOMERID identifier | 
+ **create_customer_message_request** | [**CreateCustomerMessageRequest**](CreateCustomerMessageRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_agent_status**
+> GetAgent200Response update_agent_status(bankid, agentid, update_agent_status_request)
+
+Update Agent status
+
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">AGENT_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>agent_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>is_confirmed_agent</strong></a>: is_confirmed_agent</p>
+<p><a href="/glossary#"><strong>is_pending_agent</strong></a>: is_pending_agent</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_agent200_response import GetAgent200Response
+from obp_python.models.update_agent_status_request import UpdateAgentStatusRequest
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.PersonApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    agentid = 'agentid_example' # str | The AGENTID identifier
+    update_agent_status_request = {"type":"object","properties":{"is_pending_agent":{"type":"boolean"},"is_confirmed_agent":{"type":"boolean"}}} # UpdateAgentStatusRequest | Request body
+
+    try:
+        # Update Agent status
+        api_response = api_instance.update_agent_status(bankid, agentid, update_agent_status_request)
+        print("The response of PersonApi->update_agent_status:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PersonApi->update_agent_status: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **agentid** | **str**| The AGENTID identifier | 
+ **update_agent_status_request** | [**UpdateAgentStatusRequest**](UpdateAgentStatusRequest.md)| Request body | 
+
+### Return type
+
+[**GetAgent200Response**](GetAgent200Response.md)
 
 ### Authorization
 

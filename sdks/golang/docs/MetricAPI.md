@@ -1,25 +1,25 @@
 # \MetricAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv200ElasticSearchMetrics**](MetricAPI.md#OBPv200ElasticSearchMetrics) | **Get** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
-[**OBPv220GetConnectorMetrics**](MetricAPI.md#OBPv220GetConnectorMetrics) | **Get** /obp/v2.2.0/management/connector/metrics | Get Connector Metrics
-[**OBPv310GetMetricsTopConsumers**](MetricAPI.md#OBPv310GetMetricsTopConsumers) | **Get** /obp/v3.1.0/management/metrics/top-consumers | Get Top Consumers
-[**OBPv500GetMetricsAtBank**](MetricAPI.md#OBPv500GetMetricsAtBank) | **Get** /obp/v5.0.0/management/metrics/banks/{bankid} | Get Metrics at Bank
-[**OBPv600GetAggregateMetrics**](MetricAPI.md#OBPv600GetAggregateMetrics) | **Get** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
-[**OBPv600GetConnectorCallCounts**](MetricAPI.md#OBPv600GetConnectorCallCounts) | **Get** /obp/v6.0.0/management/connector/metrics/counts | Get Connector Call Counts
-[**OBPv600GetConnectorTraces**](MetricAPI.md#OBPv600GetConnectorTraces) | **Get** /obp/v6.0.0/management/connector/traces | Get Connector Traces
-[**OBPv600GetMetrics**](MetricAPI.md#OBPv600GetMetrics) | **Get** /obp/v6.0.0/management/metrics | Get Metrics
-[**OBPv600GetPopularApis**](MetricAPI.md#OBPv600GetPopularApis) | **Get** /obp/v6.0.0/api/popular-endpoints | Get Popular Endpoints
-[**OBPv600GetTopAPIs**](MetricAPI.md#OBPv600GetTopAPIs) | **Get** /obp/v6.0.0/management/metrics/top-apis | Get Top APIs
+[**ElasticSearchMetrics**](MetricAPI.md#ElasticSearchMetrics) | **Get** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
+[**GetAggregateMetrics**](MetricAPI.md#GetAggregateMetrics) | **Get** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
+[**GetConnectorCallCounts**](MetricAPI.md#GetConnectorCallCounts) | **Get** /obp/v6.0.0/management/connector/metrics/counts | Get Connector Call Counts
+[**GetConnectorMetrics**](MetricAPI.md#GetConnectorMetrics) | **Get** /obp/v2.2.0/management/connector/metrics | Get Connector Metrics
+[**GetConnectorTraces**](MetricAPI.md#GetConnectorTraces) | **Get** /obp/v6.0.0/management/connector/traces | Get Connector Traces
+[**GetMetrics**](MetricAPI.md#GetMetrics) | **Get** /obp/v6.0.0/management/metrics | Get Metrics
+[**GetMetricsAtBank**](MetricAPI.md#GetMetricsAtBank) | **Get** /obp/v5.0.0/management/metrics/banks/{bankid} | Get Metrics at Bank
+[**GetMetricsTopConsumers**](MetricAPI.md#GetMetricsTopConsumers) | **Get** /obp/v3.1.0/management/metrics/top-consumers | Get Top Consumers
+[**GetPopularApis**](MetricAPI.md#GetPopularApis) | **Get** /obp/v6.0.0/api/popular-endpoints | Get Popular Endpoints
+[**GetTopAPIs**](MetricAPI.md#GetTopAPIs) | **Get** /obp/v6.0.0/management/metrics/top-apis | Get Top APIs
 
 
 
-## OBPv200ElasticSearchMetrics
+## ElasticSearchMetrics
 
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage OBPv200ElasticSearchMetrics(ctx).Execute()
+> map[string]interface{} ElasticSearchMetrics(ctx).Execute()
 
 Search API Metrics via Elasticsearch
 
@@ -41,13 +41,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricAPI.OBPv200ElasticSearchMetrics(context.Background()).Execute()
+	resp, r, err := apiClient.MetricAPI.ElasticSearchMetrics(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.OBPv200ElasticSearchMetrics``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.ElasticSearchMetrics``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv200ElasticSearchMetrics`: OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
-	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.OBPv200ElasticSearchMetrics`: %v\n", resp)
+	// response from `ElasticSearchMetrics`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.ElasticSearchMetrics`: %v\n", resp)
 }
 ```
 
@@ -57,12 +57,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv200ElasticSearchMetricsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiElasticSearchMetricsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**map[string]interface{}**
 
 ### Authorization
 
@@ -78,9 +78,131 @@ Other parameters are passed through a pointer to a apiOBPv200ElasticSearchMetric
 [[Back to README]](../README.md)
 
 
-## OBPv220GetConnectorMetrics
+## GetAggregateMetrics
 
-> OBPv220GetConnectorMetrics200Response OBPv220GetConnectorMetrics(ctx).Execute()
+> GetAggregateMetrics200Response GetAggregateMetrics(ctx).Execute()
+
+Get Aggregate Metrics
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetricAPI.GetAggregateMetrics(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.GetAggregateMetrics``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAggregateMetrics`: GetAggregateMetrics200Response
+	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.GetAggregateMetrics`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAggregateMetricsRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetAggregateMetrics200Response**](GetAggregateMetrics200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetConnectorCallCounts
+
+> GetConnectorCallCounts200Response GetConnectorCallCounts(ctx).Execute()
+
+Get Connector Call Counts
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetricAPI.GetConnectorCallCounts(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.GetConnectorCallCounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetConnectorCallCounts`: GetConnectorCallCounts200Response
+	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.GetConnectorCallCounts`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetConnectorCallCountsRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetConnectorCallCounts200Response**](GetConnectorCallCounts200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetConnectorMetrics
+
+> GetConnectorMetrics200Response GetConnectorMetrics(ctx).Execute()
 
 Get Connector Metrics
 
@@ -102,13 +224,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricAPI.OBPv220GetConnectorMetrics(context.Background()).Execute()
+	resp, r, err := apiClient.MetricAPI.GetConnectorMetrics(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.OBPv220GetConnectorMetrics``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.GetConnectorMetrics``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv220GetConnectorMetrics`: OBPv220GetConnectorMetrics200Response
-	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.OBPv220GetConnectorMetrics`: %v\n", resp)
+	// response from `GetConnectorMetrics`: GetConnectorMetrics200Response
+	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.GetConnectorMetrics`: %v\n", resp)
 }
 ```
 
@@ -118,12 +240,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv220GetConnectorMetricsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetConnectorMetricsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv220GetConnectorMetrics200Response**](OBPv220GetConnectorMetrics200Response.md)
+[**GetConnectorMetrics200Response**](GetConnectorMetrics200Response.md)
 
 ### Authorization
 
@@ -139,11 +261,11 @@ Other parameters are passed through a pointer to a apiOBPv220GetConnectorMetrics
 [[Back to README]](../README.md)
 
 
-## OBPv310GetMetricsTopConsumers
+## GetConnectorTraces
 
-> OBPv310GetMetricsTopConsumers200Response OBPv310GetMetricsTopConsumers(ctx).Execute()
+> GetConnectorTraces200Response GetConnectorTraces(ctx).Execute()
 
-Get Top Consumers
+Get Connector Traces
 
 
 
@@ -163,13 +285,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricAPI.OBPv310GetMetricsTopConsumers(context.Background()).Execute()
+	resp, r, err := apiClient.MetricAPI.GetConnectorTraces(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.OBPv310GetMetricsTopConsumers``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.GetConnectorTraces``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310GetMetricsTopConsumers`: OBPv310GetMetricsTopConsumers200Response
-	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.OBPv310GetMetricsTopConsumers`: %v\n", resp)
+	// response from `GetConnectorTraces`: GetConnectorTraces200Response
+	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.GetConnectorTraces`: %v\n", resp)
 }
 ```
 
@@ -179,12 +301,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310GetMetricsTopConsumersRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetConnectorTracesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv310GetMetricsTopConsumers200Response**](OBPv310GetMetricsTopConsumers200Response.md)
+[**GetConnectorTraces200Response**](GetConnectorTraces200Response.md)
 
 ### Authorization
 
@@ -200,9 +322,70 @@ Other parameters are passed through a pointer to a apiOBPv310GetMetricsTopConsum
 [[Back to README]](../README.md)
 
 
-## OBPv500GetMetricsAtBank
+## GetMetrics
 
-> OBPv500GetMetricsAtBank200Response OBPv500GetMetricsAtBank(ctx, bankid).Execute()
+> GetMetrics200Response GetMetrics(ctx).Execute()
+
+Get Metrics
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetricAPI.GetMetrics(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.GetMetrics``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMetrics`: GetMetrics200Response
+	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.GetMetrics`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMetricsRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetMetrics200Response**](GetMetrics200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetMetricsAtBank
+
+> GetMetricsAtBank200Response GetMetricsAtBank(ctx, bankid).Execute()
 
 Get Metrics at Bank
 
@@ -225,13 +408,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricAPI.OBPv500GetMetricsAtBank(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.MetricAPI.GetMetricsAtBank(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.OBPv500GetMetricsAtBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.GetMetricsAtBank``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv500GetMetricsAtBank`: OBPv500GetMetricsAtBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.OBPv500GetMetricsAtBank`: %v\n", resp)
+	// response from `GetMetricsAtBank`: GetMetricsAtBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.GetMetricsAtBank`: %v\n", resp)
 }
 ```
 
@@ -245,7 +428,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv500GetMetricsAtBankRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMetricsAtBankRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -254,7 +437,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv500GetMetricsAtBank200Response**](OBPv500GetMetricsAtBank200Response.md)
+[**GetMetricsAtBank200Response**](GetMetricsAtBank200Response.md)
 
 ### Authorization
 
@@ -270,11 +453,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetAggregateMetrics
+## GetMetricsTopConsumers
 
-> OBPv600GetAggregateMetrics200Response OBPv600GetAggregateMetrics(ctx).Execute()
+> GetMetricsTopConsumers200Response GetMetricsTopConsumers(ctx).Execute()
 
-Get Aggregate Metrics
+Get Top Consumers
 
 
 
@@ -294,13 +477,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricAPI.OBPv600GetAggregateMetrics(context.Background()).Execute()
+	resp, r, err := apiClient.MetricAPI.GetMetricsTopConsumers(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.OBPv600GetAggregateMetrics``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.GetMetricsTopConsumers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetAggregateMetrics`: OBPv600GetAggregateMetrics200Response
-	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.OBPv600GetAggregateMetrics`: %v\n", resp)
+	// response from `GetMetricsTopConsumers`: GetMetricsTopConsumers200Response
+	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.GetMetricsTopConsumers`: %v\n", resp)
 }
 ```
 
@@ -310,12 +493,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetAggregateMetricsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMetricsTopConsumersRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetAggregateMetrics200Response**](OBPv600GetAggregateMetrics200Response.md)
+[**GetMetricsTopConsumers200Response**](GetMetricsTopConsumers200Response.md)
 
 ### Authorization
 
@@ -331,192 +514,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetAggregateMetrics
 [[Back to README]](../README.md)
 
 
-## OBPv600GetConnectorCallCounts
+## GetPopularApis
 
-> OBPv600GetConnectorCallCounts200Response OBPv600GetConnectorCallCounts(ctx).Execute()
-
-Get Connector Call Counts
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricAPI.OBPv600GetConnectorCallCounts(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.OBPv600GetConnectorCallCounts``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv600GetConnectorCallCounts`: OBPv600GetConnectorCallCounts200Response
-	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.OBPv600GetConnectorCallCounts`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv600GetConnectorCallCountsRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv600GetConnectorCallCounts200Response**](OBPv600GetConnectorCallCounts200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600GetConnectorTraces
-
-> OBPv600GetConnectorTraces200Response OBPv600GetConnectorTraces(ctx).Execute()
-
-Get Connector Traces
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricAPI.OBPv600GetConnectorTraces(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.OBPv600GetConnectorTraces``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv600GetConnectorTraces`: OBPv600GetConnectorTraces200Response
-	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.OBPv600GetConnectorTraces`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv600GetConnectorTracesRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv600GetConnectorTraces200Response**](OBPv600GetConnectorTraces200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600GetMetrics
-
-> OBPv600GetMetrics200Response OBPv600GetMetrics(ctx).Execute()
-
-Get Metrics
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricAPI.OBPv600GetMetrics(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.OBPv600GetMetrics``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv600GetMetrics`: OBPv600GetMetrics200Response
-	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.OBPv600GetMetrics`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv600GetMetricsRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv600GetMetrics200Response**](OBPv600GetMetrics200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600GetPopularApis
-
-> OBPv600GetPopularApis200Response OBPv600GetPopularApis(ctx).Execute()
+> GetPopularApis200Response GetPopularApis(ctx).Execute()
 
 Get Popular Endpoints
 
@@ -538,13 +538,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricAPI.OBPv600GetPopularApis(context.Background()).Execute()
+	resp, r, err := apiClient.MetricAPI.GetPopularApis(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.OBPv600GetPopularApis``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.GetPopularApis``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetPopularApis`: OBPv600GetPopularApis200Response
-	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.OBPv600GetPopularApis`: %v\n", resp)
+	// response from `GetPopularApis`: GetPopularApis200Response
+	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.GetPopularApis`: %v\n", resp)
 }
 ```
 
@@ -554,12 +554,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetPopularApisRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetPopularApisRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetPopularApis200Response**](OBPv600GetPopularApis200Response.md)
+[**GetPopularApis200Response**](GetPopularApis200Response.md)
 
 ### Authorization
 
@@ -575,9 +575,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv600GetTopAPIs
+## GetTopAPIs
 
-> OBPv600GetTopAPIs200Response OBPv600GetTopAPIs(ctx).Execute()
+> GetTopAPIs200Response GetTopAPIs(ctx).Execute()
 
 Get Top APIs
 
@@ -599,13 +599,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricAPI.OBPv600GetTopAPIs(context.Background()).Execute()
+	resp, r, err := apiClient.MetricAPI.GetTopAPIs(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.OBPv600GetTopAPIs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricAPI.GetTopAPIs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetTopAPIs`: OBPv600GetTopAPIs200Response
-	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.OBPv600GetTopAPIs`: %v\n", resp)
+	// response from `GetTopAPIs`: GetTopAPIs200Response
+	fmt.Fprintf(os.Stdout, "Response from `MetricAPI.GetTopAPIs`: %v\n", resp)
 }
 ```
 
@@ -615,12 +615,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetTopAPIsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTopAPIsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetTopAPIs200Response**](OBPv600GetTopAPIs200Response.md)
+[**GetTopAPIs200Response**](GetTopAPIs200Response.md)
 
 ### Authorization
 

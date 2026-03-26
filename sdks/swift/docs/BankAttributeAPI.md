@@ -1,20 +1,20 @@
 # BankAttributeAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateBankAttribute**](BankAttributeAPI.md#obpv400createbankattribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
-[**oBPv400CreateOrUpdateBankAttributeDefinition**](BankAttributeAPI.md#obpv400createorupdatebankattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
-[**oBPv400DeleteBankAttribute**](BankAttributeAPI.md#obpv400deletebankattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
-[**oBPv400GetBankAttribute**](BankAttributeAPI.md#obpv400getbankattribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
-[**oBPv400GetBankAttributes**](BankAttributeAPI.md#obpv400getbankattributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
-[**oBPv400UpdateBankAttribute**](BankAttributeAPI.md#obpv400updatebankattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
+[**createBankAttribute**](BankAttributeAPI.md#createbankattribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
+[**createOrUpdateBankAttributeDefinition**](BankAttributeAPI.md#createorupdatebankattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
+[**deleteBankAttribute**](BankAttributeAPI.md#deletebankattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
+[**getBankAttribute**](BankAttributeAPI.md#getbankattribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
+[**getBankAttributes**](BankAttributeAPI.md#getbankattributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
+[**updateBankAttribute**](BankAttributeAPI.md#updatebankattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
 
 
-# **oBPv400CreateBankAttribute**
+# **createBankAttribute**
 ```swift
-    open class func oBPv400CreateBankAttribute(bankid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, completion: @escaping (_ data: OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems?, _ error: Error?) -> Void)
+    open class func createBankAttribute(bankid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, completion: @escaping (_ data: GetBankAttributes200ResponseBankAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Create Bank Attribute
@@ -27,10 +27,10 @@ Create Bank Attribute
 import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
-let oBPv510UpdateAtmAttributeRequest = OBPv5_1_0_updateAtmAttribute_request(type: "type_example", properties: OBPv5_1_0_updateAtmAttribute_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), value: nil, isActive: nil, type: nil)) // OBPv510UpdateAtmAttributeRequest | Request body
+let updateAtmAttributeRequest = updateAtmAttribute_request(name: "name_example", value: "value_example", isActive: false, type: "type_example") // UpdateAtmAttributeRequest | Request body
 
 // Create Bank Attribute
-BankAttributeAPI.oBPv400CreateBankAttribute(bankid: bankid, oBPv510UpdateAtmAttributeRequest: oBPv510UpdateAtmAttributeRequest) { (response, error) in
+BankAttributeAPI.createBankAttribute(bankid: bankid, updateAtmAttributeRequest: updateAtmAttributeRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -47,11 +47,11 @@ BankAttributeAPI.oBPv400CreateBankAttribute(bankid: bankid, oBPv510UpdateAtmAttr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems**](OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems.md)
+[**GetBankAttributes200ResponseBankAttributesInner**](GetBankAttributes200ResponseBankAttributesInner.md)
 
 ### Authorization
 
@@ -64,9 +64,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateOrUpdateBankAttributeDefinition**
+# **createOrUpdateBankAttributeDefinition**
 ```swift
-    open class func oBPv400CreateOrUpdateBankAttributeDefinition(bankid: String, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, completion: @escaping (_ data: OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems?, _ error: Error?) -> Void)
+    open class func createOrUpdateBankAttributeDefinition(bankid: String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest, completion: @escaping (_ data: GetTransactionRequestAttributeDefinition200ResponseAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Create or Update Bank Attribute Definition
@@ -79,10 +79,10 @@ Create or Update Bank Attribute Definition
 import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
-let oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = OBPv4_0_0_createOrUpdateTransactionRequestAttributeDefinition_request(type: "type_example", properties: OBPv4_0_0_createOrUpdateTransactionRequestAttributeDefinition_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), isActive: nil, description: nil, alias: nil, canBeSeenOnViews: OBPv6_0_0_getActiveRateLimitsAtDate_200_response_properties_considered_rate_limit_ids(type: "type_example", items: nil), category: nil, type: nil)) // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+let createOrUpdateTransactionRequestAttributeDefinitionRequest = createOrUpdateTransactionRequestAttributeDefinition_request(name: "name_example", isActive: false, description: "description_example", alias: "alias_example", canBeSeenOnViews: ["canBeSeenOnViews_example"], category: "category_example", type: "type_example") // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 // Create or Update Bank Attribute Definition
-BankAttributeAPI.oBPv400CreateOrUpdateBankAttributeDefinition(bankid: bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) { (response, error) in
+BankAttributeAPI.createOrUpdateBankAttributeDefinition(bankid: bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest: createOrUpdateTransactionRequestAttributeDefinitionRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -99,11 +99,11 @@ BankAttributeAPI.oBPv400CreateOrUpdateBankAttributeDefinition(bankid: bankid, oB
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
- **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
+ **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -116,9 +116,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteBankAttribute**
+# **deleteBankAttribute**
 ```swift
-    open class func oBPv400DeleteBankAttribute(bankid: String, bankattributeid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteBankAttribute(bankid: String, bankattributeid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Bank Attribute
@@ -134,7 +134,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let bankattributeid = "bankattributeid_example" // String | The BANKATTRIBUTEID identifier
 
 // Delete Bank Attribute
-BankAttributeAPI.oBPv400DeleteBankAttribute(bankid: bankid, bankattributeid: bankattributeid) { (response, error) in
+BankAttributeAPI.deleteBankAttribute(bankid: bankid, bankattributeid: bankattributeid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -168,9 +168,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetBankAttribute**
+# **getBankAttribute**
 ```swift
-    open class func oBPv400GetBankAttribute(bankid: String, bankattributeid: String, completion: @escaping (_ data: OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems?, _ error: Error?) -> Void)
+    open class func getBankAttribute(bankid: String, bankattributeid: String, completion: @escaping (_ data: GetBankAttributes200ResponseBankAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Get Bank Attribute By BANK_ATTRIBUTE_ID
@@ -186,7 +186,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let bankattributeid = "bankattributeid_example" // String | The BANKATTRIBUTEID identifier
 
 // Get Bank Attribute By BANK_ATTRIBUTE_ID
-BankAttributeAPI.oBPv400GetBankAttribute(bankid: bankid, bankattributeid: bankattributeid) { (response, error) in
+BankAttributeAPI.getBankAttribute(bankid: bankid, bankattributeid: bankattributeid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems**](OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems.md)
+[**GetBankAttributes200ResponseBankAttributesInner**](GetBankAttributes200ResponseBankAttributesInner.md)
 
 ### Authorization
 
@@ -220,9 +220,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetBankAttributes**
+# **getBankAttributes**
 ```swift
-    open class func oBPv400GetBankAttributes(bankid: String, completion: @escaping (_ data: OBPv400GetBankAttributes200Response?, _ error: Error?) -> Void)
+    open class func getBankAttributes(bankid: String, completion: @escaping (_ data: GetBankAttributes200Response?, _ error: Error?) -> Void)
 ```
 
 Get Bank Attributes
@@ -237,7 +237,7 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 
 // Get Bank Attributes
-BankAttributeAPI.oBPv400GetBankAttributes(bankid: bankid) { (response, error) in
+BankAttributeAPI.getBankAttributes(bankid: bankid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetBankAttributes200Response**](OBPv400GetBankAttributes200Response.md)
+[**GetBankAttributes200Response**](GetBankAttributes200Response.md)
 
 ### Authorization
 
@@ -270,9 +270,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateBankAttribute**
+# **updateBankAttribute**
 ```swift
-    open class func oBPv400UpdateBankAttribute(bankid: String, bankattributeid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, completion: @escaping (_ data: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest?, _ error: Error?) -> Void)
+    open class func updateBankAttribute(bankid: String, bankattributeid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, completion: @escaping (_ data: CreateOrUpdateTransactionRequestAttributeDefinitionRequest?, _ error: Error?) -> Void)
 ```
 
 Update Bank Attribute
@@ -286,10 +286,10 @@ import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
 let bankattributeid = "bankattributeid_example" // String | The BANKATTRIBUTEID identifier
-let oBPv510UpdateAtmAttributeRequest = OBPv5_1_0_updateAtmAttribute_request(type: "type_example", properties: OBPv5_1_0_updateAtmAttribute_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), value: nil, isActive: nil, type: nil)) // OBPv510UpdateAtmAttributeRequest | Request body
+let updateAtmAttributeRequest = updateAtmAttribute_request(name: "name_example", value: "value_example", isActive: false, type: "type_example") // UpdateAtmAttributeRequest | Request body
 
 // Update Bank Attribute
-BankAttributeAPI.oBPv400UpdateBankAttribute(bankid: bankid, bankattributeid: bankattributeid, oBPv510UpdateAtmAttributeRequest: oBPv510UpdateAtmAttributeRequest) { (response, error) in
+BankAttributeAPI.updateBankAttribute(bankid: bankid, bankattributeid: bankattributeid, updateAtmAttributeRequest: updateAtmAttributeRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -307,11 +307,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
  **bankattributeid** | **String** | The BANKATTRIBUTEID identifier | 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
+[**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
 
 ### Authorization
 

@@ -1,21 +1,21 @@
 # \ChannelAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv600DeleteSignalChannel**](ChannelAPI.md#OBPv600DeleteSignalChannel) | **Delete** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
-[**OBPv600GetSignalChannelInfo**](ChannelAPI.md#OBPv600GetSignalChannelInfo) | **Get** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
-[**OBPv600GetSignalChannels**](ChannelAPI.md#OBPv600GetSignalChannels) | **Get** /obp/v6.0.0/signal/channels | List Signal Channels
-[**OBPv600GetSignalMessages**](ChannelAPI.md#OBPv600GetSignalMessages) | **Get** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
-[**OBPv600GetSignalStats**](ChannelAPI.md#OBPv600GetSignalStats) | **Get** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
-[**OBPv600PublishSignalMessage**](ChannelAPI.md#OBPv600PublishSignalMessage) | **Post** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
+[**DeleteSignalChannel**](ChannelAPI.md#DeleteSignalChannel) | **Delete** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
+[**GetSignalChannelInfo**](ChannelAPI.md#GetSignalChannelInfo) | **Get** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
+[**GetSignalChannels**](ChannelAPI.md#GetSignalChannels) | **Get** /obp/v6.0.0/signal/channels | List Signal Channels
+[**GetSignalMessages**](ChannelAPI.md#GetSignalMessages) | **Get** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
+[**GetSignalStats**](ChannelAPI.md#GetSignalStats) | **Get** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
+[**PublishSignalMessage**](ChannelAPI.md#PublishSignalMessage) | **Post** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
 
 
 
-## OBPv600DeleteSignalChannel
+## DeleteSignalChannel
 
-> OBPv600DeleteSignalChannel200Response OBPv600DeleteSignalChannel(ctx, channelname).Execute()
+> DeleteSignalChannel200Response DeleteSignalChannel(ctx, channelname).Execute()
 
 Delete Signal Channel
 
@@ -38,13 +38,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ChannelAPI.OBPv600DeleteSignalChannel(context.Background(), channelname).Execute()
+	resp, r, err := apiClient.ChannelAPI.DeleteSignalChannel(context.Background(), channelname).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ChannelAPI.OBPv600DeleteSignalChannel``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ChannelAPI.DeleteSignalChannel``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600DeleteSignalChannel`: OBPv600DeleteSignalChannel200Response
-	fmt.Fprintf(os.Stdout, "Response from `ChannelAPI.OBPv600DeleteSignalChannel`: %v\n", resp)
+	// response from `DeleteSignalChannel`: DeleteSignalChannel200Response
+	fmt.Fprintf(os.Stdout, "Response from `ChannelAPI.DeleteSignalChannel`: %v\n", resp)
 }
 ```
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600DeleteSignalChannelRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteSignalChannelRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600DeleteSignalChannel200Response**](OBPv600DeleteSignalChannel200Response.md)
+[**DeleteSignalChannel200Response**](DeleteSignalChannel200Response.md)
 
 ### Authorization
 
@@ -83,9 +83,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetSignalChannelInfo
+## GetSignalChannelInfo
 
-> OBPv600GetSignalChannelInfo200Response OBPv600GetSignalChannelInfo(ctx, channelname).Execute()
+> GetSignalChannelInfo200Response GetSignalChannelInfo(ctx, channelname).Execute()
 
 Get Signal Channel Info
 
@@ -108,13 +108,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ChannelAPI.OBPv600GetSignalChannelInfo(context.Background(), channelname).Execute()
+	resp, r, err := apiClient.ChannelAPI.GetSignalChannelInfo(context.Background(), channelname).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ChannelAPI.OBPv600GetSignalChannelInfo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ChannelAPI.GetSignalChannelInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetSignalChannelInfo`: OBPv600GetSignalChannelInfo200Response
-	fmt.Fprintf(os.Stdout, "Response from `ChannelAPI.OBPv600GetSignalChannelInfo`: %v\n", resp)
+	// response from `GetSignalChannelInfo`: GetSignalChannelInfo200Response
+	fmt.Fprintf(os.Stdout, "Response from `ChannelAPI.GetSignalChannelInfo`: %v\n", resp)
 }
 ```
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetSignalChannelInfoRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSignalChannelInfoRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetSignalChannelInfo200Response**](OBPv600GetSignalChannelInfo200Response.md)
+[**GetSignalChannelInfo200Response**](GetSignalChannelInfo200Response.md)
 
 ### Authorization
 
@@ -153,9 +153,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetSignalChannels
+## GetSignalChannels
 
-> OBPv600GetSignalChannels200Response OBPv600GetSignalChannels(ctx).Execute()
+> GetSignalChannels200Response GetSignalChannels(ctx).Execute()
 
 List Signal Channels
 
@@ -177,13 +177,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ChannelAPI.OBPv600GetSignalChannels(context.Background()).Execute()
+	resp, r, err := apiClient.ChannelAPI.GetSignalChannels(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ChannelAPI.OBPv600GetSignalChannels``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ChannelAPI.GetSignalChannels``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetSignalChannels`: OBPv600GetSignalChannels200Response
-	fmt.Fprintf(os.Stdout, "Response from `ChannelAPI.OBPv600GetSignalChannels`: %v\n", resp)
+	// response from `GetSignalChannels`: GetSignalChannels200Response
+	fmt.Fprintf(os.Stdout, "Response from `ChannelAPI.GetSignalChannels`: %v\n", resp)
 }
 ```
 
@@ -193,12 +193,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetSignalChannelsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSignalChannelsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetSignalChannels200Response**](OBPv600GetSignalChannels200Response.md)
+[**GetSignalChannels200Response**](GetSignalChannels200Response.md)
 
 ### Authorization
 
@@ -214,9 +214,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetSignalChannelsRe
 [[Back to README]](../README.md)
 
 
-## OBPv600GetSignalMessages
+## GetSignalMessages
 
-> OBPv600GetSignalMessages200Response OBPv600GetSignalMessages(ctx, channelname).Execute()
+> GetSignalMessages200Response GetSignalMessages(ctx, channelname).Execute()
 
 Get Signal Messages
 
@@ -239,13 +239,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ChannelAPI.OBPv600GetSignalMessages(context.Background(), channelname).Execute()
+	resp, r, err := apiClient.ChannelAPI.GetSignalMessages(context.Background(), channelname).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ChannelAPI.OBPv600GetSignalMessages``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ChannelAPI.GetSignalMessages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetSignalMessages`: OBPv600GetSignalMessages200Response
-	fmt.Fprintf(os.Stdout, "Response from `ChannelAPI.OBPv600GetSignalMessages`: %v\n", resp)
+	// response from `GetSignalMessages`: GetSignalMessages200Response
+	fmt.Fprintf(os.Stdout, "Response from `ChannelAPI.GetSignalMessages`: %v\n", resp)
 }
 ```
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetSignalMessagesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSignalMessagesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetSignalMessages200Response**](OBPv600GetSignalMessages200Response.md)
+[**GetSignalMessages200Response**](GetSignalMessages200Response.md)
 
 ### Authorization
 
@@ -284,9 +284,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetSignalStats
+## GetSignalStats
 
-> OBPv600GetSignalStats200Response OBPv600GetSignalStats(ctx).Execute()
+> GetSignalStats200Response GetSignalStats(ctx).Execute()
 
 Get Signal Channel Stats
 
@@ -308,13 +308,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ChannelAPI.OBPv600GetSignalStats(context.Background()).Execute()
+	resp, r, err := apiClient.ChannelAPI.GetSignalStats(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ChannelAPI.OBPv600GetSignalStats``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ChannelAPI.GetSignalStats``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetSignalStats`: OBPv600GetSignalStats200Response
-	fmt.Fprintf(os.Stdout, "Response from `ChannelAPI.OBPv600GetSignalStats`: %v\n", resp)
+	// response from `GetSignalStats`: GetSignalStats200Response
+	fmt.Fprintf(os.Stdout, "Response from `ChannelAPI.GetSignalStats`: %v\n", resp)
 }
 ```
 
@@ -324,12 +324,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetSignalStatsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSignalStatsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetSignalStats200Response**](OBPv600GetSignalStats200Response.md)
+[**GetSignalStats200Response**](GetSignalStats200Response.md)
 
 ### Authorization
 
@@ -345,9 +345,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetSignalStatsReque
 [[Back to README]](../README.md)
 
 
-## OBPv600PublishSignalMessage
+## PublishSignalMessage
 
-> OBPv600PublishSignalMessage200Response OBPv600PublishSignalMessage(ctx, channelname).OBPv600PublishSignalMessageRequest(oBPv600PublishSignalMessageRequest).Execute()
+> PublishSignalMessage200Response PublishSignalMessage(ctx, channelname).PublishSignalMessageRequest(publishSignalMessageRequest).Execute()
 
 Publish Signal Message
 
@@ -367,17 +367,17 @@ import (
 
 func main() {
 	channelname := "channelname_example" // string | The CHANNELNAME identifier
-	oBPv600PublishSignalMessageRequest := *openapiclient.NewOBPv600PublishSignalMessageRequest("Type_example", *openapiclient.NewOBPv600PublishSignalMessageRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600GetSignalMessages200ResponsePropertiesMessagesItemsPropertiesPayload("Type_example", *openapiclient.NewOBPv600GetSignalMessages200ResponsePropertiesMessagesItemsPropertiesPayloadProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems("Type_example", *openapiclient.NewOBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties())))))) // OBPv600PublishSignalMessageRequest | Request body
+	publishSignalMessageRequest := *openapiclient.NewPublishSignalMessageRequest() // PublishSignalMessageRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ChannelAPI.OBPv600PublishSignalMessage(context.Background(), channelname).OBPv600PublishSignalMessageRequest(oBPv600PublishSignalMessageRequest).Execute()
+	resp, r, err := apiClient.ChannelAPI.PublishSignalMessage(context.Background(), channelname).PublishSignalMessageRequest(publishSignalMessageRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ChannelAPI.OBPv600PublishSignalMessage``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ChannelAPI.PublishSignalMessage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600PublishSignalMessage`: OBPv600PublishSignalMessage200Response
-	fmt.Fprintf(os.Stdout, "Response from `ChannelAPI.OBPv600PublishSignalMessage`: %v\n", resp)
+	// response from `PublishSignalMessage`: PublishSignalMessage200Response
+	fmt.Fprintf(os.Stdout, "Response from `ChannelAPI.PublishSignalMessage`: %v\n", resp)
 }
 ```
 
@@ -391,17 +391,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600PublishSignalMessageRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPublishSignalMessageRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv600PublishSignalMessageRequest** | [**OBPv600PublishSignalMessageRequest**](OBPv600PublishSignalMessageRequest.md) | Request body | 
+ **publishSignalMessageRequest** | [**PublishSignalMessageRequest**](PublishSignalMessageRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600PublishSignalMessage200Response**](OBPv600PublishSignalMessage200Response.md)
+[**PublishSignalMessage200Response**](PublishSignalMessage200Response.md)
 
 ### Authorization
 

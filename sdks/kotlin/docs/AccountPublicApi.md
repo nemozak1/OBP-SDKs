@@ -1,106 +1,17 @@
 # AccountPublicApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv200PublicAccountsAllBanks**](AccountPublicApi.md#oBPv200PublicAccountsAllBanks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks |
-| [**oBPv200PublicAccountsAtOneBank**](AccountPublicApi.md#oBPv200PublicAccountsAtOneBank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank |
-| [**oBPv300GetPublicAccountById**](AccountPublicApi.md#oBPv300GetPublicAccountById) | **GET** /obp/v3.0.0/banks/{bankid}/public/accounts/{accountid}/{viewid}/account | Get Public Account by Id |
+| [**getPublicAccountById**](AccountPublicApi.md#getPublicAccountById) | **GET** /obp/v3.0.0/banks/{bankid}/public/accounts/{accountid}/{viewid}/account | Get Public Account by Id |
+| [**publicAccountsAllBanks**](AccountPublicApi.md#publicAccountsAllBanks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks |
+| [**publicAccountsAtOneBank**](AccountPublicApi.md#publicAccountsAtOneBank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank |
 
 
-<a id="oBPv200PublicAccountsAllBanks"></a>
-# **oBPv200PublicAccountsAllBanks**
-> OBPv200PublicAccountsAllBanks200Response oBPv200PublicAccountsAllBanks()
-
-Get Public Accounts at all Banks
-
-&lt;p&gt;Get public accounts at all banks (Anonymous access).&lt;br /&gt; Returns accounts that contain at least one public view (a view where is_public is true)&lt;br /&gt; For each account the API returns the ID and the available views.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accounts\&quot;&gt;&lt;strong&gt;accounts&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_public\&quot;&gt;&lt;strong&gt;is_public&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_name\&quot;&gt;&lt;strong&gt;short_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#views_available\&quot;&gt;&lt;strong&gt;views_available&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = AccountPublicApi()
-try {
-    val result : OBPv200PublicAccountsAllBanks200Response = apiInstance.oBPv200PublicAccountsAllBanks()
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling AccountPublicApi#oBPv200PublicAccountsAllBanks")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling AccountPublicApi#oBPv200PublicAccountsAllBanks")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv200PublicAccountsAllBanks200Response**](OBPv200PublicAccountsAllBanks200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a id="oBPv200PublicAccountsAtOneBank"></a>
-# **oBPv200PublicAccountsAtOneBank**
-> OBPv200PublicAccountsAllBanks200Response oBPv200PublicAccountsAtOneBank(bankid)
-
-Get Public Accounts at Bank
-
-&lt;p&gt;Returns a list of the public accounts (Anonymous access) at BANK_ID. For each account the API returns the ID and the available views.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accounts\&quot;&gt;&lt;strong&gt;accounts&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_public\&quot;&gt;&lt;strong&gt;is_public&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_name\&quot;&gt;&lt;strong&gt;short_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#views_available\&quot;&gt;&lt;strong&gt;views_available&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = AccountPublicApi()
-val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-try {
-    val result : OBPv200PublicAccountsAllBanks200Response = apiInstance.oBPv200PublicAccountsAtOneBank(bankid)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling AccountPublicApi#oBPv200PublicAccountsAtOneBank")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling AccountPublicApi#oBPv200PublicAccountsAtOneBank")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **bankid** | **kotlin.String**| The BANKID identifier | |
-
-### Return type
-
-[**OBPv200PublicAccountsAllBanks200Response**](OBPv200PublicAccountsAllBanks200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a id="oBPv300GetPublicAccountById"></a>
-# **oBPv300GetPublicAccountById**
-> OBPv300GetPublicAccountById200Response oBPv300GetPublicAccountById(bankid, accountid, viewid)
+<a id="getPublicAccountById"></a>
+# **getPublicAccountById**
+> GetPublicAccountById200Response getPublicAccountById(bankid, accountid, viewid)
 
 Get Public Account by Id
 
@@ -117,13 +28,13 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 try {
-    val result : OBPv300GetPublicAccountById200Response = apiInstance.oBPv300GetPublicAccountById(bankid, accountid, viewid)
+    val result : GetPublicAccountById200Response = apiInstance.getPublicAccountById(bankid, accountid, viewid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AccountPublicApi#oBPv300GetPublicAccountById")
+    println("4xx response calling AccountPublicApi#getPublicAccountById")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountPublicApi#oBPv300GetPublicAccountById")
+    println("5xx response calling AccountPublicApi#getPublicAccountById")
     e.printStackTrace()
 }
 ```
@@ -137,7 +48,96 @@ try {
 
 ### Return type
 
-[**OBPv300GetPublicAccountById200Response**](OBPv300GetPublicAccountById200Response.md)
+[**GetPublicAccountById200Response**](GetPublicAccountById200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="publicAccountsAllBanks"></a>
+# **publicAccountsAllBanks**
+> PublicAccountsAllBanks200Response publicAccountsAllBanks()
+
+Get Public Accounts at all Banks
+
+&lt;p&gt;Get public accounts at all banks (Anonymous access).&lt;br /&gt; Returns accounts that contain at least one public view (a view where is_public is true)&lt;br /&gt; For each account the API returns the ID and the available views.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accounts\&quot;&gt;&lt;strong&gt;accounts&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_public\&quot;&gt;&lt;strong&gt;is_public&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_name\&quot;&gt;&lt;strong&gt;short_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#views_available\&quot;&gt;&lt;strong&gt;views_available&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = AccountPublicApi()
+try {
+    val result : PublicAccountsAllBanks200Response = apiInstance.publicAccountsAllBanks()
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling AccountPublicApi#publicAccountsAllBanks")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling AccountPublicApi#publicAccountsAllBanks")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**PublicAccountsAllBanks200Response**](PublicAccountsAllBanks200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="publicAccountsAtOneBank"></a>
+# **publicAccountsAtOneBank**
+> PublicAccountsAllBanks200Response publicAccountsAtOneBank(bankid)
+
+Get Public Accounts at Bank
+
+&lt;p&gt;Returns a list of the public accounts (Anonymous access) at BANK_ID. For each account the API returns the ID and the available views.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accounts\&quot;&gt;&lt;strong&gt;accounts&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_public\&quot;&gt;&lt;strong&gt;is_public&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_name\&quot;&gt;&lt;strong&gt;short_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#views_available\&quot;&gt;&lt;strong&gt;views_available&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = AccountPublicApi()
+val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
+try {
+    val result : PublicAccountsAllBanks200Response = apiInstance.publicAccountsAtOneBank(bankid)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling AccountPublicApi#publicAccountsAtOneBank")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling AccountPublicApi#publicAccountsAtOneBank")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bankid** | **kotlin.String**| The BANKID identifier | |
+
+### Return type
+
+[**PublicAccountsAllBanks200Response**](PublicAccountsAllBanks200Response.md)
 
 ### Authorization
 

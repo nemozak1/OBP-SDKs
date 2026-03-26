@@ -1,6 +1,6 @@
 generatorName: php
 outputDir: ../sdks/php
-inputSpec: ../openapi-spec/obp-openapi.json
+inputSpec: ../openapi-spec/obp-openapi-simplified.json
 additionalProperties:
   packageName: obp-php
   invokerPackage: OpenBankProject

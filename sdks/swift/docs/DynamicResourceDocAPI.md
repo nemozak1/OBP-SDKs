@@ -1,25 +1,25 @@
 # DynamicResourceDocAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400BuildDynamicEndpointTemplate**](DynamicResourceDocAPI.md#obpv400builddynamicendpointtemplate) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code
-[**oBPv400CreateBankLevelDynamicResourceDoc**](DynamicResourceDocAPI.md#obpv400createbankleveldynamicresourcedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc
-[**oBPv400CreateDynamicResourceDoc**](DynamicResourceDocAPI.md#obpv400createdynamicresourcedoc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc
-[**oBPv400DeleteBankLevelDynamicResourceDoc**](DynamicResourceDocAPI.md#obpv400deletebankleveldynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc
-[**oBPv400DeleteDynamicResourceDoc**](DynamicResourceDocAPI.md#obpv400deletedynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc
-[**oBPv400GetAllBankLevelDynamicResourceDocs**](DynamicResourceDocAPI.md#obpv400getallbankleveldynamicresourcedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs
-[**oBPv400GetAllDynamicResourceDocs**](DynamicResourceDocAPI.md#obpv400getalldynamicresourcedocs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs
-[**oBPv400GetBankLevelDynamicResourceDoc**](DynamicResourceDocAPI.md#obpv400getbankleveldynamicresourcedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id
-[**oBPv400GetDynamicResourceDoc**](DynamicResourceDocAPI.md#obpv400getdynamicresourcedoc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id
-[**oBPv400UpdateBankLevelDynamicResourceDoc**](DynamicResourceDocAPI.md#obpv400updatebankleveldynamicresourcedoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc
-[**oBPv400UpdateDynamicResourceDoc**](DynamicResourceDocAPI.md#obpv400updatedynamicresourcedoc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc
+[**buildDynamicEndpointTemplate**](DynamicResourceDocAPI.md#builddynamicendpointtemplate) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code
+[**createBankLevelDynamicResourceDoc**](DynamicResourceDocAPI.md#createbankleveldynamicresourcedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc
+[**createDynamicResourceDoc**](DynamicResourceDocAPI.md#createdynamicresourcedoc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc
+[**deleteBankLevelDynamicResourceDoc**](DynamicResourceDocAPI.md#deletebankleveldynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc
+[**deleteDynamicResourceDoc**](DynamicResourceDocAPI.md#deletedynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc
+[**getAllBankLevelDynamicResourceDocs**](DynamicResourceDocAPI.md#getallbankleveldynamicresourcedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs
+[**getAllDynamicResourceDocs**](DynamicResourceDocAPI.md#getalldynamicresourcedocs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs
+[**getBankLevelDynamicResourceDoc**](DynamicResourceDocAPI.md#getbankleveldynamicresourcedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id
+[**getDynamicResourceDoc**](DynamicResourceDocAPI.md#getdynamicresourcedoc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id
+[**updateBankLevelDynamicResourceDoc**](DynamicResourceDocAPI.md#updatebankleveldynamicresourcedoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc
+[**updateDynamicResourceDoc**](DynamicResourceDocAPI.md#updatedynamicresourcedoc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc
 
 
-# **oBPv400BuildDynamicEndpointTemplate**
+# **buildDynamicEndpointTemplate**
 ```swift
-    open class func oBPv400BuildDynamicEndpointTemplate(oBPv400BuildDynamicEndpointTemplateRequest: OBPv400BuildDynamicEndpointTemplateRequest, completion: @escaping (_ data: OBPv400BuildDynamicEndpointTemplate200Response?, _ error: Error?) -> Void)
+    open class func buildDynamicEndpointTemplate(buildDynamicEndpointTemplateRequest: BuildDynamicEndpointTemplateRequest, completion: @escaping (_ data: BuildDynamicEndpointTemplate200Response?, _ error: Error?) -> Void)
 ```
 
 Create Dynamic Resource Doc endpoint code
@@ -31,10 +31,10 @@ Create Dynamic Resource Doc endpoint code
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OBPSwift
 
-let oBPv400BuildDynamicEndpointTemplateRequest = OBPv4_0_0_buildDynamicEndpointTemplate_request(type: "type_example", properties: OBPv4_0_0_buildDynamicEndpointTemplate_request_properties(requestVerb: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), exampleRequestBody: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_example_request_body(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_example_request_body_properties(name: nil, age: nil, hobby: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields_(type: "type_example", items: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items_properties(s: nil))), optionalFields: nil)), successResponseBody: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties(name: nil, optionalFields: nil, age: nil, hobby: nil, myUserId: nil)), requestUrl: nil)) // OBPv400BuildDynamicEndpointTemplateRequest | Request body
+let buildDynamicEndpointTemplateRequest = buildDynamicEndpointTemplate_request(requestVerb: "requestVerb_example", exampleRequestBody: getBankLevelDynamicResourceDoc_200_response_example_request_body(name: "name_example", age: 123, hobby: [getBankLevelDynamicResourceDoc_200_response_success_response_body__optional_fields__inner(s: "s_example")], optionalFields: [nil]), successResponseBody: getBankLevelDynamicResourceDoc_200_response_success_response_body(name: "name_example", optionalFields: [nil], age: 123, hobby: [nil], myUserId: "myUserId_example"), requestUrl: "requestUrl_example") // BuildDynamicEndpointTemplateRequest | Request body
 
 // Create Dynamic Resource Doc endpoint code
-DynamicResourceDocAPI.oBPv400BuildDynamicEndpointTemplate(oBPv400BuildDynamicEndpointTemplateRequest: oBPv400BuildDynamicEndpointTemplateRequest) { (response, error) in
+DynamicResourceDocAPI.buildDynamicEndpointTemplate(buildDynamicEndpointTemplateRequest: buildDynamicEndpointTemplateRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -50,11 +50,11 @@ DynamicResourceDocAPI.oBPv400BuildDynamicEndpointTemplate(oBPv400BuildDynamicEnd
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv400BuildDynamicEndpointTemplateRequest** | [**OBPv400BuildDynamicEndpointTemplateRequest**](OBPv400BuildDynamicEndpointTemplateRequest.md) | Request body | 
+ **buildDynamicEndpointTemplateRequest** | [**BuildDynamicEndpointTemplateRequest**](BuildDynamicEndpointTemplateRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400BuildDynamicEndpointTemplate200Response**](OBPv400BuildDynamicEndpointTemplate200Response.md)
+[**BuildDynamicEndpointTemplate200Response**](BuildDynamicEndpointTemplate200Response.md)
 
 ### Authorization
 
@@ -67,9 +67,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateBankLevelDynamicResourceDoc**
+# **createBankLevelDynamicResourceDoc**
 ```swift
-    open class func oBPv400CreateBankLevelDynamicResourceDoc(bankid: String, oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest, completion: @escaping (_ data: OBPv400GetBankLevelDynamicResourceDoc200Response?, _ error: Error?) -> Void)
+    open class func createBankLevelDynamicResourceDoc(bankid: String, updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest, completion: @escaping (_ data: GetBankLevelDynamicResourceDoc200Response?, _ error: Error?) -> Void)
 ```
 
 Create Bank Level Dynamic Resource Doc
@@ -82,10 +82,10 @@ Create Bank Level Dynamic Resource Doc
 import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
-let oBPv400UpdateBankLevelDynamicResourceDocRequest = OBPv4_0_0_updateBankLevelDynamicResourceDoc_request(type: "type_example", properties: OBPv4_0_0_updateBankLevelDynamicResourceDoc_request_properties(errorResponseBodies: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), requestVerb: nil, requestUrl: nil, description: nil, tags: nil, successResponseBody: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties(name: nil, optionalFields: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields_(type: "type_example", items: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items_properties(s: nil))), age: nil, hobby: nil, myUserId: nil)), exampleRequestBody: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_example_request_body(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_example_request_body_properties(name: nil, age: nil, hobby: nil, optionalFields: nil)), bankId: nil, roles: nil, partialFunctionName: nil, methodBody: nil, summary: nil)) // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+let updateBankLevelDynamicResourceDocRequest = updateBankLevelDynamicResourceDoc_request(errorResponseBodies: "errorResponseBodies_example", requestVerb: "requestVerb_example", requestUrl: "requestUrl_example", description: "description_example", tags: "tags_example", successResponseBody: getBankLevelDynamicResourceDoc_200_response_success_response_body(name: "name_example", optionalFields: [getBankLevelDynamicResourceDoc_200_response_success_response_body__optional_fields__inner(s: "s_example")], age: 123, hobby: [nil], myUserId: "myUserId_example"), exampleRequestBody: getBankLevelDynamicResourceDoc_200_response_example_request_body(name: "name_example", age: 123, hobby: [nil], optionalFields: [nil]), bankId: "bankId_example", roles: "roles_example", partialFunctionName: "partialFunctionName_example", methodBody: "methodBody_example", summary: "summary_example") // UpdateBankLevelDynamicResourceDocRequest | Request body
 
 // Create Bank Level Dynamic Resource Doc
-DynamicResourceDocAPI.oBPv400CreateBankLevelDynamicResourceDoc(bankid: bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest: oBPv400UpdateBankLevelDynamicResourceDocRequest) { (response, error) in
+DynamicResourceDocAPI.createBankLevelDynamicResourceDoc(bankid: bankid, updateBankLevelDynamicResourceDocRequest: updateBankLevelDynamicResourceDocRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -102,11 +102,11 @@ DynamicResourceDocAPI.oBPv400CreateBankLevelDynamicResourceDoc(bankid: bankid, o
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
- **oBPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md) | Request body | 
+ **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -119,9 +119,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateDynamicResourceDoc**
+# **createDynamicResourceDoc**
 ```swift
-    open class func oBPv400CreateDynamicResourceDoc(oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest, completion: @escaping (_ data: OBPv400GetBankLevelDynamicResourceDoc200Response?, _ error: Error?) -> Void)
+    open class func createDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest, completion: @escaping (_ data: GetBankLevelDynamicResourceDoc200Response?, _ error: Error?) -> Void)
 ```
 
 Create Dynamic Resource Doc
@@ -133,10 +133,10 @@ Create Dynamic Resource Doc
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OBPSwift
 
-let oBPv400UpdateBankLevelDynamicResourceDocRequest = OBPv4_0_0_updateBankLevelDynamicResourceDoc_request(type: "type_example", properties: OBPv4_0_0_updateBankLevelDynamicResourceDoc_request_properties(errorResponseBodies: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), requestVerb: nil, requestUrl: nil, description: nil, tags: nil, successResponseBody: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties(name: nil, optionalFields: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields_(type: "type_example", items: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items_properties(s: nil))), age: nil, hobby: nil, myUserId: nil)), exampleRequestBody: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_example_request_body(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_example_request_body_properties(name: nil, age: nil, hobby: nil, optionalFields: nil)), bankId: nil, roles: nil, partialFunctionName: nil, methodBody: nil, summary: nil)) // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+let updateBankLevelDynamicResourceDocRequest = updateBankLevelDynamicResourceDoc_request(errorResponseBodies: "errorResponseBodies_example", requestVerb: "requestVerb_example", requestUrl: "requestUrl_example", description: "description_example", tags: "tags_example", successResponseBody: getBankLevelDynamicResourceDoc_200_response_success_response_body(name: "name_example", optionalFields: [getBankLevelDynamicResourceDoc_200_response_success_response_body__optional_fields__inner(s: "s_example")], age: 123, hobby: [nil], myUserId: "myUserId_example"), exampleRequestBody: getBankLevelDynamicResourceDoc_200_response_example_request_body(name: "name_example", age: 123, hobby: [nil], optionalFields: [nil]), bankId: "bankId_example", roles: "roles_example", partialFunctionName: "partialFunctionName_example", methodBody: "methodBody_example", summary: "summary_example") // UpdateBankLevelDynamicResourceDocRequest | Request body
 
 // Create Dynamic Resource Doc
-DynamicResourceDocAPI.oBPv400CreateDynamicResourceDoc(oBPv400UpdateBankLevelDynamicResourceDocRequest: oBPv400UpdateBankLevelDynamicResourceDocRequest) { (response, error) in
+DynamicResourceDocAPI.createDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest: updateBankLevelDynamicResourceDocRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -152,11 +152,11 @@ DynamicResourceDocAPI.oBPv400CreateDynamicResourceDoc(oBPv400UpdateBankLevelDyna
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md) | Request body | 
+ **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -169,9 +169,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteBankLevelDynamicResourceDoc**
+# **deleteBankLevelDynamicResourceDoc**
 ```swift
-    open class func oBPv400DeleteBankLevelDynamicResourceDoc(bankid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteBankLevelDynamicResourceDoc(bankid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Bank Level Dynamic Resource Doc
@@ -186,7 +186,7 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 
 // Delete Bank Level Dynamic Resource Doc
-DynamicResourceDocAPI.oBPv400DeleteBankLevelDynamicResourceDoc(bankid: bankid) { (response, error) in
+DynamicResourceDocAPI.deleteBankLevelDynamicResourceDoc(bankid: bankid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -219,9 +219,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteDynamicResourceDoc**
+# **deleteDynamicResourceDoc**
 ```swift
-    open class func oBPv400DeleteDynamicResourceDoc(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteDynamicResourceDoc(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Dynamic Resource Doc
@@ -235,7 +235,7 @@ import OBPSwift
 
 
 // Delete Dynamic Resource Doc
-DynamicResourceDocAPI.oBPv400DeleteDynamicResourceDoc() { (response, error) in
+DynamicResourceDocAPI.deleteDynamicResourceDoc() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -265,9 +265,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllBankLevelDynamicResourceDocs**
+# **getAllBankLevelDynamicResourceDocs**
 ```swift
-    open class func oBPv400GetAllBankLevelDynamicResourceDocs(bankid: String, completion: @escaping (_ data: OBPv400GetAllDynamicResourceDocs200Response?, _ error: Error?) -> Void)
+    open class func getAllBankLevelDynamicResourceDocs(bankid: String, completion: @escaping (_ data: GetAllDynamicResourceDocs200Response?, _ error: Error?) -> Void)
 ```
 
 Get all Bank Level Dynamic Resource Docs
@@ -282,7 +282,7 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 
 // Get all Bank Level Dynamic Resource Docs
-DynamicResourceDocAPI.oBPv400GetAllBankLevelDynamicResourceDocs(bankid: bankid) { (response, error) in
+DynamicResourceDocAPI.getAllBankLevelDynamicResourceDocs(bankid: bankid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)
+[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)
 
 ### Authorization
 
@@ -315,9 +315,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllDynamicResourceDocs**
+# **getAllDynamicResourceDocs**
 ```swift
-    open class func oBPv400GetAllDynamicResourceDocs(completion: @escaping (_ data: OBPv400GetAllDynamicResourceDocs200Response?, _ error: Error?) -> Void)
+    open class func getAllDynamicResourceDocs(completion: @escaping (_ data: GetAllDynamicResourceDocs200Response?, _ error: Error?) -> Void)
 ```
 
 Get all Dynamic Resource Docs
@@ -331,7 +331,7 @@ import OBPSwift
 
 
 // Get all Dynamic Resource Docs
-DynamicResourceDocAPI.oBPv400GetAllDynamicResourceDocs() { (response, error) in
+DynamicResourceDocAPI.getAllDynamicResourceDocs() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -348,7 +348,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)
+[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)
 
 ### Authorization
 
@@ -361,9 +361,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetBankLevelDynamicResourceDoc**
+# **getBankLevelDynamicResourceDoc**
 ```swift
-    open class func oBPv400GetBankLevelDynamicResourceDoc(bankid: String, completion: @escaping (_ data: OBPv400GetBankLevelDynamicResourceDoc200Response?, _ error: Error?) -> Void)
+    open class func getBankLevelDynamicResourceDoc(bankid: String, completion: @escaping (_ data: GetBankLevelDynamicResourceDoc200Response?, _ error: Error?) -> Void)
 ```
 
 Get Bank Level Dynamic Resource Doc by Id
@@ -378,7 +378,7 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 
 // Get Bank Level Dynamic Resource Doc by Id
-DynamicResourceDocAPI.oBPv400GetBankLevelDynamicResourceDoc(bankid: bankid) { (response, error) in
+DynamicResourceDocAPI.getBankLevelDynamicResourceDoc(bankid: bankid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -411,9 +411,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetDynamicResourceDoc**
+# **getDynamicResourceDoc**
 ```swift
-    open class func oBPv400GetDynamicResourceDoc(completion: @escaping (_ data: OBPv400GetBankLevelDynamicResourceDoc200Response?, _ error: Error?) -> Void)
+    open class func getDynamicResourceDoc(completion: @escaping (_ data: GetBankLevelDynamicResourceDoc200Response?, _ error: Error?) -> Void)
 ```
 
 Get Dynamic Resource Doc by Id
@@ -427,7 +427,7 @@ import OBPSwift
 
 
 // Get Dynamic Resource Doc by Id
-DynamicResourceDocAPI.oBPv400GetDynamicResourceDoc() { (response, error) in
+DynamicResourceDocAPI.getDynamicResourceDoc() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -444,7 +444,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -457,9 +457,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateBankLevelDynamicResourceDoc**
+# **updateBankLevelDynamicResourceDoc**
 ```swift
-    open class func oBPv400UpdateBankLevelDynamicResourceDoc(bankid: String, oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest, completion: @escaping (_ data: OBPv400GetBankLevelDynamicResourceDoc200Response?, _ error: Error?) -> Void)
+    open class func updateBankLevelDynamicResourceDoc(bankid: String, updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest, completion: @escaping (_ data: GetBankLevelDynamicResourceDoc200Response?, _ error: Error?) -> Void)
 ```
 
 Update Bank Level Dynamic Resource Doc
@@ -472,10 +472,10 @@ Update Bank Level Dynamic Resource Doc
 import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
-let oBPv400UpdateBankLevelDynamicResourceDocRequest = OBPv4_0_0_updateBankLevelDynamicResourceDoc_request(type: "type_example", properties: OBPv4_0_0_updateBankLevelDynamicResourceDoc_request_properties(errorResponseBodies: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), requestVerb: nil, requestUrl: nil, description: nil, tags: nil, successResponseBody: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties(name: nil, optionalFields: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields_(type: "type_example", items: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items_properties(s: nil))), age: nil, hobby: nil, myUserId: nil)), exampleRequestBody: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_example_request_body(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_example_request_body_properties(name: nil, age: nil, hobby: nil, optionalFields: nil)), bankId: nil, roles: nil, partialFunctionName: nil, methodBody: nil, summary: nil)) // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+let updateBankLevelDynamicResourceDocRequest = updateBankLevelDynamicResourceDoc_request(errorResponseBodies: "errorResponseBodies_example", requestVerb: "requestVerb_example", requestUrl: "requestUrl_example", description: "description_example", tags: "tags_example", successResponseBody: getBankLevelDynamicResourceDoc_200_response_success_response_body(name: "name_example", optionalFields: [getBankLevelDynamicResourceDoc_200_response_success_response_body__optional_fields__inner(s: "s_example")], age: 123, hobby: [nil], myUserId: "myUserId_example"), exampleRequestBody: getBankLevelDynamicResourceDoc_200_response_example_request_body(name: "name_example", age: 123, hobby: [nil], optionalFields: [nil]), bankId: "bankId_example", roles: "roles_example", partialFunctionName: "partialFunctionName_example", methodBody: "methodBody_example", summary: "summary_example") // UpdateBankLevelDynamicResourceDocRequest | Request body
 
 // Update Bank Level Dynamic Resource Doc
-DynamicResourceDocAPI.oBPv400UpdateBankLevelDynamicResourceDoc(bankid: bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest: oBPv400UpdateBankLevelDynamicResourceDocRequest) { (response, error) in
+DynamicResourceDocAPI.updateBankLevelDynamicResourceDoc(bankid: bankid, updateBankLevelDynamicResourceDocRequest: updateBankLevelDynamicResourceDocRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -492,11 +492,11 @@ DynamicResourceDocAPI.oBPv400UpdateBankLevelDynamicResourceDoc(bankid: bankid, o
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
- **oBPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md) | Request body | 
+ **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -509,9 +509,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateDynamicResourceDoc**
+# **updateDynamicResourceDoc**
 ```swift
-    open class func oBPv400UpdateDynamicResourceDoc(oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest, completion: @escaping (_ data: OBPv400GetBankLevelDynamicResourceDoc200Response?, _ error: Error?) -> Void)
+    open class func updateDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest, completion: @escaping (_ data: GetBankLevelDynamicResourceDoc200Response?, _ error: Error?) -> Void)
 ```
 
 Update Dynamic Resource Doc
@@ -523,10 +523,10 @@ Update Dynamic Resource Doc
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OBPSwift
 
-let oBPv400UpdateBankLevelDynamicResourceDocRequest = OBPv4_0_0_updateBankLevelDynamicResourceDoc_request(type: "type_example", properties: OBPv4_0_0_updateBankLevelDynamicResourceDoc_request_properties(errorResponseBodies: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), requestVerb: nil, requestUrl: nil, description: nil, tags: nil, successResponseBody: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties(name: nil, optionalFields: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields_(type: "type_example", items: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items_properties(s: nil))), age: nil, hobby: nil, myUserId: nil)), exampleRequestBody: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_example_request_body(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_example_request_body_properties(name: nil, age: nil, hobby: nil, optionalFields: nil)), bankId: nil, roles: nil, partialFunctionName: nil, methodBody: nil, summary: nil)) // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+let updateBankLevelDynamicResourceDocRequest = updateBankLevelDynamicResourceDoc_request(errorResponseBodies: "errorResponseBodies_example", requestVerb: "requestVerb_example", requestUrl: "requestUrl_example", description: "description_example", tags: "tags_example", successResponseBody: getBankLevelDynamicResourceDoc_200_response_success_response_body(name: "name_example", optionalFields: [getBankLevelDynamicResourceDoc_200_response_success_response_body__optional_fields__inner(s: "s_example")], age: 123, hobby: [nil], myUserId: "myUserId_example"), exampleRequestBody: getBankLevelDynamicResourceDoc_200_response_example_request_body(name: "name_example", age: 123, hobby: [nil], optionalFields: [nil]), bankId: "bankId_example", roles: "roles_example", partialFunctionName: "partialFunctionName_example", methodBody: "methodBody_example", summary: "summary_example") // UpdateBankLevelDynamicResourceDocRequest | Request body
 
 // Update Dynamic Resource Doc
-DynamicResourceDocAPI.oBPv400UpdateDynamicResourceDoc(oBPv400UpdateBankLevelDynamicResourceDocRequest: oBPv400UpdateBankLevelDynamicResourceDocRequest) { (response, error) in
+DynamicResourceDocAPI.updateDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest: updateBankLevelDynamicResourceDocRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -542,11 +542,11 @@ DynamicResourceDocAPI.oBPv400UpdateDynamicResourceDoc(oBPv400UpdateBankLevelDyna
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md) | Request body | 
+ **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 

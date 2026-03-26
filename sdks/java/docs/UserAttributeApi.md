@@ -1,35 +1,35 @@
 # UserAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600CreatePersonalDataField**](UserAttributeApi.md#oBPv600CreatePersonalDataField) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field |
-| [**oBPv600CreatePersonalDataFieldWithHttpInfo**](UserAttributeApi.md#oBPv600CreatePersonalDataFieldWithHttpInfo) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field |
-| [**oBPv600CreateUserAttribute**](UserAttributeApi.md#oBPv600CreateUserAttribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute |
-| [**oBPv600CreateUserAttributeWithHttpInfo**](UserAttributeApi.md#oBPv600CreateUserAttributeWithHttpInfo) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute |
-| [**oBPv600DeletePersonalDataField**](UserAttributeApi.md#oBPv600DeletePersonalDataField) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field |
-| [**oBPv600DeletePersonalDataFieldWithHttpInfo**](UserAttributeApi.md#oBPv600DeletePersonalDataFieldWithHttpInfo) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field |
-| [**oBPv600DeleteUserAttribute**](UserAttributeApi.md#oBPv600DeleteUserAttribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute |
-| [**oBPv600DeleteUserAttributeWithHttpInfo**](UserAttributeApi.md#oBPv600DeleteUserAttributeWithHttpInfo) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute |
-| [**oBPv600GetPersonalDataFieldById**](UserAttributeApi.md#oBPv600GetPersonalDataFieldById) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id |
-| [**oBPv600GetPersonalDataFieldByIdWithHttpInfo**](UserAttributeApi.md#oBPv600GetPersonalDataFieldByIdWithHttpInfo) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id |
-| [**oBPv600GetPersonalDataFields**](UserAttributeApi.md#oBPv600GetPersonalDataFields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields |
-| [**oBPv600GetPersonalDataFieldsWithHttpInfo**](UserAttributeApi.md#oBPv600GetPersonalDataFieldsWithHttpInfo) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields |
-| [**oBPv600GetUserAttributeById**](UserAttributeApi.md#oBPv600GetUserAttributeById) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id |
-| [**oBPv600GetUserAttributeByIdWithHttpInfo**](UserAttributeApi.md#oBPv600GetUserAttributeByIdWithHttpInfo) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id |
-| [**oBPv600GetUserAttributes**](UserAttributeApi.md#oBPv600GetUserAttributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes |
-| [**oBPv600GetUserAttributesWithHttpInfo**](UserAttributeApi.md#oBPv600GetUserAttributesWithHttpInfo) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes |
-| [**oBPv600UpdatePersonalDataField**](UserAttributeApi.md#oBPv600UpdatePersonalDataField) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field |
-| [**oBPv600UpdatePersonalDataFieldWithHttpInfo**](UserAttributeApi.md#oBPv600UpdatePersonalDataFieldWithHttpInfo) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field |
-| [**oBPv600UpdateUserAttribute**](UserAttributeApi.md#oBPv600UpdateUserAttribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute |
-| [**oBPv600UpdateUserAttributeWithHttpInfo**](UserAttributeApi.md#oBPv600UpdateUserAttributeWithHttpInfo) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute |
+| [**createPersonalDataField**](UserAttributeApi.md#createPersonalDataField) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field |
+| [**createPersonalDataFieldWithHttpInfo**](UserAttributeApi.md#createPersonalDataFieldWithHttpInfo) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field |
+| [**createUserAttribute**](UserAttributeApi.md#createUserAttribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute |
+| [**createUserAttributeWithHttpInfo**](UserAttributeApi.md#createUserAttributeWithHttpInfo) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute |
+| [**deletePersonalDataField**](UserAttributeApi.md#deletePersonalDataField) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field |
+| [**deletePersonalDataFieldWithHttpInfo**](UserAttributeApi.md#deletePersonalDataFieldWithHttpInfo) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field |
+| [**deleteUserAttribute**](UserAttributeApi.md#deleteUserAttribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute |
+| [**deleteUserAttributeWithHttpInfo**](UserAttributeApi.md#deleteUserAttributeWithHttpInfo) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute |
+| [**getPersonalDataFieldById**](UserAttributeApi.md#getPersonalDataFieldById) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id |
+| [**getPersonalDataFieldByIdWithHttpInfo**](UserAttributeApi.md#getPersonalDataFieldByIdWithHttpInfo) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id |
+| [**getPersonalDataFields**](UserAttributeApi.md#getPersonalDataFields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields |
+| [**getPersonalDataFieldsWithHttpInfo**](UserAttributeApi.md#getPersonalDataFieldsWithHttpInfo) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields |
+| [**getUserAttributeById**](UserAttributeApi.md#getUserAttributeById) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id |
+| [**getUserAttributeByIdWithHttpInfo**](UserAttributeApi.md#getUserAttributeByIdWithHttpInfo) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id |
+| [**getUserAttributes**](UserAttributeApi.md#getUserAttributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes |
+| [**getUserAttributesWithHttpInfo**](UserAttributeApi.md#getUserAttributesWithHttpInfo) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes |
+| [**updatePersonalDataField**](UserAttributeApi.md#updatePersonalDataField) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field |
+| [**updatePersonalDataFieldWithHttpInfo**](UserAttributeApi.md#updatePersonalDataFieldWithHttpInfo) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field |
+| [**updateUserAttribute**](UserAttributeApi.md#updateUserAttribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute |
+| [**updateUserAttributeWithHttpInfo**](UserAttributeApi.md#updateUserAttributeWithHttpInfo) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute |
 
 
 
-## oBPv600CreatePersonalDataField
+## createPersonalDataField
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600CreatePersonalDataField(obPv600CreatePersonalDataFieldRequest)
+> GetPersonalDataFields200ResponseUserAttributesInner createPersonalDataField(createPersonalDataFieldRequest)
 
 Create Personal Data Field
 
@@ -49,7 +49,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -68,12 +68,12 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         UserAttributeApi apiInstance = new UserAttributeApi(defaultClient);
-        OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest = new OBPv600CreatePersonalDataFieldRequest(); // OBPv600CreatePersonalDataFieldRequest | Request body
+        CreatePersonalDataFieldRequest createPersonalDataFieldRequest = new CreatePersonalDataFieldRequest(); // CreatePersonalDataFieldRequest | Request body
         try {
-            OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems result = apiInstance.oBPv600CreatePersonalDataField(obPv600CreatePersonalDataFieldRequest);
+            GetPersonalDataFields200ResponseUserAttributesInner result = apiInstance.createPersonalDataField(createPersonalDataFieldRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600CreatePersonalDataField");
+            System.err.println("Exception when calling UserAttributeApi#createPersonalDataField");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -88,11 +88,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 
 ### Authorization
@@ -110,9 +110,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600CreatePersonalDataFieldWithHttpInfo
+## createPersonalDataFieldWithHttpInfo
 
-> ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600CreatePersonalDataField oBPv600CreatePersonalDataFieldWithHttpInfo(obPv600CreatePersonalDataFieldRequest)
+> ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> createPersonalDataField createPersonalDataFieldWithHttpInfo(createPersonalDataFieldRequest)
 
 Create Personal Data Field
 
@@ -133,7 +133,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -152,14 +152,14 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         UserAttributeApi apiInstance = new UserAttributeApi(defaultClient);
-        OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest = new OBPv600CreatePersonalDataFieldRequest(); // OBPv600CreatePersonalDataFieldRequest | Request body
+        CreatePersonalDataFieldRequest createPersonalDataFieldRequest = new CreatePersonalDataFieldRequest(); // CreatePersonalDataFieldRequest | Request body
         try {
-            ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> response = apiInstance.oBPv600CreatePersonalDataFieldWithHttpInfo(obPv600CreatePersonalDataFieldRequest);
+            ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> response = apiInstance.createPersonalDataFieldWithHttpInfo(createPersonalDataFieldRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600CreatePersonalDataField");
+            System.err.println("Exception when calling UserAttributeApi#createPersonalDataField");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -174,11 +174,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)>
+ApiResponse<[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)>
 
 
 ### Authorization
@@ -197,9 +197,9 @@ ApiResponse<[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesIt
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600CreateUserAttribute
+## createUserAttribute
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600CreateUserAttribute(userid, obPv600CreatePersonalDataFieldRequest)
+> GetPersonalDataFields200ResponseUserAttributesInner createUserAttribute(userid, createPersonalDataFieldRequest)
 
 Create User Attribute
 
@@ -219,7 +219,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -239,12 +239,12 @@ public class Example {
 
         UserAttributeApi apiInstance = new UserAttributeApi(defaultClient);
         String userid = "userid_example"; // String | The USERID identifier
-        OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest = new OBPv600CreatePersonalDataFieldRequest(); // OBPv600CreatePersonalDataFieldRequest | Request body
+        CreatePersonalDataFieldRequest createPersonalDataFieldRequest = new CreatePersonalDataFieldRequest(); // CreatePersonalDataFieldRequest | Request body
         try {
-            OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems result = apiInstance.oBPv600CreateUserAttribute(userid, obPv600CreatePersonalDataFieldRequest);
+            GetPersonalDataFields200ResponseUserAttributesInner result = apiInstance.createUserAttribute(userid, createPersonalDataFieldRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600CreateUserAttribute");
+            System.err.println("Exception when calling UserAttributeApi#createUserAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -260,11 +260,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userid** | **String**| The USERID identifier | |
-| **obPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 
 ### Authorization
@@ -283,9 +283,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600CreateUserAttributeWithHttpInfo
+## createUserAttributeWithHttpInfo
 
-> ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600CreateUserAttribute oBPv600CreateUserAttributeWithHttpInfo(userid, obPv600CreatePersonalDataFieldRequest)
+> ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> createUserAttribute createUserAttributeWithHttpInfo(userid, createPersonalDataFieldRequest)
 
 Create User Attribute
 
@@ -306,7 +306,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -326,14 +326,14 @@ public class Example {
 
         UserAttributeApi apiInstance = new UserAttributeApi(defaultClient);
         String userid = "userid_example"; // String | The USERID identifier
-        OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest = new OBPv600CreatePersonalDataFieldRequest(); // OBPv600CreatePersonalDataFieldRequest | Request body
+        CreatePersonalDataFieldRequest createPersonalDataFieldRequest = new CreatePersonalDataFieldRequest(); // CreatePersonalDataFieldRequest | Request body
         try {
-            ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> response = apiInstance.oBPv600CreateUserAttributeWithHttpInfo(userid, obPv600CreatePersonalDataFieldRequest);
+            ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> response = apiInstance.createUserAttributeWithHttpInfo(userid, createPersonalDataFieldRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600CreateUserAttribute");
+            System.err.println("Exception when calling UserAttributeApi#createUserAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -349,11 +349,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userid** | **String**| The USERID identifier | |
-| **obPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)>
+ApiResponse<[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)>
 
 
 ### Authorization
@@ -373,9 +373,9 @@ ApiResponse<[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesIt
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600DeletePersonalDataField
+## deletePersonalDataField
 
-> void oBPv600DeletePersonalDataField(userattributeid)
+> void deletePersonalDataField(userattributeid)
 
 Delete Personal Data Field
 
@@ -395,7 +395,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -416,9 +416,9 @@ public class Example {
         UserAttributeApi apiInstance = new UserAttributeApi(defaultClient);
         String userattributeid = "userattributeid_example"; // String | The USERATTRIBUTEID identifier
         try {
-            apiInstance.oBPv600DeletePersonalDataField(userattributeid);
+            apiInstance.deletePersonalDataField(userattributeid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600DeletePersonalDataField");
+            System.err.println("Exception when calling UserAttributeApi#deletePersonalDataField");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -456,9 +456,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600DeletePersonalDataFieldWithHttpInfo
+## deletePersonalDataFieldWithHttpInfo
 
-> ApiResponse<Void> oBPv600DeletePersonalDataField oBPv600DeletePersonalDataFieldWithHttpInfo(userattributeid)
+> ApiResponse<Void> deletePersonalDataField deletePersonalDataFieldWithHttpInfo(userattributeid)
 
 Delete Personal Data Field
 
@@ -479,7 +479,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -500,11 +500,11 @@ public class Example {
         UserAttributeApi apiInstance = new UserAttributeApi(defaultClient);
         String userattributeid = "userattributeid_example"; // String | The USERATTRIBUTEID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv600DeletePersonalDataFieldWithHttpInfo(userattributeid);
+            ApiResponse<Void> response = apiInstance.deletePersonalDataFieldWithHttpInfo(userattributeid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600DeletePersonalDataField");
+            System.err.println("Exception when calling UserAttributeApi#deletePersonalDataField");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -543,9 +543,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600DeleteUserAttribute
+## deleteUserAttribute
 
-> void oBPv600DeleteUserAttribute(userid, userattributeid)
+> void deleteUserAttribute(userid, userattributeid)
 
 Delete User Attribute
 
@@ -565,7 +565,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -587,9 +587,9 @@ public class Example {
         String userid = "userid_example"; // String | The USERID identifier
         String userattributeid = "userattributeid_example"; // String | The USERATTRIBUTEID identifier
         try {
-            apiInstance.oBPv600DeleteUserAttribute(userid, userattributeid);
+            apiInstance.deleteUserAttribute(userid, userattributeid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600DeleteUserAttribute");
+            System.err.println("Exception when calling UserAttributeApi#deleteUserAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -628,9 +628,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600DeleteUserAttributeWithHttpInfo
+## deleteUserAttributeWithHttpInfo
 
-> ApiResponse<Void> oBPv600DeleteUserAttribute oBPv600DeleteUserAttributeWithHttpInfo(userid, userattributeid)
+> ApiResponse<Void> deleteUserAttribute deleteUserAttributeWithHttpInfo(userid, userattributeid)
 
 Delete User Attribute
 
@@ -651,7 +651,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -673,11 +673,11 @@ public class Example {
         String userid = "userid_example"; // String | The USERID identifier
         String userattributeid = "userattributeid_example"; // String | The USERATTRIBUTEID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv600DeleteUserAttributeWithHttpInfo(userid, userattributeid);
+            ApiResponse<Void> response = apiInstance.deleteUserAttributeWithHttpInfo(userid, userattributeid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600DeleteUserAttribute");
+            System.err.println("Exception when calling UserAttributeApi#deleteUserAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -717,9 +717,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetPersonalDataFieldById
+## getPersonalDataFieldById
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600GetPersonalDataFieldById(userattributeid)
+> GetPersonalDataFields200ResponseUserAttributesInner getPersonalDataFieldById(userattributeid)
 
 Get Personal Data Field By Id
 
@@ -739,7 +739,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -760,10 +760,10 @@ public class Example {
         UserAttributeApi apiInstance = new UserAttributeApi(defaultClient);
         String userattributeid = "userattributeid_example"; // String | The USERATTRIBUTEID identifier
         try {
-            OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems result = apiInstance.oBPv600GetPersonalDataFieldById(userattributeid);
+            GetPersonalDataFields200ResponseUserAttributesInner result = apiInstance.getPersonalDataFieldById(userattributeid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600GetPersonalDataFieldById");
+            System.err.println("Exception when calling UserAttributeApi#getPersonalDataFieldById");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -782,7 +782,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 
 ### Authorization
@@ -801,9 +801,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetPersonalDataFieldByIdWithHttpInfo
+## getPersonalDataFieldByIdWithHttpInfo
 
-> ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600GetPersonalDataFieldById oBPv600GetPersonalDataFieldByIdWithHttpInfo(userattributeid)
+> ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> getPersonalDataFieldById getPersonalDataFieldByIdWithHttpInfo(userattributeid)
 
 Get Personal Data Field By Id
 
@@ -824,7 +824,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -845,12 +845,12 @@ public class Example {
         UserAttributeApi apiInstance = new UserAttributeApi(defaultClient);
         String userattributeid = "userattributeid_example"; // String | The USERATTRIBUTEID identifier
         try {
-            ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> response = apiInstance.oBPv600GetPersonalDataFieldByIdWithHttpInfo(userattributeid);
+            ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> response = apiInstance.getPersonalDataFieldByIdWithHttpInfo(userattributeid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600GetPersonalDataFieldById");
+            System.err.println("Exception when calling UserAttributeApi#getPersonalDataFieldById");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -869,7 +869,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)>
+ApiResponse<[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)>
 
 
 ### Authorization
@@ -889,9 +889,9 @@ ApiResponse<[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesIt
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetPersonalDataFields
+## getPersonalDataFields
 
-> OBPv600GetPersonalDataFields200Response oBPv600GetPersonalDataFields()
+> GetPersonalDataFields200Response getPersonalDataFields()
 
 Get Personal Data Fields
 
@@ -911,7 +911,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -931,10 +931,10 @@ public class Example {
 
         UserAttributeApi apiInstance = new UserAttributeApi(defaultClient);
         try {
-            OBPv600GetPersonalDataFields200Response result = apiInstance.oBPv600GetPersonalDataFields();
+            GetPersonalDataFields200Response result = apiInstance.getPersonalDataFields();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600GetPersonalDataFields");
+            System.err.println("Exception when calling UserAttributeApi#getPersonalDataFields");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -950,7 +950,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 
 ### Authorization
@@ -968,9 +968,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetPersonalDataFieldsWithHttpInfo
+## getPersonalDataFieldsWithHttpInfo
 
-> ApiResponse<OBPv600GetPersonalDataFields200Response> oBPv600GetPersonalDataFields oBPv600GetPersonalDataFieldsWithHttpInfo()
+> ApiResponse<GetPersonalDataFields200Response> getPersonalDataFields getPersonalDataFieldsWithHttpInfo()
 
 Get Personal Data Fields
 
@@ -991,7 +991,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1011,12 +1011,12 @@ public class Example {
 
         UserAttributeApi apiInstance = new UserAttributeApi(defaultClient);
         try {
-            ApiResponse<OBPv600GetPersonalDataFields200Response> response = apiInstance.oBPv600GetPersonalDataFieldsWithHttpInfo();
+            ApiResponse<GetPersonalDataFields200Response> response = apiInstance.getPersonalDataFieldsWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600GetPersonalDataFields");
+            System.err.println("Exception when calling UserAttributeApi#getPersonalDataFields");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1032,7 +1032,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)>
+ApiResponse<[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)>
 
 
 ### Authorization
@@ -1051,9 +1051,9 @@ ApiResponse<[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalData
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetUserAttributeById
+## getUserAttributeById
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600GetUserAttributeById(userid, userattributeid)
+> GetPersonalDataFields200ResponseUserAttributesInner getUserAttributeById(userid, userattributeid)
 
 Get User Attribute By Id
 
@@ -1073,7 +1073,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1095,10 +1095,10 @@ public class Example {
         String userid = "userid_example"; // String | The USERID identifier
         String userattributeid = "userattributeid_example"; // String | The USERATTRIBUTEID identifier
         try {
-            OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems result = apiInstance.oBPv600GetUserAttributeById(userid, userattributeid);
+            GetPersonalDataFields200ResponseUserAttributesInner result = apiInstance.getUserAttributeById(userid, userattributeid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600GetUserAttributeById");
+            System.err.println("Exception when calling UserAttributeApi#getUserAttributeById");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1118,7 +1118,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 
 ### Authorization
@@ -1137,9 +1137,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetUserAttributeByIdWithHttpInfo
+## getUserAttributeByIdWithHttpInfo
 
-> ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600GetUserAttributeById oBPv600GetUserAttributeByIdWithHttpInfo(userid, userattributeid)
+> ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> getUserAttributeById getUserAttributeByIdWithHttpInfo(userid, userattributeid)
 
 Get User Attribute By Id
 
@@ -1160,7 +1160,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1182,12 +1182,12 @@ public class Example {
         String userid = "userid_example"; // String | The USERID identifier
         String userattributeid = "userattributeid_example"; // String | The USERATTRIBUTEID identifier
         try {
-            ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> response = apiInstance.oBPv600GetUserAttributeByIdWithHttpInfo(userid, userattributeid);
+            ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> response = apiInstance.getUserAttributeByIdWithHttpInfo(userid, userattributeid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600GetUserAttributeById");
+            System.err.println("Exception when calling UserAttributeApi#getUserAttributeById");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1207,7 +1207,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)>
+ApiResponse<[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)>
 
 
 ### Authorization
@@ -1227,9 +1227,9 @@ ApiResponse<[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesIt
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetUserAttributes
+## getUserAttributes
 
-> OBPv600GetPersonalDataFields200Response oBPv600GetUserAttributes(userid)
+> GetPersonalDataFields200Response getUserAttributes(userid)
 
 Get User Attributes
 
@@ -1249,7 +1249,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1270,10 +1270,10 @@ public class Example {
         UserAttributeApi apiInstance = new UserAttributeApi(defaultClient);
         String userid = "userid_example"; // String | The USERID identifier
         try {
-            OBPv600GetPersonalDataFields200Response result = apiInstance.oBPv600GetUserAttributes(userid);
+            GetPersonalDataFields200Response result = apiInstance.getUserAttributes(userid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600GetUserAttributes");
+            System.err.println("Exception when calling UserAttributeApi#getUserAttributes");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1292,7 +1292,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 
 ### Authorization
@@ -1311,9 +1311,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetUserAttributesWithHttpInfo
+## getUserAttributesWithHttpInfo
 
-> ApiResponse<OBPv600GetPersonalDataFields200Response> oBPv600GetUserAttributes oBPv600GetUserAttributesWithHttpInfo(userid)
+> ApiResponse<GetPersonalDataFields200Response> getUserAttributes getUserAttributesWithHttpInfo(userid)
 
 Get User Attributes
 
@@ -1334,7 +1334,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1355,12 +1355,12 @@ public class Example {
         UserAttributeApi apiInstance = new UserAttributeApi(defaultClient);
         String userid = "userid_example"; // String | The USERID identifier
         try {
-            ApiResponse<OBPv600GetPersonalDataFields200Response> response = apiInstance.oBPv600GetUserAttributesWithHttpInfo(userid);
+            ApiResponse<GetPersonalDataFields200Response> response = apiInstance.getUserAttributesWithHttpInfo(userid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600GetUserAttributes");
+            System.err.println("Exception when calling UserAttributeApi#getUserAttributes");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1379,7 +1379,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)>
+ApiResponse<[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)>
 
 
 ### Authorization
@@ -1399,9 +1399,9 @@ ApiResponse<[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalData
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600UpdatePersonalDataField
+## updatePersonalDataField
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600UpdatePersonalDataField(userattributeid, obPv600CreatePersonalDataFieldRequest)
+> GetPersonalDataFields200ResponseUserAttributesInner updatePersonalDataField(userattributeid, createPersonalDataFieldRequest)
 
 Update Personal Data Field
 
@@ -1421,7 +1421,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1441,12 +1441,12 @@ public class Example {
 
         UserAttributeApi apiInstance = new UserAttributeApi(defaultClient);
         String userattributeid = "userattributeid_example"; // String | The USERATTRIBUTEID identifier
-        OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest = new OBPv600CreatePersonalDataFieldRequest(); // OBPv600CreatePersonalDataFieldRequest | Request body
+        CreatePersonalDataFieldRequest createPersonalDataFieldRequest = new CreatePersonalDataFieldRequest(); // CreatePersonalDataFieldRequest | Request body
         try {
-            OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems result = apiInstance.oBPv600UpdatePersonalDataField(userattributeid, obPv600CreatePersonalDataFieldRequest);
+            GetPersonalDataFields200ResponseUserAttributesInner result = apiInstance.updatePersonalDataField(userattributeid, createPersonalDataFieldRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600UpdatePersonalDataField");
+            System.err.println("Exception when calling UserAttributeApi#updatePersonalDataField");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1462,11 +1462,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userattributeid** | **String**| The USERATTRIBUTEID identifier | |
-| **obPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 
 ### Authorization
@@ -1485,9 +1485,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600UpdatePersonalDataFieldWithHttpInfo
+## updatePersonalDataFieldWithHttpInfo
 
-> ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600UpdatePersonalDataField oBPv600UpdatePersonalDataFieldWithHttpInfo(userattributeid, obPv600CreatePersonalDataFieldRequest)
+> ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> updatePersonalDataField updatePersonalDataFieldWithHttpInfo(userattributeid, createPersonalDataFieldRequest)
 
 Update Personal Data Field
 
@@ -1508,7 +1508,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1528,14 +1528,14 @@ public class Example {
 
         UserAttributeApi apiInstance = new UserAttributeApi(defaultClient);
         String userattributeid = "userattributeid_example"; // String | The USERATTRIBUTEID identifier
-        OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest = new OBPv600CreatePersonalDataFieldRequest(); // OBPv600CreatePersonalDataFieldRequest | Request body
+        CreatePersonalDataFieldRequest createPersonalDataFieldRequest = new CreatePersonalDataFieldRequest(); // CreatePersonalDataFieldRequest | Request body
         try {
-            ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> response = apiInstance.oBPv600UpdatePersonalDataFieldWithHttpInfo(userattributeid, obPv600CreatePersonalDataFieldRequest);
+            ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> response = apiInstance.updatePersonalDataFieldWithHttpInfo(userattributeid, createPersonalDataFieldRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600UpdatePersonalDataField");
+            System.err.println("Exception when calling UserAttributeApi#updatePersonalDataField");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1551,11 +1551,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userattributeid** | **String**| The USERATTRIBUTEID identifier | |
-| **obPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)>
+ApiResponse<[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)>
 
 
 ### Authorization
@@ -1575,9 +1575,9 @@ ApiResponse<[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesIt
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600UpdateUserAttribute
+## updateUserAttribute
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600UpdateUserAttribute(userid, userattributeid, obPv600CreatePersonalDataFieldRequest)
+> GetPersonalDataFields200ResponseUserAttributesInner updateUserAttribute(userid, userattributeid, createPersonalDataFieldRequest)
 
 Update User Attribute
 
@@ -1597,7 +1597,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1618,12 +1618,12 @@ public class Example {
         UserAttributeApi apiInstance = new UserAttributeApi(defaultClient);
         String userid = "userid_example"; // String | The USERID identifier
         String userattributeid = "userattributeid_example"; // String | The USERATTRIBUTEID identifier
-        OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest = new OBPv600CreatePersonalDataFieldRequest(); // OBPv600CreatePersonalDataFieldRequest | Request body
+        CreatePersonalDataFieldRequest createPersonalDataFieldRequest = new CreatePersonalDataFieldRequest(); // CreatePersonalDataFieldRequest | Request body
         try {
-            OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems result = apiInstance.oBPv600UpdateUserAttribute(userid, userattributeid, obPv600CreatePersonalDataFieldRequest);
+            GetPersonalDataFields200ResponseUserAttributesInner result = apiInstance.updateUserAttribute(userid, userattributeid, createPersonalDataFieldRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600UpdateUserAttribute");
+            System.err.println("Exception when calling UserAttributeApi#updateUserAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1640,11 +1640,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **userid** | **String**| The USERID identifier | |
 | **userattributeid** | **String**| The USERATTRIBUTEID identifier | |
-| **obPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 
 ### Authorization
@@ -1663,9 +1663,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600UpdateUserAttributeWithHttpInfo
+## updateUserAttributeWithHttpInfo
 
-> ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600UpdateUserAttribute oBPv600UpdateUserAttributeWithHttpInfo(userid, userattributeid, obPv600CreatePersonalDataFieldRequest)
+> ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> updateUserAttribute updateUserAttributeWithHttpInfo(userid, userattributeid, createPersonalDataFieldRequest)
 
 Update User Attribute
 
@@ -1686,7 +1686,7 @@ import com.openbankproject.api.UserAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1707,14 +1707,14 @@ public class Example {
         UserAttributeApi apiInstance = new UserAttributeApi(defaultClient);
         String userid = "userid_example"; // String | The USERID identifier
         String userattributeid = "userattributeid_example"; // String | The USERATTRIBUTEID identifier
-        OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest = new OBPv600CreatePersonalDataFieldRequest(); // OBPv600CreatePersonalDataFieldRequest | Request body
+        CreatePersonalDataFieldRequest createPersonalDataFieldRequest = new CreatePersonalDataFieldRequest(); // CreatePersonalDataFieldRequest | Request body
         try {
-            ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> response = apiInstance.oBPv600UpdateUserAttributeWithHttpInfo(userid, userattributeid, obPv600CreatePersonalDataFieldRequest);
+            ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> response = apiInstance.updateUserAttributeWithHttpInfo(userid, userattributeid, createPersonalDataFieldRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling UserAttributeApi#oBPv600UpdateUserAttribute");
+            System.err.println("Exception when calling UserAttributeApi#updateUserAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1731,11 +1731,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **userid** | **String**| The USERID identifier | |
 | **userattributeid** | **String**| The USERATTRIBUTEID identifier | |
-| **obPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)>
+ApiResponse<[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)>
 
 
 ### Authorization

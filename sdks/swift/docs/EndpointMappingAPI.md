@@ -1,24 +1,24 @@
 # EndpointMappingAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateBankLevelEndpointMapping**](EndpointMappingAPI.md#obpv400createbanklevelendpointmapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping
-[**oBPv400CreateEndpointMapping**](EndpointMappingAPI.md#obpv400createendpointmapping) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping
-[**oBPv400DeleteBankLevelEndpointMapping**](EndpointMappingAPI.md#obpv400deletebanklevelendpointmapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping
-[**oBPv400DeleteEndpointMapping**](EndpointMappingAPI.md#obpv400deleteendpointmapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping
-[**oBPv400GetAllBankLevelEndpointMappings**](EndpointMappingAPI.md#obpv400getallbanklevelendpointmappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings
-[**oBPv400GetAllEndpointMappings**](EndpointMappingAPI.md#obpv400getallendpointmappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings
-[**oBPv400GetBankLevelEndpointMapping**](EndpointMappingAPI.md#obpv400getbanklevelendpointmapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping
-[**oBPv400GetEndpointMapping**](EndpointMappingAPI.md#obpv400getendpointmapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id
-[**oBPv400UpdateBankLevelEndpointMapping**](EndpointMappingAPI.md#obpv400updatebanklevelendpointmapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping
-[**oBPv400UpdateEndpointMapping**](EndpointMappingAPI.md#obpv400updateendpointmapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping
+[**createBankLevelEndpointMapping**](EndpointMappingAPI.md#createbanklevelendpointmapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping
+[**createEndpointMapping**](EndpointMappingAPI.md#createendpointmapping) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping
+[**deleteBankLevelEndpointMapping**](EndpointMappingAPI.md#deletebanklevelendpointmapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping
+[**deleteEndpointMapping**](EndpointMappingAPI.md#deleteendpointmapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping
+[**getAllBankLevelEndpointMappings**](EndpointMappingAPI.md#getallbanklevelendpointmappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings
+[**getAllEndpointMappings**](EndpointMappingAPI.md#getallendpointmappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings
+[**getBankLevelEndpointMapping**](EndpointMappingAPI.md#getbanklevelendpointmapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping
+[**getEndpointMapping**](EndpointMappingAPI.md#getendpointmapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id
+[**updateBankLevelEndpointMapping**](EndpointMappingAPI.md#updatebanklevelendpointmapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping
+[**updateEndpointMapping**](EndpointMappingAPI.md#updateendpointmapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping
 
 
-# **oBPv400CreateBankLevelEndpointMapping**
+# **createBankLevelEndpointMapping**
 ```swift
-    open class func oBPv400CreateBankLevelEndpointMapping(bankid: String, oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest, completion: @escaping (_ data: OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?, _ error: Error?) -> Void)
+    open class func createBankLevelEndpointMapping(bankid: String, createEndpointMappingRequest: CreateEndpointMappingRequest, completion: @escaping (_ data: GetAllEndpointMappings200ResponseEndpointMappingsInner?, _ error: Error?) -> Void)
 ```
 
 Create Bank Level Endpoint Mapping
@@ -31,10 +31,10 @@ Create Bank Level Endpoint Mapping
 import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
-let oBPv400CreateEndpointMappingRequest = OBPv4_0_0_createEndpointMapping_request(type: "type_example", properties: OBPv4_0_0_createEndpointMapping_request_properties(operationId: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), requestMapping: OBPv4_0_0_getDynamicMessageDoc_200_response_properties_example_inbound_message(type: "type_example", properties: 123), responseMapping: OBPv4_0_0_getAllEndpointMappings_200_response_properties_endpoint_mappings_items_properties_response_mapping(type: "type_example", properties: OBPv4_0_0_getAllEndpointMappings_200_response_properties_endpoint_mappings_items_properties_response_mapping_properties(name: OBPv4_0_0_getAllEndpointMappings_200_response_properties_endpoint_mappings_items_properties_response_mapping_properties_name(type: "type_example", properties: OBPv4_0_0_getAllEndpointMappings_200_response_properties_endpoint_mappings_items_properties_response_mapping_properties_name_properties(entity: nil, field: nil, query: nil)), balance: nil)))) // OBPv400CreateEndpointMappingRequest | Request body
+let createEndpointMappingRequest = createEndpointMapping_request(operationId: "operationId_example", requestMapping: 123, responseMapping: getAllEndpointMappings_200_response_endpoint_mappings_inner_response_mapping(name: getAllEndpointMappings_200_response_endpoint_mappings_inner_response_mapping_name(entity: "entity_example", field: "field_example", query: "query_example"), balance: nil)) // CreateEndpointMappingRequest | Request body
 
 // Create Bank Level Endpoint Mapping
-EndpointMappingAPI.oBPv400CreateBankLevelEndpointMapping(bankid: bankid, oBPv400CreateEndpointMappingRequest: oBPv400CreateEndpointMappingRequest) { (response, error) in
+EndpointMappingAPI.createBankLevelEndpointMapping(bankid: bankid, createEndpointMappingRequest: createEndpointMappingRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -51,11 +51,11 @@ EndpointMappingAPI.oBPv400CreateBankLevelEndpointMapping(bankid: bankid, oBPv400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
- **oBPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md) | Request body | 
+ **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -68,9 +68,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateEndpointMapping**
+# **createEndpointMapping**
 ```swift
-    open class func oBPv400CreateEndpointMapping(oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest, completion: @escaping (_ data: OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?, _ error: Error?) -> Void)
+    open class func createEndpointMapping(createEndpointMappingRequest: CreateEndpointMappingRequest, completion: @escaping (_ data: GetAllEndpointMappings200ResponseEndpointMappingsInner?, _ error: Error?) -> Void)
 ```
 
 Create Endpoint Mapping
@@ -82,10 +82,10 @@ Create Endpoint Mapping
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OBPSwift
 
-let oBPv400CreateEndpointMappingRequest = OBPv4_0_0_createEndpointMapping_request(type: "type_example", properties: OBPv4_0_0_createEndpointMapping_request_properties(operationId: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), requestMapping: OBPv4_0_0_getDynamicMessageDoc_200_response_properties_example_inbound_message(type: "type_example", properties: 123), responseMapping: OBPv4_0_0_getAllEndpointMappings_200_response_properties_endpoint_mappings_items_properties_response_mapping(type: "type_example", properties: OBPv4_0_0_getAllEndpointMappings_200_response_properties_endpoint_mappings_items_properties_response_mapping_properties(name: OBPv4_0_0_getAllEndpointMappings_200_response_properties_endpoint_mappings_items_properties_response_mapping_properties_name(type: "type_example", properties: OBPv4_0_0_getAllEndpointMappings_200_response_properties_endpoint_mappings_items_properties_response_mapping_properties_name_properties(entity: nil, field: nil, query: nil)), balance: nil)))) // OBPv400CreateEndpointMappingRequest | Request body
+let createEndpointMappingRequest = createEndpointMapping_request(operationId: "operationId_example", requestMapping: 123, responseMapping: getAllEndpointMappings_200_response_endpoint_mappings_inner_response_mapping(name: getAllEndpointMappings_200_response_endpoint_mappings_inner_response_mapping_name(entity: "entity_example", field: "field_example", query: "query_example"), balance: nil)) // CreateEndpointMappingRequest | Request body
 
 // Create Endpoint Mapping
-EndpointMappingAPI.oBPv400CreateEndpointMapping(oBPv400CreateEndpointMappingRequest: oBPv400CreateEndpointMappingRequest) { (response, error) in
+EndpointMappingAPI.createEndpointMapping(createEndpointMappingRequest: createEndpointMappingRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -101,11 +101,11 @@ EndpointMappingAPI.oBPv400CreateEndpointMapping(oBPv400CreateEndpointMappingRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md) | Request body | 
+ **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -118,9 +118,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteBankLevelEndpointMapping**
+# **deleteBankLevelEndpointMapping**
 ```swift
-    open class func oBPv400DeleteBankLevelEndpointMapping(bankid: String, endpointmappingid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteBankLevelEndpointMapping(bankid: String, endpointmappingid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Bank Level Endpoint Mapping
@@ -136,7 +136,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let endpointmappingid = "endpointmappingid_example" // String | The ENDPOINTMAPPINGID identifier
 
 // Delete Bank Level Endpoint Mapping
-EndpointMappingAPI.oBPv400DeleteBankLevelEndpointMapping(bankid: bankid, endpointmappingid: endpointmappingid) { (response, error) in
+EndpointMappingAPI.deleteBankLevelEndpointMapping(bankid: bankid, endpointmappingid: endpointmappingid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -170,9 +170,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteEndpointMapping**
+# **deleteEndpointMapping**
 ```swift
-    open class func oBPv400DeleteEndpointMapping(endpointmappingid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteEndpointMapping(endpointmappingid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Endpoint Mapping
@@ -187,7 +187,7 @@ import OBPSwift
 let endpointmappingid = "endpointmappingid_example" // String | The ENDPOINTMAPPINGID identifier
 
 // Delete Endpoint Mapping
-EndpointMappingAPI.oBPv400DeleteEndpointMapping(endpointmappingid: endpointmappingid) { (response, error) in
+EndpointMappingAPI.deleteEndpointMapping(endpointmappingid: endpointmappingid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -220,9 +220,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllBankLevelEndpointMappings**
+# **getAllBankLevelEndpointMappings**
 ```swift
-    open class func oBPv400GetAllBankLevelEndpointMappings(bankid: String, completion: @escaping (_ data: OBPv400GetAllEndpointMappings200Response?, _ error: Error?) -> Void)
+    open class func getAllBankLevelEndpointMappings(bankid: String, completion: @escaping (_ data: GetAllEndpointMappings200Response?, _ error: Error?) -> Void)
 ```
 
 Get all Bank Level Endpoint Mappings
@@ -237,7 +237,7 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 
 // Get all Bank Level Endpoint Mappings
-EndpointMappingAPI.oBPv400GetAllBankLevelEndpointMappings(bankid: bankid) { (response, error) in
+EndpointMappingAPI.getAllBankLevelEndpointMappings(bankid: bankid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpointMappings200Response.md)
+[**GetAllEndpointMappings200Response**](GetAllEndpointMappings200Response.md)
 
 ### Authorization
 
@@ -270,9 +270,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllEndpointMappings**
+# **getAllEndpointMappings**
 ```swift
-    open class func oBPv400GetAllEndpointMappings(completion: @escaping (_ data: OBPv400GetAllEndpointMappings200Response?, _ error: Error?) -> Void)
+    open class func getAllEndpointMappings(completion: @escaping (_ data: GetAllEndpointMappings200Response?, _ error: Error?) -> Void)
 ```
 
 Get all Endpoint Mappings
@@ -286,7 +286,7 @@ import OBPSwift
 
 
 // Get all Endpoint Mappings
-EndpointMappingAPI.oBPv400GetAllEndpointMappings() { (response, error) in
+EndpointMappingAPI.getAllEndpointMappings() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -303,7 +303,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpointMappings200Response.md)
+[**GetAllEndpointMappings200Response**](GetAllEndpointMappings200Response.md)
 
 ### Authorization
 
@@ -316,9 +316,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetBankLevelEndpointMapping**
+# **getBankLevelEndpointMapping**
 ```swift
-    open class func oBPv400GetBankLevelEndpointMapping(bankid: String, endpointmappingid: String, completion: @escaping (_ data: OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?, _ error: Error?) -> Void)
+    open class func getBankLevelEndpointMapping(bankid: String, endpointmappingid: String, completion: @escaping (_ data: GetAllEndpointMappings200ResponseEndpointMappingsInner?, _ error: Error?) -> Void)
 ```
 
 Get Bank Level Endpoint Mapping
@@ -334,7 +334,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let endpointmappingid = "endpointmappingid_example" // String | The ENDPOINTMAPPINGID identifier
 
 // Get Bank Level Endpoint Mapping
-EndpointMappingAPI.oBPv400GetBankLevelEndpointMapping(bankid: bankid, endpointmappingid: endpointmappingid) { (response, error) in
+EndpointMappingAPI.getBankLevelEndpointMapping(bankid: bankid, endpointmappingid: endpointmappingid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -368,9 +368,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetEndpointMapping**
+# **getEndpointMapping**
 ```swift
-    open class func oBPv400GetEndpointMapping(endpointmappingid: String, completion: @escaping (_ data: OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?, _ error: Error?) -> Void)
+    open class func getEndpointMapping(endpointmappingid: String, completion: @escaping (_ data: GetAllEndpointMappings200ResponseEndpointMappingsInner?, _ error: Error?) -> Void)
 ```
 
 Get Endpoint Mapping by Id
@@ -385,7 +385,7 @@ import OBPSwift
 let endpointmappingid = "endpointmappingid_example" // String | The ENDPOINTMAPPINGID identifier
 
 // Get Endpoint Mapping by Id
-EndpointMappingAPI.oBPv400GetEndpointMapping(endpointmappingid: endpointmappingid) { (response, error) in
+EndpointMappingAPI.getEndpointMapping(endpointmappingid: endpointmappingid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -418,9 +418,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateBankLevelEndpointMapping**
+# **updateBankLevelEndpointMapping**
 ```swift
-    open class func oBPv400UpdateBankLevelEndpointMapping(bankid: String, endpointmappingid: String, oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest, completion: @escaping (_ data: OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?, _ error: Error?) -> Void)
+    open class func updateBankLevelEndpointMapping(bankid: String, endpointmappingid: String, createEndpointMappingRequest: CreateEndpointMappingRequest, completion: @escaping (_ data: GetAllEndpointMappings200ResponseEndpointMappingsInner?, _ error: Error?) -> Void)
 ```
 
 Update Bank Level Endpoint Mapping
@@ -434,10 +434,10 @@ import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
 let endpointmappingid = "endpointmappingid_example" // String | The ENDPOINTMAPPINGID identifier
-let oBPv400CreateEndpointMappingRequest = OBPv4_0_0_createEndpointMapping_request(type: "type_example", properties: OBPv4_0_0_createEndpointMapping_request_properties(operationId: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), requestMapping: OBPv4_0_0_getDynamicMessageDoc_200_response_properties_example_inbound_message(type: "type_example", properties: 123), responseMapping: OBPv4_0_0_getAllEndpointMappings_200_response_properties_endpoint_mappings_items_properties_response_mapping(type: "type_example", properties: OBPv4_0_0_getAllEndpointMappings_200_response_properties_endpoint_mappings_items_properties_response_mapping_properties(name: OBPv4_0_0_getAllEndpointMappings_200_response_properties_endpoint_mappings_items_properties_response_mapping_properties_name(type: "type_example", properties: OBPv4_0_0_getAllEndpointMappings_200_response_properties_endpoint_mappings_items_properties_response_mapping_properties_name_properties(entity: nil, field: nil, query: nil)), balance: nil)))) // OBPv400CreateEndpointMappingRequest | Request body
+let createEndpointMappingRequest = createEndpointMapping_request(operationId: "operationId_example", requestMapping: 123, responseMapping: getAllEndpointMappings_200_response_endpoint_mappings_inner_response_mapping(name: getAllEndpointMappings_200_response_endpoint_mappings_inner_response_mapping_name(entity: "entity_example", field: "field_example", query: "query_example"), balance: nil)) // CreateEndpointMappingRequest | Request body
 
 // Update Bank Level Endpoint Mapping
-EndpointMappingAPI.oBPv400UpdateBankLevelEndpointMapping(bankid: bankid, endpointmappingid: endpointmappingid, oBPv400CreateEndpointMappingRequest: oBPv400CreateEndpointMappingRequest) { (response, error) in
+EndpointMappingAPI.updateBankLevelEndpointMapping(bankid: bankid, endpointmappingid: endpointmappingid, createEndpointMappingRequest: createEndpointMappingRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -455,11 +455,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
  **endpointmappingid** | **String** | The ENDPOINTMAPPINGID identifier | 
- **oBPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md) | Request body | 
+ **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -472,9 +472,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateEndpointMapping**
+# **updateEndpointMapping**
 ```swift
-    open class func oBPv400UpdateEndpointMapping(endpointmappingid: String, oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest, completion: @escaping (_ data: OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?, _ error: Error?) -> Void)
+    open class func updateEndpointMapping(endpointmappingid: String, createEndpointMappingRequest: CreateEndpointMappingRequest, completion: @escaping (_ data: GetAllEndpointMappings200ResponseEndpointMappingsInner?, _ error: Error?) -> Void)
 ```
 
 Update Endpoint Mapping
@@ -487,10 +487,10 @@ Update Endpoint Mapping
 import OBPSwift
 
 let endpointmappingid = "endpointmappingid_example" // String | The ENDPOINTMAPPINGID identifier
-let oBPv400CreateEndpointMappingRequest = OBPv4_0_0_createEndpointMapping_request(type: "type_example", properties: OBPv4_0_0_createEndpointMapping_request_properties(operationId: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), requestMapping: OBPv4_0_0_getDynamicMessageDoc_200_response_properties_example_inbound_message(type: "type_example", properties: 123), responseMapping: OBPv4_0_0_getAllEndpointMappings_200_response_properties_endpoint_mappings_items_properties_response_mapping(type: "type_example", properties: OBPv4_0_0_getAllEndpointMappings_200_response_properties_endpoint_mappings_items_properties_response_mapping_properties(name: OBPv4_0_0_getAllEndpointMappings_200_response_properties_endpoint_mappings_items_properties_response_mapping_properties_name(type: "type_example", properties: OBPv4_0_0_getAllEndpointMappings_200_response_properties_endpoint_mappings_items_properties_response_mapping_properties_name_properties(entity: nil, field: nil, query: nil)), balance: nil)))) // OBPv400CreateEndpointMappingRequest | Request body
+let createEndpointMappingRequest = createEndpointMapping_request(operationId: "operationId_example", requestMapping: 123, responseMapping: getAllEndpointMappings_200_response_endpoint_mappings_inner_response_mapping(name: getAllEndpointMappings_200_response_endpoint_mappings_inner_response_mapping_name(entity: "entity_example", field: "field_example", query: "query_example"), balance: nil)) // CreateEndpointMappingRequest | Request body
 
 // Update Endpoint Mapping
-EndpointMappingAPI.oBPv400UpdateEndpointMapping(endpointmappingid: endpointmappingid, oBPv400CreateEndpointMappingRequest: oBPv400CreateEndpointMappingRequest) { (response, error) in
+EndpointMappingAPI.updateEndpointMapping(endpointmappingid: endpointmappingid, createEndpointMappingRequest: createEndpointMappingRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -507,11 +507,11 @@ EndpointMappingAPI.oBPv400UpdateEndpointMapping(endpointmappingid: endpointmappi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpointmappingid** | **String** | The ENDPOINTMAPPINGID identifier | 
- **oBPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md) | Request body | 
+ **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 

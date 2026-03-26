@@ -18,11 +18,11 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv310_get_o_auth2_server_jwks_uris200_response import OBPv310GetOAuth2ServerJWKsURIs200Response
-from obp_python.models.obpv310_get_obp_connector_loopback200_response import OBPv310GetObpConnectorLoopback200Response
-from obp_python.models.obpv600_get_oidc_client200_response import OBPv600GetOidcClient200Response
-from obp_python.models.obpv600_verify_oidc_client200_response import OBPv600VerifyOidcClient200Response
-from obp_python.models.obpv600_verify_oidc_client_request import OBPv600VerifyOidcClientRequest
+from obp_python.models.get_o_auth2_server_jwks_uris200_response import GetOAuth2ServerJWKsURIs200Response
+from obp_python.models.get_obp_connector_loopback200_response import GetObpConnectorLoopback200Response
+from obp_python.models.get_oidc_client200_response import GetOidcClient200Response
+from obp_python.models.verify_oidc_client200_response import VerifyOidcClient200Response
+from obp_python.models.verify_oidc_client_request import VerifyOidcClientRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -43,7 +43,7 @@ class OIDCApi:
 
 
     @validate_call
-    def o_bpv3_1_0_get_o_auth2_server_jwks_uris(
+    def get_o_auth2_server_jwks_uris(
         self,
         _request_timeout: Union[
             None,
@@ -57,7 +57,7 @@ class OIDCApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv310GetOAuth2ServerJWKsURIs200Response:
+    ) -> GetOAuth2ServerJWKsURIs200Response:
         """Get JSON Web Key (JWK) URIs
 
         <p>Get the OAuth2 server's public JSON Web Key (JWK) URIs.<br /> It is required by client applications to validate ID tokens, self-contained access tokens and other issued objects.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#jwks_uri\"><strong>jwks_uri</strong></a>:</p> <p><a href=\"/glossary#jwks_uris\"><strong>jwks_uris</strong></a>:</p> 
@@ -84,7 +84,7 @@ class OIDCApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_get_o_auth2_server_jwks_uris_serialize(
+        _param = self._get_o_auth2_server_jwks_uris_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -92,7 +92,7 @@ class OIDCApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetOAuth2ServerJWKsURIs200Response",
+            '200': "GetOAuth2ServerJWKsURIs200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -107,7 +107,7 @@ class OIDCApi:
 
 
     @validate_call
-    def o_bpv3_1_0_get_o_auth2_server_jwks_uris_with_http_info(
+    def get_o_auth2_server_jwks_uris_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -121,7 +121,7 @@ class OIDCApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv310GetOAuth2ServerJWKsURIs200Response]:
+    ) -> ApiResponse[GetOAuth2ServerJWKsURIs200Response]:
         """Get JSON Web Key (JWK) URIs
 
         <p>Get the OAuth2 server's public JSON Web Key (JWK) URIs.<br /> It is required by client applications to validate ID tokens, self-contained access tokens and other issued objects.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#jwks_uri\"><strong>jwks_uri</strong></a>:</p> <p><a href=\"/glossary#jwks_uris\"><strong>jwks_uris</strong></a>:</p> 
@@ -148,7 +148,7 @@ class OIDCApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_get_o_auth2_server_jwks_uris_serialize(
+        _param = self._get_o_auth2_server_jwks_uris_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -156,7 +156,7 @@ class OIDCApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetOAuth2ServerJWKsURIs200Response",
+            '200': "GetOAuth2ServerJWKsURIs200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -171,7 +171,7 @@ class OIDCApi:
 
 
     @validate_call
-    def o_bpv3_1_0_get_o_auth2_server_jwks_uris_without_preload_content(
+    def get_o_auth2_server_jwks_uris_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -212,7 +212,7 @@ class OIDCApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_get_o_auth2_server_jwks_uris_serialize(
+        _param = self._get_o_auth2_server_jwks_uris_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -220,7 +220,7 @@ class OIDCApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetOAuth2ServerJWKsURIs200Response",
+            '200': "GetOAuth2ServerJWKsURIs200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -230,7 +230,7 @@ class OIDCApi:
         return response_data.response
 
 
-    def _o_bpv3_1_0_get_o_auth2_server_jwks_uris_serialize(
+    def _get_o_auth2_server_jwks_uris_serialize(
         self,
         _request_auth,
         _content_type,
@@ -291,7 +291,7 @@ class OIDCApi:
 
 
     @validate_call
-    def o_bpv3_1_0_get_obp_connector_loopback(
+    def get_obp_connector_loopback(
         self,
         _request_timeout: Union[
             None,
@@ -305,7 +305,7 @@ class OIDCApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv310GetObpConnectorLoopback200Response:
+    ) -> GetObpConnectorLoopback200Response:
         """Get Connector Status (Loopback)
 
         <p>This endpoint makes a call to the Connector to check the backend transport is reachable. (Deprecated)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#connector_version\"><strong>connector_version</strong></a>:</p> <p><a href=\"/glossary#duration_time\"><strong>duration_time</strong></a>: 60</p> <p><a href=\"/glossary#\"><strong>git_commit</strong></a>: 59623811dd8a41f6ffe67be46954eee11913dc28</p> 
@@ -332,7 +332,7 @@ class OIDCApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_get_obp_connector_loopback_serialize(
+        _param = self._get_obp_connector_loopback_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -340,7 +340,7 @@ class OIDCApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetObpConnectorLoopback200Response",
+            '200': "GetObpConnectorLoopback200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -355,7 +355,7 @@ class OIDCApi:
 
 
     @validate_call
-    def o_bpv3_1_0_get_obp_connector_loopback_with_http_info(
+    def get_obp_connector_loopback_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -369,7 +369,7 @@ class OIDCApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv310GetObpConnectorLoopback200Response]:
+    ) -> ApiResponse[GetObpConnectorLoopback200Response]:
         """Get Connector Status (Loopback)
 
         <p>This endpoint makes a call to the Connector to check the backend transport is reachable. (Deprecated)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#connector_version\"><strong>connector_version</strong></a>:</p> <p><a href=\"/glossary#duration_time\"><strong>duration_time</strong></a>: 60</p> <p><a href=\"/glossary#\"><strong>git_commit</strong></a>: 59623811dd8a41f6ffe67be46954eee11913dc28</p> 
@@ -396,7 +396,7 @@ class OIDCApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_get_obp_connector_loopback_serialize(
+        _param = self._get_obp_connector_loopback_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -404,7 +404,7 @@ class OIDCApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetObpConnectorLoopback200Response",
+            '200': "GetObpConnectorLoopback200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -419,7 +419,7 @@ class OIDCApi:
 
 
     @validate_call
-    def o_bpv3_1_0_get_obp_connector_loopback_without_preload_content(
+    def get_obp_connector_loopback_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -460,7 +460,7 @@ class OIDCApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_get_obp_connector_loopback_serialize(
+        _param = self._get_obp_connector_loopback_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -468,7 +468,7 @@ class OIDCApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetObpConnectorLoopback200Response",
+            '200': "GetObpConnectorLoopback200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -478,7 +478,7 @@ class OIDCApi:
         return response_data.response
 
 
-    def _o_bpv3_1_0_get_obp_connector_loopback_serialize(
+    def _get_obp_connector_loopback_serialize(
         self,
         _request_auth,
         _content_type,
@@ -542,7 +542,7 @@ class OIDCApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_oidc_client(
+    def get_oidc_client(
         self,
         clientid: Annotated[StrictStr, Field(description="The CLIENTID identifier")],
         _request_timeout: Union[
@@ -557,7 +557,7 @@ class OIDCApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetOidcClient200Response:
+    ) -> GetOidcClient200Response:
         """Get OIDC Client
 
         <p>Gets an OIDC/OAuth2 client's metadata by client_id.</p> <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br /> This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CLIENT_ID</a>: CLIENT_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_name</strong></a>: client_name</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>redirect_uris</strong></a>: redirect_uris</p> 
@@ -586,7 +586,7 @@ class OIDCApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_oidc_client_serialize(
+        _param = self._get_oidc_client_serialize(
             clientid=clientid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -595,7 +595,7 @@ class OIDCApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetOidcClient200Response",
+            '200': "GetOidcClient200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -610,7 +610,7 @@ class OIDCApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_oidc_client_with_http_info(
+    def get_oidc_client_with_http_info(
         self,
         clientid: Annotated[StrictStr, Field(description="The CLIENTID identifier")],
         _request_timeout: Union[
@@ -625,7 +625,7 @@ class OIDCApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetOidcClient200Response]:
+    ) -> ApiResponse[GetOidcClient200Response]:
         """Get OIDC Client
 
         <p>Gets an OIDC/OAuth2 client's metadata by client_id.</p> <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br /> This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CLIENT_ID</a>: CLIENT_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_name</strong></a>: client_name</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>redirect_uris</strong></a>: redirect_uris</p> 
@@ -654,7 +654,7 @@ class OIDCApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_oidc_client_serialize(
+        _param = self._get_oidc_client_serialize(
             clientid=clientid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -663,7 +663,7 @@ class OIDCApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetOidcClient200Response",
+            '200': "GetOidcClient200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -678,7 +678,7 @@ class OIDCApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_oidc_client_without_preload_content(
+    def get_oidc_client_without_preload_content(
         self,
         clientid: Annotated[StrictStr, Field(description="The CLIENTID identifier")],
         _request_timeout: Union[
@@ -722,7 +722,7 @@ class OIDCApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_oidc_client_serialize(
+        _param = self._get_oidc_client_serialize(
             clientid=clientid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -731,7 +731,7 @@ class OIDCApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetOidcClient200Response",
+            '200': "GetOidcClient200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -741,7 +741,7 @@ class OIDCApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_oidc_client_serialize(
+    def _get_oidc_client_serialize(
         self,
         clientid,
         _request_auth,
@@ -808,9 +808,9 @@ class OIDCApi:
 
 
     @validate_call
-    def o_bpv6_0_0_verify_oidc_client(
+    def verify_oidc_client(
         self,
-        obpv600_verify_oidc_client_request: Annotated[OBPv600VerifyOidcClientRequest, Field(description="Request body")],
+        verify_oidc_client_request: Annotated[VerifyOidcClientRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -823,13 +823,13 @@ class OIDCApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600VerifyOidcClient200Response:
+    ) -> VerifyOidcClient200Response:
         """Verify OIDC Client
 
         <p>Verifies an OIDC/OAuth2 client's credentials.</p> <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br /> Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_secret</strong></a>: client_secret</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> <p><a href=\"/glossary#\">client_id</a>: client_id</p> <p><a href=\"/glossary#\">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">redirect_uris</a>: redirect_uris</p> 
 
-        :param obpv600_verify_oidc_client_request: Request body (required)
-        :type obpv600_verify_oidc_client_request: OBPv600VerifyOidcClientRequest
+        :param verify_oidc_client_request: Request body (required)
+        :type verify_oidc_client_request: VerifyOidcClientRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -852,8 +852,8 @@ class OIDCApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_verify_oidc_client_serialize(
-            obpv600_verify_oidc_client_request=obpv600_verify_oidc_client_request,
+        _param = self._verify_oidc_client_serialize(
+            verify_oidc_client_request=verify_oidc_client_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -861,7 +861,7 @@ class OIDCApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600VerifyOidcClient200Response",
+            '200': "VerifyOidcClient200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -876,9 +876,9 @@ class OIDCApi:
 
 
     @validate_call
-    def o_bpv6_0_0_verify_oidc_client_with_http_info(
+    def verify_oidc_client_with_http_info(
         self,
-        obpv600_verify_oidc_client_request: Annotated[OBPv600VerifyOidcClientRequest, Field(description="Request body")],
+        verify_oidc_client_request: Annotated[VerifyOidcClientRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -891,13 +891,13 @@ class OIDCApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600VerifyOidcClient200Response]:
+    ) -> ApiResponse[VerifyOidcClient200Response]:
         """Verify OIDC Client
 
         <p>Verifies an OIDC/OAuth2 client's credentials.</p> <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br /> Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_secret</strong></a>: client_secret</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> <p><a href=\"/glossary#\">client_id</a>: client_id</p> <p><a href=\"/glossary#\">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">redirect_uris</a>: redirect_uris</p> 
 
-        :param obpv600_verify_oidc_client_request: Request body (required)
-        :type obpv600_verify_oidc_client_request: OBPv600VerifyOidcClientRequest
+        :param verify_oidc_client_request: Request body (required)
+        :type verify_oidc_client_request: VerifyOidcClientRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -920,8 +920,8 @@ class OIDCApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_verify_oidc_client_serialize(
-            obpv600_verify_oidc_client_request=obpv600_verify_oidc_client_request,
+        _param = self._verify_oidc_client_serialize(
+            verify_oidc_client_request=verify_oidc_client_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -929,7 +929,7 @@ class OIDCApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600VerifyOidcClient200Response",
+            '200': "VerifyOidcClient200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -944,9 +944,9 @@ class OIDCApi:
 
 
     @validate_call
-    def o_bpv6_0_0_verify_oidc_client_without_preload_content(
+    def verify_oidc_client_without_preload_content(
         self,
-        obpv600_verify_oidc_client_request: Annotated[OBPv600VerifyOidcClientRequest, Field(description="Request body")],
+        verify_oidc_client_request: Annotated[VerifyOidcClientRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -964,8 +964,8 @@ class OIDCApi:
 
         <p>Verifies an OIDC/OAuth2 client's credentials.</p> <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br /> Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_secret</strong></a>: client_secret</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> <p><a href=\"/glossary#\">client_id</a>: client_id</p> <p><a href=\"/glossary#\">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">redirect_uris</a>: redirect_uris</p> 
 
-        :param obpv600_verify_oidc_client_request: Request body (required)
-        :type obpv600_verify_oidc_client_request: OBPv600VerifyOidcClientRequest
+        :param verify_oidc_client_request: Request body (required)
+        :type verify_oidc_client_request: VerifyOidcClientRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -988,8 +988,8 @@ class OIDCApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_verify_oidc_client_serialize(
-            obpv600_verify_oidc_client_request=obpv600_verify_oidc_client_request,
+        _param = self._verify_oidc_client_serialize(
+            verify_oidc_client_request=verify_oidc_client_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -997,7 +997,7 @@ class OIDCApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600VerifyOidcClient200Response",
+            '200': "VerifyOidcClient200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1007,9 +1007,9 @@ class OIDCApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_verify_oidc_client_serialize(
+    def _verify_oidc_client_serialize(
         self,
-        obpv600_verify_oidc_client_request,
+        verify_oidc_client_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1035,8 +1035,8 @@ class OIDCApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_verify_oidc_client_request is not None:
-            _body_params = obpv600_verify_oidc_client_request
+        if verify_oidc_client_request is not None:
+            _body_params = verify_oidc_client_request
 
 
         # set the HTTP header `Accept`

@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,17 +24,166 @@ import (
 // PublicDataAPIService PublicDataAPI service
 type PublicDataAPIService service
 
-type ApiOBPv200PublicAccountsAllBanksRequest struct {
+type ApiGetAccountsAtBankRequest struct {
+	ctx context.Context
+	ApiService *PublicDataAPIService
+	bankid string
+}
+
+func (r ApiGetAccountsAtBankRequest) Execute() (*GetAccountsAtBank200Response, *http.Response, error) {
+	return r.ApiService.GetAccountsAtBankExecute(r)
+}
+
+/*
+GetAccountsAtBank Get Accounts at Bank
+
+<p>Returns the list of accounts at BANK_ID that the user has access to.<br />
+For each account the API returns the account ID and the views available to the user.<br />
+Each account must have at least one private View.</p>
+<p>This v6.0.0 version returns <code>account_id</code> instead of <code>id</code> for consistency with other v6.0.0 endpoints.</p>
+<p>Optional request parameters for filtering with attributes:<br />
+URL params example: /banks/some-bank-id/accounts?limit=50&amp;offset=1</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#accounts"><strong>accounts</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
+<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
+<p><a href="/glossary#views_available"><strong>views_available</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @return ApiGetAccountsAtBankRequest
+*/
+func (a *PublicDataAPIService) GetAccountsAtBank(ctx context.Context, bankid string) ApiGetAccountsAtBankRequest {
+	return ApiGetAccountsAtBankRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+	}
+}
+
+// Execute executes the request
+//  @return GetAccountsAtBank200Response
+func (a *PublicDataAPIService) GetAccountsAtBankExecute(r ApiGetAccountsAtBankRequest) (*GetAccountsAtBank200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetAccountsAtBank200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicDataAPIService.GetAccountsAtBank")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiPublicAccountsAllBanksRequest struct {
 	ctx context.Context
 	ApiService *PublicDataAPIService
 }
 
-func (r ApiOBPv200PublicAccountsAllBanksRequest) Execute() (*OBPv200PublicAccountsAllBanks200Response, *http.Response, error) {
-	return r.ApiService.OBPv200PublicAccountsAllBanksExecute(r)
+func (r ApiPublicAccountsAllBanksRequest) Execute() (*PublicAccountsAllBanks200Response, *http.Response, error) {
+	return r.ApiService.PublicAccountsAllBanksExecute(r)
 }
 
 /*
-OBPv200PublicAccountsAllBanks Get Public Accounts at all Banks
+PublicAccountsAllBanks Get Public Accounts at all Banks
 
 <p>Get public accounts at all banks (Anonymous access).<br />
 Returns accounts that contain at least one public view (a view where is_public is true)<br />
@@ -51,26 +200,26 @@ For each account the API returns the ID and the available views.</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv200PublicAccountsAllBanksRequest
+ @return ApiPublicAccountsAllBanksRequest
 */
-func (a *PublicDataAPIService) OBPv200PublicAccountsAllBanks(ctx context.Context) ApiOBPv200PublicAccountsAllBanksRequest {
-	return ApiOBPv200PublicAccountsAllBanksRequest{
+func (a *PublicDataAPIService) PublicAccountsAllBanks(ctx context.Context) ApiPublicAccountsAllBanksRequest {
+	return ApiPublicAccountsAllBanksRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv200PublicAccountsAllBanks200Response
-func (a *PublicDataAPIService) OBPv200PublicAccountsAllBanksExecute(r ApiOBPv200PublicAccountsAllBanksRequest) (*OBPv200PublicAccountsAllBanks200Response, *http.Response, error) {
+//  @return PublicAccountsAllBanks200Response
+func (a *PublicDataAPIService) PublicAccountsAllBanksExecute(r ApiPublicAccountsAllBanksRequest) (*PublicAccountsAllBanks200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv200PublicAccountsAllBanks200Response
+		localVarReturnValue  *PublicAccountsAllBanks200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicDataAPIService.OBPv200PublicAccountsAllBanks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicDataAPIService.PublicAccountsAllBanks")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -135,18 +284,18 @@ func (a *PublicDataAPIService) OBPv200PublicAccountsAllBanksExecute(r ApiOBPv200
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv200PublicAccountsAtOneBankRequest struct {
+type ApiPublicAccountsAtOneBankRequest struct {
 	ctx context.Context
 	ApiService *PublicDataAPIService
 	bankid string
 }
 
-func (r ApiOBPv200PublicAccountsAtOneBankRequest) Execute() (*OBPv200PublicAccountsAllBanks200Response, *http.Response, error) {
-	return r.ApiService.OBPv200PublicAccountsAtOneBankExecute(r)
+func (r ApiPublicAccountsAtOneBankRequest) Execute() (*PublicAccountsAllBanks200Response, *http.Response, error) {
+	return r.ApiService.PublicAccountsAtOneBankExecute(r)
 }
 
 /*
-OBPv200PublicAccountsAtOneBank Get Public Accounts at Bank
+PublicAccountsAtOneBank Get Public Accounts at Bank
 
 <p>Returns a list of the public accounts (Anonymous access) at BANK_ID. For each account the API returns the ID and the available views.</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
@@ -164,10 +313,10 @@ OBPv200PublicAccountsAtOneBank Get Public Accounts at Bank
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv200PublicAccountsAtOneBankRequest
+ @return ApiPublicAccountsAtOneBankRequest
 */
-func (a *PublicDataAPIService) OBPv200PublicAccountsAtOneBank(ctx context.Context, bankid string) ApiOBPv200PublicAccountsAtOneBankRequest {
-	return ApiOBPv200PublicAccountsAtOneBankRequest{
+func (a *PublicDataAPIService) PublicAccountsAtOneBank(ctx context.Context, bankid string) ApiPublicAccountsAtOneBankRequest {
+	return ApiPublicAccountsAtOneBankRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -175,16 +324,16 @@ func (a *PublicDataAPIService) OBPv200PublicAccountsAtOneBank(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return OBPv200PublicAccountsAllBanks200Response
-func (a *PublicDataAPIService) OBPv200PublicAccountsAtOneBankExecute(r ApiOBPv200PublicAccountsAtOneBankRequest) (*OBPv200PublicAccountsAllBanks200Response, *http.Response, error) {
+//  @return PublicAccountsAllBanks200Response
+func (a *PublicDataAPIService) PublicAccountsAtOneBankExecute(r ApiPublicAccountsAtOneBankRequest) (*PublicAccountsAllBanks200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv200PublicAccountsAllBanks200Response
+		localVarReturnValue  *PublicAccountsAllBanks200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicDataAPIService.OBPv200PublicAccountsAtOneBank")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicDataAPIService.PublicAccountsAtOneBank")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -212,155 +361,6 @@ func (a *PublicDataAPIService) OBPv200PublicAccountsAtOneBankExecute(r ApiOBPv20
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600GetAccountsAtBankRequest struct {
-	ctx context.Context
-	ApiService *PublicDataAPIService
-	bankid string
-}
-
-func (r ApiOBPv600GetAccountsAtBankRequest) Execute() (*OBPv600GetAccountsAtBank200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetAccountsAtBankExecute(r)
-}
-
-/*
-OBPv600GetAccountsAtBank Get Accounts at Bank
-
-<p>Returns the list of accounts at BANK_ID that the user has access to.<br />
-For each account the API returns the account ID and the views available to the user.<br />
-Each account must have at least one private View.</p>
-<p>This v6.0.0 version returns <code>account_id</code> instead of <code>id</code> for consistency with other v6.0.0 endpoints.</p>
-<p>Optional request parameters for filtering with attributes:<br />
-URL params example: /banks/some-bank-id/accounts?limit=50&amp;offset=1</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#accounts"><strong>accounts</strong></a>:</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
-<p><a href="/glossary#views_available"><strong>views_available</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @return ApiOBPv600GetAccountsAtBankRequest
-*/
-func (a *PublicDataAPIService) OBPv600GetAccountsAtBank(ctx context.Context, bankid string) ApiOBPv600GetAccountsAtBankRequest {
-	return ApiOBPv600GetAccountsAtBankRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600GetAccountsAtBank200Response
-func (a *PublicDataAPIService) OBPv600GetAccountsAtBankExecute(r ApiOBPv600GetAccountsAtBankRequest) (*OBPv600GetAccountsAtBank200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetAccountsAtBank200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicDataAPIService.OBPv600GetAccountsAtBank")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

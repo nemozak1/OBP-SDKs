@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,18 +24,18 @@ import (
 // ChannelAPIService ChannelAPI service
 type ChannelAPIService service
 
-type ApiOBPv600DeleteSignalChannelRequest struct {
+type ApiDeleteSignalChannelRequest struct {
 	ctx context.Context
 	ApiService *ChannelAPIService
 	channelname string
 }
 
-func (r ApiOBPv600DeleteSignalChannelRequest) Execute() (*OBPv600DeleteSignalChannel200Response, *http.Response, error) {
-	return r.ApiService.OBPv600DeleteSignalChannelExecute(r)
+func (r ApiDeleteSignalChannelRequest) Execute() (*DeleteSignalChannel200Response, *http.Response, error) {
+	return r.ApiService.DeleteSignalChannelExecute(r)
 }
 
 /*
-OBPv600DeleteSignalChannel Delete Signal Channel
+DeleteSignalChannel Delete Signal Channel
 
 <p>Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.<br />
 Messages are ephemeral and will expire after the configured TTL (default 1 hour).</p>
@@ -51,10 +51,10 @@ Messages are ephemeral and will expire after the configured TTL (default 1 hour)
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param channelname The CHANNELNAME identifier
- @return ApiOBPv600DeleteSignalChannelRequest
+ @return ApiDeleteSignalChannelRequest
 */
-func (a *ChannelAPIService) OBPv600DeleteSignalChannel(ctx context.Context, channelname string) ApiOBPv600DeleteSignalChannelRequest {
-	return ApiOBPv600DeleteSignalChannelRequest{
+func (a *ChannelAPIService) DeleteSignalChannel(ctx context.Context, channelname string) ApiDeleteSignalChannelRequest {
+	return ApiDeleteSignalChannelRequest{
 		ApiService: a,
 		ctx: ctx,
 		channelname: channelname,
@@ -62,16 +62,16 @@ func (a *ChannelAPIService) OBPv600DeleteSignalChannel(ctx context.Context, chan
 }
 
 // Execute executes the request
-//  @return OBPv600DeleteSignalChannel200Response
-func (a *ChannelAPIService) OBPv600DeleteSignalChannelExecute(r ApiOBPv600DeleteSignalChannelRequest) (*OBPv600DeleteSignalChannel200Response, *http.Response, error) {
+//  @return DeleteSignalChannel200Response
+func (a *ChannelAPIService) DeleteSignalChannelExecute(r ApiDeleteSignalChannelRequest) (*DeleteSignalChannel200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600DeleteSignalChannel200Response
+		localVarReturnValue  *DeleteSignalChannel200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelAPIService.OBPv600DeleteSignalChannel")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelAPIService.DeleteSignalChannel")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -124,7 +124,7 @@ func (a *ChannelAPIService) OBPv600DeleteSignalChannelExecute(r ApiOBPv600Delete
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -165,18 +165,18 @@ func (a *ChannelAPIService) OBPv600DeleteSignalChannelExecute(r ApiOBPv600Delete
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetSignalChannelInfoRequest struct {
+type ApiGetSignalChannelInfoRequest struct {
 	ctx context.Context
 	ApiService *ChannelAPIService
 	channelname string
 }
 
-func (r ApiOBPv600GetSignalChannelInfoRequest) Execute() (*OBPv600GetSignalChannelInfo200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetSignalChannelInfoExecute(r)
+func (r ApiGetSignalChannelInfoRequest) Execute() (*GetSignalChannelInfo200Response, *http.Response, error) {
+	return r.ApiService.GetSignalChannelInfoExecute(r)
 }
 
 /*
-OBPv600GetSignalChannelInfo Get Signal Channel Info
+GetSignalChannelInfo Get Signal Channel Info
 
 <p>Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.<br />
 Messages are ephemeral and will expire after the configured TTL (default 1 hour).</p>
@@ -193,10 +193,10 @@ Messages are ephemeral and will expire after the configured TTL (default 1 hour)
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param channelname The CHANNELNAME identifier
- @return ApiOBPv600GetSignalChannelInfoRequest
+ @return ApiGetSignalChannelInfoRequest
 */
-func (a *ChannelAPIService) OBPv600GetSignalChannelInfo(ctx context.Context, channelname string) ApiOBPv600GetSignalChannelInfoRequest {
-	return ApiOBPv600GetSignalChannelInfoRequest{
+func (a *ChannelAPIService) GetSignalChannelInfo(ctx context.Context, channelname string) ApiGetSignalChannelInfoRequest {
+	return ApiGetSignalChannelInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 		channelname: channelname,
@@ -204,16 +204,16 @@ func (a *ChannelAPIService) OBPv600GetSignalChannelInfo(ctx context.Context, cha
 }
 
 // Execute executes the request
-//  @return OBPv600GetSignalChannelInfo200Response
-func (a *ChannelAPIService) OBPv600GetSignalChannelInfoExecute(r ApiOBPv600GetSignalChannelInfoRequest) (*OBPv600GetSignalChannelInfo200Response, *http.Response, error) {
+//  @return GetSignalChannelInfo200Response
+func (a *ChannelAPIService) GetSignalChannelInfoExecute(r ApiGetSignalChannelInfoRequest) (*GetSignalChannelInfo200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetSignalChannelInfo200Response
+		localVarReturnValue  *GetSignalChannelInfo200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelAPIService.OBPv600GetSignalChannelInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelAPIService.GetSignalChannelInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -266,7 +266,7 @@ func (a *ChannelAPIService) OBPv600GetSignalChannelInfoExecute(r ApiOBPv600GetSi
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -307,17 +307,17 @@ func (a *ChannelAPIService) OBPv600GetSignalChannelInfoExecute(r ApiOBPv600GetSi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetSignalChannelsRequest struct {
+type ApiGetSignalChannelsRequest struct {
 	ctx context.Context
 	ApiService *ChannelAPIService
 }
 
-func (r ApiOBPv600GetSignalChannelsRequest) Execute() (*OBPv600GetSignalChannels200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetSignalChannelsExecute(r)
+func (r ApiGetSignalChannelsRequest) Execute() (*GetSignalChannels200Response, *http.Response, error) {
+	return r.ApiService.GetSignalChannelsExecute(r)
 }
 
 /*
-OBPv600GetSignalChannels List Signal Channels
+GetSignalChannels List Signal Channels
 
 <p>Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.<br />
 Messages are ephemeral and will expire after the configured TTL (default 1 hour).</p>
@@ -334,26 +334,26 @@ Private-only channels are not shown.</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetSignalChannelsRequest
+ @return ApiGetSignalChannelsRequest
 */
-func (a *ChannelAPIService) OBPv600GetSignalChannels(ctx context.Context) ApiOBPv600GetSignalChannelsRequest {
-	return ApiOBPv600GetSignalChannelsRequest{
+func (a *ChannelAPIService) GetSignalChannels(ctx context.Context) ApiGetSignalChannelsRequest {
+	return ApiGetSignalChannelsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetSignalChannels200Response
-func (a *ChannelAPIService) OBPv600GetSignalChannelsExecute(r ApiOBPv600GetSignalChannelsRequest) (*OBPv600GetSignalChannels200Response, *http.Response, error) {
+//  @return GetSignalChannels200Response
+func (a *ChannelAPIService) GetSignalChannelsExecute(r ApiGetSignalChannelsRequest) (*GetSignalChannels200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetSignalChannels200Response
+		localVarReturnValue  *GetSignalChannels200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelAPIService.OBPv600GetSignalChannels")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelAPIService.GetSignalChannels")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -405,7 +405,7 @@ func (a *ChannelAPIService) OBPv600GetSignalChannelsExecute(r ApiOBPv600GetSigna
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -446,18 +446,18 @@ func (a *ChannelAPIService) OBPv600GetSignalChannelsExecute(r ApiOBPv600GetSigna
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetSignalMessagesRequest struct {
+type ApiGetSignalMessagesRequest struct {
 	ctx context.Context
 	ApiService *ChannelAPIService
 	channelname string
 }
 
-func (r ApiOBPv600GetSignalMessagesRequest) Execute() (*OBPv600GetSignalMessages200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetSignalMessagesExecute(r)
+func (r ApiGetSignalMessagesRequest) Execute() (*GetSignalMessages200Response, *http.Response, error) {
+	return r.ApiService.GetSignalMessagesExecute(r)
 }
 
 /*
-OBPv600GetSignalMessages Get Signal Messages
+GetSignalMessages Get Signal Messages
 
 <p>Fetch messages from a signal channel with offset/limit pagination.</p>
 <p>Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery<br />
@@ -486,10 +486,10 @@ and private messages addressed to you (to_user_id matches your user ID) or sent 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param channelname The CHANNELNAME identifier
- @return ApiOBPv600GetSignalMessagesRequest
+ @return ApiGetSignalMessagesRequest
 */
-func (a *ChannelAPIService) OBPv600GetSignalMessages(ctx context.Context, channelname string) ApiOBPv600GetSignalMessagesRequest {
-	return ApiOBPv600GetSignalMessagesRequest{
+func (a *ChannelAPIService) GetSignalMessages(ctx context.Context, channelname string) ApiGetSignalMessagesRequest {
+	return ApiGetSignalMessagesRequest{
 		ApiService: a,
 		ctx: ctx,
 		channelname: channelname,
@@ -497,16 +497,16 @@ func (a *ChannelAPIService) OBPv600GetSignalMessages(ctx context.Context, channe
 }
 
 // Execute executes the request
-//  @return OBPv600GetSignalMessages200Response
-func (a *ChannelAPIService) OBPv600GetSignalMessagesExecute(r ApiOBPv600GetSignalMessagesRequest) (*OBPv600GetSignalMessages200Response, *http.Response, error) {
+//  @return GetSignalMessages200Response
+func (a *ChannelAPIService) GetSignalMessagesExecute(r ApiGetSignalMessagesRequest) (*GetSignalMessages200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetSignalMessages200Response
+		localVarReturnValue  *GetSignalMessages200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelAPIService.OBPv600GetSignalMessages")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelAPIService.GetSignalMessages")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -559,7 +559,7 @@ func (a *ChannelAPIService) OBPv600GetSignalMessagesExecute(r ApiOBPv600GetSigna
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -600,17 +600,17 @@ func (a *ChannelAPIService) OBPv600GetSignalMessagesExecute(r ApiOBPv600GetSigna
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetSignalStatsRequest struct {
+type ApiGetSignalStatsRequest struct {
 	ctx context.Context
 	ApiService *ChannelAPIService
 }
 
-func (r ApiOBPv600GetSignalStatsRequest) Execute() (*OBPv600GetSignalStats200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetSignalStatsExecute(r)
+func (r ApiGetSignalStatsRequest) Execute() (*GetSignalStats200Response, *http.Response, error) {
+	return r.ApiService.GetSignalStatsExecute(r)
 }
 
 /*
-OBPv600GetSignalStats Get Signal Channel Stats
+GetSignalStats Get Signal Channel Stats
 
 <p>Returns statistics for all signal channels, including private-only channels.</p>
 <p>Unlike the List Signal Channels endpoint, this does not filter out private-only channels.<br />
@@ -627,26 +627,26 @@ It provides a complete view of all active channels with message counts and TTL i
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetSignalStatsRequest
+ @return ApiGetSignalStatsRequest
 */
-func (a *ChannelAPIService) OBPv600GetSignalStats(ctx context.Context) ApiOBPv600GetSignalStatsRequest {
-	return ApiOBPv600GetSignalStatsRequest{
+func (a *ChannelAPIService) GetSignalStats(ctx context.Context) ApiGetSignalStatsRequest {
+	return ApiGetSignalStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetSignalStats200Response
-func (a *ChannelAPIService) OBPv600GetSignalStatsExecute(r ApiOBPv600GetSignalStatsRequest) (*OBPv600GetSignalStats200Response, *http.Response, error) {
+//  @return GetSignalStats200Response
+func (a *ChannelAPIService) GetSignalStatsExecute(r ApiGetSignalStatsRequest) (*GetSignalStats200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetSignalStats200Response
+		localVarReturnValue  *GetSignalStats200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelAPIService.OBPv600GetSignalStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelAPIService.GetSignalStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -698,7 +698,7 @@ func (a *ChannelAPIService) OBPv600GetSignalStatsExecute(r ApiOBPv600GetSignalSt
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -739,25 +739,25 @@ func (a *ChannelAPIService) OBPv600GetSignalStatsExecute(r ApiOBPv600GetSignalSt
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600PublishSignalMessageRequest struct {
+type ApiPublishSignalMessageRequest struct {
 	ctx context.Context
 	ApiService *ChannelAPIService
 	channelname string
-	oBPv600PublishSignalMessageRequest *OBPv600PublishSignalMessageRequest
+	publishSignalMessageRequest *PublishSignalMessageRequest
 }
 
 // Request body
-func (r ApiOBPv600PublishSignalMessageRequest) OBPv600PublishSignalMessageRequest(oBPv600PublishSignalMessageRequest OBPv600PublishSignalMessageRequest) ApiOBPv600PublishSignalMessageRequest {
-	r.oBPv600PublishSignalMessageRequest = &oBPv600PublishSignalMessageRequest
+func (r ApiPublishSignalMessageRequest) PublishSignalMessageRequest(publishSignalMessageRequest PublishSignalMessageRequest) ApiPublishSignalMessageRequest {
+	r.publishSignalMessageRequest = &publishSignalMessageRequest
 	return r
 }
 
-func (r ApiOBPv600PublishSignalMessageRequest) Execute() (*OBPv600PublishSignalMessage200Response, *http.Response, error) {
-	return r.ApiService.OBPv600PublishSignalMessageExecute(r)
+func (r ApiPublishSignalMessageRequest) Execute() (*PublishSignalMessage200Response, *http.Response, error) {
+	return r.ApiService.PublishSignalMessageExecute(r)
 }
 
 /*
-OBPv600PublishSignalMessage Publish Signal Message
+PublishSignalMessage Publish Signal Message
 
 <p>Publish a message to a signal channel.</p>
 <p>Signal channels provide short-lived, Redis-backed messaging for lightweight coordination between<br />
@@ -784,10 +784,10 @@ Leave to_user_id empty for a broadcast message visible to all channel readers.</
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param channelname The CHANNELNAME identifier
- @return ApiOBPv600PublishSignalMessageRequest
+ @return ApiPublishSignalMessageRequest
 */
-func (a *ChannelAPIService) OBPv600PublishSignalMessage(ctx context.Context, channelname string) ApiOBPv600PublishSignalMessageRequest {
-	return ApiOBPv600PublishSignalMessageRequest{
+func (a *ChannelAPIService) PublishSignalMessage(ctx context.Context, channelname string) ApiPublishSignalMessageRequest {
+	return ApiPublishSignalMessageRequest{
 		ApiService: a,
 		ctx: ctx,
 		channelname: channelname,
@@ -795,16 +795,16 @@ func (a *ChannelAPIService) OBPv600PublishSignalMessage(ctx context.Context, cha
 }
 
 // Execute executes the request
-//  @return OBPv600PublishSignalMessage200Response
-func (a *ChannelAPIService) OBPv600PublishSignalMessageExecute(r ApiOBPv600PublishSignalMessageRequest) (*OBPv600PublishSignalMessage200Response, *http.Response, error) {
+//  @return PublishSignalMessage200Response
+func (a *ChannelAPIService) PublishSignalMessageExecute(r ApiPublishSignalMessageRequest) (*PublishSignalMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600PublishSignalMessage200Response
+		localVarReturnValue  *PublishSignalMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelAPIService.OBPv600PublishSignalMessage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelAPIService.PublishSignalMessage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -815,8 +815,8 @@ func (a *ChannelAPIService) OBPv600PublishSignalMessageExecute(r ApiOBPv600Publi
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600PublishSignalMessageRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600PublishSignalMessageRequest is required and must be specified")
+	if r.publishSignalMessageRequest == nil {
+		return localVarReturnValue, nil, reportError("publishSignalMessageRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -837,7 +837,7 @@ func (a *ChannelAPIService) OBPv600PublishSignalMessageExecute(r ApiOBPv600Publi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600PublishSignalMessageRequest
+	localVarPostBody = r.publishSignalMessageRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -862,7 +862,7 @@ func (a *ChannelAPIService) OBPv600PublishSignalMessageExecute(r ApiOBPv600Publi
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

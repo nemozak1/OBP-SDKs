@@ -18,9 +18,9 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv510_create_bank_account_balance_request import OBPv510CreateBankAccountBalanceRequest
-from obp_python.models.obpv510_get_all_bank_account_balances200_response import OBPv510GetAllBankAccountBalances200Response
-from obp_python.models.obpv510_get_all_bank_account_balances200_response_balances_inner import OBPv510GetAllBankAccountBalances200ResponseBalancesInner
+from obp_python.models.create_bank_account_balance_request import CreateBankAccountBalanceRequest
+from obp_python.models.get_all_bank_account_balances200_response import GetAllBankAccountBalances200Response
+from obp_python.models.get_all_bank_account_balances200_response_balances_inner import GetAllBankAccountBalances200ResponseBalancesInner
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -41,11 +41,11 @@ class BalanceApi:
 
 
     @validate_call
-    def o_bpv5_1_0_create_bank_account_balance(
+    def create_bank_account_balance(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        obpv510_create_bank_account_balance_request: Annotated[OBPv510CreateBankAccountBalanceRequest, Field(description="Request body")],
+        create_bank_account_balance_request: Annotated[CreateBankAccountBalanceRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -58,7 +58,7 @@ class BalanceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510GetAllBankAccountBalances200ResponseBalancesInner:
+    ) -> GetAllBankAccountBalances200ResponseBalancesInner:
         """Create Bank Account Balance
 
         <p>Create a new Balance for a Bank Account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
@@ -67,8 +67,8 @@ class BalanceApi:
         :type bankid: str
         :param accountid: The ACCOUNTID identifier (required)
         :type accountid: str
-        :param obpv510_create_bank_account_balance_request: Request body (required)
-        :type obpv510_create_bank_account_balance_request: OBPv510CreateBankAccountBalanceRequest
+        :param create_bank_account_balance_request: Request body (required)
+        :type create_bank_account_balance_request: CreateBankAccountBalanceRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -91,10 +91,10 @@ class BalanceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_create_bank_account_balance_serialize(
+        _param = self._create_bank_account_balance_serialize(
             bankid=bankid,
             accountid=accountid,
-            obpv510_create_bank_account_balance_request=obpv510_create_bank_account_balance_request,
+            create_bank_account_balance_request=create_bank_account_balance_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -102,7 +102,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
+            '200': "GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -117,11 +117,11 @@ class BalanceApi:
 
 
     @validate_call
-    def o_bpv5_1_0_create_bank_account_balance_with_http_info(
+    def create_bank_account_balance_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        obpv510_create_bank_account_balance_request: Annotated[OBPv510CreateBankAccountBalanceRequest, Field(description="Request body")],
+        create_bank_account_balance_request: Annotated[CreateBankAccountBalanceRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -134,7 +134,7 @@ class BalanceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510GetAllBankAccountBalances200ResponseBalancesInner]:
+    ) -> ApiResponse[GetAllBankAccountBalances200ResponseBalancesInner]:
         """Create Bank Account Balance
 
         <p>Create a new Balance for a Bank Account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
@@ -143,8 +143,8 @@ class BalanceApi:
         :type bankid: str
         :param accountid: The ACCOUNTID identifier (required)
         :type accountid: str
-        :param obpv510_create_bank_account_balance_request: Request body (required)
-        :type obpv510_create_bank_account_balance_request: OBPv510CreateBankAccountBalanceRequest
+        :param create_bank_account_balance_request: Request body (required)
+        :type create_bank_account_balance_request: CreateBankAccountBalanceRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -167,10 +167,10 @@ class BalanceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_create_bank_account_balance_serialize(
+        _param = self._create_bank_account_balance_serialize(
             bankid=bankid,
             accountid=accountid,
-            obpv510_create_bank_account_balance_request=obpv510_create_bank_account_balance_request,
+            create_bank_account_balance_request=create_bank_account_balance_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -178,7 +178,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
+            '200': "GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -193,11 +193,11 @@ class BalanceApi:
 
 
     @validate_call
-    def o_bpv5_1_0_create_bank_account_balance_without_preload_content(
+    def create_bank_account_balance_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        obpv510_create_bank_account_balance_request: Annotated[OBPv510CreateBankAccountBalanceRequest, Field(description="Request body")],
+        create_bank_account_balance_request: Annotated[CreateBankAccountBalanceRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -219,8 +219,8 @@ class BalanceApi:
         :type bankid: str
         :param accountid: The ACCOUNTID identifier (required)
         :type accountid: str
-        :param obpv510_create_bank_account_balance_request: Request body (required)
-        :type obpv510_create_bank_account_balance_request: OBPv510CreateBankAccountBalanceRequest
+        :param create_bank_account_balance_request: Request body (required)
+        :type create_bank_account_balance_request: CreateBankAccountBalanceRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -243,10 +243,10 @@ class BalanceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_create_bank_account_balance_serialize(
+        _param = self._create_bank_account_balance_serialize(
             bankid=bankid,
             accountid=accountid,
-            obpv510_create_bank_account_balance_request=obpv510_create_bank_account_balance_request,
+            create_bank_account_balance_request=create_bank_account_balance_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -254,7 +254,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
+            '200': "GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -264,11 +264,11 @@ class BalanceApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_create_bank_account_balance_serialize(
+    def _create_bank_account_balance_serialize(
         self,
         bankid,
         accountid,
-        obpv510_create_bank_account_balance_request,
+        create_bank_account_balance_request,
         _request_auth,
         _content_type,
         _headers,
@@ -298,8 +298,8 @@ class BalanceApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv510_create_bank_account_balance_request is not None:
-            _body_params = obpv510_create_bank_account_balance_request
+        if create_bank_account_balance_request is not None:
+            _body_params = create_bank_account_balance_request
 
 
         # set the HTTP header `Accept`
@@ -350,7 +350,7 @@ class BalanceApi:
 
 
     @validate_call
-    def o_bpv5_1_0_delete_bank_account_balance(
+    def delete_bank_account_balance(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -400,7 +400,7 @@ class BalanceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_delete_bank_account_balance_serialize(
+        _param = self._delete_bank_account_balance_serialize(
             bankid=bankid,
             accountid=accountid,
             balanceid=balanceid,
@@ -426,7 +426,7 @@ class BalanceApi:
 
 
     @validate_call
-    def o_bpv5_1_0_delete_bank_account_balance_with_http_info(
+    def delete_bank_account_balance_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -476,7 +476,7 @@ class BalanceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_delete_bank_account_balance_serialize(
+        _param = self._delete_bank_account_balance_serialize(
             bankid=bankid,
             accountid=accountid,
             balanceid=balanceid,
@@ -502,7 +502,7 @@ class BalanceApi:
 
 
     @validate_call
-    def o_bpv5_1_0_delete_bank_account_balance_without_preload_content(
+    def delete_bank_account_balance_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -552,7 +552,7 @@ class BalanceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_delete_bank_account_balance_serialize(
+        _param = self._delete_bank_account_balance_serialize(
             bankid=bankid,
             accountid=accountid,
             balanceid=balanceid,
@@ -573,7 +573,7 @@ class BalanceApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_delete_bank_account_balance_serialize(
+    def _delete_bank_account_balance_serialize(
         self,
         bankid,
         accountid,
@@ -639,7 +639,7 @@ class BalanceApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_all_bank_account_balances(
+    def get_all_bank_account_balances(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -655,7 +655,7 @@ class BalanceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510GetAllBankAccountBalances200Response:
+    ) -> GetAllBankAccountBalances200Response:
         """Get All Bank Account Balances
 
         <p>Get all Balances for a Bank Account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>balances</strong></a>: balances</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
@@ -686,7 +686,7 @@ class BalanceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_all_bank_account_balances_serialize(
+        _param = self._get_all_bank_account_balances_serialize(
             bankid=bankid,
             accountid=accountid,
             _request_auth=_request_auth,
@@ -696,7 +696,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200Response",
+            '200': "GetAllBankAccountBalances200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -711,7 +711,7 @@ class BalanceApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_all_bank_account_balances_with_http_info(
+    def get_all_bank_account_balances_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -727,7 +727,7 @@ class BalanceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510GetAllBankAccountBalances200Response]:
+    ) -> ApiResponse[GetAllBankAccountBalances200Response]:
         """Get All Bank Account Balances
 
         <p>Get all Balances for a Bank Account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>balances</strong></a>: balances</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
@@ -758,7 +758,7 @@ class BalanceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_all_bank_account_balances_serialize(
+        _param = self._get_all_bank_account_balances_serialize(
             bankid=bankid,
             accountid=accountid,
             _request_auth=_request_auth,
@@ -768,7 +768,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200Response",
+            '200': "GetAllBankAccountBalances200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -783,7 +783,7 @@ class BalanceApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_all_bank_account_balances_without_preload_content(
+    def get_all_bank_account_balances_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -830,7 +830,7 @@ class BalanceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_all_bank_account_balances_serialize(
+        _param = self._get_all_bank_account_balances_serialize(
             bankid=bankid,
             accountid=accountid,
             _request_auth=_request_auth,
@@ -840,7 +840,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200Response",
+            '200': "GetAllBankAccountBalances200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -850,7 +850,7 @@ class BalanceApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_get_all_bank_account_balances_serialize(
+    def _get_all_bank_account_balances_serialize(
         self,
         bankid,
         accountid,
@@ -920,7 +920,7 @@ class BalanceApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_bank_account_balance_by_id(
+    def get_bank_account_balance_by_id(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -937,7 +937,7 @@ class BalanceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510GetAllBankAccountBalances200ResponseBalancesInner:
+    ) -> GetAllBankAccountBalances200ResponseBalancesInner:
         """Get Bank Account Balance By ID
 
         <p>Get a specific Bank Account Balance by its BALANCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#balance_id\">BALANCE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
@@ -970,7 +970,7 @@ class BalanceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_bank_account_balance_by_id_serialize(
+        _param = self._get_bank_account_balance_by_id_serialize(
             bankid=bankid,
             accountid=accountid,
             balanceid=balanceid,
@@ -981,7 +981,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
+            '200': "GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -996,7 +996,7 @@ class BalanceApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_bank_account_balance_by_id_with_http_info(
+    def get_bank_account_balance_by_id_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1013,7 +1013,7 @@ class BalanceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510GetAllBankAccountBalances200ResponseBalancesInner]:
+    ) -> ApiResponse[GetAllBankAccountBalances200ResponseBalancesInner]:
         """Get Bank Account Balance By ID
 
         <p>Get a specific Bank Account Balance by its BALANCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#balance_id\">BALANCE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
@@ -1046,7 +1046,7 @@ class BalanceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_bank_account_balance_by_id_serialize(
+        _param = self._get_bank_account_balance_by_id_serialize(
             bankid=bankid,
             accountid=accountid,
             balanceid=balanceid,
@@ -1057,7 +1057,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
+            '200': "GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1072,7 +1072,7 @@ class BalanceApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_bank_account_balance_by_id_without_preload_content(
+    def get_bank_account_balance_by_id_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1122,7 +1122,7 @@ class BalanceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_bank_account_balance_by_id_serialize(
+        _param = self._get_bank_account_balance_by_id_serialize(
             bankid=bankid,
             accountid=accountid,
             balanceid=balanceid,
@@ -1133,7 +1133,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
+            '200': "GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1143,7 +1143,7 @@ class BalanceApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_get_bank_account_balance_by_id_serialize(
+    def _get_bank_account_balance_by_id_serialize(
         self,
         bankid,
         accountid,
@@ -1216,12 +1216,12 @@ class BalanceApi:
 
 
     @validate_call
-    def o_bpv5_1_0_update_bank_account_balance(
+    def update_bank_account_balance(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         balanceid: Annotated[StrictStr, Field(description="The BALANCEID identifier")],
-        obpv510_create_bank_account_balance_request: Annotated[OBPv510CreateBankAccountBalanceRequest, Field(description="Request body")],
+        create_bank_account_balance_request: Annotated[CreateBankAccountBalanceRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1234,7 +1234,7 @@ class BalanceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510GetAllBankAccountBalances200ResponseBalancesInner:
+    ) -> GetAllBankAccountBalances200ResponseBalancesInner:
         """Update Bank Account Balance
 
         <p>Update an existing Bank Account Balance specified by BALANCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#balance_id\">BALANCE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
@@ -1245,8 +1245,8 @@ class BalanceApi:
         :type accountid: str
         :param balanceid: The BALANCEID identifier (required)
         :type balanceid: str
-        :param obpv510_create_bank_account_balance_request: Request body (required)
-        :type obpv510_create_bank_account_balance_request: OBPv510CreateBankAccountBalanceRequest
+        :param create_bank_account_balance_request: Request body (required)
+        :type create_bank_account_balance_request: CreateBankAccountBalanceRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1269,11 +1269,11 @@ class BalanceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_update_bank_account_balance_serialize(
+        _param = self._update_bank_account_balance_serialize(
             bankid=bankid,
             accountid=accountid,
             balanceid=balanceid,
-            obpv510_create_bank_account_balance_request=obpv510_create_bank_account_balance_request,
+            create_bank_account_balance_request=create_bank_account_balance_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1281,7 +1281,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
+            '200': "GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1296,12 +1296,12 @@ class BalanceApi:
 
 
     @validate_call
-    def o_bpv5_1_0_update_bank_account_balance_with_http_info(
+    def update_bank_account_balance_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         balanceid: Annotated[StrictStr, Field(description="The BALANCEID identifier")],
-        obpv510_create_bank_account_balance_request: Annotated[OBPv510CreateBankAccountBalanceRequest, Field(description="Request body")],
+        create_bank_account_balance_request: Annotated[CreateBankAccountBalanceRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1314,7 +1314,7 @@ class BalanceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510GetAllBankAccountBalances200ResponseBalancesInner]:
+    ) -> ApiResponse[GetAllBankAccountBalances200ResponseBalancesInner]:
         """Update Bank Account Balance
 
         <p>Update an existing Bank Account Balance specified by BALANCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#balance_id\">BALANCE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
@@ -1325,8 +1325,8 @@ class BalanceApi:
         :type accountid: str
         :param balanceid: The BALANCEID identifier (required)
         :type balanceid: str
-        :param obpv510_create_bank_account_balance_request: Request body (required)
-        :type obpv510_create_bank_account_balance_request: OBPv510CreateBankAccountBalanceRequest
+        :param create_bank_account_balance_request: Request body (required)
+        :type create_bank_account_balance_request: CreateBankAccountBalanceRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1349,11 +1349,11 @@ class BalanceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_update_bank_account_balance_serialize(
+        _param = self._update_bank_account_balance_serialize(
             bankid=bankid,
             accountid=accountid,
             balanceid=balanceid,
-            obpv510_create_bank_account_balance_request=obpv510_create_bank_account_balance_request,
+            create_bank_account_balance_request=create_bank_account_balance_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1361,7 +1361,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
+            '200': "GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1376,12 +1376,12 @@ class BalanceApi:
 
 
     @validate_call
-    def o_bpv5_1_0_update_bank_account_balance_without_preload_content(
+    def update_bank_account_balance_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         balanceid: Annotated[StrictStr, Field(description="The BALANCEID identifier")],
-        obpv510_create_bank_account_balance_request: Annotated[OBPv510CreateBankAccountBalanceRequest, Field(description="Request body")],
+        create_bank_account_balance_request: Annotated[CreateBankAccountBalanceRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1405,8 +1405,8 @@ class BalanceApi:
         :type accountid: str
         :param balanceid: The BALANCEID identifier (required)
         :type balanceid: str
-        :param obpv510_create_bank_account_balance_request: Request body (required)
-        :type obpv510_create_bank_account_balance_request: OBPv510CreateBankAccountBalanceRequest
+        :param create_bank_account_balance_request: Request body (required)
+        :type create_bank_account_balance_request: CreateBankAccountBalanceRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1429,11 +1429,11 @@ class BalanceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_update_bank_account_balance_serialize(
+        _param = self._update_bank_account_balance_serialize(
             bankid=bankid,
             accountid=accountid,
             balanceid=balanceid,
-            obpv510_create_bank_account_balance_request=obpv510_create_bank_account_balance_request,
+            create_bank_account_balance_request=create_bank_account_balance_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1441,7 +1441,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
+            '200': "GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1451,12 +1451,12 @@ class BalanceApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_update_bank_account_balance_serialize(
+    def _update_bank_account_balance_serialize(
         self,
         bankid,
         accountid,
         balanceid,
-        obpv510_create_bank_account_balance_request,
+        create_bank_account_balance_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1488,8 +1488,8 @@ class BalanceApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv510_create_bank_account_balance_request is not None:
-            _body_params = obpv510_create_bank_account_balance_request
+        if create_bank_account_balance_request is not None:
+            _body_params = create_bank_account_balance_request
 
 
         # set the HTTP header `Accept`

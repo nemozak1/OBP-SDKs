@@ -1,25 +1,25 @@
 # \UserAttributeAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv600CreatePersonalDataField**](UserAttributeAPI.md#OBPv600CreatePersonalDataField) | **Post** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
-[**OBPv600CreateUserAttribute**](UserAttributeAPI.md#OBPv600CreateUserAttribute) | **Post** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
-[**OBPv600DeletePersonalDataField**](UserAttributeAPI.md#OBPv600DeletePersonalDataField) | **Delete** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
-[**OBPv600DeleteUserAttribute**](UserAttributeAPI.md#OBPv600DeleteUserAttribute) | **Delete** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
-[**OBPv600GetPersonalDataFieldById**](UserAttributeAPI.md#OBPv600GetPersonalDataFieldById) | **Get** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
-[**OBPv600GetPersonalDataFields**](UserAttributeAPI.md#OBPv600GetPersonalDataFields) | **Get** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
-[**OBPv600GetUserAttributeById**](UserAttributeAPI.md#OBPv600GetUserAttributeById) | **Get** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
-[**OBPv600GetUserAttributes**](UserAttributeAPI.md#OBPv600GetUserAttributes) | **Get** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
-[**OBPv600UpdatePersonalDataField**](UserAttributeAPI.md#OBPv600UpdatePersonalDataField) | **Put** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
-[**OBPv600UpdateUserAttribute**](UserAttributeAPI.md#OBPv600UpdateUserAttribute) | **Put** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
+[**CreatePersonalDataField**](UserAttributeAPI.md#CreatePersonalDataField) | **Post** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
+[**CreateUserAttribute**](UserAttributeAPI.md#CreateUserAttribute) | **Post** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
+[**DeletePersonalDataField**](UserAttributeAPI.md#DeletePersonalDataField) | **Delete** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
+[**DeleteUserAttribute**](UserAttributeAPI.md#DeleteUserAttribute) | **Delete** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
+[**GetPersonalDataFieldById**](UserAttributeAPI.md#GetPersonalDataFieldById) | **Get** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
+[**GetPersonalDataFields**](UserAttributeAPI.md#GetPersonalDataFields) | **Get** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
+[**GetUserAttributeById**](UserAttributeAPI.md#GetUserAttributeById) | **Get** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
+[**GetUserAttributes**](UserAttributeAPI.md#GetUserAttributes) | **Get** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
+[**UpdatePersonalDataField**](UserAttributeAPI.md#UpdatePersonalDataField) | **Put** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
+[**UpdateUserAttribute**](UserAttributeAPI.md#UpdateUserAttribute) | **Put** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
 
 
 
-## OBPv600CreatePersonalDataField
+## CreatePersonalDataField
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems OBPv600CreatePersonalDataField(ctx).OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest).Execute()
+> GetPersonalDataFields200ResponseUserAttributesInner CreatePersonalDataField(ctx).CreatePersonalDataFieldRequest(createPersonalDataFieldRequest).Execute()
 
 Create Personal Data Field
 
@@ -38,17 +38,17 @@ import (
 )
 
 func main() {
-	oBPv600CreatePersonalDataFieldRequest := *openapiclient.NewOBPv600CreatePersonalDataFieldRequest("Type_example", *openapiclient.NewOBPv600CreatePersonalDataFieldRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600CreatePersonalDataFieldRequest | Request body
+	createPersonalDataFieldRequest := *openapiclient.NewCreatePersonalDataFieldRequest() // CreatePersonalDataFieldRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UserAttributeAPI.OBPv600CreatePersonalDataField(context.Background()).OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest).Execute()
+	resp, r, err := apiClient.UserAttributeAPI.CreatePersonalDataField(context.Background()).CreatePersonalDataFieldRequest(createPersonalDataFieldRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.OBPv600CreatePersonalDataField``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.CreatePersonalDataField``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600CreatePersonalDataField`: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `UserAttributeAPI.OBPv600CreatePersonalDataField`: %v\n", resp)
+	// response from `CreatePersonalDataField`: GetPersonalDataFields200ResponseUserAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `UserAttributeAPI.CreatePersonalDataField`: %v\n", resp)
 }
 ```
 
@@ -58,16 +58,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600CreatePersonalDataFieldRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreatePersonalDataFieldRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -83,9 +83,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600CreateUserAttribute
+## CreateUserAttribute
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems OBPv600CreateUserAttribute(ctx, userid).OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest).Execute()
+> GetPersonalDataFields200ResponseUserAttributesInner CreateUserAttribute(ctx, userid).CreatePersonalDataFieldRequest(createPersonalDataFieldRequest).Execute()
 
 Create User Attribute
 
@@ -105,17 +105,17 @@ import (
 
 func main() {
 	userid := "userid_example" // string | The USERID identifier
-	oBPv600CreatePersonalDataFieldRequest := *openapiclient.NewOBPv600CreatePersonalDataFieldRequest("Type_example", *openapiclient.NewOBPv600CreatePersonalDataFieldRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600CreatePersonalDataFieldRequest | Request body
+	createPersonalDataFieldRequest := *openapiclient.NewCreatePersonalDataFieldRequest() // CreatePersonalDataFieldRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UserAttributeAPI.OBPv600CreateUserAttribute(context.Background(), userid).OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest).Execute()
+	resp, r, err := apiClient.UserAttributeAPI.CreateUserAttribute(context.Background(), userid).CreatePersonalDataFieldRequest(createPersonalDataFieldRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.OBPv600CreateUserAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.CreateUserAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600CreateUserAttribute`: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `UserAttributeAPI.OBPv600CreateUserAttribute`: %v\n", resp)
+	// response from `CreateUserAttribute`: GetPersonalDataFields200ResponseUserAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `UserAttributeAPI.CreateUserAttribute`: %v\n", resp)
 }
 ```
 
@@ -129,17 +129,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600CreateUserAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateUserAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -155,9 +155,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600DeletePersonalDataField
+## DeletePersonalDataField
 
-> OBPv600DeletePersonalDataField(ctx, userattributeid).Execute()
+> DeletePersonalDataField(ctx, userattributeid).Execute()
 
 Delete Personal Data Field
 
@@ -180,9 +180,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.UserAttributeAPI.OBPv600DeletePersonalDataField(context.Background(), userattributeid).Execute()
+	r, err := apiClient.UserAttributeAPI.DeletePersonalDataField(context.Background(), userattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.OBPv600DeletePersonalDataField``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.DeletePersonalDataField``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600DeletePersonalDataFieldRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeletePersonalDataFieldRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -223,9 +223,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600DeleteUserAttribute
+## DeleteUserAttribute
 
-> OBPv600DeleteUserAttribute(ctx, userid, userattributeid).Execute()
+> DeleteUserAttribute(ctx, userid, userattributeid).Execute()
 
 Delete User Attribute
 
@@ -249,9 +249,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.UserAttributeAPI.OBPv600DeleteUserAttribute(context.Background(), userid, userattributeid).Execute()
+	r, err := apiClient.UserAttributeAPI.DeleteUserAttribute(context.Background(), userid, userattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.OBPv600DeleteUserAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.DeleteUserAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600DeleteUserAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteUserAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -294,9 +294,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetPersonalDataFieldById
+## GetPersonalDataFieldById
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems OBPv600GetPersonalDataFieldById(ctx, userattributeid).Execute()
+> GetPersonalDataFields200ResponseUserAttributesInner GetPersonalDataFieldById(ctx, userattributeid).Execute()
 
 Get Personal Data Field By Id
 
@@ -319,13 +319,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UserAttributeAPI.OBPv600GetPersonalDataFieldById(context.Background(), userattributeid).Execute()
+	resp, r, err := apiClient.UserAttributeAPI.GetPersonalDataFieldById(context.Background(), userattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.OBPv600GetPersonalDataFieldById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.GetPersonalDataFieldById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetPersonalDataFieldById`: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `UserAttributeAPI.OBPv600GetPersonalDataFieldById`: %v\n", resp)
+	// response from `GetPersonalDataFieldById`: GetPersonalDataFields200ResponseUserAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `UserAttributeAPI.GetPersonalDataFieldById`: %v\n", resp)
 }
 ```
 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetPersonalDataFieldByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetPersonalDataFieldByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -364,9 +364,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetPersonalDataFields
+## GetPersonalDataFields
 
-> OBPv600GetPersonalDataFields200Response OBPv600GetPersonalDataFields(ctx).Execute()
+> GetPersonalDataFields200Response GetPersonalDataFields(ctx).Execute()
 
 Get Personal Data Fields
 
@@ -388,13 +388,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UserAttributeAPI.OBPv600GetPersonalDataFields(context.Background()).Execute()
+	resp, r, err := apiClient.UserAttributeAPI.GetPersonalDataFields(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.OBPv600GetPersonalDataFields``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.GetPersonalDataFields``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetPersonalDataFields`: OBPv600GetPersonalDataFields200Response
-	fmt.Fprintf(os.Stdout, "Response from `UserAttributeAPI.OBPv600GetPersonalDataFields`: %v\n", resp)
+	// response from `GetPersonalDataFields`: GetPersonalDataFields200Response
+	fmt.Fprintf(os.Stdout, "Response from `UserAttributeAPI.GetPersonalDataFields`: %v\n", resp)
 }
 ```
 
@@ -404,12 +404,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetPersonalDataFieldsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetPersonalDataFieldsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -425,9 +425,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetPersonalDataFiel
 [[Back to README]](../README.md)
 
 
-## OBPv600GetUserAttributeById
+## GetUserAttributeById
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems OBPv600GetUserAttributeById(ctx, userid, userattributeid).Execute()
+> GetPersonalDataFields200ResponseUserAttributesInner GetUserAttributeById(ctx, userid, userattributeid).Execute()
 
 Get User Attribute By Id
 
@@ -451,13 +451,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UserAttributeAPI.OBPv600GetUserAttributeById(context.Background(), userid, userattributeid).Execute()
+	resp, r, err := apiClient.UserAttributeAPI.GetUserAttributeById(context.Background(), userid, userattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.OBPv600GetUserAttributeById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.GetUserAttributeById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetUserAttributeById`: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `UserAttributeAPI.OBPv600GetUserAttributeById`: %v\n", resp)
+	// response from `GetUserAttributeById`: GetPersonalDataFields200ResponseUserAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `UserAttributeAPI.GetUserAttributeById`: %v\n", resp)
 }
 ```
 
@@ -472,7 +472,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetUserAttributeByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetUserAttributeByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -482,7 +482,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -498,9 +498,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetUserAttributes
+## GetUserAttributes
 
-> OBPv600GetPersonalDataFields200Response OBPv600GetUserAttributes(ctx, userid).Execute()
+> GetPersonalDataFields200Response GetUserAttributes(ctx, userid).Execute()
 
 Get User Attributes
 
@@ -523,13 +523,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UserAttributeAPI.OBPv600GetUserAttributes(context.Background(), userid).Execute()
+	resp, r, err := apiClient.UserAttributeAPI.GetUserAttributes(context.Background(), userid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.OBPv600GetUserAttributes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.GetUserAttributes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetUserAttributes`: OBPv600GetPersonalDataFields200Response
-	fmt.Fprintf(os.Stdout, "Response from `UserAttributeAPI.OBPv600GetUserAttributes`: %v\n", resp)
+	// response from `GetUserAttributes`: GetPersonalDataFields200Response
+	fmt.Fprintf(os.Stdout, "Response from `UserAttributeAPI.GetUserAttributes`: %v\n", resp)
 }
 ```
 
@@ -543,7 +543,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetUserAttributesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetUserAttributesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -568,9 +568,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600UpdatePersonalDataField
+## UpdatePersonalDataField
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems OBPv600UpdatePersonalDataField(ctx, userattributeid).OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest).Execute()
+> GetPersonalDataFields200ResponseUserAttributesInner UpdatePersonalDataField(ctx, userattributeid).CreatePersonalDataFieldRequest(createPersonalDataFieldRequest).Execute()
 
 Update Personal Data Field
 
@@ -590,17 +590,17 @@ import (
 
 func main() {
 	userattributeid := "userattributeid_example" // string | The USERATTRIBUTEID identifier
-	oBPv600CreatePersonalDataFieldRequest := *openapiclient.NewOBPv600CreatePersonalDataFieldRequest("Type_example", *openapiclient.NewOBPv600CreatePersonalDataFieldRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600CreatePersonalDataFieldRequest | Request body
+	createPersonalDataFieldRequest := *openapiclient.NewCreatePersonalDataFieldRequest() // CreatePersonalDataFieldRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UserAttributeAPI.OBPv600UpdatePersonalDataField(context.Background(), userattributeid).OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest).Execute()
+	resp, r, err := apiClient.UserAttributeAPI.UpdatePersonalDataField(context.Background(), userattributeid).CreatePersonalDataFieldRequest(createPersonalDataFieldRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.OBPv600UpdatePersonalDataField``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.UpdatePersonalDataField``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600UpdatePersonalDataField`: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `UserAttributeAPI.OBPv600UpdatePersonalDataField`: %v\n", resp)
+	// response from `UpdatePersonalDataField`: GetPersonalDataFields200ResponseUserAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `UserAttributeAPI.UpdatePersonalDataField`: %v\n", resp)
 }
 ```
 
@@ -614,17 +614,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600UpdatePersonalDataFieldRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdatePersonalDataFieldRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -640,9 +640,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600UpdateUserAttribute
+## UpdateUserAttribute
 
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems OBPv600UpdateUserAttribute(ctx, userid, userattributeid).OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest).Execute()
+> GetPersonalDataFields200ResponseUserAttributesInner UpdateUserAttribute(ctx, userid, userattributeid).CreatePersonalDataFieldRequest(createPersonalDataFieldRequest).Execute()
 
 Update User Attribute
 
@@ -663,17 +663,17 @@ import (
 func main() {
 	userid := "userid_example" // string | The USERID identifier
 	userattributeid := "userattributeid_example" // string | The USERATTRIBUTEID identifier
-	oBPv600CreatePersonalDataFieldRequest := *openapiclient.NewOBPv600CreatePersonalDataFieldRequest("Type_example", *openapiclient.NewOBPv600CreatePersonalDataFieldRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600CreatePersonalDataFieldRequest | Request body
+	createPersonalDataFieldRequest := *openapiclient.NewCreatePersonalDataFieldRequest() // CreatePersonalDataFieldRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UserAttributeAPI.OBPv600UpdateUserAttribute(context.Background(), userid, userattributeid).OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest).Execute()
+	resp, r, err := apiClient.UserAttributeAPI.UpdateUserAttribute(context.Background(), userid, userattributeid).CreatePersonalDataFieldRequest(createPersonalDataFieldRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.OBPv600UpdateUserAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UserAttributeAPI.UpdateUserAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600UpdateUserAttribute`: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `UserAttributeAPI.OBPv600UpdateUserAttribute`: %v\n", resp)
+	// response from `UpdateUserAttribute`: GetPersonalDataFields200ResponseUserAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `UserAttributeAPI.UpdateUserAttribute`: %v\n", resp)
 }
 ```
 
@@ -688,18 +688,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600UpdateUserAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateUserAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 

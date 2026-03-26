@@ -1,25 +1,25 @@
 # SystemIntegrityApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv510AccountAccessUniqueIndexCheck**](SystemIntegrityApi.md#oBPv510AccountAccessUniqueIndexCheck) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access |
-| [**oBPv510AccountAccessUniqueIndexCheckWithHttpInfo**](SystemIntegrityApi.md#oBPv510AccountAccessUniqueIndexCheckWithHttpInfo) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access |
-| [**oBPv510AccountCurrencyCheck**](SystemIntegrityApi.md#oBPv510AccountCurrencyCheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies |
-| [**oBPv510AccountCurrencyCheckWithHttpInfo**](SystemIntegrityApi.md#oBPv510AccountCurrencyCheckWithHttpInfo) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies |
-| [**oBPv510CustomViewNamesCheck**](SystemIntegrityApi.md#oBPv510CustomViewNamesCheck) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names |
-| [**oBPv510CustomViewNamesCheckWithHttpInfo**](SystemIntegrityApi.md#oBPv510CustomViewNamesCheckWithHttpInfo) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names |
-| [**oBPv510OrphanedAccountCheck**](SystemIntegrityApi.md#oBPv510OrphanedAccountCheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts |
-| [**oBPv510OrphanedAccountCheckWithHttpInfo**](SystemIntegrityApi.md#oBPv510OrphanedAccountCheckWithHttpInfo) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts |
-| [**oBPv510SystemViewNamesCheck**](SystemIntegrityApi.md#oBPv510SystemViewNamesCheck) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names |
-| [**oBPv510SystemViewNamesCheckWithHttpInfo**](SystemIntegrityApi.md#oBPv510SystemViewNamesCheckWithHttpInfo) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names |
+| [**accountAccessUniqueIndexCheck**](SystemIntegrityApi.md#accountAccessUniqueIndexCheck) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access |
+| [**accountAccessUniqueIndexCheckWithHttpInfo**](SystemIntegrityApi.md#accountAccessUniqueIndexCheckWithHttpInfo) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access |
+| [**accountCurrencyCheck**](SystemIntegrityApi.md#accountCurrencyCheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies |
+| [**accountCurrencyCheckWithHttpInfo**](SystemIntegrityApi.md#accountCurrencyCheckWithHttpInfo) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies |
+| [**customViewNamesCheck**](SystemIntegrityApi.md#customViewNamesCheck) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names |
+| [**customViewNamesCheckWithHttpInfo**](SystemIntegrityApi.md#customViewNamesCheckWithHttpInfo) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names |
+| [**orphanedAccountCheck**](SystemIntegrityApi.md#orphanedAccountCheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts |
+| [**orphanedAccountCheckWithHttpInfo**](SystemIntegrityApi.md#orphanedAccountCheckWithHttpInfo) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts |
+| [**systemViewNamesCheck**](SystemIntegrityApi.md#systemViewNamesCheck) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names |
+| [**systemViewNamesCheckWithHttpInfo**](SystemIntegrityApi.md#systemViewNamesCheckWithHttpInfo) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names |
 
 
 
-## oBPv510AccountAccessUniqueIndexCheck
+## accountAccessUniqueIndexCheck
 
-> OBPv121UpdateTransactionNarrative200Response oBPv510AccountAccessUniqueIndexCheck()
+> AccountAccessUniqueIndexCheck200Response accountAccessUniqueIndexCheck()
 
 Check Unique Index at Account Access
 
@@ -39,7 +39,7 @@ import com.openbankproject.api.SystemIntegrityApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -59,10 +59,10 @@ public class Example {
 
         SystemIntegrityApi apiInstance = new SystemIntegrityApi(defaultClient);
         try {
-            OBPv121UpdateTransactionNarrative200Response result = apiInstance.oBPv510AccountAccessUniqueIndexCheck();
+            AccountAccessUniqueIndexCheck200Response result = apiInstance.accountAccessUniqueIndexCheck();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling SystemIntegrityApi#oBPv510AccountAccessUniqueIndexCheck");
+            System.err.println("Exception when calling SystemIntegrityApi#accountAccessUniqueIndexCheck");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -78,7 +78,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 
 ### Authorization
@@ -96,9 +96,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510AccountAccessUniqueIndexCheckWithHttpInfo
+## accountAccessUniqueIndexCheckWithHttpInfo
 
-> ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv510AccountAccessUniqueIndexCheck oBPv510AccountAccessUniqueIndexCheckWithHttpInfo()
+> ApiResponse<AccountAccessUniqueIndexCheck200Response> accountAccessUniqueIndexCheck accountAccessUniqueIndexCheckWithHttpInfo()
 
 Check Unique Index at Account Access
 
@@ -119,7 +119,7 @@ import com.openbankproject.api.SystemIntegrityApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -139,12 +139,12 @@ public class Example {
 
         SystemIntegrityApi apiInstance = new SystemIntegrityApi(defaultClient);
         try {
-            ApiResponse<OBPv121UpdateTransactionNarrative200Response> response = apiInstance.oBPv510AccountAccessUniqueIndexCheckWithHttpInfo();
+            ApiResponse<AccountAccessUniqueIndexCheck200Response> response = apiInstance.accountAccessUniqueIndexCheckWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling SystemIntegrityApi#oBPv510AccountAccessUniqueIndexCheck");
+            System.err.println("Exception when calling SystemIntegrityApi#accountAccessUniqueIndexCheck");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -160,7 +160,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)>
+ApiResponse<[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)>
 
 
 ### Authorization
@@ -179,9 +179,9 @@ ApiResponse<[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTran
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510AccountCurrencyCheck
+## accountCurrencyCheck
 
-> OBPv121UpdateTransactionNarrative200Response oBPv510AccountCurrencyCheck(bankid)
+> AccountAccessUniqueIndexCheck200Response accountCurrencyCheck(bankid)
 
 Check for Sensible Currencies
 
@@ -201,7 +201,7 @@ import com.openbankproject.api.SystemIntegrityApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -222,10 +222,10 @@ public class Example {
         SystemIntegrityApi apiInstance = new SystemIntegrityApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            OBPv121UpdateTransactionNarrative200Response result = apiInstance.oBPv510AccountCurrencyCheck(bankid);
+            AccountAccessUniqueIndexCheck200Response result = apiInstance.accountCurrencyCheck(bankid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling SystemIntegrityApi#oBPv510AccountCurrencyCheck");
+            System.err.println("Exception when calling SystemIntegrityApi#accountCurrencyCheck");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -244,7 +244,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 
 ### Authorization
@@ -262,9 +262,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510AccountCurrencyCheckWithHttpInfo
+## accountCurrencyCheckWithHttpInfo
 
-> ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv510AccountCurrencyCheck oBPv510AccountCurrencyCheckWithHttpInfo(bankid)
+> ApiResponse<AccountAccessUniqueIndexCheck200Response> accountCurrencyCheck accountCurrencyCheckWithHttpInfo(bankid)
 
 Check for Sensible Currencies
 
@@ -285,7 +285,7 @@ import com.openbankproject.api.SystemIntegrityApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -306,12 +306,12 @@ public class Example {
         SystemIntegrityApi apiInstance = new SystemIntegrityApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            ApiResponse<OBPv121UpdateTransactionNarrative200Response> response = apiInstance.oBPv510AccountCurrencyCheckWithHttpInfo(bankid);
+            ApiResponse<AccountAccessUniqueIndexCheck200Response> response = apiInstance.accountCurrencyCheckWithHttpInfo(bankid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling SystemIntegrityApi#oBPv510AccountCurrencyCheck");
+            System.err.println("Exception when calling SystemIntegrityApi#accountCurrencyCheck");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -330,7 +330,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)>
+ApiResponse<[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)>
 
 
 ### Authorization
@@ -349,9 +349,9 @@ ApiResponse<[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTran
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510CustomViewNamesCheck
+## customViewNamesCheck
 
-> OBPv121UpdateTransactionNarrative200Response oBPv510CustomViewNamesCheck()
+> AccountAccessUniqueIndexCheck200Response customViewNamesCheck()
 
 Check Custom View Names
 
@@ -371,7 +371,7 @@ import com.openbankproject.api.SystemIntegrityApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -391,10 +391,10 @@ public class Example {
 
         SystemIntegrityApi apiInstance = new SystemIntegrityApi(defaultClient);
         try {
-            OBPv121UpdateTransactionNarrative200Response result = apiInstance.oBPv510CustomViewNamesCheck();
+            AccountAccessUniqueIndexCheck200Response result = apiInstance.customViewNamesCheck();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling SystemIntegrityApi#oBPv510CustomViewNamesCheck");
+            System.err.println("Exception when calling SystemIntegrityApi#customViewNamesCheck");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -410,7 +410,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 
 ### Authorization
@@ -428,9 +428,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510CustomViewNamesCheckWithHttpInfo
+## customViewNamesCheckWithHttpInfo
 
-> ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv510CustomViewNamesCheck oBPv510CustomViewNamesCheckWithHttpInfo()
+> ApiResponse<AccountAccessUniqueIndexCheck200Response> customViewNamesCheck customViewNamesCheckWithHttpInfo()
 
 Check Custom View Names
 
@@ -451,7 +451,7 @@ import com.openbankproject.api.SystemIntegrityApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -471,12 +471,12 @@ public class Example {
 
         SystemIntegrityApi apiInstance = new SystemIntegrityApi(defaultClient);
         try {
-            ApiResponse<OBPv121UpdateTransactionNarrative200Response> response = apiInstance.oBPv510CustomViewNamesCheckWithHttpInfo();
+            ApiResponse<AccountAccessUniqueIndexCheck200Response> response = apiInstance.customViewNamesCheckWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling SystemIntegrityApi#oBPv510CustomViewNamesCheck");
+            System.err.println("Exception when calling SystemIntegrityApi#customViewNamesCheck");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -492,7 +492,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)>
+ApiResponse<[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)>
 
 
 ### Authorization
@@ -511,9 +511,9 @@ ApiResponse<[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTran
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510OrphanedAccountCheck
+## orphanedAccountCheck
 
-> OBPv121UpdateTransactionNarrative200Response oBPv510OrphanedAccountCheck(bankid)
+> AccountAccessUniqueIndexCheck200Response orphanedAccountCheck(bankid)
 
 Check for Orphaned Accounts
 
@@ -533,7 +533,7 @@ import com.openbankproject.api.SystemIntegrityApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -554,10 +554,10 @@ public class Example {
         SystemIntegrityApi apiInstance = new SystemIntegrityApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            OBPv121UpdateTransactionNarrative200Response result = apiInstance.oBPv510OrphanedAccountCheck(bankid);
+            AccountAccessUniqueIndexCheck200Response result = apiInstance.orphanedAccountCheck(bankid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling SystemIntegrityApi#oBPv510OrphanedAccountCheck");
+            System.err.println("Exception when calling SystemIntegrityApi#orphanedAccountCheck");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -576,7 +576,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 
 ### Authorization
@@ -594,9 +594,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510OrphanedAccountCheckWithHttpInfo
+## orphanedAccountCheckWithHttpInfo
 
-> ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv510OrphanedAccountCheck oBPv510OrphanedAccountCheckWithHttpInfo(bankid)
+> ApiResponse<AccountAccessUniqueIndexCheck200Response> orphanedAccountCheck orphanedAccountCheckWithHttpInfo(bankid)
 
 Check for Orphaned Accounts
 
@@ -617,7 +617,7 @@ import com.openbankproject.api.SystemIntegrityApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -638,12 +638,12 @@ public class Example {
         SystemIntegrityApi apiInstance = new SystemIntegrityApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            ApiResponse<OBPv121UpdateTransactionNarrative200Response> response = apiInstance.oBPv510OrphanedAccountCheckWithHttpInfo(bankid);
+            ApiResponse<AccountAccessUniqueIndexCheck200Response> response = apiInstance.orphanedAccountCheckWithHttpInfo(bankid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling SystemIntegrityApi#oBPv510OrphanedAccountCheck");
+            System.err.println("Exception when calling SystemIntegrityApi#orphanedAccountCheck");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -662,7 +662,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)>
+ApiResponse<[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)>
 
 
 ### Authorization
@@ -681,9 +681,9 @@ ApiResponse<[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTran
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510SystemViewNamesCheck
+## systemViewNamesCheck
 
-> OBPv121UpdateTransactionNarrative200Response oBPv510SystemViewNamesCheck()
+> AccountAccessUniqueIndexCheck200Response systemViewNamesCheck()
 
 Check System View Names
 
@@ -703,7 +703,7 @@ import com.openbankproject.api.SystemIntegrityApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -723,10 +723,10 @@ public class Example {
 
         SystemIntegrityApi apiInstance = new SystemIntegrityApi(defaultClient);
         try {
-            OBPv121UpdateTransactionNarrative200Response result = apiInstance.oBPv510SystemViewNamesCheck();
+            AccountAccessUniqueIndexCheck200Response result = apiInstance.systemViewNamesCheck();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling SystemIntegrityApi#oBPv510SystemViewNamesCheck");
+            System.err.println("Exception when calling SystemIntegrityApi#systemViewNamesCheck");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -742,7 +742,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 
 ### Authorization
@@ -760,9 +760,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510SystemViewNamesCheckWithHttpInfo
+## systemViewNamesCheckWithHttpInfo
 
-> ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv510SystemViewNamesCheck oBPv510SystemViewNamesCheckWithHttpInfo()
+> ApiResponse<AccountAccessUniqueIndexCheck200Response> systemViewNamesCheck systemViewNamesCheckWithHttpInfo()
 
 Check System View Names
 
@@ -783,7 +783,7 @@ import com.openbankproject.api.SystemIntegrityApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -803,12 +803,12 @@ public class Example {
 
         SystemIntegrityApi apiInstance = new SystemIntegrityApi(defaultClient);
         try {
-            ApiResponse<OBPv121UpdateTransactionNarrative200Response> response = apiInstance.oBPv510SystemViewNamesCheckWithHttpInfo();
+            ApiResponse<AccountAccessUniqueIndexCheck200Response> response = apiInstance.systemViewNamesCheckWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling SystemIntegrityApi#oBPv510SystemViewNamesCheck");
+            System.err.println("Exception when calling SystemIntegrityApi#systemViewNamesCheck");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -824,7 +824,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)>
+ApiResponse<[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)>
 
 
 ### Authorization

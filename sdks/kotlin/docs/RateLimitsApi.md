@@ -1,68 +1,17 @@
 # RateLimitsApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv310GetRateLimitingInfo**](RateLimitsApi.md#oBPv310GetRateLimitingInfo) | **GET** /obp/v3.1.0/rate-limiting | Get Rate Limiting Info |
-| [**oBPv400CallsLimit**](RateLimitsApi.md#oBPv400CallsLimit) | **PUT** /obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits | Set Rate Limits / Call Limits per Consumer |
-| [**oBPv600UpdateRateLimits**](RateLimitsApi.md#oBPv600UpdateRateLimits) | **PUT** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Set Rate Limits / Call Limits per Consumer |
+| [**callsLimit**](RateLimitsApi.md#callsLimit) | **PUT** /obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits | Set Rate Limits / Call Limits per Consumer |
+| [**getRateLimitingInfo**](RateLimitsApi.md#getRateLimitingInfo) | **GET** /obp/v3.1.0/rate-limiting | Get Rate Limiting Info |
+| [**updateRateLimits**](RateLimitsApi.md#updateRateLimits) | **PUT** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Set Rate Limits / Call Limits per Consumer |
 
 
-<a id="oBPv310GetRateLimitingInfo"></a>
-# **oBPv310GetRateLimitingInfo**
-> OBPv310GetRateLimitingInfo200Response oBPv310GetRateLimitingInfo()
-
-Get Rate Limiting Info
-
-&lt;p&gt;Get information about the Rate Limiting setup on this OBP Instance such as:&lt;/p&gt; &lt;p&gt;Is rate limiting enabled and active?&lt;br /&gt; What backend is used to keep track of the API calls (e.g. REDIS).&lt;/p&gt; &lt;p&gt;Note: Rate limiting can be set at the Consumer level and also for anonymous calls.&lt;/p&gt; &lt;p&gt;See the consumer rate limits / call limits endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#service_available\&quot;&gt;&lt;strong&gt;service_available&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#technology\&quot;&gt;&lt;strong&gt;technology&lt;/strong&gt;&lt;/a&gt;: technology1&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = RateLimitsApi()
-try {
-    val result : OBPv310GetRateLimitingInfo200Response = apiInstance.oBPv310GetRateLimitingInfo()
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling RateLimitsApi#oBPv310GetRateLimitingInfo")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling RateLimitsApi#oBPv310GetRateLimitingInfo")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv310GetRateLimitingInfo200Response**](OBPv310GetRateLimitingInfo200Response.md)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a id="oBPv400CallsLimit"></a>
-# **oBPv400CallsLimit**
-> OBPv600UpdateRateLimitsRequest oBPv400CallsLimit(consumerid, obPv600UpdateRateLimitsRequest)
+<a id="callsLimit"></a>
+# **callsLimit**
+> UpdateRateLimitsRequest callsLimit(consumerid, updateRateLimitsRequest)
 
 Set Rate Limits / Call Limits per Consumer
 
@@ -76,15 +25,15 @@ Set Rate Limits / Call Limits per Consumer
 
 val apiInstance = RateLimitsApi()
 val consumerid : kotlin.String = consumerid_example // kotlin.String | The CONSUMERID identifier
-val obPv600UpdateRateLimitsRequest : OBPv600UpdateRateLimitsRequest = {type=object, properties={to_date={type=string, format=date-time}, per_week_call_limit={type=string}, per_day_call_limit={type=string}, per_second_call_limit={type=string}, per_month_call_limit={type=string}, per_hour_call_limit={type=string}, per_minute_call_limit={type=string}, from_date={type=string, format=date-time}}} // OBPv600UpdateRateLimitsRequest | Request body
+val updateRateLimitsRequest : UpdateRateLimitsRequest = {type=object, properties={per_week_call_limit={type=string}, per_day_call_limit={type=string}, per_second_call_limit={type=string}, per_month_call_limit={type=string}, from_date={type=string, format=date-time}, to_date={type=string, format=date-time}, per_hour_call_limit={type=string}, per_minute_call_limit={type=string}}} // UpdateRateLimitsRequest | Request body
 try {
-    val result : OBPv600UpdateRateLimitsRequest = apiInstance.oBPv400CallsLimit(consumerid, obPv600UpdateRateLimitsRequest)
+    val result : UpdateRateLimitsRequest = apiInstance.callsLimit(consumerid, updateRateLimitsRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling RateLimitsApi#oBPv400CallsLimit")
+    println("4xx response calling RateLimitsApi#callsLimit")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling RateLimitsApi#oBPv400CallsLimit")
+    println("5xx response calling RateLimitsApi#callsLimit")
     e.printStackTrace()
 }
 ```
@@ -93,11 +42,11 @@ try {
 | **consumerid** | **kotlin.String**| The CONSUMERID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600UpdateRateLimitsRequest** | [**OBPv600UpdateRateLimitsRequest**](OBPv600UpdateRateLimitsRequest.md)| Request body | |
+| **updateRateLimitsRequest** | [**UpdateRateLimitsRequest**](UpdateRateLimitsRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600UpdateRateLimitsRequest**](OBPv600UpdateRateLimitsRequest.md)
+[**UpdateRateLimitsRequest**](UpdateRateLimitsRequest.md)
 
 ### Authorization
 
@@ -108,17 +57,68 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600UpdateRateLimits"></a>
-# **oBPv600UpdateRateLimits**
-> OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimits(consumerid, ratelimitingid, obPv600UpdateRateLimitsRequest)
+<a id="getRateLimitingInfo"></a>
+# **getRateLimitingInfo**
+> GetRateLimitingInfo200Response getRateLimitingInfo()
+
+Get Rate Limiting Info
+
+&lt;p&gt;Get information about the Rate Limiting setup on this OBP Instance such as:&lt;/p&gt; &lt;p&gt;Is rate limiting enabled and active?&lt;br /&gt; What backend is used to keep track of the API calls (e.g. REDIS).&lt;/p&gt; &lt;p&gt;Note: Rate limiting can be set at the Consumer level and also for anonymous calls.&lt;/p&gt; &lt;p&gt;See the consumer rate limits / call limits endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#service_available\&quot;&gt;&lt;strong&gt;service_available&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#technology\&quot;&gt;&lt;strong&gt;technology&lt;/strong&gt;&lt;/a&gt;: technology1&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = RateLimitsApi()
+try {
+    val result : GetRateLimitingInfo200Response = apiInstance.getRateLimitingInfo()
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling RateLimitsApi#getRateLimitingInfo")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling RateLimitsApi#getRateLimitingInfo")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetRateLimitingInfo200Response**](GetRateLimitingInfo200Response.md)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="updateRateLimits"></a>
+# **updateRateLimits**
+> UpdateRateLimitsRequest updateRateLimits(consumerid, ratelimitingid, updateRateLimitsRequest)
 
 Set Rate Limits / Call Limits per Consumer
 
@@ -133,15 +133,15 @@ Set Rate Limits / Call Limits per Consumer
 val apiInstance = RateLimitsApi()
 val consumerid : kotlin.String = consumerid_example // kotlin.String | The CONSUMERID identifier
 val ratelimitingid : kotlin.String = ratelimitingid_example // kotlin.String | The RATELIMITINGID identifier
-val obPv600UpdateRateLimitsRequest : OBPv600UpdateRateLimitsRequest = {"type":"object","properties":{"to_date":{"type":"string","format":"date-time"},"per_week_call_limit":{"type":"string"},"per_day_call_limit":{"type":"string"},"per_second_call_limit":{"type":"string"},"per_month_call_limit":{"type":"string"},"per_hour_call_limit":{"type":"string"},"per_minute_call_limit":{"type":"string"},"from_date":{"type":"string","format":"date-time"}}} // OBPv600UpdateRateLimitsRequest | Request body
+val updateRateLimitsRequest : UpdateRateLimitsRequest = {"type":"object","properties":{"per_week_call_limit":{"type":"string"},"per_day_call_limit":{"type":"string"},"per_second_call_limit":{"type":"string"},"per_month_call_limit":{"type":"string"},"from_date":{"type":"string","format":"date-time"},"to_date":{"type":"string","format":"date-time"},"per_hour_call_limit":{"type":"string"},"per_minute_call_limit":{"type":"string"}}} // UpdateRateLimitsRequest | Request body
 try {
-    val result : OBPv600UpdateRateLimitsRequest = apiInstance.oBPv600UpdateRateLimits(consumerid, ratelimitingid, obPv600UpdateRateLimitsRequest)
+    val result : UpdateRateLimitsRequest = apiInstance.updateRateLimits(consumerid, ratelimitingid, updateRateLimitsRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling RateLimitsApi#oBPv600UpdateRateLimits")
+    println("4xx response calling RateLimitsApi#updateRateLimits")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling RateLimitsApi#oBPv600UpdateRateLimits")
+    println("5xx response calling RateLimitsApi#updateRateLimits")
     e.printStackTrace()
 }
 ```
@@ -151,11 +151,11 @@ try {
 | **ratelimitingid** | **kotlin.String**| The RATELIMITINGID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600UpdateRateLimitsRequest** | [**OBPv600UpdateRateLimitsRequest**](OBPv600UpdateRateLimitsRequest.md)| Request body | |
+| **updateRateLimitsRequest** | [**UpdateRateLimitsRequest**](UpdateRateLimitsRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600UpdateRateLimitsRequest**](OBPv600UpdateRateLimitsRequest.md)
+[**UpdateRateLimitsRequest**](UpdateRateLimitsRequest.md)
 
 ### Authorization
 
@@ -166,8 +166,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

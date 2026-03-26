@@ -1,20 +1,20 @@
 # AuthenticationTypeValidationApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400CreateAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#oBPv400CreateAuthenticationTypeValidation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation |
-| [**oBPv400DeleteAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#oBPv400DeleteAuthenticationTypeValidation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation |
-| [**oBPv400GetAllAuthenticationTypeValidations**](AuthenticationTypeValidationApi.md#oBPv400GetAllAuthenticationTypeValidations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations |
-| [**oBPv400GetAllAuthenticationTypeValidationsPublic**](AuthenticationTypeValidationApi.md#oBPv400GetAllAuthenticationTypeValidationsPublic) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public |
-| [**oBPv400GetAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#oBPv400GetAuthenticationTypeValidation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation |
-| [**oBPv400UpdateAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#oBPv400UpdateAuthenticationTypeValidation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation |
+| [**createAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#createAuthenticationTypeValidation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation |
+| [**deleteAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#deleteAuthenticationTypeValidation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation |
+| [**getAllAuthenticationTypeValidations**](AuthenticationTypeValidationApi.md#getAllAuthenticationTypeValidations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations |
+| [**getAllAuthenticationTypeValidationsPublic**](AuthenticationTypeValidationApi.md#getAllAuthenticationTypeValidationsPublic) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public |
+| [**getAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#getAuthenticationTypeValidation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation |
+| [**updateAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#updateAuthenticationTypeValidation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation |
 
 
-<a id="oBPv400CreateAuthenticationTypeValidation"></a>
-# **oBPv400CreateAuthenticationTypeValidation**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400CreateAuthenticationTypeValidation(operationid, obPv400UpdateAuthenticationTypeValidationRequest)
+<a id="createAuthenticationTypeValidation"></a>
+# **createAuthenticationTypeValidation**
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner createAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest)
 
 Create an Authentication Type Validation
 
@@ -28,15 +28,15 @@ Create an Authentication Type Validation
 
 val apiInstance = AuthenticationTypeValidationApi()
 val operationid : kotlin.String = operationid_example // kotlin.String | The OPERATIONID identifier
-val obPv400UpdateAuthenticationTypeValidationRequest : OBPv400UpdateAuthenticationTypeValidationRequest = {type=object, properties={tl={type=array, items={type=object, properties={}}}, head={type=string, enum=[DirectLogin, GatewayLogin, DAuth, OAuth2_OIDC, OAuth2_OIDC_FAPI, Anonymous]}}} // OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+val updateAuthenticationTypeValidationRequest : UpdateAuthenticationTypeValidationRequest = {type=object, properties={head={type=string, enum=[DirectLogin, GatewayLogin, DAuth, OAuth2_OIDC, OAuth2_OIDC_FAPI, Anonymous]}, tl={type=array, items={type=object, properties={}}}}} // UpdateAuthenticationTypeValidationRequest | Request body
 try {
-    val result : OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems = apiInstance.oBPv400CreateAuthenticationTypeValidation(operationid, obPv400UpdateAuthenticationTypeValidationRequest)
+    val result : GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner = apiInstance.createAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AuthenticationTypeValidationApi#oBPv400CreateAuthenticationTypeValidation")
+    println("4xx response calling AuthenticationTypeValidationApi#createAuthenticationTypeValidation")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AuthenticationTypeValidationApi#oBPv400CreateAuthenticationTypeValidation")
+    println("5xx response calling AuthenticationTypeValidationApi#createAuthenticationTypeValidation")
     e.printStackTrace()
 }
 ```
@@ -45,11 +45,11 @@ try {
 | **operationid** | **kotlin.String**| The OPERATIONID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateAuthenticationTypeValidationRequest** | [**OBPv400UpdateAuthenticationTypeValidationRequest**](OBPv400UpdateAuthenticationTypeValidationRequest.md)| Request body | |
+| **updateAuthenticationTypeValidationRequest** | [**UpdateAuthenticationTypeValidationRequest**](UpdateAuthenticationTypeValidationRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -60,17 +60,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400DeleteAuthenticationTypeValidation"></a>
-# **oBPv400DeleteAuthenticationTypeValidation**
-> oBPv400DeleteAuthenticationTypeValidation(operationid)
+<a id="deleteAuthenticationTypeValidation"></a>
+# **deleteAuthenticationTypeValidation**
+> deleteAuthenticationTypeValidation(operationid)
 
 Delete an Authentication Type Validation
 
@@ -85,12 +85,12 @@ Delete an Authentication Type Validation
 val apiInstance = AuthenticationTypeValidationApi()
 val operationid : kotlin.String = operationid_example // kotlin.String | The OPERATIONID identifier
 try {
-    apiInstance.oBPv400DeleteAuthenticationTypeValidation(operationid)
+    apiInstance.deleteAuthenticationTypeValidation(operationid)
 } catch (e: ClientException) {
-    println("4xx response calling AuthenticationTypeValidationApi#oBPv400DeleteAuthenticationTypeValidation")
+    println("4xx response calling AuthenticationTypeValidationApi#deleteAuthenticationTypeValidation")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AuthenticationTypeValidationApi#oBPv400DeleteAuthenticationTypeValidation")
+    println("5xx response calling AuthenticationTypeValidationApi#deleteAuthenticationTypeValidation")
     e.printStackTrace()
 }
 ```
@@ -113,17 +113,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv400GetAllAuthenticationTypeValidations"></a>
-# **oBPv400GetAllAuthenticationTypeValidations**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200Response oBPv400GetAllAuthenticationTypeValidations()
+<a id="getAllAuthenticationTypeValidations"></a>
+# **getAllAuthenticationTypeValidations**
+> GetAllAuthenticationTypeValidationsPublic200Response getAllAuthenticationTypeValidations()
 
 Get all Authentication Type Validations
 
@@ -137,13 +137,13 @@ Get all Authentication Type Validations
 
 val apiInstance = AuthenticationTypeValidationApi()
 try {
-    val result : OBPv400GetAllAuthenticationTypeValidationsPublic200Response = apiInstance.oBPv400GetAllAuthenticationTypeValidations()
+    val result : GetAllAuthenticationTypeValidationsPublic200Response = apiInstance.getAllAuthenticationTypeValidations()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AuthenticationTypeValidationApi#oBPv400GetAllAuthenticationTypeValidations")
+    println("4xx response calling AuthenticationTypeValidationApi#getAllAuthenticationTypeValidations")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AuthenticationTypeValidationApi#oBPv400GetAllAuthenticationTypeValidations")
+    println("5xx response calling AuthenticationTypeValidationApi#getAllAuthenticationTypeValidations")
     e.printStackTrace()
 }
 ```
@@ -153,7 +153,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -164,17 +164,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetAllAuthenticationTypeValidationsPublic"></a>
-# **oBPv400GetAllAuthenticationTypeValidationsPublic**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200Response oBPv400GetAllAuthenticationTypeValidationsPublic()
+<a id="getAllAuthenticationTypeValidationsPublic"></a>
+# **getAllAuthenticationTypeValidationsPublic**
+> GetAllAuthenticationTypeValidationsPublic200Response getAllAuthenticationTypeValidationsPublic()
 
 Get all Authentication Type Validations - public
 
@@ -188,13 +188,13 @@ Get all Authentication Type Validations - public
 
 val apiInstance = AuthenticationTypeValidationApi()
 try {
-    val result : OBPv400GetAllAuthenticationTypeValidationsPublic200Response = apiInstance.oBPv400GetAllAuthenticationTypeValidationsPublic()
+    val result : GetAllAuthenticationTypeValidationsPublic200Response = apiInstance.getAllAuthenticationTypeValidationsPublic()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AuthenticationTypeValidationApi#oBPv400GetAllAuthenticationTypeValidationsPublic")
+    println("4xx response calling AuthenticationTypeValidationApi#getAllAuthenticationTypeValidationsPublic")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AuthenticationTypeValidationApi#oBPv400GetAllAuthenticationTypeValidationsPublic")
+    println("5xx response calling AuthenticationTypeValidationApi#getAllAuthenticationTypeValidationsPublic")
     e.printStackTrace()
 }
 ```
@@ -204,7 +204,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -215,9 +215,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetAuthenticationTypeValidation"></a>
-# **oBPv400GetAuthenticationTypeValidation**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400GetAuthenticationTypeValidation(operationid)
+<a id="getAuthenticationTypeValidation"></a>
+# **getAuthenticationTypeValidation**
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner getAuthenticationTypeValidation(operationid)
 
 Get an Authentication Type Validation
 
@@ -232,13 +232,13 @@ Get an Authentication Type Validation
 val apiInstance = AuthenticationTypeValidationApi()
 val operationid : kotlin.String = operationid_example // kotlin.String | The OPERATIONID identifier
 try {
-    val result : OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems = apiInstance.oBPv400GetAuthenticationTypeValidation(operationid)
+    val result : GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner = apiInstance.getAuthenticationTypeValidation(operationid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AuthenticationTypeValidationApi#oBPv400GetAuthenticationTypeValidation")
+    println("4xx response calling AuthenticationTypeValidationApi#getAuthenticationTypeValidation")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AuthenticationTypeValidationApi#oBPv400GetAuthenticationTypeValidation")
+    println("5xx response calling AuthenticationTypeValidationApi#getAuthenticationTypeValidation")
     e.printStackTrace()
 }
 ```
@@ -250,7 +250,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -261,17 +261,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400UpdateAuthenticationTypeValidation"></a>
-# **oBPv400UpdateAuthenticationTypeValidation**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400UpdateAuthenticationTypeValidation(operationid, obPv400UpdateAuthenticationTypeValidationRequest)
+<a id="updateAuthenticationTypeValidation"></a>
+# **updateAuthenticationTypeValidation**
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner updateAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest)
 
 Update an Authentication Type Validation
 
@@ -285,15 +285,15 @@ Update an Authentication Type Validation
 
 val apiInstance = AuthenticationTypeValidationApi()
 val operationid : kotlin.String = operationid_example // kotlin.String | The OPERATIONID identifier
-val obPv400UpdateAuthenticationTypeValidationRequest : OBPv400UpdateAuthenticationTypeValidationRequest = {"type":"object","properties":{"tl":{"type":"array","items":{"type":"object","properties":{}}},"head":{"type":"string","enum":["DirectLogin","GatewayLogin","DAuth","OAuth2_OIDC","OAuth2_OIDC_FAPI","Anonymous"]}}} // OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+val updateAuthenticationTypeValidationRequest : UpdateAuthenticationTypeValidationRequest = {"type":"object","properties":{"head":{"type":"string","enum":["DirectLogin","GatewayLogin","DAuth","OAuth2_OIDC","OAuth2_OIDC_FAPI","Anonymous"]},"tl":{"type":"array","items":{"type":"object","properties":{}}}}} // UpdateAuthenticationTypeValidationRequest | Request body
 try {
-    val result : OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems = apiInstance.oBPv400UpdateAuthenticationTypeValidation(operationid, obPv400UpdateAuthenticationTypeValidationRequest)
+    val result : GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner = apiInstance.updateAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AuthenticationTypeValidationApi#oBPv400UpdateAuthenticationTypeValidation")
+    println("4xx response calling AuthenticationTypeValidationApi#updateAuthenticationTypeValidation")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AuthenticationTypeValidationApi#oBPv400UpdateAuthenticationTypeValidation")
+    println("5xx response calling AuthenticationTypeValidationApi#updateAuthenticationTypeValidation")
     e.printStackTrace()
 }
 ```
@@ -302,11 +302,11 @@ try {
 | **operationid** | **kotlin.String**| The OPERATIONID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateAuthenticationTypeValidationRequest** | [**OBPv400UpdateAuthenticationTypeValidationRequest**](OBPv400UpdateAuthenticationTypeValidationRequest.md)| Request body | |
+| **updateAuthenticationTypeValidationRequest** | [**UpdateAuthenticationTypeValidationRequest**](UpdateAuthenticationTypeValidationRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -317,8 +317,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

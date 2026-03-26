@@ -1,16 +1,16 @@
 # OpenBankProject::StandingOrderApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv4_0_0_create_standing_order**](StandingOrderApi.md#o_bpv4_0_0_create_standing_order) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order |
-| [**o_bpv4_0_0_create_standing_order_management**](StandingOrderApi.md#o_bpv4_0_0_create_standing_order_management) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management) |
+| [**create_standing_order**](StandingOrderApi.md#create_standing_order) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order |
+| [**create_standing_order_management**](StandingOrderApi.md#create_standing_order_management) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management) |
 
 
-## o_bpv4_0_0_create_standing_order
+## create_standing_order
 
-> <OBPv400CreateStandingOrder200Response> o_bpv4_0_0_create_standing_order(bankid, accountid, viewid, obpv400_create_standing_order_request)
+> <CreateStandingOrder200Response> create_standing_order(bankid, accountid, viewid, create_standing_order_request)
 
 Create Standing Order
 
@@ -32,41 +32,41 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::StandingOrderApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
 viewid = 'viewid_example' # String | The VIEWID identifier
-obpv400_create_standing_order_request = OpenBankProject::OBPv400CreateStandingOrderRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400CreateStandingOrderRequestProperties.new({date_starts: OpenBankProject::OBPv600UpdateRateLimitsRequestPropertiesFromDate.new({type: 'type_example', format: 'format_example'}), customer_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), date_signed: OpenBankProject::OBPv600UpdateRateLimitsRequestPropertiesFromDate.new({type: 'type_example', format: 'format_example'}), user_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), amount: OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit.new({type: 'type_example', properties: OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties.new({currency: , amount: })}), date_expires: , counterparty_id: , _when: OpenBankProject::OBPv400CreateStandingOrderRequestPropertiesWhen.new({type: 'type_example', properties: OpenBankProject::OBPv400CreateStandingOrderRequestPropertiesWhenProperties.new({frequency: , detail: })})})}) # OBPv400CreateStandingOrderRequest | Request body
+create_standing_order_request = OpenBankProject::CreateStandingOrderRequest.new # CreateStandingOrderRequest | Request body
 
 begin
   # Create Standing Order
-  result = api_instance.o_bpv4_0_0_create_standing_order(bankid, accountid, viewid, obpv400_create_standing_order_request)
+  result = api_instance.create_standing_order(bankid, accountid, viewid, create_standing_order_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling StandingOrderApi->o_bpv4_0_0_create_standing_order: #{e}"
+  puts "Error when calling StandingOrderApi->create_standing_order: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_standing_order_with_http_info variant
+#### Using the create_standing_order_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400CreateStandingOrder200Response>, Integer, Hash)> o_bpv4_0_0_create_standing_order_with_http_info(bankid, accountid, viewid, obpv400_create_standing_order_request)
+> <Array(<CreateStandingOrder200Response>, Integer, Hash)> create_standing_order_with_http_info(bankid, accountid, viewid, create_standing_order_request)
 
 ```ruby
 begin
   # Create Standing Order
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_standing_order_with_http_info(bankid, accountid, viewid, obpv400_create_standing_order_request)
+  data, status_code, headers = api_instance.create_standing_order_with_http_info(bankid, accountid, viewid, create_standing_order_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400CreateStandingOrder200Response>
+  p data # => <CreateStandingOrder200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling StandingOrderApi->o_bpv4_0_0_create_standing_order_with_http_info: #{e}"
+  puts "Error when calling StandingOrderApi->create_standing_order_with_http_info: #{e}"
 end
 ```
 
@@ -77,11 +77,11 @@ end
 | **bankid** | **String** | The BANKID identifier |  |
 | **accountid** | **String** | The ACCOUNTID identifier |  |
 | **viewid** | **String** | The VIEWID identifier |  |
-| **obpv400_create_standing_order_request** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md) | Request body |  |
+| **create_standing_order_request** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 
@@ -93,9 +93,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_create_standing_order_management
+## create_standing_order_management
 
-> <OBPv400CreateStandingOrder200Response> o_bpv4_0_0_create_standing_order_management(bankid, accountid, obpv400_create_standing_order_request)
+> <CreateStandingOrder200Response> create_standing_order_management(bankid, accountid, create_standing_order_request)
 
 Create Standing Order (management)
 
@@ -117,40 +117,40 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::StandingOrderApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
-obpv400_create_standing_order_request = OpenBankProject::OBPv400CreateStandingOrderRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400CreateStandingOrderRequestProperties.new({date_starts: OpenBankProject::OBPv600UpdateRateLimitsRequestPropertiesFromDate.new({type: 'type_example', format: 'format_example'}), customer_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), date_signed: OpenBankProject::OBPv600UpdateRateLimitsRequestPropertiesFromDate.new({type: 'type_example', format: 'format_example'}), user_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), amount: OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit.new({type: 'type_example', properties: OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties.new({currency: , amount: })}), date_expires: , counterparty_id: , _when: OpenBankProject::OBPv400CreateStandingOrderRequestPropertiesWhen.new({type: 'type_example', properties: OpenBankProject::OBPv400CreateStandingOrderRequestPropertiesWhenProperties.new({frequency: , detail: })})})}) # OBPv400CreateStandingOrderRequest | Request body
+create_standing_order_request = OpenBankProject::CreateStandingOrderRequest.new # CreateStandingOrderRequest | Request body
 
 begin
   # Create Standing Order (management)
-  result = api_instance.o_bpv4_0_0_create_standing_order_management(bankid, accountid, obpv400_create_standing_order_request)
+  result = api_instance.create_standing_order_management(bankid, accountid, create_standing_order_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling StandingOrderApi->o_bpv4_0_0_create_standing_order_management: #{e}"
+  puts "Error when calling StandingOrderApi->create_standing_order_management: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_standing_order_management_with_http_info variant
+#### Using the create_standing_order_management_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400CreateStandingOrder200Response>, Integer, Hash)> o_bpv4_0_0_create_standing_order_management_with_http_info(bankid, accountid, obpv400_create_standing_order_request)
+> <Array(<CreateStandingOrder200Response>, Integer, Hash)> create_standing_order_management_with_http_info(bankid, accountid, create_standing_order_request)
 
 ```ruby
 begin
   # Create Standing Order (management)
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_standing_order_management_with_http_info(bankid, accountid, obpv400_create_standing_order_request)
+  data, status_code, headers = api_instance.create_standing_order_management_with_http_info(bankid, accountid, create_standing_order_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400CreateStandingOrder200Response>
+  p data # => <CreateStandingOrder200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling StandingOrderApi->o_bpv4_0_0_create_standing_order_management_with_http_info: #{e}"
+  puts "Error when calling StandingOrderApi->create_standing_order_management_with_http_info: #{e}"
 end
 ```
 
@@ -160,11 +160,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
 | **accountid** | **String** | The ACCOUNTID identifier |  |
-| **obpv400_create_standing_order_request** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md) | Request body |  |
+| **create_standing_order_request** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 

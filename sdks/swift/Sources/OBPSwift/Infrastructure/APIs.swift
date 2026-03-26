@@ -25,7 +25,7 @@ open class OBPSwiftAPIConfiguration: @unchecked Sendable {
     public var interceptor: OpenAPIInterceptor
 
     public init(
-        basePath: String = "https://apisandbox.openbankproject.com",
+        basePath: String = "http://127.0.0.1:8080",
         customHeaders: [String: String] = [:],
         credential: URLCredential? = nil,
         requestBuilderFactory: RequestBuilderFactory = URLSessionRequestBuilderFactory(),

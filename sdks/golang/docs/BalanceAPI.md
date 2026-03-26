@@ -1,20 +1,20 @@
 # \BalanceAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv510CreateBankAccountBalance**](BalanceAPI.md#OBPv510CreateBankAccountBalance) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
-[**OBPv510DeleteBankAccountBalance**](BalanceAPI.md#OBPv510DeleteBankAccountBalance) | **Delete** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
-[**OBPv510GetAllBankAccountBalances**](BalanceAPI.md#OBPv510GetAllBankAccountBalances) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
-[**OBPv510GetBankAccountBalanceById**](BalanceAPI.md#OBPv510GetBankAccountBalanceById) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
-[**OBPv510UpdateBankAccountBalance**](BalanceAPI.md#OBPv510UpdateBankAccountBalance) | **Put** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
+[**CreateBankAccountBalance**](BalanceAPI.md#CreateBankAccountBalance) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
+[**DeleteBankAccountBalance**](BalanceAPI.md#DeleteBankAccountBalance) | **Delete** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
+[**GetAllBankAccountBalances**](BalanceAPI.md#GetAllBankAccountBalances) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
+[**GetBankAccountBalanceById**](BalanceAPI.md#GetBankAccountBalanceById) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
+[**UpdateBankAccountBalance**](BalanceAPI.md#UpdateBankAccountBalance) | **Put** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
 
 
 
-## OBPv510CreateBankAccountBalance
+## CreateBankAccountBalance
 
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems OBPv510CreateBankAccountBalance(ctx, bankid, accountid).OBPv510CreateBankAccountBalanceRequest(oBPv510CreateBankAccountBalanceRequest).Execute()
+> GetAllBankAccountBalances200ResponseBalancesInner CreateBankAccountBalance(ctx, bankid, accountid).CreateBankAccountBalanceRequest(createBankAccountBalanceRequest).Execute()
 
 Create Bank Account Balance
 
@@ -35,17 +35,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	oBPv510CreateBankAccountBalanceRequest := *openapiclient.NewOBPv510CreateBankAccountBalanceRequest("Type_example", *openapiclient.NewOBPv510CreateBankAccountBalanceRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510CreateBankAccountBalanceRequest | Request body
+	createBankAccountBalanceRequest := *openapiclient.NewCreateBankAccountBalanceRequest() // CreateBankAccountBalanceRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BalanceAPI.OBPv510CreateBankAccountBalance(context.Background(), bankid, accountid).OBPv510CreateBankAccountBalanceRequest(oBPv510CreateBankAccountBalanceRequest).Execute()
+	resp, r, err := apiClient.BalanceAPI.CreateBankAccountBalance(context.Background(), bankid, accountid).CreateBankAccountBalanceRequest(createBankAccountBalanceRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BalanceAPI.OBPv510CreateBankAccountBalance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BalanceAPI.CreateBankAccountBalance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510CreateBankAccountBalance`: OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
-	fmt.Fprintf(os.Stdout, "Response from `BalanceAPI.OBPv510CreateBankAccountBalance`: %v\n", resp)
+	// response from `CreateBankAccountBalance`: GetAllBankAccountBalances200ResponseBalancesInner
+	fmt.Fprintf(os.Stdout, "Response from `BalanceAPI.CreateBankAccountBalance`: %v\n", resp)
 }
 ```
 
@@ -60,18 +60,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510CreateBankAccountBalanceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateBankAccountBalanceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv510CreateBankAccountBalanceRequest** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md) | Request body | 
+ **createBankAccountBalanceRequest** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -87,9 +87,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510DeleteBankAccountBalance
+## DeleteBankAccountBalance
 
-> OBPv510DeleteBankAccountBalance(ctx, bankid, accountid, balanceid).Execute()
+> DeleteBankAccountBalance(ctx, bankid, accountid, balanceid).Execute()
 
 Delete Bank Account Balance
 
@@ -114,9 +114,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.BalanceAPI.OBPv510DeleteBankAccountBalance(context.Background(), bankid, accountid, balanceid).Execute()
+	r, err := apiClient.BalanceAPI.DeleteBankAccountBalance(context.Background(), bankid, accountid, balanceid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BalanceAPI.OBPv510DeleteBankAccountBalance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BalanceAPI.DeleteBankAccountBalance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510DeleteBankAccountBalanceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteBankAccountBalanceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -161,9 +161,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetAllBankAccountBalances
+## GetAllBankAccountBalances
 
-> OBPv510GetAllBankAccountBalances200Response OBPv510GetAllBankAccountBalances(ctx, bankid, accountid).Execute()
+> GetAllBankAccountBalances200Response GetAllBankAccountBalances(ctx, bankid, accountid).Execute()
 
 Get All Bank Account Balances
 
@@ -187,13 +187,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BalanceAPI.OBPv510GetAllBankAccountBalances(context.Background(), bankid, accountid).Execute()
+	resp, r, err := apiClient.BalanceAPI.GetAllBankAccountBalances(context.Background(), bankid, accountid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BalanceAPI.OBPv510GetAllBankAccountBalances``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BalanceAPI.GetAllBankAccountBalances``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetAllBankAccountBalances`: OBPv510GetAllBankAccountBalances200Response
-	fmt.Fprintf(os.Stdout, "Response from `BalanceAPI.OBPv510GetAllBankAccountBalances`: %v\n", resp)
+	// response from `GetAllBankAccountBalances`: GetAllBankAccountBalances200Response
+	fmt.Fprintf(os.Stdout, "Response from `BalanceAPI.GetAllBankAccountBalances`: %v\n", resp)
 }
 ```
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetAllBankAccountBalancesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAllBankAccountBalancesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200Response**](OBPv510GetAllBankAccountBalances200Response.md)
+[**GetAllBankAccountBalances200Response**](GetAllBankAccountBalances200Response.md)
 
 ### Authorization
 
@@ -234,9 +234,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetBankAccountBalanceById
+## GetBankAccountBalanceById
 
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems OBPv510GetBankAccountBalanceById(ctx, bankid, accountid, balanceid).Execute()
+> GetAllBankAccountBalances200ResponseBalancesInner GetBankAccountBalanceById(ctx, bankid, accountid, balanceid).Execute()
 
 Get Bank Account Balance By ID
 
@@ -261,13 +261,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BalanceAPI.OBPv510GetBankAccountBalanceById(context.Background(), bankid, accountid, balanceid).Execute()
+	resp, r, err := apiClient.BalanceAPI.GetBankAccountBalanceById(context.Background(), bankid, accountid, balanceid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BalanceAPI.OBPv510GetBankAccountBalanceById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BalanceAPI.GetBankAccountBalanceById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetBankAccountBalanceById`: OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
-	fmt.Fprintf(os.Stdout, "Response from `BalanceAPI.OBPv510GetBankAccountBalanceById`: %v\n", resp)
+	// response from `GetBankAccountBalanceById`: GetAllBankAccountBalances200ResponseBalancesInner
+	fmt.Fprintf(os.Stdout, "Response from `BalanceAPI.GetBankAccountBalanceById`: %v\n", resp)
 }
 ```
 
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetBankAccountBalanceByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetBankAccountBalanceByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -310,9 +310,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510UpdateBankAccountBalance
+## UpdateBankAccountBalance
 
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems OBPv510UpdateBankAccountBalance(ctx, bankid, accountid, balanceid).OBPv510CreateBankAccountBalanceRequest(oBPv510CreateBankAccountBalanceRequest).Execute()
+> GetAllBankAccountBalances200ResponseBalancesInner UpdateBankAccountBalance(ctx, bankid, accountid, balanceid).CreateBankAccountBalanceRequest(createBankAccountBalanceRequest).Execute()
 
 Update Bank Account Balance
 
@@ -334,17 +334,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	balanceid := "balanceid_example" // string | The BALANCEID identifier
-	oBPv510CreateBankAccountBalanceRequest := *openapiclient.NewOBPv510CreateBankAccountBalanceRequest("Type_example", *openapiclient.NewOBPv510CreateBankAccountBalanceRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510CreateBankAccountBalanceRequest | Request body
+	createBankAccountBalanceRequest := *openapiclient.NewCreateBankAccountBalanceRequest() // CreateBankAccountBalanceRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BalanceAPI.OBPv510UpdateBankAccountBalance(context.Background(), bankid, accountid, balanceid).OBPv510CreateBankAccountBalanceRequest(oBPv510CreateBankAccountBalanceRequest).Execute()
+	resp, r, err := apiClient.BalanceAPI.UpdateBankAccountBalance(context.Background(), bankid, accountid, balanceid).CreateBankAccountBalanceRequest(createBankAccountBalanceRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BalanceAPI.OBPv510UpdateBankAccountBalance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BalanceAPI.UpdateBankAccountBalance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510UpdateBankAccountBalance`: OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
-	fmt.Fprintf(os.Stdout, "Response from `BalanceAPI.OBPv510UpdateBankAccountBalance`: %v\n", resp)
+	// response from `UpdateBankAccountBalance`: GetAllBankAccountBalances200ResponseBalancesInner
+	fmt.Fprintf(os.Stdout, "Response from `BalanceAPI.UpdateBankAccountBalance`: %v\n", resp)
 }
 ```
 
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510UpdateBankAccountBalanceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateBankAccountBalanceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -368,11 +368,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv510CreateBankAccountBalanceRequest** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md) | Request body | 
+ **createBankAccountBalanceRequest** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 

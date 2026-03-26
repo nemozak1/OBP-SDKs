@@ -1,25 +1,25 @@
 # ABACAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600CreateAbacRule**](ABACAPI.md#obpv600createabacrule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule
-[**oBPv600DeleteAbacRule**](ABACAPI.md#obpv600deleteabacrule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule
-[**oBPv600ExecuteAbacPolicy**](ABACAPI.md#obpv600executeabacpolicy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy
-[**oBPv600ExecuteAbacRule**](ABACAPI.md#obpv600executeabacrule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule
-[**oBPv600GetAbacPolicies**](ABACAPI.md#obpv600getabacpolicies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies
-[**oBPv600GetAbacRule**](ABACAPI.md#obpv600getabacrule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule
-[**oBPv600GetAbacRuleSchema**](ABACAPI.md#obpv600getabacruleschema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema
-[**oBPv600GetAbacRules**](ABACAPI.md#obpv600getabacrules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules
-[**oBPv600GetAbacRulesByPolicy**](ABACAPI.md#obpv600getabacrulesbypolicy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy
-[**oBPv600UpdateAbacRule**](ABACAPI.md#obpv600updateabacrule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule
-[**oBPv600ValidateAbacRule**](ABACAPI.md#obpv600validateabacrule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule
+[**createAbacRule**](ABACAPI.md#createabacrule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule
+[**deleteAbacRule**](ABACAPI.md#deleteabacrule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule
+[**executeAbacPolicy**](ABACAPI.md#executeabacpolicy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy
+[**executeAbacRule**](ABACAPI.md#executeabacrule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule
+[**getAbacPolicies**](ABACAPI.md#getabacpolicies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies
+[**getAbacRule**](ABACAPI.md#getabacrule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule
+[**getAbacRuleSchema**](ABACAPI.md#getabacruleschema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema
+[**getAbacRules**](ABACAPI.md#getabacrules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules
+[**getAbacRulesByPolicy**](ABACAPI.md#getabacrulesbypolicy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy
+[**updateAbacRule**](ABACAPI.md#updateabacrule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule
+[**validateAbacRule**](ABACAPI.md#validateabacrule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule
 
 
-# **oBPv600CreateAbacRule**
+# **createAbacRule**
 ```swift
-    open class func oBPv600CreateAbacRule(oBPv600UpdateAbacRuleRequest: OBPv600UpdateAbacRuleRequest, completion: @escaping (_ data: OBPv600GetAbacRule200Response?, _ error: Error?) -> Void)
+    open class func createAbacRule(updateAbacRuleRequest: UpdateAbacRuleRequest, completion: @escaping (_ data: GetAbacRule200Response?, _ error: Error?) -> Void)
 ```
 
 Create ABAC Rule
@@ -31,10 +31,10 @@ Create ABAC Rule
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OBPSwift
 
-let oBPv600UpdateAbacRuleRequest = OBPv6_0_0_updateAbacRule_request(type: "type_example", properties: OBPv6_0_0_updateAbacRule_request_properties(ruleCode: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), isActive: nil, description: nil, ruleName: nil, policy: nil)) // OBPv600UpdateAbacRuleRequest | Request body
+let updateAbacRuleRequest = updateAbacRule_request(ruleCode: "ruleCode_example", isActive: false, description: "description_example", ruleName: "ruleName_example", policy: "policy_example") // UpdateAbacRuleRequest | Request body
 
 // Create ABAC Rule
-ABACAPI.oBPv600CreateAbacRule(oBPv600UpdateAbacRuleRequest: oBPv600UpdateAbacRuleRequest) { (response, error) in
+ABACAPI.createAbacRule(updateAbacRuleRequest: updateAbacRuleRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -50,11 +50,11 @@ ABACAPI.oBPv600CreateAbacRule(oBPv600UpdateAbacRuleRequest: oBPv600UpdateAbacRul
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600UpdateAbacRuleRequest** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md) | Request body | 
+ **updateAbacRuleRequest** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -67,9 +67,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600DeleteAbacRule**
+# **deleteAbacRule**
 ```swift
-    open class func oBPv600DeleteAbacRule(abacruleid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteAbacRule(abacruleid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete ABAC Rule
@@ -84,7 +84,7 @@ import OBPSwift
 let abacruleid = "abacruleid_example" // String | The ABACRULEID identifier
 
 // Delete ABAC Rule
-ABACAPI.oBPv600DeleteAbacRule(abacruleid: abacruleid) { (response, error) in
+ABACAPI.deleteAbacRule(abacruleid: abacruleid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -117,9 +117,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600ExecuteAbacPolicy**
+# **executeAbacPolicy**
 ```swift
-    open class func oBPv600ExecuteAbacPolicy(policy: String, oBPv600ExecuteAbacPolicyRequest: OBPv600ExecuteAbacPolicyRequest, completion: @escaping (_ data: OBPv600ExecuteAbacPolicy200Response?, _ error: Error?) -> Void)
+    open class func executeAbacPolicy(policy: String, executeAbacPolicyRequest: ExecuteAbacPolicyRequest, completion: @escaping (_ data: ExecuteAbacPolicy200Response?, _ error: Error?) -> Void)
 ```
 
 Execute ABAC Policy
@@ -132,10 +132,10 @@ Execute ABAC Policy
 import OBPSwift
 
 let policy = "policy_example" // String | The POLICY identifier
-let oBPv600ExecuteAbacPolicyRequest = OBPv6_0_0_executeAbacPolicy_request(type: "type_example", properties: OBPv6_0_0_executeAbacPolicy_request_properties(transactionRequestId: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), customerId: nil, userId: nil, onBehalfOfUserId: nil, viewId: nil, bankId: nil, transactionId: nil, accountId: nil, authenticatedUserId: nil)) // OBPv600ExecuteAbacPolicyRequest | Request body
+let executeAbacPolicyRequest = executeAbacPolicy_request(transactionRequestId: "transactionRequestId_example", customerId: "customerId_example", userId: "userId_example", onBehalfOfUserId: "onBehalfOfUserId_example", viewId: "viewId_example", bankId: "bankId_example", transactionId: "transactionId_example", accountId: "accountId_example", authenticatedUserId: "authenticatedUserId_example") // ExecuteAbacPolicyRequest | Request body
 
 // Execute ABAC Policy
-ABACAPI.oBPv600ExecuteAbacPolicy(policy: policy, oBPv600ExecuteAbacPolicyRequest: oBPv600ExecuteAbacPolicyRequest) { (response, error) in
+ABACAPI.executeAbacPolicy(policy: policy, executeAbacPolicyRequest: executeAbacPolicyRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -152,11 +152,11 @@ ABACAPI.oBPv600ExecuteAbacPolicy(policy: policy, oBPv600ExecuteAbacPolicyRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy** | **String** | The POLICY identifier | 
- **oBPv600ExecuteAbacPolicyRequest** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md) | Request body | 
+ **executeAbacPolicyRequest** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -169,9 +169,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600ExecuteAbacRule**
+# **executeAbacRule**
 ```swift
-    open class func oBPv600ExecuteAbacRule(abacruleid: String, oBPv600ExecuteAbacPolicyRequest: OBPv600ExecuteAbacPolicyRequest, completion: @escaping (_ data: OBPv600ExecuteAbacPolicy200Response?, _ error: Error?) -> Void)
+    open class func executeAbacRule(abacruleid: String, executeAbacPolicyRequest: ExecuteAbacPolicyRequest, completion: @escaping (_ data: ExecuteAbacPolicy200Response?, _ error: Error?) -> Void)
 ```
 
 Execute ABAC Rule
@@ -184,10 +184,10 @@ Execute ABAC Rule
 import OBPSwift
 
 let abacruleid = "abacruleid_example" // String | The ABACRULEID identifier
-let oBPv600ExecuteAbacPolicyRequest = OBPv6_0_0_executeAbacPolicy_request(type: "type_example", properties: OBPv6_0_0_executeAbacPolicy_request_properties(transactionRequestId: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), customerId: nil, userId: nil, onBehalfOfUserId: nil, viewId: nil, bankId: nil, transactionId: nil, accountId: nil, authenticatedUserId: nil)) // OBPv600ExecuteAbacPolicyRequest | Request body
+let executeAbacPolicyRequest = executeAbacPolicy_request(transactionRequestId: "transactionRequestId_example", customerId: "customerId_example", userId: "userId_example", onBehalfOfUserId: "onBehalfOfUserId_example", viewId: "viewId_example", bankId: "bankId_example", transactionId: "transactionId_example", accountId: "accountId_example", authenticatedUserId: "authenticatedUserId_example") // ExecuteAbacPolicyRequest | Request body
 
 // Execute ABAC Rule
-ABACAPI.oBPv600ExecuteAbacRule(abacruleid: abacruleid, oBPv600ExecuteAbacPolicyRequest: oBPv600ExecuteAbacPolicyRequest) { (response, error) in
+ABACAPI.executeAbacRule(abacruleid: abacruleid, executeAbacPolicyRequest: executeAbacPolicyRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -204,11 +204,11 @@ ABACAPI.oBPv600ExecuteAbacRule(abacruleid: abacruleid, oBPv600ExecuteAbacPolicyR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **abacruleid** | **String** | The ABACRULEID identifier | 
- **oBPv600ExecuteAbacPolicyRequest** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md) | Request body | 
+ **executeAbacPolicyRequest** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -221,9 +221,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAbacPolicies**
+# **getAbacPolicies**
 ```swift
-    open class func oBPv600GetAbacPolicies(completion: @escaping (_ data: OBPv600GetAbacPolicies200Response?, _ error: Error?) -> Void)
+    open class func getAbacPolicies(completion: @escaping (_ data: GetAbacPolicies200Response?, _ error: Error?) -> Void)
 ```
 
 Get ABAC Policies
@@ -237,7 +237,7 @@ import OBPSwift
 
 
 // Get ABAC Policies
-ABACAPI.oBPv600GetAbacPolicies() { (response, error) in
+ABACAPI.getAbacPolicies() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -254,7 +254,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacPolicies200Response**](OBPv600GetAbacPolicies200Response.md)
+[**GetAbacPolicies200Response**](GetAbacPolicies200Response.md)
 
 ### Authorization
 
@@ -267,9 +267,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAbacRule**
+# **getAbacRule**
 ```swift
-    open class func oBPv600GetAbacRule(abacruleid: String, completion: @escaping (_ data: OBPv600GetAbacRule200Response?, _ error: Error?) -> Void)
+    open class func getAbacRule(abacruleid: String, completion: @escaping (_ data: GetAbacRule200Response?, _ error: Error?) -> Void)
 ```
 
 Get ABAC Rule
@@ -284,7 +284,7 @@ import OBPSwift
 let abacruleid = "abacruleid_example" // String | The ABACRULEID identifier
 
 // Get ABAC Rule
-ABACAPI.oBPv600GetAbacRule(abacruleid: abacruleid) { (response, error) in
+ABACAPI.getAbacRule(abacruleid: abacruleid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -317,9 +317,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAbacRuleSchema**
+# **getAbacRuleSchema**
 ```swift
-    open class func oBPv600GetAbacRuleSchema(completion: @escaping (_ data: OBPv600GetAbacRuleSchema200Response?, _ error: Error?) -> Void)
+    open class func getAbacRuleSchema(completion: @escaping (_ data: GetAbacRuleSchema200Response?, _ error: Error?) -> Void)
 ```
 
 Get ABAC Rule Schema
@@ -333,7 +333,7 @@ import OBPSwift
 
 
 // Get ABAC Rule Schema
-ABACAPI.oBPv600GetAbacRuleSchema() { (response, error) in
+ABACAPI.getAbacRuleSchema() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -350,7 +350,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacRuleSchema200Response**](OBPv600GetAbacRuleSchema200Response.md)
+[**GetAbacRuleSchema200Response**](GetAbacRuleSchema200Response.md)
 
 ### Authorization
 
@@ -363,9 +363,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAbacRules**
+# **getAbacRules**
 ```swift
-    open class func oBPv600GetAbacRules(completion: @escaping (_ data: OBPv600GetAbacRulesByPolicy200Response?, _ error: Error?) -> Void)
+    open class func getAbacRules(completion: @escaping (_ data: GetAbacRulesByPolicy200Response?, _ error: Error?) -> Void)
 ```
 
 Get ABAC Rules
@@ -379,7 +379,7 @@ import OBPSwift
 
 
 // Get ABAC Rules
-ABACAPI.oBPv600GetAbacRules() { (response, error) in
+ABACAPI.getAbacRules() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -396,7 +396,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -409,9 +409,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAbacRulesByPolicy**
+# **getAbacRulesByPolicy**
 ```swift
-    open class func oBPv600GetAbacRulesByPolicy(policy: String, completion: @escaping (_ data: OBPv600GetAbacRulesByPolicy200Response?, _ error: Error?) -> Void)
+    open class func getAbacRulesByPolicy(policy: String, completion: @escaping (_ data: GetAbacRulesByPolicy200Response?, _ error: Error?) -> Void)
 ```
 
 Get ABAC Rules by Policy
@@ -426,7 +426,7 @@ import OBPSwift
 let policy = "policy_example" // String | The POLICY identifier
 
 // Get ABAC Rules by Policy
-ABACAPI.oBPv600GetAbacRulesByPolicy(policy: policy) { (response, error) in
+ABACAPI.getAbacRulesByPolicy(policy: policy) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -446,7 +446,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -459,9 +459,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600UpdateAbacRule**
+# **updateAbacRule**
 ```swift
-    open class func oBPv600UpdateAbacRule(abacruleid: String, oBPv600UpdateAbacRuleRequest: OBPv600UpdateAbacRuleRequest, completion: @escaping (_ data: OBPv600GetAbacRule200Response?, _ error: Error?) -> Void)
+    open class func updateAbacRule(abacruleid: String, updateAbacRuleRequest: UpdateAbacRuleRequest, completion: @escaping (_ data: GetAbacRule200Response?, _ error: Error?) -> Void)
 ```
 
 Update ABAC Rule
@@ -474,10 +474,10 @@ Update ABAC Rule
 import OBPSwift
 
 let abacruleid = "abacruleid_example" // String | The ABACRULEID identifier
-let oBPv600UpdateAbacRuleRequest = OBPv6_0_0_updateAbacRule_request(type: "type_example", properties: OBPv6_0_0_updateAbacRule_request_properties(ruleCode: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), isActive: nil, description: nil, ruleName: nil, policy: nil)) // OBPv600UpdateAbacRuleRequest | Request body
+let updateAbacRuleRequest = updateAbacRule_request(ruleCode: "ruleCode_example", isActive: false, description: "description_example", ruleName: "ruleName_example", policy: "policy_example") // UpdateAbacRuleRequest | Request body
 
 // Update ABAC Rule
-ABACAPI.oBPv600UpdateAbacRule(abacruleid: abacruleid, oBPv600UpdateAbacRuleRequest: oBPv600UpdateAbacRuleRequest) { (response, error) in
+ABACAPI.updateAbacRule(abacruleid: abacruleid, updateAbacRuleRequest: updateAbacRuleRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -494,11 +494,11 @@ ABACAPI.oBPv600UpdateAbacRule(abacruleid: abacruleid, oBPv600UpdateAbacRuleReque
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **abacruleid** | **String** | The ABACRULEID identifier | 
- **oBPv600UpdateAbacRuleRequest** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md) | Request body | 
+ **updateAbacRuleRequest** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -511,9 +511,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600ValidateAbacRule**
+# **validateAbacRule**
 ```swift
-    open class func oBPv600ValidateAbacRule(oBPv600ValidateAbacRuleRequest: OBPv600ValidateAbacRuleRequest, completion: @escaping (_ data: OBPv600ValidateAbacRule200Response?, _ error: Error?) -> Void)
+    open class func validateAbacRule(validateAbacRuleRequest: ValidateAbacRuleRequest, completion: @escaping (_ data: ValidateAbacRule200Response?, _ error: Error?) -> Void)
 ```
 
 Validate ABAC Rule
@@ -525,10 +525,10 @@ Validate ABAC Rule
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OBPSwift
 
-let oBPv600ValidateAbacRuleRequest = OBPv6_0_0_validateAbacRule_request(type: "type_example", properties: OBPv6_0_0_validateAbacRule_request_properties(ruleCode: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv600ValidateAbacRuleRequest | Request body
+let validateAbacRuleRequest = validateAbacRule_request(ruleCode: "ruleCode_example") // ValidateAbacRuleRequest | Request body
 
 // Validate ABAC Rule
-ABACAPI.oBPv600ValidateAbacRule(oBPv600ValidateAbacRuleRequest: oBPv600ValidateAbacRuleRequest) { (response, error) in
+ABACAPI.validateAbacRule(validateAbacRuleRequest: validateAbacRuleRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -544,11 +544,11 @@ ABACAPI.oBPv600ValidateAbacRule(oBPv600ValidateAbacRuleRequest: oBPv600ValidateA
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600ValidateAbacRuleRequest** | [**OBPv600ValidateAbacRuleRequest**](OBPv600ValidateAbacRuleRequest.md) | Request body | 
+ **validateAbacRuleRequest** | [**ValidateAbacRuleRequest**](ValidateAbacRuleRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600ValidateAbacRule200Response**](OBPv600ValidateAbacRule200Response.md)
+[**ValidateAbacRule200Response**](ValidateAbacRule200Response.md)
 
 ### Authorization
 

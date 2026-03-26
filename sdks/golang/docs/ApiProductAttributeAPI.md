@@ -1,19 +1,19 @@
 # \ApiProductAttributeAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv600CreateApiProductAttribute**](ApiProductAttributeAPI.md#OBPv600CreateApiProductAttribute) | **Post** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
-[**OBPv600DeleteApiProductAttribute**](ApiProductAttributeAPI.md#OBPv600DeleteApiProductAttribute) | **Delete** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
-[**OBPv600GetApiProductAttribute**](ApiProductAttributeAPI.md#OBPv600GetApiProductAttribute) | **Get** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
-[**OBPv600UpdateApiProductAttribute**](ApiProductAttributeAPI.md#OBPv600UpdateApiProductAttribute) | **Put** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
+[**CreateApiProductAttribute**](ApiProductAttributeAPI.md#CreateApiProductAttribute) | **Post** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
+[**DeleteApiProductAttribute**](ApiProductAttributeAPI.md#DeleteApiProductAttribute) | **Delete** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
+[**GetApiProductAttribute**](ApiProductAttributeAPI.md#GetApiProductAttribute) | **Get** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
+[**UpdateApiProductAttribute**](ApiProductAttributeAPI.md#UpdateApiProductAttribute) | **Put** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
 
 
 
-## OBPv600CreateApiProductAttribute
+## CreateApiProductAttribute
 
-> OBPv600CreateApiProductAttribute200Response OBPv600CreateApiProductAttribute(ctx, bankid, apiproductcode).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+> CreateApiProductAttribute200Response CreateApiProductAttribute(ctx, bankid, apiproductcode).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 
 Create Api Product Attribute
 
@@ -34,17 +34,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	apiproductcode := "apiproductcode_example" // string | The APIPRODUCTCODE identifier
-	oBPv510UpdateAtmAttributeRequest := *openapiclient.NewOBPv510UpdateAtmAttributeRequest("Type_example", *openapiclient.NewOBPv510UpdateAtmAttributeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateAtmAttributeRequest | Request body
+	updateAtmAttributeRequest := *openapiclient.NewUpdateAtmAttributeRequest() // UpdateAtmAttributeRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ApiProductAttributeAPI.OBPv600CreateApiProductAttribute(context.Background(), bankid, apiproductcode).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+	resp, r, err := apiClient.ApiProductAttributeAPI.CreateApiProductAttribute(context.Background(), bankid, apiproductcode).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ApiProductAttributeAPI.OBPv600CreateApiProductAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ApiProductAttributeAPI.CreateApiProductAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600CreateApiProductAttribute`: OBPv600CreateApiProductAttribute200Response
-	fmt.Fprintf(os.Stdout, "Response from `ApiProductAttributeAPI.OBPv600CreateApiProductAttribute`: %v\n", resp)
+	// response from `CreateApiProductAttribute`: CreateApiProductAttribute200Response
+	fmt.Fprintf(os.Stdout, "Response from `ApiProductAttributeAPI.CreateApiProductAttribute`: %v\n", resp)
 }
 ```
 
@@ -59,18 +59,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600CreateApiProductAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateApiProductAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -86,9 +86,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600DeleteApiProductAttribute
+## DeleteApiProductAttribute
 
-> OBPv600DeleteApiProductAttribute(ctx, bankid, apiproductcode, apiproductattributeid).Execute()
+> DeleteApiProductAttribute(ctx, bankid, apiproductcode, apiproductattributeid).Execute()
 
 Delete Api Product Attribute
 
@@ -113,9 +113,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ApiProductAttributeAPI.OBPv600DeleteApiProductAttribute(context.Background(), bankid, apiproductcode, apiproductattributeid).Execute()
+	r, err := apiClient.ApiProductAttributeAPI.DeleteApiProductAttribute(context.Background(), bankid, apiproductcode, apiproductattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ApiProductAttributeAPI.OBPv600DeleteApiProductAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ApiProductAttributeAPI.DeleteApiProductAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600DeleteApiProductAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteApiProductAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -160,9 +160,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetApiProductAttribute
+## GetApiProductAttribute
 
-> OBPv600CreateApiProductAttribute200Response OBPv600GetApiProductAttribute(ctx, bankid, apiproductcode, apiproductattributeid).Execute()
+> CreateApiProductAttribute200Response GetApiProductAttribute(ctx, bankid, apiproductcode, apiproductattributeid).Execute()
 
 Get Api Product Attribute
 
@@ -187,13 +187,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ApiProductAttributeAPI.OBPv600GetApiProductAttribute(context.Background(), bankid, apiproductcode, apiproductattributeid).Execute()
+	resp, r, err := apiClient.ApiProductAttributeAPI.GetApiProductAttribute(context.Background(), bankid, apiproductcode, apiproductattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ApiProductAttributeAPI.OBPv600GetApiProductAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ApiProductAttributeAPI.GetApiProductAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetApiProductAttribute`: OBPv600CreateApiProductAttribute200Response
-	fmt.Fprintf(os.Stdout, "Response from `ApiProductAttributeAPI.OBPv600GetApiProductAttribute`: %v\n", resp)
+	// response from `GetApiProductAttribute`: CreateApiProductAttribute200Response
+	fmt.Fprintf(os.Stdout, "Response from `ApiProductAttributeAPI.GetApiProductAttribute`: %v\n", resp)
 }
 ```
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetApiProductAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetApiProductAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -236,9 +236,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv600UpdateApiProductAttribute
+## UpdateApiProductAttribute
 
-> OBPv600CreateApiProductAttribute200Response OBPv600UpdateApiProductAttribute(ctx, bankid, apiproductcode, apiproductattributeid).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+> CreateApiProductAttribute200Response UpdateApiProductAttribute(ctx, bankid, apiproductcode, apiproductattributeid).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 
 Update Api Product Attribute
 
@@ -260,17 +260,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	apiproductcode := "apiproductcode_example" // string | The APIPRODUCTCODE identifier
 	apiproductattributeid := "apiproductattributeid_example" // string | The APIPRODUCTATTRIBUTEID identifier
-	oBPv510UpdateAtmAttributeRequest := *openapiclient.NewOBPv510UpdateAtmAttributeRequest("Type_example", *openapiclient.NewOBPv510UpdateAtmAttributeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateAtmAttributeRequest | Request body
+	updateAtmAttributeRequest := *openapiclient.NewUpdateAtmAttributeRequest() // UpdateAtmAttributeRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ApiProductAttributeAPI.OBPv600UpdateApiProductAttribute(context.Background(), bankid, apiproductcode, apiproductattributeid).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+	resp, r, err := apiClient.ApiProductAttributeAPI.UpdateApiProductAttribute(context.Background(), bankid, apiproductcode, apiproductattributeid).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ApiProductAttributeAPI.OBPv600UpdateApiProductAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ApiProductAttributeAPI.UpdateApiProductAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600UpdateApiProductAttribute`: OBPv600CreateApiProductAttribute200Response
-	fmt.Fprintf(os.Stdout, "Response from `ApiProductAttributeAPI.OBPv600UpdateApiProductAttribute`: %v\n", resp)
+	// response from `UpdateApiProductAttribute`: CreateApiProductAttribute200Response
+	fmt.Fprintf(os.Stdout, "Response from `ApiProductAttributeAPI.UpdateApiProductAttribute`: %v\n", resp)
 }
 ```
 
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600UpdateApiProductAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateApiProductAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -294,11 +294,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 

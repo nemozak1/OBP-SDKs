@@ -1,14 +1,14 @@
 # OpenBankProject.Api.AggregateMetricsApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv600GetAggregateMetrics**](AggregateMetricsApi.md#obpv600getaggregatemetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics |
+| [**GetAggregateMetrics**](AggregateMetricsApi.md#getaggregatemetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics |
 
-<a id="obpv600getaggregatemetrics"></a>
-# **OBPv600GetAggregateMetrics**
-> OBPv600GetAggregateMetrics200Response OBPv600GetAggregateMetrics ()
+<a id="getaggregatemetrics"></a>
+# **GetAggregateMetrics**
+> GetAggregateMetrics200Response GetAggregateMetrics ()
 
 Get Aggregate Metrics
 
@@ -19,7 +19,7 @@ Get Aggregate Metrics
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv600GetAggregateMetrics200Response**](OBPv600GetAggregateMetrics200Response.md)
+[**GetAggregateMetrics200Response**](GetAggregateMetrics200Response.md)
 
 ### Authorization
 

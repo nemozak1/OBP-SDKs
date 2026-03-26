@@ -14,12 +14,20 @@ wheels = [
 [[package]]
 name = "obp-python"
 version = "1.0.0"
-source = { git = "https://github.com/OpenBankProject/OBP-SDKs.git?subdirectory=sdks%2Fpython#0333aaae6612118c1fc3ed014a0951538435d698" }
+source = { directory = "../../sdks/python" }
 dependencies = [
     { name = "pydantic" },
     { name = "python-dateutil" },
     { name = "typing-extensions" },
     { name = "urllib3" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "pydantic", specifier = ">=2" },
+    { name = "python-dateutil", specifier = ">=2.8.2" },
+    { name = "typing-extensions", specifier = ">=4.7.1" },
+    { name = "urllib3", specifier = ">=2.1.0,<3.0.0" },
 ]
 
 [[package]]
@@ -33,7 +41,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "obp-python", git = "https://github.com/OpenBankProject/OBP-SDKs.git?subdirectory=sdks%2Fpython" },
+    { name = "obp-python", directory = "../../sdks/python" },
     { name = "python-dotenv", specifier = ">=1.2.2" },
 ]
 

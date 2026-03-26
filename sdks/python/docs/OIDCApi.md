@@ -4,14 +4,14 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv3_1_0_get_o_auth2_server_jwks_uris**](OIDCApi.md#o_bpv3_1_0_get_o_auth2_server_jwks_uris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
-[**o_bpv3_1_0_get_obp_connector_loopback**](OIDCApi.md#o_bpv3_1_0_get_obp_connector_loopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
-[**o_bpv6_0_0_get_oidc_client**](OIDCApi.md#o_bpv6_0_0_get_oidc_client) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
-[**o_bpv6_0_0_verify_oidc_client**](OIDCApi.md#o_bpv6_0_0_verify_oidc_client) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
+[**get_o_auth2_server_jwks_uris**](OIDCApi.md#get_o_auth2_server_jwks_uris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
+[**get_obp_connector_loopback**](OIDCApi.md#get_obp_connector_loopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
+[**get_oidc_client**](OIDCApi.md#get_oidc_client) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
+[**verify_oidc_client**](OIDCApi.md#verify_oidc_client) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
 
 
-# **o_bpv3_1_0_get_o_auth2_server_jwks_uris**
-> OBPv310GetOAuth2ServerJWKsURIs200Response o_bpv3_1_0_get_o_auth2_server_jwks_uris()
+# **get_o_auth2_server_jwks_uris**
+> GetOAuth2ServerJWKsURIs200Response get_o_auth2_server_jwks_uris()
 
 Get JSON Web Key (JWK) URIs
 
@@ -28,7 +28,7 @@ It is required by client applications to validate ID tokens, self-contained acce
 
 ```python
 import obp_python
-from obp_python.models.obpv310_get_o_auth2_server_jwks_uris200_response import OBPv310GetOAuth2ServerJWKsURIs200Response
+from obp_python.models.get_o_auth2_server_jwks_uris200_response import GetOAuth2ServerJWKsURIs200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -46,11 +46,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get JSON Web Key (JWK) URIs
-        api_response = api_instance.o_bpv3_1_0_get_o_auth2_server_jwks_uris()
-        print("The response of OIDCApi->o_bpv3_1_0_get_o_auth2_server_jwks_uris:\n")
+        api_response = api_instance.get_o_auth2_server_jwks_uris()
+        print("The response of OIDCApi->get_o_auth2_server_jwks_uris:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OIDCApi->o_bpv3_1_0_get_o_auth2_server_jwks_uris: %s\n" % e)
+        print("Exception when calling OIDCApi->get_o_auth2_server_jwks_uris: %s\n" % e)
 ```
 
 
@@ -61,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv310GetOAuth2ServerJWKsURIs200Response**](OBPv310GetOAuth2ServerJWKsURIs200Response.md)
+[**GetOAuth2ServerJWKsURIs200Response**](GetOAuth2ServerJWKsURIs200Response.md)
 
 ### Authorization
 
@@ -81,8 +81,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_1_0_get_obp_connector_loopback**
-> OBPv310GetObpConnectorLoopback200Response o_bpv3_1_0_get_obp_connector_loopback()
+# **get_obp_connector_loopback**
+> GetObpConnectorLoopback200Response get_obp_connector_loopback()
 
 Get Connector Status (Loopback)
 
@@ -102,7 +102,7 @@ Get Connector Status (Loopback)
 
 ```python
 import obp_python
-from obp_python.models.obpv310_get_obp_connector_loopback200_response import OBPv310GetObpConnectorLoopback200Response
+from obp_python.models.get_obp_connector_loopback200_response import GetObpConnectorLoopback200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -138,11 +138,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Connector Status (Loopback)
-        api_response = api_instance.o_bpv3_1_0_get_obp_connector_loopback()
-        print("The response of OIDCApi->o_bpv3_1_0_get_obp_connector_loopback:\n")
+        api_response = api_instance.get_obp_connector_loopback()
+        print("The response of OIDCApi->get_obp_connector_loopback:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OIDCApi->o_bpv3_1_0_get_obp_connector_loopback: %s\n" % e)
+        print("Exception when calling OIDCApi->get_obp_connector_loopback: %s\n" % e)
 ```
 
 
@@ -153,7 +153,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv310GetObpConnectorLoopback200Response**](OBPv310GetObpConnectorLoopback200Response.md)
+[**GetObpConnectorLoopback200Response**](GetObpConnectorLoopback200Response.md)
 
 ### Authorization
 
@@ -173,8 +173,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_oidc_client**
-> OBPv600GetOidcClient200Response o_bpv6_0_0_get_oidc_client(clientid)
+# **get_oidc_client**
+> GetOidcClient200Response get_oidc_client(clientid)
 
 Get OIDC Client
 
@@ -206,7 +206,7 @@ See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_oidc_client200_response import OBPv600GetOidcClient200Response
+from obp_python.models.get_oidc_client200_response import GetOidcClient200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -243,11 +243,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get OIDC Client
-        api_response = api_instance.o_bpv6_0_0_get_oidc_client(clientid)
-        print("The response of OIDCApi->o_bpv6_0_0_get_oidc_client:\n")
+        api_response = api_instance.get_oidc_client(clientid)
+        print("The response of OIDCApi->get_oidc_client:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OIDCApi->o_bpv6_0_0_get_oidc_client: %s\n" % e)
+        print("Exception when calling OIDCApi->get_oidc_client: %s\n" % e)
 ```
 
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetOidcClient200Response**](OBPv600GetOidcClient200Response.md)
+[**GetOidcClient200Response**](GetOidcClient200Response.md)
 
 ### Authorization
 
@@ -281,8 +281,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_verify_oidc_client**
-> OBPv600VerifyOidcClient200Response o_bpv6_0_0_verify_oidc_client(obpv600_verify_oidc_client_request)
+# **verify_oidc_client**
+> VerifyOidcClient200Response verify_oidc_client(verify_oidc_client_request)
 
 Verify OIDC Client
 
@@ -314,8 +314,8 @@ See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_verify_oidc_client200_response import OBPv600VerifyOidcClient200Response
-from obp_python.models.obpv600_verify_oidc_client_request import OBPv600VerifyOidcClientRequest
+from obp_python.models.verify_oidc_client200_response import VerifyOidcClient200Response
+from obp_python.models.verify_oidc_client_request import VerifyOidcClientRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -348,15 +348,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.OIDCApi(api_client)
-    obpv600_verify_oidc_client_request = {"type":"object","properties":{"client_id":{"type":"string"},"client_secret":{"type":"string"}}} # OBPv600VerifyOidcClientRequest | Request body
+    verify_oidc_client_request = {"type":"object","properties":{"client_id":{"type":"string"},"client_secret":{"type":"string"}}} # VerifyOidcClientRequest | Request body
 
     try:
         # Verify OIDC Client
-        api_response = api_instance.o_bpv6_0_0_verify_oidc_client(obpv600_verify_oidc_client_request)
-        print("The response of OIDCApi->o_bpv6_0_0_verify_oidc_client:\n")
+        api_response = api_instance.verify_oidc_client(verify_oidc_client_request)
+        print("The response of OIDCApi->verify_oidc_client:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OIDCApi->o_bpv6_0_0_verify_oidc_client: %s\n" % e)
+        print("Exception when calling OIDCApi->verify_oidc_client: %s\n" % e)
 ```
 
 
@@ -366,11 +366,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv600_verify_oidc_client_request** | [**OBPv600VerifyOidcClientRequest**](OBPv600VerifyOidcClientRequest.md)| Request body | 
+ **verify_oidc_client_request** | [**VerifyOidcClientRequest**](VerifyOidcClientRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600VerifyOidcClient200Response**](OBPv600VerifyOidcClient200Response.md)
+[**VerifyOidcClient200Response**](VerifyOidcClient200Response.md)
 
 ### Authorization
 

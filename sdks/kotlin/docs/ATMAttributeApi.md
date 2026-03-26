@@ -1,19 +1,19 @@
 # ATMAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv510CreateAtmAttribute**](ATMAttributeApi.md#oBPv510CreateAtmAttribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute |
-| [**oBPv510DeleteAtmAttribute**](ATMAttributeApi.md#oBPv510DeleteAtmAttribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute |
-| [**oBPv510GetAtmAttribute**](ATMAttributeApi.md#oBPv510GetAtmAttribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID |
-| [**oBPv510GetAtmAttributes**](ATMAttributeApi.md#oBPv510GetAtmAttributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes |
-| [**oBPv510UpdateAtmAttribute**](ATMAttributeApi.md#oBPv510UpdateAtmAttribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute |
+| [**createAtmAttribute**](ATMAttributeApi.md#createAtmAttribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute |
+| [**deleteAtmAttribute**](ATMAttributeApi.md#deleteAtmAttribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute |
+| [**getAtmAttribute**](ATMAttributeApi.md#getAtmAttribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID |
+| [**getAtmAttributes**](ATMAttributeApi.md#getAtmAttributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes |
+| [**updateAtmAttribute**](ATMAttributeApi.md#updateAtmAttribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute |
 
 
-<a id="oBPv510CreateAtmAttribute"></a>
-# **oBPv510CreateAtmAttribute**
-> OBPv510GetAtmAttribute200Response oBPv510CreateAtmAttribute(bankid, atmid, obPv510UpdateAtmAttributeRequest)
+<a id="createAtmAttribute"></a>
+# **createAtmAttribute**
+> GetAtmAttribute200Response createAtmAttribute(bankid, atmid, updateAtmAttributeRequest)
 
 Create ATM Attribute
 
@@ -28,15 +28,15 @@ Create ATM Attribute
 val apiInstance = ATMAttributeApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
-val obPv510UpdateAtmAttributeRequest : OBPv510UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} // OBPv510UpdateAtmAttributeRequest | Request body
+val updateAtmAttributeRequest : UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} // UpdateAtmAttributeRequest | Request body
 try {
-    val result : OBPv510GetAtmAttribute200Response = apiInstance.oBPv510CreateAtmAttribute(bankid, atmid, obPv510UpdateAtmAttributeRequest)
+    val result : GetAtmAttribute200Response = apiInstance.createAtmAttribute(bankid, atmid, updateAtmAttributeRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ATMAttributeApi#oBPv510CreateAtmAttribute")
+    println("4xx response calling ATMAttributeApi#createAtmAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ATMAttributeApi#oBPv510CreateAtmAttribute")
+    println("5xx response calling ATMAttributeApi#createAtmAttribute")
     e.printStackTrace()
 }
 ```
@@ -46,11 +46,11 @@ try {
 | **atmid** | **kotlin.String**| The ATMID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -61,17 +61,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv510DeleteAtmAttribute"></a>
-# **oBPv510DeleteAtmAttribute**
-> oBPv510DeleteAtmAttribute(bankid, atmid, atmattributeid)
+<a id="deleteAtmAttribute"></a>
+# **deleteAtmAttribute**
+> deleteAtmAttribute(bankid, atmid, atmattributeid)
 
 Delete ATM Attribute
 
@@ -88,12 +88,12 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
 val atmattributeid : kotlin.String = atmattributeid_example // kotlin.String | The ATMATTRIBUTEID identifier
 try {
-    apiInstance.oBPv510DeleteAtmAttribute(bankid, atmid, atmattributeid)
+    apiInstance.deleteAtmAttribute(bankid, atmid, atmattributeid)
 } catch (e: ClientException) {
-    println("4xx response calling ATMAttributeApi#oBPv510DeleteAtmAttribute")
+    println("4xx response calling ATMAttributeApi#deleteAtmAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ATMAttributeApi#oBPv510DeleteAtmAttribute")
+    println("5xx response calling ATMAttributeApi#deleteAtmAttribute")
     e.printStackTrace()
 }
 ```
@@ -118,17 +118,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv510GetAtmAttribute"></a>
-# **oBPv510GetAtmAttribute**
-> OBPv510GetAtmAttribute200Response oBPv510GetAtmAttribute(bankid, atmid, atmattributeid)
+<a id="getAtmAttribute"></a>
+# **getAtmAttribute**
+> GetAtmAttribute200Response getAtmAttribute(bankid, atmid, atmattributeid)
 
 Get ATM Attribute By ATM_ATTRIBUTE_ID
 
@@ -145,13 +145,13 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
 val atmattributeid : kotlin.String = atmattributeid_example // kotlin.String | The ATMATTRIBUTEID identifier
 try {
-    val result : OBPv510GetAtmAttribute200Response = apiInstance.oBPv510GetAtmAttribute(bankid, atmid, atmattributeid)
+    val result : GetAtmAttribute200Response = apiInstance.getAtmAttribute(bankid, atmid, atmattributeid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ATMAttributeApi#oBPv510GetAtmAttribute")
+    println("4xx response calling ATMAttributeApi#getAtmAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ATMAttributeApi#oBPv510GetAtmAttribute")
+    println("5xx response calling ATMAttributeApi#getAtmAttribute")
     e.printStackTrace()
 }
 ```
@@ -165,7 +165,7 @@ try {
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -176,17 +176,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv510GetAtmAttributes"></a>
-# **oBPv510GetAtmAttributes**
-> OBPv510GetAtmAttributes200Response oBPv510GetAtmAttributes(bankid, atmid)
+<a id="getAtmAttributes"></a>
+# **getAtmAttributes**
+> GetAtmAttributes200Response getAtmAttributes(bankid, atmid)
 
 Get ATM Attributes
 
@@ -202,13 +202,13 @@ val apiInstance = ATMAttributeApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
 try {
-    val result : OBPv510GetAtmAttributes200Response = apiInstance.oBPv510GetAtmAttributes(bankid, atmid)
+    val result : GetAtmAttributes200Response = apiInstance.getAtmAttributes(bankid, atmid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ATMAttributeApi#oBPv510GetAtmAttributes")
+    println("4xx response calling ATMAttributeApi#getAtmAttributes")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ATMAttributeApi#oBPv510GetAtmAttributes")
+    println("5xx response calling ATMAttributeApi#getAtmAttributes")
     e.printStackTrace()
 }
 ```
@@ -221,7 +221,7 @@ try {
 
 ### Return type
 
-[**OBPv510GetAtmAttributes200Response**](OBPv510GetAtmAttributes200Response.md)
+[**GetAtmAttributes200Response**](GetAtmAttributes200Response.md)
 
 ### Authorization
 
@@ -232,17 +232,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv510UpdateAtmAttribute"></a>
-# **oBPv510UpdateAtmAttribute**
-> OBPv510GetAtmAttribute200Response oBPv510UpdateAtmAttribute(bankid, atmid, atmattributeid, obPv510UpdateAtmAttributeRequest)
+<a id="updateAtmAttribute"></a>
+# **updateAtmAttribute**
+> GetAtmAttribute200Response updateAtmAttribute(bankid, atmid, atmattributeid, updateAtmAttributeRequest)
 
 Update ATM Attribute
 
@@ -258,15 +258,15 @@ val apiInstance = ATMAttributeApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
 val atmattributeid : kotlin.String = atmattributeid_example // kotlin.String | The ATMATTRIBUTEID identifier
-val obPv510UpdateAtmAttributeRequest : OBPv510UpdateAtmAttributeRequest = {"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"},"is_active":{"type":"boolean"},"type":{"type":"string"}}} // OBPv510UpdateAtmAttributeRequest | Request body
+val updateAtmAttributeRequest : UpdateAtmAttributeRequest = {"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"},"is_active":{"type":"boolean"},"type":{"type":"string"}}} // UpdateAtmAttributeRequest | Request body
 try {
-    val result : OBPv510GetAtmAttribute200Response = apiInstance.oBPv510UpdateAtmAttribute(bankid, atmid, atmattributeid, obPv510UpdateAtmAttributeRequest)
+    val result : GetAtmAttribute200Response = apiInstance.updateAtmAttribute(bankid, atmid, atmattributeid, updateAtmAttributeRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ATMAttributeApi#oBPv510UpdateAtmAttribute")
+    println("4xx response calling ATMAttributeApi#updateAtmAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ATMAttributeApi#oBPv510UpdateAtmAttribute")
+    println("5xx response calling ATMAttributeApi#updateAtmAttribute")
     e.printStackTrace()
 }
 ```
@@ -277,11 +277,11 @@ try {
 | **atmattributeid** | **kotlin.String**| The ATMATTRIBUTEID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -292,8 +292,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

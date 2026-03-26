@@ -13,10 +13,10 @@ open class DynamicEntityAPI {
      Cleanup Orphaned Dynamic Entity Records
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600CleanupOrphanedDynamicEntityRecords200Response
+     - returns: CleanupOrphanedDynamicEntityRecords200Response
      */
-    open class func oBPv600CleanupOrphanedDynamicEntityRecords(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600CleanupOrphanedDynamicEntityRecords200Response {
-        return try await oBPv600CleanupOrphanedDynamicEntityRecordsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func cleanupOrphanedDynamicEntityRecords(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> CleanupOrphanedDynamicEntityRecords200Response {
+        return try await cleanupOrphanedDynamicEntityRecordsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -30,12 +30,12 @@ open class DynamicEntityAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600CleanupOrphanedDynamicEntityRecords200Response> 
+     - returns: RequestBuilder<CleanupOrphanedDynamicEntityRecords200Response> 
      */
-    open class func oBPv600CleanupOrphanedDynamicEntityRecordsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600CleanupOrphanedDynamicEntityRecords200Response> {
+    open class func cleanupOrphanedDynamicEntityRecordsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<CleanupOrphanedDynamicEntityRecords200Response> {
         let localVariablePath = "/obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -48,7 +48,7 @@ open class DynamicEntityAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600CleanupOrphanedDynamicEntityRecords200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<CleanupOrphanedDynamicEntityRecords200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "DELETE", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -57,10 +57,10 @@ open class DynamicEntityAPI {
      Get Available Personal Dynamic Entities
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetAvailablePersonalDynamicEntities200Response
+     - returns: GetAvailablePersonalDynamicEntities200Response
      */
-    open class func oBPv600GetAvailablePersonalDynamicEntities(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetAvailablePersonalDynamicEntities200Response {
-        return try await oBPv600GetAvailablePersonalDynamicEntitiesWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getAvailablePersonalDynamicEntities(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAvailablePersonalDynamicEntities200Response {
+        return try await getAvailablePersonalDynamicEntitiesWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -74,12 +74,12 @@ open class DynamicEntityAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetAvailablePersonalDynamicEntities200Response> 
+     - returns: RequestBuilder<GetAvailablePersonalDynamicEntities200Response> 
      */
-    open class func oBPv600GetAvailablePersonalDynamicEntitiesWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetAvailablePersonalDynamicEntities200Response> {
+    open class func getAvailablePersonalDynamicEntitiesWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAvailablePersonalDynamicEntities200Response> {
         let localVariablePath = "/obp/v6.0.0/personal-dynamic-entities/available"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -92,7 +92,7 @@ open class DynamicEntityAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetAvailablePersonalDynamicEntities200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAvailablePersonalDynamicEntities200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -101,10 +101,10 @@ open class DynamicEntityAPI {
      Get Dynamic Entity Diagnostics
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetDynamicEntityDiagnostics200Response
+     - returns: GetDynamicEntityDiagnostics200Response
      */
-    open class func oBPv600GetDynamicEntityDiagnostics(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetDynamicEntityDiagnostics200Response {
-        return try await oBPv600GetDynamicEntityDiagnosticsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getDynamicEntityDiagnostics(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetDynamicEntityDiagnostics200Response {
+        return try await getDynamicEntityDiagnosticsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -118,12 +118,12 @@ open class DynamicEntityAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetDynamicEntityDiagnostics200Response> 
+     - returns: RequestBuilder<GetDynamicEntityDiagnostics200Response> 
      */
-    open class func oBPv600GetDynamicEntityDiagnosticsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetDynamicEntityDiagnostics200Response> {
+    open class func getDynamicEntityDiagnosticsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetDynamicEntityDiagnostics200Response> {
         let localVariablePath = "/obp/v6.0.0/management/diagnostics/dynamic-entities"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -136,7 +136,7 @@ open class DynamicEntityAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetDynamicEntityDiagnostics200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetDynamicEntityDiagnostics200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -145,10 +145,10 @@ open class DynamicEntityAPI {
      Get Reference Types for Dynamic Entities
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetReferenceTypes200Response
+     - returns: GetReferenceTypes200Response
      */
-    open class func oBPv600GetReferenceTypes(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetReferenceTypes200Response {
-        return try await oBPv600GetReferenceTypesWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getReferenceTypes(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetReferenceTypes200Response {
+        return try await getReferenceTypesWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -162,12 +162,12 @@ open class DynamicEntityAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetReferenceTypes200Response> 
+     - returns: RequestBuilder<GetReferenceTypes200Response> 
      */
-    open class func oBPv600GetReferenceTypesWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetReferenceTypes200Response> {
+    open class func getReferenceTypesWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetReferenceTypes200Response> {
         let localVariablePath = "/obp/v6.0.0/management/dynamic-entities/reference-types"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -180,7 +180,7 @@ open class DynamicEntityAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetReferenceTypes200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetReferenceTypes200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

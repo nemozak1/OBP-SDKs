@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -46,8 +46,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetCacheConfigApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetCacheConfigApiResponse> OBPv600GetCacheConfigAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCacheConfigApiResponse"/>&gt;</returns>
+        Task<IGetCacheConfigApiResponse> GetCacheConfigAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Cache Configuration
@@ -56,8 +56,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Returns cache configuration information including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Redis status: availability, connection details (URL, port, SSL)&lt;/li&gt; &lt;li&gt;In-memory cache status: availability and current size&lt;/li&gt; &lt;li&gt;Instance ID and environment&lt;/li&gt; &lt;li&gt;Global cache namespace prefix&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;This helps understand what cache backend is being used and how it&#39;s configured.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;available&lt;/strong&gt;&lt;/a&gt;: available&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;current_size&lt;/strong&gt;&lt;/a&gt;: current_size&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;environment&lt;/strong&gt;&lt;/a&gt;: environment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;global_prefix&lt;/strong&gt;&lt;/a&gt;: global_prefix&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;in_memory_status&lt;/strong&gt;&lt;/a&gt;: in_memory_status&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;instance_id&lt;/strong&gt;&lt;/a&gt;: instance_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;port&lt;/strong&gt;&lt;/a&gt;: port&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;redis_status&lt;/strong&gt;&lt;/a&gt;: redis_status&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;use_ssl&lt;/strong&gt;&lt;/a&gt;: use_ssl&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetCacheConfigApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetCacheConfigApiResponse?> OBPv600GetCacheConfigOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCacheConfigApiResponse"/>?&gt;</returns>
+        Task<IGetCacheConfigApiResponse?> GetCacheConfigOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Cache Information
@@ -67,8 +67,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetCacheInfoApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetCacheInfoApiResponse> OBPv600GetCacheInfoAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCacheInfoApiResponse"/>&gt;</returns>
+        Task<IGetCacheInfoApiResponse> GetCacheInfoAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Cache Information
@@ -77,8 +77,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Returns detailed cache information for all namespaces:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Namespace ID and versioned prefix&lt;/li&gt; &lt;li&gt;Current version counter&lt;/li&gt; &lt;li&gt;Number of keys in each namespace&lt;/li&gt; &lt;li&gt;Description and category&lt;/li&gt; &lt;li&gt;Storage location (redis, memory, both, or unknown)&lt;/li&gt; &lt;li&gt;&amp;quot;redis&amp;quot;: Keys stored in Redis&lt;/li&gt; &lt;li&gt;&amp;quot;memory&amp;quot;: Keys stored in in-memory cache&lt;/li&gt; &lt;li&gt;&amp;quot;both&amp;quot;: Keys in both locations (indicates a BUG - should never happen)&lt;/li&gt; &lt;li&gt;&amp;quot;unknown&amp;quot;: No keys found, storage location cannot be determined&lt;/li&gt; &lt;li&gt;TTL info: Sampled TTL information from actual keys&lt;/li&gt; &lt;li&gt;Shows actual TTL values from up to 5 sample keys&lt;/li&gt; &lt;li&gt;Format: &amp;quot;123s&amp;quot; (fixed), &amp;quot;range 60s to 3600s (avg 1800s)&amp;quot; (variable), &amp;quot;no expiry&amp;quot; (persistent)&lt;/li&gt; &lt;li&gt;Total key count across all namespaces&lt;/li&gt; &lt;li&gt;Redis availability status&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;This endpoint helps monitor cache usage and identify which namespaces contain the most data.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;current_version&lt;/strong&gt;&lt;/a&gt;: current_version&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;key_count&lt;/strong&gt;&lt;/a&gt;: key_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;namespace_id&lt;/strong&gt;&lt;/a&gt;: namespace_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;namespaces&lt;/strong&gt;&lt;/a&gt;: namespaces&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;prefix&lt;/strong&gt;&lt;/a&gt;: prefix&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;redis_available&lt;/strong&gt;&lt;/a&gt;: redis_available&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;storage_location&lt;/strong&gt;&lt;/a&gt;: storage_location&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_keys&lt;/strong&gt;&lt;/a&gt;: total_keys&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_info&lt;/strong&gt;&lt;/a&gt;: ttl_info&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetCacheInfoApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetCacheInfoApiResponse?> OBPv600GetCacheInfoOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCacheInfoApiResponse"/>?&gt;</returns>
+        Task<IGetCacheInfoApiResponse?> GetCacheInfoOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Cache Namespaces
@@ -88,8 +88,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetCacheNamespacesApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetCacheNamespacesApiResponse> OBPv600GetCacheNamespacesAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCacheNamespacesApiResponse"/>&gt;</returns>
+        Task<IGetCacheNamespacesApiResponse> GetCacheNamespacesAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Cache Namespaces
@@ -98,8 +98,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Returns information about all cache namespaces in the system.&lt;/p&gt; &lt;p&gt;This endpoint provides visibility into:&lt;br /&gt; * Cache namespace prefixes and their purposes&lt;br /&gt; * Number of keys in each namespace&lt;br /&gt; * TTL configurations&lt;br /&gt; * Example keys for each namespace&lt;/p&gt; &lt;p&gt;This is useful for:&lt;br /&gt; * Monitoring cache usage&lt;br /&gt; * Understanding cache structure&lt;br /&gt; * Debugging cache-related issues&lt;br /&gt; * Planning cache management operations&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;example_key&lt;/strong&gt;&lt;/a&gt;: example_key&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;key_count&lt;/strong&gt;&lt;/a&gt;: key_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;namespaces&lt;/strong&gt;&lt;/a&gt;: namespaces&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;prefix&lt;/strong&gt;&lt;/a&gt;: prefix&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetCacheNamespacesApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetCacheNamespacesApiResponse?> OBPv600GetCacheNamespacesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCacheNamespacesApiResponse"/>?&gt;</returns>
+        Task<IGetCacheNamespacesApiResponse?> GetCacheNamespacesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Invalidate Cache Namespace
@@ -108,10 +108,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Invalidates a cache namespace by incrementing its version counter.&lt;/p&gt; &lt;p&gt;This provides instant cache invalidation without deleting individual keys.&lt;br /&gt; Incrementing the version counter makes all keys with the old version unreachable.&lt;/p&gt; &lt;p&gt;Available namespace IDs: call_counter, rl_active, rd_localised, rd_dynamic,&lt;br /&gt; rd_static, rd_all, swagger_static, connector, metrics_stable, metrics_recent, abac_rule&lt;/p&gt; &lt;p&gt;Use after updating rate limits, translations, endpoints, or CBS data.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;namespace_id&lt;/strong&gt;&lt;/a&gt;: namespace_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;namespace_id&lt;/strong&gt;&lt;/a&gt;: namespace_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;new_version&lt;/strong&gt;&lt;/a&gt;: new_version&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;old_version&lt;/strong&gt;&lt;/a&gt;: old_version&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv600InvalidateCacheNamespaceRequest">Request body</param>
+        /// <param name="invalidateCacheNamespaceRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600InvalidateCacheNamespaceApiResponse"/>&gt;</returns>
-        Task<IOBPv600InvalidateCacheNamespaceApiResponse> OBPv600InvalidateCacheNamespaceAsync(OBPv600InvalidateCacheNamespaceRequest oBPv600InvalidateCacheNamespaceRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IInvalidateCacheNamespaceApiResponse"/>&gt;</returns>
+        Task<IInvalidateCacheNamespaceApiResponse> InvalidateCacheNamespaceAsync(InvalidateCacheNamespaceRequest invalidateCacheNamespaceRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Invalidate Cache Namespace
@@ -119,10 +119,10 @@ namespace OpenBankProject.Api
         /// <remarks>
         /// &lt;p&gt;Invalidates a cache namespace by incrementing its version counter.&lt;/p&gt; &lt;p&gt;This provides instant cache invalidation without deleting individual keys.&lt;br /&gt; Incrementing the version counter makes all keys with the old version unreachable.&lt;/p&gt; &lt;p&gt;Available namespace IDs: call_counter, rl_active, rd_localised, rd_dynamic,&lt;br /&gt; rd_static, rd_all, swagger_static, connector, metrics_stable, metrics_recent, abac_rule&lt;/p&gt; &lt;p&gt;Use after updating rate limits, translations, endpoints, or CBS data.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;namespace_id&lt;/strong&gt;&lt;/a&gt;: namespace_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;namespace_id&lt;/strong&gt;&lt;/a&gt;: namespace_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;new_version&lt;/strong&gt;&lt;/a&gt;: new_version&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;old_version&lt;/strong&gt;&lt;/a&gt;: old_version&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </remarks>
-        /// <param name="oBPv600InvalidateCacheNamespaceRequest">Request body</param>
+        /// <param name="invalidateCacheNamespaceRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600InvalidateCacheNamespaceApiResponse"/>?&gt;</returns>
-        Task<IOBPv600InvalidateCacheNamespaceApiResponse?> OBPv600InvalidateCacheNamespaceOrDefaultAsync(OBPv600InvalidateCacheNamespaceRequest oBPv600InvalidateCacheNamespaceRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IInvalidateCacheNamespaceApiResponse"/>?&gt;</returns>
+        Task<IInvalidateCacheNamespaceApiResponse?> InvalidateCacheNamespaceOrDefaultAsync(InvalidateCacheNamespaceRequest invalidateCacheNamespaceRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -133,81 +133,81 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetCacheConfig;
+        public event EventHandler<ApiResponseEventArgs>? OnGetCacheConfig;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetCacheConfig;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetCacheConfig;
 
-        internal void ExecuteOnOBPv600GetCacheConfig(APIApi.OBPv600GetCacheConfigApiResponse apiResponse)
+        internal void ExecuteOnGetCacheConfig(APIApi.GetCacheConfigApiResponse apiResponse)
         {
-            OnOBPv600GetCacheConfig?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetCacheConfig?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetCacheConfig(Exception exception)
+        internal void ExecuteOnErrorGetCacheConfig(Exception exception)
         {
-            OnErrorOBPv600GetCacheConfig?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetCacheConfig?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetCacheInfo;
+        public event EventHandler<ApiResponseEventArgs>? OnGetCacheInfo;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetCacheInfo;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetCacheInfo;
 
-        internal void ExecuteOnOBPv600GetCacheInfo(APIApi.OBPv600GetCacheInfoApiResponse apiResponse)
+        internal void ExecuteOnGetCacheInfo(APIApi.GetCacheInfoApiResponse apiResponse)
         {
-            OnOBPv600GetCacheInfo?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetCacheInfo?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetCacheInfo(Exception exception)
+        internal void ExecuteOnErrorGetCacheInfo(Exception exception)
         {
-            OnErrorOBPv600GetCacheInfo?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetCacheInfo?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetCacheNamespaces;
+        public event EventHandler<ApiResponseEventArgs>? OnGetCacheNamespaces;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetCacheNamespaces;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetCacheNamespaces;
 
-        internal void ExecuteOnOBPv600GetCacheNamespaces(APIApi.OBPv600GetCacheNamespacesApiResponse apiResponse)
+        internal void ExecuteOnGetCacheNamespaces(APIApi.GetCacheNamespacesApiResponse apiResponse)
         {
-            OnOBPv600GetCacheNamespaces?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetCacheNamespaces?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetCacheNamespaces(Exception exception)
+        internal void ExecuteOnErrorGetCacheNamespaces(Exception exception)
         {
-            OnErrorOBPv600GetCacheNamespaces?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetCacheNamespaces?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600InvalidateCacheNamespace;
+        public event EventHandler<ApiResponseEventArgs>? OnInvalidateCacheNamespace;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600InvalidateCacheNamespace;
+        public event EventHandler<ExceptionEventArgs>? OnErrorInvalidateCacheNamespace;
 
-        internal void ExecuteOnOBPv600InvalidateCacheNamespace(APIApi.OBPv600InvalidateCacheNamespaceApiResponse apiResponse)
+        internal void ExecuteOnInvalidateCacheNamespace(APIApi.InvalidateCacheNamespaceApiResponse apiResponse)
         {
-            OnOBPv600InvalidateCacheNamespace?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnInvalidateCacheNamespace?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600InvalidateCacheNamespace(Exception exception)
+        internal void ExecuteOnErrorInvalidateCacheNamespace(Exception exception)
         {
-            OnErrorOBPv600InvalidateCacheNamespace?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorInvalidateCacheNamespace?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -269,10 +269,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetCacheConfigDefaultImplementation(IOBPv600GetCacheConfigApiResponse apiResponseLocalVar)
+        private void AfterGetCacheConfigDefaultImplementation(IGetCacheConfigApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetCacheConfig(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetCacheConfig(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -282,7 +282,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetCacheConfig(ref bool suppressDefaultLog, IOBPv600GetCacheConfigApiResponse apiResponseLocalVar);
+        partial void AfterGetCacheConfig(ref bool suppressDefaultLog, IGetCacheConfigApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -290,10 +290,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetCacheConfigDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetCacheConfigDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetCacheConfig(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetCacheConfig(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -305,18 +305,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetCacheConfig(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetCacheConfig(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Cache Configuration &lt;p&gt;Returns cache configuration information including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Redis status: availability, connection details (URL, port, SSL)&lt;/li&gt; &lt;li&gt;In-memory cache status: availability and current size&lt;/li&gt; &lt;li&gt;Instance ID and environment&lt;/li&gt; &lt;li&gt;Global cache namespace prefix&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;This helps understand what cache backend is being used and how it&#39;s configured.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;available&lt;/strong&gt;&lt;/a&gt;: available&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;current_size&lt;/strong&gt;&lt;/a&gt;: current_size&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;environment&lt;/strong&gt;&lt;/a&gt;: environment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;global_prefix&lt;/strong&gt;&lt;/a&gt;: global_prefix&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;in_memory_status&lt;/strong&gt;&lt;/a&gt;: in_memory_status&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;instance_id&lt;/strong&gt;&lt;/a&gt;: instance_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;port&lt;/strong&gt;&lt;/a&gt;: port&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;redis_status&lt;/strong&gt;&lt;/a&gt;: redis_status&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;use_ssl&lt;/strong&gt;&lt;/a&gt;: use_ssl&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetCacheConfigApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetCacheConfigApiResponse?> OBPv600GetCacheConfigOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCacheConfigApiResponse"/>&gt;</returns>
+        public async Task<IGetCacheConfigApiResponse?> GetCacheConfigOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetCacheConfigAsync(cancellationToken).ConfigureAwait(false);
+                return await GetCacheConfigAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -329,8 +329,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetCacheConfigApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetCacheConfigApiResponse> OBPv600GetCacheConfigAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCacheConfigApiResponse"/>&gt;</returns>
+        public async Task<IGetCacheConfigApiResponse> GetCacheConfigAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -350,7 +350,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -377,8 +377,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv600GetCacheConfigApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600GetCacheConfigApiResponse>();
-                        APIApi.OBPv600GetCacheConfigApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.GetCacheConfigApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetCacheConfigApiResponse>();
+                        APIApi.GetCacheConfigApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -389,9 +389,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetCacheConfigDefaultImplementation(apiResponseLocalVar);
+                        AfterGetCacheConfigDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv600GetCacheConfig(apiResponseLocalVar);
+                        Events.ExecuteOnGetCacheConfig(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -403,8 +403,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetCacheConfigDefaultImplementation(e, "/obp/v6.0.0/system/cache/config", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetCacheConfig(e);
+                OnErrorGetCacheConfigDefaultImplementation(e, "/obp/v6.0.0/system/cache/config", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetCacheConfig(e);
                 throw;
             }
         }
@@ -413,10 +413,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetCacheInfoDefaultImplementation(IOBPv600GetCacheInfoApiResponse apiResponseLocalVar)
+        private void AfterGetCacheInfoDefaultImplementation(IGetCacheInfoApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetCacheInfo(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetCacheInfo(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -426,7 +426,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetCacheInfo(ref bool suppressDefaultLog, IOBPv600GetCacheInfoApiResponse apiResponseLocalVar);
+        partial void AfterGetCacheInfo(ref bool suppressDefaultLog, IGetCacheInfoApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -434,10 +434,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetCacheInfoDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetCacheInfoDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetCacheInfo(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetCacheInfo(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -449,18 +449,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetCacheInfo(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetCacheInfo(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Cache Information &lt;p&gt;Returns detailed cache information for all namespaces:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Namespace ID and versioned prefix&lt;/li&gt; &lt;li&gt;Current version counter&lt;/li&gt; &lt;li&gt;Number of keys in each namespace&lt;/li&gt; &lt;li&gt;Description and category&lt;/li&gt; &lt;li&gt;Storage location (redis, memory, both, or unknown)&lt;/li&gt; &lt;li&gt;&amp;quot;redis&amp;quot;: Keys stored in Redis&lt;/li&gt; &lt;li&gt;&amp;quot;memory&amp;quot;: Keys stored in in-memory cache&lt;/li&gt; &lt;li&gt;&amp;quot;both&amp;quot;: Keys in both locations (indicates a BUG - should never happen)&lt;/li&gt; &lt;li&gt;&amp;quot;unknown&amp;quot;: No keys found, storage location cannot be determined&lt;/li&gt; &lt;li&gt;TTL info: Sampled TTL information from actual keys&lt;/li&gt; &lt;li&gt;Shows actual TTL values from up to 5 sample keys&lt;/li&gt; &lt;li&gt;Format: &amp;quot;123s&amp;quot; (fixed), &amp;quot;range 60s to 3600s (avg 1800s)&amp;quot; (variable), &amp;quot;no expiry&amp;quot; (persistent)&lt;/li&gt; &lt;li&gt;Total key count across all namespaces&lt;/li&gt; &lt;li&gt;Redis availability status&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;This endpoint helps monitor cache usage and identify which namespaces contain the most data.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;current_version&lt;/strong&gt;&lt;/a&gt;: current_version&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;key_count&lt;/strong&gt;&lt;/a&gt;: key_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;namespace_id&lt;/strong&gt;&lt;/a&gt;: namespace_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;namespaces&lt;/strong&gt;&lt;/a&gt;: namespaces&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;prefix&lt;/strong&gt;&lt;/a&gt;: prefix&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;redis_available&lt;/strong&gt;&lt;/a&gt;: redis_available&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;storage_location&lt;/strong&gt;&lt;/a&gt;: storage_location&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_keys&lt;/strong&gt;&lt;/a&gt;: total_keys&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_info&lt;/strong&gt;&lt;/a&gt;: ttl_info&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetCacheInfoApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetCacheInfoApiResponse?> OBPv600GetCacheInfoOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCacheInfoApiResponse"/>&gt;</returns>
+        public async Task<IGetCacheInfoApiResponse?> GetCacheInfoOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetCacheInfoAsync(cancellationToken).ConfigureAwait(false);
+                return await GetCacheInfoAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -473,8 +473,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetCacheInfoApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetCacheInfoApiResponse> OBPv600GetCacheInfoAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCacheInfoApiResponse"/>&gt;</returns>
+        public async Task<IGetCacheInfoApiResponse> GetCacheInfoAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -494,7 +494,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -521,8 +521,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv600GetCacheInfoApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600GetCacheInfoApiResponse>();
-                        APIApi.OBPv600GetCacheInfoApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.GetCacheInfoApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetCacheInfoApiResponse>();
+                        APIApi.GetCacheInfoApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -533,9 +533,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetCacheInfoDefaultImplementation(apiResponseLocalVar);
+                        AfterGetCacheInfoDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv600GetCacheInfo(apiResponseLocalVar);
+                        Events.ExecuteOnGetCacheInfo(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -547,8 +547,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetCacheInfoDefaultImplementation(e, "/obp/v6.0.0/system/cache/info", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetCacheInfo(e);
+                OnErrorGetCacheInfoDefaultImplementation(e, "/obp/v6.0.0/system/cache/info", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetCacheInfo(e);
                 throw;
             }
         }
@@ -557,10 +557,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetCacheNamespacesDefaultImplementation(IOBPv600GetCacheNamespacesApiResponse apiResponseLocalVar)
+        private void AfterGetCacheNamespacesDefaultImplementation(IGetCacheNamespacesApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetCacheNamespaces(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetCacheNamespaces(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -570,7 +570,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetCacheNamespaces(ref bool suppressDefaultLog, IOBPv600GetCacheNamespacesApiResponse apiResponseLocalVar);
+        partial void AfterGetCacheNamespaces(ref bool suppressDefaultLog, IGetCacheNamespacesApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -578,10 +578,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetCacheNamespacesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetCacheNamespacesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetCacheNamespaces(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetCacheNamespaces(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -593,18 +593,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetCacheNamespaces(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetCacheNamespaces(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Cache Namespaces &lt;p&gt;Returns information about all cache namespaces in the system.&lt;/p&gt; &lt;p&gt;This endpoint provides visibility into:&lt;br /&gt; * Cache namespace prefixes and their purposes&lt;br /&gt; * Number of keys in each namespace&lt;br /&gt; * TTL configurations&lt;br /&gt; * Example keys for each namespace&lt;/p&gt; &lt;p&gt;This is useful for:&lt;br /&gt; * Monitoring cache usage&lt;br /&gt; * Understanding cache structure&lt;br /&gt; * Debugging cache-related issues&lt;br /&gt; * Planning cache management operations&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;example_key&lt;/strong&gt;&lt;/a&gt;: example_key&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;key_count&lt;/strong&gt;&lt;/a&gt;: key_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;namespaces&lt;/strong&gt;&lt;/a&gt;: namespaces&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;prefix&lt;/strong&gt;&lt;/a&gt;: prefix&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetCacheNamespacesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetCacheNamespacesApiResponse?> OBPv600GetCacheNamespacesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCacheNamespacesApiResponse"/>&gt;</returns>
+        public async Task<IGetCacheNamespacesApiResponse?> GetCacheNamespacesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetCacheNamespacesAsync(cancellationToken).ConfigureAwait(false);
+                return await GetCacheNamespacesAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -617,8 +617,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetCacheNamespacesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetCacheNamespacesApiResponse> OBPv600GetCacheNamespacesAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCacheNamespacesApiResponse"/>&gt;</returns>
+        public async Task<IGetCacheNamespacesApiResponse> GetCacheNamespacesAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -638,7 +638,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -665,8 +665,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv600GetCacheNamespacesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600GetCacheNamespacesApiResponse>();
-                        APIApi.OBPv600GetCacheNamespacesApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.GetCacheNamespacesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetCacheNamespacesApiResponse>();
+                        APIApi.GetCacheNamespacesApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -677,9 +677,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetCacheNamespacesDefaultImplementation(apiResponseLocalVar);
+                        AfterGetCacheNamespacesDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv600GetCacheNamespaces(apiResponseLocalVar);
+                        Events.ExecuteOnGetCacheNamespaces(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -691,34 +691,34 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetCacheNamespacesDefaultImplementation(e, "/obp/v6.0.0/system/cache/namespaces", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetCacheNamespaces(e);
+                OnErrorGetCacheNamespacesDefaultImplementation(e, "/obp/v6.0.0/system/cache/namespaces", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetCacheNamespaces(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600InvalidateCacheNamespace(OBPv600InvalidateCacheNamespaceRequest oBPv600InvalidateCacheNamespaceRequest);
+        partial void FormatInvalidateCacheNamespace(InvalidateCacheNamespaceRequest invalidateCacheNamespaceRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
-        /// <param name="oBPv600InvalidateCacheNamespaceRequest"></param>
+        /// <param name="invalidateCacheNamespaceRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600InvalidateCacheNamespace(OBPv600InvalidateCacheNamespaceRequest oBPv600InvalidateCacheNamespaceRequest)
+        private void ValidateInvalidateCacheNamespace(InvalidateCacheNamespaceRequest invalidateCacheNamespaceRequest)
         {
-            if (oBPv600InvalidateCacheNamespaceRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600InvalidateCacheNamespaceRequest));
+            if (invalidateCacheNamespaceRequest == null)
+                throw new ArgumentNullException(nameof(invalidateCacheNamespaceRequest));
         }
 
         /// <summary>
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv600InvalidateCacheNamespaceRequest"></param>
-        private void AfterOBPv600InvalidateCacheNamespaceDefaultImplementation(IOBPv600InvalidateCacheNamespaceApiResponse apiResponseLocalVar, OBPv600InvalidateCacheNamespaceRequest oBPv600InvalidateCacheNamespaceRequest)
+        /// <param name="invalidateCacheNamespaceRequest"></param>
+        private void AfterInvalidateCacheNamespaceDefaultImplementation(IInvalidateCacheNamespaceApiResponse apiResponseLocalVar, InvalidateCacheNamespaceRequest invalidateCacheNamespaceRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600InvalidateCacheNamespace(ref suppressDefaultLog, apiResponseLocalVar, oBPv600InvalidateCacheNamespaceRequest);
+            AfterInvalidateCacheNamespace(ref suppressDefaultLog, apiResponseLocalVar, invalidateCacheNamespaceRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -728,8 +728,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv600InvalidateCacheNamespaceRequest"></param>
-        partial void AfterOBPv600InvalidateCacheNamespace(ref bool suppressDefaultLog, IOBPv600InvalidateCacheNamespaceApiResponse apiResponseLocalVar, OBPv600InvalidateCacheNamespaceRequest oBPv600InvalidateCacheNamespaceRequest);
+        /// <param name="invalidateCacheNamespaceRequest"></param>
+        partial void AfterInvalidateCacheNamespace(ref bool suppressDefaultLog, IInvalidateCacheNamespaceApiResponse apiResponseLocalVar, InvalidateCacheNamespaceRequest invalidateCacheNamespaceRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -737,11 +737,11 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv600InvalidateCacheNamespaceRequest"></param>
-        private void OnErrorOBPv600InvalidateCacheNamespaceDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv600InvalidateCacheNamespaceRequest oBPv600InvalidateCacheNamespaceRequest)
+        /// <param name="invalidateCacheNamespaceRequest"></param>
+        private void OnErrorInvalidateCacheNamespaceDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, InvalidateCacheNamespaceRequest invalidateCacheNamespaceRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600InvalidateCacheNamespace(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, oBPv600InvalidateCacheNamespaceRequest);
+            OnErrorInvalidateCacheNamespace(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, invalidateCacheNamespaceRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -753,20 +753,20 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv600InvalidateCacheNamespaceRequest"></param>
-        partial void OnErrorOBPv600InvalidateCacheNamespace(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv600InvalidateCacheNamespaceRequest oBPv600InvalidateCacheNamespaceRequest);
+        /// <param name="invalidateCacheNamespaceRequest"></param>
+        partial void OnErrorInvalidateCacheNamespace(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, InvalidateCacheNamespaceRequest invalidateCacheNamespaceRequest);
 
         /// <summary>
         /// Invalidate Cache Namespace &lt;p&gt;Invalidates a cache namespace by incrementing its version counter.&lt;/p&gt; &lt;p&gt;This provides instant cache invalidation without deleting individual keys.&lt;br /&gt; Incrementing the version counter makes all keys with the old version unreachable.&lt;/p&gt; &lt;p&gt;Available namespace IDs: call_counter, rl_active, rd_localised, rd_dynamic,&lt;br /&gt; rd_static, rd_all, swagger_static, connector, metrics_stable, metrics_recent, abac_rule&lt;/p&gt; &lt;p&gt;Use after updating rate limits, translations, endpoints, or CBS data.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;namespace_id&lt;/strong&gt;&lt;/a&gt;: namespace_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;namespace_id&lt;/strong&gt;&lt;/a&gt;: namespace_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;new_version&lt;/strong&gt;&lt;/a&gt;: new_version&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;old_version&lt;/strong&gt;&lt;/a&gt;: old_version&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
-        /// <param name="oBPv600InvalidateCacheNamespaceRequest">Request body</param>
+        /// <param name="invalidateCacheNamespaceRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600InvalidateCacheNamespaceApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600InvalidateCacheNamespaceApiResponse?> OBPv600InvalidateCacheNamespaceOrDefaultAsync(OBPv600InvalidateCacheNamespaceRequest oBPv600InvalidateCacheNamespaceRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IInvalidateCacheNamespaceApiResponse"/>&gt;</returns>
+        public async Task<IInvalidateCacheNamespaceApiResponse?> InvalidateCacheNamespaceOrDefaultAsync(InvalidateCacheNamespaceRequest invalidateCacheNamespaceRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600InvalidateCacheNamespaceAsync(oBPv600InvalidateCacheNamespaceRequest, cancellationToken).ConfigureAwait(false);
+                return await InvalidateCacheNamespaceAsync(invalidateCacheNamespaceRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -778,18 +778,18 @@ namespace OpenBankProject.Api
         /// Invalidate Cache Namespace &lt;p&gt;Invalidates a cache namespace by incrementing its version counter.&lt;/p&gt; &lt;p&gt;This provides instant cache invalidation without deleting individual keys.&lt;br /&gt; Incrementing the version counter makes all keys with the old version unreachable.&lt;/p&gt; &lt;p&gt;Available namespace IDs: call_counter, rl_active, rd_localised, rd_dynamic,&lt;br /&gt; rd_static, rd_all, swagger_static, connector, metrics_stable, metrics_recent, abac_rule&lt;/p&gt; &lt;p&gt;Use after updating rate limits, translations, endpoints, or CBS data.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;namespace_id&lt;/strong&gt;&lt;/a&gt;: namespace_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;namespace_id&lt;/strong&gt;&lt;/a&gt;: namespace_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;new_version&lt;/strong&gt;&lt;/a&gt;: new_version&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;old_version&lt;/strong&gt;&lt;/a&gt;: old_version&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv600InvalidateCacheNamespaceRequest">Request body</param>
+        /// <param name="invalidateCacheNamespaceRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600InvalidateCacheNamespaceApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600InvalidateCacheNamespaceApiResponse> OBPv600InvalidateCacheNamespaceAsync(OBPv600InvalidateCacheNamespaceRequest oBPv600InvalidateCacheNamespaceRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IInvalidateCacheNamespaceApiResponse"/>&gt;</returns>
+        public async Task<IInvalidateCacheNamespaceApiResponse> InvalidateCacheNamespaceAsync(InvalidateCacheNamespaceRequest invalidateCacheNamespaceRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600InvalidateCacheNamespace(oBPv600InvalidateCacheNamespaceRequest);
+                ValidateInvalidateCacheNamespace(invalidateCacheNamespaceRequest);
 
-                FormatOBPv600InvalidateCacheNamespace(oBPv600InvalidateCacheNamespaceRequest);
+                FormatInvalidateCacheNamespace(invalidateCacheNamespaceRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -800,16 +800,16 @@ namespace OpenBankProject.Api
                         ? "/obp/v6.0.0/management/cache/namespaces/invalidate"
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/management/cache/namespaces/invalidate");
 
-                    httpRequestMessageLocalVar.Content = (oBPv600InvalidateCacheNamespaceRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (invalidateCacheNamespaceRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600InvalidateCacheNamespaceRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(invalidateCacheNamespaceRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -845,8 +845,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv600InvalidateCacheNamespaceApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600InvalidateCacheNamespaceApiResponse>();
-                        APIApi.OBPv600InvalidateCacheNamespaceApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.InvalidateCacheNamespaceApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.InvalidateCacheNamespaceApiResponse>();
+                        APIApi.InvalidateCacheNamespaceApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -857,9 +857,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600InvalidateCacheNamespaceDefaultImplementation(apiResponseLocalVar, oBPv600InvalidateCacheNamespaceRequest);
+                        AfterInvalidateCacheNamespaceDefaultImplementation(apiResponseLocalVar, invalidateCacheNamespaceRequest);
 
-                        Events.ExecuteOnOBPv600InvalidateCacheNamespace(apiResponseLocalVar);
+                        Events.ExecuteOnInvalidateCacheNamespace(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -871,8 +871,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600InvalidateCacheNamespaceDefaultImplementation(e, "/obp/v6.0.0/management/cache/namespaces/invalidate", uriBuilderLocalVar.Path, oBPv600InvalidateCacheNamespaceRequest);
-                Events.ExecuteOnErrorOBPv600InvalidateCacheNamespace(e);
+                OnErrorInvalidateCacheNamespaceDefaultImplementation(e, "/obp/v6.0.0/management/cache/namespaces/invalidate", uriBuilderLocalVar.Path, invalidateCacheNamespaceRequest);
+                Events.ExecuteOnErrorInvalidateCacheNamespace(e);
                 throw;
             }
         }

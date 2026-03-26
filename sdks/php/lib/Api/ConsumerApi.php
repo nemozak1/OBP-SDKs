@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,82 +75,79 @@ class ConsumerApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv300DeleteScope' => [
+        'addScope' => [
             'application/json',
         ],
-        'oBPv310EnableDisableConsumers' => [
+        'callsLimit' => [
             'application/json',
         ],
-        'oBPv310GetCallsLimit' => [
+        'createCallLimits' => [
             'application/json',
         ],
-        'oBPv310GetConsumersForCurrentUser' => [
+        'createConsumer' => [
             'application/json',
         ],
-        'oBPv400AddScope' => [
+        'createConsumerDynamicRegistration' => [
             'application/json',
         ],
-        'oBPv400CallsLimit' => [
+        'createMyConsumer' => [
             'application/json',
         ],
-        'oBPv400GetScopes' => [
+        'deleteCallLimits' => [
             'application/json',
         ],
-        'oBPv510CreateConsumer' => [
+        'deleteScope' => [
             'application/json',
         ],
-        'oBPv510CreateConsumerDynamicRegistration' => [
+        'enableDisableConsumers' => [
             'application/json',
         ],
-        'oBPv510CreateMyConsumer' => [
+        'getActiveRateLimitsAtDate' => [
             'application/json',
         ],
-        'oBPv510GetCallsLimit' => [
+        'getActiveRateLimitsNow' => [
             'application/json',
         ],
-        'oBPv510GetConsumers' => [
+        'getCallsLimit' => [
             'application/json',
         ],
-        'oBPv510UpdateConsumerCertificate' => [
+        'getConsumer' => [
             'application/json',
         ],
-        'oBPv510UpdateConsumerLogoURL' => [
+        'getConsumerCallCounters' => [
             'application/json',
         ],
-        'oBPv510UpdateConsumerName' => [
+        'getConsumers' => [
             'application/json',
         ],
-        'oBPv510UpdateConsumerRedirectURL' => [
+        'getConsumersForCurrentUser' => [
             'application/json',
         ],
-        'oBPv600CreateCallLimits' => [
+        'getCurrentConsumer' => [
             'application/json',
         ],
-        'oBPv600DeleteCallLimits' => [
+        'getOidcClient' => [
             'application/json',
         ],
-        'oBPv600GetActiveRateLimitsAtDate' => [
+        'getScopes' => [
             'application/json',
         ],
-        'oBPv600GetActiveRateLimitsNow' => [
+        'updateConsumerCertificate' => [
             'application/json',
         ],
-        'oBPv600GetConsumer' => [
+        'updateConsumerLogoURL' => [
             'application/json',
         ],
-        'oBPv600GetConsumerCallCounters' => [
+        'updateConsumerName' => [
             'application/json',
         ],
-        'oBPv600GetCurrentConsumer' => [
+        'updateConsumerRedirectURL' => [
             'application/json',
         ],
-        'oBPv600GetOidcClient' => [
+        'updateRateLimits' => [
             'application/json',
         ],
-        'oBPv600UpdateRateLimits' => [
-            'application/json',
-        ],
-        'oBPv600VerifyOidcClient' => [
+        'verifyOidcClient' => [
             'application/json',
         ],
     ];
@@ -202,39 +199,1785 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv300DeleteScope
+     * Operation addScope
      *
-     * Delete Consumer Scope
+     * Create Scope for a Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $scopeid The SCOPEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DeleteScope'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addScope'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetScopes200ResponseListInner
+     */
+    public function addScope($consumerid, $create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addScope'][0])
+    {
+        list($response) = $this->addScopeWithHttpInfo($consumerid, $create_consent_implicit_request_entitlements_inner, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation addScopeWithHttpInfo
+     *
+     * Create Scope for a Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addScope'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetScopes200ResponseListInner, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function addScopeWithHttpInfo($consumerid, $create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addScope'][0])
+    {
+        $request = $this->addScopeRequest($consumerid, $create_consent_implicit_request_entitlements_inner, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetScopes200ResponseListInner',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetScopes200ResponseListInner',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetScopes200ResponseListInner',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation addScopeAsync
+     *
+     * Create Scope for a Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addScope'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function addScopeAsync($consumerid, $create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addScope'][0])
+    {
+        return $this->addScopeAsyncWithHttpInfo($consumerid, $create_consent_implicit_request_entitlements_inner, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation addScopeAsyncWithHttpInfo
+     *
+     * Create Scope for a Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addScope'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function addScopeAsyncWithHttpInfo($consumerid, $create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addScope'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetScopes200ResponseListInner';
+        $request = $this->addScopeRequest($consumerid, $create_consent_implicit_request_entitlements_inner, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'addScope'
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addScope'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function addScopeRequest($consumerid, $create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addScope'][0])
+    {
+
+        // verify the required parameter 'consumerid' is set
+        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $consumerid when calling addScope'
+            );
+        }
+
+        // verify the required parameter 'create_consent_implicit_request_entitlements_inner' is set
+        if ($create_consent_implicit_request_entitlements_inner === null || (is_array($create_consent_implicit_request_entitlements_inner) && count($create_consent_implicit_request_entitlements_inner) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_consent_implicit_request_entitlements_inner when calling addScope'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/consumers/{consumerid}/scopes';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($consumerid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'consumerid' . '}',
+                ObjectSerializer::toPathValue($consumerid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_consent_implicit_request_entitlements_inner)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_consent_implicit_request_entitlements_inner));
+            } else {
+                $httpBody = $create_consent_implicit_request_entitlements_inner;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation callsLimit
+     *
+     * Set Rate Limits / Call Limits per Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['callsLimit'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\UpdateRateLimitsRequest
+     */
+    public function callsLimit($consumerid, $update_rate_limits_request, string $contentType = self::contentTypes['callsLimit'][0])
+    {
+        list($response) = $this->callsLimitWithHttpInfo($consumerid, $update_rate_limits_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation callsLimitWithHttpInfo
+     *
+     * Set Rate Limits / Call Limits per Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['callsLimit'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\UpdateRateLimitsRequest, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function callsLimitWithHttpInfo($consumerid, $update_rate_limits_request, string $contentType = self::contentTypes['callsLimit'][0])
+    {
+        $request = $this->callsLimitRequest($consumerid, $update_rate_limits_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\UpdateRateLimitsRequest',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\UpdateRateLimitsRequest',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\UpdateRateLimitsRequest',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation callsLimitAsync
+     *
+     * Set Rate Limits / Call Limits per Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['callsLimit'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function callsLimitAsync($consumerid, $update_rate_limits_request, string $contentType = self::contentTypes['callsLimit'][0])
+    {
+        return $this->callsLimitAsyncWithHttpInfo($consumerid, $update_rate_limits_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation callsLimitAsyncWithHttpInfo
+     *
+     * Set Rate Limits / Call Limits per Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['callsLimit'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function callsLimitAsyncWithHttpInfo($consumerid, $update_rate_limits_request, string $contentType = self::contentTypes['callsLimit'][0])
+    {
+        $returnType = '\OpenBankProject\Model\UpdateRateLimitsRequest';
+        $request = $this->callsLimitRequest($consumerid, $update_rate_limits_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'callsLimit'
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['callsLimit'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function callsLimitRequest($consumerid, $update_rate_limits_request, string $contentType = self::contentTypes['callsLimit'][0])
+    {
+
+        // verify the required parameter 'consumerid' is set
+        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $consumerid when calling callsLimit'
+            );
+        }
+
+        // verify the required parameter 'update_rate_limits_request' is set
+        if ($update_rate_limits_request === null || (is_array($update_rate_limits_request) && count($update_rate_limits_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_rate_limits_request when calling callsLimit'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($consumerid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'consumerid' . '}',
+                ObjectSerializer::toPathValue($consumerid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($update_rate_limits_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_rate_limits_request));
+            } else {
+                $httpBody = $update_rate_limits_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createCallLimits
+     *
+     * Create Rate Limits for a Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCallLimitsRequest $create_call_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCallLimits'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\CreateCallLimits200Response
+     */
+    public function createCallLimits($consumerid, $create_call_limits_request, string $contentType = self::contentTypes['createCallLimits'][0])
+    {
+        list($response) = $this->createCallLimitsWithHttpInfo($consumerid, $create_call_limits_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createCallLimitsWithHttpInfo
+     *
+     * Create Rate Limits for a Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCallLimitsRequest $create_call_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCallLimits'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\CreateCallLimits200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createCallLimitsWithHttpInfo($consumerid, $create_call_limits_request, string $contentType = self::contentTypes['createCallLimits'][0])
+    {
+        $request = $this->createCallLimitsRequest($consumerid, $create_call_limits_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\CreateCallLimits200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\CreateCallLimits200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\CreateCallLimits200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createCallLimitsAsync
+     *
+     * Create Rate Limits for a Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCallLimitsRequest $create_call_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCallLimits'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createCallLimitsAsync($consumerid, $create_call_limits_request, string $contentType = self::contentTypes['createCallLimits'][0])
+    {
+        return $this->createCallLimitsAsyncWithHttpInfo($consumerid, $create_call_limits_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createCallLimitsAsyncWithHttpInfo
+     *
+     * Create Rate Limits for a Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCallLimitsRequest $create_call_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCallLimits'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createCallLimitsAsyncWithHttpInfo($consumerid, $create_call_limits_request, string $contentType = self::contentTypes['createCallLimits'][0])
+    {
+        $returnType = '\OpenBankProject\Model\CreateCallLimits200Response';
+        $request = $this->createCallLimitsRequest($consumerid, $create_call_limits_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createCallLimits'
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateCallLimitsRequest $create_call_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCallLimits'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createCallLimitsRequest($consumerid, $create_call_limits_request, string $contentType = self::contentTypes['createCallLimits'][0])
+    {
+
+        // verify the required parameter 'consumerid' is set
+        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $consumerid when calling createCallLimits'
+            );
+        }
+
+        // verify the required parameter 'create_call_limits_request' is set
+        if ($create_call_limits_request === null || (is_array($create_call_limits_request) && count($create_call_limits_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_call_limits_request when calling createCallLimits'
+            );
+        }
+
+
+        $resourcePath = '/obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($consumerid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'consumerid' . '}',
+                ObjectSerializer::toPathValue($consumerid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_call_limits_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_call_limits_request));
+            } else {
+                $httpBody = $create_call_limits_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createConsumer
+     *
+     * Create a Consumer
+     *
+     * @param  \OpenBankProject\Model\CreateConsumerRequest $create_consumer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsumer'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\CreateConsumer200Response
+     */
+    public function createConsumer($create_consumer_request, string $contentType = self::contentTypes['createConsumer'][0])
+    {
+        list($response) = $this->createConsumerWithHttpInfo($create_consumer_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createConsumerWithHttpInfo
+     *
+     * Create a Consumer
+     *
+     * @param  \OpenBankProject\Model\CreateConsumerRequest $create_consumer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsumer'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\CreateConsumer200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createConsumerWithHttpInfo($create_consumer_request, string $contentType = self::contentTypes['createConsumer'][0])
+    {
+        $request = $this->createConsumerRequest($create_consumer_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\CreateConsumer200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\CreateConsumer200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\CreateConsumer200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createConsumerAsync
+     *
+     * Create a Consumer
+     *
+     * @param  \OpenBankProject\Model\CreateConsumerRequest $create_consumer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsumer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createConsumerAsync($create_consumer_request, string $contentType = self::contentTypes['createConsumer'][0])
+    {
+        return $this->createConsumerAsyncWithHttpInfo($create_consumer_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createConsumerAsyncWithHttpInfo
+     *
+     * Create a Consumer
+     *
+     * @param  \OpenBankProject\Model\CreateConsumerRequest $create_consumer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsumer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createConsumerAsyncWithHttpInfo($create_consumer_request, string $contentType = self::contentTypes['createConsumer'][0])
+    {
+        $returnType = '\OpenBankProject\Model\CreateConsumer200Response';
+        $request = $this->createConsumerRequest($create_consumer_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createConsumer'
+     *
+     * @param  \OpenBankProject\Model\CreateConsumerRequest $create_consumer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsumer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createConsumerRequest($create_consumer_request, string $contentType = self::contentTypes['createConsumer'][0])
+    {
+
+        // verify the required parameter 'create_consumer_request' is set
+        if ($create_consumer_request === null || (is_array($create_consumer_request) && count($create_consumer_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_consumer_request when calling createConsumer'
+            );
+        }
+
+
+        $resourcePath = '/obp/v5.1.0/management/consumers';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_consumer_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_consumer_request));
+            } else {
+                $httpBody = $create_consumer_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createConsumerDynamicRegistration
+     *
+     * Create a Consumer(Dynamic Registration)
+     *
+     * @param  \OpenBankProject\Model\CreateConsumerDynamicRegistrationRequest $create_consumer_dynamic_registration_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsumerDynamicRegistration'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\UpdateConsumerName200Response
+     */
+    public function createConsumerDynamicRegistration($create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['createConsumerDynamicRegistration'][0])
+    {
+        list($response) = $this->createConsumerDynamicRegistrationWithHttpInfo($create_consumer_dynamic_registration_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createConsumerDynamicRegistrationWithHttpInfo
+     *
+     * Create a Consumer(Dynamic Registration)
+     *
+     * @param  \OpenBankProject\Model\CreateConsumerDynamicRegistrationRequest $create_consumer_dynamic_registration_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsumerDynamicRegistration'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\UpdateConsumerName200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createConsumerDynamicRegistrationWithHttpInfo($create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['createConsumerDynamicRegistration'][0])
+    {
+        $request = $this->createConsumerDynamicRegistrationRequest($create_consumer_dynamic_registration_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\UpdateConsumerName200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\UpdateConsumerName200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\UpdateConsumerName200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createConsumerDynamicRegistrationAsync
+     *
+     * Create a Consumer(Dynamic Registration)
+     *
+     * @param  \OpenBankProject\Model\CreateConsumerDynamicRegistrationRequest $create_consumer_dynamic_registration_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsumerDynamicRegistration'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createConsumerDynamicRegistrationAsync($create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['createConsumerDynamicRegistration'][0])
+    {
+        return $this->createConsumerDynamicRegistrationAsyncWithHttpInfo($create_consumer_dynamic_registration_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createConsumerDynamicRegistrationAsyncWithHttpInfo
+     *
+     * Create a Consumer(Dynamic Registration)
+     *
+     * @param  \OpenBankProject\Model\CreateConsumerDynamicRegistrationRequest $create_consumer_dynamic_registration_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsumerDynamicRegistration'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createConsumerDynamicRegistrationAsyncWithHttpInfo($create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['createConsumerDynamicRegistration'][0])
+    {
+        $returnType = '\OpenBankProject\Model\UpdateConsumerName200Response';
+        $request = $this->createConsumerDynamicRegistrationRequest($create_consumer_dynamic_registration_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createConsumerDynamicRegistration'
+     *
+     * @param  \OpenBankProject\Model\CreateConsumerDynamicRegistrationRequest $create_consumer_dynamic_registration_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsumerDynamicRegistration'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createConsumerDynamicRegistrationRequest($create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['createConsumerDynamicRegistration'][0])
+    {
+
+        // verify the required parameter 'create_consumer_dynamic_registration_request' is set
+        if ($create_consumer_dynamic_registration_request === null || (is_array($create_consumer_dynamic_registration_request) && count($create_consumer_dynamic_registration_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_consumer_dynamic_registration_request when calling createConsumerDynamicRegistration'
+            );
+        }
+
+
+        $resourcePath = '/obp/v5.1.0/dynamic-registration/consumers';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_consumer_dynamic_registration_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_consumer_dynamic_registration_request));
+            } else {
+                $httpBody = $create_consumer_dynamic_registration_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createMyConsumer
+     *
+     * Create a Consumer
+     *
+     * @param  \OpenBankProject\Model\CreateConsumerRequest $create_consumer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyConsumer'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\UpdateConsumerName200Response
+     */
+    public function createMyConsumer($create_consumer_request, string $contentType = self::contentTypes['createMyConsumer'][0])
+    {
+        list($response) = $this->createMyConsumerWithHttpInfo($create_consumer_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createMyConsumerWithHttpInfo
+     *
+     * Create a Consumer
+     *
+     * @param  \OpenBankProject\Model\CreateConsumerRequest $create_consumer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyConsumer'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\UpdateConsumerName200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createMyConsumerWithHttpInfo($create_consumer_request, string $contentType = self::contentTypes['createMyConsumer'][0])
+    {
+        $request = $this->createMyConsumerRequest($create_consumer_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\UpdateConsumerName200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\UpdateConsumerName200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\UpdateConsumerName200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createMyConsumerAsync
+     *
+     * Create a Consumer
+     *
+     * @param  \OpenBankProject\Model\CreateConsumerRequest $create_consumer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyConsumer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createMyConsumerAsync($create_consumer_request, string $contentType = self::contentTypes['createMyConsumer'][0])
+    {
+        return $this->createMyConsumerAsyncWithHttpInfo($create_consumer_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createMyConsumerAsyncWithHttpInfo
+     *
+     * Create a Consumer
+     *
+     * @param  \OpenBankProject\Model\CreateConsumerRequest $create_consumer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyConsumer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createMyConsumerAsyncWithHttpInfo($create_consumer_request, string $contentType = self::contentTypes['createMyConsumer'][0])
+    {
+        $returnType = '\OpenBankProject\Model\UpdateConsumerName200Response';
+        $request = $this->createMyConsumerRequest($create_consumer_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createMyConsumer'
+     *
+     * @param  \OpenBankProject\Model\CreateConsumerRequest $create_consumer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyConsumer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createMyConsumerRequest($create_consumer_request, string $contentType = self::contentTypes['createMyConsumer'][0])
+    {
+
+        // verify the required parameter 'create_consumer_request' is set
+        if ($create_consumer_request === null || (is_array($create_consumer_request) && count($create_consumer_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_consumer_request when calling createMyConsumer'
+            );
+        }
+
+
+        $resourcePath = '/obp/v5.1.0/my/consumers';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_consumer_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_consumer_request));
+            } else {
+                $httpBody = $create_consumer_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteCallLimits
+     *
+     * Delete Rate Limit by Rate Limiting ID
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCallLimits'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv300DeleteScope($consumerid, $scopeid, string $contentType = self::contentTypes['oBPv300DeleteScope'][0])
+    public function deleteCallLimits($consumerid, $ratelimitingid, string $contentType = self::contentTypes['deleteCallLimits'][0])
     {
-        $this->oBPv300DeleteScopeWithHttpInfo($consumerid, $scopeid, $contentType);
+        $this->deleteCallLimitsWithHttpInfo($consumerid, $ratelimitingid, $contentType);
     }
 
     /**
-     * Operation oBPv300DeleteScopeWithHttpInfo
+     * Operation deleteCallLimitsWithHttpInfo
      *
-     * Delete Consumer Scope
+     * Delete Rate Limit by Rate Limiting ID
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $scopeid The SCOPEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DeleteScope'] to see the possible values for this operation
+     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCallLimits'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv300DeleteScopeWithHttpInfo($consumerid, $scopeid, string $contentType = self::contentTypes['oBPv300DeleteScope'][0])
+    public function deleteCallLimitsWithHttpInfo($consumerid, $ratelimitingid, string $contentType = self::contentTypes['deleteCallLimits'][0])
     {
-        $request = $this->oBPv300DeleteScopeRequest($consumerid, $scopeid, $contentType);
+        $request = $this->deleteCallLimitsRequest($consumerid, $ratelimitingid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -270,20 +2013,20 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv300DeleteScopeAsync
+     * Operation deleteCallLimitsAsync
      *
-     * Delete Consumer Scope
+     * Delete Rate Limit by Rate Limiting ID
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $scopeid The SCOPEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DeleteScope'] to see the possible values for this operation
+     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCallLimits'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300DeleteScopeAsync($consumerid, $scopeid, string $contentType = self::contentTypes['oBPv300DeleteScope'][0])
+    public function deleteCallLimitsAsync($consumerid, $ratelimitingid, string $contentType = self::contentTypes['deleteCallLimits'][0])
     {
-        return $this->oBPv300DeleteScopeAsyncWithHttpInfo($consumerid, $scopeid, $contentType)
+        return $this->deleteCallLimitsAsyncWithHttpInfo($consumerid, $ratelimitingid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -292,21 +2035,21 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv300DeleteScopeAsyncWithHttpInfo
+     * Operation deleteCallLimitsAsyncWithHttpInfo
      *
-     * Delete Consumer Scope
+     * Delete Rate Limit by Rate Limiting ID
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $scopeid The SCOPEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DeleteScope'] to see the possible values for this operation
+     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCallLimits'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300DeleteScopeAsyncWithHttpInfo($consumerid, $scopeid, string $contentType = self::contentTypes['oBPv300DeleteScope'][0])
+    public function deleteCallLimitsAsyncWithHttpInfo($consumerid, $ratelimitingid, string $contentType = self::contentTypes['deleteCallLimits'][0])
     {
         $returnType = '';
-        $request = $this->oBPv300DeleteScopeRequest($consumerid, $scopeid, $contentType);
+        $request = $this->deleteCallLimitsRequest($consumerid, $ratelimitingid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -332,29 +2075,281 @@ class ConsumerApi
     }
 
     /**
-     * Create request for operation 'oBPv300DeleteScope'
+     * Create request for operation 'deleteCallLimits'
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $scopeid The SCOPEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DeleteScope'] to see the possible values for this operation
+     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCallLimits'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv300DeleteScopeRequest($consumerid, $scopeid, string $contentType = self::contentTypes['oBPv300DeleteScope'][0])
+    public function deleteCallLimitsRequest($consumerid, $ratelimitingid, string $contentType = self::contentTypes['deleteCallLimits'][0])
     {
 
         // verify the required parameter 'consumerid' is set
         if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv300DeleteScope'
+                'Missing the required parameter $consumerid when calling deleteCallLimits'
+            );
+        }
+
+        // verify the required parameter 'ratelimitingid' is set
+        if ($ratelimitingid === null || (is_array($ratelimitingid) && count($ratelimitingid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $ratelimitingid when calling deleteCallLimits'
+            );
+        }
+
+
+        $resourcePath = '/obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($consumerid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'consumerid' . '}',
+                ObjectSerializer::toPathValue($consumerid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($ratelimitingid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'ratelimitingid' . '}',
+                ObjectSerializer::toPathValue($ratelimitingid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'DELETE',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteScope
+     *
+     * Delete Consumer Scope
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  string $scopeid The SCOPEID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScope'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteScope($consumerid, $scopeid, string $contentType = self::contentTypes['deleteScope'][0])
+    {
+        $this->deleteScopeWithHttpInfo($consumerid, $scopeid, $contentType);
+    }
+
+    /**
+     * Operation deleteScopeWithHttpInfo
+     *
+     * Delete Consumer Scope
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  string $scopeid The SCOPEID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScope'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteScopeWithHttpInfo($consumerid, $scopeid, string $contentType = self::contentTypes['deleteScope'][0])
+    {
+        $request = $this->deleteScopeRequest($consumerid, $scopeid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteScopeAsync
+     *
+     * Delete Consumer Scope
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  string $scopeid The SCOPEID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScope'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteScopeAsync($consumerid, $scopeid, string $contentType = self::contentTypes['deleteScope'][0])
+    {
+        return $this->deleteScopeAsyncWithHttpInfo($consumerid, $scopeid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteScopeAsyncWithHttpInfo
+     *
+     * Delete Consumer Scope
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  string $scopeid The SCOPEID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScope'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteScopeAsyncWithHttpInfo($consumerid, $scopeid, string $contentType = self::contentTypes['deleteScope'][0])
+    {
+        $returnType = '';
+        $request = $this->deleteScopeRequest($consumerid, $scopeid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteScope'
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  string $scopeid The SCOPEID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScope'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteScopeRequest($consumerid, $scopeid, string $contentType = self::contentTypes['deleteScope'][0])
+    {
+
+        // verify the required parameter 'consumerid' is set
+        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $consumerid when calling deleteScope'
             );
         }
 
         // verify the required parameter 'scopeid' is set
         if ($scopeid === null || (is_array($scopeid) && count($scopeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $scopeid when calling oBPv300DeleteScope'
+                'Missing the required parameter $scopeid when calling deleteScope'
             );
         }
 
@@ -427,9 +2422,9 @@ class ConsumerApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -454,40 +2449,40 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv310EnableDisableConsumers
+     * Operation enableDisableConsumers
      *
      * Enable or Disable Consumers
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310EnableDisableConsumersRequest $obpv310_enable_disable_consumers_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310EnableDisableConsumers'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\EnableDisableConsumersRequest $enable_disable_consumers_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableDisableConsumers'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310EnableDisableConsumersRequest
+     * @return \OpenBankProject\Model\EnableDisableConsumersRequest
      */
-    public function oBPv310EnableDisableConsumers($consumerid, $obpv310_enable_disable_consumers_request, string $contentType = self::contentTypes['oBPv310EnableDisableConsumers'][0])
+    public function enableDisableConsumers($consumerid, $enable_disable_consumers_request, string $contentType = self::contentTypes['enableDisableConsumers'][0])
     {
-        list($response) = $this->oBPv310EnableDisableConsumersWithHttpInfo($consumerid, $obpv310_enable_disable_consumers_request, $contentType);
+        list($response) = $this->enableDisableConsumersWithHttpInfo($consumerid, $enable_disable_consumers_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310EnableDisableConsumersWithHttpInfo
+     * Operation enableDisableConsumersWithHttpInfo
      *
      * Enable or Disable Consumers
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310EnableDisableConsumersRequest $obpv310_enable_disable_consumers_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310EnableDisableConsumers'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\EnableDisableConsumersRequest $enable_disable_consumers_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableDisableConsumers'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310EnableDisableConsumersRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\EnableDisableConsumersRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310EnableDisableConsumersWithHttpInfo($consumerid, $obpv310_enable_disable_consumers_request, string $contentType = self::contentTypes['oBPv310EnableDisableConsumers'][0])
+    public function enableDisableConsumersWithHttpInfo($consumerid, $enable_disable_consumers_request, string $contentType = self::contentTypes['enableDisableConsumers'][0])
     {
-        $request = $this->oBPv310EnableDisableConsumersRequest($consumerid, $obpv310_enable_disable_consumers_request, $contentType);
+        $request = $this->enableDisableConsumersRequest($consumerid, $enable_disable_consumers_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -515,7 +2510,7 @@ class ConsumerApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310EnableDisableConsumersRequest',
+                        '\OpenBankProject\Model\EnableDisableConsumersRequest',
                         $request,
                         $response,
                     );
@@ -537,7 +2532,7 @@ class ConsumerApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310EnableDisableConsumersRequest',
+                '\OpenBankProject\Model\EnableDisableConsumersRequest',
                 $request,
                 $response,
             );
@@ -546,7 +2541,7 @@ class ConsumerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310EnableDisableConsumersRequest',
+                        '\OpenBankProject\Model\EnableDisableConsumersRequest',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -559,20 +2554,20 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv310EnableDisableConsumersAsync
+     * Operation enableDisableConsumersAsync
      *
      * Enable or Disable Consumers
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310EnableDisableConsumersRequest $obpv310_enable_disable_consumers_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310EnableDisableConsumers'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\EnableDisableConsumersRequest $enable_disable_consumers_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableDisableConsumers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310EnableDisableConsumersAsync($consumerid, $obpv310_enable_disable_consumers_request, string $contentType = self::contentTypes['oBPv310EnableDisableConsumers'][0])
+    public function enableDisableConsumersAsync($consumerid, $enable_disable_consumers_request, string $contentType = self::contentTypes['enableDisableConsumers'][0])
     {
-        return $this->oBPv310EnableDisableConsumersAsyncWithHttpInfo($consumerid, $obpv310_enable_disable_consumers_request, $contentType)
+        return $this->enableDisableConsumersAsyncWithHttpInfo($consumerid, $enable_disable_consumers_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -581,21 +2576,21 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv310EnableDisableConsumersAsyncWithHttpInfo
+     * Operation enableDisableConsumersAsyncWithHttpInfo
      *
      * Enable or Disable Consumers
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310EnableDisableConsumersRequest $obpv310_enable_disable_consumers_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310EnableDisableConsumers'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\EnableDisableConsumersRequest $enable_disable_consumers_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableDisableConsumers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310EnableDisableConsumersAsyncWithHttpInfo($consumerid, $obpv310_enable_disable_consumers_request, string $contentType = self::contentTypes['oBPv310EnableDisableConsumers'][0])
+    public function enableDisableConsumersAsyncWithHttpInfo($consumerid, $enable_disable_consumers_request, string $contentType = self::contentTypes['enableDisableConsumers'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310EnableDisableConsumersRequest';
-        $request = $this->oBPv310EnableDisableConsumersRequest($consumerid, $obpv310_enable_disable_consumers_request, $contentType);
+        $returnType = '\OpenBankProject\Model\EnableDisableConsumersRequest';
+        $request = $this->enableDisableConsumersRequest($consumerid, $enable_disable_consumers_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -634,29 +2629,29 @@ class ConsumerApi
     }
 
     /**
-     * Create request for operation 'oBPv310EnableDisableConsumers'
+     * Create request for operation 'enableDisableConsumers'
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310EnableDisableConsumersRequest $obpv310_enable_disable_consumers_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310EnableDisableConsumers'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\EnableDisableConsumersRequest $enable_disable_consumers_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableDisableConsumers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310EnableDisableConsumersRequest($consumerid, $obpv310_enable_disable_consumers_request, string $contentType = self::contentTypes['oBPv310EnableDisableConsumers'][0])
+    public function enableDisableConsumersRequest($consumerid, $enable_disable_consumers_request, string $contentType = self::contentTypes['enableDisableConsumers'][0])
     {
 
         // verify the required parameter 'consumerid' is set
         if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv310EnableDisableConsumers'
+                'Missing the required parameter $consumerid when calling enableDisableConsumers'
             );
         }
 
-        // verify the required parameter 'obpv310_enable_disable_consumers_request' is set
-        if ($obpv310_enable_disable_consumers_request === null || (is_array($obpv310_enable_disable_consumers_request) && count($obpv310_enable_disable_consumers_request) === 0)) {
+        // verify the required parameter 'enable_disable_consumers_request' is set
+        if ($enable_disable_consumers_request === null || (is_array($enable_disable_consumers_request) && count($enable_disable_consumers_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv310_enable_disable_consumers_request when calling oBPv310EnableDisableConsumers'
+                'Missing the required parameter $enable_disable_consumers_request when calling enableDisableConsumers'
             );
         }
 
@@ -687,12 +2682,12 @@ class ConsumerApi
         );
 
         // for model (json/xml)
-        if (isset($obpv310_enable_disable_consumers_request)) {
+        if (isset($enable_disable_consumers_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv310_enable_disable_consumers_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($enable_disable_consumers_request));
             } else {
-                $httpBody = $obpv310_enable_disable_consumers_request;
+                $httpBody = $enable_disable_consumers_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -728,9 +2723,9 @@ class ConsumerApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -755,4612 +2750,40 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv310GetCallsLimit
-     *
-     * Get Rate Limits for a Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetCallsLimit'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetCallsLimit200Response
-     */
-    public function oBPv310GetCallsLimit($consumerid, string $contentType = self::contentTypes['oBPv310GetCallsLimit'][0])
-    {
-        list($response) = $this->oBPv310GetCallsLimitWithHttpInfo($consumerid, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv310GetCallsLimitWithHttpInfo
-     *
-     * Get Rate Limits for a Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetCallsLimit'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetCallsLimit200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv310GetCallsLimitWithHttpInfo($consumerid, string $contentType = self::contentTypes['oBPv310GetCallsLimit'][0])
-    {
-        $request = $this->oBPv310GetCallsLimitRequest($consumerid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetCallsLimit200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetCallsLimit200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetCallsLimit200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv310GetCallsLimitAsync
-     *
-     * Get Rate Limits for a Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetCallsLimit'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv310GetCallsLimitAsync($consumerid, string $contentType = self::contentTypes['oBPv310GetCallsLimit'][0])
-    {
-        return $this->oBPv310GetCallsLimitAsyncWithHttpInfo($consumerid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv310GetCallsLimitAsyncWithHttpInfo
-     *
-     * Get Rate Limits for a Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetCallsLimit'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv310GetCallsLimitAsyncWithHttpInfo($consumerid, string $contentType = self::contentTypes['oBPv310GetCallsLimit'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv310GetCallsLimit200Response';
-        $request = $this->oBPv310GetCallsLimitRequest($consumerid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv310GetCallsLimit'
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetCallsLimit'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv310GetCallsLimitRequest($consumerid, string $contentType = self::contentTypes['oBPv310GetCallsLimit'][0])
-    {
-
-        // verify the required parameter 'consumerid' is set
-        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv310GetCallsLimit'
-            );
-        }
-
-
-        $resourcePath = '/obp/v3.1.0/management/consumers/{consumerid}/consumer/call-limits';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($consumerid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'consumerid' . '}',
-                ObjectSerializer::toPathValue($consumerid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv310GetConsumersForCurrentUser
-     *
-     * Get Consumers (logged in User)
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetConsumersForCurrentUser'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetConsumersForCurrentUser200Response
-     */
-    public function oBPv310GetConsumersForCurrentUser(string $contentType = self::contentTypes['oBPv310GetConsumersForCurrentUser'][0])
-    {
-        list($response) = $this->oBPv310GetConsumersForCurrentUserWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv310GetConsumersForCurrentUserWithHttpInfo
-     *
-     * Get Consumers (logged in User)
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetConsumersForCurrentUser'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetConsumersForCurrentUser200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv310GetConsumersForCurrentUserWithHttpInfo(string $contentType = self::contentTypes['oBPv310GetConsumersForCurrentUser'][0])
-    {
-        $request = $this->oBPv310GetConsumersForCurrentUserRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetConsumersForCurrentUser200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetConsumersForCurrentUser200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetConsumersForCurrentUser200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv310GetConsumersForCurrentUserAsync
-     *
-     * Get Consumers (logged in User)
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetConsumersForCurrentUser'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv310GetConsumersForCurrentUserAsync(string $contentType = self::contentTypes['oBPv310GetConsumersForCurrentUser'][0])
-    {
-        return $this->oBPv310GetConsumersForCurrentUserAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv310GetConsumersForCurrentUserAsyncWithHttpInfo
-     *
-     * Get Consumers (logged in User)
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetConsumersForCurrentUser'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv310GetConsumersForCurrentUserAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv310GetConsumersForCurrentUser'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv310GetConsumersForCurrentUser200Response';
-        $request = $this->oBPv310GetConsumersForCurrentUserRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv310GetConsumersForCurrentUser'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetConsumersForCurrentUser'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv310GetConsumersForCurrentUserRequest(string $contentType = self::contentTypes['oBPv310GetConsumersForCurrentUser'][0])
-    {
-
-
-        $resourcePath = '/obp/v3.1.0/management/users/current/consumers';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv400AddScope
-     *
-     * Create Scope for a Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400AddScope'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetScopes200ResponsePropertiesListItems
-     */
-    public function oBPv400AddScope($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv400AddScope'][0])
-    {
-        list($response) = $this->oBPv400AddScopeWithHttpInfo($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv400AddScopeWithHttpInfo
-     *
-     * Create Scope for a Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400AddScope'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetScopes200ResponsePropertiesListItems, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv400AddScopeWithHttpInfo($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv400AddScope'][0])
-    {
-        $request = $this->oBPv400AddScopeRequest($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetScopes200ResponsePropertiesListItems',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetScopes200ResponsePropertiesListItems',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetScopes200ResponsePropertiesListItems',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv400AddScopeAsync
-     *
-     * Create Scope for a Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400AddScope'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400AddScopeAsync($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv400AddScope'][0])
-    {
-        return $this->oBPv400AddScopeAsyncWithHttpInfo($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv400AddScopeAsyncWithHttpInfo
-     *
-     * Create Scope for a Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400AddScope'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400AddScopeAsyncWithHttpInfo($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv400AddScope'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv400GetScopes200ResponsePropertiesListItems';
-        $request = $this->oBPv400AddScopeRequest($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv400AddScope'
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400AddScope'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv400AddScopeRequest($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv400AddScope'][0])
-    {
-
-        // verify the required parameter 'consumerid' is set
-        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv400AddScope'
-            );
-        }
-
-        // verify the required parameter 'obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items' is set
-        if ($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items === null || (is_array($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items) && count($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items when calling oBPv400AddScope'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/consumers/{consumerid}/scopes';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($consumerid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'consumerid' . '}',
-                ObjectSerializer::toPathValue($consumerid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items));
-            } else {
-                $httpBody = $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv400CallsLimit
-     *
-     * Set Rate Limits / Call Limits per Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CallsLimit'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest
-     */
-    public function oBPv400CallsLimit($consumerid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv400CallsLimit'][0])
-    {
-        list($response) = $this->oBPv400CallsLimitWithHttpInfo($consumerid, $obpv600_update_rate_limits_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv400CallsLimitWithHttpInfo
-     *
-     * Set Rate Limits / Call Limits per Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CallsLimit'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv400CallsLimitWithHttpInfo($consumerid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv400CallsLimit'][0])
-    {
-        $request = $this->oBPv400CallsLimitRequest($consumerid, $obpv600_update_rate_limits_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv400CallsLimitAsync
-     *
-     * Set Rate Limits / Call Limits per Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CallsLimit'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400CallsLimitAsync($consumerid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv400CallsLimit'][0])
-    {
-        return $this->oBPv400CallsLimitAsyncWithHttpInfo($consumerid, $obpv600_update_rate_limits_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv400CallsLimitAsyncWithHttpInfo
-     *
-     * Set Rate Limits / Call Limits per Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CallsLimit'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400CallsLimitAsyncWithHttpInfo($consumerid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv400CallsLimit'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest';
-        $request = $this->oBPv400CallsLimitRequest($consumerid, $obpv600_update_rate_limits_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv400CallsLimit'
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CallsLimit'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv400CallsLimitRequest($consumerid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv400CallsLimit'][0])
-    {
-
-        // verify the required parameter 'consumerid' is set
-        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv400CallsLimit'
-            );
-        }
-
-        // verify the required parameter 'obpv600_update_rate_limits_request' is set
-        if ($obpv600_update_rate_limits_request === null || (is_array($obpv600_update_rate_limits_request) && count($obpv600_update_rate_limits_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_update_rate_limits_request when calling oBPv400CallsLimit'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($consumerid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'consumerid' . '}',
-                ObjectSerializer::toPathValue($consumerid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv600_update_rate_limits_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_update_rate_limits_request));
-            } else {
-                $httpBody = $obpv600_update_rate_limits_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv400GetScopes
-     *
-     * Get Scopes for Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetScopes'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetScopes200Response
-     */
-    public function oBPv400GetScopes($consumerid, string $contentType = self::contentTypes['oBPv400GetScopes'][0])
-    {
-        list($response) = $this->oBPv400GetScopesWithHttpInfo($consumerid, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv400GetScopesWithHttpInfo
-     *
-     * Get Scopes for Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetScopes'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetScopes200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv400GetScopesWithHttpInfo($consumerid, string $contentType = self::contentTypes['oBPv400GetScopes'][0])
-    {
-        $request = $this->oBPv400GetScopesRequest($consumerid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetScopes200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetScopes200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetScopes200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv400GetScopesAsync
-     *
-     * Get Scopes for Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetScopes'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400GetScopesAsync($consumerid, string $contentType = self::contentTypes['oBPv400GetScopes'][0])
-    {
-        return $this->oBPv400GetScopesAsyncWithHttpInfo($consumerid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv400GetScopesAsyncWithHttpInfo
-     *
-     * Get Scopes for Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetScopes'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400GetScopesAsyncWithHttpInfo($consumerid, string $contentType = self::contentTypes['oBPv400GetScopes'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv400GetScopes200Response';
-        $request = $this->oBPv400GetScopesRequest($consumerid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv400GetScopes'
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetScopes'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv400GetScopesRequest($consumerid, string $contentType = self::contentTypes['oBPv400GetScopes'][0])
-    {
-
-        // verify the required parameter 'consumerid' is set
-        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv400GetScopes'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/consumers/{consumerid}/scopes';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($consumerid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'consumerid' . '}',
-                ObjectSerializer::toPathValue($consumerid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510CreateConsumer
-     *
-     * Create a Consumer
-     *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerRequest $obpv510_create_consumer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateConsumer'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510CreateConsumer200Response
-     */
-    public function oBPv510CreateConsumer($obpv510_create_consumer_request, string $contentType = self::contentTypes['oBPv510CreateConsumer'][0])
-    {
-        list($response) = $this->oBPv510CreateConsumerWithHttpInfo($obpv510_create_consumer_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510CreateConsumerWithHttpInfo
-     *
-     * Create a Consumer
-     *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerRequest $obpv510_create_consumer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateConsumer'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510CreateConsumer200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510CreateConsumerWithHttpInfo($obpv510_create_consumer_request, string $contentType = self::contentTypes['oBPv510CreateConsumer'][0])
-    {
-        $request = $this->oBPv510CreateConsumerRequest($obpv510_create_consumer_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510CreateConsumer200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510CreateConsumer200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510CreateConsumer200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510CreateConsumerAsync
-     *
-     * Create a Consumer
-     *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerRequest $obpv510_create_consumer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateConsumer'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510CreateConsumerAsync($obpv510_create_consumer_request, string $contentType = self::contentTypes['oBPv510CreateConsumer'][0])
-    {
-        return $this->oBPv510CreateConsumerAsyncWithHttpInfo($obpv510_create_consumer_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510CreateConsumerAsyncWithHttpInfo
-     *
-     * Create a Consumer
-     *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerRequest $obpv510_create_consumer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateConsumer'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510CreateConsumerAsyncWithHttpInfo($obpv510_create_consumer_request, string $contentType = self::contentTypes['oBPv510CreateConsumer'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510CreateConsumer200Response';
-        $request = $this->oBPv510CreateConsumerRequest($obpv510_create_consumer_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510CreateConsumer'
-     *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerRequest $obpv510_create_consumer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateConsumer'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510CreateConsumerRequest($obpv510_create_consumer_request, string $contentType = self::contentTypes['oBPv510CreateConsumer'][0])
-    {
-
-        // verify the required parameter 'obpv510_create_consumer_request' is set
-        if ($obpv510_create_consumer_request === null || (is_array($obpv510_create_consumer_request) && count($obpv510_create_consumer_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_create_consumer_request when calling oBPv510CreateConsumer'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/management/consumers';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv510_create_consumer_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_create_consumer_request));
-            } else {
-                $httpBody = $obpv510_create_consumer_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510CreateConsumerDynamicRegistration
-     *
-     * Create a Consumer(Dynamic Registration)
-     *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerDynamicRegistrationRequest $obpv510_create_consumer_dynamic_registration_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateConsumerDynamicRegistration'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510UpdateConsumerName200Response
-     */
-    public function oBPv510CreateConsumerDynamicRegistration($obpv510_create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['oBPv510CreateConsumerDynamicRegistration'][0])
-    {
-        list($response) = $this->oBPv510CreateConsumerDynamicRegistrationWithHttpInfo($obpv510_create_consumer_dynamic_registration_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510CreateConsumerDynamicRegistrationWithHttpInfo
-     *
-     * Create a Consumer(Dynamic Registration)
-     *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerDynamicRegistrationRequest $obpv510_create_consumer_dynamic_registration_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateConsumerDynamicRegistration'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510UpdateConsumerName200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510CreateConsumerDynamicRegistrationWithHttpInfo($obpv510_create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['oBPv510CreateConsumerDynamicRegistration'][0])
-    {
-        $request = $this->oBPv510CreateConsumerDynamicRegistrationRequest($obpv510_create_consumer_dynamic_registration_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510CreateConsumerDynamicRegistrationAsync
-     *
-     * Create a Consumer(Dynamic Registration)
-     *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerDynamicRegistrationRequest $obpv510_create_consumer_dynamic_registration_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateConsumerDynamicRegistration'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510CreateConsumerDynamicRegistrationAsync($obpv510_create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['oBPv510CreateConsumerDynamicRegistration'][0])
-    {
-        return $this->oBPv510CreateConsumerDynamicRegistrationAsyncWithHttpInfo($obpv510_create_consumer_dynamic_registration_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510CreateConsumerDynamicRegistrationAsyncWithHttpInfo
-     *
-     * Create a Consumer(Dynamic Registration)
-     *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerDynamicRegistrationRequest $obpv510_create_consumer_dynamic_registration_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateConsumerDynamicRegistration'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510CreateConsumerDynamicRegistrationAsyncWithHttpInfo($obpv510_create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['oBPv510CreateConsumerDynamicRegistration'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response';
-        $request = $this->oBPv510CreateConsumerDynamicRegistrationRequest($obpv510_create_consumer_dynamic_registration_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510CreateConsumerDynamicRegistration'
-     *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerDynamicRegistrationRequest $obpv510_create_consumer_dynamic_registration_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateConsumerDynamicRegistration'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510CreateConsumerDynamicRegistrationRequest($obpv510_create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['oBPv510CreateConsumerDynamicRegistration'][0])
-    {
-
-        // verify the required parameter 'obpv510_create_consumer_dynamic_registration_request' is set
-        if ($obpv510_create_consumer_dynamic_registration_request === null || (is_array($obpv510_create_consumer_dynamic_registration_request) && count($obpv510_create_consumer_dynamic_registration_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_create_consumer_dynamic_registration_request when calling oBPv510CreateConsumerDynamicRegistration'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/dynamic-registration/consumers';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv510_create_consumer_dynamic_registration_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_create_consumer_dynamic_registration_request));
-            } else {
-                $httpBody = $obpv510_create_consumer_dynamic_registration_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510CreateMyConsumer
-     *
-     * Create a Consumer
-     *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerRequest $obpv510_create_consumer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateMyConsumer'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510UpdateConsumerName200Response
-     */
-    public function oBPv510CreateMyConsumer($obpv510_create_consumer_request, string $contentType = self::contentTypes['oBPv510CreateMyConsumer'][0])
-    {
-        list($response) = $this->oBPv510CreateMyConsumerWithHttpInfo($obpv510_create_consumer_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510CreateMyConsumerWithHttpInfo
-     *
-     * Create a Consumer
-     *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerRequest $obpv510_create_consumer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateMyConsumer'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510UpdateConsumerName200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510CreateMyConsumerWithHttpInfo($obpv510_create_consumer_request, string $contentType = self::contentTypes['oBPv510CreateMyConsumer'][0])
-    {
-        $request = $this->oBPv510CreateMyConsumerRequest($obpv510_create_consumer_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510CreateMyConsumerAsync
-     *
-     * Create a Consumer
-     *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerRequest $obpv510_create_consumer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateMyConsumer'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510CreateMyConsumerAsync($obpv510_create_consumer_request, string $contentType = self::contentTypes['oBPv510CreateMyConsumer'][0])
-    {
-        return $this->oBPv510CreateMyConsumerAsyncWithHttpInfo($obpv510_create_consumer_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510CreateMyConsumerAsyncWithHttpInfo
-     *
-     * Create a Consumer
-     *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerRequest $obpv510_create_consumer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateMyConsumer'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510CreateMyConsumerAsyncWithHttpInfo($obpv510_create_consumer_request, string $contentType = self::contentTypes['oBPv510CreateMyConsumer'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response';
-        $request = $this->oBPv510CreateMyConsumerRequest($obpv510_create_consumer_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510CreateMyConsumer'
-     *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerRequest $obpv510_create_consumer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateMyConsumer'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510CreateMyConsumerRequest($obpv510_create_consumer_request, string $contentType = self::contentTypes['oBPv510CreateMyConsumer'][0])
-    {
-
-        // verify the required parameter 'obpv510_create_consumer_request' is set
-        if ($obpv510_create_consumer_request === null || (is_array($obpv510_create_consumer_request) && count($obpv510_create_consumer_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_create_consumer_request when calling oBPv510CreateMyConsumer'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/my/consumers';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv510_create_consumer_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_create_consumer_request));
-            } else {
-                $httpBody = $obpv510_create_consumer_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510GetCallsLimit
-     *
-     * Get Rate Limits for a Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCallsLimit'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetCallsLimit200Response
-     */
-    public function oBPv510GetCallsLimit($consumerid, string $contentType = self::contentTypes['oBPv510GetCallsLimit'][0])
-    {
-        list($response) = $this->oBPv510GetCallsLimitWithHttpInfo($consumerid, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510GetCallsLimitWithHttpInfo
-     *
-     * Get Rate Limits for a Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCallsLimit'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetCallsLimit200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510GetCallsLimitWithHttpInfo($consumerid, string $contentType = self::contentTypes['oBPv510GetCallsLimit'][0])
-    {
-        $request = $this->oBPv510GetCallsLimitRequest($consumerid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetCallsLimit200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetCallsLimit200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetCallsLimit200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510GetCallsLimitAsync
-     *
-     * Get Rate Limits for a Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCallsLimit'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510GetCallsLimitAsync($consumerid, string $contentType = self::contentTypes['oBPv510GetCallsLimit'][0])
-    {
-        return $this->oBPv510GetCallsLimitAsyncWithHttpInfo($consumerid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510GetCallsLimitAsyncWithHttpInfo
-     *
-     * Get Rate Limits for a Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCallsLimit'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510GetCallsLimitAsyncWithHttpInfo($consumerid, string $contentType = self::contentTypes['oBPv510GetCallsLimit'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510GetCallsLimit200Response';
-        $request = $this->oBPv510GetCallsLimitRequest($consumerid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510GetCallsLimit'
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCallsLimit'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510GetCallsLimitRequest($consumerid, string $contentType = self::contentTypes['oBPv510GetCallsLimit'][0])
-    {
-
-        // verify the required parameter 'consumerid' is set
-        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv510GetCallsLimit'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/management/consumers/{consumerid}/consumer/rate-limits';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($consumerid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'consumerid' . '}',
-                ObjectSerializer::toPathValue($consumerid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510GetConsumers
-     *
-     * Get Consumers
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetConsumers'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetConsumers200Response
-     */
-    public function oBPv510GetConsumers(string $contentType = self::contentTypes['oBPv510GetConsumers'][0])
-    {
-        list($response) = $this->oBPv510GetConsumersWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510GetConsumersWithHttpInfo
-     *
-     * Get Consumers
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetConsumers'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetConsumers200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510GetConsumersWithHttpInfo(string $contentType = self::contentTypes['oBPv510GetConsumers'][0])
-    {
-        $request = $this->oBPv510GetConsumersRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetConsumers200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetConsumers200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetConsumers200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510GetConsumersAsync
-     *
-     * Get Consumers
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetConsumers'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510GetConsumersAsync(string $contentType = self::contentTypes['oBPv510GetConsumers'][0])
-    {
-        return $this->oBPv510GetConsumersAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510GetConsumersAsyncWithHttpInfo
-     *
-     * Get Consumers
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetConsumers'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510GetConsumersAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510GetConsumers'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510GetConsumers200Response';
-        $request = $this->oBPv510GetConsumersRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510GetConsumers'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetConsumers'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510GetConsumersRequest(string $contentType = self::contentTypes['oBPv510GetConsumers'][0])
-    {
-
-
-        $resourcePath = '/obp/v5.1.0/management/consumers';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510UpdateConsumerCertificate
-     *
-     * Update Consumer Certificate
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerCertificateRequest $obpv510_update_consumer_certificate_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerCertificate'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510UpdateConsumerName200Response
-     */
-    public function oBPv510UpdateConsumerCertificate($consumerid, $obpv510_update_consumer_certificate_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerCertificate'][0])
-    {
-        list($response) = $this->oBPv510UpdateConsumerCertificateWithHttpInfo($consumerid, $obpv510_update_consumer_certificate_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510UpdateConsumerCertificateWithHttpInfo
-     *
-     * Update Consumer Certificate
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerCertificateRequest $obpv510_update_consumer_certificate_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerCertificate'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510UpdateConsumerName200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510UpdateConsumerCertificateWithHttpInfo($consumerid, $obpv510_update_consumer_certificate_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerCertificate'][0])
-    {
-        $request = $this->oBPv510UpdateConsumerCertificateRequest($consumerid, $obpv510_update_consumer_certificate_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510UpdateConsumerCertificateAsync
-     *
-     * Update Consumer Certificate
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerCertificateRequest $obpv510_update_consumer_certificate_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerCertificate'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510UpdateConsumerCertificateAsync($consumerid, $obpv510_update_consumer_certificate_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerCertificate'][0])
-    {
-        return $this->oBPv510UpdateConsumerCertificateAsyncWithHttpInfo($consumerid, $obpv510_update_consumer_certificate_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510UpdateConsumerCertificateAsyncWithHttpInfo
-     *
-     * Update Consumer Certificate
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerCertificateRequest $obpv510_update_consumer_certificate_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerCertificate'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510UpdateConsumerCertificateAsyncWithHttpInfo($consumerid, $obpv510_update_consumer_certificate_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerCertificate'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response';
-        $request = $this->oBPv510UpdateConsumerCertificateRequest($consumerid, $obpv510_update_consumer_certificate_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510UpdateConsumerCertificate'
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerCertificateRequest $obpv510_update_consumer_certificate_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerCertificate'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510UpdateConsumerCertificateRequest($consumerid, $obpv510_update_consumer_certificate_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerCertificate'][0])
-    {
-
-        // verify the required parameter 'consumerid' is set
-        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv510UpdateConsumerCertificate'
-            );
-        }
-
-        // verify the required parameter 'obpv510_update_consumer_certificate_request' is set
-        if ($obpv510_update_consumer_certificate_request === null || (is_array($obpv510_update_consumer_certificate_request) && count($obpv510_update_consumer_certificate_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_update_consumer_certificate_request when calling oBPv510UpdateConsumerCertificate'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/management/consumers/{consumerid}/consumer/certificate';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($consumerid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'consumerid' . '}',
-                ObjectSerializer::toPathValue($consumerid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv510_update_consumer_certificate_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_update_consumer_certificate_request));
-            } else {
-                $httpBody = $obpv510_update_consumer_certificate_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510UpdateConsumerLogoURL
-     *
-     * Update Consumer LogoURL
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerLogoURLRequest $obpv510_update_consumer_logo_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerLogoURL'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510UpdateConsumerName200Response
-     */
-    public function oBPv510UpdateConsumerLogoURL($consumerid, $obpv510_update_consumer_logo_url_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerLogoURL'][0])
-    {
-        list($response) = $this->oBPv510UpdateConsumerLogoURLWithHttpInfo($consumerid, $obpv510_update_consumer_logo_url_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510UpdateConsumerLogoURLWithHttpInfo
-     *
-     * Update Consumer LogoURL
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerLogoURLRequest $obpv510_update_consumer_logo_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerLogoURL'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510UpdateConsumerName200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510UpdateConsumerLogoURLWithHttpInfo($consumerid, $obpv510_update_consumer_logo_url_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerLogoURL'][0])
-    {
-        $request = $this->oBPv510UpdateConsumerLogoURLRequest($consumerid, $obpv510_update_consumer_logo_url_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510UpdateConsumerLogoURLAsync
-     *
-     * Update Consumer LogoURL
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerLogoURLRequest $obpv510_update_consumer_logo_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerLogoURL'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510UpdateConsumerLogoURLAsync($consumerid, $obpv510_update_consumer_logo_url_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerLogoURL'][0])
-    {
-        return $this->oBPv510UpdateConsumerLogoURLAsyncWithHttpInfo($consumerid, $obpv510_update_consumer_logo_url_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510UpdateConsumerLogoURLAsyncWithHttpInfo
-     *
-     * Update Consumer LogoURL
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerLogoURLRequest $obpv510_update_consumer_logo_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerLogoURL'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510UpdateConsumerLogoURLAsyncWithHttpInfo($consumerid, $obpv510_update_consumer_logo_url_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerLogoURL'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response';
-        $request = $this->oBPv510UpdateConsumerLogoURLRequest($consumerid, $obpv510_update_consumer_logo_url_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510UpdateConsumerLogoURL'
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerLogoURLRequest $obpv510_update_consumer_logo_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerLogoURL'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510UpdateConsumerLogoURLRequest($consumerid, $obpv510_update_consumer_logo_url_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerLogoURL'][0])
-    {
-
-        // verify the required parameter 'consumerid' is set
-        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv510UpdateConsumerLogoURL'
-            );
-        }
-
-        // verify the required parameter 'obpv510_update_consumer_logo_url_request' is set
-        if ($obpv510_update_consumer_logo_url_request === null || (is_array($obpv510_update_consumer_logo_url_request) && count($obpv510_update_consumer_logo_url_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_update_consumer_logo_url_request when calling oBPv510UpdateConsumerLogoURL'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/management/consumers/{consumerid}/consumer/logo_url';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($consumerid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'consumerid' . '}',
-                ObjectSerializer::toPathValue($consumerid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv510_update_consumer_logo_url_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_update_consumer_logo_url_request));
-            } else {
-                $httpBody = $obpv510_update_consumer_logo_url_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510UpdateConsumerName
-     *
-     * Update Consumer Name
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerNameRequest $obpv510_update_consumer_name_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerName'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510UpdateConsumerName200Response
-     */
-    public function oBPv510UpdateConsumerName($consumerid, $obpv510_update_consumer_name_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerName'][0])
-    {
-        list($response) = $this->oBPv510UpdateConsumerNameWithHttpInfo($consumerid, $obpv510_update_consumer_name_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510UpdateConsumerNameWithHttpInfo
-     *
-     * Update Consumer Name
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerNameRequest $obpv510_update_consumer_name_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerName'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510UpdateConsumerName200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510UpdateConsumerNameWithHttpInfo($consumerid, $obpv510_update_consumer_name_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerName'][0])
-    {
-        $request = $this->oBPv510UpdateConsumerNameRequest($consumerid, $obpv510_update_consumer_name_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510UpdateConsumerNameAsync
-     *
-     * Update Consumer Name
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerNameRequest $obpv510_update_consumer_name_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerName'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510UpdateConsumerNameAsync($consumerid, $obpv510_update_consumer_name_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerName'][0])
-    {
-        return $this->oBPv510UpdateConsumerNameAsyncWithHttpInfo($consumerid, $obpv510_update_consumer_name_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510UpdateConsumerNameAsyncWithHttpInfo
-     *
-     * Update Consumer Name
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerNameRequest $obpv510_update_consumer_name_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerName'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510UpdateConsumerNameAsyncWithHttpInfo($consumerid, $obpv510_update_consumer_name_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerName'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response';
-        $request = $this->oBPv510UpdateConsumerNameRequest($consumerid, $obpv510_update_consumer_name_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510UpdateConsumerName'
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerNameRequest $obpv510_update_consumer_name_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerName'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510UpdateConsumerNameRequest($consumerid, $obpv510_update_consumer_name_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerName'][0])
-    {
-
-        // verify the required parameter 'consumerid' is set
-        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv510UpdateConsumerName'
-            );
-        }
-
-        // verify the required parameter 'obpv510_update_consumer_name_request' is set
-        if ($obpv510_update_consumer_name_request === null || (is_array($obpv510_update_consumer_name_request) && count($obpv510_update_consumer_name_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_update_consumer_name_request when calling oBPv510UpdateConsumerName'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/management/consumers/{consumerid}/consumer/name';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($consumerid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'consumerid' . '}',
-                ObjectSerializer::toPathValue($consumerid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv510_update_consumer_name_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_update_consumer_name_request));
-            } else {
-                $httpBody = $obpv510_update_consumer_name_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510UpdateConsumerRedirectURL
-     *
-     * Update Consumer RedirectURL
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerRedirectURLRequest $obpv510_update_consumer_redirect_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerRedirectURL'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510UpdateConsumerRedirectURL200Response
-     */
-    public function oBPv510UpdateConsumerRedirectURL($consumerid, $obpv510_update_consumer_redirect_url_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerRedirectURL'][0])
-    {
-        list($response) = $this->oBPv510UpdateConsumerRedirectURLWithHttpInfo($consumerid, $obpv510_update_consumer_redirect_url_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510UpdateConsumerRedirectURLWithHttpInfo
-     *
-     * Update Consumer RedirectURL
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerRedirectURLRequest $obpv510_update_consumer_redirect_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerRedirectURL'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510UpdateConsumerRedirectURL200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510UpdateConsumerRedirectURLWithHttpInfo($consumerid, $obpv510_update_consumer_redirect_url_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerRedirectURL'][0])
-    {
-        $request = $this->oBPv510UpdateConsumerRedirectURLRequest($consumerid, $obpv510_update_consumer_redirect_url_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510UpdateConsumerRedirectURL200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510UpdateConsumerRedirectURL200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510UpdateConsumerRedirectURL200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510UpdateConsumerRedirectURLAsync
-     *
-     * Update Consumer RedirectURL
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerRedirectURLRequest $obpv510_update_consumer_redirect_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerRedirectURL'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510UpdateConsumerRedirectURLAsync($consumerid, $obpv510_update_consumer_redirect_url_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerRedirectURL'][0])
-    {
-        return $this->oBPv510UpdateConsumerRedirectURLAsyncWithHttpInfo($consumerid, $obpv510_update_consumer_redirect_url_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510UpdateConsumerRedirectURLAsyncWithHttpInfo
-     *
-     * Update Consumer RedirectURL
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerRedirectURLRequest $obpv510_update_consumer_redirect_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerRedirectURL'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510UpdateConsumerRedirectURLAsyncWithHttpInfo($consumerid, $obpv510_update_consumer_redirect_url_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerRedirectURL'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510UpdateConsumerRedirectURL200Response';
-        $request = $this->oBPv510UpdateConsumerRedirectURLRequest($consumerid, $obpv510_update_consumer_redirect_url_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510UpdateConsumerRedirectURL'
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateConsumerRedirectURLRequest $obpv510_update_consumer_redirect_url_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateConsumerRedirectURL'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510UpdateConsumerRedirectURLRequest($consumerid, $obpv510_update_consumer_redirect_url_request, string $contentType = self::contentTypes['oBPv510UpdateConsumerRedirectURL'][0])
-    {
-
-        // verify the required parameter 'consumerid' is set
-        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv510UpdateConsumerRedirectURL'
-            );
-        }
-
-        // verify the required parameter 'obpv510_update_consumer_redirect_url_request' is set
-        if ($obpv510_update_consumer_redirect_url_request === null || (is_array($obpv510_update_consumer_redirect_url_request) && count($obpv510_update_consumer_redirect_url_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_update_consumer_redirect_url_request when calling oBPv510UpdateConsumerRedirectURL'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/management/consumers/{consumerid}/consumer/redirect_url';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($consumerid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'consumerid' . '}',
-                ObjectSerializer::toPathValue($consumerid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv510_update_consumer_redirect_url_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_update_consumer_redirect_url_request));
-            } else {
-                $httpBody = $obpv510_update_consumer_redirect_url_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600CreateCallLimits
-     *
-     * Create Rate Limits for a Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateCallLimitsRequest $obpv600_create_call_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateCallLimits'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600CreateCallLimits200Response
-     */
-    public function oBPv600CreateCallLimits($consumerid, $obpv600_create_call_limits_request, string $contentType = self::contentTypes['oBPv600CreateCallLimits'][0])
-    {
-        list($response) = $this->oBPv600CreateCallLimitsWithHttpInfo($consumerid, $obpv600_create_call_limits_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv600CreateCallLimitsWithHttpInfo
-     *
-     * Create Rate Limits for a Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateCallLimitsRequest $obpv600_create_call_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateCallLimits'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600CreateCallLimits200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600CreateCallLimitsWithHttpInfo($consumerid, $obpv600_create_call_limits_request, string $contentType = self::contentTypes['oBPv600CreateCallLimits'][0])
-    {
-        $request = $this->oBPv600CreateCallLimitsRequest($consumerid, $obpv600_create_call_limits_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600CreateCallLimits200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600CreateCallLimits200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600CreateCallLimits200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600CreateCallLimitsAsync
-     *
-     * Create Rate Limits for a Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateCallLimitsRequest $obpv600_create_call_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateCallLimits'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600CreateCallLimitsAsync($consumerid, $obpv600_create_call_limits_request, string $contentType = self::contentTypes['oBPv600CreateCallLimits'][0])
-    {
-        return $this->oBPv600CreateCallLimitsAsyncWithHttpInfo($consumerid, $obpv600_create_call_limits_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600CreateCallLimitsAsyncWithHttpInfo
-     *
-     * Create Rate Limits for a Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateCallLimitsRequest $obpv600_create_call_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateCallLimits'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600CreateCallLimitsAsyncWithHttpInfo($consumerid, $obpv600_create_call_limits_request, string $contentType = self::contentTypes['oBPv600CreateCallLimits'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv600CreateCallLimits200Response';
-        $request = $this->oBPv600CreateCallLimitsRequest($consumerid, $obpv600_create_call_limits_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600CreateCallLimits'
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateCallLimitsRequest $obpv600_create_call_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateCallLimits'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600CreateCallLimitsRequest($consumerid, $obpv600_create_call_limits_request, string $contentType = self::contentTypes['oBPv600CreateCallLimits'][0])
-    {
-
-        // verify the required parameter 'consumerid' is set
-        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv600CreateCallLimits'
-            );
-        }
-
-        // verify the required parameter 'obpv600_create_call_limits_request' is set
-        if ($obpv600_create_call_limits_request === null || (is_array($obpv600_create_call_limits_request) && count($obpv600_create_call_limits_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_create_call_limits_request when calling oBPv600CreateCallLimits'
-            );
-        }
-
-
-        $resourcePath = '/obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($consumerid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'consumerid' . '}',
-                ObjectSerializer::toPathValue($consumerid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv600_create_call_limits_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_create_call_limits_request));
-            } else {
-                $httpBody = $obpv600_create_call_limits_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600DeleteCallLimits
-     *
-     * Delete Rate Limit by Rate Limiting ID
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteCallLimits'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv600DeleteCallLimits($consumerid, $ratelimitingid, string $contentType = self::contentTypes['oBPv600DeleteCallLimits'][0])
-    {
-        $this->oBPv600DeleteCallLimitsWithHttpInfo($consumerid, $ratelimitingid, $contentType);
-    }
-
-    /**
-     * Operation oBPv600DeleteCallLimitsWithHttpInfo
-     *
-     * Delete Rate Limit by Rate Limiting ID
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteCallLimits'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600DeleteCallLimitsWithHttpInfo($consumerid, $ratelimitingid, string $contentType = self::contentTypes['oBPv600DeleteCallLimits'][0])
-    {
-        $request = $this->oBPv600DeleteCallLimitsRequest($consumerid, $ratelimitingid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600DeleteCallLimitsAsync
-     *
-     * Delete Rate Limit by Rate Limiting ID
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteCallLimits'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600DeleteCallLimitsAsync($consumerid, $ratelimitingid, string $contentType = self::contentTypes['oBPv600DeleteCallLimits'][0])
-    {
-        return $this->oBPv600DeleteCallLimitsAsyncWithHttpInfo($consumerid, $ratelimitingid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600DeleteCallLimitsAsyncWithHttpInfo
-     *
-     * Delete Rate Limit by Rate Limiting ID
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteCallLimits'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600DeleteCallLimitsAsyncWithHttpInfo($consumerid, $ratelimitingid, string $contentType = self::contentTypes['oBPv600DeleteCallLimits'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv600DeleteCallLimitsRequest($consumerid, $ratelimitingid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600DeleteCallLimits'
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteCallLimits'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600DeleteCallLimitsRequest($consumerid, $ratelimitingid, string $contentType = self::contentTypes['oBPv600DeleteCallLimits'][0])
-    {
-
-        // verify the required parameter 'consumerid' is set
-        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv600DeleteCallLimits'
-            );
-        }
-
-        // verify the required parameter 'ratelimitingid' is set
-        if ($ratelimitingid === null || (is_array($ratelimitingid) && count($ratelimitingid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $ratelimitingid when calling oBPv600DeleteCallLimits'
-            );
-        }
-
-
-        $resourcePath = '/obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($consumerid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'consumerid' . '}',
-                ObjectSerializer::toPathValue($consumerid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($ratelimitingid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'ratelimitingid' . '}',
-                ObjectSerializer::toPathValue($ratelimitingid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600GetActiveRateLimitsAtDate
+     * Operation getActiveRateLimitsAtDate
      *
      * Get Active Rate Limits for Hour
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
      * @param  string $datewithhour The DATEWITHHOUR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetActiveRateLimitsAtDate'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getActiveRateLimitsAtDate'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetActiveRateLimitsAtDate200Response
+     * @return \OpenBankProject\Model\GetActiveRateLimitsAtDate200Response
      */
-    public function oBPv600GetActiveRateLimitsAtDate($consumerid, $datewithhour, string $contentType = self::contentTypes['oBPv600GetActiveRateLimitsAtDate'][0])
+    public function getActiveRateLimitsAtDate($consumerid, $datewithhour, string $contentType = self::contentTypes['getActiveRateLimitsAtDate'][0])
     {
-        list($response) = $this->oBPv600GetActiveRateLimitsAtDateWithHttpInfo($consumerid, $datewithhour, $contentType);
+        list($response) = $this->getActiveRateLimitsAtDateWithHttpInfo($consumerid, $datewithhour, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetActiveRateLimitsAtDateWithHttpInfo
+     * Operation getActiveRateLimitsAtDateWithHttpInfo
      *
      * Get Active Rate Limits for Hour
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
      * @param  string $datewithhour The DATEWITHHOUR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetActiveRateLimitsAtDate'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getActiveRateLimitsAtDate'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetActiveRateLimitsAtDate200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetActiveRateLimitsAtDate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetActiveRateLimitsAtDateWithHttpInfo($consumerid, $datewithhour, string $contentType = self::contentTypes['oBPv600GetActiveRateLimitsAtDate'][0])
+    public function getActiveRateLimitsAtDateWithHttpInfo($consumerid, $datewithhour, string $contentType = self::contentTypes['getActiveRateLimitsAtDate'][0])
     {
-        $request = $this->oBPv600GetActiveRateLimitsAtDateRequest($consumerid, $datewithhour, $contentType);
+        $request = $this->getActiveRateLimitsAtDateRequest($consumerid, $datewithhour, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5388,7 +2811,7 @@ class ConsumerApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetActiveRateLimitsAtDate200Response',
+                        '\OpenBankProject\Model\GetActiveRateLimitsAtDate200Response',
                         $request,
                         $response,
                     );
@@ -5410,7 +2833,7 @@ class ConsumerApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetActiveRateLimitsAtDate200Response',
+                '\OpenBankProject\Model\GetActiveRateLimitsAtDate200Response',
                 $request,
                 $response,
             );
@@ -5419,7 +2842,7 @@ class ConsumerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetActiveRateLimitsAtDate200Response',
+                        '\OpenBankProject\Model\GetActiveRateLimitsAtDate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5432,20 +2855,20 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600GetActiveRateLimitsAtDateAsync
+     * Operation getActiveRateLimitsAtDateAsync
      *
      * Get Active Rate Limits for Hour
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
      * @param  string $datewithhour The DATEWITHHOUR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetActiveRateLimitsAtDate'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getActiveRateLimitsAtDate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetActiveRateLimitsAtDateAsync($consumerid, $datewithhour, string $contentType = self::contentTypes['oBPv600GetActiveRateLimitsAtDate'][0])
+    public function getActiveRateLimitsAtDateAsync($consumerid, $datewithhour, string $contentType = self::contentTypes['getActiveRateLimitsAtDate'][0])
     {
-        return $this->oBPv600GetActiveRateLimitsAtDateAsyncWithHttpInfo($consumerid, $datewithhour, $contentType)
+        return $this->getActiveRateLimitsAtDateAsyncWithHttpInfo($consumerid, $datewithhour, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5454,21 +2877,21 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600GetActiveRateLimitsAtDateAsyncWithHttpInfo
+     * Operation getActiveRateLimitsAtDateAsyncWithHttpInfo
      *
      * Get Active Rate Limits for Hour
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
      * @param  string $datewithhour The DATEWITHHOUR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetActiveRateLimitsAtDate'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getActiveRateLimitsAtDate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetActiveRateLimitsAtDateAsyncWithHttpInfo($consumerid, $datewithhour, string $contentType = self::contentTypes['oBPv600GetActiveRateLimitsAtDate'][0])
+    public function getActiveRateLimitsAtDateAsyncWithHttpInfo($consumerid, $datewithhour, string $contentType = self::contentTypes['getActiveRateLimitsAtDate'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetActiveRateLimitsAtDate200Response';
-        $request = $this->oBPv600GetActiveRateLimitsAtDateRequest($consumerid, $datewithhour, $contentType);
+        $returnType = '\OpenBankProject\Model\GetActiveRateLimitsAtDate200Response';
+        $request = $this->getActiveRateLimitsAtDateRequest($consumerid, $datewithhour, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5507,29 +2930,29 @@ class ConsumerApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetActiveRateLimitsAtDate'
+     * Create request for operation 'getActiveRateLimitsAtDate'
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
      * @param  string $datewithhour The DATEWITHHOUR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetActiveRateLimitsAtDate'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getActiveRateLimitsAtDate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetActiveRateLimitsAtDateRequest($consumerid, $datewithhour, string $contentType = self::contentTypes['oBPv600GetActiveRateLimitsAtDate'][0])
+    public function getActiveRateLimitsAtDateRequest($consumerid, $datewithhour, string $contentType = self::contentTypes['getActiveRateLimitsAtDate'][0])
     {
 
         // verify the required parameter 'consumerid' is set
         if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv600GetActiveRateLimitsAtDate'
+                'Missing the required parameter $consumerid when calling getActiveRateLimitsAtDate'
             );
         }
 
         // verify the required parameter 'datewithhour' is set
         if ($datewithhour === null || (is_array($datewithhour) && count($datewithhour) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $datewithhour when calling oBPv600GetActiveRateLimitsAtDate'
+                'Missing the required parameter $datewithhour when calling getActiveRateLimitsAtDate'
             );
         }
 
@@ -5602,9 +3025,9 @@ class ConsumerApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -5629,38 +3052,38 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600GetActiveRateLimitsNow
+     * Operation getActiveRateLimitsNow
      *
      * Get Active Rate Limits (Current)
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetActiveRateLimitsNow'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getActiveRateLimitsNow'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetActiveRateLimitsAtDate200Response
+     * @return \OpenBankProject\Model\GetActiveRateLimitsAtDate200Response
      */
-    public function oBPv600GetActiveRateLimitsNow($consumerid, string $contentType = self::contentTypes['oBPv600GetActiveRateLimitsNow'][0])
+    public function getActiveRateLimitsNow($consumerid, string $contentType = self::contentTypes['getActiveRateLimitsNow'][0])
     {
-        list($response) = $this->oBPv600GetActiveRateLimitsNowWithHttpInfo($consumerid, $contentType);
+        list($response) = $this->getActiveRateLimitsNowWithHttpInfo($consumerid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetActiveRateLimitsNowWithHttpInfo
+     * Operation getActiveRateLimitsNowWithHttpInfo
      *
      * Get Active Rate Limits (Current)
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetActiveRateLimitsNow'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getActiveRateLimitsNow'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetActiveRateLimitsAtDate200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetActiveRateLimitsAtDate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetActiveRateLimitsNowWithHttpInfo($consumerid, string $contentType = self::contentTypes['oBPv600GetActiveRateLimitsNow'][0])
+    public function getActiveRateLimitsNowWithHttpInfo($consumerid, string $contentType = self::contentTypes['getActiveRateLimitsNow'][0])
     {
-        $request = $this->oBPv600GetActiveRateLimitsNowRequest($consumerid, $contentType);
+        $request = $this->getActiveRateLimitsNowRequest($consumerid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5688,7 +3111,7 @@ class ConsumerApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetActiveRateLimitsAtDate200Response',
+                        '\OpenBankProject\Model\GetActiveRateLimitsAtDate200Response',
                         $request,
                         $response,
                     );
@@ -5710,7 +3133,7 @@ class ConsumerApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetActiveRateLimitsAtDate200Response',
+                '\OpenBankProject\Model\GetActiveRateLimitsAtDate200Response',
                 $request,
                 $response,
             );
@@ -5719,7 +3142,7 @@ class ConsumerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetActiveRateLimitsAtDate200Response',
+                        '\OpenBankProject\Model\GetActiveRateLimitsAtDate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5732,19 +3155,19 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600GetActiveRateLimitsNowAsync
+     * Operation getActiveRateLimitsNowAsync
      *
      * Get Active Rate Limits (Current)
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetActiveRateLimitsNow'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getActiveRateLimitsNow'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetActiveRateLimitsNowAsync($consumerid, string $contentType = self::contentTypes['oBPv600GetActiveRateLimitsNow'][0])
+    public function getActiveRateLimitsNowAsync($consumerid, string $contentType = self::contentTypes['getActiveRateLimitsNow'][0])
     {
-        return $this->oBPv600GetActiveRateLimitsNowAsyncWithHttpInfo($consumerid, $contentType)
+        return $this->getActiveRateLimitsNowAsyncWithHttpInfo($consumerid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5753,20 +3176,20 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600GetActiveRateLimitsNowAsyncWithHttpInfo
+     * Operation getActiveRateLimitsNowAsyncWithHttpInfo
      *
      * Get Active Rate Limits (Current)
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetActiveRateLimitsNow'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getActiveRateLimitsNow'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetActiveRateLimitsNowAsyncWithHttpInfo($consumerid, string $contentType = self::contentTypes['oBPv600GetActiveRateLimitsNow'][0])
+    public function getActiveRateLimitsNowAsyncWithHttpInfo($consumerid, string $contentType = self::contentTypes['getActiveRateLimitsNow'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetActiveRateLimitsAtDate200Response';
-        $request = $this->oBPv600GetActiveRateLimitsNowRequest($consumerid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetActiveRateLimitsAtDate200Response';
+        $request = $this->getActiveRateLimitsNowRequest($consumerid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5805,21 +3228,21 @@ class ConsumerApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetActiveRateLimitsNow'
+     * Create request for operation 'getActiveRateLimitsNow'
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetActiveRateLimitsNow'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getActiveRateLimitsNow'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetActiveRateLimitsNowRequest($consumerid, string $contentType = self::contentTypes['oBPv600GetActiveRateLimitsNow'][0])
+    public function getActiveRateLimitsNowRequest($consumerid, string $contentType = self::contentTypes['getActiveRateLimitsNow'][0])
     {
 
         // verify the required parameter 'consumerid' is set
         if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv600GetActiveRateLimitsNow'
+                'Missing the required parameter $consumerid when calling getActiveRateLimitsNow'
             );
         }
 
@@ -5884,9 +3307,9 @@ class ConsumerApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -5911,38 +3334,38 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600GetConsumer
+     * Operation getCallsLimit
      *
-     * Get Consumer
+     * Get Rate Limits for a Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConsumer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCallsLimit'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetConsumer200Response
+     * @return \OpenBankProject\Model\GetCallsLimit200Response
      */
-    public function oBPv600GetConsumer($consumerid, string $contentType = self::contentTypes['oBPv600GetConsumer'][0])
+    public function getCallsLimit($consumerid, string $contentType = self::contentTypes['getCallsLimit'][0])
     {
-        list($response) = $this->oBPv600GetConsumerWithHttpInfo($consumerid, $contentType);
+        list($response) = $this->getCallsLimitWithHttpInfo($consumerid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetConsumerWithHttpInfo
+     * Operation getCallsLimitWithHttpInfo
      *
-     * Get Consumer
+     * Get Rate Limits for a Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConsumer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCallsLimit'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetConsumer200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCallsLimit200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetConsumerWithHttpInfo($consumerid, string $contentType = self::contentTypes['oBPv600GetConsumer'][0])
+    public function getCallsLimitWithHttpInfo($consumerid, string $contentType = self::contentTypes['getCallsLimit'][0])
     {
-        $request = $this->oBPv600GetConsumerRequest($consumerid, $contentType);
+        $request = $this->getCallsLimitRequest($consumerid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5970,7 +3393,7 @@ class ConsumerApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetConsumer200Response',
+                        '\OpenBankProject\Model\GetCallsLimit200Response',
                         $request,
                         $response,
                     );
@@ -5992,7 +3415,7 @@ class ConsumerApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetConsumer200Response',
+                '\OpenBankProject\Model\GetCallsLimit200Response',
                 $request,
                 $response,
             );
@@ -6001,7 +3424,7 @@ class ConsumerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetConsumer200Response',
+                        '\OpenBankProject\Model\GetCallsLimit200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6014,19 +3437,19 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600GetConsumerAsync
+     * Operation getCallsLimitAsync
      *
-     * Get Consumer
+     * Get Rate Limits for a Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConsumer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCallsLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetConsumerAsync($consumerid, string $contentType = self::contentTypes['oBPv600GetConsumer'][0])
+    public function getCallsLimitAsync($consumerid, string $contentType = self::contentTypes['getCallsLimit'][0])
     {
-        return $this->oBPv600GetConsumerAsyncWithHttpInfo($consumerid, $contentType)
+        return $this->getCallsLimitAsyncWithHttpInfo($consumerid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6035,20 +3458,20 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600GetConsumerAsyncWithHttpInfo
+     * Operation getCallsLimitAsyncWithHttpInfo
      *
-     * Get Consumer
+     * Get Rate Limits for a Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConsumer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCallsLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetConsumerAsyncWithHttpInfo($consumerid, string $contentType = self::contentTypes['oBPv600GetConsumer'][0])
+    public function getCallsLimitAsyncWithHttpInfo($consumerid, string $contentType = self::contentTypes['getCallsLimit'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetConsumer200Response';
-        $request = $this->oBPv600GetConsumerRequest($consumerid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetCallsLimit200Response';
+        $request = $this->getCallsLimitRequest($consumerid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6087,21 +3510,303 @@ class ConsumerApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetConsumer'
+     * Create request for operation 'getCallsLimit'
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConsumer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCallsLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetConsumerRequest($consumerid, string $contentType = self::contentTypes['oBPv600GetConsumer'][0])
+    public function getCallsLimitRequest($consumerid, string $contentType = self::contentTypes['getCallsLimit'][0])
     {
 
         // verify the required parameter 'consumerid' is set
         if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv600GetConsumer'
+                'Missing the required parameter $consumerid when calling getCallsLimit'
+            );
+        }
+
+
+        $resourcePath = '/obp/v5.1.0/management/consumers/{consumerid}/consumer/rate-limits';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($consumerid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'consumerid' . '}',
+                ObjectSerializer::toPathValue($consumerid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getConsumer
+     *
+     * Get Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumer'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetConsumer200Response
+     */
+    public function getConsumer($consumerid, string $contentType = self::contentTypes['getConsumer'][0])
+    {
+        list($response) = $this->getConsumerWithHttpInfo($consumerid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getConsumerWithHttpInfo
+     *
+     * Get Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumer'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetConsumer200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getConsumerWithHttpInfo($consumerid, string $contentType = self::contentTypes['getConsumer'][0])
+    {
+        $request = $this->getConsumerRequest($consumerid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetConsumer200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetConsumer200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetConsumer200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getConsumerAsync
+     *
+     * Get Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getConsumerAsync($consumerid, string $contentType = self::contentTypes['getConsumer'][0])
+    {
+        return $this->getConsumerAsyncWithHttpInfo($consumerid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getConsumerAsyncWithHttpInfo
+     *
+     * Get Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getConsumerAsyncWithHttpInfo($consumerid, string $contentType = self::contentTypes['getConsumer'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetConsumer200Response';
+        $request = $this->getConsumerRequest($consumerid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getConsumer'
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getConsumerRequest($consumerid, string $contentType = self::contentTypes['getConsumer'][0])
+    {
+
+        // verify the required parameter 'consumerid' is set
+        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $consumerid when calling getConsumer'
             );
         }
 
@@ -6166,9 +3871,9 @@ class ConsumerApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -6193,38 +3898,38 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600GetConsumerCallCounters
+     * Operation getConsumerCallCounters
      *
      * Get Call Counts for Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConsumerCallCounters'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumerCallCounters'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetCurrentConsumer200ResponsePropertiesCallCounters
+     * @return \OpenBankProject\Model\GetCurrentConsumer200ResponseCallCounters
      */
-    public function oBPv600GetConsumerCallCounters($consumerid, string $contentType = self::contentTypes['oBPv600GetConsumerCallCounters'][0])
+    public function getConsumerCallCounters($consumerid, string $contentType = self::contentTypes['getConsumerCallCounters'][0])
     {
-        list($response) = $this->oBPv600GetConsumerCallCountersWithHttpInfo($consumerid, $contentType);
+        list($response) = $this->getConsumerCallCountersWithHttpInfo($consumerid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetConsumerCallCountersWithHttpInfo
+     * Operation getConsumerCallCountersWithHttpInfo
      *
      * Get Call Counts for Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConsumerCallCounters'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumerCallCounters'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetCurrentConsumer200ResponsePropertiesCallCounters, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCurrentConsumer200ResponseCallCounters, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetConsumerCallCountersWithHttpInfo($consumerid, string $contentType = self::contentTypes['oBPv600GetConsumerCallCounters'][0])
+    public function getConsumerCallCountersWithHttpInfo($consumerid, string $contentType = self::contentTypes['getConsumerCallCounters'][0])
     {
-        $request = $this->oBPv600GetConsumerCallCountersRequest($consumerid, $contentType);
+        $request = $this->getConsumerCallCountersRequest($consumerid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6252,7 +3957,7 @@ class ConsumerApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetCurrentConsumer200ResponsePropertiesCallCounters',
+                        '\OpenBankProject\Model\GetCurrentConsumer200ResponseCallCounters',
                         $request,
                         $response,
                     );
@@ -6274,7 +3979,7 @@ class ConsumerApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetCurrentConsumer200ResponsePropertiesCallCounters',
+                '\OpenBankProject\Model\GetCurrentConsumer200ResponseCallCounters',
                 $request,
                 $response,
             );
@@ -6283,7 +3988,7 @@ class ConsumerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetCurrentConsumer200ResponsePropertiesCallCounters',
+                        '\OpenBankProject\Model\GetCurrentConsumer200ResponseCallCounters',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6296,19 +4001,19 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600GetConsumerCallCountersAsync
+     * Operation getConsumerCallCountersAsync
      *
      * Get Call Counts for Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConsumerCallCounters'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumerCallCounters'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetConsumerCallCountersAsync($consumerid, string $contentType = self::contentTypes['oBPv600GetConsumerCallCounters'][0])
+    public function getConsumerCallCountersAsync($consumerid, string $contentType = self::contentTypes['getConsumerCallCounters'][0])
     {
-        return $this->oBPv600GetConsumerCallCountersAsyncWithHttpInfo($consumerid, $contentType)
+        return $this->getConsumerCallCountersAsyncWithHttpInfo($consumerid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6317,20 +4022,20 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600GetConsumerCallCountersAsyncWithHttpInfo
+     * Operation getConsumerCallCountersAsyncWithHttpInfo
      *
      * Get Call Counts for Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConsumerCallCounters'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumerCallCounters'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetConsumerCallCountersAsyncWithHttpInfo($consumerid, string $contentType = self::contentTypes['oBPv600GetConsumerCallCounters'][0])
+    public function getConsumerCallCountersAsyncWithHttpInfo($consumerid, string $contentType = self::contentTypes['getConsumerCallCounters'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetCurrentConsumer200ResponsePropertiesCallCounters';
-        $request = $this->oBPv600GetConsumerCallCountersRequest($consumerid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetCurrentConsumer200ResponseCallCounters';
+        $request = $this->getConsumerCallCountersRequest($consumerid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6369,21 +4074,21 @@ class ConsumerApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetConsumerCallCounters'
+     * Create request for operation 'getConsumerCallCounters'
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConsumerCallCounters'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumerCallCounters'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetConsumerCallCountersRequest($consumerid, string $contentType = self::contentTypes['oBPv600GetConsumerCallCounters'][0])
+    public function getConsumerCallCountersRequest($consumerid, string $contentType = self::contentTypes['getConsumerCallCounters'][0])
     {
 
         // verify the required parameter 'consumerid' is set
         if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv600GetConsumerCallCounters'
+                'Missing the required parameter $consumerid when calling getConsumerCallCounters'
             );
         }
 
@@ -6448,9 +4153,9 @@ class ConsumerApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -6475,36 +4180,36 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600GetCurrentConsumer
+     * Operation getConsumers
      *
-     * Get Current Consumer
+     * Get Consumers
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCurrentConsumer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumers'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetCurrentConsumer200Response
+     * @return \OpenBankProject\Model\GetConsumers200Response
      */
-    public function oBPv600GetCurrentConsumer(string $contentType = self::contentTypes['oBPv600GetCurrentConsumer'][0])
+    public function getConsumers(string $contentType = self::contentTypes['getConsumers'][0])
     {
-        list($response) = $this->oBPv600GetCurrentConsumerWithHttpInfo($contentType);
+        list($response) = $this->getConsumersWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetCurrentConsumerWithHttpInfo
+     * Operation getConsumersWithHttpInfo
      *
-     * Get Current Consumer
+     * Get Consumers
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCurrentConsumer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumers'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetCurrentConsumer200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetConsumers200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetCurrentConsumerWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetCurrentConsumer'][0])
+    public function getConsumersWithHttpInfo(string $contentType = self::contentTypes['getConsumers'][0])
     {
-        $request = $this->oBPv600GetCurrentConsumerRequest($contentType);
+        $request = $this->getConsumersRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6532,7 +4237,7 @@ class ConsumerApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetCurrentConsumer200Response',
+                        '\OpenBankProject\Model\GetConsumers200Response',
                         $request,
                         $response,
                     );
@@ -6554,7 +4259,7 @@ class ConsumerApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetCurrentConsumer200Response',
+                '\OpenBankProject\Model\GetConsumers200Response',
                 $request,
                 $response,
             );
@@ -6563,7 +4268,7 @@ class ConsumerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetCurrentConsumer200Response',
+                        '\OpenBankProject\Model\GetConsumers200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6576,18 +4281,18 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600GetCurrentConsumerAsync
+     * Operation getConsumersAsync
      *
-     * Get Current Consumer
+     * Get Consumers
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCurrentConsumer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetCurrentConsumerAsync(string $contentType = self::contentTypes['oBPv600GetCurrentConsumer'][0])
+    public function getConsumersAsync(string $contentType = self::contentTypes['getConsumers'][0])
     {
-        return $this->oBPv600GetCurrentConsumerAsyncWithHttpInfo($contentType)
+        return $this->getConsumersAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6596,19 +4301,19 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600GetCurrentConsumerAsyncWithHttpInfo
+     * Operation getConsumersAsyncWithHttpInfo
      *
-     * Get Current Consumer
+     * Get Consumers
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCurrentConsumer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetCurrentConsumerAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetCurrentConsumer'][0])
+    public function getConsumersAsyncWithHttpInfo(string $contentType = self::contentTypes['getConsumers'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetCurrentConsumer200Response';
-        $request = $this->oBPv600GetCurrentConsumerRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetConsumers200Response';
+        $request = $this->getConsumersRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6647,14 +4352,538 @@ class ConsumerApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetCurrentConsumer'
+     * Create request for operation 'getConsumers'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCurrentConsumer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetCurrentConsumerRequest(string $contentType = self::contentTypes['oBPv600GetCurrentConsumer'][0])
+    public function getConsumersRequest(string $contentType = self::contentTypes['getConsumers'][0])
+    {
+
+
+        $resourcePath = '/obp/v5.1.0/management/consumers';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getConsumersForCurrentUser
+     *
+     * Get Consumers (logged in User)
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumersForCurrentUser'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetConsumersForCurrentUser200Response
+     */
+    public function getConsumersForCurrentUser(string $contentType = self::contentTypes['getConsumersForCurrentUser'][0])
+    {
+        list($response) = $this->getConsumersForCurrentUserWithHttpInfo($contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getConsumersForCurrentUserWithHttpInfo
+     *
+     * Get Consumers (logged in User)
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumersForCurrentUser'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetConsumersForCurrentUser200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getConsumersForCurrentUserWithHttpInfo(string $contentType = self::contentTypes['getConsumersForCurrentUser'][0])
+    {
+        $request = $this->getConsumersForCurrentUserRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetConsumersForCurrentUser200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetConsumersForCurrentUser200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetConsumersForCurrentUser200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getConsumersForCurrentUserAsync
+     *
+     * Get Consumers (logged in User)
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumersForCurrentUser'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getConsumersForCurrentUserAsync(string $contentType = self::contentTypes['getConsumersForCurrentUser'][0])
+    {
+        return $this->getConsumersForCurrentUserAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getConsumersForCurrentUserAsyncWithHttpInfo
+     *
+     * Get Consumers (logged in User)
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumersForCurrentUser'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getConsumersForCurrentUserAsyncWithHttpInfo(string $contentType = self::contentTypes['getConsumersForCurrentUser'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetConsumersForCurrentUser200Response';
+        $request = $this->getConsumersForCurrentUserRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getConsumersForCurrentUser'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConsumersForCurrentUser'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getConsumersForCurrentUserRequest(string $contentType = self::contentTypes['getConsumersForCurrentUser'][0])
+    {
+
+
+        $resourcePath = '/obp/v3.1.0/management/users/current/consumers';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getCurrentConsumer
+     *
+     * Get Current Consumer
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrentConsumer'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetCurrentConsumer200Response
+     */
+    public function getCurrentConsumer(string $contentType = self::contentTypes['getCurrentConsumer'][0])
+    {
+        list($response) = $this->getCurrentConsumerWithHttpInfo($contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getCurrentConsumerWithHttpInfo
+     *
+     * Get Current Consumer
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrentConsumer'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetCurrentConsumer200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCurrentConsumerWithHttpInfo(string $contentType = self::contentTypes['getCurrentConsumer'][0])
+    {
+        $request = $this->getCurrentConsumerRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetCurrentConsumer200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetCurrentConsumer200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetCurrentConsumer200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCurrentConsumerAsync
+     *
+     * Get Current Consumer
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrentConsumer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCurrentConsumerAsync(string $contentType = self::contentTypes['getCurrentConsumer'][0])
+    {
+        return $this->getCurrentConsumerAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCurrentConsumerAsyncWithHttpInfo
+     *
+     * Get Current Consumer
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrentConsumer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCurrentConsumerAsyncWithHttpInfo(string $contentType = self::contentTypes['getCurrentConsumer'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetCurrentConsumer200Response';
+        $request = $this->getCurrentConsumerRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCurrentConsumer'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrentConsumer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getCurrentConsumerRequest(string $contentType = self::contentTypes['getCurrentConsumer'][0])
     {
 
 
@@ -6710,9 +4939,9 @@ class ConsumerApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -6737,38 +4966,38 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600GetOidcClient
+     * Operation getOidcClient
      *
      * Get OIDC Client
      *
      * @param  string $clientid The CLIENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetOidcClient'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOidcClient'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetOidcClient200Response
+     * @return \OpenBankProject\Model\GetOidcClient200Response
      */
-    public function oBPv600GetOidcClient($clientid, string $contentType = self::contentTypes['oBPv600GetOidcClient'][0])
+    public function getOidcClient($clientid, string $contentType = self::contentTypes['getOidcClient'][0])
     {
-        list($response) = $this->oBPv600GetOidcClientWithHttpInfo($clientid, $contentType);
+        list($response) = $this->getOidcClientWithHttpInfo($clientid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetOidcClientWithHttpInfo
+     * Operation getOidcClientWithHttpInfo
      *
      * Get OIDC Client
      *
      * @param  string $clientid The CLIENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetOidcClient'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOidcClient'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetOidcClient200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetOidcClient200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetOidcClientWithHttpInfo($clientid, string $contentType = self::contentTypes['oBPv600GetOidcClient'][0])
+    public function getOidcClientWithHttpInfo($clientid, string $contentType = self::contentTypes['getOidcClient'][0])
     {
-        $request = $this->oBPv600GetOidcClientRequest($clientid, $contentType);
+        $request = $this->getOidcClientRequest($clientid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6796,7 +5025,7 @@ class ConsumerApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetOidcClient200Response',
+                        '\OpenBankProject\Model\GetOidcClient200Response',
                         $request,
                         $response,
                     );
@@ -6818,7 +5047,7 @@ class ConsumerApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetOidcClient200Response',
+                '\OpenBankProject\Model\GetOidcClient200Response',
                 $request,
                 $response,
             );
@@ -6827,7 +5056,7 @@ class ConsumerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetOidcClient200Response',
+                        '\OpenBankProject\Model\GetOidcClient200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6840,19 +5069,19 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600GetOidcClientAsync
+     * Operation getOidcClientAsync
      *
      * Get OIDC Client
      *
      * @param  string $clientid The CLIENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetOidcClient'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOidcClient'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetOidcClientAsync($clientid, string $contentType = self::contentTypes['oBPv600GetOidcClient'][0])
+    public function getOidcClientAsync($clientid, string $contentType = self::contentTypes['getOidcClient'][0])
     {
-        return $this->oBPv600GetOidcClientAsyncWithHttpInfo($clientid, $contentType)
+        return $this->getOidcClientAsyncWithHttpInfo($clientid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6861,20 +5090,20 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600GetOidcClientAsyncWithHttpInfo
+     * Operation getOidcClientAsyncWithHttpInfo
      *
      * Get OIDC Client
      *
      * @param  string $clientid The CLIENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetOidcClient'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOidcClient'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetOidcClientAsyncWithHttpInfo($clientid, string $contentType = self::contentTypes['oBPv600GetOidcClient'][0])
+    public function getOidcClientAsyncWithHttpInfo($clientid, string $contentType = self::contentTypes['getOidcClient'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetOidcClient200Response';
-        $request = $this->oBPv600GetOidcClientRequest($clientid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetOidcClient200Response';
+        $request = $this->getOidcClientRequest($clientid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6913,21 +5142,21 @@ class ConsumerApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetOidcClient'
+     * Create request for operation 'getOidcClient'
      *
      * @param  string $clientid The CLIENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetOidcClient'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOidcClient'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetOidcClientRequest($clientid, string $contentType = self::contentTypes['oBPv600GetOidcClient'][0])
+    public function getOidcClientRequest($clientid, string $contentType = self::contentTypes['getOidcClient'][0])
     {
 
         // verify the required parameter 'clientid' is set
         if ($clientid === null || (is_array($clientid) && count($clientid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $clientid when calling oBPv600GetOidcClient'
+                'Missing the required parameter $clientid when calling getOidcClient'
             );
         }
 
@@ -6992,9 +5221,9 @@ class ConsumerApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -7019,42 +5248,38 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600UpdateRateLimits
+     * Operation getScopes
      *
-     * Set Rate Limits / Call Limits per Consumer
+     * Get Scopes for Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateRateLimits'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScopes'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest
+     * @return \OpenBankProject\Model\GetScopes200Response
      */
-    public function oBPv600UpdateRateLimits($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv600UpdateRateLimits'][0])
+    public function getScopes($consumerid, string $contentType = self::contentTypes['getScopes'][0])
     {
-        list($response) = $this->oBPv600UpdateRateLimitsWithHttpInfo($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, $contentType);
+        list($response) = $this->getScopesWithHttpInfo($consumerid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600UpdateRateLimitsWithHttpInfo
+     * Operation getScopesWithHttpInfo
      *
-     * Set Rate Limits / Call Limits per Consumer
+     * Get Scopes for Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateRateLimits'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScopes'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetScopes200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600UpdateRateLimitsWithHttpInfo($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv600UpdateRateLimits'][0])
+    public function getScopesWithHttpInfo($consumerid, string $contentType = self::contentTypes['getScopes'][0])
     {
-        $request = $this->oBPv600UpdateRateLimitsRequest($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, $contentType);
+        $request = $this->getScopesRequest($consumerid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7082,7 +5307,7 @@ class ConsumerApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest',
+                        '\OpenBankProject\Model\GetScopes200Response',
                         $request,
                         $response,
                     );
@@ -7104,7 +5329,7 @@ class ConsumerApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest',
+                '\OpenBankProject\Model\GetScopes200Response',
                 $request,
                 $response,
             );
@@ -7113,7 +5338,7 @@ class ConsumerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest',
+                        '\OpenBankProject\Model\GetScopes200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7126,21 +5351,19 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600UpdateRateLimitsAsync
+     * Operation getScopesAsync
      *
-     * Set Rate Limits / Call Limits per Consumer
+     * Get Scopes for Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateRateLimits'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScopes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateRateLimitsAsync($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv600UpdateRateLimits'][0])
+    public function getScopesAsync($consumerid, string $contentType = self::contentTypes['getScopes'][0])
     {
-        return $this->oBPv600UpdateRateLimitsAsyncWithHttpInfo($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, $contentType)
+        return $this->getScopesAsyncWithHttpInfo($consumerid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7149,22 +5372,20 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600UpdateRateLimitsAsyncWithHttpInfo
+     * Operation getScopesAsyncWithHttpInfo
      *
-     * Set Rate Limits / Call Limits per Consumer
+     * Get Scopes for Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateRateLimits'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScopes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateRateLimitsAsyncWithHttpInfo($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv600UpdateRateLimits'][0])
+    public function getScopesAsyncWithHttpInfo($consumerid, string $contentType = self::contentTypes['getScopes'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600UpdateRateLimitsRequest';
-        $request = $this->oBPv600UpdateRateLimitsRequest($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetScopes200Response';
+        $request = $this->getScopesRequest($consumerid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7203,37 +5424,1531 @@ class ConsumerApi
     }
 
     /**
-     * Create request for operation 'oBPv600UpdateRateLimits'
+     * Create request for operation 'getScopes'
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateRateLimitsRequest $obpv600_update_rate_limits_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateRateLimits'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScopes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600UpdateRateLimitsRequest($consumerid, $ratelimitingid, $obpv600_update_rate_limits_request, string $contentType = self::contentTypes['oBPv600UpdateRateLimits'][0])
+    public function getScopesRequest($consumerid, string $contentType = self::contentTypes['getScopes'][0])
     {
 
         // verify the required parameter 'consumerid' is set
         if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv600UpdateRateLimits'
+                'Missing the required parameter $consumerid when calling getScopes'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/consumers/{consumerid}/scopes';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($consumerid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'consumerid' . '}',
+                ObjectSerializer::toPathValue($consumerid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateConsumerCertificate
+     *
+     * Update Consumer Certificate
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerCertificateRequest $update_consumer_certificate_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerCertificate'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\UpdateConsumerName200Response
+     */
+    public function updateConsumerCertificate($consumerid, $update_consumer_certificate_request, string $contentType = self::contentTypes['updateConsumerCertificate'][0])
+    {
+        list($response) = $this->updateConsumerCertificateWithHttpInfo($consumerid, $update_consumer_certificate_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateConsumerCertificateWithHttpInfo
+     *
+     * Update Consumer Certificate
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerCertificateRequest $update_consumer_certificate_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerCertificate'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\UpdateConsumerName200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateConsumerCertificateWithHttpInfo($consumerid, $update_consumer_certificate_request, string $contentType = self::contentTypes['updateConsumerCertificate'][0])
+    {
+        $request = $this->updateConsumerCertificateRequest($consumerid, $update_consumer_certificate_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\UpdateConsumerName200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\UpdateConsumerName200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\UpdateConsumerName200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateConsumerCertificateAsync
+     *
+     * Update Consumer Certificate
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerCertificateRequest $update_consumer_certificate_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerCertificate'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateConsumerCertificateAsync($consumerid, $update_consumer_certificate_request, string $contentType = self::contentTypes['updateConsumerCertificate'][0])
+    {
+        return $this->updateConsumerCertificateAsyncWithHttpInfo($consumerid, $update_consumer_certificate_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateConsumerCertificateAsyncWithHttpInfo
+     *
+     * Update Consumer Certificate
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerCertificateRequest $update_consumer_certificate_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerCertificate'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateConsumerCertificateAsyncWithHttpInfo($consumerid, $update_consumer_certificate_request, string $contentType = self::contentTypes['updateConsumerCertificate'][0])
+    {
+        $returnType = '\OpenBankProject\Model\UpdateConsumerName200Response';
+        $request = $this->updateConsumerCertificateRequest($consumerid, $update_consumer_certificate_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateConsumerCertificate'
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerCertificateRequest $update_consumer_certificate_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerCertificate'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateConsumerCertificateRequest($consumerid, $update_consumer_certificate_request, string $contentType = self::contentTypes['updateConsumerCertificate'][0])
+    {
+
+        // verify the required parameter 'consumerid' is set
+        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $consumerid when calling updateConsumerCertificate'
+            );
+        }
+
+        // verify the required parameter 'update_consumer_certificate_request' is set
+        if ($update_consumer_certificate_request === null || (is_array($update_consumer_certificate_request) && count($update_consumer_certificate_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_consumer_certificate_request when calling updateConsumerCertificate'
+            );
+        }
+
+
+        $resourcePath = '/obp/v5.1.0/management/consumers/{consumerid}/consumer/certificate';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($consumerid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'consumerid' . '}',
+                ObjectSerializer::toPathValue($consumerid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($update_consumer_certificate_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_consumer_certificate_request));
+            } else {
+                $httpBody = $update_consumer_certificate_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateConsumerLogoURL
+     *
+     * Update Consumer LogoURL
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerLogoURLRequest $update_consumer_logo_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerLogoURL'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\UpdateConsumerName200Response
+     */
+    public function updateConsumerLogoURL($consumerid, $update_consumer_logo_url_request, string $contentType = self::contentTypes['updateConsumerLogoURL'][0])
+    {
+        list($response) = $this->updateConsumerLogoURLWithHttpInfo($consumerid, $update_consumer_logo_url_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateConsumerLogoURLWithHttpInfo
+     *
+     * Update Consumer LogoURL
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerLogoURLRequest $update_consumer_logo_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerLogoURL'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\UpdateConsumerName200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateConsumerLogoURLWithHttpInfo($consumerid, $update_consumer_logo_url_request, string $contentType = self::contentTypes['updateConsumerLogoURL'][0])
+    {
+        $request = $this->updateConsumerLogoURLRequest($consumerid, $update_consumer_logo_url_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\UpdateConsumerName200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\UpdateConsumerName200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\UpdateConsumerName200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateConsumerLogoURLAsync
+     *
+     * Update Consumer LogoURL
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerLogoURLRequest $update_consumer_logo_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerLogoURL'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateConsumerLogoURLAsync($consumerid, $update_consumer_logo_url_request, string $contentType = self::contentTypes['updateConsumerLogoURL'][0])
+    {
+        return $this->updateConsumerLogoURLAsyncWithHttpInfo($consumerid, $update_consumer_logo_url_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateConsumerLogoURLAsyncWithHttpInfo
+     *
+     * Update Consumer LogoURL
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerLogoURLRequest $update_consumer_logo_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerLogoURL'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateConsumerLogoURLAsyncWithHttpInfo($consumerid, $update_consumer_logo_url_request, string $contentType = self::contentTypes['updateConsumerLogoURL'][0])
+    {
+        $returnType = '\OpenBankProject\Model\UpdateConsumerName200Response';
+        $request = $this->updateConsumerLogoURLRequest($consumerid, $update_consumer_logo_url_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateConsumerLogoURL'
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerLogoURLRequest $update_consumer_logo_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerLogoURL'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateConsumerLogoURLRequest($consumerid, $update_consumer_logo_url_request, string $contentType = self::contentTypes['updateConsumerLogoURL'][0])
+    {
+
+        // verify the required parameter 'consumerid' is set
+        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $consumerid when calling updateConsumerLogoURL'
+            );
+        }
+
+        // verify the required parameter 'update_consumer_logo_url_request' is set
+        if ($update_consumer_logo_url_request === null || (is_array($update_consumer_logo_url_request) && count($update_consumer_logo_url_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_consumer_logo_url_request when calling updateConsumerLogoURL'
+            );
+        }
+
+
+        $resourcePath = '/obp/v5.1.0/management/consumers/{consumerid}/consumer/logo_url';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($consumerid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'consumerid' . '}',
+                ObjectSerializer::toPathValue($consumerid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($update_consumer_logo_url_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_consumer_logo_url_request));
+            } else {
+                $httpBody = $update_consumer_logo_url_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateConsumerName
+     *
+     * Update Consumer Name
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerNameRequest $update_consumer_name_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerName'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\UpdateConsumerName200Response
+     */
+    public function updateConsumerName($consumerid, $update_consumer_name_request, string $contentType = self::contentTypes['updateConsumerName'][0])
+    {
+        list($response) = $this->updateConsumerNameWithHttpInfo($consumerid, $update_consumer_name_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateConsumerNameWithHttpInfo
+     *
+     * Update Consumer Name
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerNameRequest $update_consumer_name_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerName'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\UpdateConsumerName200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateConsumerNameWithHttpInfo($consumerid, $update_consumer_name_request, string $contentType = self::contentTypes['updateConsumerName'][0])
+    {
+        $request = $this->updateConsumerNameRequest($consumerid, $update_consumer_name_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\UpdateConsumerName200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\UpdateConsumerName200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\UpdateConsumerName200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateConsumerNameAsync
+     *
+     * Update Consumer Name
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerNameRequest $update_consumer_name_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerName'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateConsumerNameAsync($consumerid, $update_consumer_name_request, string $contentType = self::contentTypes['updateConsumerName'][0])
+    {
+        return $this->updateConsumerNameAsyncWithHttpInfo($consumerid, $update_consumer_name_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateConsumerNameAsyncWithHttpInfo
+     *
+     * Update Consumer Name
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerNameRequest $update_consumer_name_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerName'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateConsumerNameAsyncWithHttpInfo($consumerid, $update_consumer_name_request, string $contentType = self::contentTypes['updateConsumerName'][0])
+    {
+        $returnType = '\OpenBankProject\Model\UpdateConsumerName200Response';
+        $request = $this->updateConsumerNameRequest($consumerid, $update_consumer_name_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateConsumerName'
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerNameRequest $update_consumer_name_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerName'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateConsumerNameRequest($consumerid, $update_consumer_name_request, string $contentType = self::contentTypes['updateConsumerName'][0])
+    {
+
+        // verify the required parameter 'consumerid' is set
+        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $consumerid when calling updateConsumerName'
+            );
+        }
+
+        // verify the required parameter 'update_consumer_name_request' is set
+        if ($update_consumer_name_request === null || (is_array($update_consumer_name_request) && count($update_consumer_name_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_consumer_name_request when calling updateConsumerName'
+            );
+        }
+
+
+        $resourcePath = '/obp/v5.1.0/management/consumers/{consumerid}/consumer/name';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($consumerid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'consumerid' . '}',
+                ObjectSerializer::toPathValue($consumerid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($update_consumer_name_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_consumer_name_request));
+            } else {
+                $httpBody = $update_consumer_name_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateConsumerRedirectURL
+     *
+     * Update Consumer RedirectURL
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerRedirectURLRequest $update_consumer_redirect_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerRedirectURL'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\UpdateConsumerRedirectURL200Response
+     */
+    public function updateConsumerRedirectURL($consumerid, $update_consumer_redirect_url_request, string $contentType = self::contentTypes['updateConsumerRedirectURL'][0])
+    {
+        list($response) = $this->updateConsumerRedirectURLWithHttpInfo($consumerid, $update_consumer_redirect_url_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateConsumerRedirectURLWithHttpInfo
+     *
+     * Update Consumer RedirectURL
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerRedirectURLRequest $update_consumer_redirect_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerRedirectURL'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\UpdateConsumerRedirectURL200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateConsumerRedirectURLWithHttpInfo($consumerid, $update_consumer_redirect_url_request, string $contentType = self::contentTypes['updateConsumerRedirectURL'][0])
+    {
+        $request = $this->updateConsumerRedirectURLRequest($consumerid, $update_consumer_redirect_url_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\UpdateConsumerRedirectURL200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\UpdateConsumerRedirectURL200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\UpdateConsumerRedirectURL200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateConsumerRedirectURLAsync
+     *
+     * Update Consumer RedirectURL
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerRedirectURLRequest $update_consumer_redirect_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerRedirectURL'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateConsumerRedirectURLAsync($consumerid, $update_consumer_redirect_url_request, string $contentType = self::contentTypes['updateConsumerRedirectURL'][0])
+    {
+        return $this->updateConsumerRedirectURLAsyncWithHttpInfo($consumerid, $update_consumer_redirect_url_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateConsumerRedirectURLAsyncWithHttpInfo
+     *
+     * Update Consumer RedirectURL
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerRedirectURLRequest $update_consumer_redirect_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerRedirectURL'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateConsumerRedirectURLAsyncWithHttpInfo($consumerid, $update_consumer_redirect_url_request, string $contentType = self::contentTypes['updateConsumerRedirectURL'][0])
+    {
+        $returnType = '\OpenBankProject\Model\UpdateConsumerRedirectURL200Response';
+        $request = $this->updateConsumerRedirectURLRequest($consumerid, $update_consumer_redirect_url_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateConsumerRedirectURL'
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateConsumerRedirectURLRequest $update_consumer_redirect_url_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateConsumerRedirectURL'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateConsumerRedirectURLRequest($consumerid, $update_consumer_redirect_url_request, string $contentType = self::contentTypes['updateConsumerRedirectURL'][0])
+    {
+
+        // verify the required parameter 'consumerid' is set
+        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $consumerid when calling updateConsumerRedirectURL'
+            );
+        }
+
+        // verify the required parameter 'update_consumer_redirect_url_request' is set
+        if ($update_consumer_redirect_url_request === null || (is_array($update_consumer_redirect_url_request) && count($update_consumer_redirect_url_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_consumer_redirect_url_request when calling updateConsumerRedirectURL'
+            );
+        }
+
+
+        $resourcePath = '/obp/v5.1.0/management/consumers/{consumerid}/consumer/redirect_url';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($consumerid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'consumerid' . '}',
+                ObjectSerializer::toPathValue($consumerid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($update_consumer_redirect_url_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_consumer_redirect_url_request));
+            } else {
+                $httpBody = $update_consumer_redirect_url_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateRateLimits
+     *
+     * Set Rate Limits / Call Limits per Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRateLimits'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\UpdateRateLimitsRequest
+     */
+    public function updateRateLimits($consumerid, $ratelimitingid, $update_rate_limits_request, string $contentType = self::contentTypes['updateRateLimits'][0])
+    {
+        list($response) = $this->updateRateLimitsWithHttpInfo($consumerid, $ratelimitingid, $update_rate_limits_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateRateLimitsWithHttpInfo
+     *
+     * Set Rate Limits / Call Limits per Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRateLimits'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\UpdateRateLimitsRequest, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateRateLimitsWithHttpInfo($consumerid, $ratelimitingid, $update_rate_limits_request, string $contentType = self::contentTypes['updateRateLimits'][0])
+    {
+        $request = $this->updateRateLimitsRequest($consumerid, $ratelimitingid, $update_rate_limits_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\UpdateRateLimitsRequest',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\UpdateRateLimitsRequest',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\UpdateRateLimitsRequest',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateRateLimitsAsync
+     *
+     * Set Rate Limits / Call Limits per Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRateLimits'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateRateLimitsAsync($consumerid, $ratelimitingid, $update_rate_limits_request, string $contentType = self::contentTypes['updateRateLimits'][0])
+    {
+        return $this->updateRateLimitsAsyncWithHttpInfo($consumerid, $ratelimitingid, $update_rate_limits_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateRateLimitsAsyncWithHttpInfo
+     *
+     * Set Rate Limits / Call Limits per Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRateLimits'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateRateLimitsAsyncWithHttpInfo($consumerid, $ratelimitingid, $update_rate_limits_request, string $contentType = self::contentTypes['updateRateLimits'][0])
+    {
+        $returnType = '\OpenBankProject\Model\UpdateRateLimitsRequest';
+        $request = $this->updateRateLimitsRequest($consumerid, $ratelimitingid, $update_rate_limits_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateRateLimits'
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  string $ratelimitingid The RATELIMITINGID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateRateLimitsRequest $update_rate_limits_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRateLimits'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateRateLimitsRequest($consumerid, $ratelimitingid, $update_rate_limits_request, string $contentType = self::contentTypes['updateRateLimits'][0])
+    {
+
+        // verify the required parameter 'consumerid' is set
+        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $consumerid when calling updateRateLimits'
             );
         }
 
         // verify the required parameter 'ratelimitingid' is set
         if ($ratelimitingid === null || (is_array($ratelimitingid) && count($ratelimitingid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $ratelimitingid when calling oBPv600UpdateRateLimits'
+                'Missing the required parameter $ratelimitingid when calling updateRateLimits'
             );
         }
 
-        // verify the required parameter 'obpv600_update_rate_limits_request' is set
-        if ($obpv600_update_rate_limits_request === null || (is_array($obpv600_update_rate_limits_request) && count($obpv600_update_rate_limits_request) === 0)) {
+        // verify the required parameter 'update_rate_limits_request' is set
+        if ($update_rate_limits_request === null || (is_array($update_rate_limits_request) && count($update_rate_limits_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_update_rate_limits_request when calling oBPv600UpdateRateLimits'
+                'Missing the required parameter $update_rate_limits_request when calling updateRateLimits'
             );
         }
 
@@ -7272,12 +6987,12 @@ class ConsumerApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_update_rate_limits_request)) {
+        if (isset($update_rate_limits_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_update_rate_limits_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_rate_limits_request));
             } else {
-                $httpBody = $obpv600_update_rate_limits_request;
+                $httpBody = $update_rate_limits_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7313,9 +7028,9 @@ class ConsumerApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -7340,38 +7055,38 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600VerifyOidcClient
+     * Operation verifyOidcClient
      *
      * Verify OIDC Client
      *
-     * @param  \OpenBankProject\Model\OBPv600VerifyOidcClientRequest $obpv600_verify_oidc_client_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600VerifyOidcClient'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\VerifyOidcClientRequest $verify_oidc_client_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['verifyOidcClient'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600VerifyOidcClient200Response
+     * @return \OpenBankProject\Model\VerifyOidcClient200Response
      */
-    public function oBPv600VerifyOidcClient($obpv600_verify_oidc_client_request, string $contentType = self::contentTypes['oBPv600VerifyOidcClient'][0])
+    public function verifyOidcClient($verify_oidc_client_request, string $contentType = self::contentTypes['verifyOidcClient'][0])
     {
-        list($response) = $this->oBPv600VerifyOidcClientWithHttpInfo($obpv600_verify_oidc_client_request, $contentType);
+        list($response) = $this->verifyOidcClientWithHttpInfo($verify_oidc_client_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600VerifyOidcClientWithHttpInfo
+     * Operation verifyOidcClientWithHttpInfo
      *
      * Verify OIDC Client
      *
-     * @param  \OpenBankProject\Model\OBPv600VerifyOidcClientRequest $obpv600_verify_oidc_client_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600VerifyOidcClient'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\VerifyOidcClientRequest $verify_oidc_client_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['verifyOidcClient'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600VerifyOidcClient200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\VerifyOidcClient200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600VerifyOidcClientWithHttpInfo($obpv600_verify_oidc_client_request, string $contentType = self::contentTypes['oBPv600VerifyOidcClient'][0])
+    public function verifyOidcClientWithHttpInfo($verify_oidc_client_request, string $contentType = self::contentTypes['verifyOidcClient'][0])
     {
-        $request = $this->oBPv600VerifyOidcClientRequest($obpv600_verify_oidc_client_request, $contentType);
+        $request = $this->verifyOidcClientRequest($verify_oidc_client_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7399,7 +7114,7 @@ class ConsumerApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600VerifyOidcClient200Response',
+                        '\OpenBankProject\Model\VerifyOidcClient200Response',
                         $request,
                         $response,
                     );
@@ -7421,7 +7136,7 @@ class ConsumerApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600VerifyOidcClient200Response',
+                '\OpenBankProject\Model\VerifyOidcClient200Response',
                 $request,
                 $response,
             );
@@ -7430,7 +7145,7 @@ class ConsumerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600VerifyOidcClient200Response',
+                        '\OpenBankProject\Model\VerifyOidcClient200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7443,19 +7158,19 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600VerifyOidcClientAsync
+     * Operation verifyOidcClientAsync
      *
      * Verify OIDC Client
      *
-     * @param  \OpenBankProject\Model\OBPv600VerifyOidcClientRequest $obpv600_verify_oidc_client_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600VerifyOidcClient'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\VerifyOidcClientRequest $verify_oidc_client_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['verifyOidcClient'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600VerifyOidcClientAsync($obpv600_verify_oidc_client_request, string $contentType = self::contentTypes['oBPv600VerifyOidcClient'][0])
+    public function verifyOidcClientAsync($verify_oidc_client_request, string $contentType = self::contentTypes['verifyOidcClient'][0])
     {
-        return $this->oBPv600VerifyOidcClientAsyncWithHttpInfo($obpv600_verify_oidc_client_request, $contentType)
+        return $this->verifyOidcClientAsyncWithHttpInfo($verify_oidc_client_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7464,20 +7179,20 @@ class ConsumerApi
     }
 
     /**
-     * Operation oBPv600VerifyOidcClientAsyncWithHttpInfo
+     * Operation verifyOidcClientAsyncWithHttpInfo
      *
      * Verify OIDC Client
      *
-     * @param  \OpenBankProject\Model\OBPv600VerifyOidcClientRequest $obpv600_verify_oidc_client_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600VerifyOidcClient'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\VerifyOidcClientRequest $verify_oidc_client_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['verifyOidcClient'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600VerifyOidcClientAsyncWithHttpInfo($obpv600_verify_oidc_client_request, string $contentType = self::contentTypes['oBPv600VerifyOidcClient'][0])
+    public function verifyOidcClientAsyncWithHttpInfo($verify_oidc_client_request, string $contentType = self::contentTypes['verifyOidcClient'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600VerifyOidcClient200Response';
-        $request = $this->oBPv600VerifyOidcClientRequest($obpv600_verify_oidc_client_request, $contentType);
+        $returnType = '\OpenBankProject\Model\VerifyOidcClient200Response';
+        $request = $this->verifyOidcClientRequest($verify_oidc_client_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7516,21 +7231,21 @@ class ConsumerApi
     }
 
     /**
-     * Create request for operation 'oBPv600VerifyOidcClient'
+     * Create request for operation 'verifyOidcClient'
      *
-     * @param  \OpenBankProject\Model\OBPv600VerifyOidcClientRequest $obpv600_verify_oidc_client_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600VerifyOidcClient'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\VerifyOidcClientRequest $verify_oidc_client_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['verifyOidcClient'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600VerifyOidcClientRequest($obpv600_verify_oidc_client_request, string $contentType = self::contentTypes['oBPv600VerifyOidcClient'][0])
+    public function verifyOidcClientRequest($verify_oidc_client_request, string $contentType = self::contentTypes['verifyOidcClient'][0])
     {
 
-        // verify the required parameter 'obpv600_verify_oidc_client_request' is set
-        if ($obpv600_verify_oidc_client_request === null || (is_array($obpv600_verify_oidc_client_request) && count($obpv600_verify_oidc_client_request) === 0)) {
+        // verify the required parameter 'verify_oidc_client_request' is set
+        if ($verify_oidc_client_request === null || (is_array($verify_oidc_client_request) && count($verify_oidc_client_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_verify_oidc_client_request when calling oBPv600VerifyOidcClient'
+                'Missing the required parameter $verify_oidc_client_request when calling verifyOidcClient'
             );
         }
 
@@ -7553,12 +7268,12 @@ class ConsumerApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_verify_oidc_client_request)) {
+        if (isset($verify_oidc_client_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_verify_oidc_client_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($verify_oidc_client_request));
             } else {
-                $httpBody = $obpv600_verify_oidc_client_request;
+                $httpBody = $verify_oidc_client_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7594,9 +7309,9 @@ class ConsumerApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

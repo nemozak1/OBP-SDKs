@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -25,9 +25,9 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv310CheckFundsAvailable200Response]
-    def o_bpv3_1_0_check_funds_available(bankid, accountid, viewid, opts = {})
-      data, _status_code, _headers = o_bpv3_1_0_check_funds_available_with_http_info(bankid, accountid, viewid, opts)
+    # @return [CheckFundsAvailable200Response]
+    def check_funds_available(bankid, accountid, viewid, opts = {})
+      data, _status_code, _headers = check_funds_available_with_http_info(bankid, accountid, viewid, opts)
       data
     end
 
@@ -37,22 +37,22 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv310CheckFundsAvailable200Response, Integer, Hash)>] OBPv310CheckFundsAvailable200Response data, response status code and response headers
-    def o_bpv3_1_0_check_funds_available_with_http_info(bankid, accountid, viewid, opts = {})
+    # @return [Array<(CheckFundsAvailable200Response, Integer, Hash)>] CheckFundsAvailable200Response data, response status code and response headers
+    def check_funds_available_with_http_info(bankid, accountid, viewid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ConfirmationOfFundsServicePIISApi.o_bpv3_1_0_check_funds_available ...'
+        @api_client.config.logger.debug 'Calling API: ConfirmationOfFundsServicePIISApi.check_funds_available ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ConfirmationOfFundsServicePIISApi.o_bpv3_1_0_check_funds_available"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ConfirmationOfFundsServicePIISApi.check_funds_available"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling ConfirmationOfFundsServicePIISApi.o_bpv3_1_0_check_funds_available"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling ConfirmationOfFundsServicePIISApi.check_funds_available"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling ConfirmationOfFundsServicePIISApi.o_bpv3_1_0_check_funds_available"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling ConfirmationOfFundsServicePIISApi.check_funds_available"
       end
       # resource path
       local_var_path = '/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s))
@@ -72,13 +72,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv310CheckFundsAvailable200Response'
+      return_type = opts[:debug_return_type] || 'CheckFundsAvailable200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ConfirmationOfFundsServicePIISApi.o_bpv3_1_0_check_funds_available",
+        :operation => :"ConfirmationOfFundsServicePIISApi.check_funds_available",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -89,7 +89,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ConfirmationOfFundsServicePIISApi#o_bpv3_1_0_check_funds_available\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ConfirmationOfFundsServicePIISApi#check_funds_available\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

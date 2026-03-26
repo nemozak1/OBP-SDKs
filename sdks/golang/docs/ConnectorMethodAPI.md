@@ -1,20 +1,20 @@
 # \ConnectorMethodAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv400CreateConnectorMethod**](ConnectorMethodAPI.md#OBPv400CreateConnectorMethod) | **Post** /obp/v4.0.0/management/connector-methods | Create Connector Method
-[**OBPv400GetAllConnectorMethods**](ConnectorMethodAPI.md#OBPv400GetAllConnectorMethods) | **Get** /obp/v4.0.0/management/connector-methods | Get all Connector Methods
-[**OBPv400GetConnectorMethod**](ConnectorMethodAPI.md#OBPv400GetConnectorMethod) | **Get** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id
-[**OBPv400UpdateConnectorMethod**](ConnectorMethodAPI.md#OBPv400UpdateConnectorMethod) | **Put** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method
-[**OBPv600GetConnectorMethodNames**](ConnectorMethodAPI.md#OBPv600GetConnectorMethodNames) | **Get** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+[**CreateConnectorMethod**](ConnectorMethodAPI.md#CreateConnectorMethod) | **Post** /obp/v4.0.0/management/connector-methods | Create Connector Method
+[**GetAllConnectorMethods**](ConnectorMethodAPI.md#GetAllConnectorMethods) | **Get** /obp/v4.0.0/management/connector-methods | Get all Connector Methods
+[**GetConnectorMethod**](ConnectorMethodAPI.md#GetConnectorMethod) | **Get** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id
+[**GetConnectorMethodNames**](ConnectorMethodAPI.md#GetConnectorMethodNames) | **Get** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+[**UpdateConnectorMethod**](ConnectorMethodAPI.md#UpdateConnectorMethod) | **Put** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method
 
 
 
-## OBPv400CreateConnectorMethod
+## CreateConnectorMethod
 
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems OBPv400CreateConnectorMethod(ctx).OBPv400CreateConnectorMethodRequest(oBPv400CreateConnectorMethodRequest).Execute()
+> GetAllConnectorMethods200ResponseConnectorsMethodsInner CreateConnectorMethod(ctx).CreateConnectorMethodRequest(createConnectorMethodRequest).Execute()
 
 Create Connector Method
 
@@ -33,17 +33,17 @@ import (
 )
 
 func main() {
-	oBPv400CreateConnectorMethodRequest := *openapiclient.NewOBPv400CreateConnectorMethodRequest("Type_example", *openapiclient.NewOBPv400CreateConnectorMethodRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400CreateConnectorMethodRequest | Request body
+	createConnectorMethodRequest := *openapiclient.NewCreateConnectorMethodRequest() // CreateConnectorMethodRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectorMethodAPI.OBPv400CreateConnectorMethod(context.Background()).OBPv400CreateConnectorMethodRequest(oBPv400CreateConnectorMethodRequest).Execute()
+	resp, r, err := apiClient.ConnectorMethodAPI.CreateConnectorMethod(context.Background()).CreateConnectorMethodRequest(createConnectorMethodRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectorMethodAPI.OBPv400CreateConnectorMethod``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectorMethodAPI.CreateConnectorMethod``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateConnectorMethod`: OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
-	fmt.Fprintf(os.Stdout, "Response from `ConnectorMethodAPI.OBPv400CreateConnectorMethod`: %v\n", resp)
+	// response from `CreateConnectorMethod`: GetAllConnectorMethods200ResponseConnectorsMethodsInner
+	fmt.Fprintf(os.Stdout, "Response from `ConnectorMethodAPI.CreateConnectorMethod`: %v\n", resp)
 }
 ```
 
@@ -53,16 +53,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateConnectorMethodRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateConnectorMethodRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv400CreateConnectorMethodRequest** | [**OBPv400CreateConnectorMethodRequest**](OBPv400CreateConnectorMethodRequest.md) | Request body | 
+ **createConnectorMethodRequest** | [**CreateConnectorMethodRequest**](CreateConnectorMethodRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 ### Authorization
 
@@ -78,9 +78,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetAllConnectorMethods
+## GetAllConnectorMethods
 
-> OBPv400GetAllConnectorMethods200Response OBPv400GetAllConnectorMethods(ctx).Execute()
+> GetAllConnectorMethods200Response GetAllConnectorMethods(ctx).Execute()
 
 Get all Connector Methods
 
@@ -102,13 +102,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectorMethodAPI.OBPv400GetAllConnectorMethods(context.Background()).Execute()
+	resp, r, err := apiClient.ConnectorMethodAPI.GetAllConnectorMethods(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectorMethodAPI.OBPv400GetAllConnectorMethods``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectorMethodAPI.GetAllConnectorMethods``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetAllConnectorMethods`: OBPv400GetAllConnectorMethods200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConnectorMethodAPI.OBPv400GetAllConnectorMethods`: %v\n", resp)
+	// response from `GetAllConnectorMethods`: GetAllConnectorMethods200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConnectorMethodAPI.GetAllConnectorMethods`: %v\n", resp)
 }
 ```
 
@@ -118,12 +118,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetAllConnectorMethodsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAllConnectorMethodsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200Response**](OBPv400GetAllConnectorMethods200Response.md)
+[**GetAllConnectorMethods200Response**](GetAllConnectorMethods200Response.md)
 
 ### Authorization
 
@@ -139,9 +139,9 @@ Other parameters are passed through a pointer to a apiOBPv400GetAllConnectorMeth
 [[Back to README]](../README.md)
 
 
-## OBPv400GetConnectorMethod
+## GetConnectorMethod
 
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems OBPv400GetConnectorMethod(ctx, connectormethodid).Execute()
+> GetAllConnectorMethods200ResponseConnectorsMethodsInner GetConnectorMethod(ctx, connectormethodid).Execute()
 
 Get Connector Method by Id
 
@@ -164,13 +164,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectorMethodAPI.OBPv400GetConnectorMethod(context.Background(), connectormethodid).Execute()
+	resp, r, err := apiClient.ConnectorMethodAPI.GetConnectorMethod(context.Background(), connectormethodid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectorMethodAPI.OBPv400GetConnectorMethod``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectorMethodAPI.GetConnectorMethod``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetConnectorMethod`: OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
-	fmt.Fprintf(os.Stdout, "Response from `ConnectorMethodAPI.OBPv400GetConnectorMethod`: %v\n", resp)
+	// response from `GetConnectorMethod`: GetAllConnectorMethods200ResponseConnectorsMethodsInner
+	fmt.Fprintf(os.Stdout, "Response from `ConnectorMethodAPI.GetConnectorMethod`: %v\n", resp)
 }
 ```
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetConnectorMethodRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetConnectorMethodRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 ### Authorization
 
@@ -209,81 +209,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400UpdateConnectorMethod
+## GetConnectorMethodNames
 
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems OBPv400UpdateConnectorMethod(ctx, connectormethodid).OBPv400UpdateConnectorMethodRequest(oBPv400UpdateConnectorMethodRequest).Execute()
-
-Update Connector Method
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	connectormethodid := "connectormethodid_example" // string | The CONNECTORMETHODID identifier
-	oBPv400UpdateConnectorMethodRequest := *openapiclient.NewOBPv400UpdateConnectorMethodRequest("Type_example", *openapiclient.NewOBPv400UpdateConnectorMethodRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400UpdateConnectorMethodRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectorMethodAPI.OBPv400UpdateConnectorMethod(context.Background(), connectormethodid).OBPv400UpdateConnectorMethodRequest(oBPv400UpdateConnectorMethodRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectorMethodAPI.OBPv400UpdateConnectorMethod``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400UpdateConnectorMethod`: OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
-	fmt.Fprintf(os.Stdout, "Response from `ConnectorMethodAPI.OBPv400UpdateConnectorMethod`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**connectormethodid** | **string** | The CONNECTORMETHODID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400UpdateConnectorMethodRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv400UpdateConnectorMethodRequest** | [**OBPv400UpdateConnectorMethodRequest**](OBPv400UpdateConnectorMethodRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600GetConnectorMethodNames
-
-> OBPv600GetConnectorMethodNames200Response OBPv600GetConnectorMethodNames(ctx).Execute()
+> GetConnectorMethodNames200Response GetConnectorMethodNames(ctx).Execute()
 
 Get Connector Method Names
 
@@ -305,13 +233,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectorMethodAPI.OBPv600GetConnectorMethodNames(context.Background()).Execute()
+	resp, r, err := apiClient.ConnectorMethodAPI.GetConnectorMethodNames(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectorMethodAPI.OBPv600GetConnectorMethodNames``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectorMethodAPI.GetConnectorMethodNames``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetConnectorMethodNames`: OBPv600GetConnectorMethodNames200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConnectorMethodAPI.OBPv600GetConnectorMethodNames`: %v\n", resp)
+	// response from `GetConnectorMethodNames`: GetConnectorMethodNames200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConnectorMethodAPI.GetConnectorMethodNames`: %v\n", resp)
 }
 ```
 
@@ -321,12 +249,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetConnectorMethodNamesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetConnectorMethodNamesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetConnectorMethodNames200Response**](OBPv600GetConnectorMethodNames200Response.md)
+[**GetConnectorMethodNames200Response**](GetConnectorMethodNames200Response.md)
 
 ### Authorization
 
@@ -335,6 +263,78 @@ Other parameters are passed through a pointer to a apiOBPv600GetConnectorMethodN
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateConnectorMethod
+
+> GetAllConnectorMethods200ResponseConnectorsMethodsInner UpdateConnectorMethod(ctx, connectormethodid).UpdateConnectorMethodRequest(updateConnectorMethodRequest).Execute()
+
+Update Connector Method
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	connectormethodid := "connectormethodid_example" // string | The CONNECTORMETHODID identifier
+	updateConnectorMethodRequest := *openapiclient.NewUpdateConnectorMethodRequest() // UpdateConnectorMethodRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ConnectorMethodAPI.UpdateConnectorMethod(context.Background(), connectormethodid).UpdateConnectorMethodRequest(updateConnectorMethodRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectorMethodAPI.UpdateConnectorMethod``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateConnectorMethod`: GetAllConnectorMethods200ResponseConnectorsMethodsInner
+	fmt.Fprintf(os.Stdout, "Response from `ConnectorMethodAPI.UpdateConnectorMethod`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**connectormethodid** | **string** | The CONNECTORMETHODID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateConnectorMethodRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **updateConnectorMethodRequest** | [**UpdateConnectorMethodRequest**](UpdateConnectorMethodRequest.md) | Request body | 
+
+### Return type
+
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

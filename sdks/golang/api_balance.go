@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,26 +24,26 @@ import (
 // BalanceAPIService BalanceAPI service
 type BalanceAPIService service
 
-type ApiOBPv510CreateBankAccountBalanceRequest struct {
+type ApiCreateBankAccountBalanceRequest struct {
 	ctx context.Context
 	ApiService *BalanceAPIService
 	bankid string
 	accountid string
-	oBPv510CreateBankAccountBalanceRequest *OBPv510CreateBankAccountBalanceRequest
+	createBankAccountBalanceRequest *CreateBankAccountBalanceRequest
 }
 
 // Request body
-func (r ApiOBPv510CreateBankAccountBalanceRequest) OBPv510CreateBankAccountBalanceRequest(oBPv510CreateBankAccountBalanceRequest OBPv510CreateBankAccountBalanceRequest) ApiOBPv510CreateBankAccountBalanceRequest {
-	r.oBPv510CreateBankAccountBalanceRequest = &oBPv510CreateBankAccountBalanceRequest
+func (r ApiCreateBankAccountBalanceRequest) CreateBankAccountBalanceRequest(createBankAccountBalanceRequest CreateBankAccountBalanceRequest) ApiCreateBankAccountBalanceRequest {
+	r.createBankAccountBalanceRequest = &createBankAccountBalanceRequest
 	return r
 }
 
-func (r ApiOBPv510CreateBankAccountBalanceRequest) Execute() (*OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems, *http.Response, error) {
-	return r.ApiService.OBPv510CreateBankAccountBalanceExecute(r)
+func (r ApiCreateBankAccountBalanceRequest) Execute() (*GetAllBankAccountBalances200ResponseBalancesInner, *http.Response, error) {
+	return r.ApiService.CreateBankAccountBalanceExecute(r)
 }
 
 /*
-OBPv510CreateBankAccountBalance Create Bank Account Balance
+CreateBankAccountBalance Create Bank Account Balance
 
 <p>Create a new Balance for a Bank Account.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -64,10 +64,10 @@ OBPv510CreateBankAccountBalance Create Bank Account Balance
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
- @return ApiOBPv510CreateBankAccountBalanceRequest
+ @return ApiCreateBankAccountBalanceRequest
 */
-func (a *BalanceAPIService) OBPv510CreateBankAccountBalance(ctx context.Context, bankid string, accountid string) ApiOBPv510CreateBankAccountBalanceRequest {
-	return ApiOBPv510CreateBankAccountBalanceRequest{
+func (a *BalanceAPIService) CreateBankAccountBalance(ctx context.Context, bankid string, accountid string) ApiCreateBankAccountBalanceRequest {
+	return ApiCreateBankAccountBalanceRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -76,16 +76,16 @@ func (a *BalanceAPIService) OBPv510CreateBankAccountBalance(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
-func (a *BalanceAPIService) OBPv510CreateBankAccountBalanceExecute(r ApiOBPv510CreateBankAccountBalanceRequest) (*OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems, *http.Response, error) {
+//  @return GetAllBankAccountBalances200ResponseBalancesInner
+func (a *BalanceAPIService) CreateBankAccountBalanceExecute(r ApiCreateBankAccountBalanceRequest) (*GetAllBankAccountBalances200ResponseBalancesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+		localVarReturnValue  *GetAllBankAccountBalances200ResponseBalancesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BalanceAPIService.OBPv510CreateBankAccountBalance")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BalanceAPIService.CreateBankAccountBalance")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -97,8 +97,8 @@ func (a *BalanceAPIService) OBPv510CreateBankAccountBalanceExecute(r ApiOBPv510C
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510CreateBankAccountBalanceRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510CreateBankAccountBalanceRequest is required and must be specified")
+	if r.createBankAccountBalanceRequest == nil {
+		return localVarReturnValue, nil, reportError("createBankAccountBalanceRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -119,7 +119,7 @@ func (a *BalanceAPIService) OBPv510CreateBankAccountBalanceExecute(r ApiOBPv510C
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510CreateBankAccountBalanceRequest
+	localVarPostBody = r.createBankAccountBalanceRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -144,7 +144,7 @@ func (a *BalanceAPIService) OBPv510CreateBankAccountBalanceExecute(r ApiOBPv510C
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -185,7 +185,7 @@ func (a *BalanceAPIService) OBPv510CreateBankAccountBalanceExecute(r ApiOBPv510C
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510DeleteBankAccountBalanceRequest struct {
+type ApiDeleteBankAccountBalanceRequest struct {
 	ctx context.Context
 	ApiService *BalanceAPIService
 	bankid string
@@ -193,12 +193,12 @@ type ApiOBPv510DeleteBankAccountBalanceRequest struct {
 	balanceid string
 }
 
-func (r ApiOBPv510DeleteBankAccountBalanceRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510DeleteBankAccountBalanceExecute(r)
+func (r ApiDeleteBankAccountBalanceRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteBankAccountBalanceExecute(r)
 }
 
 /*
-OBPv510DeleteBankAccountBalance Delete Bank Account Balance
+DeleteBankAccountBalance Delete Bank Account Balance
 
 <p>Delete a Bank Account Balance specified by BALANCE_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -213,10 +213,10 @@ OBPv510DeleteBankAccountBalance Delete Bank Account Balance
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param balanceid The BALANCEID identifier
- @return ApiOBPv510DeleteBankAccountBalanceRequest
+ @return ApiDeleteBankAccountBalanceRequest
 */
-func (a *BalanceAPIService) OBPv510DeleteBankAccountBalance(ctx context.Context, bankid string, accountid string, balanceid string) ApiOBPv510DeleteBankAccountBalanceRequest {
-	return ApiOBPv510DeleteBankAccountBalanceRequest{
+func (a *BalanceAPIService) DeleteBankAccountBalance(ctx context.Context, bankid string, accountid string, balanceid string) ApiDeleteBankAccountBalanceRequest {
+	return ApiDeleteBankAccountBalanceRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -226,14 +226,14 @@ func (a *BalanceAPIService) OBPv510DeleteBankAccountBalance(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *BalanceAPIService) OBPv510DeleteBankAccountBalanceExecute(r ApiOBPv510DeleteBankAccountBalanceRequest) (*http.Response, error) {
+func (a *BalanceAPIService) DeleteBankAccountBalanceExecute(r ApiDeleteBankAccountBalanceRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BalanceAPIService.OBPv510DeleteBankAccountBalance")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BalanceAPIService.DeleteBankAccountBalance")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -288,7 +288,7 @@ func (a *BalanceAPIService) OBPv510DeleteBankAccountBalanceExecute(r ApiOBPv510D
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -320,19 +320,19 @@ func (a *BalanceAPIService) OBPv510DeleteBankAccountBalanceExecute(r ApiOBPv510D
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetAllBankAccountBalancesRequest struct {
+type ApiGetAllBankAccountBalancesRequest struct {
 	ctx context.Context
 	ApiService *BalanceAPIService
 	bankid string
 	accountid string
 }
 
-func (r ApiOBPv510GetAllBankAccountBalancesRequest) Execute() (*OBPv510GetAllBankAccountBalances200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetAllBankAccountBalancesExecute(r)
+func (r ApiGetAllBankAccountBalancesRequest) Execute() (*GetAllBankAccountBalances200Response, *http.Response, error) {
+	return r.ApiService.GetAllBankAccountBalancesExecute(r)
 }
 
 /*
-OBPv510GetAllBankAccountBalances Get All Bank Account Balances
+GetAllBankAccountBalances Get All Bank Account Balances
 
 <p>Get all Balances for a Bank Account.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -351,10 +351,10 @@ OBPv510GetAllBankAccountBalances Get All Bank Account Balances
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
- @return ApiOBPv510GetAllBankAccountBalancesRequest
+ @return ApiGetAllBankAccountBalancesRequest
 */
-func (a *BalanceAPIService) OBPv510GetAllBankAccountBalances(ctx context.Context, bankid string, accountid string) ApiOBPv510GetAllBankAccountBalancesRequest {
-	return ApiOBPv510GetAllBankAccountBalancesRequest{
+func (a *BalanceAPIService) GetAllBankAccountBalances(ctx context.Context, bankid string, accountid string) ApiGetAllBankAccountBalancesRequest {
+	return ApiGetAllBankAccountBalancesRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -363,16 +363,16 @@ func (a *BalanceAPIService) OBPv510GetAllBankAccountBalances(ctx context.Context
 }
 
 // Execute executes the request
-//  @return OBPv510GetAllBankAccountBalances200Response
-func (a *BalanceAPIService) OBPv510GetAllBankAccountBalancesExecute(r ApiOBPv510GetAllBankAccountBalancesRequest) (*OBPv510GetAllBankAccountBalances200Response, *http.Response, error) {
+//  @return GetAllBankAccountBalances200Response
+func (a *BalanceAPIService) GetAllBankAccountBalancesExecute(r ApiGetAllBankAccountBalancesRequest) (*GetAllBankAccountBalances200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAllBankAccountBalances200Response
+		localVarReturnValue  *GetAllBankAccountBalances200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BalanceAPIService.OBPv510GetAllBankAccountBalances")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BalanceAPIService.GetAllBankAccountBalances")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -426,7 +426,7 @@ func (a *BalanceAPIService) OBPv510GetAllBankAccountBalancesExecute(r ApiOBPv510
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -467,7 +467,7 @@ func (a *BalanceAPIService) OBPv510GetAllBankAccountBalancesExecute(r ApiOBPv510
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetBankAccountBalanceByIdRequest struct {
+type ApiGetBankAccountBalanceByIdRequest struct {
 	ctx context.Context
 	ApiService *BalanceAPIService
 	bankid string
@@ -475,12 +475,12 @@ type ApiOBPv510GetBankAccountBalanceByIdRequest struct {
 	balanceid string
 }
 
-func (r ApiOBPv510GetBankAccountBalanceByIdRequest) Execute() (*OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems, *http.Response, error) {
-	return r.ApiService.OBPv510GetBankAccountBalanceByIdExecute(r)
+func (r ApiGetBankAccountBalanceByIdRequest) Execute() (*GetAllBankAccountBalances200ResponseBalancesInner, *http.Response, error) {
+	return r.ApiService.GetBankAccountBalanceByIdExecute(r)
 }
 
 /*
-OBPv510GetBankAccountBalanceById Get Bank Account Balance By ID
+GetBankAccountBalanceById Get Bank Account Balance By ID
 
 <p>Get a specific Bank Account Balance by its BALANCE_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -500,10 +500,10 @@ OBPv510GetBankAccountBalanceById Get Bank Account Balance By ID
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param balanceid The BALANCEID identifier
- @return ApiOBPv510GetBankAccountBalanceByIdRequest
+ @return ApiGetBankAccountBalanceByIdRequest
 */
-func (a *BalanceAPIService) OBPv510GetBankAccountBalanceById(ctx context.Context, bankid string, accountid string, balanceid string) ApiOBPv510GetBankAccountBalanceByIdRequest {
-	return ApiOBPv510GetBankAccountBalanceByIdRequest{
+func (a *BalanceAPIService) GetBankAccountBalanceById(ctx context.Context, bankid string, accountid string, balanceid string) ApiGetBankAccountBalanceByIdRequest {
+	return ApiGetBankAccountBalanceByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -513,16 +513,16 @@ func (a *BalanceAPIService) OBPv510GetBankAccountBalanceById(ctx context.Context
 }
 
 // Execute executes the request
-//  @return OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
-func (a *BalanceAPIService) OBPv510GetBankAccountBalanceByIdExecute(r ApiOBPv510GetBankAccountBalanceByIdRequest) (*OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems, *http.Response, error) {
+//  @return GetAllBankAccountBalances200ResponseBalancesInner
+func (a *BalanceAPIService) GetBankAccountBalanceByIdExecute(r ApiGetBankAccountBalanceByIdRequest) (*GetAllBankAccountBalances200ResponseBalancesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+		localVarReturnValue  *GetAllBankAccountBalances200ResponseBalancesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BalanceAPIService.OBPv510GetBankAccountBalanceById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BalanceAPIService.GetBankAccountBalanceById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -577,7 +577,7 @@ func (a *BalanceAPIService) OBPv510GetBankAccountBalanceByIdExecute(r ApiOBPv510
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -618,27 +618,27 @@ func (a *BalanceAPIService) OBPv510GetBankAccountBalanceByIdExecute(r ApiOBPv510
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510UpdateBankAccountBalanceRequest struct {
+type ApiUpdateBankAccountBalanceRequest struct {
 	ctx context.Context
 	ApiService *BalanceAPIService
 	bankid string
 	accountid string
 	balanceid string
-	oBPv510CreateBankAccountBalanceRequest *OBPv510CreateBankAccountBalanceRequest
+	createBankAccountBalanceRequest *CreateBankAccountBalanceRequest
 }
 
 // Request body
-func (r ApiOBPv510UpdateBankAccountBalanceRequest) OBPv510CreateBankAccountBalanceRequest(oBPv510CreateBankAccountBalanceRequest OBPv510CreateBankAccountBalanceRequest) ApiOBPv510UpdateBankAccountBalanceRequest {
-	r.oBPv510CreateBankAccountBalanceRequest = &oBPv510CreateBankAccountBalanceRequest
+func (r ApiUpdateBankAccountBalanceRequest) CreateBankAccountBalanceRequest(createBankAccountBalanceRequest CreateBankAccountBalanceRequest) ApiUpdateBankAccountBalanceRequest {
+	r.createBankAccountBalanceRequest = &createBankAccountBalanceRequest
 	return r
 }
 
-func (r ApiOBPv510UpdateBankAccountBalanceRequest) Execute() (*OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems, *http.Response, error) {
-	return r.ApiService.OBPv510UpdateBankAccountBalanceExecute(r)
+func (r ApiUpdateBankAccountBalanceRequest) Execute() (*GetAllBankAccountBalances200ResponseBalancesInner, *http.Response, error) {
+	return r.ApiService.UpdateBankAccountBalanceExecute(r)
 }
 
 /*
-OBPv510UpdateBankAccountBalance Update Bank Account Balance
+UpdateBankAccountBalance Update Bank Account Balance
 
 <p>Update an existing Bank Account Balance specified by BALANCE_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -658,10 +658,10 @@ OBPv510UpdateBankAccountBalance Update Bank Account Balance
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param balanceid The BALANCEID identifier
- @return ApiOBPv510UpdateBankAccountBalanceRequest
+ @return ApiUpdateBankAccountBalanceRequest
 */
-func (a *BalanceAPIService) OBPv510UpdateBankAccountBalance(ctx context.Context, bankid string, accountid string, balanceid string) ApiOBPv510UpdateBankAccountBalanceRequest {
-	return ApiOBPv510UpdateBankAccountBalanceRequest{
+func (a *BalanceAPIService) UpdateBankAccountBalance(ctx context.Context, bankid string, accountid string, balanceid string) ApiUpdateBankAccountBalanceRequest {
+	return ApiUpdateBankAccountBalanceRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -671,16 +671,16 @@ func (a *BalanceAPIService) OBPv510UpdateBankAccountBalance(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
-func (a *BalanceAPIService) OBPv510UpdateBankAccountBalanceExecute(r ApiOBPv510UpdateBankAccountBalanceRequest) (*OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems, *http.Response, error) {
+//  @return GetAllBankAccountBalances200ResponseBalancesInner
+func (a *BalanceAPIService) UpdateBankAccountBalanceExecute(r ApiUpdateBankAccountBalanceRequest) (*GetAllBankAccountBalances200ResponseBalancesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+		localVarReturnValue  *GetAllBankAccountBalances200ResponseBalancesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BalanceAPIService.OBPv510UpdateBankAccountBalance")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BalanceAPIService.UpdateBankAccountBalance")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -693,8 +693,8 @@ func (a *BalanceAPIService) OBPv510UpdateBankAccountBalanceExecute(r ApiOBPv510U
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510CreateBankAccountBalanceRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510CreateBankAccountBalanceRequest is required and must be specified")
+	if r.createBankAccountBalanceRequest == nil {
+		return localVarReturnValue, nil, reportError("createBankAccountBalanceRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -715,7 +715,7 @@ func (a *BalanceAPIService) OBPv510UpdateBankAccountBalanceExecute(r ApiOBPv510U
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510CreateBankAccountBalanceRequest
+	localVarPostBody = r.createBankAccountBalanceRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -740,7 +740,7 @@ func (a *BalanceAPIService) OBPv510UpdateBankAccountBalanceExecute(r ApiOBPv510U
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

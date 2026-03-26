@@ -18,8 +18,8 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv300_private_accounts_at_one_bank200_response import OBPv300PrivateAccountsAtOneBank200Response
-from obp_python.models.obpv600_get_accounts_at_bank200_response import OBPv600GetAccountsAtBank200Response
+from obp_python.models.get_accounts_at_bank200_response import GetAccountsAtBank200Response
+from obp_python.models.private_accounts_at_one_bank200_response import PrivateAccountsAtOneBank200Response
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -40,7 +40,7 @@ class PrivateDataApi:
 
 
     @validate_call
-    def o_bpv3_0_0_core_private_accounts_all_banks(
+    def core_private_accounts_all_banks(
         self,
         _request_timeout: Union[
             None,
@@ -54,7 +54,7 @@ class PrivateDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv300PrivateAccountsAtOneBank200Response:
+    ) -> PrivateAccountsAtOneBank200Response:
         """Get Accounts at all Banks (private)
 
         <p>Returns the list of accounts containing private views for the user.<br /> Each account lists the views available to the user.</p> <p>optional request parameters:</p> <ul> <li>account_type_filter: one or many accountType value, split by comma</li> <li>account_type_filter_operation: the filter type of account_type_filter, value must be INCLUDE or EXCLUDE</li> </ul> <p>whole url example:<br /> /my/accounts?account_type_filter=330,CURRENT+PLUS&amp;account_type_filter_operation=INCLUDE</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#\"><strong>account_type</strong></a>: AC</p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views\"><strong>views</strong></a>:</p> 
@@ -81,7 +81,7 @@ class PrivateDataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_0_0_core_private_accounts_all_banks_serialize(
+        _param = self._core_private_accounts_all_banks_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -89,7 +89,7 @@ class PrivateDataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300PrivateAccountsAtOneBank200Response",
+            '200': "PrivateAccountsAtOneBank200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -104,7 +104,7 @@ class PrivateDataApi:
 
 
     @validate_call
-    def o_bpv3_0_0_core_private_accounts_all_banks_with_http_info(
+    def core_private_accounts_all_banks_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -118,7 +118,7 @@ class PrivateDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv300PrivateAccountsAtOneBank200Response]:
+    ) -> ApiResponse[PrivateAccountsAtOneBank200Response]:
         """Get Accounts at all Banks (private)
 
         <p>Returns the list of accounts containing private views for the user.<br /> Each account lists the views available to the user.</p> <p>optional request parameters:</p> <ul> <li>account_type_filter: one or many accountType value, split by comma</li> <li>account_type_filter_operation: the filter type of account_type_filter, value must be INCLUDE or EXCLUDE</li> </ul> <p>whole url example:<br /> /my/accounts?account_type_filter=330,CURRENT+PLUS&amp;account_type_filter_operation=INCLUDE</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#\"><strong>account_type</strong></a>: AC</p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views\"><strong>views</strong></a>:</p> 
@@ -145,7 +145,7 @@ class PrivateDataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_0_0_core_private_accounts_all_banks_serialize(
+        _param = self._core_private_accounts_all_banks_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -153,7 +153,7 @@ class PrivateDataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300PrivateAccountsAtOneBank200Response",
+            '200': "PrivateAccountsAtOneBank200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -168,7 +168,7 @@ class PrivateDataApi:
 
 
     @validate_call
-    def o_bpv3_0_0_core_private_accounts_all_banks_without_preload_content(
+    def core_private_accounts_all_banks_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -209,7 +209,7 @@ class PrivateDataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_0_0_core_private_accounts_all_banks_serialize(
+        _param = self._core_private_accounts_all_banks_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -217,7 +217,7 @@ class PrivateDataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300PrivateAccountsAtOneBank200Response",
+            '200': "PrivateAccountsAtOneBank200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -227,7 +227,7 @@ class PrivateDataApi:
         return response_data.response
 
 
-    def _o_bpv3_0_0_core_private_accounts_all_banks_serialize(
+    def _core_private_accounts_all_banks_serialize(
         self,
         _request_auth,
         _content_type,
@@ -291,7 +291,7 @@ class PrivateDataApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_accounts_at_bank(
+    def get_accounts_at_bank(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -306,7 +306,7 @@ class PrivateDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetAccountsAtBank200Response:
+    ) -> GetAccountsAtBank200Response:
         """Get Accounts at Bank
 
         <p>Returns the list of accounts at BANK_ID that the user has access to.<br /> For each account the API returns the account ID and the views available to the user.<br /> Each account must have at least one private View.</p> <p>This v6.0.0 version returns <code>account_id</code> instead of <code>id</code> for consistency with other v6.0.0 endpoints.</p> <p>Optional request parameters for filtering with attributes:<br /> URL params example: /banks/some-bank-id/accounts?limit=50&amp;offset=1</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
@@ -335,7 +335,7 @@ class PrivateDataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_accounts_at_bank_serialize(
+        _param = self._get_accounts_at_bank_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -344,7 +344,7 @@ class PrivateDataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAccountsAtBank200Response",
+            '200': "GetAccountsAtBank200Response",
             '404': None,
             '500': None,
         }
@@ -360,7 +360,7 @@ class PrivateDataApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_accounts_at_bank_with_http_info(
+    def get_accounts_at_bank_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -375,7 +375,7 @@ class PrivateDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetAccountsAtBank200Response]:
+    ) -> ApiResponse[GetAccountsAtBank200Response]:
         """Get Accounts at Bank
 
         <p>Returns the list of accounts at BANK_ID that the user has access to.<br /> For each account the API returns the account ID and the views available to the user.<br /> Each account must have at least one private View.</p> <p>This v6.0.0 version returns <code>account_id</code> instead of <code>id</code> for consistency with other v6.0.0 endpoints.</p> <p>Optional request parameters for filtering with attributes:<br /> URL params example: /banks/some-bank-id/accounts?limit=50&amp;offset=1</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
@@ -404,7 +404,7 @@ class PrivateDataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_accounts_at_bank_serialize(
+        _param = self._get_accounts_at_bank_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -413,7 +413,7 @@ class PrivateDataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAccountsAtBank200Response",
+            '200': "GetAccountsAtBank200Response",
             '404': None,
             '500': None,
         }
@@ -429,7 +429,7 @@ class PrivateDataApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_accounts_at_bank_without_preload_content(
+    def get_accounts_at_bank_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -473,7 +473,7 @@ class PrivateDataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_accounts_at_bank_serialize(
+        _param = self._get_accounts_at_bank_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -482,7 +482,7 @@ class PrivateDataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAccountsAtBank200Response",
+            '200': "GetAccountsAtBank200Response",
             '404': None,
             '500': None,
         }
@@ -493,7 +493,7 @@ class PrivateDataApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_accounts_at_bank_serialize(
+    def _get_accounts_at_bank_serialize(
         self,
         bankid,
         _request_auth,

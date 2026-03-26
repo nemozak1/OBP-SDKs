@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,17 +24,17 @@ import (
 // OIDCAPIService OIDCAPI service
 type OIDCAPIService service
 
-type ApiOBPv310GetOAuth2ServerJWKsURIsRequest struct {
+type ApiGetOAuth2ServerJWKsURIsRequest struct {
 	ctx context.Context
 	ApiService *OIDCAPIService
 }
 
-func (r ApiOBPv310GetOAuth2ServerJWKsURIsRequest) Execute() (*OBPv310GetOAuth2ServerJWKsURIs200Response, *http.Response, error) {
-	return r.ApiService.OBPv310GetOAuth2ServerJWKsURIsExecute(r)
+func (r ApiGetOAuth2ServerJWKsURIsRequest) Execute() (*GetOAuth2ServerJWKsURIs200Response, *http.Response, error) {
+	return r.ApiService.GetOAuth2ServerJWKsURIsExecute(r)
 }
 
 /*
-OBPv310GetOAuth2ServerJWKsURIs Get JSON Web Key (JWK) URIs
+GetOAuth2ServerJWKsURIs Get JSON Web Key (JWK) URIs
 
 <p>Get the OAuth2 server's public JSON Web Key (JWK) URIs.<br />
 It is required by client applications to validate ID tokens, self-contained access tokens and other issued objects.</p>
@@ -45,26 +45,26 @@ It is required by client applications to validate ID tokens, self-contained acce
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv310GetOAuth2ServerJWKsURIsRequest
+ @return ApiGetOAuth2ServerJWKsURIsRequest
 */
-func (a *OIDCAPIService) OBPv310GetOAuth2ServerJWKsURIs(ctx context.Context) ApiOBPv310GetOAuth2ServerJWKsURIsRequest {
-	return ApiOBPv310GetOAuth2ServerJWKsURIsRequest{
+func (a *OIDCAPIService) GetOAuth2ServerJWKsURIs(ctx context.Context) ApiGetOAuth2ServerJWKsURIsRequest {
+	return ApiGetOAuth2ServerJWKsURIsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv310GetOAuth2ServerJWKsURIs200Response
-func (a *OIDCAPIService) OBPv310GetOAuth2ServerJWKsURIsExecute(r ApiOBPv310GetOAuth2ServerJWKsURIsRequest) (*OBPv310GetOAuth2ServerJWKsURIs200Response, *http.Response, error) {
+//  @return GetOAuth2ServerJWKsURIs200Response
+func (a *OIDCAPIService) GetOAuth2ServerJWKsURIsExecute(r ApiGetOAuth2ServerJWKsURIsRequest) (*GetOAuth2ServerJWKsURIs200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetOAuth2ServerJWKsURIs200Response
+		localVarReturnValue  *GetOAuth2ServerJWKsURIs200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OIDCAPIService.OBPv310GetOAuth2ServerJWKsURIs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OIDCAPIService.GetOAuth2ServerJWKsURIs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -129,17 +129,17 @@ func (a *OIDCAPIService) OBPv310GetOAuth2ServerJWKsURIsExecute(r ApiOBPv310GetOA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv310GetObpConnectorLoopbackRequest struct {
+type ApiGetObpConnectorLoopbackRequest struct {
 	ctx context.Context
 	ApiService *OIDCAPIService
 }
 
-func (r ApiOBPv310GetObpConnectorLoopbackRequest) Execute() (*OBPv310GetObpConnectorLoopback200Response, *http.Response, error) {
-	return r.ApiService.OBPv310GetObpConnectorLoopbackExecute(r)
+func (r ApiGetObpConnectorLoopbackRequest) Execute() (*GetObpConnectorLoopback200Response, *http.Response, error) {
+	return r.ApiService.GetObpConnectorLoopbackExecute(r)
 }
 
 /*
-OBPv310GetObpConnectorLoopback Get Connector Status (Loopback)
+GetObpConnectorLoopback Get Connector Status (Loopback)
 
 <p>This endpoint makes a call to the Connector to check the backend transport is reachable. (Deprecated)</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -150,26 +150,26 @@ OBPv310GetObpConnectorLoopback Get Connector Status (Loopback)
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv310GetObpConnectorLoopbackRequest
+ @return ApiGetObpConnectorLoopbackRequest
 */
-func (a *OIDCAPIService) OBPv310GetObpConnectorLoopback(ctx context.Context) ApiOBPv310GetObpConnectorLoopbackRequest {
-	return ApiOBPv310GetObpConnectorLoopbackRequest{
+func (a *OIDCAPIService) GetObpConnectorLoopback(ctx context.Context) ApiGetObpConnectorLoopbackRequest {
+	return ApiGetObpConnectorLoopbackRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv310GetObpConnectorLoopback200Response
-func (a *OIDCAPIService) OBPv310GetObpConnectorLoopbackExecute(r ApiOBPv310GetObpConnectorLoopbackRequest) (*OBPv310GetObpConnectorLoopback200Response, *http.Response, error) {
+//  @return GetObpConnectorLoopback200Response
+func (a *OIDCAPIService) GetObpConnectorLoopbackExecute(r ApiGetObpConnectorLoopbackRequest) (*GetObpConnectorLoopback200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetObpConnectorLoopback200Response
+		localVarReturnValue  *GetObpConnectorLoopback200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OIDCAPIService.OBPv310GetObpConnectorLoopback")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OIDCAPIService.GetObpConnectorLoopback")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -221,7 +221,7 @@ func (a *OIDCAPIService) OBPv310GetObpConnectorLoopbackExecute(r ApiOBPv310GetOb
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -262,23 +262,29 @@ func (a *OIDCAPIService) OBPv310GetObpConnectorLoopbackExecute(r ApiOBPv310GetOb
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetOidcClientRequest struct {
+type ApiGetOidcClientRequest struct {
 	ctx context.Context
 	ApiService *OIDCAPIService
 	clientid string
 }
 
-func (r ApiOBPv600GetOidcClientRequest) Execute() (*OBPv600GetOidcClient200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetOidcClientExecute(r)
+func (r ApiGetOidcClientRequest) Execute() (*GetOidcClient200Response, *http.Response, error) {
+	return r.ApiService.GetOidcClientExecute(r)
 }
 
 /*
-OBPv600GetOidcClient Get OIDC Client
+GetOidcClient Get OIDC Client
 
 <p>Gets an OIDC/OAuth2 client's metadata by client_id.</p>
 <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br />
 This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#">CLIENT_ID</a>: CLIENT_ID</p>
 <p><strong>JSON response body fields:</strong></p>
@@ -291,10 +297,10 @@ This endpoint does not verify the client secret - use POST /oidc/clients/verify 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param clientid The CLIENTID identifier
- @return ApiOBPv600GetOidcClientRequest
+ @return ApiGetOidcClientRequest
 */
-func (a *OIDCAPIService) OBPv600GetOidcClient(ctx context.Context, clientid string) ApiOBPv600GetOidcClientRequest {
-	return ApiOBPv600GetOidcClientRequest{
+func (a *OIDCAPIService) GetOidcClient(ctx context.Context, clientid string) ApiGetOidcClientRequest {
+	return ApiGetOidcClientRequest{
 		ApiService: a,
 		ctx: ctx,
 		clientid: clientid,
@@ -302,16 +308,16 @@ func (a *OIDCAPIService) OBPv600GetOidcClient(ctx context.Context, clientid stri
 }
 
 // Execute executes the request
-//  @return OBPv600GetOidcClient200Response
-func (a *OIDCAPIService) OBPv600GetOidcClientExecute(r ApiOBPv600GetOidcClientRequest) (*OBPv600GetOidcClient200Response, *http.Response, error) {
+//  @return GetOidcClient200Response
+func (a *OIDCAPIService) GetOidcClientExecute(r ApiGetOidcClientRequest) (*GetOidcClient200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetOidcClient200Response
+		localVarReturnValue  *GetOidcClient200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OIDCAPIService.OBPv600GetOidcClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OIDCAPIService.GetOidcClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -364,7 +370,7 @@ func (a *OIDCAPIService) OBPv600GetOidcClientExecute(r ApiOBPv600GetOidcClientRe
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -405,29 +411,35 @@ func (a *OIDCAPIService) OBPv600GetOidcClientExecute(r ApiOBPv600GetOidcClientRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600VerifyOidcClientRequest struct {
+type ApiVerifyOidcClientRequest struct {
 	ctx context.Context
 	ApiService *OIDCAPIService
-	oBPv600VerifyOidcClientRequest *OBPv600VerifyOidcClientRequest
+	verifyOidcClientRequest *VerifyOidcClientRequest
 }
 
 // Request body
-func (r ApiOBPv600VerifyOidcClientRequest) OBPv600VerifyOidcClientRequest(oBPv600VerifyOidcClientRequest OBPv600VerifyOidcClientRequest) ApiOBPv600VerifyOidcClientRequest {
-	r.oBPv600VerifyOidcClientRequest = &oBPv600VerifyOidcClientRequest
+func (r ApiVerifyOidcClientRequest) VerifyOidcClientRequest(verifyOidcClientRequest VerifyOidcClientRequest) ApiVerifyOidcClientRequest {
+	r.verifyOidcClientRequest = &verifyOidcClientRequest
 	return r
 }
 
-func (r ApiOBPv600VerifyOidcClientRequest) Execute() (*OBPv600VerifyOidcClient200Response, *http.Response, error) {
-	return r.ApiService.OBPv600VerifyOidcClientExecute(r)
+func (r ApiVerifyOidcClientRequest) Execute() (*VerifyOidcClient200Response, *http.Response, error) {
+	return r.ApiService.VerifyOidcClientExecute(r)
 }
 
 /*
-OBPv600VerifyOidcClient Verify OIDC Client
+VerifyOidcClient Verify OIDC Client
 
 <p>Verifies an OIDC/OAuth2 client's credentials.</p>
 <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br />
 Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
 <p><strong>JSON request body fields:</strong></p>
 <p><a href="/glossary#"><strong>client_id</strong></a>: client_id</p>
 <p><a href="/glossary#"><strong>client_secret</strong></a>: client_secret</p>
@@ -439,26 +451,26 @@ Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600VerifyOidcClientRequest
+ @return ApiVerifyOidcClientRequest
 */
-func (a *OIDCAPIService) OBPv600VerifyOidcClient(ctx context.Context) ApiOBPv600VerifyOidcClientRequest {
-	return ApiOBPv600VerifyOidcClientRequest{
+func (a *OIDCAPIService) VerifyOidcClient(ctx context.Context) ApiVerifyOidcClientRequest {
+	return ApiVerifyOidcClientRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600VerifyOidcClient200Response
-func (a *OIDCAPIService) OBPv600VerifyOidcClientExecute(r ApiOBPv600VerifyOidcClientRequest) (*OBPv600VerifyOidcClient200Response, *http.Response, error) {
+//  @return VerifyOidcClient200Response
+func (a *OIDCAPIService) VerifyOidcClientExecute(r ApiVerifyOidcClientRequest) (*VerifyOidcClient200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600VerifyOidcClient200Response
+		localVarReturnValue  *VerifyOidcClient200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OIDCAPIService.OBPv600VerifyOidcClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OIDCAPIService.VerifyOidcClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -468,8 +480,8 @@ func (a *OIDCAPIService) OBPv600VerifyOidcClientExecute(r ApiOBPv600VerifyOidcCl
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600VerifyOidcClientRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600VerifyOidcClientRequest is required and must be specified")
+	if r.verifyOidcClientRequest == nil {
+		return localVarReturnValue, nil, reportError("verifyOidcClientRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -490,7 +502,7 @@ func (a *OIDCAPIService) OBPv600VerifyOidcClientExecute(r ApiOBPv600VerifyOidcCl
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600VerifyOidcClientRequest
+	localVarPostBody = r.verifyOidcClientRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -515,7 +527,7 @@ func (a *OIDCAPIService) OBPv600VerifyOidcClientExecute(r ApiOBPv600VerifyOidcCl
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

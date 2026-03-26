@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,19 +75,19 @@ class CounterpartyLimitsApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv510CreateCounterpartyLimit' => [
+        'createCounterpartyLimit' => [
             'application/json',
         ],
-        'oBPv510DeleteCounterpartyLimit' => [
+        'deleteCounterpartyLimit' => [
             'application/json',
         ],
-        'oBPv510GetCounterpartyLimit' => [
+        'getCounterpartyLimit' => [
             'application/json',
         ],
-        'oBPv510GetCounterpartyLimitStatus' => [
+        'getCounterpartyLimitStatus' => [
             'application/json',
         ],
-        'oBPv510UpdateCounterpartyLimit' => [
+        'updateCounterpartyLimit' => [
             'application/json',
         ],
     ];
@@ -139,7 +139,7 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Operation oBPv510CreateCounterpartyLimit
+     * Operation createCounterpartyLimit
      *
      * Create Counterparty Limit
      *
@@ -147,21 +147,21 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateCounterpartyLimit'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateVRPConsentRequestRequestToAccountLimit $create_vrp_consent_request_request_to_account_limit Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response
+     * @return \OpenBankProject\Model\GetCounterpartyLimit200Response
      */
-    public function oBPv510CreateCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, string $contentType = self::contentTypes['oBPv510CreateCounterpartyLimit'][0])
+    public function createCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, string $contentType = self::contentTypes['createCounterpartyLimit'][0])
     {
-        list($response) = $this->oBPv510CreateCounterpartyLimitWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, $contentType);
+        list($response) = $this->createCounterpartyLimitWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510CreateCounterpartyLimitWithHttpInfo
+     * Operation createCounterpartyLimitWithHttpInfo
      *
      * Create Counterparty Limit
      *
@@ -169,16 +169,16 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateCounterpartyLimit'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateVRPConsentRequestRequestToAccountLimit $create_vrp_consent_request_request_to_account_limit Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCounterpartyLimit200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510CreateCounterpartyLimitWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, string $contentType = self::contentTypes['oBPv510CreateCounterpartyLimit'][0])
+    public function createCounterpartyLimitWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, string $contentType = self::contentTypes['createCounterpartyLimit'][0])
     {
-        $request = $this->oBPv510CreateCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, $contentType);
+        $request = $this->createCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -206,7 +206,7 @@ class CounterpartyLimitsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response',
+                        '\OpenBankProject\Model\GetCounterpartyLimit200Response',
                         $request,
                         $response,
                     );
@@ -228,7 +228,7 @@ class CounterpartyLimitsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response',
+                '\OpenBankProject\Model\GetCounterpartyLimit200Response',
                 $request,
                 $response,
             );
@@ -237,7 +237,7 @@ class CounterpartyLimitsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response',
+                        '\OpenBankProject\Model\GetCounterpartyLimit200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -250,7 +250,7 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Operation oBPv510CreateCounterpartyLimitAsync
+     * Operation createCounterpartyLimitAsync
      *
      * Create Counterparty Limit
      *
@@ -258,15 +258,15 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateCounterpartyLimit'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateVRPConsentRequestRequestToAccountLimit $create_vrp_consent_request_request_to_account_limit Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateCounterpartyLimitAsync($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, string $contentType = self::contentTypes['oBPv510CreateCounterpartyLimit'][0])
+    public function createCounterpartyLimitAsync($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, string $contentType = self::contentTypes['createCounterpartyLimit'][0])
     {
-        return $this->oBPv510CreateCounterpartyLimitAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, $contentType)
+        return $this->createCounterpartyLimitAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -275,7 +275,7 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Operation oBPv510CreateCounterpartyLimitAsyncWithHttpInfo
+     * Operation createCounterpartyLimitAsyncWithHttpInfo
      *
      * Create Counterparty Limit
      *
@@ -283,16 +283,16 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateCounterpartyLimit'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateVRPConsentRequestRequestToAccountLimit $create_vrp_consent_request_request_to_account_limit Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateCounterpartyLimitAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, string $contentType = self::contentTypes['oBPv510CreateCounterpartyLimit'][0])
+    public function createCounterpartyLimitAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, string $contentType = self::contentTypes['createCounterpartyLimit'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response';
-        $request = $this->oBPv510CreateCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, $contentType);
+        $returnType = '\OpenBankProject\Model\GetCounterpartyLimit200Response';
+        $request = $this->createCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -331,53 +331,53 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Create request for operation 'oBPv510CreateCounterpartyLimit'
+     * Create request for operation 'createCounterpartyLimit'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateCounterpartyLimit'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateVRPConsentRequestRequestToAccountLimit $create_vrp_consent_request_request_to_account_limit Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510CreateCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, string $contentType = self::contentTypes['oBPv510CreateCounterpartyLimit'][0])
+    public function createCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, string $contentType = self::contentTypes['createCounterpartyLimit'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510CreateCounterpartyLimit'
+                'Missing the required parameter $bankid when calling createCounterpartyLimit'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv510CreateCounterpartyLimit'
+                'Missing the required parameter $accountid when calling createCounterpartyLimit'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv510CreateCounterpartyLimit'
+                'Missing the required parameter $viewid when calling createCounterpartyLimit'
             );
         }
 
         // verify the required parameter 'counterpartyid' is set
         if ($counterpartyid === null || (is_array($counterpartyid) && count($counterpartyid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $counterpartyid when calling oBPv510CreateCounterpartyLimit'
+                'Missing the required parameter $counterpartyid when calling createCounterpartyLimit'
             );
         }
 
-        // verify the required parameter 'obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit' is set
-        if ($obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit === null || (is_array($obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit) && count($obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit) === 0)) {
+        // verify the required parameter 'create_vrp_consent_request_request_to_account_limit' is set
+        if ($create_vrp_consent_request_request_to_account_limit === null || (is_array($create_vrp_consent_request_request_to_account_limit) && count($create_vrp_consent_request_request_to_account_limit) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit when calling oBPv510CreateCounterpartyLimit'
+                'Missing the required parameter $create_vrp_consent_request_request_to_account_limit when calling createCounterpartyLimit'
             );
         }
 
@@ -432,12 +432,12 @@ class CounterpartyLimitsApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit)) {
+        if (isset($create_vrp_consent_request_request_to_account_limit)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_vrp_consent_request_request_to_account_limit));
             } else {
-                $httpBody = $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit;
+                $httpBody = $create_vrp_consent_request_request_to_account_limit;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -473,9 +473,9 @@ class CounterpartyLimitsApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -500,7 +500,7 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Operation oBPv510DeleteCounterpartyLimit
+     * Operation deleteCounterpartyLimit
      *
      * Delete Counterparty Limit
      *
@@ -508,19 +508,19 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteCounterpartyLimit'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv510DeleteCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv510DeleteCounterpartyLimit'][0])
+    public function deleteCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['deleteCounterpartyLimit'][0])
     {
-        $this->oBPv510DeleteCounterpartyLimitWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+        $this->deleteCounterpartyLimitWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType);
     }
 
     /**
-     * Operation oBPv510DeleteCounterpartyLimitWithHttpInfo
+     * Operation deleteCounterpartyLimitWithHttpInfo
      *
      * Delete Counterparty Limit
      *
@@ -528,15 +528,15 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteCounterpartyLimit'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510DeleteCounterpartyLimitWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv510DeleteCounterpartyLimit'][0])
+    public function deleteCounterpartyLimitWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['deleteCounterpartyLimit'][0])
     {
-        $request = $this->oBPv510DeleteCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+        $request = $this->deleteCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -572,7 +572,7 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Operation oBPv510DeleteCounterpartyLimitAsync
+     * Operation deleteCounterpartyLimitAsync
      *
      * Delete Counterparty Limit
      *
@@ -580,14 +580,14 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteCounterpartyLimit'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510DeleteCounterpartyLimitAsync($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv510DeleteCounterpartyLimit'][0])
+    public function deleteCounterpartyLimitAsync($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['deleteCounterpartyLimit'][0])
     {
-        return $this->oBPv510DeleteCounterpartyLimitAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType)
+        return $this->deleteCounterpartyLimitAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -596,7 +596,7 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Operation oBPv510DeleteCounterpartyLimitAsyncWithHttpInfo
+     * Operation deleteCounterpartyLimitAsyncWithHttpInfo
      *
      * Delete Counterparty Limit
      *
@@ -604,15 +604,15 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteCounterpartyLimit'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510DeleteCounterpartyLimitAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv510DeleteCounterpartyLimit'][0])
+    public function deleteCounterpartyLimitAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['deleteCounterpartyLimit'][0])
     {
         $returnType = '';
-        $request = $this->oBPv510DeleteCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+        $request = $this->deleteCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -638,45 +638,45 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Create request for operation 'oBPv510DeleteCounterpartyLimit'
+     * Create request for operation 'deleteCounterpartyLimit'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteCounterpartyLimit'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510DeleteCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv510DeleteCounterpartyLimit'][0])
+    public function deleteCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['deleteCounterpartyLimit'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510DeleteCounterpartyLimit'
+                'Missing the required parameter $bankid when calling deleteCounterpartyLimit'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv510DeleteCounterpartyLimit'
+                'Missing the required parameter $accountid when calling deleteCounterpartyLimit'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv510DeleteCounterpartyLimit'
+                'Missing the required parameter $viewid when calling deleteCounterpartyLimit'
             );
         }
 
         // verify the required parameter 'counterpartyid' is set
         if ($counterpartyid === null || (is_array($counterpartyid) && count($counterpartyid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $counterpartyid when calling oBPv510DeleteCounterpartyLimit'
+                'Missing the required parameter $counterpartyid when calling deleteCounterpartyLimit'
             );
         }
 
@@ -765,9 +765,9 @@ class CounterpartyLimitsApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -792,7 +792,7 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Operation oBPv510GetCounterpartyLimit
+     * Operation getCounterpartyLimit
      *
      * Get Counterparty Limit
      *
@@ -800,20 +800,20 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCounterpartyLimit'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response
+     * @return \OpenBankProject\Model\GetCounterpartyLimit200Response
      */
-    public function oBPv510GetCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv510GetCounterpartyLimit'][0])
+    public function getCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getCounterpartyLimit'][0])
     {
-        list($response) = $this->oBPv510GetCounterpartyLimitWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+        list($response) = $this->getCounterpartyLimitWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510GetCounterpartyLimitWithHttpInfo
+     * Operation getCounterpartyLimitWithHttpInfo
      *
      * Get Counterparty Limit
      *
@@ -821,15 +821,15 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCounterpartyLimit'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCounterpartyLimit200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510GetCounterpartyLimitWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv510GetCounterpartyLimit'][0])
+    public function getCounterpartyLimitWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getCounterpartyLimit'][0])
     {
-        $request = $this->oBPv510GetCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+        $request = $this->getCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -857,7 +857,7 @@ class CounterpartyLimitsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response',
+                        '\OpenBankProject\Model\GetCounterpartyLimit200Response',
                         $request,
                         $response,
                     );
@@ -879,7 +879,7 @@ class CounterpartyLimitsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response',
+                '\OpenBankProject\Model\GetCounterpartyLimit200Response',
                 $request,
                 $response,
             );
@@ -888,7 +888,7 @@ class CounterpartyLimitsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response',
+                        '\OpenBankProject\Model\GetCounterpartyLimit200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -901,7 +901,7 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Operation oBPv510GetCounterpartyLimitAsync
+     * Operation getCounterpartyLimitAsync
      *
      * Get Counterparty Limit
      *
@@ -909,14 +909,14 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCounterpartyLimit'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetCounterpartyLimitAsync($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv510GetCounterpartyLimit'][0])
+    public function getCounterpartyLimitAsync($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getCounterpartyLimit'][0])
     {
-        return $this->oBPv510GetCounterpartyLimitAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType)
+        return $this->getCounterpartyLimitAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -925,7 +925,7 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Operation oBPv510GetCounterpartyLimitAsyncWithHttpInfo
+     * Operation getCounterpartyLimitAsyncWithHttpInfo
      *
      * Get Counterparty Limit
      *
@@ -933,15 +933,15 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCounterpartyLimit'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetCounterpartyLimitAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv510GetCounterpartyLimit'][0])
+    public function getCounterpartyLimitAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getCounterpartyLimit'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response';
-        $request = $this->oBPv510GetCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetCounterpartyLimit200Response';
+        $request = $this->getCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -980,45 +980,45 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Create request for operation 'oBPv510GetCounterpartyLimit'
+     * Create request for operation 'getCounterpartyLimit'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCounterpartyLimit'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510GetCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv510GetCounterpartyLimit'][0])
+    public function getCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getCounterpartyLimit'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510GetCounterpartyLimit'
+                'Missing the required parameter $bankid when calling getCounterpartyLimit'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv510GetCounterpartyLimit'
+                'Missing the required parameter $accountid when calling getCounterpartyLimit'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv510GetCounterpartyLimit'
+                'Missing the required parameter $viewid when calling getCounterpartyLimit'
             );
         }
 
         // verify the required parameter 'counterpartyid' is set
         if ($counterpartyid === null || (is_array($counterpartyid) && count($counterpartyid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $counterpartyid when calling oBPv510GetCounterpartyLimit'
+                'Missing the required parameter $counterpartyid when calling getCounterpartyLimit'
             );
         }
 
@@ -1107,9 +1107,9 @@ class CounterpartyLimitsApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1134,7 +1134,7 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Operation oBPv510GetCounterpartyLimitStatus
+     * Operation getCounterpartyLimitStatus
      *
      * Get Counterparty Limit Status
      *
@@ -1142,20 +1142,20 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCounterpartyLimitStatus'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyLimitStatus'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetCounterpartyLimitStatus200Response
+     * @return \OpenBankProject\Model\GetCounterpartyLimitStatus200Response
      */
-    public function oBPv510GetCounterpartyLimitStatus($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv510GetCounterpartyLimitStatus'][0])
+    public function getCounterpartyLimitStatus($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getCounterpartyLimitStatus'][0])
     {
-        list($response) = $this->oBPv510GetCounterpartyLimitStatusWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+        list($response) = $this->getCounterpartyLimitStatusWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510GetCounterpartyLimitStatusWithHttpInfo
+     * Operation getCounterpartyLimitStatusWithHttpInfo
      *
      * Get Counterparty Limit Status
      *
@@ -1163,15 +1163,15 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCounterpartyLimitStatus'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyLimitStatus'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetCounterpartyLimitStatus200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCounterpartyLimitStatus200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510GetCounterpartyLimitStatusWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv510GetCounterpartyLimitStatus'][0])
+    public function getCounterpartyLimitStatusWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getCounterpartyLimitStatus'][0])
     {
-        $request = $this->oBPv510GetCounterpartyLimitStatusRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+        $request = $this->getCounterpartyLimitStatusRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1199,7 +1199,7 @@ class CounterpartyLimitsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetCounterpartyLimitStatus200Response',
+                        '\OpenBankProject\Model\GetCounterpartyLimitStatus200Response',
                         $request,
                         $response,
                     );
@@ -1221,7 +1221,7 @@ class CounterpartyLimitsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetCounterpartyLimitStatus200Response',
+                '\OpenBankProject\Model\GetCounterpartyLimitStatus200Response',
                 $request,
                 $response,
             );
@@ -1230,7 +1230,7 @@ class CounterpartyLimitsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetCounterpartyLimitStatus200Response',
+                        '\OpenBankProject\Model\GetCounterpartyLimitStatus200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1243,7 +1243,7 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Operation oBPv510GetCounterpartyLimitStatusAsync
+     * Operation getCounterpartyLimitStatusAsync
      *
      * Get Counterparty Limit Status
      *
@@ -1251,14 +1251,14 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCounterpartyLimitStatus'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyLimitStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetCounterpartyLimitStatusAsync($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv510GetCounterpartyLimitStatus'][0])
+    public function getCounterpartyLimitStatusAsync($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getCounterpartyLimitStatus'][0])
     {
-        return $this->oBPv510GetCounterpartyLimitStatusAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType)
+        return $this->getCounterpartyLimitStatusAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1267,7 +1267,7 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Operation oBPv510GetCounterpartyLimitStatusAsyncWithHttpInfo
+     * Operation getCounterpartyLimitStatusAsyncWithHttpInfo
      *
      * Get Counterparty Limit Status
      *
@@ -1275,15 +1275,15 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCounterpartyLimitStatus'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyLimitStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetCounterpartyLimitStatusAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv510GetCounterpartyLimitStatus'][0])
+    public function getCounterpartyLimitStatusAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getCounterpartyLimitStatus'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetCounterpartyLimitStatus200Response';
-        $request = $this->oBPv510GetCounterpartyLimitStatusRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetCounterpartyLimitStatus200Response';
+        $request = $this->getCounterpartyLimitStatusRequest($bankid, $accountid, $viewid, $counterpartyid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1322,45 +1322,45 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Create request for operation 'oBPv510GetCounterpartyLimitStatus'
+     * Create request for operation 'getCounterpartyLimitStatus'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCounterpartyLimitStatus'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCounterpartyLimitStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510GetCounterpartyLimitStatusRequest($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['oBPv510GetCounterpartyLimitStatus'][0])
+    public function getCounterpartyLimitStatusRequest($bankid, $accountid, $viewid, $counterpartyid, string $contentType = self::contentTypes['getCounterpartyLimitStatus'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510GetCounterpartyLimitStatus'
+                'Missing the required parameter $bankid when calling getCounterpartyLimitStatus'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv510GetCounterpartyLimitStatus'
+                'Missing the required parameter $accountid when calling getCounterpartyLimitStatus'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv510GetCounterpartyLimitStatus'
+                'Missing the required parameter $viewid when calling getCounterpartyLimitStatus'
             );
         }
 
         // verify the required parameter 'counterpartyid' is set
         if ($counterpartyid === null || (is_array($counterpartyid) && count($counterpartyid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $counterpartyid when calling oBPv510GetCounterpartyLimitStatus'
+                'Missing the required parameter $counterpartyid when calling getCounterpartyLimitStatus'
             );
         }
 
@@ -1449,9 +1449,9 @@ class CounterpartyLimitsApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1476,7 +1476,7 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Operation oBPv510UpdateCounterpartyLimit
+     * Operation updateCounterpartyLimit
      *
      * Update Counterparty Limit
      *
@@ -1484,21 +1484,21 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateCounterpartyLimit'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateVRPConsentRequestRequestToAccountLimit $create_vrp_consent_request_request_to_account_limit Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response
+     * @return \OpenBankProject\Model\GetCounterpartyLimit200Response
      */
-    public function oBPv510UpdateCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, string $contentType = self::contentTypes['oBPv510UpdateCounterpartyLimit'][0])
+    public function updateCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, string $contentType = self::contentTypes['updateCounterpartyLimit'][0])
     {
-        list($response) = $this->oBPv510UpdateCounterpartyLimitWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, $contentType);
+        list($response) = $this->updateCounterpartyLimitWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510UpdateCounterpartyLimitWithHttpInfo
+     * Operation updateCounterpartyLimitWithHttpInfo
      *
      * Update Counterparty Limit
      *
@@ -1506,16 +1506,16 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateCounterpartyLimit'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateVRPConsentRequestRequestToAccountLimit $create_vrp_consent_request_request_to_account_limit Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCounterpartyLimit200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510UpdateCounterpartyLimitWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, string $contentType = self::contentTypes['oBPv510UpdateCounterpartyLimit'][0])
+    public function updateCounterpartyLimitWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, string $contentType = self::contentTypes['updateCounterpartyLimit'][0])
     {
-        $request = $this->oBPv510UpdateCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, $contentType);
+        $request = $this->updateCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1543,7 +1543,7 @@ class CounterpartyLimitsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response',
+                        '\OpenBankProject\Model\GetCounterpartyLimit200Response',
                         $request,
                         $response,
                     );
@@ -1565,7 +1565,7 @@ class CounterpartyLimitsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response',
+                '\OpenBankProject\Model\GetCounterpartyLimit200Response',
                 $request,
                 $response,
             );
@@ -1574,7 +1574,7 @@ class CounterpartyLimitsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response',
+                        '\OpenBankProject\Model\GetCounterpartyLimit200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1587,7 +1587,7 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Operation oBPv510UpdateCounterpartyLimitAsync
+     * Operation updateCounterpartyLimitAsync
      *
      * Update Counterparty Limit
      *
@@ -1595,15 +1595,15 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateCounterpartyLimit'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateVRPConsentRequestRequestToAccountLimit $create_vrp_consent_request_request_to_account_limit Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510UpdateCounterpartyLimitAsync($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, string $contentType = self::contentTypes['oBPv510UpdateCounterpartyLimit'][0])
+    public function updateCounterpartyLimitAsync($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, string $contentType = self::contentTypes['updateCounterpartyLimit'][0])
     {
-        return $this->oBPv510UpdateCounterpartyLimitAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, $contentType)
+        return $this->updateCounterpartyLimitAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1612,7 +1612,7 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Operation oBPv510UpdateCounterpartyLimitAsyncWithHttpInfo
+     * Operation updateCounterpartyLimitAsyncWithHttpInfo
      *
      * Update Counterparty Limit
      *
@@ -1620,16 +1620,16 @@ class CounterpartyLimitsApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateCounterpartyLimit'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateVRPConsentRequestRequestToAccountLimit $create_vrp_consent_request_request_to_account_limit Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510UpdateCounterpartyLimitAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, string $contentType = self::contentTypes['oBPv510UpdateCounterpartyLimit'][0])
+    public function updateCounterpartyLimitAsyncWithHttpInfo($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, string $contentType = self::contentTypes['updateCounterpartyLimit'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response';
-        $request = $this->oBPv510UpdateCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, $contentType);
+        $returnType = '\OpenBankProject\Model\GetCounterpartyLimit200Response';
+        $request = $this->updateCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1668,53 +1668,53 @@ class CounterpartyLimitsApi
     }
 
     /**
-     * Create request for operation 'oBPv510UpdateCounterpartyLimit'
+     * Create request for operation 'updateCounterpartyLimit'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $counterpartyid The COUNTERPARTYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateCounterpartyLimit'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateVRPConsentRequestRequestToAccountLimit $create_vrp_consent_request_request_to_account_limit Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCounterpartyLimit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510UpdateCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, string $contentType = self::contentTypes['oBPv510UpdateCounterpartyLimit'][0])
+    public function updateCounterpartyLimitRequest($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit, string $contentType = self::contentTypes['updateCounterpartyLimit'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510UpdateCounterpartyLimit'
+                'Missing the required parameter $bankid when calling updateCounterpartyLimit'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv510UpdateCounterpartyLimit'
+                'Missing the required parameter $accountid when calling updateCounterpartyLimit'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv510UpdateCounterpartyLimit'
+                'Missing the required parameter $viewid when calling updateCounterpartyLimit'
             );
         }
 
         // verify the required parameter 'counterpartyid' is set
         if ($counterpartyid === null || (is_array($counterpartyid) && count($counterpartyid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $counterpartyid when calling oBPv510UpdateCounterpartyLimit'
+                'Missing the required parameter $counterpartyid when calling updateCounterpartyLimit'
             );
         }
 
-        // verify the required parameter 'obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit' is set
-        if ($obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit === null || (is_array($obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit) && count($obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit) === 0)) {
+        // verify the required parameter 'create_vrp_consent_request_request_to_account_limit' is set
+        if ($create_vrp_consent_request_request_to_account_limit === null || (is_array($create_vrp_consent_request_request_to_account_limit) && count($create_vrp_consent_request_request_to_account_limit) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit when calling oBPv510UpdateCounterpartyLimit'
+                'Missing the required parameter $create_vrp_consent_request_request_to_account_limit when calling updateCounterpartyLimit'
             );
         }
 
@@ -1769,12 +1769,12 @@ class CounterpartyLimitsApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit)) {
+        if (isset($create_vrp_consent_request_request_to_account_limit)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_vrp_consent_request_request_to_account_limit));
             } else {
-                $httpBody = $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit;
+                $httpBody = $create_vrp_consent_request_request_to_account_limit;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1810,9 +1810,9 @@ class CounterpartyLimitsApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

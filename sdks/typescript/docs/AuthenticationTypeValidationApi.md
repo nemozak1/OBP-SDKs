@@ -1,21 +1,21 @@
 # AuthenticationTypeValidationApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#obpv400createauthenticationtypevalidation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation |
-| [**oBPv400DeleteAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#obpv400deleteauthenticationtypevalidation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation |
-| [**oBPv400GetAllAuthenticationTypeValidations**](AuthenticationTypeValidationApi.md#obpv400getallauthenticationtypevalidations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations |
-| [**oBPv400GetAllAuthenticationTypeValidationsPublic**](AuthenticationTypeValidationApi.md#obpv400getallauthenticationtypevalidationspublic) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public |
-| [**oBPv400GetAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#obpv400getauthenticationtypevalidation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation |
-| [**oBPv400UpdateAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#obpv400updateauthenticationtypevalidationoperation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation |
+| [**createAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#createauthenticationtypevalidation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation |
+| [**deleteAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#deleteauthenticationtypevalidation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation |
+| [**getAllAuthenticationTypeValidations**](AuthenticationTypeValidationApi.md#getallauthenticationtypevalidations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations |
+| [**getAllAuthenticationTypeValidationsPublic**](AuthenticationTypeValidationApi.md#getallauthenticationtypevalidationspublic) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public |
+| [**getAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#getauthenticationtypevalidation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation |
+| [**updateAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#updateauthenticationtypevalidationoperation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation |
 
 
 
-## oBPv400CreateAuthenticationTypeValidation
+## createAuthenticationTypeValidation
 
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400CreateAuthenticationTypeValidation(operationid, oBPv400UpdateAuthenticationTypeValidationRequest)
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner createAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest)
 
 Create an Authentication Type Validation
 
@@ -28,7 +28,7 @@ import {
   Configuration,
   AuthenticationTypeValidationApi,
 } from 'obp-typescript';
-import type { OBPv400CreateAuthenticationTypeValidationRequest } from 'obp-typescript';
+import type { CreateAuthenticationTypeValidationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -45,12 +45,12 @@ async function example() {
   const body = {
     // string | The OPERATIONID identifier
     operationid: operationid_example,
-    // OBPv400UpdateAuthenticationTypeValidationRequest | Request body
-    oBPv400UpdateAuthenticationTypeValidationRequest: {type=object, properties={tl={type=array, items={type=object, properties={}}}, head={type=string, enum=[DirectLogin, GatewayLogin, DAuth, OAuth2_OIDC, OAuth2_OIDC_FAPI, Anonymous]}}},
-  } satisfies OBPv400CreateAuthenticationTypeValidationRequest;
+    // UpdateAuthenticationTypeValidationRequest | Request body
+    updateAuthenticationTypeValidationRequest: {type=object, properties={head={type=string, enum=[DirectLogin, GatewayLogin, DAuth, OAuth2_OIDC, OAuth2_OIDC_FAPI, Anonymous]}, tl={type=array, items={type=object, properties={}}}}},
+  } satisfies CreateAuthenticationTypeValidationRequest;
 
   try {
-    const data = await api.oBPv400CreateAuthenticationTypeValidation(body);
+    const data = await api.createAuthenticationTypeValidation(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -67,11 +67,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **operationid** | `string` | The OPERATIONID identifier | [Defaults to `undefined`] |
-| **oBPv400UpdateAuthenticationTypeValidationRequest** | [OBPv400UpdateAuthenticationTypeValidationRequest](OBPv400UpdateAuthenticationTypeValidationRequest.md) | Request body | |
+| **updateAuthenticationTypeValidationRequest** | [UpdateAuthenticationTypeValidationRequest](UpdateAuthenticationTypeValidationRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -92,9 +92,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400DeleteAuthenticationTypeValidation
+## deleteAuthenticationTypeValidation
 
-> oBPv400DeleteAuthenticationTypeValidation(operationid)
+> deleteAuthenticationTypeValidation(operationid)
 
 Delete an Authentication Type Validation
 
@@ -107,7 +107,7 @@ import {
   Configuration,
   AuthenticationTypeValidationApi,
 } from 'obp-typescript';
-import type { OBPv400DeleteAuthenticationTypeValidationRequest } from 'obp-typescript';
+import type { DeleteAuthenticationTypeValidationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -124,10 +124,10 @@ async function example() {
   const body = {
     // string | The OPERATIONID identifier
     operationid: operationid_example,
-  } satisfies OBPv400DeleteAuthenticationTypeValidationRequest;
+  } satisfies DeleteAuthenticationTypeValidationRequest;
 
   try {
-    const data = await api.oBPv400DeleteAuthenticationTypeValidation(body);
+    const data = await api.deleteAuthenticationTypeValidation(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -168,9 +168,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetAllAuthenticationTypeValidations
+## getAllAuthenticationTypeValidations
 
-> OBPv400GetAllAuthenticationTypeValidationsPublic200Response oBPv400GetAllAuthenticationTypeValidations()
+> GetAllAuthenticationTypeValidationsPublic200Response getAllAuthenticationTypeValidations()
 
 Get all Authentication Type Validations
 
@@ -183,7 +183,7 @@ import {
   Configuration,
   AuthenticationTypeValidationApi,
 } from 'obp-typescript';
-import type { OBPv400GetAllAuthenticationTypeValidationsRequest } from 'obp-typescript';
+import type { GetAllAuthenticationTypeValidationsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -198,7 +198,7 @@ async function example() {
   const api = new AuthenticationTypeValidationApi(config);
 
   try {
-    const data = await api.oBPv400GetAllAuthenticationTypeValidations();
+    const data = await api.getAllAuthenticationTypeValidations();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -215,7 +215,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -236,9 +236,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetAllAuthenticationTypeValidationsPublic
+## getAllAuthenticationTypeValidationsPublic
 
-> OBPv400GetAllAuthenticationTypeValidationsPublic200Response oBPv400GetAllAuthenticationTypeValidationsPublic()
+> GetAllAuthenticationTypeValidationsPublic200Response getAllAuthenticationTypeValidationsPublic()
 
 Get all Authentication Type Validations - public
 
@@ -251,14 +251,14 @@ import {
   Configuration,
   AuthenticationTypeValidationApi,
 } from 'obp-typescript';
-import type { OBPv400GetAllAuthenticationTypeValidationsPublicRequest } from 'obp-typescript';
+import type { GetAllAuthenticationTypeValidationsPublicRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
   const api = new AuthenticationTypeValidationApi();
 
   try {
-    const data = await api.oBPv400GetAllAuthenticationTypeValidationsPublic();
+    const data = await api.getAllAuthenticationTypeValidationsPublic();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -275,7 +275,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -296,9 +296,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetAuthenticationTypeValidation
+## getAuthenticationTypeValidation
 
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400GetAuthenticationTypeValidation(operationid)
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner getAuthenticationTypeValidation(operationid)
 
 Get an Authentication Type Validation
 
@@ -311,7 +311,7 @@ import {
   Configuration,
   AuthenticationTypeValidationApi,
 } from 'obp-typescript';
-import type { OBPv400GetAuthenticationTypeValidationRequest } from 'obp-typescript';
+import type { GetAuthenticationTypeValidationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -328,10 +328,10 @@ async function example() {
   const body = {
     // string | The OPERATIONID identifier
     operationid: operationid_example,
-  } satisfies OBPv400GetAuthenticationTypeValidationRequest;
+  } satisfies GetAuthenticationTypeValidationRequest;
 
   try {
-    const data = await api.oBPv400GetAuthenticationTypeValidation(body);
+    const data = await api.getAuthenticationTypeValidation(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -351,7 +351,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -372,9 +372,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400UpdateAuthenticationTypeValidation
+## updateAuthenticationTypeValidation
 
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400UpdateAuthenticationTypeValidation(operationid, oBPv400UpdateAuthenticationTypeValidationRequest)
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner updateAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest)
 
 Update an Authentication Type Validation
 
@@ -387,7 +387,7 @@ import {
   Configuration,
   AuthenticationTypeValidationApi,
 } from 'obp-typescript';
-import type { OBPv400UpdateAuthenticationTypeValidationOperationRequest } from 'obp-typescript';
+import type { UpdateAuthenticationTypeValidationOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -404,12 +404,12 @@ async function example() {
   const body = {
     // string | The OPERATIONID identifier
     operationid: operationid_example,
-    // OBPv400UpdateAuthenticationTypeValidationRequest | Request body
-    oBPv400UpdateAuthenticationTypeValidationRequest: {"type":"object","properties":{"tl":{"type":"array","items":{"type":"object","properties":{}}},"head":{"type":"string","enum":["DirectLogin","GatewayLogin","DAuth","OAuth2_OIDC","OAuth2_OIDC_FAPI","Anonymous"]}}},
-  } satisfies OBPv400UpdateAuthenticationTypeValidationOperationRequest;
+    // UpdateAuthenticationTypeValidationRequest | Request body
+    updateAuthenticationTypeValidationRequest: {"type":"object","properties":{"head":{"type":"string","enum":["DirectLogin","GatewayLogin","DAuth","OAuth2_OIDC","OAuth2_OIDC_FAPI","Anonymous"]},"tl":{"type":"array","items":{"type":"object","properties":{}}}}},
+  } satisfies UpdateAuthenticationTypeValidationOperationRequest;
 
   try {
-    const data = await api.oBPv400UpdateAuthenticationTypeValidation(body);
+    const data = await api.updateAuthenticationTypeValidation(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -426,11 +426,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **operationid** | `string` | The OPERATIONID identifier | [Defaults to `undefined`] |
-| **oBPv400UpdateAuthenticationTypeValidationRequest** | [OBPv400UpdateAuthenticationTypeValidationRequest](OBPv400UpdateAuthenticationTypeValidationRequest.md) | Request body | |
+| **updateAuthenticationTypeValidationRequest** | [UpdateAuthenticationTypeValidationRequest](UpdateAuthenticationTypeValidationRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 

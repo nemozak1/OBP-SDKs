@@ -1,16 +1,16 @@
 # OpenBankProject.Api.ExperimentalApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv310CreateMeeting**](ExperimentalApi.md#obpv310createmeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call) |
-| [**OBPv310GetMeeting**](ExperimentalApi.md#obpv310getmeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting |
-| [**OBPv310GetMeetings**](ExperimentalApi.md#obpv310getmeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings |
+| [**CreateMeeting**](ExperimentalApi.md#createmeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call) |
+| [**GetMeeting**](ExperimentalApi.md#getmeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting |
+| [**GetMeetings**](ExperimentalApi.md#getmeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings |
 
-<a id="obpv310createmeeting"></a>
-# **OBPv310CreateMeeting**
-> OBPv310GetMeeting200Response OBPv310CreateMeeting (string bankid, OBPv310CreateMeetingRequest oBPv310CreateMeetingRequest)
+<a id="createmeeting"></a>
+# **CreateMeeting**
+> GetMeeting200Response CreateMeeting (string bankid, CreateMeetingRequest createMeetingRequest)
 
 Create Meeting (video conference/call)
 
@@ -22,11 +22,11 @@ Create Meeting (video conference/call)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
-| **oBPv310CreateMeetingRequest** | [**OBPv310CreateMeetingRequest**](OBPv310CreateMeetingRequest.md) | Request body |  |
+| **createMeetingRequest** | [**CreateMeetingRequest**](CreateMeetingRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 ### Authorization
 
@@ -47,9 +47,9 @@ Create Meeting (video conference/call)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv310getmeeting"></a>
-# **OBPv310GetMeeting**
-> OBPv310GetMeeting200Response OBPv310GetMeeting (string bankid, string meetingid)
+<a id="getmeeting"></a>
+# **GetMeeting**
+> GetMeeting200Response GetMeeting (string bankid, string meetingid)
 
 Get Meeting
 
@@ -65,7 +65,7 @@ Get Meeting
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 ### Authorization
 
@@ -86,9 +86,9 @@ Get Meeting
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv310getmeetings"></a>
-# **OBPv310GetMeetings**
-> OBPv310GetMeetings200Response OBPv310GetMeetings (string bankid)
+<a id="getmeetings"></a>
+# **GetMeetings**
+> GetMeetings200Response GetMeetings (string bankid)
 
 Get Meetings
 
@@ -103,7 +103,7 @@ Get Meetings
 
 ### Return type
 
-[**OBPv310GetMeetings200Response**](OBPv310GetMeetings200Response.md)
+[**GetMeetings200Response**](GetMeetings200Response.md)
 
 ### Authorization
 

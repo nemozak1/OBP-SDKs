@@ -1,15 +1,15 @@
 # PersonalDynamicEntityApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600GetAvailablePersonalDynamicEntities**](PersonalDynamicEntityApi.md#oBPv600GetAvailablePersonalDynamicEntities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
+| [**getAvailablePersonalDynamicEntities**](PersonalDynamicEntityApi.md#getAvailablePersonalDynamicEntities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
 
 
-<a id="oBPv600GetAvailablePersonalDynamicEntities"></a>
-# **oBPv600GetAvailablePersonalDynamicEntities**
-> OBPv600GetAvailablePersonalDynamicEntities200Response oBPv600GetAvailablePersonalDynamicEntities()
+<a id="getAvailablePersonalDynamicEntities"></a>
+# **getAvailablePersonalDynamicEntities**
+> GetAvailablePersonalDynamicEntities200Response getAvailablePersonalDynamicEntities()
 
 Get Available Personal Dynamic Entities
 
@@ -23,13 +23,13 @@ Get Available Personal Dynamic Entities
 
 val apiInstance = PersonalDynamicEntityApi()
 try {
-    val result : OBPv600GetAvailablePersonalDynamicEntities200Response = apiInstance.oBPv600GetAvailablePersonalDynamicEntities()
+    val result : GetAvailablePersonalDynamicEntities200Response = apiInstance.getAvailablePersonalDynamicEntities()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling PersonalDynamicEntityApi#oBPv600GetAvailablePersonalDynamicEntities")
+    println("4xx response calling PersonalDynamicEntityApi#getAvailablePersonalDynamicEntities")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling PersonalDynamicEntityApi#oBPv600GetAvailablePersonalDynamicEntities")
+    println("5xx response calling PersonalDynamicEntityApi#getAvailablePersonalDynamicEntities")
     e.printStackTrace()
 }
 ```
@@ -39,7 +39,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -50,8 +50,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

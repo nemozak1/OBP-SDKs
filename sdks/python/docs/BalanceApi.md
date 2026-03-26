@@ -4,15 +4,15 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv5_1_0_create_bank_account_balance**](BalanceApi.md#o_bpv5_1_0_create_bank_account_balance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
-[**o_bpv5_1_0_delete_bank_account_balance**](BalanceApi.md#o_bpv5_1_0_delete_bank_account_balance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
-[**o_bpv5_1_0_get_all_bank_account_balances**](BalanceApi.md#o_bpv5_1_0_get_all_bank_account_balances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
-[**o_bpv5_1_0_get_bank_account_balance_by_id**](BalanceApi.md#o_bpv5_1_0_get_bank_account_balance_by_id) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
-[**o_bpv5_1_0_update_bank_account_balance**](BalanceApi.md#o_bpv5_1_0_update_bank_account_balance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
+[**create_bank_account_balance**](BalanceApi.md#create_bank_account_balance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
+[**delete_bank_account_balance**](BalanceApi.md#delete_bank_account_balance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
+[**get_all_bank_account_balances**](BalanceApi.md#get_all_bank_account_balances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
+[**get_bank_account_balance_by_id**](BalanceApi.md#get_bank_account_balance_by_id) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
+[**update_bank_account_balance**](BalanceApi.md#update_bank_account_balance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
 
 
-# **o_bpv5_1_0_create_bank_account_balance**
-> OBPv510GetAllBankAccountBalances200ResponseBalancesInner o_bpv5_1_0_create_bank_account_balance(bankid, accountid, obpv510_create_bank_account_balance_request)
+# **create_bank_account_balance**
+> GetAllBankAccountBalances200ResponseBalancesInner create_bank_account_balance(bankid, accountid, create_bank_account_balance_request)
 
 Create Bank Account Balance
 
@@ -40,8 +40,8 @@ Create Bank Account Balance
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_bank_account_balance_request import OBPv510CreateBankAccountBalanceRequest
-from obp_python.models.obpv510_get_all_bank_account_balances200_response_balances_inner import OBPv510GetAllBankAccountBalances200ResponseBalancesInner
+from obp_python.models.create_bank_account_balance_request import CreateBankAccountBalanceRequest
+from obp_python.models.get_all_bank_account_balances200_response_balances_inner import GetAllBankAccountBalances200ResponseBalancesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -76,15 +76,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.BalanceApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    obpv510_create_bank_account_balance_request = {"type":"object","properties":{"balance_amount":{"type":"string"},"balance_type":{"type":"string"}}} # OBPv510CreateBankAccountBalanceRequest | Request body
+    create_bank_account_balance_request = {"type":"object","properties":{"balance_amount":{"type":"string"},"balance_type":{"type":"string"}}} # CreateBankAccountBalanceRequest | Request body
 
     try:
         # Create Bank Account Balance
-        api_response = api_instance.o_bpv5_1_0_create_bank_account_balance(bankid, accountid, obpv510_create_bank_account_balance_request)
-        print("The response of BalanceApi->o_bpv5_1_0_create_bank_account_balance:\n")
+        api_response = api_instance.create_bank_account_balance(bankid, accountid, create_bank_account_balance_request)
+        print("The response of BalanceApi->create_bank_account_balance:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BalanceApi->o_bpv5_1_0_create_bank_account_balance: %s\n" % e)
+        print("Exception when calling BalanceApi->create_bank_account_balance: %s\n" % e)
 ```
 
 
@@ -96,11 +96,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
- **obpv510_create_bank_account_balance_request** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md)| Request body | 
+ **create_bank_account_balance_request** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponseBalancesInner**](OBPv510GetAllBankAccountBalances200ResponseBalancesInner.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -120,8 +120,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_delete_bank_account_balance**
-> o_bpv5_1_0_delete_bank_account_balance(bankid, accountid, balanceid)
+# **delete_bank_account_balance**
+> delete_bank_account_balance(bankid, accountid, balanceid)
 
 Delete Bank Account Balance
 
@@ -180,9 +180,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Bank Account Balance
-        api_instance.o_bpv5_1_0_delete_bank_account_balance(bankid, accountid, balanceid)
+        api_instance.delete_bank_account_balance(bankid, accountid, balanceid)
     except Exception as e:
-        print("Exception when calling BalanceApi->o_bpv5_1_0_delete_bank_account_balance: %s\n" % e)
+        print("Exception when calling BalanceApi->delete_bank_account_balance: %s\n" % e)
 ```
 
 
@@ -218,8 +218,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_get_all_bank_account_balances**
-> OBPv510GetAllBankAccountBalances200Response o_bpv5_1_0_get_all_bank_account_balances(bankid, accountid)
+# **get_all_bank_account_balances**
+> GetAllBankAccountBalances200Response get_all_bank_account_balances(bankid, accountid)
 
 Get All Bank Account Balances
 
@@ -245,7 +245,7 @@ Get All Bank Account Balances
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_all_bank_account_balances200_response import OBPv510GetAllBankAccountBalances200Response
+from obp_python.models.get_all_bank_account_balances200_response import GetAllBankAccountBalances200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -283,11 +283,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get All Bank Account Balances
-        api_response = api_instance.o_bpv5_1_0_get_all_bank_account_balances(bankid, accountid)
-        print("The response of BalanceApi->o_bpv5_1_0_get_all_bank_account_balances:\n")
+        api_response = api_instance.get_all_bank_account_balances(bankid, accountid)
+        print("The response of BalanceApi->get_all_bank_account_balances:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BalanceApi->o_bpv5_1_0_get_all_bank_account_balances: %s\n" % e)
+        print("Exception when calling BalanceApi->get_all_bank_account_balances: %s\n" % e)
 ```
 
 
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200Response**](OBPv510GetAllBankAccountBalances200Response.md)
+[**GetAllBankAccountBalances200Response**](GetAllBankAccountBalances200Response.md)
 
 ### Authorization
 
@@ -322,8 +322,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_get_bank_account_balance_by_id**
-> OBPv510GetAllBankAccountBalances200ResponseBalancesInner o_bpv5_1_0_get_bank_account_balance_by_id(bankid, accountid, balanceid)
+# **get_bank_account_balance_by_id**
+> GetAllBankAccountBalances200ResponseBalancesInner get_bank_account_balance_by_id(bankid, accountid, balanceid)
 
 Get Bank Account Balance By ID
 
@@ -349,7 +349,7 @@ Get Bank Account Balance By ID
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_all_bank_account_balances200_response_balances_inner import OBPv510GetAllBankAccountBalances200ResponseBalancesInner
+from obp_python.models.get_all_bank_account_balances200_response_balances_inner import GetAllBankAccountBalances200ResponseBalancesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -388,11 +388,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Bank Account Balance By ID
-        api_response = api_instance.o_bpv5_1_0_get_bank_account_balance_by_id(bankid, accountid, balanceid)
-        print("The response of BalanceApi->o_bpv5_1_0_get_bank_account_balance_by_id:\n")
+        api_response = api_instance.get_bank_account_balance_by_id(bankid, accountid, balanceid)
+        print("The response of BalanceApi->get_bank_account_balance_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BalanceApi->o_bpv5_1_0_get_bank_account_balance_by_id: %s\n" % e)
+        print("Exception when calling BalanceApi->get_bank_account_balance_by_id: %s\n" % e)
 ```
 
 
@@ -408,7 +408,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponseBalancesInner**](OBPv510GetAllBankAccountBalances200ResponseBalancesInner.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -428,8 +428,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_update_bank_account_balance**
-> OBPv510GetAllBankAccountBalances200ResponseBalancesInner o_bpv5_1_0_update_bank_account_balance(bankid, accountid, balanceid, obpv510_create_bank_account_balance_request)
+# **update_bank_account_balance**
+> GetAllBankAccountBalances200ResponseBalancesInner update_bank_account_balance(bankid, accountid, balanceid, create_bank_account_balance_request)
 
 Update Bank Account Balance
 
@@ -455,8 +455,8 @@ Update Bank Account Balance
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_bank_account_balance_request import OBPv510CreateBankAccountBalanceRequest
-from obp_python.models.obpv510_get_all_bank_account_balances200_response_balances_inner import OBPv510GetAllBankAccountBalances200ResponseBalancesInner
+from obp_python.models.create_bank_account_balance_request import CreateBankAccountBalanceRequest
+from obp_python.models.get_all_bank_account_balances200_response_balances_inner import GetAllBankAccountBalances200ResponseBalancesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -492,15 +492,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     balanceid = 'balanceid_example' # str | The BALANCEID identifier
-    obpv510_create_bank_account_balance_request = {type=object, properties={balance_amount={type=string}, balance_type={type=string}}} # OBPv510CreateBankAccountBalanceRequest | Request body
+    create_bank_account_balance_request = {type=object, properties={balance_amount={type=string}, balance_type={type=string}}} # CreateBankAccountBalanceRequest | Request body
 
     try:
         # Update Bank Account Balance
-        api_response = api_instance.o_bpv5_1_0_update_bank_account_balance(bankid, accountid, balanceid, obpv510_create_bank_account_balance_request)
-        print("The response of BalanceApi->o_bpv5_1_0_update_bank_account_balance:\n")
+        api_response = api_instance.update_bank_account_balance(bankid, accountid, balanceid, create_bank_account_balance_request)
+        print("The response of BalanceApi->update_bank_account_balance:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BalanceApi->o_bpv5_1_0_update_bank_account_balance: %s\n" % e)
+        print("Exception when calling BalanceApi->update_bank_account_balance: %s\n" % e)
 ```
 
 
@@ -513,11 +513,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **balanceid** | **str**| The BALANCEID identifier | 
- **obpv510_create_bank_account_balance_request** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md)| Request body | 
+ **create_bank_account_balance_request** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponseBalancesInner**](OBPv510GetAllBankAccountBalances200ResponseBalancesInner.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 

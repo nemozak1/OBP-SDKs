@@ -1,22 +1,22 @@
 # OpenBankProject.Api.GroupApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv600AddUserToGroup**](GroupApi.md#obpv600addusertogroup) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements |
-| [**OBPv600CreateGroup**](GroupApi.md#obpv600creategroup) | **POST** /obp/v6.0.0/management/groups | Create Group |
-| [**OBPv600DeleteGroup**](GroupApi.md#obpv600deletegroup) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group |
-| [**OBPv600GetGroup**](GroupApi.md#obpv600getgroup) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group |
-| [**OBPv600GetGroupEntitlements**](GroupApi.md#obpv600getgroupentitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements |
-| [**OBPv600GetGroups**](GroupApi.md#obpv600getgroups) | **GET** /obp/v6.0.0/management/groups | Get Groups |
-| [**OBPv600GetUserGroupMemberships**](GroupApi.md#obpv600getusergroupmemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships |
-| [**OBPv600RemoveUserFromGroup**](GroupApi.md#obpv600removeuserfromgroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group |
-| [**OBPv600UpdateGroup**](GroupApi.md#obpv600updategroup) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group |
+| [**AddUserToGroup**](GroupApi.md#addusertogroup) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements |
+| [**CreateGroup**](GroupApi.md#creategroup) | **POST** /obp/v6.0.0/management/groups | Create Group |
+| [**DeleteGroup**](GroupApi.md#deletegroup) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group |
+| [**GetGroup**](GroupApi.md#getgroup) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group |
+| [**GetGroupEntitlements**](GroupApi.md#getgroupentitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements |
+| [**GetGroups**](GroupApi.md#getgroups) | **GET** /obp/v6.0.0/management/groups | Get Groups |
+| [**GetUserGroupMemberships**](GroupApi.md#getusergroupmemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships |
+| [**RemoveUserFromGroup**](GroupApi.md#removeuserfromgroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group |
+| [**UpdateGroup**](GroupApi.md#updategroup) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group |
 
-<a id="obpv600addusertogroup"></a>
-# **OBPv600AddUserToGroup**
-> OBPv600AddUserToGroup200Response OBPv600AddUserToGroup (string userid, OBPv600AddUserToGroupRequest oBPv600AddUserToGroupRequest)
+<a id="addusertogroup"></a>
+# **AddUserToGroup**
+> AddUserToGroup200Response AddUserToGroup (string userid, AddUserToGroupRequest addUserToGroupRequest)
 
 Grant User Membership to Group Entitlements
 
@@ -28,11 +28,11 @@ Grant User Membership to Group Entitlements
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **userid** | **string** | The USERID identifier |  |
-| **oBPv600AddUserToGroupRequest** | [**OBPv600AddUserToGroupRequest**](OBPv600AddUserToGroupRequest.md) | Request body |  |
+| **addUserToGroupRequest** | [**AddUserToGroupRequest**](AddUserToGroupRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600AddUserToGroup200Response**](OBPv600AddUserToGroup200Response.md)
+[**AddUserToGroup200Response**](AddUserToGroup200Response.md)
 
 ### Authorization
 
@@ -52,9 +52,9 @@ Grant User Membership to Group Entitlements
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600creategroup"></a>
-# **OBPv600CreateGroup**
-> OBPv600GetGroups200ResponsePropertiesGroupsItems OBPv600CreateGroup (OBPv600CreateGroupRequest oBPv600CreateGroupRequest)
+<a id="creategroup"></a>
+# **CreateGroup**
+> GetGroups200ResponseGroupsInner CreateGroup (CreateGroupRequest createGroupRequest)
 
 Create Group
 
@@ -65,11 +65,11 @@ Create Group
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **oBPv600CreateGroupRequest** | [**OBPv600CreateGroupRequest**](OBPv600CreateGroupRequest.md) | Request body |  |
+| **createGroupRequest** | [**CreateGroupRequest**](CreateGroupRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -89,9 +89,9 @@ Create Group
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600deletegroup"></a>
-# **OBPv600DeleteGroup**
-> void OBPv600DeleteGroup (string groupid)
+<a id="deletegroup"></a>
+# **DeleteGroup**
+> void DeleteGroup (string groupid)
 
 Delete Group
 
@@ -126,9 +126,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getgroup"></a>
-# **OBPv600GetGroup**
-> OBPv600GetGroups200ResponsePropertiesGroupsItems OBPv600GetGroup (string groupid)
+<a id="getgroup"></a>
+# **GetGroup**
+> GetGroups200ResponseGroupsInner GetGroup (string groupid)
 
 Get Group
 
@@ -143,7 +143,7 @@ Get Group
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -163,9 +163,9 @@ Get Group
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getgroupentitlements"></a>
-# **OBPv600GetGroupEntitlements**
-> OBPv600GetGroupEntitlements200Response OBPv600GetGroupEntitlements (string groupid)
+<a id="getgroupentitlements"></a>
+# **GetGroupEntitlements**
+> GetGroupEntitlements200Response GetGroupEntitlements (string groupid)
 
 Get Group Entitlements
 
@@ -180,7 +180,7 @@ Get Group Entitlements
 
 ### Return type
 
-[**OBPv600GetGroupEntitlements200Response**](OBPv600GetGroupEntitlements200Response.md)
+[**GetGroupEntitlements200Response**](GetGroupEntitlements200Response.md)
 
 ### Authorization
 
@@ -200,9 +200,9 @@ Get Group Entitlements
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getgroups"></a>
-# **OBPv600GetGroups**
-> OBPv600GetGroups200Response OBPv600GetGroups ()
+<a id="getgroups"></a>
+# **GetGroups**
+> GetGroups200Response GetGroups ()
 
 Get Groups
 
@@ -213,7 +213,7 @@ Get Groups
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv600GetGroups200Response**](OBPv600GetGroups200Response.md)
+[**GetGroups200Response**](GetGroups200Response.md)
 
 ### Authorization
 
@@ -233,9 +233,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getusergroupmemberships"></a>
-# **OBPv600GetUserGroupMemberships**
-> OBPv600GetUserGroupMemberships200Response OBPv600GetUserGroupMemberships (string userid)
+<a id="getusergroupmemberships"></a>
+# **GetUserGroupMemberships**
+> GetUserGroupMemberships200Response GetUserGroupMemberships (string userid)
 
 Get User's Group Memberships
 
@@ -250,7 +250,7 @@ Get User's Group Memberships
 
 ### Return type
 
-[**OBPv600GetUserGroupMemberships200Response**](OBPv600GetUserGroupMemberships200Response.md)
+[**GetUserGroupMemberships200Response**](GetUserGroupMemberships200Response.md)
 
 ### Authorization
 
@@ -270,9 +270,9 @@ Get User's Group Memberships
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600removeuserfromgroup"></a>
-# **OBPv600RemoveUserFromGroup**
-> void OBPv600RemoveUserFromGroup (string userid, string groupid)
+<a id="removeuserfromgroup"></a>
+# **RemoveUserFromGroup**
+> void RemoveUserFromGroup (string userid, string groupid)
 
 Remove User from Group
 
@@ -308,9 +308,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600updategroup"></a>
-# **OBPv600UpdateGroup**
-> OBPv600GetGroups200ResponsePropertiesGroupsItems OBPv600UpdateGroup (string groupid, OBPv600UpdateGroupRequest oBPv600UpdateGroupRequest)
+<a id="updategroup"></a>
+# **UpdateGroup**
+> GetGroups200ResponseGroupsInner UpdateGroup (string groupid, UpdateGroupRequest updateGroupRequest)
 
 Update Group
 
@@ -322,11 +322,11 @@ Update Group
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **groupid** | **string** | The GROUPID identifier |  |
-| **oBPv600UpdateGroupRequest** | [**OBPv600UpdateGroupRequest**](OBPv600UpdateGroupRequest.md) | Request body |  |
+| **updateGroupRequest** | [**UpdateGroupRequest**](UpdateGroupRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 

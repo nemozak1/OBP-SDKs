@@ -1,14 +1,14 @@
 # OpenBankProject.Api.OldStyleApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv200ElasticSearchMetrics**](OldStyleApi.md#obpv200elasticsearchmetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch |
+| [**ElasticSearchMetrics**](OldStyleApi.md#elasticsearchmetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch |
 
-<a id="obpv200elasticsearchmetrics"></a>
-# **OBPv200ElasticSearchMetrics**
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage OBPv200ElasticSearchMetrics ()
+<a id="elasticsearchmetrics"></a>
+# **ElasticSearchMetrics**
+> Object ElasticSearchMetrics ()
 
 Search API Metrics via Elasticsearch
 
@@ -19,7 +19,7 @@ Search API Metrics via Elasticsearch
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**Object**
 
 ### Authorization
 

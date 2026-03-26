@@ -1,0 +1,10 @@
+# # CreateUserWithAccountAccessByIdRequestViewsInner
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**is_system** | **bool** |  | [optional]
+**view_id** | **string** |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

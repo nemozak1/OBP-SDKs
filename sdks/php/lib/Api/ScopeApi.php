@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,13 +75,13 @@ class ScopeApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv300DeleteScope' => [
+        'addScope' => [
             'application/json',
         ],
-        'oBPv400AddScope' => [
+        'deleteScope' => [
             'application/json',
         ],
-        'oBPv400GetScopes' => [
+        'getScopes' => [
             'application/json',
         ],
     ];
@@ -133,39 +133,340 @@ class ScopeApi
     }
 
     /**
-     * Operation oBPv300DeleteScope
+     * Operation addScope
+     *
+     * Create Scope for a Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addScope'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetScopes200ResponseListInner
+     */
+    public function addScope($consumerid, $create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addScope'][0])
+    {
+        list($response) = $this->addScopeWithHttpInfo($consumerid, $create_consent_implicit_request_entitlements_inner, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation addScopeWithHttpInfo
+     *
+     * Create Scope for a Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addScope'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetScopes200ResponseListInner, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function addScopeWithHttpInfo($consumerid, $create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addScope'][0])
+    {
+        $request = $this->addScopeRequest($consumerid, $create_consent_implicit_request_entitlements_inner, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetScopes200ResponseListInner',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetScopes200ResponseListInner',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetScopes200ResponseListInner',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation addScopeAsync
+     *
+     * Create Scope for a Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addScope'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function addScopeAsync($consumerid, $create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addScope'][0])
+    {
+        return $this->addScopeAsyncWithHttpInfo($consumerid, $create_consent_implicit_request_entitlements_inner, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation addScopeAsyncWithHttpInfo
+     *
+     * Create Scope for a Consumer
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addScope'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function addScopeAsyncWithHttpInfo($consumerid, $create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addScope'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetScopes200ResponseListInner';
+        $request = $this->addScopeRequest($consumerid, $create_consent_implicit_request_entitlements_inner, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'addScope'
+     *
+     * @param  string $consumerid The CONSUMERID identifier (required)
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addScope'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function addScopeRequest($consumerid, $create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addScope'][0])
+    {
+
+        // verify the required parameter 'consumerid' is set
+        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $consumerid when calling addScope'
+            );
+        }
+
+        // verify the required parameter 'create_consent_implicit_request_entitlements_inner' is set
+        if ($create_consent_implicit_request_entitlements_inner === null || (is_array($create_consent_implicit_request_entitlements_inner) && count($create_consent_implicit_request_entitlements_inner) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_consent_implicit_request_entitlements_inner when calling addScope'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/consumers/{consumerid}/scopes';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($consumerid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'consumerid' . '}',
+                ObjectSerializer::toPathValue($consumerid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_consent_implicit_request_entitlements_inner)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_consent_implicit_request_entitlements_inner));
+            } else {
+                $httpBody = $create_consent_implicit_request_entitlements_inner;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteScope
      *
      * Delete Consumer Scope
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
      * @param  string $scopeid The SCOPEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DeleteScope'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScope'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv300DeleteScope($consumerid, $scopeid, string $contentType = self::contentTypes['oBPv300DeleteScope'][0])
+    public function deleteScope($consumerid, $scopeid, string $contentType = self::contentTypes['deleteScope'][0])
     {
-        $this->oBPv300DeleteScopeWithHttpInfo($consumerid, $scopeid, $contentType);
+        $this->deleteScopeWithHttpInfo($consumerid, $scopeid, $contentType);
     }
 
     /**
-     * Operation oBPv300DeleteScopeWithHttpInfo
+     * Operation deleteScopeWithHttpInfo
      *
      * Delete Consumer Scope
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
      * @param  string $scopeid The SCOPEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DeleteScope'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScope'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv300DeleteScopeWithHttpInfo($consumerid, $scopeid, string $contentType = self::contentTypes['oBPv300DeleteScope'][0])
+    public function deleteScopeWithHttpInfo($consumerid, $scopeid, string $contentType = self::contentTypes['deleteScope'][0])
     {
-        $request = $this->oBPv300DeleteScopeRequest($consumerid, $scopeid, $contentType);
+        $request = $this->deleteScopeRequest($consumerid, $scopeid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -201,20 +502,20 @@ class ScopeApi
     }
 
     /**
-     * Operation oBPv300DeleteScopeAsync
+     * Operation deleteScopeAsync
      *
      * Delete Consumer Scope
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
      * @param  string $scopeid The SCOPEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DeleteScope'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScope'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300DeleteScopeAsync($consumerid, $scopeid, string $contentType = self::contentTypes['oBPv300DeleteScope'][0])
+    public function deleteScopeAsync($consumerid, $scopeid, string $contentType = self::contentTypes['deleteScope'][0])
     {
-        return $this->oBPv300DeleteScopeAsyncWithHttpInfo($consumerid, $scopeid, $contentType)
+        return $this->deleteScopeAsyncWithHttpInfo($consumerid, $scopeid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -223,21 +524,21 @@ class ScopeApi
     }
 
     /**
-     * Operation oBPv300DeleteScopeAsyncWithHttpInfo
+     * Operation deleteScopeAsyncWithHttpInfo
      *
      * Delete Consumer Scope
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
      * @param  string $scopeid The SCOPEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DeleteScope'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScope'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300DeleteScopeAsyncWithHttpInfo($consumerid, $scopeid, string $contentType = self::contentTypes['oBPv300DeleteScope'][0])
+    public function deleteScopeAsyncWithHttpInfo($consumerid, $scopeid, string $contentType = self::contentTypes['deleteScope'][0])
     {
         $returnType = '';
-        $request = $this->oBPv300DeleteScopeRequest($consumerid, $scopeid, $contentType);
+        $request = $this->deleteScopeRequest($consumerid, $scopeid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -263,29 +564,29 @@ class ScopeApi
     }
 
     /**
-     * Create request for operation 'oBPv300DeleteScope'
+     * Create request for operation 'deleteScope'
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
      * @param  string $scopeid The SCOPEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DeleteScope'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScope'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv300DeleteScopeRequest($consumerid, $scopeid, string $contentType = self::contentTypes['oBPv300DeleteScope'][0])
+    public function deleteScopeRequest($consumerid, $scopeid, string $contentType = self::contentTypes['deleteScope'][0])
     {
 
         // verify the required parameter 'consumerid' is set
         if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv300DeleteScope'
+                'Missing the required parameter $consumerid when calling deleteScope'
             );
         }
 
         // verify the required parameter 'scopeid' is set
         if ($scopeid === null || (is_array($scopeid) && count($scopeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $scopeid when calling oBPv300DeleteScope'
+                'Missing the required parameter $scopeid when calling deleteScope'
             );
         }
 
@@ -358,9 +659,9 @@ class ScopeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -385,40 +686,38 @@ class ScopeApi
     }
 
     /**
-     * Operation oBPv400AddScope
+     * Operation getScopes
      *
-     * Create Scope for a Consumer
+     * Get Scopes for Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400AddScope'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScopes'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetScopes200ResponsePropertiesListItems
+     * @return \OpenBankProject\Model\GetScopes200Response
      */
-    public function oBPv400AddScope($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv400AddScope'][0])
+    public function getScopes($consumerid, string $contentType = self::contentTypes['getScopes'][0])
     {
-        list($response) = $this->oBPv400AddScopeWithHttpInfo($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, $contentType);
+        list($response) = $this->getScopesWithHttpInfo($consumerid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400AddScopeWithHttpInfo
+     * Operation getScopesWithHttpInfo
      *
-     * Create Scope for a Consumer
+     * Get Scopes for Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400AddScope'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScopes'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetScopes200ResponsePropertiesListItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetScopes200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400AddScopeWithHttpInfo($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv400AddScope'][0])
+    public function getScopesWithHttpInfo($consumerid, string $contentType = self::contentTypes['getScopes'][0])
     {
-        $request = $this->oBPv400AddScopeRequest($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, $contentType);
+        $request = $this->getScopesRequest($consumerid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -446,7 +745,7 @@ class ScopeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetScopes200ResponsePropertiesListItems',
+                        '\OpenBankProject\Model\GetScopes200Response',
                         $request,
                         $response,
                     );
@@ -468,7 +767,7 @@ class ScopeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetScopes200ResponsePropertiesListItems',
+                '\OpenBankProject\Model\GetScopes200Response',
                 $request,
                 $response,
             );
@@ -477,7 +776,7 @@ class ScopeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetScopes200ResponsePropertiesListItems',
+                        '\OpenBankProject\Model\GetScopes200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -490,20 +789,19 @@ class ScopeApi
     }
 
     /**
-     * Operation oBPv400AddScopeAsync
+     * Operation getScopesAsync
      *
-     * Create Scope for a Consumer
+     * Get Scopes for Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400AddScope'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScopes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400AddScopeAsync($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv400AddScope'][0])
+    public function getScopesAsync($consumerid, string $contentType = self::contentTypes['getScopes'][0])
     {
-        return $this->oBPv400AddScopeAsyncWithHttpInfo($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, $contentType)
+        return $this->getScopesAsyncWithHttpInfo($consumerid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -512,21 +810,20 @@ class ScopeApi
     }
 
     /**
-     * Operation oBPv400AddScopeAsyncWithHttpInfo
+     * Operation getScopesAsyncWithHttpInfo
      *
-     * Create Scope for a Consumer
+     * Get Scopes for Consumer
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400AddScope'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScopes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400AddScopeAsyncWithHttpInfo($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv400AddScope'][0])
+    public function getScopesAsyncWithHttpInfo($consumerid, string $contentType = self::contentTypes['getScopes'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetScopes200ResponsePropertiesListItems';
-        $request = $this->oBPv400AddScopeRequest($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, $contentType);
+        $returnType = '\OpenBankProject\Model\GetScopes200Response';
+        $request = $this->getScopesRequest($consumerid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -565,318 +862,21 @@ class ScopeApi
     }
 
     /**
-     * Create request for operation 'oBPv400AddScope'
+     * Create request for operation 'getScopes'
      *
      * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400AddScope'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScopes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400AddScopeRequest($consumerid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv400AddScope'][0])
+    public function getScopesRequest($consumerid, string $contentType = self::contentTypes['getScopes'][0])
     {
 
         // verify the required parameter 'consumerid' is set
         if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv400AddScope'
-            );
-        }
-
-        // verify the required parameter 'obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items' is set
-        if ($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items === null || (is_array($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items) && count($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items when calling oBPv400AddScope'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/consumers/{consumerid}/scopes';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($consumerid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'consumerid' . '}',
-                ObjectSerializer::toPathValue($consumerid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items));
-            } else {
-                $httpBody = $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv400GetScopes
-     *
-     * Get Scopes for Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetScopes'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetScopes200Response
-     */
-    public function oBPv400GetScopes($consumerid, string $contentType = self::contentTypes['oBPv400GetScopes'][0])
-    {
-        list($response) = $this->oBPv400GetScopesWithHttpInfo($consumerid, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv400GetScopesWithHttpInfo
-     *
-     * Get Scopes for Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetScopes'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetScopes200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv400GetScopesWithHttpInfo($consumerid, string $contentType = self::contentTypes['oBPv400GetScopes'][0])
-    {
-        $request = $this->oBPv400GetScopesRequest($consumerid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetScopes200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetScopes200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetScopes200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv400GetScopesAsync
-     *
-     * Get Scopes for Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetScopes'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400GetScopesAsync($consumerid, string $contentType = self::contentTypes['oBPv400GetScopes'][0])
-    {
-        return $this->oBPv400GetScopesAsyncWithHttpInfo($consumerid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv400GetScopesAsyncWithHttpInfo
-     *
-     * Get Scopes for Consumer
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetScopes'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400GetScopesAsyncWithHttpInfo($consumerid, string $contentType = self::contentTypes['oBPv400GetScopes'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv400GetScopes200Response';
-        $request = $this->oBPv400GetScopesRequest($consumerid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv400GetScopes'
-     *
-     * @param  string $consumerid The CONSUMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetScopes'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv400GetScopesRequest($consumerid, string $contentType = self::contentTypes['oBPv400GetScopes'][0])
-    {
-
-        // verify the required parameter 'consumerid' is set
-        if ($consumerid === null || (is_array($consumerid) && count($consumerid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $consumerid when calling oBPv400GetScopes'
+                'Missing the required parameter $consumerid when calling getScopes'
             );
         }
 
@@ -941,9 +941,9 @@ class ScopeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -28,7 +28,7 @@ namespace OpenBankProject.Test.Api
         private readonly IHost _hostUsingConfigureWithoutAClient =
             Host.CreateDefaultBuilder([]).ConfigureApi((context, services, options) =>
             {
-                ApiKeyToken apiKeyToken1 = new("<token>", ClientUtils.ApiKeyHeader.Authorization, timeout: TimeSpan.FromSeconds(1));
+                ApiKeyToken apiKeyToken1 = new("<token>", ClientUtils.ApiKeyHeader.DirectLogin, timeout: TimeSpan.FromSeconds(1));
                 options.AddTokens(apiKeyToken1);
 
                 ApiKeyToken apiKeyToken2 = new("<token>", ClientUtils.ApiKeyHeader.Authorization, timeout: TimeSpan.FromSeconds(1));
@@ -42,7 +42,7 @@ namespace OpenBankProject.Test.Api
         private readonly IHost _hostUsingConfigureWithAClient =
             Host.CreateDefaultBuilder([]).ConfigureApi((context, services, options) =>
             {
-                ApiKeyToken apiKeyToken1 = new("<token>", ClientUtils.ApiKeyHeader.Authorization, timeout: TimeSpan.FromSeconds(1));
+                ApiKeyToken apiKeyToken1 = new("<token>", ClientUtils.ApiKeyHeader.DirectLogin, timeout: TimeSpan.FromSeconds(1));
                 options.AddTokens(apiKeyToken1);
 
                 ApiKeyToken apiKeyToken2 = new("<token>", ClientUtils.ApiKeyHeader.Authorization, timeout: TimeSpan.FromSeconds(1));
@@ -59,7 +59,7 @@ namespace OpenBankProject.Test.Api
             {
                 services.AddApi(options =>
                 {
-                    ApiKeyToken apiKeyToken1 = new("<token>", ClientUtils.ApiKeyHeader.Authorization, timeout: TimeSpan.FromSeconds(1));
+                    ApiKeyToken apiKeyToken1 = new("<token>", ClientUtils.ApiKeyHeader.DirectLogin, timeout: TimeSpan.FromSeconds(1));
                     options.AddTokens(apiKeyToken1);
 
                     ApiKeyToken apiKeyToken2 = new("<token>", ClientUtils.ApiKeyHeader.Authorization, timeout: TimeSpan.FromSeconds(1));
@@ -76,7 +76,7 @@ namespace OpenBankProject.Test.Api
             {
                 services.AddApi(options =>
                 {
-                    ApiKeyToken apiKeyToken1 = new("<token>", ClientUtils.ApiKeyHeader.Authorization, timeout: TimeSpan.FromSeconds(1));
+                    ApiKeyToken apiKeyToken1 = new("<token>", ClientUtils.ApiKeyHeader.DirectLogin, timeout: TimeSpan.FromSeconds(1));
                     options.AddTokens(apiKeyToken1);
 
                     ApiKeyToken apiKeyToken2 = new("<token>", ClientUtils.ApiKeyHeader.Authorization, timeout: TimeSpan.FromSeconds(1));
@@ -200,6 +200,9 @@ namespace OpenBankProject.Test.Api
             var counterpartyApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<ICounterpartyApi>();
             Assert.True(counterpartyApi.HttpClient.BaseAddress != null);
 
+            var counterpartyAttributeApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<ICounterpartyAttributeApi>();
+            Assert.True(counterpartyAttributeApi.HttpClient.BaseAddress != null);
+
             var counterpartyLimitsApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<ICounterpartyLimitsApi>();
             Assert.True(counterpartyLimitsApi.HttpClient.BaseAddress != null);
 
@@ -274,6 +277,9 @@ namespace OpenBankProject.Test.Api
 
             var logCacheApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<ILogCacheApi>();
             Assert.True(logCacheApi.HttpClient.BaseAddress != null);
+
+            var mandateApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IMandateApi>();
+            Assert.True(mandateApi.HttpClient.BaseAddress != null);
 
             var messageDocApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IMessageDocApi>();
             Assert.True(messageDocApi.HttpClient.BaseAddress != null);
@@ -510,6 +516,9 @@ namespace OpenBankProject.Test.Api
             var counterpartyApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<ICounterpartyApi>();
             Assert.True(counterpartyApi.HttpClient.BaseAddress != null);
 
+            var counterpartyAttributeApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<ICounterpartyAttributeApi>();
+            Assert.True(counterpartyAttributeApi.HttpClient.BaseAddress != null);
+
             var counterpartyLimitsApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<ICounterpartyLimitsApi>();
             Assert.True(counterpartyLimitsApi.HttpClient.BaseAddress != null);
 
@@ -584,6 +593,9 @@ namespace OpenBankProject.Test.Api
 
             var logCacheApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<ILogCacheApi>();
             Assert.True(logCacheApi.HttpClient.BaseAddress != null);
+
+            var mandateApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IMandateApi>();
+            Assert.True(mandateApi.HttpClient.BaseAddress != null);
 
             var messageDocApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IMessageDocApi>();
             Assert.True(messageDocApi.HttpClient.BaseAddress != null);
@@ -820,6 +832,9 @@ namespace OpenBankProject.Test.Api
             var counterpartyApi = _hostUsingAddWithAClient.Services.GetRequiredService<ICounterpartyApi>();
             Assert.True(counterpartyApi.HttpClient.BaseAddress != null);
             
+            var counterpartyAttributeApi = _hostUsingAddWithAClient.Services.GetRequiredService<ICounterpartyAttributeApi>();
+            Assert.True(counterpartyAttributeApi.HttpClient.BaseAddress != null);
+            
             var counterpartyLimitsApi = _hostUsingAddWithAClient.Services.GetRequiredService<ICounterpartyLimitsApi>();
             Assert.True(counterpartyLimitsApi.HttpClient.BaseAddress != null);
             
@@ -894,6 +909,9 @@ namespace OpenBankProject.Test.Api
             
             var logCacheApi = _hostUsingAddWithAClient.Services.GetRequiredService<ILogCacheApi>();
             Assert.True(logCacheApi.HttpClient.BaseAddress != null);
+            
+            var mandateApi = _hostUsingAddWithAClient.Services.GetRequiredService<IMandateApi>();
+            Assert.True(mandateApi.HttpClient.BaseAddress != null);
             
             var messageDocApi = _hostUsingAddWithAClient.Services.GetRequiredService<IMessageDocApi>();
             Assert.True(messageDocApi.HttpClient.BaseAddress != null);
@@ -1130,6 +1148,9 @@ namespace OpenBankProject.Test.Api
             var counterpartyApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<ICounterpartyApi>();
             Assert.True(counterpartyApi.HttpClient.BaseAddress != null);
 
+            var counterpartyAttributeApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<ICounterpartyAttributeApi>();
+            Assert.True(counterpartyAttributeApi.HttpClient.BaseAddress != null);
+
             var counterpartyLimitsApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<ICounterpartyLimitsApi>();
             Assert.True(counterpartyLimitsApi.HttpClient.BaseAddress != null);
 
@@ -1204,6 +1225,9 @@ namespace OpenBankProject.Test.Api
 
             var logCacheApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<ILogCacheApi>();
             Assert.True(logCacheApi.HttpClient.BaseAddress != null);
+
+            var mandateApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IMandateApi>();
+            Assert.True(mandateApi.HttpClient.BaseAddress != null);
 
             var messageDocApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IMessageDocApi>();
             Assert.True(messageDocApi.HttpClient.BaseAddress != null);

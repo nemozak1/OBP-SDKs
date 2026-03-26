@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,47 +15,47 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv510CreateBankAccountBalanceRequest,
-  OBPv510GetAllBankAccountBalances200Response,
-  OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems,
+  CreateBankAccountBalanceRequest,
+  GetAllBankAccountBalances200Response,
+  GetAllBankAccountBalances200ResponseBalancesInner,
 } from '../models/index';
 import {
-    OBPv510CreateBankAccountBalanceRequestFromJSON,
-    OBPv510CreateBankAccountBalanceRequestToJSON,
-    OBPv510GetAllBankAccountBalances200ResponseFromJSON,
-    OBPv510GetAllBankAccountBalances200ResponseToJSON,
-    OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItemsFromJSON,
-    OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItemsToJSON,
+    CreateBankAccountBalanceRequestFromJSON,
+    CreateBankAccountBalanceRequestToJSON,
+    GetAllBankAccountBalances200ResponseFromJSON,
+    GetAllBankAccountBalances200ResponseToJSON,
+    GetAllBankAccountBalances200ResponseBalancesInnerFromJSON,
+    GetAllBankAccountBalances200ResponseBalancesInnerToJSON,
 } from '../models/index';
 
-export interface OBPv510CreateBankAccountBalanceOperationRequest {
+export interface CreateBankAccountBalanceOperationRequest {
     bankid: string;
     accountid: string;
-    oBPv510CreateBankAccountBalanceRequest: OBPv510CreateBankAccountBalanceRequest;
+    createBankAccountBalanceRequest: CreateBankAccountBalanceRequest;
 }
 
-export interface OBPv510DeleteBankAccountBalanceRequest {
+export interface DeleteBankAccountBalanceRequest {
     bankid: string;
     accountid: string;
     balanceid: string;
 }
 
-export interface OBPv510GetAllBankAccountBalancesRequest {
+export interface GetAllBankAccountBalancesRequest {
     bankid: string;
     accountid: string;
 }
 
-export interface OBPv510GetBankAccountBalanceByIdRequest {
+export interface GetBankAccountBalanceByIdRequest {
     bankid: string;
     accountid: string;
     balanceid: string;
 }
 
-export interface OBPv510UpdateBankAccountBalanceRequest {
+export interface UpdateBankAccountBalanceRequest {
     bankid: string;
     accountid: string;
     balanceid: string;
-    oBPv510CreateBankAccountBalanceRequest: OBPv510CreateBankAccountBalanceRequest;
+    createBankAccountBalanceRequest: CreateBankAccountBalanceRequest;
 }
 
 /**
@@ -64,27 +64,27 @@ export interface OBPv510UpdateBankAccountBalanceRequest {
 export class BalanceApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv510CreateBankAccountBalance without sending the request
+     * Creates request options for createBankAccountBalance without sending the request
      */
-    async oBPv510CreateBankAccountBalanceRequestOpts(requestParameters: OBPv510CreateBankAccountBalanceOperationRequest): Promise<runtime.RequestOpts> {
+    async createBankAccountBalanceRequestOpts(requestParameters: CreateBankAccountBalanceOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510CreateBankAccountBalance().'
+                'Required parameter "bankid" was null or undefined when calling createBankAccountBalance().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv510CreateBankAccountBalance().'
+                'Required parameter "accountid" was null or undefined when calling createBankAccountBalance().'
             );
         }
 
-        if (requestParameters['oBPv510CreateBankAccountBalanceRequest'] == null) {
+        if (requestParameters['createBankAccountBalanceRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv510CreateBankAccountBalanceRequest',
-                'Required parameter "oBPv510CreateBankAccountBalanceRequest" was null or undefined when calling oBPv510CreateBankAccountBalance().'
+                'createBankAccountBalanceRequest',
+                'Required parameter "createBankAccountBalanceRequest" was null or undefined when calling createBankAccountBalance().'
             );
         }
 
@@ -104,7 +104,7 @@ export class BalanceApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -117,7 +117,7 @@ export class BalanceApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv510CreateBankAccountBalanceRequestToJSON(requestParameters['oBPv510CreateBankAccountBalanceRequest']),
+            body: CreateBankAccountBalanceRequestToJSON(requestParameters['createBankAccountBalanceRequest']),
         };
     }
 
@@ -125,44 +125,44 @@ export class BalanceApi extends runtime.BaseAPI {
      * <p>Create a new Balance for a Bank Account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
      * Create Bank Account Balance
      */
-    async oBPv510CreateBankAccountBalanceRaw(requestParameters: OBPv510CreateBankAccountBalanceOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>> {
-        const requestOptions = await this.oBPv510CreateBankAccountBalanceRequestOpts(requestParameters);
+    async createBankAccountBalanceRaw(requestParameters: CreateBankAccountBalanceOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner>> {
+        const requestOptions = await this.createBankAccountBalanceRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllBankAccountBalances200ResponseBalancesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create a new Balance for a Bank Account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
      * Create Bank Account Balance
      */
-    async oBPv510CreateBankAccountBalance(requestParameters: OBPv510CreateBankAccountBalanceOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> {
-        const response = await this.oBPv510CreateBankAccountBalanceRaw(requestParameters, initOverrides);
+    async createBankAccountBalance(requestParameters: CreateBankAccountBalanceOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllBankAccountBalances200ResponseBalancesInner> {
+        const response = await this.createBankAccountBalanceRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv510DeleteBankAccountBalance without sending the request
+     * Creates request options for deleteBankAccountBalance without sending the request
      */
-    async oBPv510DeleteBankAccountBalanceRequestOpts(requestParameters: OBPv510DeleteBankAccountBalanceRequest): Promise<runtime.RequestOpts> {
+    async deleteBankAccountBalanceRequestOpts(requestParameters: DeleteBankAccountBalanceRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510DeleteBankAccountBalance().'
+                'Required parameter "bankid" was null or undefined when calling deleteBankAccountBalance().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv510DeleteBankAccountBalance().'
+                'Required parameter "accountid" was null or undefined when calling deleteBankAccountBalance().'
             );
         }
 
         if (requestParameters['balanceid'] == null) {
             throw new runtime.RequiredError(
                 'balanceid',
-                'Required parameter "balanceid" was null or undefined when calling oBPv510DeleteBankAccountBalance().'
+                'Required parameter "balanceid" was null or undefined when calling deleteBankAccountBalance().'
             );
         }
 
@@ -180,7 +180,7 @@ export class BalanceApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -201,8 +201,8 @@ export class BalanceApi extends runtime.BaseAPI {
      * <p>Delete a Bank Account Balance specified by BALANCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#balance_id\">BALANCE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Bank Account Balance
      */
-    async oBPv510DeleteBankAccountBalanceRaw(requestParameters: OBPv510DeleteBankAccountBalanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv510DeleteBankAccountBalanceRequestOpts(requestParameters);
+    async deleteBankAccountBalanceRaw(requestParameters: DeleteBankAccountBalanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteBankAccountBalanceRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -212,25 +212,25 @@ export class BalanceApi extends runtime.BaseAPI {
      * <p>Delete a Bank Account Balance specified by BALANCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#balance_id\">BALANCE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Bank Account Balance
      */
-    async oBPv510DeleteBankAccountBalance(requestParameters: OBPv510DeleteBankAccountBalanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv510DeleteBankAccountBalanceRaw(requestParameters, initOverrides);
+    async deleteBankAccountBalance(requestParameters: DeleteBankAccountBalanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteBankAccountBalanceRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv510GetAllBankAccountBalances without sending the request
+     * Creates request options for getAllBankAccountBalances without sending the request
      */
-    async oBPv510GetAllBankAccountBalancesRequestOpts(requestParameters: OBPv510GetAllBankAccountBalancesRequest): Promise<runtime.RequestOpts> {
+    async getAllBankAccountBalancesRequestOpts(requestParameters: GetAllBankAccountBalancesRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510GetAllBankAccountBalances().'
+                'Required parameter "bankid" was null or undefined when calling getAllBankAccountBalances().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv510GetAllBankAccountBalances().'
+                'Required parameter "accountid" was null or undefined when calling getAllBankAccountBalances().'
             );
         }
 
@@ -248,7 +248,7 @@ export class BalanceApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -268,44 +268,44 @@ export class BalanceApi extends runtime.BaseAPI {
      * <p>Get all Balances for a Bank Account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>balances</strong></a>: balances</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
      * Get All Bank Account Balances
      */
-    async oBPv510GetAllBankAccountBalancesRaw(requestParameters: OBPv510GetAllBankAccountBalancesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv510GetAllBankAccountBalances200Response>> {
-        const requestOptions = await this.oBPv510GetAllBankAccountBalancesRequestOpts(requestParameters);
+    async getAllBankAccountBalancesRaw(requestParameters: GetAllBankAccountBalancesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllBankAccountBalances200Response>> {
+        const requestOptions = await this.getAllBankAccountBalancesRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv510GetAllBankAccountBalances200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllBankAccountBalances200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all Balances for a Bank Account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>balances</strong></a>: balances</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
      * Get All Bank Account Balances
      */
-    async oBPv510GetAllBankAccountBalances(requestParameters: OBPv510GetAllBankAccountBalancesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv510GetAllBankAccountBalances200Response> {
-        const response = await this.oBPv510GetAllBankAccountBalancesRaw(requestParameters, initOverrides);
+    async getAllBankAccountBalances(requestParameters: GetAllBankAccountBalancesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllBankAccountBalances200Response> {
+        const response = await this.getAllBankAccountBalancesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv510GetBankAccountBalanceById without sending the request
+     * Creates request options for getBankAccountBalanceById without sending the request
      */
-    async oBPv510GetBankAccountBalanceByIdRequestOpts(requestParameters: OBPv510GetBankAccountBalanceByIdRequest): Promise<runtime.RequestOpts> {
+    async getBankAccountBalanceByIdRequestOpts(requestParameters: GetBankAccountBalanceByIdRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510GetBankAccountBalanceById().'
+                'Required parameter "bankid" was null or undefined when calling getBankAccountBalanceById().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv510GetBankAccountBalanceById().'
+                'Required parameter "accountid" was null or undefined when calling getBankAccountBalanceById().'
             );
         }
 
         if (requestParameters['balanceid'] == null) {
             throw new runtime.RequiredError(
                 'balanceid',
-                'Required parameter "balanceid" was null or undefined when calling oBPv510GetBankAccountBalanceById().'
+                'Required parameter "balanceid" was null or undefined when calling getBankAccountBalanceById().'
             );
         }
 
@@ -323,7 +323,7 @@ export class BalanceApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -344,51 +344,51 @@ export class BalanceApi extends runtime.BaseAPI {
      * <p>Get a specific Bank Account Balance by its BALANCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#balance_id\">BALANCE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
      * Get Bank Account Balance By ID
      */
-    async oBPv510GetBankAccountBalanceByIdRaw(requestParameters: OBPv510GetBankAccountBalanceByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>> {
-        const requestOptions = await this.oBPv510GetBankAccountBalanceByIdRequestOpts(requestParameters);
+    async getBankAccountBalanceByIdRaw(requestParameters: GetBankAccountBalanceByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner>> {
+        const requestOptions = await this.getBankAccountBalanceByIdRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllBankAccountBalances200ResponseBalancesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get a specific Bank Account Balance by its BALANCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#balance_id\">BALANCE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
      * Get Bank Account Balance By ID
      */
-    async oBPv510GetBankAccountBalanceById(requestParameters: OBPv510GetBankAccountBalanceByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> {
-        const response = await this.oBPv510GetBankAccountBalanceByIdRaw(requestParameters, initOverrides);
+    async getBankAccountBalanceById(requestParameters: GetBankAccountBalanceByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllBankAccountBalances200ResponseBalancesInner> {
+        const response = await this.getBankAccountBalanceByIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv510UpdateBankAccountBalance without sending the request
+     * Creates request options for updateBankAccountBalance without sending the request
      */
-    async oBPv510UpdateBankAccountBalanceRequestOpts(requestParameters: OBPv510UpdateBankAccountBalanceRequest): Promise<runtime.RequestOpts> {
+    async updateBankAccountBalanceRequestOpts(requestParameters: UpdateBankAccountBalanceRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510UpdateBankAccountBalance().'
+                'Required parameter "bankid" was null or undefined when calling updateBankAccountBalance().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv510UpdateBankAccountBalance().'
+                'Required parameter "accountid" was null or undefined when calling updateBankAccountBalance().'
             );
         }
 
         if (requestParameters['balanceid'] == null) {
             throw new runtime.RequiredError(
                 'balanceid',
-                'Required parameter "balanceid" was null or undefined when calling oBPv510UpdateBankAccountBalance().'
+                'Required parameter "balanceid" was null or undefined when calling updateBankAccountBalance().'
             );
         }
 
-        if (requestParameters['oBPv510CreateBankAccountBalanceRequest'] == null) {
+        if (requestParameters['createBankAccountBalanceRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv510CreateBankAccountBalanceRequest',
-                'Required parameter "oBPv510CreateBankAccountBalanceRequest" was null or undefined when calling oBPv510UpdateBankAccountBalance().'
+                'createBankAccountBalanceRequest',
+                'Required parameter "createBankAccountBalanceRequest" was null or undefined when calling updateBankAccountBalance().'
             );
         }
 
@@ -408,7 +408,7 @@ export class BalanceApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -422,7 +422,7 @@ export class BalanceApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv510CreateBankAccountBalanceRequestToJSON(requestParameters['oBPv510CreateBankAccountBalanceRequest']),
+            body: CreateBankAccountBalanceRequestToJSON(requestParameters['createBankAccountBalanceRequest']),
         };
     }
 
@@ -430,19 +430,19 @@ export class BalanceApi extends runtime.BaseAPI {
      * <p>Update an existing Bank Account Balance specified by BALANCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#balance_id\">BALANCE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
      * Update Bank Account Balance
      */
-    async oBPv510UpdateBankAccountBalanceRaw(requestParameters: OBPv510UpdateBankAccountBalanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>> {
-        const requestOptions = await this.oBPv510UpdateBankAccountBalanceRequestOpts(requestParameters);
+    async updateBankAccountBalanceRaw(requestParameters: UpdateBankAccountBalanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner>> {
+        const requestOptions = await this.updateBankAccountBalanceRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllBankAccountBalances200ResponseBalancesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Update an existing Bank Account Balance specified by BALANCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#balance_id\">BALANCE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
      * Update Bank Account Balance
      */
-    async oBPv510UpdateBankAccountBalance(requestParameters: OBPv510UpdateBankAccountBalanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> {
-        const response = await this.oBPv510UpdateBankAccountBalanceRaw(requestParameters, initOverrides);
+    async updateBankAccountBalance(requestParameters: UpdateBankAccountBalanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllBankAccountBalances200ResponseBalancesInner> {
+        const response = await this.updateBankAccountBalanceRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

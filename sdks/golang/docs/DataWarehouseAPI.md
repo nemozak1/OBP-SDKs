@@ -1,17 +1,17 @@
 # \DataWarehouseAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv300DataWarehouseSearch**](DataWarehouseAPI.md#OBPv300DataWarehouseSearch) | **Post** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search
-[**OBPv300DataWarehouseStatistics**](DataWarehouseAPI.md#OBPv300DataWarehouseStatistics) | **Post** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics
+[**DataWarehouseSearch**](DataWarehouseAPI.md#DataWarehouseSearch) | **Post** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search
+[**DataWarehouseStatistics**](DataWarehouseAPI.md#DataWarehouseStatistics) | **Post** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics
 
 
 
-## OBPv300DataWarehouseSearch
+## DataWarehouseSearch
 
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage OBPv300DataWarehouseSearch(ctx, index).OBPv300DataWarehouseSearchRequest(oBPv300DataWarehouseSearchRequest).Execute()
+> map[string]interface{} DataWarehouseSearch(ctx, index).DataWarehouseSearchRequest(dataWarehouseSearchRequest).Execute()
 
 Data Warehouse Search
 
@@ -31,17 +31,17 @@ import (
 
 func main() {
 	index := "index_example" // string | The INDEX identifier
-	oBPv300DataWarehouseSearchRequest := *openapiclient.NewOBPv300DataWarehouseSearchRequest("Type_example", *openapiclient.NewOBPv300DataWarehouseSearchRequestProperties(*openapiclient.NewOBPv300DataWarehouseSearchRequestPropertiesQuery("Type_example", *openapiclient.NewOBPv300DataWarehouseSearchRequestPropertiesQueryProperties(*openapiclient.NewOBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage("Type_example", map[string]interface{}(123)))))) // OBPv300DataWarehouseSearchRequest | Request body
+	dataWarehouseSearchRequest := *openapiclient.NewDataWarehouseSearchRequest() // DataWarehouseSearchRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DataWarehouseAPI.OBPv300DataWarehouseSearch(context.Background(), index).OBPv300DataWarehouseSearchRequest(oBPv300DataWarehouseSearchRequest).Execute()
+	resp, r, err := apiClient.DataWarehouseAPI.DataWarehouseSearch(context.Background(), index).DataWarehouseSearchRequest(dataWarehouseSearchRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataWarehouseAPI.OBPv300DataWarehouseSearch``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DataWarehouseAPI.DataWarehouseSearch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv300DataWarehouseSearch`: OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
-	fmt.Fprintf(os.Stdout, "Response from `DataWarehouseAPI.OBPv300DataWarehouseSearch`: %v\n", resp)
+	// response from `DataWarehouseSearch`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DataWarehouseAPI.DataWarehouseSearch`: %v\n", resp)
 }
 ```
 
@@ -55,17 +55,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv300DataWarehouseSearchRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDataWarehouseSearchRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv300DataWarehouseSearchRequest** | [**OBPv300DataWarehouseSearchRequest**](OBPv300DataWarehouseSearchRequest.md) | Request body | 
+ **dataWarehouseSearchRequest** | [**DataWarehouseSearchRequest**](DataWarehouseSearchRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**map[string]interface{}**
 
 ### Authorization
 
@@ -81,9 +81,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv300DataWarehouseStatistics
+## DataWarehouseStatistics
 
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage OBPv300DataWarehouseStatistics(ctx, index, field).OBPv300DataWarehouseSearchRequest(oBPv300DataWarehouseSearchRequest).Execute()
+> map[string]interface{} DataWarehouseStatistics(ctx, index, field).DataWarehouseSearchRequest(dataWarehouseSearchRequest).Execute()
 
 Data Warehouse Statistics
 
@@ -104,17 +104,17 @@ import (
 func main() {
 	index := "index_example" // string | The INDEX identifier
 	field := "field_example" // string | The FIELD identifier
-	oBPv300DataWarehouseSearchRequest := *openapiclient.NewOBPv300DataWarehouseSearchRequest("Type_example", *openapiclient.NewOBPv300DataWarehouseSearchRequestProperties(*openapiclient.NewOBPv300DataWarehouseSearchRequestPropertiesQuery("Type_example", *openapiclient.NewOBPv300DataWarehouseSearchRequestPropertiesQueryProperties(*openapiclient.NewOBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage("Type_example", map[string]interface{}(123)))))) // OBPv300DataWarehouseSearchRequest | Request body
+	dataWarehouseSearchRequest := *openapiclient.NewDataWarehouseSearchRequest() // DataWarehouseSearchRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DataWarehouseAPI.OBPv300DataWarehouseStatistics(context.Background(), index, field).OBPv300DataWarehouseSearchRequest(oBPv300DataWarehouseSearchRequest).Execute()
+	resp, r, err := apiClient.DataWarehouseAPI.DataWarehouseStatistics(context.Background(), index, field).DataWarehouseSearchRequest(dataWarehouseSearchRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataWarehouseAPI.OBPv300DataWarehouseStatistics``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DataWarehouseAPI.DataWarehouseStatistics``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv300DataWarehouseStatistics`: OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
-	fmt.Fprintf(os.Stdout, "Response from `DataWarehouseAPI.OBPv300DataWarehouseStatistics`: %v\n", resp)
+	// response from `DataWarehouseStatistics`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DataWarehouseAPI.DataWarehouseStatistics`: %v\n", resp)
 }
 ```
 
@@ -129,18 +129,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv300DataWarehouseStatisticsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDataWarehouseStatisticsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv300DataWarehouseSearchRequest** | [**OBPv300DataWarehouseSearchRequest**](OBPv300DataWarehouseSearchRequest.md) | Request body | 
+ **dataWarehouseSearchRequest** | [**DataWarehouseSearchRequest**](DataWarehouseSearchRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**map[string]interface{}**
 
 ### Authorization
 

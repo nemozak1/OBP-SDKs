@@ -5,16 +5,16 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv300CorePrivateAccountsAllBanks**](PrivateDataApi.md#obpv300coreprivateaccountsallbanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
-[**oBPv600GetAccountsAtBank**](PrivateDataApi.md#obpv600getaccountsatbank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
+[**corePrivateAccountsAllBanks**](PrivateDataApi.md#coreprivateaccountsallbanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
+[**getAccountsAtBank**](PrivateDataApi.md#getaccountsatbank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
 
 
-# **oBPv300CorePrivateAccountsAllBanks**
-> OBPv300PrivateAccountsAtOneBank200Response oBPv300CorePrivateAccountsAllBanks()
+# **corePrivateAccountsAllBanks**
+> PrivateAccountsAtOneBank200Response corePrivateAccountsAllBanks()
 
 Get Accounts at all Banks (private)
 
@@ -37,10 +37,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getPrivateDataApi();
 
 try {
-    final response = api.oBPv300CorePrivateAccountsAllBanks();
+    final response = api.corePrivateAccountsAllBanks();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling PrivateDataApi->oBPv300CorePrivateAccountsAllBanks: $e\n');
+    print('Exception when calling PrivateDataApi->corePrivateAccountsAllBanks: $e\n');
 }
 ```
 
@@ -49,7 +49,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv300PrivateAccountsAtOneBank200Response**](OBPv300PrivateAccountsAtOneBank200Response.md)
+[**PrivateAccountsAtOneBank200Response**](PrivateAccountsAtOneBank200Response.md)
 
 ### Authorization
 
@@ -62,8 +62,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAccountsAtBank**
-> OBPv600GetAccountsAtBank200Response oBPv600GetAccountsAtBank(bankid)
+# **getAccountsAtBank**
+> GetAccountsAtBank200Response getAccountsAtBank(bankid)
 
 Get Accounts at Bank
 
@@ -87,10 +87,10 @@ final api = ObpDart().getPrivateDataApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 
 try {
-    final response = api.oBPv600GetAccountsAtBank(bankid);
+    final response = api.getAccountsAtBank(bankid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling PrivateDataApi->oBPv600GetAccountsAtBank: $e\n');
+    print('Exception when calling PrivateDataApi->getAccountsAtBank: $e\n');
 }
 ```
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAccountsAtBank200Response**](OBPv600GetAccountsAtBank200Response.md)
+[**GetAccountsAtBank200Response**](GetAccountsAtBank200Response.md)
 
 ### Authorization
 

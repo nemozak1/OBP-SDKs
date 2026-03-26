@@ -2,21 +2,21 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv510AccountAccessUniqueIndexCheck()**](SystemIntegrityApi.md#oBPv510AccountAccessUniqueIndexCheck) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access |
-| [**oBPv510AccountCurrencyCheck()**](SystemIntegrityApi.md#oBPv510AccountCurrencyCheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies |
-| [**oBPv510CustomViewNamesCheck()**](SystemIntegrityApi.md#oBPv510CustomViewNamesCheck) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names |
-| [**oBPv510OrphanedAccountCheck()**](SystemIntegrityApi.md#oBPv510OrphanedAccountCheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts |
-| [**oBPv510SystemViewNamesCheck()**](SystemIntegrityApi.md#oBPv510SystemViewNamesCheck) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names |
+| [**accountAccessUniqueIndexCheck()**](SystemIntegrityApi.md#accountAccessUniqueIndexCheck) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access |
+| [**accountCurrencyCheck()**](SystemIntegrityApi.md#accountCurrencyCheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies |
+| [**customViewNamesCheck()**](SystemIntegrityApi.md#customViewNamesCheck) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names |
+| [**orphanedAccountCheck()**](SystemIntegrityApi.md#orphanedAccountCheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts |
+| [**systemViewNamesCheck()**](SystemIntegrityApi.md#systemViewNamesCheck) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names |
 
 
-## `oBPv510AccountAccessUniqueIndexCheck()`
+## `accountAccessUniqueIndexCheck()`
 
 ```php
-oBPv510AccountAccessUniqueIndexCheck(): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+accountAccessUniqueIndexCheck(): \OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response
 ```
 
 Check Unique Index at Account Access
@@ -39,9 +39,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\SystemIntegrityApi(
@@ -52,10 +52,10 @@ $apiInstance = new OpenBankProject\Api\SystemIntegrityApi(
 );
 
 try {
-    $result = $apiInstance->oBPv510AccountAccessUniqueIndexCheck();
+    $result = $apiInstance->accountAccessUniqueIndexCheck();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SystemIntegrityApi->oBPv510AccountAccessUniqueIndexCheck: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SystemIntegrityApi->accountAccessUniqueIndexCheck: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -65,7 +65,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response**](../Model/AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -80,10 +80,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510AccountCurrencyCheck()`
+## `accountCurrencyCheck()`
 
 ```php
-oBPv510AccountCurrencyCheck($bankid): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+accountCurrencyCheck($bankid): \OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response
 ```
 
 Check for Sensible Currencies
@@ -106,9 +106,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\SystemIntegrityApi(
@@ -120,10 +120,10 @@ $apiInstance = new OpenBankProject\Api\SystemIntegrityApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 
 try {
-    $result = $apiInstance->oBPv510AccountCurrencyCheck($bankid);
+    $result = $apiInstance->accountCurrencyCheck($bankid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SystemIntegrityApi->oBPv510AccountCurrencyCheck: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SystemIntegrityApi->accountCurrencyCheck: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -135,7 +135,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response**](../Model/AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -150,10 +150,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510CustomViewNamesCheck()`
+## `customViewNamesCheck()`
 
 ```php
-oBPv510CustomViewNamesCheck(): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+customViewNamesCheck(): \OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response
 ```
 
 Check Custom View Names
@@ -176,9 +176,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\SystemIntegrityApi(
@@ -189,10 +189,10 @@ $apiInstance = new OpenBankProject\Api\SystemIntegrityApi(
 );
 
 try {
-    $result = $apiInstance->oBPv510CustomViewNamesCheck();
+    $result = $apiInstance->customViewNamesCheck();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SystemIntegrityApi->oBPv510CustomViewNamesCheck: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SystemIntegrityApi->customViewNamesCheck: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -202,7 +202,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response**](../Model/AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -217,10 +217,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510OrphanedAccountCheck()`
+## `orphanedAccountCheck()`
 
 ```php
-oBPv510OrphanedAccountCheck($bankid): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+orphanedAccountCheck($bankid): \OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response
 ```
 
 Check for Orphaned Accounts
@@ -243,9 +243,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\SystemIntegrityApi(
@@ -257,10 +257,10 @@ $apiInstance = new OpenBankProject\Api\SystemIntegrityApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 
 try {
-    $result = $apiInstance->oBPv510OrphanedAccountCheck($bankid);
+    $result = $apiInstance->orphanedAccountCheck($bankid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SystemIntegrityApi->oBPv510OrphanedAccountCheck: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SystemIntegrityApi->orphanedAccountCheck: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -272,7 +272,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response**](../Model/AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -287,10 +287,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510SystemViewNamesCheck()`
+## `systemViewNamesCheck()`
 
 ```php
-oBPv510SystemViewNamesCheck(): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+systemViewNamesCheck(): \OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response
 ```
 
 Check System View Names
@@ -313,9 +313,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\SystemIntegrityApi(
@@ -326,10 +326,10 @@ $apiInstance = new OpenBankProject\Api\SystemIntegrityApi(
 );
 
 try {
-    $result = $apiInstance->oBPv510SystemViewNamesCheck();
+    $result = $apiInstance->systemViewNamesCheck();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SystemIntegrityApi->oBPv510SystemViewNamesCheck: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SystemIntegrityApi->systemViewNamesCheck: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -339,7 +339,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response**](../Model/AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 

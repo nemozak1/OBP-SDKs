@@ -19,11 +19,11 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv400BuildDynamicEndpointTemplate200Response
-import com.openbankproject.models.OBPv400BuildDynamicEndpointTemplateRequest
-import com.openbankproject.models.OBPv400GetAllDynamicResourceDocs200Response
-import com.openbankproject.models.OBPv400GetBankLevelDynamicResourceDoc200Response
-import com.openbankproject.models.OBPv400UpdateBankLevelDynamicResourceDocRequest
+import com.openbankproject.models.BuildDynamicEndpointTemplate200Response
+import com.openbankproject.models.BuildDynamicEndpointTemplateRequest
+import com.openbankproject.models.GetAllDynamicResourceDocs200Response
+import com.openbankproject.models.GetBankLevelDynamicResourceDoc200Response
+import com.openbankproject.models.UpdateBankLevelDynamicResourceDocRequest
 
 import com.squareup.moshi.Json
 
@@ -45,7 +45,7 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -53,8 +53,8 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * POST /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code
      * Create Dynamic Resource Doc endpoint code
      * &lt;p&gt;Create a Dynamic Resource Doc endpoint code.&lt;/p&gt; &lt;p&gt;copy the response and past to PractiseEndpoint, So you can have the benefits of&lt;br /&gt; auto compilation and debug&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; 
-     * @param obPv400BuildDynamicEndpointTemplateRequest Request body
-     * @return OBPv400BuildDynamicEndpointTemplate200Response
+     * @param buildDynamicEndpointTemplateRequest Request body
+     * @return BuildDynamicEndpointTemplate200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -63,11 +63,11 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400BuildDynamicEndpointTemplate(obPv400BuildDynamicEndpointTemplateRequest: OBPv400BuildDynamicEndpointTemplateRequest) : OBPv400BuildDynamicEndpointTemplate200Response {
-        val localVarResponse = oBPv400BuildDynamicEndpointTemplateWithHttpInfo(obPv400BuildDynamicEndpointTemplateRequest = obPv400BuildDynamicEndpointTemplateRequest)
+    fun buildDynamicEndpointTemplate(buildDynamicEndpointTemplateRequest: BuildDynamicEndpointTemplateRequest) : BuildDynamicEndpointTemplate200Response {
+        val localVarResponse = buildDynamicEndpointTemplateWithHttpInfo(buildDynamicEndpointTemplateRequest = buildDynamicEndpointTemplateRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400BuildDynamicEndpointTemplate200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as BuildDynamicEndpointTemplate200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -85,29 +85,29 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * POST /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code
      * Create Dynamic Resource Doc endpoint code
      * &lt;p&gt;Create a Dynamic Resource Doc endpoint code.&lt;/p&gt; &lt;p&gt;copy the response and past to PractiseEndpoint, So you can have the benefits of&lt;br /&gt; auto compilation and debug&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; 
-     * @param obPv400BuildDynamicEndpointTemplateRequest Request body
-     * @return ApiResponse<OBPv400BuildDynamicEndpointTemplate200Response?>
+     * @param buildDynamicEndpointTemplateRequest Request body
+     * @return ApiResponse<BuildDynamicEndpointTemplate200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400BuildDynamicEndpointTemplateWithHttpInfo(obPv400BuildDynamicEndpointTemplateRequest: OBPv400BuildDynamicEndpointTemplateRequest) : ApiResponse<OBPv400BuildDynamicEndpointTemplate200Response?> {
-        val localVariableConfig = oBPv400BuildDynamicEndpointTemplateRequestConfig(obPv400BuildDynamicEndpointTemplateRequest = obPv400BuildDynamicEndpointTemplateRequest)
+    fun buildDynamicEndpointTemplateWithHttpInfo(buildDynamicEndpointTemplateRequest: BuildDynamicEndpointTemplateRequest) : ApiResponse<BuildDynamicEndpointTemplate200Response?> {
+        val localVariableConfig = buildDynamicEndpointTemplateRequestConfig(buildDynamicEndpointTemplateRequest = buildDynamicEndpointTemplateRequest)
 
-        return request<OBPv400BuildDynamicEndpointTemplateRequest, OBPv400BuildDynamicEndpointTemplate200Response>(
+        return request<BuildDynamicEndpointTemplateRequest, BuildDynamicEndpointTemplate200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400BuildDynamicEndpointTemplate
+     * To obtain the request config of the operation buildDynamicEndpointTemplate
      *
-     * @param obPv400BuildDynamicEndpointTemplateRequest Request body
+     * @param buildDynamicEndpointTemplateRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400BuildDynamicEndpointTemplateRequestConfig(obPv400BuildDynamicEndpointTemplateRequest: OBPv400BuildDynamicEndpointTemplateRequest) : RequestConfig<OBPv400BuildDynamicEndpointTemplateRequest> {
-        val localVariableBody = obPv400BuildDynamicEndpointTemplateRequest
+    fun buildDynamicEndpointTemplateRequestConfig(buildDynamicEndpointTemplateRequest: BuildDynamicEndpointTemplateRequest) : RequestConfig<BuildDynamicEndpointTemplateRequest> {
+        val localVariableBody = buildDynamicEndpointTemplateRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -128,8 +128,8 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * Create Bank Level Dynamic Resource Doc
      * &lt;p&gt;Create a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body
-     * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+     * @param updateBankLevelDynamicResourceDocRequest Request body
+     * @return GetBankLevelDynamicResourceDoc200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -138,11 +138,11 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateBankLevelDynamicResourceDoc(bankid: kotlin.String, obPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest) : OBPv400GetBankLevelDynamicResourceDoc200Response {
-        val localVarResponse = oBPv400CreateBankLevelDynamicResourceDocWithHttpInfo(bankid = bankid, obPv400UpdateBankLevelDynamicResourceDocRequest = obPv400UpdateBankLevelDynamicResourceDocRequest)
+    fun createBankLevelDynamicResourceDoc(bankid: kotlin.String, updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest) : GetBankLevelDynamicResourceDoc200Response {
+        val localVarResponse = createBankLevelDynamicResourceDocWithHttpInfo(bankid = bankid, updateBankLevelDynamicResourceDocRequest = updateBankLevelDynamicResourceDocRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetBankLevelDynamicResourceDoc200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetBankLevelDynamicResourceDoc200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -161,30 +161,30 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * Create Bank Level Dynamic Resource Doc
      * &lt;p&gt;Create a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body
-     * @return ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response?>
+     * @param updateBankLevelDynamicResourceDocRequest Request body
+     * @return ApiResponse<GetBankLevelDynamicResourceDoc200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateBankLevelDynamicResourceDocWithHttpInfo(bankid: kotlin.String, obPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest) : ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response?> {
-        val localVariableConfig = oBPv400CreateBankLevelDynamicResourceDocRequestConfig(bankid = bankid, obPv400UpdateBankLevelDynamicResourceDocRequest = obPv400UpdateBankLevelDynamicResourceDocRequest)
+    fun createBankLevelDynamicResourceDocWithHttpInfo(bankid: kotlin.String, updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest) : ApiResponse<GetBankLevelDynamicResourceDoc200Response?> {
+        val localVariableConfig = createBankLevelDynamicResourceDocRequestConfig(bankid = bankid, updateBankLevelDynamicResourceDocRequest = updateBankLevelDynamicResourceDocRequest)
 
-        return request<OBPv400UpdateBankLevelDynamicResourceDocRequest, OBPv400GetBankLevelDynamicResourceDoc200Response>(
+        return request<UpdateBankLevelDynamicResourceDocRequest, GetBankLevelDynamicResourceDoc200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400CreateBankLevelDynamicResourceDoc
+     * To obtain the request config of the operation createBankLevelDynamicResourceDoc
      *
      * @param bankid The BANKID identifier
-     * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body
+     * @param updateBankLevelDynamicResourceDocRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400CreateBankLevelDynamicResourceDocRequestConfig(bankid: kotlin.String, obPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest) : RequestConfig<OBPv400UpdateBankLevelDynamicResourceDocRequest> {
-        val localVariableBody = obPv400UpdateBankLevelDynamicResourceDocRequest
+    fun createBankLevelDynamicResourceDocRequestConfig(bankid: kotlin.String, updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest) : RequestConfig<UpdateBankLevelDynamicResourceDocRequest> {
+        val localVariableBody = updateBankLevelDynamicResourceDocRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -204,8 +204,8 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * POST /obp/v4.0.0/management/dynamic-resource-docs
      * Create Dynamic Resource Doc
      * &lt;p&gt;Create a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-     * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body
-     * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+     * @param updateBankLevelDynamicResourceDocRequest Request body
+     * @return GetBankLevelDynamicResourceDoc200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -214,11 +214,11 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateDynamicResourceDoc(obPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest) : OBPv400GetBankLevelDynamicResourceDoc200Response {
-        val localVarResponse = oBPv400CreateDynamicResourceDocWithHttpInfo(obPv400UpdateBankLevelDynamicResourceDocRequest = obPv400UpdateBankLevelDynamicResourceDocRequest)
+    fun createDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest) : GetBankLevelDynamicResourceDoc200Response {
+        val localVarResponse = createDynamicResourceDocWithHttpInfo(updateBankLevelDynamicResourceDocRequest = updateBankLevelDynamicResourceDocRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetBankLevelDynamicResourceDoc200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetBankLevelDynamicResourceDoc200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -236,29 +236,29 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * POST /obp/v4.0.0/management/dynamic-resource-docs
      * Create Dynamic Resource Doc
      * &lt;p&gt;Create a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-     * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body
-     * @return ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response?>
+     * @param updateBankLevelDynamicResourceDocRequest Request body
+     * @return ApiResponse<GetBankLevelDynamicResourceDoc200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateDynamicResourceDocWithHttpInfo(obPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest) : ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response?> {
-        val localVariableConfig = oBPv400CreateDynamicResourceDocRequestConfig(obPv400UpdateBankLevelDynamicResourceDocRequest = obPv400UpdateBankLevelDynamicResourceDocRequest)
+    fun createDynamicResourceDocWithHttpInfo(updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest) : ApiResponse<GetBankLevelDynamicResourceDoc200Response?> {
+        val localVariableConfig = createDynamicResourceDocRequestConfig(updateBankLevelDynamicResourceDocRequest = updateBankLevelDynamicResourceDocRequest)
 
-        return request<OBPv400UpdateBankLevelDynamicResourceDocRequest, OBPv400GetBankLevelDynamicResourceDoc200Response>(
+        return request<UpdateBankLevelDynamicResourceDocRequest, GetBankLevelDynamicResourceDoc200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400CreateDynamicResourceDoc
+     * To obtain the request config of the operation createDynamicResourceDoc
      *
-     * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body
+     * @param updateBankLevelDynamicResourceDocRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400CreateDynamicResourceDocRequestConfig(obPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest) : RequestConfig<OBPv400UpdateBankLevelDynamicResourceDocRequest> {
-        val localVariableBody = obPv400UpdateBankLevelDynamicResourceDocRequest
+    fun createDynamicResourceDocRequestConfig(updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest) : RequestConfig<UpdateBankLevelDynamicResourceDocRequest> {
+        val localVariableBody = updateBankLevelDynamicResourceDocRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -287,8 +287,8 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteBankLevelDynamicResourceDoc(bankid: kotlin.String) : Unit {
-        val localVarResponse = oBPv400DeleteBankLevelDynamicResourceDocWithHttpInfo(bankid = bankid)
+    fun deleteBankLevelDynamicResourceDoc(bankid: kotlin.String) : Unit {
+        val localVarResponse = deleteBankLevelDynamicResourceDocWithHttpInfo(bankid = bankid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -315,8 +315,8 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteBankLevelDynamicResourceDocWithHttpInfo(bankid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv400DeleteBankLevelDynamicResourceDocRequestConfig(bankid = bankid)
+    fun deleteBankLevelDynamicResourceDocWithHttpInfo(bankid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteBankLevelDynamicResourceDocRequestConfig(bankid = bankid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -324,12 +324,12 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
     }
 
     /**
-     * To obtain the request config of the operation oBPv400DeleteBankLevelDynamicResourceDoc
+     * To obtain the request config of the operation deleteBankLevelDynamicResourceDoc
      *
      * @param bankid The BANKID identifier
      * @return RequestConfig
      */
-    fun oBPv400DeleteBankLevelDynamicResourceDocRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteBankLevelDynamicResourceDocRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -356,8 +356,8 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteDynamicResourceDoc() : Unit {
-        val localVarResponse = oBPv400DeleteDynamicResourceDocWithHttpInfo()
+    fun deleteDynamicResourceDoc() : Unit {
+        val localVarResponse = deleteDynamicResourceDocWithHttpInfo()
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -383,8 +383,8 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteDynamicResourceDocWithHttpInfo() : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv400DeleteDynamicResourceDocRequestConfig()
+    fun deleteDynamicResourceDocWithHttpInfo() : ApiResponse<Unit?> {
+        val localVariableConfig = deleteDynamicResourceDocRequestConfig()
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -392,11 +392,11 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
     }
 
     /**
-     * To obtain the request config of the operation oBPv400DeleteDynamicResourceDoc
+     * To obtain the request config of the operation deleteDynamicResourceDoc
      *
      * @return RequestConfig
      */
-    fun oBPv400DeleteDynamicResourceDocRequestConfig() : RequestConfig<Unit> {
+    fun deleteDynamicResourceDocRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -416,7 +416,7 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * Get all Bank Level Dynamic Resource Docs
      * &lt;p&gt;Get all Bank Level Dynamic Resource Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return OBPv400GetAllDynamicResourceDocs200Response
+     * @return GetAllDynamicResourceDocs200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -425,11 +425,11 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetAllBankLevelDynamicResourceDocs(bankid: kotlin.String) : OBPv400GetAllDynamicResourceDocs200Response {
-        val localVarResponse = oBPv400GetAllBankLevelDynamicResourceDocsWithHttpInfo(bankid = bankid)
+    fun getAllBankLevelDynamicResourceDocs(bankid: kotlin.String) : GetAllDynamicResourceDocs200Response {
+        val localVarResponse = getAllBankLevelDynamicResourceDocsWithHttpInfo(bankid = bankid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetAllDynamicResourceDocs200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllDynamicResourceDocs200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -448,27 +448,27 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * Get all Bank Level Dynamic Resource Docs
      * &lt;p&gt;Get all Bank Level Dynamic Resource Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return ApiResponse<OBPv400GetAllDynamicResourceDocs200Response?>
+     * @return ApiResponse<GetAllDynamicResourceDocs200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetAllBankLevelDynamicResourceDocsWithHttpInfo(bankid: kotlin.String) : ApiResponse<OBPv400GetAllDynamicResourceDocs200Response?> {
-        val localVariableConfig = oBPv400GetAllBankLevelDynamicResourceDocsRequestConfig(bankid = bankid)
+    fun getAllBankLevelDynamicResourceDocsWithHttpInfo(bankid: kotlin.String) : ApiResponse<GetAllDynamicResourceDocs200Response?> {
+        val localVariableConfig = getAllBankLevelDynamicResourceDocsRequestConfig(bankid = bankid)
 
-        return request<Unit, OBPv400GetAllDynamicResourceDocs200Response>(
+        return request<Unit, GetAllDynamicResourceDocs200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetAllBankLevelDynamicResourceDocs
+     * To obtain the request config of the operation getAllBankLevelDynamicResourceDocs
      *
      * @param bankid The BANKID identifier
      * @return RequestConfig
      */
-    fun oBPv400GetAllBankLevelDynamicResourceDocsRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
+    fun getAllBankLevelDynamicResourceDocsRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -488,7 +488,7 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * GET /obp/v4.0.0/management/dynamic-resource-docs
      * Get all Dynamic Resource Docs
      * &lt;p&gt;Get all Dynamic Resource Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-     * @return OBPv400GetAllDynamicResourceDocs200Response
+     * @return GetAllDynamicResourceDocs200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -497,11 +497,11 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetAllDynamicResourceDocs() : OBPv400GetAllDynamicResourceDocs200Response {
-        val localVarResponse = oBPv400GetAllDynamicResourceDocsWithHttpInfo()
+    fun getAllDynamicResourceDocs() : GetAllDynamicResourceDocs200Response {
+        val localVarResponse = getAllDynamicResourceDocsWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetAllDynamicResourceDocs200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllDynamicResourceDocs200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -519,26 +519,26 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * GET /obp/v4.0.0/management/dynamic-resource-docs
      * Get all Dynamic Resource Docs
      * &lt;p&gt;Get all Dynamic Resource Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-     * @return ApiResponse<OBPv400GetAllDynamicResourceDocs200Response?>
+     * @return ApiResponse<GetAllDynamicResourceDocs200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetAllDynamicResourceDocsWithHttpInfo() : ApiResponse<OBPv400GetAllDynamicResourceDocs200Response?> {
-        val localVariableConfig = oBPv400GetAllDynamicResourceDocsRequestConfig()
+    fun getAllDynamicResourceDocsWithHttpInfo() : ApiResponse<GetAllDynamicResourceDocs200Response?> {
+        val localVariableConfig = getAllDynamicResourceDocsRequestConfig()
 
-        return request<Unit, OBPv400GetAllDynamicResourceDocs200Response>(
+        return request<Unit, GetAllDynamicResourceDocs200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetAllDynamicResourceDocs
+     * To obtain the request config of the operation getAllDynamicResourceDocs
      *
      * @return RequestConfig
      */
-    fun oBPv400GetAllDynamicResourceDocsRequestConfig() : RequestConfig<Unit> {
+    fun getAllDynamicResourceDocsRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -559,7 +559,7 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * Get Bank Level Dynamic Resource Doc by Id
      * &lt;p&gt;Get a Bank Level Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+     * @return GetBankLevelDynamicResourceDoc200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -568,11 +568,11 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetBankLevelDynamicResourceDoc(bankid: kotlin.String) : OBPv400GetBankLevelDynamicResourceDoc200Response {
-        val localVarResponse = oBPv400GetBankLevelDynamicResourceDocWithHttpInfo(bankid = bankid)
+    fun getBankLevelDynamicResourceDoc(bankid: kotlin.String) : GetBankLevelDynamicResourceDoc200Response {
+        val localVarResponse = getBankLevelDynamicResourceDocWithHttpInfo(bankid = bankid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetBankLevelDynamicResourceDoc200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetBankLevelDynamicResourceDoc200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -591,27 +591,27 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * Get Bank Level Dynamic Resource Doc by Id
      * &lt;p&gt;Get a Bank Level Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response?>
+     * @return ApiResponse<GetBankLevelDynamicResourceDoc200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetBankLevelDynamicResourceDocWithHttpInfo(bankid: kotlin.String) : ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response?> {
-        val localVariableConfig = oBPv400GetBankLevelDynamicResourceDocRequestConfig(bankid = bankid)
+    fun getBankLevelDynamicResourceDocWithHttpInfo(bankid: kotlin.String) : ApiResponse<GetBankLevelDynamicResourceDoc200Response?> {
+        val localVariableConfig = getBankLevelDynamicResourceDocRequestConfig(bankid = bankid)
 
-        return request<Unit, OBPv400GetBankLevelDynamicResourceDoc200Response>(
+        return request<Unit, GetBankLevelDynamicResourceDoc200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetBankLevelDynamicResourceDoc
+     * To obtain the request config of the operation getBankLevelDynamicResourceDoc
      *
      * @param bankid The BANKID identifier
      * @return RequestConfig
      */
-    fun oBPv400GetBankLevelDynamicResourceDocRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
+    fun getBankLevelDynamicResourceDocRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -631,7 +631,7 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * GET /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID
      * Get Dynamic Resource Doc by Id
      * &lt;p&gt;Get a Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-     * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+     * @return GetBankLevelDynamicResourceDoc200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -640,11 +640,11 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetDynamicResourceDoc() : OBPv400GetBankLevelDynamicResourceDoc200Response {
-        val localVarResponse = oBPv400GetDynamicResourceDocWithHttpInfo()
+    fun getDynamicResourceDoc() : GetBankLevelDynamicResourceDoc200Response {
+        val localVarResponse = getDynamicResourceDocWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetBankLevelDynamicResourceDoc200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetBankLevelDynamicResourceDoc200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -662,26 +662,26 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * GET /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID
      * Get Dynamic Resource Doc by Id
      * &lt;p&gt;Get a Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-     * @return ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response?>
+     * @return ApiResponse<GetBankLevelDynamicResourceDoc200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetDynamicResourceDocWithHttpInfo() : ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response?> {
-        val localVariableConfig = oBPv400GetDynamicResourceDocRequestConfig()
+    fun getDynamicResourceDocWithHttpInfo() : ApiResponse<GetBankLevelDynamicResourceDoc200Response?> {
+        val localVariableConfig = getDynamicResourceDocRequestConfig()
 
-        return request<Unit, OBPv400GetBankLevelDynamicResourceDoc200Response>(
+        return request<Unit, GetBankLevelDynamicResourceDoc200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetDynamicResourceDoc
+     * To obtain the request config of the operation getDynamicResourceDoc
      *
      * @return RequestConfig
      */
-    fun oBPv400GetDynamicResourceDocRequestConfig() : RequestConfig<Unit> {
+    fun getDynamicResourceDocRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -702,8 +702,8 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * Update Bank Level Dynamic Resource Doc
      * &lt;p&gt;Update a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body
-     * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+     * @param updateBankLevelDynamicResourceDocRequest Request body
+     * @return GetBankLevelDynamicResourceDoc200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -712,11 +712,11 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400UpdateBankLevelDynamicResourceDoc(bankid: kotlin.String, obPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest) : OBPv400GetBankLevelDynamicResourceDoc200Response {
-        val localVarResponse = oBPv400UpdateBankLevelDynamicResourceDocWithHttpInfo(bankid = bankid, obPv400UpdateBankLevelDynamicResourceDocRequest = obPv400UpdateBankLevelDynamicResourceDocRequest)
+    fun updateBankLevelDynamicResourceDoc(bankid: kotlin.String, updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest) : GetBankLevelDynamicResourceDoc200Response {
+        val localVarResponse = updateBankLevelDynamicResourceDocWithHttpInfo(bankid = bankid, updateBankLevelDynamicResourceDocRequest = updateBankLevelDynamicResourceDocRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetBankLevelDynamicResourceDoc200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetBankLevelDynamicResourceDoc200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -735,30 +735,30 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * Update Bank Level Dynamic Resource Doc
      * &lt;p&gt;Update a Bank Level Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body
-     * @return ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response?>
+     * @param updateBankLevelDynamicResourceDocRequest Request body
+     * @return ApiResponse<GetBankLevelDynamicResourceDoc200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400UpdateBankLevelDynamicResourceDocWithHttpInfo(bankid: kotlin.String, obPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest) : ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response?> {
-        val localVariableConfig = oBPv400UpdateBankLevelDynamicResourceDocRequestConfig(bankid = bankid, obPv400UpdateBankLevelDynamicResourceDocRequest = obPv400UpdateBankLevelDynamicResourceDocRequest)
+    fun updateBankLevelDynamicResourceDocWithHttpInfo(bankid: kotlin.String, updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest) : ApiResponse<GetBankLevelDynamicResourceDoc200Response?> {
+        val localVariableConfig = updateBankLevelDynamicResourceDocRequestConfig(bankid = bankid, updateBankLevelDynamicResourceDocRequest = updateBankLevelDynamicResourceDocRequest)
 
-        return request<OBPv400UpdateBankLevelDynamicResourceDocRequest, OBPv400GetBankLevelDynamicResourceDoc200Response>(
+        return request<UpdateBankLevelDynamicResourceDocRequest, GetBankLevelDynamicResourceDoc200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400UpdateBankLevelDynamicResourceDoc
+     * To obtain the request config of the operation updateBankLevelDynamicResourceDoc
      *
      * @param bankid The BANKID identifier
-     * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body
+     * @param updateBankLevelDynamicResourceDocRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400UpdateBankLevelDynamicResourceDocRequestConfig(bankid: kotlin.String, obPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest) : RequestConfig<OBPv400UpdateBankLevelDynamicResourceDocRequest> {
-        val localVariableBody = obPv400UpdateBankLevelDynamicResourceDocRequest
+    fun updateBankLevelDynamicResourceDocRequestConfig(bankid: kotlin.String, updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest) : RequestConfig<UpdateBankLevelDynamicResourceDocRequest> {
+        val localVariableBody = updateBankLevelDynamicResourceDocRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -778,8 +778,8 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * PUT /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID
      * Update Dynamic Resource Doc
      * &lt;p&gt;Update a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-     * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body
-     * @return OBPv400GetBankLevelDynamicResourceDoc200Response
+     * @param updateBankLevelDynamicResourceDocRequest Request body
+     * @return GetBankLevelDynamicResourceDoc200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -788,11 +788,11 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400UpdateDynamicResourceDoc(obPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest) : OBPv400GetBankLevelDynamicResourceDoc200Response {
-        val localVarResponse = oBPv400UpdateDynamicResourceDocWithHttpInfo(obPv400UpdateBankLevelDynamicResourceDocRequest = obPv400UpdateBankLevelDynamicResourceDocRequest)
+    fun updateDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest) : GetBankLevelDynamicResourceDoc200Response {
+        val localVarResponse = updateDynamicResourceDocWithHttpInfo(updateBankLevelDynamicResourceDocRequest = updateBankLevelDynamicResourceDocRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetBankLevelDynamicResourceDoc200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetBankLevelDynamicResourceDoc200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -810,29 +810,29 @@ open class DynamicResourceDocApi(basePath: kotlin.String = defaultBasePath, clie
      * PUT /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID
      * Update Dynamic Resource Doc
      * &lt;p&gt;Update a Dynamic Resource Doc.&lt;/p&gt; &lt;p&gt;The connector_method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#roles\&quot;&gt;&lt;strong&gt;roles&lt;/strong&gt;&lt;/a&gt;: CanCreateMyUser&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; 
-     * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body
-     * @return ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response?>
+     * @param updateBankLevelDynamicResourceDocRequest Request body
+     * @return ApiResponse<GetBankLevelDynamicResourceDoc200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400UpdateDynamicResourceDocWithHttpInfo(obPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest) : ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response?> {
-        val localVariableConfig = oBPv400UpdateDynamicResourceDocRequestConfig(obPv400UpdateBankLevelDynamicResourceDocRequest = obPv400UpdateBankLevelDynamicResourceDocRequest)
+    fun updateDynamicResourceDocWithHttpInfo(updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest) : ApiResponse<GetBankLevelDynamicResourceDoc200Response?> {
+        val localVariableConfig = updateDynamicResourceDocRequestConfig(updateBankLevelDynamicResourceDocRequest = updateBankLevelDynamicResourceDocRequest)
 
-        return request<OBPv400UpdateBankLevelDynamicResourceDocRequest, OBPv400GetBankLevelDynamicResourceDoc200Response>(
+        return request<UpdateBankLevelDynamicResourceDocRequest, GetBankLevelDynamicResourceDoc200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400UpdateDynamicResourceDoc
+     * To obtain the request config of the operation updateDynamicResourceDoc
      *
-     * @param obPv400UpdateBankLevelDynamicResourceDocRequest Request body
+     * @param updateBankLevelDynamicResourceDocRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400UpdateDynamicResourceDocRequestConfig(obPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest) : RequestConfig<OBPv400UpdateBankLevelDynamicResourceDocRequest> {
-        val localVariableBody = obPv400UpdateBankLevelDynamicResourceDocRequest
+    fun updateDynamicResourceDocRequestConfig(updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest) : RequestConfig<UpdateBankLevelDynamicResourceDocRequest> {
+        val localVariableBody = updateBankLevelDynamicResourceDocRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

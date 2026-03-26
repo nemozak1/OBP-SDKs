@@ -1,18 +1,18 @@
 # CacheApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600GetCacheConfig**](CacheApi.md#oBPv600GetCacheConfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
-| [**oBPv600GetCacheInfo**](CacheApi.md#oBPv600GetCacheInfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
-| [**oBPv600GetCacheNamespaces**](CacheApi.md#oBPv600GetCacheNamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
-| [**oBPv600InvalidateCacheNamespace**](CacheApi.md#oBPv600InvalidateCacheNamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
+| [**getCacheConfig**](CacheApi.md#getCacheConfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
+| [**getCacheInfo**](CacheApi.md#getCacheInfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
+| [**getCacheNamespaces**](CacheApi.md#getCacheNamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
+| [**invalidateCacheNamespace**](CacheApi.md#invalidateCacheNamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
 
 
-<a id="oBPv600GetCacheConfig"></a>
-# **oBPv600GetCacheConfig**
-> OBPv600GetCacheConfig200Response oBPv600GetCacheConfig()
+<a id="getCacheConfig"></a>
+# **getCacheConfig**
+> GetCacheConfig200Response getCacheConfig()
 
 Get Cache Configuration
 
@@ -26,13 +26,13 @@ Get Cache Configuration
 
 val apiInstance = CacheApi()
 try {
-    val result : OBPv600GetCacheConfig200Response = apiInstance.oBPv600GetCacheConfig()
+    val result : GetCacheConfig200Response = apiInstance.getCacheConfig()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling CacheApi#oBPv600GetCacheConfig")
+    println("4xx response calling CacheApi#getCacheConfig")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling CacheApi#oBPv600GetCacheConfig")
+    println("5xx response calling CacheApi#getCacheConfig")
     e.printStackTrace()
 }
 ```
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Response.md)
+[**GetCacheConfig200Response**](GetCacheConfig200Response.md)
 
 ### Authorization
 
@@ -53,17 +53,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetCacheInfo"></a>
-# **oBPv600GetCacheInfo**
-> OBPv600GetCacheInfo200Response oBPv600GetCacheInfo()
+<a id="getCacheInfo"></a>
+# **getCacheInfo**
+> GetCacheInfo200Response getCacheInfo()
 
 Get Cache Information
 
@@ -77,13 +77,13 @@ Get Cache Information
 
 val apiInstance = CacheApi()
 try {
-    val result : OBPv600GetCacheInfo200Response = apiInstance.oBPv600GetCacheInfo()
+    val result : GetCacheInfo200Response = apiInstance.getCacheInfo()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling CacheApi#oBPv600GetCacheInfo")
+    println("4xx response calling CacheApi#getCacheInfo")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling CacheApi#oBPv600GetCacheInfo")
+    println("5xx response calling CacheApi#getCacheInfo")
     e.printStackTrace()
 }
 ```
@@ -93,7 +93,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.md)
+[**GetCacheInfo200Response**](GetCacheInfo200Response.md)
 
 ### Authorization
 
@@ -104,17 +104,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetCacheNamespaces"></a>
-# **oBPv600GetCacheNamespaces**
-> OBPv600GetCacheNamespaces200Response oBPv600GetCacheNamespaces()
+<a id="getCacheNamespaces"></a>
+# **getCacheNamespaces**
+> GetCacheNamespaces200Response getCacheNamespaces()
 
 Get Cache Namespaces
 
@@ -128,13 +128,13 @@ Get Cache Namespaces
 
 val apiInstance = CacheApi()
 try {
-    val result : OBPv600GetCacheNamespaces200Response = apiInstance.oBPv600GetCacheNamespaces()
+    val result : GetCacheNamespaces200Response = apiInstance.getCacheNamespaces()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling CacheApi#oBPv600GetCacheNamespaces")
+    println("4xx response calling CacheApi#getCacheNamespaces")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling CacheApi#oBPv600GetCacheNamespaces")
+    println("5xx response calling CacheApi#getCacheNamespaces")
     e.printStackTrace()
 }
 ```
@@ -144,7 +144,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces200Response.md)
+[**GetCacheNamespaces200Response**](GetCacheNamespaces200Response.md)
 
 ### Authorization
 
@@ -155,17 +155,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600InvalidateCacheNamespace"></a>
-# **oBPv600InvalidateCacheNamespace**
-> OBPv600InvalidateCacheNamespace200Response oBPv600InvalidateCacheNamespace(obPv600InvalidateCacheNamespaceRequest)
+<a id="invalidateCacheNamespace"></a>
+# **invalidateCacheNamespace**
+> InvalidateCacheNamespace200Response invalidateCacheNamespace(invalidateCacheNamespaceRequest)
 
 Invalidate Cache Namespace
 
@@ -178,15 +178,15 @@ Invalidate Cache Namespace
 //import com.openbankproject.models.*
 
 val apiInstance = CacheApi()
-val obPv600InvalidateCacheNamespaceRequest : OBPv600InvalidateCacheNamespaceRequest = {"type":"object","properties":{"namespace_id":{"type":"string"}}} // OBPv600InvalidateCacheNamespaceRequest | Request body
+val invalidateCacheNamespaceRequest : InvalidateCacheNamespaceRequest = {"type":"object","properties":{"namespace_id":{"type":"string"}}} // InvalidateCacheNamespaceRequest | Request body
 try {
-    val result : OBPv600InvalidateCacheNamespace200Response = apiInstance.oBPv600InvalidateCacheNamespace(obPv600InvalidateCacheNamespaceRequest)
+    val result : InvalidateCacheNamespace200Response = apiInstance.invalidateCacheNamespace(invalidateCacheNamespaceRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling CacheApi#oBPv600InvalidateCacheNamespace")
+    println("4xx response calling CacheApi#invalidateCacheNamespace")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling CacheApi#oBPv600InvalidateCacheNamespace")
+    println("5xx response calling CacheApi#invalidateCacheNamespace")
     e.printStackTrace()
 }
 ```
@@ -194,11 +194,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600InvalidateCacheNamespaceRequest** | [**OBPv600InvalidateCacheNamespaceRequest**](OBPv600InvalidateCacheNamespaceRequest.md)| Request body | |
+| **invalidateCacheNamespaceRequest** | [**InvalidateCacheNamespaceRequest**](InvalidateCacheNamespaceRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600InvalidateCacheNamespace200Response**](OBPv600InvalidateCacheNamespace200Response.md)
+[**InvalidateCacheNamespace200Response**](InvalidateCacheNamespace200Response.md)
 
 ### Authorization
 
@@ -209,8 +209,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

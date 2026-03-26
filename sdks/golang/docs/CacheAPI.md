@@ -1,19 +1,19 @@
 # \CacheAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv600GetCacheConfig**](CacheAPI.md#OBPv600GetCacheConfig) | **Get** /obp/v6.0.0/system/cache/config | Get Cache Configuration
-[**OBPv600GetCacheInfo**](CacheAPI.md#OBPv600GetCacheInfo) | **Get** /obp/v6.0.0/system/cache/info | Get Cache Information
-[**OBPv600GetCacheNamespaces**](CacheAPI.md#OBPv600GetCacheNamespaces) | **Get** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
-[**OBPv600InvalidateCacheNamespace**](CacheAPI.md#OBPv600InvalidateCacheNamespace) | **Post** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
+[**GetCacheConfig**](CacheAPI.md#GetCacheConfig) | **Get** /obp/v6.0.0/system/cache/config | Get Cache Configuration
+[**GetCacheInfo**](CacheAPI.md#GetCacheInfo) | **Get** /obp/v6.0.0/system/cache/info | Get Cache Information
+[**GetCacheNamespaces**](CacheAPI.md#GetCacheNamespaces) | **Get** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
+[**InvalidateCacheNamespace**](CacheAPI.md#InvalidateCacheNamespace) | **Post** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
 
 
 
-## OBPv600GetCacheConfig
+## GetCacheConfig
 
-> OBPv600GetCacheConfig200Response OBPv600GetCacheConfig(ctx).Execute()
+> GetCacheConfig200Response GetCacheConfig(ctx).Execute()
 
 Get Cache Configuration
 
@@ -35,13 +35,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CacheAPI.OBPv600GetCacheConfig(context.Background()).Execute()
+	resp, r, err := apiClient.CacheAPI.GetCacheConfig(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CacheAPI.OBPv600GetCacheConfig``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CacheAPI.GetCacheConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetCacheConfig`: OBPv600GetCacheConfig200Response
-	fmt.Fprintf(os.Stdout, "Response from `CacheAPI.OBPv600GetCacheConfig`: %v\n", resp)
+	// response from `GetCacheConfig`: GetCacheConfig200Response
+	fmt.Fprintf(os.Stdout, "Response from `CacheAPI.GetCacheConfig`: %v\n", resp)
 }
 ```
 
@@ -51,12 +51,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetCacheConfigRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCacheConfigRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Response.md)
+[**GetCacheConfig200Response**](GetCacheConfig200Response.md)
 
 ### Authorization
 
@@ -72,9 +72,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetCacheConfigReque
 [[Back to README]](../README.md)
 
 
-## OBPv600GetCacheInfo
+## GetCacheInfo
 
-> OBPv600GetCacheInfo200Response OBPv600GetCacheInfo(ctx).Execute()
+> GetCacheInfo200Response GetCacheInfo(ctx).Execute()
 
 Get Cache Information
 
@@ -96,13 +96,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CacheAPI.OBPv600GetCacheInfo(context.Background()).Execute()
+	resp, r, err := apiClient.CacheAPI.GetCacheInfo(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CacheAPI.OBPv600GetCacheInfo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CacheAPI.GetCacheInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetCacheInfo`: OBPv600GetCacheInfo200Response
-	fmt.Fprintf(os.Stdout, "Response from `CacheAPI.OBPv600GetCacheInfo`: %v\n", resp)
+	// response from `GetCacheInfo`: GetCacheInfo200Response
+	fmt.Fprintf(os.Stdout, "Response from `CacheAPI.GetCacheInfo`: %v\n", resp)
 }
 ```
 
@@ -112,12 +112,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetCacheInfoRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCacheInfoRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.md)
+[**GetCacheInfo200Response**](GetCacheInfo200Response.md)
 
 ### Authorization
 
@@ -133,9 +133,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetCacheInfoRequest
 [[Back to README]](../README.md)
 
 
-## OBPv600GetCacheNamespaces
+## GetCacheNamespaces
 
-> OBPv600GetCacheNamespaces200Response OBPv600GetCacheNamespaces(ctx).Execute()
+> GetCacheNamespaces200Response GetCacheNamespaces(ctx).Execute()
 
 Get Cache Namespaces
 
@@ -157,13 +157,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CacheAPI.OBPv600GetCacheNamespaces(context.Background()).Execute()
+	resp, r, err := apiClient.CacheAPI.GetCacheNamespaces(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CacheAPI.OBPv600GetCacheNamespaces``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CacheAPI.GetCacheNamespaces``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetCacheNamespaces`: OBPv600GetCacheNamespaces200Response
-	fmt.Fprintf(os.Stdout, "Response from `CacheAPI.OBPv600GetCacheNamespaces`: %v\n", resp)
+	// response from `GetCacheNamespaces`: GetCacheNamespaces200Response
+	fmt.Fprintf(os.Stdout, "Response from `CacheAPI.GetCacheNamespaces`: %v\n", resp)
 }
 ```
 
@@ -173,12 +173,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetCacheNamespacesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCacheNamespacesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces200Response.md)
+[**GetCacheNamespaces200Response**](GetCacheNamespaces200Response.md)
 
 ### Authorization
 
@@ -194,9 +194,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetCacheNamespacesR
 [[Back to README]](../README.md)
 
 
-## OBPv600InvalidateCacheNamespace
+## InvalidateCacheNamespace
 
-> OBPv600InvalidateCacheNamespace200Response OBPv600InvalidateCacheNamespace(ctx).OBPv600InvalidateCacheNamespaceRequest(oBPv600InvalidateCacheNamespaceRequest).Execute()
+> InvalidateCacheNamespace200Response InvalidateCacheNamespace(ctx).InvalidateCacheNamespaceRequest(invalidateCacheNamespaceRequest).Execute()
 
 Invalidate Cache Namespace
 
@@ -215,17 +215,17 @@ import (
 )
 
 func main() {
-	oBPv600InvalidateCacheNamespaceRequest := *openapiclient.NewOBPv600InvalidateCacheNamespaceRequest("Type_example", *openapiclient.NewOBPv600InvalidateCacheNamespaceRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600InvalidateCacheNamespaceRequest | Request body
+	invalidateCacheNamespaceRequest := *openapiclient.NewInvalidateCacheNamespaceRequest() // InvalidateCacheNamespaceRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CacheAPI.OBPv600InvalidateCacheNamespace(context.Background()).OBPv600InvalidateCacheNamespaceRequest(oBPv600InvalidateCacheNamespaceRequest).Execute()
+	resp, r, err := apiClient.CacheAPI.InvalidateCacheNamespace(context.Background()).InvalidateCacheNamespaceRequest(invalidateCacheNamespaceRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CacheAPI.OBPv600InvalidateCacheNamespace``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CacheAPI.InvalidateCacheNamespace``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600InvalidateCacheNamespace`: OBPv600InvalidateCacheNamespace200Response
-	fmt.Fprintf(os.Stdout, "Response from `CacheAPI.OBPv600InvalidateCacheNamespace`: %v\n", resp)
+	// response from `InvalidateCacheNamespace`: InvalidateCacheNamespace200Response
+	fmt.Fprintf(os.Stdout, "Response from `CacheAPI.InvalidateCacheNamespace`: %v\n", resp)
 }
 ```
 
@@ -235,16 +235,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600InvalidateCacheNamespaceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiInvalidateCacheNamespaceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600InvalidateCacheNamespaceRequest** | [**OBPv600InvalidateCacheNamespaceRequest**](OBPv600InvalidateCacheNamespaceRequest.md) | Request body | 
+ **invalidateCacheNamespaceRequest** | [**InvalidateCacheNamespaceRequest**](InvalidateCacheNamespaceRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600InvalidateCacheNamespace200Response**](OBPv600InvalidateCacheNamespace200Response.md)
+[**InvalidateCacheNamespace200Response**](InvalidateCacheNamespace200Response.md)
 
 ### Authorization
 

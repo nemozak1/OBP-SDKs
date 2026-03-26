@@ -1,21 +1,21 @@
 # TransactionRequestAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400CreateOrUpdateTransactionRequestAttributeDefinition**](TransactionRequestAttributeApi.md#oBPv400CreateOrUpdateTransactionRequestAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition |
-| [**oBPv400CreateTransactionRequestAttribute**](TransactionRequestAttributeApi.md#oBPv400CreateTransactionRequestAttribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute |
-| [**oBPv400DeleteTransactionRequestAttributeDefinition**](TransactionRequestAttributeApi.md#oBPv400DeleteTransactionRequestAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition |
-| [**oBPv400GetTransactionRequestAttributeById**](TransactionRequestAttributeApi.md#oBPv400GetTransactionRequestAttributeById) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id |
-| [**oBPv400GetTransactionRequestAttributeDefinition**](TransactionRequestAttributeApi.md#oBPv400GetTransactionRequestAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition |
-| [**oBPv400GetTransactionRequestAttributes**](TransactionRequestAttributeApi.md#oBPv400GetTransactionRequestAttributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes |
-| [**oBPv400UpdateTransactionRequestAttribute**](TransactionRequestAttributeApi.md#oBPv400UpdateTransactionRequestAttribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute |
+| [**createOrUpdateTransactionRequestAttributeDefinition**](TransactionRequestAttributeApi.md#createOrUpdateTransactionRequestAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition |
+| [**createTransactionRequestAttribute**](TransactionRequestAttributeApi.md#createTransactionRequestAttribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute |
+| [**deleteTransactionRequestAttributeDefinition**](TransactionRequestAttributeApi.md#deleteTransactionRequestAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition |
+| [**getTransactionRequestAttributeById**](TransactionRequestAttributeApi.md#getTransactionRequestAttributeById) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id |
+| [**getTransactionRequestAttributeDefinition**](TransactionRequestAttributeApi.md#getTransactionRequestAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition |
+| [**getTransactionRequestAttributes**](TransactionRequestAttributeApi.md#getTransactionRequestAttributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes |
+| [**updateTransactionRequestAttribute**](TransactionRequestAttributeApi.md#updateTransactionRequestAttribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute |
 
 
-<a id="oBPv400CreateOrUpdateTransactionRequestAttributeDefinition"></a>
-# **oBPv400CreateOrUpdateTransactionRequestAttributeDefinition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateTransactionRequestAttributeDefinition(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+<a id="createOrUpdateTransactionRequestAttributeDefinition"></a>
+# **createOrUpdateTransactionRequestAttributeDefinition**
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateTransactionRequestAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Transaction Request Attribute Definition
 
@@ -29,15 +29,15 @@ Create or Update Transaction Request Attribute Definition
 
 val apiInstance = TransactionRequestAttributeApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest : OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = {"type":"object","properties":{"can_be_seen_on_views":{"type":"array","items":{"type":"string"}},"description":{"type":"string"},"is_active":{"type":"boolean"},"name":{"type":"string"},"type":{"type":"string"},"category":{"type":"string"},"alias":{"type":"string"}}} // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+val createOrUpdateTransactionRequestAttributeDefinitionRequest : CreateOrUpdateTransactionRequestAttributeDefinitionRequest = {"type":"object","properties":{"can_be_seen_on_views":{"type":"array","items":{"type":"string"}},"description":{"type":"string"},"is_active":{"type":"boolean"},"name":{"type":"string"},"type":{"type":"string"},"category":{"type":"string"},"alias":{"type":"string"}}} // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 try {
-    val result : OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems = apiInstance.oBPv400CreateOrUpdateTransactionRequestAttributeDefinition(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+    val result : GetTransactionRequestAttributeDefinition200ResponseAttributesInner = apiInstance.createOrUpdateTransactionRequestAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionRequestAttributeApi#oBPv400CreateOrUpdateTransactionRequestAttributeDefinition")
+    println("4xx response calling TransactionRequestAttributeApi#createOrUpdateTransactionRequestAttributeDefinition")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionRequestAttributeApi#oBPv400CreateOrUpdateTransactionRequestAttributeDefinition")
+    println("5xx response calling TransactionRequestAttributeApi#createOrUpdateTransactionRequestAttributeDefinition")
     e.printStackTrace()
 }
 ```
@@ -46,11 +46,11 @@ try {
 | **bankid** | **kotlin.String**| The BANKID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
+| **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -61,17 +61,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400CreateTransactionRequestAttribute"></a>
-# **oBPv400CreateTransactionRequestAttribute**
-> OBPv400GetTransactionRequestAttributeById200Response oBPv400CreateTransactionRequestAttribute(bankid, accountid, transactionrequestid, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+<a id="createTransactionRequestAttribute"></a>
+# **createTransactionRequestAttribute**
+> GetTransactionRequestAttributeById200Response createTransactionRequestAttribute(bankid, accountid, transactionrequestid, createTransactionRequestCounterpartyRequestAttributesInner)
 
 Create Transaction Request Attribute
 
@@ -87,15 +87,15 @@ val apiInstance = TransactionRequestAttributeApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val transactionrequestid : kotlin.String = transactionrequestid_example // kotlin.String | The TRANSACTIONREQUESTID identifier
-val obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems : OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems = {type=object, properties={attribute_type={type=string}, name={type=string}, value={type=string}}} // OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems | Request body
+val createTransactionRequestCounterpartyRequestAttributesInner : CreateTransactionRequestCounterpartyRequestAttributesInner = {type=object, properties={attribute_type={type=string}, name={type=string}, value={type=string}}} // CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
 try {
-    val result : OBPv400GetTransactionRequestAttributeById200Response = apiInstance.oBPv400CreateTransactionRequestAttribute(bankid, accountid, transactionrequestid, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+    val result : GetTransactionRequestAttributeById200Response = apiInstance.createTransactionRequestAttribute(bankid, accountid, transactionrequestid, createTransactionRequestCounterpartyRequestAttributesInner)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionRequestAttributeApi#oBPv400CreateTransactionRequestAttribute")
+    println("4xx response calling TransactionRequestAttributeApi#createTransactionRequestAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionRequestAttributeApi#oBPv400CreateTransactionRequestAttribute")
+    println("5xx response calling TransactionRequestAttributeApi#createTransactionRequestAttribute")
     e.printStackTrace()
 }
 ```
@@ -106,11 +106,11 @@ try {
 | **transactionrequestid** | **kotlin.String**| The TRANSACTIONREQUESTID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems** | [**OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems**](OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems.md)| Request body | |
+| **createTransactionRequestCounterpartyRequestAttributesInner** | [**CreateTransactionRequestCounterpartyRequestAttributesInner**](CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
 
 ### Authorization
 
@@ -121,17 +121,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400DeleteTransactionRequestAttributeDefinition"></a>
-# **oBPv400DeleteTransactionRequestAttributeDefinition**
-> OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteTransactionRequestAttributeDefinition(bankid, attributedefinitionid)
+<a id="deleteTransactionRequestAttributeDefinition"></a>
+# **deleteTransactionRequestAttributeDefinition**
+> DeleteSystemLevelEndpointTag200Response deleteTransactionRequestAttributeDefinition(bankid, attributedefinitionid)
 
 Delete Transaction Request Attribute Definition
 
@@ -147,13 +147,13 @@ val apiInstance = TransactionRequestAttributeApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val attributedefinitionid : kotlin.String = attributedefinitionid_example // kotlin.String | The ATTRIBUTEDEFINITIONID identifier
 try {
-    val result : OBPv400DeleteSystemLevelEndpointTag200Response = apiInstance.oBPv400DeleteTransactionRequestAttributeDefinition(bankid, attributedefinitionid)
+    val result : DeleteSystemLevelEndpointTag200Response = apiInstance.deleteTransactionRequestAttributeDefinition(bankid, attributedefinitionid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionRequestAttributeApi#oBPv400DeleteTransactionRequestAttributeDefinition")
+    println("4xx response calling TransactionRequestAttributeApi#deleteTransactionRequestAttributeDefinition")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionRequestAttributeApi#oBPv400DeleteTransactionRequestAttributeDefinition")
+    println("5xx response calling TransactionRequestAttributeApi#deleteTransactionRequestAttributeDefinition")
     e.printStackTrace()
 }
 ```
@@ -166,7 +166,7 @@ try {
 
 ### Return type
 
-[**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)
+[**DeleteSystemLevelEndpointTag200Response**](DeleteSystemLevelEndpointTag200Response.md)
 
 ### Authorization
 
@@ -177,17 +177,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetTransactionRequestAttributeById"></a>
-# **oBPv400GetTransactionRequestAttributeById**
-> OBPv400GetTransactionRequestAttributeById200Response oBPv400GetTransactionRequestAttributeById(bankid, accountid, transactionrequestid, attributeid)
+<a id="getTransactionRequestAttributeById"></a>
+# **getTransactionRequestAttributeById**
+> GetTransactionRequestAttributeById200Response getTransactionRequestAttributeById(bankid, accountid, transactionrequestid, attributeid)
 
 Get Transaction Request Attribute By Id
 
@@ -205,13 +205,13 @@ val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNT
 val transactionrequestid : kotlin.String = transactionrequestid_example // kotlin.String | The TRANSACTIONREQUESTID identifier
 val attributeid : kotlin.String = attributeid_example // kotlin.String | The ATTRIBUTEID identifier
 try {
-    val result : OBPv400GetTransactionRequestAttributeById200Response = apiInstance.oBPv400GetTransactionRequestAttributeById(bankid, accountid, transactionrequestid, attributeid)
+    val result : GetTransactionRequestAttributeById200Response = apiInstance.getTransactionRequestAttributeById(bankid, accountid, transactionrequestid, attributeid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionRequestAttributeApi#oBPv400GetTransactionRequestAttributeById")
+    println("4xx response calling TransactionRequestAttributeApi#getTransactionRequestAttributeById")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionRequestAttributeApi#oBPv400GetTransactionRequestAttributeById")
+    println("5xx response calling TransactionRequestAttributeApi#getTransactionRequestAttributeById")
     e.printStackTrace()
 }
 ```
@@ -226,7 +226,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
 
 ### Authorization
 
@@ -237,17 +237,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetTransactionRequestAttributeDefinition"></a>
-# **oBPv400GetTransactionRequestAttributeDefinition**
-> OBPv400GetTransactionRequestAttributeDefinition200Response oBPv400GetTransactionRequestAttributeDefinition(bankid)
+<a id="getTransactionRequestAttributeDefinition"></a>
+# **getTransactionRequestAttributeDefinition**
+> GetTransactionRequestAttributeDefinition200Response getTransactionRequestAttributeDefinition(bankid)
 
 Get Transaction Request Attribute Definition
 
@@ -262,13 +262,13 @@ Get Transaction Request Attribute Definition
 val apiInstance = TransactionRequestAttributeApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 try {
-    val result : OBPv400GetTransactionRequestAttributeDefinition200Response = apiInstance.oBPv400GetTransactionRequestAttributeDefinition(bankid)
+    val result : GetTransactionRequestAttributeDefinition200Response = apiInstance.getTransactionRequestAttributeDefinition(bankid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionRequestAttributeApi#oBPv400GetTransactionRequestAttributeDefinition")
+    println("4xx response calling TransactionRequestAttributeApi#getTransactionRequestAttributeDefinition")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionRequestAttributeApi#oBPv400GetTransactionRequestAttributeDefinition")
+    println("5xx response calling TransactionRequestAttributeApi#getTransactionRequestAttributeDefinition")
     e.printStackTrace()
 }
 ```
@@ -280,7 +280,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -291,17 +291,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetTransactionRequestAttributes"></a>
-# **oBPv400GetTransactionRequestAttributes**
-> OBPv400GetTransactionRequestAttributes200Response oBPv400GetTransactionRequestAttributes(bankid, accountid, transactionrequestid)
+<a id="getTransactionRequestAttributes"></a>
+# **getTransactionRequestAttributes**
+> GetTransactionRequestAttributes200Response getTransactionRequestAttributes(bankid, accountid, transactionrequestid)
 
 Get Transaction Request Attributes
 
@@ -318,13 +318,13 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val transactionrequestid : kotlin.String = transactionrequestid_example // kotlin.String | The TRANSACTIONREQUESTID identifier
 try {
-    val result : OBPv400GetTransactionRequestAttributes200Response = apiInstance.oBPv400GetTransactionRequestAttributes(bankid, accountid, transactionrequestid)
+    val result : GetTransactionRequestAttributes200Response = apiInstance.getTransactionRequestAttributes(bankid, accountid, transactionrequestid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionRequestAttributeApi#oBPv400GetTransactionRequestAttributes")
+    println("4xx response calling TransactionRequestAttributeApi#getTransactionRequestAttributes")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionRequestAttributeApi#oBPv400GetTransactionRequestAttributes")
+    println("5xx response calling TransactionRequestAttributeApi#getTransactionRequestAttributes")
     e.printStackTrace()
 }
 ```
@@ -338,7 +338,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributes200Response**](OBPv400GetTransactionRequestAttributes200Response.md)
+[**GetTransactionRequestAttributes200Response**](GetTransactionRequestAttributes200Response.md)
 
 ### Authorization
 
@@ -349,17 +349,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400UpdateTransactionRequestAttribute"></a>
-# **oBPv400UpdateTransactionRequestAttribute**
-> OBPv400GetTransactionRequestAttributeById200Response oBPv400UpdateTransactionRequestAttribute(bankid, accountid, transactionrequestid, attributeid, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+<a id="updateTransactionRequestAttribute"></a>
+# **updateTransactionRequestAttribute**
+> GetTransactionRequestAttributeById200Response updateTransactionRequestAttribute(bankid, accountid, transactionrequestid, attributeid, createTransactionRequestCounterpartyRequestAttributesInner)
 
 Update Transaction Request Attribute
 
@@ -376,15 +376,15 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val transactionrequestid : kotlin.String = transactionrequestid_example // kotlin.String | The TRANSACTIONREQUESTID identifier
 val attributeid : kotlin.String = attributeid_example // kotlin.String | The ATTRIBUTEID identifier
-val obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems : OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems = {"type":"object","properties":{"attribute_type":{"type":"string"},"name":{"type":"string"},"value":{"type":"string"}}} // OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems | Request body
+val createTransactionRequestCounterpartyRequestAttributesInner : CreateTransactionRequestCounterpartyRequestAttributesInner = {"type":"object","properties":{"attribute_type":{"type":"string"},"name":{"type":"string"},"value":{"type":"string"}}} // CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
 try {
-    val result : OBPv400GetTransactionRequestAttributeById200Response = apiInstance.oBPv400UpdateTransactionRequestAttribute(bankid, accountid, transactionrequestid, attributeid, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+    val result : GetTransactionRequestAttributeById200Response = apiInstance.updateTransactionRequestAttribute(bankid, accountid, transactionrequestid, attributeid, createTransactionRequestCounterpartyRequestAttributesInner)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TransactionRequestAttributeApi#oBPv400UpdateTransactionRequestAttribute")
+    println("4xx response calling TransactionRequestAttributeApi#updateTransactionRequestAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TransactionRequestAttributeApi#oBPv400UpdateTransactionRequestAttribute")
+    println("5xx response calling TransactionRequestAttributeApi#updateTransactionRequestAttribute")
     e.printStackTrace()
 }
 ```
@@ -396,11 +396,11 @@ try {
 | **attributeid** | **kotlin.String**| The ATTRIBUTEID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems** | [**OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems**](OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems.md)| Request body | |
+| **createTransactionRequestCounterpartyRequestAttributesInner** | [**CreateTransactionRequestCounterpartyRequestAttributesInner**](CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
 
 ### Authorization
 
@@ -411,8 +411,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

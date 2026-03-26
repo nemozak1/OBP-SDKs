@@ -9,14 +9,14 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv600_add_user_to_group200_response.dart';
-import 'package:obp_dart/src/model/obpv600_add_user_to_group_request.dart';
-import 'package:obp_dart/src/model/obpv600_create_group_request.dart';
-import 'package:obp_dart/src/model/obpv600_get_group_entitlements200_response.dart';
-import 'package:obp_dart/src/model/obpv600_get_groups200_response.dart';
-import 'package:obp_dart/src/model/obpv600_get_groups200_response_properties_groups_items.dart';
-import 'package:obp_dart/src/model/obpv600_get_user_group_memberships200_response.dart';
-import 'package:obp_dart/src/model/obpv600_update_group_request.dart';
+import 'package:obp_dart/src/model/add_user_to_group200_response.dart';
+import 'package:obp_dart/src/model/add_user_to_group_request.dart';
+import 'package:obp_dart/src/model/create_group_request.dart';
+import 'package:obp_dart/src/model/get_group_entitlements200_response.dart';
+import 'package:obp_dart/src/model/get_groups200_response.dart';
+import 'package:obp_dart/src/model/get_groups200_response_groups_inner.dart';
+import 'package:obp_dart/src/model/get_user_group_memberships200_response.dart';
+import 'package:obp_dart/src/model/update_group_request.dart';
 
 class GroupApi {
 
@@ -31,7 +31,7 @@ class GroupApi {
   ///
   /// Parameters:
   /// * [userid] - The USERID identifier
-  /// * [oBPv600AddUserToGroupRequest] - Request body
+  /// * [addUserToGroupRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -39,11 +39,11 @@ class GroupApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600AddUserToGroup200Response] as data
+  /// Returns a [Future] containing a [Response] with a [AddUserToGroup200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600AddUserToGroup200Response>> oBPv600AddUserToGroup({ 
+  Future<Response<AddUserToGroup200Response>> addUserToGroup({ 
     required String userid,
-    required OBPv600AddUserToGroupRequest oBPv600AddUserToGroupRequest,
+    required AddUserToGroupRequest addUserToGroupRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -70,7 +70,7 @@ class GroupApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -83,8 +83,8 @@ class GroupApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv600AddUserToGroupRequest);
-      _bodyData = _serializers.serialize(oBPv600AddUserToGroupRequest, specifiedType: _type);
+      const _type = FullType(AddUserToGroupRequest);
+      _bodyData = _serializers.serialize(addUserToGroupRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -107,14 +107,14 @@ class GroupApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600AddUserToGroup200Response? _responseData;
+    AddUserToGroup200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600AddUserToGroup200Response),
-      ) as OBPv600AddUserToGroup200Response;
+        specifiedType: const FullType(AddUserToGroup200Response),
+      ) as AddUserToGroup200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -126,7 +126,7 @@ class GroupApi {
       );
     }
 
-    return Response<OBPv600AddUserToGroup200Response>(
+    return Response<AddUserToGroup200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -142,7 +142,7 @@ class GroupApi {
   /// &lt;p&gt;Create a new group of roles.&lt;/p&gt; &lt;p&gt;Groups can be either:&lt;br /&gt; - System-level (bank_id &#x3D; null) - requires CanCreateGroupAtAllBanks role&lt;br /&gt; - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role&lt;/p&gt; &lt;p&gt;A group contains a list of role names that can be assigned together.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
   ///
   /// Parameters:
-  /// * [oBPv600CreateGroupRequest] - Request body
+  /// * [createGroupRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -150,10 +150,10 @@ class GroupApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetGroups200ResponsePropertiesGroupsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetGroups200ResponseGroupsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetGroups200ResponsePropertiesGroupsItems>> oBPv600CreateGroup({ 
-    required OBPv600CreateGroupRequest oBPv600CreateGroupRequest,
+  Future<Response<GetGroups200ResponseGroupsInner>> createGroup({ 
+    required CreateGroupRequest createGroupRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -180,7 +180,7 @@ class GroupApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -193,8 +193,8 @@ class GroupApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv600CreateGroupRequest);
-      _bodyData = _serializers.serialize(oBPv600CreateGroupRequest, specifiedType: _type);
+      const _type = FullType(CreateGroupRequest);
+      _bodyData = _serializers.serialize(createGroupRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -217,14 +217,14 @@ class GroupApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetGroups200ResponsePropertiesGroupsItems? _responseData;
+    GetGroups200ResponseGroupsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetGroups200ResponsePropertiesGroupsItems),
-      ) as OBPv600GetGroups200ResponsePropertiesGroupsItems;
+        specifiedType: const FullType(GetGroups200ResponseGroupsInner),
+      ) as GetGroups200ResponseGroupsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -236,7 +236,7 @@ class GroupApi {
       );
     }
 
-    return Response<OBPv600GetGroups200ResponsePropertiesGroupsItems>(
+    return Response<GetGroups200ResponseGroupsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -262,7 +262,7 @@ class GroupApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv600DeleteGroup({ 
+  Future<Response<void>> deleteGroup({ 
     required String groupid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -290,7 +290,7 @@ class GroupApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -322,9 +322,9 @@ class GroupApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetGroups200ResponsePropertiesGroupsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetGroups200ResponseGroupsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetGroups200ResponsePropertiesGroupsItems>> oBPv600GetGroup({ 
+  Future<Response<GetGroups200ResponseGroupsInner>> getGroup({ 
     required String groupid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -352,7 +352,7 @@ class GroupApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -369,14 +369,14 @@ class GroupApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetGroups200ResponsePropertiesGroupsItems? _responseData;
+    GetGroups200ResponseGroupsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetGroups200ResponsePropertiesGroupsItems),
-      ) as OBPv600GetGroups200ResponsePropertiesGroupsItems;
+        specifiedType: const FullType(GetGroups200ResponseGroupsInner),
+      ) as GetGroups200ResponseGroupsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -388,7 +388,7 @@ class GroupApi {
       );
     }
 
-    return Response<OBPv600GetGroups200ResponsePropertiesGroupsItems>(
+    return Response<GetGroups200ResponseGroupsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -412,9 +412,9 @@ class GroupApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetGroupEntitlements200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetGroupEntitlements200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetGroupEntitlements200Response>> oBPv600GetGroupEntitlements({ 
+  Future<Response<GetGroupEntitlements200Response>> getGroupEntitlements({ 
     required String groupid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -442,7 +442,7 @@ class GroupApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -459,14 +459,14 @@ class GroupApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetGroupEntitlements200Response? _responseData;
+    GetGroupEntitlements200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetGroupEntitlements200Response),
-      ) as OBPv600GetGroupEntitlements200Response;
+        specifiedType: const FullType(GetGroupEntitlements200Response),
+      ) as GetGroupEntitlements200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -478,7 +478,7 @@ class GroupApi {
       );
     }
 
-    return Response<OBPv600GetGroupEntitlements200Response>(
+    return Response<GetGroupEntitlements200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -501,9 +501,9 @@ class GroupApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetGroups200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetGroups200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetGroups200Response>> oBPv600GetGroups({ 
+  Future<Response<GetGroups200Response>> getGroups({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -530,7 +530,7 @@ class GroupApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -547,14 +547,14 @@ class GroupApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetGroups200Response? _responseData;
+    GetGroups200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetGroups200Response),
-      ) as OBPv600GetGroups200Response;
+        specifiedType: const FullType(GetGroups200Response),
+      ) as GetGroups200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -566,7 +566,7 @@ class GroupApi {
       );
     }
 
-    return Response<OBPv600GetGroups200Response>(
+    return Response<GetGroups200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -590,9 +590,9 @@ class GroupApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetUserGroupMemberships200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetUserGroupMemberships200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetUserGroupMemberships200Response>> oBPv600GetUserGroupMemberships({ 
+  Future<Response<GetUserGroupMemberships200Response>> getUserGroupMemberships({ 
     required String userid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -620,7 +620,7 @@ class GroupApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -637,14 +637,14 @@ class GroupApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetUserGroupMemberships200Response? _responseData;
+    GetUserGroupMemberships200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetUserGroupMemberships200Response),
-      ) as OBPv600GetUserGroupMemberships200Response;
+        specifiedType: const FullType(GetUserGroupMemberships200Response),
+      ) as GetUserGroupMemberships200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -656,7 +656,7 @@ class GroupApi {
       );
     }
 
-    return Response<OBPv600GetUserGroupMemberships200Response>(
+    return Response<GetUserGroupMemberships200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -683,7 +683,7 @@ class GroupApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv600RemoveUserFromGroup({ 
+  Future<Response<void>> removeUserFromGroup({ 
     required String userid,
     required String groupid,
     CancelToken? cancelToken,
@@ -712,7 +712,7 @@ class GroupApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -737,7 +737,7 @@ class GroupApi {
   ///
   /// Parameters:
   /// * [groupid] - The GROUPID identifier
-  /// * [oBPv600UpdateGroupRequest] - Request body
+  /// * [updateGroupRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -745,11 +745,11 @@ class GroupApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetGroups200ResponsePropertiesGroupsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetGroups200ResponseGroupsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetGroups200ResponsePropertiesGroupsItems>> oBPv600UpdateGroup({ 
+  Future<Response<GetGroups200ResponseGroupsInner>> updateGroup({ 
     required String groupid,
-    required OBPv600UpdateGroupRequest oBPv600UpdateGroupRequest,
+    required UpdateGroupRequest updateGroupRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -776,7 +776,7 @@ class GroupApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -789,8 +789,8 @@ class GroupApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv600UpdateGroupRequest);
-      _bodyData = _serializers.serialize(oBPv600UpdateGroupRequest, specifiedType: _type);
+      const _type = FullType(UpdateGroupRequest);
+      _bodyData = _serializers.serialize(updateGroupRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -813,14 +813,14 @@ class GroupApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetGroups200ResponsePropertiesGroupsItems? _responseData;
+    GetGroups200ResponseGroupsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetGroups200ResponsePropertiesGroupsItems),
-      ) as OBPv600GetGroups200ResponsePropertiesGroupsItems;
+        specifiedType: const FullType(GetGroups200ResponseGroupsInner),
+      ) as GetGroups200ResponseGroupsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -832,7 +832,7 @@ class GroupApi {
       );
     }
 
-    return Response<OBPv600GetGroups200ResponsePropertiesGroupsItems>(
+    return Response<GetGroups200ResponseGroupsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

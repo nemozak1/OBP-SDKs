@@ -19,9 +19,9 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit
-import com.openbankproject.models.OBPv510GetCounterpartyLimit200Response
-import com.openbankproject.models.OBPv510GetCounterpartyLimitStatus200Response
+import com.openbankproject.models.CreateVRPConsentRequestRequestToAccountLimit
+import com.openbankproject.models.GetCounterpartyLimit200Response
+import com.openbankproject.models.GetCounterpartyLimitStatus200Response
 
 import com.squareup.moshi.Json
 
@@ -43,20 +43,20 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
     /**
      * POST /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits
      * Create Counterparty Limit
-     * &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
+     * &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
      * @param counterpartyid The COUNTERPARTYID identifier
-     * @param obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit Request body
-     * @return OBPv510GetCounterpartyLimit200Response
+     * @param createVRPConsentRequestRequestToAccountLimit Request body
+     * @return GetCounterpartyLimit200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -65,11 +65,11 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510CreateCounterpartyLimit(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit) : OBPv510GetCounterpartyLimit200Response {
-        val localVarResponse = oBPv510CreateCounterpartyLimitWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit = obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit)
+    fun createCounterpartyLimit(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String, createVRPConsentRequestRequestToAccountLimit: CreateVRPConsentRequestRequestToAccountLimit) : GetCounterpartyLimit200Response {
+        val localVarResponse = createCounterpartyLimitWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid, createVRPConsentRequestRequestToAccountLimit = createVRPConsentRequestRequestToAccountLimit)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv510GetCounterpartyLimit200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetCounterpartyLimit200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -86,38 +86,38 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
     /**
      * POST /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits
      * Create Counterparty Limit
-     * &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
+     * &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
      * @param counterpartyid The COUNTERPARTYID identifier
-     * @param obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit Request body
-     * @return ApiResponse<OBPv510GetCounterpartyLimit200Response?>
+     * @param createVRPConsentRequestRequestToAccountLimit Request body
+     * @return ApiResponse<GetCounterpartyLimit200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510CreateCounterpartyLimitWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit) : ApiResponse<OBPv510GetCounterpartyLimit200Response?> {
-        val localVariableConfig = oBPv510CreateCounterpartyLimitRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit = obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit)
+    fun createCounterpartyLimitWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String, createVRPConsentRequestRequestToAccountLimit: CreateVRPConsentRequestRequestToAccountLimit) : ApiResponse<GetCounterpartyLimit200Response?> {
+        val localVariableConfig = createCounterpartyLimitRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid, createVRPConsentRequestRequestToAccountLimit = createVRPConsentRequestRequestToAccountLimit)
 
-        return request<OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, OBPv510GetCounterpartyLimit200Response>(
+        return request<CreateVRPConsentRequestRequestToAccountLimit, GetCounterpartyLimit200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv510CreateCounterpartyLimit
+     * To obtain the request config of the operation createCounterpartyLimit
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
      * @param counterpartyid The COUNTERPARTYID identifier
-     * @param obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit Request body
+     * @param createVRPConsentRequestRequestToAccountLimit Request body
      * @return RequestConfig
      */
-    fun oBPv510CreateCounterpartyLimitRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit) : RequestConfig<OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit> {
-        val localVariableBody = obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit
+    fun createCounterpartyLimitRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String, createVRPConsentRequestRequestToAccountLimit: CreateVRPConsentRequestRequestToAccountLimit) : RequestConfig<CreateVRPConsentRequestRequestToAccountLimit> {
+        val localVariableBody = createVRPConsentRequestRequestToAccountLimit
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -149,8 +149,8 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510DeleteCounterpartyLimit(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : Unit {
-        val localVarResponse = oBPv510DeleteCounterpartyLimitWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid)
+    fun deleteCounterpartyLimit(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : Unit {
+        val localVarResponse = deleteCounterpartyLimitWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -180,8 +180,8 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510DeleteCounterpartyLimitWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv510DeleteCounterpartyLimitRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid)
+    fun deleteCounterpartyLimitWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteCounterpartyLimitRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -189,7 +189,7 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
     }
 
     /**
-     * To obtain the request config of the operation oBPv510DeleteCounterpartyLimit
+     * To obtain the request config of the operation deleteCounterpartyLimit
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
@@ -197,7 +197,7 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
      * @param counterpartyid The COUNTERPARTYID identifier
      * @return RequestConfig
      */
-    fun oBPv510DeleteCounterpartyLimitRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteCounterpartyLimitRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -220,7 +220,7 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
      * @param counterpartyid The COUNTERPARTYID identifier
-     * @return OBPv510GetCounterpartyLimit200Response
+     * @return GetCounterpartyLimit200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -229,11 +229,11 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510GetCounterpartyLimit(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : OBPv510GetCounterpartyLimit200Response {
-        val localVarResponse = oBPv510GetCounterpartyLimitWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid)
+    fun getCounterpartyLimit(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : GetCounterpartyLimit200Response {
+        val localVarResponse = getCounterpartyLimitWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv510GetCounterpartyLimit200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetCounterpartyLimit200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -255,22 +255,22 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
      * @param counterpartyid The COUNTERPARTYID identifier
-     * @return ApiResponse<OBPv510GetCounterpartyLimit200Response?>
+     * @return ApiResponse<GetCounterpartyLimit200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510GetCounterpartyLimitWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : ApiResponse<OBPv510GetCounterpartyLimit200Response?> {
-        val localVariableConfig = oBPv510GetCounterpartyLimitRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid)
+    fun getCounterpartyLimitWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : ApiResponse<GetCounterpartyLimit200Response?> {
+        val localVariableConfig = getCounterpartyLimitRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid)
 
-        return request<Unit, OBPv510GetCounterpartyLimit200Response>(
+        return request<Unit, GetCounterpartyLimit200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv510GetCounterpartyLimit
+     * To obtain the request config of the operation getCounterpartyLimit
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
@@ -278,7 +278,7 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
      * @param counterpartyid The COUNTERPARTYID identifier
      * @return RequestConfig
      */
-    fun oBPv510GetCounterpartyLimitRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : RequestConfig<Unit> {
+    fun getCounterpartyLimitRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -302,7 +302,7 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
      * @param counterpartyid The COUNTERPARTYID identifier
-     * @return OBPv510GetCounterpartyLimitStatus200Response
+     * @return GetCounterpartyLimitStatus200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -311,11 +311,11 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510GetCounterpartyLimitStatus(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : OBPv510GetCounterpartyLimitStatus200Response {
-        val localVarResponse = oBPv510GetCounterpartyLimitStatusWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid)
+    fun getCounterpartyLimitStatus(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : GetCounterpartyLimitStatus200Response {
+        val localVarResponse = getCounterpartyLimitStatusWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv510GetCounterpartyLimitStatus200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetCounterpartyLimitStatus200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -337,22 +337,22 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
      * @param counterpartyid The COUNTERPARTYID identifier
-     * @return ApiResponse<OBPv510GetCounterpartyLimitStatus200Response?>
+     * @return ApiResponse<GetCounterpartyLimitStatus200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510GetCounterpartyLimitStatusWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : ApiResponse<OBPv510GetCounterpartyLimitStatus200Response?> {
-        val localVariableConfig = oBPv510GetCounterpartyLimitStatusRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid)
+    fun getCounterpartyLimitStatusWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : ApiResponse<GetCounterpartyLimitStatus200Response?> {
+        val localVariableConfig = getCounterpartyLimitStatusRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid)
 
-        return request<Unit, OBPv510GetCounterpartyLimitStatus200Response>(
+        return request<Unit, GetCounterpartyLimitStatus200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv510GetCounterpartyLimitStatus
+     * To obtain the request config of the operation getCounterpartyLimitStatus
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
@@ -360,7 +360,7 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
      * @param counterpartyid The COUNTERPARTYID identifier
      * @return RequestConfig
      */
-    fun oBPv510GetCounterpartyLimitStatusRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : RequestConfig<Unit> {
+    fun getCounterpartyLimitStatusRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -384,8 +384,8 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
      * @param counterpartyid The COUNTERPARTYID identifier
-     * @param obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit Request body
-     * @return OBPv510GetCounterpartyLimit200Response
+     * @param createVRPConsentRequestRequestToAccountLimit Request body
+     * @return GetCounterpartyLimit200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -394,11 +394,11 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510UpdateCounterpartyLimit(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit) : OBPv510GetCounterpartyLimit200Response {
-        val localVarResponse = oBPv510UpdateCounterpartyLimitWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit = obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit)
+    fun updateCounterpartyLimit(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String, createVRPConsentRequestRequestToAccountLimit: CreateVRPConsentRequestRequestToAccountLimit) : GetCounterpartyLimit200Response {
+        val localVarResponse = updateCounterpartyLimitWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid, createVRPConsentRequestRequestToAccountLimit = createVRPConsentRequestRequestToAccountLimit)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv510GetCounterpartyLimit200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetCounterpartyLimit200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -420,33 +420,33 @@ open class CounterpartyLimitsApi(basePath: kotlin.String = defaultBasePath, clie
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
      * @param counterpartyid The COUNTERPARTYID identifier
-     * @param obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit Request body
-     * @return ApiResponse<OBPv510GetCounterpartyLimit200Response?>
+     * @param createVRPConsentRequestRequestToAccountLimit Request body
+     * @return ApiResponse<GetCounterpartyLimit200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510UpdateCounterpartyLimitWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit) : ApiResponse<OBPv510GetCounterpartyLimit200Response?> {
-        val localVariableConfig = oBPv510UpdateCounterpartyLimitRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit = obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit)
+    fun updateCounterpartyLimitWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String, createVRPConsentRequestRequestToAccountLimit: CreateVRPConsentRequestRequestToAccountLimit) : ApiResponse<GetCounterpartyLimit200Response?> {
+        val localVariableConfig = updateCounterpartyLimitRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, counterpartyid = counterpartyid, createVRPConsentRequestRequestToAccountLimit = createVRPConsentRequestRequestToAccountLimit)
 
-        return request<OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, OBPv510GetCounterpartyLimit200Response>(
+        return request<CreateVRPConsentRequestRequestToAccountLimit, GetCounterpartyLimit200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv510UpdateCounterpartyLimit
+     * To obtain the request config of the operation updateCounterpartyLimit
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
      * @param counterpartyid The COUNTERPARTYID identifier
-     * @param obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit Request body
+     * @param createVRPConsentRequestRequestToAccountLimit Request body
      * @return RequestConfig
      */
-    fun oBPv510UpdateCounterpartyLimitRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String, obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit) : RequestConfig<OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit> {
-        val localVariableBody = obPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit
+    fun updateCounterpartyLimitRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, counterpartyid: kotlin.String, createVRPConsentRequestRequestToAccountLimit: CreateVRPConsentRequestRequestToAccountLimit) : RequestConfig<CreateVRPConsentRequestRequestToAccountLimit> {
+        val localVariableBody = createVRPConsentRequestRequestToAccountLimit
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

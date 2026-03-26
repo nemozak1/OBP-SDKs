@@ -5,18 +5,18 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600CreateApiProductAttribute**](ApiProductAttributeApi.md#obpv600createapiproductattribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
-[**oBPv600DeleteApiProductAttribute**](ApiProductAttributeApi.md#obpv600deleteapiproductattribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
-[**oBPv600GetApiProductAttribute**](ApiProductAttributeApi.md#obpv600getapiproductattribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
-[**oBPv600UpdateApiProductAttribute**](ApiProductAttributeApi.md#obpv600updateapiproductattribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
+[**createApiProductAttribute**](ApiProductAttributeApi.md#createapiproductattribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
+[**deleteApiProductAttribute**](ApiProductAttributeApi.md#deleteapiproductattribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
+[**getApiProductAttribute**](ApiProductAttributeApi.md#getapiproductattribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
+[**updateApiProductAttribute**](ApiProductAttributeApi.md#updateapiproductattribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
 
 
-# **oBPv600CreateApiProductAttribute**
-> OBPv600CreateApiProductAttribute200Response oBPv600CreateApiProductAttribute(bankid, apiproductcode, oBPv510UpdateAtmAttributeRequest)
+# **createApiProductAttribute**
+> CreateApiProductAttribute200Response createApiProductAttribute(bankid, apiproductcode, updateAtmAttributeRequest)
 
 Create Api Product Attribute
 
@@ -39,13 +39,13 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getApiProductAttributeApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String apiproductcode = apiproductcode_example; // String | The APIPRODUCTCODE identifier
-final OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // OBPv510UpdateAtmAttributeRequest | Request body
+final UpdateAtmAttributeRequest updateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // UpdateAtmAttributeRequest | Request body
 
 try {
-    final response = api.oBPv600CreateApiProductAttribute(bankid, apiproductcode, oBPv510UpdateAtmAttributeRequest);
+    final response = api.createApiProductAttribute(bankid, apiproductcode, updateAtmAttributeRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ApiProductAttributeApi->oBPv600CreateApiProductAttribute: $e\n');
+    print('Exception when calling ApiProductAttributeApi->createApiProductAttribute: $e\n');
 }
 ```
 
@@ -55,11 +55,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
  **apiproductcode** | **String**| The APIPRODUCTCODE identifier | 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -72,8 +72,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600DeleteApiProductAttribute**
-> oBPv600DeleteApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
+# **deleteApiProductAttribute**
+> deleteApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
 
 Delete Api Product Attribute
 
@@ -99,9 +99,9 @@ final String apiproductcode = apiproductcode_example; // String | The APIPRODUCT
 final String apiproductattributeid = apiproductattributeid_example; // String | The APIPRODUCTATTRIBUTEID identifier
 
 try {
-    api.oBPv600DeleteApiProductAttribute(bankid, apiproductcode, apiproductattributeid);
+    api.deleteApiProductAttribute(bankid, apiproductcode, apiproductattributeid);
 } on DioException catch (e) {
-    print('Exception when calling ApiProductAttributeApi->oBPv600DeleteApiProductAttribute: $e\n');
+    print('Exception when calling ApiProductAttributeApi->deleteApiProductAttribute: $e\n');
 }
 ```
 
@@ -128,8 +128,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetApiProductAttribute**
-> OBPv600CreateApiProductAttribute200Response oBPv600GetApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
+# **getApiProductAttribute**
+> CreateApiProductAttribute200Response getApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
 
 Get Api Product Attribute
 
@@ -145,10 +145,10 @@ final String apiproductcode = apiproductcode_example; // String | The APIPRODUCT
 final String apiproductattributeid = apiproductattributeid_example; // String | The APIPRODUCTATTRIBUTEID identifier
 
 try {
-    final response = api.oBPv600GetApiProductAttribute(bankid, apiproductcode, apiproductattributeid);
+    final response = api.getApiProductAttribute(bankid, apiproductcode, apiproductattributeid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ApiProductAttributeApi->oBPv600GetApiProductAttribute: $e\n');
+    print('Exception when calling ApiProductAttributeApi->getApiProductAttribute: $e\n');
 }
 ```
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -175,8 +175,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600UpdateApiProductAttribute**
-> OBPv600CreateApiProductAttribute200Response oBPv600UpdateApiProductAttribute(bankid, apiproductcode, apiproductattributeid, oBPv510UpdateAtmAttributeRequest)
+# **updateApiProductAttribute**
+> CreateApiProductAttribute200Response updateApiProductAttribute(bankid, apiproductcode, apiproductattributeid, updateAtmAttributeRequest)
 
 Update Api Product Attribute
 
@@ -200,13 +200,13 @@ final api = ObpDart().getApiProductAttributeApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String apiproductcode = apiproductcode_example; // String | The APIPRODUCTCODE identifier
 final String apiproductattributeid = apiproductattributeid_example; // String | The APIPRODUCTATTRIBUTEID identifier
-final OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // OBPv510UpdateAtmAttributeRequest | Request body
+final UpdateAtmAttributeRequest updateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // UpdateAtmAttributeRequest | Request body
 
 try {
-    final response = api.oBPv600UpdateApiProductAttribute(bankid, apiproductcode, apiproductattributeid, oBPv510UpdateAtmAttributeRequest);
+    final response = api.updateApiProductAttribute(bankid, apiproductcode, apiproductattributeid, updateAtmAttributeRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ApiProductAttributeApi->oBPv600UpdateApiProductAttribute: $e\n');
+    print('Exception when calling ApiProductAttributeApi->updateApiProductAttribute: $e\n');
 }
 ```
 
@@ -217,11 +217,11 @@ Name | Type | Description  | Notes
  **bankid** | **String**| The BANKID identifier | 
  **apiproductcode** | **String**| The APIPRODUCTCODE identifier | 
  **apiproductattributeid** | **String**| The APIPRODUCTATTRIBUTEID identifier | 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 

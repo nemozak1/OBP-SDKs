@@ -40,7 +40,7 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -56,8 +56,8 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510LogCacheAllEndpoint() : Unit {
-        val localVarResponse = oBPv510LogCacheAllEndpointWithHttpInfo()
+    fun logCacheAllEndpoint() : Unit {
+        val localVarResponse = logCacheAllEndpointWithHttpInfo()
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -83,8 +83,8 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510LogCacheAllEndpointWithHttpInfo() : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv510LogCacheAllEndpointRequestConfig()
+    fun logCacheAllEndpointWithHttpInfo() : ApiResponse<Unit?> {
+        val localVariableConfig = logCacheAllEndpointRequestConfig()
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -92,11 +92,11 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     }
 
     /**
-     * To obtain the request config of the operation oBPv510LogCacheAllEndpoint
+     * To obtain the request config of the operation logCacheAllEndpoint
      *
      * @return RequestConfig
      */
-    fun oBPv510LogCacheAllEndpointRequestConfig() : RequestConfig<Unit> {
+    fun logCacheAllEndpointRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -123,8 +123,8 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510LogCacheDebugEndpoint() : Unit {
-        val localVarResponse = oBPv510LogCacheDebugEndpointWithHttpInfo()
+    fun logCacheDebugEndpoint() : Unit {
+        val localVarResponse = logCacheDebugEndpointWithHttpInfo()
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -150,8 +150,8 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510LogCacheDebugEndpointWithHttpInfo() : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv510LogCacheDebugEndpointRequestConfig()
+    fun logCacheDebugEndpointWithHttpInfo() : ApiResponse<Unit?> {
+        val localVariableConfig = logCacheDebugEndpointRequestConfig()
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -159,11 +159,11 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     }
 
     /**
-     * To obtain the request config of the operation oBPv510LogCacheDebugEndpoint
+     * To obtain the request config of the operation logCacheDebugEndpoint
      *
      * @return RequestConfig
      */
-    fun oBPv510LogCacheDebugEndpointRequestConfig() : RequestConfig<Unit> {
+    fun logCacheDebugEndpointRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -190,8 +190,8 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510LogCacheErrorEndpoint() : Unit {
-        val localVarResponse = oBPv510LogCacheErrorEndpointWithHttpInfo()
+    fun logCacheErrorEndpoint() : Unit {
+        val localVarResponse = logCacheErrorEndpointWithHttpInfo()
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -217,8 +217,8 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510LogCacheErrorEndpointWithHttpInfo() : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv510LogCacheErrorEndpointRequestConfig()
+    fun logCacheErrorEndpointWithHttpInfo() : ApiResponse<Unit?> {
+        val localVariableConfig = logCacheErrorEndpointRequestConfig()
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -226,11 +226,11 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     }
 
     /**
-     * To obtain the request config of the operation oBPv510LogCacheErrorEndpoint
+     * To obtain the request config of the operation logCacheErrorEndpoint
      *
      * @return RequestConfig
      */
-    fun oBPv510LogCacheErrorEndpointRequestConfig() : RequestConfig<Unit> {
+    fun logCacheErrorEndpointRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -257,8 +257,8 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510LogCacheInfoEndpoint() : Unit {
-        val localVarResponse = oBPv510LogCacheInfoEndpointWithHttpInfo()
+    fun logCacheInfoEndpoint() : Unit {
+        val localVarResponse = logCacheInfoEndpointWithHttpInfo()
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -284,8 +284,8 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510LogCacheInfoEndpointWithHttpInfo() : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv510LogCacheInfoEndpointRequestConfig()
+    fun logCacheInfoEndpointWithHttpInfo() : ApiResponse<Unit?> {
+        val localVariableConfig = logCacheInfoEndpointRequestConfig()
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -293,11 +293,11 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     }
 
     /**
-     * To obtain the request config of the operation oBPv510LogCacheInfoEndpoint
+     * To obtain the request config of the operation logCacheInfoEndpoint
      *
      * @return RequestConfig
      */
-    fun oBPv510LogCacheInfoEndpointRequestConfig() : RequestConfig<Unit> {
+    fun logCacheInfoEndpointRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -324,8 +324,8 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510LogCacheTraceEndpoint() : Unit {
-        val localVarResponse = oBPv510LogCacheTraceEndpointWithHttpInfo()
+    fun logCacheTraceEndpoint() : Unit {
+        val localVarResponse = logCacheTraceEndpointWithHttpInfo()
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -351,8 +351,8 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510LogCacheTraceEndpointWithHttpInfo() : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv510LogCacheTraceEndpointRequestConfig()
+    fun logCacheTraceEndpointWithHttpInfo() : ApiResponse<Unit?> {
+        val localVariableConfig = logCacheTraceEndpointRequestConfig()
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -360,11 +360,11 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     }
 
     /**
-     * To obtain the request config of the operation oBPv510LogCacheTraceEndpoint
+     * To obtain the request config of the operation logCacheTraceEndpoint
      *
      * @return RequestConfig
      */
-    fun oBPv510LogCacheTraceEndpointRequestConfig() : RequestConfig<Unit> {
+    fun logCacheTraceEndpointRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -391,8 +391,8 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510LogCacheWarningEndpoint() : Unit {
-        val localVarResponse = oBPv510LogCacheWarningEndpointWithHttpInfo()
+    fun logCacheWarningEndpoint() : Unit {
+        val localVarResponse = logCacheWarningEndpointWithHttpInfo()
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -418,8 +418,8 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510LogCacheWarningEndpointWithHttpInfo() : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv510LogCacheWarningEndpointRequestConfig()
+    fun logCacheWarningEndpointWithHttpInfo() : ApiResponse<Unit?> {
+        val localVariableConfig = logCacheWarningEndpointRequestConfig()
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -427,11 +427,11 @@ open class LogCacheApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     }
 
     /**
-     * To obtain the request config of the operation oBPv510LogCacheWarningEndpoint
+     * To obtain the request config of the operation logCacheWarningEndpoint
      *
      * @return RequestConfig
      */
-    fun oBPv510LogCacheWarningEndpointRequestConfig() : RequestConfig<Unit> {
+    fun logCacheWarningEndpointRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

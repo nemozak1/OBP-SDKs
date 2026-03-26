@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,31 +75,31 @@ class GroupApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv600AddUserToGroup' => [
+        'addUserToGroup' => [
             'application/json',
         ],
-        'oBPv600CreateGroup' => [
+        'createGroup' => [
             'application/json',
         ],
-        'oBPv600DeleteGroup' => [
+        'deleteGroup' => [
             'application/json',
         ],
-        'oBPv600GetGroup' => [
+        'getGroup' => [
             'application/json',
         ],
-        'oBPv600GetGroupEntitlements' => [
+        'getGroupEntitlements' => [
             'application/json',
         ],
-        'oBPv600GetGroups' => [
+        'getGroups' => [
             'application/json',
         ],
-        'oBPv600GetUserGroupMemberships' => [
+        'getUserGroupMemberships' => [
             'application/json',
         ],
-        'oBPv600RemoveUserFromGroup' => [
+        'removeUserFromGroup' => [
             'application/json',
         ],
-        'oBPv600UpdateGroup' => [
+        'updateGroup' => [
             'application/json',
         ],
     ];
@@ -151,40 +151,40 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600AddUserToGroup
+     * Operation addUserToGroup
      *
      * Grant User Membership to Group Entitlements
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600AddUserToGroupRequest $obpv600_add_user_to_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600AddUserToGroup'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\AddUserToGroupRequest $add_user_to_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addUserToGroup'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600AddUserToGroup200Response
+     * @return \OpenBankProject\Model\AddUserToGroup200Response
      */
-    public function oBPv600AddUserToGroup($userid, $obpv600_add_user_to_group_request, string $contentType = self::contentTypes['oBPv600AddUserToGroup'][0])
+    public function addUserToGroup($userid, $add_user_to_group_request, string $contentType = self::contentTypes['addUserToGroup'][0])
     {
-        list($response) = $this->oBPv600AddUserToGroupWithHttpInfo($userid, $obpv600_add_user_to_group_request, $contentType);
+        list($response) = $this->addUserToGroupWithHttpInfo($userid, $add_user_to_group_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600AddUserToGroupWithHttpInfo
+     * Operation addUserToGroupWithHttpInfo
      *
      * Grant User Membership to Group Entitlements
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600AddUserToGroupRequest $obpv600_add_user_to_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600AddUserToGroup'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\AddUserToGroupRequest $add_user_to_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addUserToGroup'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600AddUserToGroup200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\AddUserToGroup200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600AddUserToGroupWithHttpInfo($userid, $obpv600_add_user_to_group_request, string $contentType = self::contentTypes['oBPv600AddUserToGroup'][0])
+    public function addUserToGroupWithHttpInfo($userid, $add_user_to_group_request, string $contentType = self::contentTypes['addUserToGroup'][0])
     {
-        $request = $this->oBPv600AddUserToGroupRequest($userid, $obpv600_add_user_to_group_request, $contentType);
+        $request = $this->addUserToGroupRequest($userid, $add_user_to_group_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -212,7 +212,7 @@ class GroupApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600AddUserToGroup200Response',
+                        '\OpenBankProject\Model\AddUserToGroup200Response',
                         $request,
                         $response,
                     );
@@ -234,7 +234,7 @@ class GroupApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600AddUserToGroup200Response',
+                '\OpenBankProject\Model\AddUserToGroup200Response',
                 $request,
                 $response,
             );
@@ -243,7 +243,7 @@ class GroupApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600AddUserToGroup200Response',
+                        '\OpenBankProject\Model\AddUserToGroup200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -256,20 +256,20 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600AddUserToGroupAsync
+     * Operation addUserToGroupAsync
      *
      * Grant User Membership to Group Entitlements
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600AddUserToGroupRequest $obpv600_add_user_to_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600AddUserToGroup'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\AddUserToGroupRequest $add_user_to_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addUserToGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600AddUserToGroupAsync($userid, $obpv600_add_user_to_group_request, string $contentType = self::contentTypes['oBPv600AddUserToGroup'][0])
+    public function addUserToGroupAsync($userid, $add_user_to_group_request, string $contentType = self::contentTypes['addUserToGroup'][0])
     {
-        return $this->oBPv600AddUserToGroupAsyncWithHttpInfo($userid, $obpv600_add_user_to_group_request, $contentType)
+        return $this->addUserToGroupAsyncWithHttpInfo($userid, $add_user_to_group_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -278,21 +278,21 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600AddUserToGroupAsyncWithHttpInfo
+     * Operation addUserToGroupAsyncWithHttpInfo
      *
      * Grant User Membership to Group Entitlements
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600AddUserToGroupRequest $obpv600_add_user_to_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600AddUserToGroup'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\AddUserToGroupRequest $add_user_to_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addUserToGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600AddUserToGroupAsyncWithHttpInfo($userid, $obpv600_add_user_to_group_request, string $contentType = self::contentTypes['oBPv600AddUserToGroup'][0])
+    public function addUserToGroupAsyncWithHttpInfo($userid, $add_user_to_group_request, string $contentType = self::contentTypes['addUserToGroup'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600AddUserToGroup200Response';
-        $request = $this->oBPv600AddUserToGroupRequest($userid, $obpv600_add_user_to_group_request, $contentType);
+        $returnType = '\OpenBankProject\Model\AddUserToGroup200Response';
+        $request = $this->addUserToGroupRequest($userid, $add_user_to_group_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -331,29 +331,29 @@ class GroupApi
     }
 
     /**
-     * Create request for operation 'oBPv600AddUserToGroup'
+     * Create request for operation 'addUserToGroup'
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600AddUserToGroupRequest $obpv600_add_user_to_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600AddUserToGroup'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\AddUserToGroupRequest $add_user_to_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addUserToGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600AddUserToGroupRequest($userid, $obpv600_add_user_to_group_request, string $contentType = self::contentTypes['oBPv600AddUserToGroup'][0])
+    public function addUserToGroupRequest($userid, $add_user_to_group_request, string $contentType = self::contentTypes['addUserToGroup'][0])
     {
 
         // verify the required parameter 'userid' is set
         if ($userid === null || (is_array($userid) && count($userid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv600AddUserToGroup'
+                'Missing the required parameter $userid when calling addUserToGroup'
             );
         }
 
-        // verify the required parameter 'obpv600_add_user_to_group_request' is set
-        if ($obpv600_add_user_to_group_request === null || (is_array($obpv600_add_user_to_group_request) && count($obpv600_add_user_to_group_request) === 0)) {
+        // verify the required parameter 'add_user_to_group_request' is set
+        if ($add_user_to_group_request === null || (is_array($add_user_to_group_request) && count($add_user_to_group_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_add_user_to_group_request when calling oBPv600AddUserToGroup'
+                'Missing the required parameter $add_user_to_group_request when calling addUserToGroup'
             );
         }
 
@@ -384,12 +384,12 @@ class GroupApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_add_user_to_group_request)) {
+        if (isset($add_user_to_group_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_add_user_to_group_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($add_user_to_group_request));
             } else {
-                $httpBody = $obpv600_add_user_to_group_request;
+                $httpBody = $add_user_to_group_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -425,9 +425,9 @@ class GroupApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -452,38 +452,38 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600CreateGroup
+     * Operation createGroup
      *
      * Create Group
      *
-     * @param  \OpenBankProject\Model\OBPv600CreateGroupRequest $obpv600_create_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateGroup'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateGroupRequest $create_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createGroup'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems
+     * @return \OpenBankProject\Model\GetGroups200ResponseGroupsInner
      */
-    public function oBPv600CreateGroup($obpv600_create_group_request, string $contentType = self::contentTypes['oBPv600CreateGroup'][0])
+    public function createGroup($create_group_request, string $contentType = self::contentTypes['createGroup'][0])
     {
-        list($response) = $this->oBPv600CreateGroupWithHttpInfo($obpv600_create_group_request, $contentType);
+        list($response) = $this->createGroupWithHttpInfo($create_group_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600CreateGroupWithHttpInfo
+     * Operation createGroupWithHttpInfo
      *
      * Create Group
      *
-     * @param  \OpenBankProject\Model\OBPv600CreateGroupRequest $obpv600_create_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateGroup'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateGroupRequest $create_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createGroup'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetGroups200ResponseGroupsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600CreateGroupWithHttpInfo($obpv600_create_group_request, string $contentType = self::contentTypes['oBPv600CreateGroup'][0])
+    public function createGroupWithHttpInfo($create_group_request, string $contentType = self::contentTypes['createGroup'][0])
     {
-        $request = $this->oBPv600CreateGroupRequest($obpv600_create_group_request, $contentType);
+        $request = $this->createGroupRequest($create_group_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -511,7 +511,7 @@ class GroupApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems',
+                        '\OpenBankProject\Model\GetGroups200ResponseGroupsInner',
                         $request,
                         $response,
                     );
@@ -533,7 +533,7 @@ class GroupApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems',
+                '\OpenBankProject\Model\GetGroups200ResponseGroupsInner',
                 $request,
                 $response,
             );
@@ -542,7 +542,7 @@ class GroupApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems',
+                        '\OpenBankProject\Model\GetGroups200ResponseGroupsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -555,19 +555,19 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600CreateGroupAsync
+     * Operation createGroupAsync
      *
      * Create Group
      *
-     * @param  \OpenBankProject\Model\OBPv600CreateGroupRequest $obpv600_create_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateGroup'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateGroupRequest $create_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateGroupAsync($obpv600_create_group_request, string $contentType = self::contentTypes['oBPv600CreateGroup'][0])
+    public function createGroupAsync($create_group_request, string $contentType = self::contentTypes['createGroup'][0])
     {
-        return $this->oBPv600CreateGroupAsyncWithHttpInfo($obpv600_create_group_request, $contentType)
+        return $this->createGroupAsyncWithHttpInfo($create_group_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -576,20 +576,20 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600CreateGroupAsyncWithHttpInfo
+     * Operation createGroupAsyncWithHttpInfo
      *
      * Create Group
      *
-     * @param  \OpenBankProject\Model\OBPv600CreateGroupRequest $obpv600_create_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateGroup'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateGroupRequest $create_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateGroupAsyncWithHttpInfo($obpv600_create_group_request, string $contentType = self::contentTypes['oBPv600CreateGroup'][0])
+    public function createGroupAsyncWithHttpInfo($create_group_request, string $contentType = self::contentTypes['createGroup'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems';
-        $request = $this->oBPv600CreateGroupRequest($obpv600_create_group_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetGroups200ResponseGroupsInner';
+        $request = $this->createGroupRequest($create_group_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -628,21 +628,21 @@ class GroupApi
     }
 
     /**
-     * Create request for operation 'oBPv600CreateGroup'
+     * Create request for operation 'createGroup'
      *
-     * @param  \OpenBankProject\Model\OBPv600CreateGroupRequest $obpv600_create_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateGroup'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateGroupRequest $create_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600CreateGroupRequest($obpv600_create_group_request, string $contentType = self::contentTypes['oBPv600CreateGroup'][0])
+    public function createGroupRequest($create_group_request, string $contentType = self::contentTypes['createGroup'][0])
     {
 
-        // verify the required parameter 'obpv600_create_group_request' is set
-        if ($obpv600_create_group_request === null || (is_array($obpv600_create_group_request) && count($obpv600_create_group_request) === 0)) {
+        // verify the required parameter 'create_group_request' is set
+        if ($create_group_request === null || (is_array($create_group_request) && count($create_group_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_create_group_request when calling oBPv600CreateGroup'
+                'Missing the required parameter $create_group_request when calling createGroup'
             );
         }
 
@@ -665,12 +665,12 @@ class GroupApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_create_group_request)) {
+        if (isset($create_group_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_create_group_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_group_request));
             } else {
-                $httpBody = $obpv600_create_group_request;
+                $httpBody = $create_group_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -706,9 +706,9 @@ class GroupApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -733,37 +733,37 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600DeleteGroup
+     * Operation deleteGroup
      *
      * Delete Group
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGroup'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv600DeleteGroup($groupid, string $contentType = self::contentTypes['oBPv600DeleteGroup'][0])
+    public function deleteGroup($groupid, string $contentType = self::contentTypes['deleteGroup'][0])
     {
-        $this->oBPv600DeleteGroupWithHttpInfo($groupid, $contentType);
+        $this->deleteGroupWithHttpInfo($groupid, $contentType);
     }
 
     /**
-     * Operation oBPv600DeleteGroupWithHttpInfo
+     * Operation deleteGroupWithHttpInfo
      *
      * Delete Group
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGroup'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600DeleteGroupWithHttpInfo($groupid, string $contentType = self::contentTypes['oBPv600DeleteGroup'][0])
+    public function deleteGroupWithHttpInfo($groupid, string $contentType = self::contentTypes['deleteGroup'][0])
     {
-        $request = $this->oBPv600DeleteGroupRequest($groupid, $contentType);
+        $request = $this->deleteGroupRequest($groupid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -799,19 +799,19 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600DeleteGroupAsync
+     * Operation deleteGroupAsync
      *
      * Delete Group
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600DeleteGroupAsync($groupid, string $contentType = self::contentTypes['oBPv600DeleteGroup'][0])
+    public function deleteGroupAsync($groupid, string $contentType = self::contentTypes['deleteGroup'][0])
     {
-        return $this->oBPv600DeleteGroupAsyncWithHttpInfo($groupid, $contentType)
+        return $this->deleteGroupAsyncWithHttpInfo($groupid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -820,20 +820,20 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600DeleteGroupAsyncWithHttpInfo
+     * Operation deleteGroupAsyncWithHttpInfo
      *
      * Delete Group
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600DeleteGroupAsyncWithHttpInfo($groupid, string $contentType = self::contentTypes['oBPv600DeleteGroup'][0])
+    public function deleteGroupAsyncWithHttpInfo($groupid, string $contentType = self::contentTypes['deleteGroup'][0])
     {
         $returnType = '';
-        $request = $this->oBPv600DeleteGroupRequest($groupid, $contentType);
+        $request = $this->deleteGroupRequest($groupid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -859,21 +859,21 @@ class GroupApi
     }
 
     /**
-     * Create request for operation 'oBPv600DeleteGroup'
+     * Create request for operation 'deleteGroup'
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600DeleteGroupRequest($groupid, string $contentType = self::contentTypes['oBPv600DeleteGroup'][0])
+    public function deleteGroupRequest($groupid, string $contentType = self::contentTypes['deleteGroup'][0])
     {
 
         // verify the required parameter 'groupid' is set
         if ($groupid === null || (is_array($groupid) && count($groupid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $groupid when calling oBPv600DeleteGroup'
+                'Missing the required parameter $groupid when calling deleteGroup'
             );
         }
 
@@ -938,9 +938,9 @@ class GroupApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -965,38 +965,38 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600GetGroup
+     * Operation getGroup
      *
      * Get Group
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroup'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems
+     * @return \OpenBankProject\Model\GetGroups200ResponseGroupsInner
      */
-    public function oBPv600GetGroup($groupid, string $contentType = self::contentTypes['oBPv600GetGroup'][0])
+    public function getGroup($groupid, string $contentType = self::contentTypes['getGroup'][0])
     {
-        list($response) = $this->oBPv600GetGroupWithHttpInfo($groupid, $contentType);
+        list($response) = $this->getGroupWithHttpInfo($groupid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetGroupWithHttpInfo
+     * Operation getGroupWithHttpInfo
      *
      * Get Group
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroup'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetGroups200ResponseGroupsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetGroupWithHttpInfo($groupid, string $contentType = self::contentTypes['oBPv600GetGroup'][0])
+    public function getGroupWithHttpInfo($groupid, string $contentType = self::contentTypes['getGroup'][0])
     {
-        $request = $this->oBPv600GetGroupRequest($groupid, $contentType);
+        $request = $this->getGroupRequest($groupid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1024,7 +1024,7 @@ class GroupApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems',
+                        '\OpenBankProject\Model\GetGroups200ResponseGroupsInner',
                         $request,
                         $response,
                     );
@@ -1046,7 +1046,7 @@ class GroupApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems',
+                '\OpenBankProject\Model\GetGroups200ResponseGroupsInner',
                 $request,
                 $response,
             );
@@ -1055,7 +1055,7 @@ class GroupApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems',
+                        '\OpenBankProject\Model\GetGroups200ResponseGroupsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1068,19 +1068,19 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600GetGroupAsync
+     * Operation getGroupAsync
      *
      * Get Group
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetGroupAsync($groupid, string $contentType = self::contentTypes['oBPv600GetGroup'][0])
+    public function getGroupAsync($groupid, string $contentType = self::contentTypes['getGroup'][0])
     {
-        return $this->oBPv600GetGroupAsyncWithHttpInfo($groupid, $contentType)
+        return $this->getGroupAsyncWithHttpInfo($groupid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1089,20 +1089,20 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600GetGroupAsyncWithHttpInfo
+     * Operation getGroupAsyncWithHttpInfo
      *
      * Get Group
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetGroupAsyncWithHttpInfo($groupid, string $contentType = self::contentTypes['oBPv600GetGroup'][0])
+    public function getGroupAsyncWithHttpInfo($groupid, string $contentType = self::contentTypes['getGroup'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems';
-        $request = $this->oBPv600GetGroupRequest($groupid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetGroups200ResponseGroupsInner';
+        $request = $this->getGroupRequest($groupid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1141,21 +1141,21 @@ class GroupApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetGroup'
+     * Create request for operation 'getGroup'
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetGroupRequest($groupid, string $contentType = self::contentTypes['oBPv600GetGroup'][0])
+    public function getGroupRequest($groupid, string $contentType = self::contentTypes['getGroup'][0])
     {
 
         // verify the required parameter 'groupid' is set
         if ($groupid === null || (is_array($groupid) && count($groupid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $groupid when calling oBPv600GetGroup'
+                'Missing the required parameter $groupid when calling getGroup'
             );
         }
 
@@ -1220,9 +1220,9 @@ class GroupApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1247,38 +1247,38 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600GetGroupEntitlements
+     * Operation getGroupEntitlements
      *
      * Get Group Entitlements
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroupEntitlements'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroupEntitlements'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetGroupEntitlements200Response
+     * @return \OpenBankProject\Model\GetGroupEntitlements200Response
      */
-    public function oBPv600GetGroupEntitlements($groupid, string $contentType = self::contentTypes['oBPv600GetGroupEntitlements'][0])
+    public function getGroupEntitlements($groupid, string $contentType = self::contentTypes['getGroupEntitlements'][0])
     {
-        list($response) = $this->oBPv600GetGroupEntitlementsWithHttpInfo($groupid, $contentType);
+        list($response) = $this->getGroupEntitlementsWithHttpInfo($groupid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetGroupEntitlementsWithHttpInfo
+     * Operation getGroupEntitlementsWithHttpInfo
      *
      * Get Group Entitlements
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroupEntitlements'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroupEntitlements'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetGroupEntitlements200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetGroupEntitlements200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetGroupEntitlementsWithHttpInfo($groupid, string $contentType = self::contentTypes['oBPv600GetGroupEntitlements'][0])
+    public function getGroupEntitlementsWithHttpInfo($groupid, string $contentType = self::contentTypes['getGroupEntitlements'][0])
     {
-        $request = $this->oBPv600GetGroupEntitlementsRequest($groupid, $contentType);
+        $request = $this->getGroupEntitlementsRequest($groupid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1306,7 +1306,7 @@ class GroupApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetGroupEntitlements200Response',
+                        '\OpenBankProject\Model\GetGroupEntitlements200Response',
                         $request,
                         $response,
                     );
@@ -1328,7 +1328,7 @@ class GroupApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetGroupEntitlements200Response',
+                '\OpenBankProject\Model\GetGroupEntitlements200Response',
                 $request,
                 $response,
             );
@@ -1337,7 +1337,7 @@ class GroupApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetGroupEntitlements200Response',
+                        '\OpenBankProject\Model\GetGroupEntitlements200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1350,19 +1350,19 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600GetGroupEntitlementsAsync
+     * Operation getGroupEntitlementsAsync
      *
      * Get Group Entitlements
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroupEntitlements'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroupEntitlements'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetGroupEntitlementsAsync($groupid, string $contentType = self::contentTypes['oBPv600GetGroupEntitlements'][0])
+    public function getGroupEntitlementsAsync($groupid, string $contentType = self::contentTypes['getGroupEntitlements'][0])
     {
-        return $this->oBPv600GetGroupEntitlementsAsyncWithHttpInfo($groupid, $contentType)
+        return $this->getGroupEntitlementsAsyncWithHttpInfo($groupid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1371,20 +1371,20 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600GetGroupEntitlementsAsyncWithHttpInfo
+     * Operation getGroupEntitlementsAsyncWithHttpInfo
      *
      * Get Group Entitlements
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroupEntitlements'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroupEntitlements'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetGroupEntitlementsAsyncWithHttpInfo($groupid, string $contentType = self::contentTypes['oBPv600GetGroupEntitlements'][0])
+    public function getGroupEntitlementsAsyncWithHttpInfo($groupid, string $contentType = self::contentTypes['getGroupEntitlements'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetGroupEntitlements200Response';
-        $request = $this->oBPv600GetGroupEntitlementsRequest($groupid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetGroupEntitlements200Response';
+        $request = $this->getGroupEntitlementsRequest($groupid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1423,21 +1423,21 @@ class GroupApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetGroupEntitlements'
+     * Create request for operation 'getGroupEntitlements'
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroupEntitlements'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroupEntitlements'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetGroupEntitlementsRequest($groupid, string $contentType = self::contentTypes['oBPv600GetGroupEntitlements'][0])
+    public function getGroupEntitlementsRequest($groupid, string $contentType = self::contentTypes['getGroupEntitlements'][0])
     {
 
         // verify the required parameter 'groupid' is set
         if ($groupid === null || (is_array($groupid) && count($groupid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $groupid when calling oBPv600GetGroupEntitlements'
+                'Missing the required parameter $groupid when calling getGroupEntitlements'
             );
         }
 
@@ -1502,9 +1502,9 @@ class GroupApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1529,36 +1529,36 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600GetGroups
+     * Operation getGroups
      *
      * Get Groups
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroups'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroups'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetGroups200Response
+     * @return \OpenBankProject\Model\GetGroups200Response
      */
-    public function oBPv600GetGroups(string $contentType = self::contentTypes['oBPv600GetGroups'][0])
+    public function getGroups(string $contentType = self::contentTypes['getGroups'][0])
     {
-        list($response) = $this->oBPv600GetGroupsWithHttpInfo($contentType);
+        list($response) = $this->getGroupsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetGroupsWithHttpInfo
+     * Operation getGroupsWithHttpInfo
      *
      * Get Groups
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroups'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroups'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetGroups200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetGroups200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetGroupsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetGroups'][0])
+    public function getGroupsWithHttpInfo(string $contentType = self::contentTypes['getGroups'][0])
     {
-        $request = $this->oBPv600GetGroupsRequest($contentType);
+        $request = $this->getGroupsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1586,7 +1586,7 @@ class GroupApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetGroups200Response',
+                        '\OpenBankProject\Model\GetGroups200Response',
                         $request,
                         $response,
                     );
@@ -1608,7 +1608,7 @@ class GroupApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetGroups200Response',
+                '\OpenBankProject\Model\GetGroups200Response',
                 $request,
                 $response,
             );
@@ -1617,7 +1617,7 @@ class GroupApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetGroups200Response',
+                        '\OpenBankProject\Model\GetGroups200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1630,18 +1630,18 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600GetGroupsAsync
+     * Operation getGroupsAsync
      *
      * Get Groups
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroups'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroups'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetGroupsAsync(string $contentType = self::contentTypes['oBPv600GetGroups'][0])
+    public function getGroupsAsync(string $contentType = self::contentTypes['getGroups'][0])
     {
-        return $this->oBPv600GetGroupsAsyncWithHttpInfo($contentType)
+        return $this->getGroupsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1650,19 +1650,19 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600GetGroupsAsyncWithHttpInfo
+     * Operation getGroupsAsyncWithHttpInfo
      *
      * Get Groups
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroups'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroups'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetGroupsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetGroups'][0])
+    public function getGroupsAsyncWithHttpInfo(string $contentType = self::contentTypes['getGroups'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetGroups200Response';
-        $request = $this->oBPv600GetGroupsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetGroups200Response';
+        $request = $this->getGroupsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1701,14 +1701,14 @@ class GroupApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetGroups'
+     * Create request for operation 'getGroups'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroups'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroups'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetGroupsRequest(string $contentType = self::contentTypes['oBPv600GetGroups'][0])
+    public function getGroupsRequest(string $contentType = self::contentTypes['getGroups'][0])
     {
 
 
@@ -1764,9 +1764,9 @@ class GroupApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1791,38 +1791,38 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600GetUserGroupMemberships
+     * Operation getUserGroupMemberships
      *
      * Get User&#39;s Group Memberships
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserGroupMemberships'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserGroupMemberships'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetUserGroupMemberships200Response
+     * @return \OpenBankProject\Model\GetUserGroupMemberships200Response
      */
-    public function oBPv600GetUserGroupMemberships($userid, string $contentType = self::contentTypes['oBPv600GetUserGroupMemberships'][0])
+    public function getUserGroupMemberships($userid, string $contentType = self::contentTypes['getUserGroupMemberships'][0])
     {
-        list($response) = $this->oBPv600GetUserGroupMembershipsWithHttpInfo($userid, $contentType);
+        list($response) = $this->getUserGroupMembershipsWithHttpInfo($userid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetUserGroupMembershipsWithHttpInfo
+     * Operation getUserGroupMembershipsWithHttpInfo
      *
      * Get User&#39;s Group Memberships
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserGroupMemberships'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserGroupMemberships'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetUserGroupMemberships200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetUserGroupMemberships200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetUserGroupMembershipsWithHttpInfo($userid, string $contentType = self::contentTypes['oBPv600GetUserGroupMemberships'][0])
+    public function getUserGroupMembershipsWithHttpInfo($userid, string $contentType = self::contentTypes['getUserGroupMemberships'][0])
     {
-        $request = $this->oBPv600GetUserGroupMembershipsRequest($userid, $contentType);
+        $request = $this->getUserGroupMembershipsRequest($userid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1850,7 +1850,7 @@ class GroupApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetUserGroupMemberships200Response',
+                        '\OpenBankProject\Model\GetUserGroupMemberships200Response',
                         $request,
                         $response,
                     );
@@ -1872,7 +1872,7 @@ class GroupApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetUserGroupMemberships200Response',
+                '\OpenBankProject\Model\GetUserGroupMemberships200Response',
                 $request,
                 $response,
             );
@@ -1881,7 +1881,7 @@ class GroupApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetUserGroupMemberships200Response',
+                        '\OpenBankProject\Model\GetUserGroupMemberships200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1894,19 +1894,19 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600GetUserGroupMembershipsAsync
+     * Operation getUserGroupMembershipsAsync
      *
      * Get User&#39;s Group Memberships
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserGroupMemberships'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserGroupMemberships'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetUserGroupMembershipsAsync($userid, string $contentType = self::contentTypes['oBPv600GetUserGroupMemberships'][0])
+    public function getUserGroupMembershipsAsync($userid, string $contentType = self::contentTypes['getUserGroupMemberships'][0])
     {
-        return $this->oBPv600GetUserGroupMembershipsAsyncWithHttpInfo($userid, $contentType)
+        return $this->getUserGroupMembershipsAsyncWithHttpInfo($userid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1915,20 +1915,20 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600GetUserGroupMembershipsAsyncWithHttpInfo
+     * Operation getUserGroupMembershipsAsyncWithHttpInfo
      *
      * Get User&#39;s Group Memberships
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserGroupMemberships'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserGroupMemberships'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetUserGroupMembershipsAsyncWithHttpInfo($userid, string $contentType = self::contentTypes['oBPv600GetUserGroupMemberships'][0])
+    public function getUserGroupMembershipsAsyncWithHttpInfo($userid, string $contentType = self::contentTypes['getUserGroupMemberships'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetUserGroupMemberships200Response';
-        $request = $this->oBPv600GetUserGroupMembershipsRequest($userid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetUserGroupMemberships200Response';
+        $request = $this->getUserGroupMembershipsRequest($userid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1967,21 +1967,21 @@ class GroupApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetUserGroupMemberships'
+     * Create request for operation 'getUserGroupMemberships'
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserGroupMemberships'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserGroupMemberships'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetUserGroupMembershipsRequest($userid, string $contentType = self::contentTypes['oBPv600GetUserGroupMemberships'][0])
+    public function getUserGroupMembershipsRequest($userid, string $contentType = self::contentTypes['getUserGroupMemberships'][0])
     {
 
         // verify the required parameter 'userid' is set
         if ($userid === null || (is_array($userid) && count($userid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv600GetUserGroupMemberships'
+                'Missing the required parameter $userid when calling getUserGroupMemberships'
             );
         }
 
@@ -2046,9 +2046,9 @@ class GroupApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2073,39 +2073,39 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600RemoveUserFromGroup
+     * Operation removeUserFromGroup
      *
      * Remove User from Group
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600RemoveUserFromGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['removeUserFromGroup'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv600RemoveUserFromGroup($userid, $groupid, string $contentType = self::contentTypes['oBPv600RemoveUserFromGroup'][0])
+    public function removeUserFromGroup($userid, $groupid, string $contentType = self::contentTypes['removeUserFromGroup'][0])
     {
-        $this->oBPv600RemoveUserFromGroupWithHttpInfo($userid, $groupid, $contentType);
+        $this->removeUserFromGroupWithHttpInfo($userid, $groupid, $contentType);
     }
 
     /**
-     * Operation oBPv600RemoveUserFromGroupWithHttpInfo
+     * Operation removeUserFromGroupWithHttpInfo
      *
      * Remove User from Group
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600RemoveUserFromGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['removeUserFromGroup'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600RemoveUserFromGroupWithHttpInfo($userid, $groupid, string $contentType = self::contentTypes['oBPv600RemoveUserFromGroup'][0])
+    public function removeUserFromGroupWithHttpInfo($userid, $groupid, string $contentType = self::contentTypes['removeUserFromGroup'][0])
     {
-        $request = $this->oBPv600RemoveUserFromGroupRequest($userid, $groupid, $contentType);
+        $request = $this->removeUserFromGroupRequest($userid, $groupid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2141,20 +2141,20 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600RemoveUserFromGroupAsync
+     * Operation removeUserFromGroupAsync
      *
      * Remove User from Group
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600RemoveUserFromGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['removeUserFromGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600RemoveUserFromGroupAsync($userid, $groupid, string $contentType = self::contentTypes['oBPv600RemoveUserFromGroup'][0])
+    public function removeUserFromGroupAsync($userid, $groupid, string $contentType = self::contentTypes['removeUserFromGroup'][0])
     {
-        return $this->oBPv600RemoveUserFromGroupAsyncWithHttpInfo($userid, $groupid, $contentType)
+        return $this->removeUserFromGroupAsyncWithHttpInfo($userid, $groupid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2163,21 +2163,21 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600RemoveUserFromGroupAsyncWithHttpInfo
+     * Operation removeUserFromGroupAsyncWithHttpInfo
      *
      * Remove User from Group
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600RemoveUserFromGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['removeUserFromGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600RemoveUserFromGroupAsyncWithHttpInfo($userid, $groupid, string $contentType = self::contentTypes['oBPv600RemoveUserFromGroup'][0])
+    public function removeUserFromGroupAsyncWithHttpInfo($userid, $groupid, string $contentType = self::contentTypes['removeUserFromGroup'][0])
     {
         $returnType = '';
-        $request = $this->oBPv600RemoveUserFromGroupRequest($userid, $groupid, $contentType);
+        $request = $this->removeUserFromGroupRequest($userid, $groupid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2203,29 +2203,29 @@ class GroupApi
     }
 
     /**
-     * Create request for operation 'oBPv600RemoveUserFromGroup'
+     * Create request for operation 'removeUserFromGroup'
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600RemoveUserFromGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['removeUserFromGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600RemoveUserFromGroupRequest($userid, $groupid, string $contentType = self::contentTypes['oBPv600RemoveUserFromGroup'][0])
+    public function removeUserFromGroupRequest($userid, $groupid, string $contentType = self::contentTypes['removeUserFromGroup'][0])
     {
 
         // verify the required parameter 'userid' is set
         if ($userid === null || (is_array($userid) && count($userid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv600RemoveUserFromGroup'
+                'Missing the required parameter $userid when calling removeUserFromGroup'
             );
         }
 
         // verify the required parameter 'groupid' is set
         if ($groupid === null || (is_array($groupid) && count($groupid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $groupid when calling oBPv600RemoveUserFromGroup'
+                'Missing the required parameter $groupid when calling removeUserFromGroup'
             );
         }
 
@@ -2298,9 +2298,9 @@ class GroupApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2325,40 +2325,40 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600UpdateGroup
+     * Operation updateGroup
      *
      * Update Group
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateGroupRequest $obpv600_update_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateGroup'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateGroupRequest $update_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateGroup'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems
+     * @return \OpenBankProject\Model\GetGroups200ResponseGroupsInner
      */
-    public function oBPv600UpdateGroup($groupid, $obpv600_update_group_request, string $contentType = self::contentTypes['oBPv600UpdateGroup'][0])
+    public function updateGroup($groupid, $update_group_request, string $contentType = self::contentTypes['updateGroup'][0])
     {
-        list($response) = $this->oBPv600UpdateGroupWithHttpInfo($groupid, $obpv600_update_group_request, $contentType);
+        list($response) = $this->updateGroupWithHttpInfo($groupid, $update_group_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600UpdateGroupWithHttpInfo
+     * Operation updateGroupWithHttpInfo
      *
      * Update Group
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateGroupRequest $obpv600_update_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateGroup'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateGroupRequest $update_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateGroup'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetGroups200ResponseGroupsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600UpdateGroupWithHttpInfo($groupid, $obpv600_update_group_request, string $contentType = self::contentTypes['oBPv600UpdateGroup'][0])
+    public function updateGroupWithHttpInfo($groupid, $update_group_request, string $contentType = self::contentTypes['updateGroup'][0])
     {
-        $request = $this->oBPv600UpdateGroupRequest($groupid, $obpv600_update_group_request, $contentType);
+        $request = $this->updateGroupRequest($groupid, $update_group_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2386,7 +2386,7 @@ class GroupApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems',
+                        '\OpenBankProject\Model\GetGroups200ResponseGroupsInner',
                         $request,
                         $response,
                     );
@@ -2408,7 +2408,7 @@ class GroupApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems',
+                '\OpenBankProject\Model\GetGroups200ResponseGroupsInner',
                 $request,
                 $response,
             );
@@ -2417,7 +2417,7 @@ class GroupApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems',
+                        '\OpenBankProject\Model\GetGroups200ResponseGroupsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2430,20 +2430,20 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600UpdateGroupAsync
+     * Operation updateGroupAsync
      *
      * Update Group
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateGroupRequest $obpv600_update_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateGroup'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateGroupRequest $update_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateGroupAsync($groupid, $obpv600_update_group_request, string $contentType = self::contentTypes['oBPv600UpdateGroup'][0])
+    public function updateGroupAsync($groupid, $update_group_request, string $contentType = self::contentTypes['updateGroup'][0])
     {
-        return $this->oBPv600UpdateGroupAsyncWithHttpInfo($groupid, $obpv600_update_group_request, $contentType)
+        return $this->updateGroupAsyncWithHttpInfo($groupid, $update_group_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2452,21 +2452,21 @@ class GroupApi
     }
 
     /**
-     * Operation oBPv600UpdateGroupAsyncWithHttpInfo
+     * Operation updateGroupAsyncWithHttpInfo
      *
      * Update Group
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateGroupRequest $obpv600_update_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateGroup'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateGroupRequest $update_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateGroupAsyncWithHttpInfo($groupid, $obpv600_update_group_request, string $contentType = self::contentTypes['oBPv600UpdateGroup'][0])
+    public function updateGroupAsyncWithHttpInfo($groupid, $update_group_request, string $contentType = self::contentTypes['updateGroup'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems';
-        $request = $this->oBPv600UpdateGroupRequest($groupid, $obpv600_update_group_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetGroups200ResponseGroupsInner';
+        $request = $this->updateGroupRequest($groupid, $update_group_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2505,29 +2505,29 @@ class GroupApi
     }
 
     /**
-     * Create request for operation 'oBPv600UpdateGroup'
+     * Create request for operation 'updateGroup'
      *
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateGroupRequest $obpv600_update_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateGroup'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateGroupRequest $update_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600UpdateGroupRequest($groupid, $obpv600_update_group_request, string $contentType = self::contentTypes['oBPv600UpdateGroup'][0])
+    public function updateGroupRequest($groupid, $update_group_request, string $contentType = self::contentTypes['updateGroup'][0])
     {
 
         // verify the required parameter 'groupid' is set
         if ($groupid === null || (is_array($groupid) && count($groupid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $groupid when calling oBPv600UpdateGroup'
+                'Missing the required parameter $groupid when calling updateGroup'
             );
         }
 
-        // verify the required parameter 'obpv600_update_group_request' is set
-        if ($obpv600_update_group_request === null || (is_array($obpv600_update_group_request) && count($obpv600_update_group_request) === 0)) {
+        // verify the required parameter 'update_group_request' is set
+        if ($update_group_request === null || (is_array($update_group_request) && count($update_group_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_update_group_request when calling oBPv600UpdateGroup'
+                'Missing the required parameter $update_group_request when calling updateGroup'
             );
         }
 
@@ -2558,12 +2558,12 @@ class GroupApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_update_group_request)) {
+        if (isset($update_group_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_update_group_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_group_request));
             } else {
-                $httpBody = $obpv600_update_group_request;
+                $httpBody = $update_group_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2599,9 +2599,9 @@ class GroupApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,13 +75,13 @@ class AccountAccessApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv510CreateUserWithAccountAccessById' => [
+        'createUserWithAccountAccessById' => [
             'application/json',
         ],
-        'oBPv510GrantUserAccessToViewById' => [
+        'grantUserAccessToViewById' => [
             'application/json',
         ],
-        'oBPv510RevokeUserAccessToViewById' => [
+        'revokeUserAccessToViewById' => [
             'application/json',
         ],
     ];
@@ -133,44 +133,44 @@ class AccountAccessApi
     }
 
     /**
-     * Operation oBPv510CreateUserWithAccountAccessById
+     * Operation createUserWithAccountAccessById
      *
      * Create (DAuth) User with Account Access
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateUserWithAccountAccessByIdRequest $obpv510_create_user_with_account_access_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateUserWithAccountAccessById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateUserWithAccountAccessByIdRequest $create_user_with_account_access_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithAccountAccessById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200Response
+     * @return \OpenBankProject\Model\CreateUserWithAccountAccessById200Response
      */
-    public function oBPv510CreateUserWithAccountAccessById($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['oBPv510CreateUserWithAccountAccessById'][0])
+    public function createUserWithAccountAccessById($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['createUserWithAccountAccessById'][0])
     {
-        list($response) = $this->oBPv510CreateUserWithAccountAccessByIdWithHttpInfo($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, $contentType);
+        list($response) = $this->createUserWithAccountAccessByIdWithHttpInfo($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510CreateUserWithAccountAccessByIdWithHttpInfo
+     * Operation createUserWithAccountAccessByIdWithHttpInfo
      *
      * Create (DAuth) User with Account Access
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateUserWithAccountAccessByIdRequest $obpv510_create_user_with_account_access_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateUserWithAccountAccessById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateUserWithAccountAccessByIdRequest $create_user_with_account_access_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithAccountAccessById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateUserWithAccountAccessById200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510CreateUserWithAccountAccessByIdWithHttpInfo($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['oBPv510CreateUserWithAccountAccessById'][0])
+    public function createUserWithAccountAccessByIdWithHttpInfo($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['createUserWithAccountAccessById'][0])
     {
-        $request = $this->oBPv510CreateUserWithAccountAccessByIdRequest($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, $contentType);
+        $request = $this->createUserWithAccountAccessByIdRequest($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -198,7 +198,7 @@ class AccountAccessApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200Response',
+                        '\OpenBankProject\Model\CreateUserWithAccountAccessById200Response',
                         $request,
                         $response,
                     );
@@ -220,7 +220,7 @@ class AccountAccessApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200Response',
+                '\OpenBankProject\Model\CreateUserWithAccountAccessById200Response',
                 $request,
                 $response,
             );
@@ -229,7 +229,7 @@ class AccountAccessApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200Response',
+                        '\OpenBankProject\Model\CreateUserWithAccountAccessById200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -242,22 +242,22 @@ class AccountAccessApi
     }
 
     /**
-     * Operation oBPv510CreateUserWithAccountAccessByIdAsync
+     * Operation createUserWithAccountAccessByIdAsync
      *
      * Create (DAuth) User with Account Access
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateUserWithAccountAccessByIdRequest $obpv510_create_user_with_account_access_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateUserWithAccountAccessById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateUserWithAccountAccessByIdRequest $create_user_with_account_access_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithAccountAccessById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateUserWithAccountAccessByIdAsync($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['oBPv510CreateUserWithAccountAccessById'][0])
+    public function createUserWithAccountAccessByIdAsync($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['createUserWithAccountAccessById'][0])
     {
-        return $this->oBPv510CreateUserWithAccountAccessByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, $contentType)
+        return $this->createUserWithAccountAccessByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -266,23 +266,23 @@ class AccountAccessApi
     }
 
     /**
-     * Operation oBPv510CreateUserWithAccountAccessByIdAsyncWithHttpInfo
+     * Operation createUserWithAccountAccessByIdAsyncWithHttpInfo
      *
      * Create (DAuth) User with Account Access
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateUserWithAccountAccessByIdRequest $obpv510_create_user_with_account_access_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateUserWithAccountAccessById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateUserWithAccountAccessByIdRequest $create_user_with_account_access_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithAccountAccessById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateUserWithAccountAccessByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['oBPv510CreateUserWithAccountAccessById'][0])
+    public function createUserWithAccountAccessByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['createUserWithAccountAccessById'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200Response';
-        $request = $this->oBPv510CreateUserWithAccountAccessByIdRequest($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateUserWithAccountAccessById200Response';
+        $request = $this->createUserWithAccountAccessByIdRequest($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -321,45 +321,45 @@ class AccountAccessApi
     }
 
     /**
-     * Create request for operation 'oBPv510CreateUserWithAccountAccessById'
+     * Create request for operation 'createUserWithAccountAccessById'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateUserWithAccountAccessByIdRequest $obpv510_create_user_with_account_access_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateUserWithAccountAccessById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateUserWithAccountAccessByIdRequest $create_user_with_account_access_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithAccountAccessById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510CreateUserWithAccountAccessByIdRequest($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['oBPv510CreateUserWithAccountAccessById'][0])
+    public function createUserWithAccountAccessByIdRequest($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['createUserWithAccountAccessById'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510CreateUserWithAccountAccessById'
+                'Missing the required parameter $bankid when calling createUserWithAccountAccessById'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv510CreateUserWithAccountAccessById'
+                'Missing the required parameter $accountid when calling createUserWithAccountAccessById'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv510CreateUserWithAccountAccessById'
+                'Missing the required parameter $viewid when calling createUserWithAccountAccessById'
             );
         }
 
-        // verify the required parameter 'obpv510_create_user_with_account_access_by_id_request' is set
-        if ($obpv510_create_user_with_account_access_by_id_request === null || (is_array($obpv510_create_user_with_account_access_by_id_request) && count($obpv510_create_user_with_account_access_by_id_request) === 0)) {
+        // verify the required parameter 'create_user_with_account_access_by_id_request' is set
+        if ($create_user_with_account_access_by_id_request === null || (is_array($create_user_with_account_access_by_id_request) && count($create_user_with_account_access_by_id_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_create_user_with_account_access_by_id_request when calling oBPv510CreateUserWithAccountAccessById'
+                'Missing the required parameter $create_user_with_account_access_by_id_request when calling createUserWithAccountAccessById'
             );
         }
 
@@ -406,12 +406,12 @@ class AccountAccessApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_create_user_with_account_access_by_id_request)) {
+        if (isset($create_user_with_account_access_by_id_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_create_user_with_account_access_by_id_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_user_with_account_access_by_id_request));
             } else {
-                $httpBody = $obpv510_create_user_with_account_access_by_id_request;
+                $httpBody = $create_user_with_account_access_by_id_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -447,9 +447,9 @@ class AccountAccessApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -474,44 +474,44 @@ class AccountAccessApi
     }
 
     /**
-     * Operation oBPv510GrantUserAccessToViewById
+     * Operation grantUserAccessToViewById
      *
      * Grant User access to View
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510RevokeUserAccessToViewByIdRequest $obpv510_revoke_user_access_to_view_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GrantUserAccessToViewById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RevokeUserAccessToViewByIdRequest $revoke_user_access_to_view_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['grantUserAccessToViewById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead
+     * @return \OpenBankProject\Model\CreateUserWithAccountAccessById200ResponseHead
      */
-    public function oBPv510GrantUserAccessToViewById($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['oBPv510GrantUserAccessToViewById'][0])
+    public function grantUserAccessToViewById($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['grantUserAccessToViewById'][0])
     {
-        list($response) = $this->oBPv510GrantUserAccessToViewByIdWithHttpInfo($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, $contentType);
+        list($response) = $this->grantUserAccessToViewByIdWithHttpInfo($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510GrantUserAccessToViewByIdWithHttpInfo
+     * Operation grantUserAccessToViewByIdWithHttpInfo
      *
      * Grant User access to View
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510RevokeUserAccessToViewByIdRequest $obpv510_revoke_user_access_to_view_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GrantUserAccessToViewById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RevokeUserAccessToViewByIdRequest $revoke_user_access_to_view_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['grantUserAccessToViewById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateUserWithAccountAccessById200ResponseHead, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510GrantUserAccessToViewByIdWithHttpInfo($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['oBPv510GrantUserAccessToViewById'][0])
+    public function grantUserAccessToViewByIdWithHttpInfo($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['grantUserAccessToViewById'][0])
     {
-        $request = $this->oBPv510GrantUserAccessToViewByIdRequest($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, $contentType);
+        $request = $this->grantUserAccessToViewByIdRequest($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -539,7 +539,7 @@ class AccountAccessApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead',
+                        '\OpenBankProject\Model\CreateUserWithAccountAccessById200ResponseHead',
                         $request,
                         $response,
                     );
@@ -561,7 +561,7 @@ class AccountAccessApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead',
+                '\OpenBankProject\Model\CreateUserWithAccountAccessById200ResponseHead',
                 $request,
                 $response,
             );
@@ -570,7 +570,7 @@ class AccountAccessApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead',
+                        '\OpenBankProject\Model\CreateUserWithAccountAccessById200ResponseHead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -583,22 +583,22 @@ class AccountAccessApi
     }
 
     /**
-     * Operation oBPv510GrantUserAccessToViewByIdAsync
+     * Operation grantUserAccessToViewByIdAsync
      *
      * Grant User access to View
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510RevokeUserAccessToViewByIdRequest $obpv510_revoke_user_access_to_view_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GrantUserAccessToViewById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RevokeUserAccessToViewByIdRequest $revoke_user_access_to_view_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['grantUserAccessToViewById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GrantUserAccessToViewByIdAsync($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['oBPv510GrantUserAccessToViewById'][0])
+    public function grantUserAccessToViewByIdAsync($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['grantUserAccessToViewById'][0])
     {
-        return $this->oBPv510GrantUserAccessToViewByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, $contentType)
+        return $this->grantUserAccessToViewByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -607,23 +607,23 @@ class AccountAccessApi
     }
 
     /**
-     * Operation oBPv510GrantUserAccessToViewByIdAsyncWithHttpInfo
+     * Operation grantUserAccessToViewByIdAsyncWithHttpInfo
      *
      * Grant User access to View
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510RevokeUserAccessToViewByIdRequest $obpv510_revoke_user_access_to_view_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GrantUserAccessToViewById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RevokeUserAccessToViewByIdRequest $revoke_user_access_to_view_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['grantUserAccessToViewById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GrantUserAccessToViewByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['oBPv510GrantUserAccessToViewById'][0])
+    public function grantUserAccessToViewByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['grantUserAccessToViewById'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead';
-        $request = $this->oBPv510GrantUserAccessToViewByIdRequest($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateUserWithAccountAccessById200ResponseHead';
+        $request = $this->grantUserAccessToViewByIdRequest($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -662,45 +662,45 @@ class AccountAccessApi
     }
 
     /**
-     * Create request for operation 'oBPv510GrantUserAccessToViewById'
+     * Create request for operation 'grantUserAccessToViewById'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510RevokeUserAccessToViewByIdRequest $obpv510_revoke_user_access_to_view_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GrantUserAccessToViewById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RevokeUserAccessToViewByIdRequest $revoke_user_access_to_view_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['grantUserAccessToViewById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510GrantUserAccessToViewByIdRequest($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['oBPv510GrantUserAccessToViewById'][0])
+    public function grantUserAccessToViewByIdRequest($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['grantUserAccessToViewById'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510GrantUserAccessToViewById'
+                'Missing the required parameter $bankid when calling grantUserAccessToViewById'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv510GrantUserAccessToViewById'
+                'Missing the required parameter $accountid when calling grantUserAccessToViewById'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv510GrantUserAccessToViewById'
+                'Missing the required parameter $viewid when calling grantUserAccessToViewById'
             );
         }
 
-        // verify the required parameter 'obpv510_revoke_user_access_to_view_by_id_request' is set
-        if ($obpv510_revoke_user_access_to_view_by_id_request === null || (is_array($obpv510_revoke_user_access_to_view_by_id_request) && count($obpv510_revoke_user_access_to_view_by_id_request) === 0)) {
+        // verify the required parameter 'revoke_user_access_to_view_by_id_request' is set
+        if ($revoke_user_access_to_view_by_id_request === null || (is_array($revoke_user_access_to_view_by_id_request) && count($revoke_user_access_to_view_by_id_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_revoke_user_access_to_view_by_id_request when calling oBPv510GrantUserAccessToViewById'
+                'Missing the required parameter $revoke_user_access_to_view_by_id_request when calling grantUserAccessToViewById'
             );
         }
 
@@ -747,12 +747,12 @@ class AccountAccessApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_revoke_user_access_to_view_by_id_request)) {
+        if (isset($revoke_user_access_to_view_by_id_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_revoke_user_access_to_view_by_id_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($revoke_user_access_to_view_by_id_request));
             } else {
-                $httpBody = $obpv510_revoke_user_access_to_view_by_id_request;
+                $httpBody = $revoke_user_access_to_view_by_id_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -788,9 +788,9 @@ class AccountAccessApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -815,44 +815,44 @@ class AccountAccessApi
     }
 
     /**
-     * Operation oBPv510RevokeUserAccessToViewById
+     * Operation revokeUserAccessToViewById
      *
      * Revoke User access to View
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510RevokeUserAccessToViewByIdRequest $obpv510_revoke_user_access_to_view_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510RevokeUserAccessToViewById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RevokeUserAccessToViewByIdRequest $revoke_user_access_to_view_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['revokeUserAccessToViewById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510RevokeUserAccessToViewById200Response
+     * @return \OpenBankProject\Model\RevokeUserAccessToViewById200Response
      */
-    public function oBPv510RevokeUserAccessToViewById($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['oBPv510RevokeUserAccessToViewById'][0])
+    public function revokeUserAccessToViewById($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['revokeUserAccessToViewById'][0])
     {
-        list($response) = $this->oBPv510RevokeUserAccessToViewByIdWithHttpInfo($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, $contentType);
+        list($response) = $this->revokeUserAccessToViewByIdWithHttpInfo($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510RevokeUserAccessToViewByIdWithHttpInfo
+     * Operation revokeUserAccessToViewByIdWithHttpInfo
      *
      * Revoke User access to View
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510RevokeUserAccessToViewByIdRequest $obpv510_revoke_user_access_to_view_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510RevokeUserAccessToViewById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RevokeUserAccessToViewByIdRequest $revoke_user_access_to_view_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['revokeUserAccessToViewById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510RevokeUserAccessToViewById200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\RevokeUserAccessToViewById200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510RevokeUserAccessToViewByIdWithHttpInfo($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['oBPv510RevokeUserAccessToViewById'][0])
+    public function revokeUserAccessToViewByIdWithHttpInfo($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['revokeUserAccessToViewById'][0])
     {
-        $request = $this->oBPv510RevokeUserAccessToViewByIdRequest($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, $contentType);
+        $request = $this->revokeUserAccessToViewByIdRequest($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -880,7 +880,7 @@ class AccountAccessApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510RevokeUserAccessToViewById200Response',
+                        '\OpenBankProject\Model\RevokeUserAccessToViewById200Response',
                         $request,
                         $response,
                     );
@@ -902,7 +902,7 @@ class AccountAccessApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510RevokeUserAccessToViewById200Response',
+                '\OpenBankProject\Model\RevokeUserAccessToViewById200Response',
                 $request,
                 $response,
             );
@@ -911,7 +911,7 @@ class AccountAccessApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510RevokeUserAccessToViewById200Response',
+                        '\OpenBankProject\Model\RevokeUserAccessToViewById200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -924,22 +924,22 @@ class AccountAccessApi
     }
 
     /**
-     * Operation oBPv510RevokeUserAccessToViewByIdAsync
+     * Operation revokeUserAccessToViewByIdAsync
      *
      * Revoke User access to View
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510RevokeUserAccessToViewByIdRequest $obpv510_revoke_user_access_to_view_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510RevokeUserAccessToViewById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RevokeUserAccessToViewByIdRequest $revoke_user_access_to_view_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['revokeUserAccessToViewById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510RevokeUserAccessToViewByIdAsync($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['oBPv510RevokeUserAccessToViewById'][0])
+    public function revokeUserAccessToViewByIdAsync($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['revokeUserAccessToViewById'][0])
     {
-        return $this->oBPv510RevokeUserAccessToViewByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, $contentType)
+        return $this->revokeUserAccessToViewByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -948,23 +948,23 @@ class AccountAccessApi
     }
 
     /**
-     * Operation oBPv510RevokeUserAccessToViewByIdAsyncWithHttpInfo
+     * Operation revokeUserAccessToViewByIdAsyncWithHttpInfo
      *
      * Revoke User access to View
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510RevokeUserAccessToViewByIdRequest $obpv510_revoke_user_access_to_view_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510RevokeUserAccessToViewById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RevokeUserAccessToViewByIdRequest $revoke_user_access_to_view_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['revokeUserAccessToViewById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510RevokeUserAccessToViewByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['oBPv510RevokeUserAccessToViewById'][0])
+    public function revokeUserAccessToViewByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['revokeUserAccessToViewById'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510RevokeUserAccessToViewById200Response';
-        $request = $this->oBPv510RevokeUserAccessToViewByIdRequest($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, $contentType);
+        $returnType = '\OpenBankProject\Model\RevokeUserAccessToViewById200Response';
+        $request = $this->revokeUserAccessToViewByIdRequest($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1003,45 +1003,45 @@ class AccountAccessApi
     }
 
     /**
-     * Create request for operation 'oBPv510RevokeUserAccessToViewById'
+     * Create request for operation 'revokeUserAccessToViewById'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510RevokeUserAccessToViewByIdRequest $obpv510_revoke_user_access_to_view_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510RevokeUserAccessToViewById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RevokeUserAccessToViewByIdRequest $revoke_user_access_to_view_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['revokeUserAccessToViewById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510RevokeUserAccessToViewByIdRequest($bankid, $accountid, $viewid, $obpv510_revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['oBPv510RevokeUserAccessToViewById'][0])
+    public function revokeUserAccessToViewByIdRequest($bankid, $accountid, $viewid, $revoke_user_access_to_view_by_id_request, string $contentType = self::contentTypes['revokeUserAccessToViewById'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510RevokeUserAccessToViewById'
+                'Missing the required parameter $bankid when calling revokeUserAccessToViewById'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv510RevokeUserAccessToViewById'
+                'Missing the required parameter $accountid when calling revokeUserAccessToViewById'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv510RevokeUserAccessToViewById'
+                'Missing the required parameter $viewid when calling revokeUserAccessToViewById'
             );
         }
 
-        // verify the required parameter 'obpv510_revoke_user_access_to_view_by_id_request' is set
-        if ($obpv510_revoke_user_access_to_view_by_id_request === null || (is_array($obpv510_revoke_user_access_to_view_by_id_request) && count($obpv510_revoke_user_access_to_view_by_id_request) === 0)) {
+        // verify the required parameter 'revoke_user_access_to_view_by_id_request' is set
+        if ($revoke_user_access_to_view_by_id_request === null || (is_array($revoke_user_access_to_view_by_id_request) && count($revoke_user_access_to_view_by_id_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_revoke_user_access_to_view_by_id_request when calling oBPv510RevokeUserAccessToViewById'
+                'Missing the required parameter $revoke_user_access_to_view_by_id_request when calling revokeUserAccessToViewById'
             );
         }
 
@@ -1088,12 +1088,12 @@ class AccountAccessApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_revoke_user_access_to_view_by_id_request)) {
+        if (isset($revoke_user_access_to_view_by_id_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_revoke_user_access_to_view_by_id_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($revoke_user_access_to_view_by_id_request));
             } else {
-                $httpBody = $obpv510_revoke_user_access_to_view_by_id_request;
+                $httpBody = $revoke_user_access_to_view_by_id_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1129,9 +1129,9 @@ class AccountAccessApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

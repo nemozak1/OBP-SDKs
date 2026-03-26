@@ -1,20 +1,20 @@
 # \WebhookAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv310CreateAccountWebhook**](WebhookAPI.md#OBPv310CreateAccountWebhook) | **Post** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Create an Account Webhook
-[**OBPv310EnableDisableAccountWebhook**](WebhookAPI.md#OBPv310EnableDisableAccountWebhook) | **Put** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Enable/Disable an Account Webhook
-[**OBPv310GetAccountWebhooks**](WebhookAPI.md#OBPv310GetAccountWebhooks) | **Get** /obp/v3.1.0/management/banks/{bankid}/account-web-hooks | Get Account Webhooks
-[**OBPv400CreateBankAccountNotificationWebhook**](WebhookAPI.md#OBPv400CreateBankAccountNotificationWebhook) | **Post** /obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction | Create bank level Account Notification Webhook
-[**OBPv400CreateSystemAccountNotificationWebhook**](WebhookAPI.md#OBPv400CreateSystemAccountNotificationWebhook) | **Post** /obp/v4.0.0/web-hooks/account/notifications/on-create-transaction | Create system level Account Notification Webhook
+[**CreateAccountWebhook**](WebhookAPI.md#CreateAccountWebhook) | **Post** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Create an Account Webhook
+[**CreateBankAccountNotificationWebhook**](WebhookAPI.md#CreateBankAccountNotificationWebhook) | **Post** /obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction | Create bank level Account Notification Webhook
+[**CreateSystemAccountNotificationWebhook**](WebhookAPI.md#CreateSystemAccountNotificationWebhook) | **Post** /obp/v4.0.0/web-hooks/account/notifications/on-create-transaction | Create system level Account Notification Webhook
+[**EnableDisableAccountWebhook**](WebhookAPI.md#EnableDisableAccountWebhook) | **Put** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Enable/Disable an Account Webhook
+[**GetAccountWebhooks**](WebhookAPI.md#GetAccountWebhooks) | **Get** /obp/v3.1.0/management/banks/{bankid}/account-web-hooks | Get Account Webhooks
 
 
 
-## OBPv310CreateAccountWebhook
+## CreateAccountWebhook
 
-> OBPv310EnableDisableAccountWebhook200Response OBPv310CreateAccountWebhook(ctx, bankid).OBPv310CreateAccountWebhookRequest(oBPv310CreateAccountWebhookRequest).Execute()
+> EnableDisableAccountWebhook200Response CreateAccountWebhook(ctx, bankid).CreateAccountWebhookRequest(createAccountWebhookRequest).Execute()
 
 Create an Account Webhook
 
@@ -34,17 +34,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv310CreateAccountWebhookRequest := *openapiclient.NewOBPv310CreateAccountWebhookRequest("Type_example", *openapiclient.NewOBPv310CreateAccountWebhookRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv310CreateAccountWebhookRequest | Request body
+	createAccountWebhookRequest := *openapiclient.NewCreateAccountWebhookRequest() // CreateAccountWebhookRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WebhookAPI.OBPv310CreateAccountWebhook(context.Background(), bankid).OBPv310CreateAccountWebhookRequest(oBPv310CreateAccountWebhookRequest).Execute()
+	resp, r, err := apiClient.WebhookAPI.CreateAccountWebhook(context.Background(), bankid).CreateAccountWebhookRequest(createAccountWebhookRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `WebhookAPI.OBPv310CreateAccountWebhook``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `WebhookAPI.CreateAccountWebhook``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310CreateAccountWebhook`: OBPv310EnableDisableAccountWebhook200Response
-	fmt.Fprintf(os.Stdout, "Response from `WebhookAPI.OBPv310CreateAccountWebhook`: %v\n", resp)
+	// response from `CreateAccountWebhook`: EnableDisableAccountWebhook200Response
+	fmt.Fprintf(os.Stdout, "Response from `WebhookAPI.CreateAccountWebhook`: %v\n", resp)
 }
 ```
 
@@ -58,17 +58,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310CreateAccountWebhookRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateAccountWebhookRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv310CreateAccountWebhookRequest** | [**OBPv310CreateAccountWebhookRequest**](OBPv310CreateAccountWebhookRequest.md) | Request body | 
+ **createAccountWebhookRequest** | [**CreateAccountWebhookRequest**](CreateAccountWebhookRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv310EnableDisableAccountWebhook200Response**](OBPv310EnableDisableAccountWebhook200Response.md)
+[**EnableDisableAccountWebhook200Response**](EnableDisableAccountWebhook200Response.md)
 
 ### Authorization
 
@@ -84,9 +84,147 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv310EnableDisableAccountWebhook
+## CreateBankAccountNotificationWebhook
 
-> OBPv310EnableDisableAccountWebhook200Response OBPv310EnableDisableAccountWebhook(ctx, bankid).OBPv310EnableDisableAccountWebhookRequest(oBPv310EnableDisableAccountWebhookRequest).Execute()
+> CreateBankAccountNotificationWebhook200Response CreateBankAccountNotificationWebhook(ctx, bankid).CreateSystemAccountNotificationWebhookRequest(createSystemAccountNotificationWebhookRequest).Execute()
+
+Create bank level Account Notification Webhook
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	createSystemAccountNotificationWebhookRequest := *openapiclient.NewCreateSystemAccountNotificationWebhookRequest() // CreateSystemAccountNotificationWebhookRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WebhookAPI.CreateBankAccountNotificationWebhook(context.Background(), bankid).CreateSystemAccountNotificationWebhookRequest(createSystemAccountNotificationWebhookRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WebhookAPI.CreateBankAccountNotificationWebhook``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateBankAccountNotificationWebhook`: CreateBankAccountNotificationWebhook200Response
+	fmt.Fprintf(os.Stdout, "Response from `WebhookAPI.CreateBankAccountNotificationWebhook`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateBankAccountNotificationWebhookRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **createSystemAccountNotificationWebhookRequest** | [**CreateSystemAccountNotificationWebhookRequest**](CreateSystemAccountNotificationWebhookRequest.md) | Request body | 
+
+### Return type
+
+[**CreateBankAccountNotificationWebhook200Response**](CreateBankAccountNotificationWebhook200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateSystemAccountNotificationWebhook
+
+> CreateSystemAccountNotificationWebhook200Response CreateSystemAccountNotificationWebhook(ctx).CreateSystemAccountNotificationWebhookRequest(createSystemAccountNotificationWebhookRequest).Execute()
+
+Create system level Account Notification Webhook
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	createSystemAccountNotificationWebhookRequest := *openapiclient.NewCreateSystemAccountNotificationWebhookRequest() // CreateSystemAccountNotificationWebhookRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WebhookAPI.CreateSystemAccountNotificationWebhook(context.Background()).CreateSystemAccountNotificationWebhookRequest(createSystemAccountNotificationWebhookRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WebhookAPI.CreateSystemAccountNotificationWebhook``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateSystemAccountNotificationWebhook`: CreateSystemAccountNotificationWebhook200Response
+	fmt.Fprintf(os.Stdout, "Response from `WebhookAPI.CreateSystemAccountNotificationWebhook`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateSystemAccountNotificationWebhookRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createSystemAccountNotificationWebhookRequest** | [**CreateSystemAccountNotificationWebhookRequest**](CreateSystemAccountNotificationWebhookRequest.md) | Request body | 
+
+### Return type
+
+[**CreateSystemAccountNotificationWebhook200Response**](CreateSystemAccountNotificationWebhook200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## EnableDisableAccountWebhook
+
+> EnableDisableAccountWebhook200Response EnableDisableAccountWebhook(ctx, bankid).EnableDisableAccountWebhookRequest(enableDisableAccountWebhookRequest).Execute()
 
 Enable/Disable an Account Webhook
 
@@ -106,17 +244,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv310EnableDisableAccountWebhookRequest := *openapiclient.NewOBPv310EnableDisableAccountWebhookRequest("Type_example", *openapiclient.NewOBPv310EnableDisableAccountWebhookRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv310EnableDisableAccountWebhookRequest | Request body
+	enableDisableAccountWebhookRequest := *openapiclient.NewEnableDisableAccountWebhookRequest() // EnableDisableAccountWebhookRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WebhookAPI.OBPv310EnableDisableAccountWebhook(context.Background(), bankid).OBPv310EnableDisableAccountWebhookRequest(oBPv310EnableDisableAccountWebhookRequest).Execute()
+	resp, r, err := apiClient.WebhookAPI.EnableDisableAccountWebhook(context.Background(), bankid).EnableDisableAccountWebhookRequest(enableDisableAccountWebhookRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `WebhookAPI.OBPv310EnableDisableAccountWebhook``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `WebhookAPI.EnableDisableAccountWebhook``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310EnableDisableAccountWebhook`: OBPv310EnableDisableAccountWebhook200Response
-	fmt.Fprintf(os.Stdout, "Response from `WebhookAPI.OBPv310EnableDisableAccountWebhook`: %v\n", resp)
+	// response from `EnableDisableAccountWebhook`: EnableDisableAccountWebhook200Response
+	fmt.Fprintf(os.Stdout, "Response from `WebhookAPI.EnableDisableAccountWebhook`: %v\n", resp)
 }
 ```
 
@@ -130,17 +268,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310EnableDisableAccountWebhookRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiEnableDisableAccountWebhookRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv310EnableDisableAccountWebhookRequest** | [**OBPv310EnableDisableAccountWebhookRequest**](OBPv310EnableDisableAccountWebhookRequest.md) | Request body | 
+ **enableDisableAccountWebhookRequest** | [**EnableDisableAccountWebhookRequest**](EnableDisableAccountWebhookRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv310EnableDisableAccountWebhook200Response**](OBPv310EnableDisableAccountWebhook200Response.md)
+[**EnableDisableAccountWebhook200Response**](EnableDisableAccountWebhook200Response.md)
 
 ### Authorization
 
@@ -156,9 +294,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv310GetAccountWebhooks
+## GetAccountWebhooks
 
-> OBPv310GetAccountWebhooks200Response OBPv310GetAccountWebhooks(ctx, bankid).Execute()
+> GetAccountWebhooks200Response GetAccountWebhooks(ctx, bankid).Execute()
 
 Get Account Webhooks
 
@@ -181,13 +319,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WebhookAPI.OBPv310GetAccountWebhooks(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.WebhookAPI.GetAccountWebhooks(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `WebhookAPI.OBPv310GetAccountWebhooks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `WebhookAPI.GetAccountWebhooks``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310GetAccountWebhooks`: OBPv310GetAccountWebhooks200Response
-	fmt.Fprintf(os.Stdout, "Response from `WebhookAPI.OBPv310GetAccountWebhooks`: %v\n", resp)
+	// response from `GetAccountWebhooks`: GetAccountWebhooks200Response
+	fmt.Fprintf(os.Stdout, "Response from `WebhookAPI.GetAccountWebhooks`: %v\n", resp)
 }
 ```
 
@@ -201,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310GetAccountWebhooksRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAccountWebhooksRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -210,7 +348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetAccountWebhooks200Response**](OBPv310GetAccountWebhooks200Response.md)
+[**GetAccountWebhooks200Response**](GetAccountWebhooks200Response.md)
 
 ### Authorization
 
@@ -219,144 +357,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400CreateBankAccountNotificationWebhook
-
-> OBPv400CreateBankAccountNotificationWebhook200Response OBPv400CreateBankAccountNotificationWebhook(ctx, bankid).OBPv400CreateSystemAccountNotificationWebhookRequest(oBPv400CreateSystemAccountNotificationWebhookRequest).Execute()
-
-Create bank level Account Notification Webhook
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv400CreateSystemAccountNotificationWebhookRequest := *openapiclient.NewOBPv400CreateSystemAccountNotificationWebhookRequest("Type_example", *openapiclient.NewOBPv400CreateSystemAccountNotificationWebhookRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400CreateSystemAccountNotificationWebhookRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WebhookAPI.OBPv400CreateBankAccountNotificationWebhook(context.Background(), bankid).OBPv400CreateSystemAccountNotificationWebhookRequest(oBPv400CreateSystemAccountNotificationWebhookRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `WebhookAPI.OBPv400CreateBankAccountNotificationWebhook``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400CreateBankAccountNotificationWebhook`: OBPv400CreateBankAccountNotificationWebhook200Response
-	fmt.Fprintf(os.Stdout, "Response from `WebhookAPI.OBPv400CreateBankAccountNotificationWebhook`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400CreateBankAccountNotificationWebhookRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv400CreateSystemAccountNotificationWebhookRequest** | [**OBPv400CreateSystemAccountNotificationWebhookRequest**](OBPv400CreateSystemAccountNotificationWebhookRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400CreateBankAccountNotificationWebhook200Response**](OBPv400CreateBankAccountNotificationWebhook200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400CreateSystemAccountNotificationWebhook
-
-> OBPv400CreateSystemAccountNotificationWebhook200Response OBPv400CreateSystemAccountNotificationWebhook(ctx).OBPv400CreateSystemAccountNotificationWebhookRequest(oBPv400CreateSystemAccountNotificationWebhookRequest).Execute()
-
-Create system level Account Notification Webhook
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	oBPv400CreateSystemAccountNotificationWebhookRequest := *openapiclient.NewOBPv400CreateSystemAccountNotificationWebhookRequest("Type_example", *openapiclient.NewOBPv400CreateSystemAccountNotificationWebhookRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400CreateSystemAccountNotificationWebhookRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WebhookAPI.OBPv400CreateSystemAccountNotificationWebhook(context.Background()).OBPv400CreateSystemAccountNotificationWebhookRequest(oBPv400CreateSystemAccountNotificationWebhookRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `WebhookAPI.OBPv400CreateSystemAccountNotificationWebhook``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400CreateSystemAccountNotificationWebhook`: OBPv400CreateSystemAccountNotificationWebhook200Response
-	fmt.Fprintf(os.Stdout, "Response from `WebhookAPI.OBPv400CreateSystemAccountNotificationWebhook`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400CreateSystemAccountNotificationWebhookRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **oBPv400CreateSystemAccountNotificationWebhookRequest** | [**OBPv400CreateSystemAccountNotificationWebhookRequest**](OBPv400CreateSystemAccountNotificationWebhookRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400CreateSystemAccountNotificationWebhook200Response**](OBPv400CreateSystemAccountNotificationWebhook200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

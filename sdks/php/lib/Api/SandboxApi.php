@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,7 +75,7 @@ class SandboxApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv210SandboxDataImport' => [
+        'sandboxDataImport' => [
             'application/json',
         ],
     ];
@@ -127,38 +127,38 @@ class SandboxApi
     }
 
     /**
-     * Operation oBPv210SandboxDataImport
+     * Operation sandboxDataImport
      *
      * Create sandbox
      *
-     * @param  \OpenBankProject\Model\OBPv210SandboxDataImportRequest $obpv210_sandbox_data_import_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv210SandboxDataImport'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\SandboxDataImportRequest $sandbox_data_import_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sandboxDataImport'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+     * @return \OpenBankProject\Model\UpdateTransactionNarrative200Response
      */
-    public function oBPv210SandboxDataImport($obpv210_sandbox_data_import_request, string $contentType = self::contentTypes['oBPv210SandboxDataImport'][0])
+    public function sandboxDataImport($sandbox_data_import_request, string $contentType = self::contentTypes['sandboxDataImport'][0])
     {
-        list($response) = $this->oBPv210SandboxDataImportWithHttpInfo($obpv210_sandbox_data_import_request, $contentType);
+        list($response) = $this->sandboxDataImportWithHttpInfo($sandbox_data_import_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv210SandboxDataImportWithHttpInfo
+     * Operation sandboxDataImportWithHttpInfo
      *
      * Create sandbox
      *
-     * @param  \OpenBankProject\Model\OBPv210SandboxDataImportRequest $obpv210_sandbox_data_import_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv210SandboxDataImport'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\SandboxDataImportRequest $sandbox_data_import_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sandboxDataImport'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv210SandboxDataImportWithHttpInfo($obpv210_sandbox_data_import_request, string $contentType = self::contentTypes['oBPv210SandboxDataImport'][0])
+    public function sandboxDataImportWithHttpInfo($sandbox_data_import_request, string $contentType = self::contentTypes['sandboxDataImport'][0])
     {
-        $request = $this->oBPv210SandboxDataImportRequest($obpv210_sandbox_data_import_request, $contentType);
+        $request = $this->sandboxDataImportRequest($sandbox_data_import_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -186,7 +186,7 @@ class SandboxApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $request,
                         $response,
                     );
@@ -208,7 +208,7 @@ class SandboxApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                 $request,
                 $response,
             );
@@ -217,7 +217,7 @@ class SandboxApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\UpdateTransactionNarrative200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -230,19 +230,19 @@ class SandboxApi
     }
 
     /**
-     * Operation oBPv210SandboxDataImportAsync
+     * Operation sandboxDataImportAsync
      *
      * Create sandbox
      *
-     * @param  \OpenBankProject\Model\OBPv210SandboxDataImportRequest $obpv210_sandbox_data_import_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv210SandboxDataImport'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\SandboxDataImportRequest $sandbox_data_import_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sandboxDataImport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv210SandboxDataImportAsync($obpv210_sandbox_data_import_request, string $contentType = self::contentTypes['oBPv210SandboxDataImport'][0])
+    public function sandboxDataImportAsync($sandbox_data_import_request, string $contentType = self::contentTypes['sandboxDataImport'][0])
     {
-        return $this->oBPv210SandboxDataImportAsyncWithHttpInfo($obpv210_sandbox_data_import_request, $contentType)
+        return $this->sandboxDataImportAsyncWithHttpInfo($sandbox_data_import_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -251,20 +251,20 @@ class SandboxApi
     }
 
     /**
-     * Operation oBPv210SandboxDataImportAsyncWithHttpInfo
+     * Operation sandboxDataImportAsyncWithHttpInfo
      *
      * Create sandbox
      *
-     * @param  \OpenBankProject\Model\OBPv210SandboxDataImportRequest $obpv210_sandbox_data_import_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv210SandboxDataImport'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\SandboxDataImportRequest $sandbox_data_import_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sandboxDataImport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv210SandboxDataImportAsyncWithHttpInfo($obpv210_sandbox_data_import_request, string $contentType = self::contentTypes['oBPv210SandboxDataImport'][0])
+    public function sandboxDataImportAsyncWithHttpInfo($sandbox_data_import_request, string $contentType = self::contentTypes['sandboxDataImport'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv210SandboxDataImportRequest($obpv210_sandbox_data_import_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateTransactionNarrative200Response';
+        $request = $this->sandboxDataImportRequest($sandbox_data_import_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -303,21 +303,21 @@ class SandboxApi
     }
 
     /**
-     * Create request for operation 'oBPv210SandboxDataImport'
+     * Create request for operation 'sandboxDataImport'
      *
-     * @param  \OpenBankProject\Model\OBPv210SandboxDataImportRequest $obpv210_sandbox_data_import_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv210SandboxDataImport'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\SandboxDataImportRequest $sandbox_data_import_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sandboxDataImport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv210SandboxDataImportRequest($obpv210_sandbox_data_import_request, string $contentType = self::contentTypes['oBPv210SandboxDataImport'][0])
+    public function sandboxDataImportRequest($sandbox_data_import_request, string $contentType = self::contentTypes['sandboxDataImport'][0])
     {
 
-        // verify the required parameter 'obpv210_sandbox_data_import_request' is set
-        if ($obpv210_sandbox_data_import_request === null || (is_array($obpv210_sandbox_data_import_request) && count($obpv210_sandbox_data_import_request) === 0)) {
+        // verify the required parameter 'sandbox_data_import_request' is set
+        if ($sandbox_data_import_request === null || (is_array($sandbox_data_import_request) && count($sandbox_data_import_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv210_sandbox_data_import_request when calling oBPv210SandboxDataImport'
+                'Missing the required parameter $sandbox_data_import_request when calling sandboxDataImport'
             );
         }
 
@@ -340,12 +340,12 @@ class SandboxApi
         );
 
         // for model (json/xml)
-        if (isset($obpv210_sandbox_data_import_request)) {
+        if (isset($sandbox_data_import_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv210_sandbox_data_import_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($sandbox_data_import_request));
             } else {
-                $httpBody = $obpv210_sandbox_data_import_request;
+                $httpBody = $sandbox_data_import_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -381,9 +381,9 @@ class SandboxApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

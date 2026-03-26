@@ -19,7 +19,7 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv600GetAvailablePersonalDynamicEntities200Response
+import com.openbankproject.models.GetAvailablePersonalDynamicEntities200Response
 
 import com.squareup.moshi.Json
 
@@ -41,7 +41,7 @@ open class PersonalDynamicEntityApi(basePath: kotlin.String = defaultBasePath, c
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -49,7 +49,7 @@ open class PersonalDynamicEntityApi(basePath: kotlin.String = defaultBasePath, c
      * GET /obp/v6.0.0/personal-dynamic-entities/available
      * Get Available Personal Dynamic Entities
      * &lt;p&gt;Get all Dynamic Entities that support personal data storage (hasPersonalEntity &#x3D;&#x3D; true).&lt;/p&gt; &lt;p&gt;This endpoint allows regular users (without admin roles) to discover which dynamic entities&lt;br /&gt; they can interact with for storing personal data via the /my/ENTITY_NAME endpoints.&lt;/p&gt; &lt;p&gt;Authentication: User must be logged in (no special roles required).&lt;/p&gt; &lt;p&gt;Use case: Portals and apps can show users what personal data types are available&lt;br /&gt; without needing admin access to view all dynamic entity definitions.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @return OBPv600GetAvailablePersonalDynamicEntities200Response
+     * @return GetAvailablePersonalDynamicEntities200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -58,11 +58,11 @@ open class PersonalDynamicEntityApi(basePath: kotlin.String = defaultBasePath, c
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetAvailablePersonalDynamicEntities() : OBPv600GetAvailablePersonalDynamicEntities200Response {
-        val localVarResponse = oBPv600GetAvailablePersonalDynamicEntitiesWithHttpInfo()
+    fun getAvailablePersonalDynamicEntities() : GetAvailablePersonalDynamicEntities200Response {
+        val localVarResponse = getAvailablePersonalDynamicEntitiesWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetAvailablePersonalDynamicEntities200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAvailablePersonalDynamicEntities200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -80,26 +80,26 @@ open class PersonalDynamicEntityApi(basePath: kotlin.String = defaultBasePath, c
      * GET /obp/v6.0.0/personal-dynamic-entities/available
      * Get Available Personal Dynamic Entities
      * &lt;p&gt;Get all Dynamic Entities that support personal data storage (hasPersonalEntity &#x3D;&#x3D; true).&lt;/p&gt; &lt;p&gt;This endpoint allows regular users (without admin roles) to discover which dynamic entities&lt;br /&gt; they can interact with for storing personal data via the /my/ENTITY_NAME endpoints.&lt;/p&gt; &lt;p&gt;Authentication: User must be logged in (no special roles required).&lt;/p&gt; &lt;p&gt;Use case: Portals and apps can show users what personal data types are available&lt;br /&gt; without needing admin access to view all dynamic entity definitions.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @return ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response?>
+     * @return ApiResponse<GetAvailablePersonalDynamicEntities200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetAvailablePersonalDynamicEntitiesWithHttpInfo() : ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response?> {
-        val localVariableConfig = oBPv600GetAvailablePersonalDynamicEntitiesRequestConfig()
+    fun getAvailablePersonalDynamicEntitiesWithHttpInfo() : ApiResponse<GetAvailablePersonalDynamicEntities200Response?> {
+        val localVariableConfig = getAvailablePersonalDynamicEntitiesRequestConfig()
 
-        return request<Unit, OBPv600GetAvailablePersonalDynamicEntities200Response>(
+        return request<Unit, GetAvailablePersonalDynamicEntities200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetAvailablePersonalDynamicEntities
+     * To obtain the request config of the operation getAvailablePersonalDynamicEntities
      *
      * @return RequestConfig
      */
-    fun oBPv600GetAvailablePersonalDynamicEntitiesRequestConfig() : RequestConfig<Unit> {
+    fun getAvailablePersonalDynamicEntitiesRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

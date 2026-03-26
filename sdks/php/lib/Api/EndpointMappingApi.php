@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,34 +75,34 @@ class EndpointMappingApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv400CreateBankLevelEndpointMapping' => [
+        'createBankLevelEndpointMapping' => [
             'application/json',
         ],
-        'oBPv400CreateEndpointMapping' => [
+        'createEndpointMapping' => [
             'application/json',
         ],
-        'oBPv400DeleteBankLevelEndpointMapping' => [
+        'deleteBankLevelEndpointMapping' => [
             'application/json',
         ],
-        'oBPv400DeleteEndpointMapping' => [
+        'deleteEndpointMapping' => [
             'application/json',
         ],
-        'oBPv400GetAllBankLevelEndpointMappings' => [
+        'getAllBankLevelEndpointMappings' => [
             'application/json',
         ],
-        'oBPv400GetAllEndpointMappings' => [
+        'getAllEndpointMappings' => [
             'application/json',
         ],
-        'oBPv400GetBankLevelEndpointMapping' => [
+        'getBankLevelEndpointMapping' => [
             'application/json',
         ],
-        'oBPv400GetEndpointMapping' => [
+        'getEndpointMapping' => [
             'application/json',
         ],
-        'oBPv400UpdateBankLevelEndpointMapping' => [
+        'updateBankLevelEndpointMapping' => [
             'application/json',
         ],
-        'oBPv400UpdateEndpointMapping' => [
+        'updateEndpointMapping' => [
             'application/json',
         ],
     ];
@@ -154,40 +154,40 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400CreateBankLevelEndpointMapping
+     * Operation createBankLevelEndpointMapping
      *
      * Create Bank Level Endpoint Mapping
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     * @return \OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner
      */
-    public function oBPv400CreateBankLevelEndpointMapping($bankid, $obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400CreateBankLevelEndpointMapping'][0])
+    public function createBankLevelEndpointMapping($bankid, $create_endpoint_mapping_request, string $contentType = self::contentTypes['createBankLevelEndpointMapping'][0])
     {
-        list($response) = $this->oBPv400CreateBankLevelEndpointMappingWithHttpInfo($bankid, $obpv400_create_endpoint_mapping_request, $contentType);
+        list($response) = $this->createBankLevelEndpointMappingWithHttpInfo($bankid, $create_endpoint_mapping_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateBankLevelEndpointMappingWithHttpInfo
+     * Operation createBankLevelEndpointMappingWithHttpInfo
      *
      * Create Bank Level Endpoint Mapping
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateBankLevelEndpointMappingWithHttpInfo($bankid, $obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400CreateBankLevelEndpointMapping'][0])
+    public function createBankLevelEndpointMappingWithHttpInfo($bankid, $create_endpoint_mapping_request, string $contentType = self::contentTypes['createBankLevelEndpointMapping'][0])
     {
-        $request = $this->oBPv400CreateBankLevelEndpointMappingRequest($bankid, $obpv400_create_endpoint_mapping_request, $contentType);
+        $request = $this->createBankLevelEndpointMappingRequest($bankid, $create_endpoint_mapping_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -215,7 +215,7 @@ class EndpointMappingApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                        '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                         $request,
                         $response,
                     );
@@ -237,7 +237,7 @@ class EndpointMappingApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                 $request,
                 $response,
             );
@@ -246,7 +246,7 @@ class EndpointMappingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                        '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -259,20 +259,20 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400CreateBankLevelEndpointMappingAsync
+     * Operation createBankLevelEndpointMappingAsync
      *
      * Create Bank Level Endpoint Mapping
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateBankLevelEndpointMappingAsync($bankid, $obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400CreateBankLevelEndpointMapping'][0])
+    public function createBankLevelEndpointMappingAsync($bankid, $create_endpoint_mapping_request, string $contentType = self::contentTypes['createBankLevelEndpointMapping'][0])
     {
-        return $this->oBPv400CreateBankLevelEndpointMappingAsyncWithHttpInfo($bankid, $obpv400_create_endpoint_mapping_request, $contentType)
+        return $this->createBankLevelEndpointMappingAsyncWithHttpInfo($bankid, $create_endpoint_mapping_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -281,21 +281,21 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400CreateBankLevelEndpointMappingAsyncWithHttpInfo
+     * Operation createBankLevelEndpointMappingAsyncWithHttpInfo
      *
      * Create Bank Level Endpoint Mapping
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateBankLevelEndpointMappingAsyncWithHttpInfo($bankid, $obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400CreateBankLevelEndpointMapping'][0])
+    public function createBankLevelEndpointMappingAsyncWithHttpInfo($bankid, $create_endpoint_mapping_request, string $contentType = self::contentTypes['createBankLevelEndpointMapping'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems';
-        $request = $this->oBPv400CreateBankLevelEndpointMappingRequest($bankid, $obpv400_create_endpoint_mapping_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner';
+        $request = $this->createBankLevelEndpointMappingRequest($bankid, $create_endpoint_mapping_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -334,29 +334,29 @@ class EndpointMappingApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateBankLevelEndpointMapping'
+     * Create request for operation 'createBankLevelEndpointMapping'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateBankLevelEndpointMappingRequest($bankid, $obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400CreateBankLevelEndpointMapping'][0])
+    public function createBankLevelEndpointMappingRequest($bankid, $create_endpoint_mapping_request, string $contentType = self::contentTypes['createBankLevelEndpointMapping'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400CreateBankLevelEndpointMapping'
+                'Missing the required parameter $bankid when calling createBankLevelEndpointMapping'
             );
         }
 
-        // verify the required parameter 'obpv400_create_endpoint_mapping_request' is set
-        if ($obpv400_create_endpoint_mapping_request === null || (is_array($obpv400_create_endpoint_mapping_request) && count($obpv400_create_endpoint_mapping_request) === 0)) {
+        // verify the required parameter 'create_endpoint_mapping_request' is set
+        if ($create_endpoint_mapping_request === null || (is_array($create_endpoint_mapping_request) && count($create_endpoint_mapping_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_endpoint_mapping_request when calling oBPv400CreateBankLevelEndpointMapping'
+                'Missing the required parameter $create_endpoint_mapping_request when calling createBankLevelEndpointMapping'
             );
         }
 
@@ -387,12 +387,12 @@ class EndpointMappingApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_endpoint_mapping_request)) {
+        if (isset($create_endpoint_mapping_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_endpoint_mapping_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_endpoint_mapping_request));
             } else {
-                $httpBody = $obpv400_create_endpoint_mapping_request;
+                $httpBody = $create_endpoint_mapping_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -428,9 +428,9 @@ class EndpointMappingApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -455,38 +455,38 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400CreateEndpointMapping
+     * Operation createEndpointMapping
      *
      * Create Endpoint Mapping
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEndpointMapping'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     * @return \OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner
      */
-    public function oBPv400CreateEndpointMapping($obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400CreateEndpointMapping'][0])
+    public function createEndpointMapping($create_endpoint_mapping_request, string $contentType = self::contentTypes['createEndpointMapping'][0])
     {
-        list($response) = $this->oBPv400CreateEndpointMappingWithHttpInfo($obpv400_create_endpoint_mapping_request, $contentType);
+        list($response) = $this->createEndpointMappingWithHttpInfo($create_endpoint_mapping_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateEndpointMappingWithHttpInfo
+     * Operation createEndpointMappingWithHttpInfo
      *
      * Create Endpoint Mapping
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEndpointMapping'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateEndpointMappingWithHttpInfo($obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400CreateEndpointMapping'][0])
+    public function createEndpointMappingWithHttpInfo($create_endpoint_mapping_request, string $contentType = self::contentTypes['createEndpointMapping'][0])
     {
-        $request = $this->oBPv400CreateEndpointMappingRequest($obpv400_create_endpoint_mapping_request, $contentType);
+        $request = $this->createEndpointMappingRequest($create_endpoint_mapping_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -514,7 +514,7 @@ class EndpointMappingApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                        '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                         $request,
                         $response,
                     );
@@ -536,7 +536,7 @@ class EndpointMappingApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                 $request,
                 $response,
             );
@@ -545,7 +545,7 @@ class EndpointMappingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                        '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -558,19 +558,19 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400CreateEndpointMappingAsync
+     * Operation createEndpointMappingAsync
      *
      * Create Endpoint Mapping
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateEndpointMappingAsync($obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400CreateEndpointMapping'][0])
+    public function createEndpointMappingAsync($create_endpoint_mapping_request, string $contentType = self::contentTypes['createEndpointMapping'][0])
     {
-        return $this->oBPv400CreateEndpointMappingAsyncWithHttpInfo($obpv400_create_endpoint_mapping_request, $contentType)
+        return $this->createEndpointMappingAsyncWithHttpInfo($create_endpoint_mapping_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -579,20 +579,20 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400CreateEndpointMappingAsyncWithHttpInfo
+     * Operation createEndpointMappingAsyncWithHttpInfo
      *
      * Create Endpoint Mapping
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateEndpointMappingAsyncWithHttpInfo($obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400CreateEndpointMapping'][0])
+    public function createEndpointMappingAsyncWithHttpInfo($create_endpoint_mapping_request, string $contentType = self::contentTypes['createEndpointMapping'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems';
-        $request = $this->oBPv400CreateEndpointMappingRequest($obpv400_create_endpoint_mapping_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner';
+        $request = $this->createEndpointMappingRequest($create_endpoint_mapping_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -631,21 +631,21 @@ class EndpointMappingApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateEndpointMapping'
+     * Create request for operation 'createEndpointMapping'
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateEndpointMappingRequest($obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400CreateEndpointMapping'][0])
+    public function createEndpointMappingRequest($create_endpoint_mapping_request, string $contentType = self::contentTypes['createEndpointMapping'][0])
     {
 
-        // verify the required parameter 'obpv400_create_endpoint_mapping_request' is set
-        if ($obpv400_create_endpoint_mapping_request === null || (is_array($obpv400_create_endpoint_mapping_request) && count($obpv400_create_endpoint_mapping_request) === 0)) {
+        // verify the required parameter 'create_endpoint_mapping_request' is set
+        if ($create_endpoint_mapping_request === null || (is_array($create_endpoint_mapping_request) && count($create_endpoint_mapping_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_endpoint_mapping_request when calling oBPv400CreateEndpointMapping'
+                'Missing the required parameter $create_endpoint_mapping_request when calling createEndpointMapping'
             );
         }
 
@@ -668,12 +668,12 @@ class EndpointMappingApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_endpoint_mapping_request)) {
+        if (isset($create_endpoint_mapping_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_endpoint_mapping_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_endpoint_mapping_request));
             } else {
-                $httpBody = $obpv400_create_endpoint_mapping_request;
+                $httpBody = $create_endpoint_mapping_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -709,9 +709,9 @@ class EndpointMappingApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -736,39 +736,39 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400DeleteBankLevelEndpointMapping
+     * Operation deleteBankLevelEndpointMapping
      *
      * Delete Bank Level Endpoint Mapping
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv400DeleteBankLevelEndpointMapping($bankid, $endpointmappingid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelEndpointMapping'][0])
+    public function deleteBankLevelEndpointMapping($bankid, $endpointmappingid, string $contentType = self::contentTypes['deleteBankLevelEndpointMapping'][0])
     {
-        $this->oBPv400DeleteBankLevelEndpointMappingWithHttpInfo($bankid, $endpointmappingid, $contentType);
+        $this->deleteBankLevelEndpointMappingWithHttpInfo($bankid, $endpointmappingid, $contentType);
     }
 
     /**
-     * Operation oBPv400DeleteBankLevelEndpointMappingWithHttpInfo
+     * Operation deleteBankLevelEndpointMappingWithHttpInfo
      *
      * Delete Bank Level Endpoint Mapping
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteBankLevelEndpointMappingWithHttpInfo($bankid, $endpointmappingid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelEndpointMapping'][0])
+    public function deleteBankLevelEndpointMappingWithHttpInfo($bankid, $endpointmappingid, string $contentType = self::contentTypes['deleteBankLevelEndpointMapping'][0])
     {
-        $request = $this->oBPv400DeleteBankLevelEndpointMappingRequest($bankid, $endpointmappingid, $contentType);
+        $request = $this->deleteBankLevelEndpointMappingRequest($bankid, $endpointmappingid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -804,20 +804,20 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400DeleteBankLevelEndpointMappingAsync
+     * Operation deleteBankLevelEndpointMappingAsync
      *
      * Delete Bank Level Endpoint Mapping
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteBankLevelEndpointMappingAsync($bankid, $endpointmappingid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelEndpointMapping'][0])
+    public function deleteBankLevelEndpointMappingAsync($bankid, $endpointmappingid, string $contentType = self::contentTypes['deleteBankLevelEndpointMapping'][0])
     {
-        return $this->oBPv400DeleteBankLevelEndpointMappingAsyncWithHttpInfo($bankid, $endpointmappingid, $contentType)
+        return $this->deleteBankLevelEndpointMappingAsyncWithHttpInfo($bankid, $endpointmappingid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -826,21 +826,21 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400DeleteBankLevelEndpointMappingAsyncWithHttpInfo
+     * Operation deleteBankLevelEndpointMappingAsyncWithHttpInfo
      *
      * Delete Bank Level Endpoint Mapping
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteBankLevelEndpointMappingAsyncWithHttpInfo($bankid, $endpointmappingid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelEndpointMapping'][0])
+    public function deleteBankLevelEndpointMappingAsyncWithHttpInfo($bankid, $endpointmappingid, string $contentType = self::contentTypes['deleteBankLevelEndpointMapping'][0])
     {
         $returnType = '';
-        $request = $this->oBPv400DeleteBankLevelEndpointMappingRequest($bankid, $endpointmappingid, $contentType);
+        $request = $this->deleteBankLevelEndpointMappingRequest($bankid, $endpointmappingid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -866,29 +866,29 @@ class EndpointMappingApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteBankLevelEndpointMapping'
+     * Create request for operation 'deleteBankLevelEndpointMapping'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteBankLevelEndpointMappingRequest($bankid, $endpointmappingid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelEndpointMapping'][0])
+    public function deleteBankLevelEndpointMappingRequest($bankid, $endpointmappingid, string $contentType = self::contentTypes['deleteBankLevelEndpointMapping'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400DeleteBankLevelEndpointMapping'
+                'Missing the required parameter $bankid when calling deleteBankLevelEndpointMapping'
             );
         }
 
         // verify the required parameter 'endpointmappingid' is set
         if ($endpointmappingid === null || (is_array($endpointmappingid) && count($endpointmappingid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $endpointmappingid when calling oBPv400DeleteBankLevelEndpointMapping'
+                'Missing the required parameter $endpointmappingid when calling deleteBankLevelEndpointMapping'
             );
         }
 
@@ -961,9 +961,9 @@ class EndpointMappingApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -988,37 +988,37 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400DeleteEndpointMapping
+     * Operation deleteEndpointMapping
      *
      * Delete Endpoint Mapping
      *
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEndpointMapping'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv400DeleteEndpointMapping($endpointmappingid, string $contentType = self::contentTypes['oBPv400DeleteEndpointMapping'][0])
+    public function deleteEndpointMapping($endpointmappingid, string $contentType = self::contentTypes['deleteEndpointMapping'][0])
     {
-        $this->oBPv400DeleteEndpointMappingWithHttpInfo($endpointmappingid, $contentType);
+        $this->deleteEndpointMappingWithHttpInfo($endpointmappingid, $contentType);
     }
 
     /**
-     * Operation oBPv400DeleteEndpointMappingWithHttpInfo
+     * Operation deleteEndpointMappingWithHttpInfo
      *
      * Delete Endpoint Mapping
      *
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEndpointMapping'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteEndpointMappingWithHttpInfo($endpointmappingid, string $contentType = self::contentTypes['oBPv400DeleteEndpointMapping'][0])
+    public function deleteEndpointMappingWithHttpInfo($endpointmappingid, string $contentType = self::contentTypes['deleteEndpointMapping'][0])
     {
-        $request = $this->oBPv400DeleteEndpointMappingRequest($endpointmappingid, $contentType);
+        $request = $this->deleteEndpointMappingRequest($endpointmappingid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1054,19 +1054,19 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400DeleteEndpointMappingAsync
+     * Operation deleteEndpointMappingAsync
      *
      * Delete Endpoint Mapping
      *
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteEndpointMappingAsync($endpointmappingid, string $contentType = self::contentTypes['oBPv400DeleteEndpointMapping'][0])
+    public function deleteEndpointMappingAsync($endpointmappingid, string $contentType = self::contentTypes['deleteEndpointMapping'][0])
     {
-        return $this->oBPv400DeleteEndpointMappingAsyncWithHttpInfo($endpointmappingid, $contentType)
+        return $this->deleteEndpointMappingAsyncWithHttpInfo($endpointmappingid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1075,20 +1075,20 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400DeleteEndpointMappingAsyncWithHttpInfo
+     * Operation deleteEndpointMappingAsyncWithHttpInfo
      *
      * Delete Endpoint Mapping
      *
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteEndpointMappingAsyncWithHttpInfo($endpointmappingid, string $contentType = self::contentTypes['oBPv400DeleteEndpointMapping'][0])
+    public function deleteEndpointMappingAsyncWithHttpInfo($endpointmappingid, string $contentType = self::contentTypes['deleteEndpointMapping'][0])
     {
         $returnType = '';
-        $request = $this->oBPv400DeleteEndpointMappingRequest($endpointmappingid, $contentType);
+        $request = $this->deleteEndpointMappingRequest($endpointmappingid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1114,21 +1114,21 @@ class EndpointMappingApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteEndpointMapping'
+     * Create request for operation 'deleteEndpointMapping'
      *
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteEndpointMappingRequest($endpointmappingid, string $contentType = self::contentTypes['oBPv400DeleteEndpointMapping'][0])
+    public function deleteEndpointMappingRequest($endpointmappingid, string $contentType = self::contentTypes['deleteEndpointMapping'][0])
     {
 
         // verify the required parameter 'endpointmappingid' is set
         if ($endpointmappingid === null || (is_array($endpointmappingid) && count($endpointmappingid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $endpointmappingid when calling oBPv400DeleteEndpointMapping'
+                'Missing the required parameter $endpointmappingid when calling deleteEndpointMapping'
             );
         }
 
@@ -1193,9 +1193,9 @@ class EndpointMappingApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1220,38 +1220,38 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400GetAllBankLevelEndpointMappings
+     * Operation getAllBankLevelEndpointMappings
      *
      * Get all Bank Level Endpoint Mappings
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllBankLevelEndpointMappings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankLevelEndpointMappings'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllEndpointMappings200Response
+     * @return \OpenBankProject\Model\GetAllEndpointMappings200Response
      */
-    public function oBPv400GetAllBankLevelEndpointMappings($bankid, string $contentType = self::contentTypes['oBPv400GetAllBankLevelEndpointMappings'][0])
+    public function getAllBankLevelEndpointMappings($bankid, string $contentType = self::contentTypes['getAllBankLevelEndpointMappings'][0])
     {
-        list($response) = $this->oBPv400GetAllBankLevelEndpointMappingsWithHttpInfo($bankid, $contentType);
+        list($response) = $this->getAllBankLevelEndpointMappingsWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetAllBankLevelEndpointMappingsWithHttpInfo
+     * Operation getAllBankLevelEndpointMappingsWithHttpInfo
      *
      * Get all Bank Level Endpoint Mappings
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllBankLevelEndpointMappings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankLevelEndpointMappings'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllEndpointMappings200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllEndpointMappings200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetAllBankLevelEndpointMappingsWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetAllBankLevelEndpointMappings'][0])
+    public function getAllBankLevelEndpointMappingsWithHttpInfo($bankid, string $contentType = self::contentTypes['getAllBankLevelEndpointMappings'][0])
     {
-        $request = $this->oBPv400GetAllBankLevelEndpointMappingsRequest($bankid, $contentType);
+        $request = $this->getAllBankLevelEndpointMappingsRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1279,7 +1279,7 @@ class EndpointMappingApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200Response',
+                        '\OpenBankProject\Model\GetAllEndpointMappings200Response',
                         $request,
                         $response,
                     );
@@ -1301,7 +1301,7 @@ class EndpointMappingApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200Response',
+                '\OpenBankProject\Model\GetAllEndpointMappings200Response',
                 $request,
                 $response,
             );
@@ -1310,7 +1310,7 @@ class EndpointMappingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200Response',
+                        '\OpenBankProject\Model\GetAllEndpointMappings200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1323,19 +1323,19 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400GetAllBankLevelEndpointMappingsAsync
+     * Operation getAllBankLevelEndpointMappingsAsync
      *
      * Get all Bank Level Endpoint Mappings
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllBankLevelEndpointMappings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankLevelEndpointMappings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllBankLevelEndpointMappingsAsync($bankid, string $contentType = self::contentTypes['oBPv400GetAllBankLevelEndpointMappings'][0])
+    public function getAllBankLevelEndpointMappingsAsync($bankid, string $contentType = self::contentTypes['getAllBankLevelEndpointMappings'][0])
     {
-        return $this->oBPv400GetAllBankLevelEndpointMappingsAsyncWithHttpInfo($bankid, $contentType)
+        return $this->getAllBankLevelEndpointMappingsAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1344,20 +1344,20 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400GetAllBankLevelEndpointMappingsAsyncWithHttpInfo
+     * Operation getAllBankLevelEndpointMappingsAsyncWithHttpInfo
      *
      * Get all Bank Level Endpoint Mappings
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllBankLevelEndpointMappings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankLevelEndpointMappings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllBankLevelEndpointMappingsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetAllBankLevelEndpointMappings'][0])
+    public function getAllBankLevelEndpointMappingsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getAllBankLevelEndpointMappings'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200Response';
-        $request = $this->oBPv400GetAllBankLevelEndpointMappingsRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllEndpointMappings200Response';
+        $request = $this->getAllBankLevelEndpointMappingsRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1396,21 +1396,21 @@ class EndpointMappingApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetAllBankLevelEndpointMappings'
+     * Create request for operation 'getAllBankLevelEndpointMappings'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllBankLevelEndpointMappings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankLevelEndpointMappings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetAllBankLevelEndpointMappingsRequest($bankid, string $contentType = self::contentTypes['oBPv400GetAllBankLevelEndpointMappings'][0])
+    public function getAllBankLevelEndpointMappingsRequest($bankid, string $contentType = self::contentTypes['getAllBankLevelEndpointMappings'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetAllBankLevelEndpointMappings'
+                'Missing the required parameter $bankid when calling getAllBankLevelEndpointMappings'
             );
         }
 
@@ -1475,9 +1475,9 @@ class EndpointMappingApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1502,36 +1502,36 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400GetAllEndpointMappings
+     * Operation getAllEndpointMappings
      *
      * Get all Endpoint Mappings
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllEndpointMappings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllEndpointMappings'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllEndpointMappings200Response
+     * @return \OpenBankProject\Model\GetAllEndpointMappings200Response
      */
-    public function oBPv400GetAllEndpointMappings(string $contentType = self::contentTypes['oBPv400GetAllEndpointMappings'][0])
+    public function getAllEndpointMappings(string $contentType = self::contentTypes['getAllEndpointMappings'][0])
     {
-        list($response) = $this->oBPv400GetAllEndpointMappingsWithHttpInfo($contentType);
+        list($response) = $this->getAllEndpointMappingsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetAllEndpointMappingsWithHttpInfo
+     * Operation getAllEndpointMappingsWithHttpInfo
      *
      * Get all Endpoint Mappings
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllEndpointMappings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllEndpointMappings'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllEndpointMappings200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllEndpointMappings200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetAllEndpointMappingsWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetAllEndpointMappings'][0])
+    public function getAllEndpointMappingsWithHttpInfo(string $contentType = self::contentTypes['getAllEndpointMappings'][0])
     {
-        $request = $this->oBPv400GetAllEndpointMappingsRequest($contentType);
+        $request = $this->getAllEndpointMappingsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1559,7 +1559,7 @@ class EndpointMappingApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200Response',
+                        '\OpenBankProject\Model\GetAllEndpointMappings200Response',
                         $request,
                         $response,
                     );
@@ -1581,7 +1581,7 @@ class EndpointMappingApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200Response',
+                '\OpenBankProject\Model\GetAllEndpointMappings200Response',
                 $request,
                 $response,
             );
@@ -1590,7 +1590,7 @@ class EndpointMappingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200Response',
+                        '\OpenBankProject\Model\GetAllEndpointMappings200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1603,18 +1603,18 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400GetAllEndpointMappingsAsync
+     * Operation getAllEndpointMappingsAsync
      *
      * Get all Endpoint Mappings
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllEndpointMappings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllEndpointMappings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllEndpointMappingsAsync(string $contentType = self::contentTypes['oBPv400GetAllEndpointMappings'][0])
+    public function getAllEndpointMappingsAsync(string $contentType = self::contentTypes['getAllEndpointMappings'][0])
     {
-        return $this->oBPv400GetAllEndpointMappingsAsyncWithHttpInfo($contentType)
+        return $this->getAllEndpointMappingsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1623,19 +1623,19 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400GetAllEndpointMappingsAsyncWithHttpInfo
+     * Operation getAllEndpointMappingsAsyncWithHttpInfo
      *
      * Get all Endpoint Mappings
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllEndpointMappings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllEndpointMappings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllEndpointMappingsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetAllEndpointMappings'][0])
+    public function getAllEndpointMappingsAsyncWithHttpInfo(string $contentType = self::contentTypes['getAllEndpointMappings'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200Response';
-        $request = $this->oBPv400GetAllEndpointMappingsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetAllEndpointMappings200Response';
+        $request = $this->getAllEndpointMappingsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1674,14 +1674,14 @@ class EndpointMappingApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetAllEndpointMappings'
+     * Create request for operation 'getAllEndpointMappings'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllEndpointMappings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllEndpointMappings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetAllEndpointMappingsRequest(string $contentType = self::contentTypes['oBPv400GetAllEndpointMappings'][0])
+    public function getAllEndpointMappingsRequest(string $contentType = self::contentTypes['getAllEndpointMappings'][0])
     {
 
 
@@ -1737,9 +1737,9 @@ class EndpointMappingApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1764,40 +1764,40 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400GetBankLevelEndpointMapping
+     * Operation getBankLevelEndpointMapping
      *
      * Get Bank Level Endpoint Mapping
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     * @return \OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner
      */
-    public function oBPv400GetBankLevelEndpointMapping($bankid, $endpointmappingid, string $contentType = self::contentTypes['oBPv400GetBankLevelEndpointMapping'][0])
+    public function getBankLevelEndpointMapping($bankid, $endpointmappingid, string $contentType = self::contentTypes['getBankLevelEndpointMapping'][0])
     {
-        list($response) = $this->oBPv400GetBankLevelEndpointMappingWithHttpInfo($bankid, $endpointmappingid, $contentType);
+        list($response) = $this->getBankLevelEndpointMappingWithHttpInfo($bankid, $endpointmappingid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetBankLevelEndpointMappingWithHttpInfo
+     * Operation getBankLevelEndpointMappingWithHttpInfo
      *
      * Get Bank Level Endpoint Mapping
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetBankLevelEndpointMappingWithHttpInfo($bankid, $endpointmappingid, string $contentType = self::contentTypes['oBPv400GetBankLevelEndpointMapping'][0])
+    public function getBankLevelEndpointMappingWithHttpInfo($bankid, $endpointmappingid, string $contentType = self::contentTypes['getBankLevelEndpointMapping'][0])
     {
-        $request = $this->oBPv400GetBankLevelEndpointMappingRequest($bankid, $endpointmappingid, $contentType);
+        $request = $this->getBankLevelEndpointMappingRequest($bankid, $endpointmappingid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1825,7 +1825,7 @@ class EndpointMappingApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                        '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                         $request,
                         $response,
                     );
@@ -1847,7 +1847,7 @@ class EndpointMappingApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                 $request,
                 $response,
             );
@@ -1856,7 +1856,7 @@ class EndpointMappingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                        '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1869,20 +1869,20 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400GetBankLevelEndpointMappingAsync
+     * Operation getBankLevelEndpointMappingAsync
      *
      * Get Bank Level Endpoint Mapping
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetBankLevelEndpointMappingAsync($bankid, $endpointmappingid, string $contentType = self::contentTypes['oBPv400GetBankLevelEndpointMapping'][0])
+    public function getBankLevelEndpointMappingAsync($bankid, $endpointmappingid, string $contentType = self::contentTypes['getBankLevelEndpointMapping'][0])
     {
-        return $this->oBPv400GetBankLevelEndpointMappingAsyncWithHttpInfo($bankid, $endpointmappingid, $contentType)
+        return $this->getBankLevelEndpointMappingAsyncWithHttpInfo($bankid, $endpointmappingid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1891,21 +1891,21 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400GetBankLevelEndpointMappingAsyncWithHttpInfo
+     * Operation getBankLevelEndpointMappingAsyncWithHttpInfo
      *
      * Get Bank Level Endpoint Mapping
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetBankLevelEndpointMappingAsyncWithHttpInfo($bankid, $endpointmappingid, string $contentType = self::contentTypes['oBPv400GetBankLevelEndpointMapping'][0])
+    public function getBankLevelEndpointMappingAsyncWithHttpInfo($bankid, $endpointmappingid, string $contentType = self::contentTypes['getBankLevelEndpointMapping'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems';
-        $request = $this->oBPv400GetBankLevelEndpointMappingRequest($bankid, $endpointmappingid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner';
+        $request = $this->getBankLevelEndpointMappingRequest($bankid, $endpointmappingid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1944,29 +1944,29 @@ class EndpointMappingApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetBankLevelEndpointMapping'
+     * Create request for operation 'getBankLevelEndpointMapping'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetBankLevelEndpointMappingRequest($bankid, $endpointmappingid, string $contentType = self::contentTypes['oBPv400GetBankLevelEndpointMapping'][0])
+    public function getBankLevelEndpointMappingRequest($bankid, $endpointmappingid, string $contentType = self::contentTypes['getBankLevelEndpointMapping'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetBankLevelEndpointMapping'
+                'Missing the required parameter $bankid when calling getBankLevelEndpointMapping'
             );
         }
 
         // verify the required parameter 'endpointmappingid' is set
         if ($endpointmappingid === null || (is_array($endpointmappingid) && count($endpointmappingid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $endpointmappingid when calling oBPv400GetBankLevelEndpointMapping'
+                'Missing the required parameter $endpointmappingid when calling getBankLevelEndpointMapping'
             );
         }
 
@@ -2039,9 +2039,9 @@ class EndpointMappingApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2066,38 +2066,38 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400GetEndpointMapping
+     * Operation getEndpointMapping
      *
      * Get Endpoint Mapping by Id
      *
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEndpointMapping'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     * @return \OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner
      */
-    public function oBPv400GetEndpointMapping($endpointmappingid, string $contentType = self::contentTypes['oBPv400GetEndpointMapping'][0])
+    public function getEndpointMapping($endpointmappingid, string $contentType = self::contentTypes['getEndpointMapping'][0])
     {
-        list($response) = $this->oBPv400GetEndpointMappingWithHttpInfo($endpointmappingid, $contentType);
+        list($response) = $this->getEndpointMappingWithHttpInfo($endpointmappingid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetEndpointMappingWithHttpInfo
+     * Operation getEndpointMappingWithHttpInfo
      *
      * Get Endpoint Mapping by Id
      *
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEndpointMapping'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetEndpointMappingWithHttpInfo($endpointmappingid, string $contentType = self::contentTypes['oBPv400GetEndpointMapping'][0])
+    public function getEndpointMappingWithHttpInfo($endpointmappingid, string $contentType = self::contentTypes['getEndpointMapping'][0])
     {
-        $request = $this->oBPv400GetEndpointMappingRequest($endpointmappingid, $contentType);
+        $request = $this->getEndpointMappingRequest($endpointmappingid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2125,7 +2125,7 @@ class EndpointMappingApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                        '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                         $request,
                         $response,
                     );
@@ -2147,7 +2147,7 @@ class EndpointMappingApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                 $request,
                 $response,
             );
@@ -2156,7 +2156,7 @@ class EndpointMappingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                        '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2169,19 +2169,19 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400GetEndpointMappingAsync
+     * Operation getEndpointMappingAsync
      *
      * Get Endpoint Mapping by Id
      *
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetEndpointMappingAsync($endpointmappingid, string $contentType = self::contentTypes['oBPv400GetEndpointMapping'][0])
+    public function getEndpointMappingAsync($endpointmappingid, string $contentType = self::contentTypes['getEndpointMapping'][0])
     {
-        return $this->oBPv400GetEndpointMappingAsyncWithHttpInfo($endpointmappingid, $contentType)
+        return $this->getEndpointMappingAsyncWithHttpInfo($endpointmappingid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2190,20 +2190,20 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400GetEndpointMappingAsyncWithHttpInfo
+     * Operation getEndpointMappingAsyncWithHttpInfo
      *
      * Get Endpoint Mapping by Id
      *
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetEndpointMappingAsyncWithHttpInfo($endpointmappingid, string $contentType = self::contentTypes['oBPv400GetEndpointMapping'][0])
+    public function getEndpointMappingAsyncWithHttpInfo($endpointmappingid, string $contentType = self::contentTypes['getEndpointMapping'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems';
-        $request = $this->oBPv400GetEndpointMappingRequest($endpointmappingid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner';
+        $request = $this->getEndpointMappingRequest($endpointmappingid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2242,21 +2242,21 @@ class EndpointMappingApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetEndpointMapping'
+     * Create request for operation 'getEndpointMapping'
      *
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetEndpointMapping'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetEndpointMappingRequest($endpointmappingid, string $contentType = self::contentTypes['oBPv400GetEndpointMapping'][0])
+    public function getEndpointMappingRequest($endpointmappingid, string $contentType = self::contentTypes['getEndpointMapping'][0])
     {
 
         // verify the required parameter 'endpointmappingid' is set
         if ($endpointmappingid === null || (is_array($endpointmappingid) && count($endpointmappingid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $endpointmappingid when calling oBPv400GetEndpointMapping'
+                'Missing the required parameter $endpointmappingid when calling getEndpointMapping'
             );
         }
 
@@ -2321,9 +2321,9 @@ class EndpointMappingApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2348,42 +2348,42 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400UpdateBankLevelEndpointMapping
+     * Operation updateBankLevelEndpointMapping
      *
      * Update Bank Level Endpoint Mapping
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     * @return \OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner
      */
-    public function oBPv400UpdateBankLevelEndpointMapping($bankid, $endpointmappingid, $obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelEndpointMapping'][0])
+    public function updateBankLevelEndpointMapping($bankid, $endpointmappingid, $create_endpoint_mapping_request, string $contentType = self::contentTypes['updateBankLevelEndpointMapping'][0])
     {
-        list($response) = $this->oBPv400UpdateBankLevelEndpointMappingWithHttpInfo($bankid, $endpointmappingid, $obpv400_create_endpoint_mapping_request, $contentType);
+        list($response) = $this->updateBankLevelEndpointMappingWithHttpInfo($bankid, $endpointmappingid, $create_endpoint_mapping_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateBankLevelEndpointMappingWithHttpInfo
+     * Operation updateBankLevelEndpointMappingWithHttpInfo
      *
      * Update Bank Level Endpoint Mapping
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateBankLevelEndpointMappingWithHttpInfo($bankid, $endpointmappingid, $obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelEndpointMapping'][0])
+    public function updateBankLevelEndpointMappingWithHttpInfo($bankid, $endpointmappingid, $create_endpoint_mapping_request, string $contentType = self::contentTypes['updateBankLevelEndpointMapping'][0])
     {
-        $request = $this->oBPv400UpdateBankLevelEndpointMappingRequest($bankid, $endpointmappingid, $obpv400_create_endpoint_mapping_request, $contentType);
+        $request = $this->updateBankLevelEndpointMappingRequest($bankid, $endpointmappingid, $create_endpoint_mapping_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2411,7 +2411,7 @@ class EndpointMappingApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                        '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                         $request,
                         $response,
                     );
@@ -2433,7 +2433,7 @@ class EndpointMappingApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                 $request,
                 $response,
             );
@@ -2442,7 +2442,7 @@ class EndpointMappingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                        '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2455,21 +2455,21 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400UpdateBankLevelEndpointMappingAsync
+     * Operation updateBankLevelEndpointMappingAsync
      *
      * Update Bank Level Endpoint Mapping
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateBankLevelEndpointMappingAsync($bankid, $endpointmappingid, $obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelEndpointMapping'][0])
+    public function updateBankLevelEndpointMappingAsync($bankid, $endpointmappingid, $create_endpoint_mapping_request, string $contentType = self::contentTypes['updateBankLevelEndpointMapping'][0])
     {
-        return $this->oBPv400UpdateBankLevelEndpointMappingAsyncWithHttpInfo($bankid, $endpointmappingid, $obpv400_create_endpoint_mapping_request, $contentType)
+        return $this->updateBankLevelEndpointMappingAsyncWithHttpInfo($bankid, $endpointmappingid, $create_endpoint_mapping_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2478,22 +2478,22 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400UpdateBankLevelEndpointMappingAsyncWithHttpInfo
+     * Operation updateBankLevelEndpointMappingAsyncWithHttpInfo
      *
      * Update Bank Level Endpoint Mapping
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateBankLevelEndpointMappingAsyncWithHttpInfo($bankid, $endpointmappingid, $obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelEndpointMapping'][0])
+    public function updateBankLevelEndpointMappingAsyncWithHttpInfo($bankid, $endpointmappingid, $create_endpoint_mapping_request, string $contentType = self::contentTypes['updateBankLevelEndpointMapping'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems';
-        $request = $this->oBPv400UpdateBankLevelEndpointMappingRequest($bankid, $endpointmappingid, $obpv400_create_endpoint_mapping_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner';
+        $request = $this->updateBankLevelEndpointMappingRequest($bankid, $endpointmappingid, $create_endpoint_mapping_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2532,37 +2532,37 @@ class EndpointMappingApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateBankLevelEndpointMapping'
+     * Create request for operation 'updateBankLevelEndpointMapping'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateBankLevelEndpointMappingRequest($bankid, $endpointmappingid, $obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelEndpointMapping'][0])
+    public function updateBankLevelEndpointMappingRequest($bankid, $endpointmappingid, $create_endpoint_mapping_request, string $contentType = self::contentTypes['updateBankLevelEndpointMapping'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400UpdateBankLevelEndpointMapping'
+                'Missing the required parameter $bankid when calling updateBankLevelEndpointMapping'
             );
         }
 
         // verify the required parameter 'endpointmappingid' is set
         if ($endpointmappingid === null || (is_array($endpointmappingid) && count($endpointmappingid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $endpointmappingid when calling oBPv400UpdateBankLevelEndpointMapping'
+                'Missing the required parameter $endpointmappingid when calling updateBankLevelEndpointMapping'
             );
         }
 
-        // verify the required parameter 'obpv400_create_endpoint_mapping_request' is set
-        if ($obpv400_create_endpoint_mapping_request === null || (is_array($obpv400_create_endpoint_mapping_request) && count($obpv400_create_endpoint_mapping_request) === 0)) {
+        // verify the required parameter 'create_endpoint_mapping_request' is set
+        if ($create_endpoint_mapping_request === null || (is_array($create_endpoint_mapping_request) && count($create_endpoint_mapping_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_endpoint_mapping_request when calling oBPv400UpdateBankLevelEndpointMapping'
+                'Missing the required parameter $create_endpoint_mapping_request when calling updateBankLevelEndpointMapping'
             );
         }
 
@@ -2601,12 +2601,12 @@ class EndpointMappingApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_endpoint_mapping_request)) {
+        if (isset($create_endpoint_mapping_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_endpoint_mapping_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_endpoint_mapping_request));
             } else {
-                $httpBody = $obpv400_create_endpoint_mapping_request;
+                $httpBody = $create_endpoint_mapping_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2642,9 +2642,9 @@ class EndpointMappingApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2669,40 +2669,40 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400UpdateEndpointMapping
+     * Operation updateEndpointMapping
      *
      * Update Endpoint Mapping
      *
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEndpointMapping'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     * @return \OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner
      */
-    public function oBPv400UpdateEndpointMapping($endpointmappingid, $obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400UpdateEndpointMapping'][0])
+    public function updateEndpointMapping($endpointmappingid, $create_endpoint_mapping_request, string $contentType = self::contentTypes['updateEndpointMapping'][0])
     {
-        list($response) = $this->oBPv400UpdateEndpointMappingWithHttpInfo($endpointmappingid, $obpv400_create_endpoint_mapping_request, $contentType);
+        list($response) = $this->updateEndpointMappingWithHttpInfo($endpointmappingid, $create_endpoint_mapping_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateEndpointMappingWithHttpInfo
+     * Operation updateEndpointMappingWithHttpInfo
      *
      * Update Endpoint Mapping
      *
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEndpointMapping'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateEndpointMappingWithHttpInfo($endpointmappingid, $obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400UpdateEndpointMapping'][0])
+    public function updateEndpointMappingWithHttpInfo($endpointmappingid, $create_endpoint_mapping_request, string $contentType = self::contentTypes['updateEndpointMapping'][0])
     {
-        $request = $this->oBPv400UpdateEndpointMappingRequest($endpointmappingid, $obpv400_create_endpoint_mapping_request, $contentType);
+        $request = $this->updateEndpointMappingRequest($endpointmappingid, $create_endpoint_mapping_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2730,7 +2730,7 @@ class EndpointMappingApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                        '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                         $request,
                         $response,
                     );
@@ -2752,7 +2752,7 @@ class EndpointMappingApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                 $request,
                 $response,
             );
@@ -2761,7 +2761,7 @@ class EndpointMappingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems',
+                        '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2774,20 +2774,20 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400UpdateEndpointMappingAsync
+     * Operation updateEndpointMappingAsync
      *
      * Update Endpoint Mapping
      *
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateEndpointMappingAsync($endpointmappingid, $obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400UpdateEndpointMapping'][0])
+    public function updateEndpointMappingAsync($endpointmappingid, $create_endpoint_mapping_request, string $contentType = self::contentTypes['updateEndpointMapping'][0])
     {
-        return $this->oBPv400UpdateEndpointMappingAsyncWithHttpInfo($endpointmappingid, $obpv400_create_endpoint_mapping_request, $contentType)
+        return $this->updateEndpointMappingAsyncWithHttpInfo($endpointmappingid, $create_endpoint_mapping_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2796,21 +2796,21 @@ class EndpointMappingApi
     }
 
     /**
-     * Operation oBPv400UpdateEndpointMappingAsyncWithHttpInfo
+     * Operation updateEndpointMappingAsyncWithHttpInfo
      *
      * Update Endpoint Mapping
      *
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateEndpointMappingAsyncWithHttpInfo($endpointmappingid, $obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400UpdateEndpointMapping'][0])
+    public function updateEndpointMappingAsyncWithHttpInfo($endpointmappingid, $create_endpoint_mapping_request, string $contentType = self::contentTypes['updateEndpointMapping'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems';
-        $request = $this->oBPv400UpdateEndpointMappingRequest($endpointmappingid, $obpv400_create_endpoint_mapping_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllEndpointMappings200ResponseEndpointMappingsInner';
+        $request = $this->updateEndpointMappingRequest($endpointmappingid, $create_endpoint_mapping_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2849,29 +2849,29 @@ class EndpointMappingApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateEndpointMapping'
+     * Create request for operation 'updateEndpointMapping'
      *
      * @param  string $endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateEndpointMappingRequest $obpv400_create_endpoint_mapping_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateEndpointMapping'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateEndpointMappingRequest $create_endpoint_mapping_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEndpointMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateEndpointMappingRequest($endpointmappingid, $obpv400_create_endpoint_mapping_request, string $contentType = self::contentTypes['oBPv400UpdateEndpointMapping'][0])
+    public function updateEndpointMappingRequest($endpointmappingid, $create_endpoint_mapping_request, string $contentType = self::contentTypes['updateEndpointMapping'][0])
     {
 
         // verify the required parameter 'endpointmappingid' is set
         if ($endpointmappingid === null || (is_array($endpointmappingid) && count($endpointmappingid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $endpointmappingid when calling oBPv400UpdateEndpointMapping'
+                'Missing the required parameter $endpointmappingid when calling updateEndpointMapping'
             );
         }
 
-        // verify the required parameter 'obpv400_create_endpoint_mapping_request' is set
-        if ($obpv400_create_endpoint_mapping_request === null || (is_array($obpv400_create_endpoint_mapping_request) && count($obpv400_create_endpoint_mapping_request) === 0)) {
+        // verify the required parameter 'create_endpoint_mapping_request' is set
+        if ($create_endpoint_mapping_request === null || (is_array($create_endpoint_mapping_request) && count($create_endpoint_mapping_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_endpoint_mapping_request when calling oBPv400UpdateEndpointMapping'
+                'Missing the required parameter $create_endpoint_mapping_request when calling updateEndpointMapping'
             );
         }
 
@@ -2902,12 +2902,12 @@ class EndpointMappingApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_endpoint_mapping_request)) {
+        if (isset($create_endpoint_mapping_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_endpoint_mapping_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_endpoint_mapping_request));
             } else {
-                $httpBody = $obpv400_create_endpoint_mapping_request;
+                $httpBody = $create_endpoint_mapping_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2943,9 +2943,9 @@ class EndpointMappingApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

@@ -1,438 +1,30 @@
 # SystemApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv510LogCacheAllEndpoint**](SystemApi.md#obpv510logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
-| [**oBPv510LogCacheDebugEndpoint**](SystemApi.md#obpv510logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
-| [**oBPv510LogCacheErrorEndpoint**](SystemApi.md#obpv510logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
-| [**oBPv510LogCacheInfoEndpoint**](SystemApi.md#obpv510logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
-| [**oBPv510LogCacheTraceEndpoint**](SystemApi.md#obpv510logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
-| [**oBPv510LogCacheWarningEndpoint**](SystemApi.md#obpv510logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
-| [**oBPv600GetCacheConfig**](SystemApi.md#obpv600getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
-| [**oBPv600GetCacheInfo**](SystemApi.md#obpv600getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
-| [**oBPv600GetCacheNamespaces**](SystemApi.md#obpv600getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
-| [**oBPv600GetConnectorMethodNames**](SystemApi.md#obpv600getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
-| [**oBPv600GetConnectors**](SystemApi.md#obpv600getconnectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors |
-| [**oBPv600GetDatabasePoolInfo**](SystemApi.md#obpv600getdatabasepoolinfo) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information |
-| [**oBPv600GetMigrations**](SystemApi.md#obpv600getmigrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations |
-| [**oBPv600GetStoredProcedureConnectorHealth**](SystemApi.md#obpv600getstoredprocedureconnectorhealth) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health |
-| [**oBPv600InvalidateCacheNamespace**](SystemApi.md#obpv600invalidatecachenamespaceoperation) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
-
-
-
-## oBPv510LogCacheAllEndpoint
-
-> oBPv510LogCacheAllEndpoint()
-
-Get All Level Log Cache
-
-&lt;p&gt;Returns logs of all levels from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/all?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-
-```ts
-import {
-  Configuration,
-  SystemApi,
-} from 'obp-typescript';
-import type { OBPv510LogCacheAllEndpointRequest } from 'obp-typescript';
-
-async function example() {
-  console.log("🚀 Testing obp-typescript SDK...");
-  const config = new Configuration({ 
-    // To configure OAuth2 access token for authorization: OAuth2 accessCode
-    accessToken: "YOUR ACCESS TOKEN",
-    // To configure API key authorization: GatewayLogin
-    apiKey: "YOUR API KEY",
-    // To configure API key authorization: DirectLogin
-    apiKey: "YOUR API KEY",
-  });
-  const api = new SystemApi(config);
-
-  try {
-    const data = await api.oBPv510LogCacheAllEndpoint();
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-`void` (Empty response body)
-
-### Authorization
-
-[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## oBPv510LogCacheDebugEndpoint
-
-> oBPv510LogCacheDebugEndpoint()
-
-Get Debug Level Log Cache
-
-&lt;p&gt;Returns DEBUG level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/debug?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-
-```ts
-import {
-  Configuration,
-  SystemApi,
-} from 'obp-typescript';
-import type { OBPv510LogCacheDebugEndpointRequest } from 'obp-typescript';
-
-async function example() {
-  console.log("🚀 Testing obp-typescript SDK...");
-  const config = new Configuration({ 
-    // To configure OAuth2 access token for authorization: OAuth2 accessCode
-    accessToken: "YOUR ACCESS TOKEN",
-    // To configure API key authorization: GatewayLogin
-    apiKey: "YOUR API KEY",
-    // To configure API key authorization: DirectLogin
-    apiKey: "YOUR API KEY",
-  });
-  const api = new SystemApi(config);
-
-  try {
-    const data = await api.oBPv510LogCacheDebugEndpoint();
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-`void` (Empty response body)
-
-### Authorization
-
-[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## oBPv510LogCacheErrorEndpoint
-
-> oBPv510LogCacheErrorEndpoint()
-
-Get Error Level Log Cache
-
-&lt;p&gt;Returns ERROR level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/error?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-
-```ts
-import {
-  Configuration,
-  SystemApi,
-} from 'obp-typescript';
-import type { OBPv510LogCacheErrorEndpointRequest } from 'obp-typescript';
-
-async function example() {
-  console.log("🚀 Testing obp-typescript SDK...");
-  const config = new Configuration({ 
-    // To configure OAuth2 access token for authorization: OAuth2 accessCode
-    accessToken: "YOUR ACCESS TOKEN",
-    // To configure API key authorization: GatewayLogin
-    apiKey: "YOUR API KEY",
-    // To configure API key authorization: DirectLogin
-    apiKey: "YOUR API KEY",
-  });
-  const api = new SystemApi(config);
-
-  try {
-    const data = await api.oBPv510LogCacheErrorEndpoint();
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-`void` (Empty response body)
-
-### Authorization
-
-[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## oBPv510LogCacheInfoEndpoint
-
-> oBPv510LogCacheInfoEndpoint()
-
-Get Info Level Log Cache
-
-&lt;p&gt;Returns INFO level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/info?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-
-```ts
-import {
-  Configuration,
-  SystemApi,
-} from 'obp-typescript';
-import type { OBPv510LogCacheInfoEndpointRequest } from 'obp-typescript';
-
-async function example() {
-  console.log("🚀 Testing obp-typescript SDK...");
-  const config = new Configuration({ 
-    // To configure OAuth2 access token for authorization: OAuth2 accessCode
-    accessToken: "YOUR ACCESS TOKEN",
-    // To configure API key authorization: GatewayLogin
-    apiKey: "YOUR API KEY",
-    // To configure API key authorization: DirectLogin
-    apiKey: "YOUR API KEY",
-  });
-  const api = new SystemApi(config);
-
-  try {
-    const data = await api.oBPv510LogCacheInfoEndpoint();
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-`void` (Empty response body)
-
-### Authorization
-
-[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## oBPv510LogCacheTraceEndpoint
-
-> oBPv510LogCacheTraceEndpoint()
-
-Get Trace Level Log Cache
-
-&lt;p&gt;Returns TRACE level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/trace?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-
-```ts
-import {
-  Configuration,
-  SystemApi,
-} from 'obp-typescript';
-import type { OBPv510LogCacheTraceEndpointRequest } from 'obp-typescript';
-
-async function example() {
-  console.log("🚀 Testing obp-typescript SDK...");
-  const config = new Configuration({ 
-    // To configure OAuth2 access token for authorization: OAuth2 accessCode
-    accessToken: "YOUR ACCESS TOKEN",
-    // To configure API key authorization: GatewayLogin
-    apiKey: "YOUR API KEY",
-    // To configure API key authorization: DirectLogin
-    apiKey: "YOUR API KEY",
-  });
-  const api = new SystemApi(config);
-
-  try {
-    const data = await api.oBPv510LogCacheTraceEndpoint();
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-`void` (Empty response body)
-
-### Authorization
-
-[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## oBPv510LogCacheWarningEndpoint
-
-> oBPv510LogCacheWarningEndpoint()
-
-Get Warning Level Log Cache
-
-&lt;p&gt;Returns WARNING level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/warning?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-
-```ts
-import {
-  Configuration,
-  SystemApi,
-} from 'obp-typescript';
-import type { OBPv510LogCacheWarningEndpointRequest } from 'obp-typescript';
-
-async function example() {
-  console.log("🚀 Testing obp-typescript SDK...");
-  const config = new Configuration({ 
-    // To configure OAuth2 access token for authorization: OAuth2 accessCode
-    accessToken: "YOUR ACCESS TOKEN",
-    // To configure API key authorization: GatewayLogin
-    apiKey: "YOUR API KEY",
-    // To configure API key authorization: DirectLogin
-    apiKey: "YOUR API KEY",
-  });
-  const api = new SystemApi(config);
-
-  try {
-    const data = await api.oBPv510LogCacheWarningEndpoint();
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-`void` (Empty response body)
-
-### Authorization
-
-[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## oBPv600GetCacheConfig
-
-> OBPv600GetCacheConfig200Response oBPv600GetCacheConfig()
+| [**getCacheConfig**](SystemApi.md#getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
+| [**getCacheInfo**](SystemApi.md#getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
+| [**getCacheNamespaces**](SystemApi.md#getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
+| [**getConnectorMethodNames**](SystemApi.md#getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
+| [**getConnectors**](SystemApi.md#getconnectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors |
+| [**getDatabasePoolInfo**](SystemApi.md#getdatabasepoolinfo) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information |
+| [**getMigrations**](SystemApi.md#getmigrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations |
+| [**getStoredProcedureConnectorHealth**](SystemApi.md#getstoredprocedureconnectorhealth) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health |
+| [**invalidateCacheNamespace**](SystemApi.md#invalidatecachenamespaceoperation) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
+| [**logCacheAllEndpoint**](SystemApi.md#logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
+| [**logCacheDebugEndpoint**](SystemApi.md#logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
+| [**logCacheErrorEndpoint**](SystemApi.md#logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
+| [**logCacheInfoEndpoint**](SystemApi.md#logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
+| [**logCacheTraceEndpoint**](SystemApi.md#logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
+| [**logCacheWarningEndpoint**](SystemApi.md#logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
+
+
+
+## getCacheConfig
+
+> GetCacheConfig200Response getCacheConfig()
 
 Get Cache Configuration
 
@@ -445,7 +37,7 @@ import {
   Configuration,
   SystemApi,
 } from 'obp-typescript';
-import type { OBPv600GetCacheConfigRequest } from 'obp-typescript';
+import type { GetCacheConfigRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -460,7 +52,7 @@ async function example() {
   const api = new SystemApi(config);
 
   try {
-    const data = await api.oBPv600GetCacheConfig();
+    const data = await api.getCacheConfig();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -477,7 +69,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Response.md)
+[**GetCacheConfig200Response**](GetCacheConfig200Response.md)
 
 ### Authorization
 
@@ -498,9 +90,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetCacheInfo
+## getCacheInfo
 
-> OBPv600GetCacheInfo200Response oBPv600GetCacheInfo()
+> GetCacheInfo200Response getCacheInfo()
 
 Get Cache Information
 
@@ -513,7 +105,7 @@ import {
   Configuration,
   SystemApi,
 } from 'obp-typescript';
-import type { OBPv600GetCacheInfoRequest } from 'obp-typescript';
+import type { GetCacheInfoRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -528,7 +120,7 @@ async function example() {
   const api = new SystemApi(config);
 
   try {
-    const data = await api.oBPv600GetCacheInfo();
+    const data = await api.getCacheInfo();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -545,7 +137,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.md)
+[**GetCacheInfo200Response**](GetCacheInfo200Response.md)
 
 ### Authorization
 
@@ -566,9 +158,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetCacheNamespaces
+## getCacheNamespaces
 
-> OBPv600GetCacheNamespaces200Response oBPv600GetCacheNamespaces()
+> GetCacheNamespaces200Response getCacheNamespaces()
 
 Get Cache Namespaces
 
@@ -581,7 +173,7 @@ import {
   Configuration,
   SystemApi,
 } from 'obp-typescript';
-import type { OBPv600GetCacheNamespacesRequest } from 'obp-typescript';
+import type { GetCacheNamespacesRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -596,7 +188,7 @@ async function example() {
   const api = new SystemApi(config);
 
   try {
-    const data = await api.oBPv600GetCacheNamespaces();
+    const data = await api.getCacheNamespaces();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -613,7 +205,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces200Response.md)
+[**GetCacheNamespaces200Response**](GetCacheNamespaces200Response.md)
 
 ### Authorization
 
@@ -634,9 +226,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetConnectorMethodNames
+## getConnectorMethodNames
 
-> OBPv600GetConnectorMethodNames200Response oBPv600GetConnectorMethodNames()
+> GetConnectorMethodNames200Response getConnectorMethodNames()
 
 Get Connector Method Names
 
@@ -649,7 +241,7 @@ import {
   Configuration,
   SystemApi,
 } from 'obp-typescript';
-import type { OBPv600GetConnectorMethodNamesRequest } from 'obp-typescript';
+import type { GetConnectorMethodNamesRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -664,7 +256,7 @@ async function example() {
   const api = new SystemApi(config);
 
   try {
-    const data = await api.oBPv600GetConnectorMethodNames();
+    const data = await api.getConnectorMethodNames();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -681,7 +273,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectorMethodNames200Response**](OBPv600GetConnectorMethodNames200Response.md)
+[**GetConnectorMethodNames200Response**](GetConnectorMethodNames200Response.md)
 
 ### Authorization
 
@@ -702,13 +294,13 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetConnectors
+## getConnectors
 
-> OBPv600GetConnectors200Response oBPv600GetConnectors()
+> GetConnectors200Response getConnectors()
 
 Get Connectors
 
-&lt;p&gt;Get the list of connectors and their availability for method routing.&lt;/p&gt; &lt;p&gt;Returns a sorted list of all connectors with their availability status for use in Method Routing.&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#response-fields\&quot; id&#x3D;\&quot;response-fields\&quot;&gt;Response Fields&lt;/a&gt;&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;connector_name&lt;/strong&gt; - The name of the connector&lt;/li&gt; &lt;li&gt;&lt;strong&gt;is_available_in_method_routing&lt;/strong&gt; - Whether this connector can be used in Method Routing configuration.&lt;br /&gt; This depends on the &lt;code&gt;connector&lt;/code&gt; and &lt;code&gt;starConnector_supported_types&lt;/code&gt; props settings.&lt;/li&gt; &lt;/ul&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#available-connectors\&quot; id&#x3D;\&quot;available-connectors\&quot;&gt;Available Connectors&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The OBP-API supports multiple connectors for accessing banking data:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;mapped&lt;/strong&gt; - Local database connector using Lift Mapper ORM&lt;/li&gt; &lt;li&gt;&lt;strong&gt;akka_vDec2018&lt;/strong&gt; - Akka-based connector for remote banking systems&lt;/li&gt; &lt;li&gt;&lt;strong&gt;rest_vMar2019&lt;/strong&gt; - REST connector for external APIs&lt;/li&gt; &lt;li&gt;&lt;strong&gt;stored_procedure_vDec2019&lt;/strong&gt; - Stored procedure connector for database-native operations&lt;/li&gt; &lt;li&gt;&lt;strong&gt;rabbitmq_vOct2024&lt;/strong&gt; - RabbitMQ message queue connector&lt;/li&gt; &lt;li&gt;&lt;strong&gt;cardano_vJun2025&lt;/strong&gt; - Cardano blockchain connector&lt;/li&gt; &lt;li&gt;&lt;strong&gt;ethereum_vSept2025&lt;/strong&gt; - Ethereum blockchain connector&lt;/li&gt; &lt;li&gt;&lt;strong&gt;star&lt;/strong&gt; - Star connector (special routing connector)&lt;/li&gt; &lt;li&gt;&lt;strong&gt;proxy&lt;/strong&gt; - Proxy connector (for testing)&lt;/li&gt; &lt;li&gt;&lt;strong&gt;internal&lt;/strong&gt; - Internal dynamic connector&lt;/li&gt; &lt;/ul&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#use-case\&quot; id&#x3D;\&quot;use-case\&quot;&gt;Use Case&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Use this endpoint to discover which connectors are available when configuring Method Routing.&lt;br /&gt; A connector is available for method routing if it matches the &lt;code&gt;connector&lt;/code&gt; prop setting,&lt;br /&gt; or if &lt;code&gt;connector&#x3D;star&lt;/code&gt; and the connector is listed in &lt;code&gt;starConnector_supported_types&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanGetConnectorNames entitlement is required.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#connector_name\&quot;&gt;&lt;strong&gt;connector_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;connectors&lt;/strong&gt;&lt;/a&gt;: connectors&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_available_in_method_routing&lt;/strong&gt;&lt;/a&gt;: is_available_in_method_routing&lt;/p&gt; 
+&lt;p&gt;Get the list of connectors and their availability for method routing.&lt;/p&gt; &lt;p&gt;Returns a sorted list of all connectors with their availability status for use in Method Routing.&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#response-fields\&quot; id&#x3D;\&quot;response-fields\&quot;&gt;Response Fields&lt;/a&gt;&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;connector_name&lt;/strong&gt; - The name of the connector&lt;/li&gt; &lt;li&gt;&lt;strong&gt;is_available_in_method_routing&lt;/strong&gt; - Whether this connector can be used in Method Routing configuration.&lt;br /&gt; This depends on the &lt;code&gt;connector&lt;/code&gt; and &lt;code&gt;starConnector_supported_types&lt;/code&gt; props settings.&lt;/li&gt; &lt;/ul&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#available-connectors\&quot; id&#x3D;\&quot;available-connectors\&quot;&gt;Available Connectors&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The OBP-API supports multiple connectors for accessing banking data:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;mapped&lt;/strong&gt; - Local database connector using Lift Mapper ORM&lt;/li&gt; &lt;li&gt;&lt;strong&gt;akka_vDec2018&lt;/strong&gt; - Akka-based connector for remote banking systems&lt;/li&gt; &lt;li&gt;&lt;strong&gt;rest_vMar2019&lt;/strong&gt; - REST connector for external APIs&lt;/li&gt; &lt;li&gt;&lt;strong&gt;stored_procedure_vDec2019&lt;/strong&gt; - Stored procedure connector for database-native operations&lt;/li&gt; &lt;li&gt;&lt;strong&gt;rabbitmq_vOct2024&lt;/strong&gt; - RabbitMQ message queue connector&lt;/li&gt; &lt;li&gt;&lt;strong&gt;cardano_vJun2025&lt;/strong&gt; - Cardano blockchain connector&lt;/li&gt; &lt;li&gt;&lt;strong&gt;ethereum_vSept2025&lt;/strong&gt; - Ethereum blockchain connector&lt;/li&gt; &lt;li&gt;&lt;strong&gt;star&lt;/strong&gt; - Star connector (special routing connector)&lt;/li&gt; &lt;li&gt;&lt;strong&gt;proxy&lt;/strong&gt; - Proxy connector (for testing)&lt;/li&gt; &lt;li&gt;&lt;strong&gt;internal&lt;/strong&gt; - Internal dynamic connector&lt;/li&gt; &lt;/ul&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#use-case\&quot; id&#x3D;\&quot;use-case\&quot;&gt;Use Case&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Use this endpoint to discover which connectors are available when configuring Method Routing.&lt;br /&gt; A connector is available for method routing if it matches the &lt;code&gt;connector&lt;/code&gt; prop setting,&lt;br /&gt; or if &lt;code&gt;connector&#x3D;star&lt;/code&gt; and the connector is listed in &lt;code&gt;starConnector_supported_types&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;Authentication is Optional.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#connector_name\&quot;&gt;&lt;strong&gt;connector_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;connectors&lt;/strong&gt;&lt;/a&gt;: connectors&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_available_in_method_routing&lt;/strong&gt;&lt;/a&gt;: is_available_in_method_routing&lt;/p&gt; 
 
 ### Example
 
@@ -717,22 +309,14 @@ import {
   Configuration,
   SystemApi,
 } from 'obp-typescript';
-import type { OBPv600GetConnectorsRequest } from 'obp-typescript';
+import type { GetConnectorsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
-  const config = new Configuration({ 
-    // To configure OAuth2 access token for authorization: OAuth2 accessCode
-    accessToken: "YOUR ACCESS TOKEN",
-    // To configure API key authorization: GatewayLogin
-    apiKey: "YOUR API KEY",
-    // To configure API key authorization: DirectLogin
-    apiKey: "YOUR API KEY",
-  });
-  const api = new SystemApi(config);
+  const api = new SystemApi();
 
   try {
-    const data = await api.oBPv600GetConnectors();
+    const data = await api.getConnectors();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -749,11 +333,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectors200Response**](OBPv600GetConnectors200Response.md)
+[**GetConnectors200Response**](GetConnectors200Response.md)
 
 ### Authorization
 
-[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+No authorization required
 
 ### HTTP request headers
 
@@ -770,9 +354,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetDatabasePoolInfo
+## getDatabasePoolInfo
 
-> OBPv600GetDatabasePoolInfo200Response oBPv600GetDatabasePoolInfo()
+> GetDatabasePoolInfo200Response getDatabasePoolInfo()
 
 Get Database Pool Information
 
@@ -785,7 +369,7 @@ import {
   Configuration,
   SystemApi,
 } from 'obp-typescript';
-import type { OBPv600GetDatabasePoolInfoRequest } from 'obp-typescript';
+import type { GetDatabasePoolInfoRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -800,7 +384,7 @@ async function example() {
   const api = new SystemApi(config);
 
   try {
-    const data = await api.oBPv600GetDatabasePoolInfo();
+    const data = await api.getDatabasePoolInfo();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -817,7 +401,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetDatabasePoolInfo200Response**](OBPv600GetDatabasePoolInfo200Response.md)
+[**GetDatabasePoolInfo200Response**](GetDatabasePoolInfo200Response.md)
 
 ### Authorization
 
@@ -838,9 +422,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetMigrations
+## getMigrations
 
-> OBPv600GetMigrations200Response oBPv600GetMigrations()
+> GetMigrations200Response getMigrations()
 
 Get Database Migrations
 
@@ -853,7 +437,7 @@ import {
   Configuration,
   SystemApi,
 } from 'obp-typescript';
-import type { OBPv600GetMigrationsRequest } from 'obp-typescript';
+import type { GetMigrationsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -868,7 +452,7 @@ async function example() {
   const api = new SystemApi(config);
 
   try {
-    const data = await api.oBPv600GetMigrations();
+    const data = await api.getMigrations();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -885,7 +469,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetMigrations200Response**](OBPv600GetMigrations200Response.md)
+[**GetMigrations200Response**](GetMigrations200Response.md)
 
 ### Authorization
 
@@ -906,9 +490,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetStoredProcedureConnectorHealth
+## getStoredProcedureConnectorHealth
 
-> OBPv600GetStoredProcedureConnectorHealth200Response oBPv600GetStoredProcedureConnectorHealth()
+> GetStoredProcedureConnectorHealth200Response getStoredProcedureConnectorHealth()
 
 Get Stored Procedure Connector Health
 
@@ -921,7 +505,7 @@ import {
   Configuration,
   SystemApi,
 } from 'obp-typescript';
-import type { OBPv600GetStoredProcedureConnectorHealthRequest } from 'obp-typescript';
+import type { GetStoredProcedureConnectorHealthRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -936,7 +520,7 @@ async function example() {
   const api = new SystemApi(config);
 
   try {
-    const data = await api.oBPv600GetStoredProcedureConnectorHealth();
+    const data = await api.getStoredProcedureConnectorHealth();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -953,7 +537,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetStoredProcedureConnectorHealth200Response**](OBPv600GetStoredProcedureConnectorHealth200Response.md)
+[**GetStoredProcedureConnectorHealth200Response**](GetStoredProcedureConnectorHealth200Response.md)
 
 ### Authorization
 
@@ -974,9 +558,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600InvalidateCacheNamespace
+## invalidateCacheNamespace
 
-> OBPv600InvalidateCacheNamespace200Response oBPv600InvalidateCacheNamespace(oBPv600InvalidateCacheNamespaceRequest)
+> InvalidateCacheNamespace200Response invalidateCacheNamespace(invalidateCacheNamespaceRequest)
 
 Invalidate Cache Namespace
 
@@ -989,7 +573,7 @@ import {
   Configuration,
   SystemApi,
 } from 'obp-typescript';
-import type { OBPv600InvalidateCacheNamespaceOperationRequest } from 'obp-typescript';
+import type { InvalidateCacheNamespaceOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -1004,12 +588,12 @@ async function example() {
   const api = new SystemApi(config);
 
   const body = {
-    // OBPv600InvalidateCacheNamespaceRequest | Request body
-    oBPv600InvalidateCacheNamespaceRequest: {"type":"object","properties":{"namespace_id":{"type":"string"}}},
-  } satisfies OBPv600InvalidateCacheNamespaceOperationRequest;
+    // InvalidateCacheNamespaceRequest | Request body
+    invalidateCacheNamespaceRequest: {"type":"object","properties":{"namespace_id":{"type":"string"}}},
+  } satisfies InvalidateCacheNamespaceOperationRequest;
 
   try {
-    const data = await api.oBPv600InvalidateCacheNamespace(body);
+    const data = await api.invalidateCacheNamespace(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -1025,11 +609,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **oBPv600InvalidateCacheNamespaceRequest** | [OBPv600InvalidateCacheNamespaceRequest](OBPv600InvalidateCacheNamespaceRequest.md) | Request body | |
+| **invalidateCacheNamespaceRequest** | [InvalidateCacheNamespaceRequest](InvalidateCacheNamespaceRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600InvalidateCacheNamespace200Response**](OBPv600InvalidateCacheNamespace200Response.md)
+[**InvalidateCacheNamespace200Response**](InvalidateCacheNamespace200Response.md)
 
 ### Authorization
 
@@ -1039,6 +623,414 @@ example().catch(console.error);
 
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## logCacheAllEndpoint
+
+> logCacheAllEndpoint()
+
+Get All Level Log Cache
+
+&lt;p&gt;Returns logs of all levels from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/all?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+
+```ts
+import {
+  Configuration,
+  SystemApi,
+} from 'obp-typescript';
+import type { LogCacheAllEndpointRequest } from 'obp-typescript';
+
+async function example() {
+  console.log("🚀 Testing obp-typescript SDK...");
+  const config = new Configuration({ 
+    // To configure OAuth2 access token for authorization: OAuth2 accessCode
+    accessToken: "YOUR ACCESS TOKEN",
+    // To configure API key authorization: GatewayLogin
+    apiKey: "YOUR API KEY",
+    // To configure API key authorization: DirectLogin
+    apiKey: "YOUR API KEY",
+  });
+  const api = new SystemApi(config);
+
+  try {
+    const data = await api.logCacheAllEndpoint();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+`void` (Empty response body)
+
+### Authorization
+
+[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## logCacheDebugEndpoint
+
+> logCacheDebugEndpoint()
+
+Get Debug Level Log Cache
+
+&lt;p&gt;Returns DEBUG level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/debug?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+
+```ts
+import {
+  Configuration,
+  SystemApi,
+} from 'obp-typescript';
+import type { LogCacheDebugEndpointRequest } from 'obp-typescript';
+
+async function example() {
+  console.log("🚀 Testing obp-typescript SDK...");
+  const config = new Configuration({ 
+    // To configure OAuth2 access token for authorization: OAuth2 accessCode
+    accessToken: "YOUR ACCESS TOKEN",
+    // To configure API key authorization: GatewayLogin
+    apiKey: "YOUR API KEY",
+    // To configure API key authorization: DirectLogin
+    apiKey: "YOUR API KEY",
+  });
+  const api = new SystemApi(config);
+
+  try {
+    const data = await api.logCacheDebugEndpoint();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+`void` (Empty response body)
+
+### Authorization
+
+[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## logCacheErrorEndpoint
+
+> logCacheErrorEndpoint()
+
+Get Error Level Log Cache
+
+&lt;p&gt;Returns ERROR level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/error?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+
+```ts
+import {
+  Configuration,
+  SystemApi,
+} from 'obp-typescript';
+import type { LogCacheErrorEndpointRequest } from 'obp-typescript';
+
+async function example() {
+  console.log("🚀 Testing obp-typescript SDK...");
+  const config = new Configuration({ 
+    // To configure OAuth2 access token for authorization: OAuth2 accessCode
+    accessToken: "YOUR ACCESS TOKEN",
+    // To configure API key authorization: GatewayLogin
+    apiKey: "YOUR API KEY",
+    // To configure API key authorization: DirectLogin
+    apiKey: "YOUR API KEY",
+  });
+  const api = new SystemApi(config);
+
+  try {
+    const data = await api.logCacheErrorEndpoint();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+`void` (Empty response body)
+
+### Authorization
+
+[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## logCacheInfoEndpoint
+
+> logCacheInfoEndpoint()
+
+Get Info Level Log Cache
+
+&lt;p&gt;Returns INFO level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/info?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+
+```ts
+import {
+  Configuration,
+  SystemApi,
+} from 'obp-typescript';
+import type { LogCacheInfoEndpointRequest } from 'obp-typescript';
+
+async function example() {
+  console.log("🚀 Testing obp-typescript SDK...");
+  const config = new Configuration({ 
+    // To configure OAuth2 access token for authorization: OAuth2 accessCode
+    accessToken: "YOUR ACCESS TOKEN",
+    // To configure API key authorization: GatewayLogin
+    apiKey: "YOUR API KEY",
+    // To configure API key authorization: DirectLogin
+    apiKey: "YOUR API KEY",
+  });
+  const api = new SystemApi(config);
+
+  try {
+    const data = await api.logCacheInfoEndpoint();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+`void` (Empty response body)
+
+### Authorization
+
+[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## logCacheTraceEndpoint
+
+> logCacheTraceEndpoint()
+
+Get Trace Level Log Cache
+
+&lt;p&gt;Returns TRACE level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/trace?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+
+```ts
+import {
+  Configuration,
+  SystemApi,
+} from 'obp-typescript';
+import type { LogCacheTraceEndpointRequest } from 'obp-typescript';
+
+async function example() {
+  console.log("🚀 Testing obp-typescript SDK...");
+  const config = new Configuration({ 
+    // To configure OAuth2 access token for authorization: OAuth2 accessCode
+    accessToken: "YOUR ACCESS TOKEN",
+    // To configure API key authorization: GatewayLogin
+    apiKey: "YOUR API KEY",
+    // To configure API key authorization: DirectLogin
+    apiKey: "YOUR API KEY",
+  });
+  const api = new SystemApi(config);
+
+  try {
+    const data = await api.logCacheTraceEndpoint();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+`void` (Empty response body)
+
+### Authorization
+
+[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## logCacheWarningEndpoint
+
+> logCacheWarningEndpoint()
+
+Get Warning Level Log Cache
+
+&lt;p&gt;Returns WARNING level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/warning?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+
+```ts
+import {
+  Configuration,
+  SystemApi,
+} from 'obp-typescript';
+import type { LogCacheWarningEndpointRequest } from 'obp-typescript';
+
+async function example() {
+  console.log("🚀 Testing obp-typescript SDK...");
+  const config = new Configuration({ 
+    // To configure OAuth2 access token for authorization: OAuth2 accessCode
+    accessToken: "YOUR ACCESS TOKEN",
+    // To configure API key authorization: GatewayLogin
+    apiKey: "YOUR API KEY",
+    // To configure API key authorization: DirectLogin
+    apiKey: "YOUR API KEY",
+  });
+  const api = new SystemApi(config);
+
+  try {
+    const data = await api.logCacheWarningEndpoint();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+`void` (Empty response body)
+
+### Authorization
+
+[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
 ### HTTP response details

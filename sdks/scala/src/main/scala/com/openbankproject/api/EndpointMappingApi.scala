@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,15 +11,15 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv400CreateEndpointMappingRequest
-import com.openbankproject.model.OBPv400GetAllEndpointMappings200Response
-import com.openbankproject.model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+import com.openbankproject.model.CreateEndpointMappingRequest
+import com.openbankproject.model.GetAllEndpointMappings200Response
+import com.openbankproject.model.GetAllEndpointMappings200ResponseEndpointMappingsInner
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object EndpointMappingApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new EndpointMappingApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new EndpointMappingApi(baseUrl)
 }
 
 class EndpointMappingApi(baseUrl: String) {
@@ -28,7 +28,7 @@ class EndpointMappingApi(baseUrl: String) {
    * <p>Create an Bank Level Endpoint Mapping.</p> <p>Note: at moment only support the dynamic endpoints</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems (Successful operation)
+   *   code 200 : GetAllEndpointMappings200ResponseEndpointMappingsInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -37,38 +37,38 @@ class EndpointMappingApi(baseUrl: String) {
    *   DirectLogin (apiKey)
    * 
    * @param bankid The BANKID identifier
-   * @param oBPv400CreateEndpointMappingRequest Request body
+   * @param createEndpointMappingRequest Request body
    */
-  def oBPv400CreateBankLevelEndpointMapping(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest): Request[Either[ResponseException[String, Exception], OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems]] =
+  def createBankLevelEndpointMapping(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, createEndpointMappingRequest: CreateEndpointMappingRequest): Request[Either[ResponseException[String, Exception], GetAllEndpointMappings200ResponseEndpointMappingsInner]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/endpoint-mappings")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateEndpointMappingRequest)
-      .response(asJson[OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createEndpointMappingRequest)
+      .response(asJson[GetAllEndpointMappings200ResponseEndpointMappingsInner])
 
   /**
    * <p>Create an Endpoint Mapping.</p> <p>Note: at moment only support the dynamic endpoints</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems (Successful operation)
+   *   code 200 : GetAllEndpointMappings200ResponseEndpointMappingsInner (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    * 
-   * @param oBPv400CreateEndpointMappingRequest Request body
+   * @param createEndpointMappingRequest Request body
    */
-  def oBPv400CreateEndpointMapping(apiKeyHeader: String, apiKeyHeader: String)(oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest): Request[Either[ResponseException[String, Exception], OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems]] =
+  def createEndpointMapping(apiKeyHeader: String, apiKeyHeader: String)(createEndpointMappingRequest: CreateEndpointMappingRequest): Request[Either[ResponseException[String, Exception], GetAllEndpointMappings200ResponseEndpointMappingsInner]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/management/endpoint-mappings")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateEndpointMappingRequest)
-      .response(asJson[OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createEndpointMappingRequest)
+      .response(asJson[GetAllEndpointMappings200ResponseEndpointMappingsInner])
 
   /**
    * <p>Delete a Bank Level Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> 
@@ -85,12 +85,12 @@ class EndpointMappingApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier
    */
-  def oBPv400DeleteBankLevelEndpointMapping(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, endpointmappingid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteBankLevelEndpointMapping(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, endpointmappingid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/endpoint-mappings/${endpointmappingid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -106,19 +106,19 @@ class EndpointMappingApi(baseUrl: String) {
    * 
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier
    */
-  def oBPv400DeleteEndpointMapping(apiKeyHeader: String, apiKeyHeader: String)(endpointmappingid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteEndpointMapping(apiKeyHeader: String, apiKeyHeader: String)(endpointmappingid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/management/endpoint-mappings/${endpointmappingid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
    * <p>Get all Bank Level Endpoint Mappings.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetAllEndpointMappings200Response (Successful operation)
+   *   code 200 : GetAllEndpointMappings200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -128,38 +128,38 @@ class EndpointMappingApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    */
-  def oBPv400GetAllBankLevelEndpointMappings(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv400GetAllEndpointMappings200Response]] =
+  def getAllBankLevelEndpointMappings(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetAllEndpointMappings200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/endpoint-mappings")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetAllEndpointMappings200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetAllEndpointMappings200Response])
 
   /**
    * <p>Get all Endpoint Mappings.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetAllEndpointMappings200Response (Successful operation)
+   *   code 200 : GetAllEndpointMappings200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv400GetAllEndpointMappings(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv400GetAllEndpointMappings200Response]] =
+  def getAllEndpointMappings(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetAllEndpointMappings200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/endpoint-mappings")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetAllEndpointMappings200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetAllEndpointMappings200Response])
 
   /**
    * <p>Get an Bank Level Endpoint Mapping by ENDPOINT_MAPPING_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems (Successful operation)
+   *   code 200 : GetAllEndpointMappings200ResponseEndpointMappingsInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -170,19 +170,19 @@ class EndpointMappingApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier
    */
-  def oBPv400GetBankLevelEndpointMapping(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, endpointmappingid: String): Request[Either[ResponseException[String, Exception], OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems]] =
+  def getBankLevelEndpointMapping(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, endpointmappingid: String): Request[Either[ResponseException[String, Exception], GetAllEndpointMappings200ResponseEndpointMappingsInner]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/endpoint-mappings/${endpointmappingid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetAllEndpointMappings200ResponseEndpointMappingsInner])
 
   /**
    * <p>Get an Endpoint Mapping by ENDPOINT_MAPPING_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems (Successful operation)
+   *   code 200 : GetAllEndpointMappings200ResponseEndpointMappingsInner (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -191,19 +191,19 @@ class EndpointMappingApi(baseUrl: String) {
    * 
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier
    */
-  def oBPv400GetEndpointMapping(apiKeyHeader: String, apiKeyHeader: String)(endpointmappingid: String): Request[Either[ResponseException[String, Exception], OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems]] =
+  def getEndpointMapping(apiKeyHeader: String, apiKeyHeader: String)(endpointmappingid: String): Request[Either[ResponseException[String, Exception], GetAllEndpointMappings200ResponseEndpointMappingsInner]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/endpoint-mappings/${endpointmappingid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetAllEndpointMappings200ResponseEndpointMappingsInner])
 
   /**
    * <p>Update an Bank Level Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems (Successful operation)
+   *   code 200 : GetAllEndpointMappings200ResponseEndpointMappingsInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -213,22 +213,22 @@ class EndpointMappingApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier
-   * @param oBPv400CreateEndpointMappingRequest Request body
+   * @param createEndpointMappingRequest Request body
    */
-  def oBPv400UpdateBankLevelEndpointMapping(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, endpointmappingid: String, oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest): Request[Either[ResponseException[String, Exception], OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems]] =
+  def updateBankLevelEndpointMapping(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, endpointmappingid: String, createEndpointMappingRequest: CreateEndpointMappingRequest): Request[Either[ResponseException[String, Exception], GetAllEndpointMappings200ResponseEndpointMappingsInner]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/endpoint-mappings/${endpointmappingid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateEndpointMappingRequest)
-      .response(asJson[OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createEndpointMappingRequest)
+      .response(asJson[GetAllEndpointMappings200ResponseEndpointMappingsInner])
 
   /**
    * <p>Update an Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems (Successful operation)
+   *   code 200 : GetAllEndpointMappings200ResponseEndpointMappingsInner (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -236,15 +236,15 @@ class EndpointMappingApi(baseUrl: String) {
    *   DirectLogin (apiKey)
    * 
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier
-   * @param oBPv400CreateEndpointMappingRequest Request body
+   * @param createEndpointMappingRequest Request body
    */
-  def oBPv400UpdateEndpointMapping(apiKeyHeader: String, apiKeyHeader: String)(endpointmappingid: String, oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest): Request[Either[ResponseException[String, Exception], OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems]] =
+  def updateEndpointMapping(apiKeyHeader: String, apiKeyHeader: String)(endpointmappingid: String, createEndpointMappingRequest: CreateEndpointMappingRequest): Request[Either[ResponseException[String, Exception], GetAllEndpointMappings200ResponseEndpointMappingsInner]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v4.0.0/management/endpoint-mappings/${endpointmappingid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateEndpointMappingRequest)
-      .response(asJson[OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createEndpointMappingRequest)
+      .response(asJson[GetAllEndpointMappings200ResponseEndpointMappingsInner])
 
 }

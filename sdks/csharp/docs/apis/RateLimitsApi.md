@@ -1,49 +1,16 @@
 # OpenBankProject.Api.RateLimitsApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv310GetRateLimitingInfo**](RateLimitsApi.md#obpv310getratelimitinginfo) | **GET** /obp/v3.1.0/rate-limiting | Get Rate Limiting Info |
-| [**OBPv400CallsLimit**](RateLimitsApi.md#obpv400callslimit) | **PUT** /obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits | Set Rate Limits / Call Limits per Consumer |
-| [**OBPv600UpdateRateLimits**](RateLimitsApi.md#obpv600updateratelimits) | **PUT** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Set Rate Limits / Call Limits per Consumer |
+| [**CallsLimit**](RateLimitsApi.md#callslimit) | **PUT** /obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits | Set Rate Limits / Call Limits per Consumer |
+| [**GetRateLimitingInfo**](RateLimitsApi.md#getratelimitinginfo) | **GET** /obp/v3.1.0/rate-limiting | Get Rate Limiting Info |
+| [**UpdateRateLimits**](RateLimitsApi.md#updateratelimits) | **PUT** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Set Rate Limits / Call Limits per Consumer |
 
-<a id="obpv310getratelimitinginfo"></a>
-# **OBPv310GetRateLimitingInfo**
-> OBPv310GetRateLimitingInfo200Response OBPv310GetRateLimitingInfo ()
-
-Get Rate Limiting Info
-
-<p>Get information about the Rate Limiting setup on this OBP Instance such as:</p> <p>Is rate limiting enabled and active?<br /> What backend is used to keep track of the API calls (e.g. REDIS).</p> <p>Note: Rate limiting can be set at the Consumer level and also for anonymous calls.</p> <p>See the consumer rate limits / call limits endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#service_available\"><strong>service_available</strong></a>:</p> <p><a href=\"/glossary#technology\"><strong>technology</strong></a>: technology1</p> 
-
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-[**OBPv310GetRateLimitingInfo200Response**](OBPv310GetRateLimitingInfo200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-<a id="obpv400callslimit"></a>
-# **OBPv400CallsLimit**
-> OBPv600UpdateRateLimitsRequest OBPv400CallsLimit (string consumerid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest)
+<a id="callslimit"></a>
+# **CallsLimit**
+> UpdateRateLimitsRequest CallsLimit (string consumerid, UpdateRateLimitsRequest updateRateLimitsRequest)
 
 Set Rate Limits / Call Limits per Consumer
 
@@ -55,11 +22,11 @@ Set Rate Limits / Call Limits per Consumer
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **consumerid** | **string** | The CONSUMERID identifier |  |
-| **oBPv600UpdateRateLimitsRequest** | [**OBPv600UpdateRateLimitsRequest**](OBPv600UpdateRateLimitsRequest.md) | Request body |  |
+| **updateRateLimitsRequest** | [**UpdateRateLimitsRequest**](UpdateRateLimitsRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600UpdateRateLimitsRequest**](OBPv600UpdateRateLimitsRequest.md)
+[**UpdateRateLimitsRequest**](UpdateRateLimitsRequest.md)
 
 ### Authorization
 
@@ -80,9 +47,42 @@ Set Rate Limits / Call Limits per Consumer
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600updateratelimits"></a>
-# **OBPv600UpdateRateLimits**
-> OBPv600UpdateRateLimitsRequest OBPv600UpdateRateLimits (string consumerid, string ratelimitingid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest)
+<a id="getratelimitinginfo"></a>
+# **GetRateLimitingInfo**
+> GetRateLimitingInfo200Response GetRateLimitingInfo ()
+
+Get Rate Limiting Info
+
+<p>Get information about the Rate Limiting setup on this OBP Instance such as:</p> <p>Is rate limiting enabled and active?<br /> What backend is used to keep track of the API calls (e.g. REDIS).</p> <p>Note: Rate limiting can be set at the Consumer level and also for anonymous calls.</p> <p>See the consumer rate limits / call limits endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#service_available\"><strong>service_available</strong></a>:</p> <p><a href=\"/glossary#technology\"><strong>technology</strong></a>: technology1</p> 
+
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+[**GetRateLimitingInfo200Response**](GetRateLimitingInfo200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+<a id="updateratelimits"></a>
+# **UpdateRateLimits**
+> UpdateRateLimitsRequest UpdateRateLimits (string consumerid, string ratelimitingid, UpdateRateLimitsRequest updateRateLimitsRequest)
 
 Set Rate Limits / Call Limits per Consumer
 
@@ -95,11 +95,11 @@ Set Rate Limits / Call Limits per Consumer
 |------|------|-------------|-------|
 | **consumerid** | **string** | The CONSUMERID identifier |  |
 | **ratelimitingid** | **string** | The RATELIMITINGID identifier |  |
-| **oBPv600UpdateRateLimitsRequest** | [**OBPv600UpdateRateLimitsRequest**](OBPv600UpdateRateLimitsRequest.md) | Request body |  |
+| **updateRateLimitsRequest** | [**UpdateRateLimitsRequest**](UpdateRateLimitsRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600UpdateRateLimitsRequest**](OBPv600UpdateRateLimitsRequest.md)
+[**UpdateRateLimitsRequest**](UpdateRateLimitsRequest.md)
 
 ### Authorization
 

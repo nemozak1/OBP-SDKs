@@ -19,8 +19,8 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv510UpdateAtmAttributeRequest
-import com.openbankproject.models.OBPv600CreateApiProductAttribute200Response
+import com.openbankproject.models.CreateApiProductAttribute200Response
+import com.openbankproject.models.UpdateAtmAttributeRequest
 
 import com.squareup.moshi.Json
 
@@ -42,7 +42,7 @@ open class ApiProductAttributeApi(basePath: kotlin.String = defaultBasePath, cli
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -52,8 +52,8 @@ open class ApiProductAttributeApi(basePath: kotlin.String = defaultBasePath, cli
      * &lt;p&gt;Create an Api Product Attribute.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_PRODUCT_CODE&lt;/a&gt;: API_PRODUCT_CODE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_attribute_id&lt;/strong&gt;&lt;/a&gt;: api_product_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_code&lt;/strong&gt;&lt;/a&gt;: api_product_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param apiproductcode The APIPRODUCTCODE identifier
-     * @param obPv510UpdateAtmAttributeRequest Request body
-     * @return OBPv600CreateApiProductAttribute200Response
+     * @param updateAtmAttributeRequest Request body
+     * @return CreateApiProductAttribute200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -62,11 +62,11 @@ open class ApiProductAttributeApi(basePath: kotlin.String = defaultBasePath, cli
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600CreateApiProductAttribute(bankid: kotlin.String, apiproductcode: kotlin.String, obPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest) : OBPv600CreateApiProductAttribute200Response {
-        val localVarResponse = oBPv600CreateApiProductAttributeWithHttpInfo(bankid = bankid, apiproductcode = apiproductcode, obPv510UpdateAtmAttributeRequest = obPv510UpdateAtmAttributeRequest)
+    fun createApiProductAttribute(bankid: kotlin.String, apiproductcode: kotlin.String, updateAtmAttributeRequest: UpdateAtmAttributeRequest) : CreateApiProductAttribute200Response {
+        val localVarResponse = createApiProductAttributeWithHttpInfo(bankid = bankid, apiproductcode = apiproductcode, updateAtmAttributeRequest = updateAtmAttributeRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600CreateApiProductAttribute200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CreateApiProductAttribute200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -86,31 +86,31 @@ open class ApiProductAttributeApi(basePath: kotlin.String = defaultBasePath, cli
      * &lt;p&gt;Create an Api Product Attribute.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_PRODUCT_CODE&lt;/a&gt;: API_PRODUCT_CODE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_attribute_id&lt;/strong&gt;&lt;/a&gt;: api_product_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_code&lt;/strong&gt;&lt;/a&gt;: api_product_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param apiproductcode The APIPRODUCTCODE identifier
-     * @param obPv510UpdateAtmAttributeRequest Request body
-     * @return ApiResponse<OBPv600CreateApiProductAttribute200Response?>
+     * @param updateAtmAttributeRequest Request body
+     * @return ApiResponse<CreateApiProductAttribute200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600CreateApiProductAttributeWithHttpInfo(bankid: kotlin.String, apiproductcode: kotlin.String, obPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest) : ApiResponse<OBPv600CreateApiProductAttribute200Response?> {
-        val localVariableConfig = oBPv600CreateApiProductAttributeRequestConfig(bankid = bankid, apiproductcode = apiproductcode, obPv510UpdateAtmAttributeRequest = obPv510UpdateAtmAttributeRequest)
+    fun createApiProductAttributeWithHttpInfo(bankid: kotlin.String, apiproductcode: kotlin.String, updateAtmAttributeRequest: UpdateAtmAttributeRequest) : ApiResponse<CreateApiProductAttribute200Response?> {
+        val localVariableConfig = createApiProductAttributeRequestConfig(bankid = bankid, apiproductcode = apiproductcode, updateAtmAttributeRequest = updateAtmAttributeRequest)
 
-        return request<OBPv510UpdateAtmAttributeRequest, OBPv600CreateApiProductAttribute200Response>(
+        return request<UpdateAtmAttributeRequest, CreateApiProductAttribute200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600CreateApiProductAttribute
+     * To obtain the request config of the operation createApiProductAttribute
      *
      * @param bankid The BANKID identifier
      * @param apiproductcode The APIPRODUCTCODE identifier
-     * @param obPv510UpdateAtmAttributeRequest Request body
+     * @param updateAtmAttributeRequest Request body
      * @return RequestConfig
      */
-    fun oBPv600CreateApiProductAttributeRequestConfig(bankid: kotlin.String, apiproductcode: kotlin.String, obPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest) : RequestConfig<OBPv510UpdateAtmAttributeRequest> {
-        val localVariableBody = obPv510UpdateAtmAttributeRequest
+    fun createApiProductAttributeRequestConfig(bankid: kotlin.String, apiproductcode: kotlin.String, updateAtmAttributeRequest: UpdateAtmAttributeRequest) : RequestConfig<UpdateAtmAttributeRequest> {
+        val localVariableBody = updateAtmAttributeRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -141,8 +141,8 @@ open class ApiProductAttributeApi(basePath: kotlin.String = defaultBasePath, cli
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600DeleteApiProductAttribute(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String) : Unit {
-        val localVarResponse = oBPv600DeleteApiProductAttributeWithHttpInfo(bankid = bankid, apiproductcode = apiproductcode, apiproductattributeid = apiproductattributeid)
+    fun deleteApiProductAttribute(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String) : Unit {
+        val localVarResponse = deleteApiProductAttributeWithHttpInfo(bankid = bankid, apiproductcode = apiproductcode, apiproductattributeid = apiproductattributeid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -171,8 +171,8 @@ open class ApiProductAttributeApi(basePath: kotlin.String = defaultBasePath, cli
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600DeleteApiProductAttributeWithHttpInfo(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv600DeleteApiProductAttributeRequestConfig(bankid = bankid, apiproductcode = apiproductcode, apiproductattributeid = apiproductattributeid)
+    fun deleteApiProductAttributeWithHttpInfo(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteApiProductAttributeRequestConfig(bankid = bankid, apiproductcode = apiproductcode, apiproductattributeid = apiproductattributeid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -180,14 +180,14 @@ open class ApiProductAttributeApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
-     * To obtain the request config of the operation oBPv600DeleteApiProductAttribute
+     * To obtain the request config of the operation deleteApiProductAttribute
      *
      * @param bankid The BANKID identifier
      * @param apiproductcode The APIPRODUCTCODE identifier
      * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier
      * @return RequestConfig
      */
-    fun oBPv600DeleteApiProductAttributeRequestConfig(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteApiProductAttributeRequestConfig(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -209,7 +209,7 @@ open class ApiProductAttributeApi(basePath: kotlin.String = defaultBasePath, cli
      * @param bankid The BANKID identifier
      * @param apiproductcode The APIPRODUCTCODE identifier
      * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier
-     * @return OBPv600CreateApiProductAttribute200Response
+     * @return CreateApiProductAttribute200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -218,11 +218,11 @@ open class ApiProductAttributeApi(basePath: kotlin.String = defaultBasePath, cli
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetApiProductAttribute(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String) : OBPv600CreateApiProductAttribute200Response {
-        val localVarResponse = oBPv600GetApiProductAttributeWithHttpInfo(bankid = bankid, apiproductcode = apiproductcode, apiproductattributeid = apiproductattributeid)
+    fun getApiProductAttribute(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String) : CreateApiProductAttribute200Response {
+        val localVarResponse = getApiProductAttributeWithHttpInfo(bankid = bankid, apiproductcode = apiproductcode, apiproductattributeid = apiproductattributeid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600CreateApiProductAttribute200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CreateApiProductAttribute200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -243,29 +243,29 @@ open class ApiProductAttributeApi(basePath: kotlin.String = defaultBasePath, cli
      * @param bankid The BANKID identifier
      * @param apiproductcode The APIPRODUCTCODE identifier
      * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier
-     * @return ApiResponse<OBPv600CreateApiProductAttribute200Response?>
+     * @return ApiResponse<CreateApiProductAttribute200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetApiProductAttributeWithHttpInfo(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String) : ApiResponse<OBPv600CreateApiProductAttribute200Response?> {
-        val localVariableConfig = oBPv600GetApiProductAttributeRequestConfig(bankid = bankid, apiproductcode = apiproductcode, apiproductattributeid = apiproductattributeid)
+    fun getApiProductAttributeWithHttpInfo(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String) : ApiResponse<CreateApiProductAttribute200Response?> {
+        val localVariableConfig = getApiProductAttributeRequestConfig(bankid = bankid, apiproductcode = apiproductcode, apiproductattributeid = apiproductattributeid)
 
-        return request<Unit, OBPv600CreateApiProductAttribute200Response>(
+        return request<Unit, CreateApiProductAttribute200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetApiProductAttribute
+     * To obtain the request config of the operation getApiProductAttribute
      *
      * @param bankid The BANKID identifier
      * @param apiproductcode The APIPRODUCTCODE identifier
      * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier
      * @return RequestConfig
      */
-    fun oBPv600GetApiProductAttributeRequestConfig(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String) : RequestConfig<Unit> {
+    fun getApiProductAttributeRequestConfig(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -288,8 +288,8 @@ open class ApiProductAttributeApi(basePath: kotlin.String = defaultBasePath, cli
      * @param bankid The BANKID identifier
      * @param apiproductcode The APIPRODUCTCODE identifier
      * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier
-     * @param obPv510UpdateAtmAttributeRequest Request body
-     * @return OBPv600CreateApiProductAttribute200Response
+     * @param updateAtmAttributeRequest Request body
+     * @return CreateApiProductAttribute200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -298,11 +298,11 @@ open class ApiProductAttributeApi(basePath: kotlin.String = defaultBasePath, cli
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600UpdateApiProductAttribute(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String, obPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest) : OBPv600CreateApiProductAttribute200Response {
-        val localVarResponse = oBPv600UpdateApiProductAttributeWithHttpInfo(bankid = bankid, apiproductcode = apiproductcode, apiproductattributeid = apiproductattributeid, obPv510UpdateAtmAttributeRequest = obPv510UpdateAtmAttributeRequest)
+    fun updateApiProductAttribute(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String, updateAtmAttributeRequest: UpdateAtmAttributeRequest) : CreateApiProductAttribute200Response {
+        val localVarResponse = updateApiProductAttributeWithHttpInfo(bankid = bankid, apiproductcode = apiproductcode, apiproductattributeid = apiproductattributeid, updateAtmAttributeRequest = updateAtmAttributeRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600CreateApiProductAttribute200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CreateApiProductAttribute200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -323,32 +323,32 @@ open class ApiProductAttributeApi(basePath: kotlin.String = defaultBasePath, cli
      * @param bankid The BANKID identifier
      * @param apiproductcode The APIPRODUCTCODE identifier
      * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier
-     * @param obPv510UpdateAtmAttributeRequest Request body
-     * @return ApiResponse<OBPv600CreateApiProductAttribute200Response?>
+     * @param updateAtmAttributeRequest Request body
+     * @return ApiResponse<CreateApiProductAttribute200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600UpdateApiProductAttributeWithHttpInfo(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String, obPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest) : ApiResponse<OBPv600CreateApiProductAttribute200Response?> {
-        val localVariableConfig = oBPv600UpdateApiProductAttributeRequestConfig(bankid = bankid, apiproductcode = apiproductcode, apiproductattributeid = apiproductattributeid, obPv510UpdateAtmAttributeRequest = obPv510UpdateAtmAttributeRequest)
+    fun updateApiProductAttributeWithHttpInfo(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String, updateAtmAttributeRequest: UpdateAtmAttributeRequest) : ApiResponse<CreateApiProductAttribute200Response?> {
+        val localVariableConfig = updateApiProductAttributeRequestConfig(bankid = bankid, apiproductcode = apiproductcode, apiproductattributeid = apiproductattributeid, updateAtmAttributeRequest = updateAtmAttributeRequest)
 
-        return request<OBPv510UpdateAtmAttributeRequest, OBPv600CreateApiProductAttribute200Response>(
+        return request<UpdateAtmAttributeRequest, CreateApiProductAttribute200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600UpdateApiProductAttribute
+     * To obtain the request config of the operation updateApiProductAttribute
      *
      * @param bankid The BANKID identifier
      * @param apiproductcode The APIPRODUCTCODE identifier
      * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier
-     * @param obPv510UpdateAtmAttributeRequest Request body
+     * @param updateAtmAttributeRequest Request body
      * @return RequestConfig
      */
-    fun oBPv600UpdateApiProductAttributeRequestConfig(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String, obPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest) : RequestConfig<OBPv510UpdateAtmAttributeRequest> {
-        val localVariableBody = obPv510UpdateAtmAttributeRequest
+    fun updateApiProductAttributeRequestConfig(bankid: kotlin.String, apiproductcode: kotlin.String, apiproductattributeid: kotlin.String, updateAtmAttributeRequest: UpdateAtmAttributeRequest) : RequestConfig<UpdateAtmAttributeRequest> {
+        val localVariableBody = updateAtmAttributeRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

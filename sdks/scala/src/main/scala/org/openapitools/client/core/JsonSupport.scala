@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -17,7 +17,9 @@ import sttp.client4.json4s.SttpJson4sApi
 import scala.reflect.ClassTag
 
 object JsonSupport extends SttpJson4sApi {
-  def enumSerializers: Seq[Serializer[_]] = Seq[Serializer[_]]()
+  def enumSerializers: Seq[Serializer[_]] = Seq[Serializer[_]]() :+
+    new EnumNameSerializer(CreateCardAttribute200ResponseEnums.AttributeType) :+
+    new EnumNameSerializer(UpdateAuthenticationTypeValidationRequestEnums.Head)
 
   private class EnumNameSerializer[E <: Enumeration: ClassTag](enumeration: E) extends Serializer[E#Value] {
     import JsonDSL._

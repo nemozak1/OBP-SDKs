@@ -1,24 +1,24 @@
 # UserAttributeAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600CreatePersonalDataField**](UserAttributeAPI.md#obpv600createpersonaldatafield) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
-[**oBPv600CreateUserAttribute**](UserAttributeAPI.md#obpv600createuserattribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
-[**oBPv600DeletePersonalDataField**](UserAttributeAPI.md#obpv600deletepersonaldatafield) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
-[**oBPv600DeleteUserAttribute**](UserAttributeAPI.md#obpv600deleteuserattribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
-[**oBPv600GetPersonalDataFieldById**](UserAttributeAPI.md#obpv600getpersonaldatafieldbyid) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
-[**oBPv600GetPersonalDataFields**](UserAttributeAPI.md#obpv600getpersonaldatafields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
-[**oBPv600GetUserAttributeById**](UserAttributeAPI.md#obpv600getuserattributebyid) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
-[**oBPv600GetUserAttributes**](UserAttributeAPI.md#obpv600getuserattributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
-[**oBPv600UpdatePersonalDataField**](UserAttributeAPI.md#obpv600updatepersonaldatafield) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
-[**oBPv600UpdateUserAttribute**](UserAttributeAPI.md#obpv600updateuserattribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
+[**createPersonalDataField**](UserAttributeAPI.md#createpersonaldatafield) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
+[**createUserAttribute**](UserAttributeAPI.md#createuserattribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
+[**deletePersonalDataField**](UserAttributeAPI.md#deletepersonaldatafield) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
+[**deleteUserAttribute**](UserAttributeAPI.md#deleteuserattribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
+[**getPersonalDataFieldById**](UserAttributeAPI.md#getpersonaldatafieldbyid) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
+[**getPersonalDataFields**](UserAttributeAPI.md#getpersonaldatafields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
+[**getUserAttributeById**](UserAttributeAPI.md#getuserattributebyid) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
+[**getUserAttributes**](UserAttributeAPI.md#getuserattributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
+[**updatePersonalDataField**](UserAttributeAPI.md#updatepersonaldatafield) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
+[**updateUserAttribute**](UserAttributeAPI.md#updateuserattribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
 
 
-# **oBPv600CreatePersonalDataField**
+# **createPersonalDataField**
 ```swift
-    open class func oBPv600CreatePersonalDataField(oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, completion: @escaping (_ data: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?, _ error: Error?) -> Void)
+    open class func createPersonalDataField(createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, completion: @escaping (_ data: GetPersonalDataFields200ResponseUserAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Create Personal Data Field
@@ -30,10 +30,10 @@ Create Personal Data Field
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OBPSwift
 
-let oBPv600CreatePersonalDataFieldRequest = OBPv6_0_0_createPersonalDataField_request(type: "type_example", properties: OBPv6_0_0_createPersonalDataField_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), type: nil, value: nil)) // OBPv600CreatePersonalDataFieldRequest | Request body
+let createPersonalDataFieldRequest = createPersonalDataField_request(name: "name_example", type: "type_example", value: "value_example") // CreatePersonalDataFieldRequest | Request body
 
 // Create Personal Data Field
-UserAttributeAPI.oBPv600CreatePersonalDataField(oBPv600CreatePersonalDataFieldRequest: oBPv600CreatePersonalDataFieldRequest) { (response, error) in
+UserAttributeAPI.createPersonalDataField(createPersonalDataFieldRequest: createPersonalDataFieldRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -49,11 +49,11 @@ UserAttributeAPI.oBPv600CreatePersonalDataField(oBPv600CreatePersonalDataFieldRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -66,9 +66,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600CreateUserAttribute**
+# **createUserAttribute**
 ```swift
-    open class func oBPv600CreateUserAttribute(userid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, completion: @escaping (_ data: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?, _ error: Error?) -> Void)
+    open class func createUserAttribute(userid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, completion: @escaping (_ data: GetPersonalDataFields200ResponseUserAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Create User Attribute
@@ -81,10 +81,10 @@ Create User Attribute
 import OBPSwift
 
 let userid = "userid_example" // String | The USERID identifier
-let oBPv600CreatePersonalDataFieldRequest = OBPv6_0_0_createPersonalDataField_request(type: "type_example", properties: OBPv6_0_0_createPersonalDataField_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), type: nil, value: nil)) // OBPv600CreatePersonalDataFieldRequest | Request body
+let createPersonalDataFieldRequest = createPersonalDataField_request(name: "name_example", type: "type_example", value: "value_example") // CreatePersonalDataFieldRequest | Request body
 
 // Create User Attribute
-UserAttributeAPI.oBPv600CreateUserAttribute(userid: userid, oBPv600CreatePersonalDataFieldRequest: oBPv600CreatePersonalDataFieldRequest) { (response, error) in
+UserAttributeAPI.createUserAttribute(userid: userid, createPersonalDataFieldRequest: createPersonalDataFieldRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -101,11 +101,11 @@ UserAttributeAPI.oBPv600CreateUserAttribute(userid: userid, oBPv600CreatePersona
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userid** | **String** | The USERID identifier | 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -118,9 +118,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600DeletePersonalDataField**
+# **deletePersonalDataField**
 ```swift
-    open class func oBPv600DeletePersonalDataField(userattributeid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deletePersonalDataField(userattributeid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Personal Data Field
@@ -135,7 +135,7 @@ import OBPSwift
 let userattributeid = "userattributeid_example" // String | The USERATTRIBUTEID identifier
 
 // Delete Personal Data Field
-UserAttributeAPI.oBPv600DeletePersonalDataField(userattributeid: userattributeid) { (response, error) in
+UserAttributeAPI.deletePersonalDataField(userattributeid: userattributeid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -168,9 +168,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600DeleteUserAttribute**
+# **deleteUserAttribute**
 ```swift
-    open class func oBPv600DeleteUserAttribute(userid: String, userattributeid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteUserAttribute(userid: String, userattributeid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete User Attribute
@@ -186,7 +186,7 @@ let userid = "userid_example" // String | The USERID identifier
 let userattributeid = "userattributeid_example" // String | The USERATTRIBUTEID identifier
 
 // Delete User Attribute
-UserAttributeAPI.oBPv600DeleteUserAttribute(userid: userid, userattributeid: userattributeid) { (response, error) in
+UserAttributeAPI.deleteUserAttribute(userid: userid, userattributeid: userattributeid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -220,9 +220,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetPersonalDataFieldById**
+# **getPersonalDataFieldById**
 ```swift
-    open class func oBPv600GetPersonalDataFieldById(userattributeid: String, completion: @escaping (_ data: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?, _ error: Error?) -> Void)
+    open class func getPersonalDataFieldById(userattributeid: String, completion: @escaping (_ data: GetPersonalDataFields200ResponseUserAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Get Personal Data Field By Id
@@ -237,7 +237,7 @@ import OBPSwift
 let userattributeid = "userattributeid_example" // String | The USERATTRIBUTEID identifier
 
 // Get Personal Data Field By Id
-UserAttributeAPI.oBPv600GetPersonalDataFieldById(userattributeid: userattributeid) { (response, error) in
+UserAttributeAPI.getPersonalDataFieldById(userattributeid: userattributeid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -270,9 +270,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetPersonalDataFields**
+# **getPersonalDataFields**
 ```swift
-    open class func oBPv600GetPersonalDataFields(completion: @escaping (_ data: OBPv600GetPersonalDataFields200Response?, _ error: Error?) -> Void)
+    open class func getPersonalDataFields(completion: @escaping (_ data: GetPersonalDataFields200Response?, _ error: Error?) -> Void)
 ```
 
 Get Personal Data Fields
@@ -286,7 +286,7 @@ import OBPSwift
 
 
 // Get Personal Data Fields
-UserAttributeAPI.oBPv600GetPersonalDataFields() { (response, error) in
+UserAttributeAPI.getPersonalDataFields() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -303,7 +303,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -316,9 +316,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetUserAttributeById**
+# **getUserAttributeById**
 ```swift
-    open class func oBPv600GetUserAttributeById(userid: String, userattributeid: String, completion: @escaping (_ data: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?, _ error: Error?) -> Void)
+    open class func getUserAttributeById(userid: String, userattributeid: String, completion: @escaping (_ data: GetPersonalDataFields200ResponseUserAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Get User Attribute By Id
@@ -334,7 +334,7 @@ let userid = "userid_example" // String | The USERID identifier
 let userattributeid = "userattributeid_example" // String | The USERATTRIBUTEID identifier
 
 // Get User Attribute By Id
-UserAttributeAPI.oBPv600GetUserAttributeById(userid: userid, userattributeid: userattributeid) { (response, error) in
+UserAttributeAPI.getUserAttributeById(userid: userid, userattributeid: userattributeid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -368,9 +368,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetUserAttributes**
+# **getUserAttributes**
 ```swift
-    open class func oBPv600GetUserAttributes(userid: String, completion: @escaping (_ data: OBPv600GetPersonalDataFields200Response?, _ error: Error?) -> Void)
+    open class func getUserAttributes(userid: String, completion: @escaping (_ data: GetPersonalDataFields200Response?, _ error: Error?) -> Void)
 ```
 
 Get User Attributes
@@ -385,7 +385,7 @@ import OBPSwift
 let userid = "userid_example" // String | The USERID identifier
 
 // Get User Attributes
-UserAttributeAPI.oBPv600GetUserAttributes(userid: userid) { (response, error) in
+UserAttributeAPI.getUserAttributes(userid: userid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -418,9 +418,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600UpdatePersonalDataField**
+# **updatePersonalDataField**
 ```swift
-    open class func oBPv600UpdatePersonalDataField(userattributeid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, completion: @escaping (_ data: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?, _ error: Error?) -> Void)
+    open class func updatePersonalDataField(userattributeid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, completion: @escaping (_ data: GetPersonalDataFields200ResponseUserAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Update Personal Data Field
@@ -433,10 +433,10 @@ Update Personal Data Field
 import OBPSwift
 
 let userattributeid = "userattributeid_example" // String | The USERATTRIBUTEID identifier
-let oBPv600CreatePersonalDataFieldRequest = OBPv6_0_0_createPersonalDataField_request(type: "type_example", properties: OBPv6_0_0_createPersonalDataField_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), type: nil, value: nil)) // OBPv600CreatePersonalDataFieldRequest | Request body
+let createPersonalDataFieldRequest = createPersonalDataField_request(name: "name_example", type: "type_example", value: "value_example") // CreatePersonalDataFieldRequest | Request body
 
 // Update Personal Data Field
-UserAttributeAPI.oBPv600UpdatePersonalDataField(userattributeid: userattributeid, oBPv600CreatePersonalDataFieldRequest: oBPv600CreatePersonalDataFieldRequest) { (response, error) in
+UserAttributeAPI.updatePersonalDataField(userattributeid: userattributeid, createPersonalDataFieldRequest: createPersonalDataFieldRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -453,11 +453,11 @@ UserAttributeAPI.oBPv600UpdatePersonalDataField(userattributeid: userattributeid
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userattributeid** | **String** | The USERATTRIBUTEID identifier | 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -470,9 +470,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600UpdateUserAttribute**
+# **updateUserAttribute**
 ```swift
-    open class func oBPv600UpdateUserAttribute(userid: String, userattributeid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, completion: @escaping (_ data: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?, _ error: Error?) -> Void)
+    open class func updateUserAttribute(userid: String, userattributeid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, completion: @escaping (_ data: GetPersonalDataFields200ResponseUserAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Update User Attribute
@@ -486,10 +486,10 @@ import OBPSwift
 
 let userid = "userid_example" // String | The USERID identifier
 let userattributeid = "userattributeid_example" // String | The USERATTRIBUTEID identifier
-let oBPv600CreatePersonalDataFieldRequest = OBPv6_0_0_createPersonalDataField_request(type: "type_example", properties: OBPv6_0_0_createPersonalDataField_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), type: nil, value: nil)) // OBPv600CreatePersonalDataFieldRequest | Request body
+let createPersonalDataFieldRequest = createPersonalDataField_request(name: "name_example", type: "type_example", value: "value_example") // CreatePersonalDataFieldRequest | Request body
 
 // Update User Attribute
-UserAttributeAPI.oBPv600UpdateUserAttribute(userid: userid, userattributeid: userattributeid, oBPv600CreatePersonalDataFieldRequest: oBPv600CreatePersonalDataFieldRequest) { (response, error) in
+UserAttributeAPI.updateUserAttribute(userid: userid, userattributeid: userattributeid, createPersonalDataFieldRequest: createPersonalDataFieldRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -507,11 +507,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userid** | **String** | The USERID identifier | 
  **userattributeid** | **String** | The USERATTRIBUTEID identifier | 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 

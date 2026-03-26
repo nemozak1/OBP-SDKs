@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,96 +15,96 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv600BackupBankLevelDynamicEntity200Response,
-  OBPv600BackupSystemDynamicEntity200Response,
-  OBPv600CreateBankLevelDynamicEntity200Response,
-  OBPv600CreateSystemDynamicEntity200Response,
-  OBPv600CreateSystemDynamicEntityRequest,
-  OBPv600GetAvailablePersonalDynamicEntities200Response,
-  OBPv600GetBankLevelDynamicEntities200Response,
-  OBPv600GetSystemDynamicEntities200Response,
-  OBPv600UpdateBankLevelDynamicEntity200Response,
-  OBPv600UpdateSystemDynamicEntity200Response,
-  OBPv600UpdateSystemDynamicEntityRequest,
+  BackupBankLevelDynamicEntity200Response,
+  BackupSystemDynamicEntity200Response,
+  CreateBankLevelDynamicEntity200Response,
+  CreateSystemDynamicEntity200Response,
+  CreateSystemDynamicEntityRequest,
+  GetAvailablePersonalDynamicEntities200Response,
+  GetBankLevelDynamicEntities200Response,
+  GetSystemDynamicEntities200Response,
+  UpdateBankLevelDynamicEntity200Response,
+  UpdateSystemDynamicEntity200Response,
+  UpdateSystemDynamicEntityRequest,
 } from '../models/index';
 import {
-    OBPv600BackupBankLevelDynamicEntity200ResponseFromJSON,
-    OBPv600BackupBankLevelDynamicEntity200ResponseToJSON,
-    OBPv600BackupSystemDynamicEntity200ResponseFromJSON,
-    OBPv600BackupSystemDynamicEntity200ResponseToJSON,
-    OBPv600CreateBankLevelDynamicEntity200ResponseFromJSON,
-    OBPv600CreateBankLevelDynamicEntity200ResponseToJSON,
-    OBPv600CreateSystemDynamicEntity200ResponseFromJSON,
-    OBPv600CreateSystemDynamicEntity200ResponseToJSON,
-    OBPv600CreateSystemDynamicEntityRequestFromJSON,
-    OBPv600CreateSystemDynamicEntityRequestToJSON,
-    OBPv600GetAvailablePersonalDynamicEntities200ResponseFromJSON,
-    OBPv600GetAvailablePersonalDynamicEntities200ResponseToJSON,
-    OBPv600GetBankLevelDynamicEntities200ResponseFromJSON,
-    OBPv600GetBankLevelDynamicEntities200ResponseToJSON,
-    OBPv600GetSystemDynamicEntities200ResponseFromJSON,
-    OBPv600GetSystemDynamicEntities200ResponseToJSON,
-    OBPv600UpdateBankLevelDynamicEntity200ResponseFromJSON,
-    OBPv600UpdateBankLevelDynamicEntity200ResponseToJSON,
-    OBPv600UpdateSystemDynamicEntity200ResponseFromJSON,
-    OBPv600UpdateSystemDynamicEntity200ResponseToJSON,
-    OBPv600UpdateSystemDynamicEntityRequestFromJSON,
-    OBPv600UpdateSystemDynamicEntityRequestToJSON,
+    BackupBankLevelDynamicEntity200ResponseFromJSON,
+    BackupBankLevelDynamicEntity200ResponseToJSON,
+    BackupSystemDynamicEntity200ResponseFromJSON,
+    BackupSystemDynamicEntity200ResponseToJSON,
+    CreateBankLevelDynamicEntity200ResponseFromJSON,
+    CreateBankLevelDynamicEntity200ResponseToJSON,
+    CreateSystemDynamicEntity200ResponseFromJSON,
+    CreateSystemDynamicEntity200ResponseToJSON,
+    CreateSystemDynamicEntityRequestFromJSON,
+    CreateSystemDynamicEntityRequestToJSON,
+    GetAvailablePersonalDynamicEntities200ResponseFromJSON,
+    GetAvailablePersonalDynamicEntities200ResponseToJSON,
+    GetBankLevelDynamicEntities200ResponseFromJSON,
+    GetBankLevelDynamicEntities200ResponseToJSON,
+    GetSystemDynamicEntities200ResponseFromJSON,
+    GetSystemDynamicEntities200ResponseToJSON,
+    UpdateBankLevelDynamicEntity200ResponseFromJSON,
+    UpdateBankLevelDynamicEntity200ResponseToJSON,
+    UpdateSystemDynamicEntity200ResponseFromJSON,
+    UpdateSystemDynamicEntity200ResponseToJSON,
+    UpdateSystemDynamicEntityRequestFromJSON,
+    UpdateSystemDynamicEntityRequestToJSON,
 } from '../models/index';
 
-export interface OBPv400DeleteBankLevelDynamicEntityRequest {
+export interface BackupBankLevelDynamicEntityRequest {
     bankid: string;
     dynamicentityid: string;
 }
 
-export interface OBPv400DeleteMyDynamicEntityRequest {
+export interface BackupSystemDynamicEntityRequest {
     dynamicentityid: string;
 }
 
-export interface OBPv400DeleteSystemDynamicEntityRequest {
-    dynamicentityid: string;
+export interface CreateBankLevelDynamicEntityRequest {
+    bankid: string;
+    createSystemDynamicEntityRequest: CreateSystemDynamicEntityRequest;
 }
 
-export interface OBPv600BackupBankLevelDynamicEntityRequest {
+export interface CreateSystemDynamicEntityOperationRequest {
+    createSystemDynamicEntityRequest: CreateSystemDynamicEntityRequest;
+}
+
+export interface DeleteBankLevelDynamicEntityRequest {
     bankid: string;
     dynamicentityid: string;
 }
 
-export interface OBPv600BackupSystemDynamicEntityRequest {
+export interface DeleteMyDynamicEntityRequest {
     dynamicentityid: string;
 }
 
-export interface OBPv600CreateBankLevelDynamicEntityRequest {
-    bankid: string;
-    oBPv600CreateSystemDynamicEntityRequest: OBPv600CreateSystemDynamicEntityRequest;
-}
-
-export interface OBPv600CreateSystemDynamicEntityOperationRequest {
-    oBPv600CreateSystemDynamicEntityRequest: OBPv600CreateSystemDynamicEntityRequest;
-}
-
-export interface OBPv600DeleteSystemDynamicEntityCascadeRequest {
+export interface DeleteSystemDynamicEntityRequest {
     dynamicentityid: string;
 }
 
-export interface OBPv600GetBankLevelDynamicEntitiesRequest {
+export interface DeleteSystemDynamicEntityCascadeRequest {
+    dynamicentityid: string;
+}
+
+export interface GetBankLevelDynamicEntitiesRequest {
     bankid: string;
 }
 
-export interface OBPv600UpdateBankLevelDynamicEntityRequest {
+export interface UpdateBankLevelDynamicEntityRequest {
     bankid: string;
     dynamicentityid: string;
-    oBPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest;
+    updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest;
 }
 
-export interface OBPv600UpdateMyDynamicEntityRequest {
+export interface UpdateMyDynamicEntityRequest {
     dynamicentityid: string;
-    oBPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest;
+    updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest;
 }
 
-export interface OBPv600UpdateSystemDynamicEntityOperationRequest {
+export interface UpdateSystemDynamicEntityOperationRequest {
     dynamicentityid: string;
-    oBPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest;
+    updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest;
 }
 
 /**
@@ -113,20 +113,20 @@ export interface OBPv600UpdateSystemDynamicEntityOperationRequest {
 export class DynamicEntityManageApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv400DeleteBankLevelDynamicEntity without sending the request
+     * Creates request options for backupBankLevelDynamicEntity without sending the request
      */
-    async oBPv400DeleteBankLevelDynamicEntityRequestOpts(requestParameters: OBPv400DeleteBankLevelDynamicEntityRequest): Promise<runtime.RequestOpts> {
+    async backupBankLevelDynamicEntityRequestOpts(requestParameters: BackupBankLevelDynamicEntityRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400DeleteBankLevelDynamicEntity().'
+                'Required parameter "bankid" was null or undefined when calling backupBankLevelDynamicEntity().'
             );
         }
 
         if (requestParameters['dynamicentityid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicentityid',
-                'Required parameter "dynamicentityid" was null or undefined when calling oBPv400DeleteBankLevelDynamicEntity().'
+                'Required parameter "dynamicentityid" was null or undefined when calling backupBankLevelDynamicEntity().'
             );
         }
 
@@ -144,192 +144,7 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"dynamicentityid"}}`, encodeURIComponent(String(requestParameters['dynamicentityid'])));
-
-        return {
-            path: urlPath,
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-     * Delete Bank Level Dynamic Entity
-     */
-    async oBPv400DeleteBankLevelDynamicEntityRaw(requestParameters: OBPv400DeleteBankLevelDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteBankLevelDynamicEntityRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * <p>Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-     * Delete Bank Level Dynamic Entity
-     */
-    async oBPv400DeleteBankLevelDynamicEntity(requestParameters: OBPv400DeleteBankLevelDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteBankLevelDynamicEntityRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for oBPv400DeleteMyDynamicEntity without sending the request
-     */
-    async oBPv400DeleteMyDynamicEntityRequestOpts(requestParameters: OBPv400DeleteMyDynamicEntityRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['dynamicentityid'] == null) {
-            throw new runtime.RequiredError(
-                'dynamicentityid',
-                'Required parameter "dynamicentityid" was null or undefined when calling oBPv400DeleteMyDynamicEntity().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/my/dynamic-entities/{dynamicentityid}`;
-        urlPath = urlPath.replace(`{${"dynamicentityid"}}`, encodeURIComponent(String(requestParameters['dynamicentityid'])));
-
-        return {
-            path: urlPath,
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Delete my DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-     * Delete My Dynamic Entity
-     */
-    async oBPv400DeleteMyDynamicEntityRaw(requestParameters: OBPv400DeleteMyDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteMyDynamicEntityRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * <p>Delete my DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-     * Delete My Dynamic Entity
-     */
-    async oBPv400DeleteMyDynamicEntity(requestParameters: OBPv400DeleteMyDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteMyDynamicEntityRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for oBPv400DeleteSystemDynamicEntity without sending the request
-     */
-    async oBPv400DeleteSystemDynamicEntityRequestOpts(requestParameters: OBPv400DeleteSystemDynamicEntityRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['dynamicentityid'] == null) {
-            throw new runtime.RequiredError(
-                'dynamicentityid',
-                'Required parameter "dynamicentityid" was null or undefined when calling oBPv400DeleteSystemDynamicEntity().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid}`;
-        urlPath = urlPath.replace(`{${"dynamicentityid"}}`, encodeURIComponent(String(requestParameters['dynamicentityid'])));
-
-        return {
-            path: urlPath,
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-     * Delete System Level Dynamic Entity
-     */
-    async oBPv400DeleteSystemDynamicEntityRaw(requestParameters: OBPv400DeleteSystemDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteSystemDynamicEntityRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * <p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-     * Delete System Level Dynamic Entity
-     */
-    async oBPv400DeleteSystemDynamicEntity(requestParameters: OBPv400DeleteSystemDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteSystemDynamicEntityRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for oBPv600BackupBankLevelDynamicEntity without sending the request
-     */
-    async oBPv600BackupBankLevelDynamicEntityRequestOpts(requestParameters: OBPv600BackupBankLevelDynamicEntityRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv600BackupBankLevelDynamicEntity().'
-            );
-        }
-
-        if (requestParameters['dynamicentityid'] == null) {
-            throw new runtime.RequiredError(
-                'dynamicentityid',
-                'Required parameter "dynamicentityid" was null or undefined when calling oBPv600BackupBankLevelDynamicEntity().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -349,30 +164,30 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
      * <p>Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Backup Bank Level Dynamic Entity
      */
-    async oBPv600BackupBankLevelDynamicEntityRaw(requestParameters: OBPv600BackupBankLevelDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600BackupBankLevelDynamicEntity200Response>> {
-        const requestOptions = await this.oBPv600BackupBankLevelDynamicEntityRequestOpts(requestParameters);
+    async backupBankLevelDynamicEntityRaw(requestParameters: BackupBankLevelDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BackupBankLevelDynamicEntity200Response>> {
+        const requestOptions = await this.backupBankLevelDynamicEntityRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600BackupBankLevelDynamicEntity200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => BackupBankLevelDynamicEntity200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Backup Bank Level Dynamic Entity
      */
-    async oBPv600BackupBankLevelDynamicEntity(requestParameters: OBPv600BackupBankLevelDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600BackupBankLevelDynamicEntity200Response> {
-        const response = await this.oBPv600BackupBankLevelDynamicEntityRaw(requestParameters, initOverrides);
+    async backupBankLevelDynamicEntity(requestParameters: BackupBankLevelDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BackupBankLevelDynamicEntity200Response> {
+        const response = await this.backupBankLevelDynamicEntityRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600BackupSystemDynamicEntity without sending the request
+     * Creates request options for backupSystemDynamicEntity without sending the request
      */
-    async oBPv600BackupSystemDynamicEntityRequestOpts(requestParameters: OBPv600BackupSystemDynamicEntityRequest): Promise<runtime.RequestOpts> {
+    async backupSystemDynamicEntityRequestOpts(requestParameters: BackupSystemDynamicEntityRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['dynamicentityid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicentityid',
-                'Required parameter "dynamicentityid" was null or undefined when calling oBPv600BackupSystemDynamicEntity().'
+                'Required parameter "dynamicentityid" was null or undefined when calling backupSystemDynamicEntity().'
             );
         }
 
@@ -390,7 +205,7 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -409,37 +224,37 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
      * <p>Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Backup System Level Dynamic Entity
      */
-    async oBPv600BackupSystemDynamicEntityRaw(requestParameters: OBPv600BackupSystemDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600BackupSystemDynamicEntity200Response>> {
-        const requestOptions = await this.oBPv600BackupSystemDynamicEntityRequestOpts(requestParameters);
+    async backupSystemDynamicEntityRaw(requestParameters: BackupSystemDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BackupSystemDynamicEntity200Response>> {
+        const requestOptions = await this.backupSystemDynamicEntityRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600BackupSystemDynamicEntity200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => BackupSystemDynamicEntity200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Backup System Level Dynamic Entity
      */
-    async oBPv600BackupSystemDynamicEntity(requestParameters: OBPv600BackupSystemDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600BackupSystemDynamicEntity200Response> {
-        const response = await this.oBPv600BackupSystemDynamicEntityRaw(requestParameters, initOverrides);
+    async backupSystemDynamicEntity(requestParameters: BackupSystemDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BackupSystemDynamicEntity200Response> {
+        const response = await this.backupSystemDynamicEntityRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600CreateBankLevelDynamicEntity without sending the request
+     * Creates request options for createBankLevelDynamicEntity without sending the request
      */
-    async oBPv600CreateBankLevelDynamicEntityRequestOpts(requestParameters: OBPv600CreateBankLevelDynamicEntityRequest): Promise<runtime.RequestOpts> {
+    async createBankLevelDynamicEntityRequestOpts(requestParameters: CreateBankLevelDynamicEntityRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv600CreateBankLevelDynamicEntity().'
+                'Required parameter "bankid" was null or undefined when calling createBankLevelDynamicEntity().'
             );
         }
 
-        if (requestParameters['oBPv600CreateSystemDynamicEntityRequest'] == null) {
+        if (requestParameters['createSystemDynamicEntityRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600CreateSystemDynamicEntityRequest',
-                'Required parameter "oBPv600CreateSystemDynamicEntityRequest" was null or undefined when calling oBPv600CreateBankLevelDynamicEntity().'
+                'createSystemDynamicEntityRequest',
+                'Required parameter "createSystemDynamicEntityRequest" was null or undefined when calling createBankLevelDynamicEntity().'
             );
         }
 
@@ -459,7 +274,7 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -471,7 +286,7 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600CreateSystemDynamicEntityRequestToJSON(requestParameters['oBPv600CreateSystemDynamicEntityRequest']),
+            body: CreateSystemDynamicEntityRequestToJSON(requestParameters['createSystemDynamicEntityRequest']),
         };
     }
 
@@ -479,30 +294,30 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
      * <p>Create a bank level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Create Bank Level Dynamic Entity
      */
-    async oBPv600CreateBankLevelDynamicEntityRaw(requestParameters: OBPv600CreateBankLevelDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600CreateBankLevelDynamicEntity200Response>> {
-        const requestOptions = await this.oBPv600CreateBankLevelDynamicEntityRequestOpts(requestParameters);
+    async createBankLevelDynamicEntityRaw(requestParameters: CreateBankLevelDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CreateBankLevelDynamicEntity200Response>> {
+        const requestOptions = await this.createBankLevelDynamicEntityRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600CreateBankLevelDynamicEntity200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateBankLevelDynamicEntity200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Create a bank level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Create Bank Level Dynamic Entity
      */
-    async oBPv600CreateBankLevelDynamicEntity(requestParameters: OBPv600CreateBankLevelDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600CreateBankLevelDynamicEntity200Response> {
-        const response = await this.oBPv600CreateBankLevelDynamicEntityRaw(requestParameters, initOverrides);
+    async createBankLevelDynamicEntity(requestParameters: CreateBankLevelDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CreateBankLevelDynamicEntity200Response> {
+        const response = await this.createBankLevelDynamicEntityRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600CreateSystemDynamicEntity without sending the request
+     * Creates request options for createSystemDynamicEntity without sending the request
      */
-    async oBPv600CreateSystemDynamicEntityRequestOpts(requestParameters: OBPv600CreateSystemDynamicEntityOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['oBPv600CreateSystemDynamicEntityRequest'] == null) {
+    async createSystemDynamicEntityRequestOpts(requestParameters: CreateSystemDynamicEntityOperationRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['createSystemDynamicEntityRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600CreateSystemDynamicEntityRequest',
-                'Required parameter "oBPv600CreateSystemDynamicEntityRequest" was null or undefined when calling oBPv600CreateSystemDynamicEntity().'
+                'createSystemDynamicEntityRequest',
+                'Required parameter "createSystemDynamicEntityRequest" was null or undefined when calling createSystemDynamicEntity().'
             );
         }
 
@@ -522,7 +337,7 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -533,38 +348,45 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600CreateSystemDynamicEntityRequestToJSON(requestParameters['oBPv600CreateSystemDynamicEntityRequest']),
+            body: CreateSystemDynamicEntityRequestToJSON(requestParameters['createSystemDynamicEntityRequest']),
         };
     }
 
     /**
-     * <p>Create a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+     * <p>Create a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> 
      * Create System Level Dynamic Entity
      */
-    async oBPv600CreateSystemDynamicEntityRaw(requestParameters: OBPv600CreateSystemDynamicEntityOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600CreateSystemDynamicEntity200Response>> {
-        const requestOptions = await this.oBPv600CreateSystemDynamicEntityRequestOpts(requestParameters);
+    async createSystemDynamicEntityRaw(requestParameters: CreateSystemDynamicEntityOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CreateSystemDynamicEntity200Response>> {
+        const requestOptions = await this.createSystemDynamicEntityRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600CreateSystemDynamicEntity200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateSystemDynamicEntity200ResponseFromJSON(jsonValue));
     }
 
     /**
-     * <p>Create a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+     * <p>Create a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> 
      * Create System Level Dynamic Entity
      */
-    async oBPv600CreateSystemDynamicEntity(requestParameters: OBPv600CreateSystemDynamicEntityOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600CreateSystemDynamicEntity200Response> {
-        const response = await this.oBPv600CreateSystemDynamicEntityRaw(requestParameters, initOverrides);
+    async createSystemDynamicEntity(requestParameters: CreateSystemDynamicEntityOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CreateSystemDynamicEntity200Response> {
+        const response = await this.createSystemDynamicEntityRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600DeleteSystemDynamicEntityCascade without sending the request
+     * Creates request options for deleteBankLevelDynamicEntity without sending the request
      */
-    async oBPv600DeleteSystemDynamicEntityCascadeRequestOpts(requestParameters: OBPv600DeleteSystemDynamicEntityCascadeRequest): Promise<runtime.RequestOpts> {
+    async deleteBankLevelDynamicEntityRequestOpts(requestParameters: DeleteBankLevelDynamicEntityRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling deleteBankLevelDynamicEntity().'
+            );
+        }
+
         if (requestParameters['dynamicentityid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicentityid',
-                'Required parameter "dynamicentityid" was null or undefined when calling oBPv600DeleteSystemDynamicEntityCascade().'
+                'Required parameter "dynamicentityid" was null or undefined when calling deleteBankLevelDynamicEntity().'
             );
         }
 
@@ -582,7 +404,185 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"dynamicentityid"}}`, encodeURIComponent(String(requestParameters['dynamicentityid'])));
+
+        return {
+            path: urlPath,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+     * Delete Bank Level Dynamic Entity
+     */
+    async deleteBankLevelDynamicEntityRaw(requestParameters: DeleteBankLevelDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteBankLevelDynamicEntityRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * <p>Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+     * Delete Bank Level Dynamic Entity
+     */
+    async deleteBankLevelDynamicEntity(requestParameters: DeleteBankLevelDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteBankLevelDynamicEntityRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Creates request options for deleteMyDynamicEntity without sending the request
+     */
+    async deleteMyDynamicEntityRequestOpts(requestParameters: DeleteMyDynamicEntityRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['dynamicentityid'] == null) {
+            throw new runtime.RequiredError(
+                'dynamicentityid',
+                'Required parameter "dynamicentityid" was null or undefined when calling deleteMyDynamicEntity().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/my/dynamic-entities/{dynamicentityid}`;
+        urlPath = urlPath.replace(`{${"dynamicentityid"}}`, encodeURIComponent(String(requestParameters['dynamicentityid'])));
+
+        return {
+            path: urlPath,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Delete my DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+     * Delete My Dynamic Entity
+     */
+    async deleteMyDynamicEntityRaw(requestParameters: DeleteMyDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteMyDynamicEntityRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * <p>Delete my DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+     * Delete My Dynamic Entity
+     */
+    async deleteMyDynamicEntity(requestParameters: DeleteMyDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteMyDynamicEntityRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Creates request options for deleteSystemDynamicEntity without sending the request
+     */
+    async deleteSystemDynamicEntityRequestOpts(requestParameters: DeleteSystemDynamicEntityRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['dynamicentityid'] == null) {
+            throw new runtime.RequiredError(
+                'dynamicentityid',
+                'Required parameter "dynamicentityid" was null or undefined when calling deleteSystemDynamicEntity().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid}`;
+        urlPath = urlPath.replace(`{${"dynamicentityid"}}`, encodeURIComponent(String(requestParameters['dynamicentityid'])));
+
+        return {
+            path: urlPath,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+     * Delete System Level Dynamic Entity
+     */
+    async deleteSystemDynamicEntityRaw(requestParameters: DeleteSystemDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteSystemDynamicEntityRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * <p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+     * Delete System Level Dynamic Entity
+     */
+    async deleteSystemDynamicEntity(requestParameters: DeleteSystemDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteSystemDynamicEntityRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Creates request options for deleteSystemDynamicEntityCascade without sending the request
+     */
+    async deleteSystemDynamicEntityCascadeRequestOpts(requestParameters: DeleteSystemDynamicEntityCascadeRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['dynamicentityid'] == null) {
+            throw new runtime.RequiredError(
+                'dynamicentityid',
+                'Required parameter "dynamicentityid" was null or undefined when calling deleteSystemDynamicEntityCascade().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -601,8 +601,8 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
      * <p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID and all its data records.</p> <p>This endpoint performs a cascade delete:<br /> 1. Automatically backs up the entity definition and all data records to a ZZ_BAK_ prefixed entity (e.g. my_entity is backed up to ZZ_BAK_my_entity). If a previous ZZ_BAK_ backup exists, it is overwritten.<br /> 2. Deletes all data records associated with the dynamic entity<br /> 3. Deletes the dynamic entity definition itself</p> <p>Note: Entities whose name already starts with ZZ_BAK_ are not backed up again (to avoid infinite backup chains).</p> <p>This operation is only allowed for non-personal entities (hasPersonalEntity=false).<br /> For personal entities (hasPersonalEntity=true), you must delete the records and definition separately.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Delete System Level Dynamic Entity Cascade
      */
-    async oBPv600DeleteSystemDynamicEntityCascadeRaw(requestParameters: OBPv600DeleteSystemDynamicEntityCascadeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv600DeleteSystemDynamicEntityCascadeRequestOpts(requestParameters);
+    async deleteSystemDynamicEntityCascadeRaw(requestParameters: DeleteSystemDynamicEntityCascadeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteSystemDynamicEntityCascadeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -612,18 +612,18 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
      * <p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID and all its data records.</p> <p>This endpoint performs a cascade delete:<br /> 1. Automatically backs up the entity definition and all data records to a ZZ_BAK_ prefixed entity (e.g. my_entity is backed up to ZZ_BAK_my_entity). If a previous ZZ_BAK_ backup exists, it is overwritten.<br /> 2. Deletes all data records associated with the dynamic entity<br /> 3. Deletes the dynamic entity definition itself</p> <p>Note: Entities whose name already starts with ZZ_BAK_ are not backed up again (to avoid infinite backup chains).</p> <p>This operation is only allowed for non-personal entities (hasPersonalEntity=false).<br /> For personal entities (hasPersonalEntity=true), you must delete the records and definition separately.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Delete System Level Dynamic Entity Cascade
      */
-    async oBPv600DeleteSystemDynamicEntityCascade(requestParameters: OBPv600DeleteSystemDynamicEntityCascadeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv600DeleteSystemDynamicEntityCascadeRaw(requestParameters, initOverrides);
+    async deleteSystemDynamicEntityCascade(requestParameters: DeleteSystemDynamicEntityCascadeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteSystemDynamicEntityCascadeRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv600GetBankLevelDynamicEntities without sending the request
+     * Creates request options for getBankLevelDynamicEntities without sending the request
      */
-    async oBPv600GetBankLevelDynamicEntitiesRequestOpts(requestParameters: OBPv600GetBankLevelDynamicEntitiesRequest): Promise<runtime.RequestOpts> {
+    async getBankLevelDynamicEntitiesRequestOpts(requestParameters: GetBankLevelDynamicEntitiesRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv600GetBankLevelDynamicEntities().'
+                'Required parameter "bankid" was null or undefined when calling getBankLevelDynamicEntities().'
             );
         }
 
@@ -641,7 +641,7 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -660,26 +660,26 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
      * <p>Get all Bank Level Dynamic Entities for one bank with record counts.</p> <p>Each dynamic entity in the response includes a <code>record_count</code> field showing how many data records exist for that entity.</p> <p>This v6.0.0 endpoint returns snake_case field names and an explicit <code>entity_name</code> field.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Get Bank Level Dynamic Entities
      */
-    async oBPv600GetBankLevelDynamicEntitiesRaw(requestParameters: OBPv600GetBankLevelDynamicEntitiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetBankLevelDynamicEntities200Response>> {
-        const requestOptions = await this.oBPv600GetBankLevelDynamicEntitiesRequestOpts(requestParameters);
+    async getBankLevelDynamicEntitiesRaw(requestParameters: GetBankLevelDynamicEntitiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetBankLevelDynamicEntities200Response>> {
+        const requestOptions = await this.getBankLevelDynamicEntitiesRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetBankLevelDynamicEntities200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetBankLevelDynamicEntities200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all Bank Level Dynamic Entities for one bank with record counts.</p> <p>Each dynamic entity in the response includes a <code>record_count</code> field showing how many data records exist for that entity.</p> <p>This v6.0.0 endpoint returns snake_case field names and an explicit <code>entity_name</code> field.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Get Bank Level Dynamic Entities
      */
-    async oBPv600GetBankLevelDynamicEntities(requestParameters: OBPv600GetBankLevelDynamicEntitiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetBankLevelDynamicEntities200Response> {
-        const response = await this.oBPv600GetBankLevelDynamicEntitiesRaw(requestParameters, initOverrides);
+    async getBankLevelDynamicEntities(requestParameters: GetBankLevelDynamicEntitiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetBankLevelDynamicEntities200Response> {
+        const response = await this.getBankLevelDynamicEntitiesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetMyDynamicEntities without sending the request
+     * Creates request options for getMyDynamicEntities without sending the request
      */
-    async oBPv600GetMyDynamicEntitiesRequestOpts(): Promise<runtime.RequestOpts> {
+    async getMyDynamicEntitiesRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -694,7 +694,7 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -712,26 +712,26 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
      * <p>Get all Dynamic Entity definitions I created.</p> <p>This v6.0.0 endpoint returns a cleaner response format with:<br /> * snake_case field names (dynamic_entity_id, user_id, bank_id, has_personal_entity)<br /> * An explicit entity_name field instead of using the entity name as a dynamic JSON key<br /> * The entity schema in a separate definition object</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Get My Dynamic Entities
      */
-    async oBPv600GetMyDynamicEntitiesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response>> {
-        const requestOptions = await this.oBPv600GetMyDynamicEntitiesRequestOpts();
+    async getMyDynamicEntitiesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAvailablePersonalDynamicEntities200Response>> {
+        const requestOptions = await this.getMyDynamicEntitiesRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetAvailablePersonalDynamicEntities200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAvailablePersonalDynamicEntities200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all Dynamic Entity definitions I created.</p> <p>This v6.0.0 endpoint returns a cleaner response format with:<br /> * snake_case field names (dynamic_entity_id, user_id, bank_id, has_personal_entity)<br /> * An explicit entity_name field instead of using the entity name as a dynamic JSON key<br /> * The entity schema in a separate definition object</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Get My Dynamic Entities
      */
-    async oBPv600GetMyDynamicEntities(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetAvailablePersonalDynamicEntities200Response> {
-        const response = await this.oBPv600GetMyDynamicEntitiesRaw(initOverrides);
+    async getMyDynamicEntities(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAvailablePersonalDynamicEntities200Response> {
+        const response = await this.getMyDynamicEntitiesRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetSystemDynamicEntities without sending the request
+     * Creates request options for getSystemDynamicEntities without sending the request
      */
-    async oBPv600GetSystemDynamicEntitiesRequestOpts(): Promise<runtime.RequestOpts> {
+    async getSystemDynamicEntitiesRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -746,7 +746,7 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -764,44 +764,44 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
      * <p>Get all System Dynamic Entities with record counts.</p> <p>Each dynamic entity in the response includes a <code>record_count</code> field showing how many data records exist for that entity.</p> <p>This v6.0.0 endpoint returns snake_case field names and an explicit <code>entity_name</code> field.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Get System Dynamic Entities
      */
-    async oBPv600GetSystemDynamicEntitiesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetSystemDynamicEntities200Response>> {
-        const requestOptions = await this.oBPv600GetSystemDynamicEntitiesRequestOpts();
+    async getSystemDynamicEntitiesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetSystemDynamicEntities200Response>> {
+        const requestOptions = await this.getSystemDynamicEntitiesRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetSystemDynamicEntities200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetSystemDynamicEntities200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all System Dynamic Entities with record counts.</p> <p>Each dynamic entity in the response includes a <code>record_count</code> field showing how many data records exist for that entity.</p> <p>This v6.0.0 endpoint returns snake_case field names and an explicit <code>entity_name</code> field.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Get System Dynamic Entities
      */
-    async oBPv600GetSystemDynamicEntities(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetSystemDynamicEntities200Response> {
-        const response = await this.oBPv600GetSystemDynamicEntitiesRaw(initOverrides);
+    async getSystemDynamicEntities(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetSystemDynamicEntities200Response> {
+        const response = await this.getSystemDynamicEntitiesRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600UpdateBankLevelDynamicEntity without sending the request
+     * Creates request options for updateBankLevelDynamicEntity without sending the request
      */
-    async oBPv600UpdateBankLevelDynamicEntityRequestOpts(requestParameters: OBPv600UpdateBankLevelDynamicEntityRequest): Promise<runtime.RequestOpts> {
+    async updateBankLevelDynamicEntityRequestOpts(requestParameters: UpdateBankLevelDynamicEntityRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv600UpdateBankLevelDynamicEntity().'
+                'Required parameter "bankid" was null or undefined when calling updateBankLevelDynamicEntity().'
             );
         }
 
         if (requestParameters['dynamicentityid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicentityid',
-                'Required parameter "dynamicentityid" was null or undefined when calling oBPv600UpdateBankLevelDynamicEntity().'
+                'Required parameter "dynamicentityid" was null or undefined when calling updateBankLevelDynamicEntity().'
             );
         }
 
-        if (requestParameters['oBPv600UpdateSystemDynamicEntityRequest'] == null) {
+        if (requestParameters['updateSystemDynamicEntityRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600UpdateSystemDynamicEntityRequest',
-                'Required parameter "oBPv600UpdateSystemDynamicEntityRequest" was null or undefined when calling oBPv600UpdateBankLevelDynamicEntity().'
+                'updateSystemDynamicEntityRequest',
+                'Required parameter "updateSystemDynamicEntityRequest" was null or undefined when calling updateBankLevelDynamicEntity().'
             );
         }
 
@@ -821,7 +821,7 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -834,7 +834,7 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600UpdateSystemDynamicEntityRequestToJSON(requestParameters['oBPv600UpdateSystemDynamicEntityRequest']),
+            body: UpdateSystemDynamicEntityRequestToJSON(requestParameters['updateSystemDynamicEntityRequest']),
         };
     }
 
@@ -842,37 +842,37 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
      * <p>Update a bank level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences updated&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;},       &quot;notifications_enabled&quot;: {&quot;type&quot;: &quot;boolean&quot;, &quot;example&quot;: &quot;true&quot;, &quot;description&quot;: &quot;Whether to send notifications&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Update Bank Level Dynamic Entity
      */
-    async oBPv600UpdateBankLevelDynamicEntityRaw(requestParameters: OBPv600UpdateBankLevelDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600UpdateBankLevelDynamicEntity200Response>> {
-        const requestOptions = await this.oBPv600UpdateBankLevelDynamicEntityRequestOpts(requestParameters);
+    async updateBankLevelDynamicEntityRaw(requestParameters: UpdateBankLevelDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateBankLevelDynamicEntity200Response>> {
+        const requestOptions = await this.updateBankLevelDynamicEntityRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600UpdateBankLevelDynamicEntity200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateBankLevelDynamicEntity200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Update a bank level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences updated&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;},       &quot;notifications_enabled&quot;: {&quot;type&quot;: &quot;boolean&quot;, &quot;example&quot;: &quot;true&quot;, &quot;description&quot;: &quot;Whether to send notifications&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Update Bank Level Dynamic Entity
      */
-    async oBPv600UpdateBankLevelDynamicEntity(requestParameters: OBPv600UpdateBankLevelDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600UpdateBankLevelDynamicEntity200Response> {
-        const response = await this.oBPv600UpdateBankLevelDynamicEntityRaw(requestParameters, initOverrides);
+    async updateBankLevelDynamicEntity(requestParameters: UpdateBankLevelDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateBankLevelDynamicEntity200Response> {
+        const response = await this.updateBankLevelDynamicEntityRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600UpdateMyDynamicEntity without sending the request
+     * Creates request options for updateMyDynamicEntity without sending the request
      */
-    async oBPv600UpdateMyDynamicEntityRequestOpts(requestParameters: OBPv600UpdateMyDynamicEntityRequest): Promise<runtime.RequestOpts> {
+    async updateMyDynamicEntityRequestOpts(requestParameters: UpdateMyDynamicEntityRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['dynamicentityid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicentityid',
-                'Required parameter "dynamicentityid" was null or undefined when calling oBPv600UpdateMyDynamicEntity().'
+                'Required parameter "dynamicentityid" was null or undefined when calling updateMyDynamicEntity().'
             );
         }
 
-        if (requestParameters['oBPv600UpdateSystemDynamicEntityRequest'] == null) {
+        if (requestParameters['updateSystemDynamicEntityRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600UpdateSystemDynamicEntityRequest',
-                'Required parameter "oBPv600UpdateSystemDynamicEntityRequest" was null or undefined when calling oBPv600UpdateMyDynamicEntity().'
+                'updateSystemDynamicEntityRequest',
+                'Required parameter "updateSystemDynamicEntityRequest" was null or undefined when calling updateMyDynamicEntity().'
             );
         }
 
@@ -892,7 +892,7 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -904,7 +904,7 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600UpdateSystemDynamicEntityRequestToJSON(requestParameters['oBPv600UpdateSystemDynamicEntityRequest']),
+            body: UpdateSystemDynamicEntityRequestToJSON(requestParameters['updateSystemDynamicEntityRequest']),
         };
     }
 
@@ -912,37 +912,37 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
      * <p>Update a Dynamic Entity that I created.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences updated&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;},       &quot;notifications_enabled&quot;: {&quot;type&quot;: &quot;boolean&quot;, &quot;example&quot;: &quot;true&quot;, &quot;description&quot;: &quot;Whether to send notifications&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Update My Dynamic Entity
      */
-    async oBPv600UpdateMyDynamicEntityRaw(requestParameters: OBPv600UpdateMyDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600UpdateSystemDynamicEntity200Response>> {
-        const requestOptions = await this.oBPv600UpdateMyDynamicEntityRequestOpts(requestParameters);
+    async updateMyDynamicEntityRaw(requestParameters: UpdateMyDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateSystemDynamicEntity200Response>> {
+        const requestOptions = await this.updateMyDynamicEntityRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600UpdateSystemDynamicEntity200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateSystemDynamicEntity200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Update a Dynamic Entity that I created.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences updated&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;},       &quot;notifications_enabled&quot;: {&quot;type&quot;: &quot;boolean&quot;, &quot;example&quot;: &quot;true&quot;, &quot;description&quot;: &quot;Whether to send notifications&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Update My Dynamic Entity
      */
-    async oBPv600UpdateMyDynamicEntity(requestParameters: OBPv600UpdateMyDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600UpdateSystemDynamicEntity200Response> {
-        const response = await this.oBPv600UpdateMyDynamicEntityRaw(requestParameters, initOverrides);
+    async updateMyDynamicEntity(requestParameters: UpdateMyDynamicEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateSystemDynamicEntity200Response> {
+        const response = await this.updateMyDynamicEntityRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600UpdateSystemDynamicEntity without sending the request
+     * Creates request options for updateSystemDynamicEntity without sending the request
      */
-    async oBPv600UpdateSystemDynamicEntityRequestOpts(requestParameters: OBPv600UpdateSystemDynamicEntityOperationRequest): Promise<runtime.RequestOpts> {
+    async updateSystemDynamicEntityRequestOpts(requestParameters: UpdateSystemDynamicEntityOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['dynamicentityid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicentityid',
-                'Required parameter "dynamicentityid" was null or undefined when calling oBPv600UpdateSystemDynamicEntity().'
+                'Required parameter "dynamicentityid" was null or undefined when calling updateSystemDynamicEntity().'
             );
         }
 
-        if (requestParameters['oBPv600UpdateSystemDynamicEntityRequest'] == null) {
+        if (requestParameters['updateSystemDynamicEntityRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600UpdateSystemDynamicEntityRequest',
-                'Required parameter "oBPv600UpdateSystemDynamicEntityRequest" was null or undefined when calling oBPv600UpdateSystemDynamicEntity().'
+                'updateSystemDynamicEntityRequest',
+                'Required parameter "updateSystemDynamicEntityRequest" was null or undefined when calling updateSystemDynamicEntity().'
             );
         }
 
@@ -962,7 +962,7 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -974,7 +974,7 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600UpdateSystemDynamicEntityRequestToJSON(requestParameters['oBPv600UpdateSystemDynamicEntityRequest']),
+            body: UpdateSystemDynamicEntityRequestToJSON(requestParameters['updateSystemDynamicEntityRequest']),
         };
     }
 
@@ -982,19 +982,19 @@ export class DynamicEntityManageApi extends runtime.BaseAPI {
      * <p>Update a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences updated&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;},       &quot;notifications_enabled&quot;: {&quot;type&quot;: &quot;boolean&quot;, &quot;example&quot;: &quot;true&quot;, &quot;description&quot;: &quot;Whether to send notifications&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Update System Level Dynamic Entity
      */
-    async oBPv600UpdateSystemDynamicEntityRaw(requestParameters: OBPv600UpdateSystemDynamicEntityOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600UpdateSystemDynamicEntity200Response>> {
-        const requestOptions = await this.oBPv600UpdateSystemDynamicEntityRequestOpts(requestParameters);
+    async updateSystemDynamicEntityRaw(requestParameters: UpdateSystemDynamicEntityOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateSystemDynamicEntity200Response>> {
+        const requestOptions = await this.updateSystemDynamicEntityRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600UpdateSystemDynamicEntity200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateSystemDynamicEntity200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Update a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences updated&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;},       &quot;notifications_enabled&quot;: {&quot;type&quot;: &quot;boolean&quot;, &quot;example&quot;: &quot;true&quot;, &quot;description&quot;: &quot;Whether to send notifications&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Update System Level Dynamic Entity
      */
-    async oBPv600UpdateSystemDynamicEntity(requestParameters: OBPv600UpdateSystemDynamicEntityOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600UpdateSystemDynamicEntity200Response> {
-        const response = await this.oBPv600UpdateSystemDynamicEntityRaw(requestParameters, initOverrides);
+    async updateSystemDynamicEntity(requestParameters: UpdateSystemDynamicEntityOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateSystemDynamicEntity200Response> {
+        const response = await this.updateSystemDynamicEntityRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,34 +24,34 @@ import (
 // CounterpartyLimitsAPIService CounterpartyLimitsAPI service
 type CounterpartyLimitsAPIService service
 
-type ApiOBPv510CreateCounterpartyLimitRequest struct {
+type ApiCreateCounterpartyLimitRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyLimitsAPIService
 	bankid string
 	accountid string
 	viewid string
 	counterpartyid string
-	oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit *OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit
+	createVRPConsentRequestRequestToAccountLimit *CreateVRPConsentRequestRequestToAccountLimit
 }
 
 // Request body
-func (r ApiOBPv510CreateCounterpartyLimitRequest) OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit(oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit) ApiOBPv510CreateCounterpartyLimitRequest {
-	r.oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit = &oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit
+func (r ApiCreateCounterpartyLimitRequest) CreateVRPConsentRequestRequestToAccountLimit(createVRPConsentRequestRequestToAccountLimit CreateVRPConsentRequestRequestToAccountLimit) ApiCreateCounterpartyLimitRequest {
+	r.createVRPConsentRequestRequestToAccountLimit = &createVRPConsentRequestRequestToAccountLimit
 	return r
 }
 
-func (r ApiOBPv510CreateCounterpartyLimitRequest) Execute() (*OBPv510GetCounterpartyLimit200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateCounterpartyLimitExecute(r)
+func (r ApiCreateCounterpartyLimitRequest) Execute() (*GetCounterpartyLimit200Response, *http.Response, error) {
+	return r.ApiService.CreateCounterpartyLimitExecute(r)
 }
 
 /*
-OBPv510CreateCounterpartyLimit Create Counterparty Limit
+CreateCounterpartyLimit Create Counterparty Limit
 
 <p>Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.</p>
 <p>Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).</p>
 <p>For more information on Counterparty Limits, see <a href="/glossary#Counterparty-Limits">here</a></p>
 <p>For an introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
-<p>You can automate the process of creating counterparty limits and consents for VRP with this <a href="https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest">endpoint</a>.</p>
+<p>You can automate the process of creating counterparty limits and consents for VRP with this <a href="http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest">endpoint</a>.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
@@ -88,10 +88,10 @@ OBPv510CreateCounterpartyLimit Create Counterparty Limit
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param counterpartyid The COUNTERPARTYID identifier
- @return ApiOBPv510CreateCounterpartyLimitRequest
+ @return ApiCreateCounterpartyLimitRequest
 */
-func (a *CounterpartyLimitsAPIService) OBPv510CreateCounterpartyLimit(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiOBPv510CreateCounterpartyLimitRequest {
-	return ApiOBPv510CreateCounterpartyLimitRequest{
+func (a *CounterpartyLimitsAPIService) CreateCounterpartyLimit(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiCreateCounterpartyLimitRequest {
+	return ApiCreateCounterpartyLimitRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -102,16 +102,16 @@ func (a *CounterpartyLimitsAPIService) OBPv510CreateCounterpartyLimit(ctx contex
 }
 
 // Execute executes the request
-//  @return OBPv510GetCounterpartyLimit200Response
-func (a *CounterpartyLimitsAPIService) OBPv510CreateCounterpartyLimitExecute(r ApiOBPv510CreateCounterpartyLimitRequest) (*OBPv510GetCounterpartyLimit200Response, *http.Response, error) {
+//  @return GetCounterpartyLimit200Response
+func (a *CounterpartyLimitsAPIService) CreateCounterpartyLimitExecute(r ApiCreateCounterpartyLimitRequest) (*GetCounterpartyLimit200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetCounterpartyLimit200Response
+		localVarReturnValue  *GetCounterpartyLimit200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyLimitsAPIService.OBPv510CreateCounterpartyLimit")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyLimitsAPIService.CreateCounterpartyLimit")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -125,8 +125,8 @@ func (a *CounterpartyLimitsAPIService) OBPv510CreateCounterpartyLimitExecute(r A
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit == nil {
-		return localVarReturnValue, nil, reportError("oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit is required and must be specified")
+	if r.createVRPConsentRequestRequestToAccountLimit == nil {
+		return localVarReturnValue, nil, reportError("createVRPConsentRequestRequestToAccountLimit is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -147,7 +147,7 @@ func (a *CounterpartyLimitsAPIService) OBPv510CreateCounterpartyLimitExecute(r A
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit
+	localVarPostBody = r.createVRPConsentRequestRequestToAccountLimit
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -172,7 +172,7 @@ func (a *CounterpartyLimitsAPIService) OBPv510CreateCounterpartyLimitExecute(r A
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -213,7 +213,7 @@ func (a *CounterpartyLimitsAPIService) OBPv510CreateCounterpartyLimitExecute(r A
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510DeleteCounterpartyLimitRequest struct {
+type ApiDeleteCounterpartyLimitRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyLimitsAPIService
 	bankid string
@@ -222,12 +222,12 @@ type ApiOBPv510DeleteCounterpartyLimitRequest struct {
 	counterpartyid string
 }
 
-func (r ApiOBPv510DeleteCounterpartyLimitRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510DeleteCounterpartyLimitExecute(r)
+func (r ApiDeleteCounterpartyLimitRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCounterpartyLimitExecute(r)
 }
 
 /*
-OBPv510DeleteCounterpartyLimit Delete Counterparty Limit
+DeleteCounterpartyLimit Delete Counterparty Limit
 
 <p>Delete Counterparty Limit.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -244,10 +244,10 @@ OBPv510DeleteCounterpartyLimit Delete Counterparty Limit
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param counterpartyid The COUNTERPARTYID identifier
- @return ApiOBPv510DeleteCounterpartyLimitRequest
+ @return ApiDeleteCounterpartyLimitRequest
 */
-func (a *CounterpartyLimitsAPIService) OBPv510DeleteCounterpartyLimit(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiOBPv510DeleteCounterpartyLimitRequest {
-	return ApiOBPv510DeleteCounterpartyLimitRequest{
+func (a *CounterpartyLimitsAPIService) DeleteCounterpartyLimit(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiDeleteCounterpartyLimitRequest {
+	return ApiDeleteCounterpartyLimitRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -258,14 +258,14 @@ func (a *CounterpartyLimitsAPIService) OBPv510DeleteCounterpartyLimit(ctx contex
 }
 
 // Execute executes the request
-func (a *CounterpartyLimitsAPIService) OBPv510DeleteCounterpartyLimitExecute(r ApiOBPv510DeleteCounterpartyLimitRequest) (*http.Response, error) {
+func (a *CounterpartyLimitsAPIService) DeleteCounterpartyLimitExecute(r ApiDeleteCounterpartyLimitRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyLimitsAPIService.OBPv510DeleteCounterpartyLimit")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyLimitsAPIService.DeleteCounterpartyLimit")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -321,7 +321,7 @@ func (a *CounterpartyLimitsAPIService) OBPv510DeleteCounterpartyLimitExecute(r A
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -353,7 +353,7 @@ func (a *CounterpartyLimitsAPIService) OBPv510DeleteCounterpartyLimitExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetCounterpartyLimitRequest struct {
+type ApiGetCounterpartyLimitRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyLimitsAPIService
 	bankid string
@@ -362,12 +362,12 @@ type ApiOBPv510GetCounterpartyLimitRequest struct {
 	counterpartyid string
 }
 
-func (r ApiOBPv510GetCounterpartyLimitRequest) Execute() (*OBPv510GetCounterpartyLimit200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetCounterpartyLimitExecute(r)
+func (r ApiGetCounterpartyLimitRequest) Execute() (*GetCounterpartyLimit200Response, *http.Response, error) {
+	return r.ApiService.GetCounterpartyLimitExecute(r)
 }
 
 /*
-OBPv510GetCounterpartyLimit Get Counterparty Limit
+GetCounterpartyLimit Get Counterparty Limit
 
 <p>Get Counterparty Limit.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -397,10 +397,10 @@ OBPv510GetCounterpartyLimit Get Counterparty Limit
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param counterpartyid The COUNTERPARTYID identifier
- @return ApiOBPv510GetCounterpartyLimitRequest
+ @return ApiGetCounterpartyLimitRequest
 */
-func (a *CounterpartyLimitsAPIService) OBPv510GetCounterpartyLimit(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiOBPv510GetCounterpartyLimitRequest {
-	return ApiOBPv510GetCounterpartyLimitRequest{
+func (a *CounterpartyLimitsAPIService) GetCounterpartyLimit(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiGetCounterpartyLimitRequest {
+	return ApiGetCounterpartyLimitRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -411,16 +411,16 @@ func (a *CounterpartyLimitsAPIService) OBPv510GetCounterpartyLimit(ctx context.C
 }
 
 // Execute executes the request
-//  @return OBPv510GetCounterpartyLimit200Response
-func (a *CounterpartyLimitsAPIService) OBPv510GetCounterpartyLimitExecute(r ApiOBPv510GetCounterpartyLimitRequest) (*OBPv510GetCounterpartyLimit200Response, *http.Response, error) {
+//  @return GetCounterpartyLimit200Response
+func (a *CounterpartyLimitsAPIService) GetCounterpartyLimitExecute(r ApiGetCounterpartyLimitRequest) (*GetCounterpartyLimit200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetCounterpartyLimit200Response
+		localVarReturnValue  *GetCounterpartyLimit200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyLimitsAPIService.OBPv510GetCounterpartyLimit")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyLimitsAPIService.GetCounterpartyLimit")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -476,7 +476,7 @@ func (a *CounterpartyLimitsAPIService) OBPv510GetCounterpartyLimitExecute(r ApiO
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -517,7 +517,7 @@ func (a *CounterpartyLimitsAPIService) OBPv510GetCounterpartyLimitExecute(r ApiO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetCounterpartyLimitStatusRequest struct {
+type ApiGetCounterpartyLimitStatusRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyLimitsAPIService
 	bankid string
@@ -526,12 +526,12 @@ type ApiOBPv510GetCounterpartyLimitStatusRequest struct {
 	counterpartyid string
 }
 
-func (r ApiOBPv510GetCounterpartyLimitStatusRequest) Execute() (*OBPv510GetCounterpartyLimitStatus200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetCounterpartyLimitStatusExecute(r)
+func (r ApiGetCounterpartyLimitStatusRequest) Execute() (*GetCounterpartyLimitStatus200Response, *http.Response, error) {
+	return r.ApiService.GetCounterpartyLimitStatusExecute(r)
 }
 
 /*
-OBPv510GetCounterpartyLimitStatus Get Counterparty Limit Status
+GetCounterpartyLimitStatus Get Counterparty Limit Status
 
 <p>Get Counterparty Limit Status.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -569,10 +569,10 @@ OBPv510GetCounterpartyLimitStatus Get Counterparty Limit Status
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param counterpartyid The COUNTERPARTYID identifier
- @return ApiOBPv510GetCounterpartyLimitStatusRequest
+ @return ApiGetCounterpartyLimitStatusRequest
 */
-func (a *CounterpartyLimitsAPIService) OBPv510GetCounterpartyLimitStatus(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiOBPv510GetCounterpartyLimitStatusRequest {
-	return ApiOBPv510GetCounterpartyLimitStatusRequest{
+func (a *CounterpartyLimitsAPIService) GetCounterpartyLimitStatus(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiGetCounterpartyLimitStatusRequest {
+	return ApiGetCounterpartyLimitStatusRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -583,16 +583,16 @@ func (a *CounterpartyLimitsAPIService) OBPv510GetCounterpartyLimitStatus(ctx con
 }
 
 // Execute executes the request
-//  @return OBPv510GetCounterpartyLimitStatus200Response
-func (a *CounterpartyLimitsAPIService) OBPv510GetCounterpartyLimitStatusExecute(r ApiOBPv510GetCounterpartyLimitStatusRequest) (*OBPv510GetCounterpartyLimitStatus200Response, *http.Response, error) {
+//  @return GetCounterpartyLimitStatus200Response
+func (a *CounterpartyLimitsAPIService) GetCounterpartyLimitStatusExecute(r ApiGetCounterpartyLimitStatusRequest) (*GetCounterpartyLimitStatus200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetCounterpartyLimitStatus200Response
+		localVarReturnValue  *GetCounterpartyLimitStatus200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyLimitsAPIService.OBPv510GetCounterpartyLimitStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyLimitsAPIService.GetCounterpartyLimitStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -648,7 +648,7 @@ func (a *CounterpartyLimitsAPIService) OBPv510GetCounterpartyLimitStatusExecute(
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -689,28 +689,28 @@ func (a *CounterpartyLimitsAPIService) OBPv510GetCounterpartyLimitStatusExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510UpdateCounterpartyLimitRequest struct {
+type ApiUpdateCounterpartyLimitRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyLimitsAPIService
 	bankid string
 	accountid string
 	viewid string
 	counterpartyid string
-	oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit *OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit
+	createVRPConsentRequestRequestToAccountLimit *CreateVRPConsentRequestRequestToAccountLimit
 }
 
 // Request body
-func (r ApiOBPv510UpdateCounterpartyLimitRequest) OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit(oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit) ApiOBPv510UpdateCounterpartyLimitRequest {
-	r.oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit = &oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit
+func (r ApiUpdateCounterpartyLimitRequest) CreateVRPConsentRequestRequestToAccountLimit(createVRPConsentRequestRequestToAccountLimit CreateVRPConsentRequestRequestToAccountLimit) ApiUpdateCounterpartyLimitRequest {
+	r.createVRPConsentRequestRequestToAccountLimit = &createVRPConsentRequestRequestToAccountLimit
 	return r
 }
 
-func (r ApiOBPv510UpdateCounterpartyLimitRequest) Execute() (*OBPv510GetCounterpartyLimit200Response, *http.Response, error) {
-	return r.ApiService.OBPv510UpdateCounterpartyLimitExecute(r)
+func (r ApiUpdateCounterpartyLimitRequest) Execute() (*GetCounterpartyLimit200Response, *http.Response, error) {
+	return r.ApiService.UpdateCounterpartyLimitExecute(r)
 }
 
 /*
-OBPv510UpdateCounterpartyLimit Update Counterparty Limit
+UpdateCounterpartyLimit Update Counterparty Limit
 
 <p>Update Counterparty Limit.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -740,10 +740,10 @@ OBPv510UpdateCounterpartyLimit Update Counterparty Limit
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param counterpartyid The COUNTERPARTYID identifier
- @return ApiOBPv510UpdateCounterpartyLimitRequest
+ @return ApiUpdateCounterpartyLimitRequest
 */
-func (a *CounterpartyLimitsAPIService) OBPv510UpdateCounterpartyLimit(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiOBPv510UpdateCounterpartyLimitRequest {
-	return ApiOBPv510UpdateCounterpartyLimitRequest{
+func (a *CounterpartyLimitsAPIService) UpdateCounterpartyLimit(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiUpdateCounterpartyLimitRequest {
+	return ApiUpdateCounterpartyLimitRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -754,16 +754,16 @@ func (a *CounterpartyLimitsAPIService) OBPv510UpdateCounterpartyLimit(ctx contex
 }
 
 // Execute executes the request
-//  @return OBPv510GetCounterpartyLimit200Response
-func (a *CounterpartyLimitsAPIService) OBPv510UpdateCounterpartyLimitExecute(r ApiOBPv510UpdateCounterpartyLimitRequest) (*OBPv510GetCounterpartyLimit200Response, *http.Response, error) {
+//  @return GetCounterpartyLimit200Response
+func (a *CounterpartyLimitsAPIService) UpdateCounterpartyLimitExecute(r ApiUpdateCounterpartyLimitRequest) (*GetCounterpartyLimit200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetCounterpartyLimit200Response
+		localVarReturnValue  *GetCounterpartyLimit200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyLimitsAPIService.OBPv510UpdateCounterpartyLimit")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyLimitsAPIService.UpdateCounterpartyLimit")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -777,8 +777,8 @@ func (a *CounterpartyLimitsAPIService) OBPv510UpdateCounterpartyLimitExecute(r A
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit == nil {
-		return localVarReturnValue, nil, reportError("oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit is required and must be specified")
+	if r.createVRPConsentRequestRequestToAccountLimit == nil {
+		return localVarReturnValue, nil, reportError("createVRPConsentRequestRequestToAccountLimit is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -799,7 +799,7 @@ func (a *CounterpartyLimitsAPIService) OBPv510UpdateCounterpartyLimitExecute(r A
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit
+	localVarPostBody = r.createVRPConsentRequestRequestToAccountLimit
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -824,7 +824,7 @@ func (a *CounterpartyLimitsAPIService) OBPv510UpdateCounterpartyLimitExecute(r A
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

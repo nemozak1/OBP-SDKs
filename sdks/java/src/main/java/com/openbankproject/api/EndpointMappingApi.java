@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv400CreateEndpointMappingRequest;
-import com.openbankproject.model.OBPv400GetAllEndpointMappings200Response;
-import com.openbankproject.model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems;
+import com.openbankproject.model.CreateEndpointMappingRequest;
+import com.openbankproject.model.GetAllEndpointMappings200Response;
+import com.openbankproject.model.GetAllEndpointMappings200ResponseEndpointMappingsInner;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -47,7 +47,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class EndpointMappingApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -168,25 +168,25 @@ public class EndpointMappingApi {
    * Create Bank Level Endpoint Mapping
    * &lt;p&gt;Create an Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400CreateEndpointMappingRequest Request body (required)
-   * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+   * @param createEndpointMappingRequest Request body (required)
+   * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400CreateBankLevelEndpointMapping(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest) throws ApiException {
-    return oBPv400CreateBankLevelEndpointMapping(bankid, obPv400CreateEndpointMappingRequest, null);
+  public GetAllEndpointMappings200ResponseEndpointMappingsInner createBankLevelEndpointMapping(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest) throws ApiException {
+    return createBankLevelEndpointMapping(bankid, createEndpointMappingRequest, null);
   }
 
   /**
    * Create Bank Level Endpoint Mapping
    * &lt;p&gt;Create an Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400CreateEndpointMappingRequest Request body (required)
+   * @param createEndpointMappingRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+   * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400CreateBankLevelEndpointMapping(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> localVarResponse = oBPv400CreateBankLevelEndpointMappingWithHttpInfo(bankid, obPv400CreateEndpointMappingRequest, headers);
+  public GetAllEndpointMappings200ResponseEndpointMappingsInner createBankLevelEndpointMapping(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> localVarResponse = createBankLevelEndpointMappingWithHttpInfo(bankid, createEndpointMappingRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -194,25 +194,25 @@ public class EndpointMappingApi {
    * Create Bank Level Endpoint Mapping
    * &lt;p&gt;Create an Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400CreateEndpointMappingRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems&gt;
+   * @param createEndpointMappingRequest Request body (required)
+   * @return ApiResponse&lt;GetAllEndpointMappings200ResponseEndpointMappingsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400CreateBankLevelEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest) throws ApiException {
-    return oBPv400CreateBankLevelEndpointMappingWithHttpInfo(bankid, obPv400CreateEndpointMappingRequest, null);
+  public ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> createBankLevelEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest) throws ApiException {
+    return createBankLevelEndpointMappingWithHttpInfo(bankid, createEndpointMappingRequest, null);
   }
 
   /**
    * Create Bank Level Endpoint Mapping
    * &lt;p&gt;Create an Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400CreateEndpointMappingRequest Request body (required)
+   * @param createEndpointMappingRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems&gt;
+   * @return ApiResponse&lt;GetAllEndpointMappings200ResponseEndpointMappingsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400CreateBankLevelEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateBankLevelEndpointMappingRequestBuilder(bankid, obPv400CreateEndpointMappingRequest, headers);
+  public ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> createBankLevelEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createBankLevelEndpointMappingRequestBuilder(bankid, createEndpointMappingRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -223,11 +223,11 @@ public class EndpointMappingApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateBankLevelEndpointMapping", localVarResponse);
+          throw getApiException("createBankLevelEndpointMapping", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+          return new ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -237,10 +237,10 @@ public class EndpointMappingApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>() {});
+        GetAllEndpointMappings200ResponseEndpointMappingsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllEndpointMappings200ResponseEndpointMappingsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+        return new ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -259,14 +259,14 @@ public class EndpointMappingApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateBankLevelEndpointMappingRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createBankLevelEndpointMappingRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400CreateBankLevelEndpointMapping");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createBankLevelEndpointMapping");
     }
-    // verify the required parameter 'obPv400CreateEndpointMappingRequest' is set
-    if (obPv400CreateEndpointMappingRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400CreateEndpointMappingRequest' when calling oBPv400CreateBankLevelEndpointMapping");
+    // verify the required parameter 'createEndpointMappingRequest' is set
+    if (createEndpointMappingRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createEndpointMappingRequest' when calling createBankLevelEndpointMapping");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -280,7 +280,7 @@ public class EndpointMappingApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400CreateEndpointMappingRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createEndpointMappingRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -299,48 +299,48 @@ public class EndpointMappingApi {
   /**
    * Create Endpoint Mapping
    * &lt;p&gt;Create an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
-   * @param obPv400CreateEndpointMappingRequest Request body (required)
-   * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+   * @param createEndpointMappingRequest Request body (required)
+   * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400CreateEndpointMapping(@javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest) throws ApiException {
-    return oBPv400CreateEndpointMapping(obPv400CreateEndpointMappingRequest, null);
+  public GetAllEndpointMappings200ResponseEndpointMappingsInner createEndpointMapping(@javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest) throws ApiException {
+    return createEndpointMapping(createEndpointMappingRequest, null);
   }
 
   /**
    * Create Endpoint Mapping
    * &lt;p&gt;Create an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
-   * @param obPv400CreateEndpointMappingRequest Request body (required)
+   * @param createEndpointMappingRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+   * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400CreateEndpointMapping(@javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> localVarResponse = oBPv400CreateEndpointMappingWithHttpInfo(obPv400CreateEndpointMappingRequest, headers);
+  public GetAllEndpointMappings200ResponseEndpointMappingsInner createEndpointMapping(@javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> localVarResponse = createEndpointMappingWithHttpInfo(createEndpointMappingRequest, headers);
     return localVarResponse.getData();
   }
 
   /**
    * Create Endpoint Mapping
    * &lt;p&gt;Create an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
-   * @param obPv400CreateEndpointMappingRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems&gt;
+   * @param createEndpointMappingRequest Request body (required)
+   * @return ApiResponse&lt;GetAllEndpointMappings200ResponseEndpointMappingsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400CreateEndpointMappingWithHttpInfo(@javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest) throws ApiException {
-    return oBPv400CreateEndpointMappingWithHttpInfo(obPv400CreateEndpointMappingRequest, null);
+  public ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> createEndpointMappingWithHttpInfo(@javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest) throws ApiException {
+    return createEndpointMappingWithHttpInfo(createEndpointMappingRequest, null);
   }
 
   /**
    * Create Endpoint Mapping
    * &lt;p&gt;Create an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
-   * @param obPv400CreateEndpointMappingRequest Request body (required)
+   * @param createEndpointMappingRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems&gt;
+   * @return ApiResponse&lt;GetAllEndpointMappings200ResponseEndpointMappingsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400CreateEndpointMappingWithHttpInfo(@javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateEndpointMappingRequestBuilder(obPv400CreateEndpointMappingRequest, headers);
+  public ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> createEndpointMappingWithHttpInfo(@javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createEndpointMappingRequestBuilder(createEndpointMappingRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -351,11 +351,11 @@ public class EndpointMappingApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateEndpointMapping", localVarResponse);
+          throw getApiException("createEndpointMapping", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+          return new ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -365,10 +365,10 @@ public class EndpointMappingApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>() {});
+        GetAllEndpointMappings200ResponseEndpointMappingsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllEndpointMappings200ResponseEndpointMappingsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+        return new ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -387,10 +387,10 @@ public class EndpointMappingApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateEndpointMappingRequestBuilder(@javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'obPv400CreateEndpointMappingRequest' is set
-    if (obPv400CreateEndpointMappingRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400CreateEndpointMappingRequest' when calling oBPv400CreateEndpointMapping");
+  private HttpRequest.Builder createEndpointMappingRequestBuilder(@javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'createEndpointMappingRequest' is set
+    if (createEndpointMappingRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createEndpointMappingRequest' when calling createEndpointMapping");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -403,7 +403,7 @@ public class EndpointMappingApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400CreateEndpointMappingRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createEndpointMappingRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -426,8 +426,8 @@ public class EndpointMappingApi {
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteBankLevelEndpointMapping(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid) throws ApiException {
-    oBPv400DeleteBankLevelEndpointMapping(bankid, endpointmappingid, null);
+  public void deleteBankLevelEndpointMapping(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid) throws ApiException {
+    deleteBankLevelEndpointMapping(bankid, endpointmappingid, null);
   }
 
   /**
@@ -438,8 +438,8 @@ public class EndpointMappingApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteBankLevelEndpointMapping(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
-    oBPv400DeleteBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid, headers);
+  public void deleteBankLevelEndpointMapping(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
+    deleteBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid, headers);
   }
 
   /**
@@ -450,8 +450,8 @@ public class EndpointMappingApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteBankLevelEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid) throws ApiException {
-    return oBPv400DeleteBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid, null);
+  public ApiResponse<Void> deleteBankLevelEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid) throws ApiException {
+    return deleteBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid, null);
   }
 
   /**
@@ -463,8 +463,8 @@ public class EndpointMappingApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteBankLevelEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteBankLevelEndpointMappingRequestBuilder(bankid, endpointmappingid, headers);
+  public ApiResponse<Void> deleteBankLevelEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteBankLevelEndpointMappingRequestBuilder(bankid, endpointmappingid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -475,7 +475,7 @@ public class EndpointMappingApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteBankLevelEndpointMapping", localVarResponse);
+          throw getApiException("deleteBankLevelEndpointMapping", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -500,14 +500,14 @@ public class EndpointMappingApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteBankLevelEndpointMappingRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteBankLevelEndpointMappingRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400DeleteBankLevelEndpointMapping");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteBankLevelEndpointMapping");
     }
     // verify the required parameter 'endpointmappingid' is set
     if (endpointmappingid == null) {
-      throw new ApiException(400, "Missing the required parameter 'endpointmappingid' when calling oBPv400DeleteBankLevelEndpointMapping");
+      throw new ApiException(400, "Missing the required parameter 'endpointmappingid' when calling deleteBankLevelEndpointMapping");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -538,8 +538,8 @@ public class EndpointMappingApi {
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteEndpointMapping(@javax.annotation.Nonnull String endpointmappingid) throws ApiException {
-    oBPv400DeleteEndpointMapping(endpointmappingid, null);
+  public void deleteEndpointMapping(@javax.annotation.Nonnull String endpointmappingid) throws ApiException {
+    deleteEndpointMapping(endpointmappingid, null);
   }
 
   /**
@@ -549,8 +549,8 @@ public class EndpointMappingApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteEndpointMapping(@javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
-    oBPv400DeleteEndpointMappingWithHttpInfo(endpointmappingid, headers);
+  public void deleteEndpointMapping(@javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
+    deleteEndpointMappingWithHttpInfo(endpointmappingid, headers);
   }
 
   /**
@@ -560,8 +560,8 @@ public class EndpointMappingApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String endpointmappingid) throws ApiException {
-    return oBPv400DeleteEndpointMappingWithHttpInfo(endpointmappingid, null);
+  public ApiResponse<Void> deleteEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String endpointmappingid) throws ApiException {
+    return deleteEndpointMappingWithHttpInfo(endpointmappingid, null);
   }
 
   /**
@@ -572,8 +572,8 @@ public class EndpointMappingApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteEndpointMappingRequestBuilder(endpointmappingid, headers);
+  public ApiResponse<Void> deleteEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteEndpointMappingRequestBuilder(endpointmappingid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -584,7 +584,7 @@ public class EndpointMappingApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteEndpointMapping", localVarResponse);
+          throw getApiException("deleteEndpointMapping", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -609,10 +609,10 @@ public class EndpointMappingApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteEndpointMappingRequestBuilder(@javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteEndpointMappingRequestBuilder(@javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'endpointmappingid' is set
     if (endpointmappingid == null) {
-      throw new ApiException(400, "Missing the required parameter 'endpointmappingid' when calling oBPv400DeleteEndpointMapping");
+      throw new ApiException(400, "Missing the required parameter 'endpointmappingid' when calling deleteEndpointMapping");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -640,11 +640,11 @@ public class EndpointMappingApi {
    * Get all Bank Level Endpoint Mappings
    * &lt;p&gt;Get all Bank Level Endpoint Mappings.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return OBPv400GetAllEndpointMappings200Response
+   * @return GetAllEndpointMappings200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllEndpointMappings200Response oBPv400GetAllBankLevelEndpointMappings(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv400GetAllBankLevelEndpointMappings(bankid, null);
+  public GetAllEndpointMappings200Response getAllBankLevelEndpointMappings(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getAllBankLevelEndpointMappings(bankid, null);
   }
 
   /**
@@ -652,11 +652,11 @@ public class EndpointMappingApi {
    * &lt;p&gt;Get all Bank Level Endpoint Mappings.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllEndpointMappings200Response
+   * @return GetAllEndpointMappings200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllEndpointMappings200Response oBPv400GetAllBankLevelEndpointMappings(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllEndpointMappings200Response> localVarResponse = oBPv400GetAllBankLevelEndpointMappingsWithHttpInfo(bankid, headers);
+  public GetAllEndpointMappings200Response getAllBankLevelEndpointMappings(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllEndpointMappings200Response> localVarResponse = getAllBankLevelEndpointMappingsWithHttpInfo(bankid, headers);
     return localVarResponse.getData();
   }
 
@@ -664,11 +664,11 @@ public class EndpointMappingApi {
    * Get all Bank Level Endpoint Mappings
    * &lt;p&gt;Get all Bank Level Endpoint Mappings.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetAllEndpointMappings200Response&gt;
+   * @return ApiResponse&lt;GetAllEndpointMappings200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllEndpointMappings200Response> oBPv400GetAllBankLevelEndpointMappingsWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv400GetAllBankLevelEndpointMappingsWithHttpInfo(bankid, null);
+  public ApiResponse<GetAllEndpointMappings200Response> getAllBankLevelEndpointMappingsWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getAllBankLevelEndpointMappingsWithHttpInfo(bankid, null);
   }
 
   /**
@@ -676,11 +676,11 @@ public class EndpointMappingApi {
    * &lt;p&gt;Get all Bank Level Endpoint Mappings.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllEndpointMappings200Response&gt;
+   * @return ApiResponse&lt;GetAllEndpointMappings200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllEndpointMappings200Response> oBPv400GetAllBankLevelEndpointMappingsWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetAllBankLevelEndpointMappingsRequestBuilder(bankid, headers);
+  public ApiResponse<GetAllEndpointMappings200Response> getAllBankLevelEndpointMappingsWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAllBankLevelEndpointMappingsRequestBuilder(bankid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -691,11 +691,11 @@ public class EndpointMappingApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetAllBankLevelEndpointMappings", localVarResponse);
+          throw getApiException("getAllBankLevelEndpointMappings", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllEndpointMappings200Response>(
+          return new ApiResponse<GetAllEndpointMappings200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -705,10 +705,10 @@ public class EndpointMappingApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllEndpointMappings200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllEndpointMappings200Response>() {});
+        GetAllEndpointMappings200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllEndpointMappings200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetAllEndpointMappings200Response>(
+        return new ApiResponse<GetAllEndpointMappings200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -727,10 +727,10 @@ public class EndpointMappingApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetAllBankLevelEndpointMappingsRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAllBankLevelEndpointMappingsRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400GetAllBankLevelEndpointMappings");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getAllBankLevelEndpointMappings");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -757,44 +757,44 @@ public class EndpointMappingApi {
   /**
    * Get all Endpoint Mappings
    * &lt;p&gt;Get all Endpoint Mappings.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
-   * @return OBPv400GetAllEndpointMappings200Response
+   * @return GetAllEndpointMappings200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllEndpointMappings200Response oBPv400GetAllEndpointMappings() throws ApiException {
-    return oBPv400GetAllEndpointMappings(null);
+  public GetAllEndpointMappings200Response getAllEndpointMappings() throws ApiException {
+    return getAllEndpointMappings(null);
   }
 
   /**
    * Get all Endpoint Mappings
    * &lt;p&gt;Get all Endpoint Mappings.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllEndpointMappings200Response
+   * @return GetAllEndpointMappings200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllEndpointMappings200Response oBPv400GetAllEndpointMappings(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllEndpointMappings200Response> localVarResponse = oBPv400GetAllEndpointMappingsWithHttpInfo(headers);
+  public GetAllEndpointMappings200Response getAllEndpointMappings(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllEndpointMappings200Response> localVarResponse = getAllEndpointMappingsWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get all Endpoint Mappings
    * &lt;p&gt;Get all Endpoint Mappings.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv400GetAllEndpointMappings200Response&gt;
+   * @return ApiResponse&lt;GetAllEndpointMappings200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllEndpointMappings200Response> oBPv400GetAllEndpointMappingsWithHttpInfo() throws ApiException {
-    return oBPv400GetAllEndpointMappingsWithHttpInfo(null);
+  public ApiResponse<GetAllEndpointMappings200Response> getAllEndpointMappingsWithHttpInfo() throws ApiException {
+    return getAllEndpointMappingsWithHttpInfo(null);
   }
 
   /**
    * Get all Endpoint Mappings
    * &lt;p&gt;Get all Endpoint Mappings.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllEndpointMappings200Response&gt;
+   * @return ApiResponse&lt;GetAllEndpointMappings200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllEndpointMappings200Response> oBPv400GetAllEndpointMappingsWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetAllEndpointMappingsRequestBuilder(headers);
+  public ApiResponse<GetAllEndpointMappings200Response> getAllEndpointMappingsWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAllEndpointMappingsRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -805,11 +805,11 @@ public class EndpointMappingApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetAllEndpointMappings", localVarResponse);
+          throw getApiException("getAllEndpointMappings", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllEndpointMappings200Response>(
+          return new ApiResponse<GetAllEndpointMappings200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -819,10 +819,10 @@ public class EndpointMappingApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllEndpointMappings200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllEndpointMappings200Response>() {});
+        GetAllEndpointMappings200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllEndpointMappings200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetAllEndpointMappings200Response>(
+        return new ApiResponse<GetAllEndpointMappings200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -841,7 +841,7 @@ public class EndpointMappingApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetAllEndpointMappingsRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAllEndpointMappingsRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -868,11 +868,11 @@ public class EndpointMappingApi {
    * &lt;p&gt;Get an Bank Level Endpoint Mapping by ENDPOINT_MAPPING_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-   * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+   * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400GetBankLevelEndpointMapping(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid) throws ApiException {
-    return oBPv400GetBankLevelEndpointMapping(bankid, endpointmappingid, null);
+  public GetAllEndpointMappings200ResponseEndpointMappingsInner getBankLevelEndpointMapping(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid) throws ApiException {
+    return getBankLevelEndpointMapping(bankid, endpointmappingid, null);
   }
 
   /**
@@ -881,11 +881,11 @@ public class EndpointMappingApi {
    * @param bankid The BANKID identifier (required)
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+   * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400GetBankLevelEndpointMapping(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> localVarResponse = oBPv400GetBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid, headers);
+  public GetAllEndpointMappings200ResponseEndpointMappingsInner getBankLevelEndpointMapping(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> localVarResponse = getBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid, headers);
     return localVarResponse.getData();
   }
 
@@ -894,11 +894,11 @@ public class EndpointMappingApi {
    * &lt;p&gt;Get an Bank Level Endpoint Mapping by ENDPOINT_MAPPING_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems&gt;
+   * @return ApiResponse&lt;GetAllEndpointMappings200ResponseEndpointMappingsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400GetBankLevelEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid) throws ApiException {
-    return oBPv400GetBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid, null);
+  public ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> getBankLevelEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid) throws ApiException {
+    return getBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid, null);
   }
 
   /**
@@ -907,11 +907,11 @@ public class EndpointMappingApi {
    * @param bankid The BANKID identifier (required)
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems&gt;
+   * @return ApiResponse&lt;GetAllEndpointMappings200ResponseEndpointMappingsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400GetBankLevelEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetBankLevelEndpointMappingRequestBuilder(bankid, endpointmappingid, headers);
+  public ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> getBankLevelEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getBankLevelEndpointMappingRequestBuilder(bankid, endpointmappingid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -922,11 +922,11 @@ public class EndpointMappingApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetBankLevelEndpointMapping", localVarResponse);
+          throw getApiException("getBankLevelEndpointMapping", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+          return new ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -936,10 +936,10 @@ public class EndpointMappingApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>() {});
+        GetAllEndpointMappings200ResponseEndpointMappingsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllEndpointMappings200ResponseEndpointMappingsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+        return new ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -958,14 +958,14 @@ public class EndpointMappingApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetBankLevelEndpointMappingRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getBankLevelEndpointMappingRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400GetBankLevelEndpointMapping");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getBankLevelEndpointMapping");
     }
     // verify the required parameter 'endpointmappingid' is set
     if (endpointmappingid == null) {
-      throw new ApiException(400, "Missing the required parameter 'endpointmappingid' when calling oBPv400GetBankLevelEndpointMapping");
+      throw new ApiException(400, "Missing the required parameter 'endpointmappingid' when calling getBankLevelEndpointMapping");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -994,11 +994,11 @@ public class EndpointMappingApi {
    * Get Endpoint Mapping by Id
    * &lt;p&gt;Get an Endpoint Mapping by ENDPOINT_MAPPING_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-   * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+   * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400GetEndpointMapping(@javax.annotation.Nonnull String endpointmappingid) throws ApiException {
-    return oBPv400GetEndpointMapping(endpointmappingid, null);
+  public GetAllEndpointMappings200ResponseEndpointMappingsInner getEndpointMapping(@javax.annotation.Nonnull String endpointmappingid) throws ApiException {
+    return getEndpointMapping(endpointmappingid, null);
   }
 
   /**
@@ -1006,11 +1006,11 @@ public class EndpointMappingApi {
    * &lt;p&gt;Get an Endpoint Mapping by ENDPOINT_MAPPING_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+   * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400GetEndpointMapping(@javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> localVarResponse = oBPv400GetEndpointMappingWithHttpInfo(endpointmappingid, headers);
+  public GetAllEndpointMappings200ResponseEndpointMappingsInner getEndpointMapping(@javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> localVarResponse = getEndpointMappingWithHttpInfo(endpointmappingid, headers);
     return localVarResponse.getData();
   }
 
@@ -1018,11 +1018,11 @@ public class EndpointMappingApi {
    * Get Endpoint Mapping by Id
    * &lt;p&gt;Get an Endpoint Mapping by ENDPOINT_MAPPING_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems&gt;
+   * @return ApiResponse&lt;GetAllEndpointMappings200ResponseEndpointMappingsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400GetEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String endpointmappingid) throws ApiException {
-    return oBPv400GetEndpointMappingWithHttpInfo(endpointmappingid, null);
+  public ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> getEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String endpointmappingid) throws ApiException {
+    return getEndpointMappingWithHttpInfo(endpointmappingid, null);
   }
 
   /**
@@ -1030,11 +1030,11 @@ public class EndpointMappingApi {
    * &lt;p&gt;Get an Endpoint Mapping by ENDPOINT_MAPPING_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems&gt;
+   * @return ApiResponse&lt;GetAllEndpointMappings200ResponseEndpointMappingsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400GetEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetEndpointMappingRequestBuilder(endpointmappingid, headers);
+  public ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> getEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getEndpointMappingRequestBuilder(endpointmappingid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1045,11 +1045,11 @@ public class EndpointMappingApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetEndpointMapping", localVarResponse);
+          throw getApiException("getEndpointMapping", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+          return new ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1059,10 +1059,10 @@ public class EndpointMappingApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>() {});
+        GetAllEndpointMappings200ResponseEndpointMappingsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllEndpointMappings200ResponseEndpointMappingsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+        return new ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1081,10 +1081,10 @@ public class EndpointMappingApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetEndpointMappingRequestBuilder(@javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getEndpointMappingRequestBuilder(@javax.annotation.Nonnull String endpointmappingid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'endpointmappingid' is set
     if (endpointmappingid == null) {
-      throw new ApiException(400, "Missing the required parameter 'endpointmappingid' when calling oBPv400GetEndpointMapping");
+      throw new ApiException(400, "Missing the required parameter 'endpointmappingid' when calling getEndpointMapping");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1113,12 +1113,12 @@ public class EndpointMappingApi {
    * &lt;p&gt;Update an Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-   * @param obPv400CreateEndpointMappingRequest Request body (required)
-   * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+   * @param createEndpointMappingRequest Request body (required)
+   * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400UpdateBankLevelEndpointMapping(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest) throws ApiException {
-    return oBPv400UpdateBankLevelEndpointMapping(bankid, endpointmappingid, obPv400CreateEndpointMappingRequest, null);
+  public GetAllEndpointMappings200ResponseEndpointMappingsInner updateBankLevelEndpointMapping(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest) throws ApiException {
+    return updateBankLevelEndpointMapping(bankid, endpointmappingid, createEndpointMappingRequest, null);
   }
 
   /**
@@ -1126,13 +1126,13 @@ public class EndpointMappingApi {
    * &lt;p&gt;Update an Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-   * @param obPv400CreateEndpointMappingRequest Request body (required)
+   * @param createEndpointMappingRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+   * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400UpdateBankLevelEndpointMapping(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> localVarResponse = oBPv400UpdateBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid, obPv400CreateEndpointMappingRequest, headers);
+  public GetAllEndpointMappings200ResponseEndpointMappingsInner updateBankLevelEndpointMapping(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> localVarResponse = updateBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid, createEndpointMappingRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1141,12 +1141,12 @@ public class EndpointMappingApi {
    * &lt;p&gt;Update an Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-   * @param obPv400CreateEndpointMappingRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems&gt;
+   * @param createEndpointMappingRequest Request body (required)
+   * @return ApiResponse&lt;GetAllEndpointMappings200ResponseEndpointMappingsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400UpdateBankLevelEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest) throws ApiException {
-    return oBPv400UpdateBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid, obPv400CreateEndpointMappingRequest, null);
+  public ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> updateBankLevelEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest) throws ApiException {
+    return updateBankLevelEndpointMappingWithHttpInfo(bankid, endpointmappingid, createEndpointMappingRequest, null);
   }
 
   /**
@@ -1154,13 +1154,13 @@ public class EndpointMappingApi {
    * &lt;p&gt;Update an Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-   * @param obPv400CreateEndpointMappingRequest Request body (required)
+   * @param createEndpointMappingRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems&gt;
+   * @return ApiResponse&lt;GetAllEndpointMappings200ResponseEndpointMappingsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400UpdateBankLevelEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400UpdateBankLevelEndpointMappingRequestBuilder(bankid, endpointmappingid, obPv400CreateEndpointMappingRequest, headers);
+  public ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> updateBankLevelEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateBankLevelEndpointMappingRequestBuilder(bankid, endpointmappingid, createEndpointMappingRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1171,11 +1171,11 @@ public class EndpointMappingApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400UpdateBankLevelEndpointMapping", localVarResponse);
+          throw getApiException("updateBankLevelEndpointMapping", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+          return new ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1185,10 +1185,10 @@ public class EndpointMappingApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>() {});
+        GetAllEndpointMappings200ResponseEndpointMappingsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllEndpointMappings200ResponseEndpointMappingsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+        return new ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1207,18 +1207,18 @@ public class EndpointMappingApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400UpdateBankLevelEndpointMappingRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateBankLevelEndpointMappingRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400UpdateBankLevelEndpointMapping");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateBankLevelEndpointMapping");
     }
     // verify the required parameter 'endpointmappingid' is set
     if (endpointmappingid == null) {
-      throw new ApiException(400, "Missing the required parameter 'endpointmappingid' when calling oBPv400UpdateBankLevelEndpointMapping");
+      throw new ApiException(400, "Missing the required parameter 'endpointmappingid' when calling updateBankLevelEndpointMapping");
     }
-    // verify the required parameter 'obPv400CreateEndpointMappingRequest' is set
-    if (obPv400CreateEndpointMappingRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400CreateEndpointMappingRequest' when calling oBPv400UpdateBankLevelEndpointMapping");
+    // verify the required parameter 'createEndpointMappingRequest' is set
+    if (createEndpointMappingRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createEndpointMappingRequest' when calling updateBankLevelEndpointMapping");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1233,7 +1233,7 @@ public class EndpointMappingApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400CreateEndpointMappingRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createEndpointMappingRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -1253,25 +1253,25 @@ public class EndpointMappingApi {
    * Update Endpoint Mapping
    * &lt;p&gt;Update an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-   * @param obPv400CreateEndpointMappingRequest Request body (required)
-   * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+   * @param createEndpointMappingRequest Request body (required)
+   * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400UpdateEndpointMapping(@javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest) throws ApiException {
-    return oBPv400UpdateEndpointMapping(endpointmappingid, obPv400CreateEndpointMappingRequest, null);
+  public GetAllEndpointMappings200ResponseEndpointMappingsInner updateEndpointMapping(@javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest) throws ApiException {
+    return updateEndpointMapping(endpointmappingid, createEndpointMappingRequest, null);
   }
 
   /**
    * Update Endpoint Mapping
    * &lt;p&gt;Update an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-   * @param obPv400CreateEndpointMappingRequest Request body (required)
+   * @param createEndpointMappingRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+   * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400UpdateEndpointMapping(@javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> localVarResponse = oBPv400UpdateEndpointMappingWithHttpInfo(endpointmappingid, obPv400CreateEndpointMappingRequest, headers);
+  public GetAllEndpointMappings200ResponseEndpointMappingsInner updateEndpointMapping(@javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> localVarResponse = updateEndpointMappingWithHttpInfo(endpointmappingid, createEndpointMappingRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1279,25 +1279,25 @@ public class EndpointMappingApi {
    * Update Endpoint Mapping
    * &lt;p&gt;Update an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-   * @param obPv400CreateEndpointMappingRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems&gt;
+   * @param createEndpointMappingRequest Request body (required)
+   * @return ApiResponse&lt;GetAllEndpointMappings200ResponseEndpointMappingsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400UpdateEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest) throws ApiException {
-    return oBPv400UpdateEndpointMappingWithHttpInfo(endpointmappingid, obPv400CreateEndpointMappingRequest, null);
+  public ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> updateEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest) throws ApiException {
+    return updateEndpointMappingWithHttpInfo(endpointmappingid, createEndpointMappingRequest, null);
   }
 
   /**
    * Update Endpoint Mapping
    * &lt;p&gt;Update an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
    * @param endpointmappingid The ENDPOINTMAPPINGID identifier (required)
-   * @param obPv400CreateEndpointMappingRequest Request body (required)
+   * @param createEndpointMappingRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems&gt;
+   * @return ApiResponse&lt;GetAllEndpointMappings200ResponseEndpointMappingsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> oBPv400UpdateEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400UpdateEndpointMappingRequestBuilder(endpointmappingid, obPv400CreateEndpointMappingRequest, headers);
+  public ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner> updateEndpointMappingWithHttpInfo(@javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateEndpointMappingRequestBuilder(endpointmappingid, createEndpointMappingRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1308,11 +1308,11 @@ public class EndpointMappingApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400UpdateEndpointMapping", localVarResponse);
+          throw getApiException("updateEndpointMapping", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+          return new ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1322,10 +1322,10 @@ public class EndpointMappingApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>() {});
+        GetAllEndpointMappings200ResponseEndpointMappingsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllEndpointMappings200ResponseEndpointMappingsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+        return new ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1344,14 +1344,14 @@ public class EndpointMappingApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400UpdateEndpointMappingRequestBuilder(@javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull OBPv400CreateEndpointMappingRequest obPv400CreateEndpointMappingRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateEndpointMappingRequestBuilder(@javax.annotation.Nonnull String endpointmappingid, @javax.annotation.Nonnull CreateEndpointMappingRequest createEndpointMappingRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'endpointmappingid' is set
     if (endpointmappingid == null) {
-      throw new ApiException(400, "Missing the required parameter 'endpointmappingid' when calling oBPv400UpdateEndpointMapping");
+      throw new ApiException(400, "Missing the required parameter 'endpointmappingid' when calling updateEndpointMapping");
     }
-    // verify the required parameter 'obPv400CreateEndpointMappingRequest' is set
-    if (obPv400CreateEndpointMappingRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400CreateEndpointMappingRequest' when calling oBPv400UpdateEndpointMapping");
+    // verify the required parameter 'createEndpointMappingRequest' is set
+    if (createEndpointMappingRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createEndpointMappingRequest' when calling updateEndpointMapping");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1365,7 +1365,7 @@ public class EndpointMappingApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400CreateEndpointMappingRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createEndpointMappingRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

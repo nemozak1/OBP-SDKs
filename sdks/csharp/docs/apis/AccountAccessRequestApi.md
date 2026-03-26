@@ -1,19 +1,19 @@
 # OpenBankProject.Api.AccountAccessRequestApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv600ApproveAccountAccessRequest**](AccountAccessRequestApi.md#obpv600approveaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request |
-| [**OBPv600CreateAccountAccessRequest**](AccountAccessRequestApi.md#obpv600createaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request |
-| [**OBPv600GetAccountAccessRequestById**](AccountAccessRequestApi.md#obpv600getaccountaccessrequestbyid) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id |
-| [**OBPv600GetAccountAccessRequestsForAccount**](AccountAccessRequestApi.md#obpv600getaccountaccessrequestsforaccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account |
-| [**OBPv600GetMyAccountAccessRequests**](AccountAccessRequestApi.md#obpv600getmyaccountaccessrequests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests |
-| [**OBPv600RejectAccountAccessRequest**](AccountAccessRequestApi.md#obpv600rejectaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request |
+| [**ApproveAccountAccessRequest**](AccountAccessRequestApi.md#approveaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request |
+| [**CreateAccountAccessRequest**](AccountAccessRequestApi.md#createaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request |
+| [**GetAccountAccessRequestById**](AccountAccessRequestApi.md#getaccountaccessrequestbyid) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id |
+| [**GetAccountAccessRequestsForAccount**](AccountAccessRequestApi.md#getaccountaccessrequestsforaccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account |
+| [**GetMyAccountAccessRequests**](AccountAccessRequestApi.md#getmyaccountaccessrequests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests |
+| [**RejectAccountAccessRequest**](AccountAccessRequestApi.md#rejectaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request |
 
-<a id="obpv600approveaccountaccessrequest"></a>
-# **OBPv600ApproveAccountAccessRequest**
-> OBPv600RejectAccountAccessRequest200Response OBPv600ApproveAccountAccessRequest (string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest)
+<a id="approveaccountaccessrequest"></a>
+# **ApproveAccountAccessRequest**
+> RejectAccountAccessRequest200Response ApproveAccountAccessRequest (string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest)
 
 Approve Account Access Request
 
@@ -27,11 +27,11 @@ Approve Account Access Request
 | **bankid** | **string** | The BANKID identifier |  |
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **accountaccessrequestid** | **string** | The ACCOUNTACCESSREQUESTID identifier |  |
-| **oBPv600RejectAccountAccessRequestRequest** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md) | Request body |  |
+| **rejectAccountAccessRequestRequest** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -52,9 +52,9 @@ Approve Account Access Request
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600createaccountaccessrequest"></a>
-# **OBPv600CreateAccountAccessRequest**
-> OBPv600RejectAccountAccessRequest200Response OBPv600CreateAccountAccessRequest (string bankid, string accountid, OBPv600CreateAccountAccessRequestRequest oBPv600CreateAccountAccessRequestRequest)
+<a id="createaccountaccessrequest"></a>
+# **CreateAccountAccessRequest**
+> RejectAccountAccessRequest200Response CreateAccountAccessRequest (string bankid, string accountid, CreateAccountAccessRequestRequest createAccountAccessRequestRequest)
 
 Create Account Access Request
 
@@ -67,11 +67,11 @@ Create Account Access Request
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
 | **accountid** | **string** | The ACCOUNTID identifier |  |
-| **oBPv600CreateAccountAccessRequestRequest** | [**OBPv600CreateAccountAccessRequestRequest**](OBPv600CreateAccountAccessRequestRequest.md) | Request body |  |
+| **createAccountAccessRequestRequest** | [**CreateAccountAccessRequestRequest**](CreateAccountAccessRequestRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -92,9 +92,9 @@ Create Account Access Request
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getaccountaccessrequestbyid"></a>
-# **OBPv600GetAccountAccessRequestById**
-> OBPv600RejectAccountAccessRequest200Response OBPv600GetAccountAccessRequestById (string bankid, string accountid, string accountaccessrequestid)
+<a id="getaccountaccessrequestbyid"></a>
+# **GetAccountAccessRequestById**
+> RejectAccountAccessRequest200Response GetAccountAccessRequestById (string bankid, string accountid, string accountaccessrequestid)
 
 Get Account Access Request by Id
 
@@ -111,7 +111,7 @@ Get Account Access Request by Id
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -132,9 +132,9 @@ Get Account Access Request by Id
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getaccountaccessrequestsforaccount"></a>
-# **OBPv600GetAccountAccessRequestsForAccount**
-> OBPv600GetAccountAccessRequestsForAccount200Response OBPv600GetAccountAccessRequestsForAccount (string bankid, string accountid)
+<a id="getaccountaccessrequestsforaccount"></a>
+# **GetAccountAccessRequestsForAccount**
+> GetAccountAccessRequestsForAccount200Response GetAccountAccessRequestsForAccount (string bankid, string accountid)
 
 Get Account Access Requests for Account
 
@@ -150,7 +150,7 @@ Get Account Access Requests for Account
 
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -171,9 +171,9 @@ Get Account Access Requests for Account
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getmyaccountaccessrequests"></a>
-# **OBPv600GetMyAccountAccessRequests**
-> OBPv600GetAccountAccessRequestsForAccount200Response OBPv600GetMyAccountAccessRequests ()
+<a id="getmyaccountaccessrequests"></a>
+# **GetMyAccountAccessRequests**
+> GetAccountAccessRequestsForAccount200Response GetMyAccountAccessRequests ()
 
 Get My Account Access Requests
 
@@ -184,7 +184,7 @@ Get My Account Access Requests
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -204,9 +204,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600rejectaccountaccessrequest"></a>
-# **OBPv600RejectAccountAccessRequest**
-> OBPv600RejectAccountAccessRequest200Response OBPv600RejectAccountAccessRequest (string bankid, string accountid, string accountaccessrequestid, OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest)
+<a id="rejectaccountaccessrequest"></a>
+# **RejectAccountAccessRequest**
+> RejectAccountAccessRequest200Response RejectAccountAccessRequest (string bankid, string accountid, string accountaccessrequestid, RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest)
 
 Reject Account Access Request
 
@@ -220,11 +220,11 @@ Reject Account Access Request
 | **bankid** | **string** | The BANKID identifier |  |
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **accountaccessrequestid** | **string** | The ACCOUNTACCESSREQUESTID identifier |  |
-| **oBPv600RejectAccountAccessRequestRequest** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md) | Request body |  |
+| **rejectAccountAccessRequestRequest** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 

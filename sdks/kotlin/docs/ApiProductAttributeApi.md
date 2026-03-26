@@ -1,18 +1,18 @@
 # ApiProductAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600CreateApiProductAttribute**](ApiProductAttributeApi.md#oBPv600CreateApiProductAttribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute |
-| [**oBPv600DeleteApiProductAttribute**](ApiProductAttributeApi.md#oBPv600DeleteApiProductAttribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute |
-| [**oBPv600GetApiProductAttribute**](ApiProductAttributeApi.md#oBPv600GetApiProductAttribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute |
-| [**oBPv600UpdateApiProductAttribute**](ApiProductAttributeApi.md#oBPv600UpdateApiProductAttribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute |
+| [**createApiProductAttribute**](ApiProductAttributeApi.md#createApiProductAttribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute |
+| [**deleteApiProductAttribute**](ApiProductAttributeApi.md#deleteApiProductAttribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute |
+| [**getApiProductAttribute**](ApiProductAttributeApi.md#getApiProductAttribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute |
+| [**updateApiProductAttribute**](ApiProductAttributeApi.md#updateApiProductAttribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute |
 
 
-<a id="oBPv600CreateApiProductAttribute"></a>
-# **oBPv600CreateApiProductAttribute**
-> OBPv600CreateApiProductAttribute200Response oBPv600CreateApiProductAttribute(bankid, apiproductcode, obPv510UpdateAtmAttributeRequest)
+<a id="createApiProductAttribute"></a>
+# **createApiProductAttribute**
+> CreateApiProductAttribute200Response createApiProductAttribute(bankid, apiproductcode, updateAtmAttributeRequest)
 
 Create Api Product Attribute
 
@@ -27,15 +27,15 @@ Create Api Product Attribute
 val apiInstance = ApiProductAttributeApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val apiproductcode : kotlin.String = apiproductcode_example // kotlin.String | The APIPRODUCTCODE identifier
-val obPv510UpdateAtmAttributeRequest : OBPv510UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} // OBPv510UpdateAtmAttributeRequest | Request body
+val updateAtmAttributeRequest : UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} // UpdateAtmAttributeRequest | Request body
 try {
-    val result : OBPv600CreateApiProductAttribute200Response = apiInstance.oBPv600CreateApiProductAttribute(bankid, apiproductcode, obPv510UpdateAtmAttributeRequest)
+    val result : CreateApiProductAttribute200Response = apiInstance.createApiProductAttribute(bankid, apiproductcode, updateAtmAttributeRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ApiProductAttributeApi#oBPv600CreateApiProductAttribute")
+    println("4xx response calling ApiProductAttributeApi#createApiProductAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ApiProductAttributeApi#oBPv600CreateApiProductAttribute")
+    println("5xx response calling ApiProductAttributeApi#createApiProductAttribute")
     e.printStackTrace()
 }
 ```
@@ -45,11 +45,11 @@ try {
 | **apiproductcode** | **kotlin.String**| The APIPRODUCTCODE identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -60,17 +60,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600DeleteApiProductAttribute"></a>
-# **oBPv600DeleteApiProductAttribute**
-> oBPv600DeleteApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
+<a id="deleteApiProductAttribute"></a>
+# **deleteApiProductAttribute**
+> deleteApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
 
 Delete Api Product Attribute
 
@@ -87,12 +87,12 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val apiproductcode : kotlin.String = apiproductcode_example // kotlin.String | The APIPRODUCTCODE identifier
 val apiproductattributeid : kotlin.String = apiproductattributeid_example // kotlin.String | The APIPRODUCTATTRIBUTEID identifier
 try {
-    apiInstance.oBPv600DeleteApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
+    apiInstance.deleteApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
 } catch (e: ClientException) {
-    println("4xx response calling ApiProductAttributeApi#oBPv600DeleteApiProductAttribute")
+    println("4xx response calling ApiProductAttributeApi#deleteApiProductAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ApiProductAttributeApi#oBPv600DeleteApiProductAttribute")
+    println("5xx response calling ApiProductAttributeApi#deleteApiProductAttribute")
     e.printStackTrace()
 }
 ```
@@ -117,17 +117,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv600GetApiProductAttribute"></a>
-# **oBPv600GetApiProductAttribute**
-> OBPv600CreateApiProductAttribute200Response oBPv600GetApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
+<a id="getApiProductAttribute"></a>
+# **getApiProductAttribute**
+> CreateApiProductAttribute200Response getApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
 
 Get Api Product Attribute
 
@@ -144,13 +144,13 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val apiproductcode : kotlin.String = apiproductcode_example // kotlin.String | The APIPRODUCTCODE identifier
 val apiproductattributeid : kotlin.String = apiproductattributeid_example // kotlin.String | The APIPRODUCTATTRIBUTEID identifier
 try {
-    val result : OBPv600CreateApiProductAttribute200Response = apiInstance.oBPv600GetApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
+    val result : CreateApiProductAttribute200Response = apiInstance.getApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ApiProductAttributeApi#oBPv600GetApiProductAttribute")
+    println("4xx response calling ApiProductAttributeApi#getApiProductAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ApiProductAttributeApi#oBPv600GetApiProductAttribute")
+    println("5xx response calling ApiProductAttributeApi#getApiProductAttribute")
     e.printStackTrace()
 }
 ```
@@ -164,7 +164,7 @@ try {
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -175,9 +175,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600UpdateApiProductAttribute"></a>
-# **oBPv600UpdateApiProductAttribute**
-> OBPv600CreateApiProductAttribute200Response oBPv600UpdateApiProductAttribute(bankid, apiproductcode, apiproductattributeid, obPv510UpdateAtmAttributeRequest)
+<a id="updateApiProductAttribute"></a>
+# **updateApiProductAttribute**
+> CreateApiProductAttribute200Response updateApiProductAttribute(bankid, apiproductcode, apiproductattributeid, updateAtmAttributeRequest)
 
 Update Api Product Attribute
 
@@ -193,15 +193,15 @@ val apiInstance = ApiProductAttributeApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val apiproductcode : kotlin.String = apiproductcode_example // kotlin.String | The APIPRODUCTCODE identifier
 val apiproductattributeid : kotlin.String = apiproductattributeid_example // kotlin.String | The APIPRODUCTATTRIBUTEID identifier
-val obPv510UpdateAtmAttributeRequest : OBPv510UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} // OBPv510UpdateAtmAttributeRequest | Request body
+val updateAtmAttributeRequest : UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} // UpdateAtmAttributeRequest | Request body
 try {
-    val result : OBPv600CreateApiProductAttribute200Response = apiInstance.oBPv600UpdateApiProductAttribute(bankid, apiproductcode, apiproductattributeid, obPv510UpdateAtmAttributeRequest)
+    val result : CreateApiProductAttribute200Response = apiInstance.updateApiProductAttribute(bankid, apiproductcode, apiproductattributeid, updateAtmAttributeRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ApiProductAttributeApi#oBPv600UpdateApiProductAttribute")
+    println("4xx response calling ApiProductAttributeApi#updateApiProductAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ApiProductAttributeApi#oBPv600UpdateApiProductAttribute")
+    println("5xx response calling ApiProductAttributeApi#updateApiProductAttribute")
     e.printStackTrace()
 }
 ```
@@ -212,11 +212,11 @@ try {
 | **apiproductattributeid** | **kotlin.String**| The APIPRODUCTATTRIBUTEID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -227,8 +227,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

@@ -10,6 +10,206 @@ import Foundation
 open class DynamicEntityManageAPI {
 
     /**
+     Backup Bank Level Dynamic Entity
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: BackupBankLevelDynamicEntity200Response
+     */
+    open class func backupBankLevelDynamicEntity(bankid: String, dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> BackupBankLevelDynamicEntity200Response {
+        return try await backupBankLevelDynamicEntityWithRequestBuilder(bankid: bankid, dynamicentityid: dynamicentityid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Backup Bank Level Dynamic Entity
+     - POST /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup
+     - <p>Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<BackupBankLevelDynamicEntity200Response> 
+     */
+    open class func backupBankLevelDynamicEntityWithRequestBuilder(bankid: String, dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<BackupBankLevelDynamicEntity200Response> {
+        var localVariablePath = "/obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let dynamicentityidPreEscape = "\(APIHelper.mapValueToPathItem(dynamicentityid))"
+        let dynamicentityidPostEscape = dynamicentityidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{dynamicentityid}", with: dynamicentityidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<BackupBankLevelDynamicEntity200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Backup System Level Dynamic Entity
+     
+     - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: BackupSystemDynamicEntity200Response
+     */
+    open class func backupSystemDynamicEntity(dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> BackupSystemDynamicEntity200Response {
+        return try await backupSystemDynamicEntityWithRequestBuilder(dynamicentityid: dynamicentityid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Backup System Level Dynamic Entity
+     - POST /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup
+     - <p>Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<BackupSystemDynamicEntity200Response> 
+     */
+    open class func backupSystemDynamicEntityWithRequestBuilder(dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<BackupSystemDynamicEntity200Response> {
+        var localVariablePath = "/obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup"
+        let dynamicentityidPreEscape = "\(APIHelper.mapValueToPathItem(dynamicentityid))"
+        let dynamicentityidPostEscape = dynamicentityidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{dynamicentityid}", with: dynamicentityidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<BackupSystemDynamicEntity200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Create Bank Level Dynamic Entity
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter createSystemDynamicEntityRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: CreateBankLevelDynamicEntity200Response
+     */
+    open class func createBankLevelDynamicEntity(bankid: String, createSystemDynamicEntityRequest: CreateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> CreateBankLevelDynamicEntity200Response {
+        return try await createBankLevelDynamicEntityWithRequestBuilder(bankid: bankid, createSystemDynamicEntityRequest: createSystemDynamicEntityRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Create Bank Level Dynamic Entity
+     - POST /obp/v6.0.0/management/banks/{bankid}/dynamic-entities
+     - <p>Create a bank level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter createSystemDynamicEntityRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<CreateBankLevelDynamicEntity200Response> 
+     */
+    open class func createBankLevelDynamicEntityWithRequestBuilder(bankid: String, createSystemDynamicEntityRequest: CreateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<CreateBankLevelDynamicEntity200Response> {
+        var localVariablePath = "/obp/v6.0.0/management/banks/{bankid}/dynamic-entities"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createSystemDynamicEntityRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<CreateBankLevelDynamicEntity200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Create System Level Dynamic Entity
+     
+     - parameter createSystemDynamicEntityRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: CreateSystemDynamicEntity200Response
+     */
+    open class func createSystemDynamicEntity(createSystemDynamicEntityRequest: CreateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> CreateSystemDynamicEntity200Response {
+        return try await createSystemDynamicEntityWithRequestBuilder(createSystemDynamicEntityRequest: createSystemDynamicEntityRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Create System Level Dynamic Entity
+     - POST /obp/v6.0.0/management/system-dynamic-entities
+     - <p>Create a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter createSystemDynamicEntityRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<CreateSystemDynamicEntity200Response> 
+     */
+    open class func createSystemDynamicEntityWithRequestBuilder(createSystemDynamicEntityRequest: CreateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<CreateSystemDynamicEntity200Response> {
+        let localVariablePath = "/obp/v6.0.0/management/system-dynamic-entities"
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createSystemDynamicEntityRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<CreateSystemDynamicEntity200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
      Delete Bank Level Dynamic Entity
      
      - parameter bankid: (path) The BANKID identifier 
@@ -17,8 +217,8 @@ open class DynamicEntityManageAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv400DeleteBankLevelDynamicEntity(bankid: String, dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv400DeleteBankLevelDynamicEntityWithRequestBuilder(bankid: bankid, dynamicentityid: dynamicentityid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteBankLevelDynamicEntity(bankid: String, dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteBankLevelDynamicEntityWithRequestBuilder(bankid: bankid, dynamicentityid: dynamicentityid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -32,14 +232,14 @@ open class DynamicEntityManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv400DeleteBankLevelDynamicEntityWithRequestBuilder(bankid: String, dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteBankLevelDynamicEntityWithRequestBuilder(bankid: String, dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -70,8 +270,8 @@ open class DynamicEntityManageAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv400DeleteMyDynamicEntity(dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv400DeleteMyDynamicEntityWithRequestBuilder(dynamicentityid: dynamicentityid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteMyDynamicEntity(dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteMyDynamicEntityWithRequestBuilder(dynamicentityid: dynamicentityid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -85,13 +285,13 @@ open class DynamicEntityManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv400DeleteMyDynamicEntityWithRequestBuilder(dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteMyDynamicEntityWithRequestBuilder(dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v4.0.0/my/dynamic-entities/{dynamicentityid}"
         let dynamicentityidPreEscape = "\(APIHelper.mapValueToPathItem(dynamicentityid))"
         let dynamicentityidPostEscape = dynamicentityidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -119,8 +319,8 @@ open class DynamicEntityManageAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv400DeleteSystemDynamicEntity(dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv400DeleteSystemDynamicEntityWithRequestBuilder(dynamicentityid: dynamicentityid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteSystemDynamicEntity(dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteSystemDynamicEntityWithRequestBuilder(dynamicentityid: dynamicentityid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -134,13 +334,13 @@ open class DynamicEntityManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv400DeleteSystemDynamicEntityWithRequestBuilder(dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteSystemDynamicEntityWithRequestBuilder(dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid}"
         let dynamicentityidPreEscape = "\(APIHelper.mapValueToPathItem(dynamicentityid))"
         let dynamicentityidPostEscape = dynamicentityidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -162,214 +362,14 @@ open class DynamicEntityManageAPI {
     }
 
     /**
-     Backup Bank Level Dynamic Entity
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600BackupBankLevelDynamicEntity200Response
-     */
-    open class func oBPv600BackupBankLevelDynamicEntity(bankid: String, dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600BackupBankLevelDynamicEntity200Response {
-        return try await oBPv600BackupBankLevelDynamicEntityWithRequestBuilder(bankid: bankid, dynamicentityid: dynamicentityid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Backup Bank Level Dynamic Entity
-     - POST /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup
-     - <p>Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600BackupBankLevelDynamicEntity200Response> 
-     */
-    open class func oBPv600BackupBankLevelDynamicEntityWithRequestBuilder(bankid: String, dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600BackupBankLevelDynamicEntity200Response> {
-        var localVariablePath = "/obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let dynamicentityidPreEscape = "\(APIHelper.mapValueToPathItem(dynamicentityid))"
-        let dynamicentityidPostEscape = dynamicentityidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{dynamicentityid}", with: dynamicentityidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv600BackupBankLevelDynamicEntity200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Backup System Level Dynamic Entity
-     
-     - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600BackupSystemDynamicEntity200Response
-     */
-    open class func oBPv600BackupSystemDynamicEntity(dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600BackupSystemDynamicEntity200Response {
-        return try await oBPv600BackupSystemDynamicEntityWithRequestBuilder(dynamicentityid: dynamicentityid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Backup System Level Dynamic Entity
-     - POST /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup
-     - <p>Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600BackupSystemDynamicEntity200Response> 
-     */
-    open class func oBPv600BackupSystemDynamicEntityWithRequestBuilder(dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600BackupSystemDynamicEntity200Response> {
-        var localVariablePath = "/obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup"
-        let dynamicentityidPreEscape = "\(APIHelper.mapValueToPathItem(dynamicentityid))"
-        let dynamicentityidPostEscape = dynamicentityidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{dynamicentityid}", with: dynamicentityidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv600BackupSystemDynamicEntity200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Create Bank Level Dynamic Entity
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv600CreateSystemDynamicEntityRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600CreateBankLevelDynamicEntity200Response
-     */
-    open class func oBPv600CreateBankLevelDynamicEntity(bankid: String, oBPv600CreateSystemDynamicEntityRequest: OBPv600CreateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600CreateBankLevelDynamicEntity200Response {
-        return try await oBPv600CreateBankLevelDynamicEntityWithRequestBuilder(bankid: bankid, oBPv600CreateSystemDynamicEntityRequest: oBPv600CreateSystemDynamicEntityRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Create Bank Level Dynamic Entity
-     - POST /obp/v6.0.0/management/banks/{bankid}/dynamic-entities
-     - <p>Create a bank level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv600CreateSystemDynamicEntityRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600CreateBankLevelDynamicEntity200Response> 
-     */
-    open class func oBPv600CreateBankLevelDynamicEntityWithRequestBuilder(bankid: String, oBPv600CreateSystemDynamicEntityRequest: OBPv600CreateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600CreateBankLevelDynamicEntity200Response> {
-        var localVariablePath = "/obp/v6.0.0/management/banks/{bankid}/dynamic-entities"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600CreateSystemDynamicEntityRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv600CreateBankLevelDynamicEntity200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Create System Level Dynamic Entity
-     
-     - parameter oBPv600CreateSystemDynamicEntityRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600CreateSystemDynamicEntity200Response
-     */
-    open class func oBPv600CreateSystemDynamicEntity(oBPv600CreateSystemDynamicEntityRequest: OBPv600CreateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600CreateSystemDynamicEntity200Response {
-        return try await oBPv600CreateSystemDynamicEntityWithRequestBuilder(oBPv600CreateSystemDynamicEntityRequest: oBPv600CreateSystemDynamicEntityRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Create System Level Dynamic Entity
-     - POST /obp/v6.0.0/management/system-dynamic-entities
-     - <p>Create a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter oBPv600CreateSystemDynamicEntityRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600CreateSystemDynamicEntity200Response> 
-     */
-    open class func oBPv600CreateSystemDynamicEntityWithRequestBuilder(oBPv600CreateSystemDynamicEntityRequest: OBPv600CreateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600CreateSystemDynamicEntity200Response> {
-        let localVariablePath = "/obp/v6.0.0/management/system-dynamic-entities"
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600CreateSystemDynamicEntityRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv600CreateSystemDynamicEntity200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
      Delete System Level Dynamic Entity Cascade
      
      - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv600DeleteSystemDynamicEntityCascade(dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv600DeleteSystemDynamicEntityCascadeWithRequestBuilder(dynamicentityid: dynamicentityid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteSystemDynamicEntityCascade(dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteSystemDynamicEntityCascadeWithRequestBuilder(dynamicentityid: dynamicentityid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -383,13 +383,13 @@ open class DynamicEntityManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv600DeleteSystemDynamicEntityCascadeWithRequestBuilder(dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteSystemDynamicEntityCascadeWithRequestBuilder(dynamicentityid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v6.0.0/management/system-dynamic-entities/cascade/{dynamicentityid}"
         let dynamicentityidPreEscape = "\(APIHelper.mapValueToPathItem(dynamicentityid))"
         let dynamicentityidPostEscape = dynamicentityidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -415,10 +415,10 @@ open class DynamicEntityManageAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetBankLevelDynamicEntities200Response
+     - returns: GetBankLevelDynamicEntities200Response
      */
-    open class func oBPv600GetBankLevelDynamicEntities(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetBankLevelDynamicEntities200Response {
-        return try await oBPv600GetBankLevelDynamicEntitiesWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
+    open class func getBankLevelDynamicEntities(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetBankLevelDynamicEntities200Response {
+        return try await getBankLevelDynamicEntitiesWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -432,13 +432,13 @@ open class DynamicEntityManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetBankLevelDynamicEntities200Response> 
+     - returns: RequestBuilder<GetBankLevelDynamicEntities200Response> 
      */
-    open class func oBPv600GetBankLevelDynamicEntitiesWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetBankLevelDynamicEntities200Response> {
+    open class func getBankLevelDynamicEntitiesWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetBankLevelDynamicEntities200Response> {
         var localVariablePath = "/obp/v6.0.0/management/banks/{bankid}/dynamic-entities"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -454,7 +454,7 @@ open class DynamicEntityManageAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetBankLevelDynamicEntities200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetBankLevelDynamicEntities200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -463,10 +463,10 @@ open class DynamicEntityManageAPI {
      Get My Dynamic Entities
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetAvailablePersonalDynamicEntities200Response
+     - returns: GetAvailablePersonalDynamicEntities200Response
      */
-    open class func oBPv600GetMyDynamicEntities(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetAvailablePersonalDynamicEntities200Response {
-        return try await oBPv600GetMyDynamicEntitiesWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getMyDynamicEntities(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAvailablePersonalDynamicEntities200Response {
+        return try await getMyDynamicEntitiesWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -480,12 +480,12 @@ open class DynamicEntityManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetAvailablePersonalDynamicEntities200Response> 
+     - returns: RequestBuilder<GetAvailablePersonalDynamicEntities200Response> 
      */
-    open class func oBPv600GetMyDynamicEntitiesWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetAvailablePersonalDynamicEntities200Response> {
+    open class func getMyDynamicEntitiesWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAvailablePersonalDynamicEntities200Response> {
         let localVariablePath = "/obp/v6.0.0/my/dynamic-entities"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -498,7 +498,7 @@ open class DynamicEntityManageAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetAvailablePersonalDynamicEntities200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAvailablePersonalDynamicEntities200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -507,10 +507,10 @@ open class DynamicEntityManageAPI {
      Get System Dynamic Entities
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetSystemDynamicEntities200Response
+     - returns: GetSystemDynamicEntities200Response
      */
-    open class func oBPv600GetSystemDynamicEntities(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetSystemDynamicEntities200Response {
-        return try await oBPv600GetSystemDynamicEntitiesWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getSystemDynamicEntities(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetSystemDynamicEntities200Response {
+        return try await getSystemDynamicEntitiesWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -524,12 +524,12 @@ open class DynamicEntityManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetSystemDynamicEntities200Response> 
+     - returns: RequestBuilder<GetSystemDynamicEntities200Response> 
      */
-    open class func oBPv600GetSystemDynamicEntitiesWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetSystemDynamicEntities200Response> {
+    open class func getSystemDynamicEntitiesWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetSystemDynamicEntities200Response> {
         let localVariablePath = "/obp/v6.0.0/management/system-dynamic-entities"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -542,7 +542,7 @@ open class DynamicEntityManageAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetSystemDynamicEntities200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetSystemDynamicEntities200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -552,12 +552,12 @@ open class DynamicEntityManageAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
-     - parameter oBPv600UpdateSystemDynamicEntityRequest: (body) Request body 
+     - parameter updateSystemDynamicEntityRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600UpdateBankLevelDynamicEntity200Response
+     - returns: UpdateBankLevelDynamicEntity200Response
      */
-    open class func oBPv600UpdateBankLevelDynamicEntity(bankid: String, dynamicentityid: String, oBPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600UpdateBankLevelDynamicEntity200Response {
-        return try await oBPv600UpdateBankLevelDynamicEntityWithRequestBuilder(bankid: bankid, dynamicentityid: dynamicentityid, oBPv600UpdateSystemDynamicEntityRequest: oBPv600UpdateSystemDynamicEntityRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateBankLevelDynamicEntity(bankid: String, dynamicentityid: String, updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateBankLevelDynamicEntity200Response {
+        return try await updateBankLevelDynamicEntityWithRequestBuilder(bankid: bankid, dynamicentityid: dynamicentityid, updateSystemDynamicEntityRequest: updateSystemDynamicEntityRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -571,15 +571,15 @@ open class DynamicEntityManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
-     - parameter oBPv600UpdateSystemDynamicEntityRequest: (body) Request body 
+     - parameter updateSystemDynamicEntityRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600UpdateBankLevelDynamicEntity200Response> 
+     - returns: RequestBuilder<UpdateBankLevelDynamicEntity200Response> 
      */
-    open class func oBPv600UpdateBankLevelDynamicEntityWithRequestBuilder(bankid: String, dynamicentityid: String, oBPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600UpdateBankLevelDynamicEntity200Response> {
+    open class func updateBankLevelDynamicEntityWithRequestBuilder(bankid: String, dynamicentityid: String, updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateBankLevelDynamicEntity200Response> {
         var localVariablePath = "/obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -588,7 +588,7 @@ open class DynamicEntityManageAPI {
         let dynamicentityidPostEscape = dynamicentityidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{dynamicentityid}", with: dynamicentityidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600UpdateSystemDynamicEntityRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateSystemDynamicEntityRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -598,7 +598,7 @@ open class DynamicEntityManageAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600UpdateBankLevelDynamicEntity200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateBankLevelDynamicEntity200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -607,12 +607,12 @@ open class DynamicEntityManageAPI {
      Update My Dynamic Entity
      
      - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
-     - parameter oBPv600UpdateSystemDynamicEntityRequest: (body) Request body 
+     - parameter updateSystemDynamicEntityRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600UpdateSystemDynamicEntity200Response
+     - returns: UpdateSystemDynamicEntity200Response
      */
-    open class func oBPv600UpdateMyDynamicEntity(dynamicentityid: String, oBPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600UpdateSystemDynamicEntity200Response {
-        return try await oBPv600UpdateMyDynamicEntityWithRequestBuilder(dynamicentityid: dynamicentityid, oBPv600UpdateSystemDynamicEntityRequest: oBPv600UpdateSystemDynamicEntityRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateMyDynamicEntity(dynamicentityid: String, updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateSystemDynamicEntity200Response {
+        return try await updateMyDynamicEntityWithRequestBuilder(dynamicentityid: dynamicentityid, updateSystemDynamicEntityRequest: updateSystemDynamicEntityRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -626,20 +626,20 @@ open class DynamicEntityManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
-     - parameter oBPv600UpdateSystemDynamicEntityRequest: (body) Request body 
+     - parameter updateSystemDynamicEntityRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600UpdateSystemDynamicEntity200Response> 
+     - returns: RequestBuilder<UpdateSystemDynamicEntity200Response> 
      */
-    open class func oBPv600UpdateMyDynamicEntityWithRequestBuilder(dynamicentityid: String, oBPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600UpdateSystemDynamicEntity200Response> {
+    open class func updateMyDynamicEntityWithRequestBuilder(dynamicentityid: String, updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateSystemDynamicEntity200Response> {
         var localVariablePath = "/obp/v6.0.0/my/dynamic-entities/{dynamicentityid}"
         let dynamicentityidPreEscape = "\(APIHelper.mapValueToPathItem(dynamicentityid))"
         let dynamicentityidPostEscape = dynamicentityidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{dynamicentityid}", with: dynamicentityidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600UpdateSystemDynamicEntityRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateSystemDynamicEntityRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -649,7 +649,7 @@ open class DynamicEntityManageAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600UpdateSystemDynamicEntity200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateSystemDynamicEntity200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -658,12 +658,12 @@ open class DynamicEntityManageAPI {
      Update System Level Dynamic Entity
      
      - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
-     - parameter oBPv600UpdateSystemDynamicEntityRequest: (body) Request body 
+     - parameter updateSystemDynamicEntityRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600UpdateSystemDynamicEntity200Response
+     - returns: UpdateSystemDynamicEntity200Response
      */
-    open class func oBPv600UpdateSystemDynamicEntity(dynamicentityid: String, oBPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600UpdateSystemDynamicEntity200Response {
-        return try await oBPv600UpdateSystemDynamicEntityWithRequestBuilder(dynamicentityid: dynamicentityid, oBPv600UpdateSystemDynamicEntityRequest: oBPv600UpdateSystemDynamicEntityRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateSystemDynamicEntity(dynamicentityid: String, updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateSystemDynamicEntity200Response {
+        return try await updateSystemDynamicEntityWithRequestBuilder(dynamicentityid: dynamicentityid, updateSystemDynamicEntityRequest: updateSystemDynamicEntityRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -677,20 +677,20 @@ open class DynamicEntityManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter dynamicentityid: (path) The DYNAMICENTITYID identifier 
-     - parameter oBPv600UpdateSystemDynamicEntityRequest: (body) Request body 
+     - parameter updateSystemDynamicEntityRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600UpdateSystemDynamicEntity200Response> 
+     - returns: RequestBuilder<UpdateSystemDynamicEntity200Response> 
      */
-    open class func oBPv600UpdateSystemDynamicEntityWithRequestBuilder(dynamicentityid: String, oBPv600UpdateSystemDynamicEntityRequest: OBPv600UpdateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600UpdateSystemDynamicEntity200Response> {
+    open class func updateSystemDynamicEntityWithRequestBuilder(dynamicentityid: String, updateSystemDynamicEntityRequest: UpdateSystemDynamicEntityRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateSystemDynamicEntity200Response> {
         var localVariablePath = "/obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}"
         let dynamicentityidPreEscape = "\(APIHelper.mapValueToPathItem(dynamicentityid))"
         let dynamicentityidPostEscape = dynamicentityidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{dynamicentityid}", with: dynamicentityidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600UpdateSystemDynamicEntityRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateSystemDynamicEntityRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -700,7 +700,7 @@ open class DynamicEntityManageAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600UpdateSystemDynamicEntity200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateSystemDynamicEntity200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

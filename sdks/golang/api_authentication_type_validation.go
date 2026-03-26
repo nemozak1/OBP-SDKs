@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,25 +24,25 @@ import (
 // AuthenticationTypeValidationAPIService AuthenticationTypeValidationAPI service
 type AuthenticationTypeValidationAPIService service
 
-type ApiOBPv400CreateAuthenticationTypeValidationRequest struct {
+type ApiCreateAuthenticationTypeValidationRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationTypeValidationAPIService
 	operationid string
-	oBPv400UpdateAuthenticationTypeValidationRequest *OBPv400UpdateAuthenticationTypeValidationRequest
+	updateAuthenticationTypeValidationRequest *UpdateAuthenticationTypeValidationRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateAuthenticationTypeValidationRequest) OBPv400UpdateAuthenticationTypeValidationRequest(oBPv400UpdateAuthenticationTypeValidationRequest OBPv400UpdateAuthenticationTypeValidationRequest) ApiOBPv400CreateAuthenticationTypeValidationRequest {
-	r.oBPv400UpdateAuthenticationTypeValidationRequest = &oBPv400UpdateAuthenticationTypeValidationRequest
+func (r ApiCreateAuthenticationTypeValidationRequest) UpdateAuthenticationTypeValidationRequest(updateAuthenticationTypeValidationRequest UpdateAuthenticationTypeValidationRequest) ApiCreateAuthenticationTypeValidationRequest {
+	r.updateAuthenticationTypeValidationRequest = &updateAuthenticationTypeValidationRequest
 	return r
 }
 
-func (r ApiOBPv400CreateAuthenticationTypeValidationRequest) Execute() (*OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateAuthenticationTypeValidationExecute(r)
+func (r ApiCreateAuthenticationTypeValidationRequest) Execute() (*GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner, *http.Response, error) {
+	return r.ApiService.CreateAuthenticationTypeValidationExecute(r)
 }
 
 /*
-OBPv400CreateAuthenticationTypeValidation Create an Authentication Type Validation
+CreateAuthenticationTypeValidation Create an Authentication Type Validation
 
 <p>Create an Authentication Type Validation.</p>
 <p>Please supply allowed authentication types.</p>
@@ -55,10 +55,10 @@ OBPv400CreateAuthenticationTypeValidation Create an Authentication Type Validati
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param operationid The OPERATIONID identifier
- @return ApiOBPv400CreateAuthenticationTypeValidationRequest
+ @return ApiCreateAuthenticationTypeValidationRequest
 */
-func (a *AuthenticationTypeValidationAPIService) OBPv400CreateAuthenticationTypeValidation(ctx context.Context, operationid string) ApiOBPv400CreateAuthenticationTypeValidationRequest {
-	return ApiOBPv400CreateAuthenticationTypeValidationRequest{
+func (a *AuthenticationTypeValidationAPIService) CreateAuthenticationTypeValidation(ctx context.Context, operationid string) ApiCreateAuthenticationTypeValidationRequest {
+	return ApiCreateAuthenticationTypeValidationRequest{
 		ApiService: a,
 		ctx: ctx,
 		operationid: operationid,
@@ -66,16 +66,16 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400CreateAuthenticationType
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
-func (a *AuthenticationTypeValidationAPIService) OBPv400CreateAuthenticationTypeValidationExecute(r ApiOBPv400CreateAuthenticationTypeValidationRequest) (*OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems, *http.Response, error) {
+//  @return GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
+func (a *AuthenticationTypeValidationAPIService) CreateAuthenticationTypeValidationExecute(r ApiCreateAuthenticationTypeValidationRequest) (*GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+		localVarReturnValue  *GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationTypeValidationAPIService.OBPv400CreateAuthenticationTypeValidation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationTypeValidationAPIService.CreateAuthenticationTypeValidation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -86,8 +86,8 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400CreateAuthenticationType
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateAuthenticationTypeValidationRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateAuthenticationTypeValidationRequest is required and must be specified")
+	if r.updateAuthenticationTypeValidationRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAuthenticationTypeValidationRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -108,7 +108,7 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400CreateAuthenticationType
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400UpdateAuthenticationTypeValidationRequest
+	localVarPostBody = r.updateAuthenticationTypeValidationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -133,7 +133,7 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400CreateAuthenticationType
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -174,18 +174,18 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400CreateAuthenticationType
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteAuthenticationTypeValidationRequest struct {
+type ApiDeleteAuthenticationTypeValidationRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationTypeValidationAPIService
 	operationid string
 }
 
-func (r ApiOBPv400DeleteAuthenticationTypeValidationRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteAuthenticationTypeValidationExecute(r)
+func (r ApiDeleteAuthenticationTypeValidationRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteAuthenticationTypeValidationExecute(r)
 }
 
 /*
-OBPv400DeleteAuthenticationTypeValidation Delete an Authentication Type Validation
+DeleteAuthenticationTypeValidation Delete an Authentication Type Validation
 
 <p>Delete an Authentication Type Validation by operation_id.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -196,10 +196,10 @@ OBPv400DeleteAuthenticationTypeValidation Delete an Authentication Type Validati
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param operationid The OPERATIONID identifier
- @return ApiOBPv400DeleteAuthenticationTypeValidationRequest
+ @return ApiDeleteAuthenticationTypeValidationRequest
 */
-func (a *AuthenticationTypeValidationAPIService) OBPv400DeleteAuthenticationTypeValidation(ctx context.Context, operationid string) ApiOBPv400DeleteAuthenticationTypeValidationRequest {
-	return ApiOBPv400DeleteAuthenticationTypeValidationRequest{
+func (a *AuthenticationTypeValidationAPIService) DeleteAuthenticationTypeValidation(ctx context.Context, operationid string) ApiDeleteAuthenticationTypeValidationRequest {
+	return ApiDeleteAuthenticationTypeValidationRequest{
 		ApiService: a,
 		ctx: ctx,
 		operationid: operationid,
@@ -207,14 +207,14 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400DeleteAuthenticationType
 }
 
 // Execute executes the request
-func (a *AuthenticationTypeValidationAPIService) OBPv400DeleteAuthenticationTypeValidationExecute(r ApiOBPv400DeleteAuthenticationTypeValidationRequest) (*http.Response, error) {
+func (a *AuthenticationTypeValidationAPIService) DeleteAuthenticationTypeValidationExecute(r ApiDeleteAuthenticationTypeValidationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationTypeValidationAPIService.OBPv400DeleteAuthenticationTypeValidation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationTypeValidationAPIService.DeleteAuthenticationTypeValidation")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -267,7 +267,7 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400DeleteAuthenticationType
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -299,17 +299,17 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400DeleteAuthenticationType
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetAllAuthenticationTypeValidationsRequest struct {
+type ApiGetAllAuthenticationTypeValidationsRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationTypeValidationAPIService
 }
 
-func (r ApiOBPv400GetAllAuthenticationTypeValidationsRequest) Execute() (*OBPv400GetAllAuthenticationTypeValidationsPublic200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetAllAuthenticationTypeValidationsExecute(r)
+func (r ApiGetAllAuthenticationTypeValidationsRequest) Execute() (*GetAllAuthenticationTypeValidationsPublic200Response, *http.Response, error) {
+	return r.ApiService.GetAllAuthenticationTypeValidationsExecute(r)
 }
 
 /*
-OBPv400GetAllAuthenticationTypeValidations Get all Authentication Type Validations
+GetAllAuthenticationTypeValidations Get all Authentication Type Validations
 
 <p>Get all Authentication Type Validations.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -317,26 +317,26 @@ OBPv400GetAllAuthenticationTypeValidations Get all Authentication Type Validatio
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetAllAuthenticationTypeValidationsRequest
+ @return ApiGetAllAuthenticationTypeValidationsRequest
 */
-func (a *AuthenticationTypeValidationAPIService) OBPv400GetAllAuthenticationTypeValidations(ctx context.Context) ApiOBPv400GetAllAuthenticationTypeValidationsRequest {
-	return ApiOBPv400GetAllAuthenticationTypeValidationsRequest{
+func (a *AuthenticationTypeValidationAPIService) GetAllAuthenticationTypeValidations(ctx context.Context) ApiGetAllAuthenticationTypeValidationsRequest {
+	return ApiGetAllAuthenticationTypeValidationsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllAuthenticationTypeValidationsPublic200Response
-func (a *AuthenticationTypeValidationAPIService) OBPv400GetAllAuthenticationTypeValidationsExecute(r ApiOBPv400GetAllAuthenticationTypeValidationsRequest) (*OBPv400GetAllAuthenticationTypeValidationsPublic200Response, *http.Response, error) {
+//  @return GetAllAuthenticationTypeValidationsPublic200Response
+func (a *AuthenticationTypeValidationAPIService) GetAllAuthenticationTypeValidationsExecute(r ApiGetAllAuthenticationTypeValidationsRequest) (*GetAllAuthenticationTypeValidationsPublic200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+		localVarReturnValue  *GetAllAuthenticationTypeValidationsPublic200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationTypeValidationAPIService.OBPv400GetAllAuthenticationTypeValidations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationTypeValidationAPIService.GetAllAuthenticationTypeValidations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -388,7 +388,7 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400GetAllAuthenticationType
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -429,17 +429,17 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400GetAllAuthenticationType
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetAllAuthenticationTypeValidationsPublicRequest struct {
+type ApiGetAllAuthenticationTypeValidationsPublicRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationTypeValidationAPIService
 }
 
-func (r ApiOBPv400GetAllAuthenticationTypeValidationsPublicRequest) Execute() (*OBPv400GetAllAuthenticationTypeValidationsPublic200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetAllAuthenticationTypeValidationsPublicExecute(r)
+func (r ApiGetAllAuthenticationTypeValidationsPublicRequest) Execute() (*GetAllAuthenticationTypeValidationsPublic200Response, *http.Response, error) {
+	return r.ApiService.GetAllAuthenticationTypeValidationsPublicExecute(r)
 }
 
 /*
-OBPv400GetAllAuthenticationTypeValidationsPublic Get all Authentication Type Validations - public
+GetAllAuthenticationTypeValidationsPublic Get all Authentication Type Validations - public
 
 <p>Get all Authentication Type Validations - public.</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
@@ -447,26 +447,26 @@ OBPv400GetAllAuthenticationTypeValidationsPublic Get all Authentication Type Val
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetAllAuthenticationTypeValidationsPublicRequest
+ @return ApiGetAllAuthenticationTypeValidationsPublicRequest
 */
-func (a *AuthenticationTypeValidationAPIService) OBPv400GetAllAuthenticationTypeValidationsPublic(ctx context.Context) ApiOBPv400GetAllAuthenticationTypeValidationsPublicRequest {
-	return ApiOBPv400GetAllAuthenticationTypeValidationsPublicRequest{
+func (a *AuthenticationTypeValidationAPIService) GetAllAuthenticationTypeValidationsPublic(ctx context.Context) ApiGetAllAuthenticationTypeValidationsPublicRequest {
+	return ApiGetAllAuthenticationTypeValidationsPublicRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllAuthenticationTypeValidationsPublic200Response
-func (a *AuthenticationTypeValidationAPIService) OBPv400GetAllAuthenticationTypeValidationsPublicExecute(r ApiOBPv400GetAllAuthenticationTypeValidationsPublicRequest) (*OBPv400GetAllAuthenticationTypeValidationsPublic200Response, *http.Response, error) {
+//  @return GetAllAuthenticationTypeValidationsPublic200Response
+func (a *AuthenticationTypeValidationAPIService) GetAllAuthenticationTypeValidationsPublicExecute(r ApiGetAllAuthenticationTypeValidationsPublicRequest) (*GetAllAuthenticationTypeValidationsPublic200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+		localVarReturnValue  *GetAllAuthenticationTypeValidationsPublic200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationTypeValidationAPIService.OBPv400GetAllAuthenticationTypeValidationsPublic")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationTypeValidationAPIService.GetAllAuthenticationTypeValidationsPublic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -531,18 +531,18 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400GetAllAuthenticationType
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetAuthenticationTypeValidationRequest struct {
+type ApiGetAuthenticationTypeValidationRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationTypeValidationAPIService
 	operationid string
 }
 
-func (r ApiOBPv400GetAuthenticationTypeValidationRequest) Execute() (*OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetAuthenticationTypeValidationExecute(r)
+func (r ApiGetAuthenticationTypeValidationRequest) Execute() (*GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner, *http.Response, error) {
+	return r.ApiService.GetAuthenticationTypeValidationExecute(r)
 }
 
 /*
-OBPv400GetAuthenticationTypeValidation Get an Authentication Type Validation
+GetAuthenticationTypeValidation Get an Authentication Type Validation
 
 <p>Get an Authentication Type Validation by operation_id.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -553,10 +553,10 @@ OBPv400GetAuthenticationTypeValidation Get an Authentication Type Validation
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param operationid The OPERATIONID identifier
- @return ApiOBPv400GetAuthenticationTypeValidationRequest
+ @return ApiGetAuthenticationTypeValidationRequest
 */
-func (a *AuthenticationTypeValidationAPIService) OBPv400GetAuthenticationTypeValidation(ctx context.Context, operationid string) ApiOBPv400GetAuthenticationTypeValidationRequest {
-	return ApiOBPv400GetAuthenticationTypeValidationRequest{
+func (a *AuthenticationTypeValidationAPIService) GetAuthenticationTypeValidation(ctx context.Context, operationid string) ApiGetAuthenticationTypeValidationRequest {
+	return ApiGetAuthenticationTypeValidationRequest{
 		ApiService: a,
 		ctx: ctx,
 		operationid: operationid,
@@ -564,16 +564,16 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400GetAuthenticationTypeVal
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
-func (a *AuthenticationTypeValidationAPIService) OBPv400GetAuthenticationTypeValidationExecute(r ApiOBPv400GetAuthenticationTypeValidationRequest) (*OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems, *http.Response, error) {
+//  @return GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
+func (a *AuthenticationTypeValidationAPIService) GetAuthenticationTypeValidationExecute(r ApiGetAuthenticationTypeValidationRequest) (*GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+		localVarReturnValue  *GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationTypeValidationAPIService.OBPv400GetAuthenticationTypeValidation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationTypeValidationAPIService.GetAuthenticationTypeValidation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -626,7 +626,7 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400GetAuthenticationTypeVal
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -667,25 +667,25 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400GetAuthenticationTypeVal
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateAuthenticationTypeValidationRequest struct {
+type ApiUpdateAuthenticationTypeValidationRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationTypeValidationAPIService
 	operationid string
-	oBPv400UpdateAuthenticationTypeValidationRequest *OBPv400UpdateAuthenticationTypeValidationRequest
+	updateAuthenticationTypeValidationRequest *UpdateAuthenticationTypeValidationRequest
 }
 
 // Request body
-func (r ApiOBPv400UpdateAuthenticationTypeValidationRequest) OBPv400UpdateAuthenticationTypeValidationRequest(oBPv400UpdateAuthenticationTypeValidationRequest OBPv400UpdateAuthenticationTypeValidationRequest) ApiOBPv400UpdateAuthenticationTypeValidationRequest {
-	r.oBPv400UpdateAuthenticationTypeValidationRequest = &oBPv400UpdateAuthenticationTypeValidationRequest
+func (r ApiUpdateAuthenticationTypeValidationRequest) UpdateAuthenticationTypeValidationRequest(updateAuthenticationTypeValidationRequest UpdateAuthenticationTypeValidationRequest) ApiUpdateAuthenticationTypeValidationRequest {
+	r.updateAuthenticationTypeValidationRequest = &updateAuthenticationTypeValidationRequest
 	return r
 }
 
-func (r ApiOBPv400UpdateAuthenticationTypeValidationRequest) Execute() (*OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateAuthenticationTypeValidationExecute(r)
+func (r ApiUpdateAuthenticationTypeValidationRequest) Execute() (*GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner, *http.Response, error) {
+	return r.ApiService.UpdateAuthenticationTypeValidationExecute(r)
 }
 
 /*
-OBPv400UpdateAuthenticationTypeValidation Update an Authentication Type Validation
+UpdateAuthenticationTypeValidation Update an Authentication Type Validation
 
 <p>Update an Authentication Type Validation.</p>
 <p>Please supply allowed authentication types.</p>
@@ -697,10 +697,10 @@ OBPv400UpdateAuthenticationTypeValidation Update an Authentication Type Validati
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param operationid The OPERATIONID identifier
- @return ApiOBPv400UpdateAuthenticationTypeValidationRequest
+ @return ApiUpdateAuthenticationTypeValidationRequest
 */
-func (a *AuthenticationTypeValidationAPIService) OBPv400UpdateAuthenticationTypeValidation(ctx context.Context, operationid string) ApiOBPv400UpdateAuthenticationTypeValidationRequest {
-	return ApiOBPv400UpdateAuthenticationTypeValidationRequest{
+func (a *AuthenticationTypeValidationAPIService) UpdateAuthenticationTypeValidation(ctx context.Context, operationid string) ApiUpdateAuthenticationTypeValidationRequest {
+	return ApiUpdateAuthenticationTypeValidationRequest{
 		ApiService: a,
 		ctx: ctx,
 		operationid: operationid,
@@ -708,16 +708,16 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400UpdateAuthenticationType
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
-func (a *AuthenticationTypeValidationAPIService) OBPv400UpdateAuthenticationTypeValidationExecute(r ApiOBPv400UpdateAuthenticationTypeValidationRequest) (*OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems, *http.Response, error) {
+//  @return GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
+func (a *AuthenticationTypeValidationAPIService) UpdateAuthenticationTypeValidationExecute(r ApiUpdateAuthenticationTypeValidationRequest) (*GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+		localVarReturnValue  *GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationTypeValidationAPIService.OBPv400UpdateAuthenticationTypeValidation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationTypeValidationAPIService.UpdateAuthenticationTypeValidation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -728,8 +728,8 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400UpdateAuthenticationType
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateAuthenticationTypeValidationRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateAuthenticationTypeValidationRequest is required and must be specified")
+	if r.updateAuthenticationTypeValidationRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAuthenticationTypeValidationRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -750,7 +750,7 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400UpdateAuthenticationType
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400UpdateAuthenticationTypeValidationRequest
+	localVarPostBody = r.updateAuthenticationTypeValidationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -775,7 +775,7 @@ func (a *AuthenticationTypeValidationAPIService) OBPv400UpdateAuthenticationType
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

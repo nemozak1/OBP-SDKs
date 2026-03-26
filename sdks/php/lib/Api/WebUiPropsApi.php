@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,25 +75,19 @@ class WebUiPropsApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv310CreateWebUiProps' => [
+        'createOrUpdateWebUiProps' => [
             'application/json',
         ],
-        'oBPv310DeleteWebUiProps' => [
+        'createWebUiProps' => [
             'application/json',
         ],
-        'oBPv310GetWebUiProps' => [
+        'deleteWebUiProps' => [
             'application/json',
         ],
-        'oBPv600CreateOrUpdateWebUiProps' => [
+        'getWebUiProp' => [
             'application/json',
         ],
-        'oBPv600DeleteWebUiProps' => [
-            'application/json',
-        ],
-        'oBPv600GetWebUiProp' => [
-            'application/json',
-        ],
-        'oBPv600GetWebUiProps' => [
+        'getWebUiProps' => [
             'application/json',
         ],
     ];
@@ -145,38 +139,40 @@ class WebUiPropsApi
     }
 
     /**
-     * Operation oBPv310CreateWebUiProps
+     * Operation createOrUpdateWebUiProps
      *
-     * Create WebUiProps
+     * Create or Update WebUiProps
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems $obpv400_create_transaction_request_counterparty200_response_properties_attributes_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateWebUiProps'] to see the possible values for this operation
+     * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
+     * @param  \OpenBankProject\Model\GetTransactionTypes200ResponseTransactionTypesInnerId $get_transaction_types200_response_transaction_types_inner_id Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrUpdateWebUiProps'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems
+     * @return \OpenBankProject\Model\CreateWebUiProps200Response
      */
-    public function oBPv310CreateWebUiProps($obpv400_create_transaction_request_counterparty200_response_properties_attributes_items, string $contentType = self::contentTypes['oBPv310CreateWebUiProps'][0])
+    public function createOrUpdateWebUiProps($webuipropname, $get_transaction_types200_response_transaction_types_inner_id, string $contentType = self::contentTypes['createOrUpdateWebUiProps'][0])
     {
-        list($response) = $this->oBPv310CreateWebUiPropsWithHttpInfo($obpv400_create_transaction_request_counterparty200_response_properties_attributes_items, $contentType);
+        list($response) = $this->createOrUpdateWebUiPropsWithHttpInfo($webuipropname, $get_transaction_types200_response_transaction_types_inner_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310CreateWebUiPropsWithHttpInfo
+     * Operation createOrUpdateWebUiPropsWithHttpInfo
      *
-     * Create WebUiProps
+     * Create or Update WebUiProps
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems $obpv400_create_transaction_request_counterparty200_response_properties_attributes_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateWebUiProps'] to see the possible values for this operation
+     * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
+     * @param  \OpenBankProject\Model\GetTransactionTypes200ResponseTransactionTypesInnerId $get_transaction_types200_response_transaction_types_inner_id Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrUpdateWebUiProps'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateWebUiProps200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310CreateWebUiPropsWithHttpInfo($obpv400_create_transaction_request_counterparty200_response_properties_attributes_items, string $contentType = self::contentTypes['oBPv310CreateWebUiProps'][0])
+    public function createOrUpdateWebUiPropsWithHttpInfo($webuipropname, $get_transaction_types200_response_transaction_types_inner_id, string $contentType = self::contentTypes['createOrUpdateWebUiProps'][0])
     {
-        $request = $this->oBPv310CreateWebUiPropsRequest($obpv400_create_transaction_request_counterparty200_response_properties_attributes_items, $contentType);
+        $request = $this->createOrUpdateWebUiPropsRequest($webuipropname, $get_transaction_types200_response_transaction_types_inner_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -204,7 +200,7 @@ class WebUiPropsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems',
+                        '\OpenBankProject\Model\CreateWebUiProps200Response',
                         $request,
                         $response,
                     );
@@ -226,7 +222,7 @@ class WebUiPropsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems',
+                '\OpenBankProject\Model\CreateWebUiProps200Response',
                 $request,
                 $response,
             );
@@ -235,7 +231,7 @@ class WebUiPropsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems',
+                        '\OpenBankProject\Model\CreateWebUiProps200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -248,19 +244,20 @@ class WebUiPropsApi
     }
 
     /**
-     * Operation oBPv310CreateWebUiPropsAsync
+     * Operation createOrUpdateWebUiPropsAsync
      *
-     * Create WebUiProps
+     * Create or Update WebUiProps
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems $obpv400_create_transaction_request_counterparty200_response_properties_attributes_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateWebUiProps'] to see the possible values for this operation
+     * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
+     * @param  \OpenBankProject\Model\GetTransactionTypes200ResponseTransactionTypesInnerId $get_transaction_types200_response_transaction_types_inner_id Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrUpdateWebUiProps'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310CreateWebUiPropsAsync($obpv400_create_transaction_request_counterparty200_response_properties_attributes_items, string $contentType = self::contentTypes['oBPv310CreateWebUiProps'][0])
+    public function createOrUpdateWebUiPropsAsync($webuipropname, $get_transaction_types200_response_transaction_types_inner_id, string $contentType = self::contentTypes['createOrUpdateWebUiProps'][0])
     {
-        return $this->oBPv310CreateWebUiPropsAsyncWithHttpInfo($obpv400_create_transaction_request_counterparty200_response_properties_attributes_items, $contentType)
+        return $this->createOrUpdateWebUiPropsAsyncWithHttpInfo($webuipropname, $get_transaction_types200_response_transaction_types_inner_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -269,20 +266,21 @@ class WebUiPropsApi
     }
 
     /**
-     * Operation oBPv310CreateWebUiPropsAsyncWithHttpInfo
+     * Operation createOrUpdateWebUiPropsAsyncWithHttpInfo
      *
-     * Create WebUiProps
+     * Create or Update WebUiProps
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems $obpv400_create_transaction_request_counterparty200_response_properties_attributes_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateWebUiProps'] to see the possible values for this operation
+     * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
+     * @param  \OpenBankProject\Model\GetTransactionTypes200ResponseTransactionTypesInnerId $get_transaction_types200_response_transaction_types_inner_id Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrUpdateWebUiProps'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310CreateWebUiPropsAsyncWithHttpInfo($obpv400_create_transaction_request_counterparty200_response_properties_attributes_items, string $contentType = self::contentTypes['oBPv310CreateWebUiProps'][0])
+    public function createOrUpdateWebUiPropsAsyncWithHttpInfo($webuipropname, $get_transaction_types200_response_transaction_types_inner_id, string $contentType = self::contentTypes['createOrUpdateWebUiProps'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems';
-        $request = $this->oBPv310CreateWebUiPropsRequest($obpv400_create_transaction_request_counterparty200_response_properties_attributes_items, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateWebUiProps200Response';
+        $request = $this->createOrUpdateWebUiPropsRequest($webuipropname, $get_transaction_types200_response_transaction_types_inner_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -321,808 +319,29 @@ class WebUiPropsApi
     }
 
     /**
-     * Create request for operation 'oBPv310CreateWebUiProps'
+     * Create request for operation 'createOrUpdateWebUiProps'
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems $obpv400_create_transaction_request_counterparty200_response_properties_attributes_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateWebUiProps'] to see the possible values for this operation
+     * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
+     * @param  \OpenBankProject\Model\GetTransactionTypes200ResponseTransactionTypesInnerId $get_transaction_types200_response_transaction_types_inner_id Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrUpdateWebUiProps'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310CreateWebUiPropsRequest($obpv400_create_transaction_request_counterparty200_response_properties_attributes_items, string $contentType = self::contentTypes['oBPv310CreateWebUiProps'][0])
-    {
-
-        // verify the required parameter 'obpv400_create_transaction_request_counterparty200_response_properties_attributes_items' is set
-        if ($obpv400_create_transaction_request_counterparty200_response_properties_attributes_items === null || (is_array($obpv400_create_transaction_request_counterparty200_response_properties_attributes_items) && count($obpv400_create_transaction_request_counterparty200_response_properties_attributes_items) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_transaction_request_counterparty200_response_properties_attributes_items when calling oBPv310CreateWebUiProps'
-            );
-        }
-
-
-        $resourcePath = '/obp/v3.1.0/management/webui_props';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv400_create_transaction_request_counterparty200_response_properties_attributes_items)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_transaction_request_counterparty200_response_properties_attributes_items));
-            } else {
-                $httpBody = $obpv400_create_transaction_request_counterparty200_response_properties_attributes_items;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv310DeleteWebUiProps
-     *
-     * Delete WebUiProps
-     *
-     * @param  string $webuipropsid The WEBUIPROPSID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310DeleteWebUiProps'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv310DeleteWebUiProps($webuipropsid, string $contentType = self::contentTypes['oBPv310DeleteWebUiProps'][0])
-    {
-        $this->oBPv310DeleteWebUiPropsWithHttpInfo($webuipropsid, $contentType);
-    }
-
-    /**
-     * Operation oBPv310DeleteWebUiPropsWithHttpInfo
-     *
-     * Delete WebUiProps
-     *
-     * @param  string $webuipropsid The WEBUIPROPSID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310DeleteWebUiProps'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv310DeleteWebUiPropsWithHttpInfo($webuipropsid, string $contentType = self::contentTypes['oBPv310DeleteWebUiProps'][0])
-    {
-        $request = $this->oBPv310DeleteWebUiPropsRequest($webuipropsid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv310DeleteWebUiPropsAsync
-     *
-     * Delete WebUiProps
-     *
-     * @param  string $webuipropsid The WEBUIPROPSID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310DeleteWebUiProps'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv310DeleteWebUiPropsAsync($webuipropsid, string $contentType = self::contentTypes['oBPv310DeleteWebUiProps'][0])
-    {
-        return $this->oBPv310DeleteWebUiPropsAsyncWithHttpInfo($webuipropsid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv310DeleteWebUiPropsAsyncWithHttpInfo
-     *
-     * Delete WebUiProps
-     *
-     * @param  string $webuipropsid The WEBUIPROPSID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310DeleteWebUiProps'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv310DeleteWebUiPropsAsyncWithHttpInfo($webuipropsid, string $contentType = self::contentTypes['oBPv310DeleteWebUiProps'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv310DeleteWebUiPropsRequest($webuipropsid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv310DeleteWebUiProps'
-     *
-     * @param  string $webuipropsid The WEBUIPROPSID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310DeleteWebUiProps'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv310DeleteWebUiPropsRequest($webuipropsid, string $contentType = self::contentTypes['oBPv310DeleteWebUiProps'][0])
-    {
-
-        // verify the required parameter 'webuipropsid' is set
-        if ($webuipropsid === null || (is_array($webuipropsid) && count($webuipropsid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $webuipropsid when calling oBPv310DeleteWebUiProps'
-            );
-        }
-
-
-        $resourcePath = '/obp/v3.1.0/management/webui_props/{webuipropsid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($webuipropsid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'webuipropsid' . '}',
-                ObjectSerializer::toPathValue($webuipropsid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv310GetWebUiProps
-     *
-     * Get WebUiProps
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetWebUiProps'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetWebUiProps200Response
-     */
-    public function oBPv310GetWebUiProps(string $contentType = self::contentTypes['oBPv310GetWebUiProps'][0])
-    {
-        list($response) = $this->oBPv310GetWebUiPropsWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv310GetWebUiPropsWithHttpInfo
-     *
-     * Get WebUiProps
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetWebUiProps'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetWebUiProps200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv310GetWebUiPropsWithHttpInfo(string $contentType = self::contentTypes['oBPv310GetWebUiProps'][0])
-    {
-        $request = $this->oBPv310GetWebUiPropsRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetWebUiProps200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetWebUiProps200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetWebUiProps200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv310GetWebUiPropsAsync
-     *
-     * Get WebUiProps
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetWebUiProps'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv310GetWebUiPropsAsync(string $contentType = self::contentTypes['oBPv310GetWebUiProps'][0])
-    {
-        return $this->oBPv310GetWebUiPropsAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv310GetWebUiPropsAsyncWithHttpInfo
-     *
-     * Get WebUiProps
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetWebUiProps'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv310GetWebUiPropsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv310GetWebUiProps'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv310GetWebUiProps200Response';
-        $request = $this->oBPv310GetWebUiPropsRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv310GetWebUiProps'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetWebUiProps'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv310GetWebUiPropsRequest(string $contentType = self::contentTypes['oBPv310GetWebUiProps'][0])
-    {
-
-
-        $resourcePath = '/obp/v3.1.0/management/webui_props';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600CreateOrUpdateWebUiProps
-     *
-     * Create or Update WebUiProps
-     *
-     * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response $obpv400_delete_system_level_endpoint_tag200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateOrUpdateWebUiProps'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems
-     */
-    public function oBPv600CreateOrUpdateWebUiProps($webuipropname, $obpv400_delete_system_level_endpoint_tag200_response, string $contentType = self::contentTypes['oBPv600CreateOrUpdateWebUiProps'][0])
-    {
-        list($response) = $this->oBPv600CreateOrUpdateWebUiPropsWithHttpInfo($webuipropname, $obpv400_delete_system_level_endpoint_tag200_response, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv600CreateOrUpdateWebUiPropsWithHttpInfo
-     *
-     * Create or Update WebUiProps
-     *
-     * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response $obpv400_delete_system_level_endpoint_tag200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateOrUpdateWebUiProps'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600CreateOrUpdateWebUiPropsWithHttpInfo($webuipropname, $obpv400_delete_system_level_endpoint_tag200_response, string $contentType = self::contentTypes['oBPv600CreateOrUpdateWebUiProps'][0])
-    {
-        $request = $this->oBPv600CreateOrUpdateWebUiPropsRequest($webuipropname, $obpv400_delete_system_level_endpoint_tag200_response, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600CreateOrUpdateWebUiPropsAsync
-     *
-     * Create or Update WebUiProps
-     *
-     * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response $obpv400_delete_system_level_endpoint_tag200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateOrUpdateWebUiProps'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600CreateOrUpdateWebUiPropsAsync($webuipropname, $obpv400_delete_system_level_endpoint_tag200_response, string $contentType = self::contentTypes['oBPv600CreateOrUpdateWebUiProps'][0])
-    {
-        return $this->oBPv600CreateOrUpdateWebUiPropsAsyncWithHttpInfo($webuipropname, $obpv400_delete_system_level_endpoint_tag200_response, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600CreateOrUpdateWebUiPropsAsyncWithHttpInfo
-     *
-     * Create or Update WebUiProps
-     *
-     * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response $obpv400_delete_system_level_endpoint_tag200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateOrUpdateWebUiProps'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600CreateOrUpdateWebUiPropsAsyncWithHttpInfo($webuipropname, $obpv400_delete_system_level_endpoint_tag200_response, string $contentType = self::contentTypes['oBPv600CreateOrUpdateWebUiProps'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems';
-        $request = $this->oBPv600CreateOrUpdateWebUiPropsRequest($webuipropname, $obpv400_delete_system_level_endpoint_tag200_response, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600CreateOrUpdateWebUiProps'
-     *
-     * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response $obpv400_delete_system_level_endpoint_tag200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateOrUpdateWebUiProps'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600CreateOrUpdateWebUiPropsRequest($webuipropname, $obpv400_delete_system_level_endpoint_tag200_response, string $contentType = self::contentTypes['oBPv600CreateOrUpdateWebUiProps'][0])
+    public function createOrUpdateWebUiPropsRequest($webuipropname, $get_transaction_types200_response_transaction_types_inner_id, string $contentType = self::contentTypes['createOrUpdateWebUiProps'][0])
     {
 
         // verify the required parameter 'webuipropname' is set
         if ($webuipropname === null || (is_array($webuipropname) && count($webuipropname) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $webuipropname when calling oBPv600CreateOrUpdateWebUiProps'
+                'Missing the required parameter $webuipropname when calling createOrUpdateWebUiProps'
             );
         }
 
-        // verify the required parameter 'obpv400_delete_system_level_endpoint_tag200_response' is set
-        if ($obpv400_delete_system_level_endpoint_tag200_response === null || (is_array($obpv400_delete_system_level_endpoint_tag200_response) && count($obpv400_delete_system_level_endpoint_tag200_response) === 0)) {
+        // verify the required parameter 'get_transaction_types200_response_transaction_types_inner_id' is set
+        if ($get_transaction_types200_response_transaction_types_inner_id === null || (is_array($get_transaction_types200_response_transaction_types_inner_id) && count($get_transaction_types200_response_transaction_types_inner_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_delete_system_level_endpoint_tag200_response when calling oBPv600CreateOrUpdateWebUiProps'
+                'Missing the required parameter $get_transaction_types200_response_transaction_types_inner_id when calling createOrUpdateWebUiProps'
             );
         }
 
@@ -1153,12 +372,12 @@ class WebUiPropsApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_delete_system_level_endpoint_tag200_response)) {
+        if (isset($get_transaction_types200_response_transaction_types_inner_id)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_delete_system_level_endpoint_tag200_response));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($get_transaction_types200_response_transaction_types_inner_id));
             } else {
-                $httpBody = $obpv400_delete_system_level_endpoint_tag200_response;
+                $httpBody = $get_transaction_types200_response_transaction_types_inner_id;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1194,9 +413,9 @@ class WebUiPropsApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1221,37 +440,318 @@ class WebUiPropsApi
     }
 
     /**
-     * Operation oBPv600DeleteWebUiProps
+     * Operation createWebUiProps
+     *
+     * Create WebUiProps
+     *
+     * @param  \OpenBankProject\Model\CreateTransactionRequestCounterparty200ResponseAttributesInner $create_transaction_request_counterparty200_response_attributes_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebUiProps'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\CreateWebUiProps200Response
+     */
+    public function createWebUiProps($create_transaction_request_counterparty200_response_attributes_inner, string $contentType = self::contentTypes['createWebUiProps'][0])
+    {
+        list($response) = $this->createWebUiPropsWithHttpInfo($create_transaction_request_counterparty200_response_attributes_inner, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createWebUiPropsWithHttpInfo
+     *
+     * Create WebUiProps
+     *
+     * @param  \OpenBankProject\Model\CreateTransactionRequestCounterparty200ResponseAttributesInner $create_transaction_request_counterparty200_response_attributes_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebUiProps'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\CreateWebUiProps200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createWebUiPropsWithHttpInfo($create_transaction_request_counterparty200_response_attributes_inner, string $contentType = self::contentTypes['createWebUiProps'][0])
+    {
+        $request = $this->createWebUiPropsRequest($create_transaction_request_counterparty200_response_attributes_inner, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\CreateWebUiProps200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\CreateWebUiProps200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\CreateWebUiProps200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createWebUiPropsAsync
+     *
+     * Create WebUiProps
+     *
+     * @param  \OpenBankProject\Model\CreateTransactionRequestCounterparty200ResponseAttributesInner $create_transaction_request_counterparty200_response_attributes_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebUiProps'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createWebUiPropsAsync($create_transaction_request_counterparty200_response_attributes_inner, string $contentType = self::contentTypes['createWebUiProps'][0])
+    {
+        return $this->createWebUiPropsAsyncWithHttpInfo($create_transaction_request_counterparty200_response_attributes_inner, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createWebUiPropsAsyncWithHttpInfo
+     *
+     * Create WebUiProps
+     *
+     * @param  \OpenBankProject\Model\CreateTransactionRequestCounterparty200ResponseAttributesInner $create_transaction_request_counterparty200_response_attributes_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebUiProps'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createWebUiPropsAsyncWithHttpInfo($create_transaction_request_counterparty200_response_attributes_inner, string $contentType = self::contentTypes['createWebUiProps'][0])
+    {
+        $returnType = '\OpenBankProject\Model\CreateWebUiProps200Response';
+        $request = $this->createWebUiPropsRequest($create_transaction_request_counterparty200_response_attributes_inner, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createWebUiProps'
+     *
+     * @param  \OpenBankProject\Model\CreateTransactionRequestCounterparty200ResponseAttributesInner $create_transaction_request_counterparty200_response_attributes_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebUiProps'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createWebUiPropsRequest($create_transaction_request_counterparty200_response_attributes_inner, string $contentType = self::contentTypes['createWebUiProps'][0])
+    {
+
+        // verify the required parameter 'create_transaction_request_counterparty200_response_attributes_inner' is set
+        if ($create_transaction_request_counterparty200_response_attributes_inner === null || (is_array($create_transaction_request_counterparty200_response_attributes_inner) && count($create_transaction_request_counterparty200_response_attributes_inner) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_transaction_request_counterparty200_response_attributes_inner when calling createWebUiProps'
+            );
+        }
+
+
+        $resourcePath = '/obp/v3.1.0/management/webui_props';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_transaction_request_counterparty200_response_attributes_inner)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_transaction_request_counterparty200_response_attributes_inner));
+            } else {
+                $httpBody = $create_transaction_request_counterparty200_response_attributes_inner;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteWebUiProps
      *
      * Delete WebUiProps
      *
      * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteWebUiProps'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebUiProps'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv600DeleteWebUiProps($webuipropname, string $contentType = self::contentTypes['oBPv600DeleteWebUiProps'][0])
+    public function deleteWebUiProps($webuipropname, string $contentType = self::contentTypes['deleteWebUiProps'][0])
     {
-        $this->oBPv600DeleteWebUiPropsWithHttpInfo($webuipropname, $contentType);
+        $this->deleteWebUiPropsWithHttpInfo($webuipropname, $contentType);
     }
 
     /**
-     * Operation oBPv600DeleteWebUiPropsWithHttpInfo
+     * Operation deleteWebUiPropsWithHttpInfo
      *
      * Delete WebUiProps
      *
      * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteWebUiProps'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebUiProps'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600DeleteWebUiPropsWithHttpInfo($webuipropname, string $contentType = self::contentTypes['oBPv600DeleteWebUiProps'][0])
+    public function deleteWebUiPropsWithHttpInfo($webuipropname, string $contentType = self::contentTypes['deleteWebUiProps'][0])
     {
-        $request = $this->oBPv600DeleteWebUiPropsRequest($webuipropname, $contentType);
+        $request = $this->deleteWebUiPropsRequest($webuipropname, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1287,19 +787,19 @@ class WebUiPropsApi
     }
 
     /**
-     * Operation oBPv600DeleteWebUiPropsAsync
+     * Operation deleteWebUiPropsAsync
      *
      * Delete WebUiProps
      *
      * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteWebUiProps'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebUiProps'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600DeleteWebUiPropsAsync($webuipropname, string $contentType = self::contentTypes['oBPv600DeleteWebUiProps'][0])
+    public function deleteWebUiPropsAsync($webuipropname, string $contentType = self::contentTypes['deleteWebUiProps'][0])
     {
-        return $this->oBPv600DeleteWebUiPropsAsyncWithHttpInfo($webuipropname, $contentType)
+        return $this->deleteWebUiPropsAsyncWithHttpInfo($webuipropname, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1308,20 +808,20 @@ class WebUiPropsApi
     }
 
     /**
-     * Operation oBPv600DeleteWebUiPropsAsyncWithHttpInfo
+     * Operation deleteWebUiPropsAsyncWithHttpInfo
      *
      * Delete WebUiProps
      *
      * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteWebUiProps'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebUiProps'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600DeleteWebUiPropsAsyncWithHttpInfo($webuipropname, string $contentType = self::contentTypes['oBPv600DeleteWebUiProps'][0])
+    public function deleteWebUiPropsAsyncWithHttpInfo($webuipropname, string $contentType = self::contentTypes['deleteWebUiProps'][0])
     {
         $returnType = '';
-        $request = $this->oBPv600DeleteWebUiPropsRequest($webuipropname, $contentType);
+        $request = $this->deleteWebUiPropsRequest($webuipropname, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1347,21 +847,21 @@ class WebUiPropsApi
     }
 
     /**
-     * Create request for operation 'oBPv600DeleteWebUiProps'
+     * Create request for operation 'deleteWebUiProps'
      *
      * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteWebUiProps'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebUiProps'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600DeleteWebUiPropsRequest($webuipropname, string $contentType = self::contentTypes['oBPv600DeleteWebUiProps'][0])
+    public function deleteWebUiPropsRequest($webuipropname, string $contentType = self::contentTypes['deleteWebUiProps'][0])
     {
 
         // verify the required parameter 'webuipropname' is set
         if ($webuipropname === null || (is_array($webuipropname) && count($webuipropname) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $webuipropname when calling oBPv600DeleteWebUiProps'
+                'Missing the required parameter $webuipropname when calling deleteWebUiProps'
             );
         }
 
@@ -1426,9 +926,9 @@ class WebUiPropsApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1453,38 +953,38 @@ class WebUiPropsApi
     }
 
     /**
-     * Operation oBPv600GetWebUiProp
+     * Operation getWebUiProp
      *
      * Get WebUiProp by Name
      *
      * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetWebUiProp'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebUiProp'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems
+     * @return \OpenBankProject\Model\GetWebUiProps200ResponseWebuiPropsInner
      */
-    public function oBPv600GetWebUiProp($webuipropname, string $contentType = self::contentTypes['oBPv600GetWebUiProp'][0])
+    public function getWebUiProp($webuipropname, string $contentType = self::contentTypes['getWebUiProp'][0])
     {
-        list($response) = $this->oBPv600GetWebUiPropWithHttpInfo($webuipropname, $contentType);
+        list($response) = $this->getWebUiPropWithHttpInfo($webuipropname, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetWebUiPropWithHttpInfo
+     * Operation getWebUiPropWithHttpInfo
      *
      * Get WebUiProp by Name
      *
      * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetWebUiProp'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebUiProp'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetWebUiProps200ResponseWebuiPropsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetWebUiPropWithHttpInfo($webuipropname, string $contentType = self::contentTypes['oBPv600GetWebUiProp'][0])
+    public function getWebUiPropWithHttpInfo($webuipropname, string $contentType = self::contentTypes['getWebUiProp'][0])
     {
-        $request = $this->oBPv600GetWebUiPropRequest($webuipropname, $contentType);
+        $request = $this->getWebUiPropRequest($webuipropname, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1512,7 +1012,7 @@ class WebUiPropsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems',
+                        '\OpenBankProject\Model\GetWebUiProps200ResponseWebuiPropsInner',
                         $request,
                         $response,
                     );
@@ -1534,7 +1034,7 @@ class WebUiPropsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems',
+                '\OpenBankProject\Model\GetWebUiProps200ResponseWebuiPropsInner',
                 $request,
                 $response,
             );
@@ -1543,7 +1043,7 @@ class WebUiPropsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems',
+                        '\OpenBankProject\Model\GetWebUiProps200ResponseWebuiPropsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1556,19 +1056,19 @@ class WebUiPropsApi
     }
 
     /**
-     * Operation oBPv600GetWebUiPropAsync
+     * Operation getWebUiPropAsync
      *
      * Get WebUiProp by Name
      *
      * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetWebUiProp'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebUiProp'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetWebUiPropAsync($webuipropname, string $contentType = self::contentTypes['oBPv600GetWebUiProp'][0])
+    public function getWebUiPropAsync($webuipropname, string $contentType = self::contentTypes['getWebUiProp'][0])
     {
-        return $this->oBPv600GetWebUiPropAsyncWithHttpInfo($webuipropname, $contentType)
+        return $this->getWebUiPropAsyncWithHttpInfo($webuipropname, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1577,20 +1077,20 @@ class WebUiPropsApi
     }
 
     /**
-     * Operation oBPv600GetWebUiPropAsyncWithHttpInfo
+     * Operation getWebUiPropAsyncWithHttpInfo
      *
      * Get WebUiProp by Name
      *
      * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetWebUiProp'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebUiProp'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetWebUiPropAsyncWithHttpInfo($webuipropname, string $contentType = self::contentTypes['oBPv600GetWebUiProp'][0])
+    public function getWebUiPropAsyncWithHttpInfo($webuipropname, string $contentType = self::contentTypes['getWebUiProp'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems';
-        $request = $this->oBPv600GetWebUiPropRequest($webuipropname, $contentType);
+        $returnType = '\OpenBankProject\Model\GetWebUiProps200ResponseWebuiPropsInner';
+        $request = $this->getWebUiPropRequest($webuipropname, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1629,21 +1129,21 @@ class WebUiPropsApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetWebUiProp'
+     * Create request for operation 'getWebUiProp'
      *
      * @param  string $webuipropname The WEBUIPROPNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetWebUiProp'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebUiProp'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetWebUiPropRequest($webuipropname, string $contentType = self::contentTypes['oBPv600GetWebUiProp'][0])
+    public function getWebUiPropRequest($webuipropname, string $contentType = self::contentTypes['getWebUiProp'][0])
     {
 
         // verify the required parameter 'webuipropname' is set
         if ($webuipropname === null || (is_array($webuipropname) && count($webuipropname) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $webuipropname when calling oBPv600GetWebUiProp'
+                'Missing the required parameter $webuipropname when calling getWebUiProp'
             );
         }
 
@@ -1721,36 +1221,36 @@ class WebUiPropsApi
     }
 
     /**
-     * Operation oBPv600GetWebUiProps
+     * Operation getWebUiProps
      *
      * Get WebUiProps
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetWebUiProps'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebUiProps'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetWebUiProps200Response
+     * @return \OpenBankProject\Model\GetWebUiProps200Response
      */
-    public function oBPv600GetWebUiProps(string $contentType = self::contentTypes['oBPv600GetWebUiProps'][0])
+    public function getWebUiProps(string $contentType = self::contentTypes['getWebUiProps'][0])
     {
-        list($response) = $this->oBPv600GetWebUiPropsWithHttpInfo($contentType);
+        list($response) = $this->getWebUiPropsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetWebUiPropsWithHttpInfo
+     * Operation getWebUiPropsWithHttpInfo
      *
      * Get WebUiProps
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetWebUiProps'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebUiProps'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetWebUiProps200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetWebUiProps200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetWebUiPropsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetWebUiProps'][0])
+    public function getWebUiPropsWithHttpInfo(string $contentType = self::contentTypes['getWebUiProps'][0])
     {
-        $request = $this->oBPv600GetWebUiPropsRequest($contentType);
+        $request = $this->getWebUiPropsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1778,7 +1278,7 @@ class WebUiPropsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetWebUiProps200Response',
+                        '\OpenBankProject\Model\GetWebUiProps200Response',
                         $request,
                         $response,
                     );
@@ -1800,7 +1300,7 @@ class WebUiPropsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetWebUiProps200Response',
+                '\OpenBankProject\Model\GetWebUiProps200Response',
                 $request,
                 $response,
             );
@@ -1809,7 +1309,7 @@ class WebUiPropsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetWebUiProps200Response',
+                        '\OpenBankProject\Model\GetWebUiProps200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1822,18 +1322,18 @@ class WebUiPropsApi
     }
 
     /**
-     * Operation oBPv600GetWebUiPropsAsync
+     * Operation getWebUiPropsAsync
      *
      * Get WebUiProps
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetWebUiProps'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebUiProps'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetWebUiPropsAsync(string $contentType = self::contentTypes['oBPv600GetWebUiProps'][0])
+    public function getWebUiPropsAsync(string $contentType = self::contentTypes['getWebUiProps'][0])
     {
-        return $this->oBPv600GetWebUiPropsAsyncWithHttpInfo($contentType)
+        return $this->getWebUiPropsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1842,19 +1342,19 @@ class WebUiPropsApi
     }
 
     /**
-     * Operation oBPv600GetWebUiPropsAsyncWithHttpInfo
+     * Operation getWebUiPropsAsyncWithHttpInfo
      *
      * Get WebUiProps
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetWebUiProps'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebUiProps'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetWebUiPropsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetWebUiProps'][0])
+    public function getWebUiPropsAsyncWithHttpInfo(string $contentType = self::contentTypes['getWebUiProps'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetWebUiProps200Response';
-        $request = $this->oBPv600GetWebUiPropsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetWebUiProps200Response';
+        $request = $this->getWebUiPropsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1893,14 +1393,14 @@ class WebUiPropsApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetWebUiProps'
+     * Create request for operation 'getWebUiProps'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetWebUiProps'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebUiProps'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetWebUiPropsRequest(string $contentType = self::contentTypes['oBPv600GetWebUiProps'][0])
+    public function getWebUiPropsRequest(string $contentType = self::contentTypes['getWebUiProps'][0])
     {
 
 

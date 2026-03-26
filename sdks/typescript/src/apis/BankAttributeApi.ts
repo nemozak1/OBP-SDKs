@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,53 +15,53 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest,
-  OBPv400GetBankAttributes200Response,
-  OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems,
-  OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems,
-  OBPv510UpdateAtmAttributeRequest,
+  CreateOrUpdateTransactionRequestAttributeDefinitionRequest,
+  GetBankAttributes200Response,
+  GetBankAttributes200ResponseBankAttributesInner,
+  GetTransactionRequestAttributeDefinition200ResponseAttributesInner,
+  UpdateAtmAttributeRequest,
 } from '../models/index';
 import {
-    OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestFromJSON,
-    OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestToJSON,
-    OBPv400GetBankAttributes200ResponseFromJSON,
-    OBPv400GetBankAttributes200ResponseToJSON,
-    OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItemsFromJSON,
-    OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItemsToJSON,
-    OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItemsFromJSON,
-    OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItemsToJSON,
-    OBPv510UpdateAtmAttributeRequestFromJSON,
-    OBPv510UpdateAtmAttributeRequestToJSON,
+    CreateOrUpdateTransactionRequestAttributeDefinitionRequestFromJSON,
+    CreateOrUpdateTransactionRequestAttributeDefinitionRequestToJSON,
+    GetBankAttributes200ResponseFromJSON,
+    GetBankAttributes200ResponseToJSON,
+    GetBankAttributes200ResponseBankAttributesInnerFromJSON,
+    GetBankAttributes200ResponseBankAttributesInnerToJSON,
+    GetTransactionRequestAttributeDefinition200ResponseAttributesInnerFromJSON,
+    GetTransactionRequestAttributeDefinition200ResponseAttributesInnerToJSON,
+    UpdateAtmAttributeRequestFromJSON,
+    UpdateAtmAttributeRequestToJSON,
 } from '../models/index';
 
-export interface OBPv400CreateBankAttributeRequest {
+export interface CreateBankAttributeRequest {
     bankid: string;
-    oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest;
+    updateAtmAttributeRequest: UpdateAtmAttributeRequest;
 }
 
-export interface OBPv400CreateOrUpdateBankAttributeDefinitionRequest {
+export interface CreateOrUpdateBankAttributeDefinitionRequest {
     bankid: string;
-    oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest;
+    createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest;
 }
 
-export interface OBPv400DeleteBankAttributeRequest {
+export interface DeleteBankAttributeRequest {
     bankid: string;
     bankattributeid: string;
 }
 
-export interface OBPv400GetBankAttributeRequest {
+export interface GetBankAttributeRequest {
     bankid: string;
     bankattributeid: string;
 }
 
-export interface OBPv400GetBankAttributesRequest {
+export interface GetBankAttributesRequest {
     bankid: string;
 }
 
-export interface OBPv400UpdateBankAttributeRequest {
+export interface UpdateBankAttributeRequest {
     bankid: string;
     bankattributeid: string;
-    oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest;
+    updateAtmAttributeRequest: UpdateAtmAttributeRequest;
 }
 
 /**
@@ -70,20 +70,20 @@ export interface OBPv400UpdateBankAttributeRequest {
 export class BankAttributeApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv400CreateBankAttribute without sending the request
+     * Creates request options for createBankAttribute without sending the request
      */
-    async oBPv400CreateBankAttributeRequestOpts(requestParameters: OBPv400CreateBankAttributeRequest): Promise<runtime.RequestOpts> {
+    async createBankAttributeRequestOpts(requestParameters: CreateBankAttributeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400CreateBankAttribute().'
+                'Required parameter "bankid" was null or undefined when calling createBankAttribute().'
             );
         }
 
-        if (requestParameters['oBPv510UpdateAtmAttributeRequest'] == null) {
+        if (requestParameters['updateAtmAttributeRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv510UpdateAtmAttributeRequest',
-                'Required parameter "oBPv510UpdateAtmAttributeRequest" was null or undefined when calling oBPv400CreateBankAttribute().'
+                'updateAtmAttributeRequest',
+                'Required parameter "updateAtmAttributeRequest" was null or undefined when calling createBankAttribute().'
             );
         }
 
@@ -103,7 +103,7 @@ export class BankAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -115,7 +115,7 @@ export class BankAttributeApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv510UpdateAtmAttributeRequestToJSON(requestParameters['oBPv510UpdateAtmAttributeRequest']),
+            body: UpdateAtmAttributeRequestToJSON(requestParameters['updateAtmAttributeRequest']),
         };
     }
 
@@ -123,37 +123,37 @@ export class BankAttributeApi extends runtime.BaseAPI {
      * <p>Create Bank Attribute</p> <p>Typical product attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Create Bank Attribute
      */
-    async oBPv400CreateBankAttributeRaw(requestParameters: OBPv400CreateBankAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems>> {
-        const requestOptions = await this.oBPv400CreateBankAttributeRequestOpts(requestParameters);
+    async createBankAttributeRaw(requestParameters: CreateBankAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetBankAttributes200ResponseBankAttributesInner>> {
+        const requestOptions = await this.createBankAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetBankAttributes200ResponseBankAttributesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create Bank Attribute</p> <p>Typical product attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Create Bank Attribute
      */
-    async oBPv400CreateBankAttribute(requestParameters: OBPv400CreateBankAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems> {
-        const response = await this.oBPv400CreateBankAttributeRaw(requestParameters, initOverrides);
+    async createBankAttribute(requestParameters: CreateBankAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetBankAttributes200ResponseBankAttributesInner> {
+        const response = await this.createBankAttributeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400CreateOrUpdateBankAttributeDefinition without sending the request
+     * Creates request options for createOrUpdateBankAttributeDefinition without sending the request
      */
-    async oBPv400CreateOrUpdateBankAttributeDefinitionRequestOpts(requestParameters: OBPv400CreateOrUpdateBankAttributeDefinitionRequest): Promise<runtime.RequestOpts> {
+    async createOrUpdateBankAttributeDefinitionRequestOpts(requestParameters: CreateOrUpdateBankAttributeDefinitionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400CreateOrUpdateBankAttributeDefinition().'
+                'Required parameter "bankid" was null or undefined when calling createOrUpdateBankAttributeDefinition().'
             );
         }
 
-        if (requestParameters['oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest'] == null) {
+        if (requestParameters['createOrUpdateTransactionRequestAttributeDefinitionRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest',
-                'Required parameter "oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest" was null or undefined when calling oBPv400CreateOrUpdateBankAttributeDefinition().'
+                'createOrUpdateTransactionRequestAttributeDefinitionRequest',
+                'Required parameter "createOrUpdateTransactionRequestAttributeDefinitionRequest" was null or undefined when calling createOrUpdateBankAttributeDefinition().'
             );
         }
 
@@ -173,7 +173,7 @@ export class BankAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -185,7 +185,7 @@ export class BankAttributeApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestToJSON(requestParameters['oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest']),
+            body: CreateOrUpdateTransactionRequestAttributeDefinitionRequestToJSON(requestParameters['createOrUpdateTransactionRequestAttributeDefinitionRequest']),
         };
     }
 
@@ -193,37 +193,37 @@ export class BankAttributeApi extends runtime.BaseAPI {
      * <p>Create or Update Bank Attribute Definition</p> <p>The category field must be Bank</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
      * Create or Update Bank Attribute Definition
      */
-    async oBPv400CreateOrUpdateBankAttributeDefinitionRaw(requestParameters: OBPv400CreateOrUpdateBankAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>> {
-        const requestOptions = await this.oBPv400CreateOrUpdateBankAttributeDefinitionRequestOpts(requestParameters);
+    async createOrUpdateBankAttributeDefinitionRaw(requestParameters: CreateOrUpdateBankAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>> {
+        const requestOptions = await this.createOrUpdateBankAttributeDefinitionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetTransactionRequestAttributeDefinition200ResponseAttributesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create or Update Bank Attribute Definition</p> <p>The category field must be Bank</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
      * Create or Update Bank Attribute Definition
      */
-    async oBPv400CreateOrUpdateBankAttributeDefinition(requestParameters: OBPv400CreateOrUpdateBankAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> {
-        const response = await this.oBPv400CreateOrUpdateBankAttributeDefinitionRaw(requestParameters, initOverrides);
+    async createOrUpdateBankAttributeDefinition(requestParameters: CreateOrUpdateBankAttributeDefinitionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> {
+        const response = await this.createOrUpdateBankAttributeDefinitionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400DeleteBankAttribute without sending the request
+     * Creates request options for deleteBankAttribute without sending the request
      */
-    async oBPv400DeleteBankAttributeRequestOpts(requestParameters: OBPv400DeleteBankAttributeRequest): Promise<runtime.RequestOpts> {
+    async deleteBankAttributeRequestOpts(requestParameters: DeleteBankAttributeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400DeleteBankAttribute().'
+                'Required parameter "bankid" was null or undefined when calling deleteBankAttribute().'
             );
         }
 
         if (requestParameters['bankattributeid'] == null) {
             throw new runtime.RequiredError(
                 'bankattributeid',
-                'Required parameter "bankattributeid" was null or undefined when calling oBPv400DeleteBankAttribute().'
+                'Required parameter "bankattributeid" was null or undefined when calling deleteBankAttribute().'
             );
         }
 
@@ -241,7 +241,7 @@ export class BankAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -261,8 +261,8 @@ export class BankAttributeApi extends runtime.BaseAPI {
      * <p>Delete Bank Attribute</p> <p>Delete a Bank Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">BANK_ATTRIBUTE_ID</a>: BANK_ATTRIBUTE_ID</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Bank Attribute
      */
-    async oBPv400DeleteBankAttributeRaw(requestParameters: OBPv400DeleteBankAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteBankAttributeRequestOpts(requestParameters);
+    async deleteBankAttributeRaw(requestParameters: DeleteBankAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteBankAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -272,25 +272,25 @@ export class BankAttributeApi extends runtime.BaseAPI {
      * <p>Delete Bank Attribute</p> <p>Delete a Bank Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">BANK_ATTRIBUTE_ID</a>: BANK_ATTRIBUTE_ID</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Bank Attribute
      */
-    async oBPv400DeleteBankAttribute(requestParameters: OBPv400DeleteBankAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteBankAttributeRaw(requestParameters, initOverrides);
+    async deleteBankAttribute(requestParameters: DeleteBankAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteBankAttributeRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv400GetBankAttribute without sending the request
+     * Creates request options for getBankAttribute without sending the request
      */
-    async oBPv400GetBankAttributeRequestOpts(requestParameters: OBPv400GetBankAttributeRequest): Promise<runtime.RequestOpts> {
+    async getBankAttributeRequestOpts(requestParameters: GetBankAttributeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetBankAttribute().'
+                'Required parameter "bankid" was null or undefined when calling getBankAttribute().'
             );
         }
 
         if (requestParameters['bankattributeid'] == null) {
             throw new runtime.RequiredError(
                 'bankattributeid',
-                'Required parameter "bankattributeid" was null or undefined when calling oBPv400GetBankAttribute().'
+                'Required parameter "bankattributeid" was null or undefined when calling getBankAttribute().'
             );
         }
 
@@ -308,7 +308,7 @@ export class BankAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -328,30 +328,30 @@ export class BankAttributeApi extends runtime.BaseAPI {
      * <p>Get Bank Attribute By BANK_ATTRIBUTE_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">BANK_ATTRIBUTE_ID</a>: BANK_ATTRIBUTE_ID</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Get Bank Attribute By BANK_ATTRIBUTE_ID
      */
-    async oBPv400GetBankAttributeRaw(requestParameters: OBPv400GetBankAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems>> {
-        const requestOptions = await this.oBPv400GetBankAttributeRequestOpts(requestParameters);
+    async getBankAttributeRaw(requestParameters: GetBankAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetBankAttributes200ResponseBankAttributesInner>> {
+        const requestOptions = await this.getBankAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetBankAttributes200ResponseBankAttributesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Bank Attribute By BANK_ATTRIBUTE_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">BANK_ATTRIBUTE_ID</a>: BANK_ATTRIBUTE_ID</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Get Bank Attribute By BANK_ATTRIBUTE_ID
      */
-    async oBPv400GetBankAttribute(requestParameters: OBPv400GetBankAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems> {
-        const response = await this.oBPv400GetBankAttributeRaw(requestParameters, initOverrides);
+    async getBankAttribute(requestParameters: GetBankAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetBankAttributes200ResponseBankAttributesInner> {
+        const response = await this.getBankAttributeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetBankAttributes without sending the request
+     * Creates request options for getBankAttributes without sending the request
      */
-    async oBPv400GetBankAttributesRequestOpts(requestParameters: OBPv400GetBankAttributesRequest): Promise<runtime.RequestOpts> {
+    async getBankAttributesRequestOpts(requestParameters: GetBankAttributesRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetBankAttributes().'
+                'Required parameter "bankid" was null or undefined when calling getBankAttributes().'
             );
         }
 
@@ -369,7 +369,7 @@ export class BankAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -388,44 +388,44 @@ export class BankAttributeApi extends runtime.BaseAPI {
      * <p>Get Bank Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_attributes</strong></a>: bank_attributes</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Get Bank Attributes
      */
-    async oBPv400GetBankAttributesRaw(requestParameters: OBPv400GetBankAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetBankAttributes200Response>> {
-        const requestOptions = await this.oBPv400GetBankAttributesRequestOpts(requestParameters);
+    async getBankAttributesRaw(requestParameters: GetBankAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetBankAttributes200Response>> {
+        const requestOptions = await this.getBankAttributesRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetBankAttributes200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetBankAttributes200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Bank Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_attributes</strong></a>: bank_attributes</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Get Bank Attributes
      */
-    async oBPv400GetBankAttributes(requestParameters: OBPv400GetBankAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetBankAttributes200Response> {
-        const response = await this.oBPv400GetBankAttributesRaw(requestParameters, initOverrides);
+    async getBankAttributes(requestParameters: GetBankAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetBankAttributes200Response> {
+        const response = await this.getBankAttributesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400UpdateBankAttribute without sending the request
+     * Creates request options for updateBankAttribute without sending the request
      */
-    async oBPv400UpdateBankAttributeRequestOpts(requestParameters: OBPv400UpdateBankAttributeRequest): Promise<runtime.RequestOpts> {
+    async updateBankAttributeRequestOpts(requestParameters: UpdateBankAttributeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400UpdateBankAttribute().'
+                'Required parameter "bankid" was null or undefined when calling updateBankAttribute().'
             );
         }
 
         if (requestParameters['bankattributeid'] == null) {
             throw new runtime.RequiredError(
                 'bankattributeid',
-                'Required parameter "bankattributeid" was null or undefined when calling oBPv400UpdateBankAttribute().'
+                'Required parameter "bankattributeid" was null or undefined when calling updateBankAttribute().'
             );
         }
 
-        if (requestParameters['oBPv510UpdateAtmAttributeRequest'] == null) {
+        if (requestParameters['updateAtmAttributeRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv510UpdateAtmAttributeRequest',
-                'Required parameter "oBPv510UpdateAtmAttributeRequest" was null or undefined when calling oBPv400UpdateBankAttribute().'
+                'updateAtmAttributeRequest',
+                'Required parameter "updateAtmAttributeRequest" was null or undefined when calling updateBankAttribute().'
             );
         }
 
@@ -445,7 +445,7 @@ export class BankAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -458,7 +458,7 @@ export class BankAttributeApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv510UpdateAtmAttributeRequestToJSON(requestParameters['oBPv510UpdateAtmAttributeRequest']),
+            body: UpdateAtmAttributeRequestToJSON(requestParameters['updateAtmAttributeRequest']),
         };
     }
 
@@ -466,19 +466,19 @@ export class BankAttributeApi extends runtime.BaseAPI {
      * <p>Update Bank Attribute.</p> <p>Update one Bak Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">BANK_ATTRIBUTE_ID</a>: BANK_ATTRIBUTE_ID</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
      * Update Bank Attribute
      */
-    async oBPv400UpdateBankAttributeRaw(requestParameters: OBPv400UpdateBankAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest>> {
-        const requestOptions = await this.oBPv400UpdateBankAttributeRequestOpts(requestParameters);
+    async updateBankAttributeRaw(requestParameters: UpdateBankAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CreateOrUpdateTransactionRequestAttributeDefinitionRequest>> {
+        const requestOptions = await this.updateBankAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateOrUpdateTransactionRequestAttributeDefinitionRequestFromJSON(jsonValue));
     }
 
     /**
      * <p>Update Bank Attribute.</p> <p>Update one Bak Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">BANK_ATTRIBUTE_ID</a>: BANK_ATTRIBUTE_ID</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
      * Update Bank Attribute
      */
-    async oBPv400UpdateBankAttribute(requestParameters: OBPv400UpdateBankAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest> {
-        const response = await this.oBPv400UpdateBankAttributeRaw(requestParameters, initOverrides);
+    async updateBankAttribute(requestParameters: UpdateBankAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CreateOrUpdateTransactionRequestAttributeDefinitionRequest> {
+        const response = await this.updateBankAttributeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

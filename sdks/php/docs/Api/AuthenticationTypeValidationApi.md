@@ -2,22 +2,22 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400CreateAuthenticationTypeValidation()**](AuthenticationTypeValidationApi.md#oBPv400CreateAuthenticationTypeValidation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation |
-| [**oBPv400DeleteAuthenticationTypeValidation()**](AuthenticationTypeValidationApi.md#oBPv400DeleteAuthenticationTypeValidation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation |
-| [**oBPv400GetAllAuthenticationTypeValidations()**](AuthenticationTypeValidationApi.md#oBPv400GetAllAuthenticationTypeValidations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations |
-| [**oBPv400GetAllAuthenticationTypeValidationsPublic()**](AuthenticationTypeValidationApi.md#oBPv400GetAllAuthenticationTypeValidationsPublic) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public |
-| [**oBPv400GetAuthenticationTypeValidation()**](AuthenticationTypeValidationApi.md#oBPv400GetAuthenticationTypeValidation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation |
-| [**oBPv400UpdateAuthenticationTypeValidation()**](AuthenticationTypeValidationApi.md#oBPv400UpdateAuthenticationTypeValidation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation |
+| [**createAuthenticationTypeValidation()**](AuthenticationTypeValidationApi.md#createAuthenticationTypeValidation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation |
+| [**deleteAuthenticationTypeValidation()**](AuthenticationTypeValidationApi.md#deleteAuthenticationTypeValidation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation |
+| [**getAllAuthenticationTypeValidations()**](AuthenticationTypeValidationApi.md#getAllAuthenticationTypeValidations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations |
+| [**getAllAuthenticationTypeValidationsPublic()**](AuthenticationTypeValidationApi.md#getAllAuthenticationTypeValidationsPublic) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public |
+| [**getAuthenticationTypeValidation()**](AuthenticationTypeValidationApi.md#getAuthenticationTypeValidation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation |
+| [**updateAuthenticationTypeValidation()**](AuthenticationTypeValidationApi.md#updateAuthenticationTypeValidation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation |
 
 
-## `oBPv400CreateAuthenticationTypeValidation()`
+## `createAuthenticationTypeValidation()`
 
 ```php
-oBPv400CreateAuthenticationTypeValidation($operationid, $obpv400_update_authentication_type_validation_request): \OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+createAuthenticationTypeValidation($operationid, $update_authentication_type_validation_request): \OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
 ```
 
 Create an Authentication Type Validation
@@ -40,9 +40,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AuthenticationTypeValidationApi(
@@ -52,13 +52,13 @@ $apiInstance = new OpenBankProject\Api\AuthenticationTypeValidationApi(
     $config
 );
 $operationid = 'operationid_example'; // string | The OPERATIONID identifier
-$obpv400_update_authentication_type_validation_request = {type=object, properties={tl={type=array, items={type=object, properties={}}}, head={type=string, enum=[DirectLogin, GatewayLogin, DAuth, OAuth2_OIDC, OAuth2_OIDC_FAPI, Anonymous]}}}; // \OpenBankProject\Model\OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+$update_authentication_type_validation_request = {type=object, properties={head={type=string, enum=[DirectLogin, GatewayLogin, DAuth, OAuth2_OIDC, OAuth2_OIDC_FAPI, Anonymous]}, tl={type=array, items={type=object, properties={}}}}}; // \OpenBankProject\Model\UpdateAuthenticationTypeValidationRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400CreateAuthenticationTypeValidation($operationid, $obpv400_update_authentication_type_validation_request);
+    $result = $apiInstance->createAuthenticationTypeValidation($operationid, $update_authentication_type_validation_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthenticationTypeValidationApi->oBPv400CreateAuthenticationTypeValidation: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthenticationTypeValidationApi->createAuthenticationTypeValidation: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -67,11 +67,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **operationid** | **string**| The OPERATIONID identifier | |
-| **obpv400_update_authentication_type_validation_request** | [**\OpenBankProject\Model\OBPv400UpdateAuthenticationTypeValidationRequest**](../Model/OBPv400UpdateAuthenticationTypeValidationRequest.md)| Request body | |
+| **update_authentication_type_validation_request** | [**\OpenBankProject\Model\UpdateAuthenticationTypeValidationRequest**](../Model/UpdateAuthenticationTypeValidationRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](../Model/OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](../Model/GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -86,10 +86,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400DeleteAuthenticationTypeValidation()`
+## `deleteAuthenticationTypeValidation()`
 
 ```php
-oBPv400DeleteAuthenticationTypeValidation($operationid)
+deleteAuthenticationTypeValidation($operationid)
 ```
 
 Delete an Authentication Type Validation
@@ -112,9 +112,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AuthenticationTypeValidationApi(
@@ -126,9 +126,9 @@ $apiInstance = new OpenBankProject\Api\AuthenticationTypeValidationApi(
 $operationid = 'operationid_example'; // string | The OPERATIONID identifier
 
 try {
-    $apiInstance->oBPv400DeleteAuthenticationTypeValidation($operationid);
+    $apiInstance->deleteAuthenticationTypeValidation($operationid);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthenticationTypeValidationApi->oBPv400DeleteAuthenticationTypeValidation: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthenticationTypeValidationApi->deleteAuthenticationTypeValidation: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -155,10 +155,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetAllAuthenticationTypeValidations()`
+## `getAllAuthenticationTypeValidations()`
 
 ```php
-oBPv400GetAllAuthenticationTypeValidations(): \OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+getAllAuthenticationTypeValidations(): \OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200Response
 ```
 
 Get all Authentication Type Validations
@@ -181,9 +181,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AuthenticationTypeValidationApi(
@@ -194,10 +194,10 @@ $apiInstance = new OpenBankProject\Api\AuthenticationTypeValidationApi(
 );
 
 try {
-    $result = $apiInstance->oBPv400GetAllAuthenticationTypeValidations();
+    $result = $apiInstance->getAllAuthenticationTypeValidations();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthenticationTypeValidationApi->oBPv400GetAllAuthenticationTypeValidations: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthenticationTypeValidationApi->getAllAuthenticationTypeValidations: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -207,7 +207,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](../Model/OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200Response**](../Model/GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -222,10 +222,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetAllAuthenticationTypeValidationsPublic()`
+## `getAllAuthenticationTypeValidationsPublic()`
 
 ```php
-oBPv400GetAllAuthenticationTypeValidationsPublic(): \OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+getAllAuthenticationTypeValidationsPublic(): \OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200Response
 ```
 
 Get all Authentication Type Validations - public
@@ -247,10 +247,10 @@ $apiInstance = new OpenBankProject\Api\AuthenticationTypeValidationApi(
 );
 
 try {
-    $result = $apiInstance->oBPv400GetAllAuthenticationTypeValidationsPublic();
+    $result = $apiInstance->getAllAuthenticationTypeValidationsPublic();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthenticationTypeValidationApi->oBPv400GetAllAuthenticationTypeValidationsPublic: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthenticationTypeValidationApi->getAllAuthenticationTypeValidationsPublic: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -260,7 +260,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](../Model/OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200Response**](../Model/GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -275,10 +275,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetAuthenticationTypeValidation()`
+## `getAuthenticationTypeValidation()`
 
 ```php
-oBPv400GetAuthenticationTypeValidation($operationid): \OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+getAuthenticationTypeValidation($operationid): \OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
 ```
 
 Get an Authentication Type Validation
@@ -301,9 +301,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AuthenticationTypeValidationApi(
@@ -315,10 +315,10 @@ $apiInstance = new OpenBankProject\Api\AuthenticationTypeValidationApi(
 $operationid = 'operationid_example'; // string | The OPERATIONID identifier
 
 try {
-    $result = $apiInstance->oBPv400GetAuthenticationTypeValidation($operationid);
+    $result = $apiInstance->getAuthenticationTypeValidation($operationid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthenticationTypeValidationApi->oBPv400GetAuthenticationTypeValidation: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthenticationTypeValidationApi->getAuthenticationTypeValidation: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -330,7 +330,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](../Model/OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](../Model/GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -345,10 +345,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400UpdateAuthenticationTypeValidation()`
+## `updateAuthenticationTypeValidation()`
 
 ```php
-oBPv400UpdateAuthenticationTypeValidation($operationid, $obpv400_update_authentication_type_validation_request): \OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+updateAuthenticationTypeValidation($operationid, $update_authentication_type_validation_request): \OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
 ```
 
 Update an Authentication Type Validation
@@ -371,9 +371,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AuthenticationTypeValidationApi(
@@ -383,13 +383,13 @@ $apiInstance = new OpenBankProject\Api\AuthenticationTypeValidationApi(
     $config
 );
 $operationid = 'operationid_example'; // string | The OPERATIONID identifier
-$obpv400_update_authentication_type_validation_request = {"type":"object","properties":{"tl":{"type":"array","items":{"type":"object","properties":{}}},"head":{"type":"string","enum":["DirectLogin","GatewayLogin","DAuth","OAuth2_OIDC","OAuth2_OIDC_FAPI","Anonymous"]}}}; // \OpenBankProject\Model\OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+$update_authentication_type_validation_request = {"type":"object","properties":{"head":{"type":"string","enum":["DirectLogin","GatewayLogin","DAuth","OAuth2_OIDC","OAuth2_OIDC_FAPI","Anonymous"]},"tl":{"type":"array","items":{"type":"object","properties":{}}}}}; // \OpenBankProject\Model\UpdateAuthenticationTypeValidationRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400UpdateAuthenticationTypeValidation($operationid, $obpv400_update_authentication_type_validation_request);
+    $result = $apiInstance->updateAuthenticationTypeValidation($operationid, $update_authentication_type_validation_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthenticationTypeValidationApi->oBPv400UpdateAuthenticationTypeValidation: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthenticationTypeValidationApi->updateAuthenticationTypeValidation: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -398,11 +398,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **operationid** | **string**| The OPERATIONID identifier | |
-| **obpv400_update_authentication_type_validation_request** | [**\OpenBankProject\Model\OBPv400UpdateAuthenticationTypeValidationRequest**](../Model/OBPv400UpdateAuthenticationTypeValidationRequest.md)| Request body | |
+| **update_authentication_type_validation_request** | [**\OpenBankProject\Model\UpdateAuthenticationTypeValidationRequest**](../Model/UpdateAuthenticationTypeValidationRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](../Model/OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](../Model/GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 

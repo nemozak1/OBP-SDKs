@@ -4,11 +4,11 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv2_1_0_sandbox_data_import**](SandboxApi.md#o_bpv2_1_0_sandbox_data_import) | **POST** /obp/v2.1.0/sandbox/data-import | Create sandbox
+[**sandbox_data_import**](SandboxApi.md#sandbox_data_import) | **POST** /obp/v2.1.0/sandbox/data-import | Create sandbox
 
 
-# **o_bpv2_1_0_sandbox_data_import**
-> OBPv121UpdateTransactionNarrative200Response o_bpv2_1_0_sandbox_data_import(obpv210_sandbox_data_import_request)
+# **sandbox_data_import**
+> UpdateTransactionNarrative200Response sandbox_data_import(sandbox_data_import_request)
 
 Create sandbox
 
@@ -97,8 +97,8 @@ User Authentication is Required. The User must be logged in. The Application mus
 
 ```python
 import obp_python
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.models.obpv210_sandbox_data_import_request import OBPv210SandboxDataImportRequest
+from obp_python.models.sandbox_data_import_request import SandboxDataImportRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -131,15 +131,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.SandboxApi(api_client)
-    obpv210_sandbox_data_import_request = {"type":"object","properties":{"accounts":{"type":"array","items":{"type":"object","properties":{"IBAN":{"type":"string"},"generate_accountants_view":{"type":"boolean"},"owners":{"type":"array","items":{"type":"string"}},"generate_public_view":{"type":"boolean"},"bank":{"type":"string"},"id":{"type":"string"},"generate_auditors_view":{"type":"boolean"},"label":{"type":"string"},"number":{"type":"string"},"balance":{"type":"object","properties":{"amount":{"type":"string"},"currency":{"type":"string"}}},"type":{"type":"string"}}}},"branches":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}},"address":{"type":"object","properties":{"line_2":{"type":"string"},"county":{"type":"string"},"line_3":{"type":"string"},"state":{"type":"string"},"country_code":{"type":"string"},"post_code":{"type":"string"},"line_1":{"type":"string"},"city":{"type":"string"}}},"driveUp":{"type":"object","properties":{"hours":{"type":"string"}}},"lobby":{"type":"object","properties":{"hours":{"type":"string"}}},"bank_id":{"type":"string"},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"id":{"type":"string"}}}},"transactions":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"this_account":{"type":"object","properties":{"id":{"type":"string"},"bank":{"type":"string"}}},"details":{"type":"object","properties":{"value":{"type":"string"},"new_balance":{"type":"string"},"type":{"type":"string"},"completed":{"type":"string"},"posted":{"type":"string"},"description":{"type":"string"}}}}}},"products":{"type":"array","items":{"type":"object","properties":{"family":{"type":"string"},"name":{"type":"string"},"category":{"type":"string"},"bank_id":{"type":"string"},"super_family":{"type":"string"},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"code":{"type":"string"},"more_info_url":{"type":"string"}}}},"atms":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}},"address":{"type":"object","properties":{"line_2":{"type":"string"},"county":{"type":"string"},"line_3":{"type":"string"},"state":{"type":"string"},"country_code":{"type":"string"},"post_code":{"type":"string"},"line_1":{"type":"string"},"city":{"type":"string"}}},"bank_id":{"type":"string"},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"id":{"type":"string"}}}},"crm_events":{"type":"array","items":{"type":"object","properties":{"channel":{"type":"string"},"actual_date":{"type":"string","format":"date-time"},"bank_id":{"type":"string"},"customer":{"type":"object","properties":{"number":{"type":"string"},"name":{"type":"string"}}},"category":{"type":"string"},"id":{"type":"string"},"detail":{"type":"string"}}}},"users":{"type":"array","items":{"type":"object","properties":{"email":{"type":"string"},"user_name":{"type":"string"},"password":{"type":"string"}}}},"banks":{"type":"array","items":{"type":"object","properties":{"full_name":{"type":"string"},"short_name":{"type":"string"},"logo":{"type":"string"},"website":{"type":"string"},"id":{"type":"string"}}}}}} # OBPv210SandboxDataImportRequest | Request body
+    sandbox_data_import_request = {"type":"object","properties":{"accounts":{"type":"array","items":{"type":"object","properties":{"IBAN":{"type":"string"},"generate_accountants_view":{"type":"boolean"},"owners":{"type":"array","items":{"type":"string"}},"generate_public_view":{"type":"boolean"},"bank":{"type":"string"},"id":{"type":"string"},"generate_auditors_view":{"type":"boolean"},"label":{"type":"string"},"number":{"type":"string"},"balance":{"type":"object","properties":{"amount":{"type":"string"},"currency":{"type":"string"}}},"type":{"type":"string"}}}},"branches":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}},"address":{"type":"object","properties":{"line_2":{"type":"string"},"county":{"type":"string"},"line_3":{"type":"string"},"state":{"type":"string"},"country_code":{"type":"string"},"post_code":{"type":"string"},"line_1":{"type":"string"},"city":{"type":"string"}}},"driveUp":{"type":"object","properties":{"hours":{"type":"string"}}},"lobby":{"type":"object","properties":{"hours":{"type":"string"}}},"bank_id":{"type":"string"},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"id":{"type":"string"}}}},"transactions":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"this_account":{"type":"object","properties":{"id":{"type":"string"},"bank":{"type":"string"}}},"details":{"type":"object","properties":{"value":{"type":"string"},"new_balance":{"type":"string"},"type":{"type":"string"},"completed":{"type":"string"},"posted":{"type":"string"},"description":{"type":"string"}}}}}},"products":{"type":"array","items":{"type":"object","properties":{"family":{"type":"string"},"name":{"type":"string"},"category":{"type":"string"},"bank_id":{"type":"string"},"super_family":{"type":"string"},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"code":{"type":"string"},"more_info_url":{"type":"string"}}}},"atms":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}},"address":{"type":"object","properties":{"line_2":{"type":"string"},"county":{"type":"string"},"line_3":{"type":"string"},"state":{"type":"string"},"country_code":{"type":"string"},"post_code":{"type":"string"},"line_1":{"type":"string"},"city":{"type":"string"}}},"bank_id":{"type":"string"},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"id":{"type":"string"}}}},"crm_events":{"type":"array","items":{"type":"object","properties":{"channel":{"type":"string"},"actual_date":{"type":"string","format":"date-time"},"bank_id":{"type":"string"},"customer":{"type":"object","properties":{"number":{"type":"string"},"name":{"type":"string"}}},"category":{"type":"string"},"id":{"type":"string"},"detail":{"type":"string"}}}},"users":{"type":"array","items":{"type":"object","properties":{"email":{"type":"string"},"user_name":{"type":"string"},"password":{"type":"string"}}}},"banks":{"type":"array","items":{"type":"object","properties":{"full_name":{"type":"string"},"short_name":{"type":"string"},"logo":{"type":"string"},"website":{"type":"string"},"id":{"type":"string"}}}}}} # SandboxDataImportRequest | Request body
 
     try:
         # Create sandbox
-        api_response = api_instance.o_bpv2_1_0_sandbox_data_import(obpv210_sandbox_data_import_request)
-        print("The response of SandboxApi->o_bpv2_1_0_sandbox_data_import:\n")
+        api_response = api_instance.sandbox_data_import(sandbox_data_import_request)
+        print("The response of SandboxApi->sandbox_data_import:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SandboxApi->o_bpv2_1_0_sandbox_data_import: %s\n" % e)
+        print("Exception when calling SandboxApi->sandbox_data_import: %s\n" % e)
 ```
 
 
@@ -149,11 +149,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv210_sandbox_data_import_request** | [**OBPv210SandboxDataImportRequest**](OBPv210SandboxDataImportRequest.md)| Request body | 
+ **sandbox_data_import_request** | [**SandboxDataImportRequest**](SandboxDataImportRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 

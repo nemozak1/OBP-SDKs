@@ -4,356 +4,15 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv3_1_0_create_web_ui_props**](WebUiPropsApi.md#o_bpv3_1_0_create_web_ui_props) | **POST** /obp/v3.1.0/management/webui_props | Create WebUiProps
-[**o_bpv3_1_0_delete_web_ui_props**](WebUiPropsApi.md#o_bpv3_1_0_delete_web_ui_props) | **DELETE** /obp/v3.1.0/management/webui_props/{webuipropsid} | Delete WebUiProps
-[**o_bpv3_1_0_get_web_ui_props**](WebUiPropsApi.md#o_bpv3_1_0_get_web_ui_props) | **GET** /obp/v3.1.0/management/webui_props | Get WebUiProps
-[**o_bpv6_0_0_create_or_update_web_ui_props**](WebUiPropsApi.md#o_bpv6_0_0_create_or_update_web_ui_props) | **PUT** /obp/v6.0.0/management/webui_props/{webuipropname} | Create or Update WebUiProps
-[**o_bpv6_0_0_delete_web_ui_props**](WebUiPropsApi.md#o_bpv6_0_0_delete_web_ui_props) | **DELETE** /obp/v6.0.0/management/webui_props/{webuipropname} | Delete WebUiProps
-[**o_bpv6_0_0_get_web_ui_prop**](WebUiPropsApi.md#o_bpv6_0_0_get_web_ui_prop) | **GET** /obp/v6.0.0/webui-props/{webuipropname} | Get WebUiProp by Name
-[**o_bpv6_0_0_get_web_ui_props**](WebUiPropsApi.md#o_bpv6_0_0_get_web_ui_props) | **GET** /obp/v6.0.0/webui-props | Get WebUiProps
-
-
-# **o_bpv3_1_0_create_web_ui_props**
-> OBPv310GetWebUiProps200ResponseWebuiPropsInner o_bpv3_1_0_create_web_ui_props(obpv400_create_transaction_request_counterparty200_response_attributes_inner)
-
-Create WebUiProps
-
-<p>Create a WebUiProps.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>Explaination of Fields:</p>
-<ul>
-<li>name is required String value</li>
-<li>value is required String value</li>
-</ul>
-<p>The line break and double quotations should do escape, example:</p>
-<pre><code>
-{&quot;name&quot;: &quot;webui_some&quot;, &quot;value&quot;: &quot;this value
-have &quot;line break&quot; and double quotations.&quot;}
-
-</code></pre>
-<p>should do escape like this:</p>
-<pre><code>
-{&quot;name&quot;: &quot;webui_some&quot;, &quot;value&quot;: &quot;this value\nhave \&quot;line break\&quot; and double quotations.&quot;}
-
-</code></pre>
-<p>Insert image examples:</p>
-<pre><code>// set width=100 and height=50
-{&quot;name&quot;: &quot;webui_some_pic&quot;, &quot;value&quot;: &quot;here is a picture &lt;img alt=&quot;hello&quot; src=&quot;http://somedomain.com/images/pic.png&quot; width=&quot;100&quot; height=&quot;50&quot; /&gt;&quot;}
-
-// only set height=50
-{&quot;name&quot;: &quot;webui_some_pic&quot;, &quot;value&quot;: &quot;here is a picture &lt;img alt=&quot;hello&quot; src=&quot;http://somedomain.com/images/pic.png&quot; width=&quot;&quot; height=&quot;50&quot; /&gt;&quot;}
-
-// only width=20%
-{&quot;name&quot;: &quot;webui_some_pic&quot;, &quot;value&quot;: &quot;here is a picture &lt;img alt=&quot;hello&quot; src=&quot;http://somedomain.com/images/pic.png&quot; width=&quot;20%&quot; height=&quot;&quot; /&gt;&quot;}
-
-</code></pre>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#">source</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#">source</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv310_get_web_ui_props200_response_webui_props_inner import OBPv310GetWebUiProps200ResponseWebuiPropsInner
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response_attributes_inner import OBPv400CreateTransactionRequestCounterparty200ResponseAttributesInner
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.WebUiPropsApi(api_client)
-    obpv400_create_transaction_request_counterparty200_response_attributes_inner = {"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"}}} # OBPv400CreateTransactionRequestCounterparty200ResponseAttributesInner | Request body
-
-    try:
-        # Create WebUiProps
-        api_response = api_instance.o_bpv3_1_0_create_web_ui_props(obpv400_create_transaction_request_counterparty200_response_attributes_inner)
-        print("The response of WebUiPropsApi->o_bpv3_1_0_create_web_ui_props:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling WebUiPropsApi->o_bpv3_1_0_create_web_ui_props: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **obpv400_create_transaction_request_counterparty200_response_attributes_inner** | [**OBPv400CreateTransactionRequestCounterparty200ResponseAttributesInner**](OBPv400CreateTransactionRequestCounterparty200ResponseAttributesInner.md)| Request body | 
-
-### Return type
-
-[**OBPv310GetWebUiProps200ResponseWebuiPropsInner**](OBPv310GetWebUiProps200ResponseWebuiPropsInner.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_1_0_delete_web_ui_props**
-> o_bpv3_1_0_delete_web_ui_props(webuipropsid)
-
-Delete WebUiProps
-
-<p>Delete a WebUiProps specified by WEB_UI_PROPS_ID.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#web_ui_props_id">WEB_UI_PROPS_ID</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.WebUiPropsApi(api_client)
-    webuipropsid = 'webuipropsid_example' # str | The WEBUIPROPSID identifier
-
-    try:
-        # Delete WebUiProps
-        api_instance.o_bpv3_1_0_delete_web_ui_props(webuipropsid)
-    except Exception as e:
-        print("Exception when calling WebUiPropsApi->o_bpv3_1_0_delete_web_ui_props: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **webuipropsid** | **str**| The WEBUIPROPSID identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_1_0_get_web_ui_props**
-> OBPv310GetWebUiProps200Response o_bpv3_1_0_get_web_ui_props()
-
-Get WebUiProps
-
-<p>Get WebUiProps - properties that configure the Web UI behavior and appearance.</p>
-<p>Properties with names starting with &quot;webui_&quot; can be stored in the database and managed via API.</p>
-<p><strong>Data Sources:</strong></p>
-<ol>
-<li>
-<p><strong>Explicit WebUiProps (Database)</strong>: Custom values created/updated via the API and stored in the database.</p>
-</li>
-<li>
-<p><strong>Implicit WebUiProps (Configuration File)</strong>: Default values defined in the <code>sample.props.template</code> configuration file.</p>
-</li>
-</ol>
-<p><strong>Query Parameter:</strong></p>
-<ul>
-<li><code>active</code> (optional, boolean string, default: &quot;false&quot;)</li>
-<li>If <code>active=false</code> or omitted: Returns only explicit props from the database</li>
-<li>If <code>active=true</code>: Returns explicit props + implicit (default) props from configuration file
-<ul>
-<li>When both sources have the same property name, the database value takes precedence</li>
-<li>Implicit props are marked with <code>webUiPropsId = &quot;default&quot;</code></li>
-</ul>
-</li>
-</ul>
-<p><strong>Examples:</strong></p>
-<p>Get only database-stored props:<br />
-<a href="http://127.0.0.1:8080/obp/v3.1.0/management/webui_props">http://127.0.0.1:8080/obp/v3.1.0/management/webui_props</a></p>
-<p>Get database props combined with defaults:<br />
-<a href="http://127.0.0.1:8080/obp/v3.1.0/management/webui_props?active=true">http://127.0.0.1:8080/obp/v3.1.0/management/webui_props?active=true</a></p>
-<p>For more details about WebUI Props, including how to set config file defaults and precedence order, see <a href="/glossary#webui_props">here</a>.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#">source</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv310_get_web_ui_props200_response import OBPv310GetWebUiProps200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.WebUiPropsApi(api_client)
-
-    try:
-        # Get WebUiProps
-        api_response = api_instance.o_bpv3_1_0_get_web_ui_props()
-        print("The response of WebUiPropsApi->o_bpv3_1_0_get_web_ui_props:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling WebUiPropsApi->o_bpv3_1_0_get_web_ui_props: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv310GetWebUiProps200Response**](OBPv310GetWebUiProps200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_create_or_update_web_ui_props**
-> OBPv310GetWebUiProps200ResponseWebuiPropsInner o_bpv6_0_0_create_or_update_web_ui_props(webuipropname, obpv200_get_transaction_types200_response_transaction_types_inner_id)
+[**create_or_update_web_ui_props**](WebUiPropsApi.md#create_or_update_web_ui_props) | **PUT** /obp/v6.0.0/management/webui_props/{webuipropname} | Create or Update WebUiProps
+[**create_web_ui_props**](WebUiPropsApi.md#create_web_ui_props) | **POST** /obp/v3.1.0/management/webui_props | Create WebUiProps
+[**delete_web_ui_props**](WebUiPropsApi.md#delete_web_ui_props) | **DELETE** /obp/v6.0.0/management/webui_props/{webuipropname} | Delete WebUiProps
+[**get_web_ui_prop**](WebUiPropsApi.md#get_web_ui_prop) | **GET** /obp/v6.0.0/webui-props/{webuipropname} | Get WebUiProp by Name
+[**get_web_ui_props**](WebUiPropsApi.md#get_web_ui_props) | **GET** /obp/v6.0.0/webui-props | Get WebUiProps
+
+
+# **create_or_update_web_ui_props**
+> CreateWebUiProps200Response create_or_update_web_ui_props(webuipropname, get_transaction_types200_response_transaction_types_inner_id)
 
 Create or Update WebUiProps
 
@@ -404,8 +63,8 @@ have &quot;line break&quot; and double quotations.&quot;}
 
 ```python
 import obp_python
-from obp_python.models.obpv200_get_transaction_types200_response_transaction_types_inner_id import OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
-from obp_python.models.obpv310_get_web_ui_props200_response_webui_props_inner import OBPv310GetWebUiProps200ResponseWebuiPropsInner
+from obp_python.models.create_web_ui_props200_response import CreateWebUiProps200Response
+from obp_python.models.get_transaction_types200_response_transaction_types_inner_id import GetTransactionTypes200ResponseTransactionTypesInnerId
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -439,15 +98,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.WebUiPropsApi(api_client)
     webuipropname = 'webuipropname_example' # str | The WEBUIPROPNAME identifier
-    obpv200_get_transaction_types200_response_transaction_types_inner_id = {type=object, properties={value={type=string}}} # OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
+    get_transaction_types200_response_transaction_types_inner_id = {type=object, properties={value={type=string}}} # GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
     try:
         # Create or Update WebUiProps
-        api_response = api_instance.o_bpv6_0_0_create_or_update_web_ui_props(webuipropname, obpv200_get_transaction_types200_response_transaction_types_inner_id)
-        print("The response of WebUiPropsApi->o_bpv6_0_0_create_or_update_web_ui_props:\n")
+        api_response = api_instance.create_or_update_web_ui_props(webuipropname, get_transaction_types200_response_transaction_types_inner_id)
+        print("The response of WebUiPropsApi->create_or_update_web_ui_props:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebUiPropsApi->o_bpv6_0_0_create_or_update_web_ui_props: %s\n" % e)
+        print("Exception when calling WebUiPropsApi->create_or_update_web_ui_props: %s\n" % e)
 ```
 
 
@@ -458,11 +117,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **webuipropname** | **str**| The WEBUIPROPNAME identifier | 
- **obpv200_get_transaction_types200_response_transaction_types_inner_id** | [**OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId**](OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | 
+ **get_transaction_types200_response_transaction_types_inner_id** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | 
 
 ### Return type
 
-[**OBPv310GetWebUiProps200ResponseWebuiPropsInner**](OBPv310GetWebUiProps200ResponseWebuiPropsInner.md)
+[**CreateWebUiProps200Response**](CreateWebUiProps200Response.md)
 
 ### Authorization
 
@@ -482,8 +141,136 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_delete_web_ui_props**
-> o_bpv6_0_0_delete_web_ui_props(webuipropname)
+# **create_web_ui_props**
+> CreateWebUiProps200Response create_web_ui_props(create_transaction_request_counterparty200_response_attributes_inner)
+
+Create WebUiProps
+
+<p>Create a WebUiProps.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>Explaination of Fields:</p>
+<ul>
+<li>name is required String value</li>
+<li>value is required String value</li>
+</ul>
+<p>The line break and double quotations should do escape, example:</p>
+<pre><code>
+{&quot;name&quot;: &quot;webui_some&quot;, &quot;value&quot;: &quot;this value
+have &quot;line break&quot; and double quotations.&quot;}
+
+</code></pre>
+<p>should do escape like this:</p>
+<pre><code>
+{&quot;name&quot;: &quot;webui_some&quot;, &quot;value&quot;: &quot;this value\nhave \&quot;line break\&quot; and double quotations.&quot;}
+
+</code></pre>
+<p>Insert image examples:</p>
+<pre><code>// set width=100 and height=50
+{&quot;name&quot;: &quot;webui_some_pic&quot;, &quot;value&quot;: &quot;here is a picture &lt;img alt=&quot;hello&quot; src=&quot;http://somedomain.com/images/pic.png&quot; width=&quot;100&quot; height=&quot;50&quot; /&gt;&quot;}
+
+// only set height=50
+{&quot;name&quot;: &quot;webui_some_pic&quot;, &quot;value&quot;: &quot;here is a picture &lt;img alt=&quot;hello&quot; src=&quot;http://somedomain.com/images/pic.png&quot; width=&quot;&quot; height=&quot;50&quot; /&gt;&quot;}
+
+// only width=20%
+{&quot;name&quot;: &quot;webui_some_pic&quot;, &quot;value&quot;: &quot;here is a picture &lt;img alt=&quot;hello&quot; src=&quot;http://somedomain.com/images/pic.png&quot; width=&quot;20%&quot; height=&quot;&quot; /&gt;&quot;}
+
+</code></pre>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#">source</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#">source</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_transaction_request_counterparty200_response_attributes_inner import CreateTransactionRequestCounterparty200ResponseAttributesInner
+from obp_python.models.create_web_ui_props200_response import CreateWebUiProps200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.WebUiPropsApi(api_client)
+    create_transaction_request_counterparty200_response_attributes_inner = {"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"}}} # CreateTransactionRequestCounterparty200ResponseAttributesInner | Request body
+
+    try:
+        # Create WebUiProps
+        api_response = api_instance.create_web_ui_props(create_transaction_request_counterparty200_response_attributes_inner)
+        print("The response of WebUiPropsApi->create_web_ui_props:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling WebUiPropsApi->create_web_ui_props: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_transaction_request_counterparty200_response_attributes_inner** | [**CreateTransactionRequestCounterparty200ResponseAttributesInner**](CreateTransactionRequestCounterparty200ResponseAttributesInner.md)| Request body | 
+
+### Return type
+
+[**CreateWebUiProps200Response**](CreateWebUiProps200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_web_ui_props**
+> delete_web_ui_props(webuipropname)
 
 Delete WebUiProps
 
@@ -542,9 +329,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete WebUiProps
-        api_instance.o_bpv6_0_0_delete_web_ui_props(webuipropname)
+        api_instance.delete_web_ui_props(webuipropname)
     except Exception as e:
-        print("Exception when calling WebUiPropsApi->o_bpv6_0_0_delete_web_ui_props: %s\n" % e)
+        print("Exception when calling WebUiPropsApi->delete_web_ui_props: %s\n" % e)
 ```
 
 
@@ -578,8 +365,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_web_ui_prop**
-> OBPv600GetWebUiProps200ResponseWebuiPropsInner o_bpv6_0_0_get_web_ui_prop(webuipropname)
+# **get_web_ui_prop**
+> GetWebUiProps200ResponseWebuiPropsInner get_web_ui_prop(webuipropname)
 
 Get WebUiProp by Name
 
@@ -626,7 +413,7 @@ Get WebUiProp by Name
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_web_ui_props200_response_webui_props_inner import OBPv600GetWebUiProps200ResponseWebuiPropsInner
+from obp_python.models.get_web_ui_props200_response_webui_props_inner import GetWebUiProps200ResponseWebuiPropsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -645,11 +432,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get WebUiProp by Name
-        api_response = api_instance.o_bpv6_0_0_get_web_ui_prop(webuipropname)
-        print("The response of WebUiPropsApi->o_bpv6_0_0_get_web_ui_prop:\n")
+        api_response = api_instance.get_web_ui_prop(webuipropname)
+        print("The response of WebUiPropsApi->get_web_ui_prop:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebUiPropsApi->o_bpv6_0_0_get_web_ui_prop: %s\n" % e)
+        print("Exception when calling WebUiPropsApi->get_web_ui_prop: %s\n" % e)
 ```
 
 
@@ -663,7 +450,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetWebUiProps200ResponseWebuiPropsInner**](OBPv600GetWebUiProps200ResponseWebuiPropsInner.md)
+[**GetWebUiProps200ResponseWebuiPropsInner**](GetWebUiProps200ResponseWebuiPropsInner.md)
 
 ### Authorization
 
@@ -684,8 +471,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_web_ui_props**
-> OBPv600GetWebUiProps200Response o_bpv6_0_0_get_web_ui_props()
+# **get_web_ui_props**
+> GetWebUiProps200Response get_web_ui_props()
 
 Get WebUiProps
 
@@ -740,7 +527,7 @@ Get WebUiProps
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_web_ui_props200_response import OBPv600GetWebUiProps200Response
+from obp_python.models.get_web_ui_props200_response import GetWebUiProps200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -758,11 +545,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get WebUiProps
-        api_response = api_instance.o_bpv6_0_0_get_web_ui_props()
-        print("The response of WebUiPropsApi->o_bpv6_0_0_get_web_ui_props:\n")
+        api_response = api_instance.get_web_ui_props()
+        print("The response of WebUiPropsApi->get_web_ui_props:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebUiPropsApi->o_bpv6_0_0_get_web_ui_props: %s\n" % e)
+        print("Exception when calling WebUiPropsApi->get_web_ui_props: %s\n" % e)
 ```
 
 
@@ -773,7 +560,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetWebUiProps200Response**](OBPv600GetWebUiProps200Response.md)
+[**GetWebUiProps200Response**](GetWebUiProps200Response.md)
 
 ### Authorization
 

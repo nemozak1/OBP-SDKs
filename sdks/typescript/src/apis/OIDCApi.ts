@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,31 +15,31 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv310GetOAuth2ServerJWKsURIs200Response,
-  OBPv310GetObpConnectorLoopback200Response,
-  OBPv600GetOidcClient200Response,
-  OBPv600VerifyOidcClient200Response,
-  OBPv600VerifyOidcClientRequest,
+  GetOAuth2ServerJWKsURIs200Response,
+  GetObpConnectorLoopback200Response,
+  GetOidcClient200Response,
+  VerifyOidcClient200Response,
+  VerifyOidcClientRequest,
 } from '../models/index';
 import {
-    OBPv310GetOAuth2ServerJWKsURIs200ResponseFromJSON,
-    OBPv310GetOAuth2ServerJWKsURIs200ResponseToJSON,
-    OBPv310GetObpConnectorLoopback200ResponseFromJSON,
-    OBPv310GetObpConnectorLoopback200ResponseToJSON,
-    OBPv600GetOidcClient200ResponseFromJSON,
-    OBPv600GetOidcClient200ResponseToJSON,
-    OBPv600VerifyOidcClient200ResponseFromJSON,
-    OBPv600VerifyOidcClient200ResponseToJSON,
-    OBPv600VerifyOidcClientRequestFromJSON,
-    OBPv600VerifyOidcClientRequestToJSON,
+    GetOAuth2ServerJWKsURIs200ResponseFromJSON,
+    GetOAuth2ServerJWKsURIs200ResponseToJSON,
+    GetObpConnectorLoopback200ResponseFromJSON,
+    GetObpConnectorLoopback200ResponseToJSON,
+    GetOidcClient200ResponseFromJSON,
+    GetOidcClient200ResponseToJSON,
+    VerifyOidcClient200ResponseFromJSON,
+    VerifyOidcClient200ResponseToJSON,
+    VerifyOidcClientRequestFromJSON,
+    VerifyOidcClientRequestToJSON,
 } from '../models/index';
 
-export interface OBPv600GetOidcClientRequest {
+export interface GetOidcClientRequest {
     clientid: string;
 }
 
-export interface OBPv600VerifyOidcClientOperationRequest {
-    oBPv600VerifyOidcClientRequest: OBPv600VerifyOidcClientRequest;
+export interface VerifyOidcClientOperationRequest {
+    verifyOidcClientRequest: VerifyOidcClientRequest;
 }
 
 /**
@@ -48,9 +48,9 @@ export interface OBPv600VerifyOidcClientOperationRequest {
 export class OIDCApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv310GetOAuth2ServerJWKsURIs without sending the request
+     * Creates request options for getOAuth2ServerJWKsURIs without sending the request
      */
-    async oBPv310GetOAuth2ServerJWKsURIsRequestOpts(): Promise<runtime.RequestOpts> {
+    async getOAuth2ServerJWKsURIsRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -70,26 +70,26 @@ export class OIDCApi extends runtime.BaseAPI {
      * <p>Get the OAuth2 server\'s public JSON Web Key (JWK) URIs.<br /> It is required by client applications to validate ID tokens, self-contained access tokens and other issued objects.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#jwks_uri\"><strong>jwks_uri</strong></a>:</p> <p><a href=\"/glossary#jwks_uris\"><strong>jwks_uris</strong></a>:</p> 
      * Get JSON Web Key (JWK) URIs
      */
-    async oBPv310GetOAuth2ServerJWKsURIsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv310GetOAuth2ServerJWKsURIs200Response>> {
-        const requestOptions = await this.oBPv310GetOAuth2ServerJWKsURIsRequestOpts();
+    async getOAuth2ServerJWKsURIsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetOAuth2ServerJWKsURIs200Response>> {
+        const requestOptions = await this.getOAuth2ServerJWKsURIsRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv310GetOAuth2ServerJWKsURIs200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetOAuth2ServerJWKsURIs200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get the OAuth2 server\'s public JSON Web Key (JWK) URIs.<br /> It is required by client applications to validate ID tokens, self-contained access tokens and other issued objects.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#jwks_uri\"><strong>jwks_uri</strong></a>:</p> <p><a href=\"/glossary#jwks_uris\"><strong>jwks_uris</strong></a>:</p> 
      * Get JSON Web Key (JWK) URIs
      */
-    async oBPv310GetOAuth2ServerJWKsURIs(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv310GetOAuth2ServerJWKsURIs200Response> {
-        const response = await this.oBPv310GetOAuth2ServerJWKsURIsRaw(initOverrides);
+    async getOAuth2ServerJWKsURIs(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetOAuth2ServerJWKsURIs200Response> {
+        const response = await this.getOAuth2ServerJWKsURIsRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv310GetObpConnectorLoopback without sending the request
+     * Creates request options for getObpConnectorLoopback without sending the request
      */
-    async oBPv310GetObpConnectorLoopbackRequestOpts(): Promise<runtime.RequestOpts> {
+    async getObpConnectorLoopbackRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -104,7 +104,7 @@ export class OIDCApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -122,30 +122,30 @@ export class OIDCApi extends runtime.BaseAPI {
      * <p>This endpoint makes a call to the Connector to check the backend transport is reachable. (Deprecated)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#connector_version\"><strong>connector_version</strong></a>:</p> <p><a href=\"/glossary#duration_time\"><strong>duration_time</strong></a>: 60</p> <p><a href=\"/glossary#\"><strong>git_commit</strong></a>: 59623811dd8a41f6ffe67be46954eee11913dc28</p> 
      * Get Connector Status (Loopback)
      */
-    async oBPv310GetObpConnectorLoopbackRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv310GetObpConnectorLoopback200Response>> {
-        const requestOptions = await this.oBPv310GetObpConnectorLoopbackRequestOpts();
+    async getObpConnectorLoopbackRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetObpConnectorLoopback200Response>> {
+        const requestOptions = await this.getObpConnectorLoopbackRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv310GetObpConnectorLoopback200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetObpConnectorLoopback200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>This endpoint makes a call to the Connector to check the backend transport is reachable. (Deprecated)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#connector_version\"><strong>connector_version</strong></a>:</p> <p><a href=\"/glossary#duration_time\"><strong>duration_time</strong></a>: 60</p> <p><a href=\"/glossary#\"><strong>git_commit</strong></a>: 59623811dd8a41f6ffe67be46954eee11913dc28</p> 
      * Get Connector Status (Loopback)
      */
-    async oBPv310GetObpConnectorLoopback(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv310GetObpConnectorLoopback200Response> {
-        const response = await this.oBPv310GetObpConnectorLoopbackRaw(initOverrides);
+    async getObpConnectorLoopback(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetObpConnectorLoopback200Response> {
+        const response = await this.getObpConnectorLoopbackRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetOidcClient without sending the request
+     * Creates request options for getOidcClient without sending the request
      */
-    async oBPv600GetOidcClientRequestOpts(requestParameters: OBPv600GetOidcClientRequest): Promise<runtime.RequestOpts> {
+    async getOidcClientRequestOpts(requestParameters: GetOidcClientRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['clientid'] == null) {
             throw new runtime.RequiredError(
                 'clientid',
-                'Required parameter "clientid" was null or undefined when calling oBPv600GetOidcClient().'
+                'Required parameter "clientid" was null or undefined when calling getOidcClient().'
             );
         }
 
@@ -163,7 +163,7 @@ export class OIDCApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -179,33 +179,33 @@ export class OIDCApi extends runtime.BaseAPI {
     }
 
     /**
-     * <p>Gets an OIDC/OAuth2 client\'s metadata by client_id.</p> <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br /> This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CLIENT_ID</a>: CLIENT_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_name</strong></a>: client_name</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>redirect_uris</strong></a>: redirect_uris</p> 
+     * <p>Gets an OIDC/OAuth2 client\'s metadata by client_id.</p> <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br /> This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CLIENT_ID</a>: CLIENT_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_name</strong></a>: client_name</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>redirect_uris</strong></a>: redirect_uris</p> 
      * Get OIDC Client
      */
-    async oBPv600GetOidcClientRaw(requestParameters: OBPv600GetOidcClientRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetOidcClient200Response>> {
-        const requestOptions = await this.oBPv600GetOidcClientRequestOpts(requestParameters);
+    async getOidcClientRaw(requestParameters: GetOidcClientRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetOidcClient200Response>> {
+        const requestOptions = await this.getOidcClientRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetOidcClient200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetOidcClient200ResponseFromJSON(jsonValue));
     }
 
     /**
-     * <p>Gets an OIDC/OAuth2 client\'s metadata by client_id.</p> <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br /> This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CLIENT_ID</a>: CLIENT_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_name</strong></a>: client_name</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>redirect_uris</strong></a>: redirect_uris</p> 
+     * <p>Gets an OIDC/OAuth2 client\'s metadata by client_id.</p> <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br /> This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CLIENT_ID</a>: CLIENT_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_name</strong></a>: client_name</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>redirect_uris</strong></a>: redirect_uris</p> 
      * Get OIDC Client
      */
-    async oBPv600GetOidcClient(requestParameters: OBPv600GetOidcClientRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetOidcClient200Response> {
-        const response = await this.oBPv600GetOidcClientRaw(requestParameters, initOverrides);
+    async getOidcClient(requestParameters: GetOidcClientRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetOidcClient200Response> {
+        const response = await this.getOidcClientRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600VerifyOidcClient without sending the request
+     * Creates request options for verifyOidcClient without sending the request
      */
-    async oBPv600VerifyOidcClientRequestOpts(requestParameters: OBPv600VerifyOidcClientOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['oBPv600VerifyOidcClientRequest'] == null) {
+    async verifyOidcClientRequestOpts(requestParameters: VerifyOidcClientOperationRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['verifyOidcClientRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600VerifyOidcClientRequest',
-                'Required parameter "oBPv600VerifyOidcClientRequest" was null or undefined when calling oBPv600VerifyOidcClient().'
+                'verifyOidcClientRequest',
+                'Required parameter "verifyOidcClientRequest" was null or undefined when calling verifyOidcClient().'
             );
         }
 
@@ -225,7 +225,7 @@ export class OIDCApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -236,27 +236,27 @@ export class OIDCApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600VerifyOidcClientRequestToJSON(requestParameters['oBPv600VerifyOidcClientRequest']),
+            body: VerifyOidcClientRequestToJSON(requestParameters['verifyOidcClientRequest']),
         };
     }
 
     /**
-     * <p>Verifies an OIDC/OAuth2 client\'s credentials.</p> <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br /> Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_secret</strong></a>: client_secret</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> <p><a href=\"/glossary#\">client_id</a>: client_id</p> <p><a href=\"/glossary#\">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">redirect_uris</a>: redirect_uris</p> 
+     * <p>Verifies an OIDC/OAuth2 client\'s credentials.</p> <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br /> Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_secret</strong></a>: client_secret</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> <p><a href=\"/glossary#\">client_id</a>: client_id</p> <p><a href=\"/glossary#\">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">redirect_uris</a>: redirect_uris</p> 
      * Verify OIDC Client
      */
-    async oBPv600VerifyOidcClientRaw(requestParameters: OBPv600VerifyOidcClientOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600VerifyOidcClient200Response>> {
-        const requestOptions = await this.oBPv600VerifyOidcClientRequestOpts(requestParameters);
+    async verifyOidcClientRaw(requestParameters: VerifyOidcClientOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<VerifyOidcClient200Response>> {
+        const requestOptions = await this.verifyOidcClientRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600VerifyOidcClient200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => VerifyOidcClient200ResponseFromJSON(jsonValue));
     }
 
     /**
-     * <p>Verifies an OIDC/OAuth2 client\'s credentials.</p> <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br /> Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_secret</strong></a>: client_secret</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> <p><a href=\"/glossary#\">client_id</a>: client_id</p> <p><a href=\"/glossary#\">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">redirect_uris</a>: redirect_uris</p> 
+     * <p>Verifies an OIDC/OAuth2 client\'s credentials.</p> <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br /> Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_secret</strong></a>: client_secret</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> <p><a href=\"/glossary#\">client_id</a>: client_id</p> <p><a href=\"/glossary#\">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">redirect_uris</a>: redirect_uris</p> 
      * Verify OIDC Client
      */
-    async oBPv600VerifyOidcClient(requestParameters: OBPv600VerifyOidcClientOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600VerifyOidcClient200Response> {
-        const response = await this.oBPv600VerifyOidcClientRaw(requestParameters, initOverrides);
+    async verifyOidcClient(requestParameters: VerifyOidcClientOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<VerifyOidcClient200Response> {
+        const response = await this.verifyOidcClientRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

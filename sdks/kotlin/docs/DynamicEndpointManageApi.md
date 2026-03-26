@@ -1,26 +1,26 @@
 # DynamicEndpointManageApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400CreateBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#oBPv400CreateBankLevelDynamicEndpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint |
-| [**oBPv400CreateDynamicEndpoint**](DynamicEndpointManageApi.md#oBPv400CreateDynamicEndpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint |
-| [**oBPv400DeleteBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#oBPv400DeleteBankLevelDynamicEndpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint |
-| [**oBPv400DeleteDynamicEndpoint**](DynamicEndpointManageApi.md#oBPv400DeleteDynamicEndpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint |
-| [**oBPv400DeleteMyDynamicEndpoint**](DynamicEndpointManageApi.md#oBPv400DeleteMyDynamicEndpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint |
-| [**oBPv400GetBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#oBPv400GetBankLevelDynamicEndpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint |
-| [**oBPv400GetBankLevelDynamicEndpoints**](DynamicEndpointManageApi.md#oBPv400GetBankLevelDynamicEndpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints |
-| [**oBPv400GetDynamicEndpoint**](DynamicEndpointManageApi.md#oBPv400GetDynamicEndpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint |
-| [**oBPv400GetDynamicEndpoints**](DynamicEndpointManageApi.md#oBPv400GetDynamicEndpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints |
-| [**oBPv400GetMyDynamicEndpoints**](DynamicEndpointManageApi.md#oBPv400GetMyDynamicEndpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints |
-| [**oBPv400UpdateBankLevelDynamicEndpointHost**](DynamicEndpointManageApi.md#oBPv400UpdateBankLevelDynamicEndpointHost) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host |
-| [**oBPv400UpdateDynamicEndpointHost**](DynamicEndpointManageApi.md#oBPv400UpdateDynamicEndpointHost) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host |
+| [**createBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#createBankLevelDynamicEndpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint |
+| [**createDynamicEndpoint**](DynamicEndpointManageApi.md#createDynamicEndpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint |
+| [**deleteBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#deleteBankLevelDynamicEndpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint |
+| [**deleteDynamicEndpoint**](DynamicEndpointManageApi.md#deleteDynamicEndpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint |
+| [**deleteMyDynamicEndpoint**](DynamicEndpointManageApi.md#deleteMyDynamicEndpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint |
+| [**getBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#getBankLevelDynamicEndpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint |
+| [**getBankLevelDynamicEndpoints**](DynamicEndpointManageApi.md#getBankLevelDynamicEndpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints |
+| [**getDynamicEndpoint**](DynamicEndpointManageApi.md#getDynamicEndpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint |
+| [**getDynamicEndpoints**](DynamicEndpointManageApi.md#getDynamicEndpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints |
+| [**getMyDynamicEndpoints**](DynamicEndpointManageApi.md#getMyDynamicEndpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints |
+| [**updateBankLevelDynamicEndpointHost**](DynamicEndpointManageApi.md#updateBankLevelDynamicEndpointHost) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host |
+| [**updateDynamicEndpointHost**](DynamicEndpointManageApi.md#updateDynamicEndpointHost) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host |
 
 
-<a id="oBPv400CreateBankLevelDynamicEndpoint"></a>
-# **oBPv400CreateBankLevelDynamicEndpoint**
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400CreateBankLevelDynamicEndpoint(bankid, obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+<a id="createBankLevelDynamicEndpoint"></a>
+# **createBankLevelDynamicEndpoint**
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner createBankLevelDynamicEndpoint(bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
 
 Create Bank Level Dynamic Endpoint
 
@@ -34,15 +34,15 @@ Create Bank Level Dynamic Endpoint
 
 val apiInstance = DynamicEndpointManageApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString : OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString = {type=object, properties={swagger={type=string}, paths={type=object, properties={/accounts={type=object, properties={post={type=object, properties={responses={type=object, properties={201={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, summary={type=string}, description={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}, /accounts/{account_id}={type=object, properties={get={type=object, properties={description={type=string}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, responses={type=object, properties={200={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, summary={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}}}, info={type=object, properties={title={type=string}, version={type=string}}}, definitions={type=object, properties={AccountName={type=object, properties={type={type=string}, properties={type=object, properties={name={type=object, properties={type={type=string}, example={type=string}}}, balance={type=object, properties={type={type=string}, format={type=string}, example={type=number}}}}}}}}}, schemes={type=array, items={type=object, properties={s={type=string}}}}, host={type=string}}} // OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
+val getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString : GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString = {type=object, properties={swagger={type=string}, paths={type=object, properties={/accounts={type=object, properties={post={type=object, properties={responses={type=object, properties={201={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, summary={type=string}, description={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}, /accounts/{account_id}={type=object, properties={get={type=object, properties={description={type=string}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, responses={type=object, properties={200={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, summary={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}}}, info={type=object, properties={title={type=string}, version={type=string}}}, definitions={type=object, properties={AccountName={type=object, properties={type={type=string}, properties={type=object, properties={name={type=object, properties={type={type=string}, example={type=string}}}, balance={type=object, properties={type={type=string}, format={type=string}, example={type=number}}}}}}}}}, schemes={type=array, items={type=object, properties={s={type=string}}}}, host={type=string}}} // GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
 try {
-    val result : OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems = apiInstance.oBPv400CreateBankLevelDynamicEndpoint(bankid, obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+    val result : GetDynamicEndpoints200ResponseDynamicEndpointsInner = apiInstance.createBankLevelDynamicEndpoint(bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEndpointManageApi#oBPv400CreateBankLevelDynamicEndpoint")
+    println("4xx response calling DynamicEndpointManageApi#createBankLevelDynamicEndpoint")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEndpointManageApi#oBPv400CreateBankLevelDynamicEndpoint")
+    println("5xx response calling DynamicEndpointManageApi#createBankLevelDynamicEndpoint")
     e.printStackTrace()
 }
 ```
@@ -51,11 +51,11 @@ try {
 | **bankid** | **kotlin.String**| The BANKID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md)| Request body | |
+| **getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString** | [**GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -66,17 +66,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400CreateDynamicEndpoint"></a>
-# **oBPv400CreateDynamicEndpoint**
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400CreateDynamicEndpoint(obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+<a id="createDynamicEndpoint"></a>
+# **createDynamicEndpoint**
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner createDynamicEndpoint(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
 
 Create Dynamic Endpoint
 
@@ -89,15 +89,15 @@ Create Dynamic Endpoint
 //import com.openbankproject.models.*
 
 val apiInstance = DynamicEndpointManageApi()
-val obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString : OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString = {"type":"object","properties":{"swagger":{"type":"string"},"paths":{"type":"object","properties":{"/accounts":{"type":"object","properties":{"post":{"type":"object","properties":{"responses":{"type":"object","properties":{"201":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"summary":{"type":"string"},"description":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}},"/accounts/{account_id}":{"type":"object","properties":{"get":{"type":"object","properties":{"description":{"type":"string"},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"responses":{"type":"object","properties":{"200":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"summary":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}}}},"info":{"type":"object","properties":{"title":{"type":"string"},"version":{"type":"string"}}},"definitions":{"type":"object","properties":{"AccountName":{"type":"object","properties":{"type":{"type":"string"},"properties":{"type":"object","properties":{"name":{"type":"object","properties":{"type":{"type":"string"},"example":{"type":"string"}}},"balance":{"type":"object","properties":{"type":{"type":"string"},"format":{"type":"string"},"example":{"type":"number"}}}}}}}}},"schemes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"host":{"type":"string"}}} // OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
+val getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString : GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString = {"type":"object","properties":{"swagger":{"type":"string"},"paths":{"type":"object","properties":{"/accounts":{"type":"object","properties":{"post":{"type":"object","properties":{"responses":{"type":"object","properties":{"201":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"summary":{"type":"string"},"description":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}},"/accounts/{account_id}":{"type":"object","properties":{"get":{"type":"object","properties":{"description":{"type":"string"},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"responses":{"type":"object","properties":{"200":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"summary":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}}}},"info":{"type":"object","properties":{"title":{"type":"string"},"version":{"type":"string"}}},"definitions":{"type":"object","properties":{"AccountName":{"type":"object","properties":{"type":{"type":"string"},"properties":{"type":"object","properties":{"name":{"type":"object","properties":{"type":{"type":"string"},"example":{"type":"string"}}},"balance":{"type":"object","properties":{"type":{"type":"string"},"format":{"type":"string"},"example":{"type":"number"}}}}}}}}},"schemes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"host":{"type":"string"}}} // GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
 try {
-    val result : OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems = apiInstance.oBPv400CreateDynamicEndpoint(obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+    val result : GetDynamicEndpoints200ResponseDynamicEndpointsInner = apiInstance.createDynamicEndpoint(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEndpointManageApi#oBPv400CreateDynamicEndpoint")
+    println("4xx response calling DynamicEndpointManageApi#createDynamicEndpoint")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEndpointManageApi#oBPv400CreateDynamicEndpoint")
+    println("5xx response calling DynamicEndpointManageApi#createDynamicEndpoint")
     e.printStackTrace()
 }
 ```
@@ -105,11 +105,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md)| Request body | |
+| **getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString** | [**GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -120,17 +120,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400DeleteBankLevelDynamicEndpoint"></a>
-# **oBPv400DeleteBankLevelDynamicEndpoint**
-> oBPv400DeleteBankLevelDynamicEndpoint(bankid, dynamicendpointid)
+<a id="deleteBankLevelDynamicEndpoint"></a>
+# **deleteBankLevelDynamicEndpoint**
+> deleteBankLevelDynamicEndpoint(bankid, dynamicendpointid)
 
  Delete Bank Level Dynamic Endpoint
 
@@ -146,12 +146,12 @@ val apiInstance = DynamicEndpointManageApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val dynamicendpointid : kotlin.String = dynamicendpointid_example // kotlin.String | The DYNAMICENDPOINTID identifier
 try {
-    apiInstance.oBPv400DeleteBankLevelDynamicEndpoint(bankid, dynamicendpointid)
+    apiInstance.deleteBankLevelDynamicEndpoint(bankid, dynamicendpointid)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEndpointManageApi#oBPv400DeleteBankLevelDynamicEndpoint")
+    println("4xx response calling DynamicEndpointManageApi#deleteBankLevelDynamicEndpoint")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEndpointManageApi#oBPv400DeleteBankLevelDynamicEndpoint")
+    println("5xx response calling DynamicEndpointManageApi#deleteBankLevelDynamicEndpoint")
     e.printStackTrace()
 }
 ```
@@ -175,17 +175,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv400DeleteDynamicEndpoint"></a>
-# **oBPv400DeleteDynamicEndpoint**
-> oBPv400DeleteDynamicEndpoint(dynamicendpointid)
+<a id="deleteDynamicEndpoint"></a>
+# **deleteDynamicEndpoint**
+> deleteDynamicEndpoint(dynamicendpointid)
 
  Delete Dynamic Endpoint
 
@@ -200,12 +200,12 @@ Configure DirectLogin:
 val apiInstance = DynamicEndpointManageApi()
 val dynamicendpointid : kotlin.String = dynamicendpointid_example // kotlin.String | The DYNAMICENDPOINTID identifier
 try {
-    apiInstance.oBPv400DeleteDynamicEndpoint(dynamicendpointid)
+    apiInstance.deleteDynamicEndpoint(dynamicendpointid)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEndpointManageApi#oBPv400DeleteDynamicEndpoint")
+    println("4xx response calling DynamicEndpointManageApi#deleteDynamicEndpoint")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEndpointManageApi#oBPv400DeleteDynamicEndpoint")
+    println("5xx response calling DynamicEndpointManageApi#deleteDynamicEndpoint")
     e.printStackTrace()
 }
 ```
@@ -228,17 +228,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv400DeleteMyDynamicEndpoint"></a>
-# **oBPv400DeleteMyDynamicEndpoint**
-> oBPv400DeleteMyDynamicEndpoint(dynamicendpointid)
+<a id="deleteMyDynamicEndpoint"></a>
+# **deleteMyDynamicEndpoint**
+> deleteMyDynamicEndpoint(dynamicendpointid)
 
 Delete My Dynamic Endpoint
 
@@ -253,12 +253,12 @@ Delete My Dynamic Endpoint
 val apiInstance = DynamicEndpointManageApi()
 val dynamicendpointid : kotlin.String = dynamicendpointid_example // kotlin.String | The DYNAMICENDPOINTID identifier
 try {
-    apiInstance.oBPv400DeleteMyDynamicEndpoint(dynamicendpointid)
+    apiInstance.deleteMyDynamicEndpoint(dynamicendpointid)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEndpointManageApi#oBPv400DeleteMyDynamicEndpoint")
+    println("4xx response calling DynamicEndpointManageApi#deleteMyDynamicEndpoint")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEndpointManageApi#oBPv400DeleteMyDynamicEndpoint")
+    println("5xx response calling DynamicEndpointManageApi#deleteMyDynamicEndpoint")
     e.printStackTrace()
 }
 ```
@@ -281,17 +281,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv400GetBankLevelDynamicEndpoint"></a>
-# **oBPv400GetBankLevelDynamicEndpoint**
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400GetBankLevelDynamicEndpoint(bankid, dynamicendpointid)
+<a id="getBankLevelDynamicEndpoint"></a>
+# **getBankLevelDynamicEndpoint**
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner getBankLevelDynamicEndpoint(bankid, dynamicendpointid)
 
  Get Bank Level Dynamic Endpoint
 
@@ -307,13 +307,13 @@ val apiInstance = DynamicEndpointManageApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val dynamicendpointid : kotlin.String = dynamicendpointid_example // kotlin.String | The DYNAMICENDPOINTID identifier
 try {
-    val result : OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems = apiInstance.oBPv400GetBankLevelDynamicEndpoint(bankid, dynamicendpointid)
+    val result : GetDynamicEndpoints200ResponseDynamicEndpointsInner = apiInstance.getBankLevelDynamicEndpoint(bankid, dynamicendpointid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEndpointManageApi#oBPv400GetBankLevelDynamicEndpoint")
+    println("4xx response calling DynamicEndpointManageApi#getBankLevelDynamicEndpoint")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEndpointManageApi#oBPv400GetBankLevelDynamicEndpoint")
+    println("5xx response calling DynamicEndpointManageApi#getBankLevelDynamicEndpoint")
     e.printStackTrace()
 }
 ```
@@ -326,7 +326,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -337,17 +337,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetBankLevelDynamicEndpoints"></a>
-# **oBPv400GetBankLevelDynamicEndpoints**
-> OBPv400GetDynamicEndpoints200Response oBPv400GetBankLevelDynamicEndpoints(bankid)
+<a id="getBankLevelDynamicEndpoints"></a>
+# **getBankLevelDynamicEndpoints**
+> GetDynamicEndpoints200Response getBankLevelDynamicEndpoints(bankid)
 
 Get Bank Level Dynamic Endpoints
 
@@ -362,13 +362,13 @@ Get Bank Level Dynamic Endpoints
 val apiInstance = DynamicEndpointManageApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 try {
-    val result : OBPv400GetDynamicEndpoints200Response = apiInstance.oBPv400GetBankLevelDynamicEndpoints(bankid)
+    val result : GetDynamicEndpoints200Response = apiInstance.getBankLevelDynamicEndpoints(bankid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEndpointManageApi#oBPv400GetBankLevelDynamicEndpoints")
+    println("4xx response calling DynamicEndpointManageApi#getBankLevelDynamicEndpoints")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEndpointManageApi#oBPv400GetBankLevelDynamicEndpoints")
+    println("5xx response calling DynamicEndpointManageApi#getBankLevelDynamicEndpoints")
     e.printStackTrace()
 }
 ```
@@ -380,7 +380,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -391,17 +391,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetDynamicEndpoint"></a>
-# **oBPv400GetDynamicEndpoint**
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400GetDynamicEndpoint(dynamicendpointid)
+<a id="getDynamicEndpoint"></a>
+# **getDynamicEndpoint**
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner getDynamicEndpoint(dynamicendpointid)
 
 Get Dynamic Endpoint
 
@@ -416,13 +416,13 @@ Get Dynamic Endpoint
 val apiInstance = DynamicEndpointManageApi()
 val dynamicendpointid : kotlin.String = dynamicendpointid_example // kotlin.String | The DYNAMICENDPOINTID identifier
 try {
-    val result : OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems = apiInstance.oBPv400GetDynamicEndpoint(dynamicendpointid)
+    val result : GetDynamicEndpoints200ResponseDynamicEndpointsInner = apiInstance.getDynamicEndpoint(dynamicendpointid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEndpointManageApi#oBPv400GetDynamicEndpoint")
+    println("4xx response calling DynamicEndpointManageApi#getDynamicEndpoint")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEndpointManageApi#oBPv400GetDynamicEndpoint")
+    println("5xx response calling DynamicEndpointManageApi#getDynamicEndpoint")
     e.printStackTrace()
 }
 ```
@@ -434,7 +434,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -445,17 +445,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetDynamicEndpoints"></a>
-# **oBPv400GetDynamicEndpoints**
-> OBPv400GetDynamicEndpoints200Response oBPv400GetDynamicEndpoints()
+<a id="getDynamicEndpoints"></a>
+# **getDynamicEndpoints**
+> GetDynamicEndpoints200Response getDynamicEndpoints()
 
  Get Dynamic Endpoints
 
@@ -469,13 +469,13 @@ Configure DirectLogin:
 
 val apiInstance = DynamicEndpointManageApi()
 try {
-    val result : OBPv400GetDynamicEndpoints200Response = apiInstance.oBPv400GetDynamicEndpoints()
+    val result : GetDynamicEndpoints200Response = apiInstance.getDynamicEndpoints()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEndpointManageApi#oBPv400GetDynamicEndpoints")
+    println("4xx response calling DynamicEndpointManageApi#getDynamicEndpoints")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEndpointManageApi#oBPv400GetDynamicEndpoints")
+    println("5xx response calling DynamicEndpointManageApi#getDynamicEndpoints")
     e.printStackTrace()
 }
 ```
@@ -485,7 +485,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -496,17 +496,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetMyDynamicEndpoints"></a>
-# **oBPv400GetMyDynamicEndpoints**
-> OBPv400GetDynamicEndpoints200Response oBPv400GetMyDynamicEndpoints()
+<a id="getMyDynamicEndpoints"></a>
+# **getMyDynamicEndpoints**
+> GetDynamicEndpoints200Response getMyDynamicEndpoints()
 
 Get My Dynamic Endpoints
 
@@ -520,13 +520,13 @@ Get My Dynamic Endpoints
 
 val apiInstance = DynamicEndpointManageApi()
 try {
-    val result : OBPv400GetDynamicEndpoints200Response = apiInstance.oBPv400GetMyDynamicEndpoints()
+    val result : GetDynamicEndpoints200Response = apiInstance.getMyDynamicEndpoints()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEndpointManageApi#oBPv400GetMyDynamicEndpoints")
+    println("4xx response calling DynamicEndpointManageApi#getMyDynamicEndpoints")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEndpointManageApi#oBPv400GetMyDynamicEndpoints")
+    println("5xx response calling DynamicEndpointManageApi#getMyDynamicEndpoints")
     e.printStackTrace()
 }
 ```
@@ -536,7 +536,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -547,17 +547,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400UpdateBankLevelDynamicEndpointHost"></a>
-# **oBPv400UpdateBankLevelDynamicEndpointHost**
-> OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHost(bankid, dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest)
+<a id="updateBankLevelDynamicEndpointHost"></a>
+# **updateBankLevelDynamicEndpointHost**
+> UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHost(bankid, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest)
 
  Update Bank Level Dynamic Endpoint Host
 
@@ -572,15 +572,15 @@ Configure DirectLogin:
 val apiInstance = DynamicEndpointManageApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val dynamicendpointid : kotlin.String = dynamicendpointid_example // kotlin.String | The DYNAMICENDPOINTID identifier
-val obPv400UpdateBankLevelDynamicEndpointHostRequest : OBPv400UpdateBankLevelDynamicEndpointHostRequest = {"type":"object","properties":{"host":{"type":"string"}}} // OBPv400UpdateBankLevelDynamicEndpointHostRequest | Request body
+val updateBankLevelDynamicEndpointHostRequest : UpdateBankLevelDynamicEndpointHostRequest = {"type":"object","properties":{"host":{"type":"string"}}} // UpdateBankLevelDynamicEndpointHostRequest | Request body
 try {
-    val result : OBPv400UpdateBankLevelDynamicEndpointHostRequest = apiInstance.oBPv400UpdateBankLevelDynamicEndpointHost(bankid, dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest)
+    val result : UpdateBankLevelDynamicEndpointHostRequest = apiInstance.updateBankLevelDynamicEndpointHost(bankid, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEndpointManageApi#oBPv400UpdateBankLevelDynamicEndpointHost")
+    println("4xx response calling DynamicEndpointManageApi#updateBankLevelDynamicEndpointHost")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEndpointManageApi#oBPv400UpdateBankLevelDynamicEndpointHost")
+    println("5xx response calling DynamicEndpointManageApi#updateBankLevelDynamicEndpointHost")
     e.printStackTrace()
 }
 ```
@@ -590,11 +590,11 @@ try {
 | **dynamicendpointid** | **kotlin.String**| The DYNAMICENDPOINTID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateBankLevelDynamicEndpointHostRequest** | [**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)| Request body | |
+| **updateBankLevelDynamicEndpointHostRequest** | [**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
+[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)
 
 ### Authorization
 
@@ -605,17 +605,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400UpdateDynamicEndpointHost"></a>
-# **oBPv400UpdateDynamicEndpointHost**
-> OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateDynamicEndpointHost(dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest)
+<a id="updateDynamicEndpointHost"></a>
+# **updateDynamicEndpointHost**
+> UpdateBankLevelDynamicEndpointHostRequest updateDynamicEndpointHost(dynamicendpointid, updateBankLevelDynamicEndpointHostRequest)
 
  Update Dynamic Endpoint Host
 
@@ -629,15 +629,15 @@ Configure DirectLogin:
 
 val apiInstance = DynamicEndpointManageApi()
 val dynamicendpointid : kotlin.String = dynamicendpointid_example // kotlin.String | The DYNAMICENDPOINTID identifier
-val obPv400UpdateBankLevelDynamicEndpointHostRequest : OBPv400UpdateBankLevelDynamicEndpointHostRequest = {type=object, properties={host={type=string}}} // OBPv400UpdateBankLevelDynamicEndpointHostRequest | Request body
+val updateBankLevelDynamicEndpointHostRequest : UpdateBankLevelDynamicEndpointHostRequest = {type=object, properties={host={type=string}}} // UpdateBankLevelDynamicEndpointHostRequest | Request body
 try {
-    val result : OBPv400UpdateBankLevelDynamicEndpointHostRequest = apiInstance.oBPv400UpdateDynamicEndpointHost(dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest)
+    val result : UpdateBankLevelDynamicEndpointHostRequest = apiInstance.updateDynamicEndpointHost(dynamicendpointid, updateBankLevelDynamicEndpointHostRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEndpointManageApi#oBPv400UpdateDynamicEndpointHost")
+    println("4xx response calling DynamicEndpointManageApi#updateDynamicEndpointHost")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEndpointManageApi#oBPv400UpdateDynamicEndpointHost")
+    println("5xx response calling DynamicEndpointManageApi#updateDynamicEndpointHost")
     e.printStackTrace()
 }
 ```
@@ -646,11 +646,11 @@ try {
 | **dynamicendpointid** | **kotlin.String**| The DYNAMICENDPOINTID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateBankLevelDynamicEndpointHostRequest** | [**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)| Request body | |
+| **updateBankLevelDynamicEndpointHostRequest** | [**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
+[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)
 
 ### Authorization
 
@@ -661,8 +661,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

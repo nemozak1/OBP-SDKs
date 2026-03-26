@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,7 +75,7 @@ class ConfirmationOfFundsServicePIISApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv310CheckFundsAvailable' => [
+        'checkFundsAvailable' => [
             'application/json',
         ],
     ];
@@ -127,42 +127,42 @@ class ConfirmationOfFundsServicePIISApi
     }
 
     /**
-     * Operation oBPv310CheckFundsAvailable
+     * Operation checkFundsAvailable
      *
      * Check Available Funds
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CheckFundsAvailable'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkFundsAvailable'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310CheckFundsAvailable200Response
+     * @return \OpenBankProject\Model\CheckFundsAvailable200Response
      */
-    public function oBPv310CheckFundsAvailable($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv310CheckFundsAvailable'][0])
+    public function checkFundsAvailable($bankid, $accountid, $viewid, string $contentType = self::contentTypes['checkFundsAvailable'][0])
     {
-        list($response) = $this->oBPv310CheckFundsAvailableWithHttpInfo($bankid, $accountid, $viewid, $contentType);
+        list($response) = $this->checkFundsAvailableWithHttpInfo($bankid, $accountid, $viewid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310CheckFundsAvailableWithHttpInfo
+     * Operation checkFundsAvailableWithHttpInfo
      *
      * Check Available Funds
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CheckFundsAvailable'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkFundsAvailable'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310CheckFundsAvailable200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CheckFundsAvailable200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310CheckFundsAvailableWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv310CheckFundsAvailable'][0])
+    public function checkFundsAvailableWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['checkFundsAvailable'][0])
     {
-        $request = $this->oBPv310CheckFundsAvailableRequest($bankid, $accountid, $viewid, $contentType);
+        $request = $this->checkFundsAvailableRequest($bankid, $accountid, $viewid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -190,7 +190,7 @@ class ConfirmationOfFundsServicePIISApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310CheckFundsAvailable200Response',
+                        '\OpenBankProject\Model\CheckFundsAvailable200Response',
                         $request,
                         $response,
                     );
@@ -212,7 +212,7 @@ class ConfirmationOfFundsServicePIISApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310CheckFundsAvailable200Response',
+                '\OpenBankProject\Model\CheckFundsAvailable200Response',
                 $request,
                 $response,
             );
@@ -221,7 +221,7 @@ class ConfirmationOfFundsServicePIISApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310CheckFundsAvailable200Response',
+                        '\OpenBankProject\Model\CheckFundsAvailable200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -234,21 +234,21 @@ class ConfirmationOfFundsServicePIISApi
     }
 
     /**
-     * Operation oBPv310CheckFundsAvailableAsync
+     * Operation checkFundsAvailableAsync
      *
      * Check Available Funds
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CheckFundsAvailable'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkFundsAvailable'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310CheckFundsAvailableAsync($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv310CheckFundsAvailable'][0])
+    public function checkFundsAvailableAsync($bankid, $accountid, $viewid, string $contentType = self::contentTypes['checkFundsAvailable'][0])
     {
-        return $this->oBPv310CheckFundsAvailableAsyncWithHttpInfo($bankid, $accountid, $viewid, $contentType)
+        return $this->checkFundsAvailableAsyncWithHttpInfo($bankid, $accountid, $viewid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -257,22 +257,22 @@ class ConfirmationOfFundsServicePIISApi
     }
 
     /**
-     * Operation oBPv310CheckFundsAvailableAsyncWithHttpInfo
+     * Operation checkFundsAvailableAsyncWithHttpInfo
      *
      * Check Available Funds
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CheckFundsAvailable'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkFundsAvailable'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310CheckFundsAvailableAsyncWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv310CheckFundsAvailable'][0])
+    public function checkFundsAvailableAsyncWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['checkFundsAvailable'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310CheckFundsAvailable200Response';
-        $request = $this->oBPv310CheckFundsAvailableRequest($bankid, $accountid, $viewid, $contentType);
+        $returnType = '\OpenBankProject\Model\CheckFundsAvailable200Response';
+        $request = $this->checkFundsAvailableRequest($bankid, $accountid, $viewid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -311,37 +311,37 @@ class ConfirmationOfFundsServicePIISApi
     }
 
     /**
-     * Create request for operation 'oBPv310CheckFundsAvailable'
+     * Create request for operation 'checkFundsAvailable'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CheckFundsAvailable'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkFundsAvailable'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310CheckFundsAvailableRequest($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv310CheckFundsAvailable'][0])
+    public function checkFundsAvailableRequest($bankid, $accountid, $viewid, string $contentType = self::contentTypes['checkFundsAvailable'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv310CheckFundsAvailable'
+                'Missing the required parameter $bankid when calling checkFundsAvailable'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv310CheckFundsAvailable'
+                'Missing the required parameter $accountid when calling checkFundsAvailable'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv310CheckFundsAvailable'
+                'Missing the required parameter $viewid when calling checkFundsAvailable'
             );
         }
 
@@ -422,9 +422,9 @@ class ConfirmationOfFundsServicePIISApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

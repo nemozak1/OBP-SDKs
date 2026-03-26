@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,17 +18,17 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv400CreateMyApiCollectionEndpointRequest;
-import com.openbankproject.model.OBPv400CreateMyApiCollectionRequest;
-import com.openbankproject.model.OBPv400DeleteSystemLevelEndpointTag200Response;
-import com.openbankproject.model.OBPv400GetApiCollectionsForUser200Response;
-import com.openbankproject.model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems;
-import com.openbankproject.model.OBPv400GetMyApiCollectionEndpoints200Response;
-import com.openbankproject.model.OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems;
-import com.openbankproject.model.OBPv600CreateFeaturedApiCollectionRequest;
-import com.openbankproject.model.OBPv600GetFeaturedApiCollectionsAdmin200Response;
-import com.openbankproject.model.OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems;
-import com.openbankproject.model.OBPv600UpdateFeaturedApiCollectionRequest;
+import com.openbankproject.model.CreateFeaturedApiCollectionRequest;
+import com.openbankproject.model.CreateMyApiCollectionEndpointRequest;
+import com.openbankproject.model.CreateMyApiCollectionRequest;
+import com.openbankproject.model.DeleteSystemLevelEndpointTag200Response;
+import com.openbankproject.model.GetApiCollectionsForUser200Response;
+import com.openbankproject.model.GetApiCollectionsForUser200ResponseApiCollectionsInner;
+import com.openbankproject.model.GetFeaturedApiCollectionsAdmin200Response;
+import com.openbankproject.model.GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner;
+import com.openbankproject.model.GetMyApiCollectionEndpoints200Response;
+import com.openbankproject.model.GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner;
+import com.openbankproject.model.UpdateFeaturedApiCollectionRequest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -55,7 +55,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class ApiCollectionApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -173,50 +173,50 @@ public class ApiCollectionApi {
   }
 
   /**
-   * Create My Api Collection
-   * &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @param obPv400CreateMyApiCollectionRequest Request body (required)
-   * @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+   * Create Featured Api Collection
+   * &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+   * @param createFeaturedApiCollectionRequest Request body (required)
+   * @return GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems oBPv400CreateMyApiCollection(@javax.annotation.Nonnull OBPv400CreateMyApiCollectionRequest obPv400CreateMyApiCollectionRequest) throws ApiException {
-    return oBPv400CreateMyApiCollection(obPv400CreateMyApiCollectionRequest, null);
+  public GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner createFeaturedApiCollection(@javax.annotation.Nonnull CreateFeaturedApiCollectionRequest createFeaturedApiCollectionRequest) throws ApiException {
+    return createFeaturedApiCollection(createFeaturedApiCollectionRequest, null);
   }
 
   /**
-   * Create My Api Collection
-   * &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @param obPv400CreateMyApiCollectionRequest Request body (required)
+   * Create Featured Api Collection
+   * &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+   * @param createFeaturedApiCollectionRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+   * @return GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems oBPv400CreateMyApiCollection(@javax.annotation.Nonnull OBPv400CreateMyApiCollectionRequest obPv400CreateMyApiCollectionRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> localVarResponse = oBPv400CreateMyApiCollectionWithHttpInfo(obPv400CreateMyApiCollectionRequest, headers);
+  public GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner createFeaturedApiCollection(@javax.annotation.Nonnull CreateFeaturedApiCollectionRequest createFeaturedApiCollectionRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner> localVarResponse = createFeaturedApiCollectionWithHttpInfo(createFeaturedApiCollectionRequest, headers);
     return localVarResponse.getData();
   }
 
   /**
-   * Create My Api Collection
-   * &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @param obPv400CreateMyApiCollectionRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems&gt;
+   * Create Featured Api Collection
+   * &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+   * @param createFeaturedApiCollectionRequest Request body (required)
+   * @return ApiResponse&lt;GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> oBPv400CreateMyApiCollectionWithHttpInfo(@javax.annotation.Nonnull OBPv400CreateMyApiCollectionRequest obPv400CreateMyApiCollectionRequest) throws ApiException {
-    return oBPv400CreateMyApiCollectionWithHttpInfo(obPv400CreateMyApiCollectionRequest, null);
+  public ApiResponse<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner> createFeaturedApiCollectionWithHttpInfo(@javax.annotation.Nonnull CreateFeaturedApiCollectionRequest createFeaturedApiCollectionRequest) throws ApiException {
+    return createFeaturedApiCollectionWithHttpInfo(createFeaturedApiCollectionRequest, null);
   }
 
   /**
-   * Create My Api Collection
-   * &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @param obPv400CreateMyApiCollectionRequest Request body (required)
+   * Create Featured Api Collection
+   * &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+   * @param createFeaturedApiCollectionRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems&gt;
+   * @return ApiResponse&lt;GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> oBPv400CreateMyApiCollectionWithHttpInfo(@javax.annotation.Nonnull OBPv400CreateMyApiCollectionRequest obPv400CreateMyApiCollectionRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateMyApiCollectionRequestBuilder(obPv400CreateMyApiCollectionRequest, headers);
+  public ApiResponse<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner> createFeaturedApiCollectionWithHttpInfo(@javax.annotation.Nonnull CreateFeaturedApiCollectionRequest createFeaturedApiCollectionRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createFeaturedApiCollectionRequestBuilder(createFeaturedApiCollectionRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -227,11 +227,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateMyApiCollection", localVarResponse);
+          throw getApiException("createFeaturedApiCollection", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(
+          return new ApiResponse<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -241,10 +241,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>() {});
+        GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(
+        return new ApiResponse<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -263,10 +263,133 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateMyApiCollectionRequestBuilder(@javax.annotation.Nonnull OBPv400CreateMyApiCollectionRequest obPv400CreateMyApiCollectionRequest, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'obPv400CreateMyApiCollectionRequest' is set
-    if (obPv400CreateMyApiCollectionRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400CreateMyApiCollectionRequest' when calling oBPv400CreateMyApiCollection");
+  private HttpRequest.Builder createFeaturedApiCollectionRequestBuilder(@javax.annotation.Nonnull CreateFeaturedApiCollectionRequest createFeaturedApiCollectionRequest, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'createFeaturedApiCollectionRequest' is set
+    if (createFeaturedApiCollectionRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createFeaturedApiCollectionRequest' when calling createFeaturedApiCollection");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/obp/v6.0.0/management/api-collections/featured";
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Content-Type", "application/json");
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createFeaturedApiCollectionRequest);
+      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Create My Api Collection
+   * &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * @param createMyApiCollectionRequest Request body (required)
+   * @return GetApiCollectionsForUser200ResponseApiCollectionsInner
+   * @throws ApiException if fails to make API call
+   */
+  public GetApiCollectionsForUser200ResponseApiCollectionsInner createMyApiCollection(@javax.annotation.Nonnull CreateMyApiCollectionRequest createMyApiCollectionRequest) throws ApiException {
+    return createMyApiCollection(createMyApiCollectionRequest, null);
+  }
+
+  /**
+   * Create My Api Collection
+   * &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * @param createMyApiCollectionRequest Request body (required)
+   * @param headers Optional headers to include in the request
+   * @return GetApiCollectionsForUser200ResponseApiCollectionsInner
+   * @throws ApiException if fails to make API call
+   */
+  public GetApiCollectionsForUser200ResponseApiCollectionsInner createMyApiCollection(@javax.annotation.Nonnull CreateMyApiCollectionRequest createMyApiCollectionRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner> localVarResponse = createMyApiCollectionWithHttpInfo(createMyApiCollectionRequest, headers);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * Create My Api Collection
+   * &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * @param createMyApiCollectionRequest Request body (required)
+   * @return ApiResponse&lt;GetApiCollectionsForUser200ResponseApiCollectionsInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner> createMyApiCollectionWithHttpInfo(@javax.annotation.Nonnull CreateMyApiCollectionRequest createMyApiCollectionRequest) throws ApiException {
+    return createMyApiCollectionWithHttpInfo(createMyApiCollectionRequest, null);
+  }
+
+  /**
+   * Create My Api Collection
+   * &lt;p&gt;Create Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;description&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * @param createMyApiCollectionRequest Request body (required)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;GetApiCollectionsForUser200ResponseApiCollectionsInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner> createMyApiCollectionWithHttpInfo(@javax.annotation.Nonnull CreateMyApiCollectionRequest createMyApiCollectionRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createMyApiCollectionRequestBuilder(createMyApiCollectionRequest, headers);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      InputStream localVarResponseBody = null;
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("createMyApiCollection", localVarResponse);
+        }
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
+          return new ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        GetApiCollectionsForUser200ResponseApiCollectionsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetApiCollectionsForUser200ResponseApiCollectionsInner>() {});
+        
+
+        return new ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseValue
+        );
+      } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder createMyApiCollectionRequestBuilder(@javax.annotation.Nonnull CreateMyApiCollectionRequest createMyApiCollectionRequest, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'createMyApiCollectionRequest' is set
+    if (createMyApiCollectionRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createMyApiCollectionRequest' when calling createMyApiCollection");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -279,7 +402,7 @@ public class ApiCollectionApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400CreateMyApiCollectionRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createMyApiCollectionRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -299,25 +422,25 @@ public class ApiCollectionApi {
    * Create My Api Collection Endpoint
    * &lt;p&gt;Create Api Collection Endpoint.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
-   * @param obPv400CreateMyApiCollectionEndpointRequest Request body (required)
-   * @return OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
+   * @param createMyApiCollectionEndpointRequest Request body (required)
+   * @return GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems oBPv400CreateMyApiCollectionEndpoint(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull OBPv400CreateMyApiCollectionEndpointRequest obPv400CreateMyApiCollectionEndpointRequest) throws ApiException {
-    return oBPv400CreateMyApiCollectionEndpoint(apicollectionname, obPv400CreateMyApiCollectionEndpointRequest, null);
+  public GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner createMyApiCollectionEndpoint(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest) throws ApiException {
+    return createMyApiCollectionEndpoint(apicollectionname, createMyApiCollectionEndpointRequest, null);
   }
 
   /**
    * Create My Api Collection Endpoint
    * &lt;p&gt;Create Api Collection Endpoint.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
-   * @param obPv400CreateMyApiCollectionEndpointRequest Request body (required)
+   * @param createMyApiCollectionEndpointRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
+   * @return GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems oBPv400CreateMyApiCollectionEndpoint(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull OBPv400CreateMyApiCollectionEndpointRequest obPv400CreateMyApiCollectionEndpointRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> localVarResponse = oBPv400CreateMyApiCollectionEndpointWithHttpInfo(apicollectionname, obPv400CreateMyApiCollectionEndpointRequest, headers);
+  public GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner createMyApiCollectionEndpoint(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> localVarResponse = createMyApiCollectionEndpointWithHttpInfo(apicollectionname, createMyApiCollectionEndpointRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -325,25 +448,25 @@ public class ApiCollectionApi {
    * Create My Api Collection Endpoint
    * &lt;p&gt;Create Api Collection Endpoint.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
-   * @param obPv400CreateMyApiCollectionEndpointRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems&gt;
+   * @param createMyApiCollectionEndpointRequest Request body (required)
+   * @return ApiResponse&lt;GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> oBPv400CreateMyApiCollectionEndpointWithHttpInfo(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull OBPv400CreateMyApiCollectionEndpointRequest obPv400CreateMyApiCollectionEndpointRequest) throws ApiException {
-    return oBPv400CreateMyApiCollectionEndpointWithHttpInfo(apicollectionname, obPv400CreateMyApiCollectionEndpointRequest, null);
+  public ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> createMyApiCollectionEndpointWithHttpInfo(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest) throws ApiException {
+    return createMyApiCollectionEndpointWithHttpInfo(apicollectionname, createMyApiCollectionEndpointRequest, null);
   }
 
   /**
    * Create My Api Collection Endpoint
    * &lt;p&gt;Create Api Collection Endpoint.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
-   * @param obPv400CreateMyApiCollectionEndpointRequest Request body (required)
+   * @param createMyApiCollectionEndpointRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems&gt;
+   * @return ApiResponse&lt;GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> oBPv400CreateMyApiCollectionEndpointWithHttpInfo(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull OBPv400CreateMyApiCollectionEndpointRequest obPv400CreateMyApiCollectionEndpointRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateMyApiCollectionEndpointRequestBuilder(apicollectionname, obPv400CreateMyApiCollectionEndpointRequest, headers);
+  public ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> createMyApiCollectionEndpointWithHttpInfo(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createMyApiCollectionEndpointRequestBuilder(apicollectionname, createMyApiCollectionEndpointRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -354,11 +477,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateMyApiCollectionEndpoint", localVarResponse);
+          throw getApiException("createMyApiCollectionEndpoint", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>(
+          return new ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -368,10 +491,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>() {});
+        GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>(
+        return new ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -390,14 +513,14 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateMyApiCollectionEndpointRequestBuilder(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull OBPv400CreateMyApiCollectionEndpointRequest obPv400CreateMyApiCollectionEndpointRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createMyApiCollectionEndpointRequestBuilder(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'apicollectionname' is set
     if (apicollectionname == null) {
-      throw new ApiException(400, "Missing the required parameter 'apicollectionname' when calling oBPv400CreateMyApiCollectionEndpoint");
+      throw new ApiException(400, "Missing the required parameter 'apicollectionname' when calling createMyApiCollectionEndpoint");
     }
-    // verify the required parameter 'obPv400CreateMyApiCollectionEndpointRequest' is set
-    if (obPv400CreateMyApiCollectionEndpointRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400CreateMyApiCollectionEndpointRequest' when calling oBPv400CreateMyApiCollectionEndpoint");
+    // verify the required parameter 'createMyApiCollectionEndpointRequest' is set
+    if (createMyApiCollectionEndpointRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createMyApiCollectionEndpointRequest' when calling createMyApiCollectionEndpoint");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -411,7 +534,7 @@ public class ApiCollectionApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400CreateMyApiCollectionEndpointRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createMyApiCollectionEndpointRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -431,25 +554,25 @@ public class ApiCollectionApi {
    * Create My Api Collection Endpoint By Id
    * &lt;p&gt;Create Api Collection Endpoint By Id.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @param obPv400CreateMyApiCollectionEndpointRequest Request body (required)
-   * @return OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
+   * @param createMyApiCollectionEndpointRequest Request body (required)
+   * @return GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems oBPv400CreateMyApiCollectionEndpointById(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull OBPv400CreateMyApiCollectionEndpointRequest obPv400CreateMyApiCollectionEndpointRequest) throws ApiException {
-    return oBPv400CreateMyApiCollectionEndpointById(apicollectionid, obPv400CreateMyApiCollectionEndpointRequest, null);
+  public GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner createMyApiCollectionEndpointById(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest) throws ApiException {
+    return createMyApiCollectionEndpointById(apicollectionid, createMyApiCollectionEndpointRequest, null);
   }
 
   /**
    * Create My Api Collection Endpoint By Id
    * &lt;p&gt;Create Api Collection Endpoint By Id.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @param obPv400CreateMyApiCollectionEndpointRequest Request body (required)
+   * @param createMyApiCollectionEndpointRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
+   * @return GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems oBPv400CreateMyApiCollectionEndpointById(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull OBPv400CreateMyApiCollectionEndpointRequest obPv400CreateMyApiCollectionEndpointRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> localVarResponse = oBPv400CreateMyApiCollectionEndpointByIdWithHttpInfo(apicollectionid, obPv400CreateMyApiCollectionEndpointRequest, headers);
+  public GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner createMyApiCollectionEndpointById(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> localVarResponse = createMyApiCollectionEndpointByIdWithHttpInfo(apicollectionid, createMyApiCollectionEndpointRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -457,25 +580,25 @@ public class ApiCollectionApi {
    * Create My Api Collection Endpoint By Id
    * &lt;p&gt;Create Api Collection Endpoint By Id.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @param obPv400CreateMyApiCollectionEndpointRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems&gt;
+   * @param createMyApiCollectionEndpointRequest Request body (required)
+   * @return ApiResponse&lt;GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> oBPv400CreateMyApiCollectionEndpointByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull OBPv400CreateMyApiCollectionEndpointRequest obPv400CreateMyApiCollectionEndpointRequest) throws ApiException {
-    return oBPv400CreateMyApiCollectionEndpointByIdWithHttpInfo(apicollectionid, obPv400CreateMyApiCollectionEndpointRequest, null);
+  public ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> createMyApiCollectionEndpointByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest) throws ApiException {
+    return createMyApiCollectionEndpointByIdWithHttpInfo(apicollectionid, createMyApiCollectionEndpointRequest, null);
   }
 
   /**
    * Create My Api Collection Endpoint By Id
    * &lt;p&gt;Create Api Collection Endpoint By Id.&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @param obPv400CreateMyApiCollectionEndpointRequest Request body (required)
+   * @param createMyApiCollectionEndpointRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems&gt;
+   * @return ApiResponse&lt;GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> oBPv400CreateMyApiCollectionEndpointByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull OBPv400CreateMyApiCollectionEndpointRequest obPv400CreateMyApiCollectionEndpointRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateMyApiCollectionEndpointByIdRequestBuilder(apicollectionid, obPv400CreateMyApiCollectionEndpointRequest, headers);
+  public ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> createMyApiCollectionEndpointByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createMyApiCollectionEndpointByIdRequestBuilder(apicollectionid, createMyApiCollectionEndpointRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -486,11 +609,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateMyApiCollectionEndpointById", localVarResponse);
+          throw getApiException("createMyApiCollectionEndpointById", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>(
+          return new ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -500,10 +623,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>() {});
+        GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>(
+        return new ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -522,14 +645,14 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateMyApiCollectionEndpointByIdRequestBuilder(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull OBPv400CreateMyApiCollectionEndpointRequest obPv400CreateMyApiCollectionEndpointRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createMyApiCollectionEndpointByIdRequestBuilder(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull CreateMyApiCollectionEndpointRequest createMyApiCollectionEndpointRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'apicollectionid' is set
     if (apicollectionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling oBPv400CreateMyApiCollectionEndpointById");
+      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling createMyApiCollectionEndpointById");
     }
-    // verify the required parameter 'obPv400CreateMyApiCollectionEndpointRequest' is set
-    if (obPv400CreateMyApiCollectionEndpointRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400CreateMyApiCollectionEndpointRequest' when calling oBPv400CreateMyApiCollectionEndpointById");
+    // verify the required parameter 'createMyApiCollectionEndpointRequest' is set
+    if (createMyApiCollectionEndpointRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createMyApiCollectionEndpointRequest' when calling createMyApiCollectionEndpointById");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -543,7 +666,7 @@ public class ApiCollectionApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400CreateMyApiCollectionEndpointRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createMyApiCollectionEndpointRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -560,50 +683,47 @@ public class ApiCollectionApi {
   }
 
   /**
-   * Delete My Api Collection
-   * &lt;p&gt;Delete Api Collection By API_COLLECTION_ID&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+   * Delete Featured Api Collection
+   * &lt;p&gt;Remove an API Collection from the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @return OBPv400DeleteSystemLevelEndpointTag200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteMyApiCollection(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
-    return oBPv400DeleteMyApiCollection(apicollectionid, null);
+  public void deleteFeaturedApiCollection(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
+    deleteFeaturedApiCollection(apicollectionid, null);
   }
 
   /**
-   * Delete My Api Collection
-   * &lt;p&gt;Delete Api Collection By API_COLLECTION_ID&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+   * Delete Featured Api Collection
+   * &lt;p&gt;Remove an API Collection from the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400DeleteSystemLevelEndpointTag200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteMyApiCollection(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response> localVarResponse = oBPv400DeleteMyApiCollectionWithHttpInfo(apicollectionid, headers);
-    return localVarResponse.getData();
+  public void deleteFeaturedApiCollection(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+    deleteFeaturedApiCollectionWithHttpInfo(apicollectionid, headers);
   }
 
   /**
-   * Delete My Api Collection
-   * &lt;p&gt;Delete Api Collection By API_COLLECTION_ID&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+   * Delete Featured Api Collection
+   * &lt;p&gt;Remove an API Collection from the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @return ApiResponse&lt;OBPv400DeleteSystemLevelEndpointTag200Response&gt;
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response> oBPv400DeleteMyApiCollectionWithHttpInfo(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
-    return oBPv400DeleteMyApiCollectionWithHttpInfo(apicollectionid, null);
+  public ApiResponse<Void> deleteFeaturedApiCollectionWithHttpInfo(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
+    return deleteFeaturedApiCollectionWithHttpInfo(apicollectionid, null);
   }
 
   /**
-   * Delete My Api Collection
-   * &lt;p&gt;Delete Api Collection By API_COLLECTION_ID&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+   * Delete Featured Api Collection
+   * &lt;p&gt;Remove an API Collection from the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400DeleteSystemLevelEndpointTag200Response&gt;
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response> oBPv400DeleteMyApiCollectionWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteMyApiCollectionRequestBuilder(apicollectionid, headers);
+  public ApiResponse<Void> deleteFeaturedApiCollectionWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteFeaturedApiCollectionRequestBuilder(apicollectionid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -614,11 +734,118 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteMyApiCollection", localVarResponse);
+          throw getApiException("deleteFeaturedApiCollection", localVarResponse);
+        }
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody != null) {
+          localVarResponseBody.readAllBytes();
+        }
+        return new ApiResponse<>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            null
+        );
+      } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder deleteFeaturedApiCollectionRequestBuilder(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'apicollectionid' is set
+    if (apicollectionid == null) {
+      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling deleteFeaturedApiCollection");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}"
+        .replace("{apicollectionid}", ApiClient.urlEncode(apicollectionid.toString()));
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    localVarRequestBuilder.method("DELETE", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Delete My Api Collection
+   * &lt;p&gt;Delete Api Collection By API_COLLECTION_ID&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @return DeleteSystemLevelEndpointTag200Response
+   * @throws ApiException if fails to make API call
+   */
+  public DeleteSystemLevelEndpointTag200Response deleteMyApiCollection(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
+    return deleteMyApiCollection(apicollectionid, null);
+  }
+
+  /**
+   * Delete My Api Collection
+   * &lt;p&gt;Delete Api Collection By API_COLLECTION_ID&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @param headers Optional headers to include in the request
+   * @return DeleteSystemLevelEndpointTag200Response
+   * @throws ApiException if fails to make API call
+   */
+  public DeleteSystemLevelEndpointTag200Response deleteMyApiCollection(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+    ApiResponse<DeleteSystemLevelEndpointTag200Response> localVarResponse = deleteMyApiCollectionWithHttpInfo(apicollectionid, headers);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * Delete My Api Collection
+   * &lt;p&gt;Delete Api Collection By API_COLLECTION_ID&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @return ApiResponse&lt;DeleteSystemLevelEndpointTag200Response&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<DeleteSystemLevelEndpointTag200Response> deleteMyApiCollectionWithHttpInfo(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
+    return deleteMyApiCollectionWithHttpInfo(apicollectionid, null);
+  }
+
+  /**
+   * Delete My Api Collection
+   * &lt;p&gt;Delete Api Collection By API_COLLECTION_ID&lt;/p&gt; &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;DeleteSystemLevelEndpointTag200Response&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<DeleteSystemLevelEndpointTag200Response> deleteMyApiCollectionWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteMyApiCollectionRequestBuilder(apicollectionid, headers);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      InputStream localVarResponseBody = null;
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("deleteMyApiCollection", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response>(
+          return new ApiResponse<DeleteSystemLevelEndpointTag200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -628,10 +855,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400DeleteSystemLevelEndpointTag200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400DeleteSystemLevelEndpointTag200Response>() {});
+        DeleteSystemLevelEndpointTag200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<DeleteSystemLevelEndpointTag200Response>() {});
         
 
-        return new ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response>(
+        return new ApiResponse<DeleteSystemLevelEndpointTag200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -650,10 +877,10 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteMyApiCollectionRequestBuilder(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteMyApiCollectionRequestBuilder(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'apicollectionid' is set
     if (apicollectionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling oBPv400DeleteMyApiCollection");
+      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling deleteMyApiCollection");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -682,11 +909,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;Delete Api Collection Endpoint By OPERATION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
    * @param operationid The OPERATIONID identifier (required)
-   * @return OBPv400DeleteSystemLevelEndpointTag200Response
+   * @return DeleteSystemLevelEndpointTag200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteMyApiCollectionEndpoint(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid) throws ApiException {
-    return oBPv400DeleteMyApiCollectionEndpoint(apicollectionname, operationid, null);
+  public DeleteSystemLevelEndpointTag200Response deleteMyApiCollectionEndpoint(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid) throws ApiException {
+    return deleteMyApiCollectionEndpoint(apicollectionname, operationid, null);
   }
 
   /**
@@ -695,11 +922,11 @@ public class ApiCollectionApi {
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
    * @param operationid The OPERATIONID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400DeleteSystemLevelEndpointTag200Response
+   * @return DeleteSystemLevelEndpointTag200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteMyApiCollectionEndpoint(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response> localVarResponse = oBPv400DeleteMyApiCollectionEndpointWithHttpInfo(apicollectionname, operationid, headers);
+  public DeleteSystemLevelEndpointTag200Response deleteMyApiCollectionEndpoint(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
+    ApiResponse<DeleteSystemLevelEndpointTag200Response> localVarResponse = deleteMyApiCollectionEndpointWithHttpInfo(apicollectionname, operationid, headers);
     return localVarResponse.getData();
   }
 
@@ -708,11 +935,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;Delete Api Collection Endpoint By OPERATION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
    * @param operationid The OPERATIONID identifier (required)
-   * @return ApiResponse&lt;OBPv400DeleteSystemLevelEndpointTag200Response&gt;
+   * @return ApiResponse&lt;DeleteSystemLevelEndpointTag200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response> oBPv400DeleteMyApiCollectionEndpointWithHttpInfo(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid) throws ApiException {
-    return oBPv400DeleteMyApiCollectionEndpointWithHttpInfo(apicollectionname, operationid, null);
+  public ApiResponse<DeleteSystemLevelEndpointTag200Response> deleteMyApiCollectionEndpointWithHttpInfo(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid) throws ApiException {
+    return deleteMyApiCollectionEndpointWithHttpInfo(apicollectionname, operationid, null);
   }
 
   /**
@@ -721,11 +948,11 @@ public class ApiCollectionApi {
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
    * @param operationid The OPERATIONID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400DeleteSystemLevelEndpointTag200Response&gt;
+   * @return ApiResponse&lt;DeleteSystemLevelEndpointTag200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response> oBPv400DeleteMyApiCollectionEndpointWithHttpInfo(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteMyApiCollectionEndpointRequestBuilder(apicollectionname, operationid, headers);
+  public ApiResponse<DeleteSystemLevelEndpointTag200Response> deleteMyApiCollectionEndpointWithHttpInfo(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteMyApiCollectionEndpointRequestBuilder(apicollectionname, operationid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -736,11 +963,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteMyApiCollectionEndpoint", localVarResponse);
+          throw getApiException("deleteMyApiCollectionEndpoint", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response>(
+          return new ApiResponse<DeleteSystemLevelEndpointTag200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -750,10 +977,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400DeleteSystemLevelEndpointTag200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400DeleteSystemLevelEndpointTag200Response>() {});
+        DeleteSystemLevelEndpointTag200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<DeleteSystemLevelEndpointTag200Response>() {});
         
 
-        return new ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response>(
+        return new ApiResponse<DeleteSystemLevelEndpointTag200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -772,14 +999,14 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteMyApiCollectionEndpointRequestBuilder(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteMyApiCollectionEndpointRequestBuilder(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'apicollectionname' is set
     if (apicollectionname == null) {
-      throw new ApiException(400, "Missing the required parameter 'apicollectionname' when calling oBPv400DeleteMyApiCollectionEndpoint");
+      throw new ApiException(400, "Missing the required parameter 'apicollectionname' when calling deleteMyApiCollectionEndpoint");
     }
     // verify the required parameter 'operationid' is set
     if (operationid == null) {
-      throw new ApiException(400, "Missing the required parameter 'operationid' when calling oBPv400DeleteMyApiCollectionEndpoint");
+      throw new ApiException(400, "Missing the required parameter 'operationid' when calling deleteMyApiCollectionEndpoint");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -809,11 +1036,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;glossary-item-not-found&lt;br /&gt; Delete Api Collection Endpoint&lt;br /&gt; Delete Api Collection Endpoint By Id&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ENDPOINT_ID&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
    * @param apicollectionendpointid The APICOLLECTIONENDPOINTID identifier (required)
-   * @return OBPv400DeleteSystemLevelEndpointTag200Response
+   * @return DeleteSystemLevelEndpointTag200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteMyApiCollectionEndpointById(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String apicollectionendpointid) throws ApiException {
-    return oBPv400DeleteMyApiCollectionEndpointById(apicollectionid, apicollectionendpointid, null);
+  public DeleteSystemLevelEndpointTag200Response deleteMyApiCollectionEndpointById(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String apicollectionendpointid) throws ApiException {
+    return deleteMyApiCollectionEndpointById(apicollectionid, apicollectionendpointid, null);
   }
 
   /**
@@ -822,11 +1049,11 @@ public class ApiCollectionApi {
    * @param apicollectionid The APICOLLECTIONID identifier (required)
    * @param apicollectionendpointid The APICOLLECTIONENDPOINTID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400DeleteSystemLevelEndpointTag200Response
+   * @return DeleteSystemLevelEndpointTag200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteMyApiCollectionEndpointById(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String apicollectionendpointid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response> localVarResponse = oBPv400DeleteMyApiCollectionEndpointByIdWithHttpInfo(apicollectionid, apicollectionendpointid, headers);
+  public DeleteSystemLevelEndpointTag200Response deleteMyApiCollectionEndpointById(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String apicollectionendpointid, Map<String, String> headers) throws ApiException {
+    ApiResponse<DeleteSystemLevelEndpointTag200Response> localVarResponse = deleteMyApiCollectionEndpointByIdWithHttpInfo(apicollectionid, apicollectionendpointid, headers);
     return localVarResponse.getData();
   }
 
@@ -835,11 +1062,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;glossary-item-not-found&lt;br /&gt; Delete Api Collection Endpoint&lt;br /&gt; Delete Api Collection Endpoint By Id&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ENDPOINT_ID&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
    * @param apicollectionendpointid The APICOLLECTIONENDPOINTID identifier (required)
-   * @return ApiResponse&lt;OBPv400DeleteSystemLevelEndpointTag200Response&gt;
+   * @return ApiResponse&lt;DeleteSystemLevelEndpointTag200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response> oBPv400DeleteMyApiCollectionEndpointByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String apicollectionendpointid) throws ApiException {
-    return oBPv400DeleteMyApiCollectionEndpointByIdWithHttpInfo(apicollectionid, apicollectionendpointid, null);
+  public ApiResponse<DeleteSystemLevelEndpointTag200Response> deleteMyApiCollectionEndpointByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String apicollectionendpointid) throws ApiException {
+    return deleteMyApiCollectionEndpointByIdWithHttpInfo(apicollectionid, apicollectionendpointid, null);
   }
 
   /**
@@ -848,11 +1075,11 @@ public class ApiCollectionApi {
    * @param apicollectionid The APICOLLECTIONID identifier (required)
    * @param apicollectionendpointid The APICOLLECTIONENDPOINTID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400DeleteSystemLevelEndpointTag200Response&gt;
+   * @return ApiResponse&lt;DeleteSystemLevelEndpointTag200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response> oBPv400DeleteMyApiCollectionEndpointByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String apicollectionendpointid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteMyApiCollectionEndpointByIdRequestBuilder(apicollectionid, apicollectionendpointid, headers);
+  public ApiResponse<DeleteSystemLevelEndpointTag200Response> deleteMyApiCollectionEndpointByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String apicollectionendpointid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteMyApiCollectionEndpointByIdRequestBuilder(apicollectionid, apicollectionendpointid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -863,11 +1090,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteMyApiCollectionEndpointById", localVarResponse);
+          throw getApiException("deleteMyApiCollectionEndpointById", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response>(
+          return new ApiResponse<DeleteSystemLevelEndpointTag200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -877,10 +1104,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400DeleteSystemLevelEndpointTag200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400DeleteSystemLevelEndpointTag200Response>() {});
+        DeleteSystemLevelEndpointTag200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<DeleteSystemLevelEndpointTag200Response>() {});
         
 
-        return new ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response>(
+        return new ApiResponse<DeleteSystemLevelEndpointTag200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -899,14 +1126,14 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteMyApiCollectionEndpointByIdRequestBuilder(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String apicollectionendpointid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteMyApiCollectionEndpointByIdRequestBuilder(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String apicollectionendpointid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'apicollectionid' is set
     if (apicollectionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling oBPv400DeleteMyApiCollectionEndpointById");
+      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling deleteMyApiCollectionEndpointById");
     }
     // verify the required parameter 'apicollectionendpointid' is set
     if (apicollectionendpointid == null) {
-      throw new ApiException(400, "Missing the required parameter 'apicollectionendpointid' when calling oBPv400DeleteMyApiCollectionEndpointById");
+      throw new ApiException(400, "Missing the required parameter 'apicollectionendpointid' when calling deleteMyApiCollectionEndpointById");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -936,11 +1163,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;Delete Api Collection Endpoint By OPERATION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
    * @param operationid The OPERATIONID identifier (required)
-   * @return OBPv400DeleteSystemLevelEndpointTag200Response
+   * @return DeleteSystemLevelEndpointTag200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteMyApiCollectionEndpointByOperationId(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String operationid) throws ApiException {
-    return oBPv400DeleteMyApiCollectionEndpointByOperationId(apicollectionid, operationid, null);
+  public DeleteSystemLevelEndpointTag200Response deleteMyApiCollectionEndpointByOperationId(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String operationid) throws ApiException {
+    return deleteMyApiCollectionEndpointByOperationId(apicollectionid, operationid, null);
   }
 
   /**
@@ -949,11 +1176,11 @@ public class ApiCollectionApi {
    * @param apicollectionid The APICOLLECTIONID identifier (required)
    * @param operationid The OPERATIONID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400DeleteSystemLevelEndpointTag200Response
+   * @return DeleteSystemLevelEndpointTag200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteMyApiCollectionEndpointByOperationId(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response> localVarResponse = oBPv400DeleteMyApiCollectionEndpointByOperationIdWithHttpInfo(apicollectionid, operationid, headers);
+  public DeleteSystemLevelEndpointTag200Response deleteMyApiCollectionEndpointByOperationId(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
+    ApiResponse<DeleteSystemLevelEndpointTag200Response> localVarResponse = deleteMyApiCollectionEndpointByOperationIdWithHttpInfo(apicollectionid, operationid, headers);
     return localVarResponse.getData();
   }
 
@@ -962,11 +1189,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;glossary-item-not-found&lt;/p&gt; &lt;p&gt;Delete Api Collection Endpoint By OPERATION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
    * @param operationid The OPERATIONID identifier (required)
-   * @return ApiResponse&lt;OBPv400DeleteSystemLevelEndpointTag200Response&gt;
+   * @return ApiResponse&lt;DeleteSystemLevelEndpointTag200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response> oBPv400DeleteMyApiCollectionEndpointByOperationIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String operationid) throws ApiException {
-    return oBPv400DeleteMyApiCollectionEndpointByOperationIdWithHttpInfo(apicollectionid, operationid, null);
+  public ApiResponse<DeleteSystemLevelEndpointTag200Response> deleteMyApiCollectionEndpointByOperationIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String operationid) throws ApiException {
+    return deleteMyApiCollectionEndpointByOperationIdWithHttpInfo(apicollectionid, operationid, null);
   }
 
   /**
@@ -975,11 +1202,11 @@ public class ApiCollectionApi {
    * @param apicollectionid The APICOLLECTIONID identifier (required)
    * @param operationid The OPERATIONID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400DeleteSystemLevelEndpointTag200Response&gt;
+   * @return ApiResponse&lt;DeleteSystemLevelEndpointTag200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response> oBPv400DeleteMyApiCollectionEndpointByOperationIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteMyApiCollectionEndpointByOperationIdRequestBuilder(apicollectionid, operationid, headers);
+  public ApiResponse<DeleteSystemLevelEndpointTag200Response> deleteMyApiCollectionEndpointByOperationIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteMyApiCollectionEndpointByOperationIdRequestBuilder(apicollectionid, operationid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -990,11 +1217,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteMyApiCollectionEndpointByOperationId", localVarResponse);
+          throw getApiException("deleteMyApiCollectionEndpointByOperationId", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response>(
+          return new ApiResponse<DeleteSystemLevelEndpointTag200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1004,10 +1231,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400DeleteSystemLevelEndpointTag200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400DeleteSystemLevelEndpointTag200Response>() {});
+        DeleteSystemLevelEndpointTag200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<DeleteSystemLevelEndpointTag200Response>() {});
         
 
-        return new ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response>(
+        return new ApiResponse<DeleteSystemLevelEndpointTag200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1026,14 +1253,14 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteMyApiCollectionEndpointByOperationIdRequestBuilder(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteMyApiCollectionEndpointByOperationIdRequestBuilder(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'apicollectionid' is set
     if (apicollectionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling oBPv400DeleteMyApiCollectionEndpointByOperationId");
+      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling deleteMyApiCollectionEndpointByOperationId");
     }
     // verify the required parameter 'operationid' is set
     if (operationid == null) {
-      throw new ApiException(400, "Missing the required parameter 'operationid' when calling oBPv400DeleteMyApiCollectionEndpointByOperationId");
+      throw new ApiException(400, "Missing the required parameter 'operationid' when calling deleteMyApiCollectionEndpointByOperationId");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1059,50 +1286,46 @@ public class ApiCollectionApi {
   }
 
   /**
-   * Get Api Collection Endpoints
-   * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @return OBPv400GetMyApiCollectionEndpoints200Response
+   * Get All API Collections
+   * &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * @return GetApiCollectionsForUser200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetMyApiCollectionEndpoints200Response oBPv400GetApiCollectionEndpoints(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
-    return oBPv400GetApiCollectionEndpoints(apicollectionid, null);
+  public GetApiCollectionsForUser200Response getAllApiCollections() throws ApiException {
+    return getAllApiCollections(null);
   }
 
   /**
-   * Get Api Collection Endpoints
-   * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * Get All API Collections
+   * &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetMyApiCollectionEndpoints200Response
+   * @return GetApiCollectionsForUser200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetMyApiCollectionEndpoints200Response oBPv400GetApiCollectionEndpoints(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response> localVarResponse = oBPv400GetApiCollectionEndpointsWithHttpInfo(apicollectionid, headers);
+  public GetApiCollectionsForUser200Response getAllApiCollections(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetApiCollectionsForUser200Response> localVarResponse = getAllApiCollectionsWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
-   * Get Api Collection Endpoints
-   * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetMyApiCollectionEndpoints200Response&gt;
+   * Get All API Collections
+   * &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * @return ApiResponse&lt;GetApiCollectionsForUser200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response> oBPv400GetApiCollectionEndpointsWithHttpInfo(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
-    return oBPv400GetApiCollectionEndpointsWithHttpInfo(apicollectionid, null);
+  public ApiResponse<GetApiCollectionsForUser200Response> getAllApiCollectionsWithHttpInfo() throws ApiException {
+    return getAllApiCollectionsWithHttpInfo(null);
   }
 
   /**
-   * Get Api Collection Endpoints
-   * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * Get All API Collections
+   * &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetMyApiCollectionEndpoints200Response&gt;
+   * @return ApiResponse&lt;GetApiCollectionsForUser200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response> oBPv400GetApiCollectionEndpointsWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetApiCollectionEndpointsRequestBuilder(apicollectionid, headers);
+  public ApiResponse<GetApiCollectionsForUser200Response> getAllApiCollectionsWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAllApiCollectionsRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1113,11 +1336,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetApiCollectionEndpoints", localVarResponse);
+          throw getApiException("getAllApiCollections", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response>(
+          return new ApiResponse<GetApiCollectionsForUser200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1127,10 +1350,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetMyApiCollectionEndpoints200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetMyApiCollectionEndpoints200Response>() {});
+        GetApiCollectionsForUser200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetApiCollectionsForUser200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response>(
+        return new ApiResponse<GetApiCollectionsForUser200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1149,10 +1372,123 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetApiCollectionEndpointsRequestBuilder(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAllApiCollectionsRequestBuilder(Map<String, String> headers) throws ApiException {
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/obp/v5.1.0/management/api-collections";
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Get Api Collection Endpoints
+   * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @return GetMyApiCollectionEndpoints200Response
+   * @throws ApiException if fails to make API call
+   */
+  public GetMyApiCollectionEndpoints200Response getApiCollectionEndpoints(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
+    return getApiCollectionEndpoints(apicollectionid, null);
+  }
+
+  /**
+   * Get Api Collection Endpoints
+   * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @param headers Optional headers to include in the request
+   * @return GetMyApiCollectionEndpoints200Response
+   * @throws ApiException if fails to make API call
+   */
+  public GetMyApiCollectionEndpoints200Response getApiCollectionEndpoints(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetMyApiCollectionEndpoints200Response> localVarResponse = getApiCollectionEndpointsWithHttpInfo(apicollectionid, headers);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * Get Api Collection Endpoints
+   * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @return ApiResponse&lt;GetMyApiCollectionEndpoints200Response&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<GetMyApiCollectionEndpoints200Response> getApiCollectionEndpointsWithHttpInfo(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
+    return getApiCollectionEndpointsWithHttpInfo(apicollectionid, null);
+  }
+
+  /**
+   * Get Api Collection Endpoints
+   * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;GetMyApiCollectionEndpoints200Response&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<GetMyApiCollectionEndpoints200Response> getApiCollectionEndpointsWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getApiCollectionEndpointsRequestBuilder(apicollectionid, headers);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      InputStream localVarResponseBody = null;
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("getApiCollectionEndpoints", localVarResponse);
+        }
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
+          return new ApiResponse<GetMyApiCollectionEndpoints200Response>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        GetMyApiCollectionEndpoints200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetMyApiCollectionEndpoints200Response>() {});
+        
+
+        return new ApiResponse<GetMyApiCollectionEndpoints200Response>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseValue
+        );
+      } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder getApiCollectionEndpointsRequestBuilder(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'apicollectionid' is set
     if (apicollectionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling oBPv400GetApiCollectionEndpoints");
+      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling getApiCollectionEndpoints");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1180,11 +1516,11 @@ public class ApiCollectionApi {
    * Get Api Collections for User
    * &lt;p&gt;Get Api Collections for User.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param userid The USERID identifier (required)
-   * @return OBPv400GetApiCollectionsForUser200Response
+   * @return GetApiCollectionsForUser200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetApiCollectionsForUser200Response oBPv400GetApiCollectionsForUser(@javax.annotation.Nonnull String userid) throws ApiException {
-    return oBPv400GetApiCollectionsForUser(userid, null);
+  public GetApiCollectionsForUser200Response getApiCollectionsForUser(@javax.annotation.Nonnull String userid) throws ApiException {
+    return getApiCollectionsForUser(userid, null);
   }
 
   /**
@@ -1192,11 +1528,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;Get Api Collections for User.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param userid The USERID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetApiCollectionsForUser200Response
+   * @return GetApiCollectionsForUser200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetApiCollectionsForUser200Response oBPv400GetApiCollectionsForUser(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetApiCollectionsForUser200Response> localVarResponse = oBPv400GetApiCollectionsForUserWithHttpInfo(userid, headers);
+  public GetApiCollectionsForUser200Response getApiCollectionsForUser(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetApiCollectionsForUser200Response> localVarResponse = getApiCollectionsForUserWithHttpInfo(userid, headers);
     return localVarResponse.getData();
   }
 
@@ -1204,11 +1540,11 @@ public class ApiCollectionApi {
    * Get Api Collections for User
    * &lt;p&gt;Get Api Collections for User.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param userid The USERID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200Response&gt;
+   * @return ApiResponse&lt;GetApiCollectionsForUser200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200Response> oBPv400GetApiCollectionsForUserWithHttpInfo(@javax.annotation.Nonnull String userid) throws ApiException {
-    return oBPv400GetApiCollectionsForUserWithHttpInfo(userid, null);
+  public ApiResponse<GetApiCollectionsForUser200Response> getApiCollectionsForUserWithHttpInfo(@javax.annotation.Nonnull String userid) throws ApiException {
+    return getApiCollectionsForUserWithHttpInfo(userid, null);
   }
 
   /**
@@ -1216,11 +1552,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;Get Api Collections for User.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param userid The USERID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200Response&gt;
+   * @return ApiResponse&lt;GetApiCollectionsForUser200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200Response> oBPv400GetApiCollectionsForUserWithHttpInfo(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetApiCollectionsForUserRequestBuilder(userid, headers);
+  public ApiResponse<GetApiCollectionsForUser200Response> getApiCollectionsForUserWithHttpInfo(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getApiCollectionsForUserRequestBuilder(userid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1231,11 +1567,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetApiCollectionsForUser", localVarResponse);
+          throw getApiException("getApiCollectionsForUser", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetApiCollectionsForUser200Response>(
+          return new ApiResponse<GetApiCollectionsForUser200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1245,10 +1581,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetApiCollectionsForUser200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetApiCollectionsForUser200Response>() {});
+        GetApiCollectionsForUser200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetApiCollectionsForUser200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetApiCollectionsForUser200Response>(
+        return new ApiResponse<GetApiCollectionsForUser200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1267,10 +1603,10 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetApiCollectionsForUserRequestBuilder(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getApiCollectionsForUserRequestBuilder(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'userid' is set
     if (userid == null) {
-      throw new ApiException(400, "Missing the required parameter 'userid' when calling oBPv400GetApiCollectionsForUser");
+      throw new ApiException(400, "Missing the required parameter 'userid' when calling getApiCollectionsForUser");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1297,44 +1633,44 @@ public class ApiCollectionApi {
   /**
    * Get Featured Api Collections
    * &lt;p&gt;Get Featured Api Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @return OBPv400GetApiCollectionsForUser200Response
+   * @return GetApiCollectionsForUser200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetApiCollectionsForUser200Response oBPv400GetFeaturedApiCollections() throws ApiException {
-    return oBPv400GetFeaturedApiCollections(null);
+  public GetApiCollectionsForUser200Response getFeaturedApiCollections() throws ApiException {
+    return getFeaturedApiCollections(null);
   }
 
   /**
    * Get Featured Api Collections
    * &lt;p&gt;Get Featured Api Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetApiCollectionsForUser200Response
+   * @return GetApiCollectionsForUser200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetApiCollectionsForUser200Response oBPv400GetFeaturedApiCollections(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetApiCollectionsForUser200Response> localVarResponse = oBPv400GetFeaturedApiCollectionsWithHttpInfo(headers);
+  public GetApiCollectionsForUser200Response getFeaturedApiCollections(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetApiCollectionsForUser200Response> localVarResponse = getFeaturedApiCollectionsWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get Featured Api Collections
    * &lt;p&gt;Get Featured Api Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200Response&gt;
+   * @return ApiResponse&lt;GetApiCollectionsForUser200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200Response> oBPv400GetFeaturedApiCollectionsWithHttpInfo() throws ApiException {
-    return oBPv400GetFeaturedApiCollectionsWithHttpInfo(null);
+  public ApiResponse<GetApiCollectionsForUser200Response> getFeaturedApiCollectionsWithHttpInfo() throws ApiException {
+    return getFeaturedApiCollectionsWithHttpInfo(null);
   }
 
   /**
    * Get Featured Api Collections
    * &lt;p&gt;Get Featured Api Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200Response&gt;
+   * @return ApiResponse&lt;GetApiCollectionsForUser200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200Response> oBPv400GetFeaturedApiCollectionsWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetFeaturedApiCollectionsRequestBuilder(headers);
+  public ApiResponse<GetApiCollectionsForUser200Response> getFeaturedApiCollectionsWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getFeaturedApiCollectionsRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1345,11 +1681,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetFeaturedApiCollections", localVarResponse);
+          throw getApiException("getFeaturedApiCollections", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetApiCollectionsForUser200Response>(
+          return new ApiResponse<GetApiCollectionsForUser200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1359,10 +1695,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetApiCollectionsForUser200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetApiCollectionsForUser200Response>() {});
+        GetApiCollectionsForUser200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetApiCollectionsForUser200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetApiCollectionsForUser200Response>(
+        return new ApiResponse<GetApiCollectionsForUser200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1381,7 +1717,7 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetFeaturedApiCollectionsRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getFeaturedApiCollectionsRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -1404,50 +1740,46 @@ public class ApiCollectionApi {
   }
 
   /**
-   * Get My Api Collection By Id
-   * &lt;p&gt;Get Api Collection By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+   * Get Featured Api Collections (Admin)
+   * &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+   * @return GetFeaturedApiCollectionsAdmin200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems oBPv400GetMyApiCollectionById(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
-    return oBPv400GetMyApiCollectionById(apicollectionid, null);
+  public GetFeaturedApiCollectionsAdmin200Response getFeaturedApiCollectionsAdmin() throws ApiException {
+    return getFeaturedApiCollectionsAdmin(null);
   }
 
   /**
-   * Get My Api Collection By Id
-   * &lt;p&gt;Get Api Collection By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * Get Featured Api Collections (Admin)
+   * &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+   * @return GetFeaturedApiCollectionsAdmin200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems oBPv400GetMyApiCollectionById(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> localVarResponse = oBPv400GetMyApiCollectionByIdWithHttpInfo(apicollectionid, headers);
+  public GetFeaturedApiCollectionsAdmin200Response getFeaturedApiCollectionsAdmin(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetFeaturedApiCollectionsAdmin200Response> localVarResponse = getFeaturedApiCollectionsAdminWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
-   * Get My Api Collection By Id
-   * &lt;p&gt;Get Api Collection By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems&gt;
+   * Get Featured Api Collections (Admin)
+   * &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+   * @return ApiResponse&lt;GetFeaturedApiCollectionsAdmin200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> oBPv400GetMyApiCollectionByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
-    return oBPv400GetMyApiCollectionByIdWithHttpInfo(apicollectionid, null);
+  public ApiResponse<GetFeaturedApiCollectionsAdmin200Response> getFeaturedApiCollectionsAdminWithHttpInfo() throws ApiException {
+    return getFeaturedApiCollectionsAdminWithHttpInfo(null);
   }
 
   /**
-   * Get My Api Collection By Id
-   * &lt;p&gt;Get Api Collection By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * Get Featured Api Collections (Admin)
+   * &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems&gt;
+   * @return ApiResponse&lt;GetFeaturedApiCollectionsAdmin200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> oBPv400GetMyApiCollectionByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetMyApiCollectionByIdRequestBuilder(apicollectionid, headers);
+  public ApiResponse<GetFeaturedApiCollectionsAdmin200Response> getFeaturedApiCollectionsAdminWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getFeaturedApiCollectionsAdminRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1458,11 +1790,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetMyApiCollectionById", localVarResponse);
+          throw getApiException("getFeaturedApiCollectionsAdmin", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(
+          return new ApiResponse<GetFeaturedApiCollectionsAdmin200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1472,10 +1804,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>() {});
+        GetFeaturedApiCollectionsAdmin200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetFeaturedApiCollectionsAdmin200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(
+        return new ApiResponse<GetFeaturedApiCollectionsAdmin200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1494,10 +1826,123 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetMyApiCollectionByIdRequestBuilder(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getFeaturedApiCollectionsAdminRequestBuilder(Map<String, String> headers) throws ApiException {
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/obp/v6.0.0/management/api-collections/featured";
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Get My Api Collection By Id
+   * &lt;p&gt;Get Api Collection By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @return GetApiCollectionsForUser200ResponseApiCollectionsInner
+   * @throws ApiException if fails to make API call
+   */
+  public GetApiCollectionsForUser200ResponseApiCollectionsInner getMyApiCollectionById(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
+    return getMyApiCollectionById(apicollectionid, null);
+  }
+
+  /**
+   * Get My Api Collection By Id
+   * &lt;p&gt;Get Api Collection By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @param headers Optional headers to include in the request
+   * @return GetApiCollectionsForUser200ResponseApiCollectionsInner
+   * @throws ApiException if fails to make API call
+   */
+  public GetApiCollectionsForUser200ResponseApiCollectionsInner getMyApiCollectionById(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner> localVarResponse = getMyApiCollectionByIdWithHttpInfo(apicollectionid, headers);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * Get My Api Collection By Id
+   * &lt;p&gt;Get Api Collection By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @return ApiResponse&lt;GetApiCollectionsForUser200ResponseApiCollectionsInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner> getMyApiCollectionByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
+    return getMyApiCollectionByIdWithHttpInfo(apicollectionid, null);
+  }
+
+  /**
+   * Get My Api Collection By Id
+   * &lt;p&gt;Get Api Collection By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;GetApiCollectionsForUser200ResponseApiCollectionsInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner> getMyApiCollectionByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getMyApiCollectionByIdRequestBuilder(apicollectionid, headers);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      InputStream localVarResponseBody = null;
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("getMyApiCollectionById", localVarResponse);
+        }
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
+          return new ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        GetApiCollectionsForUser200ResponseApiCollectionsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetApiCollectionsForUser200ResponseApiCollectionsInner>() {});
+        
+
+        return new ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseValue
+        );
+      } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder getMyApiCollectionByIdRequestBuilder(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'apicollectionid' is set
     if (apicollectionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling oBPv400GetMyApiCollectionById");
+      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling getMyApiCollectionById");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1525,11 +1970,11 @@ public class ApiCollectionApi {
    * Get My Api Collection By Name
    * &lt;p&gt;Get Api Collection By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
-   * @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+   * @return GetApiCollectionsForUser200ResponseApiCollectionsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems oBPv400GetMyApiCollectionByName(@javax.annotation.Nonnull String apicollectionname) throws ApiException {
-    return oBPv400GetMyApiCollectionByName(apicollectionname, null);
+  public GetApiCollectionsForUser200ResponseApiCollectionsInner getMyApiCollectionByName(@javax.annotation.Nonnull String apicollectionname) throws ApiException {
+    return getMyApiCollectionByName(apicollectionname, null);
   }
 
   /**
@@ -1537,11 +1982,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;Get Api Collection By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+   * @return GetApiCollectionsForUser200ResponseApiCollectionsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems oBPv400GetMyApiCollectionByName(@javax.annotation.Nonnull String apicollectionname, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> localVarResponse = oBPv400GetMyApiCollectionByNameWithHttpInfo(apicollectionname, headers);
+  public GetApiCollectionsForUser200ResponseApiCollectionsInner getMyApiCollectionByName(@javax.annotation.Nonnull String apicollectionname, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner> localVarResponse = getMyApiCollectionByNameWithHttpInfo(apicollectionname, headers);
     return localVarResponse.getData();
   }
 
@@ -1549,11 +1994,11 @@ public class ApiCollectionApi {
    * Get My Api Collection By Name
    * &lt;p&gt;Get Api Collection By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems&gt;
+   * @return ApiResponse&lt;GetApiCollectionsForUser200ResponseApiCollectionsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> oBPv400GetMyApiCollectionByNameWithHttpInfo(@javax.annotation.Nonnull String apicollectionname) throws ApiException {
-    return oBPv400GetMyApiCollectionByNameWithHttpInfo(apicollectionname, null);
+  public ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner> getMyApiCollectionByNameWithHttpInfo(@javax.annotation.Nonnull String apicollectionname) throws ApiException {
+    return getMyApiCollectionByNameWithHttpInfo(apicollectionname, null);
   }
 
   /**
@@ -1561,11 +2006,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;Get Api Collection By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems&gt;
+   * @return ApiResponse&lt;GetApiCollectionsForUser200ResponseApiCollectionsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> oBPv400GetMyApiCollectionByNameWithHttpInfo(@javax.annotation.Nonnull String apicollectionname, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetMyApiCollectionByNameRequestBuilder(apicollectionname, headers);
+  public ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner> getMyApiCollectionByNameWithHttpInfo(@javax.annotation.Nonnull String apicollectionname, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getMyApiCollectionByNameRequestBuilder(apicollectionname, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1576,11 +2021,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetMyApiCollectionByName", localVarResponse);
+          throw getApiException("getMyApiCollectionByName", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(
+          return new ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1590,10 +2035,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>() {});
+        GetApiCollectionsForUser200ResponseApiCollectionsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetApiCollectionsForUser200ResponseApiCollectionsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(
+        return new ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1612,10 +2057,10 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetMyApiCollectionByNameRequestBuilder(@javax.annotation.Nonnull String apicollectionname, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getMyApiCollectionByNameRequestBuilder(@javax.annotation.Nonnull String apicollectionname, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'apicollectionname' is set
     if (apicollectionname == null) {
-      throw new ApiException(400, "Missing the required parameter 'apicollectionname' when calling oBPv400GetMyApiCollectionByName");
+      throw new ApiException(400, "Missing the required parameter 'apicollectionname' when calling getMyApiCollectionByName");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1644,11 +2089,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
    * @param operationid The OPERATIONID identifier (required)
-   * @return OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
+   * @return GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems oBPv400GetMyApiCollectionEndpoint(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid) throws ApiException {
-    return oBPv400GetMyApiCollectionEndpoint(apicollectionname, operationid, null);
+  public GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner getMyApiCollectionEndpoint(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid) throws ApiException {
+    return getMyApiCollectionEndpoint(apicollectionname, operationid, null);
   }
 
   /**
@@ -1657,11 +2102,11 @@ public class ApiCollectionApi {
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
    * @param operationid The OPERATIONID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
+   * @return GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems oBPv400GetMyApiCollectionEndpoint(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> localVarResponse = oBPv400GetMyApiCollectionEndpointWithHttpInfo(apicollectionname, operationid, headers);
+  public GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner getMyApiCollectionEndpoint(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> localVarResponse = getMyApiCollectionEndpointWithHttpInfo(apicollectionname, operationid, headers);
     return localVarResponse.getData();
   }
 
@@ -1670,11 +2115,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
    * @param operationid The OPERATIONID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems&gt;
+   * @return ApiResponse&lt;GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> oBPv400GetMyApiCollectionEndpointWithHttpInfo(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid) throws ApiException {
-    return oBPv400GetMyApiCollectionEndpointWithHttpInfo(apicollectionname, operationid, null);
+  public ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> getMyApiCollectionEndpointWithHttpInfo(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid) throws ApiException {
+    return getMyApiCollectionEndpointWithHttpInfo(apicollectionname, operationid, null);
   }
 
   /**
@@ -1683,11 +2128,11 @@ public class ApiCollectionApi {
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
    * @param operationid The OPERATIONID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems&gt;
+   * @return ApiResponse&lt;GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> oBPv400GetMyApiCollectionEndpointWithHttpInfo(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetMyApiCollectionEndpointRequestBuilder(apicollectionname, operationid, headers);
+  public ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> getMyApiCollectionEndpointWithHttpInfo(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getMyApiCollectionEndpointRequestBuilder(apicollectionname, operationid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1698,11 +2143,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetMyApiCollectionEndpoint", localVarResponse);
+          throw getApiException("getMyApiCollectionEndpoint", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>(
+          return new ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1712,10 +2157,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>() {});
+        GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>(
+        return new ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1734,14 +2179,14 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetMyApiCollectionEndpointRequestBuilder(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getMyApiCollectionEndpointRequestBuilder(@javax.annotation.Nonnull String apicollectionname, @javax.annotation.Nonnull String operationid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'apicollectionname' is set
     if (apicollectionname == null) {
-      throw new ApiException(400, "Missing the required parameter 'apicollectionname' when calling oBPv400GetMyApiCollectionEndpoint");
+      throw new ApiException(400, "Missing the required parameter 'apicollectionname' when calling getMyApiCollectionEndpoint");
     }
     // verify the required parameter 'operationid' is set
     if (operationid == null) {
-      throw new ApiException(400, "Missing the required parameter 'operationid' when calling oBPv400GetMyApiCollectionEndpoint");
+      throw new ApiException(400, "Missing the required parameter 'operationid' when calling getMyApiCollectionEndpoint");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1770,11 +2215,11 @@ public class ApiCollectionApi {
    * Get My Api Collection Endpoints
    * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
-   * @return OBPv400GetMyApiCollectionEndpoints200Response
+   * @return GetMyApiCollectionEndpoints200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetMyApiCollectionEndpoints200Response oBPv400GetMyApiCollectionEndpoints(@javax.annotation.Nonnull String apicollectionname) throws ApiException {
-    return oBPv400GetMyApiCollectionEndpoints(apicollectionname, null);
+  public GetMyApiCollectionEndpoints200Response getMyApiCollectionEndpoints(@javax.annotation.Nonnull String apicollectionname) throws ApiException {
+    return getMyApiCollectionEndpoints(apicollectionname, null);
   }
 
   /**
@@ -1782,11 +2227,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetMyApiCollectionEndpoints200Response
+   * @return GetMyApiCollectionEndpoints200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetMyApiCollectionEndpoints200Response oBPv400GetMyApiCollectionEndpoints(@javax.annotation.Nonnull String apicollectionname, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response> localVarResponse = oBPv400GetMyApiCollectionEndpointsWithHttpInfo(apicollectionname, headers);
+  public GetMyApiCollectionEndpoints200Response getMyApiCollectionEndpoints(@javax.annotation.Nonnull String apicollectionname, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetMyApiCollectionEndpoints200Response> localVarResponse = getMyApiCollectionEndpointsWithHttpInfo(apicollectionname, headers);
     return localVarResponse.getData();
   }
 
@@ -1794,11 +2239,11 @@ public class ApiCollectionApi {
    * Get My Api Collection Endpoints
    * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
-   * @return ApiResponse&lt;OBPv400GetMyApiCollectionEndpoints200Response&gt;
+   * @return ApiResponse&lt;GetMyApiCollectionEndpoints200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response> oBPv400GetMyApiCollectionEndpointsWithHttpInfo(@javax.annotation.Nonnull String apicollectionname) throws ApiException {
-    return oBPv400GetMyApiCollectionEndpointsWithHttpInfo(apicollectionname, null);
+  public ApiResponse<GetMyApiCollectionEndpoints200Response> getMyApiCollectionEndpointsWithHttpInfo(@javax.annotation.Nonnull String apicollectionname) throws ApiException {
+    return getMyApiCollectionEndpointsWithHttpInfo(apicollectionname, null);
   }
 
   /**
@@ -1806,11 +2251,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_NAME&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionname The APICOLLECTIONNAME identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetMyApiCollectionEndpoints200Response&gt;
+   * @return ApiResponse&lt;GetMyApiCollectionEndpoints200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response> oBPv400GetMyApiCollectionEndpointsWithHttpInfo(@javax.annotation.Nonnull String apicollectionname, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetMyApiCollectionEndpointsRequestBuilder(apicollectionname, headers);
+  public ApiResponse<GetMyApiCollectionEndpoints200Response> getMyApiCollectionEndpointsWithHttpInfo(@javax.annotation.Nonnull String apicollectionname, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getMyApiCollectionEndpointsRequestBuilder(apicollectionname, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1821,11 +2266,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetMyApiCollectionEndpoints", localVarResponse);
+          throw getApiException("getMyApiCollectionEndpoints", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response>(
+          return new ApiResponse<GetMyApiCollectionEndpoints200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1835,10 +2280,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetMyApiCollectionEndpoints200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetMyApiCollectionEndpoints200Response>() {});
+        GetMyApiCollectionEndpoints200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetMyApiCollectionEndpoints200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response>(
+        return new ApiResponse<GetMyApiCollectionEndpoints200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1857,10 +2302,10 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetMyApiCollectionEndpointsRequestBuilder(@javax.annotation.Nonnull String apicollectionname, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getMyApiCollectionEndpointsRequestBuilder(@javax.annotation.Nonnull String apicollectionname, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'apicollectionname' is set
     if (apicollectionname == null) {
-      throw new ApiException(400, "Missing the required parameter 'apicollectionname' when calling oBPv400GetMyApiCollectionEndpoints");
+      throw new ApiException(400, "Missing the required parameter 'apicollectionname' when calling getMyApiCollectionEndpoints");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1888,11 +2333,11 @@ public class ApiCollectionApi {
    * Get My Api Collection Endpoints By Id
    * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @return OBPv400GetMyApiCollectionEndpoints200Response
+   * @return GetMyApiCollectionEndpoints200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetMyApiCollectionEndpoints200Response oBPv400GetMyApiCollectionEndpointsById(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
-    return oBPv400GetMyApiCollectionEndpointsById(apicollectionid, null);
+  public GetMyApiCollectionEndpoints200Response getMyApiCollectionEndpointsById(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
+    return getMyApiCollectionEndpointsById(apicollectionid, null);
   }
 
   /**
@@ -1900,11 +2345,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetMyApiCollectionEndpoints200Response
+   * @return GetMyApiCollectionEndpoints200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetMyApiCollectionEndpoints200Response oBPv400GetMyApiCollectionEndpointsById(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response> localVarResponse = oBPv400GetMyApiCollectionEndpointsByIdWithHttpInfo(apicollectionid, headers);
+  public GetMyApiCollectionEndpoints200Response getMyApiCollectionEndpointsById(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetMyApiCollectionEndpoints200Response> localVarResponse = getMyApiCollectionEndpointsByIdWithHttpInfo(apicollectionid, headers);
     return localVarResponse.getData();
   }
 
@@ -1912,11 +2357,11 @@ public class ApiCollectionApi {
    * Get My Api Collection Endpoints By Id
    * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetMyApiCollectionEndpoints200Response&gt;
+   * @return ApiResponse&lt;GetMyApiCollectionEndpoints200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response> oBPv400GetMyApiCollectionEndpointsByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
-    return oBPv400GetMyApiCollectionEndpointsByIdWithHttpInfo(apicollectionid, null);
+  public ApiResponse<GetMyApiCollectionEndpoints200Response> getMyApiCollectionEndpointsByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
+    return getMyApiCollectionEndpointsByIdWithHttpInfo(apicollectionid, null);
   }
 
   /**
@@ -1924,11 +2369,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;Get Api Collection Endpoints By API_COLLECTION_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoint_id&lt;/strong&gt;&lt;/a&gt;: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_endpoints&lt;/strong&gt;&lt;/a&gt;: api_collection_endpoints&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;operation_id&lt;/strong&gt;&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetMyApiCollectionEndpoints200Response&gt;
+   * @return ApiResponse&lt;GetMyApiCollectionEndpoints200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response> oBPv400GetMyApiCollectionEndpointsByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetMyApiCollectionEndpointsByIdRequestBuilder(apicollectionid, headers);
+  public ApiResponse<GetMyApiCollectionEndpoints200Response> getMyApiCollectionEndpointsByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getMyApiCollectionEndpointsByIdRequestBuilder(apicollectionid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1939,11 +2384,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetMyApiCollectionEndpointsById", localVarResponse);
+          throw getApiException("getMyApiCollectionEndpointsById", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response>(
+          return new ApiResponse<GetMyApiCollectionEndpoints200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1953,10 +2398,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetMyApiCollectionEndpoints200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetMyApiCollectionEndpoints200Response>() {});
+        GetMyApiCollectionEndpoints200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetMyApiCollectionEndpoints200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response>(
+        return new ApiResponse<GetMyApiCollectionEndpoints200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1975,10 +2420,10 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetMyApiCollectionEndpointsByIdRequestBuilder(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getMyApiCollectionEndpointsByIdRequestBuilder(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'apicollectionid' is set
     if (apicollectionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling oBPv400GetMyApiCollectionEndpointsById");
+      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling getMyApiCollectionEndpointsById");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -2004,45 +2449,45 @@ public class ApiCollectionApi {
 
   /**
    * Get My Api Collections
-   * &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @return OBPv400GetApiCollectionsForUser200Response
+   * &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;1 limit (for pagination: defaults to 50)  eg:limit&#x3D;200&lt;/p&gt; &lt;p&gt;2 offset (for pagination: zero index, defaults to 0) eg: offset&#x3D;10&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * @return GetApiCollectionsForUser200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetApiCollectionsForUser200Response oBPv400GetMyApiCollections() throws ApiException {
-    return oBPv400GetMyApiCollections(null);
+  public GetApiCollectionsForUser200Response getMyApiCollections() throws ApiException {
+    return getMyApiCollections(null);
   }
 
   /**
    * Get My Api Collections
-   * &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;1 limit (for pagination: defaults to 50)  eg:limit&#x3D;200&lt;/p&gt; &lt;p&gt;2 offset (for pagination: zero index, defaults to 0) eg: offset&#x3D;10&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetApiCollectionsForUser200Response
+   * @return GetApiCollectionsForUser200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetApiCollectionsForUser200Response oBPv400GetMyApiCollections(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetApiCollectionsForUser200Response> localVarResponse = oBPv400GetMyApiCollectionsWithHttpInfo(headers);
+  public GetApiCollectionsForUser200Response getMyApiCollections(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetApiCollectionsForUser200Response> localVarResponse = getMyApiCollectionsWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get My Api Collections
-   * &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200Response&gt;
+   * &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;1 limit (for pagination: defaults to 50)  eg:limit&#x3D;200&lt;/p&gt; &lt;p&gt;2 offset (for pagination: zero index, defaults to 0) eg: offset&#x3D;10&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * @return ApiResponse&lt;GetApiCollectionsForUser200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200Response> oBPv400GetMyApiCollectionsWithHttpInfo() throws ApiException {
-    return oBPv400GetMyApiCollectionsWithHttpInfo(null);
+  public ApiResponse<GetApiCollectionsForUser200Response> getMyApiCollectionsWithHttpInfo() throws ApiException {
+    return getMyApiCollectionsWithHttpInfo(null);
   }
 
   /**
    * Get My Api Collections
-   * &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * &lt;p&gt;Get all the apiCollections for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;1 limit (for pagination: defaults to 50)  eg:limit&#x3D;200&lt;/p&gt; &lt;p&gt;2 offset (for pagination: zero index, defaults to 0) eg: offset&#x3D;10&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200Response&gt;
+   * @return ApiResponse&lt;GetApiCollectionsForUser200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200Response> oBPv400GetMyApiCollectionsWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetMyApiCollectionsRequestBuilder(headers);
+  public ApiResponse<GetApiCollectionsForUser200Response> getMyApiCollectionsWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getMyApiCollectionsRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -2053,11 +2498,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetMyApiCollections", localVarResponse);
+          throw getApiException("getMyApiCollections", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetApiCollectionsForUser200Response>(
+          return new ApiResponse<GetApiCollectionsForUser200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -2067,10 +2512,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetApiCollectionsForUser200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetApiCollectionsForUser200Response>() {});
+        GetApiCollectionsForUser200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetApiCollectionsForUser200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetApiCollectionsForUser200Response>(
+        return new ApiResponse<GetApiCollectionsForUser200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -2089,7 +2534,7 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetMyApiCollectionsRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getMyApiCollectionsRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -2115,11 +2560,11 @@ public class ApiCollectionApi {
    * Get Sharable Api Collection By Id
    * &lt;p&gt;Get Sharable Api Collection By Id.&lt;br /&gt; User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+   * @return GetApiCollectionsForUser200ResponseApiCollectionsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems oBPv400GetSharableApiCollectionById(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
-    return oBPv400GetSharableApiCollectionById(apicollectionid, null);
+  public GetApiCollectionsForUser200ResponseApiCollectionsInner getSharableApiCollectionById(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
+    return getSharableApiCollectionById(apicollectionid, null);
   }
 
   /**
@@ -2127,11 +2572,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;Get Sharable Api Collection By Id.&lt;br /&gt; User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+   * @return GetApiCollectionsForUser200ResponseApiCollectionsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems oBPv400GetSharableApiCollectionById(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> localVarResponse = oBPv400GetSharableApiCollectionByIdWithHttpInfo(apicollectionid, headers);
+  public GetApiCollectionsForUser200ResponseApiCollectionsInner getSharableApiCollectionById(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner> localVarResponse = getSharableApiCollectionByIdWithHttpInfo(apicollectionid, headers);
     return localVarResponse.getData();
   }
 
@@ -2139,11 +2584,11 @@ public class ApiCollectionApi {
    * Get Sharable Api Collection By Id
    * &lt;p&gt;Get Sharable Api Collection By Id.&lt;br /&gt; User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems&gt;
+   * @return ApiResponse&lt;GetApiCollectionsForUser200ResponseApiCollectionsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> oBPv400GetSharableApiCollectionByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
-    return oBPv400GetSharableApiCollectionByIdWithHttpInfo(apicollectionid, null);
+  public ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner> getSharableApiCollectionByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
+    return getSharableApiCollectionByIdWithHttpInfo(apicollectionid, null);
   }
 
   /**
@@ -2151,11 +2596,11 @@ public class ApiCollectionApi {
    * &lt;p&gt;Get Sharable Api Collection By Id.&lt;br /&gt; User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
    * @param apicollectionid The APICOLLECTIONID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems&gt;
+   * @return ApiResponse&lt;GetApiCollectionsForUser200ResponseApiCollectionsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> oBPv400GetSharableApiCollectionByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetSharableApiCollectionByIdRequestBuilder(apicollectionid, headers);
+  public ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner> getSharableApiCollectionByIdWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getSharableApiCollectionByIdRequestBuilder(apicollectionid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -2166,11 +2611,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetSharableApiCollectionById", localVarResponse);
+          throw getApiException("getSharableApiCollectionById", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(
+          return new ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -2180,10 +2625,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>() {});
+        GetApiCollectionsForUser200ResponseApiCollectionsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetApiCollectionsForUser200ResponseApiCollectionsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(
+        return new ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -2202,10 +2647,10 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetSharableApiCollectionByIdRequestBuilder(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getSharableApiCollectionByIdRequestBuilder(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'apicollectionid' is set
     if (apicollectionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling oBPv400GetSharableApiCollectionById");
+      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling getSharableApiCollectionById");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -2230,46 +2675,54 @@ public class ApiCollectionApi {
   }
 
   /**
-   * Get All API Collections
-   * &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @return OBPv400GetApiCollectionsForUser200Response
+   * Update Featured Api Collection
+   * &lt;p&gt;Update the sort order of a featured API collection.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @param updateFeaturedApiCollectionRequest Request body (required)
+   * @return GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetApiCollectionsForUser200Response oBPv510GetAllApiCollections() throws ApiException {
-    return oBPv510GetAllApiCollections(null);
+  public GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner updateFeaturedApiCollection(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull UpdateFeaturedApiCollectionRequest updateFeaturedApiCollectionRequest) throws ApiException {
+    return updateFeaturedApiCollection(apicollectionid, updateFeaturedApiCollectionRequest, null);
   }
 
   /**
-   * Get All API Collections
-   * &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * Update Featured Api Collection
+   * &lt;p&gt;Update the sort order of a featured API collection.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @param updateFeaturedApiCollectionRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetApiCollectionsForUser200Response
+   * @return GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetApiCollectionsForUser200Response oBPv510GetAllApiCollections(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetApiCollectionsForUser200Response> localVarResponse = oBPv510GetAllApiCollectionsWithHttpInfo(headers);
+  public GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner updateFeaturedApiCollection(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull UpdateFeaturedApiCollectionRequest updateFeaturedApiCollectionRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner> localVarResponse = updateFeaturedApiCollectionWithHttpInfo(apicollectionid, updateFeaturedApiCollectionRequest, headers);
     return localVarResponse.getData();
   }
 
   /**
-   * Get All API Collections
-   * &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200Response&gt;
+   * Update Featured Api Collection
+   * &lt;p&gt;Update the sort order of a featured API collection.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @param updateFeaturedApiCollectionRequest Request body (required)
+   * @return ApiResponse&lt;GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200Response> oBPv510GetAllApiCollectionsWithHttpInfo() throws ApiException {
-    return oBPv510GetAllApiCollectionsWithHttpInfo(null);
+  public ApiResponse<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner> updateFeaturedApiCollectionWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull UpdateFeaturedApiCollectionRequest updateFeaturedApiCollectionRequest) throws ApiException {
+    return updateFeaturedApiCollectionWithHttpInfo(apicollectionid, updateFeaturedApiCollectionRequest, null);
   }
 
   /**
-   * Get All API Collections
-   * &lt;p&gt;Get All API Collections.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collections&lt;/strong&gt;&lt;/a&gt;: api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * Update Featured Api Collection
+   * &lt;p&gt;Update the sort order of a featured API collection.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @param updateFeaturedApiCollectionRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200Response&gt;
+   * @return ApiResponse&lt;GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200Response> oBPv510GetAllApiCollectionsWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510GetAllApiCollectionsRequestBuilder(headers);
+  public ApiResponse<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner> updateFeaturedApiCollectionWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull UpdateFeaturedApiCollectionRequest updateFeaturedApiCollectionRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateFeaturedApiCollectionRequestBuilder(apicollectionid, updateFeaturedApiCollectionRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -2280,11 +2733,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510GetAllApiCollections", localVarResponse);
+          throw getApiException("updateFeaturedApiCollection", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetApiCollectionsForUser200Response>(
+          return new ApiResponse<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -2294,10 +2747,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetApiCollectionsForUser200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetApiCollectionsForUser200Response>() {});
+        GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetApiCollectionsForUser200Response>(
+        return new ApiResponse<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -2316,136 +2769,19 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510GetAllApiCollectionsRequestBuilder(Map<String, String> headers) throws ApiException {
-
-    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-
-    String localVarPath = "/obp/v5.1.0/management/api-collections";
-
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
-
-    localVarRequestBuilder.header("Accept", "application/json");
-
-    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
-    if (memberVarReadTimeout != null) {
-      localVarRequestBuilder.timeout(memberVarReadTimeout);
-    }
-    // Add custom headers if provided
-    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
-    if (memberVarInterceptor != null) {
-      memberVarInterceptor.accept(localVarRequestBuilder);
-    }
-    return localVarRequestBuilder;
-  }
-
-  /**
-   * Update My Api Collection By API_COLLECTION_ID
-   * &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @param obPv400CreateMyApiCollectionRequest Request body (required)
-   * @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems oBPv510UpdateMyApiCollection(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull OBPv400CreateMyApiCollectionRequest obPv400CreateMyApiCollectionRequest) throws ApiException {
-    return oBPv510UpdateMyApiCollection(apicollectionid, obPv400CreateMyApiCollectionRequest, null);
-  }
-
-  /**
-   * Update My Api Collection By API_COLLECTION_ID
-   * &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @param obPv400CreateMyApiCollectionRequest Request body (required)
-   * @param headers Optional headers to include in the request
-   * @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems oBPv510UpdateMyApiCollection(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull OBPv400CreateMyApiCollectionRequest obPv400CreateMyApiCollectionRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> localVarResponse = oBPv510UpdateMyApiCollectionWithHttpInfo(apicollectionid, obPv400CreateMyApiCollectionRequest, headers);
-    return localVarResponse.getData();
-  }
-
-  /**
-   * Update My Api Collection By API_COLLECTION_ID
-   * &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @param obPv400CreateMyApiCollectionRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> oBPv510UpdateMyApiCollectionWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull OBPv400CreateMyApiCollectionRequest obPv400CreateMyApiCollectionRequest) throws ApiException {
-    return oBPv510UpdateMyApiCollectionWithHttpInfo(apicollectionid, obPv400CreateMyApiCollectionRequest, null);
-  }
-
-  /**
-   * Update My Api Collection By API_COLLECTION_ID
-   * &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @param obPv400CreateMyApiCollectionRequest Request body (required)
-   * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> oBPv510UpdateMyApiCollectionWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull OBPv400CreateMyApiCollectionRequest obPv400CreateMyApiCollectionRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510UpdateMyApiCollectionRequestBuilder(apicollectionid, obPv400CreateMyApiCollectionRequest, headers);
-    try {
-      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofInputStream());
-      if (memberVarResponseInterceptor != null) {
-        memberVarResponseInterceptor.accept(localVarResponse);
-      }
-      InputStream localVarResponseBody = null;
-      try {
-        if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510UpdateMyApiCollection", localVarResponse);
-        }
-        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
-        if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(
-              localVarResponse.statusCode(),
-              localVarResponse.headers().map(),
-              null
-          );
-        }
-
-        
-        
-        String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>() {});
-        
-
-        return new ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>(
-            localVarResponse.statusCode(),
-            localVarResponse.headers().map(),
-            responseValue
-        );
-      } finally {
-        if (localVarResponseBody != null) {
-          localVarResponseBody.close();
-        }
-      }
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      throw new ApiException(e);
-    }
-  }
-
-  private HttpRequest.Builder oBPv510UpdateMyApiCollectionRequestBuilder(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull OBPv400CreateMyApiCollectionRequest obPv400CreateMyApiCollectionRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateFeaturedApiCollectionRequestBuilder(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull UpdateFeaturedApiCollectionRequest updateFeaturedApiCollectionRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'apicollectionid' is set
     if (apicollectionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling oBPv510UpdateMyApiCollection");
+      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling updateFeaturedApiCollection");
     }
-    // verify the required parameter 'obPv400CreateMyApiCollectionRequest' is set
-    if (obPv400CreateMyApiCollectionRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400CreateMyApiCollectionRequest' when calling oBPv510UpdateMyApiCollection");
+    // verify the required parameter 'updateFeaturedApiCollectionRequest' is set
+    if (updateFeaturedApiCollectionRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateFeaturedApiCollectionRequest' when calling updateFeaturedApiCollection");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
-    String localVarPath = "/obp/v5.1.0/my/api-collections/{apicollectionid}"
+    String localVarPath = "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}"
         .replace("{apicollectionid}", ApiClient.urlEncode(apicollectionid.toString()));
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
@@ -2454,7 +2790,7 @@ public class ApiCollectionApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400CreateMyApiCollectionRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateFeaturedApiCollectionRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -2471,50 +2807,54 @@ public class ApiCollectionApi {
   }
 
   /**
-   * Create Featured Api Collection
-   * &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-   * @param obPv600CreateFeaturedApiCollectionRequest Request body (required)
-   * @return OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
+   * Update My Api Collection By API_COLLECTION_ID
+   * &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @param createMyApiCollectionRequest Request body (required)
+   * @return GetApiCollectionsForUser200ResponseApiCollectionsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems oBPv600CreateFeaturedApiCollection(@javax.annotation.Nonnull OBPv600CreateFeaturedApiCollectionRequest obPv600CreateFeaturedApiCollectionRequest) throws ApiException {
-    return oBPv600CreateFeaturedApiCollection(obPv600CreateFeaturedApiCollectionRequest, null);
+  public GetApiCollectionsForUser200ResponseApiCollectionsInner updateMyApiCollection(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull CreateMyApiCollectionRequest createMyApiCollectionRequest) throws ApiException {
+    return updateMyApiCollection(apicollectionid, createMyApiCollectionRequest, null);
   }
 
   /**
-   * Create Featured Api Collection
-   * &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-   * @param obPv600CreateFeaturedApiCollectionRequest Request body (required)
+   * Update My Api Collection By API_COLLECTION_ID
+   * &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @param createMyApiCollectionRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
+   * @return GetApiCollectionsForUser200ResponseApiCollectionsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems oBPv600CreateFeaturedApiCollection(@javax.annotation.Nonnull OBPv600CreateFeaturedApiCollectionRequest obPv600CreateFeaturedApiCollectionRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems> localVarResponse = oBPv600CreateFeaturedApiCollectionWithHttpInfo(obPv600CreateFeaturedApiCollectionRequest, headers);
+  public GetApiCollectionsForUser200ResponseApiCollectionsInner updateMyApiCollection(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull CreateMyApiCollectionRequest createMyApiCollectionRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner> localVarResponse = updateMyApiCollectionWithHttpInfo(apicollectionid, createMyApiCollectionRequest, headers);
     return localVarResponse.getData();
   }
 
   /**
-   * Create Featured Api Collection
-   * &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-   * @param obPv600CreateFeaturedApiCollectionRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems&gt;
+   * Update My Api Collection By API_COLLECTION_ID
+   * &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @param createMyApiCollectionRequest Request body (required)
+   * @return ApiResponse&lt;GetApiCollectionsForUser200ResponseApiCollectionsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems> oBPv600CreateFeaturedApiCollectionWithHttpInfo(@javax.annotation.Nonnull OBPv600CreateFeaturedApiCollectionRequest obPv600CreateFeaturedApiCollectionRequest) throws ApiException {
-    return oBPv600CreateFeaturedApiCollectionWithHttpInfo(obPv600CreateFeaturedApiCollectionRequest, null);
+  public ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner> updateMyApiCollectionWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull CreateMyApiCollectionRequest createMyApiCollectionRequest) throws ApiException {
+    return updateMyApiCollectionWithHttpInfo(apicollectionid, createMyApiCollectionRequest, null);
   }
 
   /**
-   * Create Featured Api Collection
-   * &lt;p&gt;Add an API Collection to the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-   * @param obPv600CreateFeaturedApiCollectionRequest Request body (required)
+   * Update My Api Collection By API_COLLECTION_ID
+   * &lt;p&gt;Update Api Collection for logged in user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_name&lt;/strong&gt;&lt;/a&gt;: Favourites&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_sharable&lt;/strong&gt;&lt;/a&gt;: is_sharable&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
+   * @param apicollectionid The APICOLLECTIONID identifier (required)
+   * @param createMyApiCollectionRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems&gt;
+   * @return ApiResponse&lt;GetApiCollectionsForUser200ResponseApiCollectionsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems> oBPv600CreateFeaturedApiCollectionWithHttpInfo(@javax.annotation.Nonnull OBPv600CreateFeaturedApiCollectionRequest obPv600CreateFeaturedApiCollectionRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600CreateFeaturedApiCollectionRequestBuilder(obPv600CreateFeaturedApiCollectionRequest, headers);
+  public ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner> updateMyApiCollectionWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull CreateMyApiCollectionRequest createMyApiCollectionRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateMyApiCollectionRequestBuilder(apicollectionid, createMyApiCollectionRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -2525,11 +2865,11 @@ public class ApiCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600CreateFeaturedApiCollection", localVarResponse);
+          throw getApiException("updateMyApiCollection", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems>(
+          return new ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -2539,10 +2879,10 @@ public class ApiCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems>() {});
+        GetApiCollectionsForUser200ResponseApiCollectionsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetApiCollectionsForUser200ResponseApiCollectionsInner>() {});
         
 
-        return new ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems>(
+        return new ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -2561,359 +2901,19 @@ public class ApiCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600CreateFeaturedApiCollectionRequestBuilder(@javax.annotation.Nonnull OBPv600CreateFeaturedApiCollectionRequest obPv600CreateFeaturedApiCollectionRequest, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'obPv600CreateFeaturedApiCollectionRequest' is set
-    if (obPv600CreateFeaturedApiCollectionRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600CreateFeaturedApiCollectionRequest' when calling oBPv600CreateFeaturedApiCollection");
-    }
-
-    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-
-    String localVarPath = "/obp/v6.0.0/management/api-collections/featured";
-
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
-
-    localVarRequestBuilder.header("Content-Type", "application/json");
-    localVarRequestBuilder.header("Accept", "application/json");
-
-    try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600CreateFeaturedApiCollectionRequest);
-      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    if (memberVarReadTimeout != null) {
-      localVarRequestBuilder.timeout(memberVarReadTimeout);
-    }
-    // Add custom headers if provided
-    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
-    if (memberVarInterceptor != null) {
-      memberVarInterceptor.accept(localVarRequestBuilder);
-    }
-    return localVarRequestBuilder;
-  }
-
-  /**
-   * Delete Featured Api Collection
-   * &lt;p&gt;Remove an API Collection from the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @throws ApiException if fails to make API call
-   */
-  public void oBPv600DeleteFeaturedApiCollection(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
-    oBPv600DeleteFeaturedApiCollection(apicollectionid, null);
-  }
-
-  /**
-   * Delete Featured Api Collection
-   * &lt;p&gt;Remove an API Collection from the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @param headers Optional headers to include in the request
-   * @throws ApiException if fails to make API call
-   */
-  public void oBPv600DeleteFeaturedApiCollection(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
-    oBPv600DeleteFeaturedApiCollectionWithHttpInfo(apicollectionid, headers);
-  }
-
-  /**
-   * Delete Featured Api Collection
-   * &lt;p&gt;Remove an API Collection from the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @return ApiResponse&lt;Void&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<Void> oBPv600DeleteFeaturedApiCollectionWithHttpInfo(@javax.annotation.Nonnull String apicollectionid) throws ApiException {
-    return oBPv600DeleteFeaturedApiCollectionWithHttpInfo(apicollectionid, null);
-  }
-
-  /**
-   * Delete Featured Api Collection
-   * &lt;p&gt;Remove an API Collection from the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;Void&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<Void> oBPv600DeleteFeaturedApiCollectionWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600DeleteFeaturedApiCollectionRequestBuilder(apicollectionid, headers);
-    try {
-      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofInputStream());
-      if (memberVarResponseInterceptor != null) {
-        memberVarResponseInterceptor.accept(localVarResponse);
-      }
-      InputStream localVarResponseBody = null;
-      try {
-        if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600DeleteFeaturedApiCollection", localVarResponse);
-        }
-        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
-        if (localVarResponseBody != null) {
-          localVarResponseBody.readAllBytes();
-        }
-        return new ApiResponse<>(
-            localVarResponse.statusCode(),
-            localVarResponse.headers().map(),
-            null
-        );
-      } finally {
-        if (localVarResponseBody != null) {
-          localVarResponseBody.close();
-        }
-      }
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      throw new ApiException(e);
-    }
-  }
-
-  private HttpRequest.Builder oBPv600DeleteFeaturedApiCollectionRequestBuilder(@javax.annotation.Nonnull String apicollectionid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateMyApiCollectionRequestBuilder(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull CreateMyApiCollectionRequest createMyApiCollectionRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'apicollectionid' is set
     if (apicollectionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling oBPv600DeleteFeaturedApiCollection");
+      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling updateMyApiCollection");
+    }
+    // verify the required parameter 'createMyApiCollectionRequest' is set
+    if (createMyApiCollectionRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createMyApiCollectionRequest' when calling updateMyApiCollection");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
-    String localVarPath = "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}"
-        .replace("{apicollectionid}", ApiClient.urlEncode(apicollectionid.toString()));
-
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
-
-    localVarRequestBuilder.header("Accept", "application/json");
-
-    localVarRequestBuilder.method("DELETE", HttpRequest.BodyPublishers.noBody());
-    if (memberVarReadTimeout != null) {
-      localVarRequestBuilder.timeout(memberVarReadTimeout);
-    }
-    // Add custom headers if provided
-    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
-    if (memberVarInterceptor != null) {
-      memberVarInterceptor.accept(localVarRequestBuilder);
-    }
-    return localVarRequestBuilder;
-  }
-
-  /**
-   * Get Featured Api Collections (Admin)
-   * &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-   * @return OBPv600GetFeaturedApiCollectionsAdmin200Response
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv600GetFeaturedApiCollectionsAdmin200Response oBPv600GetFeaturedApiCollectionsAdmin() throws ApiException {
-    return oBPv600GetFeaturedApiCollectionsAdmin(null);
-  }
-
-  /**
-   * Get Featured Api Collections (Admin)
-   * &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-   * @param headers Optional headers to include in the request
-   * @return OBPv600GetFeaturedApiCollectionsAdmin200Response
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv600GetFeaturedApiCollectionsAdmin200Response oBPv600GetFeaturedApiCollectionsAdmin(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200Response> localVarResponse = oBPv600GetFeaturedApiCollectionsAdminWithHttpInfo(headers);
-    return localVarResponse.getData();
-  }
-
-  /**
-   * Get Featured Api Collections (Admin)
-   * &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv600GetFeaturedApiCollectionsAdmin200Response&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200Response> oBPv600GetFeaturedApiCollectionsAdminWithHttpInfo() throws ApiException {
-    return oBPv600GetFeaturedApiCollectionsAdminWithHttpInfo(null);
-  }
-
-  /**
-   * Get Featured Api Collections (Admin)
-   * &lt;p&gt;Get all featured API collections with their sort order (admin view).&lt;/p&gt; &lt;p&gt;This endpoint returns the featured collections stored in the database with their sort order.&lt;br /&gt; It is intended for administrators to manage the featured list.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collections&lt;/strong&gt;&lt;/a&gt;: featured_api_collections&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-   * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetFeaturedApiCollectionsAdmin200Response&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200Response> oBPv600GetFeaturedApiCollectionsAdminWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetFeaturedApiCollectionsAdminRequestBuilder(headers);
-    try {
-      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofInputStream());
-      if (memberVarResponseInterceptor != null) {
-        memberVarResponseInterceptor.accept(localVarResponse);
-      }
-      InputStream localVarResponseBody = null;
-      try {
-        if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetFeaturedApiCollectionsAdmin", localVarResponse);
-        }
-        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
-        if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200Response>(
-              localVarResponse.statusCode(),
-              localVarResponse.headers().map(),
-              null
-          );
-        }
-
-        
-        
-        String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetFeaturedApiCollectionsAdmin200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetFeaturedApiCollectionsAdmin200Response>() {});
-        
-
-        return new ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200Response>(
-            localVarResponse.statusCode(),
-            localVarResponse.headers().map(),
-            responseValue
-        );
-      } finally {
-        if (localVarResponseBody != null) {
-          localVarResponseBody.close();
-        }
-      }
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      throw new ApiException(e);
-    }
-  }
-
-  private HttpRequest.Builder oBPv600GetFeaturedApiCollectionsAdminRequestBuilder(Map<String, String> headers) throws ApiException {
-
-    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-
-    String localVarPath = "/obp/v6.0.0/management/api-collections/featured";
-
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
-
-    localVarRequestBuilder.header("Accept", "application/json");
-
-    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
-    if (memberVarReadTimeout != null) {
-      localVarRequestBuilder.timeout(memberVarReadTimeout);
-    }
-    // Add custom headers if provided
-    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
-    if (memberVarInterceptor != null) {
-      memberVarInterceptor.accept(localVarRequestBuilder);
-    }
-    return localVarRequestBuilder;
-  }
-
-  /**
-   * Update Featured Api Collection
-   * &lt;p&gt;Update the sort order of a featured API collection.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @param obPv600UpdateFeaturedApiCollectionRequest Request body (required)
-   * @return OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems oBPv600UpdateFeaturedApiCollection(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull OBPv600UpdateFeaturedApiCollectionRequest obPv600UpdateFeaturedApiCollectionRequest) throws ApiException {
-    return oBPv600UpdateFeaturedApiCollection(apicollectionid, obPv600UpdateFeaturedApiCollectionRequest, null);
-  }
-
-  /**
-   * Update Featured Api Collection
-   * &lt;p&gt;Update the sort order of a featured API collection.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @param obPv600UpdateFeaturedApiCollectionRequest Request body (required)
-   * @param headers Optional headers to include in the request
-   * @return OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems oBPv600UpdateFeaturedApiCollection(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull OBPv600UpdateFeaturedApiCollectionRequest obPv600UpdateFeaturedApiCollectionRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems> localVarResponse = oBPv600UpdateFeaturedApiCollectionWithHttpInfo(apicollectionid, obPv600UpdateFeaturedApiCollectionRequest, headers);
-    return localVarResponse.getData();
-  }
-
-  /**
-   * Update Featured Api Collection
-   * &lt;p&gt;Update the sort order of a featured API collection.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @param obPv600UpdateFeaturedApiCollectionRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems> oBPv600UpdateFeaturedApiCollectionWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull OBPv600UpdateFeaturedApiCollectionRequest obPv600UpdateFeaturedApiCollectionRequest) throws ApiException {
-    return oBPv600UpdateFeaturedApiCollectionWithHttpInfo(apicollectionid, obPv600UpdateFeaturedApiCollectionRequest, null);
-  }
-
-  /**
-   * Update Featured Api Collection
-   * &lt;p&gt;Update the sort order of a featured API collection.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_COLLECTION_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_collection_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;featured_api_collection_id&lt;/strong&gt;&lt;/a&gt;: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sort_order&lt;/strong&gt;&lt;/a&gt;: 1&lt;/p&gt; 
-   * @param apicollectionid The APICOLLECTIONID identifier (required)
-   * @param obPv600UpdateFeaturedApiCollectionRequest Request body (required)
-   * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems> oBPv600UpdateFeaturedApiCollectionWithHttpInfo(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull OBPv600UpdateFeaturedApiCollectionRequest obPv600UpdateFeaturedApiCollectionRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600UpdateFeaturedApiCollectionRequestBuilder(apicollectionid, obPv600UpdateFeaturedApiCollectionRequest, headers);
-    try {
-      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofInputStream());
-      if (memberVarResponseInterceptor != null) {
-        memberVarResponseInterceptor.accept(localVarResponse);
-      }
-      InputStream localVarResponseBody = null;
-      try {
-        if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600UpdateFeaturedApiCollection", localVarResponse);
-        }
-        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
-        if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems>(
-              localVarResponse.statusCode(),
-              localVarResponse.headers().map(),
-              null
-          );
-        }
-
-        
-        
-        String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems>() {});
-        
-
-        return new ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems>(
-            localVarResponse.statusCode(),
-            localVarResponse.headers().map(),
-            responseValue
-        );
-      } finally {
-        if (localVarResponseBody != null) {
-          localVarResponseBody.close();
-        }
-      }
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      throw new ApiException(e);
-    }
-  }
-
-  private HttpRequest.Builder oBPv600UpdateFeaturedApiCollectionRequestBuilder(@javax.annotation.Nonnull String apicollectionid, @javax.annotation.Nonnull OBPv600UpdateFeaturedApiCollectionRequest obPv600UpdateFeaturedApiCollectionRequest, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'apicollectionid' is set
-    if (apicollectionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'apicollectionid' when calling oBPv600UpdateFeaturedApiCollection");
-    }
-    // verify the required parameter 'obPv600UpdateFeaturedApiCollectionRequest' is set
-    if (obPv600UpdateFeaturedApiCollectionRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600UpdateFeaturedApiCollectionRequest' when calling oBPv600UpdateFeaturedApiCollection");
-    }
-
-    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-
-    String localVarPath = "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}"
+    String localVarPath = "/obp/v5.1.0/my/api-collections/{apicollectionid}"
         .replace("{apicollectionid}", ApiClient.urlEncode(apicollectionid.toString()));
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
@@ -2922,7 +2922,7 @@ public class ApiCollectionApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600UpdateFeaturedApiCollectionRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createMyApiCollectionRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

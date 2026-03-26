@@ -9,8 +9,8 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv300_private_accounts_at_one_bank200_response.dart';
-import 'package:obp_dart/src/model/obpv600_get_accounts_at_bank200_response.dart';
+import 'package:obp_dart/src/model/get_accounts_at_bank200_response.dart';
+import 'package:obp_dart/src/model/private_accounts_at_one_bank200_response.dart';
 
 class PrivateDataApi {
 
@@ -31,9 +31,9 @@ class PrivateDataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv300PrivateAccountsAtOneBank200Response] as data
+  /// Returns a [Future] containing a [Response] with a [PrivateAccountsAtOneBank200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv300PrivateAccountsAtOneBank200Response>> oBPv300CorePrivateAccountsAllBanks({ 
+  Future<Response<PrivateAccountsAtOneBank200Response>> corePrivateAccountsAllBanks({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -60,7 +60,7 @@ class PrivateDataApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -77,14 +77,14 @@ class PrivateDataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv300PrivateAccountsAtOneBank200Response? _responseData;
+    PrivateAccountsAtOneBank200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv300PrivateAccountsAtOneBank200Response),
-      ) as OBPv300PrivateAccountsAtOneBank200Response;
+        specifiedType: const FullType(PrivateAccountsAtOneBank200Response),
+      ) as PrivateAccountsAtOneBank200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -96,7 +96,7 @@ class PrivateDataApi {
       );
     }
 
-    return Response<OBPv300PrivateAccountsAtOneBank200Response>(
+    return Response<PrivateAccountsAtOneBank200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -120,9 +120,9 @@ class PrivateDataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetAccountsAtBank200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAccountsAtBank200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetAccountsAtBank200Response>> oBPv600GetAccountsAtBank({ 
+  Future<Response<GetAccountsAtBank200Response>> getAccountsAtBank({ 
     required String bankid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -150,7 +150,7 @@ class PrivateDataApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -167,14 +167,14 @@ class PrivateDataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetAccountsAtBank200Response? _responseData;
+    GetAccountsAtBank200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetAccountsAtBank200Response),
-      ) as OBPv600GetAccountsAtBank200Response;
+        specifiedType: const FullType(GetAccountsAtBank200Response),
+      ) as GetAccountsAtBank200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -186,7 +186,7 @@ class PrivateDataApi {
       );
     }
 
-    return Response<OBPv600GetAccountsAtBank200Response>(
+    return Response<GetAccountsAtBank200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

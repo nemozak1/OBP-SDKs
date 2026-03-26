@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,47 +15,47 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv510GetAtmAttribute200Response,
-  OBPv510GetAtmAttributes200Response,
-  OBPv510UpdateAtmAttributeRequest,
+  GetAtmAttribute200Response,
+  GetAtmAttributes200Response,
+  UpdateAtmAttributeRequest,
 } from '../models/index';
 import {
-    OBPv510GetAtmAttribute200ResponseFromJSON,
-    OBPv510GetAtmAttribute200ResponseToJSON,
-    OBPv510GetAtmAttributes200ResponseFromJSON,
-    OBPv510GetAtmAttributes200ResponseToJSON,
-    OBPv510UpdateAtmAttributeRequestFromJSON,
-    OBPv510UpdateAtmAttributeRequestToJSON,
+    GetAtmAttribute200ResponseFromJSON,
+    GetAtmAttribute200ResponseToJSON,
+    GetAtmAttributes200ResponseFromJSON,
+    GetAtmAttributes200ResponseToJSON,
+    UpdateAtmAttributeRequestFromJSON,
+    UpdateAtmAttributeRequestToJSON,
 } from '../models/index';
 
-export interface OBPv510CreateAtmAttributeRequest {
+export interface CreateAtmAttributeRequest {
     bankid: string;
     atmid: string;
-    oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest;
+    updateAtmAttributeRequest: UpdateAtmAttributeRequest;
 }
 
-export interface OBPv510DeleteAtmAttributeRequest {
+export interface DeleteAtmAttributeRequest {
     bankid: string;
     atmid: string;
     atmattributeid: string;
 }
 
-export interface OBPv510GetAtmAttributeRequest {
+export interface GetAtmAttributeRequest {
     bankid: string;
     atmid: string;
     atmattributeid: string;
 }
 
-export interface OBPv510GetAtmAttributesRequest {
+export interface GetAtmAttributesRequest {
     bankid: string;
     atmid: string;
 }
 
-export interface OBPv510UpdateAtmAttributeOperationRequest {
+export interface UpdateAtmAttributeOperationRequest {
     bankid: string;
     atmid: string;
     atmattributeid: string;
-    oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest;
+    updateAtmAttributeRequest: UpdateAtmAttributeRequest;
 }
 
 /**
@@ -64,27 +64,27 @@ export interface OBPv510UpdateAtmAttributeOperationRequest {
 export class ATMAttributeApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv510CreateAtmAttribute without sending the request
+     * Creates request options for createAtmAttribute without sending the request
      */
-    async oBPv510CreateAtmAttributeRequestOpts(requestParameters: OBPv510CreateAtmAttributeRequest): Promise<runtime.RequestOpts> {
+    async createAtmAttributeRequestOpts(requestParameters: CreateAtmAttributeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510CreateAtmAttribute().'
+                'Required parameter "bankid" was null or undefined when calling createAtmAttribute().'
             );
         }
 
         if (requestParameters['atmid'] == null) {
             throw new runtime.RequiredError(
                 'atmid',
-                'Required parameter "atmid" was null or undefined when calling oBPv510CreateAtmAttribute().'
+                'Required parameter "atmid" was null or undefined when calling createAtmAttribute().'
             );
         }
 
-        if (requestParameters['oBPv510UpdateAtmAttributeRequest'] == null) {
+        if (requestParameters['updateAtmAttributeRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv510UpdateAtmAttributeRequest',
-                'Required parameter "oBPv510UpdateAtmAttributeRequest" was null or undefined when calling oBPv510CreateAtmAttribute().'
+                'updateAtmAttributeRequest',
+                'Required parameter "updateAtmAttributeRequest" was null or undefined when calling createAtmAttribute().'
             );
         }
 
@@ -104,7 +104,7 @@ export class ATMAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -117,7 +117,7 @@ export class ATMAttributeApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv510UpdateAtmAttributeRequestToJSON(requestParameters['oBPv510UpdateAtmAttributeRequest']),
+            body: UpdateAtmAttributeRequestToJSON(requestParameters['updateAtmAttributeRequest']),
         };
     }
 
@@ -125,44 +125,44 @@ export class ATMAttributeApi extends runtime.BaseAPI {
      * <p>Create ATM Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Create ATM Attribute
      */
-    async oBPv510CreateAtmAttributeRaw(requestParameters: OBPv510CreateAtmAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv510GetAtmAttribute200Response>> {
-        const requestOptions = await this.oBPv510CreateAtmAttributeRequestOpts(requestParameters);
+    async createAtmAttributeRaw(requestParameters: CreateAtmAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAtmAttribute200Response>> {
+        const requestOptions = await this.createAtmAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv510GetAtmAttribute200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAtmAttribute200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Create ATM Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Create ATM Attribute
      */
-    async oBPv510CreateAtmAttribute(requestParameters: OBPv510CreateAtmAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv510GetAtmAttribute200Response> {
-        const response = await this.oBPv510CreateAtmAttributeRaw(requestParameters, initOverrides);
+    async createAtmAttribute(requestParameters: CreateAtmAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAtmAttribute200Response> {
+        const response = await this.createAtmAttributeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv510DeleteAtmAttribute without sending the request
+     * Creates request options for deleteAtmAttribute without sending the request
      */
-    async oBPv510DeleteAtmAttributeRequestOpts(requestParameters: OBPv510DeleteAtmAttributeRequest): Promise<runtime.RequestOpts> {
+    async deleteAtmAttributeRequestOpts(requestParameters: DeleteAtmAttributeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510DeleteAtmAttribute().'
+                'Required parameter "bankid" was null or undefined when calling deleteAtmAttribute().'
             );
         }
 
         if (requestParameters['atmid'] == null) {
             throw new runtime.RequiredError(
                 'atmid',
-                'Required parameter "atmid" was null or undefined when calling oBPv510DeleteAtmAttribute().'
+                'Required parameter "atmid" was null or undefined when calling deleteAtmAttribute().'
             );
         }
 
         if (requestParameters['atmattributeid'] == null) {
             throw new runtime.RequiredError(
                 'atmattributeid',
-                'Required parameter "atmattributeid" was null or undefined when calling oBPv510DeleteAtmAttribute().'
+                'Required parameter "atmattributeid" was null or undefined when calling deleteAtmAttribute().'
             );
         }
 
@@ -180,7 +180,7 @@ export class ATMAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -201,8 +201,8 @@ export class ATMAttributeApi extends runtime.BaseAPI {
      * <p>Delete ATM Attribute</p> <p>Delete a Atm Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete ATM Attribute
      */
-    async oBPv510DeleteAtmAttributeRaw(requestParameters: OBPv510DeleteAtmAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv510DeleteAtmAttributeRequestOpts(requestParameters);
+    async deleteAtmAttributeRaw(requestParameters: DeleteAtmAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteAtmAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -212,32 +212,32 @@ export class ATMAttributeApi extends runtime.BaseAPI {
      * <p>Delete ATM Attribute</p> <p>Delete a Atm Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete ATM Attribute
      */
-    async oBPv510DeleteAtmAttribute(requestParameters: OBPv510DeleteAtmAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv510DeleteAtmAttributeRaw(requestParameters, initOverrides);
+    async deleteAtmAttribute(requestParameters: DeleteAtmAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteAtmAttributeRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv510GetAtmAttribute without sending the request
+     * Creates request options for getAtmAttribute without sending the request
      */
-    async oBPv510GetAtmAttributeRequestOpts(requestParameters: OBPv510GetAtmAttributeRequest): Promise<runtime.RequestOpts> {
+    async getAtmAttributeRequestOpts(requestParameters: GetAtmAttributeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510GetAtmAttribute().'
+                'Required parameter "bankid" was null or undefined when calling getAtmAttribute().'
             );
         }
 
         if (requestParameters['atmid'] == null) {
             throw new runtime.RequiredError(
                 'atmid',
-                'Required parameter "atmid" was null or undefined when calling oBPv510GetAtmAttribute().'
+                'Required parameter "atmid" was null or undefined when calling getAtmAttribute().'
             );
         }
 
         if (requestParameters['atmattributeid'] == null) {
             throw new runtime.RequiredError(
                 'atmattributeid',
-                'Required parameter "atmattributeid" was null or undefined when calling oBPv510GetAtmAttribute().'
+                'Required parameter "atmattributeid" was null or undefined when calling getAtmAttribute().'
             );
         }
 
@@ -255,7 +255,7 @@ export class ATMAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -276,37 +276,37 @@ export class ATMAttributeApi extends runtime.BaseAPI {
      * <p>Get ATM Attribute By ATM_ATTRIBUTE_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Get ATM Attribute By ATM_ATTRIBUTE_ID
      */
-    async oBPv510GetAtmAttributeRaw(requestParameters: OBPv510GetAtmAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv510GetAtmAttribute200Response>> {
-        const requestOptions = await this.oBPv510GetAtmAttributeRequestOpts(requestParameters);
+    async getAtmAttributeRaw(requestParameters: GetAtmAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAtmAttribute200Response>> {
+        const requestOptions = await this.getAtmAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv510GetAtmAttribute200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAtmAttribute200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get ATM Attribute By ATM_ATTRIBUTE_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Get ATM Attribute By ATM_ATTRIBUTE_ID
      */
-    async oBPv510GetAtmAttribute(requestParameters: OBPv510GetAtmAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv510GetAtmAttribute200Response> {
-        const response = await this.oBPv510GetAtmAttributeRaw(requestParameters, initOverrides);
+    async getAtmAttribute(requestParameters: GetAtmAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAtmAttribute200Response> {
+        const response = await this.getAtmAttributeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv510GetAtmAttributes without sending the request
+     * Creates request options for getAtmAttributes without sending the request
      */
-    async oBPv510GetAtmAttributesRequestOpts(requestParameters: OBPv510GetAtmAttributesRequest): Promise<runtime.RequestOpts> {
+    async getAtmAttributesRequestOpts(requestParameters: GetAtmAttributesRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510GetAtmAttributes().'
+                'Required parameter "bankid" was null or undefined when calling getAtmAttributes().'
             );
         }
 
         if (requestParameters['atmid'] == null) {
             throw new runtime.RequiredError(
                 'atmid',
-                'Required parameter "atmid" was null or undefined when calling oBPv510GetAtmAttributes().'
+                'Required parameter "atmid" was null or undefined when calling getAtmAttributes().'
             );
         }
 
@@ -324,7 +324,7 @@ export class ATMAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -344,51 +344,51 @@ export class ATMAttributeApi extends runtime.BaseAPI {
      * <p>Get ATM Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>atm_attributes</strong></a>: atm_attributes</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Get ATM Attributes
      */
-    async oBPv510GetAtmAttributesRaw(requestParameters: OBPv510GetAtmAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv510GetAtmAttributes200Response>> {
-        const requestOptions = await this.oBPv510GetAtmAttributesRequestOpts(requestParameters);
+    async getAtmAttributesRaw(requestParameters: GetAtmAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAtmAttributes200Response>> {
+        const requestOptions = await this.getAtmAttributesRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv510GetAtmAttributes200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAtmAttributes200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get ATM Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>atm_attributes</strong></a>: atm_attributes</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Get ATM Attributes
      */
-    async oBPv510GetAtmAttributes(requestParameters: OBPv510GetAtmAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv510GetAtmAttributes200Response> {
-        const response = await this.oBPv510GetAtmAttributesRaw(requestParameters, initOverrides);
+    async getAtmAttributes(requestParameters: GetAtmAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAtmAttributes200Response> {
+        const response = await this.getAtmAttributesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv510UpdateAtmAttribute without sending the request
+     * Creates request options for updateAtmAttribute without sending the request
      */
-    async oBPv510UpdateAtmAttributeRequestOpts(requestParameters: OBPv510UpdateAtmAttributeOperationRequest): Promise<runtime.RequestOpts> {
+    async updateAtmAttributeRequestOpts(requestParameters: UpdateAtmAttributeOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510UpdateAtmAttribute().'
+                'Required parameter "bankid" was null or undefined when calling updateAtmAttribute().'
             );
         }
 
         if (requestParameters['atmid'] == null) {
             throw new runtime.RequiredError(
                 'atmid',
-                'Required parameter "atmid" was null or undefined when calling oBPv510UpdateAtmAttribute().'
+                'Required parameter "atmid" was null or undefined when calling updateAtmAttribute().'
             );
         }
 
         if (requestParameters['atmattributeid'] == null) {
             throw new runtime.RequiredError(
                 'atmattributeid',
-                'Required parameter "atmattributeid" was null or undefined when calling oBPv510UpdateAtmAttribute().'
+                'Required parameter "atmattributeid" was null or undefined when calling updateAtmAttribute().'
             );
         }
 
-        if (requestParameters['oBPv510UpdateAtmAttributeRequest'] == null) {
+        if (requestParameters['updateAtmAttributeRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv510UpdateAtmAttributeRequest',
-                'Required parameter "oBPv510UpdateAtmAttributeRequest" was null or undefined when calling oBPv510UpdateAtmAttribute().'
+                'updateAtmAttributeRequest',
+                'Required parameter "updateAtmAttributeRequest" was null or undefined when calling updateAtmAttribute().'
             );
         }
 
@@ -408,7 +408,7 @@ export class ATMAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -422,7 +422,7 @@ export class ATMAttributeApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv510UpdateAtmAttributeRequestToJSON(requestParameters['oBPv510UpdateAtmAttributeRequest']),
+            body: UpdateAtmAttributeRequestToJSON(requestParameters['updateAtmAttributeRequest']),
         };
     }
 
@@ -430,19 +430,19 @@ export class ATMAttributeApi extends runtime.BaseAPI {
      * <p>Update ATM Attribute.</p> <p>Update an ATM Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Update ATM Attribute
      */
-    async oBPv510UpdateAtmAttributeRaw(requestParameters: OBPv510UpdateAtmAttributeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv510GetAtmAttribute200Response>> {
-        const requestOptions = await this.oBPv510UpdateAtmAttributeRequestOpts(requestParameters);
+    async updateAtmAttributeRaw(requestParameters: UpdateAtmAttributeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAtmAttribute200Response>> {
+        const requestOptions = await this.updateAtmAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv510GetAtmAttribute200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAtmAttribute200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Update ATM Attribute.</p> <p>Update an ATM Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Update ATM Attribute
      */
-    async oBPv510UpdateAtmAttribute(requestParameters: OBPv510UpdateAtmAttributeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv510GetAtmAttribute200Response> {
-        const response = await this.oBPv510UpdateAtmAttributeRaw(requestParameters, initOverrides);
+    async updateAtmAttribute(requestParameters: UpdateAtmAttributeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAtmAttribute200Response> {
+        const response = await this.updateAtmAttributeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

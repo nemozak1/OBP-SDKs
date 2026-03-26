@@ -4,16 +4,16 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv6_0_0_approve_account_access_request**](AccountAccessRequestApi.md#o_bpv6_0_0_approve_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request
-[**o_bpv6_0_0_create_account_access_request**](AccountAccessRequestApi.md#o_bpv6_0_0_create_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request
-[**o_bpv6_0_0_get_account_access_request_by_id**](AccountAccessRequestApi.md#o_bpv6_0_0_get_account_access_request_by_id) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id
-[**o_bpv6_0_0_get_account_access_requests_for_account**](AccountAccessRequestApi.md#o_bpv6_0_0_get_account_access_requests_for_account) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account
-[**o_bpv6_0_0_get_my_account_access_requests**](AccountAccessRequestApi.md#o_bpv6_0_0_get_my_account_access_requests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests
-[**o_bpv6_0_0_reject_account_access_request**](AccountAccessRequestApi.md#o_bpv6_0_0_reject_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request
+[**approve_account_access_request**](AccountAccessRequestApi.md#approve_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request
+[**create_account_access_request**](AccountAccessRequestApi.md#create_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request
+[**get_account_access_request_by_id**](AccountAccessRequestApi.md#get_account_access_request_by_id) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id
+[**get_account_access_requests_for_account**](AccountAccessRequestApi.md#get_account_access_requests_for_account) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account
+[**get_my_account_access_requests**](AccountAccessRequestApi.md#get_my_account_access_requests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests
+[**reject_account_access_request**](AccountAccessRequestApi.md#reject_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request
 
 
-# **o_bpv6_0_0_approve_account_access_request**
-> OBPv600RejectAccountAccessRequest200Response o_bpv6_0_0_approve_account_access_request(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request)
+# **approve_account_access_request**
+> RejectAccountAccessRequest200Response approve_account_access_request(bankid, accountid, accountaccessrequestid, reject_account_access_request_request)
 
 Approve Account Access Request
 
@@ -53,8 +53,8 @@ Approve Account Access Request
 
 ```python
 import obp_python
-from obp_python.models.obpv600_reject_account_access_request200_response import OBPv600RejectAccountAccessRequest200Response
-from obp_python.models.obpv600_reject_account_access_request_request import OBPv600RejectAccountAccessRequestRequest
+from obp_python.models.reject_account_access_request200_response import RejectAccountAccessRequest200Response
+from obp_python.models.reject_account_access_request_request import RejectAccountAccessRequestRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -90,15 +90,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     accountaccessrequestid = 'accountaccessrequestid_example' # str | The ACCOUNTACCESSREQUESTID identifier
-    obpv600_reject_account_access_request_request = {type=object, properties={comment={type=string}}} # OBPv600RejectAccountAccessRequestRequest | Request body
+    reject_account_access_request_request = {type=object, properties={comment={type=string}}} # RejectAccountAccessRequestRequest | Request body
 
     try:
         # Approve Account Access Request
-        api_response = api_instance.o_bpv6_0_0_approve_account_access_request(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request)
-        print("The response of AccountAccessRequestApi->o_bpv6_0_0_approve_account_access_request:\n")
+        api_response = api_instance.approve_account_access_request(bankid, accountid, accountaccessrequestid, reject_account_access_request_request)
+        print("The response of AccountAccessRequestApi->approve_account_access_request:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccountAccessRequestApi->o_bpv6_0_0_approve_account_access_request: %s\n" % e)
+        print("Exception when calling AccountAccessRequestApi->approve_account_access_request: %s\n" % e)
 ```
 
 
@@ -111,11 +111,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **accountaccessrequestid** | **str**| The ACCOUNTACCESSREQUESTID identifier | 
- **obpv600_reject_account_access_request_request** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md)| Request body | 
+ **reject_account_access_request_request** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -136,8 +136,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_create_account_access_request**
-> OBPv600RejectAccountAccessRequest200Response o_bpv6_0_0_create_account_access_request(bankid, accountid, obpv600_create_account_access_request_request)
+# **create_account_access_request**
+> RejectAccountAccessRequest200Response create_account_access_request(bankid, accountid, create_account_access_request_request)
 
 Create Account Access Request
 
@@ -179,8 +179,8 @@ A business justification is required.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_create_account_access_request_request import OBPv600CreateAccountAccessRequestRequest
-from obp_python.models.obpv600_reject_account_access_request200_response import OBPv600RejectAccountAccessRequest200Response
+from obp_python.models.create_account_access_request_request import CreateAccountAccessRequestRequest
+from obp_python.models.reject_account_access_request200_response import RejectAccountAccessRequest200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -215,15 +215,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.AccountAccessRequestApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    obpv600_create_account_access_request_request = {"type":"object","properties":{"is_system_view":{"type":"boolean"},"business_justification":{"type":"string"},"view_id":{"type":"string"},"target_user_id":{"type":"string"}}} # OBPv600CreateAccountAccessRequestRequest | Request body
+    create_account_access_request_request = {"type":"object","properties":{"is_system_view":{"type":"boolean"},"business_justification":{"type":"string"},"view_id":{"type":"string"},"target_user_id":{"type":"string"}}} # CreateAccountAccessRequestRequest | Request body
 
     try:
         # Create Account Access Request
-        api_response = api_instance.o_bpv6_0_0_create_account_access_request(bankid, accountid, obpv600_create_account_access_request_request)
-        print("The response of AccountAccessRequestApi->o_bpv6_0_0_create_account_access_request:\n")
+        api_response = api_instance.create_account_access_request(bankid, accountid, create_account_access_request_request)
+        print("The response of AccountAccessRequestApi->create_account_access_request:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccountAccessRequestApi->o_bpv6_0_0_create_account_access_request: %s\n" % e)
+        print("Exception when calling AccountAccessRequestApi->create_account_access_request: %s\n" % e)
 ```
 
 
@@ -235,11 +235,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
- **obpv600_create_account_access_request_request** | [**OBPv600CreateAccountAccessRequestRequest**](OBPv600CreateAccountAccessRequestRequest.md)| Request body | 
+ **create_account_access_request_request** | [**CreateAccountAccessRequestRequest**](CreateAccountAccessRequestRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -260,8 +260,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_account_access_request_by_id**
-> OBPv600RejectAccountAccessRequest200Response o_bpv6_0_0_get_account_access_request_by_id(bankid, accountid, accountaccessrequestid)
+# **get_account_access_request_by_id**
+> RejectAccountAccessRequest200Response get_account_access_request_by_id(bankid, accountid, accountaccessrequestid)
 
 Get Account Access Request by Id
 
@@ -296,7 +296,7 @@ Get Account Access Request by Id
 
 ```python
 import obp_python
-from obp_python.models.obpv600_reject_account_access_request200_response import OBPv600RejectAccountAccessRequest200Response
+from obp_python.models.reject_account_access_request200_response import RejectAccountAccessRequest200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -335,11 +335,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Account Access Request by Id
-        api_response = api_instance.o_bpv6_0_0_get_account_access_request_by_id(bankid, accountid, accountaccessrequestid)
-        print("The response of AccountAccessRequestApi->o_bpv6_0_0_get_account_access_request_by_id:\n")
+        api_response = api_instance.get_account_access_request_by_id(bankid, accountid, accountaccessrequestid)
+        print("The response of AccountAccessRequestApi->get_account_access_request_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccountAccessRequestApi->o_bpv6_0_0_get_account_access_request_by_id: %s\n" % e)
+        print("Exception when calling AccountAccessRequestApi->get_account_access_request_by_id: %s\n" % e)
 ```
 
 
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -376,8 +376,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_account_access_requests_for_account**
-> OBPv600GetAccountAccessRequestsForAccount200Response o_bpv6_0_0_get_account_access_requests_for_account(bankid, accountid)
+# **get_account_access_requests_for_account**
+> GetAccountAccessRequestsForAccount200Response get_account_access_requests_for_account(bankid, accountid)
 
 Get Account Access Requests for Account
 
@@ -413,7 +413,7 @@ Get Account Access Requests for Account
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_account_access_requests_for_account200_response import OBPv600GetAccountAccessRequestsForAccount200Response
+from obp_python.models.get_account_access_requests_for_account200_response import GetAccountAccessRequestsForAccount200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -451,11 +451,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Account Access Requests for Account
-        api_response = api_instance.o_bpv6_0_0_get_account_access_requests_for_account(bankid, accountid)
-        print("The response of AccountAccessRequestApi->o_bpv6_0_0_get_account_access_requests_for_account:\n")
+        api_response = api_instance.get_account_access_requests_for_account(bankid, accountid)
+        print("The response of AccountAccessRequestApi->get_account_access_requests_for_account:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccountAccessRequestApi->o_bpv6_0_0_get_account_access_requests_for_account: %s\n" % e)
+        print("Exception when calling AccountAccessRequestApi->get_account_access_requests_for_account: %s\n" % e)
 ```
 
 
@@ -470,7 +470,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -491,8 +491,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_my_account_access_requests**
-> OBPv600GetAccountAccessRequestsForAccount200Response o_bpv6_0_0_get_my_account_access_requests()
+# **get_my_account_access_requests**
+> GetAccountAccessRequestsForAccount200Response get_my_account_access_requests()
 
 Get My Account Access Requests
 
@@ -525,7 +525,7 @@ Get My Account Access Requests
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_account_access_requests_for_account200_response import OBPv600GetAccountAccessRequestsForAccount200Response
+from obp_python.models.get_account_access_requests_for_account200_response import GetAccountAccessRequestsForAccount200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -561,11 +561,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get My Account Access Requests
-        api_response = api_instance.o_bpv6_0_0_get_my_account_access_requests()
-        print("The response of AccountAccessRequestApi->o_bpv6_0_0_get_my_account_access_requests:\n")
+        api_response = api_instance.get_my_account_access_requests()
+        print("The response of AccountAccessRequestApi->get_my_account_access_requests:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccountAccessRequestApi->o_bpv6_0_0_get_my_account_access_requests: %s\n" % e)
+        print("Exception when calling AccountAccessRequestApi->get_my_account_access_requests: %s\n" % e)
 ```
 
 
@@ -576,7 +576,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -596,8 +596,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_reject_account_access_request**
-> OBPv600RejectAccountAccessRequest200Response o_bpv6_0_0_reject_account_access_request(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request)
+# **reject_account_access_request**
+> RejectAccountAccessRequest200Response reject_account_access_request(bankid, accountid, accountaccessrequestid, reject_account_access_request_request)
 
 Reject Account Access Request
 
@@ -637,8 +637,8 @@ Reject Account Access Request
 
 ```python
 import obp_python
-from obp_python.models.obpv600_reject_account_access_request200_response import OBPv600RejectAccountAccessRequest200Response
-from obp_python.models.obpv600_reject_account_access_request_request import OBPv600RejectAccountAccessRequestRequest
+from obp_python.models.reject_account_access_request200_response import RejectAccountAccessRequest200Response
+from obp_python.models.reject_account_access_request_request import RejectAccountAccessRequestRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -674,15 +674,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     accountaccessrequestid = 'accountaccessrequestid_example' # str | The ACCOUNTACCESSREQUESTID identifier
-    obpv600_reject_account_access_request_request = {"type":"object","properties":{"comment":{"type":"string"}}} # OBPv600RejectAccountAccessRequestRequest | Request body
+    reject_account_access_request_request = {"type":"object","properties":{"comment":{"type":"string"}}} # RejectAccountAccessRequestRequest | Request body
 
     try:
         # Reject Account Access Request
-        api_response = api_instance.o_bpv6_0_0_reject_account_access_request(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request)
-        print("The response of AccountAccessRequestApi->o_bpv6_0_0_reject_account_access_request:\n")
+        api_response = api_instance.reject_account_access_request(bankid, accountid, accountaccessrequestid, reject_account_access_request_request)
+        print("The response of AccountAccessRequestApi->reject_account_access_request:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccountAccessRequestApi->o_bpv6_0_0_reject_account_access_request: %s\n" % e)
+        print("Exception when calling AccountAccessRequestApi->reject_account_access_request: %s\n" % e)
 ```
 
 
@@ -695,11 +695,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **accountaccessrequestid** | **str**| The ACCOUNTACCESSREQUESTID identifier | 
- **obpv600_reject_account_access_request_request** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md)| Request body | 
+ **reject_account_access_request_request** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 

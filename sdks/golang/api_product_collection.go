@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,26 +24,26 @@ import (
 // ProductCollectionAPIService ProductCollectionAPI service
 type ProductCollectionAPIService service
 
-type ApiOBPv310CreateProductCollectionRequest struct {
+type ApiCreateProductCollectionRequest struct {
 	ctx context.Context
 	ApiService *ProductCollectionAPIService
 	bankid string
 	collectioncode string
-	oBPv310CreateProductCollectionRequest *OBPv310CreateProductCollectionRequest
+	createProductCollectionRequest *CreateProductCollectionRequest
 }
 
 // Request body
-func (r ApiOBPv310CreateProductCollectionRequest) OBPv310CreateProductCollectionRequest(oBPv310CreateProductCollectionRequest OBPv310CreateProductCollectionRequest) ApiOBPv310CreateProductCollectionRequest {
-	r.oBPv310CreateProductCollectionRequest = &oBPv310CreateProductCollectionRequest
+func (r ApiCreateProductCollectionRequest) CreateProductCollectionRequest(createProductCollectionRequest CreateProductCollectionRequest) ApiCreateProductCollectionRequest {
+	r.createProductCollectionRequest = &createProductCollectionRequest
 	return r
 }
 
-func (r ApiOBPv310CreateProductCollectionRequest) Execute() (*OBPv310CreateProductCollection200Response, *http.Response, error) {
-	return r.ApiService.OBPv310CreateProductCollectionExecute(r)
+func (r ApiCreateProductCollectionRequest) Execute() (*CreateProductCollection200Response, *http.Response, error) {
+	return r.ApiService.CreateProductCollectionExecute(r)
 }
 
 /*
-OBPv310CreateProductCollection Create Product Collection
+CreateProductCollection Create Product Collection
 
 <p>Create or Update a Product Collection at the Bank.</p>
 <p>Use Product Collections to create Product &quot;Baskets&quot;, &quot;Portfolios&quot;, &quot;Indices&quot;, &quot;Collections&quot;, &quot;Underlyings-lists&quot;, &quot;Buckets&quot; etc. etc.</p>
@@ -81,10 +81,10 @@ OBPv310CreateProductCollection Create Product Collection
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param collectioncode The COLLECTIONCODE identifier
- @return ApiOBPv310CreateProductCollectionRequest
+ @return ApiCreateProductCollectionRequest
 */
-func (a *ProductCollectionAPIService) OBPv310CreateProductCollection(ctx context.Context, bankid string, collectioncode string) ApiOBPv310CreateProductCollectionRequest {
-	return ApiOBPv310CreateProductCollectionRequest{
+func (a *ProductCollectionAPIService) CreateProductCollection(ctx context.Context, bankid string, collectioncode string) ApiCreateProductCollectionRequest {
+	return ApiCreateProductCollectionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -93,16 +93,16 @@ func (a *ProductCollectionAPIService) OBPv310CreateProductCollection(ctx context
 }
 
 // Execute executes the request
-//  @return OBPv310CreateProductCollection200Response
-func (a *ProductCollectionAPIService) OBPv310CreateProductCollectionExecute(r ApiOBPv310CreateProductCollectionRequest) (*OBPv310CreateProductCollection200Response, *http.Response, error) {
+//  @return CreateProductCollection200Response
+func (a *ProductCollectionAPIService) CreateProductCollectionExecute(r ApiCreateProductCollectionRequest) (*CreateProductCollection200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310CreateProductCollection200Response
+		localVarReturnValue  *CreateProductCollection200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductCollectionAPIService.OBPv310CreateProductCollection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductCollectionAPIService.CreateProductCollection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -114,8 +114,8 @@ func (a *ProductCollectionAPIService) OBPv310CreateProductCollectionExecute(r Ap
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv310CreateProductCollectionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv310CreateProductCollectionRequest is required and must be specified")
+	if r.createProductCollectionRequest == nil {
+		return localVarReturnValue, nil, reportError("createProductCollectionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -136,7 +136,7 @@ func (a *ProductCollectionAPIService) OBPv310CreateProductCollectionExecute(r Ap
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv310CreateProductCollectionRequest
+	localVarPostBody = r.createProductCollectionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -161,7 +161,7 @@ func (a *ProductCollectionAPIService) OBPv310CreateProductCollectionExecute(r Ap
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -202,19 +202,19 @@ func (a *ProductCollectionAPIService) OBPv310CreateProductCollectionExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv310GetProductCollectionRequest struct {
+type ApiGetProductCollectionRequest struct {
 	ctx context.Context
 	ApiService *ProductCollectionAPIService
 	bankid string
 	collectioncode string
 }
 
-func (r ApiOBPv310GetProductCollectionRequest) Execute() (*OBPv310GetProductCollection200Response, *http.Response, error) {
-	return r.ApiService.OBPv310GetProductCollectionExecute(r)
+func (r ApiGetProductCollectionRequest) Execute() (*GetProductCollection200Response, *http.Response, error) {
+	return r.ApiService.GetProductCollectionExecute(r)
 }
 
 /*
-OBPv310GetProductCollection Get Product Collection
+GetProductCollection Get Product Collection
 
 <p>Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -247,10 +247,10 @@ OBPv310GetProductCollection Get Product Collection
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param collectioncode The COLLECTIONCODE identifier
- @return ApiOBPv310GetProductCollectionRequest
+ @return ApiGetProductCollectionRequest
 */
-func (a *ProductCollectionAPIService) OBPv310GetProductCollection(ctx context.Context, bankid string, collectioncode string) ApiOBPv310GetProductCollectionRequest {
-	return ApiOBPv310GetProductCollectionRequest{
+func (a *ProductCollectionAPIService) GetProductCollection(ctx context.Context, bankid string, collectioncode string) ApiGetProductCollectionRequest {
+	return ApiGetProductCollectionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -259,16 +259,16 @@ func (a *ProductCollectionAPIService) OBPv310GetProductCollection(ctx context.Co
 }
 
 // Execute executes the request
-//  @return OBPv310GetProductCollection200Response
-func (a *ProductCollectionAPIService) OBPv310GetProductCollectionExecute(r ApiOBPv310GetProductCollectionRequest) (*OBPv310GetProductCollection200Response, *http.Response, error) {
+//  @return GetProductCollection200Response
+func (a *ProductCollectionAPIService) GetProductCollectionExecute(r ApiGetProductCollectionRequest) (*GetProductCollection200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetProductCollection200Response
+		localVarReturnValue  *GetProductCollection200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductCollectionAPIService.OBPv310GetProductCollection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductCollectionAPIService.GetProductCollection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -322,7 +322,7 @@ func (a *ProductCollectionAPIService) OBPv310GetProductCollectionExecute(r ApiOB
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

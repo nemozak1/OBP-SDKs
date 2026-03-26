@@ -18,11 +18,11 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv400_build_dynamic_endpoint_template200_response import OBPv400BuildDynamicEndpointTemplate200Response
-from obp_python.models.obpv400_build_dynamic_endpoint_template_request import OBPv400BuildDynamicEndpointTemplateRequest
-from obp_python.models.obpv400_get_all_dynamic_resource_docs200_response import OBPv400GetAllDynamicResourceDocs200Response
-from obp_python.models.obpv400_get_bank_level_dynamic_resource_doc200_response import OBPv400GetBankLevelDynamicResourceDoc200Response
-from obp_python.models.obpv400_update_bank_level_dynamic_resource_doc_request import OBPv400UpdateBankLevelDynamicResourceDocRequest
+from obp_python.models.build_dynamic_endpoint_template200_response import BuildDynamicEndpointTemplate200Response
+from obp_python.models.build_dynamic_endpoint_template_request import BuildDynamicEndpointTemplateRequest
+from obp_python.models.get_all_dynamic_resource_docs200_response import GetAllDynamicResourceDocs200Response
+from obp_python.models.get_bank_level_dynamic_resource_doc200_response import GetBankLevelDynamicResourceDoc200Response
+from obp_python.models.update_bank_level_dynamic_resource_doc_request import UpdateBankLevelDynamicResourceDocRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -43,9 +43,9 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_build_dynamic_endpoint_template(
+    def build_dynamic_endpoint_template(
         self,
-        obpv400_build_dynamic_endpoint_template_request: Annotated[OBPv400BuildDynamicEndpointTemplateRequest, Field(description="Request body")],
+        build_dynamic_endpoint_template_request: Annotated[BuildDynamicEndpointTemplateRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -58,13 +58,13 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400BuildDynamicEndpointTemplate200Response:
+    ) -> BuildDynamicEndpointTemplate200Response:
         """Create Dynamic Resource Doc endpoint code
 
         <p>Create a Dynamic Resource Doc endpoint code.</p> <p>copy the response and past to PractiseEndpoint, So you can have the benefits of<br /> auto compilation and debug</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#code\"><strong>code</strong></a>: 125</p> 
 
-        :param obpv400_build_dynamic_endpoint_template_request: Request body (required)
-        :type obpv400_build_dynamic_endpoint_template_request: OBPv400BuildDynamicEndpointTemplateRequest
+        :param build_dynamic_endpoint_template_request: Request body (required)
+        :type build_dynamic_endpoint_template_request: BuildDynamicEndpointTemplateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -87,8 +87,8 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_build_dynamic_endpoint_template_serialize(
-            obpv400_build_dynamic_endpoint_template_request=obpv400_build_dynamic_endpoint_template_request,
+        _param = self._build_dynamic_endpoint_template_serialize(
+            build_dynamic_endpoint_template_request=build_dynamic_endpoint_template_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -96,7 +96,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400BuildDynamicEndpointTemplate200Response",
+            '200': "BuildDynamicEndpointTemplate200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -111,9 +111,9 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_build_dynamic_endpoint_template_with_http_info(
+    def build_dynamic_endpoint_template_with_http_info(
         self,
-        obpv400_build_dynamic_endpoint_template_request: Annotated[OBPv400BuildDynamicEndpointTemplateRequest, Field(description="Request body")],
+        build_dynamic_endpoint_template_request: Annotated[BuildDynamicEndpointTemplateRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -126,13 +126,13 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400BuildDynamicEndpointTemplate200Response]:
+    ) -> ApiResponse[BuildDynamicEndpointTemplate200Response]:
         """Create Dynamic Resource Doc endpoint code
 
         <p>Create a Dynamic Resource Doc endpoint code.</p> <p>copy the response and past to PractiseEndpoint, So you can have the benefits of<br /> auto compilation and debug</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#code\"><strong>code</strong></a>: 125</p> 
 
-        :param obpv400_build_dynamic_endpoint_template_request: Request body (required)
-        :type obpv400_build_dynamic_endpoint_template_request: OBPv400BuildDynamicEndpointTemplateRequest
+        :param build_dynamic_endpoint_template_request: Request body (required)
+        :type build_dynamic_endpoint_template_request: BuildDynamicEndpointTemplateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -155,8 +155,8 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_build_dynamic_endpoint_template_serialize(
-            obpv400_build_dynamic_endpoint_template_request=obpv400_build_dynamic_endpoint_template_request,
+        _param = self._build_dynamic_endpoint_template_serialize(
+            build_dynamic_endpoint_template_request=build_dynamic_endpoint_template_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -164,7 +164,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400BuildDynamicEndpointTemplate200Response",
+            '200': "BuildDynamicEndpointTemplate200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -179,9 +179,9 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_build_dynamic_endpoint_template_without_preload_content(
+    def build_dynamic_endpoint_template_without_preload_content(
         self,
-        obpv400_build_dynamic_endpoint_template_request: Annotated[OBPv400BuildDynamicEndpointTemplateRequest, Field(description="Request body")],
+        build_dynamic_endpoint_template_request: Annotated[BuildDynamicEndpointTemplateRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -199,8 +199,8 @@ class DynamicResourceDocApi:
 
         <p>Create a Dynamic Resource Doc endpoint code.</p> <p>copy the response and past to PractiseEndpoint, So you can have the benefits of<br /> auto compilation and debug</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#code\"><strong>code</strong></a>: 125</p> 
 
-        :param obpv400_build_dynamic_endpoint_template_request: Request body (required)
-        :type obpv400_build_dynamic_endpoint_template_request: OBPv400BuildDynamicEndpointTemplateRequest
+        :param build_dynamic_endpoint_template_request: Request body (required)
+        :type build_dynamic_endpoint_template_request: BuildDynamicEndpointTemplateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -223,8 +223,8 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_build_dynamic_endpoint_template_serialize(
-            obpv400_build_dynamic_endpoint_template_request=obpv400_build_dynamic_endpoint_template_request,
+        _param = self._build_dynamic_endpoint_template_serialize(
+            build_dynamic_endpoint_template_request=build_dynamic_endpoint_template_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -232,7 +232,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400BuildDynamicEndpointTemplate200Response",
+            '200': "BuildDynamicEndpointTemplate200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -242,9 +242,9 @@ class DynamicResourceDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_build_dynamic_endpoint_template_serialize(
+    def _build_dynamic_endpoint_template_serialize(
         self,
-        obpv400_build_dynamic_endpoint_template_request,
+        build_dynamic_endpoint_template_request,
         _request_auth,
         _content_type,
         _headers,
@@ -270,8 +270,8 @@ class DynamicResourceDocApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_build_dynamic_endpoint_template_request is not None:
-            _body_params = obpv400_build_dynamic_endpoint_template_request
+        if build_dynamic_endpoint_template_request is not None:
+            _body_params = build_dynamic_endpoint_template_request
 
 
         # set the HTTP header `Accept`
@@ -322,10 +322,10 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_bank_level_dynamic_resource_doc(
+    def create_bank_level_dynamic_resource_doc(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_update_bank_level_dynamic_resource_doc_request: Annotated[OBPv400UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
+        update_bank_level_dynamic_resource_doc_request: Annotated[UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -338,15 +338,15 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetBankLevelDynamicResourceDoc200Response:
+    ) -> GetBankLevelDynamicResourceDoc200Response:
         """Create Bank Level Dynamic Resource Doc
 
         <p>Create a Bank Level Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_update_bank_level_dynamic_resource_doc_request: Request body (required)
-        :type obpv400_update_bank_level_dynamic_resource_doc_request: OBPv400UpdateBankLevelDynamicResourceDocRequest
+        :param update_bank_level_dynamic_resource_doc_request: Request body (required)
+        :type update_bank_level_dynamic_resource_doc_request: UpdateBankLevelDynamicResourceDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -369,9 +369,9 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_bank_level_dynamic_resource_doc_serialize(
+        _param = self._create_bank_level_dynamic_resource_doc_serialize(
             bankid=bankid,
-            obpv400_update_bank_level_dynamic_resource_doc_request=obpv400_update_bank_level_dynamic_resource_doc_request,
+            update_bank_level_dynamic_resource_doc_request=update_bank_level_dynamic_resource_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -379,7 +379,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '404': None,
             '500': None,
         }
@@ -395,10 +395,10 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_bank_level_dynamic_resource_doc_with_http_info(
+    def create_bank_level_dynamic_resource_doc_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_update_bank_level_dynamic_resource_doc_request: Annotated[OBPv400UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
+        update_bank_level_dynamic_resource_doc_request: Annotated[UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -411,15 +411,15 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetBankLevelDynamicResourceDoc200Response]:
+    ) -> ApiResponse[GetBankLevelDynamicResourceDoc200Response]:
         """Create Bank Level Dynamic Resource Doc
 
         <p>Create a Bank Level Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_update_bank_level_dynamic_resource_doc_request: Request body (required)
-        :type obpv400_update_bank_level_dynamic_resource_doc_request: OBPv400UpdateBankLevelDynamicResourceDocRequest
+        :param update_bank_level_dynamic_resource_doc_request: Request body (required)
+        :type update_bank_level_dynamic_resource_doc_request: UpdateBankLevelDynamicResourceDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -442,9 +442,9 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_bank_level_dynamic_resource_doc_serialize(
+        _param = self._create_bank_level_dynamic_resource_doc_serialize(
             bankid=bankid,
-            obpv400_update_bank_level_dynamic_resource_doc_request=obpv400_update_bank_level_dynamic_resource_doc_request,
+            update_bank_level_dynamic_resource_doc_request=update_bank_level_dynamic_resource_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -452,7 +452,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '404': None,
             '500': None,
         }
@@ -468,10 +468,10 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_bank_level_dynamic_resource_doc_without_preload_content(
+    def create_bank_level_dynamic_resource_doc_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_update_bank_level_dynamic_resource_doc_request: Annotated[OBPv400UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
+        update_bank_level_dynamic_resource_doc_request: Annotated[UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -491,8 +491,8 @@ class DynamicResourceDocApi:
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_update_bank_level_dynamic_resource_doc_request: Request body (required)
-        :type obpv400_update_bank_level_dynamic_resource_doc_request: OBPv400UpdateBankLevelDynamicResourceDocRequest
+        :param update_bank_level_dynamic_resource_doc_request: Request body (required)
+        :type update_bank_level_dynamic_resource_doc_request: UpdateBankLevelDynamicResourceDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -515,9 +515,9 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_bank_level_dynamic_resource_doc_serialize(
+        _param = self._create_bank_level_dynamic_resource_doc_serialize(
             bankid=bankid,
-            obpv400_update_bank_level_dynamic_resource_doc_request=obpv400_update_bank_level_dynamic_resource_doc_request,
+            update_bank_level_dynamic_resource_doc_request=update_bank_level_dynamic_resource_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -525,7 +525,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '404': None,
             '500': None,
         }
@@ -536,10 +536,10 @@ class DynamicResourceDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_bank_level_dynamic_resource_doc_serialize(
+    def _create_bank_level_dynamic_resource_doc_serialize(
         self,
         bankid,
-        obpv400_update_bank_level_dynamic_resource_doc_request,
+        update_bank_level_dynamic_resource_doc_request,
         _request_auth,
         _content_type,
         _headers,
@@ -567,8 +567,8 @@ class DynamicResourceDocApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_update_bank_level_dynamic_resource_doc_request is not None:
-            _body_params = obpv400_update_bank_level_dynamic_resource_doc_request
+        if update_bank_level_dynamic_resource_doc_request is not None:
+            _body_params = update_bank_level_dynamic_resource_doc_request
 
 
         # set the HTTP header `Accept`
@@ -619,9 +619,9 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_dynamic_resource_doc(
+    def create_dynamic_resource_doc(
         self,
-        obpv400_update_bank_level_dynamic_resource_doc_request: Annotated[OBPv400UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
+        update_bank_level_dynamic_resource_doc_request: Annotated[UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -634,13 +634,13 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetBankLevelDynamicResourceDoc200Response:
+    ) -> GetBankLevelDynamicResourceDoc200Response:
         """Create Dynamic Resource Doc
 
         <p>Create a Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
 
-        :param obpv400_update_bank_level_dynamic_resource_doc_request: Request body (required)
-        :type obpv400_update_bank_level_dynamic_resource_doc_request: OBPv400UpdateBankLevelDynamicResourceDocRequest
+        :param update_bank_level_dynamic_resource_doc_request: Request body (required)
+        :type update_bank_level_dynamic_resource_doc_request: UpdateBankLevelDynamicResourceDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -663,8 +663,8 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_dynamic_resource_doc_serialize(
-            obpv400_update_bank_level_dynamic_resource_doc_request=obpv400_update_bank_level_dynamic_resource_doc_request,
+        _param = self._create_dynamic_resource_doc_serialize(
+            update_bank_level_dynamic_resource_doc_request=update_bank_level_dynamic_resource_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -672,7 +672,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -687,9 +687,9 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_dynamic_resource_doc_with_http_info(
+    def create_dynamic_resource_doc_with_http_info(
         self,
-        obpv400_update_bank_level_dynamic_resource_doc_request: Annotated[OBPv400UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
+        update_bank_level_dynamic_resource_doc_request: Annotated[UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -702,13 +702,13 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetBankLevelDynamicResourceDoc200Response]:
+    ) -> ApiResponse[GetBankLevelDynamicResourceDoc200Response]:
         """Create Dynamic Resource Doc
 
         <p>Create a Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
 
-        :param obpv400_update_bank_level_dynamic_resource_doc_request: Request body (required)
-        :type obpv400_update_bank_level_dynamic_resource_doc_request: OBPv400UpdateBankLevelDynamicResourceDocRequest
+        :param update_bank_level_dynamic_resource_doc_request: Request body (required)
+        :type update_bank_level_dynamic_resource_doc_request: UpdateBankLevelDynamicResourceDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -731,8 +731,8 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_dynamic_resource_doc_serialize(
-            obpv400_update_bank_level_dynamic_resource_doc_request=obpv400_update_bank_level_dynamic_resource_doc_request,
+        _param = self._create_dynamic_resource_doc_serialize(
+            update_bank_level_dynamic_resource_doc_request=update_bank_level_dynamic_resource_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -740,7 +740,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -755,9 +755,9 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_dynamic_resource_doc_without_preload_content(
+    def create_dynamic_resource_doc_without_preload_content(
         self,
-        obpv400_update_bank_level_dynamic_resource_doc_request: Annotated[OBPv400UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
+        update_bank_level_dynamic_resource_doc_request: Annotated[UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -775,8 +775,8 @@ class DynamicResourceDocApi:
 
         <p>Create a Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
 
-        :param obpv400_update_bank_level_dynamic_resource_doc_request: Request body (required)
-        :type obpv400_update_bank_level_dynamic_resource_doc_request: OBPv400UpdateBankLevelDynamicResourceDocRequest
+        :param update_bank_level_dynamic_resource_doc_request: Request body (required)
+        :type update_bank_level_dynamic_resource_doc_request: UpdateBankLevelDynamicResourceDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -799,8 +799,8 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_dynamic_resource_doc_serialize(
-            obpv400_update_bank_level_dynamic_resource_doc_request=obpv400_update_bank_level_dynamic_resource_doc_request,
+        _param = self._create_dynamic_resource_doc_serialize(
+            update_bank_level_dynamic_resource_doc_request=update_bank_level_dynamic_resource_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -808,7 +808,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -818,9 +818,9 @@ class DynamicResourceDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_dynamic_resource_doc_serialize(
+    def _create_dynamic_resource_doc_serialize(
         self,
-        obpv400_update_bank_level_dynamic_resource_doc_request,
+        update_bank_level_dynamic_resource_doc_request,
         _request_auth,
         _content_type,
         _headers,
@@ -846,8 +846,8 @@ class DynamicResourceDocApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_update_bank_level_dynamic_resource_doc_request is not None:
-            _body_params = obpv400_update_bank_level_dynamic_resource_doc_request
+        if update_bank_level_dynamic_resource_doc_request is not None:
+            _body_params = update_bank_level_dynamic_resource_doc_request
 
 
         # set the HTTP header `Accept`
@@ -898,7 +898,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_bank_level_dynamic_resource_doc(
+    def delete_bank_level_dynamic_resource_doc(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -942,7 +942,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_bank_level_dynamic_resource_doc_serialize(
+        _param = self._delete_bank_level_dynamic_resource_doc_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -967,7 +967,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_bank_level_dynamic_resource_doc_with_http_info(
+    def delete_bank_level_dynamic_resource_doc_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1011,7 +1011,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_bank_level_dynamic_resource_doc_serialize(
+        _param = self._delete_bank_level_dynamic_resource_doc_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1036,7 +1036,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_bank_level_dynamic_resource_doc_without_preload_content(
+    def delete_bank_level_dynamic_resource_doc_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1080,7 +1080,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_bank_level_dynamic_resource_doc_serialize(
+        _param = self._delete_bank_level_dynamic_resource_doc_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1100,7 +1100,7 @@ class DynamicResourceDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_delete_bank_level_dynamic_resource_doc_serialize(
+    def _delete_bank_level_dynamic_resource_doc_serialize(
         self,
         bankid,
         _request_auth,
@@ -1160,7 +1160,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_dynamic_resource_doc(
+    def delete_dynamic_resource_doc(
         self,
         _request_timeout: Union[
             None,
@@ -1201,7 +1201,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_dynamic_resource_doc_serialize(
+        _param = self._delete_dynamic_resource_doc_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1224,7 +1224,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_dynamic_resource_doc_with_http_info(
+    def delete_dynamic_resource_doc_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1265,7 +1265,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_dynamic_resource_doc_serialize(
+        _param = self._delete_dynamic_resource_doc_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1288,7 +1288,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_dynamic_resource_doc_without_preload_content(
+    def delete_dynamic_resource_doc_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1329,7 +1329,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_dynamic_resource_doc_serialize(
+        _param = self._delete_dynamic_resource_doc_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1347,7 +1347,7 @@ class DynamicResourceDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_delete_dynamic_resource_doc_serialize(
+    def _delete_dynamic_resource_doc_serialize(
         self,
         _request_auth,
         _content_type,
@@ -1404,7 +1404,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs(
+    def get_all_bank_level_dynamic_resource_docs(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1419,7 +1419,7 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllDynamicResourceDocs200Response:
+    ) -> GetAllDynamicResourceDocs200Response:
         """Get all Bank Level Dynamic Resource Docs
 
         <p>Get all Bank Level Dynamic Resource Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
@@ -1448,7 +1448,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs_serialize(
+        _param = self._get_all_bank_level_dynamic_resource_docs_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1457,7 +1457,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllDynamicResourceDocs200Response",
+            '200': "GetAllDynamicResourceDocs200Response",
             '404': None,
             '500': None,
         }
@@ -1473,7 +1473,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs_with_http_info(
+    def get_all_bank_level_dynamic_resource_docs_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1488,7 +1488,7 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllDynamicResourceDocs200Response]:
+    ) -> ApiResponse[GetAllDynamicResourceDocs200Response]:
         """Get all Bank Level Dynamic Resource Docs
 
         <p>Get all Bank Level Dynamic Resource Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
@@ -1517,7 +1517,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs_serialize(
+        _param = self._get_all_bank_level_dynamic_resource_docs_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1526,7 +1526,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllDynamicResourceDocs200Response",
+            '200': "GetAllDynamicResourceDocs200Response",
             '404': None,
             '500': None,
         }
@@ -1542,7 +1542,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs_without_preload_content(
+    def get_all_bank_level_dynamic_resource_docs_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1586,7 +1586,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs_serialize(
+        _param = self._get_all_bank_level_dynamic_resource_docs_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1595,7 +1595,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllDynamicResourceDocs200Response",
+            '200': "GetAllDynamicResourceDocs200Response",
             '404': None,
             '500': None,
         }
@@ -1606,7 +1606,7 @@ class DynamicResourceDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs_serialize(
+    def _get_all_bank_level_dynamic_resource_docs_serialize(
         self,
         bankid,
         _request_auth,
@@ -1673,7 +1673,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_dynamic_resource_docs(
+    def get_all_dynamic_resource_docs(
         self,
         _request_timeout: Union[
             None,
@@ -1687,7 +1687,7 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllDynamicResourceDocs200Response:
+    ) -> GetAllDynamicResourceDocs200Response:
         """Get all Dynamic Resource Docs
 
         <p>Get all Dynamic Resource Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
@@ -1714,7 +1714,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_dynamic_resource_docs_serialize(
+        _param = self._get_all_dynamic_resource_docs_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1722,7 +1722,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllDynamicResourceDocs200Response",
+            '200': "GetAllDynamicResourceDocs200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1737,7 +1737,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_dynamic_resource_docs_with_http_info(
+    def get_all_dynamic_resource_docs_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1751,7 +1751,7 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllDynamicResourceDocs200Response]:
+    ) -> ApiResponse[GetAllDynamicResourceDocs200Response]:
         """Get all Dynamic Resource Docs
 
         <p>Get all Dynamic Resource Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
@@ -1778,7 +1778,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_dynamic_resource_docs_serialize(
+        _param = self._get_all_dynamic_resource_docs_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1786,7 +1786,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllDynamicResourceDocs200Response",
+            '200': "GetAllDynamicResourceDocs200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1801,7 +1801,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_dynamic_resource_docs_without_preload_content(
+    def get_all_dynamic_resource_docs_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1842,7 +1842,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_dynamic_resource_docs_serialize(
+        _param = self._get_all_dynamic_resource_docs_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1850,7 +1850,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllDynamicResourceDocs200Response",
+            '200': "GetAllDynamicResourceDocs200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1860,7 +1860,7 @@ class DynamicResourceDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_all_dynamic_resource_docs_serialize(
+    def _get_all_dynamic_resource_docs_serialize(
         self,
         _request_auth,
         _content_type,
@@ -1924,7 +1924,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_bank_level_dynamic_resource_doc(
+    def get_bank_level_dynamic_resource_doc(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1939,7 +1939,7 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetBankLevelDynamicResourceDoc200Response:
+    ) -> GetBankLevelDynamicResourceDoc200Response:
         """Get Bank Level Dynamic Resource Doc by Id
 
         <p>Get a Bank Level Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
@@ -1968,7 +1968,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_bank_level_dynamic_resource_doc_serialize(
+        _param = self._get_bank_level_dynamic_resource_doc_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1977,7 +1977,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '404': None,
             '500': None,
         }
@@ -1993,7 +1993,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_bank_level_dynamic_resource_doc_with_http_info(
+    def get_bank_level_dynamic_resource_doc_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -2008,7 +2008,7 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetBankLevelDynamicResourceDoc200Response]:
+    ) -> ApiResponse[GetBankLevelDynamicResourceDoc200Response]:
         """Get Bank Level Dynamic Resource Doc by Id
 
         <p>Get a Bank Level Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
@@ -2037,7 +2037,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_bank_level_dynamic_resource_doc_serialize(
+        _param = self._get_bank_level_dynamic_resource_doc_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2046,7 +2046,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '404': None,
             '500': None,
         }
@@ -2062,7 +2062,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_bank_level_dynamic_resource_doc_without_preload_content(
+    def get_bank_level_dynamic_resource_doc_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -2106,7 +2106,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_bank_level_dynamic_resource_doc_serialize(
+        _param = self._get_bank_level_dynamic_resource_doc_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2115,7 +2115,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '404': None,
             '500': None,
         }
@@ -2126,7 +2126,7 @@ class DynamicResourceDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_bank_level_dynamic_resource_doc_serialize(
+    def _get_bank_level_dynamic_resource_doc_serialize(
         self,
         bankid,
         _request_auth,
@@ -2193,7 +2193,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_dynamic_resource_doc(
+    def get_dynamic_resource_doc(
         self,
         _request_timeout: Union[
             None,
@@ -2207,7 +2207,7 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetBankLevelDynamicResourceDoc200Response:
+    ) -> GetBankLevelDynamicResourceDoc200Response:
         """Get Dynamic Resource Doc by Id
 
         <p>Get a Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
@@ -2234,7 +2234,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_dynamic_resource_doc_serialize(
+        _param = self._get_dynamic_resource_doc_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2242,7 +2242,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2257,7 +2257,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_dynamic_resource_doc_with_http_info(
+    def get_dynamic_resource_doc_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -2271,7 +2271,7 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetBankLevelDynamicResourceDoc200Response]:
+    ) -> ApiResponse[GetBankLevelDynamicResourceDoc200Response]:
         """Get Dynamic Resource Doc by Id
 
         <p>Get a Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
@@ -2298,7 +2298,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_dynamic_resource_doc_serialize(
+        _param = self._get_dynamic_resource_doc_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2306,7 +2306,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2321,7 +2321,7 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_dynamic_resource_doc_without_preload_content(
+    def get_dynamic_resource_doc_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -2362,7 +2362,7 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_dynamic_resource_doc_serialize(
+        _param = self._get_dynamic_resource_doc_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2370,7 +2370,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2380,7 +2380,7 @@ class DynamicResourceDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_dynamic_resource_doc_serialize(
+    def _get_dynamic_resource_doc_serialize(
         self,
         _request_auth,
         _content_type,
@@ -2444,10 +2444,10 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_bank_level_dynamic_resource_doc(
+    def update_bank_level_dynamic_resource_doc(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_update_bank_level_dynamic_resource_doc_request: Annotated[OBPv400UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
+        update_bank_level_dynamic_resource_doc_request: Annotated[UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2460,15 +2460,15 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetBankLevelDynamicResourceDoc200Response:
+    ) -> GetBankLevelDynamicResourceDoc200Response:
         """Update Bank Level Dynamic Resource Doc
 
         <p>Update a Bank Level Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_update_bank_level_dynamic_resource_doc_request: Request body (required)
-        :type obpv400_update_bank_level_dynamic_resource_doc_request: OBPv400UpdateBankLevelDynamicResourceDocRequest
+        :param update_bank_level_dynamic_resource_doc_request: Request body (required)
+        :type update_bank_level_dynamic_resource_doc_request: UpdateBankLevelDynamicResourceDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2491,9 +2491,9 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_bank_level_dynamic_resource_doc_serialize(
+        _param = self._update_bank_level_dynamic_resource_doc_serialize(
             bankid=bankid,
-            obpv400_update_bank_level_dynamic_resource_doc_request=obpv400_update_bank_level_dynamic_resource_doc_request,
+            update_bank_level_dynamic_resource_doc_request=update_bank_level_dynamic_resource_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2501,7 +2501,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '404': None,
             '500': None,
         }
@@ -2517,10 +2517,10 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_bank_level_dynamic_resource_doc_with_http_info(
+    def update_bank_level_dynamic_resource_doc_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_update_bank_level_dynamic_resource_doc_request: Annotated[OBPv400UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
+        update_bank_level_dynamic_resource_doc_request: Annotated[UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2533,15 +2533,15 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetBankLevelDynamicResourceDoc200Response]:
+    ) -> ApiResponse[GetBankLevelDynamicResourceDoc200Response]:
         """Update Bank Level Dynamic Resource Doc
 
         <p>Update a Bank Level Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_update_bank_level_dynamic_resource_doc_request: Request body (required)
-        :type obpv400_update_bank_level_dynamic_resource_doc_request: OBPv400UpdateBankLevelDynamicResourceDocRequest
+        :param update_bank_level_dynamic_resource_doc_request: Request body (required)
+        :type update_bank_level_dynamic_resource_doc_request: UpdateBankLevelDynamicResourceDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2564,9 +2564,9 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_bank_level_dynamic_resource_doc_serialize(
+        _param = self._update_bank_level_dynamic_resource_doc_serialize(
             bankid=bankid,
-            obpv400_update_bank_level_dynamic_resource_doc_request=obpv400_update_bank_level_dynamic_resource_doc_request,
+            update_bank_level_dynamic_resource_doc_request=update_bank_level_dynamic_resource_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2574,7 +2574,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '404': None,
             '500': None,
         }
@@ -2590,10 +2590,10 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_bank_level_dynamic_resource_doc_without_preload_content(
+    def update_bank_level_dynamic_resource_doc_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_update_bank_level_dynamic_resource_doc_request: Annotated[OBPv400UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
+        update_bank_level_dynamic_resource_doc_request: Annotated[UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2613,8 +2613,8 @@ class DynamicResourceDocApi:
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_update_bank_level_dynamic_resource_doc_request: Request body (required)
-        :type obpv400_update_bank_level_dynamic_resource_doc_request: OBPv400UpdateBankLevelDynamicResourceDocRequest
+        :param update_bank_level_dynamic_resource_doc_request: Request body (required)
+        :type update_bank_level_dynamic_resource_doc_request: UpdateBankLevelDynamicResourceDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2637,9 +2637,9 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_bank_level_dynamic_resource_doc_serialize(
+        _param = self._update_bank_level_dynamic_resource_doc_serialize(
             bankid=bankid,
-            obpv400_update_bank_level_dynamic_resource_doc_request=obpv400_update_bank_level_dynamic_resource_doc_request,
+            update_bank_level_dynamic_resource_doc_request=update_bank_level_dynamic_resource_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2647,7 +2647,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '404': None,
             '500': None,
         }
@@ -2658,10 +2658,10 @@ class DynamicResourceDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_update_bank_level_dynamic_resource_doc_serialize(
+    def _update_bank_level_dynamic_resource_doc_serialize(
         self,
         bankid,
-        obpv400_update_bank_level_dynamic_resource_doc_request,
+        update_bank_level_dynamic_resource_doc_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2689,8 +2689,8 @@ class DynamicResourceDocApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_update_bank_level_dynamic_resource_doc_request is not None:
-            _body_params = obpv400_update_bank_level_dynamic_resource_doc_request
+        if update_bank_level_dynamic_resource_doc_request is not None:
+            _body_params = update_bank_level_dynamic_resource_doc_request
 
 
         # set the HTTP header `Accept`
@@ -2741,9 +2741,9 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_dynamic_resource_doc(
+    def update_dynamic_resource_doc(
         self,
-        obpv400_update_bank_level_dynamic_resource_doc_request: Annotated[OBPv400UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
+        update_bank_level_dynamic_resource_doc_request: Annotated[UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2756,13 +2756,13 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetBankLevelDynamicResourceDoc200Response:
+    ) -> GetBankLevelDynamicResourceDoc200Response:
         """Update Dynamic Resource Doc
 
         <p>Update a Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
 
-        :param obpv400_update_bank_level_dynamic_resource_doc_request: Request body (required)
-        :type obpv400_update_bank_level_dynamic_resource_doc_request: OBPv400UpdateBankLevelDynamicResourceDocRequest
+        :param update_bank_level_dynamic_resource_doc_request: Request body (required)
+        :type update_bank_level_dynamic_resource_doc_request: UpdateBankLevelDynamicResourceDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2785,8 +2785,8 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_dynamic_resource_doc_serialize(
-            obpv400_update_bank_level_dynamic_resource_doc_request=obpv400_update_bank_level_dynamic_resource_doc_request,
+        _param = self._update_dynamic_resource_doc_serialize(
+            update_bank_level_dynamic_resource_doc_request=update_bank_level_dynamic_resource_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2794,7 +2794,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2809,9 +2809,9 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_dynamic_resource_doc_with_http_info(
+    def update_dynamic_resource_doc_with_http_info(
         self,
-        obpv400_update_bank_level_dynamic_resource_doc_request: Annotated[OBPv400UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
+        update_bank_level_dynamic_resource_doc_request: Annotated[UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2824,13 +2824,13 @@ class DynamicResourceDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetBankLevelDynamicResourceDoc200Response]:
+    ) -> ApiResponse[GetBankLevelDynamicResourceDoc200Response]:
         """Update Dynamic Resource Doc
 
         <p>Update a Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
 
-        :param obpv400_update_bank_level_dynamic_resource_doc_request: Request body (required)
-        :type obpv400_update_bank_level_dynamic_resource_doc_request: OBPv400UpdateBankLevelDynamicResourceDocRequest
+        :param update_bank_level_dynamic_resource_doc_request: Request body (required)
+        :type update_bank_level_dynamic_resource_doc_request: UpdateBankLevelDynamicResourceDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2853,8 +2853,8 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_dynamic_resource_doc_serialize(
-            obpv400_update_bank_level_dynamic_resource_doc_request=obpv400_update_bank_level_dynamic_resource_doc_request,
+        _param = self._update_dynamic_resource_doc_serialize(
+            update_bank_level_dynamic_resource_doc_request=update_bank_level_dynamic_resource_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2862,7 +2862,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2877,9 +2877,9 @@ class DynamicResourceDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_dynamic_resource_doc_without_preload_content(
+    def update_dynamic_resource_doc_without_preload_content(
         self,
-        obpv400_update_bank_level_dynamic_resource_doc_request: Annotated[OBPv400UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
+        update_bank_level_dynamic_resource_doc_request: Annotated[UpdateBankLevelDynamicResourceDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2897,8 +2897,8 @@ class DynamicResourceDocApi:
 
         <p>Update a Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
 
-        :param obpv400_update_bank_level_dynamic_resource_doc_request: Request body (required)
-        :type obpv400_update_bank_level_dynamic_resource_doc_request: OBPv400UpdateBankLevelDynamicResourceDocRequest
+        :param update_bank_level_dynamic_resource_doc_request: Request body (required)
+        :type update_bank_level_dynamic_resource_doc_request: UpdateBankLevelDynamicResourceDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2921,8 +2921,8 @@ class DynamicResourceDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_dynamic_resource_doc_serialize(
-            obpv400_update_bank_level_dynamic_resource_doc_request=obpv400_update_bank_level_dynamic_resource_doc_request,
+        _param = self._update_dynamic_resource_doc_serialize(
+            update_bank_level_dynamic_resource_doc_request=update_bank_level_dynamic_resource_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2930,7 +2930,7 @@ class DynamicResourceDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankLevelDynamicResourceDoc200Response",
+            '200': "GetBankLevelDynamicResourceDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2940,9 +2940,9 @@ class DynamicResourceDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_update_dynamic_resource_doc_serialize(
+    def _update_dynamic_resource_doc_serialize(
         self,
-        obpv400_update_bank_level_dynamic_resource_doc_request,
+        update_bank_level_dynamic_resource_doc_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2968,8 +2968,8 @@ class DynamicResourceDocApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_update_bank_level_dynamic_resource_doc_request is not None:
-            _body_params = obpv400_update_bank_level_dynamic_resource_doc_request
+        if update_bank_level_dynamic_resource_doc_request is not None:
+            _body_params = update_bank_level_dynamic_resource_doc_request
 
 
         # set the HTTP header `Accept`

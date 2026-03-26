@@ -18,9 +18,9 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv600_create_or_update_api_product_request import OBPv600CreateOrUpdateApiProductRequest
-from obp_python.models.obpv600_get_api_products200_response import OBPv600GetApiProducts200Response
-from obp_python.models.obpv600_get_api_products200_response_api_products_inner import OBPv600GetApiProducts200ResponseApiProductsInner
+from obp_python.models.create_or_update_api_product_request import CreateOrUpdateApiProductRequest
+from obp_python.models.get_api_products200_response import GetApiProducts200Response
+from obp_python.models.get_api_products200_response_api_products_inner import GetApiProducts200ResponseApiProductsInner
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -41,11 +41,11 @@ class ApiProductApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_api_product(
+    def create_api_product(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
-        obpv600_create_or_update_api_product_request: Annotated[OBPv600CreateOrUpdateApiProductRequest, Field(description="Request body")],
+        create_or_update_api_product_request: Annotated[CreateOrUpdateApiProductRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -58,7 +58,7 @@ class ApiProductApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetApiProducts200ResponseApiProductsInner:
+    ) -> GetApiProducts200ResponseApiProductsInner:
         """Create Api Product
 
         <p>Create an Api Product for the Bank.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#category\">category</a>:</p> <p><a href=\"/glossary#\">collection_id</a>: collection_id</p> <p><a href=\"/glossary#description\">description</a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\">monthly_subscription_amount</a>: monthly_subscription_amount</p> <p><a href=\"/glossary#\">monthly_subscription_currency</a>: monthly_subscription_currency</p> <p><a href=\"/glossary#more_info_url\">more_info_url</a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#\">parent_api_product_code</a>: parent_api_product_code</p> <p><a href=\"/glossary#per_day_call_limit\">per_day_call_limit</a>:</p> <p><a href=\"/glossary#per_hour_call_limit\">per_hour_call_limit</a>:</p> <p><a href=\"/glossary#per_minute_call_limit\">per_minute_call_limit</a>:</p> <p><a href=\"/glossary#per_month_call_limit\">per_month_call_limit</a>:</p> <p><a href=\"/glossary#per_second_call_limit\">per_second_call_limit</a>: 10</p> <p><a href=\"/glossary#per_week_call_limit\">per_week_call_limit</a>:</p> <p><a href=\"/glossary#\">terms_and_conditions_url</a>: <a href=\"http://www.example.com/xyz\">www.example.com/xyz</a></p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>api_product_id</strong></a>: api_product_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#\"><strong>collection_id</strong></a>: collection_id</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_amount</strong></a>: monthly_subscription_amount</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_currency</strong></a>: monthly_subscription_currency</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>parent_api_product_code</strong></a>: parent_api_product_code</p> <p><a href=\"/glossary#per_day_call_limit\"><strong>per_day_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_hour_call_limit\"><strong>per_hour_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_minute_call_limit\"><strong>per_minute_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_month_call_limit\"><strong>per_month_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_second_call_limit\"><strong>per_second_call_limit</strong></a>: 10</p> <p><a href=\"/glossary#per_week_call_limit\"><strong>per_week_call_limit</strong></a>:</p> <p><a href=\"/glossary#\"><strong>terms_and_conditions_url</strong></a>: <a href=\"http://www.example.com/xyz\">www.example.com/xyz</a></p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -67,8 +67,8 @@ class ApiProductApi:
         :type bankid: str
         :param apiproductcode: The APIPRODUCTCODE identifier (required)
         :type apiproductcode: str
-        :param obpv600_create_or_update_api_product_request: Request body (required)
-        :type obpv600_create_or_update_api_product_request: OBPv600CreateOrUpdateApiProductRequest
+        :param create_or_update_api_product_request: Request body (required)
+        :type create_or_update_api_product_request: CreateOrUpdateApiProductRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -91,10 +91,10 @@ class ApiProductApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_api_product_serialize(
+        _param = self._create_api_product_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
-            obpv600_create_or_update_api_product_request=obpv600_create_or_update_api_product_request,
+            create_or_update_api_product_request=create_or_update_api_product_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -102,7 +102,7 @@ class ApiProductApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetApiProducts200ResponseApiProductsInner",
+            '200': "GetApiProducts200ResponseApiProductsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -117,11 +117,11 @@ class ApiProductApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_api_product_with_http_info(
+    def create_api_product_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
-        obpv600_create_or_update_api_product_request: Annotated[OBPv600CreateOrUpdateApiProductRequest, Field(description="Request body")],
+        create_or_update_api_product_request: Annotated[CreateOrUpdateApiProductRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -134,7 +134,7 @@ class ApiProductApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetApiProducts200ResponseApiProductsInner]:
+    ) -> ApiResponse[GetApiProducts200ResponseApiProductsInner]:
         """Create Api Product
 
         <p>Create an Api Product for the Bank.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#category\">category</a>:</p> <p><a href=\"/glossary#\">collection_id</a>: collection_id</p> <p><a href=\"/glossary#description\">description</a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\">monthly_subscription_amount</a>: monthly_subscription_amount</p> <p><a href=\"/glossary#\">monthly_subscription_currency</a>: monthly_subscription_currency</p> <p><a href=\"/glossary#more_info_url\">more_info_url</a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#\">parent_api_product_code</a>: parent_api_product_code</p> <p><a href=\"/glossary#per_day_call_limit\">per_day_call_limit</a>:</p> <p><a href=\"/glossary#per_hour_call_limit\">per_hour_call_limit</a>:</p> <p><a href=\"/glossary#per_minute_call_limit\">per_minute_call_limit</a>:</p> <p><a href=\"/glossary#per_month_call_limit\">per_month_call_limit</a>:</p> <p><a href=\"/glossary#per_second_call_limit\">per_second_call_limit</a>: 10</p> <p><a href=\"/glossary#per_week_call_limit\">per_week_call_limit</a>:</p> <p><a href=\"/glossary#\">terms_and_conditions_url</a>: <a href=\"http://www.example.com/xyz\">www.example.com/xyz</a></p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>api_product_id</strong></a>: api_product_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#\"><strong>collection_id</strong></a>: collection_id</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_amount</strong></a>: monthly_subscription_amount</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_currency</strong></a>: monthly_subscription_currency</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>parent_api_product_code</strong></a>: parent_api_product_code</p> <p><a href=\"/glossary#per_day_call_limit\"><strong>per_day_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_hour_call_limit\"><strong>per_hour_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_minute_call_limit\"><strong>per_minute_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_month_call_limit\"><strong>per_month_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_second_call_limit\"><strong>per_second_call_limit</strong></a>: 10</p> <p><a href=\"/glossary#per_week_call_limit\"><strong>per_week_call_limit</strong></a>:</p> <p><a href=\"/glossary#\"><strong>terms_and_conditions_url</strong></a>: <a href=\"http://www.example.com/xyz\">www.example.com/xyz</a></p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -143,8 +143,8 @@ class ApiProductApi:
         :type bankid: str
         :param apiproductcode: The APIPRODUCTCODE identifier (required)
         :type apiproductcode: str
-        :param obpv600_create_or_update_api_product_request: Request body (required)
-        :type obpv600_create_or_update_api_product_request: OBPv600CreateOrUpdateApiProductRequest
+        :param create_or_update_api_product_request: Request body (required)
+        :type create_or_update_api_product_request: CreateOrUpdateApiProductRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -167,10 +167,10 @@ class ApiProductApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_api_product_serialize(
+        _param = self._create_api_product_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
-            obpv600_create_or_update_api_product_request=obpv600_create_or_update_api_product_request,
+            create_or_update_api_product_request=create_or_update_api_product_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -178,7 +178,7 @@ class ApiProductApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetApiProducts200ResponseApiProductsInner",
+            '200': "GetApiProducts200ResponseApiProductsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -193,11 +193,11 @@ class ApiProductApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_api_product_without_preload_content(
+    def create_api_product_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
-        obpv600_create_or_update_api_product_request: Annotated[OBPv600CreateOrUpdateApiProductRequest, Field(description="Request body")],
+        create_or_update_api_product_request: Annotated[CreateOrUpdateApiProductRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -219,8 +219,8 @@ class ApiProductApi:
         :type bankid: str
         :param apiproductcode: The APIPRODUCTCODE identifier (required)
         :type apiproductcode: str
-        :param obpv600_create_or_update_api_product_request: Request body (required)
-        :type obpv600_create_or_update_api_product_request: OBPv600CreateOrUpdateApiProductRequest
+        :param create_or_update_api_product_request: Request body (required)
+        :type create_or_update_api_product_request: CreateOrUpdateApiProductRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -243,10 +243,10 @@ class ApiProductApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_api_product_serialize(
+        _param = self._create_api_product_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
-            obpv600_create_or_update_api_product_request=obpv600_create_or_update_api_product_request,
+            create_or_update_api_product_request=create_or_update_api_product_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -254,7 +254,7 @@ class ApiProductApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetApiProducts200ResponseApiProductsInner",
+            '200': "GetApiProducts200ResponseApiProductsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -264,11 +264,11 @@ class ApiProductApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_create_api_product_serialize(
+    def _create_api_product_serialize(
         self,
         bankid,
         apiproductcode,
-        obpv600_create_or_update_api_product_request,
+        create_or_update_api_product_request,
         _request_auth,
         _content_type,
         _headers,
@@ -298,8 +298,8 @@ class ApiProductApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_create_or_update_api_product_request is not None:
-            _body_params = obpv600_create_or_update_api_product_request
+        if create_or_update_api_product_request is not None:
+            _body_params = create_or_update_api_product_request
 
 
         # set the HTTP header `Accept`
@@ -350,11 +350,11 @@ class ApiProductApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_or_update_api_product(
+    def create_or_update_api_product(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
-        obpv600_create_or_update_api_product_request: Annotated[OBPv600CreateOrUpdateApiProductRequest, Field(description="Request body")],
+        create_or_update_api_product_request: Annotated[CreateOrUpdateApiProductRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -367,7 +367,7 @@ class ApiProductApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetApiProducts200ResponseApiProductsInner:
+    ) -> GetApiProducts200ResponseApiProductsInner:
         """Create or Update Api Product
 
         <p>Create or Update an Api Product for the Bank.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>api_product_id</strong></a>: api_product_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#\"><strong>collection_id</strong></a>: collection_id</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_amount</strong></a>: monthly_subscription_amount</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_currency</strong></a>: monthly_subscription_currency</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>parent_api_product_code</strong></a>: parent_api_product_code</p> <p><a href=\"/glossary#per_day_call_limit\"><strong>per_day_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_hour_call_limit\"><strong>per_hour_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_minute_call_limit\"><strong>per_minute_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_month_call_limit\"><strong>per_month_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_second_call_limit\"><strong>per_second_call_limit</strong></a>: 10</p> <p><a href=\"/glossary#per_week_call_limit\"><strong>per_week_call_limit</strong></a>:</p> <p><a href=\"/glossary#\"><strong>terms_and_conditions_url</strong></a>: <a href=\"http://www.example.com/xyz\">www.example.com/xyz</a></p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -376,8 +376,8 @@ class ApiProductApi:
         :type bankid: str
         :param apiproductcode: The APIPRODUCTCODE identifier (required)
         :type apiproductcode: str
-        :param obpv600_create_or_update_api_product_request: Request body (required)
-        :type obpv600_create_or_update_api_product_request: OBPv600CreateOrUpdateApiProductRequest
+        :param create_or_update_api_product_request: Request body (required)
+        :type create_or_update_api_product_request: CreateOrUpdateApiProductRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -400,10 +400,10 @@ class ApiProductApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_or_update_api_product_serialize(
+        _param = self._create_or_update_api_product_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
-            obpv600_create_or_update_api_product_request=obpv600_create_or_update_api_product_request,
+            create_or_update_api_product_request=create_or_update_api_product_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -411,7 +411,7 @@ class ApiProductApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetApiProducts200ResponseApiProductsInner",
+            '200': "GetApiProducts200ResponseApiProductsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -426,11 +426,11 @@ class ApiProductApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_or_update_api_product_with_http_info(
+    def create_or_update_api_product_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
-        obpv600_create_or_update_api_product_request: Annotated[OBPv600CreateOrUpdateApiProductRequest, Field(description="Request body")],
+        create_or_update_api_product_request: Annotated[CreateOrUpdateApiProductRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -443,7 +443,7 @@ class ApiProductApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetApiProducts200ResponseApiProductsInner]:
+    ) -> ApiResponse[GetApiProducts200ResponseApiProductsInner]:
         """Create or Update Api Product
 
         <p>Create or Update an Api Product for the Bank.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>api_product_id</strong></a>: api_product_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#\"><strong>collection_id</strong></a>: collection_id</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_amount</strong></a>: monthly_subscription_amount</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_currency</strong></a>: monthly_subscription_currency</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>parent_api_product_code</strong></a>: parent_api_product_code</p> <p><a href=\"/glossary#per_day_call_limit\"><strong>per_day_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_hour_call_limit\"><strong>per_hour_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_minute_call_limit\"><strong>per_minute_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_month_call_limit\"><strong>per_month_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_second_call_limit\"><strong>per_second_call_limit</strong></a>: 10</p> <p><a href=\"/glossary#per_week_call_limit\"><strong>per_week_call_limit</strong></a>:</p> <p><a href=\"/glossary#\"><strong>terms_and_conditions_url</strong></a>: <a href=\"http://www.example.com/xyz\">www.example.com/xyz</a></p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -452,8 +452,8 @@ class ApiProductApi:
         :type bankid: str
         :param apiproductcode: The APIPRODUCTCODE identifier (required)
         :type apiproductcode: str
-        :param obpv600_create_or_update_api_product_request: Request body (required)
-        :type obpv600_create_or_update_api_product_request: OBPv600CreateOrUpdateApiProductRequest
+        :param create_or_update_api_product_request: Request body (required)
+        :type create_or_update_api_product_request: CreateOrUpdateApiProductRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -476,10 +476,10 @@ class ApiProductApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_or_update_api_product_serialize(
+        _param = self._create_or_update_api_product_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
-            obpv600_create_or_update_api_product_request=obpv600_create_or_update_api_product_request,
+            create_or_update_api_product_request=create_or_update_api_product_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -487,7 +487,7 @@ class ApiProductApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetApiProducts200ResponseApiProductsInner",
+            '200': "GetApiProducts200ResponseApiProductsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -502,11 +502,11 @@ class ApiProductApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_or_update_api_product_without_preload_content(
+    def create_or_update_api_product_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
-        obpv600_create_or_update_api_product_request: Annotated[OBPv600CreateOrUpdateApiProductRequest, Field(description="Request body")],
+        create_or_update_api_product_request: Annotated[CreateOrUpdateApiProductRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -528,8 +528,8 @@ class ApiProductApi:
         :type bankid: str
         :param apiproductcode: The APIPRODUCTCODE identifier (required)
         :type apiproductcode: str
-        :param obpv600_create_or_update_api_product_request: Request body (required)
-        :type obpv600_create_or_update_api_product_request: OBPv600CreateOrUpdateApiProductRequest
+        :param create_or_update_api_product_request: Request body (required)
+        :type create_or_update_api_product_request: CreateOrUpdateApiProductRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -552,10 +552,10 @@ class ApiProductApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_or_update_api_product_serialize(
+        _param = self._create_or_update_api_product_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
-            obpv600_create_or_update_api_product_request=obpv600_create_or_update_api_product_request,
+            create_or_update_api_product_request=create_or_update_api_product_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -563,7 +563,7 @@ class ApiProductApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetApiProducts200ResponseApiProductsInner",
+            '200': "GetApiProducts200ResponseApiProductsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -573,11 +573,11 @@ class ApiProductApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_create_or_update_api_product_serialize(
+    def _create_or_update_api_product_serialize(
         self,
         bankid,
         apiproductcode,
-        obpv600_create_or_update_api_product_request,
+        create_or_update_api_product_request,
         _request_auth,
         _content_type,
         _headers,
@@ -607,8 +607,8 @@ class ApiProductApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_create_or_update_api_product_request is not None:
-            _body_params = obpv600_create_or_update_api_product_request
+        if create_or_update_api_product_request is not None:
+            _body_params = create_or_update_api_product_request
 
 
         # set the HTTP header `Accept`
@@ -659,7 +659,7 @@ class ApiProductApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_api_product(
+    def delete_api_product(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
@@ -706,7 +706,7 @@ class ApiProductApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_api_product_serialize(
+        _param = self._delete_api_product_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
             _request_auth=_request_auth,
@@ -732,7 +732,7 @@ class ApiProductApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_api_product_with_http_info(
+    def delete_api_product_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
@@ -779,7 +779,7 @@ class ApiProductApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_api_product_serialize(
+        _param = self._delete_api_product_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
             _request_auth=_request_auth,
@@ -805,7 +805,7 @@ class ApiProductApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_api_product_without_preload_content(
+    def delete_api_product_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
@@ -852,7 +852,7 @@ class ApiProductApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_api_product_serialize(
+        _param = self._delete_api_product_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
             _request_auth=_request_auth,
@@ -873,7 +873,7 @@ class ApiProductApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_delete_api_product_serialize(
+    def _delete_api_product_serialize(
         self,
         bankid,
         apiproductcode,
@@ -936,7 +936,7 @@ class ApiProductApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_api_product(
+    def get_api_product(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
@@ -952,7 +952,7 @@ class ApiProductApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetApiProducts200ResponseApiProductsInner:
+    ) -> GetApiProducts200ResponseApiProductsInner:
         """Get Api Product
 
         <p>Get an Api Product by BANK_ID and API_PRODUCT_CODE.</p> <p>Returns the Api Product with its attributes.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>api_product_id</strong></a>: api_product_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#\"><strong>collection_id</strong></a>: collection_id</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_amount</strong></a>: monthly_subscription_amount</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_currency</strong></a>: monthly_subscription_currency</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>parent_api_product_code</strong></a>: parent_api_product_code</p> <p><a href=\"/glossary#per_day_call_limit\"><strong>per_day_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_hour_call_limit\"><strong>per_hour_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_minute_call_limit\"><strong>per_minute_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_month_call_limit\"><strong>per_month_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_second_call_limit\"><strong>per_second_call_limit</strong></a>: 10</p> <p><a href=\"/glossary#per_week_call_limit\"><strong>per_week_call_limit</strong></a>:</p> <p><a href=\"/glossary#\"><strong>terms_and_conditions_url</strong></a>: <a href=\"http://www.example.com/xyz\">www.example.com/xyz</a></p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -983,7 +983,7 @@ class ApiProductApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_api_product_serialize(
+        _param = self._get_api_product_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
             _request_auth=_request_auth,
@@ -993,7 +993,7 @@ class ApiProductApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetApiProducts200ResponseApiProductsInner",
+            '200': "GetApiProducts200ResponseApiProductsInner",
             '404': None,
             '500': None,
         }
@@ -1009,7 +1009,7 @@ class ApiProductApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_api_product_with_http_info(
+    def get_api_product_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
@@ -1025,7 +1025,7 @@ class ApiProductApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetApiProducts200ResponseApiProductsInner]:
+    ) -> ApiResponse[GetApiProducts200ResponseApiProductsInner]:
         """Get Api Product
 
         <p>Get an Api Product by BANK_ID and API_PRODUCT_CODE.</p> <p>Returns the Api Product with its attributes.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>api_product_id</strong></a>: api_product_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#\"><strong>collection_id</strong></a>: collection_id</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_amount</strong></a>: monthly_subscription_amount</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_currency</strong></a>: monthly_subscription_currency</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>parent_api_product_code</strong></a>: parent_api_product_code</p> <p><a href=\"/glossary#per_day_call_limit\"><strong>per_day_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_hour_call_limit\"><strong>per_hour_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_minute_call_limit\"><strong>per_minute_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_month_call_limit\"><strong>per_month_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_second_call_limit\"><strong>per_second_call_limit</strong></a>: 10</p> <p><a href=\"/glossary#per_week_call_limit\"><strong>per_week_call_limit</strong></a>:</p> <p><a href=\"/glossary#\"><strong>terms_and_conditions_url</strong></a>: <a href=\"http://www.example.com/xyz\">www.example.com/xyz</a></p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -1056,7 +1056,7 @@ class ApiProductApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_api_product_serialize(
+        _param = self._get_api_product_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
             _request_auth=_request_auth,
@@ -1066,7 +1066,7 @@ class ApiProductApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetApiProducts200ResponseApiProductsInner",
+            '200': "GetApiProducts200ResponseApiProductsInner",
             '404': None,
             '500': None,
         }
@@ -1082,7 +1082,7 @@ class ApiProductApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_api_product_without_preload_content(
+    def get_api_product_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
@@ -1129,7 +1129,7 @@ class ApiProductApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_api_product_serialize(
+        _param = self._get_api_product_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
             _request_auth=_request_auth,
@@ -1139,7 +1139,7 @@ class ApiProductApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetApiProducts200ResponseApiProductsInner",
+            '200': "GetApiProducts200ResponseApiProductsInner",
             '404': None,
             '500': None,
         }
@@ -1150,7 +1150,7 @@ class ApiProductApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_api_product_serialize(
+    def _get_api_product_serialize(
         self,
         bankid,
         apiproductcode,
@@ -1217,7 +1217,7 @@ class ApiProductApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_api_products(
+    def get_api_products(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1232,7 +1232,7 @@ class ApiProductApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetApiProducts200Response:
+    ) -> GetApiProducts200Response:
         """Get Api Products
 
         <p>Get Api Products for the Bank.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>api_product_id</strong></a>: api_product_id</p> <p><a href=\"/glossary#\"><strong>api_products</strong></a>: api_products</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#\"><strong>collection_id</strong></a>: collection_id</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_amount</strong></a>: monthly_subscription_amount</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_currency</strong></a>: monthly_subscription_currency</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>parent_api_product_code</strong></a>: parent_api_product_code</p> <p><a href=\"/glossary#per_day_call_limit\"><strong>per_day_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_hour_call_limit\"><strong>per_hour_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_minute_call_limit\"><strong>per_minute_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_month_call_limit\"><strong>per_month_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_second_call_limit\"><strong>per_second_call_limit</strong></a>: 10</p> <p><a href=\"/glossary#per_week_call_limit\"><strong>per_week_call_limit</strong></a>:</p> <p><a href=\"/glossary#\"><strong>terms_and_conditions_url</strong></a>: <a href=\"http://www.example.com/xyz\">www.example.com/xyz</a></p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -1261,7 +1261,7 @@ class ApiProductApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_api_products_serialize(
+        _param = self._get_api_products_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1270,7 +1270,7 @@ class ApiProductApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetApiProducts200Response",
+            '200': "GetApiProducts200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1285,7 +1285,7 @@ class ApiProductApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_api_products_with_http_info(
+    def get_api_products_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1300,7 +1300,7 @@ class ApiProductApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetApiProducts200Response]:
+    ) -> ApiResponse[GetApiProducts200Response]:
         """Get Api Products
 
         <p>Get Api Products for the Bank.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>api_product_id</strong></a>: api_product_id</p> <p><a href=\"/glossary#\"><strong>api_products</strong></a>: api_products</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#\"><strong>collection_id</strong></a>: collection_id</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_amount</strong></a>: monthly_subscription_amount</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_currency</strong></a>: monthly_subscription_currency</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>parent_api_product_code</strong></a>: parent_api_product_code</p> <p><a href=\"/glossary#per_day_call_limit\"><strong>per_day_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_hour_call_limit\"><strong>per_hour_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_minute_call_limit\"><strong>per_minute_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_month_call_limit\"><strong>per_month_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_second_call_limit\"><strong>per_second_call_limit</strong></a>: 10</p> <p><a href=\"/glossary#per_week_call_limit\"><strong>per_week_call_limit</strong></a>:</p> <p><a href=\"/glossary#\"><strong>terms_and_conditions_url</strong></a>: <a href=\"http://www.example.com/xyz\">www.example.com/xyz</a></p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -1329,7 +1329,7 @@ class ApiProductApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_api_products_serialize(
+        _param = self._get_api_products_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1338,7 +1338,7 @@ class ApiProductApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetApiProducts200Response",
+            '200': "GetApiProducts200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1353,7 +1353,7 @@ class ApiProductApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_api_products_without_preload_content(
+    def get_api_products_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1397,7 +1397,7 @@ class ApiProductApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_api_products_serialize(
+        _param = self._get_api_products_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1406,7 +1406,7 @@ class ApiProductApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetApiProducts200Response",
+            '200': "GetApiProducts200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1416,7 +1416,7 @@ class ApiProductApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_api_products_serialize(
+    def _get_api_products_serialize(
         self,
         bankid,
         _request_auth,

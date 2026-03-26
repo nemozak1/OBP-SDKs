@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,26 +24,26 @@ import (
 // PersonAPIService PersonAPI service
 type PersonAPIService service
 
-type ApiOBPv140AddCustomerMessageRequest struct {
+type ApiAddCustomerMessageRequest struct {
 	ctx context.Context
 	ApiService *PersonAPIService
 	bankid string
 	customerid string
-	oBPv140AddCustomerMessageRequest *OBPv140AddCustomerMessageRequest
+	addCustomerMessageRequest *AddCustomerMessageRequest
 }
 
 // Request body
-func (r ApiOBPv140AddCustomerMessageRequest) OBPv140AddCustomerMessageRequest(oBPv140AddCustomerMessageRequest OBPv140AddCustomerMessageRequest) ApiOBPv140AddCustomerMessageRequest {
-	r.oBPv140AddCustomerMessageRequest = &oBPv140AddCustomerMessageRequest
+func (r ApiAddCustomerMessageRequest) AddCustomerMessageRequest(addCustomerMessageRequest AddCustomerMessageRequest) ApiAddCustomerMessageRequest {
+	r.addCustomerMessageRequest = &addCustomerMessageRequest
 	return r
 }
 
-func (r ApiOBPv140AddCustomerMessageRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv140AddCustomerMessageExecute(r)
+func (r ApiAddCustomerMessageRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.AddCustomerMessageExecute(r)
 }
 
 /*
-OBPv140AddCustomerMessage Create Customer Message
+AddCustomerMessage Create Customer Message
 
 <p>Create a message for the customer specified by CUSTOMER_ID</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -61,10 +61,10 @@ OBPv140AddCustomerMessage Create Customer Message
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param customerid The CUSTOMERID identifier
- @return ApiOBPv140AddCustomerMessageRequest
+ @return ApiAddCustomerMessageRequest
 */
-func (a *PersonAPIService) OBPv140AddCustomerMessage(ctx context.Context, bankid string, customerid string) ApiOBPv140AddCustomerMessageRequest {
-	return ApiOBPv140AddCustomerMessageRequest{
+func (a *PersonAPIService) AddCustomerMessage(ctx context.Context, bankid string, customerid string) ApiAddCustomerMessageRequest {
+	return ApiAddCustomerMessageRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -73,16 +73,16 @@ func (a *PersonAPIService) OBPv140AddCustomerMessage(ctx context.Context, bankid
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *PersonAPIService) OBPv140AddCustomerMessageExecute(r ApiOBPv140AddCustomerMessageRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *PersonAPIService) AddCustomerMessageExecute(r ApiAddCustomerMessageRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PersonAPIService.OBPv140AddCustomerMessage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PersonAPIService.AddCustomerMessage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -94,8 +94,8 @@ func (a *PersonAPIService) OBPv140AddCustomerMessageExecute(r ApiOBPv140AddCusto
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv140AddCustomerMessageRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv140AddCustomerMessageRequest is required and must be specified")
+	if r.addCustomerMessageRequest == nil {
+		return localVarReturnValue, nil, reportError("addCustomerMessageRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -116,7 +116,7 @@ func (a *PersonAPIService) OBPv140AddCustomerMessageExecute(r ApiOBPv140AddCusto
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv140AddCustomerMessageRequest
+	localVarPostBody = r.addCustomerMessageRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -141,7 +141,7 @@ func (a *PersonAPIService) OBPv140AddCustomerMessageExecute(r ApiOBPv140AddCusto
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -182,184 +182,25 @@ func (a *PersonAPIService) OBPv140AddCustomerMessageExecute(r ApiOBPv140AddCusto
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateCustomerMessageRequest struct {
+type ApiCreateAgentRequest struct {
 	ctx context.Context
 	ApiService *PersonAPIService
 	bankid string
-	customerid string
-	oBPv400CreateCustomerMessageRequest *OBPv400CreateCustomerMessageRequest
+	createAgentRequest *CreateAgentRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateCustomerMessageRequest) OBPv400CreateCustomerMessageRequest(oBPv400CreateCustomerMessageRequest OBPv400CreateCustomerMessageRequest) ApiOBPv400CreateCustomerMessageRequest {
-	r.oBPv400CreateCustomerMessageRequest = &oBPv400CreateCustomerMessageRequest
+func (r ApiCreateAgentRequest) CreateAgentRequest(createAgentRequest CreateAgentRequest) ApiCreateAgentRequest {
+	r.createAgentRequest = &createAgentRequest
 	return r
 }
 
-func (r ApiOBPv400CreateCustomerMessageRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateCustomerMessageExecute(r)
+func (r ApiCreateAgentRequest) Execute() (*GetAgent200Response, *http.Response, error) {
+	return r.ApiService.CreateAgentExecute(r)
 }
 
 /*
-OBPv400CreateCustomerMessage Create Customer Message
-
-<p>Create a message for the customer specified by CUSTOMER_ID<br />
-User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#Customer.customer_id">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#from_department"><strong>from_department</strong></a>: Open Bank</p>
-<p><a href="/glossary#from_person"><strong>from_person</strong></a>: Tom</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#transport"><strong>transport</strong></a>: SMS</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param customerid The CUSTOMERID identifier
- @return ApiOBPv400CreateCustomerMessageRequest
-*/
-func (a *PersonAPIService) OBPv400CreateCustomerMessage(ctx context.Context, bankid string, customerid string) ApiOBPv400CreateCustomerMessageRequest {
-	return ApiOBPv400CreateCustomerMessageRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		customerid: customerid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *PersonAPIService) OBPv400CreateCustomerMessageExecute(r ApiOBPv400CreateCustomerMessageRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PersonAPIService.OBPv400CreateCustomerMessage")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"customerid"+"}", url.PathEscape(parameterValueToString(r.customerid, "customerid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400CreateCustomerMessageRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateCustomerMessageRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400CreateCustomerMessageRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510CreateAgentRequest struct {
-	ctx context.Context
-	ApiService *PersonAPIService
-	bankid string
-	oBPv510CreateAgentRequest *OBPv510CreateAgentRequest
-}
-
-// Request body
-func (r ApiOBPv510CreateAgentRequest) OBPv510CreateAgentRequest(oBPv510CreateAgentRequest OBPv510CreateAgentRequest) ApiOBPv510CreateAgentRequest {
-	r.oBPv510CreateAgentRequest = &oBPv510CreateAgentRequest
-	return r
-}
-
-func (r ApiOBPv510CreateAgentRequest) Execute() (*OBPv510GetAgent200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateAgentExecute(r)
-}
-
-/*
-OBPv510CreateAgent Create Agent
+CreateAgent Create Agent
 
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
@@ -382,10 +223,10 @@ OBPv510CreateAgent Create Agent
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv510CreateAgentRequest
+ @return ApiCreateAgentRequest
 */
-func (a *PersonAPIService) OBPv510CreateAgent(ctx context.Context, bankid string) ApiOBPv510CreateAgentRequest {
-	return ApiOBPv510CreateAgentRequest{
+func (a *PersonAPIService) CreateAgent(ctx context.Context, bankid string) ApiCreateAgentRequest {
+	return ApiCreateAgentRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -393,16 +234,16 @@ func (a *PersonAPIService) OBPv510CreateAgent(ctx context.Context, bankid string
 }
 
 // Execute executes the request
-//  @return OBPv510GetAgent200Response
-func (a *PersonAPIService) OBPv510CreateAgentExecute(r ApiOBPv510CreateAgentRequest) (*OBPv510GetAgent200Response, *http.Response, error) {
+//  @return GetAgent200Response
+func (a *PersonAPIService) CreateAgentExecute(r ApiCreateAgentRequest) (*GetAgent200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAgent200Response
+		localVarReturnValue  *GetAgent200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PersonAPIService.OBPv510CreateAgent")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PersonAPIService.CreateAgent")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -413,8 +254,8 @@ func (a *PersonAPIService) OBPv510CreateAgentExecute(r ApiOBPv510CreateAgentRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510CreateAgentRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510CreateAgentRequest is required and must be specified")
+	if r.createAgentRequest == nil {
+		return localVarReturnValue, nil, reportError("createAgentRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -435,7 +276,7 @@ func (a *PersonAPIService) OBPv510CreateAgentExecute(r ApiOBPv510CreateAgentRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510CreateAgentRequest
+	localVarPostBody = r.createAgentRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -460,7 +301,7 @@ func (a *PersonAPIService) OBPv510CreateAgentExecute(r ApiOBPv510CreateAgentRequ
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -501,185 +342,25 @@ func (a *PersonAPIService) OBPv510CreateAgentExecute(r ApiOBPv510CreateAgentRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510UpdateAgentStatusRequest struct {
+type ApiCreateCustomerRequest struct {
 	ctx context.Context
 	ApiService *PersonAPIService
 	bankid string
-	agentid string
-	oBPv510UpdateAgentStatusRequest *OBPv510UpdateAgentStatusRequest
+	createCustomerRequest *CreateCustomerRequest
 }
 
 // Request body
-func (r ApiOBPv510UpdateAgentStatusRequest) OBPv510UpdateAgentStatusRequest(oBPv510UpdateAgentStatusRequest OBPv510UpdateAgentStatusRequest) ApiOBPv510UpdateAgentStatusRequest {
-	r.oBPv510UpdateAgentStatusRequest = &oBPv510UpdateAgentStatusRequest
+func (r ApiCreateCustomerRequest) CreateCustomerRequest(createCustomerRequest CreateCustomerRequest) ApiCreateCustomerRequest {
+	r.createCustomerRequest = &createCustomerRequest
 	return r
 }
 
-func (r ApiOBPv510UpdateAgentStatusRequest) Execute() (*OBPv510GetAgent200Response, *http.Response, error) {
-	return r.ApiService.OBPv510UpdateAgentStatusExecute(r)
+func (r ApiCreateCustomerRequest) Execute() (*GetCustomerChildren200ResponseCustomersInner, *http.Response, error) {
+	return r.ApiService.CreateCustomerExecute(r)
 }
 
 /*
-OBPv510UpdateAgentStatus Update Agent status
-
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">AGENT_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>agent_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>is_confirmed_agent</strong></a>: is_confirmed_agent</p>
-<p><a href="/glossary#"><strong>is_pending_agent</strong></a>: is_pending_agent</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param agentid The AGENTID identifier
- @return ApiOBPv510UpdateAgentStatusRequest
-*/
-func (a *PersonAPIService) OBPv510UpdateAgentStatus(ctx context.Context, bankid string, agentid string) ApiOBPv510UpdateAgentStatusRequest {
-	return ApiOBPv510UpdateAgentStatusRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		agentid: agentid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510GetAgent200Response
-func (a *PersonAPIService) OBPv510UpdateAgentStatusExecute(r ApiOBPv510UpdateAgentStatusRequest) (*OBPv510GetAgent200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAgent200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PersonAPIService.OBPv510UpdateAgentStatus")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/agents/{agentid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"agentid"+"}", url.PathEscape(parameterValueToString(r.agentid, "agentid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAgentStatusRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAgentStatusRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv510UpdateAgentStatusRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600CreateCustomerRequest struct {
-	ctx context.Context
-	ApiService *PersonAPIService
-	bankid string
-	oBPv600CreateCustomerRequest *OBPv600CreateCustomerRequest
-}
-
-// Request body
-func (r ApiOBPv600CreateCustomerRequest) OBPv600CreateCustomerRequest(oBPv600CreateCustomerRequest OBPv600CreateCustomerRequest) ApiOBPv600CreateCustomerRequest {
-	r.oBPv600CreateCustomerRequest = &oBPv600CreateCustomerRequest
-	return r
-}
-
-func (r ApiOBPv600CreateCustomerRequest) Execute() (*OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems, *http.Response, error) {
-	return r.ApiService.OBPv600CreateCustomerExecute(r)
-}
-
-/*
-OBPv600CreateCustomer Create Customer
+CreateCustomer Create Customer
 
 <p>The Customer resource stores the customer number, legal name, email, phone number, date of birth, relationship status,<br />
 education attained, a url for a profile image, KYC status, credit rating, credit limit, and other customer information.</p>
@@ -736,12 +417,12 @@ Dates are stored with time set to midnight (00:00:00) UTC for consistency.</p>
 <p><a href="/glossary#">date_of_birth</a>: 2018-03-09</p>
 <p><a href="/glossary#">dependants</a>: 1</p>
 <p><a href="/glossary#dob_of_dependants">dob_of_dependants</a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#">email</a>: <a href="&#x6d;a&#105;&#108;to&#58;&#102;e&#108;&#x69;&#120;&#x73;&#x6d;&#x69;t&#x68;&#64;&#101;&#120;&#97;&#x6d;&#112;&#108;&#101;.c&#111;m">&#x66;&#101;&#108;i&#120;s&#x6d;&#x69;&#116;h&#x40;&#101;&#x78;&#x61;mpl&#101;&#x2e;c&#x6f;m</a></p>
+<p><a href="/glossary#">email</a>: <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#x66;&#x65;&#x6c;&#x69;x&#x73;&#x6d;&#x69;&#116;h&#64;&#x65;&#x78;&#x61;&#109;&#x70;&#x6c;&#101;&#46;&#x63;&#x6f;&#x6d;">&#x66;&#101;&#108;&#x69;&#x78;&#115;&#109;&#105;&#116;h&#64;&#x65;&#120;&#97;mp&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#">employment_status</a>: worker</p>
 <p><a href="/glossary#face_image">face_image</a>:</p>
 <p><a href="/glossary#">highest_education_attained</a>: Master</p>
 <p><a href="/glossary#">kyc_status</a>: false</p>
-<p><a href="/glossary#last_ok_date">last_ok_date</a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date">last_ok_date</a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#">name_suffix</a>: Sr</p>
 <p><a href="/glossary#">parent_customer_id</a>:</p>
 <p><a href="/glossary#">relationship_status</a>: single</p>
@@ -758,12 +439,12 @@ Dates are stored with time set to midnight (00:00:00) UTC for consistency.</p>
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;ail&#116;&#111;&#58;&#102;&#101;&#x6c;&#105;x&#x73;&#109;it&#x68;&#x40;&#101;x&#97;&#109;&#112;&#108;&#x65;.&#99;&#111;&#x6d;">&#102;&#x65;&#108;&#105;&#x78;&#x73;&#x6d;&#x69;&#116;&#x68;&#x40;&#x65;&#120;&#97;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#x66;&#101;l&#x69;&#x78;&#115;&#x6d;&#x69;&#x74;&#104;@&#101;&#x78;a&#109;&#x70;&#x6c;&#101;&#46;c&#111;&#109;">&#102;&#x65;&#x6c;&#105;&#120;&#x73;&#109;&#x69;&#116;h@&#101;&#x78;&#x61;mp&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -779,10 +460,10 @@ Dates are stored with time set to midnight (00:00:00) UTC for consistency.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv600CreateCustomerRequest
+ @return ApiCreateCustomerRequest
 */
-func (a *PersonAPIService) OBPv600CreateCustomer(ctx context.Context, bankid string) ApiOBPv600CreateCustomerRequest {
-	return ApiOBPv600CreateCustomerRequest{
+func (a *PersonAPIService) CreateCustomer(ctx context.Context, bankid string) ApiCreateCustomerRequest {
+	return ApiCreateCustomerRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -790,16 +471,16 @@ func (a *PersonAPIService) OBPv600CreateCustomer(ctx context.Context, bankid str
 }
 
 // Execute executes the request
-//  @return OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems
-func (a *PersonAPIService) OBPv600CreateCustomerExecute(r ApiOBPv600CreateCustomerRequest) (*OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems, *http.Response, error) {
+//  @return GetCustomerChildren200ResponseCustomersInner
+func (a *PersonAPIService) CreateCustomerExecute(r ApiCreateCustomerRequest) (*GetCustomerChildren200ResponseCustomersInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems
+		localVarReturnValue  *GetCustomerChildren200ResponseCustomersInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PersonAPIService.OBPv600CreateCustomer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PersonAPIService.CreateCustomer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -810,8 +491,8 @@ func (a *PersonAPIService) OBPv600CreateCustomerExecute(r ApiOBPv600CreateCustom
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreateCustomerRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateCustomerRequest is required and must be specified")
+	if r.createCustomerRequest == nil {
+		return localVarReturnValue, nil, reportError("createCustomerRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -832,7 +513,7 @@ func (a *PersonAPIService) OBPv600CreateCustomerExecute(r ApiOBPv600CreateCustom
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreateCustomerRequest
+	localVarPostBody = r.createCustomerRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -857,7 +538,326 @@ func (a *PersonAPIService) OBPv600CreateCustomerExecute(r ApiOBPv600CreateCustom
 				} else {
 					key = apiKey.Key
 				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateCustomerMessageRequest struct {
+	ctx context.Context
+	ApiService *PersonAPIService
+	bankid string
+	customerid string
+	createCustomerMessageRequest *CreateCustomerMessageRequest
+}
+
+// Request body
+func (r ApiCreateCustomerMessageRequest) CreateCustomerMessageRequest(createCustomerMessageRequest CreateCustomerMessageRequest) ApiCreateCustomerMessageRequest {
+	r.createCustomerMessageRequest = &createCustomerMessageRequest
+	return r
+}
+
+func (r ApiCreateCustomerMessageRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.CreateCustomerMessageExecute(r)
+}
+
+/*
+CreateCustomerMessage Create Customer Message
+
+<p>Create a message for the customer specified by CUSTOMER_ID<br />
+User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#Customer.customer_id">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#from_department"><strong>from_department</strong></a>: Open Bank</p>
+<p><a href="/glossary#from_person"><strong>from_person</strong></a>: Tom</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#transport"><strong>transport</strong></a>: SMS</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param customerid The CUSTOMERID identifier
+ @return ApiCreateCustomerMessageRequest
+*/
+func (a *PersonAPIService) CreateCustomerMessage(ctx context.Context, bankid string, customerid string) ApiCreateCustomerMessageRequest {
+	return ApiCreateCustomerMessageRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		customerid: customerid,
+	}
+}
+
+// Execute executes the request
+//  @return UpdateTransactionNarrative200Response
+func (a *PersonAPIService) CreateCustomerMessageExecute(r ApiCreateCustomerMessageRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UpdateTransactionNarrative200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PersonAPIService.CreateCustomerMessage")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerid"+"}", url.PathEscape(parameterValueToString(r.customerid, "customerid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createCustomerMessageRequest == nil {
+		return localVarReturnValue, nil, reportError("createCustomerMessageRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createCustomerMessageRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
 				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateAgentStatusRequest struct {
+	ctx context.Context
+	ApiService *PersonAPIService
+	bankid string
+	agentid string
+	updateAgentStatusRequest *UpdateAgentStatusRequest
+}
+
+// Request body
+func (r ApiUpdateAgentStatusRequest) UpdateAgentStatusRequest(updateAgentStatusRequest UpdateAgentStatusRequest) ApiUpdateAgentStatusRequest {
+	r.updateAgentStatusRequest = &updateAgentStatusRequest
+	return r
+}
+
+func (r ApiUpdateAgentStatusRequest) Execute() (*GetAgent200Response, *http.Response, error) {
+	return r.ApiService.UpdateAgentStatusExecute(r)
+}
+
+/*
+UpdateAgentStatus Update Agent status
+
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">AGENT_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>agent_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>is_confirmed_agent</strong></a>: is_confirmed_agent</p>
+<p><a href="/glossary#"><strong>is_pending_agent</strong></a>: is_pending_agent</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param agentid The AGENTID identifier
+ @return ApiUpdateAgentStatusRequest
+*/
+func (a *PersonAPIService) UpdateAgentStatus(ctx context.Context, bankid string, agentid string) ApiUpdateAgentStatusRequest {
+	return ApiUpdateAgentStatusRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		agentid: agentid,
+	}
+}
+
+// Execute executes the request
+//  @return GetAgent200Response
+func (a *PersonAPIService) UpdateAgentStatusExecute(r ApiUpdateAgentStatusRequest) (*GetAgent200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetAgent200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PersonAPIService.UpdateAgentStatus")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/agents/{agentid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"agentid"+"}", url.PathEscape(parameterValueToString(r.agentid, "agentid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateAgentStatusRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAgentStatusRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateAgentStatusRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

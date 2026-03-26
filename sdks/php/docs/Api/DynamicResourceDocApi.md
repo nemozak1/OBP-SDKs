@@ -2,27 +2,27 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400BuildDynamicEndpointTemplate()**](DynamicResourceDocApi.md#oBPv400BuildDynamicEndpointTemplate) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code |
-| [**oBPv400CreateBankLevelDynamicResourceDoc()**](DynamicResourceDocApi.md#oBPv400CreateBankLevelDynamicResourceDoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc |
-| [**oBPv400CreateDynamicResourceDoc()**](DynamicResourceDocApi.md#oBPv400CreateDynamicResourceDoc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc |
-| [**oBPv400DeleteBankLevelDynamicResourceDoc()**](DynamicResourceDocApi.md#oBPv400DeleteBankLevelDynamicResourceDoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc |
-| [**oBPv400DeleteDynamicResourceDoc()**](DynamicResourceDocApi.md#oBPv400DeleteDynamicResourceDoc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc |
-| [**oBPv400GetAllBankLevelDynamicResourceDocs()**](DynamicResourceDocApi.md#oBPv400GetAllBankLevelDynamicResourceDocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs |
-| [**oBPv400GetAllDynamicResourceDocs()**](DynamicResourceDocApi.md#oBPv400GetAllDynamicResourceDocs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs |
-| [**oBPv400GetBankLevelDynamicResourceDoc()**](DynamicResourceDocApi.md#oBPv400GetBankLevelDynamicResourceDoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id |
-| [**oBPv400GetDynamicResourceDoc()**](DynamicResourceDocApi.md#oBPv400GetDynamicResourceDoc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id |
-| [**oBPv400UpdateBankLevelDynamicResourceDoc()**](DynamicResourceDocApi.md#oBPv400UpdateBankLevelDynamicResourceDoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc |
-| [**oBPv400UpdateDynamicResourceDoc()**](DynamicResourceDocApi.md#oBPv400UpdateDynamicResourceDoc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc |
+| [**buildDynamicEndpointTemplate()**](DynamicResourceDocApi.md#buildDynamicEndpointTemplate) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code |
+| [**createBankLevelDynamicResourceDoc()**](DynamicResourceDocApi.md#createBankLevelDynamicResourceDoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc |
+| [**createDynamicResourceDoc()**](DynamicResourceDocApi.md#createDynamicResourceDoc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc |
+| [**deleteBankLevelDynamicResourceDoc()**](DynamicResourceDocApi.md#deleteBankLevelDynamicResourceDoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc |
+| [**deleteDynamicResourceDoc()**](DynamicResourceDocApi.md#deleteDynamicResourceDoc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc |
+| [**getAllBankLevelDynamicResourceDocs()**](DynamicResourceDocApi.md#getAllBankLevelDynamicResourceDocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs |
+| [**getAllDynamicResourceDocs()**](DynamicResourceDocApi.md#getAllDynamicResourceDocs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs |
+| [**getBankLevelDynamicResourceDoc()**](DynamicResourceDocApi.md#getBankLevelDynamicResourceDoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id |
+| [**getDynamicResourceDoc()**](DynamicResourceDocApi.md#getDynamicResourceDoc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id |
+| [**updateBankLevelDynamicResourceDoc()**](DynamicResourceDocApi.md#updateBankLevelDynamicResourceDoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc |
+| [**updateDynamicResourceDoc()**](DynamicResourceDocApi.md#updateDynamicResourceDoc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc |
 
 
-## `oBPv400BuildDynamicEndpointTemplate()`
+## `buildDynamicEndpointTemplate()`
 
 ```php
-oBPv400BuildDynamicEndpointTemplate($obpv400_build_dynamic_endpoint_template_request): \OpenBankProject\Model\OBPv400BuildDynamicEndpointTemplate200Response
+buildDynamicEndpointTemplate($build_dynamic_endpoint_template_request): \OpenBankProject\Model\BuildDynamicEndpointTemplate200Response
 ```
 
 Create Dynamic Resource Doc endpoint code
@@ -45,9 +45,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
@@ -56,13 +56,13 @@ $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
     new GuzzleHttp\Client(),
     $config
 );
-$obpv400_build_dynamic_endpoint_template_request = {"type":"object","properties":{"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"request_url":{"type":"string"}}}; // \OpenBankProject\Model\OBPv400BuildDynamicEndpointTemplateRequest | Request body
+$build_dynamic_endpoint_template_request = {"type":"object","properties":{"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"request_url":{"type":"string"}}}; // \OpenBankProject\Model\BuildDynamicEndpointTemplateRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400BuildDynamicEndpointTemplate($obpv400_build_dynamic_endpoint_template_request);
+    $result = $apiInstance->buildDynamicEndpointTemplate($build_dynamic_endpoint_template_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicResourceDocApi->oBPv400BuildDynamicEndpointTemplate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicResourceDocApi->buildDynamicEndpointTemplate: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -70,11 +70,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obpv400_build_dynamic_endpoint_template_request** | [**\OpenBankProject\Model\OBPv400BuildDynamicEndpointTemplateRequest**](../Model/OBPv400BuildDynamicEndpointTemplateRequest.md)| Request body | |
+| **build_dynamic_endpoint_template_request** | [**\OpenBankProject\Model\BuildDynamicEndpointTemplateRequest**](../Model/BuildDynamicEndpointTemplateRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400BuildDynamicEndpointTemplate200Response**](../Model/OBPv400BuildDynamicEndpointTemplate200Response.md)
+[**\OpenBankProject\Model\BuildDynamicEndpointTemplate200Response**](../Model/BuildDynamicEndpointTemplate200Response.md)
 
 ### Authorization
 
@@ -89,10 +89,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400CreateBankLevelDynamicResourceDoc()`
+## `createBankLevelDynamicResourceDoc()`
 
 ```php
-oBPv400CreateBankLevelDynamicResourceDoc($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request): \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response
+createBankLevelDynamicResourceDoc($bankid, $update_bank_level_dynamic_resource_doc_request): \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response
 ```
 
 Create Bank Level Dynamic Resource Doc
@@ -115,9 +115,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
@@ -127,13 +127,13 @@ $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
     $config
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
-$obpv400_update_bank_level_dynamic_resource_doc_request = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}}; // \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+$update_bank_level_dynamic_resource_doc_request = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}}; // \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400CreateBankLevelDynamicResourceDoc($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request);
+    $result = $apiInstance->createBankLevelDynamicResourceDoc($bankid, $update_bank_level_dynamic_resource_doc_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicResourceDocApi->oBPv400CreateBankLevelDynamicResourceDoc: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicResourceDocApi->createBankLevelDynamicResourceDoc: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -142,11 +142,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
-| **obpv400_update_bank_level_dynamic_resource_doc_request** | [**\OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest**](../Model/OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
+| **update_bank_level_dynamic_resource_doc_request** | [**\OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest**](../Model/UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response**](../Model/OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response**](../Model/GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -161,10 +161,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400CreateDynamicResourceDoc()`
+## `createDynamicResourceDoc()`
 
 ```php
-oBPv400CreateDynamicResourceDoc($obpv400_update_bank_level_dynamic_resource_doc_request): \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response
+createDynamicResourceDoc($update_bank_level_dynamic_resource_doc_request): \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response
 ```
 
 Create Dynamic Resource Doc
@@ -187,9 +187,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
@@ -198,13 +198,13 @@ $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
     new GuzzleHttp\Client(),
     $config
 );
-$obpv400_update_bank_level_dynamic_resource_doc_request = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}}; // \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+$update_bank_level_dynamic_resource_doc_request = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}}; // \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400CreateDynamicResourceDoc($obpv400_update_bank_level_dynamic_resource_doc_request);
+    $result = $apiInstance->createDynamicResourceDoc($update_bank_level_dynamic_resource_doc_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicResourceDocApi->oBPv400CreateDynamicResourceDoc: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicResourceDocApi->createDynamicResourceDoc: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -212,11 +212,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obpv400_update_bank_level_dynamic_resource_doc_request** | [**\OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest**](../Model/OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
+| **update_bank_level_dynamic_resource_doc_request** | [**\OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest**](../Model/UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response**](../Model/OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response**](../Model/GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -231,10 +231,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400DeleteBankLevelDynamicResourceDoc()`
+## `deleteBankLevelDynamicResourceDoc()`
 
 ```php
-oBPv400DeleteBankLevelDynamicResourceDoc($bankid)
+deleteBankLevelDynamicResourceDoc($bankid)
 ```
 
 Delete Bank Level Dynamic Resource Doc
@@ -257,9 +257,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
@@ -271,9 +271,9 @@ $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 
 try {
-    $apiInstance->oBPv400DeleteBankLevelDynamicResourceDoc($bankid);
+    $apiInstance->deleteBankLevelDynamicResourceDoc($bankid);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicResourceDocApi->oBPv400DeleteBankLevelDynamicResourceDoc: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicResourceDocApi->deleteBankLevelDynamicResourceDoc: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -300,10 +300,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400DeleteDynamicResourceDoc()`
+## `deleteDynamicResourceDoc()`
 
 ```php
-oBPv400DeleteDynamicResourceDoc()
+deleteDynamicResourceDoc()
 ```
 
 Delete Dynamic Resource Doc
@@ -326,9 +326,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
@@ -339,9 +339,9 @@ $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
 );
 
 try {
-    $apiInstance->oBPv400DeleteDynamicResourceDoc();
+    $apiInstance->deleteDynamicResourceDoc();
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicResourceDocApi->oBPv400DeleteDynamicResourceDoc: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicResourceDocApi->deleteDynamicResourceDoc: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -366,10 +366,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetAllBankLevelDynamicResourceDocs()`
+## `getAllBankLevelDynamicResourceDocs()`
 
 ```php
-oBPv400GetAllBankLevelDynamicResourceDocs($bankid): \OpenBankProject\Model\OBPv400GetAllDynamicResourceDocs200Response
+getAllBankLevelDynamicResourceDocs($bankid): \OpenBankProject\Model\GetAllDynamicResourceDocs200Response
 ```
 
 Get all Bank Level Dynamic Resource Docs
@@ -392,9 +392,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
@@ -406,10 +406,10 @@ $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 
 try {
-    $result = $apiInstance->oBPv400GetAllBankLevelDynamicResourceDocs($bankid);
+    $result = $apiInstance->getAllBankLevelDynamicResourceDocs($bankid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicResourceDocApi->oBPv400GetAllBankLevelDynamicResourceDocs: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicResourceDocApi->getAllBankLevelDynamicResourceDocs: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -421,7 +421,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetAllDynamicResourceDocs200Response**](../Model/OBPv400GetAllDynamicResourceDocs200Response.md)
+[**\OpenBankProject\Model\GetAllDynamicResourceDocs200Response**](../Model/GetAllDynamicResourceDocs200Response.md)
 
 ### Authorization
 
@@ -436,10 +436,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetAllDynamicResourceDocs()`
+## `getAllDynamicResourceDocs()`
 
 ```php
-oBPv400GetAllDynamicResourceDocs(): \OpenBankProject\Model\OBPv400GetAllDynamicResourceDocs200Response
+getAllDynamicResourceDocs(): \OpenBankProject\Model\GetAllDynamicResourceDocs200Response
 ```
 
 Get all Dynamic Resource Docs
@@ -462,9 +462,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
@@ -475,10 +475,10 @@ $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
 );
 
 try {
-    $result = $apiInstance->oBPv400GetAllDynamicResourceDocs();
+    $result = $apiInstance->getAllDynamicResourceDocs();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicResourceDocApi->oBPv400GetAllDynamicResourceDocs: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicResourceDocApi->getAllDynamicResourceDocs: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -488,7 +488,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetAllDynamicResourceDocs200Response**](../Model/OBPv400GetAllDynamicResourceDocs200Response.md)
+[**\OpenBankProject\Model\GetAllDynamicResourceDocs200Response**](../Model/GetAllDynamicResourceDocs200Response.md)
 
 ### Authorization
 
@@ -503,10 +503,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetBankLevelDynamicResourceDoc()`
+## `getBankLevelDynamicResourceDoc()`
 
 ```php
-oBPv400GetBankLevelDynamicResourceDoc($bankid): \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response
+getBankLevelDynamicResourceDoc($bankid): \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response
 ```
 
 Get Bank Level Dynamic Resource Doc by Id
@@ -529,9 +529,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
@@ -543,10 +543,10 @@ $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 
 try {
-    $result = $apiInstance->oBPv400GetBankLevelDynamicResourceDoc($bankid);
+    $result = $apiInstance->getBankLevelDynamicResourceDoc($bankid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicResourceDocApi->oBPv400GetBankLevelDynamicResourceDoc: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicResourceDocApi->getBankLevelDynamicResourceDoc: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -558,7 +558,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response**](../Model/OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response**](../Model/GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -573,10 +573,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetDynamicResourceDoc()`
+## `getDynamicResourceDoc()`
 
 ```php
-oBPv400GetDynamicResourceDoc(): \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response
+getDynamicResourceDoc(): \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response
 ```
 
 Get Dynamic Resource Doc by Id
@@ -599,9 +599,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
@@ -612,10 +612,10 @@ $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
 );
 
 try {
-    $result = $apiInstance->oBPv400GetDynamicResourceDoc();
+    $result = $apiInstance->getDynamicResourceDoc();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicResourceDocApi->oBPv400GetDynamicResourceDoc: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicResourceDocApi->getDynamicResourceDoc: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -625,7 +625,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response**](../Model/OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response**](../Model/GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -640,10 +640,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400UpdateBankLevelDynamicResourceDoc()`
+## `updateBankLevelDynamicResourceDoc()`
 
 ```php
-oBPv400UpdateBankLevelDynamicResourceDoc($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request): \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response
+updateBankLevelDynamicResourceDoc($bankid, $update_bank_level_dynamic_resource_doc_request): \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response
 ```
 
 Update Bank Level Dynamic Resource Doc
@@ -666,9 +666,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
@@ -678,13 +678,13 @@ $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
     $config
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
-$obpv400_update_bank_level_dynamic_resource_doc_request = {"type":"object","properties":{"tags":{"type":"string"},"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"bank_id":{"type":"string"},"partial_function_name":{"type":"string"},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"roles":{"type":"string"},"summary":{"type":"string"},"request_url":{"type":"string"},"description":{"type":"string"},"method_body":{"type":"string"},"error_response_bodies":{"type":"string"}}}; // \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+$update_bank_level_dynamic_resource_doc_request = {"type":"object","properties":{"tags":{"type":"string"},"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"bank_id":{"type":"string"},"partial_function_name":{"type":"string"},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"roles":{"type":"string"},"summary":{"type":"string"},"request_url":{"type":"string"},"description":{"type":"string"},"method_body":{"type":"string"},"error_response_bodies":{"type":"string"}}}; // \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400UpdateBankLevelDynamicResourceDoc($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request);
+    $result = $apiInstance->updateBankLevelDynamicResourceDoc($bankid, $update_bank_level_dynamic_resource_doc_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicResourceDocApi->oBPv400UpdateBankLevelDynamicResourceDoc: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicResourceDocApi->updateBankLevelDynamicResourceDoc: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -693,11 +693,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
-| **obpv400_update_bank_level_dynamic_resource_doc_request** | [**\OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest**](../Model/OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
+| **update_bank_level_dynamic_resource_doc_request** | [**\OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest**](../Model/UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response**](../Model/OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response**](../Model/GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -712,10 +712,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400UpdateDynamicResourceDoc()`
+## `updateDynamicResourceDoc()`
 
 ```php
-oBPv400UpdateDynamicResourceDoc($obpv400_update_bank_level_dynamic_resource_doc_request): \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response
+updateDynamicResourceDoc($update_bank_level_dynamic_resource_doc_request): \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response
 ```
 
 Update Dynamic Resource Doc
@@ -738,9 +738,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
@@ -749,13 +749,13 @@ $apiInstance = new OpenBankProject\Api\DynamicResourceDocApi(
     new GuzzleHttp\Client(),
     $config
 );
-$obpv400_update_bank_level_dynamic_resource_doc_request = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}}; // \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+$update_bank_level_dynamic_resource_doc_request = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}}; // \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400UpdateDynamicResourceDoc($obpv400_update_bank_level_dynamic_resource_doc_request);
+    $result = $apiInstance->updateDynamicResourceDoc($update_bank_level_dynamic_resource_doc_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicResourceDocApi->oBPv400UpdateDynamicResourceDoc: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicResourceDocApi->updateDynamicResourceDoc: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -763,11 +763,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obpv400_update_bank_level_dynamic_resource_doc_request** | [**\OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest**](../Model/OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
+| **update_bank_level_dynamic_resource_doc_request** | [**\OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest**](../Model/UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response**](../Model/OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response**](../Model/GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 

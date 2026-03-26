@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,106 +15,106 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv4_0_0_create_bank_level_dynamic_endpoint`]
+/// struct for typed errors of method [`create_bank_level_dynamic_endpoint`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400CreateBankLevelDynamicEndpointError {
+pub enum CreateBankLevelDynamicEndpointError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_create_dynamic_endpoint`]
+/// struct for typed errors of method [`create_dynamic_endpoint`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400CreateDynamicEndpointError {
+pub enum CreateDynamicEndpointError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_delete_bank_level_dynamic_endpoint`]
+/// struct for typed errors of method [`delete_bank_level_dynamic_endpoint`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400DeleteBankLevelDynamicEndpointError {
+pub enum DeleteBankLevelDynamicEndpointError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_delete_dynamic_endpoint`]
+/// struct for typed errors of method [`delete_dynamic_endpoint`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400DeleteDynamicEndpointError {
+pub enum DeleteDynamicEndpointError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_delete_my_dynamic_endpoint`]
+/// struct for typed errors of method [`delete_my_dynamic_endpoint`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400DeleteMyDynamicEndpointError {
+pub enum DeleteMyDynamicEndpointError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_bank_level_dynamic_endpoint`]
+/// struct for typed errors of method [`get_bank_level_dynamic_endpoint`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetBankLevelDynamicEndpointError {
+pub enum GetBankLevelDynamicEndpointError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_bank_level_dynamic_endpoints`]
+/// struct for typed errors of method [`get_bank_level_dynamic_endpoints`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetBankLevelDynamicEndpointsError {
+pub enum GetBankLevelDynamicEndpointsError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_dynamic_endpoint`]
+/// struct for typed errors of method [`get_dynamic_endpoint`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetDynamicEndpointError {
+pub enum GetDynamicEndpointError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_dynamic_endpoints`]
+/// struct for typed errors of method [`get_dynamic_endpoints`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetDynamicEndpointsError {
+pub enum GetDynamicEndpointsError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_my_dynamic_endpoints`]
+/// struct for typed errors of method [`get_my_dynamic_endpoints`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetMyDynamicEndpointsError {
+pub enum GetMyDynamicEndpointsError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_update_bank_level_dynamic_endpoint_host`]
+/// struct for typed errors of method [`update_bank_level_dynamic_endpoint_host`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400UpdateBankLevelDynamicEndpointHostError {
+pub enum UpdateBankLevelDynamicEndpointHostError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_update_dynamic_endpoint_host`]
+/// struct for typed errors of method [`update_dynamic_endpoint_host`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400UpdateDynamicEndpointHostError {
+pub enum UpdateDynamicEndpointHostError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
@@ -122,10 +122,10 @@ pub enum OBpv400UpdateDynamicEndpointHostError {
 
 
 /// <p>Create dynamic endpoints.</p> <p>Create dynamic endpoints with one json format swagger content.</p> <p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br /> please check <code>Endpoint Mapping</code> endpoints.</p> <p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p> <p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-pub async fn o_bpv4_0_0_create_bank_level_dynamic_endpoint(configuration: &configuration::Configuration, bankid: &str, obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: models::Obpv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) -> Result<models::Obpv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, Error<OBpv400CreateBankLevelDynamicEndpointError>> {
+pub async fn create_bank_level_dynamic_endpoint(configuration: &configuration::Configuration, bankid: &str, get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: models::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) -> Result<models::GetDynamicEndpoints200ResponseDynamicEndpointsInner, Error<CreateBankLevelDynamicEndpointError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
-    let p_body_obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string = obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string;
+    let p_body_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string = get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string;
 
     let uri_str = format!("{}/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -150,9 +150,9 @@ pub async fn o_bpv4_0_0_create_bank_level_dynamic_endpoint(configuration: &confi
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string);
+    req_builder = req_builder.json(&p_body_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -169,20 +169,20 @@ pub async fn o_bpv4_0_0_create_bank_level_dynamic_endpoint(configuration: &confi
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetDynamicEndpoints200ResponseDynamicEndpointsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetDynamicEndpoints200ResponseDynamicEndpointsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400CreateBankLevelDynamicEndpointError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateBankLevelDynamicEndpointError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Create dynamic endpoints.</p> <p>Create dynamic endpoints with one json format swagger content.</p> <p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br /> please check <code>Endpoint Mapping</code> endpoints.</p> <p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p> <p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-pub async fn o_bpv4_0_0_create_dynamic_endpoint(configuration: &configuration::Configuration, obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: models::Obpv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) -> Result<models::Obpv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, Error<OBpv400CreateDynamicEndpointError>> {
+pub async fn create_dynamic_endpoint(configuration: &configuration::Configuration, get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: models::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) -> Result<models::GetDynamicEndpoints200ResponseDynamicEndpointsInner, Error<CreateDynamicEndpointError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_body_obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string = obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string;
+    let p_body_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string = get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string;
 
     let uri_str = format!("{}/obp/v4.0.0/management/dynamic-endpoints", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -207,9 +207,9 @@ pub async fn o_bpv4_0_0_create_dynamic_endpoint(configuration: &configuration::C
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string);
+    req_builder = req_builder.json(&p_body_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -226,18 +226,18 @@ pub async fn o_bpv4_0_0_create_dynamic_endpoint(configuration: &configuration::C
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetDynamicEndpoints200ResponseDynamicEndpointsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetDynamicEndpoints200ResponseDynamicEndpointsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400CreateDynamicEndpointError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateDynamicEndpointError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete a Bank Level DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-pub async fn o_bpv4_0_0_delete_bank_level_dynamic_endpoint(configuration: &configuration::Configuration, bankid: &str, dynamicendpointid: &str) -> Result<(), Error<OBpv400DeleteBankLevelDynamicEndpointError>> {
+pub async fn delete_bank_level_dynamic_endpoint(configuration: &configuration::Configuration, bankid: &str, dynamicendpointid: &str) -> Result<(), Error<DeleteBankLevelDynamicEndpointError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_dynamicendpointid = dynamicendpointid;
@@ -265,7 +265,7 @@ pub async fn o_bpv4_0_0_delete_bank_level_dynamic_endpoint(configuration: &confi
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -277,13 +277,13 @@ pub async fn o_bpv4_0_0_delete_bank_level_dynamic_endpoint(configuration: &confi
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteBankLevelDynamicEndpointError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteBankLevelDynamicEndpointError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete a DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-pub async fn o_bpv4_0_0_delete_dynamic_endpoint(configuration: &configuration::Configuration, dynamicendpointid: &str) -> Result<(), Error<OBpv400DeleteDynamicEndpointError>> {
+pub async fn delete_dynamic_endpoint(configuration: &configuration::Configuration, dynamicendpointid: &str) -> Result<(), Error<DeleteDynamicEndpointError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_dynamicendpointid = dynamicendpointid;
 
@@ -310,7 +310,7 @@ pub async fn o_bpv4_0_0_delete_dynamic_endpoint(configuration: &configuration::C
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -322,13 +322,13 @@ pub async fn o_bpv4_0_0_delete_dynamic_endpoint(configuration: &configuration::C
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteDynamicEndpointError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteDynamicEndpointError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete a DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-pub async fn o_bpv4_0_0_delete_my_dynamic_endpoint(configuration: &configuration::Configuration, dynamicendpointid: &str) -> Result<(), Error<OBpv400DeleteMyDynamicEndpointError>> {
+pub async fn delete_my_dynamic_endpoint(configuration: &configuration::Configuration, dynamicendpointid: &str) -> Result<(), Error<DeleteMyDynamicEndpointError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_dynamicendpointid = dynamicendpointid;
 
@@ -355,7 +355,7 @@ pub async fn o_bpv4_0_0_delete_my_dynamic_endpoint(configuration: &configuration
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -367,13 +367,13 @@ pub async fn o_bpv4_0_0_delete_my_dynamic_endpoint(configuration: &configuration
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteMyDynamicEndpointError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteMyDynamicEndpointError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get a Bank Level Dynamic Endpoint.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-pub async fn o_bpv4_0_0_get_bank_level_dynamic_endpoint(configuration: &configuration::Configuration, bankid: &str, dynamicendpointid: &str) -> Result<models::Obpv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, Error<OBpv400GetBankLevelDynamicEndpointError>> {
+pub async fn get_bank_level_dynamic_endpoint(configuration: &configuration::Configuration, bankid: &str, dynamicendpointid: &str) -> Result<models::GetDynamicEndpoints200ResponseDynamicEndpointsInner, Error<GetBankLevelDynamicEndpointError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_dynamicendpointid = dynamicendpointid;
@@ -401,7 +401,7 @@ pub async fn o_bpv4_0_0_get_bank_level_dynamic_endpoint(configuration: &configur
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -419,18 +419,18 @@ pub async fn o_bpv4_0_0_get_bank_level_dynamic_endpoint(configuration: &configur
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetDynamicEndpoints200ResponseDynamicEndpointsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetDynamicEndpoints200ResponseDynamicEndpointsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetBankLevelDynamicEndpointError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetBankLevelDynamicEndpointError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get Bank Level Dynamic Endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-pub async fn o_bpv4_0_0_get_bank_level_dynamic_endpoints(configuration: &configuration::Configuration, bankid: &str) -> Result<models::Obpv400GetDynamicEndpoints200Response, Error<OBpv400GetBankLevelDynamicEndpointsError>> {
+pub async fn get_bank_level_dynamic_endpoints(configuration: &configuration::Configuration, bankid: &str) -> Result<models::GetDynamicEndpoints200Response, Error<GetBankLevelDynamicEndpointsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
 
@@ -457,7 +457,7 @@ pub async fn o_bpv4_0_0_get_bank_level_dynamic_endpoints(configuration: &configu
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -475,18 +475,18 @@ pub async fn o_bpv4_0_0_get_bank_level_dynamic_endpoints(configuration: &configu
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetDynamicEndpoints200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetDynamicEndpoints200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetDynamicEndpoints200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetDynamicEndpoints200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetBankLevelDynamicEndpointsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetBankLevelDynamicEndpointsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get a Dynamic Endpoint.</p> <p>Get one DynamicEndpoint,</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-pub async fn o_bpv4_0_0_get_dynamic_endpoint(configuration: &configuration::Configuration, dynamicendpointid: &str) -> Result<models::Obpv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, Error<OBpv400GetDynamicEndpointError>> {
+pub async fn get_dynamic_endpoint(configuration: &configuration::Configuration, dynamicendpointid: &str) -> Result<models::GetDynamicEndpoints200ResponseDynamicEndpointsInner, Error<GetDynamicEndpointError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_dynamicendpointid = dynamicendpointid;
 
@@ -513,7 +513,7 @@ pub async fn o_bpv4_0_0_get_dynamic_endpoint(configuration: &configuration::Conf
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -531,18 +531,18 @@ pub async fn o_bpv4_0_0_get_dynamic_endpoint(configuration: &configuration::Conf
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetDynamicEndpoints200ResponseDynamicEndpointsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetDynamicEndpoints200ResponseDynamicEndpointsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetDynamicEndpointError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetDynamicEndpointError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get Dynamic Endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-pub async fn o_bpv4_0_0_get_dynamic_endpoints(configuration: &configuration::Configuration, ) -> Result<models::Obpv400GetDynamicEndpoints200Response, Error<OBpv400GetDynamicEndpointsError>> {
+pub async fn get_dynamic_endpoints(configuration: &configuration::Configuration, ) -> Result<models::GetDynamicEndpoints200Response, Error<GetDynamicEndpointsError>> {
 
     let uri_str = format!("{}/obp/v4.0.0/management/dynamic-endpoints", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -567,7 +567,7 @@ pub async fn o_bpv4_0_0_get_dynamic_endpoints(configuration: &configuration::Con
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -585,18 +585,18 @@ pub async fn o_bpv4_0_0_get_dynamic_endpoints(configuration: &configuration::Con
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetDynamicEndpoints200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetDynamicEndpoints200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetDynamicEndpoints200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetDynamicEndpoints200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetDynamicEndpointsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetDynamicEndpointsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get My Dynamic Endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-pub async fn o_bpv4_0_0_get_my_dynamic_endpoints(configuration: &configuration::Configuration, ) -> Result<models::Obpv400GetDynamicEndpoints200Response, Error<OBpv400GetMyDynamicEndpointsError>> {
+pub async fn get_my_dynamic_endpoints(configuration: &configuration::Configuration, ) -> Result<models::GetDynamicEndpoints200Response, Error<GetMyDynamicEndpointsError>> {
 
     let uri_str = format!("{}/obp/v4.0.0/my/dynamic-endpoints", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -621,7 +621,7 @@ pub async fn o_bpv4_0_0_get_my_dynamic_endpoints(configuration: &configuration::
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -639,22 +639,22 @@ pub async fn o_bpv4_0_0_get_my_dynamic_endpoints(configuration: &configuration::
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetDynamicEndpoints200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetDynamicEndpoints200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetDynamicEndpoints200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetDynamicEndpoints200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetMyDynamicEndpointsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetMyDynamicEndpointsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update Bank Level  dynamic endpoint Host.<br /> The value can be obp_mock, dynamic_entity, or some service url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-pub async fn o_bpv4_0_0_update_bank_level_dynamic_endpoint_host(configuration: &configuration::Configuration, bankid: &str, dynamicendpointid: &str, obpv400_update_bank_level_dynamic_endpoint_host_request: models::Obpv400UpdateBankLevelDynamicEndpointHostRequest) -> Result<models::Obpv400UpdateBankLevelDynamicEndpointHostRequest, Error<OBpv400UpdateBankLevelDynamicEndpointHostError>> {
+pub async fn update_bank_level_dynamic_endpoint_host(configuration: &configuration::Configuration, bankid: &str, dynamicendpointid: &str, update_bank_level_dynamic_endpoint_host_request: models::UpdateBankLevelDynamicEndpointHostRequest) -> Result<models::UpdateBankLevelDynamicEndpointHostRequest, Error<UpdateBankLevelDynamicEndpointHostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_dynamicendpointid = dynamicendpointid;
-    let p_body_obpv400_update_bank_level_dynamic_endpoint_host_request = obpv400_update_bank_level_dynamic_endpoint_host_request;
+    let p_body_update_bank_level_dynamic_endpoint_host_request = update_bank_level_dynamic_endpoint_host_request;
 
     let uri_str = format!("{}/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), dynamicendpointid=crate::apis::urlencode(p_path_dynamicendpointid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -679,9 +679,9 @@ pub async fn o_bpv4_0_0_update_bank_level_dynamic_endpoint_host(configuration: &
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_update_bank_level_dynamic_endpoint_host_request);
+    req_builder = req_builder.json(&p_body_update_bank_level_dynamic_endpoint_host_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -698,21 +698,21 @@ pub async fn o_bpv4_0_0_update_bank_level_dynamic_endpoint_host(configuration: &
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400UpdateBankLevelDynamicEndpointHostRequest`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400UpdateBankLevelDynamicEndpointHostRequest`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::UpdateBankLevelDynamicEndpointHostRequest`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::UpdateBankLevelDynamicEndpointHostRequest`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400UpdateBankLevelDynamicEndpointHostError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateBankLevelDynamicEndpointHostError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update dynamic endpoint Host.<br /> The value can be obp_mock, dynamic_entity, or some service url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-pub async fn o_bpv4_0_0_update_dynamic_endpoint_host(configuration: &configuration::Configuration, dynamicendpointid: &str, obpv400_update_bank_level_dynamic_endpoint_host_request: models::Obpv400UpdateBankLevelDynamicEndpointHostRequest) -> Result<models::Obpv400UpdateBankLevelDynamicEndpointHostRequest, Error<OBpv400UpdateDynamicEndpointHostError>> {
+pub async fn update_dynamic_endpoint_host(configuration: &configuration::Configuration, dynamicendpointid: &str, update_bank_level_dynamic_endpoint_host_request: models::UpdateBankLevelDynamicEndpointHostRequest) -> Result<models::UpdateBankLevelDynamicEndpointHostRequest, Error<UpdateDynamicEndpointHostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_dynamicendpointid = dynamicendpointid;
-    let p_body_obpv400_update_bank_level_dynamic_endpoint_host_request = obpv400_update_bank_level_dynamic_endpoint_host_request;
+    let p_body_update_bank_level_dynamic_endpoint_host_request = update_bank_level_dynamic_endpoint_host_request;
 
     let uri_str = format!("{}/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host", configuration.base_path, dynamicendpointid=crate::apis::urlencode(p_path_dynamicendpointid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -737,9 +737,9 @@ pub async fn o_bpv4_0_0_update_dynamic_endpoint_host(configuration: &configurati
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_update_bank_level_dynamic_endpoint_host_request);
+    req_builder = req_builder.json(&p_body_update_bank_level_dynamic_endpoint_host_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -756,12 +756,12 @@ pub async fn o_bpv4_0_0_update_dynamic_endpoint_host(configuration: &configurati
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400UpdateBankLevelDynamicEndpointHostRequest`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400UpdateBankLevelDynamicEndpointHostRequest`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::UpdateBankLevelDynamicEndpointHostRequest`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::UpdateBankLevelDynamicEndpointHostRequest`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400UpdateDynamicEndpointHostError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateDynamicEndpointHostError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

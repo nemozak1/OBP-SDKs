@@ -5,20 +5,20 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateBankAttribute**](BankAttributeApi.md#obpv400createbankattribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
-[**oBPv400CreateOrUpdateBankAttributeDefinition**](BankAttributeApi.md#obpv400createorupdatebankattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
-[**oBPv400DeleteBankAttribute**](BankAttributeApi.md#obpv400deletebankattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
-[**oBPv400GetBankAttribute**](BankAttributeApi.md#obpv400getbankattribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
-[**oBPv400GetBankAttributes**](BankAttributeApi.md#obpv400getbankattributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
-[**oBPv400UpdateBankAttribute**](BankAttributeApi.md#obpv400updatebankattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
+[**createBankAttribute**](BankAttributeApi.md#createbankattribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
+[**createOrUpdateBankAttributeDefinition**](BankAttributeApi.md#createorupdatebankattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
+[**deleteBankAttribute**](BankAttributeApi.md#deletebankattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
+[**getBankAttribute**](BankAttributeApi.md#getbankattribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
+[**getBankAttributes**](BankAttributeApi.md#getbankattributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
+[**updateBankAttribute**](BankAttributeApi.md#updatebankattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
 
 
-# **oBPv400CreateBankAttribute**
-> OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems oBPv400CreateBankAttribute(bankid, oBPv510UpdateAtmAttributeRequest)
+# **createBankAttribute**
+> GetBankAttributes200ResponseBankAttributesInner createBankAttribute(bankid, updateAtmAttributeRequest)
 
 Create Bank Attribute
 
@@ -40,13 +40,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getBankAttributeApi();
 final String bankid = bankid_example; // String | The BANKID identifier
-final OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // OBPv510UpdateAtmAttributeRequest | Request body
+final UpdateAtmAttributeRequest updateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // UpdateAtmAttributeRequest | Request body
 
 try {
-    final response = api.oBPv400CreateBankAttribute(bankid, oBPv510UpdateAtmAttributeRequest);
+    final response = api.createBankAttribute(bankid, updateAtmAttributeRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BankAttributeApi->oBPv400CreateBankAttribute: $e\n');
+    print('Exception when calling BankAttributeApi->createBankAttribute: $e\n');
 }
 ```
 
@@ -55,11 +55,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems**](OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems.md)
+[**GetBankAttributes200ResponseBankAttributesInner**](GetBankAttributes200ResponseBankAttributesInner.md)
 
 ### Authorization
 
@@ -72,8 +72,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateOrUpdateBankAttributeDefinition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateBankAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+# **createOrUpdateBankAttributeDefinition**
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateBankAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Bank Attribute Definition
 
@@ -95,13 +95,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getBankAttributeApi();
 final String bankid = bankid_example; // String | The BANKID identifier
-final OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}}; // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+final CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}}; // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 try {
-    final response = api.oBPv400CreateOrUpdateBankAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+    final response = api.createOrUpdateBankAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BankAttributeApi->oBPv400CreateOrUpdateBankAttributeDefinition: $e\n');
+    print('Exception when calling BankAttributeApi->createOrUpdateBankAttributeDefinition: $e\n');
 }
 ```
 
@@ -110,11 +110,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
- **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
+ **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -127,8 +127,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteBankAttribute**
-> oBPv400DeleteBankAttribute(bankid, bankattributeid)
+# **deleteBankAttribute**
+> deleteBankAttribute(bankid, bankattributeid)
 
 Delete Bank Attribute
 
@@ -153,9 +153,9 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String bankattributeid = bankattributeid_example; // String | The BANKATTRIBUTEID identifier
 
 try {
-    api.oBPv400DeleteBankAttribute(bankid, bankattributeid);
+    api.deleteBankAttribute(bankid, bankattributeid);
 } on DioException catch (e) {
-    print('Exception when calling BankAttributeApi->oBPv400DeleteBankAttribute: $e\n');
+    print('Exception when calling BankAttributeApi->deleteBankAttribute: $e\n');
 }
 ```
 
@@ -181,8 +181,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetBankAttribute**
-> OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems oBPv400GetBankAttribute(bankid, bankattributeid)
+# **getBankAttribute**
+> GetBankAttributes200ResponseBankAttributesInner getBankAttribute(bankid, bankattributeid)
 
 Get Bank Attribute By BANK_ATTRIBUTE_ID
 
@@ -207,10 +207,10 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String bankattributeid = bankattributeid_example; // String | The BANKATTRIBUTEID identifier
 
 try {
-    final response = api.oBPv400GetBankAttribute(bankid, bankattributeid);
+    final response = api.getBankAttribute(bankid, bankattributeid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BankAttributeApi->oBPv400GetBankAttribute: $e\n');
+    print('Exception when calling BankAttributeApi->getBankAttribute: $e\n');
 }
 ```
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems**](OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems.md)
+[**GetBankAttributes200ResponseBankAttributesInner**](GetBankAttributes200ResponseBankAttributesInner.md)
 
 ### Authorization
 
@@ -236,8 +236,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetBankAttributes**
-> OBPv400GetBankAttributes200Response oBPv400GetBankAttributes(bankid)
+# **getBankAttributes**
+> GetBankAttributes200Response getBankAttributes(bankid)
 
 Get Bank Attributes
 
@@ -261,10 +261,10 @@ final api = ObpDart().getBankAttributeApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 
 try {
-    final response = api.oBPv400GetBankAttributes(bankid);
+    final response = api.getBankAttributes(bankid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BankAttributeApi->oBPv400GetBankAttributes: $e\n');
+    print('Exception when calling BankAttributeApi->getBankAttributes: $e\n');
 }
 ```
 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetBankAttributes200Response**](OBPv400GetBankAttributes200Response.md)
+[**GetBankAttributes200Response**](GetBankAttributes200Response.md)
 
 ### Authorization
 
@@ -289,8 +289,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateBankAttribute**
-> OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400UpdateBankAttribute(bankid, bankattributeid, oBPv510UpdateAtmAttributeRequest)
+# **updateBankAttribute**
+> CreateOrUpdateTransactionRequestAttributeDefinitionRequest updateBankAttribute(bankid, bankattributeid, updateAtmAttributeRequest)
 
 Update Bank Attribute
 
@@ -313,13 +313,13 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getBankAttributeApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String bankattributeid = bankattributeid_example; // String | The BANKATTRIBUTEID identifier
-final OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // OBPv510UpdateAtmAttributeRequest | Request body
+final UpdateAtmAttributeRequest updateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // UpdateAtmAttributeRequest | Request body
 
 try {
-    final response = api.oBPv400UpdateBankAttribute(bankid, bankattributeid, oBPv510UpdateAtmAttributeRequest);
+    final response = api.updateBankAttribute(bankid, bankattributeid, updateAtmAttributeRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling BankAttributeApi->oBPv400UpdateBankAttribute: $e\n');
+    print('Exception when calling BankAttributeApi->updateBankAttribute: $e\n');
 }
 ```
 
@@ -329,11 +329,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
  **bankattributeid** | **String**| The BANKATTRIBUTEID identifier | 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
+[**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
 
 ### Authorization
 

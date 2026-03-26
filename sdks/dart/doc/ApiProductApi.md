@@ -5,19 +5,19 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600CreateApiProduct**](ApiProductApi.md#obpv600createapiproduct) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product
-[**oBPv600CreateOrUpdateApiProduct**](ApiProductApi.md#obpv600createorupdateapiproduct) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product
-[**oBPv600DeleteApiProduct**](ApiProductApi.md#obpv600deleteapiproduct) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product
-[**oBPv600GetApiProduct**](ApiProductApi.md#obpv600getapiproduct) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product
-[**oBPv600GetApiProducts**](ApiProductApi.md#obpv600getapiproducts) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products
+[**createApiProduct**](ApiProductApi.md#createapiproduct) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product
+[**createOrUpdateApiProduct**](ApiProductApi.md#createorupdateapiproduct) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product
+[**deleteApiProduct**](ApiProductApi.md#deleteapiproduct) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product
+[**getApiProduct**](ApiProductApi.md#getapiproduct) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product
+[**getApiProducts**](ApiProductApi.md#getapiproducts) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products
 
 
-# **oBPv600CreateApiProduct**
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems oBPv600CreateApiProduct(bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest)
+# **createApiProduct**
+> GetApiProducts200ResponseApiProductsInner createApiProduct(bankid, apiproductcode, createOrUpdateApiProductRequest)
 
 Create Api Product
 
@@ -40,13 +40,13 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getApiProductApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String apiproductcode = apiproductcode_example; // String | The APIPRODUCTCODE identifier
-final OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest = {type=object, properties={name={type=string}, category={type=string}, monthly_subscription_currency={type=string}, description={type=string}, monthly_subscription_amount={type=string}, terms_and_conditions_url={type=string}, collection_id={type=string}, per_month_call_limit={type=integer}, per_second_call_limit={type=integer}, parent_api_product_code={type=string}, per_minute_call_limit={type=integer}, per_hour_call_limit={type=integer}, more_info_url={type=string}, per_week_call_limit={type=integer}, per_day_call_limit={type=integer}}}; // OBPv600CreateOrUpdateApiProductRequest | Request body
+final CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest = {type=object, properties={name={type=string}, category={type=string}, monthly_subscription_currency={type=string}, description={type=string}, monthly_subscription_amount={type=string}, terms_and_conditions_url={type=string}, collection_id={type=string}, per_month_call_limit={type=integer}, per_second_call_limit={type=integer}, parent_api_product_code={type=string}, per_minute_call_limit={type=integer}, per_hour_call_limit={type=integer}, more_info_url={type=string}, per_week_call_limit={type=integer}, per_day_call_limit={type=integer}}}; // CreateOrUpdateApiProductRequest | Request body
 
 try {
-    final response = api.oBPv600CreateApiProduct(bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest);
+    final response = api.createApiProduct(bankid, apiproductcode, createOrUpdateApiProductRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ApiProductApi->oBPv600CreateApiProduct: $e\n');
+    print('Exception when calling ApiProductApi->createApiProduct: $e\n');
 }
 ```
 
@@ -56,11 +56,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
  **apiproductcode** | **String**| The APIPRODUCTCODE identifier | 
- **oBPv600CreateOrUpdateApiProductRequest** | [**OBPv600CreateOrUpdateApiProductRequest**](OBPv600CreateOrUpdateApiProductRequest.md)| Request body | 
+ **createOrUpdateApiProductRequest** | [**CreateOrUpdateApiProductRequest**](CreateOrUpdateApiProductRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -73,8 +73,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600CreateOrUpdateApiProduct**
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems oBPv600CreateOrUpdateApiProduct(bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest)
+# **createOrUpdateApiProduct**
+> GetApiProducts200ResponseApiProductsInner createOrUpdateApiProduct(bankid, apiproductcode, createOrUpdateApiProductRequest)
 
 Create or Update Api Product
 
@@ -97,13 +97,13 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getApiProductApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String apiproductcode = apiproductcode_example; // String | The APIPRODUCTCODE identifier
-final OBPv600CreateOrUpdateApiProductRequest oBPv600CreateOrUpdateApiProductRequest = {"type":"object","properties":{"name":{"type":"string"},"category":{"type":"string"},"monthly_subscription_currency":{"type":"string"},"description":{"type":"string"},"monthly_subscription_amount":{"type":"string"},"terms_and_conditions_url":{"type":"string"},"collection_id":{"type":"string"},"per_month_call_limit":{"type":"integer"},"per_second_call_limit":{"type":"integer"},"parent_api_product_code":{"type":"string"},"per_minute_call_limit":{"type":"integer"},"per_hour_call_limit":{"type":"integer"},"more_info_url":{"type":"string"},"per_week_call_limit":{"type":"integer"},"per_day_call_limit":{"type":"integer"}}}; // OBPv600CreateOrUpdateApiProductRequest | Request body
+final CreateOrUpdateApiProductRequest createOrUpdateApiProductRequest = {"type":"object","properties":{"name":{"type":"string"},"category":{"type":"string"},"monthly_subscription_currency":{"type":"string"},"description":{"type":"string"},"monthly_subscription_amount":{"type":"string"},"terms_and_conditions_url":{"type":"string"},"collection_id":{"type":"string"},"per_month_call_limit":{"type":"integer"},"per_second_call_limit":{"type":"integer"},"parent_api_product_code":{"type":"string"},"per_minute_call_limit":{"type":"integer"},"per_hour_call_limit":{"type":"integer"},"more_info_url":{"type":"string"},"per_week_call_limit":{"type":"integer"},"per_day_call_limit":{"type":"integer"}}}; // CreateOrUpdateApiProductRequest | Request body
 
 try {
-    final response = api.oBPv600CreateOrUpdateApiProduct(bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest);
+    final response = api.createOrUpdateApiProduct(bankid, apiproductcode, createOrUpdateApiProductRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ApiProductApi->oBPv600CreateOrUpdateApiProduct: $e\n');
+    print('Exception when calling ApiProductApi->createOrUpdateApiProduct: $e\n');
 }
 ```
 
@@ -113,11 +113,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
  **apiproductcode** | **String**| The APIPRODUCTCODE identifier | 
- **oBPv600CreateOrUpdateApiProductRequest** | [**OBPv600CreateOrUpdateApiProductRequest**](OBPv600CreateOrUpdateApiProductRequest.md)| Request body | 
+ **createOrUpdateApiProductRequest** | [**CreateOrUpdateApiProductRequest**](CreateOrUpdateApiProductRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -130,8 +130,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600DeleteApiProduct**
-> oBPv600DeleteApiProduct(bankid, apiproductcode)
+# **deleteApiProduct**
+> deleteApiProduct(bankid, apiproductcode)
 
 Delete Api Product
 
@@ -156,9 +156,9 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String apiproductcode = apiproductcode_example; // String | The APIPRODUCTCODE identifier
 
 try {
-    api.oBPv600DeleteApiProduct(bankid, apiproductcode);
+    api.deleteApiProduct(bankid, apiproductcode);
 } on DioException catch (e) {
-    print('Exception when calling ApiProductApi->oBPv600DeleteApiProduct: $e\n');
+    print('Exception when calling ApiProductApi->deleteApiProduct: $e\n');
 }
 ```
 
@@ -184,8 +184,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetApiProduct**
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems oBPv600GetApiProduct(bankid, apiproductcode)
+# **getApiProduct**
+> GetApiProducts200ResponseApiProductsInner getApiProduct(bankid, apiproductcode)
 
 Get Api Product
 
@@ -200,10 +200,10 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String apiproductcode = apiproductcode_example; // String | The APIPRODUCTCODE identifier
 
 try {
-    final response = api.oBPv600GetApiProduct(bankid, apiproductcode);
+    final response = api.getApiProduct(bankid, apiproductcode);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ApiProductApi->oBPv600GetApiProduct: $e\n');
+    print('Exception when calling ApiProductApi->getApiProduct: $e\n');
 }
 ```
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -229,8 +229,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetApiProducts**
-> OBPv600GetApiProducts200Response oBPv600GetApiProducts(bankid)
+# **getApiProducts**
+> GetApiProducts200Response getApiProducts(bankid)
 
 Get Api Products
 
@@ -244,10 +244,10 @@ final api = ObpDart().getApiProductApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 
 try {
-    final response = api.oBPv600GetApiProducts(bankid);
+    final response = api.getApiProducts(bankid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ApiProductApi->oBPv600GetApiProducts: $e\n');
+    print('Exception when calling ApiProductApi->getApiProducts: $e\n');
 }
 ```
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetApiProducts200Response**](OBPv600GetApiProducts200Response.md)
+[**GetApiProducts200Response**](GetApiProducts200Response.md)
 
 ### Authorization
 

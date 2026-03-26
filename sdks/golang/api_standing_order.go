@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,27 +24,27 @@ import (
 // StandingOrderAPIService StandingOrderAPI service
 type StandingOrderAPIService service
 
-type ApiOBPv400CreateStandingOrderRequest struct {
+type ApiCreateStandingOrderRequest struct {
 	ctx context.Context
 	ApiService *StandingOrderAPIService
 	bankid string
 	accountid string
 	viewid string
-	oBPv400CreateStandingOrderRequest *OBPv400CreateStandingOrderRequest
+	createStandingOrderRequest *CreateStandingOrderRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateStandingOrderRequest) OBPv400CreateStandingOrderRequest(oBPv400CreateStandingOrderRequest OBPv400CreateStandingOrderRequest) ApiOBPv400CreateStandingOrderRequest {
-	r.oBPv400CreateStandingOrderRequest = &oBPv400CreateStandingOrderRequest
+func (r ApiCreateStandingOrderRequest) CreateStandingOrderRequest(createStandingOrderRequest CreateStandingOrderRequest) ApiCreateStandingOrderRequest {
+	r.createStandingOrderRequest = &createStandingOrderRequest
 	return r
 }
 
-func (r ApiOBPv400CreateStandingOrderRequest) Execute() (*OBPv400CreateStandingOrder200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateStandingOrderExecute(r)
+func (r ApiCreateStandingOrderRequest) Execute() (*CreateStandingOrder200Response, *http.Response, error) {
+	return r.ApiService.CreateStandingOrderExecute(r)
 }
 
 /*
-OBPv400CreateStandingOrder Create Standing Order
+CreateStandingOrder Create Standing Order
 
 <p>Create standing order for an account.</p>
 <p>when -&gt; frequency = {‘YEARLY’,’MONTHLY, ‘WEEKLY’, ‘BI-WEEKLY’, DAILY’}<br />
@@ -89,10 +89,10 @@ when -&gt; detail = { ‘FIRST_MONDAY’, ‘FIRST_DAY’, ‘LAST_DAY’}}</p>
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv400CreateStandingOrderRequest
+ @return ApiCreateStandingOrderRequest
 */
-func (a *StandingOrderAPIService) OBPv400CreateStandingOrder(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv400CreateStandingOrderRequest {
-	return ApiOBPv400CreateStandingOrderRequest{
+func (a *StandingOrderAPIService) CreateStandingOrder(ctx context.Context, bankid string, accountid string, viewid string) ApiCreateStandingOrderRequest {
+	return ApiCreateStandingOrderRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -102,16 +102,16 @@ func (a *StandingOrderAPIService) OBPv400CreateStandingOrder(ctx context.Context
 }
 
 // Execute executes the request
-//  @return OBPv400CreateStandingOrder200Response
-func (a *StandingOrderAPIService) OBPv400CreateStandingOrderExecute(r ApiOBPv400CreateStandingOrderRequest) (*OBPv400CreateStandingOrder200Response, *http.Response, error) {
+//  @return CreateStandingOrder200Response
+func (a *StandingOrderAPIService) CreateStandingOrderExecute(r ApiCreateStandingOrderRequest) (*CreateStandingOrder200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateStandingOrder200Response
+		localVarReturnValue  *CreateStandingOrder200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StandingOrderAPIService.OBPv400CreateStandingOrder")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StandingOrderAPIService.CreateStandingOrder")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -124,8 +124,8 @@ func (a *StandingOrderAPIService) OBPv400CreateStandingOrderExecute(r ApiOBPv400
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateStandingOrderRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateStandingOrderRequest is required and must be specified")
+	if r.createStandingOrderRequest == nil {
+		return localVarReturnValue, nil, reportError("createStandingOrderRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -146,7 +146,7 @@ func (a *StandingOrderAPIService) OBPv400CreateStandingOrderExecute(r ApiOBPv400
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateStandingOrderRequest
+	localVarPostBody = r.createStandingOrderRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -171,7 +171,7 @@ func (a *StandingOrderAPIService) OBPv400CreateStandingOrderExecute(r ApiOBPv400
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -212,26 +212,26 @@ func (a *StandingOrderAPIService) OBPv400CreateStandingOrderExecute(r ApiOBPv400
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateStandingOrderManagementRequest struct {
+type ApiCreateStandingOrderManagementRequest struct {
 	ctx context.Context
 	ApiService *StandingOrderAPIService
 	bankid string
 	accountid string
-	oBPv400CreateStandingOrderRequest *OBPv400CreateStandingOrderRequest
+	createStandingOrderRequest *CreateStandingOrderRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateStandingOrderManagementRequest) OBPv400CreateStandingOrderRequest(oBPv400CreateStandingOrderRequest OBPv400CreateStandingOrderRequest) ApiOBPv400CreateStandingOrderManagementRequest {
-	r.oBPv400CreateStandingOrderRequest = &oBPv400CreateStandingOrderRequest
+func (r ApiCreateStandingOrderManagementRequest) CreateStandingOrderRequest(createStandingOrderRequest CreateStandingOrderRequest) ApiCreateStandingOrderManagementRequest {
+	r.createStandingOrderRequest = &createStandingOrderRequest
 	return r
 }
 
-func (r ApiOBPv400CreateStandingOrderManagementRequest) Execute() (*OBPv400CreateStandingOrder200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateStandingOrderManagementExecute(r)
+func (r ApiCreateStandingOrderManagementRequest) Execute() (*CreateStandingOrder200Response, *http.Response, error) {
+	return r.ApiService.CreateStandingOrderManagementExecute(r)
 }
 
 /*
-OBPv400CreateStandingOrderManagement Create Standing Order (management)
+CreateStandingOrderManagement Create Standing Order (management)
 
 <p>Create standing order for an account.</p>
 <p>when -&gt; frequency = {‘YEARLY’,’MONTHLY, ‘WEEKLY’, ‘BI-WEEKLY’, DAILY’}<br />
@@ -274,10 +274,10 @@ when -&gt; detail = { ‘FIRST_MONDAY’, ‘FIRST_DAY’, ‘LAST_DAY’}}</p>
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
- @return ApiOBPv400CreateStandingOrderManagementRequest
+ @return ApiCreateStandingOrderManagementRequest
 */
-func (a *StandingOrderAPIService) OBPv400CreateStandingOrderManagement(ctx context.Context, bankid string, accountid string) ApiOBPv400CreateStandingOrderManagementRequest {
-	return ApiOBPv400CreateStandingOrderManagementRequest{
+func (a *StandingOrderAPIService) CreateStandingOrderManagement(ctx context.Context, bankid string, accountid string) ApiCreateStandingOrderManagementRequest {
+	return ApiCreateStandingOrderManagementRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -286,16 +286,16 @@ func (a *StandingOrderAPIService) OBPv400CreateStandingOrderManagement(ctx conte
 }
 
 // Execute executes the request
-//  @return OBPv400CreateStandingOrder200Response
-func (a *StandingOrderAPIService) OBPv400CreateStandingOrderManagementExecute(r ApiOBPv400CreateStandingOrderManagementRequest) (*OBPv400CreateStandingOrder200Response, *http.Response, error) {
+//  @return CreateStandingOrder200Response
+func (a *StandingOrderAPIService) CreateStandingOrderManagementExecute(r ApiCreateStandingOrderManagementRequest) (*CreateStandingOrder200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateStandingOrder200Response
+		localVarReturnValue  *CreateStandingOrder200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StandingOrderAPIService.OBPv400CreateStandingOrderManagement")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StandingOrderAPIService.CreateStandingOrderManagement")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -307,8 +307,8 @@ func (a *StandingOrderAPIService) OBPv400CreateStandingOrderManagementExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateStandingOrderRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateStandingOrderRequest is required and must be specified")
+	if r.createStandingOrderRequest == nil {
+		return localVarReturnValue, nil, reportError("createStandingOrderRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -329,7 +329,7 @@ func (a *StandingOrderAPIService) OBPv400CreateStandingOrderManagementExecute(r 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateStandingOrderRequest
+	localVarPostBody = r.createStandingOrderRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -354,7 +354,7 @@ func (a *StandingOrderAPIService) OBPv400CreateStandingOrderManagementExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

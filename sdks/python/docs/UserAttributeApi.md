@@ -4,20 +4,20 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv6_0_0_create_personal_data_field**](UserAttributeApi.md#o_bpv6_0_0_create_personal_data_field) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
-[**o_bpv6_0_0_create_user_attribute**](UserAttributeApi.md#o_bpv6_0_0_create_user_attribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
-[**o_bpv6_0_0_delete_personal_data_field**](UserAttributeApi.md#o_bpv6_0_0_delete_personal_data_field) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
-[**o_bpv6_0_0_delete_user_attribute**](UserAttributeApi.md#o_bpv6_0_0_delete_user_attribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
-[**o_bpv6_0_0_get_personal_data_field_by_id**](UserAttributeApi.md#o_bpv6_0_0_get_personal_data_field_by_id) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
-[**o_bpv6_0_0_get_personal_data_fields**](UserAttributeApi.md#o_bpv6_0_0_get_personal_data_fields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
-[**o_bpv6_0_0_get_user_attribute_by_id**](UserAttributeApi.md#o_bpv6_0_0_get_user_attribute_by_id) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
-[**o_bpv6_0_0_get_user_attributes**](UserAttributeApi.md#o_bpv6_0_0_get_user_attributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
-[**o_bpv6_0_0_update_personal_data_field**](UserAttributeApi.md#o_bpv6_0_0_update_personal_data_field) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
-[**o_bpv6_0_0_update_user_attribute**](UserAttributeApi.md#o_bpv6_0_0_update_user_attribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
+[**create_personal_data_field**](UserAttributeApi.md#create_personal_data_field) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
+[**create_user_attribute**](UserAttributeApi.md#create_user_attribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
+[**delete_personal_data_field**](UserAttributeApi.md#delete_personal_data_field) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
+[**delete_user_attribute**](UserAttributeApi.md#delete_user_attribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
+[**get_personal_data_field_by_id**](UserAttributeApi.md#get_personal_data_field_by_id) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
+[**get_personal_data_fields**](UserAttributeApi.md#get_personal_data_fields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
+[**get_user_attribute_by_id**](UserAttributeApi.md#get_user_attribute_by_id) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
+[**get_user_attributes**](UserAttributeApi.md#get_user_attributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
+[**update_personal_data_field**](UserAttributeApi.md#update_personal_data_field) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
+[**update_user_attribute**](UserAttributeApi.md#update_user_attribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
 
 
-# **o_bpv6_0_0_create_personal_data_field**
-> OBPv600GetPersonalDataFields200ResponseUserAttributesInner o_bpv6_0_0_create_personal_data_field(obpv600_create_personal_data_field_request)
+# **create_personal_data_field**
+> GetPersonalDataFields200ResponseUserAttributesInner create_personal_data_field(create_personal_data_field_request)
 
 Create Personal Data Field
 
@@ -48,8 +48,8 @@ This data is not available in ABAC rules for privacy reasons.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
-from obp_python.models.obpv600_get_personal_data_fields200_response_user_attributes_inner import OBPv600GetPersonalDataFields200ResponseUserAttributesInner
+from obp_python.models.create_personal_data_field_request import CreatePersonalDataFieldRequest
+from obp_python.models.get_personal_data_fields200_response_user_attributes_inner import GetPersonalDataFields200ResponseUserAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -82,15 +82,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.UserAttributeApi(api_client)
-    obpv600_create_personal_data_field_request = {"type":"object","properties":{"name":{"type":"string"},"type":{"type":"string"},"value":{"type":"string"}}} # OBPv600CreatePersonalDataFieldRequest | Request body
+    create_personal_data_field_request = {"type":"object","properties":{"name":{"type":"string"},"type":{"type":"string"},"value":{"type":"string"}}} # CreatePersonalDataFieldRequest | Request body
 
     try:
         # Create Personal Data Field
-        api_response = api_instance.o_bpv6_0_0_create_personal_data_field(obpv600_create_personal_data_field_request)
-        print("The response of UserAttributeApi->o_bpv6_0_0_create_personal_data_field:\n")
+        api_response = api_instance.create_personal_data_field(create_personal_data_field_request)
+        print("The response of UserAttributeApi->create_personal_data_field:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserAttributeApi->o_bpv6_0_0_create_personal_data_field: %s\n" % e)
+        print("Exception when calling UserAttributeApi->create_personal_data_field: %s\n" % e)
 ```
 
 
@@ -100,11 +100,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | 
+ **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponseUserAttributesInner**](OBPv600GetPersonalDataFields200ResponseUserAttributesInner.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -124,8 +124,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_create_user_attribute**
-> OBPv600GetPersonalDataFields200ResponseUserAttributesInner o_bpv6_0_0_create_user_attribute(userid, obpv600_create_personal_data_field_request)
+# **create_user_attribute**
+> GetPersonalDataFields200ResponseUserAttributesInner create_user_attribute(userid, create_personal_data_field_request)
 
 Create User Attribute
 
@@ -158,8 +158,8 @@ They require a role to set, similar to Customer Attributes, Account Attributes, 
 
 ```python
 import obp_python
-from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
-from obp_python.models.obpv600_get_personal_data_fields200_response_user_attributes_inner import OBPv600GetPersonalDataFields200ResponseUserAttributesInner
+from obp_python.models.create_personal_data_field_request import CreatePersonalDataFieldRequest
+from obp_python.models.get_personal_data_fields200_response_user_attributes_inner import GetPersonalDataFields200ResponseUserAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -193,15 +193,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.UserAttributeApi(api_client)
     userid = 'userid_example' # str | The USERID identifier
-    obpv600_create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} # OBPv600CreatePersonalDataFieldRequest | Request body
+    create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} # CreatePersonalDataFieldRequest | Request body
 
     try:
         # Create User Attribute
-        api_response = api_instance.o_bpv6_0_0_create_user_attribute(userid, obpv600_create_personal_data_field_request)
-        print("The response of UserAttributeApi->o_bpv6_0_0_create_user_attribute:\n")
+        api_response = api_instance.create_user_attribute(userid, create_personal_data_field_request)
+        print("The response of UserAttributeApi->create_user_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserAttributeApi->o_bpv6_0_0_create_user_attribute: %s\n" % e)
+        print("Exception when calling UserAttributeApi->create_user_attribute: %s\n" % e)
 ```
 
 
@@ -212,11 +212,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userid** | **str**| The USERID identifier | 
- **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | 
+ **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponseUserAttributesInner**](OBPv600GetPersonalDataFields200ResponseUserAttributesInner.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -237,8 +237,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_delete_personal_data_field**
-> o_bpv6_0_0_delete_personal_data_field(userattributeid)
+# **delete_personal_data_field**
+> delete_personal_data_field(userattributeid)
 
 Delete Personal Data Field
 
@@ -293,9 +293,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Personal Data Field
-        api_instance.o_bpv6_0_0_delete_personal_data_field(userattributeid)
+        api_instance.delete_personal_data_field(userattributeid)
     except Exception as e:
-        print("Exception when calling UserAttributeApi->o_bpv6_0_0_delete_personal_data_field: %s\n" % e)
+        print("Exception when calling UserAttributeApi->delete_personal_data_field: %s\n" % e)
 ```
 
 
@@ -330,8 +330,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_delete_user_attribute**
-> o_bpv6_0_0_delete_user_attribute(userid, userattributeid)
+# **delete_user_attribute**
+> delete_user_attribute(userid, userattributeid)
 
 Delete User Attribute
 
@@ -388,9 +388,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete User Attribute
-        api_instance.o_bpv6_0_0_delete_user_attribute(userid, userattributeid)
+        api_instance.delete_user_attribute(userid, userattributeid)
     except Exception as e:
-        print("Exception when calling UserAttributeApi->o_bpv6_0_0_delete_user_attribute: %s\n" % e)
+        print("Exception when calling UserAttributeApi->delete_user_attribute: %s\n" % e)
 ```
 
 
@@ -426,8 +426,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_personal_data_field_by_id**
-> OBPv600GetPersonalDataFields200ResponseUserAttributesInner o_bpv6_0_0_get_personal_data_field_by_id(userattributeid)
+# **get_personal_data_field_by_id**
+> GetPersonalDataFields200ResponseUserAttributesInner get_personal_data_field_by_id(userattributeid)
 
 Get Personal Data Field By Id
 
@@ -452,7 +452,7 @@ Get Personal Data Field By Id
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_personal_data_fields200_response_user_attributes_inner import OBPv600GetPersonalDataFields200ResponseUserAttributesInner
+from obp_python.models.get_personal_data_fields200_response_user_attributes_inner import GetPersonalDataFields200ResponseUserAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -489,11 +489,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Personal Data Field By Id
-        api_response = api_instance.o_bpv6_0_0_get_personal_data_field_by_id(userattributeid)
-        print("The response of UserAttributeApi->o_bpv6_0_0_get_personal_data_field_by_id:\n")
+        api_response = api_instance.get_personal_data_field_by_id(userattributeid)
+        print("The response of UserAttributeApi->get_personal_data_field_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserAttributeApi->o_bpv6_0_0_get_personal_data_field_by_id: %s\n" % e)
+        print("Exception when calling UserAttributeApi->get_personal_data_field_by_id: %s\n" % e)
 ```
 
 
@@ -507,7 +507,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponseUserAttributesInner**](OBPv600GetPersonalDataFields200ResponseUserAttributesInner.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -528,8 +528,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_personal_data_fields**
-> OBPv600GetPersonalDataFields200Response o_bpv6_0_0_get_personal_data_fields()
+# **get_personal_data_fields**
+> GetPersonalDataFields200Response get_personal_data_fields()
 
 Get Personal Data Fields
 
@@ -554,7 +554,7 @@ Get Personal Data Fields
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_personal_data_fields200_response import OBPv600GetPersonalDataFields200Response
+from obp_python.models.get_personal_data_fields200_response import GetPersonalDataFields200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -590,11 +590,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Personal Data Fields
-        api_response = api_instance.o_bpv6_0_0_get_personal_data_fields()
-        print("The response of UserAttributeApi->o_bpv6_0_0_get_personal_data_fields:\n")
+        api_response = api_instance.get_personal_data_fields()
+        print("The response of UserAttributeApi->get_personal_data_fields:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserAttributeApi->o_bpv6_0_0_get_personal_data_fields: %s\n" % e)
+        print("Exception when calling UserAttributeApi->get_personal_data_fields: %s\n" % e)
 ```
 
 
@@ -605,7 +605,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -625,8 +625,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_user_attribute_by_id**
-> OBPv600GetPersonalDataFields200ResponseUserAttributesInner o_bpv6_0_0_get_user_attribute_by_id(userid, userattributeid)
+# **get_user_attribute_by_id**
+> GetPersonalDataFields200ResponseUserAttributesInner get_user_attribute_by_id(userid, userattributeid)
 
 Get User Attribute By Id
 
@@ -652,7 +652,7 @@ Get User Attribute By Id
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_personal_data_fields200_response_user_attributes_inner import OBPv600GetPersonalDataFields200ResponseUserAttributesInner
+from obp_python.models.get_personal_data_fields200_response_user_attributes_inner import GetPersonalDataFields200ResponseUserAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -690,11 +690,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get User Attribute By Id
-        api_response = api_instance.o_bpv6_0_0_get_user_attribute_by_id(userid, userattributeid)
-        print("The response of UserAttributeApi->o_bpv6_0_0_get_user_attribute_by_id:\n")
+        api_response = api_instance.get_user_attribute_by_id(userid, userattributeid)
+        print("The response of UserAttributeApi->get_user_attribute_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserAttributeApi->o_bpv6_0_0_get_user_attribute_by_id: %s\n" % e)
+        print("Exception when calling UserAttributeApi->get_user_attribute_by_id: %s\n" % e)
 ```
 
 
@@ -709,7 +709,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponseUserAttributesInner**](OBPv600GetPersonalDataFields200ResponseUserAttributesInner.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -730,8 +730,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_user_attributes**
-> OBPv600GetPersonalDataFields200Response o_bpv6_0_0_get_user_attributes(userid)
+# **get_user_attributes**
+> GetPersonalDataFields200Response get_user_attributes(userid)
 
 Get User Attributes
 
@@ -758,7 +758,7 @@ Get User Attributes
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_personal_data_fields200_response import OBPv600GetPersonalDataFields200Response
+from obp_python.models.get_personal_data_fields200_response import GetPersonalDataFields200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -795,11 +795,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get User Attributes
-        api_response = api_instance.o_bpv6_0_0_get_user_attributes(userid)
-        print("The response of UserAttributeApi->o_bpv6_0_0_get_user_attributes:\n")
+        api_response = api_instance.get_user_attributes(userid)
+        print("The response of UserAttributeApi->get_user_attributes:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserAttributeApi->o_bpv6_0_0_get_user_attributes: %s\n" % e)
+        print("Exception when calling UserAttributeApi->get_user_attributes: %s\n" % e)
 ```
 
 
@@ -813,7 +813,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -834,8 +834,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_update_personal_data_field**
-> OBPv600GetPersonalDataFields200ResponseUserAttributesInner o_bpv6_0_0_update_personal_data_field(userattributeid, obpv600_create_personal_data_field_request)
+# **update_personal_data_field**
+> GetPersonalDataFields200ResponseUserAttributesInner update_personal_data_field(userattributeid, create_personal_data_field_request)
 
 Update Personal Data Field
 
@@ -860,8 +860,8 @@ Update Personal Data Field
 
 ```python
 import obp_python
-from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
-from obp_python.models.obpv600_get_personal_data_fields200_response_user_attributes_inner import OBPv600GetPersonalDataFields200ResponseUserAttributesInner
+from obp_python.models.create_personal_data_field_request import CreatePersonalDataFieldRequest
+from obp_python.models.get_personal_data_fields200_response_user_attributes_inner import GetPersonalDataFields200ResponseUserAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -895,15 +895,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.UserAttributeApi(api_client)
     userattributeid = 'userattributeid_example' # str | The USERATTRIBUTEID identifier
-    obpv600_create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} # OBPv600CreatePersonalDataFieldRequest | Request body
+    create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} # CreatePersonalDataFieldRequest | Request body
 
     try:
         # Update Personal Data Field
-        api_response = api_instance.o_bpv6_0_0_update_personal_data_field(userattributeid, obpv600_create_personal_data_field_request)
-        print("The response of UserAttributeApi->o_bpv6_0_0_update_personal_data_field:\n")
+        api_response = api_instance.update_personal_data_field(userattributeid, create_personal_data_field_request)
+        print("The response of UserAttributeApi->update_personal_data_field:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserAttributeApi->o_bpv6_0_0_update_personal_data_field: %s\n" % e)
+        print("Exception when calling UserAttributeApi->update_personal_data_field: %s\n" % e)
 ```
 
 
@@ -914,11 +914,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userattributeid** | **str**| The USERATTRIBUTEID identifier | 
- **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | 
+ **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponseUserAttributesInner**](OBPv600GetPersonalDataFields200ResponseUserAttributesInner.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -939,8 +939,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_update_user_attribute**
-> OBPv600GetPersonalDataFields200ResponseUserAttributesInner o_bpv6_0_0_update_user_attribute(userid, userattributeid, obpv600_create_personal_data_field_request)
+# **update_user_attribute**
+> GetPersonalDataFields200ResponseUserAttributesInner update_user_attribute(userid, userattributeid, create_personal_data_field_request)
 
 Update User Attribute
 
@@ -966,8 +966,8 @@ Update User Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
-from obp_python.models.obpv600_get_personal_data_fields200_response_user_attributes_inner import OBPv600GetPersonalDataFields200ResponseUserAttributesInner
+from obp_python.models.create_personal_data_field_request import CreatePersonalDataFieldRequest
+from obp_python.models.get_personal_data_fields200_response_user_attributes_inner import GetPersonalDataFields200ResponseUserAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1002,15 +1002,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.UserAttributeApi(api_client)
     userid = 'userid_example' # str | The USERID identifier
     userattributeid = 'userattributeid_example' # str | The USERATTRIBUTEID identifier
-    obpv600_create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} # OBPv600CreatePersonalDataFieldRequest | Request body
+    create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} # CreatePersonalDataFieldRequest | Request body
 
     try:
         # Update User Attribute
-        api_response = api_instance.o_bpv6_0_0_update_user_attribute(userid, userattributeid, obpv600_create_personal_data_field_request)
-        print("The response of UserAttributeApi->o_bpv6_0_0_update_user_attribute:\n")
+        api_response = api_instance.update_user_attribute(userid, userattributeid, create_personal_data_field_request)
+        print("The response of UserAttributeApi->update_user_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserAttributeApi->o_bpv6_0_0_update_user_attribute: %s\n" % e)
+        print("Exception when calling UserAttributeApi->update_user_attribute: %s\n" % e)
 ```
 
 
@@ -1022,11 +1022,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userid** | **str**| The USERID identifier | 
  **userattributeid** | **str**| The USERATTRIBUTEID identifier | 
- **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | 
+ **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponseUserAttributesInner**](OBPv600GetPersonalDataFields200ResponseUserAttributesInner.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 

@@ -13,12 +13,12 @@ open class DynamicMessageDocAPI {
      Create Bank Level Dynamic Message Doc
      
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400UpdateDynamicMessageDocRequest: (body) Request body 
+     - parameter updateDynamicMessageDocRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetDynamicMessageDoc200Response
+     - returns: GetDynamicMessageDoc200Response
      */
-    open class func oBPv400CreateBankLevelDynamicMessageDoc(bankid: String, oBPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetDynamicMessageDoc200Response {
-        return try await oBPv400CreateBankLevelDynamicMessageDocWithRequestBuilder(bankid: bankid, oBPv400UpdateDynamicMessageDocRequest: oBPv400UpdateDynamicMessageDocRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createBankLevelDynamicMessageDoc(bankid: String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetDynamicMessageDoc200Response {
+        return try await createBankLevelDynamicMessageDocWithRequestBuilder(bankid: bankid, updateDynamicMessageDocRequest: updateDynamicMessageDocRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -32,20 +32,20 @@ open class DynamicMessageDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400UpdateDynamicMessageDocRequest: (body) Request body 
+     - parameter updateDynamicMessageDocRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetDynamicMessageDoc200Response> 
+     - returns: RequestBuilder<GetDynamicMessageDoc200Response> 
      */
-    open class func oBPv400CreateBankLevelDynamicMessageDocWithRequestBuilder(bankid: String, oBPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetDynamicMessageDoc200Response> {
+    open class func createBankLevelDynamicMessageDocWithRequestBuilder(bankid: String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetDynamicMessageDoc200Response> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400UpdateDynamicMessageDocRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateDynamicMessageDocRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -55,7 +55,7 @@ open class DynamicMessageDocAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetDynamicMessageDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetDynamicMessageDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -63,12 +63,12 @@ open class DynamicMessageDocAPI {
     /**
      Create Dynamic Message Doc
      
-     - parameter oBPv400UpdateDynamicMessageDocRequest: (body) Request body 
+     - parameter updateDynamicMessageDocRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetDynamicMessageDoc200Response
+     - returns: GetDynamicMessageDoc200Response
      */
-    open class func oBPv400CreateDynamicMessageDoc(oBPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetDynamicMessageDoc200Response {
-        return try await oBPv400CreateDynamicMessageDocWithRequestBuilder(oBPv400UpdateDynamicMessageDocRequest: oBPv400UpdateDynamicMessageDocRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createDynamicMessageDoc(updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetDynamicMessageDoc200Response {
+        return try await createDynamicMessageDocWithRequestBuilder(updateDynamicMessageDocRequest: updateDynamicMessageDocRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -82,16 +82,16 @@ open class DynamicMessageDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
-     - parameter oBPv400UpdateDynamicMessageDocRequest: (body) Request body 
+     - parameter updateDynamicMessageDocRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetDynamicMessageDoc200Response> 
+     - returns: RequestBuilder<GetDynamicMessageDoc200Response> 
      */
-    open class func oBPv400CreateDynamicMessageDocWithRequestBuilder(oBPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetDynamicMessageDoc200Response> {
+    open class func createDynamicMessageDocWithRequestBuilder(updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetDynamicMessageDoc200Response> {
         let localVariablePath = "/obp/v4.0.0/management/dynamic-message-docs"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400UpdateDynamicMessageDocRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateDynamicMessageDocRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -101,7 +101,7 @@ open class DynamicMessageDocAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetDynamicMessageDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetDynamicMessageDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -114,8 +114,8 @@ open class DynamicMessageDocAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv400DeleteBankLevelDynamicMessageDoc(bankid: String, dynamicmessagedocid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv400DeleteBankLevelDynamicMessageDocWithRequestBuilder(bankid: bankid, dynamicmessagedocid: dynamicmessagedocid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteBankLevelDynamicMessageDoc(bankid: String, dynamicmessagedocid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteBankLevelDynamicMessageDocWithRequestBuilder(bankid: bankid, dynamicmessagedocid: dynamicmessagedocid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -129,14 +129,14 @@ open class DynamicMessageDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter dynamicmessagedocid: (path) The DYNAMICMESSAGEDOCID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv400DeleteBankLevelDynamicMessageDocWithRequestBuilder(bankid: String, dynamicmessagedocid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteBankLevelDynamicMessageDocWithRequestBuilder(bankid: String, dynamicmessagedocid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -167,8 +167,8 @@ open class DynamicMessageDocAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv400DeleteDynamicMessageDoc(dynamicmessagedocid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv400DeleteDynamicMessageDocWithRequestBuilder(dynamicmessagedocid: dynamicmessagedocid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteDynamicMessageDoc(dynamicmessagedocid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteDynamicMessageDocWithRequestBuilder(dynamicmessagedocid: dynamicmessagedocid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -182,13 +182,13 @@ open class DynamicMessageDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter dynamicmessagedocid: (path) The DYNAMICMESSAGEDOCID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv400DeleteDynamicMessageDocWithRequestBuilder(dynamicmessagedocid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteDynamicMessageDocWithRequestBuilder(dynamicmessagedocid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid}"
         let dynamicmessagedocidPreEscape = "\(APIHelper.mapValueToPathItem(dynamicmessagedocid))"
         let dynamicmessagedocidPostEscape = dynamicmessagedocidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -214,10 +214,10 @@ open class DynamicMessageDocAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllBankLevelDynamicMessageDocs200Response
+     - returns: GetAllBankLevelDynamicMessageDocs200Response
      */
-    open class func oBPv400GetAllBankLevelDynamicMessageDocs(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllBankLevelDynamicMessageDocs200Response {
-        return try await oBPv400GetAllBankLevelDynamicMessageDocsWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
+    open class func getAllBankLevelDynamicMessageDocs(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllBankLevelDynamicMessageDocs200Response {
+        return try await getAllBankLevelDynamicMessageDocsWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -231,13 +231,13 @@ open class DynamicMessageDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllBankLevelDynamicMessageDocs200Response> 
+     - returns: RequestBuilder<GetAllBankLevelDynamicMessageDocs200Response> 
      */
-    open class func oBPv400GetAllBankLevelDynamicMessageDocsWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllBankLevelDynamicMessageDocs200Response> {
+    open class func getAllBankLevelDynamicMessageDocsWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllBankLevelDynamicMessageDocs200Response> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -253,7 +253,7 @@ open class DynamicMessageDocAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllBankLevelDynamicMessageDocs200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllBankLevelDynamicMessageDocs200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -262,10 +262,10 @@ open class DynamicMessageDocAPI {
      Get all Dynamic Message Docs
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllBankLevelDynamicMessageDocs200Response
+     - returns: GetAllBankLevelDynamicMessageDocs200Response
      */
-    open class func oBPv400GetAllDynamicMessageDocs(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllBankLevelDynamicMessageDocs200Response {
-        return try await oBPv400GetAllDynamicMessageDocsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getAllDynamicMessageDocs(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllBankLevelDynamicMessageDocs200Response {
+        return try await getAllDynamicMessageDocsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -279,12 +279,12 @@ open class DynamicMessageDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllBankLevelDynamicMessageDocs200Response> 
+     - returns: RequestBuilder<GetAllBankLevelDynamicMessageDocs200Response> 
      */
-    open class func oBPv400GetAllDynamicMessageDocsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllBankLevelDynamicMessageDocs200Response> {
+    open class func getAllDynamicMessageDocsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllBankLevelDynamicMessageDocs200Response> {
         let localVariablePath = "/obp/v4.0.0/management/dynamic-message-docs"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -297,7 +297,7 @@ open class DynamicMessageDocAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllBankLevelDynamicMessageDocs200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllBankLevelDynamicMessageDocs200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -308,10 +308,10 @@ open class DynamicMessageDocAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter dynamicmessagedocid: (path) The DYNAMICMESSAGEDOCID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetDynamicMessageDoc200Response
+     - returns: GetDynamicMessageDoc200Response
      */
-    open class func oBPv400GetBankLevelDynamicMessageDoc(bankid: String, dynamicmessagedocid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetDynamicMessageDoc200Response {
-        return try await oBPv400GetBankLevelDynamicMessageDocWithRequestBuilder(bankid: bankid, dynamicmessagedocid: dynamicmessagedocid, apiConfiguration: apiConfiguration).execute().body
+    open class func getBankLevelDynamicMessageDoc(bankid: String, dynamicmessagedocid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetDynamicMessageDoc200Response {
+        return try await getBankLevelDynamicMessageDocWithRequestBuilder(bankid: bankid, dynamicmessagedocid: dynamicmessagedocid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -325,14 +325,14 @@ open class DynamicMessageDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter dynamicmessagedocid: (path) The DYNAMICMESSAGEDOCID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetDynamicMessageDoc200Response> 
+     - returns: RequestBuilder<GetDynamicMessageDoc200Response> 
      */
-    open class func oBPv400GetBankLevelDynamicMessageDocWithRequestBuilder(bankid: String, dynamicmessagedocid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetDynamicMessageDoc200Response> {
+    open class func getBankLevelDynamicMessageDocWithRequestBuilder(bankid: String, dynamicmessagedocid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetDynamicMessageDoc200Response> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -351,7 +351,7 @@ open class DynamicMessageDocAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetDynamicMessageDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetDynamicMessageDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -361,10 +361,10 @@ open class DynamicMessageDocAPI {
      
      - parameter dynamicmessagedocid: (path) The DYNAMICMESSAGEDOCID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetDynamicMessageDoc200Response
+     - returns: GetDynamicMessageDoc200Response
      */
-    open class func oBPv400GetDynamicMessageDoc(dynamicmessagedocid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetDynamicMessageDoc200Response {
-        return try await oBPv400GetDynamicMessageDocWithRequestBuilder(dynamicmessagedocid: dynamicmessagedocid, apiConfiguration: apiConfiguration).execute().body
+    open class func getDynamicMessageDoc(dynamicmessagedocid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetDynamicMessageDoc200Response {
+        return try await getDynamicMessageDocWithRequestBuilder(dynamicmessagedocid: dynamicmessagedocid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -378,13 +378,13 @@ open class DynamicMessageDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter dynamicmessagedocid: (path) The DYNAMICMESSAGEDOCID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetDynamicMessageDoc200Response> 
+     - returns: RequestBuilder<GetDynamicMessageDoc200Response> 
      */
-    open class func oBPv400GetDynamicMessageDocWithRequestBuilder(dynamicmessagedocid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetDynamicMessageDoc200Response> {
+    open class func getDynamicMessageDocWithRequestBuilder(dynamicmessagedocid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetDynamicMessageDoc200Response> {
         var localVariablePath = "/obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid}"
         let dynamicmessagedocidPreEscape = "\(APIHelper.mapValueToPathItem(dynamicmessagedocid))"
         let dynamicmessagedocidPostEscape = dynamicmessagedocidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -400,7 +400,7 @@ open class DynamicMessageDocAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetDynamicMessageDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetDynamicMessageDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -410,12 +410,12 @@ open class DynamicMessageDocAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter dynamicmessagedocid: (path) The DYNAMICMESSAGEDOCID identifier 
-     - parameter oBPv400UpdateDynamicMessageDocRequest: (body) Request body 
+     - parameter updateDynamicMessageDocRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetDynamicMessageDoc200Response
+     - returns: GetDynamicMessageDoc200Response
      */
-    open class func oBPv400UpdateBankLevelDynamicMessageDoc(bankid: String, dynamicmessagedocid: String, oBPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetDynamicMessageDoc200Response {
-        return try await oBPv400UpdateBankLevelDynamicMessageDocWithRequestBuilder(bankid: bankid, dynamicmessagedocid: dynamicmessagedocid, oBPv400UpdateDynamicMessageDocRequest: oBPv400UpdateDynamicMessageDocRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateBankLevelDynamicMessageDoc(bankid: String, dynamicmessagedocid: String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetDynamicMessageDoc200Response {
+        return try await updateBankLevelDynamicMessageDocWithRequestBuilder(bankid: bankid, dynamicmessagedocid: dynamicmessagedocid, updateDynamicMessageDocRequest: updateDynamicMessageDocRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -429,15 +429,15 @@ open class DynamicMessageDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter dynamicmessagedocid: (path) The DYNAMICMESSAGEDOCID identifier 
-     - parameter oBPv400UpdateDynamicMessageDocRequest: (body) Request body 
+     - parameter updateDynamicMessageDocRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetDynamicMessageDoc200Response> 
+     - returns: RequestBuilder<GetDynamicMessageDoc200Response> 
      */
-    open class func oBPv400UpdateBankLevelDynamicMessageDocWithRequestBuilder(bankid: String, dynamicmessagedocid: String, oBPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetDynamicMessageDoc200Response> {
+    open class func updateBankLevelDynamicMessageDocWithRequestBuilder(bankid: String, dynamicmessagedocid: String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetDynamicMessageDoc200Response> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -446,7 +446,7 @@ open class DynamicMessageDocAPI {
         let dynamicmessagedocidPostEscape = dynamicmessagedocidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{dynamicmessagedocid}", with: dynamicmessagedocidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400UpdateDynamicMessageDocRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateDynamicMessageDocRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -456,7 +456,7 @@ open class DynamicMessageDocAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetDynamicMessageDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetDynamicMessageDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -465,12 +465,12 @@ open class DynamicMessageDocAPI {
      Update Dynamic Message Doc
      
      - parameter dynamicmessagedocid: (path) The DYNAMICMESSAGEDOCID identifier 
-     - parameter oBPv400UpdateDynamicMessageDocRequest: (body) Request body 
+     - parameter updateDynamicMessageDocRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetDynamicMessageDoc200Response
+     - returns: GetDynamicMessageDoc200Response
      */
-    open class func oBPv400UpdateDynamicMessageDoc(dynamicmessagedocid: String, oBPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetDynamicMessageDoc200Response {
-        return try await oBPv400UpdateDynamicMessageDocWithRequestBuilder(dynamicmessagedocid: dynamicmessagedocid, oBPv400UpdateDynamicMessageDocRequest: oBPv400UpdateDynamicMessageDocRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateDynamicMessageDoc(dynamicmessagedocid: String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetDynamicMessageDoc200Response {
+        return try await updateDynamicMessageDocWithRequestBuilder(dynamicmessagedocid: dynamicmessagedocid, updateDynamicMessageDocRequest: updateDynamicMessageDocRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -484,20 +484,20 @@ open class DynamicMessageDocAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter dynamicmessagedocid: (path) The DYNAMICMESSAGEDOCID identifier 
-     - parameter oBPv400UpdateDynamicMessageDocRequest: (body) Request body 
+     - parameter updateDynamicMessageDocRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetDynamicMessageDoc200Response> 
+     - returns: RequestBuilder<GetDynamicMessageDoc200Response> 
      */
-    open class func oBPv400UpdateDynamicMessageDocWithRequestBuilder(dynamicmessagedocid: String, oBPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetDynamicMessageDoc200Response> {
+    open class func updateDynamicMessageDocWithRequestBuilder(dynamicmessagedocid: String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetDynamicMessageDoc200Response> {
         var localVariablePath = "/obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid}"
         let dynamicmessagedocidPreEscape = "\(APIHelper.mapValueToPathItem(dynamicmessagedocid))"
         let dynamicmessagedocidPostEscape = dynamicmessagedocidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{dynamicmessagedocid}", with: dynamicmessagedocidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400UpdateDynamicMessageDocRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateDynamicMessageDocRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -507,7 +507,7 @@ open class DynamicMessageDocAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetDynamicMessageDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetDynamicMessageDoc200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

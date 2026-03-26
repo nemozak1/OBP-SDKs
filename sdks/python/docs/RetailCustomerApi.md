@@ -4,13 +4,13 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv6_0_0_create_retail_customer**](RetailCustomerApi.md#o_bpv6_0_0_create_retail_customer) | **POST** /obp/v6.0.0/banks/{bankid}/retail-customers | Create Retail Customer
-[**o_bpv6_0_0_get_retail_customer_by_customer_id**](RetailCustomerApi.md#o_bpv6_0_0_get_retail_customer_by_customer_id) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers/{customerid} | Get Retail Customer by CUSTOMER_ID
-[**o_bpv6_0_0_get_retail_customers_at_one_bank**](RetailCustomerApi.md#o_bpv6_0_0_get_retail_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers | Get Retail Customers at Bank
+[**create_retail_customer**](RetailCustomerApi.md#create_retail_customer) | **POST** /obp/v6.0.0/banks/{bankid}/retail-customers | Create Retail Customer
+[**get_retail_customer_by_customer_id**](RetailCustomerApi.md#get_retail_customer_by_customer_id) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers/{customerid} | Get Retail Customer by CUSTOMER_ID
+[**get_retail_customers_at_one_bank**](RetailCustomerApi.md#get_retail_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers | Get Retail Customers at Bank
 
 
-# **o_bpv6_0_0_create_retail_customer**
-> OBPv600GetCustomerChildren200ResponseCustomersInner o_bpv6_0_0_create_retail_customer(bankid, obpv600_create_retail_customer_request)
+# **create_retail_customer**
+> GetCustomerChildren200ResponseCustomersInner create_retail_customer(bankid, create_retail_customer_request)
 
 Create Retail Customer
 
@@ -99,8 +99,8 @@ date_of_birth and dob_of_dependants must be in ISO 8601 date format: <strong>YYY
 
 ```python
 import obp_python
-from obp_python.models.obpv600_create_retail_customer_request import OBPv600CreateRetailCustomerRequest
-from obp_python.models.obpv600_get_customer_children200_response_customers_inner import OBPv600GetCustomerChildren200ResponseCustomersInner
+from obp_python.models.create_retail_customer_request import CreateRetailCustomerRequest
+from obp_python.models.get_customer_children200_response_customers_inner import GetCustomerChildren200ResponseCustomersInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -134,15 +134,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.RetailCustomerApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv600_create_retail_customer_request = {"type":"object","properties":{"relationship_status":{"type":"string"},"name_suffix":{"type":"string"},"highest_education_attained":{"type":"string"},"credit_limit":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"date_of_birth":{"type":"string","format":"date-time"},"title":{"type":"string"},"last_ok_date":{"type":"string","format":"date-time"},"face_image":{"type":"object","properties":{"url":{"type":"string"},"date":{"type":"string","format":"date-time"}}},"dob_of_dependants":{"type":"array","items":{"type":"string"}},"credit_rating":{"type":"object","properties":{"rating":{"type":"string"},"source":{"type":"string"}}},"email":{"type":"string"},"customer_number":{"type":"string"},"kyc_status":{"type":"boolean"},"legal_name":{"type":"string"},"branch_id":{"type":"string"},"employment_status":{"type":"string"},"mobile_phone_number":{"type":"string"},"dependants":{"type":"integer"}}} # OBPv600CreateRetailCustomerRequest | Request body
+    create_retail_customer_request = {"type":"object","properties":{"relationship_status":{"type":"string"},"name_suffix":{"type":"string"},"highest_education_attained":{"type":"string"},"credit_limit":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"date_of_birth":{"type":"string","format":"date-time"},"title":{"type":"string"},"last_ok_date":{"type":"string","format":"date-time"},"face_image":{"type":"object","properties":{"url":{"type":"string"},"date":{"type":"string","format":"date-time"}}},"dob_of_dependants":{"type":"array","items":{"type":"string"}},"credit_rating":{"type":"object","properties":{"rating":{"type":"string"},"source":{"type":"string"}}},"email":{"type":"string"},"customer_number":{"type":"string"},"kyc_status":{"type":"boolean"},"legal_name":{"type":"string"},"branch_id":{"type":"string"},"employment_status":{"type":"string"},"mobile_phone_number":{"type":"string"},"dependants":{"type":"integer"}}} # CreateRetailCustomerRequest | Request body
 
     try:
         # Create Retail Customer
-        api_response = api_instance.o_bpv6_0_0_create_retail_customer(bankid, obpv600_create_retail_customer_request)
-        print("The response of RetailCustomerApi->o_bpv6_0_0_create_retail_customer:\n")
+        api_response = api_instance.create_retail_customer(bankid, create_retail_customer_request)
+        print("The response of RetailCustomerApi->create_retail_customer:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RetailCustomerApi->o_bpv6_0_0_create_retail_customer: %s\n" % e)
+        print("Exception when calling RetailCustomerApi->create_retail_customer: %s\n" % e)
 ```
 
 
@@ -153,11 +153,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv600_create_retail_customer_request** | [**OBPv600CreateRetailCustomerRequest**](OBPv600CreateRetailCustomerRequest.md)| Request body | 
+ **create_retail_customer_request** | [**CreateRetailCustomerRequest**](CreateRetailCustomerRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200ResponseCustomersInner**](OBPv600GetCustomerChildren200ResponseCustomersInner.md)
+[**GetCustomerChildren200ResponseCustomersInner**](GetCustomerChildren200ResponseCustomersInner.md)
 
 ### Authorization
 
@@ -178,8 +178,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_retail_customer_by_customer_id**
-> OBPv600GetCustomerByCustomerNumber200Response o_bpv6_0_0_get_retail_customer_by_customer_id(bankid, customerid)
+# **get_retail_customer_by_customer_id**
+> GetCustomerByCustomerNumber200Response get_retail_customer_by_customer_id(bankid, customerid)
 
 Get Retail Customer by CUSTOMER_ID
 
@@ -237,7 +237,7 @@ date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <stron
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_customer_by_customer_number200_response import OBPv600GetCustomerByCustomerNumber200Response
+from obp_python.models.get_customer_by_customer_number200_response import GetCustomerByCustomerNumber200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -275,11 +275,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Retail Customer by CUSTOMER_ID
-        api_response = api_instance.o_bpv6_0_0_get_retail_customer_by_customer_id(bankid, customerid)
-        print("The response of RetailCustomerApi->o_bpv6_0_0_get_retail_customer_by_customer_id:\n")
+        api_response = api_instance.get_retail_customer_by_customer_id(bankid, customerid)
+        print("The response of RetailCustomerApi->get_retail_customer_by_customer_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RetailCustomerApi->o_bpv6_0_0_get_retail_customer_by_customer_id: %s\n" % e)
+        print("Exception when calling RetailCustomerApi->get_retail_customer_by_customer_id: %s\n" % e)
 ```
 
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetCustomerByCustomerNumber200Response**](OBPv600GetCustomerByCustomerNumber200Response.md)
+[**GetCustomerByCustomerNumber200Response**](GetCustomerByCustomerNumber200Response.md)
 
 ### Authorization
 
@@ -314,8 +314,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_retail_customers_at_one_bank**
-> OBPv600GetCustomerChildren200Response o_bpv6_0_0_get_retail_customers_at_one_bank(bankid)
+# **get_retail_customers_at_one_bank**
+> GetCustomerChildren200Response get_retail_customers_at_one_bank(bankid)
 
 Get Retail Customers at Bank
 
@@ -371,7 +371,7 @@ date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <stron
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_customer_children200_response import OBPv600GetCustomerChildren200Response
+from obp_python.models.get_customer_children200_response import GetCustomerChildren200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -408,11 +408,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Retail Customers at Bank
-        api_response = api_instance.o_bpv6_0_0_get_retail_customers_at_one_bank(bankid)
-        print("The response of RetailCustomerApi->o_bpv6_0_0_get_retail_customers_at_one_bank:\n")
+        api_response = api_instance.get_retail_customers_at_one_bank(bankid)
+        print("The response of RetailCustomerApi->get_retail_customers_at_one_bank:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RetailCustomerApi->o_bpv6_0_0_get_retail_customers_at_one_bank: %s\n" % e)
+        print("Exception when calling RetailCustomerApi->get_retail_customers_at_one_bank: %s\n" % e)
 ```
 
 
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200Response**](OBPv600GetCustomerChildren200Response.md)
+[**GetCustomerChildren200Response**](GetCustomerChildren200Response.md)
 
 ### Authorization
 

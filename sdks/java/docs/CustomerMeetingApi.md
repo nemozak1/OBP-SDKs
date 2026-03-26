@@ -1,21 +1,21 @@
 # CustomerMeetingApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv310CreateMeeting**](CustomerMeetingApi.md#oBPv310CreateMeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call) |
-| [**oBPv310CreateMeetingWithHttpInfo**](CustomerMeetingApi.md#oBPv310CreateMeetingWithHttpInfo) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call) |
-| [**oBPv310GetMeeting**](CustomerMeetingApi.md#oBPv310GetMeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting |
-| [**oBPv310GetMeetingWithHttpInfo**](CustomerMeetingApi.md#oBPv310GetMeetingWithHttpInfo) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting |
-| [**oBPv310GetMeetings**](CustomerMeetingApi.md#oBPv310GetMeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings |
-| [**oBPv310GetMeetingsWithHttpInfo**](CustomerMeetingApi.md#oBPv310GetMeetingsWithHttpInfo) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings |
+| [**createMeeting**](CustomerMeetingApi.md#createMeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call) |
+| [**createMeetingWithHttpInfo**](CustomerMeetingApi.md#createMeetingWithHttpInfo) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call) |
+| [**getMeeting**](CustomerMeetingApi.md#getMeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting |
+| [**getMeetingWithHttpInfo**](CustomerMeetingApi.md#getMeetingWithHttpInfo) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting |
+| [**getMeetings**](CustomerMeetingApi.md#getMeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings |
+| [**getMeetingsWithHttpInfo**](CustomerMeetingApi.md#getMeetingsWithHttpInfo) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings |
 
 
 
-## oBPv310CreateMeeting
+## createMeeting
 
-> OBPv310GetMeeting200Response oBPv310CreateMeeting(bankid, obPv310CreateMeetingRequest)
+> GetMeeting200Response createMeeting(bankid, createMeetingRequest)
 
 Create Meeting (video conference/call)
 
@@ -35,7 +35,7 @@ import com.openbankproject.api.CustomerMeetingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -55,12 +55,12 @@ public class Example {
 
         CustomerMeetingApi apiInstance = new CustomerMeetingApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv310CreateMeetingRequest obPv310CreateMeetingRequest = new OBPv310CreateMeetingRequest(); // OBPv310CreateMeetingRequest | Request body
+        CreateMeetingRequest createMeetingRequest = new CreateMeetingRequest(); // CreateMeetingRequest | Request body
         try {
-            OBPv310GetMeeting200Response result = apiInstance.oBPv310CreateMeeting(bankid, obPv310CreateMeetingRequest);
+            GetMeeting200Response result = apiInstance.createMeeting(bankid, createMeetingRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerMeetingApi#oBPv310CreateMeeting");
+            System.err.println("Exception when calling CustomerMeetingApi#createMeeting");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -76,11 +76,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv310CreateMeetingRequest** | [**OBPv310CreateMeetingRequest**](OBPv310CreateMeetingRequest.md)| Request body | |
+| **createMeetingRequest** | [**CreateMeetingRequest**](CreateMeetingRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 
 ### Authorization
@@ -99,9 +99,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv310CreateMeetingWithHttpInfo
+## createMeetingWithHttpInfo
 
-> ApiResponse<OBPv310GetMeeting200Response> oBPv310CreateMeeting oBPv310CreateMeetingWithHttpInfo(bankid, obPv310CreateMeetingRequest)
+> ApiResponse<GetMeeting200Response> createMeeting createMeetingWithHttpInfo(bankid, createMeetingRequest)
 
 Create Meeting (video conference/call)
 
@@ -122,7 +122,7 @@ import com.openbankproject.api.CustomerMeetingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -142,14 +142,14 @@ public class Example {
 
         CustomerMeetingApi apiInstance = new CustomerMeetingApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv310CreateMeetingRequest obPv310CreateMeetingRequest = new OBPv310CreateMeetingRequest(); // OBPv310CreateMeetingRequest | Request body
+        CreateMeetingRequest createMeetingRequest = new CreateMeetingRequest(); // CreateMeetingRequest | Request body
         try {
-            ApiResponse<OBPv310GetMeeting200Response> response = apiInstance.oBPv310CreateMeetingWithHttpInfo(bankid, obPv310CreateMeetingRequest);
+            ApiResponse<GetMeeting200Response> response = apiInstance.createMeetingWithHttpInfo(bankid, createMeetingRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerMeetingApi#oBPv310CreateMeeting");
+            System.err.println("Exception when calling CustomerMeetingApi#createMeeting");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -165,11 +165,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv310CreateMeetingRequest** | [**OBPv310CreateMeetingRequest**](OBPv310CreateMeetingRequest.md)| Request body | |
+| **createMeetingRequest** | [**CreateMeetingRequest**](CreateMeetingRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)>
+ApiResponse<[**GetMeeting200Response**](GetMeeting200Response.md)>
 
 
 ### Authorization
@@ -189,9 +189,9 @@ ApiResponse<[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv310GetMeeting
+## getMeeting
 
-> OBPv310GetMeeting200Response oBPv310GetMeeting(bankid, meetingid)
+> GetMeeting200Response getMeeting(bankid, meetingid)
 
 Get Meeting
 
@@ -211,7 +211,7 @@ import com.openbankproject.api.CustomerMeetingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -233,10 +233,10 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String meetingid = "meetingid_example"; // String | The MEETINGID identifier
         try {
-            OBPv310GetMeeting200Response result = apiInstance.oBPv310GetMeeting(bankid, meetingid);
+            GetMeeting200Response result = apiInstance.getMeeting(bankid, meetingid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerMeetingApi#oBPv310GetMeeting");
+            System.err.println("Exception when calling CustomerMeetingApi#getMeeting");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -256,7 +256,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 
 ### Authorization
@@ -275,9 +275,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv310GetMeetingWithHttpInfo
+## getMeetingWithHttpInfo
 
-> ApiResponse<OBPv310GetMeeting200Response> oBPv310GetMeeting oBPv310GetMeetingWithHttpInfo(bankid, meetingid)
+> ApiResponse<GetMeeting200Response> getMeeting getMeetingWithHttpInfo(bankid, meetingid)
 
 Get Meeting
 
@@ -298,7 +298,7 @@ import com.openbankproject.api.CustomerMeetingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -320,12 +320,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String meetingid = "meetingid_example"; // String | The MEETINGID identifier
         try {
-            ApiResponse<OBPv310GetMeeting200Response> response = apiInstance.oBPv310GetMeetingWithHttpInfo(bankid, meetingid);
+            ApiResponse<GetMeeting200Response> response = apiInstance.getMeetingWithHttpInfo(bankid, meetingid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerMeetingApi#oBPv310GetMeeting");
+            System.err.println("Exception when calling CustomerMeetingApi#getMeeting");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -345,7 +345,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)>
+ApiResponse<[**GetMeeting200Response**](GetMeeting200Response.md)>
 
 
 ### Authorization
@@ -365,9 +365,9 @@ ApiResponse<[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv310GetMeetings
+## getMeetings
 
-> OBPv310GetMeetings200Response oBPv310GetMeetings(bankid)
+> GetMeetings200Response getMeetings(bankid)
 
 Get Meetings
 
@@ -387,7 +387,7 @@ import com.openbankproject.api.CustomerMeetingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -408,10 +408,10 @@ public class Example {
         CustomerMeetingApi apiInstance = new CustomerMeetingApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            OBPv310GetMeetings200Response result = apiInstance.oBPv310GetMeetings(bankid);
+            GetMeetings200Response result = apiInstance.getMeetings(bankid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerMeetingApi#oBPv310GetMeetings");
+            System.err.println("Exception when calling CustomerMeetingApi#getMeetings");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -430,7 +430,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv310GetMeetings200Response**](OBPv310GetMeetings200Response.md)
+[**GetMeetings200Response**](GetMeetings200Response.md)
 
 
 ### Authorization
@@ -449,9 +449,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv310GetMeetingsWithHttpInfo
+## getMeetingsWithHttpInfo
 
-> ApiResponse<OBPv310GetMeetings200Response> oBPv310GetMeetings oBPv310GetMeetingsWithHttpInfo(bankid)
+> ApiResponse<GetMeetings200Response> getMeetings getMeetingsWithHttpInfo(bankid)
 
 Get Meetings
 
@@ -472,7 +472,7 @@ import com.openbankproject.api.CustomerMeetingApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -493,12 +493,12 @@ public class Example {
         CustomerMeetingApi apiInstance = new CustomerMeetingApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            ApiResponse<OBPv310GetMeetings200Response> response = apiInstance.oBPv310GetMeetingsWithHttpInfo(bankid);
+            ApiResponse<GetMeetings200Response> response = apiInstance.getMeetingsWithHttpInfo(bankid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerMeetingApi#oBPv310GetMeetings");
+            System.err.println("Exception when calling CustomerMeetingApi#getMeetings");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -517,7 +517,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv310GetMeetings200Response**](OBPv310GetMeetings200Response.md)>
+ApiResponse<[**GetMeetings200Response**](GetMeetings200Response.md)>
 
 
 ### Authorization

@@ -4,14 +4,14 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records**](DynamicEntityApi.md#o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
-[**o_bpv6_0_0_get_available_personal_dynamic_entities**](DynamicEntityApi.md#o_bpv6_0_0_get_available_personal_dynamic_entities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
-[**o_bpv6_0_0_get_dynamic_entity_diagnostics**](DynamicEntityApi.md#o_bpv6_0_0_get_dynamic_entity_diagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
-[**o_bpv6_0_0_get_reference_types**](DynamicEntityApi.md#o_bpv6_0_0_get_reference_types) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
+[**cleanup_orphaned_dynamic_entity_records**](DynamicEntityApi.md#cleanup_orphaned_dynamic_entity_records) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
+[**get_available_personal_dynamic_entities**](DynamicEntityApi.md#get_available_personal_dynamic_entities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
+[**get_dynamic_entity_diagnostics**](DynamicEntityApi.md#get_dynamic_entity_diagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
+[**get_reference_types**](DynamicEntityApi.md#get_reference_types) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
 
 
-# **o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records**
-> OBPv600CleanupOrphanedDynamicEntityRecords200Response o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records()
+# **cleanup_orphaned_dynamic_entity_records**
+> CleanupOrphanedDynamicEntityRecords200Response cleanup_orphaned_dynamic_entity_records()
 
 Cleanup Orphaned Dynamic Entity Records
 
@@ -40,7 +40,7 @@ GET /management/diagnostics/dynamic-entities), then deletes them.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_cleanup_orphaned_dynamic_entity_records200_response import OBPv600CleanupOrphanedDynamicEntityRecords200Response
+from obp_python.models.cleanup_orphaned_dynamic_entity_records200_response import CleanupOrphanedDynamicEntityRecords200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -76,11 +76,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Cleanup Orphaned Dynamic Entity Records
-        api_response = api_instance.o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records()
-        print("The response of DynamicEntityApi->o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records:\n")
+        api_response = api_instance.cleanup_orphaned_dynamic_entity_records()
+        print("The response of DynamicEntityApi->cleanup_orphaned_dynamic_entity_records:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicEntityApi->o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records: %s\n" % e)
+        print("Exception when calling DynamicEntityApi->cleanup_orphaned_dynamic_entity_records: %s\n" % e)
 ```
 
 
@@ -91,7 +91,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600CleanupOrphanedDynamicEntityRecords200Response**](OBPv600CleanupOrphanedDynamicEntityRecords200Response.md)
+[**CleanupOrphanedDynamicEntityRecords200Response**](CleanupOrphanedDynamicEntityRecords200Response.md)
 
 ### Authorization
 
@@ -111,8 +111,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_available_personal_dynamic_entities**
-> OBPv600GetAvailablePersonalDynamicEntities200Response o_bpv6_0_0_get_available_personal_dynamic_entities()
+# **get_available_personal_dynamic_entities**
+> GetAvailablePersonalDynamicEntities200Response get_available_personal_dynamic_entities()
 
 Get Available Personal Dynamic Entities
 
@@ -134,7 +134,7 @@ without needing admin access to view all dynamic entity definitions.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_available_personal_dynamic_entities200_response import OBPv600GetAvailablePersonalDynamicEntities200Response
+from obp_python.models.get_available_personal_dynamic_entities200_response import GetAvailablePersonalDynamicEntities200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -170,11 +170,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Available Personal Dynamic Entities
-        api_response = api_instance.o_bpv6_0_0_get_available_personal_dynamic_entities()
-        print("The response of DynamicEntityApi->o_bpv6_0_0_get_available_personal_dynamic_entities:\n")
+        api_response = api_instance.get_available_personal_dynamic_entities()
+        print("The response of DynamicEntityApi->get_available_personal_dynamic_entities:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicEntityApi->o_bpv6_0_0_get_available_personal_dynamic_entities: %s\n" % e)
+        print("Exception when calling DynamicEntityApi->get_available_personal_dynamic_entities: %s\n" % e)
 ```
 
 
@@ -185,7 +185,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -205,8 +205,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_dynamic_entity_diagnostics**
-> OBPv600GetDynamicEntityDiagnostics200Response o_bpv6_0_0_get_dynamic_entity_diagnostics()
+# **get_dynamic_entity_diagnostics**
+> GetDynamicEntityDiagnostics200Response get_dynamic_entity_diagnostics()
 
 Get Dynamic Entity Diagnostics
 
@@ -260,7 +260,7 @@ The response contains:<br />
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_dynamic_entity_diagnostics200_response import OBPv600GetDynamicEntityDiagnostics200Response
+from obp_python.models.get_dynamic_entity_diagnostics200_response import GetDynamicEntityDiagnostics200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -296,11 +296,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Dynamic Entity Diagnostics
-        api_response = api_instance.o_bpv6_0_0_get_dynamic_entity_diagnostics()
-        print("The response of DynamicEntityApi->o_bpv6_0_0_get_dynamic_entity_diagnostics:\n")
+        api_response = api_instance.get_dynamic_entity_diagnostics()
+        print("The response of DynamicEntityApi->get_dynamic_entity_diagnostics:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicEntityApi->o_bpv6_0_0_get_dynamic_entity_diagnostics: %s\n" % e)
+        print("Exception when calling DynamicEntityApi->get_dynamic_entity_diagnostics: %s\n" % e)
 ```
 
 
@@ -311,7 +311,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetDynamicEntityDiagnostics200Response**](OBPv600GetDynamicEntityDiagnostics200Response.md)
+[**GetDynamicEntityDiagnostics200Response**](GetDynamicEntityDiagnostics200Response.md)
 
 ### Authorization
 
@@ -331,8 +331,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_reference_types**
-> OBPv600GetReferenceTypes200Response o_bpv6_0_0_get_reference_types()
+# **get_reference_types**
+> GetReferenceTypes200Response get_reference_types()
 
 Get Reference Types for Dynamic Entities
 
@@ -374,7 +374,7 @@ If you want to create a Dynamic Entity with a field that references a Customer, 
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_reference_types200_response import OBPv600GetReferenceTypes200Response
+from obp_python.models.get_reference_types200_response import GetReferenceTypes200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -410,11 +410,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Reference Types for Dynamic Entities
-        api_response = api_instance.o_bpv6_0_0_get_reference_types()
-        print("The response of DynamicEntityApi->o_bpv6_0_0_get_reference_types:\n")
+        api_response = api_instance.get_reference_types()
+        print("The response of DynamicEntityApi->get_reference_types:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicEntityApi->o_bpv6_0_0_get_reference_types: %s\n" % e)
+        print("Exception when calling DynamicEntityApi->get_reference_types: %s\n" % e)
 ```
 
 
@@ -425,7 +425,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetReferenceTypes200Response**](OBPv600GetReferenceTypes200Response.md)
+[**GetReferenceTypes200Response**](GetReferenceTypes200Response.md)
 
 ### Authorization
 

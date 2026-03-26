@@ -1,27 +1,27 @@
 # JsonSchemaValidationApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateJsonSchemaValidation**](JsonSchemaValidationApi.md#oBPv400CreateJsonSchemaValidation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation |
-| [**oBPv400CreateJsonSchemaValidationWithHttpInfo**](JsonSchemaValidationApi.md#oBPv400CreateJsonSchemaValidationWithHttpInfo) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation |
-| [**oBPv400DeleteJsonSchemaValidation**](JsonSchemaValidationApi.md#oBPv400DeleteJsonSchemaValidation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation |
-| [**oBPv400DeleteJsonSchemaValidationWithHttpInfo**](JsonSchemaValidationApi.md#oBPv400DeleteJsonSchemaValidationWithHttpInfo) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation |
-| [**oBPv400GetAllJsonSchemaValidations**](JsonSchemaValidationApi.md#oBPv400GetAllJsonSchemaValidations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations |
-| [**oBPv400GetAllJsonSchemaValidationsWithHttpInfo**](JsonSchemaValidationApi.md#oBPv400GetAllJsonSchemaValidationsWithHttpInfo) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations |
-| [**oBPv400GetAllJsonSchemaValidationsPublic**](JsonSchemaValidationApi.md#oBPv400GetAllJsonSchemaValidationsPublic) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public |
-| [**oBPv400GetAllJsonSchemaValidationsPublicWithHttpInfo**](JsonSchemaValidationApi.md#oBPv400GetAllJsonSchemaValidationsPublicWithHttpInfo) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public |
-| [**oBPv400GetJsonSchemaValidation**](JsonSchemaValidationApi.md#oBPv400GetJsonSchemaValidation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation |
-| [**oBPv400GetJsonSchemaValidationWithHttpInfo**](JsonSchemaValidationApi.md#oBPv400GetJsonSchemaValidationWithHttpInfo) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation |
-| [**oBPv400UpdateJsonSchemaValidation**](JsonSchemaValidationApi.md#oBPv400UpdateJsonSchemaValidation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation |
-| [**oBPv400UpdateJsonSchemaValidationWithHttpInfo**](JsonSchemaValidationApi.md#oBPv400UpdateJsonSchemaValidationWithHttpInfo) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation |
+| [**createJsonSchemaValidation**](JsonSchemaValidationApi.md#createJsonSchemaValidation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation |
+| [**createJsonSchemaValidationWithHttpInfo**](JsonSchemaValidationApi.md#createJsonSchemaValidationWithHttpInfo) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation |
+| [**deleteJsonSchemaValidation**](JsonSchemaValidationApi.md#deleteJsonSchemaValidation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation |
+| [**deleteJsonSchemaValidationWithHttpInfo**](JsonSchemaValidationApi.md#deleteJsonSchemaValidationWithHttpInfo) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation |
+| [**getAllJsonSchemaValidations**](JsonSchemaValidationApi.md#getAllJsonSchemaValidations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations |
+| [**getAllJsonSchemaValidationsWithHttpInfo**](JsonSchemaValidationApi.md#getAllJsonSchemaValidationsWithHttpInfo) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations |
+| [**getAllJsonSchemaValidationsPublic**](JsonSchemaValidationApi.md#getAllJsonSchemaValidationsPublic) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public |
+| [**getAllJsonSchemaValidationsPublicWithHttpInfo**](JsonSchemaValidationApi.md#getAllJsonSchemaValidationsPublicWithHttpInfo) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public |
+| [**getJsonSchemaValidation**](JsonSchemaValidationApi.md#getJsonSchemaValidation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation |
+| [**getJsonSchemaValidationWithHttpInfo**](JsonSchemaValidationApi.md#getJsonSchemaValidationWithHttpInfo) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation |
+| [**updateJsonSchemaValidation**](JsonSchemaValidationApi.md#updateJsonSchemaValidation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation |
+| [**updateJsonSchemaValidationWithHttpInfo**](JsonSchemaValidationApi.md#updateJsonSchemaValidationWithHttpInfo) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation |
 
 
 
-## oBPv400CreateJsonSchemaValidation
+## createJsonSchemaValidation
 
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems oBPv400CreateJsonSchemaValidation(operationid, obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner createJsonSchemaValidation(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
 
 Create a JSON Schema Validation
 
@@ -41,7 +41,7 @@ import com.openbankproject.api.JsonSchemaValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -61,12 +61,12 @@ public class Example {
 
         JsonSchemaValidationApi apiInstance = new JsonSchemaValidationApi(defaultClient);
         String operationid = "operationid_example"; // String | The OPERATIONID identifier
-        OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema = new OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema(); // OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
+        GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema = new GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema(); // GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
         try {
-            OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems result = apiInstance.oBPv400CreateJsonSchemaValidation(operationid, obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+            GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner result = apiInstance.createJsonSchemaValidation(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling JsonSchemaValidationApi#oBPv400CreateJsonSchemaValidation");
+            System.err.println("Exception when calling JsonSchemaValidationApi#createJsonSchemaValidation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -82,11 +82,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **operationid** | **String**| The OPERATIONID identifier | |
-| **obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md)| Request body | |
+| **getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema** | [**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 
 ### Authorization
@@ -104,9 +104,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateJsonSchemaValidationWithHttpInfo
+## createJsonSchemaValidationWithHttpInfo
 
-> ApiResponse<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> oBPv400CreateJsonSchemaValidation oBPv400CreateJsonSchemaValidationWithHttpInfo(operationid, obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+> ApiResponse<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> createJsonSchemaValidation createJsonSchemaValidationWithHttpInfo(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
 
 Create a JSON Schema Validation
 
@@ -127,7 +127,7 @@ import com.openbankproject.api.JsonSchemaValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -147,14 +147,14 @@ public class Example {
 
         JsonSchemaValidationApi apiInstance = new JsonSchemaValidationApi(defaultClient);
         String operationid = "operationid_example"; // String | The OPERATIONID identifier
-        OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema = new OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema(); // OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
+        GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema = new GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema(); // GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
         try {
-            ApiResponse<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> response = apiInstance.oBPv400CreateJsonSchemaValidationWithHttpInfo(operationid, obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+            ApiResponse<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> response = apiInstance.createJsonSchemaValidationWithHttpInfo(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling JsonSchemaValidationApi#oBPv400CreateJsonSchemaValidation");
+            System.err.println("Exception when calling JsonSchemaValidationApi#createJsonSchemaValidation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -170,11 +170,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **operationid** | **String**| The OPERATIONID identifier | |
-| **obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md)| Request body | |
+| **getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema** | [**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)>
+ApiResponse<[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)>
 
 
 ### Authorization
@@ -193,9 +193,9 @@ ApiResponse<[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJson
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteJsonSchemaValidation
+## deleteJsonSchemaValidation
 
-> void oBPv400DeleteJsonSchemaValidation(operationid)
+> void deleteJsonSchemaValidation(operationid)
 
 Delete a JSON Schema Validation
 
@@ -215,7 +215,7 @@ import com.openbankproject.api.JsonSchemaValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -236,9 +236,9 @@ public class Example {
         JsonSchemaValidationApi apiInstance = new JsonSchemaValidationApi(defaultClient);
         String operationid = "operationid_example"; // String | The OPERATIONID identifier
         try {
-            apiInstance.oBPv400DeleteJsonSchemaValidation(operationid);
+            apiInstance.deleteJsonSchemaValidation(operationid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling JsonSchemaValidationApi#oBPv400DeleteJsonSchemaValidation");
+            System.err.println("Exception when calling JsonSchemaValidationApi#deleteJsonSchemaValidation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -275,9 +275,9 @@ null (empty response body)
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteJsonSchemaValidationWithHttpInfo
+## deleteJsonSchemaValidationWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteJsonSchemaValidation oBPv400DeleteJsonSchemaValidationWithHttpInfo(operationid)
+> ApiResponse<Void> deleteJsonSchemaValidation deleteJsonSchemaValidationWithHttpInfo(operationid)
 
 Delete a JSON Schema Validation
 
@@ -298,7 +298,7 @@ import com.openbankproject.api.JsonSchemaValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -319,11 +319,11 @@ public class Example {
         JsonSchemaValidationApi apiInstance = new JsonSchemaValidationApi(defaultClient);
         String operationid = "operationid_example"; // String | The OPERATIONID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteJsonSchemaValidationWithHttpInfo(operationid);
+            ApiResponse<Void> response = apiInstance.deleteJsonSchemaValidationWithHttpInfo(operationid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling JsonSchemaValidationApi#oBPv400DeleteJsonSchemaValidation");
+            System.err.println("Exception when calling JsonSchemaValidationApi#deleteJsonSchemaValidation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -361,9 +361,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetAllJsonSchemaValidations
+## getAllJsonSchemaValidations
 
-> OBPv400GetAllJsonSchemaValidationsPublic200Response oBPv400GetAllJsonSchemaValidations()
+> GetAllJsonSchemaValidationsPublic200Response getAllJsonSchemaValidations()
 
 Get all JSON Schema Validations
 
@@ -383,7 +383,7 @@ import com.openbankproject.api.JsonSchemaValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -403,10 +403,10 @@ public class Example {
 
         JsonSchemaValidationApi apiInstance = new JsonSchemaValidationApi(defaultClient);
         try {
-            OBPv400GetAllJsonSchemaValidationsPublic200Response result = apiInstance.oBPv400GetAllJsonSchemaValidations();
+            GetAllJsonSchemaValidationsPublic200Response result = apiInstance.getAllJsonSchemaValidations();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling JsonSchemaValidationApi#oBPv400GetAllJsonSchemaValidations");
+            System.err.println("Exception when calling JsonSchemaValidationApi#getAllJsonSchemaValidations");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -422,7 +422,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)
 
 
 ### Authorization
@@ -440,9 +440,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetAllJsonSchemaValidationsWithHttpInfo
+## getAllJsonSchemaValidationsWithHttpInfo
 
-> ApiResponse<OBPv400GetAllJsonSchemaValidationsPublic200Response> oBPv400GetAllJsonSchemaValidations oBPv400GetAllJsonSchemaValidationsWithHttpInfo()
+> ApiResponse<GetAllJsonSchemaValidationsPublic200Response> getAllJsonSchemaValidations getAllJsonSchemaValidationsWithHttpInfo()
 
 Get all JSON Schema Validations
 
@@ -463,7 +463,7 @@ import com.openbankproject.api.JsonSchemaValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -483,12 +483,12 @@ public class Example {
 
         JsonSchemaValidationApi apiInstance = new JsonSchemaValidationApi(defaultClient);
         try {
-            ApiResponse<OBPv400GetAllJsonSchemaValidationsPublic200Response> response = apiInstance.oBPv400GetAllJsonSchemaValidationsWithHttpInfo();
+            ApiResponse<GetAllJsonSchemaValidationsPublic200Response> response = apiInstance.getAllJsonSchemaValidationsWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling JsonSchemaValidationApi#oBPv400GetAllJsonSchemaValidations");
+            System.err.println("Exception when calling JsonSchemaValidationApi#getAllJsonSchemaValidations");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -504,7 +504,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)>
+ApiResponse<[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)>
 
 
 ### Authorization
@@ -523,9 +523,9 @@ ApiResponse<[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400Get
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetAllJsonSchemaValidationsPublic
+## getAllJsonSchemaValidationsPublic
 
-> OBPv400GetAllJsonSchemaValidationsPublic200Response oBPv400GetAllJsonSchemaValidationsPublic()
+> GetAllJsonSchemaValidationsPublic200Response getAllJsonSchemaValidationsPublic()
 
 Get all JSON Schema Validations - public
 
@@ -544,14 +544,14 @@ import com.openbankproject.api.JsonSchemaValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         JsonSchemaValidationApi apiInstance = new JsonSchemaValidationApi(defaultClient);
         try {
-            OBPv400GetAllJsonSchemaValidationsPublic200Response result = apiInstance.oBPv400GetAllJsonSchemaValidationsPublic();
+            GetAllJsonSchemaValidationsPublic200Response result = apiInstance.getAllJsonSchemaValidationsPublic();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling JsonSchemaValidationApi#oBPv400GetAllJsonSchemaValidationsPublic");
+            System.err.println("Exception when calling JsonSchemaValidationApi#getAllJsonSchemaValidationsPublic");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -567,7 +567,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)
 
 
 ### Authorization
@@ -585,9 +585,9 @@ No authorization required
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetAllJsonSchemaValidationsPublicWithHttpInfo
+## getAllJsonSchemaValidationsPublicWithHttpInfo
 
-> ApiResponse<OBPv400GetAllJsonSchemaValidationsPublic200Response> oBPv400GetAllJsonSchemaValidationsPublic oBPv400GetAllJsonSchemaValidationsPublicWithHttpInfo()
+> ApiResponse<GetAllJsonSchemaValidationsPublic200Response> getAllJsonSchemaValidationsPublic getAllJsonSchemaValidationsPublicWithHttpInfo()
 
 Get all JSON Schema Validations - public
 
@@ -607,16 +607,16 @@ import com.openbankproject.api.JsonSchemaValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         JsonSchemaValidationApi apiInstance = new JsonSchemaValidationApi(defaultClient);
         try {
-            ApiResponse<OBPv400GetAllJsonSchemaValidationsPublic200Response> response = apiInstance.oBPv400GetAllJsonSchemaValidationsPublicWithHttpInfo();
+            ApiResponse<GetAllJsonSchemaValidationsPublic200Response> response = apiInstance.getAllJsonSchemaValidationsPublicWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling JsonSchemaValidationApi#oBPv400GetAllJsonSchemaValidationsPublic");
+            System.err.println("Exception when calling JsonSchemaValidationApi#getAllJsonSchemaValidationsPublic");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -632,7 +632,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)>
+ApiResponse<[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)>
 
 
 ### Authorization
@@ -651,9 +651,9 @@ No authorization required
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetJsonSchemaValidation
+## getJsonSchemaValidation
 
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems oBPv400GetJsonSchemaValidation(operationid)
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner getJsonSchemaValidation(operationid)
 
 Get a JSON Schema Validation
 
@@ -673,7 +673,7 @@ import com.openbankproject.api.JsonSchemaValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -694,10 +694,10 @@ public class Example {
         JsonSchemaValidationApi apiInstance = new JsonSchemaValidationApi(defaultClient);
         String operationid = "operationid_example"; // String | The OPERATIONID identifier
         try {
-            OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems result = apiInstance.oBPv400GetJsonSchemaValidation(operationid);
+            GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner result = apiInstance.getJsonSchemaValidation(operationid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling JsonSchemaValidationApi#oBPv400GetJsonSchemaValidation");
+            System.err.println("Exception when calling JsonSchemaValidationApi#getJsonSchemaValidation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -716,7 +716,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 
 ### Authorization
@@ -734,9 +734,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetJsonSchemaValidationWithHttpInfo
+## getJsonSchemaValidationWithHttpInfo
 
-> ApiResponse<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> oBPv400GetJsonSchemaValidation oBPv400GetJsonSchemaValidationWithHttpInfo(operationid)
+> ApiResponse<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> getJsonSchemaValidation getJsonSchemaValidationWithHttpInfo(operationid)
 
 Get a JSON Schema Validation
 
@@ -757,7 +757,7 @@ import com.openbankproject.api.JsonSchemaValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -778,12 +778,12 @@ public class Example {
         JsonSchemaValidationApi apiInstance = new JsonSchemaValidationApi(defaultClient);
         String operationid = "operationid_example"; // String | The OPERATIONID identifier
         try {
-            ApiResponse<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> response = apiInstance.oBPv400GetJsonSchemaValidationWithHttpInfo(operationid);
+            ApiResponse<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> response = apiInstance.getJsonSchemaValidationWithHttpInfo(operationid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling JsonSchemaValidationApi#oBPv400GetJsonSchemaValidation");
+            System.err.println("Exception when calling JsonSchemaValidationApi#getJsonSchemaValidation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -802,7 +802,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)>
+ApiResponse<[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)>
 
 
 ### Authorization
@@ -821,9 +821,9 @@ ApiResponse<[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJson
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400UpdateJsonSchemaValidation
+## updateJsonSchemaValidation
 
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems oBPv400UpdateJsonSchemaValidation(operationid, obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner updateJsonSchemaValidation(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
 
 Update a JSON Schema Validation
 
@@ -843,7 +843,7 @@ import com.openbankproject.api.JsonSchemaValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -863,12 +863,12 @@ public class Example {
 
         JsonSchemaValidationApi apiInstance = new JsonSchemaValidationApi(defaultClient);
         String operationid = "operationid_example"; // String | The OPERATIONID identifier
-        OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema = new OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema(); // OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
+        GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema = new GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema(); // GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
         try {
-            OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems result = apiInstance.oBPv400UpdateJsonSchemaValidation(operationid, obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+            GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner result = apiInstance.updateJsonSchemaValidation(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling JsonSchemaValidationApi#oBPv400UpdateJsonSchemaValidation");
+            System.err.println("Exception when calling JsonSchemaValidationApi#updateJsonSchemaValidation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -884,11 +884,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **operationid** | **String**| The OPERATIONID identifier | |
-| **obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md)| Request body | |
+| **getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema** | [**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 
 ### Authorization
@@ -906,9 +906,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400UpdateJsonSchemaValidationWithHttpInfo
+## updateJsonSchemaValidationWithHttpInfo
 
-> ApiResponse<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> oBPv400UpdateJsonSchemaValidation oBPv400UpdateJsonSchemaValidationWithHttpInfo(operationid, obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+> ApiResponse<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> updateJsonSchemaValidation updateJsonSchemaValidationWithHttpInfo(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
 
 Update a JSON Schema Validation
 
@@ -929,7 +929,7 @@ import com.openbankproject.api.JsonSchemaValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -949,14 +949,14 @@ public class Example {
 
         JsonSchemaValidationApi apiInstance = new JsonSchemaValidationApi(defaultClient);
         String operationid = "operationid_example"; // String | The OPERATIONID identifier
-        OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema = new OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema(); // OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
+        GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema = new GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema(); // GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
         try {
-            ApiResponse<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> response = apiInstance.oBPv400UpdateJsonSchemaValidationWithHttpInfo(operationid, obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+            ApiResponse<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> response = apiInstance.updateJsonSchemaValidationWithHttpInfo(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling JsonSchemaValidationApi#oBPv400UpdateJsonSchemaValidation");
+            System.err.println("Exception when calling JsonSchemaValidationApi#updateJsonSchemaValidation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -972,11 +972,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **operationid** | **String**| The OPERATIONID identifier | |
-| **obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md)| Request body | |
+| **getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema** | [**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)>
+ApiResponse<[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)>
 
 
 ### Authorization

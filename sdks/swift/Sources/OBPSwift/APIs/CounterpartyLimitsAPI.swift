@@ -16,18 +16,18 @@ open class CounterpartyLimitsAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter counterpartyid: (path) The COUNTERPARTYID identifier 
-     - parameter oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: (body) Request body 
+     - parameter createVRPConsentRequestRequestToAccountLimit: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv510GetCounterpartyLimit200Response
+     - returns: GetCounterpartyLimit200Response
      */
-    open class func oBPv510CreateCounterpartyLimit(bankid: String, accountid: String, viewid: String, counterpartyid: String, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv510GetCounterpartyLimit200Response {
-        return try await oBPv510CreateCounterpartyLimitWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, counterpartyid: counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, apiConfiguration: apiConfiguration).execute().body
+    open class func createCounterpartyLimit(bankid: String, accountid: String, viewid: String, counterpartyid: String, createVRPConsentRequestRequestToAccountLimit: CreateVRPConsentRequestRequestToAccountLimit, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCounterpartyLimit200Response {
+        return try await createCounterpartyLimitWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, counterpartyid: counterpartyid, createVRPConsentRequestRequestToAccountLimit: createVRPConsentRequestRequestToAccountLimit, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
      Create Counterparty Limit
      - POST /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits
-     - <p>Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.</p> <p>Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).</p> <p>For more information on Counterparty Limits, see <a href=\"/glossary#Counterparty-Limits\">here</a></p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>You can automate the process of creating counterparty limits and consents for VRP with this <a href=\"https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\">endpoint</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
+     - <p>Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.</p> <p>Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).</p> <p>For more information on Counterparty Limits, see <a href=\"/glossary#Counterparty-Limits\">here</a></p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>You can automate the process of creating counterparty limits and consents for VRP with this <a href=\"http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\">endpoint</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
      - OAuth:
        - type: oauth2
        - name: OAuth2
@@ -35,17 +35,17 @@ open class CounterpartyLimitsAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter counterpartyid: (path) The COUNTERPARTYID identifier 
-     - parameter oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: (body) Request body 
+     - parameter createVRPConsentRequestRequestToAccountLimit: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv510GetCounterpartyLimit200Response> 
+     - returns: RequestBuilder<GetCounterpartyLimit200Response> 
      */
-    open class func oBPv510CreateCounterpartyLimitWithRequestBuilder(bankid: String, accountid: String, viewid: String, counterpartyid: String, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv510GetCounterpartyLimit200Response> {
+    open class func createCounterpartyLimitWithRequestBuilder(bankid: String, accountid: String, viewid: String, counterpartyid: String, createVRPConsentRequestRequestToAccountLimit: CreateVRPConsentRequestRequestToAccountLimit, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCounterpartyLimit200Response> {
         var localVariablePath = "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -60,7 +60,7 @@ open class CounterpartyLimitsAPI {
         let counterpartyidPostEscape = counterpartyidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{counterpartyid}", with: counterpartyidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createVRPConsentRequestRequestToAccountLimit, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -70,7 +70,7 @@ open class CounterpartyLimitsAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv510GetCounterpartyLimit200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetCounterpartyLimit200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -85,8 +85,8 @@ open class CounterpartyLimitsAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv510DeleteCounterpartyLimit(bankid: String, accountid: String, viewid: String, counterpartyid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv510DeleteCounterpartyLimitWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, counterpartyid: counterpartyid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteCounterpartyLimit(bankid: String, accountid: String, viewid: String, counterpartyid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteCounterpartyLimitWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, counterpartyid: counterpartyid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -100,7 +100,7 @@ open class CounterpartyLimitsAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
@@ -109,7 +109,7 @@ open class CounterpartyLimitsAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv510DeleteCounterpartyLimitWithRequestBuilder(bankid: String, accountid: String, viewid: String, counterpartyid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteCounterpartyLimitWithRequestBuilder(bankid: String, accountid: String, viewid: String, counterpartyid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -147,10 +147,10 @@ open class CounterpartyLimitsAPI {
      - parameter viewid: (path) The VIEWID identifier 
      - parameter counterpartyid: (path) The COUNTERPARTYID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv510GetCounterpartyLimit200Response
+     - returns: GetCounterpartyLimit200Response
      */
-    open class func oBPv510GetCounterpartyLimit(bankid: String, accountid: String, viewid: String, counterpartyid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv510GetCounterpartyLimit200Response {
-        return try await oBPv510GetCounterpartyLimitWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, counterpartyid: counterpartyid, apiConfiguration: apiConfiguration).execute().body
+    open class func getCounterpartyLimit(bankid: String, accountid: String, viewid: String, counterpartyid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCounterpartyLimit200Response {
+        return try await getCounterpartyLimitWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, counterpartyid: counterpartyid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -164,16 +164,16 @@ open class CounterpartyLimitsAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter counterpartyid: (path) The COUNTERPARTYID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv510GetCounterpartyLimit200Response> 
+     - returns: RequestBuilder<GetCounterpartyLimit200Response> 
      */
-    open class func oBPv510GetCounterpartyLimitWithRequestBuilder(bankid: String, accountid: String, viewid: String, counterpartyid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv510GetCounterpartyLimit200Response> {
+    open class func getCounterpartyLimitWithRequestBuilder(bankid: String, accountid: String, viewid: String, counterpartyid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCounterpartyLimit200Response> {
         var localVariablePath = "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -198,7 +198,7 @@ open class CounterpartyLimitsAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv510GetCounterpartyLimit200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetCounterpartyLimit200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -211,10 +211,10 @@ open class CounterpartyLimitsAPI {
      - parameter viewid: (path) The VIEWID identifier 
      - parameter counterpartyid: (path) The COUNTERPARTYID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv510GetCounterpartyLimitStatus200Response
+     - returns: GetCounterpartyLimitStatus200Response
      */
-    open class func oBPv510GetCounterpartyLimitStatus(bankid: String, accountid: String, viewid: String, counterpartyid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv510GetCounterpartyLimitStatus200Response {
-        return try await oBPv510GetCounterpartyLimitStatusWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, counterpartyid: counterpartyid, apiConfiguration: apiConfiguration).execute().body
+    open class func getCounterpartyLimitStatus(bankid: String, accountid: String, viewid: String, counterpartyid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCounterpartyLimitStatus200Response {
+        return try await getCounterpartyLimitStatusWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, counterpartyid: counterpartyid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -228,16 +228,16 @@ open class CounterpartyLimitsAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter counterpartyid: (path) The COUNTERPARTYID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv510GetCounterpartyLimitStatus200Response> 
+     - returns: RequestBuilder<GetCounterpartyLimitStatus200Response> 
      */
-    open class func oBPv510GetCounterpartyLimitStatusWithRequestBuilder(bankid: String, accountid: String, viewid: String, counterpartyid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv510GetCounterpartyLimitStatus200Response> {
+    open class func getCounterpartyLimitStatusWithRequestBuilder(bankid: String, accountid: String, viewid: String, counterpartyid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCounterpartyLimitStatus200Response> {
         var localVariablePath = "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limit-status"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -262,7 +262,7 @@ open class CounterpartyLimitsAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv510GetCounterpartyLimitStatus200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetCounterpartyLimitStatus200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -274,12 +274,12 @@ open class CounterpartyLimitsAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter counterpartyid: (path) The COUNTERPARTYID identifier 
-     - parameter oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: (body) Request body 
+     - parameter createVRPConsentRequestRequestToAccountLimit: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv510GetCounterpartyLimit200Response
+     - returns: GetCounterpartyLimit200Response
      */
-    open class func oBPv510UpdateCounterpartyLimit(bankid: String, accountid: String, viewid: String, counterpartyid: String, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv510GetCounterpartyLimit200Response {
-        return try await oBPv510UpdateCounterpartyLimitWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, counterpartyid: counterpartyid, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, apiConfiguration: apiConfiguration).execute().body
+    open class func updateCounterpartyLimit(bankid: String, accountid: String, viewid: String, counterpartyid: String, createVRPConsentRequestRequestToAccountLimit: CreateVRPConsentRequestRequestToAccountLimit, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCounterpartyLimit200Response {
+        return try await updateCounterpartyLimitWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, counterpartyid: counterpartyid, createVRPConsentRequestRequestToAccountLimit: createVRPConsentRequestRequestToAccountLimit, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -293,17 +293,17 @@ open class CounterpartyLimitsAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter counterpartyid: (path) The COUNTERPARTYID identifier 
-     - parameter oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: (body) Request body 
+     - parameter createVRPConsentRequestRequestToAccountLimit: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv510GetCounterpartyLimit200Response> 
+     - returns: RequestBuilder<GetCounterpartyLimit200Response> 
      */
-    open class func oBPv510UpdateCounterpartyLimitWithRequestBuilder(bankid: String, accountid: String, viewid: String, counterpartyid: String, oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit: OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv510GetCounterpartyLimit200Response> {
+    open class func updateCounterpartyLimitWithRequestBuilder(bankid: String, accountid: String, viewid: String, counterpartyid: String, createVRPConsentRequestRequestToAccountLimit: CreateVRPConsentRequestRequestToAccountLimit, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCounterpartyLimit200Response> {
         var localVariablePath = "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -318,7 +318,7 @@ open class CounterpartyLimitsAPI {
         let counterpartyidPostEscape = counterpartyidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{counterpartyid}", with: counterpartyidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createVRPConsentRequestRequestToAccountLimit, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -328,7 +328,7 @@ open class CounterpartyLimitsAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv510GetCounterpartyLimit200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetCounterpartyLimit200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

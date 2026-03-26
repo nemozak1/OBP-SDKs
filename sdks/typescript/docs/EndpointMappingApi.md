@@ -1,25 +1,25 @@
 # EndpointMappingApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateBankLevelEndpointMapping**](EndpointMappingApi.md#obpv400createbanklevelendpointmapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping |
-| [**oBPv400CreateEndpointMapping**](EndpointMappingApi.md#obpv400createendpointmappingoperation) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping |
-| [**oBPv400DeleteBankLevelEndpointMapping**](EndpointMappingApi.md#obpv400deletebanklevelendpointmapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping |
-| [**oBPv400DeleteEndpointMapping**](EndpointMappingApi.md#obpv400deleteendpointmapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping |
-| [**oBPv400GetAllBankLevelEndpointMappings**](EndpointMappingApi.md#obpv400getallbanklevelendpointmappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings |
-| [**oBPv400GetAllEndpointMappings**](EndpointMappingApi.md#obpv400getallendpointmappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings |
-| [**oBPv400GetBankLevelEndpointMapping**](EndpointMappingApi.md#obpv400getbanklevelendpointmapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping |
-| [**oBPv400GetEndpointMapping**](EndpointMappingApi.md#obpv400getendpointmapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id |
-| [**oBPv400UpdateBankLevelEndpointMapping**](EndpointMappingApi.md#obpv400updatebanklevelendpointmapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping |
-| [**oBPv400UpdateEndpointMapping**](EndpointMappingApi.md#obpv400updateendpointmapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping |
+| [**createBankLevelEndpointMapping**](EndpointMappingApi.md#createbanklevelendpointmapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping |
+| [**createEndpointMapping**](EndpointMappingApi.md#createendpointmappingoperation) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping |
+| [**deleteBankLevelEndpointMapping**](EndpointMappingApi.md#deletebanklevelendpointmapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping |
+| [**deleteEndpointMapping**](EndpointMappingApi.md#deleteendpointmapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping |
+| [**getAllBankLevelEndpointMappings**](EndpointMappingApi.md#getallbanklevelendpointmappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings |
+| [**getAllEndpointMappings**](EndpointMappingApi.md#getallendpointmappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings |
+| [**getBankLevelEndpointMapping**](EndpointMappingApi.md#getbanklevelendpointmapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping |
+| [**getEndpointMapping**](EndpointMappingApi.md#getendpointmapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id |
+| [**updateBankLevelEndpointMapping**](EndpointMappingApi.md#updatebanklevelendpointmapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping |
+| [**updateEndpointMapping**](EndpointMappingApi.md#updateendpointmapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping |
 
 
 
-## oBPv400CreateBankLevelEndpointMapping
+## createBankLevelEndpointMapping
 
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400CreateBankLevelEndpointMapping(bankid, oBPv400CreateEndpointMappingRequest)
+> GetAllEndpointMappings200ResponseEndpointMappingsInner createBankLevelEndpointMapping(bankid, createEndpointMappingRequest)
 
 Create Bank Level Endpoint Mapping
 
@@ -32,7 +32,7 @@ import {
   Configuration,
   EndpointMappingApi,
 } from 'obp-typescript';
-import type { OBPv400CreateBankLevelEndpointMappingRequest } from 'obp-typescript';
+import type { CreateBankLevelEndpointMappingRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -49,12 +49,12 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-    // OBPv400CreateEndpointMappingRequest | Request body
-    oBPv400CreateEndpointMappingRequest: {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}},
-  } satisfies OBPv400CreateBankLevelEndpointMappingRequest;
+    // CreateEndpointMappingRequest | Request body
+    createEndpointMappingRequest: {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}},
+  } satisfies CreateBankLevelEndpointMappingRequest;
 
   try {
-    const data = await api.oBPv400CreateBankLevelEndpointMapping(body);
+    const data = await api.createBankLevelEndpointMapping(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -71,11 +71,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
-| **oBPv400CreateEndpointMappingRequest** | [OBPv400CreateEndpointMappingRequest](OBPv400CreateEndpointMappingRequest.md) | Request body | |
+| **createEndpointMappingRequest** | [CreateEndpointMappingRequest](CreateEndpointMappingRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -97,9 +97,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400CreateEndpointMapping
+## createEndpointMapping
 
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400CreateEndpointMapping(oBPv400CreateEndpointMappingRequest)
+> GetAllEndpointMappings200ResponseEndpointMappingsInner createEndpointMapping(createEndpointMappingRequest)
 
 Create Endpoint Mapping
 
@@ -112,7 +112,7 @@ import {
   Configuration,
   EndpointMappingApi,
 } from 'obp-typescript';
-import type { OBPv400CreateEndpointMappingOperationRequest } from 'obp-typescript';
+import type { CreateEndpointMappingOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -127,12 +127,12 @@ async function example() {
   const api = new EndpointMappingApi(config);
 
   const body = {
-    // OBPv400CreateEndpointMappingRequest | Request body
-    oBPv400CreateEndpointMappingRequest: {"type":"object","properties":{"operation_id":{"type":"string"},"request_mapping":{"type":"object","properties":{}},"response_mapping":{"type":"object","properties":{"name":{"type":"object","properties":{"entity":{"type":"string"},"field":{"type":"string"},"query":{"type":"string"}}},"balance":{"type":"object","properties":{"entity":{"type":"string"},"field":{"type":"string"},"query":{"type":"string"}}}}}}},
-  } satisfies OBPv400CreateEndpointMappingOperationRequest;
+    // CreateEndpointMappingRequest | Request body
+    createEndpointMappingRequest: {"type":"object","properties":{"operation_id":{"type":"string"},"request_mapping":{"type":"object","properties":{}},"response_mapping":{"type":"object","properties":{"name":{"type":"object","properties":{"entity":{"type":"string"},"field":{"type":"string"},"query":{"type":"string"}}},"balance":{"type":"object","properties":{"entity":{"type":"string"},"field":{"type":"string"},"query":{"type":"string"}}}}}}},
+  } satisfies CreateEndpointMappingOperationRequest;
 
   try {
-    const data = await api.oBPv400CreateEndpointMapping(body);
+    const data = await api.createEndpointMapping(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -148,11 +148,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **oBPv400CreateEndpointMappingRequest** | [OBPv400CreateEndpointMappingRequest](OBPv400CreateEndpointMappingRequest.md) | Request body | |
+| **createEndpointMappingRequest** | [CreateEndpointMappingRequest](CreateEndpointMappingRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -173,9 +173,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400DeleteBankLevelEndpointMapping
+## deleteBankLevelEndpointMapping
 
-> oBPv400DeleteBankLevelEndpointMapping(bankid, endpointmappingid)
+> deleteBankLevelEndpointMapping(bankid, endpointmappingid)
 
 Delete Bank Level Endpoint Mapping
 
@@ -188,7 +188,7 @@ import {
   Configuration,
   EndpointMappingApi,
 } from 'obp-typescript';
-import type { OBPv400DeleteBankLevelEndpointMappingRequest } from 'obp-typescript';
+import type { DeleteBankLevelEndpointMappingRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -207,10 +207,10 @@ async function example() {
     bankid: bankid_example,
     // string | The ENDPOINTMAPPINGID identifier
     endpointmappingid: endpointmappingid_example,
-  } satisfies OBPv400DeleteBankLevelEndpointMappingRequest;
+  } satisfies DeleteBankLevelEndpointMappingRequest;
 
   try {
-    const data = await api.oBPv400DeleteBankLevelEndpointMapping(body);
+    const data = await api.deleteBankLevelEndpointMapping(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -253,9 +253,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400DeleteEndpointMapping
+## deleteEndpointMapping
 
-> oBPv400DeleteEndpointMapping(endpointmappingid)
+> deleteEndpointMapping(endpointmappingid)
 
 Delete Endpoint Mapping
 
@@ -268,7 +268,7 @@ import {
   Configuration,
   EndpointMappingApi,
 } from 'obp-typescript';
-import type { OBPv400DeleteEndpointMappingRequest } from 'obp-typescript';
+import type { DeleteEndpointMappingRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -285,10 +285,10 @@ async function example() {
   const body = {
     // string | The ENDPOINTMAPPINGID identifier
     endpointmappingid: endpointmappingid_example,
-  } satisfies OBPv400DeleteEndpointMappingRequest;
+  } satisfies DeleteEndpointMappingRequest;
 
   try {
-    const data = await api.oBPv400DeleteEndpointMapping(body);
+    const data = await api.deleteEndpointMapping(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -329,9 +329,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetAllBankLevelEndpointMappings
+## getAllBankLevelEndpointMappings
 
-> OBPv400GetAllEndpointMappings200Response oBPv400GetAllBankLevelEndpointMappings(bankid)
+> GetAllEndpointMappings200Response getAllBankLevelEndpointMappings(bankid)
 
 Get all Bank Level Endpoint Mappings
 
@@ -344,7 +344,7 @@ import {
   Configuration,
   EndpointMappingApi,
 } from 'obp-typescript';
-import type { OBPv400GetAllBankLevelEndpointMappingsRequest } from 'obp-typescript';
+import type { GetAllBankLevelEndpointMappingsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -361,10 +361,10 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-  } satisfies OBPv400GetAllBankLevelEndpointMappingsRequest;
+  } satisfies GetAllBankLevelEndpointMappingsRequest;
 
   try {
-    const data = await api.oBPv400GetAllBankLevelEndpointMappings(body);
+    const data = await api.getAllBankLevelEndpointMappings(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -384,7 +384,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpointMappings200Response.md)
+[**GetAllEndpointMappings200Response**](GetAllEndpointMappings200Response.md)
 
 ### Authorization
 
@@ -406,9 +406,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetAllEndpointMappings
+## getAllEndpointMappings
 
-> OBPv400GetAllEndpointMappings200Response oBPv400GetAllEndpointMappings()
+> GetAllEndpointMappings200Response getAllEndpointMappings()
 
 Get all Endpoint Mappings
 
@@ -421,7 +421,7 @@ import {
   Configuration,
   EndpointMappingApi,
 } from 'obp-typescript';
-import type { OBPv400GetAllEndpointMappingsRequest } from 'obp-typescript';
+import type { GetAllEndpointMappingsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -436,7 +436,7 @@ async function example() {
   const api = new EndpointMappingApi(config);
 
   try {
-    const data = await api.oBPv400GetAllEndpointMappings();
+    const data = await api.getAllEndpointMappings();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -453,7 +453,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpointMappings200Response.md)
+[**GetAllEndpointMappings200Response**](GetAllEndpointMappings200Response.md)
 
 ### Authorization
 
@@ -474,9 +474,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetBankLevelEndpointMapping
+## getBankLevelEndpointMapping
 
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400GetBankLevelEndpointMapping(bankid, endpointmappingid)
+> GetAllEndpointMappings200ResponseEndpointMappingsInner getBankLevelEndpointMapping(bankid, endpointmappingid)
 
 Get Bank Level Endpoint Mapping
 
@@ -489,7 +489,7 @@ import {
   Configuration,
   EndpointMappingApi,
 } from 'obp-typescript';
-import type { OBPv400GetBankLevelEndpointMappingRequest } from 'obp-typescript';
+import type { GetBankLevelEndpointMappingRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -508,10 +508,10 @@ async function example() {
     bankid: bankid_example,
     // string | The ENDPOINTMAPPINGID identifier
     endpointmappingid: endpointmappingid_example,
-  } satisfies OBPv400GetBankLevelEndpointMappingRequest;
+  } satisfies GetBankLevelEndpointMappingRequest;
 
   try {
-    const data = await api.oBPv400GetBankLevelEndpointMapping(body);
+    const data = await api.getBankLevelEndpointMapping(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -532,7 +532,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -554,9 +554,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetEndpointMapping
+## getEndpointMapping
 
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400GetEndpointMapping(endpointmappingid)
+> GetAllEndpointMappings200ResponseEndpointMappingsInner getEndpointMapping(endpointmappingid)
 
 Get Endpoint Mapping by Id
 
@@ -569,7 +569,7 @@ import {
   Configuration,
   EndpointMappingApi,
 } from 'obp-typescript';
-import type { OBPv400GetEndpointMappingRequest } from 'obp-typescript';
+import type { GetEndpointMappingRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -586,10 +586,10 @@ async function example() {
   const body = {
     // string | The ENDPOINTMAPPINGID identifier
     endpointmappingid: endpointmappingid_example,
-  } satisfies OBPv400GetEndpointMappingRequest;
+  } satisfies GetEndpointMappingRequest;
 
   try {
-    const data = await api.oBPv400GetEndpointMapping(body);
+    const data = await api.getEndpointMapping(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -609,7 +609,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -630,9 +630,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400UpdateBankLevelEndpointMapping
+## updateBankLevelEndpointMapping
 
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400UpdateBankLevelEndpointMapping(bankid, endpointmappingid, oBPv400CreateEndpointMappingRequest)
+> GetAllEndpointMappings200ResponseEndpointMappingsInner updateBankLevelEndpointMapping(bankid, endpointmappingid, createEndpointMappingRequest)
 
 Update Bank Level Endpoint Mapping
 
@@ -645,7 +645,7 @@ import {
   Configuration,
   EndpointMappingApi,
 } from 'obp-typescript';
-import type { OBPv400UpdateBankLevelEndpointMappingRequest } from 'obp-typescript';
+import type { UpdateBankLevelEndpointMappingRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -664,12 +664,12 @@ async function example() {
     bankid: bankid_example,
     // string | The ENDPOINTMAPPINGID identifier
     endpointmappingid: endpointmappingid_example,
-    // OBPv400CreateEndpointMappingRequest | Request body
-    oBPv400CreateEndpointMappingRequest: {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}},
-  } satisfies OBPv400UpdateBankLevelEndpointMappingRequest;
+    // CreateEndpointMappingRequest | Request body
+    createEndpointMappingRequest: {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}},
+  } satisfies UpdateBankLevelEndpointMappingRequest;
 
   try {
-    const data = await api.oBPv400UpdateBankLevelEndpointMapping(body);
+    const data = await api.updateBankLevelEndpointMapping(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -687,11 +687,11 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **endpointmappingid** | `string` | The ENDPOINTMAPPINGID identifier | [Defaults to `undefined`] |
-| **oBPv400CreateEndpointMappingRequest** | [OBPv400CreateEndpointMappingRequest](OBPv400CreateEndpointMappingRequest.md) | Request body | |
+| **createEndpointMappingRequest** | [CreateEndpointMappingRequest](CreateEndpointMappingRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -713,9 +713,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400UpdateEndpointMapping
+## updateEndpointMapping
 
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400UpdateEndpointMapping(endpointmappingid, oBPv400CreateEndpointMappingRequest)
+> GetAllEndpointMappings200ResponseEndpointMappingsInner updateEndpointMapping(endpointmappingid, createEndpointMappingRequest)
 
 Update Endpoint Mapping
 
@@ -728,7 +728,7 @@ import {
   Configuration,
   EndpointMappingApi,
 } from 'obp-typescript';
-import type { OBPv400UpdateEndpointMappingRequest } from 'obp-typescript';
+import type { UpdateEndpointMappingRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -745,12 +745,12 @@ async function example() {
   const body = {
     // string | The ENDPOINTMAPPINGID identifier
     endpointmappingid: endpointmappingid_example,
-    // OBPv400CreateEndpointMappingRequest | Request body
-    oBPv400CreateEndpointMappingRequest: {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}},
-  } satisfies OBPv400UpdateEndpointMappingRequest;
+    // CreateEndpointMappingRequest | Request body
+    createEndpointMappingRequest: {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}},
+  } satisfies UpdateEndpointMappingRequest;
 
   try {
-    const data = await api.oBPv400UpdateEndpointMapping(body);
+    const data = await api.updateEndpointMapping(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -767,11 +767,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **endpointmappingid** | `string` | The ENDPOINTMAPPINGID identifier | [Defaults to `undefined`] |
-| **oBPv400CreateEndpointMappingRequest** | [OBPv400CreateEndpointMappingRequest](OBPv400CreateEndpointMappingRequest.md) | Request body | |
+| **createEndpointMappingRequest** | [CreateEndpointMappingRequest](CreateEndpointMappingRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 

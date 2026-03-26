@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,55 +75,55 @@ class ATMApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv400UpdateAtmAccessibilityFeatures' => [
+        'createAtm' => [
             'application/json',
         ],
-        'oBPv400UpdateAtmLocationCategories' => [
+        'createAtmAttribute' => [
             'application/json',
         ],
-        'oBPv400UpdateAtmNotes' => [
+        'deleteAtm' => [
             'application/json',
         ],
-        'oBPv400UpdateAtmServices' => [
+        'deleteAtmAttribute' => [
             'application/json',
         ],
-        'oBPv400UpdateAtmSupportedCurrencies' => [
+        'getAtm' => [
             'application/json',
         ],
-        'oBPv400UpdateAtmSupportedLanguages' => [
+        'getAtmAttribute' => [
             'application/json',
         ],
-        'oBPv500HeadAtms' => [
+        'getAtmAttributes' => [
             'application/json',
         ],
-        'oBPv510CreateAtm' => [
+        'getAtms' => [
             'application/json',
         ],
-        'oBPv510CreateAtmAttribute' => [
+        'headAtms' => [
             'application/json',
         ],
-        'oBPv510DeleteAtm' => [
+        'updateAtm' => [
             'application/json',
         ],
-        'oBPv510DeleteAtmAttribute' => [
+        'updateAtmAccessibilityFeatures' => [
             'application/json',
         ],
-        'oBPv510GetAtm' => [
+        'updateAtmAttribute' => [
             'application/json',
         ],
-        'oBPv510GetAtmAttribute' => [
+        'updateAtmLocationCategories' => [
             'application/json',
         ],
-        'oBPv510GetAtmAttributes' => [
+        'updateAtmNotes' => [
             'application/json',
         ],
-        'oBPv510GetAtms' => [
+        'updateAtmServices' => [
             'application/json',
         ],
-        'oBPv510UpdateAtm' => [
+        'updateAtmSupportedCurrencies' => [
             'application/json',
         ],
-        'oBPv510UpdateAtmAttribute' => [
+        'updateAtmSupportedLanguages' => [
             'application/json',
         ],
     ];
@@ -175,42 +175,40 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmAccessibilityFeatures
+     * Operation createAtm
      *
-     * Update ATM Accessibility Features
+     * Create ATM
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmAccessibilityFeaturesRequest $obpv400_update_atm_accessibility_features_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmAccessibilityFeatures'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAtmRequest $create_atm_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAtm'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400UpdateAtmAccessibilityFeatures200Response
+     * @return \OpenBankProject\Model\GetAtm200Response
      */
-    public function oBPv400UpdateAtmAccessibilityFeatures($bankid, $atmid, $obpv400_update_atm_accessibility_features_request, string $contentType = self::contentTypes['oBPv400UpdateAtmAccessibilityFeatures'][0])
+    public function createAtm($bankid, $create_atm_request, string $contentType = self::contentTypes['createAtm'][0])
     {
-        list($response) = $this->oBPv400UpdateAtmAccessibilityFeaturesWithHttpInfo($bankid, $atmid, $obpv400_update_atm_accessibility_features_request, $contentType);
+        list($response) = $this->createAtmWithHttpInfo($bankid, $create_atm_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateAtmAccessibilityFeaturesWithHttpInfo
+     * Operation createAtmWithHttpInfo
      *
-     * Update ATM Accessibility Features
+     * Create ATM
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmAccessibilityFeaturesRequest $obpv400_update_atm_accessibility_features_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmAccessibilityFeatures'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAtmRequest $create_atm_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAtm'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400UpdateAtmAccessibilityFeatures200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAtm200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateAtmAccessibilityFeaturesWithHttpInfo($bankid, $atmid, $obpv400_update_atm_accessibility_features_request, string $contentType = self::contentTypes['oBPv400UpdateAtmAccessibilityFeatures'][0])
+    public function createAtmWithHttpInfo($bankid, $create_atm_request, string $contentType = self::contentTypes['createAtm'][0])
     {
-        $request = $this->oBPv400UpdateAtmAccessibilityFeaturesRequest($bankid, $atmid, $obpv400_update_atm_accessibility_features_request, $contentType);
+        $request = $this->createAtmRequest($bankid, $create_atm_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -238,7 +236,7 @@ class ATMApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400UpdateAtmAccessibilityFeatures200Response',
+                        '\OpenBankProject\Model\GetAtm200Response',
                         $request,
                         $response,
                     );
@@ -260,7 +258,7 @@ class ATMApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400UpdateAtmAccessibilityFeatures200Response',
+                '\OpenBankProject\Model\GetAtm200Response',
                 $request,
                 $response,
             );
@@ -269,7 +267,7 @@ class ATMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400UpdateAtmAccessibilityFeatures200Response',
+                        '\OpenBankProject\Model\GetAtm200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -282,21 +280,20 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmAccessibilityFeaturesAsync
+     * Operation createAtmAsync
      *
-     * Update ATM Accessibility Features
+     * Create ATM
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmAccessibilityFeaturesRequest $obpv400_update_atm_accessibility_features_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmAccessibilityFeatures'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAtmRequest $create_atm_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAtm'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateAtmAccessibilityFeaturesAsync($bankid, $atmid, $obpv400_update_atm_accessibility_features_request, string $contentType = self::contentTypes['oBPv400UpdateAtmAccessibilityFeatures'][0])
+    public function createAtmAsync($bankid, $create_atm_request, string $contentType = self::contentTypes['createAtm'][0])
     {
-        return $this->oBPv400UpdateAtmAccessibilityFeaturesAsyncWithHttpInfo($bankid, $atmid, $obpv400_update_atm_accessibility_features_request, $contentType)
+        return $this->createAtmAsyncWithHttpInfo($bankid, $create_atm_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -305,22 +302,21 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmAccessibilityFeaturesAsyncWithHttpInfo
+     * Operation createAtmAsyncWithHttpInfo
      *
-     * Update ATM Accessibility Features
+     * Create ATM
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmAccessibilityFeaturesRequest $obpv400_update_atm_accessibility_features_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmAccessibilityFeatures'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAtmRequest $create_atm_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAtm'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateAtmAccessibilityFeaturesAsyncWithHttpInfo($bankid, $atmid, $obpv400_update_atm_accessibility_features_request, string $contentType = self::contentTypes['oBPv400UpdateAtmAccessibilityFeatures'][0])
+    public function createAtmAsyncWithHttpInfo($bankid, $create_atm_request, string $contentType = self::contentTypes['createAtm'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400UpdateAtmAccessibilityFeatures200Response';
-        $request = $this->oBPv400UpdateAtmAccessibilityFeaturesRequest($bankid, $atmid, $obpv400_update_atm_accessibility_features_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAtm200Response';
+        $request = $this->createAtmRequest($bankid, $create_atm_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -359,42 +355,34 @@ class ATMApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateAtmAccessibilityFeatures'
+     * Create request for operation 'createAtm'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmAccessibilityFeaturesRequest $obpv400_update_atm_accessibility_features_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmAccessibilityFeatures'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAtmRequest $create_atm_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAtm'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateAtmAccessibilityFeaturesRequest($bankid, $atmid, $obpv400_update_atm_accessibility_features_request, string $contentType = self::contentTypes['oBPv400UpdateAtmAccessibilityFeatures'][0])
+    public function createAtmRequest($bankid, $create_atm_request, string $contentType = self::contentTypes['createAtm'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400UpdateAtmAccessibilityFeatures'
+                'Missing the required parameter $bankid when calling createAtm'
             );
         }
 
-        // verify the required parameter 'atmid' is set
-        if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
+        // verify the required parameter 'create_atm_request' is set
+        if ($create_atm_request === null || (is_array($create_atm_request) && count($create_atm_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $atmid when calling oBPv400UpdateAtmAccessibilityFeatures'
-            );
-        }
-
-        // verify the required parameter 'obpv400_update_atm_accessibility_features_request' is set
-        if ($obpv400_update_atm_accessibility_features_request === null || (is_array($obpv400_update_atm_accessibility_features_request) && count($obpv400_update_atm_accessibility_features_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_atm_accessibility_features_request when calling oBPv400UpdateAtmAccessibilityFeatures'
+                'Missing the required parameter $create_atm_request when calling createAtm'
             );
         }
 
 
-        $resourcePath = '/obp/v4.0.0/banks/{bankid}/atms/{atmid}/accessibility-features';
+        $resourcePath = '/obp/v5.1.0/banks/{bankid}/atms';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -411,14 +399,6 @@ class ATMApi
                 $resourcePath
             );
         }
-        // path params
-        if ($atmid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'atmid' . '}',
-                ObjectSerializer::toPathValue($atmid),
-                $resourcePath
-            );
-        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -428,12 +408,12 @@ class ATMApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_atm_accessibility_features_request)) {
+        if (isset($create_atm_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_atm_accessibility_features_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_atm_request));
             } else {
-                $httpBody = $obpv400_update_atm_accessibility_features_request;
+                $httpBody = $create_atm_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -469,9 +449,9 @@ class ATMApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -488,7 +468,7 @@ class ATMApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'PUT',
+            'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -496,42 +476,42 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmLocationCategories
+     * Operation createAtmAttribute
      *
-     * Update ATM Location Categories
+     * Create ATM Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmLocationCategoriesRequest $obpv400_update_atm_location_categories_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmLocationCategories'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAtmAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400UpdateAtmLocationCategories200Response
+     * @return \OpenBankProject\Model\GetAtmAttribute200Response
      */
-    public function oBPv400UpdateAtmLocationCategories($bankid, $atmid, $obpv400_update_atm_location_categories_request, string $contentType = self::contentTypes['oBPv400UpdateAtmLocationCategories'][0])
+    public function createAtmAttribute($bankid, $atmid, $update_atm_attribute_request, string $contentType = self::contentTypes['createAtmAttribute'][0])
     {
-        list($response) = $this->oBPv400UpdateAtmLocationCategoriesWithHttpInfo($bankid, $atmid, $obpv400_update_atm_location_categories_request, $contentType);
+        list($response) = $this->createAtmAttributeWithHttpInfo($bankid, $atmid, $update_atm_attribute_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateAtmLocationCategoriesWithHttpInfo
+     * Operation createAtmAttributeWithHttpInfo
      *
-     * Update ATM Location Categories
+     * Create ATM Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmLocationCategoriesRequest $obpv400_update_atm_location_categories_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmLocationCategories'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAtmAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400UpdateAtmLocationCategories200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAtmAttribute200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateAtmLocationCategoriesWithHttpInfo($bankid, $atmid, $obpv400_update_atm_location_categories_request, string $contentType = self::contentTypes['oBPv400UpdateAtmLocationCategories'][0])
+    public function createAtmAttributeWithHttpInfo($bankid, $atmid, $update_atm_attribute_request, string $contentType = self::contentTypes['createAtmAttribute'][0])
     {
-        $request = $this->oBPv400UpdateAtmLocationCategoriesRequest($bankid, $atmid, $obpv400_update_atm_location_categories_request, $contentType);
+        $request = $this->createAtmAttributeRequest($bankid, $atmid, $update_atm_attribute_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -559,7 +539,7 @@ class ATMApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400UpdateAtmLocationCategories200Response',
+                        '\OpenBankProject\Model\GetAtmAttribute200Response',
                         $request,
                         $response,
                     );
@@ -581,7 +561,7 @@ class ATMApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400UpdateAtmLocationCategories200Response',
+                '\OpenBankProject\Model\GetAtmAttribute200Response',
                 $request,
                 $response,
             );
@@ -590,7 +570,7 @@ class ATMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400UpdateAtmLocationCategories200Response',
+                        '\OpenBankProject\Model\GetAtmAttribute200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -603,21 +583,21 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmLocationCategoriesAsync
+     * Operation createAtmAttributeAsync
      *
-     * Update ATM Location Categories
+     * Create ATM Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmLocationCategoriesRequest $obpv400_update_atm_location_categories_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmLocationCategories'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAtmAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateAtmLocationCategoriesAsync($bankid, $atmid, $obpv400_update_atm_location_categories_request, string $contentType = self::contentTypes['oBPv400UpdateAtmLocationCategories'][0])
+    public function createAtmAttributeAsync($bankid, $atmid, $update_atm_attribute_request, string $contentType = self::contentTypes['createAtmAttribute'][0])
     {
-        return $this->oBPv400UpdateAtmLocationCategoriesAsyncWithHttpInfo($bankid, $atmid, $obpv400_update_atm_location_categories_request, $contentType)
+        return $this->createAtmAttributeAsyncWithHttpInfo($bankid, $atmid, $update_atm_attribute_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -626,22 +606,22 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmLocationCategoriesAsyncWithHttpInfo
+     * Operation createAtmAttributeAsyncWithHttpInfo
      *
-     * Update ATM Location Categories
+     * Create ATM Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmLocationCategoriesRequest $obpv400_update_atm_location_categories_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmLocationCategories'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAtmAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateAtmLocationCategoriesAsyncWithHttpInfo($bankid, $atmid, $obpv400_update_atm_location_categories_request, string $contentType = self::contentTypes['oBPv400UpdateAtmLocationCategories'][0])
+    public function createAtmAttributeAsyncWithHttpInfo($bankid, $atmid, $update_atm_attribute_request, string $contentType = self::contentTypes['createAtmAttribute'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400UpdateAtmLocationCategories200Response';
-        $request = $this->oBPv400UpdateAtmLocationCategoriesRequest($bankid, $atmid, $obpv400_update_atm_location_categories_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAtmAttribute200Response';
+        $request = $this->createAtmAttributeRequest($bankid, $atmid, $update_atm_attribute_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -680,42 +660,42 @@ class ATMApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateAtmLocationCategories'
+     * Create request for operation 'createAtmAttribute'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmLocationCategoriesRequest $obpv400_update_atm_location_categories_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmLocationCategories'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAtmAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateAtmLocationCategoriesRequest($bankid, $atmid, $obpv400_update_atm_location_categories_request, string $contentType = self::contentTypes['oBPv400UpdateAtmLocationCategories'][0])
+    public function createAtmAttributeRequest($bankid, $atmid, $update_atm_attribute_request, string $contentType = self::contentTypes['createAtmAttribute'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400UpdateAtmLocationCategories'
+                'Missing the required parameter $bankid when calling createAtmAttribute'
             );
         }
 
         // verify the required parameter 'atmid' is set
         if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $atmid when calling oBPv400UpdateAtmLocationCategories'
+                'Missing the required parameter $atmid when calling createAtmAttribute'
             );
         }
 
-        // verify the required parameter 'obpv400_update_atm_location_categories_request' is set
-        if ($obpv400_update_atm_location_categories_request === null || (is_array($obpv400_update_atm_location_categories_request) && count($obpv400_update_atm_location_categories_request) === 0)) {
+        // verify the required parameter 'update_atm_attribute_request' is set
+        if ($update_atm_attribute_request === null || (is_array($update_atm_attribute_request) && count($update_atm_attribute_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_atm_location_categories_request when calling oBPv400UpdateAtmLocationCategories'
+                'Missing the required parameter $update_atm_attribute_request when calling createAtmAttribute'
             );
         }
 
 
-        $resourcePath = '/obp/v4.0.0/banks/{bankid}/atms/{atmid}/location-categories';
+        $resourcePath = '/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -749,12 +729,12 @@ class ATMApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_atm_location_categories_request)) {
+        if (isset($update_atm_attribute_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_atm_location_categories_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_atm_attribute_request));
             } else {
-                $httpBody = $obpv400_update_atm_location_categories_request;
+                $httpBody = $update_atm_attribute_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -790,9 +770,9 @@ class ATMApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -809,7 +789,7 @@ class ATMApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'PUT',
+            'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -817,42 +797,564 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmNotes
+     * Operation deleteAtm
      *
-     * Update ATM Notes
+     * Delete ATM
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmNotesRequest $obpv400_update_atm_notes_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmNotes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAtm'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400UpdateAtmNotes200Response
+     * @return void
      */
-    public function oBPv400UpdateAtmNotes($bankid, $atmid, $obpv400_update_atm_notes_request, string $contentType = self::contentTypes['oBPv400UpdateAtmNotes'][0])
+    public function deleteAtm($bankid, $atmid, string $contentType = self::contentTypes['deleteAtm'][0])
     {
-        list($response) = $this->oBPv400UpdateAtmNotesWithHttpInfo($bankid, $atmid, $obpv400_update_atm_notes_request, $contentType);
+        $this->deleteAtmWithHttpInfo($bankid, $atmid, $contentType);
+    }
+
+    /**
+     * Operation deleteAtmWithHttpInfo
+     *
+     * Delete ATM
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAtm'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteAtmWithHttpInfo($bankid, $atmid, string $contentType = self::contentTypes['deleteAtm'][0])
+    {
+        $request = $this->deleteAtmRequest($bankid, $atmid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteAtmAsync
+     *
+     * Delete ATM
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAtm'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteAtmAsync($bankid, $atmid, string $contentType = self::contentTypes['deleteAtm'][0])
+    {
+        return $this->deleteAtmAsyncWithHttpInfo($bankid, $atmid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteAtmAsyncWithHttpInfo
+     *
+     * Delete ATM
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAtm'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteAtmAsyncWithHttpInfo($bankid, $atmid, string $contentType = self::contentTypes['deleteAtm'][0])
+    {
+        $returnType = '';
+        $request = $this->deleteAtmRequest($bankid, $atmid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteAtm'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAtm'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteAtmRequest($bankid, $atmid, string $contentType = self::contentTypes['deleteAtm'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling deleteAtm'
+            );
+        }
+
+        // verify the required parameter 'atmid' is set
+        if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $atmid when calling deleteAtm'
+            );
+        }
+
+
+        $resourcePath = '/obp/v5.1.0/banks/{bankid}/atms/{atmid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($atmid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'atmid' . '}',
+                ObjectSerializer::toPathValue($atmid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'DELETE',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteAtmAttribute
+     *
+     * Delete ATM Attribute
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAtmAttribute'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteAtmAttribute($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['deleteAtmAttribute'][0])
+    {
+        $this->deleteAtmAttributeWithHttpInfo($bankid, $atmid, $atmattributeid, $contentType);
+    }
+
+    /**
+     * Operation deleteAtmAttributeWithHttpInfo
+     *
+     * Delete ATM Attribute
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAtmAttribute'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteAtmAttributeWithHttpInfo($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['deleteAtmAttribute'][0])
+    {
+        $request = $this->deleteAtmAttributeRequest($bankid, $atmid, $atmattributeid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteAtmAttributeAsync
+     *
+     * Delete ATM Attribute
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAtmAttribute'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteAtmAttributeAsync($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['deleteAtmAttribute'][0])
+    {
+        return $this->deleteAtmAttributeAsyncWithHttpInfo($bankid, $atmid, $atmattributeid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteAtmAttributeAsyncWithHttpInfo
+     *
+     * Delete ATM Attribute
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAtmAttribute'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteAtmAttributeAsyncWithHttpInfo($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['deleteAtmAttribute'][0])
+    {
+        $returnType = '';
+        $request = $this->deleteAtmAttributeRequest($bankid, $atmid, $atmattributeid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteAtmAttribute'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAtmAttribute'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteAtmAttributeRequest($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['deleteAtmAttribute'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling deleteAtmAttribute'
+            );
+        }
+
+        // verify the required parameter 'atmid' is set
+        if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $atmid when calling deleteAtmAttribute'
+            );
+        }
+
+        // verify the required parameter 'atmattributeid' is set
+        if ($atmattributeid === null || (is_array($atmattributeid) && count($atmattributeid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $atmattributeid when calling deleteAtmAttribute'
+            );
+        }
+
+
+        $resourcePath = '/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($atmid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'atmid' . '}',
+                ObjectSerializer::toPathValue($atmid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($atmattributeid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'atmattributeid' . '}',
+                ObjectSerializer::toPathValue($atmattributeid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'DELETE',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getAtm
+     *
+     * Get Bank ATM
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtm'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetAtm200Response
+     */
+    public function getAtm($bankid, $atmid, string $contentType = self::contentTypes['getAtm'][0])
+    {
+        list($response) = $this->getAtmWithHttpInfo($bankid, $atmid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateAtmNotesWithHttpInfo
+     * Operation getAtmWithHttpInfo
      *
-     * Update ATM Notes
+     * Get Bank ATM
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmNotesRequest $obpv400_update_atm_notes_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmNotes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtm'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400UpdateAtmNotes200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAtm200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateAtmNotesWithHttpInfo($bankid, $atmid, $obpv400_update_atm_notes_request, string $contentType = self::contentTypes['oBPv400UpdateAtmNotes'][0])
+    public function getAtmWithHttpInfo($bankid, $atmid, string $contentType = self::contentTypes['getAtm'][0])
     {
-        $request = $this->oBPv400UpdateAtmNotesRequest($bankid, $atmid, $obpv400_update_atm_notes_request, $contentType);
+        $request = $this->getAtmRequest($bankid, $atmid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -880,7 +1382,7 @@ class ATMApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400UpdateAtmNotes200Response',
+                        '\OpenBankProject\Model\GetAtm200Response',
                         $request,
                         $response,
                     );
@@ -902,7 +1404,7 @@ class ATMApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400UpdateAtmNotes200Response',
+                '\OpenBankProject\Model\GetAtm200Response',
                 $request,
                 $response,
             );
@@ -911,7 +1413,7 @@ class ATMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400UpdateAtmNotes200Response',
+                        '\OpenBankProject\Model\GetAtm200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -924,21 +1426,20 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmNotesAsync
+     * Operation getAtmAsync
      *
-     * Update ATM Notes
+     * Get Bank ATM
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmNotesRequest $obpv400_update_atm_notes_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmNotes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtm'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateAtmNotesAsync($bankid, $atmid, $obpv400_update_atm_notes_request, string $contentType = self::contentTypes['oBPv400UpdateAtmNotes'][0])
+    public function getAtmAsync($bankid, $atmid, string $contentType = self::contentTypes['getAtm'][0])
     {
-        return $this->oBPv400UpdateAtmNotesAsyncWithHttpInfo($bankid, $atmid, $obpv400_update_atm_notes_request, $contentType)
+        return $this->getAtmAsyncWithHttpInfo($bankid, $atmid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -947,22 +1448,21 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmNotesAsyncWithHttpInfo
+     * Operation getAtmAsyncWithHttpInfo
      *
-     * Update ATM Notes
+     * Get Bank ATM
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmNotesRequest $obpv400_update_atm_notes_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmNotes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtm'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateAtmNotesAsyncWithHttpInfo($bankid, $atmid, $obpv400_update_atm_notes_request, string $contentType = self::contentTypes['oBPv400UpdateAtmNotes'][0])
+    public function getAtmAsyncWithHttpInfo($bankid, $atmid, string $contentType = self::contentTypes['getAtm'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400UpdateAtmNotes200Response';
-        $request = $this->oBPv400UpdateAtmNotesRequest($bankid, $atmid, $obpv400_update_atm_notes_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAtm200Response';
+        $request = $this->getAtmRequest($bankid, $atmid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1001,42 +1501,34 @@ class ATMApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateAtmNotes'
+     * Create request for operation 'getAtm'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmNotesRequest $obpv400_update_atm_notes_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmNotes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtm'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateAtmNotesRequest($bankid, $atmid, $obpv400_update_atm_notes_request, string $contentType = self::contentTypes['oBPv400UpdateAtmNotes'][0])
+    public function getAtmRequest($bankid, $atmid, string $contentType = self::contentTypes['getAtm'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400UpdateAtmNotes'
+                'Missing the required parameter $bankid when calling getAtm'
             );
         }
 
         // verify the required parameter 'atmid' is set
         if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $atmid when calling oBPv400UpdateAtmNotes'
-            );
-        }
-
-        // verify the required parameter 'obpv400_update_atm_notes_request' is set
-        if ($obpv400_update_atm_notes_request === null || (is_array($obpv400_update_atm_notes_request) && count($obpv400_update_atm_notes_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_atm_notes_request when calling oBPv400UpdateAtmNotes'
+                'Missing the required parameter $atmid when calling getAtm'
             );
         }
 
 
-        $resourcePath = '/obp/v4.0.0/banks/{bankid}/atms/{atmid}/notes';
+        $resourcePath = '/obp/v5.1.0/banks/{bankid}/atms/{atmid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1070,14 +1562,7 @@ class ATMApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_atm_notes_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_atm_notes_request));
-            } else {
-                $httpBody = $obpv400_update_atm_notes_request;
-            }
-        } elseif (count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1101,20 +1586,6 @@ class ATMApi
             }
         }
 
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1130,7 +1601,7 @@ class ATMApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'PUT',
+            'GET',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1138,42 +1609,42 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmServices
+     * Operation getAtmAttribute
      *
-     * Update ATM Services
+     * Get ATM Attribute By ATM_ATTRIBUTE_ID
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmServicesRequest $obpv400_update_atm_services_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmServices'] to see the possible values for this operation
+     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtmAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400UpdateAtmServices200Response
+     * @return \OpenBankProject\Model\GetAtmAttribute200Response
      */
-    public function oBPv400UpdateAtmServices($bankid, $atmid, $obpv400_update_atm_services_request, string $contentType = self::contentTypes['oBPv400UpdateAtmServices'][0])
+    public function getAtmAttribute($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['getAtmAttribute'][0])
     {
-        list($response) = $this->oBPv400UpdateAtmServicesWithHttpInfo($bankid, $atmid, $obpv400_update_atm_services_request, $contentType);
+        list($response) = $this->getAtmAttributeWithHttpInfo($bankid, $atmid, $atmattributeid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateAtmServicesWithHttpInfo
+     * Operation getAtmAttributeWithHttpInfo
      *
-     * Update ATM Services
+     * Get ATM Attribute By ATM_ATTRIBUTE_ID
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmServicesRequest $obpv400_update_atm_services_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmServices'] to see the possible values for this operation
+     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtmAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400UpdateAtmServices200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAtmAttribute200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateAtmServicesWithHttpInfo($bankid, $atmid, $obpv400_update_atm_services_request, string $contentType = self::contentTypes['oBPv400UpdateAtmServices'][0])
+    public function getAtmAttributeWithHttpInfo($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['getAtmAttribute'][0])
     {
-        $request = $this->oBPv400UpdateAtmServicesRequest($bankid, $atmid, $obpv400_update_atm_services_request, $contentType);
+        $request = $this->getAtmAttributeRequest($bankid, $atmid, $atmattributeid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1201,7 +1672,7 @@ class ATMApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400UpdateAtmServices200Response',
+                        '\OpenBankProject\Model\GetAtmAttribute200Response',
                         $request,
                         $response,
                     );
@@ -1223,7 +1694,7 @@ class ATMApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400UpdateAtmServices200Response',
+                '\OpenBankProject\Model\GetAtmAttribute200Response',
                 $request,
                 $response,
             );
@@ -1232,7 +1703,7 @@ class ATMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400UpdateAtmServices200Response',
+                        '\OpenBankProject\Model\GetAtmAttribute200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1245,21 +1716,21 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmServicesAsync
+     * Operation getAtmAttributeAsync
      *
-     * Update ATM Services
+     * Get ATM Attribute By ATM_ATTRIBUTE_ID
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmServicesRequest $obpv400_update_atm_services_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmServices'] to see the possible values for this operation
+     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtmAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateAtmServicesAsync($bankid, $atmid, $obpv400_update_atm_services_request, string $contentType = self::contentTypes['oBPv400UpdateAtmServices'][0])
+    public function getAtmAttributeAsync($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['getAtmAttribute'][0])
     {
-        return $this->oBPv400UpdateAtmServicesAsyncWithHttpInfo($bankid, $atmid, $obpv400_update_atm_services_request, $contentType)
+        return $this->getAtmAttributeAsyncWithHttpInfo($bankid, $atmid, $atmattributeid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1268,22 +1739,22 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmServicesAsyncWithHttpInfo
+     * Operation getAtmAttributeAsyncWithHttpInfo
      *
-     * Update ATM Services
+     * Get ATM Attribute By ATM_ATTRIBUTE_ID
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmServicesRequest $obpv400_update_atm_services_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmServices'] to see the possible values for this operation
+     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtmAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateAtmServicesAsyncWithHttpInfo($bankid, $atmid, $obpv400_update_atm_services_request, string $contentType = self::contentTypes['oBPv400UpdateAtmServices'][0])
+    public function getAtmAttributeAsyncWithHttpInfo($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['getAtmAttribute'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400UpdateAtmServices200Response';
-        $request = $this->oBPv400UpdateAtmServicesRequest($bankid, $atmid, $obpv400_update_atm_services_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAtmAttribute200Response';
+        $request = $this->getAtmAttributeRequest($bankid, $atmid, $atmattributeid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1322,42 +1793,42 @@ class ATMApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateAtmServices'
+     * Create request for operation 'getAtmAttribute'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmServicesRequest $obpv400_update_atm_services_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmServices'] to see the possible values for this operation
+     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtmAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateAtmServicesRequest($bankid, $atmid, $obpv400_update_atm_services_request, string $contentType = self::contentTypes['oBPv400UpdateAtmServices'][0])
+    public function getAtmAttributeRequest($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['getAtmAttribute'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400UpdateAtmServices'
+                'Missing the required parameter $bankid when calling getAtmAttribute'
             );
         }
 
         // verify the required parameter 'atmid' is set
         if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $atmid when calling oBPv400UpdateAtmServices'
+                'Missing the required parameter $atmid when calling getAtmAttribute'
             );
         }
 
-        // verify the required parameter 'obpv400_update_atm_services_request' is set
-        if ($obpv400_update_atm_services_request === null || (is_array($obpv400_update_atm_services_request) && count($obpv400_update_atm_services_request) === 0)) {
+        // verify the required parameter 'atmattributeid' is set
+        if ($atmattributeid === null || (is_array($atmattributeid) && count($atmattributeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_atm_services_request when calling oBPv400UpdateAtmServices'
+                'Missing the required parameter $atmattributeid when calling getAtmAttribute'
             );
         }
 
 
-        $resourcePath = '/obp/v4.0.0/banks/{bankid}/atms/{atmid}/services';
+        $resourcePath = '/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1382,6 +1853,14 @@ class ATMApi
                 $resourcePath
             );
         }
+        // path params
+        if ($atmattributeid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'atmattributeid' . '}',
+                ObjectSerializer::toPathValue($atmattributeid),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -1391,14 +1870,7 @@ class ATMApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_atm_services_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_atm_services_request));
-            } else {
-                $httpBody = $obpv400_update_atm_services_request;
-            }
-        } elseif (count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1432,9 +1904,9 @@ class ATMApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1451,7 +1923,7 @@ class ATMApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'PUT',
+            'GET',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1459,42 +1931,40 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmSupportedCurrencies
+     * Operation getAtmAttributes
      *
-     * Update ATM Supported Currencies
+     * Get ATM Attributes
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmSupportedCurrenciesRequest $obpv400_update_atm_supported_currencies_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmSupportedCurrencies'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtmAttributes'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400UpdateAtmSupportedCurrencies200Response
+     * @return \OpenBankProject\Model\GetAtmAttributes200Response
      */
-    public function oBPv400UpdateAtmSupportedCurrencies($bankid, $atmid, $obpv400_update_atm_supported_currencies_request, string $contentType = self::contentTypes['oBPv400UpdateAtmSupportedCurrencies'][0])
+    public function getAtmAttributes($bankid, $atmid, string $contentType = self::contentTypes['getAtmAttributes'][0])
     {
-        list($response) = $this->oBPv400UpdateAtmSupportedCurrenciesWithHttpInfo($bankid, $atmid, $obpv400_update_atm_supported_currencies_request, $contentType);
+        list($response) = $this->getAtmAttributesWithHttpInfo($bankid, $atmid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateAtmSupportedCurrenciesWithHttpInfo
+     * Operation getAtmAttributesWithHttpInfo
      *
-     * Update ATM Supported Currencies
+     * Get ATM Attributes
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmSupportedCurrenciesRequest $obpv400_update_atm_supported_currencies_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmSupportedCurrencies'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtmAttributes'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400UpdateAtmSupportedCurrencies200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAtmAttributes200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateAtmSupportedCurrenciesWithHttpInfo($bankid, $atmid, $obpv400_update_atm_supported_currencies_request, string $contentType = self::contentTypes['oBPv400UpdateAtmSupportedCurrencies'][0])
+    public function getAtmAttributesWithHttpInfo($bankid, $atmid, string $contentType = self::contentTypes['getAtmAttributes'][0])
     {
-        $request = $this->oBPv400UpdateAtmSupportedCurrenciesRequest($bankid, $atmid, $obpv400_update_atm_supported_currencies_request, $contentType);
+        $request = $this->getAtmAttributesRequest($bankid, $atmid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1522,7 +1992,7 @@ class ATMApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400UpdateAtmSupportedCurrencies200Response',
+                        '\OpenBankProject\Model\GetAtmAttributes200Response',
                         $request,
                         $response,
                     );
@@ -1544,7 +2014,7 @@ class ATMApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400UpdateAtmSupportedCurrencies200Response',
+                '\OpenBankProject\Model\GetAtmAttributes200Response',
                 $request,
                 $response,
             );
@@ -1553,7 +2023,7 @@ class ATMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400UpdateAtmSupportedCurrencies200Response',
+                        '\OpenBankProject\Model\GetAtmAttributes200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1566,21 +2036,20 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmSupportedCurrenciesAsync
+     * Operation getAtmAttributesAsync
      *
-     * Update ATM Supported Currencies
+     * Get ATM Attributes
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmSupportedCurrenciesRequest $obpv400_update_atm_supported_currencies_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmSupportedCurrencies'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtmAttributes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateAtmSupportedCurrenciesAsync($bankid, $atmid, $obpv400_update_atm_supported_currencies_request, string $contentType = self::contentTypes['oBPv400UpdateAtmSupportedCurrencies'][0])
+    public function getAtmAttributesAsync($bankid, $atmid, string $contentType = self::contentTypes['getAtmAttributes'][0])
     {
-        return $this->oBPv400UpdateAtmSupportedCurrenciesAsyncWithHttpInfo($bankid, $atmid, $obpv400_update_atm_supported_currencies_request, $contentType)
+        return $this->getAtmAttributesAsyncWithHttpInfo($bankid, $atmid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1589,22 +2058,21 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmSupportedCurrenciesAsyncWithHttpInfo
+     * Operation getAtmAttributesAsyncWithHttpInfo
      *
-     * Update ATM Supported Currencies
+     * Get ATM Attributes
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmSupportedCurrenciesRequest $obpv400_update_atm_supported_currencies_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmSupportedCurrencies'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtmAttributes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateAtmSupportedCurrenciesAsyncWithHttpInfo($bankid, $atmid, $obpv400_update_atm_supported_currencies_request, string $contentType = self::contentTypes['oBPv400UpdateAtmSupportedCurrencies'][0])
+    public function getAtmAttributesAsyncWithHttpInfo($bankid, $atmid, string $contentType = self::contentTypes['getAtmAttributes'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400UpdateAtmSupportedCurrencies200Response';
-        $request = $this->oBPv400UpdateAtmSupportedCurrenciesRequest($bankid, $atmid, $obpv400_update_atm_supported_currencies_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAtmAttributes200Response';
+        $request = $this->getAtmAttributesRequest($bankid, $atmid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1643,42 +2111,34 @@ class ATMApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateAtmSupportedCurrencies'
+     * Create request for operation 'getAtmAttributes'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmSupportedCurrenciesRequest $obpv400_update_atm_supported_currencies_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmSupportedCurrencies'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtmAttributes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateAtmSupportedCurrenciesRequest($bankid, $atmid, $obpv400_update_atm_supported_currencies_request, string $contentType = self::contentTypes['oBPv400UpdateAtmSupportedCurrencies'][0])
+    public function getAtmAttributesRequest($bankid, $atmid, string $contentType = self::contentTypes['getAtmAttributes'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400UpdateAtmSupportedCurrencies'
+                'Missing the required parameter $bankid when calling getAtmAttributes'
             );
         }
 
         // verify the required parameter 'atmid' is set
         if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $atmid when calling oBPv400UpdateAtmSupportedCurrencies'
-            );
-        }
-
-        // verify the required parameter 'obpv400_update_atm_supported_currencies_request' is set
-        if ($obpv400_update_atm_supported_currencies_request === null || (is_array($obpv400_update_atm_supported_currencies_request) && count($obpv400_update_atm_supported_currencies_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_atm_supported_currencies_request when calling oBPv400UpdateAtmSupportedCurrencies'
+                'Missing the required parameter $atmid when calling getAtmAttributes'
             );
         }
 
 
-        $resourcePath = '/obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-currencies';
+        $resourcePath = '/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1712,14 +2172,7 @@ class ATMApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_atm_supported_currencies_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_atm_supported_currencies_request));
-            } else {
-                $httpBody = $obpv400_update_atm_supported_currencies_request;
-            }
-        } elseif (count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1753,9 +2206,9 @@ class ATMApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1772,7 +2225,7 @@ class ATMApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'PUT',
+            'GET',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1780,42 +2233,38 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmSupportedLanguages
+     * Operation getAtms
      *
-     * Update ATM Supported Languages
+     * Get Bank ATMS
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmSupportedLanguagesRequest $obpv400_update_atm_supported_languages_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmSupportedLanguages'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtms'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400UpdateAtmSupportedLanguages200Response
+     * @return \OpenBankProject\Model\GetAtms200Response
      */
-    public function oBPv400UpdateAtmSupportedLanguages($bankid, $atmid, $obpv400_update_atm_supported_languages_request, string $contentType = self::contentTypes['oBPv400UpdateAtmSupportedLanguages'][0])
+    public function getAtms($bankid, string $contentType = self::contentTypes['getAtms'][0])
     {
-        list($response) = $this->oBPv400UpdateAtmSupportedLanguagesWithHttpInfo($bankid, $atmid, $obpv400_update_atm_supported_languages_request, $contentType);
+        list($response) = $this->getAtmsWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateAtmSupportedLanguagesWithHttpInfo
+     * Operation getAtmsWithHttpInfo
      *
-     * Update ATM Supported Languages
+     * Get Bank ATMS
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmSupportedLanguagesRequest $obpv400_update_atm_supported_languages_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmSupportedLanguages'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtms'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400UpdateAtmSupportedLanguages200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAtms200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateAtmSupportedLanguagesWithHttpInfo($bankid, $atmid, $obpv400_update_atm_supported_languages_request, string $contentType = self::contentTypes['oBPv400UpdateAtmSupportedLanguages'][0])
+    public function getAtmsWithHttpInfo($bankid, string $contentType = self::contentTypes['getAtms'][0])
     {
-        $request = $this->oBPv400UpdateAtmSupportedLanguagesRequest($bankid, $atmid, $obpv400_update_atm_supported_languages_request, $contentType);
+        $request = $this->getAtmsRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1843,7 +2292,7 @@ class ATMApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400UpdateAtmSupportedLanguages200Response',
+                        '\OpenBankProject\Model\GetAtms200Response',
                         $request,
                         $response,
                     );
@@ -1865,7 +2314,7 @@ class ATMApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400UpdateAtmSupportedLanguages200Response',
+                '\OpenBankProject\Model\GetAtms200Response',
                 $request,
                 $response,
             );
@@ -1874,7 +2323,7 @@ class ATMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400UpdateAtmSupportedLanguages200Response',
+                        '\OpenBankProject\Model\GetAtms200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1887,21 +2336,19 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmSupportedLanguagesAsync
+     * Operation getAtmsAsync
      *
-     * Update ATM Supported Languages
+     * Get Bank ATMS
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmSupportedLanguagesRequest $obpv400_update_atm_supported_languages_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmSupportedLanguages'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtms'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateAtmSupportedLanguagesAsync($bankid, $atmid, $obpv400_update_atm_supported_languages_request, string $contentType = self::contentTypes['oBPv400UpdateAtmSupportedLanguages'][0])
+    public function getAtmsAsync($bankid, string $contentType = self::contentTypes['getAtms'][0])
     {
-        return $this->oBPv400UpdateAtmSupportedLanguagesAsyncWithHttpInfo($bankid, $atmid, $obpv400_update_atm_supported_languages_request, $contentType)
+        return $this->getAtmsAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1910,22 +2357,20 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv400UpdateAtmSupportedLanguagesAsyncWithHttpInfo
+     * Operation getAtmsAsyncWithHttpInfo
      *
-     * Update ATM Supported Languages
+     * Get Bank ATMS
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmSupportedLanguagesRequest $obpv400_update_atm_supported_languages_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmSupportedLanguages'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtms'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateAtmSupportedLanguagesAsyncWithHttpInfo($bankid, $atmid, $obpv400_update_atm_supported_languages_request, string $contentType = self::contentTypes['oBPv400UpdateAtmSupportedLanguages'][0])
+    public function getAtmsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getAtms'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400UpdateAtmSupportedLanguages200Response';
-        $request = $this->oBPv400UpdateAtmSupportedLanguagesRequest($bankid, $atmid, $obpv400_update_atm_supported_languages_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAtms200Response';
+        $request = $this->getAtmsRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1964,42 +2409,26 @@ class ATMApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateAtmSupportedLanguages'
+     * Create request for operation 'getAtms'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAtmSupportedLanguagesRequest $obpv400_update_atm_supported_languages_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAtmSupportedLanguages'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAtms'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateAtmSupportedLanguagesRequest($bankid, $atmid, $obpv400_update_atm_supported_languages_request, string $contentType = self::contentTypes['oBPv400UpdateAtmSupportedLanguages'][0])
+    public function getAtmsRequest($bankid, string $contentType = self::contentTypes['getAtms'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400UpdateAtmSupportedLanguages'
-            );
-        }
-
-        // verify the required parameter 'atmid' is set
-        if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $atmid when calling oBPv400UpdateAtmSupportedLanguages'
-            );
-        }
-
-        // verify the required parameter 'obpv400_update_atm_supported_languages_request' is set
-        if ($obpv400_update_atm_supported_languages_request === null || (is_array($obpv400_update_atm_supported_languages_request) && count($obpv400_update_atm_supported_languages_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_atm_supported_languages_request when calling oBPv400UpdateAtmSupportedLanguages'
+                'Missing the required parameter $bankid when calling getAtms'
             );
         }
 
 
-        $resourcePath = '/obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-languages';
+        $resourcePath = '/obp/v5.1.0/banks/{bankid}/atms';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2016,14 +2445,6 @@ class ATMApi
                 $resourcePath
             );
         }
-        // path params
-        if ($atmid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'atmid' . '}',
-                ObjectSerializer::toPathValue($atmid),
-                $resourcePath
-            );
-        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -2033,14 +2454,7 @@ class ATMApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_atm_supported_languages_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_atm_supported_languages_request));
-            } else {
-                $httpBody = $obpv400_update_atm_supported_languages_request;
-            }
-        } elseif (count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -2064,20 +2478,6 @@ class ATMApi
             }
         }
 
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2093,7 +2493,7 @@ class ATMApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'PUT',
+            'GET',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -2101,38 +2501,38 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv500HeadAtms
+     * Operation headAtms
      *
      * Head Bank ATMS
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500HeadAtms'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headAtms'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv500HeadAtms200Response
+     * @return \OpenBankProject\Model\HeadAtms200Response
      */
-    public function oBPv500HeadAtms($bankid, string $contentType = self::contentTypes['oBPv500HeadAtms'][0])
+    public function headAtms($bankid, string $contentType = self::contentTypes['headAtms'][0])
     {
-        list($response) = $this->oBPv500HeadAtmsWithHttpInfo($bankid, $contentType);
+        list($response) = $this->headAtmsWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv500HeadAtmsWithHttpInfo
+     * Operation headAtmsWithHttpInfo
      *
      * Head Bank ATMS
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500HeadAtms'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headAtms'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv500HeadAtms200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\HeadAtms200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv500HeadAtmsWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv500HeadAtms'][0])
+    public function headAtmsWithHttpInfo($bankid, string $contentType = self::contentTypes['headAtms'][0])
     {
-        $request = $this->oBPv500HeadAtmsRequest($bankid, $contentType);
+        $request = $this->headAtmsRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2160,7 +2560,7 @@ class ATMApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv500HeadAtms200Response',
+                        '\OpenBankProject\Model\HeadAtms200Response',
                         $request,
                         $response,
                     );
@@ -2182,7 +2582,7 @@ class ATMApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv500HeadAtms200Response',
+                '\OpenBankProject\Model\HeadAtms200Response',
                 $request,
                 $response,
             );
@@ -2191,7 +2591,7 @@ class ATMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv500HeadAtms200Response',
+                        '\OpenBankProject\Model\HeadAtms200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2204,19 +2604,19 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv500HeadAtmsAsync
+     * Operation headAtmsAsync
      *
      * Head Bank ATMS
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500HeadAtms'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headAtms'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv500HeadAtmsAsync($bankid, string $contentType = self::contentTypes['oBPv500HeadAtms'][0])
+    public function headAtmsAsync($bankid, string $contentType = self::contentTypes['headAtms'][0])
     {
-        return $this->oBPv500HeadAtmsAsyncWithHttpInfo($bankid, $contentType)
+        return $this->headAtmsAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2225,20 +2625,20 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv500HeadAtmsAsyncWithHttpInfo
+     * Operation headAtmsAsyncWithHttpInfo
      *
      * Head Bank ATMS
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500HeadAtms'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headAtms'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv500HeadAtmsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv500HeadAtms'][0])
+    public function headAtmsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['headAtms'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv500HeadAtms200Response';
-        $request = $this->oBPv500HeadAtmsRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\HeadAtms200Response';
+        $request = $this->headAtmsRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2277,21 +2677,21 @@ class ATMApi
     }
 
     /**
-     * Create request for operation 'oBPv500HeadAtms'
+     * Create request for operation 'headAtms'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500HeadAtms'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headAtms'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv500HeadAtmsRequest($bankid, string $contentType = self::contentTypes['oBPv500HeadAtms'][0])
+    public function headAtmsRequest($bankid, string $contentType = self::contentTypes['headAtms'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv500HeadAtms'
+                'Missing the required parameter $bankid when calling headAtms'
             );
         }
 
@@ -2369,40 +2769,42 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv510CreateAtm
+     * Operation updateAtm
      *
-     * Create ATM
+     * UPDATE ATM
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateAtmRequest $obpv510_create_atm_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateAtm'] to see the possible values for this operation
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmRequest $update_atm_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtm'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetAtm200Response
+     * @return \OpenBankProject\Model\GetAtm200Response
      */
-    public function oBPv510CreateAtm($bankid, $obpv510_create_atm_request, string $contentType = self::contentTypes['oBPv510CreateAtm'][0])
+    public function updateAtm($bankid, $atmid, $update_atm_request, string $contentType = self::contentTypes['updateAtm'][0])
     {
-        list($response) = $this->oBPv510CreateAtmWithHttpInfo($bankid, $obpv510_create_atm_request, $contentType);
+        list($response) = $this->updateAtmWithHttpInfo($bankid, $atmid, $update_atm_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510CreateAtmWithHttpInfo
+     * Operation updateAtmWithHttpInfo
      *
-     * Create ATM
+     * UPDATE ATM
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateAtmRequest $obpv510_create_atm_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateAtm'] to see the possible values for this operation
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmRequest $update_atm_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtm'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetAtm200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAtm200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510CreateAtmWithHttpInfo($bankid, $obpv510_create_atm_request, string $contentType = self::contentTypes['oBPv510CreateAtm'][0])
+    public function updateAtmWithHttpInfo($bankid, $atmid, $update_atm_request, string $contentType = self::contentTypes['updateAtm'][0])
     {
-        $request = $this->oBPv510CreateAtmRequest($bankid, $obpv510_create_atm_request, $contentType);
+        $request = $this->updateAtmRequest($bankid, $atmid, $update_atm_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2430,7 +2832,7 @@ class ATMApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetAtm200Response',
+                        '\OpenBankProject\Model\GetAtm200Response',
                         $request,
                         $response,
                     );
@@ -2452,7 +2854,7 @@ class ATMApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetAtm200Response',
+                '\OpenBankProject\Model\GetAtm200Response',
                 $request,
                 $response,
             );
@@ -2461,7 +2863,7 @@ class ATMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetAtm200Response',
+                        '\OpenBankProject\Model\GetAtm200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2474,20 +2876,21 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv510CreateAtmAsync
+     * Operation updateAtmAsync
      *
-     * Create ATM
+     * UPDATE ATM
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateAtmRequest $obpv510_create_atm_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateAtm'] to see the possible values for this operation
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmRequest $update_atm_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtm'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateAtmAsync($bankid, $obpv510_create_atm_request, string $contentType = self::contentTypes['oBPv510CreateAtm'][0])
+    public function updateAtmAsync($bankid, $atmid, $update_atm_request, string $contentType = self::contentTypes['updateAtm'][0])
     {
-        return $this->oBPv510CreateAtmAsyncWithHttpInfo($bankid, $obpv510_create_atm_request, $contentType)
+        return $this->updateAtmAsyncWithHttpInfo($bankid, $atmid, $update_atm_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2496,21 +2899,22 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv510CreateAtmAsyncWithHttpInfo
+     * Operation updateAtmAsyncWithHttpInfo
      *
-     * Create ATM
+     * UPDATE ATM
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateAtmRequest $obpv510_create_atm_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateAtm'] to see the possible values for this operation
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmRequest $update_atm_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtm'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateAtmAsyncWithHttpInfo($bankid, $obpv510_create_atm_request, string $contentType = self::contentTypes['oBPv510CreateAtm'][0])
+    public function updateAtmAsyncWithHttpInfo($bankid, $atmid, $update_atm_request, string $contentType = self::contentTypes['updateAtm'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetAtm200Response';
-        $request = $this->oBPv510CreateAtmRequest($bankid, $obpv510_create_atm_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAtm200Response';
+        $request = $this->updateAtmRequest($bankid, $atmid, $update_atm_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2549,1175 +2953,37 @@ class ATMApi
     }
 
     /**
-     * Create request for operation 'oBPv510CreateAtm'
+     * Create request for operation 'updateAtm'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateAtmRequest $obpv510_create_atm_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateAtm'] to see the possible values for this operation
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmRequest $update_atm_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtm'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510CreateAtmRequest($bankid, $obpv510_create_atm_request, string $contentType = self::contentTypes['oBPv510CreateAtm'][0])
+    public function updateAtmRequest($bankid, $atmid, $update_atm_request, string $contentType = self::contentTypes['updateAtm'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510CreateAtm'
-            );
-        }
-
-        // verify the required parameter 'obpv510_create_atm_request' is set
-        if ($obpv510_create_atm_request === null || (is_array($obpv510_create_atm_request) && count($obpv510_create_atm_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_create_atm_request when calling oBPv510CreateAtm'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/banks/{bankid}/atms';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv510_create_atm_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_create_atm_request));
-            } else {
-                $httpBody = $obpv510_create_atm_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510CreateAtmAttribute
-     *
-     * Create ATM Attribute
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateAtmAttribute'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetAtmAttribute200Response
-     */
-    public function oBPv510CreateAtmAttribute($bankid, $atmid, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv510CreateAtmAttribute'][0])
-    {
-        list($response) = $this->oBPv510CreateAtmAttributeWithHttpInfo($bankid, $atmid, $obpv510_update_atm_attribute_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510CreateAtmAttributeWithHttpInfo
-     *
-     * Create ATM Attribute
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateAtmAttribute'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetAtmAttribute200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510CreateAtmAttributeWithHttpInfo($bankid, $atmid, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv510CreateAtmAttribute'][0])
-    {
-        $request = $this->oBPv510CreateAtmAttributeRequest($bankid, $atmid, $obpv510_update_atm_attribute_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetAtmAttribute200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetAtmAttribute200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetAtmAttribute200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510CreateAtmAttributeAsync
-     *
-     * Create ATM Attribute
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateAtmAttribute'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510CreateAtmAttributeAsync($bankid, $atmid, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv510CreateAtmAttribute'][0])
-    {
-        return $this->oBPv510CreateAtmAttributeAsyncWithHttpInfo($bankid, $atmid, $obpv510_update_atm_attribute_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510CreateAtmAttributeAsyncWithHttpInfo
-     *
-     * Create ATM Attribute
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateAtmAttribute'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510CreateAtmAttributeAsyncWithHttpInfo($bankid, $atmid, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv510CreateAtmAttribute'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510GetAtmAttribute200Response';
-        $request = $this->oBPv510CreateAtmAttributeRequest($bankid, $atmid, $obpv510_update_atm_attribute_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510CreateAtmAttribute'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateAtmAttribute'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510CreateAtmAttributeRequest($bankid, $atmid, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv510CreateAtmAttribute'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510CreateAtmAttribute'
+                'Missing the required parameter $bankid when calling updateAtm'
             );
         }
 
         // verify the required parameter 'atmid' is set
         if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $atmid when calling oBPv510CreateAtmAttribute'
+                'Missing the required parameter $atmid when calling updateAtm'
             );
         }
 
-        // verify the required parameter 'obpv510_update_atm_attribute_request' is set
-        if ($obpv510_update_atm_attribute_request === null || (is_array($obpv510_update_atm_attribute_request) && count($obpv510_update_atm_attribute_request) === 0)) {
+        // verify the required parameter 'update_atm_request' is set
+        if ($update_atm_request === null || (is_array($update_atm_request) && count($update_atm_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_update_atm_attribute_request when calling oBPv510CreateAtmAttribute'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($atmid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'atmid' . '}',
-                ObjectSerializer::toPathValue($atmid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv510_update_atm_attribute_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_update_atm_attribute_request));
-            } else {
-                $httpBody = $obpv510_update_atm_attribute_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510DeleteAtm
-     *
-     * Delete ATM
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteAtm'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv510DeleteAtm($bankid, $atmid, string $contentType = self::contentTypes['oBPv510DeleteAtm'][0])
-    {
-        $this->oBPv510DeleteAtmWithHttpInfo($bankid, $atmid, $contentType);
-    }
-
-    /**
-     * Operation oBPv510DeleteAtmWithHttpInfo
-     *
-     * Delete ATM
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteAtm'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510DeleteAtmWithHttpInfo($bankid, $atmid, string $contentType = self::contentTypes['oBPv510DeleteAtm'][0])
-    {
-        $request = $this->oBPv510DeleteAtmRequest($bankid, $atmid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510DeleteAtmAsync
-     *
-     * Delete ATM
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteAtm'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510DeleteAtmAsync($bankid, $atmid, string $contentType = self::contentTypes['oBPv510DeleteAtm'][0])
-    {
-        return $this->oBPv510DeleteAtmAsyncWithHttpInfo($bankid, $atmid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510DeleteAtmAsyncWithHttpInfo
-     *
-     * Delete ATM
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteAtm'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510DeleteAtmAsyncWithHttpInfo($bankid, $atmid, string $contentType = self::contentTypes['oBPv510DeleteAtm'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv510DeleteAtmRequest($bankid, $atmid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510DeleteAtm'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteAtm'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510DeleteAtmRequest($bankid, $atmid, string $contentType = self::contentTypes['oBPv510DeleteAtm'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510DeleteAtm'
-            );
-        }
-
-        // verify the required parameter 'atmid' is set
-        if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $atmid when calling oBPv510DeleteAtm'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/banks/{bankid}/atms/{atmid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($atmid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'atmid' . '}',
-                ObjectSerializer::toPathValue($atmid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510DeleteAtmAttribute
-     *
-     * Delete ATM Attribute
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteAtmAttribute'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv510DeleteAtmAttribute($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['oBPv510DeleteAtmAttribute'][0])
-    {
-        $this->oBPv510DeleteAtmAttributeWithHttpInfo($bankid, $atmid, $atmattributeid, $contentType);
-    }
-
-    /**
-     * Operation oBPv510DeleteAtmAttributeWithHttpInfo
-     *
-     * Delete ATM Attribute
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteAtmAttribute'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510DeleteAtmAttributeWithHttpInfo($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['oBPv510DeleteAtmAttribute'][0])
-    {
-        $request = $this->oBPv510DeleteAtmAttributeRequest($bankid, $atmid, $atmattributeid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510DeleteAtmAttributeAsync
-     *
-     * Delete ATM Attribute
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteAtmAttribute'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510DeleteAtmAttributeAsync($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['oBPv510DeleteAtmAttribute'][0])
-    {
-        return $this->oBPv510DeleteAtmAttributeAsyncWithHttpInfo($bankid, $atmid, $atmattributeid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510DeleteAtmAttributeAsyncWithHttpInfo
-     *
-     * Delete ATM Attribute
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteAtmAttribute'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510DeleteAtmAttributeAsyncWithHttpInfo($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['oBPv510DeleteAtmAttribute'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv510DeleteAtmAttributeRequest($bankid, $atmid, $atmattributeid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510DeleteAtmAttribute'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteAtmAttribute'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510DeleteAtmAttributeRequest($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['oBPv510DeleteAtmAttribute'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510DeleteAtmAttribute'
-            );
-        }
-
-        // verify the required parameter 'atmid' is set
-        if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $atmid when calling oBPv510DeleteAtmAttribute'
-            );
-        }
-
-        // verify the required parameter 'atmattributeid' is set
-        if ($atmattributeid === null || (is_array($atmattributeid) && count($atmattributeid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $atmattributeid when calling oBPv510DeleteAtmAttribute'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($atmid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'atmid' . '}',
-                ObjectSerializer::toPathValue($atmid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($atmattributeid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'atmattributeid' . '}',
-                ObjectSerializer::toPathValue($atmattributeid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510GetAtm
-     *
-     * Get Bank ATM
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtm'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetAtm200Response
-     */
-    public function oBPv510GetAtm($bankid, $atmid, string $contentType = self::contentTypes['oBPv510GetAtm'][0])
-    {
-        list($response) = $this->oBPv510GetAtmWithHttpInfo($bankid, $atmid, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510GetAtmWithHttpInfo
-     *
-     * Get Bank ATM
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtm'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetAtm200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510GetAtmWithHttpInfo($bankid, $atmid, string $contentType = self::contentTypes['oBPv510GetAtm'][0])
-    {
-        $request = $this->oBPv510GetAtmRequest($bankid, $atmid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetAtm200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetAtm200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetAtm200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510GetAtmAsync
-     *
-     * Get Bank ATM
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtm'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510GetAtmAsync($bankid, $atmid, string $contentType = self::contentTypes['oBPv510GetAtm'][0])
-    {
-        return $this->oBPv510GetAtmAsyncWithHttpInfo($bankid, $atmid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510GetAtmAsyncWithHttpInfo
-     *
-     * Get Bank ATM
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtm'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510GetAtmAsyncWithHttpInfo($bankid, $atmid, string $contentType = self::contentTypes['oBPv510GetAtm'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510GetAtm200Response';
-        $request = $this->oBPv510GetAtmRequest($bankid, $atmid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510GetAtm'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtm'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510GetAtmRequest($bankid, $atmid, string $contentType = self::contentTypes['oBPv510GetAtm'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510GetAtm'
-            );
-        }
-
-        // verify the required parameter 'atmid' is set
-        if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $atmid when calling oBPv510GetAtm'
+                'Missing the required parameter $update_atm_request when calling updateAtm'
             );
         }
 
@@ -3756,1204 +3022,12 @@ class ATMApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510GetAtmAttribute
-     *
-     * Get ATM Attribute By ATM_ATTRIBUTE_ID
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtmAttribute'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetAtmAttribute200Response
-     */
-    public function oBPv510GetAtmAttribute($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['oBPv510GetAtmAttribute'][0])
-    {
-        list($response) = $this->oBPv510GetAtmAttributeWithHttpInfo($bankid, $atmid, $atmattributeid, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510GetAtmAttributeWithHttpInfo
-     *
-     * Get ATM Attribute By ATM_ATTRIBUTE_ID
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtmAttribute'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetAtmAttribute200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510GetAtmAttributeWithHttpInfo($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['oBPv510GetAtmAttribute'][0])
-    {
-        $request = $this->oBPv510GetAtmAttributeRequest($bankid, $atmid, $atmattributeid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetAtmAttribute200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetAtmAttribute200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetAtmAttribute200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510GetAtmAttributeAsync
-     *
-     * Get ATM Attribute By ATM_ATTRIBUTE_ID
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtmAttribute'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510GetAtmAttributeAsync($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['oBPv510GetAtmAttribute'][0])
-    {
-        return $this->oBPv510GetAtmAttributeAsyncWithHttpInfo($bankid, $atmid, $atmattributeid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510GetAtmAttributeAsyncWithHttpInfo
-     *
-     * Get ATM Attribute By ATM_ATTRIBUTE_ID
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtmAttribute'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510GetAtmAttributeAsyncWithHttpInfo($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['oBPv510GetAtmAttribute'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510GetAtmAttribute200Response';
-        $request = $this->oBPv510GetAtmAttributeRequest($bankid, $atmid, $atmattributeid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510GetAtmAttribute'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtmAttribute'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510GetAtmAttributeRequest($bankid, $atmid, $atmattributeid, string $contentType = self::contentTypes['oBPv510GetAtmAttribute'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510GetAtmAttribute'
-            );
-        }
-
-        // verify the required parameter 'atmid' is set
-        if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $atmid when calling oBPv510GetAtmAttribute'
-            );
-        }
-
-        // verify the required parameter 'atmattributeid' is set
-        if ($atmattributeid === null || (is_array($atmattributeid) && count($atmattributeid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $atmattributeid when calling oBPv510GetAtmAttribute'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($atmid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'atmid' . '}',
-                ObjectSerializer::toPathValue($atmid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($atmattributeid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'atmattributeid' . '}',
-                ObjectSerializer::toPathValue($atmattributeid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510GetAtmAttributes
-     *
-     * Get ATM Attributes
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtmAttributes'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetAtmAttributes200Response
-     */
-    public function oBPv510GetAtmAttributes($bankid, $atmid, string $contentType = self::contentTypes['oBPv510GetAtmAttributes'][0])
-    {
-        list($response) = $this->oBPv510GetAtmAttributesWithHttpInfo($bankid, $atmid, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510GetAtmAttributesWithHttpInfo
-     *
-     * Get ATM Attributes
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtmAttributes'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetAtmAttributes200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510GetAtmAttributesWithHttpInfo($bankid, $atmid, string $contentType = self::contentTypes['oBPv510GetAtmAttributes'][0])
-    {
-        $request = $this->oBPv510GetAtmAttributesRequest($bankid, $atmid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetAtmAttributes200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetAtmAttributes200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetAtmAttributes200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510GetAtmAttributesAsync
-     *
-     * Get ATM Attributes
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtmAttributes'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510GetAtmAttributesAsync($bankid, $atmid, string $contentType = self::contentTypes['oBPv510GetAtmAttributes'][0])
-    {
-        return $this->oBPv510GetAtmAttributesAsyncWithHttpInfo($bankid, $atmid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510GetAtmAttributesAsyncWithHttpInfo
-     *
-     * Get ATM Attributes
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtmAttributes'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510GetAtmAttributesAsyncWithHttpInfo($bankid, $atmid, string $contentType = self::contentTypes['oBPv510GetAtmAttributes'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510GetAtmAttributes200Response';
-        $request = $this->oBPv510GetAtmAttributesRequest($bankid, $atmid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510GetAtmAttributes'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtmAttributes'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510GetAtmAttributesRequest($bankid, $atmid, string $contentType = self::contentTypes['oBPv510GetAtmAttributes'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510GetAtmAttributes'
-            );
-        }
-
-        // verify the required parameter 'atmid' is set
-        if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $atmid when calling oBPv510GetAtmAttributes'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($atmid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'atmid' . '}',
-                ObjectSerializer::toPathValue($atmid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510GetAtms
-     *
-     * Get Bank ATMS
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtms'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetAtms200Response
-     */
-    public function oBPv510GetAtms($bankid, string $contentType = self::contentTypes['oBPv510GetAtms'][0])
-    {
-        list($response) = $this->oBPv510GetAtmsWithHttpInfo($bankid, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510GetAtmsWithHttpInfo
-     *
-     * Get Bank ATMS
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtms'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetAtms200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510GetAtmsWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv510GetAtms'][0])
-    {
-        $request = $this->oBPv510GetAtmsRequest($bankid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetAtms200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetAtms200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetAtms200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510GetAtmsAsync
-     *
-     * Get Bank ATMS
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtms'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510GetAtmsAsync($bankid, string $contentType = self::contentTypes['oBPv510GetAtms'][0])
-    {
-        return $this->oBPv510GetAtmsAsyncWithHttpInfo($bankid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510GetAtmsAsyncWithHttpInfo
-     *
-     * Get Bank ATMS
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtms'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510GetAtmsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv510GetAtms'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510GetAtms200Response';
-        $request = $this->oBPv510GetAtmsRequest($bankid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510GetAtms'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAtms'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510GetAtmsRequest($bankid, string $contentType = self::contentTypes['oBPv510GetAtms'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510GetAtms'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/banks/{bankid}/atms';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510UpdateAtm
-     *
-     * UPDATE ATM
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmRequest $obpv510_update_atm_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateAtm'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetAtm200Response
-     */
-    public function oBPv510UpdateAtm($bankid, $atmid, $obpv510_update_atm_request, string $contentType = self::contentTypes['oBPv510UpdateAtm'][0])
-    {
-        list($response) = $this->oBPv510UpdateAtmWithHttpInfo($bankid, $atmid, $obpv510_update_atm_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510UpdateAtmWithHttpInfo
-     *
-     * UPDATE ATM
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmRequest $obpv510_update_atm_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateAtm'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetAtm200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510UpdateAtmWithHttpInfo($bankid, $atmid, $obpv510_update_atm_request, string $contentType = self::contentTypes['oBPv510UpdateAtm'][0])
-    {
-        $request = $this->oBPv510UpdateAtmRequest($bankid, $atmid, $obpv510_update_atm_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetAtm200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetAtm200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetAtm200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510UpdateAtmAsync
-     *
-     * UPDATE ATM
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmRequest $obpv510_update_atm_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateAtm'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510UpdateAtmAsync($bankid, $atmid, $obpv510_update_atm_request, string $contentType = self::contentTypes['oBPv510UpdateAtm'][0])
-    {
-        return $this->oBPv510UpdateAtmAsyncWithHttpInfo($bankid, $atmid, $obpv510_update_atm_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510UpdateAtmAsyncWithHttpInfo
-     *
-     * UPDATE ATM
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmRequest $obpv510_update_atm_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateAtm'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510UpdateAtmAsyncWithHttpInfo($bankid, $atmid, $obpv510_update_atm_request, string $contentType = self::contentTypes['oBPv510UpdateAtm'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510GetAtm200Response';
-        $request = $this->oBPv510UpdateAtmRequest($bankid, $atmid, $obpv510_update_atm_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510UpdateAtm'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $atmid The ATMID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmRequest $obpv510_update_atm_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateAtm'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510UpdateAtmRequest($bankid, $atmid, $obpv510_update_atm_request, string $contentType = self::contentTypes['oBPv510UpdateAtm'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510UpdateAtm'
-            );
-        }
-
-        // verify the required parameter 'atmid' is set
-        if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $atmid when calling oBPv510UpdateAtm'
-            );
-        }
-
-        // verify the required parameter 'obpv510_update_atm_request' is set
-        if ($obpv510_update_atm_request === null || (is_array($obpv510_update_atm_request) && count($obpv510_update_atm_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_update_atm_request when calling oBPv510UpdateAtm'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/banks/{bankid}/atms/{atmid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($atmid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'atmid' . '}',
-                ObjectSerializer::toPathValue($atmid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv510_update_atm_request)) {
+        if (isset($update_atm_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_update_atm_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_atm_request));
             } else {
-                $httpBody = $obpv510_update_atm_request;
+                $httpBody = $update_atm_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4989,9 +3063,9 @@ class ATMApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -5016,44 +3090,42 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv510UpdateAtmAttribute
+     * Operation updateAtmAccessibilityFeatures
      *
-     * Update ATM Attribute
+     * Update ATM Accessibility Features
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateAtmAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAccessibilityFeaturesRequest $update_atm_accessibility_features_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmAccessibilityFeatures'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetAtmAttribute200Response
+     * @return \OpenBankProject\Model\UpdateAtmAccessibilityFeatures200Response
      */
-    public function oBPv510UpdateAtmAttribute($bankid, $atmid, $atmattributeid, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv510UpdateAtmAttribute'][0])
+    public function updateAtmAccessibilityFeatures($bankid, $atmid, $update_atm_accessibility_features_request, string $contentType = self::contentTypes['updateAtmAccessibilityFeatures'][0])
     {
-        list($response) = $this->oBPv510UpdateAtmAttributeWithHttpInfo($bankid, $atmid, $atmattributeid, $obpv510_update_atm_attribute_request, $contentType);
+        list($response) = $this->updateAtmAccessibilityFeaturesWithHttpInfo($bankid, $atmid, $update_atm_accessibility_features_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510UpdateAtmAttributeWithHttpInfo
+     * Operation updateAtmAccessibilityFeaturesWithHttpInfo
      *
-     * Update ATM Attribute
+     * Update ATM Accessibility Features
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateAtmAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAccessibilityFeaturesRequest $update_atm_accessibility_features_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmAccessibilityFeatures'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetAtmAttribute200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateAtmAccessibilityFeatures200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510UpdateAtmAttributeWithHttpInfo($bankid, $atmid, $atmattributeid, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv510UpdateAtmAttribute'][0])
+    public function updateAtmAccessibilityFeaturesWithHttpInfo($bankid, $atmid, $update_atm_accessibility_features_request, string $contentType = self::contentTypes['updateAtmAccessibilityFeatures'][0])
     {
-        $request = $this->oBPv510UpdateAtmAttributeRequest($bankid, $atmid, $atmattributeid, $obpv510_update_atm_attribute_request, $contentType);
+        $request = $this->updateAtmAccessibilityFeaturesRequest($bankid, $atmid, $update_atm_accessibility_features_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5081,7 +3153,7 @@ class ATMApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetAtmAttribute200Response',
+                        '\OpenBankProject\Model\UpdateAtmAccessibilityFeatures200Response',
                         $request,
                         $response,
                     );
@@ -5103,7 +3175,7 @@ class ATMApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetAtmAttribute200Response',
+                '\OpenBankProject\Model\UpdateAtmAccessibilityFeatures200Response',
                 $request,
                 $response,
             );
@@ -5112,7 +3184,7 @@ class ATMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetAtmAttribute200Response',
+                        '\OpenBankProject\Model\UpdateAtmAccessibilityFeatures200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5125,22 +3197,21 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv510UpdateAtmAttributeAsync
+     * Operation updateAtmAccessibilityFeaturesAsync
      *
-     * Update ATM Attribute
+     * Update ATM Accessibility Features
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateAtmAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAccessibilityFeaturesRequest $update_atm_accessibility_features_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmAccessibilityFeatures'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510UpdateAtmAttributeAsync($bankid, $atmid, $atmattributeid, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv510UpdateAtmAttribute'][0])
+    public function updateAtmAccessibilityFeaturesAsync($bankid, $atmid, $update_atm_accessibility_features_request, string $contentType = self::contentTypes['updateAtmAccessibilityFeatures'][0])
     {
-        return $this->oBPv510UpdateAtmAttributeAsyncWithHttpInfo($bankid, $atmid, $atmattributeid, $obpv510_update_atm_attribute_request, $contentType)
+        return $this->updateAtmAccessibilityFeaturesAsyncWithHttpInfo($bankid, $atmid, $update_atm_accessibility_features_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5149,23 +3220,22 @@ class ATMApi
     }
 
     /**
-     * Operation oBPv510UpdateAtmAttributeAsyncWithHttpInfo
+     * Operation updateAtmAccessibilityFeaturesAsyncWithHttpInfo
      *
-     * Update ATM Attribute
+     * Update ATM Accessibility Features
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateAtmAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAccessibilityFeaturesRequest $update_atm_accessibility_features_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmAccessibilityFeatures'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510UpdateAtmAttributeAsyncWithHttpInfo($bankid, $atmid, $atmattributeid, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv510UpdateAtmAttribute'][0])
+    public function updateAtmAccessibilityFeaturesAsyncWithHttpInfo($bankid, $atmid, $update_atm_accessibility_features_request, string $contentType = self::contentTypes['updateAtmAccessibilityFeatures'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetAtmAttribute200Response';
-        $request = $this->oBPv510UpdateAtmAttributeRequest($bankid, $atmid, $atmattributeid, $obpv510_update_atm_attribute_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateAtmAccessibilityFeatures200Response';
+        $request = $this->updateAtmAccessibilityFeaturesRequest($bankid, $atmid, $update_atm_accessibility_features_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5204,45 +3274,370 @@ class ATMApi
     }
 
     /**
-     * Create request for operation 'oBPv510UpdateAtmAttribute'
+     * Create request for operation 'updateAtmAccessibilityFeatures'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $atmid The ATMID identifier (required)
-     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateAtmAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAccessibilityFeaturesRequest $update_atm_accessibility_features_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmAccessibilityFeatures'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510UpdateAtmAttributeRequest($bankid, $atmid, $atmattributeid, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv510UpdateAtmAttribute'][0])
+    public function updateAtmAccessibilityFeaturesRequest($bankid, $atmid, $update_atm_accessibility_features_request, string $contentType = self::contentTypes['updateAtmAccessibilityFeatures'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510UpdateAtmAttribute'
+                'Missing the required parameter $bankid when calling updateAtmAccessibilityFeatures'
             );
         }
 
         // verify the required parameter 'atmid' is set
         if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $atmid when calling oBPv510UpdateAtmAttribute'
+                'Missing the required parameter $atmid when calling updateAtmAccessibilityFeatures'
+            );
+        }
+
+        // verify the required parameter 'update_atm_accessibility_features_request' is set
+        if ($update_atm_accessibility_features_request === null || (is_array($update_atm_accessibility_features_request) && count($update_atm_accessibility_features_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_atm_accessibility_features_request when calling updateAtmAccessibilityFeatures'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/banks/{bankid}/atms/{atmid}/accessibility-features';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($atmid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'atmid' . '}',
+                ObjectSerializer::toPathValue($atmid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($update_atm_accessibility_features_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_atm_accessibility_features_request));
+            } else {
+                $httpBody = $update_atm_accessibility_features_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateAtmAttribute
+     *
+     * Update ATM Attribute
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmAttribute'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetAtmAttribute200Response
+     */
+    public function updateAtmAttribute($bankid, $atmid, $atmattributeid, $update_atm_attribute_request, string $contentType = self::contentTypes['updateAtmAttribute'][0])
+    {
+        list($response) = $this->updateAtmAttributeWithHttpInfo($bankid, $atmid, $atmattributeid, $update_atm_attribute_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateAtmAttributeWithHttpInfo
+     *
+     * Update ATM Attribute
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmAttribute'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetAtmAttribute200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateAtmAttributeWithHttpInfo($bankid, $atmid, $atmattributeid, $update_atm_attribute_request, string $contentType = self::contentTypes['updateAtmAttribute'][0])
+    {
+        $request = $this->updateAtmAttributeRequest($bankid, $atmid, $atmattributeid, $update_atm_attribute_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetAtmAttribute200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetAtmAttribute200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetAtmAttribute200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateAtmAttributeAsync
+     *
+     * Update ATM Attribute
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmAttribute'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateAtmAttributeAsync($bankid, $atmid, $atmattributeid, $update_atm_attribute_request, string $contentType = self::contentTypes['updateAtmAttribute'][0])
+    {
+        return $this->updateAtmAttributeAsyncWithHttpInfo($bankid, $atmid, $atmattributeid, $update_atm_attribute_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateAtmAttributeAsyncWithHttpInfo
+     *
+     * Update ATM Attribute
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmAttribute'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateAtmAttributeAsyncWithHttpInfo($bankid, $atmid, $atmattributeid, $update_atm_attribute_request, string $contentType = self::contentTypes['updateAtmAttribute'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetAtmAttribute200Response';
+        $request = $this->updateAtmAttributeRequest($bankid, $atmid, $atmattributeid, $update_atm_attribute_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateAtmAttribute'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  string $atmattributeid The ATMATTRIBUTEID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmAttribute'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateAtmAttributeRequest($bankid, $atmid, $atmattributeid, $update_atm_attribute_request, string $contentType = self::contentTypes['updateAtmAttribute'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling updateAtmAttribute'
+            );
+        }
+
+        // verify the required parameter 'atmid' is set
+        if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $atmid when calling updateAtmAttribute'
             );
         }
 
         // verify the required parameter 'atmattributeid' is set
         if ($atmattributeid === null || (is_array($atmattributeid) && count($atmattributeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $atmattributeid when calling oBPv510UpdateAtmAttribute'
+                'Missing the required parameter $atmattributeid when calling updateAtmAttribute'
             );
         }
 
-        // verify the required parameter 'obpv510_update_atm_attribute_request' is set
-        if ($obpv510_update_atm_attribute_request === null || (is_array($obpv510_update_atm_attribute_request) && count($obpv510_update_atm_attribute_request) === 0)) {
+        // verify the required parameter 'update_atm_attribute_request' is set
+        if ($update_atm_attribute_request === null || (is_array($update_atm_attribute_request) && count($update_atm_attribute_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_update_atm_attribute_request when calling oBPv510UpdateAtmAttribute'
+                'Missing the required parameter $update_atm_attribute_request when calling updateAtmAttribute'
             );
         }
 
@@ -5289,12 +3684,12 @@ class ATMApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_update_atm_attribute_request)) {
+        if (isset($update_atm_attribute_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_update_atm_attribute_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_atm_attribute_request));
             } else {
-                $httpBody = $obpv510_update_atm_attribute_request;
+                $httpBody = $update_atm_attribute_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5330,9 +3725,1614 @@ class ATMApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateAtmLocationCategories
+     *
+     * Update ATM Location Categories
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmLocationCategoriesRequest $update_atm_location_categories_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmLocationCategories'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\UpdateAtmLocationCategories200Response
+     */
+    public function updateAtmLocationCategories($bankid, $atmid, $update_atm_location_categories_request, string $contentType = self::contentTypes['updateAtmLocationCategories'][0])
+    {
+        list($response) = $this->updateAtmLocationCategoriesWithHttpInfo($bankid, $atmid, $update_atm_location_categories_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateAtmLocationCategoriesWithHttpInfo
+     *
+     * Update ATM Location Categories
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmLocationCategoriesRequest $update_atm_location_categories_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmLocationCategories'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\UpdateAtmLocationCategories200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateAtmLocationCategoriesWithHttpInfo($bankid, $atmid, $update_atm_location_categories_request, string $contentType = self::contentTypes['updateAtmLocationCategories'][0])
+    {
+        $request = $this->updateAtmLocationCategoriesRequest($bankid, $atmid, $update_atm_location_categories_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\UpdateAtmLocationCategories200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\UpdateAtmLocationCategories200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\UpdateAtmLocationCategories200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateAtmLocationCategoriesAsync
+     *
+     * Update ATM Location Categories
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmLocationCategoriesRequest $update_atm_location_categories_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmLocationCategories'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateAtmLocationCategoriesAsync($bankid, $atmid, $update_atm_location_categories_request, string $contentType = self::contentTypes['updateAtmLocationCategories'][0])
+    {
+        return $this->updateAtmLocationCategoriesAsyncWithHttpInfo($bankid, $atmid, $update_atm_location_categories_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateAtmLocationCategoriesAsyncWithHttpInfo
+     *
+     * Update ATM Location Categories
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmLocationCategoriesRequest $update_atm_location_categories_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmLocationCategories'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateAtmLocationCategoriesAsyncWithHttpInfo($bankid, $atmid, $update_atm_location_categories_request, string $contentType = self::contentTypes['updateAtmLocationCategories'][0])
+    {
+        $returnType = '\OpenBankProject\Model\UpdateAtmLocationCategories200Response';
+        $request = $this->updateAtmLocationCategoriesRequest($bankid, $atmid, $update_atm_location_categories_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateAtmLocationCategories'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmLocationCategoriesRequest $update_atm_location_categories_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmLocationCategories'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateAtmLocationCategoriesRequest($bankid, $atmid, $update_atm_location_categories_request, string $contentType = self::contentTypes['updateAtmLocationCategories'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling updateAtmLocationCategories'
+            );
+        }
+
+        // verify the required parameter 'atmid' is set
+        if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $atmid when calling updateAtmLocationCategories'
+            );
+        }
+
+        // verify the required parameter 'update_atm_location_categories_request' is set
+        if ($update_atm_location_categories_request === null || (is_array($update_atm_location_categories_request) && count($update_atm_location_categories_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_atm_location_categories_request when calling updateAtmLocationCategories'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/banks/{bankid}/atms/{atmid}/location-categories';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($atmid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'atmid' . '}',
+                ObjectSerializer::toPathValue($atmid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($update_atm_location_categories_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_atm_location_categories_request));
+            } else {
+                $httpBody = $update_atm_location_categories_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
         if ($apiKey !== null) {
             $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateAtmNotes
+     *
+     * Update ATM Notes
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmNotesRequest $update_atm_notes_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmNotes'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\UpdateAtmNotes200Response
+     */
+    public function updateAtmNotes($bankid, $atmid, $update_atm_notes_request, string $contentType = self::contentTypes['updateAtmNotes'][0])
+    {
+        list($response) = $this->updateAtmNotesWithHttpInfo($bankid, $atmid, $update_atm_notes_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateAtmNotesWithHttpInfo
+     *
+     * Update ATM Notes
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmNotesRequest $update_atm_notes_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmNotes'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\UpdateAtmNotes200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateAtmNotesWithHttpInfo($bankid, $atmid, $update_atm_notes_request, string $contentType = self::contentTypes['updateAtmNotes'][0])
+    {
+        $request = $this->updateAtmNotesRequest($bankid, $atmid, $update_atm_notes_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\UpdateAtmNotes200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\UpdateAtmNotes200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\UpdateAtmNotes200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateAtmNotesAsync
+     *
+     * Update ATM Notes
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmNotesRequest $update_atm_notes_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmNotes'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateAtmNotesAsync($bankid, $atmid, $update_atm_notes_request, string $contentType = self::contentTypes['updateAtmNotes'][0])
+    {
+        return $this->updateAtmNotesAsyncWithHttpInfo($bankid, $atmid, $update_atm_notes_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateAtmNotesAsyncWithHttpInfo
+     *
+     * Update ATM Notes
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmNotesRequest $update_atm_notes_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmNotes'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateAtmNotesAsyncWithHttpInfo($bankid, $atmid, $update_atm_notes_request, string $contentType = self::contentTypes['updateAtmNotes'][0])
+    {
+        $returnType = '\OpenBankProject\Model\UpdateAtmNotes200Response';
+        $request = $this->updateAtmNotesRequest($bankid, $atmid, $update_atm_notes_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateAtmNotes'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmNotesRequest $update_atm_notes_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmNotes'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateAtmNotesRequest($bankid, $atmid, $update_atm_notes_request, string $contentType = self::contentTypes['updateAtmNotes'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling updateAtmNotes'
+            );
+        }
+
+        // verify the required parameter 'atmid' is set
+        if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $atmid when calling updateAtmNotes'
+            );
+        }
+
+        // verify the required parameter 'update_atm_notes_request' is set
+        if ($update_atm_notes_request === null || (is_array($update_atm_notes_request) && count($update_atm_notes_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_atm_notes_request when calling updateAtmNotes'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/banks/{bankid}/atms/{atmid}/notes';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($atmid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'atmid' . '}',
+                ObjectSerializer::toPathValue($atmid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($update_atm_notes_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_atm_notes_request));
+            } else {
+                $httpBody = $update_atm_notes_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateAtmServices
+     *
+     * Update ATM Services
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmServicesRequest $update_atm_services_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmServices'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\UpdateAtmServices200Response
+     */
+    public function updateAtmServices($bankid, $atmid, $update_atm_services_request, string $contentType = self::contentTypes['updateAtmServices'][0])
+    {
+        list($response) = $this->updateAtmServicesWithHttpInfo($bankid, $atmid, $update_atm_services_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateAtmServicesWithHttpInfo
+     *
+     * Update ATM Services
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmServicesRequest $update_atm_services_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmServices'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\UpdateAtmServices200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateAtmServicesWithHttpInfo($bankid, $atmid, $update_atm_services_request, string $contentType = self::contentTypes['updateAtmServices'][0])
+    {
+        $request = $this->updateAtmServicesRequest($bankid, $atmid, $update_atm_services_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\UpdateAtmServices200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\UpdateAtmServices200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\UpdateAtmServices200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateAtmServicesAsync
+     *
+     * Update ATM Services
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmServicesRequest $update_atm_services_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmServices'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateAtmServicesAsync($bankid, $atmid, $update_atm_services_request, string $contentType = self::contentTypes['updateAtmServices'][0])
+    {
+        return $this->updateAtmServicesAsyncWithHttpInfo($bankid, $atmid, $update_atm_services_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateAtmServicesAsyncWithHttpInfo
+     *
+     * Update ATM Services
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmServicesRequest $update_atm_services_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmServices'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateAtmServicesAsyncWithHttpInfo($bankid, $atmid, $update_atm_services_request, string $contentType = self::contentTypes['updateAtmServices'][0])
+    {
+        $returnType = '\OpenBankProject\Model\UpdateAtmServices200Response';
+        $request = $this->updateAtmServicesRequest($bankid, $atmid, $update_atm_services_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateAtmServices'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmServicesRequest $update_atm_services_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmServices'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateAtmServicesRequest($bankid, $atmid, $update_atm_services_request, string $contentType = self::contentTypes['updateAtmServices'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling updateAtmServices'
+            );
+        }
+
+        // verify the required parameter 'atmid' is set
+        if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $atmid when calling updateAtmServices'
+            );
+        }
+
+        // verify the required parameter 'update_atm_services_request' is set
+        if ($update_atm_services_request === null || (is_array($update_atm_services_request) && count($update_atm_services_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_atm_services_request when calling updateAtmServices'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/banks/{bankid}/atms/{atmid}/services';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($atmid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'atmid' . '}',
+                ObjectSerializer::toPathValue($atmid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($update_atm_services_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_atm_services_request));
+            } else {
+                $httpBody = $update_atm_services_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateAtmSupportedCurrencies
+     *
+     * Update ATM Supported Currencies
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmSupportedCurrenciesRequest $update_atm_supported_currencies_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmSupportedCurrencies'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\UpdateAtmSupportedCurrencies200Response
+     */
+    public function updateAtmSupportedCurrencies($bankid, $atmid, $update_atm_supported_currencies_request, string $contentType = self::contentTypes['updateAtmSupportedCurrencies'][0])
+    {
+        list($response) = $this->updateAtmSupportedCurrenciesWithHttpInfo($bankid, $atmid, $update_atm_supported_currencies_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateAtmSupportedCurrenciesWithHttpInfo
+     *
+     * Update ATM Supported Currencies
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmSupportedCurrenciesRequest $update_atm_supported_currencies_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmSupportedCurrencies'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\UpdateAtmSupportedCurrencies200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateAtmSupportedCurrenciesWithHttpInfo($bankid, $atmid, $update_atm_supported_currencies_request, string $contentType = self::contentTypes['updateAtmSupportedCurrencies'][0])
+    {
+        $request = $this->updateAtmSupportedCurrenciesRequest($bankid, $atmid, $update_atm_supported_currencies_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\UpdateAtmSupportedCurrencies200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\UpdateAtmSupportedCurrencies200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\UpdateAtmSupportedCurrencies200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateAtmSupportedCurrenciesAsync
+     *
+     * Update ATM Supported Currencies
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmSupportedCurrenciesRequest $update_atm_supported_currencies_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmSupportedCurrencies'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateAtmSupportedCurrenciesAsync($bankid, $atmid, $update_atm_supported_currencies_request, string $contentType = self::contentTypes['updateAtmSupportedCurrencies'][0])
+    {
+        return $this->updateAtmSupportedCurrenciesAsyncWithHttpInfo($bankid, $atmid, $update_atm_supported_currencies_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateAtmSupportedCurrenciesAsyncWithHttpInfo
+     *
+     * Update ATM Supported Currencies
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmSupportedCurrenciesRequest $update_atm_supported_currencies_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmSupportedCurrencies'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateAtmSupportedCurrenciesAsyncWithHttpInfo($bankid, $atmid, $update_atm_supported_currencies_request, string $contentType = self::contentTypes['updateAtmSupportedCurrencies'][0])
+    {
+        $returnType = '\OpenBankProject\Model\UpdateAtmSupportedCurrencies200Response';
+        $request = $this->updateAtmSupportedCurrenciesRequest($bankid, $atmid, $update_atm_supported_currencies_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateAtmSupportedCurrencies'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmSupportedCurrenciesRequest $update_atm_supported_currencies_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmSupportedCurrencies'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateAtmSupportedCurrenciesRequest($bankid, $atmid, $update_atm_supported_currencies_request, string $contentType = self::contentTypes['updateAtmSupportedCurrencies'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling updateAtmSupportedCurrencies'
+            );
+        }
+
+        // verify the required parameter 'atmid' is set
+        if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $atmid when calling updateAtmSupportedCurrencies'
+            );
+        }
+
+        // verify the required parameter 'update_atm_supported_currencies_request' is set
+        if ($update_atm_supported_currencies_request === null || (is_array($update_atm_supported_currencies_request) && count($update_atm_supported_currencies_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_atm_supported_currencies_request when calling updateAtmSupportedCurrencies'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-currencies';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($atmid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'atmid' . '}',
+                ObjectSerializer::toPathValue($atmid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($update_atm_supported_currencies_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_atm_supported_currencies_request));
+            } else {
+                $httpBody = $update_atm_supported_currencies_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateAtmSupportedLanguages
+     *
+     * Update ATM Supported Languages
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmSupportedLanguagesRequest $update_atm_supported_languages_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmSupportedLanguages'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\UpdateAtmSupportedLanguages200Response
+     */
+    public function updateAtmSupportedLanguages($bankid, $atmid, $update_atm_supported_languages_request, string $contentType = self::contentTypes['updateAtmSupportedLanguages'][0])
+    {
+        list($response) = $this->updateAtmSupportedLanguagesWithHttpInfo($bankid, $atmid, $update_atm_supported_languages_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateAtmSupportedLanguagesWithHttpInfo
+     *
+     * Update ATM Supported Languages
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmSupportedLanguagesRequest $update_atm_supported_languages_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmSupportedLanguages'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\UpdateAtmSupportedLanguages200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateAtmSupportedLanguagesWithHttpInfo($bankid, $atmid, $update_atm_supported_languages_request, string $contentType = self::contentTypes['updateAtmSupportedLanguages'][0])
+    {
+        $request = $this->updateAtmSupportedLanguagesRequest($bankid, $atmid, $update_atm_supported_languages_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\UpdateAtmSupportedLanguages200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\UpdateAtmSupportedLanguages200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\UpdateAtmSupportedLanguages200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateAtmSupportedLanguagesAsync
+     *
+     * Update ATM Supported Languages
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmSupportedLanguagesRequest $update_atm_supported_languages_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmSupportedLanguages'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateAtmSupportedLanguagesAsync($bankid, $atmid, $update_atm_supported_languages_request, string $contentType = self::contentTypes['updateAtmSupportedLanguages'][0])
+    {
+        return $this->updateAtmSupportedLanguagesAsyncWithHttpInfo($bankid, $atmid, $update_atm_supported_languages_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateAtmSupportedLanguagesAsyncWithHttpInfo
+     *
+     * Update ATM Supported Languages
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmSupportedLanguagesRequest $update_atm_supported_languages_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmSupportedLanguages'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateAtmSupportedLanguagesAsyncWithHttpInfo($bankid, $atmid, $update_atm_supported_languages_request, string $contentType = self::contentTypes['updateAtmSupportedLanguages'][0])
+    {
+        $returnType = '\OpenBankProject\Model\UpdateAtmSupportedLanguages200Response';
+        $request = $this->updateAtmSupportedLanguagesRequest($bankid, $atmid, $update_atm_supported_languages_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateAtmSupportedLanguages'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $atmid The ATMID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateAtmSupportedLanguagesRequest $update_atm_supported_languages_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAtmSupportedLanguages'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateAtmSupportedLanguagesRequest($bankid, $atmid, $update_atm_supported_languages_request, string $contentType = self::contentTypes['updateAtmSupportedLanguages'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling updateAtmSupportedLanguages'
+            );
+        }
+
+        // verify the required parameter 'atmid' is set
+        if ($atmid === null || (is_array($atmid) && count($atmid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $atmid when calling updateAtmSupportedLanguages'
+            );
+        }
+
+        // verify the required parameter 'update_atm_supported_languages_request' is set
+        if ($update_atm_supported_languages_request === null || (is_array($update_atm_supported_languages_request) && count($update_atm_supported_languages_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_atm_supported_languages_request when calling updateAtmSupportedLanguages'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-languages';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($atmid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'atmid' . '}',
+                ObjectSerializer::toPathValue($atmid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($update_atm_supported_languages_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_atm_supported_languages_request));
+            } else {
+                $httpBody = $update_atm_supported_languages_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

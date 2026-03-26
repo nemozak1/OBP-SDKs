@@ -2,23 +2,23 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400CreateOrUpdateTransactionRequestAttributeDefinition()**](TransactionRequestAttributeApi.md#oBPv400CreateOrUpdateTransactionRequestAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition |
-| [**oBPv400CreateTransactionRequestAttribute()**](TransactionRequestAttributeApi.md#oBPv400CreateTransactionRequestAttribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute |
-| [**oBPv400DeleteTransactionRequestAttributeDefinition()**](TransactionRequestAttributeApi.md#oBPv400DeleteTransactionRequestAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition |
-| [**oBPv400GetTransactionRequestAttributeById()**](TransactionRequestAttributeApi.md#oBPv400GetTransactionRequestAttributeById) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id |
-| [**oBPv400GetTransactionRequestAttributeDefinition()**](TransactionRequestAttributeApi.md#oBPv400GetTransactionRequestAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition |
-| [**oBPv400GetTransactionRequestAttributes()**](TransactionRequestAttributeApi.md#oBPv400GetTransactionRequestAttributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes |
-| [**oBPv400UpdateTransactionRequestAttribute()**](TransactionRequestAttributeApi.md#oBPv400UpdateTransactionRequestAttribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute |
+| [**createOrUpdateTransactionRequestAttributeDefinition()**](TransactionRequestAttributeApi.md#createOrUpdateTransactionRequestAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition |
+| [**createTransactionRequestAttribute()**](TransactionRequestAttributeApi.md#createTransactionRequestAttribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute |
+| [**deleteTransactionRequestAttributeDefinition()**](TransactionRequestAttributeApi.md#deleteTransactionRequestAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition |
+| [**getTransactionRequestAttributeById()**](TransactionRequestAttributeApi.md#getTransactionRequestAttributeById) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id |
+| [**getTransactionRequestAttributeDefinition()**](TransactionRequestAttributeApi.md#getTransactionRequestAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition |
+| [**getTransactionRequestAttributes()**](TransactionRequestAttributeApi.md#getTransactionRequestAttributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes |
+| [**updateTransactionRequestAttribute()**](TransactionRequestAttributeApi.md#updateTransactionRequestAttribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute |
 
 
-## `oBPv400CreateOrUpdateTransactionRequestAttributeDefinition()`
+## `createOrUpdateTransactionRequestAttributeDefinition()`
 
 ```php
-oBPv400CreateOrUpdateTransactionRequestAttributeDefinition($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request): \OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+createOrUpdateTransactionRequestAttributeDefinition($bankid, $create_or_update_transaction_request_attribute_definition_request): \OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 ```
 
 Create or Update Transaction Request Attribute Definition
@@ -41,9 +41,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionRequestAttributeApi(
@@ -53,13 +53,13 @@ $apiInstance = new OpenBankProject\Api\TransactionRequestAttributeApi(
     $config
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
-$obpv400_create_or_update_transaction_request_attribute_definition_request = {"type":"object","properties":{"can_be_seen_on_views":{"type":"array","items":{"type":"string"}},"description":{"type":"string"},"is_active":{"type":"boolean"},"name":{"type":"string"},"type":{"type":"string"},"category":{"type":"string"},"alias":{"type":"string"}}}; // \OpenBankProject\Model\OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+$create_or_update_transaction_request_attribute_definition_request = {"type":"object","properties":{"can_be_seen_on_views":{"type":"array","items":{"type":"string"}},"description":{"type":"string"},"is_active":{"type":"boolean"},"name":{"type":"string"},"type":{"type":"string"},"category":{"type":"string"},"alias":{"type":"string"}}}; // \OpenBankProject\Model\CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400CreateOrUpdateTransactionRequestAttributeDefinition($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request);
+    $result = $apiInstance->createOrUpdateTransactionRequestAttributeDefinition($bankid, $create_or_update_transaction_request_attribute_definition_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionRequestAttributeApi->oBPv400CreateOrUpdateTransactionRequestAttributeDefinition: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionRequestAttributeApi->createOrUpdateTransactionRequestAttributeDefinition: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -68,11 +68,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
-| **obpv400_create_or_update_transaction_request_attribute_definition_request** | [**\OpenBankProject\Model\OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](../Model/OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
+| **create_or_update_transaction_request_attribute_definition_request** | [**\OpenBankProject\Model\CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](../Model/CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](../Model/OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](../Model/GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -87,10 +87,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400CreateTransactionRequestAttribute()`
+## `createTransactionRequestAttribute()`
 
 ```php
-oBPv400CreateTransactionRequestAttribute($bankid, $accountid, $transactionrequestid, $obpv400_create_transaction_request_counterparty_request_properties_attributes_items): \OpenBankProject\Model\OBPv400GetTransactionRequestAttributeById200Response
+createTransactionRequestAttribute($bankid, $accountid, $transactionrequestid, $create_transaction_request_counterparty_request_attributes_inner): \OpenBankProject\Model\GetTransactionRequestAttributeById200Response
 ```
 
 Create Transaction Request Attribute
@@ -113,9 +113,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionRequestAttributeApi(
@@ -127,13 +127,13 @@ $apiInstance = new OpenBankProject\Api\TransactionRequestAttributeApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $transactionrequestid = 'transactionrequestid_example'; // string | The TRANSACTIONREQUESTID identifier
-$obpv400_create_transaction_request_counterparty_request_properties_attributes_items = {type=object, properties={attribute_type={type=string}, name={type=string}, value={type=string}}}; // \OpenBankProject\Model\OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems | Request body
+$create_transaction_request_counterparty_request_attributes_inner = {type=object, properties={attribute_type={type=string}, name={type=string}, value={type=string}}}; // \OpenBankProject\Model\CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
 
 try {
-    $result = $apiInstance->oBPv400CreateTransactionRequestAttribute($bankid, $accountid, $transactionrequestid, $obpv400_create_transaction_request_counterparty_request_properties_attributes_items);
+    $result = $apiInstance->createTransactionRequestAttribute($bankid, $accountid, $transactionrequestid, $create_transaction_request_counterparty_request_attributes_inner);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionRequestAttributeApi->oBPv400CreateTransactionRequestAttribute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionRequestAttributeApi->createTransactionRequestAttribute: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -144,11 +144,11 @@ try {
 | **bankid** | **string**| The BANKID identifier | |
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **transactionrequestid** | **string**| The TRANSACTIONREQUESTID identifier | |
-| **obpv400_create_transaction_request_counterparty_request_properties_attributes_items** | [**\OpenBankProject\Model\OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems**](../Model/OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems.md)| Request body | |
+| **create_transaction_request_counterparty_request_attributes_inner** | [**\OpenBankProject\Model\CreateTransactionRequestCounterpartyRequestAttributesInner**](../Model/CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeById200Response**](../Model/OBPv400GetTransactionRequestAttributeById200Response.md)
+[**\OpenBankProject\Model\GetTransactionRequestAttributeById200Response**](../Model/GetTransactionRequestAttributeById200Response.md)
 
 ### Authorization
 
@@ -163,10 +163,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400DeleteTransactionRequestAttributeDefinition()`
+## `deleteTransactionRequestAttributeDefinition()`
 
 ```php
-oBPv400DeleteTransactionRequestAttributeDefinition($bankid, $attributedefinitionid): \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response
+deleteTransactionRequestAttributeDefinition($bankid, $attributedefinitionid): \OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response
 ```
 
 Delete Transaction Request Attribute Definition
@@ -189,9 +189,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionRequestAttributeApi(
@@ -204,10 +204,10 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $attributedefinitionid = 'attributedefinitionid_example'; // string | The ATTRIBUTEDEFINITIONID identifier
 
 try {
-    $result = $apiInstance->oBPv400DeleteTransactionRequestAttributeDefinition($bankid, $attributedefinitionid);
+    $result = $apiInstance->deleteTransactionRequestAttributeDefinition($bankid, $attributedefinitionid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionRequestAttributeApi->oBPv400DeleteTransactionRequestAttributeDefinition: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionRequestAttributeApi->deleteTransactionRequestAttributeDefinition: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -220,7 +220,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response**](../Model/OBPv400DeleteSystemLevelEndpointTag200Response.md)
+[**\OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response**](../Model/DeleteSystemLevelEndpointTag200Response.md)
 
 ### Authorization
 
@@ -235,10 +235,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetTransactionRequestAttributeById()`
+## `getTransactionRequestAttributeById()`
 
 ```php
-oBPv400GetTransactionRequestAttributeById($bankid, $accountid, $transactionrequestid, $attributeid): \OpenBankProject\Model\OBPv400GetTransactionRequestAttributeById200Response
+getTransactionRequestAttributeById($bankid, $accountid, $transactionrequestid, $attributeid): \OpenBankProject\Model\GetTransactionRequestAttributeById200Response
 ```
 
 Get Transaction Request Attribute By Id
@@ -261,9 +261,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionRequestAttributeApi(
@@ -278,10 +278,10 @@ $transactionrequestid = 'transactionrequestid_example'; // string | The TRANSACT
 $attributeid = 'attributeid_example'; // string | The ATTRIBUTEID identifier
 
 try {
-    $result = $apiInstance->oBPv400GetTransactionRequestAttributeById($bankid, $accountid, $transactionrequestid, $attributeid);
+    $result = $apiInstance->getTransactionRequestAttributeById($bankid, $accountid, $transactionrequestid, $attributeid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionRequestAttributeApi->oBPv400GetTransactionRequestAttributeById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionRequestAttributeApi->getTransactionRequestAttributeById: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -296,7 +296,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeById200Response**](../Model/OBPv400GetTransactionRequestAttributeById200Response.md)
+[**\OpenBankProject\Model\GetTransactionRequestAttributeById200Response**](../Model/GetTransactionRequestAttributeById200Response.md)
 
 ### Authorization
 
@@ -311,10 +311,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetTransactionRequestAttributeDefinition()`
+## `getTransactionRequestAttributeDefinition()`
 
 ```php
-oBPv400GetTransactionRequestAttributeDefinition($bankid): \OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response
+getTransactionRequestAttributeDefinition($bankid): \OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response
 ```
 
 Get Transaction Request Attribute Definition
@@ -337,9 +337,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionRequestAttributeApi(
@@ -351,10 +351,10 @@ $apiInstance = new OpenBankProject\Api\TransactionRequestAttributeApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 
 try {
-    $result = $apiInstance->oBPv400GetTransactionRequestAttributeDefinition($bankid);
+    $result = $apiInstance->getTransactionRequestAttributeDefinition($bankid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionRequestAttributeApi->oBPv400GetTransactionRequestAttributeDefinition: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionRequestAttributeApi->getTransactionRequestAttributeDefinition: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -366,7 +366,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response**](../Model/OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response**](../Model/GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -381,10 +381,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetTransactionRequestAttributes()`
+## `getTransactionRequestAttributes()`
 
 ```php
-oBPv400GetTransactionRequestAttributes($bankid, $accountid, $transactionrequestid): \OpenBankProject\Model\OBPv400GetTransactionRequestAttributes200Response
+getTransactionRequestAttributes($bankid, $accountid, $transactionrequestid): \OpenBankProject\Model\GetTransactionRequestAttributes200Response
 ```
 
 Get Transaction Request Attributes
@@ -407,9 +407,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionRequestAttributeApi(
@@ -423,10 +423,10 @@ $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $transactionrequestid = 'transactionrequestid_example'; // string | The TRANSACTIONREQUESTID identifier
 
 try {
-    $result = $apiInstance->oBPv400GetTransactionRequestAttributes($bankid, $accountid, $transactionrequestid);
+    $result = $apiInstance->getTransactionRequestAttributes($bankid, $accountid, $transactionrequestid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionRequestAttributeApi->oBPv400GetTransactionRequestAttributes: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionRequestAttributeApi->getTransactionRequestAttributes: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -440,7 +440,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetTransactionRequestAttributes200Response**](../Model/OBPv400GetTransactionRequestAttributes200Response.md)
+[**\OpenBankProject\Model\GetTransactionRequestAttributes200Response**](../Model/GetTransactionRequestAttributes200Response.md)
 
 ### Authorization
 
@@ -455,10 +455,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400UpdateTransactionRequestAttribute()`
+## `updateTransactionRequestAttribute()`
 
 ```php
-oBPv400UpdateTransactionRequestAttribute($bankid, $accountid, $transactionrequestid, $attributeid, $obpv400_create_transaction_request_counterparty_request_properties_attributes_items): \OpenBankProject\Model\OBPv400GetTransactionRequestAttributeById200Response
+updateTransactionRequestAttribute($bankid, $accountid, $transactionrequestid, $attributeid, $create_transaction_request_counterparty_request_attributes_inner): \OpenBankProject\Model\GetTransactionRequestAttributeById200Response
 ```
 
 Update Transaction Request Attribute
@@ -481,9 +481,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\TransactionRequestAttributeApi(
@@ -496,13 +496,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $transactionrequestid = 'transactionrequestid_example'; // string | The TRANSACTIONREQUESTID identifier
 $attributeid = 'attributeid_example'; // string | The ATTRIBUTEID identifier
-$obpv400_create_transaction_request_counterparty_request_properties_attributes_items = {"type":"object","properties":{"attribute_type":{"type":"string"},"name":{"type":"string"},"value":{"type":"string"}}}; // \OpenBankProject\Model\OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems | Request body
+$create_transaction_request_counterparty_request_attributes_inner = {"type":"object","properties":{"attribute_type":{"type":"string"},"name":{"type":"string"},"value":{"type":"string"}}}; // \OpenBankProject\Model\CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
 
 try {
-    $result = $apiInstance->oBPv400UpdateTransactionRequestAttribute($bankid, $accountid, $transactionrequestid, $attributeid, $obpv400_create_transaction_request_counterparty_request_properties_attributes_items);
+    $result = $apiInstance->updateTransactionRequestAttribute($bankid, $accountid, $transactionrequestid, $attributeid, $create_transaction_request_counterparty_request_attributes_inner);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionRequestAttributeApi->oBPv400UpdateTransactionRequestAttribute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionRequestAttributeApi->updateTransactionRequestAttribute: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -514,11 +514,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **transactionrequestid** | **string**| The TRANSACTIONREQUESTID identifier | |
 | **attributeid** | **string**| The ATTRIBUTEID identifier | |
-| **obpv400_create_transaction_request_counterparty_request_properties_attributes_items** | [**\OpenBankProject\Model\OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems**](../Model/OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems.md)| Request body | |
+| **create_transaction_request_counterparty_request_attributes_inner** | [**\OpenBankProject\Model\CreateTransactionRequestCounterpartyRequestAttributesInner**](../Model/CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeById200Response**](../Model/OBPv400GetTransactionRequestAttributeById200Response.md)
+[**\OpenBankProject\Model\GetTransactionRequestAttributeById200Response**](../Model/GetTransactionRequestAttributeById200Response.md)
 
 ### Authorization
 

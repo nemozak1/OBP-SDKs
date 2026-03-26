@@ -1,17 +1,17 @@
 # \PrivateDataAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv300CorePrivateAccountsAllBanks**](PrivateDataAPI.md#OBPv300CorePrivateAccountsAllBanks) | **Get** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
-[**OBPv600GetAccountsAtBank**](PrivateDataAPI.md#OBPv600GetAccountsAtBank) | **Get** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
+[**CorePrivateAccountsAllBanks**](PrivateDataAPI.md#CorePrivateAccountsAllBanks) | **Get** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
+[**GetAccountsAtBank**](PrivateDataAPI.md#GetAccountsAtBank) | **Get** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
 
 
 
-## OBPv300CorePrivateAccountsAllBanks
+## CorePrivateAccountsAllBanks
 
-> OBPv300PrivateAccountsAtOneBank200Response OBPv300CorePrivateAccountsAllBanks(ctx).Execute()
+> PrivateAccountsAtOneBank200Response CorePrivateAccountsAllBanks(ctx).Execute()
 
 Get Accounts at all Banks (private)
 
@@ -33,13 +33,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrivateDataAPI.OBPv300CorePrivateAccountsAllBanks(context.Background()).Execute()
+	resp, r, err := apiClient.PrivateDataAPI.CorePrivateAccountsAllBanks(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrivateDataAPI.OBPv300CorePrivateAccountsAllBanks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrivateDataAPI.CorePrivateAccountsAllBanks``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv300CorePrivateAccountsAllBanks`: OBPv300PrivateAccountsAtOneBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `PrivateDataAPI.OBPv300CorePrivateAccountsAllBanks`: %v\n", resp)
+	// response from `CorePrivateAccountsAllBanks`: PrivateAccountsAtOneBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `PrivateDataAPI.CorePrivateAccountsAllBanks`: %v\n", resp)
 }
 ```
 
@@ -49,12 +49,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv300CorePrivateAccountsAllBanksRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCorePrivateAccountsAllBanksRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv300PrivateAccountsAtOneBank200Response**](OBPv300PrivateAccountsAtOneBank200Response.md)
+[**PrivateAccountsAtOneBank200Response**](PrivateAccountsAtOneBank200Response.md)
 
 ### Authorization
 
@@ -70,9 +70,9 @@ Other parameters are passed through a pointer to a apiOBPv300CorePrivateAccounts
 [[Back to README]](../README.md)
 
 
-## OBPv600GetAccountsAtBank
+## GetAccountsAtBank
 
-> OBPv600GetAccountsAtBank200Response OBPv600GetAccountsAtBank(ctx, bankid).Execute()
+> GetAccountsAtBank200Response GetAccountsAtBank(ctx, bankid).Execute()
 
 Get Accounts at Bank
 
@@ -95,13 +95,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrivateDataAPI.OBPv600GetAccountsAtBank(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.PrivateDataAPI.GetAccountsAtBank(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrivateDataAPI.OBPv600GetAccountsAtBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrivateDataAPI.GetAccountsAtBank``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetAccountsAtBank`: OBPv600GetAccountsAtBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `PrivateDataAPI.OBPv600GetAccountsAtBank`: %v\n", resp)
+	// response from `GetAccountsAtBank`: GetAccountsAtBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `PrivateDataAPI.GetAccountsAtBank`: %v\n", resp)
 }
 ```
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetAccountsAtBankRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAccountsAtBankRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAccountsAtBank200Response**](OBPv600GetAccountsAtBank200Response.md)
+[**GetAccountsAtBank200Response**](GetAccountsAtBank200Response.md)
 
 ### Authorization
 

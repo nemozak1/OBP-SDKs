@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,10 +75,10 @@ class ProductCollectionApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv310CreateProductCollection' => [
+        'createProductCollection' => [
             'application/json',
         ],
-        'oBPv310GetProductCollection' => [
+        'getProductCollection' => [
             'application/json',
         ],
     ];
@@ -130,42 +130,42 @@ class ProductCollectionApi
     }
 
     /**
-     * Operation oBPv310CreateProductCollection
+     * Operation createProductCollection
      *
      * Create Product Collection
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $collectioncode The COLLECTIONCODE identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateProductCollectionRequest $obpv310_create_product_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateProductCollection'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateProductCollectionRequest $create_product_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProductCollection'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310CreateProductCollection200Response
+     * @return \OpenBankProject\Model\CreateProductCollection200Response
      */
-    public function oBPv310CreateProductCollection($bankid, $collectioncode, $obpv310_create_product_collection_request, string $contentType = self::contentTypes['oBPv310CreateProductCollection'][0])
+    public function createProductCollection($bankid, $collectioncode, $create_product_collection_request, string $contentType = self::contentTypes['createProductCollection'][0])
     {
-        list($response) = $this->oBPv310CreateProductCollectionWithHttpInfo($bankid, $collectioncode, $obpv310_create_product_collection_request, $contentType);
+        list($response) = $this->createProductCollectionWithHttpInfo($bankid, $collectioncode, $create_product_collection_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310CreateProductCollectionWithHttpInfo
+     * Operation createProductCollectionWithHttpInfo
      *
      * Create Product Collection
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $collectioncode The COLLECTIONCODE identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateProductCollectionRequest $obpv310_create_product_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateProductCollection'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateProductCollectionRequest $create_product_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProductCollection'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310CreateProductCollection200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateProductCollection200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310CreateProductCollectionWithHttpInfo($bankid, $collectioncode, $obpv310_create_product_collection_request, string $contentType = self::contentTypes['oBPv310CreateProductCollection'][0])
+    public function createProductCollectionWithHttpInfo($bankid, $collectioncode, $create_product_collection_request, string $contentType = self::contentTypes['createProductCollection'][0])
     {
-        $request = $this->oBPv310CreateProductCollectionRequest($bankid, $collectioncode, $obpv310_create_product_collection_request, $contentType);
+        $request = $this->createProductCollectionRequest($bankid, $collectioncode, $create_product_collection_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -193,7 +193,7 @@ class ProductCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310CreateProductCollection200Response',
+                        '\OpenBankProject\Model\CreateProductCollection200Response',
                         $request,
                         $response,
                     );
@@ -215,7 +215,7 @@ class ProductCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310CreateProductCollection200Response',
+                '\OpenBankProject\Model\CreateProductCollection200Response',
                 $request,
                 $response,
             );
@@ -224,7 +224,7 @@ class ProductCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310CreateProductCollection200Response',
+                        '\OpenBankProject\Model\CreateProductCollection200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -237,21 +237,21 @@ class ProductCollectionApi
     }
 
     /**
-     * Operation oBPv310CreateProductCollectionAsync
+     * Operation createProductCollectionAsync
      *
      * Create Product Collection
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $collectioncode The COLLECTIONCODE identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateProductCollectionRequest $obpv310_create_product_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateProductCollection'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateProductCollectionRequest $create_product_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProductCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310CreateProductCollectionAsync($bankid, $collectioncode, $obpv310_create_product_collection_request, string $contentType = self::contentTypes['oBPv310CreateProductCollection'][0])
+    public function createProductCollectionAsync($bankid, $collectioncode, $create_product_collection_request, string $contentType = self::contentTypes['createProductCollection'][0])
     {
-        return $this->oBPv310CreateProductCollectionAsyncWithHttpInfo($bankid, $collectioncode, $obpv310_create_product_collection_request, $contentType)
+        return $this->createProductCollectionAsyncWithHttpInfo($bankid, $collectioncode, $create_product_collection_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -260,22 +260,22 @@ class ProductCollectionApi
     }
 
     /**
-     * Operation oBPv310CreateProductCollectionAsyncWithHttpInfo
+     * Operation createProductCollectionAsyncWithHttpInfo
      *
      * Create Product Collection
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $collectioncode The COLLECTIONCODE identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateProductCollectionRequest $obpv310_create_product_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateProductCollection'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateProductCollectionRequest $create_product_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProductCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310CreateProductCollectionAsyncWithHttpInfo($bankid, $collectioncode, $obpv310_create_product_collection_request, string $contentType = self::contentTypes['oBPv310CreateProductCollection'][0])
+    public function createProductCollectionAsyncWithHttpInfo($bankid, $collectioncode, $create_product_collection_request, string $contentType = self::contentTypes['createProductCollection'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310CreateProductCollection200Response';
-        $request = $this->oBPv310CreateProductCollectionRequest($bankid, $collectioncode, $obpv310_create_product_collection_request, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateProductCollection200Response';
+        $request = $this->createProductCollectionRequest($bankid, $collectioncode, $create_product_collection_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -314,37 +314,37 @@ class ProductCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv310CreateProductCollection'
+     * Create request for operation 'createProductCollection'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $collectioncode The COLLECTIONCODE identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateProductCollectionRequest $obpv310_create_product_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateProductCollection'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateProductCollectionRequest $create_product_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProductCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310CreateProductCollectionRequest($bankid, $collectioncode, $obpv310_create_product_collection_request, string $contentType = self::contentTypes['oBPv310CreateProductCollection'][0])
+    public function createProductCollectionRequest($bankid, $collectioncode, $create_product_collection_request, string $contentType = self::contentTypes['createProductCollection'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv310CreateProductCollection'
+                'Missing the required parameter $bankid when calling createProductCollection'
             );
         }
 
         // verify the required parameter 'collectioncode' is set
         if ($collectioncode === null || (is_array($collectioncode) && count($collectioncode) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $collectioncode when calling oBPv310CreateProductCollection'
+                'Missing the required parameter $collectioncode when calling createProductCollection'
             );
         }
 
-        // verify the required parameter 'obpv310_create_product_collection_request' is set
-        if ($obpv310_create_product_collection_request === null || (is_array($obpv310_create_product_collection_request) && count($obpv310_create_product_collection_request) === 0)) {
+        // verify the required parameter 'create_product_collection_request' is set
+        if ($create_product_collection_request === null || (is_array($create_product_collection_request) && count($create_product_collection_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv310_create_product_collection_request when calling oBPv310CreateProductCollection'
+                'Missing the required parameter $create_product_collection_request when calling createProductCollection'
             );
         }
 
@@ -383,12 +383,12 @@ class ProductCollectionApi
         );
 
         // for model (json/xml)
-        if (isset($obpv310_create_product_collection_request)) {
+        if (isset($create_product_collection_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv310_create_product_collection_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_product_collection_request));
             } else {
-                $httpBody = $obpv310_create_product_collection_request;
+                $httpBody = $create_product_collection_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -424,9 +424,9 @@ class ProductCollectionApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -451,40 +451,40 @@ class ProductCollectionApi
     }
 
     /**
-     * Operation oBPv310GetProductCollection
+     * Operation getProductCollection
      *
      * Get Product Collection
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $collectioncode The COLLECTIONCODE identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetProductCollection'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProductCollection'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetProductCollection200Response
+     * @return \OpenBankProject\Model\GetProductCollection200Response
      */
-    public function oBPv310GetProductCollection($bankid, $collectioncode, string $contentType = self::contentTypes['oBPv310GetProductCollection'][0])
+    public function getProductCollection($bankid, $collectioncode, string $contentType = self::contentTypes['getProductCollection'][0])
     {
-        list($response) = $this->oBPv310GetProductCollectionWithHttpInfo($bankid, $collectioncode, $contentType);
+        list($response) = $this->getProductCollectionWithHttpInfo($bankid, $collectioncode, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310GetProductCollectionWithHttpInfo
+     * Operation getProductCollectionWithHttpInfo
      *
      * Get Product Collection
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $collectioncode The COLLECTIONCODE identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetProductCollection'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProductCollection'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetProductCollection200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetProductCollection200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310GetProductCollectionWithHttpInfo($bankid, $collectioncode, string $contentType = self::contentTypes['oBPv310GetProductCollection'][0])
+    public function getProductCollectionWithHttpInfo($bankid, $collectioncode, string $contentType = self::contentTypes['getProductCollection'][0])
     {
-        $request = $this->oBPv310GetProductCollectionRequest($bankid, $collectioncode, $contentType);
+        $request = $this->getProductCollectionRequest($bankid, $collectioncode, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -512,7 +512,7 @@ class ProductCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetProductCollection200Response',
+                        '\OpenBankProject\Model\GetProductCollection200Response',
                         $request,
                         $response,
                     );
@@ -534,7 +534,7 @@ class ProductCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetProductCollection200Response',
+                '\OpenBankProject\Model\GetProductCollection200Response',
                 $request,
                 $response,
             );
@@ -543,7 +543,7 @@ class ProductCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetProductCollection200Response',
+                        '\OpenBankProject\Model\GetProductCollection200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -556,20 +556,20 @@ class ProductCollectionApi
     }
 
     /**
-     * Operation oBPv310GetProductCollectionAsync
+     * Operation getProductCollectionAsync
      *
      * Get Product Collection
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $collectioncode The COLLECTIONCODE identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetProductCollection'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProductCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetProductCollectionAsync($bankid, $collectioncode, string $contentType = self::contentTypes['oBPv310GetProductCollection'][0])
+    public function getProductCollectionAsync($bankid, $collectioncode, string $contentType = self::contentTypes['getProductCollection'][0])
     {
-        return $this->oBPv310GetProductCollectionAsyncWithHttpInfo($bankid, $collectioncode, $contentType)
+        return $this->getProductCollectionAsyncWithHttpInfo($bankid, $collectioncode, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -578,21 +578,21 @@ class ProductCollectionApi
     }
 
     /**
-     * Operation oBPv310GetProductCollectionAsyncWithHttpInfo
+     * Operation getProductCollectionAsyncWithHttpInfo
      *
      * Get Product Collection
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $collectioncode The COLLECTIONCODE identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetProductCollection'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProductCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetProductCollectionAsyncWithHttpInfo($bankid, $collectioncode, string $contentType = self::contentTypes['oBPv310GetProductCollection'][0])
+    public function getProductCollectionAsyncWithHttpInfo($bankid, $collectioncode, string $contentType = self::contentTypes['getProductCollection'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310GetProductCollection200Response';
-        $request = $this->oBPv310GetProductCollectionRequest($bankid, $collectioncode, $contentType);
+        $returnType = '\OpenBankProject\Model\GetProductCollection200Response';
+        $request = $this->getProductCollectionRequest($bankid, $collectioncode, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -631,29 +631,29 @@ class ProductCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv310GetProductCollection'
+     * Create request for operation 'getProductCollection'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $collectioncode The COLLECTIONCODE identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetProductCollection'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProductCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310GetProductCollectionRequest($bankid, $collectioncode, string $contentType = self::contentTypes['oBPv310GetProductCollection'][0])
+    public function getProductCollectionRequest($bankid, $collectioncode, string $contentType = self::contentTypes['getProductCollection'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv310GetProductCollection'
+                'Missing the required parameter $bankid when calling getProductCollection'
             );
         }
 
         // verify the required parameter 'collectioncode' is set
         if ($collectioncode === null || (is_array($collectioncode) && count($collectioncode) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $collectioncode when calling oBPv310GetProductCollection'
+                'Missing the required parameter $collectioncode when calling getProductCollection'
             );
         }
 
@@ -726,9 +726,9 @@ class ProductCollectionApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

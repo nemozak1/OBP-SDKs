@@ -1,19 +1,19 @@
 # OpenBankProject::ATMAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv5_1_0_create_atm_attribute**](ATMAttributeApi.md#o_bpv5_1_0_create_atm_attribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute |
-| [**o_bpv5_1_0_delete_atm_attribute**](ATMAttributeApi.md#o_bpv5_1_0_delete_atm_attribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute |
-| [**o_bpv5_1_0_get_atm_attribute**](ATMAttributeApi.md#o_bpv5_1_0_get_atm_attribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID |
-| [**o_bpv5_1_0_get_atm_attributes**](ATMAttributeApi.md#o_bpv5_1_0_get_atm_attributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes |
-| [**o_bpv5_1_0_update_atm_attribute**](ATMAttributeApi.md#o_bpv5_1_0_update_atm_attribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute |
+| [**create_atm_attribute**](ATMAttributeApi.md#create_atm_attribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute |
+| [**delete_atm_attribute**](ATMAttributeApi.md#delete_atm_attribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute |
+| [**get_atm_attribute**](ATMAttributeApi.md#get_atm_attribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID |
+| [**get_atm_attributes**](ATMAttributeApi.md#get_atm_attributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes |
+| [**update_atm_attribute**](ATMAttributeApi.md#update_atm_attribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute |
 
 
-## o_bpv5_1_0_create_atm_attribute
+## create_atm_attribute
 
-> <OBPv510GetAtmAttribute200Response> o_bpv5_1_0_create_atm_attribute(bankid, atmid, obpv510_update_atm_attribute_request)
+> <GetAtmAttribute200Response> create_atm_attribute(bankid, atmid, update_atm_attribute_request)
 
 Create ATM Attribute
 
@@ -35,40 +35,40 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ATMAttributeApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 atmid = 'atmid_example' # String | The ATMID identifier
-obpv510_update_atm_attribute_request = OpenBankProject::OBPv510UpdateAtmAttributeRequest.new({type: 'type_example', properties: OpenBankProject::OBPv510UpdateAtmAttributeRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), value: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), is_active: , type: })}) # OBPv510UpdateAtmAttributeRequest | Request body
+update_atm_attribute_request = OpenBankProject::UpdateAtmAttributeRequest.new # UpdateAtmAttributeRequest | Request body
 
 begin
   # Create ATM Attribute
-  result = api_instance.o_bpv5_1_0_create_atm_attribute(bankid, atmid, obpv510_update_atm_attribute_request)
+  result = api_instance.create_atm_attribute(bankid, atmid, update_atm_attribute_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ATMAttributeApi->o_bpv5_1_0_create_atm_attribute: #{e}"
+  puts "Error when calling ATMAttributeApi->create_atm_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_create_atm_attribute_with_http_info variant
+#### Using the create_atm_attribute_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv510GetAtmAttribute200Response>, Integer, Hash)> o_bpv5_1_0_create_atm_attribute_with_http_info(bankid, atmid, obpv510_update_atm_attribute_request)
+> <Array(<GetAtmAttribute200Response>, Integer, Hash)> create_atm_attribute_with_http_info(bankid, atmid, update_atm_attribute_request)
 
 ```ruby
 begin
   # Create ATM Attribute
-  data, status_code, headers = api_instance.o_bpv5_1_0_create_atm_attribute_with_http_info(bankid, atmid, obpv510_update_atm_attribute_request)
+  data, status_code, headers = api_instance.create_atm_attribute_with_http_info(bankid, atmid, update_atm_attribute_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv510GetAtmAttribute200Response>
+  p data # => <GetAtmAttribute200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ATMAttributeApi->o_bpv5_1_0_create_atm_attribute_with_http_info: #{e}"
+  puts "Error when calling ATMAttributeApi->create_atm_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -78,11 +78,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
 | **atmid** | **String** | The ATMID identifier |  |
-| **obpv510_update_atm_attribute_request** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body |  |
+| **update_atm_attribute_request** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -94,9 +94,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv5_1_0_delete_atm_attribute
+## delete_atm_attribute
 
-> o_bpv5_1_0_delete_atm_attribute(bankid, atmid, atmattributeid)
+> delete_atm_attribute(bankid, atmid, atmattributeid)
 
 Delete ATM Attribute
 
@@ -118,9 +118,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ATMAttributeApi.new
@@ -130,27 +130,27 @@ atmattributeid = 'atmattributeid_example' # String | The ATMATTRIBUTEID identifi
 
 begin
   # Delete ATM Attribute
-  api_instance.o_bpv5_1_0_delete_atm_attribute(bankid, atmid, atmattributeid)
+  api_instance.delete_atm_attribute(bankid, atmid, atmattributeid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ATMAttributeApi->o_bpv5_1_0_delete_atm_attribute: #{e}"
+  puts "Error when calling ATMAttributeApi->delete_atm_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_delete_atm_attribute_with_http_info variant
+#### Using the delete_atm_attribute_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv5_1_0_delete_atm_attribute_with_http_info(bankid, atmid, atmattributeid)
+> <Array(nil, Integer, Hash)> delete_atm_attribute_with_http_info(bankid, atmid, atmattributeid)
 
 ```ruby
 begin
   # Delete ATM Attribute
-  data, status_code, headers = api_instance.o_bpv5_1_0_delete_atm_attribute_with_http_info(bankid, atmid, atmattributeid)
+  data, status_code, headers = api_instance.delete_atm_attribute_with_http_info(bankid, atmid, atmattributeid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ATMAttributeApi->o_bpv5_1_0_delete_atm_attribute_with_http_info: #{e}"
+  puts "Error when calling ATMAttributeApi->delete_atm_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -176,9 +176,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv5_1_0_get_atm_attribute
+## get_atm_attribute
 
-> <OBPv510GetAtmAttribute200Response> o_bpv5_1_0_get_atm_attribute(bankid, atmid, atmattributeid)
+> <GetAtmAttribute200Response> get_atm_attribute(bankid, atmid, atmattributeid)
 
 Get ATM Attribute By ATM_ATTRIBUTE_ID
 
@@ -200,9 +200,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ATMAttributeApi.new
@@ -212,28 +212,28 @@ atmattributeid = 'atmattributeid_example' # String | The ATMATTRIBUTEID identifi
 
 begin
   # Get ATM Attribute By ATM_ATTRIBUTE_ID
-  result = api_instance.o_bpv5_1_0_get_atm_attribute(bankid, atmid, atmattributeid)
+  result = api_instance.get_atm_attribute(bankid, atmid, atmattributeid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ATMAttributeApi->o_bpv5_1_0_get_atm_attribute: #{e}"
+  puts "Error when calling ATMAttributeApi->get_atm_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_get_atm_attribute_with_http_info variant
+#### Using the get_atm_attribute_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv510GetAtmAttribute200Response>, Integer, Hash)> o_bpv5_1_0_get_atm_attribute_with_http_info(bankid, atmid, atmattributeid)
+> <Array(<GetAtmAttribute200Response>, Integer, Hash)> get_atm_attribute_with_http_info(bankid, atmid, atmattributeid)
 
 ```ruby
 begin
   # Get ATM Attribute By ATM_ATTRIBUTE_ID
-  data, status_code, headers = api_instance.o_bpv5_1_0_get_atm_attribute_with_http_info(bankid, atmid, atmattributeid)
+  data, status_code, headers = api_instance.get_atm_attribute_with_http_info(bankid, atmid, atmattributeid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv510GetAtmAttribute200Response>
+  p data # => <GetAtmAttribute200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ATMAttributeApi->o_bpv5_1_0_get_atm_attribute_with_http_info: #{e}"
+  puts "Error when calling ATMAttributeApi->get_atm_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -247,7 +247,7 @@ end
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -259,9 +259,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv5_1_0_get_atm_attributes
+## get_atm_attributes
 
-> <OBPv510GetAtmAttributes200Response> o_bpv5_1_0_get_atm_attributes(bankid, atmid)
+> <GetAtmAttributes200Response> get_atm_attributes(bankid, atmid)
 
 Get ATM Attributes
 
@@ -283,9 +283,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ATMAttributeApi.new
@@ -294,28 +294,28 @@ atmid = 'atmid_example' # String | The ATMID identifier
 
 begin
   # Get ATM Attributes
-  result = api_instance.o_bpv5_1_0_get_atm_attributes(bankid, atmid)
+  result = api_instance.get_atm_attributes(bankid, atmid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ATMAttributeApi->o_bpv5_1_0_get_atm_attributes: #{e}"
+  puts "Error when calling ATMAttributeApi->get_atm_attributes: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_get_atm_attributes_with_http_info variant
+#### Using the get_atm_attributes_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv510GetAtmAttributes200Response>, Integer, Hash)> o_bpv5_1_0_get_atm_attributes_with_http_info(bankid, atmid)
+> <Array(<GetAtmAttributes200Response>, Integer, Hash)> get_atm_attributes_with_http_info(bankid, atmid)
 
 ```ruby
 begin
   # Get ATM Attributes
-  data, status_code, headers = api_instance.o_bpv5_1_0_get_atm_attributes_with_http_info(bankid, atmid)
+  data, status_code, headers = api_instance.get_atm_attributes_with_http_info(bankid, atmid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv510GetAtmAttributes200Response>
+  p data # => <GetAtmAttributes200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ATMAttributeApi->o_bpv5_1_0_get_atm_attributes_with_http_info: #{e}"
+  puts "Error when calling ATMAttributeApi->get_atm_attributes_with_http_info: #{e}"
 end
 ```
 
@@ -328,7 +328,7 @@ end
 
 ### Return type
 
-[**OBPv510GetAtmAttributes200Response**](OBPv510GetAtmAttributes200Response.md)
+[**GetAtmAttributes200Response**](GetAtmAttributes200Response.md)
 
 ### Authorization
 
@@ -340,9 +340,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv5_1_0_update_atm_attribute
+## update_atm_attribute
 
-> <OBPv510GetAtmAttribute200Response> o_bpv5_1_0_update_atm_attribute(bankid, atmid, atmattributeid, obpv510_update_atm_attribute_request)
+> <GetAtmAttribute200Response> update_atm_attribute(bankid, atmid, atmattributeid, update_atm_attribute_request)
 
 Update ATM Attribute
 
@@ -364,41 +364,41 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ATMAttributeApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 atmid = 'atmid_example' # String | The ATMID identifier
 atmattributeid = 'atmattributeid_example' # String | The ATMATTRIBUTEID identifier
-obpv510_update_atm_attribute_request = OpenBankProject::OBPv510UpdateAtmAttributeRequest.new({type: 'type_example', properties: OpenBankProject::OBPv510UpdateAtmAttributeRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), value: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), is_active: , type: })}) # OBPv510UpdateAtmAttributeRequest | Request body
+update_atm_attribute_request = OpenBankProject::UpdateAtmAttributeRequest.new # UpdateAtmAttributeRequest | Request body
 
 begin
   # Update ATM Attribute
-  result = api_instance.o_bpv5_1_0_update_atm_attribute(bankid, atmid, atmattributeid, obpv510_update_atm_attribute_request)
+  result = api_instance.update_atm_attribute(bankid, atmid, atmattributeid, update_atm_attribute_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ATMAttributeApi->o_bpv5_1_0_update_atm_attribute: #{e}"
+  puts "Error when calling ATMAttributeApi->update_atm_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_update_atm_attribute_with_http_info variant
+#### Using the update_atm_attribute_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv510GetAtmAttribute200Response>, Integer, Hash)> o_bpv5_1_0_update_atm_attribute_with_http_info(bankid, atmid, atmattributeid, obpv510_update_atm_attribute_request)
+> <Array(<GetAtmAttribute200Response>, Integer, Hash)> update_atm_attribute_with_http_info(bankid, atmid, atmattributeid, update_atm_attribute_request)
 
 ```ruby
 begin
   # Update ATM Attribute
-  data, status_code, headers = api_instance.o_bpv5_1_0_update_atm_attribute_with_http_info(bankid, atmid, atmattributeid, obpv510_update_atm_attribute_request)
+  data, status_code, headers = api_instance.update_atm_attribute_with_http_info(bankid, atmid, atmattributeid, update_atm_attribute_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv510GetAtmAttribute200Response>
+  p data # => <GetAtmAttribute200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ATMAttributeApi->o_bpv5_1_0_update_atm_attribute_with_http_info: #{e}"
+  puts "Error when calling ATMAttributeApi->update_atm_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -409,11 +409,11 @@ end
 | **bankid** | **String** | The BANKID identifier |  |
 | **atmid** | **String** | The ATMID identifier |  |
 | **atmattributeid** | **String** | The ATMATTRIBUTEID identifier |  |
-| **obpv510_update_atm_attribute_request** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body |  |
+| **update_atm_attribute_request** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 

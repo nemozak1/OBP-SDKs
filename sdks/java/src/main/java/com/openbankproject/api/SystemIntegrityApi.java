@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,7 +18,7 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv121UpdateTransactionNarrative200Response;
+import com.openbankproject.model.AccountAccessUniqueIndexCheck200Response;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -45,7 +45,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class SystemIntegrityApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -165,44 +165,44 @@ public class SystemIntegrityApi {
   /**
    * Check Unique Index at Account Access
    * &lt;p&gt;Check unique index at account access table.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return AccountAccessUniqueIndexCheck200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv510AccountAccessUniqueIndexCheck() throws ApiException {
-    return oBPv510AccountAccessUniqueIndexCheck(null);
+  public AccountAccessUniqueIndexCheck200Response accountAccessUniqueIndexCheck() throws ApiException {
+    return accountAccessUniqueIndexCheck(null);
   }
 
   /**
    * Check Unique Index at Account Access
    * &lt;p&gt;Check unique index at account access table.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return AccountAccessUniqueIndexCheck200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv510AccountAccessUniqueIndexCheck(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv510AccountAccessUniqueIndexCheckWithHttpInfo(headers);
+  public AccountAccessUniqueIndexCheck200Response accountAccessUniqueIndexCheck(Map<String, String> headers) throws ApiException {
+    ApiResponse<AccountAccessUniqueIndexCheck200Response> localVarResponse = accountAccessUniqueIndexCheckWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Check Unique Index at Account Access
    * &lt;p&gt;Check unique index at account access table.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;AccountAccessUniqueIndexCheck200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv510AccountAccessUniqueIndexCheckWithHttpInfo() throws ApiException {
-    return oBPv510AccountAccessUniqueIndexCheckWithHttpInfo(null);
+  public ApiResponse<AccountAccessUniqueIndexCheck200Response> accountAccessUniqueIndexCheckWithHttpInfo() throws ApiException {
+    return accountAccessUniqueIndexCheckWithHttpInfo(null);
   }
 
   /**
    * Check Unique Index at Account Access
    * &lt;p&gt;Check unique index at account access table.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;AccountAccessUniqueIndexCheck200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv510AccountAccessUniqueIndexCheckWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510AccountAccessUniqueIndexCheckRequestBuilder(headers);
+  public ApiResponse<AccountAccessUniqueIndexCheck200Response> accountAccessUniqueIndexCheckWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = accountAccessUniqueIndexCheckRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -213,11 +213,11 @@ public class SystemIntegrityApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510AccountAccessUniqueIndexCheck", localVarResponse);
+          throw getApiException("accountAccessUniqueIndexCheck", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<AccountAccessUniqueIndexCheck200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -227,10 +227,10 @@ public class SystemIntegrityApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        AccountAccessUniqueIndexCheck200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<AccountAccessUniqueIndexCheck200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<AccountAccessUniqueIndexCheck200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -249,7 +249,7 @@ public class SystemIntegrityApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510AccountAccessUniqueIndexCheckRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder accountAccessUniqueIndexCheckRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -275,11 +275,11 @@ public class SystemIntegrityApi {
    * Check for Sensible Currencies
    * &lt;p&gt;Check for sensible currencies at Bank Account model&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return AccountAccessUniqueIndexCheck200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv510AccountCurrencyCheck(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv510AccountCurrencyCheck(bankid, null);
+  public AccountAccessUniqueIndexCheck200Response accountCurrencyCheck(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return accountCurrencyCheck(bankid, null);
   }
 
   /**
@@ -287,11 +287,11 @@ public class SystemIntegrityApi {
    * &lt;p&gt;Check for sensible currencies at Bank Account model&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return AccountAccessUniqueIndexCheck200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv510AccountCurrencyCheck(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv510AccountCurrencyCheckWithHttpInfo(bankid, headers);
+  public AccountAccessUniqueIndexCheck200Response accountCurrencyCheck(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    ApiResponse<AccountAccessUniqueIndexCheck200Response> localVarResponse = accountCurrencyCheckWithHttpInfo(bankid, headers);
     return localVarResponse.getData();
   }
 
@@ -299,11 +299,11 @@ public class SystemIntegrityApi {
    * Check for Sensible Currencies
    * &lt;p&gt;Check for sensible currencies at Bank Account model&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;AccountAccessUniqueIndexCheck200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv510AccountCurrencyCheckWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv510AccountCurrencyCheckWithHttpInfo(bankid, null);
+  public ApiResponse<AccountAccessUniqueIndexCheck200Response> accountCurrencyCheckWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return accountCurrencyCheckWithHttpInfo(bankid, null);
   }
 
   /**
@@ -311,11 +311,11 @@ public class SystemIntegrityApi {
    * &lt;p&gt;Check for sensible currencies at Bank Account model&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;AccountAccessUniqueIndexCheck200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv510AccountCurrencyCheckWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510AccountCurrencyCheckRequestBuilder(bankid, headers);
+  public ApiResponse<AccountAccessUniqueIndexCheck200Response> accountCurrencyCheckWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = accountCurrencyCheckRequestBuilder(bankid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -326,11 +326,11 @@ public class SystemIntegrityApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510AccountCurrencyCheck", localVarResponse);
+          throw getApiException("accountCurrencyCheck", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<AccountAccessUniqueIndexCheck200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -340,10 +340,10 @@ public class SystemIntegrityApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        AccountAccessUniqueIndexCheck200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<AccountAccessUniqueIndexCheck200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<AccountAccessUniqueIndexCheck200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -362,10 +362,10 @@ public class SystemIntegrityApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510AccountCurrencyCheckRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder accountCurrencyCheckRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv510AccountCurrencyCheck");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling accountCurrencyCheck");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -392,44 +392,44 @@ public class SystemIntegrityApi {
   /**
    * Check Custom View Names
    * &lt;p&gt;Check custom view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return AccountAccessUniqueIndexCheck200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv510CustomViewNamesCheck() throws ApiException {
-    return oBPv510CustomViewNamesCheck(null);
+  public AccountAccessUniqueIndexCheck200Response customViewNamesCheck() throws ApiException {
+    return customViewNamesCheck(null);
   }
 
   /**
    * Check Custom View Names
    * &lt;p&gt;Check custom view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return AccountAccessUniqueIndexCheck200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv510CustomViewNamesCheck(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv510CustomViewNamesCheckWithHttpInfo(headers);
+  public AccountAccessUniqueIndexCheck200Response customViewNamesCheck(Map<String, String> headers) throws ApiException {
+    ApiResponse<AccountAccessUniqueIndexCheck200Response> localVarResponse = customViewNamesCheckWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Check Custom View Names
    * &lt;p&gt;Check custom view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;AccountAccessUniqueIndexCheck200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv510CustomViewNamesCheckWithHttpInfo() throws ApiException {
-    return oBPv510CustomViewNamesCheckWithHttpInfo(null);
+  public ApiResponse<AccountAccessUniqueIndexCheck200Response> customViewNamesCheckWithHttpInfo() throws ApiException {
+    return customViewNamesCheckWithHttpInfo(null);
   }
 
   /**
    * Check Custom View Names
    * &lt;p&gt;Check custom view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;AccountAccessUniqueIndexCheck200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv510CustomViewNamesCheckWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510CustomViewNamesCheckRequestBuilder(headers);
+  public ApiResponse<AccountAccessUniqueIndexCheck200Response> customViewNamesCheckWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = customViewNamesCheckRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -440,11 +440,11 @@ public class SystemIntegrityApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510CustomViewNamesCheck", localVarResponse);
+          throw getApiException("customViewNamesCheck", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<AccountAccessUniqueIndexCheck200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -454,10 +454,10 @@ public class SystemIntegrityApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        AccountAccessUniqueIndexCheck200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<AccountAccessUniqueIndexCheck200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<AccountAccessUniqueIndexCheck200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -476,7 +476,7 @@ public class SystemIntegrityApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510CustomViewNamesCheckRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder customViewNamesCheckRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -502,11 +502,11 @@ public class SystemIntegrityApi {
    * Check for Orphaned Accounts
    * &lt;p&gt;Check for orphaned accounts at Bank Account model&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return AccountAccessUniqueIndexCheck200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv510OrphanedAccountCheck(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv510OrphanedAccountCheck(bankid, null);
+  public AccountAccessUniqueIndexCheck200Response orphanedAccountCheck(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return orphanedAccountCheck(bankid, null);
   }
 
   /**
@@ -514,11 +514,11 @@ public class SystemIntegrityApi {
    * &lt;p&gt;Check for orphaned accounts at Bank Account model&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return AccountAccessUniqueIndexCheck200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv510OrphanedAccountCheck(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv510OrphanedAccountCheckWithHttpInfo(bankid, headers);
+  public AccountAccessUniqueIndexCheck200Response orphanedAccountCheck(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    ApiResponse<AccountAccessUniqueIndexCheck200Response> localVarResponse = orphanedAccountCheckWithHttpInfo(bankid, headers);
     return localVarResponse.getData();
   }
 
@@ -526,11 +526,11 @@ public class SystemIntegrityApi {
    * Check for Orphaned Accounts
    * &lt;p&gt;Check for orphaned accounts at Bank Account model&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;AccountAccessUniqueIndexCheck200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv510OrphanedAccountCheckWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv510OrphanedAccountCheckWithHttpInfo(bankid, null);
+  public ApiResponse<AccountAccessUniqueIndexCheck200Response> orphanedAccountCheckWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return orphanedAccountCheckWithHttpInfo(bankid, null);
   }
 
   /**
@@ -538,11 +538,11 @@ public class SystemIntegrityApi {
    * &lt;p&gt;Check for orphaned accounts at Bank Account model&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;AccountAccessUniqueIndexCheck200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv510OrphanedAccountCheckWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510OrphanedAccountCheckRequestBuilder(bankid, headers);
+  public ApiResponse<AccountAccessUniqueIndexCheck200Response> orphanedAccountCheckWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = orphanedAccountCheckRequestBuilder(bankid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -553,11 +553,11 @@ public class SystemIntegrityApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510OrphanedAccountCheck", localVarResponse);
+          throw getApiException("orphanedAccountCheck", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<AccountAccessUniqueIndexCheck200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -567,10 +567,10 @@ public class SystemIntegrityApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        AccountAccessUniqueIndexCheck200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<AccountAccessUniqueIndexCheck200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<AccountAccessUniqueIndexCheck200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -589,10 +589,10 @@ public class SystemIntegrityApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510OrphanedAccountCheckRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder orphanedAccountCheckRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv510OrphanedAccountCheck");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling orphanedAccountCheck");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -619,44 +619,44 @@ public class SystemIntegrityApi {
   /**
    * Check System View Names
    * &lt;p&gt;Check system view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return AccountAccessUniqueIndexCheck200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv510SystemViewNamesCheck() throws ApiException {
-    return oBPv510SystemViewNamesCheck(null);
+  public AccountAccessUniqueIndexCheck200Response systemViewNamesCheck() throws ApiException {
+    return systemViewNamesCheck(null);
   }
 
   /**
    * Check System View Names
    * &lt;p&gt;Check system view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return AccountAccessUniqueIndexCheck200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv510SystemViewNamesCheck(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv510SystemViewNamesCheckWithHttpInfo(headers);
+  public AccountAccessUniqueIndexCheck200Response systemViewNamesCheck(Map<String, String> headers) throws ApiException {
+    ApiResponse<AccountAccessUniqueIndexCheck200Response> localVarResponse = systemViewNamesCheckWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Check System View Names
    * &lt;p&gt;Check system view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;AccountAccessUniqueIndexCheck200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv510SystemViewNamesCheckWithHttpInfo() throws ApiException {
-    return oBPv510SystemViewNamesCheckWithHttpInfo(null);
+  public ApiResponse<AccountAccessUniqueIndexCheck200Response> systemViewNamesCheckWithHttpInfo() throws ApiException {
+    return systemViewNamesCheckWithHttpInfo(null);
   }
 
   /**
    * Check System View Names
    * &lt;p&gt;Check system view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;AccountAccessUniqueIndexCheck200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv510SystemViewNamesCheckWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510SystemViewNamesCheckRequestBuilder(headers);
+  public ApiResponse<AccountAccessUniqueIndexCheck200Response> systemViewNamesCheckWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = systemViewNamesCheckRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -667,11 +667,11 @@ public class SystemIntegrityApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510SystemViewNamesCheck", localVarResponse);
+          throw getApiException("systemViewNamesCheck", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<AccountAccessUniqueIndexCheck200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -681,10 +681,10 @@ public class SystemIntegrityApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        AccountAccessUniqueIndexCheck200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<AccountAccessUniqueIndexCheck200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<AccountAccessUniqueIndexCheck200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -703,7 +703,7 @@ public class SystemIntegrityApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510SystemViewNamesCheckRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder systemViewNamesCheckRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 

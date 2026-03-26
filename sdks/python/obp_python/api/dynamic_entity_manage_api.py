@@ -18,17 +18,17 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv600_backup_bank_level_dynamic_entity200_response import OBPv600BackupBankLevelDynamicEntity200Response
-from obp_python.models.obpv600_backup_system_dynamic_entity200_response import OBPv600BackupSystemDynamicEntity200Response
-from obp_python.models.obpv600_create_bank_level_dynamic_entity200_response import OBPv600CreateBankLevelDynamicEntity200Response
-from obp_python.models.obpv600_create_system_dynamic_entity200_response import OBPv600CreateSystemDynamicEntity200Response
-from obp_python.models.obpv600_create_system_dynamic_entity_request import OBPv600CreateSystemDynamicEntityRequest
-from obp_python.models.obpv600_get_available_personal_dynamic_entities200_response import OBPv600GetAvailablePersonalDynamicEntities200Response
-from obp_python.models.obpv600_get_bank_level_dynamic_entities200_response import OBPv600GetBankLevelDynamicEntities200Response
-from obp_python.models.obpv600_get_system_dynamic_entities200_response import OBPv600GetSystemDynamicEntities200Response
-from obp_python.models.obpv600_update_bank_level_dynamic_entity200_response import OBPv600UpdateBankLevelDynamicEntity200Response
-from obp_python.models.obpv600_update_system_dynamic_entity200_response import OBPv600UpdateSystemDynamicEntity200Response
-from obp_python.models.obpv600_update_system_dynamic_entity_request import OBPv600UpdateSystemDynamicEntityRequest
+from obp_python.models.backup_bank_level_dynamic_entity200_response import BackupBankLevelDynamicEntity200Response
+from obp_python.models.backup_system_dynamic_entity200_response import BackupSystemDynamicEntity200Response
+from obp_python.models.create_bank_level_dynamic_entity200_response import CreateBankLevelDynamicEntity200Response
+from obp_python.models.create_system_dynamic_entity200_response import CreateSystemDynamicEntity200Response
+from obp_python.models.create_system_dynamic_entity_request import CreateSystemDynamicEntityRequest
+from obp_python.models.get_available_personal_dynamic_entities200_response import GetAvailablePersonalDynamicEntities200Response
+from obp_python.models.get_bank_level_dynamic_entities200_response import GetBankLevelDynamicEntities200Response
+from obp_python.models.get_system_dynamic_entities200_response import GetSystemDynamicEntities200Response
+from obp_python.models.update_bank_level_dynamic_entity200_response import UpdateBankLevelDynamicEntity200Response
+from obp_python.models.update_system_dynamic_entity200_response import UpdateSystemDynamicEntity200Response
+from obp_python.models.update_system_dynamic_entity_request import UpdateSystemDynamicEntityRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -49,7 +49,7 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_bank_level_dynamic_entity(
+    def backup_bank_level_dynamic_entity(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
@@ -65,802 +65,7 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
-        """Delete Bank Level Dynamic Entity
-
-        <p>Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
-        :type dynamicentityid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv4_0_0_delete_bank_level_dynamic_entity_serialize(
-            bankid=bankid,
-            dynamicentityid=dynamicentityid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv4_0_0_delete_bank_level_dynamic_entity_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
-        """Delete Bank Level Dynamic Entity
-
-        <p>Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
-        :type dynamicentityid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv4_0_0_delete_bank_level_dynamic_entity_serialize(
-            bankid=bankid,
-            dynamicentityid=dynamicentityid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv4_0_0_delete_bank_level_dynamic_entity_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Delete Bank Level Dynamic Entity
-
-        <p>Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
-        :type dynamicentityid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv4_0_0_delete_bank_level_dynamic_entity_serialize(
-            bankid=bankid,
-            dynamicentityid=dynamicentityid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv4_0_0_delete_bank_level_dynamic_entity_serialize(
-        self,
-        bankid,
-        dynamicentityid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if dynamicentityid is not None:
-            _path_params['dynamicentityid'] = dynamicentityid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='DELETE',
-            resource_path='/obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv4_0_0_delete_my_dynamic_entity(
-        self,
-        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
-        """Delete My Dynamic Entity
-
-        <p>Delete my DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-
-        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
-        :type dynamicentityid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv4_0_0_delete_my_dynamic_entity_serialize(
-            dynamicentityid=dynamicentityid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv4_0_0_delete_my_dynamic_entity_with_http_info(
-        self,
-        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
-        """Delete My Dynamic Entity
-
-        <p>Delete my DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-
-        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
-        :type dynamicentityid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv4_0_0_delete_my_dynamic_entity_serialize(
-            dynamicentityid=dynamicentityid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv4_0_0_delete_my_dynamic_entity_without_preload_content(
-        self,
-        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Delete My Dynamic Entity
-
-        <p>Delete my DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-
-        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
-        :type dynamicentityid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv4_0_0_delete_my_dynamic_entity_serialize(
-            dynamicentityid=dynamicentityid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv4_0_0_delete_my_dynamic_entity_serialize(
-        self,
-        dynamicentityid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if dynamicentityid is not None:
-            _path_params['dynamicentityid'] = dynamicentityid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='DELETE',
-            resource_path='/obp/v4.0.0/my/dynamic-entities/{dynamicentityid}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv4_0_0_delete_system_dynamic_entity(
-        self,
-        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
-        """Delete System Level Dynamic Entity
-
-        <p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-
-        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
-        :type dynamicentityid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv4_0_0_delete_system_dynamic_entity_serialize(
-            dynamicentityid=dynamicentityid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv4_0_0_delete_system_dynamic_entity_with_http_info(
-        self,
-        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
-        """Delete System Level Dynamic Entity
-
-        <p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-
-        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
-        :type dynamicentityid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv4_0_0_delete_system_dynamic_entity_serialize(
-            dynamicentityid=dynamicentityid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv4_0_0_delete_system_dynamic_entity_without_preload_content(
-        self,
-        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Delete System Level Dynamic Entity
-
-        <p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-
-        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
-        :type dynamicentityid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv4_0_0_delete_system_dynamic_entity_serialize(
-            dynamicentityid=dynamicentityid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv4_0_0_delete_system_dynamic_entity_serialize(
-        self,
-        dynamicentityid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if dynamicentityid is not None:
-            _path_params['dynamicentityid'] = dynamicentityid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='DELETE',
-            resource_path='/obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv6_0_0_backup_bank_level_dynamic_entity(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600BackupBankLevelDynamicEntity200Response:
+    ) -> BackupBankLevelDynamicEntity200Response:
         """Backup Bank Level Dynamic Entity
 
         <p>Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -891,7 +96,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_backup_bank_level_dynamic_entity_serialize(
+        _param = self._backup_bank_level_dynamic_entity_serialize(
             bankid=bankid,
             dynamicentityid=dynamicentityid,
             _request_auth=_request_auth,
@@ -901,7 +106,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600BackupBankLevelDynamicEntity200Response",
+            '200': "BackupBankLevelDynamicEntity200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -916,7 +121,7 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_backup_bank_level_dynamic_entity_with_http_info(
+    def backup_bank_level_dynamic_entity_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
@@ -932,7 +137,7 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600BackupBankLevelDynamicEntity200Response]:
+    ) -> ApiResponse[BackupBankLevelDynamicEntity200Response]:
         """Backup Bank Level Dynamic Entity
 
         <p>Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -963,7 +168,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_backup_bank_level_dynamic_entity_serialize(
+        _param = self._backup_bank_level_dynamic_entity_serialize(
             bankid=bankid,
             dynamicentityid=dynamicentityid,
             _request_auth=_request_auth,
@@ -973,7 +178,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600BackupBankLevelDynamicEntity200Response",
+            '200': "BackupBankLevelDynamicEntity200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -988,7 +193,7 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_backup_bank_level_dynamic_entity_without_preload_content(
+    def backup_bank_level_dynamic_entity_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
@@ -1035,7 +240,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_backup_bank_level_dynamic_entity_serialize(
+        _param = self._backup_bank_level_dynamic_entity_serialize(
             bankid=bankid,
             dynamicentityid=dynamicentityid,
             _request_auth=_request_auth,
@@ -1045,7 +250,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600BackupBankLevelDynamicEntity200Response",
+            '200': "BackupBankLevelDynamicEntity200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1055,7 +260,7 @@ class DynamicEntityManageApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_backup_bank_level_dynamic_entity_serialize(
+    def _backup_bank_level_dynamic_entity_serialize(
         self,
         bankid,
         dynamicentityid,
@@ -1125,7 +330,7 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_backup_system_dynamic_entity(
+    def backup_system_dynamic_entity(
         self,
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
         _request_timeout: Union[
@@ -1140,7 +345,7 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600BackupSystemDynamicEntity200Response:
+    ) -> BackupSystemDynamicEntity200Response:
         """Backup System Level Dynamic Entity
 
         <p>Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -1169,7 +374,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_backup_system_dynamic_entity_serialize(
+        _param = self._backup_system_dynamic_entity_serialize(
             dynamicentityid=dynamicentityid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1178,7 +383,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600BackupSystemDynamicEntity200Response",
+            '200': "BackupSystemDynamicEntity200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1193,7 +398,7 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_backup_system_dynamic_entity_with_http_info(
+    def backup_system_dynamic_entity_with_http_info(
         self,
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
         _request_timeout: Union[
@@ -1208,7 +413,7 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600BackupSystemDynamicEntity200Response]:
+    ) -> ApiResponse[BackupSystemDynamicEntity200Response]:
         """Backup System Level Dynamic Entity
 
         <p>Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br /> The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).<br /> If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p> <p>The calling user will be granted CanGetDynamicEntity_<code>&lt;BackupEntityName&gt;</code> on the newly created backup entity.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -1237,7 +442,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_backup_system_dynamic_entity_serialize(
+        _param = self._backup_system_dynamic_entity_serialize(
             dynamicentityid=dynamicentityid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1246,7 +451,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600BackupSystemDynamicEntity200Response",
+            '200': "BackupSystemDynamicEntity200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1261,7 +466,7 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_backup_system_dynamic_entity_without_preload_content(
+    def backup_system_dynamic_entity_without_preload_content(
         self,
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
         _request_timeout: Union[
@@ -1305,7 +510,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_backup_system_dynamic_entity_serialize(
+        _param = self._backup_system_dynamic_entity_serialize(
             dynamicentityid=dynamicentityid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1314,7 +519,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600BackupSystemDynamicEntity200Response",
+            '200': "BackupSystemDynamicEntity200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1324,7 +529,7 @@ class DynamicEntityManageApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_backup_system_dynamic_entity_serialize(
+    def _backup_system_dynamic_entity_serialize(
         self,
         dynamicentityid,
         _request_auth,
@@ -1391,10 +596,10 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_bank_level_dynamic_entity(
+    def create_bank_level_dynamic_entity(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv600_create_system_dynamic_entity_request: Annotated[OBPv600CreateSystemDynamicEntityRequest, Field(description="Request body")],
+        create_system_dynamic_entity_request: Annotated[CreateSystemDynamicEntityRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1407,15 +612,15 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600CreateBankLevelDynamicEntity200Response:
+    ) -> CreateBankLevelDynamicEntity200Response:
         """Create Bank Level Dynamic Entity
 
         <p>Create a bank level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv600_create_system_dynamic_entity_request: Request body (required)
-        :type obpv600_create_system_dynamic_entity_request: OBPv600CreateSystemDynamicEntityRequest
+        :param create_system_dynamic_entity_request: Request body (required)
+        :type create_system_dynamic_entity_request: CreateSystemDynamicEntityRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1438,9 +643,9 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_bank_level_dynamic_entity_serialize(
+        _param = self._create_bank_level_dynamic_entity_serialize(
             bankid=bankid,
-            obpv600_create_system_dynamic_entity_request=obpv600_create_system_dynamic_entity_request,
+            create_system_dynamic_entity_request=create_system_dynamic_entity_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1448,7 +653,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CreateBankLevelDynamicEntity200Response",
+            '200': "CreateBankLevelDynamicEntity200Response",
             '404': None,
             '500': None,
         }
@@ -1464,10 +669,10 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_bank_level_dynamic_entity_with_http_info(
+    def create_bank_level_dynamic_entity_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv600_create_system_dynamic_entity_request: Annotated[OBPv600CreateSystemDynamicEntityRequest, Field(description="Request body")],
+        create_system_dynamic_entity_request: Annotated[CreateSystemDynamicEntityRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1480,15 +685,15 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600CreateBankLevelDynamicEntity200Response]:
+    ) -> ApiResponse[CreateBankLevelDynamicEntity200Response]:
         """Create Bank Level Dynamic Entity
 
         <p>Create a bank level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv600_create_system_dynamic_entity_request: Request body (required)
-        :type obpv600_create_system_dynamic_entity_request: OBPv600CreateSystemDynamicEntityRequest
+        :param create_system_dynamic_entity_request: Request body (required)
+        :type create_system_dynamic_entity_request: CreateSystemDynamicEntityRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1511,9 +716,9 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_bank_level_dynamic_entity_serialize(
+        _param = self._create_bank_level_dynamic_entity_serialize(
             bankid=bankid,
-            obpv600_create_system_dynamic_entity_request=obpv600_create_system_dynamic_entity_request,
+            create_system_dynamic_entity_request=create_system_dynamic_entity_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1521,7 +726,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CreateBankLevelDynamicEntity200Response",
+            '200': "CreateBankLevelDynamicEntity200Response",
             '404': None,
             '500': None,
         }
@@ -1537,10 +742,10 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_bank_level_dynamic_entity_without_preload_content(
+    def create_bank_level_dynamic_entity_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv600_create_system_dynamic_entity_request: Annotated[OBPv600CreateSystemDynamicEntityRequest, Field(description="Request body")],
+        create_system_dynamic_entity_request: Annotated[CreateSystemDynamicEntityRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1560,8 +765,8 @@ class DynamicEntityManageApi:
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv600_create_system_dynamic_entity_request: Request body (required)
-        :type obpv600_create_system_dynamic_entity_request: OBPv600CreateSystemDynamicEntityRequest
+        :param create_system_dynamic_entity_request: Request body (required)
+        :type create_system_dynamic_entity_request: CreateSystemDynamicEntityRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1584,9 +789,9 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_bank_level_dynamic_entity_serialize(
+        _param = self._create_bank_level_dynamic_entity_serialize(
             bankid=bankid,
-            obpv600_create_system_dynamic_entity_request=obpv600_create_system_dynamic_entity_request,
+            create_system_dynamic_entity_request=create_system_dynamic_entity_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1594,7 +799,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CreateBankLevelDynamicEntity200Response",
+            '200': "CreateBankLevelDynamicEntity200Response",
             '404': None,
             '500': None,
         }
@@ -1605,10 +810,10 @@ class DynamicEntityManageApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_create_bank_level_dynamic_entity_serialize(
+    def _create_bank_level_dynamic_entity_serialize(
         self,
         bankid,
-        obpv600_create_system_dynamic_entity_request,
+        create_system_dynamic_entity_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1636,8 +841,8 @@ class DynamicEntityManageApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_create_system_dynamic_entity_request is not None:
-            _body_params = obpv600_create_system_dynamic_entity_request
+        if create_system_dynamic_entity_request is not None:
+            _body_params = create_system_dynamic_entity_request
 
 
         # set the HTTP header `Accept`
@@ -1688,9 +893,9 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_system_dynamic_entity(
+    def create_system_dynamic_entity(
         self,
-        obpv600_create_system_dynamic_entity_request: Annotated[OBPv600CreateSystemDynamicEntityRequest, Field(description="Request body")],
+        create_system_dynamic_entity_request: Annotated[CreateSystemDynamicEntityRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1703,13 +908,13 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600CreateSystemDynamicEntity200Response:
+    ) -> CreateSystemDynamicEntity200Response:
         """Create System Level Dynamic Entity
 
         <p>Create a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> 
 
-        :param obpv600_create_system_dynamic_entity_request: Request body (required)
-        :type obpv600_create_system_dynamic_entity_request: OBPv600CreateSystemDynamicEntityRequest
+        :param create_system_dynamic_entity_request: Request body (required)
+        :type create_system_dynamic_entity_request: CreateSystemDynamicEntityRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1732,8 +937,8 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_system_dynamic_entity_serialize(
-            obpv600_create_system_dynamic_entity_request=obpv600_create_system_dynamic_entity_request,
+        _param = self._create_system_dynamic_entity_serialize(
+            create_system_dynamic_entity_request=create_system_dynamic_entity_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1741,7 +946,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CreateSystemDynamicEntity200Response",
+            '200': "CreateSystemDynamicEntity200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1756,9 +961,9 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_system_dynamic_entity_with_http_info(
+    def create_system_dynamic_entity_with_http_info(
         self,
-        obpv600_create_system_dynamic_entity_request: Annotated[OBPv600CreateSystemDynamicEntityRequest, Field(description="Request body")],
+        create_system_dynamic_entity_request: Annotated[CreateSystemDynamicEntityRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1771,13 +976,13 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600CreateSystemDynamicEntity200Response]:
+    ) -> ApiResponse[CreateSystemDynamicEntity200Response]:
         """Create System Level Dynamic Entity
 
         <p>Create a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> 
 
-        :param obpv600_create_system_dynamic_entity_request: Request body (required)
-        :type obpv600_create_system_dynamic_entity_request: OBPv600CreateSystemDynamicEntityRequest
+        :param create_system_dynamic_entity_request: Request body (required)
+        :type create_system_dynamic_entity_request: CreateSystemDynamicEntityRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1800,8 +1005,8 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_system_dynamic_entity_serialize(
-            obpv600_create_system_dynamic_entity_request=obpv600_create_system_dynamic_entity_request,
+        _param = self._create_system_dynamic_entity_serialize(
+            create_system_dynamic_entity_request=create_system_dynamic_entity_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1809,7 +1014,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CreateSystemDynamicEntity200Response",
+            '200': "CreateSystemDynamicEntity200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1824,9 +1029,9 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_system_dynamic_entity_without_preload_content(
+    def create_system_dynamic_entity_without_preload_content(
         self,
-        obpv600_create_system_dynamic_entity_request: Annotated[OBPv600CreateSystemDynamicEntityRequest, Field(description="Request body")],
+        create_system_dynamic_entity_request: Annotated[CreateSystemDynamicEntityRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1844,8 +1049,8 @@ class DynamicEntityManageApi:
 
         <p>Create a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property MUST include an <code>example</code> field with a valid example value.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> 
 
-        :param obpv600_create_system_dynamic_entity_request: Request body (required)
-        :type obpv600_create_system_dynamic_entity_request: OBPv600CreateSystemDynamicEntityRequest
+        :param create_system_dynamic_entity_request: Request body (required)
+        :type create_system_dynamic_entity_request: CreateSystemDynamicEntityRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1868,8 +1073,8 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_system_dynamic_entity_serialize(
-            obpv600_create_system_dynamic_entity_request=obpv600_create_system_dynamic_entity_request,
+        _param = self._create_system_dynamic_entity_serialize(
+            create_system_dynamic_entity_request=create_system_dynamic_entity_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1877,7 +1082,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CreateSystemDynamicEntity200Response",
+            '200': "CreateSystemDynamicEntity200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1887,9 +1092,9 @@ class DynamicEntityManageApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_create_system_dynamic_entity_serialize(
+    def _create_system_dynamic_entity_serialize(
         self,
-        obpv600_create_system_dynamic_entity_request,
+        create_system_dynamic_entity_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1915,8 +1120,8 @@ class DynamicEntityManageApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_create_system_dynamic_entity_request is not None:
-            _body_params = obpv600_create_system_dynamic_entity_request
+        if create_system_dynamic_entity_request is not None:
+            _body_params = create_system_dynamic_entity_request
 
 
         # set the HTTP header `Accept`
@@ -1967,7 +1172,802 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_system_dynamic_entity_cascade(
+    def delete_bank_level_dynamic_entity(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> None:
+        """Delete Bank Level Dynamic Entity
+
+        <p>Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
+        :type dynamicentityid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_bank_level_dynamic_entity_serialize(
+            bankid=bankid,
+            dynamicentityid=dynamicentityid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def delete_bank_level_dynamic_entity_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[None]:
+        """Delete Bank Level Dynamic Entity
+
+        <p>Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
+        :type dynamicentityid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_bank_level_dynamic_entity_serialize(
+            bankid=bankid,
+            dynamicentityid=dynamicentityid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def delete_bank_level_dynamic_entity_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Delete Bank Level Dynamic Entity
+
+        <p>Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
+        :type dynamicentityid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_bank_level_dynamic_entity_serialize(
+            bankid=bankid,
+            dynamicentityid=dynamicentityid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _delete_bank_level_dynamic_entity_serialize(
+        self,
+        bankid,
+        dynamicentityid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if dynamicentityid is not None:
+            _path_params['dynamicentityid'] = dynamicentityid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='DELETE',
+            resource_path='/obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def delete_my_dynamic_entity(
+        self,
+        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> None:
+        """Delete My Dynamic Entity
+
+        <p>Delete my DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+
+        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
+        :type dynamicentityid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_my_dynamic_entity_serialize(
+            dynamicentityid=dynamicentityid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def delete_my_dynamic_entity_with_http_info(
+        self,
+        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[None]:
+        """Delete My Dynamic Entity
+
+        <p>Delete my DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+
+        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
+        :type dynamicentityid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_my_dynamic_entity_serialize(
+            dynamicentityid=dynamicentityid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def delete_my_dynamic_entity_without_preload_content(
+        self,
+        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Delete My Dynamic Entity
+
+        <p>Delete my DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+
+        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
+        :type dynamicentityid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_my_dynamic_entity_serialize(
+            dynamicentityid=dynamicentityid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _delete_my_dynamic_entity_serialize(
+        self,
+        dynamicentityid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if dynamicentityid is not None:
+            _path_params['dynamicentityid'] = dynamicentityid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='DELETE',
+            resource_path='/obp/v4.0.0/my/dynamic-entities/{dynamicentityid}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def delete_system_dynamic_entity(
+        self,
+        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> None:
+        """Delete System Level Dynamic Entity
+
+        <p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+
+        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
+        :type dynamicentityid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_system_dynamic_entity_serialize(
+            dynamicentityid=dynamicentityid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def delete_system_dynamic_entity_with_http_info(
+        self,
+        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[None]:
+        """Delete System Level Dynamic Entity
+
+        <p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+
+        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
+        :type dynamicentityid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_system_dynamic_entity_serialize(
+            dynamicentityid=dynamicentityid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def delete_system_dynamic_entity_without_preload_content(
+        self,
+        dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Delete System Level Dynamic Entity
+
+        <p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a>/</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
+
+        :param dynamicentityid: The DYNAMICENTITYID identifier (required)
+        :type dynamicentityid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_system_dynamic_entity_serialize(
+            dynamicentityid=dynamicentityid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _delete_system_dynamic_entity_serialize(
+        self,
+        dynamicentityid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if dynamicentityid is not None:
+            _path_params['dynamicentityid'] = dynamicentityid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='DELETE',
+            resource_path='/obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def delete_system_dynamic_entity_cascade(
         self,
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
         _request_timeout: Union[
@@ -2011,7 +2011,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_system_dynamic_entity_cascade_serialize(
+        _param = self._delete_system_dynamic_entity_cascade_serialize(
             dynamicentityid=dynamicentityid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2035,7 +2035,7 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_system_dynamic_entity_cascade_with_http_info(
+    def delete_system_dynamic_entity_cascade_with_http_info(
         self,
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
         _request_timeout: Union[
@@ -2079,7 +2079,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_system_dynamic_entity_cascade_serialize(
+        _param = self._delete_system_dynamic_entity_cascade_serialize(
             dynamicentityid=dynamicentityid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2103,7 +2103,7 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_system_dynamic_entity_cascade_without_preload_content(
+    def delete_system_dynamic_entity_cascade_without_preload_content(
         self,
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
         _request_timeout: Union[
@@ -2147,7 +2147,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_system_dynamic_entity_cascade_serialize(
+        _param = self._delete_system_dynamic_entity_cascade_serialize(
             dynamicentityid=dynamicentityid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2166,7 +2166,7 @@ class DynamicEntityManageApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_delete_system_dynamic_entity_cascade_serialize(
+    def _delete_system_dynamic_entity_cascade_serialize(
         self,
         dynamicentityid,
         _request_auth,
@@ -2226,7 +2226,7 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_bank_level_dynamic_entities(
+    def get_bank_level_dynamic_entities(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -2241,7 +2241,7 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetBankLevelDynamicEntities200Response:
+    ) -> GetBankLevelDynamicEntities200Response:
         """Get Bank Level Dynamic Entities
 
         <p>Get all Bank Level Dynamic Entities for one bank with record counts.</p> <p>Each dynamic entity in the response includes a <code>record_count</code> field showing how many data records exist for that entity.</p> <p>This v6.0.0 endpoint returns snake_case field names and an explicit <code>entity_name</code> field.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -2270,7 +2270,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_bank_level_dynamic_entities_serialize(
+        _param = self._get_bank_level_dynamic_entities_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2279,7 +2279,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetBankLevelDynamicEntities200Response",
+            '200': "GetBankLevelDynamicEntities200Response",
             '404': None,
             '500': None,
         }
@@ -2295,7 +2295,7 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_bank_level_dynamic_entities_with_http_info(
+    def get_bank_level_dynamic_entities_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -2310,7 +2310,7 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetBankLevelDynamicEntities200Response]:
+    ) -> ApiResponse[GetBankLevelDynamicEntities200Response]:
         """Get Bank Level Dynamic Entities
 
         <p>Get all Bank Level Dynamic Entities for one bank with record counts.</p> <p>Each dynamic entity in the response includes a <code>record_count</code> field showing how many data records exist for that entity.</p> <p>This v6.0.0 endpoint returns snake_case field names and an explicit <code>entity_name</code> field.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -2339,7 +2339,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_bank_level_dynamic_entities_serialize(
+        _param = self._get_bank_level_dynamic_entities_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2348,7 +2348,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetBankLevelDynamicEntities200Response",
+            '200': "GetBankLevelDynamicEntities200Response",
             '404': None,
             '500': None,
         }
@@ -2364,7 +2364,7 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_bank_level_dynamic_entities_without_preload_content(
+    def get_bank_level_dynamic_entities_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -2408,7 +2408,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_bank_level_dynamic_entities_serialize(
+        _param = self._get_bank_level_dynamic_entities_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2417,7 +2417,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetBankLevelDynamicEntities200Response",
+            '200': "GetBankLevelDynamicEntities200Response",
             '404': None,
             '500': None,
         }
@@ -2428,7 +2428,7 @@ class DynamicEntityManageApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_bank_level_dynamic_entities_serialize(
+    def _get_bank_level_dynamic_entities_serialize(
         self,
         bankid,
         _request_auth,
@@ -2495,7 +2495,7 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_my_dynamic_entities(
+    def get_my_dynamic_entities(
         self,
         _request_timeout: Union[
             None,
@@ -2509,7 +2509,7 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetAvailablePersonalDynamicEntities200Response:
+    ) -> GetAvailablePersonalDynamicEntities200Response:
         """Get My Dynamic Entities
 
         <p>Get all Dynamic Entity definitions I created.</p> <p>This v6.0.0 endpoint returns a cleaner response format with:<br /> * snake_case field names (dynamic_entity_id, user_id, bank_id, has_personal_entity)<br /> * An explicit entity_name field instead of using the entity name as a dynamic JSON key<br /> * The entity schema in a separate definition object</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -2536,7 +2536,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_my_dynamic_entities_serialize(
+        _param = self._get_my_dynamic_entities_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2544,7 +2544,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAvailablePersonalDynamicEntities200Response",
+            '200': "GetAvailablePersonalDynamicEntities200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2559,7 +2559,7 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_my_dynamic_entities_with_http_info(
+    def get_my_dynamic_entities_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -2573,7 +2573,7 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetAvailablePersonalDynamicEntities200Response]:
+    ) -> ApiResponse[GetAvailablePersonalDynamicEntities200Response]:
         """Get My Dynamic Entities
 
         <p>Get all Dynamic Entity definitions I created.</p> <p>This v6.0.0 endpoint returns a cleaner response format with:<br /> * snake_case field names (dynamic_entity_id, user_id, bank_id, has_personal_entity)<br /> * An explicit entity_name field instead of using the entity name as a dynamic JSON key<br /> * The entity schema in a separate definition object</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -2600,7 +2600,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_my_dynamic_entities_serialize(
+        _param = self._get_my_dynamic_entities_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2608,7 +2608,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAvailablePersonalDynamicEntities200Response",
+            '200': "GetAvailablePersonalDynamicEntities200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2623,7 +2623,7 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_my_dynamic_entities_without_preload_content(
+    def get_my_dynamic_entities_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -2664,7 +2664,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_my_dynamic_entities_serialize(
+        _param = self._get_my_dynamic_entities_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2672,7 +2672,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAvailablePersonalDynamicEntities200Response",
+            '200': "GetAvailablePersonalDynamicEntities200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2682,7 +2682,7 @@ class DynamicEntityManageApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_my_dynamic_entities_serialize(
+    def _get_my_dynamic_entities_serialize(
         self,
         _request_auth,
         _content_type,
@@ -2746,7 +2746,7 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_system_dynamic_entities(
+    def get_system_dynamic_entities(
         self,
         _request_timeout: Union[
             None,
@@ -2760,7 +2760,7 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetSystemDynamicEntities200Response:
+    ) -> GetSystemDynamicEntities200Response:
         """Get System Dynamic Entities
 
         <p>Get all System Dynamic Entities with record counts.</p> <p>Each dynamic entity in the response includes a <code>record_count</code> field showing how many data records exist for that entity.</p> <p>This v6.0.0 endpoint returns snake_case field names and an explicit <code>entity_name</code> field.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -2787,7 +2787,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_system_dynamic_entities_serialize(
+        _param = self._get_system_dynamic_entities_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2795,7 +2795,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetSystemDynamicEntities200Response",
+            '200': "GetSystemDynamicEntities200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2810,7 +2810,7 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_system_dynamic_entities_with_http_info(
+    def get_system_dynamic_entities_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -2824,7 +2824,7 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetSystemDynamicEntities200Response]:
+    ) -> ApiResponse[GetSystemDynamicEntities200Response]:
         """Get System Dynamic Entities
 
         <p>Get all System Dynamic Entities with record counts.</p> <p>Each dynamic entity in the response includes a <code>record_count</code> field showing how many data records exist for that entity.</p> <p>This v6.0.0 endpoint returns snake_case field names and an explicit <code>entity_name</code> field.</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -2851,7 +2851,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_system_dynamic_entities_serialize(
+        _param = self._get_system_dynamic_entities_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2859,7 +2859,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetSystemDynamicEntities200Response",
+            '200': "GetSystemDynamicEntities200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2874,7 +2874,7 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_system_dynamic_entities_without_preload_content(
+    def get_system_dynamic_entities_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -2915,7 +2915,7 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_system_dynamic_entities_serialize(
+        _param = self._get_system_dynamic_entities_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2923,7 +2923,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetSystemDynamicEntities200Response",
+            '200': "GetSystemDynamicEntities200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2933,7 +2933,7 @@ class DynamicEntityManageApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_system_dynamic_entities_serialize(
+    def _get_system_dynamic_entities_serialize(
         self,
         _request_auth,
         _content_type,
@@ -2997,11 +2997,11 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_bank_level_dynamic_entity(
+    def update_bank_level_dynamic_entity(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        obpv600_update_system_dynamic_entity_request: Annotated[OBPv600UpdateSystemDynamicEntityRequest, Field(description="Request body")],
+        update_system_dynamic_entity_request: Annotated[UpdateSystemDynamicEntityRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3014,7 +3014,7 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600UpdateBankLevelDynamicEntity200Response:
+    ) -> UpdateBankLevelDynamicEntity200Response:
         """Update Bank Level Dynamic Entity
 
         <p>Update a bank level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences updated&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;},       &quot;notifications_enabled&quot;: {&quot;type&quot;: &quot;boolean&quot;, &quot;example&quot;: &quot;true&quot;, &quot;description&quot;: &quot;Whether to send notifications&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -3023,8 +3023,8 @@ class DynamicEntityManageApi:
         :type bankid: str
         :param dynamicentityid: The DYNAMICENTITYID identifier (required)
         :type dynamicentityid: str
-        :param obpv600_update_system_dynamic_entity_request: Request body (required)
-        :type obpv600_update_system_dynamic_entity_request: OBPv600UpdateSystemDynamicEntityRequest
+        :param update_system_dynamic_entity_request: Request body (required)
+        :type update_system_dynamic_entity_request: UpdateSystemDynamicEntityRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3047,10 +3047,10 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_bank_level_dynamic_entity_serialize(
+        _param = self._update_bank_level_dynamic_entity_serialize(
             bankid=bankid,
             dynamicentityid=dynamicentityid,
-            obpv600_update_system_dynamic_entity_request=obpv600_update_system_dynamic_entity_request,
+            update_system_dynamic_entity_request=update_system_dynamic_entity_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3058,7 +3058,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600UpdateBankLevelDynamicEntity200Response",
+            '200': "UpdateBankLevelDynamicEntity200Response",
             '404': None,
             '500': None,
         }
@@ -3074,11 +3074,11 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_bank_level_dynamic_entity_with_http_info(
+    def update_bank_level_dynamic_entity_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        obpv600_update_system_dynamic_entity_request: Annotated[OBPv600UpdateSystemDynamicEntityRequest, Field(description="Request body")],
+        update_system_dynamic_entity_request: Annotated[UpdateSystemDynamicEntityRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3091,7 +3091,7 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600UpdateBankLevelDynamicEntity200Response]:
+    ) -> ApiResponse[UpdateBankLevelDynamicEntity200Response]:
         """Update Bank Level Dynamic Entity
 
         <p>Update a bank level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences updated&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;},       &quot;notifications_enabled&quot;: {&quot;type&quot;: &quot;boolean&quot;, &quot;example&quot;: &quot;true&quot;, &quot;description&quot;: &quot;Whether to send notifications&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -3100,8 +3100,8 @@ class DynamicEntityManageApi:
         :type bankid: str
         :param dynamicentityid: The DYNAMICENTITYID identifier (required)
         :type dynamicentityid: str
-        :param obpv600_update_system_dynamic_entity_request: Request body (required)
-        :type obpv600_update_system_dynamic_entity_request: OBPv600UpdateSystemDynamicEntityRequest
+        :param update_system_dynamic_entity_request: Request body (required)
+        :type update_system_dynamic_entity_request: UpdateSystemDynamicEntityRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3124,10 +3124,10 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_bank_level_dynamic_entity_serialize(
+        _param = self._update_bank_level_dynamic_entity_serialize(
             bankid=bankid,
             dynamicentityid=dynamicentityid,
-            obpv600_update_system_dynamic_entity_request=obpv600_update_system_dynamic_entity_request,
+            update_system_dynamic_entity_request=update_system_dynamic_entity_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3135,7 +3135,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600UpdateBankLevelDynamicEntity200Response",
+            '200': "UpdateBankLevelDynamicEntity200Response",
             '404': None,
             '500': None,
         }
@@ -3151,11 +3151,11 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_bank_level_dynamic_entity_without_preload_content(
+    def update_bank_level_dynamic_entity_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        obpv600_update_system_dynamic_entity_request: Annotated[OBPv600UpdateSystemDynamicEntityRequest, Field(description="Request body")],
+        update_system_dynamic_entity_request: Annotated[UpdateSystemDynamicEntityRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3177,8 +3177,8 @@ class DynamicEntityManageApi:
         :type bankid: str
         :param dynamicentityid: The DYNAMICENTITYID identifier (required)
         :type dynamicentityid: str
-        :param obpv600_update_system_dynamic_entity_request: Request body (required)
-        :type obpv600_update_system_dynamic_entity_request: OBPv600UpdateSystemDynamicEntityRequest
+        :param update_system_dynamic_entity_request: Request body (required)
+        :type update_system_dynamic_entity_request: UpdateSystemDynamicEntityRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3201,10 +3201,10 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_bank_level_dynamic_entity_serialize(
+        _param = self._update_bank_level_dynamic_entity_serialize(
             bankid=bankid,
             dynamicentityid=dynamicentityid,
-            obpv600_update_system_dynamic_entity_request=obpv600_update_system_dynamic_entity_request,
+            update_system_dynamic_entity_request=update_system_dynamic_entity_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3212,7 +3212,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600UpdateBankLevelDynamicEntity200Response",
+            '200': "UpdateBankLevelDynamicEntity200Response",
             '404': None,
             '500': None,
         }
@@ -3223,11 +3223,11 @@ class DynamicEntityManageApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_update_bank_level_dynamic_entity_serialize(
+    def _update_bank_level_dynamic_entity_serialize(
         self,
         bankid,
         dynamicentityid,
-        obpv600_update_system_dynamic_entity_request,
+        update_system_dynamic_entity_request,
         _request_auth,
         _content_type,
         _headers,
@@ -3257,8 +3257,8 @@ class DynamicEntityManageApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_update_system_dynamic_entity_request is not None:
-            _body_params = obpv600_update_system_dynamic_entity_request
+        if update_system_dynamic_entity_request is not None:
+            _body_params = update_system_dynamic_entity_request
 
 
         # set the HTTP header `Accept`
@@ -3309,10 +3309,10 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_my_dynamic_entity(
+    def update_my_dynamic_entity(
         self,
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        obpv600_update_system_dynamic_entity_request: Annotated[OBPv600UpdateSystemDynamicEntityRequest, Field(description="Request body")],
+        update_system_dynamic_entity_request: Annotated[UpdateSystemDynamicEntityRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3325,15 +3325,15 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600UpdateSystemDynamicEntity200Response:
+    ) -> UpdateSystemDynamicEntity200Response:
         """Update My Dynamic Entity
 
         <p>Update a Dynamic Entity that I created.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences updated&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;},       &quot;notifications_enabled&quot;: {&quot;type&quot;: &quot;boolean&quot;, &quot;example&quot;: &quot;true&quot;, &quot;description&quot;: &quot;Whether to send notifications&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
 
         :param dynamicentityid: The DYNAMICENTITYID identifier (required)
         :type dynamicentityid: str
-        :param obpv600_update_system_dynamic_entity_request: Request body (required)
-        :type obpv600_update_system_dynamic_entity_request: OBPv600UpdateSystemDynamicEntityRequest
+        :param update_system_dynamic_entity_request: Request body (required)
+        :type update_system_dynamic_entity_request: UpdateSystemDynamicEntityRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3356,9 +3356,9 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_my_dynamic_entity_serialize(
+        _param = self._update_my_dynamic_entity_serialize(
             dynamicentityid=dynamicentityid,
-            obpv600_update_system_dynamic_entity_request=obpv600_update_system_dynamic_entity_request,
+            update_system_dynamic_entity_request=update_system_dynamic_entity_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3366,7 +3366,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600UpdateSystemDynamicEntity200Response",
+            '200': "UpdateSystemDynamicEntity200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -3381,10 +3381,10 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_my_dynamic_entity_with_http_info(
+    def update_my_dynamic_entity_with_http_info(
         self,
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        obpv600_update_system_dynamic_entity_request: Annotated[OBPv600UpdateSystemDynamicEntityRequest, Field(description="Request body")],
+        update_system_dynamic_entity_request: Annotated[UpdateSystemDynamicEntityRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3397,15 +3397,15 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600UpdateSystemDynamicEntity200Response]:
+    ) -> ApiResponse[UpdateSystemDynamicEntity200Response]:
         """Update My Dynamic Entity
 
         <p>Update a Dynamic Entity that I created.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences updated&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;},       &quot;notifications_enabled&quot;: {&quot;type&quot;: &quot;boolean&quot;, &quot;example&quot;: &quot;true&quot;, &quot;description&quot;: &quot;Whether to send notifications&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
 
         :param dynamicentityid: The DYNAMICENTITYID identifier (required)
         :type dynamicentityid: str
-        :param obpv600_update_system_dynamic_entity_request: Request body (required)
-        :type obpv600_update_system_dynamic_entity_request: OBPv600UpdateSystemDynamicEntityRequest
+        :param update_system_dynamic_entity_request: Request body (required)
+        :type update_system_dynamic_entity_request: UpdateSystemDynamicEntityRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3428,9 +3428,9 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_my_dynamic_entity_serialize(
+        _param = self._update_my_dynamic_entity_serialize(
             dynamicentityid=dynamicentityid,
-            obpv600_update_system_dynamic_entity_request=obpv600_update_system_dynamic_entity_request,
+            update_system_dynamic_entity_request=update_system_dynamic_entity_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3438,7 +3438,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600UpdateSystemDynamicEntity200Response",
+            '200': "UpdateSystemDynamicEntity200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -3453,10 +3453,10 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_my_dynamic_entity_without_preload_content(
+    def update_my_dynamic_entity_without_preload_content(
         self,
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        obpv600_update_system_dynamic_entity_request: Annotated[OBPv600UpdateSystemDynamicEntityRequest, Field(description="Request body")],
+        update_system_dynamic_entity_request: Annotated[UpdateSystemDynamicEntityRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3476,8 +3476,8 @@ class DynamicEntityManageApi:
 
         :param dynamicentityid: The DYNAMICENTITYID identifier (required)
         :type dynamicentityid: str
-        :param obpv600_update_system_dynamic_entity_request: Request body (required)
-        :type obpv600_update_system_dynamic_entity_request: OBPv600UpdateSystemDynamicEntityRequest
+        :param update_system_dynamic_entity_request: Request body (required)
+        :type update_system_dynamic_entity_request: UpdateSystemDynamicEntityRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3500,9 +3500,9 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_my_dynamic_entity_serialize(
+        _param = self._update_my_dynamic_entity_serialize(
             dynamicentityid=dynamicentityid,
-            obpv600_update_system_dynamic_entity_request=obpv600_update_system_dynamic_entity_request,
+            update_system_dynamic_entity_request=update_system_dynamic_entity_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3510,7 +3510,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600UpdateSystemDynamicEntity200Response",
+            '200': "UpdateSystemDynamicEntity200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -3520,10 +3520,10 @@ class DynamicEntityManageApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_update_my_dynamic_entity_serialize(
+    def _update_my_dynamic_entity_serialize(
         self,
         dynamicentityid,
-        obpv600_update_system_dynamic_entity_request,
+        update_system_dynamic_entity_request,
         _request_auth,
         _content_type,
         _headers,
@@ -3551,8 +3551,8 @@ class DynamicEntityManageApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_update_system_dynamic_entity_request is not None:
-            _body_params = obpv600_update_system_dynamic_entity_request
+        if update_system_dynamic_entity_request is not None:
+            _body_params = update_system_dynamic_entity_request
 
 
         # set the HTTP header `Accept`
@@ -3603,10 +3603,10 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_system_dynamic_entity(
+    def update_system_dynamic_entity(
         self,
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        obpv600_update_system_dynamic_entity_request: Annotated[OBPv600UpdateSystemDynamicEntityRequest, Field(description="Request body")],
+        update_system_dynamic_entity_request: Annotated[UpdateSystemDynamicEntityRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3619,15 +3619,15 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600UpdateSystemDynamicEntity200Response:
+    ) -> UpdateSystemDynamicEntity200Response:
         """Update System Level Dynamic Entity
 
         <p>Update a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences updated&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;},       &quot;notifications_enabled&quot;: {&quot;type&quot;: &quot;boolean&quot;, &quot;example&quot;: &quot;true&quot;, &quot;description&quot;: &quot;Whether to send notifications&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
 
         :param dynamicentityid: The DYNAMICENTITYID identifier (required)
         :type dynamicentityid: str
-        :param obpv600_update_system_dynamic_entity_request: Request body (required)
-        :type obpv600_update_system_dynamic_entity_request: OBPv600UpdateSystemDynamicEntityRequest
+        :param update_system_dynamic_entity_request: Request body (required)
+        :type update_system_dynamic_entity_request: UpdateSystemDynamicEntityRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3650,9 +3650,9 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_system_dynamic_entity_serialize(
+        _param = self._update_system_dynamic_entity_serialize(
             dynamicentityid=dynamicentityid,
-            obpv600_update_system_dynamic_entity_request=obpv600_update_system_dynamic_entity_request,
+            update_system_dynamic_entity_request=update_system_dynamic_entity_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3660,7 +3660,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600UpdateSystemDynamicEntity200Response",
+            '200': "UpdateSystemDynamicEntity200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -3675,10 +3675,10 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_system_dynamic_entity_with_http_info(
+    def update_system_dynamic_entity_with_http_info(
         self,
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        obpv600_update_system_dynamic_entity_request: Annotated[OBPv600UpdateSystemDynamicEntityRequest, Field(description="Request body")],
+        update_system_dynamic_entity_request: Annotated[UpdateSystemDynamicEntityRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3691,15 +3691,15 @@ class DynamicEntityManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600UpdateSystemDynamicEntity200Response]:
+    ) -> ApiResponse[UpdateSystemDynamicEntity200Response]:
         """Update System Level Dynamic Entity
 
         <p>Update a system level Dynamic Entity.</p> <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p> <p><strong>Request format:</strong></p> <pre><code class=\"language-json\">{   &quot;entity_name&quot;: &quot;customer_preferences&quot;,   &quot;has_personal_entity&quot;: true,   &quot;has_public_access&quot;: false,   &quot;has_community_access&quot;: false,   &quot;personal_requires_role&quot;: false,   &quot;schema&quot;: {     &quot;description&quot;: &quot;User preferences updated&quot;,     &quot;required&quot;: [&quot;theme&quot;],     &quot;properties&quot;: {       &quot;theme&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 1, &quot;maxLength&quot;: 20, &quot;example&quot;: &quot;dark&quot;, &quot;description&quot;: &quot;The UI theme preference&quot;},       &quot;language&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;minLength&quot;: 2, &quot;maxLength&quot;: 5, &quot;example&quot;: &quot;en&quot;, &quot;description&quot;: &quot;ISO language code&quot;},       &quot;notifications_enabled&quot;: {&quot;type&quot;: &quot;boolean&quot;, &quot;example&quot;: &quot;true&quot;, &quot;description&quot;: &quot;Whether to send notifications&quot;}     }   } } </code></pre> <p><strong>Note:</strong><br /> * The <code>entity_name</code> must be lowercase with underscores (snake_case), e.g. <code>customer_preferences</code>. No uppercase letters or spaces allowed.<br /> * Each property can optionally include <code>description</code> (markdown text), and for string types: <code>minLength</code> and <code>maxLength</code>.<br /> * Set <code>has_public_access</code> to <code>true</code> to generate read-only public endpoints (GET only, no authentication required) under <code>/public/</code>.<br /> * Set <code>has_community_access</code> to <code>true</code> to generate read-only community endpoints (GET only, authentication required + CanGet role) under <code>/community/</code>. Community endpoints return ALL records (personal + non-personal from all users).<br /> * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p> <p>For more information see <a href=\"/glossary#Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
 
         :param dynamicentityid: The DYNAMICENTITYID identifier (required)
         :type dynamicentityid: str
-        :param obpv600_update_system_dynamic_entity_request: Request body (required)
-        :type obpv600_update_system_dynamic_entity_request: OBPv600UpdateSystemDynamicEntityRequest
+        :param update_system_dynamic_entity_request: Request body (required)
+        :type update_system_dynamic_entity_request: UpdateSystemDynamicEntityRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3722,9 +3722,9 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_system_dynamic_entity_serialize(
+        _param = self._update_system_dynamic_entity_serialize(
             dynamicentityid=dynamicentityid,
-            obpv600_update_system_dynamic_entity_request=obpv600_update_system_dynamic_entity_request,
+            update_system_dynamic_entity_request=update_system_dynamic_entity_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3732,7 +3732,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600UpdateSystemDynamicEntity200Response",
+            '200': "UpdateSystemDynamicEntity200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -3747,10 +3747,10 @@ class DynamicEntityManageApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_system_dynamic_entity_without_preload_content(
+    def update_system_dynamic_entity_without_preload_content(
         self,
         dynamicentityid: Annotated[StrictStr, Field(description="The DYNAMICENTITYID identifier")],
-        obpv600_update_system_dynamic_entity_request: Annotated[OBPv600UpdateSystemDynamicEntityRequest, Field(description="Request body")],
+        update_system_dynamic_entity_request: Annotated[UpdateSystemDynamicEntityRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3770,8 +3770,8 @@ class DynamicEntityManageApi:
 
         :param dynamicentityid: The DYNAMICENTITYID identifier (required)
         :type dynamicentityid: str
-        :param obpv600_update_system_dynamic_entity_request: Request body (required)
-        :type obpv600_update_system_dynamic_entity_request: OBPv600UpdateSystemDynamicEntityRequest
+        :param update_system_dynamic_entity_request: Request body (required)
+        :type update_system_dynamic_entity_request: UpdateSystemDynamicEntityRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3794,9 +3794,9 @@ class DynamicEntityManageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_system_dynamic_entity_serialize(
+        _param = self._update_system_dynamic_entity_serialize(
             dynamicentityid=dynamicentityid,
-            obpv600_update_system_dynamic_entity_request=obpv600_update_system_dynamic_entity_request,
+            update_system_dynamic_entity_request=update_system_dynamic_entity_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3804,7 +3804,7 @@ class DynamicEntityManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600UpdateSystemDynamicEntity200Response",
+            '200': "UpdateSystemDynamicEntity200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -3814,10 +3814,10 @@ class DynamicEntityManageApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_update_system_dynamic_entity_serialize(
+    def _update_system_dynamic_entity_serialize(
         self,
         dynamicentityid,
-        obpv600_update_system_dynamic_entity_request,
+        update_system_dynamic_entity_request,
         _request_auth,
         _content_type,
         _headers,
@@ -3845,8 +3845,8 @@ class DynamicEntityManageApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_update_system_dynamic_entity_request is not None:
-            _body_params = obpv600_update_system_dynamic_entity_request
+        if update_system_dynamic_entity_request is not None:
+            _body_params = update_system_dynamic_entity_request
 
 
         # set the HTTP header `Accept`

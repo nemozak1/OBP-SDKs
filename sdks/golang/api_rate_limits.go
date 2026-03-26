@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,17 +24,182 @@ import (
 // RateLimitsAPIService RateLimitsAPI service
 type RateLimitsAPIService service
 
-type ApiOBPv310GetRateLimitingInfoRequest struct {
+type ApiCallsLimitRequest struct {
+	ctx context.Context
+	ApiService *RateLimitsAPIService
+	consumerid string
+	updateRateLimitsRequest *UpdateRateLimitsRequest
+}
+
+// Request body
+func (r ApiCallsLimitRequest) UpdateRateLimitsRequest(updateRateLimitsRequest UpdateRateLimitsRequest) ApiCallsLimitRequest {
+	r.updateRateLimitsRequest = &updateRateLimitsRequest
+	return r
+}
+
+func (r ApiCallsLimitRequest) Execute() (*UpdateRateLimitsRequest, *http.Response, error) {
+	return r.ApiService.CallsLimitExecute(r)
+}
+
+/*
+CallsLimit Set Rate Limits / Call Limits per Consumer
+
+<p>Set the API rate limits / call limits for a Consumer:</p>
+<p>Rate limiting can be set:</p>
+<p>Per Second<br />
+Per Minute<br />
+Per Hour<br />
+Per Week<br />
+Per Month</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#from_date"><strong>from_date</strong></a>: 1100-01-01T01:01:01.000Z</p>
+<p><a href="/glossary#per_day_call_limit"><strong>per_day_call_limit</strong></a>:</p>
+<p><a href="/glossary#per_hour_call_limit"><strong>per_hour_call_limit</strong></a>:</p>
+<p><a href="/glossary#per_minute_call_limit"><strong>per_minute_call_limit</strong></a>:</p>
+<p><a href="/glossary#per_month_call_limit"><strong>per_month_call_limit</strong></a>:</p>
+<p><a href="/glossary#per_second_call_limit"><strong>per_second_call_limit</strong></a>: 10</p>
+<p><a href="/glossary#per_week_call_limit"><strong>per_week_call_limit</strong></a>:</p>
+<p><a href="/glossary#to_date"><strong>to_date</strong></a>: 1100-01-01T01:01:01.000Z</p>
+<p><a href="/glossary#">api_name</a>: api_name</p>
+<p><a href="/glossary#api_version">api_version</a>:</p>
+<p><a href="/glossary#">bank_id</a>: gh.29.uk</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param consumerid The CONSUMERID identifier
+ @return ApiCallsLimitRequest
+*/
+func (a *RateLimitsAPIService) CallsLimit(ctx context.Context, consumerid string) ApiCallsLimitRequest {
+	return ApiCallsLimitRequest{
+		ApiService: a,
+		ctx: ctx,
+		consumerid: consumerid,
+	}
+}
+
+// Execute executes the request
+//  @return UpdateRateLimitsRequest
+func (a *RateLimitsAPIService) CallsLimitExecute(r ApiCallsLimitRequest) (*UpdateRateLimitsRequest, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UpdateRateLimitsRequest
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RateLimitsAPIService.CallsLimit")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits"
+	localVarPath = strings.Replace(localVarPath, "{"+"consumerid"+"}", url.PathEscape(parameterValueToString(r.consumerid, "consumerid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateRateLimitsRequest == nil {
+		return localVarReturnValue, nil, reportError("updateRateLimitsRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateRateLimitsRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetRateLimitingInfoRequest struct {
 	ctx context.Context
 	ApiService *RateLimitsAPIService
 }
 
-func (r ApiOBPv310GetRateLimitingInfoRequest) Execute() (*OBPv310GetRateLimitingInfo200Response, *http.Response, error) {
-	return r.ApiService.OBPv310GetRateLimitingInfoExecute(r)
+func (r ApiGetRateLimitingInfoRequest) Execute() (*GetRateLimitingInfo200Response, *http.Response, error) {
+	return r.ApiService.GetRateLimitingInfoExecute(r)
 }
 
 /*
-OBPv310GetRateLimitingInfo Get Rate Limiting Info
+GetRateLimitingInfo Get Rate Limiting Info
 
 <p>Get information about the Rate Limiting setup on this OBP Instance such as:</p>
 <p>Is rate limiting enabled and active?<br />
@@ -50,26 +215,26 @@ What backend is used to keep track of the API calls (e.g. REDIS).</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv310GetRateLimitingInfoRequest
+ @return ApiGetRateLimitingInfoRequest
 */
-func (a *RateLimitsAPIService) OBPv310GetRateLimitingInfo(ctx context.Context) ApiOBPv310GetRateLimitingInfoRequest {
-	return ApiOBPv310GetRateLimitingInfoRequest{
+func (a *RateLimitsAPIService) GetRateLimitingInfo(ctx context.Context) ApiGetRateLimitingInfoRequest {
+	return ApiGetRateLimitingInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv310GetRateLimitingInfo200Response
-func (a *RateLimitsAPIService) OBPv310GetRateLimitingInfoExecute(r ApiOBPv310GetRateLimitingInfoRequest) (*OBPv310GetRateLimitingInfo200Response, *http.Response, error) {
+//  @return GetRateLimitingInfo200Response
+func (a *RateLimitsAPIService) GetRateLimitingInfoExecute(r ApiGetRateLimitingInfoRequest) (*GetRateLimitingInfo200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetRateLimitingInfo200Response
+		localVarReturnValue  *GetRateLimitingInfo200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RateLimitsAPIService.OBPv310GetRateLimitingInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RateLimitsAPIService.GetRateLimitingInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +286,7 @@ func (a *RateLimitsAPIService) OBPv310GetRateLimitingInfoExecute(r ApiOBPv310Get
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -162,191 +327,26 @@ func (a *RateLimitsAPIService) OBPv310GetRateLimitingInfoExecute(r ApiOBPv310Get
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CallsLimitRequest struct {
-	ctx context.Context
-	ApiService *RateLimitsAPIService
-	consumerid string
-	oBPv600UpdateRateLimitsRequest *OBPv600UpdateRateLimitsRequest
-}
-
-// Request body
-func (r ApiOBPv400CallsLimitRequest) OBPv600UpdateRateLimitsRequest(oBPv600UpdateRateLimitsRequest OBPv600UpdateRateLimitsRequest) ApiOBPv400CallsLimitRequest {
-	r.oBPv600UpdateRateLimitsRequest = &oBPv600UpdateRateLimitsRequest
-	return r
-}
-
-func (r ApiOBPv400CallsLimitRequest) Execute() (*OBPv600UpdateRateLimitsRequest, *http.Response, error) {
-	return r.ApiService.OBPv400CallsLimitExecute(r)
-}
-
-/*
-OBPv400CallsLimit Set Rate Limits / Call Limits per Consumer
-
-<p>Set the API rate limits / call limits for a Consumer:</p>
-<p>Rate limiting can be set:</p>
-<p>Per Second<br />
-Per Minute<br />
-Per Hour<br />
-Per Week<br />
-Per Month</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#from_date"><strong>from_date</strong></a>: 1100-01-01T01:01:01.000Z</p>
-<p><a href="/glossary#per_day_call_limit"><strong>per_day_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_hour_call_limit"><strong>per_hour_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_minute_call_limit"><strong>per_minute_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_month_call_limit"><strong>per_month_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_second_call_limit"><strong>per_second_call_limit</strong></a>: 10</p>
-<p><a href="/glossary#per_week_call_limit"><strong>per_week_call_limit</strong></a>:</p>
-<p><a href="/glossary#to_date"><strong>to_date</strong></a>: 1100-01-01T01:01:01.000Z</p>
-<p><a href="/glossary#">api_name</a>: api_name</p>
-<p><a href="/glossary#api_version">api_version</a>:</p>
-<p><a href="/glossary#">bank_id</a>: gh.29.uk</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param consumerid The CONSUMERID identifier
- @return ApiOBPv400CallsLimitRequest
-*/
-func (a *RateLimitsAPIService) OBPv400CallsLimit(ctx context.Context, consumerid string) ApiOBPv400CallsLimitRequest {
-	return ApiOBPv400CallsLimitRequest{
-		ApiService: a,
-		ctx: ctx,
-		consumerid: consumerid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600UpdateRateLimitsRequest
-func (a *RateLimitsAPIService) OBPv400CallsLimitExecute(r ApiOBPv400CallsLimitRequest) (*OBPv600UpdateRateLimitsRequest, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600UpdateRateLimitsRequest
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RateLimitsAPIService.OBPv400CallsLimit")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits"
-	localVarPath = strings.Replace(localVarPath, "{"+"consumerid"+"}", url.PathEscape(parameterValueToString(r.consumerid, "consumerid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv600UpdateRateLimitsRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600UpdateRateLimitsRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv600UpdateRateLimitsRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600UpdateRateLimitsRequest struct {
+type ApiUpdateRateLimitsRequest struct {
 	ctx context.Context
 	ApiService *RateLimitsAPIService
 	consumerid string
 	ratelimitingid string
-	oBPv600UpdateRateLimitsRequest *OBPv600UpdateRateLimitsRequest
+	updateRateLimitsRequest *UpdateRateLimitsRequest
 }
 
 // Request body
-func (r ApiOBPv600UpdateRateLimitsRequest) OBPv600UpdateRateLimitsRequest(oBPv600UpdateRateLimitsRequest OBPv600UpdateRateLimitsRequest) ApiOBPv600UpdateRateLimitsRequest {
-	r.oBPv600UpdateRateLimitsRequest = &oBPv600UpdateRateLimitsRequest
+func (r ApiUpdateRateLimitsRequest) UpdateRateLimitsRequest(updateRateLimitsRequest UpdateRateLimitsRequest) ApiUpdateRateLimitsRequest {
+	r.updateRateLimitsRequest = &updateRateLimitsRequest
 	return r
 }
 
-func (r ApiOBPv600UpdateRateLimitsRequest) Execute() (*OBPv600UpdateRateLimitsRequest, *http.Response, error) {
-	return r.ApiService.OBPv600UpdateRateLimitsExecute(r)
+func (r ApiUpdateRateLimitsRequest) Execute() (*UpdateRateLimitsRequest, *http.Response, error) {
+	return r.ApiService.UpdateRateLimitsExecute(r)
 }
 
 /*
-OBPv600UpdateRateLimits Set Rate Limits / Call Limits per Consumer
+UpdateRateLimits Set Rate Limits / Call Limits per Consumer
 
 <p>Set the API rate limits / call limits for a Consumer:</p>
 <p>Rate limiting can be set:</p>
@@ -376,10 +376,10 @@ Per Month</p>
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param consumerid The CONSUMERID identifier
  @param ratelimitingid The RATELIMITINGID identifier
- @return ApiOBPv600UpdateRateLimitsRequest
+ @return ApiUpdateRateLimitsRequest
 */
-func (a *RateLimitsAPIService) OBPv600UpdateRateLimits(ctx context.Context, consumerid string, ratelimitingid string) ApiOBPv600UpdateRateLimitsRequest {
-	return ApiOBPv600UpdateRateLimitsRequest{
+func (a *RateLimitsAPIService) UpdateRateLimits(ctx context.Context, consumerid string, ratelimitingid string) ApiUpdateRateLimitsRequest {
+	return ApiUpdateRateLimitsRequest{
 		ApiService: a,
 		ctx: ctx,
 		consumerid: consumerid,
@@ -388,16 +388,16 @@ func (a *RateLimitsAPIService) OBPv600UpdateRateLimits(ctx context.Context, cons
 }
 
 // Execute executes the request
-//  @return OBPv600UpdateRateLimitsRequest
-func (a *RateLimitsAPIService) OBPv600UpdateRateLimitsExecute(r ApiOBPv600UpdateRateLimitsRequest) (*OBPv600UpdateRateLimitsRequest, *http.Response, error) {
+//  @return UpdateRateLimitsRequest
+func (a *RateLimitsAPIService) UpdateRateLimitsExecute(r ApiUpdateRateLimitsRequest) (*UpdateRateLimitsRequest, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600UpdateRateLimitsRequest
+		localVarReturnValue  *UpdateRateLimitsRequest
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RateLimitsAPIService.OBPv600UpdateRateLimits")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RateLimitsAPIService.UpdateRateLimits")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -409,8 +409,8 @@ func (a *RateLimitsAPIService) OBPv600UpdateRateLimitsExecute(r ApiOBPv600Update
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600UpdateRateLimitsRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600UpdateRateLimitsRequest is required and must be specified")
+	if r.updateRateLimitsRequest == nil {
+		return localVarReturnValue, nil, reportError("updateRateLimitsRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -431,7 +431,7 @@ func (a *RateLimitsAPIService) OBPv600UpdateRateLimitsExecute(r ApiOBPv600Update
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600UpdateRateLimitsRequest
+	localVarPostBody = r.updateRateLimitsRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -456,7 +456,7 @@ func (a *RateLimitsAPIService) OBPv600UpdateRateLimitsExecute(r ApiOBPv600Update
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

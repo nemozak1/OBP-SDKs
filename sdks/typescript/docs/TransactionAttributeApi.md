@@ -1,22 +1,22 @@
 # TransactionAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateOrUpdateTransactionAttributeDefinition**](TransactionAttributeApi.md#obpv400createorupdatetransactionattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition |
-| [**oBPv400CreateTransactionAttribute**](TransactionAttributeApi.md#obpv400createtransactionattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute |
-| [**oBPv400DeleteTransactionAttributeDefinition**](TransactionAttributeApi.md#obpv400deletetransactionattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition |
-| [**oBPv400GetTransactionAttributeById**](TransactionAttributeApi.md#obpv400gettransactionattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id |
-| [**oBPv400GetTransactionAttributeDefinition**](TransactionAttributeApi.md#obpv400gettransactionattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition |
-| [**oBPv400GetTransactionAttributes**](TransactionAttributeApi.md#obpv400gettransactionattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes |
-| [**oBPv400UpdateTransactionAttribute**](TransactionAttributeApi.md#obpv400updatetransactionattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute |
+| [**createOrUpdateTransactionAttributeDefinition**](TransactionAttributeApi.md#createorupdatetransactionattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition |
+| [**createTransactionAttribute**](TransactionAttributeApi.md#createtransactionattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute |
+| [**deleteTransactionAttributeDefinition**](TransactionAttributeApi.md#deletetransactionattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition |
+| [**getTransactionAttributeById**](TransactionAttributeApi.md#gettransactionattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id |
+| [**getTransactionAttributeDefinition**](TransactionAttributeApi.md#gettransactionattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition |
+| [**getTransactionAttributes**](TransactionAttributeApi.md#gettransactionattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes |
+| [**updateTransactionAttribute**](TransactionAttributeApi.md#updatetransactionattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute |
 
 
 
-## oBPv400CreateOrUpdateTransactionAttributeDefinition
+## createOrUpdateTransactionAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateTransactionAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateTransactionAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Transaction Attribute Definition
 
@@ -29,7 +29,7 @@ import {
   Configuration,
   TransactionAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400CreateOrUpdateTransactionAttributeDefinitionRequest } from 'obp-typescript';
+import type { CreateOrUpdateTransactionAttributeDefinitionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -46,12 +46,12 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-    // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
-    oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}},
-  } satisfies OBPv400CreateOrUpdateTransactionAttributeDefinitionRequest;
+    // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+    createOrUpdateTransactionRequestAttributeDefinitionRequest: {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}},
+  } satisfies CreateOrUpdateTransactionAttributeDefinitionRequest;
 
   try {
-    const data = await api.oBPv400CreateOrUpdateTransactionAttributeDefinition(body);
+    const data = await api.createOrUpdateTransactionAttributeDefinition(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -68,11 +68,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
-| **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | |
+| **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [CreateOrUpdateTransactionRequestAttributeDefinitionRequest](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -94,9 +94,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400CreateTransactionAttribute
+## createTransactionAttribute
 
-> OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems oBPv400CreateTransactionAttribute(bankid, accountid, transactionid, oBPv600CreatePersonalDataFieldRequest)
+> GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner createTransactionAttribute(bankid, accountid, transactionid, createPersonalDataFieldRequest)
 
 Create Transaction Attribute
 
@@ -109,7 +109,7 @@ import {
   Configuration,
   TransactionAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400CreateTransactionAttributeRequest } from 'obp-typescript';
+import type { CreateTransactionAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -130,12 +130,12 @@ async function example() {
     accountid: accountid_example,
     // string | The TRANSACTIONID identifier
     transactionid: transactionid_example,
-    // OBPv600CreatePersonalDataFieldRequest | Request body
-    oBPv600CreatePersonalDataFieldRequest: {type=object, properties={name={type=string}, type={type=string}, value={type=string}}},
-  } satisfies OBPv400CreateTransactionAttributeRequest;
+    // CreatePersonalDataFieldRequest | Request body
+    createPersonalDataFieldRequest: {type=object, properties={name={type=string}, type={type=string}, value={type=string}}},
+  } satisfies CreateTransactionAttributeRequest;
 
   try {
-    const data = await api.oBPv400CreateTransactionAttribute(body);
+    const data = await api.createTransactionAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -154,11 +154,11 @@ example().catch(console.error);
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
 | **transactionid** | `string` | The TRANSACTIONID identifier | [Defaults to `undefined`] |
-| **oBPv600CreatePersonalDataFieldRequest** | [OBPv600CreatePersonalDataFieldRequest](OBPv600CreatePersonalDataFieldRequest.md) | Request body | |
+| **createPersonalDataFieldRequest** | [CreatePersonalDataFieldRequest](CreatePersonalDataFieldRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
 
 ### Authorization
 
@@ -180,9 +180,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400DeleteTransactionAttributeDefinition
+## deleteTransactionAttributeDefinition
 
-> oBPv400DeleteTransactionAttributeDefinition(bankid, attributedefinitionid)
+> deleteTransactionAttributeDefinition(bankid, attributedefinitionid)
 
 Delete Transaction Attribute Definition
 
@@ -195,7 +195,7 @@ import {
   Configuration,
   TransactionAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400DeleteTransactionAttributeDefinitionRequest } from 'obp-typescript';
+import type { DeleteTransactionAttributeDefinitionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -214,10 +214,10 @@ async function example() {
     bankid: bankid_example,
     // string | The ATTRIBUTEDEFINITIONID identifier
     attributedefinitionid: attributedefinitionid_example,
-  } satisfies OBPv400DeleteTransactionAttributeDefinitionRequest;
+  } satisfies DeleteTransactionAttributeDefinitionRequest;
 
   try {
-    const data = await api.oBPv400DeleteTransactionAttributeDefinition(body);
+    const data = await api.deleteTransactionAttributeDefinition(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -260,9 +260,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetTransactionAttributeById
+## getTransactionAttributeById
 
-> OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems oBPv400GetTransactionAttributeById(bankid, accountid, transactionid, attributeid)
+> GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner getTransactionAttributeById(bankid, accountid, transactionid, attributeid)
 
 Get Transaction Attribute By Id
 
@@ -275,7 +275,7 @@ import {
   Configuration,
   TransactionAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400GetTransactionAttributeByIdRequest } from 'obp-typescript';
+import type { GetTransactionAttributeByIdRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -298,10 +298,10 @@ async function example() {
     transactionid: transactionid_example,
     // string | The ATTRIBUTEID identifier
     attributeid: attributeid_example,
-  } satisfies OBPv400GetTransactionAttributeByIdRequest;
+  } satisfies GetTransactionAttributeByIdRequest;
 
   try {
-    const data = await api.oBPv400GetTransactionAttributeById(body);
+    const data = await api.getTransactionAttributeById(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -324,7 +324,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
 
 ### Authorization
 
@@ -346,9 +346,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetTransactionAttributeDefinition
+## getTransactionAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200Response oBPv400GetTransactionAttributeDefinition(bankid)
+> GetTransactionRequestAttributeDefinition200Response getTransactionAttributeDefinition(bankid)
 
 Get Transaction Attribute Definition
 
@@ -361,7 +361,7 @@ import {
   Configuration,
   TransactionAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400GetTransactionAttributeDefinitionRequest } from 'obp-typescript';
+import type { GetTransactionAttributeDefinitionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -378,10 +378,10 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-  } satisfies OBPv400GetTransactionAttributeDefinitionRequest;
+  } satisfies GetTransactionAttributeDefinitionRequest;
 
   try {
-    const data = await api.oBPv400GetTransactionAttributeDefinition(body);
+    const data = await api.getTransactionAttributeDefinition(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -401,7 +401,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -423,9 +423,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetTransactionAttributes
+## getTransactionAttributes
 
-> OBPv400GetTransactionAttributes200Response oBPv400GetTransactionAttributes(bankid, accountid, transactionid)
+> GetTransactionAttributes200Response getTransactionAttributes(bankid, accountid, transactionid)
 
 Get Transaction Attributes
 
@@ -438,7 +438,7 @@ import {
   Configuration,
   TransactionAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400GetTransactionAttributesRequest } from 'obp-typescript';
+import type { GetTransactionAttributesRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -459,10 +459,10 @@ async function example() {
     accountid: accountid_example,
     // string | The TRANSACTIONID identifier
     transactionid: transactionid_example,
-  } satisfies OBPv400GetTransactionAttributesRequest;
+  } satisfies GetTransactionAttributesRequest;
 
   try {
-    const data = await api.oBPv400GetTransactionAttributes(body);
+    const data = await api.getTransactionAttributes(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -484,7 +484,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetTransactionAttributes200Response**](OBPv400GetTransactionAttributes200Response.md)
+[**GetTransactionAttributes200Response**](GetTransactionAttributes200Response.md)
 
 ### Authorization
 
@@ -506,9 +506,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400UpdateTransactionAttribute
+## updateTransactionAttribute
 
-> OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems oBPv400UpdateTransactionAttribute(bankid, accountid, transactionid, accountattributeid, oBPv600CreatePersonalDataFieldRequest)
+> GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner updateTransactionAttribute(bankid, accountid, transactionid, accountattributeid, createPersonalDataFieldRequest)
 
 Update Transaction Attribute
 
@@ -521,7 +521,7 @@ import {
   Configuration,
   TransactionAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400UpdateTransactionAttributeRequest } from 'obp-typescript';
+import type { UpdateTransactionAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -544,12 +544,12 @@ async function example() {
     transactionid: transactionid_example,
     // string | The ACCOUNTATTRIBUTEID identifier
     accountattributeid: accountattributeid_example,
-    // OBPv600CreatePersonalDataFieldRequest | Request body
-    oBPv600CreatePersonalDataFieldRequest: {type=object, properties={name={type=string}, type={type=string}, value={type=string}}},
-  } satisfies OBPv400UpdateTransactionAttributeRequest;
+    // CreatePersonalDataFieldRequest | Request body
+    createPersonalDataFieldRequest: {type=object, properties={name={type=string}, type={type=string}, value={type=string}}},
+  } satisfies UpdateTransactionAttributeRequest;
 
   try {
-    const data = await api.oBPv400UpdateTransactionAttribute(body);
+    const data = await api.updateTransactionAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -569,11 +569,11 @@ example().catch(console.error);
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
 | **transactionid** | `string` | The TRANSACTIONID identifier | [Defaults to `undefined`] |
 | **accountattributeid** | `string` | The ACCOUNTATTRIBUTEID identifier | [Defaults to `undefined`] |
-| **oBPv600CreatePersonalDataFieldRequest** | [OBPv600CreatePersonalDataFieldRequest](OBPv600CreatePersonalDataFieldRequest.md) | Request body | |
+| **createPersonalDataFieldRequest** | [CreatePersonalDataFieldRequest](CreatePersonalDataFieldRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
 
 ### Authorization
 

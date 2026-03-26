@@ -9,9 +9,9 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv510_create_bank_account_balance_request.dart';
-import 'package:obp_dart/src/model/obpv510_get_all_bank_account_balances200_response.dart';
-import 'package:obp_dart/src/model/obpv510_get_all_bank_account_balances200_response_properties_balances_items.dart';
+import 'package:obp_dart/src/model/create_bank_account_balance_request.dart';
+import 'package:obp_dart/src/model/get_all_bank_account_balances200_response.dart';
+import 'package:obp_dart/src/model/get_all_bank_account_balances200_response_balances_inner.dart';
 
 class BalanceApi {
 
@@ -27,7 +27,7 @@ class BalanceApi {
   /// Parameters:
   /// * [bankid] - The BANKID identifier
   /// * [accountid] - The ACCOUNTID identifier
-  /// * [oBPv510CreateBankAccountBalanceRequest] - Request body
+  /// * [createBankAccountBalanceRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -35,12 +35,12 @@ class BalanceApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllBankAccountBalances200ResponseBalancesInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>> oBPv510CreateBankAccountBalance({ 
+  Future<Response<GetAllBankAccountBalances200ResponseBalancesInner>> createBankAccountBalance({ 
     required String bankid,
     required String accountid,
-    required OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest,
+    required CreateBankAccountBalanceRequest createBankAccountBalanceRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -67,7 +67,7 @@ class BalanceApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -80,8 +80,8 @@ class BalanceApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv510CreateBankAccountBalanceRequest);
-      _bodyData = _serializers.serialize(oBPv510CreateBankAccountBalanceRequest, specifiedType: _type);
+      const _type = FullType(CreateBankAccountBalanceRequest);
+      _bodyData = _serializers.serialize(createBankAccountBalanceRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -104,14 +104,14 @@ class BalanceApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems? _responseData;
+    GetAllBankAccountBalances200ResponseBalancesInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems),
-      ) as OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems;
+        specifiedType: const FullType(GetAllBankAccountBalances200ResponseBalancesInner),
+      ) as GetAllBankAccountBalances200ResponseBalancesInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -123,7 +123,7 @@ class BalanceApi {
       );
     }
 
-    return Response<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>(
+    return Response<GetAllBankAccountBalances200ResponseBalancesInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -151,7 +151,7 @@ class BalanceApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv510DeleteBankAccountBalance({ 
+  Future<Response<void>> deleteBankAccountBalance({ 
     required String bankid,
     required String accountid,
     required String balanceid,
@@ -181,7 +181,7 @@ class BalanceApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -214,9 +214,9 @@ class BalanceApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv510GetAllBankAccountBalances200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllBankAccountBalances200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv510GetAllBankAccountBalances200Response>> oBPv510GetAllBankAccountBalances({ 
+  Future<Response<GetAllBankAccountBalances200Response>> getAllBankAccountBalances({ 
     required String bankid,
     required String accountid,
     CancelToken? cancelToken,
@@ -245,7 +245,7 @@ class BalanceApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -262,14 +262,14 @@ class BalanceApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv510GetAllBankAccountBalances200Response? _responseData;
+    GetAllBankAccountBalances200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv510GetAllBankAccountBalances200Response),
-      ) as OBPv510GetAllBankAccountBalances200Response;
+        specifiedType: const FullType(GetAllBankAccountBalances200Response),
+      ) as GetAllBankAccountBalances200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -281,7 +281,7 @@ class BalanceApi {
       );
     }
 
-    return Response<OBPv510GetAllBankAccountBalances200Response>(
+    return Response<GetAllBankAccountBalances200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -307,9 +307,9 @@ class BalanceApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllBankAccountBalances200ResponseBalancesInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>> oBPv510GetBankAccountBalanceById({ 
+  Future<Response<GetAllBankAccountBalances200ResponseBalancesInner>> getBankAccountBalanceById({ 
     required String bankid,
     required String accountid,
     required String balanceid,
@@ -339,7 +339,7 @@ class BalanceApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -356,14 +356,14 @@ class BalanceApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems? _responseData;
+    GetAllBankAccountBalances200ResponseBalancesInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems),
-      ) as OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems;
+        specifiedType: const FullType(GetAllBankAccountBalances200ResponseBalancesInner),
+      ) as GetAllBankAccountBalances200ResponseBalancesInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -375,7 +375,7 @@ class BalanceApi {
       );
     }
 
-    return Response<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>(
+    return Response<GetAllBankAccountBalances200ResponseBalancesInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -394,7 +394,7 @@ class BalanceApi {
   /// * [bankid] - The BANKID identifier
   /// * [accountid] - The ACCOUNTID identifier
   /// * [balanceid] - The BALANCEID identifier
-  /// * [oBPv510CreateBankAccountBalanceRequest] - Request body
+  /// * [createBankAccountBalanceRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -402,13 +402,13 @@ class BalanceApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllBankAccountBalances200ResponseBalancesInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>> oBPv510UpdateBankAccountBalance({ 
+  Future<Response<GetAllBankAccountBalances200ResponseBalancesInner>> updateBankAccountBalance({ 
     required String bankid,
     required String accountid,
     required String balanceid,
-    required OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest,
+    required CreateBankAccountBalanceRequest createBankAccountBalanceRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -435,7 +435,7 @@ class BalanceApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -448,8 +448,8 @@ class BalanceApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv510CreateBankAccountBalanceRequest);
-      _bodyData = _serializers.serialize(oBPv510CreateBankAccountBalanceRequest, specifiedType: _type);
+      const _type = FullType(CreateBankAccountBalanceRequest);
+      _bodyData = _serializers.serialize(createBankAccountBalanceRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -472,14 +472,14 @@ class BalanceApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems? _responseData;
+    GetAllBankAccountBalances200ResponseBalancesInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems),
-      ) as OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems;
+        specifiedType: const FullType(GetAllBankAccountBalances200ResponseBalancesInner),
+      ) as GetAllBankAccountBalances200ResponseBalancesInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -491,7 +491,7 @@ class BalanceApi {
       );
     }
 
-    return Response<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>(
+    return Response<GetAllBankAccountBalances200ResponseBalancesInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

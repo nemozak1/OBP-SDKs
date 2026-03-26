@@ -1,16 +1,16 @@
 # PrivateDataAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv300CorePrivateAccountsAllBanks**](PrivateDataAPI.md#obpv300coreprivateaccountsallbanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
-[**oBPv600GetAccountsAtBank**](PrivateDataAPI.md#obpv600getaccountsatbank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
+[**corePrivateAccountsAllBanks**](PrivateDataAPI.md#coreprivateaccountsallbanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
+[**getAccountsAtBank**](PrivateDataAPI.md#getaccountsatbank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
 
 
-# **oBPv300CorePrivateAccountsAllBanks**
+# **corePrivateAccountsAllBanks**
 ```swift
-    open class func oBPv300CorePrivateAccountsAllBanks(completion: @escaping (_ data: OBPv300PrivateAccountsAtOneBank200Response?, _ error: Error?) -> Void)
+    open class func corePrivateAccountsAllBanks(completion: @escaping (_ data: PrivateAccountsAtOneBank200Response?, _ error: Error?) -> Void)
 ```
 
 Get Accounts at all Banks (private)
@@ -24,7 +24,7 @@ import OBPSwift
 
 
 // Get Accounts at all Banks (private)
-PrivateDataAPI.oBPv300CorePrivateAccountsAllBanks() { (response, error) in
+PrivateDataAPI.corePrivateAccountsAllBanks() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv300PrivateAccountsAtOneBank200Response**](OBPv300PrivateAccountsAtOneBank200Response.md)
+[**PrivateAccountsAtOneBank200Response**](PrivateAccountsAtOneBank200Response.md)
 
 ### Authorization
 
@@ -54,9 +54,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAccountsAtBank**
+# **getAccountsAtBank**
 ```swift
-    open class func oBPv600GetAccountsAtBank(bankid: String, completion: @escaping (_ data: OBPv600GetAccountsAtBank200Response?, _ error: Error?) -> Void)
+    open class func getAccountsAtBank(bankid: String, completion: @escaping (_ data: GetAccountsAtBank200Response?, _ error: Error?) -> Void)
 ```
 
 Get Accounts at Bank
@@ -71,7 +71,7 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 
 // Get Accounts at Bank
-PrivateDataAPI.oBPv600GetAccountsAtBank(bankid: bankid) { (response, error) in
+PrivateDataAPI.getAccountsAtBank(bankid: bankid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAccountsAtBank200Response**](OBPv600GetAccountsAtBank200Response.md)
+[**GetAccountsAtBank200Response**](GetAccountsAtBank200Response.md)
 
 ### Authorization
 

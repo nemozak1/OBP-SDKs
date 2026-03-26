@@ -13,12 +13,12 @@ open class GroupAPI {
      Grant User Membership to Group Entitlements
      
      - parameter userid: (path) The USERID identifier 
-     - parameter oBPv600AddUserToGroupRequest: (body) Request body 
+     - parameter addUserToGroupRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600AddUserToGroup200Response
+     - returns: AddUserToGroup200Response
      */
-    open class func oBPv600AddUserToGroup(userid: String, oBPv600AddUserToGroupRequest: OBPv600AddUserToGroupRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600AddUserToGroup200Response {
-        return try await oBPv600AddUserToGroupWithRequestBuilder(userid: userid, oBPv600AddUserToGroupRequest: oBPv600AddUserToGroupRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func addUserToGroup(userid: String, addUserToGroupRequest: AddUserToGroupRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> AddUserToGroup200Response {
+        return try await addUserToGroupWithRequestBuilder(userid: userid, addUserToGroupRequest: addUserToGroupRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -32,20 +32,20 @@ open class GroupAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter userid: (path) The USERID identifier 
-     - parameter oBPv600AddUserToGroupRequest: (body) Request body 
+     - parameter addUserToGroupRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600AddUserToGroup200Response> 
+     - returns: RequestBuilder<AddUserToGroup200Response> 
      */
-    open class func oBPv600AddUserToGroupWithRequestBuilder(userid: String, oBPv600AddUserToGroupRequest: OBPv600AddUserToGroupRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600AddUserToGroup200Response> {
+    open class func addUserToGroupWithRequestBuilder(userid: String, addUserToGroupRequest: AddUserToGroupRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<AddUserToGroup200Response> {
         var localVariablePath = "/obp/v6.0.0/users/{userid}/group-entitlements"
         let useridPreEscape = "\(APIHelper.mapValueToPathItem(userid))"
         let useridPostEscape = useridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{userid}", with: useridPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600AddUserToGroupRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: addUserToGroupRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -55,7 +55,7 @@ open class GroupAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600AddUserToGroup200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<AddUserToGroup200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -63,12 +63,12 @@ open class GroupAPI {
     /**
      Create Group
      
-     - parameter oBPv600CreateGroupRequest: (body) Request body 
+     - parameter createGroupRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetGroups200ResponsePropertiesGroupsItems
+     - returns: GetGroups200ResponseGroupsInner
      */
-    open class func oBPv600CreateGroup(oBPv600CreateGroupRequest: OBPv600CreateGroupRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetGroups200ResponsePropertiesGroupsItems {
-        return try await oBPv600CreateGroupWithRequestBuilder(oBPv600CreateGroupRequest: oBPv600CreateGroupRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createGroup(createGroupRequest: CreateGroupRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetGroups200ResponseGroupsInner {
+        return try await createGroupWithRequestBuilder(createGroupRequest: createGroupRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -82,16 +82,16 @@ open class GroupAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
-     - parameter oBPv600CreateGroupRequest: (body) Request body 
+     - parameter createGroupRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetGroups200ResponsePropertiesGroupsItems> 
+     - returns: RequestBuilder<GetGroups200ResponseGroupsInner> 
      */
-    open class func oBPv600CreateGroupWithRequestBuilder(oBPv600CreateGroupRequest: OBPv600CreateGroupRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetGroups200ResponsePropertiesGroupsItems> {
+    open class func createGroupWithRequestBuilder(createGroupRequest: CreateGroupRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetGroups200ResponseGroupsInner> {
         let localVariablePath = "/obp/v6.0.0/management/groups"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600CreateGroupRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createGroupRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -101,7 +101,7 @@ open class GroupAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetGroups200ResponsePropertiesGroupsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetGroups200ResponseGroupsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -113,8 +113,8 @@ open class GroupAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv600DeleteGroup(groupid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv600DeleteGroupWithRequestBuilder(groupid: groupid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteGroup(groupid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteGroupWithRequestBuilder(groupid: groupid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -128,13 +128,13 @@ open class GroupAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter groupid: (path) The GROUPID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv600DeleteGroupWithRequestBuilder(groupid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteGroupWithRequestBuilder(groupid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v6.0.0/management/groups/{groupid}"
         let groupidPreEscape = "\(APIHelper.mapValueToPathItem(groupid))"
         let groupidPostEscape = groupidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -160,10 +160,10 @@ open class GroupAPI {
      
      - parameter groupid: (path) The GROUPID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetGroups200ResponsePropertiesGroupsItems
+     - returns: GetGroups200ResponseGroupsInner
      */
-    open class func oBPv600GetGroup(groupid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetGroups200ResponsePropertiesGroupsItems {
-        return try await oBPv600GetGroupWithRequestBuilder(groupid: groupid, apiConfiguration: apiConfiguration).execute().body
+    open class func getGroup(groupid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetGroups200ResponseGroupsInner {
+        return try await getGroupWithRequestBuilder(groupid: groupid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -177,13 +177,13 @@ open class GroupAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter groupid: (path) The GROUPID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetGroups200ResponsePropertiesGroupsItems> 
+     - returns: RequestBuilder<GetGroups200ResponseGroupsInner> 
      */
-    open class func oBPv600GetGroupWithRequestBuilder(groupid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetGroups200ResponsePropertiesGroupsItems> {
+    open class func getGroupWithRequestBuilder(groupid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetGroups200ResponseGroupsInner> {
         var localVariablePath = "/obp/v6.0.0/management/groups/{groupid}"
         let groupidPreEscape = "\(APIHelper.mapValueToPathItem(groupid))"
         let groupidPostEscape = groupidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -199,7 +199,7 @@ open class GroupAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetGroups200ResponsePropertiesGroupsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetGroups200ResponseGroupsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -209,10 +209,10 @@ open class GroupAPI {
      
      - parameter groupid: (path) The GROUPID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetGroupEntitlements200Response
+     - returns: GetGroupEntitlements200Response
      */
-    open class func oBPv600GetGroupEntitlements(groupid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetGroupEntitlements200Response {
-        return try await oBPv600GetGroupEntitlementsWithRequestBuilder(groupid: groupid, apiConfiguration: apiConfiguration).execute().body
+    open class func getGroupEntitlements(groupid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetGroupEntitlements200Response {
+        return try await getGroupEntitlementsWithRequestBuilder(groupid: groupid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -226,13 +226,13 @@ open class GroupAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter groupid: (path) The GROUPID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetGroupEntitlements200Response> 
+     - returns: RequestBuilder<GetGroupEntitlements200Response> 
      */
-    open class func oBPv600GetGroupEntitlementsWithRequestBuilder(groupid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetGroupEntitlements200Response> {
+    open class func getGroupEntitlementsWithRequestBuilder(groupid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetGroupEntitlements200Response> {
         var localVariablePath = "/obp/v6.0.0/management/groups/{groupid}/entitlements"
         let groupidPreEscape = "\(APIHelper.mapValueToPathItem(groupid))"
         let groupidPostEscape = groupidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -248,7 +248,7 @@ open class GroupAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetGroupEntitlements200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetGroupEntitlements200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -257,10 +257,10 @@ open class GroupAPI {
      Get Groups
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetGroups200Response
+     - returns: GetGroups200Response
      */
-    open class func oBPv600GetGroups(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetGroups200Response {
-        return try await oBPv600GetGroupsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getGroups(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetGroups200Response {
+        return try await getGroupsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -274,12 +274,12 @@ open class GroupAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetGroups200Response> 
+     - returns: RequestBuilder<GetGroups200Response> 
      */
-    open class func oBPv600GetGroupsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetGroups200Response> {
+    open class func getGroupsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetGroups200Response> {
         let localVariablePath = "/obp/v6.0.0/management/groups"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -292,7 +292,7 @@ open class GroupAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetGroups200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetGroups200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -302,10 +302,10 @@ open class GroupAPI {
      
      - parameter userid: (path) The USERID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetUserGroupMemberships200Response
+     - returns: GetUserGroupMemberships200Response
      */
-    open class func oBPv600GetUserGroupMemberships(userid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetUserGroupMemberships200Response {
-        return try await oBPv600GetUserGroupMembershipsWithRequestBuilder(userid: userid, apiConfiguration: apiConfiguration).execute().body
+    open class func getUserGroupMemberships(userid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetUserGroupMemberships200Response {
+        return try await getUserGroupMembershipsWithRequestBuilder(userid: userid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -319,13 +319,13 @@ open class GroupAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter userid: (path) The USERID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetUserGroupMemberships200Response> 
+     - returns: RequestBuilder<GetUserGroupMemberships200Response> 
      */
-    open class func oBPv600GetUserGroupMembershipsWithRequestBuilder(userid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetUserGroupMemberships200Response> {
+    open class func getUserGroupMembershipsWithRequestBuilder(userid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetUserGroupMemberships200Response> {
         var localVariablePath = "/obp/v6.0.0/users/{userid}/group-entitlements"
         let useridPreEscape = "\(APIHelper.mapValueToPathItem(userid))"
         let useridPostEscape = useridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -341,7 +341,7 @@ open class GroupAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetUserGroupMemberships200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetUserGroupMemberships200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -354,8 +354,8 @@ open class GroupAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv600RemoveUserFromGroup(userid: String, groupid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv600RemoveUserFromGroupWithRequestBuilder(userid: userid, groupid: groupid, apiConfiguration: apiConfiguration).execute().body
+    open class func removeUserFromGroup(userid: String, groupid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await removeUserFromGroupWithRequestBuilder(userid: userid, groupid: groupid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -369,14 +369,14 @@ open class GroupAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter userid: (path) The USERID identifier 
      - parameter groupid: (path) The GROUPID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv600RemoveUserFromGroupWithRequestBuilder(userid: String, groupid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func removeUserFromGroupWithRequestBuilder(userid: String, groupid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v6.0.0/users/{userid}/group-entitlements/{groupid}"
         let useridPreEscape = "\(APIHelper.mapValueToPathItem(userid))"
         let useridPostEscape = useridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -404,12 +404,12 @@ open class GroupAPI {
      Update Group
      
      - parameter groupid: (path) The GROUPID identifier 
-     - parameter oBPv600UpdateGroupRequest: (body) Request body 
+     - parameter updateGroupRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetGroups200ResponsePropertiesGroupsItems
+     - returns: GetGroups200ResponseGroupsInner
      */
-    open class func oBPv600UpdateGroup(groupid: String, oBPv600UpdateGroupRequest: OBPv600UpdateGroupRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetGroups200ResponsePropertiesGroupsItems {
-        return try await oBPv600UpdateGroupWithRequestBuilder(groupid: groupid, oBPv600UpdateGroupRequest: oBPv600UpdateGroupRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateGroup(groupid: String, updateGroupRequest: UpdateGroupRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetGroups200ResponseGroupsInner {
+        return try await updateGroupWithRequestBuilder(groupid: groupid, updateGroupRequest: updateGroupRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -423,20 +423,20 @@ open class GroupAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter groupid: (path) The GROUPID identifier 
-     - parameter oBPv600UpdateGroupRequest: (body) Request body 
+     - parameter updateGroupRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetGroups200ResponsePropertiesGroupsItems> 
+     - returns: RequestBuilder<GetGroups200ResponseGroupsInner> 
      */
-    open class func oBPv600UpdateGroupWithRequestBuilder(groupid: String, oBPv600UpdateGroupRequest: OBPv600UpdateGroupRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetGroups200ResponsePropertiesGroupsItems> {
+    open class func updateGroupWithRequestBuilder(groupid: String, updateGroupRequest: UpdateGroupRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetGroups200ResponseGroupsInner> {
         var localVariablePath = "/obp/v6.0.0/management/groups/{groupid}"
         let groupidPreEscape = "\(APIHelper.mapValueToPathItem(groupid))"
         let groupidPostEscape = groupidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{groupid}", with: groupidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600UpdateGroupRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateGroupRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -446,7 +446,7 @@ open class GroupAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetGroups200ResponsePropertiesGroupsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetGroups200ResponseGroupsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

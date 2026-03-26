@@ -1,6 +1,6 @@
 generatorName: typescript-fetch
 outputDir: ../sdks/typescript
-inputSpec: ../openapi-spec/obp-openapi.json
+inputSpec: ../openapi-spec/obp-openapi-simplified.json
 additionalProperties:
   npmName: obp-typescript
   npmVersion: "1.0.0"

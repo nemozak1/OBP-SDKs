@@ -1,17 +1,17 @@
 # StandingOrderApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateStandingOrder**](StandingOrderApi.md#obpv400createstandingorderoperation) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order |
-| [**oBPv400CreateStandingOrderManagement**](StandingOrderApi.md#obpv400createstandingordermanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management) |
+| [**createStandingOrder**](StandingOrderApi.md#createstandingorderoperation) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order |
+| [**createStandingOrderManagement**](StandingOrderApi.md#createstandingordermanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management) |
 
 
 
-## oBPv400CreateStandingOrder
+## createStandingOrder
 
-> OBPv400CreateStandingOrder200Response oBPv400CreateStandingOrder(bankid, accountid, viewid, oBPv400CreateStandingOrderRequest)
+> CreateStandingOrder200Response createStandingOrder(bankid, accountid, viewid, createStandingOrderRequest)
 
 Create Standing Order
 
@@ -24,7 +24,7 @@ import {
   Configuration,
   StandingOrderApi,
 } from 'obp-typescript';
-import type { OBPv400CreateStandingOrderOperationRequest } from 'obp-typescript';
+import type { CreateStandingOrderOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -45,12 +45,12 @@ async function example() {
     accountid: accountid_example,
     // string | The VIEWID identifier
     viewid: viewid_example,
-    // OBPv400CreateStandingOrderRequest | Request body
-    oBPv400CreateStandingOrderRequest: {"type":"object","properties":{"date_expires":{"type":"string","format":"date-time"},"date_starts":{"type":"string","format":"date-time"},"customer_id":{"type":"string"},"counterparty_id":{"type":"string"},"when":{"type":"object","properties":{"frequency":{"type":"string"},"detail":{"type":"string"}}},"date_signed":{"type":"string","format":"date-time"},"amount":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"user_id":{"type":"string"}}},
-  } satisfies OBPv400CreateStandingOrderOperationRequest;
+    // CreateStandingOrderRequest | Request body
+    createStandingOrderRequest: {"type":"object","properties":{"customer_id":{"type":"string"},"date_signed":{"type":"string","format":"date-time"},"counterparty_id":{"type":"string"},"date_expires":{"type":"string","format":"date-time"},"when":{"type":"object","properties":{"frequency":{"type":"string"},"detail":{"type":"string"}}},"date_starts":{"type":"string","format":"date-time"},"amount":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"user_id":{"type":"string"}}},
+  } satisfies CreateStandingOrderOperationRequest;
 
   try {
-    const data = await api.oBPv400CreateStandingOrder(body);
+    const data = await api.createStandingOrder(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -69,11 +69,11 @@ example().catch(console.error);
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
 | **viewid** | `string` | The VIEWID identifier | [Defaults to `undefined`] |
-| **oBPv400CreateStandingOrderRequest** | [OBPv400CreateStandingOrderRequest](OBPv400CreateStandingOrderRequest.md) | Request body | |
+| **createStandingOrderRequest** | [CreateStandingOrderRequest](CreateStandingOrderRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 
@@ -95,9 +95,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400CreateStandingOrderManagement
+## createStandingOrderManagement
 
-> OBPv400CreateStandingOrder200Response oBPv400CreateStandingOrderManagement(bankid, accountid, oBPv400CreateStandingOrderRequest)
+> CreateStandingOrder200Response createStandingOrderManagement(bankid, accountid, createStandingOrderRequest)
 
 Create Standing Order (management)
 
@@ -110,7 +110,7 @@ import {
   Configuration,
   StandingOrderApi,
 } from 'obp-typescript';
-import type { OBPv400CreateStandingOrderManagementRequest } from 'obp-typescript';
+import type { CreateStandingOrderManagementRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -129,12 +129,12 @@ async function example() {
     bankid: bankid_example,
     // string | The ACCOUNTID identifier
     accountid: accountid_example,
-    // OBPv400CreateStandingOrderRequest | Request body
-    oBPv400CreateStandingOrderRequest: {type=object, properties={date_expires={type=string, format=date-time}, date_starts={type=string, format=date-time}, customer_id={type=string}, counterparty_id={type=string}, when={type=object, properties={frequency={type=string}, detail={type=string}}}, date_signed={type=string, format=date-time}, amount={type=object, properties={currency={type=string}, amount={type=string}}}, user_id={type=string}}},
-  } satisfies OBPv400CreateStandingOrderManagementRequest;
+    // CreateStandingOrderRequest | Request body
+    createStandingOrderRequest: {type=object, properties={customer_id={type=string}, date_signed={type=string, format=date-time}, counterparty_id={type=string}, date_expires={type=string, format=date-time}, when={type=object, properties={frequency={type=string}, detail={type=string}}}, date_starts={type=string, format=date-time}, amount={type=object, properties={currency={type=string}, amount={type=string}}}, user_id={type=string}}},
+  } satisfies CreateStandingOrderManagementRequest;
 
   try {
-    const data = await api.oBPv400CreateStandingOrderManagement(body);
+    const data = await api.createStandingOrderManagement(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -152,11 +152,11 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
-| **oBPv400CreateStandingOrderRequest** | [OBPv400CreateStandingOrderRequest](OBPv400CreateStandingOrderRequest.md) | Request body | |
+| **createStandingOrderRequest** | [CreateStandingOrderRequest](CreateStandingOrderRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 

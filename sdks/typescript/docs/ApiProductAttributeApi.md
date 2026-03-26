@@ -1,19 +1,19 @@
 # ApiProductAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600CreateApiProductAttribute**](ApiProductAttributeApi.md#obpv600createapiproductattribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute |
-| [**oBPv600DeleteApiProductAttribute**](ApiProductAttributeApi.md#obpv600deleteapiproductattribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute |
-| [**oBPv600GetApiProductAttribute**](ApiProductAttributeApi.md#obpv600getapiproductattribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute |
-| [**oBPv600UpdateApiProductAttribute**](ApiProductAttributeApi.md#obpv600updateapiproductattribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute |
+| [**createApiProductAttribute**](ApiProductAttributeApi.md#createapiproductattribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute |
+| [**deleteApiProductAttribute**](ApiProductAttributeApi.md#deleteapiproductattribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute |
+| [**getApiProductAttribute**](ApiProductAttributeApi.md#getapiproductattribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute |
+| [**updateApiProductAttribute**](ApiProductAttributeApi.md#updateapiproductattribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute |
 
 
 
-## oBPv600CreateApiProductAttribute
+## createApiProductAttribute
 
-> OBPv600CreateApiProductAttribute200Response oBPv600CreateApiProductAttribute(bankid, apiproductcode, oBPv510UpdateAtmAttributeRequest)
+> CreateApiProductAttribute200Response createApiProductAttribute(bankid, apiproductcode, updateAtmAttributeRequest)
 
 Create Api Product Attribute
 
@@ -26,7 +26,7 @@ import {
   Configuration,
   ApiProductAttributeApi,
 } from 'obp-typescript';
-import type { OBPv600CreateApiProductAttributeRequest } from 'obp-typescript';
+import type { CreateApiProductAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -45,12 +45,12 @@ async function example() {
     bankid: bankid_example,
     // string | The APIPRODUCTCODE identifier
     apiproductcode: apiproductcode_example,
-    // OBPv510UpdateAtmAttributeRequest | Request body
-    oBPv510UpdateAtmAttributeRequest: {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}},
-  } satisfies OBPv600CreateApiProductAttributeRequest;
+    // UpdateAtmAttributeRequest | Request body
+    updateAtmAttributeRequest: {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}},
+  } satisfies CreateApiProductAttributeRequest;
 
   try {
-    const data = await api.oBPv600CreateApiProductAttribute(body);
+    const data = await api.createApiProductAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -68,11 +68,11 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **apiproductcode** | `string` | The APIPRODUCTCODE identifier | [Defaults to `undefined`] |
-| **oBPv510UpdateAtmAttributeRequest** | [OBPv510UpdateAtmAttributeRequest](OBPv510UpdateAtmAttributeRequest.md) | Request body | |
+| **updateAtmAttributeRequest** | [UpdateAtmAttributeRequest](UpdateAtmAttributeRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -94,9 +94,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600DeleteApiProductAttribute
+## deleteApiProductAttribute
 
-> oBPv600DeleteApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
+> deleteApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
 
 Delete Api Product Attribute
 
@@ -109,7 +109,7 @@ import {
   Configuration,
   ApiProductAttributeApi,
 } from 'obp-typescript';
-import type { OBPv600DeleteApiProductAttributeRequest } from 'obp-typescript';
+import type { DeleteApiProductAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -130,10 +130,10 @@ async function example() {
     apiproductcode: apiproductcode_example,
     // string | The APIPRODUCTATTRIBUTEID identifier
     apiproductattributeid: apiproductattributeid_example,
-  } satisfies OBPv600DeleteApiProductAttributeRequest;
+  } satisfies DeleteApiProductAttributeRequest;
 
   try {
-    const data = await api.oBPv600DeleteApiProductAttribute(body);
+    const data = await api.deleteApiProductAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -177,9 +177,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetApiProductAttribute
+## getApiProductAttribute
 
-> OBPv600CreateApiProductAttribute200Response oBPv600GetApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
+> CreateApiProductAttribute200Response getApiProductAttribute(bankid, apiproductcode, apiproductattributeid)
 
 Get Api Product Attribute
 
@@ -192,7 +192,7 @@ import {
   Configuration,
   ApiProductAttributeApi,
 } from 'obp-typescript';
-import type { OBPv600GetApiProductAttributeRequest } from 'obp-typescript';
+import type { GetApiProductAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -205,10 +205,10 @@ async function example() {
     apiproductcode: apiproductcode_example,
     // string | The APIPRODUCTATTRIBUTEID identifier
     apiproductattributeid: apiproductattributeid_example,
-  } satisfies OBPv600GetApiProductAttributeRequest;
+  } satisfies GetApiProductAttributeRequest;
 
   try {
-    const data = await api.oBPv600GetApiProductAttribute(body);
+    const data = await api.getApiProductAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -230,7 +230,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -252,9 +252,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600UpdateApiProductAttribute
+## updateApiProductAttribute
 
-> OBPv600CreateApiProductAttribute200Response oBPv600UpdateApiProductAttribute(bankid, apiproductcode, apiproductattributeid, oBPv510UpdateAtmAttributeRequest)
+> CreateApiProductAttribute200Response updateApiProductAttribute(bankid, apiproductcode, apiproductattributeid, updateAtmAttributeRequest)
 
 Update Api Product Attribute
 
@@ -267,7 +267,7 @@ import {
   Configuration,
   ApiProductAttributeApi,
 } from 'obp-typescript';
-import type { OBPv600UpdateApiProductAttributeRequest } from 'obp-typescript';
+import type { UpdateApiProductAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -288,12 +288,12 @@ async function example() {
     apiproductcode: apiproductcode_example,
     // string | The APIPRODUCTATTRIBUTEID identifier
     apiproductattributeid: apiproductattributeid_example,
-    // OBPv510UpdateAtmAttributeRequest | Request body
-    oBPv510UpdateAtmAttributeRequest: {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}},
-  } satisfies OBPv600UpdateApiProductAttributeRequest;
+    // UpdateAtmAttributeRequest | Request body
+    updateAtmAttributeRequest: {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}},
+  } satisfies UpdateApiProductAttributeRequest;
 
   try {
-    const data = await api.oBPv600UpdateApiProductAttribute(body);
+    const data = await api.updateApiProductAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -312,11 +312,11 @@ example().catch(console.error);
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **apiproductcode** | `string` | The APIPRODUCTCODE identifier | [Defaults to `undefined`] |
 | **apiproductattributeid** | `string` | The APIPRODUCTATTRIBUTEID identifier | [Defaults to `undefined`] |
-| **oBPv510UpdateAtmAttributeRequest** | [OBPv510UpdateAtmAttributeRequest](OBPv510UpdateAtmAttributeRequest.md) | Request body | |
+| **updateAtmAttributeRequest** | [UpdateAtmAttributeRequest](UpdateAtmAttributeRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
